@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.env
+.env.*
+secrets/
+answer_key*.json
+answer_key*.json.enc
+*.key
+*.pem
+runs/*/revealed_key*
+.DS_Store
