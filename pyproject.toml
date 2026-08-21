@@ -18,7 +18,12 @@ dependencies = [
 [project.optional-dependencies]
 ephemeris = ["pyswisseph>=2.10.3.2,<3"]
 api = ["fastapi>=0.115,<1", "uvicorn>=0.34,<1"]
-empirical = ["numpy>=2.1,<3", "scikit-learn>=1.6,<2"]
+empirical = [
+  "numpy>=2.1,<3",
+  "pandas>=2.2,<4",
+  "pyarrow>=18,<24",
+  "scikit-learn>=1.6,<2",
+]
 dev = [
   "mypy>=1.14,<2",
   "pytest>=8.3,<9",
@@ -29,6 +34,8 @@ dev = [
 all = [
   "fastapi>=0.115,<1",
   "numpy>=2.1,<3",
+  "pandas>=2.2,<4",
+  "pyarrow>=18,<24",
   "pyswisseph>=2.10.3.2,<3",
   "scikit-learn>=1.6,<2",
   "uvicorn>=0.34,<1",
