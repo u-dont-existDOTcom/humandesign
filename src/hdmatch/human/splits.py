@@ -23,9 +23,14 @@ class PersonSplitManifest(BaseModel):
 
     @model_validator(mode="after")
     def disjoint(self) -> PersonSplitManifest:
+        identifiers = self.development_ids + self.validation_ids + self.final_test_ids
+        if len(identifiers) != len(set(identifiers)):
+            raise ValueError("person split contains duplicate participant IDs")
         groups = [set(self.development_ids), set(self.validation_ids), set(self.final_test_ids)]
         if groups[0] & groups[1] or groups[0] & groups[2] or groups[1] & groups[2]:
             raise ValueError("person split contains overlapping participant IDs")
+        if not self.development_ids:
+            raise ValueError("development split cannot be empty")
         return self
 
 
@@ -75,13 +80,46 @@ def enforce_training_cohort(cases: tuple[HumanCase, ...] | list[HumanCase]) -> N
         raise ValueError(f"fitting accepts development people only; rejected: {forbidden}")
 
 
+def validate_manifest_for_dataset(
+    dataset: HumanDataset,
+    manifest: PersonSplitManifest,
+) -> None:
+    """Bind a split to exactly one dataset and every person in it."""
+
+    if manifest.dataset_hash != sha256_json(dataset):
+        raise ValueError("split manifest dataset hash does not match the human dataset")
+    dataset_ids = {case.participant_id for case in dataset.cases}
+    manifest_ids = (
+        set(manifest.development_ids) | set(manifest.validation_ids) | set(manifest.final_test_ids)
+    )
+    if dataset_ids != manifest_ids:
+        raise ValueError("split manifest must assign every dataset person exactly once")
+    expected = {
+        **{identifier: "development" for identifier in manifest.development_ids},
+        **{identifier: "validation" for identifier in manifest.validation_ids},
+        **{identifier: "final_test" for identifier in manifest.final_test_ids},
+    }
+    mismatched = sorted(
+        case.participant_id
+        for case in dataset.cases
+        if case.cohort != "unassigned" and case.cohort != expected[case.participant_id]
+    )
+    if mismatched:
+        raise ValueError(f"dataset cohort labels disagree with split manifest: {mismatched}")
+
+
 def select_partition(
     dataset: HumanDataset,
     manifest: PersonSplitManifest,
     partition: Literal["development", "validation", "final_test"],
 ) -> tuple[HumanCase, ...]:
+    validate_manifest_for_dataset(dataset, manifest)
     selected_ids = set(getattr(manifest, f"{partition}_ids"))
-    cases = tuple(case for case in dataset.cases if case.participant_id in selected_ids)
+    cases = tuple(
+        case.model_copy(update={"cohort": partition})
+        for case in dataset.cases
+        if case.participant_id in selected_ids
+    )
     if {case.participant_id for case in cases} != selected_ids:
         raise ValueError("split manifest references people missing from dataset")
     return cases
