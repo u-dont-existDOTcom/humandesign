@@ -51,7 +51,7 @@ class DeclaredNoiseSettings(BaseModel):
     cluster_dropout_rate: UnitInterval
     behavioral_confidence_values: tuple[UnitInterval, ...] = Field(min_length=1)
     measurement_reliability_values: tuple[UnitInterval, ...] = Field(min_length=1)
-    seed: int
+    conditioning: Literal["chart-independent-except-declared-measurement-domain"]
 
 
 class NoiseRunMetadata(BaseModel):
@@ -68,9 +68,11 @@ class NoiseRunMetadata(BaseModel):
     candidate_universe_sha256: str = Field(pattern=SHA256_PATTERN)
     case_set_sha256: str = Field(pattern=SHA256_PATTERN)
     declared_case_count: int = Field(ge=1)
+    aggregation_rule: str = Field(min_length=1)
     case_count_policy: Literal[
         "fixed-declared-case-set-unevaluable-zero-credit"
     ] = "fixed-declared-case-set-unevaluable-zero-credit"
+    run_manifest_sha256: str = Field(pattern=SHA256_PATTERN)
     evaluation_sha256: str = Field(pattern=SHA256_PATTERN)
     noise: DeclaredNoiseSettings
 
@@ -93,6 +95,10 @@ class RevealedNoiseTierEvaluation(BaseModel):
             raise ValueError("metadata model_sha256 does not match evaluation")
         if self.metadata.declared_case_count != self.evaluation.aggregate.case_count:
             raise ValueError("declared case count does not match evaluation denominator")
+        if self.evaluation.revealed_target_set_sha256 is None:
+            raise ValueError("noise benchmark requires a revealed target-set hash")
+        if self.metadata.case_set_sha256 != self.evaluation.revealed_target_set_sha256:
+            raise ValueError("metadata case_set_sha256 does not match revealed targets")
         if self.metadata.evaluation_sha256 != sha256_json(self.evaluation):
             raise ValueError("metadata evaluation_sha256 does not match evaluation bytes")
         return self
@@ -137,6 +143,7 @@ class NoiseBenchmarkReport(BaseModel):
     candidate_universe_sha256: str = Field(pattern=SHA256_PATTERN)
     case_set_sha256: str = Field(pattern=SHA256_PATTERN)
     case_count: int = Field(ge=1)
+    aggregation_rule: str
     case_count_policy: Literal[
         "fixed-declared-case-set-unevaluable-zero-credit"
     ] = "fixed-declared-case-set-unevaluable-zero-credit"
@@ -220,6 +227,7 @@ def compare_revealed_noise_tiers(
         "candidate_universe_sha256",
         "case_set_sha256",
         "declared_case_count",
+        "aggregation_rule",
         "case_count_policy",
     )
     for item in ordered[1:]:
@@ -246,6 +254,16 @@ def compare_revealed_noise_tiers(
     for tier, (_, _, case_set) in case_partitions.items():
         if case_set != oracle_case_set:
             raise NoiseBenchmarkInputError(f"tier {tier} does not contain the oracle case set")
+
+    known_targets: dict[str, str] = {}
+    for item in ordered:
+        for case in item.evaluation.cases:
+            existing = known_targets.setdefault(case.case_id, case.true_candidate_id)
+            if existing != case.true_candidate_id:
+                raise NoiseBenchmarkInputError(
+                    f"tier {item.metadata.tier} has a different revealed target for "
+                    f"case {case.case_id}"
+                )
 
     results: list[NoiseTierResult] = []
     for item in ordered:
@@ -281,5 +299,6 @@ def compare_revealed_noise_tiers(
         candidate_universe_sha256=metadata.candidate_universe_sha256,
         case_set_sha256=metadata.case_set_sha256,
         case_count=metadata.declared_case_count,
+        aggregation_rule=metadata.aggregation_rule,
         tiers=tuple(results),
     )

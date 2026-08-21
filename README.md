@@ -53,6 +53,34 @@ Generation creates or uses an owner-only AES key under `/tmp/hdmatch-secrets` by
 
 The completed smoke report is in `reports/model_a_smoke_75/`. It retains all 41 non-Top-1 cases and explains the residual failure classification.
 
+## Synthetic noise-tier comparison
+
+The bounded noise smoke uses four 25-case configs:
+`synth_month_oracle_noise_smoke.yaml`, `synth_month_low_smoke.yaml`,
+`synth_month_medium_smoke.yaml`, and `synth_month_adversarial_smoke.yaml`.
+Generate the four runs with the same external secret seed so they conceal the same
+birth moments, then run the normal recover → freeze → reveal/evaluate sequence for
+each directory. Do not compare an interrupted or unrevealed run.
+
+After all four canonical `evaluation.json` files exist, aggregate them without
+opening an answer key:
+
+```bash
+hdmatch compare-noise-tiers \
+  --oracle-run-dir run_artifacts/noise_oracle \
+  --low-run-dir run_artifacts/noise_low \
+  --medium-run-dir run_artifacts/noise_medium \
+  --adversarial-run-dir run_artifacts/noise_adversarial \
+  --output run_artifacts/noise_comparison.json
+```
+
+This command reads only each run's public `blind_cases.json`, `run.manifest.json`,
+and post-reveal `evaluation.json`. It verifies their hashes, frozen model and noise
+settings, candidate-universe binding, case denominator, aggregation rule, and
+revealed target consistency. The report preserves every tier, failure, and
+unevaluable case and shows Top-1/3/5 and MRR degradation from oracle. It is an
+engineering robustness result, not human validation.
+
 ## Model A and Model B
 
 `MODEL-A-CORE-V1` is the unchanged coarse architecture model. `MODEL-B-DETAILED-V1` is a structural-only intermediate containing all source-supported detailed mechanics: 36 complete channels, separate Personality/Design Sun–Earth gate and line representations, Definition, mechanics-only repeated gates and Nodes, a deliberately empty unresolved prominent-activation allowlist, hanging-gate candidates, dependency controls, and the conditional-prevalence framework. It is not completion of the detailed behavioral-model objective.
