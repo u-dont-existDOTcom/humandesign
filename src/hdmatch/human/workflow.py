@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import os
 from collections.abc import Mapping, Sequence
 from datetime import UTC, datetime
 from pathlib import Path
@@ -69,6 +70,24 @@ from hdmatch.synthetic.sealing import (
     seal_answer_key,
 )
 from hdmatch.util import sha256_json
+
+_ANSWER_KEY_SCAN_MAX_BYTES = 1024 * 1024
+_ANSWER_KEY_SCAN_SKIP_DIRECTORIES = frozenset(
+    {
+        ".cache",
+        ".git",
+        ".mypy_cache",
+        ".nox",
+        ".pytest_cache",
+        ".ruff_cache",
+        ".tox",
+        ".venv",
+        "__pycache__",
+        "env",
+        "node_modules",
+        "venv",
+    }
+)
 
 
 def _path(path: str | Path) -> Path:
@@ -344,25 +363,62 @@ def _symbolic_scorer(
 
 
 def _assert_no_human_answer_keys(repository_root: str | Path) -> None:
-    """Fail blind scoring if a plaintext human key is readable under the decoder root."""
+    """Fail blind scoring if a likely plaintext human key is readable below its root.
+
+    File names and suffixes are not trusted security boundaries. The bounded scan reads all
+    small UTF-8 text files except known metadata/environment/cache trees; large and binary
+    files are skipped to avoid treating unrelated artifacts as key material.
+    """
 
     root = Path(repository_root)
     offenders: list[str] = []
-    for candidate in root.rglob("*.json"):
-        if ".git" in candidate.parts or not candidate.is_file():
-            continue
-        try:
-            payload = json.loads(candidate.read_bytes())
-        except (OSError, UnicodeDecodeError, json.JSONDecodeError):
-            continue
-        if isinstance(payload, dict) and payload.get("schema_version") == (
-            "human-cohort-answer-key-v1"
-        ):
-            offenders.append(candidate.relative_to(root).as_posix())
+    for current, directory_names, file_names in os.walk(root, followlinks=False):
+        directory_names[:] = sorted(
+            name
+            for name in directory_names
+            if name.casefold() not in _ANSWER_KEY_SCAN_SKIP_DIRECTORIES
+            and not (Path(current) / name / "pyvenv.cfg").is_file()
+        )
+        for file_name in sorted(file_names):
+            if file_name.casefold() in _ANSWER_KEY_SCAN_SKIP_DIRECTORIES:
+                continue
+            candidate = Path(current) / file_name
+            try:
+                if not candidate.is_file() or candidate.stat().st_size > _ANSWER_KEY_SCAN_MAX_BYTES:
+                    continue
+                raw = candidate.read_bytes()
+            except OSError:
+                continue
+            if not raw or b"\x00" in raw:
+                continue
+            try:
+                payload = json.loads(raw.decode("utf-8-sig"))
+            except (UnicodeDecodeError, json.JSONDecodeError):
+                continue
+            if _contains_plaintext_human_answer_key(payload):
+                offenders.append(candidate.relative_to(root).as_posix())
     if offenders:
         raise RuntimeError(
             f"{len(offenders)} plaintext human answer key file(s) exist under decoder root"
         )
+
+
+def _contains_plaintext_human_answer_key(value: object) -> bool:
+    if isinstance(value, dict):
+        if value.get("schema_version") == "human-cohort-answer-key-v1":
+            return True
+        required = {
+            "cohort",
+            "protocol_sha256",
+            "blind_input_sha256",
+            "true_candidate_ids",
+        }
+        if required <= value.keys() and isinstance(value.get("true_candidate_ids"), dict):
+            return True
+        return any(_contains_plaintext_human_answer_key(item) for item in value.values())
+    if isinstance(value, list):
+        return any(_contains_plaintext_human_answer_key(item) for item in value)
+    return False
 
 
 def score_blind_artifacts(

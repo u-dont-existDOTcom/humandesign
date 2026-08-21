@@ -631,8 +631,9 @@ def freeze_final_test_protocol(
 ) -> FrozenHumanEvaluationProtocol:
     """Create an explicit frozen-model release artifact for an untouched final test.
 
-    This pure function cannot enforce globally one-time use. A future CLI must persist an
-    append-only release receipt and reject reuse of ``final_test_release_id``.
+    This pure function cannot enforce globally one-time use. The high-level CLI persists
+    append-only cohort/release/freeze/reveal receipts in its declared external ledger and
+    rejects reuse there.
     """
 
     if release_authorization != FINAL_TEST_RELEASE_ACKNOWLEDGEMENT:
