@@ -15,14 +15,22 @@ from hdmatch.model_b.types import EvaluatedPathway, StructuralEvidence
 @dataclass(frozen=True)
 class FixedPrevalence:
     values: dict[str, float]
+    universe_by_anchor: dict[str, tuple[str, str]] | None = None
+    duration_weighted: bool = True
+    segmentation: str = "exact-boundary-events"
 
     def estimate(self, anchor_id: str, chart: object) -> PrevalenceEstimate:
         del chart
         value = self.values[anchor_id]
+        universe_id, universe_sha256 = (
+            self.universe_by_anchor.get(anchor_id, ("frozen-reference", "c" * 64))
+            if self.universe_by_anchor is not None
+            else ("frozen-reference", "c" * 64)
+        )
         return PrevalenceEstimate(
             anchor_id=anchor_id,
-            universe_id="frozen-reference",
-            universe_sha256="c" * 64,
+            universe_id=universe_id,
+            universe_sha256=universe_sha256,
             selected_level_id="declared-parent",
             selected_parent_anchor_ids=(),
             selected_conditioning_values=(),
@@ -31,8 +39,8 @@ class FixedPrevalence:
             effective_state_equivalents=500.0,
             minimum_reference_size_met=True,
             prevalence=value,
-            duration_weighted=True,
-            segmentation="exact-boundary-events",
+            duration_weighted=self.duration_weighted,
+            segmentation=self.segmentation,
             backoff_level=0,
             attempts=(),
         )
@@ -156,6 +164,27 @@ def test_alternatives_compete_and_only_independent_corroborator_gets_15_percent(
     assert cluster.evidence_rubric_bits == pytest.approx(0.8 * 2.0 + 0.15 * 2.0)
 
 
+def test_strongest_corroborator_is_selected_by_support_not_rarity() -> None:
+    pathway = _pathway(
+        "cluster",
+        "pathway",
+        _evidence("primary", "primary", salience=0.8),
+        corroborators=(
+            _evidence("strong-common", "strong", salience=1.0),
+            _evidence("weak-rare", "weak", salience=0.45),
+        ),
+    )
+    provider = FixedPrevalence({"primary": 0.25, "strong-common": 0.5, "weak-rare": 2**-12})
+
+    result = score_detailed_symbolic({}, (pathway,), provider)
+    selected = result.clusters[0].evaluated_pathways[0]
+
+    assert selected.corroborator is not None
+    assert selected.corroborator.anchor_id == "strong-common"
+    assert selected.support == pytest.approx(0.95)
+    assert selected.evidence_rubric_bits == pytest.approx(0.8 * 2.0 + 0.15)
+
+
 def test_explicit_contradiction_is_capped_and_missing_structure_does_not_create_it() -> None:
     explicit = _pathway(
         "cluster",
@@ -187,3 +216,42 @@ def test_score_is_deterministic_under_pathway_input_permutation() -> None:
         "cluster-a",
         "cluster-b",
     )
+
+
+def test_alternative_pathways_must_share_observation_confidence() -> None:
+    pathways = (
+        _pathway("cluster", "high", _evidence("high", "high"), confidence=1.0),
+        _pathway("cluster", "low", _evidence("low", "low"), confidence=0.5),
+    )
+
+    with pytest.raises(ValueError, match="must share one effective confidence"):
+        score_detailed_symbolic({}, pathways, FixedPrevalence({"high": 0.5, "low": 0.5}))
+
+
+def test_score_rejects_mixed_or_non_exact_prevalence_provenance() -> None:
+    pathways = (
+        _pathway("cluster-a", "a", _evidence("a", "a")),
+        _pathway("cluster-b", "b", _evidence("b", "b")),
+    )
+    mixed = FixedPrevalence(
+        {"a": 0.5, "b": 0.5},
+        universe_by_anchor={
+            "a": ("universe-a", "a" * 64),
+            "b": ("universe-b", "b" * 64),
+        },
+    )
+    with pytest.raises(ValueError, match="cannot mix prevalence reference universes"):
+        score_detailed_symbolic({}, pathways, mixed)
+
+    with pytest.raises(ValueError, match="must be duration weighted"):
+        score_detailed_symbolic(
+            {},
+            (pathways[0],),
+            FixedPrevalence({"a": 0.5}, duration_weighted=False),
+        )
+    with pytest.raises(ValueError, match="exact boundary segmentation"):
+        score_detailed_symbolic(
+            {},
+            (pathways[0],),
+            FixedPrevalence({"a": 0.5}, segmentation="coarse-grid"),
+        )

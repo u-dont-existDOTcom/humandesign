@@ -234,6 +234,12 @@ class PrevalenceEstimateLike(Protocol):
     @property
     def selected_level_id(self) -> str: ...
 
+    @property
+    def duration_weighted(self) -> bool: ...
+
+    @property
+    def segmentation(self) -> str: ...
+
 
 @runtime_checkable
 class ConditionalPrevalenceProvider(Protocol):

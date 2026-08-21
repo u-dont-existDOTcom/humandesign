@@ -17,19 +17,20 @@ ROOT = Path(__file__).parents[2]
 def test_model_b_is_separate_complete_and_conservative() -> None:
     artifact = build_model_b_artifact(ROOT)
 
-    assert artifact.model_id == "MODEL-B"
-    assert artifact.base_model_id == "MODEL-A"
+    assert artifact.model_id == "MODEL-B-DETAILED-V1"
+    assert artifact.base_model_id == "MODEL-A-CORE-V1"
     assert artifact.base_mapping_path == "mappings/mapping_library_v1.json"
-    assert artifact.base_mapping_sha256 == hashlib.sha256(
-        (ROOT / artifact.base_mapping_path).read_bytes()
-    ).hexdigest()
+    assert (
+        artifact.base_mapping_sha256
+        == hashlib.sha256((ROOT / artifact.base_mapping_path).read_bytes()).hexdigest()
+    )
     assert len(artifact.channel_catalog) == 36
     assert len(set(artifact.channel_catalog)) == 36
     assert {item.layer for item in artifact.structural_families} == set(DetailedLayer)
-    assert sum(
-        item.feature_status is FeatureStatus.FROZEN
-        for item in artifact.structural_families
-    ) == 3
+    assert (
+        sum(item.feature_status is FeatureStatus.FROZEN for item in artifact.structural_families)
+        == 3
+    )
     assert all(
         mapping.status is MappingStatus.UNRESOLVED
         and mapping.mapping_directness is None

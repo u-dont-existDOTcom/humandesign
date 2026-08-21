@@ -162,11 +162,9 @@ class DetailedAnchor(FrozenModel):
 
 class ModelBArtifact(FrozenModel):
     schema_version: Literal["model-b-mapping-library-v1"] = "model-b-mapping-library-v1"
-    model_id: Literal["MODEL-B"] = "MODEL-B"
-    model_version: Literal["V4/V3.2-detailed-symbolic-v1"] = (
-        "V4/V3.2-detailed-symbolic-v1"
-    )
-    base_model_id: Literal["MODEL-A"] = "MODEL-A"
+    model_id: Literal["MODEL-B-DETAILED-V1"] = "MODEL-B-DETAILED-V1"
+    model_version: Literal["V4/V3.2-detailed-symbolic-v1"] = "V4/V3.2-detailed-symbolic-v1"
+    base_model_id: Literal["MODEL-A-CORE-V1"] = "MODEL-A-CORE-V1"
     base_mapping_path: str = "mappings/mapping_library_v1.json"
     base_mapping_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
     question_bank_version: str = Field(min_length=1)
@@ -208,9 +206,7 @@ class ModelBArtifact(FrozenModel):
             if missing:
                 raise ValueError(f"family {family.family_id} has unknown policies: {missing}")
         if self.prominent_activation_allowlist:
-            raise ValueError(
-                "the normative sources do not freeze a prominent-activation allowlist"
-            )
+            raise ValueError("the normative sources do not freeze a prominent-activation allowlist")
         mapping_ids = [item.mapping_id for item in self.behavioral_mappings]
         if len(mapping_ids) != len(set(mapping_ids)):
             raise ValueError("behavioral mapping IDs must be unique")
@@ -233,13 +229,9 @@ class ModelBArtifact(FrozenModel):
 
 
 class ModelBUnresolvedReport(FrozenModel):
-    schema_version: Literal["model-b-unresolved-report-v1"] = (
-        "model-b-unresolved-report-v1"
-    )
-    model_id: Literal["MODEL-B"] = "MODEL-B"
-    model_version: Literal["V4/V3.2-detailed-symbolic-v1"] = (
-        "V4/V3.2-detailed-symbolic-v1"
-    )
+    schema_version: Literal["model-b-unresolved-report-v1"] = "model-b-unresolved-report-v1"
+    model_id: Literal["MODEL-B-DETAILED-V1"] = "MODEL-B-DETAILED-V1"
+    model_version: Literal["V4/V3.2-detailed-symbolic-v1"] = "V4/V3.2-detailed-symbolic-v1"
     artifact_semantic_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
     artifact_file_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
     frozen_feature_family_count: int = Field(ge=0)

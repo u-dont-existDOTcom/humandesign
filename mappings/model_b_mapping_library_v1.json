@@ -1,7 +1,7 @@
 {
   "base_mapping_path": "mappings/mapping_library_v1.json",
   "base_mapping_sha256": "3424672432f7f071ec90ef9ddce52a67ff6794911e92b1a1e04f079262ea6200",
-  "base_model_id": "MODEL-A",
+  "base_model_id": "MODEL-A-CORE-V1",
   "behavioral_mappings": [
     {
       "contradiction_rule": null,
@@ -306,7 +306,7 @@
       ]
     }
   ],
-  "model_id": "MODEL-B",
+  "model_id": "MODEL-B-DETAILED-V1",
   "model_version": "V4/V3.2-detailed-symbolic-v1",
   "node_positions": [
     "personality:north_node",

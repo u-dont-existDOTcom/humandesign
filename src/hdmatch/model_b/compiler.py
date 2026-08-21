@@ -425,8 +425,7 @@ def _behavioral_mappings() -> tuple[UnresolvedBehaviorMapping, ...]:
                     _source(
                         V3_PROTOCOL,
                         "§32 Cardinal placements",
-                        "Cardinals are allowed at fixed salience without bespoke per-gate "
-                        "bonuses.",
+                        "Cardinals are allowed at fixed salience without bespoke per-gate bonuses.",
                     ),
                     missing_directness,
                 ),
@@ -540,9 +539,7 @@ def compile_model_b_artifacts(
 ) -> CompilationResult:
     root = Path(project_root)
     output = (
-        Path(artifact_path)
-        if artifact_path
-        else root / "mappings/model_b_mapping_library_v1.json"
+        Path(artifact_path) if artifact_path else root / "mappings/model_b_mapping_library_v1.json"
     )
     report_output = (
         Path(report_path)

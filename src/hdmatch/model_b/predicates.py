@@ -7,6 +7,7 @@ from collections.abc import Mapping
 from dataclasses import dataclass
 from typing import Any
 
+from hdmatch.chart.bodygraph import Definition
 from hdmatch.model_b.artifacts import (
     SALIENCE_BY_LAYER,
     DetailedAnchor,
@@ -42,10 +43,22 @@ def extract_detailed_anchors(
     """
 
     anchors: list[DetailedAnchor] = []
+    activations = _activations(chart)
     channels = _channels(chart)
     unknown_channels = channels - set(artifact.channel_catalog)
     if unknown_channels:
         raise ValueError(f"chart has channels outside frozen catalog: {sorted(unknown_channels)}")
+    active_gates = {item.gate for item in activations}
+    mechanically_complete = {
+        channel
+        for channel in artifact.channel_catalog
+        if all(int(gate) in active_gates for gate in channel.split("-"))
+    }
+    if channels != mechanically_complete:
+        raise ValueError(
+            "chart channels are inconsistent with activation gates: "
+            f"declared={sorted(channels)}, derived={sorted(mechanically_complete)}"
+        )
     for channel in sorted(channels, key=_channel_sort_key):
         left, right = channel.split("-")
         anchors.append(
@@ -58,35 +71,72 @@ def extract_detailed_anchors(
             )
         )
 
-    activations = _activations(chart)
     by_position = {item.position: item for item in activations}
     for position in artifact.cardinal_positions:
         activation = by_position.get(position)
         if activation is None:
             raise ValueError(f"chart is missing frozen cardinal position {position}")
-        anchors.append(
-            _anchor(
-                "MBF-CARDINAL-ACTIVATION",
-                DetailedLayer.CARDINAL_ACTIVATION,
-                f"cardinal:{position}:{activation.gate}.{activation.line}",
-                {
-                    "operator": "activation_gate_line_equals",
-                    "side": activation.side,
-                    "body": activation.body,
-                    "gate": activation.gate,
-                    "line": activation.line,
-                },
-                (
-                    f"activation:{position}:gate:{activation.gate}:line:{activation.line}",
-                    f"gate:{activation.gate}",
-                    f"profile_role_line:{activation.side}:{activation.line}",
+        profile_dependency = (
+            (f"profile_role_line:{activation.side}:{activation.line}",)
+            if activation.body == "sun"
+            else ()
+        )
+        anchors.extend(
+            (
+                _anchor(
+                    "MBF-CARDINAL-ACTIVATION",
+                    DetailedLayer.CARDINAL_ACTIVATION,
+                    f"cardinal_gate:{position}:{activation.gate}",
+                    {
+                        "operator": "activation_gate_equals",
+                        "side": activation.side,
+                        "body": activation.body,
+                        "gate": activation.gate,
+                    },
+                    (
+                        f"activation:{position}:gate:{activation.gate}",
+                        f"gate:{activation.gate}",
+                    ),
+                ),
+                _anchor(
+                    "MBF-CARDINAL-ACTIVATION",
+                    DetailedLayer.CARDINAL_ACTIVATION,
+                    f"cardinal_line:{position}:{activation.line}",
+                    {
+                        "operator": "activation_line_equals",
+                        "side": activation.side,
+                        "body": activation.body,
+                        "line": activation.line,
+                    },
+                    (
+                        f"activation:{position}:line:{activation.line}",
+                        *profile_dependency,
+                    ),
+                ),
+                _anchor(
+                    "MBF-CARDINAL-ACTIVATION",
+                    DetailedLayer.CARDINAL_ACTIVATION,
+                    f"cardinal_gate_line:{position}:{activation.gate}.{activation.line}",
+                    {
+                        "operator": "activation_gate_line_equals",
+                        "side": activation.side,
+                        "body": activation.body,
+                        "gate": activation.gate,
+                        "line": activation.line,
+                    },
+                    (
+                        f"activation:{position}:gate:{activation.gate}:line:{activation.line}",
+                        f"gate:{activation.gate}",
+                        *profile_dependency,
+                    ),
                 ),
             )
         )
 
     definition = str(_read(chart, "definition") or "").strip()
-    if not definition:
-        raise ValueError("chart is missing Definition")
+    allowed_definitions = {item.value for item in Definition}
+    if definition not in allowed_definitions:
+        raise ValueError(f"chart has unknown Definition: {definition!r}")
     anchors.append(
         _anchor(
             "MBF-DEFINITION",
@@ -137,6 +187,20 @@ def matches_anchor(chart: Mapping[str, Any] | object, anchor: DetailedAnchor) ->
             and item.line == predicate["line"]
             for item in _activations(chart)
         )
+    if operator == "activation_gate_equals":
+        return any(
+            item.side == predicate["side"]
+            and item.body == predicate["body"]
+            and item.gate == predicate["gate"]
+            for item in _activations(chart)
+        )
+    if operator == "activation_line_equals":
+        return any(
+            item.side == predicate["side"]
+            and item.body == predicate["body"]
+            and item.line == predicate["line"]
+            for item in _activations(chart)
+        )
     if operator == "activation_gate_count_at_least":
         count = sum(item.gate == predicate["gate"] for item in _activations(chart))
         return count >= _predicate_int(predicate, "minimum_occurrences")
@@ -157,12 +221,11 @@ def _repeated_gate_candidates(
         _anchor(
             "MBF-REPEATED-GATE",
             DetailedLayer.REPEATED_GATE,
-            f"repeated_gate:{gate}:count:{count}",
+            f"repeated_gate:{gate}:count_at_least:{minimum}",
             {
                 "operator": "activation_gate_count_at_least",
                 "gate": gate,
                 "minimum_occurrences": minimum,
-                "observed_occurrences": count,
                 "scoring_eligibility": "unresolved",
             },
             (f"gate:{gate}", f"repeated_gate:{gate}"),
@@ -301,9 +364,7 @@ def _activations(chart: Mapping[str, Any] | object) -> tuple[_ActivationRecord, 
         line = int(_required(value, "line", key))
         if not 1 <= gate <= 64 or not 1 <= line <= 6:
             raise ValueError(f"activation {key!r} has invalid gate/line {gate}.{line}")
-        result.append(
-            _ActivationRecord(side=str(side), body=str(body), gate=gate, line=line)
-        )
+        result.append(_ActivationRecord(side=str(side), body=str(body), gate=gate, line=line))
     positions = [item.position for item in result]
     if len(positions) != len(set(positions)):
         raise ValueError("chart activation positions must be unique")

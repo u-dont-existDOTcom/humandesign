@@ -21,7 +21,7 @@ class FrozenModelB:
     behavioral mappings remain unresolved.
     """
 
-    model_id = "MODEL-B"
+    model_id = "MODEL-B-DETAILED-V1"
     detailed_scoring_status = "unresolved"
 
     def __init__(
@@ -38,10 +38,12 @@ class FrozenModelB:
         self.base_mapping_path = Path(base_mapping_path)
         base_file_hash = sha256(self.base_mapping_path.read_bytes()).hexdigest()
         if base_file_hash != self.artifact.base_mapping_sha256:
-            raise ValueError(
-                "Model A mapping hash does not match the dependency frozen by Model B"
-            )
+            raise ValueError("Model A mapping hash does not match the dependency frozen by Model B")
         self.base_library: MappingLibrary = load_mapping_library(self.base_mapping_path)
+        if self.base_library.question_bank_sha256 != self.artifact.question_bank_sha256:
+            raise ValueError(
+                "Model A question-bank hash does not match the dependency frozen by Model B"
+            )
         self._artifact_file_sha256 = sha256(self.artifact_path.read_bytes()).hexdigest()
 
     @property
@@ -76,9 +78,7 @@ class FrozenModelB:
         question_clusters: dict[str, set[str]] = {}
         for mapping in self.base_library.frozen_mappings:
             for question_id in mapping.question_ids:
-                question_clusters.setdefault(question_id, set()).add(
-                    mapping.dependency_cluster
-                )
+                question_clusters.setdefault(question_id, set()).add(mapping.dependency_cluster)
         return tuple(
             BehavioralResponse(
                 question_id=question_id,
