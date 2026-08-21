@@ -16,6 +16,7 @@ from hdmatch.experiments.canonical import load_json_bytes, sha256_file
 from hdmatch.model.mapping_library import MappingStatus
 from hdmatch.schemas import BehavioralResponse, BlindCase, CandidateState, ScoredState
 from hdmatch.search import AggregationMode, aggregate_dates, select_next_question
+from hdmatch.synthetic.noise import NoiseTier, noise_parameters_payload
 
 from .chart_adapter import ExactChartAdapter
 from .symbolic_adapter import RuntimeSymbolicModel, candidate_prevalence
@@ -280,6 +281,12 @@ def recover_blind_file(
     blind_hash = sha256_file(blind_path)
     predictions: list[dict[str, Any]] = []
     noise_tier = str(raw.get("noise_tier"))
+    try:
+        declared_noise = noise_parameters_payload(NoiseTier(noise_tier))
+    except ValueError as exc:
+        raise ValueError(f"unsupported blind noise tier: {noise_tier}") from exc
+    if raw.get("noise_parameters", declared_noise) != declared_noise:
+        raise ValueError("blind noise parameters do not match the frozen simulator")
     for case, request in zip(cases, requests, strict=True):
         states = universes[request]
         if case.candidate_universe == "known_date":

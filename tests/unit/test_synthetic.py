@@ -2,7 +2,12 @@ from datetime import UTC, datetime, timedelta
 
 from hdmatch.config import SyntheticConfig
 from hdmatch.schemas import Activation, BehavioralResponse, ChartFeatures
-from hdmatch.synthetic import NoiseTier, SyntheticGenerator, apply_noise
+from hdmatch.synthetic import (
+    NoiseTier,
+    SyntheticGenerator,
+    apply_noise,
+    noise_parameters_payload,
+)
 
 
 class FakeChartCalculator:
@@ -72,3 +77,4 @@ def test_generator_is_reproducible_and_blind() -> None:
     assert "true_local_date" not in encoded
     assert "generation_seed" not in encoded
     assert all("known_birth_day" not in case for case in first.blind_document["cases"])
+    assert first.blind_document["noise_parameters"] == noise_parameters_payload(NoiseTier.ORACLE)

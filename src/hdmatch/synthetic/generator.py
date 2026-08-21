@@ -12,7 +12,7 @@ from pydantic import BaseModel, ConfigDict, Field
 
 from hdmatch.config import SyntheticConfig
 from hdmatch.schemas import BehavioralResponse, BlindCase, ChartFeatures
-from hdmatch.synthetic.noise import NoiseTier, apply_noise
+from hdmatch.synthetic.noise import NoiseTier, apply_noise, noise_parameters_payload
 from hdmatch.util import canonical_json_bytes, sha256_bytes, sha256_json
 
 
@@ -124,6 +124,7 @@ class SyntheticGenerator:
             "mapping_sha256": self.response_model.mapping_sha256,
             "model_capabilities": dict(self.response_model.capability_metadata),
             "noise_tier": tier.value,
+            "noise_parameters": noise_parameters_payload(tier),
             "candidate_universe": config.universe,
             "cases": cases,
         }
