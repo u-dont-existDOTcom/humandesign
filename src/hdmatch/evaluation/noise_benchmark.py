@@ -69,6 +69,7 @@ class NoiseRunMetadata(BaseModel):
     case_set_sha256: str = Field(pattern=SHA256_PATTERN)
     declared_case_count: int = Field(ge=1)
     aggregation_rule: str = Field(min_length=1)
+    recovery_config_sha256: str = Field(pattern=SHA256_PATTERN)
     case_count_policy: Literal[
         "fixed-declared-case-set-unevaluable-zero-credit"
     ] = "fixed-declared-case-set-unevaluable-zero-credit"
@@ -228,6 +229,7 @@ def compare_revealed_noise_tiers(
         "case_set_sha256",
         "declared_case_count",
         "aggregation_rule",
+        "recovery_config_sha256",
         "case_count_policy",
     )
     for item in ordered[1:]:

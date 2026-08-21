@@ -24,9 +24,15 @@ from hdmatch.evaluation.robustness import (
     aggregate_robustness,
     paired_changes_from_baseline,
 )
-from hdmatch.experiments.canonical import sha256_bytes, sha256_file, write_new_canonical_json
+from hdmatch.experiments.canonical import (
+    sha256_bytes,
+    sha256_file,
+    sha256_json,
+    write_new_canonical_json,
+)
 from hdmatch.experiments.freeze import ArtifactBindings, freeze_predictions
 from hdmatch.experiments.reveal import RevealRecord
+from hdmatch.synthetic.sealing import SealingMetadata, generate_key_file, seal_answer_key
 
 
 def _digest(label: str) -> str:
@@ -271,18 +277,39 @@ def _frozen_run(tmp_path: Path, predictions: dict[str, object]) -> Path:
     run_dir = tmp_path / "run"
     run_dir.mkdir(parents=True)
     write_new_canonical_json(run_dir / "predictions.json", predictions)
+    manifest_path = run_dir / "run.manifest.json"
+    write_new_canonical_json(manifest_path, {"schema_version": "test-run-manifest-v1"})
     freeze = freeze_predictions(
         run_dir,
         experiment_id="EXP-1",
         bindings=_bindings(),
         repository_root=Path(__file__).parents[2],
+        run_manifest_path=manifest_path,
         created_at_utc=datetime(2026, 8, 21, tzinfo=UTC),
+    )
+    key_path = tmp_path / "evaluation.key"
+    envelope_path = run_dir / "answer_key.json.enc"
+    generate_key_file(key_path, decoder_root=run_dir)
+    seal_answer_key(
+        _answer_key(),
+        encrypted_path=envelope_path,
+        key_path=key_path,
+        metadata=SealingMetadata(
+            experiment_id=freeze.experiment_id,
+            blind_input_sha256=freeze.blind_input_sha256,
+            model_sha256=freeze.model_sha256,
+            question_bank_sha256=freeze.question_bank_sha256,
+            mapping_sha256=freeze.mapping_sha256,
+        ),
+        decoder_root=run_dir,
     )
     reveal = RevealRecord(
         experiment_id="EXP-1",
         prediction_sha256=freeze.prediction_sha256,
         freeze_record_sha256=sha256_file(run_dir / "prediction.freeze.json"),
-        encrypted_answer_key_sha256=_digest("encrypted-key"),
+        encrypted_answer_key_sha256=sha256_file(envelope_path),
+        encrypted_answer_key_file="answer_key.json.enc",
+        answer_key_payload_sha256=sha256_json(_answer_key()),
         revealed_at_utc=datetime(2026, 8, 21, tzinfo=UTC),
     )
     write_new_canonical_json(run_dir / "answer-key.reveal.json", reveal)
@@ -360,15 +387,59 @@ def test_evaluator_refuses_duplicate_cases_and_binding_mismatch(tmp_path: Path) 
         evaluate_frozen_run(run_dir, answer_key=_answer_key())
 
 
+def test_evaluator_refuses_in_memory_key_not_bound_by_reveal(tmp_path: Path) -> None:
+    run_dir = _frozen_run(tmp_path, _predictions())
+    changed_key = _answer_key()
+    assert isinstance(changed_key["cases"], list)
+    changed_key["cases"][0]["true_local_date"] = "2000-01-03"
+
+    with pytest.raises(EvaluationInputError, match="does not match the reveal binding"):
+        evaluate_frozen_run(run_dir, answer_key=changed_key)
+
+
+def test_evaluator_refuses_envelope_tampered_after_reveal(tmp_path: Path) -> None:
+    run_dir = _frozen_run(tmp_path, _predictions())
+    envelope_path = run_dir / "answer_key.json.enc"
+    envelope_path.write_bytes(envelope_path.read_bytes() + b"\n")
+
+    with pytest.raises(Exception, match="envelope bytes changed"):
+        evaluate_frozen_run(run_dir, answer_key=_answer_key())
+
+
+def test_evaluator_refuses_run_manifest_tampered_after_freeze(tmp_path: Path) -> None:
+    run_dir = _frozen_run(tmp_path, _predictions())
+    manifest_path = run_dir / "run.manifest.json"
+    manifest_path.write_bytes(manifest_path.read_bytes() + b"\n")
+
+    with pytest.raises(Exception, match="run-manifest bytes changed"):
+        evaluate_frozen_run(run_dir, answer_key=_answer_key())
+
+
+def test_evaluator_preserves_but_will_not_reuse_legacy_incomplete_reveal(tmp_path: Path) -> None:
+    run_dir = _frozen_run(tmp_path, _predictions())
+    reveal_path = run_dir / "answer-key.reveal.json"
+    raw = json.loads(reveal_path.read_bytes())
+    del raw["encrypted_answer_key_file"]
+    del raw["answer_key_payload_sha256"]
+    reveal_path.unlink()
+    write_new_canonical_json(reveal_path, raw)
+
+    with pytest.raises(Exception, match="lacks complete envelope"):
+        evaluate_frozen_run(run_dir, answer_key=_answer_key())
+
+
 def test_evaluator_refuses_before_reveal_record_exists(tmp_path: Path) -> None:
     run_dir = tmp_path / "run"
     run_dir.mkdir()
     write_new_canonical_json(run_dir / "predictions.json", _predictions())
+    manifest_path = run_dir / "run.manifest.json"
+    write_new_canonical_json(manifest_path, {"schema_version": "test-run-manifest-v1"})
     freeze_predictions(
         run_dir,
         experiment_id="EXP-1",
         bindings=_bindings(),
         repository_root=Path(__file__).parents[2],
+        run_manifest_path=manifest_path,
     )
     with pytest.raises(Exception, match="reveal"):
         evaluate_frozen_run(run_dir, answer_key=_answer_key())

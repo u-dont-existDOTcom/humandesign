@@ -1,7 +1,7 @@
 """Post-reveal artifact loading for the synthetic noise-tier comparator.
 
-Only canonical public blind inputs, public run manifests, and completed evaluation
-reports are read.  This module has no answer-key, recovery, or reveal interface.
+The complete public provenance chain is verified without decrypting answer-key
+material.  This module has no external key, recovery, or answer-key interface.
 """
 
 from __future__ import annotations
@@ -28,7 +28,14 @@ from hdmatch.experiments.canonical import (
     sha256_json,
     write_new_canonical_json,
 )
+from hdmatch.experiments.freeze import (
+    ArtifactBindings,
+    FreezeRecord,
+    FreezeVerificationError,
+    verify_frozen_predictions,
+)
 from hdmatch.experiments.manifest import RunManifest, load_run_manifest
+from hdmatch.experiments.reveal import RevealRecord, verify_reveal_record
 from hdmatch.synthetic.noise import (
     NoiseTier as GeneratorNoiseTier,
 )
@@ -182,6 +189,97 @@ def _validate_cross_artifact_bindings(
         raise NoiseBenchmarkInputError("evaluation case identities differ from blind input")
 
 
+def _verify_public_provenance_chain(
+    *,
+    directory: Path,
+    blind: Mapping[str, Any],
+    blind_sha256: str,
+    manifest: RunManifest,
+    evaluation: EvaluationReport,
+) -> tuple[FreezeRecord, RevealRecord]:
+    freeze_path = directory / "prediction.freeze.json"
+    reveal_path = directory / "answer-key.reveal.json"
+    expected_bindings = ArtifactBindings(
+        blind_input_sha256=blind_sha256,
+        model_sha256=str(blind.get("model_sha256", "")),
+        question_bank_sha256=str(blind.get("question_bank_sha256", "")),
+        mapping_sha256=str(blind.get("mapping_sha256", "")),
+    )
+    try:
+        freeze = verify_frozen_predictions(
+            directory,
+            freeze_path=freeze_path,
+            expected_bindings=expected_bindings,
+            expected_experiment_id=str(blind.get("experiment_id", "")),
+            run_manifest_path=directory / "run.manifest.json",
+            require_run_manifest=True,
+        )
+        reveal = verify_reveal_record(
+            directory,
+            freeze=freeze,
+            freeze_path=freeze_path,
+            reveal_record_path=reveal_path,
+            require_complete_binding=True,
+        )
+    except (ValueError, FreezeVerificationError) as exc:
+        raise NoiseBenchmarkInputError("invalid frozen prediction/reveal provenance chain") from exc
+
+    prediction_path = directory / freeze.prediction_file
+    try:
+        predictions = load_json_bytes(prediction_path, require_canonical=True)
+    except (OSError, ValueError) as exc:
+        raise NoiseBenchmarkInputError("frozen predictions are not canonical JSON") from exc
+    if not isinstance(predictions, dict) or predictions.get("schema_version") != "predictions-v1":
+        raise NoiseBenchmarkInputError("frozen predictions use an unsupported schema")
+    for field, expected in {
+        "experiment_id": freeze.experiment_id,
+        "model_id": manifest.model_id,
+        "blind_input_sha256": freeze.blind_input_sha256,
+        "model_sha256": freeze.model_sha256,
+        "question_bank_sha256": freeze.question_bank_sha256,
+        "mapping_sha256": freeze.mapping_sha256,
+        "aggregation_rule": manifest.aggregation_rule,
+    }.items():
+        if predictions.get(field) != expected:
+            raise NoiseBenchmarkInputError(f"frozen predictions {field} binding differs")
+
+    manifest_sha256 = sha256_file(directory / "run.manifest.json")
+    if freeze.run_manifest_sha256 is None:
+        raise NoiseBenchmarkInputError("prediction freeze lacks a run-manifest binding")
+    if freeze.run_manifest_sha256 != manifest_sha256:
+        raise NoiseBenchmarkInputError("prediction freeze does not bind the run manifest")
+    if freeze.software_commit != manifest.software_commit or freeze.software_dirty:
+        raise NoiseBenchmarkInputError(
+            "prediction freeze software state differs from clean manifest"
+        )
+    expected_freeze_versions = manifest.software_environment.packages | {
+        "python": manifest.software_environment.python_version
+    }
+    if freeze.software_versions != expected_freeze_versions:
+        raise NoiseBenchmarkInputError(
+            "prediction freeze environment differs from the recovery manifest"
+        )
+    if manifest.created_at_utc > freeze.created_at_utc:
+        raise NoiseBenchmarkInputError("prediction freeze predates its run manifest")
+    if reveal.revealed_at_utc > evaluation.created_at_utc:
+        raise NoiseBenchmarkInputError("evaluation timestamp predates answer-key reveal")
+
+    expected_report_hashes: dict[str, str | None] = {
+        "prediction_sha256": freeze.prediction_sha256,
+        "freeze_sha256": sha256_file(freeze_path),
+        "reveal_sha256": sha256_file(reveal_path),
+        "encrypted_answer_key_file": reveal.encrypted_answer_key_file,
+        "encrypted_answer_key_sha256": reveal.encrypted_answer_key_sha256,
+        "answer_key_payload_sha256": reveal.answer_key_payload_sha256,
+    }
+    for field, report_expected in expected_report_hashes.items():
+        if getattr(evaluation, field) != report_expected:
+            raise NoiseBenchmarkInputError(
+                f"evaluation {field} does not match the verified provenance chain"
+            )
+    return freeze, reveal
+
+
 def load_revealed_noise_tier_run(
     run_dir: str | Path, *, expected_tier: NoiseTier
 ) -> RevealedNoiseTierEvaluation:
@@ -207,6 +305,13 @@ def load_revealed_noise_tier_run(
         manifest=manifest,
         evaluation=evaluation,
     )
+    _verify_public_provenance_chain(
+        directory=directory,
+        blind=blind,
+        blind_sha256=blind_sha256,
+        manifest=manifest,
+        evaluation=evaluation,
+    )
     noise = _noise_settings_from_frozen_payload(expected_tier, blind.get("noise_parameters"))
     revealed_target_set_sha256 = evaluation.revealed_target_set_sha256
     if revealed_target_set_sha256 is None:
@@ -228,6 +333,7 @@ def load_revealed_noise_tier_run(
         case_set_sha256=revealed_target_set_sha256,
         declared_case_count=evaluation.aggregate.case_count,
         aggregation_rule=manifest.aggregation_rule,
+        recovery_config_sha256=manifest.config_sha256,
         run_manifest_sha256=sha256_file(manifest_path),
         evaluation_sha256=sha256_file(evaluation_path),
         noise=noise,

@@ -6,9 +6,16 @@ from pathlib import Path
 
 import pytest
 
-from hdmatch.experiments.canonical import sha256_bytes, write_new_canonical_json
+from hdmatch.experiments.canonical import (
+    canonical_json_bytes,
+    sha256_bytes,
+    sha256_file,
+    write_new_canonical_json,
+)
 from hdmatch.experiments.freeze import ArtifactBindings, freeze_predictions
 from hdmatch.experiments.reveal import reveal_answer_key
+from hdmatch.runtime.recovery import RecoverySettings, recover_blind_file
+from hdmatch.search import AggregationMode
 from hdmatch.synthetic.sealing import (
     AnswerKeySealingError,
     SealingMetadata,
@@ -45,6 +52,12 @@ def _answer_key() -> dict[str, object]:
         "blind_input_sha256": _digest("blind"),
         "cases": [{"case_id": "C1", "true_local_date": "2000-01-02"}],
     }
+
+
+def _write_test_manifest(run_dir: Path) -> Path:
+    path = run_dir / "run.manifest.json"
+    write_new_canonical_json(path, {"schema_version": "test-run-manifest-v1"})
+    return path
 
 
 def test_aes_gcm_round_trip_authenticates_metadata_and_external_key(tmp_path: Path) -> None:
@@ -172,12 +185,85 @@ def test_plaintext_and_key_paths_under_decoder_root_are_refused(tmp_path: Path) 
         )
 
 
+@pytest.mark.parametrize("filename", ["RENAMED.JSON", "opaque-payload.dat"])
+def test_plaintext_preflight_detects_answer_key_schema_regardless_of_name_or_extension(
+    tmp_path: Path,
+    filename: str,
+) -> None:
+    project = tmp_path / "decoder"
+    project.mkdir()
+    write_new_canonical_json(project / filename, _answer_key())
+
+    with pytest.raises(AnswerKeySealingError, match="plaintext answer key file"):
+        assert_no_plaintext_answer_keys(project)
+
+
+def test_plaintext_preflight_detects_obvious_key_name_and_skips_safe_areas(
+    tmp_path: Path,
+) -> None:
+    project = tmp_path / "decoder"
+    project.mkdir()
+    (project / "ANSWER_KEY.backup").write_text("case_id,true_utc\nC1,secret\n", encoding="utf-8")
+
+    with pytest.raises(AnswerKeySealingError, match="plaintext answer key file"):
+        assert_no_plaintext_answer_keys(project)
+
+    (project / "ANSWER_KEY.backup").unlink()
+    for skipped in (".git", ".venv", "candidate_cache", "build"):
+        directory = project / skipped
+        directory.mkdir()
+        write_new_canonical_json(directory / "HIDDEN.JSON", _answer_key())
+    assert_no_plaintext_answer_keys(project)
+
+
+def test_plaintext_preflight_allows_encrypted_envelope_and_reveal_record(
+    tmp_path: Path,
+) -> None:
+    project = tmp_path / "decoder"
+    project.mkdir()
+    key_path = tmp_path / "secret.key"
+    encrypted = project / "answer-key.json.enc"
+    generate_key_file(key_path, decoder_root=project)
+    seal_answer_key(
+        _answer_key(),
+        encrypted_path=encrypted,
+        key_path=key_path,
+        metadata=_metadata(),
+        decoder_root=project,
+    )
+    write_new_canonical_json(
+        project / "answer-key.reveal.json",
+        {"schema_version": "answer-key-reveal-v1", "answer_key_revealed": True},
+    )
+
+    assert_no_plaintext_answer_keys(project)
+
+
+def test_recovery_plaintext_preflight_runs_before_blind_input_or_scoring(tmp_path: Path) -> None:
+    project = tmp_path / "decoder"
+    project.mkdir()
+    write_new_canonical_json(project / "answer-key.json", _answer_key())
+
+    with pytest.raises(AnswerKeySealingError, match="plaintext answer key file"):
+        recover_blind_file(
+            project / "missing-blind.json",
+            decoder_root=project,
+            model=None,  # type: ignore[arg-type]
+            ephemeris_path=project / "missing-ephemeris",
+            cache_dir=project / "cache",
+            settings=RecoverySettings(
+                aggregation=AggregationMode.DURATION_WEIGHTED_EVIDENCE,
+                threshold_rubric_bits=0.0,
+            ),
+        )
+
+
 def test_reveal_requires_valid_unchanged_freeze_and_matching_envelope(tmp_path: Path) -> None:
     project = tmp_path / "decoder"
     run_dir = project / "run"
     run_dir.mkdir(parents=True)
     key_path = tmp_path / "evaluator.key"
-    encrypted = tmp_path / "answer-key.json.enc"
+    encrypted = run_dir / "answer-key.json.enc"
     generate_key_file(key_path, decoder_root=project)
     seal_answer_key(
         _answer_key(),
@@ -196,11 +282,13 @@ def test_reveal_requires_valid_unchanged_freeze_and_matching_envelope(tmp_path: 
             decoder_root=project,
         )
 
+    manifest_path = _write_test_manifest(run_dir)
     freeze_predictions(
         run_dir,
         experiment_id="EXP-1",
         bindings=_bindings(),
         repository_root=Path(__file__).parents[2],
+        run_manifest_path=manifest_path,
         created_at_utc=datetime(2026, 8, 21, tzinfo=UTC),
     )
     result = reveal_answer_key(
@@ -214,7 +302,21 @@ def test_reveal_requires_valid_unchanged_freeze_and_matching_envelope(tmp_path: 
     assert "true_local_date" not in repr(result)
     assert "answer_key" not in result.model_dump()
     assert result.record.answer_key_revealed is True
+    assert result.record.encrypted_answer_key_file == "answer-key.json.enc"
+    assert result.record.encrypted_answer_key_sha256 == sha256_file(encrypted)
+    assert result.record.answer_key_payload_sha256 == sha256_bytes(
+        canonical_json_bytes(_answer_key())
+    )
     assert not (run_dir / "answer-key.json").exists()
+
+    manifest_path.write_bytes(manifest_path.read_bytes() + b"\n")
+    with pytest.raises(Exception, match="run-manifest bytes changed"):
+        reveal_answer_key(
+            run_dir,
+            encrypted_answer_key_path=encrypted,
+            key_path=key_path,
+            decoder_root=project,
+        )
 
 
 def test_reveal_refuses_changed_prediction_bytes(tmp_path: Path) -> None:
@@ -222,7 +324,7 @@ def test_reveal_refuses_changed_prediction_bytes(tmp_path: Path) -> None:
     run_dir = project / "run"
     run_dir.mkdir(parents=True)
     key_path = tmp_path / "evaluator.key"
-    encrypted = tmp_path / "answer-key.json.enc"
+    encrypted = run_dir / "answer-key.json.enc"
     generate_key_file(key_path, decoder_root=project)
     seal_answer_key(
         _answer_key(),
@@ -233,11 +335,13 @@ def test_reveal_refuses_changed_prediction_bytes(tmp_path: Path) -> None:
     )
     predictions = run_dir / "predictions.json"
     predictions.write_bytes(b"{}")
+    manifest_path = _write_test_manifest(run_dir)
     freeze_predictions(
         run_dir,
         experiment_id="EXP-1",
         bindings=_bindings(),
         repository_root=Path(__file__).parents[2],
+        run_manifest_path=manifest_path,
     )
     predictions.write_bytes(b'{"changed":true}')
     with pytest.raises(Exception, match="frozen prediction"):

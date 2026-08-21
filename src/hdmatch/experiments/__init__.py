@@ -9,7 +9,13 @@ from .freeze import (
     load_freeze_record,
     verify_frozen_predictions,
 )
-from .manifest import RunManifest, create_run_manifest, load_run_manifest, write_run_manifest
+from .manifest import (
+    RunManifest,
+    create_run_manifest,
+    load_run_manifest,
+    verify_run_manifest_resume,
+    write_run_manifest,
+)
 
 __all__ = [
     "ArtifactBindings",
@@ -25,5 +31,6 @@ __all__ = [
     "sha256_file",
     "sha256_json",
     "verify_frozen_predictions",
+    "verify_run_manifest_resume",
     "write_run_manifest",
 ]

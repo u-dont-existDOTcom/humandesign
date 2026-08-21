@@ -10,9 +10,15 @@ from datetime import UTC, date, datetime, timedelta
 from pathlib import Path
 from typing import Any, Literal, cast
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator
+from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
-from hdmatch.experiments.canonical import load_json_bytes, sha256_file, write_new_canonical_json
+from hdmatch.experiments.canonical import (
+    canonical_json_bytes,
+    load_json_bytes,
+    sha256_bytes,
+    sha256_file,
+    write_new_canonical_json,
+)
 from hdmatch.experiments.freeze import FreezeRecord, verify_frozen_predictions
 from hdmatch.experiments.manifest import SHA256_PATTERN
 from hdmatch.experiments.reveal import verify_reveal_record
@@ -102,6 +108,9 @@ class EvaluationReport(BaseModel):
     prediction_sha256: str = Field(pattern=SHA256_PATTERN)
     freeze_sha256: str = Field(pattern=SHA256_PATTERN)
     reveal_sha256: str = Field(pattern=SHA256_PATTERN)
+    encrypted_answer_key_file: str | None = None
+    encrypted_answer_key_sha256: str | None = Field(default=None, pattern=SHA256_PATTERN)
+    answer_key_payload_sha256: str | None = Field(default=None, pattern=SHA256_PATTERN)
     blind_input_sha256: str = Field(pattern=SHA256_PATTERN)
     model_sha256: str = Field(pattern=SHA256_PATTERN)
     question_bank_sha256: str = Field(pattern=SHA256_PATTERN)
@@ -133,6 +142,29 @@ class EvaluationReport(BaseModel):
         if value.tzinfo is None or value.utcoffset() is None:
             raise ValueError("evaluation timestamp must be timezone-aware")
         return value.astimezone(UTC)
+
+    @field_validator("encrypted_answer_key_file")
+    @classmethod
+    def require_safe_envelope_path(cls, value: str | None) -> str | None:
+        if value is None:
+            return None
+        path = Path(value)
+        if path.is_absolute() or ".." in path.parts or value in {"", "."}:
+            raise ValueError("encrypted_answer_key_file must be a safe run-relative path")
+        return path.as_posix()
+
+    @model_validator(mode="after")
+    def require_complete_reveal_provenance(self) -> EvaluationReport:
+        fields = (
+            self.encrypted_answer_key_file,
+            self.encrypted_answer_key_sha256,
+            self.answer_key_payload_sha256,
+        )
+        if any(item is not None for item in fields) and not all(
+            item is not None for item in fields
+        ):
+            raise ValueError("evaluation reveal provenance must be complete or legacy-absent")
+        return self
 
 
 def _unique_cases(payload: dict[str, Any], label: str) -> dict[str, dict[str, Any]]:
@@ -567,6 +599,9 @@ def evaluate_frozen_payloads(
     freeze: FreezeRecord,
     freeze_sha256: str,
     reveal_sha256: str,
+    encrypted_answer_key_file: str,
+    encrypted_answer_key_sha256: str,
+    answer_key_payload_sha256: str,
     created_at_utc: datetime | None = None,
 ) -> EvaluationReport:
     """Evaluate exact documented payload shapes after a caller verifies frozen bytes."""
@@ -574,6 +609,8 @@ def evaluate_frozen_payloads(
     leakage_report = scan_prediction_payload(predictions)
     if not leakage_report.passed:
         raise EvaluationInputError("predictions contain concealed-target leakage")
+    if sha256_bytes(canonical_json_bytes(answer_key)) != answer_key_payload_sha256:
+        raise EvaluationInputError("answer key does not match its declared reveal binding")
     _validate_cross_file_bindings(predictions, answer_key, freeze)
     predicted_cases = _unique_cases(predictions, "predictions")
     keyed_cases = _unique_cases(answer_key, "answer key")
@@ -914,6 +951,9 @@ def evaluate_frozen_payloads(
         prediction_sha256=freeze.prediction_sha256,
         freeze_sha256=freeze_sha256,
         reveal_sha256=reveal_sha256,
+        encrypted_answer_key_file=encrypted_answer_key_file,
+        encrypted_answer_key_sha256=encrypted_answer_key_sha256,
+        answer_key_payload_sha256=answer_key_payload_sha256,
         blind_input_sha256=freeze.blind_input_sha256,
         model_sha256=freeze.model_sha256,
         question_bank_sha256=freeze.question_bank_sha256,
@@ -945,7 +985,11 @@ def evaluate_frozen_run(
     resolved_freeze = (
         Path(freeze_path) if freeze_path is not None else directory / "prediction.freeze.json"
     )
-    freeze = verify_frozen_predictions(directory, freeze_path=resolved_freeze)
+    freeze = verify_frozen_predictions(
+        directory,
+        freeze_path=resolved_freeze,
+        require_run_manifest=True,
+    )
     resolved_reveal = (
         Path(reveal_record_path)
         if reveal_record_path is not None
@@ -956,7 +1000,16 @@ def evaluate_frozen_run(
         freeze=freeze,
         freeze_path=resolved_freeze,
         reveal_record_path=resolved_reveal,
+        require_complete_binding=True,
     )
+    envelope_file = reveal.encrypted_answer_key_file
+    envelope_sha256 = reveal.encrypted_answer_key_sha256
+    answer_key_sha256 = reveal.answer_key_payload_sha256
+    if envelope_file is None or envelope_sha256 is None or answer_key_sha256 is None:
+        raise EvaluationInputError("reveal record lacks complete answer-key bindings")
+    supplied_answer_key_sha256 = sha256_bytes(canonical_json_bytes(answer_key))
+    if supplied_answer_key_sha256 != answer_key_sha256:
+        raise EvaluationInputError("supplied answer key does not match the reveal binding")
     predictions_path = directory / freeze.prediction_file
     try:
         predictions = load_json_bytes(predictions_path)
@@ -970,6 +1023,9 @@ def evaluate_frozen_run(
         freeze=freeze,
         freeze_sha256=sha256_file(resolved_freeze),
         reveal_sha256=sha256_file(resolved_reveal),
+        encrypted_answer_key_file=envelope_file,
+        encrypted_answer_key_sha256=envelope_sha256,
+        answer_key_payload_sha256=answer_key_sha256,
         created_at_utc=created_at_utc,
     )
     if report.created_at_utc < reveal.revealed_at_utc:
