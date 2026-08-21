@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib
 import os
 import sys
+from dataclasses import replace
 from pathlib import Path
 
 import pytest
@@ -147,6 +148,25 @@ def test_wrapper_fails_closed_before_creating_output_without_isolation_runtime(
 
     with pytest.raises(IsolationRuntimeUnavailable, match="Bubblewrap"):
         run_claim_grade_recovery(request, repository_root=ROOT)
+    assert not request.output_dir.exists()
+
+
+def test_wrapper_rejects_child_environment_that_differs_from_manifest_runtime(
+    tmp_path: Path,
+) -> None:
+    request, _ = _public_request(tmp_path)
+    request.output_dir.rmdir()
+    different_environment = tmp_path / "different-python-environment"
+    different_environment.mkdir()
+
+    with pytest.raises(
+        RuntimeError,
+        match="child Python environment must equal the wrapper environment",
+    ):
+        run_claim_grade_recovery(
+            replace(request, python_environment=different_environment),
+            repository_root=ROOT,
+        )
     assert not request.output_dir.exists()
 
 

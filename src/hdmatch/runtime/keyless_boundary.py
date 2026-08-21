@@ -131,6 +131,16 @@ def _runtime_python(python_environment: Path) -> str:
     return sandbox_executable
 
 
+def _require_current_python_environment(python_environment: Path) -> Path:
+    requested = python_environment.expanduser().resolve(strict=True)
+    current = Path(sys.prefix).resolve(strict=True)
+    if requested != current:
+        raise KeylessIsolationError(
+            "the mounted child Python environment must equal the wrapper environment"
+        )
+    return requested
+
+
 def _bwrap_base(bwrap: str) -> list[str]:
     command = [
         bwrap,
@@ -504,6 +514,7 @@ def run_claim_grade_recovery(
 ) -> Path:
     """Run exact recovery with evaluator-secret mounts structurally absent."""
 
+    _require_current_python_environment(request.python_environment)
     bwrap = _require_bubblewrap()
     provenance = _source_provenance(repository_root)
     output = _prepare_output(request.output_dir)

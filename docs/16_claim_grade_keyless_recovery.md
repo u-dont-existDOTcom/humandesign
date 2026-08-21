@@ -61,8 +61,9 @@ For Model B, select its exact frozen identity and artifact:
 The wrapper deliberately has no key, encrypted-envelope, decrypt, truth, evaluation,
 or reveal argument. If Bubblewrap is absent or cannot create every namespace, the
 wrapper exits before creating the output directory. It also refuses a dirty checkout,
-a nonempty output directory, a question-bank mismatch, missing public inputs, or
-recognizable plaintext key material in a decoder-visible public/run/cache path.
+a nonempty output directory, a question-bank mismatch, missing public inputs, a child
+Python environment different from the wrapper environment recorded in the manifest,
+or recognizable plaintext key material in a decoder-visible public/run/cache path.
 
 ## Enforced Bubblewrap contract
 
