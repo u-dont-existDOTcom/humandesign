@@ -305,6 +305,8 @@ def test_frozen_run_evaluator_preserves_search_failure_and_transparent_metadata(
     assert set(report.failure_counts) == {item.value for item in FailureClassification}
     assert report.claim_boundary == "synthetic-engineering-validation-only"
     assert report.score_semantics == "rubric-bits-not-probabilities"
+    assert report.evaluation_target == "local_date"
+    assert report.revealed_target_set_sha256 is None
     assert report.restoration_curves
     zero_active = next(
         point
