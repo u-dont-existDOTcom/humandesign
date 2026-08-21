@@ -59,6 +59,7 @@ from hdmatch.search import AggregationMode
 from hdmatch.synthetic import SyntheticGenerator, generate_key_file, seal_answer_key
 from hdmatch.synthetic.sealing import (
     SealingMetadata,
+    assert_no_plaintext_answer_keys_in_paths,
     require_external_path,
 )
 
@@ -186,6 +187,12 @@ def _command_recover(args: argparse.Namespace) -> int:
     manifest_path = run_dir / "run.manifest.json"
     if predictions_path.exists():
         raise FileExistsError(f"refusing to replace frozen-intent artifact: {predictions_path}")
+    visible_paths: list[str | Path] = [ROOT, run_dir, blind_path, args.mapping]
+    if args.cache_dir:
+        visible_paths.append(args.cache_dir)
+    if str(args.model) == MODEL_B_ID:
+        visible_paths.append(args.model_b_artifact)
+    assert_no_plaintext_answer_keys_in_paths(visible_paths)
     blind = load_json_bytes(blind_path, require_canonical=True)
     if not isinstance(blind, dict):
         raise ValueError("blind file must contain an object")

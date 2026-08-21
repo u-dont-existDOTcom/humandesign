@@ -198,7 +198,7 @@ def test_plaintext_preflight_detects_answer_key_schema_regardless_of_name_or_ext
         assert_no_plaintext_answer_keys(project)
 
 
-def test_plaintext_preflight_detects_obvious_key_name_and_skips_safe_areas(
+def test_plaintext_preflight_detects_obvious_key_name_and_skips_tool_metadata(
     tmp_path: Path,
 ) -> None:
     project = tmp_path / "decoder"
@@ -209,11 +209,78 @@ def test_plaintext_preflight_detects_obvious_key_name_and_skips_safe_areas(
         assert_no_plaintext_answer_keys(project)
 
     (project / "ANSWER_KEY.backup").unlink()
-    for skipped in (".git", ".venv", "candidate_cache", "build"):
+    for skipped in (".git", ".venv", ".pytest_cache", "node_modules"):
         directory = project / skipped
         directory.mkdir()
         write_new_canonical_json(directory / "HIDDEN.JSON", _answer_key())
     assert_no_plaintext_answer_keys(project)
+
+
+@pytest.mark.parametrize(
+    "directory_name",
+    ("candidate_cache", "cache", "build", "dist", ".cache"),
+)
+def test_plaintext_preflight_scans_decoder_controlled_cache_and_build_trees(
+    tmp_path: Path,
+    directory_name: str,
+) -> None:
+    project = tmp_path / "decoder"
+    directory = project / directory_name
+    directory.mkdir(parents=True)
+    write_new_canonical_json(directory / "innocuous.payload", _answer_key())
+
+    with pytest.raises(AnswerKeySealingError, match="plaintext answer key file"):
+        assert_no_plaintext_answer_keys(project)
+
+
+def test_plaintext_preflight_detects_nested_human_key_and_tabular_truth_in_bin_file(
+    tmp_path: Path,
+) -> None:
+    project = tmp_path / "decoder"
+    project.mkdir()
+    human_key = {
+        "archive": {
+            "cohort": "validation",
+            "protocol_sha256": "a" * 64,
+            "blind_input_sha256": "b" * 64,
+            "true_candidate_ids": {"P-1": "candidate-7"},
+        }
+    }
+    write_new_canonical_json(project / "ordinary.data", human_key)
+
+    with pytest.raises(AnswerKeySealingError, match="plaintext answer key file"):
+        assert_no_plaintext_answer_keys(project)
+
+    (project / "ordinary.data").unlink()
+    (project / "opaque.bin").write_text(
+        "case_id,true_utc\nC1,2000-01-01T00:00:00Z\n",
+        encoding="utf-8",
+    )
+    with pytest.raises(AnswerKeySealingError, match="plaintext answer key file"):
+        assert_no_plaintext_answer_keys(project)
+
+
+def test_recovery_preflight_scans_candidate_cache_before_blind_input(
+    tmp_path: Path,
+) -> None:
+    project = tmp_path / "decoder"
+    cache = tmp_path / "public-cache"
+    project.mkdir()
+    cache.mkdir()
+    write_new_canonical_json(cache / "ordinary.data", _answer_key())
+
+    with pytest.raises(AnswerKeySealingError, match="plaintext answer key file"):
+        recover_blind_file(
+            project / "missing-blind.json",
+            decoder_root=project,
+            model=None,  # type: ignore[arg-type]
+            ephemeris_path=project / "missing-ephemeris",
+            cache_dir=cache,
+            settings=RecoverySettings(
+                aggregation=AggregationMode.DURATION_WEIGHTED_EVIDENCE,
+                threshold_rubric_bits=0.0,
+            ),
+        )
 
 
 def test_plaintext_preflight_allows_encrypted_envelope_and_reveal_record(

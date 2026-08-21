@@ -3,10 +3,12 @@
 from __future__ import annotations
 
 import base64
+import csv
 import json
 import os
 import re
 import stat
+from collections.abc import Iterable
 from contextlib import suppress
 from pathlib import Path
 from typing import Any, Literal
@@ -52,7 +54,6 @@ class AnswerKeyEnvelope(BaseModel):
 
 
 _PREFLIGHT_SKIPPED_DIRECTORIES = {
-    ".cache",
     ".eggs",
     ".git",
     ".mypy_cache",
@@ -61,32 +62,8 @@ _PREFLIGHT_SKIPPED_DIRECTORIES = {
     ".tox",
     ".venv",
     "__pycache__",
-    "build",
-    "cache",
-    "candidate_cache",
-    "dist",
     "node_modules",
     "venv",
-}
-_PREFLIGHT_BINARY_SUFFIXES = {
-    ".a",
-    ".bin",
-    ".dll",
-    ".dylib",
-    ".gz",
-    ".jpg",
-    ".jpeg",
-    ".o",
-    ".pdf",
-    ".png",
-    ".pyc",
-    ".se1",
-    ".so",
-    ".sqlite",
-    ".sqlite3",
-    ".tar",
-    ".whl",
-    ".zip",
 }
 _OBVIOUS_ANSWER_KEY_NAME = re.compile(
     r"(?:answer[_. -]?key|ground[_. -]?truth|truth[_. -]?key)"
@@ -94,6 +71,23 @@ _OBVIOUS_ANSWER_KEY_NAME = re.compile(
     re.IGNORECASE,
 )
 _MAX_PREFLIGHT_TEXT_BYTES = 16 * 1024 * 1024
+_PLAINTEXT_ANSWER_KEY_SCHEMAS = {
+    "answer-key-v1",
+    "human-cohort-answer-key-v1",
+}
+_SAFE_ANSWER_KEY_ARTIFACT_SCHEMAS = {
+    "answer-key-envelope-v1",
+    "answer-key-reveal-v1",
+    "answer-key-reveal-v2",
+    "human-answer-key-reveal-receipt-v1",
+    "human-final-test-reveal-ledger-v1",
+}
+_SYNTHETIC_TRUTH_FIELDS = {
+    "true_chart_features_hash",
+    "true_local_date",
+    "true_state_id",
+    "true_utc",
+}
 
 
 def _is_within(path: str | Path, root: str | Path) -> bool:
@@ -127,22 +121,104 @@ def _has_obvious_answer_key_name(filename: str) -> bool:
     return False
 
 
-def assert_no_plaintext_answer_keys(decoder_root: str | Path) -> None:
-    """Refuse a blind run when plausible plaintext key material is readable below root."""
+def _contains_plaintext_answer_key(value: object) -> bool:
+    if isinstance(value, dict):
+        schema = value.get("schema_version")
+        if schema in _PLAINTEXT_ANSWER_KEY_SCHEMAS:
+            return True
+        synthetic_bindings = {"experiment_id", "blind_input_sha256", "cases"}
+        cases = value.get("cases")
+        if (
+            synthetic_bindings <= value.keys()
+            and isinstance(cases, list)
+            and any(
+                isinstance(case, dict) and bool(_SYNTHETIC_TRUTH_FIELDS & case.keys())
+                for case in cases
+            )
+        ):
+            return True
+        human_bindings = {
+            "cohort",
+            "protocol_sha256",
+            "blind_input_sha256",
+            "true_candidate_ids",
+        }
+        if human_bindings <= value.keys() and isinstance(value.get("true_candidate_ids"), dict):
+            return True
+        return any(_contains_plaintext_answer_key(item) for item in value.values())
+    if isinstance(value, list):
+        return any(_contains_plaintext_answer_key(item) for item in value)
+    return False
 
-    root = Path(decoder_root)
-    offending: list[str] = []
-    for current, directories, filenames in os.walk(root, followlinks=False):
+
+def _is_safe_answer_key_artifact(value: object) -> bool:
+    return (
+        isinstance(value, dict)
+        and value.get("schema_version") in _SAFE_ANSWER_KEY_ARTIFACT_SCHEMAS
+    )
+
+
+def _looks_like_tabular_answer_key(text: str) -> bool:
+    """Recognize standalone CSV/TSV truth tables without trusting their suffix."""
+
+    sample = text[:8192]
+    for delimiter in (",", "\t", ";"):
+        try:
+            rows = csv.reader(sample.splitlines(), delimiter=delimiter)
+            header = next(rows)
+        except (csv.Error, StopIteration):
+            continue
+        normalized = {re.sub(r"[^a-z0-9]", "", item.casefold()) for item in header}
+        synthetic_truth = {
+            re.sub(r"[^a-z0-9]", "", field.casefold()) for field in _SYNTHETIC_TRUTH_FIELDS
+        }
+        if "caseid" in normalized and bool(normalized & synthetic_truth):
+            return True
+        if "participantid" in normalized and bool(
+            normalized & {"truecandidateid", "truecandidateids"}
+        ):
+            return True
+    return False
+
+
+def _candidate_files(path: Path) -> tuple[Path, ...]:
+    if path.is_file():
+        return (path,)
+    if not path.is_dir():
+        return ()
+    candidates: list[Path] = []
+    for current, directories, filenames in os.walk(path, followlinks=False):
         directories[:] = [
             name
             for name in directories
             if name.casefold() not in _PREFLIGHT_SKIPPED_DIRECTORIES
             and not name.casefold().endswith(".egg-info")
         ]
-        for filename in filenames:
-            candidate = Path(current) / filename
-            if candidate.suffix.casefold() in _PREFLIGHT_BINARY_SUFFIXES:
-                continue
+        candidates.extend(Path(current) / filename for filename in filenames)
+    return tuple(candidates)
+
+
+def _minimal_scan_paths(paths: Iterable[str | Path]) -> tuple[Path, ...]:
+    """Deduplicate existing file/tree inputs without broadening to their parents."""
+
+    resolved = sorted(
+        {Path(path).expanduser().resolve(strict=False) for path in paths if Path(path).exists()},
+        key=lambda item: (len(item.parts), item.as_posix()),
+    )
+    selected: list[Path] = []
+    for candidate in resolved:
+        if any(parent == candidate or parent in candidate.parents for parent in selected):
+            continue
+        selected.append(candidate)
+    return tuple(selected)
+
+
+def assert_no_plaintext_answer_keys_in_paths(paths: Iterable[str | Path]) -> None:
+    """Refuse readable plaintext keys in bounded decoder-visible files and trees."""
+
+    offending: list[str] = []
+    for root in _minimal_scan_paths(paths):
+        for candidate in _candidate_files(root):
             try:
                 if (
                     not candidate.is_file()
@@ -155,26 +231,23 @@ def assert_no_plaintext_answer_keys(decoder_root: str | Path) -> None:
             if b"\x00" in raw[:8192]:
                 continue
             try:
-                text = raw.decode("utf-8")
+                text = raw.decode("utf-8-sig")
             except UnicodeDecodeError:
                 continue
             parsed: object = None
             with suppress(json.JSONDecodeError):
                 parsed = json.loads(text)
-            answer_key_schema = (
-                isinstance(parsed, dict) and parsed.get("schema_version") == "answer-key-v1"
-            )
-            lower_name = filename.casefold()
-            exempt_artifact_name = lower_name.endswith(".enc") or "reveal" in lower_name
+            answer_key_schema = _contains_plaintext_answer_key(parsed)
             obvious_plaintext_name = (
-                not exempt_artifact_name
-                and _has_obvious_answer_key_name(filename)
+                not _is_safe_answer_key_artifact(parsed)
+                and _has_obvious_answer_key_name(candidate.name)
                 and bool(text.strip())
             )
-            if not answer_key_schema and not obvious_plaintext_name:
+            tabular_answer_key = _looks_like_tabular_answer_key(text)
+            if not answer_key_schema and not obvious_plaintext_name and not tabular_answer_key:
                 continue
             try:
-                name = candidate.relative_to(root).as_posix()
+                name = candidate.relative_to(root).as_posix() if root.is_dir() else candidate.name
             except ValueError:
                 name = candidate.name
             offending.append(name)
@@ -182,6 +255,12 @@ def assert_no_plaintext_answer_keys(decoder_root: str | Path) -> None:
         raise AnswerKeySealingError(
             f"{len(offending)} plaintext answer key file(s) exist under decoder project root"
         )
+
+
+def assert_no_plaintext_answer_keys(decoder_root: str | Path) -> None:
+    """Backward-compatible one-root preflight used by freeze and human workflows."""
+
+    assert_no_plaintext_answer_keys_in_paths((decoder_root,))
 
 
 def generate_key_file(path: str | Path, *, decoder_root: str | Path) -> Path:

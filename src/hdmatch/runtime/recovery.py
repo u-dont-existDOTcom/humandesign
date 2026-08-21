@@ -22,7 +22,7 @@ from hdmatch.search.minute_rectifier import (
     rank_known_date_intervals,
 )
 from hdmatch.synthetic.noise import NoiseTier, noise_parameters_payload
-from hdmatch.synthetic.sealing import assert_no_plaintext_answer_keys
+from hdmatch.synthetic.sealing import assert_no_plaintext_answer_keys_in_paths
 
 from .chart_adapter import ExactChartAdapter
 from .symbolic_adapter import RuntimeSymbolicModel, candidate_prevalence
@@ -466,7 +466,13 @@ def recover_blind_file(
 ) -> dict[str, Any]:
     """Recover cases without accepting or discovering any answer-key path."""
 
-    assert_no_plaintext_answer_keys(decoder_root)
+    assert_no_plaintext_answer_keys_in_paths(
+        (
+            decoder_root,
+            blind_path,
+            cache_dir,
+        )
+    )
     assert_no_blind_leakage(blind_path)
     raw = load_json_bytes(blind_path, require_canonical=True)
     if not isinstance(raw, dict) or raw.get("schema_version") != "blind-synthetic-v1":
