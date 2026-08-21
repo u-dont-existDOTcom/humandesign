@@ -96,6 +96,13 @@ def test_cardinal_lines_share_profile_role_dependency() -> None:
         "cardinal_position:personality:sun" in item.dependency_keys
         for item in cardinal_representations
     )
+    assert all(
+        "cardinal_axis:personality" in item.dependency_keys for item in cardinal_representations
+    )
+    personality_earth_gate = next(
+        item for item in anchors if item.anchor_id == "cardinal_gate:personality:earth:45"
+    )
+    assert "cardinal_axis:personality" in personality_earth_gate.dependency_keys
 
     pathways = tuple(
         EvaluatedPathway(
@@ -115,6 +122,14 @@ def test_cardinal_lines_share_profile_role_dependency() -> None:
     )
     with pytest.raises(ValueError, match="reused across clusters"):
         score_detailed_symbolic(_chart(), pathways, _NeverPrevalence())
+
+    node_axes = {
+        item.anchor_id: item.dependency_keys
+        for item in anchors
+        if item.anchor_id.startswith("node:personality:")
+    }
+    assert "node_axis:personality" in node_axes["node:personality:north_node:13.3"]
+    assert "node_axis:personality" in node_axes["node:personality:south_node:7.3"]
 
 
 def test_repeated_gate_anchor_has_one_declared_threshold_semantics() -> None:

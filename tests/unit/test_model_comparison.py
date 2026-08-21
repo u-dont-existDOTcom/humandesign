@@ -84,14 +84,17 @@ def test_exact_duration_weighted_equivalence_groups_and_upper_bound_label() -> N
     assert audit.model_a_groups_split_by_model_b == 1
     assert audit.model_a_groups_not_split_by_model_b == 1
     assert audit.model_a.total_duration_microseconds == 60_000_000
-    assert sorted(
-        group.duration_microseconds for group in audit.model_a.equivalence_groups
-    ) == [30_000_000, 30_000_000]
+    assert sorted(group.duration_microseconds for group in audit.model_a.equivalence_groups) == [
+        30_000_000,
+        30_000_000,
+    ]
     assert audit.model_a.duration_collision_numerator_microseconds_squared == 2 * 30_000_000**2
     assert audit.model_a.duration_collision_denominator_microseconds_squared == 60_000_000**2
-    assert sorted(
-        group.duration_microseconds for group in audit.model_b.equivalence_groups
-    ) == [10_000_000, 20_000_000, 30_000_000]
+    assert sorted(group.duration_microseconds for group in audit.model_b.equivalence_groups) == [
+        10_000_000,
+        20_000_000,
+        30_000_000,
+    ]
     assert "upper bound" in audit.model_b.interpretation
     assert any("not questionnaire recovery" in item for item in audit.limitations)
 
@@ -137,3 +140,7 @@ def test_duplicate_ids_empty_universe_and_non_utc_offsets_fail_closed() -> None:
     )
     with pytest.raises(ValueError, match="UTC offset zero"):
         audit_structural_discrimination((non_utc,), artifact)
+
+    gap = _state("STATE-B", start + timedelta(seconds=11), 10)
+    with pytest.raises(ValueError, match="contiguous exact partition"):
+        audit_structural_discrimination((state, gap), artifact)

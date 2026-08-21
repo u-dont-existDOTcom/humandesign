@@ -77,6 +77,7 @@ def extract_detailed_anchors(
         if activation is None:
             raise ValueError(f"chart is missing frozen cardinal position {position}")
         cardinal_dependency = f"cardinal_position:{position}"
+        cardinal_axis_dependency = f"cardinal_axis:{activation.side}"
         profile_dependency = f"profile_role_line:{activation.side}:{activation.line}"
         anchors.extend(
             (
@@ -92,6 +93,7 @@ def extract_detailed_anchors(
                     },
                     (
                         cardinal_dependency,
+                        cardinal_axis_dependency,
                         f"activation:{position}:gate:{activation.gate}",
                         f"gate:{activation.gate}",
                     ),
@@ -108,6 +110,7 @@ def extract_detailed_anchors(
                     },
                     (
                         cardinal_dependency,
+                        cardinal_axis_dependency,
                         f"activation:{position}:line:{activation.line}",
                         profile_dependency,
                     ),
@@ -125,6 +128,7 @@ def extract_detailed_anchors(
                     },
                     (
                         cardinal_dependency,
+                        cardinal_axis_dependency,
                         f"activation:{position}:gate:{activation.gate}:line:{activation.line}",
                         f"gate:{activation.gate}",
                         profile_dependency,
@@ -261,6 +265,7 @@ def _node_candidates(
                     f"activation:{position}:gate:{activation.gate}:line:{activation.line}",
                     f"gate:{activation.gate}",
                     f"node:{position}",
+                    f"node_axis:{activation.side}",
                 ),
             )
         )

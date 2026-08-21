@@ -12,6 +12,7 @@ from typing import Any
 
 from hdmatch.config import load_synthetic_config
 from hdmatch.evaluation.leakage import assert_no_blind_leakage
+from hdmatch.evaluation.model_comparison import audit_structural_discrimination
 from hdmatch.evaluation.report import evaluate_frozen_run
 from hdmatch.experiments import (
     ArtifactBindings,
@@ -25,6 +26,7 @@ from hdmatch.experiments.canonical import load_json_bytes, write_new_canonical_j
 from hdmatch.experiments.reveal import reveal_answer_key
 from hdmatch.model import compile_mapping_artifacts
 from hdmatch.model_b.compiler import compile_model_b_artifacts
+from hdmatch.model_b.mapping_library import FrozenModelB
 from hdmatch.runtime import (
     MODEL_A_ID,
     MODEL_B_ID,
@@ -34,6 +36,8 @@ from hdmatch.runtime import (
     load_runtime_model,
 )
 from hdmatch.runtime.recovery import RecoverySettings, recover_blind_file
+from hdmatch.runtime.universe_cache import MonthRequest, cache_path, load_cached_universe
+from hdmatch.schemas import CandidateState
 from hdmatch.search import AggregationMode
 from hdmatch.synthetic import SyntheticGenerator, generate_key_file, seal_answer_key
 from hdmatch.synthetic.sealing import SealingMetadata, require_external_path
@@ -295,6 +299,63 @@ def _command_compile_model(args: argparse.Namespace) -> int:
     return 0
 
 
+def _command_compare_models(args: argparse.Namespace) -> int:
+    """Audit structural partition resolution without responses or answer keys."""
+
+    if args.month_end < args.month_start:
+        raise ValueError("month-end must not precede month-start")
+    engine = ExactChartAdapter(args.ephemeris)
+    artifact_path = Path(args.model_b_artifact)
+    selected = load_runtime_model(
+        MODEL_B_ID,
+        model_a_mapping_path=args.mapping,
+        model_b_artifact_path=artifact_path,
+    )
+    if not isinstance(selected, FrozenModelB):
+        raise ValueError("Model B loader returned an incompatible runtime model")
+    artifact = selected.artifact
+    states: list[CandidateState] = []
+    cache_hashes: dict[str, str] = {}
+    for month in range(args.month_start, args.month_end + 1):
+        request = MonthRequest(args.year, month, args.timezone)
+        path = cache_path(args.cache_dir, request, engine.fingerprint)
+        cached = load_cached_universe(
+            path,
+            request=request,
+            engine_fingerprint=engine.fingerprint,
+        )
+        states.extend(cached.states)
+        cache_hashes[path.name] = cached.sha256
+    audit = audit_structural_discrimination(states, artifact)
+    payload = {
+        "schema_version": "model-structural-comparison-run-v1",
+        "chart_engine_fingerprint": engine.fingerprint,
+        "candidate_cache_sha256": dict(sorted(cache_hashes.items())),
+        "model_a_mapping_sha256": artifact.base_mapping_sha256,
+        "model_b_model_sha256": selected.model_sha256,
+        "model_b_artifact_sha256": sha256_file(artifact_path),
+        "model_b_artifact_semantic_sha256": artifact.sha256(),
+        "answer_keys_used": False,
+        "behavioral_recovery_performed": False,
+        "audit": audit.model_dump(mode="json"),
+    }
+    write_new_canonical_json(args.output, payload)
+    print(f"structural comparison: {args.output}")
+    print(
+        json.dumps(
+            {
+                "interval_count": audit.model_a.interval_count,
+                "model_a_unique_signatures": audit.model_a.unique_signature_count,
+                "model_b_unique_signatures": audit.model_b.unique_signature_count,
+                "signature_count_gain": audit.signature_count_gain,
+                "comparison_kind": audit.comparison_kind,
+            },
+            sort_keys=True,
+        )
+    )
+    return 0
+
+
 def _add_model_arguments(parser: argparse.ArgumentParser) -> None:
     parser.add_argument(
         "--model",
@@ -359,6 +420,21 @@ def _parser() -> argparse.ArgumentParser:
         default=MODEL_A_ID,
     )
     compiler.set_defaults(handler=_command_compile_model)
+
+    comparison = subparsers.add_parser(
+        "compare-models",
+        help="audit Model A/B structural resolution without behavioral recovery",
+    )
+    comparison.add_argument("--cache-dir", required=True)
+    comparison.add_argument("--ephemeris", required=True)
+    comparison.add_argument("--output", required=True)
+    comparison.add_argument("--year", type=int, required=True)
+    comparison.add_argument("--timezone", default="UTC")
+    comparison.add_argument("--month-start", type=int, choices=range(1, 13), default=1)
+    comparison.add_argument("--month-end", type=int, choices=range(1, 13), default=12)
+    comparison.add_argument("--model-b-artifact", default=str(DEFAULT_MODEL_B_ARTIFACT))
+    comparison.add_argument("--mapping", default=str(DEFAULT_MAPPING))
+    comparison.set_defaults(handler=_command_compare_models)
     return parser
 
 

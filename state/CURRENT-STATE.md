@@ -1,16 +1,18 @@
 # Current state
 
-- Task ID: `full-harness-v1`
-- Goal: build and verify the repository's blinded HD reverse-matching harness, with the known-month synthetic oracle benchmark as the first acceptance gate.
+- Task ID: `full-harness-v1`.
+- Goal: complete the reproducible blinded Human Design reverse-matching harness while keeping synthetic engineering validation separate from human validation.
 - Branch/worktree: `codex/harness-integration` at `/tmp/hdmatch-integration`.
-- Baseline: `844609d` (`Baseline research specification`); all 33 source-manifest hashes verified on 2026-08-21.
-- Owner constraints: preserve engineering/human claim separation; no key access during recovery; person-level human splits; no invented mappings; report ties, failures, and stable intervals.
-- Current step: establish shared schemas and delegate non-overlapping chart, model, and audit workstreams.
-- Completed: universal guidance routed; all numbered project documents read; V4/V3 scoring and backend contracts inspected; local Git baseline established.
-- Remaining: all implementation phases, dependency lock/bootstrap, tests, benchmark artifacts, and final local merge.
-- Known uncertainty: normative sources do not provide a ready server-side mapping library or formal response options; unsupported entries must remain `unresolved`. Production ephemeris data/licensing and independent HD golden-engine evidence must be recorded explicitly.
-- Acceptance command: `python scripts/task_acceptance.py`
-- Resume command: `python scripts/task_preflight.py`
-- Suspended sources: legacy-run rankings, Custom GPT transit work, century-wide optimization, and any roadmap work not required by this task.
-- Ordinary tests are prerequisites, not proof of task completion.
-
+- Baseline: `844609d` (`Baseline research specification`). Latest durable integration commit before this checkpoint edit: `df57d84`.
+- Owner priority: do not spend significant compute on the deferred 1,000-case Model A run. Use a 50–100 case blind smoke, preserve Model A, implement source-bounded Model B, and run 1,000 cases only if Model B can actually differ behaviorally.
+- Completed blind gate: the 75-case `MODEL-A-CORE-V1` known-month oracle ran generate → blind recover → freeze → reveal → evaluate. Top-1 `0.453333`, Top-3 `0.746667`, Top-5 `0.826667`, MRR `0.625680`; 41 non-Top-1 cases and all ties/failures are retained. See `reports/model_a_smoke_75/`.
+- Retained exact caches: all 12 months of 2000/UTC, 13,777 stable intervals, 76,416,288 bytes, chart-engine fingerprint `09e811ca0fe517975f9718ea7e12b72f66bf3d2509e049bc29f47169adef5397`. They contain candidate chart states only and no answer key.
+- Model A: frozen separately as `MODEL-A-CORE-V1`; mapping file SHA-256 `3424672432f7f071ec90ef9ddce52a67ff6794911e92b1a1e04f079262ea6200`.
+- Model B: `MODEL-B-DETAILED-V1` compiles 36 channels and seven detailed families; exact cardinal gate/line/gate-line, Definition, repeated-gate/Node/hanging mechanics, dependency axes, conditional-prevalence contracts, and unresolved prominent-activation policy are implemented and tested. Artifact and unresolved report are under `mappings/`.
+- Model B scientific limit: the normative V4/V3.2 repository supplies no detailed predicted answer/directness/contradiction library. All eight detailed behavioral mappings remain `unresolved`; `FrozenModelB` therefore delegates questionnaire generation/scoring to Model A. A behavioral A/B recovery comparison is guaranteed identical and must not be run or reported as richer discrimination.
+- Structural upper bound: over the retained exact universe, Model A yields 950 structural signatures and Model B 2,963; 640 of 950 Model A groups split. This consumed no responses or keys and is not recovery or validation. See `reports/model_b_structural_audit_2000/summary.json`.
+- Security/claims: answer keys remain external/encrypted; recovery accepts no key path; predictions must freeze before reveal; rubric bits are not probabilities; synthetic performance is engineering validation only; human fitting is development-only and evaluation splits are by person.
+- Current working tree: expected dirty changes finish dependency-axis provenance, verified structural-comparison CLI/report, bounded configs, README, acceptance gate, and this checkpoint. Reconcile with `git status --short` before resuming.
+- Verification commands: `/tmp/hdmatch-venv/bin/python -m pytest -q`, `/tmp/hdmatch-venv/bin/ruff check src tests scripts`, `/tmp/hdmatch-venv/bin/mypy src/hdmatch`, then `/tmp/hdmatch-venv/bin/python scripts/task_acceptance.py`.
+- Next safe action: finish and commit the current integration checkpoint, then implement/test small noise-tier runs and exact known-date time rectification. Do not start `configs/synth_month_1000_deferred.yaml`.
+- Remaining larger work: known-date stable-interval recovery; noise comparison reports; human import/development/untouched-test orchestration and empirical/symbolic/hybrid comparison; final independent audit; fast-forward local `main` after all gates pass. No `origin` is currently configured.

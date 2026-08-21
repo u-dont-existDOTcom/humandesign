@@ -77,9 +77,7 @@ class StructuralResolution(FrozenAuditModel):
             raise ValueError("equivalence-group interval counts do not cover the universe")
         if sum(group.duration_microseconds for group in groups) != self.total_duration_microseconds:
             raise ValueError("equivalence-group durations do not cover the universe")
-        if self.singleton_signature_count != sum(
-            group.interval_count == 1 for group in groups
-        ):
+        if self.singleton_signature_count != sum(group.interval_count == 1 for group in groups):
             raise ValueError("singleton_signature_count is inconsistent")
         if self.largest_equivalence_group_interval_count != max(
             group.interval_count for group in groups
@@ -103,16 +101,12 @@ class StructuralResolution(FrozenAuditModel):
 class ModelComparisonAudit(FrozenAuditModel):
     """Deterministic comparison with claims constrained to structural resolution."""
 
-    schema_version: Literal["model-structural-comparison-v1"] = (
-        "model-structural-comparison-v1"
-    )
-    comparison_kind: Literal[
+    schema_version: Literal["model-structural-comparison-v1"] = "model-structural-comparison-v1"
+    comparison_kind: Literal["structural_resolution_upper_bound_not_behavioral_recovery"] = (
         "structural_resolution_upper_bound_not_behavioral_recovery"
-    ] = "structural_resolution_upper_bound_not_behavioral_recovery"
-    answer_keys_used: Literal[False] = False
-    detailed_behavioral_mapping_status: Literal[MappingStatus.UNRESOLVED] = (
-        MappingStatus.UNRESOLVED
     )
+    answer_keys_used: Literal[False] = False
+    detailed_behavioral_mapping_status: Literal[MappingStatus.UNRESOLVED] = MappingStatus.UNRESOLVED
     model_b_refines_model_a: Literal[True] = True
     model_a: StructuralResolution
     model_b: StructuralResolution
@@ -134,8 +128,7 @@ class ModelComparisonAudit(FrozenAuditModel):
         ):
             raise ValueError("signature_count_gain is inconsistent")
         if (
-            self.model_a_groups_split_by_model_b
-            + self.model_a_groups_not_split_by_model_b
+            self.model_a_groups_split_by_model_b + self.model_a_groups_not_split_by_model_b
             != self.model_a.unique_signature_count
         ):
             raise ValueError("Model A split counts do not cover every Model A group")
@@ -296,6 +289,9 @@ def _validate_universe(states: tuple[CandidateState, ...], artifact: ModelBArtif
                 raise ValueError(f"candidate {field} must be timezone-aware UTC")
             if moment.utcoffset() != timedelta(0):
                 raise ValueError(f"candidate {field} must have UTC offset zero")
+    for previous, current in zip(states, states[1:], strict=False):
+        if previous.end_utc != current.start_utc:
+            raise ValueError("candidate universe must be one contiguous exact partition")
 
 
 def _duration_microseconds(state: CandidateState) -> int:
