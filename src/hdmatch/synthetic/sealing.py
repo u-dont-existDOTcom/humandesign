@@ -199,6 +199,22 @@ def load_envelope(path: str | Path) -> AnswerKeyEnvelope:
         raise AnswerKeySealingError("invalid encrypted answer-key envelope") from exc
 
 
+def verify_envelope_bindings(
+    path: str | Path,
+    *,
+    expected_metadata: SealingMetadata | None = None,
+) -> AnswerKeyEnvelope:
+    """Validate canonical envelope structure and its public authenticated bindings."""
+
+    envelope = load_envelope(path)
+    if expected_metadata is not None and envelope.authenticated_metadata != expected_metadata:
+        raise AnswerKeySealingError("answer-key metadata does not match frozen run bindings")
+    aad = _associated_data(envelope.authenticated_metadata)
+    if sha256_bytes(aad) != envelope.associated_data_sha256:
+        raise AnswerKeySealingError("answer-key associated-data digest is inconsistent")
+    return envelope
+
+
 def decrypt_answer_key_bytes(
     encrypted_path: str | Path,
     *,
@@ -208,12 +224,11 @@ def decrypt_answer_key_bytes(
 ) -> bytes:
     """Authenticate and decrypt in memory; this function never writes plaintext."""
 
-    envelope = load_envelope(encrypted_path)
-    if expected_metadata is not None and envelope.authenticated_metadata != expected_metadata:
-        raise AnswerKeySealingError("answer-key metadata does not match frozen run bindings")
+    envelope = verify_envelope_bindings(
+        encrypted_path,
+        expected_metadata=expected_metadata,
+    )
     aad = _associated_data(envelope.authenticated_metadata)
-    if sha256_bytes(aad) != envelope.associated_data_sha256:
-        raise AnswerKeySealingError("answer-key associated-data digest is inconsistent")
     key = _load_key(key_path, decoder_root=decoder_root)
     try:
         nonce = base64.b64decode(envelope.nonce_base64, validate=True)

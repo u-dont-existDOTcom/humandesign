@@ -6,9 +6,16 @@ from pathlib import Path
 
 import pytest
 
-from hdmatch.experiments.canonical import sha256_bytes, write_new_canonical_json
+from hdmatch.experiments.canonical import (
+    canonical_json_bytes,
+    sha256_bytes,
+    sha256_file,
+    write_new_canonical_json,
+)
 from hdmatch.experiments.freeze import ArtifactBindings, freeze_predictions
 from hdmatch.experiments.reveal import reveal_answer_key
+from hdmatch.runtime.recovery import RecoverySettings, recover_blind_file
+from hdmatch.search import AggregationMode
 from hdmatch.synthetic.sealing import (
     AnswerKeySealingError,
     SealingMetadata,
@@ -172,12 +179,31 @@ def test_plaintext_and_key_paths_under_decoder_root_are_refused(tmp_path: Path) 
         )
 
 
+def test_recovery_plaintext_preflight_runs_before_blind_input_or_scoring(tmp_path: Path) -> None:
+    project = tmp_path / "decoder"
+    project.mkdir()
+    write_new_canonical_json(project / "answer-key.json", _answer_key())
+
+    with pytest.raises(AnswerKeySealingError, match="plaintext answer key file"):
+        recover_blind_file(
+            project / "missing-blind.json",
+            decoder_root=project,
+            model=None,  # type: ignore[arg-type]
+            ephemeris_path=project / "missing-ephemeris",
+            cache_dir=project / "cache",
+            settings=RecoverySettings(
+                aggregation=AggregationMode.DURATION_WEIGHTED_EVIDENCE,
+                threshold_rubric_bits=0.0,
+            ),
+        )
+
+
 def test_reveal_requires_valid_unchanged_freeze_and_matching_envelope(tmp_path: Path) -> None:
     project = tmp_path / "decoder"
     run_dir = project / "run"
     run_dir.mkdir(parents=True)
     key_path = tmp_path / "evaluator.key"
-    encrypted = tmp_path / "answer-key.json.enc"
+    encrypted = run_dir / "answer-key.json.enc"
     generate_key_file(key_path, decoder_root=project)
     seal_answer_key(
         _answer_key(),
@@ -214,6 +240,11 @@ def test_reveal_requires_valid_unchanged_freeze_and_matching_envelope(tmp_path: 
     assert "true_local_date" not in repr(result)
     assert "answer_key" not in result.model_dump()
     assert result.record.answer_key_revealed is True
+    assert result.record.encrypted_answer_key_file == "answer-key.json.enc"
+    assert result.record.encrypted_answer_key_sha256 == sha256_file(encrypted)
+    assert result.record.answer_key_payload_sha256 == sha256_bytes(
+        canonical_json_bytes(_answer_key())
+    )
     assert not (run_dir / "answer-key.json").exists()
 
 
@@ -222,7 +253,7 @@ def test_reveal_refuses_changed_prediction_bytes(tmp_path: Path) -> None:
     run_dir = project / "run"
     run_dir.mkdir(parents=True)
     key_path = tmp_path / "evaluator.key"
-    encrypted = tmp_path / "answer-key.json.enc"
+    encrypted = run_dir / "answer-key.json.enc"
     generate_key_file(key_path, decoder_root=project)
     seal_answer_key(
         _answer_key(),

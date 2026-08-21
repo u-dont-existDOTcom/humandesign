@@ -20,7 +20,12 @@ from hdmatch.experiments.freeze import (
     freeze_predictions,
     verify_frozen_predictions,
 )
-from hdmatch.experiments.manifest import create_run_manifest, load_run_manifest, write_run_manifest
+from hdmatch.experiments.manifest import (
+    create_run_manifest,
+    load_run_manifest,
+    verify_run_manifest_resume,
+    write_run_manifest,
+)
 
 
 def _digest(label: str) -> str:
@@ -76,6 +81,58 @@ def test_manifest_records_hashes_commit_environment_and_is_immutable(tmp_path: P
     assert load_run_manifest(destination) == manifest
     with pytest.raises(FileExistsError):
         write_run_manifest(manifest, destination)
+
+
+def test_manifest_resume_requires_exact_recovery_configuration() -> None:
+    config = {
+        "aggregation": "duration_weighted_evidence",
+        "threshold_rubric_bits": 0.0,
+        "workers": 2,
+        "cache_policy": "hash-bound exact month universes",
+    }
+    manifest = create_run_manifest(
+        experiment_id="EXP-RESUME",
+        seed=42,
+        repository_root=Path(__file__).parents[2],
+        candidate_universe="known_month",
+        aggregation_rule="duration_weighted_evidence",
+        model_id="MODEL-A-CORE-V1",
+        input_hashes={"blind_cases.json": _digest("blind")},
+        config=config,
+    )
+    verify_run_manifest_resume(
+        manifest,
+        experiment_id="EXP-RESUME",
+        seed=42,
+        candidate_universe="known_month",
+        aggregation_rule="duration_weighted_evidence",
+        model_id="MODEL-A-CORE-V1",
+        input_hashes={"blind_cases.json": _digest("blind")},
+        config=config,
+    )
+
+    with pytest.raises(ValueError, match="config_sha256"):
+        verify_run_manifest_resume(
+            manifest,
+            experiment_id="EXP-RESUME",
+            seed=42,
+            candidate_universe="known_month",
+            aggregation_rule="duration_weighted_evidence",
+            model_id="MODEL-A-CORE-V1",
+            input_hashes={"blind_cases.json": _digest("blind")},
+            config={**config, "workers": 3},
+        )
+    with pytest.raises(ValueError, match="aggregation_rule"):
+        verify_run_manifest_resume(
+            manifest,
+            experiment_id="EXP-RESUME",
+            seed=42,
+            candidate_universe="known_month",
+            aggregation_rule="best_state",
+            model_id="MODEL-A-CORE-V1",
+            input_hashes={"blind_cases.json": _digest("blind")},
+            config=config,
+        )
 
 
 def test_freeze_binds_exact_prediction_bytes_and_all_inputs(tmp_path: Path) -> None:

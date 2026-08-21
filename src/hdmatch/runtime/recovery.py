@@ -22,6 +22,7 @@ from hdmatch.search.minute_rectifier import (
     rank_known_date_intervals,
 )
 from hdmatch.synthetic.noise import NoiseTier, noise_parameters_payload
+from hdmatch.synthetic.sealing import assert_no_plaintext_answer_keys
 
 from .chart_adapter import ExactChartAdapter
 from .symbolic_adapter import RuntimeSymbolicModel, candidate_prevalence
@@ -457,6 +458,7 @@ def _zero_date_ranking(year: int, month: int) -> list[dict[str, Any]]:
 def recover_blind_file(
     blind_path: str | Path,
     *,
+    decoder_root: str | Path,
     model: RuntimeSymbolicModel,
     ephemeris_path: str | Path,
     cache_dir: str | Path,
@@ -464,6 +466,7 @@ def recover_blind_file(
 ) -> dict[str, Any]:
     """Recover cases without accepting or discovering any answer-key path."""
 
+    assert_no_plaintext_answer_keys(decoder_root)
     assert_no_blind_leakage(blind_path)
     raw = load_json_bytes(blind_path, require_canonical=True)
     if not isinstance(raw, dict) or raw.get("schema_version") != "blind-synthetic-v1":

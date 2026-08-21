@@ -49,7 +49,7 @@ hdmatch freeze --run-dir run_artifacts/model_a_smoke
 hdmatch reveal-evaluate --run-dir run_artifacts/model_a_smoke
 ```
 
-Generation creates or uses an owner-only AES key under `/tmp/hdmatch-secrets` by default. Recovery accepts no key or answer-key path. Reveal fails unless the prediction freeze and all bound hashes verify. Exact ephemeris files and their hashes must be supplied for every chart run.
+Generation creates or uses an owner-only AES key under `/tmp/hdmatch-secrets` by default, but ordinary command output does not disclose its path. Recovery accepts no key or answer-key path and performs a plaintext-answer-key preflight before scoring. That scan is defense in depth, not a substitute for running the decoder in a separate keyless operating-system user, container, or equivalent access boundary. Reveal binds the exact encrypted envelope and canonical decrypted payload; evaluation refuses a different in-memory key. Exact ephemeris files and their hashes must be supplied for every chart run.
 
 The completed smoke report is in `reports/model_a_smoke_75/`. It retains all 41 non-Top-1 cases and explains the residual failure classification.
 
@@ -74,10 +74,12 @@ hdmatch compare-noise-tiers \
   --output run_artifacts/noise_comparison.json
 ```
 
-This command reads only each run's public `blind_cases.json`, `run.manifest.json`,
-and post-reveal `evaluation.json`. It verifies their hashes, frozen model and noise
-settings, candidate-universe binding, case denominator, aggregation rule, and
-revealed target consistency. The report preserves every tier, failure, and
+This command reads the complete public provenance chain: blind input, recovery
+manifest, predictions, prediction freeze, reveal record, encrypted envelope, and
+post-reveal evaluation. It decrypts nothing. It verifies exact bytes, recovery-config
+hash, frozen model and noise settings, envelope path/hash, freeze/reveal bindings,
+timestamp ordering, candidate-universe binding, case denominator, aggregation rule,
+and revealed target consistency. The report preserves every tier, failure, and
 unevaluable case and shows Top-1/3/5 and MRR degradation from oracle. It is an
 engineering robustness result, not human validation.
 

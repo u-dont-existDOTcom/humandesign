@@ -156,3 +156,31 @@ def load_run_manifest(path: str | Path) -> RunManifest:
         return RunManifest.model_validate(load_json_bytes(path, require_canonical=True))
     except (OSError, ValueError) as exc:
         raise ValueError(f"invalid or non-canonical run manifest: {path}") from exc
+
+
+def verify_run_manifest_resume(
+    manifest: RunManifest,
+    *,
+    experiment_id: str,
+    seed: int,
+    candidate_universe: str,
+    aggregation_rule: str,
+    model_id: str,
+    input_hashes: dict[str, str],
+    config: object,
+) -> RunManifest:
+    """Require an existing manifest to equal the complete requested recovery contract."""
+
+    expected_fields = {
+        "experiment_id": experiment_id,
+        "seed": seed,
+        "candidate_universe": candidate_universe,
+        "aggregation_rule": aggregation_rule,
+        "model_id": model_id,
+        "input_hashes": dict(sorted(input_hashes.items())),
+        "config_sha256": sha256_json(config),
+    }
+    for field, expected in expected_fields.items():
+        if getattr(manifest, field) != expected:
+            raise ValueError(f"existing run manifest {field} does not match this recovery")
+    return manifest

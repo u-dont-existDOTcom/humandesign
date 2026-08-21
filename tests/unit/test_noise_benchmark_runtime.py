@@ -13,15 +13,19 @@ from hdmatch.evaluation.report import EvaluationReport
 from hdmatch.experiments.canonical import (
     load_json_bytes,
     sha256_file,
+    sha256_json,
     write_new_canonical_json,
 )
+from hdmatch.experiments.freeze import FreezeRecord
 from hdmatch.experiments.manifest import RunManifest, SoftwareEnvironment
+from hdmatch.experiments.reveal import RevealRecord
 from hdmatch.runtime.noise_benchmark import (
     build_noise_benchmark_from_run_dirs,
     load_revealed_noise_tier_run,
 )
 from hdmatch.synthetic.noise import NoiseTier as GeneratorNoiseTier
 from hdmatch.synthetic.noise import noise_parameters_payload
+from hdmatch.synthetic.sealing import SealingMetadata, generate_key_file, seal_answer_key
 
 _HASH_A = "a" * 64
 _HASH_B = "b" * 64
@@ -36,6 +40,11 @@ def _evaluation(
     *,
     blind_sha256: str,
     true_rank: int,
+    prediction_sha256: str,
+    freeze_sha256: str,
+    reveal_sha256: str,
+    envelope_sha256: str,
+    answer_key_payload_sha256: str,
     revealed_target_set_sha256: str | None = _HASH_C,
 ) -> EvaluationReport:
     ranked_ids = [
@@ -60,10 +69,13 @@ def _evaluation(
     )
     return EvaluationReport(
         experiment_id=f"EXP-{tier.value}",
-        created_at_utc=datetime(2026, 8, 21, 1, tzinfo=UTC),
-        prediction_sha256=_HASH_A,
-        freeze_sha256=_HASH_B,
-        reveal_sha256=_HASH_C,
+        created_at_utc=datetime(2026, 8, 21, 0, 30, tzinfo=UTC),
+        prediction_sha256=prediction_sha256,
+        freeze_sha256=freeze_sha256,
+        reveal_sha256=reveal_sha256,
+        encrypted_answer_key_file="answer_key.json.enc",
+        encrypted_answer_key_sha256=envelope_sha256,
+        answer_key_payload_sha256=answer_key_payload_sha256,
         blind_input_sha256=blind_sha256,
         model_sha256=_HASH_D,
         question_bank_sha256=_HASH_E,
@@ -87,6 +99,7 @@ def _write_run(
     software_dirty: bool = False,
     revealed_target_set_sha256: str | None = _HASH_C,
     tzdata_version: str = "2026.1",
+    recovery_config_sha256: str = _HASH_B,
 ) -> Path:
     run_dir = root / tier.value
     run_dir.mkdir()
@@ -139,20 +152,95 @@ def _write_run(
             "blind_cases.json": blind_sha256,
             "ephemeris:sepl_18.se1": _HASH_A,
         },
-        config_sha256=_HASH_B,
+        config_sha256=recovery_config_sha256,
     )
-    write_new_canonical_json(run_dir / "run.manifest.json", manifest)
+    manifest_path = run_dir / "run.manifest.json"
+    write_new_canonical_json(manifest_path, manifest)
+    predictions = {
+        "schema_version": "predictions-v1",
+        "experiment_id": f"EXP-{tier.value}",
+        "model_id": "MODEL-A-CORE-V1",
+        "blind_input_sha256": blind_sha256,
+        "model_sha256": _HASH_D,
+        "question_bank_sha256": _HASH_E,
+        "mapping_sha256": _HASH_F,
+        "aggregation_rule": "duration_weighted_evidence",
+        "predictions": [{"case_id": "C1"}, {"case_id": "C2"}],
+    }
+    predictions_path = run_dir / "predictions.json"
+    write_new_canonical_json(predictions_path, predictions)
+    freeze = FreezeRecord(
+        experiment_id=f"EXP-{tier.value}",
+        prediction_file="predictions.json",
+        prediction_sha256=sha256_file(predictions_path),
+        prediction_size_bytes=predictions_path.stat().st_size,
+        blind_input_sha256=blind_sha256,
+        model_sha256=_HASH_D,
+        question_bank_sha256=_HASH_E,
+        mapping_sha256=_HASH_F,
+        run_manifest_sha256=sha256_file(manifest_path),
+        software_commit="same-frozen-engine-commit",
+        software_dirty=False,
+        software_versions={
+            "python": "3.12.3",
+            "hdmatch": "0.1.0",
+            "tzdata": tzdata_version,
+        },
+        created_at_utc=datetime(2026, 8, 21, 0, 10, tzinfo=UTC),
+    )
+    freeze_path = run_dir / "prediction.freeze.json"
+    write_new_canonical_json(freeze_path, freeze)
+
+    answer_key = {
+        "schema_version": "answer-key-v1",
+        "experiment_id": f"EXP-{tier.value}",
+        "blind_input_sha256": blind_sha256,
+        "cases": [
+            {"case_id": "C1", "true_local_date": "2000-01-01"},
+            {"case_id": "C2", "true_local_date": "2000-01-02"},
+        ],
+    }
+    key_path = root / f".{tier.value}.evaluation.key"
+    envelope_path = run_dir / "answer_key.json.enc"
+    generate_key_file(key_path, decoder_root=run_dir)
+    seal_answer_key(
+        answer_key,
+        encrypted_path=envelope_path,
+        key_path=key_path,
+        metadata=SealingMetadata(
+            experiment_id=f"EXP-{tier.value}",
+            blind_input_sha256=blind_sha256,
+            model_sha256=_HASH_D,
+            question_bank_sha256=_HASH_E,
+            mapping_sha256=_HASH_F,
+        ),
+        decoder_root=run_dir,
+    )
+    reveal = RevealRecord(
+        experiment_id=f"EXP-{tier.value}",
+        prediction_sha256=freeze.prediction_sha256,
+        freeze_record_sha256=sha256_file(freeze_path),
+        encrypted_answer_key_sha256=sha256_file(envelope_path),
+        encrypted_answer_key_file="answer_key.json.enc",
+        answer_key_payload_sha256=sha256_json(answer_key),
+        revealed_at_utc=datetime(2026, 8, 21, 0, 20, tzinfo=UTC),
+    )
+    reveal_path = run_dir / "answer-key.reveal.json"
+    write_new_canonical_json(reveal_path, reveal)
     write_new_canonical_json(
         run_dir / "evaluation.json",
         _evaluation(
             tier,
             blind_sha256=blind_sha256,
             true_rank=true_rank,
+            prediction_sha256=freeze.prediction_sha256,
+            freeze_sha256=sha256_file(freeze_path),
+            reveal_sha256=sha256_file(reveal_path),
+            envelope_sha256=reveal.encrypted_answer_key_sha256,
+            answer_key_payload_sha256=sha256_json(answer_key),
             revealed_target_set_sha256=revealed_target_set_sha256,
         ),
     )
-    # This intentionally malformed secret-named file proves the loader does not need it.
-    (run_dir / "answer_key.json.enc").write_bytes(b"not-read-by-noise-comparison")
     return run_dir
 
 
@@ -234,6 +322,77 @@ def test_runtime_rejects_legacy_report_without_revealed_target_hash(tmp_path: Pa
         load_revealed_noise_tier_run(run_dir, expected_tier=NoiseTier.ORACLE)
 
 
+@pytest.mark.parametrize(
+    "artifact_name",
+    (
+        "predictions.json",
+        "prediction.freeze.json",
+        "answer-key.reveal.json",
+        "answer_key.json.enc",
+    ),
+)
+def test_runtime_rejects_tampered_public_provenance_artifact(
+    tmp_path: Path,
+    artifact_name: str,
+) -> None:
+    run_dir = _write_run(tmp_path, NoiseTier.ORACLE, true_rank=1)
+    artifact = run_dir / artifact_name
+    artifact.write_bytes(artifact.read_bytes() + b"\n")
+
+    with pytest.raises(NoiseBenchmarkInputError, match="provenance chain"):
+        load_revealed_noise_tier_run(run_dir, expected_tier=NoiseTier.ORACLE)
+
+
+@pytest.mark.parametrize("field", ("freeze_sha256", "reveal_sha256"))
+def test_runtime_rejects_evaluation_hash_not_bound_to_public_chain(
+    tmp_path: Path,
+    field: str,
+) -> None:
+    run_dir = _write_run(tmp_path, NoiseTier.ORACLE, true_rank=1)
+    evaluation_path = run_dir / "evaluation.json"
+    raw = load_json_bytes(evaluation_path, require_canonical=True)
+    assert isinstance(raw, dict)
+    raw[field] = _HASH_A
+    evaluation_path.unlink()
+    write_new_canonical_json(evaluation_path, raw)
+
+    with pytest.raises(NoiseBenchmarkInputError, match=field):
+        load_revealed_noise_tier_run(run_dir, expected_tier=NoiseTier.ORACLE)
+
+
+def test_runtime_rejects_evaluation_timestamp_before_reveal(tmp_path: Path) -> None:
+    run_dir = _write_run(tmp_path, NoiseTier.ORACLE, true_rank=1)
+    evaluation_path = run_dir / "evaluation.json"
+    raw = load_json_bytes(evaluation_path, require_canonical=True)
+    assert isinstance(raw, dict)
+    raw["created_at_utc"] = "2026-08-21T00:15:00Z"
+    evaluation_path.unlink()
+    write_new_canonical_json(evaluation_path, raw)
+
+    with pytest.raises(NoiseBenchmarkInputError, match="predates answer-key reveal"):
+        load_revealed_noise_tier_run(run_dir, expected_tier=NoiseTier.ORACLE)
+
+
+def test_runtime_rejects_reveal_timestamp_before_prediction_freeze(tmp_path: Path) -> None:
+    run_dir = _write_run(tmp_path, NoiseTier.ORACLE, true_rank=1)
+    reveal_path = run_dir / "answer-key.reveal.json"
+    reveal = load_json_bytes(reveal_path, require_canonical=True)
+    assert isinstance(reveal, dict)
+    reveal["revealed_at_utc"] = "2026-08-21T00:05:00Z"
+    reveal_path.unlink()
+    write_new_canonical_json(reveal_path, reveal)
+
+    evaluation_path = run_dir / "evaluation.json"
+    evaluation = load_json_bytes(evaluation_path, require_canonical=True)
+    assert isinstance(evaluation, dict)
+    evaluation["reveal_sha256"] = sha256_file(reveal_path)
+    evaluation_path.unlink()
+    write_new_canonical_json(evaluation_path, evaluation)
+
+    with pytest.raises(NoiseBenchmarkInputError, match="provenance chain"):
+        load_revealed_noise_tier_run(run_dir, expected_tier=NoiseTier.ORACLE)
+
+
 def test_comparison_rejects_different_revealed_cohort_hash(tmp_path: Path) -> None:
     run_dirs = _run_dirs(tmp_path)
     changed_root = tmp_path / "changed-target"
@@ -263,6 +422,21 @@ def test_comparison_binds_timezone_environment_into_candidate_universe(
     )
 
     with pytest.raises(NoiseBenchmarkInputError, match="candidate_universe_sha256"):
+        build_noise_benchmark_from_run_dirs(run_dirs)
+
+
+def test_comparison_binds_exact_recovery_configuration(tmp_path: Path) -> None:
+    run_dirs = _run_dirs(tmp_path)
+    changed_root = tmp_path / "changed-recovery-config"
+    changed_root.mkdir()
+    run_dirs[NoiseTier.MEDIUM] = _write_run(
+        changed_root,
+        NoiseTier.MEDIUM,
+        true_rank=1,
+        recovery_config_sha256=_HASH_D,
+    )
+
+    with pytest.raises(NoiseBenchmarkInputError, match="recovery_config_sha256"):
         build_noise_benchmark_from_run_dirs(run_dirs)
 
 

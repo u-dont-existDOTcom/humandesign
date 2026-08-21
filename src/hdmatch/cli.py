@@ -21,6 +21,7 @@ from hdmatch.experiments import (
     freeze_predictions,
     load_run_manifest,
     sha256_file,
+    verify_run_manifest_resume,
     write_run_manifest,
 )
 from hdmatch.experiments.canonical import load_json_bytes, write_new_canonical_json
@@ -45,7 +46,10 @@ from hdmatch.runtime.universe_cache import MonthRequest, cache_path, load_cached
 from hdmatch.schemas import CandidateState
 from hdmatch.search import AggregationMode
 from hdmatch.synthetic import SyntheticGenerator, generate_key_file, seal_answer_key
-from hdmatch.synthetic.sealing import SealingMetadata, require_external_path
+from hdmatch.synthetic.sealing import (
+    SealingMetadata,
+    require_external_path,
+)
 
 ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_MAPPING = ROOT / "mappings" / "mapping_library_v1.json"
@@ -143,13 +147,14 @@ def _command_generate(args: argparse.Namespace) -> int:
         "mapping_sha256": model.mapping_sha256,
         "case_count": config.case_count,
         "seed_status": "sealed-in-answer-key-only",
+        "external_reveal_key_status": "owner-only-key-ready-path-withheld",
         "claim_boundary": "synthetic-engineering-validation-only",
     }
     write_new_canonical_json(receipt_path, receipt)
     print(f"blind experiment: {blind_path}")
     print(f"blind input sha256: {receipt['blind_input_sha256']}")
     print(f"encrypted answer key: {encrypted_path}")
-    print(f"external reveal key: {key_file}")
+    print(f"external reveal key status: {receipt['external_reveal_key_status']}")
     return 0
 
 
@@ -196,8 +201,16 @@ def _command_recover(args: argparse.Namespace) -> int:
     }
     if manifest_path.exists():
         manifest = load_run_manifest(manifest_path)
-        if manifest.input_hashes != dict(sorted(input_hashes.items())):
-            raise ValueError("existing run manifest input bindings do not match this recovery")
+        verify_run_manifest_resume(
+            manifest,
+            experiment_id=str(blind["experiment_id"]),
+            seed=public_recovery_seed,
+            candidate_universe=str(blind["candidate_universe"]),
+            aggregation_rule=settings.aggregation.value,
+            model_id=model.model_id,
+            input_hashes=input_hashes,
+            config=manifest_config,
+        )
     else:
         manifest = create_run_manifest(
             experiment_id=str(blind["experiment_id"]),
@@ -213,6 +226,7 @@ def _command_recover(args: argparse.Namespace) -> int:
         write_run_manifest(manifest, manifest_path)
     predictions = recover_blind_file(
         blind_path,
+        decoder_root=ROOT,
         model=model,
         ephemeris_path=args.ephemeris,
         cache_dir=args.cache_dir or run_dir / "candidate_cache",

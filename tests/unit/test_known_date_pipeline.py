@@ -24,6 +24,14 @@ ROOT = Path(__file__).resolve().parents[2]
 _HASH = "a" * 64
 
 
+def _reveal_provenance(answer_key: dict[str, object]) -> dict[str, str]:
+    return {
+        "encrypted_answer_key_file": "answer_key.json.enc",
+        "encrypted_answer_key_sha256": "f" * 64,
+        "answer_key_payload_sha256": sha256_json(answer_key),
+    }
+
+
 def _chart(chart_type: str, moment: datetime) -> ChartFeatures:
     activation = Activation(
         body="sun", side="personality", longitude=0.0, gate=41, line=1
@@ -154,6 +162,7 @@ def _recover_known_date(
     )
     predictions = recover_blind_file(
         blind_path,
+        decoder_root=tmp_path,
         model=model,
         ephemeris_path=tmp_path,
         cache_dir=tmp_path / "cache",
@@ -259,6 +268,7 @@ def test_post_reveal_interval_evaluation_uses_boundary_containment_and_target_ha
         freeze=freeze,
         freeze_sha256=_HASH,
         reveal_sha256="e" * 64,
+        **_reveal_provenance(answer_key),
         created_at_utc=datetime(2026, 8, 21, tzinfo=UTC),
     )
 
@@ -286,6 +296,7 @@ def test_post_reveal_interval_evaluation_uses_boundary_containment_and_target_ha
         freeze=freeze,
         freeze_sha256=_HASH,
         reveal_sha256="e" * 64,
+        **_reveal_provenance(shifted),
     )
     assert shifted_report.revealed_target_set_sha256 != report.revealed_target_set_sha256
 
@@ -299,6 +310,7 @@ def test_post_reveal_interval_evaluation_uses_boundary_containment_and_target_ha
         freeze=renamed_freeze,
         freeze_sha256=_HASH,
         reveal_sha256="e" * 64,
+        **_reveal_provenance(renamed_key),
     )
     assert renamed_report.revealed_target_set_sha256 == report.revealed_target_set_sha256
 
@@ -330,6 +342,7 @@ def test_month_boundary_candidate_is_reported_as_unresolved_clipped(
         freeze=_freeze(predictions, experiment_id="KNOWN-DATE-1"),
         freeze_sha256=_HASH,
         reveal_sha256="e" * 64,
+        **_reveal_provenance(answer_key),
     )
     interval = report.rectification_cases[0]
     assert interval.matched_state_id == "OUTSIDE-BEFORE"
@@ -359,4 +372,5 @@ def test_evaluator_rejects_mixed_candidate_universes_before_metrics(
             freeze=_freeze(predictions, experiment_id="KNOWN-DATE-1"),
             freeze_sha256=_HASH,
             reveal_sha256="e" * 64,
+            **_reveal_provenance(answer_key),
         )
