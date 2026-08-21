@@ -159,7 +159,11 @@ def reveal_answer_key(
     resolved_freeze = (
         Path(freeze_path) if freeze_path is not None else directory / "prediction.freeze.json"
     )
-    freeze = verify_frozen_predictions(directory, freeze_path=resolved_freeze)
+    freeze = verify_frozen_predictions(
+        directory,
+        freeze_path=resolved_freeze,
+        require_run_manifest=True,
+    )
     metadata = SealingMetadata(
         experiment_id=freeze.experiment_id,
         blind_input_sha256=freeze.blind_input_sha256,

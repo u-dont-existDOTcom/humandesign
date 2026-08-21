@@ -163,6 +163,47 @@ def test_freeze_binds_exact_prediction_bytes_and_all_inputs(tmp_path: Path) -> N
         verify_frozen_predictions(run_dir)
 
 
+def test_strict_freeze_verification_checks_exact_run_manifest_bytes(tmp_path: Path) -> None:
+    run_dir = tmp_path / "run"
+    run_dir.mkdir()
+    (run_dir / "predictions.json").write_bytes(b'{"predictions":[]}')
+    manifest_path = run_dir / "run.manifest.json"
+    write_new_canonical_json(manifest_path, {"schema_version": "test-run-manifest-v1"})
+    record = freeze_predictions(
+        run_dir,
+        experiment_id="EXP-1",
+        bindings=_bindings(),
+        repository_root=Path(__file__).parents[2],
+        run_manifest_path=manifest_path,
+    )
+
+    assert verify_frozen_predictions(run_dir, require_run_manifest=True) == record
+    manifest_path.write_bytes(manifest_path.read_bytes() + b"\n")
+    assert verify_frozen_predictions(run_dir) == record
+    with pytest.raises(FreezeVerificationError, match="run-manifest bytes changed"):
+        verify_frozen_predictions(run_dir, require_run_manifest=True)
+
+    manifest_path.unlink()
+    with pytest.raises(FreezeVerificationError, match="path escapes or is absent"):
+        verify_frozen_predictions(run_dir, require_run_manifest=True)
+
+
+def test_strict_freeze_verification_rejects_legacy_unbound_manifest(tmp_path: Path) -> None:
+    run_dir = tmp_path / "run"
+    run_dir.mkdir()
+    (run_dir / "predictions.json").write_bytes(b'{"predictions":[]}')
+    record = freeze_predictions(
+        run_dir,
+        experiment_id="EXP-1",
+        bindings=_bindings(),
+        repository_root=Path(__file__).parents[2],
+    )
+
+    assert verify_frozen_predictions(run_dir) == record
+    with pytest.raises(FreezeVerificationError, match="lacks a run-manifest binding"):
+        verify_frozen_predictions(run_dir, require_run_manifest=True)
+
+
 def test_freeze_refuses_predictions_outside_run(tmp_path: Path) -> None:
     run_dir = tmp_path / "run"
     run_dir.mkdir()

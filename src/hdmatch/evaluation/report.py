@@ -985,7 +985,11 @@ def evaluate_frozen_run(
     resolved_freeze = (
         Path(freeze_path) if freeze_path is not None else directory / "prediction.freeze.json"
     )
-    freeze = verify_frozen_predictions(directory, freeze_path=resolved_freeze)
+    freeze = verify_frozen_predictions(
+        directory,
+        freeze_path=resolved_freeze,
+        require_run_manifest=True,
+    )
     resolved_reveal = (
         Path(reveal_record_path)
         if reveal_record_path is not None

@@ -298,6 +298,21 @@ def test_runtime_rejects_manifest_that_does_not_bind_blind_input(tmp_path: Path)
         load_revealed_noise_tier_run(run_dir, expected_tier=NoiseTier.ORACLE)
 
 
+def test_runtime_rejects_run_manifest_bytes_changed_after_prediction_freeze(
+    tmp_path: Path,
+) -> None:
+    run_dir = _write_run(tmp_path, NoiseTier.ORACLE, true_rank=1)
+    manifest_path = run_dir / "run.manifest.json"
+    raw = load_json_bytes(manifest_path, require_canonical=True)
+    assert isinstance(raw, dict)
+    raw["declared_outputs"] = [*raw["declared_outputs"], "unexpected.json"]
+    manifest_path.unlink()
+    write_new_canonical_json(manifest_path, raw)
+
+    with pytest.raises(NoiseBenchmarkInputError, match="provenance chain"):
+        load_revealed_noise_tier_run(run_dir, expected_tier=NoiseTier.ORACLE)
+
+
 def test_runtime_rejects_dirty_recovery_manifest(tmp_path: Path) -> None:
     run_dir = _write_run(
         tmp_path,

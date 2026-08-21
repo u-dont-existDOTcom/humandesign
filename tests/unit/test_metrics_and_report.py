@@ -277,11 +277,14 @@ def _frozen_run(tmp_path: Path, predictions: dict[str, object]) -> Path:
     run_dir = tmp_path / "run"
     run_dir.mkdir(parents=True)
     write_new_canonical_json(run_dir / "predictions.json", predictions)
+    manifest_path = run_dir / "run.manifest.json"
+    write_new_canonical_json(manifest_path, {"schema_version": "test-run-manifest-v1"})
     freeze = freeze_predictions(
         run_dir,
         experiment_id="EXP-1",
         bindings=_bindings(),
         repository_root=Path(__file__).parents[2],
+        run_manifest_path=manifest_path,
         created_at_utc=datetime(2026, 8, 21, tzinfo=UTC),
     )
     key_path = tmp_path / "evaluation.key"
@@ -403,6 +406,15 @@ def test_evaluator_refuses_envelope_tampered_after_reveal(tmp_path: Path) -> Non
         evaluate_frozen_run(run_dir, answer_key=_answer_key())
 
 
+def test_evaluator_refuses_run_manifest_tampered_after_freeze(tmp_path: Path) -> None:
+    run_dir = _frozen_run(tmp_path, _predictions())
+    manifest_path = run_dir / "run.manifest.json"
+    manifest_path.write_bytes(manifest_path.read_bytes() + b"\n")
+
+    with pytest.raises(Exception, match="run-manifest bytes changed"):
+        evaluate_frozen_run(run_dir, answer_key=_answer_key())
+
+
 def test_evaluator_preserves_but_will_not_reuse_legacy_incomplete_reveal(tmp_path: Path) -> None:
     run_dir = _frozen_run(tmp_path, _predictions())
     reveal_path = run_dir / "answer-key.reveal.json"
@@ -420,11 +432,14 @@ def test_evaluator_refuses_before_reveal_record_exists(tmp_path: Path) -> None:
     run_dir = tmp_path / "run"
     run_dir.mkdir()
     write_new_canonical_json(run_dir / "predictions.json", _predictions())
+    manifest_path = run_dir / "run.manifest.json"
+    write_new_canonical_json(manifest_path, {"schema_version": "test-run-manifest-v1"})
     freeze_predictions(
         run_dir,
         experiment_id="EXP-1",
         bindings=_bindings(),
         repository_root=Path(__file__).parents[2],
+        run_manifest_path=manifest_path,
     )
     with pytest.raises(Exception, match="reveal"):
         evaluate_frozen_run(run_dir, answer_key=_answer_key())

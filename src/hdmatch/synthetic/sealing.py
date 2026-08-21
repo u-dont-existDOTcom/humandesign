@@ -5,7 +5,9 @@ from __future__ import annotations
 import base64
 import json
 import os
+import re
 import stat
+from contextlib import suppress
 from pathlib import Path
 from typing import Any, Literal
 
@@ -49,6 +51,51 @@ class AnswerKeyEnvelope(BaseModel):
     associated_data_sha256: str = Field(pattern=SHA256_PATTERN)
 
 
+_PREFLIGHT_SKIPPED_DIRECTORIES = {
+    ".cache",
+    ".eggs",
+    ".git",
+    ".mypy_cache",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".tox",
+    ".venv",
+    "__pycache__",
+    "build",
+    "cache",
+    "candidate_cache",
+    "dist",
+    "node_modules",
+    "venv",
+}
+_PREFLIGHT_BINARY_SUFFIXES = {
+    ".a",
+    ".bin",
+    ".dll",
+    ".dylib",
+    ".gz",
+    ".jpg",
+    ".jpeg",
+    ".o",
+    ".pdf",
+    ".png",
+    ".pyc",
+    ".se1",
+    ".so",
+    ".sqlite",
+    ".sqlite3",
+    ".tar",
+    ".whl",
+    ".zip",
+}
+_OBVIOUS_ANSWER_KEY_NAME = re.compile(
+    r"(?:answer[_. -]?key|ground[_. -]?truth|truth[_. -]?key)"
+    r"(?:[ _-](?:backup|copy|export|plain|plaintext))?",
+    re.IGNORECASE,
+)
+_MAX_PREFLIGHT_TEXT_BYTES = 16 * 1024 * 1024
+
+
 def _is_within(path: str | Path, root: str | Path) -> bool:
     candidate_path = Path(path).expanduser()
     boundary_path = Path(root).expanduser()
@@ -69,19 +116,63 @@ def require_external_path(path: str | Path, decoder_root: str | Path, *, label: 
         raise AnswerKeySealingError(f"{label} must remain outside the decoder project root")
 
 
+def _has_obvious_answer_key_name(filename: str) -> bool:
+    candidate = filename
+    while candidate:
+        if _OBVIOUS_ANSWER_KEY_NAME.fullmatch(candidate) is not None:
+            return True
+        candidate, separator, _suffix = candidate.rpartition(".")
+        if not separator:
+            return False
+    return False
+
+
 def assert_no_plaintext_answer_keys(decoder_root: str | Path) -> None:
-    """Refuse a blind run when an answer-key-v1 JSON is readable below its root."""
+    """Refuse a blind run when plausible plaintext key material is readable below root."""
 
     root = Path(decoder_root)
     offending: list[str] = []
-    for candidate in root.rglob("*.json"):
-        if not candidate.is_file():
-            continue
-        try:
-            value = json.loads(candidate.read_bytes())
-        except (OSError, UnicodeDecodeError, json.JSONDecodeError):
-            continue
-        if isinstance(value, dict) and value.get("schema_version") == "answer-key-v1":
+    for current, directories, filenames in os.walk(root, followlinks=False):
+        directories[:] = [
+            name
+            for name in directories
+            if name.casefold() not in _PREFLIGHT_SKIPPED_DIRECTORIES
+            and not name.casefold().endswith(".egg-info")
+        ]
+        for filename in filenames:
+            candidate = Path(current) / filename
+            if candidate.suffix.casefold() in _PREFLIGHT_BINARY_SUFFIXES:
+                continue
+            try:
+                if (
+                    not candidate.is_file()
+                    or candidate.stat().st_size > _MAX_PREFLIGHT_TEXT_BYTES
+                ):
+                    continue
+                raw = candidate.read_bytes()
+            except OSError:
+                continue
+            if b"\x00" in raw[:8192]:
+                continue
+            try:
+                text = raw.decode("utf-8")
+            except UnicodeDecodeError:
+                continue
+            parsed: object = None
+            with suppress(json.JSONDecodeError):
+                parsed = json.loads(text)
+            answer_key_schema = (
+                isinstance(parsed, dict) and parsed.get("schema_version") == "answer-key-v1"
+            )
+            lower_name = filename.casefold()
+            exempt_artifact_name = lower_name.endswith(".enc") or "reveal" in lower_name
+            obvious_plaintext_name = (
+                not exempt_artifact_name
+                and _has_obvious_answer_key_name(filename)
+                and bool(text.strip())
+            )
+            if not answer_key_schema and not obvious_plaintext_name:
+                continue
             try:
                 name = candidate.relative_to(root).as_posix()
             except ValueError:

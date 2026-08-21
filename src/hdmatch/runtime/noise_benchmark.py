@@ -211,6 +211,8 @@ def _verify_public_provenance_chain(
             freeze_path=freeze_path,
             expected_bindings=expected_bindings,
             expected_experiment_id=str(blind.get("experiment_id", "")),
+            run_manifest_path=directory / "run.manifest.json",
+            require_run_manifest=True,
         )
         reveal = verify_reveal_record(
             directory,

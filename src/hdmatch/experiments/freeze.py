@@ -133,8 +133,10 @@ def verify_frozen_predictions(
     freeze_path: str | Path | None = None,
     expected_bindings: ArtifactBindings | None = None,
     expected_experiment_id: str | None = None,
+    run_manifest_path: str | Path | None = None,
+    require_run_manifest: bool = False,
 ) -> FreezeRecord:
-    """Verify that the currently stored prediction file is exactly the frozen file."""
+    """Verify frozen bytes and, in strict mode, the exact bound run-manifest bytes."""
 
     directory = Path(run_dir)
     freeze = Path(freeze_path) if freeze_path is not None else directory / "prediction.freeze.json"
@@ -148,6 +150,22 @@ def verify_frozen_predictions(
         raise FreezeVerificationError("frozen prediction byte length changed")
     if sha256_file(prediction) != record.prediction_sha256:
         raise FreezeVerificationError("frozen prediction bytes changed")
+    if require_run_manifest:
+        if record.run_manifest_sha256 is None:
+            raise FreezeVerificationError("prediction freeze lacks a run-manifest binding")
+        manifest = (
+            Path(run_manifest_path)
+            if run_manifest_path is not None
+            else directory / "run.manifest.json"
+        )
+        try:
+            manifest.resolve(strict=True).relative_to(directory.resolve(strict=True))
+        except (FileNotFoundError, ValueError) as exc:
+            raise FreezeVerificationError(
+                "frozen run-manifest path escapes or is absent"
+            ) from exc
+        if sha256_file(manifest) != record.run_manifest_sha256:
+            raise FreezeVerificationError("frozen run-manifest bytes changed")
     if expected_experiment_id is not None and record.experiment_id != expected_experiment_id:
         raise FreezeVerificationError("freeze experiment_id does not match reveal request")
     if expected_bindings is not None:
