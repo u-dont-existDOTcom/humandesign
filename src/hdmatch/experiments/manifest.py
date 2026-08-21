@@ -2,9 +2,7 @@
 
 from __future__ import annotations
 
-import os
 import platform
-import re
 import subprocess
 from datetime import UTC, datetime
 from importlib import metadata
@@ -25,12 +23,6 @@ _VERSION_PACKAGES = (
     "numpy",
     "scikit-learn",
 )
-_ISOLATED_COMMIT_ENV = "HDMATCH_ISOLATED_SOURCE_COMMIT"
-_ISOLATED_TREE_ENV = "HDMATCH_ISOLATED_SOURCE_TREE"
-_ISOLATED_ROOT_ENV = "HDMATCH_ISOLATED_SOURCE_ROOT"
-_GIT_OBJECT_PATTERN = re.compile(r"^[a-f0-9]{40}(?:[a-f0-9]{24})?$")
-
-
 class SoftwareEnvironment(BaseModel):
     model_config = ConfigDict(extra="forbid", frozen=True)
 
@@ -103,27 +95,6 @@ def capture_software_environment() -> SoftwareEnvironment:
 
 def git_revision(repository_root: str | Path) -> tuple[str, bool]:
     root = Path(repository_root)
-    isolated_values = {
-        "commit": os.environ.get(_ISOLATED_COMMIT_ENV),
-        "tree": os.environ.get(_ISOLATED_TREE_ENV),
-        "root": os.environ.get(_ISOLATED_ROOT_ENV),
-    }
-    if any(isolated_values.values()):
-        if not all(isolated_values.values()):
-            raise RuntimeError("isolated source provenance environment is incomplete")
-        commit = str(isolated_values["commit"])
-        tree = str(isolated_values["tree"])
-        declared_root = Path(str(isolated_values["root"]))
-        if _GIT_OBJECT_PATTERN.fullmatch(commit) is None:
-            raise RuntimeError("isolated source commit is malformed")
-        if _GIT_OBJECT_PATTERN.fullmatch(tree) is None:
-            raise RuntimeError("isolated source tree is malformed")
-        if root.resolve(strict=False) != declared_root.resolve(strict=False):
-            raise RuntimeError("isolated source root does not match the mounted decoder root")
-        # The claim-grade wrapper obtains both objects from one clean checkout, then
-        # mounts only its tracked decoder files. The tree is repeated in the separate
-        # isolation receipt; the existing manifest schema records the commit identity.
-        return commit, False
     try:
         commit = subprocess.run(
             ["git", "rev-parse", "HEAD"],

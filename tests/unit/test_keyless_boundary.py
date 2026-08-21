@@ -10,6 +10,7 @@ import pytest
 from hdmatch.cli import _parser as hdmatch_parser
 from hdmatch.cli import main as hdmatch_main
 from hdmatch.experiments.canonical import load_json_bytes, write_new_canonical_json
+from hdmatch.experiments.manifest import git_revision
 from hdmatch.runtime.keyless_boundary import (
     IsolationRuntimeUnavailable,
     RecoveryBoundaryRequest,
@@ -122,6 +123,18 @@ def test_recovery_mount_plan_is_allowlisted_read_only_and_keyless(tmp_path: Path
     assert str(request.question_bank_file.resolve()) in command
     assert str(request.ephemeris_path.resolve() / "public.se1") in command
     assert str(request.candidate_cache.resolve() / "month-2000-01-UTC-test.json") in command
+    assert not any(argument.startswith("HDMATCH_ISOLATED_SOURCE") for argument in command)
+
+
+def test_ordinary_manifest_git_revision_ignores_isolation_spoof_environment(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setenv("HDMATCH_ISOLATED_SOURCE_COMMIT", "f" * 40)
+    monkeypatch.setenv("HDMATCH_ISOLATED_SOURCE_TREE", "e" * 40)
+    monkeypatch.setenv("HDMATCH_ISOLATED_SOURCE_ROOT", str(ROOT))
+
+    commit, _dirty = git_revision(ROOT)
+    assert commit != "f" * 40
 
 
 def test_wrapper_fails_closed_before_creating_output_without_isolation_runtime(
@@ -258,4 +271,4 @@ def test_optional_real_exact_recovery_completes_inside_keyless_boundary(
     assert receipt["command_contract"]["exit_status"] == 0
     assert receipt["runtime_controls"]["evaluator_secret_mounts"] == "absent"
     assert isinstance(predictions, dict)
-    assert len(predictions["cases"]) == 1
+    assert len(predictions["predictions"]) == 1

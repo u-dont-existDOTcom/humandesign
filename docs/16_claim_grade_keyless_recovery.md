@@ -87,6 +87,12 @@ prediction hashes. Freeze the prediction bytes immediately after the isolated pr
 exits; the isolation receipt is evidence about this wrapper invocation, not a
 replacement for the prediction freeze/reveal chain.
 
+Before entering Bubblewrap, the wrapper creates the ordinary public run manifest from
+the verified clean checkout and exact public hashes. The isolated `recover` command
+then follows its existing resume path and requires that manifest to match the complete
+recovery configuration. No environment-variable shortcut can replace ordinary Git
+revision verification or declare a dirty checkout clean.
+
 ## Verification
 
 The always-on tests cover fail-closed runtime detection, command/mount allowlisting,

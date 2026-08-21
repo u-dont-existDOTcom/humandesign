@@ -20,8 +20,18 @@ from pathlib import Path, PurePosixPath
 from typing import Any, Final
 
 from hdmatch.evaluation.leakage import assert_no_blind_leakage
-from hdmatch.experiments.canonical import sha256_file, write_new_canonical_json
-from hdmatch.runtime.symbolic_adapter import MODEL_A_ID, MODEL_B_ID
+from hdmatch.experiments.canonical import (
+    load_json_bytes,
+    sha256_file,
+    write_new_canonical_json,
+)
+from hdmatch.experiments.manifest import create_run_manifest, write_run_manifest
+from hdmatch.runtime.chart_adapter import declared_ephemeris_files
+from hdmatch.runtime.symbolic_adapter import (
+    MODEL_A_ID,
+    MODEL_B_ID,
+    load_runtime_model,
+)
 from hdmatch.search import AggregationMode
 from hdmatch.synthetic.sealing import assert_no_plaintext_answer_keys_in_paths
 
@@ -387,15 +397,6 @@ def build_recovery_mount_plan(
             "--bind",
             str(output),
             str(_SANDBOX_OUTPUT),
-            "--setenv",
-            "HDMATCH_ISOLATED_SOURCE_COMMIT",
-            provenance.commit,
-            "--setenv",
-            "HDMATCH_ISOLATED_SOURCE_TREE",
-            provenance.tree,
-            "--setenv",
-            "HDMATCH_ISOLATED_SOURCE_ROOT",
-            str(_SANDBOX_ROOT),
             "--chdir",
             str(_SANDBOX_ROOT),
             sandbox_python,
@@ -445,6 +446,57 @@ def _artifact_hashes(files: Sequence[Path]) -> dict[str, str]:
     return {path.name: sha256_file(path) for path in sorted(files)}
 
 
+def _precreate_public_manifest(
+    request: RecoveryBoundaryRequest,
+    *,
+    output: Path,
+    repository_root: Path,
+    provenance: SourceProvenance,
+) -> Path:
+    """Create the public manifest before isolation; the child only verifies/resumes it."""
+
+    blind = load_json_bytes(request.blind_file, require_canonical=True)
+    if not isinstance(blind, dict):
+        raise KeylessIsolationError("blind input must contain an object")
+    model = load_runtime_model(
+        request.model_id,
+        model_a_mapping_path=request.mapping_file,
+        model_b_artifact_path=request.model_b_artifact,
+    )
+    input_hashes = {
+        "blind_cases.json": sha256_file(request.blind_file),
+        "model_a_mapping_library": sha256_file(request.mapping_file),
+    }
+    if model.model_id == MODEL_B_ID:
+        assert request.model_b_artifact is not None
+        input_hashes["model_b_artifact"] = sha256_file(request.model_b_artifact)
+    for ephemeris in declared_ephemeris_files(request.ephemeris_path):
+        input_hashes[f"ephemeris:{ephemeris.name}"] = sha256_file(ephemeris)
+    public_seed = int(input_hashes["blind_cases.json"][:16], 16)
+    config = {
+        "aggregation": request.aggregation,
+        "threshold_rubric_bits": request.threshold_rubric_bits,
+        "workers": request.workers,
+        "cache_policy": "hash-bound exact month universes",
+    }
+    manifest = create_run_manifest(
+        experiment_id=str(blind["experiment_id"]),
+        seed=public_seed,
+        repository_root=repository_root,
+        candidate_universe=str(blind["candidate_universe"]),
+        aggregation_rule=request.aggregation,
+        model_id=model.model_id,
+        input_hashes=input_hashes,
+        config=config,
+        declared_outputs=("predictions.json", "prediction.freeze.json"),
+    )
+    if manifest.software_commit != provenance.commit or manifest.software_dirty:
+        raise KeylessIsolationError("public manifest source provenance is not the clean checkout")
+    destination = output / "run.manifest.json"
+    write_run_manifest(manifest, destination)
+    return destination
+
+
 def run_claim_grade_recovery(
     request: RecoveryBoundaryRequest,
     *,
@@ -457,6 +509,12 @@ def run_claim_grade_recovery(
     output = _prepare_output(request.output_dir)
     normalized = replace(request, output_dir=output)
     plan = build_recovery_mount_plan(normalized, provenance=provenance, bwrap=bwrap)
+    _precreate_public_manifest(
+        normalized,
+        output=output,
+        repository_root=provenance.repository_root,
+        provenance=provenance,
+    )
     completed = subprocess.run(plan.command, check=False)
     if completed.returncode != 0:
         raise KeylessIsolationError(
