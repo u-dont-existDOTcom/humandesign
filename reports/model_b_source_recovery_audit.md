@@ -59,7 +59,7 @@ The complete explicit discovery/holdout assignment is missing. The four holdout 
 
 ## Surfaces audited
 
-- Both independent repository roots and all refs, reflogs, path history, deleted/renamed history, and pickaxe searches. Both roots introduce the same `reference/` content; there is no older parent.
+- Both independent repository roots and all refs, reflogs, path history, deleted/renamed history, and pickaxe searches. Both roots introduce the same `reference/` content; there is no older parent. A live `git ls-remote --heads --tags origin` check on 2026-08-21 found only `main` and `codex/harness-integration`, with no tags or additional unfetched source refs.
 - The moved pre-init Git directory at `/tmp/hdmatch-empty-git-placeholder`. It is unborn and its index tree exactly equals the local baseline tree.
 - Every unreachable Git object. All are recent Codex implementation or stash artifacts; none contains the historical definitions.
 - Current source, scripts, configuration, generated artifacts, and source comments.
