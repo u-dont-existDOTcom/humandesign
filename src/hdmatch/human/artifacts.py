@@ -436,7 +436,7 @@ def final_test_cohort_lock_path(
     ledger_dir: str | Path,
     protocol: FrozenHumanEvaluationProtocol,
 ) -> Path:
-    digest = sha256_json(protocol.participant_ids)
+    digest = sha256_json(tuple(sorted(protocol.participant_ids)))
     return Path(ledger_dir) / f"{digest}.final-test-cohort-lock.json"
 
 
@@ -459,7 +459,7 @@ def write_final_test_release_receipt(
         protocol_sha256=protocol.sha256,
         model_bundle_sha256=protocol.model_bundle_sha256,
         split_manifest_sha256=protocol.split_manifest_sha256,
-        participant_ids_sha256=sha256_json(protocol.participant_ids),
+        participant_ids_sha256=sha256_json(tuple(sorted(protocol.participant_ids))),
         participant_count=len(protocol.participant_ids),
         created_at_utc=timestamp,
     )
@@ -495,7 +495,7 @@ def verify_final_test_release_receipt(
         "protocol_sha256": protocol.sha256,
         "model_bundle_sha256": protocol.model_bundle_sha256,
         "split_manifest_sha256": protocol.split_manifest_sha256,
-        "participant_ids_sha256": sha256_json(protocol.participant_ids),
+        "participant_ids_sha256": sha256_json(tuple(sorted(protocol.participant_ids))),
         "participant_count": len(protocol.participant_ids),
     }
     for field, value in expected.items():
