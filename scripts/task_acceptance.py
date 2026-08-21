@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Artifact-based completion gate for the bounded known-month/Model B milestone."""
+"""Gate the bounded engineering milestone, not completion of detailed Model B."""
 
 from __future__ import annotations
 
@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def main() -> int:
     findings: list[str] = []
+    model_b_behavioral_status = "not-inspected"
     required = [
         ROOT / "pyproject.toml",
         ROOT / "src" / "hdmatch" / "cli.py",
@@ -61,8 +62,16 @@ def main() -> int:
         if len(model_b.get("structural_families", ())) != 7:
             findings.append("MODEL_B_STRUCTURAL_FAMILIES_INCOMPLETE")
         mappings = model_b.get("behavioral_mappings", ())
-        if len(mappings) != 8 or any(item.get("status") != "unresolved" for item in mappings):
-            findings.append("MODEL_B_UNRESOLVED_MAPPING_INVENTORY_INVALID")
+        if len(mappings) != 8:
+            findings.append("MODEL_B_BEHAVIORAL_MAPPING_INVENTORY_INVALID")
+        else:
+            statuses = {item.get("status") for item in mappings}
+            if not statuses <= {"unresolved", "frozen"}:
+                findings.append("MODEL_B_BEHAVIORAL_MAPPING_STATUS_INVALID")
+            elif statuses == {"unresolved"}:
+                model_b_behavioral_status = "structural-only-source-recovery-required"
+            else:
+                model_b_behavioral_status = "provenance-review-required"
 
     comparison_path = ROOT / "reports" / "model_b_structural_audit_2000" / "summary.json"
     if comparison_path.exists():
@@ -89,7 +98,9 @@ def main() -> int:
             print(item)
         print("TASK_STATUS: INCOMPLETE")
         return 1
-    print("TASK_STATUS: READY_FOR_LOCAL_MERGE")
+    print(f"MODEL_B_BEHAVIORAL_STATUS: {model_b_behavioral_status}")
+    print("FULL_MODEL_OBJECTIVE: NOT_EVALUATED_BY_THIS_GATE")
+    print("TASK_STATUS: INITIAL_ENGINEERING_MILESTONE_READY")
     return 0
 
 

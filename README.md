@@ -55,7 +55,7 @@ The completed smoke report is in `reports/model_a_smoke_75/`. It retains all 41 
 
 ## Model A and Model B
 
-`MODEL-A-CORE-V1` is the unchanged coarse architecture model. `MODEL-B-DETAILED-V1` is a separate composite artifact containing all source-supported detailed mechanics: 36 complete channels, separate Personality/Design Sun–Earth gate and line representations, Definition, mechanics-only repeated gates and Nodes, a deliberately empty unresolved prominent-activation allowlist, hanging-gate candidates, dependency controls, and the conditional-prevalence framework.
+`MODEL-A-CORE-V1` is the unchanged coarse architecture model. `MODEL-B-DETAILED-V1` is a structural-only intermediate containing all source-supported detailed mechanics: 36 complete channels, separate Personality/Design Sun–Earth gate and line representations, Definition, mechanics-only repeated gates and Nodes, a deliberately empty unresolved prominent-activation allowlist, hanging-gate candidates, dependency controls, and the conditional-prevalence framework. It is not completion of the detailed behavioral-model objective.
 
 Rebuild either frozen artifact with:
 
@@ -71,7 +71,7 @@ hdmatch generate-blind --config configs/synth_month.yaml --run-dir run_artifacts
 hdmatch recover --run-dir run_artifacts/model_b_smoke --ephemeris /path/to/declared-swiss-files --cache-dir run_artifacts/candidate_cache --model MODEL-B-DETAILED-V1
 ```
 
-The normative V4/V3.2 files do not provide directness, answer direction, or contradiction semantics for the detailed structures. All eight detailed behavioral mapping families are therefore frozen as `unresolved`. Model B currently generates and scores only its unchanged Model A behavioral base; a behavioral A/B recovery run is guaranteed to rank identically. This is intentional and prevents post-result interpretation mining.
+The legacy result proves that an earlier D1–D10/A1–A6 detailed scorer existed. A source-recovery audit found the exact frozen target and generic rubric, but not the pre-search per-observation definitions, selectors, roles, directness assignments, dependency clusters, or contradictions. The eight V1 behavioral-family placeholders remain `unresolved`; that status is an intermediate limitation, not an acceptance condition or a completed Model B. Model B V1 currently generates and scores only its unchanged Model A behavioral base, so no behavioral A/B benchmark may run until a provenance-reviewed Model B actually produces different behavioral predictions. See `reports/model_b_source_recovery_audit.md` and the machine-readable audit under `mappings/`.
 
 The detailed mechanics can still be audited as a clearly labeled structural-resolution upper bound, using no responses or answer keys:
 

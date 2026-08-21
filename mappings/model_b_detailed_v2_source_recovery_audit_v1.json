@@ -1,0 +1,241 @@
+{
+  "audit_id": "MODEL-B-DETAILED-V2-SOURCE-RECOVERY-AUDIT-V1",
+  "audit_date": "2026-08-21",
+  "schema_version": "model-b-source-recovery-audit-v1",
+  "conclusion": {
+    "model_b_detailed_v2_compiled": false,
+    "pre_search_mapping_definitions_recovered": false,
+    "status": "pre_search_mapping_source_not_recovered",
+    "reason": "The surviving source set freezes the target and generic scoring policy, but not the D1-D10/A1-A6 observation-to-chart mapping definitions. Compiling a scoreable MODEL-B-DETAILED-V2 would require inventing or outcome-mining rules."
+  },
+  "scientific_boundary": {
+    "historically_frozen_definition_rule": "Only a mapping present in an independently recoverable pre-search source may be called historically frozen.",
+    "legacy_result_use": "evidence_of_prior_model_existence_and_result_metadata_only",
+    "prohibited_uses": [
+      "infer mappings from winning charts",
+      "infer selectors from ranked-candidate pathway choices",
+      "infer definitions from support values or prevalence",
+      "choose rules that improve recovery"
+    ]
+  },
+  "exact_surviving_provenance": [
+    {
+      "artifact": "reference/core/behavioral_target_combined(5).md",
+      "git_blob": "da5c2e0111433bef555b35f1415c26bcfad1d38f",
+      "sha256": "54a7720f893d425bd34af500cec1a2580a9f12f2647742131b27daab1d5a7d34",
+      "legacy_freeze_field": "target_sha256",
+      "recovered_scope": "behavioral target text; not a D/A mapping table"
+    },
+    {
+      "artifact": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+      "git_blob": "438a21864ef5bce8c375e363c74bbaf2238f5abf",
+      "sha256": "678f552b989f3547900a33e1e45fccaad2da969d94c950d0ec976d853455761f",
+      "legacy_freeze_field": "rubric_sha256",
+      "recovered_scope": "generic scoring, directness, dependency, contradiction, prevalence, and split policy; not per-observation assignments"
+    },
+    {
+      "artifact": "reference/legacy_runs/hd_global_search_results.json",
+      "git_blob": "9204a8f90ef12812b0c29f9cfe1bbfb8ab9adc3c",
+      "sha256": "58e24c0a077711ce463f152efecc5743ff1fa190d8de16a5e2449dd55ca62c69",
+      "legacy_freeze_field": null,
+      "recovered_scope": "result-only evidence and metadata; not a source of mapping definitions"
+    },
+    {
+      "artifact": "reference/legacy_runs/hd_mapping_sensitivity.json",
+      "git_blob": "00b9d2042b16ee029e4e9352190d5a684f3a6f3a",
+      "sha256": "9ced53565abdbe76f8d1f460d1551d32ab09ff48dc8499ea8a5311918c395754",
+      "legacy_freeze_field": null,
+      "recovered_scope": "result indices only; no source, mapping, or freeze metadata"
+    }
+  ],
+  "generic_policy_recovered": {
+    "structural_salience": {
+      "complete_channel": 0.8,
+      "personality_design_sun_earth_gate_or_line": 0.75,
+      "definition": 0.65,
+      "repeated_gate_or_thematic_node": 0.55,
+      "other_prominent_activation": 0.45,
+      "ordinary_hanging_gate": 0.35
+    },
+    "directness_classes": {
+      "direct": 1.0,
+      "strong": 0.75,
+      "plausible": 0.5,
+      "none": 0.0
+    },
+    "other_mechanics": [
+      "primary anchor and capped independent corroborator",
+      "alternative-path maximum rather than summation",
+      "channel/component-gate dependency control",
+      "Incarnation Cross/cardinal dependency control",
+      "conditional-prevalence hierarchy",
+      "contradiction scale and capped penalty",
+      "75/25 discovery/holdout procedure",
+      "required per-mapping provenance fields"
+    ]
+  },
+  "result_only_metadata": {
+    "provenance_class": "legacy_result_only_not_a_recovered_mapping_source",
+    "holdout_seed": 42,
+    "holdout_labels": [
+      "A5 defined Heart",
+      "D1 61-24",
+      "D2 43-23",
+      "D6 28-38"
+    ],
+    "limitations": [
+      "The labels do not define behavioral observations or complete selectors.",
+      "No unlisted ID may be labeled discovery by inference.",
+      "The result's pathway, support, prevalence, ranking, and winner fields were not used to derive rules."
+    ]
+  },
+  "related_pre_result_calibration_source": {
+    "provenance_class": "separate_case_calibrated_legacy_model_not_the_d_a_dictionary",
+    "engine": {
+      "original_path": "/mnt/hdd/home/joel/Téléchargements/CNA_S_v1_reproducible_bundle/cna_s_engine_v1.py",
+      "sha256": "fede7bfae86a74525ed33e2249da7ef3376ccdf2a8b36a394c948fd88cd4c2d7",
+      "readme_recorded_pre_run_commitment": "25991279f6006f8a503ff4c5bb3e1defa5e95424",
+      "recovered_hd_terms": {
+        "type_weights": "present",
+        "profile_weights": "present",
+        "authority_weights": "present",
+        "topology_weights": "present",
+        "complete_channel_presence_weights": {
+          "43-23": 12,
+          "61-24": 10,
+          "1-8": 8,
+          "26-44": 8
+        }
+      }
+    },
+    "readme": {
+      "original_path": "/mnt/hdd/home/joel/Téléchargements/CNA_S_v1_reproducible_bundle/CNA_S_v1_README.md",
+      "sha256": "0bba7252e744a1e8f59a8d19511f41e89171b2db1cf74b2ecaab585317089b8c",
+      "claim_boundary": "calibration/self-discrimination; HD component explicitly calibrated to behavioral features already associated with the case"
+    },
+    "archive": {
+      "original_path": "/mnt/hdd/home/joel/Téléchargements/CNA_S_v1_reproducible_bundle.zip",
+      "sha256": "2503c481811aee7c376c24a2fd7bf09bf60a63bf13a13d403e13c964335a622b"
+    },
+    "why_not_model_b_v2": [
+      "The engine does not use D1-D10 or the requested HD A1-A6 identifiers.",
+      "It does not define behavioral observations or questionnaire responses for the channel weights.",
+      "It has no per-path directness, role, dependency, contradiction, or conditional-prevalence assignments.",
+      "Its A1-A10 functions are Western-astrology modules and must not be conflated with the legacy HD A1-A6 identifiers.",
+      "Transferring D labels from the later result would be outcome-based reconstruction."
+    ],
+    "disposition": "record_provenance_only_do_not_compile_as_model_b_detailed_v2"
+  },
+  "missing_pre_search_definition_matrix": {
+    "mapping_ids": [
+      "A1",
+      "A2",
+      "A3",
+      "A4",
+      "A5",
+      "A6",
+      "D1",
+      "D2",
+      "D3",
+      "D4",
+      "D5",
+      "D6",
+      "D7",
+      "D8",
+      "D9",
+      "D10"
+    ],
+    "missing_for_every_id": [
+      "exact behavioral observation definition or predicted response",
+      "complete set of allowed pathways",
+      "formal channel/gate/cardinal/repeated/Node/hanging selectors",
+      "primary/alternative/corroborating role per pathway",
+      "directness class per pathway",
+      "dependency-cluster membership and reuse relationship",
+      "contradiction trigger and severity",
+      "conditional-prevalence parent set per pathway",
+      "source citation and rationale"
+    ],
+    "split_assignment": {
+      "missing": "complete explicit discovery/holdout assignment with pre-search provenance",
+      "result_only_partial_holdout_labels": [
+        "A5",
+        "D1",
+        "D2",
+        "D6"
+      ]
+    },
+    "missing_run_level_material": [
+      "original mapping source list",
+      "atomic observation/confidence inventory",
+      "original mapping compiler or scoring script",
+      "mapping configuration or mapping-library artifact",
+      "implementation commit identifier",
+      "ephemeris file hashes"
+    ]
+  },
+  "search_scope": {
+    "repository_history": {
+      "local_root_commit": "844609ddccc8e3a4f86c5fd23d41513effd892b3",
+      "github_root_commit": "7942dceea8a45069c7223e85116a35830a9f4ade",
+      "reference_tree_diff": "empty",
+      "tags": 0,
+      "deleted_or_renamed_reference_files": 0,
+      "result": "no earlier mapping source"
+    },
+    "moved_pre_init_git_directory": {
+      "path": "/tmp/hdmatch-empty-git-placeholder",
+      "status": "unborn_no_refs_no_reflog_no_dangling_blobs",
+      "index_tree": "9c6b78d6a3540331a95a57ee58c2a3933d7a9212",
+      "matches_commit_tree": "844609ddccc8e3a4f86c5fd23d41513effd892b3^{tree}"
+    },
+    "unreachable_git_objects": {
+      "result": "all inspected objects are recent Codex implementation/stash artifacts",
+      "original_mapping_source_found": false
+    },
+    "local_archives": [
+      {
+        "path": "/home/joel/Documents/astrology/humandesign_repo_ready.zip",
+        "sha256": "1e7c678caa161ec7d61a7120cd7e5c289b82e6b7363a003ae9e03ae676618d5a",
+        "result": "manifested specification/reference package only"
+      },
+      {
+        "path": "/home/joel/Documents/astrology/hd_reverse_match_codex_project_v1.zip",
+        "sha256": "4bc6c0b4bab57333f2ce10124987b3883468c758769d2068ecce47e2c633e283",
+        "result": "manifested specification/reference package only"
+      },
+      {
+        "path": "/home/joel/Documents/astrology/blind_birth_matcher_custom_gpt_package.zip",
+        "sha256": "92915f5e805e9f2ee9bd028789d2538de58f16cd82c3723b22386595ee727e19",
+        "result": "Custom GPT protocol package only"
+      },
+      {
+        "path": "/mnt/hdd/home/joel/Téléchargements/human_design_reverse_search_package.zip",
+        "sha256": "07c636ee34df01dbdba12efe981792361355c20a36bbb5a71333d04bd3d52859",
+        "result": "older target and generic protocol that require, but do not include, a frozen mapping table"
+      }
+    ],
+    "other_local_searches": [
+      "current tracked and generated project files",
+      "unreferenced scripts and configuration",
+      "accessible astrology sibling files and backups",
+      "Human Design-related filenames under /home/joel",
+      "exact D/A labels and legacy implementation tokens under /home/joel and /tmp",
+      "filename-constrained Trash and editor-backup locations",
+      "relevant source and archive names under mounted Downloads, Archives, and Backups"
+    ]
+  },
+  "model_and_benchmark_gate": {
+    "model_a": "MODEL-A-CORE-V1 remains the 75-case baseline",
+    "model_b_structural_intermediate": "MODEL-B-DETAILED-V1 is preserved but is not completion of detailed Model B",
+    "model_b_detailed_v2": "not created because no scoreable pre-search mappings were recovered",
+    "behavioral_ab_benchmark_allowed": false,
+    "unlock_condition": "A provenance-reviewed Model B must generate at least one behavioral prediction different from Model A before any A/B behavioral benchmark."
+  },
+  "audit_limits": [
+    "No external cloud account or deleted-disk forensic recovery was attempted.",
+    "Secrets, browser/session histories, unrelated personal files, real candidates, and result/winner contents were not inspected.",
+    "Archive timestamps alone were not treated as pre-search provenance.",
+    "Legacy outcomes were not reverse-engineered."
+  ]
+}
