@@ -11,6 +11,7 @@ requires-python = ">=3.11"
 dependencies = [
   "cryptography>=43,<47",
   "pydantic>=2.10,<3",
+  "PyYAML>=6.0.2,<7",
   "tzdata>=2025.1",
 ]
 
@@ -23,6 +24,7 @@ dev = [
   "pytest>=8.3,<9",
   "pytest-cov>=6,<7",
   "ruff>=0.9,<1",
+  "types-PyYAML>=6.0.12.20241230",
 ]
 all = [
   "fastapi>=0.115,<1",
@@ -34,6 +36,12 @@ all = [
 
 [project.scripts]
 hdmatch = "hdmatch.cli:main"
+
+[tool.hatch.build]
+include = [
+  "src/hdmatch/**/*.py",
+  "src/hdmatch/py.typed",
+]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/hdmatch"]
@@ -53,4 +61,3 @@ select = ["E", "F", "I", "UP", "B", "SIM"]
 python_version = "3.11"
 strict = true
 packages = ["hdmatch"]
-

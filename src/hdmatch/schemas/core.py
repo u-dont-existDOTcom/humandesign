@@ -64,7 +64,7 @@ class CandidateState(FrozenModel):
     cross_engine_status: Literal["verified", "unverified", "disagreement"] = "unverified"
 
     @model_validator(mode="after")
-    def validate_interval(self) -> "CandidateState":
+    def validate_interval(self) -> CandidateState:
         if self.end_utc <= self.start_utc:
             raise ValueError("candidate-state interval must have positive duration")
         duration = (self.end_utc - self.start_utc).total_seconds()
@@ -117,4 +117,3 @@ class RankedDate(FrozenModel):
     best_state: ScoredState
     duration_weighted_support: float
     tied: bool = False
-
