@@ -9,11 +9,13 @@ from dataclasses import dataclass, replace
 from datetime import UTC, date, datetime
 from hashlib import sha256
 from pathlib import Path
+from types import MappingProxyType
 from typing import Any
 
 from hdmatch.evaluation.leakage import assert_no_blind_leakage, assert_no_prediction_leakage
 from hdmatch.experiments.canonical import load_json_bytes, sha256_file
 from hdmatch.model.mapping_library import MappingStatus
+from hdmatch.model_b_v2_new import PreparedPrevalence
 from hdmatch.schemas import BehavioralResponse, BlindCase, CandidateState, ScoredState
 from hdmatch.search import AggregationMode, aggregate_dates, select_next_question
 from hdmatch.search.candidate_universe import local_date_utc_bounds, local_month_utc_bounds
@@ -25,7 +27,12 @@ from hdmatch.synthetic.noise import NoiseTier, noise_parameters_payload
 from hdmatch.synthetic.sealing import assert_no_plaintext_answer_keys_in_paths
 
 from .chart_adapter import ExactChartAdapter
-from .symbolic_adapter import RuntimeSymbolicModel, candidate_prevalence
+from .symbolic_adapter import (
+    MODEL_B_V2_NEW_ID,
+    RuntimeSymbolicModel,
+    prepare_runtime_prevalence,
+    runtime_model_public_paths,
+)
 from .universe_cache import (
     MonthRequest,
     cache_path,
@@ -45,7 +52,7 @@ def _score_states(
     states: Sequence[CandidateState],
     responses: Sequence[BehavioralResponse],
     model: RuntimeSymbolicModel,
-    prevalence: Mapping[str, float],
+    prevalence: Any,
 ) -> dict[str, ScoredState]:
     by_signature: dict[tuple[Any, ...], ScoredState] = {}
     scores: dict[str, ScoredState] = {}
@@ -122,6 +129,24 @@ def _known_date_prevalence(
     return anchors
 
 
+def _known_date_runtime_prevalence(
+    date_states: Sequence[CandidateState],
+    full_month_states: Sequence[CandidateState],
+    model: RuntimeSymbolicModel,
+    local_day: date,
+    timezone_name: str,
+) -> Mapping[str, float] | PreparedPrevalence:
+    """Keep Model A weights date-eligible; only V2 detail uses the full month."""
+
+    base = _known_date_prevalence(date_states, model, local_day, timezone_name)
+    if model.model_id != MODEL_B_V2_NEW_ID:
+        return base
+    prepared = prepare_runtime_prevalence(model, full_month_states)
+    if not isinstance(prepared, PreparedPrevalence):
+        raise TypeError("prospective Model B V2 did not prepare its typed prevalence context")
+    return replace(prepared, base_flat=MappingProxyType(dict(sorted(base.items()))))
+
+
 def _serialize_interval_ranking(
     ranking: KnownDateIntervalRanking,
     states: Sequence[CandidateState],
@@ -183,7 +208,7 @@ def _ranked_interval_payload(
     states: Sequence[CandidateState],
     responses: Sequence[BehavioralResponse],
     model: RuntimeSymbolicModel,
-    prevalence: Mapping[str, float],
+    prevalence: Any,
     local_day: date,
     timezone_name: str,
     *,
@@ -237,7 +262,7 @@ def _ranked_payload(
     states: Sequence[CandidateState],
     responses: Sequence[BehavioralResponse],
     model: RuntimeSymbolicModel,
-    prevalence: Mapping[str, float],
+    prevalence: Any,
     settings: RecoverySettings,
     *,
     detailed: bool,
@@ -381,7 +406,7 @@ def _restoration(
     grouped: Mapping[str, tuple[BehavioralResponse, ...]],
     states: Sequence[CandidateState],
     model: RuntimeSymbolicModel,
-    prevalence: Mapping[str, float],
+    prevalence: Any,
     settings: RecoverySettings,
 ) -> list[dict[str, Any]]:
     restored: list[BehavioralResponse] = []
@@ -410,7 +435,7 @@ def _interval_restoration(
     grouped: Mapping[str, tuple[BehavioralResponse, ...]],
     states: Sequence[CandidateState],
     model: RuntimeSymbolicModel,
-    prevalence: Mapping[str, float],
+    prevalence: Any,
     local_day: date,
     timezone_name: str,
     *,
@@ -472,6 +497,7 @@ def recover_blind_file(
             blind_path,
             ephemeris_path,
             cache_dir,
+            *runtime_model_public_paths(model),
         )
     )
     assert_no_blind_leakage(blind_path)
@@ -527,6 +553,7 @@ def recover_blind_file(
     for case, request in zip(cases, requests, strict=True):
         states = universes[request]
         if case.candidate_universe == "known_date":
+            full_month_reference_states = states
             if case.known_birth_day is None:
                 raise ValueError(f"known-date case {case.case_id} lacks known_birth_day")
             try:
@@ -550,8 +577,9 @@ def recover_blind_file(
                 if state.start_utc == month_start or state.end_utc == month_end
             )
             states = _known_date_states(states, local_day)
-            prevalence = _known_date_prevalence(
+            prevalence = _known_date_runtime_prevalence(
                 states,
+                full_month_reference_states,
                 model,
                 local_day,
                 case.iana_timezone,
@@ -659,7 +687,10 @@ def recover_blind_file(
                         )
                     ],
                     "prevalence_source": (
-                        "eligible-duration-weighted exact known-date interval universe"
+                        "base=date-eligible exact intervals; "
+                        "detailed=full exact known-month reference universe"
+                        if model.model_id == MODEL_B_V2_NEW_ID
+                        else "eligible-duration-weighted exact known-date interval universe"
                     ),
                     "adaptive_prior_source": (
                         "eligible-duration-weighted exact known-date interval universe"
@@ -669,7 +700,7 @@ def recover_blind_file(
                 }
             )
             continue
-        prevalence = candidate_prevalence(states, model.library)
+        prevalence = prepare_runtime_prevalence(model, states)
         grouped = _group_responses(case.responses)
         clusters = list(grouped)
         public_seed = int.from_bytes(

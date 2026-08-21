@@ -7,10 +7,15 @@ import json
 import secrets
 import stat
 from collections.abc import Sequence
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
 from hdmatch.config import load_synthetic_config
+from hdmatch.evaluation.behavioral_difference import (
+    audit_behavioral_difference,
+    require_behavioral_difference,
+)
 from hdmatch.evaluation.leakage import assert_no_blind_leakage
 from hdmatch.evaluation.model_comparison import audit_structural_discrimination
 from hdmatch.evaluation.noise_benchmark import NoiseTier
@@ -40,10 +45,17 @@ from hdmatch.human import (
 from hdmatch.model import compile_mapping_artifacts
 from hdmatch.model_b.compiler import compile_model_b_artifacts
 from hdmatch.model_b.mapping_library import FrozenModelB
+from hdmatch.model_b_v2_new import (
+    FrozenModelBV2New,
+    compile_model_b_v2_new,
+    freeze_model_b_v2_new,
+)
 from hdmatch.runtime import (
     MODEL_A_ID,
     MODEL_B_ID,
+    MODEL_B_V2_NEW_ID,
     ExactChartAdapter,
+    FrozenSymbolicModel,
     RuntimeSymbolicModel,
     declared_ephemeris_files,
     load_runtime_model,
@@ -73,7 +85,45 @@ def _load_selected_model(args: argparse.Namespace) -> RuntimeSymbolicModel:
         str(args.model),
         model_a_mapping_path=args.mapping,
         model_b_artifact_path=args.model_b_artifact,
+        model_b_v2_compiled_path=args.model_b_v2_compiled,
+        model_b_v2_freeze_path=args.model_b_v2_freeze,
     )
+
+
+def _require_v2_public_inputs(args: argparse.Namespace) -> tuple[str, str]:
+    compiled = args.model_b_v2_compiled
+    freeze = args.model_b_v2_freeze
+    if not compiled or not freeze:
+        raise ValueError(
+            "MODEL-B-DETAILED-V2-NEW requires --model-b-v2-compiled and "
+            "--model-b-v2-freeze"
+        )
+    return str(compiled), str(freeze)
+
+
+def _verify_v2_freeze_precedes_manifest(
+    model: RuntimeSymbolicModel,
+    manifest: Any,
+) -> None:
+    if (
+        isinstance(model, FrozenModelBV2New)
+        and model.freeze_receipt.frozen_at_utc > manifest.created_at_utc
+    ):
+        raise ValueError("V2 model freeze must predate the blind recovery run manifest")
+
+
+def _v2_generation_timing(
+    model: RuntimeSymbolicModel,
+    generation_started_at_utc: datetime,
+) -> dict[str, datetime]:
+    if not isinstance(model, FrozenModelBV2New):
+        return {}
+    if model.freeze_receipt.frozen_at_utc > generation_started_at_utc:
+        raise ValueError("V2 model freeze must predate synthetic generation")
+    return {
+        "generation_started_at_utc": generation_started_at_utc,
+        "model_freeze_created_at_utc": model.freeze_receipt.frozen_at_utc,
+    }
 
 
 def _read_secret_seed(path: str | Path | None) -> int:
@@ -100,6 +150,7 @@ def _resolve_key_file(run_dir: Path, configured: str | None) -> Path:
 
 
 def _command_generate(args: argparse.Namespace) -> int:
+    generation_started_at_utc = datetime.now(UTC)
     config_path = Path(args.config)
     config = load_synthetic_config(config_path)
     if config.seed is not None:
@@ -124,6 +175,7 @@ def _command_generate(args: argparse.Namespace) -> int:
     resolved = config.model_copy(update={"seed": seed, "ephemeris_path": str(ephemeris_path)})
     chart = ExactChartAdapter(ephemeris_path)
     model = _load_selected_model(args)
+    generation_timing = _v2_generation_timing(model, generation_started_at_utc)
     bundle = SyntheticGenerator(chart, model).generate(resolved)
     write_new_canonical_json(blind_path, bundle.blind_document)
     leakage = assert_no_blind_leakage(blind_path)
@@ -162,6 +214,7 @@ def _command_generate(args: argparse.Namespace) -> int:
         "external_reveal_key_status": "owner-only-key-ready-path-withheld",
         "claim_boundary": "synthetic-engineering-validation-only",
     }
+    receipt.update(generation_timing)
     write_new_canonical_json(receipt_path, receipt)
     print(f"blind experiment: {blind_path}")
     print(f"blind input sha256: {receipt['blind_input_sha256']}")
@@ -198,6 +251,9 @@ def _command_recover(args: argparse.Namespace) -> int:
         visible_paths.append(args.cache_dir)
     if str(args.model) == MODEL_B_ID:
         visible_paths.append(args.model_b_artifact)
+    if str(args.model) == MODEL_B_V2_NEW_ID:
+        compiled, freeze = _require_v2_public_inputs(args)
+        visible_paths.extend((compiled, freeze))
     assert_no_plaintext_answer_keys_in_paths(visible_paths)
     blind = load_json_bytes(blind_path, require_canonical=True)
     if not isinstance(blind, dict):
@@ -209,6 +265,10 @@ def _command_recover(args: argparse.Namespace) -> int:
     }
     if model.model_id == MODEL_B_ID:
         input_hashes["model_b_artifact"] = sha256_file(args.model_b_artifact)
+    if model.model_id == MODEL_B_V2_NEW_ID:
+        compiled, freeze = _require_v2_public_inputs(args)
+        input_hashes["model_b_v2_compiled_artifact"] = sha256_file(compiled)
+        input_hashes["model_b_v2_freeze_receipt"] = sha256_file(freeze)
     for file in declared_ephemeris_files(args.ephemeris):
         input_hashes[f"ephemeris:{file.name}"] = sha256_file(file)
     public_recovery_seed = int(input_hashes["blind_cases.json"][:16], 16)
@@ -235,6 +295,7 @@ def _command_recover(args: argparse.Namespace) -> int:
             input_hashes=input_hashes,
             config=manifest_config,
         )
+        _verify_v2_freeze_precedes_manifest(model, manifest)
     else:
         manifest = create_run_manifest(
             experiment_id=str(blind["experiment_id"]),
@@ -247,6 +308,7 @@ def _command_recover(args: argparse.Namespace) -> int:
             config=manifest_config,
             declared_outputs=("predictions.json", "prediction.freeze.json"),
         )
+        _verify_v2_freeze_precedes_manifest(model, manifest)
         write_run_manifest(manifest, manifest_path)
     predictions = recover_blind_file(
         blind_path,
@@ -396,6 +458,87 @@ def _command_compare_models(args: argparse.Namespace) -> int:
             sort_keys=True,
         )
     )
+    return 0
+
+
+def _command_audit_model_b_v2_new_difference(args: argparse.Namespace) -> int:
+    """Write the answer-key-free behavioral difference gate, including failures."""
+
+    visible_paths = (
+        ROOT,
+        args.cache_dir,
+        args.ephemeris,
+        args.mapping,
+        args.model_b_v2_compiled,
+        args.model_b_v2_freeze,
+        Path(args.output).parent,
+    )
+    assert_no_plaintext_answer_keys_in_paths(visible_paths)
+    engine = ExactChartAdapter(args.ephemeris)
+    request = MonthRequest(args.year, args.month, args.timezone)
+    cached = load_cached_universe(
+        cache_path(args.cache_dir, request, engine.fingerprint),
+        request=request,
+        engine_fingerprint=engine.fingerprint,
+    )
+    model_a = load_runtime_model(
+        MODEL_A_ID,
+        model_a_mapping_path=args.mapping,
+    )
+    model_b = load_runtime_model(
+        MODEL_B_V2_NEW_ID,
+        model_a_mapping_path=args.mapping,
+        model_b_v2_compiled_path=args.model_b_v2_compiled,
+        model_b_v2_freeze_path=args.model_b_v2_freeze,
+    )
+    if not isinstance(model_a, FrozenSymbolicModel) or not isinstance(
+        model_b, FrozenModelBV2New
+    ):
+        raise TypeError("behavioral difference audit loaded incompatible model runtimes")
+    audit = audit_behavioral_difference(cached.states, model_a, model_b)
+    write_new_canonical_json(args.output, audit)
+    require_behavioral_difference(audit)
+    print(f"behavioral difference audit: {args.output}")
+    print(
+        json.dumps(
+            {
+                "status": audit.status,
+                "witnesses": len(audit.witnesses),
+                "source_favoring_groups": (
+                    audit.groups_with_source_favoring_tie_split
+                ),
+                "adverse_groups": audit.groups_with_adverse_tie_split,
+            },
+            sort_keys=True,
+        )
+    )
+    return 0
+
+
+def _command_compile_model_b_v2_new(args: argparse.Namespace) -> int:
+    artifact = compile_model_b_v2_new(
+        repository_root=args.repository_root,
+        preregistration_path=args.preregistration,
+        compiled_output_path=args.output,
+    )
+    print(f"compiled V2 model: {args.output}")
+    print(f"compiled semantic sha256: {artifact.sha256()}")
+    print(f"compiled file sha256: {sha256_file(args.output)}")
+    return 0
+
+
+def _command_freeze_model_b_v2_new(args: argparse.Namespace) -> int:
+    receipt = freeze_model_b_v2_new(
+        repository_root=args.repository_root,
+        preregistration_path=args.preregistration,
+        compiled_artifact_path=args.compiled,
+        freeze_receipt_output_path=args.output,
+        source_software_commit=args.source_software_commit,
+        source_software_tree=args.source_software_tree,
+    )
+    print(f"V2 model freeze: {args.output}")
+    print(f"freeze receipt sha256: {sha256_file(args.output)}")
+    print(f"model frozen at UTC: {receipt.frozen_at_utc.isoformat()}")
     return 0
 
 
@@ -575,11 +718,13 @@ def _command_compare_noise_tiers(args: argparse.Namespace) -> int:
 def _add_model_arguments(parser: argparse.ArgumentParser) -> None:
     parser.add_argument(
         "--model",
-        choices=(MODEL_A_ID, MODEL_B_ID),
+        choices=(MODEL_A_ID, MODEL_B_ID, MODEL_B_V2_NEW_ID),
         default=MODEL_A_ID,
     )
     parser.add_argument("--mapping", default=str(DEFAULT_MAPPING))
     parser.add_argument("--model-b-artifact", default=str(DEFAULT_MODEL_B_ARTIFACT))
+    parser.add_argument("--model-b-v2-compiled")
+    parser.add_argument("--model-b-v2-freeze")
 
 
 def _parser() -> argparse.ArgumentParser:
@@ -651,6 +796,42 @@ def _parser() -> argparse.ArgumentParser:
     comparison.add_argument("--model-b-artifact", default=str(DEFAULT_MODEL_B_ARTIFACT))
     comparison.add_argument("--mapping", default=str(DEFAULT_MAPPING))
     comparison.set_defaults(handler=_command_compare_models)
+
+    difference = subparsers.add_parser(
+        "audit-model-b-v2-new-difference",
+        help="prove prospective V2 changes non-unknown responses and splits a Model A tie",
+    )
+    difference.add_argument("--cache-dir", required=True)
+    difference.add_argument("--ephemeris", required=True)
+    difference.add_argument("--output", required=True)
+    difference.add_argument("--year", type=int, required=True)
+    difference.add_argument("--month", type=int, choices=range(1, 13), required=True)
+    difference.add_argument("--timezone", default="UTC")
+    difference.add_argument("--mapping", default=str(DEFAULT_MAPPING))
+    difference.add_argument("--model-b-v2-compiled", required=True)
+    difference.add_argument("--model-b-v2-freeze", required=True)
+    difference.set_defaults(handler=_command_audit_model_b_v2_new_difference)
+
+    compile_v2 = subparsers.add_parser(
+        "compile-model-b-v2-new",
+        help="deterministically compile the prospective V2 preregistration",
+    )
+    compile_v2.add_argument("--repository-root", default=str(ROOT))
+    compile_v2.add_argument("--preregistration", required=True)
+    compile_v2.add_argument("--output", required=True)
+    compile_v2.set_defaults(handler=_command_compile_model_b_v2_new)
+
+    freeze_v2 = subparsers.add_parser(
+        "freeze-model-b-v2-new",
+        help="freeze the prospective V2 compiled model before generation",
+    )
+    freeze_v2.add_argument("--repository-root", default=str(ROOT))
+    freeze_v2.add_argument("--preregistration", required=True)
+    freeze_v2.add_argument("--compiled", required=True)
+    freeze_v2.add_argument("--output", required=True)
+    freeze_v2.add_argument("--source-software-commit", required=True)
+    freeze_v2.add_argument("--source-software-tree", required=True)
+    freeze_v2.set_defaults(handler=_command_freeze_model_b_v2_new)
 
     human_import = subparsers.add_parser(
         "human-import",

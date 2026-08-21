@@ -26,10 +26,12 @@ from hdmatch.experiments.canonical import (
     write_new_canonical_json,
 )
 from hdmatch.experiments.manifest import create_run_manifest, write_run_manifest
+from hdmatch.model_b_v2_new import FrozenModelBV2New
 from hdmatch.runtime.chart_adapter import declared_ephemeris_files
 from hdmatch.runtime.symbolic_adapter import (
     MODEL_A_ID,
     MODEL_B_ID,
+    MODEL_B_V2_NEW_ID,
     load_runtime_model,
 )
 from hdmatch.search import AggregationMode
@@ -69,6 +71,8 @@ class RecoveryBoundaryRequest:
     python_environment: Path
     model_id: str = MODEL_A_ID
     model_b_artifact: Path | None = None
+    model_b_v2_compiled: Path | None = None
+    model_b_v2_freeze: Path | None = None
     candidate_cache: Path | None = None
     workers: int = 1
     aggregation: str = AggregationMode.DURATION_WEIGHTED_EVIDENCE.value
@@ -317,10 +321,16 @@ def build_recovery_mount_plan(
 ) -> RecoveryMountPlan:
     """Build the fixed recovery command; no secret/key/reveal parameter exists."""
 
-    if request.model_id not in {MODEL_A_ID, MODEL_B_ID}:
+    if request.model_id not in {MODEL_A_ID, MODEL_B_ID, MODEL_B_V2_NEW_ID}:
         raise KeylessIsolationError("unsupported symbolic model identity")
     if request.model_id == MODEL_B_ID and request.model_b_artifact is None:
         raise KeylessIsolationError("Model B requires its frozen artifact")
+    if request.model_id == MODEL_B_V2_NEW_ID and (
+        request.model_b_v2_compiled is None or request.model_b_v2_freeze is None
+    ):
+        raise KeylessIsolationError(
+            "MODEL-B-DETAILED-V2-NEW requires compiled and freeze artifacts"
+        )
     if request.workers < 1:
         raise KeylessIsolationError("workers must be at least one")
     if request.aggregation not in {item.value for item in AggregationMode}:
@@ -335,14 +345,37 @@ def build_recovery_mount_plan(
         if request.model_b_artifact is not None
         else None
     )
+    model_b_v2_compiled = (
+        request.model_b_v2_compiled.expanduser().resolve(strict=True)
+        if request.model_b_v2_compiled is not None
+        else None
+    )
+    model_b_v2_freeze = (
+        request.model_b_v2_freeze.expanduser().resolve(strict=True)
+        if request.model_b_v2_freeze is not None
+        else None
+    )
     for artifact in (blind, mapping, questions):
         if not artifact.is_file():
             raise KeylessIsolationError("a required public recovery artifact is missing")
     if model_b is not None and not model_b.is_file():
         raise KeylessIsolationError("the frozen Model B artifact is missing")
+    if model_b_v2_compiled is not None and not model_b_v2_compiled.is_file():
+        raise KeylessIsolationError("the compiled Model B V2 artifact is missing")
+    if model_b_v2_freeze is not None and not model_b_v2_freeze.is_file():
+        raise KeylessIsolationError("the Model B V2 freeze receipt is missing")
     _verify_question_binding(mapping, questions)
     assert_no_blind_leakage(blind)
-    assert_no_plaintext_answer_keys_in_paths((blind, mapping, questions, output))
+    assert_no_plaintext_answer_keys_in_paths(
+        (
+            blind,
+            mapping,
+            questions,
+            output,
+            *((model_b_v2_compiled,) if model_b_v2_compiled is not None else ()),
+            *((model_b_v2_freeze,) if model_b_v2_freeze is not None else ()),
+        )
+    )
 
     ephemeris_files = _ephemeris_files(request.ephemeris_path)
     cache_files = _candidate_cache_files(request.candidate_cache)
@@ -380,6 +413,17 @@ def build_recovery_mount_plan(
                 "--ro-bind",
                 str(model_b),
                 str(_SANDBOX_PUBLIC / "artifacts" / "model_b.json"),
+            )
+        )
+    if model_b_v2_compiled is not None and model_b_v2_freeze is not None:
+        command.extend(
+            (
+                "--ro-bind",
+                str(model_b_v2_compiled),
+                str(_SANDBOX_PUBLIC / "artifacts" / "model_b_v2_compiled.json"),
+                "--ro-bind",
+                str(model_b_v2_freeze),
+                str(_SANDBOX_PUBLIC / "artifacts" / "model_b_v2_freeze.json"),
             )
         )
     for ephemeris in ephemeris_files:
@@ -445,6 +489,15 @@ def build_recovery_mount_plan(
                 str(_SANDBOX_PUBLIC / "artifacts" / "model_b.json"),
             )
         )
+    if model_b_v2_compiled is not None and model_b_v2_freeze is not None:
+        command.extend(
+            (
+                "--model-b-v2-compiled",
+                str(_SANDBOX_PUBLIC / "artifacts" / "model_b_v2_compiled.json"),
+                "--model-b-v2-freeze",
+                str(_SANDBOX_PUBLIC / "artifacts" / "model_b_v2_freeze.json"),
+            )
+        )
     return RecoveryMountPlan(
         command=tuple(command),
         ephemeris_files=ephemeris_files,
@@ -472,6 +525,8 @@ def _precreate_public_manifest(
         request.model_id,
         model_a_mapping_path=request.mapping_file,
         model_b_artifact_path=request.model_b_artifact,
+        model_b_v2_compiled_path=request.model_b_v2_compiled,
+        model_b_v2_freeze_path=request.model_b_v2_freeze,
     )
     input_hashes = {
         "blind_cases.json": sha256_file(request.blind_file),
@@ -480,6 +535,15 @@ def _precreate_public_manifest(
     if model.model_id == MODEL_B_ID:
         assert request.model_b_artifact is not None
         input_hashes["model_b_artifact"] = sha256_file(request.model_b_artifact)
+    if model.model_id == MODEL_B_V2_NEW_ID:
+        assert request.model_b_v2_compiled is not None
+        assert request.model_b_v2_freeze is not None
+        input_hashes["model_b_v2_compiled_artifact"] = sha256_file(
+            request.model_b_v2_compiled
+        )
+        input_hashes["model_b_v2_freeze_receipt"] = sha256_file(
+            request.model_b_v2_freeze
+        )
     for ephemeris in declared_ephemeris_files(request.ephemeris_path):
         input_hashes[f"ephemeris:{ephemeris.name}"] = sha256_file(ephemeris)
     public_seed = int(input_hashes["blind_cases.json"][:16], 16)
@@ -500,6 +564,11 @@ def _precreate_public_manifest(
         config=config,
         declared_outputs=("predictions.json", "prediction.freeze.json"),
     )
+    if (
+        isinstance(model, FrozenModelBV2New)
+        and model.freeze_receipt.frozen_at_utc > manifest.created_at_utc
+    ):
+        raise KeylessIsolationError("V2 model freeze must predate the recovery manifest")
     if manifest.software_commit != provenance.commit or manifest.software_dirty:
         raise KeylessIsolationError("public manifest source provenance is not the clean checkout")
     destination = output / "run.manifest.json"
@@ -561,6 +630,16 @@ def run_claim_grade_recovery(
             "model_b_artifact": (
                 "read-only-single-file" if request.model_b_artifact is not None else "absent"
             ),
+            "model_b_v2_compiled_artifact": (
+                "read-only-single-file"
+                if request.model_b_v2_compiled is not None
+                else "absent"
+            ),
+            "model_b_v2_freeze_receipt": (
+                "read-only-single-file"
+                if request.model_b_v2_freeze is not None
+                else "absent"
+            ),
             "ephemeris": "read-only-declared-se1-files",
             "candidate_cache": (
                 "read-only-declared-month-files" if plan.candidate_cache_files else "absent"
@@ -586,6 +665,16 @@ def run_claim_grade_recovery(
         "model_b_artifact_sha256": (
             sha256_file(request.model_b_artifact)
             if request.model_b_artifact is not None
+            else None
+        ),
+        "model_b_v2_compiled_sha256": (
+            sha256_file(request.model_b_v2_compiled)
+            if request.model_b_v2_compiled is not None
+            else None
+        ),
+        "model_b_v2_freeze_sha256": (
+            sha256_file(request.model_b_v2_freeze)
+            if request.model_b_v2_freeze is not None
             else None
         ),
         "ephemeris_sha256": _artifact_hashes(plan.ephemeris_files),
@@ -698,8 +787,14 @@ def _parser() -> argparse.ArgumentParser:
     parser.add_argument("--mapping", required=True, type=Path)
     parser.add_argument("--question-bank", required=True, type=Path)
     parser.add_argument("--python-environment", type=Path, default=Path(sys.prefix))
-    parser.add_argument("--model", choices=(MODEL_A_ID, MODEL_B_ID), default=MODEL_A_ID)
+    parser.add_argument(
+        "--model",
+        choices=(MODEL_A_ID, MODEL_B_ID, MODEL_B_V2_NEW_ID),
+        default=MODEL_A_ID,
+    )
     parser.add_argument("--model-b-artifact", type=Path)
+    parser.add_argument("--model-b-v2-compiled", type=Path)
+    parser.add_argument("--model-b-v2-freeze", type=Path)
     parser.add_argument("--candidate-cache", type=Path)
     parser.add_argument("--workers", type=int, default=1)
     parser.add_argument(
@@ -723,6 +818,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         python_environment=args.python_environment,
         model_id=str(args.model),
         model_b_artifact=args.model_b_artifact,
+        model_b_v2_compiled=args.model_b_v2_compiled,
+        model_b_v2_freeze=args.model_b_v2_freeze,
         candidate_cache=args.candidate_cache,
         workers=int(args.workers),
         aggregation=str(args.aggregation),

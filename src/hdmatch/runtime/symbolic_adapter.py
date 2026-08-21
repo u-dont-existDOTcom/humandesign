@@ -5,14 +5,17 @@ from __future__ import annotations
 from collections.abc import Iterable, Mapping, Sequence
 from hashlib import sha256
 from pathlib import Path
-from typing import Any, Protocol
+from typing import Any, Final, Protocol
 
 from hdmatch.model import MappingLibrary, load_mapping_library, score_symbolic
 from hdmatch.model_b.mapping_library import FrozenModelB
+from hdmatch.model_b_v2_new import MODEL_ID as _MODEL_B_V2_NEW_ID
+from hdmatch.model_b_v2_new import FrozenModelBV2New, PreparedPrevalence
 from hdmatch.schemas import BehavioralResponse, CandidateState, ChartFeatures, ScoredState
 
 MODEL_A_ID = "MODEL-A-CORE-V1"
 MODEL_B_ID = "MODEL-B-DETAILED-V1"
+MODEL_B_V2_NEW_ID: Final[str] = _MODEL_B_V2_NEW_ID
 
 
 class RuntimeSymbolicModel(Protocol):
@@ -46,7 +49,7 @@ class RuntimeSymbolicModel(Protocol):
         self,
         state: CandidateState,
         responses: Iterable[BehavioralResponse],
-        prevalence_by_anchor: Mapping[str, float],
+        prevalence_by_anchor: Any,
     ) -> ScoredState: ...
 
 
@@ -153,6 +156,8 @@ def load_runtime_model(
     *,
     model_a_mapping_path: str | Path,
     model_b_artifact_path: str | Path | None = None,
+    model_b_v2_compiled_path: str | Path | None = None,
+    model_b_v2_freeze_path: str | Path | None = None,
 ) -> RuntimeSymbolicModel:
     """Load one explicit model identity; never infer a favorable artifact."""
 
@@ -165,7 +170,41 @@ def load_runtime_model(
             model_b_artifact_path,
             base_mapping_path=model_a_mapping_path,
         )
+    if model_id == MODEL_B_V2_NEW_ID:
+        if model_b_v2_compiled_path is None or model_b_v2_freeze_path is None:
+            raise ValueError(
+                "MODEL-B-DETAILED-V2-NEW requires explicit compiled and freeze artifacts"
+            )
+        return FrozenModelBV2New(
+            model_b_v2_compiled_path,
+            model_b_v2_freeze_path,
+            base_mapping_path=model_a_mapping_path,
+        )
     raise ValueError(f"unsupported symbolic model ID: {model_id}")
+
+
+def prepare_runtime_prevalence(
+    model: RuntimeSymbolicModel,
+    states: Sequence[CandidateState],
+) -> Mapping[str, float] | PreparedPrevalence:
+    """Prepare the model-specific public prevalence context.
+
+    Model A and structural-only Model B V1 retain their existing flat
+    candidate-universe prevalence.  The prospective V2 model fails closed on a
+    typed context prepared from the complete exact reference universe.
+    """
+
+    if isinstance(model, FrozenModelBV2New):
+        return model.prepare_prevalence(states)
+    return candidate_prevalence(states, model.library)
+
+
+def runtime_model_public_paths(model: RuntimeSymbolicModel) -> tuple[Path, ...]:
+    """Return additional public model inputs that recovery must preflight."""
+
+    if isinstance(model, FrozenModelBV2New):
+        return (model.compiled_artifact_path, model.freeze_receipt_path)
+    return ()
 
 
 def candidate_prevalence(

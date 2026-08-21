@@ -4,10 +4,13 @@ from .chart_adapter import ExactChartAdapter, declared_ephemeris_files
 from .symbolic_adapter import (
     MODEL_A_ID,
     MODEL_B_ID,
+    MODEL_B_V2_NEW_ID,
     FrozenSymbolicModel,
     RuntimeSymbolicModel,
     candidate_prevalence,
     load_runtime_model,
+    prepare_runtime_prevalence,
+    runtime_model_public_paths,
 )
 from .universe_cache import (
     CachedUniverse,
@@ -22,6 +25,7 @@ __all__ = [
     "RuntimeSymbolicModel",
     "MODEL_A_ID",
     "MODEL_B_ID",
+    "MODEL_B_V2_NEW_ID",
     "CachedUniverse",
     "MonthRequest",
     "candidate_prevalence",
@@ -29,4 +33,6 @@ __all__ = [
     "ensure_month_caches",
     "load_cached_universe",
     "load_runtime_model",
+    "prepare_runtime_prevalence",
+    "runtime_model_public_paths",
 ]
