@@ -108,6 +108,7 @@ def _command_generate(args: argparse.Namespace) -> int:
     receipt = {
         "schema_version": "generation-receipt-v1",
         "experiment_id": config.experiment_id,
+        "model_id": model.model_id,
         "blind_input_sha256": sha256_file(blind_path),
         "encrypted_answer_key_sha256": sha256_file(encrypted_path),
         "public_config_sha256": sha256_file(config_path),
@@ -176,7 +177,7 @@ def _command_recover(args: argparse.Namespace) -> int:
             repository_root=ROOT,
             candidate_universe=str(blind["candidate_universe"]),
             aggregation_rule=settings.aggregation.value,
-            model_id=model.model_sha256,
+            model_id=model.model_id,
             input_hashes=input_hashes,
             config=manifest_config,
             declared_outputs=("predictions.json", "prediction.freeze.json"),

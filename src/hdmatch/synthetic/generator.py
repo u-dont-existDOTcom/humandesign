@@ -22,6 +22,9 @@ class ChartCalculator(Protocol):
 
 class FrozenResponseModel(Protocol):
     @property
+    def model_id(self) -> str: ...
+
+    @property
     def model_sha256(self) -> str: ...
 
     @property
@@ -112,6 +115,7 @@ class SyntheticGenerator:
             "schema_version": "blind-synthetic-v1",
             "experiment_id": config.experiment_id,
             "generator": "frozen-chart-to-response-model",
+            "model_id": self.response_model.model_id,
             "model_sha256": self.response_model.model_sha256,
             "question_bank_sha256": self.response_model.question_bank_sha256,
             "mapping_sha256": self.response_model.mapping_sha256,

@@ -13,10 +13,20 @@ from hdmatch.schemas import BehavioralResponse, CandidateState, ChartFeatures, S
 class FrozenSymbolicModel:
     """One immutable model used by both synthetic generator and blind decoder."""
 
-    def __init__(self, mapping_path: str | Path) -> None:
+    def __init__(
+        self,
+        mapping_path: str | Path,
+        *,
+        model_id: str = "MODEL-A-CORE-V1",
+    ) -> None:
         self.mapping_path = Path(mapping_path)
         self.library = load_mapping_library(self.mapping_path)
         self._mapping_file_sha256 = sha256(self.mapping_path.read_bytes()).hexdigest()
+        self._model_id = model_id
+
+    @property
+    def model_id(self) -> str:
+        return self._model_id
 
     @property
     def model_sha256(self) -> str:

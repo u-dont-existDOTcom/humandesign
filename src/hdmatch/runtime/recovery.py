@@ -266,6 +266,9 @@ def recover_blind_file(
         "question_bank_sha256": model.question_bank_sha256,
         "mapping_sha256": model.mapping_sha256,
     }
+    blind_model_id = raw.get("model_id", "MODEL-A-CORE-V1")
+    if blind_model_id != model.model_id:
+        raise ValueError("blind input model_id does not match decoder model")
     for field, expected in bindings.items():
         if raw.get(field) != expected:
             raise ValueError(f"blind input {field} does not match decoder artifact")
@@ -381,6 +384,7 @@ def recover_blind_file(
     result = {
         "schema_version": "predictions-v1",
         "experiment_id": raw["experiment_id"],
+        "model_id": model.model_id,
         "blind_input_sha256": blind_hash,
         **bindings,
         "aggregation_rule": settings.aggregation.value,
