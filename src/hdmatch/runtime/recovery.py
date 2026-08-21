@@ -470,6 +470,7 @@ def recover_blind_file(
         (
             decoder_root,
             blind_path,
+            ephemeris_path,
             cache_dir,
         )
     )

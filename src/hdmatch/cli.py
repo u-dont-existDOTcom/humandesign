@@ -187,7 +187,13 @@ def _command_recover(args: argparse.Namespace) -> int:
     manifest_path = run_dir / "run.manifest.json"
     if predictions_path.exists():
         raise FileExistsError(f"refusing to replace frozen-intent artifact: {predictions_path}")
-    visible_paths: list[str | Path] = [ROOT, run_dir, blind_path, args.mapping]
+    visible_paths: list[str | Path] = [
+        ROOT,
+        run_dir,
+        blind_path,
+        args.mapping,
+        args.ephemeris,
+    ]
     if args.cache_dir:
         visible_paths.append(args.cache_dir)
     if str(args.model) == MODEL_B_ID:

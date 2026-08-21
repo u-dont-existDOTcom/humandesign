@@ -206,6 +206,42 @@ def test_cli_preflight_rejects_plaintext_key_in_run_dir_before_model_or_cache(
     assert str(run_dir) not in stderr
 
 
+def test_cli_preflight_rejects_plaintext_key_disguised_as_ephemeris(
+    tmp_path: Path,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    run_dir = tmp_path / "run"
+    ephemeris = tmp_path / "ephemeris"
+    run_dir.mkdir()
+    ephemeris.mkdir()
+    write_new_canonical_json(
+        ephemeris / "ordinary.se1",
+        {
+            "schema_version": "answer-key-v1",
+            "experiment_id": "EXP",
+            "blind_input_sha256": "a" * 64,
+            "cases": [{"case_id": "C1", "true_utc": "2000-01-01T00:00:00Z"}],
+        },
+    )
+
+    with pytest.raises(SystemExit) as raised:
+        hdmatch_main(
+            (
+                "recover",
+                "--run-dir",
+                str(run_dir),
+                "--blind-file",
+                str(tmp_path / "missing-blind.json"),
+                "--ephemeris",
+                str(ephemeris),
+            )
+        )
+    assert raised.value.code == 2
+    stderr = capsys.readouterr().err
+    assert "plaintext answer key file" in stderr
+    assert str(ephemeris) not in stderr
+
+
 def test_real_bubblewrap_boundary_reads_public_input_writes_output_and_denies_secret(
     tmp_path: Path,
 ) -> None:
