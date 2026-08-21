@@ -19,6 +19,11 @@ from datetime import UTC, datetime
 from pathlib import Path, PurePosixPath
 from typing import Any, Final
 
+from hdmatch.evaluation.behavioral_difference import (
+    VerifiedBehavioralDifferenceBinding,
+    load_behavioral_difference_audit,
+    verify_behavioral_difference_audit,
+)
 from hdmatch.evaluation.leakage import assert_no_blind_leakage
 from hdmatch.experiments.canonical import (
     load_json_bytes,
@@ -27,11 +32,12 @@ from hdmatch.experiments.canonical import (
 )
 from hdmatch.experiments.manifest import create_run_manifest, write_run_manifest
 from hdmatch.model_b_v2_new import FrozenModelBV2New
-from hdmatch.runtime.chart_adapter import declared_ephemeris_files
+from hdmatch.runtime.chart_adapter import ExactChartAdapter, declared_ephemeris_files
 from hdmatch.runtime.symbolic_adapter import (
     MODEL_A_ID,
     MODEL_B_ID,
     MODEL_B_V2_NEW_ID,
+    FrozenSymbolicModel,
     load_runtime_model,
 )
 from hdmatch.search import AggregationMode
@@ -73,6 +79,8 @@ class RecoveryBoundaryRequest:
     model_b_artifact: Path | None = None
     model_b_v2_compiled: Path | None = None
     model_b_v2_freeze: Path | None = None
+    model_b_v2_difference_audit: Path | None = None
+    model_b_v2_difference_cache: Path | None = None
     candidate_cache: Path | None = None
     workers: int = 1
     aggregation: str = AggregationMode.DURATION_WEIGHTED_EVIDENCE.value
@@ -303,6 +311,52 @@ def _verify_question_binding(mapping_file: Path, question_bank_file: Path) -> No
         raise KeylessIsolationError("question bank does not match the frozen mapping artifact")
 
 
+def _verify_v2_difference_request(
+    request: RecoveryBoundaryRequest,
+    *,
+    expected_binding: VerifiedBehavioralDifferenceBinding | None = None,
+) -> VerifiedBehavioralDifferenceBinding:
+    if (
+        request.model_b_v2_compiled is None
+        or request.model_b_v2_freeze is None
+        or request.model_b_v2_difference_audit is None
+        or request.model_b_v2_difference_cache is None
+        or request.candidate_cache is None
+    ):
+        raise KeylessIsolationError(
+            "MODEL-B-DETAILED-V2-NEW requires compiled, freeze, difference-audit, "
+            "audited-cache artifacts, and the retained candidate-cache directory"
+        )
+    model_a = load_runtime_model(
+        MODEL_A_ID,
+        model_a_mapping_path=request.mapping_file,
+    )
+    model_b = load_runtime_model(
+        MODEL_B_V2_NEW_ID,
+        model_a_mapping_path=request.mapping_file,
+        model_b_v2_compiled_path=request.model_b_v2_compiled,
+        model_b_v2_freeze_path=request.model_b_v2_freeze,
+    )
+    if not isinstance(model_a, FrozenSymbolicModel) or not isinstance(
+        model_b, FrozenModelBV2New
+    ):
+        raise KeylessIsolationError("V2 difference verification loaded incompatible models")
+    audit = load_behavioral_difference_audit(request.model_b_v2_difference_audit)
+    engine = ExactChartAdapter(request.ephemeris_path)
+    binding = verify_behavioral_difference_audit(
+        request.model_b_v2_difference_audit,
+        model_a=model_a,
+        model_b=model_b,
+        candidate_cache_path=request.model_b_v2_difference_cache,
+        candidate_request=audit.candidate_universe_request.to_runtime(),
+        engine_fingerprint=engine.fingerprint,
+        expected_binding=expected_binding,
+    )
+    if binding.audited_at_utc < model_b.freeze_receipt.frozen_at_utc:
+        raise KeylessIsolationError("V2 difference audit must follow the model freeze")
+    return binding
+
+
 def _prepare_output(path: Path) -> Path:
     output = path.expanduser().resolve(strict=False)
     output.mkdir(parents=True, exist_ok=True, mode=0o700)
@@ -326,10 +380,21 @@ def build_recovery_mount_plan(
     if request.model_id == MODEL_B_ID and request.model_b_artifact is None:
         raise KeylessIsolationError("Model B requires its frozen artifact")
     if request.model_id == MODEL_B_V2_NEW_ID and (
-        request.model_b_v2_compiled is None or request.model_b_v2_freeze is None
+        request.model_b_v2_compiled is None
+        or request.model_b_v2_freeze is None
+        or request.model_b_v2_difference_audit is None
+        or request.model_b_v2_difference_cache is None
     ):
         raise KeylessIsolationError(
-            "MODEL-B-DETAILED-V2-NEW requires compiled and freeze artifacts"
+            "MODEL-B-DETAILED-V2-NEW requires compiled, freeze, difference-audit, "
+            "and audited-cache artifacts"
+        )
+    if request.model_id != MODEL_B_V2_NEW_ID and (
+        request.model_b_v2_difference_audit is not None
+        or request.model_b_v2_difference_cache is not None
+    ):
+        raise KeylessIsolationError(
+            "behavioral-difference inputs are only valid for MODEL-B-DETAILED-V2-NEW"
         )
     if request.workers < 1:
         raise KeylessIsolationError("workers must be at least one")
@@ -355,6 +420,16 @@ def build_recovery_mount_plan(
         if request.model_b_v2_freeze is not None
         else None
     )
+    model_b_v2_difference_audit = (
+        request.model_b_v2_difference_audit.expanduser().resolve(strict=True)
+        if request.model_b_v2_difference_audit is not None
+        else None
+    )
+    model_b_v2_difference_cache = (
+        request.model_b_v2_difference_cache.expanduser().resolve(strict=True)
+        if request.model_b_v2_difference_cache is not None
+        else None
+    )
     for artifact in (blind, mapping, questions):
         if not artifact.is_file():
             raise KeylessIsolationError("a required public recovery artifact is missing")
@@ -364,6 +439,16 @@ def build_recovery_mount_plan(
         raise KeylessIsolationError("the compiled Model B V2 artifact is missing")
     if model_b_v2_freeze is not None and not model_b_v2_freeze.is_file():
         raise KeylessIsolationError("the Model B V2 freeze receipt is missing")
+    if (
+        model_b_v2_difference_audit is not None
+        and not model_b_v2_difference_audit.is_file()
+    ):
+        raise KeylessIsolationError("the Model B V2 difference audit is missing")
+    if (
+        model_b_v2_difference_cache is not None
+        and not model_b_v2_difference_cache.is_file()
+    ):
+        raise KeylessIsolationError("the Model B V2 audited cache is missing")
     _verify_question_binding(mapping, questions)
     assert_no_blind_leakage(blind)
     assert_no_plaintext_answer_keys_in_paths(
@@ -374,11 +459,23 @@ def build_recovery_mount_plan(
             output,
             *((model_b_v2_compiled,) if model_b_v2_compiled is not None else ()),
             *((model_b_v2_freeze,) if model_b_v2_freeze is not None else ()),
+            *((model_b_v2_difference_audit,) if model_b_v2_difference_audit is not None else ()),
+            *((model_b_v2_difference_cache,) if model_b_v2_difference_cache is not None else ()),
         )
     )
 
+    if request.model_id == MODEL_B_V2_NEW_ID:
+        _verify_v2_difference_request(request)
+
     ephemeris_files = _ephemeris_files(request.ephemeris_path)
     cache_files = _candidate_cache_files(request.candidate_cache)
+    if (
+        model_b_v2_difference_cache is not None
+        and model_b_v2_difference_cache not in cache_files
+    ):
+        raise KeylessIsolationError(
+            "the V2 audited cache must be present in the retained candidate-cache directory"
+        )
     runtime = request.python_environment.expanduser().resolve(strict=True)
     sandbox_python = _runtime_python(runtime)
 
@@ -416,6 +513,7 @@ def build_recovery_mount_plan(
             )
         )
     if model_b_v2_compiled is not None and model_b_v2_freeze is not None:
+        assert model_b_v2_difference_cache is not None
         command.extend(
             (
                 "--ro-bind",
@@ -424,6 +522,17 @@ def build_recovery_mount_plan(
                 "--ro-bind",
                 str(model_b_v2_freeze),
                 str(_SANDBOX_PUBLIC / "artifacts" / "model_b_v2_freeze.json"),
+            )
+        )
+    if (
+        model_b_v2_difference_audit is not None
+        and model_b_v2_difference_cache is not None
+    ):
+        command.extend(
+            (
+                "--ro-bind",
+                str(model_b_v2_difference_audit),
+                str(_SANDBOX_PUBLIC / "artifacts" / "model_b_v2_difference_audit.json"),
             )
         )
     for ephemeris in ephemeris_files:
@@ -490,12 +599,21 @@ def build_recovery_mount_plan(
             )
         )
     if model_b_v2_compiled is not None and model_b_v2_freeze is not None:
+        assert model_b_v2_difference_cache is not None
         command.extend(
             (
                 "--model-b-v2-compiled",
                 str(_SANDBOX_PUBLIC / "artifacts" / "model_b_v2_compiled.json"),
                 "--model-b-v2-freeze",
                 str(_SANDBOX_PUBLIC / "artifacts" / "model_b_v2_freeze.json"),
+                "--model-b-v2-difference-audit",
+                str(_SANDBOX_PUBLIC / "artifacts" / "model_b_v2_difference_audit.json"),
+                "--model-b-v2-difference-cache",
+                str(
+                    _SANDBOX_PUBLIC
+                    / "candidate_cache"
+                    / model_b_v2_difference_cache.name
+                ),
             )
         )
     return RecoveryMountPlan(
@@ -528,6 +646,20 @@ def _precreate_public_manifest(
         model_b_v2_compiled_path=request.model_b_v2_compiled,
         model_b_v2_freeze_path=request.model_b_v2_freeze,
     )
+    difference_gate: VerifiedBehavioralDifferenceBinding | None = None
+    if isinstance(model, FrozenModelBV2New):
+        try:
+            expected_gate = VerifiedBehavioralDifferenceBinding.model_validate(
+                blind.get("model_b_v2_difference_gate")
+            )
+        except ValueError as exc:
+            raise KeylessIsolationError(
+                "V2 blind input lacks a valid behavioral-difference binding"
+            ) from exc
+        difference_gate = _verify_v2_difference_request(
+            request,
+            expected_binding=expected_gate,
+        )
     input_hashes = {
         "blind_cases.json": sha256_file(request.blind_file),
         "model_a_mapping_library": sha256_file(request.mapping_file),
@@ -544,15 +676,31 @@ def _precreate_public_manifest(
         input_hashes["model_b_v2_freeze_receipt"] = sha256_file(
             request.model_b_v2_freeze
         )
+        assert difference_gate is not None
+        input_hashes.update(
+            {
+                "model_b_v2_difference_audit": difference_gate.audit_file_sha256,
+                "model_b_v2_difference_cache": (
+                    difference_gate.candidate_cache_file_sha256
+                ),
+                "model_b_v2_model_semantic": difference_gate.model_b_sha256,
+                "model_b_v2_question_bank": difference_gate.question_bank_sha256,
+                "model_b_v2_difference_candidate_universe": (
+                    difference_gate.candidate_universe_sha256
+                ),
+            }
+        )
     for ephemeris in declared_ephemeris_files(request.ephemeris_path):
         input_hashes[f"ephemeris:{ephemeris.name}"] = sha256_file(ephemeris)
     public_seed = int(input_hashes["blind_cases.json"][:16], 16)
-    config = {
+    config: dict[str, Any] = {
         "aggregation": request.aggregation,
         "threshold_rubric_bits": request.threshold_rubric_bits,
         "workers": request.workers,
         "cache_policy": "hash-bound exact month universes",
     }
+    if difference_gate is not None:
+        config["model_b_v2_difference_gate"] = difference_gate.model_dump(mode="json")
     manifest = create_run_manifest(
         experiment_id=str(blind["experiment_id"]),
         seed=public_seed,
@@ -569,6 +717,13 @@ def _precreate_public_manifest(
         and model.freeze_receipt.frozen_at_utc > manifest.created_at_utc
     ):
         raise KeylessIsolationError("V2 model freeze must predate the recovery manifest")
+    if (
+        difference_gate is not None
+        and difference_gate.audited_at_utc > manifest.created_at_utc
+    ):
+        raise KeylessIsolationError(
+            "V2 behavioral-difference audit must predate the recovery manifest"
+        )
     if manifest.software_commit != provenance.commit or manifest.software_dirty:
         raise KeylessIsolationError("public manifest source provenance is not the clean checkout")
     destination = output / "run.manifest.json"
@@ -605,6 +760,11 @@ def run_claim_grade_recovery(
     predictions = output / "predictions.json"
     if not manifest.is_file() or not predictions.is_file():
         raise KeylessIsolationError("isolated recovery did not produce its required artifacts")
+    difference_gate = (
+        _verify_v2_difference_request(normalized)
+        if request.model_id == MODEL_B_V2_NEW_ID
+        else None
+    )
     receipt: dict[str, Any] = {
         "schema_version": "keyless-recovery-isolation-receipt-v1",
         "isolation_runtime": _bubblewrap_identity(bwrap),
@@ -638,6 +798,16 @@ def run_claim_grade_recovery(
             "model_b_v2_freeze_receipt": (
                 "read-only-single-file"
                 if request.model_b_v2_freeze is not None
+                else "absent"
+            ),
+            "model_b_v2_difference_audit": (
+                "read-only-single-file"
+                if request.model_b_v2_difference_audit is not None
+                else "absent"
+            ),
+            "model_b_v2_difference_cache": (
+                "read-only-single-file"
+                if request.model_b_v2_difference_cache is not None
                 else "absent"
             ),
             "ephemeris": "read-only-declared-se1-files",
@@ -675,6 +845,21 @@ def run_claim_grade_recovery(
         "model_b_v2_freeze_sha256": (
             sha256_file(request.model_b_v2_freeze)
             if request.model_b_v2_freeze is not None
+            else None
+        ),
+        "model_b_v2_difference_audit_sha256": (
+            sha256_file(request.model_b_v2_difference_audit)
+            if request.model_b_v2_difference_audit is not None
+            else None
+        ),
+        "model_b_v2_difference_cache_sha256": (
+            sha256_file(request.model_b_v2_difference_cache)
+            if request.model_b_v2_difference_cache is not None
+            else None
+        ),
+        "model_b_v2_difference_gate": (
+            difference_gate.model_dump(mode="json")
+            if difference_gate is not None
             else None
         ),
         "ephemeris_sha256": _artifact_hashes(plan.ephemeris_files),
@@ -795,6 +980,8 @@ def _parser() -> argparse.ArgumentParser:
     parser.add_argument("--model-b-artifact", type=Path)
     parser.add_argument("--model-b-v2-compiled", type=Path)
     parser.add_argument("--model-b-v2-freeze", type=Path)
+    parser.add_argument("--model-b-v2-difference-audit", type=Path)
+    parser.add_argument("--model-b-v2-difference-cache", type=Path)
     parser.add_argument("--candidate-cache", type=Path)
     parser.add_argument("--workers", type=int, default=1)
     parser.add_argument(
@@ -820,6 +1007,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         model_b_artifact=args.model_b_artifact,
         model_b_v2_compiled=args.model_b_v2_compiled,
         model_b_v2_freeze=args.model_b_v2_freeze,
+        model_b_v2_difference_audit=args.model_b_v2_difference_audit,
+        model_b_v2_difference_cache=args.model_b_v2_difference_cache,
         candidate_cache=args.candidate_cache,
         workers=int(args.workers),
         aggregation=str(args.aggregation),

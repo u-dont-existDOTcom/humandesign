@@ -31,6 +31,7 @@ MODEL_ID = "MODEL-B-DETAILED-V2-NEW"
 MODEL_VERSION = "V4/V3.2-prospective-detailed-symbolic-v2-new"
 BASE_MODEL_ID = "MODEL-A-CORE-V1"
 COMPILER_VERSION = "model-b-v2-new-compiler-v1"
+COMPILER_VERSION_V2 = "model-b-v2-new-compiler-v2"
 
 _SHA256_PATTERN = r"^[a-f0-9]{64}$"
 _ID_PATTERN = r"^[A-Z][A-Z0-9]*(?:-[A-Z0-9]+)*$"
@@ -596,6 +597,49 @@ class PreregistrationArtifact(FrozenModel):
         return hashlib.sha256(self.canonical_bytes()).hexdigest()
 
 
+class PreregistrationArtifactV2(PreregistrationArtifact):
+    """Provenance-only amendment to the frozen V1 preregistration.
+
+    Inheritance deliberately preserves every V1 scientific field.  The
+    compiler additionally compares those fields to the exact bound V1 bytes;
+    this schema only adds provenance-chain bindings.
+    """
+
+    schema_version: Literal["model-b-v2-new-preregistration-v2"] = (
+        "model-b-v2-new-preregistration-v2"  # type: ignore[assignment]
+    )
+    compiler_version: Literal["model-b-v2-new-compiler-v2"] = "model-b-v2-new-compiler-v2"  # type: ignore[assignment]
+    provenance_amended_at_utc: datetime
+    previous_preregistration: ArtifactBinding
+    previous_source_catalog: ArtifactBinding
+    source_catalog_artifact: ArtifactBinding
+    retrieval_manifest: ArtifactBinding
+
+    @field_validator("provenance_amended_at_utc")
+    @classmethod
+    def require_amendment_utc(cls, value: datetime) -> datetime:
+        if value.tzinfo is None or value.utcoffset() is None:
+            raise ValueError("provenance amendment timestamp must be timezone-aware")
+        return value.astimezone(UTC)
+
+    @model_validator(mode="after")
+    def validate_provenance_amendment_bindings(self) -> PreregistrationArtifactV2:
+        expected_roles = {
+            "previous_preregistration": self.previous_preregistration,
+            "previous_source_catalog": self.previous_source_catalog,
+            "source_catalog": self.source_catalog_artifact,
+            "source_retrieval_manifest": self.retrieval_manifest,
+        }
+        for expected_role, binding in expected_roles.items():
+            if binding.role != expected_role:
+                raise ValueError(
+                    f"V2 provenance binding role must be {expected_role}: {binding.role}"
+                )
+        if self.provenance_amended_at_utc < self.preregistered_at_utc:
+            raise ValueError("provenance amendment cannot precede preregistration")
+        return self
+
+
 class CompiledPathway(FrozenModel):
     pathway_id: str
     selector: DetailedSelector
@@ -710,6 +754,25 @@ class CompiledModelArtifact(FrozenModel):
         return hashlib.sha256(self.canonical_bytes()).hexdigest()
 
 
+class CompiledModelArtifactV2(CompiledModelArtifact):
+    """Compiled V2 rules with the provenance-amendment chain bound in bytes."""
+
+    schema_version: Literal["model-b-v2-new-compiled-v2"] = "model-b-v2-new-compiled-v2"  # type: ignore[assignment]
+    compiler_version: Literal["model-b-v2-new-compiler-v2"] = "model-b-v2-new-compiler-v2"  # type: ignore[assignment]
+    provenance_amended_at_utc: datetime
+    previous_preregistration: ArtifactBinding
+    previous_source_catalog: ArtifactBinding
+    source_catalog_artifact: ArtifactBinding
+    retrieval_manifest: ArtifactBinding
+
+    @field_validator("provenance_amended_at_utc")
+    @classmethod
+    def require_amendment_utc(cls, value: datetime) -> datetime:
+        if value.tzinfo is None or value.utcoffset() is None:
+            raise ValueError("compiled provenance amendment timestamp must be timezone-aware")
+        return value.astimezone(UTC)
+
+
 class ModelFreezeReceipt(FrozenModel):
     schema_version: Literal["model-b-v2-new-freeze-receipt-v1"] = "model-b-v2-new-freeze-receipt-v1"
     model_id: Literal["MODEL-B-DETAILED-V2-NEW"] = "MODEL-B-DETAILED-V2-NEW"
@@ -746,6 +809,17 @@ class ModelFreezeReceipt(FrozenModel):
         return self
 
 
+class ModelFreezeReceiptV2(ModelFreezeReceipt):
+    """Freeze receipt that binds the complete provenance-only amendment."""
+
+    schema_version: Literal["model-b-v2-new-freeze-receipt-v2"] = "model-b-v2-new-freeze-receipt-v2"  # type: ignore[assignment]
+    compiler_version: Literal["model-b-v2-new-compiler-v2"] = "model-b-v2-new-compiler-v2"  # type: ignore[assignment]
+    previous_preregistration: ArtifactBinding
+    previous_source_catalog: ArtifactBinding
+    source_catalog_artifact: ArtifactBinding
+    retrieval_manifest: ArtifactBinding
+
+
 def canonical_bytes(value: BaseModel) -> bytes:
     return json.dumps(
         value.model_dump(mode="json", exclude_none=False),
@@ -757,15 +831,35 @@ def canonical_bytes(value: BaseModel) -> bytes:
 
 
 def load_preregistration(path: str | Path) -> PreregistrationArtifact:
-    return PreregistrationArtifact.model_validate_json(Path(path).read_text(encoding="utf-8"))
+    raw = Path(path).read_text(encoding="utf-8")
+    schema_version = _schema_version(raw)
+    if schema_version == "model-b-v2-new-preregistration-v2":
+        return PreregistrationArtifactV2.model_validate_json(raw)
+    return PreregistrationArtifact.model_validate_json(raw)
 
 
 def load_compiled_artifact(path: str | Path) -> CompiledModelArtifact:
-    return CompiledModelArtifact.model_validate_json(Path(path).read_text(encoding="utf-8"))
+    raw = Path(path).read_text(encoding="utf-8")
+    schema_version = _schema_version(raw)
+    if schema_version == "model-b-v2-new-compiled-v2":
+        return CompiledModelArtifactV2.model_validate_json(raw)
+    return CompiledModelArtifact.model_validate_json(raw)
 
 
 def load_freeze_receipt(path: str | Path) -> ModelFreezeReceipt:
-    return ModelFreezeReceipt.model_validate_json(Path(path).read_text(encoding="utf-8"))
+    raw = Path(path).read_text(encoding="utf-8")
+    schema_version = _schema_version(raw)
+    if schema_version == "model-b-v2-new-freeze-receipt-v2":
+        return ModelFreezeReceiptV2.model_validate_json(raw)
+    return ModelFreezeReceipt.model_validate_json(raw)
+
+
+def _schema_version(raw: str) -> str | None:
+    value = json.loads(raw)
+    if not isinstance(value, dict):
+        return None
+    schema_version = value.get("schema_version")
+    return schema_version if isinstance(schema_version, str) else None
 
 
 def validate_prospective_relative_path(value: str) -> str:

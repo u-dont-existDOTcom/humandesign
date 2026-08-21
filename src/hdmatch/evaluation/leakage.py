@@ -110,6 +110,9 @@ _PATH_PATTERNS = (
 _SECRET_FILE_PATTERN = re.compile(
     r"(?:answer[_-]?key|secret[_-]?key|reveal)[^\s/\\]*\.(?:json|enc|key|txt)", re.I
 )
+_PUBLIC_METADATA_DATE_PATHS = {
+    "$.model_b_v2_difference_gate.audited_at_utc",
+}
 
 
 def _normalise_key(key: str) -> str:
@@ -149,17 +152,18 @@ def scan_blind_payload(payload: Any, *, scanned_file: str | None = None) -> Leak
             for index, item in enumerate(value):
                 walk(item, f"{path}[{index}]")
         elif isinstance(value, str):
-            for code, pattern in _DATE_PATTERNS:
-                if pattern.search(value):
-                    findings.append(
-                        LeakageFinding(
-                            severity=LeakSeverity.CRITICAL,
-                            code=code,
-                            json_path=path,
-                            detail="Free text contains a direct or proxy birth-date clue.",
-                            redacted_excerpt=_redact(value),
+            if path not in _PUBLIC_METADATA_DATE_PATHS:
+                for code, pattern in _DATE_PATTERNS:
+                    if pattern.search(value):
+                        findings.append(
+                            LeakageFinding(
+                                severity=LeakSeverity.CRITICAL,
+                                code=code,
+                                json_path=path,
+                                detail="Free text contains a direct or proxy birth-date clue.",
+                                redacted_excerpt=_redact(value),
+                            )
                         )
-                    )
             if any(pattern.search(value) for pattern in _PATH_PATTERNS):
                 findings.append(
                     LeakageFinding(

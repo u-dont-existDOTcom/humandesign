@@ -26,6 +26,8 @@ Prepare these public inputs:
 - frozen mapping artifact;
 - the exact question-bank file whose SHA-256 is stored in that mapping;
 - the frozen Model B artifact when selecting Model B;
+- for `MODEL-B-DETAILED-V2-NEW`, the exact compiled artifact, freeze receipt,
+  passing behavioral-difference audit, and audited retained month-cache file;
 - declared Swiss Ephemeris `.se1` files;
 - optionally, public `month-*.json` candidate-cache files;
 - a new empty decoder output directory.
@@ -57,6 +59,33 @@ For Model B, select its exact frozen identity and artifact:
 --model MODEL-B-DETAILED-V1 \
 --model-b-artifact mappings/model_b_mapping_library_v1.json
 ```
+
+For prospective V2, the wrapper verifies the complete difference gate on the
+host, mounts the exact retained audited cache only once under the read-only
+candidate-cache directory, and the isolated child independently verifies the
+same audit/model/cache binding before scoring:
+
+```bash
+PYTHONPATH=src .venv/bin/python scripts/run_keyless_recovery.py \
+  --blind-file /public/blind/V2/blind_cases.json \
+  --run-dir /public/decoder-output/V2 \
+  --ephemeris /public/ephemeris \
+  --mapping mappings/mapping_library_v1.json \
+  --question-bank reference/core/question_bank_v1.json \
+  --python-environment .venv \
+  --model MODEL-B-DETAILED-V2-NEW \
+  --model-b-v2-compiled mappings/model_b_detailed_v2_new_compiled_v2.json \
+  --model-b-v2-freeze mappings/model_b_detailed_v2_new_freeze_v2.json \
+  --model-b-v2-difference-audit reports/model_b_v2_new/behavioral_difference_2000_01_UTC.json \
+  --model-b-v2-difference-cache run_artifacts/known_month_oracle_1000/candidate_cache/month-2000-01-UTC-09e811ca0fe51797.json \
+  --candidate-cache run_artifacts/known_month_oracle_1000/candidate_cache
+```
+
+The audited cache must be the exact named `month-*.json` member used by recovery;
+equal bytes copied to a different sandbox path do not satisfy the child path
+binding. The isolation receipt records the verified audit SHA-256, compiled and
+freeze hashes, V2 model and question-bank identities, cache and full candidate-
+universe hashes, audited month request, and the read-only mount contract.
 
 The wrapper deliberately has no key, encrypted-envelope, decrypt, truth, evaluation,
 or reveal argument. If Bubblewrap is absent or cannot create every namespace, the

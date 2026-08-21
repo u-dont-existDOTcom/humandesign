@@ -11,6 +11,7 @@ from zoneinfo import ZoneInfo
 from pydantic import BaseModel, ConfigDict, Field
 
 from hdmatch.config import SyntheticConfig
+from hdmatch.evaluation.behavioral_difference import VerifiedBehavioralDifferenceBinding
 from hdmatch.schemas import BehavioralResponse, BlindCase, ChartFeatures
 from hdmatch.synthetic.noise import NoiseTier, apply_noise, noise_parameters_payload
 from hdmatch.util import canonical_json_bytes, sha256_bytes, sha256_json
@@ -61,8 +62,14 @@ class SyntheticGenerator:
         if config.seed is None:
             raise ValueError("synthetic generation requires a secret seed")
         zone = ZoneInfo(config.timezone)
-        start = datetime(config.year_start, 1, 1, tzinfo=zone).astimezone(UTC)
-        end = datetime(config.year_end + 1, 1, 1, tzinfo=zone).astimezone(UTC)
+        if config.month is None:
+            start = datetime(config.year_start, 1, 1, tzinfo=zone).astimezone(UTC)
+            end = datetime(config.year_end + 1, 1, 1, tzinfo=zone).astimezone(UTC)
+        else:
+            start = datetime(config.year_start, config.month, 1, tzinfo=zone).astimezone(UTC)
+            end_year = config.year_start + int(config.month == 12)
+            end_month = 1 if config.month == 12 else config.month + 1
+            end = datetime(end_year, end_month, 1, tzinfo=zone).astimezone(UTC)
         seconds = int((end - start).total_seconds())
         if seconds <= 0:
             raise ValueError("year_end must not precede year_start")
@@ -71,9 +78,24 @@ class SyntheticGenerator:
             start + timedelta(seconds=rng.randrange(seconds)) for _ in range(config.case_count)
         )
 
-    def generate(self, config: SyntheticConfig) -> BlindSyntheticBundle:
+    def generate(
+        self,
+        config: SyntheticConfig,
+        *,
+        model_b_v2_difference_gate: VerifiedBehavioralDifferenceBinding | None = None,
+    ) -> BlindSyntheticBundle:
         if config.seed is None:
             raise ValueError("synthetic generation requires a secret seed")
+        is_v2 = self.response_model.model_id == "MODEL-B-DETAILED-V2-NEW"
+        if is_v2 and model_b_v2_difference_gate is None:
+            raise ValueError(
+                "MODEL-B-DETAILED-V2-NEW generation requires a verified "
+                "behavioral-difference gate"
+            )
+        if not is_v2 and model_b_v2_difference_gate is not None:
+            raise ValueError("behavioral-difference gate is only valid for Model B V2")
+        if model_b_v2_difference_gate is not None:
+            self._validate_v2_difference_gate(config, model_b_v2_difference_gate)
         generation_seed = config.seed
         tier = NoiseTier(config.tier)
         zone = ZoneInfo(config.timezone)
@@ -128,6 +150,10 @@ class SyntheticGenerator:
             "candidate_universe": config.universe,
             "cases": cases,
         }
+        if model_b_v2_difference_gate is not None:
+            blind_document["model_b_v2_difference_gate"] = (
+                model_b_v2_difference_gate.model_dump(mode="json")
+            )
         blind_hash = sha256_bytes(canonical_json_bytes(blind_document))
         answer_key = {
             "schema_version": "answer-key-v1",
@@ -141,3 +167,43 @@ class SyntheticGenerator:
             answer_key=answer_key,
             blind_input_sha256=blind_hash,
         )
+
+    def _validate_v2_difference_gate(
+        self,
+        config: SyntheticConfig,
+        binding: VerifiedBehavioralDifferenceBinding,
+    ) -> None:
+        """Reject a verified audit binding that is stale for this model or scope."""
+
+        metadata = self.response_model.capability_metadata
+        expected_fields: tuple[tuple[str, object, object], ...] = (
+            ("model SHA", binding.model_b_sha256, self.response_model.model_sha256),
+            (
+                "compiled artifact SHA",
+                binding.model_b_compiled_file_sha256,
+                self.response_model.mapping_sha256,
+            ),
+            (
+                "freeze receipt SHA",
+                binding.model_b_freeze_receipt_file_sha256,
+                metadata.get("freeze_receipt_sha256"),
+            ),
+            (
+                "question-bank SHA",
+                binding.question_bank_sha256,
+                self.response_model.question_bank_sha256,
+            ),
+        )
+        for label, recorded, current in expected_fields:
+            if recorded != current:
+                raise ValueError(f"V2 behavioral-difference gate {label} is mismatched")
+        request = binding.candidate_universe_request
+        if (
+            config.year_start != request.year
+            or config.year_end != request.year
+            or config.month != request.month
+            or config.timezone != request.timezone_name
+        ):
+            raise ValueError(
+                "V2 synthetic generation must match the audited month/year/timezone"
+            )

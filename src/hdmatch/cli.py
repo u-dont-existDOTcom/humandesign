@@ -13,8 +13,11 @@ from typing import Any
 
 from hdmatch.config import load_synthetic_config
 from hdmatch.evaluation.behavioral_difference import (
+    VerifiedBehavioralDifferenceBinding,
     audit_behavioral_difference,
+    load_behavioral_difference_audit,
     require_behavioral_difference,
+    verify_behavioral_difference_audit,
 )
 from hdmatch.evaluation.leakage import assert_no_blind_leakage
 from hdmatch.evaluation.model_comparison import audit_structural_discrimination
@@ -101,6 +104,88 @@ def _require_v2_public_inputs(args: argparse.Namespace) -> tuple[str, str]:
     return str(compiled), str(freeze)
 
 
+def _require_v2_difference_inputs(args: argparse.Namespace) -> tuple[str, str]:
+    audit = getattr(args, "model_b_v2_difference_audit", None)
+    cache = getattr(args, "model_b_v2_difference_cache", None)
+    if not audit or not cache:
+        raise ValueError(
+            "MODEL-B-DETAILED-V2-NEW requires --model-b-v2-difference-audit and "
+            "--model-b-v2-difference-cache"
+        )
+    return str(audit), str(cache)
+
+
+def _reject_inapplicable_v2_difference_inputs(args: argparse.Namespace) -> None:
+    if getattr(args, "model_b_v2_difference_audit", None) or getattr(
+        args, "model_b_v2_difference_cache", None
+    ):
+        raise ValueError(
+            "behavioral-difference inputs are only valid for "
+            "MODEL-B-DETAILED-V2-NEW"
+        )
+
+
+def _verify_v2_difference_gate(
+    args: argparse.Namespace,
+    *,
+    model: FrozenModelBV2New,
+    ephemeris_path: str | Path,
+    expected_binding: VerifiedBehavioralDifferenceBinding | None = None,
+) -> VerifiedBehavioralDifferenceBinding:
+    audit_path, cache_path_value = _require_v2_difference_inputs(args)
+    audit = load_behavioral_difference_audit(audit_path)
+    request = audit.candidate_universe_request.to_runtime()
+    engine = ExactChartAdapter(ephemeris_path)
+    model_a = load_runtime_model(MODEL_A_ID, model_a_mapping_path=args.mapping)
+    if not isinstance(model_a, FrozenSymbolicModel):
+        raise TypeError("V2 difference verification requires the frozen Model A runtime")
+    binding = verify_behavioral_difference_audit(
+        audit_path,
+        model_a=model_a,
+        model_b=model,
+        candidate_cache_path=cache_path_value,
+        candidate_request=request,
+        engine_fingerprint=engine.fingerprint,
+        expected_binding=expected_binding,
+    )
+    if binding.audited_at_utc < model.freeze_receipt.frozen_at_utc:
+        raise ValueError("behavioral-difference audit must follow the V2 model freeze")
+    return binding
+
+
+def _require_generation_scope_matches_gate(
+    config: Any,
+    binding: VerifiedBehavioralDifferenceBinding,
+) -> None:
+    request = binding.candidate_universe_request
+    if (
+        config.year_start != request.year
+        or config.year_end != request.year
+        or config.month != request.month
+        or config.timezone != request.timezone_name
+    ):
+        raise ValueError(
+            "V2 generation must be restricted to the exact audited month/year/timezone"
+        )
+
+
+def _require_recovery_cache_matches_gate(
+    args: argparse.Namespace,
+    *,
+    ephemeris_path: str | Path,
+    binding: VerifiedBehavioralDifferenceBinding,
+) -> None:
+    if not args.cache_dir:
+        raise ValueError("V2 recovery requires the retained audited candidate-cache directory")
+    _, audited_cache_value = _require_v2_difference_inputs(args)
+    request = binding.candidate_universe_request.to_runtime()
+    engine = ExactChartAdapter(ephemeris_path)
+    recovery_cache = cache_path(args.cache_dir, request, engine.fingerprint).resolve()
+    audited_cache = Path(audited_cache_value).resolve()
+    if recovery_cache != audited_cache:
+        raise ValueError("V2 recovery cache must be the exact cache bound by the audit")
+
+
 def _verify_v2_freeze_precedes_manifest(
     model: RuntimeSymbolicModel,
     manifest: Any,
@@ -150,7 +235,6 @@ def _resolve_key_file(run_dir: Path, configured: str | None) -> Path:
 
 
 def _command_generate(args: argparse.Namespace) -> int:
-    generation_started_at_utc = datetime.now(UTC)
     config_path = Path(args.config)
     config = load_synthetic_config(config_path)
     if config.seed is not None:
@@ -161,6 +245,37 @@ def _command_generate(args: argparse.Namespace) -> int:
     ephemeris_path = args.ephemeris or config.ephemeris_path
     if not ephemeris_path:
         raise ValueError("exact generation requires --ephemeris")
+    model = _load_selected_model(args)
+    difference_gate: VerifiedBehavioralDifferenceBinding | None = None
+    if isinstance(model, FrozenModelBV2New):
+        audit_path, audit_cache_path = _require_v2_difference_inputs(args)
+        compiled_path, freeze_path = _require_v2_public_inputs(args)
+        assert_no_plaintext_answer_keys_in_paths(
+            (
+                args.mapping,
+                compiled_path,
+                freeze_path,
+                audit_path,
+                audit_cache_path,
+                ephemeris_path,
+            )
+        )
+        difference_gate = _verify_v2_difference_gate(
+            args,
+            model=model,
+            ephemeris_path=ephemeris_path,
+        )
+        _require_generation_scope_matches_gate(config, difference_gate)
+    else:
+        _reject_inapplicable_v2_difference_inputs(args)
+
+    generation_started_at_utc = datetime.now(UTC)
+    if (
+        difference_gate is not None
+        and difference_gate.audited_at_utc > generation_started_at_utc
+    ):
+        raise ValueError("behavioral-difference audit cannot postdate V2 generation")
+    generation_timing = _v2_generation_timing(model, generation_started_at_utc)
     run_dir = Path(args.run_dir)
     run_dir.mkdir(parents=True, exist_ok=True)
     blind_path = run_dir / "blind_cases.json"
@@ -174,9 +289,10 @@ def _command_generate(args: argparse.Namespace) -> int:
     seed = _read_secret_seed(args.seed_file)
     resolved = config.model_copy(update={"seed": seed, "ephemeris_path": str(ephemeris_path)})
     chart = ExactChartAdapter(ephemeris_path)
-    model = _load_selected_model(args)
-    generation_timing = _v2_generation_timing(model, generation_started_at_utc)
-    bundle = SyntheticGenerator(chart, model).generate(resolved)
+    bundle = SyntheticGenerator(chart, model).generate(
+        resolved,
+        model_b_v2_difference_gate=difference_gate,
+    )
     write_new_canonical_json(blind_path, bundle.blind_document)
     leakage = assert_no_blind_leakage(blind_path)
     write_new_canonical_json(leakage_path, leakage)
@@ -214,6 +330,8 @@ def _command_generate(args: argparse.Namespace) -> int:
         "external_reveal_key_status": "owner-only-key-ready-path-withheld",
         "claim_boundary": "synthetic-engineering-validation-only",
     }
+    if difference_gate is not None:
+        receipt["model_b_v2_difference_gate"] = difference_gate.model_dump(mode="json")
     receipt.update(generation_timing)
     write_new_canonical_json(receipt_path, receipt)
     print(f"blind experiment: {blind_path}")
@@ -253,12 +371,36 @@ def _command_recover(args: argparse.Namespace) -> int:
         visible_paths.append(args.model_b_artifact)
     if str(args.model) == MODEL_B_V2_NEW_ID:
         compiled, freeze = _require_v2_public_inputs(args)
-        visible_paths.extend((compiled, freeze))
+        difference_audit, difference_cache = _require_v2_difference_inputs(args)
+        visible_paths.extend((compiled, freeze, difference_audit, difference_cache))
+    else:
+        _reject_inapplicable_v2_difference_inputs(args)
     assert_no_plaintext_answer_keys_in_paths(visible_paths)
     blind = load_json_bytes(blind_path, require_canonical=True)
     if not isinstance(blind, dict):
         raise ValueError("blind file must contain an object")
     model = _load_selected_model(args)
+    difference_gate: VerifiedBehavioralDifferenceBinding | None = None
+    if isinstance(model, FrozenModelBV2New):
+        try:
+            expected_gate = VerifiedBehavioralDifferenceBinding.model_validate(
+                blind.get("model_b_v2_difference_gate")
+            )
+        except ValueError as exc:
+            raise ValueError(
+                "V2 blind input lacks a valid behavioral-difference binding"
+            ) from exc
+        difference_gate = _verify_v2_difference_gate(
+            args,
+            model=model,
+            ephemeris_path=args.ephemeris,
+            expected_binding=expected_gate,
+        )
+        _require_recovery_cache_matches_gate(
+            args,
+            ephemeris_path=args.ephemeris,
+            binding=difference_gate,
+        )
     input_hashes = {
         "blind_cases.json": sha256_file(blind_path),
         "model_a_mapping_library": sha256_file(args.mapping),
@@ -269,6 +411,20 @@ def _command_recover(args: argparse.Namespace) -> int:
         compiled, freeze = _require_v2_public_inputs(args)
         input_hashes["model_b_v2_compiled_artifact"] = sha256_file(compiled)
         input_hashes["model_b_v2_freeze_receipt"] = sha256_file(freeze)
+        assert difference_gate is not None
+        input_hashes.update(
+            {
+                "model_b_v2_difference_audit": difference_gate.audit_file_sha256,
+                "model_b_v2_difference_cache": (
+                    difference_gate.candidate_cache_file_sha256
+                ),
+                "model_b_v2_model_semantic": difference_gate.model_b_sha256,
+                "model_b_v2_question_bank": difference_gate.question_bank_sha256,
+                "model_b_v2_difference_candidate_universe": (
+                    difference_gate.candidate_universe_sha256
+                ),
+            }
+        )
     for file in declared_ephemeris_files(args.ephemeris):
         input_hashes[f"ephemeris:{file.name}"] = sha256_file(file)
     public_recovery_seed = int(input_hashes["blind_cases.json"][:16], 16)
@@ -277,12 +433,16 @@ def _command_recover(args: argparse.Namespace) -> int:
         threshold_rubric_bits=args.threshold,
         workers=args.workers,
     )
-    manifest_config = {
+    manifest_config: dict[str, Any] = {
         "aggregation": settings.aggregation.value,
         "threshold_rubric_bits": settings.threshold_rubric_bits,
         "workers": settings.workers,
         "cache_policy": "hash-bound exact month universes",
     }
+    if difference_gate is not None:
+        manifest_config["model_b_v2_difference_gate"] = difference_gate.model_dump(
+            mode="json"
+        )
     if manifest_path.exists():
         manifest = load_run_manifest(manifest_path)
         verify_run_manifest_resume(
@@ -309,6 +469,12 @@ def _command_recover(args: argparse.Namespace) -> int:
             declared_outputs=("predictions.json", "prediction.freeze.json"),
         )
         _verify_v2_freeze_precedes_manifest(model, manifest)
+    if (
+        difference_gate is not None
+        and difference_gate.audited_at_utc > manifest.created_at_utc
+    ):
+        raise ValueError("V2 behavioral-difference audit must predate recovery manifest")
+    if not manifest_path.exists():
         write_run_manifest(manifest, manifest_path)
     predictions = recover_blind_file(
         blind_path,
@@ -317,6 +483,7 @@ def _command_recover(args: argparse.Namespace) -> int:
         ephemeris_path=args.ephemeris,
         cache_dir=args.cache_dir or run_dir / "candidate_cache",
         settings=settings,
+        model_b_v2_difference_gate=difference_gate,
     )
     write_new_canonical_json(predictions_path, predictions)
     print(f"blind predictions: {predictions_path}")
@@ -495,7 +662,12 @@ def _command_audit_model_b_v2_new_difference(args: argparse.Namespace) -> int:
         model_b, FrozenModelBV2New
     ):
         raise TypeError("behavioral difference audit loaded incompatible model runtimes")
-    audit = audit_behavioral_difference(cached.states, model_a, model_b)
+    audit = audit_behavioral_difference(
+        cached,
+        model_a,
+        model_b,
+        engine_fingerprint=engine.fingerprint,
+    )
     write_new_canonical_json(args.output, audit)
     require_behavioral_difference(audit)
     print(f"behavioral difference audit: {args.output}")
@@ -725,6 +897,8 @@ def _add_model_arguments(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--model-b-artifact", default=str(DEFAULT_MODEL_B_ARTIFACT))
     parser.add_argument("--model-b-v2-compiled")
     parser.add_argument("--model-b-v2-freeze")
+    parser.add_argument("--model-b-v2-difference-audit")
+    parser.add_argument("--model-b-v2-difference-cache")
 
 
 def _parser() -> argparse.ArgumentParser:

@@ -12,6 +12,7 @@ from pathlib import Path
 from types import MappingProxyType
 from typing import Any
 
+from hdmatch.evaluation.behavioral_difference import VerifiedBehavioralDifferenceBinding
 from hdmatch.evaluation.leakage import assert_no_blind_leakage, assert_no_prediction_leakage
 from hdmatch.experiments.canonical import load_json_bytes, sha256_file
 from hdmatch.model.mapping_library import MappingStatus
@@ -488,6 +489,7 @@ def recover_blind_file(
     ephemeris_path: str | Path,
     cache_dir: str | Path,
     settings: RecoverySettings,
+    model_b_v2_difference_gate: VerifiedBehavioralDifferenceBinding | None = None,
 ) -> dict[str, Any]:
     """Recover cases without accepting or discovering any answer-key path."""
 
@@ -522,11 +524,80 @@ def recover_blind_file(
     blind_capabilities = raw.get("model_capabilities")
     if blind_capabilities is not None and blind_capabilities != dict(model.capability_metadata):
         raise ValueError("blind input model capabilities do not match decoder model")
+    if model.model_id == MODEL_B_V2_NEW_ID:
+        if model_b_v2_difference_gate is None:
+            raise ValueError(
+                "MODEL-B-DETAILED-V2-NEW recovery requires a verified "
+                "behavioral-difference gate"
+            )
+        try:
+            blind_gate = VerifiedBehavioralDifferenceBinding.model_validate(
+                raw.get("model_b_v2_difference_gate")
+            )
+        except ValueError as exc:
+            raise ValueError(
+                "V2 blind input lacks a valid behavioral-difference binding"
+            ) from exc
+        if blind_gate != model_b_v2_difference_gate:
+            raise ValueError(
+                "V2 blind input behavioral-difference binding does not match recovery"
+            )
+        metadata = model.capability_metadata
+        expected_gate_fields: tuple[tuple[str, object, object], ...] = (
+            ("model SHA", model_b_v2_difference_gate.model_b_sha256, model.model_sha256),
+            (
+                "compiled artifact SHA",
+                model_b_v2_difference_gate.model_b_compiled_file_sha256,
+                model.mapping_sha256,
+            ),
+            (
+                "freeze receipt SHA",
+                model_b_v2_difference_gate.model_b_freeze_receipt_file_sha256,
+                metadata.get("freeze_receipt_sha256"),
+            ),
+            (
+                "question-bank SHA",
+                model_b_v2_difference_gate.question_bank_sha256,
+                model.question_bank_sha256,
+            ),
+        )
+        for label, recorded, current in expected_gate_fields:
+            if recorded != current:
+                raise ValueError(f"V2 behavioral-difference gate {label} is mismatched")
+        audited_request = model_b_v2_difference_gate.candidate_universe_request
+        for case in cases:
+            if (
+                case.known_birth_year != audited_request.year
+                or case.known_birth_month != audited_request.month
+                or case.iana_timezone != audited_request.timezone_name
+            ):
+                raise ValueError(
+                    "V2 blind cases must remain inside the exact audited candidate month"
+                )
+    elif model_b_v2_difference_gate is not None or "model_b_v2_difference_gate" in raw:
+        raise ValueError("behavioral-difference gate is only valid for Model B V2")
     engine = ExactChartAdapter(ephemeris_path)
+    if (
+        model_b_v2_difference_gate is not None
+        and model_b_v2_difference_gate.candidate_engine_fingerprint
+        != engine.fingerprint
+    ):
+        raise ValueError("V2 behavioral-difference gate engine fingerprint is mismatched")
     requests = tuple(
         MonthRequest(case.known_birth_year, case.known_birth_month, case.iana_timezone)
         for case in cases
     )
+    if model_b_v2_difference_gate is not None:
+        audited_runtime_request = (
+            model_b_v2_difference_gate.candidate_universe_request.to_runtime()
+        )
+        retained_cache = cache_path(cache_dir, audited_runtime_request, engine.fingerprint)
+        if not retained_cache.is_file():
+            raise ValueError("V2 recovery requires the retained audited candidate cache")
+        if sha256_file(retained_cache) != (
+            model_b_v2_difference_gate.candidate_cache_file_sha256
+        ):
+            raise ValueError("V2 recovery candidate cache differs from the audited bytes")
     ensure_month_caches(
         requests,
         ephemeris_path=ephemeris_path,
@@ -792,5 +863,9 @@ def recover_blind_file(
         "candidate_cache_sha256": dict(sorted(cache_hashes.items())),
         "predictions": predictions,
     }
+    if model_b_v2_difference_gate is not None:
+        result["model_b_v2_difference_gate"] = (
+            model_b_v2_difference_gate.model_dump(mode="json")
+        )
     assert_no_prediction_leakage(result)
     return result

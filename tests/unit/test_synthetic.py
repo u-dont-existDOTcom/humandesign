@@ -1,6 +1,13 @@
 from datetime import UTC, datetime, timedelta
 
+import pytest
+from pydantic import ValidationError
+
 from hdmatch.config import SyntheticConfig
+from hdmatch.evaluation import (
+    BehavioralDifferenceMonthRequest,
+    VerifiedBehavioralDifferenceBinding,
+)
 from hdmatch.schemas import Activation, BehavioralResponse, ChartFeatures
 from hdmatch.synthetic import (
     NoiseTier,
@@ -47,6 +54,39 @@ class FakeModel:
         return {"Q1": ("Projector", "Generator")}
 
 
+class FakeModelBV2(FakeModel):
+    model_id = "MODEL-B-DETAILED-V2-NEW"
+    model_sha256 = "6" * 64
+    mapping_sha256 = "4" * 64
+    question_bank_sha256 = "7" * 64
+    capability_metadata = {
+        "behavioral_scoring": "fake-v2",
+        "freeze_receipt_sha256": "5" * 64,
+    }
+
+
+def _difference_binding() -> VerifiedBehavioralDifferenceBinding:
+    return VerifiedBehavioralDifferenceBinding(
+        audit_file_sha256="1" * 64,
+        audited_at_utc=datetime(2026, 1, 2, tzinfo=UTC),
+        model_a_sha256="2" * 64,
+        model_a_mapping_sha256="3" * 64,
+        model_b_compiled_file_sha256="4" * 64,
+        model_b_freeze_receipt_file_sha256="5" * 64,
+        model_b_sha256="6" * 64,
+        question_bank_sha256="7" * 64,
+        candidate_cache_file_sha256="8" * 64,
+        candidate_engine_fingerprint="9" * 64,
+        candidate_universe_request=BehavioralDifferenceMonthRequest(
+            year=2000,
+            month=1,
+            timezone_name="UTC",
+        ),
+        candidate_universe_sha256="a" * 64,
+        candidate_state_count=2,
+    )
+
+
 def test_oracle_noise_is_identity() -> None:
     response = FakeModel().oracle_responses(FakeChartCalculator().calculate(datetime.now(UTC)))
     assert (
@@ -78,3 +118,73 @@ def test_generator_is_reproducible_and_blind() -> None:
     assert "generation_seed" not in encoded
     assert all("known_birth_day" not in case for case in first.blind_document["cases"])
     assert first.blind_document["noise_parameters"] == noise_parameters_payload(NoiseTier.ORACLE)
+
+
+def test_fixed_month_sampling_stays_inside_one_declared_month() -> None:
+    config = SyntheticConfig(
+        experiment_id="fixed-month",
+        seed=11,
+        case_count=100,
+        year_start=2000,
+        year_end=2000,
+        month=2,
+    )
+
+    moments = SyntheticGenerator._sample_utc_moments(config)
+
+    assert {moment.year for moment in moments} == {2000}
+    assert {moment.month for moment in moments} == {2}
+
+
+def test_fixed_month_rejects_multi_year_window() -> None:
+    with pytest.raises(ValidationError, match="fixed synthetic month"):
+        SyntheticConfig(
+            experiment_id="invalid-fixed-month",
+            seed=11,
+            year_start=2000,
+            year_end=2001,
+            month=1,
+        )
+
+
+def test_v2_generator_requires_and_embeds_verified_difference_gate() -> None:
+    config = SyntheticConfig(
+        experiment_id="v2-gated",
+        seed=7,
+        case_count=1,
+        year_start=2000,
+        year_end=2000,
+        month=1,
+    )
+    generator = SyntheticGenerator(FakeChartCalculator(), FakeModelBV2())
+
+    with pytest.raises(ValueError, match="verified behavioral-difference gate"):
+        generator.generate(config)
+
+    binding = _difference_binding()
+    bundle = generator.generate(config, model_b_v2_difference_gate=binding)
+
+    assert bundle.blind_document["model_b_v2_difference_gate"] == binding.model_dump(
+        mode="json"
+    )
+
+
+def test_v2_generator_rejects_stale_binding_before_chart_calculation() -> None:
+    config = SyntheticConfig(
+        experiment_id="v2-stale-gate",
+        seed=7,
+        case_count=1,
+        year_start=2000,
+        year_end=2000,
+        month=1,
+    )
+    generator = SyntheticGenerator(FakeChartCalculator(), FakeModelBV2())
+    stale = VerifiedBehavioralDifferenceBinding.model_validate(
+        {
+            **_difference_binding().model_dump(mode="json"),
+            "model_b_sha256": "f" * 64,
+        }
+    )
+
+    with pytest.raises(ValueError, match="model SHA is mismatched"):
+        generator.generate(config, model_b_v2_difference_gate=stale)

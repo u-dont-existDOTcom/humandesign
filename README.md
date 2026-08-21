@@ -123,6 +123,102 @@ hdmatch compare-models \
 
 Over the retained 13,777 exact 2000/UTC intervals, Model A produced 950 structural signatures and Model B 2,963. This shows additional mechanical partitioning only—not behavioral observability, recovery, or human validity. The transparent summary is in `reports/model_b_structural_audit_2000/`.
 
+### Prospective MODEL-B-DETAILED-V2-NEW
+
+`MODEL-B-DETAILED-V2-NEW` is a prospective detailed symbolic hypothesis. It is
+not a reconstruction of the lost historical D1–D10/A1–A6 scorer. Its
+questionnaire mappings were preregistered before candidate scoring. The V2
+provenance amendment adds retrieval-level records without changing any frozen
+observation, pathway, token, constant, or discovery/holdout assignment.
+
+The normative source chain is:
+
+- `reference/prospective/model_b_detailed_v2_new_source_retrieval_manifest_v1.json`;
+- `reference/prospective/model_b_detailed_v2_new_sources_v2.json`;
+- `reference/prospective/model_b_detailed_v2_new_preregistration_v2.json`.
+
+Every external record contains its exact URL, access timestamp, locator, and
+either the SHA-256 of the exact retrieved response body or an explicit
+legal/technical reason why no body/hash was retained. Check the deterministic
+provenance build with:
+
+```bash
+.venv/bin/python scripts/build_model_b_v2_new_provenance.py --check
+```
+
+The required experiment order is enforced, not advisory:
+
+```text
+preregistration → deterministic compile → clean-tree model freeze
+→ answer-key-free behavioral-difference audit → PASS
+→ synthetic generation → blind recovery
+```
+
+Compile and freeze from a clean committed source tree:
+
+```bash
+hdmatch compile-model-b-v2-new \
+  --preregistration reference/prospective/model_b_detailed_v2_new_preregistration_v2.json \
+  --output mappings/model_b_detailed_v2_new_compiled_v2.json
+
+hdmatch freeze-model-b-v2-new \
+  --preregistration reference/prospective/model_b_detailed_v2_new_preregistration_v2.json \
+  --compiled mappings/model_b_detailed_v2_new_compiled_v2.json \
+  --output mappings/model_b_detailed_v2_new_freeze_v2.json \
+  --source-software-commit COMMITTED_SHA \
+  --source-software-tree COMMITTED_TREE_SHA
+```
+
+Then audit one retained exact public month cache. The audit is preserved whether
+it passes or fails:
+
+```bash
+hdmatch audit-model-b-v2-new-difference \
+  --cache-dir run_artifacts/known_month_oracle_1000/candidate_cache \
+  --ephemeris data/ephemeris \
+  --year 2000 --month 1 --timezone UTC \
+  --mapping mappings/mapping_library_v1.json \
+  --model-b-v2-compiled mappings/model_b_detailed_v2_new_compiled_v2.json \
+  --model-b-v2-freeze mappings/model_b_detailed_v2_new_freeze_v2.json \
+  --output reports/model_b_v2_new/behavioral_difference_2000_01_UTC.json
+```
+
+V2 generation and recovery both require the exact passing audit and exact cache
+file. Verification re-runs the public difference computation and rejects a
+missing, failed, fabricated, stale, or mismatched artifact before generation or
+recovery scoring:
+
+```bash
+hdmatch generate-blind \
+  --config configs/model_a_v2_new_paired_oracle_75.yaml \
+  --run-dir /protected/model-b-v2-generation \
+  --ephemeris data/ephemeris \
+  --model MODEL-B-DETAILED-V2-NEW \
+  --model-b-v2-compiled mappings/model_b_detailed_v2_new_compiled_v2.json \
+  --model-b-v2-freeze mappings/model_b_detailed_v2_new_freeze_v2.json \
+  --model-b-v2-difference-audit reports/model_b_v2_new/behavioral_difference_2000_01_UTC.json \
+  --model-b-v2-difference-cache run_artifacts/known_month_oracle_1000/candidate_cache/month-2000-01-UTC-09e811ca0fe51797.json
+
+hdmatch recover \
+  --run-dir /public/model-b-v2-decoder-output \
+  --blind-file /public/model-b-v2-generation/blind_cases.json \
+  --ephemeris data/ephemeris \
+  --cache-dir run_artifacts/known_month_oracle_1000/candidate_cache \
+  --model MODEL-B-DETAILED-V2-NEW \
+  --model-b-v2-compiled mappings/model_b_detailed_v2_new_compiled_v2.json \
+  --model-b-v2-freeze mappings/model_b_detailed_v2_new_freeze_v2.json \
+  --model-b-v2-difference-audit reports/model_b_v2_new/behavioral_difference_2000_01_UTC.json \
+  --model-b-v2-difference-cache run_artifacts/known_month_oracle_1000/candidate_cache/month-2000-01-UTC-09e811ca0fe51797.json
+```
+
+Only a PASS with at least one genuine non-unknown response difference and zero
+adverse tie-split groups authorizes the small paired Model A/V2 oracle experiment.
+Both arms must use the same external secret seed and otherwise identical config;
+revealed target-set identity must match before metrics are compared. V2 remains
+engineering discovery-only, its holdout pathways remain frozen and withheld, and
+no result is human validation. The previously committed V1 compile/freeze is a
+superseded pre-provenance-hardening artifact and must not authorize generation.
+
 ## Research claim boundary
 
 The project now explicitly allows **post-hoc fitting on human development data**.

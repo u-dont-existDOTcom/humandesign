@@ -7,7 +7,7 @@ from pathlib import Path
 from typing import Literal
 
 import yaml
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 
 class SyntheticConfig(BaseModel):
@@ -22,6 +22,7 @@ class SyntheticConfig(BaseModel):
     universe: Literal["known_month", "known_date"] = "known_month"
     year_start: int = 1950
     year_end: int = 2020
+    month: int | None = Field(default=None, ge=1, le=12)
     timezone: str = "UTC"
     birthplace: str = "Synthetic UTC"
     aggregation: Literal["best_state", "duration_weighted_mean", "duration_weighted_evidence"] = (
@@ -29,6 +30,14 @@ class SyntheticConfig(BaseModel):
     )
     threshold_rubric_bits: float = 0.0
     ephemeris_path: str | None = None
+
+    @model_validator(mode="after")
+    def validate_time_window(self) -> SyntheticConfig:
+        if self.year_end < self.year_start:
+            raise ValueError("year_end must not precede year_start")
+        if self.month is not None and self.year_start != self.year_end:
+            raise ValueError("a fixed synthetic month requires one fixed year")
+        return self
 
 
 def load_synthetic_config(path: str | Path) -> SyntheticConfig:

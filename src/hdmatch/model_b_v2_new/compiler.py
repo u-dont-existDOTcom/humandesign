@@ -12,14 +12,18 @@ from hdmatch.util import sha256_file
 
 from .artifacts import (
     COMPILER_VERSION,
+    COMPILER_VERSION_V2,
     ArtifactBinding,
     CompiledModelArtifact,
+    CompiledModelArtifactV2,
     CompiledPathway,
     CompiledRule,
     FrozenObservation,
     ModelFreezeReceipt,
+    ModelFreezeReceiptV2,
     ObservationStatus,
     PreregistrationArtifact,
+    PreregistrationArtifactV2,
     SourceCatalogEntry,
     SourceKind,
     StructuralPathway,
@@ -29,6 +33,13 @@ from .artifacts import (
     reject_forbidden_provenance,
     selector_anchor_id,
     selector_dependency_keys,
+)
+from .provenance import (
+    assert_preregistration_provenance_only_equivalent,
+    assert_source_catalog_provenance_only_equivalent,
+    load_retrieval_manifest,
+    load_source_catalog_v2,
+    validate_retrieval_manifest_against_source_catalog,
 )
 from .selectors import validate_selector_mechanics
 
@@ -53,25 +64,7 @@ def compile_model_b_v2_new(
     preregistration = load_preregistration(prereg_path)
     _validate_preregistration(root, preregistration)
 
-    compiled = CompiledModelArtifact(
-        preregistered_at_utc=preregistration.preregistered_at_utc,
-        preregistration_semantic_sha256=preregistration.sha256(),
-        preregistration_file_sha256=sha256_file(prereg_path),
-        behavioral_target=preregistration.behavioral_target,
-        question_bank=preregistration.question_bank,
-        model_a_base=preregistration.model_a_base,
-        local_methods=preregistration.local_methods,
-        source_catalog=preregistration.source_catalog,
-        question_token_sets=preregistration.question_token_sets,
-        constants=preregistration.constants,
-        discovery_holdout_policy=preregistration.discovery_holdout_policy,
-        rules=tuple(_compile_observation(item) for item in preregistration.frozen_observations),
-        unresolved_observations=tuple(
-            item
-            for item in preregistration.observations
-            if item.status is ObservationStatus.UNRESOLVED
-        ),
-    )
+    compiled = _build_compiled_artifact(preregistration, prereg_path)
     _validate_compiled_conflicts(compiled)
     output = Path(compiled_output_path).resolve()
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -113,25 +106,15 @@ def freeze_model_b_v2_new(
     if timestamp < preregistration.preregistered_at_utc:
         raise ValueError("model freeze cannot precede preregistration")
 
-    receipt = ModelFreezeReceipt(
-        frozen_at_utc=timestamp,
+    receipt = _build_freeze_receipt(
+        root=root,
+        preregistration=preregistration,
+        preregistration_path=prereg_path,
+        compiled=compiled,
+        compiled_path=compiled_path,
         source_software_commit=source_software_commit,
         source_software_tree=source_software_tree,
-        preregistration=_binding_for_path(root, prereg_path, "preregistration"),
-        compiled_artifact=_binding_for_path(root, compiled_path, "compiled_artifact"),
-        compiled_semantic_sha256=compiled.sha256(),
-        behavioral_target=preregistration.behavioral_target,
-        question_bank=preregistration.question_bank,
-        model_a_base=preregistration.model_a_base,
-        local_methods=preregistration.local_methods,
-        source_catalog=tuple(
-            ArtifactBinding(
-                role=f"source_{source.source_id.removeprefix('SRC-').lower().replace('-', '_')}",
-                path=source.local_path,
-                sha256=source.local_sha256,
-            )
-            for source in preregistration.source_catalog
-        ),
+        frozen_at_utc=timestamp,
     )
     output = Path(freeze_receipt_output_path).resolve()
     _ensure_within_repository(root, output)
@@ -141,7 +124,12 @@ def freeze_model_b_v2_new(
 
 
 def _validate_preregistration(root: Path, preregistration: PreregistrationArtifact) -> None:
-    if preregistration.compiler_version != COMPILER_VERSION:
+    expected_compiler = (
+        COMPILER_VERSION_V2
+        if isinstance(preregistration, PreregistrationArtifactV2)
+        else COMPILER_VERSION
+    )
+    if preregistration.compiler_version != expected_compiler:
         raise ValueError("unsupported prospective compiler version")
     bindings = (
         preregistration.behavioral_target,
@@ -153,6 +141,8 @@ def _validate_preregistration(root: Path, preregistration: PreregistrationArtifa
         _verify_local_binding(root, binding)
     for source in preregistration.source_catalog:
         _verify_source(root, source)
+    if isinstance(preregistration, PreregistrationArtifactV2):
+        _validate_v2_provenance(root, preregistration)
 
     bank_path = root / preregistration.question_bank.path
     question_bank = load_question_bank(bank_path)
@@ -241,7 +231,43 @@ def _validate_compiled_binding(
         raise ValueError("compiled artifact does not bind the current preregistration bytes")
     if compiled.preregistration_semantic_sha256 != preregistration.sha256():
         raise ValueError("compiled artifact does not bind preregistration semantics")
-    expected = CompiledModelArtifact(
+    expected = _build_compiled_artifact(preregistration, preregistration_path)
+    if compiled != expected:
+        raise ValueError(
+            "compiled artifact is not the deterministic compilation of preregistration"
+        )
+
+
+def _build_compiled_artifact(
+    preregistration: PreregistrationArtifact,
+    preregistration_path: Path,
+) -> CompiledModelArtifact:
+    rules = tuple(_compile_observation(item) for item in preregistration.frozen_observations)
+    unresolved = tuple(
+        item for item in preregistration.observations if item.status is ObservationStatus.UNRESOLVED
+    )
+    if isinstance(preregistration, PreregistrationArtifactV2):
+        return CompiledModelArtifactV2(
+            preregistered_at_utc=preregistration.preregistered_at_utc,
+            preregistration_semantic_sha256=preregistration.sha256(),
+            preregistration_file_sha256=sha256_file(preregistration_path),
+            behavioral_target=preregistration.behavioral_target,
+            question_bank=preregistration.question_bank,
+            model_a_base=preregistration.model_a_base,
+            local_methods=preregistration.local_methods,
+            source_catalog=preregistration.source_catalog,
+            question_token_sets=preregistration.question_token_sets,
+            constants=preregistration.constants,
+            discovery_holdout_policy=preregistration.discovery_holdout_policy,
+            rules=rules,
+            unresolved_observations=unresolved,
+            provenance_amended_at_utc=preregistration.provenance_amended_at_utc,
+            previous_preregistration=preregistration.previous_preregistration,
+            previous_source_catalog=preregistration.previous_source_catalog,
+            source_catalog_artifact=preregistration.source_catalog_artifact,
+            retrieval_manifest=preregistration.retrieval_manifest,
+        )
+    return CompiledModelArtifact(
         preregistered_at_utc=preregistration.preregistered_at_utc,
         preregistration_semantic_sha256=preregistration.sha256(),
         preregistration_file_sha256=sha256_file(preregistration_path),
@@ -253,17 +279,110 @@ def _validate_compiled_binding(
         question_token_sets=preregistration.question_token_sets,
         constants=preregistration.constants,
         discovery_holdout_policy=preregistration.discovery_holdout_policy,
-        rules=tuple(_compile_observation(item) for item in preregistration.frozen_observations),
-        unresolved_observations=tuple(
-            item
-            for item in preregistration.observations
-            if item.status is ObservationStatus.UNRESOLVED
-        ),
+        rules=rules,
+        unresolved_observations=unresolved,
     )
-    if compiled != expected:
-        raise ValueError(
-            "compiled artifact is not the deterministic compilation of preregistration"
+
+
+def _build_freeze_receipt(
+    *,
+    root: Path,
+    preregistration: PreregistrationArtifact,
+    preregistration_path: Path,
+    compiled: CompiledModelArtifact,
+    compiled_path: Path,
+    source_software_commit: str,
+    source_software_tree: str,
+    frozen_at_utc: datetime,
+) -> ModelFreezeReceipt:
+    preregistration_binding = _binding_for_path(root, preregistration_path, "preregistration")
+    compiled_binding = _binding_for_path(root, compiled_path, "compiled_artifact")
+    source_bindings = tuple(
+        ArtifactBinding(
+            role=f"source_{source.source_id.removeprefix('SRC-').lower().replace('-', '_')}",
+            path=source.local_path,
+            sha256=source.local_sha256,
         )
+        for source in preregistration.source_catalog
+    )
+    if isinstance(preregistration, PreregistrationArtifactV2):
+        return ModelFreezeReceiptV2(
+            frozen_at_utc=frozen_at_utc,
+            source_software_commit=source_software_commit,
+            source_software_tree=source_software_tree,
+            preregistration=preregistration_binding,
+            compiled_artifact=compiled_binding,
+            compiled_semantic_sha256=compiled.sha256(),
+            behavioral_target=preregistration.behavioral_target,
+            question_bank=preregistration.question_bank,
+            model_a_base=preregistration.model_a_base,
+            local_methods=preregistration.local_methods,
+            source_catalog=source_bindings,
+            previous_preregistration=preregistration.previous_preregistration,
+            previous_source_catalog=preregistration.previous_source_catalog,
+            source_catalog_artifact=preregistration.source_catalog_artifact,
+            retrieval_manifest=preregistration.retrieval_manifest,
+        )
+    return ModelFreezeReceipt(
+        frozen_at_utc=frozen_at_utc,
+        source_software_commit=source_software_commit,
+        source_software_tree=source_software_tree,
+        preregistration=preregistration_binding,
+        compiled_artifact=compiled_binding,
+        compiled_semantic_sha256=compiled.sha256(),
+        behavioral_target=preregistration.behavioral_target,
+        question_bank=preregistration.question_bank,
+        model_a_base=preregistration.model_a_base,
+        local_methods=preregistration.local_methods,
+        source_catalog=source_bindings,
+    )
+
+
+def _validate_v2_provenance(
+    root: Path,
+    preregistration: PreregistrationArtifactV2,
+) -> None:
+    bindings = (
+        preregistration.previous_preregistration,
+        preregistration.previous_source_catalog,
+        preregistration.source_catalog_artifact,
+        preregistration.retrieval_manifest,
+    )
+    for binding in bindings:
+        _verify_local_binding(root, binding)
+
+    previous_path = root / preregistration.previous_preregistration.path
+    previous = load_preregistration(previous_path)
+    if type(previous) is not PreregistrationArtifact:
+        raise ValueError("V2 provenance amendment must bind the original V1 preregistration")
+    _validate_preregistration(root, previous)
+    assert_preregistration_provenance_only_equivalent(previous, preregistration)
+
+    previous_source_path = root / preregistration.previous_source_catalog.path
+    manifest = load_retrieval_manifest(root / preregistration.retrieval_manifest.path)
+    if manifest.source_catalog_v1 != preregistration.previous_source_catalog:
+        raise ValueError("retrieval manifest binds a different V1 source catalog")
+    validate_retrieval_manifest_against_source_catalog(manifest, previous_source_path)
+
+    amended_source = load_source_catalog_v2(root / preregistration.source_catalog_artifact.path)
+    amendment = amended_source.provenance_amendment
+    if amendment.previous_source_catalog != preregistration.previous_source_catalog:
+        raise ValueError("V2 source catalog binds a different prior source catalog")
+    if amendment.retrieval_manifest != preregistration.retrieval_manifest:
+        raise ValueError("V2 source catalog binds a different retrieval manifest")
+    assert_source_catalog_provenance_only_equivalent(previous_source_path, amended_source)
+
+    external_sources = tuple(
+        source for source in preregistration.source_catalog if source.public_url is not None
+    )
+    for source in external_sources:
+        if (
+            source.local_path != preregistration.source_catalog_artifact.path
+            or source.local_sha256 != preregistration.source_catalog_artifact.sha256
+        ):
+            raise ValueError(
+                f"external source {source.source_id} does not bind the V2 source catalog"
+            )
 
 
 def _validate_compiled_conflicts(compiled: CompiledModelArtifact) -> None:

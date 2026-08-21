@@ -20,6 +20,10 @@ from hdmatch.cli import (
     _verify_v2_freeze_precedes_manifest,
 )
 from hdmatch.cli import main as hdmatch_main
+from hdmatch.evaluation import (
+    BehavioralDifferenceMonthRequest,
+    VerifiedBehavioralDifferenceBinding,
+)
 from hdmatch.experiments.canonical import load_json_bytes, sha256_file, write_new_canonical_json
 from hdmatch.model.mapping_library import load_mapping_library
 from hdmatch.model_b.prevalence import ConditionalPrevalenceEngine
@@ -30,7 +34,11 @@ from hdmatch.runtime.keyless_boundary import (
     SourceProvenance,
     build_recovery_mount_plan,
 )
-from hdmatch.runtime.recovery import _known_date_runtime_prevalence
+from hdmatch.runtime.recovery import (
+    RecoverySettings,
+    _known_date_runtime_prevalence,
+    recover_blind_file,
+)
 from hdmatch.runtime.symbolic_adapter import (
     MODEL_A_ID,
     MODEL_B_ID,
@@ -38,11 +46,34 @@ from hdmatch.runtime.symbolic_adapter import (
     load_runtime_model,
 )
 from hdmatch.schemas import Activation, CandidateState, ChartFeatures, LocalDateOverlap
+from hdmatch.search import AggregationMode
 from hdmatch.util import sha256_json
 
 ROOT = Path(__file__).resolve().parents[2]
 MAPPING = ROOT / "mappings/mapping_library_v1.json"
 MODEL_B_V1 = ROOT / "mappings/model_b_mapping_library_v1.json"
+
+
+def _difference_binding() -> VerifiedBehavioralDifferenceBinding:
+    return VerifiedBehavioralDifferenceBinding(
+        audit_file_sha256="1" * 64,
+        audited_at_utc=datetime(2026, 1, 2, tzinfo=UTC),
+        model_a_sha256="2" * 64,
+        model_a_mapping_sha256="3" * 64,
+        model_b_compiled_file_sha256="4" * 64,
+        model_b_freeze_receipt_file_sha256="5" * 64,
+        model_b_sha256="6" * 64,
+        question_bank_sha256="7" * 64,
+        candidate_cache_file_sha256="8" * 64,
+        candidate_engine_fingerprint="9" * 64,
+        candidate_universe_request=BehavioralDifferenceMonthRequest(
+            year=2000,
+            month=1,
+            timezone_name="UTC",
+        ),
+        candidate_universe_sha256="a" * 64,
+        candidate_state_count=2,
+    )
 
 
 def _chart(chart_type: str = "generator") -> ChartFeatures:
@@ -169,7 +200,7 @@ def test_known_date_v2_keeps_date_base_but_prepares_detail_from_full_month(
 
 def _boundary_fixture(
     tmp_path: Path,
-) -> tuple[RecoveryBoundaryRequest, SourceProvenance, Path, Path]:
+) -> tuple[RecoveryBoundaryRequest, SourceProvenance, Path, Path, Path, Path]:
     source_root = tmp_path / "source"
     tracked = source_root / "src/hdmatch/__init__.py"
     tracked.parent.mkdir(parents=True)
@@ -179,6 +210,8 @@ def _boundary_fixture(
     mapping = tmp_path / "mapping.json"
     compiled = tmp_path / "compiled.json"
     freeze = tmp_path / "freeze.json"
+    difference_audit = tmp_path / "difference-audit.json"
+    difference_cache = tmp_path / "month-2000-01-UTC-test.json"
     write_new_canonical_json(blind, {"schema_version": "blind-synthetic-v1", "cases": []})
     write_new_canonical_json(questions, {"schema_version": "question-bank-test-v1"})
     write_new_canonical_json(
@@ -187,6 +220,8 @@ def _boundary_fixture(
     )
     write_new_canonical_json(compiled, {"public_model": "compiled"})
     write_new_canonical_json(freeze, {"public_model": "freeze"})
+    write_new_canonical_json(difference_audit, {"public": "difference-audit"})
+    write_new_canonical_json(difference_cache, {"public": "difference-cache"})
     ephemeris = tmp_path / "ephemeris"
     ephemeris.mkdir()
     (ephemeris / "public.se1").write_bytes(b"public")
@@ -202,6 +237,9 @@ def _boundary_fixture(
         model_id=MODEL_B_V2_NEW_ID,
         model_b_v2_compiled=compiled,
         model_b_v2_freeze=freeze,
+        model_b_v2_difference_audit=difference_audit,
+        model_b_v2_difference_cache=difference_cache,
+        candidate_cache=tmp_path,
     )
     provenance = SourceProvenance(
         repository_root=source_root,
@@ -209,19 +247,37 @@ def _boundary_fixture(
         tree="b" * 40,
         tracked_decoder_files=(tracked,),
     )
-    return request, provenance, compiled, freeze
+    return request, provenance, compiled, freeze, difference_audit, difference_cache
 
 
 def test_keyless_v2_mounts_compiled_and_freeze_read_only_without_secret_surface(
     tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
 ) -> None:
-    request, provenance, compiled, freeze = _boundary_fixture(tmp_path)
+    request, provenance, compiled, freeze, difference_audit, difference_cache = (
+        _boundary_fixture(tmp_path)
+    )
+    monkeypatch.setattr(
+        "hdmatch.runtime.keyless_boundary._verify_v2_difference_request",
+        lambda *_args, **_kwargs: _difference_binding(),
+    )
     plan = build_recovery_mount_plan(request, provenance=provenance, bwrap="/usr/bin/bwrap")
 
     assert plan.command[plan.command.index(str(compiled.resolve())) - 1] == "--ro-bind"
     assert plan.command[plan.command.index(str(freeze.resolve())) - 1] == "--ro-bind"
+    assert plan.command[plan.command.index(str(difference_audit.resolve())) - 1] == "--ro-bind"
+    assert plan.command[plan.command.index(str(difference_cache.resolve())) - 1] == "--ro-bind"
     assert "--model-b-v2-compiled" in plan.command
     assert "--model-b-v2-freeze" in plan.command
+    assert "--model-b-v2-difference-audit" in plan.command
+    assert "--model-b-v2-difference-cache" in plan.command
+    difference_cache_argument = plan.command[
+        plan.command.index("--model-b-v2-difference-cache") + 1
+    ]
+    assert difference_cache_argument == str(
+        Path("/public/candidate_cache") / difference_cache.name
+    )
+    assert plan.command.count(str(difference_cache.resolve())) == 1
     child = plan.command[plan.command.index("hdmatch.cli") :]
     assert not any(
         marker in argument.casefold()
@@ -229,7 +285,7 @@ def test_keyless_v2_mounts_compiled_and_freeze_read_only_without_secret_surface(
         for marker in ("key-file", "decrypt", "reveal", "envelope", "truth")
     )
 
-    with pytest.raises(KeylessIsolationError, match="compiled and freeze"):
+    with pytest.raises(KeylessIsolationError, match="compiled, freeze, difference-audit"):
         build_recovery_mount_plan(
             replace(request, model_b_v2_freeze=None),
             provenance=provenance,
@@ -245,6 +301,8 @@ def test_v2_recovery_preflights_public_artifacts_before_model_or_cache(
     run_dir.mkdir()
     compiled = tmp_path / "innocent-model.data"
     freeze = tmp_path / "freeze.json"
+    difference_audit = tmp_path / "difference-audit.json"
+    difference_cache = tmp_path / "difference-cache.json"
     write_new_canonical_json(
         compiled,
         {
@@ -255,6 +313,8 @@ def test_v2_recovery_preflights_public_artifacts_before_model_or_cache(
         },
     )
     write_new_canonical_json(freeze, {"public_model": "freeze"})
+    write_new_canonical_json(difference_audit, {"public": "difference-audit"})
+    write_new_canonical_json(difference_cache, {"public": "difference-cache"})
 
     with pytest.raises(SystemExit) as raised:
         hdmatch_main(
@@ -266,6 +326,10 @@ def test_v2_recovery_preflights_public_artifacts_before_model_or_cache(
                 str(compiled),
                 "--model-b-v2-freeze",
                 str(freeze),
+                "--model-b-v2-difference-audit",
+                str(difference_audit),
+                "--model-b-v2-difference-cache",
+                str(difference_cache),
                 "--run-dir",
                 str(run_dir),
                 "--blind-file",
@@ -278,6 +342,89 @@ def test_v2_recovery_preflights_public_artifacts_before_model_or_cache(
     stderr = capsys.readouterr().err
     assert "plaintext answer key file" in stderr
     assert str(compiled) not in stderr
+
+
+def test_direct_v2_recovery_rejects_missing_gate_before_chart_or_cache(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    blind = tmp_path / "blind.json"
+    write_new_canonical_json(
+        blind,
+        {
+            "schema_version": "blind-synthetic-v1",
+            "experiment_id": "V2-DIRECT-GATE",
+            "model_id": MODEL_B_V2_NEW_ID,
+            "model_sha256": "1" * 64,
+            "question_bank_sha256": "2" * 64,
+            "mapping_sha256": "3" * 64,
+            "candidate_universe": "known_month",
+            "model_capabilities": {},
+            "noise_tier": "oracle",
+            "cases": [
+                {
+                    "schema_version": "blind-case-v1",
+                    "case_id": "CASE-0001",
+                    "known_birth_year": 2000,
+                    "known_birth_month": 1,
+                    "birthplace": "Synthetic UTC",
+                    "iana_timezone": "UTC",
+                    "responses": [],
+                    "candidate_universe": "known_month",
+                }
+            ],
+        },
+    )
+    model = SimpleNamespace(
+        model_id=MODEL_B_V2_NEW_ID,
+        model_sha256="1" * 64,
+        question_bank_sha256="2" * 64,
+        mapping_sha256="3" * 64,
+        capability_metadata={},
+    )
+    chart_touched = False
+
+    def _chart(*_args: object, **_kwargs: object) -> object:
+        nonlocal chart_touched
+        chart_touched = True
+        raise AssertionError("chart/cache work must not start before V2 gate verification")
+
+    monkeypatch.setattr("hdmatch.runtime.recovery.ExactChartAdapter", _chart)
+
+    with pytest.raises(ValueError, match="requires a verified behavioral-difference gate"):
+        recover_blind_file(
+            blind,
+            decoder_root=tmp_path,
+            model=model,  # type: ignore[arg-type]
+            ephemeris_path=tmp_path / "ephemeris",
+            cache_dir=tmp_path / "cache",
+            settings=RecoverySettings(
+                aggregation=AggregationMode.DURATION_WEIGHTED_EVIDENCE,
+                threshold_rubric_bits=0.0,
+            ),
+        )
+    assert chart_touched is False
+
+    raw = load_json_bytes(blind, require_canonical=True)
+    assert isinstance(raw, dict)
+    binding = _difference_binding()
+    raw["model_b_v2_difference_gate"] = binding.model_dump(mode="json")
+    blind.unlink()
+    write_new_canonical_json(blind, raw)
+    with pytest.raises(ValueError, match="model SHA is mismatched"):
+        recover_blind_file(
+            blind,
+            decoder_root=tmp_path,
+            model=model,  # type: ignore[arg-type]
+            ephemeris_path=tmp_path / "ephemeris",
+            cache_dir=tmp_path / "cache",
+            settings=RecoverySettings(
+                aggregation=AggregationMode.DURATION_WEIGHTED_EVIDENCE,
+                threshold_rubric_bits=0.0,
+            ),
+            model_b_v2_difference_gate=binding,
+        )
+    assert chart_touched is False
 
 
 def test_v2_model_freeze_must_not_postdate_run_manifest() -> None:
@@ -302,21 +449,38 @@ def test_v2_recovery_manifest_binds_exact_compiled_and_freeze_bytes(
     blind = tmp_path / "blind.json"
     compiled = tmp_path / "compiled.json"
     freeze = tmp_path / "freeze.json"
+    difference_audit = tmp_path / "difference-audit.json"
+    difference_cache = tmp_path / "difference-cache.json"
     ephemeris = tmp_path / "public.se1"
+    binding = _difference_binding()
     write_new_canonical_json(
         blind,
         {
             "schema_version": "blind-synthetic-v1",
             "experiment_id": "V2-MANIFEST",
             "candidate_universe": "known_month",
+            "model_b_v2_difference_gate": binding.model_dump(mode="json"),
             "cases": [],
         },
     )
     write_new_canonical_json(compiled, {"public": "compiled"})
     write_new_canonical_json(freeze, {"public": "freeze"})
+    write_new_canonical_json(difference_audit, {"public": "difference-audit"})
+    write_new_canonical_json(difference_cache, {"public": "difference-cache"})
     ephemeris.write_bytes(b"public-ephemeris")
-    fake_model = SimpleNamespace(model_id=MODEL_B_V2_NEW_ID)
+    fake_model = object.__new__(FrozenModelBV2New)
+    fake_model.freeze_receipt = SimpleNamespace(
+        frozen_at_utc=datetime(2026, 1, 1, tzinfo=UTC)
+    )
     monkeypatch.setattr("hdmatch.cli._load_selected_model", lambda _args: fake_model)
+    monkeypatch.setattr(
+        "hdmatch.cli._verify_v2_difference_gate",
+        lambda *_args, **_kwargs: binding,
+    )
+    monkeypatch.setattr(
+        "hdmatch.cli._require_recovery_cache_matches_gate",
+        lambda *_args, **_kwargs: None,
+    )
     monkeypatch.setattr(
         "hdmatch.cli.recover_blind_file",
         lambda *_args, **_kwargs: {"schema_version": "predictions-v1"},
@@ -331,6 +495,8 @@ def test_v2_recovery_manifest_binds_exact_compiled_and_freeze_bytes(
         model_b_artifact=str(MODEL_B_V1),
         model_b_v2_compiled=str(compiled),
         model_b_v2_freeze=str(freeze),
+        model_b_v2_difference_audit=str(difference_audit),
+        model_b_v2_difference_cache=str(difference_cache),
         aggregation="duration_weighted_evidence",
         threshold=0.0,
         workers=1,
@@ -343,6 +509,13 @@ def test_v2_recovery_manifest_binds_exact_compiled_and_freeze_bytes(
     assert isinstance(hashes, dict)
     assert hashes["model_b_v2_compiled_artifact"] == sha256_file(compiled)
     assert hashes["model_b_v2_freeze_receipt"] == sha256_file(freeze)
+    assert hashes["model_b_v2_difference_audit"] == binding.audit_file_sha256
+    assert hashes["model_b_v2_difference_cache"] == binding.candidate_cache_file_sha256
+    assert hashes["model_b_v2_model_semantic"] == binding.model_b_sha256
+    assert hashes["model_b_v2_question_bank"] == binding.question_bank_sha256
+    assert hashes["model_b_v2_difference_candidate_universe"] == (
+        binding.candidate_universe_sha256
+    )
 
 
 def test_behavioral_difference_cli_has_no_secret_surface_and_preserves_failed_audit(
@@ -383,7 +556,8 @@ def test_behavioral_difference_cli_has_no_secret_surface_and_preserves_failed_au
     models = iter((fake_a_type(), fake_b_type()))
     monkeypatch.setattr("hdmatch.cli.load_runtime_model", lambda *_args, **_kwargs: next(models))
     monkeypatch.setattr(
-        "hdmatch.cli.audit_behavioral_difference", lambda *_args: failed_audit
+        "hdmatch.cli.audit_behavioral_difference",
+        lambda *_args, **_kwargs: failed_audit,
     )
     monkeypatch.setattr(
         "hdmatch.cli.write_new_canonical_json",
@@ -419,6 +593,10 @@ def test_v2_freeze_must_precede_synthetic_generator_work(
     class _Config:
         seed = None
         ephemeris_path = "public-ephemeris"
+        year_start = 2000
+        year_end = 2000
+        month = 1
+        timezone = "UTC"
 
         def model_copy(self, *, update: object) -> _Config:
             del update
@@ -439,6 +617,10 @@ def test_v2_freeze_must_precede_synthetic_generator_work(
     monkeypatch.setattr("hdmatch.cli._read_secret_seed", lambda _path: 1)
     monkeypatch.setattr("hdmatch.cli.ExactChartAdapter", lambda _path: object())
     monkeypatch.setattr("hdmatch.cli._load_selected_model", lambda _args: model)
+    monkeypatch.setattr(
+        "hdmatch.cli._verify_v2_difference_gate",
+        lambda *_args, **_kwargs: _difference_binding(),
+    )
     monkeypatch.setattr("hdmatch.cli.SyntheticGenerator", _generator)
     args = argparse.Namespace(
         config=str(tmp_path / "config.json"),
@@ -451,6 +633,8 @@ def test_v2_freeze_must_precede_synthetic_generator_work(
         model_b_artifact=str(MODEL_B_V1),
         model_b_v2_compiled="compiled.json",
         model_b_v2_freeze="freeze.json",
+        model_b_v2_difference_audit="difference-audit.json",
+        model_b_v2_difference_cache="difference-cache.json",
     )
 
     with pytest.raises(ValueError, match="must predate synthetic generation"):

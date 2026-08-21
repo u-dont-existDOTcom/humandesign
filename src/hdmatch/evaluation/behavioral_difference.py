@@ -12,14 +12,20 @@ from __future__ import annotations
 
 import math
 from collections import defaultdict
+from datetime import UTC, datetime
+from pathlib import Path
 from typing import Literal
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
+from hdmatch.experiments.canonical import load_json_bytes, sha256_file
 from hdmatch.model_b_v2_new import FrozenModelBV2New
 from hdmatch.runtime.symbolic_adapter import FrozenSymbolicModel, candidate_prevalence
+from hdmatch.runtime.universe_cache import CachedUniverse, MonthRequest, load_cached_universe
 from hdmatch.schemas import BehavioralResponse, CandidateState, ScoredState
 from hdmatch.util import sha256_json
+
+SHA256_PATTERN = r"^[a-f0-9]{64}$"
 
 
 class FrozenAuditModel(BaseModel):
@@ -47,22 +53,82 @@ class PairwiseTieSplit(FrozenAuditModel):
         "source_above_comparison", "comparison_above_source"
     ]
 
+    @model_validator(mode="after")
+    def validate_score_identity_and_relation(self) -> PairwiseTieSplit:
+        if self.source_state_id == self.comparison_state_id:
+            raise ValueError("a tie-split witness requires two distinct states")
+        source_scores = (self.model_a_source_score, self.model_b_source_score)
+        comparison_scores = (
+            self.model_a_comparison_score,
+            self.model_b_comparison_score,
+        )
+        if any(score.state_id != self.source_state_id for score in source_scores):
+            raise ValueError("source witness score state IDs are inconsistent")
+        if any(score.state_id != self.comparison_state_id for score in comparison_scores):
+            raise ValueError("comparison witness score state IDs are inconsistent")
+        if not math.isclose(
+            self.model_a_source_score.net_rubric_bits,
+            self.model_a_comparison_score.net_rubric_bits,
+            rel_tol=0.0,
+            abs_tol=1e-12,
+        ):
+            raise ValueError("a Model A tie-split witness must contain a Model A score tie")
+        source_above = (
+            self.model_b_source_score.net_rubric_bits
+            > self.model_b_comparison_score.net_rubric_bits
+        )
+        comparison_above = (
+            self.model_b_comparison_score.net_rubric_bits
+            > self.model_b_source_score.net_rubric_bits
+        )
+        expected = (
+            "source_above_comparison" if source_above else "comparison_above_source"
+        )
+        if not (source_above or comparison_above) or self.model_b_pair_relation != expected:
+            raise ValueError("V2 witness relation is inconsistent with its exact scores")
+        return self
+
+
+class BehavioralDifferenceMonthRequest(FrozenAuditModel):
+    """Canonical public identity of the exact month audited."""
+
+    year: int
+    month: int = Field(ge=1, le=12)
+    timezone_name: str = Field(min_length=1)
+
+    @classmethod
+    def from_runtime(cls, request: MonthRequest) -> BehavioralDifferenceMonthRequest:
+        return cls(
+            year=request.year,
+            month=request.month,
+            timezone_name=request.timezone_name,
+        )
+
+    def to_runtime(self) -> MonthRequest:
+        return MonthRequest(self.year, self.month, self.timezone_name)
+
 
 class BehavioralDifferenceAudit(FrozenAuditModel):
     """Transparent pre-benchmark result with no truth or answer-key dependency."""
 
-    schema_version: Literal["model-b-v2-new-behavioral-difference-audit-v1"] = (
-        "model-b-v2-new-behavioral-difference-audit-v1"
+    schema_version: Literal["model-b-v2-new-behavioral-difference-audit-v2"] = (
+        "model-b-v2-new-behavioral-difference-audit-v2"
     )
+    audited_at_utc: datetime
     status: Literal["passed", "failed"]
     model_a_id: Literal["MODEL-A-CORE-V1"] = "MODEL-A-CORE-V1"
     model_b_id: Literal["MODEL-B-DETAILED-V2-NEW"] = "MODEL-B-DETAILED-V2-NEW"
-    model_a_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
-    model_b_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
-    model_a_mapping_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
-    model_b_mapping_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
-    question_bank_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
-    candidate_universe_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
+    model_a_sha256: str = Field(pattern=SHA256_PATTERN)
+    model_a_mapping_sha256: str = Field(pattern=SHA256_PATTERN)
+    model_b_sha256: str = Field(pattern=SHA256_PATTERN)
+    model_b_mapping_sha256: str = Field(pattern=SHA256_PATTERN)
+    model_b_compiled_file_sha256: str = Field(pattern=SHA256_PATTERN)
+    model_b_freeze_receipt_file_sha256: str = Field(pattern=SHA256_PATTERN)
+    question_bank_sha256: str = Field(pattern=SHA256_PATTERN)
+    candidate_cache_file_sha256: str = Field(pattern=SHA256_PATTERN)
+    candidate_engine_fingerprint: str = Field(pattern=SHA256_PATTERN)
+    candidate_universe_request: BehavioralDifferenceMonthRequest
+    candidate_universe_sha256: str = Field(pattern=SHA256_PATTERN)
     candidate_state_count: int = Field(ge=1)
     same_core_group_count: int = Field(ge=0)
     groups_with_non_unknown_response_delta: int = Field(ge=0)
@@ -77,18 +143,112 @@ class BehavioralDifferenceAudit(FrozenAuditModel):
         "engineering-difference-gate-only-not-human-validation"
     ] = "engineering-difference-gate-only-not-human-validation"
 
+    @field_validator("audited_at_utc")
+    @classmethod
+    def require_utc(cls, value: datetime) -> datetime:
+        if value.tzinfo is None or value.utcoffset() is None:
+            raise ValueError("behavioral-difference audit timestamp must be timezone-aware")
+        return value.astimezone(UTC)
+
+    @model_validator(mode="after")
+    def validate_internal_consistency(self) -> BehavioralDifferenceAudit:
+        if self.model_b_mapping_sha256 != self.model_b_compiled_file_sha256:
+            raise ValueError("V2 mapping hash must equal the exact compiled-file hash")
+        counts = (
+            self.groups_with_non_unknown_response_delta,
+            self.groups_with_pairwise_tie_split,
+            self.groups_with_source_favoring_tie_split,
+            self.groups_with_adverse_tie_split,
+        )
+        if any(value > self.same_core_group_count for value in counts):
+            raise ValueError("difference-group count exceeds the same-core group count")
+        if self.groups_with_pairwise_tie_split > self.groups_with_non_unknown_response_delta:
+            raise ValueError("a pairwise split requires a non-unknown response delta")
+        if (
+            self.groups_with_source_favoring_tie_split
+            > self.groups_with_pairwise_tie_split
+            or self.groups_with_adverse_tie_split
+            > self.groups_with_pairwise_tie_split
+        ):
+            raise ValueError("directional split count exceeds pairwise split groups")
+        favorable_witnesses = sum(
+            item.model_b_pair_relation == "source_above_comparison" for item in self.witnesses
+        )
+        adverse_witnesses = sum(
+            item.model_b_pair_relation == "comparison_above_source" for item in self.witnesses
+        )
+        if favorable_witnesses != self.groups_with_source_favoring_tie_split:
+            raise ValueError("source-favoring witness count is inconsistent")
+        if adverse_witnesses != self.groups_with_adverse_tie_split:
+            raise ValueError("adverse witness count is inconsistent")
+        should_pass = (
+            self.groups_with_source_favoring_tie_split > 0
+            and self.groups_with_adverse_tie_split == 0
+            and bool(self.witnesses)
+        )
+        if (self.status == "passed") != should_pass:
+            raise ValueError("audit status is inconsistent with its tie-split evidence")
+        if self.status == "passed" and self.failure_reasons:
+            raise ValueError("a passing audit cannot contain failure reasons")
+        if self.status == "failed" and not self.failure_reasons:
+            raise ValueError("a failed audit must preserve at least one failure reason")
+        return self
+
+
+class VerifiedBehavioralDifferenceBinding(FrozenAuditModel):
+    """Immutable public proof returned only after complete gate verification."""
+
+    schema_version: Literal["model-b-v2-new-verified-difference-binding-v1"] = (
+        "model-b-v2-new-verified-difference-binding-v1"
+    )
+    audit_file_sha256: str = Field(pattern=SHA256_PATTERN)
+    audited_at_utc: datetime
+    model_a_sha256: str = Field(pattern=SHA256_PATTERN)
+    model_a_mapping_sha256: str = Field(pattern=SHA256_PATTERN)
+    model_b_compiled_file_sha256: str = Field(pattern=SHA256_PATTERN)
+    model_b_freeze_receipt_file_sha256: str = Field(pattern=SHA256_PATTERN)
+    model_b_sha256: str = Field(pattern=SHA256_PATTERN)
+    question_bank_sha256: str = Field(pattern=SHA256_PATTERN)
+    candidate_cache_file_sha256: str = Field(pattern=SHA256_PATTERN)
+    candidate_engine_fingerprint: str = Field(pattern=SHA256_PATTERN)
+    candidate_universe_request: BehavioralDifferenceMonthRequest
+    candidate_universe_sha256: str = Field(pattern=SHA256_PATTERN)
+    candidate_state_count: int = Field(ge=1)
+
+    @field_validator("audited_at_utc")
+    @classmethod
+    def require_utc(cls, value: datetime) -> datetime:
+        if value.tzinfo is None or value.utcoffset() is None:
+            raise ValueError("verified audit timestamp must be timezone-aware")
+        return value.astimezone(UTC)
+
 
 def audit_behavioral_difference(
-    states: tuple[CandidateState, ...],
+    candidate_universe: CachedUniverse,
     model_a: FrozenSymbolicModel,
     model_b: FrozenModelBV2New,
+    *,
+    engine_fingerprint: str,
+    audited_at_utc: datetime | None = None,
 ) -> BehavioralDifferenceAudit:
     """Audit public candidate pairs without accepting answer keys or truth labels."""
 
+    states = candidate_universe.states
     if not states:
         raise ValueError("behavioral difference audit requires candidate states")
     if model_a.question_bank_sha256 != model_b.question_bank_sha256:
         raise ValueError("Model A and V2 must bind the same question bank")
+    if sha256_file(candidate_universe.path) != candidate_universe.sha256:
+        raise ValueError("candidate cache bytes changed after the exact universe was loaded")
+    if len(engine_fingerprint) != 64 or any(
+        character not in "0123456789abcdef" for character in engine_fingerprint
+    ):
+        raise ValueError("candidate engine fingerprint must be a SHA-256 digest")
+    timestamp = audited_at_utc or datetime.now(UTC)
+    if timestamp.tzinfo is None or timestamp.utcoffset() is None:
+        raise ValueError("behavioral-difference audit timestamp must be timezone-aware")
+    if model_b.freeze_receipt.frozen_at_utc > timestamp:
+        raise ValueError("V2 model freeze must predate the behavioral-difference audit")
 
     state_tuple = tuple(sorted(states, key=lambda item: item.state_id))
     groups: dict[tuple[object, ...], list[CandidateState]] = defaultdict(list)
@@ -144,12 +304,20 @@ def audit_behavioral_difference(
         "passed" if source_favoring_groups and not adverse_groups else "failed"
     )
     return BehavioralDifferenceAudit(
+        audited_at_utc=timestamp,
         status=status,
         model_a_sha256=model_a.model_sha256,
         model_b_sha256=model_b.model_sha256,
         model_a_mapping_sha256=model_a.mapping_sha256,
         model_b_mapping_sha256=model_b.mapping_sha256,
+        model_b_compiled_file_sha256=sha256_file(model_b.compiled_artifact_path),
+        model_b_freeze_receipt_file_sha256=sha256_file(model_b.freeze_receipt_path),
         question_bank_sha256=model_a.question_bank_sha256,
+        candidate_cache_file_sha256=candidate_universe.sha256,
+        candidate_engine_fingerprint=engine_fingerprint,
+        candidate_universe_request=BehavioralDifferenceMonthRequest.from_runtime(
+            candidate_universe.request
+        ),
         candidate_universe_sha256=_candidate_universe_sha256(state_tuple),
         candidate_state_count=len(state_tuple),
         same_core_group_count=len(same_core_groups),
@@ -165,9 +333,168 @@ def audit_behavioral_difference(
 def require_behavioral_difference(audit: BehavioralDifferenceAudit) -> None:
     """Fail closed when a benchmark is attempted without a passing difference gate."""
 
-    if audit.status != "passed" or not audit.witnesses:
+    if (
+        audit.status != "passed"
+        or not audit.witnesses
+        or audit.groups_with_source_favoring_tie_split < 1
+        or audit.groups_with_adverse_tie_split != 0
+        or audit.failure_reasons
+    ):
         detail = "; ".join(audit.failure_reasons) or "no passing witness"
         raise ValueError(f"MODEL-B-DETAILED-V2-NEW difference gate failed: {detail}")
+
+
+def load_behavioral_difference_audit(path: str | Path) -> BehavioralDifferenceAudit:
+    """Load one exact canonical audit artifact without accepting alternate encodings."""
+
+    try:
+        raw = load_json_bytes(path, require_canonical=True)
+        return BehavioralDifferenceAudit.model_validate(raw)
+    except (OSError, ValueError) as exc:
+        raise ValueError(f"invalid or non-canonical behavioral-difference audit: {path}") from exc
+
+
+def verify_behavioral_difference_audit(
+    audit_path: str | Path,
+    *,
+    model_a: FrozenSymbolicModel,
+    model_b: FrozenModelBV2New,
+    candidate_cache_path: str | Path,
+    candidate_request: MonthRequest,
+    engine_fingerprint: str,
+    expected_binding: VerifiedBehavioralDifferenceBinding | None = None,
+) -> VerifiedBehavioralDifferenceBinding:
+    """Verify a passed public audit against every current model and cache byte.
+
+    This interface deliberately has no truth, answer-key, reveal, or decrypt input.
+    Cache validation only reads an already-materialized exact universe; it never
+    generates candidate states.
+    """
+
+    audit = load_behavioral_difference_audit(audit_path)
+    require_behavioral_difference(audit)
+    cache = load_cached_universe(
+        candidate_cache_path,
+        request=candidate_request,
+        engine_fingerprint=engine_fingerprint,
+    )
+    current_compiled_sha256 = sha256_file(model_b.compiled_artifact_path)
+    current_freeze_sha256 = sha256_file(model_b.freeze_receipt_path)
+    current_universe_sha256 = _candidate_universe_sha256(
+        tuple(sorted(cache.states, key=lambda item: item.state_id))
+    )
+    current_request = BehavioralDifferenceMonthRequest.from_runtime(candidate_request)
+    if model_b.freeze_receipt.frozen_at_utc > audit.audited_at_utc:
+        raise ValueError("behavioral-difference audit predates the V2 model freeze")
+    expected_fields: tuple[tuple[str, object, object], ...] = (
+        ("model_a_sha256", audit.model_a_sha256, model_a.model_sha256),
+        (
+            "model_a_mapping_sha256",
+            audit.model_a_mapping_sha256,
+            model_a.mapping_sha256,
+        ),
+        ("model_b_sha256", audit.model_b_sha256, model_b.model_sha256),
+        (
+            "model_b_mapping_sha256",
+            audit.model_b_mapping_sha256,
+            model_b.mapping_sha256,
+        ),
+        (
+            "model_b_compiled_file_sha256",
+            audit.model_b_compiled_file_sha256,
+            current_compiled_sha256,
+        ),
+        (
+            "model_b_freeze_receipt_file_sha256",
+            audit.model_b_freeze_receipt_file_sha256,
+            current_freeze_sha256,
+        ),
+        (
+            "question_bank_sha256",
+            audit.question_bank_sha256,
+            model_a.question_bank_sha256,
+        ),
+        (
+            "model_b_question_bank_sha256",
+            audit.question_bank_sha256,
+            model_b.question_bank_sha256,
+        ),
+        (
+            "candidate_cache_file_sha256",
+            audit.candidate_cache_file_sha256,
+            cache.sha256,
+        ),
+        (
+            "candidate_engine_fingerprint",
+            audit.candidate_engine_fingerprint,
+            engine_fingerprint,
+        ),
+        (
+            "candidate_universe_request",
+            audit.candidate_universe_request,
+            current_request,
+        ),
+        (
+            "candidate_state_count",
+            audit.candidate_state_count,
+            len(cache.states),
+        ),
+        (
+            "candidate_universe_sha256",
+            audit.candidate_universe_sha256,
+            current_universe_sha256,
+        ),
+    )
+    for label, recorded, current in expected_fields:
+        if recorded != current:
+            raise ValueError(f"behavioral-difference audit {label} is stale or mismatched")
+
+    states_by_id = {state.state_id: state for state in cache.states}
+    for witness in audit.witnesses:
+        if (
+            witness.source_state_id not in states_by_id
+            or witness.comparison_state_id not in states_by_id
+        ):
+            raise ValueError("behavioral-difference witness is outside the bound universe")
+        source_signature = model_a.score_signature(
+            states_by_id[witness.source_state_id].chart_features
+        )
+        comparison_signature = model_a.score_signature(
+            states_by_id[witness.comparison_state_id].chart_features
+        )
+        if source_signature != comparison_signature:
+            raise ValueError("behavioral-difference witness is not a current Model A tie group")
+
+    recomputed = audit_behavioral_difference(
+        cache,
+        model_a,
+        model_b,
+        engine_fingerprint=engine_fingerprint,
+        audited_at_utc=audit.audited_at_utc,
+    )
+    if recomputed != audit:
+        raise ValueError(
+            "behavioral-difference audit result does not match deterministic recomputation"
+        )
+
+    binding = VerifiedBehavioralDifferenceBinding(
+        audit_file_sha256=sha256_file(audit_path),
+        audited_at_utc=audit.audited_at_utc,
+        model_a_sha256=audit.model_a_sha256,
+        model_a_mapping_sha256=audit.model_a_mapping_sha256,
+        model_b_compiled_file_sha256=current_compiled_sha256,
+        model_b_freeze_receipt_file_sha256=current_freeze_sha256,
+        model_b_sha256=audit.model_b_sha256,
+        question_bank_sha256=audit.question_bank_sha256,
+        candidate_cache_file_sha256=cache.sha256,
+        candidate_engine_fingerprint=engine_fingerprint,
+        candidate_universe_request=current_request,
+        candidate_universe_sha256=current_universe_sha256,
+        candidate_state_count=len(cache.states),
+    )
+    if expected_binding is not None and binding != expected_binding:
+        raise ValueError("behavioral-difference audit does not match the expected binding")
+    return binding
 
 
 def _directional_tie_splits(
@@ -344,13 +671,5 @@ def _responses_sha256(responses: tuple[BehavioralResponse, ...]) -> str:
 
 def _candidate_universe_sha256(states: tuple[CandidateState, ...]) -> str:
     return sha256_json(
-        [
-            {
-                "state_id": state.state_id,
-                "start_utc": state.start_utc.isoformat(),
-                "end_utc": state.end_utc.isoformat(),
-                "chart_features_hash": state.chart_features_hash,
-            }
-            for state in states
-        ]
+        [state.model_dump(mode="json") for state in states]
     )
