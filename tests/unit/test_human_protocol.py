@@ -67,6 +67,7 @@ def _symbolic_reference() -> SymbolicModelReference:
         model_id="MODEL-A-CORE-V1",
         model_sha256="1" * 64,
         mapping_sha256="2" * 64,
+        question_bank_sha256="3" * 64,
     )
 
 
@@ -255,6 +256,7 @@ def test_validation_comparison_requires_freeze_and_reports_all_baselines() -> No
     key = HumanCohortAnswerKey(
         cohort="validation",
         protocol_sha256=protocol.sha256,
+        blind_input_sha256=predictions.blind_input_sha256,
         true_candidate_ids={"V1": "G-CANDIDATE", "V2": "P-CANDIDATE"},
     )
     report = reveal_and_evaluate_human_cohort(
@@ -310,6 +312,7 @@ def test_predictions_changed_after_freeze_are_rejected() -> None:
     key = HumanCohortAnswerKey(
         cohort="validation",
         protocol_sha256=protocol.sha256,
+        blind_input_sha256=predictions.blind_input_sha256,
         true_candidate_ids={"V1": "G-CANDIDATE", "V2": "P-CANDIDATE"},
     )
     with pytest.raises(ValueError, match="changed after freeze"):
@@ -356,6 +359,7 @@ def test_final_test_requires_explicit_one_time_release_and_matching_key() -> Non
     wrong_key = HumanCohortAnswerKey(
         cohort="final_test",
         protocol_sha256=protocol.sha256,
+        blind_input_sha256=predictions.blind_input_sha256,
         true_candidate_ids={"F1": "G-CANDIDATE", "F2": "P-CANDIDATE"},
         final_test_release_id="WRONG-RELEASE",
     )
@@ -401,6 +405,7 @@ def test_unevaluable_methods_and_missing_truth_remain_in_denominator() -> None:
     key = HumanCohortAnswerKey(
         cohort="validation",
         protocol_sha256=protocol.sha256,
+        blind_input_sha256=predictions.blind_input_sha256,
         true_candidate_ids={"V1": "G-CANDIDATE"},
     )
     report = reveal_and_evaluate_human_cohort(
@@ -431,4 +436,75 @@ def test_symbolic_binding_must_match_frozen_artifact() -> None:
             protocol=protocol,
             symbolic_scorer=BoundSymbolicScorer(wrong_reference, _symbolic_score),
             created_at_utc=NOW,
+        )
+
+
+def test_human_artifact_timestamps_are_monotonic() -> None:
+    bundle, manifest = _bundle_and_manifest()
+    with pytest.raises(ValueError, match="predate model bundle"):
+        freeze_human_evaluation_protocol(
+            bundle,
+            manifest,
+            protocol_id="EARLY-PROTOCOL",
+            cohort="validation",
+            candidate_universe_rule="fixed fixture candidates",
+            selected_primary_method="hybrid_hd",
+            created_at_utc=NOW - timedelta(seconds=1),
+        )
+    protocol = freeze_human_evaluation_protocol(
+        bundle,
+        manifest,
+        protocol_id="MONOTONIC",
+        cohort="validation",
+        candidate_universe_rule="fixed fixture candidates",
+        selected_primary_method="hybrid_hd",
+        created_at_utc=NOW,
+    )
+    cases = (
+        _blind_case("V1", "validation", "yes"),
+        _blind_case("V2", "validation", "no"),
+    )
+    scorer = BoundSymbolicScorer(_symbolic_reference(), _symbolic_score)
+    with pytest.raises(ValueError, match="predate evaluation protocol"):
+        score_blind_human_cohort(
+            cases,
+            bundle=bundle,
+            protocol=protocol,
+            symbolic_scorer=scorer,
+            created_at_utc=NOW - timedelta(seconds=1),
+        )
+    predictions = score_blind_human_cohort(
+        cases,
+        bundle=bundle,
+        protocol=protocol,
+        symbolic_scorer=scorer,
+        created_at_utc=NOW,
+    )
+    with pytest.raises(ValueError, match="predate predictions"):
+        freeze_human_predictions(
+            predictions,
+            bundle=bundle,
+            protocol=protocol,
+            created_at_utc=NOW - timedelta(seconds=1),
+        )
+    freeze = freeze_human_predictions(
+        predictions,
+        bundle=bundle,
+        protocol=protocol,
+        created_at_utc=NOW + timedelta(seconds=1),
+    )
+    key = HumanCohortAnswerKey(
+        cohort="validation",
+        protocol_sha256=protocol.sha256,
+        blind_input_sha256=predictions.blind_input_sha256,
+        true_candidate_ids={"V1": "G-CANDIDATE", "V2": "P-CANDIDATE"},
+    )
+    with pytest.raises(ValueError, match="predate prediction freeze"):
+        reveal_and_evaluate_human_cohort(
+            predictions,
+            freeze,
+            key,
+            bundle=bundle,
+            protocol=protocol,
+            evaluated_at_utc=NOW,
         )

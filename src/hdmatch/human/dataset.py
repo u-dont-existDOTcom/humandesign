@@ -21,7 +21,7 @@ class HumanCase(BaseModel):
     cohort: Literal["development", "validation", "final_test", "unassigned"]
     responses: dict[str, str]
     response_reliability: dict[str, float] = Field(default_factory=dict)
-    chart_features: dict[str, str | bool | int | float | list[str]]
+    chart_features: dict[str, Any]
     birth_year: int | None = None
     birth_month: int | None = Field(default=None, ge=1, le=12)
     birth_day: int | None = Field(default=None, ge=1, le=31)

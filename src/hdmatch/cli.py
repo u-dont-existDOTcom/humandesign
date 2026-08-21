@@ -25,6 +25,16 @@ from hdmatch.experiments import (
 )
 from hdmatch.experiments.canonical import load_json_bytes, write_new_canonical_json
 from hdmatch.experiments.reveal import reveal_answer_key
+from hdmatch.human import (
+    fit_development_bundle_artifacts,
+    freeze_prediction_artifacts,
+    freeze_protocol_artifacts,
+    import_human_cases,
+    reveal_evaluate_artifacts,
+    score_blind_artifacts,
+    seal_human_answer_key_artifacts,
+    symbolic_reference,
+)
 from hdmatch.model import compile_mapping_artifacts
 from hdmatch.model_b.compiler import compile_model_b_artifacts
 from hdmatch.model_b.mapping_library import FrozenModelB
@@ -361,6 +371,131 @@ def _command_compare_models(args: argparse.Namespace) -> int:
     return 0
 
 
+def _command_human_import(args: argparse.Namespace) -> int:
+    receipt = import_human_cases(
+        args.dataset,
+        args.output_dir,
+        questionnaire_version=args.questionnaire_version,
+        seed=args.seed,
+        validation_fraction=args.validation_fraction,
+        final_test_fraction=args.final_test_fraction,
+        repository_root=ROOT,
+    )
+    print(f"private human import: {Path(args.output_dir) / 'human.dataset.json'}")
+    print(f"person split: {Path(args.output_dir) / 'person.split.json'}")
+    print(f"import outputs: {json.dumps(receipt.output_sha256, sort_keys=True)}")
+    return 0
+
+
+def _command_human_fit(args: argparse.Namespace) -> int:
+    runtime = _load_selected_model(args)
+    bundle, receipt = fit_development_bundle_artifacts(
+        args.dataset,
+        args.split_manifest,
+        args.output_dir,
+        bundle_id=args.bundle_id,
+        symbolic_model=symbolic_reference(runtime),
+        empirical_feature_names=tuple(args.feature),
+        alpha=args.alpha,
+        hybrid_symbolic_weight=args.hybrid_symbolic_weight,
+        permutation_count=args.permutation_count,
+        permutation_seed=args.permutation_seed,
+        repository_root=ROOT,
+    )
+    print(f"human model bundle: {Path(args.output_dir) / 'human-model.bundle.json'}")
+    print(f"bundle semantic sha256: {bundle.sha256}")
+    print(f"fit inputs: {json.dumps(receipt.input_sha256, sort_keys=True)}")
+    return 0
+
+
+def _command_human_freeze_protocol(args: argparse.Namespace) -> int:
+    protocol, receipt = freeze_protocol_artifacts(
+        args.bundle,
+        args.split_manifest,
+        args.output_dir,
+        protocol_id=args.protocol_id,
+        cohort=args.cohort,
+        candidate_universe_rule=args.candidate_universe_rule,
+        selected_primary_method=args.selected_primary_method,
+        final_test_release_id=args.final_test_release_id,
+        release_authorization=args.final_test_release_acknowledgement,
+        release_ledger_dir=args.release_ledger,
+        repository_root=ROOT,
+    )
+    print(f"human protocol: {Path(args.output_dir) / 'human-evaluation.protocol.json'}")
+    print(f"protocol semantic sha256: {protocol.sha256}")
+    print(f"protocol outputs: {json.dumps(receipt.output_sha256, sort_keys=True)}")
+    return 0
+
+
+def _command_human_seal_key(args: argparse.Namespace) -> int:
+    receipt = seal_human_answer_key_artifacts(
+        args.plaintext_answer_key,
+        args.key_file,
+        args.bundle,
+        args.protocol,
+        args.blind_cohort,
+        args.output_dir,
+        repository_root=ROOT,
+    )
+    print(f"encrypted human answer key: {Path(args.output_dir) / 'human.answer-key.json.enc'}")
+    print(f"key-seal outputs: {json.dumps(receipt.output_sha256, sort_keys=True)}")
+    return 0
+
+
+def _command_human_score(args: argparse.Namespace) -> int:
+    runtime = _load_selected_model(args)
+    predictions, receipt = score_blind_artifacts(
+        args.blind_cohort,
+        args.bundle,
+        args.protocol,
+        args.symbolic_prevalence,
+        args.symbolic_prevalence_source,
+        args.output_dir,
+        runtime_symbolic_model=runtime,
+        repository_root=ROOT,
+    )
+    print(f"human blind predictions: {Path(args.output_dir) / 'human.predictions.json'}")
+    prediction_hash = sha256_file(Path(args.output_dir) / "human.predictions.json")
+    print(f"prediction file sha256: {prediction_hash}")
+    print(f"answer key accessed: {predictions.answer_key_accessed}")
+    print(f"score inputs: {json.dumps(receipt.input_sha256, sort_keys=True)}")
+    return 0
+
+
+def _command_human_freeze(args: argparse.Namespace) -> int:
+    freeze, receipt = freeze_prediction_artifacts(
+        args.predictions,
+        args.bundle,
+        args.protocol,
+        args.output_dir,
+        release_ledger_dir=args.release_ledger,
+        repository_root=ROOT,
+    )
+    print(f"human prediction freeze: {Path(args.output_dir) / 'human.prediction.freeze.json'}")
+    print(f"prediction sha256: {freeze.prediction_sha256}")
+    print(f"freeze outputs: {json.dumps(receipt.output_sha256, sort_keys=True)}")
+    return 0
+
+
+def _command_human_reveal_evaluate(args: argparse.Namespace) -> int:
+    report, _, receipt = reveal_evaluate_artifacts(
+        args.predictions,
+        args.prediction_freeze,
+        args.bundle,
+        args.protocol,
+        args.encrypted_answer_key,
+        args.key_file,
+        args.output_dir,
+        release_ledger_dir=args.release_ledger,
+        repository_root=ROOT,
+    )
+    print(f"human comparison report: {Path(args.output_dir) / 'human.comparison.report.json'}")
+    print(f"claim boundary: {report.claim_boundary}")
+    print(f"evaluation outputs: {json.dumps(receipt.output_sha256, sort_keys=True)}")
+    return 0
+
+
 def _command_compare_noise_tiers(args: argparse.Namespace) -> int:
     """Aggregate already-revealed public artifacts without reading answer keys."""
 
@@ -472,6 +607,104 @@ def _parser() -> argparse.ArgumentParser:
     comparison.add_argument("--mapping", default=str(DEFAULT_MAPPING))
     comparison.set_defaults(handler=_command_compare_models)
 
+    human_import = subparsers.add_parser(
+        "human-import",
+        help="validate and person-split a private human dataset outside the repository",
+    )
+    human_import.add_argument("--dataset", required=True)
+    human_import.add_argument("--questionnaire-version", required=True)
+    human_import.add_argument("--output-dir", required=True)
+    human_import.add_argument("--seed", type=int, required=True)
+    human_import.add_argument("--validation-fraction", type=float, default=0.2)
+    human_import.add_argument("--final-test-fraction", type=float, default=0.2)
+    human_import.set_defaults(handler=_command_human_import)
+
+    human_fit = subparsers.add_parser(
+        "human-fit",
+        help="validate a full person split and fit development people only",
+    )
+    human_fit.add_argument("--dataset", required=True)
+    human_fit.add_argument("--split-manifest", required=True)
+    human_fit.add_argument("--output-dir", required=True)
+    human_fit.add_argument("--bundle-id", required=True)
+    human_fit.add_argument("--feature", action="append", required=True)
+    human_fit.add_argument("--alpha", type=float, default=2.0)
+    human_fit.add_argument("--hybrid-symbolic-weight", type=float, default=1.0)
+    human_fit.add_argument("--permutation-count", type=int, default=32)
+    human_fit.add_argument("--permutation-seed", type=int, default=0)
+    _add_model_arguments(human_fit)
+    human_fit.set_defaults(handler=_command_human_fit)
+
+    human_protocol = subparsers.add_parser(
+        "human-freeze-protocol",
+        help="freeze one person-level cohort protocol and optional final release ledger",
+    )
+    human_protocol.add_argument("--bundle", required=True)
+    human_protocol.add_argument("--split-manifest", required=True)
+    human_protocol.add_argument("--output-dir", required=True)
+    human_protocol.add_argument("--protocol-id", required=True)
+    human_protocol.add_argument(
+        "--cohort",
+        choices=("development", "validation", "final_test"),
+        required=True,
+    )
+    human_protocol.add_argument("--candidate-universe-rule", required=True)
+    human_protocol.add_argument("--selected-primary-method", required=True)
+    human_protocol.add_argument("--final-test-release-id")
+    human_protocol.add_argument("--final-test-release-acknowledgement")
+    human_protocol.add_argument("--release-ledger")
+    human_protocol.set_defaults(handler=_command_human_freeze_protocol)
+
+    human_seal = subparsers.add_parser(
+        "human-seal-key",
+        help="seal a human answer key using external owner-only AES key material",
+    )
+    human_seal.add_argument("--plaintext-answer-key", required=True)
+    human_seal.add_argument("--key-file", required=True)
+    human_seal.add_argument("--bundle", required=True)
+    human_seal.add_argument("--protocol", required=True)
+    human_seal.add_argument("--blind-cohort", required=True)
+    human_seal.add_argument("--output-dir", required=True)
+    human_seal.set_defaults(handler=_command_human_seal_key)
+
+    human_score = subparsers.add_parser(
+        "human-score",
+        help="blind-score a frozen human cohort without accepting key access",
+    )
+    human_score.add_argument("--blind-cohort", required=True)
+    human_score.add_argument("--bundle", required=True)
+    human_score.add_argument("--protocol", required=True)
+    human_score.add_argument("--symbolic-prevalence", required=True)
+    human_score.add_argument("--symbolic-prevalence-source", required=True)
+    human_score.add_argument("--output-dir", required=True)
+    _add_model_arguments(human_score)
+    human_score.set_defaults(handler=_command_human_score)
+
+    human_freeze = subparsers.add_parser(
+        "human-freeze",
+        help="freeze exact human prediction bytes before any reveal",
+    )
+    human_freeze.add_argument("--predictions", required=True)
+    human_freeze.add_argument("--bundle", required=True)
+    human_freeze.add_argument("--protocol", required=True)
+    human_freeze.add_argument("--output-dir", required=True)
+    human_freeze.add_argument("--release-ledger")
+    human_freeze.set_defaults(handler=_command_human_freeze)
+
+    human_reveal = subparsers.add_parser(
+        "human-reveal-evaluate",
+        help="verify freeze, decrypt an external-key envelope, reveal, and evaluate",
+    )
+    human_reveal.add_argument("--predictions", required=True)
+    human_reveal.add_argument("--prediction-freeze", required=True)
+    human_reveal.add_argument("--bundle", required=True)
+    human_reveal.add_argument("--protocol", required=True)
+    human_reveal.add_argument("--encrypted-answer-key", required=True)
+    human_reveal.add_argument("--key-file", required=True)
+    human_reveal.add_argument("--output-dir", required=True)
+    human_reveal.add_argument("--release-ledger")
+    human_reveal.set_defaults(handler=_command_human_reveal_evaluate)
+
     noise_comparison = subparsers.add_parser(
         "compare-noise-tiers",
         help="compare four revealed frozen synthetic evaluations without answer keys",
@@ -491,7 +724,14 @@ def main(argv: Sequence[str] | None = None) -> int:
     handler = args.handler
     try:
         return int(handler(args))
-    except (FileNotFoundError, FileExistsError, RuntimeError, ValueError, KeyError) as exc:
+    except (
+        FileNotFoundError,
+        FileExistsError,
+        PermissionError,
+        RuntimeError,
+        ValueError,
+        KeyError,
+    ) as exc:
         parser.exit(2, f"hdmatch: error: {exc}\n")
 
 

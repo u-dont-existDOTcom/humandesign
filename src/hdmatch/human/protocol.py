@@ -62,6 +62,7 @@ class SymbolicModelReference(BaseModel):
     model_id: str = Field(min_length=1)
     model_sha256: str = Field(pattern=SHA256_PATTERN)
     mapping_sha256: str = Field(pattern=SHA256_PATTERN)
+    question_bank_sha256: str = Field(pattern=SHA256_PATTERN)
 
 
 class FrozenHumanModelBundle(BaseModel):
@@ -195,7 +196,7 @@ class HumanCandidate(BaseModel):
     model_config = ConfigDict(extra="forbid", frozen=True)
 
     candidate_id: str = Field(min_length=1)
-    chart_features: dict[str, str | bool | int | float | list[str]]
+    chart_features: dict[str, Any]
     local_year: int | None = None
     local_month: int | None = Field(default=None, ge=1, le=12)
     local_day: int | None = Field(default=None, ge=1, le=31)
@@ -254,6 +255,7 @@ class HumanCohortAnswerKey(BaseModel):
     schema_version: Literal["human-cohort-answer-key-v1"] = "human-cohort-answer-key-v1"
     cohort: Cohort
     protocol_sha256: str = Field(pattern=SHA256_PATTERN)
+    blind_input_sha256: str = Field(pattern=SHA256_PATTERN)
     true_candidate_ids: dict[str, str]
     final_test_release_id: str | None = None
 
@@ -667,6 +669,9 @@ def _freeze_protocol(
     if selected_primary_method not in available_methods:
         raise ValueError("selected primary method is absent from the frozen model bundle")
     participant_ids = tuple(sorted(getattr(manifest, f"{cohort}_ids")))
+    timestamp = created_at_utc or datetime.now(UTC)
+    if timestamp < bundle.created_at_utc:
+        raise ValueError("evaluation protocol timestamp cannot predate model bundle")
     return FrozenHumanEvaluationProtocol(
         protocol_id=protocol_id,
         cohort=cohort,
@@ -680,7 +685,7 @@ def _freeze_protocol(
         final_test_release_acknowledgement=(
             FINAL_TEST_RELEASE_ACKNOWLEDGEMENT if cohort == "final_test" else None
         ),
-        created_at_utc=created_at_utc or datetime.now(UTC),
+        created_at_utc=timestamp,
     )
 
 
@@ -789,6 +794,9 @@ def score_blind_human_cohort(
                 methods=tuple(methods),
             )
         )
+    timestamp = created_at_utc or datetime.now(UTC)
+    if timestamp < protocol.created_at_utc:
+        raise ValueError("prediction timestamp cannot predate evaluation protocol")
     return HumanPredictionSet(
         protocol_id=protocol.protocol_id,
         protocol_sha256=protocol.sha256,
@@ -801,7 +809,7 @@ def score_blind_human_cohort(
         ),
         cohort=protocol.cohort,
         cases=tuple(predictions),
-        created_at_utc=created_at_utc or datetime.now(UTC),
+        created_at_utc=timestamp,
     )
 
 
@@ -907,16 +915,15 @@ def freeze_human_predictions(
         raise ValueError("prediction identity or cohort does not match the protocol")
     if predictions.model_bundle_sha256 != bundle.sha256:
         raise ValueError("predictions are bound to a different model bundle")
-    if predictions.protocol_id != protocol.protocol_id or predictions.cohort != protocol.cohort:
-        raise ValueError("prediction identity or cohort does not match the protocol")
-    if predictions.model_bundle_sha256 != bundle.sha256:
-        raise ValueError("predictions are bound to a different model bundle")
+    timestamp = created_at_utc or datetime.now(UTC)
+    if timestamp < predictions.created_at_utc:
+        raise ValueError("prediction-freeze timestamp cannot predate predictions")
     return HumanPredictionFreeze(
         protocol_sha256=protocol.sha256,
         model_bundle_sha256=bundle.sha256,
         blind_input_sha256=predictions.blind_input_sha256,
         prediction_sha256=sha256_json(predictions),
-        created_at_utc=created_at_utc or datetime.now(UTC),
+        created_at_utc=timestamp,
     )
 
 
@@ -931,19 +938,22 @@ def reveal_and_evaluate_human_cohort(
 ) -> HumanComparisonReport:
     """Verify the prediction freeze, then evaluate every person/method including failures."""
 
+    verify_human_prediction_freeze(
+        predictions,
+        freeze,
+        bundle=bundle,
+        protocol=protocol,
+    )
+    evaluation_time = evaluated_at_utc or datetime.now(UTC)
+    if evaluation_time < freeze.created_at_utc:
+        raise ValueError("human evaluation timestamp cannot predate prediction freeze")
     _verify_bundle_protocol(bundle, protocol)
-    if freeze.protocol_sha256 != protocol.sha256:
-        raise ValueError("prediction freeze is bound to a different protocol")
-    if freeze.model_bundle_sha256 != bundle.sha256:
-        raise ValueError("prediction freeze is bound to a different model bundle")
-    if freeze.blind_input_sha256 != predictions.blind_input_sha256:
-        raise ValueError("prediction freeze blind-input hash does not match predictions")
-    if freeze.prediction_sha256 != sha256_json(predictions):
-        raise ValueError("predictions changed after freeze")
     if predictions.protocol_sha256 != protocol.sha256:
         raise ValueError("predictions are bound to a different protocol")
     if answer_key.protocol_sha256 != protocol.sha256 or answer_key.cohort != protocol.cohort:
         raise ValueError("answer key is bound to a different frozen protocol")
+    if answer_key.blind_input_sha256 != predictions.blind_input_sha256:
+        raise ValueError("answer key is bound to a different blind input")
     extra_keys = set(answer_key.true_candidate_ids) - set(protocol.participant_ids)
     if extra_keys:
         raise ValueError(
@@ -1069,7 +1079,7 @@ def reveal_and_evaluate_human_cohort(
     if protocol.cohort == "final_test":
         warnings.append(
             "This artifact binds a final-test release ID but cannot enforce global one-time "
-            "use; the future CLI must persist an append-only release receipt."
+            "use; an untouched claim requires the CLI's persistent single-use ledger receipts."
         )
     return HumanComparisonReport(
         protocol_id=protocol.protocol_id,
@@ -1085,8 +1095,34 @@ def reveal_and_evaluate_human_cohort(
         permutation_baseline=permutation,
         claim_boundary=_claim_boundary(protocol.cohort),
         warnings=tuple(warnings),
-        evaluated_at_utc=evaluated_at_utc or datetime.now(UTC),
+        evaluated_at_utc=evaluation_time,
     )
+
+
+def verify_human_prediction_freeze(
+    predictions: HumanPredictionSet,
+    freeze: HumanPredictionFreeze,
+    *,
+    bundle: FrozenHumanModelBundle,
+    protocol: FrozenHumanEvaluationProtocol,
+) -> None:
+    """Verify prediction bytes semantically before any answer-key file is opened."""
+
+    _verify_bundle_protocol(bundle, protocol)
+    if freeze.protocol_sha256 != protocol.sha256:
+        raise ValueError("prediction freeze is bound to a different protocol")
+    if freeze.model_bundle_sha256 != bundle.sha256:
+        raise ValueError("prediction freeze is bound to a different model bundle")
+    if freeze.blind_input_sha256 != predictions.blind_input_sha256:
+        raise ValueError("prediction freeze blind-input hash does not match predictions")
+    if freeze.prediction_sha256 != sha256_json(predictions):
+        raise ValueError("predictions changed after freeze")
+    if predictions.protocol_sha256 != protocol.sha256:
+        raise ValueError("predictions are bound to a different protocol")
+    if predictions.protocol_id != protocol.protocol_id or predictions.cohort != protocol.cohort:
+        raise ValueError("prediction identity or cohort does not match the protocol")
+    if predictions.model_bundle_sha256 != bundle.sha256:
+        raise ValueError("predictions are bound to a different model bundle")
 
 
 def _failure(
@@ -1148,4 +1184,7 @@ def _claim_boundary(cohort: Cohort) -> str:
             "person-held-out internal validation; eligible for model selection, not untouched "
             "final evidence"
         )
-    return "untouched person-level final test under the already frozen release artifact"
+    return (
+        "final-test evaluation from the pure API; an untouched claim additionally requires "
+        "the CLI's persistent protocol/freeze/reveal ledger receipts"
+    )

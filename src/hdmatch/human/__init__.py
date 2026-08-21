@@ -1,5 +1,15 @@
 """Person-level human development, empirical fitting, and validation controls."""
 
+from .artifacts import (
+    FinalTestFreezeLedgerReceipt,
+    FinalTestReleaseReceipt,
+    FinalTestRevealLedgerReceipt,
+    HumanBlindCohort,
+    HumanRevealReceipt,
+    HumanSymbolicPrevalenceArtifact,
+    HumanWorkflowReceipt,
+    candidate_universe_sha256,
+)
 from .dataset import HumanCase, HumanDataset, load_human_dataset
 from .empirical import EmpiricalChartResponseModel, ModelArtifact
 from .protocol import (
@@ -20,6 +30,7 @@ from .protocol import (
     freeze_human_predictions,
     reveal_and_evaluate_human_cohort,
     score_blind_human_cohort,
+    verify_human_prediction_freeze,
 )
 from .splits import (
     PersonSplitManifest,
@@ -27,14 +38,29 @@ from .splits import (
     enforce_training_cohort,
     validate_manifest_for_dataset,
 )
+from .workflow import (
+    final_release_authorization,
+    fit_development_bundle_artifacts,
+    freeze_prediction_artifacts,
+    freeze_protocol_artifacts,
+    import_human_cases,
+    reveal_evaluate_artifacts,
+    score_blind_artifacts,
+    seal_human_answer_key_artifacts,
+    symbolic_reference,
+)
 
 __all__ = [
     "EmpiricalChartResponseModel",
+    "FinalTestFreezeLedgerReceipt",
     "FINAL_TEST_RELEASE_ACKNOWLEDGEMENT",
+    "FinalTestReleaseReceipt",
+    "FinalTestRevealLedgerReceipt",
     "BoundSymbolicScorer",
     "FrozenHumanEvaluationProtocol",
     "FrozenHumanModelBundle",
     "HumanBlindCase",
+    "HumanBlindCohort",
     "HumanCase",
     "HumanCandidate",
     "HumanCohortAnswerKey",
@@ -42,17 +68,31 @@ __all__ = [
     "HumanDataset",
     "HumanPredictionFreeze",
     "HumanPredictionSet",
+    "HumanRevealReceipt",
+    "HumanSymbolicPrevalenceArtifact",
+    "HumanWorkflowReceipt",
     "ModelArtifact",
     "PersonSplitManifest",
     "SymbolicModelReference",
     "create_person_splits",
+    "candidate_universe_sha256",
     "enforce_training_cohort",
     "fit_development_model_bundle",
+    "fit_development_bundle_artifacts",
+    "final_release_authorization",
     "freeze_final_test_protocol",
     "freeze_human_evaluation_protocol",
     "freeze_human_predictions",
+    "freeze_prediction_artifacts",
+    "freeze_protocol_artifacts",
+    "import_human_cases",
     "load_human_dataset",
     "reveal_and_evaluate_human_cohort",
+    "reveal_evaluate_artifacts",
+    "score_blind_artifacts",
     "score_blind_human_cohort",
+    "seal_human_answer_key_artifacts",
+    "symbolic_reference",
     "validate_manifest_for_dataset",
+    "verify_human_prediction_freeze",
 ]
