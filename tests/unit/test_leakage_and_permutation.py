@@ -5,7 +5,9 @@ import pytest
 from hdmatch.evaluation.leakage import (
     LeakageDetectedError,
     assert_no_blind_leakage,
+    assert_no_prediction_leakage,
     scan_blind_payload,
+    scan_prediction_payload,
 )
 from hdmatch.evaluation.permutation import (
     empirical_p_value,
@@ -69,6 +71,47 @@ def test_known_birth_day_allowed_only_for_known_date_universe() -> None:
     assert scan_blind_payload(known_date).passed
     known_date["candidate_universe"] = "known_month"
     assert not scan_blind_payload(known_date).passed
+
+
+def test_prediction_scan_rejects_truth_derived_ranks_and_hidden_identifiers() -> None:
+    safe = {
+        "schema_version": "predictions-v1",
+        "predictions": [
+            {
+                "case_id": "C1",
+                "ranked_dates": [
+                    {
+                        "local_date": "2000-01-02",
+                        "date_rank": 1,
+                        "date_score": 3.0,
+                        "best_state": {
+                            "state_id": "S1",
+                            "start_utc": "2000-01-02T00:00:00Z",
+                            "end_utc": "2000-01-02T01:00:00Z",
+                        },
+                    }
+                ],
+                "zero_cluster": {"ranked_dates": []},
+            }
+        ],
+    }
+    assert scan_prediction_payload(safe).passed
+    contaminated = {
+        **safe,
+        "predictions": [
+            {
+                **safe["predictions"][0],  # type: ignore[index]
+                "true_date_rank": 1,
+                "true_utc": "2000-01-02T00:00:00Z",
+                "hidden_state_id": "S1",
+            }
+        ],
+    }
+    report = scan_prediction_payload(contaminated)
+    assert not report.passed
+    assert {item.code for item in report.findings} == {"truth-derived-prediction-field"}
+    with pytest.raises(LeakageDetectedError):
+        assert_no_prediction_leakage(contaminated)
 
 
 def test_stratified_permutation_is_reproducible_person_level_and_stratum_safe() -> None:

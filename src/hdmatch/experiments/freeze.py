@@ -87,6 +87,12 @@ def freeze_predictions(
         Path(prediction_path) if prediction_path is not None else directory / "predictions.json"
     )
     relative_prediction = _relative_artifact(directory, prediction)
+    # Imports stay local to keep the low-level hash module free of package import cycles.
+    from hdmatch.evaluation.leakage import assert_no_prediction_leakage
+    from hdmatch.synthetic.sealing import assert_no_plaintext_answer_keys
+
+    assert_no_prediction_leakage(prediction)
+    assert_no_plaintext_answer_keys(repository_root)
     commit, dirty = git_revision(repository_root)
     environment = capture_software_environment()
     manifest_hash = sha256_file(run_manifest_path) if run_manifest_path is not None else None

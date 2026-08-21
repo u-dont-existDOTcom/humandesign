@@ -63,6 +63,17 @@ _SECRET_KEYS = {
     "truechartfeatureshash",
 }
 _SECRET_KEY_FRAGMENTS = ("answerkey", "groundtruth", "concealedtruth", "secretkey")
+_PREDICTION_FORBIDDEN_KEYS = {
+    "actualrank",
+    "birthdate",
+    "birthdatetime",
+    "birthtime",
+    "birthutc",
+    "correctrank",
+    "targetrank",
+    "truedaterank",
+    "zeroclusterrank",
+}
 _DATE_PATTERNS = (
     ("iso-date-clue", re.compile(r"(?<!\d)(?:18|19|20|21)\d{2}-\d{2}-\d{2}(?!\d)", re.I)),
     ("numeric-date-clue", re.compile(r"(?<!\d)\d{1,2}[/.]\d{1,2}[/.](?:\d{2}|\d{4})(?!\d)")),
@@ -187,6 +198,93 @@ def scan_blind_file(path: str | Path) -> LeakageReport:
         )
         return LeakageReport(scanned_file=source.name, findings=(finding,))
     return scan_blind_payload(payload, scanned_file=source.name)
+
+
+def scan_prediction_payload(
+    payload: Any, *, scanned_file: str | None = None
+) -> LeakageReport:
+    """Scan blind decoder output without flagging its public candidate date/time values."""
+
+    findings: list[LeakageFinding] = []
+
+    def walk(value: Any, path: str) -> None:
+        if isinstance(value, dict):
+            for key, item in value.items():
+                child_path = f"{path}.{key}"
+                normalized = _normalise_key(str(key))
+                forbidden_prefix = normalized.startswith(
+                    ("true", "truth", "hidden", "groundtruth", "target", "actual", "correct")
+                )
+                if (
+                    forbidden_prefix
+                    or normalized in _PREDICTION_FORBIDDEN_KEYS
+                    or any(part in normalized for part in _SECRET_KEY_FRAGMENTS)
+                ):
+                    findings.append(
+                        LeakageFinding(
+                            severity=LeakSeverity.CRITICAL,
+                            code="truth-derived-prediction-field",
+                            json_path=child_path,
+                            detail=(
+                                "Blind predictions contain a concealed-target field or a rank "
+                                "that can only be computed after reveal."
+                            ),
+                        )
+                    )
+                walk(item, child_path)
+        elif isinstance(value, list):
+            for index, item in enumerate(value):
+                walk(item, f"{path}[{index}]")
+        elif isinstance(value, str):
+            if any(pattern.search(value) for pattern in _PATH_PATTERNS):
+                findings.append(
+                    LeakageFinding(
+                        severity=LeakSeverity.CRITICAL,
+                        code="absolute-path-leak",
+                        json_path=path,
+                        detail="Prediction output contains a host/workspace path.",
+                        redacted_excerpt=_redact(value),
+                    )
+                )
+            if _SECRET_FILE_PATTERN.search(value):
+                findings.append(
+                    LeakageFinding(
+                        severity=LeakSeverity.CRITICAL,
+                        code="secret-artifact-path",
+                        json_path=path,
+                        detail="Prediction output names a key or reveal artifact.",
+                        redacted_excerpt=_redact(value),
+                    )
+                )
+
+    walk(payload, "$")
+    return LeakageReport(scanned_file=scanned_file, findings=tuple(findings))
+
+
+def scan_prediction_file(path: str | Path) -> LeakageReport:
+    source = Path(path)
+    try:
+        payload = json.loads(source.read_bytes())
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError):
+        finding = LeakageFinding(
+            severity=LeakSeverity.CRITICAL,
+            code="invalid-prediction-json",
+            json_path="$",
+            detail="Prediction artifact is not valid UTF-8 JSON.",
+        )
+        return LeakageReport(scanned_file=source.name, findings=(finding,))
+    return scan_prediction_payload(payload, scanned_file=source.name)
+
+
+def assert_no_prediction_leakage(payload_or_path: Any) -> LeakageReport:
+    report = (
+        scan_prediction_file(payload_or_path)
+        if isinstance(payload_or_path, (str, Path))
+        else scan_prediction_payload(payload_or_path)
+    )
+    if not report.passed:
+        raise LeakageDetectedError(report)
+    return report
 
 
 def assert_no_blind_leakage(payload_or_path: Any) -> LeakageReport:

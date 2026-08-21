@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import math
 from collections import Counter
 from datetime import UTC, date, datetime
 from pathlib import Path
@@ -24,6 +23,7 @@ from .ablation import (
     aggregate_restoration_curves,
 )
 from .failures import FailureClassification, FailureRecord, classify_oracle_failure
+from .leakage import scan_prediction_payload
 from .metrics import (
     AggregateRankMetrics,
     CaseRankMetrics,
@@ -119,13 +119,38 @@ def _require_iso_date(value: Any, *, label: str) -> str:
     return value
 
 
-def _require_rank(value: Any, *, label: str) -> float:
-    if isinstance(value, bool) or not isinstance(value, (int, float)):
-        raise EvaluationInputError(f"{label} must be a numeric rank")
-    converted = float(value)
-    if not math.isfinite(converted) or converted < 1:
-        raise EvaluationInputError(f"{label} must be finite and at least one")
-    return converted
+def _evaluate_stage_ranking(
+    *,
+    case_id: str,
+    stage_label: str,
+    stage: Any,
+    true_date: str,
+) -> tuple[CaseRankMetrics | None, int]:
+    if not isinstance(stage, dict):
+        raise EvaluationInputError(f"case {case_id} {stage_label} must be an object")
+    ranked_dates = stage.get("ranked_dates")
+    if not isinstance(ranked_dates, list) or not ranked_dates:
+        raise EvaluationInputError(f"case {case_id} {stage_label} lacks ranked_dates")
+    for index, candidate in enumerate(ranked_dates):
+        if not isinstance(candidate, dict):
+            raise EvaluationInputError(
+                f"case {case_id} {stage_label}.ranked_dates[{index}] must be an object"
+            )
+        _require_iso_date(
+            candidate.get("local_date"),
+            label=f"case {case_id} {stage_label}.ranked_dates[{index}].local_date",
+        )
+    try:
+        metrics = evaluate_ranked_case(
+            case_id=case_id,
+            candidates=ranked_dates,
+            true_candidate_id=true_date,
+        )
+    except (KeyError, TypeError, ValueError) as exc:
+        if "absent" in str(exc):
+            return None, len(ranked_dates)
+        raise EvaluationInputError(str(exc)) from exc
+    return metrics, len(ranked_dates)
 
 
 def evaluate_frozen_payloads(
@@ -139,6 +164,9 @@ def evaluate_frozen_payloads(
 ) -> EvaluationReport:
     """Evaluate exact documented payload shapes after a caller verifies frozen bytes."""
 
+    leakage_report = scan_prediction_payload(predictions)
+    if not leakage_report.passed:
+        raise EvaluationInputError("predictions contain concealed-target leakage")
     _validate_cross_file_bindings(predictions, answer_key, freeze)
     predicted_cases = _unique_cases(predictions, "predictions")
     keyed_cases = _unique_cases(answer_key, "answer key")
@@ -159,64 +187,46 @@ def evaluate_frozen_payloads(
         true_date = _require_iso_date(
             keyed.get("true_local_date"), label=f"answer key case {case_id} true_local_date"
         )
-        ranked_dates = predicted.get("ranked_dates")
-        if not isinstance(ranked_dates, list) or not ranked_dates:
-            raise EvaluationInputError(f"prediction case {case_id} lacks ranked_dates")
-        for index, candidate in enumerate(ranked_dates):
-            if not isinstance(candidate, dict):
-                raise EvaluationInputError(
-                    f"prediction case {case_id} ranked_dates[{index}] must be an object"
-                )
-            _require_iso_date(
-                candidate.get("local_date"),
-                label=f"prediction case {case_id} ranked_dates[{index}].local_date",
-            )
         unresolved = predicted.get("unresolved_mapping_ids", [])
         if not isinstance(unresolved, list) or not all(
             isinstance(item, str) for item in unresolved
         ):
             raise EvaluationInputError(f"case {case_id} has invalid unresolved_mapping_ids")
-        try:
-            metrics = evaluate_ranked_case(
-                case_id=case_id,
-                candidates=ranked_dates,
-                true_candidate_id=true_date,
-            )
-        except (KeyError, TypeError, ValueError) as exc:
-            if "absent" not in str(exc):
-                raise EvaluationInputError(str(exc)) from exc
+        metrics, _ = _evaluate_stage_ranking(
+            case_id=case_id,
+            stage_label="final",
+            stage=predicted,
+            true_date=true_date,
+        )
+        if metrics is None:
             failures.append(
                 classify_oracle_failure(case_id=case_id, true_candidate_present=False)
             )
-            continue
-        case_metrics.append(metrics)
-        if metrics.best_rank != 1:
+        else:
+            case_metrics.append(metrics)
+        if metrics is not None and metrics.best_rank != 1:
             failures.append(
                 classify_oracle_failure(
                     case_id=case_id,
                     true_candidate_present=True,
                     unresolved_mapping_ids=tuple(unresolved),
-                    structurally_identical_top_candidate=bool(
-                        predicted.get("structurally_identical_top_candidate", False)
-                    ),
-                    state_winner_but_date_loser=bool(
-                        predicted.get("state_winner_but_date_loser", False)
-                    ),
-                    scoring_reference_disagreement=bool(
-                        predicted.get("scoring_reference_disagreement", False)
-                    ),
                     evidence={"best_rank": metrics.best_rank, "midrank": metrics.midrank},
                 )
             )
-        zero = predicted.get("zero_cluster_rank")
-        zero_rank = _require_rank(zero, label=f"case {case_id} zero_cluster_rank")
+        zero_metrics, zero_count = _evaluate_stage_ranking(
+            case_id=case_id,
+            stage_label="zero_cluster",
+            stage=predicted.get("zero_cluster"),
+            true_date=true_date,
+        )
         curves.extend(
             CurveObservation(
                 case_id=case_id,
                 method=cast(Literal["random", "active", "leave_one_out"], method),
                 cluster_count=0,
-                midrank=zero_rank,
-                candidate_count=metrics.candidate_count,
+                midrank=zero_metrics.midrank if zero_metrics is not None else None,
+                candidate_count=zero_count,
+                tie_size=zero_metrics.tie_size if zero_metrics is not None else 1,
             )
             for method in ("random", "active")
         )
@@ -228,6 +238,12 @@ def evaluate_frozen_payloads(
                 if not isinstance(point, dict):
                     raise EvaluationInputError(f"case {case_id} has invalid {field} point")
                 try:
+                    stage_metrics, stage_count = _evaluate_stage_ranking(
+                        case_id=case_id,
+                        stage_label=f"{field} step",
+                        stage=point,
+                        true_date=true_date,
+                    )
                     curves.append(
                         CurveObservation(
                             case_id=case_id,
@@ -235,12 +251,13 @@ def evaluate_frozen_payloads(
                                 Literal["random", "active", "leave_one_out"], method
                             ),
                             cluster_count=point["cluster_count"],
-                            midrank=_require_rank(
-                                point.get("true_date_rank"),
-                                label=f"case {case_id} {field} true_date_rank",
+                            midrank=(
+                                stage_metrics.midrank if stage_metrics is not None else None
                             ),
-                            candidate_count=metrics.candidate_count,
-                            tie_size=point.get("tie_size", 1),
+                            candidate_count=stage_count,
+                            tie_size=(
+                                stage_metrics.tie_size if stage_metrics is not None else 1
+                            ),
                         )
                     )
                 except (KeyError, TypeError, ValueError) as exc:
@@ -256,16 +273,19 @@ def evaluate_frozen_payloads(
                     f"case {case_id} has invalid leave_one_cluster_out point"
                 )
             try:
+                stage_metrics, _ = _evaluate_stage_ranking(
+                    case_id=case_id,
+                    stage_label="leave_one_cluster_out step",
+                    stage=point,
+                    true_date=true_date,
+                )
                 ablations.append(
                     LeaveOneClusterOutObservation(
                         case_id=case_id,
                         cluster_id=point["cluster_id"],
-                        full_midrank=metrics.midrank,
-                        ablated_midrank=_require_rank(
-                            point.get("true_date_rank"),
-                            label=(
-                                f"case {case_id} leave_one_cluster_out true_date_rank"
-                            ),
+                        full_midrank=metrics.midrank if metrics is not None else None,
+                        ablated_midrank=(
+                            stage_metrics.midrank if stage_metrics is not None else None
                         ),
                     )
                 )

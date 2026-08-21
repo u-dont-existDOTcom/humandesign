@@ -193,10 +193,39 @@ def _predictions() -> dict[str, object]:
                     {"local_date": "2000-01-01", "date_rank": 1, "date_score": 8.0},
                     {"local_date": "2000-01-02", "date_rank": 2, "date_score": 5.0},
                 ],
-                "zero_cluster_rank": 2,
-                "random_restoration": [{"cluster_count": 1, "true_date_rank": 1}],
-                "active_restoration": [{"cluster_count": 1, "true_date_rank": 1}],
-                "leave_one_cluster_out": [{"cluster_id": "A", "true_date_rank": 2}],
+                "zero_cluster": {
+                    "ranked_dates": [
+                        {"local_date": "2000-01-01", "date_score": 0.0},
+                        {"local_date": "2000-01-02", "date_score": 0.0},
+                    ]
+                },
+                "random_restoration": [
+                    {
+                        "cluster_count": 1,
+                        "ranked_dates": [
+                            {"local_date": "2000-01-01", "date_score": 8.0},
+                            {"local_date": "2000-01-02", "date_score": 5.0},
+                        ],
+                    }
+                ],
+                "active_restoration": [
+                    {
+                        "cluster_count": 1,
+                        "ranked_dates": [
+                            {"local_date": "2000-01-01", "date_score": 8.0},
+                            {"local_date": "2000-01-02", "date_score": 5.0},
+                        ],
+                    }
+                ],
+                "leave_one_cluster_out": [
+                    {
+                        "cluster_id": "A",
+                        "ranked_dates": [
+                            {"local_date": "2000-01-01", "date_score": 5.0},
+                            {"local_date": "2000-01-02", "date_score": 8.0},
+                        ],
+                    }
+                ],
                 "unresolved_mapping_ids": [],
             },
             {
@@ -204,7 +233,11 @@ def _predictions() -> dict[str, object]:
                 "ranked_dates": [
                     {"local_date": "2000-01-01", "date_rank": 1, "date_score": 8.0}
                 ],
-                "zero_cluster_rank": 1,
+                "zero_cluster": {
+                    "ranked_dates": [
+                        {"local_date": "2000-01-01", "date_score": 0.0}
+                    ]
+                },
                 "random_restoration": [],
                 "active_restoration": [],
                 "leave_one_cluster_out": [],
@@ -265,6 +298,16 @@ def test_frozen_run_evaluator_preserves_search_failure_and_transparent_metadata(
     assert report.claim_boundary == "synthetic-engineering-validation-only"
     assert report.score_semantics == "rubric-bits-not-probabilities"
     assert report.restoration_curves
+    zero_active = next(
+        point
+        for point in report.restoration_curves
+        if point.method == "active" and point.cluster_count == 0
+    )
+    assert zero_active.case_count == 2
+    assert zero_active.evaluated_case_count == 1
+    assert zero_active.unevaluable_case_count == 1
+    assert zero_active.mean_midrank == 1.5
+    assert zero_active.top_1 == 0.25
     assert report.leave_one_cluster_out[0].cluster_id == "A"
     stored = json.loads((run_dir / "evaluation.json").read_bytes())
     assert stored["prediction_sha256"] == report.prediction_sha256

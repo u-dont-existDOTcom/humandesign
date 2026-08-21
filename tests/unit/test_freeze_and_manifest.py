@@ -6,6 +6,7 @@ from pathlib import Path
 
 import pytest
 
+from hdmatch.evaluation.leakage import LeakageDetectedError
 from hdmatch.experiments.canonical import (
     canonical_json_bytes,
     sha256_bytes,
@@ -118,3 +119,31 @@ def test_freeze_refuses_predictions_outside_run(tmp_path: Path) -> None:
             repository_root=Path(__file__).parents[2],
             prediction_path=outside,
         )
+
+
+def test_freeze_refuses_truth_derived_fields_in_blind_predictions(tmp_path: Path) -> None:
+    run_dir = tmp_path / "run"
+    run_dir.mkdir()
+    write_new_canonical_json(
+        run_dir / "predictions.json",
+        {
+            "schema_version": "predictions-v1",
+            "predictions": [
+                {
+                    "case_id": "C1",
+                    "zero_cluster_rank": 31,
+                    "true_date_rank": 1,
+                    "true_local_date": "2000-01-02",
+                    "hidden_utc": "2000-01-02T00:00:00Z",
+                }
+            ],
+        },
+    )
+    with pytest.raises(LeakageDetectedError):
+        freeze_predictions(
+            run_dir,
+            experiment_id="EXP",
+            bindings=_bindings(),
+            repository_root=Path(__file__).parents[2],
+        )
+    assert not (run_dir / "prediction.freeze.json").exists()
