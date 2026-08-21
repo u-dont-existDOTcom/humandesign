@@ -26,10 +26,11 @@ _OVERLAP_SECONDS_TOLERANCE = 1e-6
 class RankedStableInterval:
     """One exact chart-stable interval in a known-date ranking.
 
-    ``start_utc`` and ``end_utc`` retain the full source interval.  A source
-    interval may cross a civil-date boundary, so the separately reported
-    ``eligible_*`` bounds are its exact intersection with the declared date.
-    Every interval is half-open: ``[start, end)``.
+    ``start_utc`` and ``end_utc`` retain the CandidateState source interval.
+    A month-cache boundary can clip that source before the globally stable
+    interval ends; callers with that context set ``universe_boundary_truncated``.
+    The separately reported ``eligible_*`` bounds are the exact intersection
+    with the declared date.  Every interval is half-open: ``[start, end)``.
     """
 
     state_id: str
@@ -42,6 +43,7 @@ class RankedStableInterval:
     score: ScoredState
     rank_start: int
     rank_end: int
+    universe_boundary_truncated: bool = False
 
     @property
     def tied(self) -> bool:
