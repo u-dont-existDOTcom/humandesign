@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+from typing import Never
 
 import pytest
 
@@ -12,8 +13,15 @@ from hdmatch.model_b.predicates import (
     extract_detailed_anchors,
     matches_anchor,
 )
+from hdmatch.model_b.scoring import score_detailed_symbolic
+from hdmatch.model_b.types import EvaluatedPathway, StructuralEvidence
 
 ROOT = Path(__file__).parents[2]
+
+
+class _NeverPrevalence:
+    def estimate(self, anchor_id: str, chart: object) -> Never:
+        raise AssertionError(f"dependency validation must precede {anchor_id}: {chart!r}")
 
 
 def _activation(side: str, body: str, gate: int, line: int) -> dict[str, object]:
@@ -76,9 +84,37 @@ def test_cardinal_lines_share_profile_role_dependency() -> None:
     personality_earth_line = next(
         item for item in anchors if item.anchor_id == "cardinal_line:personality:earth:4"
     )
-    assert not any(
-        key.startswith("profile_role_line:") for key in personality_earth_line.dependency_keys
+    assert "profile_role_line:personality:4" in personality_earth_line.dependency_keys
+
+    cardinal_representations = tuple(
+        item
+        for item in anchors
+        if item.anchor_id.startswith("cardinal_") and ":personality:sun:" in item.anchor_id
     )
+    assert len(cardinal_representations) == 3
+    assert all(
+        "cardinal_position:personality:sun" in item.dependency_keys
+        for item in cardinal_representations
+    )
+
+    pathways = tuple(
+        EvaluatedPathway(
+            rule_id=f"rule-{index}",
+            dependency_cluster=f"cluster-{index}",
+            pathway_id=f"pathway-{index}",
+            effective_confidence=1.0,
+            primary=StructuralEvidence(
+                anchor_id=anchor.anchor_id,
+                dependency_keys=anchor.dependency_keys,
+                supports_response=True,
+                structural_salience=anchor.structural_salience,
+                mapping_directness=1.0,
+            ),
+        )
+        for index, anchor in enumerate(cardinal_representations[:2], start=1)
+    )
+    with pytest.raises(ValueError, match="reused across clusters"):
+        score_detailed_symbolic(_chart(), pathways, _NeverPrevalence())
 
 
 def test_repeated_gate_anchor_has_one_declared_threshold_semantics() -> None:
@@ -144,4 +180,5 @@ def test_composite_model_b_rejects_question_bank_dependency_mismatch(
         FrozenModelB(
             artifact_path,
             base_mapping_path=ROOT / "mappings/mapping_library_v1.json",
+            project_root=ROOT,
         )

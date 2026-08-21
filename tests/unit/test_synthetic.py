@@ -25,6 +25,7 @@ class FakeModel:
     model_sha256 = "1" * 64
     mapping_sha256 = "2" * 64
     question_bank_sha256 = "3" * 64
+    capability_metadata = {"behavioral_scoring": "fake"}
 
     def oracle_responses(self, chart: ChartFeatures) -> tuple[BehavioralResponse, ...]:
         return (

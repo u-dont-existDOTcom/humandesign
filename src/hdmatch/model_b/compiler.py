@@ -33,6 +33,7 @@ V32_DELTA = "reference/core/v3_2_scoring_delta.md"
 MAPPING_TODO = "reference/core/MAPPING_LIBRARY_TODO.md"
 BACKEND_CONTRACT = "reference/core/search_backend_contract.md"
 BODYGRAPH_IMPLEMENTATION = "src/hdmatch/chart/bodygraph.py"
+DETAILED_PREDICATES_IMPLEMENTATION = "src/hdmatch/model_b/predicates.py"
 MODEL_A_MAPPING = "mappings/mapping_library_v1.json"
 
 NORMATIVE_SOURCES = (
@@ -495,7 +496,12 @@ def build_model_b_artifact(project_root: str | Path) -> ModelBArtifact:
     bank = load_question_bank(root / QUESTION_BANK)
     sources = tuple(
         SourceArtifact(path=path, sha256=sha256_file(root / path))
-        for path in (*NORMATIVE_SOURCES, BODYGRAPH_IMPLEMENTATION, MODEL_A_MAPPING)
+        for path in (
+            *NORMATIVE_SOURCES,
+            BODYGRAPH_IMPLEMENTATION,
+            DETAILED_PREDICATES_IMPLEMENTATION,
+            MODEL_A_MAPPING,
+        )
     )
     channels = tuple(
         sorted(

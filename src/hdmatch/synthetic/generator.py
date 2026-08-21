@@ -33,6 +33,9 @@ class FrozenResponseModel(Protocol):
     @property
     def question_bank_sha256(self) -> str: ...
 
+    @property
+    def capability_metadata(self) -> Mapping[str, object]: ...
+
     def oracle_responses(self, chart: ChartFeatures) -> Sequence[BehavioralResponse]: ...
 
     def answer_spaces(self) -> Mapping[str, Sequence[str]]: ...
@@ -119,6 +122,7 @@ class SyntheticGenerator:
             "model_sha256": self.response_model.model_sha256,
             "question_bank_sha256": self.response_model.question_bank_sha256,
             "mapping_sha256": self.response_model.mapping_sha256,
+            "model_capabilities": dict(self.response_model.capability_metadata),
             "noise_tier": tier.value,
             "candidate_universe": config.universe,
             "cases": cases,

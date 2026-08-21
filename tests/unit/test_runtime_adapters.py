@@ -4,7 +4,13 @@ from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 from hdmatch.model.mapping_library import load_mapping_library
-from hdmatch.runtime.symbolic_adapter import FrozenSymbolicModel, candidate_prevalence
+from hdmatch.runtime.symbolic_adapter import (
+    MODEL_A_ID,
+    MODEL_B_ID,
+    FrozenSymbolicModel,
+    candidate_prevalence,
+    load_runtime_model,
+)
 from hdmatch.schemas import Activation, CandidateState, ChartFeatures, LocalDateOverlap
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -64,3 +70,20 @@ def test_candidate_prevalence_is_duration_weighted() -> None:
     }
     assert generator_anchors
     assert all(prevalence[anchor] == 0.25 for anchor in generator_anchors)
+
+
+def test_runtime_model_identity_is_explicit() -> None:
+    model_a = load_runtime_model(
+        MODEL_A_ID,
+        model_a_mapping_path=ROOT / "mappings/mapping_library_v1.json",
+    )
+    model_b = load_runtime_model(
+        MODEL_B_ID,
+        model_a_mapping_path=ROOT / "mappings/mapping_library_v1.json",
+        model_b_artifact_path=ROOT / "mappings/model_b_mapping_library_v1.json",
+    )
+
+    assert model_a.model_id == MODEL_A_ID
+    assert model_b.model_id == MODEL_B_ID
+    assert model_a.mapping_sha256 != model_b.mapping_sha256
+    assert model_b.capability_metadata["detailed_behavioral_mappings"] == "unresolved"

@@ -5,12 +5,13 @@ from __future__ import annotations
 from collections.abc import Iterable, Mapping, Sequence
 from hashlib import sha256
 from pathlib import Path
+from typing import Any
 
 from hdmatch.model import MappingLibrary, load_mapping_library, score_symbolic
 from hdmatch.model_b.artifacts import DetailedAnchor, load_model_b_artifact
-from hdmatch.model_b.predicates import extract_detailed_anchors
+from hdmatch.model_b.predicates import detailed_feature_sha256, extract_detailed_anchors
 from hdmatch.schemas import BehavioralResponse, CandidateState, ChartFeatures, ScoredState
-from hdmatch.util import sha256_json
+from hdmatch.util import sha256_file, sha256_json
 
 
 class FrozenModelB:
@@ -29,11 +30,21 @@ class FrozenModelB:
         artifact_path: str | Path,
         *,
         base_mapping_path: str | Path | None = None,
+        project_root: str | Path | None = None,
     ) -> None:
         self.artifact_path = Path(artifact_path)
         self.artifact = load_model_b_artifact(self.artifact_path)
+        self.project_root = (
+            Path(project_root) if project_root is not None else self.artifact_path.parents[1]
+        )
+        for source in self.artifact.source_artifacts:
+            source_path = self.project_root / source.path
+            if not source_path.is_file():
+                raise ValueError(f"Model B frozen source is missing: {source.path}")
+            if sha256_file(source_path) != source.sha256:
+                raise ValueError(f"Model B frozen source hash mismatch: {source.path}")
         if base_mapping_path is None:
-            candidate = self.artifact_path.parents[1] / self.artifact.base_mapping_path
+            candidate = self.project_root / self.artifact.base_mapping_path
             base_mapping_path = candidate
         self.base_mapping_path = Path(base_mapping_path)
         base_file_hash = sha256(self.base_mapping_path.read_bytes()).hexdigest()
@@ -64,6 +75,30 @@ class FrozenModelB:
     @property
     def question_bank_sha256(self) -> str:
         return self.artifact.question_bank_sha256
+
+    @property
+    def library(self) -> MappingLibrary:
+        """The frozen supported behavioral layer used by the composite."""
+
+        return self.base_library
+
+    @property
+    def capability_metadata(self) -> Mapping[str, object]:
+        return {
+            "behavioral_scoring": "model-a-base-only",
+            "detailed_behavioral_mappings": self.detailed_scoring_status,
+            "unresolved_detailed_mapping_count": len(self.artifact.behavioral_mappings),
+        }
+
+    def score_signature(self, chart: ChartFeatures) -> tuple[Any, ...]:
+        return (
+            chart.type,
+            chart.strategy,
+            chart.authority,
+            chart.profile,
+            chart.defined_centers,
+            detailed_feature_sha256(chart, self.artifact),
+        )
 
     def detailed_anchors(self, chart: Mapping[str, object] | object) -> tuple[DetailedAnchor, ...]:
         return extract_detailed_anchors(chart, self.artifact)

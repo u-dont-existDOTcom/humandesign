@@ -38,6 +38,9 @@ def test_model_b_is_separate_complete_and_conservative() -> None:
         and mapping.contradiction_rule is None
         for mapping in artifact.behavioral_mappings
     )
+    assert any(
+        source.path == "src/hdmatch/model_b/predicates.py" for source in artifact.source_artifacts
+    )
 
 
 def test_only_normative_detailed_association_remains_unresolved() -> None:

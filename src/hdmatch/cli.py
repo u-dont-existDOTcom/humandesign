@@ -24,7 +24,15 @@ from hdmatch.experiments import (
 from hdmatch.experiments.canonical import load_json_bytes, write_new_canonical_json
 from hdmatch.experiments.reveal import reveal_answer_key
 from hdmatch.model import compile_mapping_artifacts
-from hdmatch.runtime import ExactChartAdapter, FrozenSymbolicModel, declared_ephemeris_files
+from hdmatch.model_b.compiler import compile_model_b_artifacts
+from hdmatch.runtime import (
+    MODEL_A_ID,
+    MODEL_B_ID,
+    ExactChartAdapter,
+    RuntimeSymbolicModel,
+    declared_ephemeris_files,
+    load_runtime_model,
+)
 from hdmatch.runtime.recovery import RecoverySettings, recover_blind_file
 from hdmatch.search import AggregationMode
 from hdmatch.synthetic import SyntheticGenerator, generate_key_file, seal_answer_key
@@ -32,6 +40,15 @@ from hdmatch.synthetic.sealing import SealingMetadata, require_external_path
 
 ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_MAPPING = ROOT / "mappings" / "mapping_library_v1.json"
+DEFAULT_MODEL_B_ARTIFACT = ROOT / "mappings" / "model_b_mapping_library_v1.json"
+
+
+def _load_selected_model(args: argparse.Namespace) -> RuntimeSymbolicModel:
+    return load_runtime_model(
+        str(args.model),
+        model_a_mapping_path=args.mapping,
+        model_b_artifact_path=args.model_b_artifact,
+    )
 
 
 def _read_secret_seed(path: str | Path | None) -> int:
@@ -81,7 +98,7 @@ def _command_generate(args: argparse.Namespace) -> int:
     seed = _read_secret_seed(args.seed_file)
     resolved = config.model_copy(update={"seed": seed, "ephemeris_path": str(ephemeris_path)})
     chart = ExactChartAdapter(ephemeris_path)
-    model = FrozenSymbolicModel(args.mapping)
+    model = _load_selected_model(args)
     bundle = SyntheticGenerator(chart, model).generate(resolved)
     write_new_canonical_json(blind_path, bundle.blind_document)
     leakage = assert_no_blind_leakage(blind_path)
@@ -147,11 +164,13 @@ def _command_recover(args: argparse.Namespace) -> int:
     blind = load_json_bytes(blind_path, require_canonical=True)
     if not isinstance(blind, dict):
         raise ValueError("blind file must contain an object")
-    model = FrozenSymbolicModel(args.mapping)
+    model = _load_selected_model(args)
     input_hashes = {
         "blind_cases.json": sha256_file(blind_path),
-        "mapping_library": sha256_file(args.mapping),
+        "model_a_mapping_library": sha256_file(args.mapping),
     }
+    if model.model_id == MODEL_B_ID:
+        input_hashes["model_b_artifact"] = sha256_file(args.model_b_artifact)
     for file in declared_ephemeris_files(args.ephemeris):
         input_hashes[f"ephemeris:{file.name}"] = sha256_file(file)
     public_recovery_seed = int(input_hashes["blind_cases.json"][:16], 16)
@@ -185,7 +204,7 @@ def _command_recover(args: argparse.Namespace) -> int:
         write_run_manifest(manifest, manifest_path)
     predictions = recover_blind_file(
         blind_path,
-        mapping_path=args.mapping,
+        model=model,
         ephemeris_path=args.ephemeris,
         cache_dir=args.cache_dir or run_dir / "candidate_cache",
         settings=settings,
@@ -264,10 +283,26 @@ def _command_reveal_evaluate(args: argparse.Namespace) -> int:
 
 
 def _command_compile_model(args: argparse.Namespace) -> int:
-    result = compile_mapping_artifacts(args.repository_root)
-    print(f"mapping library: {result.mapping_path}")
-    print(f"mapping semantic sha256: {result.mapping_model_sha256}")
+    if args.model == MODEL_A_ID:
+        result = compile_mapping_artifacts(args.repository_root)
+        print(f"mapping library: {result.mapping_path}")
+        print(f"mapping semantic sha256: {result.mapping_model_sha256}")
+    else:
+        detailed = compile_model_b_artifacts(args.repository_root)
+        print(f"mapping library: {detailed.artifact_path}")
+        print(f"mapping semantic sha256: {detailed.artifact_semantic_sha256}")
+        print(f"unresolved report: {detailed.report_path}")
     return 0
+
+
+def _add_model_arguments(parser: argparse.ArgumentParser) -> None:
+    parser.add_argument(
+        "--model",
+        choices=(MODEL_A_ID, MODEL_B_ID),
+        default=MODEL_A_ID,
+    )
+    parser.add_argument("--mapping", default=str(DEFAULT_MAPPING))
+    parser.add_argument("--model-b-artifact", default=str(DEFAULT_MODEL_B_ARTIFACT))
 
 
 def _parser() -> argparse.ArgumentParser:
@@ -284,7 +319,7 @@ def _parser() -> argparse.ArgumentParser:
     generate.add_argument("--config", required=True)
     generate.add_argument("--run-dir", required=True)
     generate.add_argument("--ephemeris")
-    generate.add_argument("--mapping", default=str(DEFAULT_MAPPING))
+    _add_model_arguments(generate)
     generate.add_argument("--key-file")
     generate.add_argument("--seed-file")
     generate.set_defaults(handler=_command_generate)
@@ -293,7 +328,7 @@ def _parser() -> argparse.ArgumentParser:
     recover.add_argument("--run-dir", required=True)
     recover.add_argument("--blind-file")
     recover.add_argument("--ephemeris", required=True)
-    recover.add_argument("--mapping", default=str(DEFAULT_MAPPING))
+    _add_model_arguments(recover)
     recover.add_argument("--cache-dir")
     recover.add_argument("--workers", type=int, default=1)
     recover.add_argument(
@@ -318,6 +353,11 @@ def _parser() -> argparse.ArgumentParser:
 
     compiler = subparsers.add_parser("compile-model", help="rebuild frozen mapping artifacts")
     compiler.add_argument("--repository-root", default=str(ROOT))
+    compiler.add_argument(
+        "--model",
+        choices=(MODEL_A_ID, MODEL_B_ID),
+        default=MODEL_A_ID,
+    )
     compiler.set_defaults(handler=_command_compile_model)
     return parser
 

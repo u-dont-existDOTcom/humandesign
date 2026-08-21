@@ -18,7 +18,7 @@ from hdmatch.schemas import BehavioralResponse, BlindCase, CandidateState, Score
 from hdmatch.search import AggregationMode, aggregate_dates, select_next_question
 
 from .chart_adapter import ExactChartAdapter
-from .symbolic_adapter import FrozenSymbolicModel, candidate_prevalence
+from .symbolic_adapter import RuntimeSymbolicModel, candidate_prevalence
 from .universe_cache import (
     MonthRequest,
     cache_path,
@@ -34,27 +34,16 @@ class RecoverySettings:
     workers: int = 1
 
 
-def _candidate_signature(state: CandidateState) -> tuple[Any, ...]:
-    chart = state.chart_features
-    return (
-        chart.type,
-        chart.strategy,
-        chart.authority,
-        chart.profile,
-        chart.defined_centers,
-    )
-
-
 def _score_states(
     states: Sequence[CandidateState],
     responses: Sequence[BehavioralResponse],
-    model: FrozenSymbolicModel,
+    model: RuntimeSymbolicModel,
     prevalence: Mapping[str, float],
 ) -> dict[str, ScoredState]:
     by_signature: dict[tuple[Any, ...], ScoredState] = {}
     scores: dict[str, ScoredState] = {}
     for state in states:
-        signature = _candidate_signature(state)
+        signature = model.score_signature(state.chart_features)
         base = by_signature.get(signature)
         if base is None:
             base = model.score(state, responses, prevalence)
@@ -66,7 +55,7 @@ def _score_states(
 def _ranked_payload(
     states: Sequence[CandidateState],
     responses: Sequence[BehavioralResponse],
-    model: FrozenSymbolicModel,
+    model: RuntimeSymbolicModel,
     prevalence: Mapping[str, float],
     settings: RecoverySettings,
     *,
@@ -97,9 +86,7 @@ def _ranked_payload(
                         **item.best_state.model_dump(mode="json"),
                         "start_utc": state.start_utc.isoformat().replace("+00:00", "Z"),
                         "end_utc": state.end_utc.isoformat().replace("+00:00", "Z"),
-                        "interval_width_seconds": (
-                            state.end_utc - state.start_utc
-                        ).total_seconds(),
+                        "interval_width_seconds": (state.end_utc - state.start_utc).total_seconds(),
                         "chart_features_hash": state.chart_features_hash,
                         "cross_engine_status": state.cross_engine_status,
                     },
@@ -130,7 +117,7 @@ def _response_label(responses: Iterable[BehavioralResponse]) -> str:
 
 def _predicted_cluster_labels(
     states: Sequence[CandidateState],
-    model: FrozenSymbolicModel,
+    model: RuntimeSymbolicModel,
 ) -> dict[str, tuple[str, ...]]:
     result: dict[str, list[str]] = {}
     for state in states:
@@ -158,10 +145,7 @@ def _likelihood_rows(labels: Sequence[str], match_probability: float) -> list[di
             continue
         mismatch = (1.0 - match_probability) / (len(alphabet) - 1)
         rows.append(
-            {
-                option: match_probability if option == label else mismatch
-                for option in alphabet
-            }
+            {option: match_probability if option == label else mismatch for option in alphabet}
         )
     return rows
 
@@ -169,7 +153,7 @@ def _likelihood_rows(labels: Sequence[str], match_probability: float) -> list[di
 def _active_order(
     states: Sequence[CandidateState],
     grouped: Mapping[str, tuple[BehavioralResponse, ...]],
-    model: FrozenSymbolicModel,
+    model: RuntimeSymbolicModel,
     noise_tier: str,
 ) -> tuple[str, ...]:
     labels_by_cluster = _predicted_cluster_labels(states, model)
@@ -203,7 +187,7 @@ def _restoration(
     order: Sequence[str],
     grouped: Mapping[str, tuple[BehavioralResponse, ...]],
     states: Sequence[CandidateState],
-    model: FrozenSymbolicModel,
+    model: RuntimeSymbolicModel,
     prevalence: Mapping[str, float],
     settings: RecoverySettings,
 ) -> list[dict[str, Any]]:
@@ -245,7 +229,7 @@ def _zero_date_ranking(year: int, month: int) -> list[dict[str, Any]]:
 def recover_blind_file(
     blind_path: str | Path,
     *,
-    mapping_path: str | Path,
+    model: RuntimeSymbolicModel,
     ephemeris_path: str | Path,
     cache_dir: str | Path,
     settings: RecoverySettings,
@@ -260,7 +244,6 @@ def recover_blind_file(
     if not isinstance(raw_cases, list) or not raw_cases:
         raise ValueError("blind input contains no cases")
     cases = tuple(BlindCase.model_validate(item) for item in raw_cases)
-    model = FrozenSymbolicModel(mapping_path)
     bindings = {
         "model_sha256": model.model_sha256,
         "question_bank_sha256": model.question_bank_sha256,
@@ -272,6 +255,9 @@ def recover_blind_file(
     for field, expected in bindings.items():
         if raw.get(field) != expected:
             raise ValueError(f"blind input {field} does not match decoder artifact")
+    blind_capabilities = raw.get("model_capabilities")
+    if blind_capabilities is not None and blind_capabilities != dict(model.capability_metadata):
+        raise ValueError("blind input model capabilities do not match decoder model")
     engine = ExactChartAdapter(ephemeris_path)
     requests = tuple(
         MonthRequest(case.known_birth_year, case.known_birth_month, case.iana_timezone)
@@ -287,9 +273,7 @@ def recover_blind_file(
     cache_hashes: dict[str, str] = {}
     for request in sorted(set(requests)):
         path = cache_path(cache_dir, request, engine.fingerprint)
-        cached = load_cached_universe(
-            path, request=request, engine_fingerprint=engine.fingerprint
-        )
+        cached = load_cached_universe(path, request=request, engine_fingerprint=engine.fingerprint)
         universes[request] = cached.states
         cache_hashes[path.name] = cached.sha256
 
@@ -375,8 +359,10 @@ def recover_blind_file(
                     mapping.mapping_id
                     for mapping in model.library.mappings
                     if mapping.status is MappingStatus.UNRESOLVED
-                    and any(question_id in {r.question_id for r in case.responses}
-                            for question_id in mapping.question_ids)
+                    and any(
+                        question_id in {r.question_id for r in case.responses}
+                        for question_id in mapping.question_ids
+                    )
                 ],
                 "prevalence_source": "duration-weighted declared candidate universe",
             }
@@ -389,6 +375,7 @@ def recover_blind_file(
         **bindings,
         "aggregation_rule": settings.aggregation.value,
         "score_semantics": "rubric-bits-not-probabilities",
+        "model_capabilities": dict(model.capability_metadata),
         "candidate_cache_sha256": dict(sorted(cache_hashes.items())),
         "predictions": predictions,
     }
