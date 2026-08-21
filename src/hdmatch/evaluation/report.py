@@ -205,11 +205,28 @@ def evaluate_frozen_payloads(
         else:
             case_metrics.append(metrics)
         if metrics is not None and metrics.best_rank != 1:
+            variants = predicted.get("aggregation_variants", {})
+            if not isinstance(variants, dict):
+                raise EvaluationInputError(
+                    f"case {case_id} has invalid aggregation_variants"
+                )
+            best_state_metrics: CaseRankMetrics | None = None
+            if "best_state" in variants:
+                best_state_metrics, _ = _evaluate_stage_ranking(
+                    case_id=case_id,
+                    stage_label="aggregation_variants.best_state",
+                    stage=variants["best_state"],
+                    true_date=true_date,
+                )
             failures.append(
                 classify_oracle_failure(
                     case_id=case_id,
                     true_candidate_present=True,
                     unresolved_mapping_ids=tuple(unresolved),
+                    state_winner_but_date_loser=(
+                        best_state_metrics is not None
+                        and best_state_metrics.best_rank == 1
+                    ),
                     evidence={"best_rank": metrics.best_rank, "midrank": metrics.midrank},
                 )
             )

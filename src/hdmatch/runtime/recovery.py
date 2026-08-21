@@ -5,7 +5,7 @@ from __future__ import annotations
 import calendar
 import random
 from collections.abc import Iterable, Mapping, Sequence
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from datetime import date
 from hashlib import sha256
 from pathlib import Path
@@ -317,6 +317,20 @@ def recover_blind_file(
             settings,
             detailed=True,
         )
+        aggregation_variants = {
+            mode.value: {
+                "ranked_dates": _ranked_payload(
+                    states,
+                    case.responses,
+                    model,
+                    prevalence,
+                    replace(settings, aggregation=mode),
+                    detailed=False,
+                )
+            }
+            for mode in AggregationMode
+            if mode is not settings.aggregation
+        }
         leave_one_out = [
             {
                 "cluster_id": cluster,
@@ -341,6 +355,7 @@ def recover_blind_file(
                 "case_id": case.case_id,
                 "recovery_status": "completed",
                 "ranked_dates": final_ranking,
+                "aggregation_variants": aggregation_variants,
                 "zero_cluster": {
                     "ranked_dates": _zero_date_ranking(
                         case.known_birth_year, case.known_birth_month

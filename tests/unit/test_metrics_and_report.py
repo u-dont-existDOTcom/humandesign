@@ -193,6 +193,14 @@ def _predictions() -> dict[str, object]:
                     {"local_date": "2000-01-01", "date_rank": 1, "date_score": 8.0},
                     {"local_date": "2000-01-02", "date_rank": 2, "date_score": 5.0},
                 ],
+                "aggregation_variants": {
+                    "best_state": {
+                        "ranked_dates": [
+                            {"local_date": "2000-01-01", "date_score": 8.0},
+                            {"local_date": "2000-01-02", "date_score": 5.0},
+                        ]
+                    }
+                },
                 "zero_cluster": {
                     "ranked_dates": [
                         {"local_date": "2000-01-01", "date_score": 0.0},
@@ -311,6 +319,27 @@ def test_frozen_run_evaluator_preserves_search_failure_and_transparent_metadata(
     assert report.leave_one_cluster_out[0].cluster_id == "A"
     stored = json.loads((run_dir / "evaluation.json").read_bytes())
     assert stored["prediction_sha256"] == report.prediction_sha256
+
+
+def test_evaluator_classifies_date_loss_reversed_by_best_state_aggregation(
+    tmp_path: Path,
+) -> None:
+    predictions = _predictions()
+    assert isinstance(predictions["predictions"], list)
+    first = predictions["predictions"][0]
+    assert isinstance(first, dict)
+    first["ranked_dates"] = [
+        {"local_date": "2000-01-02", "date_score": 9.0},
+        {"local_date": "2000-01-01", "date_score": 8.0},
+    ]
+    run_dir = _frozen_run(tmp_path, predictions)
+    report = evaluate_frozen_run(
+        run_dir,
+        answer_key=_answer_key(),
+        created_at_utc=datetime(2026, 8, 21, tzinfo=UTC),
+    )
+    assert report.failure_counts["aggregation_ambiguity"] == 1
+    assert report.failure_counts["scoring_bug"] == 0
 
 
 def test_evaluator_refuses_duplicate_cases_and_binding_mismatch(tmp_path: Path) -> None:
