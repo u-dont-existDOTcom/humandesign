@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "repository_kind": "research-software",
+  "active": true,
+  "long_running": true,
+  "visibility": "local-unpublished",
+  "risk": "high-evidence-integrity",
+  "bootstrap_command": "bash scripts/bootstrap.sh",
+  "test_command": ".venv/bin/python -m pytest",
+  "lint_command": ".venv/bin/ruff check src tests scripts",
+  "typecheck_command": ".venv/bin/mypy src/hdmatch",
+  "task_acceptance_command": ".venv/bin/python scripts/task_acceptance.py",
+  "current_state": "state/CURRENT-STATE.md",
+  "hosted_controls": "unverified-no-remote"
+}
+

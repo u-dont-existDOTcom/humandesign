@@ -1,16 +1,49 @@
-# HD Reverse-Matching Codex Project V1
+# HD Reverse-Matching Research Harness
 
-This folder is a Codex-ready specification for building a blinded Human Design birth-moment recovery research harness.
+This repository contains a typed Python harness for blinded Human Design birth-moment reverse-matching research. Human Design is treated as an experimental symbolic hypothesis. Synthetic recovery validates engineering coherence only; it does not validate Human Design in humans.
 
-## Start
+## Environment
 
-Open this folder as the Codex project and give Codex the contents of:
+Required: Python 3.11 or newer. The tested development runtime is Python 3.12.
 
-`CODEX_MASTER_PROMPT.md`
+```bash
+bash scripts/bootstrap.sh
+source .venv/bin/activate
+```
 
-Codex should then read `AGENTS.md`, `ARCHITECTURE.md`, and the numbered documents in `docs/`.
+Swiss Ephemeris is an optional engine dependency with AGPL/professional dual licensing. Exact production runs must point to declared local ephemeris files and will fail rather than silently use Moshier. See `docs/PRIOR_WORK_SCAN.md`.
 
-## Why this version exists
+## Verification
+
+```bash
+.venv/bin/python -m pytest
+.venv/bin/ruff check src tests scripts
+.venv/bin/mypy src/hdmatch
+```
+
+The task-specific milestone gate is:
+
+```bash
+.venv/bin/python scripts/task_acceptance.py
+```
+
+Ordinary green tests do not by themselves prove that the requested benchmark artifacts exist.
+
+## Blind workflow
+
+The CLI exposes separate commands for generation, recovery, prediction freeze, and reveal/evaluation. Keep the answer-key encryption key outside this repository and outside the decoder workspace.
+
+```bash
+hdmatch generate-synthetic --config configs/synth_month.yaml --blind-output run/blind_cases.json --sealed-key-output /outside/project/answer_key.enc --key-file /outside/project/key.bin
+hdmatch recover --blind-file run/blind_cases.json --run-dir run
+hdmatch freeze-predictions run
+hdmatch reveal --run run --sealed-key /outside/project/answer_key.enc --key-file /outside/project/key.bin
+hdmatch report --run run
+```
+
+The default known-month configuration contains 1,000 oracle cases. Exact ephemeris files and their hashes must be supplied for a production engine run.
+
+## Research claim boundary
 
 The project now explicitly allows **post-hoc fitting on human development data**.
 
