@@ -1,39 +1,190 @@
 # Blind and validation boundary audit
 
-Audit commit: `dc2b5455619afcf82a09828c5e3090fc86b600ba`  
-Audit date: 2026-08-21  
-Execution: read-only; no benchmark or answer-key operation
+Integrated tree reviewed: `5604cc0b2d8c09718a54874ba6c385ec3a9f9157`
+
+Audit date: 2026-08-21
+
+Claim boundary: synthetic results are engineering validation only; they do not validate Human Design in humans.
 
 ## Conclusion
 
-No enabled recovery or API route directly accepts answer-key material. However, the findings below can invalidate a blind-validation or untouched-final-test claim unless they are closed. They are implementation gaps, not evidence that the completed 75-case artifact was altered.
+The application-level HIGH findings are closed on the integrated tree. Claim-grade
+synthetic blindness still requires an externally enforced keyless process boundary;
+that portion is explicitly `PROCESS-REQUIRED` because repository code cannot prove
+how a future operator mounted or executed a run.
 
-## Findings
+The draft PR must not be merged to `main` until the current audit commit is pushed
+and its GitHub Actions checks are green. Legacy V1 reveal receipts and manifests or
+evaluations lacking the new bindings are not silently upgraded; claim-grade evidence
+must be regenerated through the current chain.
 
-| Severity | Finding | Required disposition |
+## HIGH findings
+
+### HIGH-1A — Synthetic pre-recovery secret preflight: CLOSED
+
+- Implementation commits: `389dd03ed37b9a620ccf22b17364e4d6dc11b0dc`,
+  `dbf28af4de7c5568cdf07b5b7069afdf2ab7ea76`, and
+  `5604cc0b2d8c09718a54874ba6c385ec3a9f9157`.
+- Enforced invariant: recovery exposes no key, truth, decrypt, envelope, or reveal
+  argument. Before model loading, candidate-cache generation, or scoring, the CLI
+  and runtime scan all bounded decoder-visible source, run, blind, mapping, Model B,
+  ephemeris, and cache paths. Recognition is content-based across nested JSON and
+  CSV/TSV-like text and does not trust an innocuous filename or extension. Cache,
+  build, distribution, and candidate-cache trees are not exempt. Failures report a
+  count, not secret filesystem locations.
+- Exact tests:
+  - `tests/unit/test_keyless_boundary.py::test_recovery_interfaces_have_no_key_decrypt_or_reveal_parameter`
+  - `tests/unit/test_keyless_boundary.py::test_cli_preflight_rejects_plaintext_key_in_run_dir_before_model_or_cache`
+  - `tests/unit/test_keyless_boundary.py::test_cli_preflight_rejects_plaintext_key_disguised_as_ephemeris`
+  - `tests/unit/test_sealing_and_reveal.py::test_plaintext_preflight_detects_answer_key_schema_regardless_of_name_or_extension`
+  - `tests/unit/test_sealing_and_reveal.py::test_plaintext_preflight_scans_decoder_controlled_cache_and_build_trees`
+  - `tests/unit/test_sealing_and_reveal.py::test_plaintext_preflight_detects_nested_human_key_and_tabular_truth_in_bin_file`
+  - `tests/unit/test_sealing_and_reveal.py::test_recovery_preflight_scans_candidate_cache_before_blind_input`
+  - `tests/unit/test_sealing_and_reveal.py::test_recovery_plaintext_preflight_runs_before_blind_input_or_scoring`
+
+Filesystem inspection remains defense in depth. It is not the claim-grade isolation
+control described next.
+
+### HIGH-1B — Claim-grade keyless recovery execution: PROCESS-REQUIRED
+
+- Mechanism commits: `dbf28af4de7c5568cdf07b5b7069afdf2ab7ea76`,
+  `ab4d4669a757ea56a5e7dd5dbf57433c0b1432bf`, and
+  `eb693427d8b6ed67c90bc12de02b2c31709413e2`.
+- Required external process: invoke `scripts/run_keyless_recovery.py` on Linux with
+  working Bubblewrap namespaces. The wrapper must run the decoder as UID/GID 65534,
+  unshare the network and other namespaces, disable nested user namespaces, drop all
+  capabilities, clear the inherited environment, mount only individual tracked
+  decoder files plus exact public blind/model/question/ephemeris/cache artifacts
+  read-only, and mount one new output directory read-write. Encryption keys,
+  plaintext truth, encrypted envelopes, reveal receipts, evaluator directories, and
+  their parents must not be mounted. Retain the canonical
+  `keyless-isolation.receipt.json` and external operator/host evidence with the run.
+- Implemented fail-closed controls: unavailable namespace support, dirty source,
+  nonempty output, mismatched question bank, different child Python environment,
+  secret-like public input, or a nonzero isolated recovery exit all fail. The receipt
+  binds Bubblewrap identity, mount/control contract, source commit/tree, public input
+  hashes, recovery command/configuration, manifest hash, prediction hash, and exit
+  status without host secret paths.
+- Exact tests:
+  - `tests/unit/test_keyless_boundary.py::test_recovery_mount_plan_is_allowlisted_read_only_and_keyless`
+  - `tests/unit/test_keyless_boundary.py::test_ordinary_manifest_git_revision_ignores_isolation_spoof_environment`
+  - `tests/unit/test_keyless_boundary.py::test_wrapper_fails_closed_before_creating_output_without_isolation_runtime`
+  - `tests/unit/test_keyless_boundary.py::test_wrapper_rejects_child_environment_that_differs_from_manifest_runtime`
+  - `tests/unit/test_keyless_boundary.py::test_real_bubblewrap_boundary_reads_public_input_writes_output_and_denies_secret`
+  - `tests/unit/test_keyless_boundary.py::test_optional_real_exact_recovery_completes_inside_keyless_boundary`
+- Executed host evidence: the two real Bubblewrap tests passed in 14.07 seconds. The
+  first read a public mount, wrote the allowed output, and could not access an
+  existing unmounted evaluator-secret location. The second completed an actual
+  one-case exact `python -m hdmatch.cli recover` using the retained public cache and
+  `/tmp/hdmatch-ephe`, with no key, envelope, reveal, or evaluation operation.
+- Why process is still required: application code cannot prove that a future
+  scientific run used this wrapper, that an operator mounted only the declared
+  inputs, that the kernel/runtime was trustworthy, or that no privileged external
+  process observed evaluator material. A same-user scan or a wrapper unit test is
+  never sufficient for a claim about a different run. See
+  `docs/16_claim_grade_keyless_recovery.md`.
+
+### HIGH-2 — Reveal, envelope, decrypted-key, and manifest binding: CLOSED
+
+- Implementation commit: `41826afd2d45a54746adc26b603637d1c108bbd3`.
+- Enforced invariant: reveal first verifies current prediction bytes, freeze bytes,
+  manifest bytes and semantics, then hashes and AES-GCM authenticates the exact same
+  encrypted-envelope bytes. `answer-key-reveal-v2` directly binds experiment ID,
+  blind-input, model, question-bank, mapping, run manifest, prediction, freeze,
+  envelope, and canonical decrypted-payload hashes. Plaintext truth remains in
+  memory. Claim-grade evaluation accepts only the in-memory `RevealResult` minted by
+  authenticated reveal, not a caller-supplied dictionary, and re-verifies the
+  current envelope, receipt, freeze, prediction, and manifest. Ordering is enforced
+  as `manifest <= freeze <= reveal <= evaluation`.
+- Exact tests:
+  - `tests/unit/test_freeze_and_manifest.py::test_strict_freeze_verification_checks_exact_run_manifest_bytes`
+  - `tests/unit/test_freeze_and_manifest.py::test_freeze_refuses_manifest_timestamp_after_prediction_freeze`
+  - `tests/unit/test_freeze_and_manifest.py::test_manifest_rejects_config_payload_hash_mismatch`
+  - `tests/unit/test_sealing_and_reveal.py::test_reveal_requires_valid_unchanged_freeze_and_matching_envelope`
+  - `tests/unit/test_sealing_and_reveal.py::test_reveal_refuses_changed_prediction_bytes`
+  - `tests/unit/test_metrics_and_report.py::test_claim_grade_evaluator_accepts_no_independent_plaintext_key`
+  - `tests/unit/test_metrics_and_report.py::test_evaluator_refuses_mutated_in_memory_reveal_key`
+  - `tests/unit/test_metrics_and_report.py::test_evaluator_refuses_envelope_tampered_after_reveal`
+  - `tests/unit/test_metrics_and_report.py::test_evaluator_refuses_run_manifest_tampered_after_freeze`
+  - `tests/unit/test_metrics_and_report.py::test_evaluator_refuses_reveal_receipt_direct_binding_mismatch`
+  - `tests/unit/test_metrics_and_report.py::test_evaluator_refuses_timestamp_before_reveal`
+
+The ordering checks are relative artifact-time checks, not external timestamp
+notarization or trusted-clock evidence.
+
+### HIGH-3 — Noise/robustness provenance: CLOSED
+
+- Implementation commit: `41826afd2d45a54746adc26b603637d1c108bbd3`.
+- Enforced invariant: every tier is independently loaded from canonical public
+  artifacts and verifies the blind hash; direct model/question/mapping hashes;
+  canonical run manifest and exact recovery configuration; blind-derived public
+  recovery seed; prediction bytes; freeze, reveal, current encrypted envelope and
+  evaluation hashes; target-set hash; timestamp order; exact frozen noise,
+  missingness, flip, cluster-dropout and reliability parameters; and the same opaque
+  post-reveal generation-seed commitment across tiers. The comparator imports no
+  decrypt/reveal/key capability and does not decrypt answer keys.
+- Exact tests:
+  - `tests/unit/test_noise_benchmark_runtime.py::test_runtime_builds_metadata_from_public_bound_artifacts`
+  - `tests/unit/test_noise_benchmark_runtime.py::test_runtime_rejects_noise_payload_not_equal_to_frozen_generator`
+  - `tests/unit/test_noise_benchmark_runtime.py::test_runtime_rejects_recovery_seed_not_derived_from_blind_input`
+  - `tests/unit/test_noise_benchmark_runtime.py::test_runtime_rejects_manifest_without_exact_recovery_config_payload`
+  - `tests/unit/test_noise_benchmark_runtime.py::test_runtime_rejects_run_manifest_bytes_changed_after_prediction_freeze`
+  - `tests/unit/test_noise_benchmark_runtime.py::test_runtime_rejects_tampered_public_provenance_artifact`
+  - `tests/unit/test_noise_benchmark_runtime.py::test_runtime_rejects_evaluation_hash_not_bound_to_public_chain`
+  - `tests/unit/test_noise_benchmark_runtime.py::test_runtime_rejects_evaluation_timestamp_before_reveal`
+  - `tests/unit/test_noise_benchmark_runtime.py::test_runtime_rejects_reveal_timestamp_before_prediction_freeze`
+  - `tests/unit/test_noise_benchmark_runtime.py::test_runtime_rejects_prediction_freeze_before_run_manifest`
+  - `tests/unit/test_noise_benchmark_runtime.py::test_comparison_binds_exact_recovery_configuration`
+  - `tests/unit/test_noise_benchmark_runtime.py::test_comparison_binds_same_hidden_generation_seed_without_decrypting`
+
+The public comparator verifies the evaluator-created seed commitment; by design it
+cannot rederive the concealed seed or regenerate noise without entering the reveal
+boundary.
+
+### HIGH-4 — Human final-test single-use release: CLOSED
+
+- Implementation commit: `aef277c3d640a12fce31e5af2c83c0fc21d1915b`.
+- Enforced invariant: the external durable release/cohort/freeze/reveal ledgers are
+  append-only and independent of ordinary run artifacts. Release binds the exact
+  protocol, model, split, canonical participant set and release ID; a canonical
+  sorted participant-set digest prevents release-ID or participant-order bypass.
+  Freeze must follow release and bind exact prediction bytes. Reveal must follow
+  freeze and bind the encrypted key and report. The same cohort cannot be released,
+  revealed, or evaluated twice, and deleting or renaming normal run artifacts does
+  not reset the external ledger.
+- Exact tests:
+  - `tests/unit/test_human_final_ledger_adversarial.py::test_final_ledger_rejects_same_release_id_twice`
+  - `tests/unit/test_human_final_ledger_adversarial.py::test_final_ledger_cohort_lock_survives_changed_release_id_and_participant_order`
+  - `tests/unit/test_human_final_ledger_adversarial.py::test_final_ledger_rejects_second_evaluation_of_same_cohort`
+  - `tests/unit/test_human_final_ledger_adversarial.py::test_final_ledger_rejects_reveal_before_freeze_receipt`
+  - `tests/unit/test_human_final_ledger_adversarial.py::test_final_ledger_rejects_freeze_before_release_receipt`
+  - `tests/unit/test_human_final_ledger_adversarial.py::test_final_ledger_rejects_changed_prediction_bytes`
+  - `tests/unit/test_human_final_ledger_adversarial.py::test_final_ledger_rejects_changed_protocol_model_split_or_participants`
+  - `tests/unit/test_human_final_ledger_adversarial.py::test_final_ledger_rejects_changed_encrypted_answer_key_after_reveal`
+  - `tests/unit/test_human_final_ledger_adversarial.py::test_final_ledger_rejects_timestamp_reversal`
+  - `tests/unit/test_human_final_ledger_adversarial.py::test_final_ledger_survives_deleted_or_renamed_normal_run_artifacts`
+
+## Remaining non-HIGH findings
+
+| Severity | Status | Finding |
 |---|---|---|
-| High | Synthetic recovery checks for plaintext answer keys only at freeze, after scoring, and the scan is limited to `*.json`. | Run a fail-closed preflight before scoring; broaden defense-in-depth detection; document and require a genuinely keyless OS/container boundary for claim-grade runs. |
-| High | A reveal record stores an encrypted-envelope hash but verification does not check the envelope, and evaluation accepts an independently supplied plaintext dictionary. | Bind the reveal receipt to canonical decrypted-key bytes and encrypted-envelope bytes; verify both before evaluation. |
-| High | Noise comparison loads evaluation, manifest, and blind input but does not establish the prediction freeze/reveal chain. | Verify predictions, freeze, reveal receipt, envelope, manifest binding, evaluation hashes, and timestamp ordering without decrypting the key. |
-| High | Human final-test evaluation is in memory and cannot enforce a one-time release or prove freeze-before-reveal ordering. | Use sealed external key material, append-only protocol/freeze/reveal/release receipts, timestamp checks, and a persistent single-use release ledger before making an untouched-final-test claim. |
-| Medium | Human blind scoring accepts a caller-provided callable whose claimed model reference is checked but whose implementation/capabilities are not. | Construct the scorer internally from exact frozen artifacts or run it in a restricted keyless worker; bind code identity. |
-| Medium | Human bundle fitting checks development IDs but does not validate record content against `PersonSplitManifest.dataset_hash`. | Accept the full dataset at the high-level fit boundary, validate the manifest, select development internally, and bind the selected content hash. |
-| Medium | Recovery resume validates input hashes but not the full recovery configuration. | Require exact manifest/config equality and bind aggregation, threshold, and related settings into comparison provenance. |
-| Low | Generation prints the external reveal-key path. | Print only a non-secret receipt/status identifier; keep secret-location logs evaluator-only. |
+| Medium | OPEN | Human blind scoring still accepts a caller-provided callable whose claimed model reference is checked but whose implementation/capabilities are not. Construct it from exact frozen artifacts or use a restricted keyless worker before a claim relying on that path. |
+| Medium | CLOSED | Recovery resume now verifies the canonical exact configuration payload and its digest, including aggregation, threshold, worker count, cache policy, inputs, model, universe, and public seed. Commit `41826afd2d45a54746adc26b603637d1c108bbd3`; tests `test_manifest_resume_requires_exact_recovery_configuration`, `test_manifest_rejects_config_payload_hash_mismatch`, and the noise config tests above. |
+| Low | CLOSED | Generator output withholds the external reveal-key filesystem path. The encrypted public envelope path may be printed; the owner-only key location is not placed in decoder-visible logs. Commit `389dd03ed37b9a620ccf22b17364e4d6dc11b0dc`. |
 
-## Controls verified
+## Verification evidence
 
-- Synthetic reveal verifies frozen prediction bytes before decryption.
-- `recover` exposes no key or reveal option, and its runtime function has no answer-key parameter.
-- Enabled FastAPI dependencies are non-secret; stateful reveal/run routes fail closed.
-- Revealed target-set hashing includes case ID, true UTC, local date, and chart hash.
-- Noise comparison rejects missing or unequal target-set hashes.
-- Human participant IDs are unique/disjoint, and existing high-level fitting requires exactly the manifest's development IDs.
+- Local complete suite: `260 passed, 2 skipped`; focused integrated security suite:
+  `90 passed, 2 skipped`. The two skipped cases are the real Bubblewrap tests that
+  cannot run inside the inner Codex sandbox; both passed through the approved host
+  boundary as documented under HIGH-1B.
+- Local Ruff: `All checks passed!`.
+- Local strict mypy: `Success: no issues found in 80 source files`.
+- Local task acceptance: `TASK_STATUS: INITIAL_ENGINEERING_MILESTONE_READY`, with
+  `FULL_MODEL_OBJECTIVE: NOT_EVALUATED_BY_THIS_GATE`.
+- GitHub Actions on checkpoint `5604cc0`:
+  - push run `32524300817`: passed in 50 seconds;
+  - pull-request run `32524305239`: passed in 1 minute 7 seconds.
 
-## Claim boundary
-
-The pre-recovery filesystem scan is defense in depth only. Same-user file permissions and a predictable external path do not isolate a decoder from evaluator secrets. A claim-grade blind run must execute recovery in a distinct keyless user/container/workspace with only public inputs mounted. Code-level signatures and hashes then provide the auditable artifact chain; they do not replace process isolation.
-
-## Implementation status
-
-The synthetic preflight/reveal/noise/resume fixes and the human dataset/scorer/final-release fixes are assigned on isolated branches. This report must be updated with exact commits and tests before those findings are marked closed.
+No benchmark, answer-key reveal, or human final-test release was performed while
+closing these findings.
