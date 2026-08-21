@@ -69,5 +69,4 @@ def test_generator_is_reproducible_and_blind() -> None:
     encoded = str(first.blind_document)
     assert "true_local_date" not in encoded
     assert "generation_seed" not in encoded
-    assert all("known_birth_day" in case for case in first.blind_document["cases"])
-    assert all(case["known_birth_day"] is None for case in first.blind_document["cases"])
+    assert all("known_birth_day" not in case for case in first.blind_document["cases"])

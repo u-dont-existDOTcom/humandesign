@@ -52,6 +52,8 @@ class SyntheticGenerator:
 
     @staticmethod
     def _sample_utc_moments(config: SyntheticConfig) -> tuple[datetime, ...]:
+        if config.seed is None:
+            raise ValueError("synthetic generation requires a secret seed")
         zone = ZoneInfo(config.timezone)
         start = datetime(config.year_start, 1, 1, tzinfo=zone).astimezone(UTC)
         end = datetime(config.year_end + 1, 1, 1, tzinfo=zone).astimezone(UTC)
@@ -64,6 +66,9 @@ class SyntheticGenerator:
         )
 
     def generate(self, config: SyntheticConfig) -> BlindSyntheticBundle:
+        if config.seed is None:
+            raise ValueError("synthetic generation requires a secret seed")
+        generation_seed = config.seed
         tier = NoiseTier(config.tier)
         zone = ZoneInfo(config.timezone)
         cases: list[dict[str, Any]] = []
@@ -72,13 +77,14 @@ class SyntheticGenerator:
         for index, utc_moment in enumerate(self._sample_utc_moments(config), start=1):
             case_id = f"CASE-{index:04d}"
             chart = self.chart_calculator.calculate(utc_moment)
-            chart_hash = sha256_json(chart)
+            stable_hash = chart.engine_metadata.get("stable_feature_sha256")
+            chart_hash = stable_hash if isinstance(stable_hash, str) else sha256_json(chart)
             local = utc_moment.astimezone(zone)
             canonical = tuple(self.response_model.oracle_responses(chart))
             responses = apply_noise(
                 canonical,
                 answer_spaces=answer_spaces,
-                seed=config.seed * 1_000_003 + index,
+                seed=generation_seed * 1_000_003 + index,
                 tier=tier,
             )
             case = BlindCase(
@@ -91,7 +97,7 @@ class SyntheticGenerator:
                 responses=responses,
                 candidate_universe=config.universe,
             )
-            cases.append(case.model_dump(mode="json"))
+            cases.append(case.model_dump(mode="json", exclude_none=True))
             keys.append(
                 {
                     "case_id": case_id,
@@ -118,7 +124,7 @@ class SyntheticGenerator:
             "schema_version": "answer-key-v1",
             "experiment_id": config.experiment_id,
             "blind_input_sha256": blind_hash,
-            "generation_seed": config.seed,
+            "generation_seed": generation_seed,
             "cases": keys,
         }
         return BlindSyntheticBundle(

@@ -14,7 +14,9 @@ class SyntheticConfig(BaseModel):
     model_config = ConfigDict(extra="forbid", frozen=True)
 
     experiment_id: str
-    seed: int
+    # Generation seeds are secret until reveal. Public repository configs leave
+    # this null; the CLI creates or reads the seed outside the decoder root.
+    seed: int | None = None
     case_count: int = Field(default=1000, ge=1)
     tier: Literal["oracle", "low", "medium", "adversarial"] = "oracle"
     universe: Literal["known_month", "known_date"] = "known_month"
