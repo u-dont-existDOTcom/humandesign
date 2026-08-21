@@ -29,8 +29,6 @@ _VERSION_PACKAGES = (
     "numpy",
     "scikit-learn",
 )
-
-
 class SoftwareEnvironment(BaseModel):
     model_config = ConfigDict(extra="forbid", frozen=True)
 

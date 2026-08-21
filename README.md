@@ -51,6 +51,13 @@ hdmatch reveal-evaluate --run-dir run_artifacts/model_a_smoke
 
 Generation creates or uses an owner-only AES key under `/tmp/hdmatch-secrets` by default, but ordinary command output does not disclose its path. Recovery accepts no key or answer-key path and performs a plaintext-answer-key preflight before scoring. That scan is defense in depth, not a substitute for running the decoder in a separate keyless operating-system user, container, or equivalent access boundary. Reveal binds the exact encrypted envelope and canonical decrypted payload; evaluation refuses a different in-memory key. Exact ephemeris files and their hashes must be supplied for every chart run.
 
+Claim-grade synthetic recovery uses the fail-closed Bubblewrap wrapper and a separate
+empty decoder output directory; see `docs/16_claim_grade_keyless_recovery.md`. The
+wrapper mounts only tracked decoder code and declared public artifacts, disables the
+network namespace, accepts no reveal/key capability, and writes a canonical isolation
+receipt. External operator/runtime evidence remains required because application code
+cannot prove its own host isolation.
+
 The completed smoke report is in `reports/model_a_smoke_75/`. It retains all 41 non-Top-1 cases and explains the residual failure classification.
 
 ## Synthetic noise-tier comparison

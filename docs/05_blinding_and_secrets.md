@@ -60,3 +60,7 @@ Use worktrees/agents for parallel code tasks, but do not assume worktrees create
 A worktree under a parent directory containing the secret may still be accessible depending on environment configuration.
 
 For actual blind evaluation, use separate workspace/container/repository boundaries or encryption.
+
+For the fail-closed Linux Bubblewrap mode, exact mount contract, canonical isolation
+receipt, production invocation, tests, and residual external-process requirement, see
+`docs/16_claim_grade_keyless_recovery.md`.
