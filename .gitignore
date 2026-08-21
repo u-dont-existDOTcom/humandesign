@@ -15,3 +15,11 @@ answer_key*.enc
 experiments/private/
 run_artifacts/
 
+venv/
+.env.*
+secrets/
+answer_key*.json.enc
+*.key
+*.pem
+runs/*/revealed_key*
+.DS_Store
