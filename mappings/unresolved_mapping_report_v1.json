@@ -1,0 +1,679 @@
+{
+  "mapping_counts": {
+    "empirical_only": 3,
+    "frozen": 27,
+    "unresolved": 52
+  },
+  "mapping_file_sha256": "3424672432f7f071ec90ef9ddce52a67ff6794911e92b1a1e04f079262ea6200",
+  "mapping_model_sha256": "e4b1ed725f0310b5434ca58745972b23902ee9e23a10ac795ea420ce0de8d69e",
+  "model_version": "V4/V3.2-symbolic-v1",
+  "question_counts": {
+    "empirical_only": 6,
+    "frozen": 23,
+    "unresolved": 52
+  },
+  "question_dispositions": [
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-A01"
+      ],
+      "question_id": "A01",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-A02"
+      ],
+      "question_id": "A02",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-A03"
+      ],
+      "question_id": "A03",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-A04"
+      ],
+      "question_id": "A04",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-V32-MASTERY-EXCLUDED"
+      ],
+      "question_id": "A05",
+      "reason": "V3.2 invalidates expertise or polished output as positive symbolic evidence of an independent mastery drive; only a separately learned human model may re-establish it.",
+      "status": "empirical_only"
+    },
+    {
+      "mapping_ids": [
+        "MAP-V32-SYSTEM-IDENTIFICATION-EXCLUDED"
+      ],
+      "question_id": "A06",
+      "reason": "V3.2 states that institutional participation does not imply motivational identification or imitation; no replacement chart predicate is supplied.",
+      "status": "empirical_only"
+    },
+    {
+      "mapping_ids": [
+        "MAP-V32-ADVANCEMENT-EXCLUDED"
+      ],
+      "question_id": "A07",
+      "reason": "V3.2 removes material or hierarchical advancement as positive symbolic evidence and keeps resource competence separate; only empirical refitting may restore it.",
+      "status": "empirical_only"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-A08"
+      ],
+      "question_id": "A08",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-A09"
+      ],
+      "question_id": "A09",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-A10"
+      ],
+      "question_id": "A10",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-CENTER-SOLARPLEXUS-UNDEFINED-C01"
+      ],
+      "question_id": "C01",
+      "reason": "At least one conservative, sourced symbolic rule is frozen; unlisted answers remain neutral.",
+      "status": "frozen"
+    },
+    {
+      "mapping_ids": [
+        "MAP-CENTER-SOLARPLEXUS-DEFINED-C02"
+      ],
+      "question_id": "C02",
+      "reason": "At least one conservative, sourced symbolic rule is frozen; unlisted answers remain neutral.",
+      "status": "frozen"
+    },
+    {
+      "mapping_ids": [
+        "MAP-CENTER-EGO-UNDEFINED-C03"
+      ],
+      "question_id": "C03",
+      "reason": "At least one conservative, sourced symbolic rule is frozen; unlisted answers remain neutral.",
+      "status": "frozen"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-C04"
+      ],
+      "question_id": "C04",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-C05"
+      ],
+      "question_id": "C05",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-C06"
+      ],
+      "question_id": "C06",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-CENTER-ROOT-UNDEFINED-C07"
+      ],
+      "question_id": "C07",
+      "reason": "At least one conservative, sourced symbolic rule is frozen; unlisted answers remain neutral.",
+      "status": "frozen"
+    },
+    {
+      "mapping_ids": [
+        "MAP-CENTER-SACRAL-DEFINED-C08",
+        "MAP-CENTER-SACRAL-UNDEFINED-C08"
+      ],
+      "question_id": "C08",
+      "reason": "At least one conservative, sourced symbolic rule is frozen; unlisted answers remain neutral.",
+      "status": "frozen"
+    },
+    {
+      "mapping_ids": [
+        "MAP-CENTER-G-UNDEFINED-C09"
+      ],
+      "question_id": "C09",
+      "reason": "At least one conservative, sourced symbolic rule is frozen; unlisted answers remain neutral.",
+      "status": "frozen"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-C10"
+      ],
+      "question_id": "C10",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-AUTH-EMOTIONAL-D01",
+        "MAP-AUTH-SACRAL-D01",
+        "MAP-AUTH-SPLENIC-D01"
+      ],
+      "question_id": "D01",
+      "reason": "At least one conservative, sourced symbolic rule is frozen; unlisted answers remain neutral.",
+      "status": "frozen"
+    },
+    {
+      "mapping_ids": [
+        "MAP-AUTH-SPLENIC-D02"
+      ],
+      "question_id": "D02",
+      "reason": "At least one conservative, sourced symbolic rule is frozen; unlisted answers remain neutral.",
+      "status": "frozen"
+    },
+    {
+      "mapping_ids": [
+        "MAP-AUTH-EMOTIONAL-D03"
+      ],
+      "question_id": "D03",
+      "reason": "At least one conservative, sourced symbolic rule is frozen; unlisted answers remain neutral.",
+      "status": "frozen"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-D04"
+      ],
+      "question_id": "D04",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-D05"
+      ],
+      "question_id": "D05",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-D06"
+      ],
+      "question_id": "D06",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-CENTER-G-DEFINED-D07",
+        "MAP-CENTER-G-UNDEFINED-D07"
+      ],
+      "question_id": "D07",
+      "reason": "At least one conservative, sourced symbolic rule is frozen; unlisted answers remain neutral.",
+      "status": "frozen"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-D08"
+      ],
+      "question_id": "D08",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-PROFILE-LINE1-P01"
+      ],
+      "question_id": "P01",
+      "reason": "At least one conservative, sourced symbolic rule is frozen; unlisted answers remain neutral.",
+      "status": "frozen"
+    },
+    {
+      "mapping_ids": [
+        "MAP-PROFILE-LINE2-P02"
+      ],
+      "question_id": "P02",
+      "reason": "At least one conservative, sourced symbolic rule is frozen; unlisted answers remain neutral.",
+      "status": "frozen"
+    },
+    {
+      "mapping_ids": [
+        "MAP-PROFILE-LINE3-P03"
+      ],
+      "question_id": "P03",
+      "reason": "At least one conservative, sourced symbolic rule is frozen; unlisted answers remain neutral.",
+      "status": "frozen"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-P04"
+      ],
+      "question_id": "P04",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-PROFILE-LINE5-P05"
+      ],
+      "question_id": "P05",
+      "reason": "At least one conservative, sourced symbolic rule is frozen; unlisted answers remain neutral.",
+      "status": "frozen"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-P06"
+      ],
+      "question_id": "P06",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-PROFILE-LINE6-P07"
+      ],
+      "question_id": "P07",
+      "reason": "At least one conservative, sourced symbolic rule is frozen; unlisted answers remain neutral.",
+      "status": "frozen"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-P08"
+      ],
+      "question_id": "P08",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-PROFILE-LINE2-P09"
+      ],
+      "question_id": "P09",
+      "reason": "At least one conservative, sourced symbolic rule is frozen; unlisted answers remain neutral.",
+      "status": "frozen"
+    },
+    {
+      "mapping_ids": [
+        "MAP-PROFILE-LINE4-P10"
+      ],
+      "question_id": "P10",
+      "reason": "At least one conservative, sourced symbolic rule is frozen; unlisted answers remain neutral.",
+      "status": "frozen"
+    },
+    {
+      "mapping_ids": [
+        "MAP-PROFILE-LINE3-P11"
+      ],
+      "question_id": "P11",
+      "reason": "At least one conservative, sourced symbolic rule is frozen; unlisted answers remain neutral.",
+      "status": "frozen"
+    },
+    {
+      "mapping_ids": [
+        "MAP-PROFILE-LINE6-P12"
+      ],
+      "question_id": "P12",
+      "reason": "At least one conservative, sourced symbolic rule is frozen; unlisted answers remain neutral.",
+      "status": "frozen"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-R01"
+      ],
+      "question_id": "R01",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-R02"
+      ],
+      "question_id": "R02",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-R03"
+      ],
+      "question_id": "R03",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-R04"
+      ],
+      "question_id": "R04",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-R05"
+      ],
+      "question_id": "R05",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-R06"
+      ],
+      "question_id": "R06",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-R07"
+      ],
+      "question_id": "R07",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-R08"
+      ],
+      "question_id": "R08",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-S01"
+      ],
+      "question_id": "S01",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-TYPE-GENERATOR-S02"
+      ],
+      "question_id": "S02",
+      "reason": "At least one conservative, sourced symbolic rule is frozen; unlisted answers remain neutral.",
+      "status": "frozen"
+    },
+    {
+      "mapping_ids": [
+        "MAP-TYPE-PROJECTOR-S03"
+      ],
+      "question_id": "S03",
+      "reason": "At least one conservative, sourced symbolic rule is frozen; unlisted answers remain neutral.",
+      "status": "frozen"
+    },
+    {
+      "mapping_ids": [
+        "MAP-TYPE-PROJECTOR-S04"
+      ],
+      "question_id": "S04",
+      "reason": "At least one conservative, sourced symbolic rule is frozen; unlisted answers remain neutral.",
+      "status": "frozen"
+    },
+    {
+      "mapping_ids": [
+        "MAP-TYPE-GENERATOR-S05"
+      ],
+      "question_id": "S05",
+      "reason": "At least one conservative, sourced symbolic rule is frozen; unlisted answers remain neutral.",
+      "status": "frozen"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-S06"
+      ],
+      "question_id": "S06",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-S07"
+      ],
+      "question_id": "S07",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-S08"
+      ],
+      "question_id": "S08",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-T01"
+      ],
+      "question_id": "T01",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-V32-MASTERY-EXCLUDED"
+      ],
+      "question_id": "T02",
+      "reason": "V3.2 invalidates expertise or polished output as positive symbolic evidence of an independent mastery drive; only a separately learned human model may re-establish it.",
+      "status": "empirical_only"
+    },
+    {
+      "mapping_ids": [
+        "MAP-V32-MASTERY-EXCLUDED"
+      ],
+      "question_id": "T03",
+      "reason": "V3.2 invalidates expertise or polished output as positive symbolic evidence of an independent mastery drive; only a separately learned human model may re-establish it.",
+      "status": "empirical_only"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-T04"
+      ],
+      "question_id": "T04",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-T05"
+      ],
+      "question_id": "T05",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-T06"
+      ],
+      "question_id": "T06",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-T07"
+      ],
+      "question_id": "T07",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-T08"
+      ],
+      "question_id": "T08",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-T09"
+      ],
+      "question_id": "T09",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-V32-ADVANCEMENT-EXCLUDED"
+      ],
+      "question_id": "T10",
+      "reason": "V3.2 removes material or hierarchical advancement as positive symbolic evidence and keeps resource competence separate; only empirical refitting may restore it.",
+      "status": "empirical_only"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-T11"
+      ],
+      "question_id": "T11",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-T12"
+      ],
+      "question_id": "T12",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-T13"
+      ],
+      "question_id": "T13",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-T14"
+      ],
+      "question_id": "T14",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-T15"
+      ],
+      "question_id": "T15",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-T16"
+      ],
+      "question_id": "T16",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-T17"
+      ],
+      "question_id": "T17",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-T18"
+      ],
+      "question_id": "T18",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-T19"
+      ],
+      "question_id": "T19",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-T20"
+      ],
+      "question_id": "T20",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-V01"
+      ],
+      "question_id": "V01",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-V02"
+      ],
+      "question_id": "V02",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-V03"
+      ],
+      "question_id": "V03",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-V04"
+      ],
+      "question_id": "V04",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    },
+    {
+      "mapping_ids": [
+        "MAP-UNRESOLVED-V05"
+      ],
+      "question_id": "V05",
+      "reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists.",
+      "status": "unresolved"
+    }
+  ],
+  "schema_version": "unresolved-mapping-report-v1",
+  "unresolved_scientific_limitations": [
+    "The question bank intentionally contains no complete server-side HD key; this artifact freezes only the direct architecture links recoverable from the normative repository.",
+    "No gate, channel, definition, cardinal-activation, Color, Tone, Base, Incarnation Cross, or variable-level behavioral mappings are sufficiently specified to freeze.",
+    "Self-Projected, Ego, Environmental/No-Inner, and Lunar Authority response keys are not sufficiently specified in the normative text and therefore remain unresolved.",
+    "Manifestor and Reflector Type/Strategy response keys and all four Not-Self signature alternatives lack an explicit normative mapping table and remain unresolved.",
+    "Profile entries encode only the clearest single-line constructs; personality/design role order and exact two-line Profile predictions remain unresolved.",
+    "Symbolic rarity weights are rubric bits, not probabilities; candidate-universe prevalence must be supplied independently at scoring time.",
+    "V3.2 exclusions prevent mastery, institutional participation, and material competence from acting as positive shortcuts; future human-learned versions must be separate artifacts."
+  ]
+}
