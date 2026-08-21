@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "taskId": "full-harness-v1",
+  "status": "active",
+  "exclusive": true,
+  "requiredBranch": "codex/harness-integration",
+  "preflightCommand": "python scripts/task_preflight.py",
+  "completionCommand": "python scripts/task_acceptance.py",
+  "suspendedTaskSources": [
+    "legacy-run rankings",
+    "Custom GPT transit work",
+    "century-wide optimization before earlier acceptance gates",
+    "unrelated roadmap selection"
+  ]
+}
+
