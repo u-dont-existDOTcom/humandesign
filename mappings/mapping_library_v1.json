@@ -1,0 +1,3207 @@
+{
+  "answer_specs": [
+    {
+      "options": [
+        {
+          "label": "become amplified inside you",
+          "source": "prompt",
+          "token": "become_amplified_inside_you"
+        }
+      ],
+      "question_id": "C01",
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "options": [
+        {
+          "label": "wave-like",
+          "source": "prompt",
+          "token": "wave_like"
+        }
+      ],
+      "question_id": "C02",
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "options": [
+        {
+          "label": "very often",
+          "source": "response_format",
+          "token": "very_often"
+        }
+      ],
+      "question_id": "C03",
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "options": [
+        {
+          "label": "feel a strong need to clear them quickly so pressure disappears",
+          "source": "prompt",
+          "token": "feel_a_strong_need_to_clear_them_quickly_so_pressure_disappears"
+        }
+      ],
+      "question_id": "C07",
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "options": [
+        {
+          "label": "physical energy renew through doing the right work",
+          "source": "prompt",
+          "token": "physical_energy_renew_through_doing_the_right_work"
+        },
+        {
+          "label": "prolonged work deplete you even when it is meaningful",
+          "source": "prompt",
+          "token": "prolonged_work_deplete_you_even_when_it_is_meaningful"
+        }
+      ],
+      "question_id": "C08",
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "options": [
+        {
+          "label": "extremely",
+          "source": "response_format",
+          "token": "extremely"
+        }
+      ],
+      "question_id": "C09",
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "options": [
+        {
+          "label": "an immediate quiet sense",
+          "source": "prompt",
+          "token": "an_immediate_quiet_sense"
+        },
+        {
+          "label": "a gut-like yes/no energy",
+          "source": "prompt",
+          "token": "a_gut_like_yes_no_energy"
+        },
+        {
+          "label": "clarity that changes over hours or days",
+          "source": "prompt",
+          "token": "clarity_that_changes_over_hours_or_days"
+        },
+        {
+          "label": "hearing your own words reveal the answer",
+          "source": "prompt",
+          "token": "hearing_your_own_words_reveal_the_answer"
+        },
+        {
+          "label": "clarity from being in the right place or with the right listener",
+          "source": "prompt",
+          "token": "clarity_from_being_in_the_right_place_or_with_the_right_listener"
+        },
+        {
+          "label": "no stable pattern",
+          "source": "prompt",
+          "token": "no_stable_pattern"
+        }
+      ],
+      "question_id": "D01",
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "options": [
+        {
+          "label": "brief and nonrepeating",
+          "source": "prompt",
+          "token": "brief_and_nonrepeating"
+        },
+        {
+          "label": "loud and energizing",
+          "source": "prompt",
+          "token": "loud_and_energizing"
+        },
+        {
+          "label": "persistent until acted upon",
+          "source": "prompt",
+          "token": "persistent_until_acted_upon"
+        },
+        {
+          "label": "emotionally charged",
+          "source": "prompt",
+          "token": "emotionally_charged"
+        },
+        {
+          "label": "mostly a later interpretation",
+          "source": "prompt",
+          "token": "mostly_a_later_interpretation"
+        }
+      ],
+      "question_id": "D02",
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "options": [
+        {
+          "label": "remain stable",
+          "source": "prompt",
+          "token": "remain_stable"
+        },
+        {
+          "label": "fluctuate with emotional highs and lows",
+          "source": "prompt",
+          "token": "fluctuate_with_emotional_highs_and_lows"
+        },
+        {
+          "label": "become clearer only after sleeping on it",
+          "source": "prompt",
+          "token": "become_clearer_only_after_sleeping_on_it"
+        }
+      ],
+      "question_id": "D03",
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "options": [
+        {
+          "label": "feel a stable internal sense of who you are and where you are going",
+          "source": "prompt",
+          "token": "feel_a_stable_internal_sense_of_who_you_are_and_where_you_are_going"
+        },
+        {
+          "label": "direction become clearer through the people and places around you",
+          "source": "prompt",
+          "token": "direction_become_clearer_through_the_people_and_places_around_you"
+        }
+      ],
+      "question_id": "D07",
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "options": [
+        {
+          "label": "very often",
+          "source": "response_format",
+          "token": "very_often"
+        }
+      ],
+      "question_id": "P01",
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "options": [
+        {
+          "label": "very often",
+          "source": "response_format",
+          "token": "very_often"
+        }
+      ],
+      "question_id": "P02",
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "options": [
+        {
+          "label": "very often",
+          "source": "response_format",
+          "token": "very_often"
+        }
+      ],
+      "question_id": "P03",
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "options": [
+        {
+          "label": "very often",
+          "source": "response_format",
+          "token": "very_often"
+        }
+      ],
+      "question_id": "P05",
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "options": [
+        {
+          "label": "strongly",
+          "source": "response_format",
+          "token": "strongly"
+        }
+      ],
+      "question_id": "P07",
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "options": [
+        {
+          "label": "relief and mobilization",
+          "source": "prompt",
+          "token": "relief_and_mobilization"
+        }
+      ],
+      "question_id": "P09",
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "options": [
+        {
+          "label": "extremely",
+          "source": "response_format",
+          "token": "extremely"
+        }
+      ],
+      "question_id": "P10",
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "options": [
+        {
+          "label": "treat it as data",
+          "source": "prompt",
+          "token": "treat_it_as_data"
+        }
+      ],
+      "question_id": "P11",
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "options": [
+        {
+          "label": "because of what you have lived through",
+          "source": "prompt",
+          "token": "because_of_what_you_have_lived_through"
+        }
+      ],
+      "question_id": "P12",
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "options": [
+        {
+          "label": "very often",
+          "source": "response_format",
+          "token": "very_often"
+        }
+      ],
+      "question_id": "S02",
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "options": [
+        {
+          "label": "extremely",
+          "source": "response_format",
+          "token": "extremely"
+        }
+      ],
+      "question_id": "S03",
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "options": [
+        {
+          "label": "function better after a clear mutual opening than after assigning yourself a role",
+          "source": "prompt",
+          "token": "function_better_after_a_clear_mutual_opening_than_after_assigning_yourself_a_role"
+        }
+      ],
+      "question_id": "S04",
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "options": [
+        {
+          "label": "sustain daily workforce energy indefinitely if sleep and health are adequate",
+          "source": "prompt",
+          "token": "sustain_daily_workforce_energy_indefinitely_if_sleep_and_health_are_adequate"
+        },
+        {
+          "label": "even good projects eventually require disproportionate retreat",
+          "source": "prompt",
+          "token": "even_good_projects_eventually_require_disproportionate_retreat"
+        }
+      ],
+      "question_id": "S05",
+      "unmapped_answer_policy": "neutral"
+    }
+  ],
+  "constants": {
+    "contradiction_cap_rubric_bits": 4.0,
+    "core_weights": {
+      "authority": 30.0,
+      "diagnostic_centers": 25.0,
+      "profile": 15.0,
+      "type_strategy": 30.0
+    },
+    "independent_corroboration_cap": 0.15,
+    "information_cap_rubric_bits": 6.0
+  },
+  "mappings": [
+    {
+      "behavioral_statement": "Important decisions present as an immediate quiet sense.",
+      "chart_feature_predicate": {
+        "feature": "authority",
+        "operator": "equals_any",
+        "values": [
+          "Splenic"
+        ]
+      },
+      "contradiction_rule": {
+        "answer_tokens": [
+          "clarity_that_changes_over_hours_or_days"
+        ],
+        "behavioral_rationale": "Waiting across hours or days directly opposes the frozen immediate process.",
+        "severity": 1.0
+      },
+      "dependency_cluster": "AUTHORITY_DECISION",
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-AUTH-SPLENIC-D01",
+      "observation_id": "OBS-AUTH-SPLENIC-IMMEDIATE",
+      "predicted_response": {
+        "canonical_answer_token": "an_immediate_quiet_sense",
+        "rule": "symbolic_support",
+        "support_answer_tokens": [
+          "an_immediate_quiet_sense"
+        ]
+      },
+      "question_ids": [
+        "D01"
+      ],
+      "sources": [
+        {
+          "locator": "V4.1 Addendum — Authority scope",
+          "path": "reference/core/human_design_reverse_matching_protocol_v4_1.md",
+          "rationale": "Splenic and Sacral processes are present-oriented; Emotional Authority requires waiting."
+        },
+        {
+          "locator": "§23 Structural reuse rule",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "The protocol explicitly links Splenic Authority with immediate non-repeating bodily knowing."
+        },
+        {
+          "locator": "question D01",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Exact declared answer wording."
+        }
+      ],
+      "status": "frozen",
+      "structural_class": "authority",
+      "structural_salience": 1.0,
+      "unresolved_reason": null
+    },
+    {
+      "behavioral_statement": "Important decisions present as a gut-like yes/no energy.",
+      "chart_feature_predicate": {
+        "feature": "authority",
+        "operator": "equals_any",
+        "values": [
+          "Sacral"
+        ]
+      },
+      "contradiction_rule": {
+        "answer_tokens": [
+          "clarity_that_changes_over_hours_or_days"
+        ],
+        "behavioral_rationale": "Waiting for an emotional wave directly opposes a present-oriented Sacral process.",
+        "severity": 1.0
+      },
+      "dependency_cluster": "AUTHORITY_DECISION",
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-AUTH-SACRAL-D01",
+      "observation_id": "OBS-AUTH-SACRAL-RESPONSE",
+      "predicted_response": {
+        "canonical_answer_token": "a_gut_like_yes_no_energy",
+        "rule": "symbolic_support",
+        "support_answer_tokens": [
+          "a_gut_like_yes_no_energy"
+        ]
+      },
+      "question_ids": [
+        "D01"
+      ],
+      "sources": [
+        {
+          "locator": "V4.1 Addendum — Authority scope",
+          "path": "reference/core/human_design_reverse_matching_protocol_v4_1.md",
+          "rationale": "Splenic and Sacral processes are present-oriented; Emotional Authority requires waiting."
+        },
+        {
+          "locator": "question D01",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Exact declared Sacral-like response wording."
+        }
+      ],
+      "status": "frozen",
+      "structural_class": "authority",
+      "structural_salience": 1.0,
+      "unresolved_reason": null
+    },
+    {
+      "behavioral_statement": "Important-decision clarity changes over hours or days.",
+      "chart_feature_predicate": {
+        "feature": "authority",
+        "operator": "equals_any",
+        "values": [
+          "Emotional",
+          "Emotional Solar Plexus",
+          "Solar Plexus"
+        ]
+      },
+      "contradiction_rule": {
+        "answer_tokens": [
+          "an_immediate_quiet_sense",
+          "a_gut_like_yes_no_energy"
+        ],
+        "behavioral_rationale": "An explicitly immediate process directly opposes waiting through an emotional wave.",
+        "severity": 1.0
+      },
+      "dependency_cluster": "AUTHORITY_DECISION",
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-AUTH-EMOTIONAL-D01",
+      "observation_id": "OBS-AUTH-EMOTIONAL-WAIT",
+      "predicted_response": {
+        "canonical_answer_token": "clarity_that_changes_over_hours_or_days",
+        "rule": "symbolic_support",
+        "support_answer_tokens": [
+          "clarity_that_changes_over_hours_or_days"
+        ]
+      },
+      "question_ids": [
+        "D01"
+      ],
+      "sources": [
+        {
+          "locator": "V4.1 Addendum — Authority scope",
+          "path": "reference/core/human_design_reverse_matching_protocol_v4_1.md",
+          "rationale": "Splenic and Sacral processes are present-oriented; Emotional Authority requires waiting."
+        },
+        {
+          "locator": "§16 Contradiction scale",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "Waiting through an emotional wave is explicitly opposed to an immediate authority process."
+        },
+        {
+          "locator": "question D01",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Exact declared delayed-clarity wording."
+        }
+      ],
+      "status": "frozen",
+      "structural_class": "authority",
+      "structural_salience": 1.0,
+      "unresolved_reason": null
+    },
+    {
+      "behavioral_statement": "The immediate signal is brief and nonrepeating.",
+      "chart_feature_predicate": {
+        "feature": "authority",
+        "operator": "equals_any",
+        "values": [
+          "Splenic"
+        ]
+      },
+      "contradiction_rule": null,
+      "dependency_cluster": "AUTHORITY_DECISION",
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-AUTH-SPLENIC-D02",
+      "observation_id": "OBS-AUTH-SPLENIC-IMMEDIATE",
+      "predicted_response": {
+        "canonical_answer_token": "brief_and_nonrepeating",
+        "rule": "symbolic_support",
+        "support_answer_tokens": [
+          "brief_and_nonrepeating"
+        ]
+      },
+      "question_ids": [
+        "D02"
+      ],
+      "sources": [
+        {
+          "locator": "§23 Structural reuse rule",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "The protocol explicitly links Splenic Authority with immediate non-repeating bodily knowing."
+        },
+        {
+          "locator": "question D02",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Exact declared signal-quality wording."
+        }
+      ],
+      "status": "frozen",
+      "structural_class": "authority",
+      "structural_salience": 1.0,
+      "unresolved_reason": null
+    },
+    {
+      "behavioral_statement": "Decision clarity fluctuates with emotional highs and lows or becomes clearer after sleep.",
+      "chart_feature_predicate": {
+        "feature": "authority",
+        "operator": "equals_any",
+        "values": [
+          "Emotional",
+          "Emotional Solar Plexus",
+          "Solar Plexus"
+        ]
+      },
+      "contradiction_rule": null,
+      "dependency_cluster": "AUTHORITY_DECISION",
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-AUTH-EMOTIONAL-D03",
+      "observation_id": "OBS-AUTH-EMOTIONAL-WAIT",
+      "predicted_response": {
+        "canonical_answer_token": "fluctuate_with_emotional_highs_and_lows",
+        "rule": "symbolic_support",
+        "support_answer_tokens": [
+          "fluctuate_with_emotional_highs_and_lows",
+          "become_clearer_only_after_sleeping_on_it"
+        ]
+      },
+      "question_ids": [
+        "D03"
+      ],
+      "sources": [
+        {
+          "locator": "V4.1 Addendum — Authority scope",
+          "path": "reference/core/human_design_reverse_matching_protocol_v4_1.md",
+          "rationale": "Splenic and Sacral processes are present-oriented; Emotional Authority requires waiting."
+        },
+        {
+          "locator": "§16 Contradiction scale",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "Waiting through an emotional wave is explicitly opposed to an immediate authority process."
+        },
+        {
+          "locator": "question D03",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Exact declared emotional-timing wording."
+        }
+      ],
+      "status": "frozen",
+      "structural_class": "authority",
+      "structural_salience": 1.0,
+      "unresolved_reason": null
+    },
+    {
+      "behavioral_statement": "Accurate recognition strongly changes willingness and effectiveness.",
+      "chart_feature_predicate": {
+        "feature": "type",
+        "operator": "equals_any",
+        "values": [
+          "Projector"
+        ]
+      },
+      "contradiction_rule": null,
+      "dependency_cluster": "TYPE_STRATEGY_ARCHITECTURE",
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-TYPE-PROJECTOR-S03",
+      "observation_id": "OBS-TYPE-PROJECTOR-RECOGNITION",
+      "predicted_response": {
+        "canonical_answer_token": "extremely",
+        "rule": "symbolic_support",
+        "support_answer_tokens": [
+          "extremely"
+        ]
+      },
+      "question_ids": [
+        "S03"
+      ],
+      "sources": [
+        {
+          "locator": "§23 Structural reuse rule",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "Projector Type and waiting for recognition are explicitly one architecture."
+        },
+        {
+          "locator": "question S03",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "The response scale is frozen in the question record."
+        }
+      ],
+      "status": "frozen",
+      "structural_class": "type_strategy",
+      "structural_salience": 1.0,
+      "unresolved_reason": null
+    },
+    {
+      "behavioral_statement": "Major roles and collaborations function better after a clear mutual opening.",
+      "chart_feature_predicate": {
+        "feature": "type",
+        "operator": "equals_any",
+        "values": [
+          "Projector"
+        ]
+      },
+      "contradiction_rule": null,
+      "dependency_cluster": "TYPE_STRATEGY_ARCHITECTURE",
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-TYPE-PROJECTOR-S04",
+      "observation_id": "OBS-TYPE-PROJECTOR-RECOGNITION",
+      "predicted_response": {
+        "canonical_answer_token": "function_better_after_a_clear_mutual_opening_than_after_assigning_yourself_a_role",
+        "rule": "symbolic_support",
+        "support_answer_tokens": [
+          "function_better_after_a_clear_mutual_opening_than_after_assigning_yourself_a_role"
+        ]
+      },
+      "question_ids": [
+        "S04"
+      ],
+      "sources": [
+        {
+          "locator": "§8 Open autobiographical collection",
+          "path": "reference/core/human_design_reverse_matching_protocol_v4_1.md",
+          "rationale": "The protocol explicitly uses Projector/invitation as the HD-labeled counterpart to a neutral opportunity-opening question."
+        },
+        {
+          "locator": "question S04",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Exact declared clear-opening wording."
+        }
+      ],
+      "status": "frozen",
+      "structural_class": "type_strategy",
+      "structural_salience": 1.0,
+      "unresolved_reason": null
+    },
+    {
+      "behavioral_statement": "Energy or interest commonly appears after a concrete option is present.",
+      "chart_feature_predicate": {
+        "feature": "type",
+        "operator": "equals_any",
+        "values": [
+          "Generator",
+          "Manifesting Generator"
+        ]
+      },
+      "contradiction_rule": null,
+      "dependency_cluster": "TYPE_STRATEGY_ARCHITECTURE",
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-TYPE-GENERATOR-S02",
+      "observation_id": "OBS-TYPE-GENERATOR-RESPONSE",
+      "predicted_response": {
+        "canonical_answer_token": "very_often",
+        "rule": "symbolic_support",
+        "support_answer_tokens": [
+          "very_often"
+        ]
+      },
+      "question_ids": [
+        "S02"
+      ],
+      "sources": [
+        {
+          "locator": "§8.1 Type + Strategy",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "Type and Strategy are a direct frozen architecture block."
+        },
+        {
+          "locator": "question S02",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "The question directly measures response after a concrete external stimulus."
+        }
+      ],
+      "status": "frozen",
+      "structural_class": "type_strategy",
+      "structural_salience": 1.0,
+      "unresolved_reason": null
+    },
+    {
+      "behavioral_statement": "Meaningful work supports sustainable daily workforce energy.",
+      "chart_feature_predicate": {
+        "feature": "type",
+        "operator": "equals_any",
+        "values": [
+          "Generator",
+          "Manifesting Generator"
+        ]
+      },
+      "contradiction_rule": {
+        "answer_tokens": [
+          "even_good_projects_eventually_require_disproportionate_retreat"
+        ],
+        "behavioral_rationale": "The frozen prompt presents disproportionate retreat as the opposing energy pattern.",
+        "severity": 0.75
+      },
+      "dependency_cluster": "TYPE_STRATEGY_ARCHITECTURE",
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-TYPE-GENERATOR-S05",
+      "observation_id": "OBS-TYPE-GENERATOR-SACRAL-ENERGY",
+      "predicted_response": {
+        "canonical_answer_token": "sustain_daily_workforce_energy_indefinitely_if_sleep_and_health_are_adequate",
+        "rule": "symbolic_support",
+        "support_answer_tokens": [
+          "sustain_daily_workforce_energy_indefinitely_if_sleep_and_health_are_adequate"
+        ]
+      },
+      "question_ids": [
+        "S05"
+      ],
+      "sources": [
+        {
+          "locator": "§16 Contradiction scale",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "The protocol explicitly names sustainable Sacral-style workforce energy and its opposite architecture."
+        },
+        {
+          "locator": "question S05",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Exact declared sustainable-energy alternative."
+        }
+      ],
+      "status": "frozen",
+      "structural_class": "type_strategy",
+      "structural_salience": 1.0,
+      "unresolved_reason": null
+    },
+    {
+      "behavioral_statement": "Another person's strong feelings become amplified internally.",
+      "chart_feature_predicate": {
+        "feature": "defined_centers",
+        "operator": "not_contains_any",
+        "values": [
+          "Solar Plexus"
+        ]
+      },
+      "contradiction_rule": null,
+      "dependency_cluster": "CENTER_SOLAR_PLEXUS_STATE",
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-CENTER-SOLARPLEXUS-UNDEFINED-C01",
+      "observation_id": "OBS-CENTER-EMOTIONAL-AMPLIFICATION",
+      "predicted_response": {
+        "canonical_answer_token": "become_amplified_inside_you",
+        "rule": "symbolic_support",
+        "support_answer_tokens": [
+          "become_amplified_inside_you"
+        ]
+      },
+      "question_ids": [
+        "C01"
+      ],
+      "sources": [
+        {
+          "locator": "§20 Predeclared rarity anchors",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "The protocol's allowed example explicitly names open emotional amplification."
+        },
+        {
+          "locator": "question C01",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Exact declared amplification alternative."
+        }
+      ],
+      "status": "frozen",
+      "structural_class": "diagnostic_center",
+      "structural_salience": 0.9,
+      "unresolved_reason": null
+    },
+    {
+      "behavioral_statement": "The safe-alone emotional baseline is wave-like.",
+      "chart_feature_predicate": {
+        "feature": "defined_centers",
+        "operator": "contains_any",
+        "values": [
+          "Solar Plexus"
+        ]
+      },
+      "contradiction_rule": null,
+      "dependency_cluster": "AUTHORITY_DECISION",
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-CENTER-SOLARPLEXUS-DEFINED-C02",
+      "observation_id": "OBS-CENTER-EMOTIONAL-WAVE",
+      "predicted_response": {
+        "canonical_answer_token": "wave_like",
+        "rule": "symbolic_support",
+        "support_answer_tokens": [
+          "wave_like"
+        ]
+      },
+      "question_ids": [
+        "C02"
+      ],
+      "sources": [
+        {
+          "locator": "§9.2 Emotional wave versus mood instability",
+          "path": "reference/core/human_design_reverse_matching_protocol_v4_1.md",
+          "rationale": "The protocol treats the emotional wave as a specific architecture-relevant process."
+        },
+        {
+          "locator": "question C02",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Exact declared emotional-baseline alternative."
+        }
+      ],
+      "status": "frozen",
+      "structural_class": "diagnostic_center",
+      "structural_salience": 0.9,
+      "unresolved_reason": null
+    },
+    {
+      "behavioral_statement": "There is a recurring pressure to prove worth or promise beyond capacity.",
+      "chart_feature_predicate": {
+        "feature": "defined_centers",
+        "operator": "not_contains_any",
+        "values": [
+          "Ego",
+          "Heart",
+          "Heart Ego",
+          "Will"
+        ]
+      },
+      "contradiction_rule": null,
+      "dependency_cluster": "CENTER_EGO_STATE",
+      "mapping_directness": 0.75,
+      "mapping_directness_class": "strong",
+      "mapping_id": "MAP-CENTER-EGO-UNDEFINED-C03",
+      "observation_id": "OBS-CENTER-EGO-PROVING",
+      "predicted_response": {
+        "canonical_answer_token": "very_often",
+        "rule": "symbolic_support",
+        "support_answer_tokens": [
+          "very_often"
+        ]
+      },
+      "question_ids": [
+        "C03"
+      ],
+      "sources": [
+        {
+          "locator": "§16 Contradiction scale",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "The protocol permits a frozen distinction between reliable internally generated will and inconsistent/conditioned will."
+        },
+        {
+          "locator": "question C03",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "The item separates proving and overpromising from an externally required demand."
+        }
+      ],
+      "status": "frozen",
+      "structural_class": "diagnostic_center",
+      "structural_salience": 0.9,
+      "unresolved_reason": null
+    },
+    {
+      "behavioral_statement": "Physical energy renews through the right work.",
+      "chart_feature_predicate": {
+        "feature": "defined_centers",
+        "operator": "contains_any",
+        "values": [
+          "Sacral"
+        ]
+      },
+      "contradiction_rule": {
+        "answer_tokens": [
+          "prolonged_work_deplete_you_even_when_it_is_meaningful"
+        ],
+        "behavioral_rationale": "Meaningful work causing depletion is the declared opposing energy pattern.",
+        "severity": 0.75
+      },
+      "dependency_cluster": "TYPE_STRATEGY_ARCHITECTURE",
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-CENTER-SACRAL-DEFINED-C08",
+      "observation_id": "OBS-CENTER-SACRAL-ENERGY",
+      "predicted_response": {
+        "canonical_answer_token": "physical_energy_renew_through_doing_the_right_work",
+        "rule": "symbolic_support",
+        "support_answer_tokens": [
+          "physical_energy_renew_through_doing_the_right_work"
+        ]
+      },
+      "question_ids": [
+        "C08"
+      ],
+      "sources": [
+        {
+          "locator": "§16 Contradiction scale",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "The protocol explicitly contrasts sustainable Sacral-style workforce energy with the opposite architecture."
+        },
+        {
+          "locator": "question C08",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Exact declared energy-renewal alternative."
+        }
+      ],
+      "status": "frozen",
+      "structural_class": "diagnostic_center",
+      "structural_salience": 0.9,
+      "unresolved_reason": null
+    },
+    {
+      "behavioral_statement": "Prolonged work depletes even when it is meaningful.",
+      "chart_feature_predicate": {
+        "feature": "defined_centers",
+        "operator": "not_contains_any",
+        "values": [
+          "Sacral"
+        ]
+      },
+      "contradiction_rule": {
+        "answer_tokens": [
+          "physical_energy_renew_through_doing_the_right_work"
+        ],
+        "behavioral_rationale": "Renewal through work is the declared opposing energy pattern.",
+        "severity": 0.75
+      },
+      "dependency_cluster": "TYPE_STRATEGY_ARCHITECTURE",
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-CENTER-SACRAL-UNDEFINED-C08",
+      "observation_id": "OBS-CENTER-NONSACRAL-DEPLETION",
+      "predicted_response": {
+        "canonical_answer_token": "prolonged_work_deplete_you_even_when_it_is_meaningful",
+        "rule": "symbolic_support",
+        "support_answer_tokens": [
+          "prolonged_work_deplete_you_even_when_it_is_meaningful"
+        ]
+      },
+      "question_ids": [
+        "C08"
+      ],
+      "sources": [
+        {
+          "locator": "§16 Contradiction scale",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "The protocol explicitly permits the opposing non-Sacral energy prediction."
+        },
+        {
+          "locator": "question C08",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Exact declared depletion alternative."
+        }
+      ],
+      "status": "frozen",
+      "structural_class": "diagnostic_center",
+      "structural_salience": 0.9,
+      "unresolved_reason": null
+    },
+    {
+      "behavioral_statement": "Direction rests on a stable internal sense of identity.",
+      "chart_feature_predicate": {
+        "feature": "defined_centers",
+        "operator": "contains_any",
+        "values": [
+          "G",
+          "Identity"
+        ]
+      },
+      "contradiction_rule": null,
+      "dependency_cluster": "CENTER_G_STATE",
+      "mapping_directness": 0.75,
+      "mapping_directness_class": "strong",
+      "mapping_id": "MAP-CENTER-G-DEFINED-D07",
+      "observation_id": "OBS-CENTER-G-STABLE-DIRECTION",
+      "predicted_response": {
+        "canonical_answer_token": "feel_a_stable_internal_sense_of_who_you_are_and_where_you_are_going",
+        "rule": "symbolic_support",
+        "support_answer_tokens": [
+          "feel_a_stable_internal_sense_of_who_you_are_and_where_you_are_going"
+        ]
+      },
+      "question_ids": [
+        "D07"
+      ],
+      "sources": [
+        {
+          "locator": "§8.3 Diagnostic Centers",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "Strong center-state predictions may be frozen as a core architecture block."
+        },
+        {
+          "locator": "question D07",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Exact declared stable-identity alternative."
+        }
+      ],
+      "status": "frozen",
+      "structural_class": "diagnostic_center",
+      "structural_salience": 0.9,
+      "unresolved_reason": null
+    },
+    {
+      "behavioral_statement": "Direction becomes clearer through surrounding people and places.",
+      "chart_feature_predicate": {
+        "feature": "defined_centers",
+        "operator": "not_contains_any",
+        "values": [
+          "G",
+          "Identity"
+        ]
+      },
+      "contradiction_rule": null,
+      "dependency_cluster": "CENTER_G_STATE",
+      "mapping_directness": 0.75,
+      "mapping_directness_class": "strong",
+      "mapping_id": "MAP-CENTER-G-UNDEFINED-D07",
+      "observation_id": "OBS-CENTER-G-ENVIRONMENTAL-DIRECTION",
+      "predicted_response": {
+        "canonical_answer_token": "direction_become_clearer_through_the_people_and_places_around_you",
+        "rule": "symbolic_support",
+        "support_answer_tokens": [
+          "direction_become_clearer_through_the_people_and_places_around_you"
+        ]
+      },
+      "question_ids": [
+        "D07"
+      ],
+      "sources": [
+        {
+          "locator": "§8.3 Diagnostic Centers",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "Strong center-state predictions may be frozen as a core architecture block."
+        },
+        {
+          "locator": "question D07",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Exact declared environmental-direction alternative."
+        }
+      ],
+      "status": "frozen",
+      "structural_class": "diagnostic_center",
+      "structural_salience": 0.9,
+      "unresolved_reason": null
+    },
+    {
+      "behavioral_statement": "Place and company strongly change felt direction or identity.",
+      "chart_feature_predicate": {
+        "feature": "defined_centers",
+        "operator": "not_contains_any",
+        "values": [
+          "G",
+          "Identity"
+        ]
+      },
+      "contradiction_rule": null,
+      "dependency_cluster": "CENTER_G_STATE",
+      "mapping_directness": 0.75,
+      "mapping_directness_class": "strong",
+      "mapping_id": "MAP-CENTER-G-UNDEFINED-C09",
+      "observation_id": "OBS-CENTER-G-ENVIRONMENTAL-DIRECTION",
+      "predicted_response": {
+        "canonical_answer_token": "extremely",
+        "rule": "symbolic_support",
+        "support_answer_tokens": [
+          "extremely"
+        ]
+      },
+      "question_ids": [
+        "C09"
+      ],
+      "sources": [
+        {
+          "locator": "§8.3 Diagnostic Centers",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "Strong center-state predictions may be frozen as a core architecture block."
+        },
+        {
+          "locator": "question C09",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "The response scale is frozen in the question record."
+        }
+      ],
+      "status": "frozen",
+      "structural_class": "diagnostic_center",
+      "structural_salience": 0.9,
+      "unresolved_reason": null
+    },
+    {
+      "behavioral_statement": "Pending tasks create pressure to clear them quickly so the pressure disappears.",
+      "chart_feature_predicate": {
+        "feature": "defined_centers",
+        "operator": "not_contains_any",
+        "values": [
+          "Root"
+        ]
+      },
+      "contradiction_rule": null,
+      "dependency_cluster": "CENTER_ROOT_STATE",
+      "mapping_directness": 0.75,
+      "mapping_directness_class": "strong",
+      "mapping_id": "MAP-CENTER-ROOT-UNDEFINED-C07",
+      "observation_id": "OBS-CENTER-ROOT-PRESSURE-CLEARING",
+      "predicted_response": {
+        "canonical_answer_token": "feel_a_strong_need_to_clear_them_quickly_so_pressure_disappears",
+        "rule": "symbolic_support",
+        "support_answer_tokens": [
+          "feel_a_strong_need_to_clear_them_quickly_so_pressure_disappears"
+        ]
+      },
+      "question_ids": [
+        "C07"
+      ],
+      "sources": [
+        {
+          "locator": "§8.3 Diagnostic Centers",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "Strong center-state predictions may be frozen as a core architecture block."
+        },
+        {
+          "locator": "question C07",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Exact declared pressure-clearing alternative."
+        }
+      ],
+      "status": "frozen",
+      "structural_class": "diagnostic_center",
+      "structural_salience": 0.9,
+      "unresolved_reason": null
+    },
+    {
+      "behavioral_statement": "Foundation investigation precedes action in unfamiliar domains.",
+      "chart_feature_predicate": {
+        "feature": "profile",
+        "operator": "profile_has_line",
+        "values": [
+          "1"
+        ]
+      },
+      "contradiction_rule": null,
+      "dependency_cluster": "PROFILE_ARCHITECTURE",
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-PROFILE-LINE1-P01",
+      "observation_id": "OBS-PROFILE-LINE1-FOUNDATION",
+      "predicted_response": {
+        "canonical_answer_token": "very_often",
+        "rule": "symbolic_support",
+        "support_answer_tokens": [
+          "very_often"
+        ]
+      },
+      "question_ids": [
+        "P01"
+      ],
+      "sources": [
+        {
+          "locator": "§8.4 Profile",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "The protocol permits scoring one genuinely predicted line without forcing a second line."
+        },
+        {
+          "locator": "question P01",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Frozen P-series line-behavior wording."
+        }
+      ],
+      "status": "frozen",
+      "structural_class": "profile",
+      "structural_salience": 0.85,
+      "unresolved_reason": null
+    },
+    {
+      "behavioral_statement": "Strong abilities develop privately and are recognized by others.",
+      "chart_feature_predicate": {
+        "feature": "profile",
+        "operator": "profile_has_line",
+        "values": [
+          "2"
+        ]
+      },
+      "contradiction_rule": null,
+      "dependency_cluster": "PROFILE_ARCHITECTURE",
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-PROFILE-LINE2-P02",
+      "observation_id": "OBS-PROFILE-LINE2-NATURAL",
+      "predicted_response": {
+        "canonical_answer_token": "very_often",
+        "rule": "symbolic_support",
+        "support_answer_tokens": [
+          "very_often"
+        ]
+      },
+      "question_ids": [
+        "P02"
+      ],
+      "sources": [
+        {
+          "locator": "§8.4 Profile",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "The protocol permits scoring one genuinely predicted line without forcing a second line."
+        },
+        {
+          "locator": "question P02",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Frozen P-series line-behavior wording."
+        }
+      ],
+      "status": "frozen",
+      "structural_class": "profile",
+      "structural_salience": 0.85,
+      "unresolved_reason": null
+    },
+    {
+      "behavioral_statement": "Learning proceeds primarily through trial, error, and adaptation.",
+      "chart_feature_predicate": {
+        "feature": "profile",
+        "operator": "profile_has_line",
+        "values": [
+          "3"
+        ]
+      },
+      "contradiction_rule": null,
+      "dependency_cluster": "PROFILE_ARCHITECTURE",
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-PROFILE-LINE3-P03",
+      "observation_id": "OBS-PROFILE-LINE3-TRIAL-ERROR",
+      "predicted_response": {
+        "canonical_answer_token": "very_often",
+        "rule": "symbolic_support",
+        "support_answer_tokens": [
+          "very_often"
+        ]
+      },
+      "question_ids": [
+        "P03"
+      ],
+      "sources": [
+        {
+          "locator": "§8.4 Profile",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "The protocol permits scoring one genuinely predicted line without forcing a second line."
+        },
+        {
+          "locator": "question P03",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Frozen P-series line-behavior wording."
+        }
+      ],
+      "status": "frozen",
+      "structural_class": "profile",
+      "structural_salience": 0.85,
+      "unresolved_reason": null
+    },
+    {
+      "behavioral_statement": "Network reputation strongly affects later opportunities.",
+      "chart_feature_predicate": {
+        "feature": "profile",
+        "operator": "profile_has_line",
+        "values": [
+          "4"
+        ]
+      },
+      "contradiction_rule": null,
+      "dependency_cluster": "PROFILE_ARCHITECTURE",
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-PROFILE-LINE4-P10",
+      "observation_id": "OBS-PROFILE-LINE4-NETWORK",
+      "predicted_response": {
+        "canonical_answer_token": "extremely",
+        "rule": "symbolic_support",
+        "support_answer_tokens": [
+          "extremely"
+        ]
+      },
+      "question_ids": [
+        "P10"
+      ],
+      "sources": [
+        {
+          "locator": "§8.4 Profile",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "The protocol permits scoring one genuinely predicted line without forcing a second line."
+        },
+        {
+          "locator": "question P10",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Frozen P-series line-behavior wording."
+        }
+      ],
+      "status": "frozen",
+      "structural_class": "profile",
+      "structural_salience": 0.85,
+      "unresolved_reason": null
+    },
+    {
+      "behavioral_statement": "Others project a larger practical role and later encounter its limits.",
+      "chart_feature_predicate": {
+        "feature": "profile",
+        "operator": "profile_has_line",
+        "values": [
+          "5"
+        ]
+      },
+      "contradiction_rule": null,
+      "dependency_cluster": "PROFILE_ARCHITECTURE",
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-PROFILE-LINE5-P05",
+      "observation_id": "OBS-PROFILE-LINE5-PROJECTION",
+      "predicted_response": {
+        "canonical_answer_token": "very_often",
+        "rule": "symbolic_support",
+        "support_answer_tokens": [
+          "very_often"
+        ]
+      },
+      "question_ids": [
+        "P05"
+      ],
+      "sources": [
+        {
+          "locator": "§8.4 Profile",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "The protocol permits scoring one genuinely predicted line without forcing a second line."
+        },
+        {
+          "locator": "question P05",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Frozen P-series line-behavior wording."
+        }
+      ],
+      "status": "frozen",
+      "structural_class": "profile",
+      "structural_salience": 0.85,
+      "unresolved_reason": null
+    },
+    {
+      "behavioral_statement": "Life follows experimentation, observation, and later role-modeling phases.",
+      "chart_feature_predicate": {
+        "feature": "profile",
+        "operator": "profile_has_line",
+        "values": [
+          "6"
+        ]
+      },
+      "contradiction_rule": null,
+      "dependency_cluster": "PROFILE_ARCHITECTURE",
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-PROFILE-LINE6-P07",
+      "observation_id": "OBS-PROFILE-LINE6-DEVELOPMENT",
+      "predicted_response": {
+        "canonical_answer_token": "strongly",
+        "rule": "symbolic_support",
+        "support_answer_tokens": [
+          "strongly"
+        ]
+      },
+      "question_ids": [
+        "P07"
+      ],
+      "sources": [
+        {
+          "locator": "§8.4 Profile",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "The protocol permits scoring one genuinely predicted line without forcing a second line."
+        },
+        {
+          "locator": "question P07",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Frozen P-series line-behavior wording."
+        }
+      ],
+      "status": "frozen",
+      "structural_class": "profile",
+      "structural_salience": 0.85,
+      "unresolved_reason": null
+    },
+    {
+      "behavioral_statement": "Accurate calling-out of natural ability produces relief and mobilization.",
+      "chart_feature_predicate": {
+        "feature": "profile",
+        "operator": "profile_has_line",
+        "values": [
+          "2"
+        ]
+      },
+      "contradiction_rule": null,
+      "dependency_cluster": "PROFILE_ARCHITECTURE",
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-PROFILE-LINE2-P09",
+      "observation_id": "OBS-PROFILE-LINE2-NATURAL",
+      "predicted_response": {
+        "canonical_answer_token": "relief_and_mobilization",
+        "rule": "symbolic_support",
+        "support_answer_tokens": [
+          "relief_and_mobilization"
+        ]
+      },
+      "question_ids": [
+        "P09"
+      ],
+      "sources": [
+        {
+          "locator": "§8.4 Profile",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "The protocol permits scoring one genuinely predicted line without forcing a second line."
+        },
+        {
+          "locator": "question P09",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Frozen P-series line-behavior wording."
+        }
+      ],
+      "status": "frozen",
+      "structural_class": "profile",
+      "structural_salience": 0.85,
+      "unresolved_reason": null
+    },
+    {
+      "behavioral_statement": "Failed experiments are treated as data.",
+      "chart_feature_predicate": {
+        "feature": "profile",
+        "operator": "profile_has_line",
+        "values": [
+          "3"
+        ]
+      },
+      "contradiction_rule": null,
+      "dependency_cluster": "PROFILE_ARCHITECTURE",
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-PROFILE-LINE3-P11",
+      "observation_id": "OBS-PROFILE-LINE3-TRIAL-ERROR",
+      "predicted_response": {
+        "canonical_answer_token": "treat_it_as_data",
+        "rule": "symbolic_support",
+        "support_answer_tokens": [
+          "treat_it_as_data"
+        ]
+      },
+      "question_ids": [
+        "P11"
+      ],
+      "sources": [
+        {
+          "locator": "§8.4 Profile",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "The protocol permits scoring one genuinely predicted line without forcing a second line."
+        },
+        {
+          "locator": "question P11",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Frozen P-series line-behavior wording."
+        }
+      ],
+      "status": "frozen",
+      "structural_class": "profile",
+      "structural_salience": 0.85,
+      "unresolved_reason": null
+    },
+    {
+      "behavioral_statement": "Perspective is sought because of lived experience.",
+      "chart_feature_predicate": {
+        "feature": "profile",
+        "operator": "profile_has_line",
+        "values": [
+          "6"
+        ]
+      },
+      "contradiction_rule": null,
+      "dependency_cluster": "PROFILE_ARCHITECTURE",
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-PROFILE-LINE6-P12",
+      "observation_id": "OBS-PROFILE-LINE6-DEVELOPMENT",
+      "predicted_response": {
+        "canonical_answer_token": "because_of_what_you_have_lived_through",
+        "rule": "symbolic_support",
+        "support_answer_tokens": [
+          "because_of_what_you_have_lived_through"
+        ]
+      },
+      "question_ids": [
+        "P12"
+      ],
+      "sources": [
+        {
+          "locator": "§8.4 Profile",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "The protocol permits scoring one genuinely predicted line without forcing a second line."
+        },
+        {
+          "locator": "question P12",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Frozen P-series line-behavior wording."
+        }
+      ],
+      "status": "frozen",
+      "structural_class": "profile",
+      "structural_salience": 0.85,
+      "unresolved_reason": null
+    },
+    {
+      "behavioral_statement": "V3.2 invalidates expertise or polished output as positive symbolic evidence of an independent mastery drive; only a separately learned human model may re-establish it.",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "MASTERY_MOTIVE",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-V32-MASTERY-EXCLUDED",
+      "observation_id": "OBS-V32-MASTERY-EXCLUDED",
+      "predicted_response": null,
+      "question_ids": [
+        "A05",
+        "T02",
+        "T03"
+      ],
+      "sources": [
+        {
+          "locator": "Behavioral corrections",
+          "path": "reference/core/v3_2_scoring_delta.md",
+          "rationale": "The V3.2 delta explicitly removes mastery and advancement shortcuts from positive scoring."
+        }
+      ],
+      "status": "empirical_only",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "V3.2 invalidates expertise or polished output as positive symbolic evidence of an independent mastery drive; only a separately learned human model may re-establish it."
+    },
+    {
+      "behavioral_statement": "V3.2 states that institutional participation does not imply motivational identification or imitation; no replacement chart predicate is supplied.",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "SYSTEM_IDENTIFICATION",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-V32-SYSTEM-IDENTIFICATION-EXCLUDED",
+      "observation_id": "OBS-V32-SYSTEM-IDENTIFICATION-EXCLUDED",
+      "predicted_response": null,
+      "question_ids": [
+        "A06"
+      ],
+      "sources": [
+        {
+          "locator": "Behavioral corrections",
+          "path": "reference/core/v3_2_scoring_delta.md",
+          "rationale": "The V3.2 delta explicitly removes mastery and advancement shortcuts from positive scoring."
+        }
+      ],
+      "status": "empirical_only",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "V3.2 states that institutional participation does not imply motivational identification or imitation; no replacement chart predicate is supplied."
+    },
+    {
+      "behavioral_statement": "V3.2 removes material or hierarchical advancement as positive symbolic evidence and keeps resource competence separate; only empirical refitting may restore it.",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "HIERARCHICAL_ADVANCEMENT",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-V32-ADVANCEMENT-EXCLUDED",
+      "observation_id": "OBS-V32-ADVANCEMENT-EXCLUDED",
+      "predicted_response": null,
+      "question_ids": [
+        "A07",
+        "T10"
+      ],
+      "sources": [
+        {
+          "locator": "Behavioral corrections",
+          "path": "reference/core/v3_2_scoring_delta.md",
+          "rationale": "The V3.2 delta explicitly removes mastery and advancement shortcuts from positive scoring."
+        }
+      ],
+      "status": "empirical_only",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "V3.2 removes material or hierarchical advancement as positive symbolic evidence and keeps resource competence separate; only empirical refitting may restore it."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for body_access: When you are relatively calm, how easy is it to notice basic bodily states such as hunger, fatigue, muscular tension, warmth, contraction, or expansion before you explain them?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_R01",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-R01",
+      "observation_id": "OBS-UNRESOLVED-R01",
+      "predicted_response": null,
+      "question_ids": [
+        "R01"
+      ],
+      "sources": [
+        {
+          "locator": "question R01",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for dissociative_distance: In the past month, how often have you felt detached from your body, unreal, outside yourself, or as though the world were dreamlike?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_R02",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-R02",
+      "observation_id": "OBS-UNRESOLVED-R02",
+      "predicted_response": null,
+      "question_ids": [
+        "R02"
+      ],
+      "sources": [
+        {
+          "locator": "question R02",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for retrospective_access: How often do you recognize what your body was signaling only after you have acted or after the situation is over?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_R03",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-R03",
+      "observation_id": "OBS-UNRESOLVED-R03",
+      "predicted_response": null,
+      "question_ids": [
+        "R03"
+      ],
+      "sources": [
+        {
+          "locator": "question R03",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for threat_amplification: When you are objectively safe, do ordinary sensations such as a fast heartbeat, stomach tension, or tightness frequently feel like immediate danger or urgency?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_R04",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-R04",
+      "observation_id": "OBS-UNRESOLVED-R04",
+      "predicted_response": null,
+      "question_ids": [
+        "R04"
+      ],
+      "sources": [
+        {
+          "locator": "question R04",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for social_override: In interpersonal situations, how often do you agree, appease, freeze, or stay silent even while another part of you seems to resist?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_R05",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-R05",
+      "observation_id": "OBS-UNRESOLVED-R05",
+      "predicted_response": null,
+      "question_ids": [
+        "R05"
+      ],
+      "sources": [
+        {
+          "locator": "question R05",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for cognitive_override: How often is there an initial bodily response that your reasoning later talks you out of?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_R06",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-R06",
+      "observation_id": "OBS-UNRESOLVED-R06",
+      "predicted_response": null,
+      "question_ids": [
+        "R06"
+      ],
+      "sources": [
+        {
+          "locator": "question R06",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for state_stability: How much do your bodily answers change with sleep deprivation, pain, medication, substances, conflict, hunger, or the presence of a particular person?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_R07",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-R07",
+      "observation_id": "OBS-UNRESOLVED-R07",
+      "predicted_response": null,
+      "question_ids": [
+        "R07"
+      ],
+      "sources": [
+        {
+          "locator": "question R07",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for low_stakes_testability: Can you detect and test bodily preferences on ordinary reversible choices, such as food, route, timing, or whether to continue a minor activity?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_R08",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-R08",
+      "observation_id": "OBS-UNRESOLVED-R08",
+      "predicted_response": null,
+      "question_ids": [
+        "R08"
+      ],
+      "sources": [
+        {
+          "locator": "question R08",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for childhood: Before adolescence, what did you do spontaneously when nobody was directing you? Describe recurring activities, questions, social patterns, and ways adults or peers responded to you.",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_A01",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-A01",
+      "observation_id": "OBS-UNRESOLVED-A01",
+      "predicted_response": null,
+      "question_ids": [
+        "A01"
+      ],
+      "sources": [
+        {
+          "locator": "question A01",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for major_decisions: Describe three consequential decisions that worked well and three that did not. For each, what happened first internally, how long did clarity take, who initiated the situation, and what did you do?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_A02",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-A02",
+      "observation_id": "OBS-UNRESOLVED-A02",
+      "predicted_response": null,
+      "question_ids": [
+        "A02"
+      ],
+      "sources": [
+        {
+          "locator": "question A02",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for energy: Describe your natural work rhythm when no employer or deadline controls you. What starts a productive period, how long can it continue, and what tells you to stop?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_A03",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-A03",
+      "observation_id": "OBS-UNRESOLVED-A03",
+      "predicted_response": null,
+      "question_ids": [
+        "A03"
+      ],
+      "sources": [
+        {
+          "locator": "question A03",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for opportunity: List five important opportunities or relationships. Did you pursue them, respond to something already present, receive a clear invitation or recognition, initiate without external cue, or drift into them?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_A04",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-A04",
+      "observation_id": "OBS-UNRESOLVED-A04",
+      "predicted_response": null,
+      "question_ids": [
+        "A04"
+      ],
+      "sources": [
+        {
+          "locator": "question A04",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for conflict: Describe your behavior in sudden crisis, prolonged interpersonal ambiguity, ordinary disagreement, and unmistakable betrayal.",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_A08",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-A08",
+      "observation_id": "OBS-UNRESOLVED-A08",
+      "predicted_response": null,
+      "question_ids": [
+        "A08"
+      ],
+      "sources": [
+        {
+          "locator": "question A08",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for relationships: How do close relationships usually begin, deepen, and end for you? Include who initiates, how trust forms, how caregiving works, and what permanently breaks access.",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_A09",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-A09",
+      "observation_id": "OBS-UNRESOLVED-A09",
+      "predicted_response": null,
+      "question_ids": [
+        "A09"
+      ],
+      "sources": [
+        {
+          "locator": "question A09",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for development: Divide your life into major phases. For each phase, describe the dominant question, role, environment, work pattern, and way you related to other people.",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_A10",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-A10",
+      "observation_id": "OBS-UNRESOLVED-A10",
+      "predicted_response": null,
+      "question_ids": [
+        "A10"
+      ],
+      "sources": [
+        {
+          "locator": "question A10",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for voice_clarity: Have you experienced not knowing what you want until you hear yourself speaking spontaneously, even when the listener gives no advice?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_D04",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-D04",
+      "observation_id": "OBS-UNRESOLVED-D04",
+      "predicted_response": null,
+      "question_ids": [
+        "D04"
+      ],
+      "sources": [
+        {
+          "locator": "question D04",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for environmental_clarity: Do major choices become clearer mainly by moving through different places, speaking with several neutral people, or observing the environment over time rather than by one inner signal?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_D05",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-D05",
+      "observation_id": "OBS-UNRESOLVED-D05",
+      "predicted_response": null,
+      "question_ids": [
+        "D05"
+      ],
+      "sources": [
+        {
+          "locator": "question D05",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for will_commitment: When you make a serious promise from your own initiative, how reliable is your capacity to carry it through? Distinguish genuine chosen commitments from pressured agreements.",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_D06",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-D06",
+      "observation_id": "OBS-UNRESOLVED-D06",
+      "predicted_response": null,
+      "question_ids": [
+        "D06"
+      ],
+      "sources": [
+        {
+          "locator": "question D06",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for urgency: Under pressure, what feels most compelling: removing the pressure quickly, proving you can do it, avoiding disappointment, following a bodily yes, waiting for emotional clarity, or withdrawing until the demand loses force?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_D08",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-D08",
+      "observation_id": "OBS-UNRESOLVED-D08",
+      "predicted_response": null,
+      "question_ids": [
+        "D08"
+      ],
+      "sources": [
+        {
+          "locator": "question D08",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for initiation: When you repeatedly initiate projects or relationships without a clear external opening, what is the usual result: momentum, resistance, exhaustion, indifference, mixed results, or context-dependent?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_S01",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-S01",
+      "observation_id": "OBS-UNRESOLVED-S01",
+      "predicted_response": null,
+      "question_ids": [
+        "S01"
+      ],
+      "sources": [
+        {
+          "locator": "question S01",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for burst_output: Do you produce unusually concentrated output in bursts that are difficult to maintain, or is your output steadier and replenished by continued work?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_S06",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-S06",
+      "observation_id": "OBS-UNRESOLVED-S06",
+      "predicted_response": null,
+      "question_ids": [
+        "S06"
+      ],
+      "sources": [
+        {
+          "locator": "question S06",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for restoration: After intensive social contact or major experiences, do you need solitude primarily for physical recovery, emotional clearing, perspective, creative incubation, or not at all?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_S07",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-S07",
+      "observation_id": "OBS-UNRESOLVED-S07",
+      "predicted_response": null,
+      "question_ids": [
+        "S07"
+      ],
+      "sources": [
+        {
+          "locator": "question S07",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for frustration_signatures: When life is persistently misaligned, which state is most characteristic: frustration, anger, bitterness, disappointment, restless pressure, numb withdrawal, or something else?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_S08",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-S08",
+      "observation_id": "OBS-UNRESOLVED-S08",
+      "predicted_response": null,
+      "question_ids": [
+        "S08"
+      ],
+      "sources": [
+        {
+          "locator": "question S08",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for network_opportunity: How often do major opportunities arrive through friends, friends-of-friends, existing communities, or trusted relational bridges?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_P04",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-P04",
+      "observation_id": "OBS-UNRESOLVED-P04",
+      "predicted_response": null,
+      "question_ids": [
+        "P04"
+      ],
+      "sources": [
+        {
+          "locator": "question P04",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for practical_solution: When people bring a complex problem, are you most drawn to investigate it, experiment with it, offer a practical solution, connect them to someone, or withdraw until recognized?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_P06",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-P06",
+      "observation_id": "OBS-UNRESOLVED-P06",
+      "predicted_response": null,
+      "question_ids": [
+        "P06"
+      ],
+      "sources": [
+        {
+          "locator": "question P06",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for public_private: Is your public contribution primarily a deliberate public identity, a practical response to requests, a byproduct of private inquiry, an expression of trial-and-error learning, or a role others repeatedly assign you?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_P08",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-P08",
+      "observation_id": "OBS-UNRESOLVED-P08",
+      "predicted_response": null,
+      "question_ids": [
+        "P08"
+      ],
+      "sources": [
+        {
+          "locator": "question P08",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for inspiration_pressure: Do unanswered questions or ideas create mental pressure that feels internally generated and returns until resolved, or do you mostly think in response to external problems?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_C04",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-C04",
+      "observation_id": "OBS-UNRESOLVED-C04",
+      "predicted_response": null,
+      "question_ids": [
+        "C04"
+      ],
+      "sources": [
+        {
+          "locator": "question C04",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for conceptual_certainty: How do you relate to uncertainty in your own explanations: hold multiple possibilities, seek one coherent formulation, speak before understanding, avoid commitment, or repeatedly revise?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_C05",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-C05",
+      "observation_id": "OBS-UNRESOLVED-C05",
+      "predicted_response": null,
+      "question_ids": [
+        "C05"
+      ],
+      "sources": [
+        {
+          "locator": "question C05",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for expression_timing: Do your ideas communicate best spontaneously in the moment, after long private formulation, when directly asked, through writing, or through practiced performance?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_C06",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-C06",
+      "observation_id": "OBS-UNRESOLVED-C06",
+      "predicted_response": null,
+      "question_ids": [
+        "C06"
+      ],
+      "sources": [
+        {
+          "locator": "question C06",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for fear_quality: When caution appears, is it a brief practical warning, recurring anticipatory worry, fear of the unknown, fear of failure, fear of inadequacy, or fear of losing control?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_C10",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-C10",
+      "observation_id": "OBS-UNRESOLVED-C10",
+      "predicted_response": null,
+      "question_ids": [
+        "C10"
+      ],
+      "sources": [
+        {
+          "locator": "question C10",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for original_contribution: Think of three times your work became influential. Did influence come mainly from representing an established method well, becoming exceptionally practiced, occupying a recognized role, building relationships, or presenting something distinctly your own?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_T01",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-T01",
+      "observation_id": "OBS-UNRESOLVED-T01",
+      "predicted_response": null,
+      "question_ids": [
+        "T01"
+      ],
+      "sources": [
+        {
+          "locator": "question T01",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for correction_scope: What kinds of error are hardest to ignore: any factual mistake, errors that harm people, errors in your own responsibility, violations of elegance, public misinformation, or none consistently?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_T04",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-T04",
+      "observation_id": "OBS-UNRESOLVED-T04",
+      "predicted_response": null,
+      "question_ids": [
+        "T04"
+      ],
+      "sources": [
+        {
+          "locator": "question T04",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for purpose_struggle: How willing are you to endure difficulty when the problem feels consequential, and how quickly do you disengage once the struggle seems unable to solve the underlying issue?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_T05",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-T05",
+      "observation_id": "OBS-UNRESOLVED-T05",
+      "predicted_response": null,
+      "question_ids": [
+        "T05"
+      ],
+      "sources": [
+        {
+          "locator": "question T05",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for recurring_inquiry: Do certain unresolved questions return over months or years until an internally satisfying formulation crystallizes?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_T06",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-T06",
+      "observation_id": "OBS-UNRESOLVED-T06",
+      "predicted_response": null,
+      "question_ids": [
+        "T06"
+      ],
+      "sources": [
+        {
+          "locator": "question T06",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for structuring_insight: When you reach an unusual insight, what happens next: keep it private, speak it abruptly, organize it into a reusable framework, test it experimentally, or seek institutional validation?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_T07",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-T07",
+      "observation_id": "OBS-UNRESOLVED-T07",
+      "predicted_response": null,
+      "question_ids": [
+        "T07"
+      ],
+      "sources": [
+        {
+          "locator": "question T07",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for persuasion: When deliberately persuading someone, how reliably can you identify what they value and adapt the presentation without changing the underlying truth?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_T08",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-T08",
+      "observation_id": "OBS-UNRESOLVED-T08",
+      "predicted_response": null,
+      "question_ids": [
+        "T08"
+      ],
+      "sources": [
+        {
+          "locator": "question T08",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for resource_instinct: How quickly do you sense whether an offer, price, exchange, or allocation is strategically worthwhile?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_T09",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-T09",
+      "observation_id": "OBS-UNRESOLVED-T09",
+      "predicted_response": null,
+      "question_ids": [
+        "T09"
+      ],
+      "sources": [
+        {
+          "locator": "question T09",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for retreat_narrative: After a major experience, do you feel compelled to tell and package the story, need private decompression without narrating it, seek an audience, process through action, or move on immediately?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_T11",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-T11",
+      "observation_id": "OBS-UNRESOLVED-T11",
+      "predicted_response": null,
+      "question_ids": [
+        "T11"
+      ],
+      "sources": [
+        {
+          "locator": "question T11",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for privacy_influence: Does your strongest work emerge from prolonged private incubation, live collaboration, public competition, repeated practice, or immediate response to others?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_T12",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-T12",
+      "observation_id": "OBS-UNRESOLVED-T12",
+      "predicted_response": null,
+      "question_ids": [
+        "T12"
+      ],
+      "sources": [
+        {
+          "locator": "question T12",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for betrayal_response: After undeniable betrayal, are you more likely to confront repeatedly, seek public accountability, quietly revoke access, forgive quickly, remain ambivalent, or attempt repair?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_T13",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-T13",
+      "observation_id": "OBS-UNRESOLVED-T13",
+      "predicted_response": null,
+      "question_ids": [
+        "T13"
+      ],
+      "sources": [
+        {
+          "locator": "question T13",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for crisis_response: In an acute crisis, do you become calmer and more agile, emotionally flooded, controlling, physically aggressive, frozen, or dependent on direction?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_T14",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-T14",
+      "observation_id": "OBS-UNRESOLVED-T14",
+      "predicted_response": null,
+      "question_ids": [
+        "T14"
+      ],
+      "sources": [
+        {
+          "locator": "question T14",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for need_sensitivity: How readily do you notice what other people need, and how automatically do you feel responsible to meet it?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_T15",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-T15",
+      "observation_id": "OBS-UNRESOLVED-T15",
+      "predicted_response": null,
+      "question_ids": [
+        "T15"
+      ],
+      "sources": [
+        {
+          "locator": "question T15",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for leadership_motive: When competent leadership is already present, do you prefer to lead, support, contribute something distinct, observe, compete, or withdraw?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_T16",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-T16",
+      "observation_id": "OBS-UNRESOLVED-T16",
+      "predicted_response": null,
+      "question_ids": [
+        "T16"
+      ],
+      "sources": [
+        {
+          "locator": "question T16",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for comfort_mobilization: How much does having a safe, comfortable, ordered physical baseline affect your ability to think, create, decide, and act?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_T17",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-T17",
+      "observation_id": "OBS-UNRESOLVED-T17",
+      "predicted_response": null,
+      "question_ids": [
+        "T17"
+      ],
+      "sources": [
+        {
+          "locator": "question T17",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for novelty_continuity: Would you rather optimize a stable high-quality routine, seek novelty and variety, alternate between both, or let external demands decide?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_T18",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-T18",
+      "observation_id": "OBS-UNRESOLVED-T18",
+      "predicted_response": null,
+      "question_ids": [
+        "T18"
+      ],
+      "sources": [
+        {
+          "locator": "question T18",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for risk: Which risks are easiest to accept: calculated enterprise risk, social rejection, physical danger for a cause, pure chance, professional rule-breaking, emotional vulnerability, or none?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_T19",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-T19",
+      "observation_id": "OBS-UNRESOLVED-T19",
+      "predicted_response": null,
+      "question_ids": [
+        "T19"
+      ],
+      "sources": [
+        {
+          "locator": "question T19",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for recognition_network: When strangers discover your work, how often is there an identifiable social bridge through a friend, customer, community, or referral?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_T20",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-T20",
+      "observation_id": "OBS-UNRESOLVED-T20",
+      "predicted_response": null,
+      "question_ids": [
+        "T20"
+      ],
+      "sources": [
+        {
+          "locator": "question T20",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for independent_source: Which existing source could test this observation without being created for the search: old writing, school reports, work records, messages, a family member, a partner, or a colleague?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_V01",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-V01",
+      "observation_id": "OBS-UNRESOLVED-V01",
+      "predicted_response": null,
+      "question_ids": [
+        "V01"
+      ],
+      "sources": [
+        {
+          "locator": "question V01",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for counterfactual: What evidence would convince you that this self-description is wrong or overstated?",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_V02",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-V02",
+      "observation_id": "OBS-UNRESOLVED-V02",
+      "predicted_response": null,
+      "question_ids": [
+        "V02"
+      ],
+      "sources": [
+        {
+          "locator": "question V02",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for prospective_decision: Choose five low-stakes decisions over the next two weeks. Before acting, record the first bodily signal, emotional state, mental argument, action, and later outcome without consulting the chart description.",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_V03",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-V03",
+      "observation_id": "OBS-UNRESOLVED-V03",
+      "predicted_response": null,
+      "question_ids": [
+        "V03"
+      ],
+      "sources": [
+        {
+          "locator": "question V03",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for prospective_opportunity: For the next ten meaningful opportunities, record who initiated, whether recognition was specific, whether a social bridge existed, and the result.",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_V04",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-V04",
+      "observation_id": "OBS-UNRESOLVED-V04",
+      "predicted_response": null,
+      "question_ids": [
+        "V04"
+      ],
+      "sources": [
+        {
+          "locator": "question V04",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    },
+    {
+      "behavioral_statement": "Unresolved mapping for blind_informant: Ask an informant to choose between neutral behavioral scenarios without seeing dates, chart terms, or your preferred answer.",
+      "chart_feature_predicate": null,
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_V05",
+      "mapping_directness": null,
+      "mapping_directness_class": null,
+      "mapping_id": "MAP-UNRESOLVED-V05",
+      "observation_id": "OBS-UNRESOLVED-V05",
+      "predicted_response": null,
+      "question_ids": [
+        "V05"
+      ],
+      "sources": [
+        {
+          "locator": "question V05",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "Normative frozen question wording."
+        },
+        {
+          "locator": "Mapping Library Formalization TODO",
+          "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+          "rationale": "Unsupported mappings must remain unresolved rather than being invented."
+        }
+      ],
+      "status": "unresolved",
+      "structural_class": null,
+      "structural_salience": null,
+      "unresolved_reason": "The normative repository supplies no predeclared chart-feature predicate and contradiction rule for this question. It remains non-scoring until a sourced symbolic mapping or separately versioned empirical mapping exists."
+    }
+  ],
+  "model_version": "V4/V3.2-symbolic-v1",
+  "question_bank_sha256": "31f813efc3da7263569ef010a8336b1b1b0c44801b7aa0f91e33b3fa4587d820",
+  "question_bank_version": "1.0.0",
+  "schema_version": "mapping-library-v1",
+  "source_artifacts": [
+    {
+      "path": "reference/core/question_bank_v1.json",
+      "sha256": "31f813efc3da7263569ef010a8336b1b1b0c44801b7aa0f91e33b3fa4587d820"
+    },
+    {
+      "path": "reference/core/human_design_reverse_matching_protocol_v4_1.md",
+      "sha256": "2114625dccdcfeec2bf24d506c933ad6c9081284c34143625c1288edca765c74"
+    },
+    {
+      "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+      "sha256": "678f552b989f3547900a33e1e45fccaad2da969d94c950d0ec976d853455761f"
+    },
+    {
+      "path": "reference/core/updated_behavioral_profile_v3_2.md",
+      "sha256": "7b7c2b5f8cad22baeb2eb28a1076def3a60d2f3d4692bd689beec4b9eabe7f92"
+    },
+    {
+      "path": "reference/core/v3_2_scoring_delta.md",
+      "sha256": "3744b2183652245b34f6e128d1e217e150305bf755b132958a95adc0661df720"
+    },
+    {
+      "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+      "sha256": "523c43ad5ed30363563824e2906a399c0ce6d315ea33c91787c395f5818e7e7e"
+    }
+  ]
+}
