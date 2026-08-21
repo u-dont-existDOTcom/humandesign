@@ -309,7 +309,7 @@ def _command_reveal_evaluate(args: argparse.Namespace) -> int:
         key_path=key_file,
         decoder_root=ROOT,
     )
-    evaluation = evaluate_frozen_run(run_dir, answer_key=revealed.answer_key)
+    evaluation = evaluate_frozen_run(run_dir, revealed=revealed)
     _write_transparent_reports(run_dir, evaluation)
     print(f"evaluation: {run_dir / 'evaluation.json'}")
     print(json.dumps(evaluation.aggregate.model_dump(mode="json"), sort_keys=True))

@@ -43,8 +43,10 @@ def _evaluation(
     prediction_sha256: str,
     freeze_sha256: str,
     reveal_sha256: str,
+    run_manifest_sha256: str,
     envelope_sha256: str,
     answer_key_payload_sha256: str,
+    generation_seed_commitment_sha256: str,
     revealed_target_set_sha256: str | None = _HASH_C,
 ) -> EvaluationReport:
     ranked_ids = [
@@ -73,6 +75,7 @@ def _evaluation(
         prediction_sha256=prediction_sha256,
         freeze_sha256=freeze_sha256,
         reveal_sha256=reveal_sha256,
+        run_manifest_sha256=run_manifest_sha256,
         encrypted_answer_key_file="answer_key.json.enc",
         encrypted_answer_key_sha256=envelope_sha256,
         answer_key_payload_sha256=answer_key_payload_sha256,
@@ -81,6 +84,7 @@ def _evaluation(
         question_bank_sha256=_HASH_E,
         mapping_sha256=_HASH_F,
         revealed_target_set_sha256=revealed_target_set_sha256,
+        generation_seed_commitment_sha256=generation_seed_commitment_sha256,
         aggregate=aggregate_rank_metrics([case], total_case_count=2),
         cases=(case,),
         failures=(failure,),
@@ -99,12 +103,15 @@ def _write_run(
     software_dirty: bool = False,
     revealed_target_set_sha256: str | None = _HASH_C,
     tzdata_version: str = "2026.1",
-    recovery_config_sha256: str = _HASH_B,
+    recovery_workers: int = 1,
+    generation_seed: int = 9876,
+    manifest_created_at_utc: datetime | None = None,
 ) -> Path:
     run_dir = root / tier.value
     run_dir.mkdir()
     blind = {
         "schema_version": "blind-synthetic-v1",
+        "generator": "frozen-chart-to-response-model",
         "experiment_id": f"EXP-{tier.value}",
         "model_id": "MODEL-A-CORE-V1",
         "model_sha256": _HASH_D,
@@ -132,10 +139,16 @@ def _write_run(
     blind_path = run_dir / "blind_cases.json"
     write_new_canonical_json(blind_path, blind)
     blind_sha256 = sha256_file(blind_path)
+    recovery_config = {
+        "aggregation": "duration_weighted_evidence",
+        "threshold_rubric_bits": 0.0,
+        "workers": recovery_workers,
+        "cache_policy": "hash-bound exact month universes",
+    }
     manifest = RunManifest(
         experiment_id=f"EXP-{tier.value}",
-        created_at_utc=datetime(2026, 8, 21, tzinfo=UTC),
-        seed=123,
+        created_at_utc=manifest_created_at_utc or datetime(2026, 8, 21, tzinfo=UTC),
+        seed=int(blind_sha256[:16], 16),
         software_commit="same-frozen-engine-commit",
         software_dirty=software_dirty,
         software_environment=SoftwareEnvironment(
@@ -152,7 +165,8 @@ def _write_run(
             "blind_cases.json": blind_sha256,
             "ephemeris:sepl_18.se1": _HASH_A,
         },
-        config_sha256=recovery_config_sha256,
+        config_payload=recovery_config,
+        config_sha256=sha256_json(recovery_config),
     )
     manifest_path = run_dir / "run.manifest.json"
     write_new_canonical_json(manifest_path, manifest)
@@ -195,6 +209,7 @@ def _write_run(
         "schema_version": "answer-key-v1",
         "experiment_id": f"EXP-{tier.value}",
         "blind_input_sha256": blind_sha256,
+        "generation_seed": generation_seed,
         "cases": [
             {"case_id": "C1", "true_local_date": "2000-01-01"},
             {"case_id": "C2", "true_local_date": "2000-01-02"},
@@ -218,6 +233,11 @@ def _write_run(
     )
     reveal = RevealRecord(
         experiment_id=f"EXP-{tier.value}",
+        blind_input_sha256=blind_sha256,
+        model_sha256=_HASH_D,
+        question_bank_sha256=_HASH_E,
+        mapping_sha256=_HASH_F,
+        run_manifest_sha256=sha256_file(manifest_path),
         prediction_sha256=freeze.prediction_sha256,
         freeze_record_sha256=sha256_file(freeze_path),
         encrypted_answer_key_sha256=sha256_file(envelope_path),
@@ -236,8 +256,15 @@ def _write_run(
             prediction_sha256=freeze.prediction_sha256,
             freeze_sha256=sha256_file(freeze_path),
             reveal_sha256=sha256_file(reveal_path),
+            run_manifest_sha256=sha256_file(manifest_path),
             envelope_sha256=reveal.encrypted_answer_key_sha256,
             answer_key_payload_sha256=sha256_json(answer_key),
+            generation_seed_commitment_sha256=sha256_json(
+                {
+                    "schema_version": "synthetic-generation-seed-commitment-v1",
+                    "generation_seed": generation_seed,
+                }
+            ),
             revealed_target_set_sha256=revealed_target_set_sha256,
         ),
     )
@@ -295,6 +322,34 @@ def test_runtime_rejects_manifest_that_does_not_bind_blind_input(tmp_path: Path)
     write_new_canonical_json(run_dir / "run.manifest.json", raw)
 
     with pytest.raises(NoiseBenchmarkInputError, match="does not bind"):
+        load_revealed_noise_tier_run(run_dir, expected_tier=NoiseTier.ORACLE)
+
+
+def test_runtime_rejects_recovery_seed_not_derived_from_blind_input(tmp_path: Path) -> None:
+    run_dir = _write_run(tmp_path, NoiseTier.ORACLE, true_rank=1)
+    manifest_path = run_dir / "run.manifest.json"
+    raw = load_json_bytes(manifest_path, require_canonical=True)
+    assert isinstance(raw, dict)
+    raw["seed"] = 123
+    manifest_path.unlink()
+    write_new_canonical_json(manifest_path, raw)
+
+    with pytest.raises(NoiseBenchmarkInputError, match="deterministically derived"):
+        load_revealed_noise_tier_run(run_dir, expected_tier=NoiseTier.ORACLE)
+
+
+def test_runtime_rejects_manifest_without_exact_recovery_config_payload(
+    tmp_path: Path,
+) -> None:
+    run_dir = _write_run(tmp_path, NoiseTier.ORACLE, true_rank=1)
+    manifest_path = run_dir / "run.manifest.json"
+    raw = load_json_bytes(manifest_path, require_canonical=True)
+    assert isinstance(raw, dict)
+    del raw["config_payload"]
+    manifest_path.unlink()
+    write_new_canonical_json(manifest_path, raw)
+
+    with pytest.raises(NoiseBenchmarkInputError, match="exact recovery configuration"):
         load_revealed_noise_tier_run(run_dir, expected_tier=NoiseTier.ORACLE)
 
 
@@ -408,6 +463,18 @@ def test_runtime_rejects_reveal_timestamp_before_prediction_freeze(tmp_path: Pat
         load_revealed_noise_tier_run(run_dir, expected_tier=NoiseTier.ORACLE)
 
 
+def test_runtime_rejects_prediction_freeze_before_run_manifest(tmp_path: Path) -> None:
+    run_dir = _write_run(
+        tmp_path,
+        NoiseTier.ORACLE,
+        true_rank=1,
+        manifest_created_at_utc=datetime(2026, 8, 21, 0, 11, tzinfo=UTC),
+    )
+
+    with pytest.raises(NoiseBenchmarkInputError, match="provenance chain"):
+        load_revealed_noise_tier_run(run_dir, expected_tier=NoiseTier.ORACLE)
+
+
 def test_comparison_rejects_different_revealed_cohort_hash(tmp_path: Path) -> None:
     run_dirs = _run_dirs(tmp_path)
     changed_root = tmp_path / "changed-target"
@@ -448,10 +515,29 @@ def test_comparison_binds_exact_recovery_configuration(tmp_path: Path) -> None:
         changed_root,
         NoiseTier.MEDIUM,
         true_rank=1,
-        recovery_config_sha256=_HASH_D,
+        recovery_workers=2,
     )
 
     with pytest.raises(NoiseBenchmarkInputError, match="recovery_config_sha256"):
+        build_noise_benchmark_from_run_dirs(run_dirs)
+
+
+def test_comparison_binds_same_hidden_generation_seed_without_decrypting(
+    tmp_path: Path,
+) -> None:
+    run_dirs = _run_dirs(tmp_path)
+    changed_root = tmp_path / "changed-generation-seed"
+    changed_root.mkdir()
+    run_dirs[NoiseTier.MEDIUM] = _write_run(
+        changed_root,
+        NoiseTier.MEDIUM,
+        true_rank=1,
+        generation_seed=9877,
+    )
+
+    with pytest.raises(
+        NoiseBenchmarkInputError, match="generation_seed_commitment_sha256"
+    ):
         build_noise_benchmark_from_run_dirs(run_dirs)
 
 

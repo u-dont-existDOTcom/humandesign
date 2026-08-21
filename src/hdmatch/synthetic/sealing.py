@@ -17,7 +17,6 @@ from pydantic import BaseModel, ConfigDict, Field
 
 from hdmatch.experiments.canonical import (
     canonical_json_bytes,
-    load_json_bytes,
     sha256_bytes,
     write_new_canonical_json,
 )
@@ -284,9 +283,21 @@ def seal_answer_key_file(
 
 def load_envelope(path: str | Path) -> AnswerKeyEnvelope:
     try:
-        value = load_json_bytes(path, require_canonical=True)
-        return AnswerKeyEnvelope.model_validate(value)
+        raw = Path(path).read_bytes()
+        return load_envelope_bytes(raw)
     except (OSError, ValueError) as exc:
+        raise AnswerKeySealingError("invalid encrypted answer-key envelope") from exc
+
+
+def load_envelope_bytes(raw: bytes) -> AnswerKeyEnvelope:
+    """Parse one exact canonical envelope byte string."""
+
+    try:
+        value = json.loads(raw)
+        if canonical_json_bytes(value) != raw:
+            raise ValueError("encrypted answer-key envelope is not canonical JSON")
+        return AnswerKeyEnvelope.model_validate(value)
+    except (UnicodeDecodeError, json.JSONDecodeError, ValueError) as exc:
         raise AnswerKeySealingError("invalid encrypted answer-key envelope") from exc
 
 
@@ -306,17 +317,33 @@ def verify_envelope_bindings(
     return envelope
 
 
-def decrypt_answer_key_bytes(
-    encrypted_path: str | Path,
+def verify_envelope_byte_bindings(
+    raw: bytes,
+    *,
+    expected_metadata: SealingMetadata | None = None,
+) -> AnswerKeyEnvelope:
+    """Validate exact in-memory envelope bytes and public authenticated bindings."""
+
+    envelope = load_envelope_bytes(raw)
+    if expected_metadata is not None and envelope.authenticated_metadata != expected_metadata:
+        raise AnswerKeySealingError("answer-key metadata does not match frozen run bindings")
+    aad = _associated_data(envelope.authenticated_metadata)
+    if sha256_bytes(aad) != envelope.associated_data_sha256:
+        raise AnswerKeySealingError("answer-key associated-data digest is inconsistent")
+    return envelope
+
+
+def decrypt_answer_key_envelope_bytes(
+    encrypted_bytes: bytes,
     *,
     key_path: str | Path,
     decoder_root: str | Path,
     expected_metadata: SealingMetadata | None = None,
 ) -> bytes:
-    """Authenticate and decrypt in memory; this function never writes plaintext."""
+    """Authenticate/decrypt the same exact envelope bytes later recorded by hash."""
 
-    envelope = verify_envelope_bindings(
-        encrypted_path,
+    envelope = verify_envelope_byte_bindings(
+        encrypted_bytes,
         expected_metadata=expected_metadata,
     )
     aad = _associated_data(envelope.authenticated_metadata)
@@ -329,6 +356,27 @@ def decrypt_answer_key_bytes(
         return AESGCM(key).decrypt(nonce, ciphertext, aad)
     except (InvalidTag, ValueError) as exc:
         raise AnswerKeySealingError("answer-key authentication failed") from exc
+
+
+def decrypt_answer_key_bytes(
+    encrypted_path: str | Path,
+    *,
+    key_path: str | Path,
+    decoder_root: str | Path,
+    expected_metadata: SealingMetadata | None = None,
+) -> bytes:
+    """Authenticate and decrypt in memory; this function never writes plaintext."""
+
+    try:
+        encrypted_bytes = Path(encrypted_path).read_bytes()
+    except OSError as exc:
+        raise AnswerKeySealingError("invalid encrypted answer-key envelope") from exc
+    return decrypt_answer_key_envelope_bytes(
+        encrypted_bytes,
+        key_path=key_path,
+        decoder_root=decoder_root,
+        expected_metadata=expected_metadata,
+    )
 
 
 def decrypt_answer_key_json(

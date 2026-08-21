@@ -7,12 +7,12 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any, Literal
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
+from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 from hdmatch.synthetic.sealing import (
     AnswerKeySealingError,
     SealingMetadata,
-    decrypt_answer_key_bytes,
+    decrypt_answer_key_envelope_bytes,
     verify_envelope_bindings,
 )
 
@@ -30,21 +30,24 @@ from .manifest import SHA256_PATTERN
 class RevealRecord(BaseModel):
     model_config = ConfigDict(extra="forbid", frozen=True)
 
-    schema_version: Literal["answer-key-reveal-v1"] = "answer-key-reveal-v1"
+    schema_version: Literal["answer-key-reveal-v2"] = "answer-key-reveal-v2"
     experiment_id: str
+    blind_input_sha256: str = Field(pattern=SHA256_PATTERN)
+    model_sha256: str = Field(pattern=SHA256_PATTERN)
+    question_bank_sha256: str = Field(pattern=SHA256_PATTERN)
+    mapping_sha256: str = Field(pattern=SHA256_PATTERN)
+    run_manifest_sha256: str = Field(pattern=SHA256_PATTERN)
     prediction_sha256: str = Field(pattern=SHA256_PATTERN)
     freeze_record_sha256: str = Field(pattern=SHA256_PATTERN)
     encrypted_answer_key_sha256: str = Field(pattern=SHA256_PATTERN)
-    encrypted_answer_key_file: str | None = None
-    answer_key_payload_sha256: str | None = Field(default=None, pattern=SHA256_PATTERN)
+    encrypted_answer_key_file: str
+    answer_key_payload_sha256: str = Field(pattern=SHA256_PATTERN)
     revealed_at_utc: datetime
     answer_key_revealed: Literal[True] = True
 
     @field_validator("encrypted_answer_key_file")
     @classmethod
-    def require_safe_relative_path(cls, value: str | None) -> str | None:
-        if value is None:
-            return None
+    def require_safe_relative_path(cls, value: str) -> str:
         path = Path(value)
         if path.is_absolute() or ".." in path.parts or value in {"", "."}:
             raise ValueError("encrypted_answer_key_file must be a safe run-relative path")
@@ -57,21 +60,46 @@ class RevealRecord(BaseModel):
             raise ValueError("reveal timestamp must be timezone-aware")
         return value.astimezone(UTC)
 
-    @model_validator(mode="after")
-    def require_complete_binding_pair(self) -> RevealRecord:
-        if (self.encrypted_answer_key_file is None) != (
-            self.answer_key_payload_sha256 is None
-        ):
-            raise ValueError("complete reveal bindings must be declared together")
-        return self
+_REVEAL_RESULT_CAPABILITY = object()
 
 
-class RevealResult(BaseModel):
-    model_config = ConfigDict(extra="forbid", frozen=True, arbitrary_types_allowed=True)
+class RevealResult:
+    """Non-serializable capability minted only by authenticated in-memory reveal."""
 
-    answer_key: Any = Field(repr=False, exclude=True)
-    record: RevealRecord
-    freeze: FreezeRecord
+    __slots__ = ("__answer_key", "__capability", "freeze", "record")
+
+    def __init__(
+        self,
+        *,
+        answer_key: Any,
+        record: RevealRecord,
+        freeze: FreezeRecord,
+        _capability: object | None = None,
+    ) -> None:
+        if _capability is not _REVEAL_RESULT_CAPABILITY:
+            raise TypeError("RevealResult can only be created by authenticated answer-key reveal")
+        self.__answer_key = answer_key
+        self.__capability = _capability
+        self.record = record
+        self.freeze = freeze
+
+    @property
+    def answer_key(self) -> Any:
+        self.require_claim_grade()
+        return self.__answer_key
+
+    def require_claim_grade(self) -> None:
+        if self.__capability is not _REVEAL_RESULT_CAPABILITY:
+            raise TypeError("invalid in-memory answer-key reveal capability")
+
+    def model_dump(self) -> dict[str, object]:
+        """Expose public receipt metadata while deliberately omitting plaintext truth."""
+
+        self.require_claim_grade()
+        return {"record": self.record.model_dump(), "freeze": self.freeze.model_dump()}
+
+    def __repr__(self) -> str:
+        return f"RevealResult(record={self.record!r}, freeze={self.freeze!r})"
 
 
 def load_reveal_record(path: str | Path) -> RevealRecord:
@@ -90,7 +118,6 @@ def verify_reveal_record(
     freeze: FreezeRecord,
     freeze_path: str | Path,
     reveal_record_path: str | Path | None = None,
-    require_complete_binding: bool = False,
 ) -> RevealRecord:
     directory = Path(run_dir)
     path = (
@@ -105,14 +132,18 @@ def verify_reveal_record(
         raise FreezeVerificationError("reveal prediction hash does not match prediction freeze")
     if record.freeze_record_sha256 != sha256_file(freeze_path):
         raise FreezeVerificationError("reveal is not bound to the current freeze record bytes")
+    direct_bindings = {
+        "blind_input_sha256": freeze.blind_input_sha256,
+        "model_sha256": freeze.model_sha256,
+        "question_bank_sha256": freeze.question_bank_sha256,
+        "mapping_sha256": freeze.mapping_sha256,
+        "run_manifest_sha256": freeze.run_manifest_sha256,
+    }
+    for field, expected in direct_bindings.items():
+        if expected is None or getattr(record, field) != expected:
+            raise FreezeVerificationError(f"reveal {field} does not match prediction freeze")
     if record.revealed_at_utc < freeze.created_at_utc:
         raise FreezeVerificationError("answer-key reveal predates the prediction freeze")
-    if record.encrypted_answer_key_file is None:
-        if require_complete_binding:
-            raise FreezeVerificationError(
-                "reveal record lacks complete envelope and answer-key payload bindings"
-            )
-        return record
     envelope_path = directory / record.encrypted_answer_key_file
     try:
         envelope_path.resolve(strict=True).relative_to(directory.resolve(strict=True))
@@ -173,8 +204,12 @@ def reveal_answer_key(
     )
     encrypted_path = Path(encrypted_answer_key_path)
     relative_envelope = _relative_envelope_path(directory, encrypted_path)
-    plaintext = decrypt_answer_key_bytes(
-        encrypted_path,
+    try:
+        encrypted_bytes = encrypted_path.read_bytes()
+    except OSError as exc:
+        raise AnswerKeySealingError("invalid encrypted answer-key envelope") from exc
+    plaintext = decrypt_answer_key_envelope_bytes(
+        encrypted_bytes,
         key_path=key_path,
         decoder_root=decoder_root,
         expected_metadata=metadata,
@@ -196,11 +231,19 @@ def reveal_answer_key(
     reveal_time = revealed_at_utc or datetime.now(UTC)
     if reveal_time < freeze.created_at_utc:
         raise ValueError("answer-key reveal timestamp cannot predate prediction freeze")
+    manifest_sha256 = freeze.run_manifest_sha256
+    if manifest_sha256 is None:
+        raise FreezeVerificationError("prediction freeze lacks a run-manifest binding")
     record = RevealRecord(
         experiment_id=freeze.experiment_id,
+        blind_input_sha256=freeze.blind_input_sha256,
+        model_sha256=freeze.model_sha256,
+        question_bank_sha256=freeze.question_bank_sha256,
+        mapping_sha256=freeze.mapping_sha256,
+        run_manifest_sha256=manifest_sha256,
         prediction_sha256=freeze.prediction_sha256,
         freeze_record_sha256=sha256_file(resolved_freeze),
-        encrypted_answer_key_sha256=sha256_file(encrypted_path),
+        encrypted_answer_key_sha256=sha256_bytes(encrypted_bytes),
         encrypted_answer_key_file=relative_envelope,
         answer_key_payload_sha256=sha256_bytes(plaintext),
         revealed_at_utc=reveal_time,
@@ -215,4 +258,9 @@ def reveal_answer_key(
     except ValueError as exc:
         raise ValueError("reveal record must be inside the run directory") from exc
     write_new_canonical_json(destination, record)
-    return RevealResult(answer_key=answer_key, record=record, freeze=freeze)
+    return RevealResult(
+        answer_key=answer_key,
+        record=record,
+        freeze=freeze,
+        _capability=_REVEAL_RESULT_CAPABILITY,
+    )

@@ -6,6 +6,7 @@ material.  This module has no external key, recovery, or answer-key interface.
 
 from __future__ import annotations
 
+import math
 from collections.abc import Mapping, Sequence
 from pathlib import Path
 from typing import Any
@@ -57,7 +58,11 @@ def _load_blind_document(path: Path) -> dict[str, Any]:
         raw = load_json_bytes(path, require_canonical=True)
     except (OSError, ValueError) as exc:
         raise NoiseBenchmarkInputError(f"invalid canonical public blind input: {path}") from exc
-    if not isinstance(raw, dict) or raw.get("schema_version") != "blind-synthetic-v1":
+    if (
+        not isinstance(raw, dict)
+        or raw.get("schema_version") != "blind-synthetic-v1"
+        or raw.get("generator") != "frozen-chart-to-response-model"
+    ):
         raise NoiseBenchmarkInputError(f"unsupported public blind input: {path}")
     return raw
 
@@ -158,6 +163,42 @@ def _validate_cross_artifact_bindings(
         raise NoiseBenchmarkInputError(
             "comparable noise benchmarks require a clean committed recovery manifest"
         )
+    expected_recovery_seed = int(blind_sha256[:16], 16)
+    if manifest.seed != expected_recovery_seed:
+        raise NoiseBenchmarkInputError(
+            "run manifest recovery seed is not deterministically derived from blind input"
+        )
+    config = manifest.config_payload
+    if config is None:
+        raise NoiseBenchmarkInputError(
+            "run manifest lacks its exact recovery configuration payload"
+        )
+    required_config_fields = {
+        "aggregation",
+        "threshold_rubric_bits",
+        "workers",
+        "cache_policy",
+    }
+    if set(config) != required_config_fields:
+        raise NoiseBenchmarkInputError(
+            "run manifest recovery configuration has missing or unexpected fields"
+        )
+    threshold = config["threshold_rubric_bits"]
+    workers = config["workers"]
+    if config["aggregation"] != manifest.aggregation_rule:
+        raise NoiseBenchmarkInputError(
+            "run manifest recovery aggregation differs from its exact configuration"
+        )
+    if (
+        not isinstance(threshold, (int, float))
+        or isinstance(threshold, bool)
+        or not math.isfinite(threshold)
+    ):
+        raise NoiseBenchmarkInputError("invalid recovery threshold in run manifest")
+    if not isinstance(workers, int) or isinstance(workers, bool) or workers < 1:
+        raise NoiseBenchmarkInputError("invalid recovery worker count in run manifest")
+    if config["cache_policy"] != "hash-bound exact month universes":
+        raise NoiseBenchmarkInputError("unsupported recovery cache policy in run manifest")
     if manifest.experiment_id != evaluation.experiment_id or blind.get(
         "experiment_id"
     ) != evaluation.experiment_id:
@@ -219,7 +260,6 @@ def _verify_public_provenance_chain(
             freeze=freeze,
             freeze_path=freeze_path,
             reveal_record_path=reveal_path,
-            require_complete_binding=True,
         )
     except (ValueError, FreezeVerificationError) as exc:
         raise NoiseBenchmarkInputError("invalid frozen prediction/reveal provenance chain") from exc
@@ -268,6 +308,7 @@ def _verify_public_provenance_chain(
         "prediction_sha256": freeze.prediction_sha256,
         "freeze_sha256": sha256_file(freeze_path),
         "reveal_sha256": sha256_file(reveal_path),
+        "run_manifest_sha256": manifest_sha256,
         "encrypted_answer_key_file": reveal.encrypted_answer_key_file,
         "encrypted_answer_key_sha256": reveal.encrypted_answer_key_sha256,
         "answer_key_payload_sha256": reveal.answer_key_payload_sha256,
@@ -319,6 +360,11 @@ def load_revealed_noise_tier_run(
             "noise comparison requires a post-reveal target-set hash; legacy evaluation "
             "reports must be regenerated from their frozen predictions and revealed key"
         )
+    generation_seed_commitment_sha256 = evaluation.generation_seed_commitment_sha256
+    if generation_seed_commitment_sha256 is None:
+        raise NoiseBenchmarkInputError(
+            "noise comparison requires a post-reveal synthetic generation-seed commitment"
+        )
     metadata = NoiseRunMetadata(
         experiment_id=evaluation.experiment_id,
         tier=expected_tier,
@@ -331,6 +377,7 @@ def load_revealed_noise_tier_run(
             manifest=manifest,
         ),
         case_set_sha256=revealed_target_set_sha256,
+        generation_seed_commitment_sha256=generation_seed_commitment_sha256,
         declared_case_count=evaluation.aggregate.case_count,
         aggregation_rule=manifest.aggregation_rule,
         recovery_config_sha256=manifest.config_sha256,

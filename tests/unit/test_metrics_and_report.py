@@ -26,12 +26,11 @@ from hdmatch.evaluation.robustness import (
 )
 from hdmatch.experiments.canonical import (
     sha256_bytes,
-    sha256_file,
-    sha256_json,
     write_new_canonical_json,
 )
 from hdmatch.experiments.freeze import ArtifactBindings, freeze_predictions
-from hdmatch.experiments.reveal import RevealRecord
+from hdmatch.experiments.manifest import create_run_manifest, write_run_manifest
+from hdmatch.experiments.reveal import RevealResult, reveal_answer_key
 from hdmatch.synthetic.sealing import SealingMetadata, generate_key_file, seal_answer_key
 
 
@@ -273,12 +272,28 @@ def _answer_key() -> dict[str, object]:
     }
 
 
-def _frozen_run(tmp_path: Path, predictions: dict[str, object]) -> Path:
+def _frozen_run(tmp_path: Path, predictions: dict[str, object]) -> tuple[Path, RevealResult]:
     run_dir = tmp_path / "run"
     run_dir.mkdir(parents=True)
     write_new_canonical_json(run_dir / "predictions.json", predictions)
     manifest_path = run_dir / "run.manifest.json"
-    write_new_canonical_json(manifest_path, {"schema_version": "test-run-manifest-v1"})
+    manifest = create_run_manifest(
+        experiment_id="EXP-1",
+        seed=42,
+        repository_root=Path(__file__).parents[2],
+        candidate_universe="known_month",
+        aggregation_rule="duration_weighted_evidence",
+        model_id="MODEL-A-CORE-V1",
+        input_hashes={"blind_cases.json": _bindings().blind_input_sha256},
+        config={
+            "aggregation": "duration_weighted_evidence",
+            "threshold_rubric_bits": 0.0,
+            "workers": 1,
+            "cache_policy": "hash-bound exact month universes",
+        },
+        created_at_utc=datetime(2026, 8, 20, 23, 59, tzinfo=UTC),
+    )
+    write_run_manifest(manifest, manifest_path)
     freeze = freeze_predictions(
         run_dir,
         experiment_id="EXP-1",
@@ -303,27 +318,24 @@ def _frozen_run(tmp_path: Path, predictions: dict[str, object]) -> Path:
         ),
         decoder_root=run_dir,
     )
-    reveal = RevealRecord(
-        experiment_id="EXP-1",
-        prediction_sha256=freeze.prediction_sha256,
-        freeze_record_sha256=sha256_file(run_dir / "prediction.freeze.json"),
-        encrypted_answer_key_sha256=sha256_file(envelope_path),
-        encrypted_answer_key_file="answer_key.json.enc",
-        answer_key_payload_sha256=sha256_json(_answer_key()),
-        revealed_at_utc=datetime(2026, 8, 21, tzinfo=UTC),
+    revealed = reveal_answer_key(
+        run_dir,
+        encrypted_answer_key_path=envelope_path,
+        key_path=key_path,
+        decoder_root=run_dir,
+        revealed_at_utc=datetime(2026, 8, 21, 0, 1, tzinfo=UTC),
     )
-    write_new_canonical_json(run_dir / "answer-key.reveal.json", reveal)
-    return run_dir
+    return run_dir, revealed
 
 
 def test_frozen_run_evaluator_preserves_search_failure_and_transparent_metadata(
     tmp_path: Path,
 ) -> None:
-    run_dir = _frozen_run(tmp_path, _predictions())
+    run_dir, revealed = _frozen_run(tmp_path, _predictions())
     report = evaluate_frozen_run(
         run_dir,
-        answer_key=_answer_key(),
-        created_at_utc=datetime(2026, 8, 21, tzinfo=UTC),
+        revealed=revealed,
+        created_at_utc=datetime(2026, 8, 21, 0, 2, tzinfo=UTC),
     )
     assert report.aggregate.case_count == 2
     assert report.aggregate.evaluated_case_count == 1
@@ -361,11 +373,11 @@ def test_evaluator_classifies_date_loss_reversed_by_best_state_aggregation(
         {"local_date": "2000-01-02", "date_score": 9.0},
         {"local_date": "2000-01-01", "date_score": 8.0},
     ]
-    run_dir = _frozen_run(tmp_path, predictions)
+    run_dir, revealed = _frozen_run(tmp_path, predictions)
     report = evaluate_frozen_run(
         run_dir,
-        answer_key=_answer_key(),
-        created_at_utc=datetime(2026, 8, 21, tzinfo=UTC),
+        revealed=revealed,
+        created_at_utc=datetime(2026, 8, 21, 0, 2, tzinfo=UTC),
     )
     assert report.failure_counts["aggregation_ambiguity"] == 1
     assert report.failure_counts["scoring_bug"] == 0
@@ -375,48 +387,70 @@ def test_evaluator_refuses_duplicate_cases_and_binding_mismatch(tmp_path: Path) 
     predictions = _predictions()
     assert isinstance(predictions["predictions"], list)
     predictions["predictions"].append(predictions["predictions"][0])
-    run_dir = _frozen_run(tmp_path, predictions)
+    run_dir, revealed = _frozen_run(tmp_path, predictions)
     with pytest.raises(EvaluationInputError, match="duplicate"):
-        evaluate_frozen_run(run_dir, answer_key=_answer_key())
+        evaluate_frozen_run(run_dir, revealed=revealed)
 
     other_path = tmp_path / "other"
     mismatched = _predictions()
     mismatched["model_sha256"] = _digest("other-model")
-    run_dir = _frozen_run(other_path, mismatched)
+    run_dir, revealed = _frozen_run(other_path, mismatched)
     with pytest.raises(EvaluationInputError, match="model_sha256"):
-        evaluate_frozen_run(run_dir, answer_key=_answer_key())
+        evaluate_frozen_run(run_dir, revealed=revealed)
 
 
-def test_evaluator_refuses_in_memory_key_not_bound_by_reveal(tmp_path: Path) -> None:
-    run_dir = _frozen_run(tmp_path, _predictions())
+def test_claim_grade_evaluator_accepts_no_independent_plaintext_key(tmp_path: Path) -> None:
+    run_dir, _ = _frozen_run(tmp_path, _predictions())
+
+    with pytest.raises(TypeError, match="unexpected keyword argument 'answer_key'"):
+        evaluate_frozen_run(run_dir, answer_key=_answer_key())  # type: ignore[call-arg]
+
+
+def test_evaluator_refuses_mutated_in_memory_reveal_key(tmp_path: Path) -> None:
+    run_dir, revealed = _frozen_run(tmp_path, _predictions())
     changed_key = _answer_key()
     assert isinstance(changed_key["cases"], list)
     changed_key["cases"][0]["true_local_date"] = "2000-01-03"
+    assert isinstance(revealed.answer_key, dict)
+    revealed.answer_key.clear()
+    revealed.answer_key.update(changed_key)
 
     with pytest.raises(EvaluationInputError, match="does not match the reveal binding"):
-        evaluate_frozen_run(run_dir, answer_key=changed_key)
+        evaluate_frozen_run(run_dir, revealed=revealed)
 
 
 def test_evaluator_refuses_envelope_tampered_after_reveal(tmp_path: Path) -> None:
-    run_dir = _frozen_run(tmp_path, _predictions())
+    run_dir, revealed = _frozen_run(tmp_path, _predictions())
     envelope_path = run_dir / "answer_key.json.enc"
     envelope_path.write_bytes(envelope_path.read_bytes() + b"\n")
 
     with pytest.raises(Exception, match="envelope bytes changed"):
-        evaluate_frozen_run(run_dir, answer_key=_answer_key())
+        evaluate_frozen_run(run_dir, revealed=revealed)
 
 
 def test_evaluator_refuses_run_manifest_tampered_after_freeze(tmp_path: Path) -> None:
-    run_dir = _frozen_run(tmp_path, _predictions())
+    run_dir, revealed = _frozen_run(tmp_path, _predictions())
     manifest_path = run_dir / "run.manifest.json"
     manifest_path.write_bytes(manifest_path.read_bytes() + b"\n")
 
     with pytest.raises(Exception, match="run-manifest bytes changed"):
-        evaluate_frozen_run(run_dir, answer_key=_answer_key())
+        evaluate_frozen_run(run_dir, revealed=revealed)
 
 
-def test_evaluator_preserves_but_will_not_reuse_legacy_incomplete_reveal(tmp_path: Path) -> None:
-    run_dir = _frozen_run(tmp_path, _predictions())
+def test_evaluator_refuses_reveal_receipt_direct_binding_mismatch(tmp_path: Path) -> None:
+    run_dir, revealed = _frozen_run(tmp_path, _predictions())
+    reveal_path = run_dir / "answer-key.reveal.json"
+    raw = json.loads(reveal_path.read_bytes())
+    raw["mapping_sha256"] = _digest("different-mapping")
+    reveal_path.unlink()
+    write_new_canonical_json(reveal_path, raw)
+
+    with pytest.raises(Exception, match="reveal mapping_sha256"):
+        evaluate_frozen_run(run_dir, revealed=revealed)
+
+
+def test_evaluator_rejects_legacy_incomplete_reveal(tmp_path: Path) -> None:
+    run_dir, revealed = _frozen_run(tmp_path, _predictions())
     reveal_path = run_dir / "answer-key.reveal.json"
     raw = json.loads(reveal_path.read_bytes())
     del raw["encrypted_answer_key_file"]
@@ -424,22 +458,23 @@ def test_evaluator_preserves_but_will_not_reuse_legacy_incomplete_reveal(tmp_pat
     reveal_path.unlink()
     write_new_canonical_json(reveal_path, raw)
 
-    with pytest.raises(Exception, match="lacks complete envelope"):
-        evaluate_frozen_run(run_dir, answer_key=_answer_key())
+    with pytest.raises(Exception, match="invalid or missing answer-key reveal record"):
+        evaluate_frozen_run(run_dir, revealed=revealed)
 
 
 def test_evaluator_refuses_before_reveal_record_exists(tmp_path: Path) -> None:
-    run_dir = tmp_path / "run"
-    run_dir.mkdir()
-    write_new_canonical_json(run_dir / "predictions.json", _predictions())
-    manifest_path = run_dir / "run.manifest.json"
-    write_new_canonical_json(manifest_path, {"schema_version": "test-run-manifest-v1"})
-    freeze_predictions(
-        run_dir,
-        experiment_id="EXP-1",
-        bindings=_bindings(),
-        repository_root=Path(__file__).parents[2],
-        run_manifest_path=manifest_path,
-    )
+    run_dir, revealed = _frozen_run(tmp_path, _predictions())
+    (run_dir / "answer-key.reveal.json").unlink()
     with pytest.raises(Exception, match="reveal"):
-        evaluate_frozen_run(run_dir, answer_key=_answer_key())
+        evaluate_frozen_run(run_dir, revealed=revealed)
+
+
+def test_evaluator_refuses_timestamp_before_reveal(tmp_path: Path) -> None:
+    run_dir, revealed = _frozen_run(tmp_path, _predictions())
+
+    with pytest.raises(EvaluationInputError, match="cannot predate answer-key reveal"):
+        evaluate_frozen_run(
+            run_dir,
+            revealed=revealed,
+            created_at_utc=datetime(2026, 8, 21, tzinfo=UTC),
+        )

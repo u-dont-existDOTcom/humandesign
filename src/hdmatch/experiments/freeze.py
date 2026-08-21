@@ -10,7 +10,13 @@ from typing import Literal
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 from .canonical import load_json_bytes, sha256_file, write_new_canonical_json
-from .manifest import SHA256_PATTERN, capture_software_environment, git_revision
+from .manifest import (
+    SHA256_PATTERN,
+    RunManifest,
+    capture_software_environment,
+    git_revision,
+    load_run_manifest,
+)
 
 
 class FreezeVerificationError(RuntimeError):
@@ -68,6 +74,46 @@ def _relative_artifact(run_dir: Path, artifact: Path) -> str:
         raise ValueError("prediction file must be inside the run directory") from exc
 
 
+def _verify_run_manifest_binding(
+    directory: Path,
+    record: FreezeRecord,
+    manifest_path: Path,
+) -> RunManifest:
+    if record.run_manifest_sha256 is None:
+        raise FreezeVerificationError("prediction freeze lacks a run-manifest binding")
+    try:
+        manifest_path.resolve(strict=True).relative_to(directory.resolve(strict=True))
+    except (FileNotFoundError, ValueError) as exc:
+        raise FreezeVerificationError(
+            "frozen run-manifest path escapes or is absent"
+        ) from exc
+    if sha256_file(manifest_path) != record.run_manifest_sha256:
+        raise FreezeVerificationError("frozen run-manifest bytes changed")
+    try:
+        manifest = load_run_manifest(manifest_path)
+    except ValueError as exc:
+        raise FreezeVerificationError("frozen run manifest is invalid") from exc
+    if manifest.experiment_id != record.experiment_id:
+        raise FreezeVerificationError("run manifest experiment_id differs from prediction freeze")
+    if manifest.input_hashes.get("blind_cases.json") != record.blind_input_sha256:
+        raise FreezeVerificationError("run manifest does not bind the frozen blind input")
+    if manifest.created_at_utc > record.created_at_utc:
+        raise FreezeVerificationError("prediction freeze predates its run manifest")
+    if (
+        manifest.software_commit != record.software_commit
+        or manifest.software_dirty != record.software_dirty
+    ):
+        raise FreezeVerificationError("prediction freeze software state differs from run manifest")
+    expected_versions = manifest.software_environment.packages | {
+        "python": manifest.software_environment.python_version
+    }
+    if record.software_versions != expected_versions:
+        raise FreezeVerificationError(
+            "prediction freeze software environment differs from run manifest"
+        )
+    return manifest
+
+
 def freeze_predictions(
     run_dir: str | Path,
     *,
@@ -95,7 +141,8 @@ def freeze_predictions(
     assert_no_plaintext_answer_keys(repository_root)
     commit, dirty = git_revision(repository_root)
     environment = capture_software_environment()
-    manifest_hash = sha256_file(run_manifest_path) if run_manifest_path is not None else None
+    manifest = Path(run_manifest_path) if run_manifest_path is not None else None
+    manifest_hash = sha256_file(manifest) if manifest is not None else None
     record = FreezeRecord(
         experiment_id=experiment_id,
         prediction_file=relative_prediction,
@@ -108,6 +155,8 @@ def freeze_predictions(
         software_versions=environment.packages | {"python": environment.python_version},
         created_at_utc=created_at_utc or datetime.now(UTC),
     )
+    if manifest is not None:
+        _verify_run_manifest_binding(directory, record, manifest)
     destination = (
         Path(freeze_path) if freeze_path is not None else directory / "prediction.freeze.json"
     )
@@ -151,21 +200,12 @@ def verify_frozen_predictions(
     if sha256_file(prediction) != record.prediction_sha256:
         raise FreezeVerificationError("frozen prediction bytes changed")
     if require_run_manifest:
-        if record.run_manifest_sha256 is None:
-            raise FreezeVerificationError("prediction freeze lacks a run-manifest binding")
         manifest = (
             Path(run_manifest_path)
             if run_manifest_path is not None
             else directory / "run.manifest.json"
         )
-        try:
-            manifest.resolve(strict=True).relative_to(directory.resolve(strict=True))
-        except (FileNotFoundError, ValueError) as exc:
-            raise FreezeVerificationError(
-                "frozen run-manifest path escapes or is absent"
-            ) from exc
-        if sha256_file(manifest) != record.run_manifest_sha256:
-            raise FreezeVerificationError("frozen run-manifest bytes changed")
+        _verify_run_manifest_binding(directory, record, manifest)
     if expected_experiment_id is not None and record.experiment_id != expected_experiment_id:
         raise FreezeVerificationError("freeze experiment_id does not match reveal request")
     if expected_bindings is not None:
