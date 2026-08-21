@@ -13,6 +13,7 @@ from typing import Any
 from hdmatch.config import load_synthetic_config
 from hdmatch.evaluation.leakage import assert_no_blind_leakage
 from hdmatch.evaluation.model_comparison import audit_structural_discrimination
+from hdmatch.evaluation.noise_benchmark import NoiseTier
 from hdmatch.evaluation.report import evaluate_frozen_run
 from hdmatch.experiments import (
     ArtifactBindings,
@@ -34,6 +35,10 @@ from hdmatch.runtime import (
     RuntimeSymbolicModel,
     declared_ephemeris_files,
     load_runtime_model,
+)
+from hdmatch.runtime.noise_benchmark import (
+    build_noise_benchmark_from_run_dirs,
+    write_noise_benchmark_report,
 )
 from hdmatch.runtime.recovery import RecoverySettings, recover_blind_file
 from hdmatch.runtime.universe_cache import MonthRequest, cache_path, load_cached_universe
@@ -356,6 +361,37 @@ def _command_compare_models(args: argparse.Namespace) -> int:
     return 0
 
 
+def _command_compare_noise_tiers(args: argparse.Namespace) -> int:
+    """Aggregate already-revealed public artifacts without reading answer keys."""
+
+    run_dirs = {
+        NoiseTier.ORACLE: args.oracle_run_dir,
+        NoiseTier.LOW: args.low_run_dir,
+        NoiseTier.MEDIUM: args.medium_run_dir,
+        NoiseTier.ADVERSARIAL: args.adversarial_run_dir,
+    }
+    report = build_noise_benchmark_from_run_dirs(run_dirs)
+    output = write_noise_benchmark_report(report, args.output)
+    print(f"noise benchmark: {output}")
+    print(f"noise benchmark sha256: {sha256_file(output)}")
+    print(
+        json.dumps(
+            {
+                item.tier.value: {
+                    "top_1": item.aggregate.top_1,
+                    "top_3": item.aggregate.top_3,
+                    "top_5": item.aggregate.top_5,
+                    "mrr": item.aggregate.mean_reciprocal_rank,
+                    "unevaluable": item.aggregate.unevaluable_case_count,
+                }
+                for item in report.tiers
+            },
+            sort_keys=True,
+        )
+    )
+    return 0
+
+
 def _add_model_arguments(parser: argparse.ArgumentParser) -> None:
     parser.add_argument(
         "--model",
@@ -435,6 +471,17 @@ def _parser() -> argparse.ArgumentParser:
     comparison.add_argument("--model-b-artifact", default=str(DEFAULT_MODEL_B_ARTIFACT))
     comparison.add_argument("--mapping", default=str(DEFAULT_MAPPING))
     comparison.set_defaults(handler=_command_compare_models)
+
+    noise_comparison = subparsers.add_parser(
+        "compare-noise-tiers",
+        help="compare four revealed frozen synthetic evaluations without answer keys",
+    )
+    noise_comparison.add_argument("--oracle-run-dir", required=True)
+    noise_comparison.add_argument("--low-run-dir", required=True)
+    noise_comparison.add_argument("--medium-run-dir", required=True)
+    noise_comparison.add_argument("--adversarial-run-dir", required=True)
+    noise_comparison.add_argument("--output", required=True)
+    noise_comparison.set_defaults(handler=_command_compare_noise_tiers)
     return parser
 
 

@@ -31,14 +31,19 @@ _HASH_F = "f" * 64
 
 
 def _case_metric(case_id: str, true_rank: int) -> CaseRankMetrics:
+    ranked_ids = [
+        *(f"D{index}" for index in range(2, true_rank + 1)),
+        "D1",
+        *(f"D{index}" for index in range(true_rank + 1, 7)),
+    ]
     candidates = [
-        {"local_date": f"D{index}", "date_score": float(7 - index)}
-        for index in range(1, 7)
+        {"local_date": candidate_id, "date_score": float(6 - index)}
+        for index, candidate_id in enumerate(ranked_ids)
     ]
     return evaluate_ranked_case(
         case_id=case_id,
         candidates=candidates,
-        true_candidate_id=f"D{true_rank}",
+        true_candidate_id="D1",
     )
 
 
@@ -65,6 +70,7 @@ def _evaluation(
         model_sha256=_HASH_E,
         question_bank_sha256=_HASH_F,
         mapping_sha256=_HASH_A,
+        revealed_target_set_sha256=_HASH_C,
         aggregate=aggregate_rank_metrics([case], total_case_count=2),
         cases=(case,),
         failures=(failure,),
@@ -93,7 +99,7 @@ def _settings(tier: NoiseTier) -> DeclaredNoiseSettings:
         cluster_dropout_rate=values[2],
         behavioral_confidence_values=values[3],
         measurement_reliability_values=values[4],
-        seed=100 + list(NoiseTier).index(tier),
+        conditioning="chart-independent-except-declared-measurement-domain",
     )
 
 
@@ -117,6 +123,8 @@ def _tier_evaluation(
         candidate_universe_sha256=candidate_universe_sha256,
         case_set_sha256=_HASH_C,
         declared_case_count=evaluation.aggregate.case_count,
+        aggregation_rule="duration_weighted_evidence",
+        run_manifest_sha256=_HASH_F,
         evaluation_sha256=sha256_json(evaluation),
         noise=noise or _settings(tier),
     )
@@ -221,6 +229,8 @@ def test_tier_binding_rejects_wrong_denominator_or_evaluation_hash() -> None:
         candidate_universe_sha256=_HASH_B,
         case_set_sha256=_HASH_C,
         declared_case_count=3,
+        aggregation_rule="duration_weighted_evidence",
+        run_manifest_sha256=_HASH_F,
         evaluation_sha256=sha256_json(evaluation),
         noise=_settings(NoiseTier.LOW),
     )
@@ -236,6 +246,8 @@ def test_tier_binding_rejects_wrong_denominator_or_evaluation_hash() -> None:
         candidate_universe_sha256=_HASH_B,
         case_set_sha256=_HASH_C,
         declared_case_count=2,
+        aggregation_rule="duration_weighted_evidence",
+        run_manifest_sha256=_HASH_F,
         evaluation_sha256=_HASH_D,
         noise=_settings(NoiseTier.LOW),
     )
@@ -250,7 +262,7 @@ def test_oracle_label_cannot_hide_noise_or_degraded_reliability() -> None:
         cluster_dropout_rate=0.0,
         behavioral_confidence_values=(1.0,),
         measurement_reliability_values=(0.75,),
-        seed=100,
+        conditioning="chart-independent-except-declared-measurement-domain",
     )
     evaluations = _all_tiers()
     evaluations[0] = _tier_evaluation(
