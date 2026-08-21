@@ -1,0 +1,40 @@
+{
+  "schema_version": "model-comparison-smoke-summary-v1",
+  "experiment_id": "known-month-model-a-smoke-75-v1",
+  "model_id": "MODEL-A-CORE-V1",
+  "software_commit": "428cded6e591094699ea2660151aec9f07778db3",
+  "software_dirty": false,
+  "case_count": 75,
+  "candidate_year": 2000,
+  "candidate_timezone": "UTC",
+  "exact_month_cache_count": 12,
+  "exact_stable_interval_count": 13777,
+  "chart_engine_fingerprint": "09e811ca0fe517975f9718ea7e12b72f66bf3d2509e049bc29f47169adef5397",
+  "metrics": {
+    "top_1": 0.4533333333333333,
+    "top_3": 0.7466666666666667,
+    "top_5": 0.8266666666666667,
+    "mean_reciprocal_rank": 0.6256797385620916,
+    "mean_percentile": 0.9208199233716474,
+    "mean_midrank": 3.3466666666666667,
+    "median_midrank": 2.0,
+    "tie_rate": 0.0,
+    "unevaluable_case_count": 0
+  },
+  "artifact_sha256": {
+    "blind_cases.json": "33de943c498f7673f1bb4da035db158c0f95cda49907aca6a9c1f85048f63a97",
+    "generation.receipt.json": "8655663102568ced5872e8edff59e9b5e4a4d609df7e7b0b8000493ebd6fc9e0",
+    "leakage_audit.json": "a01b0a78458aef032c3ba48310c3560ef907887e08ea175aeebbde16b8183aeb",
+    "run.manifest.json": "65762e4cd31c0dd399c37867200f8513e7bd2ad42ed6f0206774377157ee14ad",
+    "predictions.json": "a191159ae0c6a09b919349763f0514b2bdfbb5e0f67eefa4bcb4e9f315f42516",
+    "prediction.freeze.json": "c9f8ea958875a5a2423141fc016f072dccae888be66929535c369db300df5e66",
+    "answer-key.reveal.json": "a8ef0080bbba0272540803126fe352f45c8e8815f1ee429a2b9a0fca971c2c9e",
+    "evaluation.json": "54eb9a295a3bf6e50d6401d121db3b14b09cf275ed2e46d5f324dc38b5bc3c08"
+  },
+  "pipeline_status": "complete",
+  "discrimination_status": "insufficient for near-unique known-month recovery",
+  "non_top_1_case_count": 41,
+  "failure_classification_status": "requires post-reveal model-equivalence and aggregation audit; no case is discarded",
+  "score_semantics": "rubric-bits-not-probabilities",
+  "claim_boundary": "synthetic-engineering-validation-only"
+}

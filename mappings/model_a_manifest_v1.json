@@ -1,0 +1,35 @@
+{
+  "schema_version": "symbolic-model-manifest-v1",
+  "model_id": "MODEL-A-CORE-V1",
+  "role": "coarse-architecture baseline",
+  "status": "frozen",
+  "mapping_library_path": "mappings/mapping_library_v1.json",
+  "mapping_file_sha256": "3424672432f7f071ec90ef9ddce52a67ff6794911e92b1a1e04f079262ea6200",
+  "mapping_semantic_sha256": "e4b1ed725f0310b5434ca58745972b23902ee9e23a10ac795ea420ce0de8d69e",
+  "question_bank_path": "reference/core/question_bank_v1.json",
+  "question_bank_sha256": "31f813efc3da7263569ef010a8336b1b1b0c44801b7aa0f91e33b3fa4587d820",
+  "unresolved_report_path": "mappings/unresolved_mapping_report_v1.json",
+  "unresolved_report_sha256": "1f7f96dc27e71cb9c3a07ed6d6b9194b9a52618aca3b321d6f2b4bc54da8ff4f",
+  "mapping_counts": {
+    "empirical_only": 3,
+    "frozen": 27,
+    "unresolved": 52
+  },
+  "frozen_scope": [
+    "type and strategy",
+    "authority where source-supported",
+    "diagnostic center state",
+    "conservative profile-line behavior"
+  ],
+  "excluded_detailed_scope": [
+    "complete channels",
+    "Personality and Design Sun-Earth gates and lines",
+    "Definition",
+    "repeated gates and thematic Nodes",
+    "other prominent activations",
+    "hanging gates"
+  ],
+  "score_semantics": "rubric-bits-not-probabilities",
+  "claim_boundary": "synthetic-engineering-validation-only",
+  "preservation_rule": "Model B must use a separate artifact and must not overwrite this model."
+}
