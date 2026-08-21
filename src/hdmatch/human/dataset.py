@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import csv
 import json
+import math
 from collections.abc import Iterable
 from pathlib import Path
 from typing import Any, Literal
@@ -19,12 +20,27 @@ class HumanCase(BaseModel):
     participant_id: str
     cohort: Literal["development", "validation", "final_test", "unassigned"]
     responses: dict[str, str]
+    response_reliability: dict[str, float] = Field(default_factory=dict)
     chart_features: dict[str, str | bool | int | float | list[str]]
     birth_year: int | None = None
     birth_month: int | None = Field(default=None, ge=1, le=12)
     birth_day: int | None = Field(default=None, ge=1, le=31)
     documented_time_precision_minutes: int | None = Field(default=None, ge=0)
     metadata: dict[str, Any] = Field(default_factory=dict)
+
+    @model_validator(mode="after")
+    def valid_response_reliability(self) -> HumanCase:
+        unknown = set(self.response_reliability) - set(self.responses)
+        if unknown:
+            raise ValueError(f"reliability supplied for unanswered questions: {sorted(unknown)}")
+        invalid = sorted(
+            question
+            for question, value in self.response_reliability.items()
+            if not math.isfinite(value) or not 0.0 <= value <= 1.0
+        )
+        if invalid:
+            raise ValueError(f"response reliability must be within [0, 1]: {invalid}")
+        return self
 
 
 class HumanDataset(BaseModel):
@@ -76,7 +92,7 @@ def load_human_dataset(path: str | Path, questionnaire_version: str) -> HumanDat
         decoded: list[dict[str, Any]] = []
         for row in rows:
             item = dict(row)
-            for field in ("responses", "chart_features", "metadata"):
+            for field in ("responses", "response_reliability", "chart_features", "metadata"):
                 item[field] = json.loads(item[field]) if item.get(field) else {}
             integer_fields = (
                 "birth_year",
