@@ -30,6 +30,7 @@ from hdmatch.human import (
     freeze_prediction_artifacts,
     freeze_protocol_artifacts,
     import_human_cases,
+    prepare_blind_cohort_artifacts,
     reveal_evaluate_artifacts,
     score_blind_artifacts,
     seal_human_answer_key_artifacts,
@@ -387,6 +388,23 @@ def _command_human_import(args: argparse.Namespace) -> int:
     return 0
 
 
+def _command_human_prepare_blind(args: argparse.Namespace) -> int:
+    blind, _, receipt = prepare_blind_cohort_artifacts(
+        args.partition,
+        args.candidate_universe,
+        args.protocol,
+        args.output_dir,
+        answer_key_output_path=args.answer_key_out,
+        repository_root=ROOT,
+    )
+    blind_path = Path(args.output_dir) / "human.blind-cohort.json"
+    print(f"human blind cohort: {blind_path}")
+    print(f"blind input semantic sha256: {blind.blind_input_sha256}")
+    print(f"plaintext answer key written outside decoder root: {args.answer_key_out}")
+    print(f"preparation inputs: {json.dumps(receipt.input_sha256, sort_keys=True)}")
+    return 0
+
+
 def _command_human_fit(args: argparse.Namespace) -> int:
     runtime = _load_selected_model(args)
     bundle, receipt = fit_development_bundle_artifacts(
@@ -618,6 +636,17 @@ def _parser() -> argparse.ArgumentParser:
     human_import.add_argument("--validation-fraction", type=float, default=0.2)
     human_import.add_argument("--final-test-fraction", type=float, default=0.2)
     human_import.set_defaults(handler=_command_human_import)
+
+    human_prepare = subparsers.add_parser(
+        "human-prepare-blind",
+        help="strip a private rich partition into a blind cohort and external truth key",
+    )
+    human_prepare.add_argument("--partition", required=True)
+    human_prepare.add_argument("--candidate-universe", required=True)
+    human_prepare.add_argument("--protocol", required=True)
+    human_prepare.add_argument("--output-dir", required=True)
+    human_prepare.add_argument("--answer-key-out", required=True)
+    human_prepare.set_defaults(handler=_command_human_prepare_blind)
 
     human_fit = subparsers.add_parser(
         "human-fit",

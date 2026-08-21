@@ -28,6 +28,7 @@ from hdmatch.human.protocol import (
     FrozenHumanEvaluationProtocol,
     FrozenHumanModelBundle,
     HumanBlindCase,
+    HumanCandidate,
     HumanCohortAnswerKey,
     HumanComparisonReport,
     HumanPredictionFreeze,
@@ -43,7 +44,9 @@ class HumanBlindCohort(BaseModel):
 
     model_config = ConfigDict(extra="forbid", frozen=True)
 
-    schema_version: Literal["human-blind-cohort-v1"] = "human-blind-cohort-v1"
+    schema_version: Literal["human-blind-cohort-v1", "human-blind-cohort-v2"] = (
+        "human-blind-cohort-v1"
+    )
     protocol_id: str = Field(min_length=1)
     protocol_sha256: str = Field(pattern=SHA256_PATTERN)
     cohort: Cohort
@@ -57,6 +60,18 @@ class HumanBlindCohort(BaseModel):
             raise ValueError("blind cohort participants must be nonempty and unique")
         if any(case.cohort != self.cohort for case in self.cases):
             raise ValueError("blind cases must all match the declared cohort")
+        if self.schema_version == "human-blind-cohort-v2":
+            missing_records = sorted(
+                case.participant_id
+                for case in self.cases
+                if case.responses and not case.response_records
+            )
+            if missing_records:
+                raise ValueError(
+                    "v2 blind cohort requires typed response records: " f"{missing_records}"
+                )
+        elif any(case.response_records for case in self.cases):
+            raise ValueError("typed response records require human-blind-cohort-v2")
         if self.candidate_universe_sha256 != candidate_universe_sha256(self.cases):
             raise ValueError("blind cohort candidate-universe hash is incorrect")
         return self
@@ -65,7 +80,7 @@ class HumanBlindCohort(BaseModel):
     def blind_input_sha256(self) -> str:
         return sha256_json(
             [
-                case.model_dump(mode="json")
+                case.hash_payload()
                 for case in sorted(self.cases, key=lambda item: item.participant_id)
             ]
         )
@@ -78,11 +93,68 @@ def candidate_universe_sha256(cases: tuple[HumanBlindCase, ...]) -> str:
         [
             {
                 "participant_id": case.participant_id,
-                "candidates": [candidate.model_dump(mode="json") for candidate in case.candidates],
+                "candidates": [candidate.hash_payload() for candidate in case.candidates],
             }
             for case in sorted(cases, key=lambda item: item.participant_id)
         ]
     )
+
+
+class HumanCandidateSet(BaseModel):
+    """One participant's public candidates, with no field capable of declaring truth."""
+
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    participant_id: str = Field(min_length=1)
+    candidates: tuple[HumanCandidate, ...] = Field(min_length=1)
+
+    @field_validator("participant_id")
+    @classmethod
+    def reject_blank_participant_id(cls, value: str) -> str:
+        normalized = value.strip()
+        if not normalized:
+            raise ValueError("participant_id cannot be blank")
+        return normalized
+
+    @model_validator(mode="after")
+    def unique_candidates(self) -> HumanCandidateSet:
+        identifiers = [candidate.candidate_id for candidate in self.candidates]
+        if len(identifiers) != len(set(identifiers)):
+            raise ValueError("candidate IDs must be unique within each participant universe")
+        return self
+
+
+class HumanCandidateUniverse(BaseModel):
+    """Caller-supplied public candidates bound to one already frozen protocol."""
+
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    schema_version: Literal["human-candidate-universe-v1"] = (
+        "human-candidate-universe-v1"
+    )
+    protocol_id: str = Field(min_length=1)
+    protocol_sha256: str = Field(pattern=SHA256_PATTERN)
+    cohort: Cohort
+    cases: tuple[HumanCandidateSet, ...] = Field(min_length=1)
+
+    @model_validator(mode="after")
+    def unique_people(self) -> HumanCandidateUniverse:
+        identifiers = [case.participant_id for case in self.cases]
+        if len(identifiers) != len(set(identifiers)):
+            raise ValueError("candidate universe participant IDs must be unique")
+        return self
+
+    @property
+    def candidate_universe_sha256(self) -> str:
+        return sha256_json(
+            [
+                {
+                    "participant_id": case.participant_id,
+                    "candidates": [candidate.hash_payload() for candidate in case.candidates],
+                }
+                for case in sorted(self.cases, key=lambda item: item.participant_id)
+            ]
+        )
 
 
 class HumanSymbolicPrevalenceArtifact(BaseModel):
@@ -120,6 +192,7 @@ class HumanSymbolicPrevalenceArtifact(BaseModel):
 
 HumanWorkflowStage = Literal[
     "import",
+    "prepare-blind-cohort",
     "fit-development",
     "freeze-protocol",
     "seal-answer-key",
@@ -287,6 +360,10 @@ def load_evaluation_protocol(path: str | Path) -> FrozenHumanEvaluationProtocol:
 
 def load_blind_cohort(path: str | Path) -> HumanBlindCohort:
     return HumanBlindCohort.model_validate(load_json_bytes(path, require_canonical=True))
+
+
+def load_candidate_universe(path: str | Path) -> HumanCandidateUniverse:
+    return HumanCandidateUniverse.model_validate(load_json_bytes(path, require_canonical=True))
 
 
 def load_symbolic_prevalence(path: str | Path) -> HumanSymbolicPrevalenceArtifact:

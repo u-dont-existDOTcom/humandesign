@@ -5,10 +5,9 @@ from __future__ import annotations
 import random
 from typing import Literal
 
-from pydantic import BaseModel, ConfigDict, model_validator
+from pydantic import BaseModel, ConfigDict, field_validator, model_validator
 
-from hdmatch.human.dataset import HumanCase, HumanDataset
-from hdmatch.util import sha256_json
+from hdmatch.human.dataset import HumanCase, HumanDataset, human_dataset_sha256
 
 
 class PersonSplitManifest(BaseModel):
@@ -20,6 +19,14 @@ class PersonSplitManifest(BaseModel):
     validation_ids: tuple[str, ...]
     final_test_ids: tuple[str, ...]
     dataset_hash: str
+
+    @field_validator("development_ids", "validation_ids", "final_test_ids")
+    @classmethod
+    def reject_blank_participant_ids(cls, value: tuple[str, ...]) -> tuple[str, ...]:
+        normalized = tuple(identifier.strip() for identifier in value)
+        if any(not identifier for identifier in normalized):
+            raise ValueError("person-split participant IDs cannot be blank")
+        return normalized
 
     @model_validator(mode="after")
     def disjoint(self) -> PersonSplitManifest:
@@ -70,7 +77,7 @@ def create_person_splits(
         development_ids=tuple(development),
         validation_ids=tuple(validation),
         final_test_ids=tuple(final),
-        dataset_hash=sha256_json(dataset),
+        dataset_hash=human_dataset_sha256(dataset),
     )
 
 
@@ -86,7 +93,7 @@ def validate_manifest_for_dataset(
 ) -> None:
     """Bind a split to exactly one dataset and every person in it."""
 
-    if manifest.dataset_hash != sha256_json(dataset):
+    if manifest.dataset_hash != human_dataset_sha256(dataset):
         raise ValueError("split manifest dataset hash does not match the human dataset")
     dataset_ids = {case.participant_id for case in dataset.cases}
     manifest_ids = (

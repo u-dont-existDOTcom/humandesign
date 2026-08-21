@@ -99,7 +99,7 @@ class EmpiricalChartResponseModel:
         )
         for case in ordered_cases:
             for question, answer in case.responses.items():
-                reliability = case.response_reliability.get(question, 1.0)
+                reliability = case.evidence_weights.get(question, 1.0)
                 marginal[question][answer] += reliability
                 for feature in feature_names:
                     if feature in case.chart_features:
@@ -112,7 +112,7 @@ class EmpiricalChartResponseModel:
             "participants": identifiers,
             "responses": {case.participant_id: case.responses for case in ordered_cases},
             "response_reliability": {
-                case.participant_id: case.response_reliability for case in ordered_cases
+                case.participant_id: case.evidence_weights for case in ordered_cases
             },
             "features": {case.participant_id: case.chart_features for case in ordered_cases},
         }

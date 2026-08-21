@@ -25,9 +25,10 @@ from hdmatch.evaluation.metrics import (
 )
 from hdmatch.evaluation.permutation import empirical_p_value
 from hdmatch.human.baselines import calendar_features, permute_chart_assignments
-from hdmatch.human.dataset import HumanCase
+from hdmatch.human.dataset import HumanCase, flatten_response_records
 from hdmatch.human.empirical import EmpiricalChartResponseModel, ModelArtifact
 from hdmatch.human.splits import PersonSplitManifest, enforce_training_cohort
+from hdmatch.schemas import BehavioralResponse
 from hdmatch.util import sha256_json
 
 SHA256_PATTERN = r"^[0-9a-f]{64}$"
@@ -42,6 +43,16 @@ PRIMARY_METHOD_IDS = (
     "calendar_season",
     "uniform_chance",
 )
+_FORBIDDEN_TRUTH_FIELD_NAMES = frozenset(
+    {
+        "answer_key",
+        "ground_truth",
+        "is_true",
+        "true_candidate_id",
+        "true_candidate_ids",
+        "verified_birth_record",
+    }
+)
 
 Cohort = Literal["development", "validation", "final_test"]
 MethodFamily = Literal[
@@ -52,6 +63,16 @@ MethodFamily = Literal[
     "chance",
     "permuted_hd",
 ]
+
+
+def _contains_truth_field(value: object) -> bool:
+    if isinstance(value, dict):
+        if any(str(key).casefold() in _FORBIDDEN_TRUTH_FIELD_NAMES for key in value):
+            return True
+        return any(_contains_truth_field(item) for item in value.values())
+    if isinstance(value, (list, tuple)):
+        return any(_contains_truth_field(item) for item in value)
+    return False
 
 
 class SymbolicModelReference(BaseModel):
@@ -162,6 +183,14 @@ class FrozenHumanEvaluationProtocol(BaseModel):
     ) = None
     created_at_utc: datetime
 
+    @field_validator("participant_ids")
+    @classmethod
+    def reject_blank_participant_ids(cls, value: tuple[str, ...]) -> tuple[str, ...]:
+        normalized = tuple(identifier.strip() for identifier in value)
+        if any(not identifier for identifier in normalized):
+            raise ValueError("protocol participant IDs cannot be blank")
+        return normalized
+
     @model_validator(mode="after")
     def validate_release(self) -> FrozenHumanEvaluationProtocol:
         if not self.participant_ids or len(set(self.participant_ids)) != len(self.participant_ids):
@@ -200,6 +229,17 @@ class HumanCandidate(BaseModel):
     local_year: int | None = None
     local_month: int | None = Field(default=None, ge=1, le=12)
     local_day: int | None = Field(default=None, ge=1, le=31)
+    start_utc: datetime | None = None
+    end_utc: datetime | None = None
+
+    @field_validator("start_utc", "end_utc")
+    @classmethod
+    def normalize_candidate_interval_utc(cls, value: datetime | None) -> datetime | None:
+        if value is None:
+            return None
+        if value.tzinfo is None or value.utcoffset() is None:
+            raise ValueError("candidate interval timestamps must be timezone-aware")
+        return value.astimezone(UTC)
 
     @model_validator(mode="after")
     def validate_local_date(self) -> HumanCandidate:
@@ -212,12 +252,31 @@ class HumanCandidate(BaseModel):
             and self.local_day is not None
         ):
             date(self.local_year, self.local_month, self.local_day)
+        interval = (self.start_utc, self.end_utc)
+        if any(item is not None for item in interval) and not all(
+            item is not None for item in interval
+        ):
+            raise ValueError("candidate UTC interval must be complete or entirely absent")
+        if (
+            self.start_utc is not None
+            and self.end_utc is not None
+            and self.end_utc <= self.start_utc
+        ):
+            raise ValueError("candidate UTC interval must have positive duration")
+        if _contains_truth_field(self.chart_features):
+            raise ValueError("candidate chart features contain a forbidden truth field")
         return self
 
     def calendar_features(self) -> dict[str, int] | None:
         if self.local_year is None or self.local_month is None or self.local_day is None:
             return None
         return dict(calendar_features(self.local_year, self.local_month, self.local_day))
+
+    def hash_payload(self) -> dict[str, Any]:
+        """Preserve the pre-interval candidate hash shape when no interval is supplied."""
+
+        exclude = {"start_utc", "end_utc"} if self.start_utc is None else set()
+        return self.model_dump(mode="json", exclude=exclude)
 
 
 class HumanBlindCase(BaseModel):
@@ -230,7 +289,46 @@ class HumanBlindCase(BaseModel):
     questionnaire_version: str = Field(min_length=1)
     responses: dict[str, str]
     response_reliability: dict[str, float] = Field(default_factory=dict)
+    response_records: tuple[BehavioralResponse, ...] = ()
     candidates: tuple[HumanCandidate, ...]
+
+    @field_validator("participant_id")
+    @classmethod
+    def reject_blank_participant_id(cls, value: str) -> str:
+        normalized = value.strip()
+        if not normalized:
+            raise ValueError("participant_id cannot be blank")
+        return normalized
+
+    @model_validator(mode="before")
+    @classmethod
+    def populate_flattened_response_views(cls, value: Any) -> Any:
+        if not isinstance(value, dict):
+            return value
+        data = dict(value)
+        raw_responses = data.get("responses")
+        raw_records = data.get("response_records")
+        if isinstance(raw_responses, (list, tuple)):
+            if raw_records not in (None, (), []):
+                raise ValueError("supply rich responses once, not in two fields")
+            raw_records = raw_responses
+            data["response_records"] = raw_records
+            data["responses"] = {}
+        if raw_records not in (None, (), []):
+            assert raw_records is not None
+            records = tuple(BehavioralResponse.model_validate(item) for item in raw_records)
+            responses, reliability = flatten_response_records(records)
+            supplied_responses = data.get("responses")
+            if supplied_responses not in (None, {}) and supplied_responses != responses:
+                raise ValueError("flattened responses disagree with typed response records")
+            supplied_reliability = data.get("response_reliability")
+            if supplied_reliability not in (None, {}) and supplied_reliability != reliability:
+                raise ValueError(
+                    "flattened response reliability disagrees with typed response records"
+                )
+            data["responses"] = responses
+            data["response_reliability"] = reliability
+        return data
 
     @model_validator(mode="after")
     def validate_reliability(self) -> HumanBlindCase:
@@ -244,7 +342,30 @@ class HumanBlindCase(BaseModel):
         )
         if invalid:
             raise ValueError(f"response reliability must be within [0, 1]: {invalid}")
+        if self.response_records:
+            responses, reliability = flatten_response_records(self.response_records)
+            if responses != self.responses or reliability != self.response_reliability:
+                raise ValueError("typed response records disagree with flattened response views")
         return self
+
+    @property
+    def evidence_weights(self) -> dict[str, float]:
+        """Return legacy reliability or rich confidence×reliability weights."""
+
+        if not self.response_records:
+            return self.response_reliability
+        return {
+            response.question_id: response.effective_confidence
+            for response in self.response_records
+        }
+
+    def hash_payload(self) -> dict[str, Any]:
+        """Return the v1-compatible semantic payload used for blind-input binding."""
+
+        exclude = {"response_records"} if not self.response_records else set()
+        payload = self.model_dump(mode="json", exclude=exclude)
+        payload["candidates"] = [candidate.hash_payload() for candidate in self.candidates]
+        return payload
 
 
 class HumanCohortAnswerKey(BaseModel):
@@ -261,6 +382,10 @@ class HumanCohortAnswerKey(BaseModel):
 
     @model_validator(mode="after")
     def validate_release(self) -> HumanCohortAnswerKey:
+        if any(not participant_id.strip() for participant_id in self.true_candidate_ids):
+            raise ValueError("answer-key participant IDs cannot be blank")
+        if any(not candidate_id.strip() for candidate_id in self.true_candidate_ids.values()):
+            raise ValueError("answer-key candidate IDs cannot be blank")
         if self.cohort == "final_test" and not self.final_test_release_id:
             raise ValueError("final-test key requires its release ID")
         if self.cohort != "final_test" and self.final_test_release_id is not None:
@@ -724,7 +849,7 @@ def score_blind_human_cohort(
     predictions: list[HumanCasePredictions] = []
     for case in sorted(cases, key=lambda item: item.participant_id):
         responses = case.responses
-        reliability = case.response_reliability
+        reliability = case.evidence_weights
         methods = [
             _score_method(
                 case,
@@ -804,7 +929,7 @@ def score_blind_human_cohort(
         model_bundle_sha256=bundle.sha256,
         blind_input_sha256=sha256_json(
             [
-                case.model_dump(mode="json")
+                case.hash_payload()
                 for case in sorted(cases, key=lambda item: item.participant_id)
             ]
         ),
@@ -834,7 +959,7 @@ def _score_calendar_method(
         scorer=lambda candidate: model.log2_score(
             case.responses,
             candidate.calendar_features() or {},
-            case.response_reliability,
+            case.evidence_weights,
         ),
     )
 

@@ -20,6 +20,57 @@
 }
 ```
 
+`human-dataset-v2` embeds these typed records and a verified birth record for each private
+participant. The retained `responses`, `response_reliability`, date, and precision fields are
+exact compatibility projections only; the importer does not invent clusters, confidence, or
+provenance for a legacy `human-dataset-v1` record. Imported cohort partitions also retain the
+full-dataset hash and exact person-split-manifest hash; preparation requires that split hash to
+match the frozen protocol.
+
+## Verified birth record
+
+```json
+{
+  "schema_version": "verified-birth-record-v1",
+  "local_datetime": "1985-01-29T07:26:00",
+  "birthplace": "Istanbul, Türkiye",
+  "iana_timezone": "Europe/Istanbul",
+  "resolved_utc": "1985-01-29T05:26:00Z",
+  "timezone_fold": null,
+  "precision_minutes": 5,
+  "provenance": {
+    "source_kind": "caller-declared documented source",
+    "verification_method": "caller-declared verification procedure",
+    "notes": null
+  }
+}
+```
+
+`local_datetime` is a naive civil tuple; `resolved_utc` must exactly match historical IANA
+resolution. Ambiguous civil times require `timezone_fold`. `precision_minutes` is a symmetric
+uncertainty radius, so blind preparation emits a truth label only when the whole interval fits
+exactly one caller-supplied candidate.
+
+## Human blind preparation
+
+`human-candidate-universe-v1` contains one public candidate set per frozen-protocol participant.
+Every candidate used for truth resolution declares a half-open UTC interval and chart features;
+truth flags and answer-key fields are forbidden. The owner-side command is:
+
+```text
+hdmatch human-prepare-blind \
+  --partition /external/private/validation.partition.json \
+  --candidate-universe candidate-universe.json \
+  --protocol human-evaluation.protocol.json \
+  --output-dir blind-run \
+  --answer-key-out /external/owner-secrets/validation.answer-key.json
+```
+
+The response-only `human-blind-cohort-v2` is bound to the protocol and exact candidate-universe
+hash. The plaintext `human-cohort-answer-key-v1` is bound to that blind-input hash and must stay
+outside both the repository and decoder directory; it is not hashed into the public preparation
+receipt.
+
 ## Known-month blind case
 
 ```json

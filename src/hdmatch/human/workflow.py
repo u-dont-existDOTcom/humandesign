@@ -5,18 +5,20 @@ from __future__ import annotations
 import json
 import os
 from collections.abc import Mapping, Sequence
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from typing import Any
 
 from hdmatch.experiments.canonical import sha256_file, write_new_canonical_json
 from hdmatch.human.artifacts import (
+    HumanBlindCohort,
     HumanRevealReceipt,
     HumanWorkflowReceipt,
     assert_final_test_reveal_unused,
     exact_file_hashes,
     final_test_cohort_lock_path,
     load_blind_cohort,
+    load_candidate_universe,
     load_evaluation_protocol,
     load_human_answer_key,
     load_human_dataset_artifact,
@@ -40,6 +42,7 @@ from hdmatch.human.protocol import (
     Cohort,
     FrozenHumanEvaluationProtocol,
     FrozenHumanModelBundle,
+    HumanBlindCase,
     HumanCohortAnswerKey,
     HumanComparisonReport,
     HumanPredictionFreeze,
@@ -104,10 +107,154 @@ def _human_partition(
     cohort: Cohort,
 ) -> HumanDataset:
     return HumanDataset(
+        schema_version=dataset.schema_version,
         questionnaire_version=dataset.questionnaire_version,
         cases=select_partition(dataset, manifest, cohort),
         source_sha256=dataset.source_sha256,
+        partition=cohort,
+        split_manifest_sha256=sha256_json(manifest),
+        full_dataset_sha256=manifest.dataset_hash,
     )
+
+
+def prepare_blind_cohort_artifacts(
+    partition_path: str | Path,
+    candidate_universe_path: str | Path,
+    protocol_path: str | Path,
+    output_dir: str | Path,
+    *,
+    answer_key_output_path: str | Path,
+    repository_root: str | Path,
+    created_at_utc: datetime | None = None,
+) -> tuple[HumanBlindCohort, HumanCohortAnswerKey, HumanWorkflowReceipt]:
+    """Strip private birth truth into an external key and a response-only blind cohort."""
+
+    partition_file = _path(partition_path)
+    universe_file = _path(candidate_universe_path)
+    frozen_protocol_file = _path(protocol_path)
+    directory = _path(output_dir)
+    answer_key_file = _path(answer_key_output_path)
+    require_external_path(partition_file, repository_root, label="private human partition")
+    require_external_path(answer_key_file, repository_root, label="plaintext human answer key")
+    require_external_path(answer_key_file, directory, label="plaintext human answer key")
+    _ensure_new_directory(directory)
+
+    blind_path = directory / "human.blind-cohort.json"
+    receipt_path = directory / "human-prepare-blind.receipt.json"
+    for destination in (blind_path, receipt_path, answer_key_file):
+        if destination.exists():
+            raise FileExistsError(f"immutable artifact already exists: {destination}")
+
+    partition = load_human_dataset_artifact(partition_file)
+    universe = load_candidate_universe(universe_file)
+    protocol = load_evaluation_protocol(frozen_protocol_file)
+    if partition.schema_version != "human-dataset-v2":
+        raise ValueError("blind preparation requires rich human-dataset-v2 records")
+    if partition.partition != protocol.cohort:
+        raise ValueError("private partition artifact is bound to a different cohort")
+    if partition.split_manifest_sha256 != protocol.split_manifest_sha256:
+        raise ValueError("private partition artifact is bound to a different person split")
+    if partition.questionnaire_version != protocol.questionnaire_version:
+        raise ValueError("private partition questionnaire does not match the frozen protocol")
+    if universe.protocol_id != protocol.protocol_id or universe.protocol_sha256 != protocol.sha256:
+        raise ValueError("candidate universe is bound to a different frozen protocol")
+    if universe.cohort != protocol.cohort:
+        raise ValueError("candidate universe cohort does not match the frozen protocol")
+
+    expected_ids = set(protocol.participant_ids)
+    partition_by_id = {case.participant_id: case for case in partition.cases}
+    candidates_by_id = {case.participant_id: case.candidates for case in universe.cases}
+    if set(partition_by_id) != expected_ids:
+        raise ValueError("private partition must contain exactly the protocol participants")
+    if set(candidates_by_id) != expected_ids:
+        raise ValueError("candidate universe must contain exactly the protocol participants")
+    if any(case.cohort != protocol.cohort for case in partition.cases):
+        raise ValueError("private partition cohort does not match the frozen protocol")
+
+    blind_cases: list[HumanBlindCase] = []
+    true_candidate_ids: dict[str, str] = {}
+    for participant_id in sorted(expected_ids):
+        private_case = partition_by_id[participant_id]
+        birth = private_case.verified_birth_record
+        if birth is None:
+            raise ValueError(f"verified birth record is missing for {participant_id}")
+        candidates = candidates_by_id[participant_id]
+        if any(
+            candidate.start_utc is None or candidate.end_utc is None
+            for candidate in candidates
+        ):
+            raise ValueError(
+                f"candidate UTC intervals are required to resolve truth for {participant_id}"
+            )
+        uncertainty = timedelta(minutes=birth.precision_minutes)
+        earliest = birth.resolved_utc - uncertainty
+        latest = birth.resolved_utc + uncertainty
+        matches = tuple(
+            candidate
+            for candidate in candidates
+            if candidate.start_utc is not None
+            and candidate.end_utc is not None
+            and candidate.start_utc <= earliest
+            and (
+                latest < candidate.end_utc
+                if birth.precision_minutes == 0
+                else latest <= candidate.end_utc
+            )
+        )
+        if len(matches) != 1:
+            raise ValueError(
+                "birth precision interval must resolve to exactly one candidate for "
+                f"{participant_id}; found {len(matches)}"
+            )
+        true_candidate_ids[participant_id] = matches[0].candidate_id
+        blind_cases.append(
+            HumanBlindCase(
+                participant_id=participant_id,
+                cohort=protocol.cohort,
+                questionnaire_version=partition.questionnaire_version,
+                responses=private_case.responses,
+                response_reliability=private_case.response_reliability,
+                response_records=private_case.response_records,
+                candidates=candidates,
+            )
+        )
+
+    blind = HumanBlindCohort(
+        schema_version="human-blind-cohort-v2",
+        protocol_id=protocol.protocol_id,
+        protocol_sha256=protocol.sha256,
+        cohort=protocol.cohort,
+        candidate_universe_sha256=universe.candidate_universe_sha256,
+        cases=tuple(blind_cases),
+    )
+    answer_key = HumanCohortAnswerKey(
+        cohort=protocol.cohort,
+        protocol_sha256=protocol.sha256,
+        blind_input_sha256=blind.blind_input_sha256,
+        true_candidate_ids=true_candidate_ids,
+        final_test_release_id=protocol.final_test_release_id,
+    )
+    write_new_canonical_json(blind_path, blind)
+    write_new_canonical_json(answer_key_file, answer_key, mode=0o600)
+    receipt = write_workflow_receipt(
+        receipt_path,
+        stage="prepare-blind-cohort",
+        artifact_id=protocol.protocol_id,
+        input_sha256=exact_file_hashes(
+            private_partition=partition_file,
+            candidate_universe=universe_file,
+            evaluation_protocol=frozen_protocol_file,
+        ),
+        output_sha256={"human.blind-cohort.json": sha256_file(blind_path)},
+        repository_root=repository_root,
+        answer_key_accessed=True,
+        claim_boundary=(
+            "owner-side preparation only; plaintext truth written externally and excluded "
+            "from decoder artifacts"
+        ),
+        created_at_utc=created_at_utc,
+    )
+    return blind, answer_key, receipt
 
 
 def import_human_cases(
