@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schemas/hd-reverse-profile-v1.json",
+  "title": "Candidate-Blind Behavioral Reverse-Matching Profile",
+  "type": "object",
+  "required": [
+    "profile_version",
+    "status",
+    "created_utc",
+    "search_mode",
+    "observations",
+    "dependency_clusters",
+    "freeze"
+  ],
+  "properties": {
+    "profile_version": {"type": "string"},
+    "status": {
+      "type": "string",
+      "enum": ["draft", "audited", "frozen", "post_selection_revision"]
+    },
+    "created_utc": {"type": "string", "format": "date-time"},
+    "search_mode": {
+      "type": "string",
+      "enum": ["bounded", "blinded_1000", "known_date_rectification", "global_utc", "combined"]
+    },
+    "somatic_reporting": {
+      "type": "object",
+      "properties": {
+        "body_access": {"$ref": "#/$defs/reliability"},
+        "dissociative_distance": {"$ref": "#/$defs/reliability"},
+        "threat_amplification": {"$ref": "#/$defs/reliability"},
+        "social_survival_override": {"$ref": "#/$defs/reliability"},
+        "cognitive_override": {"$ref": "#/$defs/reliability"},
+        "state_stability": {"$ref": "#/$defs/reliability"},
+        "retrospective_access": {"$ref": "#/$defs/reliability"},
+        "low_stakes_detectability": {"$ref": "#/$defs/reliability"},
+        "notes": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "observations": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/observation"}
+    },
+    "dependency_clusters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["cluster_id", "name", "observation_ids", "split"],
+        "properties": {
+          "cluster_id": {"type": "string", "pattern": "^CL-[0-9]{2,4}$"},
+          "name": {"type": "string"},
+          "observation_ids": {"type": "array", "items": {"type": "string"}},
+          "split": {"type": "string", "enum": ["discovery", "holdout", "prospective"]},
+          "independence_notes": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "change_log": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["timestamp_utc", "from_version", "to_version", "reason", "rank_visible_before_change"],
+        "properties": {
+          "timestamp_utc": {"type": "string", "format": "date-time"},
+          "from_version": {"type": "string"},
+          "to_version": {"type": "string"},
+          "reason": {"type": "string"},
+          "changed_observation_ids": {"type": "array", "items": {"type": "string"}},
+          "rank_visible_before_change": {"type": "boolean"},
+          "post_selection_label": {"type": "boolean"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "freeze": {
+      "type": "object",
+      "required": [
+        "profile_sha256",
+        "candidate_universe_sha256",
+        "question_bank_version",
+        "mapping_library_version",
+        "scoring_model_version",
+        "holdout_seed"
+      ],
+      "properties": {
+        "profile_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "candidate_universe_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "answer_key_commitment_sha256": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"},
+        "question_bank_version": {"type": "string"},
+        "mapping_library_version": {"type": "string"},
+        "scoring_model_version": {"type": "string"},
+        "chart_engine_version": {"type": "string"},
+        "ephemeris_version": {"type": "string"},
+        "timezone_database_version": {"type": "string"},
+        "holdout_seed": {"type": "integer"},
+        "frozen_utc": {"type": "string", "format": "date-time"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "confidence": {
+      "type": "number",
+      "enum": [0, 0.25, 0.5, 0.75, 1]
+    },
+    "reliability": {
+      "type": "number",
+      "enum": [0, 0.25, 0.5, 0.75, 1]
+    },
+    "observation": {
+      "type": "object",
+      "required": [
+        "observation_id",
+        "behavioral_statement",
+        "behavioral_confidence",
+        "measurement_reliability",
+        "dependency_cluster",
+        "state_sensitive",
+        "body_access_sensitive",
+        "holdout_eligible",
+        "status"
+      ],
+      "properties": {
+        "observation_id": {"type": "string", "pattern": "^OBS-[0-9]{4}$"},
+        "behavioral_statement": {"type": "string", "minLength": 10},
+        "contexts_where_true": {"type": "array", "items": {"type": "string"}},
+        "exceptions": {"type": "array", "items": {"type": "string"}},
+        "examples": {"type": "array", "items": {"type": "string"}},
+        "counterexamples": {"type": "array", "items": {"type": "string"}},
+        "life_periods": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["early_childhood", "childhood", "adolescence", "early_adulthood", "mid_adulthood", "recent", "prospective"]
+          }
+        },
+        "source_types": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["self_report", "contemporaneous_record", "independent_informant", "public_writing", "behavioral_record", "prospective_log"]
+          }
+        },
+        "behavioral_confidence": {"$ref": "#/$defs/confidence"},
+        "measurement_reliability": {"$ref": "#/$defs/reliability"},
+        "effective_confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "dependency_cluster": {"type": "string", "pattern": "^CL-[0-9]{2,4}$"},
+        "state_sensitive": {"type": "boolean"},
+        "body_access_sensitive": {"type": "boolean"},
+        "holdout_eligible": {"type": "boolean"},
+        "status": {"type": "string", "enum": ["discovery", "holdout", "prospective", "excluded"]},
+        "exclusion_reason": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

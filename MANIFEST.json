@@ -1,0 +1,170 @@
+{
+  "project": "hd_reverse_match_codex_project_v1",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 3419,
+      "sha256": "a1e49a84518c0bc3da2f8625161eb6b243d275c89e676ec74d08bc4bf5361f49"
+    },
+    {
+      "path": "ARCHITECTURE.md",
+      "bytes": 4591,
+      "sha256": "3031956b9f56ec4e3e4b108084e0b806f449d4d2acc99d9a40a343629408181a"
+    },
+    {
+      "path": "CODEX_MASTER_PROMPT.md",
+      "bytes": 3009,
+      "sha256": "88c7de6224bddeb122fe9305535f1a271dc46a477dfc8bac45676df838b0cb7d"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1553,
+      "sha256": "157280a66aced5a2eaee2826f4bf1480291af166700d7252829dff9ac8564150"
+    },
+    {
+      "path": "docs/01_research_design.md",
+      "bytes": 2710,
+      "sha256": "ca1f545c932f4ed793654f71fd521e37f0791a00e332b6c1d3a44431e61bb71a"
+    },
+    {
+      "path": "docs/02_scoring_and_model_policy.md",
+      "bytes": 3382,
+      "sha256": "8d3720a77670ad021de72f382409b318be8974504a37e5ae30c86730809431c0"
+    },
+    {
+      "path": "docs/03_synthetic_validation.md",
+      "bytes": 2850,
+      "sha256": "9770ebe9d3a18a8d411dff700427151bf88659a74b74dee0cfefa68640385c98"
+    },
+    {
+      "path": "docs/04_human_development_and_validation.md",
+      "bytes": 4156,
+      "sha256": "9a8439f44edbc8a1f3990bc3177d554e4593bf1a769efee5a91776d91ade6fd5"
+    },
+    {
+      "path": "docs/05_blinding_and_secrets.md",
+      "bytes": 2124,
+      "sha256": "8c874ca1485a60726d0ddd0fe9c1ab8cb46531b597fcbf19c4e441da0226c0ce"
+    },
+    {
+      "path": "docs/06_execution_plan.md",
+      "bytes": 2358,
+      "sha256": "4048651cd1caa1631b557cfcac0581ef61e898705f4b90b3cc527be545a74928"
+    },
+    {
+      "path": "docs/07_acceptance_tests.md",
+      "bytes": 2018,
+      "sha256": "6b70245d566374a27618fb130dd67accc8553c5a27f55186434ba6d29fcde6d3"
+    },
+    {
+      "path": "docs/08_data_formats.md",
+      "bytes": 1854,
+      "sha256": "07a2ccf40f6ee0f865a7f1a956d6c9af6fc63fa2309cc45539bce5e20a7e8c3c"
+    },
+    {
+      "path": "docs/09_codex_parallel_workstreams.md",
+      "bytes": 2233,
+      "sha256": "bcca33102b03d7984a93117d7971df0641fffb301d61ace1de7bb747854f05c2"
+    },
+    {
+      "path": "docs/10_metrics.md",
+      "bytes": 1503,
+      "sha256": "ca57f9338f680aa82539b1096729b149a71ff5b6fd2fa5d2b22536f34fdc055c"
+    },
+    {
+      "path": "docs/11_empirical_learning_track.md",
+      "bytes": 3123,
+      "sha256": "3b4960ac2a4451f3ec86807be0a7ab87b7905b162efa63f182ce6fe398483101"
+    },
+    {
+      "path": "docs/12_threats_to_validity.md",
+      "bytes": 2139,
+      "sha256": "0dbf145c8ed6c8a586cbb729301afb0507f590a9091ec27c9f35fc084e1c908c"
+    },
+    {
+      "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+      "bytes": 468,
+      "sha256": "523c43ad5ed30363563824e2906a399c0ce6d315ea33c91787c395f5818e7e7e"
+    },
+    {
+      "path": "reference/core/action_openapi_template.yaml",
+      "bytes": 7715,
+      "sha256": "3444245eeb8fcd7434e6c9b02d0845fd1e17395e91a3b73309e5ac9830af855e"
+    },
+    {
+      "path": "reference/core/behavioral_target_combined(5).md",
+      "bytes": 26818,
+      "sha256": "54a7720f893d425bd34af500cec1a2580a9f12f2647742131b27daab1d5a7d34"
+    },
+    {
+      "path": "reference/core/generate_blinded_candidate_pool.py",
+      "bytes": 11293,
+      "sha256": "7cc1ef9419900a0670b3edf5f9a42ad30d987db8f8893e4747ea7cf33061f8cc"
+    },
+    {
+      "path": "reference/core/human_design_reverse_matching_protocol_v4_1.md",
+      "bytes": 37122,
+      "sha256": "2114625dccdcfeec2bf24d506c933ad6c9081284c34143625c1288edca765c74"
+    },
+    {
+      "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+      "bytes": 33184,
+      "sha256": "678f552b989f3547900a33e1e45fccaad2da969d94c950d0ec976d853455761f"
+    },
+    {
+      "path": "reference/core/profile_schema_v1.json",
+      "bytes": 6030,
+      "sha256": "b61a30ce009db90e8ba67d7b20337b6aa3e38205237a936f7e920b4567404133"
+    },
+    {
+      "path": "reference/core/question_bank_v1.json",
+      "bytes": 49659,
+      "sha256": "31f813efc3da7263569ef010a8336b1b1b0c44801b7aa0f91e33b3fa4587d820"
+    },
+    {
+      "path": "reference/core/search_backend_contract.md",
+      "bytes": 5453,
+      "sha256": "50c28f70d4430b58d62a1f2a453d4d7d2dcf3a75c7a732387621f5653f4591e7"
+    },
+    {
+      "path": "reference/core/updated_behavioral_profile_v3_2.md",
+      "bytes": 32287,
+      "sha256": "7b7c2b5f8cad22baeb2eb28a1076def3a60d2f3d4692bd689beec4b9eabe7f92"
+    },
+    {
+      "path": "reference/core/v3_2_scoring_delta.md",
+      "bytes": 3943,
+      "sha256": "3744b2183652245b34f6e128d1e217e150305bf755b132958a95adc0661df720"
+    },
+    {
+      "path": "reference/custom_gpt/authority_and_transit_guardrails.md",
+      "bytes": 4067,
+      "sha256": "ad3d692833301fd5e11c2b8e02c700ea4f7d0cfdedabe6fac7260b2b8ac854e7"
+    },
+    {
+      "path": "reference/custom_gpt/custom_gpt_instructions_under_8000.md",
+      "bytes": 7403,
+      "sha256": "23d06665c0c64c1df25e2e58bf30e8173c7766ad94cf88122a1f2ec7bc0cb685"
+    },
+    {
+      "path": "reference/custom_gpt/daily_hd_transit_task_prompts_v2.md",
+      "bytes": 3167,
+      "sha256": "c3ca9d0d2484ff1940c7578400227a9424dd676d5caa35f5824d230597c0d067"
+    },
+    {
+      "path": "reference/legacy_runs/hd_global_search_results.json",
+      "bytes": 229542,
+      "sha256": "58e24c0a077711ce463f152efecc5743ff1fa190d8de16a5e2449dd55ca62c69"
+    },
+    {
+      "path": "reference/legacy_runs/hd_mapping_sensitivity.json",
+      "bytes": 667,
+      "sha256": "9ced53565abdbe76f8d1f460d1551d32ab09ff48dc8499ea8a5311918c395754"
+    },
+    {
+      "path": "reference/research/forum_research.md",
+      "bytes": 14302,
+      "sha256": "7343e6cb959bf90f19c01fdfd32773295da2a799c863b05b172cba1638aa2cc8"
+    }
+  ]
+}

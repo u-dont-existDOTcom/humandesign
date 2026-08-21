@@ -1,0 +1,1332 @@
+{
+  "version": "1.0.0",
+  "purpose": "Candidate-blind behavior-first question bank. Contains no chart mappings; those belong in a separately frozen server-side mapping library.",
+  "rules": [
+    "Do not reveal candidate direction.",
+    "Require examples before high confidence.",
+    "Separate capacity, motivation, behavior, and outcome.",
+    "Allow unknown and context-dependent answers.",
+    "Do not score body-sensitive items above their measurement reliability.",
+    "Use only questions with predeclared mappings during scoring."
+  ],
+  "questions": [
+    {
+      "id": "R01",
+      "phase": "readiness",
+      "domain": "body_access",
+      "prompt": "When you are relatively calm, how easy is it to notice basic bodily states such as hunger, fatigue, muscular tension, warmth, contraction, or expansion before you explain them?",
+      "response_format": "0-4 plus example",
+      "followups": [
+        "Give one recent example where you noticed the sensation before interpreting it."
+      ],
+      "body_access_sensitive": true,
+      "minimum_evidence": "one recent example",
+      "behavioral_constructs": [
+        "interoceptive access"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "R02",
+      "phase": "readiness",
+      "domain": "dissociative_distance",
+      "prompt": "In the past month, how often have you felt detached from your body, unreal, outside yourself, or as though the world were dreamlike?",
+      "response_format": "never/rarely/sometimes/often/very often",
+      "followups": [
+        "When this happens, can you still identify what your body is signaling?"
+      ],
+      "body_access_sensitive": true,
+      "minimum_evidence": "frequency and context",
+      "behavioral_constructs": [
+        "dissociative distance"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "R03",
+      "phase": "readiness",
+      "domain": "retrospective_access",
+      "prompt": "How often do you recognize what your body was signaling only after you have acted or after the situation is over?",
+      "response_format": "never/rarely/sometimes/often/very often",
+      "followups": [
+        "Describe one case where the signal became clear only afterward."
+      ],
+      "body_access_sensitive": true,
+      "minimum_evidence": "one recent example",
+      "behavioral_constructs": [
+        "retrospective body access"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "R04",
+      "phase": "readiness",
+      "domain": "threat_amplification",
+      "prompt": "When you are objectively safe, do ordinary sensations such as a fast heartbeat, stomach tension, or tightness frequently feel like immediate danger or urgency?",
+      "response_format": "never/rarely/sometimes/often/very often",
+      "followups": [
+        "What helps you distinguish present danger from an old alarm response?"
+      ],
+      "body_access_sensitive": true,
+      "minimum_evidence": "one example and one successful distinction",
+      "behavioral_constructs": [
+        "threat amplification"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "R05",
+      "phase": "readiness",
+      "domain": "social_override",
+      "prompt": "In interpersonal situations, how often do you agree, appease, freeze, or stay silent even while another part of you seems to resist?",
+      "response_format": "never/rarely/sometimes/often/very often",
+      "followups": [
+        "Does the resistance become clearer once you are alone?"
+      ],
+      "body_access_sensitive": true,
+      "minimum_evidence": "one relationship example",
+      "behavioral_constructs": [
+        "fawning/freezing override"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "R06",
+      "phase": "readiness",
+      "domain": "cognitive_override",
+      "prompt": "How often is there an initial bodily response that your reasoning later talks you out of?",
+      "response_format": "never/rarely/sometimes/often/very often",
+      "followups": [
+        "Give one example where overriding helped and one where it hurt."
+      ],
+      "body_access_sensitive": true,
+      "minimum_evidence": "two contrasting examples",
+      "behavioral_constructs": [
+        "cognitive override"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "R07",
+      "phase": "readiness",
+      "domain": "state_stability",
+      "prompt": "How much do your bodily answers change with sleep deprivation, pain, medication, substances, conflict, hunger, or the presence of a particular person?",
+      "response_format": "not at all/a little/moderately/a lot/extremely",
+      "followups": [
+        "Which conditions change them most?"
+      ],
+      "body_access_sensitive": true,
+      "minimum_evidence": "specific conditions",
+      "behavioral_constructs": [
+        "state dependence"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "R08",
+      "phase": "readiness",
+      "domain": "low_stakes_testability",
+      "prompt": "Can you detect and test bodily preferences on ordinary reversible choices, such as food, route, timing, or whether to continue a minor activity?",
+      "response_format": "yes reliably/yes sometimes/rarely/no/unsure",
+      "followups": [
+        "Describe a low-stakes test you could repeat prospectively."
+      ],
+      "body_access_sensitive": true,
+      "minimum_evidence": "one proposed test",
+      "behavioral_constructs": [
+        "low-stakes detectability"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "A01",
+      "phase": "open_autobiography",
+      "domain": "childhood",
+      "prompt": "Before adolescence, what did you do spontaneously when nobody was directing you? Describe recurring activities, questions, social patterns, and ways adults or peers responded to you.",
+      "response_format": "narrative",
+      "followups": [
+        "Which parts remained stable into adulthood?"
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "two childhood examples",
+      "behavioral_constructs": [
+        "early baseline"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "A02",
+      "phase": "open_autobiography",
+      "domain": "major_decisions",
+      "prompt": "Describe three consequential decisions that worked well and three that did not. For each, what happened first internally, how long did clarity take, who initiated the situation, and what did you do?",
+      "response_format": "structured narrative",
+      "followups": [
+        "Separate the first signal from later reasoning and outcome."
+      ],
+      "body_access_sensitive": true,
+      "minimum_evidence": "six episodes",
+      "behavioral_constructs": [
+        "decision process"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "A03",
+      "phase": "open_autobiography",
+      "domain": "energy",
+      "prompt": "Describe your natural work rhythm when no employer or deadline controls you. What starts a productive period, how long can it continue, and what tells you to stop?",
+      "response_format": "narrative",
+      "followups": [
+        "What happens after you ignore the stopping signal?"
+      ],
+      "body_access_sensitive": true,
+      "minimum_evidence": "two periods",
+      "behavioral_constructs": [
+        "energy rhythm",
+        "stopping"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "A04",
+      "phase": "open_autobiography",
+      "domain": "opportunity",
+      "prompt": "List five important opportunities or relationships. Did you pursue them, respond to something already present, receive a clear invitation or recognition, initiate without external cue, or drift into them?",
+      "response_format": "event table",
+      "followups": [
+        "Which entry pattern produced the best fit and which produced the worst?"
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "five events",
+      "behavioral_constructs": [
+        "social entry",
+        "opportunity mechanics"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "A05",
+      "phase": "open_autobiography",
+      "domain": "learning",
+      "prompt": "Name three areas in which others regard you as highly knowledgeable or capable. How did that competence develop, and did you ever intend to become an expert?",
+      "response_format": "comparative narrative",
+      "followups": [
+        "What made you stop or continue in each field?"
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "three domains",
+      "behavioral_constructs": [
+        "curiosity",
+        "expertise",
+        "mastery motivation"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "A06",
+      "phase": "open_autobiography",
+      "domain": "systems",
+      "prompt": "Describe times you worked inside an established system. Did you identify with its method, seek status within it, use it pragmatically, reform it, quietly bypass it, or leave it?",
+      "response_format": "comparative narrative",
+      "followups": [
+        "Give one case of conformity and one case of dissent."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "two systems",
+      "behavioral_constructs": [
+        "participation versus identification",
+        "institutional dissent"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "A07",
+      "phase": "open_autobiography",
+      "domain": "resources",
+      "prompt": "What do money, comfort, possessions, commercial success, and professional advancement each mean to you? Which are ends, which are tools, and which are unimportant?",
+      "response_format": "separate ratings plus examples",
+      "followups": [
+        "Describe a choice where you refused advancement and one where you pursued resources."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "two contrasting examples",
+      "behavioral_constructs": [
+        "resources",
+        "ambition",
+        "comfort",
+        "status"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "A08",
+      "phase": "open_autobiography",
+      "domain": "conflict",
+      "prompt": "Describe your behavior in sudden crisis, prolonged interpersonal ambiguity, ordinary disagreement, and unmistakable betrayal.",
+      "response_format": "four-scenario narrative",
+      "followups": [
+        "What changes once you are alone?"
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "four contexts",
+      "behavioral_constructs": [
+        "conflict",
+        "boundaries",
+        "stress"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "A09",
+      "phase": "open_autobiography",
+      "domain": "relationships",
+      "prompt": "How do close relationships usually begin, deepen, and end for you? Include who initiates, how trust forms, how caregiving works, and what permanently breaks access.",
+      "response_format": "narrative",
+      "followups": [
+        "Give one relationship that followed the pattern and one that did not."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "two relationships",
+      "behavioral_constructs": [
+        "attachment",
+        "reciprocity",
+        "recognition"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "A10",
+      "phase": "open_autobiography",
+      "domain": "development",
+      "prompt": "Divide your life into major phases. For each phase, describe the dominant question, role, environment, work pattern, and way you related to other people.",
+      "response_format": "timeline",
+      "followups": [
+        "What caused each transition?"
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "at least three phases",
+      "behavioral_constructs": [
+        "developmental chronology"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "D01",
+      "phase": "structured",
+      "domain": "decision_timing",
+      "prompt": "For an important decision with no deadline, which pattern is most typical: an immediate quiet sense; a gut-like yes/no energy; clarity that changes over hours or days; hearing your own words reveal the answer; clarity from being in the right place or with the right listener; or no stable pattern?",
+      "response_format": "ranked choice plus examples",
+      "followups": [
+        "Describe two decisions with the same pattern and one exception."
+      ],
+      "body_access_sensitive": true,
+      "minimum_evidence": "three episodes",
+      "behavioral_constructs": [
+        "decision timing"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "D02",
+      "phase": "structured",
+      "domain": "immediate_signal",
+      "prompt": "When an immediate bodily signal occurs, is it brief and nonrepeating, loud and energizing, persistent until acted upon, emotionally charged, or mostly a later interpretation?",
+      "response_format": "multiple choice plus narrative",
+      "followups": [
+        "How do you distinguish it from fear or attraction?"
+      ],
+      "body_access_sensitive": true,
+      "minimum_evidence": "two examples",
+      "behavioral_constructs": [
+        "immediate signal quality"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "D03",
+      "phase": "structured",
+      "domain": "emotional_timing",
+      "prompt": "When a choice matters, does your view of it remain stable, fluctuate with emotional highs and lows, or become clearer only after sleeping on it?",
+      "response_format": "frequency matrix",
+      "followups": [
+        "Give one choice that looked different after time passed."
+      ],
+      "body_access_sensitive": true,
+      "minimum_evidence": "one example and baseline frequency",
+      "behavioral_constructs": [
+        "time-dependent clarity"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "D04",
+      "phase": "structured",
+      "domain": "voice_clarity",
+      "prompt": "Have you experienced not knowing what you want until you hear yourself speaking spontaneously, even when the listener gives no advice?",
+      "response_format": "never/rarely/sometimes/often/very often",
+      "followups": [
+        "Describe a case and whether the words surprised you."
+      ],
+      "body_access_sensitive": true,
+      "minimum_evidence": "one example if sometimes or more",
+      "behavioral_constructs": [
+        "self-heard clarity"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "D05",
+      "phase": "structured",
+      "domain": "environmental_clarity",
+      "prompt": "Do major choices become clearer mainly by moving through different places, speaking with several neutral people, or observing the environment over time rather than by one inner signal?",
+      "response_format": "never/rarely/sometimes/often/very often",
+      "followups": [
+        "What exactly changes when the environment or listener changes?"
+      ],
+      "body_access_sensitive": true,
+      "minimum_evidence": "one example",
+      "behavioral_constructs": [
+        "environmental/sounding-board clarity"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "D06",
+      "phase": "structured",
+      "domain": "will_commitment",
+      "prompt": "When you make a serious promise from your own initiative, how reliable is your capacity to carry it through? Distinguish genuine chosen commitments from pressured agreements.",
+      "response_format": "two ratings plus examples",
+      "followups": [
+        "Give one promise kept under difficulty and one agreement you could not sustain."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "two examples",
+      "behavioral_constructs": [
+        "will consistency",
+        "pressure"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "D07",
+      "phase": "structured",
+      "domain": "identity_direction",
+      "prompt": "When unsure about direction, do you usually feel a stable internal sense of who you are and where you are going, or does direction become clearer through the people and places around you?",
+      "response_format": "continuum plus examples",
+      "followups": [
+        "Has this changed across life phases?"
+      ],
+      "body_access_sensitive": true,
+      "minimum_evidence": "two periods",
+      "behavioral_constructs": [
+        "identity/direction stability"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "D08",
+      "phase": "structured",
+      "domain": "urgency",
+      "prompt": "Under pressure, what feels most compelling: removing the pressure quickly, proving you can do it, avoiding disappointment, following a bodily yes, waiting for emotional clarity, or withdrawing until the demand loses force?",
+      "response_format": "ranked choice",
+      "followups": [
+        "Give one deadline example."
+      ],
+      "body_access_sensitive": true,
+      "minimum_evidence": "one example",
+      "behavioral_constructs": [
+        "pressure response"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "S01",
+      "phase": "structured",
+      "domain": "initiation",
+      "prompt": "When you repeatedly initiate projects or relationships without a clear external opening, what is the usual result: momentum, resistance, exhaustion, indifference, mixed results, or context-dependent?",
+      "response_format": "frequency and outcome table",
+      "followups": [
+        "Separate work, friendship, romance, and public projects."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "four contexts",
+      "behavioral_constructs": [
+        "initiation outcome"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "S02",
+      "phase": "structured",
+      "domain": "response",
+      "prompt": "How often does energy or interest appear only after a concrete option, question, request, object, or event is already present?",
+      "response_format": "never/rarely/sometimes/often/very often",
+      "followups": [
+        "Give one example where nothing happened until something external appeared."
+      ],
+      "body_access_sensitive": true,
+      "minimum_evidence": "one example",
+      "behavioral_constructs": [
+        "response mechanics"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "S03",
+      "phase": "structured",
+      "domain": "recognition",
+      "prompt": "How much does accurate recognition of a specific aptitude change your willingness and effectiveness compared with generic praise or attention?",
+      "response_format": "not at all/a little/moderately/a lot/extremely",
+      "followups": [
+        "Give examples of accurate and inaccurate recognition."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "two examples",
+      "behavioral_constructs": [
+        "recognition sensitivity"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "S04",
+      "phase": "structured",
+      "domain": "invitation",
+      "prompt": "For major roles, relationships, and collaborations, do you function better after a clear mutual opening than after assigning yourself a role?",
+      "response_format": "context matrix",
+      "followups": [
+        "Give one successful and one failed entry."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "two examples",
+      "behavioral_constructs": [
+        "permission-sensitive entry"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "S05",
+      "phase": "structured",
+      "domain": "sustainable_energy",
+      "prompt": "When work is meaningful, can you sustain daily workforce energy indefinitely if sleep and health are adequate, or do even good projects eventually require disproportionate retreat?",
+      "response_format": "forced distinction plus narrative",
+      "followups": [
+        "Describe your longest productive period and recovery."
+      ],
+      "body_access_sensitive": true,
+      "minimum_evidence": "one long period",
+      "behavioral_constructs": [
+        "sustainable workforce energy"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "S06",
+      "phase": "structured",
+      "domain": "burst_output",
+      "prompt": "Do you produce unusually concentrated output in bursts that are difficult to maintain, or is your output steadier and replenished by continued work?",
+      "response_format": "continuum",
+      "followups": [
+        "What ends a burst?"
+      ],
+      "body_access_sensitive": true,
+      "minimum_evidence": "two projects",
+      "behavioral_constructs": [
+        "burst versus sustained output"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "S07",
+      "phase": "structured",
+      "domain": "restoration",
+      "prompt": "After intensive social contact or major experiences, do you need solitude primarily for physical recovery, emotional clearing, perspective, creative incubation, or not at all?",
+      "response_format": "ranked choice",
+      "followups": [
+        "How long does restoration usually take?"
+      ],
+      "body_access_sensitive": true,
+      "minimum_evidence": "two episodes",
+      "behavioral_constructs": [
+        "retreat function"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "S08",
+      "phase": "structured",
+      "domain": "frustration_signatures",
+      "prompt": "When life is persistently misaligned, which state is most characteristic: frustration, anger, bitterness, disappointment, restless pressure, numb withdrawal, or something else?",
+      "response_format": "ranked choice plus examples",
+      "followups": [
+        "Distinguish temporary emotion from a recurring life pattern."
+      ],
+      "body_access_sensitive": true,
+      "minimum_evidence": "two periods",
+      "behavioral_constructs": [
+        "misalignment signature"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "P01",
+      "phase": "structured",
+      "domain": "foundation_seeking",
+      "prompt": "Before acting in an unfamiliar domain, how strongly do you need to investigate foundations until you feel secure enough to proceed?",
+      "response_format": "never/rarely/sometimes/often/very often",
+      "followups": [
+        "Give one domain where insufficient foundation stopped you."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "one example",
+      "behavioral_constructs": [
+        "foundation investigation"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "P02",
+      "phase": "structured",
+      "domain": "natural_withdrawal",
+      "prompt": "Do your strongest abilities often develop privately and naturally, with other people recognizing them before you choose to present yourself?",
+      "response_format": "never/rarely/sometimes/often/very often",
+      "followups": [
+        "Give two abilities and who first called them out."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "two examples",
+      "behavioral_constructs": [
+        "natural talent",
+        "withdrawal",
+        "recognition"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "P03",
+      "phase": "structured",
+      "domain": "trial_error",
+      "prompt": "Do you learn mainly through direct trial, error, and adaptation, even when advice or theory is available?",
+      "response_format": "never/rarely/sometimes/often/very often",
+      "followups": [
+        "Give one costly trial and one productive trial."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "two examples",
+      "behavioral_constructs": [
+        "experiential learning"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "P04",
+      "phase": "structured",
+      "domain": "network_opportunity",
+      "prompt": "How often do major opportunities arrive through friends, friends-of-friends, existing communities, or trusted relational bridges?",
+      "response_format": "percentage estimate plus examples",
+      "followups": [
+        "List five important opportunities and their social path."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "five events",
+      "behavioral_constructs": [
+        "network transmission"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "P05",
+      "phase": "structured",
+      "domain": "projection_field",
+      "prompt": "How often do people who know you only partly project a larger role, solution, competence, or promise onto you and later become disappointed when reality is narrower?",
+      "response_format": "never/rarely/sometimes/often/very often",
+      "followups": [
+        "Give one positive and one harmful projection."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "two examples",
+      "behavioral_constructs": [
+        "projection dynamics"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "P06",
+      "phase": "structured",
+      "domain": "practical_solution",
+      "prompt": "When people bring a complex problem, are you most drawn to investigate it, experiment with it, offer a practical solution, connect them to someone, or withdraw until recognized?",
+      "response_format": "ranked choice",
+      "followups": [
+        "Give one helping episode."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "one example",
+      "behavioral_constructs": [
+        "problem-solving role"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "P07",
+      "phase": "structured",
+      "domain": "developmental_phases",
+      "prompt": "Has your life followed a marked sequence of early experimentation, later observation/withdrawal, and eventual embodied role-modeling or guidance?",
+      "response_format": "not at all/partly/strongly/uncertain",
+      "followups": [
+        "Describe the ages and transitions without interpreting them."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "timeline evidence",
+      "behavioral_constructs": [
+        "three-phase development"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "P08",
+      "phase": "structured",
+      "domain": "public_private",
+      "prompt": "Is your public contribution primarily a deliberate public identity, a practical response to requests, a byproduct of private inquiry, an expression of trial-and-error learning, or a role others repeatedly assign you?",
+      "response_format": "ranked choice",
+      "followups": [
+        "Give two public outputs and how they began."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "two examples",
+      "behavioral_constructs": [
+        "public role origin"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "P09",
+      "phase": "structured",
+      "domain": "calling_out",
+      "prompt": "When others accurately call out a natural ability, do you feel relief and mobilization, exposure and resistance, pressure to prove yourself, or little change?",
+      "response_format": "ranked choice",
+      "followups": [
+        "Give one strong example."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "one example",
+      "behavioral_constructs": [
+        "recognition response"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "P10",
+      "phase": "structured",
+      "domain": "role_reputation",
+      "prompt": "How much does your reputation within a network affect later opportunities, for better or worse?",
+      "response_format": "not at all/a little/moderately/a lot/extremely",
+      "followups": [
+        "Give an example of reputation opening and closing a door."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "two examples",
+      "behavioral_constructs": [
+        "network reputation"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "P11",
+      "phase": "structured",
+      "domain": "mistake_relationship",
+      "prompt": "When an experiment fails, do you naturally treat it as data, feel compelled to repair reputation, retreat to investigate, blame yourself, or abandon the domain?",
+      "response_format": "ranked choice",
+      "followups": [
+        "Give two failures."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "two examples",
+      "behavioral_constructs": [
+        "failure processing"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "P12",
+      "phase": "structured",
+      "domain": "maturation",
+      "prompt": "Do people increasingly seek you for perspective because of what you have lived through, or primarily because of technical expertise, institutional credentials, charisma, or social position?",
+      "response_format": "ranked choice",
+      "followups": [
+        "Give three recent requests for guidance."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "three examples",
+      "behavioral_constructs": [
+        "mature guidance source"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "C01",
+      "phase": "structured",
+      "domain": "emotional_permeability",
+      "prompt": "When another person is strongly emotional, do their feelings become amplified inside you, remain clearly separate, trigger a matching emotion, or make you emotionally numb?",
+      "response_format": "context matrix",
+      "followups": [
+        "What happens after you leave the person?"
+      ],
+      "body_access_sensitive": true,
+      "minimum_evidence": "two interpersonal examples",
+      "behavioral_constructs": [
+        "emotional permeability"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "C02",
+      "phase": "structured",
+      "domain": "emotional_baseline",
+      "prompt": "When alone in a safe, familiar space, is your emotional baseline steady, wave-like, volatile, flat, or difficult to identify?",
+      "response_format": "ranked choice plus narrative",
+      "followups": [
+        "How quickly do you return to baseline after conflict?"
+      ],
+      "body_access_sensitive": true,
+      "minimum_evidence": "two periods",
+      "behavioral_constructs": [
+        "emotional baseline"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "C03",
+      "phase": "structured",
+      "domain": "will_proving",
+      "prompt": "Do you feel a recurring need to prove your worth, keep promises beyond capacity, compete, or demonstrate value, even when nobody requires it?",
+      "response_format": "never/rarely/sometimes/often/very often",
+      "followups": [
+        "Give one case where proving distorted a choice."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "one example",
+      "behavioral_constructs": [
+        "will conditioning"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "C04",
+      "phase": "structured",
+      "domain": "inspiration_pressure",
+      "prompt": "Do unanswered questions or ideas create mental pressure that feels internally generated and returns until resolved, or do you mostly think in response to external problems?",
+      "response_format": "continuum",
+      "followups": [
+        "Give one question that returned over years."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "one long-term example",
+      "behavioral_constructs": [
+        "inspiration pressure",
+        "internal inquiry"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "C05",
+      "phase": "structured",
+      "domain": "conceptual_certainty",
+      "prompt": "How do you relate to uncertainty in your own explanations: hold multiple possibilities, seek one coherent formulation, speak before understanding, avoid commitment, or repeatedly revise?",
+      "response_format": "ranked choice",
+      "followups": [
+        "Give an example of a theory changing."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "one example",
+      "behavioral_constructs": [
+        "conceptual processing"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "C06",
+      "phase": "structured",
+      "domain": "expression_timing",
+      "prompt": "Do your ideas communicate best spontaneously in the moment, after long private formulation, when directly asked, through writing, or through practiced performance?",
+      "response_format": "ranked choice",
+      "followups": [
+        "Compare speaking and writing."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "two mediums",
+      "behavioral_constructs": [
+        "expression timing"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "C07",
+      "phase": "structured",
+      "domain": "root_pressure",
+      "prompt": "When several tasks are pending, do you feel a strong need to clear them quickly so pressure disappears, use pressure as fuel, remain neutral, freeze, or become scattered?",
+      "response_format": "ranked choice",
+      "followups": [
+        "Give one administrative example."
+      ],
+      "body_access_sensitive": true,
+      "minimum_evidence": "one example",
+      "behavioral_constructs": [
+        "pressure response"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "C08",
+      "phase": "structured",
+      "domain": "sacral_availability",
+      "prompt": "Does physical energy renew through doing the right work, or does prolonged work deplete you even when it is meaningful?",
+      "response_format": "forced distinction plus nuance",
+      "followups": [
+        "Describe next-day energy after a satisfying workday."
+      ],
+      "body_access_sensitive": true,
+      "minimum_evidence": "two workdays",
+      "behavioral_constructs": [
+        "energy renewal"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "C09",
+      "phase": "structured",
+      "domain": "direction_in_environment",
+      "prompt": "How strongly do place and company change your felt direction, identity, or sense of belonging?",
+      "response_format": "not at all/a little/moderately/a lot/extremely",
+      "followups": [
+        "Give one place where you became more yourself and one where you became less."
+      ],
+      "body_access_sensitive": true,
+      "minimum_evidence": "two places",
+      "behavioral_constructs": [
+        "environmental identity"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "C10",
+      "phase": "structured",
+      "domain": "fear_quality",
+      "prompt": "When caution appears, is it a brief practical warning, recurring anticipatory worry, fear of the unknown, fear of failure, fear of inadequacy, or fear of losing control?",
+      "response_format": "ranked choice",
+      "followups": [
+        "Give one example of accurate caution and one false alarm."
+      ],
+      "body_access_sensitive": true,
+      "minimum_evidence": "two examples",
+      "behavioral_constructs": [
+        "fear phenomenology"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "T01",
+      "phase": "structured",
+      "domain": "original_contribution",
+      "prompt": "Think of three times your work became influential. Did influence come mainly from representing an established method well, becoming exceptionally practiced, occupying a recognized role, building relationships, or presenting something distinctly your own?",
+      "response_format": "event-by-event classification",
+      "followups": [
+        "What was copied, adapted, or genuinely new in each case?"
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "three events",
+      "behavioral_constructs": [
+        "distinctive contribution"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "T02",
+      "phase": "structured",
+      "domain": "mastery_motivation",
+      "prompt": "Suppose you are already competent enough to solve the problem. Would you usually keep practicing to perfect the skill, move to the next question, teach it, commercialize it, or lose interest?",
+      "response_format": "ranked choice",
+      "followups": [
+        "Give two real examples."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "two examples",
+      "behavioral_constructs": [
+        "mastery motivation",
+        "diminishing returns"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "T03",
+      "phase": "structured",
+      "domain": "expert_identity",
+      "prompt": "How do you react when others call you an expert: accurate identity, useful shorthand, uncomfortable projection, irrelevant label, or status you actively sought?",
+      "response_format": "ranked choice",
+      "followups": [
+        "Has the reaction changed across domains?"
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "two domains",
+      "behavioral_constructs": [
+        "expert identity"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "T04",
+      "phase": "structured",
+      "domain": "correction_scope",
+      "prompt": "What kinds of error are hardest to ignore: any factual mistake, errors that harm people, errors in your own responsibility, violations of elegance, public misinformation, or none consistently?",
+      "response_format": "ranked choice",
+      "followups": [
+        "Give one error you ignored and one you pursued."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "two examples",
+      "behavioral_constructs": [
+        "consequential correction"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "T05",
+      "phase": "structured",
+      "domain": "purpose_struggle",
+      "prompt": "How willing are you to endure difficulty when the problem feels consequential, and how quickly do you disengage once the struggle seems unable to solve the underlying issue?",
+      "response_format": "two ratings plus examples",
+      "followups": [
+        "Give one struggle sustained and one abandoned."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "two examples",
+      "behavioral_constructs": [
+        "purpose-sensitive struggle"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "T06",
+      "phase": "structured",
+      "domain": "recurring_inquiry",
+      "prompt": "Do certain unresolved questions return over months or years until an internally satisfying formulation crystallizes?",
+      "response_format": "never/rarely/sometimes/often/very often",
+      "followups": [
+        "Name one question and its cycle."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "one longitudinal example",
+      "behavioral_constructs": [
+        "recurring inquiry"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "T07",
+      "phase": "structured",
+      "domain": "structuring_insight",
+      "prompt": "When you reach an unusual insight, what happens next: keep it private, speak it abruptly, organize it into a reusable framework, test it experimentally, or seek institutional validation?",
+      "response_format": "ranked choice",
+      "followups": [
+        "Give one full pathway from insight to output."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "one example",
+      "behavioral_constructs": [
+        "insight translation"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "T08",
+      "phase": "structured",
+      "domain": "persuasion",
+      "prompt": "When deliberately persuading someone, how reliably can you identify what they value and adapt the presentation without changing the underlying truth?",
+      "response_format": "success frequency plus examples",
+      "followups": [
+        "Give one success, one failure, and one time you refused to optimize persuasion."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "three examples",
+      "behavioral_constructs": [
+        "strategic persuasion",
+        "ethical restraint"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "T09",
+      "phase": "structured",
+      "domain": "resource_instinct",
+      "prompt": "How quickly do you sense whether an offer, price, exchange, or allocation is strategically worthwhile?",
+      "response_format": "never/rarely/sometimes/often/very often",
+      "followups": [
+        "Give one good call and one bad call."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "two examples",
+      "behavioral_constructs": [
+        "resource calibration"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "T10",
+      "phase": "structured",
+      "domain": "ambition",
+      "prompt": "Which statement fits best: I want upward advancement itself; I want resources for freedom; I enjoy winning; I want recognition of contribution; I want security; or ambition is mostly situational?",
+      "response_format": "ranked choice",
+      "followups": [
+        "Give a choice where these motives conflicted."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "one conflict example",
+      "behavioral_constructs": [
+        "hierarchical ambition",
+        "resource motive"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "T11",
+      "phase": "structured",
+      "domain": "retreat_narrative",
+      "prompt": "After a major experience, do you feel compelled to tell and package the story, need private decompression without narrating it, seek an audience, process through action, or move on immediately?",
+      "response_format": "ranked choice",
+      "followups": [
+        "Give two major experiences."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "two examples",
+      "behavioral_constructs": [
+        "retreat versus narrative"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "T12",
+      "phase": "structured",
+      "domain": "privacy_influence",
+      "prompt": "Does your strongest work emerge from prolonged private incubation, live collaboration, public competition, repeated practice, or immediate response to others?",
+      "response_format": "ranked choice",
+      "followups": [
+        "Compare two strong outputs."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "two outputs",
+      "behavioral_constructs": [
+        "private incubation"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "T13",
+      "phase": "structured",
+      "domain": "betrayal_response",
+      "prompt": "After undeniable betrayal, are you more likely to confront repeatedly, seek public accountability, quietly revoke access, forgive quickly, remain ambivalent, or attempt repair?",
+      "response_format": "ranked choice",
+      "followups": [
+        "Describe one event and its duration."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "one example",
+      "behavioral_constructs": [
+        "betrayal closure"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "T14",
+      "phase": "structured",
+      "domain": "crisis_response",
+      "prompt": "In an acute crisis, do you become calmer and more agile, emotionally flooded, controlling, physically aggressive, frozen, or dependent on direction?",
+      "response_format": "ranked choice",
+      "followups": [
+        "Give one genuine crisis."
+      ],
+      "body_access_sensitive": true,
+      "minimum_evidence": "one example",
+      "behavioral_constructs": [
+        "acute crisis regulation"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "T15",
+      "phase": "structured",
+      "domain": "need_sensitivity",
+      "prompt": "How readily do you notice what other people need, and how automatically do you feel responsible to meet it?",
+      "response_format": "two separate ratings",
+      "followups": [
+        "Give one case of noticing without taking responsibility."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "one example",
+      "behavioral_constructs": [
+        "need detection",
+        "responsibility boundary"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "T16",
+      "phase": "structured",
+      "domain": "leadership_motive",
+      "prompt": "When competent leadership is already present, do you prefer to lead, support, contribute something distinct, observe, compete, or withdraw?",
+      "response_format": "ranked choice",
+      "followups": [
+        "Give one group example."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "one example",
+      "behavioral_constructs": [
+        "leadership motivation"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "T17",
+      "phase": "structured",
+      "domain": "comfort_mobilization",
+      "prompt": "How much does having a safe, comfortable, ordered physical baseline affect your ability to think, create, decide, and act?",
+      "response_format": "domain ratings",
+      "followups": [
+        "Give one period of comfort and one of deprivation."
+      ],
+      "body_access_sensitive": true,
+      "minimum_evidence": "two periods",
+      "behavioral_constructs": [
+        "somatic baseline",
+        "comfort"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "T18",
+      "phase": "structured",
+      "domain": "novelty_continuity",
+      "prompt": "Would you rather optimize a stable high-quality routine, seek novelty and variety, alternate between both, or let external demands decide?",
+      "response_format": "ranked choice",
+      "followups": [
+        "Compare food, travel, work, and relationships."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "four domains",
+      "behavioral_constructs": [
+        "continuity versus novelty"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "T19",
+      "phase": "structured",
+      "domain": "risk",
+      "prompt": "Which risks are easiest to accept: calculated enterprise risk, social rejection, physical danger for a cause, pure chance, professional rule-breaking, emotional vulnerability, or none?",
+      "response_format": "ranked choice",
+      "followups": [
+        "Give one accepted and one refused risk."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "two examples",
+      "behavioral_constructs": [
+        "strategic risk",
+        "purpose risk"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "T20",
+      "phase": "structured",
+      "domain": "recognition_network",
+      "prompt": "When strangers discover your work, how often is there an identifiable social bridge through a friend, customer, community, or referral?",
+      "response_format": "event audit",
+      "followups": [
+        "Audit the next ten meaningful contacts prospectively."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "prospective log preferred",
+      "behavioral_constructs": [
+        "network propagation"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "V01",
+      "phase": "validation",
+      "domain": "independent_source",
+      "prompt": "Which existing source could test this observation without being created for the search: old writing, school reports, work records, messages, a family member, a partner, or a colleague?",
+      "response_format": "source selection",
+      "followups": [
+        "Retrieve the smallest relevant excerpt without telling the informant which answer is preferred."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "one independent source",
+      "behavioral_constructs": [
+        "independent corroboration"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "V02",
+      "phase": "validation",
+      "domain": "counterfactual",
+      "prompt": "What evidence would convince you that this self-description is wrong or overstated?",
+      "response_format": "free_text",
+      "followups": [
+        "Name a real situation where the opposite should have appeared."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "falsifying condition",
+      "behavioral_constructs": [
+        "self-model falsifiability"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "V03",
+      "phase": "validation",
+      "domain": "prospective_decision",
+      "prompt": "Choose five low-stakes decisions over the next two weeks. Before acting, record the first bodily signal, emotional state, mental argument, action, and later outcome without consulting the chart description.",
+      "response_format": "prospective log",
+      "followups": [
+        "Do not change the coding after seeing outcomes."
+      ],
+      "body_access_sensitive": true,
+      "minimum_evidence": "five decisions",
+      "behavioral_constructs": [
+        "prospective authority test"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "V04",
+      "phase": "validation",
+      "domain": "prospective_opportunity",
+      "prompt": "For the next ten meaningful opportunities, record who initiated, whether recognition was specific, whether a social bridge existed, and the result.",
+      "response_format": "prospective log",
+      "followups": [
+        "Freeze the categories before the first event."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "ten events",
+      "behavioral_constructs": [
+        "prospective strategy test"
+      ],
+      "scoring_notes": ""
+    },
+    {
+      "id": "V05",
+      "phase": "validation",
+      "domain": "blind_informant",
+      "prompt": "Ask an informant to choose between neutral behavioral scenarios without seeing dates, chart terms, or your preferred answer.",
+      "response_format": "blind informant response",
+      "followups": [
+        "Record relationship and observation period."
+      ],
+      "body_access_sensitive": false,
+      "minimum_evidence": "one qualified informant",
+      "behavioral_constructs": [
+        "independent rating"
+      ],
+      "scoring_notes": ""
+    }
+  ]
+}
