@@ -21,7 +21,7 @@ from hdmatch.experiments.canonical import (
 )
 from hdmatch.experiments.freeze import FreezeRecord, verify_frozen_predictions
 from hdmatch.experiments.manifest import SHA256_PATTERN
-from hdmatch.experiments.reveal import verify_reveal_record
+from hdmatch.experiments.reveal import RevealResult, verify_reveal_record
 from hdmatch.schemas import ScoredState
 from hdmatch.search.candidate_universe import local_date_utc_bounds
 from hdmatch.search.minute_rectifier import (
@@ -108,6 +108,7 @@ class EvaluationReport(BaseModel):
     prediction_sha256: str = Field(pattern=SHA256_PATTERN)
     freeze_sha256: str = Field(pattern=SHA256_PATTERN)
     reveal_sha256: str = Field(pattern=SHA256_PATTERN)
+    run_manifest_sha256: str = Field(pattern=SHA256_PATTERN)
     encrypted_answer_key_file: str | None = None
     encrypted_answer_key_sha256: str | None = Field(default=None, pattern=SHA256_PATTERN)
     answer_key_payload_sha256: str | None = Field(default=None, pattern=SHA256_PATTERN)
@@ -116,6 +117,9 @@ class EvaluationReport(BaseModel):
     question_bank_sha256: str = Field(pattern=SHA256_PATTERN)
     mapping_sha256: str = Field(pattern=SHA256_PATTERN)
     revealed_target_set_sha256: str | None = Field(
+        default=None, pattern=SHA256_PATTERN
+    )
+    generation_seed_commitment_sha256: str | None = Field(
         default=None, pattern=SHA256_PATTERN
     )
     evaluation_target: Literal["local_date", "stable_interval"] = "local_date"
@@ -592,25 +596,43 @@ def _evaluate_stage_ranking(
     return metrics, len(ranked_dates)
 
 
-def evaluate_frozen_payloads(
+def _evaluate_frozen_payloads(
     *,
     predictions: dict[str, Any],
     answer_key: dict[str, Any],
     freeze: FreezeRecord,
     freeze_sha256: str,
     reveal_sha256: str,
+    run_manifest_sha256: str,
     encrypted_answer_key_file: str,
     encrypted_answer_key_sha256: str,
     answer_key_payload_sha256: str,
     created_at_utc: datetime | None = None,
 ) -> EvaluationReport:
-    """Evaluate exact documented payload shapes after a caller verifies frozen bytes."""
+    """Evaluate payloads after the claim-grade caller verifies the complete chain."""
 
     leakage_report = scan_prediction_payload(predictions)
     if not leakage_report.passed:
         raise EvaluationInputError("predictions contain concealed-target leakage")
     if sha256_bytes(canonical_json_bytes(answer_key)) != answer_key_payload_sha256:
         raise EvaluationInputError("answer key does not match its declared reveal binding")
+    generation_seed = answer_key.get("generation_seed")
+    if generation_seed is not None and (
+        not isinstance(generation_seed, int)
+        or isinstance(generation_seed, bool)
+        or generation_seed < 0
+    ):
+        raise EvaluationInputError("synthetic generation_seed must be a non-negative integer")
+    generation_seed_commitment_sha256 = (
+        sha256_json(
+            {
+                "schema_version": "synthetic-generation-seed-commitment-v1",
+                "generation_seed": generation_seed,
+            }
+        )
+        if generation_seed is not None
+        else None
+    )
     _validate_cross_file_bindings(predictions, answer_key, freeze)
     predicted_cases = _unique_cases(predictions, "predictions")
     keyed_cases = _unique_cases(answer_key, "answer key")
@@ -951,6 +973,7 @@ def evaluate_frozen_payloads(
         prediction_sha256=freeze.prediction_sha256,
         freeze_sha256=freeze_sha256,
         reveal_sha256=reveal_sha256,
+        run_manifest_sha256=run_manifest_sha256,
         encrypted_answer_key_file=encrypted_answer_key_file,
         encrypted_answer_key_sha256=encrypted_answer_key_sha256,
         answer_key_payload_sha256=answer_key_payload_sha256,
@@ -959,6 +982,7 @@ def evaluate_frozen_payloads(
         question_bank_sha256=freeze.question_bank_sha256,
         mapping_sha256=freeze.mapping_sha256,
         revealed_target_set_sha256=revealed_target_set_sha256,
+        generation_seed_commitment_sha256=generation_seed_commitment_sha256,
         evaluation_target=evaluation_target,
         aggregate=aggregate_rank_metrics(case_metrics, total_case_count=len(keyed_cases)),
         cases=tuple(case_metrics),
@@ -973,14 +997,15 @@ def evaluate_frozen_payloads(
 def evaluate_frozen_run(
     run_dir: str | Path,
     *,
-    answer_key: dict[str, Any],
+    revealed: RevealResult,
     freeze_path: str | Path | None = None,
     reveal_record_path: str | Path | None = None,
     output_path: str | Path | None = None,
     created_at_utc: datetime | None = None,
 ) -> EvaluationReport:
-    """Refuse evaluation unless the predictions still match a valid canonical freeze."""
+    """Evaluate only the opaque in-memory result of authenticated answer-key reveal."""
 
+    revealed.require_claim_grade()
     directory = Path(run_dir)
     resolved_freeze = (
         Path(freeze_path) if freeze_path is not None else directory / "prediction.freeze.json"
@@ -1000,13 +1025,17 @@ def evaluate_frozen_run(
         freeze=freeze,
         freeze_path=resolved_freeze,
         reveal_record_path=resolved_reveal,
-        require_complete_binding=True,
     )
+    if revealed.freeze != freeze or revealed.record != reveal:
+        raise EvaluationInputError(
+            "in-memory reveal result does not match the current frozen provenance chain"
+        )
+    answer_key = revealed.answer_key
+    if not isinstance(answer_key, dict):
+        raise EvaluationInputError("in-memory revealed answer key must be a JSON object")
     envelope_file = reveal.encrypted_answer_key_file
     envelope_sha256 = reveal.encrypted_answer_key_sha256
     answer_key_sha256 = reveal.answer_key_payload_sha256
-    if envelope_file is None or envelope_sha256 is None or answer_key_sha256 is None:
-        raise EvaluationInputError("reveal record lacks complete answer-key bindings")
     supplied_answer_key_sha256 = sha256_bytes(canonical_json_bytes(answer_key))
     if supplied_answer_key_sha256 != answer_key_sha256:
         raise EvaluationInputError("supplied answer key does not match the reveal binding")
@@ -1017,12 +1046,16 @@ def evaluate_frozen_run(
         raise EvaluationInputError("frozen predictions are not valid JSON") from exc
     if not isinstance(predictions, dict):
         raise EvaluationInputError("frozen predictions must be a JSON object")
-    report = evaluate_frozen_payloads(
+    manifest_sha256 = freeze.run_manifest_sha256
+    if manifest_sha256 is None:
+        raise EvaluationInputError("prediction freeze lacks a run-manifest binding")
+    report = _evaluate_frozen_payloads(
         predictions=predictions,
         answer_key=answer_key,
         freeze=freeze,
         freeze_sha256=sha256_file(resolved_freeze),
         reveal_sha256=sha256_file(resolved_reveal),
+        run_manifest_sha256=manifest_sha256,
         encrypted_answer_key_file=envelope_file,
         encrypted_answer_key_sha256=envelope_sha256,
         answer_key_payload_sha256=answer_key_sha256,

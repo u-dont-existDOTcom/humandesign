@@ -7,7 +7,8 @@ from types import SimpleNamespace
 
 import pytest
 
-from hdmatch.evaluation.report import EvaluationInputError, evaluate_frozen_payloads
+from hdmatch.evaluation.report import EvaluationInputError
+from hdmatch.evaluation.report import _evaluate_frozen_payloads as evaluate_frozen_payloads
 from hdmatch.experiments.canonical import write_new_canonical_json
 from hdmatch.experiments.freeze import FreezeRecord
 from hdmatch.model.mapping_library import PredicateOperator
@@ -29,6 +30,7 @@ def _reveal_provenance(answer_key: dict[str, object]) -> dict[str, str]:
         "encrypted_answer_key_file": "answer_key.json.enc",
         "encrypted_answer_key_sha256": "f" * 64,
         "answer_key_payload_sha256": sha256_json(answer_key),
+        "run_manifest_sha256": "c" * 64,
     }
 
 

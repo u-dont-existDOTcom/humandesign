@@ -13,7 +13,8 @@ from hdmatch.experiments.canonical import (
     write_new_canonical_json,
 )
 from hdmatch.experiments.freeze import ArtifactBindings, freeze_predictions
-from hdmatch.experiments.reveal import reveal_answer_key
+from hdmatch.experiments.manifest import create_run_manifest, write_run_manifest
+from hdmatch.experiments.reveal import RevealResult, reveal_answer_key
 from hdmatch.runtime.recovery import RecoverySettings, recover_blind_file
 from hdmatch.search import AggregationMode
 from hdmatch.synthetic.sealing import (
@@ -56,7 +57,23 @@ def _answer_key() -> dict[str, object]:
 
 def _write_test_manifest(run_dir: Path) -> Path:
     path = run_dir / "run.manifest.json"
-    write_new_canonical_json(path, {"schema_version": "test-run-manifest-v1"})
+    manifest = create_run_manifest(
+        experiment_id="EXP-1",
+        seed=42,
+        repository_root=Path(__file__).parents[2],
+        candidate_universe="known_month",
+        aggregation_rule="duration_weighted_evidence",
+        model_id="MODEL-A-CORE-V1",
+        input_hashes={"blind_cases.json": _bindings().blind_input_sha256},
+        config={
+            "aggregation": "duration_weighted_evidence",
+            "threshold_rubric_bits": 0.0,
+            "workers": 1,
+            "cache_policy": "hash-bound exact month universes",
+        },
+        created_at_utc=datetime(2026, 8, 20, 23, 59, tzinfo=UTC),
+    )
+    write_run_manifest(manifest, path)
     return path
 
 
@@ -233,7 +250,7 @@ def test_plaintext_preflight_allows_encrypted_envelope_and_reveal_record(
     )
     write_new_canonical_json(
         project / "answer-key.reveal.json",
-        {"schema_version": "answer-key-reveal-v1", "answer_key_revealed": True},
+        {"schema_version": "answer-key-reveal-v2", "answer_key_revealed": True},
     )
 
     assert_no_plaintext_answer_keys(project)
@@ -291,6 +308,14 @@ def test_reveal_requires_valid_unchanged_freeze_and_matching_envelope(tmp_path: 
         run_manifest_path=manifest_path,
         created_at_utc=datetime(2026, 8, 21, tzinfo=UTC),
     )
+    with pytest.raises(ValueError, match="cannot predate prediction freeze"):
+        reveal_answer_key(
+            run_dir,
+            encrypted_answer_key_path=encrypted,
+            key_path=key_path,
+            decoder_root=project,
+            revealed_at_utc=datetime(2026, 8, 20, 23, 59, tzinfo=UTC),
+        )
     result = reveal_answer_key(
         run_dir,
         encrypted_answer_key_path=encrypted,
@@ -302,11 +327,22 @@ def test_reveal_requires_valid_unchanged_freeze_and_matching_envelope(tmp_path: 
     assert "true_local_date" not in repr(result)
     assert "answer_key" not in result.model_dump()
     assert result.record.answer_key_revealed is True
+    assert result.record.blind_input_sha256 == _bindings().blind_input_sha256
+    assert result.record.model_sha256 == _bindings().model_sha256
+    assert result.record.question_bank_sha256 == _bindings().question_bank_sha256
+    assert result.record.mapping_sha256 == _bindings().mapping_sha256
+    assert result.record.run_manifest_sha256 == sha256_file(manifest_path)
     assert result.record.encrypted_answer_key_file == "answer-key.json.enc"
     assert result.record.encrypted_answer_key_sha256 == sha256_file(encrypted)
     assert result.record.answer_key_payload_sha256 == sha256_bytes(
         canonical_json_bytes(_answer_key())
     )
+    with pytest.raises(TypeError, match="only be created by authenticated"):
+        RevealResult(
+            answer_key=_answer_key(),
+            record=result.record,
+            freeze=result.freeze,
+        )
     assert not (run_dir / "answer-key.json").exists()
 
     manifest_path.write_bytes(manifest_path.read_bytes() + b"\n")

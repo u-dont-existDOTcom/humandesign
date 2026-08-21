@@ -67,6 +67,7 @@ class NoiseRunMetadata(BaseModel):
     candidate_universe: str = Field(min_length=1)
     candidate_universe_sha256: str = Field(pattern=SHA256_PATTERN)
     case_set_sha256: str = Field(pattern=SHA256_PATTERN)
+    generation_seed_commitment_sha256: str = Field(pattern=SHA256_PATTERN)
     declared_case_count: int = Field(ge=1)
     aggregation_rule: str = Field(min_length=1)
     recovery_config_sha256: str = Field(pattern=SHA256_PATTERN)
@@ -100,6 +101,13 @@ class RevealedNoiseTierEvaluation(BaseModel):
             raise ValueError("noise benchmark requires a revealed target-set hash")
         if self.metadata.case_set_sha256 != self.evaluation.revealed_target_set_sha256:
             raise ValueError("metadata case_set_sha256 does not match revealed targets")
+        if (
+            self.metadata.generation_seed_commitment_sha256
+            != self.evaluation.generation_seed_commitment_sha256
+        ):
+            raise ValueError(
+                "metadata generation-seed commitment does not match evaluation"
+            )
         if self.metadata.evaluation_sha256 != sha256_json(self.evaluation):
             raise ValueError("metadata evaluation_sha256 does not match evaluation bytes")
         return self
@@ -227,6 +235,7 @@ def compare_revealed_noise_tiers(
         "candidate_universe",
         "candidate_universe_sha256",
         "case_set_sha256",
+        "generation_seed_commitment_sha256",
         "declared_case_count",
         "aggregation_rule",
         "recovery_config_sha256",
