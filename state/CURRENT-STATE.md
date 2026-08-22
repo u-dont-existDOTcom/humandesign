@@ -1,24 +1,83 @@
 # Current state
 
-- Task ID: `full-harness-v1`.
-- Goal: complete the reproducible blinded Human Design reverse-matching harness while keeping synthetic engineering validation separate from human validation.
-- Branch/worktree: `codex/harness-integration` at `/tmp/hdmatch-integration`; remote draft PR: `https://github.com/u-dont-existDOTcom/humandesign/pull/1`. `main` remains untouched.
-- Current published checkpoint: `ee5dc0fe2936727b157e8f1d2bfb0730ec1b2892`. Both exact-head GitHub Actions runs are green (`32539350955` push, `32539353750` pull request). It contains the provenance-hardened compiled/frozen V2 artifact and canonical behavioral-difference PASS audit. The earlier V1 compile/freeze at `250d64f` is explicitly superseded and cannot authorize generation.
-- Current owner priority: finish provenance-hardened `MODEL-B-DETAILED-V2-NEW`, enforce `preregistration -> compile -> freeze -> answer-key-free difference audit -> PASS -> generation/recovery`, and run only a small paired Model A/V2 oracle comparison if the gate passes. Do not run 1,000 cases and do not change V2 mappings after any benchmark result.
-- Provenance V2 artifacts are deterministic and preserve the V1 scientific mapping semantics unchanged:
-  - retrieval manifest SHA-256 `8ed6a6358ce8502946a604430f0d0a902980730ae9796c16fa05097c4ee0a808`;
-  - source catalog V2 SHA-256 `b79d5cc939fbd35d2de7d6f1ad932ea8f4b625a22c9781b2975e043c52fcd765`;
-  - preregistration V2 SHA-256 `a956620ad9094bfbc2e481c76ee62eb1b6087c69339d9e4c4d2035af6b2afe25`.
-- Source records contain exact URL, RFC3339 access timestamp, locator, propositions, status, and MIME type. Eight Jovian responses bind captured-body SHA-256 and byte counts. Four Human.Design pages are explicitly `license-blocked-no-snapshot-or-content-hash` with null body hashes and recorded terms constraints. No external HTML/body snapshot is committed. The ephemeral Jovian response bodies used to compute the hashes were intentionally removed; future independent byte verification requires an authorized private archive or a fresh timestamped retrieval.
-- The behavioral-difference audit v2 binds the exact Model A and V2 semantic/file identities, V2 freeze, question bank, engine, month request, exact retained cache bytes, full candidate-state universe, timestamp, counts, and witnesses. Verification now deterministically recomputes the entire answer-key-free audit and rejects failed, adverse, fabricated, stale, or mismatched artifacts.
-- V2 generator, ordinary recovery, and Bubblewrap recovery all require the matching gate. They cross-check V2 model/compiled/freeze/question-bank identity, exact audited month, engine, and exact retained cache. The keyless child receives the audited cache at the same canonical read-only candidate-cache path used for recovery. Invalid audit ordering is rejected before a new recovery manifest is written.
-- The retained public January 2000/UTC cache is `run_artifacts/known_month_oracle_1000/candidate_cache/month-2000-01-UTC-09e811ca0fe51797.json`. All 12 retained 2000/UTC caches contain 13,777 stable intervals and no answer keys.
-- The current canonical audit-v2 artifact is `reports/model_b_v2_new/behavioral_difference_2000_01_UTC.json`, SHA-256 `d1cafdf136eadf0600b0fbc785585da8ec929d48b79c179526c3fb130373963a`, status `passed`: 84 same-core groups, 22 non-unknown response-difference groups, 22 source-favoring tie-split groups/witnesses, zero adverse groups, and no failure reasons. It records no answer-key or candidate-truth use. The terminal stayed attached after the file was closed, so the post-write subprocess was interrupted with exit 130; the artifact passes canonical schema/internal validation and must still pass full deterministic recomputation when generation verifies it.
-- A superseded schema-V1 artifact unexpectedly completed from the earlier interrupted attempt and is preserved as `behavioral_difference_2000_01_UTC.invalid_v1_from_interrupted_attempt.json`, SHA-256 `5dd8bcc07a1dde4282e576dee10cc997bc258de7e080ab39c3c06afc61b2ed6f`. It cannot authorize any run because it lacks audit-v2 bindings.
-- Provenance-hardened V2 compiled file SHA-256 is `5ae3954700585abe7d252d1af8a343aa801269dd12660f5e2c8d6ada4fa39ada`; semantic SHA-256 is `75dcec0f424ee7440a031b483c00e0b4502d4738fe964c9116650f958fb22740`; freeze receipt SHA-256 is `0daea8cfe5c0804209d36a85a79af438ad69d30f45ccd48e4044906f10f655c8`; runtime model SHA-256 is `767e34baec03850eb100a1e2e8017e732e68ae987775ac3fe6c569888e1e90cb`. The freeze binds source commit `f2c151835ee46e0a63ea66cc79d2313aff330dd1` and tree `1f155ebbed5bec998f7e4c85a4816aa2c4a4ec6a`.
-- Paired pre-reveal infrastructure is implemented locally but not yet published or executed: an immutable public plan/common seed commitment, per-arm generation bindings, paired Bubblewrap mounts, a two-arm pre-reveal prediction freeze, authenticated V3 target/date/seed commitments, and an answer-key-free comparator that recomputes all paired metrics from frozen predictions. It rejects incomplete/stale artifact sets, cross-arm cache/ephemeris/source/environment/config differences, reversed timestamps, and mutable evaluation statistics.
-- Local verification at this boundary: complete suite `343 passed, 2 skipped`; focused paired/reveal/keyless suite `51 passed, 2 skipped`; Ruff green; strict mypy green for 93 source files; deterministic provenance check green; task acceptance reports the bounded initial engineering milestone ready while explicitly not evaluating the full Model B objective. Exact-head CI verification remains required after publication. The two Bubblewrap tests skip when the sandbox cannot establish required namespaces/fixtures and must not be represented as a claim-grade experiment.
-- Claim-grade isolation remains `PROCESS-REQUIRED`: application checks cannot prove host isolation. Every claim-bearing recovery additionally needs an actual Bubblewrap run and retained isolation receipt under the external process contract in `docs/16_claim_grade_keyless_recovery.md`.
-- First paired execution attempt at commit `db5aac5bbca00f5cdbd715a575eb9d04a3a28714` passed the real Bubblewrap access-denial test and both sealed generations, but Model A recovery failed closed before scoring because public generation bindings compared original host path labels after read-only relocation into the sandbox. Model B recovery was intentionally interrupted during its redundant preflight audit to avoid the same failure. Both sealed attempts are preserved outside the repository; neither produced predictions, a freeze, or a reveal. The repair makes only path labels portable while retaining exact byte/hash verification; its relocation regression and complete local suite pass (`344 passed, 2 skipped`), with exact-head CI still required before retry.
-- Model A remains separately frozen as `MODEL-A-CORE-V1`; the completed 75-case baseline has Top-1 `0.453333`, Top-3 `0.746667`, Top-5 `0.826667`, and MRR `0.625680`. Do not rerun an expensive Model A-only benchmark.
-- Next sequence: run the complete local suite, publish the paired-run implementation and verify exact-head CI, then execute only the 75-case paired Model A/V2 oracle experiment. Both arms must use the same protected secret seed and exact public config; both claim-grade keyless recoveries and the two-arm freeze must complete before either reveal. Do not change the V2 mappings after observing the benchmark.
+- Task ID: `v4-3-v3-5-migration`.
+- Goal: migrate the reproducible blinded Human Design research harness to the
+  fail-closed V4.3/V3.5 contract while keeping synthetic engineering validation
+  separate from human validation.
+- Integration worktree/branch:
+  `/tmp/hdmatch-integration` on `codex/harness-integration`.
+- Latest upstream `main` commit merged:
+  `c3c0b51ea40346534dc40361ce5f49d651a80cc3`.
+- Current published checkpoint:
+  `2b5c1f80d1ee20f96a5470660e84327f0c767544`.
+- Exact-head GitHub Actions are green for both push run `32560209894` and
+  pull-request run `32560212364`.
+
+## Mandatory execution position
+
+Phase 0 is complete. Phase 1 is in progress. No production century-cache build
+and no full-century behavioral ranking have started.
+
+The mandatory sequence remains:
+
+1. prove canonical SWIEPH astronomy;
+2. implement the complete cacheable M0-M2 feature registry and exact boundary
+   serialization;
+3. build and verify the reusable 1926-2026 exact-state cache;
+4. complete the V4.3/V3.5 mapping, scorer, prevalence, and compliance migration;
+5. run one full-universe ranking from the verified cache only.
+
+The temporary `SWIEPH profile A-B rerun` workflow and its direct century runner
+were removed from the integration tree in `f895f6d` because they bypassed the
+mandatory reusable-cache gate. They remain recoverable from Git history. The
+GitHub workflow is disabled. It was never accepted as a canonical cache or
+ranking.
+
+## Phase 0 evidence
+
+- Canonical engine: verified Swiss Ephemeris `.se1`, requested and returned
+  mode `SWIEPH`; Moshier/JPL/mixed/no-mode fallback fails closed.
+- Upstream Swiss repository commit:
+  `3fd0f956d73898b91cc4f67cf18b21af656d1342`.
+- `sepl_18.se1` SHA-256:
+  `ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66`.
+- `semo_18.se1` SHA-256:
+  `1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7`.
+- Path-free file-set SHA-256:
+  `f5644c27e3682b805ebdde58d593e5a53abfbaca1dc8c52f29f1cd06f2d5c401`.
+- Canonical Phase 0 receipt SHA-256:
+  `32a886fa94d307442f8597233288c74ef9102de02148b8ac7c95cec485fd0f7b`.
+- Production probe: 33 direct body calculations across the declared century
+  horizon plus three exact Design roots; every returned mode is SWIEPH.
+- Verified Joel baseline at `1985-01-29T10:25:00Z`: 26 activations and visible
+  BodyGraph fields match the user-confirmed chart; exact Design timestamp is
+  `1984-11-03T17:15:51.153195Z`.
+- Local full suite: `358 passed, 2 skipped`; Ruff and strict mypy pass.
+- Detailed report:
+  `reports/v4_3_migration/phase0_engine_validation.md`.
+
+Direct JPL was not run because it is optional. The canonical production engine
+is the verified Swiss `.se1` path.
+
+## Preserved earlier work
+
+The blind-boundary hardening, frozen Model A, prospective
+`MODEL-B-DETAILED-V2-NEW`, retained public month caches, and interrupted paired
+experiment artifacts remain preserved. The paired 75-case benchmark was stopped
+before Model B prediction/freeze/reveal when the V4.3 migration superseded it.
+It is not a completed benchmark and must not resume ahead of the mandatory
+cache-first sequence.
+
+The earlier Model A 75-case baseline remains the only completed core-only
+baseline: Top-1 `0.453333`, Top-3 `0.746667`, Top-5 `0.826667`, MRR
+`0.625680`. Do not rerun an expensive Model A-only benchmark.
+
+## Current Phase 1 workstreams
+
+- exact Personality/Design boundary-event enumeration and completeness audit;
+- complete M0-M2 feature registry and deterministic chart-state serialization;
+- typed century-cache manifest/shard/verification contracts exercised only on
+  small fixtures.
+
+These workstreams may merge only after focused tests and integration review.
+They are not authorized to generate the century cache or rank candidates.
