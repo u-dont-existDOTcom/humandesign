@@ -339,13 +339,21 @@ def assemble_and_publish_century_cache(
 
     plan = load_century_build_plan(plan_path)
     _require_current_source_matches_plan(plan)
-    provider, provenance = _provider_and_provenance(
+    replay_provider, provenance = _provider_and_provenance(
         ephemeris_directory=ephemeris_directory,
         ephemeris_source_manifest_path=ephemeris_source_manifest_path,
     )
     if provenance != plan.engine.ephemeris_provenance:
         raise CenturyCacheWorkflowError(
             "current ephemeris files differ from the immutable build plan"
+        )
+    reconciliation_provider, reconciliation_provenance = _provider_and_provenance(
+        ephemeris_directory=ephemeris_directory,
+        ephemeris_source_manifest_path=ephemeris_source_manifest_path,
+    )
+    if reconciliation_provenance != plan.engine.ephemeris_provenance:
+        raise CenturyCacheWorkflowError(
+            "reconciliation ephemeris files differ from the immutable build plan"
         )
     engine = load_cache_engine_provenance(plan, engine_validation_path)
     identity = century_cache_stream_identity_from_plan(plan, engine=engine)
@@ -357,7 +365,7 @@ def assemble_and_publish_century_cache(
     published = False
     try:
         with ExactStateReconciliationStream(
-            provider,
+            reconciliation_provider,
             engine_identity=plan.engine,
             root_tolerance_seconds=plan.design_root_time_tolerance_seconds,
         ) as reconciliation:
@@ -365,7 +373,7 @@ def assemble_and_publish_century_cache(
                 verified_job = verify_staged_exact_state_batch(
                     plan,
                     job,
-                    provider,
+                    replay_provider,
                     staging_directory,
                 )
                 source = OverlappingVerifiedExactStateBatch.from_verified_staged_batch(

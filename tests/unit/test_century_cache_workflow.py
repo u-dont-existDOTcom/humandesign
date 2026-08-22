@@ -141,6 +141,111 @@ def test_resumed_job_rejects_source_mismatch_before_ephemeris_access(
     assert provider_reached is False
 
 
+def test_assembly_separates_replay_and_reconciliation_audits(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    class _ExpectedStop(RuntimeError):
+        pass
+
+    replay_provider = object()
+    reconciliation_provider = object()
+    provenance = object()
+    job = object()
+    plan = SimpleNamespace(
+        jobs=(job,),
+        engine=SimpleNamespace(ephemeris_provenance=provenance),
+        design_root_time_tolerance_seconds=0.01,
+    )
+    providers = iter((replay_provider, reconciliation_provider))
+    publisher_aborted = False
+    verified_with: object | None = None
+
+    class _Publisher:
+        def abort(self) -> None:
+            nonlocal publisher_aborted
+            publisher_aborted = True
+
+    class _Reconciliation:
+        def __init__(self, provider: object, **_kwargs: object) -> None:
+            assert provider is reconciliation_provider
+
+        def __enter__(self) -> _Reconciliation:
+            return self
+
+        def __exit__(self, *_args: object) -> None:
+            pass
+
+        def append(self, _source: object) -> None:
+            raise _ExpectedStop("stop after provider-routing assertion")
+
+    def _verify(
+        _plan: object,
+        _job: object,
+        provider: object,
+        _staging: object,
+    ) -> object:
+        nonlocal verified_with
+        verified_with = provider
+        return object()
+
+    monkeypatch.setattr(workflow_module, "load_century_build_plan", lambda _path: plan)
+    monkeypatch.setattr(
+        workflow_module,
+        "_require_current_source_matches_plan",
+        lambda _plan: None,
+    )
+    monkeypatch.setattr(
+        workflow_module,
+        "_provider_and_provenance",
+        lambda **_kwargs: (next(providers), provenance),
+    )
+    monkeypatch.setattr(
+        workflow_module,
+        "load_cache_engine_provenance",
+        lambda *_args: object(),
+    )
+    monkeypatch.setattr(
+        workflow_module,
+        "century_cache_stream_identity_from_plan",
+        lambda *_args, **_kwargs: object(),
+    )
+    monkeypatch.setattr(
+        workflow_module,
+        "StreamingCenturyCachePublisher",
+        lambda *_args, **_kwargs: _Publisher(),
+    )
+    monkeypatch.setattr(
+        workflow_module,
+        "ExactStateReconciliationStream",
+        _Reconciliation,
+    )
+    monkeypatch.setattr(workflow_module, "verify_staged_exact_state_batch", _verify)
+    monkeypatch.setattr(
+        workflow_module,
+        "OverlappingVerifiedExactStateBatch",
+        SimpleNamespace(from_verified_staged_batch=lambda _batch: object()),
+    )
+
+    with pytest.raises(_ExpectedStop, match="provider-routing"):
+        workflow_module.assemble_and_publish_century_cache(
+            plan_path=tmp_path / "plan.json",
+            staging_directory=tmp_path / "staged",
+            cache_directory=tmp_path / "cache",
+            cache_locator="data/century_cache/test",
+            trust_lock_path=tmp_path / "trust-lock.json",
+            build_evidence_directory=tmp_path / "evidence",
+            ephemeris_directory=tmp_path / "ephemeris",
+            ephemeris_source_manifest_path=tmp_path / "manifest.json",
+            engine_validation_path=tmp_path / "engine.json",
+            parity_report_path=tmp_path / "parity.json",
+            parity_reference_source_path=tmp_path / "golden.json",
+        )
+
+    assert verified_with is replay_provider
+    assert publisher_aborted is True
+
+
 def test_partial_staged_job_is_never_treated_as_resumable(tmp_path: Path) -> None:
     job = SimpleNamespace(job_id="utc-year-2000")
     plan = SimpleNamespace()
