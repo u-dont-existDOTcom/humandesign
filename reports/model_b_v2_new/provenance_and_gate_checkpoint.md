@@ -56,8 +56,31 @@ or recovery.
 
 ## Benchmark boundary
 
-No V2 benchmark has run at this checkpoint. If the January 2000/UTC public-cache
-audit passes, only a small paired oracle comparison is authorized. Model A and V2
-must use the same owner-only generation seed and otherwise identical config. The
+No V2 benchmark had run when the model was frozen. The subsequently generated
+January 2000/UTC public-cache audit has canonical schema V2 and status `passed`:
+
+- audit file SHA-256: `d1cafdf136eadf0600b0fbc785585da8ec929d48b79c179526c3fb130373963a`;
+- 84 Model A same-core groups;
+- 22 groups with a genuine non-unknown detailed response difference;
+- 22 source-favoring tie-split groups and 22 witnesses;
+- zero adverse tie-split groups;
+- no failure reasons, answer keys, or candidate truth.
+
+The terminal remained attached after the canonical file was closed and byte-
+stable, so the post-write subprocess was interrupted and returned exit 130. The
+artifact passes the current canonical schema and internal-consistency loader. It
+must still pass the mandatory deterministic verifier when supplied to generation;
+that verifier recomputes the complete public audit from the exact frozen models and
+retained cache.
+
+A separate schema-V1 file produced by a superseded interrupted pre-hardening
+attempt is retained as
+`behavioral_difference_2000_01_UTC.invalid_v1_from_interrupted_attempt.json`
+(SHA-256 `5dd8bcc07a1dde4282e576dee10cc997bc258de7e080ab39c3c06afc61b2ed6f`).
+It cannot authorize generation because it lacks the audit-v2 freeze/cache/universe
+bindings.
+
+The V2 PASS authorizes only a small paired oracle comparison. Model A and V2 must
+use the same owner-only generation seed and otherwise identical config. The
 revealed target-set identity must match before paired metrics are computed. The
 result is engineering discovery-only, not holdout or human validation.
