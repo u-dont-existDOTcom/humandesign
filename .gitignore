@@ -23,3 +23,8 @@ answer_key*.json.enc
 *.pem
 runs/*/revealed_key*
 .DS_Store
+
+# Provisioned from pinned official Swiss Ephemeris upstream by
+# scripts/fetch_swisseph_ephemeris.py. Do not accidentally vendor binary data.
+data/ephemeris/*.se1
+data/ephemeris/swisseph_ephemeris_manifest.json
