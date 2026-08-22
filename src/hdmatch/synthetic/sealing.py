@@ -78,6 +78,7 @@ _SAFE_ANSWER_KEY_ARTIFACT_SCHEMAS = {
     "answer-key-envelope-v1",
     "answer-key-reveal-v1",
     "answer-key-reveal-v2",
+    "answer-key-reveal-v3",
     "human-answer-key-reveal-receipt-v1",
     "human-final-test-reveal-ledger-v1",
 }
@@ -152,8 +153,7 @@ def _contains_plaintext_answer_key(value: object) -> bool:
 
 def _is_safe_answer_key_artifact(value: object) -> bool:
     return (
-        isinstance(value, dict)
-        and value.get("schema_version") in _SAFE_ANSWER_KEY_ARTIFACT_SCHEMAS
+        isinstance(value, dict) and value.get("schema_version") in _SAFE_ANSWER_KEY_ARTIFACT_SCHEMAS
     )
 
 
@@ -219,10 +219,7 @@ def assert_no_plaintext_answer_keys_in_paths(paths: Iterable[str | Path]) -> Non
     for root in _minimal_scan_paths(paths):
         for candidate in _candidate_files(root):
             try:
-                if (
-                    not candidate.is_file()
-                    or candidate.stat().st_size > _MAX_PREFLIGHT_TEXT_BYTES
-                ):
+                if not candidate.is_file() or candidate.stat().st_size > _MAX_PREFLIGHT_TEXT_BYTES:
                     continue
                 raw = candidate.read_bytes()
             except OSError:

@@ -31,6 +31,10 @@ from hdmatch.experiments.canonical import (
     write_new_canonical_json,
 )
 from hdmatch.experiments.manifest import create_run_manifest, write_run_manifest
+from hdmatch.experiments.paired import (
+    load_paired_experiment_plan,
+    verify_paired_generation_receipt_binding,
+)
 from hdmatch.model_b_v2_new import FrozenModelBV2New
 from hdmatch.runtime.chart_adapter import ExactChartAdapter, declared_ephemeris_files
 from hdmatch.runtime.symbolic_adapter import (
@@ -81,6 +85,11 @@ class RecoveryBoundaryRequest:
     model_b_v2_freeze: Path | None = None
     model_b_v2_difference_audit: Path | None = None
     model_b_v2_difference_cache: Path | None = None
+    paired_plan: Path | None = None
+    paired_public_config: Path | None = None
+    paired_generation_receipt: Path | None = None
+    paired_generation_binding: Path | None = None
+    paired_arm_id: str | None = None
     candidate_cache: Path | None = None
     workers: int = 1
     aggregation: str = AggregationMode.DURATION_WEIGHTED_EVIDENCE.value
@@ -92,6 +101,38 @@ class RecoveryMountPlan:
     command: tuple[str, ...]
     ephemeris_files: tuple[Path, ...]
     candidate_cache_files: tuple[Path, ...]
+
+
+def _paired_request_paths(
+    request: RecoveryBoundaryRequest,
+) -> tuple[Path, Path, Path, Path, str] | None:
+    values = (
+        request.paired_plan,
+        request.paired_public_config,
+        request.paired_generation_receipt,
+        request.paired_generation_binding,
+        request.paired_arm_id,
+    )
+    if not any(value is not None for value in values):
+        return None
+    if not all(value is not None for value in values):
+        raise KeylessIsolationError(
+            "paired recovery requires plan, public config, generation receipt, "
+            "generation binding, and arm ID"
+        )
+    plan, config, generation, binding, arm_id = values
+    assert isinstance(plan, Path)
+    assert isinstance(config, Path)
+    assert isinstance(generation, Path)
+    assert isinstance(binding, Path)
+    assert isinstance(arm_id, str)
+    return (
+        plan.expanduser().resolve(strict=True),
+        config.expanduser().resolve(strict=True),
+        generation.expanduser().resolve(strict=True),
+        binding.expanduser().resolve(strict=True),
+        arm_id,
+    )
 
 
 def _run_git(repository_root: Path, *arguments: str) -> str:
@@ -115,9 +156,7 @@ def _source_provenance(repository_root: Path) -> SourceProvenance:
     commit = _run_git(root, "rev-parse", "HEAD")
     tree = _run_git(root, "rev-parse", "HEAD^{tree}")
     relative_files = tuple(
-        Path(line)
-        for line in _run_git(root, "ls-files", "--", "src/hdmatch").splitlines()
-        if line
+        Path(line) for line in _run_git(root, "ls-files", "--", "src/hdmatch").splitlines() if line
     )
     tracked = tuple(root / relative for relative in relative_files)
     if not tracked or any(not path.is_file() for path in tracked):
@@ -337,9 +376,7 @@ def _verify_v2_difference_request(
         model_b_v2_compiled_path=request.model_b_v2_compiled,
         model_b_v2_freeze_path=request.model_b_v2_freeze,
     )
-    if not isinstance(model_a, FrozenSymbolicModel) or not isinstance(
-        model_b, FrozenModelBV2New
-    ):
+    if not isinstance(model_a, FrozenSymbolicModel) or not isinstance(model_b, FrozenModelBV2New):
         raise KeylessIsolationError("V2 difference verification loaded incompatible models")
     audit = load_behavioral_difference_audit(request.model_b_v2_difference_audit)
     engine = ExactChartAdapter(request.ephemeris_path)
@@ -430,6 +467,7 @@ def build_recovery_mount_plan(
         if request.model_b_v2_difference_cache is not None
         else None
     )
+    paired = _paired_request_paths(request)
     for artifact in (blind, mapping, questions):
         if not artifact.is_file():
             raise KeylessIsolationError("a required public recovery artifact is missing")
@@ -439,16 +477,12 @@ def build_recovery_mount_plan(
         raise KeylessIsolationError("the compiled Model B V2 artifact is missing")
     if model_b_v2_freeze is not None and not model_b_v2_freeze.is_file():
         raise KeylessIsolationError("the Model B V2 freeze receipt is missing")
-    if (
-        model_b_v2_difference_audit is not None
-        and not model_b_v2_difference_audit.is_file()
-    ):
+    if model_b_v2_difference_audit is not None and not model_b_v2_difference_audit.is_file():
         raise KeylessIsolationError("the Model B V2 difference audit is missing")
-    if (
-        model_b_v2_difference_cache is not None
-        and not model_b_v2_difference_cache.is_file()
-    ):
+    if model_b_v2_difference_cache is not None and not model_b_v2_difference_cache.is_file():
         raise KeylessIsolationError("the Model B V2 audited cache is missing")
+    if paired is not None and any(not path.is_file() for path in paired[:4]):
+        raise KeylessIsolationError("a required paired public artifact is missing")
     _verify_question_binding(mapping, questions)
     assert_no_blind_leakage(blind)
     assert_no_plaintext_answer_keys_in_paths(
@@ -461,6 +495,7 @@ def build_recovery_mount_plan(
             *((model_b_v2_freeze,) if model_b_v2_freeze is not None else ()),
             *((model_b_v2_difference_audit,) if model_b_v2_difference_audit is not None else ()),
             *((model_b_v2_difference_cache,) if model_b_v2_difference_cache is not None else ()),
+            *(paired[:4] if paired is not None else ()),
         )
     )
 
@@ -469,10 +504,7 @@ def build_recovery_mount_plan(
 
     ephemeris_files = _ephemeris_files(request.ephemeris_path)
     cache_files = _candidate_cache_files(request.candidate_cache)
-    if (
-        model_b_v2_difference_cache is not None
-        and model_b_v2_difference_cache not in cache_files
-    ):
+    if model_b_v2_difference_cache is not None and model_b_v2_difference_cache not in cache_files:
         raise KeylessIsolationError(
             "the V2 audited cache must be present in the retained candidate-cache directory"
         )
@@ -504,6 +536,24 @@ def build_recovery_mount_plan(
             str(_SANDBOX_PUBLIC / "artifacts" / "question_bank.json"),
         )
     )
+    if paired is not None:
+        paired_plan, paired_config, paired_generation, paired_binding, _ = paired
+        command.extend(
+            (
+                "--ro-bind",
+                str(paired_plan),
+                str(_SANDBOX_PUBLIC / "artifacts" / "paired_plan.json"),
+                "--ro-bind",
+                str(paired_config),
+                str(_SANDBOX_PUBLIC / "artifacts" / "paired_config.yaml"),
+                "--ro-bind",
+                str(paired_generation),
+                str(_SANDBOX_PUBLIC / "artifacts" / "paired_generation.receipt.json"),
+                "--ro-bind",
+                str(paired_binding),
+                str(_SANDBOX_PUBLIC / "artifacts" / "paired_generation.binding.json"),
+            )
+        )
     if model_b is not None:
         command.extend(
             (
@@ -524,10 +574,7 @@ def build_recovery_mount_plan(
                 str(_SANDBOX_PUBLIC / "artifacts" / "model_b_v2_freeze.json"),
             )
         )
-    if (
-        model_b_v2_difference_audit is not None
-        and model_b_v2_difference_cache is not None
-    ):
+    if model_b_v2_difference_audit is not None and model_b_v2_difference_cache is not None:
         command.extend(
             (
                 "--ro-bind",
@@ -609,11 +656,22 @@ def build_recovery_mount_plan(
                 "--model-b-v2-difference-audit",
                 str(_SANDBOX_PUBLIC / "artifacts" / "model_b_v2_difference_audit.json"),
                 "--model-b-v2-difference-cache",
-                str(
-                    _SANDBOX_PUBLIC
-                    / "candidate_cache"
-                    / model_b_v2_difference_cache.name
-                ),
+                str(_SANDBOX_PUBLIC / "candidate_cache" / model_b_v2_difference_cache.name),
+            )
+        )
+    if paired is not None:
+        command.extend(
+            (
+                "--paired-plan",
+                str(_SANDBOX_PUBLIC / "artifacts" / "paired_plan.json"),
+                "--paired-public-config",
+                str(_SANDBOX_PUBLIC / "artifacts" / "paired_config.yaml"),
+                "--paired-generation-receipt",
+                str(_SANDBOX_PUBLIC / "artifacts" / "paired_generation.receipt.json"),
+                "--paired-generation-binding",
+                str(_SANDBOX_PUBLIC / "artifacts" / "paired_generation.binding.json"),
+                "--paired-arm-id",
+                paired[4],
             )
         )
     return RecoveryMountPlan(
@@ -660,29 +718,71 @@ def _precreate_public_manifest(
             request,
             expected_binding=expected_gate,
         )
+    paired = _paired_request_paths(request)
+    paired_manifest_binding: dict[str, Any] | None = None
+    if paired is not None:
+        plan_path, config_path, generation_path, binding_path, arm_id = paired
+        paired_plan = load_paired_experiment_plan(plan_path)
+        paired_receipt = verify_paired_generation_receipt_binding(
+            binding_path,
+            plan_path=plan_path,
+            public_config_path=config_path,
+            generation_receipt_path=generation_path,
+            expected_arm_id=arm_id,
+        )
+        arm = paired_plan.arm(arm_id)
+        if (
+            arm.model_id != model.model_id
+            or arm.model_sha256 != model.model_sha256
+            or arm.mapping_sha256 != model.mapping_sha256
+            or arm.question_bank_sha256 != model.question_bank_sha256
+        ):
+            raise KeylessIsolationError("recovery runtime does not match the paired arm")
+        if paired_receipt.blind_input_sha256 != sha256_file(request.blind_file):
+            raise KeylessIsolationError("blind input does not match the paired generation binding")
+        if isinstance(model, FrozenModelBV2New) and (
+            difference_gate is None or difference_gate != paired_plan.verified_v2_audit
+        ):
+            raise KeylessIsolationError("V2 recovery gate does not match the paired plan")
+        paired_manifest_binding = {
+            "schema_version": "paired-recovery-binding-v1",
+            "paired_experiment_id": paired_plan.paired_experiment_id,
+            "paired_plan_file_sha256": sha256_file(plan_path),
+            "paired_plan_semantic_sha256": paired_plan.plan_sha256,
+            "paired_generation_receipt_sha256": sha256_file(generation_path),
+            "paired_generation_binding_sha256": sha256_file(binding_path),
+            "public_config_file_sha256": sha256_file(config_path),
+            "public_config_semantic_sha256": paired_plan.public_config.semantic_sha256,
+            "generation_seed_commitment_sha256": (paired_plan.generation_seed_commitment_sha256),
+            "arm_id": arm.arm_id,
+            "arm_role": arm.role,
+        }
     input_hashes = {
         "blind_cases.json": sha256_file(request.blind_file),
         "model_a_mapping_library": sha256_file(request.mapping_file),
     }
+    if paired is not None:
+        input_hashes.update(
+            {
+                "paired_experiment_plan": sha256_file(paired[0]),
+                "paired_public_config": sha256_file(paired[1]),
+                "paired_generation_receipt": sha256_file(paired[2]),
+                "paired_generation_binding": sha256_file(paired[3]),
+            }
+        )
     if model.model_id == MODEL_B_ID:
         assert request.model_b_artifact is not None
         input_hashes["model_b_artifact"] = sha256_file(request.model_b_artifact)
     if model.model_id == MODEL_B_V2_NEW_ID:
         assert request.model_b_v2_compiled is not None
         assert request.model_b_v2_freeze is not None
-        input_hashes["model_b_v2_compiled_artifact"] = sha256_file(
-            request.model_b_v2_compiled
-        )
-        input_hashes["model_b_v2_freeze_receipt"] = sha256_file(
-            request.model_b_v2_freeze
-        )
+        input_hashes["model_b_v2_compiled_artifact"] = sha256_file(request.model_b_v2_compiled)
+        input_hashes["model_b_v2_freeze_receipt"] = sha256_file(request.model_b_v2_freeze)
         assert difference_gate is not None
         input_hashes.update(
             {
                 "model_b_v2_difference_audit": difference_gate.audit_file_sha256,
-                "model_b_v2_difference_cache": (
-                    difference_gate.candidate_cache_file_sha256
-                ),
+                "model_b_v2_difference_cache": (difference_gate.candidate_cache_file_sha256),
                 "model_b_v2_model_semantic": difference_gate.model_b_sha256,
                 "model_b_v2_question_bank": difference_gate.question_bank_sha256,
                 "model_b_v2_difference_candidate_universe": (
@@ -701,6 +801,8 @@ def _precreate_public_manifest(
     }
     if difference_gate is not None:
         config["model_b_v2_difference_gate"] = difference_gate.model_dump(mode="json")
+    if paired_manifest_binding is not None:
+        config["paired_experiment"] = paired_manifest_binding
     manifest = create_run_manifest(
         experiment_id=str(blind["experiment_id"]),
         seed=public_seed,
@@ -717,10 +819,7 @@ def _precreate_public_manifest(
         and model.freeze_receipt.frozen_at_utc > manifest.created_at_utc
     ):
         raise KeylessIsolationError("V2 model freeze must predate the recovery manifest")
-    if (
-        difference_gate is not None
-        and difference_gate.audited_at_utc > manifest.created_at_utc
-    ):
+    if difference_gate is not None and difference_gate.audited_at_utc > manifest.created_at_utc:
         raise KeylessIsolationError(
             "V2 behavioral-difference audit must predate the recovery manifest"
         )
@@ -760,11 +859,30 @@ def run_claim_grade_recovery(
     predictions = output / "predictions.json"
     if not manifest.is_file() or not predictions.is_file():
         raise KeylessIsolationError("isolated recovery did not produce its required artifacts")
+    public_copies = [(normalized.blind_file, output / "blind_cases.json")]
+    if normalized.paired_generation_receipt is not None:
+        if normalized.paired_generation_binding is None:
+            raise KeylessIsolationError("paired generation binding is missing")
+        public_copies.extend(
+            (
+                (
+                    normalized.paired_generation_receipt,
+                    output / "generation.receipt.json",
+                ),
+                (
+                    normalized.paired_generation_binding,
+                    output / "paired-generation.binding.json",
+                ),
+            )
+        )
+    for source, destination in public_copies:
+        if source is None or destination.exists():
+            raise KeylessIsolationError("public recovery artifact staging is inconsistent")
+        shutil.copyfile(source, destination)
     difference_gate = (
-        _verify_v2_difference_request(normalized)
-        if request.model_id == MODEL_B_V2_NEW_ID
-        else None
+        _verify_v2_difference_request(normalized) if request.model_id == MODEL_B_V2_NEW_ID else None
     )
+    paired = _paired_request_paths(normalized)
     receipt: dict[str, Any] = {
         "schema_version": "keyless-recovery-isolation-receipt-v1",
         "isolation_runtime": _bubblewrap_identity(bwrap),
@@ -791,14 +909,10 @@ def run_claim_grade_recovery(
                 "read-only-single-file" if request.model_b_artifact is not None else "absent"
             ),
             "model_b_v2_compiled_artifact": (
-                "read-only-single-file"
-                if request.model_b_v2_compiled is not None
-                else "absent"
+                "read-only-single-file" if request.model_b_v2_compiled is not None else "absent"
             ),
             "model_b_v2_freeze_receipt": (
-                "read-only-single-file"
-                if request.model_b_v2_freeze is not None
-                else "absent"
+                "read-only-single-file" if request.model_b_v2_freeze is not None else "absent"
             ),
             "model_b_v2_difference_audit": (
                 "read-only-single-file"
@@ -809,6 +923,14 @@ def run_claim_grade_recovery(
                 "read-only-single-file"
                 if request.model_b_v2_difference_cache is not None
                 else "absent"
+            ),
+            "paired_plan": "read-only-single-file" if paired is not None else "absent",
+            "paired_public_config": ("read-only-single-file" if paired is not None else "absent"),
+            "paired_generation_receipt": (
+                "read-only-single-file" if paired is not None else "absent"
+            ),
+            "paired_generation_binding": (
+                "read-only-single-file" if paired is not None else "absent"
             ),
             "ephemeris": "read-only-declared-se1-files",
             "candidate_cache": (
@@ -833,9 +955,7 @@ def run_claim_grade_recovery(
         "mapping_sha256": sha256_file(request.mapping_file),
         "question_bank_sha256": sha256_file(request.question_bank_file),
         "model_b_artifact_sha256": (
-            sha256_file(request.model_b_artifact)
-            if request.model_b_artifact is not None
-            else None
+            sha256_file(request.model_b_artifact) if request.model_b_artifact is not None else None
         ),
         "model_b_v2_compiled_sha256": (
             sha256_file(request.model_b_v2_compiled)
@@ -857,10 +977,17 @@ def run_claim_grade_recovery(
             if request.model_b_v2_difference_cache is not None
             else None
         ),
+        "paired_plan_sha256": sha256_file(paired[0]) if paired is not None else None,
+        "paired_public_config_sha256": (sha256_file(paired[1]) if paired is not None else None),
+        "paired_generation_receipt_sha256": (
+            sha256_file(paired[2]) if paired is not None else None
+        ),
+        "paired_generation_binding_sha256": (
+            sha256_file(paired[3]) if paired is not None else None
+        ),
+        "paired_arm_id": paired[4] if paired is not None else None,
         "model_b_v2_difference_gate": (
-            difference_gate.model_dump(mode="json")
-            if difference_gate is not None
-            else None
+            difference_gate.model_dump(mode="json") if difference_gate is not None else None
         ),
         "ephemeris_sha256": _artifact_hashes(plan.ephemeris_files),
         "candidate_cache_sha256": _artifact_hashes(plan.candidate_cache_files),
@@ -982,6 +1109,11 @@ def _parser() -> argparse.ArgumentParser:
     parser.add_argument("--model-b-v2-freeze", type=Path)
     parser.add_argument("--model-b-v2-difference-audit", type=Path)
     parser.add_argument("--model-b-v2-difference-cache", type=Path)
+    parser.add_argument("--paired-plan", type=Path)
+    parser.add_argument("--paired-public-config", type=Path)
+    parser.add_argument("--paired-generation-receipt", type=Path)
+    parser.add_argument("--paired-generation-binding", type=Path)
+    parser.add_argument("--paired-arm-id")
     parser.add_argument("--candidate-cache", type=Path)
     parser.add_argument("--workers", type=int, default=1)
     parser.add_argument(
@@ -1009,6 +1141,11 @@ def main(argv: Sequence[str] | None = None) -> int:
         model_b_v2_freeze=args.model_b_v2_freeze,
         model_b_v2_difference_audit=args.model_b_v2_difference_audit,
         model_b_v2_difference_cache=args.model_b_v2_difference_cache,
+        paired_plan=args.paired_plan,
+        paired_public_config=args.paired_public_config,
+        paired_generation_receipt=args.paired_generation_receipt,
+        paired_generation_binding=args.paired_generation_binding,
+        paired_arm_id=args.paired_arm_id,
         candidate_cache=args.candidate_cache,
         workers=int(args.workers),
         aggregation=str(args.aggregation),

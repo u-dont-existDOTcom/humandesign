@@ -34,7 +34,9 @@ def _parser_destinations(parser: object) -> set[str]:
 def test_recovery_interfaces_have_no_key_decrypt_or_reveal_parameter() -> None:
     root_parser = hdmatch_parser()
     command_action = next(
-        action for action in root_parser._actions if action.dest == "command"  # type: ignore[attr-defined]
+        action
+        for action in root_parser._actions
+        if action.dest == "command"  # type: ignore[attr-defined]
     )
     recover_parser = command_action.choices["recover"]  # type: ignore[attr-defined]
     recovery_arguments = _parser_destinations(recover_parser)
@@ -125,6 +127,47 @@ def test_recovery_mount_plan_is_allowlisted_read_only_and_keyless(tmp_path: Path
     assert str(request.ephemeris_path.resolve() / "public.se1") in command
     assert str(request.candidate_cache.resolve() / "month-2000-01-UTC-test.json") in command
     assert not any(argument.startswith("HDMATCH_ISOLATED_SOURCE") for argument in command)
+
+
+def test_paired_public_artifacts_are_individually_read_only_mounted(tmp_path: Path) -> None:
+    request, provenance = _public_request(tmp_path)
+    paired_files = tuple(
+        tmp_path / name
+        for name in (
+            "paired.plan.json",
+            "paired.config.yaml",
+            "generation.receipt.json",
+            "generation.binding.json",
+        )
+    )
+    for path in paired_files:
+        path.write_text("public paired fixture\n", encoding="utf-8")
+    request = replace(
+        request,
+        paired_plan=paired_files[0],
+        paired_public_config=paired_files[1],
+        paired_generation_receipt=paired_files[2],
+        paired_generation_binding=paired_files[3],
+        paired_arm_id="MODEL-A",
+    )
+
+    plan = build_recovery_mount_plan(request, provenance=provenance, bwrap="/usr/bin/bwrap")
+    command = plan.command
+    child = command[command.index("hdmatch.cli") :]
+
+    for source in paired_files:
+        index = command.index(str(source.resolve()))
+        assert command[index - 1] == "--ro-bind"
+    assert "--paired-plan" in child
+    assert "--paired-public-config" in child
+    assert "--paired-generation-receipt" in child
+    assert "--paired-generation-binding" in child
+    assert child[child.index("--paired-arm-id") + 1] == "MODEL-A"
+    assert not any(
+        marker in argument.casefold()
+        for argument in child
+        for marker in ("key-file", "decrypt", "reveal", "envelope", "truth")
+    )
 
 
 def test_ordinary_manifest_git_revision_ignores_isolation_spoof_environment(
@@ -280,9 +323,7 @@ def test_optional_real_exact_recovery_completes_inside_keyless_boundary(
     if not bubblewrap_capable():
         pytest.skip("Bubblewrap cannot establish the required namespaces on this host")
     ephemeris = Path("/tmp/hdmatch-ephe")
-    retained_run = Path(
-        "/tmp/hdmatch-integration/run_artifacts/known_month_oracle_1000"
-    )
+    retained_run = Path("/tmp/hdmatch-integration/run_artifacts/known_month_oracle_1000")
     blind_source = retained_run / "blind_cases.json"
     retained_cache = retained_run / "candidate_cache"
     if not blind_source.is_file() or not retained_cache.is_dir() or not ephemeris.is_dir():

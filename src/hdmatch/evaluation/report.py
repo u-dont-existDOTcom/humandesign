@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import math
-import re
 from collections import Counter
 from collections.abc import Mapping
 from datetime import UTC, date, datetime, timedelta
@@ -12,6 +11,11 @@ from typing import Any, Literal, cast
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
+from hdmatch.experiments.answer_key_commitments import (
+    generation_seed_commitment,
+    revealed_local_date_set_hash,
+    revealed_target_set_hash,
+)
 from hdmatch.experiments.canonical import (
     canonical_json_bytes,
     load_json_bytes,
@@ -31,7 +35,6 @@ from hdmatch.search.minute_rectifier import (
     RevealedIntervalIdentification,
     identify_revealed_interval,
 )
-from hdmatch.util import sha256_json
 
 from .ablation import (
     ClusterAblationSummary,
@@ -78,9 +81,7 @@ class StableIntervalEvaluation(BaseModel):
     tie_size: int = Field(ge=1)
     net_rubric_bits: float
     point_estimate_utc: None = None
-    interval_resolution_status: Literal[
-        "stable_interval", "unresolved_universe_boundary_clipped"
-    ]
+    interval_resolution_status: Literal["stable_interval", "unresolved_universe_boundary_clipped"]
     resolution_semantics: Literal["source-half-open-interval-not-point"] = (
         "source-half-open-interval-not-point"
     )
@@ -116,12 +117,9 @@ class EvaluationReport(BaseModel):
     model_sha256: str = Field(pattern=SHA256_PATTERN)
     question_bank_sha256: str = Field(pattern=SHA256_PATTERN)
     mapping_sha256: str = Field(pattern=SHA256_PATTERN)
-    revealed_target_set_sha256: str | None = Field(
-        default=None, pattern=SHA256_PATTERN
-    )
-    generation_seed_commitment_sha256: str | None = Field(
-        default=None, pattern=SHA256_PATTERN
-    )
+    revealed_target_set_sha256: str | None = Field(default=None, pattern=SHA256_PATTERN)
+    revealed_local_date_set_sha256: str | None = Field(default=None, pattern=SHA256_PATTERN)
+    generation_seed_commitment_sha256: str | None = Field(default=None, pattern=SHA256_PATTERN)
     evaluation_target: Literal["local_date", "stable_interval"] = "local_date"
     aggregate: AggregateRankMetrics
     cases: tuple[CaseRankMetrics, ...]
@@ -133,9 +131,7 @@ class EvaluationReport(BaseModel):
     tie_policy: Literal["fractional-credit-random-within-tie"] = (
         "fractional-credit-random-within-tie"
     )
-    score_semantics: Literal["rubric-bits-not-probabilities"] = (
-        "rubric-bits-not-probabilities"
-    )
+    score_semantics: Literal["rubric-bits-not-probabilities"] = "rubric-bits-not-probabilities"
     claim_boundary: Literal["synthetic-engineering-validation-only"] = (
         "synthetic-engineering-validation-only"
     )
@@ -240,42 +236,10 @@ def _revealed_target_set_hash(
     keyed_cases: Mapping[str, dict[str, Any]],
 ) -> str | None:
     """Hash concealed target tuples after reveal, excluding experiment identity."""
-
-    extended_field_present = [
-        "true_utc" in keyed or "true_chart_features_hash" in keyed
-        for keyed in keyed_cases.values()
-    ]
-    if not any(extended_field_present):
-        return None
-    if not all(
-        "true_utc" in keyed and "true_chart_features_hash" in keyed
-        for keyed in keyed_cases.values()
-    ):
-        raise EvaluationInputError(
-            "answer key cases must all include true_utc and true_chart_features_hash"
-        )
-    tuples: list[tuple[str, str, str, str]] = []
-    for case_id in sorted(keyed_cases):
-        keyed = keyed_cases[case_id]
-        true_utc = _require_utc_datetime(
-            keyed.get("true_utc"), label=f"answer key case {case_id} true_utc"
-        )
-        true_date = _require_iso_date(
-            keyed.get("true_local_date"),
-            label=f"answer key case {case_id} true_local_date",
-        )
-        chart_hash = keyed.get("true_chart_features_hash")
-        if not isinstance(chart_hash, str) or re.fullmatch(SHA256_PATTERN, chart_hash) is None:
-            raise EvaluationInputError(
-                f"answer key case {case_id} true_chart_features_hash must be SHA-256"
-            )
-        tuples.append((case_id, _utc_text(true_utc), true_date, chart_hash))
-    return sha256_json(
-        {
-            "schema_version": "revealed-target-set-v1",
-            "targets": tuples,
-        }
-    )
+    try:
+        return revealed_target_set_hash(keyed_cases)
+    except ValueError as exc:
+        raise EvaluationInputError(str(exc)) from exc
 
 
 def _require_rank(value: Any, *, label: str) -> int:
@@ -390,9 +354,7 @@ def _parse_interval_stage(
             raise EvaluationInputError(f"{label}.tied does not match rank bounds")
         universe_boundary_truncated = raw_record.get("universe_boundary_truncated")
         if not isinstance(universe_boundary_truncated, bool):
-            raise EvaluationInputError(
-                f"{label}.universe_boundary_truncated must be boolean"
-            )
+            raise EvaluationInputError(f"{label}.universe_boundary_truncated must be boolean")
         records.append(
             RankedStableInterval(
                 state_id=state_id,
@@ -436,9 +398,7 @@ def _parse_interval_stage(
         rank_start = position + 1
         rank_end = end_position
         members = tuple(records[position:end_position])
-        if any(
-            item.rank_start != rank_start or item.rank_end != rank_end for item in members
-        ):
+        if any(item.rank_start != rank_start or item.rank_end != rank_end for item in members):
             raise EvaluationInputError(
                 f"case {case_id} {stage_label} record ranks do not match exact score ties"
             )
@@ -624,14 +584,7 @@ def _evaluate_frozen_payloads(
     ):
         raise EvaluationInputError("synthetic generation_seed must be a non-negative integer")
     generation_seed_commitment_sha256 = (
-        sha256_json(
-            {
-                "schema_version": "synthetic-generation-seed-commitment-v1",
-                "generation_seed": generation_seed,
-            }
-        )
-        if generation_seed is not None
-        else None
+        generation_seed_commitment(generation_seed) if generation_seed is not None else None
     )
     _validate_cross_file_bindings(predictions, answer_key, freeze)
     predicted_cases = _unique_cases(predictions, "predictions")
@@ -650,9 +603,7 @@ def _evaluate_frozen_payloads(
             "known_month",
             "known_date",
         }:
-            raise EvaluationInputError(
-                "predictions contain an unsupported candidate universe"
-            )
+            raise EvaluationInputError("predictions contain an unsupported candidate universe")
         declared_universes.add(candidate_universe)
     if len(declared_universes) != 1:
         raise EvaluationInputError("mixed candidate-universe evaluation is not allowed")
@@ -660,6 +611,10 @@ def _evaluate_frozen_payloads(
         "stable_interval" if declared_universes == {"known_date"} else "local_date"
     )
     revealed_target_set_sha256 = _revealed_target_set_hash(keyed_cases)
+    try:
+        revealed_local_date_set_sha256 = revealed_local_date_set_hash(keyed_cases)
+    except ValueError as exc:
+        raise EvaluationInputError(str(exc)) from exc
     case_metrics: list[CaseRankMetrics] = []
     failures: list[FailureRecord] = []
     curves: list[CurveObservation] = []
@@ -762,17 +717,13 @@ def _evaluate_frozen_payloads(
                     raise EvaluationInputError(f"case {case_id} has invalid {field}")
                 for point in restoration:
                     if not isinstance(point, dict):
-                        raise EvaluationInputError(
-                            f"case {case_id} has invalid {field} point"
-                        )
+                        raise EvaluationInputError(f"case {case_id} has invalid {field} point")
                     try:
-                        stage_metrics, stage_count, stage_ranking, _ = (
-                            _evaluate_interval_stage(
-                                case_id=case_id,
-                                stage_label=f"{field} step",
-                                stage=point,
-                                true_utc=true_utc,
-                            )
+                        stage_metrics, stage_count, stage_ranking, _ = _evaluate_interval_stage(
+                            case_id=case_id,
+                            stage_label=f"{field} step",
+                            stage=point,
+                            true_utc=true_utc,
                         )
                         if (
                             stage_ranking.local_date != ranking.local_date
@@ -784,20 +735,14 @@ def _evaluate_frozen_payloads(
                         curves.append(
                             CurveObservation(
                                 case_id=case_id,
-                                method=cast(
-                                    Literal["random", "active", "leave_one_out"], method
-                                ),
+                                method=cast(Literal["random", "active", "leave_one_out"], method),
                                 cluster_count=point["cluster_count"],
                                 midrank=(
-                                    stage_metrics.midrank
-                                    if stage_metrics is not None
-                                    else None
+                                    stage_metrics.midrank if stage_metrics is not None else None
                                 ),
                                 candidate_count=stage_count,
                                 tie_size=(
-                                    stage_metrics.tie_size
-                                    if stage_metrics is not None
-                                    else 1
+                                    stage_metrics.tie_size if stage_metrics is not None else 1
                                 ),
                             )
                         )
@@ -807,9 +752,7 @@ def _evaluate_frozen_payloads(
                         ) from exc
             leave_one_out = predicted.get("leave_one_cluster_out", [])
             if not isinstance(leave_one_out, list):
-                raise EvaluationInputError(
-                    f"case {case_id} has invalid leave_one_cluster_out"
-                )
+                raise EvaluationInputError(f"case {case_id} has invalid leave_one_cluster_out")
             for point in leave_one_out:
                 if not isinstance(point, dict):
                     raise EvaluationInputError(
@@ -851,17 +794,13 @@ def _evaluate_frozen_payloads(
             true_date=true_date,
         )
         if metrics is None:
-            failures.append(
-                classify_oracle_failure(case_id=case_id, true_candidate_present=False)
-            )
+            failures.append(classify_oracle_failure(case_id=case_id, true_candidate_present=False))
         else:
             case_metrics.append(metrics)
         if metrics is not None and metrics.best_rank != 1:
             variants = predicted.get("aggregation_variants", {})
             if not isinstance(variants, dict):
-                raise EvaluationInputError(
-                    f"case {case_id} has invalid aggregation_variants"
-                )
+                raise EvaluationInputError(f"case {case_id} has invalid aggregation_variants")
             best_state_metrics: CaseRankMetrics | None = None
             if "best_state" in variants:
                 best_state_metrics, _ = _evaluate_stage_ranking(
@@ -876,8 +815,7 @@ def _evaluate_frozen_payloads(
                     true_candidate_present=True,
                     unresolved_mapping_ids=tuple(unresolved),
                     state_winner_but_date_loser=(
-                        best_state_metrics is not None
-                        and best_state_metrics.best_rank == 1
+                        best_state_metrics is not None and best_state_metrics.best_rank == 1
                     ),
                     evidence={"best_rank": metrics.best_rank, "midrank": metrics.midrank},
                 )
@@ -916,17 +854,11 @@ def _evaluate_frozen_payloads(
                     curves.append(
                         CurveObservation(
                             case_id=case_id,
-                            method=cast(
-                                Literal["random", "active", "leave_one_out"], method
-                            ),
+                            method=cast(Literal["random", "active", "leave_one_out"], method),
                             cluster_count=point["cluster_count"],
-                            midrank=(
-                                stage_metrics.midrank if stage_metrics is not None else None
-                            ),
+                            midrank=(stage_metrics.midrank if stage_metrics is not None else None),
                             candidate_count=stage_count,
-                            tie_size=(
-                                stage_metrics.tie_size if stage_metrics is not None else 1
-                            ),
+                            tie_size=(stage_metrics.tie_size if stage_metrics is not None else 1),
                         )
                     )
                 except (KeyError, TypeError, ValueError) as exc:
@@ -982,6 +914,7 @@ def _evaluate_frozen_payloads(
         question_bank_sha256=freeze.question_bank_sha256,
         mapping_sha256=freeze.mapping_sha256,
         revealed_target_set_sha256=revealed_target_set_sha256,
+        revealed_local_date_set_sha256=revealed_local_date_set_sha256,
         generation_seed_commitment_sha256=generation_seed_commitment_sha256,
         evaluation_target=evaluation_target,
         aggregate=aggregate_rank_metrics(case_metrics, total_case_count=len(keyed_cases)),
@@ -1061,6 +994,17 @@ def evaluate_frozen_run(
         answer_key_payload_sha256=answer_key_sha256,
         created_at_utc=created_at_utc,
     )
+    if reveal.schema_version == "answer-key-reveal-v3":
+        commitment_bindings = {
+            "revealed_target_set_sha256": report.revealed_target_set_sha256,
+            "revealed_local_date_set_sha256": report.revealed_local_date_set_sha256,
+            "generation_seed_commitment_sha256": (report.generation_seed_commitment_sha256),
+        }
+        for field, current in commitment_bindings.items():
+            if current is None or getattr(reveal, field) != current:
+                raise EvaluationInputError(
+                    f"evaluation {field} does not match authenticated reveal"
+                )
     if report.created_at_utc < reveal.revealed_at_utc:
         raise EvaluationInputError("evaluation timestamp cannot predate answer-key reveal")
     destination = Path(output_path) if output_path is not None else directory / "evaluation.json"

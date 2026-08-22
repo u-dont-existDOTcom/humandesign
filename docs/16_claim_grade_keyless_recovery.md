@@ -87,6 +87,43 @@ binding. The isolation receipt records the verified audit SHA-256, compiled and
 freeze hashes, V2 model and question-bank identities, cache and full candidate-
 universe hashes, audited month request, and the read-only mount contract.
 
+## Paired Model A/V2 invocation
+
+For the paired oracle comparison, create the public paired plan before either
+generation. Both generators must receive the same protected seed file, exact
+public config, and their fixed arm ID. In addition to the ordinary public inputs,
+each keyless recovery invocation must receive:
+
+```text
+--paired-plan /public/paired/experiment.plan.json
+--paired-public-config configs/model_a_v2_new_paired_oracle_75.yaml
+--paired-generation-receipt /public/generation/ARM/generation.receipt.json
+--paired-generation-binding /public/generation/ARM/paired-generation.receipt.json
+--paired-arm-id MODEL-A|MODEL-B-V2
+```
+
+The wrapper mounts those four artifacts as individual read-only files. On a
+successful isolated recovery it stages only `blind_cases.json`,
+`generation.receipt.json`, and `paired-generation.receipt.json` into that arm's
+decoder output. It never stages or mounts the encrypted envelope or key.
+
+Freeze each arm's prediction bytes normally. Before revealing either arm, create
+one two-arm receipt with `hdmatch freeze-paired-model-a-v2-new`. This verifies the
+plan, public config, both generation bindings, both manifests, both prediction
+files and freezes, both Bubblewrap receipts, the single exact audited month cache,
+generation/recovery source and environment identities, chart-engine identity, and
+ephemeris bytes. Both prediction freezes must predate this receipt.
+
+Every paired `reveal-evaluate` call then requires the same complete two-arm
+artifact set plus `--paired-freeze`; a partial set fails closed. The authenticated
+V3 reveal binds the common seed commitment, target-set hash, local-date-set hash,
+paired plan, arm ID, and two-arm freeze. After both reveals,
+`hdmatch compare-paired-model-a-v2-new` verifies the complete public chains and
+recomputes Top-1/3/5, MRR, midrank, percentile, case-level rank changes, ties,
+failures, restoration, and ablation differences without accepting a key or
+decrypt capability. Supplied generation receipts must byte-match the public
+copies staged by the keyless recoveries.
+
 The wrapper deliberately has no key, encrypted-envelope, decrypt, truth, evaluation,
 or reveal argument. If Bubblewrap is absent or cannot create every namespace, the
 wrapper exits before creating the output directory. It also refuses a dirty checkout,

@@ -7,7 +7,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any, Literal
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator
+from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 from hdmatch.synthetic.sealing import (
     AnswerKeySealingError,
@@ -16,6 +16,12 @@ from hdmatch.synthetic.sealing import (
     verify_envelope_bindings,
 )
 
+from .answer_key_commitments import (
+    answer_key_case_mapping,
+    generation_seed_commitment,
+    revealed_local_date_set_hash,
+    revealed_target_set_hash,
+)
 from .canonical import (
     canonical_json_bytes,
     load_json_bytes,
@@ -30,7 +36,7 @@ from .manifest import SHA256_PATTERN
 class RevealRecord(BaseModel):
     model_config = ConfigDict(extra="forbid", frozen=True)
 
-    schema_version: Literal["answer-key-reveal-v2"] = "answer-key-reveal-v2"
+    schema_version: Literal["answer-key-reveal-v2", "answer-key-reveal-v3"] = "answer-key-reveal-v2"
     experiment_id: str
     blind_input_sha256: str = Field(pattern=SHA256_PATTERN)
     model_sha256: str = Field(pattern=SHA256_PATTERN)
@@ -42,6 +48,12 @@ class RevealRecord(BaseModel):
     encrypted_answer_key_sha256: str = Field(pattern=SHA256_PATTERN)
     encrypted_answer_key_file: str
     answer_key_payload_sha256: str = Field(pattern=SHA256_PATTERN)
+    revealed_target_set_sha256: str | None = Field(default=None, pattern=SHA256_PATTERN)
+    revealed_local_date_set_sha256: str | None = Field(default=None, pattern=SHA256_PATTERN)
+    generation_seed_commitment_sha256: str | None = Field(default=None, pattern=SHA256_PATTERN)
+    paired_prediction_freeze_sha256: str | None = Field(default=None, pattern=SHA256_PATTERN)
+    paired_plan_sha256: str | None = Field(default=None, pattern=SHA256_PATTERN)
+    paired_arm_id: str | None = None
     revealed_at_utc: datetime
     answer_key_revealed: Literal[True] = True
 
@@ -59,6 +71,34 @@ class RevealRecord(BaseModel):
         if value.tzinfo is None or value.utcoffset() is None:
             raise ValueError("reveal timestamp must be timezone-aware")
         return value.astimezone(UTC)
+
+    @model_validator(mode="after")
+    def require_v3_commitments(self) -> RevealRecord:
+        commitments = (
+            self.revealed_target_set_sha256,
+            self.revealed_local_date_set_sha256,
+            self.generation_seed_commitment_sha256,
+        )
+        paired = (
+            self.paired_prediction_freeze_sha256,
+            self.paired_plan_sha256,
+            self.paired_arm_id,
+        )
+        if self.schema_version == "answer-key-reveal-v3":
+            if not all(value is not None for value in commitments):
+                raise ValueError("answer-key reveal v3 requires complete target/seed commitments")
+        elif any(value is not None for value in commitments):
+            raise ValueError("answer-key reveal v2 cannot claim v3 target/seed commitments")
+        if any(value is not None for value in paired) and not all(
+            value is not None for value in paired
+        ):
+            raise ValueError("paired reveal provenance must be complete or absent")
+        if self.schema_version == "answer-key-reveal-v2" and any(
+            value is not None for value in paired
+        ):
+            raise ValueError("answer-key reveal v2 cannot claim paired provenance")
+        return self
+
 
 _REVEAL_RESULT_CAPABILITY = object()
 
@@ -167,9 +207,11 @@ def verify_reveal_record(
 
 def _relative_envelope_path(directory: Path, encrypted_path: Path) -> str:
     try:
-        return encrypted_path.resolve(strict=True).relative_to(
-            directory.resolve(strict=True)
-        ).as_posix()
+        return (
+            encrypted_path.resolve(strict=True)
+            .relative_to(directory.resolve(strict=True))
+            .as_posix()
+        )
     except (FileNotFoundError, ValueError) as exc:
         raise ValueError("encrypted answer-key envelope must be inside the run directory") from exc
 
@@ -183,6 +225,11 @@ def reveal_answer_key(
     freeze_path: str | Path | None = None,
     reveal_record_path: str | Path | None = None,
     revealed_at_utc: datetime | None = None,
+    paired_prediction_freeze_path: str | Path | None = None,
+    paired_plan_path: str | Path | None = None,
+    paired_arm_id: str | None = None,
+    expected_generation_seed_commitment_sha256: str | None = None,
+    reveal_not_before_utc: datetime | None = None,
 ) -> RevealResult:
     """Verify frozen bytes, authenticate bindings, then reveal the key only in memory."""
 
@@ -228,13 +275,41 @@ def reveal_answer_key(
         raise ValueError("answer-key experiment_id does not match the prediction freeze")
     if answer_key.get("blind_input_sha256") != freeze.blind_input_sha256:
         raise ValueError("answer-key blind input hash does not match the prediction freeze")
+    keyed_cases = answer_key_case_mapping(answer_key)
+    target_set_sha256 = revealed_target_set_hash(keyed_cases)
+    seed = answer_key.get("generation_seed")
+    seed_commitment_sha256 = (
+        generation_seed_commitment(seed)
+        if isinstance(seed, int) and not isinstance(seed, bool)
+        else None
+    )
+    complete_commitments = target_set_sha256 is not None and seed_commitment_sha256 is not None
+    paired_values = (
+        paired_prediction_freeze_path,
+        paired_plan_path,
+        paired_arm_id,
+    )
+    if any(value is not None for value in paired_values) and not all(
+        value is not None for value in paired_values
+    ):
+        raise ValueError("paired reveal requires freeze, plan, and arm ID together")
+    if paired_prediction_freeze_path is not None and not complete_commitments:
+        raise ValueError("paired reveal requires complete authenticated target/seed commitments")
+    if (
+        expected_generation_seed_commitment_sha256 is not None
+        and seed_commitment_sha256 != expected_generation_seed_commitment_sha256
+    ):
+        raise ValueError("revealed generation seed does not match the paired plan")
     reveal_time = revealed_at_utc or datetime.now(UTC)
     if reveal_time < freeze.created_at_utc:
         raise ValueError("answer-key reveal timestamp cannot predate prediction freeze")
+    if reveal_not_before_utc is not None and reveal_time < reveal_not_before_utc:
+        raise ValueError("answer-key reveal timestamp cannot predate paired freeze")
     manifest_sha256 = freeze.run_manifest_sha256
     if manifest_sha256 is None:
         raise FreezeVerificationError("prediction freeze lacks a run-manifest binding")
     record = RevealRecord(
+        schema_version=("answer-key-reveal-v3" if complete_commitments else "answer-key-reveal-v2"),
         experiment_id=freeze.experiment_id,
         blind_input_sha256=freeze.blind_input_sha256,
         model_sha256=freeze.model_sha256,
@@ -246,6 +321,22 @@ def reveal_answer_key(
         encrypted_answer_key_sha256=sha256_bytes(encrypted_bytes),
         encrypted_answer_key_file=relative_envelope,
         answer_key_payload_sha256=sha256_bytes(plaintext),
+        revealed_target_set_sha256=(target_set_sha256 if complete_commitments else None),
+        revealed_local_date_set_sha256=(
+            revealed_local_date_set_hash(keyed_cases) if complete_commitments else None
+        ),
+        generation_seed_commitment_sha256=(
+            seed_commitment_sha256 if complete_commitments else None
+        ),
+        paired_prediction_freeze_sha256=(
+            sha256_file(paired_prediction_freeze_path)
+            if paired_prediction_freeze_path is not None
+            else None
+        ),
+        paired_plan_sha256=(
+            sha256_file(paired_plan_path) if paired_plan_path is not None else None
+        ),
+        paired_arm_id=paired_arm_id,
         revealed_at_utc=reveal_time,
     )
     destination = (

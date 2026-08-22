@@ -219,6 +219,20 @@ engineering discovery-only, its holdout pathways remain frozen and withheld, and
 no result is human validation. The previously committed V1 compile/freeze is a
 superseded pre-provenance-hardening artifact and must not authorize generation.
 
+The paired workflow is fail-closed at four additional boundaries. First,
+`plan-paired-model-a-v2-new` binds the public configuration, common secret-seed
+commitment, exact Model A/V2 identities, and verified PASS audit before either arm
+is generated. Each generation and keyless recovery then binds that plan and its
+arm. After both ordinary prediction freezes exist,
+`freeze-paired-model-a-v2-new` binds both complete public chains before either
+answer key may be revealed. Finally, `compare-paired-model-a-v2-new` recomputes
+the metrics from frozen predictions and reveal-authenticated public dates; it
+rejects different target sets, seeds, caches, ephemeris bytes, source trees,
+software environments, settings, timestamps, or incomplete isolation receipts.
+The comparator accepts no key or decrypt interface. See
+`docs/16_claim_grade_keyless_recovery.md` for the paired invocation and mount
+contract.
+
 ## Research claim boundary
 
 The project now explicitly allows **post-hoc fitting on human development data**.

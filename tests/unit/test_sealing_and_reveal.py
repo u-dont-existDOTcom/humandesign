@@ -6,6 +6,11 @@ from pathlib import Path
 
 import pytest
 
+from hdmatch.experiments.answer_key_commitments import (
+    generation_seed_commitment,
+    revealed_local_date_set_hash,
+    revealed_target_set_hash,
+)
 from hdmatch.experiments.canonical import (
     canonical_json_bytes,
     sha256_bytes,
@@ -55,6 +60,23 @@ def _answer_key() -> dict[str, object]:
     }
 
 
+def _detailed_answer_key() -> dict[str, object]:
+    return {
+        "schema_version": "answer-key-v1",
+        "experiment_id": "EXP-1",
+        "blind_input_sha256": _digest("blind"),
+        "generation_seed": 20260822,
+        "cases": [
+            {
+                "case_id": "C1",
+                "true_local_date": "2000-01-02",
+                "true_utc": "2000-01-02T03:04:05Z",
+                "true_chart_features_hash": _digest("chart-C1"),
+            }
+        ],
+    }
+
+
 def _write_test_manifest(run_dir: Path) -> Path:
     path = run_dir / "run.manifest.json"
     manifest = create_run_manifest(
@@ -91,12 +113,15 @@ def test_aes_gcm_round_trip_authenticates_metadata_and_external_key(tmp_path: Pa
         metadata=_metadata(),
         decoder_root=project,
     )
-    assert decrypt_answer_key_json(
-        encrypted,
-        key_path=key_path,
-        decoder_root=project,
-        expected_metadata=_metadata(),
-    ) == _answer_key()
+    assert (
+        decrypt_answer_key_json(
+            encrypted,
+            key_path=key_path,
+            decoder_root=project,
+            expected_metadata=_metadata(),
+        )
+        == _answer_key()
+    )
 
     envelope = json.loads(encrypted.read_bytes())
     envelope["authenticated_metadata"]["experiment_id"] = "OTHER"
@@ -454,3 +479,87 @@ def test_reveal_refuses_changed_prediction_bytes(tmp_path: Path) -> None:
             key_path=key_path,
             decoder_root=project,
         )
+
+
+def test_authenticated_reveal_v3_binds_target_date_and_seed_commitments(
+    tmp_path: Path,
+) -> None:
+    project = tmp_path / "decoder"
+    run_dir = project / "run"
+    run_dir.mkdir(parents=True)
+    key_path = tmp_path / "evaluator.key"
+    encrypted = run_dir / "answer-key.json.enc"
+    generate_key_file(key_path, decoder_root=project)
+    answer_key = _detailed_answer_key()
+    seal_answer_key(
+        answer_key,
+        encrypted_path=encrypted,
+        key_path=key_path,
+        metadata=_metadata(),
+        decoder_root=project,
+    )
+    (run_dir / "predictions.json").write_bytes(b"{}")
+    manifest_path = _write_test_manifest(run_dir)
+    freeze_predictions(
+        run_dir,
+        experiment_id="EXP-1",
+        bindings=_bindings(),
+        repository_root=Path(__file__).parents[2],
+        run_manifest_path=manifest_path,
+        created_at_utc=datetime(2026, 8, 21, tzinfo=UTC),
+    )
+    paired_freeze = tmp_path / "paired.freeze.json"
+    paired_plan = tmp_path / "paired.plan.json"
+    paired_freeze.write_bytes(b"paired-freeze")
+    paired_plan.write_bytes(b"paired-plan")
+
+    with pytest.raises(ValueError, match="seed does not match"):
+        reveal_answer_key(
+            run_dir,
+            encrypted_answer_key_path=encrypted,
+            key_path=key_path,
+            decoder_root=project,
+            revealed_at_utc=datetime(2026, 8, 22, tzinfo=UTC),
+            paired_prediction_freeze_path=paired_freeze,
+            paired_plan_path=paired_plan,
+            paired_arm_id="MODEL-A",
+            expected_generation_seed_commitment_sha256=generation_seed_commitment(1),
+        )
+    assert not (run_dir / "answer-key.reveal.json").exists()
+
+    with pytest.raises(ValueError, match="predate paired freeze"):
+        reveal_answer_key(
+            run_dir,
+            encrypted_answer_key_path=encrypted,
+            key_path=key_path,
+            decoder_root=project,
+            revealed_at_utc=datetime(2026, 8, 22, tzinfo=UTC),
+            paired_prediction_freeze_path=paired_freeze,
+            paired_plan_path=paired_plan,
+            paired_arm_id="MODEL-A",
+            expected_generation_seed_commitment_sha256=(generation_seed_commitment(20260822)),
+            reveal_not_before_utc=datetime(2026, 8, 23, tzinfo=UTC),
+        )
+    assert not (run_dir / "answer-key.reveal.json").exists()
+
+    result = reveal_answer_key(
+        run_dir,
+        encrypted_answer_key_path=encrypted,
+        key_path=key_path,
+        decoder_root=project,
+        revealed_at_utc=datetime(2026, 8, 22, tzinfo=UTC),
+        paired_prediction_freeze_path=paired_freeze,
+        paired_plan_path=paired_plan,
+        paired_arm_id="MODEL-A",
+        expected_generation_seed_commitment_sha256=(generation_seed_commitment(20260822)),
+        reveal_not_before_utc=datetime(2026, 8, 21, 12, tzinfo=UTC),
+    )
+
+    keyed = {"C1": answer_key["cases"][0]}  # type: ignore[index]
+    assert result.record.schema_version == "answer-key-reveal-v3"
+    assert result.record.revealed_target_set_sha256 == revealed_target_set_hash(keyed)
+    assert result.record.revealed_local_date_set_sha256 == revealed_local_date_set_hash(keyed)
+    assert result.record.generation_seed_commitment_sha256 == (generation_seed_commitment(20260822))
+    assert result.record.paired_prediction_freeze_sha256 == sha256_file(paired_freeze)
+    assert result.record.paired_plan_sha256 == sha256_file(paired_plan)
+    assert result.record.paired_arm_id == "MODEL-A"

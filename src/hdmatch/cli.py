@@ -22,6 +22,10 @@ from hdmatch.evaluation.behavioral_difference import (
 from hdmatch.evaluation.leakage import assert_no_blind_leakage
 from hdmatch.evaluation.model_comparison import audit_structural_discrimination
 from hdmatch.evaluation.noise_benchmark import NoiseTier
+from hdmatch.evaluation.paired_model_comparison import (
+    compare_model_a_v2_new_run_dirs,
+    write_paired_model_comparison_report,
+)
 from hdmatch.evaluation.report import evaluate_frozen_run
 from hdmatch.experiments import (
     ArtifactBindings,
@@ -33,6 +37,25 @@ from hdmatch.experiments import (
     write_run_manifest,
 )
 from hdmatch.experiments.canonical import load_json_bytes, write_new_canonical_json
+from hdmatch.experiments.manifest import capture_software_environment, git_revision
+from hdmatch.experiments.paired import (
+    PairedExperimentPlan,
+    create_paired_experiment_plan,
+    create_paired_generation_receipt_binding,
+    generation_seed_commitment,
+    load_paired_experiment_plan,
+    verify_generation_seed_commitment,
+    verify_paired_experiment_plan,
+    verify_paired_generation_receipt_binding,
+    write_paired_experiment_plan,
+    write_paired_generation_receipt_binding,
+)
+from hdmatch.experiments.paired_freeze import (
+    PairedFreezeArmArtifacts,
+    create_paired_prediction_freeze_receipt,
+    verify_paired_prediction_freeze_receipt,
+    write_paired_prediction_freeze_receipt,
+)
 from hdmatch.experiments.reveal import reveal_answer_key
 from hdmatch.human import (
     fit_development_bundle_artifacts,
@@ -98,8 +121,7 @@ def _require_v2_public_inputs(args: argparse.Namespace) -> tuple[str, str]:
     freeze = args.model_b_v2_freeze
     if not compiled or not freeze:
         raise ValueError(
-            "MODEL-B-DETAILED-V2-NEW requires --model-b-v2-compiled and "
-            "--model-b-v2-freeze"
+            "MODEL-B-DETAILED-V2-NEW requires --model-b-v2-compiled and --model-b-v2-freeze"
         )
     return str(compiled), str(freeze)
 
@@ -119,10 +141,7 @@ def _reject_inapplicable_v2_difference_inputs(args: argparse.Namespace) -> None:
     if getattr(args, "model_b_v2_difference_audit", None) or getattr(
         args, "model_b_v2_difference_cache", None
     ):
-        raise ValueError(
-            "behavioral-difference inputs are only valid for "
-            "MODEL-B-DETAILED-V2-NEW"
-        )
+        raise ValueError("behavioral-difference inputs are only valid for MODEL-B-DETAILED-V2-NEW")
 
 
 def _verify_v2_difference_gate(
@@ -197,18 +216,99 @@ def _verify_v2_freeze_precedes_manifest(
         raise ValueError("V2 model freeze must predate the blind recovery run manifest")
 
 
+def _generation_timing(
+    model: RuntimeSymbolicModel,
+    generation_started_at_utc: datetime,
+) -> dict[str, datetime]:
+    result = {"generation_started_at_utc": generation_started_at_utc}
+    if isinstance(model, FrozenModelBV2New):
+        if model.freeze_receipt.frozen_at_utc > generation_started_at_utc:
+            raise ValueError("V2 model freeze must predate synthetic generation")
+        result["model_freeze_created_at_utc"] = model.freeze_receipt.frozen_at_utc
+    return result
+
+
 def _v2_generation_timing(
     model: RuntimeSymbolicModel,
     generation_started_at_utc: datetime,
 ) -> dict[str, datetime]:
+    """Backward-compatible helper retained for focused V2 timing tests."""
+
     if not isinstance(model, FrozenModelBV2New):
         return {}
-    if model.freeze_receipt.frozen_at_utc > generation_started_at_utc:
-        raise ValueError("V2 model freeze must predate synthetic generation")
-    return {
-        "generation_started_at_utc": generation_started_at_utc,
-        "model_freeze_created_at_utc": model.freeze_receipt.frozen_at_utc,
-    }
+    return _generation_timing(model, generation_started_at_utc)
+
+
+def _paired_arguments(args: argparse.Namespace) -> tuple[str, str] | None:
+    plan = getattr(args, "paired_plan", None)
+    arm_id = getattr(args, "paired_arm_id", None)
+    if (plan is None) != (arm_id is None):
+        raise ValueError("--paired-plan and --paired-arm-id must be supplied together")
+    return (str(plan), str(arm_id)) if plan is not None else None
+
+
+def _paired_recovery_arguments(
+    args: argparse.Namespace,
+) -> tuple[str, str, str, str, str] | None:
+    values = (
+        getattr(args, "paired_plan", None),
+        getattr(args, "paired_public_config", None),
+        getattr(args, "paired_generation_receipt", None),
+        getattr(args, "paired_generation_binding", None),
+        getattr(args, "paired_arm_id", None),
+    )
+    if not any(value is not None for value in values):
+        return None
+    if not all(value is not None for value in values):
+        raise ValueError(
+            "paired recovery requires plan, public config, generation receipt, "
+            "generation binding, and arm ID"
+        )
+    return tuple(str(value) for value in values)  # type: ignore[return-value]
+
+
+def _verify_generation_pair(
+    args: argparse.Namespace,
+    *,
+    config_path: Path,
+    model: RuntimeSymbolicModel,
+    secret_seed: int,
+    difference_gate: VerifiedBehavioralDifferenceBinding | None,
+) -> tuple[PairedExperimentPlan, str] | None:
+    paired = _paired_arguments(args)
+    if paired is None:
+        return None
+    plan_path, arm_id = paired
+    loaded = load_paired_experiment_plan(plan_path)
+    arm_ids = {arm.role: arm.arm_id for arm in loaded.arms}
+    audit_binding = difference_gate or loaded.verified_v2_audit
+    plan = verify_paired_experiment_plan(
+        plan_path,
+        paired_experiment_id=loaded.paired_experiment_id,
+        verified_v2_audit=audit_binding,
+        public_config_path=config_path,
+        generation_seed_commitment_sha256=generation_seed_commitment(
+            paired_experiment_id=loaded.paired_experiment_id,
+            secret_seed=secret_seed,
+        ),
+        model_a_arm_id=arm_ids["model_a"],
+        model_b_v2_arm_id=arm_ids["model_b_v2"],
+    )
+    verify_generation_seed_commitment(plan, secret_seed=secret_seed)
+    arm = plan.arm(arm_id)
+    if (
+        arm.model_id != model.model_id
+        or arm.model_sha256 != model.model_sha256
+        or arm.mapping_sha256 != model.mapping_sha256
+        or arm.question_bank_sha256 != model.question_bank_sha256
+    ):
+        raise ValueError("selected runtime model does not match the paired-plan arm")
+    if isinstance(model, FrozenModelBV2New):
+        if difference_gate is None or difference_gate != plan.verified_v2_audit:
+            raise ValueError("V2 generation gate does not match the paired experiment plan")
+    elif arm.role != "model_a":
+        raise ValueError("only Model A or Model B V2 may use the paired oracle plan")
+    return plan, arm_id
 
 
 def _read_secret_seed(path: str | Path | None) -> int:
@@ -270,23 +370,35 @@ def _command_generate(args: argparse.Namespace) -> int:
         _reject_inapplicable_v2_difference_inputs(args)
 
     generation_started_at_utc = datetime.now(UTC)
-    if (
-        difference_gate is not None
-        and difference_gate.audited_at_utc > generation_started_at_utc
-    ):
+    if difference_gate is not None and difference_gate.audited_at_utc > generation_started_at_utc:
         raise ValueError("behavioral-difference audit cannot postdate V2 generation")
-    generation_timing = _v2_generation_timing(model, generation_started_at_utc)
+    generation_timing = _generation_timing(model, generation_started_at_utc)
+    seed = _read_secret_seed(args.seed_file)
+    paired_generation = _verify_generation_pair(
+        args,
+        config_path=config_path,
+        model=model,
+        secret_seed=seed,
+        difference_gate=difference_gate,
+    )
+    generation_commit, generation_dirty = git_revision(ROOT)
+    if paired_generation is not None and generation_dirty:
+        raise ValueError("paired generation requires a clean committed source tree")
+    generation_environment = capture_software_environment()
     run_dir = Path(args.run_dir)
     run_dir.mkdir(parents=True, exist_ok=True)
     blind_path = run_dir / "blind_cases.json"
     encrypted_path = run_dir / "answer_key.json.enc"
     leakage_path = run_dir / "leakage_audit.json"
     receipt_path = run_dir / "generation.receipt.json"
-    for destination in (blind_path, encrypted_path, leakage_path, receipt_path):
+    paired_binding_path = run_dir / "paired-generation.binding.json"
+    destinations = [blind_path, encrypted_path, leakage_path, receipt_path]
+    if paired_generation is not None:
+        destinations.append(paired_binding_path)
+    for destination in destinations:
         if destination.exists():
             raise FileExistsError(f"refusing to replace experiment artifact: {destination}")
 
-    seed = _read_secret_seed(args.seed_file)
     resolved = config.model_copy(update={"seed": seed, "ephemeris_path": str(ephemeris_path)})
     chart = ExactChartAdapter(ephemeris_path)
     bundle = SyntheticGenerator(chart, model).generate(
@@ -329,15 +441,80 @@ def _command_generate(args: argparse.Namespace) -> int:
         "seed_status": "sealed-in-answer-key-only",
         "external_reveal_key_status": "owner-only-key-ready-path-withheld",
         "claim_boundary": "synthetic-engineering-validation-only",
+        "generation_software_commit": generation_commit,
+        "generation_software_dirty": generation_dirty,
+        "generation_software_environment": generation_environment.model_dump(mode="json"),
+        "chart_engine_fingerprint": chart.fingerprint,
+        "ephemeris_sha256": {
+            file.name: sha256_file(file) for file in declared_ephemeris_files(ephemeris_path)
+        },
     }
     if difference_gate is not None:
         receipt["model_b_v2_difference_gate"] = difference_gate.model_dump(mode="json")
+    if paired_generation is not None:
+        plan, arm_id = paired_generation
+        arm = plan.arm(arm_id)
+        receipt["paired_experiment"] = {
+            "schema_version": "paired-generation-reference-v1",
+            "paired_experiment_id": plan.paired_experiment_id,
+            "paired_plan_file_sha256": sha256_file(args.paired_plan),
+            "paired_plan_semantic_sha256": plan.plan_sha256,
+            "arm_id": arm.arm_id,
+            "arm_role": arm.role,
+            "generation_seed_commitment_sha256": (plan.generation_seed_commitment_sha256),
+        }
     receipt.update(generation_timing)
     write_new_canonical_json(receipt_path, receipt)
+    if paired_generation is not None:
+        _, arm_id = paired_generation
+        binding = create_paired_generation_receipt_binding(
+            plan_path=args.paired_plan,
+            public_config_path=config_path,
+            generation_receipt_path=receipt_path,
+            arm_id=arm_id,
+        )
+        write_paired_generation_receipt_binding(binding, paired_binding_path)
     print(f"blind experiment: {blind_path}")
     print(f"blind input sha256: {receipt['blind_input_sha256']}")
     print(f"encrypted answer key: {encrypted_path}")
     print(f"external reveal key status: {receipt['external_reveal_key_status']}")
+    if paired_generation is not None:
+        print(f"paired generation binding: {paired_binding_path}")
+    return 0
+
+
+def _command_plan_paired_model_a_v2_new(args: argparse.Namespace) -> int:
+    """Freeze the public paired design and a commitment to one owner-held seed."""
+
+    config_path = Path(args.config)
+    config = load_synthetic_config(config_path)
+    if config.seed is not None:
+        raise ValueError("paired public config must not contain a generation seed")
+    seed = _read_secret_seed(args.seed_file)
+    model = _load_selected_model(args)
+    if not isinstance(model, FrozenModelBV2New):
+        raise TypeError("paired plan requires the frozen Model B V2 runtime")
+    gate = _verify_v2_difference_gate(
+        args,
+        model=model,
+        ephemeris_path=args.ephemeris,
+    )
+    _require_generation_scope_matches_gate(config, gate)
+    plan = create_paired_experiment_plan(
+        paired_experiment_id=config.experiment_id,
+        verified_v2_audit=gate,
+        public_config_path=config_path,
+        generation_seed_commitment_sha256=generation_seed_commitment(
+            paired_experiment_id=config.experiment_id,
+            secret_seed=seed,
+        ),
+        model_a_arm_id="MODEL-A",
+        model_b_v2_arm_id="MODEL-B-V2",
+    )
+    output = write_paired_experiment_plan(plan, args.output)
+    print(f"paired experiment plan: {output}")
+    print(f"paired plan sha256: {sha256_file(output)}")
+    print("generation seed status: owner-held commitment only")
     return 0
 
 
@@ -365,6 +542,9 @@ def _command_recover(args: argparse.Namespace) -> int:
         args.mapping,
         args.ephemeris,
     ]
+    paired_inputs = _paired_recovery_arguments(args)
+    if paired_inputs is not None:
+        visible_paths.extend(paired_inputs[:4])
     if args.cache_dir:
         visible_paths.append(args.cache_dir)
     if str(args.model) == MODEL_B_ID:
@@ -387,9 +567,7 @@ def _command_recover(args: argparse.Namespace) -> int:
                 blind.get("model_b_v2_difference_gate")
             )
         except ValueError as exc:
-            raise ValueError(
-                "V2 blind input lacks a valid behavioral-difference binding"
-            ) from exc
+            raise ValueError("V2 blind input lacks a valid behavioral-difference binding") from exc
         difference_gate = _verify_v2_difference_gate(
             args,
             model=model,
@@ -401,10 +579,63 @@ def _command_recover(args: argparse.Namespace) -> int:
             ephemeris_path=args.ephemeris,
             binding=difference_gate,
         )
+    paired_manifest_binding: dict[str, Any] | None = None
+    if paired_inputs is not None:
+        (
+            paired_plan_path,
+            paired_config_path,
+            paired_generation_receipt_path,
+            paired_generation_binding_path,
+            paired_arm_id,
+        ) = paired_inputs
+        paired_plan = load_paired_experiment_plan(paired_plan_path)
+        paired_receipt = verify_paired_generation_receipt_binding(
+            paired_generation_binding_path,
+            plan_path=paired_plan_path,
+            public_config_path=paired_config_path,
+            generation_receipt_path=paired_generation_receipt_path,
+            expected_arm_id=paired_arm_id,
+        )
+        arm = paired_plan.arm(paired_arm_id)
+        if (
+            arm.model_id != model.model_id
+            or arm.model_sha256 != model.model_sha256
+            or arm.mapping_sha256 != model.mapping_sha256
+            or arm.question_bank_sha256 != model.question_bank_sha256
+        ):
+            raise ValueError("recovery runtime does not match the paired arm")
+        if paired_receipt.blind_input_sha256 != sha256_file(blind_path):
+            raise ValueError("blind input does not match the paired generation binding")
+        if isinstance(model, FrozenModelBV2New) and (
+            difference_gate is None or difference_gate != paired_plan.verified_v2_audit
+        ):
+            raise ValueError("V2 recovery gate does not match the paired plan")
+        paired_manifest_binding = {
+            "schema_version": "paired-recovery-binding-v1",
+            "paired_experiment_id": paired_plan.paired_experiment_id,
+            "paired_plan_file_sha256": sha256_file(paired_plan_path),
+            "paired_plan_semantic_sha256": paired_plan.plan_sha256,
+            "paired_generation_receipt_sha256": sha256_file(paired_generation_receipt_path),
+            "paired_generation_binding_sha256": sha256_file(paired_generation_binding_path),
+            "public_config_file_sha256": sha256_file(paired_config_path),
+            "public_config_semantic_sha256": (paired_plan.public_config.semantic_sha256),
+            "generation_seed_commitment_sha256": (paired_plan.generation_seed_commitment_sha256),
+            "arm_id": arm.arm_id,
+            "arm_role": arm.role,
+        }
     input_hashes = {
         "blind_cases.json": sha256_file(blind_path),
         "model_a_mapping_library": sha256_file(args.mapping),
     }
+    if paired_inputs is not None:
+        input_hashes.update(
+            {
+                "paired_experiment_plan": sha256_file(paired_inputs[0]),
+                "paired_public_config": sha256_file(paired_inputs[1]),
+                "paired_generation_receipt": sha256_file(paired_inputs[2]),
+                "paired_generation_binding": sha256_file(paired_inputs[3]),
+            }
+        )
     if model.model_id == MODEL_B_ID:
         input_hashes["model_b_artifact"] = sha256_file(args.model_b_artifact)
     if model.model_id == MODEL_B_V2_NEW_ID:
@@ -415,9 +646,7 @@ def _command_recover(args: argparse.Namespace) -> int:
         input_hashes.update(
             {
                 "model_b_v2_difference_audit": difference_gate.audit_file_sha256,
-                "model_b_v2_difference_cache": (
-                    difference_gate.candidate_cache_file_sha256
-                ),
+                "model_b_v2_difference_cache": (difference_gate.candidate_cache_file_sha256),
                 "model_b_v2_model_semantic": difference_gate.model_b_sha256,
                 "model_b_v2_question_bank": difference_gate.question_bank_sha256,
                 "model_b_v2_difference_candidate_universe": (
@@ -440,9 +669,9 @@ def _command_recover(args: argparse.Namespace) -> int:
         "cache_policy": "hash-bound exact month universes",
     }
     if difference_gate is not None:
-        manifest_config["model_b_v2_difference_gate"] = difference_gate.model_dump(
-            mode="json"
-        )
+        manifest_config["model_b_v2_difference_gate"] = difference_gate.model_dump(mode="json")
+    if paired_manifest_binding is not None:
+        manifest_config["paired_experiment"] = paired_manifest_binding
     if manifest_path.exists():
         manifest = load_run_manifest(manifest_path)
         verify_run_manifest_resume(
@@ -469,10 +698,7 @@ def _command_recover(args: argparse.Namespace) -> int:
             declared_outputs=("predictions.json", "prediction.freeze.json"),
         )
         _verify_v2_freeze_precedes_manifest(model, manifest)
-    if (
-        difference_gate is not None
-        and difference_gate.audited_at_utc > manifest.created_at_utc
-    ):
+    if difference_gate is not None and difference_gate.audited_at_utc > manifest.created_at_utc:
         raise ValueError("V2 behavioral-difference audit must predate recovery manifest")
     if not manifest_path.exists():
         write_run_manifest(manifest, manifest_path)
@@ -505,6 +731,63 @@ def _command_freeze(args: argparse.Namespace) -> int:
     )
     print(f"prediction freeze: {run_dir / 'prediction.freeze.json'}")
     print(f"prediction sha256: {record.prediction_sha256}")
+    return 0
+
+
+def _paired_freeze_arms(
+    args: argparse.Namespace,
+) -> tuple[PairedFreezeArmArtifacts, PairedFreezeArmArtifacts]:
+    required = (
+        "paired_plan",
+        "paired_public_config",
+        "paired_model_a_run_dir",
+        "paired_model_a_generation_receipt",
+        "paired_model_a_generation_binding",
+        "paired_model_b_run_dir",
+        "paired_model_b_generation_receipt",
+        "paired_model_b_generation_binding",
+    )
+    missing = [name for name in required if not getattr(args, name, None)]
+    if missing:
+        raise ValueError(
+            "paired operation requires the complete two-arm artifact set: "
+            + ", ".join(sorted(missing))
+        )
+    return (
+        PairedFreezeArmArtifacts(
+            role="model_a",
+            arm_id="MODEL-A",
+            run_logical_label="model-a",
+            run_dir=Path(args.paired_model_a_run_dir),
+            generation_receipt_path=Path(args.paired_model_a_generation_receipt),
+            generation_binding_path=Path(args.paired_model_a_generation_binding),
+            isolation_receipt_path=(
+                Path(args.paired_model_a_run_dir) / "keyless-isolation.receipt.json"
+            ),
+        ),
+        PairedFreezeArmArtifacts(
+            role="model_b_v2",
+            arm_id="MODEL-B-V2",
+            run_logical_label="model-b-v2",
+            run_dir=Path(args.paired_model_b_run_dir),
+            generation_receipt_path=Path(args.paired_model_b_generation_receipt),
+            generation_binding_path=Path(args.paired_model_b_generation_binding),
+            isolation_receipt_path=(
+                Path(args.paired_model_b_run_dir) / "keyless-isolation.receipt.json"
+            ),
+        ),
+    )
+
+
+def _command_freeze_paired_experiment(args: argparse.Namespace) -> int:
+    receipt = create_paired_prediction_freeze_receipt(
+        plan_path=args.paired_plan,
+        public_config_path=args.paired_public_config,
+        arms=_paired_freeze_arms(args),
+    )
+    output = write_paired_prediction_freeze_receipt(receipt, args.output)
+    print(f"paired prediction freeze: {output}")
+    print(f"paired freeze sha256: {sha256_file(output)}")
     return 0
 
 
@@ -543,6 +826,37 @@ def _write_transparent_reports(run_dir: Path, evaluation: Any) -> None:
 
 def _command_reveal_evaluate(args: argparse.Namespace) -> int:
     run_dir = Path(args.run_dir)
+    manifest = load_run_manifest(run_dir / "run.manifest.json")
+    paired_manifest = (
+        manifest.config_payload.get("paired_experiment")
+        if manifest.config_payload is not None
+        else None
+    )
+    paired_freeze = None
+    paired_arm_id: str | None = None
+    paired_freeze_path = getattr(args, "paired_freeze", None)
+    if paired_manifest is not None:
+        if not isinstance(paired_manifest, dict):
+            raise ValueError("run manifest has an invalid paired recovery binding")
+        if paired_freeze_path is None:
+            raise ValueError("paired recovery cannot be revealed without the two-arm paired freeze")
+        paired_freeze = verify_paired_prediction_freeze_receipt(
+            paired_freeze_path,
+            plan_path=args.paired_plan,
+            public_config_path=args.paired_public_config,
+            arms=_paired_freeze_arms(args),
+        )
+        arm_id = str(paired_manifest.get("arm_id"))
+        paired_arm_id = arm_id
+        expected_run = (
+            Path(args.paired_model_a_run_dir)
+            if arm_id == "MODEL-A"
+            else Path(args.paired_model_b_run_dir)
+        )
+        if expected_run.resolve() != run_dir.resolve():
+            raise ValueError("reveal run directory does not match its paired arm")
+    elif paired_freeze_path is not None:
+        raise ValueError("unpaired recovery cannot claim a paired prediction freeze")
     encrypted = Path(args.encrypted_key) if args.encrypted_key else run_dir / "answer_key.json.enc"
     key_file = _resolve_key_file(run_dir, args.key_file)
     revealed = reveal_answer_key(
@@ -550,6 +864,13 @@ def _command_reveal_evaluate(args: argparse.Namespace) -> int:
         encrypted_answer_key_path=encrypted,
         key_path=key_file,
         decoder_root=ROOT,
+        paired_prediction_freeze_path=paired_freeze_path,
+        paired_plan_path=(args.paired_plan if paired_freeze is not None else None),
+        paired_arm_id=paired_arm_id,
+        expected_generation_seed_commitment_sha256=(
+            paired_freeze.generation_seed_commitment_sha256 if paired_freeze is not None else None
+        ),
+        reveal_not_before_utc=(paired_freeze.created_at_utc if paired_freeze is not None else None),
     )
     evaluation = evaluate_frozen_run(run_dir, revealed=revealed)
     _write_transparent_reports(run_dir, evaluation)
@@ -658,9 +979,7 @@ def _command_audit_model_b_v2_new_difference(args: argparse.Namespace) -> int:
         model_b_v2_compiled_path=args.model_b_v2_compiled,
         model_b_v2_freeze_path=args.model_b_v2_freeze,
     )
-    if not isinstance(model_a, FrozenSymbolicModel) or not isinstance(
-        model_b, FrozenModelBV2New
-    ):
+    if not isinstance(model_a, FrozenSymbolicModel) or not isinstance(model_b, FrozenModelBV2New):
         raise TypeError("behavioral difference audit loaded incompatible model runtimes")
     audit = audit_behavioral_difference(
         cached,
@@ -676,9 +995,7 @@ def _command_audit_model_b_v2_new_difference(args: argparse.Namespace) -> int:
             {
                 "status": audit.status,
                 "witnesses": len(audit.witnesses),
-                "source_favoring_groups": (
-                    audit.groups_with_source_favoring_tie_split
-                ),
+                "source_favoring_groups": (audit.groups_with_source_favoring_tie_split),
                 "adverse_groups": audit.groups_with_adverse_tie_split,
             },
             sort_keys=True,
@@ -887,6 +1204,51 @@ def _command_compare_noise_tiers(args: argparse.Namespace) -> int:
     return 0
 
 
+def _command_compare_paired_model_a_v2_new(args: argparse.Namespace) -> int:
+    """Verify and compare the two frozen paired runs without key access."""
+
+    arms = _paired_freeze_arms(args)
+    for artifacts in arms:
+        staged_receipt = artifacts.run_dir / "generation.receipt.json"
+        if sha256_file(artifacts.generation_receipt_path) != sha256_file(staged_receipt):
+            raise ValueError(
+                f"{artifacts.role} supplied generation receipt differs from the "
+                "receipt staged by keyless recovery"
+            )
+    report = compare_model_a_v2_new_run_dirs(
+        args.paired_model_a_run_dir,
+        args.paired_model_b_run_dir,
+        paired_plan_path=args.paired_plan,
+        public_config_path=args.paired_public_config,
+        model_a_generation_binding_path=args.paired_model_a_generation_binding,
+        model_b_generation_binding_path=args.paired_model_b_generation_binding,
+        paired_prediction_freeze_path=args.paired_freeze,
+    )
+    output = write_paired_model_comparison_report(report, args.output)
+    print(f"paired Model A/V2 comparison: {output}")
+    print(f"paired comparison sha256: {sha256_file(output)}")
+    print(
+        json.dumps(
+            {
+                "top_1_a": report.top_1.model_a,
+                "top_1_b": report.top_1.model_b,
+                "top_3_a": report.top_3.model_a,
+                "top_3_b": report.top_3.model_b,
+                "top_5_a": report.top_5.model_a,
+                "top_5_b": report.top_5.model_b,
+                "mrr_a": report.mean_reciprocal_rank.model_a,
+                "mrr_b": report.mean_reciprocal_rank.model_b,
+                "improved": report.outcomes.improved,
+                "unchanged": report.outcomes.unchanged,
+                "worsened": report.outcomes.worsened,
+                "unevaluable": report.outcomes.unevaluable,
+            },
+            sort_keys=True,
+        )
+    )
+    return 0
+
+
 def _add_model_arguments(parser: argparse.ArgumentParser) -> None:
     parser.add_argument(
         "--model",
@@ -899,6 +1261,17 @@ def _add_model_arguments(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--model-b-v2-freeze")
     parser.add_argument("--model-b-v2-difference-audit")
     parser.add_argument("--model-b-v2-difference-cache")
+
+
+def _add_paired_freeze_arguments(parser: argparse.ArgumentParser, *, required: bool = True) -> None:
+    parser.add_argument("--paired-plan", required=required)
+    parser.add_argument("--paired-public-config", required=required)
+    parser.add_argument("--paired-model-a-run-dir", required=required)
+    parser.add_argument("--paired-model-a-generation-receipt", required=required)
+    parser.add_argument("--paired-model-a-generation-binding", required=required)
+    parser.add_argument("--paired-model-b-run-dir", required=required)
+    parser.add_argument("--paired-model-b-generation-receipt", required=required)
+    parser.add_argument("--paired-model-b-generation-binding", required=required)
 
 
 def _parser() -> argparse.ArgumentParser:
@@ -918,7 +1291,28 @@ def _parser() -> argparse.ArgumentParser:
     _add_model_arguments(generate)
     generate.add_argument("--key-file")
     generate.add_argument("--seed-file")
+    generate.add_argument("--paired-plan")
+    generate.add_argument("--paired-arm-id")
     generate.set_defaults(handler=_command_generate)
+
+    paired_plan = subparsers.add_parser(
+        "plan-paired-model-a-v2-new",
+        help="freeze a paired Model A/V2 oracle design before either arm is generated",
+    )
+    paired_plan.add_argument("--config", required=True)
+    paired_plan.add_argument("--seed-file", required=True)
+    paired_plan.add_argument("--ephemeris", required=True)
+    paired_plan.add_argument("--output", required=True)
+    paired_plan.add_argument("--mapping", default=str(DEFAULT_MAPPING))
+    paired_plan.add_argument("--model-b-artifact", default=str(DEFAULT_MODEL_B_ARTIFACT))
+    paired_plan.add_argument("--model-b-v2-compiled", required=True)
+    paired_plan.add_argument("--model-b-v2-freeze", required=True)
+    paired_plan.add_argument("--model-b-v2-difference-audit", required=True)
+    paired_plan.add_argument("--model-b-v2-difference-cache", required=True)
+    paired_plan.set_defaults(
+        handler=_command_plan_paired_model_a_v2_new,
+        model=MODEL_B_V2_NEW_ID,
+    )
 
     recover = subparsers.add_parser("recover", help="recover using blind input only")
     recover.add_argument("--run-dir", required=True)
@@ -933,11 +1327,24 @@ def _parser() -> argparse.ArgumentParser:
         default=AggregationMode.DURATION_WEIGHTED_EVIDENCE.value,
     )
     recover.add_argument("--threshold", type=float, default=0.0)
+    recover.add_argument("--paired-plan")
+    recover.add_argument("--paired-public-config")
+    recover.add_argument("--paired-generation-receipt")
+    recover.add_argument("--paired-generation-binding")
+    recover.add_argument("--paired-arm-id")
     recover.set_defaults(handler=_command_recover)
 
     freeze = subparsers.add_parser("freeze", help="cryptographically freeze predictions")
     freeze.add_argument("--run-dir", required=True)
     freeze.set_defaults(handler=_command_freeze)
+
+    paired_freeze = subparsers.add_parser(
+        "freeze-paired-model-a-v2-new",
+        help="freeze both paired prediction chains before either answer-key reveal",
+    )
+    _add_paired_freeze_arguments(paired_freeze)
+    paired_freeze.add_argument("--output", required=True)
+    paired_freeze.set_defaults(handler=_command_freeze_paired_experiment)
 
     reveal = subparsers.add_parser(
         "reveal-evaluate", help="reveal only after freeze and write evaluation reports"
@@ -945,6 +1352,8 @@ def _parser() -> argparse.ArgumentParser:
     reveal.add_argument("--run-dir", required=True)
     reveal.add_argument("--encrypted-key")
     reveal.add_argument("--key-file")
+    reveal.add_argument("--paired-freeze")
+    _add_paired_freeze_arguments(reveal, required=False)
     reveal.set_defaults(handler=_command_reveal_evaluate)
 
     compiler = subparsers.add_parser("compile-model", help="rebuild frozen mapping artifacts")
@@ -1126,6 +1535,15 @@ def _parser() -> argparse.ArgumentParser:
     noise_comparison.add_argument("--adversarial-run-dir", required=True)
     noise_comparison.add_argument("--output", required=True)
     noise_comparison.set_defaults(handler=_command_compare_noise_tiers)
+
+    paired_comparison = subparsers.add_parser(
+        "compare-paired-model-a-v2-new",
+        help="verify and compare a small paired Model A/V2 oracle experiment",
+    )
+    _add_paired_freeze_arguments(paired_comparison)
+    paired_comparison.add_argument("--paired-freeze", required=True)
+    paired_comparison.add_argument("--output", required=True)
+    paired_comparison.set_defaults(handler=_command_compare_paired_model_a_v2_new)
     return parser
 
 
