@@ -13,6 +13,23 @@ This repository separates four claims:
 
 These claims must not be conflated.
 
+## Current implementation priority
+
+Before expanding validation, migrate the existing V4.1/V3.2 implementation to the hardened **V4.3/V3.5** contract.
+
+Required migration gates:
+
+- full required feature registry for all frozen mappings;
+- flexibility penalty;
+- dependency/corroboration controls;
+- duration-weighted conditional prevalence;
+- exact V4.3 rank tuple;
+- full-universe rerun after accepted refinements;
+- anti-simplification tests;
+- verified reusable century cache.
+
+A reduced architecture-only implementation must never identify itself as V4.3.
+
 ## Immediate proof-of-concept ladder
 
 ### Stage A — Known month + year
@@ -21,6 +38,8 @@ Ask for birth month, year, and birthplace/timezone only. Conceal day and time.
 Search every exact chart-state interval intersecting every local day in that month. Rank all local dates using the frozen behavioral model.
 
 Primary outcome: true local birth-day rank among 28–31 dates.
+
+See `docs/14_month_first_blind_validation.md`.
 
 ### Stage B — Known year
 Conceal month/day/time and rank the full year.
@@ -36,7 +55,13 @@ Primary outcome: whether the true documented birth time lies inside the top-rank
 Known year, hidden date/time.
 
 ### Stage E — Broad multi-year / 100-year UTC search
-Only after the earlier stages demonstrate recoverability and engine stability.
+Use the verified precomputed century cache. Do not rebuild the century per participant.
+
+Initial cache horizon:
+
+```text
+1926-08-22T00:00:00Z <= t < 2026-08-23T00:00:00Z
+```
 
 ## Exact-state search rule
 
@@ -45,6 +70,14 @@ Do not represent a day by noon, midnight, hourly samples, or a single best minut
 Enumerate all scoring-relevant chart boundaries and partition candidate time into stable state intervals. Report a minute only when the model actually discriminates at that scale. Otherwise report the full tied interval.
 
 For date ranking, support duration-weighted integration across all intervals within the local day. Do not let a five-minute lucky peak dominate an otherwise poor day without an explicitly justified aggregation rule.
+
+## Precomputed universe rule
+
+Astronomy is target-independent. Build exact candidate states once, verify them, then reuse them.
+
+The cache must include sufficient M0-M2 feature data for every frozen V4.3 predicate, exact interval boundaries, Design timestamps, engine/ephemeris provenance, and a cryptographic manifest.
+
+Cache incompatibility is an error, not a reason to silently regenerate with a weaker engine.
 
 ## Adaptive questionnaire
 
@@ -59,7 +92,7 @@ At each iteration:
 5. update all candidates uniformly;
 6. continue until a predeclared stopping rule is reached.
 
-Do not show the participant the live ranking before the result is frozen.
+Do not show the participant the live ranking before the result is frozen in confirmatory work.
 
 ## Synthetic validation first
 
@@ -99,11 +132,13 @@ Use development humans to:
 
 This is training, not validation.
 
+Post-selection behavioral clarification may improve descriptive validity but must retain revision provenance and must not be relabeled untouched confirmation. Preserve frozen-independent and best-current-descriptive results separately.
+
 After fitting, freeze a model version and test it on untouched humans. If the test motivates another redesign, create a new model version and use a new untouched test set.
 
 ## Three decoder tracks
 
-1. **Theory / symbolic** — frozen V4/V3.2 mappings and rubric bits.
+1. **Theory / symbolic** — hardened V4.3 mappings and rubric bits.
 2. **Empirical** — learned chart→response likelihoods from development humans.
 3. **Hybrid** — theory mappings as priors, updated/shrunk using human data.
 
