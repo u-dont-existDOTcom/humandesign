@@ -542,7 +542,6 @@ def _validate_evidence(
             "ordered_sources",
             "ordered_core_reconciliation_receipt_sha256s",
             "ordered_output_chunk_provenance_sha256s",
-            "reconciliation_calculation_audit_sha256",
             "exact_state_universe_provenance",
         }
         missing_reconciliation_fields = sorted(
@@ -552,6 +551,13 @@ def _validate_evidence(
             raise CenturyCacheEvidenceError(
                 "reconciliation-aggregate is missing required provenance fields: "
                 f"{missing_reconciliation_fields}"
+            )
+        if not {
+            "reconciliation_calculation_audit",
+            "reconciliation_calculation_audit_sha256",
+        } & set(reconciliation_payload):
+            raise CenturyCacheEvidenceError(
+                "reconciliation-aggregate lacks calculation-audit provenance"
             )
         try:
             embedded_exact = ExactStateUniverseProvenance.model_validate_json(

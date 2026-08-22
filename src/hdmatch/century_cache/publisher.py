@@ -6,10 +6,16 @@ import os
 import shutil
 import tempfile
 from dataclasses import dataclass
+from importlib import import_module
 from pathlib import Path
 from typing import Literal
 
-from hdmatch.experiments.canonical import write_new_bytes, write_new_canonical_json
+from hdmatch.experiments.canonical import (
+    canonical_json_bytes,
+    sha256_bytes,
+    write_new_bytes,
+    write_new_canonical_json,
+)
 from hdmatch.provenance.swisseph_files import (
     EphemerisFileVerificationError,
     EphemerisManifestError,
@@ -394,11 +400,10 @@ class Phase1CompatibilityCenturyCachePublisher:
 class StreamingCenturyCachePublisher(Phase1CompatibilityCenturyCachePublisher):
     """Phase-2 publisher reserved for the concrete reconciled capability.
 
-    Direct Phase-1 batches are intentionally rejected.  The integration branch
-    must wire ``append_reconciled_chunk`` to the concrete private-token validator
-    in ``hdmatch.century_cache.reconcile`` before a canonical century build can
-    begin.  Leaving this gate closed is safer than accepting a structural protocol
-    that callers could implement to bypass overlap/core reconciliation.
+    Direct Phase-1 batches are intentionally rejected.  Admission resolves the
+    concrete private-token validator in ``hdmatch.century_cache.reconcile`` and
+    fails closed while that module is absent.  A structural protocol is never
+    accepted because callers could implement one to bypass core reconciliation.
     """
 
     def append_verified_batch(self, batch: VerifiedExactStateBatch) -> None:
@@ -409,7 +414,105 @@ class StreamingCenturyCachePublisher(Phase1CompatibilityCenturyCachePublisher):
         )
 
     def append_reconciled_chunk(self, chunk: object) -> None:
-        del chunk
+        try:
+            reconcile = import_module("hdmatch.century_cache.reconcile")
+            chunk_type = reconcile.ReconciledExactStateChunk
+            validator = reconcile.validate_reconciled_exact_state_chunk
+        except (AttributeError, ModuleNotFoundError) as exc:
+            raise CenturyCachePublicationError(
+                "concrete reconciled-chunk admission is not integrated; fail closed"
+            ) from exc
+        if not isinstance(chunk, chunk_type):
+            raise CenturyCachePublicationError(
+                "Phase-2 publication rejected a non-reconciled chunk"
+            )
+        try:
+            validator(chunk)
+            batch = chunk.batch
+        except (AttributeError, TypeError, ValueError) as exc:
+            raise CenturyCachePublicationError(
+                f"reconciled exact-state chunk was rejected: {exc}"
+            ) from exc
+        if not isinstance(batch, VerifiedExactStateBatch):
+            raise CenturyCachePublicationError(
+                "reconciled chunk did not contain a factory-verified exact batch"
+            )
+        Phase1CompatibilityCenturyCachePublisher.append_verified_batch(self, batch)
+
+    def finish_rows(
+        self,
+        *,
+        exact_state_provenance: ExactStateUniverseProvenance,
+    ) -> StagedCenturyCacheRows:
+        del exact_state_provenance
         raise CenturyCachePublicationError(
-            "concrete reconciled-chunk admission is not integrated; fail closed"
+            "Phase-2 publication requires ReconciliationStreamFinalization"
+        )
+
+    def finish_reconciliation(self, finalization: object) -> StagedCenturyCacheRows:
+        """Admit the factory finalization and bind its complete canonical proof."""
+
+        try:
+            reconcile = import_module("hdmatch.century_cache.reconcile")
+            finalization_type = reconcile.ReconciliationStreamFinalization
+        except (AttributeError, ModuleNotFoundError) as exc:
+            raise CenturyCachePublicationError(
+                "concrete reconciliation finalization is not integrated; fail closed"
+            ) from exc
+        if not isinstance(finalization, finalization_type):
+            raise CenturyCachePublicationError(
+                "Phase-2 publication rejected a non-reconciler finalization"
+            )
+        try:
+            self.append_reconciled_chunk(finalization.final_chunk)
+            aggregate = finalization.aggregate_provenance
+            aggregate_bytes = canonical_json_bytes(aggregate.model_dump(mode="json"))
+            exact = finalization.exact_state_universe_provenance
+        except (AttributeError, TypeError, ValueError) as exc:
+            raise CenturyCachePublicationError(
+                f"reconciliation finalization was rejected: {exc}"
+            ) from exc
+        if not isinstance(exact, ExactStateUniverseProvenance):
+            raise CenturyCachePublicationError(
+                "reconciliation finalization lacks exact universe provenance"
+            )
+        staged = Phase1CompatibilityCenturyCachePublisher.finish_rows(
+            self,
+            exact_state_provenance=exact,
+        )
+        self._reconciliation_aggregate_bytes = aggregate_bytes
+        self._reconciliation_aggregate_sha256 = sha256_bytes(aggregate_bytes)
+        return staged
+
+    def finalize_and_publish(
+        self,
+        *,
+        spec: CenturyCacheBuildSpec,
+        evidence: CenturyCacheEvidenceInputs,
+    ) -> VerifiedCenturyCache:
+        """Require evidence bytes identical to the admitted reconciler output."""
+
+        expected_bytes = getattr(self, "_reconciliation_aggregate_bytes", None)
+        expected_sha256 = getattr(self, "_reconciliation_aggregate_sha256", None)
+        path = evidence.reconciliation_aggregate_path
+        if expected_bytes is None or expected_sha256 is None or path is None:
+            raise CenturyCachePublicationError(
+                "Phase-2 publication requires admitted reconciliation evidence"
+            )
+        try:
+            observed_bytes = path.read_bytes()
+        except OSError as exc:
+            raise CenturyCachePublicationError(
+                "cannot read reconciliation aggregate evidence"
+            ) from exc
+        if observed_bytes != expected_bytes or (
+            spec.reconciliation_aggregate_sha256 != expected_sha256
+        ):
+            raise CenturyCachePublicationError(
+                "reconciliation evidence/spec differs from admitted finalization"
+            )
+        return Phase1CompatibilityCenturyCachePublisher.finalize_and_publish(
+            self,
+            spec=spec,
+            evidence=evidence,
         )
