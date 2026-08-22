@@ -17,11 +17,11 @@ from typing import Final, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
-from hdmatch.util import canonical_json_bytes, sha256_json
+from hdmatch.util import canonical_json_bytes, sha256_file, sha256_json
 
-from .bodygraph import CHANNELS, Center
+from .bodygraph import CHANNELS, Bodygraph, Center, GateActivation, derive_bodygraph
 from .calculator import ChartComputation
-from .ephemeris import CelestialBody, EphemerisMode
+from .ephemeris import CelestialBody, EphemerisMode, SwissEphemerisProvider
 
 _SHA256_PATTERN: Final[str] = r"^[a-f0-9]{64}$"
 _CHANNEL_PATTERN: Final[str] = r"^(?:[1-9]|[1-5][0-9]|6[0-4])-(?:[1-9]|[1-5][0-9]|6[0-4])$"
@@ -421,6 +421,7 @@ class ChartFeatureVectorV2(FrozenModel):
             raise ValueError("complete M2 activations must use canonical side/carrier order")
         _require_projection(self.cardinal_activations, by_position, _CARDINAL_POSITIONS, "cardinal")
         _require_projection(self.node_activations, by_position, _NODE_POSITIONS, "Node")
+        _validate_architecture_projection(self)
         _validate_active_gate_projection(self)
         _validate_channel_projection(self)
         expected_cross = (
@@ -769,6 +770,7 @@ def require_complete_feature_coverage(
 def serialize_chart_feature_vector(
     computation: ChartComputation,
     *,
+    provider: SwissEphemerisProvider,
     circuitry: CircuitryFeatures | None = None,
     cross_name: str | None = None,
     cross_name_catalog_sha256: str | None = None,
@@ -777,17 +779,10 @@ def serialize_chart_feature_vector(
 ) -> ChartFeatureVectorV2:
     """Serialize one chart without inventing unavailable symbolic mechanics."""
 
-    if computation.metadata.ephemeris.requested_ephemeris is not EphemerisMode.SWIEPH:
-        raise FeatureCoverageError(
-            "cacheable M2 vector requires an engine that explicitly requested SWIEPH"
-        )
-    if (
-        computation.metadata.ephemeris.requested_flags is None
-        or computation.metadata.ephemeris.ephemeris_mask is None
-    ):
-        raise FeatureCoverageError(
-            "cacheable M2 vector requires explicit ephemeris request and mode-mask flags"
-        )
+    ephemeris_requested_flags, ephemeris_mask = _validate_production_provider(
+        computation,
+        provider,
+    )
     circuitry_value = circuitry or CircuitryFeatures(
         status=CapabilityStatus.UNAVAILABLE_UNVALIDATED
     )
@@ -796,6 +791,7 @@ def serialize_chart_feature_vector(
         enabled_fields=(),
     )
     raw_advanced = advanced_values or {}
+    _validate_advanced_input(advanced_value, raw_advanced)
     activations = tuple(
         ActivationFeature(
             body=item.body,
@@ -842,8 +838,6 @@ def serialize_chart_feature_vector(
         )
     )
     bridges = _possible_bridges(computation, incomplete_edges)
-    all_centers = {item.value for item in Center}
-    defined = {item.value for item in computation.bodygraph.defined_centers}
     personality_sun, personality_earth, design_sun, design_earth = cardinal
     cross = CrossDerivation(
         cardinal_component_key=(
@@ -875,8 +869,8 @@ def serialize_chart_feature_vector(
         chart_engine_version=computation.metadata.chart_engine_version,
         astronomy_provider=computation.metadata.ephemeris.provider,
         astronomy_library_version=computation.metadata.ephemeris.library_version,
-        ephemeris_requested_flags=computation.metadata.ephemeris.requested_flags,
-        ephemeris_mask=computation.metadata.ephemeris.ephemeris_mask,
+        ephemeris_requested_flags=ephemeris_requested_flags,
+        ephemeris_mask=ephemeris_mask,
         ephemeris_files=ephemeris_files,
         ephemeris_file_set_sha256=sha256_json(
             [item.model_dump(mode="json") for item in ephemeris_files]
@@ -890,19 +884,7 @@ def serialize_chart_feature_vector(
     )
     vector = ChartFeatureVectorV2(
         feature_registry_sha256=CACHEABLE_M0_M2_REGISTRY.sha256(),
-        architecture=ArchitectureFeatures(
-            type=computation.bodygraph.type.value,
-            strategy=computation.bodygraph.strategy.value,
-            authority=computation.bodygraph.authority.value,
-            profile=computation.bodygraph.profile,
-            definition=computation.bodygraph.definition.value,
-            defined_centers=tuple(sorted(defined)),
-            undefined_centers=tuple(sorted(all_centers - defined)),
-            definition_components=tuple(
-                tuple(center.value for center in component)
-                for component in computation.bodygraph.definition_components
-            ),
-        ),
+        architecture=_architecture_features(computation.bodygraph),
         activations=activations,
         cardinal_activations=cardinal,
         node_activations=nodes,
@@ -925,6 +907,7 @@ def serialize_chart_feature_vector(
 def serialize_cacheable_chart_state(
     computation: ChartComputation,
     *,
+    provider: SwissEphemerisProvider,
     utc_start: datetime,
     utc_end: datetime,
     boundary_events: Iterable[str] = (),
@@ -932,7 +915,11 @@ def serialize_cacheable_chart_state(
 ) -> CacheableChartStateV2:
     """Serialize an already-derived exact interval; this function finds no boundaries."""
 
-    vector = serialize_chart_feature_vector(computation, circuitry=circuitry)
+    vector = serialize_chart_feature_vector(
+        computation,
+        provider=provider,
+        circuitry=circuitry,
+    )
     start = _require_utc(utc_start)
     end = _require_utc(utc_end)
     representative = _require_utc(computation.personality_utc)
@@ -955,6 +942,91 @@ def serialize_cacheable_chart_state(
         chart_features=vector,
         boundary_events=tuple(boundary_events),
     )
+
+
+def _validate_production_provider(
+    computation: ChartComputation,
+    provider: SwissEphemerisProvider,
+) -> tuple[int, int]:
+    if not isinstance(provider, SwissEphemerisProvider):
+        raise FeatureCoverageError(
+            "cacheable M2 serialization requires the strict SwissEphemerisProvider"
+        )
+    metadata = computation.metadata.ephemeris
+    if metadata != provider.metadata:
+        raise FeatureCoverageError(
+            "chart computation ephemeris metadata differs from the supplied provider"
+        )
+    if metadata.provider != "swiss_ephemeris_local_files":
+        raise FeatureCoverageError(
+            "cacheable M2 serialization requires exact local Swiss-file provider identity"
+        )
+    if metadata.requested_ephemeris is not EphemerisMode.SWIEPH:
+        raise FeatureCoverageError(
+            "cacheable M2 vector requires an engine that explicitly requested SWIEPH"
+        )
+    if metadata.requested_flags is None or metadata.ephemeris_mask is None:
+        raise FeatureCoverageError(
+            "cacheable M2 vector requires explicit ephemeris request and mode-mask flags"
+        )
+    expected_names = {"sepl_18.se1", "semo_18.se1"}
+    observed_names = {Path(item.path).name for item in metadata.files}
+    if observed_names != expected_names or len(metadata.files) != len(expected_names):
+        raise FeatureCoverageError(
+            "cacheable M2 serialization requires exactly sepl_18.se1 and semo_18.se1"
+        )
+    for item in metadata.files:
+        path = Path(item.path)
+        if not path.is_file():
+            raise FeatureCoverageError(
+                f"declared production ephemeris file is no longer available: {path.name}"
+            )
+        if path.stat().st_size != item.size_bytes or sha256_file(path) != item.sha256:
+            raise FeatureCoverageError(
+                f"declared production ephemeris bytes changed after provider setup: {path.name}"
+            )
+    return metadata.requested_flags, metadata.ephemeris_mask
+
+
+def _validate_advanced_input(
+    capability: AdvancedSubstructure,
+    values: Mapping[str, Mapping[AdvancedField | str, int]],
+) -> None:
+    if capability.status is CapabilityStatus.UNAVAILABLE_UNVALIDATED:
+        if values:
+            raise FeatureCoverageError(
+                "advanced values were supplied while advanced substructure is unavailable"
+            )
+        return
+    expected_positions = {
+        f"{side}:{body.value}" for side in _ACTIVATION_SIDES for body in CelestialBody
+    }
+    observed_positions = set(values)
+    if observed_positions != expected_positions:
+        missing = sorted(expected_positions - observed_positions)
+        extra = sorted(observed_positions - expected_positions)
+        raise FeatureCoverageError(
+            "enabled advanced input must cover exactly every activation position; "
+            f"missing={missing}, extra={extra}"
+        )
+    enabled = set(capability.enabled_fields)
+    for position, by_field in values.items():
+        parsed_fields: set[AdvancedField] = set()
+        for raw_field in by_field:
+            try:
+                parsed_fields.add(
+                    raw_field
+                    if isinstance(raw_field, AdvancedField)
+                    else AdvancedField(raw_field)
+                )
+            except ValueError as exc:
+                raise FeatureCoverageError(
+                    f"unknown advanced field at {position}: {raw_field}"
+                ) from exc
+        if parsed_fields != enabled or len(by_field) != len(enabled):
+            raise FeatureCoverageError(
+                f"advanced fields at {position} differ from the enabled field set"
+            )
 
 
 def _active_gate_features(
@@ -1075,6 +1147,30 @@ def _validate_active_gate_projection(vector: ChartFeatureVectorV2) -> None:
         raise ValueError("repeated gates are inconsistent with activation counts")
 
 
+def _validate_architecture_projection(vector: ChartFeatureVectorV2) -> None:
+    bodygraph = derive_bodygraph(
+        GateActivation(
+            body=item.body,
+            side=item.side,
+            longitude=0.0,
+            gate=item.gate,
+            line=item.line,
+        )
+        for item in vector.activations
+    )
+    expected = _architecture_features(bodygraph)
+    if vector.architecture != expected:
+        raise ValueError(
+            "declared architecture differs from the BodyGraph mechanically derived "
+            "from activations"
+        )
+    if tuple(item.channel for item in vector.complete_channels) != bodygraph.channels:
+        raise ValueError(
+            "declared complete channels differ from the BodyGraph mechanically derived "
+            "from activations"
+        )
+
+
 def _validate_channel_projection(vector: ChartFeatureVectorV2) -> None:
     active_gates = {item.gate for item in vector.active_gates}
     expected_channel_specs = tuple(
@@ -1116,7 +1212,22 @@ def _validate_channel_projection(vector: ChartFeatureVectorV2) -> None:
     ):
         raise ValueError("incomplete channel edges must use canonical order")
     defined = set(vector.architecture.defined_centers)
+    channel_by_id = {channel.identifier: channel for channel in CHANNELS}
     for edge in vector.incomplete_channel_edges:
+        channel = channel_by_id[edge.channel]
+        if edge.active_gate == channel.gate_a:
+            expected_active_center = channel.center_a.value
+            expected_missing_center = channel.center_b.value
+        else:
+            expected_active_center = channel.center_b.value
+            expected_missing_center = channel.center_a.value
+        if (
+            edge.active_center != expected_active_center
+            or edge.missing_gate_center != expected_missing_center
+        ):
+            raise ValueError(
+                "incomplete channel edge Center metadata differs from frozen channel mechanics"
+            )
         expected_kind = (
             GateEdgeKind.HANGING
             if edge.active_center in defined
@@ -1197,6 +1308,24 @@ def _validate_circuitry_values(vector: ChartFeatureVectorV2) -> None:
     complete = tuple(item.channel for item in vector.complete_channels)
     if declared != complete:
         raise ValueError("available circuitry must classify every complete channel exactly once")
+
+
+def _architecture_features(bodygraph: Bodygraph) -> ArchitectureFeatures:
+    all_centers = {item.value for item in Center}
+    defined = {item.value for item in bodygraph.defined_centers}
+    return ArchitectureFeatures(
+        type=bodygraph.type.value,
+        strategy=bodygraph.strategy.value,
+        authority=bodygraph.authority.value,
+        profile=bodygraph.profile,
+        definition=bodygraph.definition.value,
+        defined_centers=tuple(sorted(defined)),
+        undefined_centers=tuple(sorted(all_centers - defined)),
+        definition_components=tuple(
+            tuple(center.value for center in component)
+            for component in bodygraph.definition_components
+        ),
+    )
 
 
 def _require_projection(

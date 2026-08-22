@@ -78,7 +78,10 @@ class ExactChartAdapter:
     def calculate_cacheable_m0_m2(self, utc_moment: datetime) -> ChartFeatureVectorV2:
         """Return the strict discrete V2 vector without claiming scorer compliance."""
 
-        return serialize_chart_feature_vector(calculate_chart(self.provider, utc_moment))
+        return serialize_chart_feature_vector(
+            calculate_chart(self.provider, utc_moment),
+            provider=self.provider,
+        )
 
     def candidate_states(
         self,

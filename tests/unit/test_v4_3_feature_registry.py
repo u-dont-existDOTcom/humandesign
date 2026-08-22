@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from dataclasses import replace
 from datetime import UTC, datetime, timedelta
+from pathlib import Path
 
 import pytest
 from pydantic import ValidationError
@@ -9,11 +10,8 @@ from pydantic import ValidationError
 from hdmatch.chart.calculator import ChartComputation, calculate_chart
 from hdmatch.chart.ephemeris import (
     CelestialBody,
-    EclipticPosition,
-    EphemerisFile,
-    EphemerisMetadata,
     EphemerisMode,
-    NodeConvention,
+    SwissEphemerisProvider,
 )
 from hdmatch.chart.feature_registry import (
     CACHEABLE_M0_M2_REGISTRY,
@@ -34,60 +32,81 @@ from hdmatch.chart.feature_registry import (
     serialize_chart_feature_vector,
 )
 
-_HASH_A = "a" * 64
-_HASH_B = "b" * 64
 _SOURCE_HASH = "c" * 64
 
 
-class _DeterministicProvider:
-    def __init__(self, epoch: datetime) -> None:
-        self.epoch = epoch
-        self._metadata = EphemerisMetadata(
-            provider="strict-swieph-test",
-            library_version="2.10.03",
-            files=(
-                EphemerisFile("/public/semo_18.se1", _HASH_A, 100),
-                EphemerisFile("/public/sepl_18.se1", _HASH_B, 200),
-            ),
-            calculation_flags=("SEFLG_SWIEPH", "SEFLG_SPEED"),
-            coordinate_frame="geocentric_apparent_tropical_ecliptic_of_date",
-            node_convention=NodeConvention.TRUE,
-            ephemeris_path="/public",
-            requested_ephemeris=EphemerisMode.SWIEPH,
-            requested_flags=258,
-            ephemeris_mask=7,
-        )
+class _DeterministicFakeSwiss:
+    FLG_JPLEPH = 1
+    FLG_SWIEPH = 2
+    FLG_MOSEPH = 4
+    FLG_EPHMASK = 7
+    FLG_SPEED = 256
+    GREG_CAL = 1
+    SUN = 0
+    MOON = 1
+    MERCURY = 2
+    VENUS = 3
+    MARS = 4
+    JUPITER = 5
+    SATURN = 6
+    URANUS = 7
+    NEPTUNE = 8
+    PLUTO = 9
+    MEAN_NODE = 10
+    TRUE_NODE = 11
+    version = "deterministic-fake"
 
-    @property
-    def metadata(self) -> EphemerisMetadata:
-        return self._metadata
+    def __init__(self, planetary_file: Path, lunar_file: Path) -> None:
+        self.files = (planetary_file, lunar_file)
 
-    def position(self, body: CelestialBody, at_utc: datetime) -> EclipticPosition:
-        days = (at_utc - self.epoch).total_seconds() / 86400.0
-        index = list(CelestialBody).index(body)
-        if body is CelestialBody.SUN:
-            return EclipticPosition((100.0 + days) % 360.0, 1.0)
-        if body is CelestialBody.EARTH:
-            return EclipticPosition((280.0 + days) % 360.0, 1.0)
-        longitude = (17.0 * index + 0.01 * days) % 360.0
-        return EclipticPosition(longitude, 0.01)
+    def set_ephe_path(self, _path: str) -> None:
+        pass
 
-    def max_abs_speed_degrees_per_day(self, body: CelestialBody) -> float:
-        return 1.1 if body in (CelestialBody.SUN, CelestialBody.EARTH) else 0.02
+    def julday(self, year: int, month: int, day: int, hour: float, _calendar: int) -> float:
+        midnight = datetime(year, month, day, tzinfo=UTC)
+        return float(midnight.toordinal()) + hour / 24.0
 
-    def min_solar_speed_degrees_per_day(self) -> float:
-        return 0.9
+    def calc_ut(
+        self,
+        julian_day: float,
+        body: int,
+        flags: int,
+    ) -> tuple[tuple[float, ...], int]:
+        if body == self.SUN:
+            longitude, speed = julian_day % 360.0, 1.0
+        else:
+            longitude, speed = (body * 17.0 + 0.01 * julian_day) % 360.0, 0.01
+        return (longitude, 0.0, 1.0, speed, 0.0, 0.0), flags
+
+    def get_current_file_data(self, index: int) -> tuple[str, float, float, int]:
+        return str(self.files[index]), 0.0, 0.0, 441
 
 
 @pytest.fixture
-def computation() -> ChartComputation:
+def production_provider(tmp_path: Path) -> SwissEphemerisProvider:
+    planetary = tmp_path / "sepl_18.se1"
+    lunar = tmp_path / "semo_18.se1"
+    planetary.write_bytes(b"deterministic-planetary-test-file")
+    lunar.write_bytes(b"deterministic-lunar-test-file")
+    fake = _DeterministicFakeSwiss(planetary, lunar)
+    return SwissEphemerisProvider(
+        (planetary, lunar),
+        _swe_module=fake,  # type: ignore[arg-type]
+    )
+
+
+@pytest.fixture
+def computation(production_provider: SwissEphemerisProvider) -> ChartComputation:
     birth = datetime(2000, 1, 1, 12, tzinfo=UTC)
-    return calculate_chart(_DeterministicProvider(birth), birth)
+    return calculate_chart(production_provider, birth)
 
 
 @pytest.fixture
-def vector(computation: ChartComputation) -> ChartFeatureVectorV2:
-    return serialize_chart_feature_vector(computation)
+def vector(
+    computation: ChartComputation,
+    production_provider: SwissEphemerisProvider,
+) -> ChartFeatureVectorV2:
+    return serialize_chart_feature_vector(computation, provider=production_provider)
 
 
 def test_required_registry_is_canonical_deterministic_and_typed() -> None:
@@ -179,12 +198,17 @@ def test_complete_vector_serializes_every_m0_m2_structural_family(
     ).required_feature_coverage == 1.0
 
 
-def test_discrete_feature_hash_does_not_encode_representative_timestamp() -> None:
+def test_discrete_feature_hash_does_not_encode_representative_timestamp(
+    production_provider: SwissEphemerisProvider,
+) -> None:
     birth = datetime(2000, 1, 1, 12, tzinfo=UTC)
-    provider = _DeterministicProvider(birth)
-    first = serialize_chart_feature_vector(calculate_chart(provider, birth))
+    first = serialize_chart_feature_vector(
+        calculate_chart(production_provider, birth),
+        provider=production_provider,
+    )
     second = serialize_chart_feature_vector(
-        calculate_chart(provider, birth + timedelta(seconds=30))
+        calculate_chart(production_provider, birth + timedelta(seconds=30)),
+        provider=production_provider,
     )
 
     assert first == second
@@ -217,6 +241,7 @@ def test_conditional_capabilities_fail_closed_until_values_are_validated(
 
 def test_enabled_advanced_fields_require_values_at_every_activation(
     computation: ChartComputation,
+    production_provider: SwissEphemerisProvider,
 ) -> None:
     advanced = AdvancedSubstructure(
         status=CapabilityStatus.AVAILABLE,
@@ -231,6 +256,7 @@ def test_enabled_advanced_fields_require_values_at_every_activation(
 
     vector = serialize_chart_feature_vector(
         computation,
+        provider=production_provider,
         advanced_substructure=advanced,
         advanced_values=values,
     )
@@ -242,18 +268,65 @@ def test_enabled_advanced_fields_require_values_at_every_activation(
     assert FeatureId.TONE not in vector.available_feature_ids
 
     values.pop("design:pluto")
-    with pytest.raises(ValidationError, match="enabled color is missing"):
+    with pytest.raises(FeatureCoverageError, match="cover exactly every activation"):
         serialize_chart_feature_vector(
             computation,
+            provider=production_provider,
             advanced_substructure=advanced,
             advanced_values=values,
         )
 
 
+def test_advanced_input_rejects_unused_positions_and_fields(
+    computation: ChartComputation,
+    production_provider: SwissEphemerisProvider,
+) -> None:
+    advanced = AdvancedSubstructure(
+        status=CapabilityStatus.AVAILABLE,
+        enabled_fields=(AdvancedField.COLOR,),
+        source_sha256=_SOURCE_HASH,
+    )
+    values: dict[str, dict[AdvancedField | str, int]] = {
+        f"{side}:{body.value}": {AdvancedField.COLOR: 1}
+        for side in ("personality", "design")
+        for body in CelestialBody
+    }
+
+    with_extra_position = {**values, "personality:invented": {AdvancedField.COLOR: 1}}
+    with pytest.raises(FeatureCoverageError, match="cover exactly every activation"):
+        serialize_chart_feature_vector(
+            computation,
+            provider=production_provider,
+            advanced_substructure=advanced,
+            advanced_values=with_extra_position,
+        )
+
+    with_extra_enabled_field = {position: dict(fields) for position, fields in values.items()}
+    with_extra_enabled_field["personality:sun"][AdvancedField.TONE] = 1
+    with pytest.raises(FeatureCoverageError, match="differ from the enabled field set"):
+        serialize_chart_feature_vector(
+            computation,
+            provider=production_provider,
+            advanced_substructure=advanced,
+            advanced_values=with_extra_enabled_field,
+        )
+
+    with_unknown_field = {position: dict(fields) for position, fields in values.items()}
+    with_unknown_field["personality:sun"]["invented"] = 1
+    with pytest.raises(FeatureCoverageError, match="unknown advanced field"):
+        serialize_chart_feature_vector(
+            computation,
+            provider=production_provider,
+            advanced_substructure=advanced,
+            advanced_values=with_unknown_field,
+        )
+
+
 def test_circuitry_is_usable_only_with_complete_sourced_channel_classification(
     computation: ChartComputation,
+    production_provider: SwissEphemerisProvider,
 ) -> None:
-    plain = serialize_chart_feature_vector(computation)
+    plain = serialize_chart_feature_vector(computation, provider=production_provider)
     circuitry = CircuitryFeatures(
         status=CapabilityStatus.AVAILABLE,
         source_sha256=_SOURCE_HASH,
@@ -263,7 +336,11 @@ def test_circuitry_is_usable_only_with_complete_sourced_channel_classification(
         ),
     )
 
-    classified = serialize_chart_feature_vector(computation, circuitry=circuitry)
+    classified = serialize_chart_feature_vector(
+        computation,
+        provider=production_provider,
+        circuitry=circuitry,
+    )
     circuitry_registry = compile_required_feature_registry(
         (FeatureId.CIRCUITRY_CHANNEL_METADATA,)
     )
@@ -279,7 +356,11 @@ def test_circuitry_is_usable_only_with_complete_sourced_channel_classification(
             channels=circuitry.channels[:-1],
         )
         with pytest.raises(ValidationError, match="classify every complete channel"):
-            serialize_chart_feature_vector(computation, circuitry=incomplete)
+            serialize_chart_feature_vector(
+                computation,
+                provider=production_provider,
+                circuitry=incomplete,
+            )
 
 
 def test_reduced_or_malformed_vectors_cannot_claim_complete_coverage(
@@ -308,14 +389,76 @@ def test_reduced_or_malformed_vectors_cannot_claim_complete_coverage(
         )
 
 
+@pytest.mark.parametrize(
+    ("field", "replacement"),
+    (
+        ("type", "manifestor"),
+        ("strategy", "inform"),
+        ("authority", "sacral"),
+        ("profile", "1/3"),
+        ("definition", "split_definition"),
+    ),
+)
+def test_declared_architecture_scalars_must_match_mechanical_bodygraph(
+    vector: ChartFeatureVectorV2,
+    field: str,
+    replacement: str,
+) -> None:
+    payload = vector.model_dump(mode="json")
+    payload["architecture"][field] = replacement
+
+    with pytest.raises(ValidationError, match="mechanically derived"):
+        ChartFeatureVectorV2.model_validate(payload)
+
+
+def test_declared_centers_and_components_must_match_mechanical_bodygraph(
+    vector: ChartFeatureVectorV2,
+) -> None:
+    changed_centers = vector.model_dump(mode="json")
+    changed_centers["architecture"]["defined_centers"] = ["head", "root"]
+    changed_centers["architecture"]["undefined_centers"] = [
+        "ajna",
+        "g",
+        "heart_ego",
+        "sacral",
+        "solar_plexus",
+        "spleen",
+        "throat",
+    ]
+    changed_centers["architecture"]["definition_components"] = [["head", "root"]]
+    with pytest.raises(ValidationError, match="mechanically derived"):
+        ChartFeatureVectorV2.model_validate(changed_centers)
+
+    changed_components = vector.model_dump(mode="json")
+    changed_components["architecture"]["definition_components"] = [
+        ["root"],
+        ["spleen"],
+    ]
+    with pytest.raises(ValidationError, match="mechanically derived"):
+        ChartFeatureVectorV2.model_validate(changed_components)
+
+
+def test_incomplete_channel_center_metadata_must_match_frozen_channel_table(
+    vector: ChartFeatureVectorV2,
+) -> None:
+    payload = vector.model_dump(mode="json")
+    assert payload["incomplete_channel_edges"]
+    payload["incomplete_channel_edges"][0]["active_center"] = "invented-center"
+
+    with pytest.raises(ValidationError, match="Center metadata differs"):
+        ChartFeatureVectorV2.model_validate(payload)
+
+
 def test_cacheable_state_round_trip_binds_interval_registry_and_feature_hash(
     computation: ChartComputation,
+    production_provider: SwissEphemerisProvider,
 ) -> None:
     start = computation.personality_utc
     end = start + timedelta(minutes=17)
 
     state = serialize_cacheable_chart_state(
         computation,
+        provider=production_provider,
         utc_start=start,
         utc_end=end,
         boundary_events=("event-a",),
@@ -343,6 +486,7 @@ def test_cacheable_state_round_trip_binds_interval_registry_and_feature_hash(
 
 def test_non_swieph_or_unhashed_computation_cannot_serialize(
     computation: ChartComputation,
+    production_provider: SwissEphemerisProvider,
 ) -> None:
     exploratory_ephemeris = replace(
         computation.metadata.ephemeris,
@@ -352,13 +496,29 @@ def test_non_swieph_or_unhashed_computation_cannot_serialize(
         computation,
         metadata=replace(computation.metadata, ephemeris=exploratory_ephemeris),
     )
-    with pytest.raises(FeatureCoverageError, match="explicitly requested SWIEPH"):
-        serialize_chart_feature_vector(exploratory)
+    with pytest.raises(FeatureCoverageError, match="metadata differs"):
+        serialize_chart_feature_vector(exploratory, provider=production_provider)
 
     unhashed_ephemeris = replace(computation.metadata.ephemeris, files=())
     unhashed = replace(
         computation,
         metadata=replace(computation.metadata, ephemeris=unhashed_ephemeris),
     )
-    with pytest.raises(FeatureCoverageError, match="hashed ephemeris files"):
-        serialize_chart_feature_vector(unhashed)
+    with pytest.raises(FeatureCoverageError, match="metadata differs"):
+        serialize_chart_feature_vector(unhashed, provider=production_provider)
+
+
+def test_cacheable_serialization_requires_live_verified_local_swiss_provider(
+    computation: ChartComputation,
+    production_provider: SwissEphemerisProvider,
+) -> None:
+    with pytest.raises(FeatureCoverageError, match="strict SwissEphemerisProvider"):
+        serialize_chart_feature_vector(
+            computation,
+            provider=object(),  # type: ignore[arg-type]
+        )
+
+    changed_path = Path(computation.metadata.ephemeris.files[0].path)
+    changed_path.write_bytes(b"changed-after-chart-calculation")
+    with pytest.raises(FeatureCoverageError, match="bytes changed"):
+        serialize_chart_feature_vector(computation, provider=production_provider)
