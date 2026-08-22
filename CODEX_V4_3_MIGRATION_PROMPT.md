@@ -12,10 +12,47 @@ Before changing code, read in this order:
 4. `reference/core/behavioral_target_combined_v3_5.md`
 5. `docs/02_scoring_and_model_policy.md`
 6. `docs/13_v4_3_migration_and_century_cache.md`
-7. `docs/14_month_first_blind_validation.md`
-8. the remaining numbered docs
+7. `docs/16_ephemeris_bootstrap.md`
+8. `docs/14_month_first_blind_validation.md`
+9. the remaining numbered docs
 
 Do not continue using `human_design_reverse_matching_protocol_v4_1.md`, V3.2 scoring, or `mapping_library_v1.json` as the current canonical model. Preserve them as historical regression fixtures only.
+
+## Mandatory execution order
+
+This order is part of the task, not a suggestion.
+
+### Phase 0 — provision and prove the astronomy engine
+
+Before any new century scan:
+
+1. run `python scripts/fetch_swisseph_ephemeris.py` if the production `.se1` files are missing;
+2. point PySwissEph explicitly at `data/ephemeris`;
+3. request `FLG_SWIEPH` for production calculations;
+4. inspect the returned ephemeris flag from every representative calculation;
+5. abort if the returned mode is Moshier or otherwise differs from the requested production mode;
+6. record local ephemeris SHA-256 hashes and the upstream source commit in the run/cache manifest;
+7. pass engine parity/golden tests.
+
+Direct multi-gigabyte JPL files are NOT required for the normal production path. Verified compressed Swiss Ephemeris `.se1` files are the normal production engine. Direct JPL may be used as an additional parity check.
+
+### Phase 1 — implement the full cacheable candidate feature registry
+
+Implement the complete M0-M2 chart serialization and exact boundary engine needed by V4.3. Do not run another 100-year behavioral search yet.
+
+### Phase 2 — build and verify the reusable century cache
+
+Build the canonical exact-state cache once, verify its manifest, boundary audit, engine flags, and feature coverage, and make global recovery read it by default.
+
+**Do not run another full 100-year ranking before this cache path exists and passes verification.**
+
+### Phase 3 — complete V4.3 scorer/mapping migration
+
+Implement mapping-library-v2, flexibility penalties, conditional prevalence, dependency/corroboration controls, and the exact rank tuple. This work may proceed in parallel with Phase 1/2, but the final full-universe ranking must use the verified cache.
+
+### Phase 4 — rerun the full universe from the cache
+
+Only after Phases 0-3 pass compliance tests, run the new full-universe V4.3/V3.5 ranking from cached exact states. Do not regenerate the solar-system state matrix during ordinary reruns.
 
 ## Why this migration is required
 
@@ -100,15 +137,17 @@ data/century_cache/v1/*.parquet.zst
 data/century_cache/v1/prevalence-v4_3.json.zst
 ```
 
-Manifest must record range, schema, engine, local ephemeris hashes, flags, Node convention, Mandala version, Design-root tolerance, shard hashes/row counts, logical universe hash, parity status, and boundary-audit status.
+Manifest must record range, schema, engine, local ephemeris hashes, flags requested, flags actually returned, Node convention, Mandala version, Design-root tolerance, shard hashes/row counts, logical universe hash, parity status, and boundary-audit status.
 
-Important: do not publish an authoritative cache generated through silent Moshier fallback. Production cache generation must use the declared Swiss/JPL files and fail closed if they are absent.
+Important: do not publish an authoritative cache generated through silent Moshier fallback. Production cache generation must use verified Swiss `.se1` files and fail closed if the returned calculation flags indicate Moshier. Direct JPL is optional, not a prerequisite for production.
 
 Normal global searches must default to this cache. Add an explicit rebuild command rather than regenerating the century automatically.
 
 Suggested CLI:
 
 ```bash
+python scripts/fetch_swisseph_ephemeris.py
+hdmatch validate-engine --ephemeris-mode swiss --ephemeris-path data/ephemeris
 hdmatch build-century-cache --start 1926-08-22T00:00:00Z --end-exclusive 2026-08-23T00:00:00Z --output data/century_cache/v1
 hdmatch verify-century-cache data/century_cache/v1
 hdmatch recover-global --cache data/century_cache/v1 --target ...
@@ -142,6 +181,8 @@ Add a compliance object to every report:
   "required_feature_coverage": 1.0,
   "simplified": false,
   "cache_verified": true,
+  "ephemeris_requested": "SWIEPH",
+  "ephemeris_returned": "SWIEPH",
   "flexibility_penalty_enabled": true,
   "conditional_prevalence_enabled": true,
   "v4_3_compliant": true
@@ -167,9 +208,11 @@ At minimum add tests proving failure if:
 11. only finalists are rescored after a revision;
 12. fixed-day Design subtraction is used;
 13. an interior boundary is missed;
-14. ephemeris fallback is silent;
+14. ephemeris fallback is silent or returned flags differ from requested SWIEPH;
 15. century-cache manifest/hash mismatch is accepted;
-16. `required_feature_coverage < 1.0` can still emit a V4.3-compliant report.
+16. `required_feature_coverage < 1.0` can still emit a V4.3-compliant report;
+17. an ordinary global rerun regenerates the century instead of using the verified cache;
+18. a full 100-year ranking begins before the production cache is verified.
 
 Run the existing unit/integration/blind suites and new migration tests. Preserve old V4.1/V3.2 fixtures so regression behavior can still be reproduced explicitly under a legacy model flag.
 
@@ -179,6 +222,7 @@ Run the existing unit/integration/blind suites and new migration tests. Preserve
 - full candidate feature registry;
 - corrected scorer + exact rank tuple;
 - conditional prevalence implementation;
+- Swiss ephemeris fetch/probe/fail-closed path;
 - century-cache build/verify/read path;
 - V3.5 target compiler support;
 - hardening/compliance tests;
