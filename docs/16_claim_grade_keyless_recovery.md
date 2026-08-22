@@ -98,13 +98,13 @@ each keyless recovery invocation must receive:
 --paired-plan /public/paired/experiment.plan.json
 --paired-public-config configs/model_a_v2_new_paired_oracle_75.yaml
 --paired-generation-receipt /public/generation/ARM/generation.receipt.json
---paired-generation-binding /public/generation/ARM/paired-generation.receipt.json
+--paired-generation-binding /public/generation/ARM/paired-generation.binding.json
 --paired-arm-id MODEL-A|MODEL-B-V2
 ```
 
 The wrapper mounts those four artifacts as individual read-only files. On a
 successful isolated recovery it stages only `blind_cases.json`,
-`generation.receipt.json`, and `paired-generation.receipt.json` into that arm's
+`generation.receipt.json`, and `paired-generation.binding.json` into that arm's
 decoder output. It never stages or mounts the encrypted envelope or key.
 
 Freeze each arm's prediction bytes normally. Before revealing either arm, create

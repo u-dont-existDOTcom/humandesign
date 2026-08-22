@@ -314,6 +314,47 @@ def test_same_exact_plan_sha_binds_both_generation_receipts(tmp_path: Path) -> N
     )
 
 
+def test_generation_binding_is_portable_across_keyless_mount_paths(
+    tmp_path: Path,
+) -> None:
+    plan_path, config, _, _ = _create_plan(tmp_path)
+    plan = load_paired_experiment_plan(plan_path)
+    generation = tmp_path / "generation.receipt.json"
+    _write_generation_receipt(
+        generation,
+        plan_path=plan_path,
+        arm_id="ARM-MODEL-A",
+        generation_started_at_utc=plan.planned_at_utc + timedelta(seconds=1),
+    )
+    binding = create_paired_generation_receipt_binding(
+        plan_path=plan_path,
+        public_config_path=config,
+        generation_receipt_path=generation,
+        arm_id="ARM-MODEL-A",
+        bound_at_utc=plan.planned_at_utc + timedelta(minutes=1),
+    )
+    binding_path = tmp_path / "paired.receipt.json"
+    write_paired_generation_receipt_binding(binding, binding_path)
+
+    sandbox = tmp_path / "relocated-keyless-public"
+    sandbox.mkdir()
+    relocated_plan = sandbox / "paired_plan.json"
+    relocated_generation = sandbox / "generation_receipt.json"
+    relocated_plan.write_bytes(plan_path.read_bytes())
+    relocated_generation.write_bytes(generation.read_bytes())
+
+    assert (
+        verify_paired_generation_receipt_binding(
+            binding_path,
+            plan_path=relocated_plan,
+            public_config_path=config,
+            generation_receipt_path=relocated_generation,
+            expected_arm_id="ARM-MODEL-A",
+        )
+        == binding
+    )
+
+
 def test_generation_receipt_binding_rejects_wrong_arm_content_time_and_bytes(
     tmp_path: Path,
 ) -> None:

@@ -413,7 +413,21 @@ def verify_paired_generation_receipt_binding(
         arm_id=expected_arm_id,
         bound_at_utc=receipt.bound_at_utc,
     )
-    if receipt != expected:
+    # The same exact public files are deliberately relocated to fixed paths inside
+    # the keyless mount namespace.  Paths are provenance labels only; the SHA-256
+    # fields remain authoritative and must still match the current bytes.  Normalize
+    # only the two location labels before comparing every scientific/security field.
+    normalized = receipt.model_copy(
+        update={
+            "paired_plan": receipt.paired_plan.model_copy(
+                update={"path": expected.paired_plan.path}
+            ),
+            "generation_receipt": receipt.generation_receipt.model_copy(
+                update={"path": expected.generation_receipt.path}
+            ),
+        }
+    )
+    if normalized != expected:
         raise PairedExperimentBindingError(
             "paired generation receipt binding is stale or mismatched"
         )
