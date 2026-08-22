@@ -419,6 +419,7 @@ def _verify_expectations(
         "feature_vector_schema_version": expectations.feature_vector_schema_version,
         "semantic feature registry": expectations.semantic_feature_registry_sha256,
         "cache feature registry": expectations.cache_feature_registry_sha256,
+        "build plan": expectations.build_plan_sha256,
         "engine validation": expectations.engine_validation_sha256,
         "ephemeris source manifest": expectations.ephemeris_source_manifest_sha256,
         "ephemeris file set": expectations.ephemeris_file_set_sha256,
@@ -439,6 +440,7 @@ def _verify_expectations(
         "feature_vector_schema_version": manifest.feature_vector_schema_version,
         "semantic feature registry": manifest.semantic_feature_registry_sha256,
         "cache feature registry": manifest.feature_registry_sha256,
+        "build plan": manifest.build_plan_sha256,
         "engine validation": manifest.engine.engine_validation_sha256,
         "ephemeris source manifest": (
             manifest.engine.ephemeris_provenance.source_manifest_sha256

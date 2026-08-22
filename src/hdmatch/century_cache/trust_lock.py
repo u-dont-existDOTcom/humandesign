@@ -104,6 +104,7 @@ def century_cache_expectations_from_build_spec(
         cache_feature_registry_sha256=spec.feature_registry_sha256,
         required_feature_ids=feature_ids,
         required_feature_registry_sha256=required_feature_ids_sha256(feature_ids),
+        build_plan_sha256=spec.build_plan_sha256,
         engine_validation_sha256=spec.engine.engine_validation_sha256,
         ephemeris_source_manifest_sha256=(
             spec.engine.ephemeris_provenance.source_manifest_sha256
@@ -152,6 +153,10 @@ def trust_lock_from_verified_cache(
         "physical feature registry": (
             manifest.feature_registry_sha256,
             expectations.cache_feature_registry_sha256,
+        ),
+        "build plan": (
+            manifest.build_plan_sha256,
+            expectations.build_plan_sha256,
         ),
         "engine validation": (
             manifest.engine.engine_validation_sha256,

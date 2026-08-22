@@ -230,6 +230,7 @@ class CenturyCacheBuildSpec(FrozenModel):
     storage_format: Literal["parquet-internal-zstd-v1"] = STORAGE_FORMAT
     parquet_shard_target_bytes: Literal[67108864] = PARQUET_SHARD_TARGET_BYTES
     parquet_shard_hard_cap_bytes: Literal[83886080] = PARQUET_SHARD_HARD_CAP_BYTES
+    build_plan_sha256: str = Field(pattern=SHA256_PATTERN)
     engine: CenturyCacheEngineProvenance
     node_convention: Literal["true"]
     mandala_mapping_version: str = Field(min_length=1)
@@ -298,6 +299,7 @@ class CenturyCacheStreamIdentity(FrozenModel):
     storage_format: Literal["parquet-internal-zstd-v1"] = STORAGE_FORMAT
     parquet_shard_target_bytes: Literal[67108864] = PARQUET_SHARD_TARGET_BYTES
     parquet_shard_hard_cap_bytes: Literal[83886080] = PARQUET_SHARD_HARD_CAP_BYTES
+    build_plan_sha256: str = Field(pattern=SHA256_PATTERN)
     engine: CenturyCacheEngineProvenance
     node_convention: Literal["true"]
     mandala_mapping_version: str = Field(min_length=1)
@@ -498,6 +500,7 @@ class CenturyCacheManifest(FrozenModel):
     storage_format: Literal["parquet-internal-zstd-v1"]
     parquet_shard_target_bytes: Literal[67108864]
     parquet_shard_hard_cap_bytes: Literal[83886080]
+    build_plan_sha256: str = Field(pattern=SHA256_PATTERN)
     engine: CenturyCacheEngineProvenance
     node_convention: Literal["true"]
     mandala_mapping_version: str = Field(min_length=1)
@@ -650,6 +653,7 @@ class CenturyCacheExpectations(FrozenModel):
     cache_feature_registry_sha256: str = Field(pattern=SHA256_PATTERN)
     required_feature_ids: tuple[str, ...] = Field(min_length=1)
     required_feature_registry_sha256: str = Field(pattern=SHA256_PATTERN)
+    build_plan_sha256: str = Field(pattern=SHA256_PATTERN)
     engine_validation_sha256: str = Field(pattern=SHA256_PATTERN)
     ephemeris_source_manifest_sha256: str = Field(pattern=SHA256_PATTERN)
     ephemeris_file_set_sha256: str = Field(pattern=SHA256_PATTERN)

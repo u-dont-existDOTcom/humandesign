@@ -14,6 +14,13 @@ from .chart_adapter import (
     validate_verified_exact_shard_set,
     validate_verified_exact_state_batch,
 )
+from .construction import (
+    CenturyCacheConstructionError,
+    boundary_audit_from_reconciled_universe,
+    century_cache_build_spec_from_plan,
+    century_cache_stream_identity_from_plan,
+    load_cache_engine_provenance,
+)
 from .evidence import (
     CenturyCacheBoundaryAuditReport,
     CenturyCacheEvidenceError,
@@ -116,6 +123,7 @@ __all__ = [
     "CacheableStateSource",
     "CenturyCacheBuildError",
     "CenturyCacheBuildSpec",
+    "CenturyCacheConstructionError",
     "CenturyCacheBoundaryAuditReport",
     "CenturyCacheDependencyError",
     "CenturyCacheEngineProvenance",
@@ -162,10 +170,13 @@ __all__ = [
     "StreamingCenturyCachePublisher",
     "build_verified_exact_state_batch",
     "assemble_verified_exact_shard_set",
+    "boundary_audit_from_reconciled_universe",
     "canonical_rows_sha256",
     "cacheable_chart_state_to_century_record",
     "century_build_job_sha256",
     "century_build_plan_sha256",
+    "century_cache_build_spec_from_plan",
+    "century_cache_stream_identity_from_plan",
     "certify_swiss_calculation_audit",
     "chart_feature_vector_to_feature_values",
     "coerce_century_state_record",
@@ -177,6 +188,7 @@ __all__ = [
     "iter_verified_century_cache_rows",
     "load_staged_exact_state_batch_receipt",
     "load_century_build_plan",
+    "load_cache_engine_provenance",
     "open_century_cache_for_recovery",
     "parquet_schema_sha256",
     "required_feature_ids_sha256",

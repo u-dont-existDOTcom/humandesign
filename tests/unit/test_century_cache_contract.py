@@ -366,6 +366,7 @@ def _spec() -> CenturyCacheBuildSpec:
         required_feature_coverage=1.0,
         calculation_tier="M2",
         exact_intervals=True,
+        build_plan_sha256="5" * 64,
         engine=_engine(),
         node_convention="true",
         mandala_mapping_version=exact.mandala_mapping_version,
@@ -407,6 +408,7 @@ def _expectations(*, required: tuple[str, ...] | None = None) -> CenturyCacheExp
         cache_feature_registry_sha256=spec.feature_registry_sha256,
         required_feature_ids=identifiers,
         required_feature_registry_sha256=required_feature_ids_sha256(identifiers),
+        build_plan_sha256=spec.build_plan_sha256,
         engine_validation_sha256=spec.engine.engine_validation_sha256,
         ephemeris_source_manifest_sha256=(
             spec.engine.ephemeris_provenance.source_manifest_sha256
@@ -1026,6 +1028,7 @@ def test_required_feature_coverage_is_checked_for_each_recovery(tmp_path: Path) 
             "9" * 64,
             "semantic feature registry mismatch",
         ),
+        ("build_plan_sha256", "9" * 64, "build plan mismatch"),
         ("engine_validation_sha256", "9" * 64, "engine validation mismatch"),
         (
             "ephemeris_source_manifest_sha256",

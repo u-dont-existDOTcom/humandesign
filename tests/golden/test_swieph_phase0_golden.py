@@ -334,6 +334,7 @@ def test_real_swieph_bounded_exact_cache_writes_and_reverifies(
         required_feature_coverage=1.0,
         calculation_tier="M2",
         exact_intervals=True,
+        build_plan_sha256="5" * 64,
         engine=engine,
         node_convention="true",
         mandala_mapping_version=exact.mandala_mapping_version,
