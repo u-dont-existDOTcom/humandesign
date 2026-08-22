@@ -13,20 +13,56 @@ A successful synthetic test does not validate Human Design in humans.
 ## Source of truth
 Read in this order:
 1. `ARCHITECTURE.md`
-2. `docs/01_research_design.md`
-3. `docs/02_scoring_and_model_policy.md`
-4. `docs/03_synthetic_validation.md`
-5. `docs/04_human_development_and_validation.md`
-6. `docs/05_blinding_and_secrets.md`
-7. `docs/06_execution_plan.md`
-8. `docs/07_acceptance_tests.md`
-9. `docs/08_data_formats.md`
-10. `docs/09_codex_parallel_workstreams.md`
-11. `docs/10_metrics.md`
-12. `docs/11_empirical_learning_track.md`
-13. `docs/12_threats_to_validity.md`
+2. `reference/core/v4_3_scoring_algorithm.md`
+3. `reference/core/behavioral_target_combined_v3_5.md`
+4. `docs/01_research_design.md`
+5. `docs/02_scoring_and_model_policy.md`
+6. `docs/03_synthetic_validation.md`
+7. `docs/04_human_development_and_validation.md`
+8. `docs/05_blinding_and_secrets.md`
+9. `docs/06_execution_plan.md`
+10. `docs/07_acceptance_tests.md`
+11. `docs/08_data_formats.md`
+12. `docs/09_codex_parallel_workstreams.md`
+13. `docs/10_metrics.md`
+14. `docs/11_empirical_learning_track.md`
+15. `docs/12_threats_to_validity.md`
+16. `docs/13_v4_3_migration_and_century_cache.md`
+17. `docs/14_month_first_blind_validation.md`
+18. `docs/16_ephemeris_bootstrap.md`
 
-The existing Human Design protocol and scoring files in `reference/core/` are normative inputs. Do not silently replace their constructs with new interpretations.
+The earlier protocol/scoring files in `reference/core/` remain historical/normative background only where they do not conflict with V4.3. Never silently downgrade to V4.1/V3.2 because the existing implementation is easier.
+
+## Mandatory broad-search order
+
+Do not start another full 100-year behavioral ranking until:
+
+1. the production Swiss `.se1` files are provisioned and their hashes recorded;
+2. the engine explicitly requests SWIEPH and proves from returned flags that SWIEPH was actually used;
+3. the complete cacheable M0-M2 feature registry and exact boundary engine exist;
+4. the canonical century cache is built and verified;
+5. V4.3 scorer/mapping compliance tests pass.
+
+After that, ordinary broad searches MUST read the verified century cache. Do not regenerate 100 years of astronomy for every target/profile rerun.
+
+Direct JPL files are optional parity inputs. Verified compressed Swiss `.se1` files are the normal production engine.
+
+## V4.3 compliance rule
+
+A run may identify itself as `V4.3` only if all of these are true:
+
+- the full required feature registry for every frozen mapping is present;
+- Gate/Line/Channel/planetary-carrier predicates required by the model are calculable;
+- flexibility penalties are applied;
+- dependency and corroboration caps are applied;
+- duration-weighted conditional prevalence is active;
+- exact stable intervals are used;
+- the complete declared universe is rescored after accepted target changes;
+- the ranking tuple follows `reference/core/v4_3_scoring_algorithm.md` exactly;
+- the astronomy/cache provenance is verified;
+- requested and returned ephemeris modes agree and are SWIEPH for the canonical production cache.
+
+If any item is missing, fail closed or label the result honestly as a reduced model such as `M0-architecture-only`; emit `v4_3_compliant: false`. A reduced model must never be presented as an approximation that is "basically V4.3".
 
 ## Non-negotiable research rules
 - Never use the answer key during blind recovery.
@@ -41,6 +77,7 @@ The existing Human Design protocol and scoring files in `reference/core/` are no
 - Do not report a single minute when the scored state is stable across a wider interval.
 - Missing support is not contradiction.
 - Trauma/body-access variables may reduce measurement reliability; they may not turn a mismatch into support.
+- Unknown/context-dependent responses may remain unscored; never force them to one side.
 - No medical, legal, financial, or other high-stakes recommendations from Human Design.
 
 ## Implementation principles
@@ -54,10 +91,13 @@ The existing Human Design protocol and scoring files in `reference/core/` are no
 - Use typed Python.
 - Prefer pure functions for scoring.
 - Cache chart states and ephemeris results.
+- Prefer the verified precomputed century cache for broad searches rather than rebuilding astronomy on every profile.
+- Never accept successful coordinate output as proof that the desired ephemeris was used; inspect returned flags.
 - Never optimize evaluation cases.
 
 ## Required test discipline
 Run unit tests and the relevant end-to-end blind test after changes.
+Run the V4.3 anti-simplification/mutation tests before claiming V4.3 compliance.
 Every claimed blind recovery must leave:
 - experiment manifest,
 - input hash,
@@ -66,6 +106,8 @@ Every claimed blind recovery must leave:
 - prediction hash,
 - timestamp,
 - software versions,
+- ephemeris requested/returned mode and file hashes,
+- cache/universe hash where used,
 - reveal status,
 - evaluation file after reveal.
 

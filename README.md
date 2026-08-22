@@ -2,6 +2,20 @@
 
 This repository contains a typed Python harness for blinded Human Design birth-moment reverse-matching research. Human Design is treated as an experimental symbolic hypothesis. Synthetic recovery validates engineering coherence only; it does not validate Human Design in humans.
 
+## Current model status
+
+The normative development model is now **V4.3 / behavioral target V3.5**.
+
+Start with:
+
+- `AGENTS.md`
+- `reference/core/v4_3_scoring_algorithm.md`
+- `reference/core/behavioral_target_combined_v3_5.md`
+- `docs/13_v4_3_migration_and_century_cache.md`
+- `CODEX_V4_3_MIGRATION_PROMPT.md`
+
+The existing Python implementation was originally built around V4.1/V3.2 and must not call itself V4.3 until the migration/compliance tests pass. Reduced architecture-only runs must be labeled reduced and emit `v4_3_compliant=false`.
+
 ## Environment
 
 Required: Python 3.11 or newer. The tested development runtime is Python 3.12.
@@ -27,7 +41,7 @@ The task-specific milestone gate is:
 .venv/bin/python scripts/task_acceptance.py
 ```
 
-Ordinary green tests do not by themselves prove that the requested benchmark artifacts exist.
+Ordinary green legacy tests do not by themselves prove V4.3 compliance. The migration must add anti-simplification/mutation tests described in `docs/13_v4_3_migration_and_century_cache.md`.
 
 ## Blind workflow
 
@@ -233,9 +247,23 @@ The comparator accepts no key or decrypt interface. See
 `docs/16_claim_grade_keyless_recovery.md` for the paired invocation and mount
 contract.
 
+## Precomputed 100-year universe
+
+The expensive astronomical candidate universe should be generated once, verified, versioned, and reused across behavioral targets.
+
+Initial canonical range:
+
+```text
+1926-08-22T00:00:00Z <= t < 2026-08-23T00:00:00Z
+```
+
+The migration target uses Zstandard-compressed Parquet shards plus a cryptographic manifest and cached duration-weighted prevalence tables. Normal broad searches should load the verified cache instead of rebuilding a century of exact states for every person.
+
+If binary shards are too large for ordinary Git history, store them in Git LFS or versioned GitHub Release assets. Keep the manifest, schema, generation code, and verification code in the repository.
+
 ## Research claim boundary
 
-The project now explicitly allows **post-hoc fitting on human development data**.
+The project explicitly allows **post-hoc fitting on human development data**.
 
 That is not a methodological error. It is the training stage.
 
@@ -263,13 +291,15 @@ Synthetic tests come first to validate the machinery.
 
 ## Reference material
 
-`reference/core/` contains the core scoring/search/questionnaire files already developed in this project.
+`reference/core/` contains the scoring/search/questionnaire specifications and current target material.
 
-`reference/legacy_runs/` contains previous search outputs for regression/debugging only.
+`reference/verified_cases/` contains externally checked chart fingerprints useful for calculation parity/golden tests. These are references, not behavioral training targets unless a study explicitly declares them as such.
+
+`reference/legacy_runs/` contains previous search outputs for regression/debugging only. Legacy/simplified result files must never be mined as a mapping source.
 
 `reference/custom_gpt/` contains the Custom GPT/transit materials, which are secondary to the research harness.
 
-`reference/research/` contains the forum research supplied for methodological context.
+`reference/research/` contains methodological context.
 
 ## Security
 
