@@ -96,7 +96,11 @@ from hdmatch.model.v4_3_profile_mapping import (
     BEST_CURRENT_SOURCE_PATH,
 )
 from hdmatch.model.v4_3_responses import BEST_CURRENT_RESPONSE_PATH
-from hdmatch.model.v4_3_run import run_verified_v4_3_cache, verify_v4_3_run
+from hdmatch.model.v4_3_run import (
+    finalize_v4_3_run_publication,
+    run_verified_v4_3_cache,
+    verify_v4_3_run,
+)
 from hdmatch.model_b.compiler import compile_model_b_artifacts
 from hdmatch.model_b.mapping_library import FrozenModelB
 from hdmatch.model_b_v2_new import (
@@ -491,6 +495,12 @@ def _v4_3_run_kwargs(args: argparse.Namespace) -> dict[str, str]:
         "repository_root": str(args.repository_root),
         "cache_directory": str(args.cache),
         "trust_lock_path": str(args.trust_lock),
+        "cache_build_plan_path": str(args.cache_build_plan),
+        "cache_plan_trust_lock_path": str(args.cache_plan_trust_lock),
+        "expected_cache_plan_trust_lock_sha256": (
+            CANONICAL_CENTURY_PLAN_TRUST_LOCK_SHA256
+        ),
+        "cache_plan_repository_root": str(args.cache_plan_repository_root),
         "mapping_library_path": str(args.mapping_library),
         "mapping_source_library_path": str(args.mapping_source_library),
         "prevalence_plan_path": str(args.prevalence_plan),
@@ -538,6 +548,24 @@ def _command_verify_v4_3_run(args: argparse.Namespace) -> int:
         )
     )
     return 0
+
+
+def _command_finalize_v4_3_run(args: argparse.Namespace) -> int:
+    verified = finalize_v4_3_run_publication(
+        args.run_directory,
+        **_v4_3_run_kwargs(args),
+    )
+    print(
+        json.dumps(
+            {
+                "manifest_sha256": verified.manifest_sha256,
+                "run_status": verified.manifest.run_status,
+                "status": "publication-finalized",
+            },
+            sort_keys=True,
+        )
+    )
+    return 0 if verified.manifest.run_status == "complete" else 1
 
 
 def _load_selected_model(args: argparse.Namespace) -> RuntimeSymbolicModel:
@@ -1772,6 +1800,12 @@ def _add_v4_3_cache_only_inputs(parser: argparse.ArgumentParser) -> None:
 
 def _add_v4_3_run_inputs(parser: argparse.ArgumentParser) -> None:
     _add_v4_3_cache_only_inputs(parser)
+    parser.add_argument("--cache-build-plan", default=str(DEFAULT_CENTURY_PLAN))
+    parser.add_argument(
+        "--cache-plan-trust-lock",
+        default=str(DEFAULT_CENTURY_PLAN_TRUST_LOCK),
+    )
+    parser.add_argument("--cache-plan-repository-root", default=str(ROOT))
     parser.add_argument("--prevalence-plan", default=str(DEFAULT_V43_PREVALENCE_PLAN))
     parser.add_argument(
         "--prevalence-artifact",
@@ -1976,6 +2010,14 @@ def _parser() -> argparse.ArgumentParser:
     _add_v4_3_run_inputs(verify_v4_3)
     verify_v4_3.add_argument("run_directory")
     verify_v4_3.set_defaults(handler=_command_verify_v4_3_run)
+
+    finalize_v4_3 = subparsers.add_parser(
+        "finalize-v4-3-run-publication",
+        help="verify a visible Phase-4 run and retry its durability barrier",
+    )
+    _add_v4_3_run_inputs(finalize_v4_3)
+    finalize_v4_3.add_argument("run_directory")
+    finalize_v4_3.set_defaults(handler=_command_finalize_v4_3_run)
 
     generate = subparsers.add_parser("generate-blind", help="generate and seal blind cases")
     generate.add_argument("--config", required=True)

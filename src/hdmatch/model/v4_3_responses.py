@@ -1,13 +1,15 @@
 """Frozen direct-target response artifacts for canonical V4.3 cache runs.
 
-The compiler is deliberately mechanical: it copies each compiled mapping rule's
-predeclared canonical response token and binds the exact target, source-library,
-and compiled-library bytes.  It has no candidate, rank, score, or outcome input.
+The compiler is deliberately mechanical: it audits every compiled direct-target
+response rule and selects either its support token or its predeclared opposing
+token according to the frozen response-rule polarity.  It has no candidate,
+rank, score, or outcome input.
 """
 
 from __future__ import annotations
 
 import json
+from enum import StrEnum
 from pathlib import Path
 from typing import Final, Literal
 
@@ -23,6 +25,8 @@ from hdmatch.experiments.canonical import (
 from hdmatch.model.v4_3.integration import V43ObservedResponse
 from hdmatch.model.v4_3_compiler import compile_verified_mapping_library_v2
 from hdmatch.model.v4_3_mapping import (
+    CompiledMappingRuleV2,
+    ContradictionModeV2,
     MappingLibrarySourceV2,
     MappingLibraryV2,
     MappingV2Error,
@@ -31,10 +35,10 @@ from hdmatch.model.v4_3_mapping import (
 
 SHA256_PATTERN: Final[str] = r"^[a-f0-9]{64}$"
 LESS_CONTAMINATED_RESPONSE_PATH: Final[str] = (
-    "mappings/v4_3_v3_6_less_contaminated_direct_target_responses_v1.json"
+    "mappings/v4_3_v3_6_less_contaminated_direct_target_responses_v2.json"
 )
 BEST_CURRENT_RESPONSE_PATH: Final[str] = (
-    "mappings/v4_3_v3_6_best_current_direct_target_responses_v1.json"
+    "mappings/v4_3_v3_6_best_current_direct_target_responses_v2.json"
 )
 CANONICAL_VARIANT_SOURCE_SHA256: Final[
     dict[Literal["less_contaminated", "best_current_descriptive"], str]
@@ -56,18 +60,27 @@ class _FrozenModel(BaseModel):
     model_config = ConfigDict(extra="forbid", frozen=True, strict=True)
 
 
-class V43FrozenDirectResponseV1(_FrozenModel):
+class V43ObservedTargetPolarityV2(StrEnum):
+    SUPPORT = "support"
+    CONTRADICTION = "contradiction"
+
+
+class V43FrozenObservedTargetResponseV2(_FrozenModel):
     observation_id: str = Field(min_length=1)
     response_dimension_id: str = Field(min_length=1)
-    response_token: str = Field(min_length=1)
+    observed_target_response_token: str = Field(min_length=1)
+    observed_target_polarity: V43ObservedTargetPolarityV2
+    polarity_derivation: Literal["compiled-direct-target-response-rule-v2"] = (
+        "compiled-direct-target-response-rule-v2"
+    )
     source_rule_id: str = Field(min_length=1)
 
 
-class V43DirectTargetResponseArtifactV1(_FrozenModel):
+class V43DirectTargetResponseArtifactV2(_FrozenModel):
     """One immutable direct-target response set bound to one mapping variant."""
 
-    schema_version: Literal["v4-3-direct-target-response-artifact-v1"] = (
-        "v4-3-direct-target-response-artifact-v1"
+    schema_version: Literal["v4-3-direct-target-response-artifact-v2"] = (
+        "v4-3-direct-target-response-artifact-v2"
     )
     protocol_version: Literal["V4.3"] = "V4.3"
     behavioral_target_version: Literal["V3.6"] = "V3.6"
@@ -84,19 +97,38 @@ class V43DirectTargetResponseArtifactV1(_FrozenModel):
     mapping_source_library_sha256: str = Field(pattern=SHA256_PATTERN)
     question_bank_source_id: None = None
     question_bank_sha256: None = None
-    observations: tuple[V43FrozenDirectResponseV1, ...] = Field(min_length=1)
+    observations: tuple[V43FrozenObservedTargetResponseV2, ...] = Field(
+        min_length=1
+    )
+    support_observation_count: int = Field(ge=0)
+    contradiction_observation_count: int = Field(ge=0)
+    polarity_audit_sha256: str = Field(pattern=SHA256_PATTERN)
     response_set_sha256: str = Field(pattern=SHA256_PATTERN)
     outcome_data_used: Literal[False] = False
 
     @model_validator(mode="after")
     def require_mechanical_direct_target_inventory(
         self,
-    ) -> V43DirectTargetResponseArtifactV1:
+    ) -> V43DirectTargetResponseArtifactV2:
         observation_ids = tuple(item.observation_id for item in self.observations)
         if observation_ids != tuple(sorted(set(observation_ids))):
             raise ValueError("direct-target observations must be sorted and unique")
         if self.response_set_sha256 != _response_set_sha256(self.observations):
             raise ValueError("direct-target response-set hash is inconsistent")
+        support_count = sum(
+            item.observed_target_polarity is V43ObservedTargetPolarityV2.SUPPORT
+            for item in self.observations
+        )
+        contradiction_count = len(self.observations) - support_count
+        if (
+            self.support_observation_count != support_count
+            or self.contradiction_observation_count != contradiction_count
+        ):
+            raise ValueError("direct-target polarity counts are inconsistent")
+        if self.polarity_audit_sha256 != _polarity_audit_sha256(
+            self.observations
+        ):
+            raise ValueError("direct-target polarity audit hash is inconsistent")
         return self
 
     def sha256(self) -> str:
@@ -106,7 +138,7 @@ class V43DirectTargetResponseArtifactV1(_FrozenModel):
         return tuple(
             V43ObservedResponse(
                 observation_id=item.observation_id,
-                response_token=item.response_token,
+                response_token=item.observed_target_response_token,
             )
             for item in self.observations
         )
@@ -120,7 +152,7 @@ class VerifiedV43DirectTargetResponses:
     def __init__(
         self,
         *,
-        artifact: V43DirectTargetResponseArtifactV1,
+        artifact: V43DirectTargetResponseArtifactV2,
         artifact_sha256: str,
         _token: object,
     ) -> None:
@@ -142,7 +174,7 @@ def compile_v4_3_direct_target_responses(
     mapping_library_path: str | Path,
     mapping_source_library_path: str | Path,
     variant: Literal["less_contaminated", "best_current_descriptive"],
-) -> V43DirectTargetResponseArtifactV1:
+) -> V43DirectTargetResponseArtifactV2:
     """Compile canonical target responses without accepting any outcome input."""
 
     root = Path(repository_root).resolve()
@@ -194,18 +226,17 @@ def compile_v4_3_direct_target_responses(
     observations = tuple(
         sorted(
             (
-                V43FrozenDirectResponseV1(
-                    observation_id=rule.observation_id,
-                    response_dimension_id=rule.response_rule.response_dimension_id,
-                    response_token=rule.response_rule.canonical_response_token,
-                    source_rule_id=rule.rule_id,
-                )
+                _compile_observed_target_response(rule)
                 for rule in compiled.rules
             ),
             key=lambda item: item.observation_id,
         )
     )
-    return V43DirectTargetResponseArtifactV1(
+    support_count = sum(
+        item.observed_target_polarity is V43ObservedTargetPolarityV2.SUPPORT
+        for item in observations
+    )
+    return V43DirectTargetResponseArtifactV2(
         variant=variant,
         behavioral_target_source_id=compiled.behavioral_target_source_id,
         behavioral_target_path=target_source.path,
@@ -215,13 +246,41 @@ def compile_v4_3_direct_target_responses(
         mapping_source_library_path=source_path.relative_to(root).as_posix(),
         mapping_source_library_sha256=source_sha256,
         observations=observations,
+        support_observation_count=support_count,
+        contradiction_observation_count=len(observations) - support_count,
+        polarity_audit_sha256=_polarity_audit_sha256(observations),
         response_set_sha256=_response_set_sha256(observations),
+    )
+
+
+def _compile_observed_target_response(
+    rule: CompiledMappingRuleV2,
+) -> V43FrozenObservedTargetResponseV2:
+    """Select polarity solely from the already-compiled direct-target rule."""
+
+    response_rule = rule.response_rule
+    if response_rule.contradiction.mode is ContradictionModeV2.DIRECT_OPPOSITION:
+        if len(response_rule.contradiction.opposing_response_tokens) != 1:
+            raise V43ResponseArtifactError(
+                "direct-target contradiction must declare exactly one observed token"
+            )
+        token = response_rule.contradiction.opposing_response_tokens[0]
+        polarity = V43ObservedTargetPolarityV2.CONTRADICTION
+    else:
+        token = response_rule.canonical_response_token
+        polarity = V43ObservedTargetPolarityV2.SUPPORT
+    return V43FrozenObservedTargetResponseV2(
+        observation_id=rule.observation_id,
+        response_dimension_id=response_rule.response_dimension_id,
+        observed_target_response_token=token,
+        observed_target_polarity=polarity,
+        source_rule_id=rule.rule_id,
     )
 
 
 def write_v4_3_direct_target_responses_new(
     path: str | Path,
-    artifact: V43DirectTargetResponseArtifactV1,
+    artifact: V43DirectTargetResponseArtifactV2,
 ) -> Path:
     return write_new_canonical_json(path, artifact)
 
@@ -238,7 +297,7 @@ def verify_v4_3_direct_target_responses(
     path = Path(artifact_path)
     raw = _canonical_bytes(path, "direct-target response artifact")
     try:
-        artifact = V43DirectTargetResponseArtifactV1.model_validate_json(
+        artifact = V43DirectTargetResponseArtifactV2.model_validate_json(
             raw,
             strict=True,
         )
@@ -266,14 +325,25 @@ def verify_v4_3_direct_target_responses(
 
 
 def _response_set_sha256(
-    observations: tuple[V43FrozenDirectResponseV1, ...],
+    observations: tuple[V43FrozenObservedTargetResponseV2, ...],
 ) -> str:
     return sha256_json(
         [
             {
                 "observation_id": item.observation_id,
-                "response_token": item.response_token,
+                "response_token": item.observed_target_response_token,
             }
+            for item in observations
+        ]
+    )
+
+
+def _polarity_audit_sha256(
+    observations: tuple[V43FrozenObservedTargetResponseV2, ...],
+) -> str:
+    return sha256_json(
+        [
+            item.model_dump(mode="json")
             for item in observations
         ]
     )

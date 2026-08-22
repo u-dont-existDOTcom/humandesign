@@ -54,6 +54,11 @@ from hdmatch.model.v4_3_profile_mapping import (
     verify_tracked_profile_mapping_artifacts,
     write_profile_mapping_artifacts_new,
 )
+from hdmatch.model.v4_3_responses import (
+    LESS_CONTAMINATED_RESPONSE_PATH,
+    V43ObservedTargetPolarityV2,
+    verify_v4_3_direct_target_responses,
+)
 from hdmatch.util import sha256_file
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -173,6 +178,7 @@ def _unknown_candidate(
     candidate_authority: str = "splenic",
     defined_centers: frozenset[str] = frozenset({"g", "heart_ego", "spleen"}),
     candidate_profile: str = "2/4",
+    complete_channels: frozenset[str] = frozenset(),
 ) -> CenturyStateRecord:
     start = datetime(2000, 1, 1, tzinfo=UTC)
     all_centers = {
@@ -195,7 +201,9 @@ def _unknown_candidate(
             "undefined": sorted(all_centers - defined_centers),
         },
         FeatureId.PROFILE: candidate_profile,
-        FeatureId.COMPLETE_CHANNELS: [],
+        FeatureId.COMPLETE_CHANNELS: [
+            {"channel": item} for item in sorted(complete_channels)
+        ],
         FeatureId.ACTIVE_GATES: [],
         FeatureId.HANGING_GATES: [],
         FeatureId.PLANETARY_ACTIVATIONS: [],
@@ -658,6 +666,50 @@ def test_source_overrides_and_single_direct_contradiction_are_preserved() -> Non
         is ContradictionModeV2.DIRECT_OPPOSITION
         for item in source.frozen_mappings
     ) == 1
+
+
+def test_frozen_target_denial_contradicts_actual_16_48_candidate_only() -> None:
+    library = load_mapping_library_v2(ROOT / LESS_CONTAMINATED_COMPILED_PATH)
+    verified = verify_v4_3_direct_target_responses(
+        ROOT / LESS_CONTAMINATED_RESPONSE_PATH,
+        repository_root=ROOT,
+        mapping_library_path=ROOT / LESS_CONTAMINATED_COMPILED_PATH,
+        mapping_source_library_path=ROOT / LESS_CONTAMINATED_SOURCE_PATH,
+    )
+    denial = next(
+        item
+        for item in verified.artifact.observations
+        if item.observation_id == "OBS-CONTRA-16-48-MASTERY-DRIVE"
+    )
+    assert denial.observed_target_response_token == (
+        "denies_generalized_mastery_drive"
+    )
+    assert denial.observed_target_polarity is V43ObservedTargetPolarityV2.CONTRADICTION
+
+    adapted = evaluate_mapping_library_v2(
+        library,
+        _unknown_candidate(library, complete_channels=frozenset({"16-48"})),
+        verified.artifact.observed_responses(),
+    )
+    score = score_v4_3(adapted, _UnitEstimatePrevalence(library))
+    contradiction = next(
+        item
+        for item in adapted.observations
+        if item.observation_id == denial.observation_id
+    )
+
+    assert contradiction.pathways[0].primary.supports_response is False
+    assert contradiction.pathways[0].contradiction.opposes_response is True
+    contribution = next(
+        item
+        for item in score.clusters
+        if item.dependency_cluster == contradiction.dependency_cluster
+    )
+    assert contribution.support == 0.0
+    assert contribution.evidence_rubric_bits == 0.0
+    assert score.meaningful_contradictions == 1
+    assert score.contradiction_rubric_bits > 0.0
+    assert score.evidence_rubric_bits == 0.0
 
 
 def test_receipt_binds_source_freeze_and_marks_missing_external_provenance() -> None:

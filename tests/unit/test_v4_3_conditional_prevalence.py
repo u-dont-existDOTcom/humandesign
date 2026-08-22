@@ -3,6 +3,7 @@ from __future__ import annotations
 import inspect
 import json
 import math
+import sqlite3
 from dataclasses import dataclass
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
@@ -15,19 +16,19 @@ import hdmatch.model.v4_3_prevalence as prevalence_module
 import tests.unit.test_century_cache_contract as cache_fixtures
 import tests.unit.test_v4_3_mapping_library as mapping_fixtures
 from hdmatch.century_cache import (
-    CenturyCacheStreamIdentity,
-    ExactStateReconciliationStream,
-    OverlappingVerifiedExactStateBatch,
-    StreamingCenturyCachePublisher,
     VerifiedCenturyCache,
-    exact_state_reconciliation_aggregate_sha256,
     iter_verified_century_cache_rows,
     trust_lock_from_verified_cache,
     write_century_cache_trust_lock_new,
 )
 from hdmatch.century_cache.models import FeatureColumnSpec, FeatureStorageType
+from hdmatch.century_cache.plan_lock import (
+    century_build_plan_trust_lock_from_plan,
+    write_century_build_plan_trust_lock_new,
+)
+from hdmatch.century_cache.staging import load_century_build_plan
 from hdmatch.chart.feature_registry import FeatureId
-from hdmatch.experiments.canonical import canonical_json_bytes, sha256_file
+from hdmatch.experiments.canonical import canonical_json_bytes, sha256_file, sha256_json
 from hdmatch.model.v4_3.integration import (
     CanonicalV43ScoringSession,
     V43IntegrationError,
@@ -66,13 +67,19 @@ from hdmatch.model.v4_3_profile_mapping import (
 from hdmatch.model.v4_3_responses import (
     BEST_CURRENT_RESPONSE_PATH,
     LESS_CONTAMINATED_RESPONSE_PATH,
+    V43ObservedTargetPolarityV2,
     compile_v4_3_direct_target_responses,
     verify_v4_3_direct_target_responses,
 )
 from hdmatch.model.v4_3_run import (
     V43ExternalRankStore,
     V43MinimalScoreRecordV1,
+    V43RunError,
     V43RunFailedError,
+    V43RunPublicationConflictError,
+    V43RunPublicationPendingError,
+    V43ScoreStoreCommitError,
+    finalize_v4_3_run_publication,
     run_verified_v4_3_cache,
     verify_v4_3_run,
 )
@@ -94,6 +101,10 @@ class _RealPrevalenceHarness:
     artifact_path: Path
     artifact: V43ConditionalPrevalenceArtifactV1
     provider: VerifiedV43ConditionalPrevalence
+    cache_build_plan_path: Path
+    cache_plan_trust_lock_path: Path
+    expected_cache_plan_trust_lock_sha256: str
+    cache_plan_repository_root: Path
 
 
 def _mapping_kwargs() -> dict[str, Path]:
@@ -107,44 +118,8 @@ def _mapping_kwargs() -> dict[str, Path]:
 @pytest.fixture(scope="module")
 def real_harness(tmp_path_factory: pytest.TempPathFactory) -> _RealPrevalenceHarness:
     root = tmp_path_factory.mktemp("real-v43-prevalence")
-    provider, batch = cache_fixtures._exact_provider_and_batch()
-    source = OverlappingVerifiedExactStateBatch._from_factory_verified_batch_for_test(
-        batch=batch,
-        core_start_utc=cache_fixtures._START,
-        core_end_exclusive=cache_fixtures._END,
-        source_staged_receipt_sha256="1" * 64,
-        source_replay_verification_sha256="2" * 64,
-        source_all_call_audit_sha256="3" * 64,
-        source_build_plan_sha256="5" * 64,
-    )
-    stream = ExactStateReconciliationStream._for_factory_verified_test_sources(
-        provider,
-        engine_identity=cache_fixtures._reconciliation_engine_identity(),
-    )
-    assert stream.append(source) is None
-    finalization = stream.finalize()
-    aggregate = finalization.aggregate_provenance
-    spec = cache_fixtures._spec().model_copy(
-        update={
-            "reconciliation_aggregate_sha256": (
-                exact_state_reconciliation_aggregate_sha256(aggregate)
-            )
-        }
-    )
-    cache_directory = root / "cache"
-    publisher = StreamingCenturyCachePublisher(
-        cache_directory,
-        identity=CenturyCacheStreamIdentity.from_build_spec(spec),
-        build_mode="explicit_rebuild",
-    )
-    publisher.finish_reconciliation(finalization)
-    verified = publisher.finalize_and_publish(
-        spec=spec,
-        evidence=cache_fixtures._evidence_inputs(
-            root / "inputs",
-            reconciliation_payload=aggregate.model_dump(mode="json"),
-        ),
-    )
+    phase2, verified, spec = cache_fixtures._stranded_phase2_publication(root)
+    cache_directory = Path(phase2["cache_directory"])
     trust_lock = trust_lock_from_verified_cache(
         verified,
         build_spec=spec,
@@ -186,6 +161,12 @@ def real_harness(tmp_path_factory: pytest.TempPathFactory) -> _RealPrevalenceHar
         artifact_path=artifact_path,
         artifact=artifact,
         provider=verified_provider,
+        cache_build_plan_path=Path(phase2["plan_path"]),
+        cache_plan_trust_lock_path=Path(phase2["plan_trust_lock_path"]),
+        expected_cache_plan_trust_lock_sha256=str(
+            phase2["expected_plan_trust_lock_sha256"]
+        ),
+        cache_plan_repository_root=Path(phase2["plan_repository_root"]),
     )
 
 
@@ -405,6 +386,28 @@ def test_tracked_direct_target_responses_are_exact_mechanical_compilations(
     assert tuple(item.observation_id for item in verified.artifact.observations) == (
         tuple(sorted(item.observation_id for item in verified.artifact.observations))
     )
+    library = MappingLibraryV2.model_validate_json(
+        (ROOT / compiled_path).read_bytes(),
+        strict=True,
+    )
+    rules = {item.observation_id: item for item in library.rules}
+    for observed in verified.artifact.observations:
+        response_rule = rules[observed.observation_id].response_rule
+        opposing = response_rule.contradiction.opposing_response_tokens
+        if opposing:
+            assert observed.observed_target_polarity is (
+                V43ObservedTargetPolarityV2.CONTRADICTION
+            )
+            assert observed.observed_target_response_token == opposing[0]
+        else:
+            assert observed.observed_target_polarity is (
+                V43ObservedTargetPolarityV2.SUPPORT
+            )
+            assert observed.observed_target_response_token == (
+                response_rule.canonical_response_token
+            )
+    assert verified.artifact.contradiction_observation_count == 1
+    assert verified.artifact.support_observation_count == len(library.rules) - 1
 
 
 def test_direct_target_response_variant_cannot_be_relabelled() -> None:
@@ -425,8 +428,11 @@ def _rank_record(
     detailed: float,
     core: float,
     duration_microseconds: int,
+    utc_start: datetime | None = None,
 ) -> V43MinimalScoreRecordV1:
-    start = datetime(2000, 1, 1, tzinfo=UTC) + timedelta(seconds=ordinal)
+    start = utc_start or (
+        datetime(2000, 1, 1, tzinfo=UTC) + timedelta(seconds=ordinal)
+    )
     evidence = max(net, 0.0)
     contradiction_bits = evidence - net
     return V43MinimalScoreRecordV1(
@@ -457,6 +463,8 @@ def test_sqlite_external_rank_is_exactly_python_tuple_equivalent(
             detailed=50.0,
             core=80.0,
             duration_microseconds=6_000_000_000_000_000,
+            utc_start=datetime(2000, 1, 1, tzinfo=UTC)
+            + timedelta(microseconds=100_000),
         ),
         _rank_record(
             1,
@@ -465,6 +473,7 @@ def test_sqlite_external_rank_is_exactly_python_tuple_equivalent(
             detailed=50.0,
             core=80.0,
             duration_microseconds=6_000_000_000_000_000,
+            utc_start=datetime(2000, 1, 1, tzinfo=UTC),
         ),
         _rank_record(
             2,
@@ -528,6 +537,12 @@ def _phase4_kwargs(real_harness: _RealPrevalenceHarness) -> dict[str, object]:
         "repository_root": ROOT,
         "cache_directory": real_harness.cache_directory,
         "trust_lock_path": real_harness.trust_lock_path,
+        "cache_build_plan_path": real_harness.cache_build_plan_path,
+        "cache_plan_trust_lock_path": real_harness.cache_plan_trust_lock_path,
+        "expected_cache_plan_trust_lock_sha256": (
+            real_harness.expected_cache_plan_trust_lock_sha256
+        ),
+        "cache_plan_repository_root": real_harness.cache_plan_repository_root,
         "mapping_library_path": MAPPING,
         "mapping_source_library_path": MAPPING_SOURCE,
         "prevalence_plan_path": real_harness.plan_path,
@@ -548,6 +563,11 @@ def test_phase4_run_and_verifier_are_cache_only_and_complete(
         "ExactChartAdapter",
         lambda *args, **kwargs: pytest.fail("Phase-4 invoked astronomy"),
     )
+    monkeypatch.setattr(
+        cli,
+        "CANONICAL_CENTURY_PLAN_TRUST_LOCK_SHA256",
+        real_harness.expected_cache_plan_trust_lock_sha256,
+    )
     output = tmp_path / "run"
     assert cli.main(
         [
@@ -558,6 +578,12 @@ def test_phase4_run_and_verifier_are_cache_only_and_complete(
             str(real_harness.cache_directory),
             "--trust-lock",
             str(real_harness.trust_lock_path),
+            "--cache-build-plan",
+            str(real_harness.cache_build_plan_path),
+            "--cache-plan-trust-lock",
+            str(real_harness.cache_plan_trust_lock_path),
+            "--cache-plan-repository-root",
+            str(real_harness.cache_plan_repository_root),
             "--mapping-library",
             str(MAPPING),
             "--mapping-source-library",
@@ -583,6 +609,12 @@ def test_phase4_run_and_verifier_are_cache_only_and_complete(
     assert verified.manifest.compliance.v4_3_compliant is True
     assert verified.manifest.successfully_scored_count == (
         real_harness.verified_cache.manifest.interval_count
+    )
+    assert verified.manifest.bindings.cache_build_plan_sha256 == sha256_file(
+        real_harness.cache_build_plan_path
+    )
+    assert verified.manifest.bindings.cache_plan_trust_lock_sha256 == (
+        real_harness.expected_cache_plan_trust_lock_sha256
     )
     assert (output / "ranked-scores.parquet.zst").is_file()
     assert not (output / ".rank.sqlite3").exists()
@@ -615,6 +647,97 @@ def test_phase4_preflight_mismatch_fails_before_scoring(
     assert not (tmp_path / "must-not-exist").exists()
 
 
+@pytest.mark.parametrize("mutation", ("missing-lock", "tampered-lock", "substitute-plan"))
+def test_phase4_plan_trust_failures_stop_before_scoring(
+    real_harness: _RealPrevalenceHarness,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    mutation: str,
+) -> None:
+    from hdmatch.model.v4_3.integration import CanonicalV43ScoringSession
+
+    kwargs = _phase4_kwargs(real_harness)
+    if mutation == "missing-lock":
+        kwargs["cache_plan_trust_lock_path"] = tmp_path / "absent-lock.json"
+    elif mutation == "tampered-lock":
+        tampered = tmp_path / "tampered-lock.json"
+        tampered.write_bytes(real_harness.cache_plan_trust_lock_path.read_bytes() + b"\n")
+        kwargs["cache_plan_trust_lock_path"] = tampered
+    else:
+        substituted_root = tmp_path / "substituted-plan-root"
+        substituted_root.mkdir()
+        payload = json.loads(real_harness.cache_build_plan_path.read_bytes())
+        payload["source_commit"] = "9" * 40
+        substituted_plan_path = substituted_root / "plan.json"
+        substituted_plan_path.write_bytes(canonical_json_bytes(payload))
+        substituted_plan = load_century_build_plan(substituted_plan_path)
+        substituted_lock_path = write_century_build_plan_trust_lock_new(
+            substituted_root / "plan-trust-lock.json",
+            century_build_plan_trust_lock_from_plan(
+                substituted_plan,
+                plan_locator="plan.json",
+            ),
+        )
+        kwargs.update(
+            {
+                "cache_build_plan_path": substituted_plan_path,
+                "cache_plan_trust_lock_path": substituted_lock_path,
+                "expected_cache_plan_trust_lock_sha256": sha256_file(
+                    substituted_lock_path
+                ),
+                "cache_plan_repository_root": substituted_root,
+            }
+        )
+    monkeypatch.setattr(
+        CanonicalV43ScoringSession,
+        "stream_verified_universe",
+        lambda *args, **call_kwargs: pytest.fail(
+            "scoring began before plan-lock preflight completed"
+        ),
+    )
+
+    with pytest.raises((ValueError, OSError, V43RunError)):
+        run_verified_v4_3_cache(
+            output_directory=tmp_path / f"must-not-exist-{mutation}",
+            **kwargs,  # type: ignore[arg-type]
+        )
+
+
+def test_phase4_cli_rejects_ephemeris_rebuild_surface(
+    real_harness: _RealPrevalenceHarness,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    import hdmatch.cli as cli
+
+    forbidden = {
+        "engine",
+        "chart_engine",
+        "ephemeris",
+        "ephemeris_path",
+        "rebuild",
+        "rebuild_callback",
+    }
+    assert not forbidden & set(inspect.signature(run_verified_v4_3_cache).parameters)
+    assert not forbidden & set(inspect.signature(verify_v4_3_run).parameters)
+    monkeypatch.setattr(
+        cli,
+        "CANONICAL_CENTURY_PLAN_TRUST_LOCK_SHA256",
+        real_harness.expected_cache_plan_trust_lock_sha256,
+    )
+    with pytest.raises(SystemExit):
+        cli.main(
+            [
+                "run-v4-3-cache",
+                "--ephemeris-path",
+                str(tmp_path / "forbidden"),
+                "--output",
+                str(tmp_path / "must-not-exist"),
+            ]
+        )
+    assert not (tmp_path / "must-not-exist").exists()
+
+
 def test_phase4_storage_failure_publishes_noncompliant_failure_package(
     real_harness: _RealPrevalenceHarness,
     tmp_path: Path,
@@ -640,19 +763,122 @@ def test_phase4_storage_failure_publishes_noncompliant_failure_package(
             output_directory=output,
             **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
         )
-    assert raised.value.failure.stage == "score-store-write"
-    assert raised.value.failure.successfully_scored_count == 1
+    failure = raised.value.failure
+    assert failure.stage == "score-store-append"
+    assert failure.attempted_input_ordinal == 1
+    assert failure.attempted_record_is_in_partial_scores is True
+    assert failure.successfully_evaluated_count == 2
+    assert failure.persisted_scored_count == 0
     manifest = json.loads((output / "manifest.json").read_bytes())
     assert manifest["run_status"] == "failed"
     assert manifest["compliance"] is None
     assert manifest["ranked_artifact"] is None
-    assert json.loads((output / "failure.json").read_bytes())["state_id"]
+    assert (output / "partial-scores.jsonl").read_bytes().count(b"\n") == 2
+    assert json.loads((output / "failure.json").read_bytes())[
+        "attempted_state_id"
+    ]
     monkeypatch.undo()
     verified = verify_v4_3_run(
         output,
         **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
     )
     assert verified.manifest.run_status == "failed"
+
+
+def test_sqlite_commit_failure_at_ordinal_1023_keeps_transactional_counts(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    store = V43ExternalRankStore(tmp_path / "commit-boundary.sqlite3")
+    real_commit = store._commit_database
+    calls = 0
+
+    def fail_first_commit(active_store: V43ExternalRankStore) -> None:
+        nonlocal calls
+        assert active_store is store
+        calls += 1
+        if calls == 1:
+            raise sqlite3.OperationalError("injected commit boundary failure")
+        real_commit()
+
+    monkeypatch.setattr(V43ExternalRankStore, "_commit_database", fail_first_commit)
+    try:
+        with pytest.raises(V43ScoreStoreCommitError):
+            for ordinal in range(1024):
+                store.append(
+                    _rank_record(
+                        ordinal,
+                        net=0.0,
+                        contradictions=0,
+                        detailed=0.0,
+                        core=0.0,
+                        duration_microseconds=1,
+                    )
+                )
+        assert store.count == 1024
+        assert store.persisted_count == 0
+    finally:
+        store.close()
+
+
+def test_phase4_commit_failure_publishes_all_evaluated_partial_rows(
+    real_harness: _RealPrevalenceHarness,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    def fail_commit(store: V43ExternalRankStore) -> None:
+        del store
+        raise sqlite3.OperationalError("injected tiny-boundary commit failure")
+
+    monkeypatch.setattr(V43ExternalRankStore, "_commit_database", fail_commit)
+    output = tmp_path / "failed-commit-run"
+    with pytest.raises(V43RunFailedError) as raised:
+        run_verified_v4_3_cache(
+            output_directory=output,
+            **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
+        )
+    failure = raised.value.failure
+    assert failure.stage == "score-store-commit"
+    assert failure.attempted_input_ordinal == 1
+    assert failure.attempted_record_is_in_partial_scores is True
+    assert failure.successfully_evaluated_count == 2
+    assert failure.persisted_scored_count == 0
+    assert (output / "partial-scores.jsonl").read_bytes().count(b"\n") == 2
+
+    monkeypatch.undo()
+    assert verify_v4_3_run(
+        output,
+        **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
+    ).manifest.run_status == "failed"
+
+
+def test_phase4_sqlite_open_failure_publishes_verifiable_empty_partial(
+    real_harness: _RealPrevalenceHarness,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    def fail_open(store: V43ExternalRankStore, path: str | Path) -> None:
+        del store, path
+        raise sqlite3.OperationalError("injected SQLite open failure")
+
+    monkeypatch.setattr(V43ExternalRankStore, "__init__", fail_open)
+    output = tmp_path / "failed-open-run"
+    with pytest.raises(V43RunFailedError) as raised:
+        run_verified_v4_3_cache(
+            output_directory=output,
+            **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
+        )
+    failure = raised.value.failure
+    assert failure.stage == "score-store-open"
+    assert failure.successfully_evaluated_count == 0
+    assert failure.persisted_scored_count == 0
+    assert (output / "partial-scores.jsonl").read_bytes() == b""
+
+    monkeypatch.undo()
+    assert verify_v4_3_run(
+        output,
+        **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
+    ).manifest.run_status == "failed"
 
 
 def test_phase4_evaluation_failure_records_exact_unscored_row(
@@ -689,15 +915,289 @@ def test_phase4_evaluation_failure_records_exact_unscored_row(
         )
     failure = raised.value.failure
     assert failure.stage == "evaluation"
-    assert failure.input_ordinal == 1
-    assert failure.successfully_scored_count == 1
-    assert failure.state_id is not None
-    assert failure.candidate_record_sha256 is not None
+    assert failure.attempted_input_ordinal == 1
+    assert failure.attempted_record_is_in_partial_scores is False
+    assert failure.successfully_evaluated_count == 1
+    assert failure.persisted_scored_count == 0
+    assert failure.attempted_state_id is not None
+    assert failure.attempted_candidate_record_sha256 is not None
     monkeypatch.undo()
     assert verify_v4_3_run(
         output,
         **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
     ).manifest.run_status == "failed"
+
+
+def test_phase4_success_parent_fsync_is_idempotently_finalized(
+    real_harness: _RealPrevalenceHarness,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    import hdmatch.model.v4_3_run as run_module
+
+    output = tmp_path / "pending-success"
+    real_fsync = run_module._fsync_directory
+
+    def fail_visible_parent(path: Path) -> None:
+        if path == output.parent and output.is_dir():
+            raise OSError("injected parent fsync failure")
+        real_fsync(path)
+
+    monkeypatch.setattr(run_module, "_fsync_directory", fail_visible_parent)
+    with pytest.raises(V43RunPublicationPendingError):
+        run_verified_v4_3_cache(
+            output_directory=output,
+            **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
+        )
+    assert (output / "manifest.json").is_file()
+
+    monkeypatch.undo()
+    finalized = finalize_v4_3_run_publication(
+        output,
+        **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
+    )
+    assert finalized.manifest.run_status == "complete"
+    assert finalize_v4_3_run_publication(
+        output,
+        **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
+    ).manifest_sha256 == finalized.manifest_sha256
+
+
+def test_phase4_failure_parent_fsync_preserves_original_failure_and_recovers(
+    real_harness: _RealPrevalenceHarness,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    import hdmatch.model.v4_3_run as run_module
+
+    output = tmp_path / "pending-failure"
+    real_append = V43ExternalRankStore.append
+    real_fsync = run_module._fsync_directory
+    calls = 0
+
+    def fail_second_append(
+        store: V43ExternalRankStore,
+        record: V43MinimalScoreRecordV1,
+    ) -> None:
+        nonlocal calls
+        if calls == 1:
+            raise OSError("original injected append failure")
+        calls += 1
+        real_append(store, record)
+
+    def fail_visible_parent(path: Path) -> None:
+        if path == output.parent and output.is_dir():
+            raise OSError("injected failure-package parent fsync failure")
+        real_fsync(path)
+
+    monkeypatch.setattr(V43ExternalRankStore, "append", fail_second_append)
+    monkeypatch.setattr(run_module, "_fsync_directory", fail_visible_parent)
+    with pytest.raises(V43RunFailedError) as raised:
+        run_verified_v4_3_cache(
+            output_directory=output,
+            **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
+        )
+    assert raised.value.failure.stage == "score-store-append"
+    assert isinstance(raised.value.publication_error, OSError)
+    assert (output / "failure.json").is_file()
+
+    monkeypatch.undo()
+    finalized = finalize_v4_3_run_publication(
+        output,
+        **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
+    )
+    assert finalized.manifest.run_status == "failed"
+    with pytest.raises(V43RunFailedError) as rerun:
+        run_verified_v4_3_cache(
+            output_directory=output,
+            **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
+        )
+    assert rerun.value.failure.stage == "score-store-append"
+
+
+def test_phase4_atomic_no_replace_preserves_concurrently_created_empty_target(
+    real_harness: _RealPrevalenceHarness,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    import hdmatch.model.v4_3_run as run_module
+
+    output = tmp_path / "concurrent-empty-target"
+    real_publish = run_module._atomic_publish_directory_noreplace
+
+    def create_race_then_publish(source: Path, destination: Path) -> None:
+        destination.mkdir()
+        real_publish(source, destination)
+
+    monkeypatch.setattr(
+        run_module,
+        "_atomic_publish_directory_noreplace",
+        create_race_then_publish,
+    )
+    with pytest.raises(V43RunPublicationConflictError):
+        run_verified_v4_3_cache(
+            output_directory=output,
+            **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
+        )
+    assert output.is_dir()
+    assert tuple(output.iterdir()) == ()
+
+
+def test_phase4_retry_after_prepublication_process_death_ignores_orphan_staging(
+    real_harness: _RealPrevalenceHarness,
+    tmp_path: Path,
+) -> None:
+    output = tmp_path / "recovered-run"
+    orphan = tmp_path / ".recovered-run.staging-killed"
+    orphan.mkdir()
+    (orphan / "incomplete").write_text("simulated process death", encoding="utf-8")
+
+    verified = run_verified_v4_3_cache(
+        output_directory=output,
+        **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
+    )
+
+    assert verified.manifest.run_status == "complete"
+    assert (orphan / "incomplete").read_text(encoding="utf-8") == (
+        "simulated process death"
+    )
+    assert verify_v4_3_run(
+        output,
+        **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
+    ).manifest_sha256 == verified.manifest_sha256
+
+
+def test_phase4_verifier_uses_external_scratch_and_leaves_run_read_only(
+    real_harness: _RealPrevalenceHarness,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    import hdmatch.model.v4_3_run as run_module
+
+    output = tmp_path / "read-only-run"
+    run_verified_v4_3_cache(
+        output_directory=output,
+        **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
+    )
+    before = {
+        path.name: sha256_file(path)
+        for path in output.iterdir()
+        if path.is_file()
+    }
+    real_temporary_directory = run_module.tempfile.TemporaryDirectory
+    scratch_directories: list[str | None] = []
+
+    def capture_scratch(*args: object, **kwargs: object) -> Any:
+        scratch_directories.append(
+            str(kwargs["dir"]) if kwargs.get("dir") is not None else None
+        )
+        return real_temporary_directory(*args, **kwargs)
+
+    monkeypatch.setattr(run_module.tempfile, "TemporaryDirectory", capture_scratch)
+    for path in output.iterdir():
+        if path.is_file():
+            path.chmod(0o444)
+    output.chmod(0o555)
+    try:
+        verified = verify_v4_3_run(
+            output,
+            **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
+        )
+    finally:
+        output.chmod(0o755)
+        for path in output.iterdir():
+            if path.is_file():
+                path.chmod(0o644)
+    after = {
+        path.name: sha256_file(path)
+        for path in output.iterdir()
+        if path.is_file()
+    }
+    assert verified.manifest.run_status == "complete"
+    assert scratch_directories
+    assert set(scratch_directories) == {None}
+    assert after == before
+
+
+@pytest.mark.parametrize(
+    "mutation",
+    ("semantic-failure", "unresolved-count", "persisted-count"),
+)
+def test_phase4_failure_verifier_recomputes_semantics_and_unresolved_count(
+    real_harness: _RealPrevalenceHarness,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    mutation: str,
+) -> None:
+    real_append = V43ExternalRankStore.append
+    calls = 0
+
+    def fail_second_append(
+        store: V43ExternalRankStore,
+        record: V43MinimalScoreRecordV1,
+    ) -> None:
+        nonlocal calls
+        if calls == 1:
+            raise OSError("injected append failure")
+        calls += 1
+        real_append(store, record)
+
+    monkeypatch.setattr(V43ExternalRankStore, "append", fail_second_append)
+    output = tmp_path / f"tampered-failure-{mutation}"
+    with pytest.raises(V43RunFailedError):
+        run_verified_v4_3_cache(
+            output_directory=output,
+            **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
+        )
+    monkeypatch.undo()
+    manifest_path = output / "manifest.json"
+    manifest = json.loads(manifest_path.read_bytes())
+    if mutation == "semantic-failure":
+        failure_path = output / "failure.json"
+        failure = json.loads(failure_path.read_bytes())
+        failure.update(
+            {
+                "stage": "score-store-open",
+                "failure_code": "v4_3_score_store_open_failure",
+                "error_type": "v4_3_score_store_open_failure",
+                "error_message": "V4.3 cache run failed during score-store-open.",
+                "attempted_input_ordinal": None,
+                "attempted_state_id": None,
+                "attempted_candidate_record_sha256": None,
+                "attempted_record_is_in_partial_scores": False,
+            }
+        )
+        failure_path.write_bytes(canonical_json_bytes(failure))
+        manifest["failure_artifact"].update(
+            {
+                "sha256": sha256_file(failure_path),
+                "byte_count": failure_path.stat().st_size,
+                "logical_sha256": sha256_json(failure),
+            }
+        )
+    elif mutation == "unresolved-count":
+        manifest["unresolved_observation_count_per_candidate"] += 1
+    else:
+        failure_path = output / "failure.json"
+        failure = json.loads(failure_path.read_bytes())
+        failure["persisted_scored_count"] = 1
+        failure_path.write_bytes(canonical_json_bytes(failure))
+        manifest["successfully_scored_count"] = 1
+        manifest["persisted_scored_count"] = 1
+        manifest["failure_artifact"].update(
+            {
+                "sha256": sha256_file(failure_path),
+                "byte_count": failure_path.stat().st_size,
+                "logical_sha256": sha256_json(failure),
+            }
+        )
+    manifest_path.write_bytes(canonical_json_bytes(manifest))
+
+    with pytest.raises((ValueError, V43RunError)):
+        verify_v4_3_run(
+            output,
+            **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
+        )
 
 
 def test_prevalence_cli_build_and_verify_use_only_verified_cache(
