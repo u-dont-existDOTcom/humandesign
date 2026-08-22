@@ -374,7 +374,17 @@ class Phase1CompatibilityCenturyCachePublisher:
                 f"century-cache destination appeared before publish: {self._destination}"
             )
         os.rename(self._staging, self._destination)
-        _fsync_directory(self._destination.parent)
+        # The namespace mutation has already happened.  Record that fact before
+        # the durability barrier so an fsync failure can never make ``abort``
+        # treat the now-public destination as private staging state.
+        self._phase = "renamed_unflushed"
+        try:
+            _fsync_directory(self._destination.parent)
+        except OSError as exc:
+            raise CenturyCachePublicationError(
+                "cache was renamed into place but publication-directory fsync "
+                "failed; retain the destination and use publication finalization"
+            ) from exc
         self._phase = "published"
         return VerifiedCenturyCache(
             cache_directory=self._destination,
@@ -387,7 +397,7 @@ class Phase1CompatibilityCenturyCachePublisher:
     def abort(self) -> None:
         """Delete only this publisher's private sibling staging directory."""
 
-        if self._phase == "published":
+        if self._phase in {"renamed_unflushed", "published"}:
             raise CenturyCachePublicationError(
                 "a published cache cannot be aborted through its staging handle"
             )

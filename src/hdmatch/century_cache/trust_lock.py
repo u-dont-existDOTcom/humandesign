@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 from typing import Literal
 
@@ -27,6 +28,24 @@ from .models import (
 )
 
 DEFAULT_CENTURY_CACHE_TRUST_LOCK = Path("data/century_cache/v1.trust-lock.json")
+
+
+def _fsync_parent_directory(path: Path) -> None:
+    descriptor = os.open(path.parent, os.O_RDONLY)
+    try:
+        os.fsync(descriptor)
+    finally:
+        os.close(descriptor)
+
+
+def ensure_century_cache_trust_lock_durable(path: str | Path) -> Path:
+    """Repeat the directory durability barrier without rewriting lock bytes."""
+
+    lock_path = Path(path)
+    if lock_path.is_symlink() or not lock_path.is_file():
+        raise ValueError("century-cache trust lock is not a regular file")
+    _fsync_parent_directory(lock_path)
+    return lock_path
 
 
 class CenturyCacheTrustLockV1(FrozenModel):
@@ -238,6 +257,7 @@ def write_century_cache_trust_lock_new(
 
     destination = Path(path)
     write_new_canonical_json(destination, lock)
+    ensure_century_cache_trust_lock_durable(destination)
     return destination
 
 

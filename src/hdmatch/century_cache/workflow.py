@@ -2,15 +2,18 @@
 
 from __future__ import annotations
 
+import json
 from contextlib import suppress
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
+from typing import Literal
 
 from hdmatch.chart.ephemeris import SwissEphemerisProvider
 from hdmatch.chart.feature_registry import CACHEABLE_M0_M2_REGISTRY
 from hdmatch.experiments.canonical import (
     canonical_json_bytes,
+    sha256_bytes,
     sha256_file,
     write_new_bytes,
     write_new_canonical_json,
@@ -29,15 +32,24 @@ from .construction import (
     century_cache_stream_identity_from_plan,
     load_cache_engine_provenance,
 )
-from .evidence import CenturyCacheEvidenceInputs
-from .models import CenturyCacheBuildSpec, VerifiedCenturyCache
+from .evidence import (
+    CenturyCacheEvidenceInputs,
+    validate_external_cache_evidence,
+)
+from .models import (
+    CenturyCacheBuildSpec,
+    CenturyCacheManifest,
+    VerifiedCenturyCache,
+)
 from .parity import generate_swieph_golden_parity_report
 from .publisher import CenturyCachePublicationError, StreamingCenturyCachePublisher
 from .reconcile import (
+    ExactStateReconciliationAggregateProvenanceV1,
     ExactStateReconciliationStream,
     OverlappingVerifiedExactStateBatch,
     canonical_reconciliation_aggregate_bytes,
     exact_state_reconciliation_aggregate_sha256,
+    validate_exact_state_reconciliation_aggregate_provenance,
 )
 from .staging import (
     CenturyBuildJobV1,
@@ -53,9 +65,12 @@ from .staging import (
     write_century_build_plan_new,
     write_staged_exact_state_batch,
 )
-from .store import verify_century_cache_against_trust_lock
+from .store import verify_century_cache, verify_century_cache_against_trust_lock
 from .trust_lock import (
     CenturyCacheTrustLockV1,
+    century_cache_expectations_from_build_spec,
+    ensure_century_cache_trust_lock_durable,
+    load_century_cache_trust_lock,
     trust_lock_from_verified_cache,
     write_century_cache_trust_lock_new,
 )
@@ -65,6 +80,14 @@ _REPOSITORY_ROOT = Path(__file__).resolve().parents[3]
 
 class CenturyCacheWorkflowError(RuntimeError):
     """The explicit cache workflow cannot safely advance or resume."""
+
+
+CenturyCachePublicationPathState = Literal[
+    "new",
+    "published_missing_lock",
+    "published_with_lock",
+    "orphan_lock",
+]
 
 
 @dataclass(frozen=True, slots=True)
@@ -320,6 +343,229 @@ def _write_or_require_identical(path: Path, raw: bytes) -> Path:
     return write_new_bytes(path, raw)
 
 
+def _path_is_present(path: Path) -> bool:
+    """Treat broken symlinks as occupied publication paths too."""
+
+    return path.exists() or path.is_symlink()
+
+
+def preflight_century_cache_publication_paths(
+    *,
+    cache_directory: str | Path,
+    trust_lock_path: str | Path,
+) -> CenturyCachePublicationPathState:
+    """Classify all four durable output/lock states before replay begins."""
+
+    cache_present = _path_is_present(Path(cache_directory))
+    lock_present = _path_is_present(Path(trust_lock_path))
+    if not cache_present and not lock_present:
+        return "new"
+    if cache_present and not lock_present:
+        return "published_missing_lock"
+    if cache_present and lock_present:
+        return "published_with_lock"
+    return "orphan_lock"
+
+
+def _load_published_manifest(path: Path) -> CenturyCacheManifest:
+    if path.is_symlink():
+        raise CenturyCacheWorkflowError(
+            "published century-cache manifest must not be a symbolic link"
+        )
+    try:
+        raw = path.read_bytes()
+        payload = json.loads(raw)
+        if canonical_json_bytes(payload) != raw:
+            raise ValueError("manifest is not canonical JSON")
+        return CenturyCacheManifest.model_validate_json(raw, strict=True)
+    except (OSError, json.JSONDecodeError, ValueError) as exc:
+        raise CenturyCacheWorkflowError("published century-cache manifest is invalid") from exc
+
+
+def _load_reconciliation_aggregate(
+    path: Path,
+) -> tuple[ExactStateReconciliationAggregateProvenanceV1, bytes]:
+    if path.is_symlink():
+        raise CenturyCacheWorkflowError("reconciliation aggregate must not be a symbolic link")
+    try:
+        raw = path.read_bytes()
+        payload = json.loads(raw)
+        if canonical_json_bytes(payload) != raw:
+            raise ValueError("reconciliation aggregate is not canonical JSON")
+        aggregate = ExactStateReconciliationAggregateProvenanceV1.model_validate_json(
+            raw,
+            strict=True,
+        )
+        validate_exact_state_reconciliation_aggregate_provenance(aggregate)
+    except (OSError, json.JSONDecodeError, ValueError) as exc:
+        raise CenturyCacheWorkflowError("external reconciliation aggregate is invalid") from exc
+    return aggregate, raw
+
+
+def _manifest_build_spec(manifest: CenturyCacheManifest) -> CenturyCacheBuildSpec:
+    fields = set(CenturyCacheBuildSpec.model_fields)
+    payload = manifest.model_dump(mode="python", include=fields)
+    payload["schema_version"] = "century-cache-build-spec-v1"
+    try:
+        return CenturyCacheBuildSpec.model_validate(payload, strict=True)
+    except ValueError as exc:  # pragma: no cover - manifest validation is stricter
+        raise CenturyCacheWorkflowError(
+            "published manifest does not contain a valid build specification"
+        ) from exc
+
+
+def _write_or_resume_identical_trust_lock(
+    path: Path,
+    lock: CenturyCacheTrustLockV1,
+) -> Path:
+    """Create a lock once, or retain the exact lock from a failed reopen."""
+
+    if not _path_is_present(path):
+        return write_century_cache_trust_lock_new(path, lock)
+    if path.is_symlink() or not path.is_file():
+        raise CenturyCacheWorkflowError(
+            "existing century-cache trust-lock path is not a regular file"
+        )
+    existing = load_century_cache_trust_lock(path)
+    if existing != lock or path.read_bytes() != canonical_json_bytes(lock.model_dump(mode="json")):
+        raise CenturyCacheWorkflowError(
+            "existing century-cache trust lock differs from independently "
+            "reconstructed publication identities"
+        )
+    return ensure_century_cache_trust_lock_durable(path)
+
+
+def finalize_century_cache_publication(
+    *,
+    plan_path: str | Path,
+    cache_directory: str | Path,
+    cache_locator: str,
+    trust_lock_path: str | Path,
+    build_evidence_directory: str | Path,
+    ephemeris_directory: str | Path,
+    ephemeris_source_manifest_path: str | Path,
+    engine_validation_path: str | Path,
+    parity_report_path: str | Path,
+    parity_reference_source_path: str | Path,
+) -> PublishedCenturyBuild:
+    """Finish a stranded publication without replaying or regenerating rows.
+
+    Only the creation timestamp is taken from the published manifest.  Every
+    other build identity is reconstructed from the immutable plan, current
+    verified Swiss files, and external Phase-0/2 proof artifacts before the
+    cache is independently decoded and re-hashed.
+    """
+
+    cache = Path(cache_directory)
+    lock_path = Path(trust_lock_path)
+    if cache.is_symlink() or not cache.is_dir():
+        raise CenturyCacheWorkflowError(
+            "publication finalization requires an existing regular cache directory"
+        )
+    manifest = _load_published_manifest(cache / "manifest.json")
+    plan = load_century_build_plan(plan_path)
+    _require_current_source_matches_plan(plan)
+
+    _provider, provenance = _provider_and_provenance(
+        ephemeris_directory=ephemeris_directory,
+        ephemeris_source_manifest_path=ephemeris_source_manifest_path,
+    )
+    if provenance != plan.engine.ephemeris_provenance:
+        raise CenturyCacheWorkflowError(
+            "current ephemeris files differ from the immutable build plan"
+        )
+    engine = load_cache_engine_provenance(plan, engine_validation_path)
+
+    evidence_directory = Path(build_evidence_directory)
+    reconciliation_path = evidence_directory / "reconciliation-aggregate.json"
+    aggregate, reconciliation_raw = _load_reconciliation_aggregate(reconciliation_path)
+    if aggregate.build_plan_sha256 != century_build_plan_sha256(plan):
+        raise CenturyCacheWorkflowError(
+            "reconciliation aggregate differs from the immutable build plan"
+        )
+    boundary = boundary_audit_from_reconciled_universe(
+        plan,
+        aggregate.exact_state_universe_provenance,
+    )
+    boundary_path = evidence_directory / "boundary-audit-report.json"
+    expected_boundary_raw = canonical_json_bytes(boundary.model_dump(mode="json"))
+    if boundary_path.is_symlink():
+        raise CenturyCacheWorkflowError("boundary-audit report must not be a symbolic link")
+    try:
+        if boundary_path.read_bytes() != expected_boundary_raw:
+            raise CenturyCacheWorkflowError(
+                "external boundary-audit report differs from reconstructed evidence"
+            )
+    except OSError as exc:
+        raise CenturyCacheWorkflowError("external boundary-audit report is unavailable") from exc
+
+    spec = century_cache_build_spec_from_plan(
+        plan,
+        engine=engine,
+        boundary_audit=boundary,
+        reconciliation_aggregate_sha256=sha256_bytes(reconciliation_raw),
+        created_at_utc=manifest.created_at_utc,
+    )
+    if _manifest_build_spec(manifest) != spec:
+        raise CenturyCacheWorkflowError(
+            "published manifest build specification differs from independently "
+            "reconstructed plan and evidence"
+        )
+
+    verified = verify_century_cache(
+        cache,
+        expectations=century_cache_expectations_from_build_spec(spec),
+    )
+    if _manifest_build_spec(verified.manifest) != spec:
+        raise CenturyCacheWorkflowError(
+            "published manifest changed during independent verification"
+        )
+    evidence = CenturyCacheEvidenceInputs(
+        engine_validation_path=Path(engine_validation_path),
+        parity_report_path=Path(parity_report_path),
+        boundary_audit_report_path=boundary_path,
+        reconciliation_aggregate_path=reconciliation_path,
+        parity_reference_source_path=Path(parity_reference_source_path),
+        ephemeris_source_manifest_path=Path(ephemeris_source_manifest_path),
+        ephemeris_directory=Path(ephemeris_directory),
+    )
+    validated_external = validate_external_cache_evidence(
+        evidence,
+        spec=spec,
+        logical_universe_sha256=verified.manifest.logical_universe_sha256,
+        interval_count=verified.manifest.interval_count,
+        boundary_event_count=(verified.manifest.exact_state_provenance.boundary_event_count),
+        exact_state_provenance=verified.manifest.exact_state_provenance,
+    )
+    if validated_external.artifacts != verified.manifest.evidence_artifacts:
+        raise CenturyCacheWorkflowError(
+            "external evidence identities differ from bundled cache evidence"
+        )
+
+    lock = trust_lock_from_verified_cache(
+        verified,
+        build_spec=spec,
+        cache_locator=cache_locator,
+    )
+    retained_lock_path = _write_or_resume_identical_trust_lock(lock_path, lock)
+    independently_verified = verify_century_cache_against_trust_lock(
+        cache,
+        trust_lock_path=retained_lock_path,
+    )
+    if independently_verified.manifest_sha256 != verified.manifest_sha256:
+        raise CenturyCacheWorkflowError(
+            "trust-lock re-verification changed the published manifest identity"
+        )
+    return PublishedCenturyBuild(
+        verified_cache=independently_verified,
+        build_spec=spec,
+        trust_lock=lock,
+        trust_lock_path=retained_lock_path,
+        reconciliation_aggregate_path=reconciliation_path,
+        boundary_audit_path=boundary_path,
+    )
+
+
 def assemble_and_publish_century_cache(
     *,
     plan_path: str | Path,
@@ -337,6 +583,27 @@ def assemble_and_publish_century_cache(
 ) -> PublishedCenturyBuild:
     """Replay, reconcile, stream, publish manifest last, lock, and reverify."""
 
+    publication_state = preflight_century_cache_publication_paths(
+        cache_directory=cache_directory,
+        trust_lock_path=trust_lock_path,
+    )
+    if publication_state == "orphan_lock":
+        raise CenturyCacheWorkflowError(
+            "century-cache trust lock exists without its cache destination"
+        )
+    if publication_state in {"published_missing_lock", "published_with_lock"}:
+        return finalize_century_cache_publication(
+            plan_path=plan_path,
+            cache_directory=cache_directory,
+            cache_locator=cache_locator,
+            trust_lock_path=trust_lock_path,
+            build_evidence_directory=build_evidence_directory,
+            ephemeris_directory=ephemeris_directory,
+            ephemeris_source_manifest_path=ephemeris_source_manifest_path,
+            engine_validation_path=engine_validation_path,
+            parity_report_path=parity_report_path,
+            parity_reference_source_path=parity_reference_source_path,
+        )
     plan = load_century_build_plan(plan_path)
     _require_current_source_matches_plan(plan)
     replay_provider, provenance = _provider_and_provenance(

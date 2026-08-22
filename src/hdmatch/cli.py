@@ -19,6 +19,8 @@ from hdmatch.century_cache import (
     assemble_and_publish_century_cache,
     build_all_missing_century_jobs,
     build_century_staged_job,
+    finalize_century_cache_publication,
+    preflight_century_cache_publication_paths,
     prepare_century_build,
     verify_century_cache_against_trust_lock,
 )
@@ -326,6 +328,18 @@ def _command_assemble_century_cache(args: argparse.Namespace) -> int:
 
 
 def _command_build_century_cache(args: argparse.Namespace) -> int:
+    publication_state = preflight_century_cache_publication_paths(
+        cache_directory=args.output,
+        trust_lock_path=args.trust_lock,
+    )
+    if publication_state != "new":
+        print(
+            json.dumps(
+                _published_cache_summary(_assemble_century_cache_from_args(args)),
+                sort_keys=True,
+            )
+        )
+        return 0
     receipts = build_all_missing_century_jobs(
         plan_path=args.plan,
         staging_directory=args.staging_dir,
@@ -336,6 +350,23 @@ def _command_build_century_cache(args: argparse.Namespace) -> int:
     summary = _published_cache_summary(published)
     summary["staged_job_count"] = len(receipts)
     print(json.dumps(summary, sort_keys=True))
+    return 0
+
+
+def _command_finalize_century_cache_publication(args: argparse.Namespace) -> int:
+    published = finalize_century_cache_publication(
+        plan_path=args.plan,
+        cache_directory=args.output,
+        cache_locator=args.cache_locator,
+        trust_lock_path=args.trust_lock,
+        build_evidence_directory=args.build_evidence_dir,
+        ephemeris_directory=args.ephemeris_path,
+        ephemeris_source_manifest_path=args.source_manifest,
+        engine_validation_path=args.engine_validation,
+        parity_report_path=args.parity_report,
+        parity_reference_source_path=args.golden_reference,
+    )
+    print(json.dumps(_published_cache_summary(published), sort_keys=True))
     return 0
 
 
@@ -1719,6 +1750,36 @@ def _add_v4_3_run_inputs(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--responses", default=str(DEFAULT_V43_RESPONSE_ARTIFACT))
 
 
+def _add_century_finalization_arguments(parser: argparse.ArgumentParser) -> None:
+    parser.add_argument("--plan", default=str(DEFAULT_CENTURY_PLAN))
+    parser.add_argument("--output", default=str(DEFAULT_CENTURY_CACHE_DIRECTORY))
+    parser.add_argument(
+        "--cache-locator",
+        default=DEFAULT_CENTURY_CACHE_LOCATOR,
+    )
+    parser.add_argument(
+        "--trust-lock",
+        default=str(DEFAULT_CENTURY_CACHE_TRUST_LOCK),
+    )
+    parser.add_argument(
+        "--build-evidence-dir",
+        default=str(DEFAULT_CENTURY_BUILD_EVIDENCE_DIRECTORY),
+    )
+    parser.add_argument(
+        "--engine-validation",
+        default=str(DEFAULT_ENGINE_VALIDATION),
+    )
+    parser.add_argument(
+        "--parity-report",
+        default=str(DEFAULT_CENTURY_PARITY_REPORT),
+    )
+    parser.add_argument(
+        "--golden-reference",
+        default=str(DEFAULT_SWIEPH_GOLDEN_REFERENCE),
+    )
+    _add_century_engine_arguments(parser)
+
+
 def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="hdmatch",
@@ -1807,6 +1868,17 @@ def _parser() -> argparse.ArgumentParser:
     )
     _add_century_assembly_arguments(build_century)
     build_century.set_defaults(handler=_command_build_century_cache)
+
+    finalize_century = subparsers.add_parser(
+        "finalize-century-cache-publication",
+        help=(
+            "verify and trust-lock an already-published cache without replaying jobs"
+        ),
+    )
+    _add_century_finalization_arguments(finalize_century)
+    finalize_century.set_defaults(
+        handler=_command_finalize_century_cache_publication
+    )
 
     verify_century = subparsers.add_parser(
         "verify-century-cache",

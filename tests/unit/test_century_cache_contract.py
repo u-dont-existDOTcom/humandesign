@@ -32,12 +32,18 @@ from hdmatch.century_cache import (
     VerifiedExactShardSet,
     VerifiedExactStateBatch,
     assemble_verified_exact_shard_set,
+    boundary_audit_from_reconciled_universe,
     build_verified_exact_state_batch,
     canonical_rows_sha256,
+    century_build_plan_sha256,
+    century_cache_build_spec_from_plan,
     coerce_century_state_record,
+    create_century_build_plan,
     exact_state_reconciliation_aggregate_sha256,
     feature_registry_sha256,
+    finalize_century_cache_publication,
     iter_verified_century_cache_rows,
+    load_cache_engine_provenance,
     open_century_cache_for_recovery,
     required_feature_ids_sha256,
     trust_lock_from_verified_cache,
@@ -48,6 +54,9 @@ from hdmatch.century_cache import (
     write_century_cache_trust_lock_new,
     write_noncanonical_century_cache_fixture,
 )
+from hdmatch.century_cache import publisher as publisher_module
+from hdmatch.century_cache import trust_lock as trust_lock_module
+from hdmatch.century_cache import workflow as workflow_module
 from hdmatch.century_cache.parquet import BoundedParquetShardWriter
 from hdmatch.century_cache.streaming import canonical_row_json_line
 from hdmatch.chart.ephemeris import SwissEphemerisProvider
@@ -56,6 +65,7 @@ from hdmatch.experiments.canonical import (
     sha256_bytes,
     sha256_file,
     sha256_json,
+    write_new_canonical_json,
 )
 from hdmatch.provenance.swisseph_files import (
     PINNED_UPSTREAM_COMMIT,
@@ -519,6 +529,84 @@ def _write_fixture(
         evidence=evidence or _evidence_inputs(directory.parent / f"{directory.name}-inputs"),
         build_mode="explicit_rebuild",
     )
+
+
+def _stranded_phase2_publication(
+    directory: Path,
+) -> tuple[dict[str, object], Any, CenturyCacheBuildSpec]:
+    """Publish a tiny real cache while deliberately omitting its trust lock."""
+
+    provider, batch = _exact_provider_and_batch()
+    inputs = _evidence_inputs(directory / "external-evidence")
+    plan = create_century_build_plan(
+        provider,
+        _ephemeris_provenance(),
+        utc_start=_START,
+        utc_end_exclusive=_END,
+        source_commit="8" * 40,
+        source_tree_dirty=False,
+        engine_validation_sha256=sha256_file(inputs.engine_validation_path),
+        parity_report_sha256=sha256_file(inputs.parity_report_path),
+        parity_reference_source_locator=("tests/golden/fixtures/swieph_phase0_golden_v1.json"),
+        parity_reference_source_sha256=sha256_file(inputs.parity_reference_source_path),
+    )
+    plan_path = write_new_canonical_json(directory / "plan.json", plan)
+    plan_sha256 = century_build_plan_sha256(plan)
+    source = OverlappingVerifiedExactStateBatch._from_factory_verified_batch_for_test(
+        batch=batch,
+        core_start_utc=_START,
+        core_end_exclusive=_END,
+        source_staged_receipt_sha256="1" * 64,
+        source_replay_verification_sha256="2" * 64,
+        source_all_call_audit_sha256="3" * 64,
+        source_build_plan_sha256=plan_sha256,
+    )
+    stream = ExactStateReconciliationStream._for_factory_verified_test_sources(
+        provider,
+        engine_identity=plan.engine,
+    )
+    assert stream.append(source) is None
+    finalization = stream.finalize()
+    aggregate = finalization.aggregate_provenance
+    reconciliation_path = directory / "external-evidence/reconciliation-aggregate.json"
+    reconciliation_path.write_bytes(canonical_json_bytes(aggregate.model_dump(mode="json")))
+    inputs = replace(inputs, reconciliation_aggregate_path=reconciliation_path)
+    boundary = boundary_audit_from_reconciled_universe(
+        plan,
+        aggregate.exact_state_universe_provenance,
+    )
+    inputs.boundary_audit_report_path.write_bytes(
+        canonical_json_bytes(boundary.model_dump(mode="json"))
+    )
+    engine = load_cache_engine_provenance(plan, inputs.engine_validation_path)
+    spec = century_cache_build_spec_from_plan(
+        plan,
+        engine=engine,
+        boundary_audit=boundary,
+        reconciliation_aggregate_sha256=(exact_state_reconciliation_aggregate_sha256(aggregate)),
+        created_at_utc=datetime(2026, 8, 22, tzinfo=UTC),
+    )
+    cache = directory / "cache"
+    publisher = StreamingCenturyCachePublisher(
+        cache,
+        identity=CenturyCacheStreamIdentity.from_build_spec(spec),
+        build_mode="explicit_rebuild",
+    )
+    publisher.finish_reconciliation(finalization)
+    verified = publisher.finalize_and_publish(spec=spec, evidence=inputs)
+    kwargs: dict[str, object] = {
+        "plan_path": plan_path,
+        "cache_directory": cache,
+        "cache_locator": "data/century_cache/test-v1",
+        "trust_lock_path": directory / "trust-lock.json",
+        "build_evidence_directory": inputs.boundary_audit_report_path.parent,
+        "ephemeris_directory": inputs.ephemeris_directory,
+        "ephemeris_source_manifest_path": inputs.ephemeris_source_manifest_path,
+        "engine_validation_path": inputs.engine_validation_path,
+        "parity_report_path": inputs.parity_report_path,
+        "parity_reference_source_path": inputs.parity_reference_source_path,
+    }
+    return kwargs, verified, spec
 
 
 def _mutate_manifest(directory: Path, mutation: str) -> None:
@@ -1162,10 +1250,53 @@ def test_phase1_compatibility_publisher_is_manifest_last_and_atomic(
     assert destination.is_dir()
     assert not publisher.staging_directory.exists()
     assert all(
-        shard.byte_count <= spec.parquet_shard_hard_cap_bytes
-        for shard in verified.manifest.shards
+        shard.byte_count <= spec.parquet_shard_hard_cap_bytes for shard in verified.manifest.shards
     )
 
+
+def test_publisher_fsync_failure_retains_renamed_destination_for_finalization(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    destination = tmp_path / "stranded-published-cache"
+    spec = _spec()
+    exact = _exact_shard_set()
+    publisher = Phase1CompatibilityCenturyCachePublisher(
+        destination,
+        identity=CenturyCacheStreamIdentity.from_build_spec(spec),
+        build_mode="explicit_rebuild",
+    )
+    staging = publisher.staging_directory
+    for batch in exact.batches:
+        publisher.append_verified_batch(batch)
+    publisher.finish_rows(exact_state_provenance=exact.provenance)
+
+    real_fsync = publisher_module._fsync_directory
+
+    def _fail_publication_directory_fsync(directory: Path) -> None:
+        if directory == destination.parent:
+            raise OSError("injected publication directory fsync failure")
+        real_fsync(directory)
+
+    monkeypatch.setattr(
+        publisher_module,
+        "_fsync_directory",
+        _fail_publication_directory_fsync,
+    )
+    with pytest.raises(
+        ValueError,
+        match="renamed into place.*publication-directory fsync failed",
+    ):
+        publisher.finalize_and_publish(
+            spec=spec,
+            evidence=_evidence_inputs(tmp_path / "stranded-inputs"),
+        )
+
+    assert destination.is_dir()
+    assert (destination / "manifest.json").is_file()
+    assert not staging.exists()
+    with pytest.raises(ValueError, match="published cache cannot be aborted"):
+        publisher.abort()
 
 
 def test_phase2_reconciled_publication_mints_usable_trust_lock(
@@ -1223,6 +1354,220 @@ def test_phase2_reconciled_publication_mints_usable_trust_lock(
         trust_lock_path=lock_path,
     )
     assert reopened.manifest_sha256 == verified.manifest_sha256
+
+
+def test_stranded_phase2_publication_finalizes_without_job_replay(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    kwargs, originally_verified, _specification = _stranded_phase2_publication(tmp_path)
+    monkeypatch.setattr(
+        workflow_module,
+        "_require_current_source_matches_plan",
+        lambda _plan: None,
+    )
+
+    def _forbid_replay(*_args: object, **_kwargs: object) -> None:
+        raise AssertionError("publication finalization replayed a staged job")
+
+    monkeypatch.setattr(
+        workflow_module,
+        "verify_staged_exact_state_batch",
+        _forbid_replay,
+    )
+    finalized = finalize_century_cache_publication(**kwargs)  # type: ignore[arg-type]
+
+    assert finalized.verified_cache.manifest_sha256 == (originally_verified.manifest_sha256)
+    assert finalized.trust_lock_path.is_file()
+    lock_bytes = finalized.trust_lock_path.read_bytes()
+    repeated = finalize_century_cache_publication(**kwargs)  # type: ignore[arg-type]
+    assert repeated.verified_cache.manifest_sha256 == originally_verified.manifest_sha256
+    assert repeated.trust_lock_path.read_bytes() == lock_bytes
+
+
+def test_finalization_resumes_after_trust_lock_write_failure(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    kwargs, originally_verified, _specification = _stranded_phase2_publication(tmp_path)
+    monkeypatch.setattr(
+        workflow_module,
+        "_require_current_source_matches_plan",
+        lambda _plan: None,
+    )
+    real_write = workflow_module.write_century_cache_trust_lock_new
+    attempts = 0
+
+    def _fail_once(path: Path, lock: object) -> Path:
+        nonlocal attempts
+        attempts += 1
+        if attempts == 1:
+            raise OSError("injected trust-lock write failure")
+        return real_write(path, lock)  # type: ignore[arg-type]
+
+    monkeypatch.setattr(
+        workflow_module,
+        "write_century_cache_trust_lock_new",
+        _fail_once,
+    )
+    with pytest.raises(OSError, match="injected trust-lock write failure"):
+        finalize_century_cache_publication(**kwargs)  # type: ignore[arg-type]
+    assert not Path(kwargs["trust_lock_path"]).exists()  # type: ignore[arg-type]
+
+    finalized = finalize_century_cache_publication(**kwargs)  # type: ignore[arg-type]
+    assert finalized.verified_cache.manifest_sha256 == (originally_verified.manifest_sha256)
+    assert attempts == 2
+
+
+def test_finalization_retries_trust_lock_parent_directory_fsync(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    kwargs, originally_verified, _specification = _stranded_phase2_publication(tmp_path)
+    monkeypatch.setattr(
+        workflow_module,
+        "_require_current_source_matches_plan",
+        lambda _plan: None,
+    )
+    real_fsync = trust_lock_module._fsync_parent_directory
+    attempts = 0
+
+    def _fail_once(path: Path) -> None:
+        nonlocal attempts
+        attempts += 1
+        if attempts == 1:
+            raise OSError("injected trust-lock directory fsync failure")
+        real_fsync(path)
+
+    monkeypatch.setattr(
+        trust_lock_module,
+        "_fsync_parent_directory",
+        _fail_once,
+    )
+    with pytest.raises(OSError, match="injected trust-lock directory fsync failure"):
+        finalize_century_cache_publication(**kwargs)  # type: ignore[arg-type]
+    lock_path = Path(kwargs["trust_lock_path"])  # type: ignore[arg-type]
+    assert lock_path.is_file()
+    lock_bytes = lock_path.read_bytes()
+
+    finalized = finalize_century_cache_publication(**kwargs)  # type: ignore[arg-type]
+    assert finalized.verified_cache.manifest_sha256 == (originally_verified.manifest_sha256)
+    assert lock_path.read_bytes() == lock_bytes
+    assert attempts == 2
+
+
+def test_finalization_resumes_an_identical_lock_after_reopen_failure(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    kwargs, originally_verified, _specification = _stranded_phase2_publication(tmp_path)
+    monkeypatch.setattr(
+        workflow_module,
+        "_require_current_source_matches_plan",
+        lambda _plan: None,
+    )
+    real_reopen = workflow_module.verify_century_cache_against_trust_lock
+    attempts = 0
+
+    def _fail_once(*args: object, **call_kwargs: object) -> Any:
+        nonlocal attempts
+        attempts += 1
+        if attempts == 1:
+            raise OSError("injected trust-lock reopen failure")
+        return real_reopen(*args, **call_kwargs)  # type: ignore[arg-type]
+
+    monkeypatch.setattr(
+        workflow_module,
+        "verify_century_cache_against_trust_lock",
+        _fail_once,
+    )
+    with pytest.raises(OSError, match="injected trust-lock reopen failure"):
+        finalize_century_cache_publication(**kwargs)  # type: ignore[arg-type]
+    lock_path = Path(kwargs["trust_lock_path"])  # type: ignore[arg-type]
+    original_lock_bytes = lock_path.read_bytes()
+
+    finalized = finalize_century_cache_publication(**kwargs)  # type: ignore[arg-type]
+    assert finalized.verified_cache.manifest_sha256 == (originally_verified.manifest_sha256)
+    assert lock_path.read_bytes() == original_lock_bytes
+    assert attempts == 2
+
+
+def test_finalization_never_overwrites_a_conflicting_preexisting_lock(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    kwargs, verified, spec = _stranded_phase2_publication(tmp_path)
+    monkeypatch.setattr(
+        workflow_module,
+        "_require_current_source_matches_plan",
+        lambda _plan: None,
+    )
+    conflicting = trust_lock_from_verified_cache(
+        verified,
+        build_spec=spec,
+        cache_locator="data/century_cache/different-location",
+    )
+    lock_path = write_century_cache_trust_lock_new(
+        kwargs["trust_lock_path"],  # type: ignore[arg-type]
+        conflicting,
+    )
+    existing_bytes = lock_path.read_bytes()
+
+    with pytest.raises(
+        workflow_module.CenturyCacheWorkflowError,
+        match="differs from independently reconstructed",
+    ):
+        finalize_century_cache_publication(**kwargs)  # type: ignore[arg-type]
+    assert lock_path.read_bytes() == existing_bytes
+
+
+@pytest.mark.parametrize(
+    "artifact",
+    [
+        "manifest",
+        "plan",
+        "parity",
+        "reconciliation",
+        "boundary",
+        "bundled_evidence",
+        "shard",
+    ],
+)
+def test_finalization_rejects_tampered_publication_or_external_evidence(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    artifact: str,
+) -> None:
+    kwargs, _verified, _specification = _stranded_phase2_publication(tmp_path)
+    monkeypatch.setattr(
+        workflow_module,
+        "_require_current_source_matches_plan",
+        lambda _plan: None,
+    )
+    cache = Path(kwargs["cache_directory"])  # type: ignore[arg-type]
+    evidence = Path(kwargs["build_evidence_directory"])  # type: ignore[arg-type]
+    if artifact == "manifest":
+        manifest_path = cache / "manifest.json"
+        payload = json.loads(manifest_path.read_bytes())
+        payload["generation_commit"] = "9" * 40
+        manifest_path.write_bytes(canonical_json_bytes(payload))
+    elif artifact == "plan":
+        Path(kwargs["plan_path"]).write_bytes(b"{}")  # type: ignore[arg-type]
+    elif artifact == "parity":
+        Path(kwargs["parity_report_path"]).write_bytes(b"{}")  # type: ignore[arg-type]
+    elif artifact == "reconciliation":
+        (evidence / "reconciliation-aggregate.json").write_bytes(b"{}")
+    elif artifact == "boundary":
+        (evidence / "boundary-audit-report.json").write_bytes(b"{}")
+    elif artifact == "bundled_evidence":
+        (cache / "evidence/parity-report.json").write_bytes(b"{}")
+    else:
+        shard = next(cache.glob("states-*.parquet.zst"))
+        shard.write_bytes(shard.read_bytes() + b"tampered")
+
+    with pytest.raises((ValueError, workflow_module.CenturyCacheWorkflowError)):
+        finalize_century_cache_publication(**kwargs)  # type: ignore[arg-type]
+    assert not Path(kwargs["trust_lock_path"]).exists()  # type: ignore[arg-type]
 
 
 def test_phase2_publisher_rejects_direct_phase1_batch_admission(

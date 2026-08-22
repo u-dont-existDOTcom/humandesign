@@ -7,6 +7,7 @@ from types import SimpleNamespace
 
 import pytest
 
+from hdmatch import cli as cli_module
 from hdmatch.century_cache import workflow as workflow_module
 from hdmatch.century_cache.workflow import (
     CenturyCacheWorkflowError,
@@ -16,6 +17,7 @@ from hdmatch.cli import (
     _command_assemble_century_cache,
     _command_build_century_cache,
     _command_build_century_cache_job,
+    _command_finalize_century_cache_publication,
     _command_prepare_century_cache,
     _command_verify_century_cache,
     _parse_utc_timestamp,
@@ -37,6 +39,9 @@ def test_century_cache_cli_exposes_only_explicit_phase2_commands() -> None:
         "build-century-cache-job": _command_build_century_cache_job,
         "assemble-century-cache": _command_assemble_century_cache,
         "build-century-cache": _command_build_century_cache,
+        "finalize-century-cache-publication": (
+            _command_finalize_century_cache_publication
+        ),
         "verify-century-cache": _command_verify_century_cache,
     }
     for name, expected_handler in handlers.items():
@@ -50,6 +55,20 @@ def test_century_cache_cli_exposes_only_explicit_phase2_commands() -> None:
     assert "start" not in build_destinations
     assert "end_exclusive" not in build_destinations
     assert "target" not in build_destinations
+
+    finalization_destinations = {
+        action.dest
+        for action in _command_parser(
+            "finalize-century-cache-publication"
+        )._actions  # type: ignore[attr-defined]
+    }
+    assert "staging_dir" not in finalization_destinations
+    assert {
+        "plan",
+        "output",
+        "trust_lock",
+        "build_evidence_dir",
+    } <= finalization_destinations
 
 
 def test_century_timestamp_parser_requires_an_explicit_offset() -> None:
@@ -139,6 +158,150 @@ def test_resumed_job_rejects_source_mismatch_before_ephemeris_access(
             ephemeris_source_manifest_path="manifest.json",
         )
     assert provider_reached is False
+
+
+@pytest.mark.parametrize(
+    ("cache_present", "lock_present", "state"),
+    [
+        (False, False, "new"),
+        (True, False, "published_missing_lock"),
+        (False, True, "orphan_lock"),
+        (True, True, "published_with_lock"),
+    ],
+)
+def test_assembly_preflight_classifies_all_publication_path_states(
+    tmp_path: Path,
+    cache_present: bool,
+    lock_present: bool,
+    state: str,
+) -> None:
+    cache = tmp_path / "cache"
+    lock = tmp_path / "trust-lock.json"
+    if cache_present:
+        cache.mkdir()
+    if lock_present:
+        lock.write_text("occupied", encoding="utf-8")
+
+    assert (
+        workflow_module.preflight_century_cache_publication_paths(
+            cache_directory=cache,
+            trust_lock_path=lock,
+        )
+        == state
+    )
+
+
+def test_build_command_preflights_before_staged_job_replay(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    replay_reached = False
+
+    def _replay(**_kwargs: object) -> tuple[object, ...]:
+        nonlocal replay_reached
+        replay_reached = True
+        return ()
+
+    monkeypatch.setattr(
+        workflow_module,
+        "build_all_missing_century_jobs",
+        _replay,
+    )
+    # The command imported this name directly, so patch its defining module.
+    monkeypatch.setattr(
+        "hdmatch.cli.build_all_missing_century_jobs",
+        _replay,
+    )
+    cache = tmp_path / "stranded-cache"
+    cache.mkdir()
+    published = object()
+    monkeypatch.setattr(
+        cli_module,
+        "_assemble_century_cache_from_args",
+        lambda _args: published,
+    )
+    monkeypatch.setattr(
+        cli_module,
+        "_published_cache_summary",
+        lambda result: {"status": "pass"} if result is published else {},
+    )
+    args = argparse.Namespace(
+        output=str(cache),
+        trust_lock=str(tmp_path / "missing-lock.json"),
+    )
+    assert _command_build_century_cache(args) == 0
+    assert replay_reached is False
+
+
+def test_assembly_routes_both_published_states_to_finalization_before_replay(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    cache = tmp_path / "cache"
+    cache.mkdir()
+    lock = tmp_path / "trust-lock.json"
+    expected = object()
+    finalization_calls: list[dict[str, object]] = []
+    monkeypatch.setattr(
+        workflow_module,
+        "finalize_century_cache_publication",
+        lambda **kwargs: finalization_calls.append(kwargs) or expected,
+    )
+    monkeypatch.setattr(
+        workflow_module,
+        "load_century_build_plan",
+        lambda _path: pytest.fail("published-state routing reached replay setup"),
+    )
+    kwargs = {
+        "plan_path": tmp_path / "plan.json",
+        "staging_directory": tmp_path / "staged",
+        "cache_directory": cache,
+        "cache_locator": "data/century_cache/v1",
+        "trust_lock_path": lock,
+        "build_evidence_directory": tmp_path / "evidence",
+        "ephemeris_directory": tmp_path / "ephemeris",
+        "ephemeris_source_manifest_path": tmp_path / "source.json",
+        "engine_validation_path": tmp_path / "engine.json",
+        "parity_report_path": tmp_path / "parity.json",
+        "parity_reference_source_path": tmp_path / "reference.json",
+    }
+
+    assert (
+        workflow_module.assemble_and_publish_century_cache(**kwargs) is expected  # type: ignore[arg-type]
+    )
+    lock.write_text("occupied", encoding="utf-8")
+    assert (
+        workflow_module.assemble_and_publish_century_cache(**kwargs) is expected  # type: ignore[arg-type]
+    )
+    assert len(finalization_calls) == 2
+
+
+def test_assembly_rejects_orphan_lock_before_plan_or_replay_access(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    lock = tmp_path / "orphan-trust-lock.json"
+    lock.write_text("occupied", encoding="utf-8")
+    monkeypatch.setattr(
+        workflow_module,
+        "load_century_build_plan",
+        lambda _path: pytest.fail("orphan-lock preflight reached plan/replay setup"),
+    )
+
+    with pytest.raises(CenturyCacheWorkflowError, match="without its cache destination"):
+        workflow_module.assemble_and_publish_century_cache(
+            plan_path=tmp_path / "plan.json",
+            staging_directory=tmp_path / "staged",
+            cache_directory=tmp_path / "missing-cache",
+            cache_locator="data/century_cache/v1",
+            trust_lock_path=lock,
+            build_evidence_directory=tmp_path / "evidence",
+            ephemeris_directory=tmp_path / "ephemeris",
+            ephemeris_source_manifest_path=tmp_path / "source.json",
+            engine_validation_path=tmp_path / "engine.json",
+            parity_report_path=tmp_path / "parity.json",
+            parity_reference_source_path=tmp_path / "reference.json",
+        )
 
 
 def test_assembly_separates_replay_and_reconciliation_audits(
