@@ -4,6 +4,7 @@ import inspect
 import json
 import math
 import sqlite3
+import subprocess
 from dataclasses import dataclass
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
@@ -80,6 +81,7 @@ from hdmatch.model.v4_3_run import (
     V43RunPublicationPendingError,
     V43ScoreStoreCommitError,
     finalize_v4_3_run_publication,
+    publish_verified_v4_3_run_staging,
     run_verified_v4_3_cache,
     verify_v4_3_run,
 )
@@ -616,6 +618,17 @@ def test_phase4_run_and_verifier_are_cache_only_and_complete(
     assert verified.manifest.bindings.cache_plan_trust_lock_sha256 == (
         real_harness.expected_cache_plan_trust_lock_sha256
     )
+    assert verified.manifest.runtime_source_provenance.source_commit == subprocess.run(
+        ["git", "rev-parse", "HEAD"],
+        cwd=ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout.strip()
+    assert verified.manifest.runtime_source_provenance.source_files
+    assert verified.manifest.runtime_source_provenance.dependency_versions[
+        "pyarrow"
+    ]
     assert (output / "ranked-scores.parquet.zst").is_file()
     assert not (output / ".rank.sqlite3").exists()
     assert verified.manifest_path.is_file()
@@ -889,17 +902,18 @@ def test_phase4_evaluation_failure_records_exact_unscored_row(
     from hdmatch.model.v4_3.integration import CanonicalV43ScoringSession
 
     original = CanonicalV43ScoringSession._score_bound_candidate
-    calls = 0
+    target_state_id = tuple(
+        iter_verified_century_cache_rows(real_harness.verified_cache)
+    )[1].state_id
 
     def fail_second_evaluation(
         session: CanonicalV43ScoringSession,
         *args: object,
         **kwargs: object,
     ) -> object:
-        nonlocal calls
-        if calls == 1:
+        candidate: Any = args[0]
+        if candidate.state_id == target_state_id:
             raise RuntimeError("deterministic injected evaluation failure")
-        calls += 1
         return original(session, *args, **kwargs)  # type: ignore[arg-type]
 
     monkeypatch.setattr(
@@ -921,11 +935,49 @@ def test_phase4_evaluation_failure_records_exact_unscored_row(
     assert failure.persisted_scored_count == 0
     assert failure.attempted_state_id is not None
     assert failure.attempted_candidate_record_sha256 is not None
-    monkeypatch.undo()
     assert verify_v4_3_run(
         output,
         **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
     ).manifest.run_status == "failed"
+
+
+def test_phase4_evaluation_failure_must_recur_during_verification(
+    real_harness: _RealPrevalenceHarness,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    original = CanonicalV43ScoringSession._score_bound_candidate
+    target_state_id = tuple(
+        iter_verified_century_cache_rows(real_harness.verified_cache)
+    )[1].state_id
+
+    def fail_target(
+        session: CanonicalV43ScoringSession,
+        *args: object,
+        **kwargs: object,
+    ) -> object:
+        candidate: Any = args[0]
+        if candidate.state_id == target_state_id:
+            raise RuntimeError("deterministic injected evaluation failure")
+        return original(session, *args, **kwargs)  # type: ignore[arg-type]
+
+    monkeypatch.setattr(
+        CanonicalV43ScoringSession,
+        "_score_bound_candidate",
+        fail_target,
+    )
+    output = tmp_path / "failed-evaluation-does-not-recur"
+    with pytest.raises(V43RunFailedError):
+        run_verified_v4_3_cache(
+            output_directory=output,
+            **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
+        )
+    monkeypatch.undo()
+    with pytest.raises(V43RunError, match="did not recur"):
+        verify_v4_3_run(
+            output,
+            **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
+        )
 
 
 def test_phase4_success_parent_fsync_is_idempotently_finalized(
@@ -1041,6 +1093,74 @@ def test_phase4_atomic_no_replace_preserves_concurrently_created_empty_target(
         )
     assert output.is_dir()
     assert tuple(output.iterdir()) == ()
+
+
+@pytest.mark.parametrize("publication_fault", ("conflict", "oserror"))
+def test_phase4_failure_publication_preserves_and_recovers_exact_staging(
+    real_harness: _RealPrevalenceHarness,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    publication_fault: str,
+) -> None:
+    import hdmatch.model.v4_3_run as run_module
+
+    output = tmp_path / f"failure-publication-{publication_fault}"
+    real_append = V43ExternalRankStore.append
+    append_calls = 0
+
+    def fail_second_append(
+        store: V43ExternalRankStore,
+        record: V43MinimalScoreRecordV1,
+    ) -> None:
+        nonlocal append_calls
+        if append_calls == 1:
+            raise OSError("deterministic append failure before publication")
+        append_calls += 1
+        real_append(store, record)
+
+    def fail_failure_publication(source: Path, destination: Path) -> None:
+        assert "failure-staging" in source.name
+        if publication_fault == "conflict":
+            destination.mkdir()
+            raise FileExistsError("injected atomic no-replace conflict")
+        raise OSError("injected atomic publication failure")
+
+    monkeypatch.setattr(V43ExternalRankStore, "append", fail_second_append)
+    monkeypatch.setattr(
+        run_module,
+        "_atomic_publish_directory_noreplace",
+        fail_failure_publication,
+    )
+    with pytest.raises(V43RunFailedError) as raised:
+        run_verified_v4_3_cache(
+            output_directory=output,
+            **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
+        )
+    preserved = raised.value.run_directory
+    assert preserved.is_dir()
+    assert "failure-staging" in preserved.name
+    assert (preserved / "manifest.json").is_file()
+    assert (preserved / "failure-stage-evidence.json").is_file()
+    assert raised.value.publication_error is not None
+
+    monkeypatch.undo()
+    assert verify_v4_3_run(
+        preserved,
+        **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
+    ).manifest.run_status == "failed"
+    if output.is_dir():
+        output.rmdir()
+    recovered = publish_verified_v4_3_run_staging(
+        preserved,
+        output,
+        **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
+    )
+    assert recovered.manifest.run_status == "failed"
+    assert not preserved.exists()
+    assert finalize_v4_3_run_publication(
+        output,
+        **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
+    ).manifest_sha256 == recovered.manifest_sha256
 
 
 def test_phase4_retry_after_prepublication_process_death_ignores_orphan_staging(
@@ -1198,6 +1318,192 @@ def test_phase4_failure_verifier_recomputes_semantics_and_unresolved_count(
             output,
             **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
         )
+
+
+def test_phase4_append_failure_cannot_be_relabelled_as_commit(
+    real_harness: _RealPrevalenceHarness,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    real_append = V43ExternalRankStore.append
+    calls = 0
+
+    def fail_second_append(
+        store: V43ExternalRankStore,
+        record: V43MinimalScoreRecordV1,
+    ) -> None:
+        nonlocal calls
+        if calls == 1:
+            raise OSError("injected append failure")
+        calls += 1
+        real_append(store, record)
+
+    monkeypatch.setattr(V43ExternalRankStore, "append", fail_second_append)
+    output = tmp_path / "relabelled-stage"
+    with pytest.raises(V43RunFailedError):
+        run_verified_v4_3_cache(
+            output_directory=output,
+            **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
+        )
+    monkeypatch.undo()
+    failure_path = output / "failure.json"
+    manifest_path = output / "manifest.json"
+    failure = json.loads(failure_path.read_bytes())
+    failure.update(
+        {
+            "stage": "score-store-commit",
+            "failure_code": "v4_3_score_store_commit_failure",
+            "error_type": "v4_3_score_store_commit_failure",
+            "error_message": "V4.3 cache run failed during score-store-commit.",
+        }
+    )
+    failure_path.write_bytes(canonical_json_bytes(failure))
+    manifest = json.loads(manifest_path.read_bytes())
+    manifest["failure_artifact"].update(
+        {
+            "sha256": sha256_file(failure_path),
+            "byte_count": failure_path.stat().st_size,
+            "logical_sha256": sha256_json(failure),
+        }
+    )
+    manifest_path.write_bytes(canonical_json_bytes(manifest))
+
+    with pytest.raises(V43RunError, match="stage evidence"):
+        verify_v4_3_run(
+            output,
+            **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
+        )
+
+
+def test_phase4_failure_verifier_rechecks_exact_bytes_after_replay(
+    real_harness: _RealPrevalenceHarness,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    import hdmatch.model.v4_3_run as run_module
+
+    real_append = V43ExternalRankStore.append
+    calls = 0
+
+    def fail_second_append(
+        store: V43ExternalRankStore,
+        record: V43MinimalScoreRecordV1,
+    ) -> None:
+        nonlocal calls
+        if calls == 1:
+            raise OSError("injected append failure")
+        calls += 1
+        real_append(store, record)
+
+    monkeypatch.setattr(V43ExternalRankStore, "append", fail_second_append)
+    output = tmp_path / "failure-swap-during-verify"
+    with pytest.raises(V43RunFailedError):
+        run_verified_v4_3_cache(
+            output_directory=output,
+            **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
+        )
+    monkeypatch.undo()
+    real_verify_partial = run_module._verify_failure_partial_scores
+
+    def verify_then_swap(*args: object, **kwargs: object) -> None:
+        real_verify_partial(*args, **kwargs)
+        failure_path = output / "failure.json"
+        payload = json.loads(failure_path.read_bytes())
+        payload["diagnostic_cause_message"] = "concurrent replacement"
+        failure_path.write_bytes(canonical_json_bytes(payload))
+
+    monkeypatch.setattr(
+        run_module,
+        "_verify_failure_partial_scores",
+        verify_then_swap,
+    )
+    with pytest.raises(V43RunError, match="changed during verification"):
+        verify_v4_3_run(
+            output,
+            **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
+        )
+
+
+def test_phase4_dirty_source_tree_fails_before_scoring(
+    real_harness: _RealPrevalenceHarness,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    marker = ROOT / ".phase4-untracked-source-provenance-test"
+    marker.write_text("untracked", encoding="utf-8")
+    monkeypatch.setattr(
+        CanonicalV43ScoringSession,
+        "stream_verified_universe",
+        lambda *args, **kwargs: pytest.fail("scoring began from a dirty tree"),
+    )
+    try:
+        with pytest.raises(V43RunError, match="clean committed source tree"):
+            run_verified_v4_3_cache(
+                output_directory=tmp_path / "dirty-tree-must-not-run",
+                **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
+            )
+    finally:
+        marker.unlink()
+
+
+@pytest.mark.parametrize(
+    "relative_path",
+    (
+        "src/hdmatch/model/v4_3/integration.py",
+        "src/hdmatch/model/v4_3/scoring.py",
+        "src/hdmatch/model/v4_3_prevalence.py",
+    ),
+)
+def test_phase4_runtime_provenance_rejects_modified_scoring_sources(
+    tmp_path: Path,
+    relative_path: str,
+) -> None:
+    import hdmatch.model.v4_3_run as run_module
+
+    repository = tmp_path / "runtime-source-repository"
+    tracked = {
+        "src/hdmatch/model/v4_3_run.py",
+        relative_path,
+        "pyproject.toml",
+        "requirements-dev.lock",
+    }
+    for relative in tracked:
+        destination = repository / relative
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        destination.write_bytes((ROOT / relative).read_bytes())
+    subprocess.run(
+        ["git", "init", "-b", "main"],
+        cwd=repository,
+        check=True,
+        capture_output=True,
+    )
+    subprocess.run(
+        ["git", "add", "."],
+        cwd=repository,
+        check=True,
+        capture_output=True,
+    )
+    subprocess.run(
+        [
+            "git",
+            "-c",
+            "user.name=HDMatch Test",
+            "-c",
+            "user.email=hdmatch-test@example.invalid",
+            "commit",
+            "-m",
+            "fixture",
+        ],
+        cwd=repository,
+        check=True,
+        capture_output=True,
+    )
+    clean = run_module._require_clean_runtime_source(repository)
+    assert clean.source_commit
+    with (repository / relative_path).open("ab") as handle:
+        handle.write(b"\n# adversarial source mutation\n")
+    with pytest.raises(V43RunError, match="clean committed source tree"):
+        run_module._require_clean_runtime_source(repository)
 
 
 def test_prevalence_cli_build_and_verify_use_only_verified_cache(

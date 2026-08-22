@@ -14,15 +14,17 @@ import hashlib
 import json
 import math
 import os
+import platform
 import shutil
 import sqlite3
+import subprocess
 import tempfile
 from collections.abc import Iterator
 from contextlib import suppress
 from dataclasses import asdict, dataclass
 from datetime import UTC, datetime, timedelta
 from enum import StrEnum
-from importlib import import_module
+from importlib import import_module, metadata
 from itertools import zip_longest
 from pathlib import Path
 from typing import Any, Final, Literal
@@ -59,16 +61,22 @@ from hdmatch.model.v4_3_responses import (
 )
 
 SHA256_PATTERN: Final[str] = r"^[a-f0-9]{64}$"
-V43_RUNNER_VERSION: Final[str] = "v4.3-cache-stream-run-v2"
+V43_RUNNER_VERSION: Final[str] = "v4.3-cache-stream-run-v3"
 SCORE_HASH_STRATEGY: Final[str] = "sha256-canonical-json-lines-input-order-v1"
 RANKED_HASH_STRATEGY: Final[str] = "sha256-canonical-json-lines-rank-order-v1"
 RANKED_FILENAME: Final[str] = "ranked-scores.parquet.zst"
 DETAIL_FILENAME: Final[str] = "bounded-detail.json"
 FAILURE_FILENAME: Final[str] = "failure.json"
+FAILURE_STAGE_EVIDENCE_FILENAME: Final[str] = "failure-stage-evidence.json"
 PARTIAL_SCORES_FILENAME: Final[str] = "partial-scores.jsonl"
 MANIFEST_FILENAME: Final[str] = "manifest.json"
 PARQUET_BATCH_ROWS: Final[int] = 1024
 MAX_DETAIL_ROWS: Final[int] = 10_000
+_RUNTIME_DEPENDENCY_DISTRIBUTIONS: Final[tuple[str, ...]] = (
+    "hdmatch",
+    "pyarrow",
+    "pydantic",
+)
 
 
 class V43RunError(RuntimeError):
@@ -137,8 +145,14 @@ class V43RunPublicationPendingError(V43RunError):
 class V43RunPublicationConflictError(V43RunError):
     """Another publisher claimed the destination before this run could."""
 
-    def __init__(self, run_directory: Path) -> None:
+    def __init__(
+        self,
+        run_directory: Path,
+        *,
+        preserved_staging_directory: Path | None = None,
+    ) -> None:
         self.run_directory = run_directory
+        self.preserved_staging_directory = preserved_staging_directory
         super().__init__(
             "V4.3 run destination was claimed concurrently and was not overwritten: "
             f"{run_directory}"
@@ -151,6 +165,17 @@ class V43ScoreStoreAppendError(V43RunError):
 
 class V43ScoreStoreCommitError(V43RunError):
     """SQLite could not durably commit the current score-row transaction."""
+
+
+class _V43FailurePackagePublicationError(RuntimeError):
+    """A complete failure package remains staged after publication failed."""
+
+    def __init__(self, staging_directory: Path, cause: Exception) -> None:
+        self.staging_directory = staging_directory
+        self.cause = cause
+        super().__init__(
+            f"failure package remains staged at {staging_directory}: {cause}"
+        )
 
 
 class _FrozenModel(BaseModel):
@@ -254,8 +279,78 @@ class V43RunArtifactV1(_FrozenModel):
     storage_format: str = Field(min_length=1)
 
 
+class V43RuntimeSourceFileV1(_FrozenModel):
+    path: str = Field(min_length=1)
+    sha256: str = Field(pattern=SHA256_PATTERN)
+
+
+class V43RuntimeSourceProvenanceV1(_FrozenModel):
+    """Clean committed source tree and executable runtime identity."""
+
+    schema_version: Literal["v4-3-runtime-source-provenance-v1"] = (
+        "v4-3-runtime-source-provenance-v1"
+    )
+    source_commit: str = Field(pattern=r"^[a-f0-9]{40}$")
+    source_tree_git_oid: str = Field(pattern=r"^[a-f0-9]{40,64}$")
+    source_files: tuple[V43RuntimeSourceFileV1, ...] = Field(min_length=1)
+    source_code_fingerprint_sha256: str = Field(pattern=SHA256_PATTERN)
+    python_version: str = Field(min_length=1)
+    python_implementation: str = Field(min_length=1)
+    sqlite_version: str = Field(min_length=1)
+    dependency_versions: dict[str, str] = Field(min_length=1)
+
+    @model_validator(mode="after")
+    def require_canonical_source_inventory(self) -> V43RuntimeSourceProvenanceV1:
+        paths = tuple(item.path for item in self.source_files)
+        if paths != tuple(sorted(set(paths))):
+            raise ValueError("runtime source-file inventory must be sorted and unique")
+        expected_fingerprint = sha256_json(
+            [item.model_dump(mode="json") for item in self.source_files]
+        )
+        if self.source_code_fingerprint_sha256 != expected_fingerprint:
+            raise ValueError("runtime source-code fingerprint differs from its files")
+        if tuple(self.dependency_versions) != tuple(
+            sorted(self.dependency_versions)
+        ):
+            raise ValueError("runtime dependency versions must be sorted")
+        return self
+
+
+class V43FailureStageEvidenceV1(_FrozenModel):
+    """Independent operation-state evidence for one failure-stage claim."""
+
+    schema_version: Literal["v4-3-failure-stage-evidence-v1"] = (
+        "v4-3-failure-stage-evidence-v1"
+    )
+    stage: V43FailureStage
+    attempted_input_ordinal: int | None = Field(default=None, ge=0)
+    attempted_record_is_in_partial_scores: bool
+    successfully_evaluated_count: int = Field(ge=0)
+    sqlite_inserted_count: int = Field(ge=0)
+    sqlite_persisted_count: int = Field(ge=0)
+    sqlite_commit_batch_rows: Literal[1024] = 1024
+    partial_score_records_sha256: str = Field(pattern=SHA256_PATTERN)
+
+    @model_validator(mode="after")
+    def require_reproducible_operation_frontier(
+        self,
+    ) -> V43FailureStageEvidenceV1:
+        expected_inserted = _expected_failure_inserted_count(
+            stage=self.stage,
+            evaluated_count=self.successfully_evaluated_count,
+            attempted_record_is_in_partial_scores=(
+                self.attempted_record_is_in_partial_scores
+            ),
+        )
+        if self.sqlite_inserted_count != expected_inserted:
+            raise ValueError("failure stage disagrees with the SQLite insert frontier")
+        if self.sqlite_persisted_count > self.sqlite_inserted_count:
+            raise ValueError("failure stage persisted beyond its SQLite insert frontier")
+        return self
+
+
 class V43RunFailureV1(_FrozenModel):
-    schema_version: Literal["v4-3-run-failure-v2"] = "v4-3-run-failure-v2"
+    schema_version: Literal["v4-3-run-failure-v3"] = "v4-3-run-failure-v3"
     stage: V43FailureStage
     failure_code: str = Field(min_length=1)
     error_type: str = Field(min_length=1)
@@ -272,6 +367,7 @@ class V43RunFailureV1(_FrozenModel):
     successfully_evaluated_count: int = Field(ge=0)
     persisted_scored_count: int = Field(ge=0)
     partial_score_records_sha256: str = Field(pattern=SHA256_PATTERN)
+    stage_evidence_sha256: str = Field(pattern=SHA256_PATTERN)
     score_hash_strategy: Literal[
         "sha256-canonical-json-lines-input-order-v1"
     ] = "sha256-canonical-json-lines-input-order-v1"
@@ -391,13 +487,14 @@ class V43RunBindingsV1(_FrozenModel):
 
 
 class V43RunManifestV1(_FrozenModel):
-    schema_version: Literal["v4-3-cache-run-manifest-v2"] = (
-        "v4-3-cache-run-manifest-v2"
+    schema_version: Literal["v4-3-cache-run-manifest-v3"] = (
+        "v4-3-cache-run-manifest-v3"
     )
-    runner_version: Literal["v4.3-cache-stream-run-v2"] = (
-        "v4.3-cache-stream-run-v2"
+    runner_version: Literal["v4.3-cache-stream-run-v3"] = (
+        "v4.3-cache-stream-run-v3"
     )
     runner_source_sha256: str = Field(pattern=SHA256_PATTERN)
+    runtime_source_provenance: V43RuntimeSourceProvenanceV1
     run_status: Literal["complete", "failed"]
     ranking_policy_version: Literal["v4.3-lexicographic-rank-v1"] = (
         "v4.3-lexicographic-rank-v1"
@@ -412,6 +509,7 @@ class V43RunManifestV1(_FrozenModel):
     ranked_artifact: V43RunArtifactV1 | None = None
     bounded_detail_artifact: V43RunArtifactV1 | None = None
     failure_artifact: V43RunArtifactV1 | None = None
+    failure_stage_evidence_artifact: V43RunArtifactV1 | None = None
     partial_score_artifact: V43RunArtifactV1 | None = None
     successfully_evaluated_count: int = Field(ge=0)
     persisted_scored_count: int = Field(ge=0)
@@ -432,12 +530,14 @@ class V43RunManifestV1(_FrozenModel):
                 self.ranked_artifact is None
                 or self.bounded_detail_artifact is None
                 or self.failure_artifact is not None
+                or self.failure_stage_evidence_artifact is not None
                 or self.partial_score_artifact is not None
                 or self.compliance is None
             ):
                 raise ValueError("complete run artifact inventory is inconsistent")
         elif (
             self.failure_artifact is None
+            or self.failure_stage_evidence_artifact is None
             or self.partial_score_artifact is None
             or self.ranked_artifact is not None
             or self.bounded_detail_artifact is not None
@@ -814,6 +914,7 @@ def run_verified_v4_3_cache(
         raise V43RunError(
             f"bounded detail limit must be between 1 and {MAX_DETAIL_ROWS}"
         )
+    runtime_source = _require_clean_runtime_source(Path(repository_root))
     library, responses, prevalence, session, plan_trust = _preflight(
         repository_root=repository_root,
         cache_directory=cache_directory,
@@ -943,6 +1044,7 @@ def run_verified_v4_3_cache(
         (staging / ".rank.sqlite3").unlink(missing_ok=True)
         manifest = V43RunManifestV1(
             runner_source_sha256=sha256_file(__file__),
+            runtime_source_provenance=runtime_source,
             run_status="complete",
             bindings=bindings,
             declared_interval_count=declared_count,
@@ -1011,7 +1113,7 @@ def run_verified_v4_3_cache(
             if isinstance(exc, V43ScoreStoreCommitError)
             else stage
         )
-        failure = _failure_from_exception(
+        failure, stage_evidence = _failure_from_exception(
             stage=actual_stage,
             exception=exc,
             current=current,
@@ -1028,15 +1130,17 @@ def run_verified_v4_3_cache(
                 journal=journal,
                 journal_directory=journal_directory,
                 failure=failure,
+                stage_evidence=stage_evidence,
+                runtime_source=runtime_source,
                 bindings=bindings,
                 declared_count=declared_count,
                 unresolved_mapping_ids=unresolved_ids,
             )
-        except Exception as publish_exc:
+        except _V43FailurePackagePublicationError as publish_exc:
             raise V43RunFailedError(
-                staging,
+                publish_exc.staging_directory,
                 failure,
-                publication_error=publish_exc,
+                publication_error=publish_exc.cause,
             ) from exc
         raise V43RunFailedError(
             published_failure,
@@ -1067,6 +1171,7 @@ def verify_v4_3_run(
     if directory.is_symlink() or not directory.is_dir():
         raise V43RunError("V4.3 run must be an existing regular directory")
     manifest = _load_manifest(directory / MANIFEST_FILENAME)
+    runtime_source = _require_clean_runtime_source(Path(repository_root))
     library, responses, prevalence, session, plan_trust = _preflight(
         repository_root=repository_root,
         cache_directory=cache_directory,
@@ -1091,6 +1196,7 @@ def verify_v4_3_run(
         prevalence=prevalence,
         session=session,
         plan_trust=plan_trust,
+        runtime_source=runtime_source,
     )
     return _verified_run(directory, manifest)
 
@@ -1135,6 +1241,60 @@ def finalize_v4_3_run_publication(
     except OSError as exc:
         raise V43RunPublicationPendingError(verified.run_directory, exc) from exc
     return verified
+
+
+def publish_verified_v4_3_run_staging(
+    staging_directory: str | Path,
+    output_directory: str | Path,
+    *,
+    repository_root: str | Path,
+    cache_directory: str | Path,
+    trust_lock_path: str | Path,
+    cache_build_plan_path: str | Path,
+    cache_plan_trust_lock_path: str | Path,
+    expected_cache_plan_trust_lock_sha256: str,
+    cache_plan_repository_root: str | Path,
+    mapping_library_path: str | Path,
+    mapping_source_library_path: str | Path,
+    prevalence_plan_path: str | Path,
+    prevalence_artifact_path: str | Path,
+    response_artifact_path: str | Path,
+) -> VerifiedV43Run:
+    """Verify and atomically publish a preserved complete staging package."""
+
+    staging = Path(staging_directory)
+    destination = Path(output_directory)
+    if staging.parent.resolve() != destination.parent.resolve():
+        raise V43RunError("V4.3 staging recovery requires sibling directories")
+    verified = verify_v4_3_run(
+        staging,
+        repository_root=repository_root,
+        cache_directory=cache_directory,
+        trust_lock_path=trust_lock_path,
+        cache_build_plan_path=cache_build_plan_path,
+        cache_plan_trust_lock_path=cache_plan_trust_lock_path,
+        expected_cache_plan_trust_lock_sha256=(
+            expected_cache_plan_trust_lock_sha256
+        ),
+        cache_plan_repository_root=cache_plan_repository_root,
+        mapping_library_path=mapping_library_path,
+        mapping_source_library_path=mapping_source_library_path,
+        prevalence_plan_path=prevalence_plan_path,
+        prevalence_artifact_path=prevalence_artifact_path,
+        response_artifact_path=response_artifact_path,
+    )
+    try:
+        _atomic_publish_directory_noreplace(staging, destination)
+    except FileExistsError as exc:
+        raise V43RunPublicationConflictError(
+            destination,
+            preserved_staging_directory=staging,
+        ) from exc
+    try:
+        _fsync_directory(destination.parent)
+    except OSError as exc:
+        raise V43RunPublicationPendingError(destination, exc) from exc
+    return _verified_run(destination, verified.manifest)
 
 
 def _finalize_existing_v4_3_run(
@@ -1489,11 +1649,16 @@ def _verify_v4_3_run_preverified(
     prevalence: VerifiedV43ConditionalPrevalence,
     session: CanonicalV43ScoringSession,
     plan_trust: VerifiedCenturyBuildPlanTrust,
+    runtime_source: V43RuntimeSourceProvenanceV1,
 ) -> None:
     manifest_path = directory / MANIFEST_FILENAME
     _require_exact_run_inventory(directory, manifest)
     if sha256_file(__file__) != manifest.runner_source_sha256:
         raise V43RunError("run was produced by different runner source bytes")
+    if manifest.runtime_source_provenance != runtime_source:
+        raise V43RunError(
+            "run source commit/tree/code/runtime differs from the clean current tree"
+        )
     if (
         _run_bindings(session.bindings, responses, prevalence, plan_trust)
         != manifest.bindings
@@ -1508,6 +1673,7 @@ def _verify_v4_3_run_preverified(
         raise V43RunError("run unresolved mapping inventory changed")
     if manifest.run_status == "failed":
         assert manifest.failure_artifact is not None
+        assert manifest.failure_stage_evidence_artifact is not None
         assert manifest.partial_score_artifact is not None
         _require_artifact_contract(
             manifest.failure_artifact,
@@ -1517,6 +1683,16 @@ def _verify_v4_3_run_preverified(
         )
         _verify_artifact_file(directory, manifest.failure_artifact)
         _require_artifact_contract(
+            manifest.failure_stage_evidence_artifact,
+            filename=FAILURE_STAGE_EVIDENCE_FILENAME,
+            logical_hash_strategy="sha256-canonical-json-v1",
+            storage_format="canonical-json-v1",
+        )
+        _verify_artifact_file(
+            directory,
+            manifest.failure_stage_evidence_artifact,
+        )
+        _require_artifact_contract(
             manifest.partial_score_artifact,
             filename=PARTIAL_SCORES_FILENAME,
             logical_hash_strategy=SCORE_HASH_STRATEGY,
@@ -1525,8 +1701,21 @@ def _verify_v4_3_run_preverified(
         _verify_artifact_file(directory, manifest.partial_score_artifact)
         if manifest.failure_artifact.row_count != 1:
             raise V43RunError("failure artifact row count must equal one")
+        if manifest.failure_stage_evidence_artifact.row_count != 1:
+            raise V43RunError("failure stage-evidence row count must equal one")
         failure_path = directory / manifest.failure_artifact.filename
         failure = _load_failure(failure_path)
+        failure_bytes = canonical_json_bytes(failure)
+        stage_evidence_path = (
+            directory / manifest.failure_stage_evidence_artifact.filename
+        )
+        stage_evidence = _load_failure_stage_evidence(
+            stage_evidence_path
+        )
+        stage_evidence_bytes = canonical_json_bytes(stage_evidence)
+        if failure.stage_evidence_sha256 != sha256_json(stage_evidence):
+            raise V43RunError("failure stage-evidence hash differs from failure")
+        _verify_failure_stage_evidence(failure, stage_evidence)
         if (
             failure.persisted_scored_count != manifest.persisted_scored_count
             or failure.successfully_evaluated_count
@@ -1552,6 +1741,21 @@ def _verify_v4_3_run_preverified(
             responses=responses,
             session=session,
         )
+        _verify_artifact_file(directory, manifest.failure_artifact)
+        _verify_artifact_file(
+            directory,
+            manifest.failure_stage_evidence_artifact,
+        )
+        _verify_artifact_file(directory, manifest.partial_score_artifact)
+        if failure_path.read_bytes() != failure_bytes:
+            raise V43RunError("failure artifact bytes changed during verification")
+        if stage_evidence_path.read_bytes() != stage_evidence_bytes:
+            raise V43RunError(
+                "failure stage-evidence bytes changed during verification"
+            )
+        _require_exact_run_inventory(directory, manifest)
+        if manifest_path.read_bytes() != canonical_json_bytes(manifest):
+            raise V43RunError("run manifest bytes changed after canonical load")
         return
     assert manifest.ranked_artifact is not None
     assert manifest.bounded_detail_artifact is not None
@@ -1676,7 +1880,12 @@ def _require_exact_run_inventory(
     expected = (
         {MANIFEST_FILENAME, RANKED_FILENAME, DETAIL_FILENAME}
         if manifest.run_status == "complete"
-        else {MANIFEST_FILENAME, FAILURE_FILENAME, PARTIAL_SCORES_FILENAME}
+        else {
+            MANIFEST_FILENAME,
+            FAILURE_FILENAME,
+            FAILURE_STAGE_EVIDENCE_FILENAME,
+            PARTIAL_SCORES_FILENAME,
+        }
     )
     observed: set[str] = set()
     for path in directory.iterdir():
@@ -1713,7 +1922,7 @@ def _failure_from_exception(
     current: V43MinimalScoreRecordV1 | None,
     journal: V43PartialScoreJournal | None,
     store: V43ExternalRankStore | None,
-) -> V43RunFailureV1:
+) -> tuple[V43RunFailureV1, V43FailureStageEvidenceV1]:
     evaluated_count = journal.count if journal is not None else 0
     persisted_count = store.persisted_count if store is not None else 0
     partial_sha256 = journal.sha256 if journal is not None else hashlib.sha256().hexdigest()
@@ -1738,8 +1947,17 @@ def _failure_from_exception(
         attempted_state_id = current.state_id
         attempted_record_sha256 = current.candidate_record_sha256
         attempted_is_partial = current.input_ordinal < evaluated_count
+    stage_evidence = V43FailureStageEvidenceV1(
+        stage=stage,
+        attempted_input_ordinal=attempted_ordinal,
+        attempted_record_is_in_partial_scores=attempted_is_partial,
+        successfully_evaluated_count=evaluated_count,
+        sqlite_inserted_count=store.count if store is not None else 0,
+        sqlite_persisted_count=persisted_count,
+        partial_score_records_sha256=partial_sha256,
+    )
     failure_code, message = _FAILURE_SEMANTICS[stage]
-    return V43RunFailureV1(
+    failure = V43RunFailureV1(
         stage=stage,
         failure_code=failure_code,
         error_type=failure_code,
@@ -1753,7 +1971,9 @@ def _failure_from_exception(
         successfully_evaluated_count=evaluated_count,
         persisted_scored_count=persisted_count,
         partial_score_records_sha256=partial_sha256,
+        stage_evidence_sha256=sha256_json(stage_evidence),
     )
+    return failure, stage_evidence
 
 
 def _verify_failure_partial_scores(
@@ -1806,16 +2026,36 @@ def _verify_failure_partial_scores(
             failure.attempted_input_ordinal is not None
             and not failure.attempted_record_is_in_partial_scores
         ):
-            expected = next(stream, sentinel)
-            if expected is sentinel:
-                raise V43RunError("failure attempted row is absent from the cache")
-            assert isinstance(expected, CanonicalV43CandidateEvaluation)
-            if (
-                expected.state_id != failure.attempted_state_id
-                or expected.candidate_record_sha256
-                != failure.attempted_candidate_record_sha256
-            ):
-                raise V43RunError("failure attempted row differs from cache replay")
+            if failure.stage is V43FailureStage.EVALUATION:
+                try:
+                    next(stream)
+                except V43UniverseStreamError as replayed:
+                    if (
+                        replayed.input_ordinal != failure.attempted_input_ordinal
+                        or replayed.state_id != failure.attempted_state_id
+                        or replayed.candidate_record_sha256
+                        != failure.attempted_candidate_record_sha256
+                        or replayed.cause_type != failure.diagnostic_cause_type
+                        or replayed.cause_message != failure.diagnostic_cause_message
+                    ):
+                        raise V43RunError(
+                            "evaluation failure identity differs from cache-only replay"
+                        ) from replayed
+                else:
+                    raise V43RunError(
+                        "recorded evaluation failure did not recur during replay"
+                    )
+            else:
+                expected = next(stream, sentinel)
+                if expected is sentinel:
+                    raise V43RunError("failure attempted row is absent from the cache")
+                assert isinstance(expected, CanonicalV43CandidateEvaluation)
+                if (
+                    expected.state_id != failure.attempted_state_id
+                    or expected.candidate_record_sha256
+                    != failure.attempted_candidate_record_sha256
+                ):
+                    raise V43RunError("failure attempted row differs from cache replay")
             attempted_verified = True
         elif failure.attempted_input_ordinal is None and (
             failure.successfully_evaluated_count == declared_count
@@ -1856,6 +2096,62 @@ def _expected_failure_persisted_count(failure: V43RunFailureV1) -> int:
     return evaluated
 
 
+def _expected_failure_inserted_count(
+    *,
+    stage: V43FailureStage,
+    evaluated_count: int,
+    attempted_record_is_in_partial_scores: bool,
+) -> int:
+    if stage is V43FailureStage.SCORE_STORE_OPEN:
+        return 0
+    if stage is V43FailureStage.PARTIAL_SCORE_JOURNAL:
+        return evaluated_count - int(attempted_record_is_in_partial_scores)
+    if stage is V43FailureStage.SCORE_STORE_APPEND:
+        return max(evaluated_count - 1, 0)
+    return evaluated_count
+
+
+def _verify_failure_stage_evidence(
+    failure: V43RunFailureV1,
+    evidence: V43FailureStageEvidenceV1,
+) -> None:
+    expected = {
+        "stage": (evidence.stage, failure.stage),
+        "attempted ordinal": (
+            evidence.attempted_input_ordinal,
+            failure.attempted_input_ordinal,
+        ),
+        "attempted partial status": (
+            evidence.attempted_record_is_in_partial_scores,
+            failure.attempted_record_is_in_partial_scores,
+        ),
+        "evaluated count": (
+            evidence.successfully_evaluated_count,
+            failure.successfully_evaluated_count,
+        ),
+        "persisted count": (
+            evidence.sqlite_persisted_count,
+            failure.persisted_scored_count,
+        ),
+        "partial-score hash": (
+            evidence.partial_score_records_sha256,
+            failure.partial_score_records_sha256,
+        ),
+    }
+    for label, (actual, required) in expected.items():
+        if actual != required:
+            raise V43RunError(f"failure {label} differs from stage evidence")
+    expected_inserted = _expected_failure_inserted_count(
+        stage=failure.stage,
+        evaluated_count=failure.successfully_evaluated_count,
+        attempted_record_is_in_partial_scores=(
+            failure.attempted_record_is_in_partial_scores
+        ),
+    )
+    if evidence.sqlite_inserted_count != expected_inserted:
+        raise V43RunError("failure stage cannot be derived from its operation frontier")
+
+
 def _iter_partial_score_records(path: Path) -> Iterator[V43MinimalScoreRecordV1]:
     try:
         with path.open("rb") as handle:
@@ -1883,6 +2179,8 @@ def _publish_failure_package(
     journal: V43PartialScoreJournal | None,
     journal_directory: Path | None,
     failure: V43RunFailureV1,
+    stage_evidence: V43FailureStageEvidenceV1,
+    runtime_source: V43RuntimeSourceProvenanceV1,
     bindings: V43RunBindingsV1,
     declared_count: int,
     unresolved_mapping_ids: tuple[str, ...],
@@ -1893,6 +2191,39 @@ def _publish_failure_package(
             dir=destination.parent,
         )
     )
+    try:
+        return _complete_and_publish_failure_package(
+            staging=staging,
+            destination=destination,
+            previous_staging=previous_staging,
+            journal=journal,
+            journal_directory=journal_directory,
+            failure=failure,
+            stage_evidence=stage_evidence,
+            runtime_source=runtime_source,
+            bindings=bindings,
+            declared_count=declared_count,
+            unresolved_mapping_ids=unresolved_mapping_ids,
+        )
+    except Exception as exc:
+        preserved = destination if destination.is_dir() and not staging.is_dir() else staging
+        raise _V43FailurePackagePublicationError(preserved, exc) from exc
+
+
+def _complete_and_publish_failure_package(
+    *,
+    staging: Path,
+    destination: Path,
+    previous_staging: Path,
+    journal: V43PartialScoreJournal | None,
+    journal_directory: Path | None,
+    failure: V43RunFailureV1,
+    stage_evidence: V43FailureStageEvidenceV1,
+    runtime_source: V43RuntimeSourceProvenanceV1,
+    bindings: V43RunBindingsV1,
+    declared_count: int,
+    unresolved_mapping_ids: tuple[str, ...],
+) -> tuple[Path, Exception | None]:
     partial_path = staging / PARTIAL_SCORES_FILENAME
     if journal is None:
         with partial_path.open("xb") as handle:
@@ -1908,8 +2239,19 @@ def _publish_failure_package(
         raise V43RunError("failure journal count changed during publication")
     if partial_artifact.logical_sha256 != failure.partial_score_records_sha256:
         raise V43RunError("failure journal hash changed during publication")
-    if previous_staging.is_dir():
-        shutil.rmtree(previous_staging)
+    stage_evidence_path = write_new_canonical_json(
+        staging / FAILURE_STAGE_EVIDENCE_FILENAME,
+        stage_evidence,
+    )
+    stage_evidence_artifact = V43RunArtifactV1(
+        filename=FAILURE_STAGE_EVIDENCE_FILENAME,
+        sha256=sha256_file(stage_evidence_path),
+        byte_count=stage_evidence_path.stat().st_size,
+        row_count=1,
+        logical_sha256=sha256_json(stage_evidence),
+        logical_hash_strategy="sha256-canonical-json-v1",
+        storage_format="canonical-json-v1",
+    )
     failure_path = write_new_canonical_json(staging / FAILURE_FILENAME, failure)
     failure_artifact = V43RunArtifactV1(
         filename=FAILURE_FILENAME,
@@ -1922,6 +2264,7 @@ def _publish_failure_package(
     )
     manifest = V43RunManifestV1(
         runner_source_sha256=sha256_file(__file__),
+        runtime_source_provenance=runtime_source,
         run_status="failed",
         bindings=bindings,
         declared_interval_count=declared_count,
@@ -1930,6 +2273,7 @@ def _publish_failure_package(
         persisted_scored_count=failure.persisted_scored_count,
         score_records_sha256=failure.partial_score_records_sha256,
         failure_artifact=failure_artifact,
+        failure_stage_evidence_artifact=stage_evidence_artifact,
         partial_score_artifact=partial_artifact,
         substantive_tie_group_count=0,
         tied_candidate_count=0,
@@ -1940,9 +2284,13 @@ def _publish_failure_package(
     )
     write_new_canonical_json(staging / MANIFEST_FILENAME, manifest)
     _verify_artifact_file(staging, failure_artifact)
+    _verify_artifact_file(staging, stage_evidence_artifact)
     _verify_artifact_file(staging, partial_artifact)
     _fsync_directory(staging)
     _atomic_publish_directory_noreplace(staging, destination)
+    if previous_staging.is_dir():
+        with suppress(OSError):
+            shutil.rmtree(previous_staging)
     try:
         _fsync_directory(destination.parent)
     except OSError as exc:
@@ -2203,6 +2551,27 @@ def _load_failure(path: Path) -> V43RunFailureV1:
         raise V43RunError(f"invalid V4.3 failure artifact: {path}") from exc
 
 
+def _load_failure_stage_evidence(path: Path) -> V43FailureStageEvidenceV1:
+    try:
+        if path.is_symlink() or not path.is_file():
+            raise V43RunError(
+                "V4.3 failure stage-evidence artifact must be a regular file"
+            )
+        raw = path.read_bytes()
+        payload = json.loads(raw)
+        if canonical_json_bytes(payload) != raw:
+            raise V43RunError(
+                "V4.3 failure stage-evidence artifact is not canonical JSON"
+            )
+        return V43FailureStageEvidenceV1.model_validate_json(raw, strict=True)
+    except (OSError, json.JSONDecodeError, ValueError) as exc:
+        if isinstance(exc, V43RunError):
+            raise
+        raise V43RunError(
+            f"invalid V4.3 failure stage-evidence artifact: {path}"
+        ) from exc
+
+
 def _verified_run(directory: Path, manifest: V43RunManifestV1) -> VerifiedV43Run:
     manifest_path = directory / MANIFEST_FILENAME
     return VerifiedV43Run(
@@ -2246,6 +2615,101 @@ def _parse_utc_text(value: object) -> datetime:
     if parsed.utcoffset() != timedelta(0):
         raise V43RunError("ranked timestamp is not UTC")
     return parsed.astimezone(UTC)
+
+
+def _require_clean_runtime_source(
+    repository_root: Path,
+) -> V43RuntimeSourceProvenanceV1:
+    """Bind claim-grade execution to one exact clean committed runtime tree."""
+
+    root = repository_root.resolve()
+    try:
+        commit = _git_stdout(root, "rev-parse", "HEAD").strip()
+        tree_oid = _git_stdout(root, "rev-parse", "HEAD^{tree}").strip()
+        dirty = _git_stdout(
+            root,
+            "status",
+            "--porcelain=v1",
+            "--untracked-files=all",
+        )
+        tracked_raw = subprocess.run(
+            [
+                "git",
+                "ls-files",
+                "-z",
+                "--",
+                "src/hdmatch",
+                "pyproject.toml",
+                "requirements-dev.lock",
+            ],
+            cwd=root,
+            check=True,
+            capture_output=True,
+        ).stdout
+    except (OSError, subprocess.CalledProcessError) as exc:
+        raise V43RunError(
+            "claim-grade V4.3 run cannot identify its committed source tree"
+        ) from exc
+    if dirty:
+        raise V43RunError(
+            "claim-grade V4.3 run requires a clean committed source tree"
+        )
+    try:
+        tracked_paths = tuple(
+            sorted(
+                item.decode("utf-8")
+                for item in tracked_raw.split(b"\0")
+                if item
+            )
+        )
+    except UnicodeDecodeError as exc:
+        raise V43RunError("runtime source path is not valid UTF-8") from exc
+    if not tracked_paths or "src/hdmatch/model/v4_3_run.py" not in tracked_paths:
+        raise V43RunError("tracked runtime source inventory is incomplete")
+    source_files: list[V43RuntimeSourceFileV1] = []
+    for relative in tracked_paths:
+        path = root / relative
+        if path.is_symlink() or not path.is_file():
+            raise V43RunError(f"tracked runtime source is not a regular file: {relative}")
+        source_files.append(
+            V43RuntimeSourceFileV1(path=relative, sha256=sha256_file(path))
+        )
+    versions: dict[str, str] = {}
+    for distribution in _RUNTIME_DEPENDENCY_DISTRIBUTIONS:
+        try:
+            versions[distribution] = metadata.version(distribution)
+        except metadata.PackageNotFoundError as exc:
+            raise V43RunError(
+                f"claim-grade runtime dependency is unavailable: {distribution}"
+            ) from exc
+    inventory = tuple(source_files)
+    return V43RuntimeSourceProvenanceV1(
+        source_commit=commit,
+        source_tree_git_oid=tree_oid,
+        source_files=inventory,
+        source_code_fingerprint_sha256=sha256_json(
+            [item.model_dump(mode="json") for item in inventory]
+        ),
+        python_version=platform.python_version(),
+        python_implementation=platform.python_implementation(),
+        sqlite_version=sqlite3.sqlite_version,
+        dependency_versions=dict(sorted(versions.items())),
+    )
+
+
+def _git_stdout(repository_root: Path, *arguments: str) -> str:
+    try:
+        return subprocess.run(
+            ["git", *arguments],
+            cwd=repository_root,
+            check=True,
+            capture_output=True,
+            text=True,
+        ).stdout
+    except (OSError, subprocess.CalledProcessError) as exc:
+        raise V43RunError(
+            f"Git source-provenance command failed: {' '.join(arguments)}"
+        ) from exc
 
 
 def _fsync_directory(directory: Path) -> None:
