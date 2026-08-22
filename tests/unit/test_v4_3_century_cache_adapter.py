@@ -11,17 +11,16 @@ from hdmatch.century_cache import (
     CACHEABLE_M0_M2_FEATURE_COLUMNS,
     CACHEABLE_M0_M2_FEATURE_COLUMNS_SHA256,
     CACHEABLE_M0_M2_SEMANTIC_REGISTRY_SHA256,
-    CenturyCacheBuildError,
-    CenturyCacheBuildSpec,
-    CenturyCacheEngineProvenance,
-    CenturyCacheShardInput,
     cacheable_chart_state_to_century_record,
     feature_registry_sha256,
-    iter_verified_century_cache_rows,
-    write_century_cache_explicit,
+)
+from hdmatch.century_cache.parquet import (
+    CenturyCacheParquetError,
+    read_parquet_shard,
+    validate_row_features,
+    write_parquet_shard_new,
 )
 from hdmatch.chart.boundaries import (
-    BOUNDARY_POLICY_VERSION,
     build_production_chart_state_intervals,
     canonical_boundary_event_string,
 )
@@ -34,7 +33,6 @@ from hdmatch.chart.feature_registry import (
     compile_required_feature_registry,
     serialize_cacheable_chart_state,
 )
-from hdmatch.chart.rave_mandala import RAVE_MANDALA_VERSION
 from hdmatch.experiments.canonical import canonical_json_bytes
 from hdmatch.provenance.swisseph_files import (
     PINNED_UPSTREAM_COMMIT,
@@ -146,60 +144,6 @@ def _sha256_file(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def _build_spec(
-    *,
-    row_start: datetime,
-    row_end: datetime,
-    provider: SwissEphemerisProvider,
-    ephemeris: VerifiedEphemerisProvenance,
-    chart_engine_version: str,
-    mandala_sha256: str,
-    bodygraph_sha256: str,
-    design_time_tolerance_seconds: float,
-    design_arc_tolerance_degrees: float,
-) -> CenturyCacheBuildSpec:
-    metadata = provider.metadata
-    assert metadata.requested_flags is not None
-    assert metadata.ephemeris_mask is not None
-    return CenturyCacheBuildSpec(
-        feature_vector_schema_version="chart-feature-vector-v2",
-        utc_start=row_start,
-        utc_end_exclusive=row_end,
-        feature_registry=CACHEABLE_M0_M2_FEATURE_COLUMNS,
-        semantic_feature_registry_sha256=(CACHEABLE_M0_M2_SEMANTIC_REGISTRY_SHA256),
-        feature_registry_sha256=CACHEABLE_M0_M2_FEATURE_COLUMNS_SHA256,
-        required_feature_coverage=1.0,
-        calculation_tier="M2",
-        exact_intervals=True,
-        engine=CenturyCacheEngineProvenance(
-            provider="swiss_ephemeris_local_files",
-            chart_engine_version=chart_engine_version,
-            swiss_library_version=metadata.library_version,
-            engine_validation_sha256="1" * 64,
-            ephemeris_provenance=ephemeris,
-            ephemeris_requested="SWIEPH",
-            ephemeris_returned="SWIEPH",
-            requested_flags=metadata.requested_flags,
-            returned_flags_observed=(metadata.requested_flags,),
-            ephemeris_mask=metadata.ephemeris_mask,
-            swieph_flag=2,
-        ),
-        node_convention="true",
-        mandala_mapping_version=RAVE_MANDALA_VERSION,
-        mandala_mapping_sha256=mandala_sha256,
-        bodygraph_mapping_sha256=bodygraph_sha256,
-        boundary_policy_version=BOUNDARY_POLICY_VERSION,
-        design_root_time_tolerance_seconds=design_time_tolerance_seconds,
-        design_root_arc_tolerance_degrees=design_arc_tolerance_degrees,
-        parity_status="pass",
-        parity_report_sha256="2" * 64,
-        boundary_audit_status="pass",
-        boundary_audit_report_sha256="3" * 64,
-        generation_commit="4" * 40,
-        created_at_utc=datetime(2026, 8, 22, tzinfo=UTC),
-    )
-
-
 def test_exact_m2_state_round_trips_through_zstd_parquet(tmp_path: Path) -> None:
     provider, verified_ephemeris = _verified_fixture(tmp_path)
     start = datetime(2000, 1, 1, 12, tzinfo=UTC)
@@ -248,30 +192,13 @@ def test_exact_m2_state_round_trips_through_zstd_parquet(tmp_path: Path) -> None
         "side": source_event.side,
     }
 
-    spec = _build_spec(
-        row_start=row.utc_start,
-        row_end=row.utc_end,
-        provider=provider,
-        ephemeris=verified_ephemeris,
-        chart_engine_version=provenance.chart_engine_version,
-        mandala_sha256=provenance.mandala_mapping_sha256,
-        bodygraph_sha256=provenance.bodygraph_mapping_sha256,
-        design_time_tolerance_seconds=provenance.design_time_tolerance_seconds,
-        design_arc_tolerance_degrees=provenance.design_arc_tolerance_degrees,
-    )
-    verified = write_century_cache_explicit(
-        tmp_path / "cache",
-        spec=spec,
-        shards=(
-            CenturyCacheShardInput(
-                filename="states-fixture.parquet.zst",
-                rows=(row,),
-            ),
-        ),
-        build_mode="explicit_rebuild",
+    shard = write_parquet_shard_new(
+        tmp_path / "states-fixture.parquet.zst",
+        (row,),
+        CACHEABLE_M0_M2_FEATURE_COLUMNS,
     )
 
-    assert tuple(iter_verified_century_cache_rows(verified)) == (row,)
+    assert read_parquet_shard(shard, CACHEABLE_M0_M2_FEATURE_COLUMNS) == (row,)
 
 
 def test_adapter_emits_every_physical_feature_without_unknown_boolean_coercion(
@@ -330,33 +257,11 @@ def test_missing_physical_or_conditional_capability_fails_closed(tmp_path: Path)
     missing_payload = complete.model_dump(mode="python")
     missing_payload["feature_values"] = tuple(complete.feature_values[:-1])
     missing_row = type(complete).model_validate(missing_payload, strict=True)
-    provenance = cacheable.chart_features.provenance
-    spec = _build_spec(
-        row_start=complete.utc_start,
-        row_end=complete.utc_end,
-        provider=provider,
-        ephemeris=verified_ephemeris,
-        chart_engine_version=provenance.chart_engine_version,
-        mandala_sha256=provenance.mandala_mapping_sha256,
-        bodygraph_sha256=provenance.bodygraph_mapping_sha256,
-        design_time_tolerance_seconds=provenance.design_time_tolerance_seconds,
-        design_arc_tolerance_degrees=provenance.design_arc_tolerance_degrees,
-    )
     with pytest.raises(
-        CenturyCacheBuildError,
+        CenturyCacheParquetError,
         match="missing=.*incarnation_cross.cardinal_components",
     ):
-        write_century_cache_explicit(
-            tmp_path / "missing-cache",
-            spec=spec,
-            shards=(
-                CenturyCacheShardInput(
-                    filename="states-fixture.parquet.zst",
-                    rows=(missing_row,),
-                ),
-            ),
-            build_mode="explicit_rebuild",
-        )
+        validate_row_features(missing_row, CACHEABLE_M0_M2_FEATURE_COLUMNS)
 
 
 def test_m2_serialization_rejects_mean_node_provider_before_vector_creation(

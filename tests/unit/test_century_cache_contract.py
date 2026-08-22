@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+from dataclasses import replace
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from typing import Any, cast
@@ -12,6 +13,7 @@ from hdmatch.century_cache import (
     CenturyCacheBuildError,
     CenturyCacheBuildSpec,
     CenturyCacheEngineProvenance,
+    CenturyCacheEvidenceInputs,
     CenturyCacheExpectations,
     CenturyCacheRecoveryError,
     CenturyCacheShardInput,
@@ -26,10 +28,16 @@ from hdmatch.century_cache import (
     iter_verified_century_cache_rows,
     open_century_cache_for_recovery,
     required_feature_ids_sha256,
+    validate_engine_validation_evidence,
     verify_century_cache,
     write_century_cache_explicit,
 )
-from hdmatch.experiments.canonical import canonical_json_bytes, sha256_file, sha256_json
+from hdmatch.experiments.canonical import (
+    canonical_json_bytes,
+    sha256_bytes,
+    sha256_file,
+    sha256_json,
+)
 from hdmatch.provenance.swisseph_files import (
     PINNED_UPSTREAM_COMMIT,
     PINNED_UPSTREAM_REPOSITORY,
@@ -38,8 +46,34 @@ from hdmatch.provenance.swisseph_files import (
 )
 
 _HASH = "a" * 64
+_ROOT = Path(__file__).resolve().parents[2]
 _START = datetime(2000, 1, 1, tzinfo=UTC)
 _END = _START + timedelta(hours=2)
+_EPHEMERIS_BYTES = {
+    "sepl_18.se1": b"fixture planetary ephemeris",
+    "semo_18.se1": b"fixture lunar ephemeris",
+}
+
+
+def _source_manifest_payload(
+    *, upstream_commit: str = PINNED_UPSTREAM_COMMIT
+) -> dict[str, object]:
+    return {
+        "schema_version": "ephemeris-file-manifest-v1",
+        "provider": "Swiss Ephemeris",
+        "upstream_repository": PINNED_UPSTREAM_REPOSITORY,
+        "upstream_commit": upstream_commit,
+        "files": [
+            {
+                "name": name,
+                "bytes": len(payload),
+                "sha256": sha256_bytes(payload),
+            }
+            for name, payload in _EPHEMERIS_BYTES.items()
+        ],
+        "tested_range": "fixture-only",
+        "license": "fixture-only",
+    }
 
 
 def _registry() -> tuple[FeatureColumnSpec, ...]:
@@ -66,13 +100,21 @@ def _registry() -> tuple[FeatureColumnSpec, ...]:
 
 def _ephemeris_provenance() -> VerifiedEphemerisProvenance:
     files = (
-        VerifiedEphemerisFile(name="sepl_18.se1", bytes=484061, sha256="1" * 64),
-        VerifiedEphemerisFile(name="semo_18.se1", bytes=1304771, sha256="2" * 64),
+        VerifiedEphemerisFile(
+            name="sepl_18.se1",
+            bytes=len(_EPHEMERIS_BYTES["sepl_18.se1"]),
+            sha256=sha256_bytes(_EPHEMERIS_BYTES["sepl_18.se1"]),
+        ),
+        VerifiedEphemerisFile(
+            name="semo_18.se1",
+            bytes=len(_EPHEMERIS_BYTES["semo_18.se1"]),
+            sha256=sha256_bytes(_EPHEMERIS_BYTES["semo_18.se1"]),
+        ),
     )
     return VerifiedEphemerisProvenance(
         source_repository=PINNED_UPSTREAM_REPOSITORY,
         source_commit=PINNED_UPSTREAM_COMMIT,
-        source_manifest_sha256="3" * 64,
+        source_manifest_sha256=sha256_json(_source_manifest_payload()),
         files=files,
         ephemeris_file_set_sha256=sha256_json(
             [item.model_dump(mode="json") for item in files]
@@ -80,12 +122,81 @@ def _ephemeris_provenance() -> VerifiedEphemerisProvenance:
     )
 
 
+def _engine_receipt_payload() -> dict[str, object]:
+    provenance = _ephemeris_provenance()
+    files_by_name = {item.name: item for item in provenance.files}
+    probes = []
+    for body, filename in (("sun", "sepl_18.se1"), ("moon", "semo_18.se1")):
+        probes.append(
+            {
+                "at_utc": _START,
+                "body": body,
+                "longitude": 0.0,
+                "speed_degrees_per_day": 1.0,
+                "gate": 41,
+                "line": 1,
+                "requested_mode": "SWIEPH",
+                "returned_mode": "SWIEPH",
+                "requested_flags": 258,
+                "returned_flags": 258,
+                "ephemeris_mask": 7,
+                "used_file_name": filename,
+                "used_file_sha256": files_by_name[filename].sha256,
+            }
+        )
+    return {
+        "schema_version": "production-engine-validation-receipt-v1",
+        "validation_status": "pass",
+        "software_commit": "e" * 40,
+        "software_dirty": False,
+        "software_environment": {"python_version": "fixture"},
+        "ephemeris_mode_argument": "SWIEPH",
+        "ephemeris_provenance": provenance.model_dump(mode="json"),
+        "engine_validation": {
+            "schema_version": "production-engine-validation-v1",
+            "validation_status": "pass",
+            "provider": "swiss_ephemeris_local_files",
+            "library_version": "2.10.03",
+            "ephemeris_requested": "SWIEPH",
+            "ephemeris_returned": "SWIEPH",
+            "requested_flags": 258,
+            "ephemeris_mask": 7,
+            "files": [
+                {
+                    "name": item.name,
+                    "sha256": item.sha256,
+                    "size_bytes": item.bytes,
+                }
+                for item in reversed(provenance.files)
+            ],
+            "calculation_probes": probes,
+            "design_root_probes": [
+                {
+                    "personality_utc": _START,
+                    "design_utc": _START - timedelta(days=88),
+                    "target_arc_degrees": 88.0,
+                    "solved_arc_degrees": 88.0,
+                    "residual_degrees": 0.0,
+                    "time_tolerance_seconds": 0.01,
+                    "arc_tolerance_degrees": 1e-8,
+                }
+            ],
+            "gate_line_deterministic": True,
+            "design_root_converged": True,
+            "node_convention": "true",
+        },
+        "claim_boundary": (
+            "astronomy-engine-phase-0-only-not-a-v4-3-cache-or-behavioral-result"
+        ),
+    }
+
+
 def _engine() -> CenturyCacheEngineProvenance:
     return CenturyCacheEngineProvenance(
         provider="swiss_ephemeris_local_files",
         chart_engine_version="chart-engine-v4.3-test",
         swiss_library_version="2.10.03",
-        engine_validation_sha256="4" * 64,
+        engine_validation_sha256=sha256_json(_engine_receipt_payload()),
         ephemeris_provenance=_ephemeris_provenance(),
         ephemeris_requested="SWIEPH",
         ephemeris_returned="SWIEPH",
@@ -94,6 +205,52 @@ def _engine() -> CenturyCacheEngineProvenance:
         ephemeris_mask=7,
         swieph_flag=2,
     )
+
+
+def _parity_report_payload() -> dict[str, object]:
+    return {
+        "schema_version": "century-cache-parity-report-v1",
+        "validation_status": "pass",
+        "engine_validation_sha256": _engine().engine_validation_sha256,
+        "ephemeris_file_set_sha256": _ephemeris_provenance().ephemeris_file_set_sha256,
+        "feature_vector_schema_version": "v4.3-m2-fixture-v1",
+        "utc_start": _START,
+        "utc_end_exclusive": _END,
+        "reference_source_locator": (
+            "tests/golden/fixtures/swieph_phase0_golden_v1.json"
+        ),
+        "reference_source_sha256": sha256_file(
+            _ROOT / "tests/golden/fixtures/swieph_phase0_golden_v1.json"
+        ),
+        "comparison_count": 2,
+        "mismatch_count": 0,
+        "tolerance_degrees": 1e-8,
+        "max_abs_longitude_error_degrees": 0.0,
+    }
+
+
+def _boundary_audit_payload() -> dict[str, object]:
+    return {
+        "schema_version": "century-cache-boundary-audit-report-v1",
+        "validation_status": "pass",
+        "engine_validation_sha256": _engine().engine_validation_sha256,
+        "logical_universe_sha256": canonical_rows_sha256((_row(0), _row(1))),
+        "semantic_feature_registry_sha256": "d" * 64,
+        "feature_registry_sha256": feature_registry_sha256(_registry()),
+        "mandala_mapping_sha256": "5" * 64,
+        "bodygraph_mapping_sha256": "b" * 64,
+        "boundary_policy_version": "exact-boundaries-v4.3-test",
+        "design_root_time_tolerance_seconds": 0.01,
+        "design_root_arc_tolerance_degrees": 1e-8,
+        "utc_start": _START,
+        "utc_end_exclusive": _END,
+        "interval_count": 2,
+        "audited_boundary_event_count": 2,
+        "missing_boundary_count": 0,
+        "gap_count": 0,
+        "overlap_count": 0,
+        "maximality_violation_count": 0,
+    }
 
 
 def _spec() -> CenturyCacheBuildSpec:
@@ -117,9 +274,15 @@ def _spec() -> CenturyCacheBuildSpec:
         design_root_time_tolerance_seconds=0.01,
         design_root_arc_tolerance_degrees=1e-8,
         parity_status="pass",
-        parity_report_sha256="6" * 64,
+        parity_report_sha256=sha256_json(_parity_report_payload()),
+        parity_reference_source_locator=(
+            "tests/golden/fixtures/swieph_phase0_golden_v1.json"
+        ),
+        parity_reference_source_sha256=sha256_file(
+            _ROOT / "tests/golden/fixtures/swieph_phase0_golden_v1.json"
+        ),
         boundary_audit_status="pass",
-        boundary_audit_report_sha256="7" * 64,
+        boundary_audit_report_sha256=sha256_json(_boundary_audit_payload()),
         generation_commit="8" * 40,
         created_at_utc=datetime(2026, 8, 22, tzinfo=UTC),
     )
@@ -138,7 +301,8 @@ def _activation(gate: int) -> dict[str, object]:
 
 
 def _row(index: int, *, include_contextual: bool = True) -> CenturyStateRecord:
-    spec = _spec()
+    engine = _engine()
+    registry_sha256 = feature_registry_sha256(_registry())
     start = _START + timedelta(hours=index)
     values = [
         FeatureValue(feature_id="activation.design", value=[_activation(index + 1)]),
@@ -155,17 +319,15 @@ def _row(index: int, *, include_contextual: bool = True) -> CenturyStateRecord:
         representative_utc=start + timedelta(minutes=30),
         design_timestamp=start - timedelta(days=88),
         chart_features_sha256=("c" * 63) + str(index),
-        feature_vector_schema_version=spec.feature_vector_schema_version,
-        semantic_feature_registry_sha256=spec.semantic_feature_registry_sha256,
-        feature_registry_sha256=spec.feature_registry_sha256,
-        astronomy_engine_version=spec.engine.chart_engine_version,
-        ephemeris_file_set_sha256=(
-            spec.engine.ephemeris_provenance.ephemeris_file_set_sha256
-        ),
+        feature_vector_schema_version="v4.3-m2-fixture-v1",
+        semantic_feature_registry_sha256="d" * 64,
+        feature_registry_sha256=registry_sha256,
+        astronomy_engine_version=engine.chart_engine_version,
+        ephemeris_file_set_sha256=engine.ephemeris_provenance.ephemeris_file_set_sha256,
         node_convention="true",
-        mandala_mapping_version=spec.mandala_mapping_version,
-        mandala_mapping_sha256=spec.mandala_mapping_sha256,
-        bodygraph_mapping_sha256=spec.bodygraph_mapping_sha256,
+        mandala_mapping_version="rave-mandala-v1",
+        mandala_mapping_sha256="5" * 64,
+        bodygraph_mapping_sha256="b" * 64,
         boundary_events=(f"boundary.event.{index}",),
         feature_values=tuple(values),
     )
@@ -195,11 +357,56 @@ def _expectations(*, required: tuple[str, ...] | None = None) -> CenturyCacheExp
         design_root_time_tolerance_seconds=spec.design_root_time_tolerance_seconds,
         design_root_arc_tolerance_degrees=spec.design_root_arc_tolerance_degrees,
         parity_report_sha256=spec.parity_report_sha256,
+        parity_reference_source_locator=spec.parity_reference_source_locator,
+        parity_reference_source_sha256=spec.parity_reference_source_sha256,
         boundary_audit_report_sha256=spec.boundary_audit_report_sha256,
     )
 
 
-def _write_fixture(directory: Path, *, one_shard: bool = False) -> Any:
+def _evidence_inputs(
+    directory: Path,
+    *,
+    engine_payload: dict[str, object] | None = None,
+    parity_payload: dict[str, object] | None = None,
+    boundary_payload: dict[str, object] | None = None,
+    source_manifest_payload: dict[str, object] | None = None,
+) -> CenturyCacheEvidenceInputs:
+    directory.mkdir(parents=True)
+    ephemeris = directory / "ephemeris"
+    ephemeris.mkdir()
+    for name, payload in _EPHEMERIS_BYTES.items():
+        (ephemeris / name).write_bytes(payload)
+    source_manifest = directory / "ephemeris-source-manifest.json"
+    source_manifest.write_bytes(
+        canonical_json_bytes(source_manifest_payload or _source_manifest_payload())
+    )
+    engine_path = directory / "engine-validation.json"
+    parity_path = directory / "parity-report.json"
+    boundary_path = directory / "boundary-audit-report.json"
+    engine_path.write_bytes(canonical_json_bytes(engine_payload or _engine_receipt_payload()))
+    parity_path.write_bytes(canonical_json_bytes(parity_payload or _parity_report_payload()))
+    boundary_path.write_bytes(
+        canonical_json_bytes(boundary_payload or _boundary_audit_payload())
+    )
+    return CenturyCacheEvidenceInputs(
+        engine_validation_path=engine_path,
+        parity_report_path=parity_path,
+        boundary_audit_report_path=boundary_path,
+        parity_reference_source_path=(
+            _ROOT / "tests/golden/fixtures/swieph_phase0_golden_v1.json"
+        ),
+        ephemeris_source_manifest_path=source_manifest,
+        ephemeris_directory=ephemeris,
+    )
+
+
+def _write_fixture(
+    directory: Path,
+    *,
+    one_shard: bool = False,
+    spec: CenturyCacheBuildSpec | None = None,
+    evidence: CenturyCacheEvidenceInputs | None = None,
+) -> Any:
     rows = (_row(0), _row(1))
     shards = (
         (
@@ -222,8 +429,9 @@ def _write_fixture(directory: Path, *, one_shard: bool = False) -> Any:
     )
     return write_century_cache_explicit(
         directory,
-        spec=_spec(),
+        spec=spec or _spec(),
         shards=shards,
+        evidence=evidence or _evidence_inputs(directory.parent / f"{directory.name}-inputs"),
         build_mode="explicit_rebuild",
     )
 
@@ -302,6 +510,7 @@ def test_missing_nullable_feature_is_not_silently_false(tmp_path: Path) -> None:
                     rows=(missing, complete),
                 ),
             ),
+            evidence=_evidence_inputs(tmp_path / "missing-inputs"),
             build_mode="explicit_rebuild",
         )
 
@@ -338,8 +547,256 @@ def test_fixed_interval_metadata_is_validated_before_write(tmp_path: Path) -> No
                     rows=(mismatched, _row(1)),
                 ),
             ),
+            evidence=_evidence_inputs(tmp_path / "bodygraph-mismatch-inputs"),
             build_mode="explicit_rebuild",
         )
+
+
+def test_adjacent_identical_states_split_across_shards_are_rejected(
+    tmp_path: Path,
+) -> None:
+    first = _row(0)
+    second_payload = _row(1).model_dump(mode="python")
+    second_payload["feature_values"] = first.feature_values
+    # A substituted declared hash or different boundary label must not hide that
+    # the two rows have identical discrete chart content and should be merged.
+    second = CenturyStateRecord.model_validate(second_payload, strict=True)
+
+    with pytest.raises(CenturyCacheBuildError, match="not maximal"):
+        write_century_cache_explicit(
+            tmp_path / "non-maximal",
+            spec=_spec(),
+            shards=(
+                CenturyCacheShardInput(
+                    filename="states-0000.parquet.zst",
+                    rows=(first,),
+                ),
+                CenturyCacheShardInput(
+                    filename="states-0001.parquet.zst",
+                    rows=(second,),
+                ),
+            ),
+            evidence=_evidence_inputs(tmp_path / "non-maximal-inputs"),
+            build_mode="explicit_rebuild",
+        )
+
+
+def test_writer_rehashes_actual_ephemeris_and_rejects_fabricated_provenance(
+    tmp_path: Path,
+) -> None:
+    actual = _ephemeris_provenance()
+    fabricated = actual.model_copy(update={"source_manifest_sha256": "f" * 64})
+    spec = _spec()
+    engine = spec.engine.model_copy(update={"ephemeris_provenance": fabricated})
+    fabricated_spec = spec.model_copy(update={"engine": engine})
+
+    with pytest.raises(CenturyCacheBuildError, match="actual Swiss Ephemeris"):
+        _write_fixture(
+            tmp_path / "fabricated",
+            spec=fabricated_spec,
+            evidence=_evidence_inputs(tmp_path / "fabricated-inputs"),
+        )
+
+
+def test_repository_phase0_engine_receipt_is_semantically_valid() -> None:
+    path = _ROOT / "reports/v4_3_migration/phase0_engine_validation.json"
+    payload = json.loads(path.read_bytes())
+    validation = cast(dict[str, Any], payload["engine_validation"])
+    provenance = VerifiedEphemerisProvenance.model_validate_json(
+        canonical_json_bytes(payload["ephemeris_provenance"]), strict=True
+    )
+    engine = CenturyCacheEngineProvenance(
+        provider="swiss_ephemeris_local_files",
+        chart_engine_version="phase0-exact-chart-adapter",
+        swiss_library_version=cast(str, validation["library_version"]),
+        engine_validation_sha256=sha256_file(path),
+        ephemeris_provenance=provenance,
+        ephemeris_requested="SWIEPH",
+        ephemeris_returned="SWIEPH",
+        requested_flags=cast(int, validation["requested_flags"]),
+        returned_flags_observed=tuple(
+            sorted(
+                {
+                    cast(int, probe["returned_flags"])
+                    for probe in cast(list[dict[str, Any]], validation["calculation_probes"])
+                }
+            )
+        ),
+        ephemeris_mask=cast(int, validation["ephemeris_mask"]),
+        swieph_flag=2,
+    )
+    first_root = cast(list[dict[str, Any]], validation["design_root_probes"])[0]
+    spec = _spec().model_copy(
+        update={
+            "engine": engine,
+            "design_root_time_tolerance_seconds": first_root[
+                "time_tolerance_seconds"
+            ],
+            "design_root_arc_tolerance_degrees": first_root[
+                "arc_tolerance_degrees"
+            ],
+        }
+    )
+
+    receipt = validate_engine_validation_evidence(path, spec=spec)
+
+    assert receipt.validation_status == "pass"
+    assert receipt.ephemeris_provenance == provenance
+    assert len(receipt.engine_validation.calculation_probes) == 33
+    assert len(receipt.engine_validation.design_root_probes) == 3
+
+
+def test_writer_rejects_noncanonical_ephemeris_source_pin(tmp_path: Path) -> None:
+    inputs = _evidence_inputs(
+        tmp_path / "wrong-pin-inputs",
+        source_manifest_payload=_source_manifest_payload(upstream_commit="0" * 40),
+    )
+
+    with pytest.raises(CenturyCacheBuildError, match="source verification failed"):
+        _write_fixture(tmp_path / "wrong-pin", evidence=inputs)
+
+
+def test_writer_rejects_missing_or_tampered_proof_artifacts(tmp_path: Path) -> None:
+    missing_inputs = _evidence_inputs(tmp_path / "missing-proof-inputs")
+    missing_inputs.engine_validation_path.unlink()
+    with pytest.raises(CenturyCacheBuildError, match="invalid engine-validation"):
+        _write_fixture(tmp_path / "missing-proof", evidence=missing_inputs)
+
+    tampered_inputs = _evidence_inputs(tmp_path / "tampered-proof-inputs")
+    tampered_inputs.parity_report_path.write_bytes(
+        tampered_inputs.parity_report_path.read_bytes() + b"\n"
+    )
+    with pytest.raises(CenturyCacheBuildError, match="invalid parity"):
+        _write_fixture(tmp_path / "tampered-proof", evidence=tampered_inputs)
+
+
+def test_writer_rejects_wrong_status_even_when_artifact_hash_is_declared(
+    tmp_path: Path,
+) -> None:
+    failed = {**_parity_report_payload(), "validation_status": "fail"}
+    spec = _spec().model_copy(
+        update={"parity_report_sha256": sha256_json(failed)}
+    )
+    inputs = _evidence_inputs(tmp_path / "failed-parity-inputs", parity_payload=failed)
+
+    with pytest.raises(CenturyCacheBuildError, match="invalid parity evidence"):
+        _write_fixture(tmp_path / "failed-parity", spec=spec, evidence=inputs)
+
+
+def test_writer_rejects_semantically_mismatched_proof_with_matching_hash(
+    tmp_path: Path,
+) -> None:
+    mismatched = {
+        **_boundary_audit_payload(),
+        "logical_universe_sha256": "9" * 64,
+    }
+    spec = _spec().model_copy(
+        update={"boundary_audit_report_sha256": sha256_json(mismatched)}
+    )
+    inputs = _evidence_inputs(
+        tmp_path / "mismatched-boundary-inputs",
+        boundary_payload=mismatched,
+    )
+
+    with pytest.raises(CenturyCacheBuildError, match="logical-universe hash mismatch"):
+        _write_fixture(tmp_path / "mismatched-boundary", spec=spec, evidence=inputs)
+
+
+def test_writer_rejects_boundary_audit_semantic_registry_substitution(
+    tmp_path: Path,
+) -> None:
+    mismatched = {
+        **_boundary_audit_payload(),
+        "semantic_feature_registry_sha256": "9" * 64,
+    }
+    spec = _spec().model_copy(
+        update={"boundary_audit_report_sha256": sha256_json(mismatched)}
+    )
+    inputs = _evidence_inputs(
+        tmp_path / "mismatched-semantic-registry-inputs",
+        boundary_payload=mismatched,
+    )
+
+    with pytest.raises(
+        CenturyCacheBuildError,
+        match="semantic feature-registry hash mismatch",
+    ):
+        _write_fixture(
+            tmp_path / "mismatched-semantic-registry",
+            spec=spec,
+            evidence=inputs,
+        )
+
+
+def test_writer_rejects_substituted_parity_reference_with_matching_report_hash(
+    tmp_path: Path,
+) -> None:
+    mismatched = {
+        **_parity_report_payload(),
+        "reference_source_sha256": "9" * 64,
+    }
+    spec = _spec().model_copy(
+        update={"parity_report_sha256": sha256_json(mismatched)}
+    )
+    inputs = _evidence_inputs(
+        tmp_path / "mismatched-parity-reference-inputs",
+        parity_payload=mismatched,
+    )
+
+    with pytest.raises(CenturyCacheBuildError, match="reference-source hash mismatch"):
+        _write_fixture(
+            tmp_path / "mismatched-parity-reference",
+            spec=spec,
+            evidence=inputs,
+        )
+
+
+def test_writer_and_verifier_rehash_bundled_parity_reference_source(
+    tmp_path: Path,
+) -> None:
+    inputs = _evidence_inputs(tmp_path / "tampered-reference-inputs")
+    tampered_source = tmp_path / "tampered-reference.json"
+    tampered_source.write_bytes(
+        (_ROOT / "tests/golden/fixtures/swieph_phase0_golden_v1.json").read_bytes()
+        + b"tamper"
+    )
+    with pytest.raises(CenturyCacheBuildError, match="reference-source artifact SHA-256"):
+        _write_fixture(
+            tmp_path / "tampered-reference-build",
+            evidence=replace(inputs, parity_reference_source_path=tampered_source),
+        )
+
+    verified = _write_fixture(tmp_path / "reference-cache")
+    bundled = verified.cache_directory / "evidence/parity-reference-source.json"
+    bundled.write_bytes(bundled.read_bytes() + b"tamper")
+    with pytest.raises(
+        CenturyCacheVerificationError,
+        match="reference-source artifact SHA-256",
+    ):
+        verify_century_cache(verified.cache_directory, expectations=_expectations())
+
+
+def test_writer_rejects_engine_receipt_with_mismatched_ephemeris_binding(
+    tmp_path: Path,
+) -> None:
+    mismatched = _engine_receipt_payload()
+    provenance = cast(dict[str, object], mismatched["ephemeris_provenance"])
+    mismatched["ephemeris_provenance"] = {
+        **provenance,
+        "source_manifest_sha256": "9" * 64,
+    }
+    spec = _spec()
+    engine = spec.engine.model_copy(
+        update={"engine_validation_sha256": sha256_json(mismatched)}
+    )
+    spec = spec.model_copy(update={"engine": engine})
+    inputs = _evidence_inputs(
+        tmp_path / "mismatched-engine-inputs",
+        engine_payload=mismatched,
+    )
+
+    with pytest.raises(CenturyCacheBuildError, match="ephemeris provenance differs"):
+        _write_fixture(tmp_path / "mismatched-engine", spec=spec, evidence=inputs)
 
 
 def test_shard_byte_tampering_fails_closed(tmp_path: Path) -> None:
@@ -349,6 +806,47 @@ def test_shard_byte_tampering_fails_closed(tmp_path: Path) -> None:
 
     with pytest.raises(CenturyCacheVerificationError, match="SHA-256 mismatch"):
         verify_century_cache(verified.cache_directory, expectations=_expectations())
+
+
+def test_verifier_reopens_bundled_evidence_and_rejects_missing_or_tampered_bytes(
+    tmp_path: Path,
+) -> None:
+    missing = _write_fixture(tmp_path / "missing-cache")
+    (missing.cache_directory / "evidence/parity-report.json").unlink()
+    with pytest.raises(CenturyCacheVerificationError, match="invalid parity"):
+        verify_century_cache(missing.cache_directory, expectations=_expectations())
+
+    tampered = _write_fixture(tmp_path / "tampered-cache")
+    parity = tampered.cache_directory / "evidence/parity-report.json"
+    parity.write_bytes(parity.read_bytes() + b"\n")
+    with pytest.raises(CenturyCacheVerificationError, match="invalid parity"):
+        verify_century_cache(tampered.cache_directory, expectations=_expectations())
+
+
+def test_verifier_semantically_checks_evidence_after_hash_rebinding(
+    tmp_path: Path,
+) -> None:
+    verified = _write_fixture(tmp_path / "cache")
+    boundary_path = verified.cache_directory / "evidence/boundary-audit-report.json"
+    failed = {
+        **json.loads(boundary_path.read_bytes()),
+        "validation_status": "fail",
+    }
+    boundary_path.write_bytes(canonical_json_bytes(failed))
+    digest = sha256_file(boundary_path)
+    manifest_path = verified.manifest_path
+    manifest = json.loads(manifest_path.read_bytes())
+    manifest["boundary_audit_report_sha256"] = digest
+    for artifact in manifest["evidence_artifacts"]:
+        if artifact["kind"] == "boundary_audit":
+            artifact["sha256"] = digest
+    manifest_path.write_bytes(canonical_json_bytes(manifest))
+    expectations = _expectations().model_copy(
+        update={"boundary_audit_report_sha256": digest}
+    )
+
+    with pytest.raises(CenturyCacheVerificationError, match="invalid boundary-audit"):
+        verify_century_cache(verified.cache_directory, expectations=expectations)
 
 
 @pytest.mark.parametrize(
@@ -431,6 +929,16 @@ def test_required_feature_coverage_is_checked_for_each_recovery(tmp_path: Path) 
         ),
         ("parity_report_sha256", "9" * 64, "parity report mismatch"),
         (
+            "parity_reference_source_locator",
+            "substituted-reference",
+            "parity reference-source locator mismatch",
+        ),
+        (
+            "parity_reference_source_sha256",
+            "9" * 64,
+            "parity reference-source hash mismatch",
+        ),
+        (
             "boundary_audit_report_sha256",
             "9" * 64,
             "boundary-audit report mismatch",
@@ -466,6 +974,7 @@ def test_ordinary_recovery_has_no_regeneration_path(tmp_path: Path) -> None:
                     rows=(_row(0), _row(1)),
                 ),
             ),
+            evidence=_evidence_inputs(tmp_path / "wrong-mode-inputs"),
             build_mode=cast(Any, "ordinary_recovery"),
         )
     assert not (tmp_path / "wrong-mode").exists()
