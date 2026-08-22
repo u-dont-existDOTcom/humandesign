@@ -1,0 +1,38 @@
+name: SWIEPH profile A-B rerun
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/swieph_ab_rerun.py'
+      - 'scripts/fetch_swisseph_ephemeris.py'
+      - '.github/workflows/swieph-ab-rerun.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/swieph_ab_rerun.py'
+      - 'scripts/fetch_swisseph_ephemeris.py'
+      - '.github/workflows/swieph-ab-rerun.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  rerun:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install PySwissEph
+        run: python -m pip install 'pyswisseph>=2.10.3.2,<3'
+      - name: Fetch pinned Swiss ephemeris files
+        run: python scripts/fetch_swisseph_ephemeris.py
+      - name: Run full-century V3.5 ephemeris A-B rerun
+        env:
+          EPHE_PATH: data/ephemeris
+          HD_START: '1926-08-22T05:40:00+00:00'
+          HD_END: '2026-08-22T05:40:00+00:00'
+        run: python scripts/swieph_ab_rerun.py
