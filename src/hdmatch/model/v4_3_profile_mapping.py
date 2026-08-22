@@ -35,6 +35,7 @@ from hdmatch.model.v4_3_mapping import (
     MappingLibrarySourceV2,
     MappingLibraryV2,
     MappingStatusV2,
+    PathwayRoleV2,
     PredicateOperatorV2,
     PrevalenceParentLevelV2,
     ResponseContradictionV2,
@@ -88,6 +89,9 @@ _EXPECTED_OVERLAY_MAPPING_SHA256: Final[str] = (
 _POST_SELECTION_IDS: Final[frozenset[str]] = frozenset(
     {"PMOON_24_DRIVE", "DMARS_61_DEVELOPMENT"}
 )
+_TARGET_CONFIDENCE_OVERRIDES: Final[dict[str, float]] = {
+    "TYPE_PROJECTOR_ENTRY": 0.85,
+}
 _SOURCE_ARTIFACTS: Final[tuple[tuple[str, SourceRoleV2, str, str], ...]] = (
     (
         "SRC-COVERAGE-AUDIT",
@@ -439,15 +443,46 @@ def _mapping_rule(record: Mapping[str, Any]) -> FrozenMappingRuleSourceV2:
     normalized = _normalized_id(mapping_id)
     post_selection = bool(record.get("post_selection", False))
     origin = str(record["origin"])
+    source_cluster = str(record["cluster"])
+    pathway_group_id, pathway_role, primary_mapping_id = _pathway_relationship(
+        mapping_id,
+        source_cluster,
+    )
+    source_confidence = _number(record["confidence"], "confidence")
+    if mapping_id == "TYPE_PROJECTOR_ENTRY" and source_confidence != 0.9:
+        raise ProfileMappingMigrationError(
+            "older TYPE_PROJECTOR_ENTRY confidence changed; controlling override "
+            "provenance requires source value 0.90"
+        )
+    behavioral_confidence = _TARGET_CONFIDENCE_OVERRIDES.get(
+        mapping_id,
+        source_confidence,
+    )
     pathway = _pathway(record)
+    target_locator = "V3.6 retained target and scoring constraints"
+    target_rationale = (
+        "The migrated observation is development-profile evidence, not validation."
+    )
+    if mapping_id == "TYPE_PROJECTOR_ENTRY":
+        target_locator = (
+            "Invitation/recognition is domain-sensitive; Behavioral confidence: 0.85"
+        )
+        target_rationale = (
+            "The higher-priority V3.6 behavioral target explicitly controls confidence "
+            "at 0.85, superseding the older source JSON value 0.90 without using outcomes."
+        )
     return FrozenMappingRuleSourceV2(
         rule_id=f"RULE-{normalized}",
         observation_id=f"OBS-{normalized}",
         status=MappingStatusV2.FROZEN,
         behavioral_statement=str(record["behavior"]),
-        behavioral_confidence=_number(record["confidence"], "confidence"),
+        behavioral_confidence=behavioral_confidence,
         measurement_reliability=1.0,
-        dependency_cluster=str(record["cluster"]),
+        source_dependency_cluster=source_cluster,
+        dependency_cluster=pathway_group_id,
+        pathway_group_id=pathway_group_id,
+        pathway_role=pathway_role,
+        primary_rule_id=f"RULE-{_normalized_id(primary_mapping_id)}",
         elicitation_stage="development_profile_v3_6",
         revision_class=_revision_class(mapping_id),
         selection_risk=(
@@ -467,15 +502,22 @@ def _mapping_rule(record: Mapping[str, Any]) -> FrozenMappingRuleSourceV2:
             ),
             _citation(
                 "SRC-TARGET-V36",
-                "V3.6 retained target and scoring constraints",
-                "The migrated observation is development-profile evidence, not validation.",
+                target_locator,
+                target_rationale,
             ),
         ),
         rationale=(
-            f"Mechanical migration of {mapping_id}; original source confidence and factors "
-            "are preserved. Measurement reliability is the identity factor 1.0 because the "
-            "source exposes no separate reliability estimate. "
-            f"Source role={_pathway_role(mapping_id, str(record['cluster']))}; "
+            f"Mechanical migration of {mapping_id}; source factors are preserved. "
+            + (
+                "The controlling V3.6 target confidence 0.85 explicitly overrides the "
+                "older frozen mapping value 0.90. "
+                if mapping_id == "TYPE_PROJECTOR_ENTRY"
+                else "The source behavioral confidence is preserved. "
+            )
+            + "Measurement reliability is the identity factor 1.0 because the source "
+            "exposes no separate reliability estimate. "
+            f"Typed pathway role={pathway_role.value}; source dependency cluster="
+            f"{source_cluster}; scoring pathway group={pathway_group_id}; "
             f"origin={origin}."
         ),
     )
@@ -569,7 +611,11 @@ def _contradiction_rule(value: Mapping[str, Any]) -> FrozenMappingRuleSourceV2:
         ),
         behavioral_confidence=_number(value["confidence"], "confidence"),
         measurement_reliability=1.0,
+        source_dependency_cluster=str(value["cluster"]),
         dependency_cluster=str(value["cluster"]),
+        pathway_group_id=str(value["cluster"]),
+        pathway_role=PathwayRoleV2.PRIMARY,
+        primary_rule_id=f"RULE-{normalized}",
         elicitation_stage="development_profile_v3_6",
         revision_class=RevisionClassV2.R0,
         selection_risk=SelectionRiskV2.MODERATE,
@@ -766,14 +812,40 @@ def _migration_receipt(
     overlay = _load_json_object(root / OVERLAY_MAPPING_PATH)
     records = _merged_mapping_records(base, overlay)
     groups = []
-    for cluster in sorted({str(item["cluster"]) for item in records}):
-        ids = tuple(sorted(str(item["id"]) for item in records if item["cluster"] == cluster))
-        primary = _PRIMARY_BY_CLUSTER[cluster]
+    scoring_groups: dict[str, list[tuple[dict[str, Any], PathwayRoleV2, str]]] = {}
+    for item in records:
+        mapping_id = str(item["id"])
+        group_id, role, primary = _pathway_relationship(
+            mapping_id,
+            str(item["cluster"]),
+        )
+        scoring_groups.setdefault(group_id, []).append((item, role, primary))
+    for cluster in sorted(scoring_groups):
+        members = scoring_groups[cluster]
+        primary_ids = {primary for _, _, primary in members}
+        if len(primary_ids) != 1:
+            raise ProfileMappingMigrationError(
+                f"scoring pathway group has ambiguous primary: {cluster}"
+            )
+        primary = next(iter(primary_ids))
         groups.append(
             {
                 "dependency_cluster": cluster,
                 "primary_mapping_id": primary,
-                "alternative_mapping_ids": [item for item in ids if item != primary],
+                "alternative_mapping_ids": sorted(
+                    str(item["id"])
+                    for item, role, _ in members
+                    if role
+                    in {PathwayRoleV2.ALTERNATIVE, PathwayRoleV2.ALTERNATIVE_HANGING}
+                ),
+                "dependent_carrier_mapping_ids": sorted(
+                    str(item["id"])
+                    for item, role, _ in members
+                    if role is PathwayRoleV2.DEPENDENT_CARRIER
+                ),
+                "source_dependency_clusters": sorted(
+                    {str(item["cluster"]) for item, _, _ in members}
+                ),
                 "execution_semantics": (
                     "separate confidence-preserving observations; strongest-per-cluster "
                     "dependency control makes pathways compete rather than sum"
@@ -809,6 +881,24 @@ def _migration_receipt(
                 "migration preserves those labels and does not invent missing provenance."
             ),
         },
+        "controlling_source_overrides": [
+            {
+                "mapping_id": "TYPE_PROJECTOR_ENTRY",
+                "field": "behavioral_confidence",
+                "older_mapping_value": 0.9,
+                "controlling_value": 0.85,
+                "controlling_source_id": "SRC-TARGET-V36",
+                "controlling_source_path": BEHAVIORAL_TARGET_PATH,
+                "locator": (
+                    "Invitation/recognition is domain-sensitive; "
+                    "Behavioral confidence: 0.85"
+                ),
+                "rationale": (
+                    "The V3.6 behavioral target is newer and controlling. This source-only "
+                    "override was applied before scoring and without outcome inspection."
+                ),
+            }
+        ],
         "translation_contract": {
             "alternative_pathway_representation": (
                 "Each source mapping remains a separate confidence-bearing observation. "
@@ -819,7 +909,16 @@ def _migration_receipt(
             ),
             "hanging_gate_translation": (
                 "Every source predicate whose feature is gate is translated to the exact "
-                "HANGING_GATES/HAS_GATE predicate and therefore also requires ACTIVE_GATES."
+                "HANGING_GATES/HAS_GATE predicate and therefore also requires ACTIVE_GATES; "
+                "it does not spuriously require activation projection fields."
+            ),
+            "post_selection_carrier_dependency_resolution": (
+                "PMOON_24_DRIVE and DMARS_61_DEVELOPMENT retain their original source "
+                "clusters for provenance, but their scoring dependency/pathway group is "
+                "EXISTENTIAL_MYSTERY. They are specific post-selection carriers of Gates "
+                "24/61, not independent corroborators, so Channel/component/carrier "
+                "evidence cannot double-count. This prospective methodological resolution "
+                "uses structural identity only and no ranks, winners, or outcomes."
             ),
             "prevalence_parent_translation": (
                 "The exact source parent predicates remain hash-bound in the two source "
@@ -917,11 +1016,25 @@ def _source_artifacts(root: Path) -> tuple[SourceArtifactV2, ...]:
     )
 
 
-def _pathway_role(mapping_id: str, cluster: str) -> str:
-    primary = _PRIMARY_BY_CLUSTER[cluster]
+def _pathway_relationship(
+    mapping_id: str,
+    source_cluster: str,
+) -> tuple[str, PathwayRoleV2, str]:
+    if mapping_id in _POST_SELECTION_IDS:
+        return (
+            "EXISTENTIAL_MYSTERY",
+            PathwayRoleV2.DEPENDENT_CARRIER,
+            "CH_24_61_MYSTERY",
+        )
+    primary = _PRIMARY_BY_CLUSTER[source_cluster]
     if mapping_id == primary:
-        return "primary"
-    return "alternative_hanging" if mapping_id.startswith("GATE_") else "alternative"
+        return source_cluster, PathwayRoleV2.PRIMARY, primary
+    role = (
+        PathwayRoleV2.ALTERNATIVE_HANGING
+        if mapping_id.startswith("GATE_")
+        else PathwayRoleV2.ALTERNATIVE
+    )
+    return source_cluster, role, primary
 
 
 def _revision_class(mapping_id: str) -> RevisionClassV2:

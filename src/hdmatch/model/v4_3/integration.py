@@ -9,7 +9,7 @@ the same mapping and exact universe.  It never accepts compliance booleans.
 from __future__ import annotations
 
 from collections import defaultdict
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from pathlib import Path
 from typing import Final, cast
 
@@ -413,10 +413,11 @@ def evaluate_mapping_library_v2(
             f"candidate required-feature coverage is below 1.0: {missing}"
         )
     by_observation = _validate_response_inventory(validated, responses)
-    observations = tuple(
+    raw_observations = tuple(
         _evaluate_rule(rule, by_observation[rule.observation_id], features)
         for rule in sorted(validated.rules, key=lambda item: item.observation_id)
     )
+    observations = _merge_structural_dependency_components(raw_observations)
     return V43ScoringInput(
         candidate_context=candidate,
         observations=observations,
@@ -933,6 +934,76 @@ def _derive_core_blocks(
             )
         )
     return tuple(evaluations)
+
+
+def _merge_structural_dependency_components(
+    observations: tuple[ObservationEvaluation, ...],
+) -> tuple[ObservationEvaluation, ...]:
+    """Union frozen behavioral clusters that reuse one exact chart mechanism.
+
+    Mapping authors retain their declared behavioral cluster labels.  The runtime
+    adds the stricter structural dependency relation so a Channel/component Gate,
+    Cross/cardinal, or repeated exact anchor can never survive as two independent
+    scoring contributions merely because the source used two cluster names.
+    """
+
+    parent = list(range(len(observations)))
+
+    def find(index: int) -> int:
+        while parent[index] != index:
+            parent[index] = parent[parent[index]]
+            index = parent[index]
+        return index
+
+    def union(left: int, right: int) -> None:
+        left_root = find(left)
+        right_root = find(right)
+        if left_root != right_root:
+            parent[max(left_root, right_root)] = min(left_root, right_root)
+
+    owner_by_declared_cluster: dict[str, int] = {}
+    owner_by_mechanism: dict[str, int] = {}
+    for index, observation in enumerate(observations):
+        previous_cluster = owner_by_declared_cluster.setdefault(
+            observation.dependency_cluster,
+            index,
+        )
+        union(index, previous_cluster)
+        keys = {
+            key
+            for pathway in observation.pathways
+            for anchor in (
+                pathway.primary,
+                *((pathway.corroborator,) if pathway.corroborator is not None else ()),
+            )
+            for key in anchor.dependency_keys
+        }
+        for key in sorted(keys):
+            previous_owner = owner_by_mechanism.setdefault(key, index)
+            union(index, previous_owner)
+
+    members_by_root: dict[int, list[int]] = defaultdict(list)
+    for index in range(len(observations)):
+        members_by_root[find(index)].append(index)
+    component_id_by_index: dict[int, str] = {}
+    for indexes in members_by_root.values():
+        declared = tuple(
+            sorted({observations[index].dependency_cluster for index in indexes})
+        )
+        component_id = (
+            declared[0]
+            if len(declared) == 1
+            else f"structural-dependency:{sha256_json(list(declared))}"
+        )
+        for index in indexes:
+            component_id_by_index[index] = component_id
+    return tuple(
+        replace(
+            observation,
+            dependency_cluster=component_id_by_index[index],
+        )
+        for index, observation in enumerate(observations)
+    )
 
 
 def _verify_record_cache_bindings(

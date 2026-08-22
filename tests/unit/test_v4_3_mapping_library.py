@@ -45,6 +45,7 @@ from hdmatch.model.v4_3_mapping import (
     MappingLibraryV2,
     MappingStatusV2,
     MappingV2Error,
+    PathwayRoleV2,
     PredicateOperatorV2,
     PrevalenceParentLevelV2,
     ResponseContradictionV2,
@@ -158,7 +159,11 @@ def _source(
         behavioral_statement="Interpersonal entry is recognition-sensitive.",
         behavioral_confidence=0.85,
         measurement_reliability=0.9,
+        source_dependency_cluster="ENTRY_RECOGNITION",
         dependency_cluster="ENTRY_RECOGNITION",
+        pathway_group_id="ENTRY_RECOGNITION",
+        pathway_role=PathwayRoleV2.PRIMARY,
+        primary_rule_id="RULE-TEST-PROJECTOR",
         elicitation_stage="development_profile",
         revision_class=RevisionClassV2.R1,
         selection_risk=SelectionRiskV2.MODERATE,
@@ -344,6 +349,40 @@ def test_activation_qualifiers_compile_every_required_feature_family() -> None:
         FeatureId.ACTIVATION_CARRIER,
         FeatureId.ACTIVATION_SIDE,
     )
+
+
+def test_hanging_gate_requires_edge_state_not_activation_projection() -> None:
+    predicate = StructuralPredicateV2(
+        feature_id=FeatureId.HANGING_GATES,
+        operator=PredicateOperatorV2.HAS_GATE,
+        gate=61,
+    )
+
+    assert predicate.required_feature_ids == (
+        FeatureId.ACTIVE_GATES,
+        FeatureId.HANGING_GATES,
+    )
+    assert FeatureId.ACTIVATION_GATE not in predicate.required_feature_ids
+
+
+def test_typed_pathway_role_and_primary_linkage_fail_closed() -> None:
+    source = _source()
+    primary = source.frozen_mappings[0]
+
+    with pytest.raises(ValidationError, match="primary pathway role"):
+        FrozenMappingRuleSourceV2.model_validate(
+            {
+                **primary.model_dump(mode="json"),
+                "primary_rule_id": "RULE-MISSING-PRIMARY",
+            }
+        )
+    with pytest.raises(ValidationError, match="pathway group must equal"):
+        FrozenMappingRuleSourceV2.model_validate(
+            {
+                **primary.model_dump(mode="json"),
+                "pathway_group_id": "DIFFERENT_GROUP",
+            }
+        )
 
 
 def test_predicate_and_prevalence_shapes_fail_closed() -> None:

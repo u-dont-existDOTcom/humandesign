@@ -58,6 +58,15 @@ class MappingStatusV2(StrEnum):
     EMPIRICAL_ONLY = "empirical_only"
 
 
+class PathwayRoleV2(StrEnum):
+    """Typed role of one confidence-bearing rule inside a pathway group."""
+
+    PRIMARY = "primary"
+    ALTERNATIVE = "alternative"
+    ALTERNATIVE_HANGING = "alternative_hanging"
+    DEPENDENT_CARRIER = "dependent_carrier"
+
+
 class FlexibilityClass(StrEnum):
     F1 = "F1"
     F2 = "F2"
@@ -355,14 +364,14 @@ class StructuralPredicateV2(FrozenModel):
         required = {self.feature_id}
         if self.feature_id in _ACTIVATION_FEATURES:
             required.add(FeatureId.PLANETARY_ACTIVATIONS)
-        if self.side is not None:
-            required.add(FeatureId.ACTIVATION_SIDE)
-        if self.carrier is not None:
-            required.add(FeatureId.ACTIVATION_CARRIER)
-        if self.gate is not None:
-            required.add(FeatureId.ACTIVATION_GATE)
-        if self.line is not None:
-            required.add(FeatureId.ACTIVATION_LINE)
+            if self.side is not None:
+                required.add(FeatureId.ACTIVATION_SIDE)
+            if self.carrier is not None:
+                required.add(FeatureId.ACTIVATION_CARRIER)
+            if self.gate is not None:
+                required.add(FeatureId.ACTIVATION_GATE)
+            if self.line is not None:
+                required.add(FeatureId.ACTIVATION_LINE)
         if self.feature_id in {FeatureId.HANGING_GATES, FeatureId.DORMANT_GATES}:
             required.add(FeatureId.ACTIVE_GATES)
         if self.feature_id is FeatureId.CIRCUITRY_CHANNEL_METADATA:
@@ -575,7 +584,11 @@ class FrozenMappingRuleSourceV2(FrozenModel):
     behavioral_statement: str = Field(min_length=1)
     behavioral_confidence: float = Field(gt=0.0, le=1.0)
     measurement_reliability: float = Field(ge=0.0, le=1.0)
+    source_dependency_cluster: str = Field(pattern=_CLUSTER_PATTERN)
     dependency_cluster: str = Field(pattern=_CLUSTER_PATTERN)
+    pathway_group_id: str = Field(pattern=_CLUSTER_PATTERN)
+    pathway_role: PathwayRoleV2
+    primary_rule_id: str = Field(pattern=_ID_PATTERN)
     elicitation_stage: str = Field(min_length=1)
     revision_class: RevisionClassV2
     selection_risk: SelectionRiskV2
@@ -590,6 +603,13 @@ class FrozenMappingRuleSourceV2(FrozenModel):
 
     @model_validator(mode="after")
     def explicit_pathway_roles(self) -> FrozenMappingRuleSourceV2:
+        if self.pathway_group_id != self.dependency_cluster:
+            raise ValueError("pathway group must equal the scoring dependency cluster")
+        if self.pathway_role is PathwayRoleV2.PRIMARY:
+            if self.primary_rule_id != self.rule_id:
+                raise ValueError("primary pathway role must link to its own rule ID")
+        elif self.primary_rule_id == self.rule_id:
+            raise ValueError("non-primary pathway role must link to another primary rule")
         if "alternative_pathways" not in self.model_fields_set:
             raise ValueError("allowed alternatives must be explicit, even when empty")
         pathway_ids = (
@@ -696,6 +716,31 @@ class MappingLibrarySourceV2(FrozenModel):
         )
         if frozen_ids != self.declared_frozen_rule_ids:
             raise ValueError("declared frozen-rule inventory differs from frozen mappings")
+        frozen_by_rule_id = {item.rule_id: item for item in self.frozen_mappings}
+        groups: dict[str, list[FrozenMappingRuleSourceV2]] = {}
+        for frozen_mapping in self.frozen_mappings:
+            groups.setdefault(frozen_mapping.pathway_group_id, []).append(frozen_mapping)
+            primary = frozen_by_rule_id.get(frozen_mapping.primary_rule_id)
+            if primary is None:
+                raise ValueError(
+                    f"mapping {frozen_mapping.rule_id} links to an unknown primary rule"
+                )
+            if primary.pathway_role is not PathwayRoleV2.PRIMARY:
+                raise ValueError(
+                    f"mapping {frozen_mapping.rule_id} links to a non-primary pathway role"
+                )
+            if primary.pathway_group_id != frozen_mapping.pathway_group_id:
+                raise ValueError(
+                    f"mapping {frozen_mapping.rule_id} links across pathway groups"
+                )
+        for group_id, group in groups.items():
+            primaries = [
+                item for item in group if item.pathway_role is PathwayRoleV2.PRIMARY
+            ]
+            if len(primaries) != 1:
+                raise ValueError(
+                    f"pathway group {group_id} must declare exactly one primary rule"
+                )
         pathway_ids = tuple(
             pathway.pathway_id
             for mapping in self.frozen_mappings
@@ -711,18 +756,19 @@ class MappingLibrarySourceV2(FrozenModel):
         )
         source_ids = tuple(item.source_id for item in self.source_artifacts)
         known_sources = set(source_ids)
-        for mapping in self.mappings:
-            citations = list(mapping.sources)
-            if isinstance(mapping, FrozenMappingRuleSourceV2):
-                citations.extend(mapping.primary_pathway.sources)
-                for pathway in mapping.alternative_pathways:
+        for mapping_record in self.mappings:
+            citations = list(mapping_record.sources)
+            if isinstance(mapping_record, FrozenMappingRuleSourceV2):
+                citations.extend(mapping_record.primary_pathway.sources)
+                for pathway in mapping_record.alternative_pathways:
                     citations.extend(pathway.sources)
-                if mapping.corroborating_pathway is not None:
-                    citations.extend(mapping.corroborating_pathway.pathway.sources)
+                if mapping_record.corroborating_pathway is not None:
+                    citations.extend(mapping_record.corroborating_pathway.pathway.sources)
             unknown = {item.source_id for item in citations} - known_sources
             if unknown:
                 raise ValueError(
-                    f"mapping {mapping.rule_id} cites unknown sources: {sorted(unknown)}"
+                    f"mapping {mapping_record.rule_id} cites unknown sources: "
+                    f"{sorted(unknown)}"
                 )
         return self
 
@@ -799,7 +845,11 @@ class CompiledMappingRuleV2(FrozenModel):
     behavioral_statement: str = Field(min_length=1)
     behavioral_confidence: float = Field(gt=0.0, le=1.0)
     measurement_reliability: float = Field(ge=0.0, le=1.0)
+    source_dependency_cluster: str = Field(pattern=_CLUSTER_PATTERN)
     dependency_cluster: str = Field(pattern=_CLUSTER_PATTERN)
+    pathway_group_id: str = Field(pattern=_CLUSTER_PATTERN)
+    pathway_role: PathwayRoleV2
+    primary_rule_id: str = Field(pattern=_ID_PATTERN)
     elicitation_stage: str = Field(min_length=1)
     revision_class: RevisionClassV2
     selection_risk: SelectionRiskV2
@@ -814,6 +864,15 @@ class CompiledMappingRuleV2(FrozenModel):
 
     @model_validator(mode="after")
     def validate_compiled_roles(self) -> CompiledMappingRuleV2:
+        if self.pathway_group_id != self.dependency_cluster:
+            raise ValueError(
+                "compiled pathway group must equal the scoring dependency cluster"
+            )
+        if self.pathway_role is PathwayRoleV2.PRIMARY:
+            if self.primary_rule_id != self.rule_id:
+                raise ValueError("compiled primary role must link to its own rule ID")
+        elif self.primary_rule_id == self.rule_id:
+            raise ValueError("compiled non-primary role must link to another primary rule")
         pathway_ids = (
             self.primary_pathway.pathway_id,
             *(path.pathway_id for path in self.alternative_pathways),
@@ -872,6 +931,27 @@ class MappingLibraryV2(FrozenModel):
             raise ValueError("required-feature registry hash mismatch")
         if tuple(sorted(item.rule_id for item in self.rules)) != self.declared_frozen_rule_ids:
             raise ValueError("compiled rules differ from declared frozen inventory")
+        rules_by_id = {item.rule_id: item for item in self.rules}
+        pathway_groups: dict[str, list[CompiledMappingRuleV2]] = {}
+        for rule in self.rules:
+            pathway_groups.setdefault(rule.pathway_group_id, []).append(rule)
+            primary = rules_by_id.get(rule.primary_rule_id)
+            if primary is None:
+                raise ValueError(f"compiled rule {rule.rule_id} has unknown primary linkage")
+            if primary.pathway_role is not PathwayRoleV2.PRIMARY:
+                raise ValueError(
+                    f"compiled rule {rule.rule_id} links to a non-primary role"
+                )
+            if primary.pathway_group_id != rule.pathway_group_id:
+                raise ValueError(f"compiled rule {rule.rule_id} links across pathway groups")
+        for group_id, group in pathway_groups.items():
+            primaries = [
+                item for item in group if item.pathway_role is PathwayRoleV2.PRIMARY
+            ]
+            if len(primaries) != 1:
+                raise ValueError(
+                    f"compiled pathway group {group_id} must have exactly one primary"
+                )
         compiled_rule_ids = (
             *(item.rule_id for item in self.rules),
             *(item.rule_id for item in self.unresolved_mappings),

@@ -3,11 +3,15 @@ from __future__ import annotations
 import json
 import re
 import shutil
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
+from types import SimpleNamespace
 from typing import Any, cast
 
 import pytest
+from pydantic import ValidationError
 
+from hdmatch.century_cache.models import CenturyStateRecord, FeatureValue
 from hdmatch.chart.ephemeris import CelestialBody
 from hdmatch.chart.feature_registry import FeatureId
 from hdmatch.model.mapping_library import (
@@ -15,11 +19,14 @@ from hdmatch.model.mapping_library import (
     DirectnessClass,
     StructuralClass,
 )
+from hdmatch.model.v4_3.integration import V43ObservedResponse, evaluate_mapping_library_v2
+from hdmatch.model.v4_3.scoring import score_v4_3
 from hdmatch.model.v4_3_mapping import (
     ContradictionModeV2,
     MappingLibrarySourceV2,
     MappingLibraryV2,
     MappingStatusV2,
+    PathwayRoleV2,
     PredicateOperatorV2,
     SelectionRiskV2,
     load_mapping_library_source_v2,
@@ -50,22 +57,118 @@ ROOT = Path(__file__).resolve().parents[2]
 
 GOLDEN_SHA256 = {
     BEST_CURRENT_COMPILED_PATH: (
-        "65dcabebca485857cec5b618d116b3aacfe953d63a3b708c54aeb28742679075"
+        "a8365f66655e81ce980bcac047b3f264cdecb7ea27e009e5515682c5f7261a8d"
     ),
     BEST_CURRENT_SOURCE_PATH: (
-        "603cfcf377d23ad9e9e44642a9b9fa213ccf63a84c9ce693e1929d437fe38622"
+        "975e147fa959b53b69f761746f126047d7266de5112d939035e47be6e9dab156"
     ),
     LESS_CONTAMINATED_COMPILED_PATH: (
-        "755836dca7ce179d953a736c2fae8569d4303114ac19355417f22a86fc34c71d"
+        "aedad2d7de2db35410ec6de246b5070f341dfd8b20ffb079bbb74cfde17f03fe"
     ),
     LESS_CONTAMINATED_SOURCE_PATH: (
-        "164e93d94f65d5fbc4a1a40f4e071f7f3296b3bd7f2d349c3ac065eb12df0b83"
+        "4e3dfde16d16e1b923772cfde33b79366d2a0c18cd191226e8a6cd9dc13404f0"
     ),
     MIGRATION_RECEIPT_PATH: (
-        "59668106b9b2330d0998b5ed218497f1892c9a2b153353e8bd287a1162ff49b9"
+        "4c9414b7dca4f705d29dde226fcbe100b7046232e7d260ce424b8d07bd22f509"
     ),
 }
 POST_SELECTION_IDS = {"DMARS_61_DEVELOPMENT", "PMOON_24_DRIVE"}
+
+
+class _NoEstimatePrevalence:
+    def __init__(self, library: MappingLibraryV2) -> None:
+        hashes = {field: "a" * 64 for field in (
+            "artifact_sha256",
+            "plan_sha256",
+            "cache_manifest_sha256",
+            "cache_trust_lock_sha256",
+            "cache_build_plan_sha256",
+            "semantic_feature_registry_sha256",
+            "physical_feature_registry_sha256",
+            "reconciliation_aggregate_sha256",
+            "engine_validation_sha256",
+            "ephemeris_file_set_sha256",
+            "universe_sha256",
+            "parent_hierarchy_sha256",
+        )}
+        self.provenance = SimpleNamespace(
+            anchor_ids=tuple(
+                sorted(
+                    pathway.anchor_id
+                    for rule in library.rules
+                    for pathway in (
+                        rule.primary_pathway,
+                        *rule.alternative_pathways,
+                    )
+                )
+            ),
+            mapping_library_sha256=library.sha256(),
+            mapping_source_library_sha256=library.source_library_sha256,
+            mapping_prevalence_plan_sha256="b" * 64,
+            required_feature_registry_sha256=(
+                library.required_feature_registry_sha256
+            ),
+            policy_version="conditional-prevalence-v4.3-test",
+            boundary_policy_version="exact-boundary-test",
+            duration_weighted=True,
+            conditional=True,
+            exact_stable_intervals=True,
+            source_scope="declared-global-utc-universe",
+            **hashes,
+        )
+
+    def bind_candidate_record(
+        self,
+        candidate_record: object,
+        *,
+        cache_manifest_sha256: str,
+        mapping_library_sha256: str,
+    ) -> object:
+        del candidate_record, cache_manifest_sha256, mapping_library_sha256
+        raise AssertionError("pure scorer test must not mint a cache-row capability")
+
+    def estimate(self, anchor_id: str, candidate_context: object) -> object:
+        del anchor_id, candidate_context
+        raise AssertionError("unknown responses must not request prevalence estimates")
+
+
+def _unknown_candidate(library: MappingLibraryV2) -> CenturyStateRecord:
+    start = datetime(2000, 1, 1, tzinfo=UTC)
+    feature_values: dict[FeatureId, object] = {
+        FeatureId.TYPE: "projector",
+        FeatureId.AUTHORITY: "splenic",
+        FeatureId.CENTERS: {"defined": [], "undefined": []},
+        FeatureId.PROFILE: "2/4",
+        FeatureId.COMPLETE_CHANNELS: [],
+        FeatureId.ACTIVE_GATES: [],
+        FeatureId.HANGING_GATES: [],
+        FeatureId.PLANETARY_ACTIVATIONS: [],
+        FeatureId.ACTIVATION_GATE: [],
+        FeatureId.ACTIVATION_CARRIER: [],
+        FeatureId.ACTIVATION_SIDE: [],
+    }
+    return CenturyStateRecord(
+        state_id="population-adapter-test",
+        utc_start=start,
+        utc_end=start + timedelta(seconds=1),
+        duration_seconds=1.0,
+        representative_utc=start,
+        design_timestamp=start - timedelta(days=88),
+        chart_features_sha256="1" * 64,
+        feature_vector_schema_version="chart-feature-vector-v2",
+        semantic_feature_registry_sha256="2" * 64,
+        feature_registry_sha256="3" * 64,
+        astronomy_engine_version="test-swisseph",
+        ephemeris_file_set_sha256="4" * 64,
+        node_convention="true",
+        mandala_mapping_version="test",
+        mandala_mapping_sha256="5" * 64,
+        bodygraph_mapping_sha256="6" * 64,
+        feature_values=tuple(
+            FeatureValue(feature_id=feature_id.value, value=cast(Any, feature_values[feature_id]))
+            for feature_id in library.required_feature_registry.feature_ids
+        ),
+    )
 
 
 def _json_object(path: Path) -> dict[str, Any]:
@@ -142,6 +245,38 @@ def test_both_variants_parse_and_recompile_exactly() -> None:
         )
 
 
+@pytest.mark.parametrize(
+    "compiled_path",
+    (LESS_CONTAMINATED_COMPILED_PATH, BEST_CURRENT_COMPILED_PATH),
+)
+def test_both_variants_adapt_and_score_without_structural_reuse(
+    compiled_path: str,
+) -> None:
+    library = load_mapping_library_v2(ROOT / compiled_path)
+    candidate = _unknown_candidate(library)
+    responses = tuple(
+        V43ObservedResponse(
+            observation_id=rule.observation_id,
+            response_token="unknown",
+        )
+        for rule in library.rules
+    )
+
+    adapted = evaluate_mapping_library_v2(library, candidate, responses)
+    score = score_v4_3(adapted, _NoEstimatePrevalence(library))
+
+    observations = {item.observation_id: item for item in adapted.observations}
+    mystery_cluster = observations["OBS-CH-24-61-MYSTERY"].dependency_cluster
+    assert observations["OBS-GATE-24-RETURN-ALT"].dependency_cluster == mystery_cluster
+    assert observations["OBS-GATE-61-MYSTERY-ALT"].dependency_cluster == mystery_cluster
+    if compiled_path == BEST_CURRENT_COMPILED_PATH:
+        assert observations["OBS-PMOON-24-DRIVE"].dependency_cluster == mystery_cluster
+        assert observations["OBS-DMARS-61-DEVELOPMENT"].dependency_cluster == mystery_cluster
+    assert score.evidence_rubric_bits == 0.0
+    assert score.contradiction_rubric_bits == 0.0
+    assert score.detailed_support == 0.0
+
+
 def test_less_contaminated_excludes_only_the_two_post_selection_carriers() -> None:
     less = load_mapping_library_v2(ROOT / LESS_CONTAMINATED_COMPILED_PATH)
     best = load_mapping_library_v2(ROOT / BEST_CURRENT_COMPILED_PATH)
@@ -155,6 +290,7 @@ def test_less_contaminated_excludes_only_the_two_post_selection_carriers() -> No
     assert FeatureId.PLANETARY_ACTIVATIONS not in (
         less.required_feature_registry.feature_ids
     )
+    assert FeatureId.ACTIVATION_GATE not in less.required_feature_registry.feature_ids
     assert {
         FeatureId.PLANETARY_ACTIVATIONS,
         FeatureId.ACTIVATION_CARRIER,
@@ -177,9 +313,20 @@ def test_every_frozen_mapping_preserves_behavior_confidence_factors_and_predicat
 
         assert rule.status is MappingStatusV2.FROZEN
         assert rule.behavioral_statement == record["behavior"]
-        assert rule.behavioral_confidence == record["confidence"]
+        expected_confidence = (
+            0.85 if mapping_id == "TYPE_PROJECTOR_ENTRY" else record["confidence"]
+        )
+        assert rule.behavioral_confidence == expected_confidence
         assert rule.measurement_reliability == 1.0
-        assert rule.dependency_cluster == record["cluster"]
+        assert rule.source_dependency_cluster == record["cluster"]
+        if mapping_id in POST_SELECTION_IDS:
+            assert rule.dependency_cluster == "EXISTENTIAL_MYSTERY"
+            assert rule.pathway_group_id == "EXISTENTIAL_MYSTERY"
+            assert rule.pathway_role is PathwayRoleV2.DEPENDENT_CARRIER
+            assert rule.primary_rule_id == _rule_id("CH_24_61_MYSTERY")
+        else:
+            assert rule.dependency_cluster == record["cluster"]
+            assert rule.pathway_group_id == record["cluster"]
         assert pathway.structural_salience == record["salience"]
         assert pathway.mapping_directness == record["directness"]
         assert pathway.flexibility_factor == record["flexibility"]
@@ -240,6 +387,8 @@ def test_documented_primary_alternative_and_hanging_groups_are_frozen() -> None:
         "dependency_cluster": "AUTHORITY_SOMATIC",
         "primary_mapping_id": "AUTH_SPLENIC_SIGNAL",
         "alternative_mapping_ids": ["GATE_57_SOMATIC_ALT"],
+        "dependent_carrier_mapping_ids": [],
+        "source_dependency_clusters": ["AUTHORITY_SOMATIC"],
         "execution_semantics": (
             "separate confidence-preserving observations; strongest-per-cluster "
             "dependency control makes pathways compete rather than sum"
@@ -256,6 +405,15 @@ def test_documented_primary_alternative_and_hanging_groups_are_frozen() -> None:
         "GATE_24_RETURN_ALT",
         "GATE_61_MYSTERY_ALT",
     ]
+    assert groups["EXISTENTIAL_MYSTERY"]["dependent_carrier_mapping_ids"] == [
+        "DMARS_61_DEVELOPMENT",
+        "PMOON_24_DRIVE",
+    ]
+    assert groups["EXISTENTIAL_MYSTERY"]["source_dependency_clusters"] == [
+        "EXISTENTIAL_MYSTERY",
+        "MYSTERY_DEVELOPMENT_CARRIER",
+        "MYSTERY_DRIVE_CARRIER",
+    ]
     assert groups["PROFILE_STRUCTURE"]["alternative_mapping_ids"] == [
         "PROFILE_LINE5_PROJECTION",
         "PROFILE_LINE6_PHASES",
@@ -263,6 +421,13 @@ def test_documented_primary_alternative_and_hanging_groups_are_frozen() -> None:
 
     source = load_mapping_library_source_v2(ROOT / BEST_CURRENT_SOURCE_PATH)
     by_id = {item.rule_id: item for item in source.frozen_mappings}
+    roles = {item.pathway_role for item in source.frozen_mappings}
+    assert roles == set(PathwayRoleV2)
+    assert sum(
+        item.pathway_role
+        in {PathwayRoleV2.ALTERNATIVE, PathwayRoleV2.ALTERNATIVE_HANGING}
+        for item in source.frozen_mappings
+    ) == 19
     gate_alternatives = {
         mapping_id
         for group in groups.values()
@@ -272,8 +437,32 @@ def test_documented_primary_alternative_and_hanging_groups_are_frozen() -> None:
     assert gate_alternatives
     for mapping_id in gate_alternatives:
         rule = by_id[_rule_id(mapping_id)]
+        assert rule.pathway_role is PathwayRoleV2.ALTERNATIVE_HANGING
+        assert rule.primary_rule_id != rule.rule_id
         assert rule.primary_pathway.structural_class is StructuralClass.HANGING_GATE
         assert rule.primary_pathway.predicate.feature_id is FeatureId.HANGING_GATES
+        assert FeatureId.ACTIVATION_GATE not in rule.primary_pathway.required_feature_ids
+
+
+def test_typed_group_linkage_rejects_missing_or_cross_group_primary() -> None:
+    source = load_mapping_library_source_v2(ROOT / BEST_CURRENT_SOURCE_PATH)
+    payload = source.model_dump(mode="json")
+    mappings = cast(list[dict[str, Any]], payload["mappings"])
+    carrier = next(
+        item for item in mappings if item["rule_id"] == _rule_id("PMOON_24_DRIVE")
+    )
+    carrier["primary_rule_id"] = "RULE-MISSING"
+    with pytest.raises(ValidationError, match="unknown primary"):
+        MappingLibrarySourceV2.model_validate(payload)
+
+    payload = source.model_dump(mode="json")
+    mappings = cast(list[dict[str, Any]], payload["mappings"])
+    carrier = next(
+        item for item in mappings if item["rule_id"] == _rule_id("PMOON_24_DRIVE")
+    )
+    carrier["primary_rule_id"] = _rule_id("TYPE_PROJECTOR_ENTRY")
+    with pytest.raises(ValidationError, match="across pathway groups"):
+        MappingLibrarySourceV2.model_validate(payload)
 
 
 def test_source_overrides_and_single_direct_contradiction_are_preserved() -> None:
@@ -288,6 +477,13 @@ def test_source_overrides_and_single_direct_contradiction_are_preserved() -> Non
     assert heart_rule.behavioral_confidence == 0.9
     assert heart_rule.primary_pathway.mapping_directness == 1.0
     assert heart_rule.primary_pathway.directness_class is DirectnessClass.DIRECT
+    projector = rules[_rule_id("TYPE_PROJECTOR_ENTRY")]
+    assert projector.behavioral_confidence == 0.85
+    assert any(
+        item.source_id == "SRC-TARGET-V36"
+        and "Behavioral confidence: 0.85" in item.locator
+        for item in projector.sources
+    )
 
     contradiction = rules[_rule_id("CONTRA_16_48_MASTERY_DRIVE")]
     response = contradiction.response_rule
@@ -323,6 +519,29 @@ def test_receipt_binds_source_freeze_and_marks_missing_external_provenance() -> 
     assert provenance["status"] == "incomplete"
     assert set(provenance["affected_mapping_ids"]) == set(_mapping_records())
     assert "does not invent missing provenance" in provenance["reason"]
+    assert receipt["controlling_source_overrides"] == [
+        {
+            "mapping_id": "TYPE_PROJECTOR_ENTRY",
+            "field": "behavioral_confidence",
+            "older_mapping_value": 0.9,
+            "controlling_value": 0.85,
+            "controlling_source_id": "SRC-TARGET-V36",
+            "controlling_source_path": BEHAVIORAL_TARGET_PATH,
+            "locator": (
+                "Invitation/recognition is domain-sensitive; "
+                "Behavioral confidence: 0.85"
+            ),
+            "rationale": (
+                "The V3.6 behavioral target is newer and controlling. This source-only "
+                "override was applied before scoring and without outcome inspection."
+            ),
+        }
+    ]
+    carrier_resolution = receipt["translation_contract"][
+        "post_selection_carrier_dependency_resolution"
+    ]
+    assert "not independent corroborators" in carrier_resolution
+    assert "no ranks, winners, or outcomes" in carrier_resolution
     assert receipt["untranslated_source_mapping_ids"] == []
     assert len(receipt["unresolved_unscored_constructs"]) == 14
     assert "historical result" in receipt["non_claims"][0]
