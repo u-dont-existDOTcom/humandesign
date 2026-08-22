@@ -70,6 +70,7 @@ def _validate_record_metadata(
 ) -> None:
     expected = {
         "feature_vector_schema_version": spec.feature_vector_schema_version,
+        "semantic_feature_registry_sha256": spec.semantic_feature_registry_sha256,
         "feature_registry_sha256": spec.feature_registry_sha256,
         "astronomy_engine_version": spec.engine.chart_engine_version,
         "ephemeris_file_set_sha256": (
@@ -115,6 +116,7 @@ def _expectations_for_spec(spec: CenturyCacheBuildSpec) -> CenturyCacheExpectati
         utc_start=spec.utc_start,
         utc_end_exclusive=spec.utc_end_exclusive,
         feature_vector_schema_version=spec.feature_vector_schema_version,
+        semantic_feature_registry_sha256=spec.semantic_feature_registry_sha256,
         cache_feature_registry_sha256=spec.feature_registry_sha256,
         required_feature_ids=feature_ids,
         required_feature_registry_sha256=required_feature_ids_sha256(feature_ids),
@@ -237,6 +239,7 @@ def _verify_expectations(
         raise CenturyCacheVerificationError("cache does not cover the requested UTC range")
     expected_fields = {
         "feature_vector_schema_version": expectations.feature_vector_schema_version,
+        "semantic feature registry": expectations.semantic_feature_registry_sha256,
         "cache feature registry": expectations.cache_feature_registry_sha256,
         "engine validation": expectations.engine_validation_sha256,
         "ephemeris source manifest": expectations.ephemeris_source_manifest_sha256,
@@ -251,6 +254,7 @@ def _verify_expectations(
     }
     actual_fields = {
         "feature_vector_schema_version": manifest.feature_vector_schema_version,
+        "semantic feature registry": manifest.semantic_feature_registry_sha256,
         "cache feature registry": manifest.feature_registry_sha256,
         "engine validation": manifest.engine.engine_validation_sha256,
         "ephemeris source manifest": (

@@ -10,6 +10,8 @@ from enum import StrEnum
 from pathlib import Path
 from typing import Any, Final, Literal, TypeAlias, TypeVar
 
+from hdmatch.util import canonical_json_bytes
+
 from .calculator import StableChartFeatures, calculate_chart
 from .design_moment import solve_design_moment, solve_personality_moment_from_design
 from .ephemeris import (
@@ -65,6 +67,35 @@ class BoundaryEvent:
     after_gate: int
     after_line: int
     root_tolerance_seconds: float
+
+
+def canonical_boundary_event_string(event: BoundaryEvent) -> str:
+    """Return a lossless path-free serialization for cache interval metadata."""
+
+    at_utc = _require_utc(event.at_utc)
+    ephemeris_utc = _require_utc(event.ephemeris_utc)
+    if not math.isfinite(event.boundary_longitude):
+        raise ValueError("boundary-event longitude must be finite")
+    if not math.isfinite(event.root_tolerance_seconds) or event.root_tolerance_seconds <= 0.0:
+        raise ValueError("boundary-event root tolerance must be positive and finite")
+    if not 1 <= event.before_gate <= 64 or not 1 <= event.after_gate <= 64:
+        raise ValueError("boundary-event Gates must be in 1..64")
+    if not 1 <= event.before_line <= 6 or not 1 <= event.after_line <= 6:
+        raise ValueError("boundary-event Lines must be in 1..6")
+    return canonical_json_bytes(
+        {
+            "after": {"gate": event.after_gate, "line": event.after_line},
+            "at_utc": at_utc.isoformat(),
+            "before": {"gate": event.before_gate, "line": event.before_line},
+            "body": event.body.value,
+            "boundary_longitude": event.boundary_longitude,
+            "ephemeris_utc": ephemeris_utc.isoformat(),
+            "resolution": event.resolution.value,
+            "root_tolerance_seconds": event.root_tolerance_seconds,
+            "schema_version": "chart-boundary-event-v1",
+            "side": event.side,
+        }
+    ).decode("utf-8")
 
 
 T = TypeVar("T")

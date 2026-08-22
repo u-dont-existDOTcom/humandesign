@@ -89,6 +89,7 @@ class CenturyStateRecord(FrozenModel):
     design_timestamp: datetime
     chart_features_sha256: str = Field(pattern=SHA256_PATTERN)
     feature_vector_schema_version: str = Field(min_length=1)
+    semantic_feature_registry_sha256: str = Field(pattern=SHA256_PATTERN)
     feature_registry_sha256: str = Field(pattern=SHA256_PATTERN)
     astronomy_engine_version: str = Field(min_length=1)
     ephemeris_file_set_sha256: str = Field(pattern=SHA256_PATTERN)
@@ -216,6 +217,7 @@ class CenturyCacheBuildSpec(FrozenModel):
     utc_start: datetime
     utc_end_exclusive: datetime
     feature_registry: tuple[FeatureColumnSpec, ...] = Field(min_length=1)
+    semantic_feature_registry_sha256: str = Field(pattern=SHA256_PATTERN)
     feature_registry_sha256: str = Field(pattern=SHA256_PATTERN)
     required_feature_coverage: float = Field(ge=0.0, le=1.0)
     calculation_tier: Literal["M2"]
@@ -293,6 +295,7 @@ class CenturyCacheManifest(FrozenModel):
     utc_end_exclusive: datetime
     interval_count: int = Field(gt=0)
     feature_registry: tuple[FeatureColumnSpec, ...] = Field(min_length=1)
+    semantic_feature_registry_sha256: str = Field(pattern=SHA256_PATTERN)
     feature_registry_sha256: str = Field(pattern=SHA256_PATTERN)
     required_feature_coverage: float = Field(ge=0.0, le=1.0)
     calculation_tier: Literal["M2"]
@@ -358,6 +361,7 @@ class CenturyCacheExpectations(FrozenModel):
     utc_start: datetime
     utc_end_exclusive: datetime
     feature_vector_schema_version: str = Field(min_length=1)
+    semantic_feature_registry_sha256: str = Field(pattern=SHA256_PATTERN)
     cache_feature_registry_sha256: str = Field(pattern=SHA256_PATTERN)
     required_feature_ids: tuple[str, ...] = Field(min_length=1)
     required_feature_registry_sha256: str = Field(pattern=SHA256_PATTERN)
@@ -436,6 +440,7 @@ _FIXED_PARQUET_COLUMNS: tuple[tuple[str, str], ...] = (
     ("design_timestamp", "timestamp_us_utc"),
     ("chart_features_sha256", "string"),
     ("feature_vector_schema_version", "string"),
+    ("semantic_feature_registry_sha256", "string"),
     ("feature_registry_sha256", "string"),
     ("astronomy_engine_version", "string"),
     ("ephemeris_file_set_sha256", "string"),
