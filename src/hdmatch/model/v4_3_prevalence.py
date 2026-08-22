@@ -39,12 +39,14 @@ from hdmatch.century_cache.trust_lock import (
     CenturyCacheTrustLockV1,
     century_cache_expectations_from_build_spec,
 )
+from hdmatch.chart.bodygraph import CHANNELS, GATE_TO_CENTER, Center
 from hdmatch.chart.ephemeris import CelestialBody
 from hdmatch.chart.feature_registry import (
     ActivationFeature,
     ActiveGateFeature,
     CompleteChannelFeature,
     FeatureId,
+    PossibleBridgeFeature,
 )
 from hdmatch.experiments.canonical import (
     canonical_json_bytes,
@@ -553,6 +555,10 @@ class _MappingBinding:
     source: MappingLibrarySourceV2
     library_sha256: str
     source_sha256: str
+    library_path: Path
+    source_path: Path
+    library_bytes: bytes
+    source_bytes: bytes
 
 
 @dataclass(frozen=True, slots=True)
@@ -868,6 +874,7 @@ def derive_v4_3_prevalence_plan(
     )
     plan = _derive_plan(mapping, cache.verified)
     _require_snapshot_unchanged(cache)
+    _require_mapping_unchanged(mapping)
     return plan
 
 
@@ -897,6 +904,8 @@ def build_v4_3_prevalence_artifact(
     )
     artifact = _aggregate_verified_universe(cache, mapping=mapping, plan=plan)
     _require_snapshot_unchanged(cache)
+    _require_mapping_unchanged(mapping)
+    _require_plan_unchanged(prevalence_plan_path, plan)
     return artifact
 
 
@@ -981,6 +990,8 @@ def verify_v4_3_prevalence_artifact(
     if path.read_bytes() != raw:
         raise V43PrevalenceError("prevalence artifact changed during verification")
     _require_snapshot_unchanged(cache)
+    _require_mapping_unchanged(mapping)
+    _require_plan_unchanged(prevalence_plan_path, plan)
     return VerifiedV43ConditionalPrevalence(
         artifact=artifact,
         artifact_sha256=sha256_bytes(raw),
@@ -1065,7 +1076,23 @@ def _load_mapping_binding(
         source=source,
         library_sha256=compiled_sha256,
         source_sha256=source_sha256,
+        library_path=compiled_path,
+        source_path=source_path,
+        library_bytes=compiled_raw,
+        source_bytes=source_raw,
     )
+
+
+def _require_mapping_unchanged(mapping: _MappingBinding) -> None:
+    try:
+        current_library = mapping.library_path.read_bytes()
+        current_source = mapping.source_path.read_bytes()
+    except OSError as exc:
+        raise V43PrevalenceError("mapping artifacts became unreadable") from exc
+    if current_library != mapping.library_bytes:
+        raise V43PrevalenceError("compiled mapping changed during operation")
+    if current_source != mapping.source_bytes:
+        raise V43PrevalenceError("mapping source changed during operation")
 
 
 def _anchors_from_mapping(
@@ -1197,6 +1224,18 @@ def _load_and_match_plan(
     if sha256_file(path) != plan.sha256():
         raise V43PrevalenceError("frozen prevalence plan exact-byte hash mismatch")
     return plan
+
+
+def _require_plan_unchanged(
+    path: str | Path,
+    plan: V43PrevalencePlanV1,
+) -> None:
+    try:
+        current_sha256 = sha256_file(path)
+    except OSError as exc:
+        raise V43PrevalenceError("frozen prevalence plan became unreadable") from exc
+    if current_sha256 != plan.sha256():
+        raise V43PrevalenceError("frozen prevalence plan changed during operation")
 
 
 def _open_verified_cache_snapshot(
@@ -1564,6 +1603,11 @@ def _validate_predicate_compatibility(
         PredicateOperatorV2.CONTAINS_ANY,
         PredicateOperatorV2.NOT_CONTAINS_ANY,
     }:
+        if predicate.feature_id is FeatureId.CENTERS and any(
+            value not in {center.value for center in Center}
+            for value in predicate.values
+        ):
+            raise V43PrevalenceError("Center predicate contains an unknown Center")
         compatible = predicate.feature_id in {
             FeatureId.CENTERS,
             FeatureId.COMPLETE_CHANNELS,
@@ -1643,6 +1687,10 @@ def _validate_known_json_feature(feature_id: FeatureId, value: JsonValue) -> Non
         _complete_channel_records(value)
     elif feature_id in {FeatureId.ACTIVE_GATES, FeatureId.REPEATED_GATES}:
         _active_gate_records(value)
+    elif feature_id is FeatureId.DEFINITION_TOPOLOGY:
+        _definition_topology(value)
+    elif feature_id is FeatureId.POSSIBLE_BRIDGES:
+        _possible_bridge_records(value)
     else:
         canonical_json_bytes(value)
 
@@ -1662,9 +1710,19 @@ def _center_sets(value: JsonValue) -> tuple[tuple[str, ...], tuple[str, ...]]:
         raise V43PrevalenceError("Center lists must not contain duplicates")
     if set(defined) & set(undefined):
         raise V43PrevalenceError("defined and undefined Centers must be disjoint")
+    defined_values = tuple(item for item in defined if isinstance(item, str))
+    undefined_values = tuple(item for item in undefined if isinstance(item, str))
+    if defined_values != tuple(sorted(defined_values)) or undefined_values != tuple(
+        sorted(undefined_values)
+    ):
+        raise V43PrevalenceError("Center lists must use canonical sorted order")
+    if set(defined_values) | set(undefined_values) != {
+        center.value for center in Center
+    }:
+        raise V43PrevalenceError("Centers must partition the exact nine-center registry")
     return (
-        tuple(item for item in defined if isinstance(item, str)),
-        tuple(item for item in undefined if isinstance(item, str)),
+        defined_values,
+        undefined_values,
     )
 
 
@@ -1701,9 +1759,21 @@ def _complete_channel_records(value: JsonValue) -> tuple[CompleteChannelFeature,
         ):
             raise V43PrevalenceError("malformed complete-Channel field types")
         try:
-            result.append(CompleteChannelFeature.model_validate(item, strict=True))
+            record = CompleteChannelFeature.model_validate(item, strict=True)
         except ValueError as exc:
             raise V43PrevalenceError("malformed complete-Channel values") from exc
+        known_channels = {channel.identifier for channel in CHANNELS}
+        if record.channel not in known_channels or (
+            {record.center_a, record.center_b}
+            != {
+                GATE_TO_CENTER[record.gate_a].value,
+                GATE_TO_CENTER[record.gate_b].value,
+            }
+        ):
+            raise V43PrevalenceError(
+                "complete Channel differs from the frozen Bodygraph registry"
+            )
+        result.append(record)
     return tuple(result)
 
 
@@ -1725,18 +1795,104 @@ def _active_gate_records(value: JsonValue) -> tuple[ActiveGateFeature, ...]:
             or not all(isinstance(position, str) for position in positions)
         ):
             raise V43PrevalenceError("malformed active-Gate field types")
+        canonical_positions = tuple(
+            f"{side}:{body.value}"
+            for side in ("design", "personality")
+            for body in CelestialBody
+        )
+        typed_positions = tuple(
+            position for position in positions if isinstance(position, str)
+        )
+        if (
+            typed_positions != tuple(sorted(typed_positions))
+            or any(position not in canonical_positions for position in typed_positions)
+        ):
+            raise V43PrevalenceError(
+                "active-Gate positions must use canonical side/carrier identities"
+            )
         try:
             result.append(
                 ActiveGateFeature(
                     gate=gate,
                     activation_count=activation_count,
-                    activation_positions=tuple(
-                        position for position in positions if isinstance(position, str)
-                    ),
+                    activation_positions=typed_positions,
                 )
             )
         except ValueError as exc:
             raise V43PrevalenceError("malformed active-Gate values") from exc
+    return tuple(result)
+
+
+def _definition_topology(value: JsonValue) -> tuple[tuple[str, ...], ...]:
+    if not isinstance(value, list):
+        raise V43PrevalenceError("Definition topology must be a component list")
+    known = {center.value for center in Center}
+    components: list[tuple[str, ...]] = []
+    for component in value:
+        if (
+            not isinstance(component, list)
+            or not component
+            or not all(isinstance(center, str) for center in component)
+        ):
+            raise V43PrevalenceError("Definition component has a malformed shape")
+        typed = tuple(center for center in component if isinstance(center, str))
+        if typed != tuple(sorted(set(typed))) or not set(typed) <= known:
+            raise V43PrevalenceError("Definition component is noncanonical")
+        components.append(typed)
+    result = tuple(components)
+    if result != tuple(sorted(result)):
+        raise V43PrevalenceError("Definition components must be canonically sorted")
+    flattened = tuple(center for component in result for center in component)
+    if len(flattened) != len(set(flattened)):
+        raise V43PrevalenceError("Definition components must be disjoint")
+    return result
+
+
+def _possible_bridge_records(value: JsonValue) -> tuple[PossibleBridgeFeature, ...]:
+    if not isinstance(value, list):
+        raise V43PrevalenceError("possible Bridges must be a record list")
+    expected = {
+        "missing_gate",
+        "active_complement_gate",
+        "channel",
+        "definition_component_indexes",
+    }
+    known_channels = {channel.identifier for channel in CHANNELS}
+    result: list[PossibleBridgeFeature] = []
+    for item in value:
+        if not isinstance(item, dict) or set(item) != expected:
+            raise V43PrevalenceError("malformed or unknown possible-Bridge fields")
+        missing_gate = item["missing_gate"]
+        complement = item["active_complement_gate"]
+        channel = item["channel"]
+        indexes = item["definition_component_indexes"]
+        if (
+            not _strict_int(missing_gate)
+            or not _strict_int(complement)
+            or not isinstance(channel, str)
+            or channel not in known_channels
+            or {missing_gate, complement}
+            != {int(gate) for gate in channel.split("-")}
+            or not isinstance(indexes, list)
+            or len(indexes) != 2
+            or not all(_strict_int(index) for index in indexes)
+        ):
+            raise V43PrevalenceError("malformed possible-Bridge field types")
+        typed_indexes = tuple(index for index in indexes if _strict_int(index))
+        try:
+            result.append(
+                PossibleBridgeFeature(
+                    missing_gate=missing_gate,
+                    active_complement_gate=complement,
+                    channel=channel,
+                    definition_component_indexes=(
+                        typed_indexes[0],
+                        typed_indexes[1],
+                    ),
+                )
+            )
+        except ValueError as exc:
+            raise V43PrevalenceError("malformed possible-Bridge values") from exc
     return tuple(result)
 
 

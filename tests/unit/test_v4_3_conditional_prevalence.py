@@ -470,6 +470,66 @@ def test_lock_swap_during_cache_verification_fails_closed(
         )
 
 
+def test_mapping_swap_during_cache_verification_fails_closed(
+    real_harness: _RealPrevalenceHarness,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    library_path = tmp_path / "mapping.json"
+    source_path = tmp_path / "mapping-source.json"
+    original_library = MAPPING.read_bytes()
+    library_path.write_bytes(original_library)
+    source_path.write_bytes(MAPPING_SOURCE.read_bytes())
+    real_verify = prevalence_module.verify_century_cache
+
+    def _verify_then_swap(*args: object, **kwargs: object) -> VerifiedCenturyCache:
+        verified = real_verify(*args, **kwargs)
+        library_path.write_bytes(original_library + b"\n")
+        return verified
+
+    monkeypatch.setattr(prevalence_module, "verify_century_cache", _verify_then_swap)
+    with pytest.raises(V43PrevalenceError, match="compiled mapping changed"):
+        derive_v4_3_prevalence_plan(
+            real_harness.cache_directory,
+            trust_lock_path=real_harness.trust_lock_path,
+            mapping_library_path=library_path,
+            mapping_source_library_path=source_path,
+            mapping_repository_root=ROOT,
+        )
+
+
+def test_plan_swap_during_duration_replay_fails_closed(
+    real_harness: _RealPrevalenceHarness,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    plan_path = tmp_path / "plan.json"
+    original_plan = real_harness.plan_path.read_bytes()
+    plan_path.write_bytes(original_plan)
+    real_rows = prevalence_module.iter_verified_century_cache_rows
+
+    def _rows_then_swap(cache: VerifiedCenturyCache) -> Any:
+        changed = False
+        for row in real_rows(cache):
+            if not changed:
+                plan_path.write_bytes(original_plan + b"\n")
+                changed = True
+            yield row
+
+    monkeypatch.setattr(
+        prevalence_module,
+        "iter_verified_century_cache_rows",
+        _rows_then_swap,
+    )
+    with pytest.raises(V43PrevalenceError, match="plan changed"):
+        build_v4_3_prevalence_artifact(
+            real_harness.cache_directory,
+            trust_lock_path=real_harness.trust_lock_path,
+            prevalence_plan_path=plan_path,
+            **_mapping_kwargs(),
+        )
+
+
 def test_artifact_rejects_skipped_conditional_backoff_level(
     real_harness: _RealPrevalenceHarness,
 ) -> None:
@@ -551,21 +611,35 @@ def test_exclusion_and_structured_predicates_reject_malformed_shapes() -> None:
     centers = StructuralPredicateV2(
         feature_id=FeatureId.CENTERS,
         operator=PredicateOperatorV2.NOT_CONTAINS_ANY,
-        values=("ego",),
+        values=("heart_ego",),
     )
     centers_registry = _registry(_spec(FeatureId.CENTERS, FeatureStorageType.JSON))
     assert v4_3_predicate_matches(
         centers,
-        {FeatureId.CENTERS.value: {"defined": ["sacral"], "undefined": ["ego"]}},
+        {
+            FeatureId.CENTERS.value: {
+                "defined": ["sacral"],
+                "undefined": [
+                    "ajna",
+                    "g",
+                    "head",
+                    "heart_ego",
+                    "root",
+                    "solar_plexus",
+                    "spleen",
+                    "throat",
+                ],
+            }
+        },
         centers_registry,
     )
     with pytest.raises(V43PrevalenceError, match="exact defined/undefined"):
         v4_3_predicate_matches(
             centers,
             {
-                FeatureId.CENTERS.value: {
-                    "defined": ["sacral"],
-                    "undefined": ["ego"],
+                    FeatureId.CENTERS.value: {
+                        "defined": ["sacral"],
+                        "undefined": ["heart_ego"],
                     "unknown": [],
                 }
             },
@@ -677,6 +751,7 @@ def test_plan_and_policy_are_deterministic_and_fail_closed() -> None:
     assert first.minimum_effective_state_equivalents == 500
     assert capped_information_rubric_bits(1, 1 << 20) == 6.0
     assert capped_information_rubric_bits(1, 2) == 1.0
+    assert capped_information_rubric_bits(1, 1) == 0.0
     with pytest.raises(V43PrevalenceError, match="prevalence must be"):
         capped_information_rubric_bits(0, 100)
 
