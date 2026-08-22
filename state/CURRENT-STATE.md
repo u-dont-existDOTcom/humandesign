@@ -8,12 +8,12 @@
   `/tmp/hdmatch-integration` on `codex/harness-integration`.
 - Latest upstream `main` commit merged:
   `a7c24012867e640f2728f40ab342267b12d662e9`.
-- Current integrated exact-origin implementation head:
-  `4dce7708afefdaaff4660f44298880fe8ba6b849`.
 - Current published Phase-1/V3.6 checkpoint:
-  `b94e160ccbb4ce9be5131e57f37630087825f0b2`.
-- Normal exact-head GitHub CI is green for both push run `32564812508` and
-  pull-request run `32564814009`.
+  `c8f730296ca958e5796f865b84d29cb555ff7a2d`.
+- Local rollback branch before Phase 2 integration:
+  `checkpoint/pre-phase2-c8f7302`.
+- Normal exact-head GitHub CI is green for both push run `32565198166` and
+  pull-request run `32565200702`.
 - The inherited historical V3.6 audit workflow also triggered during the
   upstream-main synchronization. Run `32564813967` failed during ephemeris
   fetch; its 100-year ranking step was skipped. It is not a cache, completed
@@ -114,9 +114,12 @@ mandatory cache-first sequence.
   Ruff passed over `src`, `tests`, and `scripts`; strict mypy passed over 103
   `src/hdmatch` source files.
 
-## Next exact action: Phase 2 reusable century cache
+## Current action: Phase 2 reusable century cache
 
-Implement the resumable cache path before starting the century build:
+The resumable cache path is being implemented in independent worktrees against
+the exact Phase-1 checkpoint. The work is limited to staged-job replay,
+overlapping-cut reconciliation, streaming publication, the independent trust
+lock, and bounded multi-job proof before starting the century build:
 
 1. freeze a deterministic build plan and one-year overlapping job ranges;
 2. persist atomic provisional job rows/receipts with all-call SWIEPH audits;

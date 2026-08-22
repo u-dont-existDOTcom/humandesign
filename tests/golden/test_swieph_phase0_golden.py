@@ -23,6 +23,10 @@ from hdmatch.century_cache import (
     iter_verified_century_cache_rows,
     write_century_cache_explicit,
 )
+from hdmatch.century_cache.parity import (
+    CenturyCacheParityGenerationError,
+    generate_swieph_golden_parity_report,
+)
 from hdmatch.chart.calculator import calculate_chart
 from hdmatch.chart.ephemeris import (
     DEFAULT_ACTIVATION_BODIES,
@@ -407,6 +411,58 @@ def test_validate_engine_cli_writes_path_free_manifest_binding(
     )
     serialized = output.read_text(encoding="utf-8")
     assert str(ephemeris_directory.resolve()) not in serialized
+
+
+def test_production_parity_report_is_generated_from_exact_reference_bytes(
+    production_provider: SwissEphemerisProvider,
+    tmp_path: Path,
+) -> None:
+    ephemeris_directory = Path(production_provider.metadata.files[0].path).parent
+    ephemeris_provenance = verify_ephemeris_directory(
+        source_manifest_path=PROJECT_ROOT / "data" / "ephemeris" / "manifest.json",
+        ephemeris_directory=ephemeris_directory,
+    )
+    golden = _load_json(GOLDEN_PATH)
+    start = _parse_utc(golden["universe"]["start_inclusive"])
+    end = _parse_utc(golden["universe"]["end_exclusive"])
+    report = generate_swieph_golden_parity_report(
+        production_provider,
+        ephemeris_provenance,
+        golden_reference_path=GOLDEN_PATH,
+        reference_source_locator="tests/golden/fixtures/swieph_phase0_golden_v1.json",
+        engine_validation_sha256=sha256_file(
+            PROJECT_ROOT
+            / "reports"
+            / "v4_3_migration"
+            / "phase0_engine_validation.json"
+        ),
+        feature_vector_schema_version="chart-feature-vector-v2",
+        utc_start=start,
+        utc_end_exclusive=end,
+    )
+
+    assert report.validation_status == "pass"
+    assert report.comparison_count == (
+        len(golden["representative_positions"]) * len(DEFAULT_ACTIVATION_BODIES)
+    )
+    assert report.mismatch_count == 0
+    assert report.reference_source_sha256 == sha256_file(GOLDEN_PATH)
+
+    changed = json.loads(GOLDEN_PATH.read_bytes())
+    changed["representative_positions"][0]["positions"]["sun"]["longitude"] += 0.01
+    changed_path = tmp_path / "changed-golden.json"
+    write_new_canonical_json(changed_path, changed)
+    with pytest.raises(CenturyCacheParityGenerationError, match="1 mismatches"):
+        generate_swieph_golden_parity_report(
+            production_provider,
+            ephemeris_provenance,
+            golden_reference_path=changed_path,
+            reference_source_locator="changed-golden.json",
+            engine_validation_sha256="0" * 64,
+            feature_vector_schema_version="chart-feature-vector-v2",
+            utc_start=start,
+            utc_end_exclusive=end,
+        )
 
 
 class _MoshierFallbackSwiss:
