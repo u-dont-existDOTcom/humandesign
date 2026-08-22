@@ -10,10 +10,9 @@ from __future__ import annotations
 
 import math
 import re
-from dataclasses import dataclass
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
-from typing import Literal
+from typing import Final, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
@@ -437,21 +436,154 @@ class StagedExactStateReplayVerificationV1(_FrozenModel):
         return self
 
 
-@dataclass(frozen=True, slots=True)
 class VerifiedStagedExactStateBatch:
     """In-process replay-minted batch plus canonical producer/replay evidence."""
 
-    batch: VerifiedExactStateBatch
-    producer_receipt: StagedExactStateBatchReceiptV1
-    producer_receipt_sha256: str
-    replay_verification: StagedExactStateReplayVerificationV1
-    replay_verification_sha256: str
+    __slots__ = (
+        "_batch",
+        "_factory_token",
+        "_producer_receipt",
+        "_producer_receipt_sha256",
+        "_replay_verification",
+        "_replay_verification_sha256",
+    )
+    _batch: VerifiedExactStateBatch
+    _factory_token: object
+    _producer_receipt: StagedExactStateBatchReceiptV1
+    _producer_receipt_sha256: str
+    _replay_verification: StagedExactStateReplayVerificationV1
+    _replay_verification_sha256: str
+
+    def __init__(
+        self,
+        *,
+        batch: VerifiedExactStateBatch,
+        producer_receipt: StagedExactStateBatchReceiptV1,
+        producer_receipt_sha256: str,
+        replay_verification: StagedExactStateReplayVerificationV1,
+        replay_verification_sha256: str,
+        _factory_token: object,
+    ) -> None:
+        if _factory_token is not _VERIFIED_STAGED_EXACT_STATE_BATCH_FACTORY_TOKEN:
+            raise StagedCenturyBuildError(
+                "verified staged batches must be minted by deterministic replay"
+            )
+        object.__setattr__(self, "_batch", batch)
+        object.__setattr__(self, "_producer_receipt", producer_receipt)
+        object.__setattr__(
+            self, "_producer_receipt_sha256", producer_receipt_sha256
+        )
+        object.__setattr__(self, "_replay_verification", replay_verification)
+        object.__setattr__(
+            self, "_replay_verification_sha256", replay_verification_sha256
+        )
+        object.__setattr__(self, "_factory_token", _factory_token)
+
+    def __setattr__(self, name: str, value: object) -> None:
+        del name, value
+        raise AttributeError("VerifiedStagedExactStateBatch is immutable")
+
+    @property
+    def batch(self) -> VerifiedExactStateBatch:
+        return self._batch
+
+    @property
+    def producer_receipt(self) -> StagedExactStateBatchReceiptV1:
+        return self._producer_receipt
+
+    @property
+    def producer_receipt_sha256(self) -> str:
+        return self._producer_receipt_sha256
+
+    @property
+    def replay_verification(self) -> StagedExactStateReplayVerificationV1:
+        return self._replay_verification
+
+    @property
+    def replay_verification_sha256(self) -> str:
+        return self._replay_verification_sha256
+
+
+_VERIFIED_STAGED_EXACT_STATE_BATCH_FACTORY_TOKEN: Final[object] = object()
 
 
 def staged_replay_verification_sha256(
     verification: StagedExactStateReplayVerificationV1,
 ) -> str:
     return sha256_json(verification.model_dump(mode="json"))
+
+
+def validate_verified_staged_exact_state_batch(
+    source: VerifiedStagedExactStateBatch,
+) -> StagedExactStateReplayVerificationV1:
+    """Recheck the replay-factory capability and all in-memory evidence bindings."""
+
+    if not isinstance(source, VerifiedStagedExactStateBatch) or (
+        source._factory_token is not _VERIFIED_STAGED_EXACT_STATE_BATCH_FACTORY_TOKEN
+    ):
+        raise StagedCenturyBuildError(
+            "staged exact-state batch lacks deterministic-replay factory capability"
+        )
+    try:
+        provenance = validate_verified_exact_state_batch(source.batch)
+        receipt = StagedExactStateBatchReceiptV1.model_validate(
+            source.producer_receipt.model_dump(mode="python")
+        )
+        replay = StagedExactStateReplayVerificationV1.model_validate(
+            source.replay_verification.model_dump(mode="python")
+        )
+    except (TypeError, ValueError) as exc:
+        raise StagedCenturyBuildError(
+            "verified staged batch contains invalid replay evidence"
+        ) from exc
+    receipt_sha256 = sha256_json(receipt.model_dump(mode="json"))
+    replay_sha256 = staged_replay_verification_sha256(replay)
+    provenance_sha256 = sha256_json(provenance.model_dump(mode="json"))
+    audit_sha256 = sha256_json(
+        receipt.swiss_calculation_audit.model_dump(mode="json")
+    )
+    expected: dict[str, tuple[object, object]] = {
+        "producer receipt hash": (source.producer_receipt_sha256, receipt_sha256),
+        "replay verification hash": (
+            source.replay_verification_sha256,
+            replay_sha256,
+        ),
+        "replay producer receipt": (replay.producer_receipt_sha256, receipt_sha256),
+        "build plan": (replay.plan_sha256, receipt.plan_sha256),
+        "build job": (replay.job_sha256, receipt.job_sha256),
+        "job ID": (replay.job_id, receipt.job_id),
+        "source commit": (replay.source_commit, receipt.source_commit),
+        "engine identity": (
+            replay.engine_identity_sha256,
+            receipt.engine_identity_sha256,
+        ),
+        "artifact": (replay.artifact_sha256, receipt.artifact_sha256),
+        "artifact size": (replay.artifact_size_bytes, receipt.artifact_size_bytes),
+        "row hash": (replay.replay_canonical_rows_sha256, canonical_rows_sha256(source.batch.rows)),
+        "interval count": (replay.interval_count, len(source.batch.rows)),
+        "event count": (
+            replay.boundary_event_count,
+            sum(len(row.boundary_events) for row in source.batch.rows),
+        ),
+        "exact-state provenance": (
+            replay.replay_exact_state_provenance_sha256,
+            provenance_sha256,
+        ),
+        "producer exact-state provenance": (
+            receipt.exact_state_batch_provenance_sha256,
+            provenance_sha256,
+        ),
+        "producer Swiss audit": (
+            replay.producer_swiss_calculation_audit_sha256,
+            audit_sha256,
+        ),
+    }
+    for label, (actual, required) in expected.items():
+        if actual != required:
+            raise StagedCenturyBuildError(
+                f"verified staged batch {label} binding changed"
+            )
+    return replay
 
 
 def _derive_overlap_scan_seconds(
@@ -1078,7 +1210,7 @@ def verify_staged_exact_state_batch(
         partition_and_events_match=True,
         all_call_swieph_audit_match=True,
     )
-    return VerifiedStagedExactStateBatch(
+    verified = VerifiedStagedExactStateBatch(
         batch=replay_batch,
         producer_receipt=receipt,
         producer_receipt_sha256=producer_receipt_sha256,
@@ -1086,4 +1218,7 @@ def verify_staged_exact_state_batch(
         replay_verification_sha256=staged_replay_verification_sha256(
             replay_verification
         ),
+        _factory_token=_VERIFIED_STAGED_EXACT_STATE_BATCH_FACTORY_TOKEN,
     )
+    validate_verified_staged_exact_state_batch(verified)
+    return verified

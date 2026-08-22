@@ -106,6 +106,7 @@ CACHEABLE_M0_M2_FEATURE_COLUMNS_SHA256: Final[str] = feature_registry_sha256(
 CACHEABLE_M0_M2_SEMANTIC_REGISTRY_SHA256: Final[str] = CACHEABLE_M0_M2_REGISTRY.sha256()
 _EXACT_STATE_BATCH_FACTORY_TOKEN: Final[object] = object()
 _EXACT_STATE_SHARD_SET_FACTORY_TOKEN: Final[object] = object()
+_EXACT_STATE_RECONCILIATION_MINT_TOKEN: Final[object] = object()
 _EXACT_STATE_MINT_BINDING_KEY: Final[bytes] = secrets.token_bytes(32)
 
 
@@ -863,6 +864,73 @@ def build_verified_exact_state_batch(
         ),
         design_root_arc_tolerance_degrees=(
             first_metadata.design_arc_tolerance_degrees
+        ),
+    )
+    batch = VerifiedExactStateBatch(
+        rows=rows,
+        provenance=provenance,
+        _factory_token=_EXACT_STATE_BATCH_FACTORY_TOKEN,
+    )
+    validate_verified_exact_state_batch(batch)
+    return batch
+
+
+def _mint_reconciled_exact_state_batch(
+    rows: tuple[CenturyStateRecord, ...],
+    *,
+    source_batch: VerifiedExactStateBatch,
+    stable_interval_partition_sha256: str,
+    _reconciliation_factory_token: object,
+) -> VerifiedExactStateBatch:
+    """Mint a bounded batch after overlap reconciliation has rederived its rows.
+
+    This is intentionally private to the century-cache package.  The Phase-2
+    reconciler must first validate factory-minted source batches and recompute
+    every clipped or merged representative through the strict Swiss provider.
+    Arbitrary callers cannot obtain the private production-factory token.
+    """
+
+    if _reconciliation_factory_token is not _EXACT_STATE_RECONCILIATION_MINT_TOKEN:
+        raise ExactStateBatchError("reconciled mint lacks the factory capability")
+    source_provenance = validate_verified_exact_state_batch(source_batch)
+    if not rows:
+        raise ExactStateBatchError("reconciled exact-state batch must not be empty")
+    if len(stable_interval_partition_sha256) != 64:
+        raise ExactStateBatchError("reconciled interval partition hash is invalid")
+    for previous, current in zip(rows, rows[1:], strict=False):
+        if previous.utc_end != current.utc_start:
+            raise ExactStateBatchError("reconciled exact-state rows contain a gap or overlap")
+        if discrete_chart_identity_sha256(previous) == discrete_chart_identity_sha256(
+            current
+        ):
+            raise ExactStateBatchError("reconciled exact-state rows are not maximal")
+
+    first = rows[0]
+    logical_hash = canonical_rows_sha256(rows)
+    provenance = ExactStateBatchProvenance(
+        verification_status="pass",
+        utc_start=first.utc_start,
+        utc_end_exclusive=rows[-1].utc_end,
+        interval_count=len(rows),
+        boundary_event_count=sum(len(row.boundary_events) for row in rows),
+        boundary_policy_version=source_provenance.boundary_policy_version,
+        stable_interval_partition_sha256=stable_interval_partition_sha256,
+        canonical_rows_sha256=logical_hash,
+        logical_universe_sha256=logical_hash,
+        feature_vector_schema_version=first.feature_vector_schema_version,
+        semantic_feature_registry_sha256=first.semantic_feature_registry_sha256,
+        feature_registry_sha256=first.feature_registry_sha256,
+        chart_engine_version=first.astronomy_engine_version,
+        ephemeris_file_set_sha256=first.ephemeris_file_set_sha256,
+        node_convention=first.node_convention,
+        mandala_mapping_version=first.mandala_mapping_version,
+        mandala_mapping_sha256=first.mandala_mapping_sha256,
+        bodygraph_mapping_sha256=first.bodygraph_mapping_sha256,
+        design_root_time_tolerance_seconds=(
+            source_provenance.design_root_time_tolerance_seconds
+        ),
+        design_root_arc_tolerance_degrees=(
+            source_provenance.design_root_arc_tolerance_degrees
         ),
     )
     batch = VerifiedExactStateBatch(
