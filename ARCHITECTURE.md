@@ -5,20 +5,24 @@
 Implement an end-to-end research system that can:
 
 1. calculate exact Human Design chart states across candidate birth moments;
-2. encode the existing V4/V3.2 behavioral scoring model;
+2. encode the canonical V4.3 behavioral scoring model and current frozen target;
 3. generate synthetic questionnaire cases from the frozen model;
 4. recover hidden dates/times from blinded synthetic responses;
 5. optimize question selection and decoding on synthetic and development data;
 6. fit chart→behavior likelihoods on known human development cases;
 7. freeze a model;
 8. test it prospectively on untouched human cases;
-9. report rank, uncertainty, stable time intervals, failures, and calibration.
+9. report rank, uncertainty, stable time intervals, failures, and calibration;
+10. calculate pair/connection mechanics as a separate relationship research module;
+11. preserve relationship evidence separately from natal reverse-matching evidence.
 
 ## Core principle
 
 The project distinguishes **model fitting** from **model validation**.
 
 Post-hoc fitting is legitimate model development. It becomes circular only when the fitted cases are also presented as proof that the fitted model predicts unseen people.
+
+It also distinguishes **natal reverse matching** from **relationship/connection analysis**. A relationship description may be useful or testable without being evidence that a natal candidate should receive additional V4.3 NetInformation.
 
 ## System components
 
@@ -31,27 +35,27 @@ Post-hoc fitting is legitimate model development. It becomes circular only when 
                                │
                  chart features / state intervals
                                │
-             ┌─────────────────┴─────────────────┐
-             │                                   │
- ┌───────────▼───────────┐             ┌─────────▼─────────┐
- │ Symbolic V4 decoder   │             │ Empirical decoder │
- │ frozen mappings       │             │ learned P(a|chart)│
- │ rubric bits           │             │ on dev humans     │
- └───────────┬───────────┘             └─────────┬─────────┘
-             │                                   │
-             └─────────────────┬─────────────────┘
-                               │
-                        candidate ranker
-                               │
-                    adaptive question selector
-                               │
-                         blind prediction
-                               │
-                         prediction freeze
-                               │
-                         answer-key reveal
-                               │
-                           evaluator
+             ┌─────────────────┼────────────────────┐
+             │                 │                    │
+ ┌───────────▼───────────┐ ┌──▼────────────────┐ ┌─▼──────────────────────┐
+ │ Symbolic V4.3 decoder │ │ Empirical decoder │ │ Relationship analysis │
+ │ frozen mappings       │ │ learned P(a|chart)│ │ pair connection state │
+ │ NetInformation        │ │ on dev humans     │ │ + unknown-time ranges │
+ └───────────┬───────────┘ └──┬────────────────┘ └──────────┬─────────────┘
+             │                 │                              │
+             └────────┬────────┘                         separate report /
+                      │                                  validation track
+               candidate ranker
+                      │
+           adaptive question selector
+                      │
+                blind prediction
+                      │
+                prediction freeze
+                      │
+                answer-key reveal
+                      │
+                  evaluator
 ```
 
 ## Packages Codex should implement
@@ -89,6 +93,9 @@ src/hdmatch/
         interval_ranker.py
         date_aggregator.py
         minute_rectifier.py
+    relationship/
+        analysis.py
+        uncertain_time.py
     experiments/
         manifest.py
         freeze.py
@@ -111,6 +118,24 @@ tests/
     blind_e2e/
 ```
 
+## Relationship module boundary
+
+`src/hdmatch/relationship/` consumes independently calculated natal chart states. It does not modify those natal states and it does not feed the natal V4.3 scorer.
+
+V1 implements the source-defined relationship surface:
+
+- combined Center configuration;
+- connection-chart Definition/splits;
+- Electromagnetic, Dominance, Compromise, and Companionship channel classification;
+- shared Gates;
+- natal Type/Authority/Profile context;
+- mechanically detectable Sun/Earth-to-Node alignments;
+- stable versus time-dependent mechanics when a partner birth time is unknown.
+
+Do not add a generic compatibility or soulmate scalar unless a separately frozen empirical relationship model is trained on development couples and tested on different, untouched couples.
+
+See `docs/18_relationship_analysis.md`.
+
 ## CLI target
 
 ```bash
@@ -128,8 +153,12 @@ hdmatch optimize-questionnaire --development-set ...
 hdmatch report --run ...
 ```
 
+Relationship CLI/API adapters may be added after the pure mechanical module and tests are stable; the pure Python API is the V1 integration point.
+
 ## Time resolution
 
 Search candidate **state intervals**, not nominal clock samples.
 Report a minute only if a relevant boundary or validated finer-grained feature distinguishes it.
 Otherwise return the full stable interval.
+
+For an unknown partner birth time, apply the same rule to the partner's local civil day: enumerate exact natal state intervals, calculate the pair mechanics for every interval, merge only identical complete relationship fingerprints, and report invariants separately from time-dependent features.
