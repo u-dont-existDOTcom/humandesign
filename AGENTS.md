@@ -36,7 +36,9 @@ Read in this order:
 20. `docs/18_relationship_analysis.md`
 21. `docs/19_base_level_substructure_validation.md`
 22. `docs/20_forward_blind_prospective_validation.md`
-23. `reference/relationship/ra_partnership_analysis_2005.md`
+23. `docs/21_forward_blind_execution_checklist.md`
+24. `reference/substructure/SOURCES_NEEDED.md`
+25. `reference/relationship/ra_partnership_analysis_2005.md`
 
 The earlier protocol/scoring and behavioral-target files in `reference/core/` remain historical/normative background only where they do not conflict with V4.3/V3.6. Never silently downgrade to V4.1/V3.2 or V3.5 because the existing implementation is easier.
 
