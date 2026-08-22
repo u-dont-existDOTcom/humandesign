@@ -29,8 +29,23 @@ Read in this order:
 15. `docs/12_threats_to_validity.md`
 16. `docs/13_v4_3_migration_and_century_cache.md`
 17. `docs/14_month_first_blind_validation.md`
+18. `docs/16_ephemeris_bootstrap.md`
 
 The earlier protocol/scoring files in `reference/core/` remain historical/normative background only where they do not conflict with V4.3. Never silently downgrade to V4.1/V3.2 because the existing implementation is easier.
+
+## Mandatory broad-search order
+
+Do not start another full 100-year behavioral ranking until:
+
+1. the production Swiss `.se1` files are provisioned and their hashes recorded;
+2. the engine explicitly requests SWIEPH and proves from returned flags that SWIEPH was actually used;
+3. the complete cacheable M0-M2 feature registry and exact boundary engine exist;
+4. the canonical century cache is built and verified;
+5. V4.3 scorer/mapping compliance tests pass.
+
+After that, ordinary broad searches MUST read the verified century cache. Do not regenerate 100 years of astronomy for every target/profile rerun.
+
+Direct JPL files are optional parity inputs. Verified compressed Swiss `.se1` files are the normal production engine.
 
 ## V4.3 compliance rule
 
@@ -44,7 +59,8 @@ A run may identify itself as `V4.3` only if all of these are true:
 - exact stable intervals are used;
 - the complete declared universe is rescored after accepted target changes;
 - the ranking tuple follows `reference/core/v4_3_scoring_algorithm.md` exactly;
-- the astronomy/cache provenance is verified.
+- the astronomy/cache provenance is verified;
+- requested and returned ephemeris modes agree and are SWIEPH for the canonical production cache.
 
 If any item is missing, fail closed or label the result honestly as a reduced model such as `M0-architecture-only`; emit `v4_3_compliant: false`. A reduced model must never be presented as an approximation that is "basically V4.3".
 
@@ -76,6 +92,7 @@ If any item is missing, fail closed or label the result honestly as a reduced mo
 - Prefer pure functions for scoring.
 - Cache chart states and ephemeris results.
 - Prefer the verified precomputed century cache for broad searches rather than rebuilding astronomy on every profile.
+- Never accept successful coordinate output as proof that the desired ephemeris was used; inspect returned flags.
 - Never optimize evaluation cases.
 
 ## Required test discipline
@@ -89,6 +106,7 @@ Every claimed blind recovery must leave:
 - prediction hash,
 - timestamp,
 - software versions,
+- ephemeris requested/returned mode and file hashes,
 - cache/universe hash where used,
 - reveal status,
 - evaluation file after reveal.
