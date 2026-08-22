@@ -1,0 +1,263 @@
+{
+  "schema": "v4.3-profile-audit-mapping-overlay-v2",
+  "created_utc": "2026-08-22T09:02:00Z",
+  "status": "frozen-before-opening-any-v4.3-profile-ranking",
+  "base_mapping": "reference/core/profile_v3_6_v43_mapping_frozen_2026_08_22.json",
+  "rationale": "Add predeclared low-salience hanging-gate alternatives and correct two confidence/directness values from explicit pre-existing V3.2 text. This prevents a complete-channel-only simplification. The earlier workflow run, if any, must not be inspected or reported; only a run at or after this overlay commit is eligible for this audit.",
+  "overrides": {
+    "CENTER_ROOT_OPEN": {
+      "confidence": 0.75,
+      "directness": 0.75,
+      "flexibility": 1.0,
+      "behavior": "External pressure can create a strong urge to clear obligations rapidly and the urgency can fall away quickly when the demand is removed; overpressure can also lead to overshoot and later recovery."
+    },
+    "CENTER_HEART_DEFINED": {
+      "confidence": 0.90,
+      "directness": 1.0,
+      "flexibility": 1.0,
+      "behavior": "Once the person genuinely makes a serious promise or deal, willpower is reported as highly reliable and substantial will can be summoned to follow through."
+    }
+  },
+  "add_mappings": [
+    {
+      "id": "GATE_57_SOMATIC_ALT",
+      "cluster": "AUTHORITY_SOMATIC",
+      "behavior": "Alternative lower-level pathway for rapid present-moment bodily safety/health awareness without assuming the user can name the sensation as Splenic.",
+      "confidence": 0.80,
+      "salience": 0.35,
+      "directness": 0.75,
+      "flexibility": 0.50,
+      "predicate": {"feature": "gate", "equals": 57},
+      "parents": [{"feature": "type", "equals": "Projector"}],
+      "source": "Standard HD Gate 57 intuitive clarity/survival awareness; hanging-gate alternative only."
+    },
+    {
+      "id": "GATE_1_ORIGINAL_ALT",
+      "cluster": "ORIGINAL_CONTRIBUTION",
+      "behavior": "Alternative hanging-gate pathway for individual creative originality when the full 1-8 channel is absent.",
+      "confidence": 1.0,
+      "salience": 0.35,
+      "directness": 0.75,
+      "flexibility": 0.50,
+      "predicate": {"feature": "gate", "equals": 1},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}],
+      "source": "Standard HD Gate 1 creative self-expression; lower-salience alternative."
+    },
+    {
+      "id": "GATE_8_CONTRIBUTION_ALT",
+      "cluster": "ORIGINAL_CONTRIBUTION",
+      "behavior": "Alternative hanging-gate pathway for influence through a distinctive personal contribution.",
+      "confidence": 0.90,
+      "salience": 0.35,
+      "directness": 0.75,
+      "flexibility": 0.50,
+      "predicate": {"feature": "gate", "equals": 8},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}],
+      "source": "Standard HD Gate 8 contribution theme; lower-salience alternative."
+    },
+    {
+      "id": "GATE_43_INSIGHT_ALT",
+      "cluster": "INSIGHT_TO_STRUCTURE",
+      "behavior": "Alternative hanging-gate pathway for independent insight preceding communicable explanation.",
+      "confidence": 0.90,
+      "salience": 0.35,
+      "directness": 0.75,
+      "flexibility": 0.50,
+      "predicate": {"feature": "gate", "equals": 43},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}],
+      "source": "Standard HD Gate 43 insight theme; lower-salience alternative."
+    },
+    {
+      "id": "GATE_23_EXPRESSION_ALT",
+      "cluster": "INSIGHT_TO_STRUCTURE",
+      "behavior": "Alternative hanging-gate pathway for translating individual knowing into concise expression.",
+      "confidence": 0.85,
+      "salience": 0.35,
+      "directness": 0.75,
+      "flexibility": 0.50,
+      "predicate": {"feature": "gate", "equals": 23},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}],
+      "source": "Standard HD Gate 23 assimilation/expression theme; lower-salience alternative."
+    },
+    {
+      "id": "GATE_61_MYSTERY_ALT",
+      "cluster": "EXISTENTIAL_MYSTERY",
+      "behavior": "Alternative hanging-gate pathway for pressure toward inner truth and consequential mystery.",
+      "confidence": 0.90,
+      "salience": 0.35,
+      "directness": 0.75,
+      "flexibility": 0.50,
+      "predicate": {"feature": "gate", "equals": 61},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}],
+      "source": "Standard HD Gate 61 Inner Truth/mystery; lower-salience alternative."
+    },
+    {
+      "id": "GATE_24_RETURN_ALT",
+      "cluster": "EXISTENTIAL_MYSTERY",
+      "behavior": "Alternative hanging-gate pathway for returning repeatedly to an unresolved formulation until knowing reorganizes.",
+      "confidence": 0.85,
+      "salience": 0.35,
+      "directness": 0.75,
+      "flexibility": 0.50,
+      "predicate": {"feature": "gate", "equals": 24},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}],
+      "source": "Standard HD Gate 24 Return/rationalization; lower-salience alternative."
+    },
+    {
+      "id": "GATE_28_PURPOSE_ALT",
+      "cluster": "PURPOSE_STRUGGLE",
+      "behavior": "Alternative hanging-gate pathway for confronting risk/meaning and seeking purpose in what is worth struggling for.",
+      "confidence": 0.85,
+      "salience": 0.35,
+      "directness": 0.75,
+      "flexibility": 0.50,
+      "predicate": {"feature": "gate", "equals": 28},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}],
+      "source": "Standard HD Gate 28 struggle for purpose; lower-salience alternative."
+    },
+    {
+      "id": "GATE_38_FIGHTER_ALT",
+      "cluster": "PURPOSE_STRUGGLE",
+      "behavior": "Alternative hanging-gate pathway for selective willingness to fight when a struggle is judged worthwhile.",
+      "confidence": 0.80,
+      "salience": 0.35,
+      "directness": 0.75,
+      "flexibility": 0.50,
+      "predicate": {"feature": "gate", "equals": 38},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}],
+      "source": "Standard HD Gate 38 fighter/opposition theme; lower-salience alternative."
+    },
+    {
+      "id": "GATE_26_PERSUASION_ALT",
+      "cluster": "ENTERPRISE_PERSUASION_PATTERN",
+      "behavior": "Alternative hanging-gate pathway for persuasive presentation, salesmanship and strategic transmission when deliberately used.",
+      "confidence": 0.85,
+      "salience": 0.35,
+      "directness": 0.75,
+      "flexibility": 0.50,
+      "predicate": {"feature": "gate", "equals": 26},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}],
+      "source": "Standard HD Gate 26 egoist/salesmanship/transmission themes; lower-salience alternative."
+    },
+    {
+      "id": "GATE_44_PATTERN_ALT",
+      "cluster": "ENTERPRISE_PERSUASION_PATTERN",
+      "behavior": "Alternative hanging-gate pathway for rapid recognition of familiar interpersonal, trust and enterprise patterns.",
+      "confidence": 0.90,
+      "salience": 0.35,
+      "directness": 0.75,
+      "flexibility": 0.50,
+      "predicate": {"feature": "gate", "equals": 44},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}],
+      "source": "Standard HD Gate 44 alertness/pattern recognition; lower-salience alternative."
+    },
+    {
+      "id": "GATE_18_CORRECTION_ALT",
+      "cluster": "CONSEQUENTIAL_CORRECTION",
+      "behavior": "Alternative hanging-gate pathway for noticing and correcting faults that matter.",
+      "confidence": 0.85,
+      "salience": 0.35,
+      "directness": 0.75,
+      "flexibility": 0.50,
+      "predicate": {"feature": "gate", "equals": 18},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}],
+      "source": "Standard HD Gate 18 correction; lower-salience alternative."
+    },
+    {
+      "id": "GATE_58_IMPROVEMENT_ALT",
+      "cluster": "CONSEQUENTIAL_CORRECTION",
+      "behavior": "Alternative hanging-gate pathway for vitality directed toward improvement when improvement has meaningful value.",
+      "confidence": 0.65,
+      "salience": 0.35,
+      "directness": 0.50,
+      "flexibility": 0.50,
+      "predicate": {"feature": "gate", "equals": 58},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}],
+      "source": "Standard HD Gate 58 joy/vitality and pressure to improve; plausible lower-salience alternative."
+    },
+    {
+      "id": "GATE_62_DETAIL_ALT",
+      "cluster": "ORGANIZED_DETAIL",
+      "behavior": "Alternative hanging-gate pathway for precise naming, details, definitions and organization.",
+      "confidence": 0.85,
+      "salience": 0.35,
+      "directness": 0.75,
+      "flexibility": 0.50,
+      "predicate": {"feature": "gate", "equals": 62},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}],
+      "source": "Standard HD Gate 62 details; lower-salience alternative."
+    },
+    {
+      "id": "GATE_17_OPINION_ALT",
+      "cluster": "ORGANIZED_DETAIL",
+      "behavior": "Alternative hanging-gate pathway for structured conceptual organization and opinions.",
+      "confidence": 0.70,
+      "salience": 0.35,
+      "directness": 0.50,
+      "flexibility": 0.50,
+      "predicate": {"feature": "gate", "equals": 17},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}],
+      "source": "Standard HD Gate 17 opinions; plausible lower-salience alternative."
+    },
+    {
+      "id": "GATE_33_RETREAT_ALT",
+      "cluster": "RETREAT_PRIVACY",
+      "behavior": "Alternative hanging-gate pathway for privacy, withdrawal and retreat after experience.",
+      "confidence": 0.80,
+      "salience": 0.35,
+      "directness": 0.75,
+      "flexibility": 0.50,
+      "predicate": {"feature": "gate", "equals": 33},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}],
+      "source": "Standard HD Gate 33 privacy/retreat; lower-salience alternative."
+    },
+    {
+      "id": "GATE_5_ROUTINE",
+      "cluster": "RHYTHM_ROUTINE",
+      "behavior": "Stable, self-directed daily rhythms and dependable routine are preferred over novelty for its own sake.",
+      "confidence": 0.75,
+      "salience": 0.35,
+      "directness": 0.75,
+      "flexibility": 0.50,
+      "predicate": {"feature": "gate", "equals": 5},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}],
+      "source": "Standard HD Gate 5 fixed rhythms; low-salience single-gate mapping."
+    },
+    {
+      "id": "GATE_19_NEEDS",
+      "cluster": "NEEDS_SENSITIVITY",
+      "behavior": "The person is unusually sensitive to who needs what, whether closeness is wanted and whether material or interpersonal support is adequate, without treating every detected need as an obligation.",
+      "confidence": 0.75,
+      "salience": 0.35,
+      "directness": 0.75,
+      "flexibility": 0.50,
+      "predicate": {"feature": "gate", "equals": 19},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}],
+      "source": "Standard HD Gate 19 sensitivity/needs/approach theme; obligation is explicitly not inferred."
+    },
+    {
+      "id": "GATE_50_VALUES",
+      "cluster": "VALUES_RESPONSIBILITY",
+      "behavior": "Strong stable concern with ethical standards, welfare, trust, responsibility and preventing consequential harm.",
+      "confidence": 0.80,
+      "salience": 0.35,
+      "directness": 0.75,
+      "flexibility": 0.50,
+      "predicate": {"feature": "gate", "equals": 50},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}],
+      "source": "Standard HD Gate 50 values/responsibility; low-salience single-gate mapping."
+    },
+    {
+      "id": "GATE_32_CONTINUITY",
+      "cluster": "CONTINUITY_PRESERVATION",
+      "behavior": "Continuity, durable value and preservation of what works are preferred to novelty or advancement for its own sake.",
+      "confidence": 0.70,
+      "salience": 0.35,
+      "directness": 0.75,
+      "flexibility": 0.50,
+      "predicate": {"feature": "gate", "equals": 32},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}],
+      "source": "Standard HD Gate 32 continuity; low-salience single-gate mapping."
+    }
+  ]
+}
