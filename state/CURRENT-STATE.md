@@ -17,7 +17,9 @@
 - The inherited historical V3.6 audit workflow also triggered during the
   upstream-main synchronization. Run `32564813967` failed during ephemeris
   fetch; its 100-year ranking step was skipped. It is not a cache, completed
-  audit, or authorized ranking.
+  audit, or authorized ranking. The integration branch converts that workflow
+  into a cache-first guard; it cannot fetch ephemeris or execute the legacy
+  direct-century runner.
 
 ## Mandatory execution position
 
