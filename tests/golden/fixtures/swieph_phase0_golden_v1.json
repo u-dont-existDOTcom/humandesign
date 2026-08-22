@@ -1,0 +1,81 @@
+{
+  "schema_version": "swieph-phase0-golden-v1",
+  "purpose": "Deterministic regression golden for the canonical V4.3 Swiss-file engine; not independent Human Design validation.",
+  "source": {
+    "repository": "https://github.com/aloistr/swisseph",
+    "commit": "3fd0f956d73898b91cc4f67cf18b21af656d1342",
+    "pyswisseph_package_version": "2.10.3.2",
+    "swiss_library_version": "2.10.03",
+    "files": {
+      "semo_18.se1": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7",
+      "sepl_18.se1": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66"
+    }
+  },
+  "universe": {
+    "start_inclusive": "1926-08-22T00:00:00Z",
+    "end_exclusive": "2026-08-23T00:00:00Z"
+  },
+  "representative_positions": [
+    {
+      "utc": "1926-08-22T00:00:00Z",
+      "positions": {
+        "sun": {"longitude": 148.144130733399, "gate": 29, "line": 4},
+        "earth": {"longitude": 328.144130733399, "gate": 30, "line": 4},
+        "moon": {"longitude": 306.502536864981, "gate": 41, "line": 5},
+        "north_node": {"longitude": 105.768884314999, "gate": 53, "line": 1},
+        "south_node": {"longitude": 285.768884314999, "gate": 54, "line": 1},
+        "mercury": {"longitude": 130.533326489923, "gate": 33, "line": 4},
+        "venus": {"longitude": 124.633070087110, "gate": 31, "line": 3},
+        "mars": {"longitude": 40.262715317647, "gate": 24, "line": 3},
+        "jupiter": {"longitude": 321.412923287290, "gate": 49, "line": 3},
+        "saturn": {"longitude": 230.069370011528, "gate": 43, "line": 2},
+        "uranus": {"longitude": 358.593722083477, "gate": 25, "line": 1},
+        "neptune": {"longitude": 144.656398865523, "gate": 29, "line": 1},
+        "pluto": {"longitude": 105.343863868504, "gate": 53, "line": 1}
+      }
+    },
+    {
+      "utc": "1976-08-22T12:00:00Z",
+      "positions": {
+        "sun": {"longitude": 149.505744518100, "gate": 29, "line": 6},
+        "earth": {"longitude": 329.505744518100, "gate": 30, "line": 6},
+        "moon": {"longitude": 111.316508672818, "gate": 62, "line": 1},
+        "north_node": {"longitude": 216.029252312214, "gate": 28, "line": 5},
+        "south_node": {"longitude": 36.029252312214, "gate": 27, "line": 5},
+        "mercury": {"longitude": 176.465629878576, "gate": 6, "line": 5},
+        "venus": {"longitude": 167.404104400888, "gate": 47, "line": 1},
+        "mars": {"longitude": 178.884009223909, "gate": 46, "line": 1},
+        "jupiter": {"longitude": 59.918502343758, "gate": 8, "line": 6},
+        "saturn": {"longitude": 129.598076803505, "gate": 33, "line": 3},
+        "uranus": {"longitude": 213.795729978004, "gate": 28, "line": 2},
+        "neptune": {"longitude": 251.197062051630, "gate": 9, "line": 6},
+        "pluto": {"longitude": 190.019218975185, "gate": 48, "line": 1}
+      }
+    },
+    {
+      "utc": "2026-08-22T23:59:59Z",
+      "positions": {
+        "sun": {"longitude": 149.907115230616, "gate": 29, "line": 6},
+        "earth": {"longitude": 329.907115230616, "gate": 30, "line": 6},
+        "moon": {"longitude": 271.492535073010, "gate": 10, "line": 4},
+        "north_node": {"longitude": 329.829059719029, "gate": 30, "line": 6},
+        "south_node": {"longitude": 149.829059719029, "gate": 29, "line": 6},
+        "mercury": {"longitude": 145.067887509588, "gate": 29, "line": 1},
+        "venus": {"longitude": 195.524521626389, "gate": 57, "line": 1},
+        "mars": {"longitude": 97.627751855181, "gate": 52, "line": 5},
+        "jupiter": {"longitude": 131.784345479237, "gate": 33, "line": 5},
+        "saturn": {"longitude": 14.133931182926, "gate": 21, "line": 5},
+        "uranus": {"longitude": 65.547069589417, "gate": 20, "line": 6},
+        "neptune": {"longitude": 3.874396992336, "gate": 25, "line": 6},
+        "pluto": {"longitude": 303.686204519838, "gate": 41, "line": 2}
+      }
+    }
+  ],
+  "joel_exact_design_root": {
+    "birth_utc": "1985-01-29T10:25:00Z",
+    "design_utc": "1984-11-03T17:15:51.153195Z",
+    "target_arc_degrees": 88.0,
+    "time_tolerance_seconds": 0.01,
+    "arc_tolerance_degrees": 1e-8
+  }
+}

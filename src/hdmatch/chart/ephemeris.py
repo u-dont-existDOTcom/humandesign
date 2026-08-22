@@ -11,7 +11,7 @@ the official source: https://github.com/aloistr/swisseph/blob/master/sweph.c.
 from __future__ import annotations
 
 import importlib
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from datetime import UTC, datetime
 from enum import StrEnum
 from hashlib import sha256
@@ -54,6 +54,14 @@ class NodeConvention(StrEnum):
     MEAN = "mean"
 
 
+class EphemerisMode(StrEnum):
+    """Swiss Ephemeris calculation modes encoded in the returned flag mask."""
+
+    JPLEPH = "JPLEPH"
+    SWIEPH = "SWIEPH"
+    MOSEPH = "MOSEPH"
+
+
 DEFAULT_ACTIVATION_BODIES: Final[tuple[CelestialBody, ...]] = tuple(CelestialBody)
 
 
@@ -73,6 +81,37 @@ class EphemerisFile:
 
 
 @dataclass(frozen=True, slots=True)
+class EphemerisCalculationProvenance:
+    """Returned-mode evidence for one public position calculation.
+
+    Earth and South Node positions are exact oppositions derived from a direct
+    Sun or North Node calculation.  ``calculated_body`` and ``derivation`` make
+    that relationship explicit while preserving the returned flags from the
+    underlying Swiss calculation.
+    """
+
+    requested_body: CelestialBody
+    calculated_body: CelestialBody
+    at_utc: datetime
+    requested_mode: EphemerisMode
+    returned_mode: EphemerisMode
+    requested_flags: int
+    returned_flags: int
+    ephemeris_mask: int
+    ephemeris_path: str
+    used_file: EphemerisFile
+    derivation: str | None = None
+
+
+@dataclass(frozen=True, slots=True)
+class PositionCalculation:
+    """A position bundled with the flags and file that produced it."""
+
+    position: EclipticPosition
+    provenance: EphemerisCalculationProvenance
+
+
+@dataclass(frozen=True, slots=True)
 class EphemerisMetadata:
     provider: str
     library_version: str
@@ -80,6 +119,10 @@ class EphemerisMetadata:
     calculation_flags: tuple[str, ...]
     coordinate_frame: str
     node_convention: NodeConvention
+    ephemeris_path: str | None = None
+    requested_ephemeris: EphemerisMode | None = None
+    requested_flags: int | None = None
+    ephemeris_mask: int | None = None
 
 
 @runtime_checkable
@@ -175,7 +218,10 @@ class SwissEphemerisProvider:
         self._swe = _swe_module
         self._root = root
         self._declared = frozenset(paths)
+        self._records_by_path = {Path(record.path): record for record in records}
         self._node_convention = node_convention
+        self._requested_flags = int(self._swe.FLG_SWIEPH) | int(self._swe.FLG_SPEED)
+        self._ephemeris_mask = _ephemeris_mask(self._swe)
         version = str(getattr(self._swe, "version", "unknown"))
         self._metadata = EphemerisMetadata(
             provider="swiss_ephemeris_local_files",
@@ -184,6 +230,10 @@ class SwissEphemerisProvider:
             calculation_flags=("SEFLG_SWIEPH", "SEFLG_SPEED", "geocentric", "tropical"),
             coordinate_frame="geocentric_apparent_tropical_ecliptic_of_date",
             node_convention=node_convention,
+            ephemeris_path=str(root),
+            requested_ephemeris=EphemerisMode.SWIEPH,
+            requested_flags=self._requested_flags,
+            ephemeris_mask=self._ephemeris_mask,
         )
 
     @property
@@ -197,37 +247,78 @@ class SwissEphemerisProvider:
         return _MIN_SOLAR_SPEED
 
     def position(self, body: CelestialBody, at_utc: datetime) -> EclipticPosition:
+        return self.position_with_provenance(body, at_utc).position
+
+    def position_with_provenance(
+        self,
+        body: CelestialBody,
+        at_utc: datetime,
+    ) -> PositionCalculation:
+        """Calculate a position and retain exact returned-mode evidence."""
+
         at_utc = _require_utc(at_utc)
         if body is CelestialBody.EARTH:
-            sun = self.position(CelestialBody.SUN, at_utc)
-            return EclipticPosition((sun.longitude + 180.0) % 360.0, sun.speed_degrees_per_day)
+            sun = self.position_with_provenance(CelestialBody.SUN, at_utc)
+            return PositionCalculation(
+                position=EclipticPosition(
+                    (sun.position.longitude + 180.0) % 360.0,
+                    sun.position.speed_degrees_per_day,
+                ),
+                provenance=replace(
+                    sun.provenance,
+                    requested_body=body,
+                    derivation="opposition_of_sun",
+                ),
+            )
         if body is CelestialBody.SOUTH_NODE:
-            north = self.position(CelestialBody.NORTH_NODE, at_utc)
-            return EclipticPosition(
-                (north.longitude + 180.0) % 360.0,
-                north.speed_degrees_per_day,
+            north = self.position_with_provenance(CelestialBody.NORTH_NODE, at_utc)
+            return PositionCalculation(
+                position=EclipticPosition(
+                    (north.position.longitude + 180.0) % 360.0,
+                    north.position.speed_degrees_per_day,
+                ),
+                provenance=replace(
+                    north.provenance,
+                    requested_body=body,
+                    derivation="opposition_of_north_node",
+                ),
             )
 
         planet_id, file_index = self._planet_id_and_file_index(body)
-        flags = int(self._swe.FLG_SWIEPH) | int(self._swe.FLG_SPEED)
         julian_day = _julian_day_ut(self._swe, at_utc)
 
         with _SWISS_LOCK:
             self._swe.set_ephe_path(str(self._root))
-            values, returned_flags = self._swe.calc_ut(julian_day, planet_id, flags)
-            if returned_flags & int(self._swe.FLG_MOSEPH):
+            values, returned_flags = self._swe.calc_ut(
+                julian_day,
+                planet_id,
+                self._requested_flags,
+            )
+            returned_mode_bits = int(returned_flags) & self._ephemeris_mask
+            if returned_mode_bits != int(self._swe.FLG_SWIEPH):
+                returned_label = _returned_mode_label(self._swe, returned_mode_bits)
                 raise EphemerisFallbackError(
-                    f"Swiss Ephemeris silently used Moshier for {body.value} "
-                    f"at {at_utc.isoformat()}"
+                    f"requested SWIEPH but calculation returned {returned_label} "
+                    f"for {body.value} at {at_utc.isoformat()}; "
+                    f"returned flags={returned_flags}, ephemeris mask={returned_mode_bits}"
                 )
-            if not returned_flags & int(self._swe.FLG_SWIEPH):
-                raise EphemerisFallbackError(
-                    f"Swiss-file flag absent for {body.value} at {at_utc.isoformat()}; "
-                    f"returned flags={returned_flags}"
-                )
-            self._verify_current_file(file_index, body, at_utc)
+            used_file = self._verify_current_file(file_index, body, at_utc)
 
-        return EclipticPosition(float(values[0]) % 360.0, float(values[3]))
+        return PositionCalculation(
+            position=EclipticPosition(float(values[0]) % 360.0, float(values[3])),
+            provenance=EphemerisCalculationProvenance(
+                requested_body=body,
+                calculated_body=body,
+                at_utc=at_utc,
+                requested_mode=EphemerisMode.SWIEPH,
+                returned_mode=EphemerisMode.SWIEPH,
+                requested_flags=self._requested_flags,
+                returned_flags=int(returned_flags),
+                ephemeris_mask=self._ephemeris_mask,
+                ephemeris_path=str(self._root),
+                used_file=used_file,
+            ),
+        )
 
     def _planet_id_and_file_index(self, body: CelestialBody) -> tuple[int, int]:
         names = {
@@ -256,7 +347,7 @@ class SwissEphemerisProvider:
         file_index: int,
         body: CelestialBody,
         at_utc: datetime,
-    ) -> None:
+    ) -> EphemerisFile:
         getter = getattr(self._swe, "get_current_file_data", None)
         if getter is None:
             raise EphemerisFallbackError(
@@ -272,6 +363,42 @@ class SwissEphemerisProvider:
             raise EphemerisFallbackError(
                 f"Swiss used undeclared ephemeris file {resolved} for {body.value}"
             )
+        return self._records_by_path[resolved]
+
+
+def _ephemeris_mask(swe: ModuleType) -> int:
+    """Resolve the ephemeris-mode mask across PySwissEph binding versions.
+
+    PySwissEph 2.10.03 does not expose ``FLG_EPHMASK`` even though the C API
+    defines the mask as JPLEPH | SWIEPH | MOSEPH.  Reconstructing that exact
+    mask is therefore part of the production compatibility contract.
+    """
+
+    try:
+        calculated = (
+            int(swe.FLG_JPLEPH)
+            | int(swe.FLG_SWIEPH)
+            | int(swe.FLG_MOSEPH)
+        )
+    except AttributeError as exc:
+        raise EphemerisConfigurationError(
+            "Swiss binding lacks one or more ephemeris-mode flag constants"
+        ) from exc
+    exposed = getattr(swe, "FLG_EPHMASK", None)
+    if exposed is not None and int(exposed) != calculated:
+        raise EphemerisConfigurationError(
+            "Swiss binding FLG_EPHMASK disagrees with JPLEPH|SWIEPH|MOSEPH"
+        )
+    return calculated
+
+
+def _returned_mode_label(swe: ModuleType, mode_bits: int) -> str:
+    labels = {
+        int(swe.FLG_JPLEPH): EphemerisMode.JPLEPH.value,
+        int(swe.FLG_SWIEPH): EphemerisMode.SWIEPH.value,
+        int(swe.FLG_MOSEPH): f"{EphemerisMode.MOSEPH.value} (Moshier)",
+    }
+    return labels.get(mode_bits, f"UNKNOWN({mode_bits})")
 
 
 def _sha256_file(path: Path) -> str:

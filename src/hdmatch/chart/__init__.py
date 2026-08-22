@@ -8,7 +8,13 @@ repository has not frozen independently validated rules for those layers.
 from .bodygraph import Authority, Bodygraph, Center, Definition, HDType, Strategy
 from .calculator import ChartComputation, calculate_chart
 from .design_moment import DesignMomentResult, solve_design_moment
-from .ephemeris import CelestialBody, EphemerisProvider, SwissEphemerisProvider
+from .engine_probe import ProductionEngineValidation, validate_production_engine
+from .ephemeris import (
+    CelestialBody,
+    EphemerisMode,
+    EphemerisProvider,
+    SwissEphemerisProvider,
+)
 from .rave_mandala import MandalaPosition, longitude_to_gate_line
 from .timezone import LocalTimeResolution, LocalTimeStatus, resolve_local_datetime
 
@@ -21,14 +27,17 @@ __all__ = [
     "Definition",
     "DesignMomentResult",
     "EphemerisProvider",
+    "EphemerisMode",
     "HDType",
     "LocalTimeResolution",
     "LocalTimeStatus",
     "MandalaPosition",
+    "ProductionEngineValidation",
     "Strategy",
     "SwissEphemerisProvider",
     "calculate_chart",
     "longitude_to_gate_line",
     "resolve_local_datetime",
     "solve_design_moment",
+    "validate_production_engine",
 ]

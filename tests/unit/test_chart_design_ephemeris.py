@@ -7,6 +7,7 @@ import pytest
 
 from hdmatch.chart.calculator import calculate_chart
 from hdmatch.chart.design_moment import solve_design_moment
+from hdmatch.chart.engine_probe import validate_production_engine
 from hdmatch.chart.ephemeris import (
     CelestialBody,
     EclipticPosition,
@@ -76,6 +77,7 @@ def test_discrete_chart_hash_ignores_continuous_longitude_drift() -> None:
 
 
 class FakeSwiss:
+    FLG_JPLEPH = 1
     FLG_SWIEPH = 2
     FLG_MOSEPH = 4
     FLG_SPEED = 256
@@ -98,6 +100,7 @@ class FakeSwiss:
         self.used_file = used_file
         self.returned_flags = returned_flags
         self.ephe_path = ""
+        self.calc_calls: list[tuple[object, ...]] = []
 
     def set_ephe_path(self, path: str) -> None:
         self.ephe_path = path
@@ -106,10 +109,49 @@ class FakeSwiss:
         return 2451545.0
 
     def calc_ut(self, *_args: object) -> tuple[tuple[float, ...], int]:
+        self.calc_calls.append(_args)
         return (12.0, 0.0, 1.0, 0.9, 0.0, 0.0), self.returned_flags
 
     def get_current_file_data(self, _index: int) -> tuple[str, float, float, int]:
         return str(self.used_file), 0.0, 0.0, 431
+
+
+class LinearFakeSwiss(FakeSwiss):
+    """One-degree-per-day Sun used to exercise the full Design probe."""
+
+    def julday(
+        self,
+        year: int,
+        month: int,
+        day: int,
+        hour: float,
+        _calendar: int,
+    ) -> float:
+        whole_hour = int(hour)
+        remainder_minutes = (hour - whole_hour) * 60.0
+        whole_minute = int(remainder_minutes)
+        second = (remainder_minutes - whole_minute) * 60.0
+        at_utc = datetime(
+            year,
+            month,
+            day,
+            whole_hour,
+            whole_minute,
+            tzinfo=UTC,
+        )
+        return at_utc.timestamp() / 86400.0 + second / 86400.0
+
+    def calc_ut(self, *args: object) -> tuple[tuple[float, ...], int]:
+        self.calc_calls.append(args)
+        julian_day = float(args[0])
+        return (
+            julian_day % 360.0,
+            0.0,
+            1.0,
+            1.0,
+            0.0,
+            0.0,
+        ), self.returned_flags | self.FLG_SPEED
 
 
 def test_swiss_provider_requires_declared_existing_files(tmp_path: Path) -> None:
@@ -124,6 +166,28 @@ def test_swiss_provider_rejects_moshier_fallback(tmp_path: Path) -> None:
     provider = SwissEphemerisProvider((ephemeris_file,), _swe_module=fake)  # type: ignore[arg-type]
 
     with pytest.raises(EphemerisFallbackError, match="Moshier"):
+        provider.position(CelestialBody.SUN, datetime(2020, 1, 1, tzinfo=UTC))
+
+
+@pytest.mark.parametrize(
+    ("returned_flags", "returned_label"),
+    (
+        (0, "UNKNOWN\\(0\\)"),
+        (FakeSwiss.FLG_JPLEPH, "JPLEPH"),
+        (FakeSwiss.FLG_SWIEPH | FakeSwiss.FLG_JPLEPH, "UNKNOWN\\(3\\)"),
+    ),
+)
+def test_swiss_provider_requires_exact_returned_ephemeris_mask(
+    tmp_path: Path,
+    returned_flags: int,
+    returned_label: str,
+) -> None:
+    declared = tmp_path / "sepl_18.se1"
+    declared.write_bytes(b"declared")
+    fake = FakeSwiss(declared, returned_flags)
+    provider = SwissEphemerisProvider((declared,), _swe_module=fake)  # type: ignore[arg-type]
+
+    with pytest.raises(EphemerisFallbackError, match=returned_label):
         provider.position(CelestialBody.SUN, datetime(2020, 1, 1, tzinfo=UTC))
 
 
@@ -151,6 +215,61 @@ def test_swiss_provider_records_hash_and_derives_earth(tmp_path: Path) -> None:
     assert provider.metadata.files[0].sha256 == (
         "f833228cb8681bbf3e38af9de7a212dfc542b3e3ba1312ec8a45bb2b67605dc7"
     )
+    assert provider.metadata.ephemeris_path == str(tmp_path)
+    assert provider.metadata.requested_ephemeris is not None
+    assert provider.metadata.requested_ephemeris.value == "SWIEPH"
+    assert provider.metadata.requested_flags == FakeSwiss.FLG_SWIEPH | FakeSwiss.FLG_SPEED
+    assert provider.metadata.ephemeris_mask == (
+        FakeSwiss.FLG_JPLEPH | FakeSwiss.FLG_SWIEPH | FakeSwiss.FLG_MOSEPH
+    )
+    assert fake.ephe_path == str(tmp_path)
+    assert fake.calc_calls[-1][2] == FakeSwiss.FLG_SWIEPH | FakeSwiss.FLG_SPEED
+
+    calculation = provider.position_with_provenance(
+        CelestialBody.EARTH,
+        datetime(2020, 1, 1, tzinfo=UTC),
+    )
+    assert calculation.provenance.requested_body is CelestialBody.EARTH
+    assert calculation.provenance.calculated_body is CelestialBody.SUN
+    assert calculation.provenance.requested_mode.value == "SWIEPH"
+    assert calculation.provenance.returned_mode.value == "SWIEPH"
+    assert calculation.provenance.returned_flags == FakeSwiss.FLG_SWIEPH
+    assert calculation.provenance.derivation == "opposition_of_sun"
+    assert calculation.provenance.used_file.sha256 == provider.metadata.files[0].sha256
+
+
+def test_representative_production_probe_records_returned_flags_and_design_root(
+    tmp_path: Path,
+) -> None:
+    planetary = tmp_path / "sepl_18.se1"
+    lunar = tmp_path / "semo_18.se1"
+    planetary.write_bytes(b"planetary")
+    lunar.write_bytes(b"lunar")
+    fake = LinearFakeSwiss(planetary, FakeSwiss.FLG_SWIEPH)
+    provider = SwissEphemerisProvider(
+        (planetary, lunar),
+        _swe_module=fake,  # type: ignore[arg-type]
+    )
+    instant = datetime(2000, 1, 1, 12, tzinfo=UTC)
+
+    result = validate_production_engine(
+        provider,
+        instants=(instant,),
+        bodies=(CelestialBody.SUN, CelestialBody.MERCURY),
+    )
+
+    assert result.validation_status == "pass"
+    assert result.ephemeris_requested.value == "SWIEPH"
+    assert result.ephemeris_returned.value == "SWIEPH"
+    assert len(result.calculation_probes) == 2
+    assert all(
+        probe.returned_flags & result.ephemeris_mask == FakeSwiss.FLG_SWIEPH
+        for probe in result.calculation_probes
+    )
+    assert result.gate_line_deterministic is True
+    assert result.design_root_converged is True
+    assert len(result.design_root_probes) == 1
+    assert abs(result.design_root_probes[0].residual_degrees) <= 1e-8
 
 
 @pytest.mark.skipif(
