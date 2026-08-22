@@ -1,0 +1,352 @@
+{
+  "schema": "v4.3-profile-audit-mapping-v1",
+  "target_version": "V3.6",
+  "created_utc": "2026-08-22T08:55:00Z",
+  "status": "frozen-before-ranking-best-current-descriptive",
+  "ranking_rule": [
+    "net_information_desc",
+    "meaningful_contradictions_asc",
+    "detailed_support_desc",
+    "core_fit_desc",
+    "stable_duration_desc"
+  ],
+  "constants": {
+    "information_cap_bits": 6.0,
+    "contradiction_cap_bits": 4.0,
+    "independent_corroborator_cap": 0.15,
+    "minimum_parent_state_equivalents": 500,
+    "structural_salience": {
+      "type_strategy": 1.0,
+      "authority": 1.0,
+      "diagnostic_center": 0.9,
+      "profile": 0.85,
+      "complete_channel": 0.8,
+      "prominent_activation": 0.45,
+      "hanging_gate": 0.35
+    }
+  },
+  "core": {
+    "type": "Projector",
+    "authority": "Splenic",
+    "diagnostic_centers": {
+      "Sacral": false,
+      "Solar Plexus": false,
+      "Spleen": true,
+      "Root": false,
+      "Heart": true,
+      "G": true
+    },
+    "profile_primary": "2/4"
+  },
+  "notes": [
+    "Age-plus-calendar history is excluded from scoring.",
+    "Capacity and preferred use are separate for persuasion.",
+    "Engaging-work sustainability and depletion under extreme overload are not treated as opposites.",
+    "Rapid somatic phenomenology is scored; the user's ability to name it Splenic is not.",
+    "The 2026-08-22 18-item questionnaire has zero confirmatory status because it largely repeated prior constructs and contained malformed forced alternatives.",
+    "Personality-Moon-24 and Design-Mars-61 mappings are retained only in the best-current descriptive variant and are flagged post-selection. A second variant excludes both."
+  ],
+  "mappings": [
+    {
+      "id": "TYPE_PROJECTOR_ENTRY",
+      "cluster": "TYPE_ENTRY",
+      "behavior": "External interpersonal and role entry is recognition/invitation-sensitive, while self-authored projects may be initiated independently.",
+      "confidence": 0.90,
+      "salience": 1.0,
+      "directness": 1.0,
+      "flexibility": 1.0,
+      "predicate": {"feature": "type", "equals": "Projector"},
+      "parents": [],
+      "source": "Standard Jovian/IHDS Projector strategy: recognition and invitation."
+    },
+    {
+      "id": "AUTH_SPLENIC_SIGNAL",
+      "cluster": "AUTHORITY_SOMATIC",
+      "behavior": "Important choices can carry a quick, subtle, easy-to-miss bodily safety/correctness impression that may not repeat.",
+      "confidence": 0.80,
+      "salience": 1.0,
+      "directness": 1.0,
+      "flexibility": 1.0,
+      "predicate": {"feature": "authority", "equals": "Splenic"},
+      "parents": [{"feature": "type", "equals": "Projector"}],
+      "source": "Standard Jovian/IHDS Splenic Authority: quiet, immediate, present-moment and non-repeating knowing."
+    },
+    {
+      "id": "CENTER_SACRAL_OPEN",
+      "cluster": "CENTER_SACRAL",
+      "behavior": "Engaging work can sustain high activity, but sufficiently extreme or prolonged overwork can produce disproportionate depletion and genuine recovery needs.",
+      "confidence": 0.90,
+      "salience": 0.9,
+      "directness": 0.75,
+      "flexibility": 1.0,
+      "predicate": {"feature": "center", "name": "Sacral", "defined": false},
+      "parents": [{"feature": "type", "equals": "Projector"}],
+      "source": "Standard HD non-Sacral conditioning/energy distinction; intensity-duration qualification retained from target."
+    },
+    {
+      "id": "CENTER_SP_OPEN",
+      "cluster": "CENTER_SOLAR_PLEXUS",
+      "behavior": "Baseline affect is comparatively steady; close others' emotional states can be amplified internally and often normalize after separation.",
+      "confidence": 0.80,
+      "salience": 0.9,
+      "directness": 0.75,
+      "flexibility": 1.0,
+      "predicate": {"feature": "center", "name": "Solar Plexus", "defined": false},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}],
+      "source": "Standard HD undefined Solar Plexus amplification theme."
+    },
+    {
+      "id": "CENTER_SPLEEN_DEFINED",
+      "cluster": "CENTER_SPLEEN",
+      "behavior": "Strong recurring instinctive/somatic awareness of safety, health, timing, deception and trustworthiness.",
+      "confidence": 0.80,
+      "salience": 0.9,
+      "directness": 0.75,
+      "flexibility": 1.0,
+      "predicate": {"feature": "center", "name": "Spleen", "defined": true},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}],
+      "source": "Standard HD Spleen awareness themes."
+    },
+    {
+      "id": "CENTER_ROOT_OPEN",
+      "cluster": "CENTER_ROOT",
+      "behavior": "Work pressure can be overshot and followed by recovery; self-regulation improves when external pacing pressure is removed.",
+      "confidence": 0.50,
+      "salience": 0.9,
+      "directness": 0.50,
+      "flexibility": 0.75,
+      "predicate": {"feature": "center", "name": "Root", "defined": false},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}],
+      "source": "Standard HD undefined Root pressure theme; target evidence is moderate rather than decisive."
+    },
+    {
+      "id": "CENTER_HEART_DEFINED",
+      "cluster": "CENTER_HEART",
+      "behavior": "Serious commitments are made selectively, but once genuinely chosen the person reports unusually reliable will to deliver.",
+      "confidence": 0.75,
+      "salience": 0.9,
+      "directness": 0.75,
+      "flexibility": 0.75,
+      "predicate": {"feature": "center", "name": "Heart", "defined": true},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}],
+      "source": "Standard HD defined Ego/Heart access to consistent will; treated as descriptive rather than confirmatory."
+    },
+    {
+      "id": "CENTER_G_DEFINED",
+      "cluster": "CENTER_G",
+      "behavior": "Strong self-directed autonomy and a stable private center persist despite changes in projects, roles and external environments.",
+      "confidence": 0.50,
+      "salience": 0.9,
+      "directness": 0.50,
+      "flexibility": 0.75,
+      "predicate": {"feature": "center", "name": "G", "defined": true},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}],
+      "source": "Standard HD G-center identity/direction theme; mapping intentionally weak because the person does not seek a fixed identity label."
+    },
+    {
+      "id": "PROFILE_24",
+      "cluster": "PROFILE_STRUCTURE",
+      "behavior": "Natural ability is often noticed/called out by others; private withdrawal coexists with opportunities and influence traveling through relationship networks.",
+      "confidence": 0.95,
+      "salience": 0.85,
+      "directness": 1.0,
+      "flexibility": 1.0,
+      "predicate": {"feature": "profile", "equals": "2/4"},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}],
+      "source": "Standard HD 2/4 Hermit/Opportunist profile mechanics."
+    },
+    {
+      "id": "PROFILE_LINE5_PROJECTION",
+      "cluster": "PROFILE_STRUCTURE",
+      "behavior": "Others can project a broad fixer/savior/practical-solution role onto the person and later blame them when that projection exceeds reality.",
+      "confidence": 0.75,
+      "salience": 0.85,
+      "directness": 0.75,
+      "flexibility": 0.75,
+      "predicate": {"feature": "profile_has_line", "line": 5},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}],
+      "source": "Standard HD 5th-line projection-field theme."
+    },
+    {
+      "id": "PROFILE_LINE6_PHASES",
+      "cluster": "PROFILE_STRUCTURE",
+      "behavior": "The life course contains distinct phases of direct engagement, withdrawal/observation, and later transmission of perspective.",
+      "confidence": 0.50,
+      "salience": 0.85,
+      "directness": 0.50,
+      "flexibility": 0.75,
+      "predicate": {"feature": "profile_has_line", "line": 6},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}],
+      "source": "Standard HD 6th-line developmental-phase theme; broad fit, deliberately downweighted."
+    },
+    {
+      "id": "CH_1_8_ORIGINAL",
+      "cluster": "ORIGINAL_CONTRIBUTION",
+      "behavior": "Distinctive original contribution and influence through a recognizably individual approach are central repeated patterns.",
+      "confidence": 1.0,
+      "salience": 0.8,
+      "directness": 1.0,
+      "flexibility": 0.75,
+      "predicate": {"feature": "channel", "equals": "1-8"},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}],
+      "source": "Standard HD 1-8 Channel of Inspiration / contribution and creative role-model theme."
+    },
+    {
+      "id": "CH_23_43_STRUCTURING",
+      "cluster": "INSIGHT_TO_STRUCTURE",
+      "behavior": "Independent insight is repeatedly translated into compact, organized, communicable explanations, guides, protocols and systems.",
+      "confidence": 0.95,
+      "salience": 0.8,
+      "directness": 1.0,
+      "flexibility": 0.75,
+      "predicate": {"feature": "channel", "equals": "23-43"},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}],
+      "source": "Standard HD 43-23 Channel of Structuring: individual insight translated into expression."
+    },
+    {
+      "id": "CH_24_61_MYSTERY",
+      "cluster": "EXISTENTIAL_MYSTERY",
+      "behavior": "Internally generated existential mysteries can recur after periods of disengagement until a satisfying knowing or formulation crystallizes.",
+      "confidence": 1.0,
+      "salience": 0.8,
+      "directness": 1.0,
+      "flexibility": 1.0,
+      "predicate": {"feature": "channel", "equals": "24-61"},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}],
+      "source": "Standard HD 61 Inner Truth / 24 Return and complete 61-24 awareness channel."
+    },
+    {
+      "id": "CH_47_64_MEANING_ALT",
+      "cluster": "EXISTENTIAL_MYSTERY",
+      "behavior": "An alternative pathway for repeated pressure to make coherent meaning from confusing or unresolved material.",
+      "confidence": 0.70,
+      "salience": 0.8,
+      "directness": 0.50,
+      "flexibility": 0.50,
+      "predicate": {"feature": "channel", "equals": "47-64"},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}],
+      "source": "Standard HD 64-47 abstraction/realization theme; only a plausible alternative for this target."
+    },
+    {
+      "id": "CH_28_38_PURPOSE",
+      "cluster": "PURPOSE_STRUGGLE",
+      "behavior": "A recurrent life theme asks what is genuinely worth struggling for; the form of struggle changes when deeper purpose is found.",
+      "confidence": 0.90,
+      "salience": 0.8,
+      "directness": 1.0,
+      "flexibility": 1.0,
+      "predicate": {"feature": "channel", "equals": "28-38"},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}],
+      "source": "Standard HD 28-38 Channel of Struggle / purpose-through-struggle theme."
+    },
+    {
+      "id": "CH_26_44_ENTERPRISE",
+      "cluster": "ENTERPRISE_PERSUASION_PATTERN",
+      "behavior": "When deliberately engaged, persuasion can be unusually effective; the person also shows strong instincts for value, bargains, enterprise leverage and rapid recognition of deceptive or familiar interpersonal patterns. Preferred use is restrained, especially privately.",
+      "confidence": 0.90,
+      "salience": 0.8,
+      "directness": 0.75,
+      "flexibility": 0.75,
+      "predicate": {"feature": "channel", "equals": "26-44"},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}, {"feature": "center", "name": "Heart", "defined": true}],
+      "source": "Standard HD 44-26 tribal business/transmission, memory/pattern recognition and persuasive presentation themes."
+    },
+    {
+      "id": "CH_18_58_CORRECTION",
+      "cluster": "CONSEQUENTIAL_CORRECTION",
+      "behavior": "Errors are pursued strongly when truth, safety, usefulness or welfare is materially affected, but trivial imperfections can be ignored.",
+      "confidence": 0.85,
+      "salience": 0.8,
+      "directness": 0.75,
+      "flexibility": 0.75,
+      "predicate": {"feature": "channel", "equals": "18-58"},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}],
+      "source": "Standard HD 18-58 Channel of Judgment / correction theme, context-constrained by target."
+    },
+    {
+      "id": "CH_17_62_ORGANIZE",
+      "cluster": "ORGANIZED_DETAIL",
+      "behavior": "Abstract or technical material is repeatedly converted into precise definitions, classifications and reusable analytical structure.",
+      "confidence": 0.85,
+      "salience": 0.8,
+      "directness": 0.75,
+      "flexibility": 0.75,
+      "predicate": {"feature": "channel", "equals": "17-62"},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}],
+      "source": "Standard HD 17-62 opinions/details and organizational expression theme."
+    },
+    {
+      "id": "CH_13_33_RETREAT",
+      "cluster": "RETREAT_PRIVACY",
+      "behavior": "After major social or life experience the person often withdraws for privacy, decompression and perspective before re-entering the social field.",
+      "confidence": 0.80,
+      "salience": 0.8,
+      "directness": 0.75,
+      "flexibility": 0.75,
+      "predicate": {"feature": "channel", "equals": "13-33"},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}],
+      "source": "Standard HD 13-33 witness/prodigal privacy-and-retreat theme."
+    },
+    {
+      "id": "GATE_52_FOCUS",
+      "cluster": "CONCENTRATED_FOCUS",
+      "behavior": "Can enter unusually concentrated, stationary periods of focus when a question or project remains consequential.",
+      "confidence": 0.80,
+      "salience": 0.35,
+      "directness": 0.50,
+      "flexibility": 0.50,
+      "predicate": {"feature": "gate", "equals": 52},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}],
+      "source": "Standard HD Gate 52 stillness/concentration theme; hanging-gate evidence deliberately low-salience."
+    },
+    {
+      "id": "GATE_21_RESOURCES",
+      "cluster": "RESOURCE_SOVEREIGNTY",
+      "behavior": "Resources and material control are valued primarily as infrastructure for autonomy, comfort and independent work rather than prestige.",
+      "confidence": 0.65,
+      "salience": 0.35,
+      "directness": 0.75,
+      "flexibility": 0.50,
+      "predicate": {"feature": "gate", "equals": 21},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}],
+      "source": "Standard HD Gate 21 control/resources theme; motive qualification comes from target."
+    },
+    {
+      "id": "PMOON_24_DRIVE",
+      "cluster": "MYSTERY_DRIVE_CARRIER",
+      "behavior": "Consequential unresolved questions can spontaneously reclaim attention after long periods away; this is treated as a drive/momentum observation rather than generic curiosity.",
+      "confidence": 0.75,
+      "salience": 0.45,
+      "directness": 0.75,
+      "flexibility": 0.75,
+      "predicate": {"feature": "activation", "side": "personality", "body": "moon", "gate": 24},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}, {"feature": "channel", "equals": "24-61"}],
+      "source": "Standard HD Moon as driving force plus Gate 24 Return; post-selection discriminator mapping.",
+      "post_selection": true
+    },
+    {
+      "id": "DMARS_61_DEVELOPMENT",
+      "cluster": "MYSTERY_DEVELOPMENT_CARRIER",
+      "behavior": "Childhood difficulty releasing consequential puzzles matured into greater adult tolerance for unresolved mystery while the attraction to inner truth remained.",
+      "confidence": 0.75,
+      "salience": 0.45,
+      "directness": 0.75,
+      "flexibility": 0.75,
+      "predicate": {"feature": "activation", "side": "design", "body": "mars", "gate": 61},
+      "parents": [{"feature": "type", "equals": "Projector"}, {"feature": "authority", "equals": "Splenic"}, {"feature": "channel", "equals": "24-61"}],
+      "source": "Standard HD Mars as immature/developing theme plus Gate 61 Inner Truth/mystery; post-selection discriminator mapping.",
+      "post_selection": true
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "CONTRA_16_48_MASTERY_DRIVE",
+      "cluster": "MASTERY_REPETITION",
+      "behavior": "The target explicitly denies a generalized independent drive to perfect technique or repeat practice for mastery itself.",
+      "confidence": 0.75,
+      "severity": 0.50,
+      "predicate": {"feature": "channel", "equals": "16-48"},
+      "source": "Standard HD 16-48 talent/wavelength practice-development theme; penalty limited to meaningful rather than strong because repetition can still be instrumental."
+    }
+  ]
+}
