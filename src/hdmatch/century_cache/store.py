@@ -78,6 +78,7 @@ def _validate_record_metadata(
         "node_convention": spec.node_convention,
         "mandala_mapping_version": spec.mandala_mapping_version,
         "mandala_mapping_sha256": spec.mandala_mapping_sha256,
+        "bodygraph_mapping_sha256": spec.bodygraph_mapping_sha256,
     }
     for field, value in expected.items():
         if getattr(row, field) != value:
@@ -125,6 +126,7 @@ def _expectations_for_spec(spec: CenturyCacheBuildSpec) -> CenturyCacheExpectati
             spec.engine.ephemeris_provenance.ephemeris_file_set_sha256
         ),
         mandala_mapping_sha256=spec.mandala_mapping_sha256,
+        bodygraph_mapping_sha256=spec.bodygraph_mapping_sha256,
         boundary_policy_version=spec.boundary_policy_version,
         design_root_time_tolerance_seconds=spec.design_root_time_tolerance_seconds,
         design_root_arc_tolerance_degrees=spec.design_root_arc_tolerance_degrees,
@@ -240,6 +242,7 @@ def _verify_expectations(
         "ephemeris source manifest": expectations.ephemeris_source_manifest_sha256,
         "ephemeris file set": expectations.ephemeris_file_set_sha256,
         "Mandala mapping": expectations.mandala_mapping_sha256,
+        "Bodygraph mapping": expectations.bodygraph_mapping_sha256,
         "boundary policy": expectations.boundary_policy_version,
         "Design-root time tolerance": expectations.design_root_time_tolerance_seconds,
         "Design-root arc tolerance": expectations.design_root_arc_tolerance_degrees,
@@ -257,6 +260,7 @@ def _verify_expectations(
             manifest.engine.ephemeris_provenance.ephemeris_file_set_sha256
         ),
         "Mandala mapping": manifest.mandala_mapping_sha256,
+        "Bodygraph mapping": manifest.bodygraph_mapping_sha256,
         "boundary policy": manifest.boundary_policy_version,
         "Design-root time tolerance": manifest.design_root_time_tolerance_seconds,
         "Design-root arc tolerance": manifest.design_root_arc_tolerance_degrees,

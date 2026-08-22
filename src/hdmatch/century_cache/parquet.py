@@ -77,7 +77,9 @@ def expected_arrow_schema(registry: tuple[FeatureColumnSpec, ...]) -> Any:
         pa.field("utc_start", pa.timestamp("us", tz="UTC"), nullable=False),
         pa.field("utc_end", pa.timestamp("us", tz="UTC"), nullable=False),
         pa.field("duration_seconds", pa.float64(), nullable=False),
+        pa.field("representative_utc", pa.timestamp("us", tz="UTC"), nullable=False),
         pa.field("design_timestamp", pa.timestamp("us", tz="UTC"), nullable=False),
+        pa.field("chart_features_sha256", pa.string(), nullable=False),
         pa.field("feature_vector_schema_version", pa.string(), nullable=False),
         pa.field("feature_registry_sha256", pa.string(), nullable=False),
         pa.field("astronomy_engine_version", pa.string(), nullable=False),
@@ -85,6 +87,12 @@ def expected_arrow_schema(registry: tuple[FeatureColumnSpec, ...]) -> Any:
         pa.field("node_convention", pa.string(), nullable=False),
         pa.field("mandala_mapping_version", pa.string(), nullable=False),
         pa.field("mandala_mapping_sha256", pa.string(), nullable=False),
+        pa.field("bodygraph_mapping_sha256", pa.string(), nullable=False),
+        pa.field(
+            "boundary_events",
+            pa.list_(pa.field("element", pa.string())),
+            nullable=False,
+        ),
     ]
     fields.extend(
         pa.field(
@@ -188,7 +196,9 @@ def _physical_row(
         "utc_start": row.utc_start,
         "utc_end": row.utc_end,
         "duration_seconds": row.duration_seconds,
+        "representative_utc": row.representative_utc,
         "design_timestamp": row.design_timestamp,
+        "chart_features_sha256": row.chart_features_sha256,
         "feature_vector_schema_version": row.feature_vector_schema_version,
         "feature_registry_sha256": row.feature_registry_sha256,
         "astronomy_engine_version": row.astronomy_engine_version,
@@ -196,6 +206,8 @@ def _physical_row(
         "node_convention": row.node_convention,
         "mandala_mapping_version": row.mandala_mapping_version,
         "mandala_mapping_sha256": row.mandala_mapping_sha256,
+        "bodygraph_mapping_sha256": row.bodygraph_mapping_sha256,
+        "boundary_events": list(row.boundary_events),
     }
     values = row.feature_mapping()
     for spec in registry:
@@ -211,6 +223,12 @@ def _physical_row(
 def _logical_row(
     payload: dict[str, object], registry: tuple[FeatureColumnSpec, ...]
 ) -> CenturyStateRecord:
+    boundary_events = payload.get("boundary_events")
+    if not isinstance(boundary_events, list) or not all(
+        isinstance(item, str) for item in boundary_events
+    ):
+        raise CenturyCacheParquetError("boundary_events payload is not a string list")
+    payload["boundary_events"] = tuple(boundary_events)
     feature_values: list[FeatureValue] = []
     for spec in registry:
         value = payload.pop(spec.parquet_column_name)

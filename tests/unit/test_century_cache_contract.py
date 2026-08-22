@@ -111,6 +111,7 @@ def _spec() -> CenturyCacheBuildSpec:
         node_convention="true",
         mandala_mapping_version="rave-mandala-v1",
         mandala_mapping_sha256="5" * 64,
+        bodygraph_mapping_sha256="b" * 64,
         boundary_policy_version="exact-boundaries-v4.3-test",
         design_root_time_tolerance_seconds=0.01,
         design_root_arc_tolerance_degrees=1e-8,
@@ -150,7 +151,9 @@ def _row(index: int, *, include_contextual: bool = True) -> CenturyStateRecord:
         utc_start=start,
         utc_end=start + timedelta(hours=1),
         duration_seconds=3600.0,
+        representative_utc=start + timedelta(minutes=30),
         design_timestamp=start - timedelta(days=88),
+        chart_features_sha256=("c" * 63) + str(index),
         feature_vector_schema_version=spec.feature_vector_schema_version,
         feature_registry_sha256=spec.feature_registry_sha256,
         astronomy_engine_version=spec.engine.chart_engine_version,
@@ -160,6 +163,8 @@ def _row(index: int, *, include_contextual: bool = True) -> CenturyStateRecord:
         node_convention="true",
         mandala_mapping_version=spec.mandala_mapping_version,
         mandala_mapping_sha256=spec.mandala_mapping_sha256,
+        bodygraph_mapping_sha256=spec.bodygraph_mapping_sha256,
+        boundary_events=(f"boundary.event.{index}",),
         feature_values=tuple(values),
     )
 
@@ -182,6 +187,7 @@ def _expectations(*, required: tuple[str, ...] | None = None) -> CenturyCacheExp
             spec.engine.ephemeris_provenance.ephemeris_file_set_sha256
         ),
         mandala_mapping_sha256=spec.mandala_mapping_sha256,
+        bodygraph_mapping_sha256=spec.bodygraph_mapping_sha256,
         boundary_policy_version=spec.boundary_policy_version,
         design_root_time_tolerance_seconds=spec.design_root_time_tolerance_seconds,
         design_root_arc_tolerance_degrees=spec.design_root_arc_tolerance_degrees,
@@ -263,6 +269,10 @@ def test_small_parquet_round_trip_and_shard_independent_logical_hash(
         for column in range(parquet_file.metadata.row_group(group).num_columns)
     }
     assert compressions == {"ZSTD"}
+    assert rows[0].representative_utc == _START + timedelta(minutes=30)
+    assert rows[0].chart_features_sha256 == ("c" * 63) + "0"
+    assert rows[0].bodygraph_mapping_sha256 == "b" * 64
+    assert rows[0].boundary_events == ("boundary.event.0",)
 
 
 def test_protocol_adapter_accepts_a_canonical_mapping() -> None:
@@ -295,6 +305,38 @@ def test_missing_nullable_feature_is_not_silently_false(tmp_path: Path) -> None:
     verified = _write_fixture(tmp_path / "complete")
     first = next(iter_verified_century_cache_rows(verified))
     assert first.feature_mapping()["predicate.contextual"] is None
+
+
+def test_fixed_interval_metadata_is_validated_before_write(tmp_path: Path) -> None:
+    row = _row(0)
+    outside = row.model_dump(mode="python")
+    outside["representative_utc"] = row.utc_end
+    with pytest.raises(ValueError, match="representative_utc"):
+        CenturyStateRecord.model_validate(outside, strict=True)
+
+    noncanonical_events = row.model_dump(mode="python")
+    noncanonical_events["boundary_events"] = (
+        "boundary.z",
+        "boundary.a",
+    )
+    with pytest.raises(ValueError, match="sorted and unique"):
+        CenturyStateRecord.model_validate(noncanonical_events, strict=True)
+
+    changed_bodygraph = row.model_dump(mode="python")
+    changed_bodygraph["bodygraph_mapping_sha256"] = "d" * 64
+    mismatched = CenturyStateRecord.model_validate(changed_bodygraph, strict=True)
+    with pytest.raises(CenturyCacheBuildError, match="bodygraph_mapping_sha256"):
+        write_century_cache_explicit(
+            tmp_path / "bodygraph-mismatch",
+            spec=_spec(),
+            shards=(
+                CenturyCacheShardInput(
+                    filename="states-0000.parquet.zst",
+                    rows=(mismatched, _row(1)),
+                ),
+            ),
+            build_mode="explicit_rebuild",
+        )
 
 
 def test_shard_byte_tampering_fails_closed(tmp_path: Path) -> None:
@@ -367,6 +409,7 @@ def test_required_feature_coverage_is_checked_for_each_recovery(tmp_path: Path) 
         ),
         ("ephemeris_file_set_sha256", "9" * 64, "ephemeris file set mismatch"),
         ("mandala_mapping_sha256", "9" * 64, "Mandala mapping mismatch"),
+        ("bodygraph_mapping_sha256", "9" * 64, "Bodygraph mapping mismatch"),
         ("boundary_policy_version", "substituted-policy", "boundary policy mismatch"),
         (
             "design_root_time_tolerance_seconds",
