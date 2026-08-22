@@ -2,9 +2,22 @@
 
 Build the full research harness described by this repository.
 
-Start by reading `AGENTS.md` and `ARCHITECTURE.md`, then `reference/core/v4_3_scoring_algorithm.md`, `reference/core/behavioral_target_combined_v3_5.md`, and the numbered docs in `docs/`.
+Start by reading `AGENTS.md` and `ARCHITECTURE.md`, then `reference/core/v4_3_scoring_algorithm.md`, `reference/core/behavioral_target_combined_v3_5.md`, `docs/16_ephemeris_bootstrap.md`, and the numbered docs in `docs/`.
 
 The current codebase was originally implemented against V4.1/V3.2. That implementation is now a migration source, NOT the normative model. Do not preserve a simplification merely because existing tests encode it.
+
+## Mandatory execution order
+
+Do not run another 100-year behavioral ranking until the following sequence is complete:
+
+1. provision and verify the production Swiss Ephemeris `.se1` files with `scripts/fetch_swisseph_ephemeris.py`;
+2. make the engine request SWIEPH explicitly and hard-fail if returned ephemeris flags indicate Moshier or another fallback;
+3. implement the complete cacheable M0-M2 candidate feature registry and exact boundary engine;
+4. build and verify the reusable 1926-2026 century cache once;
+5. complete the V4.3 mapping/scoring migration and compliance tests;
+6. rerun the full universe FROM THE VERIFIED CACHE rather than recalculating astronomy.
+
+Direct multi-gigabyte JPL files are optional parity inputs. Verified Swiss `.se1` files are the normal production path.
 
 ## Objective
 
@@ -59,12 +72,14 @@ Use verified Zstandard-compressed Parquet shards plus a cryptographic manifest. 
 
 Normal broad searches must load the verified cache rather than regenerate 100 years of astronomy every run. Rebuild only on explicit cache build/extension or when engine/feature-policy provenance is incompatible.
 
+The cache manifest must record requested and actually returned ephemeris mode for representative and build-time calculations. A cache is non-canonical if Moshier fallback occurs anywhere.
+
 If the resulting binary dataset is impractical for ordinary Git history, use Git LFS or versioned GitHub Release assets for the shards, while keeping the manifest, schema, build code, and verification code in the repository.
 
 ## Use parallel agents/worktrees
 
 Delegate separable work to parallel agents:
-- exact chart engine + century cache,
+- exact chart engine + ephemeris validation + century cache,
 - V4.3 mapping/schema compiler,
 - V4.3 symbolic scorer + conditional prevalence,
 - synthetic harness,
@@ -83,6 +98,7 @@ Keep interfaces explicit and merge only after tests.
 - Do not silently invent missing HD mappings.
 - Do not silently simplify V4.3 because some detailed mappings are harder to implement.
 - A reduced implementation must identify itself as reduced and set `v4_3_compliant: false`.
+- Never accept a plausible coordinate result as proof that SWIEPH was used; inspect returned flags.
 - Do not use coarse time grids as proof of minute precision.
 - Report stable intervals.
 - Split human data by person.
@@ -115,6 +131,7 @@ The repository has:
 - installable package;
 - documented environment;
 - V4.3 schema/scorer implementation;
+- production SWIEPH bootstrap/probe with no silent fallback;
 - exact run manifests/hashes;
 - verified century-cache build/verify/load path;
 - tests that fail under deliberate scoring simplifications;
