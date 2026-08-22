@@ -8,11 +8,13 @@ import pytest
 from pydantic import ValidationError
 
 from hdmatch.century_cache.chart_adapter import ExactStateBatchError
+from hdmatch.century_cache.reconcile import OverlappingVerifiedExactStateBatch
 from hdmatch.century_cache.staging import (
     CANONICAL_CENTURY_END_EXCLUSIVE_UTC,
     CANONICAL_CENTURY_START_UTC,
     StagedCenturyBuildError,
     SwissCalculationAuditV1,
+    VerifiedStagedExactStateBatch,
     century_build_plan_sha256,
     create_canonical_century_build_plan,
     create_century_build_plan,
@@ -21,6 +23,7 @@ from hdmatch.century_cache.staging import (
     staged_job_artifact_path,
     staged_job_receipt_path,
     staged_replay_verification_sha256,
+    validate_verified_staged_exact_state_batch,
     verify_staged_exact_state_batch,
     write_century_build_plan_new,
     write_staged_exact_state_batch,
@@ -325,6 +328,33 @@ def test_staged_job_is_receipt_last_and_requires_full_deterministic_replay(
         verified.replay_verification
     )
     assert verified.replay_verification.all_call_swieph_audit_match is True
+    validate_verified_staged_exact_state_batch(verified)
+    overlap_source = OverlappingVerifiedExactStateBatch.from_verified_staged_batch(
+        verified
+    )
+    assert overlap_source.batch is verified.batch
+    assert overlap_source.core_start_utc == receipt.core_utc_start
+    assert overlap_source.core_end_exclusive == receipt.core_utc_end_exclusive
+    assert overlap_source.source_build_plan_sha256 == receipt.plan_sha256
+    with pytest.raises(
+        StagedCenturyBuildError,
+        match="must be minted by deterministic replay",
+    ):
+        VerifiedStagedExactStateBatch(
+            batch=verified.batch,
+            producer_receipt=verified.producer_receipt,
+            producer_receipt_sha256=verified.producer_receipt_sha256,
+            replay_verification=verified.replay_verification,
+            replay_verification_sha256=verified.replay_verification_sha256,
+            _factory_token=object(),
+        )
+    object.__setattr__(
+        verified,
+        "_producer_receipt_sha256",
+        "0" * 64,
+    )
+    with pytest.raises(StagedCenturyBuildError, match="receipt hash binding changed"):
+        validate_verified_staged_exact_state_batch(verified)
 
 
 def test_replay_rejects_changed_artifact_bytes_before_scoring(tmp_path: Path) -> None:

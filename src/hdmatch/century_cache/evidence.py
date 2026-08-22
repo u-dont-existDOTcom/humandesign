@@ -22,6 +22,11 @@ from .models import (
     CenturyCacheManifest,
     ExactStateUniverseProvenance,
 )
+from .reconcile import (
+    ExactStateReconciliationAggregateProvenanceV1,
+    ExactStateReconciliationError,
+    validate_exact_state_reconciliation_aggregate_provenance,
+)
 
 ENGINE_EVIDENCE_FILENAME = "evidence/engine-validation.json"
 PARITY_EVIDENCE_FILENAME = "evidence/parity-report.json"
@@ -518,7 +523,7 @@ def _validate_evidence(
             raise CenturyCacheEvidenceError(
                 "declared reconciliation aggregate artifact is missing"
             )
-        reconciliation_raw, reconciliation_payload = _read_canonical_json(
+        reconciliation_raw, _reconciliation_payload = _read_canonical_json(
             reconciliation_path,
             label="reconciliation-aggregate",
         )
@@ -526,51 +531,21 @@ def _validate_evidence(
             raise CenturyCacheEvidenceError(
                 "reconciliation-aggregate artifact SHA-256 mismatch"
             )
-        if not isinstance(reconciliation_payload, dict):
-            raise CenturyCacheEvidenceError(
-                "reconciliation-aggregate payload must be an object"
-            )
-        if reconciliation_payload.get("schema_version") != (
-            "exact-state-reconciliation-aggregate-v1"
-        ) or reconciliation_payload.get("status") != "pass":
-            raise CenturyCacheEvidenceError(
-                "reconciliation-aggregate schema/status is invalid"
-            )
-        required_reconciliation_fields = {
-            "reconciliation_policy_version",
-            "boundary_event_catalog_sha256",
-            "ordered_sources",
-            "ordered_core_reconciliation_receipt_sha256s",
-            "ordered_output_chunk_provenance_sha256s",
-            "exact_state_universe_provenance",
-        }
-        missing_reconciliation_fields = sorted(
-            required_reconciliation_fields - set(reconciliation_payload)
-        )
-        if missing_reconciliation_fields:
-            raise CenturyCacheEvidenceError(
-                "reconciliation-aggregate is missing required provenance fields: "
-                f"{missing_reconciliation_fields}"
-            )
-        if not {
-            "reconciliation_calculation_audit",
-            "reconciliation_calculation_audit_sha256",
-        } & set(reconciliation_payload):
-            raise CenturyCacheEvidenceError(
-                "reconciliation-aggregate lacks calculation-audit provenance"
-            )
         try:
-            embedded_exact = ExactStateUniverseProvenance.model_validate_json(
-                canonical_json_bytes(
-                    reconciliation_payload.get("exact_state_universe_provenance")
-                ),
+            aggregate = ExactStateReconciliationAggregateProvenanceV1.model_validate_json(
+                reconciliation_raw,
                 strict=True,
             )
-        except ValueError as exc:
+            validate_exact_state_reconciliation_aggregate_provenance(aggregate)
+        except (ExactStateReconciliationError, ValueError) as exc:
             raise CenturyCacheEvidenceError(
-                "reconciliation-aggregate exact-state provenance is invalid"
+                "reconciliation-aggregate semantic provenance is invalid"
             ) from exc
-        if embedded_exact != exact_state_provenance:
+        if aggregate.build_plan_sha256 != spec.build_plan_sha256:
+            raise CenturyCacheEvidenceError(
+                "reconciliation-aggregate build-plan binding mismatch"
+            )
+        if aggregate.exact_state_universe_provenance != exact_state_provenance:
             raise CenturyCacheEvidenceError(
                 "reconciliation-aggregate exact-state provenance mismatch"
             )

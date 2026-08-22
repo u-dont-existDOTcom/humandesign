@@ -455,6 +455,7 @@ class StreamingCenturyCachePublisher(Phase1CompatibilityCenturyCachePublisher):
         try:
             reconcile = import_module("hdmatch.century_cache.reconcile")
             finalization_type = reconcile.ReconciliationStreamFinalization
+            validator = reconcile.validate_reconciliation_stream_finalization
         except (AttributeError, ModuleNotFoundError) as exc:
             raise CenturyCachePublicationError(
                 "concrete reconciliation finalization is not integrated; fail closed"
@@ -464,8 +465,8 @@ class StreamingCenturyCachePublisher(Phase1CompatibilityCenturyCachePublisher):
                 "Phase-2 publication rejected a non-reconciler finalization"
             )
         try:
+            aggregate = validator(finalization)
             self.append_reconciled_chunk(finalization.final_chunk)
-            aggregate = finalization.aggregate_provenance
             aggregate_bytes = canonical_json_bytes(aggregate.model_dump(mode="json"))
             exact = finalization.exact_state_universe_provenance
         except (AttributeError, TypeError, ValueError) as exc:

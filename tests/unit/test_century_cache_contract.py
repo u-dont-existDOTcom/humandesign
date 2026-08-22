@@ -23,15 +23,19 @@ from hdmatch.century_cache import (
     CenturyCacheStreamIdentity,
     CenturyCacheVerificationError,
     CenturyStateRecord,
+    ExactStateReconciliationStream,
     FeatureColumnSpec,
+    OverlappingVerifiedExactStateBatch,
     Phase1CompatibilityCenturyCachePublisher,
     StreamingCenturyCachePublisher,
+    SwissEngineBuildIdentityV1,
     VerifiedExactShardSet,
     VerifiedExactStateBatch,
     assemble_verified_exact_shard_set,
     build_verified_exact_state_batch,
     canonical_rows_sha256,
     coerce_century_state_record,
+    exact_state_reconciliation_aggregate_sha256,
     feature_registry_sha256,
     iter_verified_century_cache_rows,
     open_century_cache_for_recovery,
@@ -125,7 +129,7 @@ class _DeterministicFakeSwiss:
 
 
 @cache
-def _exact_batch() -> VerifiedExactStateBatch:
+def _exact_provider_and_batch() -> tuple[SwissEphemerisProvider, VerifiedExactStateBatch]:
     root = Path(tempfile.mkdtemp(prefix="hdmatch-exact-cache-test-"))
     ephemeris = root / "ephemeris"
     ephemeris.mkdir()
@@ -141,7 +145,12 @@ def _exact_batch() -> VerifiedExactStateBatch:
     )
     batch = build_verified_exact_state_batch(provider, _START, _END)
     assert len(batch.rows) == 2
-    return batch
+    return provider, batch
+
+
+@cache
+def _exact_batch() -> VerifiedExactStateBatch:
+    return _exact_provider_and_batch()[1]
 
 
 @cache
@@ -284,6 +293,27 @@ def _engine() -> CenturyCacheEngineProvenance:
     )
 
 
+def _reconciliation_engine_identity() -> SwissEngineBuildIdentityV1:
+    provider, _batch = _exact_provider_and_batch()
+    configuration_sha256, file_set_sha256 = (
+        provider.calculation_audit_identity_hashes()
+    )
+    metadata = provider.metadata
+    assert metadata.requested_flags is not None
+    assert metadata.ephemeris_mask is not None
+    return SwissEngineBuildIdentityV1(
+        provider="swiss_ephemeris_local_files",
+        swiss_library_version=metadata.library_version,
+        requested_flags=metadata.requested_flags,
+        ephemeris_mask=metadata.ephemeris_mask,
+        swieph_flag=2,
+        node_convention="true",
+        provider_configuration_sha256=configuration_sha256,
+        canonical_ephemeris_file_set_sha256=file_set_sha256,
+        ephemeris_provenance=_ephemeris_provenance(),
+    )
+
+
 def _parity_report_payload() -> dict[str, object]:
     return {
         "schema_version": "century-cache-parity-report-v1",
@@ -337,22 +367,6 @@ def _boundary_audit_payload() -> dict[str, object]:
     }
 
 
-def _reconciliation_aggregate_payload() -> dict[str, object]:
-    return {
-        "schema_version": "exact-state-reconciliation-aggregate-v1",
-        "status": "pass",
-        "reconciliation_policy_version": "unit-fixture-v1",
-        "boundary_event_catalog_sha256": "7" * 64,
-        "ordered_sources": [],
-        "ordered_core_reconciliation_receipt_sha256s": [],
-        "ordered_output_chunk_provenance_sha256s": [],
-        "reconciliation_calculation_audit_sha256": "6" * 64,
-        "exact_state_universe_provenance": (
-            _exact_shard_set().provenance.model_dump(mode="json")
-        ),
-    }
-
-
 def _spec() -> CenturyCacheBuildSpec:
     registry = _registry()
     exact = _exact_batch().provenance
@@ -385,9 +399,7 @@ def _spec() -> CenturyCacheBuildSpec:
         ),
         boundary_audit_status="pass",
         boundary_audit_report_sha256=sha256_json(_boundary_audit_payload()),
-        reconciliation_aggregate_sha256=sha256_json(
-            _reconciliation_aggregate_payload()
-        ),
+        reconciliation_aggregate_sha256=None,
         generation_commit="8" * 40,
         created_at_utc=datetime(2026, 8, 22, tzinfo=UTC),
     )
@@ -435,6 +447,7 @@ def _evidence_inputs(
     engine_payload: dict[str, object] | None = None,
     parity_payload: dict[str, object] | None = None,
     boundary_payload: dict[str, object] | None = None,
+    reconciliation_payload: dict[str, object] | None = None,
     source_manifest_payload: dict[str, object] | None = None,
 ) -> CenturyCacheEvidenceInputs:
     directory.mkdir(parents=True)
@@ -449,15 +462,15 @@ def _evidence_inputs(
     engine_path = directory / "engine-validation.json"
     parity_path = directory / "parity-report.json"
     boundary_path = directory / "boundary-audit-report.json"
-    reconciliation_path = directory / "reconciliation-aggregate.json"
     engine_path.write_bytes(canonical_json_bytes(engine_payload or _engine_receipt_payload()))
     parity_path.write_bytes(canonical_json_bytes(parity_payload or _parity_report_payload()))
     boundary_path.write_bytes(
         canonical_json_bytes(boundary_payload or _boundary_audit_payload())
     )
-    reconciliation_path.write_bytes(
-        canonical_json_bytes(_reconciliation_aggregate_payload())
-    )
+    reconciliation_path = None
+    if reconciliation_payload is not None:
+        reconciliation_path = directory / "reconciliation-aggregate.json"
+        reconciliation_path.write_bytes(canonical_json_bytes(reconciliation_payload))
     return CenturyCacheEvidenceInputs(
         engine_validation_path=engine_path,
         parity_report_path=parity_path,
@@ -1114,7 +1127,7 @@ def test_verified_handle_detects_manifest_change_before_yield(tmp_path: Path) ->
         tuple(iter_verified_century_cache_rows(verified))
 
 
-def test_streaming_publisher_is_manifest_last_atomic_and_trust_locked(
+def test_phase1_compatibility_publisher_is_manifest_last_and_atomic(
     tmp_path: Path,
 ) -> None:
     destination = tmp_path / "published-cache"
@@ -1153,6 +1166,49 @@ def test_streaming_publisher_is_manifest_last_atomic_and_trust_locked(
         for shard in verified.manifest.shards
     )
 
+
+
+def test_phase2_reconciled_publication_mints_usable_trust_lock(
+    tmp_path: Path,
+) -> None:
+    provider, batch = _exact_provider_and_batch()
+    source = OverlappingVerifiedExactStateBatch._from_factory_verified_batch_for_test(
+        batch=batch,
+        core_start_utc=_START,
+        core_end_exclusive=_END,
+        source_staged_receipt_sha256="1" * 64,
+        source_replay_verification_sha256="2" * 64,
+        source_all_call_audit_sha256="3" * 64,
+        source_build_plan_sha256="5" * 64,
+    )
+    stream = ExactStateReconciliationStream._for_factory_verified_test_sources(
+        provider,
+        engine_identity=_reconciliation_engine_identity(),
+    )
+    assert stream.append(source) is None
+    finalization = stream.finalize()
+    aggregate = finalization.aggregate_provenance
+    reconciliation_sha256 = exact_state_reconciliation_aggregate_sha256(aggregate)
+    spec = _spec().model_copy(
+        update={"reconciliation_aggregate_sha256": reconciliation_sha256}
+    )
+    destination = tmp_path / "phase2-published-cache"
+    publisher = StreamingCenturyCachePublisher(
+        destination,
+        identity=CenturyCacheStreamIdentity.from_build_spec(spec),
+        build_mode="explicit_rebuild",
+    )
+    staged = publisher.finish_reconciliation(finalization)
+    assert staged.logical_audit.canonical_rows_sha256 == (
+        aggregate.exact_state_universe_provenance.logical_universe_sha256
+    )
+    verified = publisher.finalize_and_publish(
+        spec=spec,
+        evidence=_evidence_inputs(
+            tmp_path / "phase2-streaming-inputs",
+            reconciliation_payload=aggregate.model_dump(mode="json"),
+        ),
+    )
     lock = trust_lock_from_verified_cache(
         verified,
         build_spec=spec,
@@ -1179,7 +1235,7 @@ def test_phase2_publisher_rejects_direct_phase1_batch_admission(
     )
     with pytest.raises(ValueError, match="ReconciledExactStateChunk"):
         publisher.append_verified_batch(_exact_batch())
-    with pytest.raises(ValueError, match="fail closed"):
+    with pytest.raises(ValueError, match="non-reconciled chunk"):
         publisher.append_reconciled_chunk(object())
     publisher.abort()
 
