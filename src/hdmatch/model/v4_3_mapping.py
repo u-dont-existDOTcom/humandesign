@@ -202,25 +202,35 @@ _GATE_FEATURES: Final[frozenset[FeatureId]] = frozenset(
         FeatureId.ACTIVE_GATES,
         FeatureId.HANGING_GATES,
         FeatureId.DORMANT_GATES,
+        FeatureId.POSSIBLE_BRIDGES,
         FeatureId.REPEATED_GATES,
         FeatureId.PLANETARY_ACTIVATIONS,
         FeatureId.NODE_ACTIVATIONS,
         FeatureId.CARDINAL_ACTIVATIONS,
     }
 )
-_COLLECTION_FEATURES: Final[frozenset[FeatureId]] = frozenset(
+_CONTAINS_FEATURES: Final[frozenset[FeatureId]] = frozenset(
     {
         FeatureId.CENTERS,
         FeatureId.COMPLETE_CHANNELS,
         FeatureId.ACTIVE_GATES,
         FeatureId.HANGING_GATES,
         FeatureId.DORMANT_GATES,
-        FeatureId.POSSIBLE_BRIDGES,
         FeatureId.REPEATED_GATES,
-        FeatureId.PLANETARY_ACTIVATIONS,
-        FeatureId.NODE_ACTIVATIONS,
-        FeatureId.CARDINAL_ACTIVATIONS,
         FeatureId.CIRCUITRY_CHANNEL_METADATA,
+    }
+)
+_SCALAR_FEATURES: Final[frozenset[FeatureId]] = frozenset(
+    {
+        FeatureId.TYPE,
+        FeatureId.STRATEGY,
+        FeatureId.AUTHORITY,
+        FeatureId.PROFILE,
+        FeatureId.DEFINITION,
+        FeatureId.CROSS_COMPONENTS,
+        FeatureId.CROSS_NAME,
+        FeatureId.CIRCUITRY_STATUS,
+        FeatureId.ADVANCED_STATUS,
     }
 )
 
@@ -264,6 +274,13 @@ class StructuralPredicateV2(FrozenModel):
         elif self.values:
             raise ValueError("activation/Gate predicates cannot also carry generic values")
 
+        if self.operator is PredicateOperatorV2.EQUALS_ANY and (
+            self.feature_id not in _SCALAR_FEATURES
+        ):
+            raise ValueError(
+                f"equals_any has no unambiguous semantics for {self.feature_id.value}"
+            )
+
         if self.operator is PredicateOperatorV2.PROFILE_HAS_LINE:
             if self.feature_id is not FeatureId.PROFILE or len(self.values) != 1:
                 raise ValueError("profile_has_line requires exactly one Profile line")
@@ -278,7 +295,7 @@ class StructuralPredicateV2(FrozenModel):
         if self.operator in {
             PredicateOperatorV2.CONTAINS_ANY,
             PredicateOperatorV2.NOT_CONTAINS_ANY,
-        } and self.feature_id not in _COLLECTION_FEATURES:
+        } and self.feature_id not in _CONTAINS_FEATURES:
             raise ValueError("contains predicates require a collection-valued feature")
         if self.operator is PredicateOperatorV2.MATCHES_ACTIVATION:
             if self.feature_id not in _ACTIVATION_FEATURES:
@@ -323,6 +340,14 @@ class StructuralPredicateV2(FrozenModel):
         if self.feature_id is FeatureId.COMPLETE_CHANNELS:
             for channel in self.values:
                 _require_channel(channel)
+        if self.feature_id is FeatureId.CROSS_COMPONENTS and any(
+            _cross_component_gates(value) is None for value in self.values
+        ):
+            raise ValueError("Cross components require exact psun/pearth|dsun/dearth Gates")
+        if self.feature_id in {FeatureId.COLOR, FeatureId.TONE, FeatureId.BASE}:
+            raise ValueError(
+                "advanced substructure lacks a frozen unambiguous V4.3 predicate selector"
+            )
         return self
 
     @property
@@ -354,19 +379,60 @@ class StructuralPredicateV2(FrozenModel):
 
     @property
     def dependency_keys(self) -> frozenset[str]:
-        keys = {f"feature:{self.feature_id.value}"}
+        """Return exact frozen structural mechanisms, never feature-family buckets.
+
+        Dependency control is about reuse of the same chart mechanism.  A key such
+        as ``feature:channels.complete`` would incorrectly make Channel 1-8 and
+        Channel 10-20 dependent.  The keys below therefore retain exact values and
+        qualifiers.  Channel predicates also expose both component Gate keys, and
+        Cross-component predicates expose all four cardinal-position keys, so the
+        known compound/singleton double-counting cases deliberately collide.
+
+        Cross-name predicates cannot know their cardinal components at compile
+        time.  The canonical runtime adapter augments them from the exact candidate
+        row before scoring.
+        """
+
+        keys: set[str] = set()
         if self.feature_id in {FeatureId.TYPE, FeatureId.STRATEGY}:
             keys.add("architecture:type_strategy")
+        for value in self.values:
+            keys.add(f"value:{self.feature_id.value}:{value}")
         if self.gate is not None:
             keys.add(f"gate:{self.gate}")
+        if self.operator is PredicateOperatorV2.MATCHES_ACTIVATION:
+            qualifiers = (
+                self.side or "any-side",
+                self.carrier.value if self.carrier is not None else "any-carrier",
+                str(self.gate) if self.gate is not None else "any-gate",
+                str(self.line) if self.line is not None else "any-line",
+            )
+            keys.add(f"activation:{':'.join(qualifiers)}")
+            if self.feature_id is FeatureId.CARDINAL_ACTIVATIONS:
+                keys.add(f"cardinal:{qualifiers[0]}:{qualifiers[1]}:{qualifiers[2]}")
         if self.feature_id is FeatureId.COMPLETE_CHANNELS:
             for channel in self.values:
                 left, right = channel.split("-")
                 keys.update({f"channel:{channel}", f"gate:{left}", f"gate:{right}"})
         if self.feature_id is FeatureId.CROSS_COMPONENTS:
             for value in self.values:
-                for gate in re.findall(r"(?:^|[/|])([1-9]|[1-5][0-9]|6[0-4])", value):
+                components = _cross_component_gates(value)
+                if components is None:
+                    continue
+                keys.add(f"cross:{value}")
+                positions = (
+                    "personality:sun",
+                    "personality:earth",
+                    "design:sun",
+                    "design:earth",
+                )
+                for position, gate in zip(positions, components, strict=True):
                     keys.add(f"gate:{gate}")
+                    keys.add(f"cardinal:{position}:{gate}")
+        if not keys:
+            # Exact predicate identity is a legitimate mechanism for predicates
+            # whose structure has no more specific cross-family relationship.
+            keys.add(f"predicate:{self.anchor_id}")
         return frozenset(keys)
 
 
@@ -829,6 +895,17 @@ class MappingLibraryV2(FrozenModel):
         )
         if len(pathway_ids) != len(set(pathway_ids)):
             raise ValueError("compiled pathway IDs must be globally unique")
+        prevalence_contracts: dict[str, tuple[PrevalenceParentLevelV2, ...]] = {}
+        for rule in self.rules:
+            for pathway in _compiled_rule_pathways(rule):
+                previous = prevalence_contracts.setdefault(
+                    pathway.anchor_id,
+                    pathway.prevalence_parent_hierarchy,
+                )
+                if previous != pathway.prevalence_parent_hierarchy:
+                    raise ValueError(
+                        "one structural anchor cannot declare multiple prevalence hierarchies"
+                    )
         known_sources = {item.source_id for item in self.source_artifacts}
         for mapping in self.rules:
             citations = list(mapping.sources)
@@ -920,6 +997,18 @@ def _require_channel(value: str) -> None:
     left, right = (int(item) for item in value.split("-"))
     if left >= right or value not in {channel.identifier for channel in CHANNELS}:
         raise ValueError(f"channel is not canonical: {value}")
+
+
+def _cross_component_gates(value: str) -> tuple[int, int, int, int] | None:
+    match = re.fullmatch(
+        r"([1-9]|[1-5][0-9]|6[0-4])/([1-9]|[1-5][0-9]|6[0-4])\|"
+        r"([1-9]|[1-5][0-9]|6[0-4])/([1-9]|[1-5][0-9]|6[0-4])",
+        value,
+    )
+    if match is None:
+        return None
+    first, second, third, fourth = match.groups()
+    return int(first), int(second), int(third), int(fourth)
 
 
 def _require_unique_sorted(values: tuple[str, ...], label: str) -> None:

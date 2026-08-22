@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 
 import pytest
 
@@ -27,6 +27,22 @@ from hdmatch.model.v4_3 import (
 
 @dataclass(frozen=True, slots=True)
 class Provenance:
+    anchor_ids: tuple[str, ...] = ()
+    artifact_sha256: str = "c" * 64
+    plan_sha256: str = "d" * 64
+    mapping_library_sha256: str = "e" * 64
+    mapping_source_library_sha256: str = "f" * 64
+    mapping_prevalence_plan_sha256: str = "0" * 64
+    required_feature_registry_sha256: str = "1" * 64
+    cache_manifest_sha256: str = "2" * 64
+    cache_trust_lock_sha256: str = "3" * 64
+    cache_build_plan_sha256: str = "4" * 64
+    semantic_feature_registry_sha256: str = "5" * 64
+    physical_feature_registry_sha256: str = "6" * 64
+    reconciliation_aggregate_sha256: str = "7" * 64
+    engine_validation_sha256: str = "8" * 64
+    ephemeris_file_set_sha256: str = "9" * 64
+    boundary_policy_version: str = "boundary-v1"
     universe_sha256: str = "a" * 64
     policy_version: str = "conditional-prevalence-v4.3-v1"
     parent_hierarchy_sha256: str = "b" * 64
@@ -39,6 +55,12 @@ class Provenance:
 @dataclass(frozen=True, slots=True)
 class Estimate:
     anchor_id: str
+    artifact_sha256: str
+    plan_sha256: str
+    mapping_library_sha256: str
+    mapping_prevalence_plan_sha256: str
+    required_feature_registry_sha256: str
+    cache_manifest_sha256: str
     prevalence: float
     numerator_duration_microseconds: int
     denominator_duration_microseconds: int
@@ -58,11 +80,28 @@ class FixedPrevalence:
     values: dict[str, tuple[int, int]]
     provenance: Provenance = Provenance()
 
+    def __post_init__(self) -> None:
+        object.__setattr__(
+            self,
+            "provenance",
+            replace(self.provenance, anchor_ids=tuple(sorted(self.values))),
+        )
+
     def estimate(self, anchor_id: str, candidate_context: object) -> Estimate:
         del candidate_context
         numerator, denominator = self.values[anchor_id]
         return Estimate(
             anchor_id=anchor_id,
+            artifact_sha256=self.provenance.artifact_sha256,
+            plan_sha256=self.provenance.plan_sha256,
+            mapping_library_sha256=self.provenance.mapping_library_sha256,
+            mapping_prevalence_plan_sha256=(
+                self.provenance.mapping_prevalence_plan_sha256
+            ),
+            required_feature_registry_sha256=(
+                self.provenance.required_feature_registry_sha256
+            ),
+            cache_manifest_sha256=self.provenance.cache_manifest_sha256,
             prevalence=numerator / denominator,
             numerator_duration_microseconds=numerator,
             denominator_duration_microseconds=denominator,
@@ -83,6 +122,21 @@ class ExplodingPrevalence:
     def estimate(self, anchor_id: str, candidate_context: object) -> Estimate:
         del candidate_context
         raise AssertionError(f"neutral anchor {anchor_id} must not request prevalence")
+
+
+@dataclass(frozen=True, slots=True)
+class MismatchedEstimatePrevalence:
+    base: FixedPrevalence
+
+    @property
+    def provenance(self) -> Provenance:
+        return self.base.provenance
+
+    def estimate(self, anchor_id: str, candidate_context: object) -> Estimate:
+        return replace(
+            self.base.estimate(anchor_id, candidate_context),
+            mapping_prevalence_plan_sha256="f" * 64,
+        )
 
 
 def _anchor(
@@ -189,7 +243,7 @@ def test_exact_formula_includes_salience_directness_flexibility_and_contradictio
             EvaluatedPathway(
                 pathway_id="primary-plus-corr",
                 primary=primary,
-                corroborators=(corroborator,),
+                corroborator=corroborator,
                 contradiction=EvaluatedContradiction(True, 0.50),
             ),
         ),
@@ -274,25 +328,13 @@ def test_alternative_pathways_compete_instead_of_summing() -> None:
     assert score.clusters[0].evidence_pathway_id == "OBS-ALT:a"
 
 
-def test_only_strongest_independent_corroborator_receives_fifteen_percent() -> None:
+def test_single_independent_corroborator_receives_fifteen_percent() -> None:
     primary = _anchor("primary", "shared")
-    dependent = _anchor(
-        "dependent-gate",
-        "shared",
-        structural_class=StructuralClass.PROMINENT_PLANETARY_ACTIVATION,
-        salience=0.45,
-    )
     strongest = _anchor(
         "strong-independent",
         "independent-strong",
         structural_class=StructuralClass.CARDINAL_SUN_EARTH,
         salience=0.75,
-    )
-    weaker = _anchor(
-        "weak-independent",
-        "independent-weak",
-        structural_class=StructuralClass.PROMINENT_PLANETARY_ACTIVATION,
-        salience=0.45,
     )
     cluster = ObservationEvaluation(
         observation_id="OBS-CORR",
@@ -302,7 +344,7 @@ def test_only_strongest_independent_corroborator_receives_fifteen_percent() -> N
             EvaluatedPathway(
                 "p",
                 primary,
-                corroborators=(dependent, weaker, strongest),
+                corroborator=strongest,
             ),
         ),
     )
@@ -312,7 +354,6 @@ def test_only_strongest_independent_corroborator_receives_fifteen_percent() -> N
             {
                 "primary": (1, 2),
                 "strong-independent": (1, 2),
-                # Neither the dependent nor weaker alternative may be queried.
             }
         ),
     )
@@ -322,6 +363,47 @@ def test_only_strongest_independent_corroborator_receives_fifteen_percent() -> N
     assert pathway.corroborator.anchor_id == "strong-independent"
     assert pathway.pathway_support == pytest.approx(0.8 + 0.15 * 0.75)
     assert pathway.evidence_rubric_bits == pytest.approx(0.8 + 0.15 * 0.75)
+
+
+def test_multiple_or_dependent_corroborators_fail_before_scoring() -> None:
+    primary = _anchor("primary", "shared")
+    dependent = _anchor(
+        "dependent",
+        "shared",
+        structural_class=StructuralClass.PROMINENT_PLANETARY_ACTIVATION,
+        salience=0.45,
+    )
+    with pytest.raises(ValueError, match="structurally independent"):
+        EvaluatedPathway("dependent", primary, corroborator=dependent)
+    with pytest.raises(TypeError):
+        EvaluatedPathway(  # type: ignore[arg-type]
+            "multiple",
+            primary,
+            corroborator=(dependent, dependent),
+        )
+
+
+def test_corroborator_cannot_substitute_for_missing_primary_support() -> None:
+    pathway = EvaluatedPathway(
+        "path",
+        _anchor("primary", "primary", supports=False),
+        corroborator=_anchor(
+            "corroborator",
+            "independent",
+            structural_class=StructuralClass.PROMINENT_PLANETARY_ACTIVATION,
+            salience=0.45,
+        ),
+    )
+    observation = ObservationEvaluation(
+        observation_id="OBS-CORR-ONLY",
+        dependency_cluster="CORR_ONLY",
+        confidence=ObservationConfidence(1.0, 1.0),
+        pathways=(pathway,),
+    )
+    score = score_v4_3(_input(observation), ExplodingPrevalence())
+
+    assert score.evidence_rubric_bits == 0.0
+    assert score.detailed_support == 0.0
 
 
 def test_channel_and_component_gate_cannot_double_count_across_clusters() -> None:
@@ -379,6 +461,39 @@ def test_repeated_dependency_cluster_collapses_and_duplicate_observation_fails()
         _input(cluster, cluster)
 
 
+def test_dependency_cluster_uses_positive_evidence_winner_for_detailed_support() -> None:
+    broad_support = ObservationEvaluation(
+        observation_id="OBS-BROAD",
+        dependency_cluster="SHARED",
+        confidence=ObservationConfidence(1.0, 1.0),
+        pathways=(EvaluatedPathway("broad", _anchor("broad", "broad")),),
+    )
+    rare_lower_support = ObservationEvaluation(
+        observation_id="OBS-RARE",
+        dependency_cluster="SHARED",
+        confidence=ObservationConfidence(1.0, 1.0),
+        pathways=(
+            EvaluatedPathway(
+                "rare",
+                _anchor(
+                    "rare",
+                    "rare",
+                    structural_class=StructuralClass.PROMINENT_PLANETARY_ACTIVATION,
+                    salience=0.45,
+                ),
+            ),
+        ),
+    )
+    score = score_v4_3(
+        _input(broad_support, rare_lower_support),
+        FixedPrevalence({"broad": (1, 2), "rare": (1, 64)}),
+    )
+
+    assert score.clusters[0].evidence_pathway_id == "OBS-RARE:rare"
+    assert score.clusters[0].support_pathway_id == "OBS-RARE:rare"
+    assert score.detailed_support == pytest.approx(45.0)
+
+
 def test_contradictions_use_formula_and_strongest_instance_not_sum() -> None:
     cluster = ObservationEvaluation(
         observation_id="OBS-OPPOSITION",
@@ -404,6 +519,39 @@ def test_contradictions_use_formula_and_strongest_instance_not_sum() -> None:
         0.75 * 0.5 * (0.5 + 0.75) * 4
     )
     assert score.clusters[0].contradiction_pathway_id == "OBS-OPPOSITION:strong"
+
+
+def test_penalty_uses_strongest_bits_but_meaningful_counts_any_legitimate_instance() -> None:
+    high_bits_mild = ObservationEvaluation(
+        observation_id="OBS-MILD",
+        dependency_cluster="OPPOSITION",
+        confidence=ObservationConfidence(1.0, 1.0),
+        pathways=(
+            EvaluatedPathway(
+                "mild",
+                _anchor("mild", "mild", supports=False),
+                contradiction=EvaluatedContradiction(True, 0.25),
+            ),
+        ),
+    )
+    low_bits_meaningful = ObservationEvaluation(
+        observation_id="OBS-MEANINGFUL",
+        dependency_cluster="OPPOSITION",
+        confidence=ObservationConfidence(0.1, 1.0),
+        pathways=(
+            EvaluatedPathway(
+                "meaningful",
+                _anchor("meaningful", "meaningful", supports=False),
+                contradiction=EvaluatedContradiction(True, 0.50),
+            ),
+        ),
+    )
+    score = score_v4_3(_input(high_bits_mild, low_bits_meaningful), ExplodingPrevalence())
+
+    assert score.contradiction_rubric_bits == pytest.approx(1.0)
+    assert score.clusters[0].contradiction_pathway_id == "OBS-MILD:mild"
+    assert score.clusters[0].contradiction_severity == pytest.approx(0.25)
+    assert score.meaningful_contradictions == 1
 
 
 def test_unknown_cannot_be_coerced_and_neutral_unknown_does_not_call_prevalence() -> None:
@@ -458,3 +606,37 @@ def test_core_fit_requires_all_blocks_and_excludes_only_explicit_unreportables()
 def test_prevalence_mutations_fail_closed(provenance: Provenance, message: str) -> None:
     with pytest.raises(ValueError, match=message):
         score_v4_3(_input(), FixedPrevalence({}, provenance))
+
+
+def test_prevalence_requires_complete_artifact_identity_and_estimate_binding() -> None:
+    legacy_provider = type(
+        "LegacyProvider",
+        (),
+        {
+            "provenance": type(
+                "LegacyProvenance",
+                (),
+                {
+                    "universe_sha256": "a" * 64,
+                    "policy_version": "conditional-v1",
+                    "parent_hierarchy_sha256": "b" * 64,
+                    "duration_weighted": True,
+                    "conditional": True,
+                    "exact_stable_intervals": True,
+                    "source_scope": "declared-global-utc-universe",
+                },
+            )(),
+        },
+    )()
+    with pytest.raises(ValueError, match="mandatory verified artifact identity"):
+        score_v4_3(_input(), legacy_provider)  # type: ignore[arg-type]
+
+    observation = ObservationEvaluation(
+        observation_id="OBS-BINDING",
+        dependency_cluster="BINDING",
+        confidence=ObservationConfidence(1.0, 1.0),
+        pathways=(EvaluatedPathway("path", _anchor("anchor", "anchor")),),
+    )
+    provider = MismatchedEstimatePrevalence(FixedPrevalence({"anchor": (1, 2)}))
+    with pytest.raises(ValueError, match="mapping_prevalence_plan_sha256"):
+        score_v4_3(_input(observation), provider)

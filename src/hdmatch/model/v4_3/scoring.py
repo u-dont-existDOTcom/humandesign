@@ -72,6 +72,7 @@ class DependencyClusterContribution:
     evidence_rubric_bits: float
     contradiction_severity: float
     contradiction_rubric_bits: float
+    meaningful_contradiction: bool
     pathways: tuple[PathwayContribution, ...]
 
 
@@ -161,7 +162,12 @@ def score_v4_3(
     """Score one candidate without concealed truth or candidate-pool frequencies."""
 
     provenance = prevalence.provenance
-    _validate_prevalence_provenance(provenance)
+    try:
+        _validate_prevalence_provenance(provenance)
+    except AttributeError as exc:
+        raise ValueError(
+            "prevalence provenance lacks a mandatory verified artifact identity"
+        ) from exc
     _validate_dependency_control(scoring_input.observations)
 
     grouped: dict[str, list[ObservationEvaluation]] = defaultdict(list)
@@ -203,7 +209,7 @@ def score_v4_3(
         detailed_support=detailed_support,
         core_fit=core_fit,
         meaningful_contradictions=sum(
-            item.contradiction_severity >= 0.50 for item in cluster_contributions
+            item.meaningful_contradiction for item in cluster_contributions
         ),
         clusters=cluster_contributions,
         core_blocks=core_blocks,
@@ -248,6 +254,7 @@ def _score_cluster(
             evidence_rubric_bits=0.0,
             contradiction_severity=0.0,
             contradiction_rubric_bits=0.0,
+            meaningful_contradiction=False,
             pathways=(),
         )
 
@@ -260,11 +267,16 @@ def _score_cluster(
             item.pathway_id,
         ),
     )
-    support_winner = min(
+    # The dependency-controlled positive-evidence winner is also the observation
+    # used in the DetailedSupport numerator and denominator.  Selecting a second
+    # support-only winner would let one cluster borrow confidence from one
+    # observation and support from another.
+    positive_winner = evidence_winner if evidence_winner.evidence_rubric_bits > 0.0 else None
+    support_winner = positive_winner or min(
         scored,
         key=lambda item: (
+            -item.effective_confidence,
             -item.pathway_support,
-            -item.evidence_rubric_bits,
             item.observation_id,
             item.pathway_id,
         ),
@@ -283,7 +295,9 @@ def _score_cluster(
         observation_ids=tuple(item.observation_id for item in observations),
         effective_confidence=support_winner.effective_confidence,
         evidence_pathway_id=(
-            f"{evidence_winner.observation_id}:{evidence_winner.pathway_id}"
+            f"{positive_winner.observation_id}:{positive_winner.pathway_id}"
+            if positive_winner is not None
+            else None
         ),
         support_pathway_id=f"{support_winner.observation_id}:{support_winner.pathway_id}",
         contradiction_pathway_id=(
@@ -293,6 +307,9 @@ def _score_cluster(
         evidence_rubric_bits=evidence_winner.evidence_rubric_bits,
         contradiction_severity=contradiction_winner.contradiction_severity,
         contradiction_rubric_bits=contradiction_winner.contradiction_rubric_bits,
+        meaningful_contradiction=any(
+            item.contradiction_severity >= 0.50 for item in scored
+        ),
         pathways=scored,
     )
 
@@ -312,29 +329,15 @@ def _score_pathway(
         prevalence,
         provenance,
     )
-    eligible_corroborators = tuple(
-        corroborator
-        for corroborator in pathway.corroborators
-        if corroborator.support > 0.0
-        and corroborator.dependency_keys.isdisjoint(pathway.primary.dependency_keys)
-    )
-    selected_corroborator = (
-        min(
-            eligible_corroborators,
-            key=lambda item: (-item.support, item.anchor_id),
-        )
-        if eligible_corroborators
-        else None
-    )
     corroborator = (
         _score_anchor(
-            selected_corroborator,
+            pathway.corroborator,
             ceff,
             candidate_context,
             prevalence,
             provenance,
         )
-        if selected_corroborator is not None
+        if primary is not None and pathway.corroborator is not None
         else None
     )
     primary_support = primary.support if primary is not None else 0.0
@@ -374,7 +377,12 @@ def _score_anchor(
     if anchor.support == 0.0:
         return None
     estimate = prevalence.estimate(anchor.anchor_id, candidate_context)
-    _validate_prevalence_estimate(anchor.anchor_id, estimate, provenance)
+    try:
+        _validate_prevalence_estimate(anchor.anchor_id, estimate, provenance)
+    except AttributeError as exc:
+        raise ValueError(
+            "prevalence estimate lacks a mandatory verified artifact identity"
+        ) from exc
     raw_bits = -math.log2(estimate.prevalence)
     capped_bits = information_rubric_bits(estimate.prevalence)
     evidence = ceff * anchor.support * anchor.flexibility_factor * capped_bits
@@ -438,7 +446,10 @@ def _validate_dependency_control(
     clusters_by_dependency_key: dict[str, set[str]] = defaultdict(set)
     for observation in observations:
         for pathway in observation.pathways:
-            for anchor in (pathway.primary, *pathway.corroborators):
+            for anchor in (
+                pathway.primary,
+                *((pathway.corroborator,) if pathway.corroborator is not None else ()),
+            ):
                 for key in anchor.dependency_keys:
                     clusters_by_dependency_key[key].add(observation.dependency_cluster)
     repeated = {
@@ -453,10 +464,31 @@ def _validate_dependency_control(
 def _validate_prevalence_provenance(
     provenance: ConditionalPrevalenceProvenanceLike,
 ) -> None:
-    _require_sha256("prevalence universe", provenance.universe_sha256)
-    _require_sha256("prevalence parent hierarchy", provenance.parent_hierarchy_sha256)
+    for label, value in (
+        ("prevalence artifact", provenance.artifact_sha256),
+        ("prevalence plan", provenance.plan_sha256),
+        ("prevalence mapping library", provenance.mapping_library_sha256),
+        ("prevalence mapping source", provenance.mapping_source_library_sha256),
+        ("prevalence mapping-derived plan", provenance.mapping_prevalence_plan_sha256),
+        ("prevalence required-feature registry", provenance.required_feature_registry_sha256),
+        ("prevalence cache manifest", provenance.cache_manifest_sha256),
+        ("prevalence cache trust lock", provenance.cache_trust_lock_sha256),
+        ("prevalence cache build plan", provenance.cache_build_plan_sha256),
+        ("prevalence semantic registry", provenance.semantic_feature_registry_sha256),
+        ("prevalence physical registry", provenance.physical_feature_registry_sha256),
+        ("prevalence reconciliation", provenance.reconciliation_aggregate_sha256),
+        ("prevalence engine validation", provenance.engine_validation_sha256),
+        ("prevalence ephemeris file set", provenance.ephemeris_file_set_sha256),
+        ("prevalence universe", provenance.universe_sha256),
+        ("prevalence parent hierarchy", provenance.parent_hierarchy_sha256),
+    ):
+        _require_sha256(label, value)
+    if provenance.anchor_ids != tuple(sorted(set(provenance.anchor_ids))):
+        raise ValueError("prevalence anchor inventory must be sorted and unique")
     if not provenance.policy_version:
         raise ValueError("prevalence policy version must not be empty")
+    if not provenance.boundary_policy_version:
+        raise ValueError("prevalence boundary policy version must not be empty")
     if provenance.duration_weighted is not True:
         raise ValueError("prevalence must be duration weighted")
     if provenance.conditional is not True:
@@ -472,6 +504,8 @@ def _validate_prevalence_estimate(
     estimate: ConditionalPrevalenceEstimateLike,
     provenance: ConditionalPrevalenceProvenanceLike,
 ) -> None:
+    if anchor_id not in provenance.anchor_ids:
+        raise ValueError(f"prevalence anchor is absent from the frozen plan: {anchor_id}")
     if estimate.anchor_id != anchor_id:
         raise ValueError(f"prevalence provider returned {estimate.anchor_id} for {anchor_id}")
     if estimate.numerator_duration_microseconds <= 0:
@@ -493,6 +527,12 @@ def _validate_prevalence_estimate(
     if not estimate.selected_level_id or estimate.backoff_ordinal < 0:
         raise ValueError("prevalence estimate requires a selected conditional/backoff level")
     for attribute in (
+        "artifact_sha256",
+        "plan_sha256",
+        "mapping_library_sha256",
+        "mapping_prevalence_plan_sha256",
+        "required_feature_registry_sha256",
+        "cache_manifest_sha256",
         "universe_sha256",
         "policy_version",
         "parent_hierarchy_sha256",

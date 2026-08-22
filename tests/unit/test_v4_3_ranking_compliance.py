@@ -51,13 +51,13 @@ def _candidate(
     candidate_id: str,
     score: V43CandidateScore,
     *,
-    duration: float = 60.0,
+    duration: int = 60_000_000,
     minute: int = 0,
 ) -> ScoredExactInterval:
     return ScoredExactInterval(
         candidate_id=candidate_id,
         utc_start=datetime(2000, 1, 1, 0, minute, tzinfo=UTC),
-        stable_duration_seconds=duration,
+        stable_duration_microseconds=duration,
         score=score,
     )
 
@@ -134,7 +134,7 @@ def test_rank_inputs_require_exact_positive_duration_and_unique_identity() -> No
         ScoredExactInterval(
             candidate_id="offset",
             utc_start=datetime(2000, 1, 1, tzinfo=timezone(timedelta(hours=1))),
-            stable_duration_seconds=1,
+            stable_duration_microseconds=1,
             score=_score(net=0.0),
         )
     candidate = _candidate("duplicate", _score(net=0.0))
@@ -170,14 +170,14 @@ def _compliance_evidence() -> V43ComplianceEvidence:
     )
 
 
-def test_complete_compliance_evidence_emits_canonical_v4_3() -> None:
-    compliance = require_v4_3_compliance(_compliance_evidence())
+def test_caller_constructed_or_replaced_evidence_cannot_emit_canonical_v4_3() -> None:
+    evidence = _compliance_evidence()
+    compliance = assess_v4_3_compliance(evidence)
 
-    assert compliance.v4_3_compliant
-    assert compliance.reported_model_version == "V4.3"
-    assert compliance.status == "compliant"
-    assert compliance.required_feature_coverage == 1.0
-    assert not compliance.simplified
+    assert not compliance.v4_3_compliant
+    assert any("canonical artifact adapter" in item for item in compliance.failure_reasons)
+    with pytest.raises(V43ComplianceError, match="canonical artifact adapter"):
+        require_v4_3_compliance(evidence)
 
 
 def test_m0_claim_is_downgraded_and_fail_closed_requirement_raises() -> None:
@@ -239,3 +239,32 @@ def test_empty_required_registry_cannot_report_full_coverage() -> None:
     assert compliance.required_feature_coverage == 0.0
     assert not compliance.v4_3_compliant
     assert "required feature registry is empty" in compliance.failure_reasons
+
+
+@pytest.mark.parametrize(
+    ("left", "right"),
+    [
+        (_score(net=2.0), _score(net=1.0)),
+        (_score(net=1.0, contradictions=0), _score(net=1.0, contradictions=1)),
+        (_score(net=1.0, detailed=60), _score(net=1.0, detailed=50)),
+        (_score(net=1.0, core=60), _score(net=1.0, core=50)),
+    ],
+)
+def test_each_score_rank_key_independently_orders_candidates(
+    left: V43CandidateScore, right: V43CandidateScore
+) -> None:
+    ranking = rank_exact_intervals((_candidate("right", right), _candidate("left", left)))
+    assert ranking.records[0].candidate.candidate_id == "left"
+
+
+def test_exact_integer_duration_is_the_isolated_fifth_rank_key() -> None:
+    score = _score(net=1.0, contradictions=0, detailed=50, core=50)
+    ranking = rank_exact_intervals(
+        (
+            _candidate("short", score, duration=1_000_000),
+            _candidate("long", score, duration=1_000_001),
+        )
+    )
+    assert ranking.records[0].candidate.candidate_id == "long"
+    with pytest.raises(ValueError, match="exact positive microseconds"):
+        _candidate("float", score, duration=1.5)  # type: ignore[arg-type]

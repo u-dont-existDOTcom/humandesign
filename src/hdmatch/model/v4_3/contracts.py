@@ -179,15 +179,21 @@ class EvaluatedContradiction:
 class EvaluatedPathway:
     pathway_id: str
     primary: EvaluatedStructuralAnchor
-    corroborators: tuple[EvaluatedStructuralAnchor, ...] = ()
+    corroborator: EvaluatedStructuralAnchor | None = None
     contradiction: EvaluatedContradiction = field(default_factory=EvaluatedContradiction)
 
     def __post_init__(self) -> None:
         if not self.pathway_id:
             raise ValueError("pathway ID must not be empty")
-        anchor_ids = tuple(anchor.anchor_id for anchor in self.corroborators)
-        if len(anchor_ids) != len(set(anchor_ids)):
-            raise ValueError("corroborator anchor IDs must be unique within a pathway")
+        if self.corroborator is not None:
+            if not isinstance(self.corroborator, EvaluatedStructuralAnchor):
+                raise TypeError("a pathway accepts at most one explicit corroborator")
+            if not self.corroborator.dependency_keys.isdisjoint(
+                self.primary.dependency_keys
+            ):
+                raise ValueError(
+                    "the single explicit corroborator must be structurally independent"
+                )
 
 
 @dataclass(frozen=True, slots=True)
@@ -216,7 +222,10 @@ class ObservationEvaluation:
             active_support = any(
                 anchor.supports_response
                 for pathway in self.pathways
-                for anchor in (pathway.primary, *pathway.corroborators)
+                for anchor in (
+                    pathway.primary,
+                    *((pathway.corroborator,) if pathway.corroborator is not None else ()),
+                )
             )
             active_contradiction = any(
                 pathway.contradiction.opposes_response for pathway in self.pathways
@@ -301,6 +310,54 @@ class V43EvaluationProvider(Protocol):
 @runtime_checkable
 class ConditionalPrevalenceProvenanceLike(Protocol):
     @property
+    def anchor_ids(self) -> tuple[str, ...]: ...
+
+    @property
+    def artifact_sha256(self) -> str: ...
+
+    @property
+    def plan_sha256(self) -> str: ...
+
+    @property
+    def mapping_library_sha256(self) -> str: ...
+
+    @property
+    def mapping_source_library_sha256(self) -> str: ...
+
+    @property
+    def mapping_prevalence_plan_sha256(self) -> str: ...
+
+    @property
+    def required_feature_registry_sha256(self) -> str: ...
+
+    @property
+    def cache_manifest_sha256(self) -> str: ...
+
+    @property
+    def cache_trust_lock_sha256(self) -> str: ...
+
+    @property
+    def cache_build_plan_sha256(self) -> str: ...
+
+    @property
+    def semantic_feature_registry_sha256(self) -> str: ...
+
+    @property
+    def physical_feature_registry_sha256(self) -> str: ...
+
+    @property
+    def reconciliation_aggregate_sha256(self) -> str: ...
+
+    @property
+    def engine_validation_sha256(self) -> str: ...
+
+    @property
+    def ephemeris_file_set_sha256(self) -> str: ...
+
+    @property
+    def boundary_policy_version(self) -> str: ...
+
+    @property
     def universe_sha256(self) -> str: ...
 
     @property
@@ -326,6 +383,24 @@ class ConditionalPrevalenceProvenanceLike(Protocol):
 class ConditionalPrevalenceEstimateLike(Protocol):
     @property
     def anchor_id(self) -> str: ...
+
+    @property
+    def artifact_sha256(self) -> str: ...
+
+    @property
+    def plan_sha256(self) -> str: ...
+
+    @property
+    def mapping_library_sha256(self) -> str: ...
+
+    @property
+    def mapping_prevalence_plan_sha256(self) -> str: ...
+
+    @property
+    def required_feature_registry_sha256(self) -> str: ...
+
+    @property
+    def cache_manifest_sha256(self) -> str: ...
 
     @property
     def prevalence(self) -> float: ...
@@ -365,6 +440,26 @@ class ConditionalPrevalenceEstimateLike(Protocol):
 
 
 @runtime_checkable
+class ConditionalPrevalenceCandidateBindingLike(Protocol):
+    """Capability minted by a provider after verifying exact cache membership."""
+
+    @property
+    def state_id(self) -> str: ...
+
+    @property
+    def candidate_record_sha256(self) -> str: ...
+
+    @property
+    def cache_manifest_sha256(self) -> str: ...
+
+    @property
+    def universe_sha256(self) -> str: ...
+
+    @property
+    def mapping_library_sha256(self) -> str: ...
+
+
+@runtime_checkable
 class ConditionalPrevalenceProvider(Protocol):
     @property
     def provenance(self) -> ConditionalPrevalenceProvenanceLike:
@@ -374,6 +469,15 @@ class ConditionalPrevalenceProvider(Protocol):
         self, anchor_id: str, candidate_context: object
     ) -> ConditionalPrevalenceEstimateLike:
         """Return one duration-weighted global-universe conditional estimate."""
+
+    def bind_candidate_record(
+        self,
+        candidate_record: object,
+        *,
+        cache_manifest_sha256: str,
+        mapping_library_sha256: str,
+    ) -> ConditionalPrevalenceCandidateBindingLike:
+        """Verify row membership and return a cache-/mapping-bound capability."""
 
 
 def _require_unit_interval(label: str, value: float) -> None:

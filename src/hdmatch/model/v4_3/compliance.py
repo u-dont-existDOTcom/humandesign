@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import math
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Literal
 
 from hdmatch.model.v4_3.contracts import (
@@ -24,10 +24,12 @@ class V43ComplianceError(RuntimeError):
 
 @dataclass(frozen=True, slots=True)
 class V43ComplianceEvidence:
-    """Explicit evidence flags; defaults are deliberately absent.
+    """Compliance facts with a non-caller-mintable canonical capability.
 
-    This is an adapter boundary, not a substitute for verifying the underlying
-    cache, ephemeris, prevalence, and mapping artifacts in their owning modules.
+    Direct construction remains useful for honest reduced-model reporting, but it
+    can never produce a canonical claim.  Only the canonical artifact adapter may
+    attach the module-private mint after verifying the cache, mapping, exact row,
+    and prevalence bindings.  ``dataclasses.replace`` deliberately drops the mint.
     """
 
     declared_model_version: str
@@ -51,6 +53,7 @@ class V43ComplianceEvidence:
     full_declared_universe_rescored: bool
     scoring_engine_version: str
     ranking_policy_version: str
+    _mint_token: object | None = field(default=None, init=False, repr=False, compare=False)
 
     def __post_init__(self) -> None:
         if not self.declared_model_version:
@@ -93,6 +96,8 @@ def assess_v4_3_compliance(evidence: V43ComplianceEvidence) -> V43Compliance:
     coverage = available_count / required_count if required_count else 0.0
 
     failures: list[str] = []
+    if evidence._mint_token is not _CANONICAL_COMPLIANCE_MINT_TOKEN:
+        failures.append("compliance evidence was not minted by the canonical artifact adapter")
     _require_equal(failures, "declared model version", evidence.declared_model_version, "V4.3")
     _require_equal(failures, "calculation tier", evidence.calculation_tier, "M2")
     _require_equal(failures, "scoring tier", evidence.scoring_tier, "M2")
@@ -204,3 +209,43 @@ def _require_true(failures: list[str], message: str, value: bool) -> None:
 def _require_equal(failures: list[str], label: str, actual: str, expected: str) -> None:
     if actual != expected:
         failures.append(f"{label} must be {expected}, got {actual or '<empty>'}")
+
+
+_CANONICAL_COMPLIANCE_MINT_TOKEN = object()
+
+
+def _mint_verified_v4_3_compliance_evidence(
+    *,
+    required_feature_ids: frozenset[str],
+    available_feature_ids: frozenset[str],
+    ephemeris_requested: str,
+    ephemeris_returned: str,
+    prevalence_source_scope: str,
+) -> V43ComplianceEvidence:
+    """Internal mint used only after concrete artifact verification succeeds."""
+
+    evidence = V43ComplianceEvidence(
+        declared_model_version="V4.3",
+        reduced_model_label="M0-architecture-only",
+        calculation_tier="M2",
+        scoring_tier="M2",
+        mapping_schema_version=MAPPING_LIBRARY_V2_SCHEMA,
+        required_feature_ids=required_feature_ids,
+        available_feature_ids=available_feature_ids,
+        exact_interval_source_verified=True,
+        cache_verified=True,
+        astronomy_provenance_verified=True,
+        ephemeris_requested=ephemeris_requested,
+        ephemeris_returned=ephemeris_returned,
+        flexibility_penalty_enabled=True,
+        conditional_prevalence_enabled=True,
+        duration_weighted_prevalence_enabled=True,
+        prevalence_source_scope=prevalence_source_scope,
+        dependency_control_enabled=True,
+        corroboration_cap=INDEPENDENT_CORROBORATION_CAP,
+        full_declared_universe_rescored=True,
+        scoring_engine_version=V43_SCORING_ENGINE_VERSION,
+        ranking_policy_version=V43_RANKING_POLICY_VERSION,
+    )
+    object.__setattr__(evidence, "_mint_token", _CANONICAL_COMPLIANCE_MINT_TOKEN)
+    return evidence

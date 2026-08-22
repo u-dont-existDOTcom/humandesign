@@ -15,7 +15,7 @@ from hdmatch.model.v4_3.scoring import V43CandidateScore
 class ScoredExactInterval:
     candidate_id: str
     utc_start: datetime
-    stable_duration_seconds: float
+    stable_duration_microseconds: int
     score: V43CandidateScore
 
     def __post_init__(self) -> None:
@@ -25,12 +25,16 @@ class ScoredExactInterval:
             raise ValueError("UTC start must be timezone-aware")
         if self.utc_start.utcoffset() != timedelta(0):
             raise ValueError("UTC start must use a zero UTC offset")
-        if not math.isfinite(self.stable_duration_seconds) or self.stable_duration_seconds <= 0:
-            raise ValueError("stable interval duration must be finite and positive")
+        if (
+            isinstance(self.stable_duration_microseconds, bool)
+            or not isinstance(self.stable_duration_microseconds, int)
+            or self.stable_duration_microseconds <= 0
+        ):
+            raise ValueError("stable interval duration must be exact positive microseconds")
         _validate_score_values(self.score)
 
     @property
-    def substantive_rank_key(self) -> tuple[float, int, float, float, float]:
+    def substantive_rank_key(self) -> tuple[float, int, float, float, int]:
         """Lower tuple is better; all five fields define substantive identity."""
 
         return (
@@ -38,7 +42,7 @@ class ScoredExactInterval:
             self.score.meaningful_contradictions,
             -self.score.detailed_support,
             -self.score.core_fit,
-            -self.stable_duration_seconds,
+            -self.stable_duration_microseconds,
         )
 
 
@@ -58,7 +62,7 @@ class RankedExactInterval:
 class SubstantiveTieGroup:
     rank_start: int
     rank_end: int
-    substantive_rank_key: tuple[float, int, float, float, float]
+    substantive_rank_key: tuple[float, int, float, float, int]
     candidate_ids: tuple[str, ...]
 
     @property

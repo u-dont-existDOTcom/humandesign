@@ -1,10 +1,15 @@
 from __future__ import annotations
 
+from dataclasses import replace
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
+from types import SimpleNamespace
 
 import pytest
 from pydantic import ValidationError
 
+import hdmatch.model.v4_3.integration as v43_integration
+from hdmatch.century_cache.models import CenturyStateRecord, FeatureValue
 from hdmatch.chart.feature_registry import (
     FeatureCoverageError,
     FeatureId,
@@ -16,6 +21,14 @@ from hdmatch.model.mapping_library import (
     MappingLibrary,
     StructuralClass,
     load_mapping_library,
+)
+from hdmatch.model.v4_3.integration import (
+    CanonicalV43ScoringSession,
+    V43IntegrationError,
+    V43ObservedResponse,
+    evaluate_mapping_library_v2,
+    mapping_prevalence_parent_hierarchy_sha256,
+    mapping_prevalence_plan_sha256,
 )
 from hdmatch.model.v4_3_compiler import (
     compile_mapping_library_v2,
@@ -47,7 +60,7 @@ from hdmatch.model.v4_3_mapping import (
     load_mapping_library_v2,
     require_mapping_feature_coverage,
 )
-from hdmatch.util import sha256_file
+from hdmatch.util import sha256_file, sha256_json
 
 ROOT = Path(__file__).resolve().parents[2]
 NORMATIVE_SOURCE = "reference/core/v4_3_scoring_algorithm.md"
@@ -102,6 +115,7 @@ def _source(
     *,
     alternative_pathways: tuple[StructuralPathwayV2, ...] | None = None,
     declared_required_feature_ids: tuple[FeatureId, ...] | None = None,
+    bind_question_bank: bool = False,
 ) -> MappingLibrarySourceV2:
     primary = _pathway(
         pathway_id="PATH-TYPE-PROJECTOR",
@@ -174,25 +188,37 @@ def _source(
             key=lambda item: item.value,
         )
     )
+    source_artifacts = [
+        SourceArtifactV2(
+            source_id="SRC-TARGET-V36",
+            role=SourceRoleV2.BEHAVIORAL_TARGET,
+            path=BEHAVIORAL_TARGET,
+            sha256=sha256_file(ROOT / BEHAVIORAL_TARGET),
+            title="Behavioral Target Combined V3.6",
+        ),
+        SourceArtifactV2(
+            source_id="SRC-V43-SCORING",
+            role=SourceRoleV2.METHOD,
+            path=NORMATIVE_SOURCE,
+            sha256=sha256_file(ROOT / NORMATIVE_SOURCE),
+            title="V4.3 Canonical Scoring Algorithm",
+        ),
+    ]
+    if bind_question_bank:
+        source_artifacts.append(
+            SourceArtifactV2(
+                source_id="SRC-QUESTION-BANK",
+                role=SourceRoleV2.QUESTION_BANK,
+                path="docs/08_data_formats.md",
+                sha256=sha256_file(ROOT / "docs/08_data_formats.md"),
+                title="Test question-bank binding",
+            )
+        )
     return MappingLibrarySourceV2(
         behavioral_target_source_id="SRC-TARGET-V36",
         method_source_ids=("SRC-V43-SCORING",),
-        source_artifacts=(
-            SourceArtifactV2(
-                source_id="SRC-TARGET-V36",
-                role=SourceRoleV2.BEHAVIORAL_TARGET,
-                path=BEHAVIORAL_TARGET,
-                sha256=sha256_file(ROOT / BEHAVIORAL_TARGET),
-                title="Behavioral Target Combined V3.6",
-            ),
-            SourceArtifactV2(
-                source_id="SRC-V43-SCORING",
-                role=SourceRoleV2.METHOD,
-                path=NORMATIVE_SOURCE,
-                sha256=sha256_file(ROOT / NORMATIVE_SOURCE),
-                title="V4.3 Canonical Scoring Algorithm",
-            ),
-        ),
+        question_bank_source_id="SRC-QUESTION-BANK" if bind_question_bank else None,
+        source_artifacts=tuple(sorted(source_artifacts, key=lambda item: item.source_id)),
         declared_frozen_rule_ids=(mapping.rule_id,),
         declared_observation_ids=(mapping.observation_id,),
         declared_required_feature_ids=required,
@@ -264,6 +290,33 @@ def test_compiled_library_rejects_reduced_registry_even_with_matching_new_hash()
         MappingLibraryV2.model_validate(payload)
 
 
+def test_one_anchor_cannot_fabricate_multiple_prevalence_hierarchies() -> None:
+    source = _source()
+    rule = source.frozen_mappings[0]
+    duplicate = rule.primary_pathway.model_copy(
+        update={
+            "pathway_id": "PATH-TYPE-PROJECTOR-DUPLICATE",
+            "prevalence_parent_hierarchy": (
+                PrevalenceParentLevelV2(
+                    level_id="type",
+                    parent_feature_ids=(FeatureId.TYPE,),
+                ),
+                _root_level(),
+            ),
+        }
+    )
+    changed_rule = rule.model_copy(update={"alternative_pathways": (duplicate,)})
+    changed_source = source.model_copy(
+        update={
+            "declared_required_feature_ids": (FeatureId.TYPE,),
+            "mappings": (changed_rule,),
+        }
+    )
+
+    with pytest.raises(ValidationError, match="multiple prevalence hierarchies"):
+        compile_mapping_library_v2(changed_source)
+
+
 def test_reduced_candidate_vector_fails_before_predicate_scoring() -> None:
     compiled = compile_mapping_library_v2(_source())
 
@@ -299,6 +352,24 @@ def test_predicate_and_prevalence_shapes_fail_closed() -> None:
             feature_id=FeatureId.TYPE,
             operator=PredicateOperatorV2.CONTAINS_ANY,
             values=("projector",),
+        )
+    with pytest.raises(ValidationError, match="no unambiguous semantics"):
+        StructuralPredicateV2(
+            feature_id=FeatureId.CENTERS,
+            operator=PredicateOperatorV2.EQUALS_ANY,
+            values=("sacral",),
+        )
+    with pytest.raises(ValidationError, match="contains predicates require"):
+        StructuralPredicateV2(
+            feature_id=FeatureId.PLANETARY_ACTIVATIONS,
+            operator=PredicateOperatorV2.CONTAINS_ANY,
+            values=("61",),
+        )
+    with pytest.raises(ValidationError, match="Cross components require exact"):
+        StructuralPredicateV2(
+            feature_id=FeatureId.CROSS_COMPONENTS,
+            operator=PredicateOperatorV2.EQUALS_ANY,
+            values=("cross-ish",),
         )
     with pytest.raises(ValidationError, match="must end with an explicit root"):
         _pathway(
@@ -377,3 +448,308 @@ def test_file_compiler_writes_exact_canonical_compiled_bytes(tmp_path: Path) -> 
 
     assert output_path.read_bytes() == compiled.canonical_bytes()
     assert load_mapping_library_v2(output_path) == compiled
+
+
+def _candidate_row() -> CenturyStateRecord:
+    start = datetime(2000, 1, 1, tzinfo=UTC)
+    return CenturyStateRecord(
+        state_id="state-test",
+        utc_start=start,
+        utc_end=start + timedelta(seconds=1),
+        duration_seconds=1.0,
+        representative_utc=start + timedelta(microseconds=1),
+        design_timestamp=start - timedelta(days=88),
+        chart_features_sha256="1" * 64,
+        feature_vector_schema_version="chart-feature-vector-v2",
+        semantic_feature_registry_sha256="2" * 64,
+        feature_registry_sha256="3" * 64,
+        astronomy_engine_version="test-swisseph",
+        ephemeris_file_set_sha256="4" * 64,
+        node_convention="true",
+        mandala_mapping_version="test-mandala",
+        mandala_mapping_sha256="5" * 64,
+        bodygraph_mapping_sha256="6" * 64,
+        feature_values=(
+            FeatureValue(feature_id=FeatureId.AUTHORITY.value, value="splenic"),
+            FeatureValue(
+                feature_id=FeatureId.TYPE.value,
+                value="projector",
+            ),
+            FeatureValue(
+                feature_id=FeatureId.COMPLETE_CHANNELS.value,
+                value=[
+                    {
+                        "channel": "1-8",
+                        "gate_a": 1,
+                        "gate_b": 8,
+                        "center_a": "g",
+                        "center_b": "throat",
+                    }
+                ],
+            ),
+        ),
+    )
+
+
+def test_v2_adapter_derives_pathways_core_and_unknown_without_caller_scores() -> None:
+    compiled = compile_mapping_library_v2(_source())
+    evaluated = evaluate_mapping_library_v2(
+        compiled,
+        _candidate_row(),
+        (
+            V43ObservedResponse(
+                observation_id="OBS-TEST-ENTRY",
+                response_token="recognition_sensitive",
+            ),
+        ),
+    )
+
+    observation = evaluated.observations[0]
+    assert observation.pathways[0].primary.supports_response
+    assert observation.pathways[1].primary.supports_response
+    assert observation.pathways[0].primary.structural_class.value == "type_strategy"
+    assert observation.pathways[1].primary.structural_class.value == "complete_channel"
+    core = {item.block.value: item for item in evaluated.core_blocks}
+    assert core["type_strategy"].earned_fraction == 1.0
+    assert core["authority"].earned_fraction is None
+
+    neutral = evaluate_mapping_library_v2(
+        compiled,
+        _candidate_row(),
+        (
+            V43ObservedResponse(
+                observation_id="OBS-TEST-ENTRY",
+                response_token="unknown",
+            ),
+        ),
+    )
+    assert neutral.observations[0].confidence.effective_confidence == 0.0
+    assert not any(
+        pathway.primary.supports_response
+        for pathway in neutral.observations[0].pathways
+    )
+
+
+def test_dependency_keys_are_exact_and_link_compounds_to_components() -> None:
+    channel_1_8 = StructuralPredicateV2(
+        feature_id=FeatureId.COMPLETE_CHANNELS,
+        operator=PredicateOperatorV2.CONTAINS_ANY,
+        values=("1-8",),
+    )
+    channel_10_20 = StructuralPredicateV2(
+        feature_id=FeatureId.COMPLETE_CHANNELS,
+        operator=PredicateOperatorV2.CONTAINS_ANY,
+        values=("10-20",),
+    )
+    gate_1 = StructuralPredicateV2(
+        feature_id=FeatureId.ACTIVE_GATES,
+        operator=PredicateOperatorV2.HAS_GATE,
+        gate=1,
+    )
+    cross = StructuralPredicateV2(
+        feature_id=FeatureId.CROSS_COMPONENTS,
+        operator=PredicateOperatorV2.EQUALS_ANY,
+        values=("1/2|3/4",),
+    )
+    cardinal = StructuralPredicateV2(
+        feature_id=FeatureId.CARDINAL_ACTIVATIONS,
+        operator=PredicateOperatorV2.MATCHES_ACTIVATION,
+        side="personality",
+        carrier="sun",
+        gate=1,
+    )
+
+    assert not any(key.startswith("feature:") for key in channel_1_8.dependency_keys)
+    assert channel_1_8.dependency_keys.isdisjoint(channel_10_20.dependency_keys)
+    assert "gate:1" in channel_1_8.dependency_keys & gate_1.dependency_keys
+    assert "cardinal:personality:sun:1" in (
+        cross.dependency_keys & cardinal.dependency_keys
+    )
+
+
+class _StrictTestPrevalence:
+    def __init__(self, provenance: object) -> None:
+        self.provenance = provenance
+
+    def bind_candidate_record(
+        self,
+        candidate_record: object,
+        *,
+        cache_manifest_sha256: str,
+        mapping_library_sha256: str,
+    ) -> object:
+        assert isinstance(candidate_record, CenturyStateRecord)
+        return SimpleNamespace(
+            state_id=candidate_record.state_id,
+            candidate_record_sha256=sha256_json(
+                candidate_record.model_dump(mode="json")
+            ),
+            cache_manifest_sha256=cache_manifest_sha256,
+            universe_sha256=self.provenance.universe_sha256,
+            mapping_library_sha256=mapping_library_sha256,
+        )
+
+    def estimate(self, anchor_id: str, candidate_context: object) -> object:
+        del candidate_context
+        return SimpleNamespace(
+            anchor_id=anchor_id,
+            artifact_sha256=self.provenance.artifact_sha256,
+            plan_sha256=self.provenance.plan_sha256,
+            mapping_library_sha256=self.provenance.mapping_library_sha256,
+            mapping_prevalence_plan_sha256=(
+                self.provenance.mapping_prevalence_plan_sha256
+            ),
+            required_feature_registry_sha256=(
+                self.provenance.required_feature_registry_sha256
+            ),
+            cache_manifest_sha256=self.provenance.cache_manifest_sha256,
+            prevalence=0.5,
+            numerator_duration_microseconds=1,
+            denominator_duration_microseconds=2,
+            universe_sha256=self.provenance.universe_sha256,
+            policy_version=self.provenance.policy_version,
+            parent_hierarchy_sha256=self.provenance.parent_hierarchy_sha256,
+            selected_level_id="root",
+            backoff_ordinal=0,
+            duration_weighted=True,
+            conditional=True,
+            exact_stable_intervals=True,
+            source_scope="declared-global-utc-universe",
+        )
+
+
+def test_canonical_session_binds_identities_and_mints_only_after_complete_universe(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    library = compile_mapping_library_v2(_source(bind_question_bank=True))
+    candidate = _candidate_row()
+    manifest_hash = "a" * 64
+    lock_hash = "b" * 64
+    universe_hash = "c" * 64
+    build_plan_hash = "d" * 64
+    reconciliation_hash = "e" * 64
+    engine_hash = "f" * 64
+    physical_ids = tuple(item.feature_id for item in candidate.feature_values)
+    engine = SimpleNamespace(
+        ephemeris_requested="SWIEPH",
+        ephemeris_returned="SWIEPH",
+        engine_validation_sha256=engine_hash,
+        chart_engine_version=candidate.astronomy_engine_version,
+        ephemeris_provenance=SimpleNamespace(
+            ephemeris_file_set_sha256=candidate.ephemeris_file_set_sha256
+        ),
+    )
+    manifest = SimpleNamespace(
+        feature_vector_schema_version=candidate.feature_vector_schema_version,
+        semantic_feature_registry_sha256=candidate.semantic_feature_registry_sha256,
+        feature_registry_sha256=candidate.feature_registry_sha256,
+        feature_registry=tuple(SimpleNamespace(feature_id=item) for item in physical_ids),
+        build_plan_sha256=build_plan_hash,
+        logical_universe_sha256=universe_hash,
+        reconciliation_aggregate_sha256=reconciliation_hash,
+        boundary_policy_version="boundary-v1",
+        engine=engine,
+        node_convention=candidate.node_convention,
+        mandala_mapping_sha256=candidate.mandala_mapping_sha256,
+        bodygraph_mapping_sha256=candidate.bodygraph_mapping_sha256,
+        utc_start=candidate.utc_start,
+        utc_end_exclusive=candidate.utc_end,
+        interval_count=1,
+    )
+    cache = SimpleNamespace(
+        manifest=manifest,
+        manifest_sha256=manifest_hash,
+        manifest_path=Path("/verified/manifest.json"),
+    )
+    build_spec_payload = {"frozen": "build-spec"}
+    lock = SimpleNamespace(
+        manifest_sha256=manifest_hash,
+        build_spec=SimpleNamespace(model_dump=lambda mode: build_spec_payload),
+        build_spec_sha256=sha256_json(build_spec_payload),
+    )
+    provenance = SimpleNamespace(
+        anchor_ids=tuple(
+            sorted(
+                pathway.anchor_id
+                for rule in library.rules
+                for pathway in (
+                    rule.primary_pathway,
+                    *rule.alternative_pathways,
+                )
+            )
+        ),
+        artifact_sha256="1" * 64,
+        plan_sha256="2" * 64,
+        mapping_library_sha256=library.sha256(),
+        mapping_source_library_sha256=library.source_library_sha256,
+        mapping_prevalence_plan_sha256=mapping_prevalence_plan_sha256(library),
+        required_feature_registry_sha256=library.required_feature_registry_sha256,
+        cache_manifest_sha256=manifest_hash,
+        cache_trust_lock_sha256=lock_hash,
+        cache_build_plan_sha256=build_plan_hash,
+        semantic_feature_registry_sha256=candidate.semantic_feature_registry_sha256,
+        physical_feature_registry_sha256=candidate.feature_registry_sha256,
+        reconciliation_aggregate_sha256=reconciliation_hash,
+        engine_validation_sha256=engine_hash,
+        ephemeris_file_set_sha256=candidate.ephemeris_file_set_sha256,
+        boundary_policy_version="boundary-v1",
+        universe_sha256=universe_hash,
+        policy_version="conditional-prevalence-v4.3-v1",
+        parent_hierarchy_sha256=mapping_prevalence_parent_hierarchy_sha256(library),
+        duration_weighted=True,
+        conditional=True,
+        exact_stable_intervals=True,
+        source_scope="declared-global-utc-universe",
+    )
+    provider = _StrictTestPrevalence(provenance)
+    trust_path = Path("/verified/trust-lock.json")
+    monkeypatch.setattr(
+        v43_integration,
+        "sha256_file",
+        lambda path: lock_hash if Path(path) == trust_path else manifest_hash,
+    )
+    monkeypatch.setattr(v43_integration, "load_century_cache_trust_lock", lambda path: lock)
+    monkeypatch.setattr(
+        v43_integration,
+        "verify_century_cache_against_trust_lock",
+        lambda cache_directory, trust_lock_path: cache,
+    )
+    monkeypatch.setattr(
+        v43_integration,
+        "iter_verified_century_cache_rows",
+        lambda verified: iter((candidate,)),
+    )
+    session = CanonicalV43ScoringSession.open(
+        mapping_library=library,
+        cache_directory="/verified/cache",
+        trust_lock_path=trust_path,
+        prevalence=provider,
+    )
+    evaluation = session.score_candidate(
+        candidate,
+        (
+            V43ObservedResponse(
+                observation_id="OBS-TEST-ENTRY",
+                response_token="recognition_sensitive",
+            ),
+        ),
+    )
+
+    assert evaluation.ranked_interval.stable_duration_microseconds == 1_000_000
+    with pytest.raises(V43IntegrationError, match="complete declared universe"):
+        session.require_complete_universe_compliance(())
+    forged = replace(evaluation)
+    with pytest.raises(V43IntegrationError, match="not minted"):
+        session.require_complete_universe_compliance((forged,))
+    complete = session.require_complete_universe_compliance((evaluation,))
+    assert complete.compliance.v4_3_compliant
+    assert complete.scored_candidate_count == 1
+
+    provenance.mapping_library_sha256 = "9" * 64
+    with pytest.raises(V43IntegrationError, match="mapping library identity mismatch"):
+        CanonicalV43ScoringSession.open(
+            mapping_library=library,
+            cache_directory="/verified/cache",
+            trust_lock_path=trust_path,
+            prevalence=provider,
+        )
