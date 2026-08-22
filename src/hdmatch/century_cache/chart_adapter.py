@@ -9,6 +9,8 @@ false boolean or an empty structural value.
 from __future__ import annotations
 
 import hashlib
+import hmac
+import secrets
 from collections.abc import Iterator
 from datetime import datetime
 from typing import Final, cast
@@ -104,17 +106,33 @@ CACHEABLE_M0_M2_FEATURE_COLUMNS_SHA256: Final[str] = feature_registry_sha256(
 CACHEABLE_M0_M2_SEMANTIC_REGISTRY_SHA256: Final[str] = CACHEABLE_M0_M2_REGISTRY.sha256()
 _EXACT_STATE_BATCH_FACTORY_TOKEN: Final[object] = object()
 _EXACT_STATE_SHARD_SET_FACTORY_TOKEN: Final[object] = object()
+_EXACT_STATE_MINT_BINDING_KEY: Final[bytes] = secrets.token_bytes(32)
 
 
 class ExactStateBatchError(ValueError):
     """Production boundary output could not be certified as exact cache rows."""
 
 
+def _factory_private_binding(kind: str, provenance: BaseModel) -> str:
+    payload = canonical_json_bytes(
+        {
+            "kind": kind,
+            "provenance": provenance.model_dump(mode="json"),
+        }
+    )
+    return hmac.new(
+        _EXACT_STATE_MINT_BINDING_KEY,
+        payload,
+        digestmod=hashlib.sha256,
+    ).hexdigest()
+
+
 class VerifiedExactStateBatch:
     """One bounded build job minted only by the production exact-state factory."""
 
-    __slots__ = ("_factory_token", "_provenance", "_rows")
+    __slots__ = ("_factory_token", "_mint_binding", "_provenance", "_rows")
     _factory_token: object
+    _mint_binding: str
     _provenance: ExactStateBatchProvenance
     _rows: tuple[CenturyStateRecord, ...]
 
@@ -132,6 +150,11 @@ class VerifiedExactStateBatch:
         object.__setattr__(self, "_rows", rows)
         object.__setattr__(self, "_provenance", provenance)
         object.__setattr__(self, "_factory_token", _factory_token)
+        object.__setattr__(
+            self,
+            "_mint_binding",
+            _factory_private_binding("bounded-exact-state-batch", provenance),
+        )
 
     def __setattr__(self, name: str, value: object) -> None:
         del name, value
@@ -154,9 +177,10 @@ class VerifiedExactShardSet:
     can recreate the in-process batch tokens consumed here.
     """
 
-    __slots__ = ("_batches", "_factory_token", "_provenance")
+    __slots__ = ("_batches", "_factory_token", "_mint_binding", "_provenance")
     _batches: tuple[VerifiedExactStateBatch, ...]
     _factory_token: object
+    _mint_binding: str
     _provenance: ExactStateUniverseProvenance
 
     def __init__(
@@ -173,6 +197,11 @@ class VerifiedExactShardSet:
         object.__setattr__(self, "_batches", batches)
         object.__setattr__(self, "_provenance", provenance)
         object.__setattr__(self, "_factory_token", _factory_token)
+        object.__setattr__(
+            self,
+            "_mint_binding",
+            _factory_private_binding("exact-state-shard-set", provenance),
+        )
 
     def __setattr__(self, name: str, value: object) -> None:
         del name, value
@@ -202,6 +231,11 @@ def validate_verified_exact_state_batch(
         raise ExactStateBatchError("exact-state batch lacks the production factory token")
     rows = batch.rows
     provenance = batch.provenance
+    if not hmac.compare_digest(
+        batch._mint_binding,
+        _factory_private_binding("bounded-exact-state-batch", provenance),
+    ):
+        raise ExactStateBatchError("exact-state batch factory-private binding changed")
     if not rows or len(rows) != provenance.interval_count:
         raise ExactStateBatchError("exact-state batch row count changed")
     if rows[0].utc_start != provenance.utc_start or (
@@ -215,6 +249,63 @@ def validate_verified_exact_state_batch(
         raise ExactStateBatchError("exact-state batch canonical row hash changed")
     if sum(len(row.boundary_events) for row in rows) != provenance.boundary_event_count:
         raise ExactStateBatchError("exact-state batch boundary-event count changed")
+    first = rows[0]
+    row_identity_fields = (
+        "feature_vector_schema_version",
+        "semantic_feature_registry_sha256",
+        "feature_registry_sha256",
+        "astronomy_engine_version",
+        "ephemeris_file_set_sha256",
+        "node_convention",
+        "mandala_mapping_version",
+        "mandala_mapping_sha256",
+        "bodygraph_mapping_sha256",
+    )
+    for row in rows[1:]:
+        if any(getattr(row, field) != getattr(first, field) for field in row_identity_fields):
+            raise ExactStateBatchError(
+                "exact-state batch rows do not share frozen production identities"
+            )
+    row_derived_bindings = {
+        "feature-vector schema": (
+            provenance.feature_vector_schema_version,
+            first.feature_vector_schema_version,
+        ),
+        "semantic feature registry": (
+            provenance.semantic_feature_registry_sha256,
+            first.semantic_feature_registry_sha256,
+        ),
+        "physical feature registry": (
+            provenance.feature_registry_sha256,
+            first.feature_registry_sha256,
+        ),
+        "chart engine": (
+            provenance.chart_engine_version,
+            first.astronomy_engine_version,
+        ),
+        "ephemeris file set": (
+            provenance.ephemeris_file_set_sha256,
+            first.ephemeris_file_set_sha256,
+        ),
+        "node convention": (provenance.node_convention, first.node_convention),
+        "Mandala version": (
+            provenance.mandala_mapping_version,
+            first.mandala_mapping_version,
+        ),
+        "Mandala mapping": (
+            provenance.mandala_mapping_sha256,
+            first.mandala_mapping_sha256,
+        ),
+        "Bodygraph mapping": (
+            provenance.bodygraph_mapping_sha256,
+            first.bodygraph_mapping_sha256,
+        ),
+    }
+    for label, (actual, derived) in row_derived_bindings.items():
+        if actual != derived:
+            raise ExactStateBatchError(
+                f"exact-state batch {label} differs from immutable rows"
+            )
     for previous, current in zip(rows, rows[1:], strict=False):
         if previous.utc_end != current.utc_start:
             raise ExactStateBatchError("exact-state batch contains a gap or overlap")
@@ -382,8 +473,93 @@ def validate_verified_exact_shard_set(
         raise ExactStateBatchError("exact shard set contains no batches")
     provenances = tuple(validate_verified_exact_state_batch(batch) for batch in batches)
     provenance = shard_set.provenance
+    if not hmac.compare_digest(
+        shard_set._mint_binding,
+        _factory_private_binding("exact-state-shard-set", provenance),
+    ):
+        raise ExactStateBatchError("exact shard-set factory-private binding changed")
     if provenance.batch_count != len(batches):
         raise ExactStateBatchError("exact shard-set batch count changed")
+    for previous, current in zip(batches, batches[1:], strict=False):
+        if previous.provenance.utc_end_exclusive != current.provenance.utc_start:
+            raise ExactStateBatchError("exact shard-set sources contain a gap or overlap")
+        if discrete_chart_identity_sha256(
+            previous.rows[-1]
+        ) == discrete_chart_identity_sha256(current.rows[0]):
+            raise ExactStateBatchError(
+                "exact shard-set sources are not maximal across a batch boundary"
+            )
+    first = provenances[0]
+    uniform_bindings = {
+        "boundary policy": (
+            provenance.boundary_policy_version,
+            first.boundary_policy_version,
+        ),
+        "feature-vector schema": (
+            provenance.feature_vector_schema_version,
+            first.feature_vector_schema_version,
+        ),
+        "semantic feature registry": (
+            provenance.semantic_feature_registry_sha256,
+            first.semantic_feature_registry_sha256,
+        ),
+        "physical feature registry": (
+            provenance.feature_registry_sha256,
+            first.feature_registry_sha256,
+        ),
+        "chart engine": (provenance.chart_engine_version, first.chart_engine_version),
+        "ephemeris file set": (
+            provenance.ephemeris_file_set_sha256,
+            first.ephemeris_file_set_sha256,
+        ),
+        "node convention": (provenance.node_convention, first.node_convention),
+        "Mandala version": (
+            provenance.mandala_mapping_version,
+            first.mandala_mapping_version,
+        ),
+        "Mandala mapping": (
+            provenance.mandala_mapping_sha256,
+            first.mandala_mapping_sha256,
+        ),
+        "Bodygraph mapping": (
+            provenance.bodygraph_mapping_sha256,
+            first.bodygraph_mapping_sha256,
+        ),
+        "Design-root time tolerance": (
+            provenance.design_root_time_tolerance_seconds,
+            first.design_root_time_tolerance_seconds,
+        ),
+        "Design-root arc tolerance": (
+            provenance.design_root_arc_tolerance_degrees,
+            first.design_root_arc_tolerance_degrees,
+        ),
+    }
+    for label, (actual, source) in uniform_bindings.items():
+        if actual != source:
+            raise ExactStateBatchError(
+                f"exact shard-set {label} differs from source batches"
+            )
+    for source_provenance in provenances[1:]:
+        if any(
+            getattr(source_provenance, field) != getattr(first, field)
+            for field in (
+                "boundary_policy_version",
+                "feature_vector_schema_version",
+                "semantic_feature_registry_sha256",
+                "feature_registry_sha256",
+                "chart_engine_version",
+                "ephemeris_file_set_sha256",
+                "node_convention",
+                "mandala_mapping_version",
+                "mandala_mapping_sha256",
+                "bodygraph_mapping_sha256",
+                "design_root_time_tolerance_seconds",
+                "design_root_arc_tolerance_degrees",
+            )
+        ):
+            raise ExactStateBatchError(
+                "exact shard-set sources do not share frozen production identities"
+            )
     source_hashes = _source_batch_hashes(provenances)
     if provenance.ordered_source_batch_provenance_sha256s != source_hashes:
         raise ExactStateBatchError("exact shard-set source batch receipts changed")

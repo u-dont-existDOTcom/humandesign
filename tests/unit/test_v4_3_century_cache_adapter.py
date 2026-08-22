@@ -18,6 +18,8 @@ from hdmatch.century_cache import (
     build_verified_exact_state_batch,
     cacheable_chart_state_to_century_record,
     feature_registry_sha256,
+    validate_verified_exact_shard_set,
+    validate_verified_exact_state_batch,
 )
 from hdmatch.century_cache.parquet import (
     CenturyCacheParquetError,
@@ -389,6 +391,71 @@ def test_exact_batch_rejects_nonuniform_representative_metadata(
     )
     with pytest.raises(ExactStateBatchError, match="identical frozen"):
         build_verified_exact_state_batch(provider, start, end)
+
+
+@pytest.mark.parametrize(
+    ("field", "replacement"),
+    (
+        ("stable_interval_partition_sha256", "0" * 64),
+        ("design_root_time_tolerance_seconds", 9.0),
+        ("design_root_arc_tolerance_degrees", 9.0),
+    ),
+)
+def test_batch_private_binding_detects_post_mint_provenance_mutation(
+    tmp_path: Path,
+    field: str,
+    replacement: object,
+) -> None:
+    provider, _ = _verified_fixture(tmp_path)
+    batch = build_verified_exact_state_batch(
+        provider,
+        datetime(2000, 1, 1, 12, tzinfo=UTC),
+        datetime(2000, 1, 1, 12, 1, tzinfo=UTC),
+    )
+
+    object.__setattr__(batch.provenance, field, replacement)
+
+    with pytest.raises(ExactStateBatchError, match="factory-private binding"):
+        validate_verified_exact_state_batch(batch)
+
+
+def test_shard_set_private_binding_detects_aggregate_provenance_mutation(
+    tmp_path: Path,
+) -> None:
+    provider, _ = _verified_fixture(tmp_path)
+    batch = build_verified_exact_state_batch(
+        provider,
+        datetime(2000, 1, 1, 12, tzinfo=UTC),
+        datetime(2000, 1, 1, 12, 1, tzinfo=UTC),
+    )
+    shard_set = assemble_verified_exact_shard_set((batch,))
+
+    object.__setattr__(
+        shard_set.provenance,
+        "reconciliation_report_sha256",
+        "0" * 64,
+    )
+
+    with pytest.raises(ExactStateBatchError, match="factory-private binding"):
+        validate_verified_exact_shard_set(shard_set)
+
+
+def test_shard_set_rejects_post_mint_duplicated_overlapping_sources(
+    tmp_path: Path,
+) -> None:
+    provider, _ = _verified_fixture(tmp_path)
+    start = datetime(2000, 1, 1, 12, tzinfo=UTC)
+    end = start + timedelta(minutes=1)
+    full = build_verified_exact_state_batch(provider, start, end)
+    cut = full.rows[0].utc_end
+    first = build_verified_exact_state_batch(provider, start, cut)
+    second = build_verified_exact_state_batch(provider, cut, end)
+    shard_set = assemble_verified_exact_shard_set((first, second))
+
+    object.__setattr__(shard_set, "_batches", (first, first))
+
+    with pytest.raises(ExactStateBatchError, match="gap or overlap"):
+        validate_verified_exact_shard_set(shard_set)
 
 
 def test_adapter_emits_every_physical_feature_without_unknown_boolean_coercion(
