@@ -15,6 +15,7 @@ from .design_moment import solve_design_moment, solve_personality_moment_from_de
 from .ephemeris import (
     DEFAULT_ACTIVATION_BODIES,
     CelestialBody,
+    EphemerisConfigurationError,
     EphemerisMode,
     EphemerisProvider,
     SwissEphemerisProvider,
@@ -383,9 +384,8 @@ def build_production_chart_state_intervals(
     *,
     bodies: tuple[CelestialBody, ...] = DEFAULT_ACTIVATION_BODIES,
     root_tolerance_seconds: float = 0.01,
-    event_group_tolerance_seconds: float | None = None,
 ) -> tuple[StableInterval, ...]:
-    """Canonical SWIEPH-only entrypoint for reusable production state builds."""
+    """Canonical SWIEPH-only entrypoint with grouping frozen to root tolerance."""
 
     return build_chart_state_intervals(
         provider,
@@ -393,7 +393,7 @@ def build_production_chart_state_intervals(
         end_utc,
         bodies=bodies,
         root_tolerance_seconds=root_tolerance_seconds,
-        event_group_tolerance_seconds=event_group_tolerance_seconds,
+        event_group_tolerance_seconds=root_tolerance_seconds,
         require_swieph_provenance=True,
     )
 
@@ -802,7 +802,6 @@ def _verify_production_provider(provider: EphemerisProvider) -> None:
         metadata.requested_ephemeris is not EphemerisMode.SWIEPH
         or metadata.requested_flags is None
         or metadata.ephemeris_mask is None
-        or metadata.requested_flags & metadata.ephemeris_mask == 0
     ):
         raise BoundaryProvenanceError(
             "production boundary enumeration lacks an explicit SWIEPH request"
@@ -813,7 +812,10 @@ def _verify_production_provider(provider: EphemerisProvider) -> None:
         raise BoundaryProvenanceError(
             "production boundary enumeration requires sepl_18.se1 and semo_18.se1"
         )
-    provider.verify_declared_files_unchanged()
+    try:
+        provider.verify_production_configuration()
+    except EphemerisConfigurationError as exc:
+        raise BoundaryProvenanceError(str(exc)) from exc
 
 
 def _levels_between(origin: float, spacing: float, low: float, high: float) -> tuple[float, ...]:

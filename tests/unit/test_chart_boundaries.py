@@ -1,15 +1,18 @@
 from __future__ import annotations
 
 from datetime import UTC, datetime
+from typing import Any
 
 import pytest
 
+import hdmatch.chart.boundaries as boundary_module
 from hdmatch.chart.boundaries import (
     BOUNDARY_POLICY_VERSION,
     BoundaryCompletenessError,
     BoundaryProvenanceError,
     BoundaryResolution,
     audit_interval_partition,
+    build_production_chart_state_intervals,
     build_stable_intervals,
     enumerate_chart_boundaries,
 )
@@ -296,6 +299,31 @@ def test_near_simultaneous_roots_share_one_deterministic_interval_cut() -> None:
 
 def test_boundary_policy_version_is_frozen_for_future_cache_manifests() -> None:
     assert BOUNDARY_POLICY_VERSION == "exact-gate-line-boundaries-v2"
+
+
+def test_production_builder_freezes_grouping_to_exact_root_tolerance(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    captured: dict[str, Any] = {}
+
+    def fake_build(*_args: object, **kwargs: object) -> tuple[()]:
+        captured.update(kwargs)
+        return ()
+
+    monkeypatch.setattr(boundary_module, "build_chart_state_intervals", fake_build)
+    start = datetime(2020, 1, 1, tzinfo=UTC)
+
+    result = build_production_chart_state_intervals(
+        object(),  # type: ignore[arg-type]
+        start,
+        start + _seconds(60),
+        root_tolerance_seconds=0.025,
+    )
+
+    assert result == ()
+    assert captured["root_tolerance_seconds"] == 0.025
+    assert captured["event_group_tolerance_seconds"] == 0.025
+    assert captured["require_swieph_provenance"] is True
 
 
 def test_stable_intervals_are_continuous_and_preserve_a_b_a_states() -> None:

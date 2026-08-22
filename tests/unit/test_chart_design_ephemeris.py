@@ -1,10 +1,11 @@
 from __future__ import annotations
 
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 import pytest
 
+from hdmatch.chart.boundaries import build_production_chart_state_intervals
 from hdmatch.chart.calculator import calculate_chart
 from hdmatch.chart.design_moment import (
     solve_design_moment,
@@ -267,6 +268,43 @@ def test_swiss_provider_rejects_declared_file_mutation_after_initialization(
 
     with pytest.raises(EphemerisConfigurationError, match="changed after initialization"):
         provider.verify_declared_files_unchanged()
+
+
+def test_swiss_production_preflight_requires_exact_swieph_request(tmp_path: Path) -> None:
+    declared = tmp_path / "sepl_18.se1"
+    declared.write_bytes(b"declared")
+    fake = FakeSwiss(declared, FakeSwiss.FLG_SWIEPH)
+    provider = SwissEphemerisProvider((declared,), _swe_module=fake)  # type: ignore[arg-type]
+    provider._requested_flags = FakeSwiss.FLG_JPLEPH | FakeSwiss.FLG_SPEED
+
+    with pytest.raises(EphemerisConfigurationError, match="not exactly SWIEPH"):
+        provider.verify_production_configuration()
+
+
+def test_production_boundary_calculation_rejects_conflicting_returned_mode(
+    tmp_path: Path,
+) -> None:
+    planetary = tmp_path / "sepl_18.se1"
+    lunar = tmp_path / "semo_18.se1"
+    planetary.write_bytes(b"planetary")
+    lunar.write_bytes(b"lunar")
+    fake = LinearFakeSwiss(
+        planetary,
+        FakeSwiss.FLG_SWIEPH | FakeSwiss.FLG_JPLEPH,
+    )
+    provider = SwissEphemerisProvider(
+        (planetary, lunar),
+        _swe_module=fake,  # type: ignore[arg-type]
+    )
+    start = datetime(2000, 1, 1, tzinfo=UTC)
+
+    with pytest.raises(EphemerisFallbackError, match=r"UNKNOWN\(3\)"):
+        build_production_chart_state_intervals(
+            provider,
+            start,
+            start + timedelta(minutes=1),
+            bodies=(CelestialBody.MERCURY,),
+        )
 
 
 def test_representative_production_probe_records_returned_flags_and_design_root(

@@ -268,6 +268,23 @@ class SwissEphemerisProvider:
                     f"declared ephemeris file changed after initialization: {path}"
                 )
 
+    def verify_production_configuration(self) -> None:
+        """Prove the static SWIEPH request and current declared-file binding.
+
+        This preflight complements, but does not replace, the exact returned
+        mask equality enforced inside every :meth:`position_with_provenance`
+        call.
+        """
+
+        requested_mode_bits = self._requested_flags & self._ephemeris_mask
+        expected = int(self._swe.FLG_SWIEPH)
+        if requested_mode_bits != expected:
+            raise EphemerisConfigurationError(
+                "production provider request mask is not exactly SWIEPH: "
+                f"requested mode bits={requested_mode_bits}, expected={expected}"
+            )
+        self.verify_declared_files_unchanged()
+
     def position(self, body: CelestialBody, at_utc: datetime) -> EclipticPosition:
         return self.position_with_provenance(body, at_utc).position
 
