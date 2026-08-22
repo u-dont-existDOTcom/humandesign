@@ -6,8 +6,8 @@ from hdmatch.relationship import (
     CardinalActivation,
     CenterConfigurationKeynote,
     ConnectionKind,
-    PartnerTimeCandidate,
     PartnershipSnapshot,
+    PartnerTimeCandidate,
     analyze_partnership,
     summarize_uncertain_partner_time,
 )
