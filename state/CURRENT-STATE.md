@@ -2,12 +2,12 @@
 
 - Task ID: `v4-3-v3-5-migration`.
 - Goal: migrate the reproducible blinded Human Design research harness to the
-  fail-closed V4.3/V3.5 contract while keeping synthetic engineering validation
+  fail-closed V4.3/V3.6 contract while keeping synthetic engineering validation
   separate from human validation.
 - Integration worktree/branch:
   `/tmp/hdmatch-integration` on `codex/harness-integration`.
 - Latest upstream `main` commit merged:
-  `c3c0b51ea40346534dc40361ce5f49d651a80cc3`.
+  `a7c24012867e640f2728f40ab342267b12d662e9`.
 - Current integrated exact-origin implementation head:
   `4dce7708afefdaaff4660f44298880fe8ba6b849`.
 - Current published checkpoint remains:
@@ -30,7 +30,7 @@ The mandatory sequence remains:
 2. implement the complete cacheable M0-M2 feature registry and exact boundary
    serialization;
 3. build and verify the reusable 1926-2026 exact-state cache;
-4. complete the V4.3/V3.5 mapping, scorer, prevalence, and compliance migration;
+4. complete the V4.3/V3.6 mapping, scorer, prevalence, and compliance migration;
 5. run one full-universe ranking from the verified cache only.
 
 The temporary `SWIEPH profile A-B rerun` workflow and its direct century runner
@@ -77,6 +77,13 @@ cache-first sequence.
 The earlier Model A 75-case baseline remains the only completed core-only
 baseline: Top-1 `0.453333`, Top-3 `0.746667`, Top-5 `0.826667`, MRR
 `0.625680`. Do not rerun an expensive Model A-only benchmark.
+
+Upstream `main` now also preserves the frozen V3.6 one-off NetInformation audit
+and its observed 2013/1985 development ordering. That historical audit is not
+the reusable production mapping/cache implementation, is not untouched human
+validation, and must not be used to retune mappings, weights, prevalence, or
+feature definitions. It does not authorize another century scan ahead of the
+mandatory cache-first sequence.
 
 ## Phase 1 result
 
