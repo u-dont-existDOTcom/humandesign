@@ -1498,12 +1498,12 @@ def test_phase4_runtime_provenance_rejects_modified_scoring_sources(
         check=True,
         capture_output=True,
     )
-    clean = run_module._require_clean_runtime_source(repository)
+    clean = run_module._collect_clean_runtime_source(repository)
     assert clean.source_commit
     with (repository / relative_path).open("ab") as handle:
         handle.write(b"\n# adversarial source mutation\n")
     with pytest.raises(V43RunError, match="clean committed source tree"):
-        run_module._require_clean_runtime_source(repository)
+        run_module._collect_clean_runtime_source(repository)
 
 
 def test_prevalence_cli_build_and_verify_use_only_verified_cache(

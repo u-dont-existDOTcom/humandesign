@@ -2623,6 +2623,19 @@ def _require_clean_runtime_source(
     """Bind claim-grade execution to one exact clean committed runtime tree."""
 
     root = repository_root.resolve()
+    executing_root = Path(__file__).resolve().parents[3]
+    if root != executing_root:
+        raise V43RunError(
+            "claim-grade repository root differs from the executing hdmatch source tree"
+        )
+    return _collect_clean_runtime_source(root)
+
+
+def _collect_clean_runtime_source(
+    root: Path,
+) -> V43RuntimeSourceProvenanceV1:
+    """Collect a clean tree; split out so isolated fixture repositories are testable."""
+
     try:
         commit = _git_stdout(root, "rev-parse", "HEAD").strip()
         tree_oid = _git_stdout(root, "rev-parse", "HEAD^{tree}").strip()
