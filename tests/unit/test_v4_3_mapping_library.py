@@ -39,6 +39,8 @@ from hdmatch.model.v4_3_mapping import (
     FLEXIBILITY_FACTOR,
     STRUCTURAL_SALIENCE,
     ContradictionModeV2,
+    CoreArchitectureTargetV2,
+    CoreTypeStrategyTargetV2,
     FlexibilityClass,
     FrozenMappingRuleSourceV2,
     MappingLibrarySourceV2,
@@ -50,6 +52,7 @@ from hdmatch.model.v4_3_mapping import (
     PrevalenceParentLevelV2,
     ResponseContradictionV2,
     ResponseRuleV2,
+    ResponseSourceModeV2,
     RevisionClassV2,
     SelectionRiskV2,
     SourceArtifactV2,
@@ -168,7 +171,7 @@ def _source(
         revision_class=RevisionClassV2.R1,
         selection_risk=SelectionRiskV2.MODERATE,
         candidate_direction_visible=False,
-        question_ids=("S04",),
+        question_ids=(("S04",) if bind_question_bank else ()),
         response_rule=ResponseRuleV2(
             response_dimension_id="RESPONSE-ENTRY",
             canonical_response_token="recognition_sensitive",
@@ -189,7 +192,12 @@ def _source(
     )
     required = declared_required_feature_ids or tuple(
         sorted(
-            (FeatureId.AUTHORITY, FeatureId.TYPE, FeatureId.COMPLETE_CHANNELS),
+            (
+                FeatureId.AUTHORITY,
+                FeatureId.STRATEGY,
+                FeatureId.TYPE,
+                FeatureId.COMPLETE_CHANNELS,
+            ),
             key=lambda item: item.value,
         )
     )
@@ -222,8 +230,26 @@ def _source(
     return MappingLibrarySourceV2(
         behavioral_target_source_id="SRC-TARGET-V36",
         method_source_ids=("SRC-V43-SCORING",),
+        response_source_mode=(
+            ResponseSourceModeV2.QUESTIONNAIRE
+            if bind_question_bank
+            else ResponseSourceModeV2.DIRECT_BEHAVIORAL_TARGET
+        ),
         question_bank_source_id="SRC-QUESTION-BANK" if bind_question_bank else None,
         source_artifacts=tuple(sorted(source_artifacts, key=lambda item: item.source_id)),
+        core_architecture_target=CoreArchitectureTargetV2(
+            type_strategy=CoreTypeStrategyTargetV2(
+                primary_type="projector",
+                primary_strategy="wait_for_invitation",
+                alternatives=(),
+                partial_compatible_types=(),
+            ),
+            authority=None,
+            diagnostic_centers=None,
+            profile=None,
+            sources=(_target_citation(),),
+            rationale="Test-only frozen Type/Strategy CoreFit target.",
+        ),
         declared_frozen_rule_ids=(mapping.rule_id,),
         declared_observation_ids=(mapping.observation_id,),
         declared_required_feature_ids=required,
@@ -244,6 +270,7 @@ def test_compiler_derives_deterministic_registry_and_pathway_contract() -> None:
     assert first.model_version == "V4.3/V3.6-symbolic-v2"
     assert first.required_feature_registry.feature_ids == (
         FeatureId.AUTHORITY,
+        FeatureId.STRATEGY,
         FeatureId.TYPE,
         FeatureId.COMPLETE_CHANNELS,
     )
@@ -313,7 +340,7 @@ def test_one_anchor_cannot_fabricate_multiple_prevalence_hierarchies() -> None:
     changed_rule = rule.model_copy(update={"alternative_pathways": (duplicate,)})
     changed_source = source.model_copy(
         update={
-            "declared_required_feature_ids": (FeatureId.TYPE,),
+            "declared_required_feature_ids": (FeatureId.STRATEGY, FeatureId.TYPE),
             "mappings": (changed_rule,),
         }
     )
@@ -511,6 +538,10 @@ def _candidate_row() -> CenturyStateRecord:
         feature_values=(
             FeatureValue(feature_id=FeatureId.AUTHORITY.value, value="splenic"),
             FeatureValue(
+                feature_id=FeatureId.STRATEGY.value,
+                value="wait_for_invitation",
+            ),
+            FeatureValue(
                 feature_id=FeatureId.TYPE.value,
                 value="projector",
             ),
@@ -567,6 +598,27 @@ def test_v2_adapter_derives_pathways_core_and_unknown_without_caller_scores() ->
         pathway.primary.supports_response
         for pathway in neutral.observations[0].pathways
     )
+    neutral_core = {item.block.value: item for item in neutral.core_blocks}
+    assert neutral_core["type_strategy"].earned_fraction == 1.0
+    assert neutral_core["authority"].earned_fraction is None
+    assert neutral_core["diagnostic_centers"].earned_fraction is None
+    assert neutral_core["profile"].earned_fraction is None
+
+
+def test_response_source_mode_fails_closed_without_matching_provenance() -> None:
+    questionnaire = _source(bind_question_bank=True)
+    payload = questionnaire.model_dump(mode="json")
+    payload["question_bank_source_id"] = None
+    with pytest.raises(ValidationError, match="questionnaire response mode requires"):
+        MappingLibrarySourceV2.model_validate(payload)
+
+    direct = _source()
+    payload = direct.model_dump(mode="json")
+    mappings = payload["mappings"]
+    assert isinstance(mappings, list)
+    mappings[0]["question_ids"] = ["S04"]
+    with pytest.raises(ValidationError, match="direct-target mappings cannot claim"):
+        MappingLibrarySourceV2.model_validate(payload)
 
 
 def test_dependency_keys_are_exact_and_link_compounds_to_components() -> None:

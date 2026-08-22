@@ -17,7 +17,7 @@ from typing import Annotated, Final, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
-from hdmatch.chart.bodygraph import CHANNELS
+from hdmatch.chart.bodygraph import CHANNELS, Center
 from hdmatch.chart.ephemeris import CelestialBody
 from hdmatch.chart.feature_registry import (
     ChartFeatureVectorV2,
@@ -120,6 +120,11 @@ class SourceRoleV2(StrEnum):
     PROVENANCE = "provenance"
 
 
+class ResponseSourceModeV2(StrEnum):
+    DIRECT_BEHAVIORAL_TARGET = "direct_behavioral_target"
+    QUESTIONNAIRE = "questionnaire"
+
+
 class MappingConstantsV2(FrozenModel):
     information_cap_rubric_bits: float = 6.0
     contradiction_scale_rubric_bits: float = 4.0
@@ -190,6 +195,127 @@ class SourceCitationV2(FrozenModel):
     source_id: str = Field(pattern=_ID_PATTERN)
     locator: str = Field(min_length=1)
     rationale: str = Field(min_length=1)
+
+
+class CoreTypeStrategyAlternativeV2(FrozenModel):
+    type_value: str = Field(pattern=_TOKEN_PATTERN)
+    strategy_value: str = Field(pattern=_TOKEN_PATTERN)
+
+
+class CoreTypeStrategyTargetV2(FrozenModel):
+    primary_type: str = Field(pattern=_TOKEN_PATTERN)
+    primary_strategy: str = Field(pattern=_TOKEN_PATTERN)
+    alternatives: tuple[CoreTypeStrategyAlternativeV2, ...]
+    partial_compatible_types: tuple[str, ...]
+
+    @model_validator(mode="after")
+    def canonical_disjoint_grades(self) -> CoreTypeStrategyTargetV2:
+        alternative_pairs = tuple(
+            (item.type_value, item.strategy_value) for item in self.alternatives
+        )
+        if alternative_pairs != tuple(sorted(set(alternative_pairs))):
+            raise ValueError("core Type/Strategy alternatives must be unique and sorted")
+        if (self.primary_type, self.primary_strategy) in alternative_pairs:
+            raise ValueError("primary Type/Strategy cannot also be an alternative")
+        if self.partial_compatible_types != tuple(
+            sorted(set(self.partial_compatible_types))
+        ):
+            raise ValueError("partial compatible Types must be unique and sorted")
+        alternative_types = {item[0] for item in alternative_pairs}
+        if self.primary_type in self.partial_compatible_types or (
+            alternative_types & set(self.partial_compatible_types)
+        ):
+            raise ValueError("core Type/Strategy grade categories must be disjoint")
+        return self
+
+
+class CoreAuthorityTargetV2(FrozenModel):
+    primary_authority: str = Field(pattern=_TOKEN_PATTERN)
+    alternative_authorities: tuple[str, ...]
+    compatible_authorities: tuple[str, ...]
+
+    @model_validator(mode="after")
+    def canonical_disjoint_grades(self) -> CoreAuthorityTargetV2:
+        if self.alternative_authorities != tuple(sorted(set(self.alternative_authorities))):
+            raise ValueError("core Authority alternatives must be unique and sorted")
+        if self.compatible_authorities != tuple(sorted(set(self.compatible_authorities))):
+            raise ValueError("compatible Authorities must be unique and sorted")
+        categories = (
+            {self.primary_authority},
+            set(self.alternative_authorities),
+            set(self.compatible_authorities),
+        )
+        overlaps = (
+            left & right
+            for index, left in enumerate(categories)
+            for right in categories[index + 1 :]
+        )
+        if any(overlaps):
+            raise ValueError("core Authority grade categories must be disjoint")
+        return self
+
+
+class CoreCenterPredictionV2(FrozenModel):
+    center: Center
+    predicted_defined: bool
+    opposite_state_credit: float = 0.0
+
+    @field_validator("opposite_state_credit")
+    @classmethod
+    def frozen_alternative_credit(cls, value: float) -> float:
+        if value not in {0.0, 0.75}:
+            raise ValueError("Center opposite-state credit must be 0 or frozen 0.75")
+        return value
+
+
+class CoreProfileTargetV2(FrozenModel):
+    primary_profile: str = Field(pattern=r"^[1-6]/[1-6]$")
+
+
+class CoreArchitectureTargetV2(FrozenModel):
+    """Frozen high-level target, scored independently of detailed observations."""
+
+    type_strategy: CoreTypeStrategyTargetV2 | None
+    authority: CoreAuthorityTargetV2 | None
+    diagnostic_centers: tuple[CoreCenterPredictionV2, ...] | None
+    profile: CoreProfileTargetV2 | None
+    sources: tuple[SourceCitationV2, ...] = Field(min_length=1)
+    rationale: str = Field(min_length=1)
+
+    @model_validator(mode="after")
+    def explicit_reportable_blocks(self) -> CoreArchitectureTargetV2:
+        if all(
+            block is None
+            for block in (
+                self.type_strategy,
+                self.authority,
+                self.diagnostic_centers,
+                self.profile,
+            )
+        ):
+            raise ValueError("at least one frozen CoreFit block must be reportable")
+        if self.diagnostic_centers is not None:
+            if not self.diagnostic_centers:
+                raise ValueError(
+                    "reportable diagnostic Centers require at least one prediction"
+                )
+            centers = tuple(item.center for item in self.diagnostic_centers)
+            if centers != tuple(sorted(set(centers), key=lambda item: item.value)):
+                raise ValueError("diagnostic Center predictions must be unique and sorted")
+        return self
+
+    @property
+    def required_feature_ids(self) -> tuple[FeatureId, ...]:
+        required: set[FeatureId] = set()
+        if self.type_strategy is not None:
+            required.update({FeatureId.TYPE, FeatureId.STRATEGY})
+        if self.authority is not None:
+            required.add(FeatureId.AUTHORITY)
+        if self.diagnostic_centers is not None:
+            required.add(FeatureId.CENTERS)
+        if self.profile is not None:
+            required.add(FeatureId.PROFILE)
+        return tuple(sorted(required, key=lambda item: item.value))
 
 
 _ACTIVATION_FEATURES: Final[frozenset[FeatureId]] = frozenset(
@@ -686,9 +812,11 @@ class MappingLibrarySourceV2(FrozenModel):
     scoring_tier: Literal["M2"] = "M2"
     behavioral_target_source_id: str = Field(pattern=_ID_PATTERN)
     method_source_ids: tuple[str, ...] = Field(min_length=1)
+    response_source_mode: ResponseSourceModeV2
     question_bank_source_id: str | None = Field(default=None, pattern=_ID_PATTERN)
     source_artifacts: tuple[SourceArtifactV2, ...] = Field(min_length=1)
     constants: MappingConstantsV2 = Field(default_factory=MappingConstantsV2)
+    core_architecture_target: CoreArchitectureTargetV2
     declared_frozen_rule_ids: tuple[str, ...] = Field(min_length=1)
     declared_observation_ids: tuple[str, ...] = Field(min_length=1)
     declared_required_feature_ids: tuple[FeatureId, ...] = Field(min_length=1)
@@ -754,8 +882,30 @@ class MappingLibrarySourceV2(FrozenModel):
             method_source_ids=self.method_source_ids,
             question_bank_source_id=self.question_bank_source_id,
         )
+        if self.response_source_mode is ResponseSourceModeV2.DIRECT_BEHAVIORAL_TARGET:
+            if self.question_bank_source_id is not None:
+                raise ValueError(
+                    "direct-target response mode cannot fabricate questionnaire provenance"
+                )
+            if any(mapping.question_ids for mapping in self.frozen_mappings):
+                raise ValueError("direct-target mappings cannot claim question-level provenance")
+        else:
+            if self.question_bank_source_id is None:
+                raise ValueError("questionnaire response mode requires a question-bank binding")
+            if any(not mapping.question_ids for mapping in self.frozen_mappings):
+                raise ValueError(
+                    "questionnaire response mode requires question IDs for every frozen rule"
+                )
         source_ids = tuple(item.source_id for item in self.source_artifacts)
         known_sources = set(source_ids)
+        unknown_core_sources = {
+            item.source_id for item in self.core_architecture_target.sources
+        } - known_sources
+        if unknown_core_sources:
+            raise ValueError(
+                "core architecture target cites unknown sources: "
+                f"{sorted(unknown_core_sources)}"
+            )
         for mapping_record in self.mappings:
             citations = list(mapping_record.sources)
             if isinstance(mapping_record, FrozenMappingRuleSourceV2):
@@ -908,9 +1058,11 @@ class MappingLibraryV2(FrozenModel):
     source_library_sha256: str = Field(pattern=_SHA256_PATTERN)
     behavioral_target_source_id: str = Field(pattern=_ID_PATTERN)
     method_source_ids: tuple[str, ...] = Field(min_length=1)
+    response_source_mode: ResponseSourceModeV2
     question_bank_source_id: str | None = Field(default=None, pattern=_ID_PATTERN)
     source_artifacts: tuple[SourceArtifactV2, ...] = Field(min_length=1)
     constants: MappingConstantsV2
+    core_architecture_target: CoreArchitectureTargetV2
     declared_frozen_rule_ids: tuple[str, ...] = Field(min_length=1)
     declared_observation_ids: tuple[str, ...] = Field(min_length=1)
     required_feature_registry: RequiredFeatureRegistry
@@ -927,6 +1079,24 @@ class MappingLibraryV2(FrozenModel):
             method_source_ids=self.method_source_ids,
             question_bank_source_id=self.question_bank_source_id,
         )
+        if self.response_source_mode is ResponseSourceModeV2.DIRECT_BEHAVIORAL_TARGET:
+            if self.question_bank_source_id is not None:
+                raise ValueError(
+                    "compiled direct-target mode cannot bind unrelated questionnaire data"
+                )
+            if any(rule.question_ids for rule in self.rules):
+                raise ValueError(
+                    "compiled direct-target rules cannot claim question-level provenance"
+                )
+        else:
+            if self.question_bank_source_id is None:
+                raise ValueError(
+                    "compiled questionnaire mode requires a question-bank binding"
+                )
+            if any(not rule.question_ids for rule in self.rules):
+                raise ValueError(
+                    "compiled questionnaire mode requires question IDs on every rule"
+                )
         if self.required_feature_registry_sha256 != self.required_feature_registry.sha256():
             raise ValueError("required-feature registry hash mismatch")
         if tuple(sorted(item.rule_id for item in self.rules)) != self.declared_frozen_rule_ids:
@@ -987,6 +1157,14 @@ class MappingLibraryV2(FrozenModel):
                         "one structural anchor cannot declare multiple prevalence hierarchies"
                     )
         known_sources = {item.source_id for item in self.source_artifacts}
+        unknown_core_sources = {
+            item.source_id for item in self.core_architecture_target.sources
+        } - known_sources
+        if unknown_core_sources:
+            raise ValueError(
+                "compiled core architecture target cites unknown sources: "
+                f"{sorted(unknown_core_sources)}"
+            )
         for mapping in self.rules:
             citations = list(mapping.sources)
             for pathway in _compiled_rule_pathways(mapping):
@@ -1015,6 +1193,7 @@ class MappingLibraryV2(FrozenModel):
             for pathway in _compiled_rule_pathways(rule)
             for feature_id in pathway.required_feature_ids
         }
+        derived.update(self.core_architecture_target.required_feature_ids)
         if derived != set(self.required_feature_registry.feature_ids):
             raise ValueError("compiled mapping feature union differs from required registry")
         return self

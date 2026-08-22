@@ -29,6 +29,11 @@ from hdmatch.model.v4_3_compiler import compile_verified_mapping_library_v2
 from hdmatch.model.v4_3_mapping import (
     FLEXIBILITY_FACTOR,
     ContradictionModeV2,
+    CoreArchitectureTargetV2,
+    CoreAuthorityTargetV2,
+    CoreCenterPredictionV2,
+    CoreProfileTargetV2,
+    CoreTypeStrategyTargetV2,
     FlexibilityClass,
     FrozenMappingRuleSourceV2,
     MappingConstantsV2,
@@ -40,6 +45,7 @@ from hdmatch.model.v4_3_mapping import (
     PrevalenceParentLevelV2,
     ResponseContradictionV2,
     ResponseRuleV2,
+    ResponseSourceModeV2,
     RevisionClassV2,
     SelectionRiskV2,
     SourceArtifactV2,
@@ -190,6 +196,7 @@ def build_profile_mapping_library_source_v2(
 
     root = Path(repository_root).resolve()
     base, overlay = _load_and_validate_inputs(root)
+    core_target = _core_architecture_target(base)
     records = _merged_mapping_records(base, overlay)
     if variant == "less_contaminated":
         records = tuple(item for item in records if str(item["id"]) not in _POST_SELECTION_IDS)
@@ -205,16 +212,19 @@ def build_profile_mapping_library_source_v2(
                 for rule in rules
                 for pathway in (rule.primary_pathway, *rule.alternative_pathways)
                 for feature_id in pathway.required_feature_ids
-            },
+            }
+            | set(core_target.required_feature_ids),
             key=lambda item: item.value,
         )
     )
     return MappingLibrarySourceV2(
         behavioral_target_source_id="SRC-TARGET-V36",
         method_source_ids=("SRC-SCORING-POLICY", "SRC-V43-SCORING"),
+        response_source_mode=ResponseSourceModeV2.DIRECT_BEHAVIORAL_TARGET,
         question_bank_source_id=None,
         source_artifacts=_source_artifacts(root),
         constants=MappingConstantsV2(),
+        core_architecture_target=core_target,
         declared_frozen_rule_ids=tuple(rule.rule_id for rule in rules),
         declared_observation_ids=tuple(sorted(rule.observation_id for rule in rules)),
         declared_required_feature_ids=required,
@@ -409,6 +419,87 @@ def _merged_mapping_records(
             raise ProfileMappingMigrationError(f"overlay duplicates mapping ID: {mapping_id}")
         records[mapping_id] = addition
     return tuple(records[item] for item in sorted(records))
+
+
+def _core_architecture_target(base: Mapping[str, Any]) -> CoreArchitectureTargetV2:
+    raw = base["core"]
+    if not isinstance(raw, Mapping):
+        raise ProfileMappingMigrationError("frozen core target must be an object")
+    core = cast(Mapping[str, Any], raw)
+    _require_keys(
+        core,
+        {"type", "authority", "diagnostic_centers", "profile_primary"},
+        "frozen core target",
+    )
+    if core["type"] != "Projector" or core["authority"] != "Splenic":
+        raise ProfileMappingMigrationError("frozen Type/Authority core target changed")
+    if core["profile_primary"] != "2/4":
+        raise ProfileMappingMigrationError("frozen primary Profile changed")
+    raw_centers = core["diagnostic_centers"]
+    if not isinstance(raw_centers, Mapping):
+        raise ProfileMappingMigrationError("diagnostic Center target must be an object")
+    centers = cast(Mapping[str, Any], raw_centers)
+    expected_centers = {
+        "Sacral": False,
+        "Solar Plexus": False,
+        "Spleen": True,
+        "Root": False,
+        "Heart": True,
+        "G": True,
+    }
+    if dict(centers) != expected_centers:
+        raise ProfileMappingMigrationError("frozen six-Center core target changed")
+    center_predictions = tuple(
+        sorted(
+            (
+                CoreCenterPredictionV2(
+                    center=Center(_center_value(name)),
+                    predicted_defined=defined,
+                    opposite_state_credit=0.0,
+                )
+                for name, defined in expected_centers.items()
+            ),
+            key=lambda item: item.center.value,
+        )
+    )
+    return CoreArchitectureTargetV2(
+        type_strategy=CoreTypeStrategyTargetV2(
+            primary_type="projector",
+            primary_strategy="wait_for_invitation",
+            alternatives=(),
+            partial_compatible_types=(),
+        ),
+        authority=CoreAuthorityTargetV2(
+            primary_authority="splenic",
+            alternative_authorities=(),
+            compatible_authorities=(),
+        ),
+        diagnostic_centers=center_predictions,
+        profile=CoreProfileTargetV2(primary_profile="2/4"),
+        sources=(
+            _citation(
+                "SRC-MAPPING-FROZEN",
+                "core",
+                "Freezes Projector, Splenic, six Center states, and primary Profile 2/4.",
+            ),
+            _citation(
+                "SRC-COVERAGE-AUDIT",
+                "Scored constructs and anti-simplification note",
+                "Identifies Projector Type/Strategy and the frozen high-level predictions.",
+            ),
+            _citation(
+                "SRC-V43-SCORING",
+                "section 5, Core Architecture Fit",
+                "Requires the four fixed blocks to be scored separately from detailed evidence.",
+            ),
+        ),
+        rationale=(
+            "Mechanical migration of the pre-ranking source core object. Type/Strategy, "
+            "Authority, all six Center states, and exact Profile are evaluated directly "
+            "from candidate architecture without behavioral confidence, directness, "
+            "flexibility, or detailed-pathway alternatives."
+        ),
+    )
 
 
 def _validated_mapping_record(
@@ -900,6 +991,20 @@ def _migration_receipt(
             }
         ],
         "translation_contract": {
+            "response_source_binding": (
+                "This audit uses direct V3.6 behavioral-target observations, so the "
+                "canonical response source is SRC-TARGET-V36 and its exact artifact hash. "
+                "question_bank_source_id remains null and per-rule question_ids remain "
+                "empty; no unrelated questionnaire item provenance is fabricated. A "
+                "questionnaire-mode library must instead bind a verified question bank."
+            ),
+            "core_architecture_fit": (
+                "The pre-ranking source core object freezes Projector/wait-for-invitation, "
+                "Splenic Authority, six exact Center states, and Profile 2/4. CoreFit uses "
+                "the fixed 30/30/25/15 V3/V4 block rubric directly from candidate "
+                "architecture. Behavioral confidence, mapping directness, flexibility, "
+                "and detailed profile alternatives never alter CoreFit."
+            ),
             "alternative_pathway_representation": (
                 "Each source mapping remains a separate confidence-bearing observation. "
                 "Primary and alternative roles are frozen below, and the shared dependency "
@@ -998,6 +1103,8 @@ def _variant_receipt(
         "compiled_path": compiled_path,
         "compiled_sha256": sha256_bytes(artifacts[compiled_path]),
         "excluded_post_selection_mapping_ids": excluded,
+        "response_source_mode": source.response_source_mode.value,
+        "response_source_id": source.behavioral_target_source_id,
         "frozen_rule_count": len(source.frozen_mappings),
         "required_feature_ids": [item.value for item in source.declared_required_feature_ids],
     }

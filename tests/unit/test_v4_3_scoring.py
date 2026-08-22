@@ -494,6 +494,79 @@ def test_dependency_cluster_uses_positive_evidence_winner_for_detailed_support()
     assert score.detailed_support == pytest.approx(45.0)
 
 
+def test_p_equals_one_keeps_supported_pathway_as_detailed_support_winner() -> None:
+    supported = ObservationEvaluation(
+        observation_id="OBS-SUPPORTED",
+        dependency_cluster="P_ONE",
+        confidence=ObservationConfidence(0.25, 1.0),
+        pathways=(EvaluatedPathway("supported", _anchor("supported", "supported")),),
+    )
+    unsupported = ObservationEvaluation(
+        observation_id="OBS-UNSUPPORTED",
+        dependency_cluster="P_ONE",
+        confidence=ObservationConfidence(1.0, 1.0),
+        pathways=(
+            EvaluatedPathway(
+                "unsupported",
+                _anchor("unsupported", "unsupported", supports=False),
+            ),
+        ),
+    )
+
+    score = score_v4_3(
+        _input(supported, unsupported),
+        FixedPrevalence({"supported": (1, 1)}),
+    )
+
+    cluster = score.clusters[0]
+    assert cluster.evidence_rubric_bits == 0.0
+    assert cluster.evidence_pathway_id is None
+    assert cluster.support_pathway_id == "OBS-SUPPORTED:supported"
+    assert cluster.effective_confidence == pytest.approx(0.25)
+    assert score.detailed_support == pytest.approx(80.0)
+
+
+def test_p_equals_one_ignores_zero_confidence_structural_support() -> None:
+    scorable = ObservationEvaluation(
+        observation_id="OBS-SCORABLE",
+        dependency_cluster="P_ONE_ZERO_CONFIDENCE",
+        confidence=ObservationConfidence(0.5, 1.0),
+        pathways=(
+            EvaluatedPathway(
+                "scorable",
+                _anchor(
+                    "scorable",
+                    "scorable",
+                    structural_class=StructuralClass.DEFINITION,
+                    salience=0.65,
+                ),
+            ),
+        ),
+    )
+    downweighted = ObservationEvaluation(
+        observation_id="OBS-DOWNWEIGHTED",
+        dependency_cluster="P_ONE_ZERO_CONFIDENCE",
+        confidence=ObservationConfidence(1.0, 0.0),
+        pathways=(
+            EvaluatedPathway(
+                "downweighted",
+                _anchor("downweighted", "downweighted"),
+            ),
+        ),
+    )
+
+    score = score_v4_3(
+        _input(scorable, downweighted),
+        FixedPrevalence({"scorable": (1, 1), "downweighted": (1, 1)}),
+    )
+
+    cluster = score.clusters[0]
+    assert cluster.evidence_rubric_bits == 0.0
+    assert cluster.support_pathway_id == "OBS-SCORABLE:scorable"
+    assert cluster.effective_confidence == pytest.approx(0.5)
+    assert score.detailed_support == pytest.approx(65.0)
+
+
 def test_contradictions_use_formula_and_strongest_instance_not_sum() -> None:
     cluster = ObservationEvaluation(
         observation_id="OBS-OPPOSITION",

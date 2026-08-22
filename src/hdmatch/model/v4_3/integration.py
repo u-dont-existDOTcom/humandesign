@@ -64,8 +64,10 @@ from hdmatch.model.v4_3_mapping import (
     CompiledMappingRuleV2,
     CompiledPathwayV2,
     ContradictionModeV2,
+    CoreArchitectureTargetV2,
     MappingLibraryV2,
     PredicateOperatorV2,
+    ResponseSourceModeV2,
     StructuralPredicateV2,
 )
 from hdmatch.model.v4_3_mapping import (
@@ -109,13 +111,6 @@ _FLEXIBILITY_CLASS_ADAPTER: Final[
     MappingFlexibilityClass.F3: FlexibilityClass.F3_BROAD,
     MappingFlexibilityClass.F4: FlexibilityClass.F4_VERY_FLEXIBLE,
 }
-_CORE_CLASS_TO_BLOCK: Final[dict[StructuralClass, CoreBlock]] = {
-    StructuralClass.TYPE_STRATEGY: CoreBlock.TYPE_STRATEGY,
-    StructuralClass.AUTHORITY: CoreBlock.AUTHORITY,
-    StructuralClass.DIAGNOSTIC_CENTER: CoreBlock.DIAGNOSTIC_CENTERS,
-    StructuralClass.PROFILE: CoreBlock.PROFILE,
-}
-
 if set(_STRUCTURAL_CLASS_ADAPTER) != set(MappingStructuralClass):
     raise RuntimeError("V4.3 structural-class adapter is incomplete")
 if set(_DIRECTNESS_CLASS_ADAPTER) != set(MappingDirectnessClass):
@@ -144,7 +139,11 @@ class CanonicalV43Bindings:
     mapping_source_library_sha256: str
     required_feature_registry_sha256: str
     mapping_prevalence_plan_sha256: str
-    question_bank_sha256: str
+    response_source_mode: ResponseSourceModeV2
+    response_source_id: str
+    response_source_sha256: str
+    behavioral_target_sha256: str
+    question_bank_sha256: str | None
     prevalence_artifact_sha256: str
     prevalence_plan_sha256: str
     prevalence_parent_hierarchy_sha256: str
@@ -421,7 +420,7 @@ def evaluate_mapping_library_v2(
     return V43ScoringInput(
         candidate_context=candidate,
         observations=observations,
-        core_blocks=_derive_core_blocks(observations),
+        core_blocks=_derive_core_blocks(validated.core_architecture_target, features),
     )
 
 
@@ -479,7 +478,12 @@ def _verify_canonical_artifact_bindings(
 ) -> CanonicalV43Bindings:
     manifest = cache.manifest
     provenance = prevalence.provenance
-    question_bank_sha256 = _question_bank_sha256(library)
+    (
+        response_source_id,
+        response_source_sha256,
+        behavioral_target_sha256,
+        question_bank_sha256,
+    ) = _response_source_bindings(library)
     mapping_hash = library.sha256()
     hierarchy_hash = mapping_prevalence_parent_hierarchy_sha256(library)
     mapping_plan_hash = mapping_prevalence_plan_sha256(library)
@@ -566,6 +570,10 @@ def _verify_canonical_artifact_bindings(
         mapping_source_library_sha256=library.source_library_sha256,
         required_feature_registry_sha256=library.required_feature_registry_sha256,
         mapping_prevalence_plan_sha256=mapping_plan_hash,
+        response_source_mode=library.response_source_mode,
+        response_source_id=response_source_id,
+        response_source_sha256=response_source_sha256,
+        behavioral_target_sha256=behavioral_target_sha256,
         question_bank_sha256=question_bank_sha256,
         prevalence_artifact_sha256=provenance.artifact_sha256,
         prevalence_plan_sha256=provenance.plan_sha256,
@@ -576,14 +584,47 @@ def _verify_canonical_artifact_bindings(
     )
 
 
-def _question_bank_sha256(library: MappingLibraryV2) -> str:
+def _response_source_bindings(
+    library: MappingLibraryV2,
+) -> tuple[str, str, str, str | None]:
+    behavioral_target_sha256 = _source_artifact_sha256(
+        library,
+        library.behavioral_target_source_id,
+        "behavioral-target",
+    )
+    if library.response_source_mode is ResponseSourceModeV2.DIRECT_BEHAVIORAL_TARGET:
+        if library.question_bank_source_id is not None:
+            raise V43IntegrationError(
+                "direct-target session cannot claim an unrelated question bank"
+            )
+        return (
+            library.behavioral_target_source_id,
+            behavioral_target_sha256,
+            behavioral_target_sha256,
+            None,
+        )
     source_id = library.question_bank_source_id
     if source_id is None:
-        raise V43IntegrationError("canonical V4.3 requires a bound question-bank source")
+        raise V43IntegrationError(
+            "questionnaire session requires a bound question-bank source"
+        )
+    question_bank_sha256 = _source_artifact_sha256(
+        library,
+        source_id,
+        "question-bank",
+    )
+    return source_id, question_bank_sha256, behavioral_target_sha256, question_bank_sha256
+
+
+def _source_artifact_sha256(
+    library: MappingLibraryV2,
+    source_id: str,
+    label: str,
+) -> str:
     try:
         return next(item.sha256 for item in library.source_artifacts if item.source_id == source_id)
     except StopIteration as exc:  # pragma: no cover - MappingLibraryV2 validates this
-        raise V43IntegrationError("question-bank source binding is missing") from exc
+        raise V43IntegrationError(f"{label} source binding is missing") from exc
 
 
 def _validate_response_inventory(
@@ -888,52 +929,121 @@ def _parse_cross_components(value: str) -> tuple[int, int, int, int]:
 
 
 def _derive_core_blocks(
-    observations: tuple[ObservationEvaluation, ...],
+    target: CoreArchitectureTargetV2,
+    features: dict[str, JsonValue],
 ) -> tuple[CoreBlockEvaluation, ...]:
-    by_block: dict[CoreBlock, dict[str, tuple[float, float]]] = defaultdict(dict)
-    for observation in observations:
-        ceff = observation.confidence.effective_confidence
-        for block in CoreBlock:
-            directness = max(
-                (
-                    pathway.primary.directness_factor
-                    for pathway in observation.pathways
-                    if _CORE_CLASS_TO_BLOCK.get(pathway.primary.structural_class) is block
-                    and pathway.primary.supports_response
-                ),
-                default=0.0,
-            )
-            if any(
-                _CORE_CLASS_TO_BLOCK.get(pathway.primary.structural_class) is block
-                for pathway in observation.pathways
-            ):
-                previous = by_block[block].get(observation.dependency_cluster, (0.0, 0.0))
-                by_block[block][observation.dependency_cluster] = (
-                    max(previous[0], directness),
-                    max(previous[1], ceff),
-                )
-    evaluations: list[CoreBlockEvaluation] = []
-    for block in CoreBlock:
-        clusters = by_block.get(block, {})
-        denominator = sum(confidence for _, confidence in clusters.values())
-        if denominator == 0.0:
-            evaluations.append(
-                CoreBlockEvaluation(
-                    block=block,
-                    availability=CoreBlockAvailability.UNREPORTABLE,
-                    earned_fraction=None,
-                )
-            )
-            continue
-        numerator = sum(support * confidence for support, confidence in clusters.values())
-        evaluations.append(
-            CoreBlockEvaluation(
-                block=block,
-                availability=CoreBlockAvailability.REPORTABLE,
-                earned_fraction=numerator / denominator,
-            )
+    """Apply the frozen V3/V4 architecture rubric, never detailed evidence factors."""
+
+    type_strategy_fraction: float | None = None
+    if target.type_strategy is not None:
+        candidate_type = _require_string(FeatureId.TYPE, features[FeatureId.TYPE.value])
+        candidate_strategy = _require_string(
+            FeatureId.STRATEGY,
+            features[FeatureId.STRATEGY.value],
         )
-    return tuple(evaluations)
+        primary = target.type_strategy
+        if (candidate_type, candidate_strategy) == (
+            primary.primary_type,
+            primary.primary_strategy,
+        ):
+            type_strategy_fraction = 1.0
+        elif any(
+            (candidate_type, candidate_strategy)
+            == (alternative.type_value, alternative.strategy_value)
+            for alternative in primary.alternatives
+        ):
+            type_strategy_fraction = 0.8
+        elif candidate_type in primary.partial_compatible_types:
+            type_strategy_fraction = 0.4
+        else:
+            type_strategy_fraction = 0.0
+
+    authority_fraction: float | None = None
+    if target.authority is not None:
+        candidate_authority = _require_string(
+            FeatureId.AUTHORITY,
+            features[FeatureId.AUTHORITY.value],
+        )
+        authority = target.authority
+        if candidate_authority == authority.primary_authority:
+            authority_fraction = 1.0
+        elif candidate_authority in authority.alternative_authorities:
+            authority_fraction = 0.8
+        elif candidate_authority in authority.compatible_authorities:
+            authority_fraction = 0.4
+        else:
+            authority_fraction = 0.0
+
+    centers_fraction: float | None = None
+    if target.diagnostic_centers is not None:
+        raw_centers = _require_record(
+            FeatureId.CENTERS,
+            features[FeatureId.CENTERS.value],
+        )
+        defined = set(_string_sequence(FeatureId.CENTERS, raw_centers.get("defined")))
+        undefined = set(
+            _string_sequence(FeatureId.CENTERS, raw_centers.get("undefined"))
+        )
+        center_credits: list[float] = []
+        for prediction in target.diagnostic_centers:
+            center = prediction.center.value
+            if (center in defined) == (center in undefined):
+                raise V43IntegrationError(
+                    f"diagnostic Center {center} must have exactly one candidate state"
+                )
+            matches = (center in defined) is prediction.predicted_defined
+            center_credits.append(
+                1.0 if matches else prediction.opposite_state_credit
+            )
+        centers_fraction = sum(center_credits) / len(center_credits)
+
+    profile_fraction: float | None = None
+    if target.profile is not None:
+        candidate_profile = _require_string(
+            FeatureId.PROFILE,
+            features[FeatureId.PROFILE.value],
+        )
+        predicted_profile = target.profile.primary_profile
+        if candidate_profile == predicted_profile:
+            profile_fraction = 1.0
+        else:
+            candidate_lines = candidate_profile.split("/")
+            predicted_lines = predicted_profile.split("/")
+            if len(candidate_lines) != 2 or any(
+                line not in {"1", "2", "3", "4", "5", "6"}
+                for line in candidate_lines
+            ):
+                raise V43IntegrationError("candidate Profile must be canonical line/line")
+            if any(
+                candidate_lines[index] == predicted_lines[index]
+                for index in (0, 1)
+            ):
+                profile_fraction = 0.5
+            elif candidate_lines[0] == predicted_lines[1] or (
+                candidate_lines[1] == predicted_lines[0]
+            ):
+                profile_fraction = 1.0 / 3.0
+            else:
+                profile_fraction = 0.0
+
+    fractions = {
+        CoreBlock.TYPE_STRATEGY: type_strategy_fraction,
+        CoreBlock.AUTHORITY: authority_fraction,
+        CoreBlock.DIAGNOSTIC_CENTERS: centers_fraction,
+        CoreBlock.PROFILE: profile_fraction,
+    }
+    return tuple(
+        CoreBlockEvaluation(
+            block=block,
+            availability=(
+                CoreBlockAvailability.REPORTABLE
+                if fractions[block] is not None
+                else CoreBlockAvailability.UNREPORTABLE
+            ),
+            earned_fraction=fractions[block],
+        )
+        for block in CoreBlock
+    )
 
 
 def _merge_structural_dependency_components(

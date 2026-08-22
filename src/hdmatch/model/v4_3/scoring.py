@@ -267,19 +267,35 @@ def _score_cluster(
             item.pathway_id,
         ),
     )
-    # The dependency-controlled positive-evidence winner is also the observation
-    # used in the DetailedSupport numerator and denominator.  Selecting a second
-    # support-only winner would let one cluster borrow confidence from one
-    # observation and support from another.
+    # Positive evidence and DetailedSupport stay separate when prevalence is
+    # legally p=1. A supported pathway then has zero rarity bits but must still
+    # beat an unsupported higher-confidence paraphrase for support. Within the
+    # supported set, use one pathway for both numerator and denominator.
     positive_winner = evidence_winner if evidence_winner.evidence_rubric_bits > 0.0 else None
-    support_winner = positive_winner or min(
-        scored,
-        key=lambda item: (
-            -item.effective_confidence,
-            -item.pathway_support,
-            item.observation_id,
-            item.pathway_id,
-        ),
+    supported = tuple(
+        item
+        for item in scored
+        if item.pathway_support > 0.0 and item.effective_confidence > 0.0
+    )
+    support_winner = positive_winner or (
+        min(
+            supported,
+            key=lambda item: (
+                -item.pathway_support,
+                -item.effective_confidence,
+                item.observation_id,
+                item.pathway_id,
+            ),
+        )
+        if supported
+        else min(
+            scored,
+            key=lambda item: (
+                -item.effective_confidence,
+                item.observation_id,
+                item.pathway_id,
+            ),
+        )
     )
     contradiction_winner = min(
         scored,

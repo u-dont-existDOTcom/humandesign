@@ -40,7 +40,8 @@ def compile_mapping_library_v2(source: MappingLibrarySourceV2) -> MappingLibrary
                 for rule in compiled_rules
                 for pathway in _compiled_pathways(rule)
                 for feature_id in pathway.required_feature_ids
-            },
+            }
+            | set(source.core_architecture_target.required_feature_ids),
             key=lambda item: item.value,
         )
     )
@@ -63,9 +64,11 @@ def compile_mapping_library_v2(source: MappingLibrarySourceV2) -> MappingLibrary
         source_library_sha256=source.sha256(),
         behavioral_target_source_id=source.behavioral_target_source_id,
         method_source_ids=source.method_source_ids,
+        response_source_mode=source.response_source_mode,
         question_bank_source_id=source.question_bank_source_id,
         source_artifacts=source.source_artifacts,
         constants=source.constants,
+        core_architecture_target=source.core_architecture_target,
         declared_frozen_rule_ids=source.declared_frozen_rule_ids,
         declared_observation_ids=source.declared_observation_ids,
         required_feature_registry=registry,

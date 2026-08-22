@@ -11,6 +11,7 @@ from typing import Any, cast
 import pytest
 from pydantic import ValidationError
 
+import hdmatch.model.v4_3.integration as v43_integration
 from hdmatch.century_cache.models import CenturyStateRecord, FeatureValue
 from hdmatch.chart.ephemeris import CelestialBody
 from hdmatch.chart.feature_registry import FeatureId
@@ -19,7 +20,13 @@ from hdmatch.model.mapping_library import (
     DirectnessClass,
     StructuralClass,
 )
-from hdmatch.model.v4_3.integration import V43ObservedResponse, evaluate_mapping_library_v2
+from hdmatch.model.v4_3.integration import (
+    CanonicalV43ScoringSession,
+    V43ObservedResponse,
+    evaluate_mapping_library_v2,
+    mapping_prevalence_parent_hierarchy_sha256,
+    mapping_prevalence_plan_sha256,
+)
 from hdmatch.model.v4_3.scoring import score_v4_3
 from hdmatch.model.v4_3_mapping import (
     ContradictionModeV2,
@@ -51,25 +58,25 @@ from hdmatch.model.v4_3_profile_mapping import (
     verify_tracked_profile_mapping_artifacts,
     write_profile_mapping_artifacts_new,
 )
-from hdmatch.util import sha256_file
+from hdmatch.util import sha256_file, sha256_json
 
 ROOT = Path(__file__).resolve().parents[2]
 
 GOLDEN_SHA256 = {
     BEST_CURRENT_COMPILED_PATH: (
-        "a8365f66655e81ce980bcac047b3f264cdecb7ea27e009e5515682c5f7261a8d"
+        "3c3a0ae72f336c623a058f9d1188f27d2115f4e04bfbfed1a37c5b19180e071c"
     ),
     BEST_CURRENT_SOURCE_PATH: (
-        "975e147fa959b53b69f761746f126047d7266de5112d939035e47be6e9dab156"
+        "6e2b4317f25f49995e24afc920442de66916f3e91846517793b0abd616a58439"
     ),
     LESS_CONTAMINATED_COMPILED_PATH: (
-        "aedad2d7de2db35410ec6de246b5070f341dfd8b20ffb079bbb74cfde17f03fe"
+        "75f43809abed11bd381fa1c17ac17288d511f155672f0dcc652606a167f4b53b"
     ),
     LESS_CONTAMINATED_SOURCE_PATH: (
-        "4e3dfde16d16e1b923772cfde33b79366d2a0c18cd191226e8a6cd9dc13404f0"
+        "3a380b0de83965e3c46099909f7b5e8d403b47d50e26632ac5bf854fa69d2e05"
     ),
     MIGRATION_RECEIPT_PATH: (
-        "4c9414b7dca4f705d29dde226fcbe100b7046232e7d260ce424b8d07bd22f509"
+        "01918c7457871bf85412e46ca3fde49ae999bf92bbf9ad9fc5c216890d407d72"
     ),
 }
 POST_SELECTION_IDS = {"DMARS_61_DEVELOPMENT", "PMOON_24_DRIVE"}
@@ -132,13 +139,66 @@ class _NoEstimatePrevalence:
         raise AssertionError("unknown responses must not request prevalence estimates")
 
 
-def _unknown_candidate(library: MappingLibraryV2) -> CenturyStateRecord:
+class _UnitEstimatePrevalence(_NoEstimatePrevalence):
+    def estimate(self, anchor_id: str, candidate_context: object) -> object:
+        del candidate_context
+        return SimpleNamespace(
+            anchor_id=anchor_id,
+            artifact_sha256=self.provenance.artifact_sha256,
+            plan_sha256=self.provenance.plan_sha256,
+            mapping_library_sha256=self.provenance.mapping_library_sha256,
+            mapping_prevalence_plan_sha256=(
+                self.provenance.mapping_prevalence_plan_sha256
+            ),
+            required_feature_registry_sha256=(
+                self.provenance.required_feature_registry_sha256
+            ),
+            cache_manifest_sha256=self.provenance.cache_manifest_sha256,
+            prevalence=1.0,
+            numerator_duration_microseconds=1,
+            denominator_duration_microseconds=1,
+            universe_sha256=self.provenance.universe_sha256,
+            policy_version=self.provenance.policy_version,
+            parent_hierarchy_sha256=self.provenance.parent_hierarchy_sha256,
+            selected_level_id="root",
+            backoff_ordinal=0,
+            duration_weighted=True,
+            conditional=True,
+            exact_stable_intervals=True,
+            source_scope="declared-global-utc-universe",
+        )
+
+
+def _unknown_candidate(
+    library: MappingLibraryV2,
+    *,
+    candidate_type: str = "projector",
+    candidate_strategy: str = "wait_for_invitation",
+    candidate_authority: str = "splenic",
+    defined_centers: frozenset[str] = frozenset({"g", "heart_ego", "spleen"}),
+    candidate_profile: str = "2/4",
+) -> CenturyStateRecord:
     start = datetime(2000, 1, 1, tzinfo=UTC)
+    all_centers = {
+        "ajna",
+        "g",
+        "head",
+        "heart_ego",
+        "root",
+        "sacral",
+        "solar_plexus",
+        "spleen",
+        "throat",
+    }
     feature_values: dict[FeatureId, object] = {
-        FeatureId.TYPE: "projector",
-        FeatureId.AUTHORITY: "splenic",
-        FeatureId.CENTERS: {"defined": [], "undefined": []},
-        FeatureId.PROFILE: "2/4",
+        FeatureId.TYPE: candidate_type,
+        FeatureId.STRATEGY: candidate_strategy,
+        FeatureId.AUTHORITY: candidate_authority,
+        FeatureId.CENTERS: {
+            "defined": sorted(defined_centers),
+            "undefined": sorted(all_centers - defined_centers),
+        },
+        FeatureId.PROFILE: candidate_profile,
         FeatureId.COMPLETE_CHANNELS: [],
         FeatureId.ACTIVE_GATES: [],
         FeatureId.HANGING_GATES: [],
@@ -148,7 +208,10 @@ def _unknown_candidate(library: MappingLibraryV2) -> CenturyStateRecord:
         FeatureId.ACTIVATION_SIDE: [],
     }
     return CenturyStateRecord(
-        state_id="population-adapter-test",
+        state_id=(
+            f"population-adapter-{candidate_type}-{candidate_strategy}-"
+            f"{candidate_authority}-{candidate_profile}"
+        ),
         utc_start=start,
         utc_end=start + timedelta(seconds=1),
         duration_seconds=1.0,
@@ -175,6 +238,16 @@ def _json_object(path: Path) -> dict[str, Any]:
     value = json.loads(path.read_text(encoding="utf-8"))
     assert isinstance(value, dict)
     return cast(dict[str, Any], value)
+
+
+def _unknown_responses(library: MappingLibraryV2) -> tuple[V43ObservedResponse, ...]:
+    return tuple(
+        V43ObservedResponse(
+            observation_id=rule.observation_id,
+            response_token="unknown",
+        )
+        for rule in library.rules
+    )
 
 
 def _mapping_records() -> dict[str, dict[str, Any]]:
@@ -245,6 +318,111 @@ def test_both_variants_parse_and_recompile_exactly() -> None:
         )
 
 
+def test_actual_tracked_direct_target_artifact_opens_canonical_session(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    library = load_mapping_library_v2(ROOT / LESS_CONTAMINATED_COMPILED_PATH)
+    provider = _NoEstimatePrevalence(library)
+    manifest_hash = "c" * 64
+    lock_hash = "d" * 64
+    build_plan_hash = "e" * 64
+    universe_hash = "f" * 64
+    reconciliation_hash = "1" * 64
+    engine_hash = "2" * 64
+    ephemeris_hash = "3" * 64
+    semantic_hash = "4" * 64
+    physical_hash = "5" * 64
+    provider.provenance.cache_manifest_sha256 = manifest_hash
+    provider.provenance.cache_trust_lock_sha256 = lock_hash
+    provider.provenance.cache_build_plan_sha256 = build_plan_hash
+    provider.provenance.universe_sha256 = universe_hash
+    provider.provenance.reconciliation_aggregate_sha256 = reconciliation_hash
+    provider.provenance.engine_validation_sha256 = engine_hash
+    provider.provenance.ephemeris_file_set_sha256 = ephemeris_hash
+    provider.provenance.semantic_feature_registry_sha256 = semantic_hash
+    provider.provenance.physical_feature_registry_sha256 = physical_hash
+    provider.provenance.parent_hierarchy_sha256 = (
+        mapping_prevalence_parent_hierarchy_sha256(library)
+    )
+    provider.provenance.mapping_prevalence_plan_sha256 = (
+        mapping_prevalence_plan_sha256(library)
+    )
+    engine = SimpleNamespace(
+        ephemeris_requested="SWIEPH",
+        ephemeris_returned="SWIEPH",
+        engine_validation_sha256=engine_hash,
+        chart_engine_version="test-swisseph",
+        ephemeris_provenance=SimpleNamespace(
+            ephemeris_file_set_sha256=ephemeris_hash
+        ),
+    )
+    manifest = SimpleNamespace(
+        feature_vector_schema_version="chart-feature-vector-v2",
+        semantic_feature_registry_sha256=semantic_hash,
+        feature_registry_sha256=physical_hash,
+        feature_registry=tuple(
+            SimpleNamespace(feature_id=item)
+            for item in library.required_feature_registry.feature_ids
+        ),
+        build_plan_sha256=build_plan_hash,
+        logical_universe_sha256=universe_hash,
+        reconciliation_aggregate_sha256=reconciliation_hash,
+        boundary_policy_version="exact-boundary-test",
+        engine=engine,
+        node_convention="true",
+        mandala_mapping_sha256="6" * 64,
+        bodygraph_mapping_sha256="7" * 64,
+        utc_start=datetime(2000, 1, 1, tzinfo=UTC),
+        utc_end_exclusive=datetime(2000, 1, 2, tzinfo=UTC),
+        interval_count=1,
+    )
+    cache = SimpleNamespace(
+        manifest=manifest,
+        manifest_sha256=manifest_hash,
+        manifest_path=Path("/verified/manifest.json"),
+    )
+    build_spec_payload = {"frozen": "tracked-direct-target-test"}
+    lock = SimpleNamespace(
+        manifest_sha256=manifest_hash,
+        build_spec=SimpleNamespace(model_dump=lambda mode: build_spec_payload),
+        build_spec_sha256=sha256_json(build_spec_payload),
+    )
+    trust_path = Path("/verified/trust-lock.json")
+    monkeypatch.setattr(
+        v43_integration,
+        "sha256_file",
+        lambda path: lock_hash if Path(path) == trust_path else manifest_hash,
+    )
+    monkeypatch.setattr(
+        v43_integration,
+        "load_century_cache_trust_lock",
+        lambda path: lock,
+    )
+    monkeypatch.setattr(
+        v43_integration,
+        "verify_century_cache_against_trust_lock",
+        lambda cache_directory, trust_lock_path: cache,
+    )
+
+    session = CanonicalV43ScoringSession.open(
+        mapping_library=library,
+        cache_directory="/verified/cache",
+        trust_lock_path=trust_path,
+        prevalence=provider,
+    )
+
+    target_source = next(
+        item
+        for item in library.source_artifacts
+        if item.source_id == library.behavioral_target_source_id
+    )
+    assert session.bindings.response_source_mode.value == "direct_behavioral_target"
+    assert session.bindings.response_source_id == library.behavioral_target_source_id
+    assert session.bindings.response_source_sha256 == target_source.sha256
+    assert session.bindings.behavioral_target_sha256 == target_source.sha256
+    assert session.bindings.question_bank_sha256 is None
+
+
 @pytest.mark.parametrize(
     "compiled_path",
     (LESS_CONTAMINATED_COMPILED_PATH, BEST_CURRENT_COMPILED_PATH),
@@ -254,13 +432,7 @@ def test_both_variants_adapt_and_score_without_structural_reuse(
 ) -> None:
     library = load_mapping_library_v2(ROOT / compiled_path)
     candidate = _unknown_candidate(library)
-    responses = tuple(
-        V43ObservedResponse(
-            observation_id=rule.observation_id,
-            response_token="unknown",
-        )
-        for rule in library.rules
-    )
+    responses = _unknown_responses(library)
 
     adapted = evaluate_mapping_library_v2(library, candidate, responses)
     score = score_v4_3(adapted, _NoEstimatePrevalence(library))
@@ -275,6 +447,91 @@ def test_both_variants_adapt_and_score_without_structural_reuse(
     assert score.evidence_rubric_bits == 0.0
     assert score.contradiction_rubric_bits == 0.0
     assert score.detailed_support == 0.0
+
+
+@pytest.mark.parametrize(
+    ("candidate_overrides", "expected_fractions", "expected_core_fit"),
+    (
+        ({}, (1.0, 1.0, 1.0, 1.0), 100.0),
+        (
+            {"candidate_type": "generator", "candidate_strategy": "wait_to_respond"},
+            (0.0, 1.0, 1.0, 1.0),
+            70.0,
+        ),
+        (
+            {"candidate_strategy": "inform"},
+            (0.0, 1.0, 1.0, 1.0),
+            70.0,
+        ),
+        (
+            {"candidate_authority": "emotional_solar_plexus"},
+            (1.0, 0.0, 1.0, 1.0),
+            70.0,
+        ),
+        (
+            {"defined_centers": frozenset({"g", "heart_ego", "root", "spleen"})},
+            (1.0, 1.0, 5.0 / 6.0, 1.0),
+            100.0 * (30.0 + 30.0 + 25.0 * 5.0 / 6.0 + 15.0) / 100.0,
+        ),
+        ({"candidate_profile": "5/1"}, (1.0, 1.0, 1.0, 0.0), 85.0),
+        ({"candidate_profile": "1/5"}, (1.0, 1.0, 1.0, 0.0), 85.0),
+        ({"candidate_profile": "2/5"}, (1.0, 1.0, 1.0, 0.5), 92.5),
+        ({"candidate_profile": "5/4"}, (1.0, 1.0, 1.0, 0.5), 92.5),
+        ({"candidate_profile": "4/2"}, (1.0, 1.0, 1.0, 1.0 / 3.0), 90.0),
+    ),
+)
+def test_actual_canonical_corefit_uses_exact_architecture_not_detailed_rules(
+    candidate_overrides: dict[str, object],
+    expected_fractions: tuple[float, float, float, float],
+    expected_core_fit: float,
+) -> None:
+    library = load_mapping_library_v2(ROOT / LESS_CONTAMINATED_COMPILED_PATH)
+    candidate = _unknown_candidate(library, **candidate_overrides)  # type: ignore[arg-type]
+    adapted = evaluate_mapping_library_v2(
+        library,
+        candidate,
+        _unknown_responses(library),
+    )
+    score = score_v4_3(adapted, _NoEstimatePrevalence(library))
+
+    assert tuple(item.earned_fraction for item in adapted.core_blocks) == pytest.approx(
+        expected_fractions
+    )
+    assert all(item.availability.value == "reportable" for item in adapted.core_blocks)
+    assert score.core_fit == pytest.approx(expected_core_fit)
+    assert score.detailed_support == 0.0
+
+
+def test_line_five_detailed_support_cannot_leak_into_profile_corefit() -> None:
+    library = load_mapping_library_v2(ROOT / LESS_CONTAMINATED_COMPILED_PATH)
+    responses = list(_unknown_responses(library))
+    line_five = next(
+        rule
+        for rule in library.rules
+        if rule.observation_id == "OBS-PROFILE-LINE5-PROJECTION"
+    )
+    responses = [
+        (
+            V43ObservedResponse(
+                observation_id=item.observation_id,
+                response_token=line_five.response_rule.canonical_response_token,
+            )
+            if item.observation_id == line_five.observation_id
+            else item
+        )
+        for item in responses
+    ]
+    adapted = evaluate_mapping_library_v2(
+        library,
+        _unknown_candidate(library, candidate_profile="5/1"),
+        tuple(responses),
+    )
+    score = score_v4_3(adapted, _UnitEstimatePrevalence(library))
+
+    profile = next(item for item in adapted.core_blocks if item.block.value == "profile")
+    assert profile.earned_fraction == 0.0
+    assert score.core_fit == pytest.approx(85.0)
+    assert score.detailed_support > 0.0
 
 
 def test_less_contaminated_excludes_only_the_two_post_selection_carriers() -> None:
