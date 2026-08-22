@@ -85,7 +85,9 @@ class CenturyStateRecord(FrozenModel):
     utc_start: datetime
     utc_end: datetime
     duration_seconds: float = Field(gt=0.0)
+    representative_utc: datetime
     design_timestamp: datetime
+    chart_features_sha256: str = Field(pattern=SHA256_PATTERN)
     feature_vector_schema_version: str = Field(min_length=1)
     feature_registry_sha256: str = Field(pattern=SHA256_PATTERN)
     astronomy_engine_version: str = Field(min_length=1)
@@ -93,9 +95,11 @@ class CenturyStateRecord(FrozenModel):
     node_convention: Literal["true"]
     mandala_mapping_version: str = Field(min_length=1)
     mandala_mapping_sha256: str = Field(pattern=SHA256_PATTERN)
+    bodygraph_mapping_sha256: str = Field(pattern=SHA256_PATTERN)
+    boundary_events: tuple[str, ...] = ()
     feature_values: tuple[FeatureValue, ...] = Field(min_length=1)
 
-    @field_validator("utc_start", "utc_end", "design_timestamp")
+    @field_validator("utc_start", "utc_end", "representative_utc", "design_timestamp")
     @classmethod
     def require_utc(cls, value: datetime) -> datetime:
         if value.tzinfo is None or value.utcoffset() is None:
@@ -114,6 +118,15 @@ class CenturyStateRecord(FrozenModel):
             raise ValueError("century-cache row feature IDs must be canonically sorted")
         return values
 
+    @field_validator("boundary_events")
+    @classmethod
+    def require_canonical_boundary_events(cls, values: tuple[str, ...]) -> tuple[str, ...]:
+        if any(not value for value in values):
+            raise ValueError("boundary-event identifiers must not be empty")
+        if values != tuple(sorted(set(values))):
+            raise ValueError("boundary events must be sorted and unique")
+        return values
+
     @model_validator(mode="after")
     def require_exact_interval(self) -> CenturyStateRecord:
         if self.utc_end <= self.utc_start:
@@ -121,6 +134,8 @@ class CenturyStateRecord(FrozenModel):
         actual = (self.utc_end - self.utc_start).total_seconds()
         if abs(actual - self.duration_seconds) > 1e-6:
             raise ValueError("duration_seconds does not equal the exact interval duration")
+        if not self.utc_start <= self.representative_utc < self.utc_end:
+            raise ValueError("representative_utc must lie inside [utc_start, utc_end)")
         if self.design_timestamp >= self.utc_start:
             raise ValueError("Design timestamp must precede the Personality interval")
         return self
@@ -213,6 +228,7 @@ class CenturyCacheBuildSpec(FrozenModel):
     node_convention: Literal["true"]
     mandala_mapping_version: str = Field(min_length=1)
     mandala_mapping_sha256: str = Field(pattern=SHA256_PATTERN)
+    bodygraph_mapping_sha256: str = Field(pattern=SHA256_PATTERN)
     boundary_policy_version: str = Field(min_length=1)
     design_root_time_tolerance_seconds: float = Field(gt=0.0)
     design_root_arc_tolerance_degrees: float = Field(gt=0.0)
@@ -287,6 +303,7 @@ class CenturyCacheManifest(FrozenModel):
     node_convention: Literal["true"]
     mandala_mapping_version: str = Field(min_length=1)
     mandala_mapping_sha256: str = Field(pattern=SHA256_PATTERN)
+    bodygraph_mapping_sha256: str = Field(pattern=SHA256_PATTERN)
     boundary_policy_version: str = Field(min_length=1)
     design_root_time_tolerance_seconds: float = Field(gt=0.0)
     design_root_arc_tolerance_degrees: float = Field(gt=0.0)
@@ -348,6 +365,7 @@ class CenturyCacheExpectations(FrozenModel):
     ephemeris_source_manifest_sha256: str = Field(pattern=SHA256_PATTERN)
     ephemeris_file_set_sha256: str = Field(pattern=SHA256_PATTERN)
     mandala_mapping_sha256: str = Field(pattern=SHA256_PATTERN)
+    bodygraph_mapping_sha256: str = Field(pattern=SHA256_PATTERN)
     boundary_policy_version: str = Field(min_length=1)
     design_root_time_tolerance_seconds: float = Field(gt=0.0)
     design_root_arc_tolerance_degrees: float = Field(gt=0.0)
@@ -414,7 +432,9 @@ _FIXED_PARQUET_COLUMNS: tuple[tuple[str, str], ...] = (
     ("utc_start", "timestamp_us_utc"),
     ("utc_end", "timestamp_us_utc"),
     ("duration_seconds", "float64"),
+    ("representative_utc", "timestamp_us_utc"),
     ("design_timestamp", "timestamp_us_utc"),
+    ("chart_features_sha256", "string"),
     ("feature_vector_schema_version", "string"),
     ("feature_registry_sha256", "string"),
     ("astronomy_engine_version", "string"),
@@ -422,6 +442,8 @@ _FIXED_PARQUET_COLUMNS: tuple[tuple[str, str], ...] = (
     ("node_convention", "string"),
     ("mandala_mapping_version", "string"),
     ("mandala_mapping_sha256", "string"),
+    ("bodygraph_mapping_sha256", "string"),
+    ("boundary_events", "string_list"),
 )
 
 

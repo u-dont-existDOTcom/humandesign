@@ -188,6 +188,12 @@ receipt, ephemeris source manifest and file set, Mandala mapping, Design-root
 tolerances, parity report, boundary-audit report, and boundary-policy version. A
 `pass` label cannot substitute for the expected evidence-artifact hash.
 
+Interval identity remains fixed metadata rather than behavioral capability. Every
+row retains a representative UTC instant inside its half-open interval, the chart
+feature hash, the Bodygraph mapping hash, and canonically sorted exact boundary
+events. These fields round-trip as typed Parquet columns and participate in the
+logical-universe hash.
+
 ## Anti-simplification compliance gate
 
 Create one canonical compliance function/test that asserts:
