@@ -3,12 +3,26 @@ from __future__ import annotations
 import json
 import os
 from collections.abc import Iterator
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from typing import Any
 
 import pytest
 
+from hdmatch.century_cache import (
+    CACHEABLE_M0_M2_FEATURE_COLUMNS,
+    CenturyCacheBoundaryAuditReport,
+    CenturyCacheBuildSpec,
+    CenturyCacheEngineProvenance,
+    CenturyCacheEvidenceInputs,
+    CenturyCacheParityReport,
+    CenturyCacheShardInput,
+    assemble_verified_exact_shard_set,
+    build_verified_exact_state_batch,
+    feature_registry_sha256,
+    iter_verified_century_cache_rows,
+    write_century_cache_explicit,
+)
 from hdmatch.chart.calculator import calculate_chart
 from hdmatch.chart.ephemeris import (
     DEFAULT_ACTIVATION_BODIES,
@@ -19,6 +33,8 @@ from hdmatch.chart.ephemeris import (
 )
 from hdmatch.chart.rave_mandala import longitude_to_gate_line
 from hdmatch.cli import main
+from hdmatch.experiments.canonical import sha256_file, write_new_canonical_json
+from hdmatch.provenance.swisseph_files import verify_ephemeris_directory
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 GOLDEN_PATH = Path(__file__).with_name("fixtures") / "swieph_phase0_golden_v1.json"
@@ -182,6 +198,179 @@ def test_joel_verified_natal_baseline_and_exact_design_root(
     assert {item.value for item in first.bodygraph.defined_centers} == {
         expected_centers[item] for item in baseline["defined_centers"]
     }
+
+
+def test_real_swieph_bounded_exact_cache_writes_and_reverifies(
+    production_provider: SwissEphemerisProvider,
+    tmp_path: Path,
+) -> None:
+    """Exercise exact boundaries -> M2 rows -> proof-bound Parquet -> verifier.
+
+    This deliberately covers six hours, not the century.  It is the Phase-1
+    production-engine proof fixture and must never be presented as the canonical
+    century cache or as a behavioral ranking.
+    """
+
+    start = datetime(1985, 1, 29, 10, tzinfo=UTC)
+    end = start + timedelta(hours=6)
+    exact_batch = build_verified_exact_state_batch(
+        production_provider,
+        start,
+        end,
+    )
+    exact_shard_set = assemble_verified_exact_shard_set((exact_batch,))
+    assert len(exact_batch.rows) > 1
+    assert exact_batch.provenance.boundary_event_count > 0
+
+    golden = _load_json(GOLDEN_PATH)
+    returned_flags: set[int] = set()
+    comparison_count = 0
+    max_error = 0.0
+    for sample in golden["representative_positions"]:
+        instant = _parse_utc(sample["utc"])
+        for body in DEFAULT_ACTIVATION_BODIES:
+            calculation = production_provider.position_with_provenance(body, instant)
+            expected = sample["positions"][body.value]
+            error = abs(calculation.position.longitude - float(expected["longitude"]))
+            max_error = max(max_error, error)
+            comparison_count += 1
+            returned_flags.add(calculation.provenance.returned_flags)
+            gate_line = longitude_to_gate_line(calculation.position.longitude)
+            assert (gate_line.gate, gate_line.line) == (
+                expected["gate"],
+                expected["line"],
+            )
+
+    ephemeris_directory = Path(production_provider.metadata.files[0].path).parent
+    source_manifest_path = PROJECT_ROOT / "data" / "ephemeris" / "manifest.json"
+    ephemeris_provenance = verify_ephemeris_directory(
+        source_manifest_path=source_manifest_path,
+        ephemeris_directory=ephemeris_directory,
+    )
+    engine_validation_path = (
+        PROJECT_ROOT
+        / "reports"
+        / "v4_3_migration"
+        / "phase0_engine_validation.json"
+    )
+    engine_validation_sha256 = sha256_file(engine_validation_path)
+    reference_locator = "tests/golden/fixtures/swieph_phase0_golden_v1.json"
+    reference_sha256 = sha256_file(GOLDEN_PATH)
+
+    parity = CenturyCacheParityReport(
+        schema_version="century-cache-parity-report-v1",
+        validation_status="pass",
+        engine_validation_sha256=engine_validation_sha256,
+        ephemeris_file_set_sha256=ephemeris_provenance.ephemeris_file_set_sha256,
+        feature_vector_schema_version=(
+            exact_shard_set.provenance.feature_vector_schema_version
+        ),
+        utc_start=start,
+        utc_end_exclusive=end,
+        reference_source_locator=reference_locator,
+        reference_source_sha256=reference_sha256,
+        comparison_count=comparison_count,
+        mismatch_count=0,
+        tolerance_degrees=1e-9,
+        max_abs_longitude_error_degrees=max_error,
+    )
+    parity_path = tmp_path / "parity-report.json"
+    write_new_canonical_json(parity_path, parity)
+
+    exact = exact_shard_set.provenance
+    boundary_audit = CenturyCacheBoundaryAuditReport(
+        schema_version="century-cache-boundary-audit-report-v1",
+        validation_status="pass",
+        engine_validation_sha256=engine_validation_sha256,
+        logical_universe_sha256=exact.logical_universe_sha256,
+        semantic_feature_registry_sha256=exact.semantic_feature_registry_sha256,
+        feature_registry_sha256=exact.feature_registry_sha256,
+        mandala_mapping_sha256=exact.mandala_mapping_sha256,
+        bodygraph_mapping_sha256=exact.bodygraph_mapping_sha256,
+        boundary_policy_version=exact.boundary_policy_version,
+        design_root_time_tolerance_seconds=exact.design_root_time_tolerance_seconds,
+        design_root_arc_tolerance_degrees=exact.design_root_arc_tolerance_degrees,
+        utc_start=start,
+        utc_end_exclusive=end,
+        interval_count=exact.interval_count,
+        audited_boundary_event_count=exact.boundary_event_count,
+        missing_boundary_count=0,
+        gap_count=0,
+        overlap_count=0,
+        maximality_violation_count=0,
+    )
+    boundary_audit_path = tmp_path / "boundary-audit-report.json"
+    write_new_canonical_json(boundary_audit_path, boundary_audit)
+
+    metadata = production_provider.metadata
+    assert metadata.requested_flags is not None
+    assert metadata.ephemeris_mask is not None
+    engine = CenturyCacheEngineProvenance(
+        provider="swiss_ephemeris_local_files",
+        chart_engine_version=exact.chart_engine_version,
+        swiss_library_version=metadata.library_version,
+        engine_validation_sha256=engine_validation_sha256,
+        ephemeris_provenance=ephemeris_provenance,
+        ephemeris_requested="SWIEPH",
+        ephemeris_returned="SWIEPH",
+        requested_flags=metadata.requested_flags,
+        returned_flags_observed=tuple(sorted(returned_flags)),
+        ephemeris_mask=metadata.ephemeris_mask,
+        swieph_flag=metadata.requested_flags & metadata.ephemeris_mask,
+    )
+    spec = CenturyCacheBuildSpec(
+        feature_vector_schema_version=exact.feature_vector_schema_version,
+        utc_start=start,
+        utc_end_exclusive=end,
+        feature_registry=CACHEABLE_M0_M2_FEATURE_COLUMNS,
+        semantic_feature_registry_sha256=exact.semantic_feature_registry_sha256,
+        feature_registry_sha256=feature_registry_sha256(
+            CACHEABLE_M0_M2_FEATURE_COLUMNS
+        ),
+        required_feature_coverage=1.0,
+        calculation_tier="M2",
+        exact_intervals=True,
+        engine=engine,
+        node_convention="true",
+        mandala_mapping_version=exact.mandala_mapping_version,
+        mandala_mapping_sha256=exact.mandala_mapping_sha256,
+        bodygraph_mapping_sha256=exact.bodygraph_mapping_sha256,
+        boundary_policy_version=exact.boundary_policy_version,
+        design_root_time_tolerance_seconds=exact.design_root_time_tolerance_seconds,
+        design_root_arc_tolerance_degrees=exact.design_root_arc_tolerance_degrees,
+        parity_status="pass",
+        parity_report_sha256=sha256_file(parity_path),
+        parity_reference_source_locator=reference_locator,
+        parity_reference_source_sha256=reference_sha256,
+        boundary_audit_status="pass",
+        boundary_audit_report_sha256=sha256_file(boundary_audit_path),
+        generation_commit="4dce7708afefdaaff4660f44298880fe8ba6b849",
+        created_at_utc=datetime(2026, 8, 22, tzinfo=UTC),
+    )
+    verified = write_century_cache_explicit(
+        tmp_path / "bounded-cache",
+        spec=spec,
+        exact_shard_set=exact_shard_set,
+        shards=(
+            CenturyCacheShardInput(
+                filename="states-bounded.parquet.zst",
+                rows=exact_batch.rows,
+            ),
+        ),
+        evidence=CenturyCacheEvidenceInputs(
+            engine_validation_path=engine_validation_path,
+            parity_report_path=parity_path,
+            boundary_audit_report_path=boundary_audit_path,
+            parity_reference_source_path=GOLDEN_PATH,
+            ephemeris_source_manifest_path=source_manifest_path,
+            ephemeris_directory=ephemeris_directory,
+        ),
+        build_mode="explicit_rebuild",
+    )
+
+    assert verified.required_feature_coverage == 1.0
+    assert tuple(iter_verified_century_cache_rows(verified)) == exact_batch.rows
+    assert verified.manifest.exact_state_provenance == exact
 
 
 def test_validate_engine_cli_writes_path_free_manifest_binding(

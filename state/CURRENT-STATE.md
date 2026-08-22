@@ -8,15 +8,21 @@
   `/tmp/hdmatch-integration` on `codex/harness-integration`.
 - Latest upstream `main` commit merged:
   `c3c0b51ea40346534dc40361ce5f49d651a80cc3`.
-- Current published checkpoint:
-  `2b5c1f80d1ee20f96a5470660e84327f0c767544`.
+- Current integrated exact-origin implementation head:
+  `4dce7708afefdaaff4660f44298880fe8ba6b849`.
+- Current published checkpoint remains:
+  `2b5c1f80d1ee20f96a5470660e84327f0c767544`; the Phase-1 report/test commit
+  and exact-head GitHub CI are pending.
 - Exact-head GitHub Actions are green for both push run `32560209894` and
   pull-request run `32560212364`.
 
 ## Mandatory execution position
 
-Phase 0 is complete. Phase 1 is in progress. No production century-cache build
-and no full-century behavioral ranking have started.
+Phase 0 is complete. Phase 1 implementation, independent review, bounded
+real-SWIEPH proof, and final stable-tree local validation are complete;
+exact-head GitHub CI remains before the Phase-1 checkpoint is published. No
+production century-cache build and no full-century behavioral ranking have
+started.
 
 The mandatory sequence remains:
 
@@ -72,12 +78,43 @@ The earlier Model A 75-case baseline remains the only completed core-only
 baseline: Top-1 `0.453333`, Top-3 `0.746667`, Top-5 `0.826667`, MRR
 `0.625680`. Do not rerun an expensive Model A-only benchmark.
 
-## Current Phase 1 workstreams
+## Phase 1 result
 
-- exact Personality/Design boundary-event enumeration and completeness audit;
-- complete M0-M2 feature registry and deterministic chart-state serialization;
-- typed century-cache manifest/shard/verification contracts exercised only on
-  small fixtures.
+- Exact Personality/Design boundary-event enumeration uses the exact 88-degree
+  Design root and production SWIEPH-only entry points.
+- The complete cacheable M0-M2 registry contains 23 mandatory feature families;
+  its semantic SHA-256 is
+  `6a081572beec6053fb0af94c70ec47c1389b57da65b08a96603e331992eb23e9`.
+- Canonical cache admission now requires factory-minted bounded exact batches
+  and aggregate exact-universe provenance. Arbitrary physical rows cannot emit
+  or open a verified cache.
+- Post-mint provenance, Design-tolerance, overlapping-source, continuity, and
+  maximality mutations fail closed. Independent re-review found no remaining
+  HIGH or MEDIUM issue in this exact-origin gate.
+- A bounded real-SWIEPH six-hour proof produced 9 exact intervals / 9 retained
+  events and logical-universe SHA-256
+  `6d284285408c70ca6ab16e4967016b074fb94ddfa3adc53576d7786dceaad039`,
+  then wrote and independently reverified the evidence-bound Zstandard Parquet
+  cache fixture.
+- Detailed report:
+  `reports/v4_3_migration/phase1_feature_registry_and_cache_contract.md`.
+- Final stable-tree verification: 456 passed, 2 environment-dependent skips;
+  Ruff passed over `src`, `tests`, and `scripts`; strict mypy passed over 103
+  `src/hdmatch` source files.
 
-These workstreams may merge only after focused tests and integration review.
-They are not authorized to generate the century cache or rank candidates.
+## Next exact action: Phase 2 reusable century cache
+
+Implement the resumable cache path before starting the century build:
+
+1. freeze a deterministic build plan and one-year overlapping job ranges;
+2. persist atomic provisional job rows/receipts with all-call SWIEPH audits;
+3. production-replay every persisted job before accepting it for assembly;
+4. reconcile artificial cuts and recompute merged representatives/Design roots;
+5. stream final validation into bounded shards and publish the manifest last;
+6. verify the complete cache against an independent tracked trust lock;
+7. make ordinary global recovery cache-only.
+
+No century computation or ranking is authorized before the bounded multi-job
+replay/reconciliation tests pass. Phase 3 still must bridge V4.3 selectors to
+the exact M0-M2 cache vector and enforce mapping-derived 100% feature coverage
+before any V4.3-compliant ranking.
