@@ -37,6 +37,7 @@ from hdmatch.experiments.canonical import (
     sha256_json,
     write_new_canonical_json,
 )
+from hdmatch.experiments.manifest import git_revision
 from hdmatch.provenance.swisseph_files import (
     REQUIRED_EPHEMERIS_FILES,
     VerifiedEphemerisProvenance,
@@ -67,6 +68,7 @@ CANONICAL_CENTURY_START_UTC = datetime(1926, 8, 22, tzinfo=UTC)
 CANONICAL_CENTURY_END_EXCLUSIVE_UTC = datetime(2026, 8, 23, tzinfo=UTC)
 DEFAULT_DESIGN_ROOT_TIME_TOLERANCE_SECONDS = 0.01
 DEFAULT_DESIGN_ROOT_ARC_TOLERANCE_DEGREES = 1e-8
+_REPOSITORY_ROOT: Final[Path] = Path(__file__).resolve().parents[3]
 
 
 class StagedCenturyBuildError(ValueError):
@@ -873,6 +875,21 @@ def _require_provider_matches_plan(
         raise StagedCenturyBuildError("current solar speed bound differs from the build plan")
 
 
+def _require_source_tree_matches_plan(plan: CenturyBuildPlanV1) -> None:
+    """Bind every producer/replay calculation to the plan's clean source tree."""
+
+    try:
+        commit, dirty = git_revision(_REPOSITORY_ROOT)
+    except RuntimeError as exc:
+        raise StagedCenturyBuildError(
+            "cannot verify the current source tree against the build plan"
+        ) from exc
+    if commit != plan.source_commit or dirty:
+        raise StagedCenturyBuildError(
+            "current clean source tree differs from the immutable build plan"
+        )
+
+
 def certify_swiss_calculation_audit(
     snapshot: SwissCalculationAuditSnapshot,
     *,
@@ -1038,6 +1055,7 @@ def write_staged_exact_state_batch(
     """Atomically write the job artifact, then write its passing receipt last."""
 
     _require_plan_job(plan, job)
+    _require_source_tree_matches_plan(plan)
     _require_provider_matches_plan(provider, plan)
     artifact_path = staged_job_artifact_path(staging_directory, job)
     receipt_path = staged_job_receipt_path(staging_directory, job)
@@ -1168,6 +1186,7 @@ def verify_staged_exact_state_batch(
     """Re-hash/decode and production-replay a staged job before minting proof."""
 
     _require_plan_job(plan, job)
+    _require_source_tree_matches_plan(plan)
     _require_provider_matches_plan(provider, plan)
     receipt_path = staged_job_receipt_path(staging_directory, job)
     receipt = load_staged_exact_state_batch_receipt(receipt_path)

@@ -7,6 +7,7 @@ from pathlib import Path
 import pytest
 from pydantic import ValidationError
 
+from hdmatch.century_cache import staging as staging_module
 from hdmatch.century_cache.chart_adapter import ExactStateBatchError
 from hdmatch.century_cache.reconcile import OverlappingVerifiedExactStateBatch
 from hdmatch.century_cache.staging import (
@@ -41,6 +42,15 @@ SOURCE_COMMIT = "c8f730296ca958e5796f865b84d29cb555ff7a2d"
 ENGINE_RECEIPT_SHA256 = "1" * 64
 PARITY_REPORT_SHA256 = "2" * 64
 PARITY_REFERENCE_SHA256 = "3" * 64
+
+
+@pytest.fixture(autouse=True)
+def _freeze_source_revision(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr(
+        staging_module,
+        "git_revision",
+        lambda _root: (SOURCE_COMMIT, False),
+    )
 
 
 class _AuditedFakeSwiss:
@@ -355,6 +365,37 @@ def test_staged_job_is_receipt_last_and_requires_full_deterministic_replay(
     )
     with pytest.raises(StagedCenturyBuildError, match="receipt hash binding changed"):
         validate_verified_staged_exact_state_batch(verified)
+
+
+@pytest.mark.parametrize(
+    ("observed_commit", "observed_dirty"),
+    [("9" * 40, False), (SOURCE_COMMIT, True)],
+)
+def test_staged_job_rejects_source_tree_different_from_plan_before_generation(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    observed_commit: str,
+    observed_dirty: bool,
+) -> None:
+    provider, provenance, _ = _provider_fixture(tmp_path / "provider")
+    plan = _plan(provider, provenance)
+    staging = tmp_path / "staging"
+    monkeypatch.setattr(
+        staging_module,
+        "git_revision",
+        lambda _root: (observed_commit, observed_dirty),
+    )
+
+    with pytest.raises(StagedCenturyBuildError, match="clean source tree differs"):
+        write_staged_exact_state_batch(
+            plan,
+            plan.jobs[0],
+            provider,
+            staging,
+        )
+
+    assert not staged_job_artifact_path(staging, plan.jobs[0]).exists()
+    assert not staged_job_receipt_path(staging, plan.jobs[0]).exists()
 
 
 def test_replay_rejects_changed_artifact_bytes_before_scoring(tmp_path: Path) -> None:
