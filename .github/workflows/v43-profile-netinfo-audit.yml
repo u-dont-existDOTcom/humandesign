@@ -6,7 +6,9 @@ on:
     paths:
       - 'reference/core/behavioral_target_combined_v3_6.md'
       - 'reference/core/profile_v3_6_v43_mapping_frozen_2026_08_22.json'
+      - 'reference/core/profile_v3_6_v43_mapping_overlay_v2_2026_08_22.json'
       - 'scripts/v43_profile_netinfo_rerun.py'
+      - 'scripts/v43_profile_netinfo_rerun_v2.py'
       - 'scripts/swieph_ab_rerun.py'
       - 'scripts/fetch_swisseph_ephemeris.py'
       - '.github/workflows/v43-profile-netinfo-audit.yml'
@@ -27,11 +29,12 @@ jobs:
         run: python -m pip install 'pyswisseph>=2.10.3.2,<3'
       - name: Fetch pinned Swiss ephemeris files
         run: python scripts/fetch_swisseph_ephemeris.py
-      - name: Run frozen 100-year NetInformation-first audit
+      - name: Run hardened frozen 100-year NetInformation-first audit
         env:
           EPHE_PATH: data/ephemeris
           HD_START: '1926-08-22T05:40:00+00:00'
           HD_END: '2026-08-22T05:40:00+00:00'
           HD_MAPPING: 'reference/core/profile_v3_6_v43_mapping_frozen_2026_08_22.json'
+          HD_MAPPING_OVERLAY: 'reference/core/profile_v3_6_v43_mapping_overlay_v2_2026_08_22.json'
           HD_TARGET: 'reference/core/behavioral_target_combined_v3_6.md'
-        run: python scripts/v43_profile_netinfo_rerun.py
+        run: python scripts/v43_profile_netinfo_rerun_v2.py
