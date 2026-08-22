@@ -65,6 +65,16 @@ target-version = "py311"
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM"]
 
+[tool.ruff.lint.per-file-ignores]
+# The SWIEPH A/B script is an intentionally frozen, compact audit artifact whose
+# exact behavior/hashes are already referenced by the 2026-08-22 audit. Do not
+# auto-format/refactor it merely to satisfy style rules after inspecting results.
+"scripts/swieph_ab_rerun.py" = ["E", "I", "UP"]
+# These one-off frozen audit runners are kept unchanged after the eligible run;
+# only formatting/import-modernization diagnostics are waived.
+"scripts/v43_profile_netinfo_rerun.py" = ["E501", "I001", "UP017"]
+"scripts/v43_profile_netinfo_rerun_v2.py" = ["E501", "I001", "UP017"]
+
 [tool.mypy]
 python_version = "3.11"
 strict = true

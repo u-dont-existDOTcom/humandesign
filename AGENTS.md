@@ -14,7 +14,7 @@ A successful synthetic test does not validate Human Design in humans.
 Read in this order:
 1. `ARCHITECTURE.md`
 2. `reference/core/v4_3_scoring_algorithm.md`
-3. `reference/core/behavioral_target_combined_v3_5.md`
+3. `reference/core/behavioral_target_combined_v3_6.md`
 4. `docs/01_research_design.md`
 5. `docs/02_scoring_and_model_policy.md`
 6. `docs/03_synthetic_validation.md`
@@ -30,8 +30,11 @@ Read in this order:
 16. `docs/13_v4_3_migration_and_century_cache.md`
 17. `docs/14_month_first_blind_validation.md`
 18. `docs/16_ephemeris_bootstrap.md`
+19. `docs/17_v3_6_profile_mapping_coverage_audit.md`
 
-The earlier protocol/scoring files in `reference/core/` remain historical/normative background only where they do not conflict with V4.3. Never silently downgrade to V4.1/V3.2 because the existing implementation is easier.
+The earlier protocol/scoring and behavioral-target files in `reference/core/` remain historical/normative background only where they do not conflict with V4.3/V3.6. Never silently downgrade to V4.1/V3.2 or V3.5 because the existing implementation is easier.
+
+The 2026-08-22 V3.6 one-off NetInformation audit is preserved in `reference/audits/v43_v3_6_netinfo_100y_2026_08_22.md`. It is descriptive development evidence, not untouched human validation, and its observed 2013/1985 ranking MUST NOT be used to retune mappings or weights. Any later model change is a new explicit post-ranking revision.
 
 ## Mandatory broad-search order
 
@@ -78,6 +81,10 @@ If any item is missing, fail closed or label the result honestly as a reduced mo
 - Missing support is not contradiction.
 - Trauma/body-access variables may reduce measurement reliability; they may not turn a mismatch into support.
 - Unknown/context-dependent responses may remain unscored; never force them to one side.
+- Do not repeatedly re-ask established behavioral constructs in new wording and call the result independent evidence.
+- Separate capacity from preferred use when the target explicitly distinguishes them, especially persuasion.
+- Separate workload intensity/duration from energy sustainability; do not force `engaging work sustains` and `extreme overwork depletes` into opposites.
+- Score reported phenomenology rather than requiring a user to self-label an HD construct such as `Splenic`.
 - No medical, legal, financial, or other high-stakes recommendations from Human Design.
 
 ## Implementation principles
