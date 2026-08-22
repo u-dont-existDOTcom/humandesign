@@ -36,6 +36,7 @@ from hdmatch.century_cache import (
     build_verified_exact_state_batch,
     canonical_rows_sha256,
     century_build_plan_sha256,
+    century_build_plan_trust_lock_from_plan,
     century_cache_build_spec_from_plan,
     coerce_century_state_record,
     create_century_build_plan,
@@ -50,6 +51,7 @@ from hdmatch.century_cache import (
     validate_engine_validation_evidence,
     verify_century_cache,
     verify_century_cache_against_trust_lock,
+    write_century_build_plan_trust_lock_new,
     write_century_cache_explicit,
     write_century_cache_trust_lock_new,
     write_noncanonical_century_cache_fixture,
@@ -67,6 +69,7 @@ from hdmatch.experiments.canonical import (
     sha256_json,
     write_new_canonical_json,
 )
+from hdmatch.experiments.manifest import git_revision
 from hdmatch.provenance.swisseph_files import (
     PINNED_UPSTREAM_COMMIT,
     PINNED_UPSTREAM_REPOSITORY,
@@ -75,6 +78,7 @@ from hdmatch.provenance.swisseph_files import (
 )
 
 _HASH = "a" * 64
+_GENERATION_COMMIT = "9eafe5344740cdf24c4796dbcbad8fb4514045ec"
 _ROOT = Path(__file__).resolve().parents[2]
 _START = datetime(2000, 1, 1, 12, tzinfo=UTC)
 _END = _START + timedelta(minutes=1)
@@ -543,7 +547,7 @@ def _stranded_phase2_publication(
         _ephemeris_provenance(),
         utc_start=_START,
         utc_end_exclusive=_END,
-        source_commit="8" * 40,
+        source_commit=_GENERATION_COMMIT,
         source_tree_dirty=False,
         engine_validation_sha256=sha256_file(inputs.engine_validation_path),
         parity_report_sha256=sha256_file(inputs.parity_report_path),
@@ -552,6 +556,14 @@ def _stranded_phase2_publication(
     )
     plan_path = write_new_canonical_json(directory / "plan.json", plan)
     plan_sha256 = century_build_plan_sha256(plan)
+    plan_lock = century_build_plan_trust_lock_from_plan(
+        plan,
+        plan_locator="plan.json",
+    )
+    plan_lock_path = write_century_build_plan_trust_lock_new(
+        directory / "plan-trust-lock.json",
+        plan_lock,
+    )
     source = OverlappingVerifiedExactStateBatch._from_factory_verified_batch_for_test(
         batch=batch,
         core_start_utc=_START,
@@ -596,6 +608,9 @@ def _stranded_phase2_publication(
     verified = publisher.finalize_and_publish(spec=spec, evidence=inputs)
     kwargs: dict[str, object] = {
         "plan_path": plan_path,
+        "plan_trust_lock_path": plan_lock_path,
+        "expected_plan_trust_lock_sha256": sha256_file(plan_lock_path),
+        "plan_repository_root": directory,
         "cache_directory": cache,
         "cache_locator": "data/century_cache/test-v1",
         "trust_lock_path": directory / "trust-lock.json",
@@ -1360,12 +1375,10 @@ def test_stranded_phase2_publication_finalizes_without_job_replay(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
-    kwargs, originally_verified, _specification = _stranded_phase2_publication(tmp_path)
-    monkeypatch.setattr(
-        workflow_module,
-        "_require_current_source_matches_plan",
-        lambda _plan: None,
-    )
+    kwargs, originally_verified, specification = _stranded_phase2_publication(tmp_path)
+    verifier_commit, _verifier_dirty = git_revision(_ROOT)
+    assert specification.generation_commit == _GENERATION_COMMIT
+    assert verifier_commit != specification.generation_commit
 
     def _forbid_replay(*_args: object, **_kwargs: object) -> None:
         raise AssertionError("publication finalization replayed a staged job")
@@ -1385,16 +1398,50 @@ def test_stranded_phase2_publication_finalizes_without_job_replay(
     assert repeated.trust_lock_path.read_bytes() == lock_bytes
 
 
+def test_finalization_rejects_a_plan_at_an_unlocked_path(tmp_path: Path) -> None:
+    kwargs, _verified, _specification = _stranded_phase2_publication(tmp_path)
+    alternate = tmp_path / "caller-selected-plan.json"
+    alternate.write_bytes(Path(kwargs["plan_path"]).read_bytes())  # type: ignore[arg-type]
+    kwargs["plan_path"] = alternate
+
+    with pytest.raises(ValueError, match="independently locked locator"):
+        finalize_century_cache_publication(**kwargs)  # type: ignore[arg-type]
+    assert not Path(kwargs["trust_lock_path"]).exists()  # type: ignore[arg-type]
+
+
+def test_finalization_rejects_coherently_swapped_plan_and_self_assertions(
+    tmp_path: Path,
+) -> None:
+    kwargs, _verified, _specification = _stranded_phase2_publication(tmp_path)
+    plan_path = Path(kwargs["plan_path"])  # type: ignore[arg-type]
+    plan_payload = json.loads(plan_path.read_bytes())
+    plan_payload["source_commit"] = "9" * 40
+    plan_path.write_bytes(canonical_json_bytes(plan_payload))
+    swapped_plan_sha256 = sha256_file(plan_path)
+
+    cache = Path(kwargs["cache_directory"])  # type: ignore[arg-type]
+    manifest_path = cache / "manifest.json"
+    manifest_payload = json.loads(manifest_path.read_bytes())
+    manifest_payload["generation_commit"] = "9" * 40
+    manifest_payload["build_plan_sha256"] = swapped_plan_sha256
+    manifest_path.write_bytes(canonical_json_bytes(manifest_payload))
+
+    evidence_directory = Path(kwargs["build_evidence_directory"])  # type: ignore[arg-type]
+    reconciliation_path = evidence_directory / "reconciliation-aggregate.json"
+    reconciliation_payload = json.loads(reconciliation_path.read_bytes())
+    reconciliation_payload["build_plan_sha256"] = swapped_plan_sha256
+    reconciliation_path.write_bytes(canonical_json_bytes(reconciliation_payload))
+
+    with pytest.raises(ValueError, match="plan SHA-256 differs from its trust lock"):
+        finalize_century_cache_publication(**kwargs)  # type: ignore[arg-type]
+    assert not Path(kwargs["trust_lock_path"]).exists()  # type: ignore[arg-type]
+
+
 def test_finalization_resumes_after_trust_lock_write_failure(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     kwargs, originally_verified, _specification = _stranded_phase2_publication(tmp_path)
-    monkeypatch.setattr(
-        workflow_module,
-        "_require_current_source_matches_plan",
-        lambda _plan: None,
-    )
     real_write = workflow_module.write_century_cache_trust_lock_new
     attempts = 0
 
@@ -1424,11 +1471,6 @@ def test_finalization_retries_trust_lock_parent_directory_fsync(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     kwargs, originally_verified, _specification = _stranded_phase2_publication(tmp_path)
-    monkeypatch.setattr(
-        workflow_module,
-        "_require_current_source_matches_plan",
-        lambda _plan: None,
-    )
     real_fsync = trust_lock_module._fsync_parent_directory
     attempts = 0
 
@@ -1461,11 +1503,6 @@ def test_finalization_resumes_an_identical_lock_after_reopen_failure(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     kwargs, originally_verified, _specification = _stranded_phase2_publication(tmp_path)
-    monkeypatch.setattr(
-        workflow_module,
-        "_require_current_source_matches_plan",
-        lambda _plan: None,
-    )
     real_reopen = workflow_module.verify_century_cache_against_trust_lock
     attempts = 0
 
@@ -1494,14 +1531,8 @@ def test_finalization_resumes_an_identical_lock_after_reopen_failure(
 
 def test_finalization_never_overwrites_a_conflicting_preexisting_lock(
     tmp_path: Path,
-    monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     kwargs, verified, spec = _stranded_phase2_publication(tmp_path)
-    monkeypatch.setattr(
-        workflow_module,
-        "_require_current_source_matches_plan",
-        lambda _plan: None,
-    )
     conflicting = trust_lock_from_verified_cache(
         verified,
         build_spec=spec,
@@ -1526,6 +1557,7 @@ def test_finalization_never_overwrites_a_conflicting_preexisting_lock(
     [
         "manifest",
         "plan",
+        "plan_trust_lock",
         "parity",
         "reconciliation",
         "boundary",
@@ -1535,15 +1567,9 @@ def test_finalization_never_overwrites_a_conflicting_preexisting_lock(
 )
 def test_finalization_rejects_tampered_publication_or_external_evidence(
     tmp_path: Path,
-    monkeypatch: pytest.MonkeyPatch,
     artifact: str,
 ) -> None:
     kwargs, _verified, _specification = _stranded_phase2_publication(tmp_path)
-    monkeypatch.setattr(
-        workflow_module,
-        "_require_current_source_matches_plan",
-        lambda _plan: None,
-    )
     cache = Path(kwargs["cache_directory"])  # type: ignore[arg-type]
     evidence = Path(kwargs["build_evidence_directory"])  # type: ignore[arg-type]
     if artifact == "manifest":
@@ -1553,6 +1579,8 @@ def test_finalization_rejects_tampered_publication_or_external_evidence(
         manifest_path.write_bytes(canonical_json_bytes(payload))
     elif artifact == "plan":
         Path(kwargs["plan_path"]).write_bytes(b"{}")  # type: ignore[arg-type]
+    elif artifact == "plan_trust_lock":
+        Path(kwargs["plan_trust_lock_path"]).write_bytes(b"{}")  # type: ignore[arg-type]
     elif artifact == "parity":
         Path(kwargs["parity_report_path"]).write_bytes(b"{}")  # type: ignore[arg-type]
     elif artifact == "reconciliation":

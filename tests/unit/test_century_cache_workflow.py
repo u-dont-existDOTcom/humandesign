@@ -52,6 +52,7 @@ def test_century_cache_cli_exposes_only_explicit_phase2_commands() -> None:
         action.dest for action in _command_parser("build-century-cache")._actions  # type: ignore[attr-defined]
     }
     assert "plan" in build_destinations
+    assert "plan_trust_lock" in build_destinations
     assert "start" not in build_destinations
     assert "end_exclusive" not in build_destinations
     assert "target" not in build_destinations
@@ -65,6 +66,7 @@ def test_century_cache_cli_exposes_only_explicit_phase2_commands() -> None:
     assert "staging_dir" not in finalization_destinations
     assert {
         "plan",
+        "plan_trust_lock",
         "output",
         "trust_lock",
         "build_evidence_dir",
@@ -95,7 +97,11 @@ def test_all_jobs_reuses_one_verified_provider(
     calls: list[tuple[object, object]] = []
     provider_calls = 0
 
-    monkeypatch.setattr(workflow_module, "load_century_build_plan", lambda _path: plan)
+    monkeypatch.setattr(
+        workflow_module,
+        "verify_century_build_plan_against_trust_lock",
+        lambda *_args, **_kwargs: SimpleNamespace(plan=plan),
+    )
     monkeypatch.setattr(
         workflow_module,
         "_require_current_source_matches_plan",
@@ -117,6 +123,8 @@ def test_all_jobs_reuses_one_verified_provider(
 
     receipts = build_all_missing_century_jobs(
         plan_path="plan.json",
+        plan_trust_lock_path="plan-lock.json",
+        expected_plan_trust_lock_sha256="f" * 64,
         staging_directory="staged",
         ephemeris_directory="ephemeris",
         ephemeris_source_manifest_path="manifest.json",
@@ -132,7 +140,11 @@ def test_resumed_job_rejects_source_mismatch_before_ephemeris_access(
 ) -> None:
     plan = SimpleNamespace(source_commit="a" * 40)
     provider_reached = False
-    monkeypatch.setattr(workflow_module, "load_century_build_plan", lambda _path: plan)
+    monkeypatch.setattr(
+        workflow_module,
+        "verify_century_build_plan_against_trust_lock",
+        lambda *_args, **_kwargs: SimpleNamespace(plan=plan),
+    )
 
     def _reject_source(_plan: object) -> None:
         raise CenturyCacheWorkflowError("source differs")
@@ -152,6 +164,8 @@ def test_resumed_job_rejects_source_mismatch_before_ephemeris_access(
     with pytest.raises(CenturyCacheWorkflowError, match="source differs"):
         workflow_module.build_century_staged_job(
             plan_path="plan.json",
+            plan_trust_lock_path="plan-lock.json",
+            expected_plan_trust_lock_sha256="f" * 64,
             job_id="utc-year-2000",
             staging_directory="staged",
             ephemeris_directory="ephemeris",
@@ -249,11 +263,13 @@ def test_assembly_routes_both_published_states_to_finalization_before_replay(
     )
     monkeypatch.setattr(
         workflow_module,
-        "load_century_build_plan",
+        "verify_century_build_plan_against_trust_lock",
         lambda _path: pytest.fail("published-state routing reached replay setup"),
     )
     kwargs = {
         "plan_path": tmp_path / "plan.json",
+        "plan_trust_lock_path": tmp_path / "plan-lock.json",
+        "expected_plan_trust_lock_sha256": "f" * 64,
         "staging_directory": tmp_path / "staged",
         "cache_directory": cache,
         "cache_locator": "data/century_cache/v1",
@@ -284,13 +300,15 @@ def test_assembly_rejects_orphan_lock_before_plan_or_replay_access(
     lock.write_text("occupied", encoding="utf-8")
     monkeypatch.setattr(
         workflow_module,
-        "load_century_build_plan",
+        "verify_century_build_plan_against_trust_lock",
         lambda _path: pytest.fail("orphan-lock preflight reached plan/replay setup"),
     )
 
     with pytest.raises(CenturyCacheWorkflowError, match="without its cache destination"):
         workflow_module.assemble_and_publish_century_cache(
             plan_path=tmp_path / "plan.json",
+            plan_trust_lock_path=tmp_path / "plan-lock.json",
+            expected_plan_trust_lock_sha256="f" * 64,
             staging_directory=tmp_path / "staged",
             cache_directory=tmp_path / "missing-cache",
             cache_locator="data/century_cache/v1",
@@ -302,6 +320,52 @@ def test_assembly_rejects_orphan_lock_before_plan_or_replay_access(
             parity_report_path=tmp_path / "parity.json",
             parity_reference_source_path=tmp_path / "reference.json",
         )
+
+
+def test_new_assembly_keeps_generation_source_commit_guard(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    plan = SimpleNamespace(source_commit="9eafe5344740cdf24c4796dbcbad8fb4514045ec")
+    provider_reached = False
+    monkeypatch.setattr(
+        workflow_module,
+        "verify_century_build_plan_against_trust_lock",
+        lambda *_args, **_kwargs: SimpleNamespace(plan=plan),
+    )
+
+    def _reject_generation_source(_plan: object) -> None:
+        raise CenturyCacheWorkflowError("current clean source differs")
+
+    def _provider(**_kwargs: object) -> tuple[object, object]:
+        nonlocal provider_reached
+        provider_reached = True
+        return object(), object()
+
+    monkeypatch.setattr(
+        workflow_module,
+        "_require_current_source_matches_plan",
+        _reject_generation_source,
+    )
+    monkeypatch.setattr(workflow_module, "_provider_and_provenance", _provider)
+
+    with pytest.raises(CenturyCacheWorkflowError, match="current clean source differs"):
+        workflow_module.assemble_and_publish_century_cache(
+            plan_path=tmp_path / "plan.json",
+            plan_trust_lock_path=tmp_path / "plan-lock.json",
+            expected_plan_trust_lock_sha256="f" * 64,
+            staging_directory=tmp_path / "staged",
+            cache_directory=tmp_path / "new-cache",
+            cache_locator="data/century_cache/v1",
+            trust_lock_path=tmp_path / "new-lock.json",
+            build_evidence_directory=tmp_path / "evidence",
+            ephemeris_directory=tmp_path / "ephemeris",
+            ephemeris_source_manifest_path=tmp_path / "source.json",
+            engine_validation_path=tmp_path / "engine.json",
+            parity_report_path=tmp_path / "parity.json",
+            parity_reference_source_path=tmp_path / "reference.json",
+        )
+    assert provider_reached is False
 
 
 def test_assembly_separates_replay_and_reconciliation_audits(
@@ -352,7 +416,11 @@ def test_assembly_separates_replay_and_reconciliation_audits(
         verified_with = provider
         return object()
 
-    monkeypatch.setattr(workflow_module, "load_century_build_plan", lambda _path: plan)
+    monkeypatch.setattr(
+        workflow_module,
+        "verify_century_build_plan_against_trust_lock",
+        lambda *_args, **_kwargs: SimpleNamespace(plan=plan),
+    )
     monkeypatch.setattr(
         workflow_module,
         "_require_current_source_matches_plan",
@@ -393,6 +461,8 @@ def test_assembly_separates_replay_and_reconciliation_audits(
     with pytest.raises(_ExpectedStop, match="provider-routing"):
         workflow_module.assemble_and_publish_century_cache(
             plan_path=tmp_path / "plan.json",
+            plan_trust_lock_path=tmp_path / "plan-lock.json",
+            expected_plan_trust_lock_sha256="f" * 64,
             staging_directory=tmp_path / "staged",
             cache_directory=tmp_path / "cache",
             cache_locator="data/century_cache/test",

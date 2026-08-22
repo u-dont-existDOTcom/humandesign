@@ -42,6 +42,11 @@ from .models import (
     VerifiedCenturyCache,
 )
 from .parity import generate_swieph_golden_parity_report
+from .plan_lock import (
+    century_build_plan_trust_lock_from_plan,
+    verify_century_build_plan_against_trust_lock,
+    write_century_build_plan_trust_lock_new,
+)
 from .publisher import CenturyCachePublicationError, StreamingCenturyCachePublisher
 from .reconcile import (
     ExactStateReconciliationAggregateProvenanceV1,
@@ -57,7 +62,6 @@ from .staging import (
     StagedExactStateBatchReceiptV1,
     century_build_plan_sha256,
     create_century_build_plan,
-    load_century_build_plan,
     load_staged_exact_state_batch_receipt,
     staged_job_artifact_path,
     staged_job_receipt_path,
@@ -94,6 +98,8 @@ CenturyCachePublicationPathState = Literal[
 class PreparedCenturyBuild:
     plan_path: Path
     plan_sha256: str
+    plan_trust_lock_path: Path
+    plan_trust_lock_sha256: str
     parity_report_path: Path
     parity_report_sha256: str
     job_count: int
@@ -163,14 +169,22 @@ def prepare_century_build(
     reference_source_locator: str,
     parity_report_path: str | Path,
     plan_path: str | Path,
+    plan_trust_lock_path: str | Path,
 ) -> PreparedCenturyBuild:
-    """Generate parity evidence and persist the immutable plan last."""
+    """Persist parity, immutable plan, then a write-new review trust lock."""
 
     root = Path(repository_root).resolve()
     parity_destination = Path(parity_report_path)
     plan_destination = Path(plan_path)
-    if parity_destination.exists() or plan_destination.exists():
-        raise FileExistsError("parity report or century build plan already exists")
+    plan_lock_destination = Path(plan_trust_lock_path)
+    if (
+        parity_destination.exists()
+        or plan_destination.exists()
+        or plan_lock_destination.exists()
+    ):
+        raise FileExistsError(
+            "parity report, century build plan, or plan trust lock already exists"
+        )
     source_commit = _require_clean_source_commit(root)
     provider, provenance = _provider_and_provenance(
         ephemeris_directory=ephemeris_directory,
@@ -208,9 +222,25 @@ def prepare_century_build(
             "source commit changed while the build plan was being prepared"
         )
     output = write_century_build_plan_new(plan_destination, plan)
+    try:
+        plan_locator = str(output.resolve().relative_to(root))
+    except ValueError as exc:
+        raise CenturyCacheWorkflowError(
+            "century build plan must be inside the repository for trust locking"
+        ) from exc
+    plan_lock = century_build_plan_trust_lock_from_plan(
+        plan,
+        plan_locator=plan_locator,
+    )
+    plan_lock_output = write_century_build_plan_trust_lock_new(
+        plan_lock_destination,
+        plan_lock,
+    )
     return PreparedCenturyBuild(
         plan_path=output,
         plan_sha256=century_build_plan_sha256(plan),
+        plan_trust_lock_path=plan_lock_output,
+        plan_trust_lock_sha256=sha256_file(plan_lock_output),
         parity_report_path=parity_output,
         parity_report_sha256=sha256_file(parity_output),
         job_count=len(plan.jobs),
@@ -256,6 +286,9 @@ def _retained_staged_receipt(
 def build_century_staged_job(
     *,
     plan_path: str | Path,
+    plan_trust_lock_path: str | Path,
+    expected_plan_trust_lock_sha256: str,
+    plan_repository_root: str | Path = _REPOSITORY_ROOT,
     job_id: str,
     staging_directory: str | Path,
     ephemeris_directory: str | Path,
@@ -263,7 +296,13 @@ def build_century_staged_job(
 ) -> StagedExactStateBatchReceiptV1:
     """Build one declared job, or retain an exact already-complete artifact."""
 
-    plan = load_century_build_plan(plan_path)
+    verified_plan = verify_century_build_plan_against_trust_lock(
+        plan_path,
+        trust_lock_path=plan_trust_lock_path,
+        expected_trust_lock_sha256=expected_plan_trust_lock_sha256,
+        repository_root=plan_repository_root,
+    )
+    plan = verified_plan.plan
     _require_current_source_matches_plan(plan)
     provider, provenance = _provider_and_provenance(
         ephemeris_directory=ephemeris_directory,
@@ -303,13 +342,22 @@ def _build_or_retain_staged_job(
 def build_all_missing_century_jobs(
     *,
     plan_path: str | Path,
+    plan_trust_lock_path: str | Path,
+    expected_plan_trust_lock_sha256: str,
+    plan_repository_root: str | Path = _REPOSITORY_ROOT,
     staging_directory: str | Path,
     ephemeris_directory: str | Path,
     ephemeris_source_manifest_path: str | Path,
 ) -> tuple[StagedExactStateBatchReceiptV1, ...]:
     """Sequential resumable convenience path; jobs remain independently runnable."""
 
-    plan = load_century_build_plan(plan_path)
+    verified_plan = verify_century_build_plan_against_trust_lock(
+        plan_path,
+        trust_lock_path=plan_trust_lock_path,
+        expected_trust_lock_sha256=expected_plan_trust_lock_sha256,
+        repository_root=plan_repository_root,
+    )
+    plan = verified_plan.plan
     _require_current_source_matches_plan(plan)
     provider, provenance = _provider_and_provenance(
         ephemeris_directory=ephemeris_directory,
@@ -438,6 +486,9 @@ def _write_or_resume_identical_trust_lock(
 def finalize_century_cache_publication(
     *,
     plan_path: str | Path,
+    plan_trust_lock_path: str | Path,
+    expected_plan_trust_lock_sha256: str,
+    plan_repository_root: str | Path = _REPOSITORY_ROOT,
     cache_directory: str | Path,
     cache_locator: str,
     trust_lock_path: str | Path,
@@ -463,8 +514,22 @@ def finalize_century_cache_publication(
             "publication finalization requires an existing regular cache directory"
         )
     manifest = _load_published_manifest(cache / "manifest.json")
-    plan = load_century_build_plan(plan_path)
-    _require_current_source_matches_plan(plan)
+    verified_plan = verify_century_build_plan_against_trust_lock(
+        plan_path,
+        trust_lock_path=plan_trust_lock_path,
+        expected_trust_lock_sha256=expected_plan_trust_lock_sha256,
+        repository_root=plan_repository_root,
+    )
+    plan = verified_plan.plan
+    plan_sha256 = verified_plan.plan_sha256
+    if manifest.generation_commit != plan.source_commit:
+        raise CenturyCacheWorkflowError(
+            "published manifest generation commit differs from the immutable plan"
+        )
+    if manifest.build_plan_sha256 != plan_sha256:
+        raise CenturyCacheWorkflowError(
+            "published manifest build-plan hash differs from the immutable plan"
+        )
 
     _provider, provenance = _provider_and_provenance(
         ephemeris_directory=ephemeris_directory,
@@ -479,7 +544,7 @@ def finalize_century_cache_publication(
     evidence_directory = Path(build_evidence_directory)
     reconciliation_path = evidence_directory / "reconciliation-aggregate.json"
     aggregate, reconciliation_raw = _load_reconciliation_aggregate(reconciliation_path)
-    if aggregate.build_plan_sha256 != century_build_plan_sha256(plan):
+    if aggregate.build_plan_sha256 != plan_sha256:
         raise CenturyCacheWorkflowError(
             "reconciliation aggregate differs from the immutable build plan"
         )
@@ -506,6 +571,10 @@ def finalize_century_cache_publication(
         reconciliation_aggregate_sha256=sha256_bytes(reconciliation_raw),
         created_at_utc=manifest.created_at_utc,
     )
+    if spec.generation_commit != plan.source_commit:
+        raise CenturyCacheWorkflowError(
+            "reconstructed cache generation commit differs from the immutable plan"
+        )
     if _manifest_build_spec(manifest) != spec:
         raise CenturyCacheWorkflowError(
             "published manifest build specification differs from independently "
@@ -541,6 +610,14 @@ def finalize_century_cache_publication(
         raise CenturyCacheWorkflowError(
             "external evidence identities differ from bundled cache evidence"
         )
+    if sha256_file(plan_path) != plan_sha256:
+        raise CenturyCacheWorkflowError(
+            "immutable century build-plan bytes changed during finalization"
+        )
+    if sha256_file(plan_trust_lock_path) != verified_plan.trust_lock_sha256:
+        raise CenturyCacheWorkflowError(
+            "century build-plan trust-lock bytes changed during finalization"
+        )
 
     lock = trust_lock_from_verified_cache(
         verified,
@@ -569,6 +646,9 @@ def finalize_century_cache_publication(
 def assemble_and_publish_century_cache(
     *,
     plan_path: str | Path,
+    plan_trust_lock_path: str | Path,
+    expected_plan_trust_lock_sha256: str,
+    plan_repository_root: str | Path = _REPOSITORY_ROOT,
     staging_directory: str | Path,
     cache_directory: str | Path,
     cache_locator: str,
@@ -594,6 +674,11 @@ def assemble_and_publish_century_cache(
     if publication_state in {"published_missing_lock", "published_with_lock"}:
         return finalize_century_cache_publication(
             plan_path=plan_path,
+            plan_trust_lock_path=plan_trust_lock_path,
+            expected_plan_trust_lock_sha256=(
+                expected_plan_trust_lock_sha256
+            ),
+            plan_repository_root=plan_repository_root,
             cache_directory=cache_directory,
             cache_locator=cache_locator,
             trust_lock_path=trust_lock_path,
@@ -604,7 +689,13 @@ def assemble_and_publish_century_cache(
             parity_report_path=parity_report_path,
             parity_reference_source_path=parity_reference_source_path,
         )
-    plan = load_century_build_plan(plan_path)
+    verified_plan = verify_century_build_plan_against_trust_lock(
+        plan_path,
+        trust_lock_path=plan_trust_lock_path,
+        expected_trust_lock_sha256=expected_plan_trust_lock_sha256,
+        repository_root=plan_repository_root,
+    )
+    plan = verified_plan.plan
     _require_current_source_matches_plan(plan)
     replay_provider, provenance = _provider_and_provenance(
         ephemeris_directory=ephemeris_directory,

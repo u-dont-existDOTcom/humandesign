@@ -14,6 +14,7 @@ from typing import Any
 
 from hdmatch.century_cache import (
     CANONICAL_CENTURY_END_EXCLUSIVE_UTC,
+    CANONICAL_CENTURY_PLAN_TRUST_LOCK_SHA256,
     CANONICAL_CENTURY_START_UTC,
     PublishedCenturyBuild,
     assemble_and_publish_century_cache,
@@ -142,6 +143,9 @@ DEFAULT_SWIEPH_GOLDEN_REFERENCE = (
 )
 DEFAULT_CENTURY_BUILD_DIRECTORY = ROOT / "data" / "century_cache" / "build-v1"
 DEFAULT_CENTURY_PLAN = DEFAULT_CENTURY_BUILD_DIRECTORY / "plan.json"
+DEFAULT_CENTURY_PLAN_TRUST_LOCK = (
+    ROOT / "data" / "century_cache" / "v1.plan-trust-lock.json"
+)
 DEFAULT_CENTURY_PARITY_REPORT = (
     DEFAULT_CENTURY_BUILD_DIRECTORY / "parity-report.json"
 )
@@ -250,6 +254,7 @@ def _command_prepare_century_cache(args: argparse.Namespace) -> int:
         reference_source_locator=args.reference_source_locator,
         parity_report_path=args.parity_report,
         plan_path=args.plan,
+        plan_trust_lock_path=args.plan_trust_lock,
     )
     print(
         json.dumps(
@@ -257,6 +262,7 @@ def _command_prepare_century_cache(args: argparse.Namespace) -> int:
                 "job_count": prepared.job_count,
                 "parity_report_sha256": prepared.parity_report_sha256,
                 "plan_sha256": prepared.plan_sha256,
+                "plan_trust_lock_sha256": prepared.plan_trust_lock_sha256,
                 "status": "prepared",
             },
             sort_keys=True,
@@ -268,6 +274,11 @@ def _command_prepare_century_cache(args: argparse.Namespace) -> int:
 def _command_build_century_cache_job(args: argparse.Namespace) -> int:
     receipt = build_century_staged_job(
         plan_path=args.plan,
+        plan_trust_lock_path=args.plan_trust_lock,
+        expected_plan_trust_lock_sha256=(
+            CANONICAL_CENTURY_PLAN_TRUST_LOCK_SHA256
+        ),
+        plan_repository_root=ROOT,
         job_id=args.job_id,
         staging_directory=args.staging_dir,
         ephemeris_directory=args.ephemeris_path,
@@ -304,6 +315,11 @@ def _assemble_century_cache_from_args(
 ) -> PublishedCenturyBuild:
     return assemble_and_publish_century_cache(
         plan_path=args.plan,
+        plan_trust_lock_path=args.plan_trust_lock,
+        expected_plan_trust_lock_sha256=(
+            CANONICAL_CENTURY_PLAN_TRUST_LOCK_SHA256
+        ),
+        plan_repository_root=ROOT,
         staging_directory=args.staging_dir,
         cache_directory=args.output,
         cache_locator=args.cache_locator,
@@ -342,6 +358,11 @@ def _command_build_century_cache(args: argparse.Namespace) -> int:
         return 0
     receipts = build_all_missing_century_jobs(
         plan_path=args.plan,
+        plan_trust_lock_path=args.plan_trust_lock,
+        expected_plan_trust_lock_sha256=(
+            CANONICAL_CENTURY_PLAN_TRUST_LOCK_SHA256
+        ),
+        plan_repository_root=ROOT,
         staging_directory=args.staging_dir,
         ephemeris_directory=args.ephemeris_path,
         ephemeris_source_manifest_path=args.source_manifest,
@@ -356,6 +377,11 @@ def _command_build_century_cache(args: argparse.Namespace) -> int:
 def _command_finalize_century_cache_publication(args: argparse.Namespace) -> int:
     published = finalize_century_cache_publication(
         plan_path=args.plan,
+        plan_trust_lock_path=args.plan_trust_lock,
+        expected_plan_trust_lock_sha256=(
+            CANONICAL_CENTURY_PLAN_TRUST_LOCK_SHA256
+        ),
+        plan_repository_root=ROOT,
         cache_directory=args.output,
         cache_locator=args.cache_locator,
         trust_lock_path=args.trust_lock,
@@ -1696,6 +1722,10 @@ def _add_century_engine_arguments(parser: argparse.ArgumentParser) -> None:
 def _add_century_assembly_arguments(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--plan", default=str(DEFAULT_CENTURY_PLAN))
     parser.add_argument(
+        "--plan-trust-lock",
+        default=str(DEFAULT_CENTURY_PLAN_TRUST_LOCK),
+    )
+    parser.add_argument(
         "--staging-dir",
         default=str(DEFAULT_CENTURY_STAGING_DIRECTORY),
     )
@@ -1752,6 +1782,10 @@ def _add_v4_3_run_inputs(parser: argparse.ArgumentParser) -> None:
 
 def _add_century_finalization_arguments(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--plan", default=str(DEFAULT_CENTURY_PLAN))
+    parser.add_argument(
+        "--plan-trust-lock",
+        default=str(DEFAULT_CENTURY_PLAN_TRUST_LOCK),
+    )
     parser.add_argument("--output", default=str(DEFAULT_CENTURY_CACHE_DIRECTORY))
     parser.add_argument(
         "--cache-locator",
@@ -1840,6 +1874,10 @@ def _parser() -> argparse.ArgumentParser:
         default=str(DEFAULT_CENTURY_PARITY_REPORT),
     )
     prepare_century.add_argument("--plan", default=str(DEFAULT_CENTURY_PLAN))
+    prepare_century.add_argument(
+        "--plan-trust-lock",
+        default=str(DEFAULT_CENTURY_PLAN_TRUST_LOCK),
+    )
     prepare_century.set_defaults(handler=_command_prepare_century_cache)
 
     build_century_job = subparsers.add_parser(
@@ -1847,6 +1885,10 @@ def _parser() -> argparse.ArgumentParser:
         help="build or retain one replay-verifiable job from an immutable plan",
     )
     build_century_job.add_argument("--plan", default=str(DEFAULT_CENTURY_PLAN))
+    build_century_job.add_argument(
+        "--plan-trust-lock",
+        default=str(DEFAULT_CENTURY_PLAN_TRUST_LOCK),
+    )
     build_century_job.add_argument("--job-id", required=True)
     build_century_job.add_argument(
         "--staging-dir",
