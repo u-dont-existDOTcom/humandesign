@@ -39,7 +39,6 @@ from hdmatch.model.v4_3.compliance import (
 )
 from hdmatch.model.v4_3.contracts import (
     ConditionalPrevalenceCandidateBindingLike,
-    ConditionalPrevalenceProvider,
     CoreBlock,
     CoreBlockAvailability,
     CoreBlockEvaluation,
@@ -72,6 +71,16 @@ from hdmatch.model.v4_3_mapping import (
 )
 from hdmatch.model.v4_3_mapping import (
     FlexibilityClass as MappingFlexibilityClass,
+)
+from hdmatch.model.v4_3_prevalence import (
+    V43PrevalenceError,
+    VerifiedV43ConditionalPrevalence,
+    require_claim_grade_v4_3_prevalence_provider,
+)
+from hdmatch.model.v4_3_prevalence_identity import (
+    mapping_prevalence_parent_hierarchy_sha256,
+    mapping_prevalence_plan_sha256,
+    unique_prevalence_pathways,
 )
 
 _SESSION_TOKEN: Final[object] = object()
@@ -194,7 +203,7 @@ class CanonicalV43ScoringSession:
         cache: VerifiedCenturyCache,
         trust_lock: CenturyCacheTrustLockV1,
         trust_lock_path: Path,
-        prevalence: ConditionalPrevalenceProvider,
+        prevalence: VerifiedV43ConditionalPrevalence,
         bindings: CanonicalV43Bindings,
         _token: object,
     ) -> None:
@@ -216,12 +225,14 @@ class CanonicalV43ScoringSession:
         mapping_library: MappingLibraryV2,
         cache_directory: str | Path,
         trust_lock_path: str | Path,
-        prevalence: ConditionalPrevalenceProvider,
+        prevalence: VerifiedV43ConditionalPrevalence,
     ) -> CanonicalV43ScoringSession:
-        if not isinstance(prevalence, ConditionalPrevalenceProvider):
-            raise V43IntegrationError(
-                "prevalence provider lacks the strict verified candidate-binding interface"
+        try:
+            verified_prevalence = require_claim_grade_v4_3_prevalence_provider(
+                prevalence
             )
+        except V43PrevalenceError as exc:
+            raise V43IntegrationError(str(exc)) from exc
         library = MappingLibraryV2.model_validate(
             mapping_library.model_dump(mode="json")
         )
@@ -240,7 +251,7 @@ class CanonicalV43ScoringSession:
                 cache=cache,
                 trust_lock=lock,
                 trust_lock_sha256=lock_hash,
-                prevalence=prevalence,
+                prevalence=verified_prevalence,
             )
         except AttributeError as exc:
             raise V43IntegrationError(
@@ -252,7 +263,7 @@ class CanonicalV43ScoringSession:
             cache=cache,
             trust_lock=lock,
             trust_lock_path=lock_path,
-            prevalence=prevalence,
+            prevalence=verified_prevalence,
             bindings=bindings,
             _token=_SESSION_TOKEN,
         )
@@ -300,6 +311,7 @@ class CanonicalV43ScoringSession:
             self._library,
             candidate,
             responses,
+            prevalence_candidate_context=binding,
         )
         score = score_v4_3(scoring_input, self._prevalence)
         duration_microseconds = _exact_duration_microseconds(candidate)
@@ -399,6 +411,8 @@ def evaluate_mapping_library_v2(
     library: MappingLibraryV2,
     candidate: CenturyStateRecord,
     responses: tuple[V43ObservedResponse, ...],
+    *,
+    prevalence_candidate_context: object | None = None,
 ) -> V43ScoringInput:
     """Pure, non-claiming MappingLibraryV2-to-scorer adapter."""
 
@@ -418,53 +432,13 @@ def evaluate_mapping_library_v2(
     )
     observations = _merge_structural_dependency_components(raw_observations)
     return V43ScoringInput(
-        candidate_context=candidate,
+        candidate_context=(
+            candidate
+            if prevalence_candidate_context is None
+            else prevalence_candidate_context
+        ),
         observations=observations,
         core_blocks=_derive_core_blocks(validated.core_architecture_target, features),
-    )
-
-
-def mapping_prevalence_parent_hierarchy_sha256(library: MappingLibraryV2) -> str:
-    pathways = _unique_prevalence_pathways(library)
-    return sha256_json(
-        [
-            {
-                "anchor_id": pathway.anchor_id,
-                "parent_hierarchy": [
-                    level.model_dump(mode="json")
-                    for level in pathway.prevalence_parent_hierarchy
-                ],
-            }
-            for pathway in pathways
-        ]
-    )
-
-
-def mapping_prevalence_plan_sha256(library: MappingLibraryV2) -> str:
-    """Hash the exact mapping-derived predicate/parent plan expected of prevalence."""
-
-    pathways = _unique_prevalence_pathways(library)
-    return sha256_json(
-        {
-            "mapping_library_sha256": library.sha256(),
-            "required_feature_registry_sha256": (
-                library.required_feature_registry_sha256
-            ),
-            "anchors": [
-                {
-                    "anchor_id": pathway.anchor_id,
-                    "predicate": pathway.predicate.model_dump(mode="json"),
-                    "parent_hierarchy": [
-                        level.model_dump(mode="json")
-                        for level in pathway.prevalence_parent_hierarchy
-                    ],
-                    "required_feature_ids": [
-                        item.value for item in pathway.required_feature_ids
-                    ],
-                }
-                for pathway in pathways
-            ],
-        }
     )
 
 
@@ -474,7 +448,7 @@ def _verify_canonical_artifact_bindings(
     cache: VerifiedCenturyCache,
     trust_lock: CenturyCacheTrustLockV1,
     trust_lock_sha256: str,
-    prevalence: ConditionalPrevalenceProvider,
+    prevalence: VerifiedV43ConditionalPrevalence,
 ) -> CanonicalV43Bindings:
     manifest = cache.manifest
     provenance = prevalence.provenance
@@ -488,7 +462,7 @@ def _verify_canonical_artifact_bindings(
     hierarchy_hash = mapping_prevalence_parent_hierarchy_sha256(library)
     mapping_plan_hash = mapping_prevalence_plan_sha256(library)
     required_anchor_ids = tuple(
-        pathway.anchor_id for pathway in _unique_prevalence_pathways(library)
+        pathway.anchor_id for pathway in unique_prevalence_pathways(library)
     )
     if tuple(provenance.anchor_ids) != required_anchor_ids:
         raise V43IntegrationError("prevalence plan anchor inventory differs from mapping")
@@ -1197,23 +1171,6 @@ def _require_unchanged(
 def _exact_duration_microseconds(record: CenturyStateRecord) -> int:
     delta = record.utc_end - record.utc_start
     return delta.days * 86_400_000_000 + delta.seconds * 1_000_000 + delta.microseconds
-
-
-def _all_rule_pathways(rule: CompiledMappingRuleV2) -> tuple[CompiledPathwayV2, ...]:
-    pathways = (rule.primary_pathway, *rule.alternative_pathways)
-    if rule.corroborating_pathway is not None:
-        pathways = (*pathways, rule.corroborating_pathway.pathway)
-    return pathways
-
-
-def _unique_prevalence_pathways(
-    library: MappingLibraryV2,
-) -> tuple[CompiledPathwayV2, ...]:
-    by_anchor: dict[str, CompiledPathwayV2] = {}
-    for rule in library.rules:
-        for pathway in _all_rule_pathways(rule):
-            by_anchor.setdefault(pathway.anchor_id, pathway)
-    return tuple(by_anchor[item] for item in sorted(by_anchor))
 
 
 def _require_string(feature_id: FeatureId, value: JsonValue) -> str:

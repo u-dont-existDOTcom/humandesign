@@ -40,8 +40,6 @@ from hdmatch.model.v4_3.integration import (
     V43IntegrationError,
     V43ObservedResponse,
     evaluate_mapping_library_v2,
-    mapping_prevalence_parent_hierarchy_sha256,
-    mapping_prevalence_plan_sha256,
 )
 from hdmatch.model.v4_3.ranking import (
     RankedExactInterval,
@@ -59,6 +57,10 @@ from hdmatch.model.v4_3.scoring import (
     effective_confidence,
     information_rubric_bits,
     score_v4_3,
+)
+from hdmatch.model.v4_3_prevalence_identity import (
+    mapping_prevalence_parent_hierarchy_sha256,
+    mapping_prevalence_plan_sha256,
 )
 
 __all__ = [

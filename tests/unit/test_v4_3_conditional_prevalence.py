@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import inspect
 import json
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from pathlib import Path
 from typing import Any
 
@@ -28,6 +28,7 @@ from hdmatch.chart.feature_registry import FeatureId
 from hdmatch.experiments.canonical import canonical_json_bytes, sha256_file
 from hdmatch.model.v4_3.integration import (
     CanonicalV43ScoringSession,
+    V43IntegrationError,
     V43ObservedResponse,
     mapping_prevalence_parent_hierarchy_sha256,
     mapping_prevalence_plan_sha256,
@@ -39,6 +40,7 @@ from hdmatch.model.v4_3_mapping import (
     StructuralPredicateV2,
 )
 from hdmatch.model.v4_3_prevalence import (
+    V43BoundCandidateRecord,
     V43ConditionalPrevalenceArtifactV1,
     V43ConditionalPrevalencePolicyV1,
     V43PrevalenceError,
@@ -275,6 +277,69 @@ def test_real_provider_opens_and_completes_canonical_scoring_session(
         session.score_candidate(row, responses)
         for row in iter_verified_century_cache_rows(real_harness.verified_cache)
     )
+    complete = session.require_complete_universe_compliance(evaluations)
+    assert complete.compliance.v4_3_compliant is True
+    assert complete.scored_candidate_count == (
+        real_harness.verified_cache.manifest.interval_count
+    )
+
+
+def test_tracked_direct_target_mapping_uses_bound_context_and_claims_complete_universe(
+    real_harness: _RealPrevalenceHarness,
+) -> None:
+    library = MappingLibraryV2.model_validate_json(MAPPING.read_bytes(), strict=True)
+    provider = verify_v4_3_prevalence_artifact(
+        real_harness.artifact_path,
+        cache_directory=real_harness.cache_directory,
+        trust_lock_path=real_harness.trust_lock_path,
+        prevalence_plan_path=real_harness.plan_path,
+        **_mapping_kwargs(),
+    )
+    session = CanonicalV43ScoringSession.open(
+        mapping_library=library,
+        cache_directory=real_harness.cache_directory,
+        trust_lock_path=real_harness.trust_lock_path,
+        prevalence=provider,
+    )
+    target_source = next(
+        item
+        for item in library.source_artifacts
+        if item.source_id == library.behavioral_target_source_id
+    )
+    assert session.bindings.response_source_mode.value == "direct_behavioral_target"
+    assert session.bindings.response_source_id == library.behavioral_target_source_id
+    assert session.bindings.response_source_sha256 == target_source.sha256
+    assert session.bindings.behavioral_target_sha256 == target_source.sha256
+    assert session.bindings.question_bank_sha256 is None
+
+    responses = tuple(
+        V43ObservedResponse(
+            observation_id=rule.observation_id,
+            response_token=rule.response_rule.canonical_response_token,
+        )
+        for rule in library.rules
+    )
+    evaluations = tuple(
+        session.score_candidate(row, responses)
+        for row in iter_verified_century_cache_rows(real_harness.verified_cache)
+    )
+
+    assert all(
+        isinstance(item.scoring_input.candidate_context, V43BoundCandidateRecord)
+        for item in evaluations
+    )
+    assert any(item.score.detailed_support > 0.0 for item in evaluations)
+    with pytest.raises(V43PrevalenceError, match="provider-bound cache member"):
+        provider.estimate(
+            real_harness.plan.anchors[0].anchor_id,
+            next(iter_verified_century_cache_rows(real_harness.verified_cache)),
+        )
+    with pytest.raises(V43IntegrationError, match="complete declared universe"):
+        session.require_complete_universe_compliance(())
+    forged = replace(evaluations[0])
+    with pytest.raises(V43IntegrationError, match="not minted"):
+        session.require_complete_universe_compliance((forged, *evaluations[1:]))
+
     complete = session.require_complete_universe_compliance(evaluations)
     assert complete.compliance.v4_3_compliant is True
     assert complete.scored_candidate_count == (

@@ -11,7 +11,6 @@ from typing import Any, cast
 import pytest
 from pydantic import ValidationError
 
-import hdmatch.model.v4_3.integration as v43_integration
 from hdmatch.century_cache.models import CenturyStateRecord, FeatureValue
 from hdmatch.chart.ephemeris import CelestialBody
 from hdmatch.chart.feature_registry import FeatureId
@@ -21,11 +20,8 @@ from hdmatch.model.mapping_library import (
     StructuralClass,
 )
 from hdmatch.model.v4_3.integration import (
-    CanonicalV43ScoringSession,
     V43ObservedResponse,
     evaluate_mapping_library_v2,
-    mapping_prevalence_parent_hierarchy_sha256,
-    mapping_prevalence_plan_sha256,
 )
 from hdmatch.model.v4_3.scoring import score_v4_3
 from hdmatch.model.v4_3_mapping import (
@@ -58,7 +54,7 @@ from hdmatch.model.v4_3_profile_mapping import (
     verify_tracked_profile_mapping_artifacts,
     write_profile_mapping_artifacts_new,
 )
-from hdmatch.util import sha256_file, sha256_json
+from hdmatch.util import sha256_file
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -318,109 +314,16 @@ def test_both_variants_parse_and_recompile_exactly() -> None:
         )
 
 
-def test_actual_tracked_direct_target_artifact_opens_canonical_session(
-    monkeypatch: pytest.MonkeyPatch,
-) -> None:
+def test_actual_tracked_artifact_declares_direct_target_response_source() -> None:
     library = load_mapping_library_v2(ROOT / LESS_CONTAMINATED_COMPILED_PATH)
-    provider = _NoEstimatePrevalence(library)
-    manifest_hash = "c" * 64
-    lock_hash = "d" * 64
-    build_plan_hash = "e" * 64
-    universe_hash = "f" * 64
-    reconciliation_hash = "1" * 64
-    engine_hash = "2" * 64
-    ephemeris_hash = "3" * 64
-    semantic_hash = "4" * 64
-    physical_hash = "5" * 64
-    provider.provenance.cache_manifest_sha256 = manifest_hash
-    provider.provenance.cache_trust_lock_sha256 = lock_hash
-    provider.provenance.cache_build_plan_sha256 = build_plan_hash
-    provider.provenance.universe_sha256 = universe_hash
-    provider.provenance.reconciliation_aggregate_sha256 = reconciliation_hash
-    provider.provenance.engine_validation_sha256 = engine_hash
-    provider.provenance.ephemeris_file_set_sha256 = ephemeris_hash
-    provider.provenance.semantic_feature_registry_sha256 = semantic_hash
-    provider.provenance.physical_feature_registry_sha256 = physical_hash
-    provider.provenance.parent_hierarchy_sha256 = (
-        mapping_prevalence_parent_hierarchy_sha256(library)
-    )
-    provider.provenance.mapping_prevalence_plan_sha256 = (
-        mapping_prevalence_plan_sha256(library)
-    )
-    engine = SimpleNamespace(
-        ephemeris_requested="SWIEPH",
-        ephemeris_returned="SWIEPH",
-        engine_validation_sha256=engine_hash,
-        chart_engine_version="test-swisseph",
-        ephemeris_provenance=SimpleNamespace(
-            ephemeris_file_set_sha256=ephemeris_hash
-        ),
-    )
-    manifest = SimpleNamespace(
-        feature_vector_schema_version="chart-feature-vector-v2",
-        semantic_feature_registry_sha256=semantic_hash,
-        feature_registry_sha256=physical_hash,
-        feature_registry=tuple(
-            SimpleNamespace(feature_id=item)
-            for item in library.required_feature_registry.feature_ids
-        ),
-        build_plan_sha256=build_plan_hash,
-        logical_universe_sha256=universe_hash,
-        reconciliation_aggregate_sha256=reconciliation_hash,
-        boundary_policy_version="exact-boundary-test",
-        engine=engine,
-        node_convention="true",
-        mandala_mapping_sha256="6" * 64,
-        bodygraph_mapping_sha256="7" * 64,
-        utc_start=datetime(2000, 1, 1, tzinfo=UTC),
-        utc_end_exclusive=datetime(2000, 1, 2, tzinfo=UTC),
-        interval_count=1,
-    )
-    cache = SimpleNamespace(
-        manifest=manifest,
-        manifest_sha256=manifest_hash,
-        manifest_path=Path("/verified/manifest.json"),
-    )
-    build_spec_payload = {"frozen": "tracked-direct-target-test"}
-    lock = SimpleNamespace(
-        manifest_sha256=manifest_hash,
-        build_spec=SimpleNamespace(model_dump=lambda mode: build_spec_payload),
-        build_spec_sha256=sha256_json(build_spec_payload),
-    )
-    trust_path = Path("/verified/trust-lock.json")
-    monkeypatch.setattr(
-        v43_integration,
-        "sha256_file",
-        lambda path: lock_hash if Path(path) == trust_path else manifest_hash,
-    )
-    monkeypatch.setattr(
-        v43_integration,
-        "load_century_cache_trust_lock",
-        lambda path: lock,
-    )
-    monkeypatch.setattr(
-        v43_integration,
-        "verify_century_cache_against_trust_lock",
-        lambda cache_directory, trust_lock_path: cache,
-    )
-
-    session = CanonicalV43ScoringSession.open(
-        mapping_library=library,
-        cache_directory="/verified/cache",
-        trust_lock_path=trust_path,
-        prevalence=provider,
-    )
-
     target_source = next(
         item
         for item in library.source_artifacts
         if item.source_id == library.behavioral_target_source_id
     )
-    assert session.bindings.response_source_mode.value == "direct_behavioral_target"
-    assert session.bindings.response_source_id == library.behavioral_target_source_id
-    assert session.bindings.response_source_sha256 == target_source.sha256
-    assert session.bindings.behavioral_target_sha256 == target_source.sha256
-    assert session.bindings.question_bank_sha256 is None
+    assert library.response_source_mode.value == "direct_behavioral_target"
+    assert target_source.sha256 == sha256_file(ROOT / target_source.path)
+    assert library.question_bank_source_id is None
 
 
 @pytest.mark.parametrize(

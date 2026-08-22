@@ -55,10 +55,6 @@ from hdmatch.experiments.canonical import (
     sha256_json,
     write_new_canonical_json,
 )
-from hdmatch.model.v4_3.integration import (
-    mapping_prevalence_parent_hierarchy_sha256,
-    mapping_prevalence_plan_sha256,
-)
 from hdmatch.model.v4_3_compiler import compile_verified_mapping_library_v2
 from hdmatch.model.v4_3_mapping import (
     CompiledPathwayV2,
@@ -68,6 +64,10 @@ from hdmatch.model.v4_3_mapping import (
     PredicateOperatorV2,
     PrevalenceParentLevelV2,
     StructuralPredicateV2,
+)
+from hdmatch.model.v4_3_prevalence_identity import (
+    mapping_prevalence_parent_hierarchy_sha256,
+    mapping_prevalence_plan_sha256,
 )
 
 V43_PREVALENCE_POLICY_VERSION: Final[str] = (
@@ -835,6 +835,29 @@ class VerifiedV43ConditionalPrevalence:
             ),
             cache_manifest_sha256=source.cache_manifest_sha256,
         )
+
+
+def require_claim_grade_v4_3_prevalence_provider(
+    provider: object,
+) -> VerifiedV43ConditionalPrevalence:
+    """Require the exact verifier-minted provider type and private capability.
+
+    Runtime ``Protocol`` conformance is sufficient for pure scoring experiments,
+    but cannot establish claim-grade artifact verification. Subclasses are also
+    rejected so a structurally compatible object cannot override verification.
+    """
+
+    if not isinstance(provider, VerifiedV43ConditionalPrevalence) or (
+        type(provider) is not VerifiedV43ConditionalPrevalence
+    ):
+        raise V43PrevalenceError(
+            "claim-grade scoring requires the nominal verified prevalence provider"
+        )
+    if provider._token is not _VERIFIED_PROVIDER_TOKEN:
+        raise V43PrevalenceError(
+            "claim-grade prevalence provider lacks the verifier-minted capability"
+        )
+    return provider
 
 
 def capped_information_rubric_bits(

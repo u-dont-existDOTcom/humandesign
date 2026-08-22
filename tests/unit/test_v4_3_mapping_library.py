@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-from dataclasses import replace
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from types import SimpleNamespace
@@ -8,7 +7,6 @@ from types import SimpleNamespace
 import pytest
 from pydantic import ValidationError
 
-import hdmatch.model.v4_3.integration as v43_integration
 from hdmatch.century_cache.models import CenturyStateRecord, FeatureValue
 from hdmatch.chart.feature_registry import (
     FeatureCoverageError,
@@ -709,9 +707,7 @@ class _StrictTestPrevalence:
         )
 
 
-def test_canonical_session_binds_identities_and_mints_only_after_complete_universe(
-    monkeypatch: pytest.MonkeyPatch,
-) -> None:
+def test_canonical_session_rejects_structurally_conforming_fake_prevalence() -> None:
     library = compile_mapping_library_v2(_source(bind_question_bank=True))
     candidate = _candidate_row()
     manifest_hash = "a" * 64
@@ -720,44 +716,6 @@ def test_canonical_session_binds_identities_and_mints_only_after_complete_univer
     build_plan_hash = "d" * 64
     reconciliation_hash = "e" * 64
     engine_hash = "f" * 64
-    physical_ids = tuple(item.feature_id for item in candidate.feature_values)
-    engine = SimpleNamespace(
-        ephemeris_requested="SWIEPH",
-        ephemeris_returned="SWIEPH",
-        engine_validation_sha256=engine_hash,
-        chart_engine_version=candidate.astronomy_engine_version,
-        ephemeris_provenance=SimpleNamespace(
-            ephemeris_file_set_sha256=candidate.ephemeris_file_set_sha256
-        ),
-    )
-    manifest = SimpleNamespace(
-        feature_vector_schema_version=candidate.feature_vector_schema_version,
-        semantic_feature_registry_sha256=candidate.semantic_feature_registry_sha256,
-        feature_registry_sha256=candidate.feature_registry_sha256,
-        feature_registry=tuple(SimpleNamespace(feature_id=item) for item in physical_ids),
-        build_plan_sha256=build_plan_hash,
-        logical_universe_sha256=universe_hash,
-        reconciliation_aggregate_sha256=reconciliation_hash,
-        boundary_policy_version="boundary-v1",
-        engine=engine,
-        node_convention=candidate.node_convention,
-        mandala_mapping_sha256=candidate.mandala_mapping_sha256,
-        bodygraph_mapping_sha256=candidate.bodygraph_mapping_sha256,
-        utc_start=candidate.utc_start,
-        utc_end_exclusive=candidate.utc_end,
-        interval_count=1,
-    )
-    cache = SimpleNamespace(
-        manifest=manifest,
-        manifest_sha256=manifest_hash,
-        manifest_path=Path("/verified/manifest.json"),
-    )
-    build_spec_payload = {"frozen": "build-spec"}
-    lock = SimpleNamespace(
-        manifest_sha256=manifest_hash,
-        build_spec=SimpleNamespace(model_dump=lambda mode: build_spec_payload),
-        build_spec_sha256=sha256_json(build_spec_payload),
-    )
     provenance = SimpleNamespace(
         anchor_ids=tuple(
             sorted(
@@ -794,50 +752,10 @@ def test_canonical_session_binds_identities_and_mints_only_after_complete_univer
     )
     provider = _StrictTestPrevalence(provenance)
     trust_path = Path("/verified/trust-lock.json")
-    monkeypatch.setattr(
-        v43_integration,
-        "sha256_file",
-        lambda path: lock_hash if Path(path) == trust_path else manifest_hash,
-    )
-    monkeypatch.setattr(v43_integration, "load_century_cache_trust_lock", lambda path: lock)
-    monkeypatch.setattr(
-        v43_integration,
-        "verify_century_cache_against_trust_lock",
-        lambda cache_directory, trust_lock_path: cache,
-    )
-    monkeypatch.setattr(
-        v43_integration,
-        "iter_verified_century_cache_rows",
-        lambda verified: iter((candidate,)),
-    )
-    session = CanonicalV43ScoringSession.open(
-        mapping_library=library,
-        cache_directory="/verified/cache",
-        trust_lock_path=trust_path,
-        prevalence=provider,
-    )
-    evaluation = session.score_candidate(
-        candidate,
-        (
-            V43ObservedResponse(
-                observation_id="OBS-TEST-ENTRY",
-                response_token="recognition_sensitive",
-            ),
-        ),
-    )
-
-    assert evaluation.ranked_interval.stable_duration_microseconds == 1_000_000
-    with pytest.raises(V43IntegrationError, match="complete declared universe"):
-        session.require_complete_universe_compliance(())
-    forged = replace(evaluation)
-    with pytest.raises(V43IntegrationError, match="not minted"):
-        session.require_complete_universe_compliance((forged,))
-    complete = session.require_complete_universe_compliance((evaluation,))
-    assert complete.compliance.v4_3_compliant
-    assert complete.scored_candidate_count == 1
-
-    provenance.mapping_library_sha256 = "9" * 64
-    with pytest.raises(V43IntegrationError, match="mapping library identity mismatch"):
+    with pytest.raises(
+        V43IntegrationError,
+        match="nominal verified prevalence provider",
+    ):
         CanonicalV43ScoringSession.open(
             mapping_library=library,
             cache_directory="/verified/cache",
