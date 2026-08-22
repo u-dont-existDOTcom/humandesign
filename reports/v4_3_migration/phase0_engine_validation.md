@@ -1,6 +1,6 @@
 # V4.3 migration Phase 0 — production astronomy validation
 
-Status: **PASS locally; GitHub CI pending for the report commit**
+Status: **PASS locally and in GitHub CI**
 
 This is astronomy-engine validation only. It is not a verified century cache,
 behavioral ranking, Human Design validation, or evidence about any previously
@@ -60,7 +60,12 @@ Direct multi-gigabyte JPL parity was not run because V4.3 defines verified Swiss
 - Ruff: pass
 - strict mypy: pass
 - golden/engine focused suite: pass
+- integrated implementation checkpoint:
+  `f895f6d5493777db228be116203802471630e71f`
+- exact-head push CI: GitHub Actions run `32560110959`, pass
+- exact-head pull-request CI: GitHub Actions run `32560112503`, pass
 
 GitHub Actions provisions the same pinned files, runs `hdmatch validate-engine`,
-then runs the complete test/lint/type-check pipeline. Phase 0 should be treated
-as closed only after that workflow is green for the exact report commit.
+then runs the complete test/lint/type-check pipeline. Both workflows passed on
+the cited integrated implementation checkpoint. No production century cache or
+behavioral ranking was started as part of this validation.
