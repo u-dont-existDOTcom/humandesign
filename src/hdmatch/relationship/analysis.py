@@ -18,7 +18,7 @@ from collections import defaultdict, deque
 from dataclasses import dataclass
 from enum import StrEnum
 from hashlib import sha256
-from typing import Literal
+from typing import Literal, cast
 
 from hdmatch.chart.bodygraph import (
     CHANNELS,
@@ -422,10 +422,10 @@ def _sun_earth_node_alignments(
                     continue
                 alignments.append(
                     SunEarthNodeAlignment(
-                        source_partner=source_id,
+                        source_partner=cast(PartnerId, source_id),
                         source_body=source_activation.body,
                         source_side=source_activation.side,
-                        target_partner=target_id,
+                        target_partner=cast(PartnerId, target_id),
                         target_body=target_activation.body,
                         target_side=target_activation.side,
                         gate=source_activation.gate,
