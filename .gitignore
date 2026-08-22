@@ -25,6 +25,8 @@ runs/*/revealed_key*
 .DS_Store
 
 # Provisioned from pinned official Swiss Ephemeris upstream by
-# scripts/fetch_swisseph_ephemeris.py. Do not accidentally vendor binary data.
+# scripts/fetch_swisseph_ephemeris.py. Do not accidentally vendor binary data or
+# the machine-local verification receipt. The tracked manifest.json remains the
+# repository-controlled provenance trust root.
 data/ephemeris/*.se1
 data/ephemeris/swisseph_ephemeris_manifest.json

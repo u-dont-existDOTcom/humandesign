@@ -25,6 +25,25 @@ python scripts/fetch_swisseph_ephemeris.py
 
 The helper writes the files under `data/ephemeris/` and records local SHA-256 hashes plus the immutable upstream source commit.
 
+The repository-controlled trust root is `data/ephemeris/manifest.json`. The fetch
+helper validates that manifest against the pinned upstream repository, immutable
+commit, and exact required file set. It then verifies the byte length and SHA-256
+of each download *before* atomically installing it. It never treats a newly
+observed download hash as authoritative.
+
+For an offline/local verification with no network access:
+
+```bash
+python scripts/fetch_swisseph_ephemeris.py --verify-only
+```
+
+A successful fetch or verification writes the ignored, deterministic local receipt
+`data/ephemeris/swisseph_ephemeris_manifest.json`. The receipt binds the exact
+source-manifest hash, upstream repository/commit, per-file hashes, and a combined
+file-set hash. Runtime and cache creation must still re-hash the actual `.se1`
+files; the presence of a prior receipt alone is not proof that local bytes remain
+unchanged.
+
 ## Required runtime setup
 
 PySwissEph must be initialized explicitly:
