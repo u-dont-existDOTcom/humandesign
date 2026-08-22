@@ -781,10 +781,13 @@ def test_phase4_storage_failure_publishes_noncompliant_failure_package(
     assert failure.diagnostics_historically_authenticated is False
     assert failure.attempted_input_ordinal == 1
     assert failure.attempted_record_is_in_partial_scores is True
-    assert failure.successfully_evaluated_count == 2
-    assert failure.persisted_scored_count == 0
+    assert failure.replay_verified_partial_score_count == 2
+    assert not hasattr(failure, "persisted_scored_count")
     manifest = json.loads((output / "manifest.json").read_bytes())
     assert manifest["run_status"] == "failed"
+    assert manifest["successfully_scored_count"] is None
+    assert manifest["replay_verified_score_count"] == 2
+    assert "persisted_scored_count" not in manifest
     assert manifest["compliance"] is None
     assert manifest["ranked_artifact"] is None
     assert (output / "partial-scores.jsonl").read_bytes().count(b"\n") == 2
@@ -855,8 +858,8 @@ def test_phase4_commit_failure_publishes_all_evaluated_partial_rows(
     assert failure.producer_reported_stage == "score-store-commit"
     assert failure.attempted_input_ordinal == 1
     assert failure.attempted_record_is_in_partial_scores is True
-    assert failure.successfully_evaluated_count == 2
-    assert failure.persisted_scored_count == 0
+    assert failure.replay_verified_partial_score_count == 2
+    assert not hasattr(failure, "persisted_scored_count")
     assert (output / "partial-scores.jsonl").read_bytes().count(b"\n") == 2
 
     monkeypatch.undo()
@@ -884,8 +887,8 @@ def test_phase4_sqlite_open_failure_publishes_verifiable_empty_partial(
         )
     failure = raised.value.failure
     assert failure.producer_reported_stage == "score-store-open"
-    assert failure.successfully_evaluated_count == 0
-    assert failure.persisted_scored_count == 0
+    assert failure.replay_verified_partial_score_count == 0
+    assert not hasattr(failure, "persisted_scored_count")
     assert (output / "partial-scores.jsonl").read_bytes() == b""
 
     monkeypatch.undo()
@@ -932,8 +935,8 @@ def test_phase4_evaluation_failure_records_exact_unscored_row(
     assert failure.producer_reported_stage == "evaluation"
     assert failure.attempted_input_ordinal == 1
     assert failure.attempted_record_is_in_partial_scores is False
-    assert failure.successfully_evaluated_count == 1
-    assert failure.persisted_scored_count == 0
+    assert failure.replay_verified_partial_score_count == 1
+    assert not hasattr(failure, "persisted_scored_count")
     assert failure.attempted_state_id is not None
     assert failure.attempted_candidate_record_sha256 is not None
     assert verify_v4_3_run(
@@ -1242,7 +1245,7 @@ def test_phase4_verifier_uses_external_scratch_and_leaves_run_read_only(
 
 @pytest.mark.parametrize(
     "mutation",
-    ("semantic-failure", "unresolved-count", "persisted-count"),
+    ("semantic-failure", "unresolved-count", "replay-count"),
 )
 def test_phase4_failure_verifier_recomputes_semantics_and_unresolved_count(
     real_harness: _RealPrevalenceHarness,
@@ -1299,19 +1302,7 @@ def test_phase4_failure_verifier_recomputes_semantics_and_unresolved_count(
     elif mutation == "unresolved-count":
         manifest["unresolved_observation_count_per_candidate"] += 1
     else:
-        failure_path = output / "failure.json"
-        failure = json.loads(failure_path.read_bytes())
-        failure["persisted_scored_count"] = 1
-        failure_path.write_bytes(canonical_json_bytes(failure))
-        manifest["successfully_scored_count"] = 1
-        manifest["persisted_scored_count"] = 1
-        manifest["failure_artifact"].update(
-            {
-                "sha256": sha256_file(failure_path),
-                "byte_count": failure_path.stat().st_size,
-                "logical_sha256": sha256_json(failure),
-            }
-        )
+        manifest["replay_verified_score_count"] -= 1
     manifest_path.write_bytes(canonical_json_bytes(manifest))
 
     with pytest.raises((ValueError, V43RunError)):
@@ -1347,25 +1338,36 @@ def test_phase4_coherent_storage_stage_relabel_changes_no_verified_invariant(
             **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
         )
     monkeypatch.undo()
+    before = verify_v4_3_run(
+        output,
+        **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
+    ).manifest
     failure_path = output / "failure.json"
     diagnostics_path = output / "producer-failure-diagnostics.json"
     manifest_path = output / "manifest.json"
     diagnostics = json.loads(diagnostics_path.read_bytes())
     diagnostics.update(
         {
-            "producer_reported_stage": "score-store-commit",
+            "producer_reported_stage": "score-store-finalize",
             "producer_reported_sqlite_inserted_count": 2,
+            "producer_reported_sqlite_persisted_count": 2,
+            "attempted_input_ordinal": None,
+            "attempted_record_is_in_partial_scores": False,
         }
     )
     diagnostics_path.write_bytes(canonical_json_bytes(diagnostics))
     failure = json.loads(failure_path.read_bytes())
     failure.update(
         {
-            "producer_reported_stage": "score-store-commit",
-            "failure_code": "v4_3_score_store_commit_failure",
-            "error_type": "v4_3_score_store_commit_failure",
-            "error_message": "V4.3 cache run failed during score-store-commit.",
+            "producer_reported_stage": "score-store-finalize",
+            "failure_code": "v4_3_score_store_finalize_failure",
+            "error_type": "v4_3_score_store_finalize_failure",
+            "error_message": "V4.3 cache run failed during score-store-finalize.",
             "producer_diagnostics_sha256": sha256_json(diagnostics),
+            "attempted_input_ordinal": None,
+            "attempted_state_id": None,
+            "attempted_candidate_record_sha256": None,
+            "attempted_record_is_in_partial_scores": False,
         }
     )
     failure_path.write_bytes(canonical_json_bytes(failure))
@@ -1396,6 +1398,14 @@ def test_phase4_coherent_storage_stage_relabel_changes_no_verified_invariant(
         "producer-reported-internal-consistency-only"
     )
     assert diagnostics["historically_authenticated"] is False
+    assert verified.manifest.replay_verified_score_count == (
+        before.replay_verified_score_count
+    )
+    assert verified.manifest.score_records_sha256 == before.score_records_sha256
+    assert verified.manifest.successfully_scored_count is None
+    assert verified.manifest.unresolved_observation_count_per_candidate == (
+        before.unresolved_observation_count_per_candidate
+    )
 
 
 def test_phase4_failure_verifier_rechecks_exact_bytes_after_replay(

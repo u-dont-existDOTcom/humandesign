@@ -61,7 +61,7 @@ from hdmatch.model.v4_3_responses import (
 )
 
 SHA256_PATTERN: Final[str] = r"^[a-f0-9]{64}$"
-V43_RUNNER_VERSION: Final[str] = "v4.3-cache-stream-run-v4"
+V43_RUNNER_VERSION: Final[str] = "v4.3-cache-stream-run-v5"
 SCORE_HASH_STRATEGY: Final[str] = "sha256-canonical-json-lines-input-order-v1"
 RANKED_HASH_STRATEGY: Final[str] = "sha256-canonical-json-lines-rank-order-v1"
 RANKED_FILENAME: Final[str] = "ranked-scores.parquet.zst"
@@ -332,7 +332,7 @@ class V43ProducerFailureDiagnosticsV1(_FrozenModel):
     producer_reported_stage: V43FailureStage
     attempted_input_ordinal: int | None = Field(default=None, ge=0)
     attempted_record_is_in_partial_scores: bool
-    successfully_evaluated_count: int = Field(ge=0)
+    producer_reported_evaluated_count: int = Field(ge=0)
     producer_reported_sqlite_inserted_count: int = Field(ge=0)
     producer_reported_sqlite_persisted_count: int = Field(ge=0)
     sqlite_commit_batch_rows: Literal[1024] = 1024
@@ -344,7 +344,7 @@ class V43ProducerFailureDiagnosticsV1(_FrozenModel):
     ) -> V43ProducerFailureDiagnosticsV1:
         expected_inserted = _expected_failure_inserted_count(
             stage=self.producer_reported_stage,
-            evaluated_count=self.successfully_evaluated_count,
+            evaluated_count=self.producer_reported_evaluated_count,
             attempted_record_is_in_partial_scores=(
                 self.attempted_record_is_in_partial_scores
             ),
@@ -364,7 +364,7 @@ class V43ProducerFailureDiagnosticsV1(_FrozenModel):
 
 
 class V43RunFailureV1(_FrozenModel):
-    schema_version: Literal["v4-3-run-failure-v4"] = "v4-3-run-failure-v4"
+    schema_version: Literal["v4-3-run-failure-v5"] = "v4-3-run-failure-v5"
     diagnostics_scope: Literal["producer-reported-internal-consistency-only"] = (
         "producer-reported-internal-consistency-only"
     )
@@ -382,8 +382,7 @@ class V43RunFailureV1(_FrozenModel):
         pattern=SHA256_PATTERN,
     )
     attempted_record_is_in_partial_scores: bool
-    successfully_evaluated_count: int = Field(ge=0)
-    persisted_scored_count: int = Field(ge=0)
+    replay_verified_partial_score_count: int = Field(ge=0)
     partial_score_records_sha256: str = Field(pattern=SHA256_PATTERN)
     producer_diagnostics_sha256: str = Field(pattern=SHA256_PATTERN)
     score_hash_strategy: Literal[
@@ -399,8 +398,6 @@ class V43RunFailureV1(_FrozenModel):
             raise ValueError("failure code differs from its deterministic stage")
         if self.error_type != expected_type or self.error_message != expected_message:
             raise ValueError("failure semantic type/message differs from its stage")
-        if self.persisted_scored_count > self.successfully_evaluated_count:
-            raise ValueError("persisted score count exceeds evaluated score count")
         row_fields = (
             self.attempted_input_ordinal,
             self.attempted_state_id,
@@ -414,13 +411,18 @@ class V43RunFailureV1(_FrozenModel):
             if self.attempted_record_is_in_partial_scores:
                 raise ValueError("unbound failure row cannot be in partial scores")
         elif self.attempted_record_is_in_partial_scores:
-            if self.attempted_input_ordinal != self.successfully_evaluated_count - 1:
+            if (
+                self.attempted_input_ordinal
+                != self.replay_verified_partial_score_count - 1
+            ):
                 raise ValueError("evaluated failure row has the wrong ordinal")
-        elif self.attempted_input_ordinal != self.successfully_evaluated_count:
+        elif (
+            self.attempted_input_ordinal
+            != self.replay_verified_partial_score_count
+        ):
             raise ValueError("unevaluated failure row has the wrong ordinal")
         if self.producer_reported_stage is V43FailureStage.SCORE_STORE_OPEN and (
-            self.successfully_evaluated_count != 0
-            or self.persisted_scored_count != 0
+            self.replay_verified_partial_score_count != 0
             or self.attempted_input_ordinal is not None
         ):
             raise ValueError("score-store-open failure cannot contain score rows")
@@ -507,11 +509,11 @@ class V43RunBindingsV1(_FrozenModel):
 
 
 class V43RunManifestV1(_FrozenModel):
-    schema_version: Literal["v4-3-cache-run-manifest-v4"] = (
-        "v4-3-cache-run-manifest-v4"
+    schema_version: Literal["v4-3-cache-run-manifest-v5"] = (
+        "v4-3-cache-run-manifest-v5"
     )
-    runner_version: Literal["v4.3-cache-stream-run-v4"] = (
-        "v4.3-cache-stream-run-v4"
+    runner_version: Literal["v4.3-cache-stream-run-v5"] = (
+        "v4.3-cache-stream-run-v5"
     )
     runner_source_sha256: str = Field(pattern=SHA256_PATTERN)
     runtime_source_provenance: V43RuntimeSourceProvenanceV1
@@ -521,7 +523,8 @@ class V43RunManifestV1(_FrozenModel):
     )
     bindings: V43RunBindingsV1
     declared_interval_count: int = Field(gt=0)
-    successfully_scored_count: int = Field(ge=0)
+    successfully_scored_count: int | None = Field(default=None, ge=0)
+    replay_verified_score_count: int = Field(ge=0)
     score_records_sha256: str = Field(pattern=SHA256_PATTERN)
     score_hash_strategy: Literal[
         "sha256-canonical-json-lines-input-order-v1"
@@ -534,8 +537,6 @@ class V43RunManifestV1(_FrozenModel):
         Literal["producer-reported-internal-consistency-only"] | None
     ) = None
     partial_score_artifact: V43RunArtifactV1 | None = None
-    successfully_evaluated_count: int = Field(ge=0)
-    persisted_scored_count: int = Field(ge=0)
     substantive_tie_group_count: int = Field(ge=0)
     tied_candidate_count: int = Field(ge=0)
     unresolved_observation_count_per_candidate: int = Field(ge=0)
@@ -568,19 +569,20 @@ class V43RunManifestV1(_FrozenModel):
             or self.ranked_artifact is not None
             or self.bounded_detail_artifact is not None
             or self.compliance is not None
+            or self.successfully_scored_count is not None
         ):
             raise ValueError(
                 "failed run must contain failure and partial-score artifacts only"
             )
         if self.run_status == "complete" and (
-            self.successfully_evaluated_count != self.declared_interval_count
-            or self.persisted_scored_count != self.declared_interval_count
+            self.replay_verified_score_count != self.declared_interval_count
         ):
             raise ValueError("complete run score accounting is incomplete")
-        if self.run_status == "failed" and (
-            self.successfully_scored_count != self.persisted_scored_count
+        if (
+            self.run_status == "failed"
+            and self.replay_verified_score_count > self.declared_interval_count
         ):
-            raise ValueError("failed manifest legacy/persisted counts differ")
+            raise ValueError("failed run partial-score count exceeds its universe")
         return self
 
 
@@ -1065,7 +1067,6 @@ def run_verified_v4_3_cache(
         compliance = _compliance_model(complete.compliance)
         score_records_sha256 = store.score_records_sha256
         scored_count = store.count
-        persisted_count = store.persisted_count
         store.close()
         (staging / ".rank.sqlite3").unlink(missing_ok=True)
         manifest = V43RunManifestV1(
@@ -1075,8 +1076,7 @@ def run_verified_v4_3_cache(
             bindings=bindings,
             declared_interval_count=declared_count,
             successfully_scored_count=scored_count,
-            successfully_evaluated_count=scored_count,
-            persisted_scored_count=persisted_count,
+            replay_verified_score_count=scored_count,
             score_records_sha256=score_records_sha256,
             ranked_artifact=ranked_summary.artifact,
             bounded_detail_artifact=detail_artifact,
@@ -1752,12 +1752,13 @@ def _verify_v4_3_run_preverified(
             producer_diagnostics,
         )
         if (
-            failure.persisted_scored_count != manifest.persisted_scored_count
-            or failure.successfully_evaluated_count
-            != manifest.successfully_evaluated_count
-            or manifest.successfully_scored_count != manifest.persisted_scored_count
+            failure.replay_verified_partial_score_count
+            != manifest.replay_verified_score_count
+            or manifest.successfully_scored_count is not None
         ):
-            raise V43RunError("failure score accounting differs from manifest")
+            raise V43RunError(
+                "failed manifest replay-verified score count is inconsistent"
+            )
         if failure.partial_score_records_sha256 != manifest.score_records_sha256:
             raise V43RunError("failure partial score hash differs from manifest")
         recomputed_partial = _partial_score_artifact(
@@ -1891,8 +1892,7 @@ def _verify_v4_3_run_preverified(
         if rescored_count != manifest.declared_interval_count:
             raise V43RunError("cache-only rescore count mismatch")
         if (
-            manifest.successfully_evaluated_count != rescored_count
-            or manifest.persisted_scored_count != rescored_count
+            manifest.replay_verified_score_count != rescored_count
             or manifest.successfully_scored_count != rescored_count
         ):
             raise V43RunError("complete run score accounting mismatch")
@@ -1989,7 +1989,7 @@ def _failure_from_exception(
         producer_reported_stage=stage,
         attempted_input_ordinal=attempted_ordinal,
         attempted_record_is_in_partial_scores=attempted_is_partial,
-        successfully_evaluated_count=evaluated_count,
+        producer_reported_evaluated_count=evaluated_count,
         producer_reported_sqlite_inserted_count=(
             store.count if store is not None else 0
         ),
@@ -2008,8 +2008,7 @@ def _failure_from_exception(
         attempted_state_id=attempted_state_id,
         attempted_candidate_record_sha256=attempted_record_sha256,
         attempted_record_is_in_partial_scores=attempted_is_partial,
-        successfully_evaluated_count=evaluated_count,
-        persisted_scored_count=persisted_count,
+        replay_verified_partial_score_count=evaluated_count,
         partial_score_records_sha256=partial_sha256,
         producer_diagnostics_sha256=sha256_json(producer_diagnostics),
     )
@@ -2026,10 +2025,8 @@ def _verify_failure_partial_scores(
     responses: VerifiedV43DirectTargetResponses,
     session: CanonicalV43ScoringSession,
 ) -> None:
-    if failure.successfully_evaluated_count > declared_count:
+    if failure.replay_verified_partial_score_count > declared_count:
         raise V43RunError("failure evaluated-score count exceeds declared universe")
-    if failure.persisted_scored_count != _expected_failure_persisted_count(failure):
-        raise V43RunError("failure persisted-score count is not transactionally possible")
     partial_records = _iter_partial_score_records(partial_path)
     stream = session.stream_verified_universe(responses.artifact.observed_responses())
     sentinel = object()
@@ -2037,7 +2034,7 @@ def _verify_failure_partial_scores(
     unresolved_count: int | None = None
     attempted_verified = failure.attempted_input_ordinal is None
     try:
-        while observed_count < failure.successfully_evaluated_count:
+        while observed_count < failure.replay_verified_partial_score_count:
             expected = next(stream, sentinel)
             observed = next(partial_records, sentinel)
             if expected is sentinel or observed is sentinel:
@@ -2100,7 +2097,7 @@ def _verify_failure_partial_scores(
                     raise V43RunError("failure attempted row differs from cache replay")
             attempted_verified = True
         elif failure.attempted_input_ordinal is None and (
-            failure.successfully_evaluated_count == declared_count
+            failure.replay_verified_partial_score_count == declared_count
         ):
             if next(stream, sentinel) is not sentinel:
                 raise V43RunError("failure declared full evaluation before cache end")
@@ -2110,7 +2107,7 @@ def _verify_failure_partial_scores(
         raise V43RunError("failure attempted row was not verified")
     if partial_artifact.row_count != observed_count:
         raise V43RunError("partial-score artifact row count mismatch")
-    if failure.successfully_evaluated_count != observed_count:
+    if failure.replay_verified_partial_score_count != observed_count:
         raise V43RunError("failure evaluated-score count mismatch")
     if failure.partial_score_records_sha256 != partial_artifact.logical_sha256:
         raise V43RunError("failure partial-score logical hash mismatch")
@@ -2118,17 +2115,22 @@ def _verify_failure_partial_scores(
         raise V43RunError("failure unresolved-observation count mismatch")
 
 
-def _expected_failure_persisted_count(failure: V43RunFailureV1) -> int:
-    evaluated = failure.successfully_evaluated_count
-    if failure.producer_reported_stage is V43FailureStage.SCORE_STORE_OPEN:
+def _expected_producer_reported_persisted_count(
+    diagnostics: V43ProducerFailureDiagnosticsV1,
+) -> int:
+    evaluated = diagnostics.producer_reported_evaluated_count
+    if diagnostics.producer_reported_stage is V43FailureStage.SCORE_STORE_OPEN:
         return 0
-    if failure.producer_reported_stage is V43FailureStage.EVALUATION:
+    if diagnostics.producer_reported_stage is V43FailureStage.EVALUATION:
         return (evaluated // PARQUET_BATCH_ROWS) * PARQUET_BATCH_ROWS
-    if failure.producer_reported_stage is V43FailureStage.PARTIAL_SCORE_JOURNAL:
-        if failure.attempted_record_is_in_partial_scores and evaluated:
+    if (
+        diagnostics.producer_reported_stage
+        is V43FailureStage.PARTIAL_SCORE_JOURNAL
+    ):
+        if diagnostics.attempted_record_is_in_partial_scores and evaluated:
             evaluated -= 1
         return (evaluated // PARQUET_BATCH_ROWS) * PARQUET_BATCH_ROWS
-    if failure.producer_reported_stage in {
+    if diagnostics.producer_reported_stage in {
         V43FailureStage.SCORE_STORE_APPEND,
         V43FailureStage.SCORE_STORE_COMMIT,
     }:
@@ -2171,12 +2173,8 @@ def _verify_producer_failure_diagnostics_internal_consistency(
             failure.attempted_record_is_in_partial_scores,
         ),
         "evaluated count": (
-            diagnostics.successfully_evaluated_count,
-            failure.successfully_evaluated_count,
-        ),
-        "persisted count": (
-            diagnostics.producer_reported_sqlite_persisted_count,
-            failure.persisted_scored_count,
+            diagnostics.producer_reported_evaluated_count,
+            failure.replay_verified_partial_score_count,
         ),
         "partial-score hash": (
             diagnostics.partial_score_records_sha256,
@@ -2190,7 +2188,7 @@ def _verify_producer_failure_diagnostics_internal_consistency(
             )
     expected_inserted = _expected_failure_inserted_count(
         stage=failure.producer_reported_stage,
-        evaluated_count=failure.successfully_evaluated_count,
+        evaluated_count=failure.replay_verified_partial_score_count,
         attempted_record_is_in_partial_scores=(
             failure.attempted_record_is_in_partial_scores
         ),
@@ -2198,6 +2196,12 @@ def _verify_producer_failure_diagnostics_internal_consistency(
     if diagnostics.producer_reported_sqlite_inserted_count != expected_inserted:
         raise V43RunError(
             "producer-reported stage is inconsistent with producer operation counters"
+        )
+    if diagnostics.producer_reported_sqlite_persisted_count != (
+        _expected_producer_reported_persisted_count(diagnostics)
+    ):
+        raise V43RunError(
+            "producer-reported persisted count is internally inconsistent"
         )
 
 
@@ -2284,7 +2288,7 @@ def _complete_and_publish_failure_package(
         with suppress(OSError):
             journal_directory.rmdir()
     partial_artifact = _partial_score_artifact(partial_path)
-    if partial_artifact.row_count != failure.successfully_evaluated_count:
+    if partial_artifact.row_count != failure.replay_verified_partial_score_count:
         raise V43RunError("failure journal count changed during publication")
     if partial_artifact.logical_sha256 != failure.partial_score_records_sha256:
         raise V43RunError("failure journal hash changed during publication")
@@ -2317,9 +2321,9 @@ def _complete_and_publish_failure_package(
         run_status="failed",
         bindings=bindings,
         declared_interval_count=declared_count,
-        successfully_scored_count=failure.persisted_scored_count,
-        successfully_evaluated_count=failure.successfully_evaluated_count,
-        persisted_scored_count=failure.persisted_scored_count,
+        replay_verified_score_count=(
+            failure.replay_verified_partial_score_count
+        ),
         score_records_sha256=failure.partial_score_records_sha256,
         failure_artifact=failure_artifact,
         producer_failure_diagnostics_artifact=producer_diagnostics_artifact,
