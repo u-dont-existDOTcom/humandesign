@@ -6,6 +6,11 @@ This phase prepares deterministic, reusable M0–M2 chart-state serialization.
 It is not a behavioral model, a V4.3 score, a verified century cache, a ranking,
 or evidence that Human Design predicts human behavior.
 
+Upstream changed the current behavioral target from V3.5 to V3.6 after the
+feature-registry work began. This Phase-1 astronomy/cache contract is target
+independent; Phase 3 must use V3.6 and preserve the frozen historical V3.6 audit
+as development output rather than an optimization target.
+
 ## Integrated components
 
 - Exact Personality and Design Gate/Line boundary enumeration uses the exact
@@ -113,8 +118,12 @@ legacy candidate paths must not claim V4.3 compliance.
 - Final stable-tree full suite: 456 passed, 2 environment-dependent skips.
 - Ruff over `src`, `tests`, and `scripts`: pass.
 - Strict mypy over 103 `src/hdmatch` source files: pass.
-- No production century-cache construction and no century behavioral ranking
-  has started.
+- Normal GitHub CI for checkpoint `b94e160ccbb4ce9be5131e57f37630087825f0b2`:
+  push run `32564812508` pass; pull-request run `32564814009` pass.
+- An inherited historical V3.6 audit workflow run failed before computation;
+  its 100-year ranking step was skipped and is not counted as a result.
+- No production century-cache construction and no new century behavioral
+  ranking has started in this cache-first execution.
 
 ## Phase-2 handoff — still required before any century ranking
 

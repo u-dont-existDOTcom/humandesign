@@ -10,19 +10,21 @@
   `a7c24012867e640f2728f40ab342267b12d662e9`.
 - Current integrated exact-origin implementation head:
   `4dce7708afefdaaff4660f44298880fe8ba6b849`.
-- Current published checkpoint remains:
-  `2b5c1f80d1ee20f96a5470660e84327f0c767544`; the Phase-1 report/test commit
-  and exact-head GitHub CI are pending.
-- Exact-head GitHub Actions are green for both push run `32560209894` and
-  pull-request run `32560212364`.
+- Current published Phase-1/V3.6 checkpoint:
+  `b94e160ccbb4ce9be5131e57f37630087825f0b2`.
+- Normal exact-head GitHub CI is green for both push run `32564812508` and
+  pull-request run `32564814009`.
+- The inherited historical V3.6 audit workflow also triggered during the
+  upstream-main synchronization. Run `32564813967` failed during ephemeris
+  fetch; its 100-year ranking step was skipped. It is not a cache, completed
+  audit, or authorized ranking.
 
 ## Mandatory execution position
 
-Phase 0 is complete. Phase 1 implementation, independent review, bounded
-real-SWIEPH proof, and final stable-tree local validation are complete;
-exact-head GitHub CI remains before the Phase-1 checkpoint is published. No
-production century-cache build and no full-century behavioral ranking have
-started.
+Phase 0 and Phase 1 are complete and published. Independent review, the bounded
+real-SWIEPH proof, final stable-tree local validation, and normal exact-head
+GitHub CI are green. No production century-cache build and no new full-century
+behavioral ranking have started.
 
 The mandatory sequence remains:
 
