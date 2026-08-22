@@ -1,4 +1,4 @@
-name: V4.3 historical audit cache-first guard
+name: V4.3 profile NetInformation audit
 
 on:
   pull_request:
@@ -17,12 +17,24 @@ permissions:
   contents: read
 
 jobs:
-  cache-first-guard:
+  audit:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 120
     steps:
-      - name: Enforce reusable-cache migration order
-        run: |
-          echo "The 2026-08-22 V3.6 audit is a frozen historical development result."
-          echo "Its direct century runner is disabled on this integration branch."
-          echo "A new broad ranking may run only from the verified reusable century cache after Phases 0-3 pass."
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install PySwissEph
+        run: python -m pip install 'pyswisseph>=2.10.3.2,<3'
+      - name: Fetch pinned Swiss ephemeris files
+        run: python scripts/fetch_swisseph_ephemeris.py
+      - name: Run hardened frozen 100-year NetInformation-first audit
+        env:
+          EPHE_PATH: data/ephemeris
+          HD_START: '1926-08-22T05:40:00+00:00'
+          HD_END: '2026-08-22T05:40:00+00:00'
+          HD_MAPPING: 'reference/core/profile_v3_6_v43_mapping_frozen_2026_08_22.json'
+          HD_MAPPING_OVERLAY: 'reference/core/profile_v3_6_v43_mapping_overlay_v2_2026_08_22.json'
+          HD_TARGET: 'reference/core/behavioral_target_combined_v3_6.md'
+        run: python scripts/v43_profile_netinfo_rerun_v2.py

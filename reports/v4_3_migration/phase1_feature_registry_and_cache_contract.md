@@ -122,8 +122,9 @@ legacy candidate paths must not claim V4.3 compliance.
   push run `32564812508` pass; pull-request run `32564814009` pass.
 - An inherited historical V3.6 audit workflow run failed before computation;
   its 100-year ranking step was skipped and is not counted as a result.
-- The integration workflow is now a cache-first guard and contains no fetch or
-  ranking step. The frozen historical runner cannot execute from PR updates.
+- The historical workflow and runner are preserved byte-for-byte from current
+  `main`. Repository workflow `339927779` is disabled manually until the
+  verified reusable-cache path exists; normal CI remains active.
 - No production century-cache construction and no new century behavioral
   ranking has started in this cache-first execution.
 

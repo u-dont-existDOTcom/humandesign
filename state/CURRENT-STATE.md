@@ -17,9 +17,10 @@
 - The inherited historical V3.6 audit workflow also triggered during the
   upstream-main synchronization. Run `32564813967` failed during ephemeris
   fetch; its 100-year ranking step was skipped. It is not a cache, completed
-  audit, or authorized ranking. The integration branch converts that workflow
-  into a cache-first guard; it cannot fetch ephemeris or execute the legacy
-  direct-century runner.
+  audit, or authorized ranking. The workflow and direct runner are preserved
+  byte-for-byte from current `main` as frozen historical fixtures. Repository
+  workflow `339927779` is disabled manually until the verified reusable-cache
+  path exists; normal CI workflow `339559879` remains active.
 
 ## Mandatory execution position
 
