@@ -1,6 +1,12 @@
 name: SWIEPH profile A-B rerun
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/swieph_ab_rerun.py'
+      - 'scripts/fetch_swisseph_ephemeris.py'
+      - '.github/workflows/swieph-ab-rerun.yml'
   pull_request:
     branches: [main]
     paths:
