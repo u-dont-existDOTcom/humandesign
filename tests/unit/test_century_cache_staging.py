@@ -16,11 +16,13 @@ from hdmatch.century_cache.staging import (
     century_build_plan_sha256,
     create_canonical_century_build_plan,
     create_century_build_plan,
+    load_century_build_plan,
     load_staged_exact_state_batch_receipt,
     staged_job_artifact_path,
     staged_job_receipt_path,
     staged_replay_verification_sha256,
     verify_staged_exact_state_batch,
+    write_century_build_plan_new,
     write_staged_exact_state_batch,
 )
 from hdmatch.chart.ephemeris import CelestialBody, SwissEphemerisProvider
@@ -250,6 +252,23 @@ def test_plan_rejects_naive_timestamps_and_dirty_source_tree(tmp_path: Path) -> 
         )
 
 
+def test_build_plan_persistence_is_canonical_immutable_and_fail_closed(
+    tmp_path: Path,
+) -> None:
+    provider, provenance, _ = _provider_fixture(tmp_path / "provider")
+    plan = _plan(provider, provenance)
+    plan_path = tmp_path / "staging" / "century-build-plan.json"
+
+    assert write_century_build_plan_new(plan_path, plan) == plan_path
+    assert load_century_build_plan(plan_path) == plan
+    with pytest.raises(FileExistsError):
+        write_century_build_plan_new(plan_path, plan)
+
+    plan_path.write_bytes(plan_path.read_bytes() + b"\n")
+    with pytest.raises(StagedCenturyBuildError, match="not canonical JSON"):
+        load_century_build_plan(plan_path)
+
+
 def test_staged_job_is_receipt_last_and_requires_full_deterministic_replay(
     tmp_path: Path,
 ) -> None:
@@ -425,4 +444,3 @@ def test_early_middle_final_fallbacks_leave_no_passing_receipt(tmp_path: Path) -
             write_staged_exact_state_batch(plan, job, provider, staging)
         assert not staged_job_artifact_path(staging, job).exists()
         assert not staged_job_receipt_path(staging, job).exists()
-

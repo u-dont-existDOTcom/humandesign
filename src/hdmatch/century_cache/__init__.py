@@ -43,6 +43,10 @@ from .models import (
     parquet_schema_sha256,
     required_feature_ids_sha256,
 )
+from .parity import (
+    CenturyCacheParityGenerationError,
+    generate_swieph_golden_parity_report,
+)
 from .parquet import CenturyCacheDependencyError, CenturyCacheParquetError
 from .staging import (
     CANONICAL_CENTURY_END_EXCLUSIVE_UTC,
@@ -60,11 +64,13 @@ from .staging import (
     certify_swiss_calculation_audit,
     create_canonical_century_build_plan,
     create_century_build_plan,
+    load_century_build_plan,
     load_staged_exact_state_batch_receipt,
     staged_job_artifact_path,
     staged_job_receipt_path,
     staged_replay_verification_sha256,
     verify_staged_exact_state_batch,
+    write_century_build_plan_new,
     write_staged_exact_state_batch,
 )
 from .store import (
@@ -98,6 +104,7 @@ __all__ = [
     "CenturyCacheManifest",
     "CenturyCacheParquetError",
     "CenturyCacheParityReport",
+    "CenturyCacheParityGenerationError",
     "CenturyCacheRecoveryError",
     "CenturyCacheShard",
     "CenturyCacheShardInput",
@@ -133,10 +140,12 @@ __all__ = [
     "coerce_century_state_record",
     "create_canonical_century_build_plan",
     "create_century_build_plan",
+    "generate_swieph_golden_parity_report",
     "discrete_chart_identity_sha256",
     "feature_registry_sha256",
     "iter_verified_century_cache_rows",
     "load_staged_exact_state_batch_receipt",
+    "load_century_build_plan",
     "open_century_cache_for_recovery",
     "parquet_schema_sha256",
     "required_feature_ids_sha256",
@@ -149,6 +158,7 @@ __all__ = [
     "validate_verified_exact_shard_set",
     "verify_staged_exact_state_batch",
     "write_century_cache_explicit",
+    "write_century_build_plan_new",
     "write_noncanonical_century_cache_fixture",
     "write_staged_exact_state_batch",
 ]

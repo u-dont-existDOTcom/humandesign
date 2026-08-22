@@ -672,6 +672,37 @@ def century_build_job_sha256(job: CenturyBuildJobV1) -> str:
     return sha256_json(checked.model_dump(mode="json"))
 
 
+def write_century_build_plan_new(
+    path: str | Path,
+    plan: CenturyBuildPlanV1,
+) -> Path:
+    """Persist one immutable canonical plan before any job is generated."""
+
+    checked = CenturyBuildPlanV1.model_validate(
+        plan.model_dump(mode="python"),
+        strict=True,
+    )
+    destination = Path(path)
+    write_new_canonical_json(destination, checked)
+    return destination
+
+
+def load_century_build_plan(path: str | Path) -> CenturyBuildPlanV1:
+    """Load exact canonical plan bytes; never infer a plan from staged jobs."""
+
+    source = Path(path)
+    if source.is_symlink():
+        raise StagedCenturyBuildError("century build plan must not be a symbolic link")
+    try:
+        raw = source.read_bytes()
+        plan = CenturyBuildPlanV1.model_validate_json(raw, strict=True)
+    except (OSError, ValueError) as exc:
+        raise StagedCenturyBuildError("invalid century build plan") from exc
+    if canonical_json_bytes(plan.model_dump(mode="json")) != raw:
+        raise StagedCenturyBuildError("century build plan is not canonical JSON")
+    return plan
+
+
 def staged_job_artifact_path(
     staging_directory: str | Path,
     job: CenturyBuildJobV1,
