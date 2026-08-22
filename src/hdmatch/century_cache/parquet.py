@@ -5,17 +5,27 @@ from __future__ import annotations
 import json
 import os
 import tempfile
+import uuid
+from collections.abc import Iterator
+from dataclasses import dataclass
+from itertools import zip_longest
 from pathlib import Path
 from typing import Any
 
-from hdmatch.experiments.canonical import canonical_json_bytes
+from hdmatch.experiments.canonical import canonical_json_bytes, sha256_file
 
 from .models import (
+    PARQUET_SHARD_HARD_CAP_BYTES,
+    PARQUET_SHARD_TARGET_BYTES,
+    CenturyCacheShard,
     CenturyStateRecord,
     FeatureColumnSpec,
     FeatureStorageType,
     FeatureValue,
+    canonical_rows_sha256,
+    parquet_schema_sha256,
 )
+from .streaming import canonical_row_json_line
 
 
 class CenturyCacheDependencyError(RuntimeError):
@@ -326,3 +336,180 @@ def read_parquet_shard(
         raise CenturyCacheParquetError(
             f"invalid logical row payload in shard: {source.name}"
         ) from exc
+
+
+def iter_parquet_shard_rows(
+    path: str | Path,
+    registry: tuple[FeatureColumnSpec, ...],
+    *,
+    batch_size: int = 1024,
+) -> Iterator[CenturyStateRecord]:
+    """Decode a shard in bounded Arrow batches after physical validation."""
+
+    if batch_size <= 0:
+        raise CenturyCacheParquetError("Parquet streaming batch size must be positive")
+    _, pq = _pyarrow_modules()
+    source = Path(path)
+    try:
+        parquet_file = pq.ParquetFile(source)
+    except (OSError, ValueError) as exc:
+        raise CenturyCacheParquetError(f"cannot read Parquet shard: {source.name}") from exc
+    expected_schema = expected_arrow_schema(registry)
+    if not parquet_file.schema_arrow.equals(expected_schema, check_metadata=True):
+        raise CenturyCacheParquetError(f"Parquet schema mismatch: {source.name}")
+    metadata = parquet_file.metadata
+    for group_index in range(metadata.num_row_groups):
+        row_group = metadata.row_group(group_index)
+        for column_index in range(row_group.num_columns):
+            if row_group.column(column_index).compression != "ZSTD":
+                raise CenturyCacheParquetError(
+                    f"Parquet column is not Zstandard-compressed: {source.name}"
+                )
+    try:
+        for batch in parquet_file.iter_batches(batch_size=batch_size):
+            for payload in batch.to_pylist():
+                yield _logical_row(payload, registry)
+    except (KeyError, OSError, TypeError, ValueError) as exc:
+        raise CenturyCacheParquetError(
+            f"invalid logical row payload in shard: {source.name}"
+        ) from exc
+
+
+@dataclass(frozen=True, slots=True)
+class BoundedShardWriteAudit:
+    """Resource-bound evidence from one streaming shard-writing session."""
+
+    shard_count: int
+    row_count: int
+    maximum_buffered_canonical_bytes: int
+    target_bytes: int
+    hard_cap_bytes: int
+
+
+class BoundedParquetShardWriter:
+    """Write a row stream into deterministic, hard-capped Parquet shards.
+
+    The current buffer is bounded by canonical logical-row bytes.  A completed
+    candidate is measured on disk and recursively split at row boundaries if it
+    exceeds the physical hard cap.  No previously emitted shard rows are kept.
+    """
+
+    def __init__(
+        self,
+        directory: str | Path,
+        registry: tuple[FeatureColumnSpec, ...],
+        *,
+        target_bytes: int = PARQUET_SHARD_TARGET_BYTES,
+        hard_cap_bytes: int = PARQUET_SHARD_HARD_CAP_BYTES,
+    ) -> None:
+        if target_bytes <= 0:
+            raise CenturyCacheParquetError("Parquet shard target must be positive")
+        if hard_cap_bytes < target_bytes:
+            raise CenturyCacheParquetError(
+                "Parquet shard hard cap must not be smaller than its target"
+            )
+        self._directory = Path(directory)
+        if not self._directory.is_dir():
+            raise CenturyCacheParquetError(
+                "bounded shard writer requires an existing staging directory"
+            )
+        self._registry = registry
+        self._target_bytes = target_bytes
+        self._hard_cap_bytes = hard_cap_bytes
+        self._buffer: list[CenturyStateRecord] = []
+        self._buffer_bytes = 0
+        self._maximum_buffer_bytes = 0
+        self._shards: list[CenturyCacheShard] = []
+        self._row_count = 0
+        self._finished = False
+
+    def append(self, row: CenturyStateRecord) -> None:
+        if self._finished:
+            raise CenturyCacheParquetError("bounded shard writer is already finished")
+        row_bytes = len(canonical_row_json_line(row))
+        if self._buffer and self._buffer_bytes + row_bytes > self._target_bytes:
+            self._flush(tuple(self._buffer))
+            self._buffer.clear()
+            self._buffer_bytes = 0
+        self._buffer.append(row)
+        self._buffer_bytes += row_bytes
+        self._maximum_buffer_bytes = max(
+            self._maximum_buffer_bytes,
+            self._buffer_bytes,
+        )
+        self._row_count += 1
+
+    def finish(self) -> tuple[tuple[CenturyCacheShard, ...], BoundedShardWriteAudit]:
+        if self._finished:
+            raise CenturyCacheParquetError("bounded shard writer is already finished")
+        self._finished = True
+        if self._buffer:
+            self._flush(tuple(self._buffer))
+            self._buffer.clear()
+            self._buffer_bytes = 0
+        if not self._shards:
+            raise CenturyCacheParquetError("cannot finalize an empty cache shard stream")
+        return (
+            tuple(self._shards),
+            BoundedShardWriteAudit(
+                shard_count=len(self._shards),
+                row_count=self._row_count,
+                maximum_buffered_canonical_bytes=self._maximum_buffer_bytes,
+                target_bytes=self._target_bytes,
+                hard_cap_bytes=self._hard_cap_bytes,
+            ),
+        )
+
+    def _flush(self, rows: tuple[CenturyStateRecord, ...]) -> None:
+        candidate = self._directory / (
+            f".shard-candidate-{len(self._shards):06d}-{uuid.uuid4().hex}.parquet.zst"
+        )
+        try:
+            write_parquet_shard_new(candidate, rows, self._registry)
+            byte_count = candidate.stat().st_size
+            if byte_count > self._hard_cap_bytes:
+                if len(rows) == 1:
+                    raise CenturyCacheParquetError(
+                        "one logical row exceeds the Parquet shard hard cap"
+                    )
+                candidate.unlink()
+                split = len(rows) // 2
+                self._flush(rows[:split])
+                self._flush(rows[split:])
+                return
+
+            expected = iter(rows)
+            observed = iter_parquet_shard_rows(candidate, self._registry)
+            sentinel = object()
+            for expected_row, observed_row in zip_longest(
+                expected,
+                observed,
+                fillvalue=sentinel,
+            ):
+                if expected_row != observed_row:
+                    raise CenturyCacheParquetError(
+                        "Parquet round-trip changed streamed logical rows"
+                    )
+
+            filename = f"states-{len(self._shards):06d}.parquet.zst"
+            destination = self._directory / filename
+            try:
+                os.link(candidate, destination)
+            except FileExistsError:
+                raise FileExistsError(
+                    f"century-cache shard already exists: {destination}"
+                ) from None
+            self._shards.append(
+                CenturyCacheShard(
+                    filename=filename,
+                    sha256=sha256_file(destination),
+                    row_count=len(rows),
+                    utc_start=rows[0].utc_start,
+                    utc_end_exclusive=rows[-1].utc_end,
+                    canonical_rows_sha256=canonical_rows_sha256(rows),
+                    parquet_schema_sha256=parquet_schema_sha256(self._registry),
+                    byte_count=byte_count,
+                )
+            )
+        finally:
+            candidate.unlink(missing_ok=True)

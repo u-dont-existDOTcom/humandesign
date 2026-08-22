@@ -24,6 +24,8 @@ LOGICAL_HASH_STRATEGY: Literal["sha256-canonical-json-lines-v1"] = (
     "sha256-canonical-json-lines-v1"
 )
 STORAGE_FORMAT: Literal["parquet-internal-zstd-v1"] = "parquet-internal-zstd-v1"
+PARQUET_SHARD_TARGET_BYTES: Literal[67108864] = 67108864
+PARQUET_SHARD_HARD_CAP_BYTES: Literal[83886080] = 83886080
 
 
 class FrozenModel(BaseModel):
@@ -226,6 +228,8 @@ class CenturyCacheBuildSpec(FrozenModel):
         LOGICAL_HASH_STRATEGY
     )
     storage_format: Literal["parquet-internal-zstd-v1"] = STORAGE_FORMAT
+    parquet_shard_target_bytes: Literal[67108864] = PARQUET_SHARD_TARGET_BYTES
+    parquet_shard_hard_cap_bytes: Literal[83886080] = PARQUET_SHARD_HARD_CAP_BYTES
     engine: CenturyCacheEngineProvenance
     node_convention: Literal["true"]
     mandala_mapping_version: str = Field(min_length=1)
@@ -240,6 +244,10 @@ class CenturyCacheBuildSpec(FrozenModel):
     parity_reference_source_sha256: str = Field(pattern=SHA256_PATTERN)
     boundary_audit_status: Literal["pass"]
     boundary_audit_report_sha256: str = Field(pattern=SHA256_PATTERN)
+    reconciliation_aggregate_sha256: str | None = Field(
+        default=None,
+        pattern=SHA256_PATTERN,
+    )
     generation_commit: str = Field(pattern=GIT_COMMIT_PATTERN)
     created_at_utc: datetime
 
@@ -262,6 +270,70 @@ class CenturyCacheBuildSpec(FrozenModel):
         return self
 
 
+class CenturyCacheStreamIdentity(FrozenModel):
+    """Pre-stream identities that do not depend on the final boundary audit.
+
+    The boundary-audit report binds the final row hash/count and therefore cannot
+    exist before rows have streamed.  This contract freezes every identity needed
+    to validate rows and storage while leaving evidence finalization for the
+    manifest-last publication step.
+    """
+
+    schema_version: Literal["century-cache-stream-identity-v1"] = (
+        "century-cache-stream-identity-v1"
+    )
+    cache_version: Literal["century-cache-v1"] = "century-cache-v1"
+    feature_vector_schema_version: str = Field(min_length=1)
+    utc_start: datetime
+    utc_end_exclusive: datetime
+    feature_registry: tuple[FeatureColumnSpec, ...] = Field(min_length=1)
+    semantic_feature_registry_sha256: str = Field(pattern=SHA256_PATTERN)
+    feature_registry_sha256: str = Field(pattern=SHA256_PATTERN)
+    required_feature_coverage: float = Field(ge=0.0, le=1.0)
+    calculation_tier: Literal["M2"]
+    exact_intervals: Literal[True]
+    canonical_row_hash_strategy: Literal["sha256-canonical-json-lines-v1"] = (
+        LOGICAL_HASH_STRATEGY
+    )
+    storage_format: Literal["parquet-internal-zstd-v1"] = STORAGE_FORMAT
+    parquet_shard_target_bytes: Literal[67108864] = PARQUET_SHARD_TARGET_BYTES
+    parquet_shard_hard_cap_bytes: Literal[83886080] = PARQUET_SHARD_HARD_CAP_BYTES
+    engine: CenturyCacheEngineProvenance
+    node_convention: Literal["true"]
+    mandala_mapping_version: str = Field(min_length=1)
+    mandala_mapping_sha256: str = Field(pattern=SHA256_PATTERN)
+    bodygraph_mapping_sha256: str = Field(pattern=SHA256_PATTERN)
+    boundary_policy_version: str = Field(min_length=1)
+    design_root_time_tolerance_seconds: float = Field(gt=0.0)
+    design_root_arc_tolerance_degrees: float = Field(gt=0.0)
+    generation_commit: str = Field(pattern=GIT_COMMIT_PATTERN)
+
+    @field_validator("utc_start", "utc_end_exclusive")
+    @classmethod
+    def require_utc(cls, value: datetime) -> datetime:
+        if value.tzinfo is None or value.utcoffset() is None:
+            raise ValueError("cache stream timestamps must be timezone-aware")
+        return value.astimezone(UTC)
+
+    @model_validator(mode="after")
+    def require_stream_invariants(self) -> CenturyCacheStreamIdentity:
+        if self.utc_end_exclusive <= self.utc_start:
+            raise ValueError("cache stream range must be positive")
+        if self.required_feature_coverage != 1.0:
+            raise ValueError("canonical cache stream requires complete feature coverage")
+        _validate_feature_registry(self.feature_registry, self.feature_registry_sha256)
+        return self
+
+    @classmethod
+    def from_build_spec(cls, spec: CenturyCacheBuildSpec) -> CenturyCacheStreamIdentity:
+        fields = set(cls.model_fields) - {"schema_version"}
+        payload = {
+            name: getattr(spec, name)
+            for name in fields
+        }
+        return cls.model_validate(payload, strict=True)
+
+
 class CenturyCacheShard(FrozenModel):
     filename: str = Field(pattern=SHARD_NAME_PATTERN)
     sha256: str = Field(pattern=SHA256_PATTERN)
@@ -270,6 +342,7 @@ class CenturyCacheShard(FrozenModel):
     utc_end_exclusive: datetime
     canonical_rows_sha256: str = Field(pattern=SHA256_PATTERN)
     parquet_schema_sha256: str = Field(pattern=SHA256_PATTERN)
+    byte_count: int = Field(gt=0, le=PARQUET_SHARD_HARD_CAP_BYTES)
 
     @field_validator("utc_start", "utc_end_exclusive")
     @classmethod
@@ -290,7 +363,7 @@ class CenturyCacheShard(FrozenModel):
 class CenturyCacheEvidenceArtifact(FrozenModel):
     """One bundled proof artifact re-opened during every cache verification."""
 
-    kind: Literal["engine_validation", "parity", "boundary_audit"]
+    kind: Literal["engine_validation", "parity", "boundary_audit", "reconciliation"]
     filename: str = Field(pattern=r"^evidence/[a-z-]+\.json$")
     sha256: str = Field(pattern=SHA256_PATTERN)
     schema_version: str = Field(min_length=1)
@@ -423,6 +496,8 @@ class CenturyCacheManifest(FrozenModel):
     exact_intervals: Literal[True]
     canonical_row_hash_strategy: Literal["sha256-canonical-json-lines-v1"]
     storage_format: Literal["parquet-internal-zstd-v1"]
+    parquet_shard_target_bytes: Literal[67108864]
+    parquet_shard_hard_cap_bytes: Literal[83886080]
     engine: CenturyCacheEngineProvenance
     node_convention: Literal["true"]
     mandala_mapping_version: str = Field(min_length=1)
@@ -437,6 +512,10 @@ class CenturyCacheManifest(FrozenModel):
     parity_reference_source_sha256: str = Field(pattern=SHA256_PATTERN)
     boundary_audit_status: Literal["pass"]
     boundary_audit_report_sha256: str = Field(pattern=SHA256_PATTERN)
+    reconciliation_aggregate_sha256: str | None = Field(
+        default=None,
+        pattern=SHA256_PATTERN,
+    )
     generation_commit: str = Field(pattern=GIT_COMMIT_PATTERN)
     created_at_utc: datetime
     exact_state_provenance: ExactStateUniverseProvenance
@@ -514,7 +593,7 @@ class CenturyCacheManifest(FrozenModel):
         for label, (actual, required) in exact_bindings.items():
             if actual != required:
                 raise ValueError(f"cache exact-state {label} binding is inconsistent")
-        expected_evidence = {
+        expected_evidence: dict[str, tuple[str, str]] = {
             "engine_validation": (
                 "evidence/engine-validation.json",
                 self.engine.engine_validation_sha256,
@@ -525,12 +604,15 @@ class CenturyCacheManifest(FrozenModel):
                 self.boundary_audit_report_sha256,
             ),
         }
+        if self.reconciliation_aggregate_sha256 is not None:
+            expected_evidence["reconciliation"] = (
+                "evidence/reconciliation-aggregate.json",
+                self.reconciliation_aggregate_sha256,
+            )
         if {item.kind for item in self.evidence_artifacts} != set(expected_evidence):
-            raise ValueError("cache manifest must bind exactly three proof artifacts")
-        if tuple(item.kind for item in self.evidence_artifacts) != (
-            "boundary_audit",
-            "engine_validation",
-            "parity",
+            raise ValueError("cache manifest proof-artifact set is inconsistent")
+        if tuple(item.kind for item in self.evidence_artifacts) != tuple(
+            sorted(expected_evidence)
         ):
             raise ValueError("cache evidence artifacts must be canonically ordered")
         for artifact in self.evidence_artifacts:
@@ -580,6 +662,10 @@ class CenturyCacheExpectations(FrozenModel):
     parity_reference_source_locator: str = Field(min_length=1)
     parity_reference_source_sha256: str = Field(pattern=SHA256_PATTERN)
     boundary_audit_report_sha256: str = Field(pattern=SHA256_PATTERN)
+    reconciliation_aggregate_sha256: str | None = Field(
+        default=None,
+        pattern=SHA256_PATTERN,
+    )
 
     @field_validator("utc_start", "utc_end_exclusive")
     @classmethod
