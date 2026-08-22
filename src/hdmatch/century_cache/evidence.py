@@ -377,6 +377,7 @@ def _validate_boundary_audit_report(
     *,
     logical_universe_sha256: str,
     interval_count: int,
+    boundary_event_count: int,
 ) -> CenturyCacheBoundaryAuditReport:
     try:
         report = CenturyCacheBoundaryAuditReport.model_validate_json(raw, strict=True)
@@ -422,6 +423,10 @@ def _validate_boundary_audit_report(
         "UTC start": (report.utc_start, spec.utc_start),
         "UTC end": (report.utc_end_exclusive, spec.utc_end_exclusive),
         "interval count": (report.interval_count, interval_count),
+        "boundary-event count": (
+            report.audited_boundary_event_count,
+            boundary_event_count,
+        ),
     }
     for label, (actual, required) in expected.items():
         if actual != required:
@@ -438,6 +443,7 @@ def _validate_evidence(
     spec: CenturyCacheBuildSpec | CenturyCacheManifest,
     logical_universe_sha256: str,
     interval_count: int,
+    boundary_event_count: int,
 ) -> ValidatedCenturyCacheEvidence:
     engine_raw, _ = _read_canonical_json(engine_path, label="engine-validation")
     parity_raw, _ = _read_canonical_json(parity_path, label="parity")
@@ -466,6 +472,7 @@ def _validate_evidence(
         spec,
         logical_universe_sha256=logical_universe_sha256,
         interval_count=interval_count,
+        boundary_event_count=boundary_event_count,
     )
     artifacts = tuple(
         sorted(
@@ -514,6 +521,7 @@ def validate_external_cache_evidence(
     spec: CenturyCacheBuildSpec,
     logical_universe_sha256: str,
     interval_count: int,
+    boundary_event_count: int,
 ) -> ValidatedCenturyCacheEvidence:
     """Open, hash, parse, and semantically validate external proof inputs."""
 
@@ -525,6 +533,7 @@ def validate_external_cache_evidence(
         spec=spec,
         logical_universe_sha256=logical_universe_sha256,
         interval_count=interval_count,
+        boundary_event_count=boundary_event_count,
     )
 
 
@@ -558,6 +567,9 @@ def validate_bundled_cache_evidence(
         spec=manifest,
         logical_universe_sha256=manifest.logical_universe_sha256,
         interval_count=manifest.interval_count,
+        boundary_event_count=(
+            manifest.exact_state_provenance.boundary_event_count
+        ),
     )
     if validated.artifacts != manifest.evidence_artifacts:
         raise CenturyCacheEvidenceError(

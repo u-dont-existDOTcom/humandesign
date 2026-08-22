@@ -21,6 +21,11 @@ from hdmatch.provenance.swisseph_files import (
     verify_ephemeris_directory,
 )
 
+from .chart_adapter import (
+    ExactStateBatchError,
+    VerifiedExactShardSet,
+    validate_verified_exact_shard_set,
+)
 from .evidence import (
     CenturyCacheEvidenceError,
     CenturyCacheEvidenceInputs,
@@ -34,6 +39,8 @@ from .models import (
     CenturyCacheManifest,
     CenturyCacheShard,
     CenturyStateRecord,
+    ExactStateUniverseProvenance,
+    FeatureColumnSpec,
     VerifiedCenturyCache,
     canonical_rows_sha256,
     discrete_chart_identity_sha256,
@@ -75,6 +82,14 @@ class CenturyCacheShardInput:
             raise ValueError("century-cache shard filename must not contain a path")
         if not self.rows:
             raise ValueError("century-cache shard must not be empty")
+
+
+@dataclass(frozen=True, slots=True)
+class NoncanonicalCenturyCacheFixture:
+    """Physical fixture output that can never be treated as a verified cache."""
+
+    cache_directory: Path
+    shard_paths: tuple[Path, ...]
 
 
 def _validate_record_metadata(
@@ -159,18 +174,120 @@ def _expectations_for_spec(spec: CenturyCacheBuildSpec) -> CenturyCacheExpectati
     )
 
 
+def _validate_exact_universe_spec(
+    provenance: ExactStateUniverseProvenance,
+    spec: CenturyCacheBuildSpec,
+) -> None:
+    expected = {
+        "UTC start": (provenance.utc_start, spec.utc_start),
+        "UTC end": (provenance.utc_end_exclusive, spec.utc_end_exclusive),
+        "boundary policy": (
+            provenance.boundary_policy_version,
+            spec.boundary_policy_version,
+        ),
+        "feature-vector schema": (
+            provenance.feature_vector_schema_version,
+            spec.feature_vector_schema_version,
+        ),
+        "semantic feature registry": (
+            provenance.semantic_feature_registry_sha256,
+            spec.semantic_feature_registry_sha256,
+        ),
+        "physical feature registry": (
+            provenance.feature_registry_sha256,
+            spec.feature_registry_sha256,
+        ),
+        "chart engine": (
+            provenance.chart_engine_version,
+            spec.engine.chart_engine_version,
+        ),
+        "ephemeris file set": (
+            provenance.ephemeris_file_set_sha256,
+            spec.engine.ephemeris_provenance.ephemeris_file_set_sha256,
+        ),
+        "node convention": (provenance.node_convention, spec.node_convention),
+        "Mandala version": (
+            provenance.mandala_mapping_version,
+            spec.mandala_mapping_version,
+        ),
+        "Mandala mapping": (
+            provenance.mandala_mapping_sha256,
+            spec.mandala_mapping_sha256,
+        ),
+        "Bodygraph mapping": (
+            provenance.bodygraph_mapping_sha256,
+            spec.bodygraph_mapping_sha256,
+        ),
+        "Design-root time tolerance": (
+            provenance.design_root_time_tolerance_seconds,
+            spec.design_root_time_tolerance_seconds,
+        ),
+        "Design-root arc tolerance": (
+            provenance.design_root_arc_tolerance_degrees,
+            spec.design_root_arc_tolerance_degrees,
+        ),
+    }
+    for label, (actual, required) in expected.items():
+        if actual != required:
+            raise CenturyCacheBuildError(f"exact-state batch {label} mismatch")
+
+
+def write_noncanonical_century_cache_fixture(
+    cache_directory: str | Path,
+    *,
+    registry: tuple[FeatureColumnSpec, ...],
+    shards: tuple[CenturyCacheShardInput, ...],
+    fixture_mode: Literal["noncanonical_fixture"],
+) -> NoncanonicalCenturyCacheFixture:
+    """Write physical Parquet fixtures without creating a trusted manifest.
+
+    This deliberately cannot return :class:`VerifiedCenturyCache`, bundle proof
+    evidence, or create ``manifest.json``.  It exists only for isolated storage
+    contract tests and cannot be opened by the production recovery gate.
+    """
+
+    if fixture_mode != "noncanonical_fixture":
+        raise CenturyCacheBuildError(
+            "noncanonical fixture writing requires the noncanonical_fixture token"
+        )
+    if not shards:
+        raise CenturyCacheBuildError("noncanonical fixture requires at least one shard")
+    output = Path(cache_directory)
+    if (output / "manifest.json").exists():
+        raise CenturyCacheBuildError(
+            "noncanonical fixture writer refuses a canonical cache directory"
+        )
+    output.mkdir(parents=True, exist_ok=True)
+    paths: list[Path] = []
+    try:
+        for shard in shards:
+            destination = output / shard.filename
+            write_parquet_shard_new(destination, shard.rows, registry)
+            paths.append(destination)
+    except (OSError, ValueError, CenturyCacheDependencyError, CenturyCacheParquetError) as exc:
+        raise CenturyCacheBuildError(
+            f"could not write noncanonical cache fixture: {exc}"
+        ) from exc
+    return NoncanonicalCenturyCacheFixture(
+        cache_directory=output,
+        shard_paths=tuple(paths),
+    )
+
+
 def write_century_cache_explicit(
     cache_directory: str | Path,
     *,
     spec: CenturyCacheBuildSpec,
+    exact_shard_set: VerifiedExactShardSet,
     shards: tuple[CenturyCacheShardInput, ...],
     evidence: CenturyCacheEvidenceInputs,
     build_mode: Literal["explicit_rebuild"],
 ) -> VerifiedCenturyCache:
-    """Write supplied exact states; this function never computes astronomy.
+    """Write a production-factory-certified exact-state batch.
 
     The mandatory ``build_mode`` token makes cache construction an explicit
-    operation.  Ordinary recovery has a separate read-only entry point below.
+    operation.  The separate factory owns all astronomy and boundary selection;
+    this writer rejects arbitrary caller-selected rows.
     """
 
     if build_mode != "explicit_rebuild":
@@ -184,7 +301,17 @@ def write_century_cache_explicit(
     ):
         raise CenturyCacheBuildError("century-cache shard inputs must be filename-sorted")
 
+    try:
+        exact_provenance = validate_verified_exact_shard_set(exact_shard_set)
+    except ExactStateBatchError as exc:
+        raise CenturyCacheBuildError(f"invalid exact-state batch: {exc}") from exc
+    _validate_exact_universe_spec(exact_provenance, spec)
+
     rows = tuple(row for shard in shards for row in shard.rows)
+    if rows != tuple(exact_shard_set.iter_rows()):
+        raise CenturyCacheBuildError(
+            "canonical shard rows differ from the factory-created exact-state batch"
+        )
     try:
         _validate_logical_universe(rows, spec)
     except (ValueError, CenturyCacheParquetError) as exc:
@@ -211,6 +338,7 @@ def write_century_cache_explicit(
             spec=spec,
             logical_universe_sha256=logical_universe_sha256,
             interval_count=len(rows),
+            boundary_event_count=exact_provenance.boundary_event_count,
         )
     except CenturyCacheEvidenceError as exc:
         raise CenturyCacheBuildError(f"cache proof evidence failed: {exc}") from exc
@@ -258,6 +386,7 @@ def write_century_cache_explicit(
         **spec.model_dump(mode="python", exclude={"schema_version"}),
         "schema_version": "century-cache-manifest-v1",
         "interval_count": len(decoded_rows),
+        "exact_state_provenance": exact_provenance,
         "evidence_artifacts": validated_evidence.artifacts,
         "shards": tuple(shard_records),
         "logical_universe_sha256": logical_universe_sha256,

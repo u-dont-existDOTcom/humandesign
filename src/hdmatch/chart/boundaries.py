@@ -12,7 +12,7 @@ from typing import Any, Final, Literal, TypeAlias, TypeVar
 
 from hdmatch.util import canonical_json_bytes
 
-from .calculator import StableChartFeatures, calculate_chart
+from .calculator import ChartComputation, StableChartFeatures, calculate_chart
 from .design_moment import solve_design_moment, solve_personality_moment_from_design
 from .ephemeris import (
     DEFAULT_ACTIVATION_BODIES,
@@ -357,14 +357,20 @@ def build_stable_intervals(
         )
         if intervals and intervals[-1].feature_sha256 == current.feature_sha256:
             previous = intervals.pop()
+            representative = previous.start_utc + (current.end_utc - previous.start_utc) / 2
+            merged_features = feature_at(representative)
+            merged_hash = canonical_sha256(merged_features)
+            if merged_hash != current.feature_sha256:
+                raise BoundaryCompletenessError(
+                    "merged stable interval differs at its canonical representative"
+                )
             intervals.append(
                 StableInterval(
                     start_utc=previous.start_utc,
                     end_utc=current.end_utc,
-                    representative_utc=previous.start_utc
-                    + (current.end_utc - previous.start_utc) / 2,
-                    feature_sha256=current.feature_sha256,
-                    features=current.features,
+                    representative_utc=representative,
+                    feature_sha256=merged_hash,
+                    features=merged_features,
                     boundary_events=previous.boundary_events + current.boundary_events,
                 )
             )
@@ -383,6 +389,7 @@ def build_chart_state_intervals(
     root_tolerance_seconds: float = 0.01,
     event_group_tolerance_seconds: float | None = None,
     require_swieph_provenance: bool = False,
+    representative_computations: dict[datetime, ChartComputation] | None = None,
 ) -> tuple[StableInterval, ...]:
     """Construct exact line-level stable intervals for the full chart vector."""
 
@@ -398,12 +405,21 @@ def build_chart_state_intervals(
     )
 
     def feature_at(at_utc: datetime) -> StableChartFeatures:
-        return calculate_chart(
-            provider,
-            at_utc,
-            bodies=bodies,
-            design_time_tolerance_seconds=root_tolerance_seconds,
-        ).stable_features
+        computation = (
+            representative_computations.get(at_utc)
+            if representative_computations is not None
+            else None
+        )
+        if computation is None:
+            computation = calculate_chart(
+                provider,
+                at_utc,
+                bodies=bodies,
+                design_time_tolerance_seconds=root_tolerance_seconds,
+            )
+            if representative_computations is not None:
+                representative_computations[at_utc] = computation
+        return computation.stable_features
 
     return build_stable_intervals(start_utc, end_utc, events, feature_at)
 
@@ -415,6 +431,7 @@ def build_production_chart_state_intervals(
     *,
     bodies: tuple[CelestialBody, ...] = DEFAULT_ACTIVATION_BODIES,
     root_tolerance_seconds: float = 0.01,
+    representative_computations: dict[datetime, ChartComputation] | None = None,
 ) -> tuple[StableInterval, ...]:
     """Canonical SWIEPH-only entrypoint with grouping frozen to root tolerance."""
 
@@ -426,6 +443,7 @@ def build_production_chart_state_intervals(
         root_tolerance_seconds=root_tolerance_seconds,
         event_group_tolerance_seconds=root_tolerance_seconds,
         require_swieph_provenance=True,
+        representative_computations=representative_computations,
     )
 
 

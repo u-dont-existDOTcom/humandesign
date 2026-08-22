@@ -297,6 +297,115 @@ class CenturyCacheEvidenceArtifact(FrozenModel):
     validation_status: Literal["pass"]
 
 
+class ExactStateBatchProvenance(FrozenModel):
+    """One bounded factory job's resumability receipt.
+
+    The canonical hash binds persisted job output, but the receipt alone is not
+    proof after a process restart.  Canonical assembly must re-hash/decode and
+    production-replay the job before minting a new in-process verified token.
+    """
+
+    schema_version: Literal["exact-state-batch-provenance-v1"] = (
+        "exact-state-batch-provenance-v1"
+    )
+    factory_version: Literal["production-exact-state-batch-v1"] = (
+        "production-exact-state-batch-v1"
+    )
+    verification_status: Literal["pass"]
+    utc_start: datetime
+    utc_end_exclusive: datetime
+    interval_count: int = Field(gt=0)
+    boundary_event_count: int = Field(ge=0)
+    boundary_policy_version: str = Field(min_length=1)
+    stable_interval_partition_sha256: str = Field(pattern=SHA256_PATTERN)
+    canonical_rows_sha256: str = Field(pattern=SHA256_PATTERN)
+    logical_universe_sha256: str = Field(pattern=SHA256_PATTERN)
+    feature_vector_schema_version: str = Field(min_length=1)
+    semantic_feature_registry_sha256: str = Field(pattern=SHA256_PATTERN)
+    feature_registry_sha256: str = Field(pattern=SHA256_PATTERN)
+    chart_engine_version: str = Field(min_length=1)
+    ephemeris_file_set_sha256: str = Field(pattern=SHA256_PATTERN)
+    node_convention: Literal["true"]
+    mandala_mapping_version: str = Field(min_length=1)
+    mandala_mapping_sha256: str = Field(pattern=SHA256_PATTERN)
+    bodygraph_mapping_sha256: str = Field(pattern=SHA256_PATTERN)
+    design_root_time_tolerance_seconds: float = Field(gt=0.0)
+    design_root_arc_tolerance_degrees: float = Field(gt=0.0)
+
+    @field_validator("utc_start", "utc_end_exclusive")
+    @classmethod
+    def require_utc(cls, value: datetime) -> datetime:
+        if value.tzinfo is None or value.utcoffset() is None:
+            raise ValueError("exact-state provenance timestamps must be timezone-aware")
+        return value.astimezone(UTC)
+
+    @model_validator(mode="after")
+    def require_consistent_batch(self) -> ExactStateBatchProvenance:
+        if self.utc_end_exclusive <= self.utc_start:
+            raise ValueError("exact-state provenance range must be positive")
+        if self.canonical_rows_sha256 != self.logical_universe_sha256:
+            raise ValueError("exact-state canonical-row and logical-universe hashes differ")
+        return self
+
+
+class ExactStateUniverseProvenance(FrozenModel):
+    """Aggregate provenance minted from ordered, in-process verified batches."""
+
+    schema_version: Literal["exact-state-universe-provenance-v1"] = (
+        "exact-state-universe-provenance-v1"
+    )
+    assembly_version: Literal["production-exact-state-assembly-v1"] = (
+        "production-exact-state-assembly-v1"
+    )
+    verification_status: Literal["pass"]
+    assembly_plan_sha256: str = Field(pattern=SHA256_PATTERN)
+    ordered_source_batch_provenance_sha256s: tuple[str, ...] = Field(min_length=1)
+    reconciliation_report_sha256: str = Field(pattern=SHA256_PATTERN)
+    utc_start: datetime
+    utc_end_exclusive: datetime
+    batch_count: int = Field(gt=0)
+    interval_count: int = Field(gt=0)
+    boundary_event_count: int = Field(ge=0)
+    boundary_policy_version: str = Field(min_length=1)
+    canonical_rows_sha256: str = Field(pattern=SHA256_PATTERN)
+    logical_universe_sha256: str = Field(pattern=SHA256_PATTERN)
+    feature_vector_schema_version: str = Field(min_length=1)
+    semantic_feature_registry_sha256: str = Field(pattern=SHA256_PATTERN)
+    feature_registry_sha256: str = Field(pattern=SHA256_PATTERN)
+    chart_engine_version: str = Field(min_length=1)
+    ephemeris_file_set_sha256: str = Field(pattern=SHA256_PATTERN)
+    node_convention: Literal["true"]
+    mandala_mapping_version: str = Field(min_length=1)
+    mandala_mapping_sha256: str = Field(pattern=SHA256_PATTERN)
+    bodygraph_mapping_sha256: str = Field(pattern=SHA256_PATTERN)
+    design_root_time_tolerance_seconds: float = Field(gt=0.0)
+    design_root_arc_tolerance_degrees: float = Field(gt=0.0)
+
+    @field_validator("utc_start", "utc_end_exclusive")
+    @classmethod
+    def require_utc(cls, value: datetime) -> datetime:
+        if value.tzinfo is None or value.utcoffset() is None:
+            raise ValueError("exact-state universe timestamps must be timezone-aware")
+        return value.astimezone(UTC)
+
+    @field_validator("ordered_source_batch_provenance_sha256s")
+    @classmethod
+    def require_source_hashes(cls, values: tuple[str, ...]) -> tuple[str, ...]:
+        if any(re.fullmatch(SHA256_PATTERN, value) is None for value in values):
+            raise ValueError("exact-state source batch hash is invalid")
+        return values
+
+    @model_validator(mode="after")
+    def require_consistent_universe(self) -> ExactStateUniverseProvenance:
+        if self.utc_end_exclusive <= self.utc_start:
+            raise ValueError("exact-state universe range must be positive")
+        if self.batch_count != len(self.ordered_source_batch_provenance_sha256s):
+            raise ValueError("exact-state universe batch count is inconsistent")
+        if self.canonical_rows_sha256 != self.logical_universe_sha256:
+            raise ValueError("exact-state universe canonical and logical hashes differ")
+        return self
+
+
 class CenturyCacheManifest(FrozenModel):
     """Complete authoritative contract for a verified exact-state cache."""
 
@@ -330,6 +439,7 @@ class CenturyCacheManifest(FrozenModel):
     boundary_audit_report_sha256: str = Field(pattern=SHA256_PATTERN)
     generation_commit: str = Field(pattern=GIT_COMMIT_PATTERN)
     created_at_utc: datetime
+    exact_state_provenance: ExactStateUniverseProvenance
     evidence_artifacts: tuple[CenturyCacheEvidenceArtifact, ...] = Field(min_length=3)
     shards: tuple[CenturyCacheShard, ...] = Field(min_length=1)
     logical_universe_sha256: str = Field(pattern=SHA256_PATTERN)
@@ -349,6 +459,61 @@ class CenturyCacheManifest(FrozenModel):
         if self.required_feature_coverage != 1.0:
             raise ValueError("canonical cache requires complete feature coverage")
         _validate_feature_registry(self.feature_registry, self.feature_registry_sha256)
+        exact = self.exact_state_provenance
+        exact_bindings = {
+            "UTC start": (exact.utc_start, self.utc_start),
+            "UTC end": (exact.utc_end_exclusive, self.utc_end_exclusive),
+            "interval count": (exact.interval_count, self.interval_count),
+            "logical-universe hash": (
+                exact.logical_universe_sha256,
+                self.logical_universe_sha256,
+            ),
+            "boundary policy": (
+                exact.boundary_policy_version,
+                self.boundary_policy_version,
+            ),
+            "feature-vector schema": (
+                exact.feature_vector_schema_version,
+                self.feature_vector_schema_version,
+            ),
+            "semantic feature registry": (
+                exact.semantic_feature_registry_sha256,
+                self.semantic_feature_registry_sha256,
+            ),
+            "physical feature registry": (
+                exact.feature_registry_sha256,
+                self.feature_registry_sha256,
+            ),
+            "chart engine": (exact.chart_engine_version, self.engine.chart_engine_version),
+            "ephemeris file set": (
+                exact.ephemeris_file_set_sha256,
+                self.engine.ephemeris_provenance.ephemeris_file_set_sha256,
+            ),
+            "node convention": (exact.node_convention, self.node_convention),
+            "Mandala version": (
+                exact.mandala_mapping_version,
+                self.mandala_mapping_version,
+            ),
+            "Mandala mapping": (
+                exact.mandala_mapping_sha256,
+                self.mandala_mapping_sha256,
+            ),
+            "Bodygraph mapping": (
+                exact.bodygraph_mapping_sha256,
+                self.bodygraph_mapping_sha256,
+            ),
+            "Design-root time tolerance": (
+                exact.design_root_time_tolerance_seconds,
+                self.design_root_time_tolerance_seconds,
+            ),
+            "Design-root arc tolerance": (
+                exact.design_root_arc_tolerance_degrees,
+                self.design_root_arc_tolerance_degrees,
+            ),
+        }
+        for label, (actual, required) in exact_bindings.items():
+            if actual != required:
+                raise ValueError(f"cache exact-state {label} binding is inconsistent")
         expected_evidence = {
             "engine_validation": (
                 "evidence/engine-validation.json",

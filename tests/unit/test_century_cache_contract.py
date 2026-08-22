@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 import json
+import tempfile
 from dataclasses import replace
 from datetime import UTC, datetime, timedelta
+from functools import cache
 from pathlib import Path
 from typing import Any, cast
 
@@ -10,6 +12,7 @@ import pyarrow.parquet as pq
 import pytest
 
 from hdmatch.century_cache import (
+    CACHEABLE_M0_M2_FEATURE_COLUMNS,
     CenturyCacheBuildError,
     CenturyCacheBuildSpec,
     CenturyCacheEngineProvenance,
@@ -20,8 +23,10 @@ from hdmatch.century_cache import (
     CenturyCacheVerificationError,
     CenturyStateRecord,
     FeatureColumnSpec,
-    FeatureStorageType,
-    FeatureValue,
+    VerifiedExactShardSet,
+    VerifiedExactStateBatch,
+    assemble_verified_exact_shard_set,
+    build_verified_exact_state_batch,
     canonical_rows_sha256,
     coerce_century_state_record,
     feature_registry_sha256,
@@ -31,7 +36,9 @@ from hdmatch.century_cache import (
     validate_engine_validation_evidence,
     verify_century_cache,
     write_century_cache_explicit,
+    write_noncanonical_century_cache_fixture,
 )
+from hdmatch.chart.ephemeris import SwissEphemerisProvider
 from hdmatch.experiments.canonical import (
     canonical_json_bytes,
     sha256_bytes,
@@ -47,12 +54,91 @@ from hdmatch.provenance.swisseph_files import (
 
 _HASH = "a" * 64
 _ROOT = Path(__file__).resolve().parents[2]
-_START = datetime(2000, 1, 1, tzinfo=UTC)
-_END = _START + timedelta(hours=2)
+_START = datetime(2000, 1, 1, 12, tzinfo=UTC)
+_END = _START + timedelta(minutes=1)
 _EPHEMERIS_BYTES = {
     "sepl_18.se1": b"fixture planetary ephemeris",
     "semo_18.se1": b"fixture lunar ephemeris",
 }
+
+
+class _DeterministicFakeSwiss:
+    FLG_JPLEPH = 1
+    FLG_SWIEPH = 2
+    FLG_MOSEPH = 4
+    FLG_EPHMASK = 7
+    FLG_SPEED = 256
+    GREG_CAL = 1
+    SUN = 0
+    MOON = 1
+    MERCURY = 2
+    VENUS = 3
+    MARS = 4
+    JUPITER = 5
+    SATURN = 6
+    URANUS = 7
+    NEPTUNE = 8
+    PLUTO = 9
+    MEAN_NODE = 10
+    TRUE_NODE = 11
+    version = "deterministic-fake"
+
+    def __init__(self, planetary_file: Path, lunar_file: Path) -> None:
+        self.files = (planetary_file, lunar_file)
+
+    def set_ephe_path(self, _path: str) -> None:
+        pass
+
+    def julday(
+        self,
+        year: int,
+        month: int,
+        day: int,
+        hour: float,
+        _calendar: int,
+    ) -> float:
+        midnight = datetime(year, month, day, tzinfo=UTC)
+        return float(midnight.toordinal()) + hour / 24.0
+
+    def calc_ut(
+        self,
+        julian_day: float,
+        body: int,
+        flags: int,
+    ) -> tuple[tuple[float, ...], int]:
+        if body == self.SUN:
+            longitude, speed = (julian_day + 261.4998) % 360.0, 1.0
+        else:
+            longitude, speed = (body * 17.0 + 0.01 * julian_day) % 360.0, 0.01
+        return (longitude, 0.0, 1.0, speed, 0.0, 0.0), flags
+
+    def get_current_file_data(self, index: int) -> tuple[str, float, float, int]:
+        return str(self.files[index]), 0.0, 0.0, 441
+
+
+@cache
+def _exact_batch() -> VerifiedExactStateBatch:
+    root = Path(tempfile.mkdtemp(prefix="hdmatch-exact-cache-test-"))
+    ephemeris = root / "ephemeris"
+    ephemeris.mkdir()
+    files = []
+    for name, payload in _EPHEMERIS_BYTES.items():
+        path = ephemeris / name
+        path.write_bytes(payload)
+        files.append(path)
+    fake = _DeterministicFakeSwiss(files[0], files[1])
+    provider = SwissEphemerisProvider(
+        tuple(files),
+        _swe_module=fake,  # type: ignore[arg-type]
+    )
+    batch = build_verified_exact_state_batch(provider, _START, _END)
+    assert len(batch.rows) == 2
+    return batch
+
+
+@cache
+def _exact_shard_set() -> VerifiedExactShardSet:
+    return assemble_verified_exact_shard_set((_exact_batch(),))
 
 
 def _source_manifest_payload(
@@ -77,25 +163,7 @@ def _source_manifest_payload(
 
 
 def _registry() -> tuple[FeatureColumnSpec, ...]:
-    return (
-        FeatureColumnSpec(
-            feature_id="activation.design",
-            storage_type=FeatureStorageType.ACTIVATION_LIST,
-        ),
-        FeatureColumnSpec(
-            feature_id="architecture.type",
-            storage_type=FeatureStorageType.STRING,
-        ),
-        FeatureColumnSpec(
-            feature_id="centers.defined",
-            storage_type=FeatureStorageType.STRING_LIST,
-        ),
-        FeatureColumnSpec(
-            feature_id="predicate.contextual",
-            storage_type=FeatureStorageType.BOOLEAN,
-            nullable=True,
-        ),
-    )
+    return CACHEABLE_M0_M2_FEATURE_COLUMNS
 
 
 def _ephemeris_provenance() -> VerifiedEphemerisProvenance:
@@ -156,7 +224,7 @@ def _engine_receipt_payload() -> dict[str, object]:
             "schema_version": "production-engine-validation-v1",
             "validation_status": "pass",
             "provider": "swiss_ephemeris_local_files",
-            "library_version": "2.10.03",
+            "library_version": "deterministic-fake",
             "ephemeris_requested": "SWIEPH",
             "ephemeris_returned": "SWIEPH",
             "requested_flags": 258,
@@ -192,10 +260,11 @@ def _engine_receipt_payload() -> dict[str, object]:
 
 
 def _engine() -> CenturyCacheEngineProvenance:
+    exact = _exact_batch().provenance
     return CenturyCacheEngineProvenance(
         provider="swiss_ephemeris_local_files",
-        chart_engine_version="chart-engine-v4.3-test",
-        swiss_library_version="2.10.03",
+        chart_engine_version=exact.chart_engine_version,
+        swiss_library_version="deterministic-fake",
         engine_validation_sha256=sha256_json(_engine_receipt_payload()),
         ephemeris_provenance=_ephemeris_provenance(),
         ephemeris_requested="SWIEPH",
@@ -213,7 +282,9 @@ def _parity_report_payload() -> dict[str, object]:
         "validation_status": "pass",
         "engine_validation_sha256": _engine().engine_validation_sha256,
         "ephemeris_file_set_sha256": _ephemeris_provenance().ephemeris_file_set_sha256,
-        "feature_vector_schema_version": "v4.3-m2-fixture-v1",
+        "feature_vector_schema_version": (
+            _exact_batch().provenance.feature_vector_schema_version
+        ),
         "utc_start": _START,
         "utc_end_exclusive": _END,
         "reference_source_locator": (
@@ -230,22 +301,27 @@ def _parity_report_payload() -> dict[str, object]:
 
 
 def _boundary_audit_payload() -> dict[str, object]:
+    exact = _exact_batch().provenance
     return {
         "schema_version": "century-cache-boundary-audit-report-v1",
         "validation_status": "pass",
         "engine_validation_sha256": _engine().engine_validation_sha256,
-        "logical_universe_sha256": canonical_rows_sha256((_row(0), _row(1))),
-        "semantic_feature_registry_sha256": "d" * 64,
-        "feature_registry_sha256": feature_registry_sha256(_registry()),
-        "mandala_mapping_sha256": "5" * 64,
-        "bodygraph_mapping_sha256": "b" * 64,
-        "boundary_policy_version": "exact-boundaries-v4.3-test",
-        "design_root_time_tolerance_seconds": 0.01,
-        "design_root_arc_tolerance_degrees": 1e-8,
+        "logical_universe_sha256": exact.logical_universe_sha256,
+        "semantic_feature_registry_sha256": exact.semantic_feature_registry_sha256,
+        "feature_registry_sha256": exact.feature_registry_sha256,
+        "mandala_mapping_sha256": exact.mandala_mapping_sha256,
+        "bodygraph_mapping_sha256": exact.bodygraph_mapping_sha256,
+        "boundary_policy_version": exact.boundary_policy_version,
+        "design_root_time_tolerance_seconds": (
+            exact.design_root_time_tolerance_seconds
+        ),
+        "design_root_arc_tolerance_degrees": (
+            exact.design_root_arc_tolerance_degrees
+        ),
         "utc_start": _START,
         "utc_end_exclusive": _END,
-        "interval_count": 2,
-        "audited_boundary_event_count": 2,
+        "interval_count": exact.interval_count,
+        "audited_boundary_event_count": exact.boundary_event_count,
         "missing_boundary_count": 0,
         "gap_count": 0,
         "overlap_count": 0,
@@ -255,24 +331,25 @@ def _boundary_audit_payload() -> dict[str, object]:
 
 def _spec() -> CenturyCacheBuildSpec:
     registry = _registry()
+    exact = _exact_batch().provenance
     return CenturyCacheBuildSpec(
-        feature_vector_schema_version="v4.3-m2-fixture-v1",
+        feature_vector_schema_version=exact.feature_vector_schema_version,
         utc_start=_START,
         utc_end_exclusive=_END,
         feature_registry=registry,
-        semantic_feature_registry_sha256="d" * 64,
+        semantic_feature_registry_sha256=exact.semantic_feature_registry_sha256,
         feature_registry_sha256=feature_registry_sha256(registry),
         required_feature_coverage=1.0,
         calculation_tier="M2",
         exact_intervals=True,
         engine=_engine(),
         node_convention="true",
-        mandala_mapping_version="rave-mandala-v1",
-        mandala_mapping_sha256="5" * 64,
-        bodygraph_mapping_sha256="b" * 64,
-        boundary_policy_version="exact-boundaries-v4.3-test",
-        design_root_time_tolerance_seconds=0.01,
-        design_root_arc_tolerance_degrees=1e-8,
+        mandala_mapping_version=exact.mandala_mapping_version,
+        mandala_mapping_sha256=exact.mandala_mapping_sha256,
+        bodygraph_mapping_sha256=exact.bodygraph_mapping_sha256,
+        boundary_policy_version=exact.boundary_policy_version,
+        design_root_time_tolerance_seconds=exact.design_root_time_tolerance_seconds,
+        design_root_arc_tolerance_degrees=exact.design_root_arc_tolerance_degrees,
         parity_status="pass",
         parity_report_sha256=sha256_json(_parity_report_payload()),
         parity_reference_source_locator=(
@@ -288,49 +365,8 @@ def _spec() -> CenturyCacheBuildSpec:
     )
 
 
-def _activation(gate: int) -> dict[str, object]:
-    return {
-        "body": "sun",
-        "side": "design",
-        "gate": gate,
-        "line": 1,
-        "color": None,
-        "tone": None,
-        "base": None,
-    }
-
-
-def _row(index: int, *, include_contextual: bool = True) -> CenturyStateRecord:
-    engine = _engine()
-    registry_sha256 = feature_registry_sha256(_registry())
-    start = _START + timedelta(hours=index)
-    values = [
-        FeatureValue(feature_id="activation.design", value=[_activation(index + 1)]),
-        FeatureValue(feature_id="architecture.type", value="projector"),
-        FeatureValue(feature_id="centers.defined", value=["Ajna", "Throat"]),
-    ]
-    if include_contextual:
-        values.append(FeatureValue(feature_id="predicate.contextual", value=None))
-    return CenturyStateRecord(
-        state_id=f"state-{index}",
-        utc_start=start,
-        utc_end=start + timedelta(hours=1),
-        duration_seconds=3600.0,
-        representative_utc=start + timedelta(minutes=30),
-        design_timestamp=start - timedelta(days=88),
-        chart_features_sha256=("c" * 63) + str(index),
-        feature_vector_schema_version="v4.3-m2-fixture-v1",
-        semantic_feature_registry_sha256="d" * 64,
-        feature_registry_sha256=registry_sha256,
-        astronomy_engine_version=engine.chart_engine_version,
-        ephemeris_file_set_sha256=engine.ephemeris_provenance.ephemeris_file_set_sha256,
-        node_convention="true",
-        mandala_mapping_version="rave-mandala-v1",
-        mandala_mapping_sha256="5" * 64,
-        bodygraph_mapping_sha256="b" * 64,
-        boundary_events=(f"boundary.event.{index}",),
-        feature_values=tuple(values),
-    )
+def _row(index: int) -> CenturyStateRecord:
+    return _exact_batch().rows[index]
 
 
 def _expectations(*, required: tuple[str, ...] | None = None) -> CenturyCacheExpectations:
@@ -430,6 +466,7 @@ def _write_fixture(
     return write_century_cache_explicit(
         directory,
         spec=spec or _spec(),
+        exact_shard_set=_exact_shard_set(),
         shards=shards,
         evidence=evidence or _evidence_inputs(directory.parent / f"{directory.name}-inputs"),
         build_mode="explicit_rebuild",
@@ -480,10 +517,13 @@ def test_small_parquet_round_trip_and_shard_independent_logical_hash(
         for column in range(parquet_file.metadata.row_group(group).num_columns)
     }
     assert compressions == {"ZSTD"}
-    assert rows[0].representative_utc == _START + timedelta(minutes=30)
-    assert rows[0].chart_features_sha256 == ("c" * 63) + "0"
-    assert rows[0].bodygraph_mapping_sha256 == "b" * 64
-    assert rows[0].boundary_events == ("boundary.event.0",)
+    assert rows[0].representative_utc == (
+        rows[0].utc_start + (rows[0].utc_end - rows[0].utc_start) / 2
+    )
+    assert rows[0].bodygraph_mapping_sha256 == (
+        _exact_batch().provenance.bodygraph_mapping_sha256
+    )
+    assert any(row.boundary_events for row in rows)
 
 
 def test_protocol_adapter_accepts_a_canonical_mapping() -> None:
@@ -497,26 +537,46 @@ def test_protocol_adapter_accepts_a_canonical_mapping() -> None:
     assert coerce_century_state_record(row.model_dump(mode="python")) == row
 
 
-def test_missing_nullable_feature_is_not_silently_false(tmp_path: Path) -> None:
-    missing = _row(0, include_contextual=False)
-    complete = _row(1)
-    with pytest.raises(CenturyCacheBuildError, match="missing=.*predicate.contextual"):
-        write_century_cache_explicit(
+def test_missing_feature_is_not_silently_false(tmp_path: Path) -> None:
+    payload = _row(0).model_dump(mode="python")
+    payload["feature_values"] = tuple(_row(0).feature_values[:-1])
+    missing = CenturyStateRecord.model_validate(payload, strict=True)
+    with pytest.raises(CenturyCacheBuildError, match="missing="):
+        write_noncanonical_century_cache_fixture(
             tmp_path / "missing",
-            spec=_spec(),
+            registry=CACHEABLE_M0_M2_FEATURE_COLUMNS,
             shards=(
                 CenturyCacheShardInput(
                     filename="states-0000.parquet.zst",
-                    rows=(missing, complete),
+                    rows=(missing,),
                 ),
             ),
-            evidence=_evidence_inputs(tmp_path / "missing-inputs"),
-            build_mode="explicit_rebuild",
+            fixture_mode="noncanonical_fixture",
         )
 
-    verified = _write_fixture(tmp_path / "complete")
-    first = next(iter_verified_century_cache_rows(verified))
-    assert first.feature_mapping()["predicate.contextual"] is None
+    assert all(value is not None for value in _row(0).feature_mapping().values())
+
+
+def test_noncanonical_fixture_writer_cannot_emit_verified_cache(tmp_path: Path) -> None:
+    fixture = write_noncanonical_century_cache_fixture(
+        tmp_path / "physical-only",
+        registry=CACHEABLE_M0_M2_FEATURE_COLUMNS,
+        shards=(
+            CenturyCacheShardInput(
+                filename="states-0000.parquet.zst",
+                rows=(_row(0),),
+            ),
+        ),
+        fixture_mode="noncanonical_fixture",
+    )
+
+    assert fixture.shard_paths[0].is_file()
+    assert not (fixture.cache_directory / "manifest.json").exists()
+    with pytest.raises(CenturyCacheRecoveryError, match="prebuilt verified"):
+        open_century_cache_for_recovery(
+            fixture.cache_directory,
+            expectations=_expectations(),
+        )
 
 
 def test_fixed_interval_metadata_is_validated_before_write(tmp_path: Path) -> None:
@@ -537,10 +597,11 @@ def test_fixed_interval_metadata_is_validated_before_write(tmp_path: Path) -> No
     changed_bodygraph = row.model_dump(mode="python")
     changed_bodygraph["bodygraph_mapping_sha256"] = "d" * 64
     mismatched = CenturyStateRecord.model_validate(changed_bodygraph, strict=True)
-    with pytest.raises(CenturyCacheBuildError, match="bodygraph_mapping_sha256"):
+    with pytest.raises(CenturyCacheBuildError, match="differ from the factory-created"):
         write_century_cache_explicit(
             tmp_path / "bodygraph-mismatch",
             spec=_spec(),
+            exact_shard_set=_exact_shard_set(),
             shards=(
                 CenturyCacheShardInput(
                     filename="states-0000.parquet.zst",
@@ -562,10 +623,11 @@ def test_adjacent_identical_states_split_across_shards_are_rejected(
     # the two rows have identical discrete chart content and should be merged.
     second = CenturyStateRecord.model_validate(second_payload, strict=True)
 
-    with pytest.raises(CenturyCacheBuildError, match="not maximal"):
+    with pytest.raises(CenturyCacheBuildError, match="differ from the factory-created"):
         write_century_cache_explicit(
             tmp_path / "non-maximal",
             spec=_spec(),
+            exact_shard_set=_exact_shard_set(),
             shards=(
                 CenturyCacheShardInput(
                     filename="states-0000.parquet.zst",
@@ -700,6 +762,29 @@ def test_writer_rejects_semantically_mismatched_proof_with_matching_hash(
 
     with pytest.raises(CenturyCacheBuildError, match="logical-universe hash mismatch"):
         _write_fixture(tmp_path / "mismatched-boundary", spec=spec, evidence=inputs)
+
+
+def test_writer_binds_boundary_audit_event_count(tmp_path: Path) -> None:
+    mismatched = {
+        **_boundary_audit_payload(),
+        "audited_boundary_event_count": (
+            _exact_batch().provenance.boundary_event_count + 1
+        ),
+    }
+    spec = _spec().model_copy(
+        update={"boundary_audit_report_sha256": sha256_json(mismatched)}
+    )
+    inputs = _evidence_inputs(
+        tmp_path / "mismatched-event-count-inputs",
+        boundary_payload=mismatched,
+    )
+
+    with pytest.raises(CenturyCacheBuildError, match="boundary-event count mismatch"):
+        _write_fixture(
+            tmp_path / "mismatched-event-count",
+            spec=spec,
+            evidence=inputs,
+        )
 
 
 def test_writer_rejects_boundary_audit_semantic_registry_substitution(
@@ -968,6 +1053,7 @@ def test_ordinary_recovery_has_no_regeneration_path(tmp_path: Path) -> None:
         write_century_cache_explicit(
             tmp_path / "wrong-mode",
             spec=_spec(),
+            exact_shard_set=_exact_shard_set(),
             shards=(
                 CenturyCacheShardInput(
                     filename="states-0000.parquet.zst",
