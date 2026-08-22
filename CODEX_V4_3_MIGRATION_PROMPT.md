@@ -1,4 +1,4 @@
-# Codex Task: Migrate HD Matcher from V4.1/V3.2 to Hardened V4.3/V3.5
+# Codex Task: Migrate HD Matcher from V4.1/V3.2 to Hardened V4.3/V3.6
 
 Work in the existing `u-dont-existDOTcom/humandesign` repository.
 
@@ -9,14 +9,17 @@ Before changing code, read in this order:
 1. `AGENTS.md`
 2. `ARCHITECTURE.md`
 3. `reference/core/v4_3_scoring_algorithm.md`
-4. `reference/core/behavioral_target_combined_v3_5.md`
+4. `reference/core/behavioral_target_combined_v3_6.md`
 5. `docs/02_scoring_and_model_policy.md`
 6. `docs/13_v4_3_migration_and_century_cache.md`
 7. `docs/16_ephemeris_bootstrap.md`
-8. `docs/14_month_first_blind_validation.md`
-9. the remaining numbered docs
+8. `docs/17_v3_6_profile_mapping_coverage_audit.md`
+9. `docs/14_month_first_blind_validation.md`
+10. the remaining numbered docs
 
-Do not continue using `human_design_reverse_matching_protocol_v4_1.md`, V3.2 scoring, or `mapping_library_v1.json` as the current canonical model. Preserve them as historical regression fixtures only.
+Also read `reference/audits/v43_v3_6_netinfo_100y_2026_08_22.md` as an **observed development audit**, not as a target to optimize. Its 2013/1985 ordering is frozen historical output. Do not alter mappings, weights, prevalence policy, or feature definitions to preserve either observed candidate.
+
+Do not continue using `human_design_reverse_matching_protocol_v4_1.md`, V3.2/V3.5 scoring targets, or `mapping_library_v1.json` as the current canonical model. Preserve them as historical regression fixtures only.
 
 ## Mandatory execution order
 
@@ -52,7 +55,7 @@ Implement mapping-library-v2, flexibility penalties, conditional prevalence, dep
 
 ### Phase 4 — rerun the full universe from the cache
 
-Only after Phases 0-3 pass compliance tests, run the new full-universe V4.3/V3.5 ranking from cached exact states. Do not regenerate the solar-system state matrix during ordinary reruns.
+Only after Phases 0-3 pass compliance tests, run the new full-universe V4.3/V3.6 ranking from cached exact states. Do not regenerate the solar-system state matrix during ordinary reruns.
 
 ## Why this migration is required
 
@@ -62,7 +65,7 @@ The current implementation is a simplified subset of the intended protocol. In p
 
 ### A. Versioned mapping schema V2
 
-Create `mapping-library-v2` / `V4.3/V3.5-symbolic-v2`.
+Create `mapping-library-v2` / `V4.3/V3.6-symbolic-v2`.
 
 Each frozen mapping must include:
 
@@ -153,19 +156,27 @@ hdmatch verify-century-cache data/century_cache/v1
 hdmatch recover-global --cache data/century_cache/v1 --target ...
 ```
 
-### F. V3.5 behavioral target
+### F. V3.6 behavioral target
 
-Compile the latest target without forcing the two `depends/unknown` discriminator answers into either side.
+Compile `reference/core/behavioral_target_combined_v3_6.md` as the current development target. Preserve all V3.2/V3.5 material unless V3.6 explicitly constrains its interpretation.
 
-Key new distinctions:
+The following distinctions are non-negotiable:
 
 - strong selective care capacity is not the same as generalized nourishment as an independent driver;
 - care action depends strongly on salience, accepted responsibility, relationship, and feeling uniquely suited/needed;
 - important existential/structural questions can recur; ordinary questions need not;
 - childhood had stronger difficulty releasing consequential puzzles/errors; adult tolerance for unresolved mystery increased;
-- chess/programming/straight-A achievement shows deliberate skill improvement, but reported motive is learning/intrinsic excellence rather than status, rank, credential identity, or generalized expert identity.
+- chess/programming/straight-A achievement shows deliberate skill improvement, but reported motive is learning/intrinsic excellence rather than status, rank, credential identity, or generalized expert identity;
+- **persuasion capacity and preferred use are separate**: the person can persuade very effectively when deliberately choosing to do so, uses persuasion more in public writing, and often restrains/avoids optimization in private interaction because manipulation is unnecessary or undesirable;
+- **engaging-work sustainability and overload are not opposites**: meaningful work may sustain high activity, while sufficiently extreme/prolonged bursts still cause substantial depletion and recovery needs;
+- **score somatic phenomenology rather than an HD self-label**: rapid subtle easy-to-miss bodily impressions are reported, but the person does not claim to know which sensation is `the Spleen`;
+- **invitation/recognition is domain-sensitive**: it applies strongly to interpersonal/romantic/communal/external-role entry, not as a prohibition on independently initiating self-authored research, writing, experiments, businesses, or software;
+- unknown/context-dependent answers remain neutral rather than being forced into a side;
+- autobiographical age-plus-calendar windows remain excluded from ranking because they leak birth-era information.
 
-Mark these latest refinements post-selection and not independent confirmation.
+The 18-item concealed-direction questionnaire collected on 2026-08-22 is a **measurement-development exercise with zero confirmatory weight**. It largely re-asked already-established constructs and included malformed forced alternatives. Do not use it as independent validation and do not create another broad questionnaire merely by paraphrasing the same material.
+
+Mark candidate-exposed refinements as post-selection and not independent confirmation. Preserve both less-contaminated and best-current-descriptive outputs where applicable.
 
 ### G. Hardening against simplification
 
@@ -212,9 +223,14 @@ At minimum add tests proving failure if:
 15. century-cache manifest/hash mismatch is accepted;
 16. `required_feature_coverage < 1.0` can still emit a V4.3-compliant report;
 17. an ordinary global rerun regenerates the century instead of using the verified cache;
-18. a full 100-year ranking begins before the production cache is verified.
+18. a full 100-year ranking begins before the production cache is verified;
+19. persuasion restraint is interpreted as absence of persuasion capacity despite V3.6;
+20. engaging-work sustainability and extreme-overload depletion are forced into mutually exclusive outcomes;
+21. an HD self-label such as `I know this feeling is Splenic` is required instead of scoring the underlying reported phenomenology;
+22. the redundant 2026-08-22 questionnaire is presented as untouched holdout validation;
+23. an observed 2013/1985 development ranking is used to retune the mapping library without a new explicit post-ranking version.
 
-Run the existing unit/integration/blind suites and new migration tests. Preserve old V4.1/V3.2 fixtures so regression behavior can still be reproduced explicitly under a legacy model flag.
+Run the existing unit/integration/blind suites and new migration tests. Preserve old V4.1/V3.2/V3.5 fixtures so regression behavior can still be reproduced explicitly under a legacy model flag.
 
 ## Deliverables
 
@@ -224,10 +240,10 @@ Run the existing unit/integration/blind suites and new migration tests. Preserve
 - conditional prevalence implementation;
 - Swiss ephemeris fetch/probe/fail-closed path;
 - century-cache build/verify/read path;
-- V3.5 target compiler support;
+- V3.6 target compiler support;
 - hardening/compliance tests;
 - updated docs/manifests;
-- migration report showing exactly which old V4.1/V3.2 behaviors changed;
-- one full-universe V4.3 rerun only after the production state cache passes engine parity and boundary audits.
+- migration report showing exactly which old V4.1/V3.2/V3.5 behaviors changed;
+- one full-universe V4.3/V3.6 rerun only after the production state cache passes engine parity and boundary audits.
 
-Do not optimize the model to preserve any previously observed finalist. The new full-universe rerun is allowed to change the ranking.
+Do not optimize the model to preserve any previously observed finalist. The new full-universe rerun is allowed to change the ranking, and the already-observed development audit must not become a hidden target.
