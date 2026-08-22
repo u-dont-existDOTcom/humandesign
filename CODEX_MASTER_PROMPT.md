@@ -2,9 +2,11 @@
 
 Build the full research harness described by this repository.
 
-Start by reading `AGENTS.md` and `ARCHITECTURE.md`, then `reference/core/v4_3_scoring_algorithm.md`, `reference/core/behavioral_target_combined_v3_5.md`, `docs/16_ephemeris_bootstrap.md`, and the numbered docs in `docs/`.
+Start by reading `AGENTS.md` and `ARCHITECTURE.md`, then `reference/core/v4_3_scoring_algorithm.md`, `reference/core/behavioral_target_combined_v3_6.md`, `docs/16_ephemeris_bootstrap.md`, `docs/17_v3_6_profile_mapping_coverage_audit.md`, and the numbered docs in `docs/`.
 
 The current codebase was originally implemented against V4.1/V3.2. That implementation is now a migration source, NOT the normative model. Do not preserve a simplification merely because existing tests encode it.
+
+The 2026-08-22 V3.6 NetInformation-first audit is preserved in `reference/audits/v43_v3_6_netinfo_100y_2026_08_22.md`. Treat its ranking as observed development output. Do not tune V4.3/V3.6 mappings to preserve either the 2013 or 1985 state.
 
 ## Mandatory execution order
 
@@ -41,7 +43,7 @@ Deliver a reproducible Python project and CLI that can:
 
 ## Immediate migration task
 
-Before new feature work, migrate the existing symbolic implementation from V4.1/V3.2 to V4.3/V3.5.
+Before new feature work, migrate the existing symbolic implementation from V4.1/V3.2 to V4.3/V3.6.
 
 Required minimum changes:
 
@@ -56,6 +58,8 @@ Required minimum changes:
 - forbid `CoreFit + NetInformation` or any comparable convenience scalar;
 - rerun the complete universe after accepted target revisions;
 - preserve revision provenance and distinguish frozen-independent from best-current-descriptive outputs;
+- preserve the V3.6 distinctions between persuasion capacity/use, workload sustainability/overload, somatic phenomenology/HD label, and domain-sensitive invitation;
+- do not treat the redundant 2026-08-22 questionnaire as independent validation;
 - add the anti-simplification mutation tests in `docs/13_v4_3_migration_and_century_cache.md`.
 
 Do not claim migration complete until those tests pass.
@@ -106,6 +110,8 @@ Keep interfaces explicit and merge only after tests.
 - Preserve all failures.
 - Rubric bits are not probabilities.
 - Unknown/context-dependent answers may remain unscored.
+- Do not repeatedly paraphrase already-established personal constructs and call those answers independent evidence.
+- Capacity and preference/use must remain separable where the target says so.
 - Human Design is treated as an experimental symbolic hypothesis.
 
 ## First post-migration deliverable
