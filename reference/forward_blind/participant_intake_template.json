@@ -1,0 +1,26 @@
+{
+  "schema_version": "forward-blind-intake-v1",
+  "participant_id_pseudonym": "P0001",
+  "birth": {
+    "local_date": "YYYY-MM-DD",
+    "local_time": "HH:MM:SS",
+    "birthplace_city": "",
+    "birthplace_country": "",
+    "iana_timezone_if_known": "",
+    "time_source": "certificate|hospital_record|family_record|memory|rectified|unknown",
+    "stated_uncertainty_seconds": null
+  },
+  "prior_human_design_knowledge": {
+    "familiarity": "none|heard_of_it|basic|intermediate|advanced",
+    "already_knows_type": false,
+    "already_knows_authority": false,
+    "already_knows_profile": false,
+    "already_knows_variable_or_phs": false
+  },
+  "research_use": {
+    "cohort": "development|validation|final_untouched",
+    "consent_to_pseudonymous_research_record": false,
+    "allow_aggregate_public_reporting": false
+  },
+  "notes": "Do not commit real participant identity/contact details to the public repository. Store sensitive intake outside the repo and commit only pseudonymous hashes/results."
+}
