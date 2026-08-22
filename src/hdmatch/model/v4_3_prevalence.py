@@ -53,6 +53,10 @@ from hdmatch.experiments.canonical import (
     sha256_json,
     write_new_canonical_json,
 )
+from hdmatch.model.v4_3.integration import (
+    mapping_prevalence_parent_hierarchy_sha256,
+    mapping_prevalence_plan_sha256,
+)
 from hdmatch.model.v4_3_compiler import compile_verified_mapping_library_v2
 from hdmatch.model.v4_3_mapping import (
     CompiledPathwayV2,
@@ -143,6 +147,7 @@ class V43PrevalencePlanV1(_FrozenModel):
             raise ValueError("prevalence plan required-feature hash is inconsistent")
         if self.mapping_prevalence_plan_sha256 != _anchor_inventory_sha256(
             self.anchors,
+            mapping_library_sha256=self.mapping_library_sha256,
             required_feature_registry_sha256=(
                 self.mapping_required_feature_registry_sha256
             ),
@@ -161,13 +166,9 @@ class V43PrevalencePlanV1(_FrozenModel):
             [
                 {
                     "anchor_id": anchor.anchor_id,
-                    "predicate": anchor.predicate.model_dump(mode="json"),
                     "parent_hierarchy": [
                         level.model_dump(mode="json")
                         for level in anchor.parent_hierarchy
-                    ],
-                    "required_feature_ids": [
-                        item.value for item in anchor.required_feature_ids
                     ],
                 }
                 for anchor in self.anchors
@@ -571,6 +572,8 @@ class VerifiedV43ConditionalPrevalence:
         "_artifact_sha256",
         "_cache",
         "_cell_index",
+        "_membership_iterator",
+        "_pending_membership",
         "_provider_token",
         "_token",
     )
@@ -595,6 +598,8 @@ class VerifiedV43ConditionalPrevalence:
             for table in artifact.tables
             for cell in table.cells
         }
+        self._membership_iterator = iter_verified_century_cache_rows(cache)
+        self._pending_membership: CenturyStateRecord | None = None
         self._provider_token = object()
         self._token = _token
 
@@ -658,39 +663,73 @@ class VerifiedV43ConditionalPrevalence:
         cache_manifest_sha256: str,
         mapping_library_sha256: str,
     ) -> V43BoundCandidateRecord:
-        if not isinstance(record, _VerifiedCacheMember):
-            raise V43PrevalenceError(
-                "candidate is not a member capability from the verified cache"
-            )
         source = self._artifact.source
-        if record._provider_token is not self._provider_token:
-            raise V43PrevalenceError("candidate member belongs to another provider")
+        if cache_manifest_sha256 != source.cache_manifest_sha256:
+            raise V43PrevalenceError("requested cache manifest mismatch")
+        if mapping_library_sha256 != source.mapping_library_sha256:
+            raise V43PrevalenceError("requested mapping library mismatch")
+        if isinstance(record, _VerifiedCacheMember):
+            if record._provider_token is not self._provider_token:
+                raise V43PrevalenceError("candidate member belongs to another provider")
+            member = record
+        elif isinstance(record, CenturyStateRecord):
+            member = self._bind_next_verified_cache_row(record)
+        else:
+            raise V43PrevalenceError(
+                "candidate is neither a cache row nor a verified member capability"
+            )
         bindings = {
-            "requested cache manifest": (
-                cache_manifest_sha256,
-                source.cache_manifest_sha256,
-            ),
-            "requested mapping library": (
-                mapping_library_sha256,
-                source.mapping_library_sha256,
-            ),
             "member cache manifest": (
-                record.cache_manifest_sha256,
+                member.cache_manifest_sha256,
                 source.cache_manifest_sha256,
             ),
             "member universe": (
-                record.universe_sha256,
+                member.universe_sha256,
                 source.logical_universe_sha256,
             ),
             "member mapping library": (
-                record.mapping_library_sha256,
+                member.mapping_library_sha256,
                 source.mapping_library_sha256,
             ),
         }
         for label, (actual, expected) in bindings.items():
             if actual != expected:
                 raise V43PrevalenceError(f"{label} mismatch")
-        return V43BoundCandidateRecord(record, _token=_CACHE_MEMBER_TOKEN)
+        return V43BoundCandidateRecord(member, _token=_CACHE_MEMBER_TOKEN)
+
+    def _bind_next_verified_cache_row(
+        self,
+        candidate: CenturyStateRecord,
+    ) -> _VerifiedCacheMember:
+        """Match one candidate against the next replay-verified canonical row.
+
+        This bounded cursor is the ordinary scorer path. It proves ordered cache
+        membership without retaining a century-wide set of row hashes. A mismatch
+        does not advance the cursor, so a substituted candidate cannot skip a row.
+        """
+
+        if self._pending_membership is None:
+            try:
+                self._pending_membership = next(self._membership_iterator)
+            except StopIteration as exc:
+                raise V43PrevalenceError(
+                    "candidate cache membership stream is exhausted"
+                ) from exc
+        expected = self._pending_membership
+        if candidate != expected:
+            raise V43PrevalenceError(
+                "candidate differs from the next replay-verified cache member"
+            )
+        self._pending_membership = None
+        source = self._artifact.source
+        return _VerifiedCacheMember(
+            record=expected,
+            cache_manifest_sha256=source.cache_manifest_sha256,
+            universe_sha256=source.logical_universe_sha256,
+            mapping_library_sha256=source.mapping_library_sha256,
+            provider_token=self._provider_token,
+            _token=_CACHE_MEMBER_TOKEN,
+        )
 
     def estimate(self, anchor_id: str, candidate_context: object) -> V43PrevalenceEstimate:
         if not isinstance(candidate_context, V43BoundCandidateRecord):
@@ -957,7 +996,17 @@ def v4_3_predicate_matches(
 ) -> bool:
     """Evaluate one exact mapping predicate with strict feature-aware semantics."""
 
-    return _predicate_matches(predicate, features, _registry_by_id(feature_registry))
+    registry = _registry_by_id(feature_registry)
+    expected_ids = tuple(item.feature_id for item in feature_registry)
+    actual_ids = tuple(features)
+    if set(actual_ids) != set(expected_ids):
+        missing = sorted(set(expected_ids) - set(actual_ids))
+        extra = sorted(set(actual_ids) - set(expected_ids))
+        raise V43PrevalenceError(
+            "predicate feature mapping differs from registry; "
+            f"missing={missing}, extra={extra}"
+        )
+    return _predicate_matches(predicate, features, registry)
 
 
 def iter_artifact_cells(
@@ -967,16 +1016,6 @@ def iter_artifact_cells(
 
     for table in artifact.tables:
         yield from table.cells
-
-
-def mapping_prevalence_plan_sha256(library: MappingLibraryV2) -> str:
-    """Digest exact predicates, parents, and required registry from mapping-v2."""
-
-    anchors = _anchors_from_mapping(library)
-    return _anchor_inventory_sha256(
-        anchors,
-        required_feature_registry_sha256=library.required_feature_registry_sha256,
-    )
 
 
 def _load_mapping_binding(
@@ -1060,10 +1099,12 @@ def _mapping_pathways(library: MappingLibraryV2) -> Iterator[CompiledPathwayV2]:
 def _anchor_inventory_sha256(
     anchors: tuple[V43PrevalenceAnchorV1, ...],
     *,
+    mapping_library_sha256: str,
     required_feature_registry_sha256: str,
 ) -> str:
     return sha256_json(
         {
+            "mapping_library_sha256": mapping_library_sha256,
             "required_feature_registry_sha256": required_feature_registry_sha256,
             "anchors": [
                 {
@@ -1115,7 +1156,7 @@ def _derive_plan(
                     raise V43PrevalenceError(
                         f"cache lacks parent feature: {feature_id.value}"
                     )
-    return V43PrevalencePlanV1(
+    plan = V43PrevalencePlanV1(
         mapping_library_sha256=mapping.library_sha256,
         mapping_source_library_sha256=mapping.source_sha256,
         mapping_prevalence_plan_sha256=mapping_prevalence_plan_sha256(library),
@@ -1134,6 +1175,13 @@ def _derive_plan(
         ),
         anchors=anchors,
     )
+    if plan.parent_hierarchy_sha256 != mapping_prevalence_parent_hierarchy_sha256(
+        library
+    ):
+        raise V43PrevalenceError(
+            "prevalence parent hierarchy differs from canonical mapping integration"
+        )
+    return plan
 
 
 def _load_and_match_plan(
@@ -1425,13 +1473,24 @@ def _predicate_matches(
     )
     if missing:
         raise V43PrevalenceError(f"prevalence row lacks predicate features: {missing}")
+    for required_feature_id in predicate.required_feature_ids:
+        required_key = required_feature_id.value
+        required_spec = registry.get(required_key)
+        if required_spec is None:
+            raise V43PrevalenceError(
+                f"predicate feature is absent from registry: {required_key}"
+            )
+        _validate_feature_value(
+            required_key,
+            features[required_key],
+            required_spec,
+        )
     feature_key = predicate.feature_id.value
     spec = registry.get(feature_key)
     if spec is None:
         raise V43PrevalenceError(f"predicate feature is absent from registry: {feature_key}")
     _validate_predicate_compatibility(predicate, registry)
     actual = features[feature_key]
-    _validate_feature_value(feature_key, actual, spec)
     if predicate.operator is PredicateOperatorV2.EQUALS_ANY:
         if not isinstance(actual, str):
             raise V43PrevalenceError("equals_any requires an exact string feature")

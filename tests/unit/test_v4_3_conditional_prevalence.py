@@ -11,6 +11,7 @@ from pydantic import ValidationError
 
 import hdmatch.model.v4_3_prevalence as prevalence_module
 import tests.unit.test_century_cache_contract as cache_fixtures
+import tests.unit.test_v4_3_mapping_library as mapping_fixtures
 from hdmatch.century_cache import (
     CenturyCacheStreamIdentity,
     ExactStateReconciliationStream,
@@ -25,6 +26,13 @@ from hdmatch.century_cache import (
 from hdmatch.century_cache.models import FeatureColumnSpec, FeatureStorageType
 from hdmatch.chart.feature_registry import FeatureId
 from hdmatch.experiments.canonical import canonical_json_bytes, sha256_file
+from hdmatch.model.v4_3.integration import (
+    CanonicalV43ScoringSession,
+    V43ObservedResponse,
+    mapping_prevalence_parent_hierarchy_sha256,
+    mapping_prevalence_plan_sha256,
+)
+from hdmatch.model.v4_3_compiler import compile_mapping_library_v2
 from hdmatch.model.v4_3_mapping import (
     MappingLibraryV2,
     PredicateOperatorV2,
@@ -40,7 +48,6 @@ from hdmatch.model.v4_3_prevalence import (
     capped_information_rubric_bits,
     derive_v4_3_prevalence_plan,
     load_v4_3_prevalence_plan,
-    mapping_prevalence_plan_sha256,
     v4_3_predicate_matches,
     verify_v4_3_prevalence_artifact,
     write_v4_3_prevalence_artifact_new,
@@ -193,6 +200,9 @@ def test_real_cache_plan_and_artifact_bind_complete_identity_chain(
     assert provenance.mapping_prevalence_plan_sha256 == (
         plan.mapping_prevalence_plan_sha256
     )
+    assert provenance.parent_hierarchy_sha256 == (
+        mapping_prevalence_parent_hierarchy_sha256(library)
+    )
     assert provenance.required_feature_registry_sha256 == (
         plan.mapping_required_feature_registry_sha256
     )
@@ -208,6 +218,68 @@ def test_real_cache_plan_and_artifact_bind_complete_identity_chain(
     assert provenance.conditional is True
     assert provenance.duration_weighted is True
     assert provenance.exact_stable_intervals is True
+
+
+def test_real_provider_opens_and_completes_canonical_scoring_session(
+    real_harness: _RealPrevalenceHarness,
+    tmp_path: Path,
+) -> None:
+    source = mapping_fixtures._source(bind_question_bank=True)
+    library = compile_mapping_library_v2(source)
+    source_path = tmp_path / "mapping-source.json"
+    library_path = tmp_path / "mapping.json"
+    source_path.write_bytes(canonical_json_bytes(source))
+    library_path.write_bytes(canonical_json_bytes(library))
+    mapping_kwargs = {
+        "mapping_library_path": library_path,
+        "mapping_source_library_path": source_path,
+        "mapping_repository_root": ROOT,
+    }
+    plan = derive_v4_3_prevalence_plan(
+        real_harness.cache_directory,
+        trust_lock_path=real_harness.trust_lock_path,
+        **mapping_kwargs,
+    )
+    plan_path = write_v4_3_prevalence_plan_new(tmp_path / "plan.json", plan)
+    artifact = build_v4_3_prevalence_artifact(
+        real_harness.cache_directory,
+        trust_lock_path=real_harness.trust_lock_path,
+        prevalence_plan_path=plan_path,
+        **mapping_kwargs,
+    )
+    artifact_path = write_v4_3_prevalence_artifact_new(
+        tmp_path / "artifact.json",
+        artifact,
+    )
+    provider = verify_v4_3_prevalence_artifact(
+        artifact_path,
+        cache_directory=real_harness.cache_directory,
+        trust_lock_path=real_harness.trust_lock_path,
+        prevalence_plan_path=plan_path,
+        **mapping_kwargs,
+    )
+    session = CanonicalV43ScoringSession.open(
+        mapping_library=library,
+        cache_directory=real_harness.cache_directory,
+        trust_lock_path=real_harness.trust_lock_path,
+        prevalence=provider,
+    )
+    responses = tuple(
+        V43ObservedResponse(
+            observation_id=rule.observation_id,
+            response_token=rule.response_rule.unknown_response_tokens[0],
+        )
+        for rule in library.rules
+    )
+    evaluations = tuple(
+        session.score_candidate(row, responses)
+        for row in iter_verified_century_cache_rows(real_harness.verified_cache)
+    )
+    complete = session.require_complete_universe_compliance(evaluations)
+    assert complete.compliance.v4_3_compliant is True
+    assert complete.scored_candidate_count == (
+        real_harness.verified_cache.manifest.interval_count
+    )
 
 
 def test_global_prevalence_is_duration_weighted_not_row_weighted(
@@ -283,18 +355,31 @@ def test_candidate_membership_is_private_provider_specific_and_identity_bound(
 ) -> None:
     provider = real_harness.provider
     raw = next(iter_verified_century_cache_rows(real_harness.verified_cache))
-    with pytest.raises(V43PrevalenceError, match="not a member capability"):
+    with pytest.raises(V43PrevalenceError, match="requested cache manifest mismatch"):
         provider.bind_candidate_record(
             raw,
+            cache_manifest_sha256="0" * 64,
+            mapping_library_sha256=provider.provenance.mapping_library_sha256,
+        )
+    bound = provider.bind_candidate_record(
+        raw,
+        cache_manifest_sha256=provider.provenance.cache_manifest_sha256,
+        mapping_library_sha256=provider.provenance.mapping_library_sha256,
+    )
+    assert bound.state_id == raw.state_id
+    substituted = raw.model_copy(update={"state_id": "STATE-V2-SUBSTITUTED"})
+    with pytest.raises(V43PrevalenceError, match="next replay-verified"):
+        provider.bind_candidate_record(
+            substituted,
             cache_manifest_sha256=provider.provenance.cache_manifest_sha256,
             mapping_library_sha256=provider.provenance.mapping_library_sha256,
         )
     member = next(provider.iter_cache_members())
-    with pytest.raises(V43PrevalenceError, match="requested cache manifest mismatch"):
+    with pytest.raises(V43PrevalenceError, match="requested mapping library mismatch"):
         provider.bind_candidate_record(
             member,
-            cache_manifest_sha256="0" * 64,
-            mapping_library_sha256=provider.provenance.mapping_library_sha256,
+            cache_manifest_sha256=provider.provenance.cache_manifest_sha256,
+            mapping_library_sha256="0" * 64,
         )
     other = verify_v4_3_prevalence_artifact(
         real_harness.artifact_path,
@@ -337,7 +422,7 @@ def test_stale_plan_and_mapping_byte_substitution_fail_closed(
     stale_payload["mapping_library_sha256"] = "0" * 64
     stale_plan = tmp_path / "stale-plan.json"
     stale_plan.write_bytes(canonical_json_bytes(stale_payload))
-    with pytest.raises(V43PrevalenceError, match="stale or mismatched"):
+    with pytest.raises(V43PrevalenceError, match="invalid prevalence plan"):
         build_v4_3_prevalence_artifact(
             real_harness.cache_directory,
             trust_lock_path=real_harness.trust_lock_path,
@@ -441,8 +526,17 @@ def test_predicates_are_feature_aware_and_type_strict() -> None:
                 {FeatureId.TYPE.value: invalid},
                 type_registry,
             )
-    with pytest.raises(V43PrevalenceError, match="lacks predicate features"):
+    with pytest.raises(V43PrevalenceError, match="differs from registry"):
         v4_3_predicate_matches(type_predicate, {}, type_registry)
+    with pytest.raises(V43PrevalenceError, match="unknown.field"):
+        v4_3_predicate_matches(
+            type_predicate,
+            {
+                FeatureId.TYPE.value: "projector",
+                "unknown.field": "unexpected",
+            },
+            type_registry,
+        )
     with pytest.raises(ValidationError):
         StructuralPredicateV2.model_validate(
             {
