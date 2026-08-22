@@ -13,6 +13,7 @@ from collections.abc import Iterable, Mapping
 from datetime import UTC, datetime
 from enum import StrEnum
 from pathlib import Path
+from types import TracebackType
 from typing import Final, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
@@ -21,7 +22,12 @@ from hdmatch.util import canonical_json_bytes, sha256_file, sha256_json
 
 from .bodygraph import CHANNELS, Bodygraph, Center, GateActivation, derive_bodygraph
 from .calculator import ChartComputation
-from .ephemeris import CelestialBody, EphemerisMode, SwissEphemerisProvider
+from .ephemeris import (
+    CelestialBody,
+    EphemerisMetadata,
+    EphemerisMode,
+    SwissEphemerisProvider,
+)
 
 _SHA256_PATTERN: Final[str] = r"^[a-f0-9]{64}$"
 _CHANNEL_PATTERN: Final[str] = r"^(?:[1-9]|[1-5][0-9]|6[0-4])-(?:[1-9]|[1-5][0-9]|6[0-4])$"
@@ -38,6 +44,7 @@ _NODE_POSITIONS: Final[tuple[str, ...]] = (
     "design:north_node",
     "design:south_node",
 )
+_SESSION_FACTORY_TOKEN: Final[object] = object()
 
 
 class FrozenModel(BaseModel):
@@ -767,6 +774,143 @@ def require_complete_feature_coverage(
     return coverage
 
 
+class _CacheableSerializationSession:
+    """Bounded, fail-closed file-integrity scope for high-volume serialization.
+
+    Construction is deliberately restricted to :func:`cacheable_serialization_session`.
+    Values produced inside the scope are provisional until clean context exit has
+    reverified the exact Swiss files captured on entry.
+    """
+
+    __slots__ = ("_active", "_closed", "_metadata", "_provider")
+
+    def __init__(
+        self,
+        provider: SwissEphemerisProvider,
+        *,
+        _factory_token: object,
+    ) -> None:
+        if _factory_token is not _SESSION_FACTORY_TOKEN:
+            raise FeatureCoverageError(
+                "cacheable serialization sessions must be created by the public factory"
+            )
+        self._provider = provider
+        self._metadata: EphemerisMetadata | None = None
+        self._active = False
+        self._closed = False
+
+    def __enter__(self) -> _CacheableSerializationSession:
+        if self._active or self._closed:
+            raise FeatureCoverageError("cacheable serialization session cannot be reopened")
+        self._metadata = _verify_production_provider_boundary(self._provider)
+        self._active = True
+        return self
+
+    def __exit__(
+        self,
+        exc_type: type[BaseException] | None,
+        exc_value: BaseException | None,
+        traceback: TracebackType | None,
+    ) -> Literal[False]:
+        del exc_type, exc_value, traceback
+        try:
+            if self._metadata is not None:
+                _verify_production_provider_boundary(
+                    self._provider,
+                    expected_metadata=self._metadata,
+                )
+        finally:
+            self._active = False
+            self._closed = True
+        return False
+
+    def serialize_chart_feature_vector(
+        self,
+        computation: ChartComputation,
+        *,
+        provider: SwissEphemerisProvider,
+        circuitry: CircuitryFeatures | None = None,
+        cross_name: str | None = None,
+        cross_name_catalog_sha256: str | None = None,
+        advanced_substructure: AdvancedSubstructure | None = None,
+        advanced_values: Mapping[str, Mapping[AdvancedField | str, int]] | None = None,
+    ) -> ChartFeatureVectorV2:
+        metadata = self._require_active_binding(computation, provider)
+        assert metadata.requested_flags is not None
+        assert metadata.ephemeris_mask is not None
+        return _serialize_chart_feature_vector(
+            computation,
+            ephemeris_requested_flags=metadata.requested_flags,
+            ephemeris_mask=metadata.ephemeris_mask,
+            circuitry=circuitry,
+            cross_name=cross_name,
+            cross_name_catalog_sha256=cross_name_catalog_sha256,
+            advanced_substructure=advanced_substructure,
+            advanced_values=advanced_values,
+        )
+
+    def serialize_cacheable_chart_state(
+        self,
+        computation: ChartComputation,
+        *,
+        provider: SwissEphemerisProvider,
+        utc_start: datetime,
+        utc_end: datetime,
+        boundary_events: Iterable[str] = (),
+        circuitry: CircuitryFeatures | None = None,
+    ) -> CacheableChartStateV2:
+        vector = self.serialize_chart_feature_vector(
+            computation,
+            provider=provider,
+            circuitry=circuitry,
+        )
+        return _cacheable_state_from_vector(
+            computation,
+            vector,
+            utc_start=utc_start,
+            utc_end=utc_end,
+            boundary_events=boundary_events,
+        )
+
+    def _require_active_binding(
+        self,
+        computation: ChartComputation,
+        provider: SwissEphemerisProvider,
+    ) -> EphemerisMetadata:
+        if not self._active or self._closed or self._metadata is None:
+            raise FeatureCoverageError("cacheable serialization session is not active")
+        if provider is not self._provider:
+            raise FeatureCoverageError(
+                "cacheable serialization session cannot be used with a different provider"
+            )
+        if provider.metadata != self._metadata:
+            raise FeatureCoverageError(
+                "Swiss provider metadata changed during cacheable serialization session"
+            )
+        if computation.metadata.ephemeris != self._metadata:
+            raise FeatureCoverageError(
+                "chart computation ephemeris metadata differs from the active session"
+            )
+        return self._metadata
+
+
+def cacheable_serialization_session(
+    provider: SwissEphemerisProvider,
+) -> _CacheableSerializationSession:
+    """Create a bounded high-volume serialization scope.
+
+    The returned object must be used as a context manager.  The provider and
+    exact ``.se1`` bytes are verified once at entry and once at exit; each row
+    remains bound to the captured immutable metadata without redundant disk I/O.
+    Do not publish rows before successful context exit.
+    """
+
+    return _CacheableSerializationSession(
+        provider,
+        _factory_token=_SESSION_FACTORY_TOKEN,
+    )
+
+
 def serialize_chart_feature_vector(
     computation: ChartComputation,
     *,
@@ -777,12 +921,33 @@ def serialize_chart_feature_vector(
     advanced_substructure: AdvancedSubstructure | None = None,
     advanced_values: Mapping[str, Mapping[AdvancedField | str, int]] | None = None,
 ) -> ChartFeatureVectorV2:
-    """Serialize one chart without inventing unavailable symbolic mechanics."""
+    """Safely serialize one chart with entry/exit file-integrity verification."""
 
-    ephemeris_requested_flags, ephemeris_mask = _validate_production_provider(
-        computation,
-        provider,
-    )
+    with cacheable_serialization_session(provider) as session:
+        return session.serialize_chart_feature_vector(
+            computation,
+            provider=provider,
+            circuitry=circuitry,
+            cross_name=cross_name,
+            cross_name_catalog_sha256=cross_name_catalog_sha256,
+            advanced_substructure=advanced_substructure,
+            advanced_values=advanced_values,
+        )
+
+
+def _serialize_chart_feature_vector(
+    computation: ChartComputation,
+    *,
+    ephemeris_requested_flags: int,
+    ephemeris_mask: int,
+    circuitry: CircuitryFeatures | None = None,
+    cross_name: str | None = None,
+    cross_name_catalog_sha256: str | None = None,
+    advanced_substructure: AdvancedSubstructure | None = None,
+    advanced_values: Mapping[str, Mapping[AdvancedField | str, int]] | None = None,
+) -> ChartFeatureVectorV2:
+    """Serialize one chart already bound to an active production session."""
+
     circuitry_value = circuitry or CircuitryFeatures(
         status=CapabilityStatus.UNAVAILABLE_UNVALIDATED
     )
@@ -913,13 +1078,27 @@ def serialize_cacheable_chart_state(
     boundary_events: Iterable[str] = (),
     circuitry: CircuitryFeatures | None = None,
 ) -> CacheableChartStateV2:
-    """Serialize an already-derived exact interval; this function finds no boundaries."""
+    """Safely serialize one already-derived exact interval; find no boundaries."""
 
-    vector = serialize_chart_feature_vector(
-        computation,
-        provider=provider,
-        circuitry=circuitry,
-    )
+    with cacheable_serialization_session(provider) as session:
+        return session.serialize_cacheable_chart_state(
+            computation,
+            provider=provider,
+            utc_start=utc_start,
+            utc_end=utc_end,
+            boundary_events=boundary_events,
+            circuitry=circuitry,
+        )
+
+
+def _cacheable_state_from_vector(
+    computation: ChartComputation,
+    vector: ChartFeatureVectorV2,
+    *,
+    utc_start: datetime,
+    utc_end: datetime,
+    boundary_events: Iterable[str],
+) -> CacheableChartStateV2:
     start = _require_utc(utc_start)
     end = _require_utc(utc_end)
     representative = _require_utc(computation.personality_utc)
@@ -944,18 +1123,21 @@ def serialize_cacheable_chart_state(
     )
 
 
-def _validate_production_provider(
-    computation: ChartComputation,
+def _verify_production_provider_boundary(
     provider: SwissEphemerisProvider,
-) -> tuple[int, int]:
+    *,
+    expected_metadata: EphemerisMetadata | None = None,
+) -> EphemerisMetadata:
     if not isinstance(provider, SwissEphemerisProvider):
         raise FeatureCoverageError(
             "cacheable M2 serialization requires the strict SwissEphemerisProvider"
         )
-    metadata = computation.metadata.ephemeris
-    if metadata != provider.metadata:
+    metadata = provider.metadata
+    if expected_metadata is not None:
+        _verify_declared_ephemeris_files(expected_metadata)
+    if expected_metadata is not None and metadata != expected_metadata:
         raise FeatureCoverageError(
-            "chart computation ephemeris metadata differs from the supplied provider"
+            "Swiss provider metadata changed during cacheable serialization session"
         )
     if metadata.provider != "swiss_ephemeris_local_files":
         raise FeatureCoverageError(
@@ -975,6 +1157,12 @@ def _validate_production_provider(
         raise FeatureCoverageError(
             "cacheable M2 serialization requires exactly sepl_18.se1 and semo_18.se1"
         )
+    if expected_metadata is None:
+        _verify_declared_ephemeris_files(metadata)
+    return metadata
+
+
+def _verify_declared_ephemeris_files(metadata: EphemerisMetadata) -> None:
     for item in metadata.files:
         path = Path(item.path)
         if not path.is_file():
@@ -985,7 +1173,6 @@ def _validate_production_provider(
             raise FeatureCoverageError(
                 f"declared production ephemeris bytes changed after provider setup: {path.name}"
             )
-    return metadata.requested_flags, metadata.ephemeris_mask
 
 
 def _validate_advanced_input(

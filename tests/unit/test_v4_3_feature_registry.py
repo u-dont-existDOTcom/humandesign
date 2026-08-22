@@ -7,6 +7,7 @@ from pathlib import Path
 import pytest
 from pydantic import ValidationError
 
+import hdmatch.chart.feature_registry as feature_registry_module
 from hdmatch.chart.calculator import ChartComputation, calculate_chart
 from hdmatch.chart.ephemeris import (
     CelestialBody,
@@ -26,6 +27,7 @@ from hdmatch.chart.feature_registry import (
     FeatureId,
     FeatureTier,
     assess_required_feature_coverage,
+    cacheable_serialization_session,
     compile_required_feature_registry,
     require_complete_feature_coverage,
     serialize_cacheable_chart_state,
@@ -84,8 +86,13 @@ class _DeterministicFakeSwiss:
 
 @pytest.fixture
 def production_provider(tmp_path: Path) -> SwissEphemerisProvider:
-    planetary = tmp_path / "sepl_18.se1"
-    lunar = tmp_path / "semo_18.se1"
+    return _make_production_provider(tmp_path)
+
+
+def _make_production_provider(root: Path) -> SwissEphemerisProvider:
+    root.mkdir(parents=True, exist_ok=True)
+    planetary = root / "sepl_18.se1"
+    lunar = root / "semo_18.se1"
     planetary.write_bytes(b"deterministic-planetary-test-file")
     lunar.write_bytes(b"deterministic-lunar-test-file")
     fake = _DeterministicFakeSwiss(planetary, lunar)
@@ -522,3 +529,108 @@ def test_cacheable_serialization_requires_live_verified_local_swiss_provider(
     changed_path.write_bytes(b"changed-after-chart-calculation")
     with pytest.raises(FeatureCoverageError, match="bytes changed"):
         serialize_chart_feature_vector(computation, provider=production_provider)
+
+
+def test_serialization_session_rejects_entry_file_mutation(
+    computation: ChartComputation,
+    production_provider: SwissEphemerisProvider,
+) -> None:
+    changed_path = Path(computation.metadata.ephemeris.files[0].path)
+    changed_path.write_bytes(b"changed-before-session-entry")
+
+    with (
+        pytest.raises(FeatureCoverageError, match="bytes changed"),
+        cacheable_serialization_session(production_provider),
+    ):
+        pytest.fail("mutated ephemeris bytes must fail before session entry")
+
+
+def test_serialization_session_rejects_exit_mutation_and_use_after_close(
+    computation: ChartComputation,
+    production_provider: SwissEphemerisProvider,
+) -> None:
+    session = cacheable_serialization_session(production_provider)
+    changed_path = Path(computation.metadata.ephemeris.files[0].path)
+
+    with pytest.raises(FeatureCoverageError, match="bytes changed"), session:
+        session.serialize_chart_feature_vector(
+            computation,
+            provider=production_provider,
+        )
+        changed_path.write_bytes(b"changed-before-session-exit")
+
+    with pytest.raises(FeatureCoverageError, match="not active"):
+        session.serialize_chart_feature_vector(
+            computation,
+            provider=production_provider,
+        )
+
+
+def test_serialization_session_rejects_provider_mismatch(
+    tmp_path: Path,
+    computation: ChartComputation,
+    production_provider: SwissEphemerisProvider,
+) -> None:
+    other_provider = _make_production_provider(tmp_path / "other-provider")
+    other_computation = calculate_chart(
+        other_provider,
+        computation.personality_utc,
+    )
+
+    with (
+        cacheable_serialization_session(production_provider) as session,
+        pytest.raises(FeatureCoverageError, match="different provider"),
+    ):
+        session.serialize_chart_feature_vector(
+            other_computation,
+            provider=other_provider,
+        )
+
+
+def test_many_session_serializations_hash_files_only_at_entry_and_exit(
+    monkeypatch: pytest.MonkeyPatch,
+    computation: ChartComputation,
+    production_provider: SwissEphemerisProvider,
+) -> None:
+    original_sha256_file = feature_registry_module.sha256_file
+    hashed_paths: list[Path] = []
+
+    def counted_sha256_file(path: str | Path) -> str:
+        hashed_paths.append(Path(path))
+        return original_sha256_file(path)
+
+    monkeypatch.setattr(feature_registry_module, "sha256_file", counted_sha256_file)
+
+    with cacheable_serialization_session(production_provider) as session:
+        vectors = tuple(
+            session.serialize_chart_feature_vector(
+                computation,
+                provider=production_provider,
+            )
+            for _ in range(25)
+        )
+
+    assert len(hashed_paths) == 2 * len(production_provider.metadata.files)
+    assert len({vector.sha256() for vector in vectors}) == 1
+
+
+def test_serialization_session_reverifies_files_when_body_raises(
+    monkeypatch: pytest.MonkeyPatch,
+    production_provider: SwissEphemerisProvider,
+) -> None:
+    original_sha256_file = feature_registry_module.sha256_file
+    hashed_paths: list[Path] = []
+
+    def counted_sha256_file(path: str | Path) -> str:
+        hashed_paths.append(Path(path))
+        return original_sha256_file(path)
+
+    monkeypatch.setattr(feature_registry_module, "sha256_file", counted_sha256_file)
+
+    with (
+        pytest.raises(RuntimeError, match="synthetic body failure"),
+        cacheable_serialization_session(production_provider),
+    ):
+        raise RuntimeError("synthetic body failure")
+
+    assert len(hashed_paths) == 2 * len(production_provider.metadata.files)
