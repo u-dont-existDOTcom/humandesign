@@ -6,6 +6,7 @@ repository has not frozen independently validated rules for those layers.
 """
 
 from .bodygraph import Authority, Bodygraph, Center, Definition, HDType, Strategy
+from .boundaries import canonical_boundary_event_string
 from .calculator import ChartComputation, calculate_chart
 from .design_moment import (
     DesignMomentResult,
@@ -40,7 +41,7 @@ from .feature_registry import (
     serialize_cacheable_chart_state,
     serialize_chart_feature_vector,
 )
-from .rave_mandala import MandalaPosition, longitude_to_gate_line
+from .rave_mandala import RAVE_MANDALA_VERSION, MandalaPosition, longitude_to_gate_line
 from .timezone import LocalTimeResolution, LocalTimeStatus, resolve_local_datetime
 
 __all__ = [
@@ -70,11 +71,13 @@ __all__ = [
     "LocalTimeStatus",
     "MandalaPosition",
     "ProductionEngineValidation",
+    "RAVE_MANDALA_VERSION",
     "RequiredFeatureRegistry",
     "Strategy",
     "SwissEphemerisProvider",
     "assess_required_feature_coverage",
     "cacheable_serialization_session",
+    "canonical_boundary_event_string",
     "calculate_chart",
     "compile_required_feature_registry",
     "longitude_to_gate_line",

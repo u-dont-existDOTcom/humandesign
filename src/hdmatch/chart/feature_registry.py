@@ -18,6 +18,7 @@ from typing import Final, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
+from hdmatch.provenance.swisseph_files import REQUIRED_EPHEMERIS_FILES
 from hdmatch.util import canonical_json_bytes, sha256_file, sha256_json
 
 from .bodygraph import CHANNELS, Bodygraph, Center, GateActivation, derive_bodygraph
@@ -355,7 +356,7 @@ class AdvancedSubstructure(FrozenModel):
 class EphemerisFileIdentity(FrozenModel):
     name: str = Field(min_length=1)
     sha256: str = Field(pattern=_SHA256_PATTERN)
-    size_bytes: int = Field(gt=0)
+    bytes: int = Field(gt=0)
 
 
 class FeatureVectorProvenance(FrozenModel):
@@ -367,7 +368,7 @@ class FeatureVectorProvenance(FrozenModel):
     ephemeris_mask: int = Field(gt=0)
     ephemeris_files: tuple[EphemerisFileIdentity, ...] = Field(min_length=1)
     ephemeris_file_set_sha256: str = Field(pattern=_SHA256_PATTERN)
-    node_convention: str = Field(min_length=1)
+    node_convention: Literal["true"]
     mandala_mapping_sha256: str = Field(pattern=_SHA256_PATTERN)
     bodygraph_mapping_sha256: str = Field(pattern=_SHA256_PATTERN)
     design_target_arc_degrees: float
@@ -377,8 +378,10 @@ class FeatureVectorProvenance(FrozenModel):
     @model_validator(mode="after")
     def verify_file_set_hash(self) -> FeatureVectorProvenance:
         names = tuple(item.name for item in self.ephemeris_files)
-        if len(names) != len(set(names)) or names != tuple(sorted(names)):
-            raise ValueError("ephemeris file identities must be unique and sorted by name")
+        if names != REQUIRED_EPHEMERIS_FILES:
+            raise ValueError(
+                "ephemeris file identities must use the canonical pinned file order"
+            )
         expected = sha256_json([item.model_dump(mode="json") for item in self.ephemeris_files])
         if self.ephemeris_file_set_sha256 != expected:
             raise ValueError("ephemeris file-set hash does not match file identities")
@@ -489,6 +492,15 @@ class CacheableChartStateV2(FrozenModel):
         if value.tzinfo is None or value.utcoffset() is None:
             raise ValueError("cacheable-state timestamps must be timezone-aware")
         return value.astimezone(UTC)
+
+    @field_validator("boundary_events")
+    @classmethod
+    def require_canonical_boundary_events(cls, values: tuple[str, ...]) -> tuple[str, ...]:
+        if any(not value for value in values):
+            raise ValueError("boundary-event identifiers must not be empty")
+        if values != tuple(sorted(set(values))):
+            raise ValueError("boundary events must be sorted and unique")
+        return values
 
     @model_validator(mode="after")
     def verify_bindings(self) -> CacheableChartStateV2:
@@ -1017,16 +1029,17 @@ def _serialize_chart_feature_vector(
         name=cross_name,
         name_catalog_sha256=cross_name_catalog_sha256,
     )
+    ephemeris_by_name = {
+        Path(item.path).name: item for item in computation.metadata.ephemeris.files
+    }
     ephemeris_files = tuple(
         EphemerisFileIdentity(
-            name=Path(item.path).name,
+            name=name,
             sha256=item.sha256,
-            size_bytes=item.size_bytes,
+            bytes=item.size_bytes,
         )
-        for item in sorted(
-            computation.metadata.ephemeris.files,
-            key=lambda value: Path(value.path).name,
-        )
+        for name in REQUIRED_EPHEMERIS_FILES
+        for item in (ephemeris_by_name[name],)
     )
     if not ephemeris_files:
         raise FeatureCoverageError("cacheable M2 vectors require hashed ephemeris files")
@@ -1040,7 +1053,7 @@ def _serialize_chart_feature_vector(
         ephemeris_file_set_sha256=sha256_json(
             [item.model_dump(mode="json") for item in ephemeris_files]
         ),
-        node_convention=computation.metadata.ephemeris.node_convention.value,
+        node_convention="true",
         mandala_mapping_sha256=computation.metadata.mandala_constants_sha256,
         bodygraph_mapping_sha256=computation.metadata.bodygraph_constants_sha256,
         design_target_arc_degrees=computation.metadata.design_target_arc_degrees,
@@ -1150,6 +1163,10 @@ def _verify_production_provider_boundary(
     if metadata.requested_flags is None or metadata.ephemeris_mask is None:
         raise FeatureCoverageError(
             "cacheable M2 vector requires explicit ephemeris request and mode-mask flags"
+        )
+    if metadata.node_convention.value != "true":
+        raise FeatureCoverageError(
+            "cacheable M2 serialization requires the frozen true-Node convention"
         )
     expected_names = {"sepl_18.se1", "semo_18.se1"}
     observed_names = {Path(item.path).name for item in metadata.files}

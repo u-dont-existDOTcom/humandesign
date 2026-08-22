@@ -103,6 +103,7 @@ def _spec() -> CenturyCacheBuildSpec:
         utc_start=_START,
         utc_end_exclusive=_END,
         feature_registry=registry,
+        semantic_feature_registry_sha256="d" * 64,
         feature_registry_sha256=feature_registry_sha256(registry),
         required_feature_coverage=1.0,
         calculation_tier="M2",
@@ -155,6 +156,7 @@ def _row(index: int, *, include_contextual: bool = True) -> CenturyStateRecord:
         design_timestamp=start - timedelta(days=88),
         chart_features_sha256=("c" * 63) + str(index),
         feature_vector_schema_version=spec.feature_vector_schema_version,
+        semantic_feature_registry_sha256=spec.semantic_feature_registry_sha256,
         feature_registry_sha256=spec.feature_registry_sha256,
         astronomy_engine_version=spec.engine.chart_engine_version,
         ephemeris_file_set_sha256=(
@@ -176,6 +178,7 @@ def _expectations(*, required: tuple[str, ...] | None = None) -> CenturyCacheExp
         utc_start=spec.utc_start,
         utc_end_exclusive=spec.utc_end_exclusive,
         feature_vector_schema_version=spec.feature_vector_schema_version,
+        semantic_feature_registry_sha256=spec.semantic_feature_registry_sha256,
         cache_feature_registry_sha256=spec.feature_registry_sha256,
         required_feature_ids=identifiers,
         required_feature_registry_sha256=required_feature_ids_sha256(identifiers),
@@ -401,6 +404,11 @@ def test_required_feature_coverage_is_checked_for_each_recovery(tmp_path: Path) 
     ("field", "replacement", "message"),
     [
         ("cache_feature_registry_sha256", "9" * 64, "cache feature registry mismatch"),
+        (
+            "semantic_feature_registry_sha256",
+            "9" * 64,
+            "semantic feature registry mismatch",
+        ),
         ("engine_validation_sha256", "9" * 64, "engine validation mismatch"),
         (
             "ephemeris_source_manifest_sha256",

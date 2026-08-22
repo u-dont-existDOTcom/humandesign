@@ -1,5 +1,12 @@
 """Verified, reusable exact-state century-cache contracts."""
 
+from .chart_adapter import (
+    CACHEABLE_M0_M2_FEATURE_COLUMNS,
+    CACHEABLE_M0_M2_FEATURE_COLUMNS_SHA256,
+    CACHEABLE_M0_M2_SEMANTIC_REGISTRY_SHA256,
+    cacheable_chart_state_to_century_record,
+    chart_feature_vector_to_feature_values,
+)
 from .models import (
     CacheableStateSource,
     CenturyCacheBuildSpec,
@@ -31,6 +38,9 @@ from .store import (
 )
 
 __all__ = [
+    "CACHEABLE_M0_M2_FEATURE_COLUMNS",
+    "CACHEABLE_M0_M2_FEATURE_COLUMNS_SHA256",
+    "CACHEABLE_M0_M2_SEMANTIC_REGISTRY_SHA256",
     "CacheableStateSource",
     "CenturyCacheBuildError",
     "CenturyCacheBuildSpec",
@@ -49,6 +59,8 @@ __all__ = [
     "FeatureValue",
     "VerifiedCenturyCache",
     "canonical_rows_sha256",
+    "cacheable_chart_state_to_century_record",
+    "chart_feature_vector_to_feature_values",
     "coerce_century_state_record",
     "feature_registry_sha256",
     "iter_verified_century_cache_rows",

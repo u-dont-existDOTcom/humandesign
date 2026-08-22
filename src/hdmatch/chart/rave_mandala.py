@@ -33,6 +33,7 @@ from dataclasses import dataclass
 from hashlib import sha256
 from typing import Final, Literal
 
+RAVE_MANDALA_VERSION: Final[str] = "rave-mandala-v1"
 RAVE_MANDALA_START_DEGREES: Final[float] = 302.0
 GATE_WIDTH_DEGREES: Final[float] = 360.0 / 64.0
 LINE_WIDTH_DEGREES: Final[float] = GATE_WIDTH_DEGREES / 6.0
