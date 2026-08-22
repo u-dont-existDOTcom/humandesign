@@ -12,6 +12,16 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
+from hdmatch.century_cache import (
+    CANONICAL_CENTURY_END_EXCLUSIVE_UTC,
+    CANONICAL_CENTURY_START_UTC,
+    PublishedCenturyBuild,
+    assemble_and_publish_century_cache,
+    build_all_missing_century_jobs,
+    build_century_staged_job,
+    prepare_century_build,
+    verify_century_cache_against_trust_lock,
+)
 from hdmatch.chart import validate_production_engine
 from hdmatch.config import load_synthetic_config
 from hdmatch.evaluation.behavioral_difference import (
@@ -108,6 +118,27 @@ ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_MAPPING = ROOT / "mappings" / "mapping_library_v1.json"
 DEFAULT_MODEL_B_ARTIFACT = ROOT / "mappings" / "model_b_mapping_library_v1.json"
 DEFAULT_EPHEMERIS_SOURCE_MANIFEST = ROOT / "data" / "ephemeris" / "manifest.json"
+DEFAULT_EPHEMERIS_DIRECTORY = ROOT / "data" / "ephemeris"
+DEFAULT_ENGINE_VALIDATION = (
+    ROOT / "reports" / "v4_3_migration" / "phase0_engine_validation.json"
+)
+DEFAULT_SWIEPH_GOLDEN_REFERENCE = (
+    ROOT / "tests" / "golden" / "fixtures" / "swieph_phase0_golden_v1.json"
+)
+DEFAULT_CENTURY_BUILD_DIRECTORY = ROOT / "data" / "century_cache" / "build-v1"
+DEFAULT_CENTURY_PLAN = DEFAULT_CENTURY_BUILD_DIRECTORY / "plan.json"
+DEFAULT_CENTURY_PARITY_REPORT = (
+    DEFAULT_CENTURY_BUILD_DIRECTORY / "parity-report.json"
+)
+DEFAULT_CENTURY_STAGING_DIRECTORY = DEFAULT_CENTURY_BUILD_DIRECTORY / "staged"
+DEFAULT_CENTURY_BUILD_EVIDENCE_DIRECTORY = (
+    DEFAULT_CENTURY_BUILD_DIRECTORY / "evidence"
+)
+DEFAULT_CENTURY_CACHE_DIRECTORY = ROOT / "data" / "century_cache" / "v1"
+DEFAULT_CENTURY_CACHE_TRUST_LOCK = (
+    ROOT / "data" / "century_cache" / "v1.trust-lock.json"
+)
+DEFAULT_CENTURY_CACHE_LOCATOR = "data/century_cache/v1"
 
 
 def _command_validate_engine(args: argparse.Namespace) -> int:
@@ -167,6 +198,142 @@ def _command_validate_engine(args: argparse.Namespace) -> int:
                 "ephemeris_file_set_sha256": (
                     verified_files.ephemeris_file_set_sha256
                 ),
+            },
+            sort_keys=True,
+        )
+    )
+    return 0
+
+
+def _parse_utc_timestamp(value: str) -> datetime:
+    try:
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError(
+            f"invalid ISO-8601 timestamp: {value}"
+        ) from exc
+    if parsed.tzinfo is None or parsed.utcoffset() is None:
+        raise argparse.ArgumentTypeError("timestamp must include a UTC offset")
+    return parsed.astimezone(UTC)
+
+
+def _command_prepare_century_cache(args: argparse.Namespace) -> int:
+    prepared = prepare_century_build(
+        repository_root=args.repository_root,
+        utc_start=args.start,
+        utc_end_exclusive=args.end_exclusive,
+        ephemeris_directory=args.ephemeris_path,
+        ephemeris_source_manifest_path=args.source_manifest,
+        engine_validation_path=args.engine_validation,
+        golden_reference_path=args.golden_reference,
+        reference_source_locator=args.reference_source_locator,
+        parity_report_path=args.parity_report,
+        plan_path=args.plan,
+    )
+    print(
+        json.dumps(
+            {
+                "job_count": prepared.job_count,
+                "parity_report_sha256": prepared.parity_report_sha256,
+                "plan_sha256": prepared.plan_sha256,
+                "status": "prepared",
+            },
+            sort_keys=True,
+        )
+    )
+    return 0
+
+
+def _command_build_century_cache_job(args: argparse.Namespace) -> int:
+    receipt = build_century_staged_job(
+        plan_path=args.plan,
+        job_id=args.job_id,
+        staging_directory=args.staging_dir,
+        ephemeris_directory=args.ephemeris_path,
+        ephemeris_source_manifest_path=args.source_manifest,
+    )
+    print(
+        json.dumps(
+            {
+                "artifact_sha256": receipt.artifact_sha256,
+                "interval_count": receipt.interval_count,
+                "job_id": receipt.job_id,
+                "status": receipt.verification_status,
+            },
+            sort_keys=True,
+        )
+    )
+    return 0
+
+
+def _published_cache_summary(published: PublishedCenturyBuild) -> dict[str, object]:
+    # Kept as a small boundary helper so the command handlers expose no row data.
+    verified = published.verified_cache
+    return {
+        "cache_manifest_sha256": verified.manifest_sha256,
+        "interval_count": verified.manifest.interval_count,
+        "logical_universe_sha256": verified.manifest.logical_universe_sha256,
+        "status": verified.manifest.verification_status,
+        "trust_lock_sha256": sha256_file(published.trust_lock_path),
+    }
+
+
+def _assemble_century_cache_from_args(
+    args: argparse.Namespace,
+) -> PublishedCenturyBuild:
+    return assemble_and_publish_century_cache(
+        plan_path=args.plan,
+        staging_directory=args.staging_dir,
+        cache_directory=args.output,
+        cache_locator=args.cache_locator,
+        trust_lock_path=args.trust_lock,
+        build_evidence_directory=args.build_evidence_dir,
+        ephemeris_directory=args.ephemeris_path,
+        ephemeris_source_manifest_path=args.source_manifest,
+        engine_validation_path=args.engine_validation,
+        parity_report_path=args.parity_report,
+        parity_reference_source_path=args.golden_reference,
+    )
+
+
+def _command_assemble_century_cache(args: argparse.Namespace) -> int:
+    print(
+        json.dumps(
+            _published_cache_summary(_assemble_century_cache_from_args(args)),
+            sort_keys=True,
+        )
+    )
+    return 0
+
+
+def _command_build_century_cache(args: argparse.Namespace) -> int:
+    receipts = build_all_missing_century_jobs(
+        plan_path=args.plan,
+        staging_directory=args.staging_dir,
+        ephemeris_directory=args.ephemeris_path,
+        ephemeris_source_manifest_path=args.source_manifest,
+    )
+    published = _assemble_century_cache_from_args(args)
+    summary = _published_cache_summary(published)
+    summary["staged_job_count"] = len(receipts)
+    print(json.dumps(summary, sort_keys=True))
+    return 0
+
+
+def _command_verify_century_cache(args: argparse.Namespace) -> int:
+    verified = verify_century_cache_against_trust_lock(
+        args.cache_directory,
+        trust_lock_path=args.trust_lock,
+    )
+    print(
+        json.dumps(
+            {
+                "cache_manifest_sha256": verified.manifest_sha256,
+                "interval_count": verified.manifest.interval_count,
+                "logical_universe_sha256": (
+                    verified.manifest.logical_universe_sha256
+                ),
+                "status": verified.manifest.verification_status,
             },
             sort_keys=True,
         )
@@ -1342,6 +1509,51 @@ def _add_paired_freeze_arguments(parser: argparse.ArgumentParser, *, required: b
     parser.add_argument("--paired-model-b-generation-binding", required=required)
 
 
+def _add_century_engine_arguments(parser: argparse.ArgumentParser) -> None:
+    parser.add_argument(
+        "--ephemeris-path",
+        default=str(DEFAULT_EPHEMERIS_DIRECTORY),
+    )
+    parser.add_argument(
+        "--source-manifest",
+        default=str(DEFAULT_EPHEMERIS_SOURCE_MANIFEST),
+    )
+
+
+def _add_century_assembly_arguments(parser: argparse.ArgumentParser) -> None:
+    parser.add_argument("--plan", default=str(DEFAULT_CENTURY_PLAN))
+    parser.add_argument(
+        "--staging-dir",
+        default=str(DEFAULT_CENTURY_STAGING_DIRECTORY),
+    )
+    parser.add_argument("--output", default=str(DEFAULT_CENTURY_CACHE_DIRECTORY))
+    parser.add_argument(
+        "--cache-locator",
+        default=DEFAULT_CENTURY_CACHE_LOCATOR,
+    )
+    parser.add_argument(
+        "--trust-lock",
+        default=str(DEFAULT_CENTURY_CACHE_TRUST_LOCK),
+    )
+    parser.add_argument(
+        "--build-evidence-dir",
+        default=str(DEFAULT_CENTURY_BUILD_EVIDENCE_DIRECTORY),
+    )
+    parser.add_argument(
+        "--engine-validation",
+        default=str(DEFAULT_ENGINE_VALIDATION),
+    )
+    parser.add_argument(
+        "--parity-report",
+        default=str(DEFAULT_CENTURY_PARITY_REPORT),
+    )
+    parser.add_argument(
+        "--golden-reference",
+        default=str(DEFAULT_SWIEPH_GOLDEN_REFERENCE),
+    )
+    _add_century_engine_arguments(parser)
+
+
 def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="hdmatch",
@@ -1368,6 +1580,79 @@ def _parser() -> argparse.ArgumentParser:
     )
     validate_engine.add_argument("--output")
     validate_engine.set_defaults(handler=_command_validate_engine)
+
+    prepare_century = subparsers.add_parser(
+        "prepare-century-cache",
+        help="freeze SWIEPH parity evidence and an immutable exact-state build plan",
+    )
+    prepare_century.add_argument("--repository-root", default=str(ROOT))
+    prepare_century.add_argument(
+        "--start",
+        type=_parse_utc_timestamp,
+        default=CANONICAL_CENTURY_START_UTC,
+    )
+    prepare_century.add_argument(
+        "--end-exclusive",
+        type=_parse_utc_timestamp,
+        default=CANONICAL_CENTURY_END_EXCLUSIVE_UTC,
+    )
+    _add_century_engine_arguments(prepare_century)
+    prepare_century.add_argument(
+        "--engine-validation",
+        default=str(DEFAULT_ENGINE_VALIDATION),
+    )
+    prepare_century.add_argument(
+        "--golden-reference",
+        default=str(DEFAULT_SWIEPH_GOLDEN_REFERENCE),
+    )
+    prepare_century.add_argument(
+        "--reference-source-locator",
+        default="tests/golden/fixtures/swieph_phase0_golden_v1.json",
+    )
+    prepare_century.add_argument(
+        "--parity-report",
+        default=str(DEFAULT_CENTURY_PARITY_REPORT),
+    )
+    prepare_century.add_argument("--plan", default=str(DEFAULT_CENTURY_PLAN))
+    prepare_century.set_defaults(handler=_command_prepare_century_cache)
+
+    build_century_job = subparsers.add_parser(
+        "build-century-cache-job",
+        help="build or retain one replay-verifiable job from an immutable plan",
+    )
+    build_century_job.add_argument("--plan", default=str(DEFAULT_CENTURY_PLAN))
+    build_century_job.add_argument("--job-id", required=True)
+    build_century_job.add_argument(
+        "--staging-dir",
+        default=str(DEFAULT_CENTURY_STAGING_DIRECTORY),
+    )
+    _add_century_engine_arguments(build_century_job)
+    build_century_job.set_defaults(handler=_command_build_century_cache_job)
+
+    assemble_century = subparsers.add_parser(
+        "assemble-century-cache",
+        help="replay, reconcile, publish, lock, and independently verify staged jobs",
+    )
+    _add_century_assembly_arguments(assemble_century)
+    assemble_century.set_defaults(handler=_command_assemble_century_cache)
+
+    build_century = subparsers.add_parser(
+        "build-century-cache",
+        help="explicitly build missing plan jobs and publish the verified cache",
+    )
+    _add_century_assembly_arguments(build_century)
+    build_century.set_defaults(handler=_command_build_century_cache)
+
+    verify_century = subparsers.add_parser(
+        "verify-century-cache",
+        help="independently verify a published cache against its trust lock",
+    )
+    verify_century.add_argument("cache_directory")
+    verify_century.add_argument(
+        "--trust-lock",
+        default=str(DEFAULT_CENTURY_CACHE_TRUST_LOCK),
+    )
+    verify_century.set_defaults(handler=_command_verify_century_cache)
 
     generate = subparsers.add_parser("generate-blind", help="generate and seal blind cases")
     generate.add_argument("--config", required=True)

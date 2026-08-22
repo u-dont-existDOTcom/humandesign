@@ -30,3 +30,8 @@ runs/*/revealed_key*
 # repository-controlled provenance trust root.
 data/ephemeris/*.se1
 data/ephemeris/swisseph_ephemeris_manifest.json
+
+# Rebuildable Phase-2 exact-state artifacts. The independently reviewed trust
+# lock at data/century_cache/v1.trust-lock.json remains tracked.
+data/century_cache/build-v1/
+data/century_cache/v1/

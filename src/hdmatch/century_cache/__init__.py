@@ -132,6 +132,15 @@ from .trust_lock import (
     trust_lock_from_verified_cache,
     write_century_cache_trust_lock_new,
 )
+from .workflow import (
+    CenturyCacheWorkflowError,
+    PreparedCenturyBuild,
+    PublishedCenturyBuild,
+    assemble_and_publish_century_cache,
+    build_all_missing_century_jobs,
+    build_century_staged_job,
+    prepare_century_build,
+)
 
 __all__ = [
     "CACHEABLE_M0_M2_FEATURE_COLUMNS",
@@ -165,6 +174,7 @@ __all__ = [
     "CenturyCachePublicationError",
     "CenturyCacheStreamError",
     "CenturyCacheTrustLockV1",
+    "CenturyCacheWorkflowError",
     "DEFAULT_CENTURY_CACHE_TRUST_LOCK",
     "CoreReconciliationReceiptV1",
     "ExactStateBatchError",
@@ -190,6 +200,8 @@ __all__ = [
     "LogicalUniverseStreamAudit",
     "LogicalUniverseStreamValidator",
     "Phase1CompatibilityCenturyCachePublisher",
+    "PreparedCenturyBuild",
+    "PublishedCenturyBuild",
     "StagedCenturyCacheRows",
     "StreamingCenturyCachePublisher",
     "OverlappingVerifiedExactStateBatch",
@@ -198,6 +210,9 @@ __all__ = [
     "ReconciliationCalculationAuditV1",
     "ReconciliationSourceV1",
     "ReconciliationStreamFinalization",
+    "assemble_and_publish_century_cache",
+    "build_all_missing_century_jobs",
+    "build_century_staged_job",
     "build_verified_exact_state_batch",
     "assemble_verified_exact_shard_set",
     "boundary_audit_from_reconciled_universe",
@@ -223,6 +238,7 @@ __all__ = [
     "load_cache_engine_provenance",
     "open_century_cache_for_recovery",
     "parquet_schema_sha256",
+    "prepare_century_build",
     "required_feature_ids_sha256",
     "staged_job_artifact_path",
     "staged_job_receipt_path",
