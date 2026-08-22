@@ -361,6 +361,7 @@ def test_real_swieph_bounded_exact_cache_writes_and_reverifies(
             engine_validation_path=engine_validation_path,
             parity_report_path=parity_path,
             boundary_audit_report_path=boundary_audit_path,
+            reconciliation_aggregate_path=None,
             parity_reference_source_path=GOLDEN_PATH,
             ephemeris_source_manifest_path=source_manifest_path,
             ephemeris_directory=ephemeris_directory,

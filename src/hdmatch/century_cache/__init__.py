@@ -29,6 +29,7 @@ from .models import (
     CenturyCacheExpectations,
     CenturyCacheManifest,
     CenturyCacheShard,
+    CenturyCacheStreamIdentity,
     CenturyStateRecord,
     ExactStateBatchProvenance,
     ExactStateUniverseProvenance,
@@ -44,6 +45,12 @@ from .models import (
     required_feature_ids_sha256,
 )
 from .parquet import CenturyCacheDependencyError, CenturyCacheParquetError
+from .publisher import (
+    CenturyCachePublicationError,
+    Phase1CompatibilityCenturyCachePublisher,
+    StagedCenturyCacheRows,
+    StreamingCenturyCachePublisher,
+)
 from .store import (
     CenturyCacheBuildError,
     CenturyCacheRecoveryError,
@@ -53,8 +60,22 @@ from .store import (
     iter_verified_century_cache_rows,
     open_century_cache_for_recovery,
     verify_century_cache,
+    verify_century_cache_against_trust_lock,
     write_century_cache_explicit,
     write_noncanonical_century_cache_fixture,
+)
+from .streaming import (
+    CenturyCacheStreamError,
+    LogicalUniverseStreamAudit,
+    LogicalUniverseStreamValidator,
+)
+from .trust_lock import (
+    DEFAULT_CENTURY_CACHE_TRUST_LOCK,
+    CenturyCacheTrustLockV1,
+    century_cache_expectations_from_build_spec,
+    load_century_cache_trust_lock,
+    trust_lock_from_verified_cache,
+    write_century_cache_trust_lock_new,
 )
 
 __all__ = [
@@ -78,6 +99,11 @@ __all__ = [
     "CenturyCacheShardInput",
     "CenturyCacheVerificationError",
     "CenturyStateRecord",
+    "CenturyCacheStreamIdentity",
+    "CenturyCachePublicationError",
+    "CenturyCacheStreamError",
+    "CenturyCacheTrustLockV1",
+    "DEFAULT_CENTURY_CACHE_TRUST_LOCK",
     "ExactStateBatchError",
     "ExactStateBatchProvenance",
     "ExactStateUniverseProvenance",
@@ -89,6 +115,11 @@ __all__ = [
     "VerifiedExactStateBatch",
     "VerifiedExactShardSet",
     "NoncanonicalCenturyCacheFixture",
+    "LogicalUniverseStreamAudit",
+    "LogicalUniverseStreamValidator",
+    "Phase1CompatibilityCenturyCachePublisher",
+    "StagedCenturyCacheRows",
+    "StreamingCenturyCachePublisher",
     "build_verified_exact_state_batch",
     "assemble_verified_exact_shard_set",
     "canonical_rows_sha256",
@@ -102,9 +133,14 @@ __all__ = [
     "parquet_schema_sha256",
     "required_feature_ids_sha256",
     "verify_century_cache",
+    "verify_century_cache_against_trust_lock",
+    "century_cache_expectations_from_build_spec",
+    "load_century_cache_trust_lock",
     "validate_engine_validation_evidence",
     "validate_verified_exact_state_batch",
     "validate_verified_exact_shard_set",
     "write_century_cache_explicit",
+    "trust_lock_from_verified_cache",
+    "write_century_cache_trust_lock_new",
     "write_noncanonical_century_cache_fixture",
 ]

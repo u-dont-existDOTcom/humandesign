@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 from collections.abc import Iterator
@@ -50,9 +51,19 @@ from .models import (
 from .parquet import (
     CenturyCacheDependencyError,
     CenturyCacheParquetError,
+    iter_parquet_shard_rows,
     read_parquet_shard,
     validate_row_features,
     write_parquet_shard_new,
+)
+from .streaming import (
+    CenturyCacheStreamError,
+    LogicalUniverseStreamValidator,
+    canonical_row_json_line,
+)
+from .trust_lock import (
+    century_cache_expectations_from_build_spec,
+    load_century_cache_trust_lock,
 )
 
 
@@ -146,32 +157,7 @@ def _validate_logical_universe(
 
 
 def _expectations_for_spec(spec: CenturyCacheBuildSpec) -> CenturyCacheExpectations:
-    feature_ids = tuple(item.feature_id for item in spec.feature_registry)
-    return CenturyCacheExpectations(
-        utc_start=spec.utc_start,
-        utc_end_exclusive=spec.utc_end_exclusive,
-        feature_vector_schema_version=spec.feature_vector_schema_version,
-        semantic_feature_registry_sha256=spec.semantic_feature_registry_sha256,
-        cache_feature_registry_sha256=spec.feature_registry_sha256,
-        required_feature_ids=feature_ids,
-        required_feature_registry_sha256=required_feature_ids_sha256(feature_ids),
-        engine_validation_sha256=spec.engine.engine_validation_sha256,
-        ephemeris_source_manifest_sha256=(
-            spec.engine.ephemeris_provenance.source_manifest_sha256
-        ),
-        ephemeris_file_set_sha256=(
-            spec.engine.ephemeris_provenance.ephemeris_file_set_sha256
-        ),
-        mandala_mapping_sha256=spec.mandala_mapping_sha256,
-        bodygraph_mapping_sha256=spec.bodygraph_mapping_sha256,
-        boundary_policy_version=spec.boundary_policy_version,
-        design_root_time_tolerance_seconds=spec.design_root_time_tolerance_seconds,
-        design_root_arc_tolerance_degrees=spec.design_root_arc_tolerance_degrees,
-        parity_report_sha256=spec.parity_report_sha256,
-        parity_reference_source_locator=spec.parity_reference_source_locator,
-        parity_reference_source_sha256=spec.parity_reference_source_sha256,
-        boundary_audit_report_sha256=spec.boundary_audit_report_sha256,
-    )
+    return century_cache_expectations_from_build_spec(spec)
 
 
 def _validate_exact_universe_spec(
@@ -283,11 +269,12 @@ def write_century_cache_explicit(
     evidence: CenturyCacheEvidenceInputs,
     build_mode: Literal["explicit_rebuild"],
 ) -> VerifiedCenturyCache:
-    """Write a production-factory-certified exact-state batch.
+    """Write a bounded Phase-1 compatibility fixture.
 
     The mandatory ``build_mode`` token makes cache construction an explicit
-    operation.  The separate factory owns all astronomy and boundary selection;
-    this writer rejects arbitrary caller-selected rows.
+    operation.  This tuple-based compatibility path is deliberately capped at
+    31 days and is not the Phase-2 century publisher.  The separate factory owns
+    all astronomy and boundary selection; arbitrary caller-selected rows fail.
     """
 
     if build_mode != "explicit_rebuild":
@@ -296,6 +283,11 @@ def write_century_cache_explicit(
         )
     if not shards:
         raise CenturyCacheBuildError("century cache requires at least one shard")
+    if (spec.utc_end_exclusive - spec.utc_start).total_seconds() > 31 * 86400:
+        raise CenturyCacheBuildError(
+            "tuple-based Phase-1 compatibility writer is limited to 31 days; "
+            "use the reconciled streaming Phase-2 publisher"
+        )
     if tuple(item.filename for item in shards) != tuple(
         sorted(item.filename for item in shards)
     ):
@@ -339,6 +331,7 @@ def write_century_cache_explicit(
             logical_universe_sha256=logical_universe_sha256,
             interval_count=len(rows),
             boundary_event_count=exact_provenance.boundary_event_count,
+            exact_state_provenance=exact_provenance,
         )
     except CenturyCacheEvidenceError as exc:
         raise CenturyCacheBuildError(f"cache proof evidence failed: {exc}") from exc
@@ -377,6 +370,7 @@ def write_century_cache_explicit(
                     utc_end_exclusive=round_trip[-1].utc_end,
                     canonical_rows_sha256=canonical_rows_sha256(round_trip),
                     parquet_schema_sha256=schema_sha256,
+                    byte_count=destination.stat().st_size,
                 )
             )
     except (OSError, ValueError, CenturyCacheDependencyError, CenturyCacheParquetError) as exc:
@@ -439,6 +433,7 @@ def _verify_expectations(
         ),
         "parity reference-source hash": expectations.parity_reference_source_sha256,
         "boundary-audit report": expectations.boundary_audit_report_sha256,
+        "reconciliation aggregate": expectations.reconciliation_aggregate_sha256,
     }
     actual_fields = {
         "feature_vector_schema_version": manifest.feature_vector_schema_version,
@@ -460,6 +455,7 @@ def _verify_expectations(
         "parity reference-source locator": manifest.parity_reference_source_locator,
         "parity reference-source hash": manifest.parity_reference_source_sha256,
         "boundary-audit report": manifest.boundary_audit_report_sha256,
+        "reconciliation aggregate": manifest.reconciliation_aggregate_sha256,
     }
     for name, expected in expected_fields.items():
         if actual_fields[name] != expected:
@@ -497,7 +493,11 @@ def verify_century_cache(
         raise CenturyCacheVerificationError(
             f"cache proof evidence verification failed: {exc}"
         ) from exc
-    decoded_rows: list[CenturyStateRecord] = []
+    validator = LogicalUniverseStreamValidator(
+        utc_start=manifest.utc_start,
+        utc_end_exclusive=manifest.utc_end_exclusive,
+        validate_row=lambda row: _validate_record_metadata(row, manifest),
+    )
     try:
         for shard in manifest.shards:
             shard_path = directory / shard.filename
@@ -509,33 +509,55 @@ def verify_century_cache(
                 raise CenturyCacheVerificationError(
                     f"cache shard SHA-256 mismatch: {shard.filename}"
                 )
-            rows = read_parquet_shard(shard_path, manifest.feature_registry)
-            if len(rows) != shard.row_count:
+            if shard_path.stat().st_size != shard.byte_count:
+                raise CenturyCacheVerificationError(
+                    f"cache shard byte-count mismatch: {shard.filename}"
+                )
+            shard_digest = hashlib.sha256()
+            shard_count = 0
+            shard_start = None
+            shard_end = None
+            for row in iter_parquet_shard_rows(
+                shard_path,
+                manifest.feature_registry,
+            ):
+                if shard_start is None:
+                    shard_start = row.utc_start
+                shard_end = row.utc_end
+                shard_digest.update(canonical_row_json_line(row))
+                shard_count += 1
+                validator.ingest(row)
+            if shard_count != shard.row_count:
                 raise CenturyCacheVerificationError(
                     f"cache shard row-count mismatch: {shard.filename}"
                 )
-            if canonical_rows_sha256(rows) != shard.canonical_rows_sha256:
+            if shard_digest.hexdigest() != shard.canonical_rows_sha256:
                 raise CenturyCacheVerificationError(
                     f"cache shard logical-row hash mismatch: {shard.filename}"
                 )
-            if rows[0].utc_start != shard.utc_start or rows[-1].utc_end != (
-                shard.utc_end_exclusive
-            ):
+            if shard_start != shard.utc_start or shard_end != shard.utc_end_exclusive:
                 raise CenturyCacheVerificationError(
                     f"cache shard UTC bounds mismatch: {shard.filename}"
                 )
-            decoded_rows.extend(rows)
-        logical_rows = tuple(decoded_rows)
-        _validate_logical_universe(logical_rows, manifest)
-    except (OSError, ValueError, CenturyCacheDependencyError, CenturyCacheParquetError) as exc:
+        validator.finish(
+            expected_interval_count=manifest.interval_count,
+            expected_boundary_event_count=(
+                manifest.exact_state_provenance.boundary_event_count
+            ),
+            expected_canonical_rows_sha256=manifest.logical_universe_sha256,
+        )
+    except (
+        OSError,
+        ValueError,
+        CenturyCacheDependencyError,
+        CenturyCacheParquetError,
+        CenturyCacheStreamError,
+    ) as exc:
         if isinstance(exc, CenturyCacheVerificationError):
             raise
         raise CenturyCacheVerificationError(f"cache shard verification failed: {exc}") from exc
-
-    if len(decoded_rows) != manifest.interval_count:
-        raise CenturyCacheVerificationError("cache interval count mismatch")
-    if canonical_rows_sha256(tuple(decoded_rows)) != manifest.logical_universe_sha256:
-        raise CenturyCacheVerificationError("cache logical-universe hash mismatch")
+    finally:
+        validator.close()
     return VerifiedCenturyCache(
         cache_directory=directory,
         manifest_path=manifest_path,
@@ -567,22 +589,70 @@ def iter_verified_century_cache_rows(
             raise CenturyCacheVerificationError(
                 f"cache shard changed after verification: {shard.filename}"
             )
-        rows = read_parquet_shard(shard_path, verified.manifest.feature_registry)
-        if len(rows) != shard.row_count:
+        if shard_path.stat().st_size != shard.byte_count:
+            raise CenturyCacheVerificationError(
+                f"cache shard byte count changed after verification: {shard.filename}"
+            )
+        digest = hashlib.sha256()
+        row_count = 0
+        for row in iter_parquet_shard_rows(
+            shard_path,
+            verified.manifest.feature_registry,
+        ):
+            digest.update(canonical_row_json_line(row))
+            row_count += 1
+            yield row
+        if row_count != shard.row_count:
             raise CenturyCacheVerificationError(
                 f"cache shard row count changed after verification: {shard.filename}"
             )
-        if canonical_rows_sha256(rows) != shard.canonical_rows_sha256:
+        if digest.hexdigest() != shard.canonical_rows_sha256:
             raise CenturyCacheVerificationError(
                 f"cache shard logical content changed after verification: {shard.filename}"
             )
-        yield from rows
+
+
+def verify_century_cache_against_trust_lock(
+    cache_directory: str | Path,
+    *,
+    trust_lock_path: str | Path,
+) -> VerifiedCenturyCache:
+    """Verify a cache only from independent repository-controlled lock bytes."""
+
+    try:
+        lock = load_century_cache_trust_lock(trust_lock_path)
+    except ValueError as exc:
+        raise CenturyCacheVerificationError(str(exc)) from exc
+    verified = verify_century_cache(
+        cache_directory,
+        expectations=century_cache_expectations_from_build_spec(lock.build_spec),
+    )
+    manifest = verified.manifest
+    lock_bindings = {
+        "manifest SHA-256": (verified.manifest_sha256, lock.manifest_sha256),
+        "logical-universe hash": (
+            manifest.logical_universe_sha256,
+            lock.logical_universe_sha256,
+        ),
+        "interval count": (manifest.interval_count, lock.interval_count),
+        "exact-state provenance": (
+            manifest.exact_state_provenance,
+            lock.exact_state_provenance,
+        ),
+        "ordered shard bindings": (manifest.shards, lock.shards),
+    }
+    for label, (actual, expected) in lock_bindings.items():
+        if actual != expected:
+            raise CenturyCacheVerificationError(
+                f"cache {label} differs from tracked trust lock"
+            )
+    return verified
 
 
 def open_century_cache_for_recovery(
     cache_directory: str | Path,
     *,
-    expectations: CenturyCacheExpectations,
+    trust_lock_path: str | Path,
 ) -> VerifiedCenturyCache:
     """Read-only recovery gate; missing/invalid caches require an external rebuild.
 
@@ -597,7 +667,10 @@ def open_century_cache_for_recovery(
             "run the explicit cache-build workflow first"
         )
     try:
-        return verify_century_cache(directory, expectations=expectations)
+        return verify_century_cache_against_trust_lock(
+            directory,
+            trust_lock_path=trust_lock_path,
+        )
     except CenturyCacheVerificationError as exc:
         raise CenturyCacheRecoveryError(
             f"ordinary recovery rejected the century cache: {exc}"

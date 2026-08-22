@@ -20,12 +20,14 @@ from .models import (
     CenturyCacheBuildSpec,
     CenturyCacheEvidenceArtifact,
     CenturyCacheManifest,
+    ExactStateUniverseProvenance,
 )
 
 ENGINE_EVIDENCE_FILENAME = "evidence/engine-validation.json"
 PARITY_EVIDENCE_FILENAME = "evidence/parity-report.json"
 BOUNDARY_AUDIT_EVIDENCE_FILENAME = "evidence/boundary-audit-report.json"
 PARITY_REFERENCE_FILENAME = "evidence/parity-reference-source.json"
+RECONCILIATION_EVIDENCE_FILENAME = "evidence/reconciliation-aggregate.json"
 
 
 class CenturyCacheEvidenceError(ValueError):
@@ -214,6 +216,7 @@ class CenturyCacheEvidenceInputs:
     engine_validation_path: Path
     parity_report_path: Path
     boundary_audit_report_path: Path
+    reconciliation_aggregate_path: Path | None
     parity_reference_source_path: Path
     ephemeris_source_manifest_path: Path
     ephemeris_directory: Path
@@ -439,11 +442,13 @@ def _validate_evidence(
     engine_path: Path,
     parity_path: Path,
     boundary_path: Path,
+    reconciliation_path: Path | None,
     parity_reference_path: Path,
     spec: CenturyCacheBuildSpec | CenturyCacheManifest,
     logical_universe_sha256: str,
     interval_count: int,
     boundary_event_count: int,
+    exact_state_provenance: ExactStateUniverseProvenance,
 ) -> ValidatedCenturyCacheEvidence:
     engine_raw, _ = _read_canonical_json(engine_path, label="engine-validation")
     parity_raw, _ = _read_canonical_json(parity_path, label="parity")
@@ -474,44 +479,107 @@ def _validate_evidence(
         interval_count=interval_count,
         boundary_event_count=boundary_event_count,
     )
-    artifacts = tuple(
-        sorted(
-            (
-                CenturyCacheEvidenceArtifact(
-                    kind="engine_validation",
-                    filename=ENGINE_EVIDENCE_FILENAME,
-                    sha256=expected_hashes["engine-validation"][0],
-                    schema_version=engine.schema_version,
-                    validation_status=engine.validation_status,
-                ),
-                CenturyCacheEvidenceArtifact(
-                    kind="parity",
-                    filename=PARITY_EVIDENCE_FILENAME,
-                    sha256=expected_hashes["parity"][0],
-                    schema_version=parity.schema_version,
-                    validation_status=parity.validation_status,
-                ),
-                CenturyCacheEvidenceArtifact(
-                    kind="boundary_audit",
-                    filename=BOUNDARY_AUDIT_EVIDENCE_FILENAME,
-                    sha256=expected_hashes["boundary-audit"][0],
-                    schema_version=boundary.schema_version,
-                    validation_status=boundary.validation_status,
-                ),
-            ),
-            key=lambda item: item.kind,
+    artifacts_list = [
+        CenturyCacheEvidenceArtifact(
+            kind="engine_validation",
+            filename=ENGINE_EVIDENCE_FILENAME,
+            sha256=expected_hashes["engine-validation"][0],
+            schema_version=engine.schema_version,
+            validation_status=engine.validation_status,
+        ),
+        CenturyCacheEvidenceArtifact(
+            kind="parity",
+            filename=PARITY_EVIDENCE_FILENAME,
+            sha256=expected_hashes["parity"][0],
+            schema_version=parity.schema_version,
+            validation_status=parity.validation_status,
+        ),
+        CenturyCacheEvidenceArtifact(
+            kind="boundary_audit",
+            filename=BOUNDARY_AUDIT_EVIDENCE_FILENAME,
+            sha256=expected_hashes["boundary-audit"][0],
+            schema_version=boundary.schema_version,
+            validation_status=boundary.validation_status,
+        ),
+    ]
+    bundled_list = [
+        (ENGINE_EVIDENCE_FILENAME, engine_raw),
+        (PARITY_EVIDENCE_FILENAME, parity_raw),
+        (BOUNDARY_AUDIT_EVIDENCE_FILENAME, boundary_raw),
+        (PARITY_REFERENCE_FILENAME, parity_reference_raw),
+    ]
+    if spec.reconciliation_aggregate_sha256 is None:
+        if reconciliation_path is not None:
+            raise CenturyCacheEvidenceError(
+                "reconciliation artifact was supplied without a declared binding"
+            )
+    else:
+        if reconciliation_path is None:
+            raise CenturyCacheEvidenceError(
+                "declared reconciliation aggregate artifact is missing"
+            )
+        reconciliation_raw, reconciliation_payload = _read_canonical_json(
+            reconciliation_path,
+            label="reconciliation-aggregate",
         )
-    )
-    bundled = tuple(
-        sorted(
-            (
-                (ENGINE_EVIDENCE_FILENAME, engine_raw),
-                (PARITY_EVIDENCE_FILENAME, parity_raw),
-                (BOUNDARY_AUDIT_EVIDENCE_FILENAME, boundary_raw),
-                (PARITY_REFERENCE_FILENAME, parity_reference_raw),
+        if sha256_bytes(reconciliation_raw) != spec.reconciliation_aggregate_sha256:
+            raise CenturyCacheEvidenceError(
+                "reconciliation-aggregate artifact SHA-256 mismatch"
+            )
+        if not isinstance(reconciliation_payload, dict):
+            raise CenturyCacheEvidenceError(
+                "reconciliation-aggregate payload must be an object"
+            )
+        if reconciliation_payload.get("schema_version") != (
+            "exact-state-reconciliation-aggregate-v1"
+        ) or reconciliation_payload.get("status") != "pass":
+            raise CenturyCacheEvidenceError(
+                "reconciliation-aggregate schema/status is invalid"
+            )
+        required_reconciliation_fields = {
+            "reconciliation_policy_version",
+            "boundary_event_catalog_sha256",
+            "ordered_sources",
+            "ordered_core_reconciliation_receipt_sha256s",
+            "ordered_output_chunk_provenance_sha256s",
+            "reconciliation_calculation_audit_sha256",
+            "exact_state_universe_provenance",
+        }
+        missing_reconciliation_fields = sorted(
+            required_reconciliation_fields - set(reconciliation_payload)
+        )
+        if missing_reconciliation_fields:
+            raise CenturyCacheEvidenceError(
+                "reconciliation-aggregate is missing required provenance fields: "
+                f"{missing_reconciliation_fields}"
+            )
+        try:
+            embedded_exact = ExactStateUniverseProvenance.model_validate_json(
+                canonical_json_bytes(
+                    reconciliation_payload.get("exact_state_universe_provenance")
+                ),
+                strict=True,
+            )
+        except ValueError as exc:
+            raise CenturyCacheEvidenceError(
+                "reconciliation-aggregate exact-state provenance is invalid"
+            ) from exc
+        if embedded_exact != exact_state_provenance:
+            raise CenturyCacheEvidenceError(
+                "reconciliation-aggregate exact-state provenance mismatch"
+            )
+        artifacts_list.append(
+            CenturyCacheEvidenceArtifact(
+                kind="reconciliation",
+                filename=RECONCILIATION_EVIDENCE_FILENAME,
+                sha256=sha256_bytes(reconciliation_raw),
+                schema_version="exact-state-reconciliation-aggregate-v1",
+                validation_status="pass",
             )
         )
-    )
+        bundled_list.append((RECONCILIATION_EVIDENCE_FILENAME, reconciliation_raw))
+    artifacts = tuple(sorted(artifacts_list, key=lambda item: item.kind))
+    bundled = tuple(sorted(bundled_list))
     return ValidatedCenturyCacheEvidence(artifacts=artifacts, bundled_bytes=bundled)
 
 
@@ -522,6 +590,7 @@ def validate_external_cache_evidence(
     logical_universe_sha256: str,
     interval_count: int,
     boundary_event_count: int,
+    exact_state_provenance: ExactStateUniverseProvenance,
 ) -> ValidatedCenturyCacheEvidence:
     """Open, hash, parse, and semantically validate external proof inputs."""
 
@@ -529,11 +598,13 @@ def validate_external_cache_evidence(
         engine_path=inputs.engine_validation_path,
         parity_path=inputs.parity_report_path,
         boundary_path=inputs.boundary_audit_report_path,
+        reconciliation_path=inputs.reconciliation_aggregate_path,
         parity_reference_path=inputs.parity_reference_source_path,
         spec=spec,
         logical_universe_sha256=logical_universe_sha256,
         interval_count=interval_count,
         boundary_event_count=boundary_event_count,
+        exact_state_provenance=exact_state_provenance,
     )
 
 
@@ -563,6 +634,11 @@ def validate_bundled_cache_evidence(
         engine_path=cache_directory / artifacts["engine_validation"].filename,
         parity_path=cache_directory / artifacts["parity"].filename,
         boundary_path=cache_directory / artifacts["boundary_audit"].filename,
+        reconciliation_path=(
+            cache_directory / artifacts["reconciliation"].filename
+            if "reconciliation" in artifacts
+            else None
+        ),
         parity_reference_path=cache_directory / PARITY_REFERENCE_FILENAME,
         spec=manifest,
         logical_universe_sha256=manifest.logical_universe_sha256,
@@ -570,6 +646,7 @@ def validate_bundled_cache_evidence(
         boundary_event_count=(
             manifest.exact_state_provenance.boundary_event_count
         ),
+        exact_state_provenance=manifest.exact_state_provenance,
     )
     if validated.artifacts != manifest.evidence_artifacts:
         raise CenturyCacheEvidenceError(

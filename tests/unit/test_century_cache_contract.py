@@ -20,9 +20,12 @@ from hdmatch.century_cache import (
     CenturyCacheExpectations,
     CenturyCacheRecoveryError,
     CenturyCacheShardInput,
+    CenturyCacheStreamIdentity,
     CenturyCacheVerificationError,
     CenturyStateRecord,
     FeatureColumnSpec,
+    Phase1CompatibilityCenturyCachePublisher,
+    StreamingCenturyCachePublisher,
     VerifiedExactShardSet,
     VerifiedExactStateBatch,
     assemble_verified_exact_shard_set,
@@ -33,11 +36,16 @@ from hdmatch.century_cache import (
     iter_verified_century_cache_rows,
     open_century_cache_for_recovery,
     required_feature_ids_sha256,
+    trust_lock_from_verified_cache,
     validate_engine_validation_evidence,
     verify_century_cache,
+    verify_century_cache_against_trust_lock,
     write_century_cache_explicit,
+    write_century_cache_trust_lock_new,
     write_noncanonical_century_cache_fixture,
 )
+from hdmatch.century_cache.parquet import BoundedParquetShardWriter
+from hdmatch.century_cache.streaming import canonical_row_json_line
 from hdmatch.chart.ephemeris import SwissEphemerisProvider
 from hdmatch.experiments.canonical import (
     canonical_json_bytes,
@@ -329,6 +337,22 @@ def _boundary_audit_payload() -> dict[str, object]:
     }
 
 
+def _reconciliation_aggregate_payload() -> dict[str, object]:
+    return {
+        "schema_version": "exact-state-reconciliation-aggregate-v1",
+        "status": "pass",
+        "reconciliation_policy_version": "unit-fixture-v1",
+        "boundary_event_catalog_sha256": "7" * 64,
+        "ordered_sources": [],
+        "ordered_core_reconciliation_receipt_sha256s": [],
+        "ordered_output_chunk_provenance_sha256s": [],
+        "reconciliation_calculation_audit_sha256": "6" * 64,
+        "exact_state_universe_provenance": (
+            _exact_shard_set().provenance.model_dump(mode="json")
+        ),
+    }
+
+
 def _spec() -> CenturyCacheBuildSpec:
     registry = _registry()
     exact = _exact_batch().provenance
@@ -360,6 +384,9 @@ def _spec() -> CenturyCacheBuildSpec:
         ),
         boundary_audit_status="pass",
         boundary_audit_report_sha256=sha256_json(_boundary_audit_payload()),
+        reconciliation_aggregate_sha256=sha256_json(
+            _reconciliation_aggregate_payload()
+        ),
         generation_commit="8" * 40,
         created_at_utc=datetime(2026, 8, 22, tzinfo=UTC),
     )
@@ -396,6 +423,7 @@ def _expectations(*, required: tuple[str, ...] | None = None) -> CenturyCacheExp
         parity_reference_source_locator=spec.parity_reference_source_locator,
         parity_reference_source_sha256=spec.parity_reference_source_sha256,
         boundary_audit_report_sha256=spec.boundary_audit_report_sha256,
+        reconciliation_aggregate_sha256=spec.reconciliation_aggregate_sha256,
     )
 
 
@@ -419,15 +447,20 @@ def _evidence_inputs(
     engine_path = directory / "engine-validation.json"
     parity_path = directory / "parity-report.json"
     boundary_path = directory / "boundary-audit-report.json"
+    reconciliation_path = directory / "reconciliation-aggregate.json"
     engine_path.write_bytes(canonical_json_bytes(engine_payload or _engine_receipt_payload()))
     parity_path.write_bytes(canonical_json_bytes(parity_payload or _parity_report_payload()))
     boundary_path.write_bytes(
         canonical_json_bytes(boundary_payload or _boundary_audit_payload())
     )
+    reconciliation_path.write_bytes(
+        canonical_json_bytes(_reconciliation_aggregate_payload())
+    )
     return CenturyCacheEvidenceInputs(
         engine_validation_path=engine_path,
         parity_report_path=parity_path,
         boundary_audit_report_path=boundary_path,
+        reconciliation_aggregate_path=reconciliation_path,
         parity_reference_source_path=(
             _ROOT / "tests/golden/fixtures/swieph_phase0_golden_v1.json"
         ),
@@ -575,7 +608,7 @@ def test_noncanonical_fixture_writer_cannot_emit_verified_cache(tmp_path: Path) 
     with pytest.raises(CenturyCacheRecoveryError, match="prebuilt verified"):
         open_century_cache_for_recovery(
             fixture.cache_directory,
-            expectations=_expectations(),
+            trust_lock_path=tmp_path / "missing-trust-lock.json",
         )
 
 
@@ -964,6 +997,7 @@ def test_physical_parquet_schema_mutation_fails_closed(tmp_path: Path) -> None:
     manifest_path = verified.manifest_path
     payload = json.loads(manifest_path.read_bytes())
     payload["shards"][0]["sha256"] = sha256_file(shard_path)
+    payload["shards"][0]["byte_count"] = shard_path.stat().st_size
     manifest_path.write_bytes(canonical_json_bytes(payload))
 
     with pytest.raises(CenturyCacheVerificationError, match="schema mismatch"):
@@ -1046,7 +1080,10 @@ def test_recovery_binds_exact_external_proof_identities(
 def test_ordinary_recovery_has_no_regeneration_path(tmp_path: Path) -> None:
     missing = tmp_path / "not-built"
     with pytest.raises(CenturyCacheRecoveryError, match="prebuilt verified"):
-        open_century_cache_for_recovery(missing, expectations=_expectations())
+        open_century_cache_for_recovery(
+            missing,
+            trust_lock_path=tmp_path / "missing-trust-lock.json",
+        )
     assert not missing.exists()
 
     with pytest.raises(CenturyCacheBuildError, match="explicit_rebuild"):
@@ -1072,3 +1109,143 @@ def test_verified_handle_detects_manifest_change_before_yield(tmp_path: Path) ->
 
     with pytest.raises(CenturyCacheVerificationError, match="changed after verification"):
         tuple(iter_verified_century_cache_rows(verified))
+
+
+def test_streaming_publisher_is_manifest_last_atomic_and_trust_locked(
+    tmp_path: Path,
+) -> None:
+    destination = tmp_path / "published-cache"
+    spec = _spec()
+    exact = _exact_shard_set()
+    publisher = Phase1CompatibilityCenturyCachePublisher(
+        destination,
+        identity=CenturyCacheStreamIdentity.from_build_spec(spec),
+        build_mode="explicit_rebuild",
+    )
+    assert publisher.staging_directory.parent == destination.parent
+    assert publisher.staging_directory != destination
+    assert not destination.exists()
+
+    for batch in exact.batches:
+        publisher.append_verified_batch(batch)
+    staged = publisher.finish_rows(
+        exact_state_provenance=exact.provenance,
+    )
+    assert staged.logical_audit.interval_count == 2
+    assert staged.logical_audit.canonical_rows_sha256 == (
+        exact.provenance.logical_universe_sha256
+    )
+    assert not (publisher.staging_directory / "manifest.json").exists()
+    assert not destination.exists()
+
+    verified = publisher.finalize_and_publish(
+        spec=spec,
+        evidence=_evidence_inputs(tmp_path / "streaming-inputs"),
+    )
+    assert verified.cache_directory == destination
+    assert destination.is_dir()
+    assert not publisher.staging_directory.exists()
+    assert all(
+        shard.byte_count <= spec.parquet_shard_hard_cap_bytes
+        for shard in verified.manifest.shards
+    )
+
+    lock = trust_lock_from_verified_cache(
+        verified,
+        build_spec=spec,
+        cache_locator="data/century_cache/v1",
+    )
+    lock_path = write_century_cache_trust_lock_new(
+        tmp_path / "v1.trust-lock.json",
+        lock,
+    )
+    reopened = open_century_cache_for_recovery(
+        destination,
+        trust_lock_path=lock_path,
+    )
+    assert reopened.manifest_sha256 == verified.manifest_sha256
+
+
+def test_phase2_publisher_rejects_direct_phase1_batch_admission(
+    tmp_path: Path,
+) -> None:
+    publisher = StreamingCenturyCachePublisher(
+        tmp_path / "phase2-cache",
+        identity=CenturyCacheStreamIdentity.from_build_spec(_spec()),
+        build_mode="explicit_rebuild",
+    )
+    with pytest.raises(ValueError, match="ReconciledExactStateChunk"):
+        publisher.append_verified_batch(_exact_batch())
+    with pytest.raises(ValueError, match="fail closed"):
+        publisher.append_reconciled_chunk(object())
+    publisher.abort()
+
+
+def test_bounded_shard_writer_splits_at_logical_row_boundaries(tmp_path: Path) -> None:
+    row_size = len(canonical_row_json_line(_row(0)))
+    writer = BoundedParquetShardWriter(
+        tmp_path,
+        _registry(),
+        target_bytes=row_size + 1,
+        hard_cap_bytes=1024 * 1024,
+    )
+    writer.append(_row(0))
+    writer.append(_row(1))
+
+    shards, audit = writer.finish()
+
+    assert len(shards) == 2
+    assert tuple(shard.row_count for shard in shards) == (1, 1)
+    assert audit.row_count == 2
+    assert audit.maximum_buffered_canonical_bytes <= row_size + 1
+    assert all(shard.byte_count <= 1024 * 1024 for shard in shards)
+
+
+def test_bounded_shard_writer_rejects_one_row_above_hard_cap(tmp_path: Path) -> None:
+    writer = BoundedParquetShardWriter(
+        tmp_path,
+        _registry(),
+        target_bytes=1,
+        hard_cap_bytes=2,
+    )
+    writer.append(_row(0))
+
+    with pytest.raises(ValueError, match="one logical row exceeds"):
+        writer.finish()
+    assert not tuple(tmp_path.glob("states-*.parquet.zst"))
+
+
+def test_complete_verifier_never_uses_full_shard_materialization(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    from hdmatch.century_cache import store as cache_store
+
+    verified = _write_fixture(tmp_path / "stream-verified")
+
+    def reject_full_shard_read(*_args: object, **_kwargs: object) -> Any:
+        raise AssertionError("full-shard materialization is forbidden")
+
+    monkeypatch.setattr(cache_store, "read_parquet_shard", reject_full_shard_read)
+    reverified = verify_century_cache(
+        verified.cache_directory,
+        expectations=_expectations(),
+    )
+    assert reverified.manifest_sha256 == verified.manifest_sha256
+
+
+def test_trust_lock_is_loaded_before_any_cache_manifest(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    from hdmatch.century_cache import store as cache_store
+
+    def manifest_must_not_be_opened(_path: Path) -> Any:
+        raise AssertionError("cache manifest was opened before trust-lock validation")
+
+    monkeypatch.setattr(cache_store, "_load_manifest", manifest_must_not_be_opened)
+    with pytest.raises(CenturyCacheVerificationError, match="invalid century-cache trust lock"):
+        verify_century_cache_against_trust_lock(
+            tmp_path / "cache",
+            trust_lock_path=tmp_path / "missing.trust-lock.json",
+        )
