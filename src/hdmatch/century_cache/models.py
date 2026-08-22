@@ -234,6 +234,8 @@ class CenturyCacheBuildSpec(FrozenModel):
     design_root_arc_tolerance_degrees: float = Field(gt=0.0)
     parity_status: Literal["pass"]
     parity_report_sha256: str = Field(pattern=SHA256_PATTERN)
+    parity_reference_source_locator: str = Field(min_length=1)
+    parity_reference_source_sha256: str = Field(pattern=SHA256_PATTERN)
     boundary_audit_status: Literal["pass"]
     boundary_audit_report_sha256: str = Field(pattern=SHA256_PATTERN)
     generation_commit: str = Field(pattern=GIT_COMMIT_PATTERN)
@@ -283,6 +285,16 @@ class CenturyCacheShard(FrozenModel):
         return self
 
 
+class CenturyCacheEvidenceArtifact(FrozenModel):
+    """One bundled proof artifact re-opened during every cache verification."""
+
+    kind: Literal["engine_validation", "parity", "boundary_audit"]
+    filename: str = Field(pattern=r"^evidence/[a-z-]+\.json$")
+    sha256: str = Field(pattern=SHA256_PATTERN)
+    schema_version: str = Field(min_length=1)
+    validation_status: Literal["pass"]
+
+
 class CenturyCacheManifest(FrozenModel):
     """Complete authoritative contract for a verified exact-state cache."""
 
@@ -309,10 +321,13 @@ class CenturyCacheManifest(FrozenModel):
     design_root_arc_tolerance_degrees: float = Field(gt=0.0)
     parity_status: Literal["pass"]
     parity_report_sha256: str = Field(pattern=SHA256_PATTERN)
+    parity_reference_source_locator: str = Field(min_length=1)
+    parity_reference_source_sha256: str = Field(pattern=SHA256_PATTERN)
     boundary_audit_status: Literal["pass"]
     boundary_audit_report_sha256: str = Field(pattern=SHA256_PATTERN)
     generation_commit: str = Field(pattern=GIT_COMMIT_PATTERN)
     created_at_utc: datetime
+    evidence_artifacts: tuple[CenturyCacheEvidenceArtifact, ...] = Field(min_length=3)
     shards: tuple[CenturyCacheShard, ...] = Field(min_length=1)
     logical_universe_sha256: str = Field(pattern=SHA256_PATTERN)
     verification_status: Literal["pass"]
@@ -331,6 +346,29 @@ class CenturyCacheManifest(FrozenModel):
         if self.required_feature_coverage != 1.0:
             raise ValueError("canonical cache requires complete feature coverage")
         _validate_feature_registry(self.feature_registry, self.feature_registry_sha256)
+        expected_evidence = {
+            "engine_validation": (
+                "evidence/engine-validation.json",
+                self.engine.engine_validation_sha256,
+            ),
+            "parity": ("evidence/parity-report.json", self.parity_report_sha256),
+            "boundary_audit": (
+                "evidence/boundary-audit-report.json",
+                self.boundary_audit_report_sha256,
+            ),
+        }
+        if {item.kind for item in self.evidence_artifacts} != set(expected_evidence):
+            raise ValueError("cache manifest must bind exactly three proof artifacts")
+        if tuple(item.kind for item in self.evidence_artifacts) != (
+            "boundary_audit",
+            "engine_validation",
+            "parity",
+        ):
+            raise ValueError("cache evidence artifacts must be canonically ordered")
+        for artifact in self.evidence_artifacts:
+            filename, digest = expected_evidence[artifact.kind]
+            if artifact.filename != filename or artifact.sha256 != digest:
+                raise ValueError(f"cache {artifact.kind} evidence binding is inconsistent")
         if sum(shard.row_count for shard in self.shards) != self.interval_count:
             raise ValueError("cache shard row counts do not equal interval_count")
         if tuple(shard.filename for shard in self.shards) != tuple(
@@ -370,6 +408,8 @@ class CenturyCacheExpectations(FrozenModel):
     design_root_time_tolerance_seconds: float = Field(gt=0.0)
     design_root_arc_tolerance_degrees: float = Field(gt=0.0)
     parity_report_sha256: str = Field(pattern=SHA256_PATTERN)
+    parity_reference_source_locator: str = Field(min_length=1)
+    parity_reference_source_sha256: str = Field(pattern=SHA256_PATTERN)
     boundary_audit_report_sha256: str = Field(pattern=SHA256_PATTERN)
 
     @field_validator("utc_start", "utc_end_exclusive")
@@ -416,6 +456,29 @@ def canonical_rows_sha256(rows: tuple[CenturyStateRecord, ...]) -> str:
         digest.update(canonical_json_bytes(row.model_dump(mode="json")))
         digest.update(b"\n")
     return digest.hexdigest()
+
+
+def discrete_chart_identity_sha256(row: CenturyStateRecord) -> str:
+    """Hash only discrete chart content and the mappings that give it meaning.
+
+    Interval identifiers, timestamps, declared chart hashes, and boundary-event
+    labels are intentionally excluded.  Two adjacent rows with this same identity
+    describe one stable state and must have been merged before cache serialization.
+    """
+
+    return sha256_json(
+        {
+            "feature_vector_schema_version": row.feature_vector_schema_version,
+            "feature_registry_sha256": row.feature_registry_sha256,
+            "feature_values": [
+                item.model_dump(mode="json") for item in row.feature_values
+            ],
+            "node_convention": row.node_convention,
+            "mandala_mapping_version": row.mandala_mapping_version,
+            "mandala_mapping_sha256": row.mandala_mapping_sha256,
+            "bodygraph_mapping_sha256": row.bodygraph_mapping_sha256,
+        }
+    )
 
 
 def feature_registry_sha256(registry: tuple[FeatureColumnSpec, ...]) -> str:

@@ -180,7 +180,12 @@ over canonical logical rows and is therefore independent of Parquet byte layout 
 shard partitioning.
 
 Cache construction requires the explicit `write_century_cache_explicit(...,
-build_mode="explicit_rebuild")` API. Ordinary recovery uses
+evidence=CenturyCacheEvidenceInputs(...), build_mode="explicit_rebuild")` API.
+Before writing any shard, the writer re-opens the pinned ephemeris source manifest,
+re-hashes the actual local `.se1` files with `verify_ephemeris_directory`, and
+requires exact equality with the engine provenance declared by the build spec and
+rows. Fabricated receipts, changed upstream pins, and silent fallback provenance
+therefore fail before cache serialization. Ordinary recovery uses
 `open_century_cache_for_recovery`, which exposes no engine, builder callback, or
 regeneration option and fails closed if the prebuilt cache is missing or invalid.
 Recovery expectations bind the exact cache feature-registry hash, engine-validation
@@ -188,11 +193,32 @@ receipt, ephemeris source manifest and file set, Mandala mapping, Design-root
 tolerances, parity report, boundary-audit report, and boundary-policy version. A
 `pass` label cannot substitute for the expected evidence-artifact hash.
 
+Every cache bundles canonical, exact-byte copies of the engine-validation receipt,
+parity report, boundary-audit report, and the exact parity reference source under
+`evidence/`. Build and ordinary
+verification both open, parse, hash, and semantically validate those JSON artifacts.
+The parity report binds the engine receipt, ephemeris file set, schema, full UTC
+range, and the exact SHA-256 plus stable locator of its independent reference source
+(for example `tests/golden/fixtures/swieph_phase0_golden_v1.json`). The cache build
+spec, manifest, and recovery expectations bind that reference identity separately
+from the parity-report hash. The boundary audit additionally binds the logical-universe hash, interval
+count, feature registry, Mandala/Bodygraph mappings, boundary policy, and Design-root
+tolerances and must report zero missing boundaries, gaps, overlaps, or maximality
+violations. Missing, substituted, malformed, non-canonical, wrong-status, or
+semantically mismatched evidence fails closed.
+
 Interval identity remains fixed metadata rather than behavioral capability. Every
 row retains a representative UTC instant inside its half-open interval, the chart
 feature hash, the Bodygraph mapping hash, and canonically sorted exact boundary
 events. These fields round-trip as typed Parquet columns and participate in the
 logical-universe hash.
+
+Exact intervals must also be maximal. After flattening all shards into canonical UTC
+order, the writer and verifier reject adjacent intervals whose actual discrete
+feature values and semantic mapping identities are identical. This check crosses
+shard boundaries and deliberately does not trust `state_id`, boundary labels, or a
+caller-supplied `chart_features_sha256`. The logical-universe hash remains independent
+of the chosen shard layout.
 
 ## Anti-simplification compliance gate
 

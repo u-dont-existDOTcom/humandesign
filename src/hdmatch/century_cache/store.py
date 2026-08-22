@@ -12,9 +12,21 @@ from typing import Literal
 from hdmatch.experiments.canonical import (
     canonical_json_bytes,
     sha256_file,
+    write_new_bytes,
     write_new_canonical_json,
 )
+from hdmatch.provenance.swisseph_files import (
+    EphemerisFileVerificationError,
+    EphemerisManifestError,
+    verify_ephemeris_directory,
+)
 
+from .evidence import (
+    CenturyCacheEvidenceError,
+    CenturyCacheEvidenceInputs,
+    validate_bundled_cache_evidence,
+    validate_external_cache_evidence,
+)
 from .models import (
     SHARD_NAME_PATTERN,
     CenturyCacheBuildSpec,
@@ -24,6 +36,7 @@ from .models import (
     CenturyStateRecord,
     VerifiedCenturyCache,
     canonical_rows_sha256,
+    discrete_chart_identity_sha256,
     parquet_schema_sha256,
     required_feature_ids_sha256,
 )
@@ -107,6 +120,13 @@ def _validate_logical_universe(
     for previous, current in zip(rows, rows[1:], strict=False):
         if previous.utc_end != current.utc_start:
             raise ValueError("century-cache intervals contain a gap or overlap")
+        if discrete_chart_identity_sha256(previous) == discrete_chart_identity_sha256(
+            current
+        ):
+            raise ValueError(
+                "century-cache intervals are not maximal: adjacent rows have the "
+                "same discrete chart identity"
+            )
 
 
 def _expectations_for_spec(spec: CenturyCacheBuildSpec) -> CenturyCacheExpectations:
@@ -131,6 +151,8 @@ def _expectations_for_spec(spec: CenturyCacheBuildSpec) -> CenturyCacheExpectati
         design_root_time_tolerance_seconds=spec.design_root_time_tolerance_seconds,
         design_root_arc_tolerance_degrees=spec.design_root_arc_tolerance_degrees,
         parity_report_sha256=spec.parity_report_sha256,
+        parity_reference_source_locator=spec.parity_reference_source_locator,
+        parity_reference_source_sha256=spec.parity_reference_source_sha256,
         boundary_audit_report_sha256=spec.boundary_audit_report_sha256,
     )
 
@@ -140,6 +162,7 @@ def write_century_cache_explicit(
     *,
     spec: CenturyCacheBuildSpec,
     shards: tuple[CenturyCacheShardInput, ...],
+    evidence: CenturyCacheEvidenceInputs,
     build_mode: Literal["explicit_rebuild"],
 ) -> VerifiedCenturyCache:
     """Write supplied exact states; this function never computes astronomy.
@@ -165,11 +188,42 @@ def write_century_cache_explicit(
     except (ValueError, CenturyCacheParquetError) as exc:
         raise CenturyCacheBuildError(str(exc)) from exc
 
+    try:
+        observed_ephemeris = verify_ephemeris_directory(
+            source_manifest_path=evidence.ephemeris_source_manifest_path,
+            ephemeris_directory=evidence.ephemeris_directory,
+        )
+    except (EphemerisManifestError, EphemerisFileVerificationError) as exc:
+        raise CenturyCacheBuildError(
+            f"Swiss Ephemeris source verification failed: {exc}"
+        ) from exc
+    if observed_ephemeris != spec.engine.ephemeris_provenance:
+        raise CenturyCacheBuildError(
+            "actual Swiss Ephemeris source/files differ from the cache engine provenance"
+        )
+
+    logical_universe_sha256 = canonical_rows_sha256(rows)
+    try:
+        validated_evidence = validate_external_cache_evidence(
+            evidence,
+            spec=spec,
+            logical_universe_sha256=logical_universe_sha256,
+            interval_count=len(rows),
+        )
+    except CenturyCacheEvidenceError as exc:
+        raise CenturyCacheBuildError(f"cache proof evidence failed: {exc}") from exc
+
     output = Path(cache_directory)
     output.mkdir(parents=True, exist_ok=True)
     manifest_path = output / "manifest.json"
     if manifest_path.exists():
         raise FileExistsError(f"century-cache manifest already exists: {manifest_path}")
+
+    try:
+        for filename, raw in validated_evidence.bundled_bytes:
+            write_new_bytes(output / filename, raw)
+    except (OSError, ValueError) as exc:
+        raise CenturyCacheBuildError(f"could not bundle cache proof evidence: {exc}") from exc
 
     shard_records: list[CenturyCacheShard] = []
     decoded_rows: list[CenturyStateRecord] = []
@@ -202,8 +256,9 @@ def write_century_cache_explicit(
         **spec.model_dump(mode="python", exclude={"schema_version"}),
         "schema_version": "century-cache-manifest-v1",
         "interval_count": len(decoded_rows),
+        "evidence_artifacts": validated_evidence.artifacts,
         "shards": tuple(shard_records),
-        "logical_universe_sha256": canonical_rows_sha256(tuple(decoded_rows)),
+        "logical_universe_sha256": logical_universe_sha256,
         "verification_status": "pass",
     }
     try:
@@ -247,6 +302,10 @@ def _verify_expectations(
         "Design-root time tolerance": expectations.design_root_time_tolerance_seconds,
         "Design-root arc tolerance": expectations.design_root_arc_tolerance_degrees,
         "parity report": expectations.parity_report_sha256,
+        "parity reference-source locator": (
+            expectations.parity_reference_source_locator
+        ),
+        "parity reference-source hash": expectations.parity_reference_source_sha256,
         "boundary-audit report": expectations.boundary_audit_report_sha256,
     }
     actual_fields = {
@@ -265,6 +324,8 @@ def _verify_expectations(
         "Design-root time tolerance": manifest.design_root_time_tolerance_seconds,
         "Design-root arc tolerance": manifest.design_root_arc_tolerance_degrees,
         "parity report": manifest.parity_report_sha256,
+        "parity reference-source locator": manifest.parity_reference_source_locator,
+        "parity reference-source hash": manifest.parity_reference_source_sha256,
         "boundary-audit report": manifest.boundary_audit_report_sha256,
     }
     for name, expected in expected_fields.items():
@@ -297,6 +358,12 @@ def verify_century_cache(
     manifest_path = directory / "manifest.json"
     manifest = _load_manifest(manifest_path)
     coverage = _verify_expectations(manifest, expectations)
+    try:
+        validate_bundled_cache_evidence(directory, manifest=manifest)
+    except CenturyCacheEvidenceError as exc:
+        raise CenturyCacheVerificationError(
+            f"cache proof evidence verification failed: {exc}"
+        ) from exc
     decoded_rows: list[CenturyStateRecord] = []
     try:
         for shard in manifest.shards:
@@ -352,6 +419,15 @@ def iter_verified_century_cache_rows(
 
     if sha256_file(verified.manifest_path) != verified.manifest_sha256:
         raise CenturyCacheVerificationError("cache manifest changed after verification")
+    try:
+        validate_bundled_cache_evidence(
+            verified.cache_directory,
+            manifest=verified.manifest,
+        )
+    except CenturyCacheEvidenceError as exc:
+        raise CenturyCacheVerificationError(
+            f"cache proof evidence changed after verification: {exc}"
+        ) from exc
     for shard in verified.manifest.shards:
         shard_path = verified.cache_directory / shard.filename
         if sha256_file(shard_path) != shard.sha256:
