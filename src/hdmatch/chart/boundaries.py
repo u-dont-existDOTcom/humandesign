@@ -4,14 +4,21 @@ from __future__ import annotations
 
 import math
 from collections.abc import Callable
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from datetime import UTC, datetime, timedelta
 from enum import StrEnum
-from typing import Any, TypeVar
+from pathlib import Path
+from typing import Any, Final, Literal, TypeAlias, TypeVar
 
 from .calculator import StableChartFeatures, calculate_chart
-from .design_moment import solve_design_moment
-from .ephemeris import DEFAULT_ACTIVATION_BODIES, CelestialBody, EphemerisProvider
+from .design_moment import solve_design_moment, solve_personality_moment_from_design
+from .ephemeris import (
+    DEFAULT_ACTIVATION_BODIES,
+    CelestialBody,
+    EphemerisMode,
+    EphemerisProvider,
+    SwissEphemerisProvider,
+)
 from .rave_mandala import (
     GATE_WIDTH_DEGREES,
     LINE_WIDTH_DEGREES,
@@ -26,13 +33,29 @@ class BoundaryResolution(StrEnum):
     LINE = "line"
 
 
+class BoundarySearchError(RuntimeError):
+    """Base error for fail-closed exact boundary enumeration."""
+
+
+class BoundaryCompletenessError(BoundarySearchError):
+    """Raised when a provider violates a bound required for completeness."""
+
+
+class BoundaryProvenanceError(BoundarySearchError):
+    """Raised when production enumeration lacks verified SWIEPH provenance."""
+
+
+BoundarySide: TypeAlias = Literal["personality", "design"]
+BOUNDARY_POLICY_VERSION: Final[str] = "exact-gate-line-boundaries-v2"
+
+
 @dataclass(frozen=True, slots=True)
 class BoundaryEvent:
     """A discrete activation change on the candidate-birth time axis."""
 
     at_utc: datetime
     ephemeris_utc: datetime
-    side: str
+    side: BoundarySide
     body: CelestialBody
     resolution: BoundaryResolution
     boundary_longitude: float
@@ -71,95 +94,203 @@ def enumerate_chart_boundaries(
     resolution: BoundaryResolution = BoundaryResolution.LINE,
     root_tolerance_seconds: float = 0.01,
     max_scan_step_seconds: float = 6 * 3600.0,
+    event_group_tolerance_seconds: float | None = None,
+    require_swieph_provenance: bool = False,
 ) -> tuple[BoundaryEvent, ...]:
     """Enumerate Personality and Design activation transitions.
 
-    Candidate scan steps are derived from each provider-declared maximum speed
-    so a body moves at most one quarter of a requested sector per initial
-    bracket.  Within brackets, a Lipschitz branch-and-bound search subdivides
-    every interval that could contain a boundary even when its endpoints map to
-    the same feature.  Thus endpoint equality is never used as proof that an
-    interval is stable.
+    Personality boundaries are solved directly on the birth timeline.  Design
+    boundaries are solved directly on the exact Design ephemeris horizon and
+    then mapped to birth time by inverting the 88-degree solar-arc equation.
+    Candidate scan steps use provider-declared speed bounds, and a Lipschitz
+    branch-and-bound search subdivides every interval that could contain a
+    crossing even when its endpoints map to the same feature.  Endpoint
+    equality is therefore never used as proof that an interval is stable.
     """
 
     start = _require_utc(start_utc)
     end = _require_utc(end_utc)
     if end <= start:
         raise ValueError("boundary range must have positive duration")
-    if root_tolerance_seconds <= 0.0 or max_scan_step_seconds <= 0.0:
+    if (
+        root_tolerance_seconds <= 0.0
+        or max_scan_step_seconds <= 0.0
+        or not math.isfinite(root_tolerance_seconds)
+        or not math.isfinite(max_scan_step_seconds)
+    ):
         raise ValueError("boundary tolerances and scan step must be positive")
+    group_tolerance = (
+        root_tolerance_seconds
+        if event_group_tolerance_seconds is None
+        else event_group_tolerance_seconds
+    )
+    if not math.isfinite(group_tolerance) or group_tolerance < root_tolerance_seconds:
+        raise ValueError("event grouping tolerance must be at least the root tolerance")
     if len(set(bodies)) != len(bodies):
         raise ValueError("bodies must not contain duplicates")
+    if require_swieph_provenance:
+        _verify_production_provider(provider)
 
     spacing = LINE_WIDTH_DEGREES if resolution is BoundaryResolution.LINE else GATE_WIDTH_DEGREES
     design_cache: dict[datetime, datetime] = {}
+    personality_cache: dict[datetime, datetime] = {}
 
     def design_time(candidate_utc: datetime) -> datetime:
         try:
             return design_cache[candidate_utc]
         except KeyError:
+            birth_sun = provider.position(CelestialBody.SUN, candidate_utc)
+            _validate_solar_speed(provider, birth_sun.speed_degrees_per_day, candidate_utc)
             solved = solve_design_moment(
                 provider,
                 candidate_utc,
                 time_tolerance_seconds=root_tolerance_seconds,
-            ).design_utc
-            design_cache[candidate_utc] = solved
-            return solved
+            )
+            design_sun = provider.position(CelestialBody.SUN, solved.design_utc)
+            _validate_solar_speed(
+                provider,
+                design_sun.speed_degrees_per_day,
+                solved.design_utc,
+            )
+            design_cache[candidate_utc] = solved.design_utc
+            return solved.design_utc
+
+    def personality_time(design_utc: datetime) -> datetime:
+        try:
+            return personality_cache[design_utc]
+        except KeyError:
+            design_sun = provider.position(CelestialBody.SUN, design_utc)
+            _validate_solar_speed(provider, design_sun.speed_degrees_per_day, design_utc)
+            solved = solve_personality_moment_from_design(
+                provider,
+                design_utc,
+                time_tolerance_seconds=root_tolerance_seconds,
+            )
+            birth_sun = provider.position(CelestialBody.SUN, solved.birth_utc)
+            _validate_solar_speed(
+                provider,
+                birth_sun.speed_degrees_per_day,
+                solved.birth_utc,
+            )
+            personality_cache[design_utc] = solved.birth_utc
+            return solved.birth_utc
+
+    design_start = design_time(start)
+    design_end = design_time(end)
+    if design_end <= design_start:
+        raise BoundaryCompletenessError(
+            "exact Design timeline is not strictly increasing across the requested range"
+        )
 
     events: list[BoundaryEvent] = []
     for side in ("personality", "design"):
         for body in bodies:
+            body_speed_bound = provider.max_abs_speed_degrees_per_day(body)
+            _validate_speed_bound(body, body_speed_bound)
+            scan_longitude_at: Callable[[datetime], float]
             if side == "personality":
 
-                def longitude_at(at_utc: datetime, body: CelestialBody = body) -> float:
-                    return provider.position(body, at_utc).longitude
+                def longitude_at(
+                    at_utc: datetime,
+                    body: CelestialBody = body,
+                    declared_speed_bound: float = body_speed_bound,
+                ) -> float:
+                    return _bounded_longitude(
+                        provider,
+                        body,
+                        at_utc,
+                        declared_speed_bound,
+                    )
 
-                speed_bound = provider.max_abs_speed_degrees_per_day(body)
+                speed_bound = body_speed_bound
+                scan_start = start
+                scan_end = end
+                scan_longitude_at = longitude_at
             else:
 
-                def longitude_at(at_utc: datetime, body: CelestialBody = body) -> float:
-                    return provider.position(body, design_time(at_utc)).longitude
+                def design_longitude_at(
+                    ephemeris_utc: datetime,
+                    body: CelestialBody = body,
+                    declared_speed_bound: float = body_speed_bound,
+                ) -> float:
+                    return _bounded_longitude(
+                        provider,
+                        body,
+                        ephemeris_utc,
+                        declared_speed_bound,
+                    )
 
-                speed_bound = (
-                    provider.max_abs_speed_degrees_per_day(body)
-                    * provider.max_abs_speed_degrees_per_day(CelestialBody.SUN)
-                    / provider.min_solar_speed_degrees_per_day()
-                )
+                def longitude_at(
+                    at_utc: datetime,
+                    body: CelestialBody = body,
+                    declared_speed_bound: float = body_speed_bound,
+                ) -> float:
+                    return _bounded_longitude(
+                        provider,
+                        body,
+                        design_time(at_utc),
+                        declared_speed_bound,
+                    )
+
+                speed_bound = body_speed_bound
+                scan_start = design_start
+                scan_end = design_end
+                scan_longitude_at = design_longitude_at
             if speed_bound <= 0.0 or not math.isfinite(speed_bound):
                 raise ValueError(f"invalid speed bound for {body.value}: {speed_bound}")
 
             roots = _enumerate_periodic_crossings(
-                longitude_at,
-                start,
-                end,
+                scan_longitude_at,
+                scan_start,
+                scan_end,
                 origin_degrees=RAVE_MANDALA_START_DEGREES,
                 spacing_degrees=spacing,
                 max_speed_degrees_per_day=speed_bound,
                 root_tolerance_seconds=root_tolerance_seconds,
                 max_scan_step_seconds=max_scan_step_seconds,
             )
-            for root, boundary in roots:
-                event = _make_event(
-                    longitude_at,
-                    design_time,
-                    start,
-                    end,
-                    root,
-                    boundary,
-                    side,
-                    body,
-                    resolution,
-                    root_tolerance_seconds,
+            for ephemeris_root, boundary in roots:
+                root = (
+                    ephemeris_root
+                    if side == "personality"
+                    else personality_time(ephemeris_root)
                 )
+                if not start < root < end:
+                    continue
+                if side == "personality":
+                    event = _make_personality_event(
+                        longitude_at,
+                        start,
+                        end,
+                        root,
+                        boundary,
+                        body,
+                        resolution,
+                        root_tolerance_seconds,
+                    )
+                else:
+                    event = _make_design_event(
+                        design_longitude_at,
+                        design_start,
+                        design_end,
+                        root,
+                        ephemeris_root,
+                        boundary,
+                        body,
+                        resolution,
+                        root_tolerance_seconds,
+                    )
                 if event is not None:
                     events.append(event)
 
-    return tuple(
-        sorted(
-            _deduplicate_events(events, root_tolerance_seconds),
-            key=lambda item: (item.at_utc, item.side, item.body.value),
-        )
+    grouped = _group_simultaneous_events(
+        _deduplicate_events(events, root_tolerance_seconds),
+        group_tolerance,
+        design_time,
     )
+    if require_swieph_provenance:
+        _verify_production_provider(provider)
+    return grouped
 
 
 def build_stable_intervals(
@@ -218,6 +349,8 @@ def build_chart_state_intervals(
     *,
     bodies: tuple[CelestialBody, ...] = DEFAULT_ACTIVATION_BODIES,
     root_tolerance_seconds: float = 0.01,
+    event_group_tolerance_seconds: float | None = None,
+    require_swieph_provenance: bool = False,
 ) -> tuple[StableInterval, ...]:
     """Construct exact line-level stable intervals for the full chart vector."""
 
@@ -228,6 +361,8 @@ def build_chart_state_intervals(
         bodies=bodies,
         resolution=BoundaryResolution.LINE,
         root_tolerance_seconds=root_tolerance_seconds,
+        event_group_tolerance_seconds=event_group_tolerance_seconds,
+        require_swieph_provenance=require_swieph_provenance,
     )
 
     def feature_at(at_utc: datetime) -> StableChartFeatures:
@@ -239,6 +374,28 @@ def build_chart_state_intervals(
         ).stable_features
 
     return build_stable_intervals(start_utc, end_utc, events, feature_at)
+
+
+def build_production_chart_state_intervals(
+    provider: SwissEphemerisProvider,
+    start_utc: datetime,
+    end_utc: datetime,
+    *,
+    bodies: tuple[CelestialBody, ...] = DEFAULT_ACTIVATION_BODIES,
+    root_tolerance_seconds: float = 0.01,
+    event_group_tolerance_seconds: float | None = None,
+) -> tuple[StableInterval, ...]:
+    """Canonical SWIEPH-only entrypoint for reusable production state builds."""
+
+    return build_chart_state_intervals(
+        provider,
+        start_utc,
+        end_utc,
+        bodies=bodies,
+        root_tolerance_seconds=root_tolerance_seconds,
+        event_group_tolerance_seconds=event_group_tolerance_seconds,
+        require_swieph_provenance=True,
+    )
 
 
 def audit_interval_partition(
@@ -306,10 +463,12 @@ def _enumerate_periodic_crossings(
     roots.sort(key=lambda item: item[0])
     deduplicated: list[tuple[datetime, float]] = []
     for root in roots:
-        if deduplicated and abs((root[0] - deduplicated[-1][0]).total_seconds()) <= (
-            root_tolerance_seconds
-        ):
-            continue
+        if deduplicated:
+            previous = deduplicated[-1]
+            close = abs((root[0] - previous[0]).total_seconds()) <= root_tolerance_seconds
+            same_boundary = math.isclose(root[1], previous[1], abs_tol=1e-10)
+            if close and same_boundary:
+                continue
         if start < root[0] < end:
             deduplicated.append(root)
     return tuple(deduplicated)
@@ -412,14 +571,12 @@ def _bisect_level(
     return left_time + (right_time - left_time) / 2
 
 
-def _make_event(
+def _make_personality_event(
     longitude_at: Callable[[datetime], float],
-    design_time: Callable[[datetime], datetime],
     start: datetime,
     end: datetime,
     root: datetime,
     boundary: float,
-    side: str,
     body: CelestialBody,
     resolution: BoundaryResolution,
     tolerance: float,
@@ -435,11 +592,49 @@ def _make_event(
         changed = before.gate != after.gate
     if not changed:
         return None
-    ephemeris_utc = root if side == "personality" else design_time(root)
     return BoundaryEvent(
         at_utc=root,
-        ephemeris_utc=ephemeris_utc,
-        side=side,
+        ephemeris_utc=root,
+        side="personality",
+        body=body,
+        resolution=resolution,
+        boundary_longitude=boundary,
+        before_gate=before.gate,
+        before_line=before.line,
+        after_gate=after.gate,
+        after_line=after.line,
+        root_tolerance_seconds=tolerance,
+    )
+
+
+def _make_design_event(
+    design_longitude_at: Callable[[datetime], float],
+    design_start: datetime,
+    design_end: datetime,
+    personality_root: datetime,
+    design_root: datetime,
+    boundary: float,
+    body: CelestialBody,
+    resolution: BoundaryResolution,
+    tolerance: float,
+) -> BoundaryEvent | None:
+    """Create a birth-axis event from a directly solved Design crossing."""
+
+    probe_seconds = max(1.0, tolerance * 4.0)
+    before_time = max(design_start, design_root - timedelta(seconds=probe_seconds))
+    after_time = min(design_end, design_root + timedelta(seconds=probe_seconds))
+    before = longitude_to_gate_line(design_longitude_at(before_time))
+    after = longitude_to_gate_line(design_longitude_at(after_time))
+    if resolution is BoundaryResolution.LINE:
+        changed = (before.gate, before.line) != (after.gate, after.line)
+    else:
+        changed = before.gate != after.gate
+    if not changed:
+        return None
+    return BoundaryEvent(
+        at_utc=personality_root,
+        ephemeris_utc=design_root,
+        side="design",
         body=body,
         resolution=resolution,
         boundary_longitude=boundary,
@@ -471,6 +666,154 @@ def _deduplicate_events(
                 continue
         result.append(event)
     return tuple(result)
+
+
+def _group_simultaneous_events(
+    events: tuple[BoundaryEvent, ...],
+    tolerance_seconds: float,
+    design_time: Callable[[datetime], datetime],
+) -> tuple[BoundaryEvent, ...]:
+    """Assign one deterministic cut to events unresolved within tolerance.
+
+    Independent root solves for genuinely simultaneous structures (notably
+    Sun/Earth and the two Nodes) may differ by microseconds.  Treating those
+    estimates as separate cuts would manufacture non-physical sliver states.
+    Groups use a bounded diameter rather than transitive chaining, and their
+    canonical timestamp is the midpoint of the earliest/latest estimates.
+    """
+
+    ordered = sorted(
+        events,
+        key=lambda item: (
+            item.at_utc,
+            item.side,
+            item.body.value,
+            item.resolution.value,
+            item.boundary_longitude,
+        ),
+    )
+    clusters: list[list[BoundaryEvent]] = []
+    for event in ordered:
+        if not clusters:
+            clusters.append([event])
+            continue
+        first = clusters[-1][0]
+        if (event.at_utc - first.at_utc).total_seconds() <= tolerance_seconds:
+            clusters[-1].append(event)
+        else:
+            clusters.append([event])
+
+    grouped: list[BoundaryEvent] = []
+    for cluster in clusters:
+        first_at = cluster[0].at_utc
+        last_at = cluster[-1].at_utc
+        canonical_at = first_at + (last_at - first_at) / 2
+        canonical_design_at: datetime | None = None
+        if any(item.side == "design" for item in cluster):
+            canonical_design_at = design_time(canonical_at)
+        for event in cluster:
+            ephemeris_utc = (
+                canonical_at
+                if event.side == "personality"
+                else _require_design_time(canonical_design_at)
+            )
+            grouped.append(
+                replace(
+                    event,
+                    at_utc=canonical_at,
+                    ephemeris_utc=ephemeris_utc,
+                )
+            )
+    return tuple(
+        sorted(
+            grouped,
+            key=lambda item: (
+                item.at_utc,
+                item.side,
+                item.body.value,
+                item.resolution.value,
+                item.boundary_longitude,
+            ),
+        )
+    )
+
+
+def _require_design_time(value: datetime | None) -> datetime:
+    if value is None:  # pragma: no cover - guarded by caller's side check
+        raise BoundarySearchError("grouped Design event lacks an exact Design timestamp")
+    return value
+
+
+def _validate_speed_bound(body: CelestialBody, speed_bound: float) -> None:
+    if speed_bound <= 0.0 or not math.isfinite(speed_bound):
+        raise BoundaryCompletenessError(
+            f"invalid completeness speed bound for {body.value}: {speed_bound}"
+        )
+
+
+def _bounded_longitude(
+    provider: EphemerisProvider,
+    body: CelestialBody,
+    at_utc: datetime,
+    declared_speed_bound: float,
+) -> float:
+    position = provider.position(body, at_utc)
+    observed = position.speed_degrees_per_day
+    if not math.isfinite(observed):
+        raise BoundaryCompletenessError(
+            f"non-finite observed speed for {body.value} at {at_utc.isoformat()}"
+        )
+    if abs(observed) > declared_speed_bound + 1e-10:
+        raise BoundaryCompletenessError(
+            f"observed speed exceeds declared completeness bound for {body.value} "
+            f"at {at_utc.isoformat()}: observed={observed}, bound={declared_speed_bound}"
+        )
+    return position.longitude
+
+
+def _validate_solar_speed(
+    provider: EphemerisProvider,
+    observed_speed: float,
+    at_utc: datetime,
+) -> None:
+    maximum = provider.max_abs_speed_degrees_per_day(CelestialBody.SUN)
+    minimum = provider.min_solar_speed_degrees_per_day()
+    _validate_speed_bound(CelestialBody.SUN, maximum)
+    if minimum <= 0.0 or not math.isfinite(minimum) or minimum > maximum:
+        raise BoundaryCompletenessError(
+            f"invalid solar speed bounds for Design mapping: min={minimum}, max={maximum}"
+        )
+    if not math.isfinite(observed_speed) or not (
+        minimum - 1e-10 <= observed_speed <= maximum + 1e-10
+    ):
+        raise BoundaryCompletenessError(
+            f"observed solar speed violates Design completeness bounds at "
+            f"{at_utc.isoformat()}: observed={observed_speed}, min={minimum}, max={maximum}"
+        )
+
+
+def _verify_production_provider(provider: EphemerisProvider) -> None:
+    if not isinstance(provider, SwissEphemerisProvider):
+        raise BoundaryProvenanceError(
+            "production boundary enumeration requires SwissEphemerisProvider"
+        )
+    metadata = provider.metadata
+    if (
+        metadata.requested_ephemeris is not EphemerisMode.SWIEPH
+        or metadata.requested_flags is None
+        or metadata.ephemeris_mask is None
+        or metadata.requested_flags & metadata.ephemeris_mask == 0
+    ):
+        raise BoundaryProvenanceError(
+            "production boundary enumeration lacks an explicit SWIEPH request"
+        )
+    names = {Path(item.path).name for item in metadata.files}
+    required = {"sepl_18.se1", "semo_18.se1"}
+    if not required.issubset(names):
+        raise BoundaryProvenanceError(
+            "production boundary enumeration requires sepl_18.se1 and semo_18.se1"
+        )
+    provider.verify_declared_files_unchanged()
 
 
 def _levels_between(origin: float, spacing: float, low: float, high: float) -> tuple[float, ...]:

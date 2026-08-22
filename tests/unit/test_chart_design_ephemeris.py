@@ -6,7 +6,10 @@ from pathlib import Path
 import pytest
 
 from hdmatch.chart.calculator import calculate_chart
-from hdmatch.chart.design_moment import solve_design_moment
+from hdmatch.chart.design_moment import (
+    solve_design_moment,
+    solve_personality_moment_from_design,
+)
 from hdmatch.chart.engine_probe import validate_production_engine
 from hdmatch.chart.ephemeris import (
     CelestialBody,
@@ -62,6 +65,21 @@ def test_design_root_is_exact_for_analytic_sun() -> None:
     assert abs((birth - result.design_utc).total_seconds() - 88 * 86400) < 0.001
     assert result.solved_arc_degrees == pytest.approx(88.0, abs=result.arc_tolerance_degrees)
     assert abs(result.residual_degrees) <= result.arc_tolerance_degrees
+
+
+def test_exact_design_relation_round_trips_through_inverse_solver() -> None:
+    birth = datetime(2020, 1, 1, 12, tzinfo=UTC)
+    provider = LinearProvider(birth)
+
+    design = solve_design_moment(provider, birth)
+    recovered = solve_personality_moment_from_design(provider, design.design_utc)
+
+    assert abs((recovered.birth_utc - birth).total_seconds()) <= 0.01
+    assert recovered.design_utc == design.design_utc
+    assert recovered.solved_arc_degrees == pytest.approx(
+        88.0,
+        abs=recovered.arc_tolerance_degrees,
+    )
 
 
 def test_discrete_chart_hash_ignores_continuous_longitude_drift() -> None:
@@ -236,6 +254,19 @@ def test_swiss_provider_records_hash_and_derives_earth(tmp_path: Path) -> None:
     assert calculation.provenance.returned_flags == FakeSwiss.FLG_SWIEPH
     assert calculation.provenance.derivation == "opposition_of_sun"
     assert calculation.provenance.used_file.sha256 == provider.metadata.files[0].sha256
+
+
+def test_swiss_provider_rejects_declared_file_mutation_after_initialization(
+    tmp_path: Path,
+) -> None:
+    declared = tmp_path / "sepl_18.se1"
+    declared.write_bytes(b"declared")
+    fake = FakeSwiss(declared, FakeSwiss.FLG_SWIEPH)
+    provider = SwissEphemerisProvider((declared,), _swe_module=fake)  # type: ignore[arg-type]
+    declared.write_bytes(b"changed")
+
+    with pytest.raises(EphemerisConfigurationError, match="changed after initialization"):
+        provider.verify_declared_files_unchanged()
 
 
 def test_representative_production_probe_records_returned_flags_and_design_root(

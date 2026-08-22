@@ -8,7 +8,7 @@ from pathlib import Path
 
 from hdmatch.chart import SwissEphemerisProvider, calculate_chart
 from hdmatch.chart.bodygraph import bodygraph_constants_sha256
-from hdmatch.chart.boundaries import build_chart_state_intervals
+from hdmatch.chart.boundaries import build_production_chart_state_intervals
 from hdmatch.chart.calculator import ChartComputation
 from hdmatch.chart.ephemeris import EphemerisConfigurationError
 from hdmatch.chart.rave_mandala import mandala_constants_sha256
@@ -76,7 +76,11 @@ class ExactChartAdapter:
         end_utc: datetime,
         timezone_name: str,
     ) -> tuple[CandidateState, ...]:
-        intervals = build_chart_state_intervals(self.provider, start_utc, end_utc)
+        intervals = build_production_chart_state_intervals(
+            self.provider,
+            start_utc,
+            end_utc,
+        )
         result: list[CandidateState] = []
         for interval in intervals:
             computation = calculate_chart(self.provider, interval.representative_utc)

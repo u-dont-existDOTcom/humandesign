@@ -246,6 +246,28 @@ class SwissEphemerisProvider:
     def min_solar_speed_degrees_per_day(self) -> float:
         return _MIN_SOLAR_SPEED
 
+    def verify_declared_files_unchanged(self) -> None:
+        """Re-hash the declared file set and fail if bytes changed in place.
+
+        Construction-time hashes are provenance, not a permanent guarantee
+        about mutable local files.  Long-running production boundary builds
+        call this before and after enumeration so their evidence remains bound
+        to the exact bytes recorded in :attr:`metadata`.
+        """
+
+        for record in self._metadata.files:
+            path = Path(record.path)
+            if not path.is_file():
+                raise EphemerisConfigurationError(
+                    f"declared ephemeris file disappeared after initialization: {path}"
+                )
+            current_size = path.stat().st_size
+            current_sha256 = _sha256_file(path)
+            if current_size != record.size_bytes or current_sha256 != record.sha256:
+                raise EphemerisConfigurationError(
+                    f"declared ephemeris file changed after initialization: {path}"
+                )
+
     def position(self, body: CelestialBody, at_utc: datetime) -> EclipticPosition:
         return self.position_with_provenance(body, at_utc).position
 

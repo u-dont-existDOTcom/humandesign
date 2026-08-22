@@ -7,7 +7,11 @@ repository has not frozen independently validated rules for those layers.
 
 from .bodygraph import Authority, Bodygraph, Center, Definition, HDType, Strategy
 from .calculator import ChartComputation, calculate_chart
-from .design_moment import DesignMomentResult, solve_design_moment
+from .design_moment import (
+    DesignMomentResult,
+    solve_design_moment,
+    solve_personality_moment_from_design,
+)
 from .engine_probe import ProductionEngineValidation, validate_production_engine
 from .ephemeris import (
     CelestialBody,
@@ -39,5 +43,6 @@ __all__ = [
     "longitude_to_gate_line",
     "resolve_local_datetime",
     "solve_design_moment",
+    "solve_personality_moment_from_design",
     "validate_production_engine",
 ]
