@@ -2,7 +2,9 @@ from __future__ import annotations
 
 import inspect
 import json
-from dataclasses import dataclass, replace
+import math
+from dataclasses import dataclass
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from typing import Any
 
@@ -54,6 +56,25 @@ from hdmatch.model.v4_3_prevalence import (
     verify_v4_3_prevalence_artifact,
     write_v4_3_prevalence_artifact_new,
     write_v4_3_prevalence_plan_new,
+)
+from hdmatch.model.v4_3_profile_mapping import (
+    BEST_CURRENT_COMPILED_PATH,
+    BEST_CURRENT_SOURCE_PATH,
+    LESS_CONTAMINATED_COMPILED_PATH,
+    LESS_CONTAMINATED_SOURCE_PATH,
+)
+from hdmatch.model.v4_3_responses import (
+    BEST_CURRENT_RESPONSE_PATH,
+    LESS_CONTAMINATED_RESPONSE_PATH,
+    compile_v4_3_direct_target_responses,
+    verify_v4_3_direct_target_responses,
+)
+from hdmatch.model.v4_3_run import (
+    V43ExternalRankStore,
+    V43MinimalScoreRecordV1,
+    V43RunFailedError,
+    run_verified_v4_3_cache,
+    verify_v4_3_run,
 )
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -273,11 +294,8 @@ def test_real_provider_opens_and_completes_canonical_scoring_session(
         )
         for rule in library.rules
     )
-    evaluations = tuple(
-        session.score_candidate(row, responses)
-        for row in iter_verified_century_cache_rows(real_harness.verified_cache)
-    )
-    complete = session.require_complete_universe_compliance(evaluations)
+    tuple(session.stream_verified_universe(responses))
+    complete = session.require_streamed_universe_compliance()
     assert complete.compliance.v4_3_compliant is True
     assert complete.scored_candidate_count == (
         real_harness.verified_cache.manifest.interval_count
@@ -319,10 +337,9 @@ def test_tracked_direct_target_mapping_uses_bound_context_and_claims_complete_un
         )
         for rule in library.rules
     )
-    evaluations = tuple(
-        session.score_candidate(row, responses)
-        for row in iter_verified_century_cache_rows(real_harness.verified_cache)
-    )
+    with pytest.raises(V43IntegrationError, match="complete declared universe"):
+        session.require_streamed_universe_compliance()
+    evaluations = tuple(session.stream_verified_universe(responses))
 
     assert all(
         isinstance(item.scoring_input.candidate_context, V43BoundCandidateRecord)
@@ -334,17 +351,401 @@ def test_tracked_direct_target_mapping_uses_bound_context_and_claims_complete_un
             real_harness.plan.anchors[0].anchor_id,
             next(iter_verified_century_cache_rows(real_harness.verified_cache)),
         )
-    with pytest.raises(V43IntegrationError, match="complete declared universe"):
-        session.require_complete_universe_compliance(())
-    forged = replace(evaluations[0])
-    with pytest.raises(V43IntegrationError, match="not minted"):
-        session.require_complete_universe_compliance((forged, *evaluations[1:]))
-
-    complete = session.require_complete_universe_compliance(evaluations)
+    with pytest.raises(V43IntegrationError, match="cannot mix"):
+        session.score_candidate(
+            next(iter_verified_century_cache_rows(real_harness.verified_cache)),
+            responses,
+        )
+    complete = session.require_streamed_universe_compliance()
     assert complete.compliance.v4_3_compliant is True
     assert complete.scored_candidate_count == (
         real_harness.verified_cache.manifest.interval_count
     )
+
+
+@pytest.mark.parametrize(
+    ("variant", "compiled_path", "source_path", "response_path"),
+    (
+        (
+            "less_contaminated",
+            LESS_CONTAMINATED_COMPILED_PATH,
+            LESS_CONTAMINATED_SOURCE_PATH,
+            LESS_CONTAMINATED_RESPONSE_PATH,
+        ),
+        (
+            "best_current_descriptive",
+            BEST_CURRENT_COMPILED_PATH,
+            BEST_CURRENT_SOURCE_PATH,
+            BEST_CURRENT_RESPONSE_PATH,
+        ),
+    ),
+)
+def test_tracked_direct_target_responses_are_exact_mechanical_compilations(
+    variant: str,
+    compiled_path: str,
+    source_path: str,
+    response_path: str,
+) -> None:
+    artifact = compile_v4_3_direct_target_responses(
+        repository_root=ROOT,
+        mapping_library_path=ROOT / compiled_path,
+        mapping_source_library_path=ROOT / source_path,
+        variant=variant,  # type: ignore[arg-type]
+    )
+    tracked = ROOT / response_path
+    assert tracked.read_bytes() == canonical_json_bytes(artifact)
+    verified = verify_v4_3_direct_target_responses(
+        tracked,
+        repository_root=ROOT,
+        mapping_library_path=ROOT / compiled_path,
+        mapping_source_library_path=ROOT / source_path,
+    )
+    assert verified.artifact.outcome_data_used is False
+    assert verified.artifact.question_bank_source_id is None
+    assert tuple(item.observation_id for item in verified.artifact.observations) == (
+        tuple(sorted(item.observation_id for item in verified.artifact.observations))
+    )
+
+
+def test_direct_target_response_variant_cannot_be_relabelled() -> None:
+    with pytest.raises(ValueError, match="declared canonical V3.6 variant"):
+        compile_v4_3_direct_target_responses(
+            repository_root=ROOT,
+            mapping_library_path=ROOT / BEST_CURRENT_COMPILED_PATH,
+            mapping_source_library_path=ROOT / BEST_CURRENT_SOURCE_PATH,
+            variant="less_contaminated",
+        )
+
+
+def _rank_record(
+    ordinal: int,
+    *,
+    net: float,
+    contradictions: int,
+    detailed: float,
+    core: float,
+    duration_microseconds: int,
+) -> V43MinimalScoreRecordV1:
+    start = datetime(2000, 1, 1, tzinfo=UTC) + timedelta(seconds=ordinal)
+    evidence = max(net, 0.0)
+    contradiction_bits = evidence - net
+    return V43MinimalScoreRecordV1(
+        input_ordinal=ordinal,
+        state_id=f"state-{ordinal:03d}",
+        candidate_record_sha256=f"{ordinal + 1:064x}",
+        utc_start=start,
+        utc_end_exclusive=start + timedelta(microseconds=duration_microseconds),
+        stable_duration_microseconds=duration_microseconds,
+        evidence_rubric_bits=evidence,
+        contradiction_rubric_bits=contradiction_bits,
+        net_information=net,
+        meaningful_contradictions=contradictions,
+        detailed_support=detailed,
+        core_fit=core,
+        unresolved_observation_count=0,
+    )
+
+
+def test_sqlite_external_rank_is_exactly_python_tuple_equivalent(
+    tmp_path: Path,
+) -> None:
+    records = (
+        _rank_record(
+            0,
+            net=0.0,
+            contradictions=0,
+            detailed=50.0,
+            core=80.0,
+            duration_microseconds=6_000_000_000_000_000,
+        ),
+        _rank_record(
+            1,
+            net=-0.0,
+            contradictions=0,
+            detailed=50.0,
+            core=80.0,
+            duration_microseconds=6_000_000_000_000_000,
+        ),
+        _rank_record(
+            2,
+            net=math.nextafter(1.0, 2.0),
+            contradictions=2,
+            detailed=1.0,
+            core=1.0,
+            duration_microseconds=1,
+        ),
+        _rank_record(
+            3,
+            net=1.0,
+            contradictions=0,
+            detailed=100.0,
+            core=100.0,
+            duration_microseconds=2,
+        ),
+        _rank_record(
+            4,
+            net=1.0,
+            contradictions=0,
+            detailed=math.nextafter(100.0, 0.0),
+            core=100.0,
+            duration_microseconds=3,
+        ),
+    )
+    store = V43ExternalRankStore(tmp_path / "rank.sqlite3")
+    try:
+        for record in records:
+            store.append(record)
+        store.finish()
+        actual = tuple(store.iter_ranked())
+    finally:
+        store.close()
+    expected_order = tuple(
+        sorted(records, key=lambda item: (item.substantive_rank_key, item.display_key))
+    )
+    assert tuple(item.score for item in actual) == expected_order
+    for index, ranked in enumerate(actual):
+        tied = tuple(
+            item
+            for item in expected_order
+            if item.substantive_rank_key == ranked.score.substantive_rank_key
+        )
+        expected_start = expected_order.index(tied[0]) + 1
+        assert ranked.rank_start == expected_start
+        assert ranked.rank_end == expected_start + len(tied) - 1
+        assert ranked.midrank_numerator == ranked.rank_start + ranked.rank_end
+        assert ranked.score == expected_order[index]
+
+    verifier_store = V43ExternalRankStore(tmp_path / "verify-rank.sqlite3")
+    for record in reversed(expected_order):
+        verifier_store.append_unordered_for_verification(record)
+    verifier_store.finish_unordered_for_verification()
+    assert tuple(verifier_store.iter_input_order()) == records
+    verifier_store.close()
+
+
+def _phase4_kwargs(real_harness: _RealPrevalenceHarness) -> dict[str, object]:
+    return {
+        "repository_root": ROOT,
+        "cache_directory": real_harness.cache_directory,
+        "trust_lock_path": real_harness.trust_lock_path,
+        "mapping_library_path": MAPPING,
+        "mapping_source_library_path": MAPPING_SOURCE,
+        "prevalence_plan_path": real_harness.plan_path,
+        "prevalence_artifact_path": real_harness.artifact_path,
+        "response_artifact_path": ROOT / BEST_CURRENT_RESPONSE_PATH,
+    }
+
+
+def test_phase4_run_and_verifier_are_cache_only_and_complete(
+    real_harness: _RealPrevalenceHarness,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    import hdmatch.cli as cli
+
+    monkeypatch.setattr(
+        cli,
+        "ExactChartAdapter",
+        lambda *args, **kwargs: pytest.fail("Phase-4 invoked astronomy"),
+    )
+    output = tmp_path / "run"
+    assert cli.main(
+        [
+            "run-v4-3-cache",
+            "--repository-root",
+            str(ROOT),
+            "--cache",
+            str(real_harness.cache_directory),
+            "--trust-lock",
+            str(real_harness.trust_lock_path),
+            "--mapping-library",
+            str(MAPPING),
+            "--mapping-source-library",
+            str(MAPPING_SOURCE),
+            "--prevalence-plan",
+            str(real_harness.plan_path),
+            "--prevalence-artifact",
+            str(real_harness.artifact_path),
+            "--responses",
+            str(ROOT / BEST_CURRENT_RESPONSE_PATH),
+            "--output",
+            str(output),
+            "--detail-limit",
+            "1",
+        ]
+    ) == 0
+    verified = verify_v4_3_run(
+        output,
+        **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
+    )
+    assert verified.manifest.run_status == "complete"
+    assert verified.manifest.compliance is not None
+    assert verified.manifest.compliance.v4_3_compliant is True
+    assert verified.manifest.successfully_scored_count == (
+        real_harness.verified_cache.manifest.interval_count
+    )
+    assert (output / "ranked-scores.parquet.zst").is_file()
+    assert not (output / ".rank.sqlite3").exists()
+    assert verified.manifest_path.is_file()
+
+
+def test_phase4_preflight_mismatch_fails_before_scoring(
+    real_harness: _RealPrevalenceHarness,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    from hdmatch.model.v4_3.integration import CanonicalV43ScoringSession
+
+    tampered = tmp_path / "responses.json"
+    payload = json.loads((ROOT / BEST_CURRENT_RESPONSE_PATH).read_bytes())
+    payload["mapping_library_sha256"] = "0" * 64
+    tampered.write_bytes(canonical_json_bytes(payload))
+    monkeypatch.setattr(
+        CanonicalV43ScoringSession,
+        "stream_verified_universe",
+        lambda *args, **kwargs: pytest.fail("scoring began before preflight completed"),
+    )
+    kwargs = _phase4_kwargs(real_harness)
+    kwargs["response_artifact_path"] = tampered
+    with pytest.raises(ValueError):
+        run_verified_v4_3_cache(
+            output_directory=tmp_path / "must-not-exist",
+            **kwargs,  # type: ignore[arg-type]
+        )
+    assert not (tmp_path / "must-not-exist").exists()
+
+
+def test_phase4_storage_failure_publishes_noncompliant_failure_package(
+    real_harness: _RealPrevalenceHarness,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    original = V43ExternalRankStore.append
+    calls = 0
+
+    def fail_second_append(
+        store: V43ExternalRankStore,
+        record: V43MinimalScoreRecordV1,
+    ) -> None:
+        nonlocal calls
+        if calls == 1:
+            raise OSError("deterministic injected storage failure")
+        calls += 1
+        original(store, record)
+
+    monkeypatch.setattr(V43ExternalRankStore, "append", fail_second_append)
+    output = tmp_path / "failed-run"
+    with pytest.raises(V43RunFailedError) as raised:
+        run_verified_v4_3_cache(
+            output_directory=output,
+            **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
+        )
+    assert raised.value.failure.stage == "score-store-write"
+    assert raised.value.failure.successfully_scored_count == 1
+    manifest = json.loads((output / "manifest.json").read_bytes())
+    assert manifest["run_status"] == "failed"
+    assert manifest["compliance"] is None
+    assert manifest["ranked_artifact"] is None
+    assert json.loads((output / "failure.json").read_bytes())["state_id"]
+    monkeypatch.undo()
+    verified = verify_v4_3_run(
+        output,
+        **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
+    )
+    assert verified.manifest.run_status == "failed"
+
+
+def test_phase4_evaluation_failure_records_exact_unscored_row(
+    real_harness: _RealPrevalenceHarness,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    from hdmatch.model.v4_3.integration import CanonicalV43ScoringSession
+
+    original = CanonicalV43ScoringSession._score_bound_candidate
+    calls = 0
+
+    def fail_second_evaluation(
+        session: CanonicalV43ScoringSession,
+        *args: object,
+        **kwargs: object,
+    ) -> object:
+        nonlocal calls
+        if calls == 1:
+            raise RuntimeError("deterministic injected evaluation failure")
+        calls += 1
+        return original(session, *args, **kwargs)  # type: ignore[arg-type]
+
+    monkeypatch.setattr(
+        CanonicalV43ScoringSession,
+        "_score_bound_candidate",
+        fail_second_evaluation,
+    )
+    output = tmp_path / "failed-evaluation-run"
+    with pytest.raises(V43RunFailedError) as raised:
+        run_verified_v4_3_cache(
+            output_directory=output,
+            **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
+        )
+    failure = raised.value.failure
+    assert failure.stage == "evaluation"
+    assert failure.input_ordinal == 1
+    assert failure.successfully_scored_count == 1
+    assert failure.state_id is not None
+    assert failure.candidate_record_sha256 is not None
+    monkeypatch.undo()
+    assert verify_v4_3_run(
+        output,
+        **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
+    ).manifest.run_status == "failed"
+
+
+def test_prevalence_cli_build_and_verify_use_only_verified_cache(
+    real_harness: _RealPrevalenceHarness,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    import hdmatch.cli as cli
+
+    monkeypatch.setattr(
+        cli,
+        "ExactChartAdapter",
+        lambda *args, **kwargs: pytest.fail("prevalence CLI invoked astronomy"),
+    )
+    plan = tmp_path / "cli-plan.json"
+    artifact = tmp_path / "cli-artifact.json"
+    common = [
+        "--repository-root",
+        str(ROOT),
+        "--cache",
+        str(real_harness.cache_directory),
+        "--trust-lock",
+        str(real_harness.trust_lock_path),
+        "--mapping-library",
+        str(MAPPING),
+        "--mapping-source-library",
+        str(MAPPING_SOURCE),
+    ]
+    assert cli.main(
+        [
+            "build-v4-3-prevalence",
+            *common,
+            "--plan-output",
+            str(plan),
+            "--artifact-output",
+            str(artifact),
+        ]
+    ) == 0
+    assert cli.main(
+        [
+            "verify-v4-3-prevalence",
+            *common,
+            "--plan",
+            str(plan),
+            "--artifact",
+            str(artifact),
+        ]
+    ) == 0
 
 
 def test_global_prevalence_is_duration_weighted_not_row_weighted(

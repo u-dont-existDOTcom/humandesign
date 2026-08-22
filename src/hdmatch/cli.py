@@ -81,6 +81,19 @@ from hdmatch.human import (
     symbolic_reference,
 )
 from hdmatch.model import compile_mapping_artifacts
+from hdmatch.model.v4_3_prevalence import (
+    build_v4_3_prevalence_artifact,
+    derive_v4_3_prevalence_plan,
+    verify_v4_3_prevalence_artifact,
+    write_v4_3_prevalence_artifact_new,
+    write_v4_3_prevalence_plan_new,
+)
+from hdmatch.model.v4_3_profile_mapping import (
+    BEST_CURRENT_COMPILED_PATH,
+    BEST_CURRENT_SOURCE_PATH,
+)
+from hdmatch.model.v4_3_responses import BEST_CURRENT_RESPONSE_PATH
+from hdmatch.model.v4_3_run import run_verified_v4_3_cache, verify_v4_3_run
 from hdmatch.model_b.compiler import compile_model_b_artifacts
 from hdmatch.model_b.mapping_library import FrozenModelB
 from hdmatch.model_b_v2_new import (
@@ -139,6 +152,12 @@ DEFAULT_CENTURY_CACHE_TRUST_LOCK = (
     ROOT / "data" / "century_cache" / "v1.trust-lock.json"
 )
 DEFAULT_CENTURY_CACHE_LOCATOR = "data/century_cache/v1"
+DEFAULT_V43_MAPPING_LIBRARY = ROOT / BEST_CURRENT_COMPILED_PATH
+DEFAULT_V43_MAPPING_SOURCE_LIBRARY = ROOT / BEST_CURRENT_SOURCE_PATH
+DEFAULT_V43_RESPONSE_ARTIFACT = ROOT / BEST_CURRENT_RESPONSE_PATH
+DEFAULT_V43_PREVALENCE_DIRECTORY = ROOT / "data" / "v4_3_prevalence" / "best-current"
+DEFAULT_V43_PREVALENCE_PLAN = DEFAULT_V43_PREVALENCE_DIRECTORY / "plan.json"
+DEFAULT_V43_PREVALENCE_ARTIFACT = DEFAULT_V43_PREVALENCE_DIRECTORY / "artifact.json"
 
 
 def _command_validate_engine(args: argparse.Namespace) -> int:
@@ -334,6 +353,129 @@ def _command_verify_century_cache(args: argparse.Namespace) -> int:
                     verified.manifest.logical_universe_sha256
                 ),
                 "status": verified.manifest.verification_status,
+            },
+            sort_keys=True,
+        )
+    )
+    return 0
+
+
+def _v4_3_mapping_kwargs(args: argparse.Namespace) -> dict[str, str]:
+    return {
+        "mapping_library_path": str(args.mapping_library),
+        "mapping_source_library_path": str(args.mapping_source_library),
+        "mapping_repository_root": str(args.repository_root),
+    }
+
+
+def _command_build_v4_3_prevalence(args: argparse.Namespace) -> int:
+    mapping_kwargs = _v4_3_mapping_kwargs(args)
+    plan = derive_v4_3_prevalence_plan(
+        args.cache,
+        trust_lock_path=args.trust_lock,
+        **mapping_kwargs,
+    )
+    plan_path = write_v4_3_prevalence_plan_new(args.plan_output, plan)
+    artifact = build_v4_3_prevalence_artifact(
+        args.cache,
+        trust_lock_path=args.trust_lock,
+        prevalence_plan_path=plan_path,
+        **mapping_kwargs,
+    )
+    artifact_path = write_v4_3_prevalence_artifact_new(
+        args.artifact_output,
+        artifact,
+    )
+    provider = verify_v4_3_prevalence_artifact(
+        artifact_path,
+        cache_directory=args.cache,
+        trust_lock_path=args.trust_lock,
+        prevalence_plan_path=plan_path,
+        **mapping_kwargs,
+    )
+    print(
+        json.dumps(
+            {
+                "artifact_sha256": provider.provenance.artifact_sha256,
+                "logical_universe_sha256": provider.provenance.universe_sha256,
+                "plan_sha256": provider.provenance.plan_sha256,
+                "status": "verified",
+            },
+            sort_keys=True,
+        )
+    )
+    return 0
+
+
+def _command_verify_v4_3_prevalence(args: argparse.Namespace) -> int:
+    provider = verify_v4_3_prevalence_artifact(
+        args.artifact,
+        cache_directory=args.cache,
+        trust_lock_path=args.trust_lock,
+        prevalence_plan_path=args.plan,
+        **_v4_3_mapping_kwargs(args),
+    )
+    print(
+        json.dumps(
+            {
+                "anchor_count": len(provider.provenance.anchor_ids),
+                "artifact_sha256": provider.provenance.artifact_sha256,
+                "logical_universe_sha256": provider.provenance.universe_sha256,
+                "status": "verified",
+            },
+            sort_keys=True,
+        )
+    )
+    return 0
+
+
+def _v4_3_run_kwargs(args: argparse.Namespace) -> dict[str, str]:
+    return {
+        "repository_root": str(args.repository_root),
+        "cache_directory": str(args.cache),
+        "trust_lock_path": str(args.trust_lock),
+        "mapping_library_path": str(args.mapping_library),
+        "mapping_source_library_path": str(args.mapping_source_library),
+        "prevalence_plan_path": str(args.prevalence_plan),
+        "prevalence_artifact_path": str(args.prevalence_artifact),
+        "response_artifact_path": str(args.responses),
+    }
+
+
+def _command_run_v4_3_cache(args: argparse.Namespace) -> int:
+    verified = run_verified_v4_3_cache(
+        output_directory=args.output,
+        detail_limit=args.detail_limit,
+        **_v4_3_run_kwargs(args),
+    )
+    print(
+        json.dumps(
+            {
+                "manifest_sha256": verified.manifest_sha256,
+                "ranked_row_count": verified.manifest.successfully_scored_count,
+                "run_status": verified.manifest.run_status,
+                "v4_3_compliant": bool(
+                    verified.manifest.compliance
+                    and verified.manifest.compliance.v4_3_compliant
+                ),
+            },
+            sort_keys=True,
+        )
+    )
+    return 0
+
+
+def _command_verify_v4_3_run(args: argparse.Namespace) -> int:
+    verified = verify_v4_3_run(
+        args.run_directory,
+        **_v4_3_run_kwargs(args),
+    )
+    print(
+        json.dumps(
+            {
+                "manifest_sha256": verified.manifest_sha256,
+                "run_status": verified.manifest.run_status,
+                "status": "verified",
             },
             sort_keys=True,
         )
@@ -1554,6 +1696,29 @@ def _add_century_assembly_arguments(parser: argparse.ArgumentParser) -> None:
     _add_century_engine_arguments(parser)
 
 
+def _add_v4_3_cache_only_inputs(parser: argparse.ArgumentParser) -> None:
+    """Add verified-artifact inputs only; never expose an astronomy callback."""
+
+    parser.add_argument("--repository-root", default=str(ROOT))
+    parser.add_argument("--cache", default=str(DEFAULT_CENTURY_CACHE_DIRECTORY))
+    parser.add_argument("--trust-lock", default=str(DEFAULT_CENTURY_CACHE_TRUST_LOCK))
+    parser.add_argument("--mapping-library", default=str(DEFAULT_V43_MAPPING_LIBRARY))
+    parser.add_argument(
+        "--mapping-source-library",
+        default=str(DEFAULT_V43_MAPPING_SOURCE_LIBRARY),
+    )
+
+
+def _add_v4_3_run_inputs(parser: argparse.ArgumentParser) -> None:
+    _add_v4_3_cache_only_inputs(parser)
+    parser.add_argument("--prevalence-plan", default=str(DEFAULT_V43_PREVALENCE_PLAN))
+    parser.add_argument(
+        "--prevalence-artifact",
+        default=str(DEFAULT_V43_PREVALENCE_ARTIFACT),
+    )
+    parser.add_argument("--responses", default=str(DEFAULT_V43_RESPONSE_ARTIFACT))
+
+
 def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="hdmatch",
@@ -1653,6 +1818,50 @@ def _parser() -> argparse.ArgumentParser:
         default=str(DEFAULT_CENTURY_CACHE_TRUST_LOCK),
     )
     verify_century.set_defaults(handler=_command_verify_century_cache)
+
+    build_prevalence = subparsers.add_parser(
+        "build-v4-3-prevalence",
+        help="build duration-weighted prevalence from a verified exact-state cache",
+    )
+    _add_v4_3_cache_only_inputs(build_prevalence)
+    build_prevalence.add_argument(
+        "--plan-output",
+        default=str(DEFAULT_V43_PREVALENCE_PLAN),
+    )
+    build_prevalence.add_argument(
+        "--artifact-output",
+        default=str(DEFAULT_V43_PREVALENCE_ARTIFACT),
+    )
+    build_prevalence.set_defaults(handler=_command_build_v4_3_prevalence)
+
+    verify_prevalence = subparsers.add_parser(
+        "verify-v4-3-prevalence",
+        help="replay and verify a cache-bound V4.3 prevalence artifact",
+    )
+    _add_v4_3_cache_only_inputs(verify_prevalence)
+    verify_prevalence.add_argument("--plan", default=str(DEFAULT_V43_PREVALENCE_PLAN))
+    verify_prevalence.add_argument(
+        "--artifact",
+        default=str(DEFAULT_V43_PREVALENCE_ARTIFACT),
+    )
+    verify_prevalence.set_defaults(handler=_command_verify_v4_3_prevalence)
+
+    run_v4_3 = subparsers.add_parser(
+        "run-v4-3-cache",
+        help="score and rank the complete verified cache without astronomy",
+    )
+    _add_v4_3_run_inputs(run_v4_3)
+    run_v4_3.add_argument("--output", required=True)
+    run_v4_3.add_argument("--detail-limit", type=int, default=100)
+    run_v4_3.set_defaults(handler=_command_run_v4_3_cache)
+
+    verify_v4_3 = subparsers.add_parser(
+        "verify-v4-3-run",
+        help="recompute cache-only scores/ranks and verify a Phase-4 run",
+    )
+    _add_v4_3_run_inputs(verify_v4_3)
+    verify_v4_3.add_argument("run_directory")
+    verify_v4_3.set_defaults(handler=_command_verify_v4_3_run)
 
     generate = subparsers.add_parser("generate-blind", help="generate and seal blind cases")
     generate.add_argument("--config", required=True)

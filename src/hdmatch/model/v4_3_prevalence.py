@@ -579,6 +579,7 @@ class VerifiedV43ConditionalPrevalence:
         "_cache",
         "_cell_index",
         "_membership_iterator",
+        "_membership_mode",
         "_pending_membership",
         "_provider_token",
         "_token",
@@ -605,6 +606,7 @@ class VerifiedV43ConditionalPrevalence:
             for cell in table.cells
         }
         self._membership_iterator = iter_verified_century_cache_rows(cache)
+        self._membership_mode: str | None = None
         self._pending_membership: CenturyStateRecord | None = None
         self._provider_token = object()
         self._token = _token
@@ -679,6 +681,12 @@ class VerifiedV43ConditionalPrevalence:
                 raise V43PrevalenceError("candidate member belongs to another provider")
             member = record
         elif isinstance(record, CenturyStateRecord):
+            if self._membership_mode is None:
+                self._membership_mode = "individual"
+            elif self._membership_mode != "individual":
+                raise V43PrevalenceError(
+                    "candidate membership modes cannot be mixed"
+                )
             member = self._bind_next_verified_cache_row(record)
         else:
             raise V43PrevalenceError(
@@ -702,6 +710,38 @@ class VerifiedV43ConditionalPrevalence:
             if actual != expected:
                 raise V43PrevalenceError(f"{label} mismatch")
         return V43BoundCandidateRecord(member, _token=_CACHE_MEMBER_TOKEN)
+
+    def iter_bound_candidate_records(
+        self,
+        *,
+        cache_manifest_sha256: str,
+        mapping_library_sha256: str,
+    ) -> Iterator[tuple[CenturyStateRecord, V43BoundCandidateRecord]]:
+        """Stream each replay-verified row with its nominal provider capability once."""
+
+        source = self._artifact.source
+        if cache_manifest_sha256 != source.cache_manifest_sha256:
+            raise V43PrevalenceError("requested cache manifest mismatch")
+        if mapping_library_sha256 != source.mapping_library_sha256:
+            raise V43PrevalenceError("requested mapping library mismatch")
+        if self._membership_mode is not None:
+            raise V43PrevalenceError(
+                "verified candidate stream is single-use and cannot mix membership modes"
+            )
+        self._membership_mode = "stream"
+        for record in self._membership_iterator:
+            member = _VerifiedCacheMember(
+                record=record,
+                cache_manifest_sha256=source.cache_manifest_sha256,
+                universe_sha256=source.logical_universe_sha256,
+                mapping_library_sha256=source.mapping_library_sha256,
+                provider_token=self._provider_token,
+                _token=_CACHE_MEMBER_TOKEN,
+            )
+            yield record, V43BoundCandidateRecord(
+                member,
+                _token=_CACHE_MEMBER_TOKEN,
+            )
 
     def _bind_next_verified_cache_row(
         self,

@@ -39,6 +39,7 @@ from hdmatch.model.v4_3.integration import (
     CanonicalV43ScoringSession,
     V43IntegrationError,
     V43ObservedResponse,
+    V43UniverseStreamError,
     evaluate_mapping_library_v2,
 )
 from hdmatch.model.v4_3.ranking import (
@@ -105,6 +106,7 @@ __all__ = [
     "V43IntervalRanking",
     "V43ScoringInput",
     "V43ObservedResponse",
+    "V43UniverseStreamError",
     "assess_v4_3_compliance",
     "effective_confidence",
     "evaluate_mapping_library_v2",

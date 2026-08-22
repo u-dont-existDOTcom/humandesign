@@ -8,7 +8,9 @@ the same mapping and exact universe.  It never accepts compliance booleans.
 
 from __future__ import annotations
 
+import hashlib
 from collections import defaultdict
+from collections.abc import Generator
 from dataclasses import dataclass, field, replace
 from pathlib import Path
 from typing import Final, cast
@@ -17,9 +19,9 @@ from pydantic import JsonValue
 
 from hdmatch.century_cache.models import CenturyStateRecord, VerifiedCenturyCache
 from hdmatch.century_cache.store import (
-    iter_verified_century_cache_rows,
     verify_century_cache_against_trust_lock,
 )
+from hdmatch.century_cache.streaming import canonical_row_json_line
 from hdmatch.century_cache.trust_lock import (
     CenturyCacheTrustLockV1,
     load_century_cache_trust_lock,
@@ -132,6 +134,28 @@ class V43IntegrationError(RuntimeError):
     """A canonical adapter identity, coverage, or predicate invariant failed."""
 
 
+class V43UniverseStreamError(V43IntegrationError):
+    """One exact provider-owned cache row failed canonical evaluation."""
+
+    def __init__(
+        self,
+        *,
+        input_ordinal: int,
+        state_id: str,
+        candidate_record_sha256: str,
+        cause: Exception,
+    ) -> None:
+        self.input_ordinal = input_ordinal
+        self.state_id = state_id
+        self.candidate_record_sha256 = candidate_record_sha256
+        self.cause_type = type(cause).__name__
+        self.cause_message = str(cause)
+        super().__init__(
+            f"canonical evaluation failed at row {input_ordinal} "
+            f"({state_id}): {self.cause_type}: {self.cause_message}"
+        )
+
+
 @dataclass(frozen=True, slots=True)
 class V43ObservedResponse:
     observation_id: str
@@ -190,6 +214,9 @@ class CanonicalV43ScoringSession:
         "_library",
         "_prevalence",
         "_response_set_sha256",
+        "_streamed_candidate_count",
+        "_streamed_rows_sha256",
+        "_streaming_phase",
         "_trust_lock",
         "_trust_lock_path",
         "_token",
@@ -215,6 +242,9 @@ class CanonicalV43ScoringSession:
         self._trust_lock_path = trust_lock_path
         self._prevalence = prevalence
         self._response_set_sha256: str | None = None
+        self._streamed_candidate_count = 0
+        self._streamed_rows_sha256: str | None = None
+        self._streaming_phase = "ready"
         self.bindings = bindings
         self._token = _token
 
@@ -273,19 +303,95 @@ class CanonicalV43ScoringSession:
         candidate: CenturyStateRecord,
         responses: tuple[V43ObservedResponse, ...],
     ) -> CanonicalV43CandidateEvaluation:
+        """Score one verified row for bounded inspection, without a universe claim."""
+
+        if self._streaming_phase == "ready":
+            self._streaming_phase = "individual"
+        elif self._streaming_phase != "individual":
+            raise V43IntegrationError(
+                "individual scoring cannot mix with the canonical universe stream"
+            )
         _require_unchanged(
             self._cache,
             self._trust_lock_path,
             self.bindings.cache_trust_lock_sha256,
         )
         self._require_current_provider_bindings()
-        record_hash = sha256_json(candidate.model_dump(mode="json"))
-        _verify_record_cache_bindings(candidate, self._cache)
         binding = self._prevalence.bind_candidate_record(
             candidate,
             cache_manifest_sha256=self.bindings.cache_manifest_sha256,
             mapping_library_sha256=self.bindings.mapping_library_sha256,
         )
+        return self._score_bound_candidate(candidate, binding, responses)
+
+    def stream_verified_universe(
+        self,
+        responses: tuple[V43ObservedResponse, ...],
+    ) -> Generator[CanonicalV43CandidateEvaluation, None, None]:
+        """Own the single ordered score pass over every provider-verified cache row."""
+
+        if self._streaming_phase != "ready":
+            raise V43IntegrationError(
+                "canonical verified-universe scoring is single-use"
+            )
+        _require_unchanged(
+            self._cache,
+            self._trust_lock_path,
+            self.bindings.cache_trust_lock_sha256,
+        )
+        self._require_current_provider_bindings()
+        self._streaming_phase = "streaming"
+        digest = hashlib.sha256()
+        count = 0
+        completed = False
+        try:
+            for candidate, binding in self._prevalence.iter_bound_candidate_records(
+                cache_manifest_sha256=self.bindings.cache_manifest_sha256,
+                mapping_library_sha256=self.bindings.mapping_library_sha256,
+            ):
+                digest.update(canonical_row_json_line(candidate))
+                try:
+                    evaluation = self._score_bound_candidate(
+                        candidate,
+                        binding,
+                        responses,
+                    )
+                except Exception as exc:
+                    raise V43UniverseStreamError(
+                        input_ordinal=count,
+                        state_id=candidate.state_id,
+                        candidate_record_sha256=sha256_json(
+                            candidate.model_dump(mode="json")
+                        ),
+                        cause=exc,
+                    ) from exc
+                count += 1
+                yield evaluation
+            if count != self._cache.manifest.interval_count:
+                raise V43IntegrationError(
+                    "canonical score stream did not cover the declared interval count"
+                )
+            rows_sha256 = digest.hexdigest()
+            if rows_sha256 != self._cache.manifest.logical_universe_sha256:
+                raise V43IntegrationError(
+                    "canonical score stream changed cache row order or content"
+                )
+            self._streamed_candidate_count = count
+            self._streamed_rows_sha256 = rows_sha256
+            self._streaming_phase = "streamed"
+            completed = True
+        finally:
+            if not completed and self._streaming_phase == "streaming":
+                self._streaming_phase = "failed"
+
+    def _score_bound_candidate(
+        self,
+        candidate: CenturyStateRecord,
+        binding: ConditionalPrevalenceCandidateBindingLike,
+        responses: tuple[V43ObservedResponse, ...],
+    ) -> CanonicalV43CandidateEvaluation:
+        record_hash = sha256_json(candidate.model_dump(mode="json"))
+        _verify_record_cache_bindings(candidate, self._cache)
         _verify_candidate_binding(
             binding,
             candidate=candidate,
@@ -333,11 +439,10 @@ class CanonicalV43ScoringSession:
         object.__setattr__(evaluation, "_mint_token", _SESSION_TOKEN)
         return evaluation
 
-    def require_complete_universe_compliance(
+    def require_streamed_universe_compliance(
         self,
-        evaluations: tuple[CanonicalV43CandidateEvaluation, ...],
     ) -> CanonicalV43CompleteUniverseResult:
-        """Mint compliance only after every exact cache row was scored once, in order."""
+        """Mint compliance only after the owned exact ordered stream completed."""
 
         _require_unchanged(
             self._cache,
@@ -345,29 +450,16 @@ class CanonicalV43ScoringSession:
             self.bindings.cache_trust_lock_sha256,
         )
         self._require_current_provider_bindings()
-        if len(evaluations) != self._cache.manifest.interval_count:
+        if self._streaming_phase != "streamed":
             raise V43IntegrationError("complete declared universe was not rescored")
-        if any(item._mint_token is not _SESSION_TOKEN for item in evaluations):
+        if self._streamed_candidate_count != self._cache.manifest.interval_count:
+            raise V43IntegrationError("complete declared universe count changed")
+        if self._streamed_rows_sha256 != self._cache.manifest.logical_universe_sha256:
             raise V43IntegrationError(
-                "candidate evaluation was not minted by the canonical scoring session"
+                "complete declared universe row identity changed"
             )
-        if self._response_set_sha256 is None or any(
-            item.response_set_sha256 != self._response_set_sha256 for item in evaluations
-        ):
-            raise V43IntegrationError("complete-universe response-set identity mismatch")
-        if any(item.bindings != self.bindings for item in evaluations):
-            raise V43IntegrationError("candidate evaluation artifact bindings differ")
-        observed = tuple(
-            (item.state_id, item.candidate_record_sha256) for item in evaluations
-        )
-        expected = tuple(
-            (row.state_id, sha256_json(row.model_dump(mode="json")))
-            for row in iter_verified_century_cache_rows(self._cache)
-        )
-        if observed != expected:
-            raise V43IntegrationError(
-                "scored record identities/order differ from the verified complete universe"
-            )
+        if self._response_set_sha256 is None:
+            raise V43IntegrationError("complete-universe response-set identity is missing")
         required = frozenset(
             item.value for item in self._library.required_feature_registry.feature_ids
         )
@@ -382,7 +474,7 @@ class CanonicalV43ScoringSession:
         )
         return CanonicalV43CompleteUniverseResult(
             compliance=compliance,
-            scored_candidate_count=len(evaluations),
+            scored_candidate_count=self._streamed_candidate_count,
             logical_universe_sha256=self._cache.manifest.logical_universe_sha256,
             response_set_sha256=self._response_set_sha256,
             bindings=self.bindings,
