@@ -10,7 +10,7 @@ from datetime import UTC, date, datetime
 from hashlib import sha256
 from pathlib import Path
 from types import MappingProxyType
-from typing import Any
+from typing import Any, Final
 
 from hdmatch.evaluation.behavioral_difference import VerifiedBehavioralDifferenceBinding
 from hdmatch.evaluation.leakage import assert_no_blind_leakage, assert_no_prediction_leakage
@@ -47,6 +47,48 @@ class RecoverySettings:
     aggregation: AggregationMode
     threshold_rubric_bits: float
     workers: int = 1
+
+
+# Ordinary known-month recovery may build a small number of reusable month
+# universes for engineering experiments. Requests at or beyond either limit
+# are operationally broad and must use the separately verified century-cache
+# workflow. ``calendar_year_span`` is the difference between the earliest and
+# latest requested calendar years (for example, 2000 through 2025 has span 25).
+ON_DEMAND_RECOVERY_MAX_CALENDAR_YEAR_SPAN_EXCLUSIVE: Final[int] = 25
+ON_DEMAND_RECOVERY_MAX_DISTINCT_MONTH_UNIVERSES: Final[int] = 120
+
+
+class BroadOnDemandRecoveryError(RuntimeError):
+    """Ordinary recovery attempted work reserved for the verified century cache."""
+
+
+def _guard_on_demand_recovery_scope(
+    cases: Sequence[BlindCase],
+) -> tuple[MonthRequest, ...]:
+    """Return month requests only when their scope is safe for on-demand builds."""
+
+    requests = tuple(
+        MonthRequest(case.known_birth_year, case.known_birth_month, case.iana_timezone)
+        for case in cases
+    )
+    distinct = frozenset(requests)
+    years = tuple(request.year for request in distinct)
+    calendar_year_span = max(years) - min(years)
+    if (
+        calendar_year_span
+        >= ON_DEMAND_RECOVERY_MAX_CALENDAR_YEAR_SPAN_EXCLUSIVE
+        or len(distinct) > ON_DEMAND_RECOVERY_MAX_DISTINCT_MONTH_UNIVERSES
+    ):
+        raise BroadOnDemandRecoveryError(
+            "broad on-demand recovery refused before cache generation or scoring: "
+            f"calendar-year span={calendar_year_span} "
+            f"(required <{ON_DEMAND_RECOVERY_MAX_CALENDAR_YEAR_SPAN_EXCLUSIVE}), "
+            f"distinct month universes={len(distinct)} "
+            f"(required <={ON_DEMAND_RECOVERY_MAX_DISTINCT_MONTH_UNIVERSES}); "
+            "use verified century-cache recovery, with the explicit rebuild workflow "
+            "only when rebuilding is intended"
+        )
+    return requests
 
 
 def _score_states(
@@ -510,6 +552,7 @@ def recover_blind_file(
     if not isinstance(raw_cases, list) or not raw_cases:
         raise ValueError("blind input contains no cases")
     cases = tuple(BlindCase.model_validate(item) for item in raw_cases)
+    requests = _guard_on_demand_recovery_scope(cases)
     bindings = {
         "model_sha256": model.model_sha256,
         "question_bank_sha256": model.question_bank_sha256,
@@ -583,10 +626,6 @@ def recover_blind_file(
         != engine.fingerprint
     ):
         raise ValueError("V2 behavioral-difference gate engine fingerprint is mismatched")
-    requests = tuple(
-        MonthRequest(case.known_birth_year, case.known_birth_month, case.iana_timezone)
-        for case in cases
-    )
     if model_b_v2_difference_gate is not None:
         audited_runtime_request = (
             model_b_v2_difference_gate.candidate_universe_request.to_runtime()

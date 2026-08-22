@@ -13,9 +13,13 @@ from hdmatch.experiments.canonical import write_new_canonical_json
 from hdmatch.experiments.freeze import FreezeRecord
 from hdmatch.model.mapping_library import PredicateOperator
 from hdmatch.runtime import recovery
-from hdmatch.runtime.recovery import RecoverySettings, recover_blind_file
+from hdmatch.runtime.recovery import (
+    BroadOnDemandRecoveryError,
+    RecoverySettings,
+    recover_blind_file,
+)
 from hdmatch.runtime.symbolic_adapter import FrozenSymbolicModel
-from hdmatch.schemas import Activation, CandidateState, ChartFeatures
+from hdmatch.schemas import Activation, BlindCase, CandidateState, ChartFeatures
 from hdmatch.search import AggregationMode
 from hdmatch.search.candidate_universe import split_interval_by_local_date
 from hdmatch.synthetic.noise import NoiseTier, noise_parameters_payload
@@ -131,6 +135,89 @@ def _blind_payload(
             }
         ],
     }
+
+
+def _blind_payload_for_months(
+    model: FrozenSymbolicModel,
+    months: tuple[tuple[int, int], ...],
+) -> dict[str, object]:
+    payload = _blind_payload(model)
+    template = payload["cases"]
+    assert isinstance(template, list)
+    base = template[0]
+    assert isinstance(base, dict)
+    payload["candidate_universe"] = "known_month"
+    payload["cases"] = [
+        {
+            **deepcopy(base),
+            "case_id": f"SCOPE-{index:04d}",
+            "known_birth_year": year,
+            "known_birth_month": month,
+            "candidate_universe": "known_month",
+        }
+        for index, (year, month) in enumerate(months, start=1)
+    ]
+    for case in payload["cases"]:
+        assert isinstance(case, dict)
+        case.pop("known_birth_day", None)
+    return payload
+
+
+@pytest.mark.parametrize(
+    ("months", "message"),
+    [
+        (((2000, 1), (2025, 1)), "calendar-year span=25"),
+        (
+            tuple((2000 + index // 12, index % 12 + 1) for index in range(121)),
+            "distinct month universes=121",
+        ),
+    ],
+)
+def test_broad_recovery_fails_before_adapter_cache_writes_or_scoring(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    months: tuple[tuple[int, int], ...],
+    message: str,
+) -> None:
+    model = FrozenSymbolicModel(ROOT / "mappings" / "mapping_library_v1.json")
+    blind_path = tmp_path / "blind.json"
+    cache_dir = tmp_path / "candidate-cache"
+    write_new_canonical_json(blind_path, _blind_payload_for_months(model, months))
+
+    def forbidden(*_args: object, **_kwargs: object) -> None:
+        pytest.fail("broad-scope rejection occurred after recovery work began")
+
+    monkeypatch.setattr(recovery, "ExactChartAdapter", forbidden)
+    monkeypatch.setattr(recovery, "ensure_month_caches", forbidden)
+    monkeypatch.setattr(recovery, "_score_states", forbidden)
+
+    with pytest.raises(BroadOnDemandRecoveryError, match=message):
+        recover_blind_file(
+            blind_path,
+            decoder_root=tmp_path,
+            model=model,
+            ephemeris_path=tmp_path / "ephemeris",
+            cache_dir=cache_dir,
+            settings=RecoverySettings(
+                aggregation=AggregationMode.DURATION_WEIGHTED_MEAN,
+                threshold_rubric_bits=0.0,
+            ),
+        )
+
+    assert not cache_dir.exists()
+
+
+def test_on_demand_recovery_scope_preserves_requests_below_both_limits() -> None:
+    model = FrozenSymbolicModel(ROOT / "mappings" / "mapping_library_v1.json")
+    months = tuple((2000 + index // 12, index % 12 + 1) for index in range(120))
+    payload = _blind_payload_for_months(model, months)
+    raw_cases = payload["cases"]
+    assert isinstance(raw_cases, list)
+    cases = tuple(BlindCase.model_validate(item) for item in raw_cases)
+
+    requests = recovery._guard_on_demand_recovery_scope(cases)
+
+    assert len(set(requests)) == 120
 
 
 def _recover_known_date(
