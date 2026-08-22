@@ -7,10 +7,12 @@ import json
 import secrets
 import stat
 from collections.abc import Sequence
+from dataclasses import asdict
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
+from hdmatch.chart import validate_production_engine
 from hdmatch.config import load_synthetic_config
 from hdmatch.evaluation.behavioral_difference import (
     VerifiedBehavioralDifferenceBinding,
@@ -76,6 +78,7 @@ from hdmatch.model_b_v2_new import (
     compile_model_b_v2_new,
     freeze_model_b_v2_new,
 )
+from hdmatch.provenance import verify_ephemeris_directory
 from hdmatch.runtime import (
     MODEL_A_ID,
     MODEL_B_ID,
@@ -104,6 +107,71 @@ from hdmatch.synthetic.sealing import (
 ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_MAPPING = ROOT / "mappings" / "mapping_library_v1.json"
 DEFAULT_MODEL_B_ARTIFACT = ROOT / "mappings" / "model_b_mapping_library_v1.json"
+DEFAULT_EPHEMERIS_SOURCE_MANIFEST = ROOT / "data" / "ephemeris" / "manifest.json"
+
+
+def _command_validate_engine(args: argparse.Namespace) -> int:
+    """Prove the canonical local Swiss-file engine without permitting fallback."""
+
+    ephemeris_path = Path(args.ephemeris_path)
+    verified_files = verify_ephemeris_directory(
+        source_manifest_path=args.source_manifest,
+        ephemeris_directory=ephemeris_path,
+    )
+    adapter = ExactChartAdapter(ephemeris_path)
+    validation = validate_production_engine(adapter.provider)
+    if validation.ephemeris_requested.value != "SWIEPH":
+        raise ValueError("production engine validation did not request SWIEPH")
+    if validation.ephemeris_returned.value != "SWIEPH":
+        raise ValueError("production engine validation did not return SWIEPH")
+
+    validation_payload = asdict(validation)
+    validation_payload.pop("ephemeris_path", None)
+    validation_payload["node_convention"] = adapter.provider.metadata.node_convention.value
+    validation_payload["files"] = [
+        {
+            "name": Path(record.path).name,
+            "sha256": record.sha256,
+            "size_bytes": record.size_bytes,
+        }
+        for record in validation.files
+    ]
+    software_commit, software_dirty = git_revision(ROOT)
+    receipt = {
+        "schema_version": "production-engine-validation-receipt-v1",
+        "validation_status": "pass",
+        "software_commit": software_commit,
+        "software_dirty": software_dirty,
+        "software_environment": capture_software_environment().model_dump(mode="json"),
+        "ephemeris_mode_argument": "SWIEPH",
+        "ephemeris_provenance": verified_files.manifest_binding(),
+        "engine_validation": validation_payload,
+        "claim_boundary": (
+            "astronomy-engine-phase-0-only-not-a-v4-3-cache-or-behavioral-result"
+        ),
+    }
+    output_arg = getattr(args, "output", None)
+    if output_arg:
+        output = write_new_canonical_json(output_arg, receipt)
+        print(f"engine validation receipt: {output}")
+        print(f"engine validation sha256: {sha256_file(output)}")
+    print(
+        json.dumps(
+            {
+                "validation_status": "pass",
+                "ephemeris_requested": validation.ephemeris_requested.value,
+                "ephemeris_returned": validation.ephemeris_returned.value,
+                "representative_calculations": len(validation.calculation_probes),
+                "design_roots": len(validation.design_root_probes),
+                "source_commit": verified_files.source_commit,
+                "ephemeris_file_set_sha256": (
+                    verified_files.ephemeris_file_set_sha256
+                ),
+            },
+            sort_keys=True,
+        )
+    )
+    return 0
 
 
 def _load_selected_model(args: argparse.Namespace) -> RuntimeSymbolicModel:
@@ -1283,6 +1351,23 @@ def _parser() -> argparse.ArgumentParser:
         ),
     )
     subparsers = parser.add_subparsers(dest="command", required=True)
+
+    validate_engine = subparsers.add_parser(
+        "validate-engine",
+        help="prove the pinned local Swiss-file engine and reject fallback",
+    )
+    validate_engine.add_argument(
+        "--ephemeris-mode",
+        choices=("swiss",),
+        default="swiss",
+    )
+    validate_engine.add_argument("--ephemeris-path", required=True)
+    validate_engine.add_argument(
+        "--source-manifest",
+        default=str(DEFAULT_EPHEMERIS_SOURCE_MANIFEST),
+    )
+    validate_engine.add_argument("--output")
+    validate_engine.set_defaults(handler=_command_validate_engine)
 
     generate = subparsers.add_parser("generate-blind", help="generate and seal blind cases")
     generate.add_argument("--config", required=True)

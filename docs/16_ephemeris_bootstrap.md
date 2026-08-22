@@ -69,6 +69,10 @@ if used_ephemeris != swe.FLG_SWIEPH:
 ```
 
 Implement this check in the engine wrapper, not only in a CLI probe.
+The Python binding used by this project does not expose `FLG_EPHMASK` on every
+supported version. In that case the wrapper constructs the exact mask as
+`FLG_JPLEPH | FLG_SWIEPH | FLG_MOSEPH`, verifies any exposed mask agrees, and
+still requires exact equality with `FLG_SWIEPH`.
 
 ## Validation probe
 
@@ -85,6 +89,21 @@ At minimum verify:
 - golden/reference chart tests pass.
 
 Node calculations must use the frozen true/mean convention and be validated independently even if their internal computation does not require the same `.se1` file path.
+
+Run the canonical probe with:
+
+```bash
+hdmatch validate-engine \
+  --ephemeris-mode swiss \
+  --ephemeris-path data/ephemeris \
+  --output /tmp/hdmatch-phase0-engine-validation.json
+```
+
+The receipt is path-free and binds the verified upstream commit, source-manifest
+hash, exact local file hashes, requested and returned modes/flags, 33
+representative direct calculations, deterministic Gate/Line derivation, and
+three exact Design-root checks. It is Phase 0 astronomy evidence, not a century
+cache or behavioral result.
 
 ## Cache rule
 

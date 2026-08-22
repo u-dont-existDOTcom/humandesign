@@ -18,6 +18,7 @@ from hdmatch.chart.ephemeris import (
     SwissEphemerisProvider,
 )
 from hdmatch.chart.rave_mandala import longitude_to_gate_line
+from hdmatch.cli import main
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 GOLDEN_PATH = Path(__file__).with_name("fixtures") / "swieph_phase0_golden_v1.json"
@@ -181,6 +182,42 @@ def test_joel_verified_natal_baseline_and_exact_design_root(
     assert {item.value for item in first.bodygraph.defined_centers} == {
         expected_centers[item] for item in baseline["defined_centers"]
     }
+
+
+def test_validate_engine_cli_writes_path_free_manifest_binding(
+    production_provider: SwissEphemerisProvider,
+    tmp_path: Path,
+) -> None:
+    ephemeris_directory = Path(production_provider.metadata.files[0].path).parent
+    output = tmp_path / "engine-validation.json"
+
+    result = main(
+        (
+            "validate-engine",
+            "--ephemeris-mode",
+            "swiss",
+            "--ephemeris-path",
+            str(ephemeris_directory),
+            "--source-manifest",
+            str(PROJECT_ROOT / "data" / "ephemeris" / "manifest.json"),
+            "--output",
+            str(output),
+        )
+    )
+
+    assert result == 0
+    receipt = _load_json(output)
+    assert receipt["validation_status"] == "pass"
+    assert receipt["ephemeris_mode_argument"] == "SWIEPH"
+    assert receipt["engine_validation"]["ephemeris_requested"] == "SWIEPH"
+    assert receipt["engine_validation"]["ephemeris_returned"] == "SWIEPH"
+    assert len(receipt["engine_validation"]["calculation_probes"]) == 33
+    assert len(receipt["engine_validation"]["design_root_probes"]) == 3
+    assert receipt["ephemeris_provenance"]["source_commit"] == (
+        "3fd0f956d73898b91cc4f67cf18b21af656d1342"
+    )
+    serialized = output.read_text(encoding="utf-8")
+    assert str(ephemeris_directory.resolve()) not in serialized
 
 
 class _MoshierFallbackSwiss:
