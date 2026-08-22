@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Literal, cast
 
 from hdmatch.api.models import (
     ActivationResponse,
@@ -113,7 +112,7 @@ def state_interval_record(
         BoundaryEventResponse(
             at_utc=event.at_utc,
             ephemeris_utc=event.ephemeris_utc,
-            side=cast(Literal["personality", "design"], event.side),
+            side=event.side,
             body=event.body,
             resolution=event.resolution.value,
             boundary_longitude=event.boundary_longitude,

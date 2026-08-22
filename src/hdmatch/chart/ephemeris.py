@@ -246,6 +246,45 @@ class SwissEphemerisProvider:
     def min_solar_speed_degrees_per_day(self) -> float:
         return _MIN_SOLAR_SPEED
 
+    def verify_declared_files_unchanged(self) -> None:
+        """Re-hash the declared file set and fail if bytes changed in place.
+
+        Construction-time hashes are provenance, not a permanent guarantee
+        about mutable local files.  Long-running production boundary builds
+        call this before and after enumeration so their evidence remains bound
+        to the exact bytes recorded in :attr:`metadata`.
+        """
+
+        for record in self._metadata.files:
+            path = Path(record.path)
+            if not path.is_file():
+                raise EphemerisConfigurationError(
+                    f"declared ephemeris file disappeared after initialization: {path}"
+                )
+            current_size = path.stat().st_size
+            current_sha256 = _sha256_file(path)
+            if current_size != record.size_bytes or current_sha256 != record.sha256:
+                raise EphemerisConfigurationError(
+                    f"declared ephemeris file changed after initialization: {path}"
+                )
+
+    def verify_production_configuration(self) -> None:
+        """Prove the static SWIEPH request and current declared-file binding.
+
+        This preflight complements, but does not replace, the exact returned
+        mask equality enforced inside every :meth:`position_with_provenance`
+        call.
+        """
+
+        requested_mode_bits = self._requested_flags & self._ephemeris_mask
+        expected = int(self._swe.FLG_SWIEPH)
+        if requested_mode_bits != expected:
+            raise EphemerisConfigurationError(
+                "production provider request mask is not exactly SWIEPH: "
+                f"requested mode bits={requested_mode_bits}, expected={expected}"
+            )
+        self.verify_declared_files_unchanged()
+
     def position(self, body: CelestialBody, at_utc: datetime) -> EclipticPosition:
         return self.position_with_provenance(body, at_utc).position
 

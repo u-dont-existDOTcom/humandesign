@@ -153,6 +153,115 @@ def solve_design_moment(
     )
 
 
+def solve_personality_moment_from_design(
+    provider: EphemerisProvider,
+    design_utc: datetime,
+    *,
+    target_arc_degrees: float = 88.0,
+    bracket_days_after: tuple[float, float] = (70.0, 110.0),
+    time_tolerance_seconds: float = 0.01,
+    arc_tolerance_degrees: float = 1e-8,
+    max_iterations: int = 96,
+) -> DesignMomentResult:
+    """Invert the exact Design relation to recover its Personality moment.
+
+    Boundary generation uses this inverse after finding a body Gate/Line
+    transition directly on the Design ephemeris timeline.  It is mathematically
+    equivalent to repeatedly solving Design time on the candidate-birth axis,
+    but requires one solar root per actual boundary instead of one per scan
+    sample.
+    """
+
+    design = _require_utc(design_utc)
+    near_days, far_days = bracket_days_after
+    if not (0.0 < near_days < far_days < 360.0):
+        raise ValueError("bracket days must satisfy 0 < near < far < 360")
+    if not (0.0 < target_arc_degrees < 180.0):
+        raise ValueError("target arc must be between 0 and 180 degrees")
+    if time_tolerance_seconds <= 0.0 or arc_tolerance_degrees <= 0.0:
+        raise ValueError("root tolerances must be positive")
+    if max_iterations < 1:
+        raise ValueError("max_iterations must be positive")
+
+    design_sun = provider.position(CelestialBody.SUN, design).longitude
+    near = design + timedelta(days=near_days)
+    far = design + timedelta(days=far_days)
+
+    def residual(at_utc: datetime) -> float:
+        longitude = provider.position(CelestialBody.SUN, at_utc).longitude
+        return (longitude - design_sun) % 360.0 - target_arc_degrees
+
+    near_residual = residual(near)
+    far_residual = residual(far)
+    if near_residual == 0.0:
+        return _result(
+            near,
+            design,
+            target_arc_degrees,
+            near_residual,
+            near,
+            far,
+            0,
+            time_tolerance_seconds,
+            arc_tolerance_degrees,
+        )
+    if far_residual == 0.0:
+        return _result(
+            far,
+            design,
+            target_arc_degrees,
+            far_residual,
+            near,
+            far,
+            0,
+            time_tolerance_seconds,
+            arc_tolerance_degrees,
+        )
+    if not (near_residual < 0.0 < far_residual):
+        raise DesignMomentError(
+            "inverse 88-degree Personality root is not bracketed by the declared window: "
+            f"near residual={near_residual:.12g}, far residual={far_residual:.12g}"
+        )
+
+    low_time, low_value = near, near_residual
+    high_time, high_value = far, far_residual
+    midpoint = low_time
+    midpoint_value = low_value
+    iterations = 0
+    for iteration in range(1, max_iterations + 1):
+        iterations = iteration
+        midpoint = low_time + (high_time - low_time) / 2
+        midpoint_value = residual(midpoint)
+        if (
+            abs(midpoint_value) <= arc_tolerance_degrees
+            and (high_time - low_time).total_seconds() <= time_tolerance_seconds
+        ):
+            break
+        if midpoint_value < 0.0:
+            low_time, low_value = midpoint, midpoint_value
+        else:
+            high_time, high_value = midpoint, midpoint_value
+    else:
+        raise DesignMomentError(
+            "inverse Personality root did not converge within max_iterations; "
+            f"last residual={midpoint_value:.12g} degrees"
+        )
+
+    if not math.isfinite(low_value + high_value + midpoint_value):
+        raise DesignMomentError("non-finite solar longitude encountered during inverse root solve")
+    return _result(
+        midpoint,
+        design,
+        target_arc_degrees,
+        midpoint_value,
+        near,
+        far,
+        iterations,
+        time_tolerance_seconds,
+        arc_tolerance_degrees,
+    )
+
+
 def _result(
     birth: datetime,
     design: datetime,
