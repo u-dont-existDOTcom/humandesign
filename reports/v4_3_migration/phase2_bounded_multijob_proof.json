@@ -1,0 +1,95 @@
+{
+  "boundary_audit": {
+    "audited_boundary_event_count": 19,
+    "gap_count": 0,
+    "maximality_violation_count": 0,
+    "missing_boundary_count": 0,
+    "overlap_count": 0,
+    "sha256": "0d1f6f000efb0860edd3b041e4bc71d0efc7e4a2326d78106f59c38111e8509d",
+    "status": "pass"
+  },
+  "cache": {
+    "interval_count": 20,
+    "logical_universe_sha256": "5dd48a851da45e81bca430bd7b35333d73d3894912644cd156c43feca3636db0",
+    "manifest_sha256": "14d40a3f58022685e539ece6583ac4483147fcdd331f7465a7e5a6ce061d20bd",
+    "required_feature_coverage": 1.0,
+    "shard_count": 1,
+    "shard_sha256": "faa58b055c3e23ce3eb1fce6848abfce27e24cebdb2da331eec309e9da92948d",
+    "trust_lock_sha256": "a3cf30cf393fe3f2e6dbb85547b5792538fb0b8cb24b1ba3f3914297879abb6b",
+    "verification_status": "pass"
+  },
+  "canonical_century_cache_status": "not_started",
+  "claim_boundary": "bounded-phase2-engineering-proof-not-a-century-cache-or-ranking",
+  "direct_equivalence": {
+    "cache_rows_sha256": "5dd48a851da45e81bca430bd7b35333d73d3894912644cd156c43feca3636db0",
+    "direct_exact_batch_provenance_sha256": "cac4b2fd8f9020c420ad584092cad89d2bc8859bf52391ebdf81093747bf27ed",
+    "direct_rows_sha256": "5dd48a851da45e81bca430bd7b35333d73d3894912644cd156c43feca3636db0",
+    "exact_row_equality": true,
+    "interval_count": 20,
+    "status": "pass"
+  },
+  "engine": {
+    "ephemeris_file_set_sha256": "f5644c27e3682b805ebdde58d593e5a53abfbaca1dc8c52f29f1cd06f2d5c401",
+    "ephemeris_requested": "SWIEPH",
+    "ephemeris_returned": "SWIEPH",
+    "phase0_engine_validation_sha256": "32a886fa94d307442f8597233288c74ef9102de02148b8ac7c95cec485fd0f7b",
+    "requested_flags": 258,
+    "returned_flags": 258,
+    "swieph_flag": 2
+  },
+  "jobs": [
+    {
+      "artifact_sha256": "faa58b055c3e23ce3eb1fce6848abfce27e24cebdb2da331eec309e9da92948d",
+      "calculation_call_count": 2889,
+      "core_utc_end_exclusive": "2000-01-01T00:00:00Z",
+      "core_utc_start": "1999-12-31T18:00:00Z",
+      "interval_count": 20,
+      "job_id": "utc-year-1999",
+      "receipt_sha256": "c8fc674d70482e6dea22cdd8a234ee196cc69df24e68217577d3a474beb5d322",
+      "scan_utc_end_exclusive": "2000-01-01T06:00:00Z",
+      "scan_utc_start": "1999-12-31T18:00:00Z"
+    },
+    {
+      "artifact_sha256": "faa58b055c3e23ce3eb1fce6848abfce27e24cebdb2da331eec309e9da92948d",
+      "calculation_call_count": 2889,
+      "core_utc_end_exclusive": "2000-01-01T06:00:00Z",
+      "core_utc_start": "2000-01-01T00:00:00Z",
+      "interval_count": 20,
+      "job_id": "utc-year-2000",
+      "receipt_sha256": "d7740a280f4f9d5d75fd316d8bb9194041adfe43a08f6d24417ad20666fb901e",
+      "scan_utc_end_exclusive": "2000-01-01T06:00:00Z",
+      "scan_utc_start": "1999-12-31T18:00:00Z"
+    }
+  ],
+  "plan": {
+    "job_count": 2,
+    "overlap_scan_seconds": 90001,
+    "parity_report_sha256": "8c7a133b07ca21872764a5325d1339b44f93648223ee38866bbae5dce1655b6c",
+    "sha256": "bbc681c6f1951f0024ff18cdef771264f0bf26d42073de825e9ed370ab445e01",
+    "source_commit": "f0f345371fab1188951e271f2f5fdc2699912e1f",
+    "utc_end_exclusive": "2000-01-01T06:00:00Z",
+    "utc_start": "1999-12-31T18:00:00Z"
+  },
+  "preserved_failure": {
+    "cache_manifest_published": false,
+    "error": "Swiss calculation audit captures cannot be nested",
+    "resolution_commit": "f0f345371fab1188951e271f2f5fdc2699912e1f",
+    "source_commit": "51111602141254d91d883fc4e5510a1315b7a217",
+    "status": "failed_closed",
+    "trust_lock_published": false
+  },
+  "reconciliation": {
+    "calculation_call_count": 179,
+    "calculation_trace_sha256": "7f131e69eaa3ccc9f2056f3f1d3ed8f9d53a0b2ed373f542853055114df1ebba",
+    "returned_flags_counts": [
+      [
+        258,
+        179
+      ]
+    ],
+    "sha256": "6018870643708810842cba442b3570e0aee4d094b39a1c9e502e132639022336",
+    "status": "pass"
+  },
+  "schema_version": "phase2-bounded-multijob-proof-v1",
+  "status": "pass"
+}

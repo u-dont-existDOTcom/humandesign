@@ -8,17 +8,18 @@
   `/tmp/hdmatch-integration` on `codex/harness-integration`.
 - Latest upstream `main` commit merged:
   `a7c24012867e640f2728f40ab342267b12d662e9`.
-- Current published Phase-1/V3.6 checkpoint:
-  `c8f730296ca958e5796f865b84d29cb555ff7a2d`.
-- Current local Phase-2 integration checkpoint:
-  `8cb226251e7b0d407d4ecabf415797e1207dcb10`.
+- Current published Phase-2 integration checkpoint:
+  `9792f126c066083ea17ba15a48db34cae1833b97`.
+- Current local bounded-proof implementation commit:
+  `f0f345371fab1188951e271f2f5fdc2699912e1f`.
 - Local rollback branch before Phase 2 integration:
   `checkpoint/pre-phase2-c8f7302`.
 - Additional rollback branches pin the pre-streaming store and pre-admission
   hardening trees: `checkpoint/pre-streaming-store-2745e40` and
   `checkpoint/pre-streaming-followup-af08e73`.
-- Normal exact-head GitHub CI is green for both push run `32565198166` and
-  pull-request run `32565200702`.
+- Normal exact-head GitHub CI is green for published checkpoint `9792f12` via
+  push run `32567091632` and pull-request run `32567093395`. The bounded-proof
+  delta must receive its own exact-head CI before canonical planning starts.
 - The inherited historical V3.6 audit workflow also triggered during the
   upstream-main synchronization. Run `32564813967` failed during ephemeris
   fetch; its 100-year ranking step was skipped. It is not a cache, completed
@@ -29,10 +30,9 @@
 
 ## Mandatory execution position
 
-Phase 0 and Phase 1 are complete and published. Independent review, the bounded
-real-SWIEPH proof, final stable-tree local validation, and normal exact-head
-GitHub CI are green. No production century-cache build and no new full-century
-behavioral ranking have started.
+Phase 0 and Phase 1 are complete and published. The Phase 2 implementation and
+bounded two-job real-SWIEPH proof pass locally. No production century-cache
+build and no new full-century behavioral ranking have started.
 
 The mandatory sequence remains:
 
@@ -119,18 +119,15 @@ mandatory cache-first sequence.
   Ruff passed over `src`, `tests`, and `scripts`; strict mypy passed over 103
   `src/hdmatch` source files.
 
-## Current action: Phase 2 reusable century cache
+## Current action: Phase 2 canonical reusable century cache
 
-The resumable cache path is being implemented in independent worktrees against
-the exact Phase-1 checkpoint. Deterministic calendar-year planning, immutable
-plan persistence, staged-job all-call SWIEPH receipts, independent exact replay,
-bounded Parquet streaming, manifest-last publication, and the repository trust
-lock are integrated. The canonical publisher rejects direct Phase-1 batches and
-is closed unless it receives private-token reconciled chunks plus their matching
-final aggregate evidence. Overlapping-cut reconciliation is still under final
-review. The remaining work is limited to reconciliation integration,
-build orchestration, and the bounded multi-job proof before starting the century
-build:
+The resumable cache implementation is integrated. Deterministic calendar-year
+planning, immutable plan persistence, staged-job all-call SWIEPH receipts,
+independent exact replay, overlap reconciliation, bounded Parquet streaming,
+manifest-last publication, and the repository trust lock passed a real two-job
+year-seam proof. The canonical publisher rejects direct Phase-1 batches and is
+closed unless it receives private-token reconciled chunks plus their matching
+final aggregate evidence. The remaining Phase 2 work is the production build:
 
 1. freeze a deterministic build plan and one-year overlapping job ranges;
 2. persist atomic provisional job rows/receipts with all-call SWIEPH audits;
@@ -138,15 +135,19 @@ build:
 4. reconcile artificial cuts and recompute merged representatives/Design roots;
 5. stream final validation into bounded shards and publish the manifest last;
 6. verify the complete cache against an independent tracked trust lock;
-7. make ordinary global recovery cache-only.
+7. keep ordinary global recovery cache-only.
 
-No century computation or ranking is authorized before the bounded multi-job
-replay/reconciliation tests pass. Phase 3 still must bridge V4.3 selectors to
+The bounded proof used
+`1999-12-31T18:00:00Z <= t < 2000-01-01T06:00:00Z`, produced 20
+exact intervals, and independently matched all direct exact-build rows. Its
+logical-universe SHA-256 is
+`5dd48a851da45e81bca430bd7b35333d73d3894912644cd156c43feca3636db0`.
+The machine-readable and narrative evidence are in
+`reports/v4_3_migration/phase2_bounded_multijob_proof.json` and
+`reports/v4_3_migration/phase2_reusable_century_cache.md`.
+
+The canonical plan/build must bind a clean committed tree after full local gates
+and exact-head GitHub CI are green. Phase 3 still must bridge V4.3 selectors to
 the exact M0-M2 cache vector and enforce mapping-derived 100% feature coverage
-before any V4.3-compliant ranking.
-
-Phase-2 checkpoint verification: the merged staging/streaming tree passed 472
-tests with two environment-dependent keyless-boundary skips. The subsequent
-concrete reconciliation-admission delta passed its 60 focused tests, Ruff, and
-strict mypy; its source branch separately passed the full suite. No canonical
-cache rows and no behavioral ranking were generated by these checks.
+before any V4.3-compliant ranking. No canonical cache rows and no behavioral
+ranking have yet been generated.
