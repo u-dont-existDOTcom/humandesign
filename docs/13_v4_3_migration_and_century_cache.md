@@ -160,6 +160,34 @@ hdmatch recover-global \
 
 `recover-global` must not regenerate astronomy when a compatible verified cache exists.
 
+### Cache contract implementation boundary
+
+The reusable storage contract lives in `hdmatch.century_cache`. It deliberately
+does not calculate chart features or boundaries. The feature-registry workstream
+provides a canonically sorted registry of feature IDs plus physical storage types,
+and supplies exact interval DTOs through `CenturyStateRecord`, a canonical mapping,
+or the narrow `CacheableStateSource` protocol.
+
+Every row must explicitly contain every feature declared by the cache registry.
+Missing and extra IDs are errors. A predeclared nullable feature may carry an
+explicit JSON `null`, which remains unknown; it is never silently serialized as
+`false`.
+
+Parquet shards use internal Zstandard compression. Their filenames retain the
+specified `.parquet.zst` suffix, but the artifact is a normal Parquet container,
+not an externally compressed opaque stream. The logical-universe hash is computed
+over canonical logical rows and is therefore independent of Parquet byte layout or
+shard partitioning.
+
+Cache construction requires the explicit `write_century_cache_explicit(...,
+build_mode="explicit_rebuild")` API. Ordinary recovery uses
+`open_century_cache_for_recovery`, which exposes no engine, builder callback, or
+regeneration option and fails closed if the prebuilt cache is missing or invalid.
+Recovery expectations bind the exact cache feature-registry hash, engine-validation
+receipt, ephemeris source manifest and file set, Mandala mapping, Design-root
+tolerances, parity report, boundary-audit report, and boundary-policy version. A
+`pass` label cannot substitute for the expected evidence-artifact hash.
+
 ## Anti-simplification compliance gate
 
 Create one canonical compliance function/test that asserts:
