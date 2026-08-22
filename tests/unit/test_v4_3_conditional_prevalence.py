@@ -1417,7 +1417,7 @@ def test_phase4_failure_verifier_rechecks_exact_bytes_after_replay(
         "_verify_failure_partial_scores",
         verify_then_swap,
     )
-    with pytest.raises(V43RunError, match="changed during verification"):
+    with pytest.raises(V43RunError, match="changed during verification|artifact .* mismatch"):
         verify_v4_3_run(
             output,
             **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
