@@ -341,12 +341,18 @@ class CenturyCacheExpectations(FrozenModel):
     utc_start: datetime
     utc_end_exclusive: datetime
     feature_vector_schema_version: str = Field(min_length=1)
+    cache_feature_registry_sha256: str = Field(pattern=SHA256_PATTERN)
     required_feature_ids: tuple[str, ...] = Field(min_length=1)
     required_feature_registry_sha256: str = Field(pattern=SHA256_PATTERN)
     engine_validation_sha256: str = Field(pattern=SHA256_PATTERN)
+    ephemeris_source_manifest_sha256: str = Field(pattern=SHA256_PATTERN)
     ephemeris_file_set_sha256: str = Field(pattern=SHA256_PATTERN)
     mandala_mapping_sha256: str = Field(pattern=SHA256_PATTERN)
     boundary_policy_version: str = Field(min_length=1)
+    design_root_time_tolerance_seconds: float = Field(gt=0.0)
+    design_root_arc_tolerance_degrees: float = Field(gt=0.0)
+    parity_report_sha256: str = Field(pattern=SHA256_PATTERN)
+    boundary_audit_report_sha256: str = Field(pattern=SHA256_PATTERN)
 
     @field_validator("utc_start", "utc_end_exclusive")
     @classmethod

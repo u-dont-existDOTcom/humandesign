@@ -183,6 +183,10 @@ Cache construction requires the explicit `write_century_cache_explicit(...,
 build_mode="explicit_rebuild")` API. Ordinary recovery uses
 `open_century_cache_for_recovery`, which exposes no engine, builder callback, or
 regeneration option and fails closed if the prebuilt cache is missing or invalid.
+Recovery expectations bind the exact cache feature-registry hash, engine-validation
+receipt, ephemeris source manifest and file set, Mandala mapping, Design-root
+tolerances, parity report, boundary-audit report, and boundary-policy version. A
+`pass` label cannot substitute for the expected evidence-artifact hash.
 
 ## Anti-simplification compliance gate
 

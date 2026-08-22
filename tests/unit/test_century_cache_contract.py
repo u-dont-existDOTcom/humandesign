@@ -171,14 +171,22 @@ def _expectations(*, required: tuple[str, ...] | None = None) -> CenturyCacheExp
         utc_start=spec.utc_start,
         utc_end_exclusive=spec.utc_end_exclusive,
         feature_vector_schema_version=spec.feature_vector_schema_version,
+        cache_feature_registry_sha256=spec.feature_registry_sha256,
         required_feature_ids=identifiers,
         required_feature_registry_sha256=required_feature_ids_sha256(identifiers),
         engine_validation_sha256=spec.engine.engine_validation_sha256,
+        ephemeris_source_manifest_sha256=(
+            spec.engine.ephemeris_provenance.source_manifest_sha256
+        ),
         ephemeris_file_set_sha256=(
             spec.engine.ephemeris_provenance.ephemeris_file_set_sha256
         ),
         mandala_mapping_sha256=spec.mandala_mapping_sha256,
         boundary_policy_version=spec.boundary_policy_version,
+        design_root_time_tolerance_seconds=spec.design_root_time_tolerance_seconds,
+        design_root_arc_tolerance_degrees=spec.design_root_arc_tolerance_degrees,
+        parity_report_sha256=spec.parity_report_sha256,
+        boundary_audit_report_sha256=spec.boundary_audit_report_sha256,
     )
 
 
@@ -345,6 +353,50 @@ def test_required_feature_coverage_is_checked_for_each_recovery(tmp_path: Path) 
             verified.cache_directory,
             expectations=_expectations(required=required),
         )
+
+
+@pytest.mark.parametrize(
+    ("field", "replacement", "message"),
+    [
+        ("cache_feature_registry_sha256", "9" * 64, "cache feature registry mismatch"),
+        ("engine_validation_sha256", "9" * 64, "engine validation mismatch"),
+        (
+            "ephemeris_source_manifest_sha256",
+            "9" * 64,
+            "ephemeris source manifest mismatch",
+        ),
+        ("ephemeris_file_set_sha256", "9" * 64, "ephemeris file set mismatch"),
+        ("mandala_mapping_sha256", "9" * 64, "Mandala mapping mismatch"),
+        ("boundary_policy_version", "substituted-policy", "boundary policy mismatch"),
+        (
+            "design_root_time_tolerance_seconds",
+            1.0,
+            "Design-root time tolerance mismatch",
+        ),
+        (
+            "design_root_arc_tolerance_degrees",
+            1e-4,
+            "Design-root arc tolerance mismatch",
+        ),
+        ("parity_report_sha256", "9" * 64, "parity report mismatch"),
+        (
+            "boundary_audit_report_sha256",
+            "9" * 64,
+            "boundary-audit report mismatch",
+        ),
+    ],
+)
+def test_recovery_binds_exact_external_proof_identities(
+    tmp_path: Path,
+    field: str,
+    replacement: object,
+    message: str,
+) -> None:
+    verified = _write_fixture(tmp_path / "cache")
+    expectations = _expectations().model_copy(update={field: replacement})
+
+    with pytest.raises(CenturyCacheVerificationError, match=message):
+        verify_century_cache(verified.cache_directory, expectations=expectations)
 
 
 def test_ordinary_recovery_has_no_regeneration_path(tmp_path: Path) -> None:

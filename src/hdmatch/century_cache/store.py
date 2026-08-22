@@ -114,14 +114,22 @@ def _expectations_for_spec(spec: CenturyCacheBuildSpec) -> CenturyCacheExpectati
         utc_start=spec.utc_start,
         utc_end_exclusive=spec.utc_end_exclusive,
         feature_vector_schema_version=spec.feature_vector_schema_version,
+        cache_feature_registry_sha256=spec.feature_registry_sha256,
         required_feature_ids=feature_ids,
         required_feature_registry_sha256=required_feature_ids_sha256(feature_ids),
         engine_validation_sha256=spec.engine.engine_validation_sha256,
+        ephemeris_source_manifest_sha256=(
+            spec.engine.ephemeris_provenance.source_manifest_sha256
+        ),
         ephemeris_file_set_sha256=(
             spec.engine.ephemeris_provenance.ephemeris_file_set_sha256
         ),
         mandala_mapping_sha256=spec.mandala_mapping_sha256,
         boundary_policy_version=spec.boundary_policy_version,
+        design_root_time_tolerance_seconds=spec.design_root_time_tolerance_seconds,
+        design_root_arc_tolerance_degrees=spec.design_root_arc_tolerance_degrees,
+        parity_report_sha256=spec.parity_report_sha256,
+        boundary_audit_report_sha256=spec.boundary_audit_report_sha256,
     )
 
 
@@ -227,19 +235,33 @@ def _verify_expectations(
         raise CenturyCacheVerificationError("cache does not cover the requested UTC range")
     expected_fields = {
         "feature_vector_schema_version": expectations.feature_vector_schema_version,
+        "cache feature registry": expectations.cache_feature_registry_sha256,
         "engine validation": expectations.engine_validation_sha256,
+        "ephemeris source manifest": expectations.ephemeris_source_manifest_sha256,
         "ephemeris file set": expectations.ephemeris_file_set_sha256,
         "Mandala mapping": expectations.mandala_mapping_sha256,
         "boundary policy": expectations.boundary_policy_version,
+        "Design-root time tolerance": expectations.design_root_time_tolerance_seconds,
+        "Design-root arc tolerance": expectations.design_root_arc_tolerance_degrees,
+        "parity report": expectations.parity_report_sha256,
+        "boundary-audit report": expectations.boundary_audit_report_sha256,
     }
     actual_fields = {
         "feature_vector_schema_version": manifest.feature_vector_schema_version,
+        "cache feature registry": manifest.feature_registry_sha256,
         "engine validation": manifest.engine.engine_validation_sha256,
+        "ephemeris source manifest": (
+            manifest.engine.ephemeris_provenance.source_manifest_sha256
+        ),
         "ephemeris file set": (
             manifest.engine.ephemeris_provenance.ephemeris_file_set_sha256
         ),
         "Mandala mapping": manifest.mandala_mapping_sha256,
         "boundary policy": manifest.boundary_policy_version,
+        "Design-root time tolerance": manifest.design_root_time_tolerance_seconds,
+        "Design-root arc tolerance": manifest.design_root_arc_tolerance_degrees,
+        "parity report": manifest.parity_report_sha256,
+        "boundary-audit report": manifest.boundary_audit_report_sha256,
     }
     for name, expected in expected_fields.items():
         if actual_fields[name] != expected:
