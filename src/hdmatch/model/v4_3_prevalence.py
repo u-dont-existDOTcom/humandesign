@@ -1167,9 +1167,13 @@ def _derive_plan(
             key=lambda item: item.value,
         )
     )
-    if required != library.required_feature_registry.feature_ids:
+    missing_from_mapping_registry = set(required) - set(
+        library.required_feature_registry.feature_ids
+    )
+    if missing_from_mapping_registry:
         raise V43PrevalenceError(
-            "mapping prevalence anchors differ from the required feature registry"
+            "mapping prevalence anchors are absent from the required feature registry: "
+            f"{sorted(item.value for item in missing_from_mapping_registry)}"
         )
     registry = _registry_by_id(verified.manifest.feature_registry)
     missing = sorted(item.value for item in required if item.value not in registry)
