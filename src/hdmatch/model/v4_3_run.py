@@ -61,13 +61,15 @@ from hdmatch.model.v4_3_responses import (
 )
 
 SHA256_PATTERN: Final[str] = r"^[a-f0-9]{64}$"
-V43_RUNNER_VERSION: Final[str] = "v4.3-cache-stream-run-v3"
+V43_RUNNER_VERSION: Final[str] = "v4.3-cache-stream-run-v4"
 SCORE_HASH_STRATEGY: Final[str] = "sha256-canonical-json-lines-input-order-v1"
 RANKED_HASH_STRATEGY: Final[str] = "sha256-canonical-json-lines-rank-order-v1"
 RANKED_FILENAME: Final[str] = "ranked-scores.parquet.zst"
 DETAIL_FILENAME: Final[str] = "bounded-detail.json"
 FAILURE_FILENAME: Final[str] = "failure.json"
-FAILURE_STAGE_EVIDENCE_FILENAME: Final[str] = "failure-stage-evidence.json"
+PRODUCER_FAILURE_DIAGNOSTICS_FILENAME: Final[str] = (
+    "producer-failure-diagnostics.json"
+)
 PARTIAL_SCORES_FILENAME: Final[str] = "partial-scores.jsonl"
 MANIFEST_FILENAME: Final[str] = "manifest.json"
 PARQUET_BATCH_ROWS: Final[int] = 1024
@@ -125,7 +127,8 @@ class V43RunFailedError(V43RunError):
             else ""
         )
         super().__init__(
-            f"V4.3 run failed at {failure.stage}; failure package: {run_directory}"
+            "V4.3 run failed at producer-reported stage "
+            f"{failure.producer_reported_stage}; failure package: {run_directory}"
             f"{suffix}"
         )
 
@@ -316,47 +319,62 @@ class V43RuntimeSourceProvenanceV1(_FrozenModel):
         return self
 
 
-class V43FailureStageEvidenceV1(_FrozenModel):
-    """Independent operation-state evidence for one failure-stage claim."""
+class V43ProducerFailureDiagnosticsV1(_FrozenModel):
+    """Unauthenticated producer report retained for failure diagnosis only."""
 
-    schema_version: Literal["v4-3-failure-stage-evidence-v1"] = (
-        "v4-3-failure-stage-evidence-v1"
+    schema_version: Literal["v4-3-producer-failure-diagnostics-v1"] = (
+        "v4-3-producer-failure-diagnostics-v1"
     )
-    stage: V43FailureStage
+    scope: Literal["producer-reported-internal-consistency-only"] = (
+        "producer-reported-internal-consistency-only"
+    )
+    historically_authenticated: Literal[False] = False
+    producer_reported_stage: V43FailureStage
     attempted_input_ordinal: int | None = Field(default=None, ge=0)
     attempted_record_is_in_partial_scores: bool
     successfully_evaluated_count: int = Field(ge=0)
-    sqlite_inserted_count: int = Field(ge=0)
-    sqlite_persisted_count: int = Field(ge=0)
+    producer_reported_sqlite_inserted_count: int = Field(ge=0)
+    producer_reported_sqlite_persisted_count: int = Field(ge=0)
     sqlite_commit_batch_rows: Literal[1024] = 1024
     partial_score_records_sha256: str = Field(pattern=SHA256_PATTERN)
 
     @model_validator(mode="after")
     def require_reproducible_operation_frontier(
         self,
-    ) -> V43FailureStageEvidenceV1:
+    ) -> V43ProducerFailureDiagnosticsV1:
         expected_inserted = _expected_failure_inserted_count(
-            stage=self.stage,
+            stage=self.producer_reported_stage,
             evaluated_count=self.successfully_evaluated_count,
             attempted_record_is_in_partial_scores=(
                 self.attempted_record_is_in_partial_scores
             ),
         )
-        if self.sqlite_inserted_count != expected_inserted:
-            raise ValueError("failure stage disagrees with the SQLite insert frontier")
-        if self.sqlite_persisted_count > self.sqlite_inserted_count:
-            raise ValueError("failure stage persisted beyond its SQLite insert frontier")
+        if self.producer_reported_sqlite_inserted_count != expected_inserted:
+            raise ValueError(
+                "producer-reported stage disagrees with producer operation counters"
+            )
+        if (
+            self.producer_reported_sqlite_persisted_count
+            > self.producer_reported_sqlite_inserted_count
+        ):
+            raise ValueError(
+                "producer-reported persistence exceeds producer insertion count"
+            )
         return self
 
 
 class V43RunFailureV1(_FrozenModel):
-    schema_version: Literal["v4-3-run-failure-v3"] = "v4-3-run-failure-v3"
-    stage: V43FailureStage
+    schema_version: Literal["v4-3-run-failure-v4"] = "v4-3-run-failure-v4"
+    diagnostics_scope: Literal["producer-reported-internal-consistency-only"] = (
+        "producer-reported-internal-consistency-only"
+    )
+    diagnostics_historically_authenticated: Literal[False] = False
+    producer_reported_stage: V43FailureStage
     failure_code: str = Field(min_length=1)
     error_type: str = Field(min_length=1)
     error_message: str = Field(min_length=1)
-    diagnostic_cause_type: str = Field(min_length=1)
-    diagnostic_cause_message: str = Field(min_length=1)
+    producer_reported_cause_type: str = Field(min_length=1)
+    producer_reported_cause_message: str = Field(min_length=1)
     attempted_input_ordinal: int | None = Field(default=None, ge=0)
     attempted_state_id: str | None = None
     attempted_candidate_record_sha256: str | None = Field(
@@ -367,14 +385,16 @@ class V43RunFailureV1(_FrozenModel):
     successfully_evaluated_count: int = Field(ge=0)
     persisted_scored_count: int = Field(ge=0)
     partial_score_records_sha256: str = Field(pattern=SHA256_PATTERN)
-    stage_evidence_sha256: str = Field(pattern=SHA256_PATTERN)
+    producer_diagnostics_sha256: str = Field(pattern=SHA256_PATTERN)
     score_hash_strategy: Literal[
         "sha256-canonical-json-lines-input-order-v1"
     ] = "sha256-canonical-json-lines-input-order-v1"
 
     @model_validator(mode="after")
     def require_deterministic_failure_semantics(self) -> V43RunFailureV1:
-        expected_type, expected_message = _FAILURE_SEMANTICS[self.stage]
+        expected_type, expected_message = _FAILURE_SEMANTICS[
+            self.producer_reported_stage
+        ]
         if self.failure_code != expected_type:
             raise ValueError("failure code differs from its deterministic stage")
         if self.error_type != expected_type or self.error_message != expected_message:
@@ -398,18 +418,18 @@ class V43RunFailureV1(_FrozenModel):
                 raise ValueError("evaluated failure row has the wrong ordinal")
         elif self.attempted_input_ordinal != self.successfully_evaluated_count:
             raise ValueError("unevaluated failure row has the wrong ordinal")
-        if self.stage is V43FailureStage.SCORE_STORE_OPEN and (
+        if self.producer_reported_stage is V43FailureStage.SCORE_STORE_OPEN and (
             self.successfully_evaluated_count != 0
             or self.persisted_scored_count != 0
             or self.attempted_input_ordinal is not None
         ):
             raise ValueError("score-store-open failure cannot contain score rows")
-        if self.stage is V43FailureStage.EVALUATION and (
+        if self.producer_reported_stage is V43FailureStage.EVALUATION and (
             self.attempted_input_ordinal is None
             or self.attempted_record_is_in_partial_scores
         ):
             raise ValueError("evaluation failure must bind its unevaluated cache row")
-        if self.stage in {
+        if self.producer_reported_stage in {
             V43FailureStage.SCORE_STORE_APPEND,
             V43FailureStage.SCORE_STORE_COMMIT,
         } and (
@@ -419,7 +439,7 @@ class V43RunFailureV1(_FrozenModel):
             raise ValueError(
                 "score-store append/commit failure must bind its evaluated row"
             )
-        if self.stage in {
+        if self.producer_reported_stage in {
             V43FailureStage.SCORE_STORE_FINALIZE,
             V43FailureStage.RANKED_ARTIFACT,
             V43FailureStage.BOUNDED_DETAIL,
@@ -487,11 +507,11 @@ class V43RunBindingsV1(_FrozenModel):
 
 
 class V43RunManifestV1(_FrozenModel):
-    schema_version: Literal["v4-3-cache-run-manifest-v3"] = (
-        "v4-3-cache-run-manifest-v3"
+    schema_version: Literal["v4-3-cache-run-manifest-v4"] = (
+        "v4-3-cache-run-manifest-v4"
     )
-    runner_version: Literal["v4.3-cache-stream-run-v3"] = (
-        "v4.3-cache-stream-run-v3"
+    runner_version: Literal["v4.3-cache-stream-run-v4"] = (
+        "v4.3-cache-stream-run-v4"
     )
     runner_source_sha256: str = Field(pattern=SHA256_PATTERN)
     runtime_source_provenance: V43RuntimeSourceProvenanceV1
@@ -509,7 +529,10 @@ class V43RunManifestV1(_FrozenModel):
     ranked_artifact: V43RunArtifactV1 | None = None
     bounded_detail_artifact: V43RunArtifactV1 | None = None
     failure_artifact: V43RunArtifactV1 | None = None
-    failure_stage_evidence_artifact: V43RunArtifactV1 | None = None
+    producer_failure_diagnostics_artifact: V43RunArtifactV1 | None = None
+    failure_diagnostics_scope: (
+        Literal["producer-reported-internal-consistency-only"] | None
+    ) = None
     partial_score_artifact: V43RunArtifactV1 | None = None
     successfully_evaluated_count: int = Field(ge=0)
     persisted_scored_count: int = Field(ge=0)
@@ -530,14 +553,17 @@ class V43RunManifestV1(_FrozenModel):
                 self.ranked_artifact is None
                 or self.bounded_detail_artifact is None
                 or self.failure_artifact is not None
-                or self.failure_stage_evidence_artifact is not None
+                or self.producer_failure_diagnostics_artifact is not None
+                or self.failure_diagnostics_scope is not None
                 or self.partial_score_artifact is not None
                 or self.compliance is None
             ):
                 raise ValueError("complete run artifact inventory is inconsistent")
         elif (
             self.failure_artifact is None
-            or self.failure_stage_evidence_artifact is None
+            or self.producer_failure_diagnostics_artifact is None
+            or self.failure_diagnostics_scope
+            != "producer-reported-internal-consistency-only"
             or self.partial_score_artifact is None
             or self.ranked_artifact is not None
             or self.bounded_detail_artifact is not None
@@ -1113,7 +1139,7 @@ def run_verified_v4_3_cache(
             if isinstance(exc, V43ScoreStoreCommitError)
             else stage
         )
-        failure, stage_evidence = _failure_from_exception(
+        failure, producer_diagnostics = _failure_from_exception(
             stage=actual_stage,
             exception=exc,
             current=current,
@@ -1130,7 +1156,7 @@ def run_verified_v4_3_cache(
                 journal=journal,
                 journal_directory=journal_directory,
                 failure=failure,
-                stage_evidence=stage_evidence,
+                producer_diagnostics=producer_diagnostics,
                 runtime_source=runtime_source,
                 bindings=bindings,
                 declared_count=declared_count,
@@ -1673,7 +1699,7 @@ def _verify_v4_3_run_preverified(
         raise V43RunError("run unresolved mapping inventory changed")
     if manifest.run_status == "failed":
         assert manifest.failure_artifact is not None
-        assert manifest.failure_stage_evidence_artifact is not None
+        assert manifest.producer_failure_diagnostics_artifact is not None
         assert manifest.partial_score_artifact is not None
         _require_artifact_contract(
             manifest.failure_artifact,
@@ -1683,14 +1709,14 @@ def _verify_v4_3_run_preverified(
         )
         _verify_artifact_file(directory, manifest.failure_artifact)
         _require_artifact_contract(
-            manifest.failure_stage_evidence_artifact,
-            filename=FAILURE_STAGE_EVIDENCE_FILENAME,
+            manifest.producer_failure_diagnostics_artifact,
+            filename=PRODUCER_FAILURE_DIAGNOSTICS_FILENAME,
             logical_hash_strategy="sha256-canonical-json-v1",
             storage_format="canonical-json-v1",
         )
         _verify_artifact_file(
             directory,
-            manifest.failure_stage_evidence_artifact,
+            manifest.producer_failure_diagnostics_artifact,
         )
         _require_artifact_contract(
             manifest.partial_score_artifact,
@@ -1701,21 +1727,30 @@ def _verify_v4_3_run_preverified(
         _verify_artifact_file(directory, manifest.partial_score_artifact)
         if manifest.failure_artifact.row_count != 1:
             raise V43RunError("failure artifact row count must equal one")
-        if manifest.failure_stage_evidence_artifact.row_count != 1:
-            raise V43RunError("failure stage-evidence row count must equal one")
+        if manifest.producer_failure_diagnostics_artifact.row_count != 1:
+            raise V43RunError(
+                "producer failure-diagnostics row count must equal one"
+            )
         failure_path = directory / manifest.failure_artifact.filename
         failure = _load_failure(failure_path)
         failure_bytes = canonical_json_bytes(failure)
-        stage_evidence_path = (
-            directory / manifest.failure_stage_evidence_artifact.filename
+        producer_diagnostics_path = (
+            directory / manifest.producer_failure_diagnostics_artifact.filename
         )
-        stage_evidence = _load_failure_stage_evidence(
-            stage_evidence_path
+        producer_diagnostics = _load_producer_failure_diagnostics(
+            producer_diagnostics_path
         )
-        stage_evidence_bytes = canonical_json_bytes(stage_evidence)
-        if failure.stage_evidence_sha256 != sha256_json(stage_evidence):
-            raise V43RunError("failure stage-evidence hash differs from failure")
-        _verify_failure_stage_evidence(failure, stage_evidence)
+        producer_diagnostics_bytes = canonical_json_bytes(producer_diagnostics)
+        if failure.producer_diagnostics_sha256 != sha256_json(
+            producer_diagnostics
+        ):
+            raise V43RunError(
+                "producer failure-diagnostics hash differs from failure"
+            )
+        _verify_producer_failure_diagnostics_internal_consistency(
+            failure,
+            producer_diagnostics,
+        )
         if (
             failure.persisted_scored_count != manifest.persisted_scored_count
             or failure.successfully_evaluated_count
@@ -1744,14 +1779,17 @@ def _verify_v4_3_run_preverified(
         _verify_artifact_file(directory, manifest.failure_artifact)
         _verify_artifact_file(
             directory,
-            manifest.failure_stage_evidence_artifact,
+            manifest.producer_failure_diagnostics_artifact,
         )
         _verify_artifact_file(directory, manifest.partial_score_artifact)
         if failure_path.read_bytes() != failure_bytes:
             raise V43RunError("failure artifact bytes changed during verification")
-        if stage_evidence_path.read_bytes() != stage_evidence_bytes:
+        if (
+            producer_diagnostics_path.read_bytes()
+            != producer_diagnostics_bytes
+        ):
             raise V43RunError(
-                "failure stage-evidence bytes changed during verification"
+                "producer failure-diagnostics bytes changed during verification"
             )
         _require_exact_run_inventory(directory, manifest)
         if manifest_path.read_bytes() != canonical_json_bytes(manifest):
@@ -1883,7 +1921,7 @@ def _require_exact_run_inventory(
         else {
             MANIFEST_FILENAME,
             FAILURE_FILENAME,
-            FAILURE_STAGE_EVIDENCE_FILENAME,
+            PRODUCER_FAILURE_DIAGNOSTICS_FILENAME,
             PARTIAL_SCORES_FILENAME,
         }
     )
@@ -1922,7 +1960,7 @@ def _failure_from_exception(
     current: V43MinimalScoreRecordV1 | None,
     journal: V43PartialScoreJournal | None,
     store: V43ExternalRankStore | None,
-) -> tuple[V43RunFailureV1, V43FailureStageEvidenceV1]:
+) -> tuple[V43RunFailureV1, V43ProducerFailureDiagnosticsV1]:
     evaluated_count = journal.count if journal is not None else 0
     persisted_count = store.persisted_count if store is not None else 0
     partial_sha256 = journal.sha256 if journal is not None else hashlib.sha256().hexdigest()
@@ -1947,23 +1985,25 @@ def _failure_from_exception(
         attempted_state_id = current.state_id
         attempted_record_sha256 = current.candidate_record_sha256
         attempted_is_partial = current.input_ordinal < evaluated_count
-    stage_evidence = V43FailureStageEvidenceV1(
-        stage=stage,
+    producer_diagnostics = V43ProducerFailureDiagnosticsV1(
+        producer_reported_stage=stage,
         attempted_input_ordinal=attempted_ordinal,
         attempted_record_is_in_partial_scores=attempted_is_partial,
         successfully_evaluated_count=evaluated_count,
-        sqlite_inserted_count=store.count if store is not None else 0,
-        sqlite_persisted_count=persisted_count,
+        producer_reported_sqlite_inserted_count=(
+            store.count if store is not None else 0
+        ),
+        producer_reported_sqlite_persisted_count=persisted_count,
         partial_score_records_sha256=partial_sha256,
     )
     failure_code, message = _FAILURE_SEMANTICS[stage]
     failure = V43RunFailureV1(
-        stage=stage,
+        producer_reported_stage=stage,
         failure_code=failure_code,
         error_type=failure_code,
         error_message=message,
-        diagnostic_cause_type=diagnostic_type,
-        diagnostic_cause_message=diagnostic_message,
+        producer_reported_cause_type=diagnostic_type,
+        producer_reported_cause_message=diagnostic_message,
         attempted_input_ordinal=attempted_ordinal,
         attempted_state_id=attempted_state_id,
         attempted_candidate_record_sha256=attempted_record_sha256,
@@ -1971,9 +2011,9 @@ def _failure_from_exception(
         successfully_evaluated_count=evaluated_count,
         persisted_scored_count=persisted_count,
         partial_score_records_sha256=partial_sha256,
-        stage_evidence_sha256=sha256_json(stage_evidence),
+        producer_diagnostics_sha256=sha256_json(producer_diagnostics),
     )
-    return failure, stage_evidence
+    return failure, producer_diagnostics
 
 
 def _verify_failure_partial_scores(
@@ -2026,7 +2066,7 @@ def _verify_failure_partial_scores(
             failure.attempted_input_ordinal is not None
             and not failure.attempted_record_is_in_partial_scores
         ):
-            if failure.stage is V43FailureStage.EVALUATION:
+            if failure.producer_reported_stage is V43FailureStage.EVALUATION:
                 try:
                     next(stream)
                 except V43UniverseStreamError as replayed:
@@ -2035,8 +2075,10 @@ def _verify_failure_partial_scores(
                         or replayed.state_id != failure.attempted_state_id
                         or replayed.candidate_record_sha256
                         != failure.attempted_candidate_record_sha256
-                        or replayed.cause_type != failure.diagnostic_cause_type
-                        or replayed.cause_message != failure.diagnostic_cause_message
+                        or replayed.cause_type
+                        != failure.producer_reported_cause_type
+                        or replayed.cause_message
+                        != failure.producer_reported_cause_message
                     ):
                         raise V43RunError(
                             "evaluation failure identity differs from cache-only replay"
@@ -2078,15 +2120,15 @@ def _verify_failure_partial_scores(
 
 def _expected_failure_persisted_count(failure: V43RunFailureV1) -> int:
     evaluated = failure.successfully_evaluated_count
-    if failure.stage is V43FailureStage.SCORE_STORE_OPEN:
+    if failure.producer_reported_stage is V43FailureStage.SCORE_STORE_OPEN:
         return 0
-    if failure.stage is V43FailureStage.EVALUATION:
+    if failure.producer_reported_stage is V43FailureStage.EVALUATION:
         return (evaluated // PARQUET_BATCH_ROWS) * PARQUET_BATCH_ROWS
-    if failure.stage is V43FailureStage.PARTIAL_SCORE_JOURNAL:
+    if failure.producer_reported_stage is V43FailureStage.PARTIAL_SCORE_JOURNAL:
         if failure.attempted_record_is_in_partial_scores and evaluated:
             evaluated -= 1
         return (evaluated // PARQUET_BATCH_ROWS) * PARQUET_BATCH_ROWS
-    if failure.stage in {
+    if failure.producer_reported_stage in {
         V43FailureStage.SCORE_STORE_APPEND,
         V43FailureStage.SCORE_STORE_COMMIT,
     }:
@@ -2111,45 +2153,52 @@ def _expected_failure_inserted_count(
     return evaluated_count
 
 
-def _verify_failure_stage_evidence(
+def _verify_producer_failure_diagnostics_internal_consistency(
     failure: V43RunFailureV1,
-    evidence: V43FailureStageEvidenceV1,
+    diagnostics: V43ProducerFailureDiagnosticsV1,
 ) -> None:
     expected = {
-        "stage": (evidence.stage, failure.stage),
+        "producer-reported stage": (
+            diagnostics.producer_reported_stage,
+            failure.producer_reported_stage,
+        ),
         "attempted ordinal": (
-            evidence.attempted_input_ordinal,
+            diagnostics.attempted_input_ordinal,
             failure.attempted_input_ordinal,
         ),
         "attempted partial status": (
-            evidence.attempted_record_is_in_partial_scores,
+            diagnostics.attempted_record_is_in_partial_scores,
             failure.attempted_record_is_in_partial_scores,
         ),
         "evaluated count": (
-            evidence.successfully_evaluated_count,
+            diagnostics.successfully_evaluated_count,
             failure.successfully_evaluated_count,
         ),
         "persisted count": (
-            evidence.sqlite_persisted_count,
+            diagnostics.producer_reported_sqlite_persisted_count,
             failure.persisted_scored_count,
         ),
         "partial-score hash": (
-            evidence.partial_score_records_sha256,
+            diagnostics.partial_score_records_sha256,
             failure.partial_score_records_sha256,
         ),
     }
     for label, (actual, required) in expected.items():
         if actual != required:
-            raise V43RunError(f"failure {label} differs from stage evidence")
+            raise V43RunError(
+                f"failure {label} differs between producer diagnostic records"
+            )
     expected_inserted = _expected_failure_inserted_count(
-        stage=failure.stage,
+        stage=failure.producer_reported_stage,
         evaluated_count=failure.successfully_evaluated_count,
         attempted_record_is_in_partial_scores=(
             failure.attempted_record_is_in_partial_scores
         ),
     )
-    if evidence.sqlite_inserted_count != expected_inserted:
-        raise V43RunError("failure stage cannot be derived from its operation frontier")
+    if diagnostics.producer_reported_sqlite_inserted_count != expected_inserted:
+        raise V43RunError(
+            "producer-reported stage is inconsistent with producer operation counters"
+        )
 
 
 def _iter_partial_score_records(path: Path) -> Iterator[V43MinimalScoreRecordV1]:
@@ -2179,7 +2228,7 @@ def _publish_failure_package(
     journal: V43PartialScoreJournal | None,
     journal_directory: Path | None,
     failure: V43RunFailureV1,
-    stage_evidence: V43FailureStageEvidenceV1,
+    producer_diagnostics: V43ProducerFailureDiagnosticsV1,
     runtime_source: V43RuntimeSourceProvenanceV1,
     bindings: V43RunBindingsV1,
     declared_count: int,
@@ -2199,7 +2248,7 @@ def _publish_failure_package(
             journal=journal,
             journal_directory=journal_directory,
             failure=failure,
-            stage_evidence=stage_evidence,
+            producer_diagnostics=producer_diagnostics,
             runtime_source=runtime_source,
             bindings=bindings,
             declared_count=declared_count,
@@ -2218,7 +2267,7 @@ def _complete_and_publish_failure_package(
     journal: V43PartialScoreJournal | None,
     journal_directory: Path | None,
     failure: V43RunFailureV1,
-    stage_evidence: V43FailureStageEvidenceV1,
+    producer_diagnostics: V43ProducerFailureDiagnosticsV1,
     runtime_source: V43RuntimeSourceProvenanceV1,
     bindings: V43RunBindingsV1,
     declared_count: int,
@@ -2239,16 +2288,16 @@ def _complete_and_publish_failure_package(
         raise V43RunError("failure journal count changed during publication")
     if partial_artifact.logical_sha256 != failure.partial_score_records_sha256:
         raise V43RunError("failure journal hash changed during publication")
-    stage_evidence_path = write_new_canonical_json(
-        staging / FAILURE_STAGE_EVIDENCE_FILENAME,
-        stage_evidence,
+    producer_diagnostics_path = write_new_canonical_json(
+        staging / PRODUCER_FAILURE_DIAGNOSTICS_FILENAME,
+        producer_diagnostics,
     )
-    stage_evidence_artifact = V43RunArtifactV1(
-        filename=FAILURE_STAGE_EVIDENCE_FILENAME,
-        sha256=sha256_file(stage_evidence_path),
-        byte_count=stage_evidence_path.stat().st_size,
+    producer_diagnostics_artifact = V43RunArtifactV1(
+        filename=PRODUCER_FAILURE_DIAGNOSTICS_FILENAME,
+        sha256=sha256_file(producer_diagnostics_path),
+        byte_count=producer_diagnostics_path.stat().st_size,
         row_count=1,
-        logical_sha256=sha256_json(stage_evidence),
+        logical_sha256=sha256_json(producer_diagnostics),
         logical_hash_strategy="sha256-canonical-json-v1",
         storage_format="canonical-json-v1",
     )
@@ -2273,7 +2322,10 @@ def _complete_and_publish_failure_package(
         persisted_scored_count=failure.persisted_scored_count,
         score_records_sha256=failure.partial_score_records_sha256,
         failure_artifact=failure_artifact,
-        failure_stage_evidence_artifact=stage_evidence_artifact,
+        producer_failure_diagnostics_artifact=producer_diagnostics_artifact,
+        failure_diagnostics_scope=(
+            "producer-reported-internal-consistency-only"
+        ),
         partial_score_artifact=partial_artifact,
         substantive_tie_group_count=0,
         tied_candidate_count=0,
@@ -2284,7 +2336,7 @@ def _complete_and_publish_failure_package(
     )
     write_new_canonical_json(staging / MANIFEST_FILENAME, manifest)
     _verify_artifact_file(staging, failure_artifact)
-    _verify_artifact_file(staging, stage_evidence_artifact)
+    _verify_artifact_file(staging, producer_diagnostics_artifact)
     _verify_artifact_file(staging, partial_artifact)
     _fsync_directory(staging)
     _atomic_publish_directory_noreplace(staging, destination)
@@ -2551,24 +2603,26 @@ def _load_failure(path: Path) -> V43RunFailureV1:
         raise V43RunError(f"invalid V4.3 failure artifact: {path}") from exc
 
 
-def _load_failure_stage_evidence(path: Path) -> V43FailureStageEvidenceV1:
+def _load_producer_failure_diagnostics(
+    path: Path,
+) -> V43ProducerFailureDiagnosticsV1:
     try:
         if path.is_symlink() or not path.is_file():
             raise V43RunError(
-                "V4.3 failure stage-evidence artifact must be a regular file"
+                "V4.3 producer failure-diagnostics artifact must be a regular file"
             )
         raw = path.read_bytes()
         payload = json.loads(raw)
         if canonical_json_bytes(payload) != raw:
             raise V43RunError(
-                "V4.3 failure stage-evidence artifact is not canonical JSON"
+                "V4.3 producer failure-diagnostics artifact is not canonical JSON"
             )
-        return V43FailureStageEvidenceV1.model_validate_json(raw, strict=True)
+        return V43ProducerFailureDiagnosticsV1.model_validate_json(raw, strict=True)
     except (OSError, json.JSONDecodeError, ValueError) as exc:
         if isinstance(exc, V43RunError):
             raise
         raise V43RunError(
-            f"invalid V4.3 failure stage-evidence artifact: {path}"
+            f"invalid V4.3 producer failure-diagnostics artifact: {path}"
         ) from exc
 
 

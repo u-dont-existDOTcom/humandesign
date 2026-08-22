@@ -540,9 +540,16 @@ def _command_verify_v4_3_run(args: argparse.Namespace) -> int:
     print(
         json.dumps(
             {
+                "failure_diagnostics_historically_authenticated": (
+                    None if verified.manifest.run_status == "complete" else False
+                ),
                 "manifest_sha256": verified.manifest_sha256,
                 "run_status": verified.manifest.run_status,
-                "status": "verified",
+                "status": (
+                    "verified-complete-v4.3"
+                    if verified.manifest.run_status == "complete"
+                    else "verified-failure-package-replayable-facts-only"
+                ),
             },
             sort_keys=True,
         )
@@ -558,9 +565,16 @@ def _command_finalize_v4_3_run(args: argparse.Namespace) -> int:
     print(
         json.dumps(
             {
+                "failure_diagnostics_historically_authenticated": (
+                    None if verified.manifest.run_status == "complete" else False
+                ),
                 "manifest_sha256": verified.manifest_sha256,
                 "run_status": verified.manifest.run_status,
-                "status": "publication-finalized",
+                "status": (
+                    "publication-finalized-complete-v4.3"
+                    if verified.manifest.run_status == "complete"
+                    else "publication-finalized-failure-package-replayable-facts-only"
+                ),
             },
             sort_keys=True,
         )

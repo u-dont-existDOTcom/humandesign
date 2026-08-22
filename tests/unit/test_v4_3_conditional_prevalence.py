@@ -777,7 +777,8 @@ def test_phase4_storage_failure_publishes_noncompliant_failure_package(
             **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
         )
     failure = raised.value.failure
-    assert failure.stage == "score-store-append"
+    assert failure.producer_reported_stage == "score-store-append"
+    assert failure.diagnostics_historically_authenticated is False
     assert failure.attempted_input_ordinal == 1
     assert failure.attempted_record_is_in_partial_scores is True
     assert failure.successfully_evaluated_count == 2
@@ -851,7 +852,7 @@ def test_phase4_commit_failure_publishes_all_evaluated_partial_rows(
             **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
         )
     failure = raised.value.failure
-    assert failure.stage == "score-store-commit"
+    assert failure.producer_reported_stage == "score-store-commit"
     assert failure.attempted_input_ordinal == 1
     assert failure.attempted_record_is_in_partial_scores is True
     assert failure.successfully_evaluated_count == 2
@@ -882,7 +883,7 @@ def test_phase4_sqlite_open_failure_publishes_verifiable_empty_partial(
             **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
         )
     failure = raised.value.failure
-    assert failure.stage == "score-store-open"
+    assert failure.producer_reported_stage == "score-store-open"
     assert failure.successfully_evaluated_count == 0
     assert failure.persisted_scored_count == 0
     assert (output / "partial-scores.jsonl").read_bytes() == b""
@@ -928,7 +929,7 @@ def test_phase4_evaluation_failure_records_exact_unscored_row(
             **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
         )
     failure = raised.value.failure
-    assert failure.stage == "evaluation"
+    assert failure.producer_reported_stage == "evaluation"
     assert failure.attempted_input_ordinal == 1
     assert failure.attempted_record_is_in_partial_scores is False
     assert failure.successfully_evaluated_count == 1
@@ -1049,7 +1050,7 @@ def test_phase4_failure_parent_fsync_preserves_original_failure_and_recovers(
             output_directory=output,
             **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
         )
-    assert raised.value.failure.stage == "score-store-append"
+    assert raised.value.failure.producer_reported_stage == "score-store-append"
     assert isinstance(raised.value.publication_error, OSError)
     assert (output / "failure.json").is_file()
 
@@ -1064,7 +1065,7 @@ def test_phase4_failure_parent_fsync_preserves_original_failure_and_recovers(
             output_directory=output,
             **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
         )
-    assert rerun.value.failure.stage == "score-store-append"
+    assert rerun.value.failure.producer_reported_stage == "score-store-append"
 
 
 def test_phase4_atomic_no_replace_preserves_concurrently_created_empty_target(
@@ -1140,7 +1141,7 @@ def test_phase4_failure_publication_preserves_and_recovers_exact_staging(
     assert preserved.is_dir()
     assert "failure-staging" in preserved.name
     assert (preserved / "manifest.json").is_file()
-    assert (preserved / "failure-stage-evidence.json").is_file()
+    assert (preserved / "producer-failure-diagnostics.json").is_file()
     assert raised.value.publication_error is not None
 
     monkeypatch.undo()
@@ -1277,7 +1278,7 @@ def test_phase4_failure_verifier_recomputes_semantics_and_unresolved_count(
         failure = json.loads(failure_path.read_bytes())
         failure.update(
             {
-                "stage": "score-store-open",
+                "producer_reported_stage": "score-store-open",
                 "failure_code": "v4_3_score_store_open_failure",
                 "error_type": "v4_3_score_store_open_failure",
                 "error_message": "V4.3 cache run failed during score-store-open.",
@@ -1320,7 +1321,7 @@ def test_phase4_failure_verifier_recomputes_semantics_and_unresolved_count(
         )
 
 
-def test_phase4_append_failure_cannot_be_relabelled_as_commit(
+def test_phase4_coherent_storage_stage_relabel_changes_no_verified_invariant(
     real_harness: _RealPrevalenceHarness,
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
@@ -1347,14 +1348,24 @@ def test_phase4_append_failure_cannot_be_relabelled_as_commit(
         )
     monkeypatch.undo()
     failure_path = output / "failure.json"
+    diagnostics_path = output / "producer-failure-diagnostics.json"
     manifest_path = output / "manifest.json"
+    diagnostics = json.loads(diagnostics_path.read_bytes())
+    diagnostics.update(
+        {
+            "producer_reported_stage": "score-store-commit",
+            "producer_reported_sqlite_inserted_count": 2,
+        }
+    )
+    diagnostics_path.write_bytes(canonical_json_bytes(diagnostics))
     failure = json.loads(failure_path.read_bytes())
     failure.update(
         {
-            "stage": "score-store-commit",
+            "producer_reported_stage": "score-store-commit",
             "failure_code": "v4_3_score_store_commit_failure",
             "error_type": "v4_3_score_store_commit_failure",
             "error_message": "V4.3 cache run failed during score-store-commit.",
+            "producer_diagnostics_sha256": sha256_json(diagnostics),
         }
     )
     failure_path.write_bytes(canonical_json_bytes(failure))
@@ -1366,13 +1377,25 @@ def test_phase4_append_failure_cannot_be_relabelled_as_commit(
             "logical_sha256": sha256_json(failure),
         }
     )
+    manifest["producer_failure_diagnostics_artifact"].update(
+        {
+            "sha256": sha256_file(diagnostics_path),
+            "byte_count": diagnostics_path.stat().st_size,
+            "logical_sha256": sha256_json(diagnostics),
+        }
+    )
     manifest_path.write_bytes(canonical_json_bytes(manifest))
 
-    with pytest.raises(V43RunError, match="stage evidence"):
-        verify_v4_3_run(
-            output,
-            **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
-        )
+    verified = verify_v4_3_run(
+        output,
+        **_phase4_kwargs(real_harness),  # type: ignore[arg-type]
+    )
+    assert verified.manifest.run_status == "failed"
+    assert verified.manifest.compliance is None
+    assert verified.manifest.failure_diagnostics_scope == (
+        "producer-reported-internal-consistency-only"
+    )
+    assert diagnostics["historically_authenticated"] is False
 
 
 def test_phase4_failure_verifier_rechecks_exact_bytes_after_replay(
@@ -1409,7 +1432,7 @@ def test_phase4_failure_verifier_rechecks_exact_bytes_after_replay(
         real_verify_partial(*args, **kwargs)
         failure_path = output / "failure.json"
         payload = json.loads(failure_path.read_bytes())
-        payload["diagnostic_cause_message"] = "concurrent replacement"
+        payload["producer_reported_cause_message"] = "concurrent replacement"
         failure_path.write_bytes(canonical_json_bytes(payload))
 
     monkeypatch.setattr(
