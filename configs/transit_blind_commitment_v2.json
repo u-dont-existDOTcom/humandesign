@@ -1,0 +1,62 @@
+{
+  "version": "2.0",
+  "purpose": "Deterministic low-entropy precommitment schema for blind retrospective HD transit tests",
+  "canonical_json": {
+    "encoding": "UTF-8",
+    "key_order": [
+      "event_onset_local_minute",
+      "event_code",
+      "direction_code",
+      "domain_code",
+      "comparator_minutes"
+    ],
+    "json_separators": [",", ":"],
+    "sort_keys": false
+  },
+  "event_code_format": "BODY:LAYER:FROM>TO or BODY:STRUCTURE:STATE",
+  "direction_codes": [
+    "MORE_RECEPTIVE",
+    "MORE_EVALUATIVE",
+    "MORE_ACTION_ORIENTED",
+    "MORE_UNCERTAINTY_SENSITIVE",
+    "MORE_SECURITY_SEEKING",
+    "MORE_ACCEPTING",
+    "MORE_INTERNAL",
+    "MORE_EXTERNAL",
+    "MORE_SOCIAL_ENGAGEMENT",
+    "LESS_ANALYTICAL_CLOSURE",
+    "MORE_ANALYTICAL_CLOSURE",
+    "OTHER_PREDECLARED"
+  ],
+  "domain_codes": [
+    "COGNITION",
+    "COMMUNICATION",
+    "SOCIAL",
+    "TASK_STYLE",
+    "SOMATIC",
+    "EMOTIONAL",
+    "ATTENTION",
+    "MIXED"
+  ],
+  "tone_keynotes": {
+    "1": "Security",
+    "2": "Uncertainty",
+    "3": "Action",
+    "4": "Meditation",
+    "5": "Judgment",
+    "6": "Acceptance"
+  },
+  "reveal_rule": "After the user's free report, enumerate every mechanically qualifying event in the committed onset minute and every allowed direction/domain combination, serialize each candidate exactly under canonical_json, and SHA-256 each candidate. Reveal/score only if exactly one candidate matches the stored commitment hash. Zero matches = COMMITMENT-MISMATCH. More than one match = COMMITMENT-AMBIGUOUS.",
+  "scoring_rule": {
+    "HIT": "The free report independently contains the committed directional change in the committed domain relative to the comparator.",
+    "PARTIAL": "The report contains a weaker or mixed version of the committed change.",
+    "MISS": "The report is sufficiently clear and lacks or contradicts the committed change.",
+    "UNUSABLE_RECALL": "The user cannot reconstruct the interval well enough to score."
+  },
+  "notes": [
+    "Never hash free-form prediction prose in v2.",
+    "Do not expose the event/direction/domain codes before the user's free report.",
+    "Base micro-transitions are excluded from ordinary tests.",
+    "Tone behavioral predictions remain experimental extensions unless separately validated."
+  ]
+}
