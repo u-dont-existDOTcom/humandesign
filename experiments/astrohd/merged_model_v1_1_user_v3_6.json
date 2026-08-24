@@ -1,0 +1,33 @@
+{
+  "version":"AstroHD-merged-user-V3.6-2026-08-24",
+  "status":"post-selection descriptive; mappings frozen before this merged century scan",
+  "rho":0.25,
+  "cap_multiplier":1.25,
+  "clusters":[
+    {"id":"structure_discovery","confidence":0.75,"hd":[["channel_17_62",1.0,1.0],["gate_62",0.45,0.75]],"wa":[["mercury_saturn",1.0,1.0],["mercury_capricorn",0.55,0.75]]},
+    {"id":"mystery_inquiry","confidence":1.0,"hd":[["channel_24_61",1.0,1.0],["gate_61",0.60,0.75]],"wa":[["mercury_pluto",1.0,1.0],["mercury_jupiter",0.55,0.75],["neptune_house12",0.45,0.50]]},
+    {"id":"original_contribution","confidence":1.0,"hd":[["channel_1_8",1.0,1.0],["gate_1",0.55,0.75]],"wa":[["mercury_uranus",1.0,1.0],["sun_uranus",0.75,0.75],["sun_aquarius",0.65,0.75]]},
+    {"id":"insight_translation","confidence":1.0,"hd":[["channel_23_43",1.0,1.0],["gate_23",0.50,0.75]],"wa":[["mercury_venus",0.75,0.75],["mercury_house1",0.45,0.75]]},
+    {"id":"strategic_persuasion","confidence":1.0,"hd":[["channel_26_44",1.0,1.0],["gate_26",0.60,0.75]],"wa":[["mercury_mars",0.85,0.75],["mercury_venus",0.70,0.75],["mercury_capricorn",0.45,0.75]]},
+    {"id":"recognition_selectivity","confidence":0.75,"hd":[["type_projector",1.0,1.0],["profile_has_2",0.45,0.75]],"wa":[["asc_capricorn",0.55,0.75],["saturn_angular",0.45,0.50]]},
+    {"id":"network_propagation","confidence":1.0,"hd":[["profile_has_4",1.0,1.0],["gate_44",0.35,0.75]],"wa":[["jupiter_house11",0.70,0.75],["venus_house11",0.60,0.75],["uranus_house11",0.45,0.50],["saturn_house11",0.40,0.50]]},
+    {"id":"projection_rescuer","confidence":1.0,"hd":[["profile_has_5",1.0,1.0]],"wa":[["neptune_house7",0.75,0.75],["sun_neptune",0.55,0.50]]},
+    {"id":"episodic_intuition","confidence":0.75,"hd":[["authority_splenic",1.0,1.0],["channel_10_57",0.90,1.0],["channel_20_57",0.75,1.0],["gate_57",0.45,0.75]],"wa":[["moon_neptune",0.70,0.75],["neptune_angular",0.45,0.50]]},
+    {"id":"autonomy_self_direction","confidence":1.0,"hd":[["gate_10",0.65,0.75],["center_g_defined",0.45,0.75]],"wa":[["sun_house1",1.0,1.0],["sun_aquarius",0.70,0.75],["asc_capricorn",0.45,0.75]]},
+    {"id":"sanctuary_sensory_home","confidence":1.0,"hd":[["profile_has_2",0.45,0.75]],"wa":[["moon_house4",1.0,1.0],["moon_taurus",0.85,1.0],["venus_house4",0.50,0.75]]},
+    {"id":"romantic_longing_libido","confidence":1.0,"hd":[["channel_6_59",0.90,1.0],["channel_30_41",0.65,0.75],["gate_30",0.45,0.75]],"wa":[["venus_mars",1.0,1.0],["venus_neptune",0.80,1.0],["venus_pisces",0.60,0.75],["mars_pisces",0.50,0.75]]},
+    {"id":"stable_but_permeable_emotions","confidence":1.0,"hd":[["solar_plexus_undefined",1.0,1.0]],"wa":[["moon_taurus_and_neptune12",1.0,0.75],["moon_neptune",0.75,0.75],["moon_house4",0.55,0.75]]},
+    {"id":"meaningful_work_not_constant","confidence":1.0,"hd":[["sacral_undefined",1.0,1.0],["type_projector",0.70,0.75]],"wa":[["mars_saturn",0.85,1.0]]},
+    {"id":"conditional_consequential_contribution","confidence":1.0,"hd":[["channel_28_38",0.80,0.75],["gate_28",0.45,0.75]],"wa":[["pluto_mc",1.0,1.0],["sun_pluto",0.75,0.75],["pluto_house10",0.65,0.75]]},
+    {"id":"consequential_correction","confidence":0.75,"hd":[["channel_18_58",0.85,0.75],["gate_18",0.55,0.75]],"wa":[["mars_saturn",0.55,0.75],["mercury_pluto",0.50,0.75]]},
+    {"id":"privacy_retreat_spiritual","confidence":1.0,"hd":[["profile_has_2",0.70,0.75],["gate_33",0.55,0.75]],"wa":[["neptune_house12",1.0,1.0],["moon_house12",0.65,0.75],["sun_house12",0.55,0.75]]},
+    {"id":"durable_value_tension","confidence":0.75,"hd":[["gate_40",0.35,0.50]],"wa":[["sun_moon_hard",1.0,1.0],["sun_neptune",0.55,0.50]]},
+    {"id":"resource_autonomy_not_status","confidence":1.0,"hd":[["channel_21_45",0.60,0.75],["gate_21",0.55,0.75]],"wa":[["sun_aquarius",0.60,0.75],["venus_house2",0.55,0.75],["jupiter_house2",0.45,0.75]]}
+  ],
+  "contradictions":[
+    {"id":"meaningful_work_not_constant","hd":[["sacral_defined",1.0]],"wa":[]},
+    {"id":"stable_but_permeable_emotions","hd":[["solar_plexus_defined",0.75]],"wa":[]},
+    {"id":"resource_autonomy_not_status","hd":[["channel_32_54",0.60]],"wa":[]},
+    {"id":"structure_discovery","hd":[["channel_16_48",0.35]],"wa":[]}
+  ]
+}

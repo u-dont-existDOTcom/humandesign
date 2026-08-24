@@ -1,0 +1,30 @@
+name: Build AstroHD ephemeris cache
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/build_astrohd_ephemeris_cache.py
+      - .github/workflows/build_astrohd_ephemeris_cache.yml
+permissions:
+  contents: write
+jobs:
+  build-cache:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --upgrade pip numpy pyswisseph
+      - run: python scripts/build_astrohd_ephemeris_cache.py --out data/ephemeris/astrohd_generic_v1
+      - name: Commit cache
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ephemeris/astrohd_generic_v1
+          if git diff --cached --quiet; then
+            echo "Cache unchanged"
+          else
+            git commit -m "Cache AstroHD 1926-2026 ephemeris"
+            git push
+          fi
