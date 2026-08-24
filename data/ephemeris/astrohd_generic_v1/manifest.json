@@ -1,0 +1,80 @@
+{
+  "version": "astrohd-generic-ephemeris-cache-v1",
+  "start_utc": "1926-05-15T10:42:00+00:00",
+  "end_utc": "2026-08-24T10:42:00+00:00",
+  "start_jd": 2424650.9458333333,
+  "end_jd": 2461276.9458333333,
+  "ephemeris": "Swiss Ephemeris library with explicit Moshier flags",
+  "flags": 260,
+  "node": "true",
+  "longitude_quantization_deg": 1e-05,
+  "codec": "unwrapped longitude -> 1e-5deg integer -> second differences -> XZ extreme",
+  "bodies": {
+    "sun": {
+      "step_hours": 3,
+      "n": 293009,
+      "bytes": 40508,
+      "sha256": "bd75630b71cd9e871c65742c6e7f9d66c98471dc6d452f3c5c8f68fcb57f25fe"
+    },
+    "moon": {
+      "step_hours": 1,
+      "n": 879025,
+      "bytes": 308480,
+      "sha256": "c5c08dab3619bd3afb53a33398a15c37085031b7181238668f8d01973b4065c0"
+    },
+    "mercury": {
+      "step_hours": 3,
+      "n": 293009,
+      "bytes": 127224,
+      "sha256": "3a3d4a0bda7a41f36db85db2a196b5bee03bca94d08ac6f01a7ad5f98053c7ac"
+    },
+    "venus": {
+      "step_hours": 3,
+      "n": 293009,
+      "bytes": 64468,
+      "sha256": "f5de055fb1fd03f36deeef9b32eb7436129209ec8baca6ce1fdd77fb6fd9a8ae"
+    },
+    "mars": {
+      "step_hours": 3,
+      "n": 293009,
+      "bytes": 58184,
+      "sha256": "b3a43321ad90c7621ed471887ca9e1960a27f1eb60f944492e42c576bbb471b3"
+    },
+    "jupiter": {
+      "step_hours": 6,
+      "n": 146505,
+      "bytes": 39048,
+      "sha256": "90bce5e16f57bd6fe380f34110aae5c11921893be75338547a4ed53f0763da73"
+    },
+    "saturn": {
+      "step_hours": 6,
+      "n": 146505,
+      "bytes": 35232,
+      "sha256": "f152d415cea73aa8cd91858590173d9e38187d12268828bcaa99fabe82656bfc"
+    },
+    "uranus": {
+      "step_hours": 12,
+      "n": 73253,
+      "bytes": 23776,
+      "sha256": "52644c674e1dc819771fc2ee07cb2d2038cc68adddc6eb7b26e7e1b674b4f123"
+    },
+    "neptune": {
+      "step_hours": 12,
+      "n": 73253,
+      "bytes": 22060,
+      "sha256": "88eeca19d84277d3c8ac3b6b9dff74b901051dfa96a825418a96b9aa805ca025"
+    },
+    "pluto": {
+      "step_hours": 12,
+      "n": 73253,
+      "bytes": 21908,
+      "sha256": "d2546e6a576b3a047748bccadbadd5eea20493c99ac38849fbfde2410b89e6bb"
+    },
+    "true_node": {
+      "step_hours": 3,
+      "n": 293009,
+      "bytes": 148008,
+      "sha256": "93dbbbe7e53831c10366007323120215385501f4ebcb3f8a01cc74b5a92857b0"
+    }
+  }
+}
