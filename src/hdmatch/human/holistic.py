@@ -20,7 +20,7 @@ from __future__ import annotations
 import hashlib
 import math
 import random
-from collections import Counter, defaultdict
+from collections import defaultdict
 from collections.abc import Mapping, Sequence
 from datetime import UTC, datetime
 from typing import Any, Literal
@@ -149,10 +149,12 @@ class HolisticPositiveEvidenceModel:
             feature: str((feature_clusters or {}).get(feature, feature))
             for feature in features
         }
-        background: dict[str, Counter[str]] = {feature: Counter() for feature in features}
-        raw_label_counts: Counter[str] = Counter()
-        raw_label_feature: dict[str, dict[str, Counter[str]]] = defaultdict(
-            lambda: {feature: Counter() for feature in features}
+        background: dict[str, dict[str, float]] = {
+            feature: defaultdict(float) for feature in features
+        }
+        raw_label_counts: dict[str, float] = defaultdict(float)
+        raw_label_feature: dict[str, dict[str, dict[str, float]]] = defaultdict(
+            lambda: {feature: defaultdict(float) for feature in features}
         )
 
         ordered = tuple(sorted(records, key=lambda record: record.participant_id))
