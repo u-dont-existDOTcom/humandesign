@@ -35,6 +35,12 @@ from .holistic import (
     greedy_minimize_feature_groups,
     rank_true_chart,
 )
+from .holistic_cv import (
+    CrossFittedEvaluationResult,
+    cross_fitted_identification,
+    deterministic_person_fold,
+    greedy_cross_fitted_minimize_feature_groups,
+)
 from .protocol import (
     FINAL_TEST_RELEASE_ACKNOWLEDGEMENT,
     BoundSymbolicScorer,
@@ -77,6 +83,7 @@ from .workflow import (
 __all__ = [
     "AblationResult",
     "CandidateChart",
+    "CrossFittedEvaluationResult",
     "EmpiricalChartResponseModel",
     "FinalTestFreezeLedgerReceipt",
     "FINAL_TEST_RELEASE_ACKNOWLEDGEMENT",
@@ -112,6 +119,8 @@ __all__ = [
     "VerifiedBirthRecord",
     "create_person_splits",
     "candidate_universe_sha256",
+    "cross_fitted_identification",
+    "deterministic_person_fold",
     "enforce_training_cohort",
     "evaluate_identification",
     "fit_development_model_bundle",
@@ -122,6 +131,7 @@ __all__ = [
     "freeze_human_predictions",
     "freeze_prediction_artifacts",
     "freeze_protocol_artifacts",
+    "greedy_cross_fitted_minimize_feature_groups",
     "greedy_minimize_feature_groups",
     "import_human_cases",
     "human_dataset_sha256",
