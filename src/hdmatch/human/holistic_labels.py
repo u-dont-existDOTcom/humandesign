@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
+import math
 from collections import Counter
 from collections.abc import Mapping, Sequence
-import math
 
 
 def cluster_normalized_evidence_weights(
@@ -17,7 +17,7 @@ def cluster_normalized_evidence_weights(
 
     Closely related observations may all be retained for specificity, but their
     total possible contribution is normalized by the number of observed labels
-    in that cluster.  Optional reliability weights then reduce (never increase)
+    in that cluster. Optional reliability weights then reduce (never increase)
     individual contributions.
 
     A label absent from ``label_clusters`` forms its own singleton cluster.
@@ -36,10 +36,7 @@ def cluster_normalized_evidence_weights(
     if invalid:
         raise ValueError(f"reliability weights must be within [0, 1]: {invalid}")
 
-    clusters = {
-        label: str(label_clusters.get(label, label))
-        for label in labels
-    }
+    clusters = {label: str(label_clusters.get(label, label)) for label in labels}
     counts = Counter(clusters.values())
     return {
         label: float(reliabilities.get(label, 1.0)) / counts[clusters[label]]
