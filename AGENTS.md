@@ -31,6 +31,7 @@ Read in this order:
 17. `docs/14_month_first_blind_validation.md`
 18. `docs/16_ephemeris_bootstrap.md`
 19. `docs/17_v3_6_profile_mapping_coverage_audit.md`
+20. `docs/22_holistic_profile_identification.md`
 
 The earlier protocol/scoring and behavioral-target files in `reference/core/` remain historical/normative background only where they do not conflict with V4.3/V3.6. Never silently downgrade to V4.1/V3.2 or V3.5 because the existing implementation is easier.
 
@@ -110,6 +111,8 @@ If any item is missing, fail closed or label the result honestly as a reduced mo
 - Timezone is not independently identifiable from personality when local tuples resolve to the same UTC instant.
 - Do not report a single minute when the scored state is stable across a wider interval.
 - Missing support is not contradiction.
+- Sparse archival/profile annotations must be treated as positive-unlabeled unless the source explicitly records exhaustive negatives; absence of an annotation is not a behavioral contradiction.
+- Whole-profile identification may combine multiple observed positive behaviors against the complete chart, but dependency clusters must prevent correlated feature expansion from manufacturing evidence.
 - Trauma/body-access variables may reduce measurement reliability; they may not turn a mismatch into support.
 - Unknown/context-dependent responses may remain unscored; never force them to one side.
 - Do not repeatedly re-ask established behavioral constructs in new wording and call the result independent evidence.
