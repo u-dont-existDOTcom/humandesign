@@ -383,7 +383,7 @@ def _deterministic_sample(
 ) -> tuple[CandidateChart, ...]:
     if count >= len(values):
         return tuple(values)
-    digest = hashlib.sha256(f"{seed}:{participant_id}".encode("utf-8")).digest()
+    digest = hashlib.sha256(f"{seed}:{participant_id}".encode()).digest()
     rng = random.Random(int.from_bytes(digest[:8], "big"))
     indices = sorted(rng.sample(range(len(values)), count))
     return tuple(values[index] for index in indices)
