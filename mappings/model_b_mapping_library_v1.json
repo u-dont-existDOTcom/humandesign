@@ -1,0 +1,644 @@
+{
+  "base_mapping_path": "mappings/mapping_library_v1.json",
+  "base_mapping_sha256": "3424672432f7f071ec90ef9ddce52a67ff6794911e92b1a1e04f079262ea6200",
+  "base_model_id": "MODEL-A-CORE-V1",
+  "behavioral_mappings": [
+    {
+      "contradiction_rule": null,
+      "dependency_cluster": "STRATEGIC_PERSUASION",
+      "mapping_directness": null,
+      "mapping_id": "MBM-CHANNEL-26-44-T08",
+      "predicted_response": null,
+      "question_ids": [
+        "T08"
+      ],
+      "sources": [
+        {
+          "locator": "§30 Prospective discrimination procedure",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "The protocol associates Channel 26-44 with a persuasion distinction, then requires a neutral behavior-first question."
+        },
+        {
+          "locator": "question T08",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "T08 supplies the corresponding neutral strategic-persuasion question."
+        }
+      ],
+      "status": "unresolved",
+      "structural_selector": "complete_channel == 26-44",
+      "unresolved_reason": "The association is concrete, but neither source assigns directness, a canonical answer token/distribution, or contradiction semantics. It remains unresolved rather than receiving a favorable default."
+    },
+    {
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_COMPLETE_CHANNEL",
+      "mapping_directness": null,
+      "mapping_id": "MBM-COMPLETE-CHANNELS",
+      "predicted_response": null,
+      "question_ids": [],
+      "sources": [
+        {
+          "locator": "purpose and rules (top-level fields)",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "The question bank explicitly contains no chart mappings; those require a separately frozen server-side library."
+        },
+        {
+          "locator": "§33 Channels and hanging gates",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "Complete channels are an allowed structural layer, not a behavior dictionary."
+        }
+      ],
+      "status": "unresolved",
+      "structural_selector": "any complete_channel except separately declared associations",
+      "unresolved_reason": "The repository does not freeze a predicted answer distribution, mapping-directness class, or contradiction rule for this detailed selector. It cannot score until those items are sourced and versioned or learned in a separate empirical model."
+    },
+    {
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_CARDINAL",
+      "mapping_directness": null,
+      "mapping_id": "MBM-CARDINAL-ACTIVATIONS",
+      "predicted_response": null,
+      "question_ids": [],
+      "sources": [
+        {
+          "locator": "purpose and rules (top-level fields)",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "The question bank explicitly contains no chart mappings; those require a separately frozen server-side library."
+        },
+        {
+          "locator": "§32 Cardinal placements",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "Cardinals are allowed at fixed salience without bespoke per-gate bonuses."
+        }
+      ],
+      "status": "unresolved",
+      "structural_selector": "any Personality/Design Sun/Earth gate or line",
+      "unresolved_reason": "The repository does not freeze a predicted answer distribution, mapping-directness class, or contradiction rule for this detailed selector. It cannot score until those items are sourced and versioned or learned in a separate empirical model."
+    },
+    {
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_DEFINITION",
+      "mapping_directness": null,
+      "mapping_id": "MBM-DEFINITION",
+      "predicted_response": null,
+      "question_ids": [],
+      "sources": [
+        {
+          "locator": "purpose and rules (top-level fields)",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "The question bank explicitly contains no chart mappings; those require a separately frozen server-side library."
+        },
+        {
+          "locator": "§21 Layer 1",
+          "path": "reference/core/human_design_reverse_matching_protocol_v4_1.md",
+          "rationale": "Definition is scoring-relevant architecture, but no behavioral key is provided."
+        }
+      ],
+      "status": "unresolved",
+      "structural_selector": "any definition pattern",
+      "unresolved_reason": "The repository does not freeze a predicted answer distribution, mapping-directness class, or contradiction rule for this detailed selector. It cannot score until those items are sourced and versioned or learned in a separate empirical model."
+    },
+    {
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_REPEATED_GATE",
+      "mapping_directness": null,
+      "mapping_id": "MBM-REPEATED-GATES",
+      "predicted_response": null,
+      "question_ids": [],
+      "sources": [
+        {
+          "locator": "purpose and rules (top-level fields)",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "The question bank explicitly contains no chart mappings; those require a separately frozen server-side library."
+        },
+        {
+          "locator": "§21 Layer 2",
+          "path": "reference/core/human_design_reverse_matching_protocol_v4_1.md",
+          "rationale": "Repeated gates are activation transitions, not a supplied behavior map."
+        }
+      ],
+      "status": "unresolved",
+      "structural_selector": "any repeated-gate candidate",
+      "unresolved_reason": "The repository does not freeze a predicted answer distribution, mapping-directness class, or contradiction rule for this detailed selector. It cannot score until those items are sourced and versioned or learned in a separate empirical model."
+    },
+    {
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_THEMATIC_NODE",
+      "mapping_directness": null,
+      "mapping_id": "MBM-THEMATIC-NODES",
+      "predicted_response": null,
+      "question_ids": [],
+      "sources": [
+        {
+          "locator": "purpose and rules (top-level fields)",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "The question bank explicitly contains no chart mappings; those require a separately frozen server-side library."
+        },
+        {
+          "locator": "§21 Layer 2",
+          "path": "reference/core/human_design_reverse_matching_protocol_v4_1.md",
+          "rationale": "Nodes are activation transitions, not a supplied behavior map."
+        }
+      ],
+      "status": "unresolved",
+      "structural_selector": "any Personality/Design Node activation candidate",
+      "unresolved_reason": "The repository does not freeze a predicted answer distribution, mapping-directness class, or contradiction rule for this detailed selector. It cannot score until those items are sourced and versioned or learned in a separate empirical model."
+    },
+    {
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_PROMINENT_ACTIVATION",
+      "mapping_directness": null,
+      "mapping_id": "MBM-PROMINENT-ACTIVATIONS",
+      "predicted_response": null,
+      "question_ids": [],
+      "sources": [
+        {
+          "locator": "purpose and rules (top-level fields)",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "The question bank explicitly contains no chart mappings; those require a separately frozen server-side library."
+        },
+        {
+          "locator": "§11 Fixed structural salience classes",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "Other prominent activations are named, but prominence is not defined."
+        }
+      ],
+      "status": "unresolved",
+      "structural_selector": "any other prominent planetary activation",
+      "unresolved_reason": "The repository does not freeze a predicted answer distribution, mapping-directness class, or contradiction rule for this detailed selector. It cannot score until those items are sourced and versioned or learned in a separate empirical model."
+    },
+    {
+      "contradiction_rule": null,
+      "dependency_cluster": "UNRESOLVED_HANGING_GATE",
+      "mapping_directness": null,
+      "mapping_id": "MBM-HANGING-GATES",
+      "predicted_response": null,
+      "question_ids": [],
+      "sources": [
+        {
+          "locator": "purpose and rules (top-level fields)",
+          "path": "reference/core/question_bank_v1.json",
+          "rationale": "The question bank explicitly contains no chart mappings; those require a separately frozen server-side library."
+        },
+        {
+          "locator": "§33 Channels and hanging gates",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "Hanging gates may support behavior only through a frozen mapping."
+        }
+      ],
+      "status": "unresolved",
+      "structural_selector": "any justified hanging-gate candidate",
+      "unresolved_reason": "The repository does not freeze a predicted answer distribution, mapping-directness class, or contradiction rule for this detailed selector. It cannot score until those items are sourced and versioned or learned in a separate empirical model."
+    }
+  ],
+  "cardinal_positions": [
+    "personality:sun",
+    "personality:earth",
+    "design:sun",
+    "design:earth"
+  ],
+  "channel_catalog": [
+    "1-8",
+    "2-14",
+    "3-60",
+    "4-63",
+    "5-15",
+    "6-59",
+    "7-31",
+    "9-52",
+    "10-20",
+    "10-34",
+    "10-57",
+    "11-56",
+    "12-22",
+    "13-33",
+    "16-48",
+    "17-62",
+    "18-58",
+    "19-49",
+    "20-34",
+    "20-57",
+    "21-45",
+    "23-43",
+    "24-61",
+    "25-51",
+    "26-44",
+    "27-50",
+    "28-38",
+    "29-46",
+    "30-41",
+    "32-54",
+    "34-57",
+    "35-36",
+    "37-40",
+    "39-55",
+    "42-53",
+    "47-64"
+  ],
+  "dependency_policies": [
+    {
+      "policy_id": "MBD-CHANNEL-GATE",
+      "rule": "A complete channel and either component gate share dependency keys and may not receive independent full information credit for one observation.",
+      "sources": [
+        {
+          "locator": "§10 Detailed behavioral pathways, §13, and §23 Structural reuse rule",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "Alternative pathways compete; reuse of an exact structural anchor is controlled."
+        },
+        {
+          "locator": "§15 Detailed support and contradiction",
+          "path": "reference/core/human_design_reverse_matching_protocol_v4_1.md",
+          "rationale": "A channel and its component gates are not independent evidence."
+        }
+      ]
+    },
+    {
+      "policy_id": "MBD-CARDINAL-CROSS",
+      "rule": "Incarnation Cross receives no separate anchor when its Personality/Design Sun/Earth cardinal activations are represented; cardinal gate and line additivity remains unresolved.",
+      "sources": [
+        {
+          "locator": "§11 Fixed structural salience classes and §23 Structural reuse rule",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "Cross and four constituent cardinal activations are dependent."
+        }
+      ]
+    },
+    {
+      "policy_id": "MBD-PROFILE-CARDINAL-LINE",
+      "rule": "Personality and Design Profile roles derive mechanically from their respective Sun lines. A Profile-role line and a cardinal activation line with the same side/line share a dependency key and cannot stack full information for the same observation.",
+      "sources": [
+        {
+          "locator": "§21 Conditional prevalence and §23 Structural reuse rule",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "Downstream structures are conditionally weighted and reused anchors cannot receive repeated full credit."
+        },
+        {
+          "locator": "derive_bodygraph / _derive_profile",
+          "path": "src/hdmatch/chart/bodygraph.py",
+          "rationale": "The deterministic engine derives Profile from Personality and Design Sun lines."
+        }
+      ]
+    },
+    {
+      "policy_id": "MBD-ANCHOR-REUSE",
+      "rule": "The same exact anchor receives full information once; only the strongest independent corroborator can add at most 15 percent.",
+      "sources": [
+        {
+          "locator": "§10 Detailed behavioral pathways, §13, and §23 Structural reuse rule",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "Alternative pathways compete; reuse of an exact structural anchor is controlled."
+        }
+      ]
+    },
+    {
+      "policy_id": "MBD-ALTERNATIVES",
+      "rule": "Alternative mechanisms compete by maximum supported pathway rather than summing; unsupported absence is neutral.",
+      "sources": [
+        {
+          "locator": "§10 Detailed behavioral pathways, §13, and §23 Structural reuse rule",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "Alternative pathways compete; reuse of an exact structural anchor is controlled."
+        },
+        {
+          "locator": "§15 Unsupported is not contradiction",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "Missing a favored detailed structure is neutral without an explicit opposing prediction."
+        }
+      ]
+    }
+  ],
+  "model_id": "MODEL-B-DETAILED-V1",
+  "model_version": "V4/V3.2-detailed-symbolic-v1",
+  "node_positions": [
+    "personality:north_node",
+    "personality:south_node",
+    "design:north_node",
+    "design:south_node"
+  ],
+  "prevalence_policy": {
+    "candidate_file_forbidden": true,
+    "duration_weighted": true,
+    "information_cap_rubric_bits": 6.0,
+    "minimum_effective_reference_size": 500,
+    "small_parent_action": "back_off_one_parent_level",
+    "sources": [
+      {
+        "locator": "§18 Reference universe for prevalence",
+        "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+        "rationale": "Prevalence is duration weighted over the global reference universe and never estimated from a candidate CSV."
+      },
+      {
+        "locator": "§21 Conditional prevalence and dependency control",
+        "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+        "rationale": "Use the frozen hierarchy, back off when the parent group is too small, and target 500 duration-weighted state equivalents."
+      }
+    ]
+  },
+  "prominent_activation_allowlist": [],
+  "question_bank_sha256": "31f813efc3da7263569ef010a8336b1b1b0c44801b7aa0f91e33b3fa4587d820",
+  "question_bank_version": "1.0.0",
+  "repeated_gate_minimum_occurrences": 2,
+  "schema_version": "model-b-mapping-library-v1",
+  "source_artifacts": [
+    {
+      "path": "reference/core/question_bank_v1.json",
+      "sha256": "31f813efc3da7263569ef010a8336b1b1b0c44801b7aa0f91e33b3fa4587d820"
+    },
+    {
+      "path": "reference/core/human_design_reverse_matching_protocol_v4_1.md",
+      "sha256": "2114625dccdcfeec2bf24d506c933ad6c9081284c34143625c1288edca765c74"
+    },
+    {
+      "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+      "sha256": "678f552b989f3547900a33e1e45fccaad2da969d94c950d0ec976d853455761f"
+    },
+    {
+      "path": "reference/core/updated_behavioral_profile_v3_2.md",
+      "sha256": "7b7c2b5f8cad22baeb2eb28a1076def3a60d2f3d4692bd689beec4b9eabe7f92"
+    },
+    {
+      "path": "reference/core/v3_2_scoring_delta.md",
+      "sha256": "3744b2183652245b34f6e128d1e217e150305bf755b132958a95adc0661df720"
+    },
+    {
+      "path": "reference/core/MAPPING_LIBRARY_TODO.md",
+      "sha256": "523c43ad5ed30363563824e2906a399c0ce6d315ea33c91787c395f5818e7e7e"
+    },
+    {
+      "path": "reference/core/search_backend_contract.md",
+      "sha256": "50c28f70d4430b58d62a1f2a453d4d7d2dcf3a75c7a732387621f5653f4591e7"
+    },
+    {
+      "path": "src/hdmatch/chart/bodygraph.py",
+      "sha256": "5bda8c935e7d58521929acb8f8528e87b958a7b92fc171bc11ac3ff8372b960b"
+    },
+    {
+      "path": "src/hdmatch/model_b/predicates.py",
+      "sha256": "e7d94bb443ad46fb2b8feb123f5b93f2950d59794dd59d4ba8749e1df255f250"
+    },
+    {
+      "path": "mappings/mapping_library_v1.json",
+      "sha256": "3424672432f7f071ec90ef9ddce52a67ff6794911e92b1a1e04f079262ea6200"
+    }
+  ],
+  "structural_families": [
+    {
+      "conditional_parent_levels": [
+        [
+          "type",
+          "strategy",
+          "authority",
+          "defined_centers",
+          "profile"
+        ],
+        [
+          "type",
+          "authority"
+        ],
+        [
+          "type"
+        ],
+        []
+      ],
+      "conditional_parent_status": "unresolved",
+      "conditional_parent_unresolved_reason": "V3 freezes the full channel parent as core architecture but only says to back off one parent level when small; it does not freeze which block is removed first. The displayed fallback sequence is a non-scoring placeholder that must be explicitly frozen per run before conditional scoring.",
+      "dependency_policy_ids": [
+        "MBD-CHANNEL-GATE",
+        "MBD-ANCHOR-REUSE",
+        "MBD-ALTERNATIVES"
+      ],
+      "extractor": "extract_complete_channels",
+      "family_id": "MBF-COMPLETE-CHANNEL",
+      "feature_status": "frozen",
+      "layer": "complete_channel",
+      "sources": [
+        {
+          "locator": "§11 Fixed structural salience classes and §46 Default V3 constants",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "The detailed structural layers have global salience constants and may not be candidate-tuned."
+        },
+        {
+          "locator": "§21 Minute-level discrimination layers",
+          "path": "reference/core/human_design_reverse_matching_protocol_v4_1.md",
+          "rationale": "Layer 1 includes Definition and complete Channels; Layer 2 includes cardinal, Node, repeated-gate, and material activation transitions."
+        },
+        {
+          "locator": "§33 Channels and hanging gates",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "A complete channel has salience 0.80 and missing it is neutral."
+        },
+        {
+          "locator": "§21 Conditional prevalence and dependency control",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "Channel prevalence is conditional on frozen core architecture, whose four blocks are enumerated in §8."
+        }
+      ],
+      "structural_salience": 0.8,
+      "unresolved_reason": null
+    },
+    {
+      "conditional_parent_levels": [
+        [
+          "frozen_higher_level_architecture"
+        ],
+        []
+      ],
+      "conditional_parent_status": "unresolved",
+      "conditional_parent_unresolved_reason": "The protocol names a higher-level parent category but does not freeze its exact feature fields; Model B records the category and must not choose a favorable set.",
+      "dependency_policy_ids": [
+        "MBD-CARDINAL-CROSS",
+        "MBD-PROFILE-CARDINAL-LINE",
+        "MBD-ANCHOR-REUSE",
+        "MBD-ALTERNATIVES"
+      ],
+      "extractor": "extract_cardinal_activations",
+      "family_id": "MBF-CARDINAL-ACTIVATION",
+      "feature_status": "frozen",
+      "layer": "cardinal_activation",
+      "sources": [
+        {
+          "locator": "§11 Fixed structural salience classes and §46 Default V3 constants",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "The detailed structural layers have global salience constants and may not be candidate-tuned."
+        },
+        {
+          "locator": "§21 Minute-level discrimination layers",
+          "path": "reference/core/human_design_reverse_matching_protocol_v4_1.md",
+          "rationale": "Layer 1 includes Definition and complete Channels; Layer 2 includes cardinal, Node, repeated-gate, and material activation transitions."
+        },
+        {
+          "locator": "§32 Cardinal placements",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "Personality/Design Sun and Earth gate or line placements have salience 0.75 without bespoke per-gate bonuses."
+        }
+      ],
+      "structural_salience": 0.75,
+      "unresolved_reason": null
+    },
+    {
+      "conditional_parent_levels": [
+        []
+      ],
+      "conditional_parent_status": "unresolved",
+      "conditional_parent_unresolved_reason": "V3 freezes Definition salience but supplies no conditional-prevalence parent for Definition. Only unconditional prevalence is currently defined.",
+      "dependency_policy_ids": [
+        "MBD-ANCHOR-REUSE",
+        "MBD-ALTERNATIVES"
+      ],
+      "extractor": "extract_definition",
+      "family_id": "MBF-DEFINITION",
+      "feature_status": "frozen",
+      "layer": "definition",
+      "sources": [
+        {
+          "locator": "§11 Fixed structural salience classes and §46 Default V3 constants",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "The detailed structural layers have global salience constants and may not be candidate-tuned."
+        },
+        {
+          "locator": "§21 Minute-level discrimination layers",
+          "path": "reference/core/human_design_reverse_matching_protocol_v4_1.md",
+          "rationale": "Layer 1 includes Definition and complete Channels; Layer 2 includes cardinal, Node, repeated-gate, and material activation transitions."
+        }
+      ],
+      "structural_salience": 0.65,
+      "unresolved_reason": null
+    },
+    {
+      "conditional_parent_levels": [
+        [
+          "relevant_higher_level_architecture"
+        ],
+        []
+      ],
+      "conditional_parent_status": "unresolved",
+      "conditional_parent_unresolved_reason": "The protocol names a higher-level parent category but does not freeze its exact feature fields; Model B records the category and must not choose a favorable set.",
+      "dependency_policy_ids": [
+        "MBD-CHANNEL-GATE",
+        "MBD-ANCHOR-REUSE",
+        "MBD-ALTERNATIVES"
+      ],
+      "extractor": "extract_repeated_gate_candidates",
+      "family_id": "MBF-REPEATED-GATE",
+      "feature_status": "unresolved",
+      "layer": "repeated_gate",
+      "sources": [
+        {
+          "locator": "§11 Fixed structural salience classes and §46 Default V3 constants",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "The detailed structural layers have global salience constants and may not be candidate-tuned."
+        },
+        {
+          "locator": "§21 Minute-level discrimination layers",
+          "path": "reference/core/human_design_reverse_matching_protocol_v4_1.md",
+          "rationale": "Layer 1 includes Definition and complete Channels; Layer 2 includes cardinal, Node, repeated-gate, and material activation transitions."
+        }
+      ],
+      "structural_salience": 0.55,
+      "unresolved_reason": "The protocol names repeated gates but does not freeze occurrence counting, side/body treatment, or a behavioral directness rule. The extractor emits mechanics-only candidates at count >=2; they are not scoreable."
+    },
+    {
+      "conditional_parent_levels": [
+        [
+          "relevant_higher_level_architecture"
+        ],
+        []
+      ],
+      "conditional_parent_status": "unresolved",
+      "conditional_parent_unresolved_reason": "The protocol names a higher-level parent category but does not freeze its exact feature fields; Model B records the category and must not choose a favorable set.",
+      "dependency_policy_ids": [
+        "MBD-CHANNEL-GATE",
+        "MBD-ANCHOR-REUSE",
+        "MBD-ALTERNATIVES"
+      ],
+      "extractor": "extract_node_activation_candidates",
+      "family_id": "MBF-THEMATIC-NODE",
+      "feature_status": "unresolved",
+      "layer": "thematic_node",
+      "sources": [
+        {
+          "locator": "§11 Fixed structural salience classes and §46 Default V3 constants",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "The detailed structural layers have global salience constants and may not be candidate-tuned."
+        },
+        {
+          "locator": "§21 Minute-level discrimination layers",
+          "path": "reference/core/human_design_reverse_matching_protocol_v4_1.md",
+          "rationale": "Layer 1 includes Definition and complete Channels; Layer 2 includes cardinal, Node, repeated-gate, and material activation transitions."
+        }
+      ],
+      "structural_salience": 0.55,
+      "unresolved_reason": "All Personality/Design Node positions are mechanically available, but the protocol does not define when one is strongly thematic or map it to an answer."
+    },
+    {
+      "conditional_parent_levels": [
+        [
+          "relevant_higher_level_architecture"
+        ],
+        []
+      ],
+      "conditional_parent_status": "unresolved",
+      "conditional_parent_unresolved_reason": "The protocol names a higher-level parent category but does not freeze its exact feature fields; Model B records the category and must not choose a favorable set.",
+      "dependency_policy_ids": [
+        "MBD-CHANNEL-GATE",
+        "MBD-ANCHOR-REUSE",
+        "MBD-ALTERNATIVES"
+      ],
+      "extractor": "extract_prominent_activations",
+      "family_id": "MBF-PROMINENT-ACTIVATION",
+      "feature_status": "unresolved",
+      "layer": "prominent_activation",
+      "sources": [
+        {
+          "locator": "§11 Fixed structural salience classes and §46 Default V3 constants",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "The detailed structural layers have global salience constants and may not be candidate-tuned."
+        },
+        {
+          "locator": "§21 Minute-level discrimination layers",
+          "path": "reference/core/human_design_reverse_matching_protocol_v4_1.md",
+          "rationale": "Layer 1 includes Definition and complete Channels; Layer 2 includes cardinal, Node, repeated-gate, and material activation transitions."
+        }
+      ],
+      "structural_salience": 0.45,
+      "unresolved_reason": "The normative sources do not predeclare which non-cardinal planets count as prominent; the allowlist is therefore empty and no anchors are emitted."
+    },
+    {
+      "conditional_parent_levels": [
+        [
+          "relevant_higher_level_architecture"
+        ],
+        []
+      ],
+      "conditional_parent_status": "unresolved",
+      "conditional_parent_unresolved_reason": "The protocol names a higher-level parent category but does not freeze its exact feature fields; Model B records the category and must not choose a favorable set.",
+      "dependency_policy_ids": [
+        "MBD-CHANNEL-GATE",
+        "MBD-ANCHOR-REUSE",
+        "MBD-ALTERNATIVES"
+      ],
+      "extractor": "extract_hanging_gate_candidates",
+      "family_id": "MBF-HANGING-GATE",
+      "feature_status": "unresolved",
+      "layer": "hanging_gate",
+      "sources": [
+        {
+          "locator": "§11 Fixed structural salience classes and §46 Default V3 constants",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "The detailed structural layers have global salience constants and may not be candidate-tuned."
+        },
+        {
+          "locator": "§21 Minute-level discrimination layers",
+          "path": "reference/core/human_design_reverse_matching_protocol_v4_1.md",
+          "rationale": "Layer 1 includes Definition and complete Channels; Layer 2 includes cardinal, Node, repeated-gate, and material activation transitions."
+        },
+        {
+          "locator": "§33 Channels and hanging gates",
+          "path": "reference/core/human_design_search_instructions_fixed_candidate_blind(6).md",
+          "rationale": "A hanging gate has salience 0.35, may support behavior, and does not become a complete channel without its counterpart."
+        }
+      ],
+      "structural_salience": 0.35,
+      "unresolved_reason": "The protocol does not freeze whether hanging is gate-level or channel-edge specific and supplies no justified behavior mapping. The extractor emits edge-specific mechanics-only candidates; they are not scoreable."
+    }
+  ]
+}

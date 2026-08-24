@@ -7,6 +7,7 @@ from collections import defaultdict
 from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
 from enum import StrEnum
+from typing import Any
 
 from hdmatch.schemas import BehavioralResponse
 
@@ -26,6 +27,21 @@ class NoiseParameters:
     confidence_values: tuple[float, ...]
     reliability_values: tuple[float, ...]
 
+    def __post_init__(self) -> None:
+        for label, value in (
+            ("missing_rate", self.missing_rate),
+            ("flip_rate", self.flip_rate),
+            ("cluster_dropout_rate", self.cluster_dropout_rate),
+        ):
+            if not 0.0 <= value <= 1.0:
+                raise ValueError(f"{label} must be in [0, 1]")
+        for label, values in (
+            ("confidence_values", self.confidence_values),
+            ("reliability_values", self.reliability_values),
+        ):
+            if not values or any(not 0.0 <= value <= 1.0 for value in values):
+                raise ValueError(f"{label} must be nonempty and within [0, 1]")
+
 
 PARAMETERS: dict[NoiseTier, NoiseParameters] = {
     NoiseTier.ORACLE: NoiseParameters(0.0, 0.0, 0.0, (1.0,), (1.0,)),
@@ -33,6 +49,20 @@ PARAMETERS: dict[NoiseTier, NoiseParameters] = {
     NoiseTier.MEDIUM: NoiseParameters(0.15, 0.10, 0.10, (0.5, 0.75, 1.0), (0.5, 0.75, 1.0)),
     NoiseTier.ADVERSARIAL: NoiseParameters(0.30, 0.25, 0.20, (0.25, 0.5, 0.75), (0.25, 0.5, 0.75)),
 }
+
+
+def noise_parameters_payload(tier: NoiseTier) -> dict[str, Any]:
+    """Return canonical public simulator settings for manifests and audits."""
+
+    parameters = PARAMETERS[tier]
+    return {
+        "missing_rate": parameters.missing_rate,
+        "flip_rate": parameters.flip_rate,
+        "cluster_dropout_rate": parameters.cluster_dropout_rate,
+        "confidence_values": list(parameters.confidence_values),
+        "reliability_values": list(parameters.reliability_values),
+        "conditioning": "chart-independent-except-declared-measurement-domain",
+    }
 
 
 def apply_noise(

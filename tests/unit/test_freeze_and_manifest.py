@@ -20,7 +20,12 @@ from hdmatch.experiments.freeze import (
     freeze_predictions,
     verify_frozen_predictions,
 )
-from hdmatch.experiments.manifest import create_run_manifest, load_run_manifest, write_run_manifest
+from hdmatch.experiments.manifest import (
+    create_run_manifest,
+    load_run_manifest,
+    verify_run_manifest_resume,
+    write_run_manifest,
+)
 
 
 def _digest(label: str) -> str:
@@ -71,11 +76,64 @@ def test_manifest_records_hashes_commit_environment_and_is_immutable(tmp_path: P
     stored = json.loads(destination.read_bytes())
     assert stored["software_commit"]
     assert stored["reveal_status"] == "blind"
+    assert stored["config_payload"] == {"seed": 42}
     assert stored["config_sha256"] == sha256_json({"seed": 42})
     assert "python_version" in stored["software_environment"]
     assert load_run_manifest(destination) == manifest
     with pytest.raises(FileExistsError):
         write_run_manifest(manifest, destination)
+
+
+def test_manifest_resume_requires_exact_recovery_configuration() -> None:
+    config = {
+        "aggregation": "duration_weighted_evidence",
+        "threshold_rubric_bits": 0.0,
+        "workers": 2,
+        "cache_policy": "hash-bound exact month universes",
+    }
+    manifest = create_run_manifest(
+        experiment_id="EXP-RESUME",
+        seed=42,
+        repository_root=Path(__file__).parents[2],
+        candidate_universe="known_month",
+        aggregation_rule="duration_weighted_evidence",
+        model_id="MODEL-A-CORE-V1",
+        input_hashes={"blind_cases.json": _digest("blind")},
+        config=config,
+    )
+    verify_run_manifest_resume(
+        manifest,
+        experiment_id="EXP-RESUME",
+        seed=42,
+        candidate_universe="known_month",
+        aggregation_rule="duration_weighted_evidence",
+        model_id="MODEL-A-CORE-V1",
+        input_hashes={"blind_cases.json": _digest("blind")},
+        config=config,
+    )
+
+    with pytest.raises(ValueError, match="config_payload"):
+        verify_run_manifest_resume(
+            manifest,
+            experiment_id="EXP-RESUME",
+            seed=42,
+            candidate_universe="known_month",
+            aggregation_rule="duration_weighted_evidence",
+            model_id="MODEL-A-CORE-V1",
+            input_hashes={"blind_cases.json": _digest("blind")},
+            config={**config, "workers": 3},
+        )
+    with pytest.raises(ValueError, match="aggregation_rule"):
+        verify_run_manifest_resume(
+            manifest,
+            experiment_id="EXP-RESUME",
+            seed=42,
+            candidate_universe="known_month",
+            aggregation_rule="best_state",
+            model_id="MODEL-A-CORE-V1",
+            input_hashes={"blind_cases.json": _digest("blind")},
+            config=config,
+        )
 
 
 def test_freeze_binds_exact_prediction_bytes_and_all_inputs(tmp_path: Path) -> None:
@@ -104,6 +162,113 @@ def test_freeze_binds_exact_prediction_bytes_and_all_inputs(tmp_path: Path) -> N
     predictions.write_bytes(b'{"predictions":[]}\n')
     with pytest.raises(FreezeVerificationError, match="length changed"):
         verify_frozen_predictions(run_dir)
+
+
+def test_strict_freeze_verification_checks_exact_run_manifest_bytes(tmp_path: Path) -> None:
+    run_dir = tmp_path / "run"
+    run_dir.mkdir()
+    (run_dir / "predictions.json").write_bytes(b'{"predictions":[]}')
+    manifest_path = run_dir / "run.manifest.json"
+    manifest = create_run_manifest(
+        experiment_id="EXP-1",
+        seed=42,
+        repository_root=Path(__file__).parents[2],
+        candidate_universe="known_month",
+        aggregation_rule="duration_weighted_evidence",
+        model_id="MODEL-A-CORE-V1",
+        input_hashes={"blind_cases.json": _bindings().blind_input_sha256},
+        config={
+            "aggregation": "duration_weighted_evidence",
+            "threshold_rubric_bits": 0.0,
+            "workers": 1,
+            "cache_policy": "hash-bound exact month universes",
+        },
+        created_at_utc=datetime(2026, 8, 21, tzinfo=UTC),
+    )
+    write_run_manifest(manifest, manifest_path)
+    record = freeze_predictions(
+        run_dir,
+        experiment_id="EXP-1",
+        bindings=_bindings(),
+        repository_root=Path(__file__).parents[2],
+        run_manifest_path=manifest_path,
+        created_at_utc=datetime(2026, 8, 21, 0, 1, tzinfo=UTC),
+    )
+
+    assert verify_frozen_predictions(run_dir, require_run_manifest=True) == record
+    manifest_path.write_bytes(manifest_path.read_bytes() + b"\n")
+    assert verify_frozen_predictions(run_dir) == record
+    with pytest.raises(FreezeVerificationError, match="run-manifest bytes changed"):
+        verify_frozen_predictions(run_dir, require_run_manifest=True)
+
+    manifest_path.unlink()
+    with pytest.raises(FreezeVerificationError, match="path escapes or is absent"):
+        verify_frozen_predictions(run_dir, require_run_manifest=True)
+
+
+def test_freeze_refuses_manifest_timestamp_after_prediction_freeze(tmp_path: Path) -> None:
+    run_dir = tmp_path / "run"
+    run_dir.mkdir()
+    (run_dir / "predictions.json").write_bytes(b'{"predictions":[]}')
+    manifest = create_run_manifest(
+        experiment_id="EXP-1",
+        seed=42,
+        repository_root=Path(__file__).parents[2],
+        candidate_universe="known_month",
+        aggregation_rule="duration_weighted_evidence",
+        model_id="MODEL-A-CORE-V1",
+        input_hashes={"blind_cases.json": _bindings().blind_input_sha256},
+        config={"aggregation": "duration_weighted_evidence"},
+        created_at_utc=datetime(2026, 8, 21, 0, 2, tzinfo=UTC),
+    )
+    manifest_path = run_dir / "run.manifest.json"
+    write_run_manifest(manifest, manifest_path)
+
+    with pytest.raises(FreezeVerificationError, match="predates its run manifest"):
+        freeze_predictions(
+            run_dir,
+            experiment_id="EXP-1",
+            bindings=_bindings(),
+            repository_root=Path(__file__).parents[2],
+            run_manifest_path=manifest_path,
+            created_at_utc=datetime(2026, 8, 21, 0, 1, tzinfo=UTC),
+        )
+
+
+def test_manifest_rejects_config_payload_hash_mismatch(tmp_path: Path) -> None:
+    manifest = create_run_manifest(
+        experiment_id="EXP-1",
+        seed=42,
+        repository_root=Path(__file__).parents[2],
+        candidate_universe="known_month",
+        aggregation_rule="duration_weighted_evidence",
+        model_id="MODEL-A-CORE-V1",
+        input_hashes={"blind_cases.json": _digest("blind")},
+        config={"workers": 1},
+    )
+    raw = manifest.model_dump(mode="json")
+    raw["config_payload"] = {"workers": 2}
+    path = tmp_path / "run.manifest.json"
+    write_new_canonical_json(path, raw)
+
+    with pytest.raises(ValueError, match="invalid or non-canonical run manifest"):
+        load_run_manifest(path)
+
+
+def test_strict_freeze_verification_rejects_legacy_unbound_manifest(tmp_path: Path) -> None:
+    run_dir = tmp_path / "run"
+    run_dir.mkdir()
+    (run_dir / "predictions.json").write_bytes(b'{"predictions":[]}')
+    record = freeze_predictions(
+        run_dir,
+        experiment_id="EXP-1",
+        bindings=_bindings(),
+        repository_root=Path(__file__).parents[2],
+    )
+
+    assert verify_frozen_predictions(run_dir) == record
+    with pytest.raises(FreezeVerificationError, match="lacks a run-manifest binding"):
+        verify_frozen_predictions(run_dir, require_run_manifest=True)
 
 
 def test_freeze_refuses_predictions_outside_run(tmp_path: Path) -> None:

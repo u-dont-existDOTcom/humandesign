@@ -44,6 +44,37 @@ The earlier protocol/scoring and behavioral-target files in `reference/core/` re
 
 The 2026-08-22 V3.6 one-off NetInformation audit is preserved in `reference/audits/v43_v3_6_netinfo_100y_2026_08_22.md`. It is descriptive development evidence, not untouched human validation, and its observed 2013/1985 ranking MUST NOT be used to retune mappings or weights. Any later model change is a new explicit post-ranking revision.
 
+## Pre-reasoning epistemic attractor audit
+
+Before substantive reasoning on a research/design decision, run one bounded audit for recurring failure modes. This is a regression guard, not a request for visible chain-of-thought.
+
+1. Check whether the current task resembles a correction the owner has already made or a failure pattern already recorded in the repository.
+2. Identify any highly salient generic heuristic that could dominate merely because it is familiar or repeated, such as `freeze everything`, `avoid post-hoc work`, `preserve a holdout`, `prefer consensus`, `maximize safety`, `force symmetry`, `use the standard workflow`, or `never ask questions`.
+3. Ask whether that heuristic actually applies to the current object, phase, objective, and instruction precedence. Specific current task rules and explicit owner corrections outrank a generic heuristic where no higher-priority requirement conflicts.
+4. Run an inverse-error check: do not fix a previous mistake by blindly adopting the opposite extreme.
+5. If a concrete attractor conflict is found, route around it before analysis. If none is found, stop the audit and proceed; do not let attractor-checking itself become an attractor or a source of paralysis.
+6. When the same corrected failure recurs, treat it as a regression in the governing instructions or workflow and patch the durable rule/test rather than merely apologizing again.
+
+Memory aid: **Am I solving this task, or merely satisfying the most salient generic rule?**
+
+## Epistemic phase routing
+
+Before applying any freeze, holdout, preregistration, anti-overfitting, post-hoc, leakage, or model-selection rule, classify each material dataset/partition by current use as `DEVELOPMENT` or `VALIDATION`.
+
+Use the two-question checksum:
+1. May these data influence the hypothesis/model?
+2. May these data support a claim that the resulting hypothesis/model generalizes?
+
+`DEVELOPMENT` is normally `YES / NO`. `VALIDATION` is normally `NO / YES`.
+
+On `DEVELOPMENT`, optimize aggressively when useful: post-hoc hypothesis generation, target refinement, feature/formula search, symbolic regression, ablation, interaction search, repeated cross-validation, stability analysis, and failure inspection are allowed and encouraged. These are model-selection/search tools, not independent confirmation.
+
+On `VALIDATION`, freeze the material hypothesis/model/formula, target, preprocessing, exclusions, thresholds, controls, metrics, and analysis rules before outcomes are inspected. If validation outcomes are used to revise any of those choices, reclassify that dataset as development for subsequent claims and obtain new independent validation.
+
+Validation safeguards MUST NOT restrict legitimate exploration on explicitly DEVELOPMENT data merely because those safeguards would be mandatory during VALIDATION. If independent external validation exists or is planned, do not weaken the development search solely to preserve ceremonial internal untouchedness.
+
+Core invariant: **freeze before VALIDATION, not before DISCOVERY. Do not optimize VALIDATION cases. Optimize DEVELOPMENT cases aggressively.**
+
 ## Mandatory broad-search order
 
 Do not start another full 100-year behavioral ranking until:
@@ -127,11 +158,11 @@ Relationship/connection analysis is a separate research module under `src/hdmatc
 ## Non-negotiable research rules
 - Never use the answer key during blind recovery.
 - Never put secret answer keys under the decoder project root during a blind run.
-- Hash/freeze predictions before answer-key reveal.
-- Split human data by PERSON before question selection, mapping fitting, hyperparameter tuning, calibration, or evaluation.
+- Hash/freeze predictions before answer-key reveal in VALIDATION runs.
+- Split human data by PERSON before validation evaluation; development resampling may revisit people across different folds but never leak one person's answers across train/test within the same split.
 - Post-hoc fitting on DEVELOPMENT humans is allowed and encouraged.
-- Performance on those same development humans is not evidence of predictive validity.
-- Keep a final untouched human test cohort.
+- Performance on those same development humans, including repeatedly consulted internal CV, is not evidence of predictive validity.
+- Keep a genuinely untouched validation/final-test cohort when making confirmatory claims.
 - Report failures, ties, unresolved intervals, and negative results.
 - Timezone is not independently identifiable from personality when local tuples resolve to the same UTC instant.
 - Do not report a single minute when the scored state is stable across a wider interval.
@@ -157,7 +188,7 @@ Relationship/connection analysis is a separate research module under `src/hdmatc
 - Cache chart states and ephemeris results.
 - Prefer the verified precomputed century cache for broad searches rather than rebuilding astronomy on every profile.
 - Never accept successful coordinate output as proof that the desired ephemeris was used; inspect returned flags.
-- Never optimize evaluation cases.
+- Never optimize VALIDATION/evaluation cases. DEVELOPMENT cases are explicitly available for optimization and hypothesis discovery.
 
 ## Required test discipline
 Run unit tests and the relevant end-to-end blind test after changes.

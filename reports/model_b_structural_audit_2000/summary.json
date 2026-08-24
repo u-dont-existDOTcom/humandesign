@@ -1,0 +1,50 @@
+{
+  "schema_version": "model-b-structural-audit-summary-v1",
+  "comparison_kind": "structural_resolution_upper_bound_not_behavioral_recovery",
+  "answer_keys_used": false,
+  "behavioral_recovery_performed": false,
+  "candidate_universe": {
+    "year": 2000,
+    "timezone": "UTC",
+    "exact_month_cache_count": 12,
+    "exact_stable_interval_count": 13777,
+    "chart_engine_fingerprint": "09e811ca0fe517975f9718ea7e12b72f66bf3d2509e049bc29f47169adef5397"
+  },
+  "model_a": {
+    "model_id": "MODEL-A-CORE-V1",
+    "mapping_sha256": "3424672432f7f071ec90ef9ddce52a67ff6794911e92b1a1e04f079262ea6200",
+    "unique_structural_signatures": 950,
+    "singleton_signatures": 47,
+    "largest_equivalence_group_interval_count": 99,
+    "largest_equivalence_group_seconds": 229136.860438,
+    "duration_collision_rate": 0.0022576115096673136
+  },
+  "model_b": {
+    "model_id": "MODEL-B-DETAILED-V1",
+    "model_sha256": "5c1aeb4df29c68a1a3202a8a6a2cf7974bcc1894b6b54a88c17a8deb6665181f",
+    "artifact_sha256": "c4b806b90fef3a91d98121a303174503e5f2949ef8be8ec0c6823242f1ecf1aa",
+    "artifact_semantic_sha256": "b6b7c55ce9f56deca7509a0529ea17fb9b39f99b44dad0cc825cd67382b47b44",
+    "unique_structural_signatures": 2963,
+    "singleton_signatures": 603,
+    "largest_equivalence_group_interval_count": 17,
+    "largest_equivalence_group_seconds": 39586.030757,
+    "duration_collision_rate": 0.0005534908951142042,
+    "detailed_behavioral_mapping_status": "unresolved"
+  },
+  "comparison": {
+    "signature_count_gain": 2013,
+    "model_a_groups_split_by_model_b": 640,
+    "model_a_groups_not_split_by_model_b": 310
+  },
+  "full_ignored_audit_artifact": {
+    "path": "run_artifacts/model_b_structural_audit_2000/structural_comparison_verified.json",
+    "sha256": "b96338628c5d9a0180fe2580294994c9f48f655df8b95edd0ed5208150018974",
+    "size_bytes": 7991477
+  },
+  "limitations": [
+    "Model B detailed behavior-to-structure mappings are unresolved and unscoreable.",
+    "The Model B partition assumes every detailed structural anchor could be observed perfectly; it is a structural upper bound, not questionnaire recovery performance.",
+    "The audit consumed no answers, answer key, truth tuple, or prediction.",
+    "The result does not validate Human Design in humans and does not justify a 1000-case Model A/B recovery run."
+  ]
+}

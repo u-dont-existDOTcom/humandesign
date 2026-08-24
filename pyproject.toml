@@ -17,6 +17,7 @@ dependencies = [
 
 [project.optional-dependencies]
 ephemeris = ["pyswisseph>=2.10.3.2,<3"]
+cache = ["pyarrow>=18,<24"]
 api = ["fastapi>=0.115,<1", "uvicorn>=0.34,<1"]
 empirical = [
   "numpy>=2.1,<3",

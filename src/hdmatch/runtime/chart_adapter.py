@@ -6,9 +6,14 @@ from dataclasses import asdict
 from datetime import datetime
 from pathlib import Path
 
-from hdmatch.chart import SwissEphemerisProvider, calculate_chart
+from hdmatch.chart import (
+    ChartFeatureVectorV2,
+    SwissEphemerisProvider,
+    calculate_chart,
+    serialize_chart_feature_vector,
+)
 from hdmatch.chart.bodygraph import bodygraph_constants_sha256
-from hdmatch.chart.boundaries import build_chart_state_intervals
+from hdmatch.chart.boundaries import build_production_chart_state_intervals
 from hdmatch.chart.calculator import ChartComputation
 from hdmatch.chart.ephemeris import EphemerisConfigurationError
 from hdmatch.chart.rave_mandala import mandala_constants_sha256
@@ -70,13 +75,25 @@ class ExactChartAdapter:
     def calculate(self, utc_moment: datetime) -> ChartFeatures:
         return _to_chart_features(calculate_chart(self.provider, utc_moment))
 
+    def calculate_cacheable_m0_m2(self, utc_moment: datetime) -> ChartFeatureVectorV2:
+        """Return the strict discrete V2 vector without claiming scorer compliance."""
+
+        return serialize_chart_feature_vector(
+            calculate_chart(self.provider, utc_moment),
+            provider=self.provider,
+        )
+
     def candidate_states(
         self,
         start_utc: datetime,
         end_utc: datetime,
         timezone_name: str,
     ) -> tuple[CandidateState, ...]:
-        intervals = build_chart_state_intervals(self.provider, start_utc, end_utc)
+        intervals = build_production_chart_state_intervals(
+            self.provider,
+            start_utc,
+            end_utc,
+        )
         result: list[CandidateState] = []
         for interval in intervals:
             computation = calculate_chart(self.provider, interval.representative_utc)

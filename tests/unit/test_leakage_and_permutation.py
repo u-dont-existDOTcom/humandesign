@@ -59,6 +59,18 @@ def test_leakage_scanner_allows_declared_month_year_but_finds_secrets_dates_and_
         assert_no_blind_leakage(payload)
 
 
+def test_blind_scanner_allows_only_the_frozen_v2_audit_timestamp_path() -> None:
+    safe = _safe_blind_payload()
+    safe["model_b_v2_difference_gate"] = {
+        "audited_at_utc": "2026-08-21T22:30:00Z"
+    }
+    assert scan_blind_payload(safe).passed
+
+    case = safe["cases"][0]  # type: ignore[index]
+    case["note"] = "2026-08-21T22:30:00Z"  # type: ignore[index]
+    assert not scan_blind_payload(safe).passed
+
+
 def test_known_birth_day_allowed_only_for_known_date_universe() -> None:
     known_date = {
         "case_id": "C",

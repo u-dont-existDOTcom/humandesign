@@ -1,0 +1,152 @@
+{
+  "schema": "hdmatch-external-validation-freeze-v1",
+  "created_utc": "2026-08-24T18:55:00Z",
+  "phase": "VALIDATION",
+  "status": "frozen_before_individual_ncds_outcome_access",
+  "purpose": "Externally test the smallest development-selected astronomical object emerging from the Gauquelin VITALITY minimization without allowing NCDS outcomes to influence the predictor or primary analysis.",
+  "epistemic_checksum": {
+    "may_ncds_outcomes_influence_hypothesis_or_model": false,
+    "may_ncds_outcomes_support_generalization_if_protocol_is_followed": true
+  },
+  "development_source": {
+    "dataset": "Gauquelin character-trait workbook",
+    "usable_people": 1105,
+    "development_target": "VITALITY",
+    "development_target_positive_count": 63,
+    "audit": "reference/audits/gauquelin_vitality_mpod_development_2026_08_24.md",
+    "warning": "Development data have astrology-related trait-category history and are not independent confirmation."
+  },
+  "external_dataset": {
+    "study": "1958 National Child Development Study (NCDS)",
+    "birth_sweep": "1958 Perinatal Mortality Survey / NCDS birth sweep",
+    "birth_window_local": "1958-03-03 through 1958-03-09 inclusive",
+    "birth_timezone": "Europe/London; GMT during this birth week",
+    "birth_instrument_question": "Question 7: time and date of delivery",
+    "age_50_dataset": "NCDS Age 50 Sweep, UK Data Service SN 6137",
+    "age_62_dataset": "NCDS Age 62 Sweep, UK Data Service SN 9412",
+    "access_rule": "Use only lawfully linked NCDS data under the applicable UK Data Service licence/permission. Do not use unlinked PMS SN 2137 as though it could be joined to later NCDS outcomes.",
+    "eligibility_gate": "Before accessing outcome values, verify that a linkable delivery-time/date field is present in the authorized NCDS data available to the researcher. If not, this dataset is ineligible and the frozen predictor must be carried unchanged to another independent cohort.",
+    "individual_outcome_values_accessed_before_freeze": false
+  },
+  "primary_predictor": {
+    "id": "RAW_CHANNEL_5_15_FULL_ACTIVATION_SET",
+    "label": "5-15 two-window co-occurrence",
+    "type": "binary",
+    "activation_set": "All standard 13 Personality plus 13 Design activations used by the repository chart engine; Earth and South Node remain the standard derived opposites.",
+    "design_moment": "Exact backward 88-degree Personality-Sun to Design-Sun solar-arc root, unchanged from the repository chart engine.",
+    "window_a": {
+      "equivalent_hd_gate": 5,
+      "interval_degrees_half_open": [251.375, 257.0]
+    },
+    "window_b": {
+      "equivalent_hd_gate": 15,
+      "interval_degrees_half_open": [88.25, 93.875]
+    },
+    "formula": "Z=1 iff at least one standard Personality/Design activation has tropical geocentric longitude in [251.375,257.000) AND at least one standard Personality/Design activation has tropical geocentric longitude in [88.250,93.875).",
+    "equivalent_hd_feature": "channel 5-15 defined",
+    "gate_width_degrees": 5.625,
+    "forward_window_separation_degrees": 196.875,
+    "forward_sector_separation": 35,
+    "no_post_freeze_tuning": [
+      "window positions",
+      "window width",
+      "window separation",
+      "body/activation subset",
+      "88-degree Design anchor",
+      "positive direction"
+    ],
+    "predicted_direction": "Z=1 predicts higher vitality / higher energy-fatigue health score than Z=0."
+  },
+  "primary_outcome": {
+    "sweep": "NCDS Age 50",
+    "variable": "nd8enfa",
+    "label": "Derived SF-36 Energy/fatigue score",
+    "scale": "0 to 100; higher values indicate higher health/energy after the NCDS SF-36 recoding",
+    "analysis_type": "continuous",
+    "direction": "positive"
+  },
+  "secondary_outcomes": [
+    {
+      "sweep": "NCDS Age 62",
+      "variable": "n10ylq19d",
+      "label": "How often feels full of energy these days",
+      "role": "longitudinal concept replication; not independent-person replication because it reuses the same cohort"
+    },
+    {
+      "sweep": "NCDS Age 50",
+      "variables": ["n8scq10a", "n8scq10e", "n8scq10g", "n8scq10i"],
+      "role": "item-level components underlying the SF-36 Energy/Fatigue domain, only after primary domain analysis"
+    }
+  ],
+  "secondary_predictor": {
+    "id": "GAUQUELIN_VITALITY_BEST_5_SACRAL_SUBSET",
+    "type": "binary OR",
+    "channels": ["2-14", "5-15", "29-46", "6-59", "3-60"],
+    "formula": "1 iff at least one of the five listed channels is defined",
+    "role": "development-best expanded candidate; secondary because it was more heavily optimized than 5-15"
+  },
+  "negative_control_predictors": [
+    {
+      "id": "GATE_5_ONLY",
+      "formula": "at least one standard activation lies in [251.375,257.000)",
+      "development_expectation": "little/no signal"
+    },
+    {
+      "id": "GATE_15_ONLY",
+      "formula": "at least one standard activation lies in [88.250,93.875)",
+      "development_expectation": "little/no signal"
+    },
+    {
+      "id": "GATE_5_OR_15",
+      "formula": "GATE_5_ONLY OR GATE_15_ONLY",
+      "development_expectation": "little/no useful signal"
+    }
+  ],
+  "primary_analysis": {
+    "estimand": "Mean difference / regression coefficient in nd8enfa for primary predictor Z=1 versus Z=0.",
+    "model": "Linear regression with nd8enfa as continuous outcome, primary predictor Z, sex, a low-frequency birth-date term across the seven-day cohort window, cyclic time-of-day sine/cosine terms, and broad birth-region/country if available without secure-data escalation.",
+    "calendar_control_constraint": "Calendar/time controls must be frozen low-frequency controls and may not be tuned after seeing outcome associations to erase or create the 5-15 pattern.",
+    "missing_outcome": "Exclude only values carrying the dataset's documented missing/incomplete codes; do not impute the primary outcome for the confirmatory analysis.",
+    "birth_time_uncertainty": "Use documented recorded delivery time. If precision is coarser than the chart-state boundary, classify the predictor as unresolved unless the 5-15 state is invariant across the documented time interval; do not choose the favorable state.",
+    "primary_test": "Two-sided coefficient test with the development-predicted positive direction reported explicitly. A one-sided result may be shown only as a labelled secondary directional statistic, not substituted after seeing the data.",
+    "effect_reporting": [
+      "N eligible",
+      "N and proportion Z=1",
+      "mean/SD nd8enfa in Z=1 and Z=0",
+      "unadjusted mean difference",
+      "adjusted coefficient",
+      "95% confidence interval",
+      "two-sided p-value",
+      "standardized effect size",
+      "incremental cross-validated prediction over the frozen control model"
+    ]
+  },
+  "sensitivity_analyses": [
+    "Unadjusted primary-outcome difference.",
+    "Add perinatal covariates such as birth weight, gestational age, maternal age, and delivery circumstances only as a separately labelled robustness model; do not replace the primary model with whichever is more favorable.",
+    "Repeat after excluding records whose birth-time precision makes 5-15 state non-invariant.",
+    "Report actual 5-15 orientation relative to jointly rotated two-window controls without using validation outcomes to select a new orientation.",
+    "Report the fixed 35-sector separation relative to the other equal-sector separations as a specificity diagnostic; do not retune the candidate from NCDS."
+  ],
+  "ncds_week_pre_outcome_feasibility": {
+    "calculation_engine": "exploratory Moshier parity implementation; validation must be recomputed with canonical verified Swiss files",
+    "grid": "every 5 minutes across 1958-03-03 through 1958-03-09 GMT",
+    "grid_points": 2016,
+    "primary_predictor_prevalence": 0.05952380952380952,
+    "secondary_five_channel_predictor_prevalence": 0.11210317460317461,
+    "full_sacral_defined_prevalence": 1.0,
+    "interpretation": "The week can test 5-15 and the five-channel candidate even though full Sacral definition is constant and therefore cannot be tested in this cohort."
+  },
+  "success_interpretation": {
+    "primary_success": "A positive 5-15 association with the frozen primary energy/fatigue outcome under the frozen primary analysis would be the first independent replication evidence for this development-selected object.",
+    "primary_failure": "A null or opposite primary association counts as a failed external replication and may not be rescued by retuning 5-15 on NCDS.",
+    "secondary_only_success": "If 5-15 fails but the five-channel subset succeeds, report that the minimal 5-15 hypothesis failed while a broader development-selected family remains a new hypothesis requiring another independent cohort.",
+    "no_claim": "Neither a positive development result nor metadata inspection of NCDS is validation."
+  },
+  "provenance_notes": [
+    "The NCDS birth questionnaire publicly documents Question 7 as time and date of delivery.",
+    "The NCDS Age 50 user guide publicly documents nd8enfa as the derived SF-36 Energy/fatigue score and recodes SF-36 inputs to 0-100 with 100 indicating highest health.",
+    "The NCDS Age 62 user guide publicly documents n10ylq19d as how often the cohort member feels full of energy these days.",
+    "Published descriptions of the prior NCDS astrology time-twin analysis report that about 92% of the 2,101 London birth times were recorded to the nearest five minutes and the remainder to the nearest minute. This supports feasibility but does not substitute for verifying the authorized dataset fields before execution."
+  ]
+}

@@ -2,16 +2,22 @@
 
 from __future__ import annotations
 
+import json
 import platform
 import subprocess
 from datetime import UTC, datetime
 from importlib import metadata
 from pathlib import Path
-from typing import Literal
+from typing import Any, Literal, cast
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator
+from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
-from .canonical import load_json_bytes, sha256_json, write_new_canonical_json
+from .canonical import (
+    canonical_json_bytes,
+    load_json_bytes,
+    sha256_json,
+    write_new_canonical_json,
+)
 
 SHA256_PATTERN = r"^[a-f0-9]{64}$"
 _VERSION_PACKAGES = (
@@ -23,8 +29,6 @@ _VERSION_PACKAGES = (
     "numpy",
     "scikit-learn",
 )
-
-
 class SoftwareEnvironment(BaseModel):
     model_config = ConfigDict(extra="forbid", frozen=True)
 
@@ -55,6 +59,7 @@ class RunManifest(BaseModel):
     aggregation_rule: str
     model_id: str
     input_hashes: dict[str, str] = Field(min_length=1)
+    config_payload: dict[str, Any] | None = None
     config_sha256: str = Field(pattern=SHA256_PATTERN)
     reveal_status: Literal["blind"] = "blind"
     declared_outputs: tuple[str, ...] = ()
@@ -73,6 +78,15 @@ class RunManifest(BaseModel):
             if not name or len(digest) != 64 or any(ch not in "0123456789abcdef" for ch in digest):
                 raise ValueError(f"invalid SHA-256 binding for {name!r}")
         return dict(sorted(value.items()))
+
+    @model_validator(mode="after")
+    def require_config_hash_binding(self) -> RunManifest:
+        if (
+            self.config_payload is not None
+            and sha256_json(self.config_payload) != self.config_sha256
+        ):
+            raise ValueError("run manifest config payload does not match config_sha256")
+        return self
 
     @property
     def manifest_sha256(self) -> str:
@@ -131,6 +145,12 @@ def create_run_manifest(
     created_at_utc: datetime | None = None,
 ) -> RunManifest:
     commit, dirty = git_revision(repository_root)
+    raw_config = cast(object, json.loads(canonical_json_bytes(config)))
+    if not isinstance(raw_config, dict) or not all(
+        isinstance(key, str) for key in raw_config
+    ):
+        raise ValueError("run manifest config must be a JSON object")
+    config_payload = cast(dict[str, Any], raw_config)
     return RunManifest(
         experiment_id=experiment_id,
         created_at_utc=created_at_utc or datetime.now(UTC),
@@ -142,6 +162,7 @@ def create_run_manifest(
         aggregation_rule=aggregation_rule,
         model_id=model_id,
         input_hashes=input_hashes,
+        config_payload=config_payload,
         config_sha256=sha256_json(config),
         declared_outputs=declared_outputs,
     )
@@ -156,3 +177,32 @@ def load_run_manifest(path: str | Path) -> RunManifest:
         return RunManifest.model_validate(load_json_bytes(path, require_canonical=True))
     except (OSError, ValueError) as exc:
         raise ValueError(f"invalid or non-canonical run manifest: {path}") from exc
+
+
+def verify_run_manifest_resume(
+    manifest: RunManifest,
+    *,
+    experiment_id: str,
+    seed: int,
+    candidate_universe: str,
+    aggregation_rule: str,
+    model_id: str,
+    input_hashes: dict[str, str],
+    config: object,
+) -> RunManifest:
+    """Require an existing manifest to equal the complete requested recovery contract."""
+
+    expected_fields = {
+        "experiment_id": experiment_id,
+        "seed": seed,
+        "candidate_universe": candidate_universe,
+        "aggregation_rule": aggregation_rule,
+        "model_id": model_id,
+        "input_hashes": dict(sorted(input_hashes.items())),
+        "config_payload": cast(dict[str, Any], json.loads(canonical_json_bytes(config))),
+        "config_sha256": sha256_json(config),
+    }
+    for field, expected in expected_fields.items():
+        if getattr(manifest, field) != expected:
+            raise ValueError(f"existing run manifest {field} does not match this recovery")
+    return manifest

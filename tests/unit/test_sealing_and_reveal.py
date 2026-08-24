@@ -6,9 +6,22 @@ from pathlib import Path
 
 import pytest
 
-from hdmatch.experiments.canonical import sha256_bytes, write_new_canonical_json
+from hdmatch.experiments.answer_key_commitments import (
+    generation_seed_commitment,
+    revealed_local_date_set_hash,
+    revealed_target_set_hash,
+)
+from hdmatch.experiments.canonical import (
+    canonical_json_bytes,
+    sha256_bytes,
+    sha256_file,
+    write_new_canonical_json,
+)
 from hdmatch.experiments.freeze import ArtifactBindings, freeze_predictions
-from hdmatch.experiments.reveal import reveal_answer_key
+from hdmatch.experiments.manifest import create_run_manifest, write_run_manifest
+from hdmatch.experiments.reveal import RevealResult, reveal_answer_key
+from hdmatch.runtime.recovery import RecoverySettings, recover_blind_file
+from hdmatch.search import AggregationMode
 from hdmatch.synthetic.sealing import (
     AnswerKeySealingError,
     SealingMetadata,
@@ -47,6 +60,45 @@ def _answer_key() -> dict[str, object]:
     }
 
 
+def _detailed_answer_key() -> dict[str, object]:
+    return {
+        "schema_version": "answer-key-v1",
+        "experiment_id": "EXP-1",
+        "blind_input_sha256": _digest("blind"),
+        "generation_seed": 20260822,
+        "cases": [
+            {
+                "case_id": "C1",
+                "true_local_date": "2000-01-02",
+                "true_utc": "2000-01-02T03:04:05Z",
+                "true_chart_features_hash": _digest("chart-C1"),
+            }
+        ],
+    }
+
+
+def _write_test_manifest(run_dir: Path) -> Path:
+    path = run_dir / "run.manifest.json"
+    manifest = create_run_manifest(
+        experiment_id="EXP-1",
+        seed=42,
+        repository_root=Path(__file__).parents[2],
+        candidate_universe="known_month",
+        aggregation_rule="duration_weighted_evidence",
+        model_id="MODEL-A-CORE-V1",
+        input_hashes={"blind_cases.json": _bindings().blind_input_sha256},
+        config={
+            "aggregation": "duration_weighted_evidence",
+            "threshold_rubric_bits": 0.0,
+            "workers": 1,
+            "cache_policy": "hash-bound exact month universes",
+        },
+        created_at_utc=datetime(2026, 8, 20, 23, 59, tzinfo=UTC),
+    )
+    write_run_manifest(manifest, path)
+    return path
+
+
 def test_aes_gcm_round_trip_authenticates_metadata_and_external_key(tmp_path: Path) -> None:
     project = tmp_path / "decoder"
     project.mkdir()
@@ -61,12 +113,15 @@ def test_aes_gcm_round_trip_authenticates_metadata_and_external_key(tmp_path: Pa
         metadata=_metadata(),
         decoder_root=project,
     )
-    assert decrypt_answer_key_json(
-        encrypted,
-        key_path=key_path,
-        decoder_root=project,
-        expected_metadata=_metadata(),
-    ) == _answer_key()
+    assert (
+        decrypt_answer_key_json(
+            encrypted,
+            key_path=key_path,
+            decoder_root=project,
+            expected_metadata=_metadata(),
+        )
+        == _answer_key()
+    )
 
     envelope = json.loads(encrypted.read_bytes())
     envelope["authenticated_metadata"]["experiment_id"] = "OTHER"
@@ -172,12 +227,152 @@ def test_plaintext_and_key_paths_under_decoder_root_are_refused(tmp_path: Path) 
         )
 
 
+@pytest.mark.parametrize("filename", ["RENAMED.JSON", "opaque-payload.dat"])
+def test_plaintext_preflight_detects_answer_key_schema_regardless_of_name_or_extension(
+    tmp_path: Path,
+    filename: str,
+) -> None:
+    project = tmp_path / "decoder"
+    project.mkdir()
+    write_new_canonical_json(project / filename, _answer_key())
+
+    with pytest.raises(AnswerKeySealingError, match="plaintext answer key file"):
+        assert_no_plaintext_answer_keys(project)
+
+
+def test_plaintext_preflight_detects_obvious_key_name_and_skips_tool_metadata(
+    tmp_path: Path,
+) -> None:
+    project = tmp_path / "decoder"
+    project.mkdir()
+    (project / "ANSWER_KEY.backup").write_text("case_id,true_utc\nC1,secret\n", encoding="utf-8")
+
+    with pytest.raises(AnswerKeySealingError, match="plaintext answer key file"):
+        assert_no_plaintext_answer_keys(project)
+
+    (project / "ANSWER_KEY.backup").unlink()
+    for skipped in (".git", ".venv", ".pytest_cache", "node_modules"):
+        directory = project / skipped
+        directory.mkdir()
+        write_new_canonical_json(directory / "HIDDEN.JSON", _answer_key())
+    assert_no_plaintext_answer_keys(project)
+
+
+@pytest.mark.parametrize(
+    "directory_name",
+    ("candidate_cache", "cache", "build", "dist", ".cache"),
+)
+def test_plaintext_preflight_scans_decoder_controlled_cache_and_build_trees(
+    tmp_path: Path,
+    directory_name: str,
+) -> None:
+    project = tmp_path / "decoder"
+    directory = project / directory_name
+    directory.mkdir(parents=True)
+    write_new_canonical_json(directory / "innocuous.payload", _answer_key())
+
+    with pytest.raises(AnswerKeySealingError, match="plaintext answer key file"):
+        assert_no_plaintext_answer_keys(project)
+
+
+def test_plaintext_preflight_detects_nested_human_key_and_tabular_truth_in_bin_file(
+    tmp_path: Path,
+) -> None:
+    project = tmp_path / "decoder"
+    project.mkdir()
+    human_key = {
+        "archive": {
+            "cohort": "validation",
+            "protocol_sha256": "a" * 64,
+            "blind_input_sha256": "b" * 64,
+            "true_candidate_ids": {"P-1": "candidate-7"},
+        }
+    }
+    write_new_canonical_json(project / "ordinary.data", human_key)
+
+    with pytest.raises(AnswerKeySealingError, match="plaintext answer key file"):
+        assert_no_plaintext_answer_keys(project)
+
+    (project / "ordinary.data").unlink()
+    (project / "opaque.bin").write_text(
+        "case_id,true_utc\nC1,2000-01-01T00:00:00Z\n",
+        encoding="utf-8",
+    )
+    with pytest.raises(AnswerKeySealingError, match="plaintext answer key file"):
+        assert_no_plaintext_answer_keys(project)
+
+
+def test_recovery_preflight_scans_candidate_cache_before_blind_input(
+    tmp_path: Path,
+) -> None:
+    project = tmp_path / "decoder"
+    cache = tmp_path / "public-cache"
+    project.mkdir()
+    cache.mkdir()
+    write_new_canonical_json(cache / "ordinary.data", _answer_key())
+
+    with pytest.raises(AnswerKeySealingError, match="plaintext answer key file"):
+        recover_blind_file(
+            project / "missing-blind.json",
+            decoder_root=project,
+            model=None,  # type: ignore[arg-type]
+            ephemeris_path=project / "missing-ephemeris",
+            cache_dir=cache,
+            settings=RecoverySettings(
+                aggregation=AggregationMode.DURATION_WEIGHTED_EVIDENCE,
+                threshold_rubric_bits=0.0,
+            ),
+        )
+
+
+def test_plaintext_preflight_allows_encrypted_envelope_and_reveal_record(
+    tmp_path: Path,
+) -> None:
+    project = tmp_path / "decoder"
+    project.mkdir()
+    key_path = tmp_path / "secret.key"
+    encrypted = project / "answer-key.json.enc"
+    generate_key_file(key_path, decoder_root=project)
+    seal_answer_key(
+        _answer_key(),
+        encrypted_path=encrypted,
+        key_path=key_path,
+        metadata=_metadata(),
+        decoder_root=project,
+    )
+    write_new_canonical_json(
+        project / "answer-key.reveal.json",
+        {"schema_version": "answer-key-reveal-v2", "answer_key_revealed": True},
+    )
+
+    assert_no_plaintext_answer_keys(project)
+
+
+def test_recovery_plaintext_preflight_runs_before_blind_input_or_scoring(tmp_path: Path) -> None:
+    project = tmp_path / "decoder"
+    project.mkdir()
+    write_new_canonical_json(project / "answer-key.json", _answer_key())
+
+    with pytest.raises(AnswerKeySealingError, match="plaintext answer key file"):
+        recover_blind_file(
+            project / "missing-blind.json",
+            decoder_root=project,
+            model=None,  # type: ignore[arg-type]
+            ephemeris_path=project / "missing-ephemeris",
+            cache_dir=project / "cache",
+            settings=RecoverySettings(
+                aggregation=AggregationMode.DURATION_WEIGHTED_EVIDENCE,
+                threshold_rubric_bits=0.0,
+            ),
+        )
+
+
 def test_reveal_requires_valid_unchanged_freeze_and_matching_envelope(tmp_path: Path) -> None:
     project = tmp_path / "decoder"
     run_dir = project / "run"
     run_dir.mkdir(parents=True)
     key_path = tmp_path / "evaluator.key"
-    encrypted = tmp_path / "answer-key.json.enc"
+    encrypted = run_dir / "answer-key.json.enc"
     generate_key_file(key_path, decoder_root=project)
     seal_answer_key(
         _answer_key(),
@@ -196,13 +391,23 @@ def test_reveal_requires_valid_unchanged_freeze_and_matching_envelope(tmp_path: 
             decoder_root=project,
         )
 
+    manifest_path = _write_test_manifest(run_dir)
     freeze_predictions(
         run_dir,
         experiment_id="EXP-1",
         bindings=_bindings(),
         repository_root=Path(__file__).parents[2],
+        run_manifest_path=manifest_path,
         created_at_utc=datetime(2026, 8, 21, tzinfo=UTC),
     )
+    with pytest.raises(ValueError, match="cannot predate prediction freeze"):
+        reveal_answer_key(
+            run_dir,
+            encrypted_answer_key_path=encrypted,
+            key_path=key_path,
+            decoder_root=project,
+            revealed_at_utc=datetime(2026, 8, 20, 23, 59, tzinfo=UTC),
+        )
     result = reveal_answer_key(
         run_dir,
         encrypted_answer_key_path=encrypted,
@@ -214,7 +419,32 @@ def test_reveal_requires_valid_unchanged_freeze_and_matching_envelope(tmp_path: 
     assert "true_local_date" not in repr(result)
     assert "answer_key" not in result.model_dump()
     assert result.record.answer_key_revealed is True
+    assert result.record.blind_input_sha256 == _bindings().blind_input_sha256
+    assert result.record.model_sha256 == _bindings().model_sha256
+    assert result.record.question_bank_sha256 == _bindings().question_bank_sha256
+    assert result.record.mapping_sha256 == _bindings().mapping_sha256
+    assert result.record.run_manifest_sha256 == sha256_file(manifest_path)
+    assert result.record.encrypted_answer_key_file == "answer-key.json.enc"
+    assert result.record.encrypted_answer_key_sha256 == sha256_file(encrypted)
+    assert result.record.answer_key_payload_sha256 == sha256_bytes(
+        canonical_json_bytes(_answer_key())
+    )
+    with pytest.raises(TypeError, match="only be created by authenticated"):
+        RevealResult(
+            answer_key=_answer_key(),
+            record=result.record,
+            freeze=result.freeze,
+        )
     assert not (run_dir / "answer-key.json").exists()
+
+    manifest_path.write_bytes(manifest_path.read_bytes() + b"\n")
+    with pytest.raises(Exception, match="run-manifest bytes changed"):
+        reveal_answer_key(
+            run_dir,
+            encrypted_answer_key_path=encrypted,
+            key_path=key_path,
+            decoder_root=project,
+        )
 
 
 def test_reveal_refuses_changed_prediction_bytes(tmp_path: Path) -> None:
@@ -222,7 +452,7 @@ def test_reveal_refuses_changed_prediction_bytes(tmp_path: Path) -> None:
     run_dir = project / "run"
     run_dir.mkdir(parents=True)
     key_path = tmp_path / "evaluator.key"
-    encrypted = tmp_path / "answer-key.json.enc"
+    encrypted = run_dir / "answer-key.json.enc"
     generate_key_file(key_path, decoder_root=project)
     seal_answer_key(
         _answer_key(),
@@ -233,11 +463,13 @@ def test_reveal_refuses_changed_prediction_bytes(tmp_path: Path) -> None:
     )
     predictions = run_dir / "predictions.json"
     predictions.write_bytes(b"{}")
+    manifest_path = _write_test_manifest(run_dir)
     freeze_predictions(
         run_dir,
         experiment_id="EXP-1",
         bindings=_bindings(),
         repository_root=Path(__file__).parents[2],
+        run_manifest_path=manifest_path,
     )
     predictions.write_bytes(b'{"changed":true}')
     with pytest.raises(Exception, match="frozen prediction"):
@@ -247,3 +479,87 @@ def test_reveal_refuses_changed_prediction_bytes(tmp_path: Path) -> None:
             key_path=key_path,
             decoder_root=project,
         )
+
+
+def test_authenticated_reveal_v3_binds_target_date_and_seed_commitments(
+    tmp_path: Path,
+) -> None:
+    project = tmp_path / "decoder"
+    run_dir = project / "run"
+    run_dir.mkdir(parents=True)
+    key_path = tmp_path / "evaluator.key"
+    encrypted = run_dir / "answer-key.json.enc"
+    generate_key_file(key_path, decoder_root=project)
+    answer_key = _detailed_answer_key()
+    seal_answer_key(
+        answer_key,
+        encrypted_path=encrypted,
+        key_path=key_path,
+        metadata=_metadata(),
+        decoder_root=project,
+    )
+    (run_dir / "predictions.json").write_bytes(b"{}")
+    manifest_path = _write_test_manifest(run_dir)
+    freeze_predictions(
+        run_dir,
+        experiment_id="EXP-1",
+        bindings=_bindings(),
+        repository_root=Path(__file__).parents[2],
+        run_manifest_path=manifest_path,
+        created_at_utc=datetime(2026, 8, 21, tzinfo=UTC),
+    )
+    paired_freeze = tmp_path / "paired.freeze.json"
+    paired_plan = tmp_path / "paired.plan.json"
+    paired_freeze.write_bytes(b"paired-freeze")
+    paired_plan.write_bytes(b"paired-plan")
+
+    with pytest.raises(ValueError, match="seed does not match"):
+        reveal_answer_key(
+            run_dir,
+            encrypted_answer_key_path=encrypted,
+            key_path=key_path,
+            decoder_root=project,
+            revealed_at_utc=datetime(2026, 8, 22, tzinfo=UTC),
+            paired_prediction_freeze_path=paired_freeze,
+            paired_plan_path=paired_plan,
+            paired_arm_id="MODEL-A",
+            expected_generation_seed_commitment_sha256=generation_seed_commitment(1),
+        )
+    assert not (run_dir / "answer-key.reveal.json").exists()
+
+    with pytest.raises(ValueError, match="predate paired freeze"):
+        reveal_answer_key(
+            run_dir,
+            encrypted_answer_key_path=encrypted,
+            key_path=key_path,
+            decoder_root=project,
+            revealed_at_utc=datetime(2026, 8, 22, tzinfo=UTC),
+            paired_prediction_freeze_path=paired_freeze,
+            paired_plan_path=paired_plan,
+            paired_arm_id="MODEL-A",
+            expected_generation_seed_commitment_sha256=(generation_seed_commitment(20260822)),
+            reveal_not_before_utc=datetime(2026, 8, 23, tzinfo=UTC),
+        )
+    assert not (run_dir / "answer-key.reveal.json").exists()
+
+    result = reveal_answer_key(
+        run_dir,
+        encrypted_answer_key_path=encrypted,
+        key_path=key_path,
+        decoder_root=project,
+        revealed_at_utc=datetime(2026, 8, 22, tzinfo=UTC),
+        paired_prediction_freeze_path=paired_freeze,
+        paired_plan_path=paired_plan,
+        paired_arm_id="MODEL-A",
+        expected_generation_seed_commitment_sha256=(generation_seed_commitment(20260822)),
+        reveal_not_before_utc=datetime(2026, 8, 21, 12, tzinfo=UTC),
+    )
+
+    keyed = {"C1": answer_key["cases"][0]}  # type: ignore[index]
+    assert result.record.schema_version == "answer-key-reveal-v3"
+    assert result.record.revealed_target_set_sha256 == revealed_target_set_hash(keyed)
+    assert result.record.revealed_local_date_set_sha256 == revealed_local_date_set_hash(keyed)
+    assert result.record.generation_seed_commitment_sha256 == (generation_seed_commitment(20260822))
+    assert result.record.paired_prediction_freeze_sha256 == sha256_file(paired_freeze)
+    assert result.record.paired_plan_sha256 == sha256_file(paired_plan)
+    assert result.record.paired_arm_id == "MODEL-A"

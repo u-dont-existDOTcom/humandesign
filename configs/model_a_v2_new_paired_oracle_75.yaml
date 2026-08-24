@@ -1,0 +1,12 @@
+experiment_id: known-month-model-a-v2-new-paired-oracle-75-v1
+case_count: 75
+tier: oracle
+universe: known_month
+year_start: 2000
+year_end: 2000
+month: 1
+timezone: UTC
+birthplace: Synthetic UTC
+aggregation: duration_weighted_evidence
+threshold_rubric_bits: 0.0
+ephemeris_path: null

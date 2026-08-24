@@ -3,12 +3,12 @@
 from __future__ import annotations
 
 import math
-from collections import Counter, defaultdict
+from collections import defaultdict
 from collections.abc import Mapping, Sequence
 from datetime import UTC, datetime
 from typing import Any, Literal
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 from hdmatch.human.dataset import HumanCase
 from hdmatch.human.splits import enforce_training_cohort
@@ -24,7 +24,7 @@ def _feature_token(value: Any) -> str:
 class ModelArtifact(BaseModel):
     model_config = ConfigDict(extra="forbid", frozen=True)
 
-    schema_version: Literal["empirical-model-v1"] = "empirical-model-v1"
+    schema_version: Literal["empirical-model-v2"] = "empirical-model-v2"
     model_id: str
     training_dataset_hash: str
     split_manifest_hash: str
@@ -34,9 +34,17 @@ class ModelArtifact(BaseModel):
     alpha: float = Field(gt=0.0)
     theory_strength: float = Field(ge=0.0)
     answer_vocabularies: dict[str, tuple[str, ...]]
-    marginal_counts: dict[str, dict[str, int]]
-    conditional_counts: dict[str, dict[str, dict[str, dict[str, int]]]]
+    marginal_counts: dict[str, dict[str, float]]
+    conditional_counts: dict[str, dict[str, dict[str, dict[str, float]]]]
+    theory_priors: dict[str, dict[str, float]] = Field(default_factory=dict)
     created_at_utc: datetime
+
+    @field_validator("created_at_utc")
+    @classmethod
+    def normalize_created_at(cls, value: datetime) -> datetime:
+        if value.tzinfo is None or value.utcoffset() is None:
+            raise ValueError("empirical-model timestamp must be timezone-aware")
+        return value.astimezone(UTC)
 
 
 class EmpiricalChartResponseModel:
@@ -48,7 +56,11 @@ class EmpiricalChartResponseModel:
         theory_priors: Mapping[str, Mapping[str, float]] | None = None,
     ) -> None:
         self.artifact = artifact
-        self.theory_priors = {key: dict(value) for key, value in (theory_priors or {}).items()}
+        supplied = _normalize_theory_priors(theory_priors or {})
+        frozen = _normalize_theory_priors(artifact.theory_priors)
+        if supplied and supplied != frozen:
+            raise ValueError("runtime theory priors do not match the frozen model artifact")
+        self.theory_priors = frozen
 
     @classmethod
     def fit(
@@ -62,34 +74,54 @@ class EmpiricalChartResponseModel:
         alpha: float = 2.0,
         theory_priors: Mapping[str, Mapping[str, float]] | None = None,
         theory_strength: float = 0.0,
+        feature_schema_version: str = "chart-features-flat-v1",
+        created_at_utc: datetime | None = None,
     ) -> EmpiricalChartResponseModel:
         if alpha <= 0.0 or theory_strength < 0.0:
             raise ValueError("regularization strengths must be non-negative with alpha > 0")
         enforce_training_cohort(list(cases))
-        marginal: dict[str, Counter[str]] = defaultdict(Counter)
-        conditional: dict[str, dict[str, dict[str, Counter[str]]]] = defaultdict(
-            lambda: defaultdict(lambda: defaultdict(Counter))
+        if not cases:
+            raise ValueError("at least one development person is required")
+        if not feature_names or len(set(feature_names)) != len(feature_names):
+            raise ValueError("feature_names must be a nonempty unique sequence")
+        if not feature_schema_version:
+            raise ValueError("feature_schema_version cannot be empty")
+        frozen_theory_priors = _normalize_theory_priors(theory_priors or {})
+        if theory_strength > 0.0 and not frozen_theory_priors:
+            raise ValueError("positive theory_strength requires frozen theory priors")
+        ordered_cases = tuple(sorted(cases, key=lambda case: case.participant_id))
+        identifiers = [case.participant_id for case in ordered_cases]
+        if len(identifiers) != len(set(identifiers)):
+            raise ValueError("development people must be unique")
+        marginal: dict[str, defaultdict[str, float]] = defaultdict(lambda: defaultdict(float))
+        conditional: dict[str, dict[str, dict[str, defaultdict[str, float]]]] = defaultdict(
+            lambda: defaultdict(lambda: defaultdict(lambda: defaultdict(float)))
         )
-        for case in cases:
+        for case in ordered_cases:
             for question, answer in case.responses.items():
-                marginal[question][answer] += 1
+                reliability = case.evidence_weights.get(question, 1.0)
+                marginal[question][answer] += reliability
                 for feature in feature_names:
                     if feature in case.chart_features:
                         token = _feature_token(case.chart_features[feature])
-                        conditional[question][feature][token][answer] += 1
+                        conditional[question][feature][token][answer] += reliability
         vocabularies = {question: tuple(sorted(counts)) for question, counts in marginal.items()}
         if not vocabularies:
             raise ValueError("development records contain no responses")
         artifact_payload = {
-            "participants": sorted(case.participant_id for case in cases),
-            "responses": {case.participant_id: case.responses for case in cases},
-            "features": {case.participant_id: case.chart_features for case in cases},
+            "participants": identifiers,
+            "responses": {case.participant_id: case.responses for case in ordered_cases},
+            "response_reliability": {
+                case.participant_id: case.evidence_weights for case in ordered_cases
+            },
+            "features": {case.participant_id: case.chart_features for case in ordered_cases},
         }
         artifact = ModelArtifact(
             model_id=model_id,
             training_dataset_hash=sha256_json(artifact_payload),
             split_manifest_hash=split_manifest_hash,
             questionnaire_version=questionnaire_version,
+            feature_schema_version=feature_schema_version,
             feature_names=tuple(feature_names),
             alpha=alpha,
             theory_strength=theory_strength,
@@ -102,9 +134,10 @@ class EmpiricalChartResponseModel:
                 }
                 for q, features in conditional.items()
             },
-            created_at_utc=datetime.now(UTC),
+            theory_priors=frozen_theory_priors,
+            created_at_utc=created_at_utc or datetime.now(UTC),
         )
-        return cls(artifact, theory_priors)
+        return cls(artifact)
 
     def response_distribution(
         self, question_id: str, chart_features: Mapping[str, Any]
@@ -168,3 +201,22 @@ class EmpiricalChartResponseModel:
                 raise ValueError("response reliability must be within [0, 1]")
             score += weight * math.log2(max(distribution[answer], 1e-12))
         return score
+
+
+def _normalize_theory_priors(
+    priors: Mapping[str, Mapping[str, float]],
+) -> dict[str, dict[str, float]]:
+    normalized: dict[str, dict[str, float]] = {}
+    for question_id, weights in sorted(priors.items()):
+        converted = {str(answer): float(weight) for answer, weight in sorted(weights.items())}
+        if not converted:
+            raise ValueError(f"theory prior for {question_id} cannot be empty")
+        if not all(math.isfinite(weight) and weight >= 0.0 for weight in converted.values()):
+            raise ValueError("theory prior weights must be finite and nonnegative")
+        total = sum(converted.values())
+        if total <= 0.0:
+            raise ValueError(f"theory prior for {question_id} must have positive mass")
+        normalized[str(question_id)] = {
+            answer: weight / total for answer, weight in converted.items()
+        }
+    return normalized

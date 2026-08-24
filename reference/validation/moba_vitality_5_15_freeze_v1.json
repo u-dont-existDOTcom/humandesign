@@ -1,0 +1,137 @@
+{
+  "schema": "hdmatch-external-validation-freeze-v1",
+  "created_utc": "2026-08-24T20:00:00Z",
+  "phase": "VALIDATION",
+  "status": "frozen_before_individual_moba_outcome_access",
+  "purpose": "Externally test the smallest development-selected astronomical object from the Gauquelin VITALITY minimization in an independent, astrology-naive cohort without allowing MoBa outcomes to influence the predictor or primary analysis.",
+  "epistemic_checksum": {
+    "may_moba_outcomes_influence_hypothesis_or_model": false,
+    "may_moba_outcomes_support_generalization_if_protocol_is_followed": true
+  },
+  "development_source": {
+    "dataset": "Gauquelin character-trait workbook",
+    "usable_people": 1105,
+    "development_target": "VITALITY",
+    "development_target_positive_count": 63,
+    "audit_repo_path": "reference/audits/gauquelin_vitality_mpod_development_2026_08_24.md",
+    "warning": "Gauquelin data are DEVELOPMENT only and have astrology-related trait-category history."
+  },
+  "external_dataset": {
+    "study": "Norwegian Mother, Father and Child Cohort Study (MoBa)",
+    "recruitment_period": "1999-2008",
+    "birth_registry": "Medical Birth Registry of Norway (MBRN/MFR)",
+    "birth_variables": {
+      "FDATO": "child date of birth/delivery",
+      "FKLOKKEN": "child time of birth, HHMM / ttmm"
+    },
+    "primary_questionnaire": "MoBa Questionnaire 5, child age 18 months",
+    "current_research_file_responses_publicly_reported": 75737,
+    "access_rule": "Use only lawfully approved MoBa/MBRN linked data. If exact date/time cannot be released to the analyst, the data custodian may run the frozen derivation code inside the secure environment and release only the derived predictor and frozen low-frequency calendar controls.",
+    "eligibility_gate": "Before outcome inspection, verify that FDATO and FKLOKKEN can be linked to the 18-month questionnaire either directly in the approved secure analysis environment or via custodian-side derivation. Failure is dataset ineligibility, not replication failure."
+  },
+  "primary_predictor": {
+    "id": "RAW_CHANNEL_5_15_FULL_ACTIVATION_SET",
+    "label": "5-15 two-window co-occurrence",
+    "type": "binary",
+    "activation_set": "All standard 13 Personality plus 13 Design activations used by the repository chart engine; Earth and South Node are the standard derived opposites.",
+    "design_moment": "Exact backward 88-degree Personality-Sun to Design-Sun solar-arc root.",
+    "window_a": {
+      "equivalent_hd_gate": 5,
+      "interval_degrees_half_open": [251.375, 257.0]
+    },
+    "window_b": {
+      "equivalent_hd_gate": 15,
+      "interval_degrees_half_open": [88.25, 93.875]
+    },
+    "formula": "Z=1 iff at least one standard Personality/Design activation has tropical geocentric longitude in [251.375,257.000) AND at least one standard Personality/Design activation has tropical geocentric longitude in [88.250,93.875).",
+    "equivalent_hd_feature": "channel 5-15 defined",
+    "gate_width_degrees": 5.625,
+    "forward_window_separation_degrees": 196.875,
+    "forward_sector_separation": 35,
+    "predicted_direction": "Z=1 predicts higher temperament activity / vitality-related behavior.",
+    "no_post_freeze_tuning": [
+      "window positions",
+      "window width",
+      "window separation",
+      "body/activation subset",
+      "88-degree Design anchor",
+      "positive direction"
+    ]
+  },
+  "primary_outcome": {
+    "instrument": "EAS short-form Activity subscale in MoBa Q5 at 18 months",
+    "items": [
+      {
+        "variable": "EE417",
+        "text": "Your child is always on the go",
+        "raw_scale": "1 Very typical ... 5 Not at all typical",
+        "aligned_score": "6 - EE417"
+      },
+      {
+        "variable": "EE419",
+        "text": "Your child is off and running as soon as he/she wakes up in the morning",
+        "raw_scale": "1 Very typical ... 5 Not at all typical",
+        "aligned_score": "6 - EE419"
+      },
+      {
+        "variable": "EE423",
+        "text": "Your child prefers quiet, inactive games to more active ones",
+        "raw_scale": "1 Very typical ... 5 Not at all typical",
+        "aligned_score": "EE423"
+      }
+    ],
+    "score": "Arithmetic mean of the three aligned item scores, requiring all three items for the primary complete-case analysis. Range 1-5; higher = more active.",
+    "construct_note": "This is a prospective construct-transport test of the development VITALITY/energy signal, not a literal reuse of the Gauquelin archival label."
+  },
+  "primary_analysis": {
+    "estimand": "Adjusted mean difference in 18-month EAS Activity score for Z=1 versus Z=0.",
+    "model": "Linear regression with family/mother-cluster-robust standard errors. Frozen controls: child sex; birth-year indicators; day-of-year sine/cosine at harmonics k=1 and k=2; local time-of-day sine/cosine at harmonics k=1 and k=2.",
+    "primary_test": "Two-sided test of the Z coefficient; report the development-predicted positive direction explicitly. Do not substitute a one-sided test after inspecting the outcome.",
+    "missing_outcome": "Primary analysis requires all three EAS Activity items; no imputation.",
+    "multiple_births_and_siblings": "Keep eligible children but use family/mother-cluster-robust uncertainty. Report singleton-only and one-child-per-mother analyses as sensitivities.",
+    "timezone_and_dst": "Interpret registry birth clock time as Norwegian civil local time using frozen IANA Europe/Oslo rules appropriate to the birth date. For ambiguous autumn DST-fold times, evaluate both UTC instants: classify Z only if invariant, otherwise mark unresolved. Flag impossible spring-gap times.",
+    "effect_reporting": [
+      "N eligible and N complete primary outcome",
+      "N and proportion Z=1",
+      "mean/SD Activity score in Z=1 and Z=0",
+      "unadjusted mean difference",
+      "adjusted coefficient",
+      "95% confidence interval",
+      "two-sided p-value",
+      "standardized effect size",
+      "incremental out-of-sample R-squared over the frozen control model"
+    ]
+  },
+  "secondary_analyses": [
+    "Prorated Activity score when at least two of three items are observed.",
+    "Item-level ordinal models for EE417, EE419 and EE423 in their frozen aligned directions.",
+    "Later MoBa EAS Activity measurements, if exact same construct is verified before their outcome values are inspected.",
+    "Canonical five-channel development candidate: 2-14 OR 5-15 OR 29-46 OR 6-59 OR 3-60.",
+    "Negative predictor controls: Gate 5 only; Gate 15 only; Gate 5 OR Gate 15.",
+    "Additional perinatal covariates only as labeled robustness models, never chosen by which improves the result."
+  ],
+  "specificity_controls": {
+    "rotations": "Evaluate the exact frozen 5-15 orientation against a predeclared set of joint rotations only after the primary test; never select a new orientation from MoBa.",
+    "other_eas_subscales": "Shyness, Emotionality and Sociability may be reported as phenotype-specificity diagnostics but are not primary negative outcomes because AstroHD may make separate predictions for them."
+  },
+  "engine": {
+    "requirement": "Canonical validation calculation must use the repository's verified Swiss Ephemeris path and provenance checks.",
+    "exploratory_feasibility_only": {
+      "engine": "Moshier parity calculation",
+      "sample": "10,000 uniformly sampled birth moments from 1999-01-01 through 2008-12-31",
+      "estimated_Z_prevalence": 0.1419,
+      "interpretation": "Strong expected predictor variation; this estimate is not outcome evidence."
+    }
+  },
+  "success_interpretation": {
+    "primary_success": "A positive association on the frozen 18-month Activity score under the frozen primary analysis is independent construct-transport evidence for the development-selected 5-15 object.",
+    "primary_failure": "A null or opposite association is a failed MoBa replication/transport test and may not be rescued by retuning 5-15 on MoBa.",
+    "eligibility_failure": "If linked exact birth date/time cannot be used or derived before outcome access, report MoBa as ineligible; do not inspect outcomes and do not count it as replication failure."
+  },
+  "public_documentation_sources": [
+    "https://www.fhi.no/en/ch/studies/moba/for-forskere-artikler/moba-research-data-files/",
+    "https://www.fhi.no/globalassets/dokumenterfiler/studier/den-norske-mor-far-og-barn--undersokelsenmoba/instrumentdokumentasjon/instrument-documentation-q5.pdf",
+    "https://www.fhi.no/globalassets/dokumenterfiler/mfr-record_v541_ver2.pdf",
+    "https://www.fhi.no/en/ch/studies/moba/for-forskere-artikler/research-and-data-access/"
+  ]
+}
