@@ -47,7 +47,9 @@ def test_streaming_parser_extracts_birth_biography_and_categories(tmp_path) -> N
     </text_data>
     <research_data>
       <categories count="2">
-        <category cat_id="85" adb_id="1019" catnotes="Energetic">Traits : Personality : Active</category>
+        <category cat_id="85" adb_id="1019" catnotes="Energetic">
+          Traits : Personality : Active
+        </category>
         <category cat_id="399" adb_id="1019">Vocation : Military</category>
       </categories>
     </research_data>
