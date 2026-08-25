@@ -13,6 +13,7 @@ from contextlib import contextmanager
 from pathlib import Path
 
 from hdmatch.chart.bodygraph import CHANNELS, Center
+from hdmatch.chart.ephemeris import EphemerisFallbackError
 from hdmatch.human.astrodatabank_export import (
     AstroDatabankRecord,
     iter_astrodatabank_export,
@@ -144,13 +145,24 @@ def _normalize_source(value: str) -> str:
     return " ".join(value.split()).casefold() or "__unknown__"
 
 
+def _nation_code(value: str) -> str:
+    """Collapse ADB region codes such as ``CA (US)`` to their nation code."""
+
+    normalized = " ".join(value.split()).upper()
+    if normalized.endswith(")") and "(" in normalized:
+        suffix = normalized.rsplit("(", 1)[1][:-1].strip()
+        if suffix:
+            return suffix
+    return normalized or "__unknown__"
+
+
 def _strata(record: AstroDatabankRecord) -> dict[str, str]:
     if record.birth_year is None:
         raise ValueError(f"record {record.adb_id} lacks recorded birth year")
     return {
         "sex": record.gender.strip().upper() or "__unknown__",
         "birth_year": str(record.birth_year),
-        "country": record.country_code.strip().upper() or "__unknown__",
+        "country": _nation_code(record.country_code),
         "collector": _normalize_source(record.collector),
         "editor": _normalize_source(record.editor),
         "biographer": _normalize_source(record.biographer),
@@ -162,7 +174,10 @@ def _labels(record: AstroDatabankRecord, scope: str) -> tuple[str, ...]:
     selected = set()
     for category in record.categories:
         text = category.text.strip()
-        if text and any(text == prefix or text.startswith(prefix + " :") for prefix in prefixes):
+        if text and any(
+            text == prefix or text.startswith(prefix + " :")
+            for prefix in prefixes
+        ):
             selected.add(text)
     return tuple(sorted(selected))
 
@@ -202,14 +217,23 @@ def _build_cases(
     *,
     adapter: ExactChartAdapter,
     scope: str,
-) -> tuple[tuple[PositiveEvidenceRecord, ...], tuple[CandidateChart, ...]]:
+) -> tuple[
+    tuple[PositiveEvidenceRecord, ...],
+    tuple[CandidateChart, ...],
+    int,
+]:
     people: list[PositiveEvidenceRecord] = []
     charts: list[CandidateChart] = []
+    engine_coverage_exclusions = 0
     for record in records:
         labels = _labels(record, scope)
         if not labels or record.birth_utc is None:
             continue
-        public_chart = adapter.calculate(record.birth_utc)
+        try:
+            public_chart = adapter.calculate(record.birth_utc)
+        except EphemerisFallbackError:
+            engine_coverage_exclusions += 1
+            continue
         feature_map = _chart_feature_map(public_chart)
         strata = _strata(record)
         clusters = {label: taxonomy_opportunity(label) for label in labels}
@@ -236,7 +260,7 @@ def _build_cases(
                 match_strata=strata,
             )
         )
-    return tuple(people), tuple(charts)
+    return tuple(people), tuple(charts), engine_coverage_exclusions
 
 
 def _summary(result: object) -> dict[str, object]:
@@ -344,7 +368,11 @@ def main() -> int:
     feature_names = _feature_names(args.representation)
     with _xml_input(source) as xml_path:
         records = _eligible(xml_path)
-        people, charts = _build_cases(records, adapter=adapter, scope=args.scope)
+        people, charts, engine_exclusions = _build_cases(
+            records,
+            adapter=adapter,
+            scope=args.scope,
+        )
 
     training_blocks: tuple[str, ...] = ()
     candidate_fields = ("sex", "birth_year", "country")
@@ -368,8 +396,7 @@ def main() -> int:
         record.collector.strip() or "__unknown__" for record in records
     )
     country_counts = Counter(
-        record.country_code.strip().upper() or "__unknown__"
-        for record in records
+        person.match_strata.get("country", "__unknown__") for person in people
     )
     gauquelin_notes = sum(
         "gauquelin" in record.source_notes.casefold() for record in records
@@ -379,7 +406,8 @@ def main() -> int:
         "phase": "DEVELOPMENT",
         "input_sha256": sha256_file(source),
         "eligible_timed_public_records": len(records),
-        "people_with_scope_labels": len(people),
+        "engine_coverage_exclusions_after_scope_filter": engine_exclusions,
+        "people_with_scope_labels_and_verified_swieph_chart": len(people),
         "scope": args.scope,
         "representation": args.representation,
         "feature_count": len(feature_names),
@@ -396,8 +424,10 @@ def main() -> int:
             args=args,
         ),
         "provenance_summary": {
-            "country_counts": dict(country_counts.most_common()),
-            "collector_counts_top20": dict(collector_counts.most_common(20)),
+            "analysis_nation_counts": dict(country_counts.most_common()),
+            "collector_counts_top20_before_engine_coverage_filter": dict(
+                collector_counts.most_common(20)
+            ),
             "source_notes_mention_gauquelin": gauquelin_notes,
         },
         "interpretation_rule": (
