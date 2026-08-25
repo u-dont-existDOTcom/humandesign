@@ -20,7 +20,7 @@ from __future__ import annotations
 import hashlib
 import math
 import random
-from collections import defaultdict
+from collections import Counter, defaultdict
 from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
 from typing import Any, Literal
@@ -100,12 +100,33 @@ class OpportunityConditionedNeighborModel:
         self.artifact = artifact
         self._rows = tuple(rows)
         by_block: dict[tuple[str, ...], list[_TrainingRow]] = defaultdict(list)
+        by_block_opportunity: dict[
+            tuple[tuple[str, ...], str], list[_TrainingRow]
+        ] = defaultdict(list)
+        global_label_counts: dict[
+            tuple[tuple[str, ...], str], Counter[str]
+        ] = defaultdict(Counter)
         for row in self._rows:
             by_block[row.block_key].append(row)
+            for opportunity in row.opportunities:
+                key = (row.block_key, opportunity)
+                by_block_opportunity[key].append(row)
+                for label in row.observed_labels:
+                    if artifact.label_opportunities.get(label) == opportunity:
+                        global_label_counts[key][label] += 1
         self._rows_by_block = {
             key: tuple(sorted(values, key=lambda item: item.participant_id))
             for key, values in by_block.items()
         }
+        self._rows_by_block_opportunity = {
+            key: tuple(sorted(values, key=lambda item: item.participant_id))
+            for key, values in by_block_opportunity.items()
+        }
+        self._global_label_counts = dict(global_label_counts)
+        self._neighbor_label_cache: dict[
+            tuple[tuple[str, ...], str, tuple[str, ...]],
+            tuple[int, Counter[str]] | None,
+        ] = {}
 
     @classmethod
     def fit(
@@ -214,6 +235,43 @@ class OpportunityConditionedNeighborModel:
     def _similarity(left: Sequence[str], right: Sequence[str]) -> int:
         return sum(a == b for a, b in zip(left, right, strict=True))
 
+    def _neighbor_label_counts(
+        self,
+        *,
+        block: tuple[str, ...],
+        opportunity: str,
+        candidate_tokens: tuple[str, ...],
+    ) -> tuple[int, Counter[str]] | None:
+        cache_key = (block, opportunity, candidate_tokens)
+        if cache_key in self._neighbor_label_cache:
+            return self._neighbor_label_cache[cache_key]
+        opportunity_pool = self._rows_by_block_opportunity.get(
+            (block, opportunity), ()
+        )
+        if len(opportunity_pool) < max(
+            self.artifact.neighbor_count,
+            self.artifact.min_opportunity_count,
+        ):
+            self._neighbor_label_cache[cache_key] = None
+            return None
+        nearest = tuple(
+            sorted(
+                opportunity_pool,
+                key=lambda row: (
+                    -self._similarity(candidate_tokens, row.feature_tokens),
+                    row.participant_id,
+                ),
+            )[: self.artifact.neighbor_count]
+        )
+        counts: Counter[str] = Counter()
+        for row in nearest:
+            for label in row.observed_labels:
+                if self.artifact.label_opportunities.get(label) == opportunity:
+                    counts[label] += 1
+        result = (len(opportunity_pool), counts)
+        self._neighbor_label_cache[cache_key] = result
+        return result
+
     def score_candidate(
         self,
         person: PositiveEvidenceRecord,
@@ -222,7 +280,6 @@ class OpportunityConditionedNeighborModel:
         """Score observed positives; return ``None`` if no label is estimable."""
 
         block = _block_key(chart.match_strata, self.artifact.training_block_fields)
-        pool = self._rows_by_block.get(block, ())
         candidate_tokens = self._candidate_tokens(chart)
         score = 0.0
         used_labels = 0
@@ -230,33 +287,24 @@ class OpportunityConditionedNeighborModel:
             opportunity = self.artifact.label_opportunities.get(label)
             if opportunity is None:
                 continue
-            opportunity_pool = tuple(
-                row for row in pool if opportunity in row.opportunities
+            neighbor_stats = self._neighbor_label_counts(
+                block=block,
+                opportunity=opportunity,
+                candidate_tokens=candidate_tokens,
             )
-            if len(opportunity_pool) < max(
-                self.artifact.neighbor_count,
-                self.artifact.min_opportunity_count,
-            ):
+            if neighbor_stats is None:
                 continue
-            global_positive = sum(
-                label in row.observed_labels for row in opportunity_pool
-            )
+            opportunity_count, local_counts = neighbor_stats
+            global_positive = self._global_label_counts.get(
+                (block, opportunity), Counter()
+            ).get(label, 0)
             if global_positive < self.artifact.min_label_count:
                 continue
-            nearest = tuple(
-                sorted(
-                    opportunity_pool,
-                    key=lambda row: (
-                        -self._similarity(candidate_tokens, row.feature_tokens),
-                        row.participant_id,
-                    ),
-                )[: self.artifact.neighbor_count]
-            )
-            global_rate = global_positive / len(opportunity_pool)
-            local_positive = sum(label in row.observed_labels for row in nearest)
+            global_rate = global_positive / opportunity_count
+            local_positive = local_counts.get(label, 0)
             local_rate = (
                 local_positive + self.artifact.alpha * global_rate
-            ) / (len(nearest) + self.artifact.alpha)
+            ) / (self.artifact.neighbor_count + self.artifact.alpha)
             weight = float(person.evidence_weights.get(label, 1.0))
             if not math.isfinite(weight) or not 0.0 <= weight <= 1.0:
                 raise ValueError("evidence weights must be finite within [0, 1]")
@@ -427,14 +475,17 @@ def cross_fitted_opportunity_identification(
     if randomization_iterations > 0:
         rng = random.Random(decoy_seed)
         observed = sum(percentiles) / len(percentiles)
+        candidate_percentiles = tuple(
+            tuple(_percentile(vector, index)[1] for index in range(len(vector)))
+            for vector in score_vectors
+        )
         ge = 0
         for _ in range(randomization_iterations):
-            null_values = []
-            for vector in score_vectors:
-                selected = rng.randrange(len(vector))
-                _, value = _percentile(vector, selected)
-                null_values.append(value)
-            if sum(null_values) / len(null_values) >= observed:
+            null_total = sum(
+                values[rng.randrange(len(values))]
+                for values in candidate_percentiles
+            )
+            if null_total / len(candidate_percentiles) >= observed:
                 ge += 1
         p_value = (ge + 1.0) / (randomization_iterations + 1.0)
 
