@@ -1,0 +1,66 @@
+name: adb-holistic-canonical
+
+on:
+  push:
+    branches: [codex/harness-integration]
+    paths:
+      - reference/run_adb_holistic_canonical.trigger
+
+permissions:
+  contents: write
+
+jobs:
+  canonical-development-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Check out research branch
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          ref: codex/harness-integration
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install package
+        run: |
+          python -m pip install -r requirements-dev.lock
+          python -m pip install --no-build-isolation --no-deps -e .
+      - name: Provision and verify pinned Swiss Ephemeris
+        run: |
+          python scripts/fetch_swisseph_ephemeris.py
+          python -m hdmatch.cli validate-engine \
+            --ephemeris-mode swiss \
+            --ephemeris-path data/ephemeris \
+            --output /tmp/engine-validation.json
+      - name: Download exact official C sample
+        run: |
+          curl -fL --retry 3 \
+            https://www.astro.com/adbexport/c_sample.zip \
+            -o /tmp/c_sample.zip
+          echo "a88b12d1edc47651319d33e5a1c47c002db44e6dbf99374e5943ff9c10ae9b17  /tmp/c_sample.zip" \
+            | sha256sum -c -
+      - name: Run canonical opportunity-conditioned analysis
+        run: |
+          python scripts/run_astrodatabank_holistic_development.py \
+            --input /tmp/c_sample.zip \
+            --output /tmp/adb-holistic-canonical.json \
+            --scope behavior_vocation \
+            --representation fast_carrier_gate_line \
+            --neighbor-count 200 \
+            --folds 5 \
+            --max-decoys 50 \
+            --randomization-iterations 2000 \
+            --min-country-people 150
+          cat /tmp/adb-holistic-canonical.json
+      - name: Preserve aggregate DEVELOPMENT result
+        run: |
+          mkdir -p reference/audits
+          cp /tmp/adb-holistic-canonical.json \
+            reference/audits/astrodatabank_holistic_canonical_2026_08_25.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add reference/audits/astrodatabank_holistic_canonical_2026_08_25.json
+          git commit -m 'Record canonical Astro-Databank holistic development result'
+          git push origin HEAD:codex/harness-integration
