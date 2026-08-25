@@ -55,7 +55,10 @@ def test_rich_answers_become_positive_labels_with_question_opportunities() -> No
     assert decoded["social.childhood"] == "selective-but-warm"
     assert decoded["social.current"] == "other: outgoing in trusted groups"
     assert decoded["decision.signal"] == "unknown/context-dependent"
-    assert all(opportunities[label] == decode_question_answer_label(label)[0] for label in record.observed_labels)
+    assert all(
+        opportunities[label] == decode_question_answer_label(label)[0]
+        for label in record.observed_labels
+    )
     assert record.match_strata == {
         "birth_year": "1985",
         "site": "senegal-pilot",
@@ -130,7 +133,10 @@ def test_multi_case_conversion_records_explicitly_empty_people_as_skipped() -> N
     )
     converted = human_cases_to_positive_evidence(
         (_typed_case(), empty),
-        excluded_answers={"decision.signal": ("unknown/context-dependent",), "q": ("unknown",)},
+        excluded_answers={
+            "decision.signal": ("unknown/context-dependent",),
+            "q": ("unknown",),
+        },
     )
     assert [record.participant_id for record in converted.records] == ["p1"]
     assert converted.skipped_no_scorable_evidence == ("empty",)
