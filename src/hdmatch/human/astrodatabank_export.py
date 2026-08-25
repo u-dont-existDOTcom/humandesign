@@ -1,9 +1,10 @@
 """Streaming reader for the official Astro-Databank XML export format.
 
-The reader is deliberately astronomy-agnostic.  It extracts source-rated birth
-records, short biographies, and research categories without calculating any HD
-or astronomical predictor.  This allows outcome/coverage eligibility audits to
-be completed before a frozen external predictor is evaluated.
+The reader is deliberately astronomy-agnostic. It extracts source-rated birth
+records, short biographies, research categories, geography, and archive-source
+provenance without calculating any HD or astronomical predictor. This allows
+outcome/coverage and source-transport audits before a frozen predictor is
+evaluated.
 
 Format reference:
 https://www.astro.com/astro-databank/Help:XML_export_format
@@ -37,6 +38,14 @@ class AstroDatabankRecord:
     data_type: str
     jd_ut: float | None
     birth_utc: datetime | None
+    birth_year: int | None
+    birthplace: str
+    country: str
+    country_code: str
+    collector: str
+    editor: str
+    biographer: str
+    source_notes: str
     has_alternative_birth_data: bool
     short_biography: str
     categories: tuple[AstroDatabankCategory, ...]
@@ -91,11 +100,17 @@ def _parse_entry(element: ET.Element) -> AstroDatabankRecord:
     data_type = "" if datatype is None else datatype.attrib.get("sdatatype", "")
     bdata = public.find("bdata")
     sbtime = None if bdata is None else bdata.find("sbtime")
+    sbdate = None if bdata is None else bdata.find("sbdate")
+    place = None if bdata is None else bdata.find("place")
+    country_node = None if bdata is None else bdata.find("country")
     jd_ut = _optional_float(None if sbtime is None else sbtime.attrib.get("jd_ut"))
     birth_utc = None if jd_ut is None else julian_day_ut_to_datetime(jd_ut)
+    birth_year = _optional_int(None if sbdate is None else sbdate.attrib.get("iyear"))
+    country_code = "" if country_node is None else country_node.attrib.get("sctr", "")
 
     text_data = element.find("text_data")
     short_biography = "" if text_data is None else _text(text_data.find("shortbiography"))
+    source_notes = "" if text_data is None else _text(text_data.find("sourcenotes"))
 
     category_items: list[AstroDatabankCategory] = []
     research_data = element.find("research_data")
@@ -121,6 +136,14 @@ def _parse_entry(element: ET.Element) -> AstroDatabankRecord:
         data_type=data_type,
         jd_ut=jd_ut,
         birth_utc=birth_utc,
+        birth_year=birth_year,
+        birthplace=_text(place),
+        country=_text(country_node),
+        country_code=country_code,
+        collector=_text(public.find("scollector")),
+        editor=_text(public.find("seditor")),
+        biographer=_text(public.find("sbiographer")),
+        source_notes=source_notes,
         has_alternative_birth_data=public.find("bdata_alt") is not None,
         short_biography=short_biography,
         categories=tuple(category_items),
@@ -140,3 +163,9 @@ def _optional_float(value: str | None) -> float | None:
     if not math.isfinite(parsed):
         raise ValueError("ADB jd_ut must be finite")
     return parsed
+
+
+def _optional_int(value: str | None) -> int | None:
+    if value is None or not value.strip():
+        return None
+    return int(value)
