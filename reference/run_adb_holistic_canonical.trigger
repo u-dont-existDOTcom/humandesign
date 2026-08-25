@@ -1,1 +1,1 @@
-canonical-adb-holistic-development-2026-08-25-v2
+canonical-adb-holistic-development-2026-08-25-v3
