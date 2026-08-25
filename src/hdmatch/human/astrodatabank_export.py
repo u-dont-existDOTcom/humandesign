@@ -85,6 +85,23 @@ def julian_day_ut_to_datetime(jd_ut: float) -> datetime:
         raise ValueError("jd_ut is outside Python datetime range") from exc
 
 
+def _representable_birth_utc(jd_ut: float | None) -> datetime | None:
+    """Return UTC when representable; preserve out-of-runtime dates as ineligible.
+
+    The public archive includes a small number of dates outside Python's
+    ``datetime`` range. Those records must not abort a streaming audit. Their raw
+    Julian day remains available in ``jd_ut`` while ``birth_utc=None`` makes them
+    fail the conservative timed-public eligibility filter explicitly.
+    """
+
+    if jd_ut is None:
+        return None
+    try:
+        return julian_day_ut_to_datetime(jd_ut)
+    except ValueError:
+        return None
+
+
 def _parse_entry(element: ET.Element) -> AstroDatabankRecord:
     adb_id_text = element.attrib.get("adb_id")
     if adb_id_text is None:
@@ -104,7 +121,7 @@ def _parse_entry(element: ET.Element) -> AstroDatabankRecord:
     place = None if bdata is None else bdata.find("place")
     country_node = None if bdata is None else bdata.find("country")
     jd_ut = _optional_float(None if sbtime is None else sbtime.attrib.get("jd_ut"))
-    birth_utc = None if jd_ut is None else julian_day_ut_to_datetime(jd_ut)
+    birth_utc = _representable_birth_utc(jd_ut)
     birth_year = _optional_int(None if sbdate is None else sbdate.attrib.get("iyear"))
     country_code = "" if country_node is None else country_node.attrib.get("sctr", "")
 
