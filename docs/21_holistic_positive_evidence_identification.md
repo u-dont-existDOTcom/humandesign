@@ -83,17 +83,59 @@ Always report materially large source/site/country strata separately. Before tre
 
 Strong effect in one collector/country + null/opposite effects elsewhere is evidence of nontransportability or source confounding until independently resolved.
 
-## Astro-Databank development lesson, 2026-08-25
+## Canonical Astro-Databank lesson, 2026-08-25
 
-The first nonlinear Astro-Databank development pass produced apparently strong exact-year-controlled carrier-pattern identification when missing labels were treated as unknown. A deeper audit found that:
+The exploratory nonlinear Astro-Databank development path initially produced apparently strong carrier-pattern identification. Those positive-looking results did **not** survive the fully corrected model.
 
-- unordered gate/channel effects largely disappeared under exact-year controls;
-- carrier-specific fast-body gate/line representations retained more development signal;
-- opportunity-conditioned training removed a large annotation-selection artifact;
-- the remaining signal was highly nontransportable by country: France was strong, the United States was approximately null, and Italy ran opposite;
-- French results depended materially on heterogeneous archive provenance/collector structure.
+The canonical opportunity-conditioned Swiss-Ephemeris run used:
 
-This is **not validation of Human Design**. It is the reason opportunity conditioning, source-blocked training, and transport reporting are now mandatory parts of the holistic archive workflow.
+- the exact official C-sample bytes;
+- A/AA timed public figures without alternative birth tuples;
+- verified SWIEPH calculations only;
+- fast-body Personality + Design gate/line carrier patterns;
+- K=200;
+- five-fold person cross-fitting;
+- dependency-normalized positive labels;
+- training and neighbor membership conditioned on observation opportunity;
+- decoys matched by sex + exact birth year + normalized nation.
+
+It produced a mean true-chart percentile of about **50.79%** over 3,328 evaluable people, with candidate-exchange `p≈0.095`.
+
+Country-specific results were also null-like: France about 49.29%, the United States about 50.79%, and Italy about 50.28%.
+
+A stricter collector-blocked run, which constrained both TRAINING neighborhoods and candidates by collector, produced about **49.28%** over 1,655 evaluable people (`p≈0.833`).
+
+Therefore the current Astro-Databank endpoint is **null for this archive formulation**. The earlier 55–67% exploratory effects were artifacts of incomplete training-time missingness semantics, cohort/geography controls, and archive-source structure. See `reference/audits/astrodatabank_holistic_canonical_interpretation_2026_08_25.md`.
+
+This negative result should not be generalized to the richer questionnaire phenomenon. Astro-Databank contains sparse, selectively coded biography tags rather than a systematic behavioral instrument.
+
+## Rich `HumanCase` questionnaire path
+
+The repository now converts rich DEVELOPMENT `HumanCase` records directly into the holistic representation through `src/hdmatch/human/holistic_humancase.py`.
+
+For each answered questionnaire item:
+
+- the categorical observation is encoded as `question_id → answer`;
+- the **observation opportunity is the question itself** because an answer proves that item was assessed;
+- `BehavioralResponse.cluster_id` supplies the dependency cluster;
+- behavioral confidence × measurement reliability supplies the base weight;
+- cluster normalization prevents several correlated questions from multiplying evidence;
+- an `Other` answer remains valid evidence by default;
+- context-dependent/unknown answers are omitted only when the analysis explicitly declares that exact answer unscored;
+- raw free-text nuance is not turned into a unique statistical category. It should be coded blind to chart state into reusable constructs before empirical use.
+
+Legacy flat `HumanCase.responses` remain supported: each question becomes its own dependency cluster and uses the case's reliability weight.
+
+The adapter is DEVELOPMENT-only because `HumanCase` includes the person's actual chart features. Validation must use the existing blind protocol/candidate boundary rather than passing a true-chart-bearing development packet into the scorer.
+
+CLI workflow:
+
+```text
+python -m hdmatch.holistic_cli convert-human-cases ...
+python -m hdmatch.holistic_cli crossfit-opportunity ...
+```
+
+The first command creates an auditable positive-evidence packet with true development charts, observation opportunities, dependency clusters, and skipped/no-scorable-evidence IDs. The second runs person-level opportunity-conditioned cross-fitting and matched-decoy chart identification.
 
 ## Relationship to minimization / MPOD
 
@@ -105,4 +147,4 @@ Only after a whole-profile model shows reproducible, transportable held-out iden
 4. replace symbolic HD encodings with simpler raw astronomical objects;
 5. retain the smallest object that preserves nearly all independently replicating information.
 
-A compact formula selected from one archive is a DEVELOPMENT hypothesis. Its scientific weight comes from frozen external replication, not from how spectacularly it can be optimized on the discovery archive.
+A compact formula selected from one archive or one DEVELOPMENT cohort is a hypothesis. Its scientific weight comes from frozen external replication, not from how spectacularly it can be optimized on the discovery data.
