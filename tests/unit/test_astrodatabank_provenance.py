@@ -21,7 +21,9 @@ def test_parser_exposes_country_and_archive_source_provenance(tmp_path) -> None:
     </public_data>
     <text_data>
       <shortbiography>French neurologist.</shortbiography>
-      <sourcenotes>Birth certificate in Didier Geslain archive. Same data in Gauquelin.</sourcenotes>
+      <sourcenotes>
+        Birth certificate in Didier Geslain archive. Same data in Gauquelin.
+      </sourcenotes>
     </text_data>
     <research_data><categories count="0" /></research_data>
   </adb_entry>
