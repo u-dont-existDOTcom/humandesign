@@ -14,7 +14,6 @@ import hashlib
 import json
 import lzma
 import math
-import os
 import struct
 from datetime import datetime, timezone
 from pathlib import Path
@@ -49,6 +48,7 @@ STEPS_HOURS = {
     "pluto": 12,
 }
 FLAGS = swe.FLG_SWIEPH | swe.FLG_SPEED
+EPHEMERIS_MASK = swe.FLG_JPLEPH | swe.FLG_SWIEPH | swe.FLG_MOSEPH
 Q = 100_000  # 1e-5 degree
 REQUIRED_EPHEMERIS_FILES = ("sepl_18.se1", "semo_18.se1")
 
@@ -68,7 +68,7 @@ def sha256(path: Path) -> str:
 
 def calc_longitude(jd_ut: float, body_id: int) -> float:
     xx, retflags = swe.calc_ut(jd_ut, body_id, FLAGS)
-    used = retflags & swe.FLG_EPHMASK
+    used = retflags & EPHEMERIS_MASK
     if used != swe.FLG_SWIEPH:
         raise RuntimeError(
             "EPHEMERIS_FALLBACK: requested SWIEPH but "
