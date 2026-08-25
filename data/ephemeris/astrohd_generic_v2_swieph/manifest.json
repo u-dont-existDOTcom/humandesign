@@ -1,0 +1,91 @@
+{
+  "bodies": {
+    "jupiter": {
+      "bytes": 39144,
+      "n": 146505,
+      "sha256": "271be72977e8f8c99dfb82ede3e3d26149d9715f0667fd9a7c8410fe9d041aa3",
+      "step_hours": 6
+    },
+    "mars": {
+      "bytes": 58116,
+      "n": 293009,
+      "sha256": "01e7179330387db8e171475a323061176062622ff11eafc75ba03bfe40f5a165",
+      "step_hours": 3
+    },
+    "mercury": {
+      "bytes": 127140,
+      "n": 293009,
+      "sha256": "def9f936b5cdc823743c695260f4a02ef83a3fd8b0b5f7ffff88654cbdb2f6d7",
+      "step_hours": 3
+    },
+    "moon": {
+      "bytes": 309216,
+      "n": 879025,
+      "sha256": "958ea3104a0dca1d3b16260130c8acac20937dc6c0fea58dfd6fcde5d7cc7dfb",
+      "step_hours": 1
+    },
+    "neptune": {
+      "bytes": 22032,
+      "n": 73253,
+      "sha256": "d234a9474f3479f110d588ec923bcbd2d7d91444181016dd0a2c3a0e3c29da4c",
+      "step_hours": 12
+    },
+    "pluto": {
+      "bytes": 21988,
+      "n": 73253,
+      "sha256": "43101630bc371869a710243160444060e612d7795b0a8b05b8233a6aab394133",
+      "step_hours": 12
+    },
+    "saturn": {
+      "bytes": 35280,
+      "n": 146505,
+      "sha256": "423b9a9f2490afd03139a1b4bc17024cce9d1de17e296dcd0f28df709e2a7eda",
+      "step_hours": 6
+    },
+    "sun": {
+      "bytes": 40420,
+      "n": 293009,
+      "sha256": "ba4903e1dc3905b20e4035e7a60cdfe6c93efde2865b6317b2f129e738c6813d",
+      "step_hours": 3
+    },
+    "true_node": {
+      "bytes": 129944,
+      "n": 293009,
+      "sha256": "4b4bfe8b6fe8409ecf65fcea59cf699d0a8f340b0323ea62a3dd1f0a4fc74323",
+      "step_hours": 3
+    },
+    "uranus": {
+      "bytes": 23616,
+      "n": 73253,
+      "sha256": "90e5345d3a259cbe2c94e44b9766bcf9d40f681e9b0ac424f5ed46be876e6d41",
+      "step_hours": 12
+    },
+    "venus": {
+      "bytes": 64680,
+      "n": 293009,
+      "sha256": "b92d3806295ace70438f58d298f498752653ecb28a260605b8e410ae1515d17f",
+      "step_hours": 3
+    }
+  },
+  "codec": "unwrapped longitude -> 1e-5deg integer -> second differences -> XZ extreme",
+  "end_jd": 2461276.9458333333,
+  "end_utc": "2026-08-24T10:42:00+00:00",
+  "ephemeris_files": {
+    "semo_18.se1": {
+      "bytes": 1304771,
+      "sha256": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7"
+    },
+    "sepl_18.se1": {
+      "bytes": 484061,
+      "sha256": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66"
+    }
+  },
+  "ephemeris_requested": "SWIEPH",
+  "ephemeris_returned": "SWIEPH",
+  "flags": 258,
+  "longitude_quantization_deg": 1e-05,
+  "node": "true",
+  "start_jd": 2424650.9458333333,
+  "start_utc": "1926-05-15T10:42:00+00:00",
+  "version": "astrohd-generic-ephemeris-cache-v2-swieph"
+}
