@@ -1,0 +1,119 @@
+name: opportunity-neighbor-fix-once
+
+on:
+  push:
+    branches: [codex/harness-integration]
+    paths:
+      - .github/workflows/opportunity-neighbor-fix-once.yml
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+        with:
+          ref: codex/harness-integration
+      - name: Patch opportunity-conditioned neighborhood
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('src/hdmatch/human/holistic_opportunity.py')
+          text = path.read_text()
+          old = '''        pool = self._rows_by_block.get(block, ())
+        if len(pool) < self.artifact.neighbor_count:
+            return None
+        candidate_tokens = self._candidate_tokens(chart)
+        nearest = tuple(
+            sorted(
+                pool,
+                key=lambda row: (
+                    -self._similarity(candidate_tokens, row.feature_tokens),
+                    row.participant_id,
+                ),
+            )[: self.artifact.neighbor_count]
+        )
+        score = 0.0
+        for label in person.observed_labels:
+            opportunity = self.artifact.label_opportunities.get(label)
+            if opportunity is None:
+                continue
+            global_opportunity = sum(opportunity in row.opportunities for row in pool)
+            global_positive = sum(label in row.observed_labels for row in pool)
+            if (
+                global_opportunity < self.artifact.min_opportunity_count
+                or global_positive < self.artifact.min_label_count
+            ):
+                continue
+            local_opportunity = sum(opportunity in row.opportunities for row in nearest)
+            local_positive = sum(label in row.observed_labels for row in nearest)
+            global_rate = global_positive / global_opportunity
+            local_rate = (
+                local_positive + self.artifact.alpha * global_rate
+            ) / (local_opportunity + self.artifact.alpha)
+            weight = float(person.evidence_weights.get(label, 1.0))
+            if not math.isfinite(weight) or not 0.0 <= weight <= 1.0:
+                raise ValueError("evidence weights must be finite within [0, 1]")
+            score += weight * math.log2(
+                max(local_rate, 1e-12) / max(global_rate, 1e-12)
+            )
+        return score
+'''
+          new = '''        pool = self._rows_by_block.get(block, ())
+        candidate_tokens = self._candidate_tokens(chart)
+        score = 0.0
+        used_labels = 0
+        for label in person.observed_labels:
+            opportunity = self.artifact.label_opportunities.get(label)
+            if opportunity is None:
+                continue
+            opportunity_pool = tuple(
+                row for row in pool if opportunity in row.opportunities
+            )
+            if len(opportunity_pool) < max(
+                self.artifact.neighbor_count,
+                self.artifact.min_opportunity_count,
+            ):
+                continue
+            global_positive = sum(
+                label in row.observed_labels for row in opportunity_pool
+            )
+            if global_positive < self.artifact.min_label_count:
+                continue
+            nearest = tuple(
+                sorted(
+                    opportunity_pool,
+                    key=lambda row: (
+                        -self._similarity(candidate_tokens, row.feature_tokens),
+                        row.participant_id,
+                    ),
+                )[: self.artifact.neighbor_count]
+            )
+            global_rate = global_positive / len(opportunity_pool)
+            local_positive = sum(label in row.observed_labels for row in nearest)
+            local_rate = (
+                local_positive + self.artifact.alpha * global_rate
+            ) / (len(nearest) + self.artifact.alpha)
+            weight = float(person.evidence_weights.get(label, 1.0))
+            if not math.isfinite(weight) or not 0.0 <= weight <= 1.0:
+                raise ValueError("evidence weights must be finite within [0, 1]")
+            score += weight * math.log2(
+                max(local_rate, 1e-12) / max(global_rate, 1e-12)
+            )
+            used_labels += 1
+        return score if used_labels else None
+'''
+          if old not in text:
+              raise SystemExit('expected block not found; refusing patch')
+          path.write_text(text.replace(old, new))
+          PY
+      - name: Remove one-shot workflow and commit
+        run: |
+          rm .github/workflows/opportunity-neighbor-fix-once.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src/hdmatch/human/holistic_opportunity.py .github/workflows/opportunity-neighbor-fix-once.yml
+          git commit -m 'Condition neighbor search on observation opportunity'
+          git push origin HEAD:codex/harness-integration
