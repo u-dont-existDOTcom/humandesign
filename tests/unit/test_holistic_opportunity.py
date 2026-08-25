@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import math
+
 import pytest
 
 from hdmatch.human.holistic import CandidateChart, PositiveEvidenceRecord
@@ -43,6 +45,68 @@ def _chart(
     )
 
 
+def _slow_reference_score(
+    model: OpportunityConditionedNeighborModel,
+    person: PositiveEvidenceRecord,
+    chart: CandidateChart,
+) -> float | None:
+    """Original uncached scoring semantics, retained only as a parity oracle."""
+
+    block = tuple(
+        chart.match_strata.get(field, "")
+        for field in model.artifact.training_block_fields
+    )
+    candidate_tokens = tuple(
+        str(chart.chart_features[name]) for name in model.artifact.feature_names
+    )
+    pool = model._rows_by_block.get(block, ())  # noqa: SLF001
+    total = 0.0
+    used = 0
+    for label in person.observed_labels:
+        opportunity = model.artifact.label_opportunities.get(label)
+        if opportunity is None:
+            continue
+        opportunity_pool = tuple(
+            row for row in pool if opportunity in row.opportunities
+        )
+        if len(opportunity_pool) < max(
+            model.artifact.neighbor_count,
+            model.artifact.min_opportunity_count,
+        ):
+            continue
+        global_positive = sum(
+            label in row.observed_labels for row in opportunity_pool
+        )
+        if global_positive < model.artifact.min_label_count:
+            continue
+        nearest = tuple(
+            sorted(
+                opportunity_pool,
+                key=lambda row: (
+                    -sum(
+                        left == right
+                        for left, right in zip(
+                            candidate_tokens,
+                            row.feature_tokens,
+                            strict=True,
+                        )
+                    ),
+                    row.participant_id,
+                ),
+            )[: model.artifact.neighbor_count]
+        )
+        global_rate = global_positive / len(opportunity_pool)
+        local_positive = sum(label in row.observed_labels for row in nearest)
+        local_rate = (
+            local_positive + model.artifact.alpha * global_rate
+        ) / (len(nearest) + model.artifact.alpha)
+        total += person.evidence_weights.get(label, 1.0) * math.log2(
+            local_rate / global_rate
+        )
+        used += 1
+    return total if used else None
+
+
 def test_taxonomy_opportunity_keeps_vocation_as_one_observation_branch() -> None:
     assert taxonomy_opportunity("Vocation : Entertainer : Actor") == "Vocation"
     assert taxonomy_opportunity("Family : Relationship : Marriage") == (
@@ -80,6 +144,38 @@ def test_unobserved_ontology_branch_cannot_change_label_neighborhood() -> None:
     assert model_base.score_candidate(person, candidate) == pytest.approx(
         model_extra.score_candidate(person, candidate)
     )
+
+
+def test_cached_score_matches_original_slow_semantics() -> None:
+    target = "Traits : Personality : Active"
+    other = "Traits : Personality : Reserved"
+    vocation = "Vocation : Science"
+    records = (
+        _record("p1", (target,), f1="x", f2="1", source="A"),
+        _record("p2", (target,), f1="x", f2="0", source="A"),
+        _record("p3", (other,), f1="y", f2="1", source="A"),
+        _record("p4", (other,), f1="y", f2="0", source="A"),
+        _record("p5", (vocation,), f1="x", f2="1", source="A"),
+        _record("p6", (vocation,), f1="y", f2="0", source="A"),
+    )
+    model = OpportunityConditionedNeighborModel.fit(
+        records,
+        model_id="cache-parity",
+        feature_names=("f1", "f2"),
+        training_block_fields=("source",),
+        neighbor_count=2,
+        min_label_count=1,
+        min_opportunity_count=2,
+    )
+    person = _record("held", (target,), f1="x", f2="1", source="A")
+    for candidate in (
+        _chart("c1", "held", f1="x", f2="1", source="A"),
+        _chart("c2", "held", f1="y", f2="0", source="A"),
+    ):
+        expected = _slow_reference_score(model, person, candidate)
+        observed = model.score_candidate(person, candidate)
+        assert observed == pytest.approx(expected)
+        assert model.score_candidate(person, candidate) == pytest.approx(expected)
 
 
 def test_source_blocking_removes_other_source_from_training_baseline() -> None:
