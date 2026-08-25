@@ -75,6 +75,15 @@ class CandidateState(FrozenModel):
 
 
 class BehavioralResponse(FrozenModel):
+    """One behavioral construct with current, longitudinal, and contextual evidence.
+
+    ``answer`` remains the backwards-compatible summary/current categorical answer
+    used by existing scorers. ``period_answers`` and ``context_answers`` preserve
+    structured variation instead of flattening childhood/current or context-specific
+    differences into one token. Raw nuance remains provenance until coded blind to
+    chart state into reusable categories.
+    """
+
     question_id: str
     cluster_id: str
     answer: str
@@ -82,6 +91,36 @@ class BehavioralResponse(FrozenModel):
     measurement_reliability: float = Field(ge=0.0, le=1.0)
     example_text: str | None = None
     counterexample_text: str | None = None
+    period_answers: dict[str, str] = Field(default_factory=dict)
+    context_answers: dict[str, str] = Field(default_factory=dict)
+    pattern_changed: bool | None = None
+    change_period: str | None = None
+    nuance_text: str | None = None
+
+    @field_validator("period_answers", "context_answers")
+    @classmethod
+    def require_nonblank_structured_answers(
+        cls,
+        value: dict[str, str],
+    ) -> dict[str, str]:
+        normalized: dict[str, str] = {}
+        for key, answer in value.items():
+            period_or_context = str(key).strip()
+            categorical_answer = str(answer).strip()
+            if not period_or_context or not categorical_answer:
+                raise ValueError("structured behavioral answer keys/values cannot be blank")
+            if period_or_context in normalized:
+                raise ValueError("structured behavioral answer keys must be unique")
+            normalized[period_or_context] = categorical_answer
+        return normalized
+
+    @field_validator("change_period", "nuance_text")
+    @classmethod
+    def normalize_optional_text(cls, value: str | None) -> str | None:
+        if value is None:
+            return None
+        normalized = value.strip()
+        return normalized or None
 
     @property
     def effective_confidence(self) -> float:
