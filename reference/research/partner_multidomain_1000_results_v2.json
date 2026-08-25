@@ -1,0 +1,648 @@
+{
+  "bee_to_random_partners": {
+    "B_early": {
+      "Joel": {
+        "categorical_diagnostics": {
+          "economic_independence_candidate": {
+            "jaccard": 0.22580645161290322,
+            "overlap_fraction": 0.07777777777777778,
+            "person_a_fraction": 0.2388888888888889,
+            "person_b_fraction": 0.18333333333333332
+          },
+          "home_community_settlement_candidate": {
+            "jaccard": 0.25,
+            "overlap_fraction": 0.12777777777777777,
+            "person_a_fraction": 0.34444444444444444,
+            "person_b_fraction": 0.29444444444444445
+          },
+          "relationship_stable_candidate": {
+            "jaccard": 0.16129032258064513,
+            "overlap_fraction": 0.08333333333333333,
+            "person_a_fraction": 0.4166666666666667,
+            "person_b_fraction": 0.18333333333333332
+          },
+          "work_purpose_reorientation_candidate": {
+            "jaccard": 0.3153846153846154,
+            "overlap_fraction": 0.22777777777777777,
+            "person_a_fraction": 0.34444444444444444,
+            "person_b_fraction": 0.6055555555555555
+          }
+        },
+        "domain_ranks": {
+          "economy": {
+            "null_exceeding": 919,
+            "percentile": 8.099999999999996,
+            "rank": 920
+          },
+          "home_community": {
+            "null_exceeding": 643,
+            "percentile": 35.699999999999996,
+            "rank": 644
+          },
+          "relationship": {
+            "null_exceeding": 842,
+            "percentile": 15.800000000000002,
+            "rank": 843
+          },
+          "work_purpose": {
+            "null_exceeding": 618,
+            "percentile": 38.2,
+            "rank": 619
+          }
+        },
+        "domain_similarity": {
+          "economy": 0.6141961878491176,
+          "home_community": 0.6911428677859527,
+          "relationship": 0.589693489202194,
+          "work_purpose": 0.7344606160975251
+        },
+        "hd_components": {
+          "eight_plus_one_fraction": 0.3333333333333333,
+          "material_bridge_21_45_fraction": 0.22777777777777777,
+          "single_definition_fraction": 0.85
+        },
+        "hd_pair_score": 0.4703703703703703,
+        "hd_rank": {
+          "null_exceeding": 787,
+          "percentile": 21.299999999999997,
+          "rank": 788
+        },
+        "joint_rank": {
+          "null_exceeding": 911,
+          "percentile": 8.899999999999997,
+          "rank": 912
+        },
+        "joint_v2": -0.7739286831447749,
+        "western_multidomain_mean": 0.6573732902336973
+      },
+      "null_summary": {
+        "domains": {
+          "economy": {
+            "mean": 0.700027626425867,
+            "sd": 0.0601580624702569
+          },
+          "home_community": {
+            "mean": 0.7051785924743613,
+            "sd": 0.04798195773342089
+          },
+          "relationship": {
+            "mean": 0.654607939304358,
+            "sd": 0.0647499310543435
+          },
+          "work_purpose": {
+            "mean": 0.7451304882968913,
+            "sd": 0.05724008004070732
+          }
+        },
+        "hd_pair_score": {
+          "mean": 0.6341333333333333,
+          "sd": 0.1703361073837308
+        },
+        "joint_v2": {
+          "mean": -5.719049366026407e-16,
+          "sd": 0.5659766983888078
+        },
+        "top_joint_v2": [
+          1.606053226518967,
+          1.536501961096794,
+          1.488804987794818,
+          1.4825193802084413,
+          1.453245080219027,
+          1.3418535610718068,
+          1.3285278141923806,
+          1.3010386228883515,
+          1.2977895723758464,
+          1.2599635519761547
+        ]
+      }
+    },
+    "B_late": {
+      "Joel": {
+        "categorical_diagnostics": {
+          "economic_independence_candidate": {
+            "jaccard": 0.18461538461538463,
+            "overlap_fraction": 0.06666666666666667,
+            "person_a_fraction": 0.24444444444444444,
+            "person_b_fraction": 0.18333333333333332
+          },
+          "home_community_settlement_candidate": {
+            "jaccard": 0.15384615384615385,
+            "overlap_fraction": 0.08888888888888889,
+            "person_a_fraction": 0.37222222222222223,
+            "person_b_fraction": 0.29444444444444445
+          },
+          "relationship_stable_candidate": {
+            "jaccard": 0.10344827586206896,
+            "overlap_fraction": 0.05,
+            "person_a_fraction": 0.35,
+            "person_b_fraction": 0.18333333333333332
+          },
+          "work_purpose_reorientation_candidate": {
+            "jaccard": 0.3307692307692308,
+            "overlap_fraction": 0.2388888888888889,
+            "person_a_fraction": 0.35555555555555557,
+            "person_b_fraction": 0.6055555555555555
+          }
+        },
+        "domain_ranks": {
+          "economy": {
+            "null_exceeding": 924,
+            "percentile": 7.599999999999996,
+            "rank": 925
+          },
+          "home_community": {
+            "null_exceeding": 948,
+            "percentile": 5.200000000000005,
+            "rank": 949
+          },
+          "relationship": {
+            "null_exceeding": 999,
+            "percentile": 0.10000000000000009,
+            "rank": 1000
+          },
+          "work_purpose": {
+            "null_exceeding": 570,
+            "percentile": 43.00000000000001,
+            "rank": 571
+          }
+        },
+        "domain_similarity": {
+          "economy": 0.6115374769458863,
+          "home_community": 0.6782441088429206,
+          "relationship": 0.45254292161996673,
+          "work_purpose": 0.7441095444905809
+        },
+        "hd_components": {
+          "eight_plus_one_fraction": 0.34444444444444444,
+          "material_bridge_21_45_fraction": 0.22777777777777777,
+          "single_definition_fraction": 0.8555555555555555
+        },
+        "hd_pair_score": 0.4759259259259259,
+        "hd_rank": {
+          "null_exceeding": 588,
+          "percentile": 41.2,
+          "rank": 589
+        },
+        "joint_rank": {
+          "null_exceeding": 992,
+          "percentile": 0.8000000000000007,
+          "rank": 993
+        },
+        "joint_v2": -1.3133516053758796,
+        "western_multidomain_mean": 0.6216085129748387
+      },
+      "null_summary": {
+        "domains": {
+          "economy": {
+            "mean": 0.6987887980395445,
+            "sd": 0.05993420507221797
+          },
+          "home_community": {
+            "mean": 0.7431194314109042,
+            "sd": 0.040453056152109076
+          },
+          "relationship": {
+            "mean": 0.6409111284142873,
+            "sd": 0.06001724170765696
+          },
+          "work_purpose": {
+            "mean": 0.7478915598076601,
+            "sd": 0.0563915732216119
+          }
+        },
+        "hd_pair_score": {
+          "mean": 0.541512962962963,
+          "sd": 0.2174499395605757
+        },
+        "joint_v2": {
+          "mean": -1.1138052286030487e-16,
+          "sd": 0.544120612262193
+        },
+        "top_joint_v2": [
+          1.8771276213439527,
+          1.5223749836226026,
+          1.5083653201000176,
+          1.3636564672124187,
+          1.3592446251241337,
+          1.3581372276863344,
+          1.3554842524165456,
+          1.3118806245767771,
+          1.3117864531491685,
+          1.2697884788229925
+        ]
+      }
+    },
+    "B_mid": {
+      "Joel": {
+        "categorical_diagnostics": {
+          "economic_independence_candidate": {
+            "jaccard": 0.18181818181818182,
+            "overlap_fraction": 0.06666666666666667,
+            "person_a_fraction": 0.25,
+            "person_b_fraction": 0.18333333333333332
+          },
+          "home_community_settlement_candidate": {
+            "jaccard": 0.2391304347826087,
+            "overlap_fraction": 0.12222222222222222,
+            "person_a_fraction": 0.3388888888888889,
+            "person_b_fraction": 0.29444444444444445
+          },
+          "relationship_stable_candidate": {
+            "jaccard": 0.16304347826086957,
+            "overlap_fraction": 0.08333333333333333,
+            "person_a_fraction": 0.4111111111111111,
+            "person_b_fraction": 0.18333333333333332
+          },
+          "work_purpose_reorientation_candidate": {
+            "jaccard": 0.3230769230769231,
+            "overlap_fraction": 0.23333333333333334,
+            "person_a_fraction": 0.35,
+            "person_b_fraction": 0.6055555555555555
+          }
+        },
+        "domain_ranks": {
+          "economy": {
+            "null_exceeding": 920,
+            "percentile": 7.9999999999999964,
+            "rank": 921
+          },
+          "home_community": {
+            "null_exceeding": 707,
+            "percentile": 29.300000000000004,
+            "rank": 708
+          },
+          "relationship": {
+            "null_exceeding": 958,
+            "percentile": 4.200000000000004,
+            "rank": 959
+          },
+          "work_purpose": {
+            "null_exceeding": 599,
+            "percentile": 40.1,
+            "rank": 600
+          }
+        },
+        "domain_similarity": {
+          "economy": 0.6132437249219264,
+          "home_community": 0.7056057633808102,
+          "relationship": 0.5344898144165573,
+          "work_purpose": 0.7396273938699316
+        },
+        "hd_components": {
+          "eight_plus_one_fraction": 0.34444444444444444,
+          "material_bridge_21_45_fraction": 0.22777777777777777,
+          "single_definition_fraction": 0.8555555555555555
+        },
+        "hd_pair_score": 0.4759259259259259,
+        "hd_rank": {
+          "null_exceeding": 753,
+          "percentile": 24.7,
+          "rank": 754
+        },
+        "joint_rank": {
+          "null_exceeding": 952,
+          "percentile": 4.800000000000004,
+          "rank": 953
+        },
+        "joint_v2": -0.9509072159812018,
+        "western_multidomain_mean": 0.6482416741473064
+      },
+      "null_summary": {
+        "domains": {
+          "economy": {
+            "mean": 0.6990898262022663,
+            "sd": 0.06004881283155072
+          },
+          "home_community": {
+            "mean": 0.7267186480815753,
+            "sd": 0.0426206422303856
+          },
+          "relationship": {
+            "mean": 0.6487107598201677,
+            "sd": 0.06137106931827939
+          },
+          "work_purpose": {
+            "mean": 0.7466096917491347,
+            "sd": 0.056701090054976686
+          }
+        },
+        "hd_pair_score": {
+          "mean": 0.6171740740740741,
+          "sd": 0.16710456407444851
+        },
+        "joint_v2": {
+          "mean": -7.29331959409274e-18,
+          "sd": 0.5554873789898096
+        },
+        "top_joint_v2": [
+          1.7798110007901282,
+          1.699488254154565,
+          1.5230021350241705,
+          1.4576455961211454,
+          1.3793181663642564,
+          1.3347692868961318,
+          1.3339788502132177,
+          1.2821467987560164,
+          1.2370665848688205,
+          1.2134760821637005
+        ]
+      }
+    }
+  },
+  "domains": [
+    "relationship",
+    "economy",
+    "home_community",
+    "work_purpose"
+  ],
+  "ephemeris": {
+    "requested": "SWIEPH",
+    "returned": "SWIEPH or abort",
+    "semo_18_sha256": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7",
+    "sepl_18_sha256": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66"
+  },
+  "freeze_sha256": "a647e1029b833aa085116ffae9d594088b353d193532ea1561db55c62a620ad2",
+  "freeze_spec": "reference/research/partner_multidomain_1000_freeze_v2.md",
+  "joel_to_random_partners": {
+    "null_summary": {
+      "domains": {
+        "economy": {
+          "mean": 0.6423101098088069,
+          "sd": 0.07303147070861726
+        },
+        "home_community": {
+          "mean": 0.6795615453671264,
+          "sd": 0.054105239182729255
+        },
+        "relationship": {
+          "mean": 0.5580929594209701,
+          "sd": 0.0763098522519517
+        },
+        "work_purpose": {
+          "mean": 0.7271474256566035,
+          "sd": 0.05381597506828065
+        }
+      },
+      "hd_pair_score": {
+        "mean": 0.3840092592592592,
+        "sd": 0.13858837191273304
+      },
+      "joint_v2": {
+        "mean": 4.499929617297893e-16,
+        "sd": 0.5713331034166739
+      },
+      "top_joint_v2": [
+        2.3893170174944447,
+        2.309864217515993,
+        2.304592524896125,
+        2.223171179580981,
+        1.7870458985916025,
+        1.6930089205868608,
+        1.6483199049553654,
+        1.554002734114039,
+        1.4894551541132877,
+        1.4521405498470543
+      ]
+    },
+    "real_states": {
+      "B_early": {
+        "categorical_diagnostics": {
+          "economic_independence_candidate": {
+            "jaccard": 0.22580645161290322,
+            "overlap_fraction": 0.07777777777777778,
+            "person_a_fraction": 0.18333333333333332,
+            "person_b_fraction": 0.2388888888888889
+          },
+          "home_community_settlement_candidate": {
+            "jaccard": 0.25,
+            "overlap_fraction": 0.12777777777777777,
+            "person_a_fraction": 0.29444444444444445,
+            "person_b_fraction": 0.34444444444444444
+          },
+          "relationship_stable_candidate": {
+            "jaccard": 0.16129032258064513,
+            "overlap_fraction": 0.08333333333333333,
+            "person_a_fraction": 0.18333333333333332,
+            "person_b_fraction": 0.4166666666666667
+          },
+          "work_purpose_reorientation_candidate": {
+            "jaccard": 0.3153846153846154,
+            "overlap_fraction": 0.22777777777777777,
+            "person_a_fraction": 0.6055555555555555,
+            "person_b_fraction": 0.34444444444444444
+          }
+        },
+        "domain_ranks": {
+          "economy": {
+            "null_exceeding": 683,
+            "percentile": 31.699999999999996,
+            "rank": 684
+          },
+          "home_community": {
+            "null_exceeding": 426,
+            "percentile": 57.400000000000006,
+            "rank": 427
+          },
+          "relationship": {
+            "null_exceeding": 339,
+            "percentile": 66.10000000000001,
+            "rank": 340
+          },
+          "work_purpose": {
+            "null_exceeding": 457,
+            "percentile": 54.29999999999999,
+            "rank": 458
+          }
+        },
+        "domain_similarity": {
+          "economy": 0.6141961878491176,
+          "home_community": 0.6911428677859527,
+          "relationship": 0.589693489202194,
+          "work_purpose": 0.7344606160975251
+        },
+        "hd_components": {
+          "eight_plus_one_fraction": 0.3333333333333333,
+          "material_bridge_21_45_fraction": 0.22777777777777777,
+          "single_definition_fraction": 0.85
+        },
+        "hd_pair_score": 0.4703703703703703,
+        "hd_rank": {
+          "null_exceeding": 262,
+          "percentile": 73.8,
+          "rank": 263
+        },
+        "joint_rank": {
+          "null_exceeding": 378,
+          "percentile": 62.2,
+          "rank": 379
+        },
+        "joint_v2": 0.20044890255840203,
+        "western_multidomain_mean": 0.6573732902336973
+      },
+      "B_late": {
+        "categorical_diagnostics": {
+          "economic_independence_candidate": {
+            "jaccard": 0.18461538461538463,
+            "overlap_fraction": 0.06666666666666667,
+            "person_a_fraction": 0.18333333333333332,
+            "person_b_fraction": 0.24444444444444444
+          },
+          "home_community_settlement_candidate": {
+            "jaccard": 0.15384615384615385,
+            "overlap_fraction": 0.08888888888888889,
+            "person_a_fraction": 0.29444444444444445,
+            "person_b_fraction": 0.37222222222222223
+          },
+          "relationship_stable_candidate": {
+            "jaccard": 0.10344827586206896,
+            "overlap_fraction": 0.05,
+            "person_a_fraction": 0.18333333333333332,
+            "person_b_fraction": 0.35
+          },
+          "work_purpose_reorientation_candidate": {
+            "jaccard": 0.3307692307692308,
+            "overlap_fraction": 0.2388888888888889,
+            "person_a_fraction": 0.6055555555555555,
+            "person_b_fraction": 0.35555555555555557
+          }
+        },
+        "domain_ranks": {
+          "economy": {
+            "null_exceeding": 699,
+            "percentile": 30.100000000000005,
+            "rank": 700
+          },
+          "home_community": {
+            "null_exceeding": 520,
+            "percentile": 48.0,
+            "rank": 521
+          },
+          "relationship": {
+            "null_exceeding": 919,
+            "percentile": 8.099999999999996,
+            "rank": 920
+          },
+          "work_purpose": {
+            "null_exceeding": 383,
+            "percentile": 61.7,
+            "rank": 384
+          }
+        },
+        "domain_similarity": {
+          "economy": 0.6115374769458863,
+          "home_community": 0.6782441088429206,
+          "relationship": 0.45254292161996673,
+          "work_purpose": 0.7441095444905809
+        },
+        "hd_components": {
+          "eight_plus_one_fraction": 0.34444444444444444,
+          "material_bridge_21_45_fraction": 0.22777777777777777,
+          "single_definition_fraction": 0.8555555555555555
+        },
+        "hd_pair_score": 0.4759259259259259,
+        "hd_rank": {
+          "null_exceeding": 257,
+          "percentile": 74.3,
+          "rank": 258
+        },
+        "joint_rank": {
+          "null_exceeding": 632,
+          "percentile": 36.8,
+          "rank": 633
+        },
+        "joint_v2": -0.17009307338887494,
+        "western_multidomain_mean": 0.6216085129748387
+      },
+      "B_mid": {
+        "categorical_diagnostics": {
+          "economic_independence_candidate": {
+            "jaccard": 0.18181818181818182,
+            "overlap_fraction": 0.06666666666666667,
+            "person_a_fraction": 0.18333333333333332,
+            "person_b_fraction": 0.25
+          },
+          "home_community_settlement_candidate": {
+            "jaccard": 0.2391304347826087,
+            "overlap_fraction": 0.12222222222222222,
+            "person_a_fraction": 0.29444444444444445,
+            "person_b_fraction": 0.3388888888888889
+          },
+          "relationship_stable_candidate": {
+            "jaccard": 0.16304347826086957,
+            "overlap_fraction": 0.08333333333333333,
+            "person_a_fraction": 0.18333333333333332,
+            "person_b_fraction": 0.4111111111111111
+          },
+          "work_purpose_reorientation_candidate": {
+            "jaccard": 0.3230769230769231,
+            "overlap_fraction": 0.23333333333333334,
+            "person_a_fraction": 0.6055555555555555,
+            "person_b_fraction": 0.35
+          }
+        },
+        "domain_ranks": {
+          "economy": {
+            "null_exceeding": 687,
+            "percentile": 31.299999999999994,
+            "rank": 688
+          },
+          "home_community": {
+            "null_exceeding": 314,
+            "percentile": 68.6,
+            "rank": 315
+          },
+          "relationship": {
+            "null_exceeding": 621,
+            "percentile": 37.9,
+            "rank": 622
+          },
+          "work_purpose": {
+            "null_exceeding": 423,
+            "percentile": 57.699999999999996,
+            "rank": 424
+          }
+        },
+        "domain_similarity": {
+          "economy": 0.6132437249219264,
+          "home_community": 0.7056057633808102,
+          "relationship": 0.5344898144165573,
+          "work_purpose": 0.7396273938699316
+        },
+        "hd_components": {
+          "eight_plus_one_fraction": 0.34444444444444444,
+          "material_bridge_21_45_fraction": 0.22777777777777777,
+          "single_definition_fraction": 0.8555555555555555
+        },
+        "hd_pair_score": 0.4759259259259259,
+        "hd_rank": {
+          "null_exceeding": 257,
+          "percentile": 74.3,
+          "rank": 258
+        },
+        "joint_rank": {
+          "null_exceeding": 425,
+          "percentile": 57.49999999999999,
+          "rank": 426
+        },
+        "joint_v2": 0.13383867118771264,
+        "western_multidomain_mean": 0.6482416741473064
+      }
+    }
+  },
+  "limitations": [
+    "No geography score: Bee's exact time and exact Cameroon birthplace remain unresolved.",
+    "No houses, angles, progressed angles, relocation charts, or astrocartography in V2 null ranking.",
+    "Domain state vectors are frozen symbolic rubric features, not calibrated outcome probabilities.",
+    "Economic-independence and community labels are exploratory diagnostics only and do not affect ranking.",
+    "Bee remains three representative time states; no state is selected from fit.",
+    "2030-2032 was known before this model; V2 is development evidence, not blind confirmation."
+  ],
+  "model": "partner-multidomain-1000-v2",
+  "months": [
+    "2026-01-15T12:00:00+00:00",
+    "2040-12-15T12:00:00+00:00"
+  ],
+  "n_per_direction": 1000,
+  "seed": 202608252052,
+  "status": "development_exploratory"
+}
