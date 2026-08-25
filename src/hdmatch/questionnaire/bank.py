@@ -27,6 +27,7 @@ class Question(FrozenModel):
     minimum_evidence: str = Field(min_length=1)
     behavioral_constructs: tuple[str, ...] = Field(min_length=1)
     scoring_notes: str
+    allow_other_nuance: bool = True
 
     @field_validator("id")
     @classmethod
@@ -50,6 +51,14 @@ class Question(FrozenModel):
         if "/" not in self.response_format:
             return ()
         return tuple(part.strip() for part in self.response_format.split("/") if part.strip())
+
+    @property
+    def nuance_option(self) -> str | None:
+        """Return the mandatory UI escape hatch for fixed-choice/structured answers."""
+
+        if not self.allow_other_nuance:
+            return None
+        return "other / context-dependent — explain the nuance"
 
 
 class QuestionBank(FrozenModel):
