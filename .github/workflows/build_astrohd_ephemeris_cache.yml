@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - scripts/build_astrohd_ephemeris_cache.py
+      - scripts/fetch_swisseph_ephemeris.py
       - .github/workflows/build_astrohd_ephemeris_cache.yml
 permissions:
   contents: write
@@ -16,15 +17,18 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install --upgrade pip numpy pyswisseph
-      - run: python scripts/build_astrohd_ephemeris_cache.py --out data/ephemeris/astrohd_generic_v1
+      - name: Fetch pinned Swiss ephemeris files
+        run: python scripts/fetch_swisseph_ephemeris.py
+      - name: Build fail-closed SWIEPH cache
+        run: python scripts/build_astrohd_ephemeris_cache.py --out data/ephemeris/astrohd_generic_v2_swieph
       - name: Commit cache
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/ephemeris/astrohd_generic_v1
+          git add data/ephemeris/astrohd_generic_v2_swieph
           if git diff --cached --quiet; then
             echo "Cache unchanged"
           else
-            git commit -m "Cache AstroHD 1926-2026 ephemeris"
+            git commit -m "Cache AstroHD 1926-2026 SWIEPH ephemeris"
             git push
           fi
