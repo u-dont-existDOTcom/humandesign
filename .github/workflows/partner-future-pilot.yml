@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/partner_future_pilot.py'
+      - 'scripts/partner_hd_timing_pilot.py'
       - 'scripts/fetch_swisseph_ephemeris.py'
       - '.github/workflows/partner-future-pilot.yml'
 
@@ -25,13 +26,15 @@ jobs:
         run: python -m pip install 'pyswisseph>=2.10.3.2,<3'
       - name: Fetch pinned Swiss ephemeris files
         run: python scripts/fetch_swisseph_ephemeris.py
-      - name: Generate independent raw partner timelines
+      - name: Generate independent raw Western partner timelines
         run: python scripts/partner_future_pilot.py
+      - name: Generate HD pair timing corroboration
+        run: python scripts/partner_hd_timing_pilot.py
       - name: Commit raw forecast inputs
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add reference/research/partner_future_joel_bee_2026_2040_raw.json
+          git add reference/research/partner_future_joel_bee_2026_2040_raw.json reference/research/partner_future_joel_bee_2026_2040_hd_raw.json
           if git diff --cached --quiet; then
             echo "Raw timeline unchanged"
           else
