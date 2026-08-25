@@ -2,6 +2,8 @@
 
 Invoke with:
 
+    python -m hdmatch.holistic_cli convert-human-cases ...
+    python -m hdmatch.holistic_cli crossfit-opportunity ...
     python -m hdmatch.holistic_cli fit ...
     python -m hdmatch.holistic_cli evaluate ...
     python -m hdmatch.holistic_cli minimize ...
@@ -18,6 +20,7 @@ from collections.abc import Mapping, Sequence
 from pathlib import Path
 from typing import Any
 
+from hdmatch.human.dataset import load_human_dataset
 from hdmatch.human.holistic import (
     CandidateChart,
     HolisticModelArtifact,
@@ -25,6 +28,10 @@ from hdmatch.human.holistic import (
     PositiveEvidenceRecord,
     evaluate_identification,
     greedy_minimize_feature_groups,
+)
+from hdmatch.human.holistic_humancase import human_cases_to_positive_evidence
+from hdmatch.human.holistic_opportunity import (
+    cross_fitted_opportunity_identification,
 )
 from hdmatch.util import sha256_file
 
@@ -81,6 +88,96 @@ def _clusters(values: Sequence[str]) -> dict[str, str]:
             raise ValueError(f"duplicate cluster assignment for {feature}")
         result[feature] = cluster
     return result
+
+
+def _excluded_answers(values: Sequence[str]) -> dict[str, tuple[str, ...]]:
+    grouped: dict[str, list[str]] = {}
+    for value in values:
+        if "=" not in value:
+            raise ValueError("--exclude-answer must use QUESTION=ANSWER")
+        question, answer = value.split("=", 1)
+        question = question.strip()
+        answer = answer.strip()
+        if not question or not answer:
+            raise ValueError("--exclude-answer must use nonblank QUESTION=ANSWER")
+        grouped.setdefault(question, []).append(answer)
+    return {
+        question: tuple(dict.fromkeys(answers))
+        for question, answers in grouped.items()
+    }
+
+
+def _convert_human_cases(args: argparse.Namespace) -> int:
+    dataset = load_human_dataset(args.dataset, args.questionnaire_version)
+    converted = human_cases_to_positive_evidence(
+        dataset.cases,
+        excluded_answers=_excluded_answers(args.exclude_answer),
+        include_birth_year=not args.omit_birth_year,
+        metadata_match_fields=tuple(args.metadata_match_field),
+    )
+    payload = {
+        "schema_version": "holistic-human-case-packet-v1",
+        "phase": "DEVELOPMENT",
+        "source_dataset_sha256": sha256_file(args.dataset),
+        "questionnaire_version": dataset.questionnaire_version,
+        "records": [record.model_dump(mode="json") for record in converted.records],
+        "charts": [chart.model_dump(mode="json") for chart in converted.true_charts],
+        "label_opportunities": converted.label_opportunities,
+        "label_dependency_clusters": converted.label_dependency_clusters,
+        "skipped_no_scorable_evidence": converted.skipped_no_scorable_evidence,
+        "claim_boundary": (
+            "DEVELOPMENT packet contains true chart features; never use as blind "
+            "VALIDATION input"
+        ),
+    }
+    output = _write_new_json(args.output, payload)
+    print(f"holistic HumanCase packet: {output}")
+    print(f"packet sha256: {sha256_file(output)}")
+    print(f"people converted: {len(converted.records)}")
+    print(f"people skipped: {len(converted.skipped_no_scorable_evidence)}")
+    return 0
+
+
+def _crossfit_opportunity(args: argparse.Namespace) -> int:
+    raw = _read_json(args.packet)
+    if not isinstance(raw, Mapping):
+        raise ValueError("opportunity packet must be a JSON object")
+    opportunities = raw.get("label_opportunities")
+    if not isinstance(opportunities, Mapping):
+        raise ValueError("packet is missing label_opportunities")
+    result = cross_fitted_opportunity_identification(
+        _records(args.packet),
+        _charts(args.packet),
+        model_id=args.model_id,
+        feature_names=tuple(args.feature),
+        label_opportunities={str(key): str(value) for key, value in opportunities.items()},
+        training_block_fields=tuple(args.training_block_field),
+        candidate_match_fields=tuple(args.match_field),
+        neighbor_count=args.neighbor_count,
+        alpha=args.alpha,
+        min_label_count=args.min_label_count,
+        min_opportunity_count=args.min_opportunity_count,
+        folds=args.folds,
+        fold_seed=args.fold_seed,
+        max_decoys=args.max_decoys,
+        decoy_seed=args.decoy_seed,
+        randomization_iterations=args.randomization_iterations,
+    )
+    payload = {
+        "schema_version": "holistic-opportunity-run-v1",
+        "phase": "DEVELOPMENT",
+        "input_packet_sha256": sha256_file(args.packet),
+        "evaluation": result.model_dump(mode="json"),
+        "claim_boundary": "cross-fitting is DEVELOPMENT model selection, not confirmation",
+    }
+    output = _write_new_json(args.output, payload)
+    print(f"opportunity-conditioned crossfit: {output}")
+    print(f"crossfit sha256: {sha256_file(output)}")
+    print(f"people evaluated: {result.people_evaluated}")
+    print(f"mean true-chart percentile: {result.mean_percentile:.6f}")
+    if result.randomization_p_value is not None:
+        print(f"randomization p-value: {result.randomization_p_value:.6g}")
+    return 0
 
 
 def _fit(args: argparse.Namespace) -> int:
@@ -163,6 +260,39 @@ def _parser() -> argparse.ArgumentParser:
         ),
     )
     subparsers = parser.add_subparsers(dest="command", required=True)
+
+    convert = subparsers.add_parser(
+        "convert-human-cases",
+        help="convert a rich DEVELOPMENT HumanDataset to positive-evidence records",
+    )
+    convert.add_argument("--dataset", required=True)
+    convert.add_argument("--questionnaire-version", required=True)
+    convert.add_argument("--output", required=True)
+    convert.add_argument("--exclude-answer", action="append", default=[])
+    convert.add_argument("--metadata-match-field", action="append", default=[])
+    convert.add_argument("--omit-birth-year", action="store_true")
+    convert.set_defaults(handler=_convert_human_cases)
+
+    crossfit = subparsers.add_parser(
+        "crossfit-opportunity",
+        help="cross-fit a rich DEVELOPMENT packet with true missing-as-unknown semantics",
+    )
+    crossfit.add_argument("--packet", required=True)
+    crossfit.add_argument("--output", required=True)
+    crossfit.add_argument("--model-id", required=True)
+    crossfit.add_argument("--feature", action="append", required=True)
+    crossfit.add_argument("--training-block-field", action="append", default=[])
+    crossfit.add_argument("--match-field", action="append", default=[])
+    crossfit.add_argument("--neighbor-count", type=int, default=200)
+    crossfit.add_argument("--alpha", type=float, default=4.0)
+    crossfit.add_argument("--min-label-count", type=int, default=5)
+    crossfit.add_argument("--min-opportunity-count", type=int, default=20)
+    crossfit.add_argument("--folds", type=int, default=5)
+    crossfit.add_argument("--fold-seed", type=int, default=0)
+    crossfit.add_argument("--max-decoys", type=int, default=200)
+    crossfit.add_argument("--decoy-seed", type=int, default=0)
+    crossfit.add_argument("--randomization-iterations", type=int, default=5000)
+    crossfit.set_defaults(handler=_crossfit_opportunity)
 
     fit = subparsers.add_parser("fit", help="fit a DEVELOPMENT positive-evidence model")
     fit.add_argument("--records", required=True)
