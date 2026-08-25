@@ -1,12 +1,12 @@
 """Opportunity-conditioned, source-blocked whole-chart neighborhood scoring.
 
-Sparse archival annotations are positive-unlabeled data.  A missing label is not
+Sparse archival annotations are positive-unlabeled data. A missing label is not
 an observed negative, and a missing ontology branch is not even evidence that
-the construct was assessed.  This module therefore estimates each label only
+the construct was assessed. This module therefore estimates each label only
 among training people who have at least one annotation in that label's declared
 opportunity cluster.
 
-The neighborhood may additionally be blocked by source/site fields.  Blocking
+The neighborhood may additionally be blocked by source/site fields. Blocking
 is applied to the TRAINING pool as well as candidate matching; matching decoys
 by source while allowing the model to learn across source corpora is not a
 sufficient control for archive-selection leakage.
@@ -20,7 +20,7 @@ from __future__ import annotations
 import hashlib
 import math
 import random
-from collections import Counter, defaultdict
+from collections import defaultdict
 from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
 from typing import Any, Literal
@@ -35,10 +35,9 @@ def taxonomy_opportunity(label: str) -> str:
     """Return a conservative observation-opportunity cluster for ADB-like labels.
 
     ``Vocation`` is treated as one opportunity because its children are alternate
-    occupational classifications.  Other hierarchical labels use the first two
+    occupational classifications. Other hierarchical labels use the first two
     taxonomy levels, e.g. ``Family : Relationship`` or ``Traits : Personality``.
-    The function is intentionally generic enough for archived hierarchical labels;
-    callers with a different ontology should supply an explicit mapping instead.
+    Callers with a different ontology should supply an explicit mapping instead.
     """
 
     parts = tuple(part.strip() for part in label.split(":") if part.strip())
@@ -91,7 +90,7 @@ class OpportunityNeighborArtifact(BaseModel):
 
 
 class OpportunityConditionedNeighborModel:
-    """K-nearest categorical whole-chart scorer with true missing-as-unknown semantics."""
+    """K-nearest categorical whole-chart scorer with missing-as-unknown semantics."""
 
     def __init__(
         self,
@@ -220,47 +219,52 @@ class OpportunityConditionedNeighborModel:
         person: PositiveEvidenceRecord,
         chart: CandidateChart,
     ) -> float | None:
-        """Score observed positives; return ``None`` when source block is not estimable."""
+        """Score observed positives; return ``None`` if no label is estimable."""
 
         block = _block_key(chart.match_strata, self.artifact.training_block_fields)
         pool = self._rows_by_block.get(block, ())
-        if len(pool) < self.artifact.neighbor_count:
-            return None
         candidate_tokens = self._candidate_tokens(chart)
-        nearest = tuple(
-            sorted(
-                pool,
-                key=lambda row: (
-                    -self._similarity(candidate_tokens, row.feature_tokens),
-                    row.participant_id,
-                ),
-            )[: self.artifact.neighbor_count]
-        )
         score = 0.0
+        used_labels = 0
         for label in person.observed_labels:
             opportunity = self.artifact.label_opportunities.get(label)
             if opportunity is None:
                 continue
-            global_opportunity = sum(opportunity in row.opportunities for row in pool)
-            global_positive = sum(label in row.observed_labels for row in pool)
-            if (
-                global_opportunity < self.artifact.min_opportunity_count
-                or global_positive < self.artifact.min_label_count
+            opportunity_pool = tuple(
+                row for row in pool if opportunity in row.opportunities
+            )
+            if len(opportunity_pool) < max(
+                self.artifact.neighbor_count,
+                self.artifact.min_opportunity_count,
             ):
                 continue
-            local_opportunity = sum(opportunity in row.opportunities for row in nearest)
+            global_positive = sum(
+                label in row.observed_labels for row in opportunity_pool
+            )
+            if global_positive < self.artifact.min_label_count:
+                continue
+            nearest = tuple(
+                sorted(
+                    opportunity_pool,
+                    key=lambda row: (
+                        -self._similarity(candidate_tokens, row.feature_tokens),
+                        row.participant_id,
+                    ),
+                )[: self.artifact.neighbor_count]
+            )
+            global_rate = global_positive / len(opportunity_pool)
             local_positive = sum(label in row.observed_labels for row in nearest)
-            global_rate = global_positive / global_opportunity
             local_rate = (
                 local_positive + self.artifact.alpha * global_rate
-            ) / (local_opportunity + self.artifact.alpha)
+            ) / (len(nearest) + self.artifact.alpha)
             weight = float(person.evidence_weights.get(label, 1.0))
             if not math.isfinite(weight) or not 0.0 <= weight <= 1.0:
                 raise ValueError("evidence weights must be finite within [0, 1]")
             score += weight * math.log2(
                 max(local_rate, 1e-12) / max(global_rate, 1e-12)
             )
-        return score
+            used_labels += 1
+        return score if used_labels else None
 
 
 class OpportunityCrossFitResult(BaseModel):
@@ -282,7 +286,9 @@ class OpportunityCrossFitResult(BaseModel):
 def _percentile(scores: Sequence[float], index: int) -> tuple[float, float]:
     target = scores[index]
     lower = sum(score < target for score in scores)
-    equal = sum(math.isclose(score, target, abs_tol=1e-12, rel_tol=0.0) for score in scores)
+    equal = sum(
+        math.isclose(score, target, abs_tol=1e-12, rel_tol=0.0) for score in scores
+    )
     rank = lower + (equal + 1.0) / 2.0
     return rank, (rank - 1.0) / (len(scores) - 1.0)
 
@@ -308,7 +314,7 @@ def cross_fitted_opportunity_identification(
 ) -> OpportunityCrossFitResult:
     """Cross-fit whole-chart identification with training-source blocking.
 
-    Training block fields must also be candidate-match fields.  This keeps every
+    Training block fields must also be candidate-match fields. This keeps every
     chart in one person's comparison set on the same fitted source/site baseline.
     """
 
@@ -327,7 +333,8 @@ def cross_fitted_opportunity_identification(
         for chart in charts
         if chart.owner_participant_id is not None
     }
-    if len(chart_by_owner) != len([c for c in charts if c.owner_participant_id is not None]):
+    chart_owner_count = sum(chart.owner_participant_id is not None for chart in charts)
+    if len(chart_by_owner) != chart_owner_count:
         raise ValueError("one chart per owner is required")
     assignments = {
         record.participant_id: deterministic_person_fold(
@@ -376,9 +383,8 @@ def cross_fitted_opportunity_identification(
             ).digest()
             rng = random.Random(int.from_bytes(digest[:8], "big"))
             if len(candidates) > max_decoys:
-                candidates = [candidates[index] for index in sorted(
-                    rng.sample(range(len(candidates)), max_decoys)
-                )]
+                indices = sorted(rng.sample(range(len(candidates)), max_decoys))
+                candidates = [candidates[index] for index in indices]
             scored: list[tuple[CandidateChart, float]] = []
             true_score = model.score_candidate(person, true_chart)
             if true_score is None:
@@ -411,7 +417,11 @@ def cross_fitted_opportunity_identification(
     percentiles = [result.percentile for result in all_results]
     ordered = sorted(percentiles)
     mid = len(ordered) // 2
-    median = ordered[mid] if len(ordered) % 2 else (ordered[mid - 1] + ordered[mid]) / 2
+    median = (
+        ordered[mid]
+        if len(ordered) % 2
+        else (ordered[mid - 1] + ordered[mid]) / 2
+    )
 
     p_value: float | None = None
     if randomization_iterations > 0:
