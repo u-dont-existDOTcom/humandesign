@@ -14,7 +14,8 @@ Implement an end-to-end research system that can:
 8. test it prospectively on untouched human cases;
 9. report rank, uncertainty, stable time intervals, failures, and calibration;
 10. calculate pair/connection mechanics as a separate relationship research module;
-11. preserve relationship evidence separately from natal reverse-matching evidence.
+11. preserve relationship evidence separately from natal reverse-matching evidence;
+12. generate independently frozen future life-state timelines for two partners and test multi-domain future concordance against random-partner null distributions.
 
 ## Core principle
 
@@ -45,12 +46,12 @@ It also distinguishes **natal reverse matching** from **relationship/connection 
              │                 │                              │
              └────────┬────────┘                         separate report /
                       │                                  validation track
-               candidate ranker
-                      │
-           adaptive question selector
-                      │
-                blind prediction
-                      │
+               candidate ranker                               │
+                      │                               ┌────────▼────────────┐
+           adaptive question selector                 │ Future concordance  │
+                      │                               │ independent timelines│
+                blind prediction                      │ + null partners      │
+                      │                               └──────────────────────┘
                 prediction freeze
                       │
                 answer-key reveal
@@ -96,6 +97,12 @@ src/hdmatch/
     relationship/
         analysis.py
         uncertain_time.py
+        future_state.py
+        concordance.py
+        null_partners.py
+        western_timing.py
+        hd_timing.py
+        geography.py
     experiments/
         manifest.py
         freeze.py
@@ -132,9 +139,19 @@ V1 implements the source-defined relationship surface:
 - mechanically detectable Sun/Earth-to-Node alignments;
 - stable versus time-dependent mechanics when a partner birth time is unknown.
 
-Do not add a generic compatibility or soulmate scalar unless a separately frozen empirical relationship model is trained on development couples and tested on different, untouched couples.
+V2 adds partner future-concordance research:
 
-See `docs/18_relationship_analysis.md`.
+- independently generated/frozen future state vectors for each partner;
+- secondary progressions, verified SWIEPH transits, HD life-cycle/developmental overlays, and astrocartography/relocation as separately identified layers;
+- romantic, economic, home/community, work/purpose, belonging, care, and geographic domains;
+- explicit collective-vs-individual specificity weighting;
+- unknown-birth-time robustness across every materially distinct partner state;
+- pair-specific synastry/connection timing only after both individual timelines are frozen;
+- random-partner and reciprocal null distributions.
+
+Do not add a generic compatibility or soulmate scalar unless a separately frozen empirical relationship model is trained on development couples and tested on different, untouched couples. `SharedLifeConcordance` is an experimental future-state overlap statistic, not a soulmate probability and must be reported with its null distribution.
+
+See `docs/18_relationship_analysis.md` for static connection mechanics and `docs/19_partner_future_concordance.md` for future-life concordance.
 
 ## CLI target
 
