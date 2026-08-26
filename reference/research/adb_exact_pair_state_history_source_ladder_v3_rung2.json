@@ -1,15 +1,14 @@
 {
   "endpoint_counts": {
     "clean_v2_baseline_endpoint_pairs": 23,
-    "pairs_newly_gaining_endpoint_from_rung2": 1,
+    "pairs_newly_gaining_endpoint_from_rung2": 5,
     "pairs_where_rung2_corroborates_quarantined_rung1_exit": 0,
-    "total_clean_endpoint_pairs_after_rung2": 24
+    "total_clean_endpoint_pairs_after_rung2": 28
   },
   "identity_counts": {
-    "linked_but_unresolved": 86,
     "no_adb_wikipedia_link": 17,
-    "resolved_wikipedia": 20,
-    "with_relationship_infobox_field": 19
+    "resolved_wikipedia": 106,
+    "with_relationship_infobox_field": 98
   },
   "ladder_freeze": "reference/research/adb_exact_pair_state_history_source_ladder_freeze_v3.md",
   "ladder_freeze_sha256": "73ca2da5be3354fc962bd8607ebe7f7f8ca7a0c4549794a1075241d6afb5bb2f",
@@ -31,13 +30,13 @@
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Sofia Coppola",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Sofia Coppola",
+        "wikidata_qid": "Q193628"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Thomas Mars",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Thomas Mars",
+        "wikidata_qid": "Q3525391"
       }
     },
     {
@@ -49,13 +48,13 @@
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Marita Camacho Quirós",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Marita Camacho Quirós",
+        "wikidata_qid": "Q106072112"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Francisco Orlich Bolmarcich",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Francisco Orlich Bolmarcich",
+        "wikidata_qid": "Q887589"
       }
     },
     {
@@ -67,13 +66,13 @@
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Mike Connors",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Mike Connors",
+        "wikidata_qid": "Q582996"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Mike Connors",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Mike Connors",
+        "wikidata_qid": "Q582996"
       }
     },
     {
@@ -85,8 +84,8 @@
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Charles III",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Charles III",
+        "wikidata_qid": "Q43274"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Princess of Wales Diana",
@@ -103,8 +102,8 @@
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "David Copperfield (illusionist)",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "David Copperfield (illusionist)",
+        "wikidata_qid": "Q139637"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Claudia Schiffer",
@@ -121,13 +120,13 @@
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Princess Caroline",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Princess Caroline",
+        "wikidata_qid": "Q7244570"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Stefano Casiraghi",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Stefano Casiraghi",
+        "wikidata_qid": "Q956239"
       }
     },
     {
@@ -139,67 +138,189 @@
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Princess Caroline",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Princess Caroline",
+        "wikidata_qid": "Q7244570"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Philippe Junot",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Philippe Junot",
+        "wikidata_qid": "Q2128787"
       }
     },
     {
-      "accepted_wikipedia_exits": [],
-      "corroborating_v1_v2_exits": [],
+      "accepted_wikipedia_exits": [
+        {
+          "date_text": "2004",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "2004-12-31",
+          "interval_start": "2004-01-01",
+          "other_adb_id": 19401,
+          "precision": "year",
+          "source_adb_id": 14274,
+          "source_wikipedia_title": "Lisa Marie Presley",
+          "template": "{{marriage|[[Nicolas Cage]]|2002|2004|reason=divorced}}",
+          "transition": "nonfatal_exit"
+        },
+        {
+          "date_text": "2004",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "2004-12-31",
+          "interval_start": "2004-01-01",
+          "other_adb_id": 14274,
+          "precision": "year",
+          "source_adb_id": 19401,
+          "source_wikipedia_title": "Nicolas Cage",
+          "template": "{{marriage|[[Lisa Marie Presley]]|2002|2004|end=divorced}}",
+          "transition": "nonfatal_exit"
+        }
+      ],
+      "corroborating_v1_v2_exits": [
+        {
+          "date_text": "2004",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "2004-12-31",
+          "interval_start": "2004-01-01",
+          "other_adb_id": 19401,
+          "precision": "year",
+          "source_adb_id": 14274,
+          "source_wikipedia_title": "Lisa Marie Presley",
+          "status": "corroborates_v1_v2",
+          "template": "{{marriage|[[Nicolas Cage]]|2002|2004|reason=divorced}}",
+          "transition": "nonfatal_exit"
+        },
+        {
+          "date_text": "2004",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "2004-12-31",
+          "interval_start": "2004-01-01",
+          "other_adb_id": 14274,
+          "precision": "year",
+          "source_adb_id": 19401,
+          "source_wikipedia_title": "Nicolas Cage",
+          "status": "corroborates_v1_v2",
+          "template": "{{marriage|[[Lisa Marie Presley]]|2002|2004|end=divorced}}",
+          "transition": "nonfatal_exit"
+        }
+      ],
       "had_clean_v1_v2_endpoint": true,
       "new_rung2_exits": [],
       "pair_key": "adb:14274|adb:19401",
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Lisa Marie Presley",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Lisa Marie Presley",
+        "wikidata_qid": "Q237324"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Nicolas Cage",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Nicolas Cage",
+        "wikidata_qid": "Q42869"
       }
     },
     {
-      "accepted_wikipedia_exits": [],
+      "accepted_wikipedia_exits": [
+        {
+          "date_text": "2024",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "2024-12-31",
+          "interval_start": "2024-01-01",
+          "other_adb_id": 68650,
+          "precision": "year",
+          "source_adb_id": 15074,
+          "source_wikipedia_title": "Charlotte Casiraghi",
+          "template": "{{marriage|[[Dimitri Rassam]]|2019|2024|end=divorced}}",
+          "transition": "nonfatal_exit"
+        }
+      ],
       "corroborating_v1_v2_exits": [],
       "had_clean_v1_v2_endpoint": false,
-      "new_rung2_exits": [],
+      "new_rung2_exits": [
+        {
+          "date_text": "2024",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "2024-12-31",
+          "interval_start": "2024-01-01",
+          "other_adb_id": 68650,
+          "precision": "year",
+          "source_adb_id": 15074,
+          "source_wikipedia_title": "Charlotte Casiraghi",
+          "status": "new_rung2_endpoint",
+          "template": "{{marriage|[[Dimitri Rassam]]|2019|2024|end=divorced}}",
+          "transition": "nonfatal_exit"
+        }
+      ],
       "pair_key": "adb:15074|adb:68650",
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Charlotte Casiraghi",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Charlotte Casiraghi",
+        "wikidata_qid": "Q853781"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Dimitri Rassam",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Dimitri Rassam",
+        "wikidata_qid": "Q3028141"
       }
     },
     {
-      "accepted_wikipedia_exits": [],
-      "corroborating_v1_v2_exits": [],
+      "accepted_wikipedia_exits": [
+        {
+          "date_text": "December 2023",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "2023-12-31",
+          "interval_start": "2023-12-01",
+          "other_adb_id": 39157,
+          "precision": "month",
+          "source_adb_id": 19367,
+          "source_wikipedia_title": "Infanta Cristina of Spain",
+          "template": "{{marriage|[[Iñaki Urdangarin]]|4 October 1997|December 2023|end=divorced}}",
+          "transition": "nonfatal_exit"
+        }
+      ],
+      "corroborating_v1_v2_exits": [
+        {
+          "date_text": "December 2023",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "2023-12-31",
+          "interval_start": "2023-12-01",
+          "other_adb_id": 39157,
+          "precision": "month",
+          "source_adb_id": 19367,
+          "source_wikipedia_title": "Infanta Cristina of Spain",
+          "status": "corroborates_v1_v2",
+          "template": "{{marriage|[[Iñaki Urdangarin]]|4 October 1997|December 2023|end=divorced}}",
+          "transition": "nonfatal_exit"
+        }
+      ],
       "had_clean_v1_v2_endpoint": true,
       "new_rung2_exits": [],
       "pair_key": "adb:19367|adb:39157",
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Infanta Cristina, Duchess of Palma de Mallorca",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Infanta Cristina of Spain",
+        "wikidata_qid": "Q230580"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Inaki Urdangarin",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Iñaki Urdangarin",
+        "wikidata_qid": "Q356560"
       }
     },
     {
@@ -211,8 +332,8 @@
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Kurt Cobain",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Kurt Cobain",
+        "wikidata_qid": "Q8446"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Courtney Love",
@@ -229,13 +350,13 @@
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "LeAnn Rimes",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "LeAnn Rimes",
+        "wikidata_qid": "Q120533"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Eddie Cibrian",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Eddie Cibrian",
+        "wikidata_qid": "Q355197"
       }
     },
     {
@@ -247,13 +368,13 @@
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Bernadette Chirac",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Bernadette Chirac",
+        "wikidata_qid": "Q431115"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Jacques Chirac",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Jacques Chirac",
+        "wikidata_qid": "Q2105"
       }
     },
     {
@@ -353,8 +474,68 @@
       }
     },
     {
-      "accepted_wikipedia_exits": [],
-      "corroborating_v1_v2_exits": [],
+      "accepted_wikipedia_exits": [
+        {
+          "date_text": "1968",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1968-12-31",
+          "interval_start": "1968-01-01",
+          "other_adb_id": 55779,
+          "precision": "year",
+          "source_adb_id": 238,
+          "source_wikipedia_title": "Tony Curtis",
+          "template": "{{marriage|[[Christine Kaufmann]]|1963|1968|end=div}}",
+          "transition": "nonfatal_exit"
+        },
+        {
+          "date_text": "1968",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1968-12-31",
+          "interval_start": "1968-01-01",
+          "other_adb_id": 238,
+          "precision": "year",
+          "source_adb_id": 55779,
+          "source_wikipedia_title": "Christine Kaufmann",
+          "template": "{{marriage|[[Tony Curtis]]|1963|1968|end=divorced}}",
+          "transition": "nonfatal_exit"
+        }
+      ],
+      "corroborating_v1_v2_exits": [
+        {
+          "date_text": "1968",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1968-12-31",
+          "interval_start": "1968-01-01",
+          "other_adb_id": 55779,
+          "precision": "year",
+          "source_adb_id": 238,
+          "source_wikipedia_title": "Tony Curtis",
+          "status": "corroborates_v1_v2",
+          "template": "{{marriage|[[Christine Kaufmann]]|1963|1968|end=div}}",
+          "transition": "nonfatal_exit"
+        },
+        {
+          "date_text": "1968",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1968-12-31",
+          "interval_start": "1968-01-01",
+          "other_adb_id": 238,
+          "precision": "year",
+          "source_adb_id": 55779,
+          "source_wikipedia_title": "Christine Kaufmann",
+          "status": "corroborates_v1_v2",
+          "template": "{{marriage|[[Tony Curtis]]|1963|1968|end=divorced}}",
+          "transition": "nonfatal_exit"
+        }
+      ],
       "had_clean_v1_v2_endpoint": true,
       "new_rung2_exits": [],
       "pair_key": "adb:238|adb:55779",
@@ -366,13 +547,73 @@
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Christine Kaufmann",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Christine Kaufmann",
+        "wikidata_qid": "Q66408"
       }
     },
     {
-      "accepted_wikipedia_exits": [],
-      "corroborating_v1_v2_exits": [],
+      "accepted_wikipedia_exits": [
+        {
+          "date_text": "1962",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1962-12-31",
+          "interval_start": "1962-01-01",
+          "other_adb_id": 6281,
+          "precision": "year",
+          "source_adb_id": 238,
+          "source_wikipedia_title": "Tony Curtis",
+          "template": "{{marriage|[[Janet Leigh]]|1951|1962|end=div}}",
+          "transition": "nonfatal_exit"
+        },
+        {
+          "date_text": "September 14, 1962",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1962-09-14",
+          "interval_start": "1962-09-14",
+          "other_adb_id": 238,
+          "precision": "day",
+          "source_adb_id": 6281,
+          "source_wikipedia_title": "Janet Leigh",
+          "template": "{{marriage|[[Tony Curtis]]|June 4, 1951|September 14, 1962|end=divorced}}",
+          "transition": "nonfatal_exit"
+        }
+      ],
+      "corroborating_v1_v2_exits": [
+        {
+          "date_text": "1962",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1962-12-31",
+          "interval_start": "1962-01-01",
+          "other_adb_id": 6281,
+          "precision": "year",
+          "source_adb_id": 238,
+          "source_wikipedia_title": "Tony Curtis",
+          "status": "corroborates_v1_v2",
+          "template": "{{marriage|[[Janet Leigh]]|1951|1962|end=div}}",
+          "transition": "nonfatal_exit"
+        },
+        {
+          "date_text": "September 14, 1962",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1962-09-14",
+          "interval_start": "1962-09-14",
+          "other_adb_id": 238,
+          "precision": "day",
+          "source_adb_id": 6281,
+          "source_wikipedia_title": "Janet Leigh",
+          "status": "corroborates_v1_v2",
+          "template": "{{marriage|[[Tony Curtis]]|June 4, 1951|September 14, 1962|end=divorced}}",
+          "transition": "nonfatal_exit"
+        }
+      ],
       "had_clean_v1_v2_endpoint": true,
       "new_rung2_exits": [],
       "pair_key": "adb:238|adb:6281",
@@ -384,13 +625,73 @@
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Janet Leigh",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Janet Leigh",
+        "wikidata_qid": "Q205314"
       }
     },
     {
-      "accepted_wikipedia_exits": [],
-      "corroborating_v1_v2_exits": [],
+      "accepted_wikipedia_exits": [
+        {
+          "date_text": "September 11, 1946",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1946-09-11",
+          "interval_start": "1946-09-11",
+          "other_adb_id": 92708,
+          "precision": "day",
+          "source_adb_id": 24590,
+          "source_wikipedia_title": "Angela Lansbury",
+          "template": "{{marriage|[[Richard Cromwell (actor)|Richard Cromwell]]|September 27, 1945|September 11, 1946|end=divorced}}",
+          "transition": "nonfatal_exit"
+        },
+        {
+          "date_text": "1946",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1946-12-31",
+          "interval_start": "1946-01-01",
+          "other_adb_id": 24590,
+          "precision": "year",
+          "source_adb_id": 92708,
+          "source_wikipedia_title": "Richard Cromwell (actor)",
+          "template": "{{marriage|[[Angela Lansbury]]|1945|1946|end=div}}",
+          "transition": "nonfatal_exit"
+        }
+      ],
+      "corroborating_v1_v2_exits": [
+        {
+          "date_text": "September 11, 1946",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1946-09-11",
+          "interval_start": "1946-09-11",
+          "other_adb_id": 92708,
+          "precision": "day",
+          "source_adb_id": 24590,
+          "source_wikipedia_title": "Angela Lansbury",
+          "status": "corroborates_v1_v2",
+          "template": "{{marriage|[[Richard Cromwell (actor)|Richard Cromwell]]|September 27, 1945|September 11, 1946|end=divorced}}",
+          "transition": "nonfatal_exit"
+        },
+        {
+          "date_text": "1946",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1946-12-31",
+          "interval_start": "1946-01-01",
+          "other_adb_id": 24590,
+          "precision": "year",
+          "source_adb_id": 92708,
+          "source_wikipedia_title": "Richard Cromwell (actor)",
+          "status": "corroborates_v1_v2",
+          "template": "{{marriage|[[Angela Lansbury]]|1945|1946|end=div}}",
+          "transition": "nonfatal_exit"
+        }
+      ],
       "had_clean_v1_v2_endpoint": true,
       "new_rung2_exits": [],
       "pair_key": "adb:24590|adb:92708",
@@ -402,8 +703,8 @@
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Richard Cromwell (actor)",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Richard Cromwell (actor)",
+        "wikidata_qid": "Q7324974"
       }
     },
     {
@@ -534,8 +835,8 @@
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Duchess Cecilie of Mecklenburg-Schwerin",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Duchess Cecilie of Mecklenburg-Schwerin",
+        "wikidata_qid": "Q235812"
       }
     },
     {
@@ -547,13 +848,13 @@
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "John Connally",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "John Connally",
+        "wikidata_qid": "Q311293"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Nellie Connally",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Nellie Connally",
+        "wikidata_qid": "Q535548"
       }
     },
     {
@@ -635,10 +936,70 @@
       }
     },
     {
-      "accepted_wikipedia_exits": [],
+      "accepted_wikipedia_exits": [
+        {
+          "date_text": "1932",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1932-12-31",
+          "interval_start": "1932-01-01",
+          "other_adb_id": 80315,
+          "precision": "year",
+          "source_adb_id": 3307,
+          "source_wikipedia_title": "Maurice Chevalier",
+          "template": "{{marriage|[[Yvonne Vallée]]|1927|1932|reason=divorced}}",
+          "transition": "nonfatal_exit"
+        },
+        {
+          "date_text": "1932",
+          "evidence_type": "wikipedia_infobox_plain_fragment",
+          "fragment": "[[Maurice Chevalier]] (1927-1932) (divorced)",
+          "infobox_field": "spouse",
+          "interval_end": "1932-12-31",
+          "interval_start": "1932-01-01",
+          "matched_term": "divorced",
+          "other_adb_id": 3307,
+          "precision": "year",
+          "source_adb_id": 80315,
+          "source_wikipedia_title": "Yvonne Vallée",
+          "transition": "nonfatal_exit"
+        }
+      ],
       "corroborating_v1_v2_exits": [],
       "had_clean_v1_v2_endpoint": true,
-      "new_rung2_exits": [],
+      "new_rung2_exits": [
+        {
+          "date_text": "1932",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1932-12-31",
+          "interval_start": "1932-01-01",
+          "other_adb_id": 80315,
+          "precision": "year",
+          "source_adb_id": 3307,
+          "source_wikipedia_title": "Maurice Chevalier",
+          "status": "new_rung2_endpoint",
+          "template": "{{marriage|[[Yvonne Vallée]]|1927|1932|reason=divorced}}",
+          "transition": "nonfatal_exit"
+        },
+        {
+          "date_text": "1932",
+          "evidence_type": "wikipedia_infobox_plain_fragment",
+          "fragment": "[[Maurice Chevalier]] (1927-1932) (divorced)",
+          "infobox_field": "spouse",
+          "interval_end": "1932-12-31",
+          "interval_start": "1932-01-01",
+          "matched_term": "divorced",
+          "other_adb_id": 3307,
+          "precision": "year",
+          "source_adb_id": 80315,
+          "source_wikipedia_title": "Yvonne Vallée",
+          "status": "new_rung2_endpoint",
+          "transition": "nonfatal_exit"
+        }
+      ],
       "pair_key": "adb:3307|adb:80315",
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
@@ -648,8 +1009,8 @@
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Yvonne Vallée",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Yvonne Vallée",
+        "wikidata_qid": "Q3574233"
       }
     },
     {
@@ -661,8 +1022,8 @@
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Eric Cantona",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Eric Cantona",
+        "wikidata_qid": "Q170328"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": null,
@@ -697,31 +1058,62 @@
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Prince Laurent of Belgium",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Prince Laurent of Belgium",
+        "wikidata_qid": "Q700152"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Claire Coombs",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Princess Claire of Belgium",
+        "wikidata_qid": "Q272191"
       }
     },
     {
-      "accepted_wikipedia_exits": [],
+      "accepted_wikipedia_exits": [
+        {
+          "date_text": "2021",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "2021-12-31",
+          "interval_start": "2021-01-01",
+          "other_adb_id": 40046,
+          "precision": "year",
+          "source_adb_id": 48891,
+          "source_wikipedia_title": "Clotilde Courau",
+          "template": "{{marriage|[[Emanuele Filiberto of Savoy, Prince of Venice]]|2003|2021|end=sep}}",
+          "transition": "nonfatal_exit"
+        }
+      ],
       "corroborating_v1_v2_exits": [],
       "had_clean_v1_v2_endpoint": false,
-      "new_rung2_exits": [],
+      "new_rung2_exits": [
+        {
+          "date_text": "2021",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "2021-12-31",
+          "interval_start": "2021-01-01",
+          "other_adb_id": 40046,
+          "precision": "year",
+          "source_adb_id": 48891,
+          "source_wikipedia_title": "Clotilde Courau",
+          "status": "new_rung2_endpoint",
+          "template": "{{marriage|[[Emanuele Filiberto of Savoy, Prince of Venice]]|2003|2021|end=sep}}",
+          "transition": "nonfatal_exit"
+        }
+      ],
       "pair_key": "adb:40046|adb:48891",
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Emanuele Filiberto, Prince of Venice and Piedmont",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Emanuele Filiberto of Savoy, Prince of Venice",
+        "wikidata_qid": "Q125721"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Clotilde Courau",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Clotilde Courau",
+        "wikidata_qid": "Q443516"
       }
     },
     {
@@ -733,8 +1125,8 @@
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Tony Martin (American singer)",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Tony Martin (American singer)",
+        "wikidata_qid": "Q725874"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Cyd Charisse",
@@ -743,21 +1135,81 @@
       }
     },
     {
-      "accepted_wikipedia_exits": [],
-      "corroborating_v1_v2_exits": [],
+      "accepted_wikipedia_exits": [
+        {
+          "date_text": "1973",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1973-12-31",
+          "interval_start": "1973-01-01",
+          "other_adb_id": 6790,
+          "precision": "year",
+          "source_adb_id": 46200,
+          "source_wikipedia_title": "Diane Cilento",
+          "template": "{{marriage|[[Sean Connery]]|1962|1973|reason=divorced}}",
+          "transition": "nonfatal_exit"
+        },
+        {
+          "date_text": "1973",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1973-12-31",
+          "interval_start": "1973-01-01",
+          "other_adb_id": 46200,
+          "precision": "year",
+          "source_adb_id": 6790,
+          "source_wikipedia_title": "Sean Connery",
+          "template": "{{marriage|[[Diane Cilento]]|1962|1973|end=divorced}}",
+          "transition": "nonfatal_exit"
+        }
+      ],
+      "corroborating_v1_v2_exits": [
+        {
+          "date_text": "1973",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1973-12-31",
+          "interval_start": "1973-01-01",
+          "other_adb_id": 6790,
+          "precision": "year",
+          "source_adb_id": 46200,
+          "source_wikipedia_title": "Diane Cilento",
+          "status": "corroborates_v1_v2",
+          "template": "{{marriage|[[Sean Connery]]|1962|1973|reason=divorced}}",
+          "transition": "nonfatal_exit"
+        },
+        {
+          "date_text": "1973",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1973-12-31",
+          "interval_start": "1973-01-01",
+          "other_adb_id": 46200,
+          "precision": "year",
+          "source_adb_id": 6790,
+          "source_wikipedia_title": "Sean Connery",
+          "status": "corroborates_v1_v2",
+          "template": "{{marriage|[[Diane Cilento]]|1962|1973|end=divorced}}",
+          "transition": "nonfatal_exit"
+        }
+      ],
       "had_clean_v1_v2_endpoint": true,
       "new_rung2_exits": [],
       "pair_key": "adb:6790|adb:46200",
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Diane Cilento",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Diane Cilento",
+        "wikidata_qid": "Q238871"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Sean Connery",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Sean Connery",
+        "wikidata_qid": "Q4573"
       }
     },
     {
@@ -787,13 +1239,13 @@
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Jean Casimir-Perier",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Jean Casimir-Perier",
+        "wikidata_qid": "Q315656"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Hélène Casimir-Perier",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Hélène Casimir-Perier",
+        "wikidata_qid": "Q3144726"
       }
     },
     {
@@ -805,13 +1257,13 @@
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Renee Zellweger",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Renée Zellweger",
+        "wikidata_qid": "Q122614"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Kenny Chesney",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Kenny Chesney",
+        "wikidata_qid": "Q467526"
       }
     },
     {
@@ -828,26 +1280,86 @@
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Broderick Crawford",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Broderick Crawford",
+        "wikidata_qid": "Q182349"
       }
     },
     {
-      "accepted_wikipedia_exits": [],
-      "corroborating_v1_v2_exits": [],
+      "accepted_wikipedia_exits": [
+        {
+          "date_text": "1980",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1980-12-31",
+          "interval_start": "1980-01-01",
+          "other_adb_id": 50764,
+          "precision": "year",
+          "source_adb_id": 50520,
+          "source_wikipedia_title": "Stéphane Audran",
+          "template": "{{marriage|[[Claude Chabrol]]<br />|1964|1980|end=div}}",
+          "transition": "nonfatal_exit"
+        },
+        {
+          "date_text": "1980",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1980-12-31",
+          "interval_start": "1980-01-01",
+          "other_adb_id": 50520,
+          "precision": "year",
+          "source_adb_id": 50764,
+          "source_wikipedia_title": "Claude Chabrol",
+          "template": "{{marriage|[[Stéphane Audran]]|1964|1980|end=div}}",
+          "transition": "nonfatal_exit"
+        }
+      ],
+      "corroborating_v1_v2_exits": [
+        {
+          "date_text": "1980",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1980-12-31",
+          "interval_start": "1980-01-01",
+          "other_adb_id": 50764,
+          "precision": "year",
+          "source_adb_id": 50520,
+          "source_wikipedia_title": "Stéphane Audran",
+          "status": "corroborates_v1_v2",
+          "template": "{{marriage|[[Claude Chabrol]]<br />|1964|1980|end=div}}",
+          "transition": "nonfatal_exit"
+        },
+        {
+          "date_text": "1980",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1980-12-31",
+          "interval_start": "1980-01-01",
+          "other_adb_id": 50520,
+          "precision": "year",
+          "source_adb_id": 50764,
+          "source_wikipedia_title": "Claude Chabrol",
+          "status": "corroborates_v1_v2",
+          "template": "{{marriage|[[Stéphane Audran]]|1964|1980|end=div}}",
+          "transition": "nonfatal_exit"
+        }
+      ],
       "had_clean_v1_v2_endpoint": true,
       "new_rung2_exits": [],
       "pair_key": "adb:50520|adb:50764",
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Stéphane Audran",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Stéphane Audran",
+        "wikidata_qid": "Q32439"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Claude Chabrol",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Claude Chabrol",
+        "wikidata_qid": "Q55375"
       }
     },
     {
@@ -864,8 +1376,8 @@
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Daniele Lebrun",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Danièle Lebrun",
+        "wikidata_qid": "Q3015148"
       }
     },
     {
@@ -877,13 +1389,13 @@
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "John Whiteside Parsons",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Jack Parsons",
+        "wikidata_qid": "Q331497"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Marjorie Cameron",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Marjorie Cameron",
+        "wikidata_qid": "Q6766231"
       }
     },
     {
@@ -895,13 +1407,13 @@
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Christo and Jeanne-Claude",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Christo and Jeanne-Claude",
+        "wikidata_qid": "Q158477"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Christo and Jeanne-Claude",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Christo and Jeanne-Claude",
+        "wikidata_qid": "Q158477"
       }
     },
     {
@@ -913,13 +1425,13 @@
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Annemarie Schwarzenbach",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Annemarie Schwarzenbach",
+        "wikidata_qid": "Q123368"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Achille-Claude Clarac",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Achille-Claude Clarac",
+        "wikidata_qid": "Q2633986"
       }
     },
     {
@@ -931,13 +1443,13 @@
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Penélope Cruz",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Penélope Cruz",
+        "wikidata_qid": "Q39666"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Javier Bardem",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Javier Bardem",
+        "wikidata_qid": "Q134895"
       }
     },
     {
@@ -949,13 +1461,13 @@
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Princess Victoria Melita of Saxe-Coburg and Gotha",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Princess Victoria Melita of Saxe-Coburg and Gotha",
+        "wikidata_qid": "Q164500"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Grand Duke Cyril Vladimirovich of Russia",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Grand Duke Kirill Vladimirovich of Russia",
+        "wikidata_qid": "Q160948"
       }
     },
     {
@@ -967,13 +1479,13 @@
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Pierre et Gilles",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Pierre et Gilles",
+        "wikidata_qid": "Q605786"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Pierre et Gilles",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Pierre et Gilles",
+        "wikidata_qid": "Q605786"
       }
     },
     {
@@ -985,13 +1497,13 @@
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Jimmy Carter",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Jimmy Carter",
+        "wikidata_qid": "Q23685"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Rosalynn Carter",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Rosalynn Carter",
+        "wikidata_qid": "Q219353"
       }
     },
     {
@@ -1003,13 +1515,13 @@
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Scott Carpenter",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Scott Carpenter",
+        "wikidata_qid": "Q335503"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Rene Carpenter",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Rene Carpenter",
+        "wikidata_qid": "Q94974696"
       }
     },
     {
@@ -1049,21 +1561,81 @@
       }
     },
     {
-      "accepted_wikipedia_exits": [],
-      "corroborating_v1_v2_exits": [],
+      "accepted_wikipedia_exits": [
+        {
+          "date_text": "2010",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "2010-12-31",
+          "interval_start": "2010-01-01",
+          "other_adb_id": 76816,
+          "precision": "year",
+          "source_adb_id": 67753,
+          "source_wikipedia_title": "Brandi Glanville",
+          "template": "{{marriage|[[Eddie Cibrian]]|2001|2010|end=divorced}}",
+          "transition": "nonfatal_exit"
+        },
+        {
+          "date_text": "2010",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "2010-12-31",
+          "interval_start": "2010-01-01",
+          "other_adb_id": 67753,
+          "precision": "year",
+          "source_adb_id": 76816,
+          "source_wikipedia_title": "Eddie Cibrian",
+          "template": "{{marriage|[[Brandi Glanville]]|2001|2010|reason=divorced}}",
+          "transition": "nonfatal_exit"
+        }
+      ],
+      "corroborating_v1_v2_exits": [
+        {
+          "date_text": "2010",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "2010-12-31",
+          "interval_start": "2010-01-01",
+          "other_adb_id": 76816,
+          "precision": "year",
+          "source_adb_id": 67753,
+          "source_wikipedia_title": "Brandi Glanville",
+          "status": "corroborates_v1_v2",
+          "template": "{{marriage|[[Eddie Cibrian]]|2001|2010|end=divorced}}",
+          "transition": "nonfatal_exit"
+        },
+        {
+          "date_text": "2010",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "2010-12-31",
+          "interval_start": "2010-01-01",
+          "other_adb_id": 67753,
+          "precision": "year",
+          "source_adb_id": 76816,
+          "source_wikipedia_title": "Eddie Cibrian",
+          "status": "corroborates_v1_v2",
+          "template": "{{marriage|[[Brandi Glanville]]|2001|2010|reason=divorced}}",
+          "transition": "nonfatal_exit"
+        }
+      ],
       "had_clean_v1_v2_endpoint": true,
       "new_rung2_exits": [],
       "pair_key": "adb:67753|adb:76816",
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Brandi Glanville",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Brandi Glanville",
+        "wikidata_qid": "Q4956689"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Eddie Cibrian",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Eddie Cibrian",
+        "wikidata_qid": "Q355197"
       }
     },
     {
@@ -1075,8 +1647,8 @@
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Philip Crane",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Phil Crane",
+        "wikidata_qid": "Q325960"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": null,
@@ -1085,39 +1657,130 @@
       }
     },
     {
-      "accepted_wikipedia_exits": [],
-      "corroborating_v1_v2_exits": [],
+      "accepted_wikipedia_exits": [
+        {
+          "date_text": "1966",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1966-12-31",
+          "interval_start": "1966-01-01",
+          "other_adb_id": 96034,
+          "precision": "year",
+          "source_adb_id": 7023,
+          "source_wikipedia_title": "Johnny Cash",
+          "template": "{{marriage|[[Vivian Cash|Vivian Liberto]]|August 7, 1954|1966|end=divorced}}",
+          "transition": "nonfatal_exit"
+        },
+        {
+          "date_text": "1966",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1966-12-31",
+          "interval_start": "1966-01-01",
+          "other_adb_id": 7023,
+          "precision": "year",
+          "source_adb_id": 96034,
+          "source_wikipedia_title": "Vivian Cash",
+          "template": "{{marriage|[[Johnny Cash]]|August 7, 1954|1966|end=div}}",
+          "transition": "nonfatal_exit"
+        }
+      ],
+      "corroborating_v1_v2_exits": [
+        {
+          "date_text": "1966",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1966-12-31",
+          "interval_start": "1966-01-01",
+          "other_adb_id": 96034,
+          "precision": "year",
+          "source_adb_id": 7023,
+          "source_wikipedia_title": "Johnny Cash",
+          "status": "corroborates_v1_v2",
+          "template": "{{marriage|[[Vivian Cash|Vivian Liberto]]|August 7, 1954|1966|end=divorced}}",
+          "transition": "nonfatal_exit"
+        },
+        {
+          "date_text": "1966",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1966-12-31",
+          "interval_start": "1966-01-01",
+          "other_adb_id": 7023,
+          "precision": "year",
+          "source_adb_id": 96034,
+          "source_wikipedia_title": "Vivian Cash",
+          "status": "corroborates_v1_v2",
+          "template": "{{marriage|[[Johnny Cash]]|August 7, 1954|1966|end=div}}",
+          "transition": "nonfatal_exit"
+        }
+      ],
       "had_clean_v1_v2_endpoint": true,
       "new_rung2_exits": [],
       "pair_key": "adb:7023|adb:96034",
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Johnny Cash",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Johnny Cash",
+        "wikidata_qid": "Q42775"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Vivian Cash",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Vivian Cash",
+        "wikidata_qid": "Q7937736"
       }
     },
     {
-      "accepted_wikipedia_exits": [],
+      "accepted_wikipedia_exits": [
+        {
+          "date_text": "1924",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1924-12-31",
+          "interval_start": "1924-01-01",
+          "other_adb_id": 71588,
+          "precision": "year",
+          "source_adb_id": 71587,
+          "source_wikipedia_title": "Albert Carré",
+          "template": "{{marriage|[[Marguerite Carré]]|1902|1924|end=divorced}}",
+          "transition": "nonfatal_exit"
+        }
+      ],
       "corroborating_v1_v2_exits": [],
       "had_clean_v1_v2_endpoint": false,
-      "new_rung2_exits": [],
+      "new_rung2_exits": [
+        {
+          "date_text": "1924",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1924-12-31",
+          "interval_start": "1924-01-01",
+          "other_adb_id": 71588,
+          "precision": "year",
+          "source_adb_id": 71587,
+          "source_wikipedia_title": "Albert Carré",
+          "status": "new_rung2_endpoint",
+          "template": "{{marriage|[[Marguerite Carré]]|1902|1924|end=divorced}}",
+          "transition": "nonfatal_exit"
+        }
+      ],
       "pair_key": "adb:71587|adb:71588",
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Albert Carré",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Albert Carré",
+        "wikidata_qid": "Q2831021"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Marguerite Carré",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Marguerite Carré",
+        "wikidata_qid": "Q15429916"
       }
     },
     {
@@ -1129,31 +1792,91 @@
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Lina Cavalieri",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Lina Cavalieri",
+        "wikidata_qid": "Q460360"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Lucien Muratore",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Lucien Muratore",
+        "wikidata_qid": "Q1538601"
       }
     },
     {
-      "accepted_wikipedia_exits": [],
-      "corroborating_v1_v2_exits": [],
+      "accepted_wikipedia_exits": [
+        {
+          "date_text": "1997",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1997-12-31",
+          "interval_start": "1997-01-01",
+          "other_adb_id": 9479,
+          "precision": "year",
+          "source_adb_id": 74737,
+          "source_wikipedia_title": "Dora Moroni",
+          "template": "{{marriage|[[Christian (singer)|Christian]]|1987|1997|end=div}}",
+          "transition": "nonfatal_exit"
+        },
+        {
+          "date_text": "1997",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1997-12-31",
+          "interval_start": "1997-01-01",
+          "other_adb_id": 74737,
+          "precision": "year",
+          "source_adb_id": 9479,
+          "source_wikipedia_title": "Christian (singer)",
+          "template": "{{marriage|[[Dora Moroni]]|1987|1997|end=divorced}}",
+          "transition": "nonfatal_exit"
+        }
+      ],
+      "corroborating_v1_v2_exits": [
+        {
+          "date_text": "1997",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1997-12-31",
+          "interval_start": "1997-01-01",
+          "other_adb_id": 9479,
+          "precision": "year",
+          "source_adb_id": 74737,
+          "source_wikipedia_title": "Dora Moroni",
+          "status": "corroborates_v1_v2",
+          "template": "{{marriage|[[Christian (singer)|Christian]]|1987|1997|end=div}}",
+          "transition": "nonfatal_exit"
+        },
+        {
+          "date_text": "1997",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1997-12-31",
+          "interval_start": "1997-01-01",
+          "other_adb_id": 74737,
+          "precision": "year",
+          "source_adb_id": 9479,
+          "source_wikipedia_title": "Christian (singer)",
+          "status": "corroborates_v1_v2",
+          "template": "{{marriage|[[Dora Moroni]]|1987|1997|end=divorced}}",
+          "transition": "nonfatal_exit"
+        }
+      ],
       "had_clean_v1_v2_endpoint": true,
       "new_rung2_exits": [],
       "pair_key": "adb:9479|adb:74737",
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Dora Moroni",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Dora Moroni",
+        "wikidata_qid": "Q3714174"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Christian (singer)",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Christian (singer)",
+        "wikidata_qid": "Q3675612"
       }
     },
     {
@@ -1165,13 +1888,13 @@
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Alexandrine of Mecklenburg-Schwerin",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Alexandrine of Mecklenburg-Schwerin",
+        "wikidata_qid": "Q57264"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Christian X of Denmark",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Christian X",
+        "wikidata_qid": "Q156617"
       }
     },
     {
@@ -1183,13 +1906,13 @@
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "William Ernest, Grand Duke of Saxe-Weimar-Eisenach",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "William Ernest, Grand Duke of Saxe-Weimar-Eisenach",
+        "wikidata_qid": "Q58037"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Princess Caroline Reuss of Greiz",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Princess Caroline Reuss of Greiz",
+        "wikidata_qid": "Q292052"
       }
     },
     {
@@ -1201,13 +1924,13 @@
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Georg II, Duke of Saxe-Meiningen",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "George II of Saxe-Meiningen",
+        "wikidata_qid": "Q702749"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Princess Charlotte of Prussia (1831–1855)",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Princess Charlotte of Prussia (1831–1855)",
+        "wikidata_qid": "Q269819"
       }
     },
     {
@@ -1219,13 +1942,13 @@
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Prince Charles of Prussia",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Prince Charles of Prussia",
+        "wikidata_qid": "Q442587"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Princess Marie of Saxe-Weimar-Eisenach (1808–1877)",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Princess Marie of Saxe-Weimar-Eisenach (1808–1877)",
+        "wikidata_qid": "Q60919"
       }
     },
     {
@@ -1255,49 +1978,140 @@
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Alzira Costa",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Alzira Costa",
+        "wikidata_qid": "Q55360770"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Afonso Costa",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Afonso Costa",
+        "wikidata_qid": "Q383401"
       }
     },
     {
-      "accepted_wikipedia_exits": [],
+      "accepted_wikipedia_exits": [
+        {
+          "date_text": "1990",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1990-12-31",
+          "interval_start": "1990-01-01",
+          "other_adb_id": 96170,
+          "precision": "year",
+          "source_adb_id": 88705,
+          "source_wikipedia_title": "Steve Lukather",
+          "template": "{{marriage|[[Marie Currie]]|1981|1990|end=div}}",
+          "transition": "nonfatal_exit"
+        },
+        {
+          "date_text": "1990",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1990-12-31",
+          "interval_start": "1990-01-01",
+          "other_adb_id": 88705,
+          "precision": "year",
+          "source_adb_id": 96170,
+          "source_wikipedia_title": "Marie Currie",
+          "template": "{{marriage|[[Steve Lukather]]|1981|1990|end=div}}",
+          "transition": "nonfatal_exit"
+        }
+      ],
       "corroborating_v1_v2_exits": [],
       "had_clean_v1_v2_endpoint": false,
-      "new_rung2_exits": [],
+      "new_rung2_exits": [
+        {
+          "date_text": "1990",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1990-12-31",
+          "interval_start": "1990-01-01",
+          "other_adb_id": 96170,
+          "precision": "year",
+          "source_adb_id": 88705,
+          "source_wikipedia_title": "Steve Lukather",
+          "status": "new_rung2_endpoint",
+          "template": "{{marriage|[[Marie Currie]]|1981|1990|end=div}}",
+          "transition": "nonfatal_exit"
+        },
+        {
+          "date_text": "1990",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1990-12-31",
+          "interval_start": "1990-01-01",
+          "other_adb_id": 88705,
+          "precision": "year",
+          "source_adb_id": 96170,
+          "source_wikipedia_title": "Marie Currie",
+          "status": "new_rung2_endpoint",
+          "template": "{{marriage|[[Steve Lukather]]|1981|1990|end=div}}",
+          "transition": "nonfatal_exit"
+        }
+      ],
       "pair_key": "adb:88705|adb:96170",
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Steve Lukather",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Steve Lukather",
+        "wikidata_qid": "Q318483"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Marie Currie",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Marie Currie",
+        "wikidata_qid": "Q18685582"
       }
     },
     {
-      "accepted_wikipedia_exits": [],
-      "corroborating_v1_v2_exits": [],
+      "accepted_wikipedia_exits": [
+        {
+          "date_text": "1933",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1933-12-31",
+          "interval_start": "1933-01-01",
+          "other_adb_id": 90851,
+          "precision": "year",
+          "source_adb_id": 90852,
+          "source_wikipedia_title": "Princess Charlotte, Duchess of Valentinois",
+          "template": "{{marriage|[[Prince Pierre, Duke of Valentinois]]|1920|1933|reason=div}}",
+          "transition": "nonfatal_exit"
+        }
+      ],
+      "corroborating_v1_v2_exits": [
+        {
+          "date_text": "1933",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1933-12-31",
+          "interval_start": "1933-01-01",
+          "other_adb_id": 90851,
+          "precision": "year",
+          "source_adb_id": 90852,
+          "source_wikipedia_title": "Princess Charlotte, Duchess of Valentinois",
+          "status": "corroborates_v1_v2",
+          "template": "{{marriage|[[Prince Pierre, Duke of Valentinois]]|1920|1933|reason=div}}",
+          "transition": "nonfatal_exit"
+        }
+      ],
       "had_clean_v1_v2_endpoint": true,
       "new_rung2_exits": [],
       "pair_key": "adb:90851|adb:90852",
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Prince Pierre, Duke of Valentinois",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Prince Pierre, Duke of Valentinois",
+        "wikidata_qid": "Q958562"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": "Princess Charlotte, Duchess of Valentinois",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Princess Charlotte, Duchess of Valentinois",
+        "wikidata_qid": "Q254060"
       }
     },
     {
@@ -1345,8 +2159,8 @@
       "quarantined_rung1_exits_independently_corroborated": [],
       "wikipedia_identity_a": {
         "adb_linked_wikipedia_title": "Margarethe Cammermeyer",
-        "canonical_wikipedia_title": null,
-        "wikidata_qid": null
+        "canonical_wikipedia_title": "Margarethe Cammermeyer",
+        "wikidata_qid": "Q450719"
       },
       "wikipedia_identity_b": {
         "adb_linked_wikipedia_title": null,
@@ -1360,446 +2174,15 @@
   "people": 123,
   "rung1_audit": "reference/research/adb_exact_pair_state_history_source_ladder_v3_rung1_audit.md",
   "rung2_counts": {
-    "accepted_wikipedia_exit_evidence": 6,
-    "corroborating_v1_v2_evidence": 4,
-    "new_wikipedia_exit_evidence": 2
+    "accepted_wikipedia_exit_evidence": 33,
+    "corroborating_v1_v2_evidence": 24,
+    "new_wikipedia_exit_evidence": 9
   },
-  "source_failures": [
-    {
-      "adb_id": 5888,
-      "adb_linked_title": "Jimmy Carter",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 5959,
-      "adb_linked_title": "Scott Carpenter",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 5996,
-      "adb_linked_title": "Mike Connors",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 6281,
-      "adb_linked_title": "Janet Leigh",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 6298,
-      "adb_linked_title": "Rosalynn Carter",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 6790,
-      "adb_linked_title": "Sean Connery",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 6821,
-      "adb_linked_title": "Philip Crane",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 7023,
-      "adb_linked_title": "Johnny Cash",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 7157,
-      "adb_linked_title": "Jacques Chirac",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 8584,
-      "adb_linked_title": "Philippe Junot",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 9479,
-      "adb_linked_title": "Christian (singer)",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 11103,
-      "adb_linked_title": "Charles III",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 13047,
-      "adb_linked_title": "David Copperfield (illusionist)",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 13089,
-      "adb_linked_title": "Princess Caroline",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 13581,
-      "adb_linked_title": "Stefano Casiraghi",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 14274,
-      "adb_linked_title": "Lisa Marie Presley",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 15074,
-      "adb_linked_title": "Charlotte Casiraghi",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 19367,
-      "adb_linked_title": "Infanta Cristina, Duchess of Palma de Mallorca",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 19401,
-      "adb_linked_title": "Nicolas Cage",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 19568,
-      "adb_linked_title": "Kurt Cobain",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 19580,
-      "adb_linked_title": "LeAnn Rimes",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 19604,
-      "adb_linked_title": "Bernadette Chirac",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 26438,
-      "adb_linked_title": "John Connally",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 36990,
-      "adb_linked_title": "Eric Cantona",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 39157,
-      "adb_linked_title": "Inaki Urdangarin",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 39975,
-      "adb_linked_title": "Prince Laurent of Belgium",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 40046,
-      "adb_linked_title": "Emanuele Filiberto, Prince of Venice and Piedmont",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 40327,
-      "adb_linked_title": "Tony Martin (American singer)",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 46200,
-      "adb_linked_title": "Diane Cilento",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 47810,
-      "adb_linked_title": "Jean Casimir-Perier",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 48891,
-      "adb_linked_title": "Clotilde Courau",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 49393,
-      "adb_linked_title": "Claire Coombs",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 49711,
-      "adb_linked_title": "Renee Zellweger",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 49712,
-      "adb_linked_title": "Kenny Chesney",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 50520,
-      "adb_linked_title": "Stéphane Audran",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 50764,
-      "adb_linked_title": "Claude Chabrol",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 54655,
-      "adb_linked_title": "John Whiteside Parsons",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 55266,
-      "adb_linked_title": "Christo and Jeanne-Claude",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 55269,
-      "adb_linked_title": "Christo and Jeanne-Claude",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 55464,
-      "adb_linked_title": "Annemarie Schwarzenbach",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 55466,
-      "adb_linked_title": "Achille-Claude Clarac",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 55649,
-      "adb_linked_title": "Penélope Cruz",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 55779,
-      "adb_linked_title": "Christine Kaufmann",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 56048,
-      "adb_linked_title": "Princess Victoria Melita of Saxe-Coburg and Gotha",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 56049,
-      "adb_linked_title": "Grand Duke Cyril Vladimirovich of Russia",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 58088,
-      "adb_linked_title": "Pierre et Gilles",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 58089,
-      "adb_linked_title": "Pierre et Gilles",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 60355,
-      "adb_linked_title": "Thomas Mars",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 61241,
-      "adb_linked_title": "Javier Bardem",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 67753,
-      "adb_linked_title": "Brandi Glanville",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 68650,
-      "adb_linked_title": "Dimitri Rassam",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 69473,
-      "adb_linked_title": "Francisco Orlich Bolmarcich",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 71587,
-      "adb_linked_title": "Albert Carré",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 71588,
-      "adb_linked_title": "Marguerite Carré",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 71621,
-      "adb_linked_title": "Lina Cavalieri",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 72673,
-      "adb_linked_title": "Nellie Connally",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 74737,
-      "adb_linked_title": "Dora Moroni",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 76816,
-      "adb_linked_title": "Eddie Cibrian",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 79083,
-      "adb_linked_title": "Duchess Cecilie of Mecklenburg-Schwerin",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 79284,
-      "adb_linked_title": "Alexandrine of Mecklenburg-Schwerin",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 79358,
-      "adb_linked_title": "William Ernest, Grand Duke of Saxe-Weimar-Eisenach",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 79377,
-      "adb_linked_title": "Georg II, Duke of Saxe-Meiningen",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 79664,
-      "adb_linked_title": "Princess Charlotte of Prussia (1831–1855)",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 79672,
-      "adb_linked_title": "Christian X of Denmark",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 79673,
-      "adb_linked_title": "Prince Charles of Prussia",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 80050,
-      "adb_linked_title": "Lucien Muratore",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 80137,
-      "adb_linked_title": "Princess Marie of Saxe-Weimar-Eisenach (1808–1877)",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 80168,
-      "adb_linked_title": "Hélène Casimir-Perier",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 80186,
-      "adb_linked_title": "Daniele Lebrun",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 80315,
-      "adb_linked_title": "Yvonne Vallée",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 84214,
-      "adb_linked_title": "Princess Caroline Reuss of Greiz",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 86361,
-      "adb_linked_title": "Alzira Costa",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 86362,
-      "adb_linked_title": "Afonso Costa",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 88172,
-      "adb_linked_title": "Marjorie Cameron",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 88705,
-      "adb_linked_title": "Steve Lukather",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 90851,
-      "adb_linked_title": "Prince Pierre, Duke of Valentinois",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 90852,
-      "adb_linked_title": "Princess Charlotte, Duchess of Valentinois",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 92708,
-      "adb_linked_title": "Richard Cromwell (actor)",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 94255,
-      "adb_linked_title": "Rene Carpenter",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 96034,
-      "adb_linked_title": "Vivian Cash",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 96170,
-      "adb_linked_title": "Marie Currie",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 97170,
-      "adb_linked_title": "Margarethe Cammermeyer",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 99620,
-      "adb_linked_title": "Broderick Crawford",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 101321,
-      "adb_linked_title": "Sofia Coppola",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 104188,
-      "adb_linked_title": "Marita Camacho Quirós",
-      "stage": "wikipedia_fetch"
-    },
-    {
-      "adb_id": 106360,
-      "adb_linked_title": "Mike Connors",
-      "stage": "wikipedia_fetch"
-    }
-  ],
+  "source_failures": [],
   "status": "development_state_history_source_ladder_rung2",
   "stop_go": {
     "continue_to_rung3": true,
-    "endpoint_pairs_observed": 24,
+    "endpoint_pairs_observed": 28,
     "minimum_endpoint_pairs": 30,
     "stop_source_ladder_and_freeze_model_spec": false
   },
