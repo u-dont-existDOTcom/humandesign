@@ -1,6 +1,6 @@
 {
   "any_pair_family_clears_frozen_threshold": false,
-  "best_pair_family_by_mean_percentile_improvement": "XPROGHR",
+  "best_pair_family_by_mean_percentile_improvement": "ALLHR",
   "dataset": {
     "control_exclusions": {
       "control_age_excluded": 242
@@ -42,262 +42,1804 @@
     "True event date is compared with same month/day at +/-1..10 years, not with a full semi-Markov risk process."
   ],
   "permutation_diagnostic": {
-    "empirical_p_ge_observed": 0.009900990099009901,
-    "fixed_C": 0.001,
+    "empirical_p_ge_observed": 0.4158415841584158,
+    "fixed_C": 0.01,
     "n": 100,
-    "null_ge_observed": 0,
-    "null_mean_percentile": 49.9206132285757,
-    "null_sd_percentile": 3.228653528643308,
-    "observed_mean_true_date_percentile": 100.0
+    "null_ge_observed": 41,
+    "null_mean_percentile": 50.477677747529306,
+    "null_sd_percentile": 3.528350984156622,
+    "observed_mean_true_date_percentile": 50.99901949850811
   },
   "results": {
     "ALLHR": {
       "clears_frozen_promising_threshold": false,
-      "delta_mean_percentile_vs_M1HR": 0.0,
-      "delta_softmax_loss_vs_M1HR": 0.0,
+      "delta_mean_percentile_vs_M1HR": 3.335885835747625,
+      "delta_softmax_loss_vs_M1HR": -0.435060125199918,
       "events": 84,
       "feature_count": 1113,
       "fold_percentile_deltas_vs_M1HR": [
+        8.059416074121955,
         0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
+        4.004485017691287,
+        5.795829266850028,
+        -1.1409718162814144
       ],
-      "mean_reciprocal_rank": 1.0,
-      "mean_true_date_percentile": 100.0,
+      "mean_reciprocal_rank": 0.16860070196188445,
+      "mean_true_date_percentile": 50.99901949850811,
       "mean_true_date_percentile_by_fold": [
-        100.0,
-        100.0,
-        100.0,
-        100.0,
-        100.0
+        54.682539682539684,
+        50.0,
+        54.00448501769129,
+        43.55735959542188,
+        52.92750528625142
       ],
-      "median_true_date_percentile": 100.0,
+      "median_true_date_percentile": 50.0,
       "model": "ALLHR",
       "nonzero_feature_count_by_fold": [
+        229,
         0,
-        0,
-        0,
-        0,
-        0
+        223,
+        8,
+        8
       ],
       "outer_folds": 5,
-      "positive_improvement_folds": 0,
+      "positive_improvement_folds": 3,
       "selected_C_by_fold": [
+        0.1,
         0.001,
-        0.001,
-        0.001,
-        0.001,
-        0.001
+        0.1,
+        0.01,
+        0.01
       ],
-      "softmax_log_loss": 2.8803738114851276,
-      "stable_selected_features": [],
-      "top1_rate": 1.0,
-      "top3_rate": 1.0
+      "softmax_log_loss": 3.4425072051846604,
+      "stable_selected_features": [
+        {
+          "feature": "nc_tr_Saturn_Venus_a60",
+          "mean_abs_coef_when_selected": 0.19478546631245805,
+          "mean_coef_when_selected": 0.19478546631245805,
+          "negative_folds": 0,
+          "positive_folds": 4,
+          "selected_folds": 4,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Saturn_Mercury_a0",
+          "mean_abs_coef_when_selected": 0.12963424159855672,
+          "mean_coef_when_selected": 0.12963424159855672,
+          "negative_folds": 0,
+          "positive_folds": 4,
+          "selected_folds": 4,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Jupiter_Saturn_a90",
+          "mean_abs_coef_when_selected": 0.1265809185673251,
+          "mean_coef_when_selected": 0.1265809185673251,
+          "negative_folds": 0,
+          "positive_folds": 4,
+          "selected_folds": 4,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Uranus_Saturn_a120",
+          "mean_abs_coef_when_selected": 0.17329880134688921,
+          "mean_coef_when_selected": 0.17329880134688921,
+          "negative_folds": 0,
+          "positive_folds": 3,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Uranus_Sun_a60",
+          "mean_abs_coef_when_selected": 0.16188594061154302,
+          "mean_coef_when_selected": 0.16188594061154302,
+          "negative_folds": 0,
+          "positive_folds": 3,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "nc_tr_Neptune_Saturn_a0",
+          "mean_abs_coef_when_selected": 0.152923265286322,
+          "mean_coef_when_selected": 0.152923265286322,
+          "negative_folds": 0,
+          "positive_folds": 3,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "pc_tr_Saturn_Mercury_a180",
+          "mean_abs_coef_when_selected": 0.12958552291802672,
+          "mean_coef_when_selected": 0.12958552291802672,
+          "negative_folds": 0,
+          "positive_folds": 3,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "xp_pa_pb_Mercury_Sun_a180",
+          "mean_abs_coef_when_selected": 0.0919468047099067,
+          "mean_coef_when_selected": 0.0919468047099067,
+          "negative_folds": 0,
+          "positive_folds": 3,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "xp_pa_nb_Mercury_Mercury_a60",
+          "mean_abs_coef_when_selected": 0.06369401276962718,
+          "mean_coef_when_selected": 0.06369401276962718,
+          "negative_folds": 0,
+          "positive_folds": 3,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Neptune_Mars_a0",
+          "mean_abs_coef_when_selected": 0.034870049825749025,
+          "mean_coef_when_selected": 0.034870049825749025,
+          "negative_folds": 0,
+          "positive_folds": 3,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_pr_Mars_Venus_a90",
+          "mean_abs_coef_when_selected": 0.02821668659711642,
+          "mean_coef_when_selected": 0.02821668659711642,
+          "negative_folds": 0,
+          "positive_folds": 3,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "pc_tr_Uranus_Venus_a90",
+          "mean_abs_coef_when_selected": 0.34554052454207074,
+          "mean_coef_when_selected": 0.34554052454207074,
+          "negative_folds": 0,
+          "positive_folds": 2,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "nc_tr_Jupiter_Saturn_a120",
+          "mean_abs_coef_when_selected": 0.3342730827382737,
+          "mean_coef_when_selected": 0.3342730827382737,
+          "negative_folds": 0,
+          "positive_folds": 2,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "pc_tr_Neptune_Mars_a90",
+          "mean_abs_coef_when_selected": 0.30259913867724014,
+          "mean_coef_when_selected": 0.30259913867724014,
+          "negative_folds": 0,
+          "positive_folds": 2,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_pr_Venus_Saturn_a0",
+          "mean_abs_coef_when_selected": 0.26739665667706314,
+          "mean_coef_when_selected": 0.26739665667706314,
+          "negative_folds": 0,
+          "positive_folds": 2,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Saturn_Jupiter_a60",
+          "mean_abs_coef_when_selected": 0.2515617395381412,
+          "mean_coef_when_selected": 0.2515617395381412,
+          "negative_folds": 0,
+          "positive_folds": 2,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Neptune_Mercury_a60",
+          "mean_abs_coef_when_selected": 0.2342381520183383,
+          "mean_coef_when_selected": 0.2342381520183383,
+          "negative_folds": 0,
+          "positive_folds": 2,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "xp_pa_pb_Venus_Mercury_a120",
+          "mean_abs_coef_when_selected": 0.2177086371084677,
+          "mean_coef_when_selected": 0.2177086371084677,
+          "negative_folds": 0,
+          "positive_folds": 2,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Neptune_Mercury_a90",
+          "mean_abs_coef_when_selected": 0.21039930254083217,
+          "mean_coef_when_selected": -0.21039930254083217,
+          "negative_folds": 2,
+          "positive_folds": 0,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Jupiter_Venus_a180",
+          "mean_abs_coef_when_selected": 0.20427152640586,
+          "mean_coef_when_selected": 0.20427152640586,
+          "negative_folds": 0,
+          "positive_folds": 2,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "nc_tr_Neptune_Sun_a120",
+          "mean_abs_coef_when_selected": 0.2034701673197994,
+          "mean_coef_when_selected": 0.2034701673197994,
+          "negative_folds": 0,
+          "positive_folds": 2,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Pluto_Saturn_a0",
+          "mean_abs_coef_when_selected": 0.20071442982527976,
+          "mean_coef_when_selected": 0.20071442982527976,
+          "negative_folds": 0,
+          "positive_folds": 2,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "pc_tr_Pluto_Venus_a180",
+          "mean_abs_coef_when_selected": 0.18503504324945258,
+          "mean_coef_when_selected": 0.18503504324945258,
+          "negative_folds": 0,
+          "positive_folds": 2,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "xp_pb_na_Mars_Mars_a120",
+          "mean_abs_coef_when_selected": 0.18065055330787755,
+          "mean_coef_when_selected": -0.18065055330787755,
+          "negative_folds": 2,
+          "positive_folds": 0,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Jupiter_Venus_a60",
+          "mean_abs_coef_when_selected": 0.1800460198753679,
+          "mean_coef_when_selected": -0.1800460198753679,
+          "negative_folds": 2,
+          "positive_folds": 0,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "nc_tr_Saturn_Jupiter_a90",
+          "mean_abs_coef_when_selected": 0.1795500061252029,
+          "mean_coef_when_selected": -0.1795500061252029,
+          "negative_folds": 2,
+          "positive_folds": 0,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_pr_Mars_Venus_a0",
+          "mean_abs_coef_when_selected": 0.17790245950698672,
+          "mean_coef_when_selected": 0.17790245950698672,
+          "negative_folds": 0,
+          "positive_folds": 2,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "pc_tr_Jupiter_Mercury_a120",
+          "mean_abs_coef_when_selected": 0.17774523483592297,
+          "mean_coef_when_selected": 0.17774523483592297,
+          "negative_folds": 0,
+          "positive_folds": 2,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "xp_pb_na_Mars_Mercury_a0",
+          "mean_abs_coef_when_selected": 0.17638898052443752,
+          "mean_coef_when_selected": 0.17638898052443752,
+          "negative_folds": 0,
+          "positive_folds": 2,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "xp_pa_pb_Mercury_Venus_a90",
+          "mean_abs_coef_when_selected": 0.1689911904474391,
+          "mean_coef_when_selected": 0.1689911904474391,
+          "negative_folds": 0,
+          "positive_folds": 2,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        }
+      ],
+      "tie_handling": "neutral_average_rank",
+      "top1_rate": 0.047619047619047616,
+      "top3_rate": 0.09523809523809523
     },
     "M0HR": {
       "events": 84,
       "feature_count": 3,
-      "mean_reciprocal_rank": 1.0,
-      "mean_true_date_percentile": 100.0,
+      "mean_reciprocal_rank": 0.15746667353810212,
+      "mean_true_date_percentile": 60.5413301786588,
       "mean_true_date_percentile_by_fold": [
-        100.0,
-        100.0,
-        100.0,
-        100.0,
-        100.0
+        61.12727142138906,
+        61.733715150670164,
+        56.94187214359428,
+        61.334767692899185,
+        61.35729165914924
       ],
-      "median_true_date_percentile": 100.0,
+      "median_true_date_percentile": 54.09356725146199,
       "model": "M0HR",
       "nonzero_feature_count_by_fold": [
-        0,
-        0,
-        0,
-        0,
-        0
+        3,
+        3,
+        3,
+        3,
+        3
       ],
       "outer_folds": 5,
       "selected_C_by_fold": [
-        0.001,
-        0.001,
-        0.001,
-        0.001,
-        0.001
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1
       ],
-      "softmax_log_loss": 2.8803738114851276,
-      "stable_selected_features": [],
-      "top1_rate": 1.0,
-      "top3_rate": 1.0
+      "softmax_log_loss": 2.8607534819422256,
+      "stable_selected_features": [
+        {
+          "feature": "m0_age_a",
+          "mean_abs_coef_when_selected": 0.11100959861912145,
+          "mean_coef_when_selected": -0.11100959861912145,
+          "negative_folds": 5,
+          "positive_folds": 0,
+          "selected_folds": 5,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m0_age_b",
+          "mean_abs_coef_when_selected": 0.085080184010275,
+          "mean_coef_when_selected": -0.085080184010275,
+          "negative_folds": 5,
+          "positive_folds": 0,
+          "selected_folds": 5,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m0_year_scaled",
+          "mean_abs_coef_when_selected": 0.03303264693094475,
+          "mean_coef_when_selected": -0.03303264693094475,
+          "negative_folds": 5,
+          "positive_folds": 0,
+          "selected_folds": 5,
+          "sign_consistent": true,
+          "total_folds": 5
+        }
+      ],
+      "tie_handling": "neutral_average_rank",
+      "top1_rate": 0.0,
+      "top3_rate": 0.14285714285714285
     },
     "M1HR": {
       "events": 84,
       "feature_count": 543,
-      "mean_reciprocal_rank": 1.0,
-      "mean_true_date_percentile": 100.0,
+      "mean_reciprocal_rank": 0.15470631771307403,
+      "mean_true_date_percentile": 47.66313366276049,
       "mean_true_date_percentile_by_fold": [
-        100.0,
-        100.0,
-        100.0,
-        100.0,
-        100.0
+        46.62312360841773,
+        50.0,
+        50.0,
+        37.76153032857185,
+        54.06847710253283
       ],
-      "median_true_date_percentile": 100.0,
+      "median_true_date_percentile": 50.0,
       "model": "M1HR",
       "nonzero_feature_count_by_fold": [
+        234,
         0,
         0,
-        0,
-        0,
-        0
+        7,
+        5
       ],
       "outer_folds": 5,
       "selected_C_by_fold": [
+        0.1,
         0.001,
         0.001,
-        0.001,
-        0.001,
-        0.001
+        0.01,
+        0.01
       ],
-      "softmax_log_loss": 2.8803738114851276,
-      "stable_selected_features": [],
-      "top1_rate": 1.0,
-      "top3_rate": 1.0
+      "softmax_log_loss": 3.8775673303845783,
+      "stable_selected_features": [
+        {
+          "feature": "m1_b_tr_Jupiter_Saturn_a90",
+          "mean_abs_coef_when_selected": 0.11852900897987632,
+          "mean_coef_when_selected": 0.11852900897987632,
+          "negative_folds": 0,
+          "positive_folds": 3,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_pr_Mars_Venus_a90",
+          "mean_abs_coef_when_selected": 0.0717899391054543,
+          "mean_coef_when_selected": 0.0717899391054543,
+          "negative_folds": 0,
+          "positive_folds": 3,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Saturn_Mercury_a0",
+          "mean_abs_coef_when_selected": 0.07169004515107306,
+          "mean_coef_when_selected": 0.07169004515107306,
+          "negative_folds": 0,
+          "positive_folds": 3,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Uranus_Saturn_a120",
+          "mean_abs_coef_when_selected": 0.03929081135764908,
+          "mean_coef_when_selected": 0.03929081135764908,
+          "negative_folds": 0,
+          "positive_folds": 3,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Neptune_Mars_a0",
+          "mean_abs_coef_when_selected": 0.015452115254457681,
+          "mean_coef_when_selected": 0.015452115254457681,
+          "negative_folds": 0,
+          "positive_folds": 3,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Uranus_Sun_a60",
+          "mean_abs_coef_when_selected": 0.11352470245261072,
+          "mean_coef_when_selected": 0.11352470245261072,
+          "negative_folds": 0,
+          "positive_folds": 2,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Saturn_Sun_a90",
+          "mean_abs_coef_when_selected": 0.09203642257819421,
+          "mean_coef_when_selected": 0.09203642257819421,
+          "negative_folds": 0,
+          "positive_folds": 2,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Pluto_Mercury_a90",
+          "mean_abs_coef_when_selected": 0.3183611085279402,
+          "mean_coef_when_selected": -0.3183611085279402,
+          "negative_folds": 1,
+          "positive_folds": 0,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Pluto_Jupiter_a60",
+          "mean_abs_coef_when_selected": 0.28931664553237507,
+          "mean_coef_when_selected": 0.28931664553237507,
+          "negative_folds": 0,
+          "positive_folds": 1,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_pr_Mercury_Jupiter_a60",
+          "mean_abs_coef_when_selected": 0.27374123732290445,
+          "mean_coef_when_selected": -0.27374123732290445,
+          "negative_folds": 1,
+          "positive_folds": 0,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Neptune_Mercury_a60",
+          "mean_abs_coef_when_selected": 0.2614822197331232,
+          "mean_coef_when_selected": 0.2614822197331232,
+          "negative_folds": 0,
+          "positive_folds": 1,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Saturn_Saturn_a120",
+          "mean_abs_coef_when_selected": 0.25898953443193085,
+          "mean_coef_when_selected": -0.25898953443193085,
+          "negative_folds": 1,
+          "positive_folds": 0,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_pr_Venus_Jupiter_a120",
+          "mean_abs_coef_when_selected": 0.2556159012248709,
+          "mean_coef_when_selected": -0.2556159012248709,
+          "negative_folds": 1,
+          "positive_folds": 0,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m0_age_b",
+          "mean_abs_coef_when_selected": 0.2489164695964776,
+          "mean_coef_when_selected": -0.2489164695964776,
+          "negative_folds": 1,
+          "positive_folds": 0,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Neptune_Mercury_a90",
+          "mean_abs_coef_when_selected": 0.24168892993507413,
+          "mean_coef_when_selected": -0.24168892993507413,
+          "negative_folds": 1,
+          "positive_folds": 0,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_pr_Sun_Venus_a60",
+          "mean_abs_coef_when_selected": 0.239400643356484,
+          "mean_coef_when_selected": -0.239400643356484,
+          "negative_folds": 1,
+          "positive_folds": 0,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Pluto_Saturn_a90",
+          "mean_abs_coef_when_selected": 0.23598487999598478,
+          "mean_coef_when_selected": 0.23598487999598478,
+          "negative_folds": 0,
+          "positive_folds": 1,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Uranus_Venus_a120",
+          "mean_abs_coef_when_selected": 0.21758721033726167,
+          "mean_coef_when_selected": -0.21758721033726167,
+          "negative_folds": 1,
+          "positive_folds": 0,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_pr_Mercury_Venus_a60",
+          "mean_abs_coef_when_selected": 0.21591662062863962,
+          "mean_coef_when_selected": -0.21591662062863962,
+          "negative_folds": 1,
+          "positive_folds": 0,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Pluto_Saturn_a0",
+          "mean_abs_coef_when_selected": 0.20885185202194204,
+          "mean_coef_when_selected": 0.20885185202194204,
+          "negative_folds": 0,
+          "positive_folds": 1,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Uranus_Jupiter_a180",
+          "mean_abs_coef_when_selected": 0.20867366595740255,
+          "mean_coef_when_selected": -0.20867366595740255,
+          "negative_folds": 1,
+          "positive_folds": 0,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Jupiter_Venus_a60",
+          "mean_abs_coef_when_selected": 0.20372633710740595,
+          "mean_coef_when_selected": -0.20372633710740595,
+          "negative_folds": 1,
+          "positive_folds": 0,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Jupiter_Jupiter_a60",
+          "mean_abs_coef_when_selected": 0.20251513679048544,
+          "mean_coef_when_selected": 0.20251513679048544,
+          "negative_folds": 0,
+          "positive_folds": 1,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Neptune_Mercury_a90",
+          "mean_abs_coef_when_selected": 0.19761894408314584,
+          "mean_coef_when_selected": 0.19761894408314584,
+          "negative_folds": 0,
+          "positive_folds": 1,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Pluto_Sun_a90",
+          "mean_abs_coef_when_selected": 0.19566723743039016,
+          "mean_coef_when_selected": 0.19566723743039016,
+          "negative_folds": 0,
+          "positive_folds": 1,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Uranus_Jupiter_a60",
+          "mean_abs_coef_when_selected": 0.19239974824382633,
+          "mean_coef_when_selected": -0.19239974824382633,
+          "negative_folds": 1,
+          "positive_folds": 0,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Saturn_Mars_a90",
+          "mean_abs_coef_when_selected": 0.19211367438559726,
+          "mean_coef_when_selected": -0.19211367438559726,
+          "negative_folds": 1,
+          "positive_folds": 0,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_pr_Sun_Mercury_a0",
+          "mean_abs_coef_when_selected": 0.1860607050082923,
+          "mean_coef_when_selected": -0.1860607050082923,
+          "negative_folds": 1,
+          "positive_folds": 0,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Jupiter_Mars_a60",
+          "mean_abs_coef_when_selected": 0.18353539445789252,
+          "mean_coef_when_selected": -0.18353539445789252,
+          "negative_folds": 1,
+          "positive_folds": 0,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Saturn_Jupiter_a60",
+          "mean_abs_coef_when_selected": 0.18336424684387734,
+          "mean_coef_when_selected": 0.18336424684387734,
+          "negative_folds": 0,
+          "positive_folds": 1,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        }
+      ],
+      "tie_handling": "neutral_average_rank",
+      "top1_rate": 0.047619047619047616,
+      "top3_rate": 0.07142857142857142
     },
     "NCOMPHR": {
       "clears_frozen_promising_threshold": false,
-      "delta_mean_percentile_vs_M1HR": 0.0,
-      "delta_softmax_loss_vs_M1HR": 0.0,
+      "delta_mean_percentile_vs_M1HR": 1.077586767132324,
+      "delta_softmax_loss_vs_M1HR": 0.029085779019392355,
       "events": 84,
       "feature_count": 693,
       "fold_percentile_deltas_vs_M1HR": [
+        -0.71661998132587,
         0.0,
         0.0,
-        0.0,
-        0.0,
-        0.0
+        6.384064560967673,
+        -0.3428982008703372
       ],
-      "mean_reciprocal_rank": 1.0,
-      "mean_true_date_percentile": 100.0,
+      "mean_reciprocal_rank": 0.1521693886941535,
+      "mean_true_date_percentile": 48.74072042989281,
       "mean_true_date_percentile_by_fold": [
-        100.0,
-        100.0,
-        100.0,
-        100.0,
-        100.0
+        45.90650362709186,
+        50.0,
+        50.0,
+        44.145594889539524,
+        53.725578901662495
       ],
-      "median_true_date_percentile": 100.0,
+      "median_true_date_percentile": 50.0,
       "model": "NCOMPHR",
       "nonzero_feature_count_by_fold": [
+        244,
         0,
         0,
-        0,
-        0,
-        0
+        6,
+        6
       ],
       "outer_folds": 5,
-      "positive_improvement_folds": 0,
+      "positive_improvement_folds": 1,
       "selected_C_by_fold": [
+        0.1,
         0.001,
         0.001,
-        0.001,
-        0.001,
-        0.001
+        0.01,
+        0.01
       ],
-      "softmax_log_loss": 2.8803738114851276,
-      "stable_selected_features": [],
-      "top1_rate": 1.0,
-      "top3_rate": 1.0
+      "softmax_log_loss": 3.9066531094039707,
+      "stable_selected_features": [
+        {
+          "feature": "nc_tr_Saturn_Venus_a60",
+          "mean_abs_coef_when_selected": 0.1564385720711529,
+          "mean_coef_when_selected": 0.1564385720711529,
+          "negative_folds": 0,
+          "positive_folds": 3,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Jupiter_Saturn_a90",
+          "mean_abs_coef_when_selected": 0.10888251374420722,
+          "mean_coef_when_selected": 0.10888251374420722,
+          "negative_folds": 0,
+          "positive_folds": 3,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Saturn_Mercury_a0",
+          "mean_abs_coef_when_selected": 0.07234082755558233,
+          "mean_coef_when_selected": 0.07234082755558233,
+          "negative_folds": 0,
+          "positive_folds": 3,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_pr_Mars_Venus_a90",
+          "mean_abs_coef_when_selected": 0.04859412619792297,
+          "mean_coef_when_selected": 0.04859412619792297,
+          "negative_folds": 0,
+          "positive_folds": 3,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Uranus_Sun_a60",
+          "mean_abs_coef_when_selected": 0.14032570661080543,
+          "mean_coef_when_selected": 0.14032570661080543,
+          "negative_folds": 0,
+          "positive_folds": 2,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "nc_tr_Neptune_Saturn_a0",
+          "mean_abs_coef_when_selected": 0.1183406488061978,
+          "mean_coef_when_selected": 0.1183406488061978,
+          "negative_folds": 0,
+          "positive_folds": 2,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Uranus_Saturn_a120",
+          "mean_abs_coef_when_selected": 0.054452885483429296,
+          "mean_coef_when_selected": 0.054452885483429296,
+          "negative_folds": 0,
+          "positive_folds": 2,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Neptune_Mars_a0",
+          "mean_abs_coef_when_selected": 0.005058940862204907,
+          "mean_coef_when_selected": 0.005058940862204907,
+          "negative_folds": 0,
+          "positive_folds": 2,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "nc_tr_Jupiter_Saturn_a120",
+          "mean_abs_coef_when_selected": 0.31750343626555155,
+          "mean_coef_when_selected": 0.31750343626555155,
+          "negative_folds": 0,
+          "positive_folds": 1,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Pluto_Mars_a90",
+          "mean_abs_coef_when_selected": 0.30257298371085,
+          "mean_coef_when_selected": 0.30257298371085,
+          "negative_folds": 0,
+          "positive_folds": 1,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "nc_tr_Neptune_Sun_a120",
+          "mean_abs_coef_when_selected": 0.2685716417895802,
+          "mean_coef_when_selected": 0.2685716417895802,
+          "negative_folds": 0,
+          "positive_folds": 1,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Neptune_Mercury_a90",
+          "mean_abs_coef_when_selected": 0.2513552033220276,
+          "mean_coef_when_selected": -0.2513552033220276,
+          "negative_folds": 1,
+          "positive_folds": 0,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Pluto_Mercury_a90",
+          "mean_abs_coef_when_selected": 0.24951738320604325,
+          "mean_coef_when_selected": -0.24951738320604325,
+          "negative_folds": 1,
+          "positive_folds": 0,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "nc_tr_Pluto_Saturn_a90",
+          "mean_abs_coef_when_selected": 0.24617006834007774,
+          "mean_coef_when_selected": 0.24617006834007774,
+          "negative_folds": 0,
+          "positive_folds": 1,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Neptune_Mars_a120",
+          "mean_abs_coef_when_selected": 0.24270678061682,
+          "mean_coef_when_selected": -0.24270678061682,
+          "negative_folds": 1,
+          "positive_folds": 0,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Neptune_Mercury_a60",
+          "mean_abs_coef_when_selected": 0.24246473144659192,
+          "mean_coef_when_selected": 0.24246473144659192,
+          "negative_folds": 0,
+          "positive_folds": 1,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "nc_tr_Jupiter_Venus_a120",
+          "mean_abs_coef_when_selected": 0.23963896494593226,
+          "mean_coef_when_selected": 0.23963896494593226,
+          "negative_folds": 0,
+          "positive_folds": 1,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_pr_Sun_Mercury_a0",
+          "mean_abs_coef_when_selected": 0.23520971233262247,
+          "mean_coef_when_selected": -0.23520971233262247,
+          "negative_folds": 1,
+          "positive_folds": 0,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_pr_Venus_Jupiter_a120",
+          "mean_abs_coef_when_selected": 0.22903280717784716,
+          "mean_coef_when_selected": -0.22903280717784716,
+          "negative_folds": 1,
+          "positive_folds": 0,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Pluto_Venus_a90",
+          "mean_abs_coef_when_selected": 0.22412943747338177,
+          "mean_coef_when_selected": 0.22412943747338177,
+          "negative_folds": 0,
+          "positive_folds": 1,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Jupiter_Jupiter_a60",
+          "mean_abs_coef_when_selected": 0.21704041595588544,
+          "mean_coef_when_selected": 0.21704041595588544,
+          "negative_folds": 0,
+          "positive_folds": 1,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Pluto_Saturn_a0",
+          "mean_abs_coef_when_selected": 0.21694705022699987,
+          "mean_coef_when_selected": 0.21694705022699987,
+          "negative_folds": 0,
+          "positive_folds": 1,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Jupiter_Venus_a60",
+          "mean_abs_coef_when_selected": 0.21444778619928628,
+          "mean_coef_when_selected": -0.21444778619928628,
+          "negative_folds": 1,
+          "positive_folds": 0,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Pluto_Mercury_a0",
+          "mean_abs_coef_when_selected": 0.2070618563063753,
+          "mean_coef_when_selected": 0.2070618563063753,
+          "negative_folds": 0,
+          "positive_folds": 1,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Pluto_Jupiter_a60",
+          "mean_abs_coef_when_selected": 0.20700102655581434,
+          "mean_coef_when_selected": 0.20700102655581434,
+          "negative_folds": 0,
+          "positive_folds": 1,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_pr_Mercury_Venus_a60",
+          "mean_abs_coef_when_selected": 0.2064602390255504,
+          "mean_coef_when_selected": -0.2064602390255504,
+          "negative_folds": 1,
+          "positive_folds": 0,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Pluto_Saturn_a90",
+          "mean_abs_coef_when_selected": 0.20599179936133444,
+          "mean_coef_when_selected": 0.20599179936133444,
+          "negative_folds": 0,
+          "positive_folds": 1,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "nc_tr_Jupiter_Saturn_a60",
+          "mean_abs_coef_when_selected": 0.2050227960661934,
+          "mean_coef_when_selected": 0.2050227960661934,
+          "negative_folds": 0,
+          "positive_folds": 1,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Uranus_Jupiter_a180",
+          "mean_abs_coef_when_selected": 0.20288324895279516,
+          "mean_coef_when_selected": -0.20288324895279516,
+          "negative_folds": 1,
+          "positive_folds": 0,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Saturn_Saturn_a120",
+          "mean_abs_coef_when_selected": 0.1980588336664948,
+          "mean_coef_when_selected": -0.1980588336664948,
+          "negative_folds": 1,
+          "positive_folds": 0,
+          "selected_folds": 1,
+          "sign_consistent": true,
+          "total_folds": 5
+        }
+      ],
+      "tie_handling": "neutral_average_rank",
+      "top1_rate": 0.03571428571428571,
+      "top3_rate": 0.07142857142857142
     },
     "PCOMPHR": {
       "clears_frozen_promising_threshold": false,
-      "delta_mean_percentile_vs_M1HR": 0.0,
-      "delta_softmax_loss_vs_M1HR": 0.0,
+      "delta_mean_percentile_vs_M1HR": -0.9453115223515454,
+      "delta_softmax_loss_vs_M1HR": 1.3627636513892867,
       "events": 84,
       "feature_count": 643,
       "fold_percentile_deltas_vs_M1HR": [
+        2.183661926308986,
         0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
+        -12.199927668435798,
+        8.533090083695619,
+        -3.9054181972138693
       ],
-      "mean_reciprocal_rank": 1.0,
-      "mean_true_date_percentile": 100.0,
+      "mean_reciprocal_rank": 0.13950469881446217,
+      "mean_true_date_percentile": 46.71782214040894,
       "mean_true_date_percentile_by_fold": [
-        100.0,
-        100.0,
-        100.0,
-        100.0,
-        100.0
+        48.806785534726714,
+        50.0,
+        37.8000723315642,
+        46.29462041226747,
+        50.16305890531896
       ],
-      "median_true_date_percentile": 100.0,
+      "median_true_date_percentile": 50.0,
       "model": "PCOMPHR",
       "nonzero_feature_count_by_fold": [
+        4,
         0,
-        0,
-        0,
-        0,
-        0
+        237,
+        254,
+        339
       ],
       "outer_folds": 5,
-      "positive_improvement_folds": 0,
+      "positive_improvement_folds": 2,
       "selected_C_by_fold": [
+        0.01,
         0.001,
-        0.001,
-        0.001,
-        0.001,
-        0.001
+        0.1,
+        0.1,
+        1.0
       ],
-      "softmax_log_loss": 2.8803738114851276,
-      "stable_selected_features": [],
-      "top1_rate": 1.0,
-      "top3_rate": 1.0
+      "softmax_log_loss": 5.240330981773865,
+      "stable_selected_features": [
+        {
+          "feature": "pc_tr_Neptune_Mars_a90",
+          "mean_abs_coef_when_selected": 0.31460046799517777,
+          "mean_coef_when_selected": 0.31460046799517777,
+          "negative_folds": 0,
+          "positive_folds": 4,
+          "selected_folds": 4,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Pluto_Jupiter_a60",
+          "mean_abs_coef_when_selected": 0.2189776052435924,
+          "mean_coef_when_selected": 0.2189776052435924,
+          "negative_folds": 0,
+          "positive_folds": 4,
+          "selected_folds": 4,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Saturn_Jupiter_a60",
+          "mean_abs_coef_when_selected": 0.1452151457388492,
+          "mean_coef_when_selected": 0.1452151457388492,
+          "negative_folds": 0,
+          "positive_folds": 4,
+          "selected_folds": 4,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_pr_Mars_Venus_a90",
+          "mean_abs_coef_when_selected": 0.12637945555869826,
+          "mean_coef_when_selected": 0.12637945555869826,
+          "negative_folds": 0,
+          "positive_folds": 4,
+          "selected_folds": 4,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Uranus_Saturn_a120",
+          "mean_abs_coef_when_selected": 0.43484927660424616,
+          "mean_coef_when_selected": 0.43484927660424616,
+          "negative_folds": 0,
+          "positive_folds": 3,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Pluto_Mercury_a90",
+          "mean_abs_coef_when_selected": 0.43352499638094955,
+          "mean_coef_when_selected": -0.43352499638094955,
+          "negative_folds": 3,
+          "positive_folds": 0,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "pc_tr_Uranus_Sun_a120",
+          "mean_abs_coef_when_selected": 0.4279512674157819,
+          "mean_coef_when_selected": -0.4279512674157819,
+          "negative_folds": 3,
+          "positive_folds": 0,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "pc_tr_Neptune_Venus_a90",
+          "mean_abs_coef_when_selected": 0.3758892165837151,
+          "mean_coef_when_selected": 0.3758892165837151,
+          "negative_folds": 0,
+          "positive_folds": 3,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "pc_tr_Uranus_Venus_a90",
+          "mean_abs_coef_when_selected": 0.37181806380230187,
+          "mean_coef_when_selected": 0.37181806380230187,
+          "negative_folds": 0,
+          "positive_folds": 3,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_pr_Mars_Jupiter_a90",
+          "mean_abs_coef_when_selected": 0.36686806466246,
+          "mean_coef_when_selected": -0.36686806466246,
+          "negative_folds": 3,
+          "positive_folds": 0,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "pc_tr_Uranus_Mars_a120",
+          "mean_abs_coef_when_selected": 0.3663553878573573,
+          "mean_coef_when_selected": -0.3663553878573573,
+          "negative_folds": 3,
+          "positive_folds": 0,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Saturn_Mercury_a0",
+          "mean_abs_coef_when_selected": 0.3427912051106252,
+          "mean_coef_when_selected": 0.3427912051106252,
+          "negative_folds": 0,
+          "positive_folds": 3,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "pc_tr_Saturn_Mercury_a60",
+          "mean_abs_coef_when_selected": 0.3205805242055906,
+          "mean_coef_when_selected": 0.3205805242055906,
+          "negative_folds": 0,
+          "positive_folds": 3,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "pc_tr_Pluto_Mars_a60",
+          "mean_abs_coef_when_selected": 0.316287794801469,
+          "mean_coef_when_selected": 0.316287794801469,
+          "negative_folds": 0,
+          "positive_folds": 3,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Pluto_Saturn_a90",
+          "mean_abs_coef_when_selected": 0.3114256817878382,
+          "mean_coef_when_selected": -0.3114256817878382,
+          "negative_folds": 3,
+          "positive_folds": 0,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_pr_Venus_Mercury_a0",
+          "mean_abs_coef_when_selected": 0.30828905549260566,
+          "mean_coef_when_selected": 0.30828905549260566,
+          "negative_folds": 0,
+          "positive_folds": 3,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Neptune_Mercury_a90",
+          "mean_abs_coef_when_selected": 0.2934776371278927,
+          "mean_coef_when_selected": -0.2934776371278927,
+          "negative_folds": 3,
+          "positive_folds": 0,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "pc_tr_Uranus_Mars_a0",
+          "mean_abs_coef_when_selected": 0.2916100514042582,
+          "mean_coef_when_selected": -0.2916100514042582,
+          "negative_folds": 3,
+          "positive_folds": 0,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Pluto_Saturn_a120",
+          "mean_abs_coef_when_selected": 0.2755967258640479,
+          "mean_coef_when_selected": -0.2755967258640479,
+          "negative_folds": 3,
+          "positive_folds": 0,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_pr_Mars_Sun_a0",
+          "mean_abs_coef_when_selected": 0.2747887313603952,
+          "mean_coef_when_selected": 0.2747887313603952,
+          "negative_folds": 0,
+          "positive_folds": 3,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Saturn_Mercury_a0",
+          "mean_abs_coef_when_selected": 0.2740079349498768,
+          "mean_coef_when_selected": -0.2740079349498768,
+          "negative_folds": 3,
+          "positive_folds": 0,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "pc_tr_Neptune_Mars_a180",
+          "mean_abs_coef_when_selected": 0.2660816540457354,
+          "mean_coef_when_selected": 0.2660816540457354,
+          "negative_folds": 0,
+          "positive_folds": 3,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Neptune_Mars_a0",
+          "mean_abs_coef_when_selected": 0.2651332093402528,
+          "mean_coef_when_selected": 0.2651332093402528,
+          "negative_folds": 0,
+          "positive_folds": 3,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_pr_Sun_Mercury_a0",
+          "mean_abs_coef_when_selected": 0.261907257205215,
+          "mean_coef_when_selected": 0.261907257205215,
+          "negative_folds": 0,
+          "positive_folds": 3,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Uranus_Sun_a60",
+          "mean_abs_coef_when_selected": 0.2515029464483946,
+          "mean_coef_when_selected": 0.2515029464483946,
+          "negative_folds": 0,
+          "positive_folds": 3,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Saturn_Mars_a90",
+          "mean_abs_coef_when_selected": 0.24910027835632195,
+          "mean_coef_when_selected": -0.24910027835632195,
+          "negative_folds": 3,
+          "positive_folds": 0,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "pc_tr_Neptune_Mars_a120",
+          "mean_abs_coef_when_selected": 0.24169405793472235,
+          "mean_coef_when_selected": -0.24169405793472235,
+          "negative_folds": 3,
+          "positive_folds": 0,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Uranus_Jupiter_a60",
+          "mean_abs_coef_when_selected": 0.23932949075650445,
+          "mean_coef_when_selected": -0.23932949075650445,
+          "negative_folds": 3,
+          "positive_folds": 0,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m0_age_a",
+          "mean_abs_coef_when_selected": 0.2346322069397365,
+          "mean_coef_when_selected": -0.2346322069397365,
+          "negative_folds": 3,
+          "positive_folds": 0,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_pr_Mercury_Mars_a120",
+          "mean_abs_coef_when_selected": 0.23168752117311564,
+          "mean_coef_when_selected": -0.23168752117311564,
+          "negative_folds": 3,
+          "positive_folds": 0,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        }
+      ],
+      "tie_handling": "neutral_average_rank",
+      "top1_rate": 0.011904761904761904,
+      "top3_rate": 0.09523809523809523
     },
     "XPROGHR": {
       "clears_frozen_promising_threshold": false,
-      "delta_mean_percentile_vs_M1HR": 0.0,
-      "delta_softmax_loss_vs_M1HR": 0.0,
+      "delta_mean_percentile_vs_M1HR": 1.7265006542428054,
+      "delta_softmax_loss_vs_M1HR": -0.46320932150134153,
       "events": 84,
       "feature_count": 863,
       "fold_percentile_deltas_vs_M1HR": [
+        7.5395927601810016,
         0.0,
+        -2.038794136075481,
         0.0,
-        0.0,
-        0.0,
-        0.0
+        2.9102167182662555
       ],
-      "mean_reciprocal_rank": 1.0,
-      "mean_true_date_percentile": 100.0,
+      "mean_reciprocal_rank": 0.1763084433959677,
+      "mean_true_date_percentile": 49.38963431700329,
       "mean_true_date_percentile_by_fold": [
-        100.0,
-        100.0,
-        100.0,
-        100.0,
-        100.0
+        54.16271636859873,
+        50.0,
+        47.96120586392452,
+        37.76153032857185,
+        56.97869382079909
       ],
-      "median_true_date_percentile": 100.0,
+      "median_true_date_percentile": 50.0,
       "model": "XPROGHR",
       "nonzero_feature_count_by_fold": [
+        239,
         0,
-        0,
-        0,
-        0,
-        0
+        247,
+        8,
+        7
       ],
       "outer_folds": 5,
-      "positive_improvement_folds": 0,
+      "positive_improvement_folds": 2,
       "selected_C_by_fold": [
+        0.1,
         0.001,
-        0.001,
-        0.001,
-        0.001,
-        0.001
+        0.1,
+        0.01,
+        0.01
       ],
-      "softmax_log_loss": 2.8803738114851276,
-      "stable_selected_features": [],
-      "top1_rate": 1.0,
-      "top3_rate": 1.0
+      "softmax_log_loss": 3.414358008883237,
+      "stable_selected_features": [
+        {
+          "feature": "m1_b_tr_Jupiter_Saturn_a90",
+          "mean_abs_coef_when_selected": 0.1367677937553853,
+          "mean_coef_when_selected": 0.1367677937553853,
+          "negative_folds": 0,
+          "positive_folds": 4,
+          "selected_folds": 4,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Saturn_Mercury_a0",
+          "mean_abs_coef_when_selected": 0.13137817934897672,
+          "mean_coef_when_selected": 0.13137817934897672,
+          "negative_folds": 0,
+          "positive_folds": 4,
+          "selected_folds": 4,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Uranus_Saturn_a120",
+          "mean_abs_coef_when_selected": 0.10938966418805958,
+          "mean_coef_when_selected": 0.10938966418805958,
+          "negative_folds": 0,
+          "positive_folds": 4,
+          "selected_folds": 4,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_pr_Mars_Venus_a90",
+          "mean_abs_coef_when_selected": 0.057948206302249616,
+          "mean_coef_when_selected": 0.057948206302249616,
+          "negative_folds": 0,
+          "positive_folds": 4,
+          "selected_folds": 4,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Neptune_Mars_a0",
+          "mean_abs_coef_when_selected": 0.05445347383274491,
+          "mean_coef_when_selected": 0.05445347383274491,
+          "negative_folds": 0,
+          "positive_folds": 4,
+          "selected_folds": 4,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Saturn_Sun_a90",
+          "mean_abs_coef_when_selected": 0.18746221117803594,
+          "mean_coef_when_selected": 0.18746221117803594,
+          "negative_folds": 0,
+          "positive_folds": 3,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Uranus_Sun_a60",
+          "mean_abs_coef_when_selected": 0.15661335522749728,
+          "mean_coef_when_selected": 0.15661335522749728,
+          "negative_folds": 0,
+          "positive_folds": 3,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "xp_pa_pb_Mercury_Sun_a180",
+          "mean_abs_coef_when_selected": 0.12332834629635414,
+          "mean_coef_when_selected": 0.12332834629635414,
+          "negative_folds": 0,
+          "positive_folds": 3,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "xp_pa_nb_Mercury_Mercury_a60",
+          "mean_abs_coef_when_selected": 0.08504637759014504,
+          "mean_coef_when_selected": 0.08504637759014504,
+          "negative_folds": 0,
+          "positive_folds": 3,
+          "selected_folds": 3,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Pluto_Jupiter_a60",
+          "mean_abs_coef_when_selected": 0.31992625242765427,
+          "mean_coef_when_selected": 0.31992625242765427,
+          "negative_folds": 0,
+          "positive_folds": 2,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "xp_pa_pb_Venus_Mercury_a120",
+          "mean_abs_coef_when_selected": 0.25843260906492127,
+          "mean_coef_when_selected": 0.25843260906492127,
+          "negative_folds": 0,
+          "positive_folds": 2,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Saturn_Jupiter_a60",
+          "mean_abs_coef_when_selected": 0.2563580034718959,
+          "mean_coef_when_selected": 0.2563580034718959,
+          "negative_folds": 0,
+          "positive_folds": 2,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_pr_Venus_Saturn_a0",
+          "mean_abs_coef_when_selected": 0.24802227920864633,
+          "mean_coef_when_selected": 0.24802227920864633,
+          "negative_folds": 0,
+          "positive_folds": 2,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "xp_pa_pb_Sun_Venus_a90",
+          "mean_abs_coef_when_selected": 0.22925031828162293,
+          "mean_coef_when_selected": -0.22925031828162293,
+          "negative_folds": 2,
+          "positive_folds": 0,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Neptune_Mercury_a60",
+          "mean_abs_coef_when_selected": 0.2267296874403931,
+          "mean_coef_when_selected": 0.2267296874403931,
+          "negative_folds": 0,
+          "positive_folds": 2,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "xp_pb_na_Sun_Mercury_a120",
+          "mean_abs_coef_when_selected": 0.2191487532699299,
+          "mean_coef_when_selected": 0.2191487532699299,
+          "negative_folds": 0,
+          "positive_folds": 2,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Jupiter_Venus_a60",
+          "mean_abs_coef_when_selected": 0.19339879557689965,
+          "mean_coef_when_selected": -0.19339879557689965,
+          "negative_folds": 2,
+          "positive_folds": 0,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "xp_pa_pb_Mars_Mars_a120",
+          "mean_abs_coef_when_selected": 0.18943803939813703,
+          "mean_coef_when_selected": 0.18943803939813703,
+          "negative_folds": 0,
+          "positive_folds": 2,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "xp_pa_pb_Mercury_Venus_a90",
+          "mean_abs_coef_when_selected": 0.1869892321563249,
+          "mean_coef_when_selected": 0.1869892321563249,
+          "negative_folds": 0,
+          "positive_folds": 2,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Neptune_Mercury_a90",
+          "mean_abs_coef_when_selected": 0.17443530806354515,
+          "mean_coef_when_selected": -0.17443530806354515,
+          "negative_folds": 2,
+          "positive_folds": 0,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_pr_Mercury_Sun_a0",
+          "mean_abs_coef_when_selected": 0.17414906766713245,
+          "mean_coef_when_selected": 0.17414906766713245,
+          "negative_folds": 0,
+          "positive_folds": 2,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Pluto_Saturn_a0",
+          "mean_abs_coef_when_selected": 0.17156018103404946,
+          "mean_coef_when_selected": 0.17156018103404946,
+          "negative_folds": 0,
+          "positive_folds": 2,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_b_tr_Pluto_Mercury_a0",
+          "mean_abs_coef_when_selected": 0.17144626763164472,
+          "mean_coef_when_selected": 0.17144626763164472,
+          "negative_folds": 0,
+          "positive_folds": 2,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "xp_pb_na_Sun_Mars_a90",
+          "mean_abs_coef_when_selected": 0.17085002099776866,
+          "mean_coef_when_selected": 0.17085002099776866,
+          "negative_folds": 0,
+          "positive_folds": 2,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Saturn_Saturn_a0",
+          "mean_abs_coef_when_selected": 0.1690512668406379,
+          "mean_coef_when_selected": 0.1690512668406379,
+          "negative_folds": 0,
+          "positive_folds": 2,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "xp_pa_nb_Mercury_Mars_a0",
+          "mean_abs_coef_when_selected": 0.1662637606182091,
+          "mean_coef_when_selected": 0.1662637606182091,
+          "negative_folds": 0,
+          "positive_folds": 2,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_pr_Venus_Jupiter_a120",
+          "mean_abs_coef_when_selected": 0.16573174996134798,
+          "mean_coef_when_selected": -0.16573174996134798,
+          "negative_folds": 2,
+          "positive_folds": 0,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Pluto_Jupiter_a60",
+          "mean_abs_coef_when_selected": 0.16259601916256844,
+          "mean_coef_when_selected": 0.16259601916256844,
+          "negative_folds": 0,
+          "positive_folds": 2,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "m1_a_tr_Saturn_Saturn_a120",
+          "mean_abs_coef_when_selected": 0.1619792846767124,
+          "mean_coef_when_selected": -0.1619792846767124,
+          "negative_folds": 2,
+          "positive_folds": 0,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        },
+        {
+          "feature": "xp_pa_nb_Mars_Venus_a0",
+          "mean_abs_coef_when_selected": 0.16194945931653332,
+          "mean_coef_when_selected": 0.16194945931653332,
+          "negative_folds": 0,
+          "positive_folds": 2,
+          "selected_folds": 2,
+          "sign_consistent": true,
+          "total_folds": 5
+        }
+      ],
+      "tie_handling": "neutral_average_rank",
+      "top1_rate": 0.05952380952380952,
+      "top3_rate": 0.09523809523809523
     }
   },
   "source": "https://www.astro.com/adbexport/c_sample.xml",
