@@ -1,0 +1,4287 @@
+{
+  "P1534_cause_qids": [
+    "Q24037741",
+    "Q4",
+    "Q93190",
+    "Q99521170"
+  ],
+  "P1534_english_labels": {
+    "Q24037741": "death of subject's spouse",
+    "Q4": "death",
+    "Q93190": "divorce",
+    "Q99521170": "death of subject"
+  },
+  "P1534_label_occurrences_on_exact_pair_statements": {
+    "death": 1,
+    "death of subject": 5,
+    "death of subject's spouse": 6,
+    "divorce": 17
+  },
+  "endpoint_counts": {
+    "clean_rung2_baseline_endpoint_pairs": 28,
+    "pairs_newly_gaining_endpoint_from_rung3": 0,
+    "total_clean_endpoint_pairs_after_rung3": 28
+  },
+  "exact_pair_P26_P451_statements": 88,
+  "ladder_freeze": "reference/research/adb_exact_pair_state_history_source_ladder_freeze_v3.md",
+  "ladder_freeze_sha256": "73ca2da5be3354fc962bd8607ebe7f7f8ca7a0c4549794a1075241d6afb5bb2f",
+  "limitations": [
+    "Only exact Wikidata QIDs inherited from the frozen ADB->English-Wikipedia identity chain are used; no Wikidata search occurs.",
+    "Only P26/P451 exact opposite-partner statements and P580/P582/P1534 qualifiers are inspected.",
+    "A new nonfatal endpoint requires a usable P582 plus an exact P1534 English label in the frozen nonfatal lexical families.",
+    "End times without qualifying end cause do not create new endpoint-bearing pairs.",
+    "No astrology or Human Design features are calculated or inspected."
+  ],
+  "linked_wikidata_qids": 103,
+  "pair_universe": 64,
+  "pairs": [
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": false,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [],
+          "end_time": {
+            "reason": "no_usable_end_time",
+            "usable": false,
+            "values": []
+          },
+          "nonqualification_reason": "no_usable_end_time",
+          "other_qid": "Q3525391",
+          "relationship_property": "P26",
+          "source_qid": "Q193628",
+          "statement_rank": "preferred",
+          "status": "nonqualifying"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [],
+          "end_time": {
+            "reason": "no_usable_end_time",
+            "usable": false,
+            "values": []
+          },
+          "nonqualification_reason": "no_usable_end_time",
+          "other_qid": "Q193628",
+          "relationship_property": "P26",
+          "source_qid": "Q3525391",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        }
+      ],
+      "pair_key": "adb:60355|adb:101321"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": false,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [
+            {
+              "english_label": "death of subject's spouse",
+              "matches_fatal_conflict_family": true,
+              "matches_nonfatal_family": false,
+              "normalized_label": "death of subject s spouse",
+              "qid": "Q24037741"
+            }
+          ],
+          "end_time": {
+            "interval_end": "1969-10-29",
+            "interval_start": "1969-10-29",
+            "precision": "day",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1969-10-29",
+                "interval_start": "1969-10-29",
+                "precision": "day",
+                "precision_value": 11,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 11,
+                      "time": "+1969-10-29T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "8376070e4361d4d55517d5ceba9659d563bdeee2",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1969-10-29T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1969-10-29",
+          "interval_start": "1969-10-29",
+          "nonqualification_reason": "fatal_nonfatal_cause_conflict_or_fatal_cause",
+          "other_qid": "Q887589",
+          "precision": "day",
+          "relationship_property": "P26",
+          "source_qid": "Q106072112",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [],
+          "end_time": {
+            "reason": "no_usable_end_time",
+            "usable": false,
+            "values": []
+          },
+          "nonqualification_reason": "no_usable_end_time",
+          "other_qid": "Q106072112",
+          "relationship_property": "P26",
+          "source_qid": "Q887589",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        }
+      ],
+      "pair_key": "adb:69473|adb:104188"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 0,
+      "had_clean_through_rung2_endpoint": false,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [],
+      "pair_key": "adb:5996|adb:106360"
+    },
+    {
+      "corroborating_wikidata_endpoints": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [
+            {
+              "english_label": "divorce",
+              "matches_fatal_conflict_family": false,
+              "matches_nonfatal_family": true,
+              "normalized_label": "divorce",
+              "qid": "Q93190"
+            }
+          ],
+          "end_time": {
+            "interval_end": "1996-08-28",
+            "interval_start": "1996-08-28",
+            "precision": "day",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1996-08-28",
+                "interval_start": "1996-08-28",
+                "precision": "day",
+                "precision_value": 11,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 11,
+                      "time": "+1996-08-28T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "7cc7c27c8aacea2d92a7b030d37b25bdabe3654d",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1996-08-28T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1996-08-28",
+          "interval_start": "1996-08-28",
+          "other_qid": "Q9685",
+          "precision": "day",
+          "relationship_property": "P26",
+          "source_qid": "Q43274",
+          "statement_rank": "normal",
+          "status": "corroborates_higher_precedence_endpoint"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [
+            {
+              "english_label": "divorce",
+              "matches_fatal_conflict_family": false,
+              "matches_nonfatal_family": true,
+              "normalized_label": "divorce",
+              "qid": "Q93190"
+            }
+          ],
+          "end_time": {
+            "interval_end": "1996-08-28",
+            "interval_start": "1996-08-28",
+            "precision": "day",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1996-08-28",
+                "interval_start": "1996-08-28",
+                "precision": "day",
+                "precision_value": 11,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 11,
+                      "time": "+1996-08-28T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "7cc7c27c8aacea2d92a7b030d37b25bdabe3654d",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1996-08-28T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1996-08-28",
+          "interval_start": "1996-08-28",
+          "other_qid": "Q43274",
+          "precision": "day",
+          "relationship_property": "P26",
+          "source_qid": "Q9685",
+          "statement_rank": "normal",
+          "status": "corroborates_higher_precedence_endpoint"
+        }
+      ],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": true,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [],
+      "pair_key": "adb:474|adb:11103"
+    },
+    {
+      "corroborating_wikidata_endpoints": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [],
+          "end_time": {
+            "interval_end": "1999-12-31",
+            "interval_start": "1999-01-01",
+            "precision": "year",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1999-12-31",
+                "interval_start": "1999-01-01",
+                "precision": "year",
+                "precision_value": 9,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 9,
+                      "time": "+1999-01-01T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "fe8ff5362cc7f32417562fe31c232a98813ca0d6",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1999-01-01T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1999-12-31",
+          "interval_start": "1999-01-01",
+          "other_qid": "Q76717",
+          "precision": "year",
+          "relationship_property": "P451",
+          "source_qid": "Q139637",
+          "statement_rank": "normal",
+          "status": "corroborates_higher_precedence_endpoint"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [],
+          "end_time": {
+            "interval_end": "1999-12-31",
+            "interval_start": "1999-01-01",
+            "precision": "year",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1999-12-31",
+                "interval_start": "1999-01-01",
+                "precision": "year",
+                "precision_value": 9,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 9,
+                      "time": "+1999-00-00T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "bed902185081cc6727fa1f0a6570e225bc5dc7d4",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1999-00-00T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1999-12-31",
+          "interval_start": "1999-01-01",
+          "other_qid": "Q139637",
+          "precision": "year",
+          "relationship_property": "P451",
+          "source_qid": "Q76717",
+          "statement_rank": "normal",
+          "status": "corroborates_higher_precedence_endpoint"
+        }
+      ],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": true,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [],
+      "pair_key": "adb:13047|adb:19803"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 0,
+      "had_clean_through_rung2_endpoint": false,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [],
+      "pair_key": "adb:13089|adb:13581"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 0,
+      "had_clean_through_rung2_endpoint": true,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [],
+      "pair_key": "adb:8584|adb:13089"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": true,
+      "new_rung3_nonfatal_endpoints": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [
+            {
+              "english_label": "divorce",
+              "matches_fatal_conflict_family": false,
+              "matches_nonfatal_family": true,
+              "normalized_label": "divorce",
+              "qid": "Q93190"
+            }
+          ],
+          "end_time": {
+            "interval_end": "2004-05-24",
+            "interval_start": "2004-05-24",
+            "precision": "day",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "2004-05-24",
+                "interval_start": "2004-05-24",
+                "precision": "day",
+                "precision_value": 11,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 11,
+                      "time": "+2004-05-24T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "0f7dcc2ad2295470eb65d46e5bfaf32f20b70a4e",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+2004-05-24T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "2004-05-24",
+          "interval_start": "2004-05-24",
+          "other_qid": "Q42869",
+          "precision": "day",
+          "relationship_property": "P26",
+          "source_qid": "Q237324",
+          "statement_rank": "normal",
+          "status": "new_rung3_nonfatal_endpoint"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [
+            {
+              "english_label": "divorce",
+              "matches_fatal_conflict_family": false,
+              "matches_nonfatal_family": true,
+              "normalized_label": "divorce",
+              "qid": "Q93190"
+            }
+          ],
+          "end_time": {
+            "interval_end": "2004-05-24",
+            "interval_start": "2004-05-24",
+            "precision": "day",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "2004-05-24",
+                "interval_start": "2004-05-24",
+                "precision": "day",
+                "precision_value": 11,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 11,
+                      "time": "+2004-05-24T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "0f7dcc2ad2295470eb65d46e5bfaf32f20b70a4e",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+2004-05-24T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "2004-05-24",
+          "interval_start": "2004-05-24",
+          "other_qid": "Q237324",
+          "precision": "day",
+          "relationship_property": "P26",
+          "source_qid": "Q42869",
+          "statement_rank": "normal",
+          "status": "new_rung3_nonfatal_endpoint"
+        }
+      ],
+      "nonqualifying_wikidata_statements": [],
+      "pair_key": "adb:14274|adb:19401"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": true,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [],
+          "end_time": {
+            "interval_end": "2023-12-31",
+            "interval_start": "2023-01-01",
+            "precision": "year",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "2023-12-31",
+                "interval_start": "2023-01-01",
+                "precision": "year",
+                "precision_value": 9,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 9,
+                      "time": "+2023-00-00T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "f2a04c4f9ed9438562e6f7da0e4630b5af466a61",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+2023-00-00T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "2023-12-31",
+          "interval_start": "2023-01-01",
+          "nonqualification_reason": "no_P1534_end_cause",
+          "other_qid": "Q3028141",
+          "precision": "year",
+          "relationship_property": "P26",
+          "source_qid": "Q853781",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [],
+          "end_time": {
+            "reason": "no_usable_end_time",
+            "usable": false,
+            "values": []
+          },
+          "nonqualification_reason": "no_usable_end_time",
+          "other_qid": "Q853781",
+          "relationship_property": "P26",
+          "source_qid": "Q3028141",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        }
+      ],
+      "pair_key": "adb:15074|adb:68650"
+    },
+    {
+      "corroborating_wikidata_endpoints": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [
+            {
+              "english_label": "divorce",
+              "matches_fatal_conflict_family": false,
+              "matches_nonfatal_family": true,
+              "normalized_label": "divorce",
+              "qid": "Q93190"
+            }
+          ],
+          "end_time": {
+            "interval_end": "2023-12-31",
+            "interval_start": "2023-12-01",
+            "precision": "month",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "2023-12-31",
+                "interval_start": "2023-12-01",
+                "precision": "month",
+                "precision_value": 10,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 10,
+                      "time": "+2023-12-00T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "2307bda366f1a1b9e4307f071685df590aeb3641",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+2023-12-00T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "2023-12-31",
+          "interval_start": "2023-12-01",
+          "other_qid": "Q356560",
+          "precision": "month",
+          "relationship_property": "P26",
+          "source_qid": "Q230580",
+          "statement_rank": "normal",
+          "status": "corroborates_higher_precedence_endpoint"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [
+            {
+              "english_label": "divorce",
+              "matches_fatal_conflict_family": false,
+              "matches_nonfatal_family": true,
+              "normalized_label": "divorce",
+              "qid": "Q93190"
+            }
+          ],
+          "end_time": {
+            "interval_end": "2023-12-31",
+            "interval_start": "2023-12-01",
+            "precision": "month",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "2023-12-31",
+                "interval_start": "2023-12-01",
+                "precision": "month",
+                "precision_value": 10,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 10,
+                      "time": "+2023-12-00T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "2307bda366f1a1b9e4307f071685df590aeb3641",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+2023-12-00T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "2023-12-31",
+          "interval_start": "2023-12-01",
+          "other_qid": "Q230580",
+          "precision": "month",
+          "relationship_property": "P26",
+          "source_qid": "Q356560",
+          "statement_rank": "normal",
+          "status": "corroborates_higher_precedence_endpoint"
+        }
+      ],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": true,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [],
+      "pair_key": "adb:19367|adb:39157"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": false,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [
+            {
+              "english_label": "death of subject",
+              "matches_fatal_conflict_family": true,
+              "matches_nonfatal_family": false,
+              "normalized_label": "death of subject",
+              "qid": "Q99521170"
+            }
+          ],
+          "end_time": {
+            "interval_end": "1994-04-05",
+            "interval_start": "1994-04-05",
+            "precision": "day",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1994-04-05",
+                "interval_start": "1994-04-05",
+                "precision": "day",
+                "precision_value": 11,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 11,
+                      "time": "+1994-04-05T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "d80f373872e2774776eb64fa4b5a97f10a1388f6",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1994-04-05T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1994-04-05",
+          "interval_start": "1994-04-05",
+          "nonqualification_reason": "fatal_nonfatal_cause_conflict_or_fatal_cause",
+          "other_qid": "Q222071",
+          "precision": "day",
+          "relationship_property": "P26",
+          "source_qid": "Q8446",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [
+            {
+              "english_label": "death of subject's spouse",
+              "matches_fatal_conflict_family": true,
+              "matches_nonfatal_family": false,
+              "normalized_label": "death of subject s spouse",
+              "qid": "Q24037741"
+            }
+          ],
+          "end_time": {
+            "interval_end": "1994-04-05",
+            "interval_start": "1994-04-05",
+            "precision": "day",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1994-04-05",
+                "interval_start": "1994-04-05",
+                "precision": "day",
+                "precision_value": 11,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 11,
+                      "time": "+1994-04-05T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "d80f373872e2774776eb64fa4b5a97f10a1388f6",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1994-04-05T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1994-04-05",
+          "interval_start": "1994-04-05",
+          "nonqualification_reason": "fatal_nonfatal_cause_conflict_or_fatal_cause",
+          "other_qid": "Q8446",
+          "precision": "day",
+          "relationship_property": "P26",
+          "source_qid": "Q222071",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        }
+      ],
+      "pair_key": "adb:19568|adb:25724"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": false,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [],
+          "end_time": {
+            "reason": "no_usable_end_time",
+            "usable": false,
+            "values": []
+          },
+          "nonqualification_reason": "no_usable_end_time",
+          "other_qid": "Q355197",
+          "relationship_property": "P26",
+          "source_qid": "Q120533",
+          "statement_rank": "preferred",
+          "status": "nonqualifying"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [],
+          "end_time": {
+            "reason": "no_usable_end_time",
+            "usable": false,
+            "values": []
+          },
+          "nonqualification_reason": "no_usable_end_time",
+          "other_qid": "Q120533",
+          "relationship_property": "P26",
+          "source_qid": "Q355197",
+          "statement_rank": "preferred",
+          "status": "nonqualifying"
+        }
+      ],
+      "pair_key": "adb:19580|adb:76816"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": false,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [
+            {
+              "english_label": "death of subject's spouse",
+              "matches_fatal_conflict_family": true,
+              "matches_nonfatal_family": false,
+              "normalized_label": "death of subject s spouse",
+              "qid": "Q24037741"
+            }
+          ],
+          "end_time": {
+            "interval_end": "2019-09-26",
+            "interval_start": "2019-09-26",
+            "precision": "day",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "2019-09-26",
+                "interval_start": "2019-09-26",
+                "precision": "day",
+                "precision_value": 11,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 11,
+                      "time": "+2019-09-26T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "8dfd29ae21c80fe10df73944bcb4669d47f0a5ba",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+2019-09-26T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "2019-09-26",
+          "interval_start": "2019-09-26",
+          "nonqualification_reason": "fatal_nonfatal_cause_conflict_or_fatal_cause",
+          "other_qid": "Q2105",
+          "precision": "day",
+          "relationship_property": "P26",
+          "source_qid": "Q431115",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [
+            {
+              "english_label": "death of subject",
+              "matches_fatal_conflict_family": true,
+              "matches_nonfatal_family": false,
+              "normalized_label": "death of subject",
+              "qid": "Q99521170"
+            }
+          ],
+          "end_time": {
+            "interval_end": "2019-09-26",
+            "interval_start": "2019-09-26",
+            "precision": "day",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "2019-09-26",
+                "interval_start": "2019-09-26",
+                "precision": "day",
+                "precision_value": 11,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 11,
+                      "time": "+2019-09-26T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "8dfd29ae21c80fe10df73944bcb4669d47f0a5ba",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+2019-09-26T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "2019-09-26",
+          "interval_start": "2019-09-26",
+          "nonqualification_reason": "fatal_nonfatal_cause_conflict_or_fatal_cause",
+          "other_qid": "Q431115",
+          "precision": "day",
+          "relationship_property": "P26",
+          "source_qid": "Q2105",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        }
+      ],
+      "pair_key": "adb:7157|adb:19604"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 0,
+      "had_clean_through_rung2_endpoint": false,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [],
+      "pair_key": "adb:19605|adb:39278"
+    },
+    {
+      "corroborating_wikidata_endpoints": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [],
+          "end_time": {
+            "interval_end": "2010-03-11",
+            "interval_start": "2010-03-11",
+            "precision": "day",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "2010-03-11",
+                "interval_start": "2010-03-11",
+                "precision": "day",
+                "precision_value": 11,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 11,
+                      "time": "+2010-03-11T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "6934523e14141c9b07e9468c93d94057302abc5b",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+2010-03-11T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "2010-03-11",
+          "interval_start": "2010-03-11",
+          "other_qid": "Q194280",
+          "precision": "day",
+          "relationship_property": "P26",
+          "source_qid": "Q3073238",
+          "statement_rank": "normal",
+          "status": "corroborates_higher_precedence_endpoint"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [],
+          "end_time": {
+            "interval_end": "2010-03-11",
+            "interval_start": "2010-03-11",
+            "precision": "day",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "2010-03-11",
+                "interval_start": "2010-03-11",
+                "precision": "day",
+                "precision_value": 11,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 11,
+                      "time": "+2010-03-11T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "6934523e14141c9b07e9468c93d94057302abc5b",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+2010-03-11T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "2010-03-11",
+          "interval_start": "2010-03-11",
+          "other_qid": "Q3073238",
+          "precision": "day",
+          "relationship_property": "P26",
+          "source_qid": "Q194280",
+          "statement_rank": "normal",
+          "status": "corroborates_higher_precedence_endpoint"
+        }
+      ],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": true,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [],
+      "pair_key": "adb:244|adb:19799"
+    },
+    {
+      "corroborating_wikidata_endpoints": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [],
+          "end_time": {
+            "interval_end": "1968-12-31",
+            "interval_start": "1968-01-01",
+            "precision": "year",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1968-12-31",
+                "interval_start": "1968-01-01",
+                "precision": "year",
+                "precision_value": 9,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 9,
+                      "time": "+1968-01-01T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "e7e233257ce32e3b8bcc6c2172ebeeb21bc7d165",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1968-01-01T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1968-12-31",
+          "interval_start": "1968-01-01",
+          "other_qid": "Q66408",
+          "precision": "year",
+          "relationship_property": "P26",
+          "source_qid": "Q162389",
+          "statement_rank": "normal",
+          "status": "corroborates_higher_precedence_endpoint"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [],
+          "end_time": {
+            "interval_end": "1968-12-31",
+            "interval_start": "1968-01-01",
+            "precision": "year",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1968-12-31",
+                "interval_start": "1968-01-01",
+                "precision": "year",
+                "precision_value": 9,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 9,
+                      "time": "+1968-01-01T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "e7e233257ce32e3b8bcc6c2172ebeeb21bc7d165",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1968-01-01T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1968-12-31",
+          "interval_start": "1968-01-01",
+          "other_qid": "Q162389",
+          "precision": "year",
+          "relationship_property": "P26",
+          "source_qid": "Q66408",
+          "statement_rank": "normal",
+          "status": "corroborates_higher_precedence_endpoint"
+        }
+      ],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": true,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [],
+      "pair_key": "adb:238|adb:55779"
+    },
+    {
+      "corroborating_wikidata_endpoints": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [],
+          "end_time": {
+            "interval_end": "1962-12-31",
+            "interval_start": "1962-01-01",
+            "precision": "year",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1962-12-31",
+                "interval_start": "1962-01-01",
+                "precision": "year",
+                "precision_value": 9,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 9,
+                      "time": "+1962-01-01T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "1ae017ffc01b384c1d2ed03bf42a4ad9f96a401e",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1962-01-01T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1962-12-31",
+          "interval_start": "1962-01-01",
+          "other_qid": "Q205314",
+          "precision": "year",
+          "relationship_property": "P26",
+          "source_qid": "Q162389",
+          "statement_rank": "normal",
+          "status": "corroborates_higher_precedence_endpoint"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [],
+          "end_time": {
+            "interval_end": "1962-12-31",
+            "interval_start": "1962-01-01",
+            "precision": "year",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1962-12-31",
+                "interval_start": "1962-01-01",
+                "precision": "year",
+                "precision_value": 9,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 9,
+                      "time": "+1962-01-01T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "1ae017ffc01b384c1d2ed03bf42a4ad9f96a401e",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1962-01-01T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1962-12-31",
+          "interval_start": "1962-01-01",
+          "other_qid": "Q162389",
+          "precision": "year",
+          "relationship_property": "P26",
+          "source_qid": "Q205314",
+          "statement_rank": "normal",
+          "status": "corroborates_higher_precedence_endpoint"
+        }
+      ],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": true,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [],
+      "pair_key": "adb:238|adb:6281"
+    },
+    {
+      "corroborating_wikidata_endpoints": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [
+            {
+              "english_label": "divorce",
+              "matches_fatal_conflict_family": false,
+              "matches_nonfatal_family": true,
+              "normalized_label": "divorce",
+              "qid": "Q93190"
+            }
+          ],
+          "end_time": {
+            "interval_end": "1946-12-31",
+            "interval_start": "1946-01-01",
+            "precision": "year",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1946-12-31",
+                "interval_start": "1946-01-01",
+                "precision": "year",
+                "precision_value": 9,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 9,
+                      "time": "+1946-01-01T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "bf319edbf973f7464aba9d42d41620ed2daa08d6",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1946-01-01T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1946-12-31",
+          "interval_start": "1946-01-01",
+          "other_qid": "Q7324974",
+          "precision": "year",
+          "relationship_property": "P26",
+          "source_qid": "Q206856",
+          "statement_rank": "normal",
+          "status": "corroborates_higher_precedence_endpoint"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [],
+          "end_time": {
+            "interval_end": "1946-12-31",
+            "interval_start": "1946-01-01",
+            "precision": "year",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1946-12-31",
+                "interval_start": "1946-01-01",
+                "precision": "year",
+                "precision_value": 9,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 9,
+                      "time": "+1946-01-01T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "bf319edbf973f7464aba9d42d41620ed2daa08d6",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1946-01-01T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1946-12-31",
+          "interval_start": "1946-01-01",
+          "other_qid": "Q206856",
+          "precision": "year",
+          "relationship_property": "P26",
+          "source_qid": "Q7324974",
+          "statement_rank": "normal",
+          "status": "corroborates_higher_precedence_endpoint"
+        }
+      ],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": true,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [],
+      "pair_key": "adb:24590|adb:92708"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 0,
+      "had_clean_through_rung2_endpoint": false,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [],
+      "pair_key": "adb:863|adb:24930"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": false,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [],
+          "end_time": {
+            "reason": "no_usable_end_time",
+            "usable": false,
+            "values": []
+          },
+          "nonqualification_reason": "no_usable_end_time",
+          "other_qid": "Q45068",
+          "relationship_property": "P26",
+          "source_qid": "Q152308",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [],
+          "end_time": {
+            "reason": "no_usable_end_time",
+            "usable": false,
+            "values": []
+          },
+          "nonqualification_reason": "no_usable_end_time",
+          "other_qid": "Q152308",
+          "relationship_property": "P26",
+          "source_qid": "Q45068",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        }
+      ],
+      "pair_key": "adb:25004|adb:25924"
+    },
+    {
+      "corroborating_wikidata_endpoints": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [],
+          "end_time": {
+            "interval_end": "1962-11-20",
+            "interval_start": "1962-11-20",
+            "precision": "day",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1962-11-20",
+                "interval_start": "1962-11-20",
+                "precision": "day",
+                "precision_value": 11,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 11,
+                      "time": "+1962-11-20T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "b0edf5491c42e9a1eef53d4019813969b77bdcfe",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1962-11-20T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1962-11-20",
+          "interval_start": "1962-11-20",
+          "other_qid": "Q36268",
+          "precision": "day",
+          "relationship_property": "P26",
+          "source_qid": "Q1677936",
+          "statement_rank": "normal",
+          "status": "corroborates_higher_precedence_endpoint"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [],
+          "end_time": {
+            "interval_end": "1962-11-20",
+            "interval_start": "1962-11-20",
+            "precision": "day",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1962-11-20",
+                "interval_start": "1962-11-20",
+                "precision": "day",
+                "precision_value": 11,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 11,
+                      "time": "+1962-11-20T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "b0edf5491c42e9a1eef53d4019813969b77bdcfe",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1962-11-20T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1962-11-20",
+          "interval_start": "1962-11-20",
+          "other_qid": "Q1677936",
+          "precision": "day",
+          "relationship_property": "P26",
+          "source_qid": "Q36268",
+          "statement_rank": "normal",
+          "status": "corroborates_higher_precedence_endpoint"
+        }
+      ],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": true,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [],
+      "pair_key": "adb:293|adb:25917"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": false,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [],
+          "end_time": {
+            "reason": "no_usable_end_time",
+            "usable": false,
+            "values": []
+          },
+          "nonqualification_reason": "no_usable_end_time",
+          "other_qid": "Q235812",
+          "relationship_property": "P26",
+          "source_qid": "Q57621",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [],
+          "end_time": {
+            "reason": "no_usable_end_time",
+            "usable": false,
+            "values": []
+          },
+          "nonqualification_reason": "no_usable_end_time",
+          "other_qid": "Q57621",
+          "relationship_property": "P26",
+          "source_qid": "Q235812",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        }
+      ],
+      "pair_key": "adb:26134|adb:79083"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": false,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [],
+          "end_time": {
+            "interval_end": "1993-12-31",
+            "interval_start": "1993-01-01",
+            "precision": "year",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1993-12-31",
+                "interval_start": "1993-01-01",
+                "precision": "year",
+                "precision_value": 9,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 9,
+                      "time": "+1993-01-01T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "13055d377b665cb52660708507c61e292f6e0448",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1993-01-01T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1993-12-31",
+          "interval_start": "1993-01-01",
+          "nonqualification_reason": "no_P1534_end_cause",
+          "other_qid": "Q535548",
+          "precision": "year",
+          "relationship_property": "P26",
+          "source_qid": "Q311293",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [],
+          "end_time": {
+            "interval_end": "1993-12-31",
+            "interval_start": "1993-01-01",
+            "precision": "year",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1993-12-31",
+                "interval_start": "1993-01-01",
+                "precision": "year",
+                "precision_value": 9,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 9,
+                      "time": "+1993-01-01T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "13055d377b665cb52660708507c61e292f6e0448",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1993-01-01T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1993-12-31",
+          "interval_start": "1993-01-01",
+          "nonqualification_reason": "no_P1534_end_cause",
+          "other_qid": "Q311293",
+          "precision": "year",
+          "relationship_property": "P26",
+          "source_qid": "Q535548",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        }
+      ],
+      "pair_key": "adb:26438|adb:72673"
+    },
+    {
+      "corroborating_wikidata_endpoints": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [],
+          "end_time": {
+            "interval_end": "1975-06-26",
+            "interval_start": "1975-06-26",
+            "precision": "day",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1975-06-26",
+                "interval_start": "1975-06-26",
+                "precision": "day",
+                "precision_value": 11,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 11,
+                      "time": "+1975-06-26T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "73f69a1667dca1a1f503b158e6773b35f674b8ca",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1975-06-26T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1975-06-26",
+          "interval_start": "1975-06-26",
+          "other_qid": "Q12003",
+          "precision": "day",
+          "relationship_property": "P26",
+          "source_qid": "Q179150",
+          "statement_rank": "normal",
+          "status": "corroborates_higher_precedence_endpoint"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [
+            {
+              "english_label": "divorce",
+              "matches_fatal_conflict_family": false,
+              "matches_nonfatal_family": true,
+              "normalized_label": "divorce",
+              "qid": "Q93190"
+            }
+          ],
+          "end_time": {
+            "interval_end": "1975-12-31",
+            "interval_start": "1975-01-01",
+            "precision": "year",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1975-12-31",
+                "interval_start": "1975-01-01",
+                "precision": "year",
+                "precision_value": 9,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 9,
+                      "time": "+1975-01-01T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "112c7fc886f6ffac66b139a789934b48a1fbc711",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1975-01-01T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1975-12-31",
+          "interval_start": "1975-01-01",
+          "other_qid": "Q179150",
+          "precision": "year",
+          "relationship_property": "P26",
+          "source_qid": "Q12003",
+          "statement_rank": "normal",
+          "status": "corroborates_higher_precedence_endpoint"
+        }
+      ],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": true,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [],
+      "pair_key": "adb:295|adb:362"
+    },
+    {
+      "corroborating_wikidata_endpoints": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [],
+          "end_time": {
+            "interval_end": "1932-01-18",
+            "interval_start": "1932-01-18",
+            "precision": "day",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1932-01-18",
+                "interval_start": "1932-01-18",
+                "precision": "day",
+                "precision_value": 11,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 11,
+                      "time": "+1932-01-18T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "715fa38d8c35e505d4c0db8199d6898e71503755",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1932-01-18T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1932-01-18",
+          "interval_start": "1932-01-18",
+          "other_qid": "Q3574233",
+          "precision": "day",
+          "relationship_property": "P26",
+          "source_qid": "Q106001",
+          "statement_rank": "normal",
+          "status": "corroborates_higher_precedence_endpoint"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [],
+          "end_time": {
+            "interval_end": "1932-12-31",
+            "interval_start": "1932-01-01",
+            "precision": "year",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1932-12-31",
+                "interval_start": "1932-01-01",
+                "precision": "year",
+                "precision_value": 9,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 9,
+                      "time": "+1932-01-01T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "a43d93148005ded79a541754e7a58388d6bfe913",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1932-01-01T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1932-12-31",
+          "interval_start": "1932-01-01",
+          "other_qid": "Q106001",
+          "precision": "year",
+          "relationship_property": "P26",
+          "source_qid": "Q3574233",
+          "statement_rank": "normal",
+          "status": "corroborates_higher_precedence_endpoint"
+        }
+      ],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": true,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [],
+      "pair_key": "adb:3307|adb:80315"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 0,
+      "had_clean_through_rung2_endpoint": false,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [],
+      "pair_key": "adb:36990|adb:55157"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 0,
+      "had_clean_through_rung2_endpoint": false,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [],
+      "pair_key": "adb:37302|adb:37303"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": false,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [],
+          "end_time": {
+            "reason": "no_usable_end_time",
+            "usable": false,
+            "values": []
+          },
+          "nonqualification_reason": "no_usable_end_time",
+          "other_qid": "Q272191",
+          "relationship_property": "P26",
+          "source_qid": "Q700152",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [],
+          "end_time": {
+            "reason": "no_usable_end_time",
+            "usable": false,
+            "values": []
+          },
+          "nonqualification_reason": "no_usable_end_time",
+          "other_qid": "Q700152",
+          "relationship_property": "P26",
+          "source_qid": "Q272191",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        }
+      ],
+      "pair_key": "adb:39975|adb:49393"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": true,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [],
+          "end_time": {
+            "reason": "no_usable_end_time",
+            "usable": false,
+            "values": []
+          },
+          "nonqualification_reason": "no_usable_end_time",
+          "other_qid": "Q443516",
+          "relationship_property": "P26",
+          "source_qid": "Q125721",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [],
+          "end_time": {
+            "reason": "no_usable_end_time",
+            "usable": false,
+            "values": []
+          },
+          "nonqualification_reason": "no_usable_end_time",
+          "other_qid": "Q125721",
+          "relationship_property": "P26",
+          "source_qid": "Q443516",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        }
+      ],
+      "pair_key": "adb:40046|adb:48891"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": false,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [],
+          "end_time": {
+            "interval_end": "2008-12-31",
+            "interval_start": "2008-01-01",
+            "precision": "year",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "2008-12-31",
+                "interval_start": "2008-01-01",
+                "precision": "year",
+                "precision_value": 9,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 9,
+                      "time": "+2008-01-01T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "8e3e7a2e325ecd15608e03d99ee5f85a09aecd9d",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+2008-01-01T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "2008-12-31",
+          "interval_start": "2008-01-01",
+          "nonqualification_reason": "no_P1534_end_cause",
+          "other_qid": "Q62558",
+          "precision": "year",
+          "relationship_property": "P26",
+          "source_qid": "Q725874",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [],
+          "end_time": {
+            "interval_end": "2008-12-31",
+            "interval_start": "2008-01-01",
+            "precision": "year",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "2008-12-31",
+                "interval_start": "2008-01-01",
+                "precision": "year",
+                "precision_value": 9,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 9,
+                      "time": "+2008-01-01T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "8e3e7a2e325ecd15608e03d99ee5f85a09aecd9d",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+2008-01-01T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "2008-12-31",
+          "interval_start": "2008-01-01",
+          "nonqualification_reason": "no_P1534_end_cause",
+          "other_qid": "Q725874",
+          "precision": "year",
+          "relationship_property": "P26",
+          "source_qid": "Q62558",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        }
+      ],
+      "pair_key": "adb:5515|adb:40327"
+    },
+    {
+      "corroborating_wikidata_endpoints": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [
+            {
+              "english_label": "divorce",
+              "matches_fatal_conflict_family": false,
+              "matches_nonfatal_family": true,
+              "normalized_label": "divorce",
+              "qid": "Q93190"
+            }
+          ],
+          "end_time": {
+            "interval_end": "1973-12-31",
+            "interval_start": "1973-01-01",
+            "precision": "year",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1973-12-31",
+                "interval_start": "1973-01-01",
+                "precision": "year",
+                "precision_value": 9,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 9,
+                      "time": "+1973-01-01T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "1fbe96d10056b2b21a6b977d0c52071e177b0a10",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1973-01-01T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1973-12-31",
+          "interval_start": "1973-01-01",
+          "other_qid": "Q4573",
+          "precision": "year",
+          "relationship_property": "P26",
+          "source_qid": "Q238871",
+          "statement_rank": "normal",
+          "status": "corroborates_higher_precedence_endpoint"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [
+            {
+              "english_label": "divorce",
+              "matches_fatal_conflict_family": false,
+              "matches_nonfatal_family": true,
+              "normalized_label": "divorce",
+              "qid": "Q93190"
+            }
+          ],
+          "end_time": {
+            "interval_end": "1973-12-31",
+            "interval_start": "1973-01-01",
+            "precision": "year",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1973-12-31",
+                "interval_start": "1973-01-01",
+                "precision": "year",
+                "precision_value": 9,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 9,
+                      "time": "+1973-00-00T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "11e14bef27c2bc5c5ad4514218150dba30fb342d",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1973-00-00T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1973-12-31",
+          "interval_start": "1973-01-01",
+          "other_qid": "Q238871",
+          "precision": "year",
+          "relationship_property": "P26",
+          "source_qid": "Q4573",
+          "statement_rank": "normal",
+          "status": "corroborates_higher_precedence_endpoint"
+        }
+      ],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": true,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [],
+      "pair_key": "adb:6790|adb:46200"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 0,
+      "had_clean_through_rung2_endpoint": true,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [],
+      "pair_key": "adb:47237|adb:47241"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": false,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [],
+          "end_time": {
+            "reason": "no_usable_end_time",
+            "usable": false,
+            "values": []
+          },
+          "nonqualification_reason": "no_usable_end_time",
+          "other_qid": "Q3144726",
+          "relationship_property": "P26",
+          "source_qid": "Q315656",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [],
+          "end_time": {
+            "reason": "no_usable_end_time",
+            "usable": false,
+            "values": []
+          },
+          "nonqualification_reason": "no_usable_end_time",
+          "other_qid": "Q315656",
+          "relationship_property": "P26",
+          "source_qid": "Q3144726",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        }
+      ],
+      "pair_key": "adb:47810|adb:80168"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": true,
+      "new_rung3_nonfatal_endpoints": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [
+            {
+              "english_label": "divorce",
+              "matches_fatal_conflict_family": false,
+              "matches_nonfatal_family": true,
+              "normalized_label": "divorce",
+              "qid": "Q93190"
+            }
+          ],
+          "end_time": {
+            "interval_end": "2005-12-31",
+            "interval_start": "2005-01-01",
+            "precision": "year",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "2005-12-31",
+                "interval_start": "2005-01-01",
+                "precision": "year",
+                "precision_value": 9,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 9,
+                      "time": "+2005-00-00T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "873637ae7f17bb28f5dd557da137f00256d6f77e",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+2005-00-00T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "2005-12-31",
+          "interval_start": "2005-01-01",
+          "other_qid": "Q467526",
+          "precision": "year",
+          "relationship_property": "P26",
+          "source_qid": "Q122614",
+          "statement_rank": "normal",
+          "status": "new_rung3_nonfatal_endpoint"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [
+            {
+              "english_label": "divorce",
+              "matches_fatal_conflict_family": false,
+              "matches_nonfatal_family": true,
+              "normalized_label": "divorce",
+              "qid": "Q93190"
+            }
+          ],
+          "end_time": {
+            "interval_end": "2005-12-31",
+            "interval_start": "2005-01-01",
+            "precision": "year",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "2005-12-31",
+                "interval_start": "2005-01-01",
+                "precision": "year",
+                "precision_value": 9,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 9,
+                      "time": "+2005-00-00T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "873637ae7f17bb28f5dd557da137f00256d6f77e",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+2005-00-00T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "2005-12-31",
+          "interval_start": "2005-01-01",
+          "other_qid": "Q122614",
+          "precision": "year",
+          "relationship_property": "P26",
+          "source_qid": "Q467526",
+          "statement_rank": "normal",
+          "status": "new_rung3_nonfatal_endpoint"
+        }
+      ],
+      "nonqualifying_wikidata_statements": [],
+      "pair_key": "adb:49711|adb:49712"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 0,
+      "had_clean_through_rung2_endpoint": false,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [],
+      "pair_key": "adb:50349|adb:99620"
+    },
+    {
+      "corroborating_wikidata_endpoints": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [
+            {
+              "english_label": "divorce",
+              "matches_fatal_conflict_family": false,
+              "matches_nonfatal_family": true,
+              "normalized_label": "divorce",
+              "qid": "Q93190"
+            }
+          ],
+          "end_time": {
+            "interval_end": "1980-12-31",
+            "interval_start": "1980-01-01",
+            "precision": "year",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1980-12-31",
+                "interval_start": "1980-01-01",
+                "precision": "year",
+                "precision_value": 9,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 9,
+                      "time": "+1980-00-00T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "6e789dc72bebb08e15a17a2affdde95435c43c65",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1980-00-00T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1980-12-31",
+          "interval_start": "1980-01-01",
+          "other_qid": "Q55375",
+          "precision": "year",
+          "relationship_property": "P26",
+          "source_qid": "Q32439",
+          "statement_rank": "normal",
+          "status": "corroborates_higher_precedence_endpoint"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [
+            {
+              "english_label": "divorce",
+              "matches_fatal_conflict_family": false,
+              "matches_nonfatal_family": true,
+              "normalized_label": "divorce",
+              "qid": "Q93190"
+            }
+          ],
+          "end_time": {
+            "interval_end": "1980-12-31",
+            "interval_start": "1980-01-01",
+            "precision": "year",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1980-12-31",
+                "interval_start": "1980-01-01",
+                "precision": "year",
+                "precision_value": 9,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 9,
+                      "time": "+1980-01-01T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "544e8f21fd032642ae021f23bd0a2fdfc86c4f60",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1980-01-01T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1980-12-31",
+          "interval_start": "1980-01-01",
+          "other_qid": "Q32439",
+          "precision": "year",
+          "relationship_property": "P26",
+          "source_qid": "Q55375",
+          "statement_rank": "normal",
+          "status": "corroborates_higher_precedence_endpoint"
+        }
+      ],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": true,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [],
+      "pair_key": "adb:50520|adb:50764"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 0,
+      "had_clean_through_rung2_endpoint": false,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [],
+      "pair_key": "adb:50795|adb:80186"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": false,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [
+            {
+              "english_label": "death of subject",
+              "matches_fatal_conflict_family": true,
+              "matches_nonfatal_family": false,
+              "normalized_label": "death of subject",
+              "qid": "Q99521170"
+            }
+          ],
+          "end_time": {
+            "interval_end": "1952-06-17",
+            "interval_start": "1952-06-17",
+            "precision": "day",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1952-06-17",
+                "interval_start": "1952-06-17",
+                "precision": "day",
+                "precision_value": 11,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 11,
+                      "time": "+1952-06-17T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "1f9be8b8372f4cc166ea5ad4e1595b85b1c2e93e",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1952-06-17T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1952-06-17",
+          "interval_start": "1952-06-17",
+          "nonqualification_reason": "fatal_nonfatal_cause_conflict_or_fatal_cause",
+          "other_qid": "Q6766231",
+          "precision": "day",
+          "relationship_property": "P26",
+          "source_qid": "Q331497",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [
+            {
+              "english_label": "death of subject's spouse",
+              "matches_fatal_conflict_family": true,
+              "matches_nonfatal_family": false,
+              "normalized_label": "death of subject s spouse",
+              "qid": "Q24037741"
+            }
+          ],
+          "end_time": {
+            "interval_end": "1952-06-17",
+            "interval_start": "1952-06-17",
+            "precision": "day",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1952-06-17",
+                "interval_start": "1952-06-17",
+                "precision": "day",
+                "precision_value": 11,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 11,
+                      "time": "+1952-06-17T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "1f9be8b8372f4cc166ea5ad4e1595b85b1c2e93e",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1952-06-17T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1952-06-17",
+          "interval_start": "1952-06-17",
+          "nonqualification_reason": "fatal_nonfatal_cause_conflict_or_fatal_cause",
+          "other_qid": "Q331497",
+          "precision": "day",
+          "relationship_property": "P26",
+          "source_qid": "Q6766231",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        }
+      ],
+      "pair_key": "adb:54655|adb:88172"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 0,
+      "had_clean_through_rung2_endpoint": false,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [],
+      "pair_key": "adb:55266|adb:55269"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": false,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [
+            {
+              "english_label": "death",
+              "matches_fatal_conflict_family": true,
+              "matches_nonfatal_family": false,
+              "normalized_label": "death",
+              "qid": "Q4"
+            }
+          ],
+          "end_time": {
+            "interval_end": "1942-11-15",
+            "interval_start": "1942-11-15",
+            "precision": "day",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1942-11-15",
+                "interval_start": "1942-11-15",
+                "precision": "day",
+                "precision_value": 11,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 11,
+                      "time": "+1942-11-15T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "731ef9a3cc41e470c5171821f0041e5b3e89d3c4",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1942-11-15T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1942-11-15",
+          "interval_start": "1942-11-15",
+          "nonqualification_reason": "fatal_nonfatal_cause_conflict_or_fatal_cause",
+          "other_qid": "Q2633986",
+          "precision": "day",
+          "relationship_property": "P26",
+          "source_qid": "Q123368",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [],
+          "end_time": {
+            "interval_end": "1942-11-15",
+            "interval_start": "1942-11-15",
+            "precision": "day",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1942-11-15",
+                "interval_start": "1942-11-15",
+                "precision": "day",
+                "precision_value": 11,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 11,
+                      "time": "+1942-11-15T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "731ef9a3cc41e470c5171821f0041e5b3e89d3c4",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1942-11-15T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1942-11-15",
+          "interval_start": "1942-11-15",
+          "nonqualification_reason": "no_P1534_end_cause",
+          "other_qid": "Q123368",
+          "precision": "day",
+          "relationship_property": "P26",
+          "source_qid": "Q2633986",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        }
+      ],
+      "pair_key": "adb:55464|adb:55466"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": false,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [],
+          "end_time": {
+            "reason": "no_usable_end_time",
+            "usable": false,
+            "values": []
+          },
+          "nonqualification_reason": "no_usable_end_time",
+          "other_qid": "Q134895",
+          "relationship_property": "P26",
+          "source_qid": "Q39666",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [],
+          "end_time": {
+            "reason": "no_usable_end_time",
+            "usable": false,
+            "values": []
+          },
+          "nonqualification_reason": "no_usable_end_time",
+          "other_qid": "Q39666",
+          "relationship_property": "P26",
+          "source_qid": "Q134895",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        }
+      ],
+      "pair_key": "adb:55649|adb:61241"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": false,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [
+            {
+              "english_label": "death of subject",
+              "matches_fatal_conflict_family": true,
+              "matches_nonfatal_family": false,
+              "normalized_label": "death of subject",
+              "qid": "Q99521170"
+            }
+          ],
+          "end_time": {
+            "interval_end": "1936-03-02",
+            "interval_start": "1936-03-02",
+            "precision": "day",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1936-03-02",
+                "interval_start": "1936-03-02",
+                "precision": "day",
+                "precision_value": 11,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 11,
+                      "time": "+1936-03-02T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "6a5f605627ca963d6678904b94c2abe79511b265",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1936-03-02T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1936-03-02",
+          "interval_start": "1936-03-02",
+          "nonqualification_reason": "fatal_nonfatal_cause_conflict_or_fatal_cause",
+          "other_qid": "Q160948",
+          "precision": "day",
+          "relationship_property": "P26",
+          "source_qid": "Q164500",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [
+            {
+              "english_label": "death of subject's spouse",
+              "matches_fatal_conflict_family": true,
+              "matches_nonfatal_family": false,
+              "normalized_label": "death of subject s spouse",
+              "qid": "Q24037741"
+            }
+          ],
+          "end_time": {
+            "interval_end": "1936-03-02",
+            "interval_start": "1936-03-02",
+            "precision": "day",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1936-03-02",
+                "interval_start": "1936-03-02",
+                "precision": "day",
+                "precision_value": 11,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 11,
+                      "time": "+1936-03-02T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "6a5f605627ca963d6678904b94c2abe79511b265",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1936-03-02T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1936-03-02",
+          "interval_start": "1936-03-02",
+          "nonqualification_reason": "fatal_nonfatal_cause_conflict_or_fatal_cause",
+          "other_qid": "Q164500",
+          "precision": "day",
+          "relationship_property": "P26",
+          "source_qid": "Q160948",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        }
+      ],
+      "pair_key": "adb:56048|adb:56049"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 0,
+      "had_clean_through_rung2_endpoint": false,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [],
+      "pair_key": "adb:58088|adb:58089"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": false,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [
+            {
+              "english_label": "death of subject's spouse",
+              "matches_fatal_conflict_family": true,
+              "matches_nonfatal_family": false,
+              "normalized_label": "death of subject s spouse",
+              "qid": "Q24037741"
+            }
+          ],
+          "end_time": {
+            "interval_end": "2023-11-19",
+            "interval_start": "2023-11-19",
+            "precision": "day",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "2023-11-19",
+                "interval_start": "2023-11-19",
+                "precision": "day",
+                "precision_value": 11,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 11,
+                      "time": "+2023-11-19T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "94f3fb50e23e03f826d4c43be11f6de51e70e388",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+2023-11-19T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "2023-11-19",
+          "interval_start": "2023-11-19",
+          "nonqualification_reason": "fatal_nonfatal_cause_conflict_or_fatal_cause",
+          "other_qid": "Q219353",
+          "precision": "day",
+          "relationship_property": "P26",
+          "source_qid": "Q23685",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [
+            {
+              "english_label": "death of subject",
+              "matches_fatal_conflict_family": true,
+              "matches_nonfatal_family": false,
+              "normalized_label": "death of subject",
+              "qid": "Q99521170"
+            }
+          ],
+          "end_time": {
+            "interval_end": "2023-11-19",
+            "interval_start": "2023-11-19",
+            "precision": "day",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "2023-11-19",
+                "interval_start": "2023-11-19",
+                "precision": "day",
+                "precision_value": 11,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 11,
+                      "time": "+2023-11-19T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "94f3fb50e23e03f826d4c43be11f6de51e70e388",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+2023-11-19T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "2023-11-19",
+          "interval_start": "2023-11-19",
+          "nonqualification_reason": "fatal_nonfatal_cause_conflict_or_fatal_cause",
+          "other_qid": "Q23685",
+          "precision": "day",
+          "relationship_property": "P26",
+          "source_qid": "Q219353",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        }
+      ],
+      "pair_key": "adb:5888|adb:6298"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 0,
+      "had_clean_through_rung2_endpoint": true,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [],
+      "pair_key": "adb:5959|adb:94255"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 0,
+      "had_clean_through_rung2_endpoint": true,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [],
+      "pair_key": "adb:60291|adb:60292"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 0,
+      "had_clean_through_rung2_endpoint": true,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [],
+      "pair_key": "adb:60291|adb:78745"
+    },
+    {
+      "corroborating_wikidata_endpoints": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [
+            {
+              "english_label": "divorce",
+              "matches_fatal_conflict_family": false,
+              "matches_nonfatal_family": true,
+              "normalized_label": "divorce",
+              "qid": "Q93190"
+            }
+          ],
+          "end_time": {
+            "interval_end": "2010-09-30",
+            "interval_start": "2010-09-30",
+            "precision": "day",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "2010-09-30",
+                "interval_start": "2010-09-30",
+                "precision": "day",
+                "precision_value": 11,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 11,
+                      "time": "+2010-09-30T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "60f52d1ff2c2d229f0dd49961668e2af64a8bf50",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+2010-09-30T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "2010-09-30",
+          "interval_start": "2010-09-30",
+          "other_qid": "Q355197",
+          "precision": "day",
+          "relationship_property": "P26",
+          "source_qid": "Q4956689",
+          "statement_rank": "normal",
+          "status": "corroborates_higher_precedence_endpoint"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [
+            {
+              "english_label": "divorce",
+              "matches_fatal_conflict_family": false,
+              "matches_nonfatal_family": true,
+              "normalized_label": "divorce",
+              "qid": "Q93190"
+            }
+          ],
+          "end_time": {
+            "interval_end": "2010-09-30",
+            "interval_start": "2010-09-30",
+            "precision": "day",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "2010-09-30",
+                "interval_start": "2010-09-30",
+                "precision": "day",
+                "precision_value": 11,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 11,
+                      "time": "+2010-09-30T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "60f52d1ff2c2d229f0dd49961668e2af64a8bf50",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+2010-09-30T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "2010-09-30",
+          "interval_start": "2010-09-30",
+          "other_qid": "Q4956689",
+          "precision": "day",
+          "relationship_property": "P26",
+          "source_qid": "Q355197",
+          "statement_rank": "normal",
+          "status": "corroborates_higher_precedence_endpoint"
+        }
+      ],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": true,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [],
+      "pair_key": "adb:67753|adb:76816"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 0,
+      "had_clean_through_rung2_endpoint": false,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [],
+      "pair_key": "adb:6821|adb:8007"
+    },
+    {
+      "corroborating_wikidata_endpoints": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [],
+          "end_time": {
+            "interval_end": "1966-12-31",
+            "interval_start": "1966-01-01",
+            "precision": "year",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1966-12-31",
+                "interval_start": "1966-01-01",
+                "precision": "year",
+                "precision_value": 9,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 9,
+                      "time": "+1966-00-00T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "44c1d4dee44fb01c6c168b27141a0f8bd1d4a4fd",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1966-00-00T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1966-12-31",
+          "interval_start": "1966-01-01",
+          "other_qid": "Q7937736",
+          "precision": "year",
+          "relationship_property": "P26",
+          "source_qid": "Q42775",
+          "statement_rank": "normal",
+          "status": "corroborates_higher_precedence_endpoint"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [],
+          "end_time": {
+            "interval_end": "1966-12-31",
+            "interval_start": "1966-01-01",
+            "precision": "year",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1966-12-31",
+                "interval_start": "1966-01-01",
+                "precision": "year",
+                "precision_value": 9,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 9,
+                      "time": "+1966-00-00T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "44c1d4dee44fb01c6c168b27141a0f8bd1d4a4fd",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1966-00-00T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1966-12-31",
+          "interval_start": "1966-01-01",
+          "other_qid": "Q42775",
+          "precision": "year",
+          "relationship_property": "P26",
+          "source_qid": "Q7937736",
+          "statement_rank": "normal",
+          "status": "corroborates_higher_precedence_endpoint"
+        }
+      ],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": true,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [],
+      "pair_key": "adb:7023|adb:96034"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": true,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [],
+          "end_time": {
+            "reason": "no_usable_end_time",
+            "usable": false,
+            "values": []
+          },
+          "nonqualification_reason": "no_usable_end_time",
+          "other_qid": "Q15429916",
+          "relationship_property": "P26",
+          "source_qid": "Q2831021",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [],
+          "end_time": {
+            "reason": "no_usable_end_time",
+            "usable": false,
+            "values": []
+          },
+          "nonqualification_reason": "no_usable_end_time",
+          "other_qid": "Q2831021",
+          "relationship_property": "P26",
+          "source_qid": "Q15429916",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        }
+      ],
+      "pair_key": "adb:71587|adb:71588"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": true,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [],
+          "end_time": {
+            "reason": "no_usable_end_time",
+            "usable": false,
+            "values": []
+          },
+          "nonqualification_reason": "no_usable_end_time",
+          "other_qid": "Q1538601",
+          "relationship_property": "P26",
+          "source_qid": "Q460360",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [],
+          "end_time": {
+            "reason": "no_usable_end_time",
+            "usable": false,
+            "values": []
+          },
+          "nonqualification_reason": "no_usable_end_time",
+          "other_qid": "Q460360",
+          "relationship_property": "P26",
+          "source_qid": "Q1538601",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        }
+      ],
+      "pair_key": "adb:71621|adb:80050"
+    },
+    {
+      "corroborating_wikidata_endpoints": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [],
+          "end_time": {
+            "interval_end": "1997-12-31",
+            "interval_start": "1997-01-01",
+            "precision": "year",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1997-12-31",
+                "interval_start": "1997-01-01",
+                "precision": "year",
+                "precision_value": 9,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 9,
+                      "time": "+1997-01-01T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "1789de7de942728fa8e2ce98606ce2b8297581a1",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1997-01-01T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1997-12-31",
+          "interval_start": "1997-01-01",
+          "other_qid": "Q3675612",
+          "precision": "year",
+          "relationship_property": "P26",
+          "source_qid": "Q3714174",
+          "statement_rank": "normal",
+          "status": "corroborates_higher_precedence_endpoint"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [],
+          "end_time": {
+            "interval_end": "1997-12-31",
+            "interval_start": "1997-01-01",
+            "precision": "year",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1997-12-31",
+                "interval_start": "1997-01-01",
+                "precision": "year",
+                "precision_value": 9,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 9,
+                      "time": "+1997-01-01T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "1789de7de942728fa8e2ce98606ce2b8297581a1",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1997-01-01T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1997-12-31",
+          "interval_start": "1997-01-01",
+          "other_qid": "Q3714174",
+          "precision": "year",
+          "relationship_property": "P26",
+          "source_qid": "Q3675612",
+          "statement_rank": "normal",
+          "status": "corroborates_higher_precedence_endpoint"
+        }
+      ],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": true,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [],
+      "pair_key": "adb:9479|adb:74737"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": false,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [],
+          "end_time": {
+            "reason": "no_usable_end_time",
+            "usable": false,
+            "values": []
+          },
+          "nonqualification_reason": "no_usable_end_time",
+          "other_qid": "Q156617",
+          "relationship_property": "P26",
+          "source_qid": "Q57264",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [],
+          "end_time": {
+            "interval_end": "1947-04-20",
+            "interval_start": "1947-04-20",
+            "precision": "day",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1947-04-20",
+                "interval_start": "1947-04-20",
+                "precision": "day",
+                "precision_value": 11,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 11,
+                      "time": "+1947-04-20T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "0cd5550a43537c1ff7b513fdc288a706b9963f96",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1947-04-20T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1947-04-20",
+          "interval_start": "1947-04-20",
+          "nonqualification_reason": "no_P1534_end_cause",
+          "other_qid": "Q57264",
+          "precision": "day",
+          "relationship_property": "P26",
+          "source_qid": "Q156617",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        }
+      ],
+      "pair_key": "adb:79284|adb:79672"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": false,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [],
+          "end_time": {
+            "reason": "no_usable_end_time",
+            "usable": false,
+            "values": []
+          },
+          "nonqualification_reason": "no_usable_end_time",
+          "other_qid": "Q292052",
+          "relationship_property": "P26",
+          "source_qid": "Q58037",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [],
+          "end_time": {
+            "interval_end": "1905-01-17",
+            "interval_start": "1905-01-17",
+            "precision": "day",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1905-01-17",
+                "interval_start": "1905-01-17",
+                "precision": "day",
+                "precision_value": 11,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 11,
+                      "time": "+1905-01-17T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "7f98d4c72748e10db749baa3fe248ce140f29556",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1905-01-17T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1905-01-17",
+          "interval_start": "1905-01-17",
+          "nonqualification_reason": "no_P1534_end_cause",
+          "other_qid": "Q58037",
+          "precision": "day",
+          "relationship_property": "P26",
+          "source_qid": "Q292052",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        }
+      ],
+      "pair_key": "adb:79358|adb:84214"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": false,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [],
+          "end_time": {
+            "interval_end": "1855-03-30",
+            "interval_start": "1855-03-30",
+            "precision": "day",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1855-03-30",
+                "interval_start": "1855-03-30",
+                "precision": "day",
+                "precision_value": 11,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 11,
+                      "time": "+1855-03-30T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "658b067846ce069ac65de8715966a4d0e3c29be6",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1855-03-30T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1855-03-30",
+          "interval_start": "1855-03-30",
+          "nonqualification_reason": "no_P1534_end_cause",
+          "other_qid": "Q269819",
+          "precision": "day",
+          "relationship_property": "P26",
+          "source_qid": "Q702749",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [],
+          "end_time": {
+            "interval_end": "1855-03-30",
+            "interval_start": "1855-03-30",
+            "precision": "day",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1855-03-30",
+                "interval_start": "1855-03-30",
+                "precision": "day",
+                "precision_value": 11,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 11,
+                      "time": "+1855-03-30T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "658b067846ce069ac65de8715966a4d0e3c29be6",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1855-03-30T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1855-03-30",
+          "interval_start": "1855-03-30",
+          "nonqualification_reason": "no_P1534_end_cause",
+          "other_qid": "Q702749",
+          "precision": "day",
+          "relationship_property": "P26",
+          "source_qid": "Q269819",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        }
+      ],
+      "pair_key": "adb:79377|adb:79664"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": false,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [],
+          "end_time": {
+            "interval_end": "1877-01-18",
+            "interval_start": "1877-01-18",
+            "precision": "day",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1877-01-18",
+                "interval_start": "1877-01-18",
+                "precision": "day",
+                "precision_value": 11,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 11,
+                      "time": "+1877-01-18T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "e730f3749a78e10df9602d38e4ccc79bb395b574",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1877-01-18T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1877-01-18",
+          "interval_start": "1877-01-18",
+          "nonqualification_reason": "no_P1534_end_cause",
+          "other_qid": "Q60919",
+          "precision": "day",
+          "relationship_property": "P26",
+          "source_qid": "Q442587",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [],
+          "end_time": {
+            "interval_end": "1877-01-18",
+            "interval_start": "1877-01-18",
+            "precision": "day",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1877-01-18",
+                "interval_start": "1877-01-18",
+                "precision": "day",
+                "precision_value": 11,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 11,
+                      "time": "+1877-01-18T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "e730f3749a78e10df9602d38e4ccc79bb395b574",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1877-01-18T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1877-01-18",
+          "interval_start": "1877-01-18",
+          "nonqualification_reason": "no_P1534_end_cause",
+          "other_qid": "Q442587",
+          "precision": "day",
+          "relationship_property": "P26",
+          "source_qid": "Q60919",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        }
+      ],
+      "pair_key": "adb:79673|adb:80137"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": false,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [],
+          "end_time": {
+            "reason": "no_usable_end_time",
+            "usable": false,
+            "values": []
+          },
+          "nonqualification_reason": "no_usable_end_time",
+          "other_qid": "Q1124",
+          "relationship_property": "P26",
+          "source_qid": "Q6294",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [],
+          "end_time": {
+            "reason": "no_usable_end_time",
+            "usable": false,
+            "values": []
+          },
+          "nonqualification_reason": "no_usable_end_time",
+          "other_qid": "Q6294",
+          "relationship_property": "P26",
+          "source_qid": "Q1124",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        }
+      ],
+      "pair_key": "adb:862|adb:863"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": false,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [],
+          "end_time": {
+            "reason": "no_usable_end_time",
+            "usable": false,
+            "values": []
+          },
+          "nonqualification_reason": "no_usable_end_time",
+          "other_qid": "Q383401",
+          "relationship_property": "P26",
+          "source_qid": "Q55360770",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        },
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [],
+          "end_time": {
+            "reason": "no_usable_end_time",
+            "usable": false,
+            "values": []
+          },
+          "nonqualification_reason": "no_usable_end_time",
+          "other_qid": "Q55360770",
+          "relationship_property": "P26",
+          "source_qid": "Q383401",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        }
+      ],
+      "pair_key": "adb:86361|adb:86362"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 0,
+      "had_clean_through_rung2_endpoint": true,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [],
+      "pair_key": "adb:88705|adb:96170"
+    },
+    {
+      "corroborating_wikidata_endpoints": [
+        {
+          "cause_conflict": false,
+          "direction": "b_to_a",
+          "end_causes": [
+            {
+              "english_label": "divorce",
+              "matches_fatal_conflict_family": false,
+              "matches_nonfatal_family": true,
+              "normalized_label": "divorce",
+              "qid": "Q93190"
+            }
+          ],
+          "end_time": {
+            "interval_end": "1933-02-18",
+            "interval_start": "1933-02-18",
+            "precision": "day",
+            "usable": true,
+            "values": [
+              {
+                "after": 0,
+                "before": 0,
+                "calendar_model": "http://www.wikidata.org/entity/Q1985727",
+                "calendar_qid": "Q1985727",
+                "interval_end": "1933-02-18",
+                "interval_start": "1933-02-18",
+                "precision": "day",
+                "precision_value": 11,
+                "raw": {
+                  "datatype": "time",
+                  "datavalue": {
+                    "type": "time",
+                    "value": {
+                      "after": 0,
+                      "before": 0,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                      "precision": 11,
+                      "time": "+1933-02-18T00:00:00Z",
+                      "timezone": 0
+                    }
+                  },
+                  "hash": "7979c51a7c6153854f772b38002fd82ae61bfd50",
+                  "property": "P582",
+                  "snaktype": "value"
+                },
+                "raw_time": "+1933-02-18T00:00:00Z",
+                "usable": true
+              }
+            ]
+          },
+          "interval_end": "1933-02-18",
+          "interval_start": "1933-02-18",
+          "other_qid": "Q958562",
+          "precision": "day",
+          "relationship_property": "P26",
+          "source_qid": "Q254060",
+          "statement_rank": "normal",
+          "status": "corroborates_higher_precedence_endpoint"
+        }
+      ],
+      "exact_wikidata_relationship_statement_count": 2,
+      "had_clean_through_rung2_endpoint": true,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [
+        {
+          "cause_conflict": false,
+          "direction": "a_to_b",
+          "end_causes": [],
+          "end_time": {
+            "reason": "no_usable_end_time",
+            "usable": false,
+            "values": []
+          },
+          "nonqualification_reason": "no_usable_end_time",
+          "other_qid": "Q254060",
+          "relationship_property": "P26",
+          "source_qid": "Q958562",
+          "statement_rank": "normal",
+          "status": "nonqualifying"
+        }
+      ],
+      "pair_key": "adb:90851|adb:90852"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 0,
+      "had_clean_through_rung2_endpoint": false,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [],
+      "pair_key": "adb:91105|adb:91106"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 0,
+      "had_clean_through_rung2_endpoint": false,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [],
+      "pair_key": "adb:93201|adb:93203"
+    },
+    {
+      "corroborating_wikidata_endpoints": [],
+      "exact_wikidata_relationship_statement_count": 0,
+      "had_clean_through_rung2_endpoint": false,
+      "new_rung3_nonfatal_endpoints": [],
+      "nonqualifying_wikidata_statements": [],
+      "pair_key": "adb:97170|adb:97283"
+    }
+  ],
+  "parser_freeze": "reference/research/adb_exact_pair_state_history_source_ladder_v3_rung3_parser_freeze.md",
+  "parser_freeze_sha256": "1177471ff15a37d7c3403edfd41e68357506da7e039836a4034df61bb5bdef4e",
+  "resolved_claim_entities": 103,
+  "rung2_sha256": "25884161b7703b8bd6d06caf6495d67c01594fe6268651c979da2980c6a390e4",
+  "rung3_counts": {
+    "corroborating_statement_evidence": 31,
+    "new_qualifying_statement_evidence": 4,
+    "nonqualifying_fatal_nonfatal_cause_conflict_or_fatal_cause": 12,
+    "nonqualifying_no_P1534_end_cause": 12,
+    "nonqualifying_no_usable_end_time": 29
+  },
+  "status": "development_state_history_source_ladder_rung3",
+  "stop_go": {
+    "endpoint_pairs_observed": 28,
+    "minimum_endpoint_pairs": 30,
+    "next_action": "declare_public_source_universe_insufficient_do_not_fit",
+    "source_ladder_exhausted": true,
+    "sufficiency_gate_passed": false
+  },
+  "v1_sha256": "91609a233727a06c0cee23414e357a1d3e31349481394a991cb69210aed33298",
+  "v2_sha256": "35710c05232e2d2d7b154abb2977e7c6d113365c314aeeb2531c985f16401612"
+}
