@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/adb_exact_pair_state_history_recovery_v1.py'
+      - 'scripts/adb_exact_pair_state_history_recovery_v1_runner.py'
       - 'reference/research/adb_exact_pair_state_history_recovery_freeze_v1.md'
       - 'reference/research/adb_external_eventlinked_exact_recovery_v1.json'
       - 'scripts/adb_exact_pair_timing_v3.py'
@@ -29,7 +30,7 @@ jobs:
       - name: Fetch pinned Swiss ephemeris files
         run: python scripts/fetch_swisseph_ephemeris.py
       - name: Recover structured pair state histories
-        run: python scripts/adb_exact_pair_state_history_recovery_v1.py
+        run: python scripts/adb_exact_pair_state_history_recovery_v1_runner.py
       - name: Commit compact state-history recovery result
         run: |
           git config user.name "github-actions[bot]"
