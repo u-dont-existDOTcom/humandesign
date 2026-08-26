@@ -39,13 +39,16 @@ def overlap(a: dict, b: dict) -> bool:
     return max(a["interval_start"], b["interval_start"]) <= min(a["interval_end"], b["interval_end"])
 
 
+def time_interval(statement: dict, prop: str) -> dict:
+    """Use the already-frozen Wikidata time parser/overlap rule for P580 or P582."""
+    return wd.merge_end_times(((statement.get("qualifiers") or {}).get(prop) or []))
+
+
 def main() -> None:
     universe = json.loads(UNIVERSE.read_text(encoding="utf-8"))
     h12 = json.loads(H12.read_text(encoding="utf-8"))
     h3 = json.loads(H3.read_text(encoding="utf-8"))
-    u_by = {x["pair_key"]: x for x in universe["pairs"]}
     h12_by = {x["pair_key"]: x for x in h12["pairs"]}
-    h3_by = {x["pair_key"]: x for x in h3["pairs"]}
 
     qids = sorted({
         q
@@ -56,7 +59,7 @@ def main() -> None:
     })
     entities = wd.fetch_entities(qids, "claims")
 
-    exact_statements = {}
+    exact_statements: dict[str, list[dict]] = {}
     cause_qids = set()
     exact_statement_count = 0
     for p in h3["pairs"]:
@@ -68,7 +71,7 @@ def main() -> None:
             for src_q, other_q, direction in ((qa, qb, "a_to_b"), (qb, qa, "b_to_a")):
                 claims = ((entities.get(src_q) or {}).get("claims") or {})
                 for prop in wd.REL_PROPS:
-                    for st in claims.get(prop, []) or []:
+                    for statement_index, st in enumerate(claims.get(prop, []) or []):
                         if st.get("rank") == "deprecated":
                             continue
                         if wd.entity_value_id(st.get("mainsnak") or {}) != other_q:
@@ -77,9 +80,13 @@ def main() -> None:
                         causes = wd.qualifier_entity_ids(st, "P1534")
                         cause_qids.update(causes)
                         rows.append({
-                            "source_qid": src_q, "other_qid": other_q,
-                            "direction": direction, "property": prop,
-                            "statement": st, "cause_qids": causes,
+                            "source_qid": src_q,
+                            "other_qid": other_q,
+                            "direction": direction,
+                            "property": prop,
+                            "statement_index": statement_index,
+                            "statement": st,
+                            "cause_qids": causes,
                         })
         exact_statements[pk] = rows
 
@@ -89,9 +96,11 @@ def main() -> None:
         for q in sorted(cause_qids)
     }
 
-    counts = Counter(); cause_label_counts = Counter()
+    counts = Counter()
+    cause_label_counts = Counter()
     endpoint_all = endpoint_model = new_pair_all = new_pair_model = 0
     reunion_all = reunion_model = 0
+    repeated_start_reunion_all = repeated_start_reunion_model = 0
     pair_rows = []
 
     for p in h3["pairs"]:
@@ -99,12 +108,39 @@ def main() -> None:
         baseline = list(p.get("clean_nonfatal_exits_through_H3", []))
         had_baseline = bool(baseline)
         model_ok = bool(p.get("model_eligible_birth_and_swieph_after_H3_duplicate_guard"))
-        formations = [x for x in h12_by[pk].get("H1_merged_transitions", []) if x.get("transition") == "formation"]
+        h1_formations = [x for x in h12_by[pk].get("H1_merged_transitions", []) if x.get("transition") == "formation"]
 
-        accepted = []; corroborating = []; nonqualifying = []
+        accepted = []
+        corroborating = []
+        nonqualifying = []
+        explicit_episode_starts = []
+
         for row in exact_statements.get(pk, []):
             st = row["statement"]
-            end = wd.merge_end_times(((st.get("qualifiers") or {}).get("P582") or []))
+            start = time_interval(st, "P580")
+            end = time_interval(st, "P582")
+
+            # V4 explicitly permits separate Wikidata relationship statements to
+            # establish repeated starts only when both start and end intervals are
+            # explicit and ordered without overlap. P580-only statements are kept
+            # as provenance but do not establish a repeated episode here.
+            ordered_episode = bool(
+                start.get("usable") and end.get("usable") and
+                start["interval_end"] < end["interval_start"]
+            )
+            if ordered_episode:
+                explicit_episode_starts.append({
+                    "source": "H4_wikidata_exact_pair_statement",
+                    "source_qid": row["source_qid"],
+                    "other_qid": row["other_qid"],
+                    "direction": row["direction"],
+                    "relationship_property": row["property"],
+                    "statement_index": row["statement_index"],
+                    "start": start,
+                    "end": end,
+                })
+                counts["ordered_explicit_start_end_statements"] += 1
+
             cause_info = []
             for q in row["cause_qids"]:
                 label = cause_labels.get(q)
@@ -124,23 +160,38 @@ def main() -> None:
             cause_conflict = any_nonfatal and any_fatal
             item = {
                 "source": "H4_wikidata_exact_pair_statement",
-                "source_qid": row["source_qid"], "other_qid": row["other_qid"],
-                "direction": row["direction"], "relationship_property": row["property"],
-                "statement_rank": st.get("rank"), "end_time": end,
-                "end_causes": cause_info, "cause_conflict": cause_conflict,
+                "source_qid": row["source_qid"],
+                "other_qid": row["other_qid"],
+                "direction": row["direction"],
+                "relationship_property": row["property"],
+                "statement_index": row["statement_index"],
+                "statement_rank": st.get("rank"),
+                "start_time": start,
+                "end_time": end,
+                "end_causes": cause_info,
+                "cause_conflict": cause_conflict,
             }
             if end.get("usable"):
-                item.update({"precision": end["precision"], "interval_start": end["interval_start"], "interval_end": end["interval_end"]})
+                item.update({
+                    "precision": end["precision"],
+                    "interval_start": end["interval_start"],
+                    "interval_end": end["interval_end"],
+                })
 
             if end.get("usable") and any(overlap(end, b) for b in baseline):
                 item["status"] = "corroborates_H1_H2_H3"
-                corroborating.append(item); counts["corroborating_statement_evidence"] += 1
+                corroborating.append(item)
+                counts["corroborating_statement_evidence"] += 1
                 continue
 
-            qualifies = bool(end.get("usable") and row["cause_qids"] and any_nonfatal and not any_fatal and not cause_conflict)
+            qualifies = bool(
+                end.get("usable") and row["cause_qids"] and
+                any_nonfatal and not any_fatal and not cause_conflict
+            )
             if qualifies:
                 item["status"] = "new_H4_nonfatal_exit"
-                accepted.append(item); counts["new_qualifying_statement_evidence"] += 1
+                accepted.append(item)
+                counts["new_qualifying_statement_evidence"] += 1
             else:
                 if not end.get("usable"):
                     reason = end.get("reason")
@@ -152,40 +203,93 @@ def main() -> None:
                     reason = "P1534_label_not_in_frozen_nonfatal_families"
                 else:
                     reason = "does_not_qualify"
-                item["status"] = "nonqualifying"; item["nonqualification_reason"] = reason
-                nonqualifying.append(item); counts[f"nonqualifying_{reason}"] += 1
+                item["status"] = "nonqualifying"
+                item["nonqualification_reason"] = reason
+                nonqualifying.append(item)
+                counts[f"nonqualifying_{reason}"] += 1
 
         clean = baseline + [
-            {"source": "H4_wikidata_exact_pair_statement", "event_kind": "wikidata_nonfatal_exit",
-             "interval_start": x["interval_start"], "interval_end": x["interval_end"], "precision": x["precision"]}
+            {
+                "source": "H4_wikidata_exact_pair_statement",
+                "event_kind": "wikidata_nonfatal_exit",
+                "interval_start": x["interval_start"],
+                "interval_end": x["interval_end"],
+                "precision": x["precision"],
+                "statement_identity": {
+                    "source_qid": x["source_qid"],
+                    "other_qid": x["other_qid"],
+                    "relationship_property": x["relationship_property"],
+                    "statement_index": x["statement_index"],
+                },
+            }
             for x in accepted
         ]
+
         if clean:
             endpoint_all += 1
-            if model_ok: endpoint_model += 1
+            if model_ok:
+                endpoint_model += 1
         if accepted and not had_baseline:
             new_pair_all += 1
-            if model_ok: new_pair_model += 1
+            if model_ok:
+                new_pair_model += 1
 
+        # Strict reunion sequences can arise from a later accepted H1 formation,
+        # or from a later ordered H4 relationship statement with explicit P580/P582.
         reunions = []
+        seen_reunion = set()
         for ex in clean:
-            for f in formations:
+            for f in h1_formations:
                 if f["interval_start"] > ex["interval_end"]:
-                    reunions.append({
-                        "exit": ex,
-                        "later_formation": {
-                            "source": "H1_adb_structured_event", "event_kind": f["event_kind"],
-                            "interval_start": f["interval_start"], "interval_end": f["interval_end"], "precision": f["precision"],
-                        },
-                    })
+                    key = (ex["interval_start"], ex["interval_end"], f["interval_start"], f["interval_end"], "H1")
+                    if key not in seen_reunion:
+                        seen_reunion.add(key)
+                        reunions.append({
+                            "exit": ex,
+                            "later_formation": {
+                                "source": "H1_adb_structured_event",
+                                "event_kind": f["event_kind"],
+                                "interval_start": f["interval_start"],
+                                "interval_end": f["interval_end"],
+                                "precision": f["precision"],
+                            },
+                        })
+            for ep in explicit_episode_starts:
+                st = ep["start"]
+                if st["interval_start"] > ex["interval_end"]:
+                    key = (ex["interval_start"], ex["interval_end"], st["interval_start"], st["interval_end"], "H4")
+                    if key not in seen_reunion:
+                        seen_reunion.add(key)
+                        reunions.append({
+                            "exit": ex,
+                            "later_formation": {
+                                "source": "H4_wikidata_explicit_repeated_start",
+                                "event_kind": "relationship_start",
+                                "interval_start": st["interval_start"],
+                                "interval_end": st["interval_end"],
+                                "precision": st["precision"],
+                                "statement": ep,
+                            },
+                        })
+
+        has_h4_repeated_start_reunion = any(
+            x["later_formation"]["source"] == "H4_wikidata_explicit_repeated_start"
+            for x in reunions
+        )
         if reunions:
             reunion_all += 1
-            if model_ok: reunion_model += 1
+            if model_ok:
+                reunion_model += 1
+        if has_h4_repeated_start_reunion:
+            repeated_start_reunion_all += 1
+            if model_ok:
+                repeated_start_reunion_model += 1
 
         pair_rows.append({
             "pair_key": pk,
             "model_eligible_birth_and_swieph_after_duplicate_guard": model_ok,
             "exact_wikidata_relationship_statement_count": len(exact_statements.get(pk, [])),
+            "H4_ordered_explicit_relationship_episodes": explicit_episode_starts,
             "H4_new_nonfatal_endpoints": accepted,
             "H4_corroborating_endpoints": corroborating,
             "H4_nonqualifying_statements": nonqualifying,
@@ -195,11 +299,16 @@ def main() -> None:
 
     out = {
         "status": "development_broad_pair_history_H4_source_ladder_complete",
-        "freeze_spec": str(FREEZE.relative_to(REPO)), "freeze_sha256": sha256(FREEZE),
-        "wikidata_parser_freeze": str(WD_FREEZE.relative_to(REPO)), "wikidata_parser_freeze_sha256": sha256(WD_FREEZE),
-        "universe_artifact": str(UNIVERSE.relative_to(REPO)), "universe_sha256": sha256(UNIVERSE),
-        "H1_H2_artifact": str(H12.relative_to(REPO)), "H1_H2_sha256": sha256(H12),
-        "H3_artifact": str(H3.relative_to(REPO)), "H3_sha256": sha256(H3),
+        "freeze_spec": str(FREEZE.relative_to(REPO)),
+        "freeze_sha256": sha256(FREEZE),
+        "wikidata_parser_freeze": str(WD_FREEZE.relative_to(REPO)),
+        "wikidata_parser_freeze_sha256": sha256(WD_FREEZE),
+        "universe_artifact": str(UNIVERSE.relative_to(REPO)),
+        "universe_sha256": sha256(UNIVERSE),
+        "H1_H2_artifact": str(H12.relative_to(REPO)),
+        "H1_H2_sha256": sha256(H12),
+        "H3_artifact": str(H3.relative_to(REPO)),
+        "H3_sha256": sha256(H3),
         "pair_universe": len(universe["pairs"]),
         "linked_wikidata_qids": len(qids),
         "resolved_claim_entities": sum(1 for q in qids if q in entities and "missing" not in (entities.get(q) or {})),
@@ -213,13 +322,17 @@ def main() -> None:
             "model_eligible_pairs_with_usable_nonfatal_exit": endpoint_model,
             "pairs_newly_gaining_endpoint_from_H4_all": new_pair_all,
             "pairs_newly_gaining_endpoint_from_H4_model_eligible": new_pair_model,
-            "all_exact_pairs_with_strict_exit_then_later_same_partner_H1_formation": reunion_all,
-            "model_eligible_pairs_with_strict_exit_then_later_same_partner_H1_formation": reunion_model,
+            "all_exact_pairs_with_strict_exit_then_later_same_partner_formation": reunion_all,
+            "model_eligible_pairs_with_strict_exit_then_later_same_partner_formation": reunion_model,
+            "all_pairs_with_reunion_supported_by_H4_repeated_start": repeated_start_reunion_all,
+            "model_eligible_pairs_with_reunion_supported_by_H4_repeated_start": repeated_start_reunion_model,
         },
         "frozen_gate_result": {
             "dissolution_nonfatal_exit_gate_min_pairs": 50,
+            "dissolution_gate_passed_all_exact": endpoint_all >= 50,
             "dissolution_gate_passed_model_eligible": endpoint_model >= 50,
             "same_partner_reunion_gate_min_pairs": 30,
+            "reunion_gate_passed_all_exact": reunion_all >= 30,
             "reunion_gate_passed_model_eligible": reunion_model >= 30,
             "source_hierarchy_complete": True,
         },
@@ -230,7 +343,7 @@ def main() -> None:
             "Only P26/P451 exact opposite-partner statements and P580/P582/P1534 qualifiers are inspected.",
             "A new H4 nonfatal exit requires usable P582 plus a P1534 English label in the frozen nonfatal lexical families.",
             "End times without qualifying end cause do not create new endpoint-bearing pairs.",
-            "H4 does not invent formation dates; reunion inference uses only H1 structured later formations.",
+            "A Wikidata repeated-start reunion requires a separate exact-pair statement with usable ordered P580 and P582; P580-only statements are not enough.",
             "No astrology or Human Design features are calculated or inspected.",
         ],
     }
