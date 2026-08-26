@@ -1,9 +1,8 @@
-"""FastAPI application exposing only deterministic, currently supported services.
+"""FastAPI application exposing deterministic services and optional participant sessions.
 
-The normative run endpoints remain present but fail closed with structured 501
-responses.  Run storage, profile freezing, holdout release, answer-key reveal,
-and experiment orchestration belong to the CLI-first experiment layer and are
-not emulated here.
+The normative legacy run endpoints remain present but fail closed with structured 501
+responses. Participant sessions are registered only when an explicitly configured
+participant service is injected.
 """
 
 from __future__ import annotations
@@ -38,6 +37,7 @@ from hdmatch.api.models import (
     SymbolicScoreRequest,
     SymbolicScoreResponse,
 )
+from hdmatch.api.participant import register_participant_routes
 from hdmatch.api.serialization import (
     chart_record,
     engine_metadata,
@@ -52,6 +52,7 @@ from hdmatch.chart.ephemeris import EphemerisError, EphemerisProvider
 from hdmatch.chart.timezone import timezone_database_version
 from hdmatch.model.mapping_library import MappingLibrary, MappingStatus
 from hdmatch.model.symbolic_score import score_symbolic
+from hdmatch.participant.service import ParticipantSessionService
 from hdmatch.search import aggregate_dates, select_next_question
 
 
@@ -61,6 +62,7 @@ class ApiDependencies:
 
     ephemeris_provider: EphemerisProvider | None = None
     mapping_library: MappingLibrary | None = None
+    participant_sessions: ParticipantSessionService | None = None
     code_commit: str = "unknown"
 
 
@@ -72,8 +74,8 @@ def create_app(dependencies: ApiDependencies | None = None) -> FastAPI:
         title="Human Design Reverse-Matching Search API",
         version=__version__,
         description=(
-            "Deterministic chart/model primitives. Stateful blind-run operations "
-            "remain unresolved and fail closed."
+            "Deterministic chart/model primitives plus an optional participant interview "
+            "service. Legacy stateful blind-run operations remain unresolved and fail closed."
         ),
     )
     install_error_handlers(service)
@@ -287,6 +289,8 @@ def create_app(dependencies: ApiDependencies | None = None) -> FastAPI:
             )
         return NextQuestionResponse(selection=response)
 
+    if deps.participant_sessions is not None:
+        register_participant_routes(service, deps.participant_sessions)
     register_unresolved_run_routes(service)
     return service
 
