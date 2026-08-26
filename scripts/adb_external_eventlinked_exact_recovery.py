@@ -23,7 +23,7 @@ HIGH_RR = {"AA", "A"}
 PARTNER_RE = re.compile(r"\bwith\s+(.+?)(?:,\s*born:|$)", re.I)
 
 
-def get(url: str, timeout: int = 10) -> bytes:
+def get(url: str, timeout: int = 8) -> bytes:
     req = urllib.request.Request(url, headers={"User-Agent": UA})
     with urllib.request.urlopen(req, timeout=timeout) as r:
         return r.read()
@@ -34,12 +34,9 @@ def norm(s: str | None) -> str:
 
 
 def partner_display_name(rel_text: str) -> str:
-    # Match the same partner identity rule used by adb_csample_relationship_audit.py:
-    # relationship text contains "... relationship with Surname, Given, born: ...".
     m = PARTNER_RE.search(rel_text or "")
     if m:
         return re.sub(r"\s+", " ", m.group(1).strip(" ,"))
-    # Fallback: truncate at born marker.
     s = (rel_text or "").strip()
     m2 = re.search(r"^(.*?)(?:,?\s+born\s*:)", s, flags=re.I)
     return re.sub(r"\s+", " ", (m2.group(1) if m2 else s).strip(" ,"))
@@ -64,6 +61,21 @@ def api_json(params: dict) -> dict | None:
         return None
 
 
+def fetch_wikitext(title: str) -> str | None:
+    data = api_json({
+        "action":"query","prop":"revisions","rvprop":"content","rvslots":"main",
+        "titles":title,"formatversion":2,"format":"json"
+    })
+    if not data: return None
+    pages = data.get("query", {}).get("pages", [])
+    if not pages: return None
+    revs = pages[0].get("revisions", [])
+    if not revs: return None
+    rev = revs[0]
+    slots = rev.get("slots", {})
+    return (slots.get("main", {}) or {}).get("content") or rev.get("content") or rev.get("*")
+
+
 def search_titles(name: str) -> list[str]:
     variants = [name]
     if "," in name:
@@ -82,21 +94,6 @@ def search_titles(name: str) -> list[str]:
     return seen
 
 
-def fetch_wikitext(title: str) -> str | None:
-    data = api_json({
-        "action":"query","prop":"revisions","rvprop":"content","rvslots":"main",
-        "titles":title,"formatversion":2,"format":"json"
-    })
-    if not data: return None
-    pages = data.get("query", {}).get("pages", [])
-    if not pages: return None
-    revs = pages[0].get("revisions", [])
-    if not revs: return None
-    rev = revs[0]
-    slots = rev.get("slots", {})
-    return (slots.get("main", {}) or {}).get("content") or rev.get("content") or rev.get("*")
-
-
 def field(text: str, name: str) -> str | None:
     m = re.search(rf"\|{re.escape(name)}\s*=\s*([^\n\r|}}]+)", text or "", re.I)
     return m.group(1).strip() if m else None
@@ -109,6 +106,17 @@ def parse_dma(text: str) -> dict:
         "stimetype","ccalendar","ctzauto","jd_ut"
     ]
     return {n: field(text, n) for n in names}
+
+
+def resolve_exact_id(title: str, adb_id: int) -> tuple[dict | None, dict | None]:
+    wt = fetch_wikitext(title)
+    if not wt:
+        return None, None
+    dma = parse_dma(wt)
+    rec = {"title": title, **dma}
+    if dma.get("DatamainID") and str(dma["DatamainID"]) == str(adb_id):
+        return rec, rec
+    return None, rec
 
 
 def main():
@@ -157,18 +165,21 @@ def main():
 
     rows=[]; stats=Counter()
     for i, other in enumerate(sorted(targets), 1):
-        rec=targets[other]; titles=search_titles(rec["partner_name"]); best=None; first_any=None
-        for title in titles:
-            wt=fetch_wikitext(title)
-            if not wt: continue
-            dma=parse_dma(wt)
-            if first_any is None: first_any={"title":title,**dma}
-            if dma.get("DatamainID") and str(dma["DatamainID"])==str(other):
-                best={"title":title,**dma}; break
+        rec=targets[other]; best=None; first_any=None; method=None
+        # Fast path: ADB relationship text often already uses the exact wiki title.
+        best, first_any = resolve_exact_id(rec["partner_name"], other)
+        if best is not None:
+            method="direct_title"
+        else:
+            for title in search_titles(rec["partner_name"]):
+                matched, any_rec = resolve_exact_id(title, other)
+                if first_any is None and any_rec is not None: first_any=any_rec
+                if matched is not None:
+                    best=matched; method="search"; break
         if best is None:
             status="unresolved"
         else:
-            stats["id_matched"] += 1
+            stats["id_matched"] += 1; stats[f"method_{method}"] += 1
             unknown = bool(best.get("t_unknown")) and str(best.get("t_unknown")).strip() not in {"", "0", "None"}
             timed = bool(best.get("sbtime")) and not unknown
             if timed:
@@ -178,11 +189,11 @@ def main():
             else:
                 status="time_unknown"; stats["time_unknown"] += 1
         rows.append({
-            "adb_id":other,"partner_name":rec["partner_name"],"status":status,
+            "adb_id":other,"partner_name":rec["partner_name"],"status":status,"resolution_method":method,
             "focal_ids":sorted(rec["focal_ids"]),"event_ids":sorted(rec["event_ids"]),
             "matched":best,"first_search_hit_if_unmatched":first_any if best is None else None,
         })
-        print(f"{i}/{len(targets)} {other} {rec['partner_name']} -> {status}", flush=True)
+        print(f"{i}/{len(targets)} {other} {rec['partner_name']} -> {status} ({method})", flush=True)
 
     n=len(targets); exact=stats["exact_time"]; hi=stats["high_rr_exact_time"]
     summary={
@@ -198,6 +209,7 @@ def main():
         "notes":[
             "Eligible targets require A/AA timed focal C-sample record plus the same strict partner-token event linkage used in the C-sample audit.",
             "Exact public record identity is accepted only when wiki DatamainID equals rel_adb_id.",
+            "Direct exact-title lookup is attempted before full-text search; this changes only recovery efficiency, not inclusion.",
             "Presence of sbtime with t_unknown absent is treated as exact-time availability; Rodden quality is reported separately.",
             "A full semi-Markov build still needs reliable UTC conversion/JD for recovered partners; this audit records jd_ut if exposed by wiki source but does not invent it."
         ]
