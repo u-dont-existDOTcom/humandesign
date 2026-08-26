@@ -11,6 +11,12 @@ from hdmatch.experiments.canonical import sha256_file
 from hdmatch.questionnaire import Question, load_question_bank
 from hdmatch.runtime.chart_adapter import ExactChartAdapter
 from hdmatch.runtime.symbolic_adapter import FrozenSymbolicModel, candidate_prevalence
+from hdmatch.runtime.universe_cache import (
+    MonthRequest,
+    cache_path,
+    ensure_month_caches,
+    load_cached_universe,
+)
 from hdmatch.schemas import BehavioralResponse, CandidateState, ScoredState
 from hdmatch.search import (
     AggregationMode,
@@ -63,8 +69,11 @@ class AstroHDParticipantBackend:
         ephemeris_path: str,
         mapping_path: str,
         question_bank_path: str,
+        candidate_cache_dir: str | None = None,
         code_commit: str = "unknown",
     ) -> None:
+        self.ephemeris_path = ephemeris_path
+        self.candidate_cache_dir = candidate_cache_dir
         self.chart_engine = ExactChartAdapter(ephemeris_path)
         self.model = FrozenSymbolicModel(mapping_path)
         self.question_bank = load_question_bank(question_bank_path)
@@ -311,8 +320,27 @@ class AstroHDParticipantBackend:
         cached = self._universe_cache.get(key)
         if cached is not None:
             return cached
-        start, end = local_month_utc_bounds(key[0], key[1], key[2])
-        states = self.chart_engine.candidate_states(start, end, birth.iana_timezone)
+        if self.candidate_cache_dir is not None:
+            request = MonthRequest(key[0], key[1], key[2])
+            ensure_month_caches(
+                (request,),
+                ephemeris_path=self.ephemeris_path,
+                cache_dir=self.candidate_cache_dir,
+                workers=1,
+            )
+            cached_universe = load_cached_universe(
+                cache_path(
+                    self.candidate_cache_dir,
+                    request,
+                    self.chart_engine.fingerprint,
+                ),
+                request=request,
+                engine_fingerprint=self.chart_engine.fingerprint,
+            )
+            states = cached_universe.states
+        else:
+            start, end = local_month_utc_bounds(key[0], key[1], key[2])
+            states = self.chart_engine.candidate_states(start, end, birth.iana_timezone)
         if not states:
             raise RuntimeError("candidate universe is empty")
         self._universe_cache[key] = states
