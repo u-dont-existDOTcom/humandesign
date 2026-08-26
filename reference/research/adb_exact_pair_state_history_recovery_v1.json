@@ -1,0 +1,1328 @@
+{
+  "freeze_sha256": "57cedb775249ff4cf182dc3858f55de3fece439091e3921fd3ca89782251f004",
+  "freeze_spec": "reference/research/adb_exact_pair_state_history_recovery_freeze_v1.md",
+  "history_counts": {
+    "accepted_event_evidence": 0,
+    "accepted_relationship_ranges": 0,
+    "event_kind_evidence": {},
+    "event_precision_evidence": {},
+    "evidence_conflicts": 0,
+    "merged_event_transitions": 0,
+    "pair_tiers": {
+      "T0": 64,
+      "T1": 0,
+      "T2": 0,
+      "T3": 0
+    },
+    "pairs_with_dissolution_or_reunion_endpoint": 0,
+    "pairs_with_inferred_reunion_sequence": 0
+  },
+  "limitations": [
+    "ADB development source; not independent validation.",
+    "Biography prose is excluded by the frozen V1 extraction rule.",
+    "Year-range relationship notes are interval-censored coarse active intervals and are not silently converted to exact transition dates.",
+    "No astrology or Human Design feature is inspected or fit in this recovery audit."
+  ],
+  "pair_universe": {
+    "eligible_exact_v3_pairs": 64,
+    "eligible_v3_events_used_to_reconstruct_universe": 81,
+    "involved_people": 123
+  },
+  "pairs": [
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:60355|adb:101321",
+      "person_a": {
+        "adb_id": 101321,
+        "name": "Coppola, Sofia",
+        "wiki_title": "Coppola, Sofia"
+      },
+      "person_b": {
+        "adb_id": 60355,
+        "name": "Mars, Thomas",
+        "wiki_title": "Mars, Thomas"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:69473|adb:104188",
+      "person_a": {
+        "adb_id": 104188,
+        "name": "Camacho Quir\u00f3s, Marita",
+        "wiki_title": "Camacho Quir\u00f3s, Marita"
+      },
+      "person_b": {
+        "adb_id": 69473,
+        "name": "Orlich Bolmarcich, Francisco Jose",
+        "wiki_title": "Orlich Bolmarcich, Francisco Jose"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:5996|adb:106360",
+      "person_a": {
+        "adb_id": 106360,
+        "name": "Connors, Marylou",
+        "wiki_title": "Connors, Marylou"
+      },
+      "person_b": {
+        "adb_id": 5996,
+        "name": "Connors, Mike",
+        "wiki_title": "Connors, Mike"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:474|adb:11103",
+      "person_a": {
+        "adb_id": 11103,
+        "name": "Charles III, King of the United Kingdom",
+        "wiki_title": "Charles III, King of the United Kingdom"
+      },
+      "person_b": {
+        "adb_id": 474,
+        "name": "Diana, Princess of Wales",
+        "wiki_title": "Diana, Princess of Wales"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:13047|adb:19803",
+      "person_a": {
+        "adb_id": 13047,
+        "name": "Copperfield, David",
+        "wiki_title": "Copperfield, David"
+      },
+      "person_b": {
+        "adb_id": 19803,
+        "name": "Schiffer, Claudia",
+        "wiki_title": "Schiffer, Claudia"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:13089|adb:13581",
+      "person_a": {
+        "adb_id": 13089,
+        "name": "Caroline, Princess of Monaco",
+        "wiki_title": "Caroline, Princess of Monaco"
+      },
+      "person_b": {
+        "adb_id": 13581,
+        "name": "Casiraghi, Stefano",
+        "wiki_title": "Casiraghi, Stefano"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:8584|adb:13089",
+      "person_a": {
+        "adb_id": 13089,
+        "name": "Caroline, Princess of Monaco",
+        "wiki_title": "Caroline, Princess of Monaco"
+      },
+      "person_b": {
+        "adb_id": 8584,
+        "name": "Junot, Philippe",
+        "wiki_title": "Junot, Philippe"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:14274|adb:19401",
+      "person_a": {
+        "adb_id": 14274,
+        "name": "Presley, Lisa Marie",
+        "wiki_title": "Presley, Lisa Marie"
+      },
+      "person_b": {
+        "adb_id": 19401,
+        "name": "Cage, Nicolas",
+        "wiki_title": "Cage, Nicolas"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:15074|adb:68650",
+      "person_a": {
+        "adb_id": 15074,
+        "name": "Casiraghi, Charlotte",
+        "wiki_title": "Casiraghi, Charlotte"
+      },
+      "person_b": {
+        "adb_id": 68650,
+        "name": "Rassam, Dimitri",
+        "wiki_title": "Rassam, Dimitri"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:19367|adb:39157",
+      "person_a": {
+        "adb_id": 19367,
+        "name": "Cristina de Borbon, Princess",
+        "wiki_title": "Cristina de Borbon, Princess"
+      },
+      "person_b": {
+        "adb_id": 39157,
+        "name": "Urdangarin, I\u00f1aki",
+        "wiki_title": "Urdangarin, I\u00f1aki"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:19568|adb:25724",
+      "person_a": {
+        "adb_id": 19568,
+        "name": "Cobain, Kurt",
+        "wiki_title": "Cobain, Kurt"
+      },
+      "person_b": {
+        "adb_id": 25724,
+        "name": "Love, Courtney",
+        "wiki_title": "Love, Courtney"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:19580|adb:76816",
+      "person_a": {
+        "adb_id": 19580,
+        "name": "Rimes, LeAnn",
+        "wiki_title": "Rimes, LeAnn"
+      },
+      "person_b": {
+        "adb_id": 76816,
+        "name": "Cibrian, Eddie",
+        "wiki_title": "Cibrian, Eddie"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:7157|adb:19604",
+      "person_a": {
+        "adb_id": 19604,
+        "name": "Chirac, Bernadette",
+        "wiki_title": "Chirac, Bernadette"
+      },
+      "person_b": {
+        "adb_id": 7157,
+        "name": "Chirac, Jacques",
+        "wiki_title": "Chirac, Jacques"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:19605|adb:39278",
+      "person_a": {
+        "adb_id": 19605,
+        "name": "Chirac, Claude",
+        "wiki_title": "Chirac, Claude"
+      },
+      "person_b": {
+        "adb_id": 39278,
+        "name": "Habert, Philippe",
+        "wiki_title": "Habert, Philippe"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:244|adb:19799",
+      "person_a": {
+        "adb_id": 19799,
+        "name": "Conrad, Kimberley",
+        "wiki_title": "Conrad, Kimberley"
+      },
+      "person_b": {
+        "adb_id": 244,
+        "name": "Hefner, Hugh",
+        "wiki_title": "Hefner, Hugh"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:238|adb:55779",
+      "person_a": {
+        "adb_id": 238,
+        "name": "Curtis, Tony",
+        "wiki_title": "Curtis, Tony"
+      },
+      "person_b": {
+        "adb_id": 55779,
+        "name": "Kaufmann, Christine",
+        "wiki_title": "Kaufmann, Christine"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:238|adb:6281",
+      "person_a": {
+        "adb_id": 238,
+        "name": "Curtis, Tony",
+        "wiki_title": "Curtis, Tony"
+      },
+      "person_b": {
+        "adb_id": 6281,
+        "name": "Leigh, Janet",
+        "wiki_title": "Leigh, Janet"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:24590|adb:92708",
+      "person_a": {
+        "adb_id": 24590,
+        "name": "Lansbury, Angela",
+        "wiki_title": "Lansbury, Angela"
+      },
+      "person_b": {
+        "adb_id": 92708,
+        "name": "Cromwell, Richard (1910)",
+        "wiki_title": "Cromwell, Richard (1910)"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:863|adb:24930",
+      "person_a": {
+        "adb_id": 24930,
+        "name": "Lewinsky, Monica",
+        "wiki_title": "Lewinsky, Monica"
+      },
+      "person_b": {
+        "adb_id": 863,
+        "name": "Clinton, Bill",
+        "wiki_title": "Clinton, Bill"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:25004|adb:25924",
+      "person_a": {
+        "adb_id": 25004,
+        "name": "Silvia, Queen of Sweden",
+        "wiki_title": "Silvia, Queen of Sweden"
+      },
+      "person_b": {
+        "adb_id": 25924,
+        "name": "Carl XVI Gustaf, King of Sweden",
+        "wiki_title": "Carl XVI Gustaf, King of Sweden"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:293|adb:25917",
+      "person_a": {
+        "adb_id": 25917,
+        "name": "Charrier, Jacques",
+        "wiki_title": "Charrier, Jacques"
+      },
+      "person_b": {
+        "adb_id": 293,
+        "name": "Bardot, Brigitte",
+        "wiki_title": "Bardot, Brigitte"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:26134|adb:79083",
+      "person_a": {
+        "adb_id": 26134,
+        "name": "Wilhelm, Crown Prince of Germany",
+        "wiki_title": "Wilhelm, Crown Prince of Germany"
+      },
+      "person_b": {
+        "adb_id": 79083,
+        "name": "Cecilie, Crown Princess of Germany",
+        "wiki_title": "Cecilie, Crown Princess of Germany"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:26438|adb:72673",
+      "person_a": {
+        "adb_id": 26438,
+        "name": "Connally, John",
+        "wiki_title": "Connally, John"
+      },
+      "person_b": {
+        "adb_id": 72673,
+        "name": "Connally, Nellie",
+        "wiki_title": "Connally, Nellie"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:295|adb:362",
+      "person_a": {
+        "adb_id": 295,
+        "name": "Bono, Sonny",
+        "wiki_title": "Bono, Sonny"
+      },
+      "person_b": {
+        "adb_id": 362,
+        "name": "Cher",
+        "wiki_title": "Cher"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:3307|adb:80315",
+      "person_a": {
+        "adb_id": 3307,
+        "name": "Chevalier, Maurice",
+        "wiki_title": "Chevalier, Maurice"
+      },
+      "person_b": {
+        "adb_id": 80315,
+        "name": "Vall\u00e9e, Yvonne",
+        "wiki_title": "Vall\u00e9e, Yvonne"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:36990|adb:55157",
+      "person_a": {
+        "adb_id": 36990,
+        "name": "Cantona, Eric",
+        "wiki_title": "Cantona, Eric"
+      },
+      "person_b": {
+        "adb_id": 55157,
+        "name": "Brakni, Rachida",
+        "wiki_title": "Brakni, Rachida"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:37302|adb:37303",
+      "person_a": {
+        "adb_id": 37302,
+        "name": "Caloone, Bruno",
+        "wiki_title": "Caloone, Bruno"
+      },
+      "person_b": {
+        "adb_id": 37303,
+        "name": "Caloone, Pascale",
+        "wiki_title": "Caloone, Pascale"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:39975|adb:49393",
+      "person_a": {
+        "adb_id": 39975,
+        "name": "Laurent, Prince of Belgium",
+        "wiki_title": "Laurent, Prince of Belgium"
+      },
+      "person_b": {
+        "adb_id": 49393,
+        "name": "Coombs, Claire",
+        "wiki_title": "Coombs, Claire"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:40046|adb:48891",
+      "person_a": {
+        "adb_id": 40046,
+        "name": "Emanuele Filiberto, Prince of Venice",
+        "wiki_title": "Emanuele Filiberto, Prince of Venice"
+      },
+      "person_b": {
+        "adb_id": 48891,
+        "name": "Clotilde, Princess of Venice and Piedmont",
+        "wiki_title": "Clotilde, Princess of Venice and Piedmont"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:5515|adb:40327",
+      "person_a": {
+        "adb_id": 40327,
+        "name": "Martin, Tony",
+        "wiki_title": "Martin, Tony"
+      },
+      "person_b": {
+        "adb_id": 5515,
+        "name": "Charisse, Cyd",
+        "wiki_title": "Charisse, Cyd"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:6790|adb:46200",
+      "person_a": {
+        "adb_id": 46200,
+        "name": "Cilento, Diane",
+        "wiki_title": "Cilento, Diane"
+      },
+      "person_b": {
+        "adb_id": 6790,
+        "name": "Connery, Sean",
+        "wiki_title": "Connery, Sean"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:47237|adb:47241",
+      "person_a": {
+        "adb_id": 47237,
+        "name": "Cons-Boutboul, Marie",
+        "wiki_title": "Cons-Boutboul, Marie"
+      },
+      "person_b": {
+        "adb_id": 47241,
+        "name": "Boutboul, Nessim",
+        "wiki_title": "Boutboul, Nessim"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:47810|adb:80168",
+      "person_a": {
+        "adb_id": 47810,
+        "name": "Casimir-Perier, Jean",
+        "wiki_title": "Casimir-Perier, Jean"
+      },
+      "person_b": {
+        "adb_id": 80168,
+        "name": "Casimir-P\u00e9rier, H\u00e9l\u00e8ne",
+        "wiki_title": "Casimir-P\u00e9rier, H\u00e9l\u00e8ne"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:49711|adb:49712",
+      "person_a": {
+        "adb_id": 49711,
+        "name": "Zellweger, Ren\u00e9e",
+        "wiki_title": "Zellweger, Ren\u00e9e"
+      },
+      "person_b": {
+        "adb_id": 49712,
+        "name": "Chesney, Kenny",
+        "wiki_title": "Chesney, Kenny"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:50349|adb:99620",
+      "person_a": {
+        "adb_id": 50349,
+        "name": "Moore, Mary Alice",
+        "wiki_title": "Moore, Mary Alice"
+      },
+      "person_b": {
+        "adb_id": 99620,
+        "name": "Crawford, Broderick",
+        "wiki_title": "Crawford, Broderick"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:50520|adb:50764",
+      "person_a": {
+        "adb_id": 50520,
+        "name": "Audran, St\u00e9phane",
+        "wiki_title": "Audran, St\u00e9phane"
+      },
+      "person_b": {
+        "adb_id": 50764,
+        "name": "Chabrol, Claude",
+        "wiki_title": "Chabrol, Claude"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:50795|adb:80186",
+      "person_a": {
+        "adb_id": 50795,
+        "name": "Closets, Fran\u00e7ois de",
+        "wiki_title": "Closets, Fran\u00e7ois de"
+      },
+      "person_b": {
+        "adb_id": 80186,
+        "name": "Lebrun, Dani\u00e8le",
+        "wiki_title": "Lebrun, Dani\u00e8le"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:54655|adb:88172",
+      "person_a": {
+        "adb_id": 54655,
+        "name": "Parsons, Jack",
+        "wiki_title": "Parsons, Jack"
+      },
+      "person_b": {
+        "adb_id": 88172,
+        "name": "Cameron, Marjorie",
+        "wiki_title": "Cameron, Marjorie"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:55266|adb:55269",
+      "person_a": {
+        "adb_id": 55266,
+        "name": "Christo",
+        "wiki_title": "Christo"
+      },
+      "person_b": {
+        "adb_id": 55269,
+        "name": "Jeanne-Claude",
+        "wiki_title": "Jeanne-Claude"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:55464|adb:55466",
+      "person_a": {
+        "adb_id": 55464,
+        "name": "Schwarzenbach, Annemarie",
+        "wiki_title": "Schwarzenbach, Annemarie"
+      },
+      "person_b": {
+        "adb_id": 55466,
+        "name": "Clarac, Achille",
+        "wiki_title": "Clarac, Achille"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:55649|adb:61241",
+      "person_a": {
+        "adb_id": 55649,
+        "name": "Cruz, Pen\u00e9lope",
+        "wiki_title": "Cruz, Pen\u00e9lope"
+      },
+      "person_b": {
+        "adb_id": 61241,
+        "name": "Bardem, Javier",
+        "wiki_title": "Bardem, Javier"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:56048|adb:56049",
+      "person_a": {
+        "adb_id": 56048,
+        "name": "Victoria Melita, Princess of Saxe Coburg and Gotha",
+        "wiki_title": "Victoria Melita, Princess of Saxe Coburg and Gotha"
+      },
+      "person_b": {
+        "adb_id": 56049,
+        "name": "Cyril Vladimirovich, Grand Duke of Russia",
+        "wiki_title": "Cyril Vladimirovich, Grand Duke of Russia"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:58088|adb:58089",
+      "person_a": {
+        "adb_id": 58088,
+        "name": "Commoy, Pierre",
+        "wiki_title": "Commoy, Pierre"
+      },
+      "person_b": {
+        "adb_id": 58089,
+        "name": "Blanchard, Gilles",
+        "wiki_title": "Blanchard, Gilles"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:5888|adb:6298",
+      "person_a": {
+        "adb_id": 5888,
+        "name": "Carter, Jimmy",
+        "wiki_title": "Carter, Jimmy"
+      },
+      "person_b": {
+        "adb_id": 6298,
+        "name": "Carter, Rosalynn",
+        "wiki_title": "Carter, Rosalynn"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:5959|adb:94255",
+      "person_a": {
+        "adb_id": 5959,
+        "name": "Carpenter, Scott",
+        "wiki_title": "Carpenter, Scott"
+      },
+      "person_b": {
+        "adb_id": 94255,
+        "name": "Carpenter, Rene",
+        "wiki_title": "Carpenter, Rene"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:60291|adb:60292",
+      "person_a": {
+        "adb_id": 60291,
+        "name": "Campert, Jan",
+        "wiki_title": "Campert, Jan"
+      },
+      "person_b": {
+        "adb_id": 60292,
+        "name": "Eggink, Clara",
+        "wiki_title": "Eggink, Clara"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:60291|adb:78745",
+      "person_a": {
+        "adb_id": 60291,
+        "name": "Campert, Jan",
+        "wiki_title": "Campert, Jan"
+      },
+      "person_b": {
+        "adb_id": 78745,
+        "name": "Broedelet, Joekie",
+        "wiki_title": "Broedelet, Joekie"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:67753|adb:76816",
+      "person_a": {
+        "adb_id": 67753,
+        "name": "Glanville, Brandi",
+        "wiki_title": "Glanville, Brandi"
+      },
+      "person_b": {
+        "adb_id": 76816,
+        "name": "Cibrian, Eddie",
+        "wiki_title": "Cibrian, Eddie"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:6821|adb:8007",
+      "person_a": {
+        "adb_id": 6821,
+        "name": "Crane, Philip",
+        "wiki_title": "Crane, Philip"
+      },
+      "person_b": {
+        "adb_id": 8007,
+        "name": "Crane, Arlene",
+        "wiki_title": "Crane, Arlene"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:7023|adb:96034",
+      "person_a": {
+        "adb_id": 7023,
+        "name": "Cash, Johnny",
+        "wiki_title": "Cash, Johnny"
+      },
+      "person_b": {
+        "adb_id": 96034,
+        "name": "Cash, Vivian",
+        "wiki_title": "Cash, Vivian"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:71587|adb:71588",
+      "person_a": {
+        "adb_id": 71587,
+        "name": "Carr\u00e9, Albert",
+        "wiki_title": "Carr\u00e9, Albert"
+      },
+      "person_b": {
+        "adb_id": 71588,
+        "name": "Carr\u00e9, Marguerite",
+        "wiki_title": "Carr\u00e9, Marguerite"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:71621|adb:80050",
+      "person_a": {
+        "adb_id": 71621,
+        "name": "Cavalieri, Lina",
+        "wiki_title": "Cavalieri, Lina"
+      },
+      "person_b": {
+        "adb_id": 80050,
+        "name": "Muratore, Lucien",
+        "wiki_title": "Muratore, Lucien"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:9479|adb:74737",
+      "person_a": {
+        "adb_id": 74737,
+        "name": "Moroni, Dora",
+        "wiki_title": "Moroni, Dora"
+      },
+      "person_b": {
+        "adb_id": 9479,
+        "name": "Christian",
+        "wiki_title": "Christian"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:79284|adb:79672",
+      "person_a": {
+        "adb_id": 79284,
+        "name": "Alexandrine, Queen of Denmark",
+        "wiki_title": "Alexandrine, Queen of Denmark"
+      },
+      "person_b": {
+        "adb_id": 79672,
+        "name": "Christian X, King of Denmark",
+        "wiki_title": "Christian X, King of Denmark"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:79358|adb:84214",
+      "person_a": {
+        "adb_id": 79358,
+        "name": "Wilhelm Ernst, Grand Duke of Saxe-Weimar-Eisenach",
+        "wiki_title": "Wilhelm Ernst, Grand Duke of Saxe-Weimar-Eisenach"
+      },
+      "person_b": {
+        "adb_id": 84214,
+        "name": "Caroline, Princess Reuss of Greiz",
+        "wiki_title": "Caroline, Princess Reuss of Greiz"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:79377|adb:79664",
+      "person_a": {
+        "adb_id": 79377,
+        "name": "Georg II, Duke of Saxe-Meiningen",
+        "wiki_title": "Georg II, Duke of Saxe-Meiningen"
+      },
+      "person_b": {
+        "adb_id": 79664,
+        "name": "Charlotte, Princess of Prussia (1831)",
+        "wiki_title": "Charlotte, Princess of Prussia (1831)"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:79673|adb:80137",
+      "person_a": {
+        "adb_id": 79673,
+        "name": "Carl, Prince of Prussia",
+        "wiki_title": "Carl, Prince of Prussia"
+      },
+      "person_b": {
+        "adb_id": 80137,
+        "name": "Marie, Princess of Saxe-Weimar-Eisenach (1808)",
+        "wiki_title": "Marie, Princess of Saxe-Weimar-Eisenach (1808)"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:862|adb:863",
+      "person_a": {
+        "adb_id": 862,
+        "name": "Clinton, Hillary",
+        "wiki_title": "Clinton, Hillary"
+      },
+      "person_b": {
+        "adb_id": 863,
+        "name": "Clinton, Bill",
+        "wiki_title": "Clinton, Bill"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:86361|adb:86362",
+      "person_a": {
+        "adb_id": 86361,
+        "name": "Costa, Alzira",
+        "wiki_title": "Costa, Alzira"
+      },
+      "person_b": {
+        "adb_id": 86362,
+        "name": "Costa, Afonso",
+        "wiki_title": "Costa, Afonso"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:88705|adb:96170",
+      "person_a": {
+        "adb_id": 88705,
+        "name": "Lukather, Steve",
+        "wiki_title": "Lukather, Steve"
+      },
+      "person_b": {
+        "adb_id": 96170,
+        "name": "Currie, Marie",
+        "wiki_title": "Currie, Marie"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:90851|adb:90852",
+      "person_a": {
+        "adb_id": 90851,
+        "name": "Pierre, Duke of Valentinois",
+        "wiki_title": "Pierre, Duke of Valentinois"
+      },
+      "person_b": {
+        "adb_id": 90852,
+        "name": "Charlotte of Monaco, Duchess of Valentinois",
+        "wiki_title": "Charlotte of Monaco, Duchess of Valentinois"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:91105|adb:91106",
+      "person_a": {
+        "adb_id": 91105,
+        "name": "Cidor-Citro\u00ebn, Ruth",
+        "wiki_title": "Cidor-Citro\u00ebn, Ruth"
+      },
+      "person_b": {
+        "adb_id": 91106,
+        "name": "Cidor, Hanan Aharon",
+        "wiki_title": "Cidor, Hanan Aharon"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:93201|adb:93203",
+      "person_a": {
+        "adb_id": 93201,
+        "name": "Courth\u00e9oux, Achille",
+        "wiki_title": "Courth\u00e9oux, Achille"
+      },
+      "person_b": {
+        "adb_id": 93203,
+        "name": "Courth\u00e9oux, Juliette",
+        "wiki_title": "Courth\u00e9oux, Juliette"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    },
+    {
+      "derived_timeline": [],
+      "event_evidence": [],
+      "evidence_conflicts": 0,
+      "history_tier": "T0",
+      "merged_transitions": [],
+      "pair_key": "adb:97170|adb:97283",
+      "person_a": {
+        "adb_id": 97170,
+        "name": "Cammermeyer, Margarethe",
+        "wiki_title": "Cammermeyer, Margarethe"
+      },
+      "person_b": {
+        "adb_id": 97283,
+        "name": "Divelbess, Diane",
+        "wiki_title": "Divelbess, Diane"
+      },
+      "relationship_ranges": [],
+      "reunion_sequence_count": 0
+    }
+  ],
+  "source": "public Astro-Databank C-sample plus public ADB wiki structured Relationships/Events sections",
+  "status": "development_data_recovery_audit",
+  "stop_go": {
+    "endpoint_pairs_observed": 0,
+    "go_for_separate_frozen_model_spec": false,
+    "minimum_endpoint_pairs_for_semimarkov_dissolution_reunion_development": 30
+  },
+  "wiki_resolution": {
+    "methods": {
+      "direct_name": 75,
+      "known_title": 48
+    },
+    "resolved_people": 123,
+    "unresolved_people": 0
+  }
+}
