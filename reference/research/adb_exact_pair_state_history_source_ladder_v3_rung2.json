@@ -1,0 +1,1808 @@
+{
+  "endpoint_counts": {
+    "clean_v2_baseline_endpoint_pairs": 23,
+    "pairs_newly_gaining_endpoint_from_rung2": 1,
+    "pairs_where_rung2_corroborates_quarantined_rung1_exit": 0,
+    "total_clean_endpoint_pairs_after_rung2": 24
+  },
+  "identity_counts": {
+    "linked_but_unresolved": 86,
+    "no_adb_wikipedia_link": 17,
+    "resolved_wikipedia": 20,
+    "with_relationship_infobox_field": 19
+  },
+  "ladder_freeze": "reference/research/adb_exact_pair_state_history_source_ladder_freeze_v3.md",
+  "ladder_freeze_sha256": "73ca2da5be3354fc962bd8607ebe7f7f8ca7a0c4549794a1075241d6afb5bb2f",
+  "limitations": [
+    "Only ADB-linked English Wikipedia identities are used; no Wikipedia name search is performed.",
+    "Only lead infobox spouse/partner fields are parsed; article prose is excluded.",
+    "Bare end years without an explicit nonfatal ending marker do not count.",
+    "Quarantined Rung-1 Biography additions do not independently contribute to the threshold count.",
+    "No astrology or Human Design features are calculated or inspected."
+  ],
+  "pair_universe": 64,
+  "pairs": [
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:60355|adb:101321",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Sofia Coppola",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Thomas Mars",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:69473|adb:104188",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Marita Camacho Quirós",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Francisco Orlich Bolmarcich",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:5996|adb:106360",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Mike Connors",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Mike Connors",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": true,
+      "new_rung2_exits": [],
+      "pair_key": "adb:474|adb:11103",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Charles III",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Princess of Wales Diana",
+        "canonical_wikipedia_title": "Diana, Princess of Wales",
+        "wikidata_qid": "Q9685"
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": true,
+      "new_rung2_exits": [],
+      "pair_key": "adb:13047|adb:19803",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "David Copperfield (illusionist)",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Claudia Schiffer",
+        "canonical_wikipedia_title": "Claudia Schiffer",
+        "wikidata_qid": "Q76717"
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:13089|adb:13581",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Princess Caroline",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Stefano Casiraghi",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": true,
+      "new_rung2_exits": [],
+      "pair_key": "adb:8584|adb:13089",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Princess Caroline",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Philippe Junot",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": true,
+      "new_rung2_exits": [],
+      "pair_key": "adb:14274|adb:19401",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Lisa Marie Presley",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Nicolas Cage",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:15074|adb:68650",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Charlotte Casiraghi",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Dimitri Rassam",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": true,
+      "new_rung2_exits": [],
+      "pair_key": "adb:19367|adb:39157",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Infanta Cristina, Duchess of Palma de Mallorca",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Inaki Urdangarin",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:19568|adb:25724",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Kurt Cobain",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Courtney Love",
+        "canonical_wikipedia_title": "Courtney Love",
+        "wikidata_qid": "Q222071"
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:19580|adb:76816",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "LeAnn Rimes",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Eddie Cibrian",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:7157|adb:19604",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Bernadette Chirac",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Jacques Chirac",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:19605|adb:39278",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Claude Chirac",
+        "canonical_wikipedia_title": "Claude Chirac",
+        "wikidata_qid": "Q2977194"
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": null,
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [
+        {
+          "date_text": "2010",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "2010-12-31",
+          "interval_start": "2010-01-01",
+          "other_adb_id": 244,
+          "precision": "year",
+          "source_adb_id": 19799,
+          "source_wikipedia_title": "Kimberley Conrad",
+          "template": "{{marriage|[[Hugh Hefner]]|1989|2010|end=divorced}}",
+          "transition": "nonfatal_exit"
+        },
+        {
+          "date_text": "2010",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouses",
+          "interval_end": "2010-12-31",
+          "interval_start": "2010-01-01",
+          "other_adb_id": 19799,
+          "precision": "year",
+          "source_adb_id": 244,
+          "source_wikipedia_title": "Hugh Hefner",
+          "template": "{{marriage|[[Kimberley Conrad]]|1989|2010|reason=divorced}}",
+          "transition": "nonfatal_exit"
+        }
+      ],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [
+        {
+          "date_text": "2010",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "2010-12-31",
+          "interval_start": "2010-01-01",
+          "other_adb_id": 244,
+          "precision": "year",
+          "source_adb_id": 19799,
+          "source_wikipedia_title": "Kimberley Conrad",
+          "status": "new_rung2_endpoint",
+          "template": "{{marriage|[[Hugh Hefner]]|1989|2010|end=divorced}}",
+          "transition": "nonfatal_exit"
+        },
+        {
+          "date_text": "2010",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouses",
+          "interval_end": "2010-12-31",
+          "interval_start": "2010-01-01",
+          "other_adb_id": 19799,
+          "precision": "year",
+          "source_adb_id": 244,
+          "source_wikipedia_title": "Hugh Hefner",
+          "status": "new_rung2_endpoint",
+          "template": "{{marriage|[[Kimberley Conrad]]|1989|2010|reason=divorced}}",
+          "transition": "nonfatal_exit"
+        }
+      ],
+      "pair_key": "adb:244|adb:19799",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Kimberley Conrad",
+        "canonical_wikipedia_title": "Kimberley Conrad",
+        "wikidata_qid": "Q3073238"
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Hugh Hefner",
+        "canonical_wikipedia_title": "Hugh Hefner",
+        "wikidata_qid": "Q194280"
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": true,
+      "new_rung2_exits": [],
+      "pair_key": "adb:238|adb:55779",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Tony Curtis",
+        "canonical_wikipedia_title": "Tony Curtis",
+        "wikidata_qid": "Q162389"
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Christine Kaufmann",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": true,
+      "new_rung2_exits": [],
+      "pair_key": "adb:238|adb:6281",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Tony Curtis",
+        "canonical_wikipedia_title": "Tony Curtis",
+        "wikidata_qid": "Q162389"
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Janet Leigh",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": true,
+      "new_rung2_exits": [],
+      "pair_key": "adb:24590|adb:92708",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Angela Lansbury",
+        "canonical_wikipedia_title": "Angela Lansbury",
+        "wikidata_qid": "Q206856"
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Richard Cromwell (actor)",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:863|adb:24930",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Monica Lewinsky",
+        "canonical_wikipedia_title": "Monica Lewinsky",
+        "wikidata_qid": "Q212659"
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Bill Clinton",
+        "canonical_wikipedia_title": "Bill Clinton",
+        "wikidata_qid": "Q1124"
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:25004|adb:25924",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Queen Silvia of Sweden",
+        "canonical_wikipedia_title": "Queen Silvia of Sweden",
+        "wikidata_qid": "Q152308"
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "King Carl XVI Gustaf",
+        "canonical_wikipedia_title": "Carl XVI Gustaf",
+        "wikidata_qid": "Q45068"
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [
+        {
+          "date_text": "1962",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1962-12-31",
+          "interval_start": "1962-01-01",
+          "other_adb_id": 293,
+          "precision": "year",
+          "source_adb_id": 25917,
+          "source_wikipedia_title": "Jacques Charrier",
+          "template": "{{marriage|[[Brigitte Bardot]]|1959|1962|reason=div}}",
+          "transition": "nonfatal_exit"
+        },
+        {
+          "date_text": "1962",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1962-12-31",
+          "interval_start": "1962-01-01",
+          "other_adb_id": 25917,
+          "precision": "year",
+          "source_adb_id": 293,
+          "source_wikipedia_title": "Brigitte Bardot",
+          "template": "{{marriage|[[Jacques Charrier]]|1959|1962|end = divorced}}",
+          "transition": "nonfatal_exit"
+        }
+      ],
+      "corroborating_v1_v2_exits": [
+        {
+          "date_text": "1962",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1962-12-31",
+          "interval_start": "1962-01-01",
+          "other_adb_id": 293,
+          "precision": "year",
+          "source_adb_id": 25917,
+          "source_wikipedia_title": "Jacques Charrier",
+          "status": "corroborates_v1_v2",
+          "template": "{{marriage|[[Brigitte Bardot]]|1959|1962|reason=div}}",
+          "transition": "nonfatal_exit"
+        },
+        {
+          "date_text": "1962",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1962-12-31",
+          "interval_start": "1962-01-01",
+          "other_adb_id": 25917,
+          "precision": "year",
+          "source_adb_id": 293,
+          "source_wikipedia_title": "Brigitte Bardot",
+          "status": "corroborates_v1_v2",
+          "template": "{{marriage|[[Jacques Charrier]]|1959|1962|end = divorced}}",
+          "transition": "nonfatal_exit"
+        }
+      ],
+      "had_clean_v1_v2_endpoint": true,
+      "new_rung2_exits": [],
+      "pair_key": "adb:293|adb:25917",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Jacques Charrier",
+        "canonical_wikipedia_title": "Jacques Charrier",
+        "wikidata_qid": "Q1677936"
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Brigitte Bardot",
+        "canonical_wikipedia_title": "Brigitte Bardot",
+        "wikidata_qid": "Q36268"
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:26134|adb:79083",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "William, German Crown Prince",
+        "canonical_wikipedia_title": "Wilhelm, German Crown Prince",
+        "wikidata_qid": "Q57621"
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Duchess Cecilie of Mecklenburg-Schwerin",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:26438|adb:72673",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "John Connally",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Nellie Connally",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [
+        {
+          "date_text": "1975",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1975-12-31",
+          "interval_start": "1975-01-01",
+          "other_adb_id": 362,
+          "precision": "year",
+          "source_adb_id": 295,
+          "source_wikipedia_title": "Sonny Bono",
+          "template": "{{marriage|[[Cher]]<!-- was her name at the time of marriage -->|1969|1975|end=divorced}}",
+          "transition": "nonfatal_exit"
+        },
+        {
+          "date_text": "1975",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouses",
+          "interval_end": "1975-12-31",
+          "interval_start": "1975-01-01",
+          "other_adb_id": 295,
+          "precision": "year",
+          "source_adb_id": 362,
+          "source_wikipedia_title": "Cher",
+          "template": "{{marriage|[[Sonny Bono]]|1969|1975|end=divorced}}",
+          "transition": "nonfatal_exit"
+        }
+      ],
+      "corroborating_v1_v2_exits": [
+        {
+          "date_text": "1975",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouse",
+          "interval_end": "1975-12-31",
+          "interval_start": "1975-01-01",
+          "other_adb_id": 362,
+          "precision": "year",
+          "source_adb_id": 295,
+          "source_wikipedia_title": "Sonny Bono",
+          "status": "corroborates_v1_v2",
+          "template": "{{marriage|[[Cher]]<!-- was her name at the time of marriage -->|1969|1975|end=divorced}}",
+          "transition": "nonfatal_exit"
+        },
+        {
+          "date_text": "1975",
+          "end_date_source": "positional_3",
+          "evidence_type": "wikipedia_infobox_marriage_template",
+          "infobox_field": "spouses",
+          "interval_end": "1975-12-31",
+          "interval_start": "1975-01-01",
+          "other_adb_id": 295,
+          "precision": "year",
+          "source_adb_id": 362,
+          "source_wikipedia_title": "Cher",
+          "status": "corroborates_v1_v2",
+          "template": "{{marriage|[[Sonny Bono]]|1969|1975|end=divorced}}",
+          "transition": "nonfatal_exit"
+        }
+      ],
+      "had_clean_v1_v2_endpoint": true,
+      "new_rung2_exits": [],
+      "pair_key": "adb:295|adb:362",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Sonny Bono",
+        "canonical_wikipedia_title": "Sonny Bono",
+        "wikidata_qid": "Q179150"
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Cher",
+        "canonical_wikipedia_title": "Cher",
+        "wikidata_qid": "Q12003"
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": true,
+      "new_rung2_exits": [],
+      "pair_key": "adb:3307|adb:80315",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Maurice Chevalier",
+        "canonical_wikipedia_title": "Maurice Chevalier",
+        "wikidata_qid": "Q106001"
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Yvonne Vallée",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:36990|adb:55157",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Eric Cantona",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": null,
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:37302|adb:37303",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": null,
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": null,
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:39975|adb:49393",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Prince Laurent of Belgium",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Claire Coombs",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:40046|adb:48891",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Emanuele Filiberto, Prince of Venice and Piedmont",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Clotilde Courau",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:5515|adb:40327",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Tony Martin (American singer)",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Cyd Charisse",
+        "canonical_wikipedia_title": "Cyd Charisse",
+        "wikidata_qid": "Q62558"
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": true,
+      "new_rung2_exits": [],
+      "pair_key": "adb:6790|adb:46200",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Diane Cilento",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Sean Connery",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": true,
+      "new_rung2_exits": [],
+      "pair_key": "adb:47237|adb:47241",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": null,
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": null,
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:47810|adb:80168",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Jean Casimir-Perier",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Hélène Casimir-Perier",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": true,
+      "new_rung2_exits": [],
+      "pair_key": "adb:49711|adb:49712",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Renee Zellweger",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Kenny Chesney",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:50349|adb:99620",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": null,
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Broderick Crawford",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": true,
+      "new_rung2_exits": [],
+      "pair_key": "adb:50520|adb:50764",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Stéphane Audran",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Claude Chabrol",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:50795|adb:80186",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": null,
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Daniele Lebrun",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:54655|adb:88172",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "John Whiteside Parsons",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Marjorie Cameron",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:55266|adb:55269",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Christo and Jeanne-Claude",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Christo and Jeanne-Claude",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:55464|adb:55466",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Annemarie Schwarzenbach",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Achille-Claude Clarac",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:55649|adb:61241",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Penélope Cruz",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Javier Bardem",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:56048|adb:56049",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Princess Victoria Melita of Saxe-Coburg and Gotha",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Grand Duke Cyril Vladimirovich of Russia",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:58088|adb:58089",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Pierre et Gilles",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Pierre et Gilles",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:5888|adb:6298",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Jimmy Carter",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Rosalynn Carter",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": true,
+      "new_rung2_exits": [],
+      "pair_key": "adb:5959|adb:94255",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Scott Carpenter",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Rene Carpenter",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": true,
+      "new_rung2_exits": [],
+      "pair_key": "adb:60291|adb:60292",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": null,
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": null,
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": true,
+      "new_rung2_exits": [],
+      "pair_key": "adb:60291|adb:78745",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": null,
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": null,
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": true,
+      "new_rung2_exits": [],
+      "pair_key": "adb:67753|adb:76816",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Brandi Glanville",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Eddie Cibrian",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:6821|adb:8007",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Philip Crane",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": null,
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": true,
+      "new_rung2_exits": [],
+      "pair_key": "adb:7023|adb:96034",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Johnny Cash",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Vivian Cash",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:71587|adb:71588",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Albert Carré",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Marguerite Carré",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": true,
+      "new_rung2_exits": [],
+      "pair_key": "adb:71621|adb:80050",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Lina Cavalieri",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Lucien Muratore",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": true,
+      "new_rung2_exits": [],
+      "pair_key": "adb:9479|adb:74737",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Dora Moroni",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Christian (singer)",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:79284|adb:79672",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Alexandrine of Mecklenburg-Schwerin",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Christian X of Denmark",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:79358|adb:84214",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "William Ernest, Grand Duke of Saxe-Weimar-Eisenach",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Princess Caroline Reuss of Greiz",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:79377|adb:79664",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Georg II, Duke of Saxe-Meiningen",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Princess Charlotte of Prussia (1831–1855)",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:79673|adb:80137",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Prince Charles of Prussia",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Princess Marie of Saxe-Weimar-Eisenach (1808–1877)",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:862|adb:863",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Hillary Clinton",
+        "canonical_wikipedia_title": "Hillary Clinton",
+        "wikidata_qid": "Q6294"
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Bill Clinton",
+        "canonical_wikipedia_title": "Bill Clinton",
+        "wikidata_qid": "Q1124"
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:86361|adb:86362",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Alzira Costa",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Afonso Costa",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:88705|adb:96170",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Steve Lukather",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Marie Currie",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": true,
+      "new_rung2_exits": [],
+      "pair_key": "adb:90851|adb:90852",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Prince Pierre, Duke of Valentinois",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": "Princess Charlotte, Duchess of Valentinois",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:91105|adb:91106",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": null,
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": null,
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:93201|adb:93203",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": null,
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": null,
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    },
+    {
+      "accepted_wikipedia_exits": [],
+      "corroborating_v1_v2_exits": [],
+      "had_clean_v1_v2_endpoint": false,
+      "new_rung2_exits": [],
+      "pair_key": "adb:97170|adb:97283",
+      "quarantined_rung1_exits_independently_corroborated": [],
+      "wikipedia_identity_a": {
+        "adb_linked_wikipedia_title": "Margarethe Cammermeyer",
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      },
+      "wikipedia_identity_b": {
+        "adb_linked_wikipedia_title": null,
+        "canonical_wikipedia_title": null,
+        "wikidata_qid": null
+      }
+    }
+  ],
+  "parser_freeze": "reference/research/adb_exact_pair_state_history_source_ladder_v3_rung2_parser_freeze.md",
+  "parser_freeze_sha256": "0f7ede33466908888e4af3db4d458b5b21e9084d3add5b598acdc1606798ddb9",
+  "people": 123,
+  "rung1_audit": "reference/research/adb_exact_pair_state_history_source_ladder_v3_rung1_audit.md",
+  "rung2_counts": {
+    "accepted_wikipedia_exit_evidence": 6,
+    "corroborating_v1_v2_evidence": 4,
+    "new_wikipedia_exit_evidence": 2
+  },
+  "source_failures": [
+    {
+      "adb_id": 5888,
+      "adb_linked_title": "Jimmy Carter",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 5959,
+      "adb_linked_title": "Scott Carpenter",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 5996,
+      "adb_linked_title": "Mike Connors",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 6281,
+      "adb_linked_title": "Janet Leigh",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 6298,
+      "adb_linked_title": "Rosalynn Carter",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 6790,
+      "adb_linked_title": "Sean Connery",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 6821,
+      "adb_linked_title": "Philip Crane",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 7023,
+      "adb_linked_title": "Johnny Cash",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 7157,
+      "adb_linked_title": "Jacques Chirac",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 8584,
+      "adb_linked_title": "Philippe Junot",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 9479,
+      "adb_linked_title": "Christian (singer)",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 11103,
+      "adb_linked_title": "Charles III",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 13047,
+      "adb_linked_title": "David Copperfield (illusionist)",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 13089,
+      "adb_linked_title": "Princess Caroline",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 13581,
+      "adb_linked_title": "Stefano Casiraghi",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 14274,
+      "adb_linked_title": "Lisa Marie Presley",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 15074,
+      "adb_linked_title": "Charlotte Casiraghi",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 19367,
+      "adb_linked_title": "Infanta Cristina, Duchess of Palma de Mallorca",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 19401,
+      "adb_linked_title": "Nicolas Cage",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 19568,
+      "adb_linked_title": "Kurt Cobain",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 19580,
+      "adb_linked_title": "LeAnn Rimes",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 19604,
+      "adb_linked_title": "Bernadette Chirac",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 26438,
+      "adb_linked_title": "John Connally",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 36990,
+      "adb_linked_title": "Eric Cantona",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 39157,
+      "adb_linked_title": "Inaki Urdangarin",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 39975,
+      "adb_linked_title": "Prince Laurent of Belgium",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 40046,
+      "adb_linked_title": "Emanuele Filiberto, Prince of Venice and Piedmont",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 40327,
+      "adb_linked_title": "Tony Martin (American singer)",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 46200,
+      "adb_linked_title": "Diane Cilento",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 47810,
+      "adb_linked_title": "Jean Casimir-Perier",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 48891,
+      "adb_linked_title": "Clotilde Courau",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 49393,
+      "adb_linked_title": "Claire Coombs",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 49711,
+      "adb_linked_title": "Renee Zellweger",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 49712,
+      "adb_linked_title": "Kenny Chesney",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 50520,
+      "adb_linked_title": "Stéphane Audran",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 50764,
+      "adb_linked_title": "Claude Chabrol",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 54655,
+      "adb_linked_title": "John Whiteside Parsons",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 55266,
+      "adb_linked_title": "Christo and Jeanne-Claude",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 55269,
+      "adb_linked_title": "Christo and Jeanne-Claude",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 55464,
+      "adb_linked_title": "Annemarie Schwarzenbach",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 55466,
+      "adb_linked_title": "Achille-Claude Clarac",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 55649,
+      "adb_linked_title": "Penélope Cruz",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 55779,
+      "adb_linked_title": "Christine Kaufmann",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 56048,
+      "adb_linked_title": "Princess Victoria Melita of Saxe-Coburg and Gotha",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 56049,
+      "adb_linked_title": "Grand Duke Cyril Vladimirovich of Russia",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 58088,
+      "adb_linked_title": "Pierre et Gilles",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 58089,
+      "adb_linked_title": "Pierre et Gilles",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 60355,
+      "adb_linked_title": "Thomas Mars",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 61241,
+      "adb_linked_title": "Javier Bardem",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 67753,
+      "adb_linked_title": "Brandi Glanville",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 68650,
+      "adb_linked_title": "Dimitri Rassam",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 69473,
+      "adb_linked_title": "Francisco Orlich Bolmarcich",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 71587,
+      "adb_linked_title": "Albert Carré",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 71588,
+      "adb_linked_title": "Marguerite Carré",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 71621,
+      "adb_linked_title": "Lina Cavalieri",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 72673,
+      "adb_linked_title": "Nellie Connally",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 74737,
+      "adb_linked_title": "Dora Moroni",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 76816,
+      "adb_linked_title": "Eddie Cibrian",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 79083,
+      "adb_linked_title": "Duchess Cecilie of Mecklenburg-Schwerin",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 79284,
+      "adb_linked_title": "Alexandrine of Mecklenburg-Schwerin",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 79358,
+      "adb_linked_title": "William Ernest, Grand Duke of Saxe-Weimar-Eisenach",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 79377,
+      "adb_linked_title": "Georg II, Duke of Saxe-Meiningen",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 79664,
+      "adb_linked_title": "Princess Charlotte of Prussia (1831–1855)",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 79672,
+      "adb_linked_title": "Christian X of Denmark",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 79673,
+      "adb_linked_title": "Prince Charles of Prussia",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 80050,
+      "adb_linked_title": "Lucien Muratore",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 80137,
+      "adb_linked_title": "Princess Marie of Saxe-Weimar-Eisenach (1808–1877)",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 80168,
+      "adb_linked_title": "Hélène Casimir-Perier",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 80186,
+      "adb_linked_title": "Daniele Lebrun",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 80315,
+      "adb_linked_title": "Yvonne Vallée",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 84214,
+      "adb_linked_title": "Princess Caroline Reuss of Greiz",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 86361,
+      "adb_linked_title": "Alzira Costa",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 86362,
+      "adb_linked_title": "Afonso Costa",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 88172,
+      "adb_linked_title": "Marjorie Cameron",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 88705,
+      "adb_linked_title": "Steve Lukather",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 90851,
+      "adb_linked_title": "Prince Pierre, Duke of Valentinois",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 90852,
+      "adb_linked_title": "Princess Charlotte, Duchess of Valentinois",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 92708,
+      "adb_linked_title": "Richard Cromwell (actor)",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 94255,
+      "adb_linked_title": "Rene Carpenter",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 96034,
+      "adb_linked_title": "Vivian Cash",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 96170,
+      "adb_linked_title": "Marie Currie",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 97170,
+      "adb_linked_title": "Margarethe Cammermeyer",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 99620,
+      "adb_linked_title": "Broderick Crawford",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 101321,
+      "adb_linked_title": "Sofia Coppola",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 104188,
+      "adb_linked_title": "Marita Camacho Quirós",
+      "stage": "wikipedia_fetch"
+    },
+    {
+      "adb_id": 106360,
+      "adb_linked_title": "Mike Connors",
+      "stage": "wikipedia_fetch"
+    }
+  ],
+  "status": "development_state_history_source_ladder_rung2",
+  "stop_go": {
+    "continue_to_rung3": true,
+    "endpoint_pairs_observed": 24,
+    "minimum_endpoint_pairs": 30,
+    "stop_source_ladder_and_freeze_model_spec": false
+  },
+  "v1_sha256": "91609a233727a06c0cee23414e357a1d3e31349481394a991cb69210aed33298",
+  "v2_sha256": "35710c05232e2d2d7b154abb2977e7c6d113365c314aeeb2531c985f16401612"
+}
