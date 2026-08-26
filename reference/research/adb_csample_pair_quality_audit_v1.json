@@ -1,0 +1,119 @@
+{
+  "entry_count": 6036,
+  "limitations": [
+    "ADB editorial quality labels are observational and heterogeneous, not standardized partner self-report scales.",
+    "Positive and negative dimensions are not forced into one compatibility scalar.",
+    "A pair may legitimately carry both positive and adverse labels across time.",
+    "No raw research_data notes, identities, or relationship records are written to this result."
+  ],
+  "linkage_rules": {
+    "forbidden_inference": "no unique-spouse or biography-based assignment of an unlabeled category to a pair",
+    "person_category": "accepted only when catnotes explicitly contain >=4-char token from linked partner name",
+    "relationship_relnote": "pair-specific edge; only predeclared exact ADB quality vocabulary recognized"
+  },
+  "model_readiness": {
+    "dateonly_binary_quality_ready": false,
+    "exact_binary_quality_ready": false,
+    "exploratory_binary_quality_minimum_per_class": 25,
+    "note": "threshold is an engineering minimum, not a power calculation"
+  },
+  "observed_quality_category_occurrences_person_level": {
+    "183": 7,
+    "185": 5,
+    "186": 7,
+    "192": 8,
+    "193": 233,
+    "194": 30,
+    "972": 25,
+    "973": 4,
+    "975": 1,
+    "986": 10,
+    "987": 1
+  },
+  "pair_counts": {
+    "all_unique_romantic_pairs_seen": 519,
+    "exact_A_AA_both_timed_pairs_with_any_quality_label": 3,
+    "exact_A_AA_negative_burden_pairs": 0,
+    "exact_A_AA_positive_quality_pairs": 0,
+    "external_dateonly_negative_burden_pairs": 9,
+    "external_dateonly_positive_quality_pairs": 0,
+    "external_highRR_timed_focal_dateonly_partner_pairs_with_any_quality_label": 15,
+    "negative_burden_pairs": 13,
+    "pairs_with_any_usable_quality_label": 26,
+    "positive_and_negative_mixed_pairs": 0,
+    "positive_quality_pairs": 0
+  },
+  "pair_label_counts_all": {
+    "bitter_divorce": 10,
+    "long_duration": 11,
+    "negative_burden": 13,
+    "short_duration": 5
+  },
+  "pair_label_counts_exact_A_AA": {
+    "long_duration": 3
+  },
+  "pair_label_counts_external_dateonly": {
+    "bitter_divorce": 8,
+    "long_duration": 4,
+    "negative_burden": 9,
+    "short_duration": 5
+  },
+  "quality_category_ids": {
+    "183": [
+      "positive_quality"
+    ],
+    "185": [
+      "negative_burden",
+      "severe_negative_burden"
+    ],
+    "186": [
+      "positive_quality"
+    ],
+    "192": [
+      "negative_burden"
+    ],
+    "193": [
+      "long_duration"
+    ],
+    "194": [
+      "short_duration"
+    ],
+    "972": [
+      "negative_burden"
+    ],
+    "973": [
+      "negative_burden"
+    ],
+    "975": [
+      "sexual_chemistry"
+    ],
+    "986": [
+      "negative_burden",
+      "bitter_divorce"
+    ],
+    "987": [
+      "friendly_divorce"
+    ]
+  },
+  "raw_bytes": 18611784,
+  "relationship_edges": {
+    "directed_romantic": 584,
+    "directed_with_nonempty_relnote": 245,
+    "directed_with_recognized_quality_relnote": 9,
+    "recognized_relnote_label_attributions": {
+      "bitter_divorce": 9,
+      "negative_burden": 9
+    }
+  },
+  "source": "https://www.astro.com/adbexport/c_sample.xml",
+  "status": "data_sufficiency_audit_only",
+  "strict_partner_named_categories": {
+    "attribution_count": 21,
+    "by_category_id": {
+      "193": 11,
+      "194": 5,
+      "972": 4,
+      "986": 1
+    }
+  }
+}
