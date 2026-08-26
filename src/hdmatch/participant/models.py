@@ -6,7 +6,7 @@ from datetime import UTC, datetime
 from enum import StrEnum
 from typing import Literal
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator
+from pydantic import BaseModel, ConfigDict, Field, field_serializer, field_validator
 
 from hdmatch.schemas import BehavioralResponse, ChartFeatures, ScoredState
 
@@ -92,6 +92,12 @@ class ResolvedBirth(ParticipantModel):
         if value.tzinfo is not None and value.utcoffset() is not None:
             raise ValueError("supplied_local must remain a naive civil tuple")
         return value
+
+    @field_serializer("supplied_local")
+    def serialize_supplied_local(self, value: datetime) -> str:
+        """Canonical JSON cannot contain a naive datetime object; preserve it as ISO text."""
+
+        return value.isoformat()
 
     @field_validator("birth_utc")
     @classmethod
@@ -358,4 +364,10 @@ class FinalParticipantReport(ParticipantModel):
     confirmatory: RevealReport
     exploratory: ExploratoryRankingReport
     retained_secondary_evidence: tuple[EvidenceRecord, ...]
-    research_layers: tuple[ResearchLayer, ...] = tuple(ResearchLayer)
+    research_layers: tuple[ResearchLayer, ...] = (
+        ResearchLayer.NATAL_BEHAVIORAL_FINGERPRINT,
+        ResearchLayer.BEHAVIOR_TO_OUTCOME,
+        ResearchLayer.DIRECT_OUTCOME_INCREMENT,
+        ResearchLayer.TIMING_INCREMENT,
+        ResearchLayer.RESIDUAL_INCREMENT,
+    )
