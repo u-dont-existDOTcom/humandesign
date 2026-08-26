@@ -1,0 +1,144 @@
+{
+  "artifact_hashes": {
+    "H1_H2": "05ff02b13829fdf4c985715f49e408f783843856873e80f8e6c3834039ebc8d6",
+    "H3": "abe60d1ffb866f570c5d2c160587a30e166f67366429e197e8379281934a9349",
+    "H4": "0d2b86e698c17ffdf65749fded39db927441c9d26370c20c2a558512e332de5d",
+    "universe": "f8f5a9a82af7998d030f5ff3eaec61a1db0ab4914082fedcbc469abad426dd6c"
+  },
+  "final_history_counts": {
+    "all_clean_nonfatal_exit_transitions": 103,
+    "all_endpoint_pairs_with_any_interval_censoring": 63,
+    "all_endpoint_pairs_with_at_least_one_day_or_month_exit": 17,
+    "all_endpoint_pairs_with_explicit_prior_H1_state_entry": 63,
+    "all_exact_pairs_with_usable_nonfatal_exit": 69,
+    "all_pairs_with_H4_repeated_start_supported_reunion": 1,
+    "all_pairs_with_strict_reunion_sequence": 1,
+    "all_strict_reunion_sequences": 2,
+    "model_eligible_clean_nonfatal_exit_transitions": 101,
+    "model_eligible_pairs_with_strict_reunion_sequence": 1,
+    "model_eligible_pairs_with_usable_nonfatal_exit": 67,
+    "model_eligible_strict_reunion_sequences": 2,
+    "model_endpoint_pairs_with_any_interval_censoring": 61,
+    "model_endpoint_pairs_with_at_least_one_day_or_month_exit": 17,
+    "model_endpoint_pairs_with_explicit_prior_H1_state_entry": 62,
+    "model_pairs_with_H4_repeated_start_supported_reunion": 1
+  },
+  "freeze_sha256": "749b7d8d7c05be07b2455e2628a26ed2c049d971c8b306985ddb260ae56e893a",
+  "freeze_spec": "reference/research/adb_broad_exact_pair_universe_freeze_v4.md",
+  "frozen_gate_decisions": {
+    "dissolution_nonfatal_exit": {
+      "all_exact_pair_gate_passed": true,
+      "minimum_unique_exact_pairs": 50,
+      "model_eligible_pair_count_also_at_least_50": true,
+      "next_action": "write_and_freeze_separate_dissolution_semimarkov_model_spec_do_not_fit_yet"
+    },
+    "same_partner_reunion": {
+      "all_exact_pair_gate_passed": false,
+      "minimum_unique_exact_pairs_with_strict_sequence": 30,
+      "model_eligible_pair_count_also_at_least_30": false,
+      "next_action": "do_not_write_or_fit_reunion_model_spec_insufficient_strict_reunion_pairs"
+    }
+  },
+  "history_evidence": {
+    "H1_counts": {
+      "event_evidence_by_kind": {
+        "begin": 18,
+        "divorce": 39,
+        "end": 15,
+        "marriage": 157,
+        "meet": 20
+      },
+      "event_evidence_by_precision": {
+        "day": 144,
+        "month": 25,
+        "year": 80
+      },
+      "event_evidence_by_transition": {
+        "dissolution": 54,
+        "formation": 195
+      }
+    },
+    "H1_formation_transitions_by_kind": {
+      "begin": 15,
+      "marriage": 109,
+      "meet": 16
+    },
+    "H1_formation_transitions_by_precision": {
+      "day": 88,
+      "month": 16,
+      "year": 36
+    },
+    "H2_counts": {
+      "accepted_nonfatal_range_exits": 15,
+      "corroborating_range_exits": 14,
+      "excluded_ranges": 59,
+      "rule_counts": {
+        "B_only": 15
+      }
+    },
+    "H3_counts": {
+      "accepted_H3_exit_evidence": 77,
+      "corroborating_H1_H2": 42,
+      "new_H3_exit_evidence": 35
+    },
+    "H4_counts": {
+      "corroborating_statement_evidence": 83,
+      "new_qualifying_statement_evidence": 8,
+      "nonqualifying_fatal_nonfatal_cause_conflict_or_fatal_cause": 37,
+      "nonqualifying_no_P1534_end_cause": 66,
+      "nonqualifying_no_usable_end_time": 126,
+      "ordered_explicit_start_end_statements": 184
+    },
+    "nonfatal_exit_transitions_by_precision": {
+      "day": 18,
+      "month": 5,
+      "year": 80
+    },
+    "nonfatal_exit_transitions_by_source": {
+      "H1_adb_structured_event": 45,
+      "H2_adb_finite_range": 15,
+      "H3_wikipedia_infobox": 35,
+      "H4_wikidata_exact_pair_statement": 8
+    },
+    "source_defined_conflicts": {}
+  },
+  "interpretation": [
+    "This audit concerns development-data availability, not astrological predictive performance.",
+    "Crossing a frozen sample-size gate authorizes only a separately frozen model specification; it does not authorize immediate fitting.",
+    "The reunion gate is evaluated independently and unlike transitions are not pooled merely to reach sample size.",
+    "Independent external couples remain required for confirmatory validation of any later development result."
+  ],
+  "model_eligible_pairs_after_all_duplicate_and_swieph_guards": 311,
+  "source_completion": {
+    "H1_H2_adb_exact_pages_resolved": 570,
+    "H1_H2_source_failures": [],
+    "H3_identity_counts": {
+      "no_adb_wikipedia_link": 97,
+      "resolved_wikipedia": 473,
+      "with_adb_wikipedia_link": 473,
+      "with_relationship_infobox_field": 349
+    },
+    "H3_source_failures": [],
+    "H4_exact_pair_P26_P451_statements": 320,
+    "H4_linked_wikidata_qids": 465,
+    "H4_resolved_claim_entities": 465,
+    "source_hierarchy_complete": true
+  },
+  "status": "development_broad_pair_history_V4_final_source_only_audit",
+  "universe_counts": {
+    "c_sample_A_AA_exact_time_focal_people": 4975,
+    "c_sample_entries": 6036,
+    "directed_eligible_romantic_links": 446,
+    "external_exact_time_A_AA_partners_recovered": 268,
+    "external_public_pages_exact_id_resolved": 324,
+    "external_public_pages_unresolved": 4,
+    "final_unique_birth_data_qualified_exact_time_pairs": 322,
+    "internal_candidate_pairs": 61,
+    "internal_final_exact_time_pairs": 45,
+    "pairs_surviving_swieph_natal_design_preflight": 311,
+    "possible_same_person_duplicate_exclusions": 0,
+    "self_links_excluded": 0,
+    "unique_external_target_ids": 328,
+    "unique_people_in_final_pairs": 570
+  }
+}
