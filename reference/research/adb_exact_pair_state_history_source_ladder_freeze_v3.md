@@ -38,9 +38,13 @@ Accept a nonfatal ending sentence only when all are true:
 3. the same sentence contains an explicit 4-digit year or a parseable day/month/year;
 4. the sentence is clearly about the romantic relationship, not an unrelated legal/business separation.
 
+Operationalize condition 4 by additionally requiring a same-sentence romantic cue from `marri*`, `wife`, `husband`, `spouse`, `lover`, `relationship`, `dating`, `dated`, `romance`, `couple`, `affair`, or `partner`.
+
 No pronoun resolution across sentences is allowed. No manual inference from context outside the accepted sentence is allowed.
 
 The extracted date remains at its source precision. A year-only statement is a full-year interval.
+
+When a qualifying ending sentence contains multiple date expressions, choose the parseable date expression with the smallest character-distance to the matched ending term. If two distinct date expressions are tied for nearest distance, reject the sentence as date-ambiguous. This rule is frozen before Rung-1 counts are observed.
 
 Formation sentences may also be accepted under the same same-sentence partner rule when they contain `met`, `began dating`, `started dating`, `married`, or `wedding` plus an explicit date/year, but formation recovery is secondary; V3's stop/go count concerns nonfatal exit/reunion endpoints.
 
