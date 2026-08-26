@@ -61,7 +61,7 @@ def main():
         raise RuntimeError(f"expected one CSV, got {csv_names}")
     with z.open(csv_names[0]) as fb:
         text = io.TextIOWrapper(fb, encoding="utf-8-sig", errors="replace", newline="")
-        reader = csv.DictReader(text)
+        reader = csv.DictReader(text, delimiter=";")
         fields = reader.fieldnames or []
         row_count = 0
         both_parent_dob = 0
@@ -146,7 +146,7 @@ def main():
         "source_notice":[
             "Data are Didier Castille adaptations of INSEE files, not official INSEE files.",
             "Source README states the files are neither official nor scientifically valid and depend on Castille's good faith.",
-            "Birth and wedding data are untimed.",
+            "Birth and wedding data are untimed."
         ],
         "next_decision":"Use audit to freeze deduplication and independent untimed partner-selection / wedding-timing tests; do not inspect astrology before freeze."
     }
