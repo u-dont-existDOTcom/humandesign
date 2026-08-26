@@ -1,0 +1,440 @@
+{
+  "best_pair_dynamic_family_by_pooled_mean_percentile_improvement": "M3A",
+  "dataset": {
+    "control_exclusions": {
+      "control_age_excluded": 255
+    },
+    "events_by_transition": {
+      "dissolution": 18,
+      "formation": 84
+    },
+    "events_by_type": {
+      "begin": 3,
+      "divorce": 15,
+      "end": 3,
+      "marriage": 74,
+      "meet": 7
+    },
+    "parser_exclusions": {
+      "birth_outside_ephemeris": 4,
+      "event_outside_ephemeris": 3,
+      "mirrored_duplicate": 5,
+      "partner_dob_missing_or_julian": 3
+    },
+    "precision": {
+      "day": 84,
+      "month": 18
+    },
+    "rows": 1887,
+    "unique_events_pre_controls": 102,
+    "unique_pairs_pre_controls": 77,
+    "usable_events": 102,
+    "usable_pairs": 77
+  },
+  "decision_rule": "promising only if pair family improves mean true-date percentile over M1 by >=5 points and does not materially worsen softmax log loss",
+  "development_refit_coefficients": {
+    "M1": {
+      "C": 0.01,
+      "top_coefficients": [
+        {
+          "coef_standardized": 0.12353443497689039,
+          "feature": "m1_b_transit_Pluto"
+        },
+        {
+          "coef_standardized": 0.1162603137925187,
+          "feature": "m1_a_prog_Mars"
+        },
+        {
+          "coef_standardized": -0.10394833701891379,
+          "feature": "m1_b_transit_Uranus"
+        },
+        {
+          "coef_standardized": 0.09253797266110031,
+          "feature": "m1_b_transit_Saturn"
+        },
+        {
+          "coef_standardized": -0.08501460394408618,
+          "feature": "m0_age_a"
+        },
+        {
+          "coef_standardized": 0.08318864916895201,
+          "feature": "m1_a_transit_Saturn"
+        },
+        {
+          "coef_standardized": 0.06804182888227243,
+          "feature": "m1_a_transit_Neptune"
+        },
+        {
+          "coef_standardized": -0.06741532447977262,
+          "feature": "m1_b_prog_Mercury"
+        },
+        {
+          "coef_standardized": -0.06645192996972861,
+          "feature": "m0_age_b"
+        },
+        {
+          "coef_standardized": -0.06075882974515539,
+          "feature": "m1_a_prog_Mercury"
+        },
+        {
+          "coef_standardized": -0.05521497843689622,
+          "feature": "m0_year_scaled"
+        },
+        {
+          "coef_standardized": 0.0510793764527527,
+          "feature": "m1_b_transit_Neptune"
+        },
+        {
+          "coef_standardized": 0.04938354206106616,
+          "feature": "m1_a_transit_Uranus"
+        },
+        {
+          "coef_standardized": 0.045920632497588536,
+          "feature": "m1_b_transit_Jupiter"
+        },
+        {
+          "coef_standardized": -0.04591309909370066,
+          "feature": "m1_b_prog_Venus"
+        }
+      ]
+    },
+    "M3A": {
+      "C": 0.01,
+      "top_coefficients": [
+        {
+          "coef_standardized": 0.16527093834600978,
+          "feature": "m3a_pa_nb_Mercury"
+        },
+        {
+          "coef_standardized": 0.12368860882221895,
+          "feature": "m1_a_prog_Mars"
+        },
+        {
+          "coef_standardized": -0.12187514878624565,
+          "feature": "m1_b_transit_Uranus"
+        },
+        {
+          "coef_standardized": 0.11090911276774336,
+          "feature": "m1_b_transit_Pluto"
+        },
+        {
+          "coef_standardized": -0.10039326738179002,
+          "feature": "m3a_pb_na_Mercury"
+        },
+        {
+          "coef_standardized": 0.09149768125055388,
+          "feature": "m1_a_transit_Saturn"
+        },
+        {
+          "coef_standardized": 0.08528757606178639,
+          "feature": "m1_b_transit_Saturn"
+        },
+        {
+          "coef_standardized": 0.07982580552298954,
+          "feature": "m3a_pb_na_Venus"
+        },
+        {
+          "coef_standardized": 0.07521675767775225,
+          "feature": "m3a_pa_pb_Mercury"
+        },
+        {
+          "coef_standardized": -0.0751123726939735,
+          "feature": "m0_age_b"
+        },
+        {
+          "coef_standardized": 0.07149752426068075,
+          "feature": "m1_a_transit_Neptune"
+        },
+        {
+          "coef_standardized": -0.06144532271851534,
+          "feature": "m0_age_a"
+        },
+        {
+          "coef_standardized": 0.057789061546071656,
+          "feature": "m1_b_transit_Jupiter"
+        },
+        {
+          "coef_standardized": -0.055335534582493566,
+          "feature": "m1_b_prog_Mercury"
+        },
+        {
+          "coef_standardized": -0.054443093161518935,
+          "feature": "m1_a_prog_Mercury"
+        }
+      ]
+    }
+  },
+  "ephemeris": {
+    "requested": "SWIEPH",
+    "returned": "SWIEPH or abort",
+    "semo_18_sha256": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7",
+    "sepl_18_sha256": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66"
+  },
+  "freeze_sha256": "9f94cf6f1f23dcb9c0270c3838f293fa789774317c06263578baf49c10ac9f4c",
+  "freeze_spec": "reference/research/adb_pair_timing_model_search_freeze_v1.md",
+  "limitations": [
+    "Partner birth time is unknown for most external linked partners; Moon/houses/angles/HD are excluded.",
+    "This is event-date case-crossover model selection, not the full semi-Markov transition-hazard test.",
+    "The same C-sample is used to choose the candidate family, so permutation p-values are development diagnostics only.",
+    "Any selected family requires independent validation before being used as an empirical relationship predictor."
+  ],
+  "permutation_diagnostic_for_selected_family": {
+    "empirical_p_ge_observed": 0.6633663366336634,
+    "n": 100,
+    "null_ge_observed": 66,
+    "null_mean_percentile": 49.421095512345964,
+    "null_sd_percentile": 4.259868578132843
+  },
+  "results": {
+    "dissolution": {
+      "events": 18,
+      "pairs": 16,
+      "status": "insufficient"
+    },
+    "formation": {
+      "events": 84,
+      "models": {
+        "M0": {
+          "events": 84,
+          "feature_count": 10,
+          "mean_reciprocal_rank": 0.15746667353810212,
+          "mean_true_date_percentile": 60.5413301786588,
+          "median_true_date_percentile": 54.09356725146199,
+          "model": "M0",
+          "outer_folds": 5,
+          "selected_C_by_fold": [
+            0.01,
+            0.01,
+            0.01,
+            0.01,
+            0.01
+          ],
+          "softmax_log_loss": 2.8602839885535682,
+          "top1_rate": 0.0,
+          "top3_rate": 0.14285714285714285
+        },
+        "M1": {
+          "events": 84,
+          "feature_count": 28,
+          "mean_reciprocal_rank": 0.1954562778880006,
+          "mean_true_date_percentile": 50.27044627097149,
+          "median_true_date_percentile": 50.0,
+          "model": "M1",
+          "outer_folds": 5,
+          "selected_C_by_fold": [
+            1.0,
+            0.01,
+            0.01,
+            0.01,
+            1.0
+          ],
+          "softmax_log_loss": 3.0724559041792623,
+          "top1_rate": 0.05952380952380952,
+          "top3_rate": 0.15476190476190477
+        },
+        "M3A": {
+          "events": 84,
+          "feature_count": 40,
+          "mean_reciprocal_rank": 0.184593380353,
+          "mean_true_date_percentile": 48.57995560408762,
+          "median_true_date_percentile": 50.0,
+          "model": "M3A",
+          "outer_folds": 5,
+          "selected_C_by_fold": [
+            10.0,
+            0.01,
+            0.01,
+            0.01,
+            0.1
+          ],
+          "softmax_log_loss": 3.218645138517919,
+          "top1_rate": 0.047619047619047616,
+          "top3_rate": 0.14285714285714285
+        },
+        "M3ALL": {
+          "events": 84,
+          "feature_count": 50,
+          "mean_reciprocal_rank": 0.1836976760503408,
+          "mean_true_date_percentile": 48.92108066491636,
+          "median_true_date_percentile": 45.8041958041958,
+          "model": "M3ALL",
+          "outer_folds": 5,
+          "selected_C_by_fold": [
+            0.1,
+            0.01,
+            0.01,
+            0.01,
+            1.0
+          ],
+          "softmax_log_loss": 3.291632991251286,
+          "top1_rate": 0.047619047619047616,
+          "top3_rate": 0.15476190476190477
+        },
+        "M3B": {
+          "events": 84,
+          "feature_count": 33,
+          "mean_reciprocal_rank": 0.20227872689173,
+          "mean_true_date_percentile": 51.33016243241255,
+          "median_true_date_percentile": 55.27777777777778,
+          "model": "M3B",
+          "outer_folds": 5,
+          "selected_C_by_fold": [
+            0.1,
+            0.01,
+            0.01,
+            10.0,
+            0.01
+          ],
+          "softmax_log_loss": 3.118390227942654,
+          "top1_rate": 0.047619047619047616,
+          "top3_rate": 0.20238095238095238
+        },
+        "M3C": {
+          "events": 84,
+          "feature_count": 33,
+          "mean_reciprocal_rank": 0.19297742841666987,
+          "mean_true_date_percentile": 49.66170104507676,
+          "median_true_date_percentile": 45.83333333333333,
+          "model": "M3C",
+          "outer_folds": 5,
+          "selected_C_by_fold": [
+            0.01,
+            0.01,
+            0.01,
+            0.01,
+            0.1
+          ],
+          "softmax_log_loss": 3.042972354647187,
+          "top1_rate": 0.05952380952380952,
+          "top3_rate": 0.17857142857142858
+        }
+      },
+      "pairs": 75,
+      "status": "ok"
+    },
+    "pooled": {
+      "events": 102,
+      "models": {
+        "M0": {
+          "events": 102,
+          "feature_count": 10,
+          "mean_reciprocal_rank": 0.14712496109554932,
+          "mean_true_date_percentile": 58.85513564556544,
+          "median_true_date_percentile": 50.0,
+          "model": "M0",
+          "outer_folds": 5,
+          "selected_C_by_fold": [
+            0.01,
+            0.01,
+            0.01,
+            0.01,
+            0.01
+          ],
+          "softmax_log_loss": 2.888052422880936,
+          "top1_rate": 0.0,
+          "top3_rate": 0.11764705882352941
+        },
+        "M1": {
+          "events": 102,
+          "feature_count": 28,
+          "mean_reciprocal_rank": 0.16886084285578914,
+          "mean_true_date_percentile": 46.351843486245244,
+          "median_true_date_percentile": 45.0,
+          "model": "M1",
+          "outer_folds": 5,
+          "selected_C_by_fold": [
+            0.01,
+            0.01,
+            0.01,
+            0.01,
+            1.0
+          ],
+          "softmax_log_loss": 3.0065864586033078,
+          "top1_rate": 0.0392156862745098,
+          "top3_rate": 0.14705882352941177
+        },
+        "M3A": {
+          "events": 102,
+          "feature_count": 40,
+          "mean_reciprocal_rank": 0.16777573014141944,
+          "mean_true_date_percentile": 47.311495133726964,
+          "median_true_date_percentile": 50.0,
+          "model": "M3A",
+          "outer_folds": 5,
+          "selected_C_by_fold": [
+            0.01,
+            0.01,
+            1.0,
+            0.01,
+            1.0
+          ],
+          "softmax_log_loss": 3.045434991596313,
+          "top1_rate": 0.029411764705882353,
+          "top3_rate": 0.12745098039215685
+        },
+        "M3ALL": {
+          "events": 102,
+          "feature_count": 50,
+          "mean_reciprocal_rank": 0.16783027238886825,
+          "mean_true_date_percentile": 46.372911978448315,
+          "median_true_date_percentile": 45.0,
+          "model": "M3ALL",
+          "outer_folds": 5,
+          "selected_C_by_fold": [
+            0.01,
+            0.1,
+            0.01,
+            10.0,
+            10.0
+          ],
+          "softmax_log_loss": 3.1959745427775266,
+          "top1_rate": 0.029411764705882353,
+          "top3_rate": 0.1568627450980392
+        },
+        "M3B": {
+          "events": 102,
+          "feature_count": 33,
+          "mean_reciprocal_rank": 0.17140265417787723,
+          "mean_true_date_percentile": 46.44910787257354,
+          "median_true_date_percentile": 46.029411764705884,
+          "model": "M3B",
+          "outer_folds": 5,
+          "selected_C_by_fold": [
+            0.01,
+            1.0,
+            0.01,
+            0.01,
+            0.01
+          ],
+          "softmax_log_loss": 3.055060223147727,
+          "top1_rate": 0.049019607843137254,
+          "top3_rate": 0.13725490196078433
+        },
+        "M3C": {
+          "events": 102,
+          "feature_count": 33,
+          "mean_reciprocal_rank": 0.15643628240035998,
+          "mean_true_date_percentile": 46.42868051331901,
+          "median_true_date_percentile": 43.92857142857143,
+          "model": "M3C",
+          "outer_folds": 5,
+          "selected_C_by_fold": [
+            0.01,
+            0.01,
+            0.01,
+            0.01,
+            0.01
+          ],
+          "softmax_log_loss": 3.0248240785109215,
+          "top1_rate": 0.0196078431372549,
+          "top3_rate": 0.12745098039215685
+        }
+      },
+      "pairs": 77,
+      "status": "ok"
+    }
+  },
+  "source": "https://www.astro.com/adbexport/c_sample.xml",
+  "source_raw_bytes": 18611784,
+  "status": "development_model_selection"
+}
