@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/adb_exact_pair_state_history_source_ladder_v3_rung2.py'
+      - 'scripts/adb_exact_pair_state_history_source_ladder_v3_rung2_batch_runner.py'
       - 'reference/research/adb_exact_pair_state_history_source_ladder_freeze_v3.md'
       - 'reference/research/adb_exact_pair_state_history_source_ladder_v3_rung2_parser_freeze.md'
       - 'reference/research/adb_exact_pair_state_history_source_ladder_v3_rung1_audit.md'
@@ -27,7 +28,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Run frozen V3 source ladder rung 2
-        run: python scripts/adb_exact_pair_state_history_source_ladder_v3_rung2.py
+        run: python scripts/adb_exact_pair_state_history_source_ladder_v3_rung2_batch_runner.py
       - name: Commit rung 2 result
         run: |
           git config user.name "github-actions[bot]"
