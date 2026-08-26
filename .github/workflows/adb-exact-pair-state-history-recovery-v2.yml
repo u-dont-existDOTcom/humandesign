@@ -1,0 +1,38 @@
+name: ADB exact-pair state-history recovery V2
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/adb_exact_pair_state_history_recovery_v2.py'
+      - 'reference/research/adb_exact_pair_state_history_recovery_freeze_v2.md'
+      - 'reference/research/adb_exact_pair_state_history_recovery_v1.json'
+      - '.github/workflows/adb-exact-pair-state-history-recovery-v2.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  augment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run frozen V2 state-history augmentation
+        run: python scripts/adb_exact_pair_state_history_recovery_v2.py
+      - name: Commit V2 augmentation result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reference/research/adb_exact_pair_state_history_recovery_v2.json
+          if git diff --cached --quiet; then
+            echo "V2 state-history result unchanged"
+          else
+            git commit -m "Record exact-pair ADB state-history recovery v2"
+            git pull --rebase origin main
+            git push
+          fi
