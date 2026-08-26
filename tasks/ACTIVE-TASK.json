@@ -5,12 +5,14 @@
   "exclusive": true,
   "requiredBranch": "participant-session-v1",
   "preflightCommand": "python scripts/task_preflight.py",
-  "completionCommand": "python -m pytest tests/unit/test_participant_session.py",
+  "completionCommand": "python -m pytest tests/unit/test_participant_session.py tests/unit/test_astronomy_reference.py tests/unit/test_progressions.py",
   "suspendedTaskSources": [
     "relationship and partner future-timing work",
     "additional future ephemeris extension",
     "century_global participant ranking until reusable generic cache certification",
     "outcome/timing astrology claims mixed into the natal behavioral score",
+    "choosing a zodiac/progression convention after participant evidence is visible",
+    "angles/houses in strong confirmatory claims until the Ascendant/MC discrepancy is audited",
     "unrelated roadmap selection"
   ]
 }
