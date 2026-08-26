@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/adb_static_partner_identification_v1.py'
+      - 'scripts/adb_static_partner_identification_v1_runner.py'
       - 'reference/research/adb_static_partner_identification_freeze_v1.md'
       - '.github/workflows/adb-static-partner-identification-v1.yml'
 
@@ -26,7 +27,7 @@ jobs:
       - name: Fetch pinned Swiss ephemeris files
         run: python scripts/fetch_swisseph_ephemeris.py
       - name: Run static partner identification benchmark
-        run: python scripts/adb_static_partner_identification_v1.py
+        run: python scripts/adb_static_partner_identification_v1_runner.py
       - name: Commit benchmark result
         run: |
           git config user.name "github-actions[bot]"
@@ -39,5 +40,3 @@ jobs:
             git pull --rebase origin main
             git push
           fi
-
-# Workflow-only trigger edit; frozen benchmark specification is unchanged.
