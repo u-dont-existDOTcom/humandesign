@@ -493,6 +493,132 @@
               "|CategoryNotes=Four"
             ]
           }
+        ],
+        "relationship_template_field_names": [
+          "CodeID",
+          "PName",
+          "PName_link",
+          "Pbdate",
+          "RelQualityCode",
+          "RelatedDatamainID",
+          "RelationshipNotes",
+          "srelcat",
+          "srelitem",
+          "sreltext"
+        ],
+        "event_template_field_names": [
+          "CodeID",
+          "DurationQuantity",
+          "DurationUnitCode",
+          "EventNotes",
+          "EventString",
+          "TimeAccuracyCode",
+          "ccalendar",
+          "ctimetype",
+          "ctzauto",
+          "sevcode",
+          "sevdate",
+          "sevdate_dmy"
+        ],
+        "romantic_relationship_template_samples": [
+          {
+            "RelatedDatamainID": "307",
+            "PName": "Beatty, Warren",
+            "PName_link": "Beatty, Warren",
+            "Pbdate": "30 March 1937",
+            "CodeID": "858",
+            "sreltext": "lover relationship with",
+            "srelcat": "Associates",
+            "srelitem": "Lover",
+            "RelQualityCode": "0"
+          },
+          {
+            "RelatedDatamainID": "50604",
+            "PName": "Bécaud, Gilbert",
+            "PName_link": "Bécaud, Gilbert",
+            "Pbdate": "24 October 1927",
+            "CodeID": "858",
+            "sreltext": "lover relationship with",
+            "srelcat": "Associates",
+            "srelitem": "Lover",
+            "RelQualityCode": "0"
+          },
+          {
+            "RelatedDatamainID": "47969",
+            "PName": "Distel, Sacha",
+            "PName_link": "Distel, Sacha",
+            "Pbdate": "29 January 1933",
+            "CodeID": "858",
+            "sreltext": "lover relationship with",
+            "srelcat": "Associates",
+            "srelitem": "Lover",
+            "RelationshipNotes": "Dated 1958-1959",
+            "RelQualityCode": "0"
+          },
+          {
+            "RelatedDatamainID": "39181",
+            "PName": "Ferrer, Nino",
+            "PName_link": "Ferrer, Nino",
+            "Pbdate": "15 August 1934",
+            "CodeID": "858",
+            "sreltext": "lover relationship with",
+            "srelcat": "Associates",
+            "srelitem": "Lover",
+            "RelQualityCode": "0"
+          },
+          {
+            "RelatedDatamainID": "4980",
+            "PName": "Ford, Glenn",
+            "PName_link": "Ford, Glenn",
+            "Pbdate": "1 May 1916",
+            "CodeID": "858",
+            "sreltext": "lover relationship with",
+            "srelcat": "Associates",
+            "srelitem": "Lover",
+            "RelQualityCode": "0"
+          }
+        ],
+        "relationship_event_template_samples": [
+          {
+            "CodeID": "810",
+            "sevcode": "Relationship : Marriage",
+            "EventNotes": "Roger Vadim",
+            "sevdate": "1952/12/20",
+            "sevdate_dmy": "20 December 1952",
+            "ctimetype": "s",
+            "ccalendar": "g",
+            "ctzauto": "u",
+            "TimeAccuracyCode": "8",
+            "EventString": "12/20/1952",
+            "DurationQuantity": "1",
+            "DurationUnitCode": "2"
+          },
+          {
+            "CodeID": "807",
+            "sevcode": "Relationship : Meet a significant person",
+            "EventNotes": "Bernard d'Ormale",
+            "sevdate": "1992/06/00",
+            "sevdate_dmy": "June 1992",
+            "ccalendar": "g",
+            "TimeAccuracyCode": "12",
+            "EventString": "6/1992",
+            "DurationQuantity": "1",
+            "DurationUnitCode": "2"
+          },
+          {
+            "CodeID": "810",
+            "sevcode": "Relationship : Marriage",
+            "EventNotes": "Bernard d'Ormale",
+            "sevdate": "1992/08/16",
+            "sevdate_dmy": "16 August 1992",
+            "ctimetype": "s",
+            "ccalendar": "g",
+            "ctzauto": "u",
+            "TimeAccuracyCode": "8",
+            "EventString": "8/16/1992",
+            "DurationQuantity": "1",
+            "DurationUnitCode": "2"
+          }
         ]
       }
     },
@@ -643,6 +769,70 @@
               "|CategoryNotes=Rocky relationship",
               "}}"
             ]
+          }
+        ],
+        "relationship_template_field_names": [
+          "CodeID",
+          "PName",
+          "PName_link",
+          "Pbdate",
+          "RelQualityCode",
+          "RelatedDatamainID",
+          "RelationshipNotes",
+          "srelcat",
+          "srelitem",
+          "sreltext"
+        ],
+        "event_template_field_names": [
+          "CodeID",
+          "DurationQuantity",
+          "DurationUnitCode",
+          "EventNotes",
+          "EventString",
+          "TimeAccuracyCode",
+          "ccalendar",
+          "sevcode",
+          "sevdate",
+          "sevdate_dmy"
+        ],
+        "romantic_relationship_template_samples": [
+          {
+            "RelatedDatamainID": "293",
+            "PName": "Bardot, Brigitte",
+            "PName_link": "Bardot, Brigitte",
+            "Pbdate": "28 September 1934",
+            "CodeID": "843",
+            "sreltext": "spouse relationship with",
+            "srelcat": "Family",
+            "srelitem": "Spouse",
+            "RelationshipNotes": "1959-1962",
+            "RelQualityCode": "0"
+          }
+        ],
+        "relationship_event_template_samples": [
+          {
+            "CodeID": "810",
+            "sevcode": "Relationship : Marriage",
+            "EventNotes": "First wife, Brigitte Bardot",
+            "sevdate": "1959/06/18",
+            "sevdate_dmy": "18 June 1959",
+            "ccalendar": "g",
+            "TimeAccuracyCode": "8",
+            "EventString": "6/18/1959",
+            "DurationQuantity": "1",
+            "DurationUnitCode": "2"
+          },
+          {
+            "CodeID": "811",
+            "sevcode": "Relationship : Divorce dates",
+            "EventNotes": "Brigitte Bardot",
+            "sevdate": "1962/00/00",
+            "sevdate_dmy": "1962",
+            "ccalendar": "g",
+            "TimeAccuracyCode": "14",
+            "EventString": "1963",
+            "DurationQuantity": "1",
+            "DurationUnitCode": "2"
           }
         ]
       }
@@ -874,6 +1064,121 @@
               "|scat=Family : Relationship : Sexual chemistry",
               "|CategoryNotes=Affair with footballer Mark Gastineau"
             ]
+          }
+        ],
+        "relationship_template_field_names": [
+          "CodeID",
+          "PName",
+          "PName_link",
+          "Pbdate",
+          "RelQualityCode",
+          "RelatedDatamainID",
+          "RelationshipNotes",
+          "srelcat",
+          "srelitem",
+          "sreltext"
+        ],
+        "event_template_field_names": [
+          "CodeID",
+          "DurationQuantity",
+          "DurationUnitCode",
+          "EventNotes",
+          "EventString",
+          "Place",
+          "TimeAccuracyCode",
+          "TmZnAbbr",
+          "ccalendar",
+          "ctimetype",
+          "ctzauto",
+          "sctr",
+          "sevcode",
+          "sevdate",
+          "sevdate_dmy",
+          "slati",
+          "slong",
+          "stmerid"
+        ],
+        "romantic_relationship_template_samples": [
+          {
+            "RelatedDatamainID": "42260",
+            "PName": "Meyer, Raoul",
+            "PName_link": "Meyer, Raoul",
+            "Pbdate": "28 May 1960",
+            "CodeID": "843",
+            "sreltext": "spouse relationship with",
+            "srelcat": "Family",
+            "srelitem": "Spouse",
+            "RelQualityCode": "0"
+          },
+          {
+            "RelatedDatamainID": "10222",
+            "PName": "Stallone, Sylvester",
+            "PName_link": "Stallone, Sylvester",
+            "Pbdate": "6 July 1946",
+            "CodeID": "843",
+            "sreltext": "spouse relationship with",
+            "srelcat": "Family",
+            "srelitem": "Spouse",
+            "RelationshipNotes": "Bitter veryvery",
+            "RelQualityCode": "0"
+          }
+        ],
+        "relationship_event_template_samples": [
+          {
+            "CodeID": "811",
+            "sevcode": "Relationship : Divorce dates",
+            "EventNotes": "Divorced from Sylvester Stalone",
+            "sevdate": "1987/00/00",
+            "sevdate_dmy": "1987",
+            "ctimetype": "s",
+            "ccalendar": "g",
+            "ctzauto": "u",
+            "TimeAccuracyCode": "14",
+            "EventString": "1987",
+            "DurationQuantity": "1",
+            "DurationUnitCode": "2"
+          },
+          {
+            "CodeID": "810",
+            "sevcode": "Relationship : Marriage",
+            "EventNotes": "Raul Meyer Ortolani",
+            "sevdate": "1993/12/17",
+            "sevdate_dmy": "17 December 1993",
+            "ctimetype": "s",
+            "ccalendar": "g",
+            "ctzauto": "u",
+            "TimeAccuracyCode": "8",
+            "EventString": "12/17/1993",
+            "DurationQuantity": "1",
+            "DurationUnitCode": "2"
+          },
+          {
+            "CodeID": "811",
+            "sevcode": "Relationship : Divorce dates",
+            "EventNotes": "From Meyer",
+            "sevdate": "2005/04/00",
+            "sevdate_dmy": "April 2005",
+            "ctimetype": "s",
+            "ccalendar": "g",
+            "ctzauto": "u",
+            "TimeAccuracyCode": "12",
+            "EventString": "4/2005",
+            "DurationQuantity": "1",
+            "DurationUnitCode": "2"
+          },
+          {
+            "CodeID": "810",
+            "sevcode": "Relationship : Marriage",
+            "EventNotes": "Mattia Dessi, age 28, husband #5",
+            "sevdate": "2006/07/08",
+            "sevdate_dmy": "8 July 2006",
+            "ctimetype": "s",
+            "ccalendar": "g",
+            "ctzauto": "u",
+            "TimeAccuracyCode": "8",
+            "EventString": "7/8/2006",
+            "DurationQuantity": "1",
+            "DurationUnitCode": "2"
           }
         ]
       }
