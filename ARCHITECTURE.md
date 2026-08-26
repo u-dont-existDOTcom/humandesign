@@ -15,7 +15,8 @@ Implement an end-to-end research system that can:
 9. report rank, uncertainty, stable time intervals, failures, and calibration;
 10. calculate pair/connection mechanics as a separate relationship research module;
 11. preserve relationship evidence separately from natal reverse-matching evidence;
-12. generate independently frozen future life-state timelines for two partners and test multi-domain future concordance against random-partner null distributions.
+12. generate independently frozen future life-state timelines for two partners and test multi-domain future concordance against random-partner null distributions;
+13. test pair-specific relationship-transition hazards separately from relationship quality/mutuality outcomes.
 
 ## Core principle
 
@@ -51,12 +52,13 @@ It also distinguishes **natal reverse matching** from **relationship/connection 
            adaptive question selector                 │ Future concordance  │
                       │                               │ independent timelines│
                 blind prediction                      │ + null partners      │
-                      │                               └──────────────────────┘
-                prediction freeze
-                      │
-                answer-key reveal
-                      │
-                  evaluator
+                      │                               └────────┬─────────────┘
+                prediction freeze                              │
+                      │                              ┌──────────▼────────────┐
+                answer-key reveal                     │ Transition / quality │
+                      │                              │ separate empirical   │
+                  evaluator                          │ models + hard risks  │
+                                                     └───────────────────────┘
 ```
 
 ## Packages Codex should implement
@@ -103,6 +105,10 @@ src/hdmatch/
         western_timing.py
         hd_timing.py
         geography.py
+        risk_sets.py
+        transition.py
+        semimarkov.py
+        quality.py
     experiments/
         manifest.py
         freeze.py
@@ -149,9 +155,23 @@ V2 adds partner future-concordance research:
 - pair-specific synastry/connection timing only after both individual timelines are frozen;
 - random-partner and reciprocal null distributions.
 
+V3 separates **transition prediction** from **relationship quality** and adds hard-decoy residual testing:
+
+- hard-match decoy partners on individual future trajectories before pair scoring;
+- test progressed A→natal B, progressed B→natal A, and progressed A→progressed B as pair-specific dynamic layers;
+- evaluate pair-transition signal only after individual timing has been controlled;
+- develop a semi-Markov/multi-state model for formation, commitment, separation, and reunion hazards;
+- develop a different Track-Q model for mutual affection, satisfaction, reciprocity, safety, conflict/repair, and benefit/harm;
+- never infer that a relationship is good merely because the transition model predicts that it forms or persists.
+
 Do not add a generic compatibility or soulmate scalar unless a separately frozen empirical relationship model is trained on development couples and tested on different, untouched couples. `SharedLifeConcordance` is an experimental future-state overlap statistic, not a soulmate probability and must be reported with its null distribution.
 
-See `docs/18_relationship_analysis.md` for static connection mechanics and `docs/19_partner_future_concordance.md` for future-life concordance.
+See:
+
+- `docs/18_relationship_analysis.md` — static connection mechanics;
+- `docs/19_partner_future_concordance.md` — future-life concordance;
+- `docs/20_partner_transition_vs_quality.md` — transition-vs-quality separation and hard-decoy principle;
+- `docs/21_pair_transition_semimarkov_plan.md` — empirical pair-specific semi-Markov test.
 
 ## CLI target
 
