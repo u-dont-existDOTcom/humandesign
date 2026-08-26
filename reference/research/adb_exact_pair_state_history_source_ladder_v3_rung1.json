@@ -1,0 +1,2762 @@
+{
+  "endpoint_counts": {
+    "baseline_v2_endpoint_pairs": 23,
+    "pairs_newly_gaining_endpoint_from_rung1": 2,
+    "pairs_with_inferred_reunion_after_rung1": 2,
+    "total_endpoint_pairs_after_rung1": 25
+  },
+  "freeze_sha256": "73ca2da5be3354fc962bd8607ebe7f7f8ca7a0c4549794a1075241d6afb5bb2f",
+  "freeze_spec": "reference/research/adb_exact_pair_state_history_source_ladder_freeze_v3.md",
+  "limitations": [
+    "ADB Biography prose is used only under the frozen same-sentence lexical rules; no cross-sentence pronoun resolution or manual interpretation is allowed.",
+    "This remains ADB development data and is not independent validation.",
+    "No astrology or Human Design features are calculated or inspected in Rung 1."
+  ],
+  "pair_universe": 64,
+  "pairs": [
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "27 August 2011",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "2011-08-27",
+          "interval_start": "2011-08-27",
+          "matched_term": "married",
+          "other_adb_id": 60355,
+          "precision": "day",
+          "sentence": "Coppola married musician Thomas Mars on 27 August 2011, at Palazzo Margherita in Bernalda, Italy.",
+          "source_adb_id": 101321,
+          "source_title": "Coppola, Sofia",
+          "transition": "formation"
+        },
+        {
+          "date_text": "2011",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "2011-12-31",
+          "interval_start": "2011-01-01",
+          "matched_term": "Married",
+          "other_adb_id": 101321,
+          "precision": "year",
+          "sentence": "Married in 2011 to American film director Sofia Coppola.",
+          "source_adb_id": 60355,
+          "source_title": "Mars, Thomas",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:60355|adb:101321",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "16 April 1932",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1932-04-16",
+          "interval_start": "1932-04-16",
+          "matched_term": "married",
+          "other_adb_id": 69473,
+          "precision": "day",
+          "sentence": "Camacho Quir\u00f3s married the businessman and politician Francisco Jos\u00e9 Orlich Bolmarcich in the nearby city of Naranjo de Alajuela on 16 April 1932.",
+          "source_adb_id": 104188,
+          "source_title": "Camacho Quir\u00f3s, Marita",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:69473|adb:104188",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "10 September 1949",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1949-09-10",
+          "interval_start": "1949-09-10",
+          "matched_term": "married",
+          "other_adb_id": 5996,
+          "precision": "day",
+          "sentence": "Marylou married Mike Connors on 10 September 1949, when they were both UCLA students.",
+          "source_adb_id": 106360,
+          "source_title": "Connors, Marylou",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:5996|adb:106360",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "November 1980",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "meet",
+          "interval_end": "1980-11-30",
+          "interval_start": "1980-11-01",
+          "matched_term": "met",
+          "other_adb_id": 474,
+          "precision": "month",
+          "sentence": "In November 1980 he met Diana Spencer, a 19-year-old girl with the proper qualifications.",
+          "source_adb_id": 11103,
+          "source_title": "Charles III, King of the United Kingdom",
+          "transition": "formation"
+        },
+        {
+          "date_text": "November 1980",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "meet",
+          "interval_end": "1980-11-30",
+          "interval_start": "1980-11-01",
+          "matched_term": "met",
+          "other_adb_id": 11103,
+          "precision": "month",
+          "sentence": "In November 1980, she met Prince Charles, whom she already idolized.",
+          "source_adb_id": 474,
+          "source_title": "Diana, Princess of Wales",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": true,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:474|adb:11103",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "1993",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "meet",
+          "interval_end": "1993-12-31",
+          "interval_start": "1993-01-01",
+          "matched_term": "met",
+          "other_adb_id": 19803,
+          "precision": "year",
+          "sentence": "In 1993, he met his gorgeous fianc\u00e9, million-dollar model Claudia Schiffer in her native Germany and became engaged the following year.",
+          "source_adb_id": 13047,
+          "source_title": "Copperfield, David",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": true,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:13047|adb:19803",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "29 December 1983",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1983-12-29",
+          "interval_start": "1983-12-29",
+          "matched_term": "marriage",
+          "other_adb_id": 13581,
+          "precision": "day",
+          "sentence": "She made a second marriage to Stefano Casiraghi on 29 December 1983; son Andrea was born 8 June 1984, Daughter Charlotte in 1986 and son Pierre, 1987.",
+          "source_adb_id": 13089,
+          "source_title": "Caroline, Princess of Monaco",
+          "transition": "formation"
+        },
+        {
+          "date_text": "29 December 1983",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1983-12-29",
+          "interval_start": "1983-12-29",
+          "matched_term": "marriage",
+          "other_adb_id": 13089,
+          "precision": "day",
+          "sentence": "Shy and uncomfortable with strangers, he brought stability to Princess Caroline of Monaco with their marriage on 29 December 1983.",
+          "source_adb_id": 13581,
+          "source_title": "Casiraghi, Stefano",
+          "transition": "formation"
+        },
+        {
+          "date_text": "3 October 1990",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "meet",
+          "interval_end": "1990-10-03",
+          "interval_start": "1990-10-03",
+          "matched_term": "MET",
+          "other_adb_id": 13089,
+          "precision": "day",
+          "sentence": "A car and boat racing enthusiast, Casiraghi was killed in a speedboat accident while defending his world title when the 42 ft boat, traveling at 93 mph, hit a wave and flipped over, then sank, on 3 October 1990, 11:18 AM MET, Monte Carlo, Monaco.",
+          "source_adb_id": 13581,
+          "source_title": "Casiraghi, Stefano",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:13089|adb:13581",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "December 1975",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "meet",
+          "interval_end": "1975-12-31",
+          "interval_start": "1975-12-01",
+          "matched_term": "met",
+          "other_adb_id": 8584,
+          "precision": "month",
+          "sentence": "At the Sorbonne, she met 17-year-older Philippe Junot in December 1975.",
+          "source_adb_id": 13089,
+          "source_title": "Caroline, Princess of Monaco",
+          "transition": "formation"
+        },
+        {
+          "date_text": "1978",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1978-12-31",
+          "interval_start": "1978-01-01",
+          "matched_term": "marriage",
+          "other_adb_id": 13089,
+          "precision": "year",
+          "sentence": "French industrialist and playboy noted for his marriage to Princess Caroline of Monaco, 17 years his junior, in 1978 for 27 months.",
+          "source_adb_id": 8584,
+          "source_title": "Junot, Philippe",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": true,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:8584|adb:13089",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [
+        {
+          "date_text": "25 November 2002",
+          "end_kind": "divorce",
+          "evidence_type": "adb_biography_same_sentence",
+          "interval_end": "2002-11-25",
+          "interval_start": "2002-11-25",
+          "matched_term": "divorce",
+          "other_adb_id": 19401,
+          "precision": "day",
+          "sentence": "Presley and Cage married in Hawaii on 10 August 2002, lasting nearly a full four months before Nic filed for divorce on 25 November 2002.",
+          "source_adb_id": 14274,
+          "source_title": "Presley, Lisa Marie",
+          "transition": "nonfatal_exit"
+        },
+        {
+          "date_text": "26 November 2002",
+          "end_kind": "divorce",
+          "evidence_type": "adb_biography_same_sentence",
+          "interval_end": "2002-11-26",
+          "interval_start": "2002-11-26",
+          "matched_term": "divorce",
+          "other_adb_id": 14274,
+          "precision": "day",
+          "sentence": "Presley and Cage married in Hawaii on 10 August 2002, lasting nearly a full four months before Nic filed for divorce, on 26 November 2002.",
+          "source_adb_id": 19401,
+          "source_title": "Cage, Nicolas",
+          "transition": "nonfatal_exit"
+        }
+      ],
+      "accepted_biography_formations": [
+        {
+          "date_text": "October 2000",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "meet",
+          "interval_end": "2000-10-31",
+          "interval_start": "2000-10-01",
+          "matched_term": "met",
+          "other_adb_id": 19401,
+          "precision": "month",
+          "sentence": "She met Nicolas Cage in October 2000 at a private party and they were seen chatting amiably.",
+          "source_adb_id": 14274,
+          "source_title": "Presley, Lisa Marie",
+          "transition": "formation"
+        },
+        {
+          "date_text": "10 August 2002",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "2002-08-10",
+          "interval_start": "2002-08-10",
+          "matched_term": "married",
+          "other_adb_id": 19401,
+          "precision": "day",
+          "sentence": "Presley and Cage married in Hawaii on 10 August 2002, lasting nearly a full four months before Nic filed for divorce on 25 November 2002.",
+          "source_adb_id": 14274,
+          "source_title": "Presley, Lisa Marie",
+          "transition": "formation"
+        },
+        {
+          "date_text": "October 2000",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "meet",
+          "interval_end": "2000-10-31",
+          "interval_start": "2000-10-01",
+          "matched_term": "met",
+          "other_adb_id": 14274,
+          "precision": "month",
+          "sentence": "Cage met Lisa Marie Presley in October 2000 at a private party where they were seen chatting amiably.",
+          "source_adb_id": 19401,
+          "source_title": "Cage, Nicolas",
+          "transition": "formation"
+        },
+        {
+          "date_text": "10 August 2002",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "2002-08-10",
+          "interval_start": "2002-08-10",
+          "matched_term": "married",
+          "other_adb_id": 14274,
+          "precision": "day",
+          "sentence": "Presley and Cage married in Hawaii on 10 August 2002, lasting nearly a full four months before Nic filed for divorce, on 26 November 2002.",
+          "source_adb_id": 19401,
+          "source_title": "Cage, Nicolas",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [
+        {
+          "date_text": "25 November 2002",
+          "end_kind": "divorce",
+          "evidence_type": "adb_biography_same_sentence",
+          "interval_end": "2002-11-25",
+          "interval_start": "2002-11-25",
+          "matched_term": "divorce",
+          "other_adb_id": 19401,
+          "precision": "day",
+          "sentence": "Presley and Cage married in Hawaii on 10 August 2002, lasting nearly a full four months before Nic filed for divorce on 25 November 2002.",
+          "source_adb_id": 14274,
+          "source_title": "Presley, Lisa Marie",
+          "status": "corroborates_higher_precedence_exit",
+          "transition": "nonfatal_exit"
+        }
+      ],
+      "had_v1_v2_endpoint": true,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:14274|adb:19401",
+      "usable_new_biography_exits": [
+        {
+          "date_text": "26 November 2002",
+          "end_kind": "divorce",
+          "evidence_type": "adb_biography_same_sentence",
+          "interval_end": "2002-11-26",
+          "interval_start": "2002-11-26",
+          "matched_term": "divorce",
+          "other_adb_id": 14274,
+          "precision": "day",
+          "sentence": "Presley and Cage married in Hawaii on 10 August 2002, lasting nearly a full four months before Nic filed for divorce, on 26 November 2002.",
+          "source_adb_id": 19401,
+          "source_title": "Cage, Nicolas",
+          "transition": "nonfatal_exit"
+        }
+      ]
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "2016",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "dating",
+          "interval_end": "2016-12-31",
+          "interval_start": "2016-01-01",
+          "matched_term": "started dating",
+          "other_adb_id": 68650,
+          "precision": "year",
+          "sentence": "In 2016 she started dating film producer Dimitri Rassam.",
+          "source_adb_id": 15074,
+          "source_title": "Casiraghi, Charlotte",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:15074|adb:68650",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "1996",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "meet",
+          "interval_end": "1996-12-31",
+          "interval_start": "1996-01-01",
+          "matched_term": "met",
+          "other_adb_id": 19367,
+          "precision": "year",
+          "sentence": "During the 1996 Atlanta Games, the tall, handsome Urdangarin met and fell in love with Princess Cristina of Spain.",
+          "source_adb_id": 39157,
+          "source_title": "Urdangarin, I\u00f1aki",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": true,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:19367|adb:39157",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "1991",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "meet",
+          "interval_end": "1991-12-31",
+          "interval_start": "1991-01-01",
+          "matched_term": "met",
+          "other_adb_id": 25724,
+          "precision": "year",
+          "sentence": "Cobain met his wife, former actress and strip joint dancer, Courtney Love in 1991 when she was forming her own punk band, \"Hole.\" The couple easily bonded over their mutual drug habit.",
+          "source_adb_id": 19568,
+          "source_title": "Cobain, Kurt",
+          "transition": "formation"
+        },
+        {
+          "date_text": "1991",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "meet",
+          "interval_end": "1991-12-31",
+          "interval_start": "1991-01-01",
+          "matched_term": "met",
+          "other_adb_id": 19568,
+          "precision": "year",
+          "sentence": "She met Kurt Cobain in 1991 just as he was rising to fame with his band, Nirvana, putting out \"Nevermind.\" On 24 February 1992, she married Cobain, the troubled singer/poet/songwriter/frontman.",
+          "source_adb_id": 25724,
+          "source_title": "Love, Courtney",
+          "transition": "formation"
+        },
+        {
+          "date_text": "24 February 1992",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1992-02-24",
+          "interval_start": "1992-02-24",
+          "matched_term": "married",
+          "other_adb_id": 19568,
+          "precision": "day",
+          "sentence": "She met Kurt Cobain in 1991 just as he was rising to fame with his band, Nirvana, putting out \"Nevermind.\" On 24 February 1992, she married Cobain, the troubled singer/poet/songwriter/frontman.",
+          "source_adb_id": 25724,
+          "source_title": "Love, Courtney",
+          "transition": "formation"
+        },
+        {
+          "date_text": "5 April 1994",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1994-04-05",
+          "interval_start": "1994-04-05",
+          "matched_term": "marriage",
+          "other_adb_id": 19568,
+          "precision": "day",
+          "sentence": "The marriage may have been tormented, but it was also loving, and Love was devastated when Cobain killed himself on 5 April 1994.",
+          "source_adb_id": 25724,
+          "source_title": "Love, Courtney",
+          "transition": "formation"
+        },
+        {
+          "date_text": "6 May 2001",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "2001-05-06",
+          "interval_start": "2001-05-06",
+          "matched_term": "wedding",
+          "other_adb_id": 19568,
+          "precision": "day",
+          "sentence": "On late 6 May 2001, Love was robbed of more than $100,000 in jewels, including her wedding ring from her late husband, Kurt Cobain, toys belonging to her daughter, Frances Bean, and a $30,000 ring that she received from Ed Norton, from her hotel suite in Vancouver, British Columbia, where she was shooting a movie.",
+          "source_adb_id": 25724,
+          "source_title": "Love, Courtney",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:19568|adb:25724",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:19580|adb:76816",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "1951",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "meet",
+          "interval_end": "1951-12-31",
+          "interval_start": "1951-01-01",
+          "matched_term": "met",
+          "other_adb_id": 7157,
+          "precision": "year",
+          "sentence": "She attended Sciences Po and met Jacques Chirac in 1951.",
+          "source_adb_id": 19604,
+          "source_title": "Chirac, Bernadette",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:7157|adb:19604",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:19605|adb:39278",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [
+        {
+          "date_text": "20 January 1998",
+          "end_kind": "divorce",
+          "evidence_type": "adb_biography_same_sentence",
+          "interval_end": "1998-01-20",
+          "interval_start": "1998-01-20",
+          "matched_term": "divorce",
+          "other_adb_id": 244,
+          "precision": "day",
+          "sentence": "On 20 January 1998 Kimberley filed divorce papers citing irreconcilable differences that were later withdrawn stating \"This filing took place in a moment of misunderstanding.\" Hugh Hefner was quoted, \"I would've been happy to divorce her when we separated, but she wanted to remain married for our boys.\" Conrad then moved into a house next door to the Playboy Mansion.",
+          "source_adb_id": 19799,
+          "source_title": "Conrad, Kimberley",
+          "transition": "nonfatal_exit"
+        },
+        {
+          "date_text": "20 January 1998",
+          "end_kind": "separation",
+          "evidence_type": "adb_biography_same_sentence",
+          "interval_end": "1998-01-20",
+          "interval_start": "1998-01-20",
+          "matched_term": "separated",
+          "other_adb_id": 244,
+          "precision": "day",
+          "sentence": "On 20 January 1998 Kimberley filed divorce papers citing irreconcilable differences that were later withdrawn stating \"This filing took place in a moment of misunderstanding.\" Hugh Hefner was quoted, \"I would've been happy to divorce her when we separated, but she wanted to remain married for our boys.\" Conrad then moved into a house next door to the Playboy Mansion.",
+          "source_adb_id": 19799,
+          "source_title": "Conrad, Kimberley",
+          "transition": "nonfatal_exit"
+        }
+      ],
+      "accepted_biography_formations": [
+        {
+          "date_text": "20 January 1998",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1998-01-20",
+          "interval_start": "1998-01-20",
+          "matched_term": "married",
+          "other_adb_id": 244,
+          "precision": "day",
+          "sentence": "On 20 January 1998 Kimberley filed divorce papers citing irreconcilable differences that were later withdrawn stating \"This filing took place in a moment of misunderstanding.\" Hugh Hefner was quoted, \"I would've been happy to divorce her when we separated, but she wanted to remain married for our boys.\" Conrad then moved into a house next door to the Playboy Mansion.",
+          "source_adb_id": 19799,
+          "source_title": "Conrad, Kimberley",
+          "transition": "formation"
+        },
+        {
+          "date_text": "May 1987",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "meet",
+          "interval_end": "1987-05-31",
+          "interval_start": "1987-05-01",
+          "matched_term": "met",
+          "other_adb_id": 19799,
+          "precision": "month",
+          "sentence": "He met his second wife, Kimberly Conrad, in May 1987 and they married on 1 July 1989, eventually having two sons.",
+          "source_adb_id": 244,
+          "source_title": "Hefner, Hugh",
+          "transition": "formation"
+        },
+        {
+          "date_text": "1 July 1989",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1989-07-01",
+          "interval_start": "1989-07-01",
+          "matched_term": "married",
+          "other_adb_id": 19799,
+          "precision": "day",
+          "sentence": "He met his second wife, Kimberly Conrad, in May 1987 and they married on 1 July 1989, eventually having two sons.",
+          "source_adb_id": 244,
+          "source_title": "Hefner, Hugh",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:244|adb:19799",
+      "usable_new_biography_exits": [
+        {
+          "date_text": "20 January 1998",
+          "end_kind": "divorce",
+          "evidence_type": "adb_biography_same_sentence",
+          "interval_end": "1998-01-20",
+          "interval_start": "1998-01-20",
+          "matched_term": "divorce",
+          "other_adb_id": 244,
+          "precision": "day",
+          "sentence": "On 20 January 1998 Kimberley filed divorce papers citing irreconcilable differences that were later withdrawn stating \"This filing took place in a moment of misunderstanding.\" Hugh Hefner was quoted, \"I would've been happy to divorce her when we separated, but she wanted to remain married for our boys.\" Conrad then moved into a house next door to the Playboy Mansion.",
+          "source_adb_id": 19799,
+          "source_title": "Conrad, Kimberley",
+          "transition": "nonfatal_exit"
+        },
+        {
+          "date_text": "20 January 1998",
+          "end_kind": "separation",
+          "evidence_type": "adb_biography_same_sentence",
+          "interval_end": "1998-01-20",
+          "interval_start": "1998-01-20",
+          "matched_term": "separated",
+          "other_adb_id": 244,
+          "precision": "day",
+          "sentence": "On 20 January 1998 Kimberley filed divorce papers citing irreconcilable differences that were later withdrawn stating \"This filing took place in a moment of misunderstanding.\" Hugh Hefner was quoted, \"I would've been happy to divorce her when we separated, but she wanted to remain married for our boys.\" Conrad then moved into a house next door to the Playboy Mansion.",
+          "source_adb_id": 19799,
+          "source_title": "Conrad, Kimberley",
+          "transition": "nonfatal_exit"
+        }
+      ]
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "1963",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1963-12-31",
+          "interval_start": "1963-01-01",
+          "matched_term": "marriages",
+          "other_adb_id": 238,
+          "precision": "year",
+          "sentence": "Her first of four marriages was to fellow actor, Tony Curtis, between 1963 and 1968.",
+          "source_adb_id": 55779,
+          "source_title": "Kaufmann, Christine",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": true,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:238|adb:55779",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "1951",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1951-12-31",
+          "interval_start": "1951-01-01",
+          "matched_term": "Married",
+          "other_adb_id": 238,
+          "precision": "year",
+          "sentence": "Married to her third husband, Tony Curtis in 1951, they lived a Beverly Hills celebrity marriage with much fanfare.",
+          "source_adb_id": 6281,
+          "source_title": "Leigh, Janet",
+          "transition": "formation"
+        },
+        {
+          "date_text": "1961",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1961-12-31",
+          "interval_start": "1961-01-01",
+          "matched_term": "marriage",
+          "other_adb_id": 238,
+          "precision": "year",
+          "sentence": "Given all the publicity, the marriage ended in 1961 after Curtis left her for 17-year-old actress, Christine Kaufmann.",
+          "source_adb_id": 6281,
+          "source_title": "Leigh, Janet",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": true,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:238|adb:6281",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "1945",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1945-12-31",
+          "interval_start": "1945-01-01",
+          "matched_term": "married",
+          "other_adb_id": 24590,
+          "precision": "year",
+          "sentence": "Although gay, Cromwell was married once, briefly (1945\u20131946), to actress Angela Lansbury, when she was 19 and Cromwell was 35.",
+          "source_adb_id": 92708,
+          "source_title": "Cromwell, Richard (1910)",
+          "transition": "formation"
+        },
+        {
+          "date_text": "27 September 1945",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1945-09-27",
+          "interval_start": "1945-09-27",
+          "matched_term": "married",
+          "other_adb_id": 24590,
+          "precision": "day",
+          "sentence": "Cromwell and Lansbury eloped and were married in a small civil ceremony on 27 September 1945 in Independence, California.",
+          "source_adb_id": 92708,
+          "source_title": "Cromwell, Richard (1910)",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": true,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:24590|adb:92708",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:863|adb:24930",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "1976",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1976-12-31",
+          "interval_start": "1976-01-01",
+          "matched_term": "married",
+          "other_adb_id": 25924,
+          "precision": "year",
+          "sentence": "A gracious and elegant woman, Sylvia married King Carl Gustave of Sweden in 1976; he was crowned King in 1973.",
+          "source_adb_id": 25004,
+          "source_title": "Silvia, Queen of Sweden",
+          "transition": "formation"
+        },
+        {
+          "date_text": "19 June 1976",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "meet",
+          "interval_end": "1976-06-19",
+          "interval_start": "1976-06-19",
+          "matched_term": "met",
+          "other_adb_id": 25004,
+          "precision": "day",
+          "sentence": "He married German born Silvia Sommerlath on 19 June 1976, whom he met while she was working at the 1972 Munich Olympics and he was the Crown Prince Carl Gustaf.",
+          "source_adb_id": 25924,
+          "source_title": "Carl XVI Gustaf, King of Sweden",
+          "transition": "formation"
+        },
+        {
+          "date_text": "19 June 1976",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1976-06-19",
+          "interval_start": "1976-06-19",
+          "matched_term": "married",
+          "other_adb_id": 25004,
+          "precision": "day",
+          "sentence": "He married German born Silvia Sommerlath on 19 June 1976, whom he met while she was working at the 1972 Munich Olympics and he was the Crown Prince Carl Gustaf.",
+          "source_adb_id": 25924,
+          "source_title": "Carl XVI Gustaf, King of Sweden",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:25004|adb:25924",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": true,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:293|adb:25917",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "6 June 1905",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1905-06-06",
+          "interval_start": "1905-06-06",
+          "matched_term": "married",
+          "other_adb_id": 26134,
+          "precision": "day",
+          "sentence": "On 6 June 1905, she married German Crown Prince Wilhelm.",
+          "source_adb_id": 79083,
+          "source_title": "Cecilie, Crown Princess of Germany",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:26134|adb:79083",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "1941",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1941-12-31",
+          "interval_start": "1941-01-01",
+          "matched_term": "married",
+          "other_adb_id": 72673,
+          "precision": "year",
+          "sentence": "In 1941, he married his wife, Nellie, a former Bluebonnet Belle of his alma mater, the University of Texas, and they had two sons and two daughters.",
+          "source_adb_id": 26438,
+          "source_title": "Connally, John",
+          "transition": "formation"
+        },
+        {
+          "date_text": "21 December 1940",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1940-12-21",
+          "interval_start": "1940-12-21",
+          "matched_term": "married",
+          "other_adb_id": 26438,
+          "precision": "day",
+          "sentence": "Nellie and John Connally were married at Austin on 21 December 1940.",
+          "source_adb_id": 72673,
+          "source_title": "Connally, Nellie",
+          "transition": "formation"
+        },
+        {
+          "date_text": "1993",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1993-12-31",
+          "interval_start": "1993-01-01",
+          "matched_term": "married",
+          "other_adb_id": 26438,
+          "precision": "year",
+          "sentence": "The Connallys remained married until John's death from pneumonia in 1993.",
+          "source_adb_id": 72673,
+          "source_title": "Connally, Nellie",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:26438|adb:72673",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "November 1962",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "meet",
+          "interval_end": "1962-11-30",
+          "interval_start": "1962-11-01",
+          "matched_term": "met",
+          "other_adb_id": 295,
+          "precision": "month",
+          "sentence": "Cher met performer Sonny Bono in November 1962 when he was working for record producer Phil Spector.",
+          "source_adb_id": 362,
+          "source_title": "Cher",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": true,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:295|adb:362",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "1924",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "meet",
+          "interval_end": "1924-12-31",
+          "interval_start": "1924-01-01",
+          "matched_term": "met",
+          "other_adb_id": 3307,
+          "precision": "year",
+          "sentence": "Reportedly she met Chevalier in 1924 during his period of depression on return to France from a failed venture in New York City; this culminated in attempted suicide, but things turned around for Chevalier and he married Vall\u00e9e three years later.",
+          "source_adb_id": 80315,
+          "source_title": "Vall\u00e9e, Yvonne",
+          "transition": "formation"
+        },
+        {
+          "date_text": "1924",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1924-12-31",
+          "interval_start": "1924-01-01",
+          "matched_term": "married",
+          "other_adb_id": 3307,
+          "precision": "year",
+          "sentence": "Reportedly she met Chevalier in 1924 during his period of depression on return to France from a failed venture in New York City; this culminated in attempted suicide, but things turned around for Chevalier and he married Vall\u00e9e three years later.",
+          "source_adb_id": 80315,
+          "source_title": "Vall\u00e9e, Yvonne",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": true,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:3307|adb:80315",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "2002",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "meet",
+          "interval_end": "2002-12-31",
+          "interval_start": "2002-01-01",
+          "matched_term": "met",
+          "other_adb_id": 36990,
+          "precision": "year",
+          "sentence": "She is married to the football player turned film actor \u00c9ric Cantona, whom she met on the filmset of Outremangeur in 2002.",
+          "source_adb_id": 55157,
+          "source_title": "Brakni, Rachida",
+          "transition": "formation"
+        },
+        {
+          "date_text": "2002",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "2002-12-31",
+          "interval_start": "2002-01-01",
+          "matched_term": "married",
+          "other_adb_id": 36990,
+          "precision": "year",
+          "sentence": "She is married to the football player turned film actor \u00c9ric Cantona, whom she met on the filmset of Outremangeur in 2002.",
+          "source_adb_id": 55157,
+          "source_title": "Brakni, Rachida",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:36990|adb:55157",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "28 August 1982",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1982-08-28",
+          "interval_start": "1982-08-28",
+          "matched_term": "married",
+          "other_adb_id": 37303,
+          "precision": "day",
+          "sentence": "He was married to Pascale Corneille (on 28 August 1982); two kids.",
+          "source_adb_id": 37302,
+          "source_title": "Caloone, Bruno",
+          "transition": "formation"
+        },
+        {
+          "date_text": "28 August 1982",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1982-08-28",
+          "interval_start": "1982-08-28",
+          "matched_term": "married",
+          "other_adb_id": 37302,
+          "precision": "day",
+          "sentence": "She and Bruno had married on 28 August 1982 and had two daughters.",
+          "source_adb_id": 37303,
+          "source_title": "Caloone, Pascale",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:37302|adb:37303",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "April 12, 2003",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "2003-04-12",
+          "interval_start": "2003-04-12",
+          "matched_term": "married",
+          "other_adb_id": 49393,
+          "precision": "day",
+          "sentence": "He married Claire Coombs in Brussels on April 12, 2003 at 10:07 AM in a civil ceremony followed by a religious ceremony at 11:58 AM.",
+          "source_adb_id": 39975,
+          "source_title": "Laurent, Prince of Belgium",
+          "transition": "formation"
+        },
+        {
+          "date_text": "February 6, 2004",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "2004-02-06",
+          "interval_start": "2004-02-06",
+          "matched_term": "married",
+          "other_adb_id": 39975,
+          "precision": "day",
+          "sentence": "She married Prince Laurent of Belgium two weeks later and gave birth to Princess Louise on February 6, 2004.",
+          "source_adb_id": 49393,
+          "source_title": "Coombs, Claire",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:39975|adb:49393",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "25 September 2003",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "2003-09-25",
+          "interval_start": "2003-09-25",
+          "matched_term": "married",
+          "other_adb_id": 48891,
+          "precision": "day",
+          "sentence": "The Prince of Venice and Piedmont from the House of Savoy married French actress Clotilde Courau in Rome on 25 September 2003 at 5.49 PM (MEDT).",
+          "source_adb_id": 40046,
+          "source_title": "Emanuele Filiberto, Prince of Venice",
+          "transition": "formation"
+        },
+        {
+          "date_text": "September 25, 2003",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "2003-09-25",
+          "interval_start": "2003-09-25",
+          "matched_term": "married",
+          "other_adb_id": 40046,
+          "precision": "day",
+          "sentence": "French actress who married Emanuele Filiberto of Savoy in Rome on September 25, 2003, at 17.49 MEDT.",
+          "source_adb_id": 48891,
+          "source_title": "Clotilde, Princess of Venice and Piedmont",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:40046|adb:48891",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "15 May 1948",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1948-05-15",
+          "interval_start": "1948-05-15",
+          "matched_term": "married",
+          "other_adb_id": 5515,
+          "precision": "day",
+          "sentence": "Martin married Cyd Charisse on 15 May 1948 and their son was born on 28 August 1950; he was a strict father to Tony Jr. and to Nicky, Cyd's son born in 1942 from a former marriage.",
+          "source_adb_id": 40327,
+          "source_title": "Martin, Tony",
+          "transition": "formation"
+        },
+        {
+          "date_text": "1942",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1942-12-31",
+          "interval_start": "1942-01-01",
+          "matched_term": "marriage",
+          "other_adb_id": 5515,
+          "precision": "year",
+          "sentence": "Martin married Cyd Charisse on 15 May 1948 and their son was born on 28 August 1950; he was a strict father to Tony Jr. and to Nicky, Cyd's son born in 1942 from a former marriage.",
+          "source_adb_id": 40327,
+          "source_title": "Martin, Tony",
+          "transition": "formation"
+        },
+        {
+          "date_text": "7 May 1942",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1942-05-07",
+          "interval_start": "1942-05-07",
+          "matched_term": "marriages",
+          "other_adb_id": 40327,
+          "precision": "day",
+          "sentence": "She had one son with each of her marriages, Nicky on 7 May 1942, and Tony Jr. on 28 August 1950.",
+          "source_adb_id": 5515,
+          "source_title": "Charisse, Cyd",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:5515|adb:40327",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [
+        {
+          "date_text": "1970",
+          "end_kind": "divorce",
+          "evidence_type": "adb_biography_same_sentence",
+          "interval_end": "1970-12-31",
+          "interval_start": "1970-01-01",
+          "matched_term": "divorced",
+          "other_adb_id": 6790,
+          "precision": "year",
+          "sentence": "Her first husband was Andrea Volpe, married on 12 February 1955 in London and her second husband Sean Connery, married on 30 November 1962 in Gibraltar; they separated in 1970 and divorced the following year.",
+          "source_adb_id": 46200,
+          "source_title": "Cilento, Diane",
+          "transition": "nonfatal_exit"
+        },
+        {
+          "date_text": "1970",
+          "end_kind": "separation",
+          "evidence_type": "adb_biography_same_sentence",
+          "interval_end": "1970-12-31",
+          "interval_start": "1970-01-01",
+          "matched_term": "separated",
+          "other_adb_id": 6790,
+          "precision": "year",
+          "sentence": "Her first husband was Andrea Volpe, married on 12 February 1955 in London and her second husband Sean Connery, married on 30 November 1962 in Gibraltar; they separated in 1970 and divorced the following year.",
+          "source_adb_id": 46200,
+          "source_title": "Cilento, Diane",
+          "transition": "nonfatal_exit"
+        }
+      ],
+      "accepted_biography_formations": [
+        {
+          "date_text": "12 February 1955",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1955-02-12",
+          "interval_start": "1955-02-12",
+          "matched_term": "married",
+          "other_adb_id": 6790,
+          "precision": "day",
+          "sentence": "Her first husband was Andrea Volpe, married on 12 February 1955 in London and her second husband Sean Connery, married on 30 November 1962 in Gibraltar; they separated in 1970 and divorced the following year.",
+          "source_adb_id": 46200,
+          "source_title": "Cilento, Diane",
+          "transition": "formation"
+        },
+        {
+          "date_text": "30 November 1962",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1962-11-30",
+          "interval_start": "1962-11-30",
+          "matched_term": "married",
+          "other_adb_id": 6790,
+          "precision": "day",
+          "sentence": "Her first husband was Andrea Volpe, married on 12 February 1955 in London and her second husband Sean Connery, married on 30 November 1962 in Gibraltar; they separated in 1970 and divorced the following year.",
+          "source_adb_id": 46200,
+          "source_title": "Cilento, Diane",
+          "transition": "formation"
+        },
+        {
+          "date_text": "November 1962",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1962-11-30",
+          "interval_start": "1962-11-01",
+          "matched_term": "married",
+          "other_adb_id": 46200,
+          "precision": "month",
+          "sentence": "In November 1962, Connery married Australian actress Diane Cilento and they had a son Jason, born on 11 January 1963.",
+          "source_adb_id": 6790,
+          "source_title": "Connery, Sean",
+          "transition": "formation"
+        },
+        {
+          "date_text": "1970",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "meet",
+          "interval_end": "1970-12-31",
+          "interval_start": "1970-01-01",
+          "matched_term": "met",
+          "other_adb_id": 46200,
+          "precision": "year",
+          "sentence": "While married to Cilento, Connery met Micheline Roquebrune at a golf tournament in Morocco in 1970, a painter and a fierce golf competitor with a young son.",
+          "source_adb_id": 6790,
+          "source_title": "Connery, Sean",
+          "transition": "formation"
+        },
+        {
+          "date_text": "1970",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1970-12-31",
+          "interval_start": "1970-01-01",
+          "matched_term": "married",
+          "other_adb_id": 46200,
+          "precision": "year",
+          "sentence": "While married to Cilento, Connery met Micheline Roquebrune at a golf tournament in Morocco in 1970, a painter and a fierce golf competitor with a young son.",
+          "source_adb_id": 6790,
+          "source_title": "Connery, Sean",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": true,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:6790|adb:46200",
+      "usable_new_biography_exits": [
+        {
+          "date_text": "1970",
+          "end_kind": "divorce",
+          "evidence_type": "adb_biography_same_sentence",
+          "interval_end": "1970-12-31",
+          "interval_start": "1970-01-01",
+          "matched_term": "divorced",
+          "other_adb_id": 6790,
+          "precision": "year",
+          "sentence": "Her first husband was Andrea Volpe, married on 12 February 1955 in London and her second husband Sean Connery, married on 30 November 1962 in Gibraltar; they separated in 1970 and divorced the following year.",
+          "source_adb_id": 46200,
+          "source_title": "Cilento, Diane",
+          "transition": "nonfatal_exit"
+        },
+        {
+          "date_text": "1970",
+          "end_kind": "separation",
+          "evidence_type": "adb_biography_same_sentence",
+          "interval_end": "1970-12-31",
+          "interval_start": "1970-01-01",
+          "matched_term": "separated",
+          "other_adb_id": 6790,
+          "precision": "year",
+          "sentence": "Her first husband was Andrea Volpe, married on 12 February 1955 in London and her second husband Sean Connery, married on 30 November 1962 in Gibraltar; they separated in 1970 and divorced the following year.",
+          "source_adb_id": 46200,
+          "source_title": "Cilento, Diane",
+          "transition": "nonfatal_exit"
+        }
+      ]
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "30 April 1958",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1958-04-30",
+          "interval_start": "1958-04-30",
+          "matched_term": "married",
+          "other_adb_id": 47241,
+          "precision": "day",
+          "sentence": "Marie married Nessim Boutboul on 30 April 1958.",
+          "source_adb_id": 47237,
+          "source_title": "Cons-Boutboul, Marie",
+          "transition": "formation"
+        },
+        {
+          "date_text": "30 April 1958",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1958-04-30",
+          "interval_start": "1958-04-30",
+          "matched_term": "married",
+          "other_adb_id": 47237,
+          "precision": "day",
+          "sentence": "French citizen, married to attorney Marie Cons on 30 April 1958.",
+          "source_adb_id": 47241,
+          "source_title": "Boutboul, Nessim",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": true,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:47237|adb:47241",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:47810|adb:80168",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [
+        {
+          "date_text": "9 May 2005",
+          "end_kind": "annulment",
+          "evidence_type": "adb_biography_same_sentence",
+          "interval_end": "2005-05-09",
+          "interval_start": "2005-05-09",
+          "matched_term": "annulment",
+          "other_adb_id": 49711,
+          "precision": "day",
+          "sentence": "He married actress Renee Zellweger on 9 May 2005 but the much-publicized merger ended in an annulment announced just a few months later on 15 September.",
+          "source_adb_id": 49712,
+          "source_title": "Chesney, Kenny",
+          "transition": "nonfatal_exit"
+        }
+      ],
+      "accepted_biography_formations": [
+        {
+          "date_text": "9 May 2005",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "2005-05-09",
+          "interval_start": "2005-05-09",
+          "matched_term": "marriage",
+          "other_adb_id": 49712,
+          "precision": "day",
+          "sentence": "Although her name was linked romantically with other celebrities like Jack White and Damien Rice, Zellweger remained single until her marriage to Kenny Chesney on 9 May 2005 on St.",
+          "source_adb_id": 49711,
+          "source_title": "Zellweger, Ren\u00e9e",
+          "transition": "formation"
+        },
+        {
+          "date_text": "9 May 2005",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "2005-05-09",
+          "interval_start": "2005-05-09",
+          "matched_term": "married",
+          "other_adb_id": 49711,
+          "precision": "day",
+          "sentence": "He married actress Renee Zellweger on 9 May 2005 but the much-publicized merger ended in an annulment announced just a few months later on 15 September.",
+          "source_adb_id": 49712,
+          "source_title": "Chesney, Kenny",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": true,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:49711|adb:49712",
+      "usable_new_biography_exits": [
+        {
+          "date_text": "9 May 2005",
+          "end_kind": "annulment",
+          "evidence_type": "adb_biography_same_sentence",
+          "interval_end": "2005-05-09",
+          "interval_start": "2005-05-09",
+          "matched_term": "annulment",
+          "other_adb_id": 49711,
+          "precision": "day",
+          "sentence": "He married actress Renee Zellweger on 9 May 2005 but the much-publicized merger ended in an annulment announced just a few months later on 15 September.",
+          "source_adb_id": 49712,
+          "source_title": "Chesney, Kenny",
+          "transition": "nonfatal_exit"
+        }
+      ]
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "1973",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1973-12-31",
+          "interval_start": "1973-01-01",
+          "matched_term": "married",
+          "other_adb_id": 99620,
+          "precision": "year",
+          "sentence": "She was then married to actor Broderick Crawford from 1973 until his death in 1986.",
+          "source_adb_id": 50349,
+          "source_title": "Moore, Mary Alice",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:50349|adb:99620",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [
+        {
+          "date_text": "1980",
+          "end_kind": "divorce",
+          "evidence_type": "adb_biography_same_sentence",
+          "interval_end": "1980-12-31",
+          "interval_start": "1980-01-01",
+          "matched_term": "divorce",
+          "other_adb_id": 50764,
+          "precision": "year",
+          "sentence": "She is the ex-wife of noted actor Jean Louis Trintignant and of Director Claude Chabrol to whom she was married from 1964 until their divorce in 1980.",
+          "source_adb_id": 50520,
+          "source_title": "Audran, St\u00e9phane",
+          "transition": "nonfatal_exit"
+        }
+      ],
+      "accepted_biography_formations": [
+        {
+          "date_text": "1964",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1964-12-31",
+          "interval_start": "1964-01-01",
+          "matched_term": "married",
+          "other_adb_id": 50764,
+          "precision": "year",
+          "sentence": "She is the ex-wife of noted actor Jean Louis Trintignant and of Director Claude Chabrol to whom she was married from 1964 until their divorce in 1980.",
+          "source_adb_id": 50520,
+          "source_title": "Audran, St\u00e9phane",
+          "transition": "formation"
+        },
+        {
+          "date_text": "24 April 1963",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1963-04-24",
+          "interval_start": "1963-04-24",
+          "matched_term": "marriage",
+          "other_adb_id": 50764,
+          "precision": "day",
+          "sentence": "Her marriage to Chabrol produced one son, actor Thomas Chabrol, born 24 April 1963.",
+          "source_adb_id": 50520,
+          "source_title": "Audran, St\u00e9phane",
+          "transition": "formation"
+        },
+        {
+          "date_text": "1964",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1964-12-31",
+          "interval_start": "1964-01-01",
+          "matched_term": "married",
+          "other_adb_id": 50520,
+          "precision": "year",
+          "sentence": "In 1964 he married St\u00e9phane Audran, who starred in some of his movies.",
+          "source_adb_id": 50764,
+          "source_title": "Chabrol, Claude",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [
+        {
+          "date_text": "1980",
+          "end_kind": "divorce",
+          "evidence_type": "adb_biography_same_sentence",
+          "interval_end": "1980-12-31",
+          "interval_start": "1980-01-01",
+          "matched_term": "divorce",
+          "other_adb_id": 50764,
+          "precision": "year",
+          "sentence": "She is the ex-wife of noted actor Jean Louis Trintignant and of Director Claude Chabrol to whom she was married from 1964 until their divorce in 1980.",
+          "source_adb_id": 50520,
+          "source_title": "Audran, St\u00e9phane",
+          "status": "corroborates_higher_precedence_exit",
+          "transition": "nonfatal_exit"
+        }
+      ],
+      "had_v1_v2_endpoint": true,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:50520|adb:50764",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:50795|adb:80186",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:54655|adb:88172",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "28 November 1959",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1959-11-28",
+          "interval_start": "1959-11-28",
+          "matched_term": "married",
+          "other_adb_id": 55269,
+          "precision": "day",
+          "sentence": "Christo and Jeanne-Claude married on 28 November 1959.",
+          "source_adb_id": 55266,
+          "source_title": "Christo",
+          "transition": "formation"
+        },
+        {
+          "date_text": "28 November 1959",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1959-11-28",
+          "interval_start": "1959-11-28",
+          "matched_term": "married",
+          "other_adb_id": 55266,
+          "precision": "day",
+          "sentence": "Christo and Jeanne-Claude married on 28 November 1959.",
+          "source_adb_id": 55269,
+          "source_title": "Jeanne-Claude",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:55266|adb:55269",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "31 August 1903",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1903-08-31",
+          "interval_start": "1903-08-31",
+          "matched_term": "married",
+          "other_adb_id": 55466,
+          "precision": "day",
+          "sentence": "In 1935 she returned to Persia where, despite her lesbian outlook, she married the French diplomat Claude Achille Clarac, born 31 August 1903 in Nantes, also a homosexual.",
+          "source_adb_id": 55464,
+          "source_title": "Schwarzenbach, Annemarie",
+          "transition": "formation"
+        },
+        {
+          "date_text": "June 1942",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "meet",
+          "interval_end": "1942-06-30",
+          "interval_start": "1942-06-01",
+          "matched_term": "met",
+          "other_adb_id": 55466,
+          "precision": "month",
+          "sentence": "In June 1942 in T\u00e9touan she met up again with her husband Claude Clarac before returning to Switzerland.",
+          "source_adb_id": 55464,
+          "source_title": "Schwarzenbach, Annemarie",
+          "transition": "formation"
+        },
+        {
+          "date_text": "May 1935",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1935-05-31",
+          "interval_start": "1935-05-01",
+          "matched_term": "married",
+          "other_adb_id": 55464,
+          "precision": "month",
+          "sentence": "In 1934 he became embassy secretary in Tehran, Iran, where he married, in May 1935, the Swiss writer and photojournalist Annemarie Schwarzenbach (1908-1942).",
+          "source_adb_id": 55466,
+          "source_title": "Clarac, Achille",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:55464|adb:55466",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "2007",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "dating",
+          "interval_end": "2007-12-31",
+          "interval_start": "2007-01-01",
+          "matched_term": "began dating",
+          "other_adb_id": 61241,
+          "precision": "year",
+          "sentence": "Cruz began dating co-star Javier Bardem in 2007.",
+          "source_adb_id": 55649,
+          "source_title": "Cruz, Pen\u00e9lope",
+          "transition": "formation"
+        },
+        {
+          "date_text": "2010",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "2010-12-31",
+          "interval_start": "2010-01-01",
+          "matched_term": "married",
+          "other_adb_id": 55649,
+          "precision": "year",
+          "sentence": "Bardem has been married since 2010 to actress Pen\u00e9lope Cruz, with whom he shares two children.",
+          "source_adb_id": 61241,
+          "source_title": "Bardem, Javier",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:55649|adb:61241",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [
+        {
+          "date_text": "8 October 1905",
+          "end_kind": "divorce",
+          "evidence_type": "adb_biography_same_sentence",
+          "interval_end": "1905-10-08",
+          "interval_start": "1905-10-08",
+          "matched_term": "divorcing",
+          "other_adb_id": 56049,
+          "precision": "day",
+          "sentence": "The couple split in 1901, when a frustrated Ducky, liberated by the death of Queen Victoria, left Ernie for her lover, Grand Duke Kirill of Russia, whom she eventually married on 8 October 1905 in Tegernsee, Germany, after divorcing Ernie.",
+          "source_adb_id": 56048,
+          "source_title": "Victoria Melita, Princess of Saxe Coburg and Gotha",
+          "transition": "nonfatal_exit"
+        },
+        {
+          "date_text": "1901",
+          "end_kind": "breakup",
+          "evidence_type": "adb_biography_same_sentence",
+          "interval_end": "1901-12-31",
+          "interval_start": "1901-01-01",
+          "matched_term": "split",
+          "other_adb_id": 56049,
+          "precision": "year",
+          "sentence": "The couple split in 1901, when a frustrated Ducky, liberated by the death of Queen Victoria, left Ernie for her lover, Grand Duke Kirill of Russia, whom she eventually married on 8 October 1905 in Tegernsee, Germany, after divorcing Ernie.",
+          "source_adb_id": 56048,
+          "source_title": "Victoria Melita, Princess of Saxe Coburg and Gotha",
+          "transition": "nonfatal_exit"
+        }
+      ],
+      "accepted_biography_formations": [
+        {
+          "date_text": "8 October 1905",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1905-10-08",
+          "interval_start": "1905-10-08",
+          "matched_term": "married",
+          "other_adb_id": 56049,
+          "precision": "day",
+          "sentence": "The couple split in 1901, when a frustrated Ducky, liberated by the death of Queen Victoria, left Ernie for her lover, Grand Duke Kirill of Russia, whom she eventually married on 8 October 1905 in Tegernsee, Germany, after divorcing Ernie.",
+          "source_adb_id": 56048,
+          "source_title": "Victoria Melita, Princess of Saxe Coburg and Gotha",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [
+        {
+          "exit": {
+            "interval_end": "1901-12-31",
+            "interval_start": "1901-01-01",
+            "source": "v3_rung1_bio"
+          },
+          "later_formation": {
+            "interval_end": "1905-10-08",
+            "interval_start": "1905-10-08",
+            "kind": "marriage",
+            "source": "v1"
+          }
+        },
+        {
+          "exit": {
+            "interval_end": "1901-12-31",
+            "interval_start": "1901-01-01",
+            "source": "v3_rung1_bio"
+          },
+          "later_formation": {
+            "interval_end": "1905-10-08",
+            "interval_start": "1905-10-08",
+            "kind": "marriage",
+            "source": "v3_rung1_bio"
+          }
+        }
+      ],
+      "pair_key": "adb:56048|adb:56049",
+      "usable_new_biography_exits": [
+        {
+          "date_text": "8 October 1905",
+          "end_kind": "divorce",
+          "evidence_type": "adb_biography_same_sentence",
+          "interval_end": "1905-10-08",
+          "interval_start": "1905-10-08",
+          "matched_term": "divorcing",
+          "other_adb_id": 56049,
+          "precision": "day",
+          "sentence": "The couple split in 1901, when a frustrated Ducky, liberated by the death of Queen Victoria, left Ernie for her lover, Grand Duke Kirill of Russia, whom she eventually married on 8 October 1905 in Tegernsee, Germany, after divorcing Ernie.",
+          "source_adb_id": 56048,
+          "source_title": "Victoria Melita, Princess of Saxe Coburg and Gotha",
+          "transition": "nonfatal_exit"
+        },
+        {
+          "date_text": "1901",
+          "end_kind": "breakup",
+          "evidence_type": "adb_biography_same_sentence",
+          "interval_end": "1901-12-31",
+          "interval_start": "1901-01-01",
+          "matched_term": "split",
+          "other_adb_id": 56049,
+          "precision": "year",
+          "sentence": "The couple split in 1901, when a frustrated Ducky, liberated by the death of Queen Victoria, left Ernie for her lover, Grand Duke Kirill of Russia, whom she eventually married on 8 October 1905 in Tegernsee, Germany, after divorcing Ernie.",
+          "source_adb_id": 56048,
+          "source_title": "Victoria Melita, Princess of Saxe Coburg and Gotha",
+          "transition": "nonfatal_exit"
+        }
+      ]
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:58088|adb:58089",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "7 July 1946",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1946-07-07",
+          "interval_start": "1946-07-07",
+          "matched_term": "married",
+          "other_adb_id": 6298,
+          "precision": "day",
+          "sentence": "His citation on the Nobel prize website reads: \"for his decades of untiring effort to find peaceful solutions to international conflicts, to advance democracy and human rights, and to promote economic and social development.\" He married Rosalynn Smith on 7 July 1946 and they had four children: Jack, 1947; James Earl, 1950; Jeffrey, 1952; and Amy, 1967.",
+          "source_adb_id": 5888,
+          "source_title": "Carter, Jimmy",
+          "transition": "formation"
+        },
+        {
+          "date_text": "7 July 1946",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1946-07-07",
+          "interval_start": "1946-07-07",
+          "matched_term": "married",
+          "other_adb_id": 5888,
+          "precision": "day",
+          "sentence": "She married Carter on 7 July 1946.",
+          "source_adb_id": 6298,
+          "source_title": "Carter, Rosalynn",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:5888|adb:6298",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": true,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:5959|adb:94255",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "16 Jan 1939",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1939-01-16",
+          "interval_start": "1939-01-16",
+          "matched_term": "married",
+          "other_adb_id": 60292,
+          "precision": "day",
+          "sentence": "From 16 Sept 1936 till 16 Jan 1939 he was married to writer Clara Eggink (no children).",
+          "source_adb_id": 60291,
+          "source_title": "Campert, Jan",
+          "transition": "formation"
+        },
+        {
+          "date_text": "16 Jan 1939",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1939-01-16",
+          "interval_start": "1939-01-16",
+          "matched_term": "married",
+          "other_adb_id": 60291,
+          "precision": "day",
+          "sentence": "On 16 Sept 1936 till 16 Jan 1939 Clare Eggink was married to journalist and poet Jan Campert (1902-1943).",
+          "source_adb_id": 60292,
+          "source_title": "Eggink, Clara",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": true,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:60291|adb:60292",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [
+        {
+          "date_text": "19 Dec 1932",
+          "end_kind": "divorce",
+          "evidence_type": "adb_biography_same_sentence",
+          "interval_end": "1932-12-19",
+          "interval_start": "1932-12-19",
+          "matched_term": "divorce",
+          "other_adb_id": 78745,
+          "precision": "day",
+          "sentence": "From 8 Feb 1928 (The Hague) till their divorce on 19 Dec 1932 (The Haque) he was married to the actress Wilhelmina (Joeki) Broedelet (The Haque, 4 Oct 1903 \u2014 Amsterdam, 3 July 1996), from whom he got a son, the poet and writer Remco Campert (1929).",
+          "source_adb_id": 60291,
+          "source_title": "Campert, Jan",
+          "transition": "nonfatal_exit"
+        }
+      ],
+      "accepted_biography_formations": [
+        {
+          "date_text": "19 Dec 1932",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1932-12-19",
+          "interval_start": "1932-12-19",
+          "matched_term": "married",
+          "other_adb_id": 78745,
+          "precision": "day",
+          "sentence": "From 8 Feb 1928 (The Hague) till their divorce on 19 Dec 1932 (The Haque) he was married to the actress Wilhelmina (Joeki) Broedelet (The Haque, 4 Oct 1903 \u2014 Amsterdam, 3 July 1996), from whom he got a son, the poet and writer Remco Campert (1929).",
+          "source_adb_id": 60291,
+          "source_title": "Campert, Jan",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [
+        {
+          "date_text": "19 Dec 1932",
+          "end_kind": "divorce",
+          "evidence_type": "adb_biography_same_sentence",
+          "interval_end": "1932-12-19",
+          "interval_start": "1932-12-19",
+          "matched_term": "divorce",
+          "other_adb_id": 78745,
+          "precision": "day",
+          "sentence": "From 8 Feb 1928 (The Hague) till their divorce on 19 Dec 1932 (The Haque) he was married to the actress Wilhelmina (Joeki) Broedelet (The Haque, 4 Oct 1903 \u2014 Amsterdam, 3 July 1996), from whom he got a son, the poet and writer Remco Campert (1929).",
+          "source_adb_id": 60291,
+          "source_title": "Campert, Jan",
+          "status": "corroborates_higher_precedence_exit",
+          "transition": "nonfatal_exit"
+        }
+      ],
+      "had_v1_v2_endpoint": true,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:60291|adb:78745",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [
+        {
+          "date_text": "July 2009",
+          "end_kind": "separation",
+          "evidence_type": "adb_biography_same_sentence",
+          "interval_end": "2009-07-31",
+          "interval_start": "2009-07-01",
+          "matched_term": "separation",
+          "other_adb_id": 76816,
+          "precision": "month",
+          "sentence": "The couple announced their separation in July 2009 when it was revealed Cibrian had begun an affair with country music singer LeAnn Rimes, after they appeared together in the movie Northern Lights.",
+          "source_adb_id": 67753,
+          "source_title": "Glanville, Brandi",
+          "transition": "nonfatal_exit"
+        }
+      ],
+      "accepted_biography_formations": [
+        {
+          "date_text": "2001",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "2001-12-31",
+          "interval_start": "2001-01-01",
+          "matched_term": "married",
+          "other_adb_id": 76816,
+          "precision": "year",
+          "sentence": "In 2001, Glanville married actor Eddie Cibrian.",
+          "source_adb_id": 67753,
+          "source_title": "Glanville, Brandi",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [
+        {
+          "date_text": "July 2009",
+          "end_kind": "separation",
+          "evidence_type": "adb_biography_same_sentence",
+          "interval_end": "2009-07-31",
+          "interval_start": "2009-07-01",
+          "matched_term": "separation",
+          "other_adb_id": 76816,
+          "precision": "month",
+          "sentence": "The couple announced their separation in July 2009 when it was revealed Cibrian had begun an affair with country music singer LeAnn Rimes, after they appeared together in the movie Northern Lights.",
+          "source_adb_id": 67753,
+          "source_title": "Glanville, Brandi",
+          "status": "corroborates_higher_precedence_exit",
+          "transition": "nonfatal_exit"
+        }
+      ],
+      "had_v1_v2_endpoint": true,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:67753|adb:76816",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "14 February 1959",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1959-02-14",
+          "interval_start": "1959-02-14",
+          "matched_term": "married",
+          "other_adb_id": 8007,
+          "precision": "day",
+          "sentence": "He married Arlene Catherine Johnson, a young acting student, on 14 February 1959.",
+          "source_adb_id": 6821,
+          "source_title": "Crane, Philip",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:6821|adb:8007",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [
+        {
+          "date_text": "1967",
+          "end_kind": "divorce",
+          "evidence_type": "adb_biography_same_sentence",
+          "interval_end": "1967-12-31",
+          "interval_start": "1967-01-01",
+          "matched_term": "divorced",
+          "other_adb_id": 96034,
+          "precision": "year",
+          "sentence": "Through the years they developed a stronger relationship, and after he divorced Vivian in 1967, he married June Carter in 1968.",
+          "source_adb_id": 7023,
+          "source_title": "Cash, Johnny",
+          "transition": "nonfatal_exit"
+        },
+        {
+          "date_text": "1966",
+          "end_kind": "divorce",
+          "evidence_type": "adb_biography_same_sentence",
+          "interval_end": "1966-12-31",
+          "interval_start": "1966-01-01",
+          "matched_term": "divorce",
+          "other_adb_id": 7023,
+          "precision": "year",
+          "sentence": "Liberto filed for divorce in 1966 because of Cash's severe drug and alcohol abuse, as well as his constant touring and his repeated acts of adultery with other women, including his close relationship with singer June Carter.",
+          "source_adb_id": 96034,
+          "source_title": "Cash, Vivian",
+          "transition": "nonfatal_exit"
+        }
+      ],
+      "accepted_biography_formations": [
+        {
+          "date_text": "1967",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1967-12-31",
+          "interval_start": "1967-01-01",
+          "matched_term": "married",
+          "other_adb_id": 96034,
+          "precision": "year",
+          "sentence": "Through the years they developed a stronger relationship, and after he divorced Vivian in 1967, he married June Carter in 1968.",
+          "source_adb_id": 7023,
+          "source_title": "Cash, Johnny",
+          "transition": "formation"
+        },
+        {
+          "date_text": "18 July 1951",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "meet",
+          "interval_end": "1951-07-18",
+          "interval_start": "1951-07-18",
+          "matched_term": "met",
+          "other_adb_id": 7023,
+          "precision": "day",
+          "sentence": "On 18 July 1951, while in Air Force basic training, Johnny Cash met 17-year-old Vivian at a roller skating rink in San Antonio, Texas.",
+          "source_adb_id": 96034,
+          "source_title": "Cash, Vivian",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [
+        {
+          "date_text": "1967",
+          "end_kind": "divorce",
+          "evidence_type": "adb_biography_same_sentence",
+          "interval_end": "1967-12-31",
+          "interval_start": "1967-01-01",
+          "matched_term": "divorced",
+          "other_adb_id": 96034,
+          "precision": "year",
+          "sentence": "Through the years they developed a stronger relationship, and after he divorced Vivian in 1967, he married June Carter in 1968.",
+          "source_adb_id": 7023,
+          "source_title": "Cash, Johnny",
+          "status": "corroborates_higher_precedence_exit",
+          "transition": "nonfatal_exit"
+        },
+        {
+          "date_text": "1966",
+          "end_kind": "divorce",
+          "evidence_type": "adb_biography_same_sentence",
+          "interval_end": "1966-12-31",
+          "interval_start": "1966-01-01",
+          "matched_term": "divorce",
+          "other_adb_id": 7023,
+          "precision": "year",
+          "sentence": "Liberto filed for divorce in 1966 because of Cash's severe drug and alcohol abuse, as well as his constant touring and his repeated acts of adultery with other women, including his close relationship with singer June Carter.",
+          "source_adb_id": 96034,
+          "source_title": "Cash, Vivian",
+          "status": "corroborates_higher_precedence_exit",
+          "transition": "nonfatal_exit"
+        }
+      ],
+      "had_v1_v2_endpoint": true,
+      "inferred_reunion_sequences": [
+        {
+          "exit": {
+            "interval_end": "1966-12-31",
+            "interval_start": "1966-01-01",
+            "source": "v2"
+          },
+          "later_formation": {
+            "interval_end": "1967-12-31",
+            "interval_start": "1967-01-01",
+            "kind": "marriage",
+            "source": "v3_rung1_bio"
+          }
+        },
+        {
+          "exit": {
+            "interval_end": "1966-12-31",
+            "interval_start": "1966-01-01",
+            "source": "v2"
+          },
+          "later_formation": {
+            "interval_end": "1967-12-31",
+            "interval_start": "1967-01-01",
+            "kind": "marriage",
+            "source": "v3_rung1_bio"
+          }
+        }
+      ],
+      "pair_key": "adb:7023|adb:96034",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "1902",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1902-12-31",
+          "interval_start": "1902-01-01",
+          "matched_term": "married",
+          "other_adb_id": 71587,
+          "precision": "year",
+          "sentence": "She married Albert Carr\u00e9, the director of the Op\u00e9ra-Comique, in 1902.",
+          "source_adb_id": 71588,
+          "source_title": "Carr\u00e9, Marguerite",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:71587|adb:71588",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "1913",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1913-12-31",
+          "interval_start": "1913-01-01",
+          "matched_term": "married",
+          "other_adb_id": 80050,
+          "precision": "year",
+          "sentence": "She married French tenor Lucien Muratore in 1913.",
+          "source_adb_id": 71621,
+          "source_title": "Cavalieri, Lina",
+          "transition": "formation"
+        },
+        {
+          "date_text": "1914",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1914-12-31",
+          "interval_start": "1914-01-01",
+          "matched_term": "married",
+          "other_adb_id": 71621,
+          "precision": "year",
+          "sentence": "He was married first to soprano Marguerite B\u00e9riza, and later to soprano Lina Cavalieri, with whom he appeared in a silent movie, Manon Lescaut, in 1914.",
+          "source_adb_id": 80050,
+          "source_title": "Muratore, Lucien",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": true,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:71621|adb:80050",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [
+        {
+          "date_text": "1997",
+          "end_kind": "divorce",
+          "evidence_type": "adb_biography_same_sentence",
+          "interval_end": "1997-12-31",
+          "interval_start": "1997-01-01",
+          "matched_term": "divorced",
+          "other_adb_id": 74737,
+          "precision": "year",
+          "sentence": "Rossi married the singer Dora Moroni on 26 May 1987 a month after their son Alfredo was born; the couple divorced in 1997.",
+          "source_adb_id": 9479,
+          "source_title": "Christian",
+          "transition": "nonfatal_exit"
+        }
+      ],
+      "accepted_biography_formations": [
+        {
+          "date_text": "26 May 1987",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1987-05-26",
+          "interval_start": "1987-05-26",
+          "matched_term": "married",
+          "other_adb_id": 74737,
+          "precision": "day",
+          "sentence": "Rossi married the singer Dora Moroni on 26 May 1987 a month after their son Alfredo was born; the couple divorced in 1997.",
+          "source_adb_id": 9479,
+          "source_title": "Christian",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [
+        {
+          "date_text": "1997",
+          "end_kind": "divorce",
+          "evidence_type": "adb_biography_same_sentence",
+          "interval_end": "1997-12-31",
+          "interval_start": "1997-01-01",
+          "matched_term": "divorced",
+          "other_adb_id": 74737,
+          "precision": "year",
+          "sentence": "Rossi married the singer Dora Moroni on 26 May 1987 a month after their son Alfredo was born; the couple divorced in 1997.",
+          "source_adb_id": 9479,
+          "source_title": "Christian",
+          "status": "corroborates_higher_precedence_exit",
+          "transition": "nonfatal_exit"
+        }
+      ],
+      "had_v1_v2_endpoint": true,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:9479|adb:74737",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "26 April 1898",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1898-04-26",
+          "interval_start": "1898-04-26",
+          "matched_term": "married",
+          "other_adb_id": 79672,
+          "precision": "day",
+          "sentence": "Duchess Alexandrine married Prince Christian of Denmark on 26 April 1898, in Cannes, France, when she was 18 years old.",
+          "source_adb_id": 79284,
+          "source_title": "Alexandrine, Queen of Denmark",
+          "transition": "formation"
+        },
+        {
+          "date_text": "26 April 1898",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1898-04-26",
+          "interval_start": "1898-04-26",
+          "matched_term": "married",
+          "other_adb_id": 79284,
+          "precision": "day",
+          "sentence": "Christian married Alexandrine of Mecklenburg-Schwerin in Cannes on 26 April 1898.",
+          "source_adb_id": 79672,
+          "source_title": "Christian X, King of Denmark",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:79284|adb:79672",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "1901",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1901-12-31",
+          "interval_start": "1901-01-01",
+          "matched_term": "married",
+          "other_adb_id": 79358,
+          "precision": "year",
+          "sentence": "Princess Caroline married Wilhelm Ernst, the reigning Grand Duke of Saxe-Weimar-Eisenach since 1901, on 30 April 1903.",
+          "source_adb_id": 84214,
+          "source_title": "Caroline, Princess Reuss of Greiz",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:79358|adb:84214",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "18 May 1850",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1850-05-18",
+          "interval_start": "1850-05-18",
+          "matched_term": "married",
+          "other_adb_id": 79664,
+          "precision": "day",
+          "sentence": "Georg was married first in Charlottenburg on 18 May 1850 to Princess Charlotte of Prussia.",
+          "source_adb_id": 79377,
+          "source_title": "Georg II, Duke of Saxe-Meiningen",
+          "transition": "formation"
+        },
+        {
+          "date_text": "23 October 1858",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1858-10-23",
+          "interval_start": "1858-10-23",
+          "matched_term": "married",
+          "other_adb_id": 79664,
+          "precision": "day",
+          "sentence": "On 23 October 1858, he married his second cousin Princess Feodora of Hohenlohe-Langenburg.",
+          "source_adb_id": 79377,
+          "source_title": "Georg II, Duke of Saxe-Meiningen",
+          "transition": "formation"
+        },
+        {
+          "date_text": "18 May 1850",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1850-05-18",
+          "interval_start": "1850-05-18",
+          "matched_term": "married",
+          "other_adb_id": 79377,
+          "precision": "day",
+          "sentence": "In Charlottenburg on 18 May 1850, the nineteen-year-old princess married Georg, Hereditary Prince of Saxe-Meiningen who was twenty-four years old.",
+          "source_adb_id": 79664,
+          "source_title": "Charlotte, Princess of Prussia (1831)",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:79377|adb:79664",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "26 May 1827",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1827-05-26",
+          "interval_start": "1827-05-26",
+          "matched_term": "married",
+          "other_adb_id": 80137,
+          "precision": "day",
+          "sentence": "On 26 May 1827 in Charlottenburg, Carl married Princess Marie of Saxe-Weimar-Eisenach.",
+          "source_adb_id": 79673,
+          "source_title": "Carl, Prince of Prussia",
+          "transition": "formation"
+        },
+        {
+          "date_text": "26 May 1827",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1827-05-26",
+          "interval_start": "1827-05-26",
+          "matched_term": "married",
+          "other_adb_id": 79673,
+          "precision": "day",
+          "sentence": "Marie married Prince Carl of Prussia on 26 May 1827 in Charlottenburg (now part of Berlin).",
+          "source_adb_id": 80137,
+          "source_title": "Marie, Princess of Saxe-Weimar-Eisenach (1808)",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:79673|adb:80137",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "1971",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "meet",
+          "interval_end": "1971-12-31",
+          "interval_start": "1971-01-01",
+          "matched_term": "met",
+          "other_adb_id": 863,
+          "precision": "year",
+          "sentence": "She met Bill Clinton when they were both Yale Law School students in 1971.",
+          "source_adb_id": 862,
+          "source_title": "Clinton, Hillary",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:862|adb:863",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "15 September 1892",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1892-09-15",
+          "interval_start": "1892-09-15",
+          "matched_term": "married",
+          "other_adb_id": 86362,
+          "precision": "day",
+          "sentence": "She married Afonso Costa in the New Cathedral of Coimbra, on 15 September 1892.",
+          "source_adb_id": 86361,
+          "source_title": "Costa, Alzira",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:86361|adb:86362",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "February 1981",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1981-02-28",
+          "interval_start": "1981-02-01",
+          "matched_term": "married",
+          "other_adb_id": 88705,
+          "precision": "month",
+          "sentence": "Currie married Steve Lukather, lead guitarist and co-vocalist of Toto in February 1981.",
+          "source_adb_id": 96170,
+          "source_title": "Currie, Marie",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:88705|adb:96170",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [
+        {
+          "date_text": "1920",
+          "end_kind": "separation",
+          "evidence_type": "adb_biography_same_sentence",
+          "interval_end": "1920-12-31",
+          "interval_start": "1920-01-01",
+          "matched_term": "separated",
+          "other_adb_id": 90852,
+          "precision": "year",
+          "sentence": "In the mid-1920s, the couple unofficially separated, with Pierre living in his Paris apartment and on an estate near the city, when not in Monaco.",
+          "source_adb_id": 90851,
+          "source_title": "Pierre, Duke of Valentinois",
+          "transition": "nonfatal_exit"
+        }
+      ],
+      "accepted_biography_formations": [
+        {
+          "date_text": "20 March 1920",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1920-03-20",
+          "interval_start": "1920-03-20",
+          "matched_term": "married",
+          "other_adb_id": 90852,
+          "precision": "day",
+          "sentence": "He married civilly on 19 March and religiously on 20 March 1920, in Monaco, Princess Charlotte of Monaco, the illegitimate but adopted daughter of Louis II of Monaco by Marie Juliette Louvet.",
+          "source_adb_id": 90851,
+          "source_title": "Pierre, Duke of Valentinois",
+          "transition": "formation"
+        },
+        {
+          "date_text": "19 March 1920",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1920-03-19",
+          "interval_start": "1920-03-19",
+          "matched_term": "marriage",
+          "other_adb_id": 90851,
+          "precision": "day",
+          "sentence": "In Monaco civilly on 18 March and religiously on 19 March 1920, Louis arranged Charlotte's marriage to the then Count Pierre de Polignac of Hennebont, Morbihan, Brittany, France, who, by the Prince's ordinance, took the surname Grimaldi and became a Prince of the Monegasque Royal Family.",
+          "source_adb_id": 90852,
+          "source_title": "Charlotte of Monaco, Duchess of Valentinois",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": true,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:90851|adb:90852",
+      "usable_new_biography_exits": [
+        {
+          "date_text": "1920",
+          "end_kind": "separation",
+          "evidence_type": "adb_biography_same_sentence",
+          "interval_end": "1920-12-31",
+          "interval_start": "1920-01-01",
+          "matched_term": "separated",
+          "other_adb_id": 90852,
+          "precision": "year",
+          "sentence": "In the mid-1920s, the couple unofficially separated, with Pierre living in his Paris apartment and on an estate near the city, when not in Monaco.",
+          "source_adb_id": 90851,
+          "source_title": "Pierre, Duke of Valentinois",
+          "transition": "nonfatal_exit"
+        }
+      ]
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "October 1925",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1925-10-31",
+          "interval_start": "1925-10-01",
+          "matched_term": "married",
+          "other_adb_id": 91105,
+          "precision": "month",
+          "sentence": "In October 1925, he married artist and writer Ruth Vallentin in Berlin.",
+          "source_adb_id": 91106,
+          "source_title": "Cidor, Hanan Aharon",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:91105|adb:91106",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "9 October 1893",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1893-10-09",
+          "interval_start": "1893-10-09",
+          "matched_term": "married",
+          "other_adb_id": 93203,
+          "precision": "day",
+          "sentence": "On 9 October 1893 he married Juliette Courth\u00e9oux-Yernaux.",
+          "source_adb_id": 93201,
+          "source_title": "Courth\u00e9oux, Achille",
+          "transition": "formation"
+        },
+        {
+          "date_text": "9 October 1893",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "1893-10-09",
+          "interval_start": "1893-10-09",
+          "matched_term": "married",
+          "other_adb_id": 93201,
+          "precision": "day",
+          "sentence": "Belgian heiress, she married businessman Achille Courth\u00e9oux on 9 October 1893.",
+          "source_adb_id": 93203,
+          "source_title": "Courth\u00e9oux, Juliette",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:93201|adb:93203",
+      "usable_new_biography_exits": []
+    },
+    {
+      "accepted_biography_exits": [],
+      "accepted_biography_formations": [
+        {
+          "date_text": "1988",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "meet",
+          "interval_end": "1988-12-31",
+          "interval_start": "1988-01-01",
+          "matched_term": "met",
+          "other_adb_id": 97283,
+          "precision": "year",
+          "sentence": "In 1988, when she was 46, she met the woman who later became her wife, Diane Divelbess.",
+          "source_adb_id": 97170,
+          "source_title": "Cammermeyer, Margarethe",
+          "transition": "formation"
+        },
+        {
+          "date_text": "2012",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "2012-12-31",
+          "interval_start": "2012-01-01",
+          "matched_term": "marriage",
+          "other_adb_id": 97283,
+          "precision": "year",
+          "sentence": "In 2012, after same-sex marriage was legalized in Washington state, Cammermeyer and Divelbess became the first same-sex couple to get a license in Island County.",
+          "source_adb_id": 97170,
+          "source_title": "Cammermeyer, Margarethe",
+          "transition": "formation"
+        },
+        {
+          "date_text": "1988",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "meet",
+          "interval_end": "1988-12-31",
+          "interval_start": "1988-01-01",
+          "matched_term": "met",
+          "other_adb_id": 97170,
+          "precision": "year",
+          "sentence": "In 1988 she met Norwegian military officer Margarethe Cammermeyer who later became her wife.",
+          "source_adb_id": 97283,
+          "source_title": "Divelbess, Diane",
+          "transition": "formation"
+        },
+        {
+          "date_text": "2012",
+          "evidence_type": "adb_biography_same_sentence",
+          "formation_kind": "marriage",
+          "interval_end": "2012-12-31",
+          "interval_start": "2012-01-01",
+          "matched_term": "marriage",
+          "other_adb_id": 97170,
+          "precision": "year",
+          "sentence": "In 2012, after same-sex marriage was legalized in Washington state, Divelbess and Cammermeyer became the first same-sex couple to get a license in Island County.",
+          "source_adb_id": 97283,
+          "source_title": "Divelbess, Diane",
+          "transition": "formation"
+        }
+      ],
+      "biography_conflicts": [],
+      "corroborating_biography_exits": [],
+      "had_v1_v2_endpoint": false,
+      "inferred_reunion_sequences": [],
+      "pair_key": "adb:97170|adb:97283",
+      "usable_new_biography_exits": []
+    }
+  ],
+  "people": 123,
+  "resolved_biographies": 123,
+  "rung1_counts": {
+    "accepted_exit_evidence": 16,
+    "accepted_formation_evidence": 107,
+    "conflict_groups": 0,
+    "corroborating_exit_evidence": 7,
+    "usable_new_exit_evidence": 9
+  },
+  "source_failures": [],
+  "status": "development_state_history_source_ladder_rung1",
+  "stop_go": {
+    "continue_to_rung2": true,
+    "endpoint_pairs_observed": 25,
+    "minimum_endpoint_pairs": 30,
+    "stop_source_ladder_and_freeze_model_spec": false
+  },
+  "v1_sha256": "91609a233727a06c0cee23414e357a1d3e31349481394a991cb69210aed33298",
+  "v2_sha256": "35710c05232e2d2d7b154abb2977e7c6d113365c314aeeb2531c985f16401612"
+}
