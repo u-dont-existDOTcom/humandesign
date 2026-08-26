@@ -63,6 +63,8 @@ An end time with no P1534 end cause does **not** create a new nonfatal endpoint.
 
 An end cause indicating death, widowhood, disappearance, or any cause outside the frozen nonfatal families does not count as a nonfatal relationship exit.
 
+For the multiple-cause conflict rule below, an English end-cause label is treated as explicitly fatal/widowhood-related only when its normalized label contains one of the frozen lexical roots `death`, `deceas`, `widow`, `killed`, or `murder`. `disappear*` is non-qualifying but is not treated as a fatal-conflict root unless accompanied by one of those fatal roots.
+
 ### V1/V2 exception
 
 If a P582 end time overlaps an already accepted V1/V2 nonfatal endpoint for that pair, it may be retained as corroborating provenance even without P1534. It cannot create a new endpoint-bearing pair because that pair is already in the clean baseline.
