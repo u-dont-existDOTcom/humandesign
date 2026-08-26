@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/adb_exact_pair_timing_v3.py'
+      - 'scripts/adb_exact_pair_timing_v3_runner.py'
       - 'reference/research/adb_exact_pair_timing_freeze_v3.md'
       - '.github/workflows/adb-exact-pair-timing-v3.yml'
 
@@ -26,7 +27,7 @@ jobs:
       - name: Fetch pinned Swiss ephemeris files
         run: python scripts/fetch_swisseph_ephemeris.py
       - name: Run frozen exact-pair timing V3
-        run: python scripts/adb_exact_pair_timing_v3.py
+        run: python scripts/adb_exact_pair_timing_v3_runner.py
       - name: Commit V3 result
         run: |
           git config user.name "github-actions[bot]"
