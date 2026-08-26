@@ -1,0 +1,1791 @@
+{
+  "augmentation_counts": {
+    "excluded_conflicts": 0,
+    "pairs_newly_gaining_nonfatal_exit": 1,
+    "pairs_with_inferred_reunion_sequence_after_v2": 0,
+    "range_rule_counts": {
+      "B_only": 21
+    },
+    "total_pairs_with_explicit_or_v2_nonfatal_endpoint": 23
+  },
+  "freeze_sha256": "a6eb6b9cdc9f3f963fff12ef8bc9fd5807f7cc8b544cab1c8fae67dec96af579",
+  "freeze_spec": "reference/research/adb_exact_pair_state_history_recovery_freeze_v2.md",
+  "limitations": [
+    "ADB development source only; not independent validation.",
+    "Rule B uses structured dated events only as conservative proof that both partners were alive after the relationship-range endpoint.",
+    "Range-derived exits remain full-year interval-censored and are not exact breakup dates.",
+    "No astrology or Human Design features are calculated or inspected in V2."
+  ],
+  "pair_universe": 64,
+  "pairs": [
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:60355|adb:101321",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [
+        {
+          "later_a": "2025-06-20",
+          "later_b": null,
+          "reason": "neither_rule_A_nor_rule_B",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1969-12-31",
+            "interval_end_earliest": "1969-01-01",
+            "interval_start": "1932-01-01",
+            "interval_start_latest": "1932-12-31",
+            "other_adb_id": 69473,
+            "partner_link": "Orlich Bolmarcich, Francisco Jose",
+            "partner_name": "Orlich Bolmarcich, Francisco Jose",
+            "precision": "year_range",
+            "related_datamain_id": 69473,
+            "relationship_notes": "Married 1932-1969",
+            "section": "Relationships",
+            "source_adb_id": 104188,
+            "source_title": "Camacho Quir\u00f3s, Marita"
+          }
+        },
+        {
+          "later_a": "2025-06-20",
+          "later_b": null,
+          "reason": "neither_rule_A_nor_rule_B",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1969-12-31",
+            "interval_end_earliest": "1969-01-01",
+            "interval_start": "1932-01-01",
+            "interval_start_latest": "1932-12-31",
+            "other_adb_id": 104188,
+            "partner_link": "Camacho Quir\u00f3s, Marita",
+            "partner_name": "Camacho Quir\u00f3s, Marita",
+            "precision": "year_range",
+            "related_datamain_id": 104188,
+            "relationship_notes": "Married 1932-1969",
+            "section": "Relationships",
+            "source_adb_id": 69473,
+            "source_title": "Orlich Bolmarcich, Francisco Jose"
+          }
+        }
+      ],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:69473|adb:104188",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:5996|adb:106360",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [
+        {
+          "derived_transition": "nonfatal_exit_range",
+          "interval_end": "1996-12-31",
+          "interval_start": "1996-01-01",
+          "later_life_a": "2024-02-05",
+          "later_life_b": "1997-08-31",
+          "precision": "year",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1996-12-31",
+            "interval_end_earliest": "1996-01-01",
+            "interval_start": "1981-01-01",
+            "interval_start_latest": "1981-12-31",
+            "other_adb_id": 474,
+            "partner_link": "Diana, Princess of Wales",
+            "partner_name": "Diana, Princess of Wales",
+            "precision": "year_range",
+            "related_datamain_id": 474,
+            "relationship_notes": "Married 1981-1996",
+            "section": "Relationships",
+            "source_adb_id": 11103,
+            "source_title": "Charles III, King of the United Kingdom"
+          },
+          "rule_A_explicit_nonfatal_wording": false,
+          "rule_B_both_demonstrably_alive_later": true,
+          "status": "corroborates_explicit_v1_dissolution"
+        },
+        {
+          "derived_transition": "nonfatal_exit_range",
+          "interval_end": "1996-12-31",
+          "interval_start": "1996-01-01",
+          "later_life_a": "2024-02-05",
+          "later_life_b": "1997-08-31",
+          "precision": "year",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1996-12-31",
+            "interval_end_earliest": "1996-01-01",
+            "interval_start": "1981-01-01",
+            "interval_start_latest": "1981-12-31",
+            "other_adb_id": 11103,
+            "partner_link": "Charles III, King of the United Kingdom",
+            "partner_name": "Charles III, King of the United Kingdom",
+            "precision": "year_range",
+            "related_datamain_id": 11103,
+            "relationship_notes": "Married 1981-1996",
+            "section": "Relationships",
+            "source_adb_id": 474,
+            "source_title": "Diana, Princess of Wales"
+          },
+          "rule_A_explicit_nonfatal_wording": false,
+          "rule_B_both_demonstrably_alive_later": true,
+          "status": "corroborates_explicit_v1_dissolution"
+        }
+      ],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": true,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:474|adb:11103",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [
+        {
+          "derived_transition": "nonfatal_exit_range",
+          "interval_end": "1999-12-31",
+          "interval_start": "1999-01-01",
+          "later_life_a": "2000-12-01",
+          "later_life_b": "2010-05-14",
+          "precision": "year",
+          "relationship_range": {
+            "code_id": 858,
+            "interval_end": "1999-12-31",
+            "interval_end_earliest": "1999-01-01",
+            "interval_start": "1994-01-01",
+            "interval_start_latest": "1994-12-31",
+            "other_adb_id": 13047,
+            "partner_link": "Copperfield, David",
+            "partner_name": "Copperfield, David",
+            "precision": "year_range",
+            "related_datamain_id": 13047,
+            "relationship_notes": "1994-1999",
+            "section": "Relationships",
+            "source_adb_id": 19803,
+            "source_title": "Schiffer, Claudia"
+          },
+          "rule_A_explicit_nonfatal_wording": false,
+          "rule_B_both_demonstrably_alive_later": true,
+          "status": "corroborates_explicit_v1_dissolution"
+        }
+      ],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": true,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:13047|adb:19803",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:13089|adb:13581",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [
+        {
+          "derived_transition": "nonfatal_exit_range",
+          "interval_end": "1990-12-31",
+          "interval_start": "1990-01-01",
+          "later_life_a": "2005-04-06",
+          "later_life_b": "2026-01-08",
+          "precision": "year",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1990-12-31",
+            "interval_end_earliest": "1990-01-01",
+            "interval_start": "1978-01-01",
+            "interval_start_latest": "1978-12-31",
+            "other_adb_id": 13089,
+            "partner_link": "Caroline, Princess of Monaco",
+            "partner_name": "Caroline, Princess of Monaco",
+            "precision": "year_range",
+            "related_datamain_id": 13089,
+            "relationship_notes": "Married 1978-1990",
+            "section": "Relationships",
+            "source_adb_id": 8584,
+            "source_title": "Junot, Philippe"
+          },
+          "rule_A_explicit_nonfatal_wording": false,
+          "rule_B_both_demonstrably_alive_later": true,
+          "status": "new_v2_nonfatal_exit"
+        }
+      ],
+      "pair_key": "adb:8584|adb:13089",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [
+        {
+          "derived_transition": "nonfatal_exit_range",
+          "interval_end": "2004-12-31",
+          "interval_start": "2004-01-01",
+          "later_life_a": "2023-01-12",
+          "later_life_b": "2009-10-27",
+          "precision": "year",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "2004-12-31",
+            "interval_end_earliest": "2004-01-01",
+            "interval_start": "2002-01-01",
+            "interval_start_latest": "2002-12-31",
+            "other_adb_id": 19401,
+            "partner_link": "Cage, Nicolas",
+            "partner_name": "Cage, Nicolas",
+            "precision": "year_range",
+            "related_datamain_id": 19401,
+            "relationship_notes": "Married 2002-2004",
+            "section": "Relationships",
+            "source_adb_id": 14274,
+            "source_title": "Presley, Lisa Marie"
+          },
+          "rule_A_explicit_nonfatal_wording": false,
+          "rule_B_both_demonstrably_alive_later": true,
+          "status": "corroborates_explicit_v1_dissolution"
+        },
+        {
+          "derived_transition": "nonfatal_exit_range",
+          "interval_end": "2004-12-31",
+          "interval_start": "2004-01-01",
+          "later_life_a": "2023-01-12",
+          "later_life_b": "2009-10-27",
+          "precision": "year",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "2004-12-31",
+            "interval_end_earliest": "2004-01-01",
+            "interval_start": "2002-01-01",
+            "interval_start_latest": "2002-12-31",
+            "other_adb_id": 14274,
+            "partner_link": "Presley, Lisa Marie",
+            "partner_name": "Presley, Lisa Marie",
+            "precision": "year_range",
+            "related_datamain_id": 14274,
+            "relationship_notes": "Married 2002-2004",
+            "section": "Relationships",
+            "source_adb_id": 19401,
+            "source_title": "Cage, Nicolas"
+          },
+          "rule_A_explicit_nonfatal_wording": false,
+          "rule_B_both_demonstrably_alive_later": true,
+          "status": "corroborates_explicit_v1_dissolution"
+        }
+      ],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": true,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:14274|adb:19401",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:15074|adb:68650",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": true,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:19367|adb:39157",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:19568|adb:25724",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:19580|adb:76816",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:7157|adb:19604",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:19605|adb:39278",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:244|adb:19799",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": true,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:238|adb:55779",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": true,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:238|adb:6281",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [
+        {
+          "derived_transition": "nonfatal_exit_range",
+          "interval_end": "1946-12-31",
+          "interval_start": "1946-01-01",
+          "later_life_a": "2022-10-11",
+          "later_life_b": "1960-10-11",
+          "precision": "year",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1946-12-31",
+            "interval_end_earliest": "1946-01-01",
+            "interval_start": "1945-01-01",
+            "interval_start_latest": "1945-12-31",
+            "other_adb_id": 92708,
+            "partner_link": "Cromwell, Richard (1910)",
+            "partner_name": "Cromwell, Richard (1910)",
+            "precision": "year_range",
+            "related_datamain_id": 92708,
+            "relationship_notes": "Married 1945-1946",
+            "section": "Relationships",
+            "source_adb_id": 24590,
+            "source_title": "Lansbury, Angela"
+          },
+          "rule_A_explicit_nonfatal_wording": false,
+          "rule_B_both_demonstrably_alive_later": true,
+          "status": "corroborates_explicit_v1_dissolution"
+        },
+        {
+          "derived_transition": "nonfatal_exit_range",
+          "interval_end": "1946-12-31",
+          "interval_start": "1946-01-01",
+          "later_life_a": "2022-10-11",
+          "later_life_b": "1960-10-11",
+          "precision": "year",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1946-12-31",
+            "interval_end_earliest": "1946-01-01",
+            "interval_start": "1945-01-01",
+            "interval_start_latest": "1945-12-31",
+            "other_adb_id": 24590,
+            "partner_link": "Lansbury, Angela",
+            "partner_name": "Lansbury, Angela",
+            "precision": "year_range",
+            "related_datamain_id": 24590,
+            "relationship_notes": "Married 1945-1946",
+            "section": "Relationships",
+            "source_adb_id": 92708,
+            "source_title": "Cromwell, Richard (1910)"
+          },
+          "rule_A_explicit_nonfatal_wording": false,
+          "rule_B_both_demonstrably_alive_later": true,
+          "status": "corroborates_explicit_v1_dissolution"
+        }
+      ],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": true,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:24590|adb:92708",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:863|adb:24930",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:25004|adb:25924",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [
+        {
+          "derived_transition": "nonfatal_exit_range",
+          "interval_end": "1962-12-31",
+          "interval_start": "1962-01-01",
+          "later_life_a": "2025-09-03",
+          "later_life_b": "2025-12-28",
+          "precision": "year",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1962-12-31",
+            "interval_end_earliest": "1962-01-01",
+            "interval_start": "1959-01-01",
+            "interval_start_latest": "1959-12-31",
+            "other_adb_id": 293,
+            "partner_link": "Bardot, Brigitte",
+            "partner_name": "Bardot, Brigitte",
+            "precision": "year_range",
+            "related_datamain_id": 293,
+            "relationship_notes": "1959-1962",
+            "section": "Relationships",
+            "source_adb_id": 25917,
+            "source_title": "Charrier, Jacques"
+          },
+          "rule_A_explicit_nonfatal_wording": false,
+          "rule_B_both_demonstrably_alive_later": true,
+          "status": "corroborates_explicit_v1_dissolution"
+        },
+        {
+          "derived_transition": "nonfatal_exit_range",
+          "interval_end": "1962-12-31",
+          "interval_start": "1962-01-01",
+          "later_life_a": "2025-09-03",
+          "later_life_b": "2025-12-28",
+          "precision": "year",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1962-12-31",
+            "interval_end_earliest": "1962-01-01",
+            "interval_start": "1959-01-01",
+            "interval_start_latest": "1959-12-31",
+            "other_adb_id": 25917,
+            "partner_link": "Charrier, Jacques",
+            "partner_name": "Charrier, Jacques",
+            "precision": "year_range",
+            "related_datamain_id": 25917,
+            "relationship_notes": "1959-1962",
+            "section": "Relationships",
+            "source_adb_id": 293,
+            "source_title": "Bardot, Brigitte"
+          },
+          "rule_A_explicit_nonfatal_wording": false,
+          "rule_B_both_demonstrably_alive_later": true,
+          "status": "corroborates_explicit_v1_dissolution"
+        }
+      ],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": true,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:293|adb:25917",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [
+        {
+          "later_a": "1951-07-20",
+          "later_b": "1954-05-06",
+          "reason": "neither_rule_A_nor_rule_B",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1951-12-31",
+            "interval_end_earliest": "1951-01-01",
+            "interval_start": "1905-01-01",
+            "interval_start_latest": "1905-12-31",
+            "other_adb_id": 79083,
+            "partner_link": "Cecilie, Crown Princess of Germany",
+            "partner_name": "Cecilie, Crown Princess of Germany",
+            "precision": "year_range",
+            "related_datamain_id": 79083,
+            "relationship_notes": "1905-1951",
+            "section": "Relationships",
+            "source_adb_id": 26134,
+            "source_title": "Wilhelm, Crown Prince of Germany"
+          }
+        },
+        {
+          "later_a": "1951-07-20",
+          "later_b": "1954-05-06",
+          "reason": "neither_rule_A_nor_rule_B",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1951-12-31",
+            "interval_end_earliest": "1951-01-01",
+            "interval_start": "1905-01-01",
+            "interval_start_latest": "1905-12-31",
+            "other_adb_id": 26134,
+            "partner_link": "Wilhelm, Crown Prince of Germany",
+            "partner_name": "Wilhelm, Crown Prince of Germany",
+            "precision": "year_range",
+            "related_datamain_id": 26134,
+            "relationship_notes": "1905-1951",
+            "section": "Relationships",
+            "source_adb_id": 79083,
+            "source_title": "Cecilie, Crown Princess of Germany"
+          }
+        }
+      ],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:26134|adb:79083",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [
+        {
+          "later_a": "1993-06-15",
+          "later_b": "2006-09-01",
+          "reason": "neither_rule_A_nor_rule_B",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1993-12-31",
+            "interval_end_earliest": "1993-01-01",
+            "interval_start": "1940-01-01",
+            "interval_start_latest": "1940-12-31",
+            "other_adb_id": 72673,
+            "partner_link": "Connally, Nellie",
+            "partner_name": "Connally, Nellie",
+            "precision": "year_range",
+            "related_datamain_id": 72673,
+            "relationship_notes": "1940-1993",
+            "section": "Relationships",
+            "source_adb_id": 26438,
+            "source_title": "Connally, John"
+          }
+        },
+        {
+          "later_a": "1993-06-15",
+          "later_b": "2006-09-01",
+          "reason": "neither_rule_A_nor_rule_B",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1993-12-31",
+            "interval_end_earliest": "1993-01-01",
+            "interval_start": "1940-01-01",
+            "interval_start_latest": "1940-12-31",
+            "other_adb_id": 26438,
+            "partner_link": "Connally, John",
+            "partner_name": "Connally, John",
+            "precision": "year_range",
+            "related_datamain_id": 26438,
+            "relationship_notes": "1940-1993",
+            "section": "Relationships",
+            "source_adb_id": 72673,
+            "source_title": "Connally, Nellie"
+          }
+        }
+      ],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:26438|adb:72673",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [
+        {
+          "derived_transition": "nonfatal_exit_range",
+          "interval_end": "1975-12-31",
+          "interval_start": "1975-01-01",
+          "later_life_a": "1998-01-05",
+          "later_life_b": "2022-12-10",
+          "precision": "year",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1975-12-31",
+            "interval_end_earliest": "1975-01-01",
+            "interval_start": "1969-01-01",
+            "interval_start_latest": "1969-12-31",
+            "other_adb_id": 362,
+            "partner_link": "Cher",
+            "partner_name": "Cher",
+            "precision": "year_range",
+            "related_datamain_id": 362,
+            "relationship_notes": "1969-1975, bitter",
+            "section": "Relationships",
+            "source_adb_id": 295,
+            "source_title": "Bono, Sonny"
+          },
+          "rule_A_explicit_nonfatal_wording": false,
+          "rule_B_both_demonstrably_alive_later": true,
+          "status": "corroborates_explicit_v1_dissolution"
+        },
+        {
+          "derived_transition": "nonfatal_exit_range",
+          "interval_end": "1975-12-31",
+          "interval_start": "1975-01-01",
+          "later_life_a": "1998-01-05",
+          "later_life_b": "2022-12-10",
+          "precision": "year",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1975-12-31",
+            "interval_end_earliest": "1975-01-01",
+            "interval_start": "1969-01-01",
+            "interval_start_latest": "1969-12-31",
+            "other_adb_id": 295,
+            "partner_link": "Bono, Sonny",
+            "partner_name": "Bono, Sonny",
+            "precision": "year_range",
+            "related_datamain_id": 295,
+            "relationship_notes": "1969-1975, bitter",
+            "section": "Relationships",
+            "source_adb_id": 362,
+            "source_title": "Cher"
+          },
+          "rule_A_explicit_nonfatal_wording": false,
+          "rule_B_both_demonstrably_alive_later": true,
+          "status": "corroborates_explicit_v1_dissolution"
+        }
+      ],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": true,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:295|adb:362",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [
+        {
+          "derived_transition": "nonfatal_exit_range",
+          "interval_end": "1933-12-31",
+          "interval_start": "1933-01-01",
+          "later_life_a": "1972-01-01",
+          "later_life_b": "1996-06-15",
+          "precision": "year",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1933-12-31",
+            "interval_end_earliest": "1933-01-01",
+            "interval_start": "1927-01-01",
+            "interval_start_latest": "1927-12-31",
+            "other_adb_id": 80315,
+            "partner_link": "Vall\u00e9e, Yvonne",
+            "partner_name": "Vall\u00e9e, Yvonne",
+            "precision": "year_range",
+            "related_datamain_id": 80315,
+            "relationship_notes": "1927-1933",
+            "section": "Relationships",
+            "source_adb_id": 3307,
+            "source_title": "Chevalier, Maurice"
+          },
+          "rule_A_explicit_nonfatal_wording": false,
+          "rule_B_both_demonstrably_alive_later": true,
+          "status": "corroborates_explicit_v1_dissolution"
+        },
+        {
+          "derived_transition": "nonfatal_exit_range",
+          "interval_end": "1933-12-31",
+          "interval_start": "1933-01-01",
+          "later_life_a": "1972-01-01",
+          "later_life_b": "1996-06-15",
+          "precision": "year",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1933-12-31",
+            "interval_end_earliest": "1933-01-01",
+            "interval_start": "1927-01-01",
+            "interval_start_latest": "1927-12-31",
+            "other_adb_id": 3307,
+            "partner_link": "Chevalier, Maurice",
+            "partner_name": "Chevalier, Maurice",
+            "precision": "year_range",
+            "related_datamain_id": 3307,
+            "relationship_notes": "1927-1933",
+            "section": "Relationships",
+            "source_adb_id": 80315,
+            "source_title": "Vall\u00e9e, Yvonne"
+          },
+          "rule_A_explicit_nonfatal_wording": false,
+          "rule_B_both_demonstrably_alive_later": true,
+          "status": "corroborates_explicit_v1_dissolution"
+        }
+      ],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": true,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:3307|adb:80315",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:36990|adb:55157",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:37302|adb:37303",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:39975|adb:49393",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:40046|adb:48891",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [
+        {
+          "later_a": "2012-07-27",
+          "later_b": "2008-06-17",
+          "reason": "neither_rule_A_nor_rule_B",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "2008-12-31",
+            "interval_end_earliest": "2008-01-01",
+            "interval_start": "1948-01-01",
+            "interval_start_latest": "1948-12-31",
+            "other_adb_id": 5515,
+            "partner_link": "Charisse, Cyd",
+            "partner_name": "Charisse, Cyd",
+            "precision": "year_range",
+            "related_datamain_id": 5515,
+            "relationship_notes": "1948-2008, her death",
+            "section": "Relationships",
+            "source_adb_id": 40327,
+            "source_title": "Martin, Tony"
+          }
+        }
+      ],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:5515|adb:40327",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [
+        {
+          "derived_transition": "nonfatal_exit_range",
+          "interval_end": "1973-12-31",
+          "interval_start": "1973-01-01",
+          "later_life_a": "2011-10-06",
+          "later_life_b": "2020-10-31",
+          "precision": "year",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1973-12-31",
+            "interval_end_earliest": "1973-01-01",
+            "interval_start": "1962-01-01",
+            "interval_start_latest": "1962-12-31",
+            "other_adb_id": 46200,
+            "partner_link": "Cilento, Diane",
+            "partner_name": "Cilento, Diane",
+            "precision": "year_range",
+            "related_datamain_id": 46200,
+            "relationship_notes": "1962-1973",
+            "section": "Relationships",
+            "source_adb_id": 6790,
+            "source_title": "Connery, Sean"
+          },
+          "rule_A_explicit_nonfatal_wording": false,
+          "rule_B_both_demonstrably_alive_later": true,
+          "status": "corroborates_explicit_v1_dissolution"
+        }
+      ],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": true,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:6790|adb:46200",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": true,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:47237|adb:47241",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:47810|adb:80168",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": true,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:49711|adb:49712",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [
+        {
+          "later_a": "1989-03-11",
+          "later_b": "1986-04-26",
+          "reason": "neither_rule_A_nor_rule_B",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1986-12-31",
+            "interval_end_earliest": "1986-01-01",
+            "interval_start": "1973-01-01",
+            "interval_start_latest": "1973-12-31",
+            "other_adb_id": 99620,
+            "partner_link": "Crawford, Broderick",
+            "partner_name": "Crawford, Broderick",
+            "precision": "year_range",
+            "related_datamain_id": 99620,
+            "relationship_notes": "Married 1973-1986",
+            "section": "Relationships",
+            "source_adb_id": 50349,
+            "source_title": "Moore, Mary Alice"
+          }
+        },
+        {
+          "later_a": "1989-03-11",
+          "later_b": "1986-04-26",
+          "reason": "neither_rule_A_nor_rule_B",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1986-12-31",
+            "interval_end_earliest": "1986-01-01",
+            "interval_start": "1973-01-01",
+            "interval_start_latest": "1973-12-31",
+            "other_adb_id": 50349,
+            "partner_link": "Moore, Mary Alice",
+            "partner_name": "Moore, Mary Alice",
+            "precision": "year_range",
+            "related_datamain_id": 50349,
+            "relationship_notes": "Married 1973-1986",
+            "section": "Relationships",
+            "source_adb_id": 99620,
+            "source_title": "Crawford, Broderick"
+          }
+        }
+      ],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:50349|adb:99620",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [
+        {
+          "derived_transition": "nonfatal_exit_range",
+          "interval_end": "1980-12-31",
+          "interval_start": "1980-01-01",
+          "later_life_a": "2018-03-27",
+          "later_life_b": "2010-09-12",
+          "precision": "year",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1980-12-31",
+            "interval_end_earliest": "1980-01-01",
+            "interval_start": "1964-01-01",
+            "interval_start_latest": "1964-12-31",
+            "other_adb_id": 50764,
+            "partner_link": "Chabrol, Claude",
+            "partner_name": "Chabrol, Claude",
+            "precision": "year_range",
+            "related_datamain_id": 50764,
+            "relationship_notes": "1964-1980",
+            "section": "Relationships",
+            "source_adb_id": 50520,
+            "source_title": "Audran, St\u00e9phane"
+          },
+          "rule_A_explicit_nonfatal_wording": false,
+          "rule_B_both_demonstrably_alive_later": true,
+          "status": "corroborates_explicit_v1_dissolution"
+        },
+        {
+          "derived_transition": "nonfatal_exit_range",
+          "interval_end": "1980-12-31",
+          "interval_start": "1980-01-01",
+          "later_life_a": "2018-03-27",
+          "later_life_b": "2010-09-12",
+          "precision": "year",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1980-12-31",
+            "interval_end_earliest": "1980-01-01",
+            "interval_start": "1964-01-01",
+            "interval_start_latest": "1964-12-31",
+            "other_adb_id": 50520,
+            "partner_link": "Audran, St\u00e9phane",
+            "partner_name": "Audran, St\u00e9phane",
+            "precision": "year_range",
+            "related_datamain_id": 50520,
+            "relationship_notes": "1964-1980",
+            "section": "Relationships",
+            "source_adb_id": 50764,
+            "source_title": "Chabrol, Claude"
+          },
+          "rule_A_explicit_nonfatal_wording": false,
+          "rule_B_both_demonstrably_alive_later": true,
+          "status": "corroborates_explicit_v1_dissolution"
+        }
+      ],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": true,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:50520|adb:50764",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:50795|adb:80186",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [
+        {
+          "later_a": "1952-06-17",
+          "later_b": "2011-01-01",
+          "reason": "neither_rule_A_nor_rule_B",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1952-12-31",
+            "interval_end_earliest": "1952-01-01",
+            "interval_start": "1946-01-01",
+            "interval_start_latest": "1946-12-31",
+            "other_adb_id": 88172,
+            "partner_link": "Cameron, Marjorie",
+            "partner_name": "Cameron, Marjorie",
+            "precision": "year_range",
+            "related_datamain_id": 88172,
+            "relationship_notes": "1946-1952",
+            "section": "Relationships",
+            "source_adb_id": 54655,
+            "source_title": "Parsons, Jack"
+          }
+        },
+        {
+          "later_a": "1952-06-17",
+          "later_b": "2011-01-01",
+          "reason": "neither_rule_A_nor_rule_B",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1952-12-31",
+            "interval_end_earliest": "1952-01-01",
+            "interval_start": "1946-01-01",
+            "interval_start_latest": "1946-12-31",
+            "other_adb_id": 54655,
+            "partner_link": "Parsons, Jack",
+            "partner_name": "Parsons, Jack",
+            "precision": "year_range",
+            "related_datamain_id": 54655,
+            "relationship_notes": "1946-1952",
+            "section": "Relationships",
+            "source_adb_id": 88172,
+            "source_title": "Cameron, Marjorie"
+          }
+        }
+      ],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:54655|adb:88172",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:55266|adb:55269",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [
+        {
+          "later_a": "1942-11-15",
+          "later_b": "1999-01-11",
+          "reason": "neither_rule_A_nor_rule_B",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1942-12-31",
+            "interval_end_earliest": "1942-01-01",
+            "interval_start": "1935-01-01",
+            "interval_start_latest": "1935-12-31",
+            "other_adb_id": 55466,
+            "partner_link": "Clarac, Achille",
+            "partner_name": "Clarac, Achille",
+            "precision": "year_range",
+            "related_datamain_id": 55466,
+            "relationship_notes": "Married 1935-1942",
+            "section": "Relationships",
+            "source_adb_id": 55464,
+            "source_title": "Schwarzenbach, Annemarie"
+          }
+        },
+        {
+          "later_a": "1942-11-15",
+          "later_b": "1999-01-11",
+          "reason": "neither_rule_A_nor_rule_B",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1942-12-31",
+            "interval_end_earliest": "1942-01-01",
+            "interval_start": "1935-01-01",
+            "interval_start_latest": "1935-12-31",
+            "other_adb_id": 55464,
+            "partner_link": "Schwarzenbach, Annemarie",
+            "partner_name": "Schwarzenbach, Annemarie",
+            "precision": "year_range",
+            "related_datamain_id": 55464,
+            "relationship_notes": "Married 1935-1942",
+            "section": "Relationships",
+            "source_adb_id": 55466,
+            "source_title": "Clarac, Achille"
+          }
+        }
+      ],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:55464|adb:55466",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:55649|adb:61241",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:56048|adb:56049",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:58088|adb:58089",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:5888|adb:6298",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [
+        {
+          "derived_transition": "nonfatal_exit_range",
+          "interval_end": "1972-12-31",
+          "interval_start": "1972-01-01",
+          "later_life_a": "1990-05-11",
+          "later_life_b": "2020-07-24",
+          "precision": "year",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1972-12-31",
+            "interval_end_earliest": "1972-01-01",
+            "interval_start": "1948-01-01",
+            "interval_start_latest": "1948-12-31",
+            "other_adb_id": 94255,
+            "partner_link": "Carpenter, Rene",
+            "partner_name": "Carpenter, Rene",
+            "precision": "year_range",
+            "related_datamain_id": 94255,
+            "relationship_notes": "Married 1948-1972",
+            "section": "Relationships",
+            "source_adb_id": 5959,
+            "source_title": "Carpenter, Scott"
+          },
+          "rule_A_explicit_nonfatal_wording": false,
+          "rule_B_both_demonstrably_alive_later": true,
+          "status": "corroborates_explicit_v1_dissolution"
+        },
+        {
+          "derived_transition": "nonfatal_exit_range",
+          "interval_end": "1972-12-31",
+          "interval_start": "1972-01-01",
+          "later_life_a": "1990-05-11",
+          "later_life_b": "2020-07-24",
+          "precision": "year",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1972-12-31",
+            "interval_end_earliest": "1972-01-01",
+            "interval_start": "1948-01-01",
+            "interval_start_latest": "1948-12-31",
+            "other_adb_id": 5959,
+            "partner_link": "Carpenter, Scott",
+            "partner_name": "Carpenter, Scott",
+            "precision": "year_range",
+            "related_datamain_id": 5959,
+            "relationship_notes": "Married 1948-1972",
+            "section": "Relationships",
+            "source_adb_id": 94255,
+            "source_title": "Carpenter, Rene"
+          },
+          "rule_A_explicit_nonfatal_wording": false,
+          "rule_B_both_demonstrably_alive_later": true,
+          "status": "corroborates_explicit_v1_dissolution"
+        }
+      ],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": true,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:5959|adb:94255",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": true,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:60291|adb:60292",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": true,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:60291|adb:78745",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [
+        {
+          "later_a": "2010-09-30",
+          "later_b": "2011-04-22",
+          "reason": "neither_rule_A_nor_rule_B",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "2010-12-31",
+            "interval_end_earliest": "2010-01-01",
+            "interval_start": "2001-01-01",
+            "interval_start_latest": "2001-12-31",
+            "other_adb_id": 76816,
+            "partner_link": "Cibrian, Eddie",
+            "partner_name": "Cibrian, Eddie",
+            "precision": "year_range",
+            "related_datamain_id": 76816,
+            "relationship_notes": "2001-2010",
+            "section": "Relationships",
+            "source_adb_id": 67753,
+            "source_title": "Glanville, Brandi"
+          }
+        },
+        {
+          "later_a": "2010-09-30",
+          "later_b": "2011-04-22",
+          "reason": "neither_rule_A_nor_rule_B",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "2010-12-31",
+            "interval_end_earliest": "2010-01-01",
+            "interval_start": "2001-01-01",
+            "interval_start_latest": "2001-12-31",
+            "other_adb_id": 67753,
+            "partner_link": "Glanville, Brandi",
+            "partner_name": "Glanville, Brandi",
+            "precision": "year_range",
+            "related_datamain_id": 67753,
+            "relationship_notes": "2001-2010",
+            "section": "Relationships",
+            "source_adb_id": 76816,
+            "source_title": "Cibrian, Eddie"
+          }
+        }
+      ],
+      "had_v1_explicit_endpoint": true,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:67753|adb:76816",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:6821|adb:8007",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": true,
+      "new_v2_nonfatal_exits": [
+        {
+          "derived_transition": "nonfatal_exit_range",
+          "interval_end": "1966-12-31",
+          "interval_start": "1966-01-01",
+          "later_life_a": "2003-09-12",
+          "later_life_b": "2005-05-24",
+          "precision": "year",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1966-12-31",
+            "interval_end_earliest": "1966-01-01",
+            "interval_start": "1954-01-01",
+            "interval_start_latest": "1954-12-31",
+            "other_adb_id": 96034,
+            "partner_link": "Cash, Vivian",
+            "partner_name": "Cash, Vivian",
+            "precision": "year_range",
+            "related_datamain_id": 96034,
+            "relationship_notes": "Married 1954-1966",
+            "section": "Relationships",
+            "source_adb_id": 7023,
+            "source_title": "Cash, Johnny"
+          },
+          "rule_A_explicit_nonfatal_wording": false,
+          "rule_B_both_demonstrably_alive_later": true,
+          "status": "new_v2_nonfatal_exit"
+        },
+        {
+          "derived_transition": "nonfatal_exit_range",
+          "interval_end": "1966-12-31",
+          "interval_start": "1966-01-01",
+          "later_life_a": "2003-09-12",
+          "later_life_b": "2005-05-24",
+          "precision": "year",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1966-12-31",
+            "interval_end_earliest": "1966-01-01",
+            "interval_start": "1954-01-01",
+            "interval_start_latest": "1954-12-31",
+            "other_adb_id": 7023,
+            "partner_link": "Cash, Johnny",
+            "partner_name": "Cash, Johnny",
+            "precision": "year_range",
+            "related_datamain_id": 7023,
+            "relationship_notes": "Married 1954-1966",
+            "section": "Relationships",
+            "source_adb_id": 96034,
+            "source_title": "Cash, Vivian"
+          },
+          "rule_A_explicit_nonfatal_wording": false,
+          "rule_B_both_demonstrably_alive_later": true,
+          "status": "new_v2_nonfatal_exit"
+        }
+      ],
+      "pair_key": "adb:7023|adb:96034",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:71587|adb:71588",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": true,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:71621|adb:80050",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [
+        {
+          "later_a": null,
+          "later_b": "2025-09-26",
+          "reason": "neither_rule_A_nor_rule_B",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1997-12-31",
+            "interval_end_earliest": "1997-01-01",
+            "interval_start": "1987-01-01",
+            "interval_start_latest": "1987-12-31",
+            "other_adb_id": 9479,
+            "partner_link": "Christian",
+            "partner_name": "Christian",
+            "precision": "year_range",
+            "related_datamain_id": 9479,
+            "relationship_notes": "Married 1987-1997",
+            "section": "Relationships",
+            "source_adb_id": 74737,
+            "source_title": "Moroni, Dora"
+          }
+        },
+        {
+          "later_a": null,
+          "later_b": "2025-09-26",
+          "reason": "neither_rule_A_nor_rule_B",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1997-12-31",
+            "interval_end_earliest": "1997-01-01",
+            "interval_start": "1987-01-01",
+            "interval_start_latest": "1987-12-31",
+            "other_adb_id": 74737,
+            "partner_link": "Moroni, Dora",
+            "partner_name": "Moroni, Dora",
+            "precision": "year_range",
+            "related_datamain_id": 74737,
+            "relationship_notes": "Married 1987-1997",
+            "section": "Relationships",
+            "source_adb_id": 9479,
+            "source_title": "Christian"
+          }
+        }
+      ],
+      "had_v1_explicit_endpoint": true,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:9479|adb:74737",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [
+        {
+          "later_a": "1952-12-28",
+          "later_b": "1947-04-20",
+          "reason": "neither_rule_A_nor_rule_B",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1947-12-31",
+            "interval_end_earliest": "1947-01-01",
+            "interval_start": "1898-01-01",
+            "interval_start_latest": "1898-12-31",
+            "other_adb_id": 79672,
+            "partner_link": "Christian X, King of Denmark",
+            "partner_name": "Christian X, King of Denmark",
+            "precision": "year_range",
+            "related_datamain_id": 79672,
+            "relationship_notes": "1898-1947",
+            "section": "Relationships",
+            "source_adb_id": 79284,
+            "source_title": "Alexandrine, Queen of Denmark"
+          }
+        },
+        {
+          "later_a": "1952-12-28",
+          "later_b": "1947-04-20",
+          "reason": "neither_rule_A_nor_rule_B",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1947-12-31",
+            "interval_end_earliest": "1947-01-01",
+            "interval_start": "1898-01-01",
+            "interval_start_latest": "1898-12-31",
+            "other_adb_id": 79284,
+            "partner_link": "Alexandrine, Queen of Denmark",
+            "partner_name": "Alexandrine, Queen of Denmark",
+            "precision": "year_range",
+            "related_datamain_id": 79284,
+            "relationship_notes": "1898-1947",
+            "section": "Relationships",
+            "source_adb_id": 79672,
+            "source_title": "Christian X, King of Denmark"
+          }
+        }
+      ],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:79284|adb:79672",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [
+        {
+          "later_a": "1923-04-24",
+          "later_b": "1905-01-17",
+          "reason": "neither_rule_A_nor_rule_B",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1905-12-31",
+            "interval_end_earliest": "1905-01-01",
+            "interval_start": "1903-01-01",
+            "interval_start_latest": "1903-12-31",
+            "other_adb_id": 84214,
+            "partner_link": "Caroline, Princess Reuss of Greiz",
+            "partner_name": "Caroline, Princess Reuss of Greiz",
+            "precision": "year_range",
+            "related_datamain_id": 84214,
+            "relationship_notes": "1903-1905",
+            "section": "Relationships",
+            "source_adb_id": 79358,
+            "source_title": "Wilhelm Ernst, Grand Duke of Saxe-Weimar-Eisenach"
+          }
+        },
+        {
+          "later_a": "1923-04-24",
+          "later_b": "1905-01-17",
+          "reason": "neither_rule_A_nor_rule_B",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1905-12-31",
+            "interval_end_earliest": "1905-01-01",
+            "interval_start": "1903-01-01",
+            "interval_start_latest": "1903-12-31",
+            "other_adb_id": 79358,
+            "partner_link": "Wilhelm Ernst, Grand Duke of Saxe-Weimar-Eisenach",
+            "partner_name": "Wilhelm Ernst, Grand Duke of Saxe-Weimar-Eisenach",
+            "precision": "year_range",
+            "related_datamain_id": 79358,
+            "relationship_notes": "1903-1905",
+            "section": "Relationships",
+            "source_adb_id": 84214,
+            "source_title": "Caroline, Princess Reuss of Greiz"
+          }
+        }
+      ],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:79358|adb:84214",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [
+        {
+          "later_a": "1914-06-25",
+          "later_b": "1855-03-30",
+          "reason": "neither_rule_A_nor_rule_B",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1855-12-31",
+            "interval_end_earliest": "1855-01-01",
+            "interval_start": "1850-01-01",
+            "interval_start_latest": "1850-12-31",
+            "other_adb_id": 79664,
+            "partner_link": "Charlotte, Princess of Prussia (1831)",
+            "partner_name": "Charlotte, Princess of Prussia (1831)",
+            "precision": "year_range",
+            "related_datamain_id": 79664,
+            "relationship_notes": "1850-1855",
+            "section": "Relationships",
+            "source_adb_id": 79377,
+            "source_title": "Georg II, Duke of Saxe-Meiningen"
+          }
+        },
+        {
+          "later_a": "1914-06-25",
+          "later_b": "1855-03-30",
+          "reason": "neither_rule_A_nor_rule_B",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1855-12-31",
+            "interval_end_earliest": "1855-01-01",
+            "interval_start": "1850-01-01",
+            "interval_start_latest": "1850-12-31",
+            "other_adb_id": 79377,
+            "partner_link": "Georg II, Duke of Saxe-Meiningen",
+            "partner_name": "Georg II, Duke of Saxe-Meiningen",
+            "precision": "year_range",
+            "related_datamain_id": 79377,
+            "relationship_notes": "1850-1855",
+            "section": "Relationships",
+            "source_adb_id": 79664,
+            "source_title": "Charlotte, Princess of Prussia (1831)"
+          }
+        }
+      ],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:79377|adb:79664",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [
+        {
+          "later_a": "1883-01-21",
+          "later_b": "1877-01-18",
+          "reason": "neither_rule_A_nor_rule_B",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1877-12-31",
+            "interval_end_earliest": "1877-01-01",
+            "interval_start": "1827-01-01",
+            "interval_start_latest": "1827-12-31",
+            "other_adb_id": 80137,
+            "partner_link": "Marie, Princess of Saxe-Weimar-Eisenach (1808)",
+            "partner_name": "Marie, Princess of Saxe-Weimar-Eisenach (1808)",
+            "precision": "year_range",
+            "related_datamain_id": 80137,
+            "relationship_notes": "1827-1877",
+            "section": "Relationships",
+            "source_adb_id": 79673,
+            "source_title": "Carl, Prince of Prussia"
+          }
+        },
+        {
+          "later_a": "1883-01-21",
+          "later_b": "1877-01-18",
+          "reason": "neither_rule_A_nor_rule_B",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1877-12-31",
+            "interval_end_earliest": "1877-01-01",
+            "interval_start": "1827-01-01",
+            "interval_start_latest": "1827-12-31",
+            "other_adb_id": 79673,
+            "partner_link": "Carl, Prince of Prussia",
+            "partner_name": "Carl, Prince of Prussia",
+            "precision": "year_range",
+            "related_datamain_id": 79673,
+            "relationship_notes": "1827-1877",
+            "section": "Relationships",
+            "source_adb_id": 80137,
+            "source_title": "Marie, Princess of Saxe-Weimar-Eisenach (1808)"
+          }
+        }
+      ],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:79673|adb:80137",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:862|adb:863",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [
+        {
+          "later_a": "1970-02-21",
+          "later_b": "1937-05-11",
+          "reason": "neither_rule_A_nor_rule_B",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1937-12-31",
+            "interval_end_earliest": "1937-01-01",
+            "interval_start": "1892-01-01",
+            "interval_start_latest": "1892-12-31",
+            "other_adb_id": 86362,
+            "partner_link": "Costa, Afonso",
+            "partner_name": "Costa, Afonso",
+            "precision": "year_range",
+            "related_datamain_id": 86362,
+            "relationship_notes": "1892-1937",
+            "section": "Relationships",
+            "source_adb_id": 86361,
+            "source_title": "Costa, Alzira"
+          }
+        },
+        {
+          "later_a": "1970-02-21",
+          "later_b": "1937-05-11",
+          "reason": "neither_rule_A_nor_rule_B",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1937-12-31",
+            "interval_end_earliest": "1937-01-01",
+            "interval_start": "1892-01-01",
+            "interval_start_latest": "1892-12-31",
+            "other_adb_id": 86361,
+            "partner_link": "Costa, Alzira",
+            "partner_name": "Costa, Alzira",
+            "precision": "year_range",
+            "related_datamain_id": 86361,
+            "relationship_notes": "1892-1937",
+            "section": "Relationships",
+            "source_adb_id": 86362,
+            "source_title": "Costa, Afonso"
+          }
+        }
+      ],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:86361|adb:86362",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:88705|adb:96170",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [
+        {
+          "later_a": null,
+          "later_b": "1977-11-15",
+          "reason": "neither_rule_A_nor_rule_B",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1933-12-31",
+            "interval_end_earliest": "1933-01-01",
+            "interval_start": "1920-01-01",
+            "interval_start_latest": "1920-12-31",
+            "other_adb_id": 90852,
+            "partner_link": "Charlotte of Monaco, Duchess of Valentinois",
+            "partner_name": "Charlotte of Monaco, Duchess of Valentinois",
+            "precision": "year_range",
+            "related_datamain_id": 90852,
+            "relationship_notes": "1920-1933",
+            "section": "Relationships",
+            "source_adb_id": 90851,
+            "source_title": "Pierre, Duke of Valentinois"
+          }
+        },
+        {
+          "later_a": null,
+          "later_b": "1977-11-15",
+          "reason": "neither_rule_A_nor_rule_B",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1933-12-31",
+            "interval_end_earliest": "1933-01-01",
+            "interval_start": "1920-01-01",
+            "interval_start_latest": "1920-12-31",
+            "other_adb_id": 90851,
+            "partner_link": "Pierre, Duke of Valentinois",
+            "partner_name": "Pierre, Duke of Valentinois",
+            "precision": "year_range",
+            "related_datamain_id": 90851,
+            "relationship_notes": "1920-1933",
+            "section": "Relationships",
+            "source_adb_id": 90852,
+            "source_title": "Charlotte of Monaco, Duchess of Valentinois"
+          }
+        }
+      ],
+      "had_v1_explicit_endpoint": true,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:90851|adb:90852",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [
+        {
+          "later_a": "2002-02-26",
+          "later_b": "1985-03-08",
+          "reason": "neither_rule_A_nor_rule_B",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1985-12-31",
+            "interval_end_earliest": "1985-01-01",
+            "interval_start": "1925-01-01",
+            "interval_start_latest": "1925-12-31",
+            "other_adb_id": 91106,
+            "partner_link": "Cidor, Hanan Aharon",
+            "partner_name": "Cidor, Hanan Aharon",
+            "precision": "year_range",
+            "related_datamain_id": 91106,
+            "relationship_notes": "1925-1985",
+            "section": "Relationships",
+            "source_adb_id": 91105,
+            "source_title": "Cidor-Citro\u00ebn, Ruth"
+          }
+        },
+        {
+          "later_a": "2002-02-26",
+          "later_b": "1985-03-08",
+          "reason": "neither_rule_A_nor_rule_B",
+          "relationship_range": {
+            "code_id": 843,
+            "interval_end": "1985-12-31",
+            "interval_end_earliest": "1985-01-01",
+            "interval_start": "1925-01-01",
+            "interval_start_latest": "1925-12-31",
+            "other_adb_id": 91105,
+            "partner_link": "Cidor-Citro\u00ebn, Ruth",
+            "partner_name": "Cidor-Citro\u00ebn, Ruth",
+            "precision": "year_range",
+            "related_datamain_id": 91105,
+            "relationship_notes": "1925-1985",
+            "section": "Relationships",
+            "source_adb_id": 91106,
+            "source_title": "Cidor, Hanan Aharon"
+          }
+        }
+      ],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:91105|adb:91106",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:93201|adb:93203",
+      "v2_reunion_sequences": []
+    },
+    {
+      "corroborating_range_exits": [],
+      "excluded_range_exits": [],
+      "had_v1_explicit_endpoint": false,
+      "new_v2_nonfatal_exits": [],
+      "pair_key": "adb:97170|adb:97283",
+      "v2_reunion_sequences": []
+    }
+  ],
+  "people": 123,
+  "people_with_later_life_event_scan": 123,
+  "source_failures": [],
+  "status": "development_data_recovery_augmentation",
+  "stop_go": {
+    "endpoint_pairs_observed": 23,
+    "go_only_to_separate_model_freeze": false,
+    "minimum_endpoint_pairs": 30
+  },
+  "v1_artifact": "reference/research/adb_exact_pair_state_history_recovery_v1.json",
+  "v1_artifact_sha256": "91609a233727a06c0cee23414e357a1d3e31349481394a991cb69210aed33298"
+}
