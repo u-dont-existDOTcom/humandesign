@@ -1,0 +1,306 @@
+{
+  "any_pair_family_clears_frozen_threshold": false,
+  "best_pair_family_by_mean_percentile_improvement": "XPROGHR",
+  "dataset": {
+    "control_exclusions": {
+      "control_age_excluded": 242
+    },
+    "event_types": {
+      "begin": 3,
+      "marriage": 74,
+      "meet": 7
+    },
+    "formation_events_pre_controls": 84,
+    "formation_pairs_pre_controls": 75,
+    "parser_exclusions": {
+      "birth_outside_ephemeris": 4,
+      "event_outside_ephemeris": 3,
+      "mirrored_duplicate": 5,
+      "partner_dob_missing_or_julian": 3
+    },
+    "precision": {
+      "day": 72,
+      "month": 12
+    },
+    "rows": 1522,
+    "usable_events": 84,
+    "usable_pairs": 75
+  },
+  "ephemeris": {
+    "requested": "SWIEPH",
+    "returned": "SWIEPH or abort",
+    "semo_18_sha256": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7",
+    "sepl_18_sha256": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66"
+  },
+  "freeze_sha256": "d2d14e1c3b8e1e7033e72991febf022b634fa888bf95b77d0caf733693e82e32",
+  "freeze_spec": "reference/research/adb_pair_timing_model_discovery_freeze_v2.md",
+  "interpretation_rule": "If no pair family clears threshold, conclude this C-sample/date-only design has not found a useful pair-dynamic timing model; do not tune on coefficients.",
+  "limitations": [
+    "Openly developmental model discovery; not independent validation.",
+    "Most linked partners are date-only, so Moon/houses/angles/HD are absent.",
+    "Formation events are dominated by marriage events.",
+    "True event date is compared with same month/day at +/-1..10 years, not with a full semi-Markov risk process."
+  ],
+  "permutation_diagnostic": {
+    "empirical_p_ge_observed": 0.009900990099009901,
+    "fixed_C": 0.001,
+    "n": 100,
+    "null_ge_observed": 0,
+    "null_mean_percentile": 49.9206132285757,
+    "null_sd_percentile": 3.228653528643308,
+    "observed_mean_true_date_percentile": 100.0
+  },
+  "results": {
+    "ALLHR": {
+      "clears_frozen_promising_threshold": false,
+      "delta_mean_percentile_vs_M1HR": 0.0,
+      "delta_softmax_loss_vs_M1HR": 0.0,
+      "events": 84,
+      "feature_count": 1113,
+      "fold_percentile_deltas_vs_M1HR": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_reciprocal_rank": 1.0,
+      "mean_true_date_percentile": 100.0,
+      "mean_true_date_percentile_by_fold": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "median_true_date_percentile": 100.0,
+      "model": "ALLHR",
+      "nonzero_feature_count_by_fold": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "outer_folds": 5,
+      "positive_improvement_folds": 0,
+      "selected_C_by_fold": [
+        0.001,
+        0.001,
+        0.001,
+        0.001,
+        0.001
+      ],
+      "softmax_log_loss": 2.8803738114851276,
+      "stable_selected_features": [],
+      "top1_rate": 1.0,
+      "top3_rate": 1.0
+    },
+    "M0HR": {
+      "events": 84,
+      "feature_count": 3,
+      "mean_reciprocal_rank": 1.0,
+      "mean_true_date_percentile": 100.0,
+      "mean_true_date_percentile_by_fold": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "median_true_date_percentile": 100.0,
+      "model": "M0HR",
+      "nonzero_feature_count_by_fold": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "outer_folds": 5,
+      "selected_C_by_fold": [
+        0.001,
+        0.001,
+        0.001,
+        0.001,
+        0.001
+      ],
+      "softmax_log_loss": 2.8803738114851276,
+      "stable_selected_features": [],
+      "top1_rate": 1.0,
+      "top3_rate": 1.0
+    },
+    "M1HR": {
+      "events": 84,
+      "feature_count": 543,
+      "mean_reciprocal_rank": 1.0,
+      "mean_true_date_percentile": 100.0,
+      "mean_true_date_percentile_by_fold": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "median_true_date_percentile": 100.0,
+      "model": "M1HR",
+      "nonzero_feature_count_by_fold": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "outer_folds": 5,
+      "selected_C_by_fold": [
+        0.001,
+        0.001,
+        0.001,
+        0.001,
+        0.001
+      ],
+      "softmax_log_loss": 2.8803738114851276,
+      "stable_selected_features": [],
+      "top1_rate": 1.0,
+      "top3_rate": 1.0
+    },
+    "NCOMPHR": {
+      "clears_frozen_promising_threshold": false,
+      "delta_mean_percentile_vs_M1HR": 0.0,
+      "delta_softmax_loss_vs_M1HR": 0.0,
+      "events": 84,
+      "feature_count": 693,
+      "fold_percentile_deltas_vs_M1HR": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_reciprocal_rank": 1.0,
+      "mean_true_date_percentile": 100.0,
+      "mean_true_date_percentile_by_fold": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "median_true_date_percentile": 100.0,
+      "model": "NCOMPHR",
+      "nonzero_feature_count_by_fold": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "outer_folds": 5,
+      "positive_improvement_folds": 0,
+      "selected_C_by_fold": [
+        0.001,
+        0.001,
+        0.001,
+        0.001,
+        0.001
+      ],
+      "softmax_log_loss": 2.8803738114851276,
+      "stable_selected_features": [],
+      "top1_rate": 1.0,
+      "top3_rate": 1.0
+    },
+    "PCOMPHR": {
+      "clears_frozen_promising_threshold": false,
+      "delta_mean_percentile_vs_M1HR": 0.0,
+      "delta_softmax_loss_vs_M1HR": 0.0,
+      "events": 84,
+      "feature_count": 643,
+      "fold_percentile_deltas_vs_M1HR": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_reciprocal_rank": 1.0,
+      "mean_true_date_percentile": 100.0,
+      "mean_true_date_percentile_by_fold": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "median_true_date_percentile": 100.0,
+      "model": "PCOMPHR",
+      "nonzero_feature_count_by_fold": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "outer_folds": 5,
+      "positive_improvement_folds": 0,
+      "selected_C_by_fold": [
+        0.001,
+        0.001,
+        0.001,
+        0.001,
+        0.001
+      ],
+      "softmax_log_loss": 2.8803738114851276,
+      "stable_selected_features": [],
+      "top1_rate": 1.0,
+      "top3_rate": 1.0
+    },
+    "XPROGHR": {
+      "clears_frozen_promising_threshold": false,
+      "delta_mean_percentile_vs_M1HR": 0.0,
+      "delta_softmax_loss_vs_M1HR": 0.0,
+      "events": 84,
+      "feature_count": 863,
+      "fold_percentile_deltas_vs_M1HR": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_reciprocal_rank": 1.0,
+      "mean_true_date_percentile": 100.0,
+      "mean_true_date_percentile_by_fold": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "median_true_date_percentile": 100.0,
+      "model": "XPROGHR",
+      "nonzero_feature_count_by_fold": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "outer_folds": 5,
+      "positive_improvement_folds": 0,
+      "selected_C_by_fold": [
+        0.001,
+        0.001,
+        0.001,
+        0.001,
+        0.001
+      ],
+      "softmax_log_loss": 2.8803738114851276,
+      "stable_selected_features": [],
+      "top1_rate": 1.0,
+      "top3_rate": 1.0
+    }
+  },
+  "source": "https://www.astro.com/adbexport/c_sample.xml",
+  "source_raw_bytes": 18611784,
+  "status": "development_model_discovery"
+}
