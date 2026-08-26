@@ -136,6 +136,17 @@ The first development benchmark is specified in:
 
 It tests whether Joel/Bee pair-specific dynamic timing is unusual after matching decoys on individual 2026–2040 future trajectories.
 
+## Empirical data sources
+
+Astro-Databank is particularly useful because its research export schema can contain both explicit person-to-person relationship links and dated events such as marriage. Its category system also includes outcome-like relationship labels such as `Marriage - Compatible`, `Marriage - very happy`, `Divorce friendly`, `Divorce bitter`, long marriages, and short marriages.
+
+These labels are imperfect observational data, but they make it possible to keep Track T and Track Q empirically distinct:
+
+- relationship links + dated marriage/divorce/cohabitation events can train transition timing;
+- compatible/very-happy/friendly-divorce/bitter-divorce/duration categories can contribute to quality/outcome labels.
+
+The full Astro-Databank export is temporarily unavailable during 2026 according to Astrodienst; the public large C-sample remains available for tool development. Any use must preserve Rodden rating/data-quality filters and Astro-Databank licensing/attribution requirements.
+
 ## Best eventual empirical design
 
 Use relationship datasets with birth data and dated transitions. Build on development couples, freeze the model, then evaluate on untouched couples.
