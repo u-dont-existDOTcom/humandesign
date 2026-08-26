@@ -1,0 +1,40 @@
+name: ADB broad exact-pair history V4 H4
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'reference/research/adb_broad_exact_pair_history_v4_h3.json'
+      - 'reference/research/adb_broad_exact_pair_universe_freeze_v4.md'
+
+permissions:
+  contents: write
+
+jobs:
+  h4:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Recover frozen H4 Wikidata histories
+        run: python scripts/adb_broad_exact_pair_history_v4_h4.py
+      - name: Commit H4 history audit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reference/research/adb_broad_exact_pair_history_v4_h4.json
+          if git diff --cached --quiet; then
+            echo "V4 H4 result unchanged"
+          else
+            git commit -m "Record broad exact-pair H4 histories V4"
+            for attempt in 1 2 3; do
+              git pull --rebase origin main
+              if git push; then exit 0; fi
+              sleep 2
+            done
+            exit 1
+          fi
