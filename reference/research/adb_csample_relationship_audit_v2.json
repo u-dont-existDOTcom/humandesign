@@ -1,0 +1,80 @@
+{
+  "entry_count": 6036,
+  "gender_counts": {
+    "e": 176,
+    "f": 1498,
+    "m": 4353,
+    "u": 9
+  },
+  "model_readiness": {
+    "date_only_development_model_sufficient_if_50": true,
+    "date_only_external_pair_events_available": 83,
+    "exact_high_quality_linked_pairs_available": 19,
+    "exact_pair_model_sufficient": false,
+    "minimum_recommended_exact_pair_count_for_first_full_pair_transition_model": 50
+  },
+  "notes": [
+    "C-sample contains only names beginning with C, so many relationship targets are outside the sample.",
+    "For external linked partners, V2 parses only partner birth DATE from the relationship text; no time is invented.",
+    "External partner date-only records can support Sun/Venus/Mars/Jupiter/Saturn pair features but not reliable Moon/angles/houses.",
+    "This audit intentionally uses strict partner-name matching for dated relationship events and does not infer partner identity merely because only one romantic link exists."
+  ],
+  "raw_bytes": 18611784,
+  "relationship_event_counts_all_entries": {
+    "begin_significant_relationship": 44,
+    "divorce": 145,
+    "end_significant_relationship": 40,
+    "extramarital_affair": 8,
+    "first_sex": 10,
+    "marriage": 747,
+    "meet_significant_person": 39,
+    "other_relationship": 3
+  },
+  "relationship_scope": {
+    "directed_romantic_links": 584,
+    "external_high_rr_timed_focal_links_with_parseable_partner_dob": 340,
+    "external_high_rr_timed_focal_pairs_with_strict_linked_transition_event_and_partner_dob": 83,
+    "external_pairs_with_strict_linked_transition_event_and_partner_dob": 112,
+    "external_romantic_links": 454,
+    "external_romantic_links_with_parseable_partner_dob": 454,
+    "internal_both_high_rr": 45,
+    "internal_both_high_rr_timed": 45,
+    "internal_both_timed": 65,
+    "internal_high_rr_timed_with_strict_linked_transition_event": 19,
+    "internal_unique_romantic_pairs": 65,
+    "internal_with_strict_linked_transition_event": 31,
+    "romantic_rel_ids": {
+      "843": "spouse",
+      "858": "lover",
+      "859": "spousal_equivalent"
+    }
+  },
+  "rodden_rating_counts": {
+    "A": 1155,
+    "AA": 3820,
+    "AX": 1,
+    "B": 233,
+    "C": 424,
+    "DD": 65,
+    "X": 338
+  },
+  "source": "https://www.astro.com/adbexport/c_sample.xml",
+  "strict_partner_linkage": {
+    "date_precision": {
+      "day": 127,
+      "month": 24,
+      "year": 73
+    },
+    "event_type_counts": {
+      "begin_significant_relationship": 16,
+      "divorce": 33,
+      "end_significant_relationship": 13,
+      "extramarital_affair": 1,
+      "marriage": 146,
+      "meet_significant_person": 14,
+      "other_relationship": 1
+    },
+    "rule": "relationship event evnotes/sevcode must contain >=4-char token from linked/relationship-text partner name; no unique-partner inference",
+    "strict_linked_event_count_internal_plus_external": 224
+  }
+}
