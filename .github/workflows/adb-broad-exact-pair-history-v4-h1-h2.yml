@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/adb_broad_exact_pair_history_v4_h1_h2.py'
+      - 'scripts/adb_broad_exact_pair_history_v4_h1_h2_runner.py'
       - 'reference/research/adb_broad_exact_pair_universe_v4.json'
       - 'reference/research/adb_broad_exact_pair_universe_freeze_v4.md'
       - '.github/workflows/adb-broad-exact-pair-history-v4-h1-h2.yml'
@@ -25,7 +26,7 @@ jobs:
       - name: Install parser dependencies
         run: python -m pip install 'pyswisseph>=2.10.3.2,<3' numpy scikit-learn
       - name: Recover frozen H1 H2 histories
-        run: python scripts/adb_broad_exact_pair_history_v4_h1_h2.py
+        run: python scripts/adb_broad_exact_pair_history_v4_h1_h2_runner.py
       - name: Commit H1 H2 history audit
         run: |
           git config user.name "github-actions[bot]"
