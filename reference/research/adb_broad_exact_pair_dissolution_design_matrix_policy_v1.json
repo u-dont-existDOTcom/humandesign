@@ -1,0 +1,94 @@
+{
+  "status": "frozen_before_feature_generation_and_model_fit",
+  "freeze_date": "2026-08-26",
+  "scientific_model_spec": "reference/research/adb_broad_exact_pair_dissolution_semimarkov_freeze_v1.md",
+  "raw_feature_registry": "reference/research/adb_broad_exact_pair_dissolution_feature_registry_v1.json",
+  "purpose": "Resolve categorical reference levels and numerical conventions without changing the frozen 100-column raw feature registry.",
+  "fit_intercept": true,
+  "raw_registry_column_count_M4": 100,
+  "categorical_reference_columns_dropped_at_fit_only": [
+    "m0_duration_eq_0",
+    "m0_entry_H1_begin",
+    "m0_entry_precision_day",
+    "m0_rodden_AA_AA"
+  ],
+  "reference_levels": {
+    "duration": {
+      "reference": "0 years since entry",
+      "raw_column": "m0_duration_eq_0"
+    },
+    "entry_source": {
+      "reference": "H1 begin-significant-relationship",
+      "raw_column": "m0_entry_H1_begin"
+    },
+    "entry_precision": {
+      "reference": "day",
+      "raw_column": "m0_entry_precision_day"
+    },
+    "rodden_quality_combination": {
+      "reference": "AA-AA",
+      "raw_column": "m0_rodden_AA_AA"
+    }
+  },
+  "why_these_references": "Each is a deterministic first/best-defined level from the preregistered category ordering. No outcome frequency, coefficient, or model-performance information was inspected to select it.",
+  "nonexclusive_binary_columns_not_reference_dropped": [
+    "m0_relation_spouse",
+    "m0_relation_lover",
+    "m0_relation_spousal_equivalent",
+    "m0_coverage_H1_both_exact_ADB",
+    "m0_coverage_H3_both_linked_wikipedia",
+    "m0_coverage_H4_both_linked_wikidata"
+  ],
+  "continuous_conventions": {
+    "risk_year_age_reference": "12:00:00 UTC on July 1 of the calendar risk year",
+    "age_year_length_days": 365.2422,
+    "age_younger": "minimum of the two exact-birth-JD ages at the risk-year age reference",
+    "age_older": "maximum of the two exact-birth-JD ages at the risk-year age reference",
+    "age_difference": "age_older minus age_younger",
+    "calendar_year_center": 1950,
+    "calendar_year_centered_squared": "square of centered calendar year before standardization"
+  },
+  "standardization": {
+    "continuous_columns": "training-fold mean and standard deviation only",
+    "binary_indicator_columns": "do not standardize",
+    "constant_continuous_column": "map to all zeros after training-fold centering; never drop selectively",
+    "zero_variance_binary_column": "retain as raw 0/1 column; it contributes no fitted information",
+    "nan_or_infinite": "hard fail"
+  },
+  "model_raw_counts": {
+    "M0": 29,
+    "M1": 57,
+    "M2": 68,
+    "M3W": 93,
+    "M3H": 75,
+    "M4": 100
+  },
+  "model_fit_counts_after_reference_drop": {
+    "M0": 25,
+    "M1": 53,
+    "M2": 64,
+    "M3W": 89,
+    "M3H": 71,
+    "M4": 96
+  },
+  "pair_year_label_policy": {
+    "event": "1 only on the final row of an accepted nonfatal-exit episode; 0 otherwise",
+    "censor_final_row": "included as event=0 because the source-supported censor establishes survival without accepted nonfatal exit through that risk year",
+    "rows_after_event_or_censor": "forbidden",
+    "pair_equal_weight_sensitivity": "separate frozen sensitivity only; primary likelihood uses ordinary pair-year rows"
+  },
+  "outer_split_component_policy": {
+    "graph": "nodes are ADB person IDs; edges are accepted modeled pairs",
+    "inseparable_group": "connected component",
+    "outer_fold_count": 5,
+    "assignment": "sort components by decreasing event-pair count, then decreasing pair-year row count, then lexicographic SHA-256 of sorted pair keys; assign to fold with fewest events, then fewest rows, then lowest fold index",
+    "inner_cv": "same connected-component grouping restricted to outer-training components"
+  },
+  "forbidden": [
+    "dropping a different categorical reference after seeing model performance",
+    "using full one-hot categorical groups together with an intercept in the fitted design",
+    "using outcome precision, endpoint source, or future censor type as predictors",
+    "standardizing on held-out rows",
+    "arbitrary A/B ordering as a predictor"
+  ]
+}
