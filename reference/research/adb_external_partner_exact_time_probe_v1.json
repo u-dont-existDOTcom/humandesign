@@ -1,0 +1,666 @@
+{
+  "api_candidates": [
+    "https://www.astro.com/wiki/astro-databank/api.php",
+    "https://www.astro.com/astro-databank/api.php"
+  ],
+  "exact_time_recovery_fraction": 0.2833333333333333,
+  "external_unique_romantic_targets_total": 433,
+  "high_rr_exact_time_recovery_fraction": 0.25,
+  "id_matched_public_records": 17,
+  "note": "Projection is only an engineering estimate; full recovery must enumerate all targets and verify DatamainID matches.",
+  "probe_limit": 60,
+  "probe_n": 60,
+  "projection_if_representative": {
+    "exact_times_among_all_external_targets": 122.7,
+    "high_rr_exact_times_among_all_external_targets": 108.2
+  },
+  "records": [
+    {
+      "adb_id": 1,
+      "matched": null,
+      "name": "King of France, born: 1494/09/12j spouse relationship with Fran\u00e7ois I",
+      "status": "no_search_hit"
+    },
+    {
+      "adb_id": 12,
+      "matched": null,
+      "name": "Barbara 1st Duchess of Cleveland, born: 1641/05/12j lover relationship with Palmer",
+      "status": "no_search_hit"
+    },
+    {
+      "adb_id": 14,
+      "matched": null,
+      "name": "Nell, born: 1650/02/02j lover relationship with Gwyn",
+      "status": "no_search_hit"
+    },
+    {
+      "adb_id": 16,
+      "matched": null,
+      "name": "Czarevitch , born: 1690/02/18j spouse relationship with Alexei",
+      "status": "no_search_hit"
+    },
+    {
+      "adb_id": 83,
+      "matched": {
+        "DatamainID": "83",
+        "id_match": true,
+        "sbdate": "1877/05/26",
+        "sbtime": "02:20",
+        "sroddenrating": "A",
+        "swikiname": "Isadora_Duncan",
+        "t_unknown": null,
+        "title": "Duncan, Isadora"
+      },
+      "name": "Isadora, born: 1877/05/26 lover relationship with Duncan",
+      "status": "resolved_exact_time"
+    },
+    {
+      "adb_id": 146,
+      "matched": {
+        "DatamainID": "146",
+        "id_match": true,
+        "sbdate": "1901/12/27",
+        "sbtime": "21:15",
+        "sroddenrating": "AA",
+        "swikiname": "Marlene_Dietrich",
+        "t_unknown": null,
+        "title": "Dietrich, Marlene"
+      },
+      "name": "Marlene, born: 1901/12/27 lover relationship with Dietrich",
+      "status": "resolved_exact_time"
+    },
+    {
+      "adb_id": 150,
+      "matched": null,
+      "name": "Raymond, born: 1903/06/18 lover relationship with Radiguet",
+      "status": "no_search_hit"
+    },
+    {
+      "adb_id": 160,
+      "matched": null,
+      "name": "Ari, born: 1906/01/20 lover relationship with Onassis",
+      "status": "no_search_hit"
+    },
+    {
+      "adb_id": 162,
+      "matched": null,
+      "name": "Margaret, born: 1904/06/14 spouse relationship with Bourke-White",
+      "status": "no_search_hit"
+    },
+    {
+      "adb_id": 214,
+      "matched": null,
+      "name": "Lana, born: 1921/02/08 spouse relationship with Turner",
+      "status": "no_search_hit"
+    },
+    {
+      "adb_id": 230,
+      "matched": {
+        "DatamainID": "6125",
+        "id_match": false,
+        "sbdate": "1926/06/01",
+        "sbtime": "09:30",
+        "sroddenrating": "AA",
+        "swikiname": "Marilyn_Monroe",
+        "t_unknown": null,
+        "title": "Monroe, Marilyn"
+      },
+      "name": "Marlon, born: 1924/04/03 lover relationship with Brando",
+      "status": "search_hit_wrong_id"
+    },
+    {
+      "adb_id": 244,
+      "matched": null,
+      "name": "Hugh, born: 1926/04/09 spouse relationship with Hefner",
+      "status": "no_search_hit"
+    },
+    {
+      "adb_id": 293,
+      "matched": {
+        "DatamainID": "57381",
+        "id_match": false,
+        "sbdate": "1938/05/05",
+        "sbtime": "06:45",
+        "sroddenrating": "AA",
+        "swikiname": "Mijanou_Bardot",
+        "t_unknown": null,
+        "title": "Bardot, Mijanou"
+      },
+      "name": "Brigitte, born: 1934/09/28 spouse relationship with Bardot",
+      "status": "search_hit_wrong_id"
+    },
+    {
+      "adb_id": 295,
+      "matched": null,
+      "name": "Sonny, born: 1935/02/16 spouse relationship with Bono",
+      "status": "no_search_hit"
+    },
+    {
+      "adb_id": 307,
+      "matched": {
+        "DatamainID": "19375",
+        "id_match": false,
+        "sbdate": "1950/06/08",
+        "sbtime": "18:15",
+        "sroddenrating": "A",
+        "swikiname": "Sonia_Braga",
+        "t_unknown": null,
+        "title": "Braga, S\u00f4nia"
+      },
+      "name": "Warren, born: 1937/03/30 lover relationship with Beatty",
+      "status": "search_hit_wrong_id"
+    },
+    {
+      "adb_id": 312,
+      "matched": {
+        "DatamainID": "312",
+        "id_match": true,
+        "sbdate": "1938/01/31",
+        "sbtime": "09:47",
+        "sroddenrating": "A",
+        "swikiname": "Beatrix_of_the_Netherlands",
+        "t_unknown": null,
+        "title": "Beatrix, Queen of Netherlands"
+      },
+      "name": "Queen of Netherlands, born: 1938/01/31 spouse relationship with Beatrix",
+      "status": "resolved_exact_time"
+    },
+    {
+      "adb_id": 465,
+      "matched": null,
+      "name": "Kerry, born: 1959/09/08 spouse relationship with Kennedy",
+      "status": "no_search_hit"
+    },
+    {
+      "adb_id": 474,
+      "matched": {
+        "DatamainID": "474",
+        "id_match": true,
+        "sbdate": "1961/07/01",
+        "sbtime": "19:45",
+        "sroddenrating": "A",
+        "swikiname": "Princess_of_Wales_Diana",
+        "t_unknown": null,
+        "title": "Diana, Princess of Wales"
+      },
+      "name": "Princess of Wales, born: 1961/07/01 spouse relationship with Diana",
+      "status": "resolved_exact_time"
+    },
+    {
+      "adb_id": 648,
+      "matched": {
+        "DatamainID": "648",
+        "id_match": true,
+        "sbdate": "1876/08/14",
+        "sbtime": "05:00",
+        "sroddenrating": "AA",
+        "swikiname": "Sibilla_Aleramo",
+        "t_unknown": null,
+        "title": "Aleramo, Sibilla"
+      },
+      "name": "Sibilla, born: 1876/08/14 lover relationship with Aleramo",
+      "status": "resolved_exact_time"
+    },
+    {
+      "adb_id": 1792,
+      "matched": null,
+      "name": "Marguerite, born: 1492/04/11j spouse relationship with de Navarre",
+      "status": "no_search_hit"
+    },
+    {
+      "adb_id": 1923,
+      "matched": {
+        "DatamainID": "59003",
+        "id_match": false,
+        "sbdate": "1766/09/29",
+        "sbtime": "08:30",
+        "sroddenrating": "C",
+        "swikiname": "Charlotte,_Princess_Royal",
+        "t_unknown": null,
+        "title": "Charlotte, Princess (1766)"
+      },
+      "name": "King of the United Kingdom, born: 1762/08/12 spouse relationship with George IV",
+      "status": "search_hit_wrong_id"
+    },
+    {
+      "adb_id": 2001,
+      "matched": null,
+      "name": "George, born: 1804/07/01 lover relationship with Sand",
+      "status": "no_search_hit"
+    },
+    {
+      "adb_id": 2199,
+      "matched": null,
+      "name": "Emperor of Mexico, born: 1832/07/06 spouse relationship with Maximilian",
+      "status": "no_search_hit"
+    },
+    {
+      "adb_id": 2281,
+      "matched": {
+        "DatamainID": "2592",
+        "id_match": false,
+        "sbdate": "1864/12/08",
+        "sbtime": "05:00",
+        "sroddenrating": "AA",
+        "swikiname": "Camille_Claudel",
+        "t_unknown": null,
+        "title": "Claudel, Camille"
+      },
+      "name": "Auguste, born: 1840/11/12 lover relationship with Rodin",
+      "status": "search_hit_wrong_id"
+    },
+    {
+      "adb_id": 2589,
+      "matched": {
+        "DatamainID": "62224",
+        "id_match": false,
+        "sbdate": "1859/01/11",
+        "sbtime": "11:00",
+        "sroddenrating": "B",
+        "swikiname": "George_Curzon,_1st_Marquess_Curzon_of_Kedleston",
+        "t_unknown": null,
+        "title": "Curzon, George"
+      },
+      "name": "Elinor, born: 1864/10/17 lover relationship with Glyn",
+      "status": "search_hit_wrong_id"
+    },
+    {
+      "adb_id": 2605,
+      "matched": {
+        "DatamainID": "2605",
+        "id_match": true,
+        "sbdate": "1865/09/28",
+        "sbtime": "07:09",
+        "sroddenrating": "A",
+        "swikiname": "Am\u00e9lie_of_Orl\u00e9ans",
+        "t_unknown": null,
+        "title": "Am\u00e9lia, Queen of Portugal"
+      },
+      "name": "Queen of Portugal, born: 1865/09/28 spouse relationship with Am\u00e9lia",
+      "status": "resolved_exact_time"
+    },
+    {
+      "adb_id": 2752,
+      "matched": null,
+      "name": "Paul, born: 1872/01/23 lover relationship with Langevin",
+      "status": "no_search_hit"
+    },
+    {
+      "adb_id": 2831,
+      "matched": null,
+      "name": "born: 1875/04/03 lover relationship with Mistinguett",
+      "status": "no_search_hit"
+    },
+    {
+      "adb_id": 3035,
+      "matched": null,
+      "name": "Juan Ram\u00f3n, born: 1881/12/24 spouse relationship with Jim\u00e9nez",
+      "status": "no_search_hit"
+    },
+    {
+      "adb_id": 3312,
+      "matched": {
+        "DatamainID": "55879",
+        "id_match": false,
+        "sbdate": "1886/07/05",
+        "sbtime": "04:00",
+        "sroddenrating": "AA",
+        "swikiname": "Francis_Carco",
+        "t_unknown": null,
+        "title": "Carco, Francis"
+      },
+      "name": "Katherine, born: 1888/10/14 lover relationship with Mansfield",
+      "status": "search_hit_wrong_id"
+    },
+    {
+      "adb_id": 3524,
+      "matched": null,
+      "name": "Pierre, born: 1893/03/14 spouse relationship with Alcover",
+      "status": "no_search_hit"
+    },
+    {
+      "adb_id": 3966,
+      "matched": null,
+      "name": "Gavin, born: 1901/03/21 lover relationship with Arthur",
+      "status": "no_search_hit"
+    },
+    {
+      "adb_id": 4071,
+      "matched": {
+        "DatamainID": "4165",
+        "id_match": false,
+        "sbdate": "1904/08/17",
+        "sbtime": "01:00",
+        "sroddenrating": "A",
+        "swikiname": "John_Hay_Whitney",
+        "t_unknown": null,
+        "title": "Whitney, John Hay"
+      },
+      "name": "Tallulah, born: 1902/01/31 lover relationship with Bankhead",
+      "status": "search_hit_wrong_id"
+    },
+    {
+      "adb_id": 4130,
+      "matched": {
+        "DatamainID": "4130",
+        "id_match": true,
+        "sbdate": "1904/01/18",
+        "sbtime": "01:07",
+        "sroddenrating": "B",
+        "swikiname": "Cary_Grant",
+        "t_unknown": null,
+        "title": "Grant, Cary"
+      },
+      "name": "Cary, born: 1904/01/18 spouse relationship with Grant",
+      "status": "resolved_exact_time"
+    },
+    {
+      "adb_id": 4239,
+      "matched": {
+        "DatamainID": "4239",
+        "id_match": true,
+        "sbdate": "1905/09/18",
+        "sbtime": "19:30",
+        "sroddenrating": "AA",
+        "swikiname": "Greta_Garbo",
+        "t_unknown": null,
+        "title": "Garbo, Greta"
+      },
+      "name": "Greta, born: 1905/09/18 lover relationship with Garbo",
+      "status": "resolved_exact_time"
+    },
+    {
+      "adb_id": 4251,
+      "matched": {
+        "DatamainID": "6543",
+        "id_match": false,
+        "sbdate": "1929/01/07",
+        "sbtime": "14:15",
+        "sroddenrating": "AA",
+        "swikiname": "Terry_Moore_(actress)",
+        "t_unknown": null,
+        "title": "Moore, Terry"
+      },
+      "name": "Howard, born: 1905/09/24 lover relationship with Hughes",
+      "status": "search_hit_wrong_id"
+    },
+    {
+      "adb_id": 4279,
+      "matched": null,
+      "name": "Mary, born: 1906/05/03 spouse relationship with Astor",
+      "status": "no_search_hit"
+    },
+    {
+      "adb_id": 4282,
+      "matched": {
+        "DatamainID": "19613",
+        "id_match": false,
+        "sbdate": "1944/03/26",
+        "sbtime": "23:46",
+        "sroddenrating": "AA",
+        "swikiname": "Diana_Ross",
+        "t_unknown": null,
+        "title": "Ross, Diana"
+      },
+      "name": "Josephine, born: 1906/06/03 lover relationship with Baker",
+      "status": "search_hit_wrong_id"
+    },
+    {
+      "adb_id": 4500,
+      "matched": {
+        "DatamainID": "4721",
+        "id_match": false,
+        "sbdate": "1912/11/22",
+        "sbtime": "07:30",
+        "sroddenrating": "A",
+        "swikiname": "Doris_Duke",
+        "t_unknown": null,
+        "title": "Duke, Doris"
+      },
+      "name": "Errol, born: 1909/06/20 lover relationship with Flynn",
+      "status": "search_hit_wrong_id"
+    },
+    {
+      "adb_id": 4506,
+      "matched": null,
+      "name": "Lupe, born: 1909/07/18 lover relationship with V\u00e9lez",
+      "status": "no_search_hit"
+    },
+    {
+      "adb_id": 4655,
+      "matched": null,
+      "name": "Jos\u00e9, born: 1912/01/08 spouse relationship with Ferrer",
+      "status": "no_search_hit"
+    },
+    {
+      "adb_id": 4721,
+      "matched": {
+        "DatamainID": "4721",
+        "id_match": true,
+        "sbdate": "1912/11/22",
+        "sbtime": "07:30",
+        "sroddenrating": "A",
+        "swikiname": "Doris_Duke",
+        "t_unknown": null,
+        "title": "Duke, Doris"
+      },
+      "name": "Doris, born: 1912/11/22 lover relationship with Duke",
+      "status": "resolved_exact_time"
+    },
+    {
+      "adb_id": 4813,
+      "matched": {
+        "DatamainID": "4813",
+        "id_match": true,
+        "sbdate": "1913/12/11",
+        "sbtime": "12:30",
+        "sroddenrating": "AA",
+        "swikiname": "Jean_Marais",
+        "t_unknown": null,
+        "title": "Marais, Jean"
+      },
+      "name": "Jean, born: 1913/12/11 lover relationship with Marais",
+      "status": "resolved_exact_time"
+    },
+    {
+      "adb_id": 4843,
+      "matched": null,
+      "name": "Tyrone, born: 1914/05/05 spouse relationship with Power",
+      "status": "no_search_hit"
+    },
+    {
+      "adb_id": 4866,
+      "matched": null,
+      "name": "Richard, born: 1914/08/31 spouse relationship with Basehart",
+      "status": "no_search_hit"
+    },
+    {
+      "adb_id": 4931,
+      "matched": {
+        "DatamainID": "3900",
+        "id_match": false,
+        "sbdate": "1900/04/05",
+        "sbtime": "01:57",
+        "sroddenrating": "C",
+        "swikiname": "Spencer_Tracy",
+        "t_unknown": null,
+        "title": "Tracy, Spencer"
+      },
+      "name": "Ingrid, born: 1915/08/29 lover relationship with Bergman",
+      "status": "search_hit_wrong_id"
+    },
+    {
+      "adb_id": 4950,
+      "matched": {
+        "DatamainID": "4950",
+        "id_match": true,
+        "sbdate": "1915/12/19",
+        "sbtime": "05:00",
+        "sroddenrating": "AA",
+        "swikiname": "Edith_Piaf",
+        "t_unknown": null,
+        "title": "Piaf, \u00c9dith"
+      },
+      "name": "\u00c9dith, born: 1915/12/19 lover relationship with Piaf",
+      "status": "resolved_exact_time"
+    },
+    {
+      "adb_id": 5036,
+      "matched": {
+        "DatamainID": "5036",
+        "id_match": true,
+        "sbdate": "1916/12/18",
+        "sbtime": "21:40",
+        "sroddenrating": "AA",
+        "swikiname": "Betty_Grable",
+        "t_unknown": null,
+        "title": "Grable, Betty"
+      },
+      "name": "Betty, born: 1916/12/18 spouse relationship with Grable",
+      "status": "resolved_exact_time"
+    },
+    {
+      "adb_id": 5151,
+      "matched": null,
+      "name": "Robert, born: 1918/06/08 spouse relationship with Preston",
+      "status": "no_search_hit"
+    },
+    {
+      "adb_id": 5198,
+      "matched": null,
+      "name": "Robert, born: 1919/01/07 spousal equivalent relationship with Duncan",
+      "status": "no_search_hit"
+    },
+    {
+      "adb_id": 5358,
+      "matched": {
+        "DatamainID": "5358",
+        "id_match": true,
+        "sbdate": "1920/11/20",
+        "sbtime": "17:15",
+        "sroddenrating": "DD",
+        "swikiname": "Gene_Tierney",
+        "t_unknown": null,
+        "title": "Tierney, Gene"
+      },
+      "name": "Gene, born: 1920/11/20 spouse relationship with Tierney",
+      "status": "resolved_exact_time"
+    },
+    {
+      "adb_id": 5396,
+      "matched": null,
+      "name": "Peter, born: 1921/04/16 spouse relationship with Ustinov",
+      "status": "no_search_hit"
+    },
+    {
+      "adb_id": 5437,
+      "matched": null,
+      "name": "Esther, born: 1921/08/08 lover relationship with Williams",
+      "status": "no_search_hit"
+    },
+    {
+      "adb_id": 5492,
+      "matched": {
+        "DatamainID": "5228",
+        "id_match": false,
+        "sbdate": "1919/05/16",
+        "sbtime": "23:15",
+        "sroddenrating": "AA",
+        "swikiname": "Liberace",
+        "t_unknown": null,
+        "title": "Liberace"
+      },
+      "name": "Betty, born: 1922/01/17 lover relationship with White",
+      "status": "search_hit_wrong_id"
+    },
+    {
+      "adb_id": 5624,
+      "matched": {
+        "DatamainID": "5624",
+        "id_match": true,
+        "sbdate": "1922/12/24",
+        "sbtime": "19:10",
+        "sroddenrating": "AA",
+        "swikiname": "Ava_Gardner",
+        "t_unknown": null,
+        "title": "Gardner, Ava"
+      },
+      "name": "Ava, born: 1922/12/24 lover relationship with Gardner",
+      "status": "resolved_exact_time"
+    },
+    {
+      "adb_id": 5740,
+      "matched": {
+        "DatamainID": "5740",
+        "id_match": true,
+        "sbdate": "1923/10/16",
+        "sbtime": "04:40",
+        "sroddenrating": "AA",
+        "swikiname": "Linda_Darnell",
+        "t_unknown": null,
+        "title": "Darnell, Linda"
+      },
+      "name": "Linda, born: 1923/10/16 lover relationship with Darnell",
+      "status": "resolved_exact_time"
+    },
+    {
+      "adb_id": 5937,
+      "matched": {
+        "DatamainID": "1888",
+        "id_match": false,
+        "sbdate": "1735/10/30",
+        "sbtime": "02:57",
+        "sroddenrating": "C",
+        "swikiname": "John_Adams",
+        "t_unknown": null,
+        "title": "Adams, John"
+      },
+      "name": "Hal, born: 1925/02/17 spouse relationship with Holbrook",
+      "status": "search_hit_wrong_id"
+    },
+    {
+      "adb_id": 5977,
+      "matched": null,
+      "name": "Farley, born: 1925/07/01 lover relationship with Granger",
+      "status": "no_search_hit"
+    },
+    {
+      "adb_id": 6117,
+      "matched": {
+        "DatamainID": "6117",
+        "id_match": true,
+        "sbdate": "1926/05/15",
+        "sbtime": "09:30",
+        "sroddenrating": "AA",
+        "swikiname": "Anthony_Shaffer",
+        "t_unknown": null,
+        "title": "Shaffer, Anthony"
+      },
+      "name": "Anthony, born: 1926/05/15 spouse relationship with Shaffer",
+      "status": "resolved_exact_time"
+    },
+    {
+      "adb_id": 6196,
+      "matched": {
+        "DatamainID": "6196",
+        "id_match": true,
+        "sbdate": "1926/12/19",
+        "sbtime": "12:00",
+        "sroddenrating": "A",
+        "swikiname": "Edmund_Purdom",
+        "t_unknown": null,
+        "title": "Purdom, Edmond"
+      },
+      "name": "Edmond, born: 1926/12/19 spouse relationship with Purdom",
+      "status": "resolved_exact_time"
+    }
+  ],
+  "resolved_exact_time": 17,
+  "resolved_high_rr_exact_time": 15,
+  "source": "https://www.astro.com/adbexport/c_sample.xml",
+  "status_counts": {
+    "no_search_hit": 29,
+    "resolved_exact_time": 17,
+    "search_hit_wrong_id": 14
+  }
+}
