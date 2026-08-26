@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/castille_static_synastry_v1.py'
+      - 'scripts/castille_static_synastry_v1_runner.py'
       - 'reference/research/castille_static_synastry_freeze_v1.md'
       - '.github/workflows/castille-static-synastry-v1.yml'
 
@@ -26,7 +27,7 @@ jobs:
       - name: Fetch pinned Swiss ephemeris files
         run: python scripts/fetch_swisseph_ephemeris.py
       - name: Run frozen large-N Castille synastry test
-        run: python scripts/castille_static_synastry_v1.py
+        run: python scripts/castille_static_synastry_v1_runner.py
       - name: Commit aggregate result
         run: |
           git config user.name "github-actions[bot]"
@@ -39,5 +40,3 @@ jobs:
             git pull --rebase origin main
             git push
           fi
-
-# Workflow-only trigger edit; frozen scientific specification is unchanged.
