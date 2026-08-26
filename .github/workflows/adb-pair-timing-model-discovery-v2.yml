@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/adb_pair_timing_model_discovery_v2.py'
+      - 'scripts/adb_pair_timing_model_discovery_v2_runner.py'
       - 'reference/research/adb_pair_timing_model_discovery_freeze_v2.md'
       - '.github/workflows/adb-pair-timing-model-discovery-v2.yml'
 
@@ -26,7 +27,7 @@ jobs:
       - name: Fetch pinned Swiss ephemeris files
         run: python scripts/fetch_swisseph_ephemeris.py
       - name: Run frozen high-resolution model discovery
-        run: python scripts/adb_pair_timing_model_discovery_v2.py
+        run: python scripts/adb_pair_timing_model_discovery_v2_runner.py
       - name: Commit model-discovery result
         run: |
           git config user.name "github-actions[bot]"
