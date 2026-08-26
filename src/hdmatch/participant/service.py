@@ -221,7 +221,9 @@ class ParticipantSessionService:
                     "and pursue autonomy or resources? Include what was already true in "
                     "childhood, what changed later, and important contexts or exceptions."
                 ),
-                response_format="Open narrative; concrete patterns are more useful than isolated events.",
+                response_format=(
+                    "Open narrative; concrete patterns are more useful than isolated events."
+                ),
                 followups=(
                     "Which of those patterns was already visible in childhood?",
                     "Where does the pattern reliably fail or reverse?",
@@ -335,7 +337,9 @@ class ParticipantSessionService:
             return existing
         reveal = self.store.load_reveal(session_id)
         if reveal is None:
-            raise ParticipantStateError("reveal the confirmatory result before post-hoc finalization")
+            raise ParticipantStateError(
+                "reveal the confirmatory result before post-hoc finalization"
+            )
         lock = self.store.load_confirmatory_lock(session_id)
         if lock is None:
             raise ParticipantStateError("confirmatory lock is missing")
@@ -418,12 +422,21 @@ class ParticipantSessionService:
     ) -> tuple[BehavioralResponse, ...]:
         by_question: dict[str, BehavioralResponse] = {}
         for record in records:
-            response = record.evidence.scoring_response()
+            evidence = record.evidence
+            question_id = evidence.question_id
+            if (
+                not evidence.domain.natal_ranking_eligible
+                or question_id is None
+                or question_id not in self.backend.scoreable_question_ids
+            ):
+                continue
+            response = evidence.scoring_response()
             if response is None:
-                continue
-            if response.question_id not in self.backend.scoreable_question_ids:
-                continue
-            by_question[response.question_id] = response
+                # A later free-form/"other" clarification deliberately removes an
+                # earlier forced-choice token rather than leaving stale evidence scored.
+                by_question.pop(question_id, None)
+            else:
+                by_question[question_id] = response
         return tuple(by_question[key] for key in sorted(by_question))
 
     def _apply_posthoc_overrides(
@@ -433,12 +446,19 @@ class ParticipantSessionService:
     ) -> tuple[BehavioralResponse, ...]:
         by_question = {response.question_id: response for response in baseline}
         for record in posthoc:
-            response = record.evidence.scoring_response()
+            evidence = record.evidence
+            question_id = evidence.question_id
+            if (
+                not evidence.domain.natal_ranking_eligible
+                or question_id is None
+                or question_id not in self.backend.scoreable_question_ids
+            ):
+                continue
+            response = evidence.scoring_response()
             if response is None:
-                continue
-            if response.question_id not in self.backend.scoreable_question_ids:
-                continue
-            by_question[response.question_id] = response
+                by_question.pop(question_id, None)
+            else:
+                by_question[question_id] = response
         return tuple(by_question[key] for key in sorted(by_question))
 
     def _prediction_comparisons(
@@ -451,9 +471,19 @@ class ParticipantSessionService:
         )
         active: dict[str, tuple[BehavioralResponse, str]] = {}
         for record in confirmatory:
-            response = record.evidence.scoring_response()
-            if response is not None:
-                active[response.question_id] = (response, record.evidence_id)
+            evidence = record.evidence
+            question_id = evidence.question_id
+            if (
+                not evidence.domain.natal_ranking_eligible
+                or question_id is None
+                or question_id not in self.backend.scoreable_question_ids
+            ):
+                continue
+            response = evidence.scoring_response()
+            if response is None:
+                active.pop(question_id, None)
+            else:
+                active[question_id] = (response, record.evidence_id)
         comparisons: list[PredictionComparison] = []
         for prediction in freeze.dimensions:
             observed_pair = active.get(prediction.question_id)
