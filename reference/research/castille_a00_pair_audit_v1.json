@@ -1,35 +1,89 @@
 {
   "coarse_distributions": {
-    "absolute_parent_age_difference_5y_bins": {},
-    "father_age_at_wedding_5y_bins": {},
-    "mother_age_at_wedding_5y_bins": {}
+    "absolute_parent_age_difference_5y_bins": {
+      "0": 259674,
+      "10": 8804,
+      "15": 2041,
+      "20": 580,
+      "25": 143,
+      "30": 32,
+      "35": 6,
+      "40": 2,
+      "5": 50479
+    },
+    "father_age_at_wedding_5y_bins": {
+      "10": 53,
+      "15": 2409,
+      "20": 77207,
+      "25": 158848,
+      "30": 58709,
+      "35": 17194,
+      "40": 5127,
+      "45": 1589,
+      "50": 495,
+      "55": 107,
+      "60": 23
+    },
+    "mother_age_at_wedding_5y_bins": {
+      "10": 164,
+      "15": 13663,
+      "20": 131822,
+      "25": 133403,
+      "30": 34153,
+      "35": 8058,
+      "40": 498
+    }
   },
   "csv_fields": [
-    "jnais00;mnais00;anais00;JNAISM;MNAISM;ANAISM;JNAISP;MNAISP;ANAISP;JMAR;MMAR;AMAR;rangmar00;cnaism;cnaisp;d00;j00;dp;jp;dm;jm;dma;jma;id;id2"
+    "jnais00",
+    "mnais00",
+    "anais00",
+    "JNAISM",
+    "MNAISM",
+    "ANAISM",
+    "JNAISP",
+    "MNAISP",
+    "ANAISP",
+    "JMAR",
+    "MMAR",
+    "AMAR",
+    "rangmar00",
+    "cnaism",
+    "cnaisp",
+    "d00",
+    "j00",
+    "dp",
+    "jp",
+    "dm",
+    "jm",
+    "dma",
+    "jma",
+    "id",
+    "id2"
   ],
   "date_ranges": {
     "father_birth_year": [
-      null,
-      null
+      1935,
+      1986
     ],
     "mother_birth_year": [
-      null,
-      null
+      1947,
+      1987
     ],
     "wedding_year": [
-      null,
-      null
+      1969,
+      2000
     ]
   },
   "deduplication_diagnostics": {
-    "duplicate_rows_by_parent_birthdates_plus_wedding": 0,
-    "id2_nonempty_rows": 0,
-    "id_nonempty_rows": 0,
-    "unique_id2_values": 0,
-    "unique_id_values": 0,
-    "unique_parent_birthdate_pairs": 0,
-    "unique_parent_birthdate_plus_wedding_tuples": 0,
-    "unique_parent_birthdate_wedding_id_id2_tuples": 0
+    "duplicate_rows_by_parent_birthdates_plus_wedding": 5363,
+    "id2_nonempty_rows": 591936,
+    "id_nonempty_rows": 591936,
+    "unique_id2_values": 581442,
+    "unique_id_values": 583205,
+    "unique_parent_birthdate_pairs": 575343,
+    "unique_parent_birthdate_plus_wedding_tuples": 316475,
+    "unique_parent_birthdate_wedding_id_id2_tuples": 316501
   },
   "next_decision": "Use audit to freeze deduplication and independent untimed partner-selection / wedding-timing tests; do not inspect astrology before freeze.",
   "row_count": 591936,
@@ -41,11 +95,11 @@
   ],
   "status": "data_sufficiency_audit_only",
   "valid_records": {
-    "both_parent_birth_dates": 0,
-    "both_parent_birth_dates_and_wedding": 0,
-    "plausible_parent_ages_14_to_85_at_wedding": 0,
+    "both_parent_birth_dates": 591936,
+    "both_parent_birth_dates_and_wedding": 321838,
+    "plausible_parent_ages_14_to_85_at_wedding": 321761,
     "wedding_before_parent_birth": 0,
-    "wedding_date": 0
+    "wedding_date": 321838
   },
   "zip_bytes": 25499422,
   "zip_members": [
