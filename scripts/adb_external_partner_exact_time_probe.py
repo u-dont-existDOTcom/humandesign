@@ -19,20 +19,18 @@ API_CANDIDATES = [
 ]
 ROMANTIC_REL_IDS = {843, 858, 859}
 UA = "humandesign-research-audit/1.0"
-PROBE_LIMIT = 60
+PROBE_LIMIT = 20
 
 
-def get(url: str, timeout: int = 30) -> bytes:
+def get(url: str, timeout: int = 6) -> bytes:
     req = urllib.request.Request(url, headers={"User-Agent": UA})
     with urllib.request.urlopen(req, timeout=timeout) as r:
         return r.read()
 
 
 def clean_partner_name(text: str) -> str:
-    # Relationship text commonly includes name plus DOB in parentheses.
     s = re.sub(r"\([^)]*\)", "", text or "").strip()
     s = re.sub(r"\s+", " ", s)
-    # Convert ADB lastname-first form to natural form for search where obvious.
     if "," in s:
         a, b = [x.strip() for x in s.split(",", 1)]
         if a and b:
@@ -158,10 +156,7 @@ def main():
             else:
                 st = "resolved_time_unknown"
         status[st] += 1
-        rows.append({
-            "adb_id": rec["adb_id"], "name": rec["name"], "status": st,
-            "matched": best,
-        })
+        rows.append({"adb_id": rec["adb_id"], "name": rec["name"], "status": st, "matched": best})
         print(i, rec["adb_id"], rec["name"], st, flush=True)
 
     n = len(rows)
