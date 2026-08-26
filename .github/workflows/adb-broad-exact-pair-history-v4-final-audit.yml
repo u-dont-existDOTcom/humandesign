@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - 'reference/research/adb_broad_exact_pair_history_v4_h4.json'
+      - '.github/workflows/adb-broad-exact-pair-history-v4-final-audit.yml'
 
 permissions:
   contents: write
