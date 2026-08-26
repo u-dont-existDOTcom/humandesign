@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AstroHD Scientific Intake</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 42rem; margin: 3rem auto; padding: 0 1rem; line-height: 1.45; }
+    label { display: block; margin-top: 1rem; font-weight: 600; }
+    input, select, button { box-sizing: border-box; width: 100%; padding: .7rem; margin-top: .3rem; font: inherit; }
+    button { margin-top: 1.4rem; cursor: pointer; }
+    .note { font-size: .95rem; }
+    #result { margin-top: 1.5rem; padding: 1rem; border: 1px solid currentColor; display: none; }
+    code { overflow-wrap: anywhere; }
+  </style>
+</head>
+<body>
+  <h1>AstroHD scientific intake</h1>
+  <p>This page keeps your birth information out of the interview conversation. It sends the birth tuple directly to the AstroHD backend, freezes the chart predictions before you answer behavioral questions, and returns only an opaque session code to give the interviewer.</p>
+  <p class="note">For the strongest blind test, do not tell the interview GPT your birth date, time, place, astrological placements, Human Design type, or the chart of someone whose identity would reveal those facts.</p>
+
+  <form id="intake">
+    <label for="local_datetime">Local birth date and time</label>
+    <input id="local_datetime" name="local_datetime" type="datetime-local" step="1" required>
+
+    <label for="birthplace">Birthplace</label>
+    <input id="birthplace" name="birthplace" type="text" autocomplete="off" placeholder="Istanbul, Turkey" required>
+
+    <label for="iana_timezone">Historical IANA timezone</label>
+    <input id="iana_timezone" name="iana_timezone" type="text" autocomplete="off" placeholder="Europe/Istanbul" required>
+    <p class="note">The v1 intake requires an IANA timezone identifier so historical daylight-saving rules are deterministic. A future geocoding layer can derive this from birthplace.</p>
+
+    <label for="fold">Ambiguous clock time</label>
+    <select id="fold" name="fold">
+      <option value="">Not known / not ambiguous</option>
+      <option value="0">First occurrence</option>
+      <option value="1">Second occurrence</option>
+    </select>
+
+    <button type="submit">Freeze predictions and create session</button>
+  </form>
+
+  <div id="result" role="status" aria-live="polite"></div>
+
+  <script>
+    const form = document.getElementById('intake');
+    const result = document.getElementById('result');
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      result.style.display = 'block';
+      result.textContent = 'Creating the sealed session…';
+
+      const foldValue = form.elements.fold.value;
+      const body = {
+        local_datetime: form.elements.local_datetime.value,
+        birthplace: form.elements.birthplace.value.trim(),
+        iana_timezone: form.elements.iana_timezone.value.trim(),
+        fold: foldValue === '' ? null : Number(foldValue),
+        mode: 'scientific_blind',
+        ranking_scope: 'known_birth_month'
+      };
+
+      try {
+        const response = await fetch('/v1/participant-sessions', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(body)
+        });
+        const payload = await response.json();
+        if (!response.ok) {
+          const message = payload?.error?.message || `Request failed (${response.status})`;
+          throw new Error(message);
+        }
+        form.reset();
+        result.innerHTML = '';
+        const heading = document.createElement('strong');
+        heading.textContent = 'Your blind interview session code:';
+        const code = document.createElement('code');
+        code.textContent = payload.session_id;
+        const instructions = document.createElement('p');
+        instructions.textContent = 'Copy only this code into the AstroHD interviewer. Do not send your birth data in the interview chat.';
+        result.append(heading, document.createElement('br'), code, instructions);
+      } catch (error) {
+        result.textContent = error instanceof Error ? error.message : String(error);
+      }
+    });
+  </script>
+</body>
+</html>
