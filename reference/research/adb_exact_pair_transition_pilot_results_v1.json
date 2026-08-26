@@ -1,0 +1,143 @@
+{
+  "comparison": {
+    "M1X_minus_M0X": -15.245626740724774,
+    "best_delta_vs_M1X": 3.8673087079949795,
+    "best_pair_family": "M4X_HD"
+  },
+  "dataset": {
+    "candidate_rows": 290,
+    "control_exclusions": {
+      "control_age_excluded": 88
+    },
+    "coordinate_records_parseable": 5585,
+    "dissolution_events": 0,
+    "dissolution_pairs": 0,
+    "event_types": {
+      "marriage": 17,
+      "meet": 1
+    },
+    "exact_events": 18,
+    "exact_pairs": 16,
+    "formation_events": 18,
+    "formation_pairs": 16,
+    "parser_exclusions": {
+      "birth_outside_ephemeris": 4,
+      "event_outside_ephemeris": 3,
+      "mirrored_duplicate": 5,
+      "partner_dob_missing_or_julian": 3
+    },
+    "precision": {
+      "day": 16,
+      "month": 2
+    }
+  },
+  "freeze_sha256": "507dc2d4344458ea268a61aa6f4028bd7f4d107d55270d341f6b1596ce111858",
+  "freeze_spec": "reference/research/adb_exact_pair_transition_pilot_freeze_v1.md",
+  "limitations": [
+    "Fewer than the declared 50 exact high-quality pairs; no validation claim is allowed.",
+    "C-sample is reused after date-only development work, so this is not independent replication.",
+    "Formation events are likely dominated by marriage rather than first romantic contact."
+  ],
+  "models": {
+    "M0X": {
+      "events": 18,
+      "feature_count": 9,
+      "mean_reciprocal_rank": 0.217819063652397,
+      "mean_true_date_percentile": 68.71171221661417,
+      "mean_true_date_percentile_by_fold": [
+        62.5,
+        75.91991341991343,
+        64.0224358974359,
+        70.2243018419489
+      ],
+      "median_true_date_percentile": 66.66666666666667,
+      "model": "M0X",
+      "outer_folds": 4,
+      "softmax_log_loss": 2.643176643107311,
+      "top1_rate": 0.0,
+      "top3_rate": 0.2777777777777778
+    },
+    "M1X": {
+      "events": 18,
+      "feature_count": 29,
+      "mean_reciprocal_rank": 0.265088560676796,
+      "mean_true_date_percentile": 53.4660854758894,
+      "mean_true_date_percentile_by_fold": [
+        53.333333333333336,
+        66.482683982684,
+        42.28365384615385,
+        49.501633986928105
+      ],
+      "median_true_date_percentile": 55.0,
+      "model": "M1X",
+      "outer_folds": 4,
+      "softmax_log_loss": 3.2135375309009286,
+      "top1_rate": 0.1111111111111111,
+      "top3_rate": 0.2777777777777778
+    },
+    "M3X": {
+      "delta_vs_M1X": -1.832506182996383,
+      "events": 18,
+      "feature_count": 49,
+      "mean_reciprocal_rank": 0.23579345037678368,
+      "mean_true_date_percentile": 51.63357929289302,
+      "mean_true_date_percentile_by_fold": [
+        52.916666666666664,
+        56.36904761904761,
+        42.90064102564102,
+        52.85799168152109
+      ],
+      "median_true_date_percentile": 51.66666666666667,
+      "model": "M3X",
+      "outer_folds": 4,
+      "positive_improvement_folds_vs_M1X": 2,
+      "softmax_log_loss": 3.641373779112876,
+      "top1_rate": 0.1111111111111111,
+      "top3_rate": 0.16666666666666666
+    },
+    "M3X_HD": {
+      "delta_vs_M1X": -0.14726241441928067,
+      "events": 18,
+      "feature_count": 51,
+      "mean_reciprocal_rank": 0.2562409812409812,
+      "mean_true_date_percentile": 53.31882306147012,
+      "mean_true_date_percentile_by_fold": [
+        55.833333333333336,
+        59.46428571428571,
+        35.6650641025641,
+        59.284759358288774
+      ],
+      "median_true_date_percentile": 51.66666666666667,
+      "model": "M3X_HD",
+      "outer_folds": 4,
+      "positive_improvement_folds_vs_M1X": 2,
+      "softmax_log_loss": 3.381117733347715,
+      "top1_rate": 0.1111111111111111,
+      "top3_rate": 0.2222222222222222
+    },
+    "M4X_HD": {
+      "delta_vs_M1X": 3.8673087079949795,
+      "events": 18,
+      "feature_count": 31,
+      "mean_reciprocal_rank": 0.32149850875341074,
+      "mean_true_date_percentile": 57.33339418388438,
+      "mean_true_date_percentile_by_fold": [
+        63.333333333333336,
+        68.14935064935064,
+        38.01282051282051,
+        57.17394533571004
+      ],
+      "median_true_date_percentile": 48.33333333333333,
+      "model": "M4X_HD",
+      "outer_folds": 4,
+      "positive_improvement_folds_vs_M1X": 3,
+      "softmax_log_loss": 2.9790763342073423,
+      "top1_rate": 0.16666666666666666,
+      "top3_rate": 0.3888888888888889
+    }
+  },
+  "permutation": null,
+  "source": "https://www.astro.com/adbexport/c_sample.xml",
+  "source_raw_bytes": 18611784,
+  "status": "underpowered_development_hypothesis_generation"
+}
