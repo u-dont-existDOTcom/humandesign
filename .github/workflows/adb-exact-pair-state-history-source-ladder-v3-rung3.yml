@@ -1,0 +1,41 @@
+name: ADB exact-pair state-history source ladder V3 rung 3
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/adb_exact_pair_state_history_source_ladder_v3_rung3.py'
+      - 'reference/research/adb_exact_pair_state_history_source_ladder_freeze_v3.md'
+      - 'reference/research/adb_exact_pair_state_history_source_ladder_v3_rung3_parser_freeze.md'
+      - 'reference/research/adb_exact_pair_state_history_recovery_v1.json'
+      - 'reference/research/adb_exact_pair_state_history_recovery_v2.json'
+      - 'reference/research/adb_exact_pair_state_history_source_ladder_v3_rung2.json'
+      - '.github/workflows/adb-exact-pair-state-history-source-ladder-v3-rung3.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  rung3:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run frozen V3 source ladder rung 3
+        run: python scripts/adb_exact_pair_state_history_source_ladder_v3_rung3.py
+      - name: Commit rung 3 result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reference/research/adb_exact_pair_state_history_source_ladder_v3_rung3.json
+          if git diff --cached --quiet; then
+            echo "V3 rung 3 result unchanged"
+          else
+            git commit -m "Record V3 state-history source ladder rung 3"
+            git pull --rebase origin main
+            git push
+          fi
