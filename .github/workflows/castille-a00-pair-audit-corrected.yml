@@ -1,0 +1,36 @@
+name: Castille a00 pair audit corrected
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/castille_a00_pair_audit.py'
+      - '.github/workflows/castille-a00-pair-audit-corrected.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Audit Castille pair/wedding data
+        run: python scripts/castille_a00_pair_audit.py
+      - name: Commit aggregate audit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reference/research/castille_a00_pair_audit_v1.json
+          if git diff --cached --quiet; then
+            echo "Castille audit unchanged"
+          else
+            git commit -m "Record corrected Castille a00 pair audit"
+            git pull --rebase origin main
+            git push
+          fi
