@@ -20,6 +20,7 @@ UA = "humandesign-research-audit/1.0"
 ROMANTIC_REL_IDS = {843, 858, 859}
 REL_EVENT_IDS = {807, 808, 803, 810, 811, 809, 815, 974}
 HIGH_RR = {"AA", "A"}
+PARTNER_RE = re.compile(r"\bwith\s+(.+?)(?:,\s*born:|$)", re.I)
 
 
 def get(url: str, timeout: int = 10) -> bytes:
@@ -33,18 +34,20 @@ def norm(s: str | None) -> str:
 
 
 def partner_display_name(rel_text: str) -> str:
-    # ADB relation strings typically start "Surname, Given, born: YYYY/MM/DD ...".
-    s = (rel_text or "").strip()
-    m = re.search(r"^(.*?)(?:,?\s+born\s*:)", s, flags=re.I)
+    # Match the same partner identity rule used by adb_csample_relationship_audit.py:
+    # relationship text contains "... relationship with Surname, Given, born: ...".
+    m = PARTNER_RE.search(rel_text or "")
     if m:
-        s = m.group(1).strip(" ,")
-    # Strip any relationship phrase if DOB is missing/unusual.
-    s = re.split(r"\b(?:spouse|lover|spousal equivalent)\s+relationship\b", s, maxsplit=1, flags=re.I)[0].strip(" ,")
-    return re.sub(r"\s+", " ", s)
+        return re.sub(r"\s+", " ", m.group(1).strip(" ,"))
+    # Fallback: truncate at born marker.
+    s = (rel_text or "").strip()
+    m2 = re.search(r"^(.*?)(?:,?\s+born\s*:)", s, flags=re.I)
+    return re.sub(r"\s+", " ", (m2.group(1) if m2 else s).strip(" ,"))
 
 
 def name_tokens(name: str) -> set[str]:
-    return {t for t in norm(name).split() if len(t) >= 4}
+    stop = {"relationship", "spouse", "lover", "with", "born", "family", "associates"}
+    return {t for t in norm(name).split() if len(t) >= 4 and t not in stop}
 
 
 def event_matches(ev, tokens: set[str]) -> bool:
@@ -63,7 +66,6 @@ def api_json(params: dict) -> dict | None:
 
 def search_titles(name: str) -> list[str]:
     variants = [name]
-    # Also try natural-order variant for Last, First names.
     if "," in name:
         a, b = [x.strip() for x in name.split(",", 1)]
         if a and b:
@@ -194,7 +196,7 @@ def main():
         "projected_total_high_rr_exact_pair_records_after_recovery":19+hi,
         "records":rows,
         "notes":[
-            "Eligible targets require A/AA timed focal C-sample record plus strict partner-name match in a relationship transition event.",
+            "Eligible targets require A/AA timed focal C-sample record plus the same strict partner-token event linkage used in the C-sample audit.",
             "Exact public record identity is accepted only when wiki DatamainID equals rel_adb_id.",
             "Presence of sbtime with t_unknown absent is treated as exact-time availability; Rodden quality is reported separately.",
             "A full semi-Markov build still needs reliable UTC conversion/JD for recovered partners; this audit records jd_ut if exposed by wiki source but does not invent it."
