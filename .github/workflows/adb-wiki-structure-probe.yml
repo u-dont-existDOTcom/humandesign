@@ -1,0 +1,36 @@
+name: ADB wiki structure probe
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/adb_wiki_structure_probe.py'
+      - '.github/workflows/adb-wiki-structure-probe.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Probe ADB raw wiki structure
+        run: python scripts/adb_wiki_structure_probe.py
+      - name: Commit compact probe result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reference/research/adb_wiki_structure_probe_v1.json
+          if git diff --cached --quiet; then
+            echo "Probe unchanged"
+          else
+            git commit -m "Record ADB raw wiki structure probe"
+            git pull --rebase origin main
+            git push
+          fi
