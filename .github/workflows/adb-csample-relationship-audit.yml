@@ -1,0 +1,37 @@
+name: ADB C-sample relationship audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/adb_csample_relationship_audit.py'
+      - '.github/workflows/adb-csample-relationship-audit.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Audit public Astro-Databank C-sample
+        run: python scripts/adb_csample_relationship_audit.py
+      - name: Commit compact audit summary
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reference/research/adb_csample_relationship_audit_v1.json
+          if git diff --cached --quiet; then
+            echo "Audit summary unchanged"
+          else
+            git pull --rebase origin main
+            git add reference/research/adb_csample_relationship_audit_v1.json
+            git commit -m "Record ADB C-sample relationship audit" || true
+            git push
+          fi
