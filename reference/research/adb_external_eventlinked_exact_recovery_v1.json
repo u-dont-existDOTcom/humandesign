@@ -1,0 +1,18 @@
+{
+  "api": "https://www.astro.com/wiki/astro-databank/api.php",
+  "eligible_external_eventlinked_targets": 0,
+  "exact_time_recovery_fraction": 0,
+  "existing_internal_high_rr_timed_eventlinked_pairs": 19,
+  "high_rr_exact_time_recovery_fraction": 0,
+  "notes": [
+    "Eligible targets require A/AA timed focal C-sample record plus strict partner-name match in a relationship transition event.",
+    "Exact public record identity is accepted only when wiki DatamainID equals rel_adb_id.",
+    "Presence of sbtime with t_unknown absent is treated as exact-time availability; Rodden quality is reported separately.",
+    "A full semi-Markov build still needs reliable UTC conversion/JD for recovered partners; this audit records jd_ut if exposed by wiki source but does not invent it."
+  ],
+  "projected_total_exact_pair_records_after_recovery": 19,
+  "projected_total_high_rr_exact_pair_records_after_recovery": 19,
+  "records": [],
+  "source": "https://www.astro.com/adbexport/c_sample.xml",
+  "status_counts": {}
+}
