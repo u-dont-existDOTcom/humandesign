@@ -29,3 +29,17 @@ jobs:
         run: ruff check src tests scripts
       - name: Type check
         run: mypy src/hdmatch
+
+  castille-audit-once:
+    if: ${{ github.event_name == 'push' && contains(github.event.head_commit.message, 'Castille audit via CI') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+      - name: Run corrected Castille data audit once
+        run: python scripts/castille_a00_pair_audit.py
