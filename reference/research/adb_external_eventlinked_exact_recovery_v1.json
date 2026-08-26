@@ -1,18 +1,2719 @@
 {
   "api": "https://www.astro.com/wiki/astro-databank/api.php",
-  "eligible_external_eventlinked_targets": 0,
-  "exact_time_recovery_fraction": 0,
+  "eligible_external_eventlinked_targets": 83,
+  "exact_time_recovery_fraction": 0.963855421686747,
   "existing_internal_high_rr_timed_eventlinked_pairs": 19,
-  "high_rr_exact_time_recovery_fraction": 0,
+  "high_rr_exact_time_recovery_fraction": 0.7831325301204819,
   "notes": [
-    "Eligible targets require A/AA timed focal C-sample record plus strict partner-name match in a relationship transition event.",
+    "Eligible targets require A/AA timed focal C-sample record plus the same strict partner-token event linkage used in the C-sample audit.",
     "Exact public record identity is accepted only when wiki DatamainID equals rel_adb_id.",
     "Presence of sbtime with t_unknown absent is treated as exact-time availability; Rodden quality is reported separately.",
     "A full semi-Markov build still needs reliable UTC conversion/JD for recovered partners; this audit records jd_ut if exposed by wiki source but does not invent it."
   ],
-  "projected_total_exact_pair_records_after_recovery": 19,
-  "projected_total_high_rr_exact_pair_records_after_recovery": 19,
-  "records": [],
+  "projected_total_exact_pair_records_after_recovery": 99,
+  "projected_total_high_rr_exact_pair_records_after_recovery": 84,
+  "records": [
+    {
+      "adb_id": 244,
+      "event_ids": [
+        807,
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        19799
+      ],
+      "matched": {
+        "BirthCountry": "Illinois",
+        "DatamainID": "244",
+        "Place": "Chicago",
+        "TmZnAbbr": "CST",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1926/04/09",
+        "sbtime": "16:20",
+        "slati": "41n51",
+        "slong": "87w39",
+        "sroddenrating": "AA",
+        "stimetype": "standard time",
+        "stmerid": "h6w",
+        "swikiname": "Hugh_Hefner",
+        "t_unknown": null,
+        "title": "Hefner, Hugh"
+      },
+      "partner_name": "Hefner, Hugh",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 293,
+      "event_ids": [
+        810,
+        811
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        25917
+      ],
+      "matched": {
+        "BirthCountry": "France",
+        "DatamainID": "293",
+        "Place": "Paris",
+        "TmZnAbbr": "GDT",
+        "ccalendar": "g",
+        "ctimetype": "d",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1934/09/28",
+        "sbtime": "13:15",
+        "slati": "48n52",
+        "slong": "2e20",
+        "sroddenrating": "AA",
+        "stimetype": "daylight saving time",
+        "stmerid": "h1e",
+        "swikiname": "Brigitte_Bardot",
+        "t_unknown": null,
+        "title": "Bardot, Brigitte"
+      },
+      "partner_name": "Bardot, Brigitte",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 295,
+      "event_ids": [
+        809,
+        810,
+        811
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        362
+      ],
+      "matched": {
+        "BirthCountry": "Michigan",
+        "DatamainID": "295",
+        "Place": "Detroit",
+        "TmZnAbbr": "EST",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1935/02/16",
+        "sbtime": "21:21",
+        "slati": "42n20",
+        "slong": "83w03",
+        "sroddenrating": "AA",
+        "stimetype": "standard time",
+        "stmerid": "h5w",
+        "swikiname": "Sonny_Bono",
+        "t_unknown": null,
+        "title": "Bono, Sonny"
+      },
+      "partner_name": "Bono, Sonny",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 474,
+      "event_ids": [
+        807,
+        809,
+        810,
+        811
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        11103
+      ],
+      "matched": {
+        "BirthCountry": "England",
+        "DatamainID": "474",
+        "Place": "Sandringham",
+        "TmZnAbbr": "BST",
+        "ccalendar": "g",
+        "ctimetype": "d",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1961/07/01",
+        "sbtime": "19:45",
+        "slati": "52n50",
+        "slong": "0e30",
+        "sroddenrating": "A",
+        "stimetype": "daylight saving time",
+        "stmerid": "h1e",
+        "swikiname": "Princess_of_Wales_Diana",
+        "t_unknown": null,
+        "title": "Diana, Princess of Wales"
+      },
+      "partner_name": "Diana, Princess of Wales",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 1923,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        24314
+      ],
+      "matched": {
+        "BirthCountry": "England",
+        "DatamainID": "1923",
+        "Place": "London",
+        "TmZnAbbr": "LMT",
+        "ccalendar": "g",
+        "ctimetype": "l",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1762/08/12",
+        "sbtime": "19:24",
+        "slati": "51n30",
+        "slong": "0w10",
+        "sroddenrating": "B",
+        "stimetype": "local mean time",
+        "stmerid": "m0w10",
+        "swikiname": "George_IV_of_the_United_Kingdom",
+        "t_unknown": null,
+        "title": "George IV, King of the United Kingdom"
+      },
+      "partner_name": "George IV, King of the United Kingdom",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 2752,
+      "event_ids": [
+        808
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        64
+      ],
+      "matched": {
+        "BirthCountry": "France",
+        "DatamainID": "2752",
+        "Place": "Paris",
+        "TmZnAbbr": "LMT",
+        "ccalendar": "g",
+        "ctimetype": "l",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1872/01/23",
+        "sbtime": "21:00",
+        "slati": "48n52",
+        "slong": "2e20",
+        "sroddenrating": "AA",
+        "stimetype": "local mean time",
+        "stmerid": "m2e20",
+        "swikiname": "Paul_Langevin",
+        "t_unknown": null,
+        "title": "Langevin, Paul"
+      },
+      "partner_name": "Langevin, Paul",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 4130,
+      "event_ids": [
+        810,
+        811
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        7906
+      ],
+      "matched": {
+        "BirthCountry": "England",
+        "DatamainID": "4130",
+        "Place": "Bristol",
+        "TmZnAbbr": "GMT",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1904/01/18",
+        "sbtime": "01:07",
+        "slati": "51n27",
+        "slong": "2w35",
+        "sroddenrating": "B",
+        "stimetype": "standard time",
+        "stmerid": "h0e",
+        "swikiname": "Cary_Grant",
+        "t_unknown": null,
+        "title": "Grant, Cary"
+      },
+      "partner_name": "Grant, Cary",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 4843,
+      "event_ids": [
+        810,
+        811
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        86574
+      ],
+      "matched": {
+        "BirthCountry": "Ohio",
+        "DatamainID": "4843",
+        "Place": "Cincinnati",
+        "TmZnAbbr": "CST",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1914/05/05",
+        "sbtime": "17:30",
+        "slati": "39n10",
+        "slong": "84w27",
+        "sroddenrating": "B",
+        "stimetype": "standard time",
+        "stmerid": "h6w",
+        "swikiname": "Tyrone_Power",
+        "t_unknown": null,
+        "title": "Power, Tyrone"
+      },
+      "partner_name": "Power, Tyrone",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 5151,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        85461
+      ],
+      "matched": {
+        "BirthCountry": "Massachusetts",
+        "DatamainID": "5151",
+        "Place": "Needham Heights",
+        "TmZnAbbr": "EWT",
+        "ccalendar": "g",
+        "ctimetype": "w",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1918/06/08",
+        "sbtime": "12:00",
+        "slati": "42n18",
+        "slong": "71w14",
+        "sroddenrating": "C",
+        "stimetype": "war time",
+        "stmerid": "h4w",
+        "swikiname": "Robert_Preston_(actor)",
+        "t_unknown": null,
+        "title": "Preston, Robert"
+      },
+      "partner_name": "Preston, Robert",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 6117,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        46200
+      ],
+      "matched": {
+        "BirthCountry": "England",
+        "DatamainID": "6117",
+        "Place": "Liverpool",
+        "TmZnAbbr": "GDT",
+        "ccalendar": "g",
+        "ctimetype": "d",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1926/05/15",
+        "sbtime": "09:30",
+        "slati": "53n25",
+        "slong": "2w55",
+        "sroddenrating": "AA",
+        "stimetype": "daylight saving time",
+        "stmerid": "h1e",
+        "swikiname": "Anthony_Shaffer",
+        "t_unknown": null,
+        "title": "Shaffer, Anthony"
+      },
+      "partner_name": "Shaffer, Anthony",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 6196,
+      "event_ids": [
+        810,
+        811
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        86574
+      ],
+      "matched": {
+        "BirthCountry": "England",
+        "DatamainID": "6196",
+        "Place": "London",
+        "TmZnAbbr": "GMT",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1926/12/19",
+        "sbtime": "12:00",
+        "slati": "51n30",
+        "slong": "0w10",
+        "sroddenrating": "A",
+        "stimetype": "standard time",
+        "stmerid": "h0e",
+        "swikiname": "Edmund_Purdom",
+        "t_unknown": null,
+        "title": "Purdom, Edmond"
+      },
+      "partner_name": "Purdom, Edmond",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 6281,
+      "event_ids": [
+        810,
+        811
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        238
+      ],
+      "matched": {
+        "BirthCountry": "California",
+        "DatamainID": "6281",
+        "Place": "Merced",
+        "TmZnAbbr": "PST",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1927/07/06",
+        "sbtime": "14:15",
+        "slati": "37n18",
+        "slong": "120w29",
+        "sroddenrating": "AA",
+        "stimetype": "standard time",
+        "stmerid": "h8w",
+        "swikiname": "Janet_Leigh",
+        "t_unknown": null,
+        "title": "Leigh, Janet"
+      },
+      "partner_name": "Leigh, Janet",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 7817,
+      "event_ids": [
+        809,
+        810,
+        811
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        9919
+      ],
+      "matched": {
+        "BirthCountry": "Texas",
+        "DatamainID": "7817",
+        "Place": "Brownsville",
+        "TmZnAbbr": "CST",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1936/06/22",
+        "sbtime": "15:30",
+        "slati": "25n54",
+        "slong": "97w30",
+        "sroddenrating": "AA",
+        "stimetype": "standard time",
+        "stmerid": "h6w",
+        "swikiname": "Kris_Kristofferson",
+        "t_unknown": null,
+        "title": "Kristofferson, Kris"
+      },
+      "partner_name": "Kristofferson, Kris",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 8584,
+      "event_ids": [
+        807,
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        13089
+      ],
+      "matched": {
+        "BirthCountry": "France",
+        "DatamainID": "8584",
+        "Place": "Paris",
+        "TmZnAbbr": "GDT",
+        "ccalendar": "g",
+        "ctimetype": "d",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1940/04/19",
+        "sbtime": "05:30",
+        "slati": "48n52",
+        "slong": "2e20",
+        "sroddenrating": "AA",
+        "stimetype": "daylight saving time",
+        "stmerid": "h1e",
+        "swikiname": "Philippe_Junot",
+        "t_unknown": null,
+        "title": "Junot, Philippe"
+      },
+      "partner_name": "Junot, Philippe",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 9354,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        10338
+      ],
+      "matched": {
+        "BirthCountry": "England",
+        "DatamainID": "9354",
+        "Place": "Carlshalton",
+        "TmZnAbbr": "GDT",
+        "ccalendar": "g",
+        "ctimetype": "d",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1943/03/29",
+        "sbtime": "03:15",
+        "slati": "51n22",
+        "slong": "0w10",
+        "sroddenrating": "C",
+        "stimetype": "daylight saving time",
+        "stmerid": "h1e",
+        "swikiname": "John_Major",
+        "t_unknown": null,
+        "title": "Major, John"
+      },
+      "partner_name": "Major, John",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 9461,
+      "event_ids": [
+        808
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        19429
+      ],
+      "matched": {
+        "BirthCountry": "New York",
+        "DatamainID": "9461",
+        "Place": "Brooklyn (Kings County)",
+        "TmZnAbbr": "EWT",
+        "ccalendar": "g",
+        "ctimetype": "w",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1943/08/17",
+        "sbtime": "03:00",
+        "slati": "40n38",
+        "slong": "73w56",
+        "sroddenrating": "A",
+        "stimetype": "war time",
+        "stmerid": "h4w",
+        "swikiname": "Robert_De_Niro",
+        "t_unknown": null,
+        "title": "De Niro, Robert"
+      },
+      "partner_name": "De Niro, Robert",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 10805,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        362
+      ],
+      "matched": {
+        "BirthCountry": "Tennessee",
+        "DatamainID": "10805",
+        "Place": "Nashville",
+        "TmZnAbbr": "CST",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1947/12/08",
+        "sbtime": "15:39",
+        "slati": "36n10",
+        "slong": "86w47",
+        "sroddenrating": "C",
+        "stimetype": "standard time",
+        "stmerid": "h6w",
+        "swikiname": "Gregg_Allman",
+        "t_unknown": null,
+        "title": "Allman, Gregg"
+      },
+      "partner_name": "Allman, Gregg",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 14274,
+      "event_ids": [
+        807,
+        810,
+        811
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        19401
+      ],
+      "matched": {
+        "BirthCountry": "Tennessee",
+        "DatamainID": "14274",
+        "Place": "Memphis",
+        "TmZnAbbr": "CST",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1968/02/01",
+        "sbtime": "17:01",
+        "slati": "35n09",
+        "slong": "90w03",
+        "sroddenrating": "AA",
+        "stimetype": "standard time",
+        "stmerid": "h6w",
+        "swikiname": "Lisa_Marie_Presley",
+        "t_unknown": null,
+        "title": "Presley, Lisa Marie"
+      },
+      "partner_name": "Presley, Lisa Marie",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 19580,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        76816
+      ],
+      "matched": {
+        "BirthCountry": "Mississippi",
+        "DatamainID": "19580",
+        "Place": "Jackson",
+        "TmZnAbbr": "CDT",
+        "ccalendar": "g",
+        "ctimetype": "d",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1982/08/28",
+        "sbtime": "17:45",
+        "slati": "32n18",
+        "slong": "90w11",
+        "sroddenrating": "A",
+        "stimetype": "daylight saving time",
+        "stmerid": "h5w",
+        "swikiname": "LeAnn_Rimes",
+        "t_unknown": null,
+        "title": "Rimes, LeAnn"
+      },
+      "partner_name": "Rimes, LeAnn",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 19803,
+      "event_ids": [
+        807,
+        808,
+        809
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        13047
+      ],
+      "matched": {
+        "BirthCountry": "Germany",
+        "DatamainID": "19803",
+        "Place": "Rheinberg",
+        "TmZnAbbr": "MET",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1970/08/25",
+        "sbtime": "12:10",
+        "slati": "51n33",
+        "slong": "6e35",
+        "sroddenrating": "AA",
+        "stimetype": "standard time",
+        "stmerid": "h1e",
+        "swikiname": "Claudia_Schiffer",
+        "t_unknown": null,
+        "title": "Schiffer, Claudia"
+      },
+      "partner_name": "Schiffer, Claudia",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 24265,
+      "event_ids": [
+        807,
+        810,
+        811
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        19401
+      ],
+      "matched": {
+        "BirthCountry": "Illinois",
+        "DatamainID": "24265",
+        "Place": "Chicago",
+        "TmZnAbbr": "CST",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1968/04/08",
+        "sbtime": "11:55",
+        "slati": "41n51",
+        "slong": "87w39",
+        "sroddenrating": "C",
+        "stimetype": "standard time",
+        "stmerid": "h6w",
+        "swikiname": "Patricia_Arquette",
+        "t_unknown": null,
+        "title": "Arquette, Patricia"
+      },
+      "partner_name": "Arquette, Patricia",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 24590,
+      "event_ids": [
+        810,
+        811
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        92708
+      ],
+      "matched": {
+        "BirthCountry": "England",
+        "DatamainID": "24590",
+        "Place": "London",
+        "TmZnAbbr": "GMT",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1925/10/16",
+        "sbtime": "00:45",
+        "slati": "51n30",
+        "slong": "0w10",
+        "sroddenrating": "A",
+        "stimetype": "standard time",
+        "stmerid": "h0e",
+        "swikiname": "Angela_Lansbury",
+        "t_unknown": null,
+        "title": "Lansbury, Angela"
+      },
+      "partner_name": "Lansbury, Angela",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 24930,
+      "event_ids": [
+        808
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        863
+      ],
+      "matched": {
+        "BirthCountry": "California",
+        "DatamainID": "24930",
+        "Place": "San Francisco",
+        "TmZnAbbr": "PDT",
+        "ccalendar": "g",
+        "ctimetype": "d",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1973/07/23",
+        "sbtime": "12:21",
+        "slati": "37n47",
+        "slong": "122w25",
+        "sroddenrating": "AA",
+        "stimetype": "daylight saving time",
+        "stmerid": "h7w",
+        "swikiname": "Monica_Lewinsky",
+        "t_unknown": null,
+        "title": "Lewinsky, Monica"
+      },
+      "partner_name": "Lewinsky, Monica",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 25004,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        25924
+      ],
+      "matched": {
+        "BirthCountry": "Germany",
+        "DatamainID": "25004",
+        "Place": "Heidelberg",
+        "TmZnAbbr": "MET",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1943/12/23",
+        "sbtime": "06:00",
+        "slati": "49n25",
+        "slong": "8e43",
+        "sroddenrating": "A",
+        "stimetype": "standard time",
+        "stmerid": "h1e",
+        "swikiname": "Queen_Silvia_of_Sweden",
+        "t_unknown": null,
+        "title": "Silvia, Queen of Sweden"
+      },
+      "partner_name": "Silvia, Queen of Sweden",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 25724,
+      "event_ids": [
+        807,
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        19568
+      ],
+      "matched": {
+        "BirthCountry": "California",
+        "DatamainID": "25724",
+        "Place": "San Francisco",
+        "TmZnAbbr": "PDT",
+        "ccalendar": "g",
+        "ctimetype": "d",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1964/07/09",
+        "sbtime": "14:08",
+        "slati": "37n47",
+        "slong": "122w25",
+        "sroddenrating": "AA",
+        "stimetype": "daylight saving time",
+        "stmerid": "h7w",
+        "swikiname": "Courtney_Love",
+        "t_unknown": null,
+        "title": "Love, Courtney"
+      },
+      "partner_name": "Love, Courtney",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 26134,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        79083
+      ],
+      "matched": {
+        "BirthCountry": "Germany",
+        "DatamainID": "26134",
+        "Place": "Potsdam",
+        "TmZnAbbr": "LMT",
+        "ccalendar": "g",
+        "ctimetype": "l",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1882/05/06",
+        "sbtime": "21:45",
+        "slati": "52n24",
+        "slong": "13e04",
+        "sroddenrating": "AA",
+        "stimetype": "local mean time",
+        "stmerid": "m13e04",
+        "swikiname": "William,_German_Crown_Prince",
+        "t_unknown": null,
+        "title": "Wilhelm, Crown Prince of Germany"
+      },
+      "partner_name": "Wilhelm, Crown Prince of Germany",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 36340,
+      "event_ids": [
+        810,
+        815
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        55667
+      ],
+      "matched": {
+        "BirthCountry": "Pennsylvania",
+        "DatamainID": "36340",
+        "Place": "Philadelphia",
+        "TmZnAbbr": "EDT",
+        "ccalendar": "g",
+        "ctimetype": "d",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1949/08/31",
+        "sbtime": null,
+        "slati": "39n57",
+        "slong": "75w10",
+        "sroddenrating": "X",
+        "stimetype": "daylight saving time",
+        "stmerid": "h4w",
+        "swikiname": "Richard_Gere",
+        "t_unknown": "1",
+        "title": "Gere, Richard"
+      },
+      "partner_name": "Gere, Richard",
+      "status": "time_unknown"
+    },
+    {
+      "adb_id": 37386,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        54787
+      ],
+      "matched": {
+        "BirthCountry": "Italy",
+        "DatamainID": "37386",
+        "Place": "Citt\u00e0 di Castello",
+        "TmZnAbbr": "MET",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1964/09/30",
+        "sbtime": "14:30",
+        "slati": "43n27",
+        "slong": "12e14",
+        "sroddenrating": "AA",
+        "stimetype": "standard time",
+        "stmerid": "h1e",
+        "swikiname": "Monica_Bellucci",
+        "t_unknown": null,
+        "title": "Bellucci, Monica"
+      },
+      "partner_name": "Bellucci, Monica",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 39157,
+      "event_ids": [
+        807,
+        810,
+        811
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        19367
+      ],
+      "matched": {
+        "BirthCountry": "Spain",
+        "DatamainID": "39157",
+        "Place": "Zumarraga",
+        "TmZnAbbr": "MET",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1968/01/15",
+        "sbtime": "11:15",
+        "slati": "43n05",
+        "slong": "2w19",
+        "sroddenrating": "AA",
+        "stimetype": "standard time",
+        "stmerid": "h1e",
+        "swikiname": "Inaki_Urdangarin",
+        "t_unknown": null,
+        "title": "Urdangarin, I\u00f1aki"
+      },
+      "partner_name": "Urdangarin, I\u00f1aki",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 39278,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        19605
+      ],
+      "matched": {
+        "BirthCountry": "France",
+        "DatamainID": "39278",
+        "Place": "Neuilly sur Seine",
+        "TmZnAbbr": "MET",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1958/08/22",
+        "sbtime": "22:45",
+        "slati": "48n53",
+        "slong": "2e16",
+        "sroddenrating": "AA",
+        "stimetype": "standard time",
+        "stmerid": "h1e",
+        "swikiname": "wikipedia_fr:Philippe_Habert_(1958-1993)",
+        "t_unknown": null,
+        "title": "Habert, Philippe"
+      },
+      "partner_name": "Habert, Philippe",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 39492,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        68009
+      ],
+      "matched": {
+        "BirthCountry": "Portugal",
+        "DatamainID": "39492",
+        "Place": "Lisbon",
+        "TmZnAbbr": "LMT",
+        "ccalendar": "g",
+        "ctimetype": "l",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1767/05/13",
+        "sbtime": "12:05",
+        "slati": "38n43",
+        "slong": "9w08",
+        "sroddenrating": "A",
+        "stimetype": "local mean time",
+        "stmerid": "m9w08",
+        "swikiname": "John_VI_of_Portugal",
+        "t_unknown": null,
+        "title": "Jo\u00e3o VI, King of Portugal"
+      },
+      "partner_name": "Jo\u00e3o VI, King of Portugal",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 39975,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        49393
+      ],
+      "matched": {
+        "BirthCountry": "Belgium",
+        "DatamainID": "39975",
+        "Place": "Laeken",
+        "TmZnAbbr": "MET",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1963/10/19",
+        "sbtime": "11:20",
+        "slati": "50n53",
+        "slong": "4e21",
+        "sroddenrating": "AA",
+        "stimetype": "standard time",
+        "stmerid": "h1e",
+        "swikiname": "Prince_Laurent_of_Belgium",
+        "t_unknown": null,
+        "title": "Laurent, Prince of Belgium"
+      },
+      "partner_name": "Laurent, Prince of Belgium",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 40046,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        48891
+      ],
+      "matched": {
+        "BirthCountry": "Switzerland",
+        "DatamainID": "40046",
+        "Place": "Geneva",
+        "TmZnAbbr": "MET",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1972/06/22",
+        "sbtime": "08:50",
+        "slati": "46n12",
+        "slong": "6e09",
+        "sroddenrating": "A",
+        "stimetype": "standard time",
+        "stmerid": "h1e",
+        "swikiname": "Emanuele_Filiberto,_Prince_of_Venice_and_Piedmont",
+        "t_unknown": null,
+        "title": "Emanuele Filiberto, Prince of Venice"
+      },
+      "partner_name": "Emanuele Filiberto, Prince of Venice",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 40060,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        24334
+      ],
+      "matched": {
+        "BirthCountry": "Germany",
+        "DatamainID": "40060",
+        "Place": "Coburg",
+        "TmZnAbbr": "LMT",
+        "ccalendar": "g",
+        "ctimetype": "l",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1790/12/16",
+        "sbtime": "01:30",
+        "slati": "50n15",
+        "slong": "10e58",
+        "sroddenrating": "AA",
+        "stimetype": "local mean time",
+        "stmerid": "m10e58",
+        "swikiname": "Leopold_I_of_Belgium",
+        "t_unknown": null,
+        "title": "Leopold I, King of Belgium"
+      },
+      "partner_name": "Leopold I, King of Belgium",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 40327,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        5515
+      ],
+      "matched": {
+        "BirthCountry": "California",
+        "DatamainID": "40327",
+        "Place": "San Francisco",
+        "TmZnAbbr": "PST",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1913/12/25",
+        "sbtime": "22:10",
+        "slati": "37n47",
+        "slong": "122w25",
+        "sroddenrating": "AA",
+        "stimetype": "standard time",
+        "stmerid": "h8w",
+        "swikiname": "Tony_Martin_(American_singer)",
+        "t_unknown": null,
+        "title": "Martin, Tony"
+      },
+      "partner_name": "Martin, Tony",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 42413,
+      "event_ids": [
+        808,
+        809
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        58361
+      ],
+      "matched": {
+        "BirthCountry": "Massachusetts",
+        "DatamainID": "42413",
+        "Place": "North Adams",
+        "TmZnAbbr": "EDT",
+        "ccalendar": "g",
+        "ctimetype": "d",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1969/08/19",
+        "sbtime": "04:47",
+        "slati": "42n42",
+        "slong": "73w07",
+        "sroddenrating": "AA",
+        "stimetype": "daylight saving time",
+        "stmerid": "h4w",
+        "swikiname": "Matthew_Perry_(actor)",
+        "t_unknown": null,
+        "title": "Perry, Matthew"
+      },
+      "partner_name": "Perry, Matthew",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 42903,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        4774
+      ],
+      "matched": {
+        "BirthCountry": "Kentucky",
+        "DatamainID": "42903",
+        "Place": "Guthrie",
+        "TmZnAbbr": "CST",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1905/04/24",
+        "sbtime": "07:00",
+        "slati": "36n39",
+        "slong": "87w10",
+        "sroddenrating": "B",
+        "stimetype": "standard time",
+        "stmerid": "h6w",
+        "swikiname": "Robert_Penn_Warren",
+        "t_unknown": null,
+        "title": "Warren, Robert Penn"
+      },
+      "partner_name": "Warren, Robert Penn",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 44631,
+      "event_ids": [
+        808
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        44630
+      ],
+      "matched": {
+        "BirthCountry": "Oklahoma",
+        "DatamainID": "44631",
+        "Place": "Tulsa",
+        "TmZnAbbr": "CST",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1970/04/25",
+        "sbtime": "14:17",
+        "slati": "36n09",
+        "slong": "96w0",
+        "sroddenrating": "A",
+        "stimetype": "standard time",
+        "stmerid": "h6w",
+        "swikiname": null,
+        "t_unknown": null,
+        "title": "Wilkins, April Rose"
+      },
+      "partner_name": "Wilkins, April Rose",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 47241,
+      "event_ids": [
+        810,
+        811
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        47237
+      ],
+      "matched": {
+        "BirthCountry": "Tunisia",
+        "DatamainID": "47241",
+        "Place": "Monastir",
+        "TmZnAbbr": "MET",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1912/10/02",
+        "sbtime": "21:00",
+        "slati": "35n47",
+        "slong": "10e50",
+        "sroddenrating": "AA",
+        "stimetype": "standard time",
+        "stmerid": "h1e",
+        "swikiname": null,
+        "t_unknown": null,
+        "title": "Boutboul, Nessim"
+      },
+      "partner_name": "Boutboul, Nessim",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 47860,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        1620
+      ],
+      "matched": {
+        "BirthCountry": "Austria",
+        "DatamainID": "47860",
+        "Place": "Vienna",
+        "TmZnAbbr": "LMT",
+        "ccalendar": "j",
+        "ctimetype": "l",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1554/06/05",
+        "sbtime": "22:30",
+        "slati": "48n13",
+        "slong": "16e2223",
+        "sroddenrating": "AA",
+        "stimetype": "local mean time",
+        "stmerid": "m16e2223",
+        "swikiname": "Elisabeth_of_Austria,_Queen_of_France",
+        "t_unknown": null,
+        "title": "Elisabeth of Austria, Queen of France"
+      },
+      "partner_name": "Elisabeth of Austria, Queen of France",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 49711,
+      "event_ids": [
+        810,
+        811
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        49712
+      ],
+      "matched": {
+        "BirthCountry": "Texas",
+        "DatamainID": "49711",
+        "Place": "Baytown",
+        "TmZnAbbr": "CST",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1969/04/25",
+        "sbtime": "14:41",
+        "slati": "29n44",
+        "slong": "94w59",
+        "sroddenrating": "AA",
+        "stimetype": "standard time",
+        "stmerid": "h6w",
+        "swikiname": "Renee_Zellweger",
+        "t_unknown": null,
+        "title": "Zellweger, Ren\u00e9e"
+      },
+      "partner_name": "Zellweger, Ren\u00e9e",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 50327,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        13089
+      ],
+      "matched": {
+        "BirthCountry": "Germany",
+        "DatamainID": "50327",
+        "Place": "Hanover",
+        "TmZnAbbr": "MET",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1954/02/26",
+        "sbtime": "07:22",
+        "slati": "52n24",
+        "slong": "9e44",
+        "sroddenrating": "C",
+        "stimetype": "standard time",
+        "stmerid": "h1e",
+        "swikiname": "Prince_Ernst_August_of_Hanover_(born_1954)",
+        "t_unknown": null,
+        "title": "Ernst August, Prince of Hanover (1954)"
+      },
+      "partner_name": "Ernst August, Prince of Hanover (1954)",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 50349,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        99620
+      ],
+      "matched": {
+        "BirthCountry": "Arizona",
+        "DatamainID": "50349",
+        "Place": "Florence",
+        "TmZnAbbr": "MST",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1923/12/05",
+        "sbtime": "04:10",
+        "slati": "33n02",
+        "slong": "111w23",
+        "sroddenrating": "AA",
+        "stimetype": "standard time",
+        "stmerid": "h7w",
+        "swikiname": null,
+        "t_unknown": null,
+        "title": "Moore, Mary Alice"
+      },
+      "partner_name": "Moore, Mary Alice",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 50520,
+      "event_ids": [
+        810,
+        811
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        50764
+      ],
+      "matched": {
+        "BirthCountry": "France",
+        "DatamainID": "50520",
+        "Place": "Versailles",
+        "TmZnAbbr": "GMT",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1932/11/08",
+        "sbtime": "02:15",
+        "slati": "48n48",
+        "slong": "2e08",
+        "sroddenrating": "AA",
+        "stimetype": "standard time",
+        "stmerid": "h0e",
+        "swikiname": "St\u00e9phane_Audran",
+        "t_unknown": null,
+        "title": "Audran, St\u00e9phane"
+      },
+      "partner_name": "Audran, St\u00e9phane",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 54655,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        88172
+      ],
+      "matched": {
+        "BirthCountry": "California",
+        "DatamainID": "54655",
+        "Place": "Los Angeles",
+        "TmZnAbbr": "PST",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1914/10/02",
+        "sbtime": "20:45",
+        "slati": "34n03",
+        "slong": "118w15",
+        "sroddenrating": "AA",
+        "stimetype": "standard time",
+        "stmerid": "h8w",
+        "swikiname": "John_Whiteside_Parsons",
+        "t_unknown": null,
+        "title": "Parsons, Jack"
+      },
+      "partner_name": "Parsons, Jack",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 55157,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        36990
+      ],
+      "matched": {
+        "BirthCountry": "France",
+        "DatamainID": "55157",
+        "Place": "Paris",
+        "TmZnAbbr": "MET",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1977/02/15",
+        "sbtime": "11:05",
+        "slati": "48n52",
+        "slong": "2e20",
+        "sroddenrating": "AA",
+        "stimetype": "standard time",
+        "stmerid": "h1e",
+        "swikiname": "wikipedia_fr:Rachida_Brakni",
+        "t_unknown": null,
+        "title": "Brakni, Rachida"
+      },
+      "partner_name": "Brakni, Rachida",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 55269,
+      "event_ids": [
+        807,
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        55266
+      ],
+      "matched": {
+        "BirthCountry": "Morocco",
+        "DatamainID": "55269",
+        "Place": "Casablanca",
+        "TmZnAbbr": "GMT",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1935/06/13",
+        "sbtime": "18:00",
+        "slati": "33n39",
+        "slong": "7w35",
+        "sroddenrating": "AA",
+        "stimetype": "standard time",
+        "stmerid": "h0e",
+        "swikiname": "Christo_and_Jeanne-Claude",
+        "t_unknown": null,
+        "title": "Jeanne-Claude"
+      },
+      "partner_name": "Jeanne-Claude",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 55464,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        55466
+      ],
+      "matched": {
+        "BirthCountry": "Switzerland",
+        "DatamainID": "55464",
+        "Place": "Z\u00fcrich",
+        "TmZnAbbr": "MET",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1908/05/23",
+        "sbtime": "17:40",
+        "slati": "47n23",
+        "slong": "8e32",
+        "sroddenrating": "AA",
+        "stimetype": "standard time",
+        "stmerid": "h1e",
+        "swikiname": "Annemarie_Schwarzenbach",
+        "t_unknown": null,
+        "title": "Schwarzenbach, Annemarie"
+      },
+      "partner_name": "Schwarzenbach, Annemarie",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 55779,
+      "event_ids": [
+        810,
+        811
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        238
+      ],
+      "matched": {
+        "BirthCountry": "Austria",
+        "DatamainID": "55779",
+        "Place": "Gr\u00f6bming",
+        "TmZnAbbr": "MET",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1945/01/11",
+        "sbtime": "05:30",
+        "slati": "47n26",
+        "slong": "13e54",
+        "sroddenrating": "A",
+        "stimetype": "standard time",
+        "stmerid": "h1e",
+        "swikiname": "Christine_Kaufmann",
+        "t_unknown": null,
+        "title": "Kaufmann, Christine"
+      },
+      "partner_name": "Kaufmann, Christine",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 56048,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        56049
+      ],
+      "matched": {
+        "BirthCountry": "Malta",
+        "DatamainID": "56048",
+        "Place": "Medina",
+        "TmZnAbbr": "LMT",
+        "ccalendar": "g",
+        "ctimetype": "l",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1876/11/25",
+        "sbtime": "17:55",
+        "slati": "35n53",
+        "slong": "14e24",
+        "sroddenrating": "A",
+        "stimetype": "local mean time",
+        "stmerid": "m14e24",
+        "swikiname": "Princess_Victoria_Melita_of_Saxe-Coburg_and_Gotha",
+        "t_unknown": null,
+        "title": "Victoria Melita, Princess of Saxe Coburg and Gotha"
+      },
+      "partner_name": "Victoria Melita, Princess of Saxe Coburg and Gotha",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 58089,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        58088
+      ],
+      "matched": {
+        "BirthCountry": "France",
+        "DatamainID": "58089",
+        "Place": "Ste.Adresse",
+        "TmZnAbbr": "MET",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1953/12/09",
+        "sbtime": "14:15",
+        "slati": "49n30",
+        "slong": "0e05",
+        "sroddenrating": "AA",
+        "stimetype": "standard time",
+        "stmerid": "h1e",
+        "swikiname": "Pierre_et_Gilles",
+        "t_unknown": null,
+        "title": "Blanchard, Gilles"
+      },
+      "partner_name": "Blanchard, Gilles",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 59796,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        80485
+      ],
+      "matched": {
+        "BirthCountry": "Germany",
+        "DatamainID": "59796",
+        "Place": "Hildburghausen",
+        "TmZnAbbr": "LMT",
+        "ccalendar": "j",
+        "ctimetype": "l",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1763/04/29",
+        "sbtime": "03:30",
+        "slati": "50n25",
+        "slong": "10e44",
+        "sroddenrating": "B",
+        "stimetype": "local mean time",
+        "stmerid": "m10e44",
+        "swikiname": "Frederick,_Duke_of_Saxe-Altenburg",
+        "t_unknown": null,
+        "title": "Friedrich, Duke of Saxe-Altenburg"
+      },
+      "partner_name": "Friedrich, Duke of Saxe-Altenburg",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 60199,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        80404
+      ],
+      "matched": {
+        "BirthCountry": "Italy",
+        "DatamainID": "60199",
+        "Place": "Naples",
+        "TmZnAbbr": "LMT",
+        "ccalendar": "g",
+        "ctimetype": "l",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1779/01/17",
+        "sbtime": "04:50",
+        "slati": "40n51",
+        "slong": "14e17",
+        "sroddenrating": "A",
+        "stimetype": "local mean time",
+        "stmerid": "m14e17",
+        "swikiname": "Maria_Cristina_of_Naples_and_Sicily",
+        "t_unknown": null,
+        "title": "Maria Cristina, Queen Consort of Sardinia"
+      },
+      "partner_name": "Maria Cristina, Queen Consort of Sardinia",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 60292,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        60291
+      ],
+      "matched": {
+        "BirthCountry": "Netherlands",
+        "DatamainID": "60292",
+        "Place": "Utrecht",
+        "TmZnAbbr": "LST",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1906/04/18",
+        "sbtime": "09:30",
+        "slati": "52n06",
+        "slong": "5e07",
+        "sroddenrating": "AA",
+        "stimetype": "standard time",
+        "stmerid": "m4e53",
+        "swikiname": null,
+        "t_unknown": null,
+        "title": "Eggink, Clara"
+      },
+      "partner_name": "Eggink, Clara",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 60355,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        101321
+      ],
+      "matched": {
+        "BirthCountry": "France",
+        "DatamainID": "60355",
+        "Place": "Versailles",
+        "TmZnAbbr": "MET",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1976/11/21",
+        "sbtime": "00:35",
+        "slati": "48n48",
+        "slong": "2e08",
+        "sroddenrating": "AA",
+        "stimetype": "standard time",
+        "stmerid": "h1e",
+        "swikiname": "Thomas_Mars",
+        "t_unknown": null,
+        "title": "Mars, Thomas"
+      },
+      "partner_name": "Mars, Thomas",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 60363,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        3584
+      ],
+      "matched": {
+        "BirthCountry": "France",
+        "DatamainID": "60363",
+        "Place": "Paris Arrondissement 5",
+        "TmZnAbbr": "WET",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1912/07/20",
+        "sbtime": "06:00",
+        "slati": "48n5046",
+        "slong": "2e2041",
+        "sroddenrating": "AA",
+        "stimetype": "standard time",
+        "stmerid": "h0e",
+        "swikiname": "wikipedia_fr:Lucette_Destouches",
+        "t_unknown": null,
+        "title": "Destouches, Lucette"
+      },
+      "partner_name": "Destouches, Lucette",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 61241,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        55649
+      ],
+      "matched": {
+        "BirthCountry": "Spain",
+        "DatamainID": "61241",
+        "Place": "Las Palmas de Gran Canaria",
+        "TmZnAbbr": "GMT",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1969/03/01",
+        "sbtime": "21:30",
+        "slati": "28n06",
+        "slong": "15w24",
+        "sroddenrating": "AA",
+        "stimetype": "standard time",
+        "stmerid": "h0e",
+        "swikiname": "Javier_Bardem",
+        "t_unknown": null,
+        "title": "Bardem, Javier"
+      },
+      "partner_name": "Bardem, Javier",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 61915,
+      "event_ids": [
+        808
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        42477
+      ],
+      "matched": {
+        "BirthCountry": "France",
+        "DatamainID": "61915",
+        "Place": "Ch\u00e2teauroux",
+        "TmZnAbbr": "MET",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1978/10/31",
+        "sbtime": "18:00",
+        "slati": "46n49",
+        "slong": "1e42",
+        "sroddenrating": "AA",
+        "stimetype": "standard time",
+        "stmerid": "h1e",
+        "swikiname": null,
+        "t_unknown": null,
+        "title": "Balitran, C\u00e9line"
+      },
+      "partner_name": "Balitran, C\u00e9line",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 62033,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        66032
+      ],
+      "matched": {
+        "BirthCountry": "Portugal",
+        "DatamainID": "62033",
+        "Place": "Queluz",
+        "TmZnAbbr": "LMT",
+        "ccalendar": "g",
+        "ctimetype": "l",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1800/04/22",
+        "sbtime": "01:45",
+        "slati": "38n45",
+        "slong": "9w15",
+        "sroddenrating": "B",
+        "stimetype": "local mean time",
+        "stmerid": "m9w15",
+        "swikiname": "Infanta_Maria_Francisca_of_Portugal",
+        "t_unknown": null,
+        "title": "Maria Francisca, Countess of Molina"
+      },
+      "partner_name": "Maria Francisca, Countess of Molina",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 67753,
+      "event_ids": [
+        809,
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        76816
+      ],
+      "matched": {
+        "BirthCountry": "California",
+        "DatamainID": "67753",
+        "Place": "Salinas",
+        "TmZnAbbr": "PST",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1972/11/16",
+        "sbtime": "04:22",
+        "slati": "36n41",
+        "slong": "121w39",
+        "sroddenrating": "A",
+        "stimetype": "standard time",
+        "stmerid": "h8w",
+        "swikiname": "Brandi_Glanville",
+        "t_unknown": null,
+        "title": "Glanville, Brandi"
+      },
+      "partner_name": "Glanville, Brandi",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 68650,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        15074
+      ],
+      "matched": {
+        "BirthCountry": "France",
+        "DatamainID": "68650",
+        "Place": "Paris Arrondissement 16",
+        "TmZnAbbr": "MET",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1981/11/16",
+        "sbtime": "18:50",
+        "slati": "48n5146",
+        "slong": "2e1634",
+        "sroddenrating": "AA",
+        "stimetype": "standard time",
+        "stmerid": "h1e",
+        "swikiname": "Dimitri_Rassam",
+        "t_unknown": null,
+        "title": "Rassam, Dimitri"
+      },
+      "partner_name": "Rassam, Dimitri",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 69473,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        104188
+      ],
+      "matched": {
+        "BirthCountry": "Costa Rica",
+        "DatamainID": "69473",
+        "Place": "San Ram\u00f3n",
+        "TmZnAbbr": "SJMT",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1907/03/10",
+        "sbtime": "15:00",
+        "slati": "10n06",
+        "slong": "84w28",
+        "sroddenrating": "AA",
+        "stimetype": "standard time",
+        "stmerid": "m84w0315",
+        "swikiname": "Francisco_Orlich_Bolmarcich",
+        "t_unknown": null,
+        "title": "Orlich Bolmarcich, Francisco Jose"
+      },
+      "partner_name": "Orlich Bolmarcich, Francisco Jose",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 74737,
+      "event_ids": [
+        810,
+        811
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        9479
+      ],
+      "matched": {
+        "BirthCountry": "Italy",
+        "DatamainID": "74737",
+        "Place": "Ravenna",
+        "TmZnAbbr": "MET",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1954/12/14",
+        "sbtime": "14:15",
+        "slati": "44n25",
+        "slong": "12e12",
+        "sroddenrating": "AA",
+        "stimetype": "standard time",
+        "stmerid": "h1e",
+        "swikiname": "Dora_Moroni",
+        "t_unknown": null,
+        "title": "Moroni, Dora"
+      },
+      "partner_name": "Moroni, Dora",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 75047,
+      "event_ids": [
+        808
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        56704
+      ],
+      "matched": {
+        "BirthCountry": "Australia",
+        "DatamainID": "75047",
+        "Place": "Gold Coast",
+        "TmZnAbbr": "AEST",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1997/01/11",
+        "sbtime": "07:17",
+        "slati": "27s58",
+        "slong": "153e25",
+        "sroddenrating": "B",
+        "stimetype": "standard time",
+        "stmerid": "h10e",
+        "swikiname": "Cody_Simpson",
+        "t_unknown": null,
+        "title": "Simpson, Cody"
+      },
+      "partner_name": "Simpson, Cody",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 78745,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        60291
+      ],
+      "matched": {
+        "BirthCountry": "Netherlands",
+        "DatamainID": "78745",
+        "Place": "Den Haag",
+        "TmZnAbbr": "LST",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1903/10/04",
+        "sbtime": "03:30",
+        "slati": "52n05",
+        "slong": "4e19",
+        "sroddenrating": "AA",
+        "stimetype": "standard time",
+        "stmerid": "m4e53",
+        "swikiname": "wikipedia_nl:Joekie_Broedelet",
+        "t_unknown": null,
+        "title": "Broedelet, Joekie"
+      },
+      "partner_name": "Broedelet, Joekie",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 79284,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        79672
+      ],
+      "matched": {
+        "BirthCountry": "Germany",
+        "DatamainID": "79284",
+        "Place": "Schwerin",
+        "TmZnAbbr": "LMT",
+        "ccalendar": "g",
+        "ctimetype": "l",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1879/12/24",
+        "sbtime": "00:30",
+        "slati": "53n38",
+        "slong": "11e25",
+        "sroddenrating": "A",
+        "stimetype": "local mean time",
+        "stmerid": "m11e25",
+        "swikiname": "Alexandrine_of_Mecklenburg-Schwerin",
+        "t_unknown": null,
+        "title": "Alexandrine, Queen of Denmark"
+      },
+      "partner_name": "Alexandrine, Queen of Denmark",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 79358,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        84214
+      ],
+      "matched": {
+        "BirthCountry": "Germany",
+        "DatamainID": "79358",
+        "Place": "Weimar (Th\u00fcringen)",
+        "TmZnAbbr": "LMT",
+        "ccalendar": "g",
+        "ctimetype": "l",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1876/06/10",
+        "sbtime": "05:30",
+        "slati": "50n59",
+        "slong": "11e19",
+        "sroddenrating": "A",
+        "stimetype": "local mean time",
+        "stmerid": "m11e19",
+        "swikiname": "William_Ernest,_Grand_Duke_of_Saxe-Weimar-Eisenach",
+        "t_unknown": null,
+        "title": "Wilhelm Ernst, Grand Duke of Saxe-Weimar-Eisenach"
+      },
+      "partner_name": "Wilhelm Ernst, Grand Duke of Saxe-Weimar-Eisenach",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 79377,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        79664
+      ],
+      "matched": {
+        "BirthCountry": "Germany",
+        "DatamainID": "79377",
+        "Place": "Meiningen",
+        "TmZnAbbr": "LMT",
+        "ccalendar": "g",
+        "ctimetype": "l",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1826/04/02",
+        "sbtime": "22:00",
+        "slati": "50n34",
+        "slong": "10e25",
+        "sroddenrating": "A",
+        "stimetype": "local mean time",
+        "stmerid": "m10e25",
+        "swikiname": "Georg_II,_Duke_of_Saxe-Meiningen",
+        "t_unknown": null,
+        "title": "Georg II, Duke of Saxe-Meiningen"
+      },
+      "partner_name": "Georg II, Duke of Saxe-Meiningen",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 79562,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        93929
+      ],
+      "matched": {
+        "BirthCountry": "France",
+        "DatamainID": "79562",
+        "Place": "Paris Arrondissement 5",
+        "TmZnAbbr": "PMT",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1901/03/05",
+        "sbtime": "04:00",
+        "slati": "48n5046",
+        "slong": "2e2041",
+        "sroddenrating": "AA",
+        "stimetype": "standard time",
+        "stmerid": "m2e2015",
+        "swikiname": "wikipedia_fr:Max_de_Rieux",
+        "t_unknown": null,
+        "title": "De Rieux, Max"
+      },
+      "partner_name": "de Rieux, Max",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 80050,
+      "event_ids": [
+        810,
+        811
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        71621
+      ],
+      "matched": {
+        "BirthCountry": "France",
+        "DatamainID": "80050",
+        "Place": "Marseille",
+        "TmZnAbbr": "LMT",
+        "ccalendar": "g",
+        "ctimetype": "l",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1876/08/29",
+        "sbtime": "12:00",
+        "slati": "43n18",
+        "slong": "5e24",
+        "sroddenrating": "AA",
+        "stimetype": "local mean time",
+        "stmerid": "m5e24",
+        "swikiname": "Lucien_Muratore",
+        "t_unknown": null,
+        "title": "Muratore, Lucien"
+      },
+      "partner_name": "Muratore, Lucien",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 80137,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        79673
+      ],
+      "matched": {
+        "BirthCountry": "Germany",
+        "DatamainID": "80137",
+        "Place": "Weimar (Th\u00fcringen)",
+        "TmZnAbbr": "LMT",
+        "ccalendar": "g",
+        "ctimetype": "l",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1808/02/03",
+        "sbtime": "11:00",
+        "slati": "50n59",
+        "slong": "11e19",
+        "sroddenrating": "A",
+        "stimetype": "local mean time",
+        "stmerid": "m11e19",
+        "swikiname": "Princess_Marie_of_Saxe-Weimar-Eisenach_(1808\u20131877)",
+        "t_unknown": null,
+        "title": "Marie, Princess of Saxe-Weimar-Eisenach (1808)"
+      },
+      "partner_name": "Marie, Princess of Saxe-Weimar-Eisenach (1808)",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 80186,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        50795
+      ],
+      "matched": {
+        "BirthCountry": "France",
+        "DatamainID": "80186",
+        "Place": "Le Cheylard",
+        "TmZnAbbr": "GDT",
+        "ccalendar": "g",
+        "ctimetype": "d",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1937/07/24",
+        "sbtime": "09:25",
+        "slati": "44n54",
+        "slong": "4e25",
+        "sroddenrating": "AA",
+        "stimetype": "daylight saving time",
+        "stmerid": "h1e",
+        "swikiname": "Daniele_Lebrun",
+        "t_unknown": null,
+        "title": "Lebrun, Dani\u00e8le"
+      },
+      "partner_name": "Lebrun, Dani\u00e8le",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 80315,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        3307
+      ],
+      "matched": {
+        "BirthCountry": "France",
+        "DatamainID": "80315",
+        "Place": "Bordeaux",
+        "TmZnAbbr": "LST",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1899/02/21",
+        "sbtime": "10:00",
+        "slati": "44n50",
+        "slong": "0w34",
+        "sroddenrating": "AA",
+        "stimetype": "standard time",
+        "stmerid": "m2e2015",
+        "swikiname": "Yvonne_Vall\u00e9e",
+        "t_unknown": null,
+        "title": "Vall\u00e9e, Yvonne"
+      },
+      "partner_name": "Vall\u00e9e, Yvonne",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 81261,
+      "event_ids": [
+        810,
+        811
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        54921
+      ],
+      "matched": {
+        "BirthCountry": "Germany",
+        "DatamainID": "81261",
+        "Place": "Algermissen",
+        "TmZnAbbr": "MET",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1976/07/15",
+        "sbtime": "12:00",
+        "slati": "52n15",
+        "slong": "9e58",
+        "sroddenrating": "C",
+        "stimetype": "standard time",
+        "stmerid": "h1e",
+        "swikiname": "Diane_Kruger",
+        "t_unknown": null,
+        "title": "Kr\u00fcger, Diane"
+      },
+      "partner_name": "Kr\u00fcger, Diane",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 84562,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        84991
+      ],
+      "matched": {
+        "BirthCountry": "Illinois",
+        "DatamainID": "84562",
+        "Place": "Gibson City",
+        "TmZnAbbr": "CST",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1957/06/23",
+        "sbtime": null,
+        "slati": "40n28",
+        "slong": "88w23",
+        "sroddenrating": "X",
+        "stimetype": "standard time",
+        "stmerid": "h6w",
+        "swikiname": "Frances_McDormand",
+        "t_unknown": "1",
+        "title": "McDormand, Frances"
+      },
+      "partner_name": "McDormand, Frances",
+      "status": "time_unknown"
+    },
+    {
+      "adb_id": 84608,
+      "event_ids": [
+        808,
+        809,
+        810,
+        811
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        56704
+      ],
+      "matched": {
+        "BirthCountry": "Australia",
+        "DatamainID": "84608",
+        "Place": "Melbourne",
+        "TmZnAbbr": "AEDT",
+        "ccalendar": "g",
+        "ctimetype": "d",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1990/01/13",
+        "sbtime": null,
+        "slati": "37s49",
+        "slong": "144e58",
+        "sroddenrating": "X",
+        "stimetype": "daylight saving time",
+        "stmerid": "h11e",
+        "swikiname": "Liam_Hemsworth",
+        "t_unknown": "1",
+        "title": "Hemsworth, Liam"
+      },
+      "partner_name": "Hemsworth, Liam",
+      "status": "time_unknown"
+    },
+    {
+      "adb_id": 85595,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        74795
+      ],
+      "matched": {
+        "BirthCountry": "Texas",
+        "DatamainID": "85595",
+        "Place": "Dallas",
+        "TmZnAbbr": "CDT",
+        "ccalendar": "g",
+        "ctimetype": "d",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1992/09/16",
+        "sbtime": "03:39",
+        "slati": "32n47",
+        "slong": "96w48",
+        "sroddenrating": "C",
+        "stimetype": "daylight saving time",
+        "stmerid": "h5w",
+        "swikiname": "Nick_Jonas",
+        "t_unknown": null,
+        "title": "Jonas, Nick"
+      },
+      "partner_name": "Jonas, Nick",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 88705,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        96170
+      ],
+      "matched": {
+        "BirthCountry": "California",
+        "DatamainID": "88705",
+        "Place": "Los Angeles Cedars of Lebanon",
+        "TmZnAbbr": "PST",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1957/10/21",
+        "sbtime": "14:53",
+        "slati": "34n0546",
+        "slong": "118w1740",
+        "sroddenrating": "AA",
+        "stimetype": "standard time",
+        "stmerid": "h8w",
+        "swikiname": "Steve_Lukather",
+        "t_unknown": null,
+        "title": "Lukather, Steve"
+      },
+      "partner_name": "Lukather, Steve",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 90851,
+      "event_ids": [
+        810,
+        811
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        90852
+      ],
+      "matched": {
+        "BirthCountry": "France",
+        "DatamainID": "90851",
+        "Place": "Hennebont",
+        "TmZnAbbr": "PMT",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1895/10/24",
+        "sbtime": "02:00",
+        "slati": "47n48",
+        "slong": "3w17",
+        "sroddenrating": "AA",
+        "stimetype": "standard time",
+        "stmerid": "m2e2015",
+        "swikiname": "Prince_Pierre,_Duke_of_Valentinois",
+        "t_unknown": null,
+        "title": "Pierre, Duke of Valentinois"
+      },
+      "partner_name": "Pierre, Duke of Valentinois",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 91158,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        24336
+      ],
+      "matched": {
+        "BirthCountry": "Italy",
+        "DatamainID": "91158",
+        "Place": "Turin",
+        "TmZnAbbr": "LMT",
+        "ccalendar": "g",
+        "ctimetype": "l",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1587/03/09",
+        "sbtime": "12:15",
+        "slati": "45n03",
+        "slong": "7e40",
+        "sroddenrating": "C",
+        "stimetype": "local mean time",
+        "stmerid": "m7e40",
+        "swikiname": "Victor_Amadeus_I,_Duke_of_Savoy",
+        "t_unknown": null,
+        "title": "Vittorio Amedeo I, Duke of Savoy"
+      },
+      "partner_name": "Vittorio Amedeo I, Duke of Savoy",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 96050,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        2261
+      ],
+      "matched": {
+        "BirthCountry": "France",
+        "DatamainID": "96050",
+        "Place": "Saligney",
+        "TmZnAbbr": "LMT",
+        "ccalendar": "g",
+        "ctimetype": "l",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1850/04/22",
+        "sbtime": "23:00",
+        "slati": "47n1315",
+        "slong": "5e3827",
+        "sroddenrating": "AA",
+        "stimetype": "local mean time",
+        "stmerid": "m5e3827",
+        "swikiname": "Marie-Hortense_Fiquet",
+        "t_unknown": null,
+        "title": "Fiquet, Marie-Hortense"
+      },
+      "partner_name": "Fiquet, Marie-Hortense",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 97080,
+      "event_ids": [
+        808
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        97079
+      ],
+      "matched": {
+        "BirthCountry": "Oregon",
+        "DatamainID": "97080",
+        "Place": "Portland",
+        "TmZnAbbr": "PST",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1917/05/14",
+        "sbtime": "18:00",
+        "slati": "45n31",
+        "slong": "122w41",
+        "sroddenrating": "AA",
+        "stimetype": "standard time",
+        "stmerid": "h8w",
+        "swikiname": "Lou_Harrison",
+        "t_unknown": null,
+        "title": "Harrison, Lou"
+      },
+      "partner_name": "Harrison, Lou",
+      "status": "exact_time"
+    },
+    {
+      "adb_id": 97283,
+      "event_ids": [
+        810
+      ],
+      "first_search_hit_if_unmatched": null,
+      "focal_ids": [
+        97170
+      ],
+      "matched": {
+        "BirthCountry": "Arizona",
+        "DatamainID": "97283",
+        "Place": "Phoenix",
+        "TmZnAbbr": "MST",
+        "ccalendar": "g",
+        "ctimetype": "s",
+        "ctzauto": "a",
+        "jd_ut": null,
+        "sbdate": "1935/06/21",
+        "sbtime": "19:35",
+        "slati": "33n27",
+        "slong": "112w04",
+        "sroddenrating": "AA",
+        "stimetype": "standard time",
+        "stmerid": "h7w",
+        "swikiname": null,
+        "t_unknown": null,
+        "title": "Divelbess, Diane"
+      },
+      "partner_name": "Divelbess, Diane",
+      "status": "exact_time"
+    }
+  ],
   "source": "https://www.astro.com/adbexport/c_sample.xml",
-  "status_counts": {}
+  "status_counts": {
+    "exact_time": 80,
+    "high_rr_exact_time": 65,
+    "id_matched": 83,
+    "time_unknown": 3
+  }
 }
