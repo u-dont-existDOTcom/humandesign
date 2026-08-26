@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import fcntl
 import json
 import os
 import re
@@ -29,11 +30,6 @@ from .models import (
     RevealReport,
     SessionRecord,
 )
-
-try:
-    import fcntl
-except ImportError:  # pragma: no cover - supported deployment target is POSIX
-    fcntl = None  # type: ignore[assignment]
 
 
 _SESSION_RE = re.compile(r"^HD-[A-F0-9]{32}$")
@@ -109,8 +105,7 @@ class ParticipantSessionStore:
         lock_path = directory / ".evidence.lock"
         lock_path.touch(exist_ok=True)
         with lock_path.open("rb") as lock_handle:
-            if fcntl is not None:
-                fcntl.flock(lock_handle.fileno(), fcntl.LOCK_EX)
+            fcntl.flock(lock_handle.fileno(), fcntl.LOCK_EX)
             try:
                 existing = self._read_event_envelopes(event_path)
                 previous = existing[-1]["event_sha256"] if existing else None
@@ -122,15 +117,12 @@ class ParticipantSessionStore:
                 }
                 envelope = {**body, "event_sha256": sha256_bytes(canonical_json_bytes(body))}
                 line = canonical_json_bytes(envelope) + b"\n"
-                descriptor = os.open(event_path, os.O_WRONLY | os.O_CREAT | os.O_APPEND, 0o600)
-                try:
-                    os.write(descriptor, line)
-                    os.fsync(descriptor)
-                finally:
-                    os.close(descriptor)
+                with event_path.open("ab") as handle:
+                    handle.write(line)
+                    handle.flush()
+                    os.fsync(handle.fileno())
             finally:
-                if fcntl is not None:
-                    fcntl.flock(lock_handle.fileno(), fcntl.LOCK_UN)
+                fcntl.flock(lock_handle.fileno(), fcntl.LOCK_UN)
 
     def load_evidence(self, session_id: str) -> tuple[EvidenceRecord, ...]:
         self.load_session(session_id)
@@ -184,17 +176,13 @@ class ParticipantSessionStore:
         self._write_artifact(value.session_id, "confirmatory.lock.json", value)
 
     def load_confirmatory_lock(self, session_id: str) -> ConfirmatoryLock | None:
-        return self._load_optional(
-            session_id, "confirmatory.lock.json", ConfirmatoryLock
-        )
+        return self._load_optional(session_id, "confirmatory.lock.json", ConfirmatoryLock)
 
     def write_confirmatory_ranking(self, value: RankingSnapshot) -> None:
         self._write_artifact(value.session_id, "confirmatory.ranking.json", value)
 
     def load_confirmatory_ranking(self, session_id: str) -> RankingSnapshot | None:
-        return self._load_optional(
-            session_id, "confirmatory.ranking.json", RankingSnapshot
-        )
+        return self._load_optional(session_id, "confirmatory.ranking.json", RankingSnapshot)
 
     def write_reveal(self, value: RevealReport) -> None:
         self._write_artifact(value.session_id, "reveal.json", value)
@@ -206,9 +194,7 @@ class ParticipantSessionStore:
         self._write_artifact(value.session_id, "exploratory.ranking.json", value)
 
     def load_exploratory(self, session_id: str) -> ExploratoryRankingReport | None:
-        return self._load_optional(
-            session_id, "exploratory.ranking.json", ExploratoryRankingReport
-        )
+        return self._load_optional(session_id, "exploratory.ranking.json", ExploratoryRankingReport)
 
     def write_final_report(self, value: FinalParticipantReport) -> None:
         self._write_artifact(value.session_id, "final-report.json", value)
