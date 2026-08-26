@@ -30,10 +30,12 @@ jobs:
       - name: Type check
         run: mypy src/hdmatch
 
-  castille-audit-once:
-    if: ${{ github.event_name == 'push' && contains(github.event.head_commit.message, 'Castille audit via CI') }}
+  castille-synastry-once:
+    if: ${{ github.event_name == 'push' && contains(github.event.head_commit.message, 'Run Castille synastry via CI') }}
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 180
     steps:
       - name: Check out repository
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
@@ -41,5 +43,17 @@ jobs:
         uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
         with:
           python-version: "3.12"
-      - name: Run corrected Castille data audit once
-        run: python scripts/castille_a00_pair_audit.py
+      - name: Install large-N test dependencies
+        run: python -m pip install 'pyswisseph>=2.10.3.2,<3' numpy scikit-learn
+      - name: Fetch pinned Swiss ephemeris files
+        run: python scripts/fetch_swisseph_ephemeris.py
+      - name: Run frozen Castille static synastry V1
+        run: python scripts/castille_static_synastry_v1.py
+      - name: Commit aggregate result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reference/research/castille_static_synastry_results_v1.json
+          git commit -m "Record Castille static synastry V1 result"
+          git pull --rebase origin main
+          git push
