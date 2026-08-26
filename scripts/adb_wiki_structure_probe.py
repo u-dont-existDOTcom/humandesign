@@ -39,6 +39,37 @@ def fetch_wikitext(title):
     return (rev.get("slots", {}).get("main", {}) or {}).get("content") or rev.get("content") or rev.get("*")
 
 
+def template_blocks(text, template_name):
+    lines = (text or "").splitlines()
+    out = []
+    i = 0
+    start_rx = re.compile(r"^\{\{\s*" + re.escape(template_name) + r"\s*$", re.I)
+    while i < len(lines):
+        if start_rx.match(lines[i].strip()):
+            block = [lines[i]]
+            i += 1
+            depth = 1
+            while i < len(lines):
+                block.append(lines[i])
+                depth += lines[i].count("{{") - lines[i].count("}}")
+                if depth <= 0:
+                    break
+                i += 1
+            out.append("\n".join(block))
+        i += 1
+    return out
+
+
+def fields(block):
+    d = {}
+    for line in block.splitlines()[1:]:
+        s = line.strip()
+        if s.startswith("|") and "=" in s:
+            k, v = s[1:].split("=", 1)
+            d[k.strip()] = v.strip()
+    return d
+
+
 def compact_probe(text):
     lines = (text or "").splitlines()
     headings = []
@@ -50,10 +81,19 @@ def compact_probe(text):
         if re.search(r"relationship|events|spouse|divorce|marriage", s, re.I):
             lo = max(0, i - 1); hi = min(len(lines), i + 2)
             hits.append({"line": i + 1, "context": lines[lo:hi]})
+
+    rels = [fields(x) for x in template_blocks(text, "ASTRODATABANK_rel")]
+    evns = [fields(x) for x in template_blocks(text, "ASTRODATABANK_evn")]
+    spouse_samples = [x for x in rels if x.get("CodeID") in {"843", "858", "859"}][:5]
+    relationship_event_samples = [x for x in evns if x.get("CodeID") in {"807", "808", "809", "810", "811"}][:8]
     return {
         "line_count": len(lines),
         "headings": headings[:50],
         "keyword_contexts": hits[:80],
+        "relationship_template_field_names": sorted({k for x in rels for k in x}),
+        "event_template_field_names": sorted({k for x in evns for k in x}),
+        "romantic_relationship_template_samples": spouse_samples,
+        "relationship_event_template_samples": relationship_event_samples,
     }
 
 
