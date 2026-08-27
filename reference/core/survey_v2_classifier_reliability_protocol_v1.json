@@ -1,0 +1,51 @@
+{
+  "schema_version": "survey-v2-classifier-reliability-protocol-v1",
+  "status": "candidate_blind_prevalidation",
+  "confirmatory_scoring_policy": "frozen; reliability evaluation is diagnostic and cannot change current-cohort scores, mappings, thresholds, stopping, or headline inclusion",
+  "arms": [
+    {
+      "id": "same_model_repeat",
+      "procedure": "Classify the identical sealed evidence at least twice in isolated contexts with the same model, prompt hash, frozen settings, and no prior output visible."
+    },
+    {
+      "id": "cross_model",
+      "procedure": "Give identical sealed evidence and the identical complete archetype registry to preregistered model versions; preserve every output without adjudicating toward a chart."
+    },
+    {
+      "id": "blinded_human",
+      "procedure": "At least two trained raters independently classify randomized pseudonymous evidence using the same frozen codebook; raters see no birth data, chart prediction, candidate rank, model output, or reveal status."
+    }
+  ],
+  "required_metrics": [
+    "status agreement",
+    "exact status plus primary-label agreement",
+    "Fleiss kappa for equal-size multi-rater panels",
+    "agreement stratified by domain, rater arm, confidence band, and classification status",
+    "Other, mixed, insufficient-evidence, and unclassifiable rates"
+  ],
+  "required_record_fields": [
+    "evidence_id",
+    "domain_id",
+    "replicate_id",
+    "rater_id",
+    "rater_kind",
+    "classifier_version",
+    "prompt_hash",
+    "evidence_hash",
+    "status",
+    "primary_archetype",
+    "secondary_archetypes",
+    "confidence",
+    "evidence_spans",
+    "counterevidence_spans",
+    "context_notes",
+    "blinded_to_candidate",
+    "confirmatory_score_frozen",
+    "post_reveal"
+  ],
+  "exclusions": [
+    "Post-reveal classifications and adjudications are excluded from confirmatory agreement and headline science.",
+    "No reliability result may be used to reinterpret a disagreement as support in the evaluated cohort.",
+    "Any scoring or classifier revision creates a new version evaluated only on later untouched participants."
+  ]
+}
