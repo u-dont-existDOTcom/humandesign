@@ -8,13 +8,13 @@ from enum import StrEnum
 from pathlib import Path
 from typing import Literal
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 
 from hdmatch.model.rich_predicate import RichChartPredicate
 
 
 class _FrozenModel(BaseModel):
-    model_config = ConfigDict(extra="forbid", frozen=True)
+    model_config = ConfigDict(extra="forbid", frozen=True, populate_by_name=True)
 
 
 class EvidenceClass(StrEnum):
@@ -37,7 +37,7 @@ class ConfirmatoryStatus(StrEnum):
 
 
 class CandidateSource(_FrozenModel):
-    class_: EvidenceClass
+    class_: EvidenceClass = Field(alias="class")
     publisher: str
     url: str
     source_claim_paraphrase: str
@@ -75,9 +75,4 @@ class EvidenceRegistry(_FrozenModel):
 def load_evidence_registry(path: str | Path) -> EvidenceRegistry:
     source = Path(path)
     payload = json.loads(source.read_text(encoding="utf-8"))
-    # JSON uses the natural key "class"; the model uses class_ because class is reserved.
-    for candidate in payload.get("candidates", []):
-        source_payload = candidate.get("source")
-        if isinstance(source_payload, dict) and "class" in source_payload:
-            source_payload["class_"] = source_payload.pop("class")
     return EvidenceRegistry.model_validate(payload)
