@@ -7,11 +7,8 @@ import os
 from fastapi import FastAPI
 
 from hdmatch.model import load_mapping_library
-from hdmatch.participant import (
-    AstroHDParticipantBackend,
-    ParticipantSessionService,
-    ParticipantSessionStore,
-)
+from hdmatch.participant import ParticipantSessionService, ParticipantSessionStore
+from hdmatch.participant.century_backend import CenturyCapableParticipantBackend
 
 from .app import ApiDependencies, create_app
 
@@ -36,6 +33,7 @@ def create_participant_app_from_env() -> FastAPI:
     Optional:
 
     - ``HDMATCH_CANDIDATE_CACHE``: persistent exact month-universe cache directory
+    - ``HDMATCH_CENTURY_CACHE``: verified exact century-wide candidate cache directory
     - ``HDMATCH_CODE_COMMIT``: deployed source revision for prediction provenance
     """
 
@@ -44,13 +42,15 @@ def create_participant_app_from_env() -> FastAPI:
     question_bank_path = _required_env("HDMATCH_QUESTION_BANK_PATH")
     session_store = _required_env("HDMATCH_PARTICIPANT_STORE")
     candidate_cache = os.environ.get("HDMATCH_CANDIDATE_CACHE") or None
+    century_cache = os.environ.get("HDMATCH_CENTURY_CACHE") or None
     code_commit = os.environ.get("HDMATCH_CODE_COMMIT", "unknown")
 
-    backend = AstroHDParticipantBackend(
+    backend = CenturyCapableParticipantBackend(
         ephemeris_path=ephemeris_path,
         mapping_path=mapping_path,
         question_bank_path=question_bank_path,
         candidate_cache_dir=candidate_cache,
+        century_cache_dir=century_cache,
         code_commit=code_commit,
     )
     sessions = ParticipantSessionService(
