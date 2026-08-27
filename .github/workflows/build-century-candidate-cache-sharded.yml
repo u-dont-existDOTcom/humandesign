@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   build:
-    if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && contains(github.event.head_commit.message, 'Build sharded exact century cache via CI')) }}
+    if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && contains(github.event.head_commit.message, 'Build structural century cache via CI')) }}
     strategy:
       fail-fast: false
       max-parallel: 10
@@ -62,14 +62,16 @@ jobs:
           python -m pip install --no-build-isolation --no-deps -e .
       - name: Fetch pinned Swiss ephemeris files
         run: python scripts/fetch_swisseph_ephemeris.py
-      - name: Build exact decade segment
+      - name: Build structural decade segment
         run: |
-          python scripts/build_century_candidate_cache.py \
+          python scripts/build_century_candidate_cache_fast.py \
             --ephemeris data/ephemeris \
             --output 'century-shard-${{ matrix.segment.id }}' \
             --start '${{ matrix.segment.start }}' \
             --end-exclusive '${{ matrix.segment.end }}' \
             --shard-years 100 \
+            --root-tolerance-seconds 0.01 \
+            --verify-every 1000 \
             --generation-commit '${{ github.sha }}'
       - name: Upload verified segment
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
