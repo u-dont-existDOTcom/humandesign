@@ -10,6 +10,7 @@ from hdmatch.chart.astronomy_reference import (
     AstronomyProvenance,
     AstronomyReferenceError,
     AstronomyState,
+    IauConstellationProjection,
     ObserverOrigin,
     ProjectionKind,
     ReferenceFrame,
@@ -54,7 +55,7 @@ def test_projection_registry_keeps_coordinate_hypotheses_distinct() -> None:
     assert {spec.kind for spec in PROJECTION_SPECS} == set(ProjectionKind)
     assert projection_spec(ProjectionKind.TROPICAL_EQUINOX_OF_DATE).status == "implemented"
     assert projection_spec(ProjectionKind.ASTROHD_GATE).status == "implemented"
-    assert projection_spec(ProjectionKind.IAU_CONSTELLATION).status == "registered_fail_closed"
+    assert projection_spec(ProjectionKind.IAU_CONSTELLATION).status == "implemented"
 
 
 def test_sidereal_projection_requires_explicit_ayanamsa() -> None:
@@ -71,9 +72,28 @@ def test_astrohd_gate_projection_uses_frozen_mandala_mapper() -> None:
     assert position.longitude == 309.25
 
 
-def test_iau_constellation_fails_closed_without_boundary_dataset() -> None:
-    with pytest.raises(UnsupportedAstronomyProjection, match="boundary dataset"):
+def test_iau_constellation_still_fails_closed_without_explicit_resolver() -> None:
+    with pytest.raises(UnsupportedAstronomyProjection, match="explicit version-pinned"):
         iau_constellation(_state())
+
+
+class _FakeIauResolver:
+    def resolve(self, state: AstronomyState) -> IauConstellationProjection:
+        assert state.body == "Sun"
+        return IauConstellationProjection(
+            name="Capricornus",
+            abbreviation="Cap",
+            resolver="test-resolver",
+            resolver_version="1.0",
+        )
+
+
+def test_iau_constellation_uses_explicit_resolver_and_preserves_provenance() -> None:
+    result = iau_constellation(_state(), resolver=_FakeIauResolver())
+    assert result.name == "Capricornus"
+    assert result.abbreviation == "Cap"
+    assert result.resolver == "test-resolver"
+    assert result.boundary_reference == "IAU-88-Delporte-B1875-Roman1987"
 
 
 def test_reference_state_requires_timezone_aware_utc_input() -> None:
