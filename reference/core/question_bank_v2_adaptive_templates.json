@@ -1,0 +1,43 @@
+{
+  "schema_version": "adaptive-question-bank-v2-template-v1",
+  "status": "candidate_bank_to_freeze_before_new_participants",
+  "purpose": "Deterministically generate candidate-blind participant questions from frozen gate/channel catalogs. No participant answer may create or rewrite a construct.",
+  "rules": [
+    "Never show Human Design vocabulary, gate numbers, channel numbers, planets, chart sides, or the predicted pole before reveal.",
+    "Ask repeated patterns, not isolated memorable events.",
+    "Always preserve Other / context-dependent free text and encourage it whenever fixed choices are imperfect.",
+    "Record childhood pattern, current pattern, contexts, exceptions, and counterexamples separately.",
+    "For less-conscious/body-side predictions, rely more on repeated behavior and independent observations from close others than on self-labels.",
+    "Do not treat lack of a chart predicate as a prediction that the behavior is absent; non-carrier states are neutral for that item.",
+    "A clear non-endorsement may contradict only states that positively predict the item, subject to measurement reliability.",
+    "Adaptive selection may choose among frozen items by candidate split utility but may not invent new item wording or mappings."
+  ],
+  "item_generation": {
+    "planet_gate_items": {
+      "bodies": ["sun", "earth", "moon", "mercury", "venus", "mars"],
+      "sides": ["personality", "design"],
+      "gates": "1-64 from mapping_v2_gate_catalog.json",
+      "opaque_question_id": "Q2-<first 16 hex of sha256('planet|side|body|gate')>",
+      "predicate": "activation gate at exact side/body equals gate",
+      "positive_prediction": ["strongly", "very_strongly"],
+      "neutral_noncarrier": true
+    },
+    "channel_items": {
+      "channels": "36 entries from mapping_v2_channel_catalog.json",
+      "opaque_question_id": "Q2-<first 16 hex of sha256('channel|channel')>",
+      "predicate": "complete channel present",
+      "positive_prediction": ["strongly", "very_strongly"],
+      "neutral_noncarrier": true
+    }
+  },
+  "adaptive_selection": {
+    "primary_utility": "weighted binary structural split entropy among currently plausible candidate states",
+    "reliability_adjustments": {
+      "personality_planet_gate": 0.80,
+      "design_planet_gate": 0.70,
+      "channel": 0.80
+    },
+    "burden_rule": "Prefer one focused construct at a time; use followups only when needed to resolve context or contradiction.",
+    "scientific_note": "Structural split utility is an engineering diagnostic, not evidence that the construct is true."
+  }
+}
