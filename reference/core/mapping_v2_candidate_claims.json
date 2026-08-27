@@ -1,0 +1,91 @@
+{
+  "schema_version": "mapping-v2-candidate-claims-v1",
+  "status": "hypothesis_registry_not_scoring_library",
+  "epistemic_note": "These entries encode pre-existing Human Design system claims as testable hypotheses. They are not independent empirical validation and must not enter confirmatory scoring without a separately frozen mapping/question version.",
+  "candidates": [
+    {
+      "candidate_id": "moon-gate-53-drive-beginnings",
+      "priority_basis": "Moon activation had high structural discrimination in the century feature-capacity audit; source claim is unusually concrete.",
+      "predicate": {
+        "kind": "activation_gate",
+        "operator": "contains_any",
+        "gates": [53],
+        "side": "any",
+        "bodies": ["moon"]
+      },
+      "source": {
+        "class": "official_hd_primary",
+        "publisher": "Jovian Archive",
+        "url": "https://jovianarchive.com/blogs/chart-interpretations-components/planetary-accents-in-human-design",
+        "source_claim_paraphrase": "The Moon is treated as a source of drive or momentum, and Moon in Gate 53 is given as an example of recurring pressure toward beginnings and new cycles."
+      },
+      "construct": "recurring drive toward beginnings and new cycles",
+      "proposed_observable": "Across childhood and adulthood, a recurring pull to initiate new phases, projects, or cycles, distinguishable from merely enjoying novelty or abandoning tasks.",
+      "question_design_notes": "Ask separately about urge to begin, frequency, persistence across life stages, completion behavior, and contexts. Do not equate incompletion with the predicted construct.",
+      "empirical_status": "no_independent_validation_recorded",
+      "confirmatory_status": "candidate_only"
+    },
+    {
+      "candidate_id": "channel-16-48-repetition-mastery",
+      "priority_basis": "Channels add substantial structural capacity and this official channel example gives a directly operationalizable process claim.",
+      "predicate": {
+        "kind": "channel",
+        "operator": "contains_any",
+        "channels": ["16-48"]
+      },
+      "source": {
+        "class": "official_hd_primary",
+        "publisher": "Jovian Archive",
+        "url": "https://jovianarchive.com/pages/channels-in-human-design-the-life-force",
+        "source_claim_paraphrase": "Channel 16-48 is presented as the Channel of the Wavelength / a design of talent, with mastery developing through repetition and refinement."
+      },
+      "construct": "skill mastery through repetition and refinement",
+      "proposed_observable": "A stable tendency to develop talent by repeating, practicing, and progressively refining skills rather than relying mainly on one-shot insight or spontaneous performance.",
+      "question_design_notes": "Ask for cross-domain pattern, childhood continuity, whether repetition feels intrinsically necessary, and counterexamples. Avoid asking whether the person is 'talented'.",
+      "empirical_status": "no_independent_validation_recorded",
+      "confirmatory_status": "candidate_only"
+    },
+    {
+      "candidate_id": "channel-1-8-individual-expression-contribution",
+      "priority_basis": "Channels add substantial structural capacity and an official source gives a concrete interpersonal-expression theme for 1-8.",
+      "predicate": {
+        "kind": "channel",
+        "operator": "contains_any",
+        "channels": ["1-8"]
+      },
+      "source": {
+        "class": "official_hd_primary",
+        "publisher": "Jovian Archive",
+        "url": "https://jovianarchive.com/blogs/human-design-basics/what-your-definition-says-about-you-in-human-design",
+        "source_claim_paraphrase": "Channel 1-8 is described in terms of creative leadership and influencing or inspiring others through individual self-expression."
+      },
+      "construct": "influence through distinctive individual expression",
+      "proposed_observable": "A recurring pattern of contributing or influencing others by expressing an idiosyncratic personal style or creative direction rather than mainly by directing, persuading, or conforming.",
+      "question_design_notes": "Separate private creativity from social influence; ask whether influence is intentional or a by-product; capture contexts where individual expression is suppressed.",
+      "empirical_status": "no_independent_validation_recorded",
+      "confirmatory_status": "candidate_only"
+    },
+    {
+      "candidate_id": "gate-13-listening-confidences",
+      "priority_basis": "Gate-set predicates have very high structural capacity and the official gate example is behaviorally specific enough to operationalize.",
+      "predicate": {
+        "kind": "activation_gate",
+        "operator": "contains_any",
+        "gates": [13],
+        "side": "any",
+        "bodies": []
+      },
+      "source": {
+        "class": "official_hd_primary",
+        "publisher": "Jovian Archive",
+        "url": "https://jovianarchive.com/pages/gates-and-hexagrams-in-human-design",
+        "source_claim_paraphrase": "Gate 13 is given as an example associated with listening and being entrusted with or holding other people's secrets."
+      },
+      "construct": "being a listener and recipient of confidences",
+      "proposed_observable": "Across relationships and life stages, other people disproportionately disclose personal stories or confidences to the person, and the person tends to occupy a listening/holding role.",
+      "question_design_notes": "Distinguish active curiosity from others spontaneously confiding; ask about childhood, friendship, family, work, and whether the pattern occurs with strangers as well as intimates.",
+      "empirical_status": "no_independent_validation_recorded",
+      "confirmatory_status": "candidate_only"
+    }
+  ]
+}
