@@ -4,6 +4,7 @@ on:
   push:
   workflow_dispatch:
 
+# Version-pinned integration of actual IAU-88/Delporte constellation membership.
 permissions:
   contents: read
 
