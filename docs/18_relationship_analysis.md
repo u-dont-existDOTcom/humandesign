@@ -132,6 +132,19 @@ When one partner's date/location is known but birth time is not:
 
 This is the relationship analogue of the natal exact-state/blinding rule.
 
+## Conflicting birth metadata
+
+When supplied birth metadata contradicts itself — for example, an explicit civil date paired with a weekday that belongs to the adjacent date — do not silently repair the input or choose the variant that produces the most favorable relationship narrative.
+
+1. preserve the explicit fields and identify the contradiction;
+2. choose a primary interpretation only by a declared non-outcome rule, normally treating the explicit numeric date/time as primary over an auxiliary weekday label;
+3. enumerate the smallest plausible alternative set implied by the contradiction;
+4. calculate both natal and relationship mechanics for every plausible interpretation;
+5. report invariant relationship mechanics separately from natal or pair features that change across interpretations;
+6. keep the conflict unresolved until independent birth-record evidence settles it.
+
+This is an uncertainty analysis, not rectification. Observed relationship fit must not be used to choose between contradictory birth records unless a separate blinded rectification protocol was frozen in advance.
+
 ## Privacy / third-party rule
 
 Ra explicitly expressed concern about giving revealing partnership information about a partner who was not present.
