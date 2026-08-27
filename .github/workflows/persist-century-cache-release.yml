@@ -1,0 +1,50 @@
+name: persist-century-cache-release
+
+on:
+  push:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  persist:
+    if: ${{ contains(github.event.head_commit.message, 'Persist century cache via release') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - name: Download verified century artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p century-cache
+          gh run download 33088719809 \
+            --repo "$GITHUB_REPOSITORY" \
+            --name century-candidate-cache-62b0e6a4a1228f071a777f0fc4243dea67b40b59 \
+            --dir century-cache
+          test -f century-cache/manifest.json
+      - name: Package immutable release asset
+        run: |
+          tar -C century-cache -czf century-candidate-cache-structural-v2-1926-2026.tar.gz .
+          sha256sum century-candidate-cache-structural-v2-1926-2026.tar.gz > century-candidate-cache-structural-v2-1926-2026.tar.gz.sha256
+          cp century-cache/manifest.json century-candidate-cache-structural-v2-manifest.json
+      - name: Publish durable GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: century-cache-structural-v2-1926-2026
+          TARGET_SHA: 62b0e6a4a1228f071a777f0fc4243dea67b40b59
+        run: |
+          if ! gh release view "$TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release create "$TAG" \
+              --repo "$GITHUB_REPOSITORY" \
+              --target "$TARGET_SHA" \
+              --title "Verified structural century cache v2 (1926-2026)" \
+              --notes "Durable copy of the verified exact structural century candidate universe generated from Actions run 33088719809. The attached manifest carries the engine fingerprint, exact horizon, row count, hashes, boundary policy, and generation provenance."
+          fi
+          gh release upload "$TAG" \
+            century-candidate-cache-structural-v2-1926-2026.tar.gz \
+            century-candidate-cache-structural-v2-1926-2026.tar.gz.sha256 \
+            century-candidate-cache-structural-v2-manifest.json \
+            --repo "$GITHUB_REPOSITORY" \
+            --clobber
