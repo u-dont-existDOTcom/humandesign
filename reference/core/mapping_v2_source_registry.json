@@ -1,5 +1,5 @@
 {
-  "schema_version": "mapping-v2-source-registry-v1",
+  "schema_version": "mapping-v2-source-registry-v2",
   "status": "source_provenance_not_empirical_validation",
   "sources": [
     {
@@ -14,6 +14,21 @@
         "planet_gate_composition"
       ],
       "note": "Official system source. Establishes planet roles and that the activated gate supplies the thematic subject matter; not independent empirical validation."
+    },
+    {
+      "source_id": "jovian-nodes-2026",
+      "evidence_class": "official_hd_primary",
+      "publisher": "Jovian Archive",
+      "title": "The Nodes of the Moon",
+      "url": "https://jovianarchive.com/blogs/deeper-mechanics-system-theory/the-nodes-of-the-moon",
+      "used_for": [
+        "design_node_environment",
+        "personality_node_perspective",
+        "south_node_earlier_life",
+        "north_node_later_life",
+        "node_gate_composition"
+      ],
+      "note": "Official system source. Keeps Design Nodes as environment and Personality Nodes as perspective, with South-to-North life-stage shift. This layer is explicitly separate from primary natal trait scoring."
     },
     {
       "source_id": "jovian-channels-life-force",
