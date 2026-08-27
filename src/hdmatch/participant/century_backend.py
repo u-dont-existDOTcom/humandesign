@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from collections.abc import Sequence
 from contextvars import ContextVar
+from datetime import datetime
 
 from hdmatch.runtime.century_cache import (
     CenturyCacheVerificationError,
@@ -30,8 +31,23 @@ from .models import (
 class CenturyCapableParticipantBackend(AstroHDParticipantBackend):
     """Extend the exact month backend with an immutable verified century cache."""
 
-    def __init__(self, *, century_cache_dir: str | None = None, **kwargs: object) -> None:
-        super().__init__(**kwargs)  # type: ignore[arg-type]
+    def __init__(
+        self,
+        *,
+        ephemeris_path: str,
+        mapping_path: str,
+        question_bank_path: str,
+        candidate_cache_dir: str | None = None,
+        century_cache_dir: str | None = None,
+        code_commit: str = "unknown",
+    ) -> None:
+        super().__init__(
+            ephemeris_path=ephemeris_path,
+            mapping_path=mapping_path,
+            question_bank_path=question_bank_path,
+            candidate_cache_dir=candidate_cache_dir,
+            code_commit=code_commit,
+        )
         self.century_cache_dir = century_cache_dir
         self._active_scope: ContextVar[RankScope] = ContextVar(
             "hdmatch_participant_rank_scope",
@@ -43,11 +59,22 @@ class CenturyCapableParticipantBackend(AstroHDParticipantBackend):
     def _require_supported_scope(scope: RankScope) -> None:
         """Base guard is replaced; instance-level verification happens before use."""
 
-    def build_prediction_freeze(self, **kwargs: object) -> PredictionFreeze:
-        scope = kwargs.get("ranking_scope")
-        if scope is RankScope.CENTURY_GLOBAL:
+    def build_prediction_freeze(
+        self,
+        *,
+        session_id: str,
+        birth: ResolvedBirth,
+        ranking_scope: RankScope,
+        created_at_utc: datetime,
+    ) -> PredictionFreeze:
+        if ranking_scope is RankScope.CENTURY_GLOBAL:
             self._verify_century_ready()
-        return super().build_prediction_freeze(**kwargs)  # type: ignore[arg-type]
+        return super().build_prediction_freeze(
+            session_id=session_id,
+            birth=birth,
+            ranking_scope=ranking_scope,
+            created_at_utc=created_at_utc,
+        )
 
     def rank(
         self,
