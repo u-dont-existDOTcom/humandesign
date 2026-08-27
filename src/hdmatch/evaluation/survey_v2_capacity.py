@@ -77,15 +77,16 @@ def audit_survey_v2_capacity(
     base_ref_tie = _tie_size(base, ref_index)
     joint_ref_tie = _tie_size(joint, ref_index)
 
-    selected: list[str] = []
-    current = base
+    current: tuple[Hashable, ...] = tuple(base)
     current_metrics = baseline
     steps: list[SurveyV2TargetStep] = []
     remaining = set(TARGET_FEATURES)
     while remaining:
-        choices = []
+        choices: list[
+            tuple[float, str, tuple[Hashable, ...], FingerprintMetrics]
+        ] = []
         for feature in sorted(remaining):
-            candidate = tuple(
+            candidate: tuple[Hashable, ...] = tuple(
                 (current[index], values[feature][index]) for index in range(len(states))
             )
             metrics = summarize_fingerprints(candidate, durations)
@@ -104,7 +105,6 @@ def audit_survey_v2_capacity(
                 reference_1985_tie_size=_tie_size(candidate, ref_index),
             )
         )
-        selected.append(feature)
         remaining.remove(feature)
         current = candidate
         current_metrics = metrics
