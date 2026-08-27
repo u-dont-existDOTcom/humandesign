@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import gzip
+import json
 from collections import defaultdict
 from datetime import UTC, datetime
 from hashlib import sha256
@@ -71,7 +72,7 @@ class CenturyCacheShard(_FrozenModel):
 
 
 class CenturyCacheManifest(_FrozenModel):
-    schema_version: Literal["century-candidate-cache-v1"] = CENTURY_CACHE_SCHEMA_VERSION
+    schema_version: Literal["century-candidate-cache-v1"] = "century-candidate-cache-v1"
     cache_version: str
     feature_vector_schema_version: str
     utc_start: datetime
@@ -284,8 +285,6 @@ def _load_verified_global_states(
 
 
 def _parse_canonical_rows(raw: bytes, filename: str) -> tuple[GlobalCandidateState, ...]:
-    import json
-
     result: list[GlobalCandidateState] = []
     for line_number, line in enumerate(raw.splitlines(), start=1):
         if not line:
