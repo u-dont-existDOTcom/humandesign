@@ -19,7 +19,8 @@ from hdmatch.model.rich_predicate import RichChartPredicate
 
 
 class RichMappingRule(MappingRule):
-    chart_feature_predicate: ChartPredicate | RichChartPredicate | None = None
+    # Pydantic intentionally widens this v2 field while preserving every other v1 rule.
+    chart_feature_predicate: ChartPredicate | RichChartPredicate | None = None  # type: ignore[assignment]
 
     @property
     def anchor_id(self) -> str:
@@ -37,8 +38,9 @@ class RichMappingRule(MappingRule):
 
 
 class RichMappingLibrary(MappingLibrary):
-    schema_version: Literal["mapping-library-v2"] = "mapping-library-v2"
-    model_version: Literal["V4/V3.2-symbolic-v2-rich-structure"] = (
+    # These literals deliberately version the opt-in v2 schema; v1 stays unchanged.
+    schema_version: Literal["mapping-library-v2"] = "mapping-library-v2"  # type: ignore[assignment]
+    model_version: Literal["V4/V3.2-symbolic-v2-rich-structure"] = (  # type: ignore[assignment]
         "V4/V3.2-symbolic-v2-rich-structure"
     )
     mappings: tuple[RichMappingRule, ...] = Field(min_length=1)
