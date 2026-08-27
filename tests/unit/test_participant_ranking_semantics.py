@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from datetime import UTC, datetime, timedelta
-from typing import Any
+from typing import Any, cast
 
 from hdmatch.participant.backend import AstroHDParticipantBackend
 from hdmatch.schemas import (
@@ -120,7 +120,7 @@ def test_scoring_runs_once_for_same_model_visible_signature() -> None:
     )
     model = _CountingModel()
     backend = object.__new__(AstroHDParticipantBackend)
-    setattr(backend, "model", model)
+    cast(Any, backend).model = model
 
     scores = backend._score_states(states, (response,), {"anchor": 0.5})
 
