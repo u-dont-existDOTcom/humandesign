@@ -9,7 +9,7 @@ from __future__ import annotations
 
 import math
 from collections import Counter
-from collections.abc import Hashable, Mapping, Sequence
+from collections.abc import Hashable, Iterable, Mapping, Sequence
 from typing import Any
 
 from pydantic import BaseModel, ConfigDict, Field
@@ -136,7 +136,7 @@ def _labels_for(fingerprints: Sequence[Hashable]) -> tuple[int, ...]:
     return tuple(result)
 
 
-def _entropy_from_counts(counts: Sequence[int], total: int) -> float:
+def _entropy_from_counts(counts: Iterable[int], total: int) -> float:
     return -sum(
         (count / total) * math.log2(count / total)
         for count in counts
