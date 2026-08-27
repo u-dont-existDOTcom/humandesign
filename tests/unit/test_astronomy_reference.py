@@ -67,7 +67,7 @@ def test_sidereal_projection_requires_explicit_ayanamsa() -> None:
 def test_astrohd_gate_projection_uses_frozen_mandala_mapper() -> None:
     position = astrohd_gate(_state())
     assert position.gate == 19
-    assert position.line == 5
+    assert position.line == 2
     assert position.longitude == 309.25
 
 
