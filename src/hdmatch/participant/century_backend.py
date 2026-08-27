@@ -53,6 +53,7 @@ class CenturyCapableParticipantBackend(AstroHDParticipantBackend):
             "hdmatch_participant_rank_scope",
             default=RankScope.KNOWN_BIRTH_MONTH,
         )
+        self._century_verified = False
         self._century_universe_cache: dict[str, tuple[CandidateState, ...]] = {}
 
     @staticmethod
@@ -156,6 +157,8 @@ class CenturyCapableParticipantBackend(AstroHDParticipantBackend):
             raise UnsupportedRankScopeError(
                 "century_global requires HDMATCH_CENTURY_CACHE pointing to a verified exact cache"
             )
+        if self._century_verified:
+            return self.century_cache_dir
         try:
             verify_century_cache(
                 self.century_cache_dir,
@@ -165,4 +168,5 @@ class CenturyCapableParticipantBackend(AstroHDParticipantBackend):
             raise UnsupportedRankScopeError(
                 f"century_global cache verification failed: {exc}"
             ) from exc
+        self._century_verified = True
         return self.century_cache_dir
