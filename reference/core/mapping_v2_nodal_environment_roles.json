@@ -1,0 +1,48 @@
+{
+  "schema_version": "mapping-v2-nodal-environment-roles-v1",
+  "status": "secondary_environment_perspective_hypotheses_not_primary_trait_score",
+  "source_id": "jovian-nodes-2026",
+  "roles": {
+    "design:south_node": {
+      "domain": "environment",
+      "life_stage": "earlier_life",
+      "prompt_template": "Thinking about the recurring environments, people, activities, and situations that formed the background of your earlier life, how often did they repeatedly center on {theme_clause}?",
+      "measurement_note": "Ask for repeated environmental patterns rather than personality self-description."
+    },
+    "design:north_node": {
+      "domain": "environment",
+      "life_stage": "later_life_or_emerging",
+      "prompt_template": "As your adult life has developed, especially toward midlife and beyond if applicable, how often have your recurring environments, people, activities, and situations increasingly centered on {theme_clause}?",
+      "measurement_note": "If the later-life phase is not yet observable, use Not yet observable rather than guessing."
+    },
+    "personality:south_node": {
+      "domain": "perspective",
+      "life_stage": "earlier_life",
+      "prompt_template": "In the earlier part of your life, how often was your attention or way of interpreting what happened repeatedly drawn toward {theme_clause}?",
+      "measurement_note": "Measure recurring perspective or what the person notices, not whether they possess the trait."
+    },
+    "personality:north_node": {
+      "domain": "perspective",
+      "life_stage": "later_life_or_emerging",
+      "prompt_template": "As your adult life has developed, especially toward midlife and beyond if applicable, how often has your way of seeing situations increasingly been drawn toward {theme_clause}?",
+      "measurement_note": "If the later-life phase is not yet observable, use Not yet observable rather than guessing."
+    }
+  },
+  "response_scale": [
+    {"token": "not_at_all", "label": "Not at all"},
+    {"token": "a_little", "label": "A little"},
+    {"token": "moderately", "label": "Moderately / mixed"},
+    {"token": "strongly", "label": "Strongly"},
+    {"token": "very_strongly", "label": "Very strongly"},
+    {"token": "not_yet_observable", "label": "Not yet observable for my life stage"},
+    {"token": "other_context", "label": "Other / context-dependent"},
+    {"token": "unsure", "label": "Unsure"}
+  ],
+  "shared_followups": [
+    "Describe the recurring pattern rather than a single memorable event.",
+    "Which parts were stable across different places or relationships, and which were context-specific?",
+    "Give a representative example and a counterexample.",
+    "If none of the fixed choices captures it accurately, use Other and describe the nuance."
+  ],
+  "scientific_separation_rule": "This layer may be reported as secondary environment/perspective recovery only. It must not be silently merged into the primary natal trait/behavior score."
+}
