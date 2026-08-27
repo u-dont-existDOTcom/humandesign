@@ -27,8 +27,6 @@ class UnsupportedAstronomyProjection(AstronomyReferenceError):
 
 
 class AstronomyModel(BaseModel):
-    """Strict immutable base class for frozen astronomy records."""
-
     model_config = ConfigDict(extra="forbid", frozen=True, allow_inf_nan=False)
 
 
@@ -53,15 +51,11 @@ class ProjectionKind(StrEnum):
 
 
 class EphemerisFileProvenance(AstronomyModel):
-    """One immutable file/kernel identity used to derive the state."""
-
     name: str = Field(min_length=1)
     sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
 
 
 class AstronomyProvenance(AstronomyModel):
-    """Enough metadata to reproduce which astronomical convention was requested."""
-
     provider: str = Field(min_length=1)
     provider_version: str = Field(min_length=1)
     package: str | None = None
@@ -74,8 +68,6 @@ class AstronomyProvenance(AstronomyModel):
 
 
 class AstronomyState(AstronomyModel):
-    """Richer astronomical state from which competing projections can be derived."""
-
     schema_version: Literal["astronomy-reference-state-v1"] = "astronomy-reference-state-v1"
     observed_at_utc: datetime
     julian_day_ut: float
@@ -105,8 +97,6 @@ class ProjectionSpec(AstronomyModel):
 
 
 class IauConstellationProjection(AstronomyModel):
-    """One versioned actual-sky constellation projection result."""
-
     schema_version: Literal["iau-constellation-projection-v1"] = (
         "iau-constellation-projection-v1"
     )
@@ -123,8 +113,6 @@ class IauConstellationProjection(AstronomyModel):
 
 
 class IauConstellationResolver(Protocol):
-    """Explicit pluggable boundary resolver for the A2 astronomy hypothesis."""
-
     def resolve(self, state: AstronomyState) -> IauConstellationProjection: ...
 
 
@@ -160,10 +148,14 @@ PROJECTION_SPECS: tuple[ProjectionSpec, ...] = (
     ),
 )
 
+# Astropy 8.0.1's full-name table returns the historical misspelling "Ophiucus"
+# for IAU abbreviation Oph.  Treat the IAU-sanctioned abbreviation as the stable
+# identity and normalize only the display name.  The boundary classification itself
+# is unchanged.
+_IAU_CANONICAL_NAME_OVERRIDES: dict[str, str] = {"Oph": "Ophiuchus"}
+
 
 def projection_spec(kind: ProjectionKind) -> ProjectionSpec:
-    """Return the frozen registry entry for one coordinate/projection hypothesis."""
-
     for spec in PROJECTION_SPECS:
         if spec.kind is kind:
             return spec
@@ -171,14 +163,10 @@ def projection_spec(kind: ProjectionKind) -> ProjectionSpec:
 
 
 def normalize_longitude(value: float) -> float:
-    """Normalize a longitude to the half-open [0, 360) interval."""
-
     return value % 360.0
 
 
 def tropical_longitude(state: AstronomyState) -> float:
-    """Return the state's explicitly tropical/ecliptic longitude."""
-
     return state.ecliptic_longitude_deg
 
 
@@ -188,8 +176,6 @@ def sidereal_longitude(
     ayanamsa_name: str,
     ayanamsa_deg: float,
 ) -> float:
-    """Project tropical longitude into a named, explicitly frozen sidereal convention."""
-
     if not ayanamsa_name.strip():
         raise ValueError("ayanamsa_name must be explicit")
     if not 0.0 <= ayanamsa_deg < 360.0:
@@ -198,8 +184,6 @@ def sidereal_longitude(
 
 
 def astrohd_gate(state: AstronomyState) -> MandalaPosition:
-    """Project the frozen tropical longitude through the validated Rave Mandala mapper."""
-
     return longitude_to_gate_line(state.ecliptic_longitude_deg)
 
 
@@ -208,12 +192,6 @@ def iau_constellation(
     *,
     resolver: IauConstellationResolver | None = None,
 ) -> IauConstellationProjection:
-    """Resolve actual IAU constellation membership with an explicit boundary engine.
-
-    No longitude-only fallback exists.  Scientific runs must instantiate and pin a
-    concrete resolver so the package/boundary implementation is part of provenance.
-    """
-
     if resolver is None:
         raise UnsupportedAstronomyProjection(
             "IAU constellation lookup requires an explicit version-pinned boundary resolver; "
@@ -223,14 +201,7 @@ def iau_constellation(
 
 
 class AstropyIauConstellationResolver:
-    """Resolve IAU-88 membership through Astropy's Delporte/Roman boundary tables.
-
-    Imports are deliberately lazy so the participant server does not require Astropy.
-    The supplied astronomy state is interpreted as geocentric *true* ecliptic of date,
-    matching the ordinary apparent Swiss output convention.  Astropy then transforms
-    the coordinate and its ``get_constellation`` implementation precesses to B1875 and
-    applies the Delporte boundaries tabulated by Roman (1987).
-    """
+    """Resolve IAU-88 membership through Astropy's Delporte/Roman boundary tables."""
 
     def __init__(self, *, expected_astropy_version: str) -> None:
         if not expected_astropy_version.strip():
@@ -266,7 +237,7 @@ class AstropyIauConstellationResolver:
             obstime=time,
         )
         coordinate = self._coordinates.SkyCoord(frame)
-        full_name = _scalar_text(
+        raw_full_name = _scalar_text(
             self._coordinates.get_constellation(
                 coordinate,
                 short_name=False,
@@ -280,6 +251,7 @@ class AstropyIauConstellationResolver:
                 constellation_list="iau",
             )
         )
+        full_name = _IAU_CANONICAL_NAME_OVERRIDES.get(abbreviation, raw_full_name)
         return IauConstellationProjection(
             name=full_name,
             abbreviation=abbreviation,
@@ -296,8 +268,6 @@ def _scalar_text(value: Any) -> str:
 
 
 class SwissEngine(Protocol):
-    """Small typed surface used from pyswisseph without importing it at module import."""
-
     FLG_SWIEPH: int
     FLG_SPEED: int
     FLG_EQUATORIAL: int
@@ -312,12 +282,7 @@ class SwissEngine(Protocol):
 
 
 class SwissAstronomyReferenceProvider:
-    """Produce richer geocentric Swiss-Ephemeris state with explicit provenance.
-
-    This is deliberately not labelled ICRF/barycentric. It preserves the richer
-    Swiss geocentric ecliptic/equatorial/Cartesian outputs while a separate JPL
-    differential audit can certify numerical agreement for the research interval.
-    """
+    """Produce richer geocentric Swiss-Ephemeris state with explicit provenance."""
 
     def __init__(self, *, engine: SwissEngine, provenance: AstronomyProvenance) -> None:
         if provenance.origin is not ObserverOrigin.GEOCENTRIC:
@@ -335,8 +300,6 @@ class SwissAstronomyReferenceProvider:
         body_name: str,
         body_id: int,
     ) -> AstronomyState:
-        """Calculate longitude/latitude/distance, RA/Dec, XYZ, and velocities."""
-
         base = self.engine.FLG_SWIEPH | self.engine.FLG_SPEED
         ecliptic = self._calculate(jd_ut, body_id, base)
         equatorial = self._calculate(jd_ut, body_id, base | self.engine.FLG_EQUATORIAL)
