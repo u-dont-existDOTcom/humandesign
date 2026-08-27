@@ -35,7 +35,8 @@ jobs:
       - name: Run independent astronomy audit
         run: |
           python scripts/audit_de440s_astropy.py \
-            --swiss-ephemeris data/ephemeris \
+            --swiss-file data/ephemeris/sepl_18.se1 \
+            --swiss-file data/ephemeris/semo_18.se1 \
             --de440s de440s.bsp \
             --output de440s-astropy-audit.json
       - name: Upload audit report
