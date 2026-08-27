@@ -1,0 +1,126 @@
+name: build-century-candidate-cache-sharded
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  build:
+    if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && contains(github.event.head_commit.message, 'Build structural century cache via CI')) }}
+    strategy:
+      fail-fast: false
+      max-parallel: 10
+      matrix:
+        segment:
+          - id: "1926-1936"
+            start: "1926-08-22T00:00:00Z"
+            end: "1936-01-01T00:00:00Z"
+          - id: "1936-1946"
+            start: "1936-01-01T00:00:00Z"
+            end: "1946-01-01T00:00:00Z"
+          - id: "1946-1956"
+            start: "1946-01-01T00:00:00Z"
+            end: "1956-01-01T00:00:00Z"
+          - id: "1956-1966"
+            start: "1956-01-01T00:00:00Z"
+            end: "1966-01-01T00:00:00Z"
+          - id: "1966-1976"
+            start: "1966-01-01T00:00:00Z"
+            end: "1976-01-01T00:00:00Z"
+          - id: "1976-1986"
+            start: "1976-01-01T00:00:00Z"
+            end: "1986-01-01T00:00:00Z"
+          - id: "1986-1996"
+            start: "1986-01-01T00:00:00Z"
+            end: "1996-01-01T00:00:00Z"
+          - id: "1996-2006"
+            start: "1996-01-01T00:00:00Z"
+            end: "2006-01-01T00:00:00Z"
+          - id: "2006-2016"
+            start: "2006-01-01T00:00:00Z"
+            end: "2016-01-01T00:00:00Z"
+          - id: "2016-2026"
+            start: "2016-01-01T00:00:00Z"
+            end: "2026-08-23T00:00:00Z"
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install exact chart dependencies
+        run: |
+          python -m pip install -r requirements-dev.lock
+          python -m pip install --no-build-isolation --no-deps -e .
+      - name: Fetch pinned Swiss ephemeris files
+        run: python scripts/fetch_swisseph_ephemeris.py
+      - name: Build structural decade segment
+        run: |
+          python scripts/build_century_candidate_cache_fast.py \
+            --ephemeris data/ephemeris \
+            --output 'century-shard-${{ matrix.segment.id }}' \
+            --start '${{ matrix.segment.start }}' \
+            --end-exclusive '${{ matrix.segment.end }}' \
+            --shard-years 100 \
+            --root-tolerance-seconds 0.01 \
+            --verify-every 1000 \
+            --generation-commit '${{ github.sha }}'
+      - name: Upload verified segment
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: century-shard-${{ matrix.segment.id }}
+          path: century-shard-${{ matrix.segment.id }}
+          if-no-files-found: error
+          retention-days: 30
+
+  merge:
+    needs: build
+    if: ${{ needs.build.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install exact chart dependencies
+        run: |
+          python -m pip install -r requirements-dev.lock
+          python -m pip install --no-build-isolation --no-deps -e .
+      - name: Fetch pinned Swiss ephemeris files
+        run: python scripts/fetch_swisseph_ephemeris.py
+      - name: Download verified decade segments
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p downloaded
+          gh run download "$GITHUB_RUN_ID" \
+            --repo "$GITHUB_REPOSITORY" \
+            --pattern 'century-shard-*' \
+            --dir downloaded
+          find downloaded -maxdepth 2 -name manifest.json -print | sort
+      - name: Merge and reverify global cache
+        run: |
+          python scripts/merge_century_candidate_caches.py \
+            --ephemeris data/ephemeris \
+            --inputs-root downloaded \
+            --output century-candidate-cache \
+            --generation-commit '${{ github.sha }}'
+      - name: Upload final verified century cache
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: century-candidate-cache-${{ github.sha }}
+          path: century-candidate-cache
+          if-no-files-found: error
+          retention-days: 30

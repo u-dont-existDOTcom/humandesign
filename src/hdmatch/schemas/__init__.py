@@ -9,6 +9,7 @@ from .core import (
     LocalDateOverlap,
     RankedDate,
     ScoredState,
+    StructuralChartFeatures,
 )
 
 __all__ = [
@@ -20,4 +21,5 @@ __all__ = [
     "LocalDateOverlap",
     "RankedDate",
     "ScoredState",
+    "StructuralChartFeatures",
 ]

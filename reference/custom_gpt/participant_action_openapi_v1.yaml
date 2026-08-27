@@ -1,0 +1,343 @@
+openapi: 3.1.0
+info:
+  title: AstroHD Participant Interview API
+  version: 1.0.0
+  description: >-
+    Participant-safe API for frozen AstroHD prediction, blind interviewing,
+    confirmatory reveal, and explicitly post-hoc exploratory profile ranking.
+servers:
+  - url: https://YOUR_API_HOST
+paths:
+  /v1/participant-sessions:
+    post:
+      operationId: createParticipantSession
+      summary: Create and freeze a participant session
+      description: >-
+        Creates the immutable prediction freeze before behavioral evidence is
+        accepted. A scientific-blind GPT should NOT call this operation from the
+        participant conversation; use a trusted external intake so the GPT sees
+        only the returned opaque session ID. This operation is appropriate for
+        self-discovery mode or for the trusted intake application.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BirthIntake'
+      responses:
+        '200':
+          description: Opaque participant session metadata. Hidden chart/predictions are not returned.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SessionRecord'
+  /v1/participant-sessions/{session_id}/progress:
+    get:
+      operationId: getParticipantProgress
+      summary: Get participant-safe progress
+      description: >-
+        Safe before reveal. Returns coverage and general candidate discrimination,
+        never the true birth-state/date rank.
+      parameters:
+        - $ref: '#/components/parameters/SessionId'
+      responses:
+        '200':
+          description: Participant-safe progress.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PublicProgress'
+  /v1/participant-sessions/{session_id}/next-question:
+    get:
+      operationId: getParticipantNextQuestion
+      summary: Select the next neutral interview question
+      description: >-
+        Uses answer-blind candidate discrimination to suggest an informative
+        dimension. The interviewer may clarify a mixed answer before moving on.
+      parameters:
+        - $ref: '#/components/parameters/SessionId'
+      responses:
+        '200':
+          description: Suggested question or open-narrative guidance.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NextInterviewQuestion'
+  /v1/participant-sessions/{session_id}/evidence:
+    post:
+      operationId: appendParticipantEvidence
+      summary: Append one atomic participant observation
+      description: >-
+        The backend assigns the current phase. Only trait/behavior observations
+        with a valid frozen question token can affect natal ranking. Outcome,
+        timing, environment and conventional covariate evidence is retained for
+        separate research layers. Use answer=null when an Other/free-form answer
+        cannot honestly be mapped to a frozen option.
+      parameters:
+        - $ref: '#/components/parameters/SessionId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EvidenceInput'
+      responses:
+        '200':
+          description: Immutable appended evidence record.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+  /v1/participant-sessions/{session_id}/lock:
+    post:
+      operationId: lockParticipantConfirmatoryEvidence
+      summary: Lock pre-reveal confirmatory evidence
+      description: >-
+        Freezes the active pre-reveal trait/behavior response set and computes the
+        confirmatory rank without exposing that rank yet.
+      parameters:
+        - $ref: '#/components/parameters/SessionId'
+      responses:
+        '200':
+          description: Confirmatory evidence-lock metadata.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+  /v1/participant-sessions/{session_id}/reveal:
+    post:
+      operationId: revealParticipantResult
+      summary: Reveal frozen predictions and confirmatory rank
+      description: >-
+        Available only after confirmatory lock. Returns the true birth state,
+        confirmatory birth-state/date ranking, and dimension-level comparison to
+        the predictions frozen before answers.
+      parameters:
+        - $ref: '#/components/parameters/SessionId'
+      responses:
+        '200':
+          description: Confirmatory reveal report.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+  /v1/participant-sessions/{session_id}/finalize-exploratory:
+    post:
+      operationId: finalizeParticipantExploratoryProfile
+      summary: Finalize the post-hoc holistic profile and ranking
+      description: >-
+        Computes a second ranking from the final refined profile after reveal.
+        It is explicitly marked post-hoc/exploratory and does not overwrite or
+        count as independent confirmation of the pre-reveal result.
+      parameters:
+        - $ref: '#/components/parameters/SessionId'
+      responses:
+        '200':
+          description: Final report containing confirmatory and exploratory rankings side by side.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+  /v1/participant-sessions/{session_id}/final-report:
+    get:
+      operationId: getParticipantFinalReport
+      summary: Fetch the completed participant report
+      parameters:
+        - $ref: '#/components/parameters/SessionId'
+      responses:
+        '200':
+          description: Completed confirmatory plus exploratory report.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+components:
+  parameters:
+    SessionId:
+      name: session_id
+      in: path
+      required: true
+      schema:
+        type: string
+        pattern: '^HD-[A-F0-9]{32}$'
+  schemas:
+    BirthIntake:
+      type: object
+      additionalProperties: false
+      required:
+        - local_datetime
+        - birthplace
+        - iana_timezone
+      properties:
+        local_datetime:
+          type: string
+          format: date-time
+          description: >-
+            Local civil wall-clock datetime with no UTC offset. Example:
+            1994-01-28T00:35:00.
+        birthplace:
+          type: string
+        iana_timezone:
+          type: string
+          description: Historical IANA zone such as Europe/Istanbul.
+        fold:
+          type:
+            - integer
+            - 'null'
+          enum: [0, 1, null]
+          default: null
+          description: Required only when the local civil time is ambiguous.
+        mode:
+          type: string
+          enum: [scientific_blind, self_discovery]
+          default: scientific_blind
+        ranking_scope:
+          type: string
+          enum: [known_birth_month, century_global]
+          default: known_birth_month
+          description: >-
+            known_birth_month is implemented in v1. century_global is reserved
+            and fails closed until the reusable arbitrary-participant century
+            candidate cache is certified.
+    SessionRecord:
+      type: object
+      additionalProperties: true
+      required: [session_id, mode, ranking_scope, prediction_freeze_sha256]
+      properties:
+        session_id:
+          type: string
+          pattern: '^HD-[A-F0-9]{32}$'
+        mode:
+          type: string
+          enum: [scientific_blind, self_discovery]
+        ranking_scope:
+          type: string
+          enum: [known_birth_month, century_global]
+        prediction_freeze_sha256:
+          type: string
+          pattern: '^[a-f0-9]{64}$'
+    EvidenceInput:
+      type: object
+      additionalProperties: false
+      required: [domain, narrative]
+      properties:
+        domain:
+          type: string
+          enum:
+            - trait
+            - behavior
+            - outcome
+            - timing
+            - environment
+            - conventional_covariate
+        question_id:
+          type: [string, 'null']
+          default: null
+        cluster_id:
+          type: [string, 'null']
+          default: null
+        answer:
+          type: [string, 'null']
+          default: null
+          description: >-
+            A frozen response token only when it genuinely fits. Null means the
+            narrative is retained without forcing a scoring category; for a
+            previously scored question it neutralizes that earlier token.
+        behavioral_confidence:
+          type: number
+          minimum: 0
+          maximum: 1
+          default: 0.5
+        measurement_reliability:
+          type: number
+          minimum: 0
+          maximum: 1
+          default: 0.75
+        narrative:
+          type: string
+          minLength: 1
+        childhood_pattern:
+          type: [string, 'null']
+          default: null
+        adult_pattern:
+          type: [string, 'null']
+          default: null
+        contexts:
+          type: array
+          items: {type: string}
+          default: []
+        exceptions:
+          type: array
+          items: {type: string}
+          default: []
+        example_text:
+          type: [string, 'null']
+          default: null
+        counterexample_text:
+          type: [string, 'null']
+          default: null
+        supersedes_evidence_id:
+          type: [string, 'null']
+          default: null
+    PublicProgress:
+      type: object
+      additionalProperties: false
+      required:
+        - session_id
+        - phase
+        - confirmatory_observation_count
+        - scoreable_observation_count
+        - non_natal_observation_count
+        - scoreable_question_count
+        - scoreable_coverage
+        - true_birth_rank_concealed
+      properties:
+        session_id: {type: string}
+        phase:
+          type: string
+          enum:
+            - confirmatory_blind
+            - confirmatory_locked
+            - revealed
+            - posthoc_exploratory
+            - finalized
+        confirmatory_observation_count: {type: integer, minimum: 0}
+        scoreable_observation_count: {type: integer, minimum: 0}
+        non_natal_observation_count: {type: integer, minimum: 0}
+        scoreable_question_count: {type: integer, minimum: 0}
+        scoreable_coverage: {type: number, minimum: 0, maximum: 1}
+        candidate_state_count:
+          type: [integer, 'null']
+        top_state_tie_count:
+          type: [integer, 'null']
+        top_margin_rubric_bits:
+          type: [number, 'null']
+        true_birth_rank_concealed:
+          type: boolean
+          const: true
+    NextInterviewQuestion:
+      type: object
+      additionalProperties: true
+      required: [session_id, prompt, response_format, allow_other, guidance]
+      properties:
+        session_id: {type: string}
+        question_id:
+          type: [string, 'null']
+        prompt: {type: string}
+        response_format: {type: string}
+        followups:
+          type: array
+          items: {type: string}
+        expected_information_gain:
+          type: [number, 'null']
+        adjusted_utility:
+          type: [number, 'null']
+        allow_other:
+          type: boolean
+          const: true
+        guidance: {type: string}

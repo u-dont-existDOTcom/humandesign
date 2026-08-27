@@ -47,6 +47,35 @@ class ChartFeatures(FrozenModel):
         return value.astimezone(UTC)
 
 
+class StructuralChartFeatures(FrozenModel):
+    """Compact discrete chart structure for large candidate universes.
+
+    This deliberately omits continuous longitudes and non-Sun line numbers.  A
+    structural century interval is stable while every activation gate and the
+    Personality/Design Sun lines (therefore profile) are stable.  The exact
+    participant chart is still calculated and stored as :class:`ChartFeatures`.
+    """
+
+    schema_version: Literal["structural-chart-features-v1"] = (
+        "structural-chart-features-v1"
+    )
+    type: str
+    strategy: str
+    authority: str
+    profile: str
+    definition: str
+    defined_centers: tuple[str, ...] = ()
+    channels: tuple[str, ...] = ()
+    activation_gates: dict[str, int] = Field(default_factory=dict)
+
+    @field_validator("activation_gates")
+    @classmethod
+    def valid_activation_gates(cls, value: dict[str, int]) -> dict[str, int]:
+        if any(not 1 <= gate <= 64 for gate in value.values()):
+            raise ValueError("structural activation gates must be in 1..64")
+        return value
+
+
 class LocalDateOverlap(FrozenModel):
     date: date
     seconds: float = Field(gt=0.0)
@@ -58,7 +87,7 @@ class CandidateState(FrozenModel):
     start_utc: datetime
     end_utc: datetime
     chart_features_hash: str = Field(pattern=r"^[a-f0-9]{64}$")
-    chart_features: ChartFeatures
+    chart_features: ChartFeatures | StructuralChartFeatures
     local_date_overlaps: tuple[LocalDateOverlap, ...]
     boundary_events: tuple[str, ...] = ()
     cross_engine_status: Literal["verified", "unverified", "disagreement"] = "unverified"

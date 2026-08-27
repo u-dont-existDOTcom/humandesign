@@ -1,16 +1,18 @@
 {
   "schemaVersion": 1,
-  "taskId": "full-harness-v1",
+  "taskId": "participant-session-v1",
   "status": "active",
   "exclusive": true,
-  "requiredBranch": "codex/harness-integration",
+  "requiredBranch": "participant-session-v1",
   "preflightCommand": "python scripts/task_preflight.py",
-  "completionCommand": "python scripts/task_acceptance.py",
+  "completionCommand": "python -m pytest tests/unit/test_participant_session.py tests/unit/test_astronomy_reference.py tests/unit/test_progressions.py",
   "suspendedTaskSources": [
-    "legacy-run rankings",
-    "Custom GPT transit work",
-    "century-wide optimization before earlier acceptance gates",
+    "relationship and partner future-timing work",
+    "additional future ephemeris extension",
+    "century_global participant ranking until reusable generic cache certification",
+    "outcome/timing astrology claims mixed into the natal behavioral score",
+    "choosing a zodiac/progression convention after participant evidence is visible",
+    "angles/houses in strong confirmatory claims until the Ascendant/MC discrepancy is audited",
     "unrelated roadmap selection"
   ]
 }
-
