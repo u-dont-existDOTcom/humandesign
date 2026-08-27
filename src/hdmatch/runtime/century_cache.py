@@ -8,7 +8,7 @@ from collections import defaultdict
 from datetime import UTC, datetime
 from hashlib import sha256
 from pathlib import Path
-from typing import Literal
+from typing import Final, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
@@ -24,9 +24,15 @@ from hdmatch.schemas import CandidateState, StructuralChartFeatures
 from hdmatch.search import split_interval_by_local_date
 
 
-BOUNDARY_POLICY_VERSION = "activation-gates-plus-sun-lines-forward-design-v2"
-CENTURY_CACHE_SCHEMA_VERSION = "century-candidate-cache-v2"
-FEATURE_VECTOR_SCHEMA_VERSION = "structural-chart-features-v1"
+BOUNDARY_POLICY_VERSION: Final[
+    Literal["activation-gates-plus-sun-lines-forward-design-v2"]
+] = "activation-gates-plus-sun-lines-forward-design-v2"
+CENTURY_CACHE_SCHEMA_VERSION: Final[Literal["century-candidate-cache-v2"]] = (
+    "century-candidate-cache-v2"
+)
+FEATURE_VECTOR_SCHEMA_VERSION: Final[Literal["structural-chart-features-v1"]] = (
+    "structural-chart-features-v1"
+)
 
 
 class _FrozenModel(BaseModel):
@@ -82,7 +88,7 @@ class CenturyCacheShard(_FrozenModel):
 
 
 class CenturyCacheManifest(_FrozenModel):
-    schema_version: Literal["century-candidate-cache-v2"] = "century-candidate-cache-v2"
+    schema_version: Literal["century-candidate-cache-v2"] = CENTURY_CACHE_SCHEMA_VERSION
     cache_version: str
     feature_vector_schema_version: Literal["structural-chart-features-v1"] = (
         FEATURE_VECTOR_SCHEMA_VERSION
