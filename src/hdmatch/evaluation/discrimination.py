@@ -1,7 +1,7 @@
 """Information-theoretic discrimination audit for century-wide candidate universes.
 
 This module measures what the frozen symbolic model can distinguish before any
-participant responses are observed.  The quantities here are partition entropies
+participant responses are observed. The quantities here are partition entropies
 and oracle ceilings, not claims about behavioral validity or probabilities that
 Human Design is true.
 """
@@ -16,8 +16,8 @@ from typing import Final
 from pydantic import BaseModel, ConfigDict, Field
 
 from hdmatch.model.mapping_library import MappingLibrary, MappingRule
-from hdmatch.runtime.century_cache import CenturyCacheManifest, GlobalCandidateState
-from hdmatch.schemas import StructuralChartFeatures
+from hdmatch.runtime.century_cache import CenturyCacheManifest
+from hdmatch.schemas import CandidateState, StructuralChartFeatures
 
 _NO_UNIQUE_PREDICTION: Final[str] = "__no_unique_prediction__"
 _TOP_K: Final[tuple[int, ...]] = (1, 5, 10)
@@ -115,9 +115,7 @@ class _PartitionAccumulator:
             k: sum(min(k, count) for count in counts) / self.candidate_count for k in _TOP_K
         }
         duration_top = {
-            k: sum(
-                sum(group.top_durations[:k]) for group in self.groups.values()
-            )
+            k: sum(sum(group.top_durations[:k]) for group in self.groups.values())
             / self.total_duration
             for k in _TOP_K
         }
@@ -164,7 +162,7 @@ def summarize_fingerprints(
 
 
 def audit_century_discrimination(
-    states: Sequence[GlobalCandidateState],
+    states: Sequence[CandidateState],
     manifest: CenturyCacheManifest,
     library: MappingLibrary,
 ) -> CenturyDiscriminationAudit:
@@ -205,6 +203,8 @@ def audit_century_discrimination(
     ] = {}
 
     for state in states:
+        if not isinstance(state.chart_features, StructuralChartFeatures):
+            raise ValueError("century discrimination audit requires structural chart features")
         features = state.chart_features
         duration = (state.end_utc - state.start_utc).total_seconds()
         coarse_key = _coarse_key(features)
