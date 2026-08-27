@@ -14,6 +14,8 @@ from typing import Literal, Protocol
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
+from .rave_mandala import MandalaPosition, longitude_to_gate_line
+
 
 class AstronomyReferenceError(RuntimeError):
     """Raised when a reference astronomical state cannot be produced safely."""
@@ -123,8 +125,8 @@ PROJECTION_SPECS: tuple[ProjectionSpec, ...] = (
     ProjectionSpec(
         kind=ProjectionKind.ASTROHD_GATE,
         description="Existing AstroHD/Human Design gate projection from tropical longitude.",
-        status="registered_fail_closed",
-        requires=("validated project gate mapper",),
+        status="implemented",
+        requires=("ecliptic_longitude_deg", "validated project gate mapper"),
     ),
 )
 
@@ -163,6 +165,12 @@ def sidereal_longitude(
     if not 0.0 <= ayanamsa_deg < 360.0:
         raise ValueError("ayanamsa_deg must be in [0, 360)")
     return normalize_longitude(state.ecliptic_longitude_deg - ayanamsa_deg)
+
+
+def astrohd_gate(state: AstronomyState) -> MandalaPosition:
+    """Project the frozen tropical longitude through the validated Rave Mandala mapper."""
+
+    return longitude_to_gate_line(state.ecliptic_longitude_deg)
 
 
 def iau_constellation(_state: AstronomyState) -> str:
