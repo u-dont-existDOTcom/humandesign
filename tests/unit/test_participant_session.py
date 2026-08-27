@@ -74,6 +74,11 @@ class FakeParticipantBackend:
             question_bank_version="test-bank",
             question_bank_sha256="c" * 64,
             ranking_scope=ranking_scope,
+            candidate_universe_sha256="d" * 64,
+            candidate_universe_state_count=12,
+            candidate_universe_utc_start=birth.birth_utc - timedelta(days=15),
+            candidate_universe_utc_end_exclusive=birth.birth_utc + timedelta(days=16),
+            candidate_universe_timezone=birth.iana_timezone,
         )
 
     def rank(
