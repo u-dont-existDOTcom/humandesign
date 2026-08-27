@@ -58,7 +58,7 @@ class CenturyCapableParticipantBackend(AstroHDParticipantBackend):
 
     @staticmethod
     def _require_supported_scope(scope: RankScope) -> None:
-        """Base guard is replaced; instance-level verification happens before use."""
+        """Base guard is replaced; instance-level verification happens during load."""
 
     def build_prediction_freeze(
         self,
@@ -88,8 +88,6 @@ class CenturyCapableParticipantBackend(AstroHDParticipantBackend):
         mode: SessionMode,
         analysis_kind: str,
     ) -> RankingSnapshot:
-        if freeze.ranking_scope is RankScope.CENTURY_GLOBAL:
-            self._verify_century_ready()
         token = self._active_scope.set(freeze.ranking_scope)
         try:
             return super().rank(
@@ -108,8 +106,6 @@ class CenturyCapableParticipantBackend(AstroHDParticipantBackend):
         freeze: PredictionFreeze,
         responses: Sequence[BehavioralResponse],
     ) -> DiscriminationDiagnostics:
-        if freeze.ranking_scope is RankScope.CENTURY_GLOBAL:
-            self._verify_century_ready()
         token = self._active_scope.set(freeze.ranking_scope)
         try:
             return super().discrimination(freeze=freeze, responses=responses)
@@ -123,8 +119,6 @@ class CenturyCapableParticipantBackend(AstroHDParticipantBackend):
         responses: Sequence[BehavioralResponse],
         answered_question_ids: frozenset[str],
     ) -> SelectedQuestion | None:
-        if freeze.ranking_scope is RankScope.CENTURY_GLOBAL:
-            self._verify_century_ready()
         token = self._active_scope.set(freeze.ranking_scope)
         try:
             return super().select_question(
@@ -141,20 +135,34 @@ class CenturyCapableParticipantBackend(AstroHDParticipantBackend):
         cached = self._century_universe_cache.get(birth.iana_timezone)
         if cached is not None:
             return cached
-        cache_dir = self._verify_century_ready()
-        states = load_century_candidate_states(
-            cache_dir,
-            timezone_name=birth.iana_timezone,
-            expected_engine_fingerprint=self.chart_engine.fingerprint,
-        )
+        if self.century_cache_dir is None:
+            raise UnsupportedRankScopeError(
+                "century_global requires HDMATCH_CENTURY_CACHE pointing to a verified exact cache"
+            )
+        try:
+            # load_century_candidate_states verifies manifest, files, canonical rows,
+            # partition and engine fingerprint in the same pass that constructs the
+            # immutable timezone-localized CandidateState tuple.
+            states = load_century_candidate_states(
+                self.century_cache_dir,
+                timezone_name=birth.iana_timezone,
+                expected_engine_fingerprint=self.chart_engine.fingerprint,
+            )
+        except CenturyCacheVerificationError as exc:
+            raise UnsupportedRankScopeError(
+                f"century_global cache verification failed: {exc}"
+            ) from exc
         if not any(state.start_utc <= birth.birth_utc < state.end_utc for state in states):
             raise UnsupportedRankScopeError(
                 "the participant birth instant is outside the verified century-cache horizon"
             )
+        self._century_verified = True
         self._century_universe_cache[birth.iana_timezone] = states
         return states
 
     def _verify_century_ready(self) -> str:
+        """Explicit verifier for deployment health checks outside a loaded session."""
+
         if self.century_cache_dir is None:
             raise UnsupportedRankScopeError(
                 "century_global requires HDMATCH_CENTURY_CACHE pointing to a verified exact cache"
