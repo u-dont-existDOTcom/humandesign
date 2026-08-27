@@ -8,9 +8,10 @@ of the same frozen source state rather than silently conflated.
 
 from __future__ import annotations
 
+import importlib
 from datetime import UTC, datetime
 from enum import StrEnum
-from typing import Literal, Protocol
+from typing import Any, Literal, Protocol
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
@@ -103,6 +104,30 @@ class ProjectionSpec(AstronomyModel):
     requires: tuple[str, ...] = ()
 
 
+class IauConstellationProjection(AstronomyModel):
+    """One versioned actual-sky constellation projection result."""
+
+    schema_version: Literal["iau-constellation-projection-v1"] = (
+        "iau-constellation-projection-v1"
+    )
+    name: str = Field(min_length=1)
+    abbreviation: str = Field(min_length=2, max_length=4)
+    resolver: str = Field(min_length=1)
+    resolver_version: str = Field(min_length=1)
+    input_frame: Literal["geocentric_true_ecliptic_of_date"] = (
+        "geocentric_true_ecliptic_of_date"
+    )
+    boundary_reference: Literal[
+        "IAU-88-Delporte-B1875-Roman1987"
+    ] = "IAU-88-Delporte-B1875-Roman1987"
+
+
+class IauConstellationResolver(Protocol):
+    """Explicit pluggable boundary resolver for the A2 astronomy hypothesis."""
+
+    def resolve(self, state: AstronomyState) -> IauConstellationProjection: ...
+
+
 PROJECTION_SPECS: tuple[ProjectionSpec, ...] = (
     ProjectionSpec(
         kind=ProjectionKind.TROPICAL_EQUINOX_OF_DATE,
@@ -118,9 +143,14 @@ PROJECTION_SPECS: tuple[ProjectionSpec, ...] = (
     ),
     ProjectionSpec(
         kind=ProjectionKind.IAU_CONSTELLATION,
-        description="Actual IAU sky-region membership using full position and boundaries.",
-        status="registered_fail_closed",
-        requires=("right_ascension_deg", "declination_deg", "IAU boundary dataset"),
+        description=(
+            "Actual IAU sky-region membership using the 88 irregular Delporte boundaries."
+        ),
+        status="implemented",
+        requires=(
+            "ecliptic longitude/latitude/distance of date",
+            "explicit version-pinned IAU boundary resolver",
+        ),
     ),
     ProjectionSpec(
         kind=ProjectionKind.ASTROHD_GATE,
@@ -173,13 +203,96 @@ def astrohd_gate(state: AstronomyState) -> MandalaPosition:
     return longitude_to_gate_line(state.ecliptic_longitude_deg)
 
 
-def iau_constellation(_state: AstronomyState) -> str:
-    """Fail closed until a versioned IAU boundary dataset/resolver is checked in."""
+def iau_constellation(
+    state: AstronomyState,
+    *,
+    resolver: IauConstellationResolver | None = None,
+) -> IauConstellationProjection:
+    """Resolve actual IAU constellation membership with an explicit boundary engine.
 
-    raise UnsupportedAstronomyProjection(
-        "IAU constellation lookup requires a versioned boundary dataset; "
-        "longitude-only zodiac substitution is scientifically invalid"
-    )
+    No longitude-only fallback exists.  Scientific runs must instantiate and pin a
+    concrete resolver so the package/boundary implementation is part of provenance.
+    """
+
+    if resolver is None:
+        raise UnsupportedAstronomyProjection(
+            "IAU constellation lookup requires an explicit version-pinned boundary resolver; "
+            "longitude-only zodiac substitution is scientifically invalid"
+        )
+    return resolver.resolve(state)
+
+
+class AstropyIauConstellationResolver:
+    """Resolve IAU-88 membership through Astropy's Delporte/Roman boundary tables.
+
+    Imports are deliberately lazy so the participant server does not require Astropy.
+    The supplied astronomy state is interpreted as geocentric *true* ecliptic of date,
+    matching the ordinary apparent Swiss output convention.  Astropy then transforms
+    the coordinate and its ``get_constellation`` implementation precesses to B1875 and
+    applies the Delporte boundaries tabulated by Roman (1987).
+    """
+
+    def __init__(self, *, expected_astropy_version: str) -> None:
+        if not expected_astropy_version.strip():
+            raise ValueError("expected_astropy_version must be explicit")
+        try:
+            astropy = importlib.import_module("astropy")
+            self._coordinates = importlib.import_module("astropy.coordinates")
+            self._units = importlib.import_module("astropy.units")
+            self._time = importlib.import_module("astropy.time")
+        except ModuleNotFoundError as exc:
+            raise UnsupportedAstronomyProjection(
+                "Astropy IAU resolver requested but Astropy is not installed"
+            ) from exc
+        observed_version = str(getattr(astropy, "__version__", "unknown"))
+        if observed_version != expected_astropy_version:
+            raise UnsupportedAstronomyProjection(
+                "Astropy IAU resolver version mismatch: "
+                f"expected {expected_astropy_version}, observed {observed_version}"
+            )
+        self.version = observed_version
+
+    def resolve(self, state: AstronomyState) -> IauConstellationProjection:
+        if state.provenance.origin is not ObserverOrigin.GEOCENTRIC:
+            raise UnsupportedAstronomyProjection(
+                "Astropy IAU resolver v1 requires a geocentric astronomy state"
+            )
+        time = self._time.Time(state.observed_at_utc)
+        frame = self._coordinates.GeocentricTrueEcliptic(
+            lon=state.ecliptic_longitude_deg * self._units.deg,
+            lat=state.ecliptic_latitude_deg * self._units.deg,
+            distance=state.distance_au * self._units.au,
+            equinox=time,
+            obstime=time,
+        )
+        coordinate = self._coordinates.SkyCoord(frame)
+        full_name = _scalar_text(
+            self._coordinates.get_constellation(
+                coordinate,
+                short_name=False,
+                constellation_list="iau",
+            )
+        )
+        abbreviation = _scalar_text(
+            self._coordinates.get_constellation(
+                coordinate,
+                short_name=True,
+                constellation_list="iau",
+            )
+        )
+        return IauConstellationProjection(
+            name=full_name,
+            abbreviation=abbreviation,
+            resolver="astropy.coordinates.get_constellation",
+            resolver_version=self.version,
+        )
+
+
+def _scalar_text(value: Any) -> str:
+    text = str(value)
+    if not text:
+        raise AstronomyReferenceError("constellation resolver returned an empty value")
+    return text
 
 
 class SwissEngine(Protocol):
