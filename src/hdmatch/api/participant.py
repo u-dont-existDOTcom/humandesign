@@ -7,7 +7,7 @@ from typing import TypeVar
 
 from fastapi import FastAPI
 
-from hdmatch.api.errors import ERROR_RESPONSES, ApiProblem
+from hdmatch.api.errors import ApiProblem, ERROR_RESPONSES
 from hdmatch.chart.timezone import TimezoneResolutionError
 from hdmatch.participant.backend import UnsupportedRankScopeError
 from hdmatch.participant.models import (
