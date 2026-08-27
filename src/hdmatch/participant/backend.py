@@ -6,8 +6,9 @@ import math
 from collections.abc import Sequence
 from dataclasses import dataclass
 from datetime import UTC, datetime
+from hashlib import sha256
 
-from hdmatch.experiments.canonical import sha256_file
+from hdmatch.experiments.canonical import canonical_json_bytes, sha256_file
 from hdmatch.questionnaire import Question, load_question_bank
 from hdmatch.runtime.chart_adapter import ExactChartAdapter
 from hdmatch.runtime.symbolic_adapter import FrozenSymbolicModel, candidate_prevalence
@@ -101,6 +102,7 @@ class AstroHDParticipantBackend:
         created_at_utc: datetime,
     ) -> PredictionFreeze:
         self._require_supported_scope(ranking_scope)
+        states = self._states_for_birth(birth)
         chart = self.chart_engine.calculate(birth.birth_utc)
         oracle = {
             response.question_id: response
@@ -133,6 +135,12 @@ class AstroHDParticipantBackend:
                     mapping_ids=tuple(sorted(mapping_ids)),
                 )
             )
+        universe_hash = _candidate_universe_sha256(
+            states,
+            ranking_scope=ranking_scope,
+            engine_fingerprint=self.chart_engine.fingerprint,
+            timezone_name=birth.iana_timezone,
+        )
         return PredictionFreeze(
             session_id=session_id,
             created_at_utc=created_at_utc.astimezone(UTC),
@@ -147,6 +155,11 @@ class AstroHDParticipantBackend:
             question_bank_version=self.question_bank.version,
             question_bank_sha256=self.model.question_bank_sha256,
             ranking_scope=ranking_scope,
+            candidate_universe_sha256=universe_hash,
+            candidate_universe_state_count=len(states),
+            candidate_universe_utc_start=states[0].start_utc,
+            candidate_universe_utc_end_exclusive=states[-1].end_utc,
+            candidate_universe_timezone=birth.iana_timezone,
         )
 
     def rank(
@@ -160,6 +173,7 @@ class AstroHDParticipantBackend:
     ) -> RankingSnapshot:
         self._require_supported_scope(freeze.ranking_scope)
         states = self._states_for_birth(freeze.birth)
+        self._assert_frozen_universe(freeze, states)
         prevalence = candidate_prevalence(states, self.model.library)
         scores = {
             state.state_id: self.model.score(state, responses, prevalence)
@@ -248,6 +262,7 @@ class AstroHDParticipantBackend:
 
         self._require_supported_scope(freeze.ranking_scope)
         states = self._states_for_birth(freeze.birth)
+        self._assert_frozen_universe(freeze, states)
         prevalence = candidate_prevalence(states, self.model.library)
         scores = {
             state.state_id: self.model.score(state, responses, prevalence)
@@ -274,6 +289,7 @@ class AstroHDParticipantBackend:
         if not remaining:
             return None
         states = self._states_for_birth(freeze.birth)
+        self._assert_frozen_universe(freeze, states)
         prevalence = candidate_prevalence(states, self.model.library)
         scores = [self.model.score(state, responses, prevalence) for state in states]
         max_net = max(score.net_rubric_bits for score in scores)
@@ -346,6 +362,28 @@ class AstroHDParticipantBackend:
         self._universe_cache[key] = states
         return states
 
+    def _assert_frozen_universe(
+        self,
+        freeze: PredictionFreeze,
+        states: Sequence[CandidateState],
+    ) -> None:
+        observed = _candidate_universe_sha256(
+            states,
+            ranking_scope=freeze.ranking_scope,
+            engine_fingerprint=self.chart_engine.fingerprint,
+            timezone_name=freeze.birth.iana_timezone,
+        )
+        if observed != freeze.candidate_universe_sha256:
+            raise RuntimeError(
+                "candidate universe changed after the pre-answer prediction freeze"
+            )
+        if len(states) != freeze.candidate_universe_state_count:
+            raise RuntimeError("candidate universe state count changed after freeze")
+        if states[0].start_utc != freeze.candidate_universe_utc_start:
+            raise RuntimeError("candidate universe start changed after freeze")
+        if states[-1].end_utc != freeze.candidate_universe_utc_end_exclusive:
+            raise RuntimeError("candidate universe end changed after freeze")
+
     def _rank_states(
         self,
         states: Sequence[CandidateState],
@@ -403,6 +441,42 @@ class AstroHDParticipantBackend:
                 "the completed 100-year audit is target-specific and is not reused as if it "
                 "were a production participant universe"
             )
+
+
+def _candidate_universe_sha256(
+    states: Sequence[CandidateState],
+    *,
+    ranking_scope: RankScope,
+    engine_fingerprint: str,
+    timezone_name: str,
+) -> str:
+    if not states:
+        raise ValueError("candidate universe must not be empty")
+    digest = sha256()
+    digest.update(
+        canonical_json_bytes(
+            {
+                "schema_version": "participant-candidate-universe-binding-v1",
+                "ranking_scope": ranking_scope.value,
+                "engine_fingerprint": engine_fingerprint,
+                "timezone_name": timezone_name,
+            }
+        )
+        + b"\n"
+    )
+    for state in states:
+        digest.update(
+            canonical_json_bytes(
+                {
+                    "state_id": state.state_id,
+                    "start_utc": state.start_utc,
+                    "end_utc": state.end_utc,
+                    "chart_features_hash": state.chart_features_hash,
+                }
+            )
+            + b"\n"
+        )
+    return digest.hexdigest()
 
 
 def _tie_key(state: CandidateState, score: ScoredState) -> tuple[float | int, ...]:
