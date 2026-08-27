@@ -7,7 +7,13 @@ from hashlib import sha256
 from pathlib import Path
 
 from hdmatch.model import MappingLibrary, load_mapping_library, score_symbolic
-from hdmatch.schemas import BehavioralResponse, CandidateState, ChartFeatures, ScoredState
+from hdmatch.schemas import (
+    BehavioralResponse,
+    CandidateState,
+    ChartFeatures,
+    ScoredState,
+    StructuralChartFeatures,
+)
 
 
 class FrozenSymbolicModel:
@@ -30,7 +36,10 @@ class FrozenSymbolicModel:
     def question_bank_sha256(self) -> str:
         return self.library.question_bank_sha256
 
-    def oracle_responses(self, chart: ChartFeatures) -> Sequence[BehavioralResponse]:
+    def oracle_responses(
+        self,
+        chart: ChartFeatures | StructuralChartFeatures,
+    ) -> Sequence[BehavioralResponse]:
         canonical = self.library.canonical_answers(chart)
         responses: list[BehavioralResponse] = []
         question_clusters: dict[str, set[str]] = {}
@@ -41,9 +50,7 @@ class FrozenSymbolicModel:
                 )
         for question_id, cluster_set in sorted(question_clusters.items()):
             answer = canonical.get(question_id, "unknown")
-            clusters = sorted(
-                cluster_set
-            )
+            clusters = sorted(cluster_set)
             responses.append(
                 BehavioralResponse(
                     question_id=question_id,
