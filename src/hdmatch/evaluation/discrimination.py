@@ -58,7 +58,7 @@ def audit_partition(
 
     counts: Counter[Fingerprint] = Counter()
     durations: dict[Fingerprint, float] = defaultdict(float)
-    total_duration = 0.0
+    interval_durations: list[float] = []
     for state in states:
         key = fingerprint(state)
         counts[key] += 1
@@ -66,12 +66,13 @@ def audit_partition(
         if duration <= 0.0:
             raise ValueError("candidate intervals must have positive duration")
         durations[key] += duration
-        total_duration += duration
+        interval_durations.append(duration)
 
     tie_sizes = sorted(counts.values())
     n_states = len(states)
     state_entropy = _entropy_from_weights(counts.values())
     duration_entropy = _entropy_from_weights(durations.values())
+    interval_duration_entropy = _entropy_from_weights(interval_durations)
     return PartitionAudit(
         state_count=n_states,
         group_count=len(counts),
@@ -84,7 +85,7 @@ def audit_partition(
         duration_weighted_entropy_bits=duration_entropy,
         state_uniform_residual_bits=max(0.0, math.log2(n_states) - state_entropy),
         duration_weighted_residual_bits=max(
-            0.0, math.log2(total_duration) - duration_entropy
+            0.0, interval_duration_entropy - duration_entropy
         ),
         exact_state_ceiling=len(counts) / n_states,
         top5_state_ceiling=sum(min(5, size) for size in tie_sizes) / n_states,
