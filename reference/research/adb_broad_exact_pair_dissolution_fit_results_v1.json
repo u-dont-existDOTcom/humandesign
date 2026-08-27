@@ -1,0 +1,570 @@
+{
+  "co_primary_decision_pre_permutation": {
+    "M3H_vs_M2_passes_loss_loglik_fold_parts": true,
+    "M3W_vs_M2_passes_loss_loglik_fold_parts": false,
+    "note": "500-permutation familywise p-value still required by frozen rule"
+  },
+  "comparisons": {
+    "M1-M0": {
+      "fold_log_loss_delta_new_minus_old": [
+        0.0007690275569158106,
+        0.002673942508086613,
+        0.006406008975562594,
+        -0.00040147407522589384,
+        0.003792439406703929
+      ],
+      "folds_with_positive_log_loss_improvement": 1,
+      "heldout_loglik_improvement": -7.711302690087734,
+      "pooled_log_loss_improvement": -0.0026472031205244523
+    },
+    "M2-M1": {
+      "fold_log_loss_delta_new_minus_old": [
+        0.006240931003108366,
+        0.00960012711379521,
+        -0.0004953482381257063,
+        0.005038307647148119,
+        -0.00132927748320677
+      ],
+      "folds_with_positive_log_loss_improvement": 2,
+      "heldout_loglik_improvement": -11.111571999871728,
+      "pooled_log_loss_improvement": -0.003814477171257033
+    },
+    "M3H-M2": {
+      "fold_log_loss_delta_new_minus_old": [
+        -0.001085548952669796,
+        -0.00801246165982071,
+        -3.611518149748694e-05,
+        -0.0038306827364376628,
+        0.00011753228296709772
+      ],
+      "folds_with_positive_log_loss_improvement": 4,
+      "heldout_loglik_improvement": 7.490197116834338,
+      "pooled_log_loss_improvement": 0.0025713000744367887
+    },
+    "M3W-M2": {
+      "fold_log_loss_delta_new_minus_old": [
+        0.000923767619816579,
+        -0.007450480268642201,
+        -0.00038458259495081915,
+        -0.0034133655861206813,
+        0.0017673282257862633
+      ],
+      "folds_with_positive_log_loss_improvement": 3,
+      "heldout_loglik_improvement": 4.992459564648243,
+      "pooled_log_loss_improvement": 0.001713854982714813
+    },
+    "M4-M2": {
+      "fold_log_loss_delta_new_minus_old": [
+        -7.013047583438736e-05,
+        -0.007649869446071114,
+        -0.0004213029751674313,
+        -0.0040802456091103,
+        0.001030898499583835
+      ],
+      "folds_with_positive_log_loss_improvement": 4,
+      "heldout_loglik_improvement": 6.526210750846644,
+      "pooled_log_loss_improvement": 0.0022403744424464994
+    },
+    "M4-M3H": {
+      "fold_log_loss_delta_new_minus_old": [
+        0.0010154184768354085,
+        0.00036259221374959627,
+        -0.0003851877936699444,
+        -0.0002495628726726373,
+        0.0009133662166167372
+      ],
+      "folds_with_positive_log_loss_improvement": 2,
+      "heldout_loglik_improvement": -0.9639863659876937,
+      "pooled_log_loss_improvement": -0.00033092563199028924
+    },
+    "M4-M3W": {
+      "fold_log_loss_delta_new_minus_old": [
+        -0.0009938980956509663,
+        -0.00019938917742891304,
+        -3.672038021661217e-05,
+        -0.0006668800229896188,
+        -0.0007364297262024283
+      ],
+      "folds_with_positive_log_loss_improvement": 5,
+      "heldout_loglik_improvement": 1.5337511861984012,
+      "pooled_log_loss_improvement": 0.0005265194597316863
+    }
+  },
+  "data": {
+    "censored_pairs": 82,
+    "episodes": 147,
+    "event_pairs": 65,
+    "outer_fold_state": [
+      {
+        "ev": 13,
+        "roots": [
+          295,
+          47237,
+          37418,
+          50520,
+          90851,
+          8477,
+          41294,
+          13047,
+          50514,
+          6783,
+          47722,
+          7157,
+          91105,
+          26438,
+          79284,
+          56048,
+          79562,
+          7989,
+          64023,
+          2261,
+          60355,
+          8157,
+          13625,
+          79510,
+          42477,
+          39697
+        ],
+        "rows": 583
+      },
+      {
+        "ev": 13,
+        "roots": [
+          97390,
+          2773,
+          51807,
+          71587,
+          71564,
+          9702,
+          9479,
+          304,
+          4279,
+          11548,
+          47593,
+          14274,
+          52175,
+          58463,
+          25004,
+          60667,
+          47123,
+          97079,
+          50699,
+          47522,
+          55649,
+          50349,
+          2281,
+          96317,
+          72014,
+          19568,
+          56704
+        ],
+        "rows": 583
+      },
+      {
+        "ev": 13,
+        "roots": [
+          39043,
+          214,
+          5959,
+          40046,
+          53074,
+          6790,
+          88705,
+          474,
+          7817,
+          68691,
+          24590,
+          60658,
+          72763,
+          79673,
+          26134,
+          75646,
+          69473,
+          93198,
+          39975,
+          56848,
+          856,
+          41406,
+          54655,
+          19429,
+          79358,
+          48947
+        ],
+        "rows": 583
+      },
+      {
+        "ev": 13,
+        "roots": [
+          238,
+          49711,
+          19580,
+          97280,
+          71621,
+          8584,
+          4866,
+          42413,
+          10844,
+          293,
+          4881,
+          5888,
+          5515,
+          862,
+          4142,
+          86361,
+          3631,
+          150,
+          3584,
+          54484,
+          71705,
+          55883,
+          51070,
+          25652,
+          55057,
+          24157
+        ],
+        "rows": 583
+      },
+      {
+        "ev": 13,
+        "roots": [
+          6220,
+          60291,
+          19367,
+          244,
+          37386,
+          7023,
+          4655,
+          6902,
+          3307,
+          50377,
+          6196,
+          47716,
+          19510,
+          90854,
+          73551,
+          3035,
+          5198,
+          8820,
+          2605,
+          68668,
+          52605,
+          55464,
+          79377,
+          15074,
+          4950
+        ],
+        "rows": 581
+      }
+    ],
+    "pair_year_rows": 2913,
+    "positive_pair_year_rows": 65
+  },
+  "feature_matrix_sha256_after_write": "e8e68b26b3f339fbd85c5a40598f6b38322c6bf91b666b8387b69489ea688ce6",
+  "input_hashes": {
+    "H3": "abe60d1ffb866f570c5d2c160587a30e166f67366429e197e8379281934a9349",
+    "H4": "0d2b86e698c17ffdf65749fded39db927441c9d26370c20c2a558512e332de5d",
+    "policy": "a5ba31773f00603e8fb7e6fa52d68f5835057f734ae3a87d388a61500c3104f4",
+    "readiness": "ca598c7c4f6f29bfd2c4f32fa24c2457b8b4cfa4607f603c1168cc1a7360b373",
+    "registry": "bbb6214d0c4eef5f5bdeba4765fa07165935343d3ac0841f92ecc730fd69496d",
+    "spec": "bd07ca999ea2a8c2175c3727756ab76b8fd925c5b7b83619eecbe8f42404834a",
+    "universe": "f8f5a9a82af7998d030f5ff3eaec61a1db0ab4914082fedcbc469abad426dd6c"
+  },
+  "limitations": [
+    "Development data only; not independent validation.",
+    "Track T transition timing only, not relationship quality.",
+    "No Joel/Bee case used in feature selection or fitting.",
+    "Permutation/falsification suite is separate and still required before any development lead can be declared."
+  ],
+  "model_spec": "reference/research/adb_broad_exact_pair_dissolution_semimarkov_freeze_v1.md",
+  "models": {
+    "M0": {
+      "brier_score": 0.02147808788200836,
+      "calibration": {
+        "intercept": -0.41481108104519127,
+        "slope": 0.8949783280315201
+      },
+      "chosen_C_by_fold": [
+        1.0,
+        0.1,
+        0.1,
+        1.0,
+        1.0
+      ],
+      "cumulative_risk": {
+        "1y": {
+          "brier": 0.00814143071941166,
+          "mean_predicted_risk": 0.030268719730060893,
+          "n": 147,
+          "observed_fraction": 0.006802721088435374
+        },
+        "2y": {
+          "brier": 0.03966231172375002,
+          "mean_predicted_risk": 0.06737326931796571,
+          "n": 146,
+          "observed_fraction": 0.0410958904109589
+        },
+        "5y": {
+          "brier": 0.06377603699874279,
+          "mean_predicted_risk": 0.15428014261675885,
+          "n": 118,
+          "observed_fraction": 0.0423728813559322
+        }
+      },
+      "event_year_rank": {
+        "mean_percentile": 42.072484502514946,
+        "median_percentile": 38.888888888888886,
+        "n_event_pairs": 65
+      },
+      "fold_log_loss": [
+        0.0998478213202356,
+        0.10273403686289381,
+        0.09481186195188102,
+        0.10289343550660832,
+        0.09780804155279231
+      ],
+      "heldout_total_log_likelihood": -290.19388388123605,
+      "pair_year_log_loss": 0.09962028282912326
+    },
+    "M1": {
+      "brier_score": 0.021662675129666888,
+      "calibration": {
+        "intercept": -0.6981874073266753,
+        "slope": 0.8201513836744758
+      },
+      "chosen_C_by_fold": [
+        0.1,
+        0.1,
+        0.01,
+        0.1,
+        0.1
+      ],
+      "cumulative_risk": {
+        "1y": {
+          "brier": 0.008227910361530269,
+          "mean_predicted_risk": 0.03331763527289265,
+          "n": 147,
+          "observed_fraction": 0.006802721088435374
+        },
+        "2y": {
+          "brier": 0.039657228624362426,
+          "mean_predicted_risk": 0.06899571027251164,
+          "n": 146,
+          "observed_fraction": 0.0410958904109589
+        },
+        "5y": {
+          "brier": 0.05975727633960534,
+          "mean_predicted_risk": 0.15568316895456816,
+          "n": 118,
+          "observed_fraction": 0.0423728813559322
+        }
+      },
+      "event_year_rank": {
+        "mean_percentile": 47.972601363164856,
+        "median_percentile": 41.666666666666664,
+        "n_event_pairs": 65
+      },
+      "fold_log_loss": [
+        0.10061684887715142,
+        0.10540797937098043,
+        0.10121787092744361,
+        0.10249196143138242,
+        0.10160048095949624
+      ],
+      "heldout_total_log_likelihood": -297.9051865713238,
+      "pair_year_log_loss": 0.10226748594964771
+    },
+    "M2": {
+      "brier_score": 0.022394530694575754,
+      "calibration": {
+        "intercept": -1.6602321522450858,
+        "slope": 0.5659434898470347
+      },
+      "chosen_C_by_fold": [
+        0.01,
+        0.1,
+        0.01,
+        0.1,
+        0.1
+      ],
+      "cumulative_risk": {
+        "1y": {
+          "brier": 0.008897727162907296,
+          "mean_predicted_risk": 0.03470342947298006,
+          "n": 147,
+          "observed_fraction": 0.006802721088435374
+        },
+        "2y": {
+          "brier": 0.04210733865181187,
+          "mean_predicted_risk": 0.06993764433716763,
+          "n": 146,
+          "observed_fraction": 0.0410958904109589
+        },
+        "5y": {
+          "brier": 0.06539583084684744,
+          "mean_predicted_risk": 0.15311093286505303,
+          "n": 118,
+          "observed_fraction": 0.0423728813559322
+        }
+      },
+      "event_year_rank": {
+        "mean_percentile": 48.77547445862107,
+        "median_percentile": 50.0,
+        "n_event_pairs": 65
+      },
+      "fold_log_loss": [
+        0.10685777988025978,
+        0.11500810648477564,
+        0.1007225226893179,
+        0.10753026907853054,
+        0.10027120347628947
+      ],
+      "heldout_total_log_likelihood": -309.0167585711955,
+      "pair_year_log_loss": 0.10608196312090475
+    },
+    "M3H": {
+      "brier_score": 0.021701502218069102,
+      "calibration": {
+        "intercept": 0.6530205972733805,
+        "slope": 1.2075170346603061
+      },
+      "chosen_C_by_fold": [
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01
+      ],
+      "cumulative_risk": {
+        "1y": {
+          "brier": 0.007447724973678065,
+          "mean_predicted_risk": 0.02890203727790161,
+          "n": 147,
+          "observed_fraction": 0.006802721088435374
+        },
+        "2y": {
+          "brier": 0.03972656389400117,
+          "mean_predicted_risk": 0.05825795211382146,
+          "n": 146,
+          "observed_fraction": 0.0410958904109589
+        },
+        "5y": {
+          "brier": 0.050344701365269945,
+          "mean_predicted_risk": 0.13581494567131003,
+          "n": 118,
+          "observed_fraction": 0.0423728813559322
+        }
+      },
+      "event_year_rank": {
+        "mean_percentile": 49.62219142766116,
+        "median_percentile": 50.0,
+        "n_event_pairs": 65
+      },
+      "fold_log_loss": [
+        0.10577223092758999,
+        0.10699564482495492,
+        0.10068640750782042,
+        0.10369958634209288,
+        0.10038873575925657
+      ],
+      "heldout_total_log_likelihood": -301.5265614543612,
+      "pair_year_log_loss": 0.10351066304646796
+    },
+    "M3W": {
+      "brier_score": 0.02179174790915409,
+      "calibration": {
+        "intercept": -0.24811670487680962,
+        "slope": 0.9530150552924426
+      },
+      "chosen_C_by_fold": [
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01
+      ],
+      "cumulative_risk": {
+        "1y": {
+          "brier": 0.007273260916615933,
+          "mean_predicted_risk": 0.02978378936034727,
+          "n": 147,
+          "observed_fraction": 0.006802721088435374
+        },
+        "2y": {
+          "brier": 0.03966088329573713,
+          "mean_predicted_risk": 0.05928561756367783,
+          "n": 146,
+          "observed_fraction": 0.0410958904109589
+        },
+        "5y": {
+          "brier": 0.05209286726936819,
+          "mean_predicted_risk": 0.13689083137604452,
+          "n": 118,
+          "observed_fraction": 0.0423728813559322
+        }
+      },
+      "event_year_rank": {
+        "mean_percentile": 49.07939610666813,
+        "median_percentile": 43.75,
+        "n_event_pairs": 65
+      },
+      "fold_log_loss": [
+        0.10778154750007636,
+        0.10755762621613343,
+        0.10033794009436708,
+        0.10411690349240986,
+        0.10203853170207573
+      ],
+      "heldout_total_log_likelihood": -304.02429900654727,
+      "pair_year_log_loss": 0.10436810813818993
+    },
+    "M4": {
+      "brier_score": 0.02177022001024371,
+      "calibration": {
+        "intercept": -0.24698638217348515,
+        "slope": 0.9545683786557929
+      },
+      "chosen_C_by_fold": [
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01
+      ],
+      "cumulative_risk": {
+        "1y": {
+          "brier": 0.007287545672206078,
+          "mean_predicted_risk": 0.029461164820650358,
+          "n": 147,
+          "observed_fraction": 0.006802721088435374
+        },
+        "2y": {
+          "brier": 0.03976594692949346,
+          "mean_predicted_risk": 0.059003974836528444,
+          "n": 146,
+          "observed_fraction": 0.0410958904109589
+        },
+        "5y": {
+          "brier": 0.0516422538903706,
+          "mean_predicted_risk": 0.13653994131824446,
+          "n": 118,
+          "observed_fraction": 0.0423728813559322
+        }
+      },
+      "event_year_rank": {
+        "mean_percentile": 50.67316368752581,
+        "median_percentile": 50.0,
+        "n_event_pairs": 65
+      },
+      "fold_log_loss": [
+        0.1067876494044254,
+        0.10735823703870452,
+        0.10030121971415047,
+        0.10345002346942024,
+        0.1013021019758733
+      ],
+      "heldout_total_log_likelihood": -302.49054782034887,
+      "pair_year_log_loss": 0.10384158867845825
+    }
+  },
+  "status": "development_fit_complete_permutation_pending"
+}
