@@ -7,6 +7,10 @@ on:
       - 'src/hdmatch/evaluation/survey_v2_capacity.py'
       - 'src/hdmatch/evaluation/survey_v2_completion.py'
       - 'scripts/audit_survey_v2_completion.py'
+      - 'reference/core/survey_v2_behavioral_domains.json'
+      - 'reference/core/survey_v2_blind_classifier_protocol.json'
+      - 'reference/core/gate_archetypes_v1.json'
+      - 'reference/core/channel_archetypes_v1.json'
       - '.github/workflows/audit-survey-v2-completion.yml'
   workflow_dispatch:
 
