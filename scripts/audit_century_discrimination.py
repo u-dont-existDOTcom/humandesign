@@ -5,12 +5,16 @@ from __future__ import annotations
 
 import argparse
 import json
+from collections import Counter
 from dataclasses import asdict
 from pathlib import Path
 
-from hdmatch.evaluation.discrimination import audit_partition, greedy_question_sequence
+from hdmatch.evaluation.discrimination import (
+    audit_partition,
+    greedy_weighted_question_sequence,
+)
 from hdmatch.runtime.century_cache import load_century_candidate_states, verify_century_cache
-from hdmatch.runtime.symbolic_adapter import FrozenSymbolicModel
+from hdmatch.runtime.symbolic_adapter import FrozenSymbolicModel, ScoreSignature
 
 
 def main() -> int:
@@ -33,24 +37,33 @@ def main() -> int:
         lambda state: model.scoring_signature(state.chart_features),
     )
 
-    answers_by_signature: dict[object, dict[str, str]] = {}
-    answers_by_state: dict[str, dict[str, str]] = {}
+    signature_counts: Counter[ScoreSignature] = Counter()
+    answers_by_signature: dict[ScoreSignature, dict[str, str]] = {}
     for state in states:
         signature = model.scoring_signature(state.chart_features)
-        answers = answers_by_signature.get(signature)
-        if answers is None:
-            answers = {
+        signature_counts[signature] += 1
+        if signature not in answers_by_signature:
+            answers_by_signature[signature] = {
                 response.question_id: response.answer
                 for response in model.oracle_responses(state.chart_features)
             }
-            answers_by_signature[signature] = answers
-        answers_by_state[state.state_id] = answers
 
+    answer_fingerprint_by_signature = {
+        signature: tuple(sorted(answers.items()))
+        for signature, answers in answers_by_signature.items()
+    }
     answer_fingerprint_audit = audit_partition(
         states,
-        lambda state: tuple(sorted(answers_by_state[state.state_id].items())),
+        lambda state: answer_fingerprint_by_signature[
+            model.scoring_signature(state.chart_features)
+        ],
     )
-    greedy_steps = greedy_question_sequence(states, answers_by_state)
+    greedy_steps = greedy_weighted_question_sequence(
+        tuple(
+            (answers_by_signature[signature], count)
+            for signature, count in signature_counts.items()
+        )
+    )
 
     report = {
         "schema_version": "century-discrimination-audit-v1",
