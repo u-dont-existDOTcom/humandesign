@@ -23,7 +23,6 @@ from hdmatch.experiments.canonical import (
 from hdmatch.schemas import CandidateState, StructuralChartFeatures
 from hdmatch.search import split_interval_by_local_date
 
-
 BOUNDARY_POLICY_VERSION: Final[
     Literal["activation-gates-plus-sun-lines-forward-design-v2"]
 ] = "activation-gates-plus-sun-lines-forward-design-v2"
@@ -40,13 +39,7 @@ class _FrozenModel(BaseModel):
 
 
 class GlobalCandidateState(_FrozenModel):
-    """Timezone-neutral structural chart interval stored in the global cache.
-
-    ``chart_features_hash`` hashes the compact structural feature record.  It is
-    intentionally not the full all-lines chart-engine stable hash: non-Sun line
-    changes are outside this century-universe resolution and must not split a
-    candidate interval.
-    """
+    """Timezone-neutral structural chart interval stored in the global cache."""
 
     state_id: str
     start_utc: datetime
@@ -131,8 +124,6 @@ class CenturyCacheVerificationError(RuntimeError):
 
 
 def structural_features_sha256(features: StructuralChartFeatures) -> str:
-    """Hash the exact discrete structural vector used by the century universe."""
-
     return sha256_json(features)
 
 
@@ -147,8 +138,6 @@ def write_verified_century_cache(
     design_root_tolerance_seconds: float = 0.01,
     shard_years: int = 10,
 ) -> CenturyCacheManifest:
-    """Write an immutable deterministic structural cache and verify it immediately."""
-
     if shard_years <= 0:
         raise ValueError("shard_years must be positive")
     _audit_partition(states)
@@ -160,20 +149,17 @@ def write_verified_century_cache(
     start_year = states[0].start_utc.year
     groups: dict[int, list[GlobalCandidateState]] = defaultdict(list)
     for state in states:
-        bucket = max(0, (state.start_utc.year - start_year) // shard_years)
-        groups[bucket].append(state)
+        groups[max(0, (state.start_utc.year - start_year) // shard_years)].append(state)
 
     universe_digest = sha256()
     shards: list[CenturyCacheShard] = []
     for bucket in sorted(groups):
         rows = tuple(groups[bucket])
         first_year = start_year + bucket * shard_years
-        last_year = first_year + shard_years - 1
-        filename = f"states-{first_year:04d}-{last_year:04d}.jsonl.gz"
+        filename = f"states-{first_year:04d}-{first_year + shard_years - 1:04d}.jsonl.gz"
         raw = b"".join(_row_bytes(state) for state in rows)
         universe_digest.update(raw)
-        compressed = gzip.compress(raw, compresslevel=9, mtime=0)
-        destination = write_new_bytes(root / filename, compressed)
+        destination = write_new_bytes(root / filename, gzip.compress(raw, compresslevel=9, mtime=0))
         shards.append(
             CenturyCacheShard(
                 filename=filename,
@@ -207,28 +193,9 @@ def verify_century_cache(
     *,
     expected_engine_fingerprint: str | None = None,
 ) -> CenturyCacheManifest:
-    """Verify manifest, exact bytes, canonical rows, hashes, and interval partition."""
-
-    root = Path(cache_dir)
-    try:
-        value = load_json_bytes(root / "manifest.json", require_canonical=True)
-        manifest = CenturyCacheManifest.model_validate(value)
-    except (OSError, ValueError) as exc:
-        raise CenturyCacheVerificationError("invalid century-cache manifest") from exc
-    if (
-        expected_engine_fingerprint is not None
-        and manifest.engine_fingerprint != expected_engine_fingerprint
-    ):
-        raise CenturyCacheVerificationError(
-            "century-cache engine fingerprint does not match the deployed chart engine"
-        )
-
-    states = _load_verified_global_states(root, manifest)
-    _audit_partition(states)
-    if states[0].start_utc != manifest.utc_start:
-        raise CenturyCacheVerificationError("century cache starts outside its manifest range")
-    if states[-1].end_utc != manifest.utc_end_exclusive:
-        raise CenturyCacheVerificationError("century cache ends outside its manifest range")
+    manifest, _ = _verify_and_load_global_states(
+        Path(cache_dir), expected_engine_fingerprint=expected_engine_fingerprint
+    )
     return manifest
 
 
@@ -238,14 +205,11 @@ def load_century_candidate_states(
     timezone_name: str,
     expected_engine_fingerprint: str,
 ) -> tuple[CandidateState, ...]:
-    """Load a verified global cache and attach participant-local date overlaps."""
+    """Verify and load once, then attach participant-local date overlaps."""
 
-    root = Path(cache_dir)
-    manifest = verify_century_cache(
-        root,
-        expected_engine_fingerprint=expected_engine_fingerprint,
+    _, states = _verify_and_load_global_states(
+        Path(cache_dir), expected_engine_fingerprint=expected_engine_fingerprint
     )
-    states = _load_verified_global_states(root, manifest)
     return tuple(
         CandidateState(
             state_id=state.state_id,
@@ -254,14 +218,39 @@ def load_century_candidate_states(
             chart_features_hash=state.chart_features_hash,
             chart_features=state.chart_features,
             local_date_overlaps=split_interval_by_local_date(
-                state.start_utc,
-                state.end_utc,
-                timezone_name,
+                state.start_utc, state.end_utc, timezone_name
             ),
             boundary_events=state.boundary_events,
         )
         for state in states
     )
+
+
+def _verify_and_load_global_states(
+    root: Path,
+    *,
+    expected_engine_fingerprint: str | None,
+) -> tuple[CenturyCacheManifest, tuple[GlobalCandidateState, ...]]:
+    try:
+        manifest = CenturyCacheManifest.model_validate(
+            load_json_bytes(root / "manifest.json", require_canonical=True)
+        )
+    except (OSError, ValueError) as exc:
+        raise CenturyCacheVerificationError("invalid century-cache manifest") from exc
+    if (
+        expected_engine_fingerprint is not None
+        and manifest.engine_fingerprint != expected_engine_fingerprint
+    ):
+        raise CenturyCacheVerificationError(
+            "century-cache engine fingerprint does not match the deployed chart engine"
+        )
+    states = _load_verified_global_states(root, manifest)
+    _audit_partition(states)
+    if states[0].start_utc != manifest.utc_start:
+        raise CenturyCacheVerificationError("century cache starts outside its manifest range")
+    if states[-1].end_utc != manifest.utc_end_exclusive:
+        raise CenturyCacheVerificationError("century cache ends outside its manifest range")
+    return manifest, states
 
 
 def _load_verified_global_states(
