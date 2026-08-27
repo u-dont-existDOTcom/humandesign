@@ -84,6 +84,8 @@ class AstroHDParticipantBackend:
             raise ValueError("question bank bytes do not match the frozen mapping library")
         self.model.library.validate_against_question_bank(self.question_bank)
         self._universe_cache: dict[tuple[int, int, str], tuple[CandidateState, ...]] = {}
+        self._prevalence_cache: dict[tuple[int, str, str], dict[str, float]] = {}
+        self._universe_digest_cache: dict[tuple[int, RankScope, str], str] = {}
 
     @property
     def scoreable_question_ids(self) -> frozenset[str]:
@@ -135,10 +137,9 @@ class AstroHDParticipantBackend:
                     mapping_ids=tuple(sorted(mapping_ids)),
                 )
             )
-        universe_hash = _candidate_universe_sha256(
+        universe_hash = self._candidate_universe_digest(
             states,
             ranking_scope=ranking_scope,
-            engine_fingerprint=self.chart_engine.fingerprint,
             timezone_name=birth.iana_timezone,
         )
         return PredictionFreeze(
@@ -174,11 +175,8 @@ class AstroHDParticipantBackend:
         self._require_supported_scope(freeze.ranking_scope)
         states = self._states_for_birth(freeze.birth)
         self._assert_frozen_universe(freeze, states)
-        prevalence = candidate_prevalence(states, self.model.library)
-        scores = {
-            state.state_id: self.model.score(state, responses, prevalence)
-            for state in states
-        }
+        prevalence = self._prevalence_for_states(states)
+        scores = self._score_states(states, responses, prevalence)
         ranked_states = self._rank_states(states, scores)
         actual = next(
             (
@@ -263,11 +261,8 @@ class AstroHDParticipantBackend:
         self._require_supported_scope(freeze.ranking_scope)
         states = self._states_for_birth(freeze.birth)
         self._assert_frozen_universe(freeze, states)
-        prevalence = candidate_prevalence(states, self.model.library)
-        scores = {
-            state.state_id: self.model.score(state, responses, prevalence)
-            for state in states
-        }
+        prevalence = self._prevalence_for_states(states)
+        scores = self._score_states(states, responses, prevalence)
         ranked = self._rank_states(states, scores)
         return DiscriminationDiagnostics(
             candidate_state_count=len(ranked),
@@ -290,17 +285,24 @@ class AstroHDParticipantBackend:
             return None
         states = self._states_for_birth(freeze.birth)
         self._assert_frozen_universe(freeze, states)
-        prevalence = candidate_prevalence(states, self.model.library)
-        scores = [self.model.score(state, responses, prevalence) for state in states]
+        prevalence = self._prevalence_for_states(states)
+        score_by_id = self._score_states(states, responses, prevalence)
+        scores = [score_by_id[state.state_id] for state in states]
         max_net = max(score.net_rubric_bits for score in scores)
         weights = [
             max(1.0, (state.end_utc - state.start_utc).total_seconds())
             * 2.0 ** max(-30.0, score.net_rubric_bits - max_net)
             for state, score in zip(states, scores, strict=True)
         ]
-        canonical_by_state = [
-            self.model.library.canonical_answers(state.chart_features) for state in states
-        ]
+        canonical_cache: dict[tuple[str, str, str, str, tuple[str, ...]], dict[str, str]] = {}
+        canonical_by_state: list[dict[str, str]] = []
+        for state in states:
+            signature = self.model.scoring_signature(state.chart_features)
+            canonical = canonical_cache.get(signature)
+            if canonical is None:
+                canonical = self.model.library.canonical_answers(state.chart_features)
+                canonical_cache[signature] = canonical
+            canonical_by_state.append(canonical)
         answer_spaces = self.model.answer_spaces()
         likelihoods: dict[str, list[dict[str, float]]] = {}
         reliability: dict[str, float] = {}
@@ -362,15 +364,84 @@ class AstroHDParticipantBackend:
         self._universe_cache[key] = states
         return states
 
+    def _prevalence_for_states(
+        self,
+        states: Sequence[CandidateState],
+    ) -> dict[str, float]:
+        key = _universe_cache_key(states)
+        cached = self._prevalence_cache.get(key)
+        if cached is None:
+            cached = candidate_prevalence(states, self.model.library)
+            self._prevalence_cache[key] = cached
+        return cached
+
+    def _score_states(
+        self,
+        states: Sequence[CandidateState],
+        responses: Sequence[BehavioralResponse],
+        prevalence: dict[str, float],
+    ) -> dict[str, ScoredState]:
+        """Score once per model-visible chart signature, preserving state IDs."""
+
+        if not responses:
+            return {
+                state.state_id: ScoredState(
+                    state_id=state.state_id,
+                    net_rubric_bits=0.0,
+                    evidence_rubric_bits=0.0,
+                    contradiction_rubric_bits=0.0,
+                    detailed_support=0.0,
+                    core_fit=0.0,
+                    meaningful_contradictions=0,
+                )
+                for state in states
+            }
+        by_signature: dict[
+            tuple[str, str, str, str, tuple[str, ...]], ScoredState
+        ] = {}
+        result: dict[str, ScoredState] = {}
+        for state in states:
+            signature = self.model.scoring_signature(state.chart_features)
+            score = by_signature.get(signature)
+            if score is None:
+                score = self.model.score(state, responses, prevalence)
+                by_signature[signature] = score
+            result[state.state_id] = (
+                score
+                if score.state_id == state.state_id
+                else score.model_copy(update={"state_id": state.state_id})
+            )
+        return result
+
+    def _candidate_universe_digest(
+        self,
+        states: Sequence[CandidateState],
+        *,
+        ranking_scope: RankScope,
+        timezone_name: str,
+    ) -> str:
+        # CandidateState and the containing tuples are immutable.  Caching by tuple
+        # identity avoids re-hashing ~289k rows on every adaptive interview turn.
+        key = (id(states), ranking_scope, timezone_name)
+        cached = self._universe_digest_cache.get(key)
+        if cached is None:
+            cached = _candidate_universe_sha256(
+                states,
+                ranking_scope=ranking_scope,
+                engine_fingerprint=self.chart_engine.fingerprint,
+                timezone_name=timezone_name,
+            )
+            self._universe_digest_cache[key] = cached
+        return cached
+
     def _assert_frozen_universe(
         self,
         freeze: PredictionFreeze,
         states: Sequence[CandidateState],
     ) -> None:
-        observed = _candidate_universe_sha256(
+        observed = self._candidate_universe_digest(
             states,
             ranking_scope=freeze.ranking_scope,
-            engine_fingerprint=self.chart_engine.fingerprint,
             timezone_name=freeze.birth.iana_timezone,
         )
         if observed != freeze.candidate_universe_sha256:
@@ -389,6 +460,14 @@ class AstroHDParticipantBackend:
         states: Sequence[CandidateState],
         scores: dict[str, ScoredState],
     ) -> tuple[_RankedState, ...]:
+        """Rank by evidence score; duration only gives deterministic display order.
+
+        State duration must never turn an evidence-equivalent set into distinct
+        scientific ranks.  In particular, with zero behavioral evidence every
+        candidate state receives the same midrank and the top tie count equals the
+        full universe.
+        """
+
         ordered = sorted(
             states,
             key=lambda state: (
@@ -404,10 +483,10 @@ class AstroHDParticipantBackend:
         position = 0
         while position < len(ordered):
             state = ordered[position]
-            key = _tie_key(state, scores[state.state_id])
+            key = _evidence_tie_key(scores[state.state_id])
             end = position + 1
-            while end < len(ordered) and _tie_key(
-                ordered[end], scores[ordered[end].state_id]
+            while end < len(ordered) and _evidence_tie_key(
+                scores[ordered[end].state_id]
             ) == key:
                 end += 1
             midrank = (position + 1 + end) / 2.0
@@ -441,6 +520,12 @@ class AstroHDParticipantBackend:
                 "the completed 100-year audit is target-specific and is not reused as if it "
                 "were a production participant universe"
             )
+
+
+def _universe_cache_key(states: Sequence[CandidateState]) -> tuple[int, str, str]:
+    if not states:
+        raise ValueError("candidate universe must not be empty")
+    return len(states), states[0].state_id, states[-1].state_id
 
 
 def _candidate_universe_sha256(
@@ -479,13 +564,12 @@ def _candidate_universe_sha256(
     return digest.hexdigest()
 
 
-def _tie_key(state: CandidateState, score: ScoredState) -> tuple[float | int, ...]:
+def _evidence_tie_key(score: ScoredState) -> tuple[float | int, ...]:
     return (
         round(score.net_rubric_bits, 12),
         score.meaningful_contradictions,
         round(score.detailed_support, 12),
         round(score.core_fit, 12),
-        round((state.end_utc - state.start_utc).total_seconds(), 6),
     )
 
 
