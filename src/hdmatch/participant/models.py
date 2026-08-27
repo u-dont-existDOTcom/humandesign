@@ -120,10 +120,10 @@ class PredictionDimension(ParticipantModel):
 
 
 class PredictionFreeze(ParticipantModel):
-    """Immutable predictions and provenance created before any participant answer."""
+    """Immutable predictions, search universe, and provenance frozen before answers."""
 
-    schema_version: Literal["participant-prediction-freeze-v1"] = (
-        "participant-prediction-freeze-v1"
+    schema_version: Literal["participant-prediction-freeze-v2"] = (
+        "participant-prediction-freeze-v2"
     )
     session_id: str
     created_at_utc: datetime
@@ -138,13 +138,22 @@ class PredictionFreeze(ParticipantModel):
     question_bank_version: str
     question_bank_sha256: str
     ranking_scope: RankScope
+    candidate_universe_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
+    candidate_universe_state_count: int = Field(ge=1)
+    candidate_universe_utc_start: datetime
+    candidate_universe_utc_end_exclusive: datetime
+    candidate_universe_timezone: str = Field(min_length=1)
     primary_research_layer: ResearchLayer = ResearchLayer.NATAL_BEHAVIORAL_FINGERPRINT
 
-    @field_validator("created_at_utc")
+    @field_validator(
+        "created_at_utc",
+        "candidate_universe_utc_start",
+        "candidate_universe_utc_end_exclusive",
+    )
     @classmethod
     def freeze_timestamp_is_utc(cls, value: datetime) -> datetime:
         if value.tzinfo is None or value.utcoffset() is None:
-            raise ValueError("created_at_utc must be timezone-aware")
+            raise ValueError("freeze timestamps must be timezone-aware")
         return value.astimezone(UTC)
 
 
