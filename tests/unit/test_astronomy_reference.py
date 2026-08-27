@@ -15,6 +15,7 @@ from hdmatch.chart.astronomy_reference import (
     ReferenceFrame,
     SwissAstronomyReferenceProvider,
     UnsupportedAstronomyProjection,
+    astrohd_gate,
     iau_constellation,
     projection_spec,
     sidereal_longitude,
@@ -52,6 +53,7 @@ def _state() -> AstronomyState:
 def test_projection_registry_keeps_coordinate_hypotheses_distinct() -> None:
     assert {spec.kind for spec in PROJECTION_SPECS} == set(ProjectionKind)
     assert projection_spec(ProjectionKind.TROPICAL_EQUINOX_OF_DATE).status == "implemented"
+    assert projection_spec(ProjectionKind.ASTROHD_GATE).status == "implemented"
     assert projection_spec(ProjectionKind.IAU_CONSTELLATION).status == "registered_fail_closed"
 
 
@@ -60,6 +62,13 @@ def test_sidereal_projection_requires_explicit_ayanamsa() -> None:
     assert sidereal_longitude(state, ayanamsa_name="example", ayanamsa_deg=24.0) == 285.25
     with pytest.raises(ValueError, match="ayanamsa_name"):
         sidereal_longitude(state, ayanamsa_name="", ayanamsa_deg=24.0)
+
+
+def test_astrohd_gate_projection_uses_frozen_mandala_mapper() -> None:
+    position = astrohd_gate(_state())
+    assert position.gate == 19
+    assert position.line == 5
+    assert position.longitude == 309.25
 
 
 def test_iau_constellation_fails_closed_without_boundary_dataset() -> None:
