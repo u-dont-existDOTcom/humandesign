@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/adb_broad_exact_pair_dissolution_permutation_v1.py'
+      - 'scripts/adb_broad_exact_pair_dissolution_permutation_v1_parallel.py'
       - 'reference/research/adb_broad_exact_pair_dissolution_permutation_policy_v1.json'
       - 'reference/research/adb_broad_exact_pair_dissolution_feature_matrix_v1.json'
       - 'reference/research/adb_broad_exact_pair_dissolution_fit_results_v1.json'
@@ -26,7 +27,7 @@ jobs:
       - name: Install dependencies
         run: python -m pip install numpy scikit-learn
       - name: Run frozen 500-permutation max-T test
-        run: python scripts/adb_broad_exact_pair_dissolution_permutation_v1.py
+        run: python scripts/adb_broad_exact_pair_dissolution_permutation_v1_parallel.py
       - name: Commit permutation result
         run: |
           git config user.name "github-actions[bot]"
