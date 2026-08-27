@@ -1,0 +1,65 @@
+{
+  "schema_version": "mapping-v2-source-registry-v1",
+  "status": "source_provenance_not_empirical_validation",
+  "sources": [
+    {
+      "source_id": "jovian-planetary-accents-2026",
+      "evidence_class": "official_hd_primary",
+      "publisher": "Jovian Archive",
+      "title": "The Role of Planetary Accents in Human Design",
+      "url": "https://jovianarchive.com/blogs/chart-interpretations-components/planetary-accents-in-human-design",
+      "used_for": [
+        "planet_role",
+        "personality_design_side",
+        "planet_gate_composition"
+      ],
+      "note": "Official system source. Establishes planet roles and that the activated gate supplies the thematic subject matter; not independent empirical validation."
+    },
+    {
+      "source_id": "jovian-channels-life-force",
+      "evidence_class": "official_hd_primary",
+      "publisher": "Jovian Archive",
+      "title": "Channels in Human Design: The Life Force",
+      "url": "https://jovianarchive.com/pages/channels-in-human-design-the-life-force",
+      "used_for": [
+        "channel_general",
+        "channel_16_48"
+      ],
+      "note": "Official system source for channels as stable life-force themes and 16-48 mastery through repetition/refinement."
+    },
+    {
+      "source_id": "jovian-gates-hexagrams",
+      "evidence_class": "official_hd_primary",
+      "publisher": "Jovian Archive",
+      "title": "Gates and Hexagrams in Human Design",
+      "url": "https://jovianarchive.com/pages/gates-and-hexagrams-in-human-design",
+      "used_for": [
+        "gate_general",
+        "gate_examples"
+      ],
+      "note": "Official system source for activated gates as recurring themes; includes examples such as Gate 13 listening/confidences."
+    },
+    {
+      "source_id": "hda-64-gates-2023",
+      "evidence_class": "historical_system_source",
+      "publisher": "Human Design America",
+      "title": "The 64 Gates",
+      "url": "https://humandesignamerica.com/64-gates/",
+      "used_for": [
+        "gate_catalog"
+      ],
+      "note": "Accredited Human Design educational derivative. Gate names/tag lines are attributed there to Ra Uru Hu's Rave I-Ching; short descriptions are attributed mainly to Ra Uru Hu and partly to Richard Rudd. Catalog below is paraphrased, not quoted."
+    },
+    {
+      "source_id": "hda-channel-briefs",
+      "evidence_class": "historical_system_source",
+      "publisher": "Human Design America",
+      "title": "Channel Briefs",
+      "url": "https://humandesignamerica.com/channel-briefs/",
+      "used_for": [
+        "channel_catalog"
+      ],
+      "note": "Accredited Human Design educational derivative used to preregister generic channel hypotheses; catalog below is paraphrased."
+    }
+  ]
+}
