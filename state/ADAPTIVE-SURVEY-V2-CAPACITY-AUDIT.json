@@ -1,0 +1,242 @@
+{
+  "baseline": {
+    "candidate_count": 288938,
+    "duration_weighted_information_bits": 14.94730361146276,
+    "duration_weighted_top10_ceiling": 0.896934570276574,
+    "duration_weighted_top1_ceiling": 0.3362673205511947,
+    "duration_weighted_top5_ceiling": 0.7607611393705366,
+    "maximum_identity_bits": 18.14040042844796,
+    "tie_size_max": 111,
+    "tie_size_p50": 9,
+    "tie_size_p90": 32,
+    "tie_size_p95": 43,
+    "uniform_information_bits": 15.00655419145654,
+    "uniform_top10_ceiling": 0.7884459641860884,
+    "uniform_top1_ceiling": 0.18795381708186532,
+    "uniform_top5_ceiling": 0.5912756369878659,
+    "unique_fingerprints": 54307
+  },
+  "baseline_observable_count": 26,
+  "cache_canonical_rows_sha256": "eb58516030f2176d4c136055829a8168ffe33715a35bfe0b4095c83824c88dfa",
+  "cache_engine_fingerprint": "09e811ca0fe517975f9718ea7e12b72f66bf3d2509e049bc29f47169adef5397",
+  "cache_interval_count": 288938,
+  "channel_item_count": 36,
+  "exact_interval_identity_reached": false,
+  "family_metrics": [
+    {
+      "combined": {
+        "candidate_count": 288938,
+        "duration_weighted_information_bits": 17.406626999533437,
+        "duration_weighted_top10_ceiling": 0.9999999999999715,
+        "duration_weighted_top1_ceiling": 0.900526874166852,
+        "duration_weighted_top5_ceiling": 0.9999942045133875,
+        "maximum_identity_bits": 18.14040042844796,
+        "tie_size_max": 8,
+        "tie_size_p50": 1,
+        "tie_size_p90": 2,
+        "tie_size_p95": 3,
+        "uniform_information_bits": 17.696471379391586,
+        "uniform_top10_ceiling": 1.0,
+        "uniform_top1_ceiling": 0.7891139275553926,
+        "uniform_top5_ceiling": 0.9999619295488997,
+        "unique_fingerprints": 228005
+      },
+      "family_id": "moon",
+      "incremental_duration_weighted_bits": 2.4593233880706773,
+      "incremental_uniform_bits": 2.6899171879350448
+    },
+    {
+      "combined": {
+        "candidate_count": 288938,
+        "duration_weighted_information_bits": 16.889604974466476,
+        "duration_weighted_top10_ceiling": 0.9999797942125818,
+        "duration_weighted_top1_ceiling": 0.7421115896855107,
+        "duration_weighted_top5_ceiling": 0.9963853489591826,
+        "maximum_identity_bits": 18.14040042844796,
+        "tie_size_max": 15,
+        "tie_size_p50": 2,
+        "tie_size_p90": 5,
+        "tie_size_p95": 6,
+        "uniform_information_bits": 17.106703659047007,
+        "uniform_top10_ceiling": 0.9998511791456991,
+        "uniform_top1_ceiling": 0.5744069662003614,
+        "uniform_top5_ceiling": 0.985965847344413,
+        "unique_fingerprints": 165968
+      },
+      "family_id": "channels",
+      "incremental_duration_weighted_bits": 1.9423013630037165,
+      "incremental_uniform_bits": 2.100149467590466
+    },
+    {
+      "combined": {
+        "candidate_count": 288938,
+        "duration_weighted_information_bits": 16.38979972960952,
+        "duration_weighted_top10_ceiling": 0.999480343903748,
+        "duration_weighted_top1_ceiling": 0.6029643296517699,
+        "duration_weighted_top5_ceiling": 0.9820083334531805,
+        "maximum_identity_bits": 18.14040042844796,
+        "tie_size_max": 22,
+        "tie_size_p50": 3,
+        "tie_size_p90": 7,
+        "tie_size_p95": 8,
+        "uniform_information_bits": 16.556060194238995,
+        "uniform_top10_ceiling": 0.9975496473291848,
+        "uniform_top1_ceiling": 0.41363545120406453,
+        "uniform_top5_ceiling": 0.9412123016010355,
+        "unique_fingerprints": 119515
+      },
+      "family_id": "mercury",
+      "incremental_duration_weighted_bits": 1.442496118146762,
+      "incremental_uniform_bits": 1.5495060027824543
+    },
+    {
+      "combined": {
+        "candidate_count": 288938,
+        "duration_weighted_information_bits": 16.359782617113677,
+        "duration_weighted_top10_ceiling": 0.9995332020458781,
+        "duration_weighted_top1_ceiling": 0.5955102089767472,
+        "duration_weighted_top5_ceiling": 0.980177196809678,
+        "maximum_identity_bits": 18.14040042844796,
+        "tie_size_max": 20,
+        "tie_size_p50": 3,
+        "tie_size_p90": 7,
+        "tie_size_p95": 8,
+        "uniform_information_bits": 16.517830287887737,
+        "uniform_top10_ceiling": 0.9975981006305851,
+        "uniform_top1_ceiling": 0.4048100284490098,
+        "uniform_top5_ceiling": 0.9349514428700967,
+        "unique_fingerprints": 116965
+      },
+      "family_id": "venus",
+      "incremental_duration_weighted_bits": 1.4124790056509173,
+      "incremental_uniform_bits": 1.511276096431196
+    },
+    {
+      "combined": {
+        "candidate_count": 288938,
+        "duration_weighted_information_bits": 16.255196766724623,
+        "duration_weighted_top10_ceiling": 0.9990461050579736,
+        "duration_weighted_top1_ceiling": 0.569181041106062,
+        "duration_weighted_top5_ceiling": 0.9743657233704807,
+        "maximum_identity_bits": 18.14040042844796,
+        "tie_size_max": 30,
+        "tie_size_p50": 4,
+        "tie_size_p90": 7,
+        "tie_size_p95": 9,
+        "uniform_information_bits": 16.380640063957177,
+        "uniform_top10_ceiling": 0.9956565076244731,
+        "uniform_top1_ceiling": 0.3710207726225003,
+        "uniform_top5_ceiling": 0.9163246094317812,
+        "unique_fingerprints": 107202
+      },
+      "family_id": "sun_earth",
+      "incremental_duration_weighted_bits": 1.3078931552618638,
+      "incremental_uniform_bits": 1.3740858725006362
+    },
+    {
+      "combined": {
+        "candidate_count": 288938,
+        "duration_weighted_information_bits": 16.267182164413192,
+        "duration_weighted_top10_ceiling": 0.9980241201105333,
+        "duration_weighted_top1_ceiling": 0.574930630481109,
+        "duration_weighted_top5_ceiling": 0.9700577541612129,
+        "maximum_identity_bits": 18.14040042844796,
+        "tie_size_max": 49,
+        "tie_size_p50": 3,
+        "tie_size_p90": 8,
+        "tie_size_p95": 9,
+        "uniform_information_bits": 16.407267821875173,
+        "uniform_top10_ceiling": 0.9921886356242515,
+        "uniform_top1_ceiling": 0.38264956495857244,
+        "uniform_top5_ceiling": 0.9125452519225578,
+        "unique_fingerprints": 110562
+      },
+      "family_id": "mars",
+      "incremental_duration_weighted_bits": 1.319878552950433,
+      "incremental_uniform_bits": 1.4007136304186325
+    }
+  ],
+  "full_v2": {
+    "candidate_count": 288938,
+    "duration_weighted_information_bits": 17.537319398817214,
+    "duration_weighted_top10_ceiling": 0.9999999999999715,
+    "duration_weighted_top1_ceiling": 0.9444406957593426,
+    "duration_weighted_top5_ceiling": 0.9999999999999715,
+    "maximum_identity_bits": 18.14040042844796,
+    "tie_size_max": 4,
+    "tie_size_p50": 1,
+    "tie_size_p90": 2,
+    "tie_size_p95": 2,
+    "uniform_information_bits": 17.90423973445549,
+    "uniform_top10_ceiling": 1.0,
+    "uniform_top1_ceiling": 0.882407298451571,
+    "uniform_top5_ceiling": 1.0,
+    "unique_fingerprints": 254961
+  },
+  "generated_item_count": 804,
+  "greedy_family_sequence": [
+    {
+      "cumulative_duration_weighted_bits": 17.406626999533437,
+      "cumulative_uniform_bits": 17.696471379391586,
+      "family_id": "moon",
+      "incremental_uniform_bits": 2.6899171879350448,
+      "tie_size_max": 8,
+      "tie_size_p50": 1,
+      "tie_size_p95": 3,
+      "unique_fingerprints": 228005
+    },
+    {
+      "cumulative_duration_weighted_bits": 17.46930913161208,
+      "cumulative_uniform_bits": 17.793040655653062,
+      "family_id": "mercury",
+      "incremental_uniform_bits": 0.09656927626147649,
+      "tie_size_max": 5,
+      "tie_size_p50": 1,
+      "tie_size_p95": 2,
+      "unique_fingerprints": 240238
+    },
+    {
+      "cumulative_duration_weighted_bits": 17.51075901779864,
+      "cumulative_uniform_bits": 17.86104418241674,
+      "family_id": "venus",
+      "incremental_uniform_bits": 0.06800352676367893,
+      "tie_size_max": 4,
+      "tie_size_p50": 1,
+      "tie_size_p95": 2,
+      "unique_fingerprints": 249192
+    },
+    {
+      "cumulative_duration_weighted_bits": 17.532748839861895,
+      "cumulative_uniform_bits": 17.896793747339185,
+      "family_id": "mars",
+      "incremental_uniform_bits": 0.035749564922443966,
+      "tie_size_max": 4,
+      "tie_size_p50": 1,
+      "tie_size_p95": 2,
+      "unique_fingerprints": 253962
+    },
+    {
+      "cumulative_duration_weighted_bits": 17.537319398817214,
+      "cumulative_uniform_bits": 17.90423973445549,
+      "family_id": "channels",
+      "incremental_uniform_bits": 0.00744598711630573,
+      "tie_size_max": 4,
+      "tie_size_p50": 1,
+      "tie_size_p95": 2,
+      "unique_fingerprints": 254961
+    },
+    {
+      "cumulative_duration_weighted_bits": 17.537319398817214,
+      "cumulative_uniform_bits": 17.90423973445549,
+      "family_id": "sun_earth",
+      "incremental_uniform_bits": 0.0,
+      "tie_size_max": 4,
+      "tie_size_p50": 1,
+      "tie_size_p95": 2,
+      "unique_fingerprints": 254961
+    }
+  ],
+  "planet_gate_item_count": 768,
+  "remaining_uniform_identity_gap_bits": 0.23616069399247053,
+  "schema_version": "adaptive-survey-v2-capacity-audit-v1"
+}
