@@ -62,13 +62,20 @@ def _astropy_body_name(body: CelestialBody) -> str:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--swiss-ephemeris", required=True)
+    parser.add_argument(
+        "--swiss-file",
+        action="append",
+        required=True,
+        type=Path,
+        help="Authorized Swiss .se1 file; repeat for planet and Moon files",
+    )
     parser.add_argument("--de440s", required=True, type=Path)
     parser.add_argument("--output", required=True, type=Path)
     args = parser.parse_args()
 
     kernel = args.de440s.resolve(strict=True)
-    swiss = SwissEphemerisProvider(args.swiss_ephemeris)
+    swiss_files = tuple(path.resolve(strict=True) for path in args.swiss_file)
+    swiss = SwissEphemerisProvider(swiss_files)
     rows: list[dict[str, object]] = []
     maxima: dict[str, float] = {}
 
