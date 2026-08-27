@@ -1,0 +1,58 @@
+{
+  "schema_version": "mapping-v2-planet-roles-v1",
+  "status": "candidate_hypotheses_not_empirical_validation",
+  "source_id": "jovian-planetary-accents-2026",
+  "sides": {
+    "personality": {
+      "mode": "conscious",
+      "participant_measurement_note": "Prefer direct self-report plus repeated examples; still ask for counterexamples and outside observations."
+    },
+    "design": {
+      "mode": "less_conscious_or_body",
+      "participant_measurement_note": "Do not assume introspective access. Ask for repeated behavior and whether close others have independently noticed the pattern."
+    }
+  },
+  "roles": {
+    "sun": {
+      "construct": "central life expression",
+      "prompt_template": "Across childhood and adulthood, how central has {theme_clause} been to how you naturally express yourself or to what other people repeatedly experience as a defining part of you?"
+    },
+    "earth": {
+      "construct": "grounding and stability",
+      "prompt_template": "When life is unsettled, how often does {theme_clause} function as a way you regain steadiness, practical footing, or resilience?"
+    },
+    "moon": {
+      "construct": "drive and momentum",
+      "prompt_template": "Across childhood and adulthood, how often have you felt repeatedly driven or pulled toward {theme_clause}, even when nobody required it?"
+    },
+    "mercury": {
+      "construct": "communication and message",
+      "prompt_template": "Across conversation, writing, teaching, or explaining, how often do you keep returning to {theme_clause} as something you want or need to communicate?"
+    },
+    "venus": {
+      "construct": "values, ethics, and boundaries",
+      "prompt_template": "Across childhood and adulthood, how strongly has {theme_clause} functioned as a value, ethical standard, boundary, or something you feel should be protected?"
+    },
+    "mars": {
+      "construct": "development through experience",
+      "prompt_template": "Looking from childhood through adulthood, has {theme_clause} been an area of rawness, trial-and-error, or immaturity that gradually developed through repeated experience?"
+    }
+  },
+  "response_scale": [
+    {"token": "not_at_all", "label": "Not at all"},
+    {"token": "a_little", "label": "A little"},
+    {"token": "moderately", "label": "Moderately / mixed"},
+    {"token": "strongly", "label": "Strongly"},
+    {"token": "very_strongly", "label": "Very strongly"},
+    {"token": "other_context", "label": "Other / context-dependent"},
+    {"token": "unsure", "label": "Unsure"}
+  ],
+  "shared_followups": [
+    "What was the recurring pattern before adolescence?",
+    "What is the pattern now?",
+    "In what contexts does it become stronger, weaker, or reverse?",
+    "Give a representative example and a counterexample.",
+    "If none of the fixed choices captures it accurately, use Other and describe the nuance."
+  ],
+  "design_side_followup": "Have close others independently described this pattern in you, or can you give repeated observable examples even if it does not feel like part of your self-image?"
+}
