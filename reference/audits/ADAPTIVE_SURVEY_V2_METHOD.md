@@ -10,11 +10,13 @@ This is not an empirical validation of Human Design. Official and historical Hum
 
 The bank is generated deterministically from three frozen catalogs:
 
-- `mapping_v2_planet_roles.json`: Sun, Earth, Moon, Mercury, Venus, and Mars role templates on Personality and Design sides;
+- `mapping_v2_planet_roles.json`: Sun, Earth, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, and Pluto role templates on Personality and Design sides;
 - `mapping_v2_gate_catalog.json`: 64 paraphrased gate themes;
 - `mapping_v2_channel_catalog.json`: 36 paraphrased channel themes.
 
-This yields 768 planet/side/gate candidate items plus 36 channel items = **804 predeclared candidate items**. The interview is not intended to ask all 804. It selects among them adaptively.
+This yields 1,408 planet/side/gate candidate items plus 36 channel items = **1,444 predeclared candidate items**. The interview is not intended to ask all 1,444. It selects among them adaptively.
+
+The North and South Nodes are intentionally excluded from the primary natal trait bank. The official HD source describes the Nodes as environment/perspective and explicitly distinguishes the South Node from a personality trait. Nodal hypotheses belong in the existing separate environment/perspective research layer and may not improve the primary natal behavioral ranking.
 
 Every participant-facing item uses an opaque `Q2-...` identifier and omits Human Design vocabulary, gate/channel numbers, planet names, chart side, and the predicted direction before reveal.
 
@@ -41,7 +43,12 @@ The audit conditions first on the clean V3.6 participant-observable fingerprint,
 3. Mercury gate positions, Personality + Design;
 4. Venus gate positions, Personality + Design;
 5. Sun/Earth gate positions, Personality + Design;
-6. Mars gate positions, Personality + Design.
+6. Mars gate positions, Personality + Design;
+7. Jupiter gate positions, Personality + Design;
+8. Saturn gate positions, Personality + Design;
+9. Uranus gate positions, Personality + Design;
+10. Neptune gate positions, Personality + Design;
+11. Pluto gate positions, Personality + Design.
 
 It reports each family's incremental entropy, a greedy family sequence, full-v2 fingerprint entropy, unique-fingerprint count, tie sizes, theoretical top-k ceilings, and the remaining gap to exact interval identity.
 
@@ -50,6 +57,8 @@ The full-v2 fingerprint is a model-space upper bound: clean V3.6 plus all prereg
 ## Leakage safeguard
 
 The previously studied 1985 state and its candidate-exposed Moon/Mars refinements are not used to select universal v2 dimensions. Universal construction follows source provenance and global century-wide residual capacity, not whether a feature happens to isolate the known reference.
+
+Outer-planet roles were added because an official HD source explicitly specifies their general planetary functions and the century-wide residual audit showed that their gate activations remained structurally available. They were not selected because of the known 1985 reference.
 
 ## Promotion criteria
 
