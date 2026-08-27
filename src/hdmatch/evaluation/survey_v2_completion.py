@@ -7,6 +7,8 @@ and a blind participant-observable operationalization before confirmatory use.
 
 from __future__ import annotations
 
+import math
+from collections import Counter
 from collections.abc import Hashable, Mapping, Sequence
 from typing import Any
 
@@ -76,26 +78,25 @@ def audit_survey_v2_completion(
                 features.activation_gates.get(key) for features in structural
             )
 
-    current = survey_v2
-    current_metrics = baseline
+    # Collapse the already-rich survey fingerprint to compact integer group ids.
+    # Candidate fields only need to split the residual tie groups, so repeated
+    # hashing of the full nested V3.6+v2 fingerprint is unnecessary.
+    current_labels = _labels_for(survey_v2)
+    current_metrics = summarize_fingerprints(current_labels, durations)
     remaining = set(feature_vectors)
     steps: list[CompletionStep] = []
     while remaining and current_metrics.unique_fingerprints < len(states):
-        choices: list[
-            tuple[float, str, tuple[Hashable, ...], FingerprintMetrics]
-        ] = []
+        choices: list[tuple[float, str]] = []
         for feature in sorted(remaining):
             values = feature_vectors[feature]
-            candidate: tuple[Hashable, ...] = tuple(
-                (current[index], values[index]) for index in range(len(states))
-            )
-            metrics = summarize_fingerprints(candidate, durations)
-            choices.append((metrics.uniform_information_bits, feature, candidate, metrics))
-        _, feature, candidate, metrics = max(choices, key=lambda item: (item[0], item[1]))
-        gain = max(
-            0.0,
-            metrics.uniform_information_bits - current_metrics.uniform_information_bits,
-        )
+            counts = Counter(zip(current_labels, values, strict=True))
+            choices.append((_entropy_from_counts(counts.values(), len(states)), feature))
+
+        best_bits, feature = max(choices, key=lambda item: (item[0], item[1]))
+        values = feature_vectors[feature]
+        next_labels = _labels_for(tuple(zip(current_labels, values, strict=True)))
+        metrics = summarize_fingerprints(next_labels, durations)
+        gain = max(0.0, best_bits - current_metrics.uniform_information_bits)
         steps.append(
             CompletionStep(
                 feature_id=feature,
@@ -107,7 +108,7 @@ def audit_survey_v2_completion(
             )
         )
         remaining.remove(feature)
-        current = candidate
+        current_labels = next_labels
         current_metrics = metrics
         if gain <= 1e-15:
             break
@@ -120,6 +121,26 @@ def audit_survey_v2_completion(
             full_metrics.unique_fingerprints == len(states)
         ),
         greedy_completion=tuple(steps),
+    )
+
+
+def _labels_for(fingerprints: Sequence[Hashable]) -> tuple[int, ...]:
+    labels: dict[Hashable, int] = {}
+    result: list[int] = []
+    for fingerprint in fingerprints:
+        label = labels.get(fingerprint)
+        if label is None:
+            label = len(labels) + 1
+            labels[fingerprint] = label
+        result.append(label)
+    return tuple(result)
+
+
+def _entropy_from_counts(counts: Sequence[int], total: int) -> float:
+    return -sum(
+        (count / total) * math.log2(count / total)
+        for count in counts
+        if count > 0
     )
 
 
