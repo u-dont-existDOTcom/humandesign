@@ -75,6 +75,16 @@ def main() -> None:
     if len(freeze.candidate_universe_sha256) != 64:
         raise RuntimeError("candidate universe digest is not SHA-256 shaped")
 
+    loaded_states = backend._century_universe_cache.get("UTC")
+    if loaded_states is None:
+        raise RuntimeError("century universe was not cached after successful freeze")
+    model_visible_signature_count = len(
+        {
+            backend.model.scoring_signature(state.chart_features)
+            for state in loaded_states
+        }
+    )
+
     diagnostics = backend.discrimination(freeze=freeze, responses=())
     discriminated = time.perf_counter()
     if diagnostics.candidate_state_count != freeze.candidate_universe_state_count:
@@ -82,12 +92,18 @@ def main() -> None:
             "discrimination candidate count changed after freeze: "
             f"{diagnostics.candidate_state_count} != {freeze.candidate_universe_state_count}"
         )
+    if diagnostics.top_state_tie_count != freeze.candidate_universe_state_count:
+        raise RuntimeError(
+            "zero behavioral evidence must leave every candidate state evidence-tied: "
+            f"{diagnostics.top_state_tie_count} != {freeze.candidate_universe_state_count}"
+        )
 
     report = {
-        "schema_version": "century-global-backend-smoke-v1",
+        "schema_version": "century-global-backend-smoke-v2",
         "fixture": "synthetic-utc-1990-01-01T12:00:00Z",
         "ranking_scope": freeze.ranking_scope.value,
         "candidate_state_count": freeze.candidate_universe_state_count,
+        "model_visible_signature_count": model_visible_signature_count,
         "candidate_universe_sha256": freeze.candidate_universe_sha256,
         "candidate_universe_utc_start": freeze.candidate_universe_utc_start.isoformat(),
         "candidate_universe_utc_end_exclusive": (
