@@ -1,0 +1,24 @@
+{
+  "status": "frozen_before_permutation_results",
+  "freeze_date": "2026-08-27",
+  "scientific_spec": "reference/research/adb_broad_exact_pair_dissolution_semimarkov_freeze_v1.md",
+  "feature_matrix": "reference/research/adb_broad_exact_pair_dissolution_feature_matrix_v1.json",
+  "fit_results": "reference/research/adb_broad_exact_pair_dissolution_fit_results_v1.json",
+  "seed": 202608270131,
+  "permutations": 500,
+  "co_primary_contrasts": ["M3W-M2", "M3H-M2"],
+  "statistic": "pooled held-out pair-year log-loss improvement comparator_minus_new",
+  "null_generation": "for every originally event-bearing pair independently, move its single event indicator uniformly to one of that pair's already observed risk-year rows; censored pairs remain all-zero; pair identity, row count, entry/end structure, event-pair count, outer folds, features, and connected components remain fixed",
+  "regularization": "repeat frozen inner component-grouped CV separately for M2, M3W, M3H within every permutation using C={0.001,0.01,0.1,1.0}; ties choose smaller C",
+  "familywise_adjustment": "max-T: for permutation b compute max(delta_M3W, delta_M3H). Adjusted p for each observed co-primary delta is (1 + count(max_null >= observed_delta))/(B+1)",
+  "global_any_pair_dynamic_p": "(1 + count(max_null >= max(observed_delta_M3W, observed_delta_M3H)))/(B+1)",
+  "outer_folds": "reuse exact outer_fold assignments committed in feature matrix; never recompute from permuted outcomes",
+  "inner_components": "derive person-connected components within each outer-training set; event-bearing component counts are invariant because permutation changes event year only, not event-pair status",
+  "decision_rule": "a development lead still requires all frozen non-permutation conditions plus its max-T adjusted p <= 0.05",
+  "forbidden": [
+    "changing features or C grid after seeing permutation results",
+    "dropping hard permutations",
+    "using Joel/Bee in any tuning",
+    "substituting unadjusted p-values for the frozen familywise rule"
+  ]
+}
