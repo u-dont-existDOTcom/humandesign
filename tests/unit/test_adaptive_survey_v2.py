@@ -1,11 +1,13 @@
 from __future__ import annotations
 
 from datetime import UTC, date, datetime, timedelta
+from hashlib import sha256
 from pathlib import Path
 
 import pytest
 
 from hdmatch.evaluation.adaptive_survey_v2 import (
+    AdaptiveSurveyV2Item,
     item_matches,
     load_adaptive_v2_items,
     select_structural_split_item,
@@ -16,7 +18,7 @@ from hdmatch.schemas import CandidateState, LocalDateOverlap, StructuralChartFea
 ROOT = Path(__file__).resolve().parents[2]
 
 
-def _items():
+def _items() -> tuple[AdaptiveSurveyV2Item, ...]:
     return load_adaptive_v2_items(
         gate_catalog_path=ROOT / "reference/core/mapping_v2_gate_catalog.json",
         channel_catalog_path=ROOT / "reference/core/mapping_v2_channel_catalog.json",
@@ -140,13 +142,15 @@ def _state(
     activations: dict[str, int],
     channels: tuple[str, ...] = (),
 ) -> CandidateState:
-    start = datetime(2000, 1, 1, tzinfo=UTC) + timedelta(hours=ord(state_id[0]) - 97)
+    start = datetime(2000, 1, 1, tzinfo=UTC) + timedelta(
+        hours=sum(state_id.encode("utf-8")) % 24
+    )
     end = start + timedelta(hours=1)
     return CandidateState(
         state_id=state_id,
         start_utc=start,
         end_utc=end,
-        chart_features_hash=(state_id[0] * 64)[:64],
+        chart_features_hash=sha256(state_id.encode("utf-8")).hexdigest(),
         chart_features=StructuralChartFeatures(
             type="Generator",
             strategy="Wait to Respond",
