@@ -33,15 +33,31 @@ def test_channel_archetype_registry_has_36_unique_canonical_channels() -> None:
     assert all(item["label"] and item["construct"] for item in channels)
 
 
+def test_profile_archetype_registry_has_all_12_unique_profiles() -> None:
+    registry = _load("reference/core/profile_archetypes_v1.json")
+    profiles = registry["profiles"]
+    assert isinstance(profiles, list)
+    ids = [item["profile"] for item in profiles]
+    assert len(ids) == 12
+    assert len(ids) == len(set(ids))
+    assert set(ids) == {
+        "1/3", "1/4", "2/4", "2/5", "3/5", "3/6",
+        "4/6", "4/1", "5/1", "5/2", "6/2", "6/3",
+    }
+    assert all(item["label"] and item["construct"] for item in profiles)
+
+
 def test_every_survey_v2_domain_preserves_life_stage_context_and_other() -> None:
     survey = _load("reference/core/survey_v2_behavioral_domains.json")
     domains = survey["domains"]
     assert isinstance(domains, list)
     assert {item["id"] for item in domains} == {
+        "V2_PROFILE_ROLE",
         "V2_MOON_DRIVE",
         "V2_MERCURY_COMMUNICATION",
         "V2_VENUS_VALUES",
         "V2_CHANNEL_PROCESS",
+        "V2_ADAPTIVE_PLANETARY_TIE_BREAKER",
     }
     for domain in domains:
         assert domain["prompt"]
@@ -76,6 +92,7 @@ def test_classifier_freeze_binds_model_prompt_and_vocabularies() -> None:
     freeze = "\n".join(str(item).lower() for item in protocol["cohort_freeze"])
     assert "question/domain bank" in freeze
     assert "gate archetype registry" in freeze
+    assert "profile archetype registry" in freeze
     assert "channel archetype registry" in freeze
     assert "classifier system prompt" in freeze
     assert "classifier model" in freeze

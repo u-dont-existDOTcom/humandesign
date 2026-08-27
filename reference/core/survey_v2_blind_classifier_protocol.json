@@ -5,6 +5,7 @@
   "separation_of_roles": {
     "prediction_freezer": "Reads chart state only and freezes predicted gate/channel labels before participant evidence.",
     "interviewer": "Elicits narrative evidence using the frozen question/domain bank without chart labels or candidate direction.",
+    "adaptive_selector": "Reads only anonymous surviving-candidate predicted labels and unanswered feature ids, then applies the frozen expected-information-gain rule. It never receives the true candidate, birth metadata, participant prose, or candidate rank.",
     "evidence_classifier": "Reads participant narrative plus the complete frozen archetype vocabulary, but not the candidate prediction, candidate rank, birth data, or chart state.",
     "scorer": "Compares frozen prediction to frozen evidence classification only after both are independently sealed."
   },
@@ -26,6 +27,16 @@
     "candidate rank",
     "previous scoring direction",
     "whether a classification would improve the true candidate"
+  ],
+  "adaptive_selector_forbidden_inputs": [
+    "birth date",
+    "birth time",
+    "birth place",
+    "true candidate identity",
+    "candidate rank",
+    "participant narrative",
+    "classifier confidence or rationale",
+    "operator-selected target"
   ],
   "required_output": {
     "status": ["classified", "mixed", "other", "insufficient_evidence", "unclassifiable"],
@@ -64,12 +75,14 @@
   },
   "cohort_freeze": [
     "question/domain bank SHA-256",
+    "profile archetype registry SHA-256",
     "gate archetype registry SHA-256",
     "channel archetype registry SHA-256 when channels become confirmatory",
     "classifier system prompt SHA-256",
     "classifier model identifier/version",
     "temperature or equivalent sampling settings",
     "confidence threshold",
-    "mixed-label scoring rule"
+    "mixed-label scoring rule",
+    "adaptive tie-breaker feature set and deterministic selection rule SHA-256"
   ]
 }

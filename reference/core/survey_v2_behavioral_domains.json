@@ -14,8 +14,22 @@
   ],
   "domains": [
     {
-      "id": "V2_MOON_DRIVE",
+      "id": "V2_PROFILE_ROLE",
       "priority": 1,
+      "chart_feature": "profile",
+      "sides": ["personality", "design"],
+      "source_role": "Profile combines the Personality and Design Sun/Earth lines into one of 12 claimed life-role and relational trajectories.",
+      "prompt": "Across childhood, adolescence, and adult life, which combination of learning style, social role, relationship pattern, and way of contributing has remained most recognizable? Describe the trajectory rather than choosing a label.",
+      "childhood_probe": "How did you learn what was dependable: investigating first, natural private practice, trial and error, relationships and networks, solving projected problems, or observing before participating?",
+      "current_probe": "Which of those patterns still organizes how opportunities, relationships, mistakes, expertise, and contribution develop for you now?",
+      "contrast_probe": "Which role or developmental pattern sounds least like your actual life, even if it sounds admirable?",
+      "response_format": "narrative_then_frozen_12_profile_classification_with_other",
+      "minimum_evidence": "examples spanning at least two life stages, one relational or opportunity pattern, and one negative contrast",
+      "scoring_policy": "classify against all 12 frozen profiles without candidate labels; score only above frozen evidence and confidence thresholds"
+    },
+    {
+      "id": "V2_MOON_DRIVE",
+      "priority": 2,
       "chart_feature": "moon_gate",
       "sides": ["personality", "design"],
       "source_role": "Moon = recurring drive and momentum; the gate supplies the theme of what repeatedly drives action.",
@@ -29,7 +43,7 @@
     },
     {
       "id": "V2_MERCURY_COMMUNICATION",
-      "priority": 2,
+      "priority": 3,
       "chart_feature": "mercury_gate",
       "sides": ["personality", "design"],
       "source_role": "Mercury = communication, language, ideas, and messages that repeatedly seek expression; the gate supplies the subject matter.",
@@ -43,7 +57,7 @@
     },
     {
       "id": "V2_VENUS_VALUES",
-      "priority": 3,
+      "priority": 4,
       "chart_feature": "venus_gate",
       "sides": ["personality", "design"],
       "source_role": "Venus = values, ethics, ideals, boundaries, integrity, and what is considered worth protecting; the gate supplies the value theme.",
@@ -57,7 +71,7 @@
     },
     {
       "id": "V2_CHANNEL_PROCESS",
-      "priority": 4,
+      "priority": 5,
       "chart_feature": "defined_channels",
       "sides": ["combined"],
       "source_role": "Defined channels are claimed to create fixed, reliable processes/themes in how a person thinks, feels, acts, and interacts.",
@@ -68,6 +82,20 @@
       "response_format": "narrative_then_multi_label_frozen_channel_archetype_classification_with_other",
       "minimum_evidence": "at least two cross-context examples and one inconsistent-process contrast",
       "scoring_policy": "multi-label; require independent evidence for each classified process and never infer a full channel merely from one broad trait"
+    },
+    {
+      "id": "V2_ADAPTIVE_PLANETARY_TIE_BREAKER",
+      "priority": 6,
+      "chart_feature": "planetary_gate_selected_by_frozen_expected_information_gain",
+      "sides": ["personality", "design"],
+      "source_role": "A planet supplies the predeclared behavioral domain and its gate supplies one of the same 64 frozen archetype themes. These questions are conditional tie-breakers, not a fixed block asked of everyone.",
+      "prompt": "The interviewer asks the frozen domain prompt for the remaining field with the highest expected information gain among the still-tied candidates.",
+      "childhood_probe": "Give a recurring example from before adolescence for this domain, or state that no stable early pattern is available.",
+      "current_probe": "Give a recurring current example in the same domain and explain whether the pattern changed form.",
+      "contrast_probe": "Name a nearby theme that does not fit, plus a counterexample or context where the proposed pattern fails.",
+      "response_format": "narrative_then_full_64_gate_registry_classification_with_other",
+      "minimum_evidence": "childhood and current evidence plus a negative contrast; otherwise return insufficient evidence",
+      "scoring_policy": "the selection service receives only the anonymous current candidate partition and unanswered feature ids; it never receives birth metadata, the true candidate, classifier labels, or candidate rank"
     }
   ],
   "source_notes": [
