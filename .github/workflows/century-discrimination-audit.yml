@@ -1,0 +1,74 @@
+name: century-discrimination-audit
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/century-discrimination-audit.yml"
+      - "scripts/audit_century_discrimination.py"
+      - "src/hdmatch/evaluation/discrimination.py"
+      - "src/hdmatch/runtime/symbolic_adapter.py"
+      - "mappings/mapping_library_v1.json"
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install package
+        run: |
+          python -m pip install -r requirements-dev.lock
+          python -m pip install --no-build-isolation --no-deps -e .
+      - name: Download verified century cache
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CENTURY_ARTIFACT_ID: "9653492396"
+        run: |
+          mkdir -p /tmp/century-artifact /tmp/century-cache
+          gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${CENTURY_ARTIFACT_ID}/zip" > /tmp/century-artifact/cache.zip
+          unzip -q /tmp/century-artifact/cache.zip -d /tmp/century-cache
+          CACHE_DIR="$(find /tmp/century-cache -name manifest.json -print -quit | xargs dirname)"
+          test -n "$CACHE_DIR"
+          echo "CACHE_DIR=$CACHE_DIR" >> "$GITHUB_ENV"
+      - name: Audit frozen model discrimination
+        run: |
+          mkdir -p audit-output
+          python scripts/audit_century_discrimination.py \
+            --cache "$CACHE_DIR" \
+            --mapping mappings/mapping_library_v1.json \
+            --output audit-output/century_discrimination_audit_v1.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('audit-output/century_discrimination_audit_v1.json')
+          r = json.loads(p.read_text())
+          sig = r['model_visible_signature_partition']
+          ans = r['predicted_answer_fingerprint_partition']
+          print('intervals=', sig['state_count'])
+          print('model-visible groups=', sig['group_count'])
+          print('answer-fingerprint groups=', ans['group_count'])
+          print('answer entropy bits=', ans['state_uniform_entropy_bits'])
+          print('answer residual bits=', ans['state_uniform_residual_bits'])
+          print('top1 ceiling=', ans['exact_state_ceiling'])
+          print('top5 ceiling=', ans['top5_state_ceiling'])
+          print('top10 ceiling=', ans['top10_state_ceiling'])
+          print('max answer tie=', ans['max_tie_size'])
+          print('greedy first 12:')
+          for step in r['greedy_noiseless_question_sequence'][:12]:
+              print(step)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: century-discrimination-audit-v1
+          path: audit-output/century_discrimination_audit_v1.json
+          if-no-files-found: error
+          retention-days: 90
