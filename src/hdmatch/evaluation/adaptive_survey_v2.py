@@ -24,6 +24,21 @@ from hdmatch.runtime.century_cache import CenturyCacheManifest
 from hdmatch.schemas import CandidateState, StructuralChartFeatures
 
 
+PRIMARY_NATAL_BODIES: tuple[str, ...] = (
+    "sun",
+    "earth",
+    "moon",
+    "mercury",
+    "venus",
+    "mars",
+    "jupiter",
+    "saturn",
+    "uranus",
+    "neptune",
+    "pluto",
+)
+
+
 class _FrozenModel(BaseModel):
     model_config = ConfigDict(extra="forbid", frozen=True, allow_inf_nan=False)
 
@@ -63,7 +78,7 @@ class V2GreedyStep(_FrozenModel):
 
 
 class AdaptiveSurveyV2Audit(_FrozenModel):
-    schema_version: str = "adaptive-survey-v2-capacity-audit-v1"
+    schema_version: str = "adaptive-survey-v2-capacity-audit-v2"
     cache_interval_count: int = Field(ge=1)
     cache_engine_fingerprint: str = Field(pattern=r"^[a-f0-9]{64}$")
     cache_canonical_rows_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
@@ -99,15 +114,17 @@ def load_adaptive_v2_items(
 
     if {int(item["gate"]) for item in gates} != set(range(1, 65)):
         raise ValueError("v2 gate catalog must contain each gate 1 through 64 exactly once")
-    bodies = ("sun", "earth", "moon", "mercury", "venus", "mars")
-    if set(roles) != set(bodies):
-        raise ValueError("v2 planet role catalog must define exactly the six preregistered bodies")
+    declared_bodies = tuple(str(item) for item in roles_doc["primary_natal_bodies"])
+    if declared_bodies != PRIMARY_NATAL_BODIES:
+        raise ValueError("v2 planet role catalog does not match frozen primary natal bodies")
+    if set(roles) != set(PRIMARY_NATAL_BODIES):
+        raise ValueError("v2 planet role catalog must define every primary natal body exactly")
     if set(sides) != {"personality", "design"}:
         raise ValueError("v2 planet role catalog must define personality and design sides")
 
     items: list[AdaptiveSurveyV2Item] = []
     for side in ("personality", "design"):
-        for body in bodies:
+        for body in PRIMARY_NATAL_BODIES:
             role = roles[body]
             for gate_record in gates:
                 gate = int(gate_record["gate"])
@@ -160,8 +177,9 @@ def load_adaptive_v2_items(
     question_ids = [item.question_id for item in items]
     if len(question_ids) != len(set(question_ids)):
         raise ValueError("opaque v2 question IDs collided")
-    if len(items) != 804:
-        raise ValueError(f"expected 804 v2 items, got {len(items)}")
+    expected_count = len(PRIMARY_NATAL_BODIES) * 2 * 64 + 36
+    if len(items) != expected_count:
+        raise ValueError(f"expected {expected_count} v2 items, got {len(items)}")
     return tuple(items)
 
 
@@ -188,6 +206,11 @@ def audit_adaptive_survey_v2(
         "venus": _planet_pair_values(structural, ("venus",)),
         "sun_earth": _planet_pair_values(structural, ("sun", "earth")),
         "mars": _planet_pair_values(structural, ("mars",)),
+        "jupiter": _planet_pair_values(structural, ("jupiter",)),
+        "saturn": _planet_pair_values(structural, ("saturn",)),
+        "uranus": _planet_pair_values(structural, ("uranus",)),
+        "neptune": _planet_pair_values(structural, ("neptune",)),
+        "pluto": _planet_pair_values(structural, ("pluto",)),
     }
     family_metrics = tuple(
         _family_metric(
@@ -205,9 +228,7 @@ def audit_adaptive_survey_v2(
         family_values=family_values,
         durations=durations,
     )
-    all_planet_values = _planet_pair_values(
-        structural, ("sun", "earth", "moon", "mercury", "venus", "mars")
-    )
+    all_planet_values = _planet_pair_values(structural, PRIMARY_NATAL_BODIES)
     full_values = tuple(
         (planet_value, _channels_value(features))
         for planet_value, features in zip(all_planet_values, structural, strict=True)
