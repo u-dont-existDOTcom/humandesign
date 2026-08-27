@@ -81,7 +81,7 @@ def main() -> None:
 
     for when in SAMPLES:
         time = Time(when)
-        ecliptic_frame = GeocentricTrueEcliptic(equinox=time)
+        ecliptic_frame = GeocentricTrueEcliptic(equinox=time, obstime=time)
         for body in BODIES:
             swiss_lon = swiss.position(body, when).longitude
             gcrs = get_body(_astropy_body_name(body), time, ephemeris=str(kernel))
