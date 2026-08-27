@@ -48,7 +48,7 @@ class CandidateClaim(_FrozenModel):
     priority_basis: str
     predicate: RichChartPredicate
     source: CandidateSource
-    construct: str
+    behavioral_construct: str = Field(alias="construct")
     proposed_observable: str
     question_design_notes: str
     empirical_status: EmpiricalStatus
