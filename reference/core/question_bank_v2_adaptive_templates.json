@@ -1,5 +1,5 @@
 {
-  "schema_version": "adaptive-question-bank-v2-template-v1",
+  "schema_version": "adaptive-question-bank-v2-template-v2",
   "status": "candidate_bank_to_freeze_before_new_participants",
   "purpose": "Deterministically generate candidate-blind participant questions from frozen gate/channel catalogs. No participant answer may create or rewrite a construct.",
   "rules": [
@@ -10,11 +10,24 @@
     "For less-conscious/body-side predictions, rely more on repeated behavior and independent observations from close others than on self-labels.",
     "Do not treat lack of a chart predicate as a prediction that the behavior is absent; non-carrier states are neutral for that item.",
     "A clear non-endorsement may contradict only states that positively predict the item, subject to measurement reliability.",
-    "Adaptive selection may choose among frozen items by candidate split utility but may not invent new item wording or mappings."
+    "Adaptive selection may choose among frozen items by candidate split utility but may not invent new item wording or mappings.",
+    "Keep North/South Node claims outside the primary natal trait score; they belong to the separate environment/perspective research layer."
   ],
   "item_generation": {
     "planet_gate_items": {
-      "bodies": ["sun", "earth", "moon", "mercury", "venus", "mars"],
+      "bodies": [
+        "sun",
+        "earth",
+        "moon",
+        "mercury",
+        "venus",
+        "mars",
+        "jupiter",
+        "saturn",
+        "uranus",
+        "neptune",
+        "pluto"
+      ],
       "sides": ["personality", "design"],
       "gates": "1-64 from mapping_v2_gate_catalog.json",
       "opaque_question_id": "Q2-<first 16 hex of sha256('planet|side|body|gate')>",
@@ -30,6 +43,7 @@
       "neutral_noncarrier": true
     }
   },
+  "generated_item_count": 1444,
   "adaptive_selection": {
     "primary_utility": "weighted binary structural split entropy among currently plausible candidate states",
     "reliability_adjustments": {
