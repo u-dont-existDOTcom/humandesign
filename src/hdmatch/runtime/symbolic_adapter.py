@@ -15,6 +15,9 @@ from hdmatch.schemas import (
     StructuralChartFeatures,
 )
 
+ScoreSignature = tuple[str, str, str, str, tuple[str, ...]]
+ChartLike = ChartFeatures | StructuralChartFeatures
+
 
 class FrozenSymbolicModel:
     """One immutable model used by both synthetic generator and blind decoder."""
@@ -36,9 +39,28 @@ class FrozenSymbolicModel:
     def question_bank_sha256(self) -> str:
         return self.library.question_bank_sha256
 
+    @staticmethod
+    def scoring_signature(chart: ChartLike) -> ScoreSignature:
+        """Return every chart field the frozen predicate schema can currently see.
+
+        MappingLibrary v1 predicates are intentionally limited to type, strategy,
+        authority, profile and defined-center membership.  Gates/channels remain in
+        the century cache for structural audit and future model versions, but they
+        cannot change the present symbolic score.  If the predicate schema expands,
+        this signature must expand in the same model-version change.
+        """
+
+        return (
+            chart.type,
+            chart.strategy,
+            chart.authority,
+            chart.profile,
+            tuple(sorted(chart.defined_centers)),
+        )
+
     def oracle_responses(
         self,
-        chart: ChartFeatures | StructuralChartFeatures,
+        chart: ChartLike,
     ) -> Sequence[BehavioralResponse]:
         canonical = self.library.canonical_answers(chart)
         responses: list[BehavioralResponse] = []
@@ -96,26 +118,51 @@ class FrozenSymbolicModel:
 def candidate_prevalence(
     states: Iterable[CandidateState], library: MappingLibrary
 ) -> dict[str, float]:
-    """Compute duration-weighted structural prevalence in a declared universe.
+    """Compute duration-weighted prevalence once per model-visible signature.
 
-    These values weight the symbolic rubric. They are not probabilities of a
-    candidate being true, and are never estimated from answer keys.
+    Repeated century intervals often differ in gates or exact timing while being
+    identical to the current MappingLibrary predicate surface.  Aggregating their
+    duration first is mathematically identical to testing every interval separately
+    and avoids millions of redundant predicate evaluations.
     """
 
-    state_tuple = tuple(states)
-    total = sum((state.end_utc - state.start_utc).total_seconds() for state in state_tuple)
+    grouped: dict[ScoreSignature, tuple[float, ChartLike]] = {}
+    total = 0.0
+    for state in states:
+        duration = (state.end_utc - state.start_utc).total_seconds()
+        if duration <= 0.0:
+            continue
+        total += duration
+        chart = state.chart_features
+        signature = _scoring_signature(chart)
+        previous = grouped.get(signature)
+        if previous is None:
+            grouped[signature] = (duration, chart)
+        else:
+            grouped[signature] = (previous[0] + duration, previous[1])
     if total <= 0.0:
         raise ValueError("candidate universe must contain positive duration")
+
     anchors: dict[str, float] = {}
     for mapping in library.frozen_mappings:
         if mapping.anchor_id in anchors:
             continue
         assert mapping.chart_feature_predicate is not None
         matching = sum(
-            (state.end_utc - state.start_utc).total_seconds()
-            for state in state_tuple
-            if mapping.chart_feature_predicate.matches(state.chart_features)
+            duration
+            for duration, chart in grouped.values()
+            if mapping.chart_feature_predicate.matches(chart)
         )
         if matching > 0.0:
             anchors[mapping.anchor_id] = matching / total
     return anchors
+
+
+def _scoring_signature(chart: ChartLike) -> ScoreSignature:
+    return (
+        chart.type,
+        chart.strategy,
+        chart.authority,
+        chart.profile,
+        tuple(sorted(chart.defined_centers)),
+    )
