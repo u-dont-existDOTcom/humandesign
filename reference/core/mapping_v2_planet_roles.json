@@ -1,7 +1,24 @@
 {
-  "schema_version": "mapping-v2-planet-roles-v1",
+  "schema_version": "mapping-v2-planet-roles-v2",
   "status": "candidate_hypotheses_not_empirical_validation",
   "source_id": "jovian-planetary-accents-2026",
+  "primary_natal_bodies": [
+    "sun",
+    "earth",
+    "moon",
+    "mercury",
+    "venus",
+    "mars",
+    "jupiter",
+    "saturn",
+    "uranus",
+    "neptune",
+    "pluto"
+  ],
+  "excluded_from_primary_natal_behavioral_score": {
+    "south_node": "Official HD source describes the South Node as earlier-life environment/experiential landscape rather than a personality trait.",
+    "north_node": "Official HD source describes the North Node as later-life environment/perspective landscape rather than a personality trait. Keep Nodes in the separate environment/perspective research layer."
+  },
   "sides": {
     "personality": {
       "mode": "conscious",
@@ -36,6 +53,26 @@
     "mars": {
       "construct": "development through experience",
       "prompt_template": "Looking from childhood through adulthood, has {theme_clause} been an area of rawness, trial-and-error, or immaturity that gradually developed through repeated experience?"
+    },
+    "jupiter": {
+      "construct": "growth, opportunity, protection, and sustaining principles",
+      "prompt_template": "Across childhood and adulthood, how often has {theme_clause} been tied to expansion, opportunity, protection, or principles you learned you need to follow for growth to remain sustainable?"
+    },
+    "saturn": {
+      "construct": "discipline, accountability, and matured lessons",
+      "prompt_template": "Across childhood and adulthood, how often has {theme_clause} been an area of recurring lessons, responsibility, discipline, limits, or competence that had to be earned over time?"
+    },
+    "uranus": {
+      "construct": "originality, innovation, and mutation",
+      "prompt_template": "Across childhood and adulthood, how often has {theme_clause} appeared through unusually original, unconventional, disruptive, innovative, or nonconforming ways of doing things?"
+    },
+    "neptune": {
+      "construct": "mystery, veiling, imagination, and surrender",
+      "prompt_template": "Across childhood and adulthood, how often has {theme_clause} been difficult to see clearly in yourself, felt mysterious, idealized or imaginative, or required patience and intuition rather than direct control?"
+    },
+    "pluto": {
+      "construct": "deep transformation and evolving truth",
+      "prompt_template": "Across major life phases, how often has {theme_clause} returned as a deep transformative theme whose meaning, intensity, or psychological importance changed as you matured?"
     }
   },
   "response_scale": [
