@@ -333,18 +333,21 @@ def _greedy_family_sequence(
         ] = []
         for family_id in sorted(remaining):
             values = family_values[family_id]
-            combined = tuple(zip(current, values, strict=True))
-            metrics = summarize_fingerprints(combined, durations)
+            combined_pattern: tuple[Hashable, ...] = tuple(
+                (left, right)
+                for left, right in zip(current, values, strict=True)
+            )
+            metrics = summarize_fingerprints(combined_pattern, durations)
             gain = max(
                 0.0,
                 metrics.uniform_information_bits - current_metrics.uniform_information_bits,
             )
-            candidates.append((gain, family_id, combined, metrics))
-        gain, family_id, combined, metrics = max(
+            candidates.append((gain, family_id, combined_pattern, metrics))
+        gain, family_id, selected_pattern, metrics = max(
             candidates, key=lambda item: (item[0], item[1])
         )
         remaining.remove(family_id)
-        current = combined
+        current = selected_pattern
         current_metrics = metrics
         steps.append(
             V2GreedyStep(
