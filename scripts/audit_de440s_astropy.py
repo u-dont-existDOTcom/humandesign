@@ -12,6 +12,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+from dataclasses import asdict
 from datetime import UTC, datetime
 from pathlib import Path
 
@@ -107,7 +108,7 @@ def main() -> None:
             "size_bytes": kernel.stat().st_size,
             "source": "NASA/JPL NAIF generic_kernels/spk/planets/de440s.bsp",
         },
-        "swiss": swiss.metadata.model_dump(mode="json"),
+        "swiss": asdict(swiss.metadata),
         "sample_count": len(rows),
         "max_absolute_error_arcsec_by_body": maxima,
         "rows": rows,
