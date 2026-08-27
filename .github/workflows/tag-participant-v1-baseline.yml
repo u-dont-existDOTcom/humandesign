@@ -1,0 +1,27 @@
+name: tag-participant-v1-baseline
+
+on:
+  push:
+
+permissions:
+  contents: write
+
+jobs:
+  tag:
+    if: ${{ contains(github.event.head_commit.message, 'Tag participant v1 baseline') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create immutable participant v1 baseline release tag
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: participant-v1-baseline-2026-08-27
+          TARGET_SHA: 15ebba1cab1b19a7f2099d980b8e5be25177e659
+        run: |
+          if gh release view "$TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            exit 0
+          fi
+          gh release create "$TAG" \
+            --repo "$GITHUB_REPOSITORY" \
+            --target "$TARGET_SHA" \
+            --title "Participant v1 blind AstroHD baseline" \
+            --notes "Merged participant-facing blinded AstroHD experiment baseline. Century-global backend was accepted against the verified 288,938-interval structural universe before merge. The century cache is separately preserved under century-cache-structural-v2-1926-2026."
