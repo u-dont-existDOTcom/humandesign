@@ -7,6 +7,7 @@ from pathlib import Path
 import pytest
 
 from hdmatch.evaluation.adaptive_survey_v2 import (
+    PRIMARY_NATAL_BODIES,
     AdaptiveSurveyV2Item,
     item_matches,
     load_adaptive_v2_items,
@@ -26,18 +27,55 @@ def _items() -> tuple[AdaptiveSurveyV2Item, ...]:
     )
 
 
-def test_v2_catalog_generates_804_opaque_candidate_blind_items() -> None:
+def test_v2_catalog_generates_1444_opaque_candidate_blind_items() -> None:
     items = _items()
 
-    assert len(items) == 804
-    assert len({item.question_id for item in items}) == 804
-    assert sum(item.kind == "planet_gate" for item in items) == 768
+    assert PRIMARY_NATAL_BODIES == (
+        "sun",
+        "earth",
+        "moon",
+        "mercury",
+        "venus",
+        "mars",
+        "jupiter",
+        "saturn",
+        "uranus",
+        "neptune",
+        "pluto",
+    )
+    assert len(items) == 1444
+    assert len({item.question_id for item in items}) == 1444
+    assert sum(item.kind == "planet_gate" for item in items) == 1408
     assert sum(item.kind == "channel" for item in items) == 36
     assert all(item.question_id.startswith("Q2-") for item in items)
     assert all("moon" not in item.question_id.casefold() for item in items)
     assert all("gate" not in item.prompt.casefold() for item in items)
     assert all("human design" not in item.prompt.casefold() for item in items)
     assert all("other / context-dependent" in item.response_format.casefold() for item in items)
+    assert not any(item.body in {"north_node", "south_node"} for item in items)
+
+
+def test_outer_planet_roles_generate_candidate_blind_items() -> None:
+    items = _items()
+    expected_bodies = {"jupiter", "saturn", "uranus", "neptune", "pluto"}
+    observed_bodies = {
+        item.body
+        for item in items
+        if item.kind == "planet_gate" and item.body in expected_bodies
+    }
+
+    assert observed_bodies == expected_bodies
+    jupiter = next(
+        item
+        for item in items
+        if item.kind == "planet_gate"
+        and item.side == "personality"
+        and item.body == "jupiter"
+        and item.gate == 53
+    )
+    assert "expansion" in jupiter.prompt.casefold()
+    assert "jupiter" not in jupiter.prompt.casefold()
+    assert "53" not in jupiter.prompt
 
 
 def test_design_planet_items_require_outside_observation_followup() -> None:
