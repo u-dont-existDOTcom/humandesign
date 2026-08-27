@@ -1,0 +1,33 @@
+{
+  "all_candidates_recover_rank1": true,
+  "all_candidates_uniquely_recovered": true,
+  "allowed_tie_breakers": [
+    "profile",
+    "activation:personality:mars",
+    "activation:design:mars",
+    "activation:design:jupiter",
+    "activation:personality:jupiter",
+    "activation:design:saturn",
+    "activation:personality:saturn",
+    "activation:design:uranus",
+    "activation:personality:uranus",
+    "activation:personality:south_node",
+    "activation:design:south_node",
+    "activation:design:pluto",
+    "activation:personality:neptune",
+    "activation:design:neptune",
+    "activation:personality:pluto"
+  ],
+  "candidate_count": 288938,
+  "claim_scope": "structural_recoverability_only_not_empirical_human_accuracy",
+  "maximum_questions_asked": 2,
+  "mean_questions_asked": 0.2594674289986087,
+  "question_count_p50": 0,
+  "question_count_p90": 1,
+  "recovered_rank1_count": 288938,
+  "recovered_rank1_fraction": 1.0,
+  "schema_version": "survey-v2-perfect-match-recoverability-v1",
+  "selection_uses_birth_metadata": false,
+  "selection_uses_candidate_rank": false,
+  "unresolved_candidate_count": 0
+}

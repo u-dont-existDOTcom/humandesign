@@ -1,0 +1,52 @@
+name: audit-survey-v2-recoverability
+
+on:
+  push:
+    branches: [survey-v2-behavioral-expansion]
+    paths:
+      - 'src/hdmatch/evaluation/survey_v2_capacity.py'
+      - 'src/hdmatch/evaluation/survey_v2_recoverability.py'
+      - 'scripts/audit_survey_v2_recoverability.py'
+      - 'reference/core/survey_v2_behavioral_domains.json'
+      - 'reference/core/survey_v2_blind_classifier_protocol.json'
+      - 'reference/core/gate_archetypes_v1.json'
+      - 'reference/core/profile_archetypes_v1.json'
+      - '.github/workflows/audit-survey-v2-recoverability.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  recoverability:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: |
+          python -m pip install -r requirements-dev.lock
+          python -m pip install --no-build-isolation --no-deps -e .
+      - name: Download durable verified century cache release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p century-artifact
+          gh release download century-cache-structural-v2-1926-2026 \
+            --repo "$GITHUB_REPOSITORY" \
+            --pattern 'century-candidate-cache-structural-v2-1926-2026.tar.gz' \
+            --dir .
+          tar -xzf century-candidate-cache-structural-v2-1926-2026.tar.gz -C century-artifact
+          test -f century-artifact/manifest.json
+      - name: Require every perfect-match candidate to recover at unique rank one
+        run: |
+          python scripts/audit_survey_v2_recoverability.py \
+            --cache century-artifact \
+            --output state/SURVEY-V2-RECOVERABILITY-AUDIT.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: survey-v2-recoverability-${{ github.sha }}
+          path: state/SURVEY-V2-RECOVERABILITY-AUDIT.json
+          retention-days: 90

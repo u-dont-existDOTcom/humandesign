@@ -1,0 +1,161 @@
+{
+  "cached_structure_can_uniquely_identify_all_states": true,
+  "candidate_count": 288938,
+  "full_cached_structure": {
+    "candidate_count": 288938,
+    "duration_weighted_information_bits": 17.69085671959828,
+    "duration_weighted_top10_ceiling": 0.9999999999999715,
+    "duration_weighted_top1_ceiling": 0.9999999999999715,
+    "duration_weighted_top5_ceiling": 0.9999999999999715,
+    "maximum_identity_bits": 18.14040042844796,
+    "tie_size_max": 1,
+    "tie_size_p50": 1,
+    "tie_size_p90": 1,
+    "tie_size_p95": 1,
+    "uniform_information_bits": 18.14040042844796,
+    "uniform_top10_ceiling": 1.0,
+    "uniform_top1_ceiling": 1.0,
+    "uniform_top5_ceiling": 1.0,
+    "unique_fingerprints": 288938
+  },
+  "greedy_completion": [
+    {
+      "cumulative_uniform_bits": 18.10566630196541,
+      "feature_id": "profile",
+      "incremental_uniform_bits": 0.22392230656560486,
+      "tie_size_max": 3,
+      "uniform_top1_ceiling": 0.9827021714000927,
+      "unique_fingerprints": 283940
+    },
+    {
+      "cumulative_uniform_bits": 18.116376719511962,
+      "feature_id": "activation:personality:mars",
+      "incremental_uniform_bits": 0.010710417546551554,
+      "tie_size_max": 3,
+      "uniform_top1_ceiling": 0.9880181907537258,
+      "unique_fingerprints": 285476
+    },
+    {
+      "cumulative_uniform_bits": 18.126688789488988,
+      "feature_id": "activation:design:mars",
+      "incremental_uniform_bits": 0.010312069977025828,
+      "tie_size_max": 3,
+      "uniform_top1_ceiling": 0.9931611626023577,
+      "unique_fingerprints": 286962
+    },
+    {
+      "cumulative_uniform_bits": 18.129406618962836,
+      "feature_id": "activation:design:jupiter",
+      "incremental_uniform_bits": 0.0027178294738483544,
+      "tie_size_max": 3,
+      "uniform_top1_ceiling": 0.994510933141366,
+      "unique_fingerprints": 287352
+    },
+    {
+      "cumulative_uniform_bits": 18.132000634893604,
+      "feature_id": "activation:personality:jupiter",
+      "incremental_uniform_bits": 0.0025940159307680233,
+      "tie_size_max": 3,
+      "uniform_top1_ceiling": 0.995805328478774,
+      "unique_fingerprints": 287726
+    },
+    {
+      "cumulative_uniform_bits": 18.133558978422343,
+      "feature_id": "activation:design:saturn",
+      "incremental_uniform_bits": 0.001558343528738959,
+      "tie_size_max": 3,
+      "uniform_top1_ceiling": 0.9965805813011788,
+      "unique_fingerprints": 287950
+    },
+    {
+      "cumulative_uniform_bits": 18.135105174794926,
+      "feature_id": "activation:personality:saturn",
+      "incremental_uniform_bits": 0.0015461963725833527,
+      "tie_size_max": 2,
+      "uniform_top1_ceiling": 0.9973523731734836,
+      "unique_fingerprints": 288173
+    },
+    {
+      "cumulative_uniform_bits": 18.136115772224134,
+      "feature_id": "activation:design:uranus",
+      "incremental_uniform_bits": 0.0010105974292073938,
+      "tie_size_max": 2,
+      "uniform_top1_ceiling": 0.9978576718880867,
+      "unique_fingerprints": 288319
+    },
+    {
+      "cumulative_uniform_bits": 18.13703638495074,
+      "feature_id": "activation:personality:uranus",
+      "incremental_uniform_bits": 0.0009206127266061515,
+      "tie_size_max": 2,
+      "uniform_top1_ceiling": 0.9983179782513896,
+      "unique_fingerprints": 288452
+    },
+    {
+      "cumulative_uniform_bits": 18.137673199769143,
+      "feature_id": "activation:personality:south_node",
+      "incremental_uniform_bits": 0.0006368148184030531,
+      "tie_size_max": 2,
+      "uniform_top1_ceiling": 0.9986363856605915,
+      "unique_fingerprints": 288544
+    },
+    {
+      "cumulative_uniform_bits": 18.138275405086546,
+      "feature_id": "activation:design:south_node",
+      "incremental_uniform_bits": 0.0006022053174028486,
+      "tie_size_max": 2,
+      "uniform_top1_ceiling": 0.9989374883192934,
+      "unique_fingerprints": 288631
+    },
+    {
+      "cumulative_uniform_bits": 18.138829157102553,
+      "feature_id": "activation:design:pluto",
+      "incremental_uniform_bits": 0.0005537520160068254,
+      "tie_size_max": 2,
+      "uniform_top1_ceiling": 0.9992143643272952,
+      "unique_fingerprints": 288711
+    },
+    {
+      "cumulative_uniform_bits": 18.139362143417955,
+      "feature_id": "activation:personality:neptune",
+      "incremental_uniform_bits": 0.0005329863154024395,
+      "tie_size_max": 2,
+      "uniform_top1_ceiling": 0.9994808574849968,
+      "unique_fingerprints": 288788
+    },
+    {
+      "cumulative_uniform_bits": 18.139888207833156,
+      "feature_id": "activation:design:neptune",
+      "incremental_uniform_bits": 0.0005260644152009775,
+      "tie_size_max": 2,
+      "uniform_top1_ceiling": 0.9997438896925984,
+      "unique_fingerprints": 288864
+    },
+    {
+      "cumulative_uniform_bits": 18.14040042844796,
+      "feature_id": "activation:personality:pluto",
+      "incremental_uniform_bits": 0.0005122206148051589,
+      "tie_size_max": 1,
+      "uniform_top1_ceiling": 1.0,
+      "unique_fingerprints": 288938
+    }
+  ],
+  "schema_version": "survey-v2-completion-audit-v1",
+  "survey_v2_baseline": {
+    "candidate_count": 288938,
+    "duration_weighted_information_bits": 17.523644769191797,
+    "duration_weighted_top10_ceiling": 0.9999999999999715,
+    "duration_weighted_top1_ceiling": 0.9397634011164433,
+    "duration_weighted_top5_ceiling": 0.9999999999999715,
+    "maximum_identity_bits": 18.14040042844796,
+    "tie_size_max": 4,
+    "tie_size_p50": 1,
+    "tie_size_p90": 2,
+    "tie_size_p95": 2,
+    "uniform_information_bits": 17.881743995399805,
+    "uniform_top10_ceiling": 1.0,
+    "uniform_top1_ceiling": 0.871948307249306,
+    "uniform_top5_ceiling": 1.0,
+    "unique_fingerprints": 251939
+  }
+}

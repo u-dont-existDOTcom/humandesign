@@ -1,0 +1,88 @@
+{
+  "schema_version": "survey-v2-blind-classifier-protocol-v1",
+  "status": "candidate_prevalidation",
+  "purpose": "Make narrative-to-archetype scoring reproducible and candidate-blind. The classifier must never see the candidate-predicted gate/channel while classifying participant evidence.",
+  "separation_of_roles": {
+    "prediction_freezer": "Reads chart state only and freezes predicted gate/channel labels before participant evidence.",
+    "interviewer": "Elicits narrative evidence using the frozen question/domain bank without chart labels or candidate direction.",
+    "adaptive_selector": "Reads only anonymous surviving-candidate predicted labels and unanswered feature ids, then applies the frozen expected-information-gain rule. It never receives the true candidate, birth metadata, participant prose, or candidate rank.",
+    "evidence_classifier": "Reads participant narrative plus the complete frozen archetype vocabulary, but not the candidate prediction, candidate rank, birth data, or chart state.",
+    "scorer": "Compares frozen prediction to frozen evidence classification only after both are independently sealed."
+  },
+  "classifier_inputs": [
+    "domain_id",
+    "participant answer verbatim",
+    "all follow-up answers verbatim",
+    "life-stage tags supplied by interviewer",
+    "the full relevant frozen archetype registry",
+    "minimum-evidence rule for the domain"
+  ],
+  "classifier_forbidden_inputs": [
+    "birth date",
+    "birth time",
+    "birth place",
+    "candidate chart",
+    "predicted gate",
+    "predicted channel",
+    "candidate rank",
+    "previous scoring direction",
+    "whether a classification would improve the true candidate"
+  ],
+  "adaptive_selector_forbidden_inputs": [
+    "birth date",
+    "birth time",
+    "birth place",
+    "true candidate identity",
+    "candidate rank",
+    "participant narrative",
+    "classifier confidence or rationale",
+    "operator-selected target"
+  ],
+  "required_output": {
+    "status": ["classified", "mixed", "other", "insufficient_evidence", "unclassifiable"],
+    "primary_archetype": "nullable frozen archetype id",
+    "secondary_archetypes": "zero or more frozen archetype ids",
+    "confidence": "0.0-1.0",
+    "evidence_spans": "verbatim participant spans supporting the classification",
+    "counterevidence_spans": "verbatim participant spans contradicting the classification",
+    "context_notes": "conditions under which the pattern changes",
+    "childhood_continuity": ["present_since_childhood", "adult_emergent", "changed_form", "not_present", "unknown"],
+    "forced_choice": false
+  },
+  "classification_rules": [
+    "Compare against the entire relevant archetype set; do not shortlist from the candidate prediction.",
+    "Never force one archetype merely because one must be returned; use Other, mixed, insufficient_evidence, or unclassifiable.",
+    "A trait mentioned only once without a recurring-pattern claim cannot satisfy a persistent-pattern domain.",
+    "Prefer repeated behavior/process evidence over self-evaluative adjectives.",
+    "Preserve contradictions instead of averaging them away.",
+    "A childhood/current mismatch is evidence about change, not automatically evidence against both patterns.",
+    "Context dependence must be recorded explicitly and may lower confidence.",
+    "Negative contrasts are evidence and must be retained.",
+    "Do not treat outcome success or failure as proof of motive or process.",
+    "If multiple archetypes genuinely fit, return mixed with ranked labels rather than inventing a single winner."
+  ],
+  "personality_design_rule": {
+    "personality": "May be compared preferentially with patterns the participant consciously recognizes or identifies with, but the classifier never receives the predicted personality gate.",
+    "design": "May be compared preferentially with recurring patterns visible in examples or reportedly noticed by others even when the participant does not strongly identify with them, but the classifier never receives the predicted design gate.",
+    "warning": "This conscious/less-conscious distinction is itself an HD doctrine hypothesis and must be evaluated rather than assumed true."
+  },
+  "scoring_gate": {
+    "minimum_confidence": 0.65,
+    "require_minimum_evidence": true,
+    "score_other": false,
+    "score_insufficient_evidence": false,
+    "mixed_policy": "Use preregistered partial-credit rules; never change them after candidate reveal."
+  },
+  "cohort_freeze": [
+    "question/domain bank SHA-256",
+    "profile archetype registry SHA-256",
+    "gate archetype registry SHA-256",
+    "channel archetype registry SHA-256 when channels become confirmatory",
+    "classifier system prompt SHA-256",
+    "classifier model identifier/version",
+    "temperature or equivalent sampling settings",
+    "confidence threshold",
+    "mixed-label scoring rule",
+    "adaptive tie-breaker feature set and deterministic selection rule SHA-256"
+  ]
+}
