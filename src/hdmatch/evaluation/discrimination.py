@@ -107,13 +107,39 @@ def greedy_question_sequence(
     if not state_ids.issubset(answers_by_state):
         missing = sorted(state_ids - answers_by_state.keys())
         raise KeyError(f"missing predicted answers for states: {missing[:3]}")
+    return greedy_weighted_question_sequence(
+        tuple((answers_by_state[state.state_id], 1) for state in states),
+        question_ids=question_ids,
+    )
+
+
+def greedy_weighted_question_sequence(
+    answer_patterns: Sequence[tuple[Mapping[str, str], int | float]],
+    *,
+    question_ids: Iterable[str] | None = None,
+) -> tuple[GreedyQuestionStep, ...]:
+    """Greedily choose questions using weighted answer patterns.
+
+    Grouping identical model-visible signatures and passing their candidate counts as
+    weights is exactly equivalent to repeating each state separately, while making a
+    century-wide audit practical enough to run on every model change.
+    """
+
+    if not answer_patterns:
+        raise ValueError("answer patterns must not be empty")
+    normalized: list[tuple[Mapping[str, str], float]] = []
+    for answers, raw_weight in answer_patterns:
+        weight = float(raw_weight)
+        if weight <= 0.0:
+            raise ValueError("answer-pattern weights must be positive")
+        normalized.append((answers, weight))
 
     if question_ids is None:
         available = sorted(
             {
                 question_id
-                for state_id in state_ids
-                for question_id in answers_by_state[state_id]
+                for answers, _ in normalized
+                for question_id in answers
             }
         )
     else:
@@ -126,13 +152,13 @@ def greedy_question_sequence(
     while remaining:
         best_question: str | None = None
         best_entropy = -1.0
-        best_counts: Counter[tuple[str, ...]] | None = None
+        best_counts: dict[tuple[str, ...], float] | None = None
         for question_id in sorted(remaining):
             trial = (*selected, question_id)
-            counts: Counter[tuple[str, ...]] = Counter(
-                tuple(answers_by_state[state.state_id].get(q, "unknown") for q in trial)
-                for state in states
-            )
+            counts: dict[tuple[str, ...], float] = defaultdict(float)
+            for answers, weight in normalized:
+                key = tuple(answers.get(q, "unknown") for q in trial)
+                counts[key] += weight
             entropy = _entropy_from_weights(counts.values())
             if entropy > best_entropy + 1e-12:
                 best_question = question_id
@@ -149,7 +175,7 @@ def greedy_question_sequence(
                 cumulative_entropy_bits=best_entropy,
                 incremental_bits=incremental,
                 fingerprint_groups=len(best_counts),
-                max_tie_size=max(best_counts.values()),
+                max_tie_size=int(round(max(best_counts.values()))),
             )
         )
         previous_entropy = best_entropy
