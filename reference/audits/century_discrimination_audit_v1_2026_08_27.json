@@ -1,0 +1,85 @@
+{
+  "cache": {
+    "cache_version": "century-structural-exact-v2",
+    "engine_fingerprint": "09e811ca0fe517975f9718ea7e12b72f66bf3d2509e049bc29f47169adef5397",
+    "generation_commit": "62b0e6a4a1228f071a777f0fc4243dea67b40b59",
+    "interval_count": 288938,
+    "utc_end_exclusive": "2026-08-23T00:00:00+00:00",
+    "utc_start": "1926-08-22T00:00:00+00:00"
+  },
+  "greedy_noiseless_question_sequence": [
+    {"cumulative_entropy_bits": 1.5891690385981796, "fingerprint_groups": 4, "incremental_bits": 1.5891690385981796, "max_tie_size": 151051, "question_id": "D01"},
+    {"cumulative_entropy_bits": 2.5567262105280375, "fingerprint_groups": 8, "incremental_bits": 0.9675571719298579, "max_tie_size": 80523, "question_id": "C09"},
+    {"cumulative_entropy_bits": 3.475429362801622, "fingerprint_groups": 16, "incremental_bits": 0.9187031522735847, "max_tie_size": 53547, "question_id": "P01"},
+    {"cumulative_entropy_bits": 4.388839706531167, "fingerprint_groups": 32, "incremental_bits": 0.9134103437295447, "max_tie_size": 37204, "question_id": "P05"},
+    {"cumulative_entropy_bits": 5.2910551519838736, "fingerprint_groups": 64, "incremental_bits": 0.9022154454527067, "max_tie_size": 20789, "question_id": "C03"},
+    {"cumulative_entropy_bits": 6.1172204545587805, "fingerprint_groups": 112, "incremental_bits": 0.826165302574907, "max_tie_size": 14933, "question_id": "C07"},
+    {"cumulative_entropy_bits": 6.80761251577125, "fingerprint_groups": 196, "incremental_bits": 0.6903920612124699, "max_tie_size": 12499, "question_id": "P03"},
+    {"cumulative_entropy_bits": 7.255285974286118, "fingerprint_groups": 252, "incremental_bits": 0.44767345851486784, "max_tie_size": 9176, "question_id": "C08"},
+    {"cumulative_entropy_bits": 7.608468474314288, "fingerprint_groups": 288, "incremental_bits": 0.3531825000281694, "max_tie_size": 6083, "question_id": "P10"},
+    {"cumulative_entropy_bits": 7.864592363804767, "fingerprint_groups": 324, "incremental_bits": 0.25612388949047915, "max_tie_size": 3317, "question_id": "P02"},
+    {"cumulative_entropy_bits": 8.084954656896874, "fingerprint_groups": 450, "incremental_bits": 0.22036229309210764, "max_tie_size": 3317, "question_id": "S03"},
+    {"cumulative_entropy_bits": 8.084954656896874, "fingerprint_groups": 450, "incremental_bits": 0.0, "max_tie_size": 3317, "question_id": "C01"},
+    {"cumulative_entropy_bits": 8.084954656896874, "fingerprint_groups": 450, "incremental_bits": 0.0, "max_tie_size": 3317, "question_id": "C02"},
+    {"cumulative_entropy_bits": 8.084954656896874, "fingerprint_groups": 450, "incremental_bits": 0.0, "max_tie_size": 3317, "question_id": "D02"},
+    {"cumulative_entropy_bits": 8.084954656896874, "fingerprint_groups": 450, "incremental_bits": 0.0, "max_tie_size": 3317, "question_id": "D03"},
+    {"cumulative_entropy_bits": 8.084954656896874, "fingerprint_groups": 450, "incremental_bits": 0.0, "max_tie_size": 3317, "question_id": "D07"},
+    {"cumulative_entropy_bits": 8.084954656896874, "fingerprint_groups": 450, "incremental_bits": 0.0, "max_tie_size": 3317, "question_id": "P07"},
+    {"cumulative_entropy_bits": 8.084954656896874, "fingerprint_groups": 450, "incremental_bits": 0.0, "max_tie_size": 3317, "question_id": "P09"},
+    {"cumulative_entropy_bits": 8.084954656896874, "fingerprint_groups": 450, "incremental_bits": 0.0, "max_tie_size": 3317, "question_id": "P11"},
+    {"cumulative_entropy_bits": 8.084954656896874, "fingerprint_groups": 450, "incremental_bits": 0.0, "max_tie_size": 3317, "question_id": "P12"},
+    {"cumulative_entropy_bits": 8.084954656896874, "fingerprint_groups": 450, "incremental_bits": 0.0, "max_tie_size": 3317, "question_id": "S02"},
+    {"cumulative_entropy_bits": 8.084954656896874, "fingerprint_groups": 450, "incremental_bits": 0.0, "max_tie_size": 3317, "question_id": "S04"},
+    {"cumulative_entropy_bits": 8.084954656896874, "fingerprint_groups": 450, "incremental_bits": 0.0, "max_tie_size": 3317, "question_id": "S05"}
+  ],
+  "interpretation": {
+    "exact_state_ceiling": "Maximum interval-level top-1 recovery under a noiseless deterministic fingerprint and an interval-uniform prior, before human response noise.",
+    "greedy_sequence": "Questions ordered by incremental interval-uniform entropy under perfect canonical answers. Zero incremental bits means the question cannot further split the remaining model-predicted fingerprints.",
+    "residual_bits": "Uncertainty about the exact cached interval that remains after observing the complete deterministic fingerprint."
+  },
+  "model": {
+    "mapping_sha256": "3424672432f7f071ec90ef9ddce52a67ff6794911e92b1a1e04f079262ea6200",
+    "model_sha256": "e4b1ed725f0310b5434ca58745972b23902ee9e23a10ac795ea420ce0de8d69e",
+    "model_visible_signature_fields": ["type", "strategy", "authority", "profile", "defined_centers"],
+    "question_bank_sha256": "31f813efc3da7263569ef010a8336b1b1b0c44801b7aa0f91e33b3fa4587d820"
+  },
+  "model_visible_signature_partition": {
+    "duration_weighted_entropy_bits": 11.191342078822258,
+    "duration_weighted_residual_bits": 6.499514640776484,
+    "exact_state_ceiling": 0.01663678713080315,
+    "group_count": 4807,
+    "max_tie_size": 644,
+    "median_tie_size": 33.0,
+    "min_tie_size": 1,
+    "p90_tie_size": 138,
+    "singleton_groups": 40,
+    "state_count": 288938,
+    "state_uniform_entropy_bits": 11.40192283364132,
+    "state_uniform_residual_bits": 6.738477594806641,
+    "top10_state_ceiling": 0.15526860433726267,
+    "top5_state_ceiling": 0.08112120939440295
+  },
+  "predicted_answer_fingerprint_partition": {
+    "duration_weighted_entropy_bits": 7.970464821551437,
+    "duration_weighted_residual_bits": 9.720391898047303,
+    "exact_state_ceiling": 0.001557427545009656,
+    "group_count": 450,
+    "max_tie_size": 3317,
+    "median_tie_size": 348.0,
+    "min_tie_size": 30,
+    "p90_tie_size": 1653,
+    "singleton_groups": 0,
+    "state_count": 288938,
+    "state_uniform_entropy_bits": 8.084954656896874,
+    "state_uniform_residual_bits": 10.055445771551087,
+    "top10_state_ceiling": 0.015574275450096561,
+    "top5_state_ceiling": 0.0077871377250482805
+  },
+  "provenance": {
+    "actions_run_id": 33098000616,
+    "artifact_id": 9657260994,
+    "artifact_zip_sha256": "29027d21ee019b94b395f75487a31c10bcde9e61ed498f2183e081fbd7ce9df7",
+    "audit_commit": "7697e5c1345992ff477981ee6f5f45daf8b2917b"
+  },
+  "schema_version": "century-discrimination-audit-v1"
+}
