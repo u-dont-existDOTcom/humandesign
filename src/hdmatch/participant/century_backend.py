@@ -68,14 +68,16 @@ class CenturyCapableParticipantBackend(AstroHDParticipantBackend):
         ranking_scope: RankScope,
         created_at_utc: datetime,
     ) -> PredictionFreeze:
-        if ranking_scope is RankScope.CENTURY_GLOBAL:
-            self._verify_century_ready()
-        return super().build_prediction_freeze(
-            session_id=session_id,
-            birth=birth,
-            ranking_scope=ranking_scope,
-            created_at_utc=created_at_utc,
-        )
+        token = self._active_scope.set(ranking_scope)
+        try:
+            return super().build_prediction_freeze(
+                session_id=session_id,
+                birth=birth,
+                ranking_scope=ranking_scope,
+                created_at_utc=created_at_utc,
+            )
+        finally:
+            self._active_scope.reset(token)
 
     def rank(
         self,
