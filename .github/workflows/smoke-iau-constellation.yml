@@ -5,6 +5,7 @@ on:
   workflow_dispatch:
 
 # Version-pinned integration of actual IAU-88/Delporte constellation membership.
+# Canonical display names are normalized from the IAU abbreviation identity.
 permissions:
   contents: read
 
