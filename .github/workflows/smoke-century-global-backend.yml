@@ -5,6 +5,7 @@ on:
   workflow_dispatch:
 
 # End-to-end acceptance check against the immutable v2 century artifact.
+# The report enforces a full evidence tie when no behavioral answers exist.
 permissions:
   contents: read
   actions: read
