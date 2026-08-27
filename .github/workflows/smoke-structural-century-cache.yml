@@ -4,6 +4,7 @@ on:
   push:
   workflow_dispatch:
 
+# Short deterministic runtime check before launching the 100-year matrix.
 permissions:
   contents: read
 
