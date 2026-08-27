@@ -11,7 +11,7 @@ from collections.abc import Mapping
 from enum import StrEnum
 from typing import Annotated, Any, Literal
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
+from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 
 class _FrozenModel(BaseModel):
