@@ -21,7 +21,7 @@ import copy
 import json
 import math
 from collections import Counter, defaultdict
-from collections.abc import Callable, Hashable, Mapping, Sequence
+from collections.abc import Hashable, Iterable, Mapping, Sequence
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
@@ -301,8 +301,6 @@ def _greedy_observable_sequence(
     remaining = set(range(len(observable_ids)))
     previous_uniform = 0.0
     result: list[GreedyObservableStep] = []
-    total_count = len(patterns)
-    total_duration = sum(durations)
     while remaining:
         best_index = -1
         best_uniform = -1.0
@@ -337,12 +335,10 @@ def _greedy_observable_sequence(
         selected.append(best_index)
         remaining.remove(best_index)
         previous_uniform = best_uniform
-        if total_count <= 0 or total_duration <= 0.0:
-            raise AssertionError("candidate universe unexpectedly empty")
     return tuple(result)
 
 
-def _entropy_from_weights(weights: Sequence[int] | Sequence[float] | Any) -> float:
+def _entropy_from_weights(weights: Iterable[int | float]) -> float:
     values = tuple(float(weight) for weight in weights)
     total = sum(values)
     if total <= 0.0:
