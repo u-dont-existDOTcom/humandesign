@@ -13,7 +13,6 @@ from typing import Final
 
 from .ephemeris import CelestialBody, EclipticPosition, EphemerisProvider
 
-
 TROPICAL_YEAR_DAYS: Final[float] = 365.24219
 
 
@@ -27,6 +26,9 @@ class SecondaryProgressionConvention:
     def __post_init__(self) -> None:
         if self.year_length_days <= 0.0:
             raise ValueError("year_length_days must be positive")
+
+
+DEFAULT_SECONDARY_PROGRESSION_CONVENTION: Final = SecondaryProgressionConvention()
 
 
 @dataclass(frozen=True, slots=True)
@@ -51,7 +53,7 @@ def secondary_progressed_instant(
     birth_utc: datetime,
     observed_at_utc: datetime,
     *,
-    convention: SecondaryProgressionConvention = SecondaryProgressionConvention(),
+    convention: SecondaryProgressionConvention = DEFAULT_SECONDARY_PROGRESSION_CONVENTION,
 ) -> datetime:
     """Map an observed age to the corresponding day-for-year ephemeris instant."""
 
@@ -68,7 +70,7 @@ def secondary_progressed_instant_for_age(
     birth_utc: datetime,
     age_years: float,
     *,
-    convention: SecondaryProgressionConvention = SecondaryProgressionConvention(),
+    convention: SecondaryProgressionConvention = DEFAULT_SECONDARY_PROGRESSION_CONVENTION,
 ) -> datetime:
     """Return the day-for-year ephemeris instant for an explicit decimal age."""
 
@@ -84,7 +86,7 @@ def progression_snapshot(
     birth_utc: datetime,
     observed_at_utc: datetime,
     bodies: tuple[CelestialBody, ...],
-    convention: SecondaryProgressionConvention = SecondaryProgressionConvention(),
+    convention: SecondaryProgressionConvention = DEFAULT_SECONDARY_PROGRESSION_CONVENTION,
 ) -> ProgressionSnapshot:
     """Calculate a frozen progressed state for a real observation date."""
 
