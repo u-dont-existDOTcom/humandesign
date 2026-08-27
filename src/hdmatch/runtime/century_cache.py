@@ -1,4 +1,4 @@
-"""Verified reusable exact-state cache for century-wide participant recovery."""
+"""Verified reusable structural-state cache for century-wide participant recovery."""
 
 from __future__ import annotations
 
@@ -16,15 +16,17 @@ from hdmatch.experiments.canonical import (
     canonical_json_bytes,
     load_json_bytes,
     sha256_file,
+    sha256_json,
     write_new_bytes,
     write_new_canonical_json,
 )
-from hdmatch.schemas import CandidateState, ChartFeatures
+from hdmatch.schemas import CandidateState, StructuralChartFeatures
 from hdmatch.search import split_interval_by_local_date
 
 
-BOUNDARY_POLICY_VERSION = "exact-line-boundaries-design-root-v1"
-CENTURY_CACHE_SCHEMA_VERSION = "century-candidate-cache-v1"
+BOUNDARY_POLICY_VERSION = "activation-gates-plus-sun-lines-forward-design-v2"
+CENTURY_CACHE_SCHEMA_VERSION = "century-candidate-cache-v2"
+FEATURE_VECTOR_SCHEMA_VERSION = "structural-chart-features-v1"
 
 
 class _FrozenModel(BaseModel):
@@ -32,13 +34,19 @@ class _FrozenModel(BaseModel):
 
 
 class GlobalCandidateState(_FrozenModel):
-    """Timezone-neutral exact chart interval stored in the global cache."""
+    """Timezone-neutral structural chart interval stored in the global cache.
+
+    ``chart_features_hash`` hashes the compact structural feature record.  It is
+    intentionally not the full all-lines chart-engine stable hash: non-Sun line
+    changes are outside this century-universe resolution and must not split a
+    candidate interval.
+    """
 
     state_id: str
     start_utc: datetime
     end_utc: datetime
     chart_features_hash: str = Field(pattern=r"^[a-f0-9]{64}$")
-    chart_features: ChartFeatures
+    chart_features: StructuralChartFeatures
     boundary_events: tuple[str, ...] = ()
 
     @field_validator("start_utc", "end_utc")
@@ -49,9 +57,11 @@ class GlobalCandidateState(_FrozenModel):
         return value.astimezone(UTC)
 
     @model_validator(mode="after")
-    def positive_interval(self) -> GlobalCandidateState:
+    def positive_interval_and_hash(self) -> GlobalCandidateState:
         if self.end_utc <= self.start_utc:
             raise ValueError("global candidate interval must have positive duration")
+        if self.chart_features_hash != structural_features_sha256(self.chart_features):
+            raise ValueError("global candidate structural feature hash mismatch")
         return self
 
 
@@ -72,15 +82,19 @@ class CenturyCacheShard(_FrozenModel):
 
 
 class CenturyCacheManifest(_FrozenModel):
-    schema_version: Literal["century-candidate-cache-v1"] = "century-candidate-cache-v1"
+    schema_version: Literal["century-candidate-cache-v2"] = "century-candidate-cache-v2"
     cache_version: str
-    feature_vector_schema_version: str
+    feature_vector_schema_version: Literal["structural-chart-features-v1"] = (
+        FEATURE_VECTOR_SCHEMA_VERSION
+    )
     utc_start: datetime
     utc_end_exclusive: datetime
     interval_count: int = Field(ge=1)
     canonical_rows_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
     engine_fingerprint: str = Field(pattern=r"^[a-f0-9]{64}$")
-    boundary_policy_version: str = BOUNDARY_POLICY_VERSION
+    boundary_policy_version: Literal[
+        "activation-gates-plus-sun-lines-forward-design-v2"
+    ] = BOUNDARY_POLICY_VERSION
     design_root_tolerance_seconds: float = Field(gt=0.0)
     generation_commit: str
     created_at_utc: datetime
@@ -110,6 +124,12 @@ class CenturyCacheVerificationError(RuntimeError):
     """Raised when a global cache cannot be trusted for participant ranking."""
 
 
+def structural_features_sha256(features: StructuralChartFeatures) -> str:
+    """Hash the exact discrete structural vector used by the century universe."""
+
+    return sha256_json(features)
+
+
 def write_verified_century_cache(
     output_dir: str | Path,
     states: tuple[GlobalCandidateState, ...],
@@ -117,12 +137,11 @@ def write_verified_century_cache(
     engine_fingerprint: str,
     generation_commit: str,
     created_at_utc: datetime,
-    cache_version: str = "century-exact-v1",
-    feature_vector_schema_version: str = "chart-features-v1",
+    cache_version: str = "century-structural-exact-v2",
     design_root_tolerance_seconds: float = 0.01,
     shard_years: int = 10,
 ) -> CenturyCacheManifest:
-    """Write an immutable deterministic exact-state cache and verify it immediately."""
+    """Write an immutable deterministic structural cache and verify it immediately."""
 
     if shard_years <= 0:
         raise ValueError("shard_years must be positive")
@@ -162,7 +181,6 @@ def write_verified_century_cache(
 
     manifest = CenturyCacheManifest(
         cache_version=cache_version,
-        feature_vector_schema_version=feature_vector_schema_version,
         utc_start=states[0].start_utc,
         utc_end_exclusive=states[-1].end_utc,
         interval_count=len(states),
@@ -310,6 +328,9 @@ def _row_bytes(state: GlobalCandidateState) -> bytes:
 def _audit_partition(states: tuple[GlobalCandidateState, ...]) -> None:
     if not states:
         raise CenturyCacheVerificationError("century cache contains no intervals")
+    for state in states:
+        if state.chart_features_hash != structural_features_sha256(state.chart_features):
+            raise CenturyCacheVerificationError("century cache contains a structural hash mismatch")
     for previous, current in zip(states, states[1:], strict=False):
         if previous.end_utc != current.start_utc:
             raise CenturyCacheVerificationError("century cache has a gap or overlap")
