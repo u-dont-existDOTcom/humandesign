@@ -1,0 +1,85 @@
+{
+  "schema_version": "survey-v2-behavioral-domains-v1",
+  "status": "candidate_blind_prevalidation",
+  "purpose": "Expand participant-observable discrimination without forcing a long fixed multiple-choice questionnaire. Narrative answers are classified against frozen archetype labels; Other/context/uncertainty remain first-class evidence.",
+  "global_rules": [
+    "Ask about recurring patterns, not isolated memorable events.",
+    "For every scored domain, ask what was true before adolescence, what remains true now, and what changed.",
+    "Always permit Other / mixed / context-dependent / unsure and preserve the participant's explanation verbatim.",
+    "Never reveal Human Design labels, gate numbers, channel numbers, candidate ranks, or which answer would favor a candidate before confirmatory ranking is frozen.",
+    "Do not force a classification when the narrative does not clearly fit a frozen archetype.",
+    "Distinguish capacity, preference, motivation, behavior, and outcome.",
+    "Use follow-up questions to resolve ambiguity, not to steer toward the candidate prediction.",
+    "Predicted archetype labels are frozen from chart state before participant evidence is seen."
+  ],
+  "domains": [
+    {
+      "id": "V2_MOON_DRIVE",
+      "priority": 1,
+      "chart_feature": "moon_gate",
+      "sides": ["personality", "design"],
+      "source_role": "Moon = recurring drive and momentum; the gate supplies the theme of what repeatedly drives action.",
+      "prompt": "Across your life, what kinds of inner pressures or pulls repeatedly get you moving even when nobody is asking you to act? Focus on patterns that recur in very different situations, not what you think you should want.",
+      "childhood_probe": "Before adolescence, what did you repeatedly feel pulled to start, pursue, resolve, protect, understand, improve, experience, or express when adults were not directing you?",
+      "current_probe": "Which of those drives are still recognizable now, and which have changed form?",
+      "contrast_probe": "What are you noticeably not driven by, even when other people expect you to care about it?",
+      "response_format": "narrative_then_frozen_archetype_classification_with_other",
+      "minimum_evidence": "one recurring childhood pattern, one adult pattern, one counterexample or non-driver",
+      "scoring_policy": "score only if classifier confidence and evidence sufficiency thresholds are met"
+    },
+    {
+      "id": "V2_MERCURY_COMMUNICATION",
+      "priority": 2,
+      "chart_feature": "mercury_gate",
+      "sides": ["personality", "design"],
+      "source_role": "Mercury = communication, language, ideas, and messages that repeatedly seek expression; the gate supplies the subject matter.",
+      "prompt": "What subjects or messages do you keep returning to in conversation, writing, teaching, argument, jokes, advice, or explanation across different parts of your life?",
+      "childhood_probe": "As a child, what did you repeatedly talk about, explain, argue, ask others to understand, or try to put into words?",
+      "current_probe": "What themes now keep coming out of you in speech or writing even when you did not plan to make them central?",
+      "contrast_probe": "Which subjects can matter to you personally but almost never become something you need to communicate?",
+      "response_format": "narrative_then_frozen_archetype_classification_with_other",
+      "minimum_evidence": "examples from at least two life stages or communication contexts plus a negative contrast",
+      "scoring_policy": "score only if classifier confidence and evidence sufficiency thresholds are met"
+    },
+    {
+      "id": "V2_VENUS_VALUES",
+      "priority": 3,
+      "chart_feature": "venus_gate",
+      "sides": ["personality", "design"],
+      "source_role": "Venus = values, ethics, ideals, boundaries, integrity, and what is considered worth protecting; the gate supplies the value theme.",
+      "prompt": "What principles, boundaries, or forms of fairness have felt non-negotiably important to you across many situations, even when following them cost you something?",
+      "childhood_probe": "As a child or teenager, what kinds of unfairness, broken rules, disrespect, disloyalty, waste, dishonesty, exclusion, or boundary violations bothered you disproportionately?",
+      "current_probe": "Which values now most strongly determine whom you trust, what you protect, and what you refuse to participate in?",
+      "contrast_probe": "What moral or social expectations do other people treat as important that you personally do not feel strongly about?",
+      "response_format": "narrative_then_frozen_archetype_classification_with_other",
+      "minimum_evidence": "one early-life example, one adult example, and one value contrast",
+      "scoring_policy": "score only if classifier confidence and evidence sufficiency thresholds are met"
+    },
+    {
+      "id": "V2_CHANNEL_PROCESS",
+      "priority": 4,
+      "chart_feature": "defined_channels",
+      "sides": ["combined"],
+      "source_role": "Defined channels are claimed to create fixed, reliable processes/themes in how a person thinks, feels, acts, and interacts.",
+      "prompt": "Think about processes that seem unusually reliable in you across years and settings: ways you learn, focus, express, relate, organize, react, create, persist, correct, influence, or move through emotion. Which processes keep showing up regardless of role or environment?",
+      "childhood_probe": "Which of those reliable processes were already visible before adolescence?",
+      "current_probe": "Which are still stable now, even if the content or setting has changed?",
+      "contrast_probe": "Which abilities or styles are strong only in certain environments or around certain people rather than reliably yours?",
+      "response_format": "narrative_then_multi_label_frozen_channel_archetype_classification_with_other",
+      "minimum_evidence": "at least two cross-context examples and one inconsistent-process contrast",
+      "scoring_policy": "multi-label; require independent evidence for each classified process and never infer a full channel merely from one broad trait"
+    }
+  ],
+  "source_notes": [
+    {
+      "publisher": "Jovian Archive",
+      "url": "https://jovianarchive.com/blogs/chart-interpretations-components/planetary-accents-in-human-design",
+      "supports": ["V2_MOON_DRIVE", "V2_MERCURY_COMMUNICATION", "V2_VENUS_VALUES"]
+    },
+    {
+      "publisher": "Jovian Archive",
+      "url": "https://jovianarchive.com/blogs/chart-interpretations-components/how-channels-shape-your-energy-flow-and-relationships",
+      "supports": ["V2_CHANNEL_PROCESS"]
+    }
+  ]
+}
