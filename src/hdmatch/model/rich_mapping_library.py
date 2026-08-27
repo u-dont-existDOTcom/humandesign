@@ -39,7 +39,7 @@ class RichMappingRule(MappingRule):
 
 class RichMappingLibrary(MappingLibrary):
     # These literals deliberately version the opt-in v2 schema; v1 stays unchanged.
-    schema_version: Literal["mapping-library-v2"] = "mapping-library-v2"
+    schema_version: Literal["mapping-library-v2"] = "mapping-library-v2"  # type: ignore[assignment]
     model_version: Literal["V4/V3.2-symbolic-v2-rich-structure"] = "V4/V3.2-symbolic-v2-rich-structure"  # type: ignore[assignment]
     mappings: tuple[RichMappingRule, ...] = Field(min_length=1)
 
