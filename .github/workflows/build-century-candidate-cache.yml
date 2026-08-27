@@ -1,6 +1,7 @@
 name: build-century-candidate-cache
 
 on:
+  push:
   workflow_dispatch:
     inputs:
       start:
@@ -17,6 +18,7 @@ permissions:
 
 jobs:
   build:
+    if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && contains(github.event.head_commit.message, 'Build exact century cache via CI')) }}
     runs-on: ubuntu-latest
     timeout-minutes: 360
     steps:
@@ -35,11 +37,15 @@ jobs:
         run: python scripts/fetch_swisseph_ephemeris.py
       - name: Build and verify exact century candidate cache
         run: |
+          START='${{ inputs.start }}'
+          END='${{ inputs.end_exclusive }}'
+          if [ -z "$START" ]; then START='1926-08-22T00:00:00Z'; fi
+          if [ -z "$END" ]; then END='2026-08-23T00:00:00Z'; fi
           python scripts/build_century_candidate_cache.py \
             --ephemeris data/ephemeris \
             --output century-candidate-cache \
-            --start '${{ inputs.start }}' \
-            --end-exclusive '${{ inputs.end_exclusive }}' \
+            --start "$START" \
+            --end-exclusive "$END" \
             --generation-commit '${{ github.sha }}'
       - name: Upload verified century cache
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
