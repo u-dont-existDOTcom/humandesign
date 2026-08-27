@@ -4,6 +4,7 @@ on:
   push:
   workflow_dispatch:
 
+# End-to-end acceptance check against the immutable v2 century artifact.
 permissions:
   contents: read
   actions: read
