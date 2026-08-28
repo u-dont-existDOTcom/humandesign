@@ -1,0 +1,125 @@
+{
+  "version": "relationship-phenotype-three-pair-v1",
+  "status": "development_only_user_reported_criterion",
+  "created_utc_date": "2026-08-28",
+  "privacy": {
+    "policy": "public_repo_pseudonyms_only",
+    "note": "Case IDs intentionally omit partner names, birth data, and locations. The conversational mapping is not stored here."
+  },
+  "method": {
+    "framework": "docs/24_empirical_relationship_phenotype_model.md",
+    "scoring_rule": "Preserve direct observations, pairwise rankings, confidence, exposure, and unknowns. Do not force scalar compatibility.",
+    "criterion_priority": "Repeated lived user report outranks symbolic HD/astrology predictions for the same observed domain.",
+    "validation_status": "These three cases are development data and must not be reused as untouched validation for models fitted to them."
+  },
+  "case_metadata": {
+    "pair_1": {
+      "exposure": "long_historical_relationship",
+      "confidence_overall": "high",
+      "notes": [
+        "Approximately two-year marriage/relationship history.",
+        "Strong historical love bond and extensive lived exposure.",
+        "Relationship history included instability, trust problems, and difficult conflict/repair periods."
+      ]
+    },
+    "pair_2": {
+      "exposure": "long_historical_relationship",
+      "confidence_overall": "high",
+      "notes": [
+        "Approximately two years of close shared life/travel history.",
+        "Strong love/acceptance/understanding was reported, with a relationship that at times felt more familial than romantically in-love.",
+        "Historical relationship structure changed over time."
+      ]
+    },
+    "pair_3": {
+      "exposure": "early_relationship_limited_observation",
+      "confidence_overall": "low_to_medium",
+      "notes": [
+        "Current knowledge is limited relative to the historical pairs.",
+        "Do not convert unknown domains to neutral values or infer mature relationship outcomes from early-stage observations."
+      ]
+    }
+  },
+  "observed_domains": {
+    "sexual_chemistry_satisfaction": {
+      "pair_1": {"state": "exceptional", "confidence": "high"},
+      "pair_2": {"state": "lower_than_pair_1", "confidence": "high"},
+      "pair_3": {"state": "unknown", "confidence": "insufficient_exposure"}
+    },
+    "romantic_connection_passion": {
+      "pair_1": {"state": "exceptional", "confidence": "high"},
+      "pair_2": {"state": "lower_than_pair_1_and_historically_more_familial_than_in_love", "confidence": "high"},
+      "pair_3": {"state": "promising_but_unknown", "confidence": "low"}
+    },
+    "love_attachment_bond": {
+      "pair_1": {"state": "very_strong_historical_bond", "confidence": "high"},
+      "pair_2": {"state": "strong_love_bond_not_equivalent_to_being_in_love", "confidence": "high"},
+      "pair_3": {"state": "emerging_partner_reports_strong_love_but_insufficient_history", "confidence": "low"}
+    },
+    "communication_intellectual_fit": {
+      "pair_1": {"state": "below_pair_2", "confidence": "high"},
+      "pair_2": {"state": "clearly_best_of_three", "confidence": "high"},
+      "pair_3": {"state": "currently_difficult_due_to_opacity_and_interruption", "confidence": "medium"}
+    },
+    "emotional_accessibility_transparency": {
+      "pair_1": {"state": "mixed_to_low_historically", "confidence": "medium", "notes": ["Trust and inconsistent-understanding problems were reported."]},
+      "pair_2": {"state": "generally_high_understanding_but_not_uniformly_transparent", "confidence": "medium", "notes": ["Historical radical honesty/vulnerability coexisted with at least one important period of concealed romantic feeling."]},
+      "pair_3": {"state": "low_current_readability", "confidence": "high_for_current_stage", "notes": ["Partner can make very strong declarations of love and then be silent for days; user reports difficulty knowing what she thinks."]}
+    },
+    "emotional_ease_regulation": {
+      "pair_1": {"state": "lowest_of_three", "confidence": "high"},
+      "pair_2": {"state": "middle_of_three", "confidence": "high"},
+      "pair_3": {"state": "highest_outward_emotional_ease", "confidence": "medium", "notes": ["This is outward emotional ease, not emotional transparency."]}
+    },
+    "closeness_interdependence": {
+      "pair_1": {"state": "historically_high", "confidence": "high"},
+      "pair_2": {"state": "historically_high_but_relationship_form_changed", "confidence": "high"},
+      "pair_3": {"state": "unknown_early", "confidence": "low"}
+    },
+    "autonomy_space": {
+      "pair_1": {"state": "lower_relative_to_engulfment", "confidence": "medium"},
+      "pair_2": {"state": "middle_relative_to_engulfment", "confidence": "medium"},
+      "pair_3": {"state": "currently_high_space", "confidence": "low", "notes": ["Early-stage silence/distance must not automatically be treated as healthy autonomy."]}
+    },
+    "engulfment_pressure": {
+      "pair_1": {"state": "highest_of_three", "confidence": "high"},
+      "pair_2": {"state": "middle_of_three", "confidence": "high"},
+      "pair_3": {"state": "lowest_so_far", "confidence": "low_to_medium"}
+    },
+    "trust_safety": {
+      "pair_1": {"state": "historically_impaired_or_all_or_nothing", "confidence": "high"},
+      "pair_2": {"state": "mixed_history", "confidence": "medium"},
+      "pair_3": {"state": "unknown", "confidence": "insufficient_exposure"}
+    },
+    "repair_conflict_skill": {
+      "pair_1": {"state": "mixed", "confidence": "medium", "notes": ["Some reconciliation/understanding required unusual contexts or outside help; sober defensive conflict was reported."]},
+      "pair_2": {"state": "unknown_or_insufficiently_coded", "confidence": "low"},
+      "pair_3": {"state": "unknown", "confidence": "insufficient_exposure"}
+    },
+    "practical_life_fit": {
+      "pair_1": {"state": "mixed_historical", "confidence": "medium"},
+      "pair_2": {"state": "shared_travel_and_flexible_relationship_form_but_not_scored_globally", "confidence": "medium"},
+      "pair_3": {"state": "unknown", "confidence": "insufficient_exposure"}
+    }
+  },
+  "person_social_observation_pair_3": {
+    "sociability_appetite": {"state": "strongly_introverted", "confidence": "high_user_report"},
+    "need_for_solitude_recovery": {"state": "high_or_frequent_withdrawal", "confidence": "medium"},
+    "social_expressiveness": {"state": "can_be_emotionally_direct_when_engaged", "confidence": "medium"},
+    "communication_latency": {"state": "can_be_silent_for_days", "confidence": "high_user_report"},
+    "emotional_disclosure": {"state": "low_readability_despite_occasional_strong_declarations", "confidence": "high_user_report"},
+    "attachment_style": {"state": "unresolved", "confidence": "not_inferred_from_latency"}
+  },
+  "observed_pairwise_constraints": [
+    {"domain": "sexual_chemistry_satisfaction", "higher": "pair_1", "lower": "pair_2", "confidence": "high"},
+    {"domain": "romantic_connection_passion", "higher": "pair_1", "lower": "pair_2", "confidence": "high"},
+    {"domain": "communication_intellectual_fit", "higher": "pair_2", "lower": "pair_1", "confidence": "high"},
+    {"domain": "communication_intellectual_fit", "higher": "pair_2", "lower": "pair_3", "confidence": "high"},
+    {"domain": "emotional_ease_regulation", "higher": "pair_3", "lower": "pair_2", "confidence": "medium"},
+    {"domain": "emotional_ease_regulation", "higher": "pair_3", "lower": "pair_1", "confidence": "medium"},
+    {"domain": "emotional_ease_regulation", "higher": "pair_2", "lower": "pair_1", "confidence": "high"},
+    {"domain": "engulfment_pressure", "higher": "pair_1", "lower": "pair_2", "confidence": "high"},
+    {"domain": "engulfment_pressure", "higher": "pair_1", "lower": "pair_3", "confidence": "medium"},
+    {"domain": "engulfment_pressure", "higher": "pair_2", "lower": "pair_3", "confidence": "medium"}
+  ]
+}
