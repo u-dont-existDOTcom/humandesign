@@ -1,0 +1,91 @@
+{
+  "version": "relationship-phenotype-pair5-prechart-v2",
+  "status": "development_only_chart_blind_outcome_profile",
+  "created_utc_date": "2026-08-28",
+  "extends": "reference/development_cases/relationship_phenotype_pair5_prechart_v1.json",
+  "privacy": {
+    "case_id": "pair_5",
+    "policy": "pseudonymous_public_repo_record",
+    "excluded": ["partner_name", "birth_data", "location", "direct_identifiers", "physical_description"]
+  },
+  "purpose": "Refine Pair 5 lived phenotype from additional user clarification while preserving chart blindness. No birth-derived astrology has been inspected.",
+  "relationship_exposure": {
+    "total_duration": "approximately_4_years",
+    "physical_cohabitation": "approximately_1_2_years_total",
+    "cohabitation_context": "periods of shared household life included partner's young child; much of remaining relationship occurred during school-vacation/periodic contact",
+    "economic_context": "economic strain in Mexico materially contributed to breakup context"
+  },
+  "user_to_partner": {
+    "love_attachment_bond": "very_high",
+    "romantic_connection": "high",
+    "sexual_attraction_relative": "above_pair_2_but_below_other_currently_compared_partners",
+    "sexual_enjoyment": "positive_but_reference_actor_had_no_prior_partner_comparison_at_the_time",
+    "intellectual_compatibility": "good_reasoning_ease",
+    "intellectual_stimulation": "low",
+    "novel_idea_generation_from_partner": "low",
+    "mystical_spiritual_stimulation": "low_at_relationship_stage",
+    "curiosity_depth": "low_to_moderate_user_report",
+    "communication_quality": "good",
+    "shared_interests_commonality": "low",
+    "community_lifestyle_preference": "reference_actor_preferred_more_community_living_than_partner_initially"
+  },
+  "partner_to_user": {
+    "love_attachment_bond": "very_high",
+    "romantic_connection": "high_and_stable_relative_to_sexual_boredom",
+    "initial_sexual_attraction_desire": "very_high",
+    "baseline_libido": "high",
+    "sexual_boredom_proneness": "very_high_user_report",
+    "partner_specific_desire_stability": "low",
+    "sexual_novelty_response": "high",
+    "habituation_pattern": "sexual_desire_for_familiar_partner_declined_even_while_romantic_love_remained",
+    "distance_reset": "sexual_attraction_rebounded_after_time_and_distance_then_degraded_again_relatively_quickly",
+    "novelty_domain": "primarily_sexual_not_general_romantic_boredom",
+    "jealousy": "present_but_sexual_vs_romantic_directionality_not_fully_resolved",
+    "commitment_intent_historical": "high_partner_wanted_marriage"
+  },
+  "dyadic": {
+    "initial_sexual_chemistry": "positive_and_better_for_partner_than_reference_actor",
+    "longitudinal_sexual_chemistry": "unstable_due_partner_specific_habituation_despite_high_partner_baseline_libido",
+    "desire_discrepancy_over_time": "increased_as_partner_specific_desire_declined",
+    "love_bond": "very_high_mutual",
+    "romantic_bond": "high_and_not_the_primary_source_of_boredom",
+    "communication_quality": "good",
+    "communication_abundance": "moderate_to_low_due_few_shared_deep_interests",
+    "intellectual_commonality": "low",
+    "intellectual_stimulation": "low",
+    "mystical_commonality": "low_at_historical_stage",
+    "visible_drama_conflict": "low",
+    "conflict_repair": "generally_not_difficult",
+    "control_autonomy_friction": "localized_reactance_to_being_directed_or_told_what_to_do",
+    "community_lifestyle_alignment": "partial_mismatch_that_improved_over_time",
+    "relationship_end": "sexual_novelty_habituation_plus_economic_context_were_major_contributors"
+  },
+  "critical_longitudinal_signature": {
+    "sequence": [
+      "high_baseline_libido",
+      "very_high_initial_partner_desire",
+      "familiarity_specific_sexual_desire_decay",
+      "continued_romantic_love",
+      "novel_other_partner_response",
+      "partial_desire_reset_after_distance_or_time",
+      "rapid_rehabituation_after_reunion"
+    ],
+    "interpretation": "This is a sexual partner-habituation phenotype, not low libido, low initial attraction, or generalized romantic novelty-seeking."
+  },
+  "resolved_from_v1_uncertainties": [
+    "reference_actor_relative_physical_attraction_ranking",
+    "partner_baseline_libido",
+    "partner_romantic_Eros_was_high_and_sexual_boredom_was_not_general_romantic_boredom",
+    "partner_historical_marriage_intent",
+    "conflict_repair_quality",
+    "intellectual_commonality_vs_communication_quality",
+    "novelty_dependence_was_specifically_sexual",
+    "relationship_duration_and_cohabitation_exposure"
+  ],
+  "still_unresolved_before_chart": [
+    "Exact sexual-versus-romantic jealousy directionality, especially partner reaction to reference actor having other partners.",
+    "Approximate habituation time constant: how quickly partner-specific sexual desire typically declined after reunion/cohabitation.",
+    "Whether low visible drama also reflected high internal emotional ease; only outward conflict load is well established."
+  ],
+  "model_freeze_note": "AstroRRF V0.4 novelty/habituation astrology candidates remain unchanged. These phenotype clarifications sharpen the target but do not alter the pre-chart astrological feature family."
+}
