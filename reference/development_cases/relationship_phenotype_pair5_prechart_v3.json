@@ -1,0 +1,74 @@
+{
+  "version": "relationship-phenotype-pair5-prechart-v3",
+  "status": "development_only_outcome_freeze_before_chart_feature_evaluation",
+  "created_utc_date": "2026-08-28",
+  "privacy": {
+    "case_id": "pair_5",
+    "policy": "pseudonymous_public_repo_record",
+    "excluded": ["partner_name", "birth_data", "birthplace", "direct_identifiers"]
+  },
+  "provenance_note": "The same user message also supplied birth data, but these phenotype fields were parsed and frozen conceptually before chart-feature calculation. No birth data are stored in this file.",
+  "relationship_exposure": {
+    "total_relationship_duration": "approximately_4_years",
+    "physical_cohabitation": "approximately_1.2_years_total",
+    "contact_pattern": "significant_separation_due_reference_actor_school_vacations",
+    "family_context": "some_physical_cohabitation_included_partner_young_child"
+  },
+  "user_to_partner": {
+    "love_attachment_bond": "very_high",
+    "physical_sexual_attraction_relative": "above_pair_2_below_other_currently_compared_partners",
+    "sexual_enjoyment": "positive_but_reference_actor_had_no_prior_partner_baseline",
+    "intellectual_compatibility_reasoning": "good",
+    "intellectual_stimulation_self_expansion": "low",
+    "novel_idea_generation_to_user": "low",
+    "mystical_spiritual_stimulation": "low_and_historical_stage_confounded",
+    "communication_quality": "good",
+    "shared_interests_commonality": "low",
+    "community_lifestyle_preference": "reference_actor_more_pro_community_than_partner_initially_partner_became_more_open_later"
+  },
+  "partner_to_user": {
+    "love_attachment_bond": "very_high",
+    "romantic_attachment": "high_liked_the_romance",
+    "commitment_marriage_intent": "high_wanted_marriage_historically",
+    "baseline_libido": "high",
+    "initial_sexual_attraction_desire": "very_high",
+    "partner_specific_desire_stability": "low",
+    "sexual_habituation_rate": "gradual_over_weeks_to_months",
+    "novel_partner_response": "high",
+    "separation_reset": "attraction_rebounded_after_distance_and_time_then_declined_again_relatively_quickly_with_familiarity",
+    "current_attraction": "low_relative_to_historical_initial_state",
+    "sexual_boredom_specificity": "primarily_sexual_not_general_romantic_boredom",
+    "sexual_exclusivity_demand_toward_user": "high_did_not_accept_user_sex_with_other_women",
+    "romantic_exclusivity_demand_toward_user": "high_would_not_accept_user_falling_in_love_with_other_women",
+    "own_nonmonogamy_preference": "accepted_and_used_permission_to_have_other_male_sexual_partners",
+    "jealousy": "present"
+  },
+  "dyadic": {
+    "sexual_chemistry_initial": "positive_and_better_for_partner_than_reference_actor",
+    "sexual_chemistry_longitudinal": "unstable_declined_with_partner_habituation",
+    "desire_discrepancy_over_time": "increased_as_partner_desire_declined",
+    "love_bond": "very_high_mutual",
+    "communication_quality": "good",
+    "communication_content_supply": "limited_by_low_shared_interests_and_low_novel_stimulation",
+    "visible_drama_conflict": "low",
+    "conflict_repair": "generally_not_difficult",
+    "specific_autonomy_conflict": "one_salient_yelling_episode_when_reference_actor_directed_partner_diet_or_health_behavior",
+    "economic_strain": "material_relationship_context",
+    "breakup_factors": [
+      "partner_specific_sexual_habituation_and_need_for_novelty",
+      "economic_strain_context"
+    ]
+  },
+  "discriminating_signature": "high libido + very high initial partner desire + weeks-to-months sexual-only habituation + partial reset after separation + rapid re-habituation + sustained romance/love/commitment + asymmetric sexual nonmonogamy tolerance",
+  "chart_blind_targets": [
+    "high baseline libido",
+    "strong initial partner desire",
+    "low partner-specific desire stability",
+    "high sexual novelty response",
+    "separation-reset pattern",
+    "high romance/commitment despite sexual decay",
+    "good reasoning/communication but low intellectual stimulation",
+    "low shared interests",
+    "low general drama with domain-specific autonomy reactance"
+  ]
+}
