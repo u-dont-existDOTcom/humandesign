@@ -1,0 +1,107 @@
+{
+  "version": "relationship-pair3-t0-2026-08-28",
+  "status": "development_prospective_checkpoint",
+  "privacy": {
+    "case_id": "pair_3",
+    "policy": "pseudonymous_public_repo_record",
+    "excluded": ["partner_name", "birth_data", "location", "direct_identifiers"]
+  },
+  "purpose": "Freeze current relationship-process observations before additional maturation so later 30/90-day outcomes can be compared without rewriting the starting state.",
+  "frameworks": {
+    "criterion": "docs/24_empirical_relationship_phenotype_model.md",
+    "model_comparison": "docs/25_relationship_model_comparison_and_baseline.md"
+  },
+  "time0_observations": {
+    "relationship_exposure": {"state": "early_limited", "confidence": "high"},
+    "sexual_chemistry_satisfaction": {"state": "unknown", "confidence": "insufficient_exposure"},
+    "romantic_connection_passion": {"state": "promising_but_not_maturely_assessed", "confidence": "low"},
+    "love_attachment_bond": {"state": "partner_reports_strong_love_user_assessment_still_early", "confidence": "low"},
+    "communication_intellectual_fit": {"state": "currently_limited_by_opacity_and_intermittent_contact", "confidence": "medium"},
+    "emotional_accessibility_transparency": {"state": "low_current_readability", "confidence": "high_for_current_stage"},
+    "emotional_ease_regulation": {"state": "relatively_high_outward_ease", "confidence": "medium"},
+    "autonomy_space": {"state": "high_space_or_distance_currently", "confidence": "medium"},
+    "engulfment_pressure": {"state": "low_so_far", "confidence": "low_to_medium"},
+    "trust_safety": {"state": "unknown", "confidence": "insufficient_exposure"},
+    "repair_conflict_skill": {"state": "unknown", "confidence": "insufficient_exposure"},
+    "practical_life_fit": {"state": "unknown", "confidence": "insufficient_exposure"}
+  },
+  "partner_social_observations": {
+    "sociability_appetite": "strongly_introverted_by_user_report",
+    "communication_latency": "can_be_silent_for_days",
+    "emotional_disclosure": "low_readability_despite_occasional_strong_declarations",
+    "outward_emotional_expression": "relatively_easy_when_engaged",
+    "attachment_style": "unresolved_do_not_infer_from_silence"
+  },
+  "relationship_science_time0_predictors": {
+    "perceived_partner_commitment": "unknown_strong_love_language_is_not_treated_as_equivalent_to_commitment",
+    "appreciation": "insufficiently_measured",
+    "perceived_partner_satisfaction": "unknown",
+    "perceived_responsiveness": "currently_intermittent_or_difficult_to_assess",
+    "conflict_frequency_intensity": "unknown",
+    "repair_quality": "unknown",
+    "sexual_satisfaction": "unknown",
+    "sexual_communication": "unknown",
+    "desire_match": "unknown",
+    "autonomy_support_felt_autonomy": "currently_high_space_but_health_of_that_space_unresolved",
+    "emotional_disclosure_readability": "low",
+    "communication_continuity": "low_or_intermittent",
+    "relationship_length_exposure": "early"
+  },
+  "prospective_hypotheses": [
+    {
+      "id": "P3-H1",
+      "target": "emotional_accessibility_transparency",
+      "window": "next_30_days",
+      "prediction": "Unless communication continuity changes materially, emotional transparency will remain one of the weakest current relationship domains.",
+      "confidence": "medium",
+      "model": "R-SCI_time0_process_continuity"
+    },
+    {
+      "id": "P3-H2",
+      "target": "emotional_ease_regulation",
+      "window": "next_30_days",
+      "prediction": "When direct interaction occurs, outward emotional ease is expected to remain relatively high compared with the user's two historical development relationships unless meaningful conflict emerges.",
+      "confidence": "low_to_medium",
+      "model": "R-SCI_time0_repeated_state"
+    },
+    {
+      "id": "P3-H3",
+      "target": "engulfment_pressure",
+      "window": "next_30_days",
+      "prediction": "Engulfment pressure is expected to remain low relative to the two historical development relationships, but confidence is low because greater closeness may change the process.",
+      "confidence": "low",
+      "model": "R-SCI_time0_autonomy_space"
+    },
+    {
+      "id": "P3-H4",
+      "target": "communication_intellectual_fit",
+      "window": "next_90_days",
+      "prediction": "Current information is insufficient to classify intrinsic intellectual compatibility; the decisive variable will be whether increased disclosure/continuity reveals high-quality mutual understanding or persistent opacity.",
+      "confidence": "unresolved",
+      "model": "no_forced_prediction"
+    },
+    {
+      "id": "P3-H5",
+      "target": "sexual_chemistry_satisfaction",
+      "window": "next_90_days",
+      "prediction": "No prediction from current relationship-process evidence.",
+      "confidence": "unresolved",
+      "model": "no_forced_prediction"
+    },
+    {
+      "id": "P3-H6",
+      "target": "romantic_connection_passion",
+      "window": "next_90_days",
+      "prediction": "No mature ranking against historical relationships is justified yet; preserve as unknown rather than extrapolating from early declarations or symbolic charts.",
+      "confidence": "unresolved",
+      "model": "no_forced_prediction"
+    }
+  ],
+  "follow_up_windows": ["30_days", "90_days"],
+  "anti_leakage": [
+    "Do not change these Time-0 observations after later outcomes are known.",
+    "Do not count a symbolic reinterpretation after later feedback as a pre-existing prediction.",
+    "Unknown sexual/romantic/practical domains remain unknown until observed.",
+    "This development pair may refine future instruments but cannot validate models tuned to its later outcomes."
+  ]
+}
