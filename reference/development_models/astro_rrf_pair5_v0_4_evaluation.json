@@ -1,0 +1,111 @@
+{
+  "version": "astro-rrf-pair5-v0.4-evaluation",
+  "status": "development_chart_blind_feature_evaluation_not_validation",
+  "evaluation_date": "2026-08-28",
+  "model": "docs/30_astro_rrf_novelty_habituation_v0_4.md",
+  "criterion": "reference/development_cases/relationship_phenotype_pair5_prechart_v3.json",
+  "privacy": "Pseudonymous result only; no name, birth data, birthplace, or exact raw chart vector stored.",
+  "calculation_note": "Historical civil-time conversion was verified externally. Current interactive calculation used Swiss Ephemeris Moshier fallback rather than the repository's canonical pinned SWIEPH files; the evaluated coarse features are far from planetary category boundaries, but canonical rerun is still required for formal repository evidence.",
+  "western_v0_4_primary_novelty_results": {
+    "natal_Uranus_house_5": {
+      "result": "miss",
+      "observed_feature": "Uranus is in natal house 2 under the current Placidus calculation"
+    },
+    "natal_Uranus_major_aspect_Venus_or_Mars": {
+      "result": "miss",
+      "observed_feature": "No tight major Uranus-Venus or Uranus-Mars natal aspect; separations are far outside the inherited tight AstroRRF range"
+    },
+    "synastry_Mars_Uranus_tight": {
+      "result": "miss_under_inherited_tight_orb",
+      "observed_feature": "No <=3 degree Mars-Uranus major aspect in either direction. A wider approximately 5.8 degree trine exists from reference-actor Mars to partner Uranus, but it is not counted as a tight frozen-model hit and is relationship-specific rather than an explanation of the partner's cross-partner habituation trait."
+    },
+    "partner_Uranus_in_actor_house_5": {
+      "result": "miss",
+      "observed_feature": "Neither direction places the other person's Uranus in the house owner's 5th under the exact-time calculation"
+    },
+    "overall_western_novelty_assessment": "The frozen Western V0.4 person-level novelty/habituation candidate family largely fails on Pair 5. Do not rescue the result by adding new Uranian rules after chart inspection."
+  },
+  "v0_3_libido_result": {
+    "result": "supportive_hit_candidate",
+    "observed_feature": "Partner natal Mars is in house 5 and remains there under practical small birth-time perturbations.",
+    "criterion": "high baseline libido",
+    "interpretation_boundary": "V0.3 did not freeze a numeric libido formula, so this is feature-level support rather than a scored prediction."
+  },
+  "v0_3_directional_attraction": {
+    "reference_actor_toward_partner": {
+      "support": [
+        "reference-actor Venus sextile partner Moon at about 2.0 degrees",
+        "reference-actor Mars sextile partner Moon at about 2.4 degrees"
+      ],
+      "limitation": "Partner Venus/Mars do not occupy the reference actor's frozen 5th/7th/8th attraction houses. Under the older V0.1 numeric weighting this likely underpredicts the reported attraction relative to Pair 2, so preserve as a model weakness."
+    },
+    "partner_toward_reference_actor": {
+      "support": [
+        "reference-actor Moon robustly falls in partner house 8",
+        "reference-actor Sun is on the partner 4th/5th cusp and is in house 5 only at the exact supplied minute"
+      ],
+      "time_sensitivity": "The reference-actor Sun overlay flips from partner house 5 to house 4 with roughly +1 minute birth-time shift, so it is not robust unless the recorded minute is exact.",
+      "assessment": "Some directional attraction support exists, but the frozen primary features do not clearly predict the partner's reported extremely high initial sexual attraction."
+    }
+  },
+  "v0_3_cognitive_results": {
+    "communication_reasoning_support": [
+      "reference-actor Mercury trine partner Moon at about 1.1 degrees",
+      "reference-actor Moon sextile partner Sun at about 0.3 degrees",
+      "reference-actor Jupiter sextile partner Mercury at about 2.2 degrees",
+      "midpoint composite Mercury conjunct Sun at about 1.7 degrees"
+    ],
+    "criterion_fit": "consistent with good communication and easy reasoning",
+    "intellectual_stimulation_contradiction": [
+      "midpoint composite Mercury trine Pluto at about 1.1 degrees",
+      "midpoint composite Mercury sextile Neptune at about 1.4 degrees"
+    ],
+    "criterion": "low intellectual stimulation and low mystical stimulation at the historical stage",
+    "assessment": "The composite depth/stimulation candidate family overpredicts intellectual stimulation on this case. The mystical criterion is temporally confounded because the reference actor had not yet developed the later spiritual orientation, but low intellectual stimulation is a genuine contradiction."
+  },
+  "emotional_conflict_results": {
+    "supportive_features": [
+      "reference-actor Moon sextile partner Sun at about 0.3 degrees",
+      "reference-actor Moon trine partner Saturn at about 2.3 degrees"
+    ],
+    "counter_feature": "reference-actor Saturn opposite partner Moon at about 2.6 degrees",
+    "criterion_fit": "Mixed chart but compatible with generally low visible drama and manageable repair; no single fixed emotional-ease score is claimed."
+  },
+  "human_design_post_score_exploration": {
+    "status": "not_counted_as_v0_4_hit",
+    "calculated_architecture": {
+      "type": "Manifestor",
+      "authority": "Emotional Solar Plexus",
+      "profile": "2/4",
+      "definition": "Split Definition",
+      "channels": ["64-47", "43-23", "11-56", "35-36", "44-26"]
+    },
+    "notable_feature": "35-36 Channel of Transitoriness / experience",
+    "why_not_scored": "V0.4 did not preregister Channel 35-36 as an HD novelty/habituation predictor. It was discovered only after Pair 5 chart inspection and therefore cannot rescue the Western V0.4 miss.",
+    "development_caution": "The observed novelty phenotype is specifically sexual while romance/commitment remained durable. A broad experience/change channel may overgeneralize unless a source-backed sexual-domain mapping is independently justified."
+  },
+  "hd_relationship_post_score_exploration": {
+    "status": "descriptive_not_a_v0_4_test",
+    "composite_defined_centers": 7,
+    "composite_open_centers": ["Sacral", "Root"],
+    "composite_definition": "Single Definition",
+    "connection_modes": {
+      "electromagnetic": ["10-57"],
+      "companionship": ["23-43", "44-26"],
+      "dominance_partner": ["64-47", "11-56"],
+      "dominance_reference_actor": ["61-24"],
+      "compromise_reference_actor_full": ["1-8"],
+      "compromise_partner_full": ["35-36"]
+    },
+    "descriptive_note": "The pair becomes Single Definition and shares full 23-43 and 44-26 channels, which is compatible with a strong bond and functional communication but does not explain the sexual habituation mechanism."
+  },
+  "bottom_line": {
+    "western_novelty_model": "miss",
+    "libido_submodel": "promising_feature_level_hit",
+    "communication_reasoning_submodel": "supportive",
+    "intellectual_stimulation_submodel": "meaningful_miss",
+    "directional_attraction_submodel": "partial_and_underpowered",
+    "hd_novelty_signal": "post_hoc_candidate_only",
+    "next_rule": "Preserve V0.4 result unchanged before defining any V0.5 HD novelty hypothesis."
+  }
+}
