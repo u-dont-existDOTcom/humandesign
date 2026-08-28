@@ -1,0 +1,71 @@
+{
+  "version": "relationship-phenotype-pair5-prechart-v1",
+  "status": "development_only_chart_blind_outcome_profile",
+  "created_utc_date": "2026-08-28",
+  "privacy": {
+    "case_id": "pair_5",
+    "policy": "pseudonymous_public_repo_record",
+    "excluded": ["partner_name", "birth_data", "location", "direct_identifiers"]
+  },
+  "purpose": "Freeze Pair 5 lived relationship phenotype before birth-derived astrology is inspected.",
+  "relationship_context": {
+    "role": "reference_actor_first_girlfriend",
+    "historical_stage": "before_reference_actor_later_spiritual_development",
+    "economic_context": "economic strain in Mexico contributed to relationship stress/breakup context"
+  },
+  "user_to_partner": {
+    "love_attachment_bond": "very_high",
+    "sexual_enjoyment": "positive_but_not_peak_and_reference_actor_had_no_prior_comparison",
+    "sexual_attraction": "positive_unknown_magnitude",
+    "intellectual_compatibility": "good_enough_for_communication_but_not_highly_stimulating",
+    "intellectual_stimulation": "low",
+    "mystical_spiritual_stimulation": "low_or_not_applicable_at_relationship_stage",
+    "communication_quality": "good",
+    "shared_interests_commonality": "moderate_to_low_or_insufficiently_characterized",
+    "community_lifestyle_preference": "reference_actor_more_pro_community_than_partner_initially",
+    "autonomy_reaction": "partner_disliked_reference_actor_telling_her_what_to_do_in_domains_such_as_diet"
+  },
+  "partner_to_user": {
+    "love_attachment_bond": "very_high",
+    "sexual_enjoyment": "higher_than_reference_actor_experienced",
+    "sexual_novelty_dependence": "high_user_report",
+    "sexual_habituation_pattern": "partner reportedly became bored with familiar male partners and needed novelty/new partners to experience sex strongly",
+    "religious_worldview_influence": "partner attempted to move reference actor toward Christianity despite not being strongly observant herself"
+  },
+  "dyadic": {
+    "sexual_chemistry_initial": "good_or_positive",
+    "sexual_chemistry_longitudinal": "declined_or_became_unsustainable_due_partner_novelty_dependence_habituation",
+    "desire_discrepancy_over_time": "likely_increased_as_partner_became_bored_with_familiarity",
+    "love_bond": "very_high_mutual",
+    "communication_quality": "good",
+    "intellectual_mystical_stimulation": "low",
+    "visible_drama_conflict": "generally_low",
+    "control_autonomy_friction": "specific_reactivity_when_reference_actor_prescribed_or_directed_partner_behavior",
+    "spiritual_worldview_alignment": "low_or_temporally_confounded_because_reference_actor_had_not_yet_become_spiritual",
+    "community_lifestyle_alignment": "reference_actor_preferred_more_community_living; partner was less aligned initially but became more open later",
+    "economic_strain": "materially_relevant_relationship_context",
+    "breakup_factors": [
+      "partner sexual boredom/novelty-seeking pattern",
+      "economic strain/context in Mexico"
+    ]
+  },
+  "new_model_requirement": {
+    "sexual_novelty_habituation": "Separate baseline libido and actor attraction from novelty dependence / habituation rate. A person can have substantial libido and strong initial sex but low long-term sexual stability with familiar partners.",
+    "longitudinal_sex_model": "Sexual compatibility must include time-dependent novelty decay or stability, not only initial chemistry.",
+    "autonomy_domain_specificity": "Low general drama can coexist with strong local reactance to being directed or controlled in specific behavioral domains.",
+    "historical_stage_confounding": "Spiritual/worldview compatibility must be rated relative to who each person was during the relationship, not current identity projected backward."
+  },
+  "currently_missing_or_uncertain": [
+    "Reference actor's relative physical attraction ranking compared with other partners.",
+    "Partner baseline libido independent of novelty dependence.",
+    "Partner romantic/Eros intensity versus companionate love.",
+    "Jealousy/exclusivity pattern, especially sexual versus romantic jealousy.",
+    "How much partner desired long-term commitment/marriage with reference actor.",
+    "Conflict repair quality when actual disagreements occurred.",
+    "Whether low drama reflected genuine emotional ease or simply low conflict exposure/style.",
+    "Degree of intellectual commonality versus simply adequate communication.",
+    "Whether partner's novelty dependence was specific to sex, relationships generally, or both.",
+    "Relationship duration/cohabitation/contact intensity for longitudinal normalization."
+  ],
+  "chart_blind_rule": "Do not inspect or fit Pair 5 astrology until this phenotype is preserved. When birth data arrive, score against the current frozen AstroRRF V0.3 and any explicitly versioned V0.4 extension created before chart inspection."
+}
