@@ -1,0 +1,96 @@
+{
+  "version": "astro-rrf-state-conditional-v0.2",
+  "status": "retrospective_development_after_additional_outcome_exposure",
+  "freeze_date": "2026-08-28",
+  "supersedes_for_future_development": "astro-rrf-directional-v0.1",
+  "preserve_prior_version": true,
+  "warning": "V0.2 was designed after additional relationship outcomes were revealed. It is a better target architecture, not validation. Do not score its fit to the three development pairs as predictive evidence.",
+  "framework": "docs/28_astro_rrf_state_conditional_v0_2.md",
+  "criterion_addendum": "reference/development_cases/relationship_phenotype_directional_addendum_v2.json",
+  "privacy": "Pseudonymous pair IDs only; no partner birth data or locations stored.",
+  "outcome_axes": {
+    "actor_eros_passion": {"directional": true, "state_conditional": false},
+    "shared_intellectual_compatibility": {"directional": false, "state_conditional": false},
+    "actor_intellectual_stimulation_self_expansion": {"directional": true, "state_conditional": false},
+    "partner_conceptual_comprehension_application": {"directional": true, "state_conditional": false},
+    "communication_access_bandwidth": {"directional": true, "state_conditional": true, "context_first": true},
+    "observed_outward_emotional_ease": {"directional": false, "state_conditional": true},
+    "latent_emotional_ease": {"directional": false, "state_conditional": true, "requires_observability": true},
+    "engulfment_pressure": {"directional": true, "state_conditional": true},
+    "sexual_exclusivity_sensitivity": {"directional": true, "state_conditional": true},
+    "romantic_exclusivity_sensitivity": {"directional": true, "state_conditional": true},
+    "attention_priority_sensitivity": {"directional": true, "state_conditional": true}
+  },
+  "feature_families": {
+    "actor_eros_passion": [
+      "directional_personal_planet_synastry",
+      "directional_5th_7th_8th_house_overlays"
+    ],
+    "shared_intellectual_compatibility": [
+      "midpoint_composite_mercury_sun",
+      "midpoint_composite_mercury_mercury_not_applicable_single_midpoint",
+      "midpoint_composite_mercury_jupiter",
+      "midpoint_composite_mercury_saturn",
+      "reciprocal_mercury_sun_mercury_easy_aspects"
+    ],
+    "actor_intellectual_stimulation_self_expansion": [
+      "directional_mercury_uranus",
+      "directional_mercury_pluto",
+      "directional_mercury_neptune_candidate",
+      "partner_mercury_actor_5th_8th_house_candidate",
+      "composite_mercury_mars_uranus_pluto_activation_candidate",
+      "hd_connection_features_separate_ablation"
+    ],
+    "partner_conceptual_comprehension_application": [
+      "mercury_sun_easy_aspects",
+      "mercury_mercury_easy_aspects",
+      "mercury_jupiter_candidate",
+      "mercury_saturn_candidate",
+      "hd_cognitive_features_separate_ablation"
+    ],
+    "communication_access_bandwidth": [
+      "language_proficiency",
+      "disclosure",
+      "contact_continuity",
+      "communication_latency",
+      "introversion_social_appetite",
+      "emotional_articulation",
+      "distance_and_medium"
+    ],
+    "latent_conflict_load": [
+      "moon_moon_hard_aspects",
+      "moon_pluto_hard_aspects",
+      "moon_saturn_hard_aspects",
+      "composite_emotional_configuration_candidates"
+    ],
+    "attachment_triggered_pressure": [
+      "latent_conflict_load",
+      "physical_proximity",
+      "contact_intensity",
+      "cohabitation",
+      "dependence_shared_resources",
+      "directional_eros_mismatch",
+      "romantic_exclusivity_threat",
+      "attention_priority_threat"
+    ]
+  },
+  "measurement_policy": {
+    "effective_confidence": "behavioral_confidence * measurement_reliability",
+    "low_observability_rule": "Low visible conflict cannot be promoted to high latent emotional ease when language/disclosure/contact make internal state poorly observable.",
+    "language_rule": "Language proficiency is a measurement/context variable, not evidence of low intelligence or low latent compatibility.",
+    "unknown_rule": "Unknown internal awareness, attachment style, sexual chemistry, or mature romantic state remains unknown."
+  },
+  "development_astronomy_notes": {
+    "pair_1_composite_mercury_mars": "sextile approximately 1.08 to 1.27 degrees across the entire unknown local birth day; robust to birth-time uncertainty",
+    "pair_2_composite_mercury_sun": "conjunction approximately 0.79 degrees",
+    "pair_3_composite_mercury_neptune": "sextile approximately 0.55 degrees",
+    "status": "Moshier-based development calculations consistent with prior local exploratory computations; canonical SWIEPH verification required before confirmatory use"
+  },
+  "unresolved": [
+    "No validated astrology mapping yet distinguishes sexual from romantic/attention jealousy.",
+    "No final numerical weights are frozen for V0.2; feature-family definitions are frozen first to reduce overfitting.",
+    "Pair 3 latent emotional ease remains unobservable at current relationship stage.",
+    "Pair 1 reverse house overlays remain unavailable because partner birth time is unknown.",
+    "Composite/Davison emotional-field mappings need independent cases before weighting."
+  ]
+}
