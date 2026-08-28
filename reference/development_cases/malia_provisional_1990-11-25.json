@@ -1,7 +1,7 @@
 {
   "participant_alias": "Malia",
   "identity_note": "Alias only; not participant's real name.",
-  "status": "birth_record_verified_private_input",
+  "status": "birth_record_verified_private_input_recalculated",
   "privacy_revision": {
     "reason": "Public repository records must not contain absent-partner birth data or other identifying relationship records.",
     "public_birth_data": "redacted",
@@ -12,7 +12,8 @@
     "source": "birth_certificate",
     "verification_status": "verified_from_document",
     "supersedes_previous_provisional_time": true,
-    "requires_chart_recalculation": true
+    "requires_chart_recalculation": false,
+    "current_derived_evaluation": "reference/development_cases/pair6_astro_rrf_v0_3_evaluation_v2.json"
   },
   "development_observations": [
     {
