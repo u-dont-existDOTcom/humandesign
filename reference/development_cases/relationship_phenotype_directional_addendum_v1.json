@@ -1,0 +1,38 @@
+{
+  "version": "relationship-phenotype-directional-addendum-v1",
+  "status": "development_only_user_reported_criterion",
+  "created_utc_date": "2026-08-28",
+  "privacy": {
+    "policy": "public_repo_pseudonyms_only",
+    "note": "No partner names, birth data, locations, or direct identifiers are stored."
+  },
+  "extends": "reference/development_cases/relationship_phenotype_three_pair_v1.json",
+  "reason": "A relationship-level love-style label was too symmetric. The user clarified that one historical pair contains a stable actor/partner mismatch in romantic love that depends strongly on physical proximity.",
+  "directional_observations": {
+    "pair_2": {
+      "user_to_partner": {
+        "love_style": "storge_dominant",
+        "in_love_eros": "low_relative_to_partner",
+        "care_attachment": "high",
+        "communication_intellectual_fit": "very_high"
+      },
+      "partner_to_user": {
+        "love_style": "eros_in_love",
+        "in_love_eros": "high",
+        "acceptance_of_asymmetry": "context_dependent"
+      },
+      "context_interaction": {
+        "distance": "partner currently accepts a storge relationship from the user at a distance",
+        "physical_proximity": "partner wants substantially more reciprocal romantic love when physically together, creating drama/pressure",
+        "interpretation": "The relationship cannot be represented by one shared Eros/Storge score. Actor-specific romantic state and proximity moderation are required."
+      },
+      "confidence": "high_user_report"
+    }
+  },
+  "model_requirements_created_by_clarification": [
+    "Every love-style/RRF axis that can differ by person must permit actor-specific values.",
+    "Shared relationship-field variables must not substitute for actor-specific Eros, Storge, intimacy, or satisfaction.",
+    "Physical proximity/distance must be allowed to moderate mismatch consequences without changing the underlying actor-specific love state.",
+    "A model must distinguish accepting asymmetric love from actually sharing the same love style."
+  ]
+}
