@@ -67,9 +67,26 @@ jobs:
           path: state/SURVEY-V2-NOISE-SCORER-EQUIVALENCE.json
           retention-days: 90
 
-  full-century-report:
+  full-century-scenarios:
     runs-on: ubuntu-24.04
     needs: tests-and-equivalence
+    timeout-minutes: 330
+    strategy:
+      fail-fast: false
+      matrix:
+        scenario:
+          - perfect_answers
+          - one_wrong_classification
+          - wrong_05pct
+          - wrong_10pct
+          - wrong_20pct
+          - ambiguous_05pct
+          - ambiguous_10pct
+          - ambiguous_20pct
+          - other_10pct
+          - uncertain_10pct
+          - mixed_10pct
+          - counterevidence_10pct
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
@@ -90,25 +107,34 @@ jobs:
             --dir .
           tar -xzf century-candidate-cache-structural-v2-1926-2026.tar.gz \
             -C century-artifact
-      - name: Run all-state exact robustness audit
+      - name: Run exact all-state scenario audit
         run: |
           python scripts/audit_survey_v2_noise.py \
             --cache century-artifact \
-            --output state/SURVEY-V2-NOISE-AUDIT.json
-      - name: Require perfect oracle recovery and full coverage
+            --scenario '${{ matrix.scenario }}' \
+            --checkpoint-dir 'state/checkpoints/${{ matrix.scenario }}' \
+            --output 'state/SURVEY-V2-NOISE-${{ matrix.scenario }}.json'
+      - name: Require complete scenario coverage
         run: |
           python - <<'PY'
           import json
-          report = json.load(open('state/SURVEY-V2-NOISE-AUDIT.json'))
+          scenario = '${{ matrix.scenario }}'
+          report = json.load(open(f'state/SURVEY-V2-NOISE-{scenario}.json'))
           assert report['covers_complete_universe'] is True
           assert report['candidate_count'] == 288938
-          perfect = report['scenario_summaries'][0]
-          assert perfect['scenario_id'] == 'perfect_answers'
-          assert perfect['top1'] == 1.0
-          assert perfect['median_rank'] == 1.0
+          assert report['completed_scenarios'] == [scenario]
+          assert len(report['scenario_summaries']) == 1
+          summary = report['scenario_summaries'][0]
+          assert summary['scenario_id'] == scenario
+          assert summary['case_count'] == 288938
+          if scenario == 'perfect_answers':
+              assert summary['top1'] == 1.0
+              assert summary['median_rank'] == 1.0
           PY
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: survey-v2-noise-full-century-${{ github.sha }}
-          path: state/SURVEY-V2-NOISE-AUDIT.json
+          name: survey-v2-noise-${{ matrix.scenario }}-${{ github.sha }}
+          path: |
+            state/SURVEY-V2-NOISE-${{ matrix.scenario }}.json
+            state/checkpoints/${{ matrix.scenario }}/
           retention-days: 90

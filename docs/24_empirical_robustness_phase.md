@@ -80,3 +80,18 @@ unique transformed-answer signature counts.
 Correctness is gated twice: exhaustive pathological small-universe tests compare every source and
 scenario, including exact per-candidate score reconstruction; a deterministic real-cache audit
 then compares reference and indexed engines over multiple subset sizes, scenarios, and seeds.
+
+## Resumable execution and progress
+
+The century runner writes `status.json` atomically while it initializes and after every configured
+case interval. The status records the active scenario, completed and total cases, elapsed time, an
+estimated remaining time, and the scenarios already complete. At scenario completion it writes a
+content-hashed checkpoint and refreshes `partial-report.json`. A restart reuses a checkpoint only
+when its scenario definition, frozen artifact hashes, candidate range, feature contract, scorer
+version, and Git commit all match. A corrupt or stale checkpoint fails closed.
+
+Use `--scenario SCENARIO_ID` to execute one frozen scenario, `--checkpoint-dir PATH` to choose the
+durable checkpoint location, and `--progress-every N` to choose the status interval. Repeating
+`--scenario` selects several scenarios. Resume is the default; `--no-resume` deliberately
+recomputes them. CI uses one all-288,938-state job per frozen scenario, preventing one slow
+scenario from hiding the status of the other eleven or exceeding a monolithic job timeout.

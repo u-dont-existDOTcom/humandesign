@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import gc
 import json
+import os
 import resource
 import subprocess
 import time
@@ -40,6 +41,28 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--case-start", type=int, default=0)
     parser.add_argument("--case-stop", type=int)
     parser.add_argument(
+        "--scenario",
+        action="append",
+        choices=tuple(scenario.scenario_id for scenario in DEFAULT_NOISE_SCENARIOS),
+        help="Run only this frozen scenario. Repeat to select more than one.",
+    )
+    parser.add_argument(
+        "--checkpoint-dir",
+        type=Path,
+        help="Directory for atomic per-scenario checkpoints and live status.",
+    )
+    parser.add_argument(
+        "--no-resume",
+        action="store_true",
+        help="Ignore existing checkpoints and recompute selected scenarios.",
+    )
+    parser.add_argument(
+        "--progress-every",
+        type=int,
+        default=10_000,
+        help="Emit and persist progress every N cases (zero disables case updates).",
+    )
+    parser.add_argument(
         "--candidate-limit",
         type=int,
         help="Smoke-test only: truncate the candidate universe and mark the report non-century.",
@@ -60,6 +83,25 @@ def parse_args() -> argparse.Namespace:
 def main() -> None:
     audit_started = time.perf_counter()
     args = parse_args()
+    selected_ids = set(args.scenario or ())
+    scenarios = tuple(
+        scenario
+        for scenario in DEFAULT_NOISE_SCENARIOS
+        if not selected_ids or scenario.scenario_id in selected_ids
+    )
+    checkpoint_dir = args.checkpoint_dir or args.output.with_suffix(".checkpoints")
+    checkpoint_dir.mkdir(parents=True, exist_ok=True)
+    status_path = checkpoint_dir / "status.json"
+    _write_status(
+        status_path,
+        state="initializing",
+        scenario_id=None,
+        completed_scenarios=[],
+        selected_scenario_count=len(scenarios),
+        completed_cases=0,
+        total_cases=0,
+    )
+    print("[initializing] loading and indexing the frozen candidate universe", flush=True)
     manifest_path = args.cache / "manifest.json"
     manifest = CenturyCacheManifest.model_validate_json(manifest_path.read_text(encoding="utf-8"))
     states = load_century_candidate_states(
@@ -94,25 +136,99 @@ def main() -> None:
     stop = len(states) if args.case_stop is None else min(args.case_stop, len(states))
     if not 0 <= args.case_start < stop:
         raise ValueError("case range must be a non-empty subset of the universe")
+    if args.progress_every < 0:
+        raise ValueError("progress-every cannot be negative")
 
     scorer = IndexedSurveyScorer.build(rows)
     del states, structural, base, target_vectors, tie_vectors
     gc.collect()
-    summaries = []
+    run_identity = {
+        "schema_version": "survey-v2-noise-checkpoint-v1",
+        "candidate_count": candidate_count,
+        "case_start": args.case_start,
+        "case_stop": stop,
+        "base_answer_count": base_feature_count,
+        "feature_ids": list(feature_ids),
+        "candidate_universe_manifest_sha256": sha256_file(manifest_path),
+        "base_mapping_sha256": sha256_file(args.base_mapping),
+        "overlay_sha256": sha256_file(args.overlay),
+        "optimized_scorer": "python-int-inverted-bitsets-bit-sliced-exact-v1",
+        "git_commit_sha": _git_commit(),
+    }
+    run_identity_sha256 = sha256_json(run_identity)
+    summaries: list[dict[str, Any]] = []
     diagnostics: dict[str, Any] = {}
-    for scenario in DEFAULT_NOISE_SCENARIOS:
-        scenario_started = time.perf_counter()
-        cases = tuple(
-            simulate_noise_case_indexed(
-                scorer,
-                base_feature_count=base_feature_count,
-                true_index=true_index,
-                scenario=scenario,
+    completed_scenarios: list[str] = []
+    for scenario in scenarios:
+        checkpoint_path = checkpoint_dir / f"{scenario.scenario_id}.json"
+        checkpoint = _load_checkpoint(
+            checkpoint_path,
+            run_identity_sha256=run_identity_sha256,
+            scenario=scenario.model_dump(mode="json"),
+        ) if not args.no_resume else None
+        if checkpoint is not None:
+            summaries.append(checkpoint["summary"])
+            diagnostics[scenario.scenario_id] = checkpoint["diagnostics"]
+            completed_scenarios.append(scenario.scenario_id)
+            _write_partial_report(
+                checkpoint_dir / "partial-report.json",
+                run_identity=run_identity,
+                run_identity_sha256=run_identity_sha256,
+                completed_scenarios=completed_scenarios,
+                selected_scenario_count=len(scenarios),
+                summaries=summaries,
+                diagnostics=diagnostics,
             )
-            for true_index in range(args.case_start, stop)
-        )
-        summaries.append(summarize_noise_cases(cases).model_dump(mode="json"))
-        diagnostics[scenario.scenario_id] = _failure_diagnostics(cases, feature_ids)
+            _write_status(
+                status_path,
+                state="checkpoint_reused",
+                scenario_id=scenario.scenario_id,
+                completed_scenarios=completed_scenarios,
+                selected_scenario_count=len(scenarios),
+                completed_cases=stop - args.case_start,
+                total_cases=stop - args.case_start,
+            )
+            print(f"[{scenario.scenario_id}] reused valid checkpoint", flush=True)
+            continue
+        scenario_started = time.perf_counter()
+        total_cases = stop - args.case_start
+        print(f"[{scenario.scenario_id}] starting {total_cases:,} cases", flush=True)
+        cases = []
+        for completed, true_index in enumerate(range(args.case_start, stop), start=1):
+            cases.append(
+                simulate_noise_case_indexed(
+                    scorer,
+                    base_feature_count=base_feature_count,
+                    true_index=true_index,
+                    scenario=scenario,
+                )
+            )
+            if args.progress_every and (
+                completed % args.progress_every == 0 or completed == total_cases
+            ):
+                elapsed = time.perf_counter() - scenario_started
+                rate = completed / elapsed if elapsed else 0.0
+                remaining_seconds = (total_cases - completed) / rate if rate else None
+                _write_status(
+                    status_path,
+                    state="running",
+                    scenario_id=scenario.scenario_id,
+                    completed_scenarios=completed_scenarios,
+                    selected_scenario_count=len(scenarios),
+                    completed_cases=completed,
+                    total_cases=total_cases,
+                    elapsed_seconds=elapsed,
+                    estimated_remaining_seconds=remaining_seconds,
+                )
+                print(
+                    f"[{scenario.scenario_id}] {completed:,}/{total_cases:,} "
+                    f"({completed / total_cases:.1%}); elapsed={elapsed:.1f}s; "
+                    f"eta={remaining_seconds:.1f}s",
+                    flush=True,
+                )
+        frozen_cases = tuple(cases)
+        summaries.append(summarize_noise_cases(frozen_cases).model_dump(mode="json"))
+        diagnostics[scenario.scenario_id] = _failure_diagnostics(frozen_cases, feature_ids)
         summaries[-1]["runtime_seconds"] = time.perf_counter() - scenario_started
         summaries[-1]["unique_observed_signature_count"] = _signature_count(
             scorer,
@@ -121,6 +237,37 @@ def main() -> None:
             args.case_start,
             stop,
         )
+        checkpoint = {
+            "schema_version": "survey-v2-noise-scenario-checkpoint-v1",
+            "run_identity_sha256": run_identity_sha256,
+            "scenario": scenario.model_dump(mode="json"),
+            "summary": summaries[-1],
+            "diagnostics": diagnostics[scenario.scenario_id],
+        }
+        checkpoint["checkpoint_content_sha256"] = sha256_json(checkpoint)
+        _write_json_atomic(checkpoint_path, checkpoint)
+        completed_scenarios.append(scenario.scenario_id)
+        _write_partial_report(
+            checkpoint_dir / "partial-report.json",
+            run_identity=run_identity,
+            run_identity_sha256=run_identity_sha256,
+            completed_scenarios=completed_scenarios,
+            selected_scenario_count=len(scenarios),
+            summaries=summaries,
+            diagnostics=diagnostics,
+        )
+        _write_status(
+            status_path,
+            state="scenario_complete",
+            scenario_id=scenario.scenario_id,
+            completed_scenarios=completed_scenarios,
+            selected_scenario_count=len(scenarios),
+            completed_cases=total_cases,
+            total_cases=total_cases,
+        )
+        print(f"[{scenario.scenario_id}] checkpoint written: {checkpoint_path}", flush=True)
+        del cases, frozen_cases
+        gc.collect()
 
     report: dict[str, Any] = {
         "schema_version": "survey-v2-century-noise-audit-v1",
@@ -134,9 +281,7 @@ def main() -> None:
         "base_answer_count": base_feature_count,
         "adaptive_tie_breakers": list(DEFAULT_TIE_BREAKERS),
         "feature_ids": list(feature_ids),
-        "scenario_definitions": [
-            scenario.model_dump(mode="json") for scenario in DEFAULT_NOISE_SCENARIOS
-        ],
+        "scenario_definitions": [scenario.model_dump(mode="json") for scenario in scenarios],
         "scenario_summaries": summaries,
         "failure_diagnostics": diagnostics,
         "candidate_universe_manifest_sha256": sha256_file(manifest_path),
@@ -147,14 +292,107 @@ def main() -> None:
         "post_reveal_excluded_from_headline_science": True,
         "optimized_scorer": "python-int-inverted-bitsets-bit-sliced-exact-v1",
         "reference_equivalence_status": "required_by_test_suite",
-        "git_commit_sha": _git_commit(),
+        "git_commit_sha": run_identity["git_commit_sha"],
+        "run_identity_sha256": run_identity_sha256,
+        "checkpoint_directory": str(checkpoint_dir),
+        "completed_scenarios": completed_scenarios,
+        "covers_all_default_scenarios": tuple(completed_scenarios)
+        == tuple(scenario.scenario_id for scenario in DEFAULT_NOISE_SCENARIOS),
         "runtime_seconds": time.perf_counter() - audit_started,
         "peak_memory_mib": resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024,
     }
     report["report_content_sha256"] = sha256_json(report)
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    _write_json_atomic(args.output, report)
+    _write_status(
+        status_path,
+        state="complete",
+        scenario_id=None,
+        completed_scenarios=completed_scenarios,
+        selected_scenario_count=len(scenarios),
+        completed_cases=stop - args.case_start,
+        total_cases=stop - args.case_start,
+    )
     print(args.output)
+
+
+def _load_checkpoint(
+    path: Path, *, run_identity_sha256: str, scenario: dict[str, Any]
+) -> dict[str, Any] | None:
+    if not path.exists():
+        return None
+    loaded = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(loaded, dict):
+        raise ValueError(f"checkpoint must contain a JSON object: {path}")
+    value: dict[str, Any] = loaded
+    stored_hash = value.pop("checkpoint_content_sha256", None)
+    if stored_hash != sha256_json(value):
+        raise ValueError(f"checkpoint content hash mismatch: {path}")
+    if value.get("run_identity_sha256") != run_identity_sha256:
+        raise ValueError(f"checkpoint run identity mismatch: {path}")
+    if value.get("scenario") != scenario:
+        raise ValueError(f"checkpoint scenario mismatch: {path}")
+    value["checkpoint_content_sha256"] = stored_hash
+    return value
+
+
+def _write_status(
+    path: Path,
+    *,
+    state: str,
+    scenario_id: str | None,
+    completed_scenarios: list[str],
+    selected_scenario_count: int,
+    completed_cases: int,
+    total_cases: int,
+    elapsed_seconds: float | None = None,
+    estimated_remaining_seconds: float | None = None,
+) -> None:
+    _write_json_atomic(
+        path,
+        {
+            "schema_version": "survey-v2-noise-live-status-v1",
+            "state": state,
+            "scenario_id": scenario_id,
+            "completed_scenarios": completed_scenarios,
+            "selected_scenario_count": selected_scenario_count,
+            "completed_cases": completed_cases,
+            "total_cases": total_cases,
+            "elapsed_seconds": elapsed_seconds,
+            "estimated_remaining_seconds": estimated_remaining_seconds,
+        },
+    )
+
+
+def _write_partial_report(
+    path: Path,
+    *,
+    run_identity: dict[str, Any],
+    run_identity_sha256: str,
+    completed_scenarios: list[str],
+    selected_scenario_count: int,
+    summaries: list[dict[str, Any]],
+    diagnostics: dict[str, Any],
+) -> None:
+    value: dict[str, Any] = {
+        "schema_version": "survey-v2-noise-partial-report-v1",
+        "claim_scope": "synthetic_oracle_robustness_only_not_demonstrated_human_accuracy",
+        "run_identity": run_identity,
+        "run_identity_sha256": run_identity_sha256,
+        "completed_scenarios": completed_scenarios,
+        "selected_scenario_count": selected_scenario_count,
+        "is_complete": len(completed_scenarios) == selected_scenario_count,
+        "scenario_summaries": summaries,
+        "failure_diagnostics": diagnostics,
+    }
+    value["report_content_sha256"] = sha256_json(value)
+    _write_json_atomic(path, value)
+
+
+def _write_json_atomic(path: Path, value: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_name(f".{path.name}.{os.getpid()}.tmp")
+    temporary.write_text(json.dumps(value, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    temporary.replace(path)
 
 
 def _structural(value: object) -> StructuralChartFeatures:
