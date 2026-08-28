@@ -1,0 +1,69 @@
+{
+  "audit_version": "relationship-pairwise-audit-v1",
+  "criterion_version": "relationship-phenotype-three-pair-v1",
+  "prediction_version": "prior-astrohd-three-pair-prediction-snapshot-v1",
+  "status": "development_descriptive_not_validation",
+  "overall": {
+    "correct": 4,
+    "incorrect": 6,
+    "ties_against_direction": 0,
+    "total": 10,
+    "pairwise_accuracy": 0.4,
+    "binary_ordering_reference": 0.5,
+    "interpretation": "Descriptive only. Small-N comparisons are not an inferential test; 0.5 is the chance expectation for a forced binary ordering."
+  },
+  "by_domain": {
+    "sexual_chemistry_satisfaction": {
+      "correct": 0,
+      "incorrect": 1,
+      "ties_against_direction": 0,
+      "total": 1,
+      "accuracy": 0.0
+    },
+    "romantic_connection_passion": {
+      "correct": 0,
+      "incorrect": 1,
+      "ties_against_direction": 0,
+      "total": 1,
+      "accuracy": 0.0
+    },
+    "communication_intellectual_fit": {
+      "correct": 1,
+      "incorrect": 1,
+      "ties_against_direction": 0,
+      "total": 2,
+      "accuracy": 0.5
+    },
+    "emotional_ease_regulation": {
+      "correct": 2,
+      "incorrect": 1,
+      "ties_against_direction": 0,
+      "total": 3,
+      "accuracy": 0.6666666666666666
+    },
+    "engulfment_pressure": {
+      "correct": 1,
+      "incorrect": 2,
+      "ties_against_direction": 0,
+      "total": 3,
+      "accuracy": 0.3333333333333333
+    }
+  },
+  "details": [
+    {"domain": "sexual_chemistry_satisfaction", "higher": "pair_1", "lower": "pair_2", "observed_confidence": "high", "result": "incorrect"},
+    {"domain": "romantic_connection_passion", "higher": "pair_1", "lower": "pair_2", "observed_confidence": "high", "result": "incorrect"},
+    {"domain": "communication_intellectual_fit", "higher": "pair_2", "lower": "pair_1", "observed_confidence": "high", "result": "correct"},
+    {"domain": "communication_intellectual_fit", "higher": "pair_2", "lower": "pair_3", "observed_confidence": "high", "result": "incorrect"},
+    {"domain": "emotional_ease_regulation", "higher": "pair_3", "lower": "pair_2", "observed_confidence": "medium", "result": "correct"},
+    {"domain": "emotional_ease_regulation", "higher": "pair_3", "lower": "pair_1", "observed_confidence": "medium", "result": "correct"},
+    {"domain": "emotional_ease_regulation", "higher": "pair_2", "lower": "pair_1", "observed_confidence": "high", "result": "incorrect"},
+    {"domain": "engulfment_pressure", "higher": "pair_1", "lower": "pair_2", "observed_confidence": "high", "result": "incorrect"},
+    {"domain": "engulfment_pressure", "higher": "pair_1", "lower": "pair_3", "observed_confidence": "medium", "result": "incorrect"},
+    {"domain": "engulfment_pressure", "higher": "pair_2", "lower": "pair_3", "observed_confidence": "medium", "result": "correct"}
+  ],
+  "conclusion": {
+    "primary": "The pre-feedback AstroHD partner comparison failed as a domain-ranking model on this three-case development set, especially for sexual chemistry, romantic connection, and engulfment.",
+    "do_not_rescue": "Do not reinterpret the same synastry features after outcome reveal and count the new interpretation as predictive success.",
+    "next": "Freeze separate candidate mappings for HD-only, Western-only, AstroHD, and non-symbolic baselines before collecting new relationship outcomes or mature pair_3 outcomes."
+  }
+}
