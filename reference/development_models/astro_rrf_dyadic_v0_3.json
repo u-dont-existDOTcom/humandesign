@@ -1,0 +1,113 @@
+{
+  "version": "astro-rrf-dyadic-v0.3",
+  "status": "retrospective_development_architecture_chart_blind_for_pair_4",
+  "freeze_date": "2026-08-28",
+  "framework": "docs/29_astro_rrf_dyadic_desire_v0_3.md",
+  "privacy": "No partner names, birth data, locations, or raw chart vectors are stored.",
+  "critical_freeze": "Pair 4 phenotype is known, but Pair 4 birth/chart features were not available or inspected when this feature-family model was frozen.",
+  "targets": {
+    "sexual": [
+      "actor_physical_attraction",
+      "actor_sexual_desire",
+      "actor_eros_in_love",
+      "baseline_libido",
+      "dyadic_desire_discrepancy",
+      "dyadic_sexual_chemistry_satisfaction"
+    ],
+    "cognitive_spiritual": [
+      "intellectual_compatibility",
+      "intellectual_stimulation_self_expansion",
+      "conceptual_comprehension_application",
+      "mystical_spiritual_stimulation",
+      "communication_access_bandwidth"
+    ],
+    "shared_content": [
+      "shared_interests_commonality",
+      "values_worldview_overlap",
+      "communication_quality",
+      "communication_abundance"
+    ],
+    "emotional_autonomy": [
+      "visible_drama",
+      "internal_emotional_ease",
+      "emotional_readability",
+      "baseline_autonomy_space",
+      "attachment_threat_sensitivity",
+      "sexual_jealousy_sensitivity",
+      "romantic_priority_jealousy_sensitivity",
+      "proximity_sensitivity",
+      "state_conditional_engulfment_pressure"
+    ]
+  },
+  "frozen_feature_families": {
+    "actor_physical_attraction_sexual_desire_eros": [
+      "actor_Venus_or_Mars_major_aspect_partner_Sun_Moon_Asc_Desc",
+      "partner_Venus_or_Mars_in_actor_house_5_7_8",
+      "actor_Venus_or_Mars_major_aspect_partner_Pluto_intensity_modifier",
+      "partner_Sun_or_Moon_in_actor_house_5_7_8_secondary"
+    ],
+    "baseline_libido_candidate_families_unweighted": [
+      "natal_Mars_Venus_condition_and_angularity",
+      "natal_house_5_8_emphasis_when_time_known",
+      "sourced_HD_sexual_energy_mechanics_separate_ablation",
+      "nonastrological_self_report_baseline"
+    ],
+    "intellectual_compatibility": [
+      "easy_Mercury_Mercury_or_Mercury_Sun",
+      "composite_Mercury_Sun",
+      "Mercury_house_3_7_9_overlays_secondary"
+    ],
+    "intellectual_stimulation_self_expansion": [
+      "actor_Mercury_partner_Uranus",
+      "actor_Mercury_partner_Pluto",
+      "partner_Mercury_Uranus_Pluto_actor_house_3_9_11",
+      "composite_Mercury_Mars_Uranus_Pluto"
+    ],
+    "conceptual_comprehension_application": [
+      "easy_Mercury_Mercury_or_Mercury_Sun",
+      "Mercury_Jupiter",
+      "Mercury_Saturn",
+      "HD_insight_translation_separate_ablation"
+    ],
+    "mystical_spiritual_stimulation": [
+      "actor_Mercury_or_Jupiter_partner_Neptune_Pluto_Uranus",
+      "composite_Mercury_or_Jupiter_Neptune_Pluto",
+      "house_9_12_overlays_when_time_known",
+      "HD_mystery_inquiry_separate_ablation"
+    ],
+    "commonality_shared_interests": [
+      "shared_thematic_salience_candidate_only",
+      "do_not_use_generic_personality_or_chart_similarity_as_default"
+    ],
+    "conditional_emotional_pressure": [
+      "Moon_Moon_Moon_Saturn_Moon_Pluto_latent_emotional_load",
+      "Uranus_relationship_axis_or_personal_planet_autonomy_candidate",
+      "Pluto_Saturn_house_8_12_intensity_only_with_activation",
+      "directional_Eros_mismatch_upstream"
+    ]
+  },
+  "interaction_rules": {
+    "sexual_chemistry": "f(A_desire_for_B, B_desire_for_A, A_libido, B_libido, desire_match, responsiveness, context)",
+    "pressure_state": "baseline + attachment_activation*latent_conflict + romantic_priority_threat*romantic_jealousy + sexual_threat*sexual_jealousy - autonomy_spacemaker_effects",
+    "observability": "language proficiency, introversion, disclosure, and response continuity reduce confidence in inferred internal states but do not count as evidence of low intellect or low internal emotional ease"
+  },
+  "pair_4_chart_blind_targets": {
+    "user_physical_attraction": "high",
+    "partner_baseline_libido": "low_relative_to_user",
+    "dyadic_sexual_chemistry": "poor",
+    "mutual_love_bond": "very_high",
+    "partner_commitment_marriage_intent": "very_high",
+    "shared_interests_commonality": "very_low",
+    "intellectual_stimulation": "very_low",
+    "mystical_spiritual_stimulation": "very_low_at_relationship_stage",
+    "communication_quality": "good",
+    "communication_abundance": "low",
+    "drama_conflict": "near_zero"
+  },
+  "pair_4_evaluation_rule": [
+    "Do not alter V0.3 before calculating Pair 4 chart.",
+    "Unknown birth time must be represented as a range/full-day sensitivity.",
+    "Record hits, misses, and unresolved outcomes before creating V0.4.",
+    "Do not treat fit as untouched validation because Pair 4 phenotype informed V0.3 decomposition."
+  ]
+}
