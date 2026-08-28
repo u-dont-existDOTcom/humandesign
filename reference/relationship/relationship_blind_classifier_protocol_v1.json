@@ -1,0 +1,114 @@
+{
+  "schema_version": "relationship-blind-classifier-protocol-v1",
+  "status": "development_candidate_blind",
+  "purpose": "Make relationship narrative-to-phenotype classification reproducible and chart-blind. The classifier must not see the pair's birth data, HD mechanics, Western synastry, AstroRRF predictions, or candidate/decoy identity while interpreting relationship evidence.",
+  "separation_of_roles": {
+    "prediction_freezer": "Reads only independently supplied birth inputs and frozen relationship models; emits anonymous per-question outcome likelihoods/labels before scored answers are collected.",
+    "interviewer": "Asks the frozen relationship question bank one question at a time and preserves verbatim narrative plus non-scored applicability/context metadata.",
+    "adaptive_selector": "Uses only anonymous candidate weights, frozen answer likelihoods for unanswered eligible question ids, expected reliability, and burden. It never receives participant prose, birth metadata, or true candidate identity.",
+    "evidence_classifier": "Reads participant narrative, question target axes, the complete frozen relationship outcome rubric, and minimum-evidence rules, but not any chart prediction.",
+    "scorer": "Compares frozen relationship-model predictions with frozen phenotype classifications after both are sealed."
+  },
+  "classifier_inputs": [
+    "question_id",
+    "participant answer verbatim",
+    "all follow-up answers verbatim",
+    "relationship phase/context tags supplied by interviewer",
+    "target axes for that question",
+    "complete frozen outcome rubric registry",
+    "minimum-evidence rule"
+  ],
+  "classifier_forbidden_inputs": [
+    "either partner birth date/time/place",
+    "natal chart",
+    "connection chart",
+    "Western synastry",
+    "composite or Davison chart",
+    "AstroRRF prediction",
+    "HD prediction",
+    "candidate or decoy identity",
+    "candidate rank",
+    "whether a classification improves model fit"
+  ],
+  "adaptive_selector_forbidden_inputs": [
+    "either partner birth metadata",
+    "true candidate identity",
+    "candidate rank",
+    "participant prose",
+    "classifier evidence spans or rationale",
+    "operator-selected desired outcome"
+  ],
+  "required_axis_output": {
+    "axis_id": "frozen rubric axis id",
+    "direction": ["a_to_b", "b_to_a", "dyadic", "person_a", "person_b"],
+    "status": ["classified", "mixed", "other", "insufficient_evidence", "unclassifiable", "not_applicable"],
+    "ordinal_value": "nullable very_low|low|moderate|high|very_high",
+    "trajectory": "nullable stable|gradual_increase|gradual_decrease|rapid_increase|rapid_decrease|cyclical|novelty_reset|state_conditional|unknown",
+    "confidence": "0.0-1.0",
+    "evidence_spans": "verbatim participant spans",
+    "counterevidence_spans": "verbatim participant spans",
+    "context_conditions": "distance/cohabitation/familiarity/attachment threat/third-party/religious constraint/etc when relevant",
+    "observability_limits": "language, introversion, silence, inexperience, prohibition, opportunity, or other limits",
+    "forced_choice": false
+  },
+  "required_question_output": {
+    "question_id": "frozen question id",
+    "axis_results": "zero or more required_axis_output records",
+    "applicability_flags": "non-scored fixed vocabulary flags used only for routing",
+    "unresolved_axis_ids": "axes that remain insufficient or ambiguous",
+    "verbatim_preserved": true
+  },
+  "classification_rules": [
+    "Classify only axes directly supported by the answer; a question targeting several axes need not produce a score for every axis.",
+    "Never infer B-to-A internal experience solely from A's assumptions when no behavioral or reported evidence exists; lower confidence or return insufficient evidence.",
+    "Never use one actor's attraction as proof of dyadic sexual chemistry.",
+    "Never infer baseline libido from low initiation when behavior is constrained by religion, virginity, health, distance, opportunity, or relationship rules.",
+    "Never infer Eros/in-love from love, attraction, sex, intimacy, jealousy, or marriage intent alone.",
+    "Never infer low intellect from low communication volume, introversion, language limitations, or social-media use.",
+    "Keep intellectual compatibility, intellectual stimulation, comprehension/application, knowledge complementarity, and shared interests separate.",
+    "Keep mystical salience, mystical curiosity, and mystical stimulation separate.",
+    "Keep visible drama/theatricality, serious conflict/hostility, aggression episodes, and repair difficulty separate.",
+    "Keep sexual jealousy, romantic-priority jealousy, monogamy preference, and actual relationship structure separate.",
+    "A state-dependent curve should be returned when low-distance/high-distance or low-attachment/high-attachment conditions differ materially; do not average them.",
+    "Causal interpretations involving supernatural, psychiatric, medical, cultural, or trauma explanations remain separate from the observed behavior unless independently established.",
+    "If multiple interpretations fit, return mixed or insufficient evidence rather than choosing the one most favorable to a chart model."
+  ],
+  "scoring_gate": {
+    "minimum_confidence": 0.65,
+    "require_minimum_evidence": true,
+    "score_other": false,
+    "score_insufficient_evidence": false,
+    "mixed_policy": "Use only a preregistered partial-credit or probability rule; otherwise leave mixed unscored.",
+    "unknown_is_not_neutral": true
+  },
+  "development_capture_routing": {
+    "core_questions": "Ask all six frozen core anchors before optional follow-ups unless a question is genuinely not applicable.",
+    "followup_eligibility": "A follow-up may be asked only when one of its frozen applicability flags is present or one of its target axes remains unresolved after the core anchors.",
+    "chart_access": "No chart/model predictions may be used to decide which follow-up to ask in development_capture mode."
+  },
+  "validation_adaptive_routing": {
+    "engine": "hdmatch.search.adaptive.select_next_question",
+    "utility": "expected_information_gain * expected_reliability - burden",
+    "eligible_pool": "unanswered questions allowed by frozen non-scored applicability metadata",
+    "candidate_weights": "anonymous candidate/decoy posterior or equal prior weights maintained outside the classifier",
+    "prediction_likelihoods": "frozen before scored participant answers",
+    "stop_rules": [
+      "No eligible unanswered question has positive adjusted utility.",
+      "Prespecified maximum burden/question count is reached.",
+      "The declared candidate discrimination target is already reached.",
+      "Participant chooses to stop."
+    ]
+  },
+  "freeze_requirements": [
+    "questionnaire JSON SHA-256",
+    "outcome rubric JSON SHA-256",
+    "classifier protocol SHA-256",
+    "classifier model identifier/version and sampling settings",
+    "minimum confidence threshold",
+    "adaptive utility rule",
+    "per-question burden and expected reliability defaults",
+    "candidate/decoy prediction matrix or likelihood package",
+    "model/version hashes for HD, Western, AstroRRF, and any non-symbolic baseline being compared",
+    "participant response record hash before chart reveal/evaluation"
+  ]
+}
