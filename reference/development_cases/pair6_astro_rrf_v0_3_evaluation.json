@@ -1,17 +1,22 @@
 {
   "version": "pair6-astro-rrf-v0.3-evaluation",
-  "status": "superseded_stale_birth_input",
+  "status": "superseded_artifact_only_case_remains_current",
   "created_utc_date": "2026-08-28",
   "privacy": "Public-safe tombstone only. Detailed relationship evidence and exact birth data belong in the external private participant store.",
   "criterion_case_id": "pair_6",
+  "case_training_status": "eligible_current_via_superseding_evaluation",
+  "current_evaluation": "reference/development_cases/pair6_astro_rrf_v0_3_evaluation_v2.json",
+  "exclude_this_artifact_from_training": true,
   "models_previously_scored": [
     "docs/28_astro_rrf_state_conditional_v0_2.md",
     "docs/29_astro_rrf_dyadic_desire_v0_3.md"
   ],
   "supersession": {
-    "reason": "A birth certificate verified a materially different birth time than the provisional input used for this evaluation.",
+    "reason": "A birth certificate verified a materially different birth time than the provisional input used for this historical evaluation.",
     "prior_evaluation_valid_for_current_birth_input": false,
-    "required_action": "Recalculate natal/relationship features from the private verified birth record and create a new versioned evaluation. Do not reuse house, angle, HD, composite, or time-sensitive conclusions from this file."
+    "recalculation_completed": true,
+    "replacement": "reference/development_cases/pair6_astro_rrf_v0_3_evaluation_v2.json",
+    "required_action": "Training and development analysis must use the replacement evaluation. Do not ingest this historical artifact as current chart-derived evidence."
   },
-  "methodological_note": "The chart-blind phenotype freeze remains historically useful as development methodology, but the old chart-derived fit claims are not current evidence."
+  "methodological_note": "Only this obsolete 10:30-derived artifact is stale. Pair 6 remains an eligible AstroRRF development/training case using the birth-record-verified recalculation. The chart-blind phenotype freeze remains historically useful development evidence."
 }
