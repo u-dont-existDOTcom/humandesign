@@ -1,0 +1,81 @@
+{
+  "version": "relationship-phenotype-directional-addendum-v2",
+  "status": "development_only_user_reported_criterion",
+  "created_utc_date": "2026-08-28",
+  "privacy": {
+    "policy": "public_repo_pseudonyms_only",
+    "note": "No partner names, birth data, locations, or direct identifiers are stored."
+  },
+  "extends": [
+    "reference/development_cases/relationship_phenotype_three_pair_v1.json",
+    "reference/development_cases/relationship_phenotype_directional_addendum_v1.json"
+  ],
+  "reason": "Further user clarification showed that intellectual stimulation, intellectual compatibility, conceptual comprehension, communication accessibility, emotional ease, and engulfment cannot be represented as one-dimensional pair traits.",
+  "cognitive_axes": {
+    "definitions": {
+      "intellectual_compatibility": "Ease and durability of sustained intellectual exchange: shared level, vocabulary, reasoning pace, productive disagreement, mutual understanding.",
+      "intellectual_stimulation_self_expansion": "Extent to which the partner causes surprising insight, novel perspectives, intuitive leaps, or a mind-expanding subjective effect; may occur without equal conversational compatibility.",
+      "conceptual_comprehension_application": "How rapidly the partner grasps and successfully applies difficult concepts when communicated.",
+      "communication_access_bandwidth": "How much of the partner's cognition is actually available to the actor through language proficiency, disclosure, contact continuity, and willingness/ability to articulate inner states."
+    },
+    "pair_1": {
+      "intellectual_compatibility": {"state": "good_but_below_pair_2", "confidence": "high"},
+      "intellectual_stimulation_self_expansion": {"state": "highest_of_three_mind_blowing_intuitive_stimulation", "confidence": "high"},
+      "partner_intellectual_functioning": {"state": "good_but_variable_or_constrained_in_practice", "confidence": "medium", "causal_note": "User attributes constraints partly to trauma and other personal/spiritual factors; the model does not adjudicate those causes."}
+    },
+    "pair_2": {
+      "intellectual_compatibility": {"state": "highest_of_three_by_far", "confidence": "high"},
+      "intellectual_stimulation_self_expansion": {"state": "high_but_below_pair_1", "confidence": "high"},
+      "partner_intellectual_functioning": {"state": "very_intellectual", "confidence": "high"},
+      "mystical_intuitive_connection": {"state": "present_but_below_pair_1_in_subjective_mind_blowing_effect", "confidence": "high"}
+    },
+    "pair_3": {
+      "intellectual_compatibility": {"state": "unresolved_due_low_access_bandwidth", "confidence": "low"},
+      "intellectual_stimulation_self_expansion": {"state": "unresolved", "confidence": "low"},
+      "conceptual_comprehension_application": {"state": "promising_high_fast_grasp_and_application_of_difficult_buddhist_concepts", "confidence": "medium"},
+      "communication_access_bandwidth": {"state": "low_current_bandwidth", "confidence": "high", "contributors": ["strong_introversion", "slow_quiet_communication", "lower_english_proficiency_than_other_pairs", "emotional_caution_or_low_disclosure"]}
+    }
+  },
+  "emotional_context_axes": {
+    "definitions": {
+      "observed_outward_ease": "Visible low-conflict/easy emotional interaction; does not imply known internal emotional state.",
+      "latent_emotional_ease": "Internal regulation/ease inferred only when emotional observability is adequate.",
+      "attachment_threat_reactivity": "Change in conflict/pressure when closeness, dependence, romantic exclusivity threat, or attention competition increases.",
+      "sexual_exclusivity_sensitivity": "Distress specifically about partner sexual involvement with others.",
+      "romantic_attention_exclusivity_sensitivity": "Distress specifically about partner falling in love with, prioritizing, or giving substantial romantic attention to someone else."
+    },
+    "pair_1": {
+      "observed_outward_ease": {"state": "lowest_historical", "confidence": "high"},
+      "engulfment_pressure": {"state": "highest_historical", "confidence": "high"},
+      "context_shape": {"state": "high_pressure_not_limited_to_one_narrow_trigger", "confidence": "medium"}
+    },
+    "pair_2": {
+      "observed_outward_ease": {"state": "very_good_when_attachment_threat_and_proximity_are_low", "confidence": "high"},
+      "engulfment_pressure": {"state": "low_to_good_at_distance_but_can_become_very_bad_when_close_or_partner_attachment_demands_reciprocal_eros", "confidence": "high"},
+      "attachment_threat_reactivity": {"state": "high_thresholded_reactivity", "confidence": "high"},
+      "sexual_exclusivity_sensitivity": {"state": "low_partner_accepts_sexual_nonexclusivity", "confidence": "high"},
+      "romantic_attention_exclusivity_sensitivity": {"state": "high_partner_is_distressed_by_actor_falling_in_love_with_or_giving_too_much_attention_to_another_partner", "confidence": "high"},
+      "context_shape": {"state": "nonlinear_proximity_and_romantic_threat_dependent", "confidence": "high"}
+    },
+    "pair_3": {
+      "observed_outward_ease": {"state": "low_visible_drama_so_far", "confidence": "medium"},
+      "latent_emotional_ease": {"state": "unknown", "confidence": "insufficient_observability"},
+      "engulfment_pressure": {"state": "low_so_far", "confidence": "low_to_medium"},
+      "emotional_observability": {"state": "low", "confidence": "high"},
+      "context_shape": {"state": "too_early_and_too_opaque_to_estimate", "confidence": "low"}
+    }
+  },
+  "pair_3_social_observation_revision": {
+    "introversion": {"state": "strong", "confidence": "high", "evidence": "User reports strong introversion and reports that people in partner's home village also characterize her as introverted."},
+    "emotional_caution": {"state": "plausible_hypothesis_not_established", "confidence": "medium"},
+    "internal_emotional_awareness": {"state": "unknown", "confidence": "do_not_infer"}
+  },
+  "model_requirements_created": [
+    "Split intellectual compatibility from intellectual stimulation/self-expansion.",
+    "Split conceptual comprehension from expressive/linguistic communication bandwidth.",
+    "Do not score low visible conflict as high emotional ease when emotional observability is low.",
+    "Model engulfment and emotional ease as state/context functions, not fixed pair scalars.",
+    "Separate sexual jealousy/exclusivity sensitivity from romantic-attention jealousy/exclusivity sensitivity.",
+    "Use measurement reliability to downweight domains obscured by language, introversion, sparse contact, or low disclosure."
+  ]
+}
