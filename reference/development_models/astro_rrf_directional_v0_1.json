@@ -1,0 +1,126 @@
+{
+  "version": "astro-rrf-directional-v0.1",
+  "status": "retrospective_development_fitted_after_outcome_exposure",
+  "freeze_date": "2026-08-28",
+  "warning": "Weights and feature priorities were selected after inspecting the three development relationships. Training fit is not validation. Do not retune this version before scoring held-out relationships or later outcomes.",
+  "framework": "docs/27_astro_rrf_directional_model_v0_1.md",
+  "privacy": "No partner names, birth data, locations, or raw chart vectors are stored here.",
+  "aspect_family": ["conjunction", "sextile", "square", "trine", "opposition"],
+  "max_orb_degrees": 3.0,
+  "orb_kernel": "exp(-0.5 * (orb / 3.0)^2)",
+  "scores": {
+    "actor_eros_passion": {
+      "actor_venus_or_mars_to_partner_sun_or_moon": {
+        "conjunction_square_opposition": 1.0,
+        "sextile_trine": 0.45
+      },
+      "partner_venus_or_mars_house_overlay": {
+        "actor_house_5": 1.1,
+        "actor_house_7": 1.0,
+        "actor_house_8": 0.9
+      },
+      "partner_sun_or_moon_house_overlay": {
+        "actor_house_5": 0.4,
+        "actor_house_7": 0.4,
+        "actor_house_8": 0.4
+      },
+      "actor_venus_or_mars_to_partner_pluto": {
+        "conjunction_square_opposition": 0.75,
+        "sextile_trine": 0.35
+      }
+    },
+    "actor_communication_intellectual_fit": {
+      "actor_mercury_to_partner_mercury_or_sun": {
+        "conjunction_sextile_trine": 0.6,
+        "square_opposition": 0.15
+      },
+      "actor_mercury_to_partner_uranus": {
+        "conjunction_square_opposition": 1.0,
+        "sextile_trine": 0.6
+      },
+      "actor_mercury_to_partner_pluto": {
+        "conjunction_square_opposition": 0.9,
+        "sextile_trine": 0.7
+      }
+    },
+    "actor_emotional_ease": {
+      "actor_moon_to_partner_moon": {
+        "conjunction_sextile_trine": 1.5,
+        "square_opposition": -1.5
+      },
+      "actor_moon_to_partner_pluto": {
+        "conjunction_square_opposition": -3.5
+      },
+      "actor_moon_to_partner_venus_or_jupiter": {
+        "square_opposition": -0.5
+      },
+      "actor_moon_to_partner_saturn_or_neptune": {
+        "sextile_trine": 0.25
+      },
+      "actor_moon_to_partner_neptune": {
+        "square_opposition": -0.8
+      }
+    },
+    "actor_engulfment_pressure": {
+      "actor_moon_to_partner_pluto": {
+        "conjunction_square_opposition": 4.0,
+        "sextile_trine": 0.5
+      },
+      "actor_venus_to_partner_pluto": {
+        "conjunction_square_opposition": 2.0,
+        "sextile_trine": 0.5
+      },
+      "actor_saturn_to_partner_pluto": {
+        "conjunction_square_opposition": 1.5,
+        "sextile_trine": 0.5
+      },
+      "partner_venus_or_mars_house_overlay": {
+        "actor_house_7": 0.5,
+        "actor_house_8": 0.5
+      },
+      "partner_moon_house_overlay": {
+        "actor_house_12": 0.75
+      },
+      "partner_uranus_to_actor_ascendant_axis": {
+        "any_major_aspect": -1.5
+      }
+    }
+  },
+  "training_snapshot": {
+    "actor_is_same_reference_person_across_pairs": true,
+    "pair_1": {
+      "actor_eros_passion": 3.732,
+      "actor_communication_intellectual_fit": 0.0,
+      "actor_emotional_ease": -3.035,
+      "actor_engulfment_pressure": 5.749
+    },
+    "pair_2": {
+      "actor_eros_passion": 1.043,
+      "actor_communication_intellectual_fit": 1.267,
+      "actor_emotional_ease": -2.369,
+      "actor_engulfment_pressure": 1.894,
+      "reverse_actor_eros_passion": 4.312
+    },
+    "pair_3": {
+      "actor_eros_passion": 1.900,
+      "actor_communication_intellectual_fit": 1.020,
+      "actor_emotional_ease": 0.494,
+      "actor_engulfment_pressure": -1.496,
+      "reverse_actor_eros_passion": 2.462
+    }
+  },
+  "training_fit": {
+    "known_user_side_eros": "pair_1 > pair_2; pair_3 mature outcome unknown",
+    "known_communication": "pair_2 > pair_3 and pair_2 > pair_1",
+    "known_emotional_ease": "pair_3 > pair_2 > pair_1",
+    "known_engulfment": "pair_1 > pair_2 > pair_3",
+    "directional_love_asymmetry": "pair_2 reverse-actor Eros substantially exceeds reference-actor Eros, matching reported partner-in-love/reference-actor-Storge asymmetry"
+  },
+  "unresolved": [
+    "Reverse-actor house-overlay scoring for Pair 1 is unavailable because partner birth time is unknown.",
+    "Communication continuity/disclosure is not predicted by Mercury synastry in V0.1.",
+    "Composite/Davison shared-field scores are not yet included.",
+    "Viability, support/care, maintenance, and satisfaction RRF axes are not yet mapped.",
+    "No claim is made that these weights generalize beyond the development set."
+  ]
+}
