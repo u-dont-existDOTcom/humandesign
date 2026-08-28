@@ -2,6 +2,8 @@
 
 Status: development architecture for the separate relationship-validation track. This questionnaire does not alter natal V4.3 scoring or claim that Human Design/astrology predicts relationship outcomes.
 
+**Noise-policy dependency (2026-08-28):** the core narrative/EIG architecture is intentionally inherited from Survey-v2, but relationship-specific retry, corroboration, stopping, reliability, and error-recovery policy remains provisional until the authoritative `SURVEY-V2-NOISE-AUDIT` is complete. Preliminary checkpointed Survey-v2 results supplied during development are strong (perfect answers: 100% top-1; one wrong classification: 98.344% top-1; 5% wrong: 96.555% top-1 with 99.104% true-candidate survival), but only completed checkpointed scenarios are authoritative. Do not copy unfinalized thresholds into the relationship module. The relationship outcome space also differs from natal birth-state recovery, so final Survey-v2 noise findings are an upstream design input, not automatic validation of relationship performance.
+
 ## Purpose
 
 The earlier relationship work showed that a single `compatibility` or `chemistry` score destroys the distinctions needed to evaluate symbolic relationship models. Development cases required separate measurement of:
@@ -61,6 +63,8 @@ adjusted_utility = expected_information_gain * expected_reliability - burden
 
 The relationship wrapper only filters the frozen question bank and supplies each question's default reliability/burden.
 
+Until the upstream Survey-v2 noise audit is finalized, those default relationship reliabilities are **development placeholders**, not empirically calibrated error rates. Do not interpret `0.85`, `0.90`, etc. as measured classifier accuracy.
+
 ## Two operating modes
 
 ### 1. Development capture
@@ -119,6 +123,8 @@ It may not receive:
 - operator preference for which chart should win.
 
 `select_next_validation_question` delegates to the existing general EIG selector. It does not implement a relationship-specific information-gain formula.
+
+The upstream Survey-v2 noise audit determines the default policy family for handling noisy evidence (for example, whether/when corroboration, retry, backtracking, or altered stopping rules are justified). Relationship validation must then run its **own** noise simulation because relationship axes, candidate predictions, missingness, and classifier reliability are different.
 
 ## Why six broad anchors instead of 30 fixed questions
 
@@ -252,7 +258,7 @@ The blind classifier sees:
 
 It does **not** see astrology or HD predictions.
 
-Minimum classifier confidence is currently `0.65`, matching Survey-v2's existing convention. Below threshold, or when direct evidence is inadequate, the axis remains unscored.
+Minimum classifier confidence is currently `0.65`, matching Survey-v2's existing development convention. Until the final Survey-v2 noise audit and a relationship-specific classifier reliability study are complete, this is a provisional inherited threshold rather than a calibrated optimum. Below threshold, or when direct evidence is inadequate, the axis remains unscored.
 
 `unknown` is not `moderate`.
 
