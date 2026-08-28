@@ -9,4 +9,4 @@ RUN python -m pip install --upgrade pip && \
 
 ENV PYTHONUNBUFFERED=1
 
-CMD ["sh", "-c", "python -m uvicorn hdmatch.api.relationship_pilot_app:app --host 0.0.0.0 --port ${PORT:-8000}"]
+CMD ["/bin/sh", "-c", "exec python -m uvicorn hdmatch.api.relationship_public_app:create_relationship_public_app_from_env --factory --host 0.0.0.0 --port ${PORT:-8000}"]
