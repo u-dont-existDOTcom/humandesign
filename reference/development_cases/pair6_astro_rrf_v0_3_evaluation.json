@@ -1,0 +1,97 @@
+{
+  "version": "pair6-astro-rrf-v0.3-evaluation",
+  "status": "development_evaluation_after_prechart_phenotype_freeze",
+  "created_utc_date": "2026-08-28",
+  "privacy": "Pseudonymous case ID; no partner name, birth date, birthplace, or raw chart vector stored.",
+  "criterion": "reference/development_cases/relationship_phenotype_pair6_prechart_v1.json",
+  "models_scored": [
+    "docs/28_astro_rrf_state_conditional_v0_2.md",
+    "docs/29_astro_rrf_dyadic_desire_v0_3.md"
+  ],
+  "birth_time_reliability": {
+    "state": "provisional_user_supplied_pending_partner_reverification",
+    "core_planetary_synastry": "robust",
+    "core_HD_type_authority_profile_channels": "stable_in_plus_minus_60_minute_sensitivity",
+    "house_angle_features": "use_only_when_stable_under_reasonable_time_perturbation"
+  },
+  "results": {
+    "reference_actor_attraction_eros": {
+      "observed": "high_attraction_and_partial_falling_in_love",
+      "frozen_feature_result": "supportive",
+      "evidence": [
+        "Partner Mars falls robustly in reference actor 5th house, a frozen directional attraction/Eros feature.",
+        "Partner Uranus is nearly exact on reference actor Ascendant axis; under prior model this is treated primarily as an autonomy/excitement modifier rather than proof of love.",
+        "No need to use time-sensitive reverse house overlays to obtain this support."
+      ]
+    },
+    "partner_attraction_without_in_love": {
+      "observed": "partner found reference actor highly attractive and loved him but did not become in-love/Eros toward him",
+      "frozen_feature_result": "partial_support_for_asymmetry",
+      "evidence": [
+        "Partner Venus has a very tight easy aspect to reference actor Sun, supporting attraction/affection.",
+        "Partner lacks a comparably strong robust 5th/7th/8th-house Venus/Mars overlay from the reference actor at the provisional time.",
+        "The model therefore produces less reverse-direction romantic activation than forward-direction activation, consistent with asymmetry, but V0.3 does not yet have a validated threshold that predicts complete absence of in-love state."
+      ]
+    },
+    "mutual_love_attachment": {
+      "observed": "high_mutual_love",
+      "frozen_feature_result": "unresolved",
+      "reason": "AstroRRF has not yet frozen a reliable love/attachment-bond mapping distinct from Eros and attraction. Do not infer this outcome from generic intensity."
+    },
+    "intellectual_compatibility": {
+      "observed": "moderate_or_context_specific; good conversation in history/politics but not strongest overall fit",
+      "frozen_feature_result": "supportive",
+      "evidence": [
+        "No tight <=3 degree Mercury-to-Mercury/Sun/Uranus/Pluto synastry gives no reason to predict exceptional actor-side intellectual fit.",
+        "Composite Mercury-Sun conjunction is within the frozen tight range and supports a shared conversational/reasoning field without requiring exceptional stimulation."
+      ]
+    },
+    "intellectual_stimulation_self_expansion": {
+      "observed": "moderate_in_specific_knowledge_domains_not_mind_blowing",
+      "frozen_feature_result": "supportive_or_neutral",
+      "evidence": [
+        "Frozen tight Mercury-Uranus/Pluto and composite Mercury-Mars/Uranus/Pluto stimulation families are not strongly activated.",
+        "This avoids incorrectly ranking Pair 6 with Pair 1-style mind-expanding stimulation."
+      ]
+    },
+    "mystical_spiritual_salience": {
+      "observed": "partner naturally mystical/intuitive with meaningful supernatural/religious salience but limited exploratory curiosity",
+      "frozen_feature_result": "supportive_for_salience_not_curiosity",
+      "evidence": [
+        "Composite Mercury-Neptune is very tight.",
+        "Composite Jupiter-Neptune is also tight under the frozen mystical/spiritual feature family.",
+        "The result supports a shared mystical/intuitive field but does not predict curiosity; mystical salience and mystical inquiry must remain separate targets."
+      ]
+    },
+    "serious_conflict_emotional_pressure": {
+      "observed": "rare serious conflict despite frequent playful drama; one major aggression episode reported",
+      "frozen_feature_result": "partly_supportive_but_target_incomplete",
+      "evidence": [
+        "There is no tight hard Moon-Moon or Moon-Pluto synastry of the type that drove high-conflict predictions in prior cases.",
+        "There are tight easy Moon-Neptune contacts in both directions, which are not a frozen high-conflict signal.",
+        "Current model does not separately predict playful/theatrical drama versus harmful conflict, so playful drama remains an unmodeled phenotype."
+      ]
+    },
+    "HD_relationship_surface": {
+      "status": "descriptive_not_RRF_predictive",
+      "partner_core": "Manifesting Generator; Emotional Authority; 3/6; Single Definition; channels 20-34, 7-31, 1-8, 59-6",
+      "pair_surface": "all nine centers defined; Split Definition; Ra 9+0 shorthand; three Electromagnetic channels; one Companionship channel; multiple Dominance/Compromise relations",
+      "interpretation": "This is consistent with a highly activating/defined relationship field but does not distinguish mutual attraction/love from reciprocal in-love state. Pair 6 is therefore a useful counterexample to treating dense HD connection mechanics as an Eros predictor."
+    }
+  },
+  "new_model_lessons": [
+    "Separate playful/dramatic expressiveness from serious conflict, aggression, and emotional dysregulation.",
+    "Separate mystical/supernatural salience or intuitive experience from mystical curiosity/inquiry.",
+    "Preserve attraction, love/attachment, and in-love/Eros as three distinct actor-specific targets.",
+    "A dense or fully defined HD relationship field must not be interpreted as proof of reciprocal romantic love.",
+    "Partner knowledge complementarity in a particular domain is not the same as global intellectual stimulation or compatibility."
+  ],
+  "missing_observations_for_pair6": [
+    "Sexual satisfaction/chemistry from each side and partner baseline libido.",
+    "Sexual and romantic jealousy/exclusivity from each side.",
+    "Partner marriage/long-term commitment intent during the relationship.",
+    "Ordinary conflict-repair quality apart from the single major aggression episode.",
+    "Whether frequent playful drama was mutually enjoyable or tiring.",
+    "Practical-life fit: money, domestic labor, future goals, children/family, community living and relationship structure."
+  ]
+}
