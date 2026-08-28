@@ -1,0 +1,76 @@
+{
+  "version": "relationship-phenotype-pair6-prechart-v1",
+  "status": "development_only_chart_blind_outcome_profile",
+  "created_utc_date": "2026-08-28",
+  "privacy": {
+    "case_id": "pair_6",
+    "policy": "pseudonymous_public_repo_record",
+    "excluded": ["partner_name", "birth_data", "location", "direct_identifiers"]
+  },
+  "purpose": "Freeze Pair 6 lived relationship phenotype before using the supplied birth-derived chart for AstroRRF scoring.",
+  "relationship_context": {
+    "historical_romantic_duration": "approximately_12_to_18_months",
+    "current_shared_living": "yes_but_no_longer_boyfriend_girlfriend",
+    "relationship_transition": "partner_fell_in_love_with_another_man_during_or_after_the_romantic_relationship; that relationship ended after external family pressure",
+    "birth_time_status": "user_supplied_but_pending_partner_reverification"
+  },
+  "user_to_partner": {
+    "physical_attraction": "high",
+    "sexual_attraction_desire": "high",
+    "love_attachment_bond": "high",
+    "eros_in_love": "emerging_but_did_not_fully_consolidate_because_not_reciprocated",
+    "intellectual_compatibility": "moderate_or_context_specific",
+    "intellectual_stimulation": "moderate_in_specific_domains",
+    "knowledge_asymmetry": "partner_has_substantial_history_and_political_knowledge_reference_actor_lacks",
+    "mystical_intuitive_stimulation": "moderate_partner_is_naturally_mystical_intuitive_but_not_highly_curious",
+    "shared_interests_commonality": "low_to_moderate",
+    "religious_worldview_fit": "mixed_partner_is_Sunni_Muslim_not_Sufi_and_observant_to_variable_degree"
+  },
+  "partner_to_user": {
+    "physical_attraction": "high",
+    "sexual_attraction_desire": "high_or_positive",
+    "love_attachment_bond": "high",
+    "eros_in_love": "absent_during_primary_relationship_despite_love_and_attraction",
+    "intellectual_evaluation": "partner_reports_reference_actor_much_smarter_than_herself",
+    "later_eros_capacity": "demonstrated_partner_later_fell_in_love_with_another_man"
+  },
+  "dyadic": {
+    "mutual_attraction": "high",
+    "mutual_love": "high",
+    "eros_reciprocity": "low_partner_never_fell_in_love_with_reference_actor; reference_actor_only_partly_fell_in_love",
+    "shared_interests_commonality": "not_high",
+    "intellectual_exchange": "interesting_in_partner_history_politics_knowledge_but_not_global_mind_blown_fit",
+    "mystical_alignment": "partial_partner_intuitive_mystical_but_low_curiosity_and_different_religious_framework",
+    "visible_drama": "high_frequency_but_often_playful",
+    "serious_conflict": "rare_one_major_episode_reported",
+    "conflict_repair": "insufficiently_characterized",
+    "relationship_outcome": "romantic_relationship_ended_but_shared_living_continues"
+  },
+  "altered_state_or_behavioral_episode": {
+    "observed_behavior": "During one major episode the partner struck the reference actor after he refused a requested soft drink; the user attributes the episode to jinn control/possession.",
+    "epistemic_rule": "Preserve the physical behavior and the user's attribution separately. Do not treat supernatural causation as established fact and do not convert it into a psychiatric diagnosis.",
+    "similarity_note": "User reports another development partner had comparably strong experiences interpreted as spirit/demon possession or magical-item sensitivity. This similarity is development context only."
+  },
+  "person_level_observations": {
+    "mystical_intuition": "naturally_high_or_salient",
+    "mystical_curiosity": "moderate_to_low",
+    "religion": "Sunni_Muslim_not_Sufi",
+    "religiosity": "moderate_variable",
+    "quran_knowledge": "meaningful_but_below_another_development_partner",
+    "social_media_use": "high_user_report",
+    "political_history_knowledge": "high_relative_to_reference_actor",
+    "self_assessed_intelligence_relative_to_user": "partner_considers_reference_actor_much_smarter"
+  },
+  "currently_missing_or_useful_for_refinement": [
+    "User-side and partner-side sexual satisfaction quality, not only attraction.",
+    "Partner baseline libido and desire stability over the relationship.",
+    "Whether partner wanted marriage/long-term commitment during the romantic period.",
+    "Whether either person was sexually or romantically jealous and how strongly.",
+    "Communication quality and repair during ordinary disagreements.",
+    "Whether high playful drama was enjoyed by both or became tiring to either person.",
+    "Practical-life fit beyond continued cohabitation: money, work, domestic labor, community-living preferences, children/family goals.",
+    "How quickly partner's attraction/love changed before falling in love with another man.",
+    "Whether partner's non-Eros love toward reference actor was more Storge, Agape/care, familial attachment, or another form."
+  ],
+  "chart_blind_rule": "This phenotype is frozen before AstroRRF scoring of Pair 6. Birth time is provisional; sensitivity analysis is mandatory before using houses/angles as robust evidence."
+}
