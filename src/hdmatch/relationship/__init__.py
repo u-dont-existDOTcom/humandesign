@@ -14,6 +14,14 @@ from .analysis import (
     analyze_partnership,
     snapshot_from_chart,
 )
+from .learning import (
+    AxisLearningSummary,
+    RelationshipAxisEvaluation,
+    RelationshipLearningSummary,
+    RevisionSignal,
+    detect_revision_signals,
+    summarize_relationship_learning,
+)
 from .questionnaire import (
     RelationshipQuestion,
     RelationshipQuestionnaireSpec,
@@ -31,6 +39,7 @@ from .uncertain_time import (
 
 __all__ = [
     "AnalyzedPartnershipInterval",
+    "AxisLearningSummary",
     "CardinalActivation",
     "CenterConfigurationKeynote",
     "ConnectionChannel",
@@ -38,15 +47,20 @@ __all__ = [
     "PartnerTimeCandidate",
     "PartnershipAnalysis",
     "PartnershipSnapshot",
+    "RelationshipAxisEvaluation",
+    "RelationshipLearningSummary",
     "RelationshipQuestion",
     "RelationshipQuestionnaireSpec",
+    "RevisionSignal",
     "SunEarthNodeAlignment",
     "UncertainPartnerTimeSummary",
     "analyze_partnership",
+    "detect_revision_signals",
     "load_relationship_questionnaire",
     "question_by_id",
     "select_next_capture_question",
     "select_next_validation_question",
     "snapshot_from_chart",
+    "summarize_relationship_learning",
     "summarize_uncertain_partner_time",
 ]
