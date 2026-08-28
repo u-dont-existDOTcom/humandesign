@@ -54,3 +54,29 @@ the structural-information result.
 No new astrology or Human Design structural domain should be added on the basis of this phase
 unless a frozen robustness report identifies a specific failure and preregistered redundant probes
 cannot repair it. Any such addition is a new model version for later untouched cohorts.
+
+## Exact indexed execution
+
+The naïve scorer remains the correctness oracle. The accelerated scorer integer-encodes each
+categorical outcome and builds an inverted candidate bitset for every feature/outcome pair. A
+candidate is one bit in a Python arbitrary-precision integer. Match scores are accumulated with a
+bit-sliced binary counter; mixed half-credit is represented exactly by scaling every score by two.
+Exact score masks then provide the number above and tied with the true score, the current leader
+set, candidate survival, and the stopping decision using integer `bit_count` operations.
+
+Adaptive entropy is calculated from intersections of the current leader bitset with each frozen
+outcome partition. The selection inputs and deterministic tie-break remain identical to the
+reference implementation. The optimized layer does not receive birth metadata, the source-state
+identity as a selection input, target rank, prose, or post-reveal evidence.
+
+Preprocessing stores one candidate bit per feature across all outcome partitions, so partition
+payload is linear in candidate count times feature count (plus Python object/index overhead). Each
+ranking pass performs bit operations proportional to the number of answered features and the
+packed bitset length, plus frozen adaptive questions. It does not allocate an N-by-N matrix.
+This is an implementation-level speedup, not a claim that worst-case ranking is sublinear in the
+candidate count. The tracked century report records observed runtime, peak process memory, and
+unique transformed-answer signature counts.
+
+Correctness is gated twice: exhaustive pathological small-universe tests compare every source and
+scenario, including exact per-candidate score reconstruction; a deterministic real-cache audit
+then compares reference and indexed engines over multiple subset sizes, scenarios, and seeds.

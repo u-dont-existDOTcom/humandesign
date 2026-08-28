@@ -28,6 +28,7 @@ class NoiseScenario(_FrozenModel):
 
 
 DEFAULT_NOISE_SCENARIOS = (
+    NoiseScenario(scenario_id="perfect_answers", perturbation="wrong", fraction=0.0),
     NoiseScenario(
         scenario_id="one_wrong_classification",
         perturbation="wrong",
@@ -60,9 +61,14 @@ class NoiseCaseResult(_FrozenModel):
     top5_credit: float = Field(ge=0.0, le=1.0)
     top10_credit: float = Field(ge=0.0, le=1.0)
     candidate_survival_count: int = Field(ge=1)
+    true_score_tie_size: int = Field(ge=1)
+    overtaking_candidate_count: int = Field(ge=0)
     extra_tie_breakers: int = Field(ge=0)
     perturbed_answer_count: int = Field(ge=0)
+    perturbed_feature_indices: tuple[int, ...]
+    leading_competitor_difference_indices: tuple[int, ...]
     true_candidate_survived: bool
+    stopping_criterion_reached: bool
     selection_uses_birth_metadata: Literal[False] = False
     selection_uses_true_candidate: Literal[False] = False
     selection_uses_candidate_rank: Literal[False] = False
@@ -76,11 +82,22 @@ class NoiseScenarioSummary(_FrozenModel):
     top5: float = Field(ge=0.0, le=1.0)
     top10: float = Field(ge=0.0, le=1.0)
     median_rank: float = Field(ge=1.0)
+    mean_rank: float = Field(ge=1.0)
+    rank_p90: float = Field(ge=1.0)
+    rank_p95: float = Field(ge=1.0)
+    rank_p99: float = Field(ge=1.0)
     mean_percentile: float = Field(ge=0.0, le=1.0)
+    median_percentile: float = Field(ge=0.0, le=1.0)
     median_candidate_survival: float = Field(ge=1.0)
     true_candidate_survival_rate: float = Field(ge=0.0, le=1.0)
+    true_candidate_elimination_rate: float = Field(ge=0.0, le=1.0)
+    tie_frequency: float = Field(ge=0.0, le=1.0)
+    true_score_tie_size_p50: float = Field(ge=1.0)
+    true_score_tie_size_p90: float = Field(ge=1.0)
     median_extra_tie_breakers: float = Field(ge=0.0)
+    extra_tie_breakers_p90: float = Field(ge=0.0)
     maximum_extra_tie_breakers: int = Field(ge=0)
+    stopping_criterion_rate: float = Field(ge=0.0, le=1.0)
 
 
 def simulate_noise_case(
@@ -128,6 +145,12 @@ def simulate_noise_case(
     rank = _rank(scores, true_index)
     leaders = tuple(index for index, score in enumerate(scores) if score == max(scores))
     candidate_count = len(answer_rows)
+    leader = leaders[0]
+    differences = tuple(
+        feature
+        for feature in range(width)
+        if answer_rows[leader][feature] != true_answers[feature]
+    )
     return NoiseCaseResult(
         scenario_id=scenario.scenario_id,
         true_index=true_index,
@@ -143,9 +166,14 @@ def simulate_noise_case(
         top5_credit=_top_k_credit(rank, 5),
         top10_credit=_top_k_credit(rank, 10),
         candidate_survival_count=len(leaders),
+        true_score_tie_size=rank[1] - rank[0] + 1,
+        overtaking_candidate_count=rank[0] - 1,
         extra_tie_breakers=asked,
         perturbed_answer_count=count,
+        perturbed_feature_indices=tuple(sorted(selected)),
+        leading_competitor_difference_indices=differences,
         true_candidate_survived=true_index in leaders,
+        stopping_criterion_reached=len(leaders) == 1,
     )
 
 
@@ -162,16 +190,42 @@ def summarize_noise_cases(cases: Sequence[NoiseCaseResult]) -> NoiseScenarioSumm
         top5=statistics.fmean(case.top5_credit for case in cases),
         top10=statistics.fmean(case.top10_credit for case in cases),
         median_rank=statistics.median(case.midrank for case in cases),
+        mean_rank=statistics.fmean(case.midrank for case in cases),
+        rank_p90=_numeric_percentile(tuple(case.midrank for case in cases), 0.90),
+        rank_p95=_numeric_percentile(tuple(case.midrank for case in cases), 0.95),
+        rank_p99=_numeric_percentile(tuple(case.midrank for case in cases), 0.99),
         mean_percentile=statistics.fmean(case.percentile for case in cases),
+        median_percentile=statistics.median(case.percentile for case in cases),
         median_candidate_survival=statistics.median(
             case.candidate_survival_count for case in cases
         ),
         true_candidate_survival_rate=statistics.fmean(
             case.true_candidate_survived for case in cases
         ),
+        true_candidate_elimination_rate=statistics.fmean(
+            not case.true_candidate_survived for case in cases
+        ),
+        tie_frequency=statistics.fmean(case.true_score_tie_size > 1 for case in cases),
+        true_score_tie_size_p50=statistics.median(
+            case.true_score_tie_size for case in cases
+        ),
+        true_score_tie_size_p90=_numeric_percentile(
+            tuple(float(case.true_score_tie_size) for case in cases), 0.90
+        ),
         median_extra_tie_breakers=statistics.median(case.extra_tie_breakers for case in cases),
+        extra_tie_breakers_p90=_numeric_percentile(
+            tuple(float(case.extra_tie_breakers) for case in cases), 0.90
+        ),
         maximum_extra_tie_breakers=max(case.extra_tie_breakers for case in cases),
+        stopping_criterion_rate=statistics.fmean(
+            case.stopping_criterion_reached for case in cases
+        ),
     )
+
+
+def _numeric_percentile(values: Sequence[float], fraction: float) -> float:
+    ordered = sorted(values)
+    return ordered[max(0, math.ceil(len(ordered) * fraction) - 1)]
 
 
 def _selected_positions(

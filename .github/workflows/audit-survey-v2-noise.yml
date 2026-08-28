@@ -1,0 +1,114 @@
+name: audit-survey-v2-noise
+
+on:
+  push:
+    branches: [empirical-robustness-v1]
+    paths:
+      - 'src/hdmatch/evaluation/survey_v2_noise.py'
+      - 'src/hdmatch/evaluation/survey_v2_noise_indexed.py'
+      - 'src/hdmatch/evaluation/redundancy.py'
+      - 'src/hdmatch/evaluation/classifier_reliability.py'
+      - 'scripts/audit_survey_v2_noise.py'
+      - 'scripts/audit_survey_v2_noise_equivalence.py'
+      - 'reference/core/survey_v2_redundant_probes_v1.json'
+      - 'reference/core/survey_v2_classifier_reliability_protocol_v1.json'
+      - '.github/workflows/audit-survey-v2-noise.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tests-and-equivalence:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: |
+          python -m pip install -r requirements-dev.lock
+          python -m pip install --no-build-isolation --no-deps -e .
+      - run: python -m pytest -q
+      - run: |
+          ruff check \
+            src/hdmatch/evaluation/survey_v2_noise.py \
+            src/hdmatch/evaluation/survey_v2_noise_indexed.py \
+            src/hdmatch/evaluation/redundancy.py \
+            src/hdmatch/evaluation/classifier_reliability.py \
+            scripts/audit_survey_v2_noise.py \
+            scripts/audit_survey_v2_noise_equivalence.py \
+            tests/unit/test_survey_v2_noise.py \
+            tests/unit/test_survey_v2_noise_indexed.py \
+            tests/unit/test_redundancy.py \
+            tests/unit/test_classifier_reliability.py
+      - run: mypy src/hdmatch
+      - name: Download durable verified century cache release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p century-artifact
+          gh release download century-cache-structural-v2-1926-2026 \
+            --repo "$GITHUB_REPOSITORY" \
+            --pattern 'century-candidate-cache-structural-v2-1926-2026.tar.gz' \
+            --dir .
+          tar -xzf century-candidate-cache-structural-v2-1926-2026.tar.gz \
+            -C century-artifact
+          test -f century-artifact/manifest.json
+      - name: Compare indexed scorer with reference oracle
+        run: |
+          python scripts/audit_survey_v2_noise_equivalence.py \
+            --cache century-artifact \
+            --output state/SURVEY-V2-NOISE-SCORER-EQUIVALENCE.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: survey-v2-noise-equivalence-${{ github.sha }}
+          path: state/SURVEY-V2-NOISE-SCORER-EQUIVALENCE.json
+          retention-days: 90
+
+  full-century-report:
+    runs-on: ubuntu-24.04
+    needs: tests-and-equivalence
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: |
+          python -m pip install -r requirements-dev.lock
+          python -m pip install --no-build-isolation --no-deps -e .
+      - name: Download durable verified century cache release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p century-artifact
+          gh release download century-cache-structural-v2-1926-2026 \
+            --repo "$GITHUB_REPOSITORY" \
+            --pattern 'century-candidate-cache-structural-v2-1926-2026.tar.gz' \
+            --dir .
+          tar -xzf century-candidate-cache-structural-v2-1926-2026.tar.gz \
+            -C century-artifact
+      - name: Run all-state exact robustness audit
+        run: |
+          python scripts/audit_survey_v2_noise.py \
+            --cache century-artifact \
+            --output state/SURVEY-V2-NOISE-AUDIT.json
+      - name: Require perfect oracle recovery and full coverage
+        run: |
+          python - <<'PY'
+          import json
+          report = json.load(open('state/SURVEY-V2-NOISE-AUDIT.json'))
+          assert report['covers_complete_universe'] is True
+          assert report['candidate_count'] == 288938
+          perfect = report['scenario_summaries'][0]
+          assert perfect['scenario_id'] == 'perfect_answers'
+          assert perfect['top1'] == 1.0
+          assert perfect['median_rank'] == 1.0
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: survey-v2-noise-full-century-${{ github.sha }}
+          path: state/SURVEY-V2-NOISE-AUDIT.json
+          retention-days: 90
