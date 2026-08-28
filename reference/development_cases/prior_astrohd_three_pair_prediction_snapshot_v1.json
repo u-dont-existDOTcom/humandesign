@@ -1,0 +1,43 @@
+{
+  "version": "prior-astrohd-three-pair-prediction-snapshot-v1",
+  "status": "development_audit_transcript_extraction",
+  "created_utc_date": "2026-08-28",
+  "provenance": {
+    "description": "Qualitative partner rankings stated in the conversation before the user supplied corrective lived-experience rankings. Written to the repo after feedback, but extracted from timestamped pre-feedback assistant output rather than re-fit to the corrections.",
+    "not_preregistration": true,
+    "privacy": "pseudonymous case IDs; no partner birth data or locations stored"
+  },
+  "case_ids": ["pair_1", "pair_2", "pair_3"],
+  "prediction_tiers": {
+    "sexual_chemistry_satisfaction": [
+      ["pair_3", "pair_2"],
+      ["pair_1"]
+    ],
+    "romantic_connection_passion": [
+      ["pair_3", "pair_2"],
+      ["pair_1"]
+    ],
+    "communication_intellectual_fit": [
+      ["pair_3"],
+      ["pair_2"],
+      ["pair_1"]
+    ],
+    "emotional_ease_regulation": [
+      ["pair_3"],
+      ["pair_1"],
+      ["pair_2"]
+    ],
+    "engulfment_pressure": [
+      ["pair_2"],
+      ["pair_3"],
+      ["pair_1"]
+    ]
+  },
+  "extraction_notes": {
+    "sexual_chemistry_satisfaction": "Pre-feedback synthesis placed pair_3 approximately equal to pair_2 and above pair_1 for raw romantic/sexual chemistry; pair_3 was described as strongest/deepest on sexual/intimacy symbolism.",
+    "romantic_connection_passion": "Pre-feedback synthesis placed pair_3 approximately equal to pair_2 and above pair_1 on raw romantic chemistry/signatures.",
+    "communication_intellectual_fit": "Pre-feedback ranking was pair_3 > pair_2 > pair_1.",
+    "emotional_ease_regulation": "Pre-feedback ranking was pair_3 > pair_1 ? > pair_2; the uncertain pair_1/pair_2 ordering is retained as the stated direction for the audit rather than repaired after feedback.",
+    "engulfment_pressure": "Pre-feedback interpretation placed pair_2 as most engulfing, pair_3 high, pair_1 moderate/high."
+  }
+}
