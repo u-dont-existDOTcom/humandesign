@@ -76,6 +76,33 @@ The reader-facing synthesis should explicitly distinguish:
 
 Convergence is not scientific corroboration unless the layers have demonstrated independent out-of-sample predictive validity. Shared astronomical inputs can also create dependency.
 
+## Multi-partner comparisons
+
+When comparing two or more candidate/known partners, do not create a single pseudo-validated compatibility percentage merely because the user asks for a rating.
+
+Use the **same dimensions for every pair** and preserve the evidence behind each comparison. At minimum compare:
+
+- attraction / sexual chemistry;
+- emotional ease / regulation fit;
+- communication / cognitive fit;
+- HD structural integration, including composite Definition and split bridging;
+- energy / pacing fit;
+- durability / binding symbolism;
+- autonomy / engulfment risk;
+- practical or domestic overlay where houses are available.
+
+An overall relative ranking may be given as a descriptive synthesis, but it must be explicitly labelled non-validated and must not be attributed to Ra or to an empirically calibrated AstroHD model.
+
+If one partner has unknown birth time:
+
+1. enumerate or sample the full civil-day HD state space sufficiently to identify invariant versus variable connection mechanics;
+2. treat time-stable Western planetary contacts separately from Moon/angle/house features that vary with time;
+3. allow one-sided house overlays into the known-time person's houses when the unknown-time person's planetary longitude is stable enough;
+4. report the missing reciprocal overlay and angle contacts as unresolved rather than scoring them as absent;
+5. widen the comparative conclusion when the missing-time uncertainty could plausibly change the ordering.
+
+Do not use known relationship history to choose the comparison weights. If history is discussed, separate it from the chart-only ordering.
+
 ## Interpretation guardrails
 
 - Attraction, spark, intensity, split-bridging, outer-planet contacts, or Nodal contacts must not be translated into `soulmate`, `meant to be`, or guaranteed durability.
