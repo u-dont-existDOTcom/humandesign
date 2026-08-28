@@ -1,0 +1,81 @@
+{
+  "version": "relationship-phenotype-pair6-addendum-v2",
+  "status": "development_only_user_reported_criterion_after_initial_chart_evaluation",
+  "created_utc_date": "2026-08-28",
+  "privacy": {
+    "case_id": "pair_6",
+    "policy": "pseudonymous_public_repo_record",
+    "excluded": ["partner_name", "birth_data", "location", "direct_identifiers"]
+  },
+  "extends": "reference/development_cases/relationship_phenotype_pair6_prechart_v1.json",
+  "epistemic_note": "This addendum was collected after the initial Pair 6 chart evaluation. It may score only chart/model features that were already stated or frozen before these observations; new astrological interpretations created from this addendum are development-only for later cases.",
+  "sexuality": {
+    "penetrative_sex_history": "none_with_reference_actor_partner_reported_virgin",
+    "nonpenetrative_sex": "yes",
+    "receptivity": "receptive",
+    "initiation": "partner_did_not_initiate",
+    "observed_behavioral_interest": "appears_low_or_passive_but_heavily_confounded_by_virginity_and_religious_prohibition",
+    "sexual_verbalization": "partner_has_made_extremely_expansive_hypothetical_statements_about_willingness_to_have_sex_with_many_men_if_sex_were_not_religiously_forbidden",
+    "baseline_libido": "unresolved",
+    "sexual_ideation_openness": "potentially_high",
+    "measurement_rule": "Do not infer low libido from low initiation under virginity/religious constraint; do not infer actual behavior or intent from provocative hypothetical statements alone."
+  },
+  "communication_disclosure": {
+    "private_disclosure_with_reference_actor": "very_high_no_filter",
+    "public_social_filter": "present_with_others",
+    "interpretation": "High disclosure appears relationship-specific and facilitated by perceived nonjudgment from reference actor rather than absence of social filtering generally."
+  },
+  "jealousy_exclusivity": {
+    "during_reference_relationship": "jealous_but_not_extreme",
+    "during_later_in_love_relationship": "substantially_more_jealous",
+    "partner_preference": "monogamy_preferred",
+    "open_relationship_tolerance_when_not_in_love": "probably_possible_if_low_drama",
+    "open_relationship_tolerance_when_in_love": "likely_low",
+    "model_requirement": "Jealousy/exclusivity must be state-conditional on Eros/attachment activation rather than represented only as a stable trait."
+  },
+  "commitment": {
+    "historical_marriage_intent_with_reference_actor": "yes",
+    "current_marriage_intent_with_reference_actor": "no",
+    "lesson": "Commitment/marriage intent can coexist with love and attraction without reciprocal in-love/Eros."
+  },
+  "conflict_repair": {
+    "ordinary_example": "Partner became angry after reference actor washed clothes without separating whites from colors; anger persisted roughly one to two days, then resolved without substantial active repair from reference actor.",
+    "repair_style": "time_based_deactivation_with_low_required_intervention",
+    "serious_conflict_frequency": "low",
+    "playful_drama_frequency": "high",
+    "playful_drama_effect_on_reference_actor": "enjoyable_and_exhausting; would have been more enjoyable if relationship were mutually in-love"
+  },
+  "practical_life_fit": {
+    "overall": "low",
+    "reference_actor_preference": "country_living_growing_food_community_oriented_life",
+    "partner_preference": "career_advancement_corporate_ladder_and_possible_migration_to_Canada",
+    "interpretation": "Strong practical future-goal mismatch despite ongoing affection/shared living."
+  },
+  "spiritual_experience_framework": {
+    "user_and_partner_interpretation": "Some distressing episodes and experiences are understood by them within a jinn-possession/spiritual framework.",
+    "observable_reports": [
+      "One historical aggression episode occurred during an altered or unusual state according to the user.",
+      "Partner has reported recurrent nocturnal experiences experienced as sexual assault when the problem is active.",
+      "User reports recent improvement after dream-focused practices and Quranic prayer, with recurrence perceived as linked to absence of romantic interest."
+    ],
+    "epistemic_rule": "Preserve spiritual interpretation and observable/subjective experience separately. Do not assert supernatural causation as established fact and do not convert the account into a psychiatric diagnosis.",
+    "violence_characterization": "User explicitly describes partner as ordinarily very peaceful and does not consider her generally violent."
+  },
+  "pre_feedback_chart_features_now_scoreable": {
+    "HD_channel_59_6": {
+      "prior_status": "Initial evaluation explicitly noted 59-6 as intimacy mechanics and requested sexual data before interpretation.",
+      "new_result": "partial_support_for_sexual_intimacy_salience_but_not_for_high_libido",
+      "reason": "Partner was sexually receptive and makes unusually expansive sexual hypothetical statements, but never initiated and behavior is strongly constrained by virginity/religion; baseline libido remains unresolved."
+    },
+    "state_conditional_pressure_model": {
+      "prior_status": "AstroRRF V0.2/V0.3 already required attachment-threat/romantic-priority activation to moderate jealousy and pressure.",
+      "new_result": "supportive",
+      "reason": "Jealousy reportedly increased markedly when partner later became in love, while lower Eros with reference actor produced more moderate jealousy and greater hypothetical openness."
+    },
+    "practical_life_fit": {
+      "prior_status": "R-RPV/R-BASIC frameworks already separated practical-life fit from attraction/love.",
+      "new_result": "strong_counterexample_to_global_compatibility",
+      "reason": "Mutual love, attraction, and historical marriage intent coexisted with a major country/community-versus-corporate/migration future-goal mismatch."
+    }
+  }
+}
