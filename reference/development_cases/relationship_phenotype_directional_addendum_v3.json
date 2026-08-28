@@ -1,0 +1,114 @@
+{
+  "version": "relationship-phenotype-directional-addendum-v3",
+  "status": "development_only_user_reported_criterion",
+  "created_utc_date": "2026-08-28",
+  "privacy": {
+    "policy": "public_repo_pseudonyms_only",
+    "note": "No partner names, birth data, locations, or direct identifiers are stored."
+  },
+  "extends": [
+    "reference/development_cases/relationship_phenotype_three_pair_v1.json",
+    "reference/development_cases/relationship_phenotype_directional_addendum_v1.json",
+    "reference/development_cases/relationship_phenotype_directional_addendum_v2.json"
+  ],
+  "new_measurement_requirements": [
+    "Sexual attraction/desire must be directional: A_desire_for_B and B_desire_for_A.",
+    "Dyadic sexual chemistry/satisfaction must not be inferred from either actor's attraction alone; preserve baseline libido, desire discrepancy, responsiveness, and actual sexual satisfaction separately.",
+    "Intellectual stimulation must remain separate from intellectual compatibility, partner intellectual functioning, communication quality, and communication volume.",
+    "Communication quality must remain separate from amount of conversation; a relationship can communicate well when there is little shared content to discuss.",
+    "Shared interests/commonality and mystical/spiritual stimulation require independent axes rather than being folded into intellectual compatibility.",
+    "Love/bond and willingness to commit can remain high despite weak sex, low commonality, or low stimulation.",
+    "Observed low drama must remain separate from inferred internal emotional ease when a partner is opaque or difficult to read."
+  ],
+  "directional_updates": {
+    "pair_2": {
+      "user_to_partner": {
+        "sexual_attraction_desire": "moderate_positive_but_not_maximal",
+        "sexual_enjoyment": "positive",
+        "constraint": "reference_actor_reports_lower_general_attraction_to_partner_demographic_appearance_category",
+        "intellectual_compatibility": "very_high",
+        "intellectual_stimulation": "high_but_below_pair_1",
+        "mystical_intuitive_stimulation": "high_but_below_pair_1"
+      },
+      "partner_to_user": {
+        "sexual_attraction_desire": "extreme",
+        "sexual_partner_preference": "strongly_prefers_user_over_other_men_usually",
+        "eros_in_love": "high"
+      },
+      "dyadic": {
+        "sexual_chemistry": "good_to_very_good_but_not_user_peak",
+        "sexual_desire_symmetry": "asymmetric_partner_higher",
+        "emotional_ease": "high_at_low_attachment_threat_or_distance",
+        "engulfment_pressure": "state_conditional_rises_sharply_with_closeness_or_romantic_priority_threat"
+      }
+    },
+    "pair_1": {
+      "user_to_partner": {
+        "intellectual_stimulation": "highest_of_established_pairs",
+        "intellectual_compatibility": "good_but_below_pair_2",
+        "mystical_intuitive_stimulation": "highest_of_established_pairs"
+      },
+      "partner_functioning_note": {
+        "state": "intellect_good_but_user_reports_functioning_was_impeded_by_trauma_and_other_personally_interpreted_factors",
+        "epistemic_rule": "Do not convert the user's causal interpretation of impairment into a clinical or metaphysical diagnosis. Preserve only the observed distinction between capability and functioning."
+      }
+    },
+    "pair_3": {
+      "user_to_partner": {
+        "intellectual_compatibility": "unknown_due_low_observation_bandwidth",
+        "conceptual_comprehension_application": "promising_positive_observation",
+        "evidence": "partner appeared to grasp difficult Buddhist concepts quickly and apply them quickly with good results",
+        "communication_quality": "hard_to_assess",
+        "communication_volume_continuity": "low"
+      },
+      "observability": {
+        "english_proficiency": "lower_than_other_development_partners",
+        "introversion": "strong_user_report_and_locally_observed_by_people_in_partner_home_village",
+        "emotional_readability": "low",
+        "emotional_ease_internal": "unknown",
+        "visible_drama": "low_so_far"
+      }
+    }
+  },
+  "pair_4": {
+    "exposure": "historical_relationship",
+    "confidence_overall": "high_for_core_outcomes",
+    "entry_context": "Partner interest was communicated indirectly before the user initiated contact; relationship began despite little substantive commonality.",
+    "user_to_partner": {
+      "physical_attraction": "high",
+      "sexual_desire": "positive",
+      "love_attachment_bond": "very_high",
+      "intellectual_compatibility": "low_due_lack_of_common_content",
+      "intellectual_stimulation": "very_low",
+      "mystical_spiritual_stimulation": "very_low_at_relationship_stage",
+      "communication_quality": "good",
+      "communication_volume": "low_due_lack_of_common_interests",
+      "commitment_intent": "insufficient_for_marriage_due_sex_and_commonality_deficits"
+    },
+    "partner_to_user": {
+      "love_attachment_bond": "very_high",
+      "commitment_intent": "very_high_partner_would_likely_have_married_user",
+      "baseline_libido": "low_relative_to_user"
+    },
+    "dyadic": {
+      "sexual_chemistry_satisfaction": "poor",
+      "mechanism_user_report": "partner_low_libido_despite_user_attraction",
+      "shared_interests_commonality": "very_low",
+      "intellectual_mystical_stimulation": "very_low",
+      "communication_quality": "good",
+      "communication_abundance": "low",
+      "love_bond": "very_high_mutual",
+      "conflict_drama": "near_zero",
+      "emotional_ease_visible": "very_high",
+      "relationship_outcome": "user_ended_relationship_due_insufficient_sex_and_insufficient_commonality_stimulation"
+    }
+  },
+  "new_discriminating_contrasts": [
+    "Pair 2: extreme partner sexual desire toward user does not imply equally extreme user desire toward partner.",
+    "Pair 4: user physical attraction does not imply good sexual chemistry when partner libido is low.",
+    "Pair 4: very high mutual love and marriage willingness can coexist with poor sex, low commonality, and low stimulation.",
+    "Pair 4: good communication quality can coexist with little conversation because there is little shared content.",
+    "Pair 2: emotional ease can be excellent at distance/low threat and poor under high romantic-priority threat; do not assign one fixed ease/engulfment value.",
+    "Pair 3: low visible drama is weak evidence for internal emotional ease when observability is poor."
+  ]
+}
