@@ -1,0 +1,282 @@
+{
+  "schema_version": "relationship-dynamic-questionnaire-v1",
+  "status": "development_candidate_blind",
+  "purpose": "Elicit a multidimensional relationship phenotype efficiently using broad narrative anchors plus targeted adaptive follow-ups. The questionnaire is designed for AstroRRF/HD relationship development and validation without exposing chart predictions to the respondent or evidence classifier.",
+  "rubric_registry": "reference/relationship/relationship_outcome_rubrics_v1.json",
+  "adaptive_engine": "hdmatch.search.adaptive.select_next_question",
+  "global_rules": [
+    "Ask one question at a time and preserve the answer verbatim before interpretation.",
+    "Use the respondent's own language; do not introduce astrology, Human Design, RRF, attachment-style, or love-style labels during elicitation.",
+    "Ask each actor direction separately whenever attraction, desire, love, jealousy, commitment, intimacy, or internal experience can differ.",
+    "Ask what changed over time and what changed by context; do not compress a state curve into one average.",
+    "Always permit unknown, mixed, context-dependent, not-applicable, and insufficient-evidence outcomes.",
+    "Separate capacity/preference/internal experience from behavior constrained by religion, virginity, health, distance, language, opportunity, or relationship rules.",
+    "Do not infer internal emotional ease from low visible drama when the partner is difficult to read.",
+    "Do not infer intellectual ability from communication volume, language proficiency, or introversion.",
+    "Do not infer good sexual chemistry from attraction alone or from one partner's desire alone.",
+    "Do not ask for an overall compatibility score."
+  ],
+  "modes": {
+    "development_capture": {
+      "chart_access": "forbidden_until_response_record_is_frozen",
+      "selection": "Ask the six core anchors in priority order, then ask only follow-ups whose target axes remain unresolved or whose fixed applicability condition was triggered by non-scored context metadata.",
+      "goal": "Produce a chart-blind phenotype for retrospective development cases or pre-chart case capture."
+    },
+    "validation_adaptive": {
+      "chart_access": "prediction_freezer_only",
+      "selection": "After frozen anonymous candidate/decoy prediction likelihoods exist, select among unanswered eligible questions by expected information gain multiplied by expected reliability minus burden using hdmatch.search.adaptive.select_next_question.",
+      "selector_forbidden_inputs": ["birth metadata", "true candidate identity", "candidate rank", "participant prose", "classifier rationale", "whether a question helps the true chart"],
+      "goal": "Discriminate frozen relationship-model predictions while preserving candidate blindness."
+    }
+  },
+  "core_question_ids": [
+    "RRQ_TRAJECTORY_CONTEXT",
+    "RRQ_LOVE_EROS_DIRECTION",
+    "RRQ_SEXUAL_SYSTEM",
+    "RRQ_MIND_COMMUNICATION",
+    "RRQ_EMOTIONAL_AUTONOMY",
+    "RRQ_PRACTICAL_FUTURE"
+  ],
+  "questions": [
+    {
+      "id": "RRQ_TRAJECTORY_CONTEXT",
+      "stage": "core",
+      "priority": 1,
+      "burden": 0.10,
+      "expected_reliability": 0.95,
+      "target_axes": [],
+      "prompt": "Give me the basic timeline of this relationship: when it became romantic, how long that phase lasted, how much time you actually lived together or were physically together, any long-distance periods, major changes in relationship structure, and what the relationship is now.",
+      "probes": [
+        "Were there periods where distance, reunion, cohabitation, marriage, breakup, or another relationship clearly changed how the two of you functioned?",
+        "Were sex, religion, language, health, money, family, immigration, or opportunity materially constrained during any phase?"
+      ],
+      "response_format": "narrative_plus_non_scored_context_metadata",
+      "minimum_evidence": "Enough chronology to distinguish major relationship phases and exposure contexts.",
+      "scoring_policy": "Context only; do not score relationship quality from this answer."
+    },
+    {
+      "id": "RRQ_LOVE_EROS_DIRECTION",
+      "stage": "core",
+      "priority": 2,
+      "burden": 0.15,
+      "expected_reliability": 0.90,
+      "target_axes": ["physical_attraction", "eros_in_love", "love_attachment_bond", "storge_companionate_love", "commitment_intent"],
+      "prompt": "Describe separately what you felt toward them and what they seemed to feel toward you. For each direction, distinguish physical attraction, loving/caring about the person, being romantically in love, and wanting a lasting partnership or marriage. Tell me how each changed over time.",
+      "probes": [
+        "Could either of you love the other deeply without feeling romantically in love?",
+        "Did one person's feelings depend on reciprocity, distance, or fear of losing the other?",
+        "If one of you later fell in love with somebody else, does that help distinguish inability to feel Eros from lack of Eros in this specific relationship?"
+      ],
+      "response_format": "narrative_then_directional_axis_classification",
+      "minimum_evidence": "Separate A-to-B and B-to-A descriptions plus at least one time-course statement.",
+      "scoring_policy": "Never merge love, Eros, attraction, Storge, and commitment into one score."
+    },
+    {
+      "id": "RRQ_SEXUAL_SYSTEM",
+      "stage": "core",
+      "priority": 3,
+      "burden": 0.20,
+      "expected_reliability": 0.85,
+      "target_axes": ["physical_attraction", "sexual_desire_partner_specific", "sexual_initiation", "baseline_libido", "sexual_satisfaction", "dyadic_sexual_chemistry", "desire_stability_with_familiarity"],
+      "prompt": "Describe the sexual side from both people's perspectives as best you can: attraction, how much each wanted sex, who initiated, how satisfying it was for each person, and whether desire changed with time or familiarity. If actual behavior was constrained, describe desire/receptivity separately from what happened behaviorally.",
+      "probes": [
+        "Was either person's general libido different from how much they wanted this particular partner?",
+        "Did one person want the other much more strongly than the reverse?",
+        "Was the sex itself good even when attraction or frequency was mismatched, or poor despite attraction?"
+      ],
+      "response_format": "narrative_then_directional_and_dyadic_axis_classification",
+      "minimum_evidence": "At least actor-specific desire/receptivity information and an explicit statement about what is unknown or constrained.",
+      "scoring_policy": "Do not infer chemistry from attraction alone; baseline libido and partner-specific desire remain separate."
+    },
+    {
+      "id": "RRQ_MIND_COMMUNICATION",
+      "stage": "core",
+      "priority": 4,
+      "burden": 0.18,
+      "expected_reliability": 0.90,
+      "target_axes": ["intellectual_compatibility", "intellectual_stimulation_self_expansion", "conceptual_comprehension_application", "mystical_spiritual_stimulation", "communication_quality", "communication_abundance", "shared_interests_commonality", "knowledge_complementarity"],
+      "prompt": "What was it like to think and talk together? Separate how easily you could reason together from how much they surprised or expanded your mind. Also describe shared interests, useful knowledge they had that you lacked, how much you actually talked, and whether spiritual or mystical subjects were a meaningful source of stimulation.",
+      "probes": [
+        "Could communication be good even when you had little to talk about?",
+        "Could they grasp and apply difficult ideas quickly even if they were quiet, hard to read, or less fluent in your shared language?",
+        "Did they actually make you think in new ways, or were they mainly easy to understand and reason with?"
+      ],
+      "response_format": "narrative_then_cognitive_axis_classification",
+      "minimum_evidence": "At least one example distinguishing reasoning compatibility from novelty/stimulation, plus shared-interest or communication-volume evidence.",
+      "scoring_policy": "Do not use partner education, occupation, nationality, language fluency, or self-rated intelligence as a substitute for observed cognitive interaction."
+    },
+    {
+      "id": "RRQ_EMOTIONAL_AUTONOMY",
+      "stage": "core",
+      "priority": 5,
+      "burden": 0.20,
+      "expected_reliability": 0.85,
+      "target_axes": ["psychological_intimacy_confiding", "emotional_readability", "perceived_partner_responsiveness", "visible_drama_theatricality", "serious_conflict_hostility", "repair_difficulty", "internal_emotional_ease", "baseline_autonomy_space", "engulfment_pressure", "sexual_jealousy_exclusivity", "romantic_priority_jealousy", "proximity_attachment_sensitivity", "trust_safety"],
+      "prompt": "Describe the emotional climate without using one word like 'easy' or 'dramatic.' How readable were you to each other, how safe was confiding, how much playful/theatrical drama versus serious conflict was there, how hard was repair, how much space did each person have, and what happened around jealousy, closeness, distance, or other partners?",
+      "probes": [
+        "Did emotional ease change sharply when you lived together, became more attached, or spent more time apart?",
+        "Was sexual jealousy different from jealousy about falling in love or giving somebody else too much attention?",
+        "Could someone be outwardly calm but internally hard to read, making their actual emotional ease unknown?"
+      ],
+      "response_format": "narrative_then_state_conditional_emotional_axis_classification",
+      "minimum_evidence": "At least one baseline state, one conflict/repair example or explicit absence of conflict, and any known context dependence.",
+      "scoring_policy": "Keep theatricality, hostility, repair, internal ease, autonomy, engulfment, and jealousy separate."
+    },
+    {
+      "id": "RRQ_PRACTICAL_FUTURE",
+      "stage": "core",
+      "priority": 6,
+      "burden": 0.15,
+      "expected_reliability": 0.92,
+      "target_axes": ["commitment_intent", "care_support", "practical_life_fit"],
+      "prompt": "How compatible were the lives you each actually wanted? Cover marriage/commitment, relationship structure, children or family, money, work, geography, religion, community versus private life, domestic expectations, and lifestyle. Which mismatches genuinely affected whether the relationship could continue?",
+      "probes": [
+        "Could one or both of you want marriage while still having poor practical compatibility?",
+        "If the relationship ended, which practical mismatch mattered independently of love, sex, or attraction?"
+      ],
+      "response_format": "narrative_then_practical_axis_classification",
+      "minimum_evidence": "At least two concrete future/lifestyle domains plus any breakup-relevant mismatch.",
+      "scoring_policy": "Do not infer practical fit from cohabitation duration or commitment alone."
+    },
+    {
+      "id": "RRQ_SEX_HABITUATION",
+      "stage": "adaptive_followup",
+      "priority": 20,
+      "burden": 0.12,
+      "expected_reliability": 0.88,
+      "target_axes": ["desire_stability_with_familiarity", "sexual_boredom_novelty_dependence", "sexual_desire_partner_specific", "baseline_libido"],
+      "applicability_flags": ["desire_changed_over_time", "sexual_boredom_reported", "novel_partner_response_reported", "reunion_reset_reported"],
+      "prompt": "Focus only on how sexual desire changed with familiarity. Was the person's general libido still high while desire for the familiar partner declined? How fast did the decline happen, did new partners restore sexual response, and did time apart make attraction return before it faded again?",
+      "probes": ["Was the boredom specifically sexual, or did romance and affection fade too?", "Estimate the time scale: days, weeks, months, or years."],
+      "response_format": "narrative_then_trajectory_classification",
+      "minimum_evidence": "A time course plus evidence separating general libido from partner-specific desire.",
+      "scoring_policy": "Novelty dependence requires repeated or longitudinal evidence; do not infer it from one breakup."
+    },
+    {
+      "id": "RRQ_SEX_CONSTRAINTS",
+      "stage": "adaptive_followup",
+      "priority": 21,
+      "burden": 0.10,
+      "expected_reliability": 0.80,
+      "target_axes": ["sexual_desire_partner_specific", "sexual_initiation", "baseline_libido", "sexual_satisfaction"],
+      "applicability_flags": ["sexual_behavior_constrained", "virginity_constraint", "religious_constraint", "health_constraint", "distance_constraint", "opportunity_constraint"],
+      "prompt": "Because behavior was constrained, separate what you actually know about internal desire from what was permitted or possible. What evidence is there from receptivity, fantasy, initiation, verbal statements, arousal, avoidance, or desire in other contexts? What remains genuinely unknown?",
+      "probes": ["Could low initiation reflect prohibition or inexperience rather than low desire?", "Is there enough evidence to estimate general libido at all?"],
+      "response_format": "narrative_with_reliability_and_unknowns",
+      "minimum_evidence": "At least one direct desire indicator or an explicit insufficient-evidence result.",
+      "scoring_policy": "Constraints can only reduce confidence; they cannot be converted into evidence for a preferred libido level."
+    },
+    {
+      "id": "RRQ_EROS_ASYMMETRY",
+      "stage": "adaptive_followup",
+      "priority": 22,
+      "burden": 0.10,
+      "expected_reliability": 0.92,
+      "target_axes": ["eros_in_love", "love_attachment_bond", "storge_companionate_love", "commitment_intent"],
+      "applicability_flags": ["eros_asymmetry", "love_without_in_love", "reciprocity_limited_eros"],
+      "prompt": "The two directions sound different. Describe exactly what was missing on the less-romantic side: attraction, longing, romantic specialness, desire for exclusivity/priority, future commitment, or simply the feeling of being 'in love.' Did that person show a clearly stronger in-love state with somebody else?",
+      "probes": ["Did the more-romantic person's Eros weaken when it was not reciprocated?", "Was the remaining bond more companionate/familial or still erotically charged?"],
+      "response_format": "narrative_then_directional_eros_love_classification",
+      "minimum_evidence": "At least one positive and one negative discriminator between love and Eros for each relevant actor.",
+      "scoring_policy": "Absence of reciprocal Eros is not absence of love, attraction, intimacy, or commitment."
+    },
+    {
+      "id": "RRQ_JEALOUSY_EXCLUSIVITY",
+      "stage": "adaptive_followup",
+      "priority": 23,
+      "burden": 0.12,
+      "expected_reliability": 0.90,
+      "target_axes": ["sexual_jealousy_exclusivity", "romantic_priority_jealousy", "proximity_attachment_sensitivity", "eros_in_love"],
+      "applicability_flags": ["jealousy_present", "open_relationship_context", "third_party_relationship", "monogamy_preference"],
+      "prompt": "Separate jealousy about sex from jealousy about love and attention. For each person, what would happen if the partner had sex with someone else, fell in love with someone else, or simply gave another person a lot of attention? Did those reactions change when the person was more in love or more physically close?",
+      "probes": ["Could someone tolerate sexual openness but not loss of romantic priority?", "Could someone want freedom for themselves while demanding exclusivity from the partner?"],
+      "response_format": "narrative_then_directional_jealousy_classification",
+      "minimum_evidence": "At least two distinct threat types or an explicit unknown for each actor.",
+      "scoring_policy": "Do not collapse sexual jealousy, romantic-priority jealousy, and relationship-structure preference."
+    },
+    {
+      "id": "RRQ_CLOSENESS_STATE_CURVE",
+      "stage": "adaptive_followup",
+      "priority": 24,
+      "burden": 0.12,
+      "expected_reliability": 0.88,
+      "target_axes": ["internal_emotional_ease", "baseline_autonomy_space", "engulfment_pressure", "proximity_attachment_sensitivity", "romantic_priority_jealousy"],
+      "applicability_flags": ["distance_changes_relationship", "cohabitation_changes_relationship", "attachment_threat_changes_relationship", "engulfment_state_conditional"],
+      "prompt": "Describe the relationship at low closeness/low threat versus high closeness/high attachment activation. What was easy at a distance but difficult when together, or vice versa? Where did pressure, reassurance demands, jealousy, or loss of autonomy begin to rise?",
+      "probes": ["Was there a threshold rather than a constant level of pressure?", "Did the underlying love remain the same while the behavioral cost of the relationship changed?"],
+      "response_format": "state_curve_with_low_medium_high_activation",
+      "minimum_evidence": "At least two contrasting contexts such as distance versus cohabitation or low versus high attachment threat.",
+      "scoring_policy": "Do not average a nonlinear state curve into one engulfment or ease score."
+    },
+    {
+      "id": "RRQ_COGNITIVE_DECOMPOSITION",
+      "stage": "adaptive_followup",
+      "priority": 25,
+      "burden": 0.15,
+      "expected_reliability": 0.88,
+      "target_axes": ["intellectual_compatibility", "intellectual_stimulation_self_expansion", "conceptual_comprehension_application", "mystical_spiritual_salience", "mystical_spiritual_curiosity", "mystical_spiritual_stimulation", "knowledge_complementarity", "shared_interests_commonality"],
+      "applicability_flags": ["cognitive_axes_ambiguous", "knowledge_complementarity", "mystical_salience_present", "low_shared_interests_good_communication"],
+      "prompt": "Break the mental connection into pieces. How easy was sustained reasoning together? How often did they give you genuinely novel or mind-changing ideas? How quickly did they understand and apply difficult ideas? What useful knowledge did they have that you lacked? How much curiosity did they themselves have, especially about mystical/spiritual topics?",
+      "probes": ["Give one example of easy reasoning that was not especially stimulating.", "Give one example, if any, where the person changed how you thought rather than merely informing you."],
+      "response_format": "narrative_then_separate_cognitive_axis_classification",
+      "minimum_evidence": "At least two examples that discriminate compatibility, stimulation, comprehension, and knowledge complementarity.",
+      "scoring_policy": "No single 'intellectual compatibility' label may absorb all cognitive axes."
+    },
+    {
+      "id": "RRQ_DISCLOSURE_READABILITY",
+      "stage": "adaptive_followup",
+      "priority": 26,
+      "burden": 0.12,
+      "expected_reliability": 0.82,
+      "target_axes": ["psychological_intimacy_confiding", "emotional_readability", "perceived_partner_responsiveness", "communication_abundance", "internal_emotional_ease"],
+      "applicability_flags": ["partner_hard_to_read", "language_constraint", "introversion_low_output", "long_response_latency", "high_confiding_despite_low_other_output"],
+      "prompt": "Separate closeness from observability. How much did the person confide when they did engage, how easy were they to read emotionally, how continuous was communication, and how much of the uncertainty could come from language, introversion, silence, or limited disclosure rather than lack of intimacy or intelligence?",
+      "probes": ["Could they make strong emotional disclosures and then disappear or go quiet for long periods?", "What do you actually know about their internal ease versus what is merely invisible?"],
+      "response_format": "narrative_with_observability_reliability",
+      "minimum_evidence": "Direct evidence for disclosure/readability plus explicit observability limits.",
+      "scoring_policy": "Low observability lowers confidence; do not translate it into low internal ease or low intellect."
+    },
+    {
+      "id": "RRQ_DRAMA_CONFLICT_REPAIR",
+      "stage": "adaptive_followup",
+      "priority": 27,
+      "burden": 0.12,
+      "expected_reliability": 0.90,
+      "target_axes": ["visible_drama_theatricality", "serious_conflict_hostility", "repair_difficulty"],
+      "applicability_flags": ["high_drama", "serious_conflict", "aggression_episode", "repair_unclear"],
+      "prompt": "Separate expressive drama from harmful conflict. How much yelling, teasing, theatrics, emotional display, or playful chaos occurred? How often was there actual hostility, coercion, aggression, or rupture? After ordinary conflict, how long did it take to return to normal and what repair work was actually necessary?",
+      "probes": ["Could an episode be intense but isolated rather than representative of the person's usual behavior?", "Did conflict mostly resolve through time, explicit discussion, apology, outside help, or not at all?"],
+      "response_format": "narrative_then_three_axis_conflict_classification",
+      "minimum_evidence": "At least one ordinary-conflict example plus any serious episode kept separately.",
+      "scoring_policy": "One extreme event does not define baseline violence/conflict without recurrence; causal interpretations of unusual states remain separate from observable behavior."
+    },
+    {
+      "id": "RRQ_TRUST_CARE",
+      "stage": "adaptive_followup",
+      "priority": 28,
+      "burden": 0.10,
+      "expected_reliability": 0.90,
+      "target_axes": ["trust_safety", "care_support", "perceived_partner_responsiveness", "psychological_intimacy_confiding"],
+      "applicability_flags": ["trust_unclear", "betrayal_history", "high_confiding", "care_support_unclear"],
+      "prompt": "How safe and supported did each of you actually feel? Could you trust each other with vulnerabilities, expect honesty, rely on practical or emotional support, and feel understood rather than judged? Give examples where the bond felt especially safe and where trust failed.",
+      "probes": ["Was radical honesty possible even if romantic love was asymmetric?", "Could someone care deeply while still being unreliable in a different domain?"],
+      "response_format": "narrative_then_directional_trust_care_classification",
+      "minimum_evidence": "At least one support/safety example and one counterexample or explicit absence of trust problems.",
+      "scoring_policy": "Care, trust, intimacy, and Eros remain independent."
+    },
+    {
+      "id": "RRQ_BREAKUP_COUNTERFACTUAL",
+      "stage": "adaptive_followup",
+      "priority": 29,
+      "burden": 0.10,
+      "expected_reliability": 0.88,
+      "target_axes": ["practical_life_fit", "dyadic_sexual_chemistry", "shared_interests_commonality", "eros_in_love", "commitment_intent"],
+      "applicability_flags": ["relationship_ended", "major_mismatch_identified"],
+      "prompt": "Looking back, what were the two or three strongest parts of the relationship and the two or three weaknesses that actually determined its outcome? If one weakness had been different, which single change would most likely have changed whether you stayed?",
+      "probes": ["Would more love have fixed it, or was love already high?", "Was the decisive problem sex, commonality, practical life, trust, Eros reciprocity, conflict, or something else?"],
+      "response_format": "narrative_negative_contrast_and_counterfactual",
+      "minimum_evidence": "Ranked strengths, ranked weaknesses, and one explicit counterfactual.",
+      "scoring_policy": "Use as discriminating context; do not convert retrospective causal certainty into a probability claim."
+    }
+  ]
+}
