@@ -1,22 +1,26 @@
 {
   "participant_alias": "Malia",
   "identity_note": "Alias only; not participant's real name.",
-  "status": "provisional_user_supplied_pending_participant_recheck",
-  "birth_data": {
-    "date": "1990-11-25",
-    "weekday": "Sunday",
-    "local_time": "10:30",
-    "birth_country": "Senegal",
-    "exact_birth_city": null,
-    "timezone_assumption": "Africa/Dakar / UTC+00:00 pending exact locality confirmation"
+  "status": "birth_record_verified_private_input",
+  "privacy_revision": {
+    "reason": "Public repository records must not contain absent-partner birth data or other identifying relationship records.",
+    "public_birth_data": "redacted",
+    "private_birth_input_location": "external_private_participant_store",
+    "note": "A birth certificate was checked on 2026-08-28 and materially corrected the previously provisional birth time. The exact corrected birth metadata must remain outside this public repository."
+  },
+  "birth_source_quality": {
+    "source": "birth_certificate",
+    "verification_status": "verified_from_document",
+    "supersedes_previous_provisional_time": true,
+    "requires_chart_recalculation": true
   },
   "development_observations": [
     {
       "observation_date": "2026-08-23",
       "type": "morning_dream_report",
       "validation_status": "development_only_not_precommitted",
-      "report": "Dreamed she was living in a wonderful commune on a beautiful beach in another country, probably not Senegal. She was swimming and doing yoga in a pool. She felt happy and a strong sense of belonging.",
-      "notes": "User reported that this morning both user and Malia had unusually exceptional dreams. Dream timing within the night is unknown. Do not treat as confirmatory evidence."
+      "report": "Dreamed she was living in a wonderful commune on a beautiful beach in another country, probably not her current country. She was swimming and doing yoga in a pool. She felt happy and a strong sense of belonging.",
+      "notes": "Dream timing within the night is unknown. Do not treat as confirmatory evidence."
     }
   ]
 }
