@@ -133,19 +133,22 @@ def detect_revision_signals(
     by_model_axis: dict[tuple[str, str], list[AxisLearningSummary]] = defaultdict(list)
     for item in summary.axis_summaries:
         by_model_axis[(item.model_id, item.axis_id)].append(item)
-        if item.scored_records >= min_scored_cases and item.miss_rate_scored is not None:
-            if item.miss_rate_scored >= miss_rate_threshold:
-                signals.append(
-                    RevisionSignal(
-                        model_id=item.model_id,
-                        axis_id=item.axis_id,
-                        direction=item.direction,
-                        signal_type="high_miss_rate",
-                        value=item.miss_rate_scored,
-                        supporting_case_count=item.scored_records,
-                        notes="Frozen model repeatedly misses this axis/direction in development data.",
-                    )
+        if (
+            item.scored_records >= min_scored_cases
+            and item.miss_rate_scored is not None
+            and item.miss_rate_scored >= miss_rate_threshold
+        ):
+            signals.append(
+                RevisionSignal(
+                    model_id=item.model_id,
+                    axis_id=item.axis_id,
+                    direction=item.direction,
+                    signal_type="high_miss_rate",
+                    value=item.miss_rate_scored,
+                    supporting_case_count=item.scored_records,
+                    notes="Frozen model repeatedly misses this axis/direction in development data.",
                 )
+            )
         unresolved_rate = item.unresolved_count / item.total_records
         if item.total_records >= min_scored_cases and unresolved_rate >= unresolved_rate_threshold:
             signals.append(
