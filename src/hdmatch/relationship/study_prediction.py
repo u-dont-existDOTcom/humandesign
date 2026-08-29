@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import os
 from datetime import UTC, datetime
 from pathlib import Path
@@ -45,7 +46,7 @@ def build_prediction_freeze(
     """Freeze every currently available prediction layer before behavioral capture."""
 
     hd_layer = _build_hd_layer(intake, repo_root=repo_root)
-    astro_layer = _build_astro_rrf_layer(repo_root=repo_root)
+    astro_layer = _build_astro_rrf_layer(intake, repo_root=repo_root)
     questionnaire_abs = _under_root(repo_root, questionnaire_path)
     return RelationshipPredictionFreeze(
         session_id=session_id,
@@ -120,8 +121,12 @@ def _build_hd_layer(
     )
 
 
-def _build_astro_rrf_layer(*, repo_root: Path) -> PredictionLayerFreeze:
-    file_receipts = []
+def _build_astro_rrf_layer(
+    intake: RelationshipStudyIntake,
+    *,
+    repo_root: Path,
+) -> PredictionLayerFreeze:
+    file_receipts: list[dict[str, str]] = []
     for relative in ASTRO_RRF_MODEL_FILES:
         path = repo_root / relative
         if not path.exists():
@@ -134,17 +139,59 @@ def _build_astro_rrf_layer(*, repo_root: Path) -> PredictionLayerFreeze:
             )
         file_receipts.append({"path": relative, "sha256": file_sha256(path)})
     model_hash = canonical_sha256(file_receipts)
+
+    unresolved = _western_birth_limitations(intake.respondent_birth, role="respondent") + (
+        _western_birth_limitations(intake.partner_birth, role="partner")
+    )
+    if unresolved:
+        return PredictionLayerFreeze(
+            layer_id=ASTRO_RRF_LAYER_ID,
+            status=PredictionLayerStatus.INSUFFICIENT_BIRTH_DATA,
+            model_version=ASTRO_RRF_MODEL_VERSION,
+            model_sha256=model_hash,
+            payload={"frozen_model_files": file_receipts},
+            limitations=unresolved,
+        )
+
+    ephemeris_path = os.environ.get("HDMATCH_EPHEMERIS_PATH", "").strip()
+    if not ephemeris_path:
+        return PredictionLayerFreeze(
+            layer_id=ASTRO_RRF_LAYER_ID,
+            status=PredictionLayerStatus.PENDING_ENGINE,
+            model_version=ASTRO_RRF_MODEL_VERSION,
+            model_sha256=model_hash,
+            payload={"frozen_model_files": file_receipts},
+            limitations=(
+                "HDMATCH_EPHEMERIS_PATH is not configured with verified local Swiss "
+                "Ephemeris files; Western prediction will not use an unverified fallback.",
+            ),
+        )
+
+    try:
+        payload = _calculate_astro_rrf_payload(
+            intake.respondent_birth,
+            intake.partner_birth,
+            repo_root=repo_root,
+            ephemeris_path=ephemeris_path,
+            file_receipts=file_receipts,
+        )
+    except Exception as exc:  # fail closed and preserve the frozen model identity
+        return PredictionLayerFreeze(
+            layer_id=ASTRO_RRF_LAYER_ID,
+            status=PredictionLayerStatus.UNAVAILABLE,
+            model_version=ASTRO_RRF_MODEL_VERSION,
+            model_sha256=model_hash,
+            payload={"frozen_model_files": file_receipts},
+            limitations=(
+                f"Strict AstroRRF calculation failed: {type(exc).__name__}. No fallback was used.",
+            ),
+        )
     return PredictionLayerFreeze(
         layer_id=ASTRO_RRF_LAYER_ID,
-        status=PredictionLayerStatus.PENDING_ENGINE,
+        status=PredictionLayerStatus.COMPUTED,
         model_version=ASTRO_RRF_MODEL_VERSION,
         model_sha256=model_hash,
-        payload={"frozen_model_files": file_receipts},
-        limitations=(
-            "The V0.1–V0.4 feature families are frozen, but no reusable production "
-            "Western synastry/house/composite feature adapter exists in hdmatch yet. "
-            "Do not generate post-answer AstroRRF predictions from prose or manual chart inspection.",
-        ),
+        payload=payload,
     )
 
 
@@ -157,14 +204,26 @@ def _exact_birth_limitation(birth: RelationshipBirthInput, *, role: str) -> tupl
     return tuple(limitations)
 
 
+def _western_birth_limitations(
+    birth: RelationshipBirthInput,
+    *,
+    role: str,
+) -> tuple[str, ...]:
+    limitations = list(_exact_birth_limitation(birth, role=role))
+    if birth.latitude is None or birth.longitude is None:
+        limitations.append(
+            f"{role} birth coordinates are not resolved; frozen AstroRRF house-overlay terms "
+            "must not be silently omitted"
+        )
+    return tuple(limitations)
+
+
 def _calculate_hd_payload(
     respondent: RelationshipBirthInput,
     partner: RelationshipBirthInput,
     *,
     ephemeris_path: str,
 ) -> dict[str, Any]:
-    # Imports stay inside the strict-computation branch so the capture app can run
-    # without the optional ephemeris dependency until a verified path is configured.
     from hdmatch.chart import SwissEphemerisProvider, calculate_chart
     from hdmatch.runtime.chart_adapter import declared_ephemeris_files
 
@@ -179,19 +238,7 @@ def _calculate_hd_payload(
     return {
         "respondent_chart_sha256": chart_a.chart_features_sha256,
         "partner_chart_sha256": chart_b.chart_features_sha256,
-        "ephemeris": {
-            "provider": chart_a.metadata.ephemeris.provider,
-            "library_version": chart_a.metadata.ephemeris.library_version,
-            "files": [
-                {
-                    "name": Path(item.path).name,
-                    "sha256": item.sha256,
-                    "size_bytes": item.size_bytes,
-                }
-                for item in chart_a.metadata.ephemeris.files
-            ],
-            "calculation_flags": list(chart_a.metadata.ephemeris.calculation_flags),
-        },
+        "ephemeris": _ephemeris_payload(chart_a),
         "respondent": {
             "type": analysis.partner_a_type.value if analysis.partner_a_type else None,
             "authority": (
@@ -241,6 +288,77 @@ def _calculate_hd_payload(
         "interpretation_policy": (
             "mechanics_only_no_compatibility_scalar_no_relationship_outcome_inference"
         ),
+    }
+
+
+def _calculate_astro_rrf_payload(
+    respondent: RelationshipBirthInput,
+    partner: RelationshipBirthInput,
+    *,
+    repo_root: Path,
+    ephemeris_path: str,
+    file_receipts: list[dict[str, str]],
+) -> dict[str, Any]:
+    from hdmatch.chart import SwissEphemerisProvider, calculate_chart
+    from hdmatch.runtime.chart_adapter import declared_ephemeris_files
+
+    from .astro_rrf import result_payload, score_astro_rrf_v01
+    from .western import natal_snapshot, relationship_features
+
+    if respondent.latitude is None or respondent.longitude is None:
+        raise ValueError("respondent coordinates are required")
+    if partner.latitude is None or partner.longitude is None:
+        raise ValueError("partner coordinates are required")
+    provider = SwissEphemerisProvider(declared_ephemeris_files(ephemeris_path))
+    chart_a = calculate_chart(provider, _birth_utc(respondent))
+    chart_b = calculate_chart(provider, _birth_utc(partner))
+    natal_a = natal_snapshot(
+        chart_a,
+        latitude=respondent.latitude,
+        longitude=respondent.longitude,
+    )
+    natal_b = natal_snapshot(
+        chart_b,
+        latitude=partner.latitude,
+        longitude=partner.longitude,
+    )
+    features = relationship_features(natal_a, natal_b)
+    model_path = repo_root / "reference/development_models/astro_rrf_directional_v0_1.json"
+    model_raw = json.loads(model_path.read_text(encoding="utf-8"))
+    if not isinstance(model_raw, dict):
+        raise ValueError("AstroRRF V0.1 model must be a JSON object")
+    scored = score_astro_rrf_v01(features, model_raw)
+    return {
+        "respondent_chart_sha256": chart_a.chart_features_sha256,
+        "partner_chart_sha256": chart_b.chart_features_sha256,
+        "ephemeris": _ephemeris_payload(chart_a),
+        "frozen_model_files": file_receipts,
+        "v0_1_raw_scoring": result_payload(scored),
+        "birth_geometry": {
+            "respondent_houses_available": natal_a.house_cusps is not None,
+            "partner_houses_available": natal_b.house_cusps is not None,
+        },
+        "prediction_boundary": (
+            "Only frozen weighted V0.1 axes receive numeric scores here. V0.2–V0.4 "
+            "extensions remain feature-family flags unless a separately frozen calibration "
+            "defines an outcome mapping. Unmapped questionnaire axes are not predicted."
+        ),
+    }
+
+
+def _ephemeris_payload(chart: Any) -> dict[str, Any]:
+    return {
+        "provider": chart.metadata.ephemeris.provider,
+        "library_version": chart.metadata.ephemeris.library_version,
+        "files": [
+            {
+                "name": Path(item.path).name,
+                "sha256": item.sha256,
+                "size_bytes": item.size_bytes,
+            }
+            for item in chart.metadata.ephemeris.files
+        ],
+        "calculation_flags": list(chart.metadata.ephemeris.calculation_flags),
     }
 
 
