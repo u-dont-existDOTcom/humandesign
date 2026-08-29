@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from hdmatch.api.relationship_study_ui import HTML
+from hdmatch.api.relationship_study_ui_enhanced import HTML
 
 
 def test_confirmatory_ui_requires_birth_intake_and_hides_hash_as_technical_receipt() -> None:
@@ -11,5 +11,7 @@ def test_confirmatory_ui_requires_birth_intake_and_hides_hash_as_technical_recei
     assert "Technical audit receipt" in HTML
     assert "You do not need to save this hash" in HTML
     assert "Reveal the blinded Astro/HD prediction" in HTML
+    assert "Start a new relationship" in HTML
+    assert "existing private frozen record will not be deleted" in HTML
     assert "onclick=\"begin()\"" not in HTML
     assert "OpenRouter" not in HTML
