@@ -10,7 +10,7 @@ from __future__ import annotations
 import importlib
 import math
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import UTC, datetime
 from enum import StrEnum
 from typing import Any
 
@@ -151,7 +151,7 @@ def placidus_houses(
     if birth_utc.tzinfo is None or birth_utc.utcoffset() is None:
         raise ValueError("birth_utc must be timezone-aware")
     swe: Any = importlib.import_module("swisseph")
-    utc = birth_utc.astimezone(__import__("datetime").UTC)
+    utc = birth_utc.astimezone(UTC)
     hour = utc.hour + utc.minute / 60.0 + utc.second / 3600.0 + utc.microsecond / 3.6e9
     jd = swe.julday(utc.year, utc.month, utc.day, hour, swe.GREG_CAL)
     raw_cusps, ascmc = swe.houses_ex(jd, latitude, longitude, b"P", 0)
