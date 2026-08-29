@@ -19,6 +19,7 @@ from fastapi import FastAPI
 import hdmatch.api.relationship_adaptive_app as adaptive_app
 from hdmatch.api.relationship_openai_ui import HTML as OPENAI_HTML
 from hdmatch.relationship.llm_audit import (
+    LLM_AUDIT_VERSION,
     LLMAuditProviderError,
     LLMAuditUnavailableError,
     LLMProviderReceipt,
@@ -49,14 +50,8 @@ class OpenAIResponsesRelationshipAuditor(OpenRouterRelationshipAuditor):
             "configured": self.available,
             "provider": "OpenAI",
             "model": self.model,
-            "audit_version": self._audit_version(),
+            "audit_version": LLM_AUDIT_VERSION,
         }
-
-    @staticmethod
-    def _audit_version() -> str:
-        from hdmatch.relationship.llm_audit import LLM_AUDIT_VERSION
-
-        return LLM_AUDIT_VERSION
 
     def _call_json(
         self,
@@ -153,8 +148,8 @@ def _response_output_text(envelope: Mapping[str, Any]) -> str:
 
 def create_relationship_openai_app_from_env() -> FastAPI:
     """Build the relationship app with direct OpenAI Responses API transport."""
-    setattr(adaptive_app, "OpenRouterRelationshipAuditor", OpenAIResponsesRelationshipAuditor)
-    setattr(adaptive_app, "ADAPTIVE_HTML", OPENAI_HTML)
+    adaptive_app.OpenRouterRelationshipAuditor = OpenAIResponsesRelationshipAuditor
+    adaptive_app.ADAPTIVE_HTML = OPENAI_HTML
     app = adaptive_app.create_relationship_adaptive_app_from_env()
     app.title = "Relationship Pattern Lab"
     app.version = "0.5.0"
