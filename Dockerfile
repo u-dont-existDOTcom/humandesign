@@ -32,4 +32,4 @@ PY
 ENV PYTHONUNBUFFERED=1
 ENV HDMATCH_EPHEMERIS_PATH=/opt/swisseph
 
-CMD ["/bin/sh", "-c", "exec python -m uvicorn hdmatch.api.relationship_openai_app:create_relationship_openai_app_from_env --factory --host 0.0.0.0 --port ${PORT:-8000}"]
+CMD ["/bin/sh", "-c", "exec python -m uvicorn hdmatch.api.relationship_full_study_app:create_relationship_full_study_app_from_env --factory --host 0.0.0.0 --port ${PORT:-8000}"]
