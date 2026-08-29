@@ -1,0 +1,43 @@
+{
+  "schema_version": "survey-v2-redundant-probes-v1",
+  "status": "candidate_blind_prevalidation",
+  "information_rule": "All probes sharing latent_construct_id are one dependency cluster and contribute at most the structural information of that latent construct. Repetition estimates reliability; it never creates independent bits.",
+  "probes": [
+    {
+      "probe_id": "PROFILE_TRAJECTORY",
+      "latent_construct_id": "profile",
+      "behavioral_frame": "life-stage learning and contribution trajectory",
+      "counts_as_independent_information": false
+    },
+    {
+      "probe_id": "PROFILE_RELATIONSHIPS",
+      "latent_construct_id": "profile",
+      "behavioral_frame": "recurring relationship and opportunity pattern",
+      "counts_as_independent_information": false
+    },
+    {
+      "probe_id": "PROFILE_FAILURE_MODE",
+      "latent_construct_id": "profile",
+      "behavioral_frame": "counterexamples, mistakes, and least-fitting role",
+      "counts_as_independent_information": false
+    },
+    {
+      "probe_id": "GATE_CHILDHOOD",
+      "latent_construct_id": "selected_planetary_gate",
+      "behavioral_frame": "recurring pre-adolescent behavior",
+      "counts_as_independent_information": false
+    },
+    {
+      "probe_id": "GATE_CURRENT",
+      "latent_construct_id": "selected_planetary_gate",
+      "behavioral_frame": "recurring present-day behavior in another context",
+      "counts_as_independent_information": false
+    },
+    {
+      "probe_id": "GATE_COUNTEREVIDENCE",
+      "latent_construct_id": "selected_planetary_gate",
+      "behavioral_frame": "nearby non-fit, exceptions, and contextual failure",
+      "counts_as_independent_information": false
+    }
+  ]
+}
