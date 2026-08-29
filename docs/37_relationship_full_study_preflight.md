@@ -54,11 +54,21 @@ The computed HD payload is mechanics only: types/authorities/profiles, connectio
 
 ### Western AstroRRF V0.1–V0.4
 
-The frozen AstroRRF documents/specs are bound into the prediction freeze by exact file hashes. However, the repository does not yet contain one reusable production Western synastry/house/composite feature adapter that implements those frozen feature families end to end.
+`src/hdmatch/relationship/western.py` now provides deterministic Western relationship geometry on the same strict Swiss-backed natal calculations:
 
-Therefore the current full-study builder marks this layer `pending_engine`. It must not replace the missing adapter with post-answer prose interpretation or manual chart inspection.
+- tropical personality longitudes;
+- major conjunction/sextile/square/trine/opposition detection with explicit orb;
+- Placidus Ascendant/MC and house cusps when exact coordinates are supplied;
+- directional partner-in-actor-house overlays;
+- midpoint composite longitudes and major composite aspects.
 
-This is now the principal engineering blocker to unlocking new confirmatory public cases.
+`src/hdmatch/relationship/astro_rrf.py` implements the exact weighted V0.1 directional families frozen in `astro_rrf_directional_v0_1.json` for both actor directions and retains contribution-level evidence. It also records later frozen-family features for cognitive/composite and V0.4 Uranus/novelty hypotheses without inventing new weights.
+
+The full-study prediction builder now computes this AstroRRF layer when both people have exact local time, IANA timezone, birth coordinates, and verified Swiss ephemeris files. If any required geometry/provenance is missing, the layer remains locked. It does not silently drop house terms, substitute noon, use Moshier fallback, or create post-hoc absolute `high/low` thresholds.
+
+V0.2–V0.4 are primarily target/feature-family extensions rather than complete weighted outcome maps. Their frozen feature flags can be bound pre-answer, while any later calibration from raw feature/score values to ordinal relationship outcomes must be versioned separately and frozen before use as confirmatory prediction.
+
+The remaining deployment blockers are therefore operational rather than conceptual: verified Swiss files must be available to Railway, and ordinary participant birthplace text needs a trustworthy coordinate/timezone resolution step or explicit confirmed coordinates.
 
 ## Survey-v2 noise policy
 
@@ -91,9 +101,10 @@ Middleware blocks both saved behavioral answers and live LLM quality calls for a
 
 ## Next implementation work
 
-1. Productionize Western birth-coordinate resolution and exact Western chart/synastry/composite features with explicit provenance.
-2. Implement the frozen AstroRRF V0.1–V0.4 adapter on those features.
-3. Wire unknown-time sensitivity rather than inventing noon charts.
+1. Add participant-friendly birthplace search/confirmation that resolves coordinates + IANA timezone with provenance; never silently choose among ambiguous place matches.
+2. Put verified Swiss Ephemeris files into the Railway runtime and set `HDMATCH_EPHEMERIS_PATH`.
+3. Wire unknown-time/full-day sensitivity rather than inventing noon charts.
 4. When the final noise-scoring schema is canonical, add its version-specific threshold adapter.
-5. Add the post-phenotype reveal/comparison endpoint and write deidentified hit/miss records to the existing relationship learning ledger.
-6. Add a real email provider and verified magic-link/OTP recovery; until then keep browser token authentication.
+5. Add the chart-blind post-survey phenotype classifier and freeze.
+6. Add reveal/comparison endpoints and write deidentified hit/miss records to the existing relationship learning ledger.
+7. Add a real email provider and verified magic-link/OTP recovery; until then keep browser token authentication.
