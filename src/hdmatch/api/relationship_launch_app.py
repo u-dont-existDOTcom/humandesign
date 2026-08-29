@@ -8,7 +8,7 @@ from fastapi import FastAPI, HTTPException
 
 import hdmatch.api.relationship_public_app as base_app
 from hdmatch.api.relationship_full_study_app import create_relationship_full_study_app_from_env
-from hdmatch.api.relationship_study_ui import HTML as STUDY_HTML
+from hdmatch.api.relationship_study_ui_enhanced import HTML as STUDY_HTML
 from hdmatch.relationship.place_resolution import search_birthplaces
 
 
@@ -16,7 +16,7 @@ def create_relationship_launch_app_from_env() -> FastAPI:
     app = create_relationship_full_study_app_from_env()
     base_app._HTML = STUDY_HTML
     app.title = "Relationship Pattern Lab"
-    app.version = "0.8.0"
+    app.version = "0.8.1"
 
     @app.get("/api/study/places")
     def search_places(q: str) -> dict[str, Any]:
