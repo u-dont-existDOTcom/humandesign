@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import math
 from dataclasses import dataclass
-from typing import Any, Literal, cast
+from typing import Any, Literal
 
 from .western import (
     WesternNatalSnapshot,
@@ -46,8 +46,8 @@ def score_astro_rrf_v01(
 
     max_orb = float(model["max_orb_degrees"])
     scores: list[DirectionalScore] = []
-    for actor in ("a", "b"):
-        actor_id = cast(ActorId, actor)
+    actor_ids: tuple[ActorId, ActorId] = ("a", "b")
+    for actor_id in actor_ids:
         actor_natal, partner_natal, overlays = _direction(features, actor_id)
         scores.extend(
             (
@@ -128,7 +128,7 @@ def _score_eros(
             )
     for body in ("venus", "mars"):
         house = overlays.get(body)
-        weight = {5: 1.1, 7: 1.0, 8: 0.9}.get(house)
+        weight = {5: 1.1, 7: 1.0, 8: 0.9}.get(house) if house is not None else None
         if weight is not None:
             contributions.append(
                 ScoreContribution(
@@ -441,8 +441,18 @@ def _later_family_flags(
             ),
         },
         "novelty_habituation_candidates": {
-            "a": _novelty_flags(features.natal_a, features.natal_b, features.b_planets_in_a_houses, max_orb=max_orb),
-            "b": _novelty_flags(features.natal_b, features.natal_a, features.a_planets_in_b_houses, max_orb=max_orb),
+            "a": _novelty_flags(
+                features.natal_a,
+                features.natal_b,
+                features.b_planets_in_a_houses,
+                max_orb=max_orb,
+            ),
+            "b": _novelty_flags(
+                features.natal_b,
+                features.natal_a,
+                features.a_planets_in_b_houses,
+                max_orb=max_orb,
+            ),
         },
     }
 
