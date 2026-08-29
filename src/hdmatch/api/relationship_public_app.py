@@ -19,7 +19,7 @@ import secrets
 import uuid
 from datetime import UTC, datetime
 from pathlib import Path
-from typing import Any, Literal
+from typing import Any, Literal, cast
 
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse
@@ -109,7 +109,7 @@ class RelationshipFileStore:
         path = self._path(session_id)
         if not path.exists():
             raise HTTPException(status_code=404, detail="session not found")
-        payload = json.loads(path.read_text(encoding="utf-8"))
+        payload = cast(dict[str, Any], json.loads(path.read_text(encoding="utf-8")))
         supplied = hashlib.sha256(token.encode()).hexdigest()
         if not secrets.compare_digest(str(payload["token_sha256"]), supplied):
             raise HTTPException(status_code=403, detail="invalid resume token")
