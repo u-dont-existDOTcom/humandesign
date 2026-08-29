@@ -1,0 +1,31 @@
+{
+  "candidate_universe_count": 288938,
+  "candidate_universe_manifest_sha256": "154f2a27d4dc1e632a81c13b82b109fe83064cac5fe3673f82303ac6c24deae8",
+  "comparison_count": 22848,
+  "git_commit_sha": "6e9ed6e30a8df1c3b9769407e090fc6b5ef63ec4",
+  "optimized_scorer": "python-int-inverted-bitsets-bit-sliced-exact-v1",
+  "peak_memory_mib": 2491.01171875,
+  "reference_scorer": "survey_v2_noise.simulate_noise_case",
+  "report_content_sha256": "e08eaa37485a77ed1e226695f0d0687f40ca49f0dc8ee4987661b8f80d4876ab",
+  "runtime_seconds": 636.987767047016,
+  "schema_version": "survey-v2-noise-scorer-equivalence-v1",
+  "seed": 20260827,
+  "status": "pass",
+  "subsets": [
+    {
+      "scenario_variant_count": 34,
+      "size": 32,
+      "source_index_sha256": "761233b3ab9a4fc343a0f2311e2680963f51f09fc896a9e36be4f3cdbedc13a2"
+    },
+    {
+      "scenario_variant_count": 34,
+      "size": 128,
+      "source_index_sha256": "41a2e256993a3958029b944f81191ae260bfcc3094f16f05c393eed6ee7a53b7"
+    },
+    {
+      "scenario_variant_count": 34,
+      "size": 512,
+      "source_index_sha256": "d674c618019cfff954d8a8ab62b0dea9343c19ad6b30fd890bcf63b41e045817"
+    }
+  ]
+}

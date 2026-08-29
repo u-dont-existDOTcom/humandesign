@@ -95,3 +95,45 @@ durable checkpoint location, and `--progress-every N` to choose the status inter
 `--scenario` selects several scenarios. Resume is the default; `--no-resume` deliberately
 recomputes them. CI uses one all-288,938-state job per frozen scenario, preventing one slow
 scenario from hiding the status of the other eleven or exceeding a monolithic job timeout.
+
+## Frozen century results
+
+The content-hashed report at `state/SURVEY-V2-NOISE-AUDIT.json` covers all 288,938 candidates and
+all twelve frozen scenarios at scorer commit `dd37aa4`. Top-k values use fractional credit for
+ties. Every scenario has median true-state rank 1; that does not make these human-accuracy results.
+
+| Scenario | Top 1 | Top 5 | Top 10 | Rank p90 | True state survives | Unique stop |
+|---|---:|---:|---:|---:|---:|---:|
+| Perfect answers | 100.000% | 100.000% | 100.000% | 1.0 | 100.000% | 100.000% |
+| One wrong classification | 98.344% | 100.000% | 100.000% | 1.0 | 99.595% | 97.518% |
+| Wrong 5% | 96.555% | 99.997% | 100.000% | 1.0 | 99.104% | 94.979% |
+| Wrong 10% | 92.240% | 99.942% | 99.998% | 1.5 | 97.557% | 89.674% |
+| Wrong 20% | 82.582% | 98.264% | 99.405% | 2.0 | 92.411% | 81.327% |
+| Ambiguous 5% | 98.276% | 100.000% | 100.000% | 1.0 | 100.000% | 96.580% |
+| Ambiguous 10% | 96.316% | 99.999% | 100.000% | 1.0 | 100.000% | 92.762% |
+| Ambiguous 20% | 92.865% | 99.997% | 100.000% | 1.5 | 100.000% | 86.223% |
+| Other 10% | 96.269% | 100.000% | 100.000% | 1.0 | 100.000% | 92.670% |
+| Uncertain 10% | 96.363% | 100.000% | 100.000% | 1.0 | 100.000% | 92.860% |
+| Mixed 10% | 99.948% | 100.000% | 100.000% | 1.0 | 100.000% | 99.896% |
+| Counterevidence 10% | 92.171% | 99.937% | 99.998% | 1.5 | 97.521% | 89.612% |
+
+The perfect-answer condition reproduces 100% unique rank-1 oracle recovery. Abstaining conditions
+(`Other`, uncertain, and ambiguous) never eliminate the true state; explicit wrong or
+counterevidence labels can. At 20% wrong answers, top-1 credit falls to 82.582%, while top-10
+remains 99.405%. Mixed answers are substantially less damaging than forcing an uncertain response
+to a wrong label.
+
+Failure diagnostics consistently identify the personality-Moon and design-Moon constructs as the
+largest per-perturbation risk, followed at higher corruption by channels and a small set of
+baseline observables. This is a specific measurement-reliability failure inside frozen domains,
+not evidence that the structural state space lacks a domain. The preregistered next action is to
+evaluate behaviorally distinct redundant probes for those existing latent constructs. They remain
+one dependency cluster each and cannot add structural bits. No new astrology or Human Design
+domain is added in this version; that decision can be revisited only if prospective redundant
+measurement fails under a new frozen protocol.
+
+The indexed/reference equivalence report records 22,848 exact comparisons across pathological
+small universes and deterministic real-cache subsets. The full report records a 3,437.7 MiB peak
+process footprint. Scenario simulation time totals 890.5 minutes; because execution resumed from
+checkpoints, the report's 549.1-minute wall time describes the final invocation rather than total
+work across all invocations.

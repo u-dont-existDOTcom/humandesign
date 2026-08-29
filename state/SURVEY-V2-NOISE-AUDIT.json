@@ -1,0 +1,3128 @@
+{
+  "adaptive_tie_breakers": [
+    "profile",
+    "activation:personality:mars",
+    "activation:design:mars",
+    "activation:design:jupiter",
+    "activation:personality:jupiter",
+    "activation:design:saturn",
+    "activation:personality:saturn",
+    "activation:design:uranus",
+    "activation:personality:uranus",
+    "activation:personality:south_node",
+    "activation:design:south_node",
+    "activation:design:pluto",
+    "activation:personality:neptune",
+    "activation:design:neptune",
+    "activation:personality:pluto"
+  ],
+  "base_answer_count": 33,
+  "base_mapping_sha256": "f16565094a1a8eede720dd369dfdd4c0d4700a213520b535de28f8f88dd40afd",
+  "candidate_blind_selection": true,
+  "candidate_count": 288938,
+  "candidate_universe_manifest_sha256": "154f2a27d4dc1e632a81c13b82b109fe83064cac5fe3673f82303ac6c24deae8",
+  "case_start": 0,
+  "case_stop": 288938,
+  "checkpoint_directory": "state/SURVEY-V2-NOISE-AUDIT.checkpoints",
+  "claim_scope": "synthetic_oracle_robustness_only_not_demonstrated_human_accuracy",
+  "completed_scenarios": [
+    "perfect_answers",
+    "one_wrong_classification",
+    "wrong_05pct",
+    "wrong_10pct",
+    "wrong_20pct",
+    "ambiguous_05pct",
+    "ambiguous_10pct",
+    "ambiguous_20pct",
+    "other_10pct",
+    "uncertain_10pct",
+    "mixed_10pct",
+    "counterevidence_10pct"
+  ],
+  "covers_all_default_scenarios": true,
+  "covers_complete_universe": true,
+  "failure_diagnostics": {
+    "ambiguous_05pct": {
+      "by_perturbed_feature": {
+        "baseline_observable:0": {
+          "case_count": 17549,
+          "failure_rate": 0.017379907687047697,
+          "mean_rank_damage": 0.008775428799361787,
+          "top10": 1.0
+        },
+        "baseline_observable:1": {
+          "case_count": 17458,
+          "failure_rate": 0.017184098980410126,
+          "mean_rank_damage": 0.008706610150074465,
+          "top10": 1.0
+        },
+        "baseline_observable:10": {
+          "case_count": 17549,
+          "failure_rate": 0.015784375178072824,
+          "mean_rank_damage": 0.00806313750071229,
+          "top10": 1.0
+        },
+        "baseline_observable:11": {
+          "case_count": 17688,
+          "failure_rate": 0.016960651289009497,
+          "mean_rank_damage": 0.008678199909543194,
+          "top10": 1.0
+        },
+        "baseline_observable:12": {
+          "case_count": 17671,
+          "failure_rate": 0.01793899609529738,
+          "mean_rank_damage": 0.009110972780261446,
+          "top10": 1.0
+        },
+        "baseline_observable:13": {
+          "case_count": 17279,
+          "failure_rate": 0.0181723479368019,
+          "mean_rank_damage": 0.009259795127032814,
+          "top10": 1.0
+        },
+        "baseline_observable:14": {
+          "case_count": 17173,
+          "failure_rate": 0.01694520468176789,
+          "mean_rank_damage": 0.008559948756769348,
+          "top10": 1.0
+        },
+        "baseline_observable:15": {
+          "case_count": 17719,
+          "failure_rate": 0.01738247079406287,
+          "mean_rank_damage": 0.008719453693775043,
+          "top10": 1.0
+        },
+        "baseline_observable:16": {
+          "case_count": 17670,
+          "failure_rate": 0.017826825127334467,
+          "mean_rank_damage": 0.00899830220713073,
+          "top10": 1.0
+        },
+        "baseline_observable:17": {
+          "case_count": 17568,
+          "failure_rate": 0.01781648451730419,
+          "mean_rank_damage": 0.009050546448087431,
+          "top10": 1.0
+        },
+        "baseline_observable:18": {
+          "case_count": 17388,
+          "failure_rate": 0.017483321831147917,
+          "mean_rank_damage": 0.008799171842650104,
+          "top10": 1.0
+        },
+        "baseline_observable:19": {
+          "case_count": 17640,
+          "failure_rate": 0.01598639455782313,
+          "mean_rank_damage": 0.008078231292517007,
+          "top10": 1.0
+        },
+        "baseline_observable:2": {
+          "case_count": 17339,
+          "failure_rate": 0.016667627890881827,
+          "mean_rank_damage": 0.00839148739835054,
+          "top10": 1.0
+        },
+        "baseline_observable:20": {
+          "case_count": 17662,
+          "failure_rate": 0.017778281055373116,
+          "mean_rank_damage": 0.008889140527686558,
+          "top10": 1.0
+        },
+        "baseline_observable:21": {
+          "case_count": 17424,
+          "failure_rate": 0.017504591368227733,
+          "mean_rank_damage": 0.008924471992653811,
+          "top10": 1.0
+        },
+        "baseline_observable:22": {
+          "case_count": 17652,
+          "failure_rate": 0.017221844550192614,
+          "mean_rank_damage": 0.008780874688420575,
+          "top10": 1.0
+        },
+        "baseline_observable:23": {
+          "case_count": 17547,
+          "failure_rate": 0.016584031458368953,
+          "mean_rank_damage": 0.008377500427423492,
+          "top10": 1.0
+        },
+        "baseline_observable:24": {
+          "case_count": 17629,
+          "failure_rate": 0.017471212207158658,
+          "mean_rank_damage": 0.00882069317601679,
+          "top10": 1.0
+        },
+        "baseline_observable:25": {
+          "case_count": 17237,
+          "failure_rate": 0.01589603759354876,
+          "mean_rank_damage": 0.00797702616464582,
+          "top10": 1.0
+        },
+        "baseline_observable:3": {
+          "case_count": 17446,
+          "failure_rate": 0.018170354235928006,
+          "mean_rank_damage": 0.009085177117964003,
+          "top10": 1.0
+        },
+        "baseline_observable:4": {
+          "case_count": 17635,
+          "failure_rate": 0.01814573291749362,
+          "mean_rank_damage": 0.009186277289481145,
+          "top10": 1.0
+        },
+        "baseline_observable:5": {
+          "case_count": 17470,
+          "failure_rate": 0.018202633085289067,
+          "mean_rank_damage": 0.009158557527189467,
+          "top10": 1.0
+        },
+        "baseline_observable:6": {
+          "case_count": 17495,
+          "failure_rate": 0.01874821377536439,
+          "mean_rank_damage": 0.009459845670191484,
+          "top10": 1.0
+        },
+        "baseline_observable:7": {
+          "case_count": 17682,
+          "failure_rate": 0.017871281529238774,
+          "mean_rank_damage": 0.009077027485578554,
+          "top10": 1.0
+        },
+        "baseline_observable:8": {
+          "case_count": 17713,
+          "failure_rate": 0.01885620730536894,
+          "mean_rank_damage": 0.009541015073674702,
+          "top10": 1.0
+        },
+        "baseline_observable:9": {
+          "case_count": 17482,
+          "failure_rate": 0.016588491019334173,
+          "mean_rank_damage": 0.008380048049422262,
+          "top10": 1.0
+        },
+        "channels": {
+          "case_count": 17369,
+          "failure_rate": 0.027462720939605043,
+          "mean_rank_damage": 0.01390408198514595,
+          "top10": 1.0
+        },
+        "design:mercury": {
+          "case_count": 17548,
+          "failure_rate": 0.040745384089354915,
+          "mean_rank_damage": 0.020771597902894918,
+          "top10": 1.0
+        },
+        "design:moon": {
+          "case_count": 17425,
+          "failure_rate": 0.2448206599713056,
+          "mean_rank_damage": 0.12746054519368724,
+          "top10": 1.0
+        },
+        "design:venus": {
+          "case_count": 17516,
+          "failure_rate": 0.03539620918017812,
+          "mean_rank_damage": 0.017983557889929207,
+          "top10": 1.0
+        },
+        "personality:mercury": {
+          "case_count": 17521,
+          "failure_rate": 0.041550139832201356,
+          "mean_rank_damage": 0.02123166485931168,
+          "top10": 1.0
+        },
+        "personality:moon": {
+          "case_count": 17482,
+          "failure_rate": 0.2503718110056058,
+          "mean_rank_damage": 0.13064866720054913,
+          "top10": 1.0
+        },
+        "personality:venus": {
+          "case_count": 17250,
+          "failure_rate": 0.0376231884057971,
+          "mean_rank_damage": 0.019130434782608695,
+          "top10": 1.0
+        }
+      },
+      "failure_count": 9883,
+      "leading_competitor_difference_counts": {
+        "baseline_observable:0": 3,
+        "baseline_observable:11": 6,
+        "baseline_observable:12": 1,
+        "baseline_observable:13": 7,
+        "baseline_observable:14": 4,
+        "baseline_observable:15": 4,
+        "baseline_observable:16": 7,
+        "baseline_observable:20": 8,
+        "baseline_observable:21": 6,
+        "baseline_observable:22": 3,
+        "baseline_observable:23": 5,
+        "baseline_observable:25": 1,
+        "baseline_observable:7": 11,
+        "baseline_observable:8": 2,
+        "channels": 75,
+        "design:mercury": 219,
+        "design:moon": 2133,
+        "design:venus": 174,
+        "personality:mercury": 226,
+        "personality:moon": 2174,
+        "personality:venus": 174
+      },
+      "median_overtaking_candidates_on_failure": 0,
+      "outscored_but_not_eliminated_count": 0,
+      "true_candidate_eliminated_count": 0
+    },
+    "ambiguous_10pct": {
+      "by_perturbed_feature": {
+        "baseline_observable:0": {
+          "case_count": 35114,
+          "failure_rate": 0.055077746767671014,
+          "mean_rank_damage": 0.02899128552714017,
+          "top10": 1.0
+        },
+        "baseline_observable:1": {
+          "case_count": 34730,
+          "failure_rate": 0.05286495824935215,
+          "mean_rank_damage": 0.02752663403397639,
+          "top10": 1.0
+        },
+        "baseline_observable:10": {
+          "case_count": 35143,
+          "failure_rate": 0.05301197962609908,
+          "mean_rank_damage": 0.02755883106166235,
+          "top10": 1.0
+        },
+        "baseline_observable:11": {
+          "case_count": 35098,
+          "failure_rate": 0.05618553763747222,
+          "mean_rank_damage": 0.029617072197846032,
+          "top10": 1.0
+        },
+        "baseline_observable:12": {
+          "case_count": 34774,
+          "failure_rate": 0.0548398228561569,
+          "mean_rank_damage": 0.028656467475700234,
+          "top10": 1.0
+        },
+        "baseline_observable:13": {
+          "case_count": 35316,
+          "failure_rate": 0.05479102956167176,
+          "mean_rank_damage": 0.028457356439007816,
+          "top10": 1.0
+        },
+        "baseline_observable:14": {
+          "case_count": 35383,
+          "failure_rate": 0.055817765593646665,
+          "mean_rank_damage": 0.02950569482519854,
+          "top10": 1.0
+        },
+        "baseline_observable:15": {
+          "case_count": 34779,
+          "failure_rate": 0.05693090658155784,
+          "mean_rank_damage": 0.029629949107219875,
+          "top10": 1.0
+        },
+        "baseline_observable:16": {
+          "case_count": 35233,
+          "failure_rate": 0.058013793886413305,
+          "mean_rank_damage": 0.03031249113047427,
+          "top10": 1.0
+        },
+        "baseline_observable:17": {
+          "case_count": 34965,
+          "failure_rate": 0.05456885456885457,
+          "mean_rank_damage": 0.028414128414128412,
+          "top10": 1.0
+        },
+        "baseline_observable:18": {
+          "case_count": 35046,
+          "failure_rate": 0.05264509501797637,
+          "mean_rank_damage": 0.027378302802031615,
+          "top10": 1.0
+        },
+        "baseline_observable:19": {
+          "case_count": 35209,
+          "failure_rate": 0.055980005112329236,
+          "mean_rank_damage": 0.029154477548354114,
+          "top10": 1.0
+        },
+        "baseline_observable:2": {
+          "case_count": 35135,
+          "failure_rate": 0.05342251316351217,
+          "mean_rank_damage": 0.027807030027038566,
+          "top10": 1.0
+        },
+        "baseline_observable:20": {
+          "case_count": 34860,
+          "failure_rate": 0.054044750430292596,
+          "mean_rank_damage": 0.0280837636259323,
+          "top10": 1.0
+        },
+        "baseline_observable:21": {
+          "case_count": 34917,
+          "failure_rate": 0.05538849271128676,
+          "mean_rank_damage": 0.028868459489646878,
+          "top10": 1.0
+        },
+        "baseline_observable:22": {
+          "case_count": 35033,
+          "failure_rate": 0.055576171038734905,
+          "mean_rank_damage": 0.029044044186909486,
+          "top10": 1.0
+        },
+        "baseline_observable:23": {
+          "case_count": 34939,
+          "failure_rate": 0.05804401957697702,
+          "mean_rank_damage": 0.030324279458484787,
+          "top10": 1.0
+        },
+        "baseline_observable:24": {
+          "case_count": 34889,
+          "failure_rate": 0.05359855541861332,
+          "mean_rank_damage": 0.0279601020378916,
+          "top10": 1.0
+        },
+        "baseline_observable:25": {
+          "case_count": 34824,
+          "failure_rate": 0.05651274982770503,
+          "mean_rank_damage": 0.02936193429818516,
+          "top10": 1.0
+        },
+        "baseline_observable:3": {
+          "case_count": 34849,
+          "failure_rate": 0.05199575310625843,
+          "mean_rank_damage": 0.027274814198398806,
+          "top10": 1.0
+        },
+        "baseline_observable:4": {
+          "case_count": 35100,
+          "failure_rate": 0.055185185185185184,
+          "mean_rank_damage": 0.02898860398860399,
+          "top10": 1.0
+        },
+        "baseline_observable:5": {
+          "case_count": 34946,
+          "failure_rate": 0.057574543581525785,
+          "mean_rank_damage": 0.030089280604361016,
+          "top10": 1.0
+        },
+        "baseline_observable:6": {
+          "case_count": 35004,
+          "failure_rate": 0.052451148440178265,
+          "mean_rank_damage": 0.027568277911095874,
+          "top10": 1.0
+        },
+        "baseline_observable:7": {
+          "case_count": 35282,
+          "failure_rate": 0.057791508417890144,
+          "mean_rank_damage": 0.030440451221586076,
+          "top10": 1.0
+        },
+        "baseline_observable:8": {
+          "case_count": 35141,
+          "failure_rate": 0.05899092228451097,
+          "mean_rank_damage": 0.03103212771406619,
+          "top10": 1.0
+        },
+        "baseline_observable:9": {
+          "case_count": 35023,
+          "failure_rate": 0.054421380235845015,
+          "mean_rank_damage": 0.02869542871827085,
+          "top10": 1.0
+        },
+        "channels": {
+          "case_count": 34880,
+          "failure_rate": 0.08477637614678898,
+          "mean_rank_damage": 0.04539850917431193,
+          "top10": 1.0
+        },
+        "design:mercury": {
+          "case_count": 35232,
+          "failure_rate": 0.07717415985467757,
+          "mean_rank_damage": 0.04094289282470481,
+          "top10": 1.0
+        },
+        "design:moon": {
+          "case_count": 34958,
+          "failure_rate": 0.27979289433033927,
+          "mean_rank_damage": 0.1551004062017278,
+          "top10": 1.0
+        },
+        "design:venus": {
+          "case_count": 34804,
+          "failure_rate": 0.07504884496034939,
+          "mean_rank_damage": 0.039305826916446386,
+          "top10": 1.0
+        },
+        "personality:mercury": {
+          "case_count": 35152,
+          "failure_rate": 0.07752048247610378,
+          "mean_rank_damage": 0.04080848884842968,
+          "top10": 1.0
+        },
+        "personality:moon": {
+          "case_count": 34861,
+          "failure_rate": 0.2866240211124179,
+          "mean_rank_damage": 0.1580132526318809,
+          "top10": 1.0
+        },
+        "personality:venus": {
+          "case_count": 35133,
+          "failure_rate": 0.07334984202886176,
+          "mean_rank_damage": 0.03883812939401702,
+          "top10": 1.0
+        }
+      },
+      "failure_count": 20914,
+      "leading_competitor_difference_counts": {
+        "baseline_observable:0": 14,
+        "baseline_observable:10": 1,
+        "baseline_observable:11": 35,
+        "baseline_observable:12": 43,
+        "baseline_observable:13": 42,
+        "baseline_observable:14": 34,
+        "baseline_observable:15": 45,
+        "baseline_observable:16": 26,
+        "baseline_observable:20": 28,
+        "baseline_observable:21": 25,
+        "baseline_observable:22": 49,
+        "baseline_observable:23": 29,
+        "baseline_observable:25": 19,
+        "baseline_observable:7": 28,
+        "baseline_observable:8": 29,
+        "baseline_observable:9": 14,
+        "channels": 595,
+        "design:mercury": 456,
+        "design:moon": 4654,
+        "design:venus": 411,
+        "personality:mercury": 433,
+        "personality:moon": 4696,
+        "personality:venus": 366
+      },
+      "median_overtaking_candidates_on_failure": 0,
+      "outscored_but_not_eliminated_count": 0,
+      "true_candidate_eliminated_count": 0
+    },
+    "ambiguous_20pct": {
+      "by_perturbed_feature": {
+        "baseline_observable:0": {
+          "case_count": 61192,
+          "failure_rate": 0.11740096744672507,
+          "mean_rank_damage": 0.06497581383187345,
+          "top10": 1.0
+        },
+        "baseline_observable:1": {
+          "case_count": 61469,
+          "failure_rate": 0.11789682604239535,
+          "mean_rank_damage": 0.06498397566252909,
+          "top10": 1.0
+        },
+        "baseline_observable:10": {
+          "case_count": 61496,
+          "failure_rate": 0.11691817353974242,
+          "mean_rank_damage": 0.064467607649278,
+          "top10": 1.0
+        },
+        "baseline_observable:11": {
+          "case_count": 61265,
+          "failure_rate": 0.12387170488859871,
+          "mean_rank_damage": 0.06869338121276422,
+          "top10": 1.0
+        },
+        "baseline_observable:12": {
+          "case_count": 61089,
+          "failure_rate": 0.12296812846830035,
+          "mean_rank_damage": 0.06828561606835928,
+          "top10": 1.0
+        },
+        "baseline_observable:13": {
+          "case_count": 61267,
+          "failure_rate": 0.12455318523838281,
+          "mean_rank_damage": 0.06960517080973444,
+          "top10": 1.0
+        },
+        "baseline_observable:14": {
+          "case_count": 61400,
+          "failure_rate": 0.12363192182410424,
+          "mean_rank_damage": 0.06850977198697068,
+          "top10": 1.0
+        },
+        "baseline_observable:15": {
+          "case_count": 61549,
+          "failure_rate": 0.12601342020179043,
+          "mean_rank_damage": 0.06997676647874052,
+          "top10": 1.0
+        },
+        "baseline_observable:16": {
+          "case_count": 60946,
+          "failure_rate": 0.1216978964985397,
+          "mean_rank_damage": 0.06768286680011813,
+          "top10": 1.0
+        },
+        "baseline_observable:17": {
+          "case_count": 61042,
+          "failure_rate": 0.11967170145145965,
+          "mean_rank_damage": 0.06647062678156024,
+          "top10": 1.0
+        },
+        "baseline_observable:18": {
+          "case_count": 61824,
+          "failure_rate": 0.12060041407867494,
+          "mean_rank_damage": 0.06684297360248448,
+          "top10": 1.0
+        },
+        "baseline_observable:19": {
+          "case_count": 61201,
+          "failure_rate": 0.11919739873531478,
+          "mean_rank_damage": 0.06607735167726017,
+          "top10": 1.0
+        },
+        "baseline_observable:2": {
+          "case_count": 61374,
+          "failure_rate": 0.12000195522533973,
+          "mean_rank_damage": 0.06626584547202398,
+          "top10": 1.0
+        },
+        "baseline_observable:20": {
+          "case_count": 61406,
+          "failure_rate": 0.12142135947627268,
+          "mean_rank_damage": 0.0678109630980686,
+          "top10": 1.0
+        },
+        "baseline_observable:21": {
+          "case_count": 61333,
+          "failure_rate": 0.12122348491024408,
+          "mean_rank_damage": 0.06711721259354671,
+          "top10": 1.0
+        },
+        "baseline_observable:22": {
+          "case_count": 61448,
+          "failure_rate": 0.1216638458534045,
+          "mean_rank_damage": 0.06699160265590418,
+          "top10": 1.0
+        },
+        "baseline_observable:23": {
+          "case_count": 61170,
+          "failure_rate": 0.12117050841915972,
+          "mean_rank_damage": 0.06732058198463299,
+          "top10": 1.0
+        },
+        "baseline_observable:24": {
+          "case_count": 61323,
+          "failure_rate": 0.11825905451461931,
+          "mean_rank_damage": 0.06608450336741516,
+          "top10": 1.0
+        },
+        "baseline_observable:25": {
+          "case_count": 61271,
+          "failure_rate": 0.11697214016418861,
+          "mean_rank_damage": 0.0648838765484487,
+          "top10": 1.0
+        },
+        "baseline_observable:3": {
+          "case_count": 61086,
+          "failure_rate": 0.11771928101365288,
+          "mean_rank_damage": 0.06502308221196346,
+          "top10": 1.0
+        },
+        "baseline_observable:4": {
+          "case_count": 61263,
+          "failure_rate": 0.12043158186833815,
+          "mean_rank_damage": 0.06667972511956646,
+          "top10": 1.0
+        },
+        "baseline_observable:5": {
+          "case_count": 61229,
+          "failure_rate": 0.11950219667151186,
+          "mean_rank_damage": 0.06618595763445426,
+          "top10": 1.0
+        },
+        "baseline_observable:6": {
+          "case_count": 61464,
+          "failure_rate": 0.12083496030196537,
+          "mean_rank_damage": 0.067405310425615,
+          "top10": 1.0
+        },
+        "baseline_observable:7": {
+          "case_count": 61288,
+          "failure_rate": 0.12067615193838925,
+          "mean_rank_damage": 0.06681568985772092,
+          "top10": 1.0
+        },
+        "baseline_observable:8": {
+          "case_count": 61250,
+          "failure_rate": 0.12393469387755102,
+          "mean_rank_damage": 0.06897142857142857,
+          "top10": 1.0
+        },
+        "baseline_observable:9": {
+          "case_count": 60860,
+          "failure_rate": 0.1183371672691423,
+          "mean_rank_damage": 0.06549457771935589,
+          "top10": 1.0
+        },
+        "channels": {
+          "case_count": 61239,
+          "failure_rate": 0.1753294469210797,
+          "mean_rank_damage": 0.10200199219451657,
+          "top10": 1.0
+        },
+        "design:mercury": {
+          "case_count": 61430,
+          "failure_rate": 0.14214553149926745,
+          "mean_rank_damage": 0.07972489011883445,
+          "top10": 1.0
+        },
+        "design:moon": {
+          "case_count": 60953,
+          "failure_rate": 0.337374698538218,
+          "mean_rank_damage": 0.20480534182074714,
+          "top10": 1.0
+        },
+        "design:venus": {
+          "case_count": 61401,
+          "failure_rate": 0.13732675363593427,
+          "mean_rank_damage": 0.077295158059315,
+          "top10": 1.0
+        },
+        "personality:mercury": {
+          "case_count": 61414,
+          "failure_rate": 0.1399518025205979,
+          "mean_rank_damage": 0.0788500993258866,
+          "top10": 1.0
+        },
+        "personality:moon": {
+          "case_count": 61271,
+          "failure_rate": 0.34069951526823455,
+          "mean_rank_damage": 0.20597835844037146,
+          "top10": 1.0
+        },
+        "personality:venus": {
+          "case_count": 61353,
+          "failure_rate": 0.13803725979169723,
+          "mean_rank_damage": 0.07781200593288022,
+          "top10": 1.0
+        }
+      },
+      "failure_count": 39806,
+      "leading_competitor_difference_counts": {
+        "baseline_observable:0": 60,
+        "baseline_observable:10": 19,
+        "baseline_observable:11": 121,
+        "baseline_observable:12": 169,
+        "baseline_observable:13": 181,
+        "baseline_observable:14": 116,
+        "baseline_observable:15": 198,
+        "baseline_observable:16": 102,
+        "baseline_observable:20": 122,
+        "baseline_observable:21": 110,
+        "baseline_observable:22": 121,
+        "baseline_observable:23": 82,
+        "baseline_observable:25": 52,
+        "baseline_observable:7": 131,
+        "baseline_observable:8": 141,
+        "baseline_observable:9": 45,
+        "channels": 2288,
+        "design:mercury": 940,
+        "design:moon": 9320,
+        "design:venus": 763,
+        "personality:mercury": 896,
+        "personality:moon": 9425,
+        "personality:venus": 734
+      },
+      "median_overtaking_candidates_on_failure": 0,
+      "outscored_but_not_eliminated_count": 0,
+      "true_candidate_eliminated_count": 0
+    },
+    "counterevidence_10pct": {
+      "by_perturbed_feature": {
+        "baseline_observable:0": {
+          "case_count": 34872,
+          "failure_rate": 0.10653246157375545,
+          "mean_rank_damage": 0.07943335627437485,
+          "top10": 0.9999942647396193
+        },
+        "baseline_observable:1": {
+          "case_count": 35033,
+          "failure_rate": 0.09702280706762195,
+          "mean_rank_damage": 0.07044786344303942,
+          "top10": 1.0
+        },
+        "baseline_observable:10": {
+          "case_count": 34818,
+          "failure_rate": 0.09825377678212419,
+          "mean_rank_damage": 0.07039462347061864,
+          "top10": 1.0
+        },
+        "baseline_observable:11": {
+          "case_count": 35104,
+          "failure_rate": 0.11733705560619873,
+          "mean_rank_damage": 0.08899270738377393,
+          "top10": 1.0
+        },
+        "baseline_observable:12": {
+          "case_count": 35047,
+          "failure_rate": 0.12597369247011156,
+          "mean_rank_damage": 0.0957856592575684,
+          "top10": 0.999974478715883
+        },
+        "baseline_observable:13": {
+          "case_count": 35137,
+          "failure_rate": 0.12428494179924296,
+          "mean_rank_damage": 0.09657910464752255,
+          "top10": 0.9999595058251177
+        },
+        "baseline_observable:14": {
+          "case_count": 35038,
+          "failure_rate": 0.116616245219476,
+          "mean_rank_damage": 0.08776185855357041,
+          "top10": 0.9999871568011873
+        },
+        "baseline_observable:15": {
+          "case_count": 35171,
+          "failure_rate": 0.1268090187938927,
+          "mean_rank_damage": 0.09715390520599357,
+          "top10": 0.9999759275156619
+        },
+        "baseline_observable:16": {
+          "case_count": 35168,
+          "failure_rate": 0.11655482256596907,
+          "mean_rank_damage": 0.09106289808917198,
+          "top10": 0.999973503805112
+        },
+        "baseline_observable:17": {
+          "case_count": 34924,
+          "failure_rate": 0.15175810331004466,
+          "mean_rank_damage": 0.17227408086129883,
+          "top10": 0.9999352200854036
+        },
+        "baseline_observable:18": {
+          "case_count": 34994,
+          "failure_rate": 0.1573412585014574,
+          "mean_rank_damage": 0.18528890666971481,
+          "top10": 0.9999114587444016
+        },
+        "baseline_observable:19": {
+          "case_count": 34928,
+          "failure_rate": 0.13192853870819973,
+          "mean_rank_damage": 0.1491210490151168,
+          "top10": 0.9998954796889118
+        },
+        "baseline_observable:2": {
+          "case_count": 34860,
+          "failure_rate": 0.09417670682730923,
+          "mean_rank_damage": 0.06818703384968446,
+          "top10": 1.0
+        },
+        "baseline_observable:20": {
+          "case_count": 35217,
+          "failure_rate": 0.11613709288127892,
+          "mean_rank_damage": 0.0896442059232757,
+          "top10": 0.9999720102710138
+        },
+        "baseline_observable:21": {
+          "case_count": 34682,
+          "failure_rate": 0.10939392191915115,
+          "mean_rank_damage": 0.08174269073294504,
+          "top10": 0.9999918742234642
+        },
+        "baseline_observable:22": {
+          "case_count": 34768,
+          "failure_rate": 0.11487574781408191,
+          "mean_rank_damage": 0.08719224574321215,
+          "top10": 0.999987057063967
+        },
+        "baseline_observable:23": {
+          "case_count": 34876,
+          "failure_rate": 0.11073517605229957,
+          "mean_rank_damage": 0.08217685514393852,
+          "top10": 1.0
+        },
+        "baseline_observable:24": {
+          "case_count": 34917,
+          "failure_rate": 0.0959131655067732,
+          "mean_rank_damage": 0.06947905031932869,
+          "top10": 0.9999964200819085
+        },
+        "baseline_observable:25": {
+          "case_count": 35011,
+          "failure_rate": 0.10488132301276741,
+          "mean_rank_damage": 0.08047470794893033,
+          "top10": 0.9999948068269452
+        },
+        "baseline_observable:3": {
+          "case_count": 34810,
+          "failure_rate": 0.09750071818442976,
+          "mean_rank_damage": 0.07013789141051421,
+          "top10": 1.0
+        },
+        "baseline_observable:4": {
+          "case_count": 34982,
+          "failure_rate": 0.0967926362129095,
+          "mean_rank_damage": 0.06864959121834086,
+          "top10": 1.0
+        },
+        "baseline_observable:5": {
+          "case_count": 35153,
+          "failure_rate": 0.09660626404574289,
+          "mean_rank_damage": 0.06945353170426422,
+          "top10": 1.0
+        },
+        "baseline_observable:6": {
+          "case_count": 35200,
+          "failure_rate": 0.09428977272727272,
+          "mean_rank_damage": 0.0684090909090909,
+          "top10": 0.9999948347107437
+        },
+        "baseline_observable:7": {
+          "case_count": 35136,
+          "failure_rate": 0.11814093806921676,
+          "mean_rank_damage": 0.08770207194899818,
+          "top10": 0.999979858483957
+        },
+        "baseline_observable:8": {
+          "case_count": 35011,
+          "failure_rate": 0.12387535346034104,
+          "mean_rank_damage": 0.09439890320185085,
+          "top10": 0.9999702113823389
+        },
+        "baseline_observable:9": {
+          "case_count": 35335,
+          "failure_rate": 0.10578746285552568,
+          "mean_rank_damage": 0.07943964907315693,
+          "top10": 0.9999897088902323
+        },
+        "channels": {
+          "case_count": 35294,
+          "failure_rate": 0.14430214767382557,
+          "mean_rank_damage": 0.11086870289567632,
+          "top10": 0.999974972138796
+        },
+        "design:mercury": {
+          "case_count": 35224,
+          "failure_rate": 0.11935044287985465,
+          "mean_rank_damage": 0.08560924369747899,
+          "top10": 1.0
+        },
+        "design:moon": {
+          "case_count": 35148,
+          "failure_rate": 0.32957778536474336,
+          "mean_rank_damage": 0.2449214749061113,
+          "top10": 0.9998951493766276
+        },
+        "design:venus": {
+          "case_count": 35081,
+          "failure_rate": 0.11276759499444143,
+          "mean_rank_damage": 0.08072745930845757,
+          "top10": 0.999993586271771
+        },
+        "personality:mercury": {
+          "case_count": 34894,
+          "failure_rate": 0.11835845704132515,
+          "mean_rank_damage": 0.08578838768842781,
+          "top10": 1.0
+        },
+        "personality:moon": {
+          "case_count": 34847,
+          "failure_rate": 0.3315062989640428,
+          "mean_rank_damage": 0.24607570235601342,
+          "top10": 0.9999135729220097
+        },
+        "personality:venus": {
+          "case_count": 35072,
+          "failure_rate": 0.11670278284671533,
+          "mean_rank_damage": 0.08387032390510948,
+          "top10": 1.0
+        }
+      },
+      "failure_count": 36968,
+      "leading_competitor_difference_counts": {
+        "activation:design:jupiter": 80,
+        "activation:design:mars": 283,
+        "activation:design:neptune": 21,
+        "activation:design:pluto": 17,
+        "activation:design:saturn": 46,
+        "activation:design:south_node": 22,
+        "activation:design:uranus": 21,
+        "activation:personality:jupiter": 91,
+        "activation:personality:mars": 288,
+        "activation:personality:neptune": 17,
+        "activation:personality:pluto": 20,
+        "activation:personality:saturn": 34,
+        "activation:personality:south_node": 26,
+        "activation:personality:uranus": 30,
+        "baseline_observable:0": 260,
+        "baseline_observable:10": 65,
+        "baseline_observable:11": 647,
+        "baseline_observable:12": 818,
+        "baseline_observable:13": 814,
+        "baseline_observable:14": 528,
+        "baseline_observable:15": 793,
+        "baseline_observable:16": 581,
+        "baseline_observable:17": 2348,
+        "baseline_observable:18": 2527,
+        "baseline_observable:19": 1556,
+        "baseline_observable:20": 655,
+        "baseline_observable:21": 429,
+        "baseline_observable:22": 507,
+        "baseline_observable:23": 413,
+        "baseline_observable:25": 315,
+        "baseline_observable:7": 518,
+        "baseline_observable:8": 712,
+        "baseline_observable:9": 293,
+        "channels": 1752,
+        "design:mercury": 762,
+        "design:moon": 7905,
+        "design:venus": 645,
+        "personality:mercury": 778,
+        "personality:moon": 8043,
+        "personality:venus": 650,
+        "profile": 5762
+      },
+      "median_overtaking_candidates_on_failure": 0,
+      "outscored_but_not_eliminated_count": 0,
+      "true_candidate_eliminated_count": 7163
+    },
+    "mixed_10pct": {
+      "by_perturbed_feature": {
+        "baseline_observable:0": {
+          "case_count": 34755,
+          "failure_rate": 0.0007768666378938282,
+          "mean_rank_damage": 0.0003884333189469141,
+          "top10": 1.0
+        },
+        "baseline_observable:1": {
+          "case_count": 35198,
+          "failure_rate": 0.0010511960906869709,
+          "mean_rank_damage": 0.0005255980453434854,
+          "top10": 1.0
+        },
+        "baseline_observable:10": {
+          "case_count": 35134,
+          "failure_rate": 0.0008538737405362327,
+          "mean_rank_damage": 0.00042693687026811635,
+          "top10": 1.0
+        },
+        "baseline_observable:11": {
+          "case_count": 35015,
+          "failure_rate": 0.0010566899900042838,
+          "mean_rank_damage": 0.0005283449950021419,
+          "top10": 1.0
+        },
+        "baseline_observable:12": {
+          "case_count": 34836,
+          "failure_rate": 0.000775060282466414,
+          "mean_rank_damage": 0.000387530141233207,
+          "top10": 1.0
+        },
+        "baseline_observable:13": {
+          "case_count": 35522,
+          "failure_rate": 0.0007600923371431789,
+          "mean_rank_damage": 0.00038004616857158945,
+          "top10": 1.0
+        },
+        "baseline_observable:14": {
+          "case_count": 35254,
+          "failure_rate": 0.0006240426618256084,
+          "mean_rank_damage": 0.0003120213309128042,
+          "top10": 1.0
+        },
+        "baseline_observable:15": {
+          "case_count": 35075,
+          "failure_rate": 0.0007127583749109052,
+          "mean_rank_damage": 0.0003563791874554526,
+          "top10": 1.0
+        },
+        "baseline_observable:16": {
+          "case_count": 34864,
+          "failure_rate": 0.0008318035796236806,
+          "mean_rank_damage": 0.0004159017898118403,
+          "top10": 1.0
+        },
+        "baseline_observable:17": {
+          "case_count": 34761,
+          "failure_rate": 0.0007191968010126291,
+          "mean_rank_damage": 0.00035959840050631456,
+          "top10": 1.0
+        },
+        "baseline_observable:18": {
+          "case_count": 34905,
+          "failure_rate": 0.000544334622546913,
+          "mean_rank_damage": 0.0002721673112734565,
+          "top10": 1.0
+        },
+        "baseline_observable:19": {
+          "case_count": 34831,
+          "failure_rate": 0.0007751715425913698,
+          "mean_rank_damage": 0.0003875857712956849,
+          "top10": 1.0
+        },
+        "baseline_observable:2": {
+          "case_count": 34892,
+          "failure_rate": 0.0006878367534105239,
+          "mean_rank_damage": 0.00034391837670526195,
+          "top10": 1.0
+        },
+        "baseline_observable:20": {
+          "case_count": 35157,
+          "failure_rate": 0.0008533151292772421,
+          "mean_rank_damage": 0.00042665756463862106,
+          "top10": 1.0
+        },
+        "baseline_observable:21": {
+          "case_count": 35067,
+          "failure_rate": 0.0007414378190321385,
+          "mean_rank_damage": 0.00037071890951606925,
+          "top10": 1.0
+        },
+        "baseline_observable:22": {
+          "case_count": 34854,
+          "failure_rate": 0.0008320422333161187,
+          "mean_rank_damage": 0.00041602111665805933,
+          "top10": 1.0
+        },
+        "baseline_observable:23": {
+          "case_count": 34909,
+          "failure_rate": 0.0006588558824371938,
+          "mean_rank_damage": 0.0003294279412185969,
+          "top10": 1.0
+        },
+        "baseline_observable:24": {
+          "case_count": 35126,
+          "failure_rate": 0.0007401924500370096,
+          "mean_rank_damage": 0.0003700962250185048,
+          "top10": 1.0
+        },
+        "baseline_observable:25": {
+          "case_count": 34781,
+          "failure_rate": 0.0009487938817170294,
+          "mean_rank_damage": 0.0004743969408585147,
+          "top10": 1.0
+        },
+        "baseline_observable:3": {
+          "case_count": 35058,
+          "failure_rate": 0.0007986764789776941,
+          "mean_rank_damage": 0.00039933823948884705,
+          "top10": 1.0
+        },
+        "baseline_observable:4": {
+          "case_count": 35148,
+          "failure_rate": 0.0008535336292249915,
+          "mean_rank_damage": 0.00042676681461249576,
+          "top10": 1.0
+        },
+        "baseline_observable:5": {
+          "case_count": 35173,
+          "failure_rate": 0.0009666505558240696,
+          "mean_rank_damage": 0.0004833252779120348,
+          "top10": 1.0
+        },
+        "baseline_observable:6": {
+          "case_count": 35043,
+          "failure_rate": 0.0008275547184887138,
+          "mean_rank_damage": 0.0004137773592443569,
+          "top10": 1.0
+        },
+        "baseline_observable:7": {
+          "case_count": 34962,
+          "failure_rate": 0.0006864595846919513,
+          "mean_rank_damage": 0.00034322979234597563,
+          "top10": 1.0
+        },
+        "baseline_observable:8": {
+          "case_count": 35313,
+          "failure_rate": 0.0007645909438450429,
+          "mean_rank_damage": 0.00038229547192252146,
+          "top10": 1.0
+        },
+        "baseline_observable:9": {
+          "case_count": 34966,
+          "failure_rate": 0.0007721786878682149,
+          "mean_rank_damage": 0.0003860893439341074,
+          "top10": 1.0
+        },
+        "channels": {
+          "case_count": 34940,
+          "failure_rate": 0.0007727532913566113,
+          "mean_rank_damage": 0.00038637664567830565,
+          "top10": 1.0
+        },
+        "design:mercury": {
+          "case_count": 35369,
+          "failure_rate": 0.0011874805620741328,
+          "mean_rank_damage": 0.0005937402810370664,
+          "top10": 1.0
+        },
+        "design:moon": {
+          "case_count": 34924,
+          "failure_rate": 0.004008704615737029,
+          "mean_rank_damage": 0.0020043523078685146,
+          "top10": 1.0
+        },
+        "design:venus": {
+          "case_count": 34820,
+          "failure_rate": 0.0011200459506031017,
+          "mean_rank_damage": 0.0005600229753015509,
+          "top10": 1.0
+        },
+        "personality:mercury": {
+          "case_count": 34977,
+          "failure_rate": 0.0011721988735454727,
+          "mean_rank_damage": 0.0005860994367727363,
+          "top10": 1.0
+        },
+        "personality:moon": {
+          "case_count": 35260,
+          "failure_rate": 0.004310833806012479,
+          "mean_rank_damage": 0.0021554169030062395,
+          "top10": 1.0
+        },
+        "personality:venus": {
+          "case_count": 34863,
+          "failure_rate": 0.0011760318962797235,
+          "mean_rank_damage": 0.0005880159481398618,
+          "top10": 1.0
+        }
+      },
+      "failure_count": 301,
+      "leading_competitor_difference_counts": {
+        "baseline_observable:11": 1,
+        "baseline_observable:14": 1,
+        "baseline_observable:23": 2,
+        "design:mercury": 6,
+        "design:moon": 55,
+        "design:venus": 2,
+        "personality:mercury": 5,
+        "personality:moon": 64,
+        "personality:venus": 8
+      },
+      "median_overtaking_candidates_on_failure": 0,
+      "outscored_but_not_eliminated_count": 0,
+      "true_candidate_eliminated_count": 0
+    },
+    "one_wrong_classification": {
+      "by_perturbed_feature": {
+        "baseline_observable:0": {
+          "case_count": 8808,
+          "failure_rate": 0.006698455949137148,
+          "mean_rank_damage": 0.003916893732970027,
+          "top10": 1.0
+        },
+        "baseline_observable:1": {
+          "case_count": 8920,
+          "failure_rate": 0.0,
+          "mean_rank_damage": 0.0,
+          "top10": 1.0
+        },
+        "baseline_observable:10": {
+          "case_count": 8643,
+          "failure_rate": 0.0,
+          "mean_rank_damage": 0.0,
+          "top10": 1.0
+        },
+        "baseline_observable:11": {
+          "case_count": 8724,
+          "failure_rate": 0.017652453003209535,
+          "mean_rank_damage": 0.009800550206327373,
+          "top10": 1.0
+        },
+        "baseline_observable:12": {
+          "case_count": 8707,
+          "failure_rate": 0.0319283335247502,
+          "mean_rank_damage": 0.017974043872746065,
+          "top10": 1.0
+        },
+        "baseline_observable:13": {
+          "case_count": 8661,
+          "failure_rate": 0.03025054843551553,
+          "mean_rank_damage": 0.016857175845745295,
+          "top10": 1.0
+        },
+        "baseline_observable:14": {
+          "case_count": 8714,
+          "failure_rate": 0.019853109938030754,
+          "mean_rank_damage": 0.010901996786779894,
+          "top10": 1.0
+        },
+        "baseline_observable:15": {
+          "case_count": 8794,
+          "failure_rate": 0.030134182397088923,
+          "mean_rank_damage": 0.016374801000682282,
+          "top10": 1.0
+        },
+        "baseline_observable:16": {
+          "case_count": 8817,
+          "failure_rate": 0.01497107859816264,
+          "mean_rank_damage": 0.00827946013383237,
+          "top10": 1.0
+        },
+        "baseline_observable:17": {
+          "case_count": 8685,
+          "failure_rate": 0.0542314335060449,
+          "mean_rank_damage": 0.07645365572826712,
+          "top10": 1.0
+        },
+        "baseline_observable:18": {
+          "case_count": 8723,
+          "failure_rate": 0.04551186518399633,
+          "mean_rank_damage": 0.05428178378998051,
+          "top10": 1.0
+        },
+        "baseline_observable:19": {
+          "case_count": 8800,
+          "failure_rate": 0.017272727272727273,
+          "mean_rank_damage": 0.02375,
+          "top10": 1.0
+        },
+        "baseline_observable:2": {
+          "case_count": 8690,
+          "failure_rate": 0.0,
+          "mean_rank_damage": 0.0,
+          "top10": 1.0
+        },
+        "baseline_observable:20": {
+          "case_count": 8795,
+          "failure_rate": 0.017168845935190448,
+          "mean_rank_damage": 0.009380329732802728,
+          "top10": 1.0
+        },
+        "baseline_observable:21": {
+          "case_count": 8759,
+          "failure_rate": 0.015526886630893938,
+          "mean_rank_damage": 0.008277200593675076,
+          "top10": 1.0
+        },
+        "baseline_observable:22": {
+          "case_count": 8916,
+          "failure_rate": 0.020749214894571558,
+          "mean_rank_damage": 0.011215791834903545,
+          "top10": 1.0
+        },
+        "baseline_observable:23": {
+          "case_count": 8734,
+          "failure_rate": 0.011564002747881842,
+          "mean_rank_damage": 0.006411724295855278,
+          "top10": 1.0
+        },
+        "baseline_observable:24": {
+          "case_count": 8692,
+          "failure_rate": 0.0,
+          "mean_rank_damage": 0.0,
+          "top10": 1.0
+        },
+        "baseline_observable:25": {
+          "case_count": 8847,
+          "failure_rate": 0.005764665988470668,
+          "mean_rank_damage": 0.0032779473267774387,
+          "top10": 1.0
+        },
+        "baseline_observable:3": {
+          "case_count": 8734,
+          "failure_rate": 0.0,
+          "mean_rank_damage": 0.0,
+          "top10": 1.0
+        },
+        "baseline_observable:4": {
+          "case_count": 8717,
+          "failure_rate": 0.0,
+          "mean_rank_damage": 0.0,
+          "top10": 1.0
+        },
+        "baseline_observable:5": {
+          "case_count": 8656,
+          "failure_rate": 0.0,
+          "mean_rank_damage": 0.0,
+          "top10": 1.0
+        },
+        "baseline_observable:6": {
+          "case_count": 8744,
+          "failure_rate": 0.0,
+          "mean_rank_damage": 0.0,
+          "top10": 1.0
+        },
+        "baseline_observable:7": {
+          "case_count": 8686,
+          "failure_rate": 0.018996085655077134,
+          "mean_rank_damage": 0.011167395809348377,
+          "top10": 1.0
+        },
+        "baseline_observable:8": {
+          "case_count": 8745,
+          "failure_rate": 0.025042881646655232,
+          "mean_rank_damage": 0.013607775871926815,
+          "top10": 1.0
+        },
+        "baseline_observable:9": {
+          "case_count": 8729,
+          "failure_rate": 0.0056134723336006415,
+          "mean_rank_damage": 0.003551380455951426,
+          "top10": 1.0
+        },
+        "channels": {
+          "case_count": 8662,
+          "failure_rate": 0.00011544677903486493,
+          "mean_rank_damage": 5.7723389517432465e-05,
+          "top10": 1.0
+        },
+        "design:mercury": {
+          "case_count": 8702,
+          "failure_rate": 0.025856125028729027,
+          "mean_rank_damage": 0.013215352792461502,
+          "top10": 1.0
+        },
+        "design:moon": {
+          "case_count": 8782,
+          "failure_rate": 0.23434297426554315,
+          "mean_rank_damage": 0.12377590526076064,
+          "top10": 1.0
+        },
+        "design:venus": {
+          "case_count": 8883,
+          "failure_rate": 0.017674209163570865,
+          "mean_rank_damage": 0.00911854103343465,
+          "top10": 1.0
+        },
+        "personality:mercury": {
+          "case_count": 8781,
+          "failure_rate": 0.023573624871882474,
+          "mean_rank_damage": 0.012299282541851725,
+          "top10": 1.0
+        },
+        "personality:moon": {
+          "case_count": 8845,
+          "failure_rate": 0.2385528547201809,
+          "mean_rank_damage": 0.1252119841718485,
+          "top10": 1.0
+        },
+        "personality:venus": {
+          "case_count": 8843,
+          "failure_rate": 0.020468166911681556,
+          "mean_rank_damage": 0.010516792943571187,
+          "top10": 1.0
+        }
+      },
+      "failure_count": 8339,
+      "leading_competitor_difference_counts": {
+        "activation:design:jupiter": 10,
+        "activation:design:mars": 68,
+        "activation:design:neptune": 6,
+        "activation:design:pluto": 2,
+        "activation:design:saturn": 3,
+        "activation:design:south_node": 3,
+        "activation:design:uranus": 1,
+        "activation:personality:jupiter": 11,
+        "activation:personality:mars": 57,
+        "activation:personality:neptune": 6,
+        "activation:personality:pluto": 1,
+        "activation:personality:saturn": 8,
+        "activation:personality:south_node": 3,
+        "activation:personality:uranus": 1,
+        "baseline_observable:0": 25,
+        "baseline_observable:11": 80,
+        "baseline_observable:12": 147,
+        "baseline_observable:13": 149,
+        "baseline_observable:14": 104,
+        "baseline_observable:15": 140,
+        "baseline_observable:16": 71,
+        "baseline_observable:17": 471,
+        "baseline_observable:18": 397,
+        "baseline_observable:19": 152,
+        "baseline_observable:20": 82,
+        "baseline_observable:21": 62,
+        "baseline_observable:22": 101,
+        "baseline_observable:23": 48,
+        "baseline_observable:25": 35,
+        "baseline_observable:7": 90,
+        "baseline_observable:8": 118,
+        "baseline_observable:9": 36,
+        "channels": 26,
+        "design:mercury": 155,
+        "design:moon": 1555,
+        "design:venus": 118,
+        "personality:mercury": 139,
+        "personality:moon": 1609,
+        "personality:venus": 129,
+        "profile": 1050
+      },
+      "median_overtaking_candidates_on_failure": 0,
+      "outscored_but_not_eliminated_count": 0,
+      "true_candidate_eliminated_count": 1169
+    },
+    "other_10pct": {
+      "by_perturbed_feature": {
+        "baseline_observable:0": {
+          "case_count": 34866,
+          "failure_rate": 0.05521138071473642,
+          "mean_rank_damage": 0.028695577353295473,
+          "top10": 1.0
+        },
+        "baseline_observable:1": {
+          "case_count": 35029,
+          "failure_rate": 0.05464044077764138,
+          "mean_rank_damage": 0.028390761940106767,
+          "top10": 1.0
+        },
+        "baseline_observable:10": {
+          "case_count": 34962,
+          "failure_rate": 0.05551741891196156,
+          "mean_rank_damage": 0.02888850752245295,
+          "top10": 1.0
+        },
+        "baseline_observable:11": {
+          "case_count": 34733,
+          "failure_rate": 0.05795641033023349,
+          "mean_rank_damage": 0.030662482365473757,
+          "top10": 1.0
+        },
+        "baseline_observable:12": {
+          "case_count": 35060,
+          "failure_rate": 0.056873930405019965,
+          "mean_rank_damage": 0.029806046776953792,
+          "top10": 1.0
+        },
+        "baseline_observable:13": {
+          "case_count": 35111,
+          "failure_rate": 0.05975335364985332,
+          "mean_rank_damage": 0.03080231266554641,
+          "top10": 1.0
+        },
+        "baseline_observable:14": {
+          "case_count": 34869,
+          "failure_rate": 0.057156786830709225,
+          "mean_rank_damage": 0.03012704694714503,
+          "top10": 1.0
+        },
+        "baseline_observable:15": {
+          "case_count": 34916,
+          "failure_rate": 0.05842593653339443,
+          "mean_rank_damage": 0.03063065643258105,
+          "top10": 1.0
+        },
+        "baseline_observable:16": {
+          "case_count": 35044,
+          "failure_rate": 0.055844081725830386,
+          "mean_rank_damage": 0.02914906974089716,
+          "top10": 1.0
+        },
+        "baseline_observable:17": {
+          "case_count": 35243,
+          "failure_rate": 0.05481939675964021,
+          "mean_rank_damage": 0.028416990608064012,
+          "top10": 1.0
+        },
+        "baseline_observable:18": {
+          "case_count": 35051,
+          "failure_rate": 0.054463496048614876,
+          "mean_rank_damage": 0.02854412142306924,
+          "top10": 1.0
+        },
+        "baseline_observable:19": {
+          "case_count": 35277,
+          "failure_rate": 0.054766561782464494,
+          "mean_rank_damage": 0.028616378943787737,
+          "top10": 1.0
+        },
+        "baseline_observable:2": {
+          "case_count": 35398,
+          "failure_rate": 0.05715012147578959,
+          "mean_rank_damage": 0.029690942991129444,
+          "top10": 1.0
+        },
+        "baseline_observable:20": {
+          "case_count": 35150,
+          "failure_rate": 0.056699857752489334,
+          "mean_rank_damage": 0.029800853485064012,
+          "top10": 1.0
+        },
+        "baseline_observable:21": {
+          "case_count": 35225,
+          "failure_rate": 0.0551596877217885,
+          "mean_rank_damage": 0.028559261887863733,
+          "top10": 1.0
+        },
+        "baseline_observable:22": {
+          "case_count": 34847,
+          "failure_rate": 0.05690590294716905,
+          "mean_rank_damage": 0.02977300771945935,
+          "top10": 1.0
+        },
+        "baseline_observable:23": {
+          "case_count": 35032,
+          "failure_rate": 0.055634848138844485,
+          "mean_rank_damage": 0.028987782598766842,
+          "top10": 1.0
+        },
+        "baseline_observable:24": {
+          "case_count": 35088,
+          "failure_rate": 0.05489056087551299,
+          "mean_rank_damage": 0.02874202006383949,
+          "top10": 1.0
+        },
+        "baseline_observable:25": {
+          "case_count": 34824,
+          "failure_rate": 0.05682862393751436,
+          "mean_rank_damage": 0.029663450493912245,
+          "top10": 1.0
+        },
+        "baseline_observable:3": {
+          "case_count": 34868,
+          "failure_rate": 0.05535161179304807,
+          "mean_rank_damage": 0.02893770792703912,
+          "top10": 1.0
+        },
+        "baseline_observable:4": {
+          "case_count": 35093,
+          "failure_rate": 0.05662097854272932,
+          "mean_rank_damage": 0.029322087025902603,
+          "top10": 1.0
+        },
+        "baseline_observable:5": {
+          "case_count": 35272,
+          "failure_rate": 0.053668632342934904,
+          "mean_rank_damage": 0.028152642322522115,
+          "top10": 1.0
+        },
+        "baseline_observable:6": {
+          "case_count": 34985,
+          "failure_rate": 0.054594826354151776,
+          "mean_rank_damage": 0.028497927683292838,
+          "top10": 1.0
+        },
+        "baseline_observable:7": {
+          "case_count": 34978,
+          "failure_rate": 0.05775058608268054,
+          "mean_rank_damage": 0.030033163702898966,
+          "top10": 1.0
+        },
+        "baseline_observable:8": {
+          "case_count": 34956,
+          "failure_rate": 0.055927451653507265,
+          "mean_rank_damage": 0.029150932600984093,
+          "top10": 1.0
+        },
+        "baseline_observable:9": {
+          "case_count": 35141,
+          "failure_rate": 0.056885119945362966,
+          "mean_rank_damage": 0.02970888705500697,
+          "top10": 1.0
+        },
+        "channels": {
+          "case_count": 34738,
+          "failure_rate": 0.08613046231792273,
+          "mean_rank_damage": 0.04608785767747136,
+          "top10": 1.0
+        },
+        "design:mercury": {
+          "case_count": 34988,
+          "failure_rate": 0.0756830913456042,
+          "mean_rank_damage": 0.03994226591974391,
+          "top10": 1.0
+        },
+        "design:moon": {
+          "case_count": 34926,
+          "failure_rate": 0.28348508274637807,
+          "mean_rank_damage": 0.15623031552425126,
+          "top10": 1.0
+        },
+        "design:venus": {
+          "case_count": 34985,
+          "failure_rate": 0.07620408746605688,
+          "mean_rank_damage": 0.0406459911390596,
+          "top10": 1.0
+        },
+        "personality:mercury": {
+          "case_count": 34888,
+          "failure_rate": 0.07678858060077964,
+          "mean_rank_damage": 0.04113162118780096,
+          "top10": 1.0
+        },
+        "personality:moon": {
+          "case_count": 35398,
+          "failure_rate": 0.2855811062771908,
+          "mean_rank_damage": 0.1576925250014125,
+          "top10": 1.0
+        },
+        "personality:venus": {
+          "case_count": 34811,
+          "failure_rate": 0.07408577748412858,
+          "mean_rank_damage": 0.03912556375858206,
+          "top10": 1.0
+        }
+      },
+      "failure_count": 21178,
+      "leading_competitor_difference_counts": {
+        "baseline_observable:0": 12,
+        "baseline_observable:11": 29,
+        "baseline_observable:12": 52,
+        "baseline_observable:13": 55,
+        "baseline_observable:14": 40,
+        "baseline_observable:15": 57,
+        "baseline_observable:16": 25,
+        "baseline_observable:20": 36,
+        "baseline_observable:21": 21,
+        "baseline_observable:22": 25,
+        "baseline_observable:23": 29,
+        "baseline_observable:25": 6,
+        "baseline_observable:7": 25,
+        "baseline_observable:8": 49,
+        "baseline_observable:9": 5,
+        "channels": 613,
+        "design:mercury": 442,
+        "design:moon": 4637,
+        "design:venus": 434,
+        "personality:mercury": 473,
+        "personality:moon": 4792,
+        "personality:venus": 389
+      },
+      "median_overtaking_candidates_on_failure": 0,
+      "outscored_but_not_eliminated_count": 0,
+      "true_candidate_eliminated_count": 0
+    },
+    "perfect_answers": {
+      "by_perturbed_feature": {},
+      "failure_count": 0,
+      "leading_competitor_difference_counts": {},
+      "median_overtaking_candidates_on_failure": 0,
+      "outscored_but_not_eliminated_count": 0,
+      "true_candidate_eliminated_count": 0
+    },
+    "uncertain_10pct": {
+      "by_perturbed_feature": {
+        "baseline_observable:0": {
+          "case_count": 34883,
+          "failure_rate": 0.051515064644669324,
+          "mean_rank_damage": 0.02683255453946048,
+          "top10": 1.0
+        },
+        "baseline_observable:1": {
+          "case_count": 34915,
+          "failure_rate": 0.05441787197479593,
+          "mean_rank_damage": 0.02854074180151797,
+          "top10": 1.0
+        },
+        "baseline_observable:10": {
+          "case_count": 35206,
+          "failure_rate": 0.05393966937453843,
+          "mean_rank_damage": 0.028049196159745497,
+          "top10": 1.0
+        },
+        "baseline_observable:11": {
+          "case_count": 35224,
+          "failure_rate": 0.05479218714512832,
+          "mean_rank_damage": 0.028588462411991825,
+          "top10": 1.0
+        },
+        "baseline_observable:12": {
+          "case_count": 35267,
+          "failure_rate": 0.056795304392208014,
+          "mean_rank_damage": 0.029744520373153373,
+          "top10": 1.0
+        },
+        "baseline_observable:13": {
+          "case_count": 34993,
+          "failure_rate": 0.057411482296459294,
+          "mean_rank_damage": 0.030320349784242563,
+          "top10": 1.0
+        },
+        "baseline_observable:14": {
+          "case_count": 35027,
+          "failure_rate": 0.052730750563850744,
+          "mean_rank_damage": 0.02767864790019128,
+          "top10": 1.0
+        },
+        "baseline_observable:15": {
+          "case_count": 34905,
+          "failure_rate": 0.05557942988110586,
+          "mean_rank_damage": 0.029035954734278755,
+          "top10": 1.0
+        },
+        "baseline_observable:16": {
+          "case_count": 34923,
+          "failure_rate": 0.057784268247286885,
+          "mean_rank_damage": 0.03038112418749821,
+          "top10": 1.0
+        },
+        "baseline_observable:17": {
+          "case_count": 34926,
+          "failure_rate": 0.054314837084120715,
+          "mean_rank_damage": 0.028345645078165265,
+          "top10": 1.0
+        },
+        "baseline_observable:18": {
+          "case_count": 34992,
+          "failure_rate": 0.05326931870141747,
+          "mean_rank_damage": 0.027820644718792868,
+          "top10": 1.0
+        },
+        "baseline_observable:19": {
+          "case_count": 34911,
+          "failure_rate": 0.05390851021168113,
+          "mean_rank_damage": 0.028157314313540144,
+          "top10": 1.0
+        },
+        "baseline_observable:2": {
+          "case_count": 35254,
+          "failure_rate": 0.05321381970840188,
+          "mean_rank_damage": 0.027911726328927213,
+          "top10": 1.0
+        },
+        "baseline_observable:20": {
+          "case_count": 35015,
+          "failure_rate": 0.05531914893617021,
+          "mean_rank_damage": 0.029073254319577323,
+          "top10": 1.0
+        },
+        "baseline_observable:21": {
+          "case_count": 34973,
+          "failure_rate": 0.0565007291339033,
+          "mean_rank_damage": 0.02946558773911303,
+          "top10": 1.0
+        },
+        "baseline_observable:22": {
+          "case_count": 35342,
+          "failure_rate": 0.05302472978326071,
+          "mean_rank_damage": 0.027615867806009848,
+          "top10": 1.0
+        },
+        "baseline_observable:23": {
+          "case_count": 34639,
+          "failure_rate": 0.054302953318513814,
+          "mean_rank_damage": 0.028479459568694247,
+          "top10": 1.0
+        },
+        "baseline_observable:24": {
+          "case_count": 35014,
+          "failure_rate": 0.054235448677671785,
+          "mean_rank_damage": 0.028488604558176728,
+          "top10": 1.0
+        },
+        "baseline_observable:25": {
+          "case_count": 35031,
+          "failure_rate": 0.05523679027147384,
+          "mean_rank_damage": 0.029117067740001713,
+          "top10": 1.0
+        },
+        "baseline_observable:3": {
+          "case_count": 35237,
+          "failure_rate": 0.05445980077759174,
+          "mean_rank_damage": 0.028421829327127734,
+          "top10": 1.0
+        },
+        "baseline_observable:4": {
+          "case_count": 35237,
+          "failure_rate": 0.05326787183925987,
+          "mean_rank_damage": 0.027598830774470017,
+          "top10": 1.0
+        },
+        "baseline_observable:5": {
+          "case_count": 35080,
+          "failure_rate": 0.05476054732041049,
+          "mean_rank_damage": 0.028691562143671606,
+          "top10": 1.0
+        },
+        "baseline_observable:6": {
+          "case_count": 35201,
+          "failure_rate": 0.05431663873185421,
+          "mean_rank_damage": 0.028507712849066787,
+          "top10": 1.0
+        },
+        "baseline_observable:7": {
+          "case_count": 34884,
+          "failure_rate": 0.05369223712876964,
+          "mean_rank_damage": 0.028236440775140467,
+          "top10": 1.0
+        },
+        "baseline_observable:8": {
+          "case_count": 34631,
+          "failure_rate": 0.055845918396812105,
+          "mean_rank_damage": 0.029309000606393115,
+          "top10": 1.0
+        },
+        "baseline_observable:9": {
+          "case_count": 34966,
+          "failure_rate": 0.05410970657209861,
+          "mean_rank_damage": 0.02848481381913859,
+          "top10": 1.0
+        },
+        "channels": {
+          "case_count": 34759,
+          "failure_rate": 0.08325901205443195,
+          "mean_rank_damage": 0.045067464541557585,
+          "top10": 1.0
+        },
+        "design:mercury": {
+          "case_count": 35173,
+          "failure_rate": 0.07699087368151707,
+          "mean_rank_damage": 0.04058510789526057,
+          "top10": 1.0
+        },
+        "design:moon": {
+          "case_count": 34987,
+          "failure_rate": 0.2762740446451539,
+          "mean_rank_damage": 0.15387143796267186,
+          "top10": 1.0
+        },
+        "design:venus": {
+          "case_count": 35171,
+          "failure_rate": 0.07307156464132382,
+          "mean_rank_damage": 0.03856870717352364,
+          "top10": 1.0
+        },
+        "personality:mercury": {
+          "case_count": 34931,
+          "failure_rate": 0.0760356130657582,
+          "mean_rank_damage": 0.03989293177979445,
+          "top10": 1.0
+        },
+        "personality:moon": {
+          "case_count": 35149,
+          "failure_rate": 0.2790691058067086,
+          "mean_rank_damage": 0.15461321801473726,
+          "top10": 1.0
+        },
+        "personality:venus": {
+          "case_count": 34906,
+          "failure_rate": 0.07222254053744342,
+          "mean_rank_damage": 0.038274222196757,
+          "top10": 1.0
+        }
+      },
+      "failure_count": 20629,
+      "leading_competitor_difference_counts": {
+        "baseline_observable:0": 12,
+        "baseline_observable:10": 1,
+        "baseline_observable:11": 25,
+        "baseline_observable:12": 52,
+        "baseline_observable:13": 62,
+        "baseline_observable:14": 25,
+        "baseline_observable:15": 46,
+        "baseline_observable:16": 33,
+        "baseline_observable:20": 30,
+        "baseline_observable:21": 19,
+        "baseline_observable:22": 33,
+        "baseline_observable:23": 17,
+        "baseline_observable:25": 10,
+        "baseline_observable:7": 22,
+        "baseline_observable:8": 41,
+        "baseline_observable:9": 7,
+        "channels": 620,
+        "design:mercury": 461,
+        "design:moon": 4500,
+        "design:venus": 377,
+        "personality:mercury": 451,
+        "personality:moon": 4638,
+        "personality:venus": 380
+      },
+      "median_overtaking_candidates_on_failure": 0,
+      "outscored_but_not_eliminated_count": 0,
+      "true_candidate_eliminated_count": 0
+    },
+    "wrong_05pct": {
+      "by_perturbed_feature": {
+        "baseline_observable:0": {
+          "case_count": 17644,
+          "failure_rate": 0.03598957152573112,
+          "mean_rank_damage": 0.022472228519610067,
+          "top10": 1.0
+        },
+        "baseline_observable:1": {
+          "case_count": 17703,
+          "failure_rate": 0.028526238490651303,
+          "mean_rank_damage": 0.018047788510421964,
+          "top10": 1.0
+        },
+        "baseline_observable:10": {
+          "case_count": 17523,
+          "failure_rate": 0.03224333732808309,
+          "mean_rank_damage": 0.020316155909376247,
+          "top10": 1.0
+        },
+        "baseline_observable:11": {
+          "case_count": 17608,
+          "failure_rate": 0.04963652885052249,
+          "mean_rank_damage": 0.030525897319400273,
+          "top10": 1.0
+        },
+        "baseline_observable:12": {
+          "case_count": 17508,
+          "failure_rate": 0.05917294950879598,
+          "mean_rank_damage": 0.03738291066940827,
+          "top10": 1.0
+        },
+        "baseline_observable:13": {
+          "case_count": 17580,
+          "failure_rate": 0.057963594994311717,
+          "mean_rank_damage": 0.03646188850967008,
+          "top10": 1.0
+        },
+        "baseline_observable:14": {
+          "case_count": 17325,
+          "failure_rate": 0.04987012987012987,
+          "mean_rank_damage": 0.030707070707070707,
+          "top10": 1.0
+        },
+        "baseline_observable:15": {
+          "case_count": 17418,
+          "failure_rate": 0.061488115742335515,
+          "mean_rank_damage": 0.03869560225054541,
+          "top10": 1.0
+        },
+        "baseline_observable:16": {
+          "case_count": 17419,
+          "failure_rate": 0.045984270049945465,
+          "mean_rank_damage": 0.030225615706986623,
+          "top10": 1.0
+        },
+        "baseline_observable:17": {
+          "case_count": 17405,
+          "failure_rate": 0.08371157713300775,
+          "mean_rank_damage": 0.10051709278942833,
+          "top10": 1.0
+        },
+        "baseline_observable:18": {
+          "case_count": 17690,
+          "failure_rate": 0.07727529677784059,
+          "mean_rank_damage": 0.08510457885811193,
+          "top10": 1.0
+        },
+        "baseline_observable:19": {
+          "case_count": 17501,
+          "failure_rate": 0.05016856179646877,
+          "mean_rank_damage": 0.05171133078109822,
+          "top10": 1.0
+        },
+        "baseline_observable:2": {
+          "case_count": 17407,
+          "failure_rate": 0.028034698684437295,
+          "mean_rank_damage": 0.01720572183604297,
+          "top10": 1.0
+        },
+        "baseline_observable:20": {
+          "case_count": 17617,
+          "failure_rate": 0.04847590395640575,
+          "mean_rank_damage": 0.02994266901288528,
+          "top10": 1.0
+        },
+        "baseline_observable:21": {
+          "case_count": 17524,
+          "failure_rate": 0.044110933576808946,
+          "mean_rank_damage": 0.02810431408354257,
+          "top10": 1.0
+        },
+        "baseline_observable:22": {
+          "case_count": 17603,
+          "failure_rate": 0.04840084076577856,
+          "mean_rank_damage": 0.03076180196557405,
+          "top10": 1.0
+        },
+        "baseline_observable:23": {
+          "case_count": 17658,
+          "failure_rate": 0.04524861252689999,
+          "mean_rank_damage": 0.02893872465737909,
+          "top10": 1.0
+        },
+        "baseline_observable:24": {
+          "case_count": 17415,
+          "failure_rate": 0.029974160206718347,
+          "mean_rank_damage": 0.017858168245765145,
+          "top10": 1.0
+        },
+        "baseline_observable:25": {
+          "case_count": 17515,
+          "failure_rate": 0.035398230088495575,
+          "mean_rank_damage": 0.021952612046817015,
+          "top10": 1.0
+        },
+        "baseline_observable:3": {
+          "case_count": 17377,
+          "failure_rate": 0.02975197099614433,
+          "mean_rank_damage": 0.018702883121367326,
+          "top10": 1.0
+        },
+        "baseline_observable:4": {
+          "case_count": 17286,
+          "failure_rate": 0.028230938331597826,
+          "mean_rank_damage": 0.017036908480851556,
+          "top10": 1.0
+        },
+        "baseline_observable:5": {
+          "case_count": 17548,
+          "failure_rate": 0.027980396626396172,
+          "mean_rank_damage": 0.017694324139503077,
+          "top10": 1.0
+        },
+        "baseline_observable:6": {
+          "case_count": 17635,
+          "failure_rate": 0.03022398639070031,
+          "mean_rank_damage": 0.019676779132407146,
+          "top10": 1.0
+        },
+        "baseline_observable:7": {
+          "case_count": 17298,
+          "failure_rate": 0.04867614753150653,
+          "mean_rank_damage": 0.03032142444213204,
+          "top10": 1.0
+        },
+        "baseline_observable:8": {
+          "case_count": 17454,
+          "failure_rate": 0.05546006646041022,
+          "mean_rank_damage": 0.03620946487911081,
+          "top10": 1.0
+        },
+        "baseline_observable:9": {
+          "case_count": 17399,
+          "failure_rate": 0.036726248634979024,
+          "mean_rank_damage": 0.02336341169032703,
+          "top10": 1.0
+        },
+        "channels": {
+          "case_count": 17370,
+          "failure_rate": 0.046286701208981,
+          "mean_rank_damage": 0.02910189982728843,
+          "top10": 1.0
+        },
+        "design:mercury": {
+          "case_count": 17404,
+          "failure_rate": 0.05268903700298782,
+          "mean_rank_damage": 0.031429556423810616,
+          "top10": 1.0
+        },
+        "design:moon": {
+          "case_count": 17491,
+          "failure_rate": 0.26470756389000055,
+          "mean_rank_damage": 0.15302155394202732,
+          "top10": 1.0
+        },
+        "design:venus": {
+          "case_count": 17741,
+          "failure_rate": 0.04999718166957894,
+          "mean_rank_damage": 0.02973338594216786,
+          "top10": 1.0
+        },
+        "personality:mercury": {
+          "case_count": 17527,
+          "failure_rate": 0.051805785359730704,
+          "mean_rank_damage": 0.030609916129400352,
+          "top10": 1.0
+        },
+        "personality:moon": {
+          "case_count": 17642,
+          "failure_rate": 0.26691985035710236,
+          "mean_rank_damage": 0.1537240675660356,
+          "top10": 1.0
+        },
+        "personality:venus": {
+          "case_count": 17641,
+          "failure_rate": 0.04778640666628876,
+          "mean_rank_damage": 0.028683181225554105,
+          "top10": 1.0
+        }
+      },
+      "failure_count": 17078,
+      "leading_competitor_difference_counts": {
+        "activation:design:jupiter": 22,
+        "activation:design:mars": 97,
+        "activation:design:neptune": 7,
+        "activation:design:pluto": 3,
+        "activation:design:saturn": 9,
+        "activation:design:south_node": 4,
+        "activation:design:uranus": 6,
+        "activation:personality:jupiter": 28,
+        "activation:personality:mars": 116,
+        "activation:personality:neptune": 10,
+        "activation:personality:pluto": 6,
+        "activation:personality:saturn": 6,
+        "activation:personality:south_node": 8,
+        "activation:personality:uranus": 9,
+        "baseline_observable:0": 87,
+        "baseline_observable:10": 10,
+        "baseline_observable:11": 222,
+        "baseline_observable:12": 298,
+        "baseline_observable:13": 303,
+        "baseline_observable:14": 200,
+        "baseline_observable:15": 317,
+        "baseline_observable:16": 196,
+        "baseline_observable:17": 988,
+        "baseline_observable:18": 909,
+        "baseline_observable:19": 386,
+        "baseline_observable:20": 208,
+        "baseline_observable:21": 161,
+        "baseline_observable:22": 209,
+        "baseline_observable:23": 142,
+        "baseline_observable:25": 75,
+        "baseline_observable:7": 193,
+        "baseline_observable:8": 279,
+        "baseline_observable:9": 70,
+        "channels": 309,
+        "design:mercury": 301,
+        "design:moon": 3313,
+        "design:venus": 268,
+        "personality:mercury": 304,
+        "personality:moon": 3366,
+        "personality:venus": 272,
+        "profile": 2226
+      },
+      "median_overtaking_candidates_on_failure": 0,
+      "outscored_but_not_eliminated_count": 0,
+      "true_candidate_eliminated_count": 2589
+    },
+    "wrong_10pct": {
+      "by_perturbed_feature": {
+        "baseline_observable:0": {
+          "case_count": 35093,
+          "failure_rate": 0.1045792608212464,
+          "mean_rank_damage": 0.07646824152964979,
+          "top10": 1.0
+        },
+        "baseline_observable:1": {
+          "case_count": 35212,
+          "failure_rate": 0.09675678745882085,
+          "mean_rank_damage": 0.06973474951721004,
+          "top10": 1.0
+        },
+        "baseline_observable:10": {
+          "case_count": 35234,
+          "failure_rate": 0.09740591474144293,
+          "mean_rank_damage": 0.06962025316455696,
+          "top10": 1.0
+        },
+        "baseline_observable:11": {
+          "case_count": 35138,
+          "failure_rate": 0.11770732540269793,
+          "mean_rank_damage": 0.08883544880186693,
+          "top10": 1.0
+        },
+        "baseline_observable:12": {
+          "case_count": 34751,
+          "failure_rate": 0.12546401542401658,
+          "mean_rank_damage": 0.09752237345687893,
+          "top10": 0.9999674306298575
+        },
+        "baseline_observable:13": {
+          "case_count": 35237,
+          "failure_rate": 0.12671339784885205,
+          "mean_rank_damage": 0.09657462326531771,
+          "top10": 0.9999971620739564
+        },
+        "baseline_observable:14": {
+          "case_count": 34752,
+          "failure_rate": 0.11484231123388582,
+          "mean_rank_damage": 0.08562097145488029,
+          "top10": 0.9999703090992802
+        },
+        "baseline_observable:15": {
+          "case_count": 35092,
+          "failure_rate": 0.1252422204491052,
+          "mean_rank_damage": 0.09554884304114898,
+          "top10": 0.9999617332399734
+        },
+        "baseline_observable:16": {
+          "case_count": 35066,
+          "failure_rate": 0.11532538641419038,
+          "mean_rank_damage": 0.08887526378828495,
+          "top10": 1.0
+        },
+        "baseline_observable:17": {
+          "case_count": 35008,
+          "failure_rate": 0.14945155393053017,
+          "mean_rank_damage": 0.16923274680073125,
+          "top10": 0.999960570237007
+        },
+        "baseline_observable:18": {
+          "case_count": 35043,
+          "failure_rate": 0.15786319664412293,
+          "mean_rank_damage": 0.18463031133179236,
+          "top10": 0.9998876962086449
+        },
+        "baseline_observable:19": {
+          "case_count": 34838,
+          "failure_rate": 0.1286813249899535,
+          "mean_rank_damage": 0.1429617084792468,
+          "top10": 0.9999167648121375
+        },
+        "baseline_observable:2": {
+          "case_count": 35095,
+          "failure_rate": 0.09813363727026642,
+          "mean_rank_damage": 0.0714774184356746,
+          "top10": 0.9999968339902804
+        },
+        "baseline_observable:20": {
+          "case_count": 35080,
+          "failure_rate": 0.11812998859749145,
+          "mean_rank_damage": 0.09131984036488028,
+          "top10": 0.9999636545039908
+        },
+        "baseline_observable:21": {
+          "case_count": 35324,
+          "failure_rate": 0.10836824821651002,
+          "mean_rank_damage": 0.08189899218661534,
+          "top10": 0.9999830143811573
+        },
+        "baseline_observable:22": {
+          "case_count": 34825,
+          "failure_rate": 0.11603732950466619,
+          "mean_rank_damage": 0.08822684852835606,
+          "top10": 0.9999628429718164
+        },
+        "baseline_observable:23": {
+          "case_count": 35143,
+          "failure_rate": 0.10847110377600092,
+          "mean_rank_damage": 0.08254844492502063,
+          "top10": 0.9999971544831119
+        },
+        "baseline_observable:24": {
+          "case_count": 35172,
+          "failure_rate": 0.09496190151256681,
+          "mean_rank_damage": 0.06842090299101558,
+          "top10": 1.0
+        },
+        "baseline_observable:25": {
+          "case_count": 35006,
+          "failure_rate": 0.10483917042792665,
+          "mean_rank_damage": 0.07888647660401074,
+          "top10": 0.9999742901216934
+        },
+        "baseline_observable:3": {
+          "case_count": 34821,
+          "failure_rate": 0.09640734039803567,
+          "mean_rank_damage": 0.06949829126102065,
+          "top10": 1.0
+        },
+        "baseline_observable:4": {
+          "case_count": 35225,
+          "failure_rate": 0.09172462739531582,
+          "mean_rank_damage": 0.06722498225691981,
+          "top10": 0.9999891605910058
+        },
+        "baseline_observable:5": {
+          "case_count": 34923,
+          "failure_rate": 0.09598259027002262,
+          "mean_rank_damage": 0.06873693554391089,
+          "top10": 0.9999959093679565
+        },
+        "baseline_observable:6": {
+          "case_count": 34921,
+          "failure_rate": 0.09487128089115432,
+          "mean_rank_damage": 0.06801065261590447,
+          "top10": 0.9999928409839351
+        },
+        "baseline_observable:7": {
+          "case_count": 35030,
+          "failure_rate": 0.11387382243791036,
+          "mean_rank_damage": 0.08566942620610905,
+          "top10": 0.9999971453040252
+        },
+        "baseline_observable:8": {
+          "case_count": 34731,
+          "failure_rate": 0.12225389421554231,
+          "mean_rank_damage": 0.0920359333160577,
+          "top10": 0.9999918856876618
+        },
+        "baseline_observable:9": {
+          "case_count": 35211,
+          "failure_rate": 0.10241117832495528,
+          "mean_rank_damage": 0.07666638266450825,
+          "top10": 0.9999971599784159
+        },
+        "channels": {
+          "case_count": 35206,
+          "failure_rate": 0.14278816110890188,
+          "mean_rank_damage": 0.10776572175197409,
+          "top10": 0.9999587815609943
+        },
+        "design:mercury": {
+          "case_count": 34714,
+          "failure_rate": 0.1195771158610359,
+          "mean_rank_damage": 0.08454802097136602,
+          "top10": 0.999994238635709
+        },
+        "design:moon": {
+          "case_count": 34939,
+          "failure_rate": 0.3283150633962048,
+          "mean_rank_damage": 0.2420218094393085,
+          "top10": 0.9999083374623602
+        },
+        "design:venus": {
+          "case_count": 35044,
+          "failure_rate": 0.11431343453943614,
+          "mean_rank_damage": 0.08119792261157402,
+          "top10": 0.9999898087302492
+        },
+        "personality:mercury": {
+          "case_count": 34845,
+          "failure_rate": 0.11686038169034295,
+          "mean_rank_damage": 0.08341225426890515,
+          "top10": 1.0
+        },
+        "personality:moon": {
+          "case_count": 35192,
+          "failure_rate": 0.32873948624687427,
+          "mean_rank_damage": 0.24090702432370995,
+          "top10": 0.99990465363455
+        },
+        "personality:venus": {
+          "case_count": 34841,
+          "failure_rate": 0.11434803823082001,
+          "mean_rank_damage": 0.08198673976062684,
+          "top10": 0.9999928245457937
+        }
+      },
+      "failure_count": 36700,
+      "leading_competitor_difference_counts": {
+        "activation:design:jupiter": 79,
+        "activation:design:mars": 272,
+        "activation:design:neptune": 16,
+        "activation:design:pluto": 18,
+        "activation:design:saturn": 40,
+        "activation:design:south_node": 26,
+        "activation:design:uranus": 22,
+        "activation:personality:jupiter": 79,
+        "activation:personality:mars": 276,
+        "activation:personality:neptune": 19,
+        "activation:personality:pluto": 18,
+        "activation:personality:saturn": 36,
+        "activation:personality:south_node": 23,
+        "activation:personality:uranus": 27,
+        "baseline_observable:0": 265,
+        "baseline_observable:10": 76,
+        "baseline_observable:11": 599,
+        "baseline_observable:12": 742,
+        "baseline_observable:13": 831,
+        "baseline_observable:14": 549,
+        "baseline_observable:15": 807,
+        "baseline_observable:16": 556,
+        "baseline_observable:17": 2251,
+        "baseline_observable:18": 2523,
+        "baseline_observable:19": 1505,
+        "baseline_observable:20": 647,
+        "baseline_observable:21": 408,
+        "baseline_observable:22": 550,
+        "baseline_observable:23": 391,
+        "baseline_observable:25": 293,
+        "baseline_observable:7": 490,
+        "baseline_observable:8": 716,
+        "baseline_observable:9": 269,
+        "channels": 1754,
+        "design:mercury": 698,
+        "design:moon": 8044,
+        "design:venus": 650,
+        "personality:mercury": 753,
+        "personality:moon": 8044,
+        "personality:venus": 661,
+        "profile": 5626
+      },
+      "median_overtaking_candidates_on_failure": 0,
+      "outscored_but_not_eliminated_count": 0,
+      "true_candidate_eliminated_count": 7059
+    },
+    "wrong_20pct": {
+      "by_perturbed_feature": {
+        "baseline_observable:0": {
+          "case_count": 61861,
+          "failure_rate": 0.23869643232408141,
+          "mean_rank_damage": 0.3981183621344627,
+          "top10": 0.9938441579641404
+        },
+        "baseline_observable:1": {
+          "case_count": 61564,
+          "failure_rate": 0.21197453056981352,
+          "mean_rank_damage": 0.22045351179260606,
+          "top10": 0.9992581830891157
+        },
+        "baseline_observable:10": {
+          "case_count": 61017,
+          "failure_rate": 0.22646147794876836,
+          "mean_rank_damage": 0.2804710162741531,
+          "top10": 0.9977460795647863
+        },
+        "baseline_observable:11": {
+          "case_count": 61509,
+          "failure_rate": 0.24928059308393893,
+          "mean_rank_damage": 0.45772976312409563,
+          "top10": 0.9921107691429568
+        },
+        "baseline_observable:12": {
+          "case_count": 61064,
+          "failure_rate": 0.2612996200707454,
+          "mean_rank_damage": 0.47360965544346917,
+          "top10": 0.9921128710920774
+        },
+        "baseline_observable:13": {
+          "case_count": 61739,
+          "failure_rate": 0.254879411717067,
+          "mean_rank_damage": 0.4735985357715545,
+          "top10": 0.9921271030939662
+        },
+        "baseline_observable:14": {
+          "case_count": 61361,
+          "failure_rate": 0.24460161992144847,
+          "mean_rank_damage": 0.39907270090122393,
+          "top10": 0.9938502263689244
+        },
+        "baseline_observable:15": {
+          "case_count": 61215,
+          "failure_rate": 0.2581230090664053,
+          "mean_rank_damage": 0.46833292493669854,
+          "top10": 0.9921529084362295
+        },
+        "baseline_observable:16": {
+          "case_count": 61281,
+          "failure_rate": 0.2531290285732935,
+          "mean_rank_damage": 0.46746136649206116,
+          "top10": 0.9919488580057307
+        },
+        "baseline_observable:17": {
+          "case_count": 61084,
+          "failure_rate": 0.2801388252242813,
+          "mean_rank_damage": 0.4842020823783642,
+          "top10": 0.9948233521445198
+        },
+        "baseline_observable:18": {
+          "case_count": 61718,
+          "failure_rate": 0.3014679672056774,
+          "mean_rank_damage": 0.6661832852652386,
+          "top10": 0.9896097791182888
+        },
+        "baseline_observable:19": {
+          "case_count": 61003,
+          "failure_rate": 0.2811501073717686,
+          "mean_rank_damage": 0.6101093388849729,
+          "top10": 0.9903050548995446
+        },
+        "baseline_observable:2": {
+          "case_count": 61115,
+          "failure_rate": 0.21606806839564754,
+          "mean_rank_damage": 0.22737462161498814,
+          "top10": 0.9991980723725422
+        },
+        "baseline_observable:20": {
+          "case_count": 61320,
+          "failure_rate": 0.25205479452054796,
+          "mean_rank_damage": 0.46731082844096544,
+          "top10": 0.9920670344788833
+        },
+        "baseline_observable:21": {
+          "case_count": 61281,
+          "failure_rate": 0.24539416784974136,
+          "mean_rank_damage": 0.41078800933405135,
+          "top10": 0.9937398585885115
+        },
+        "baseline_observable:22": {
+          "case_count": 61435,
+          "failure_rate": 0.2498250183120371,
+          "mean_rank_damage": 0.413241637503052,
+          "top10": 0.9936337699142209
+        },
+        "baseline_observable:23": {
+          "case_count": 61519,
+          "failure_rate": 0.24174645231554479,
+          "mean_rank_damage": 0.42079682699653764,
+          "top10": 0.9932026575342275
+        },
+        "baseline_observable:24": {
+          "case_count": 61599,
+          "failure_rate": 0.21732495657397036,
+          "mean_rank_damage": 0.23014984009480674,
+          "top10": 0.9991614184155455
+        },
+        "baseline_observable:25": {
+          "case_count": 61179,
+          "failure_rate": 0.24034390885761453,
+          "mean_rank_damage": 0.4099772797855473,
+          "top10": 0.9934025400930918
+        },
+        "baseline_observable:3": {
+          "case_count": 61446,
+          "failure_rate": 0.21482277121374865,
+          "mean_rank_damage": 0.22908732871138887,
+          "top10": 0.9990983819124574
+        },
+        "baseline_observable:4": {
+          "case_count": 61132,
+          "failure_rate": 0.21497742589805666,
+          "mean_rank_damage": 0.22655074265523784,
+          "top10": 0.9992074967910697
+        },
+        "baseline_observable:5": {
+          "case_count": 60836,
+          "failure_rate": 0.21669735025313958,
+          "mean_rank_damage": 0.2316802551121047,
+          "top10": 0.9991449395140386
+        },
+        "baseline_observable:6": {
+          "case_count": 61148,
+          "failure_rate": 0.21686727284620919,
+          "mean_rank_damage": 0.22806142473997515,
+          "top10": 0.9991467105255761
+        },
+        "baseline_observable:7": {
+          "case_count": 61160,
+          "failure_rate": 0.24798888162197516,
+          "mean_rank_damage": 0.404390124264225,
+          "top10": 0.9938784508269835
+        },
+        "baseline_observable:8": {
+          "case_count": 61395,
+          "failure_rate": 0.25438553628145616,
+          "mean_rank_damage": 0.4521459402231452,
+          "top10": 0.9925829460997646
+        },
+        "baseline_observable:9": {
+          "case_count": 61160,
+          "failure_rate": 0.23891432308698496,
+          "mean_rank_damage": 0.4120667102681491,
+          "top10": 0.993453677649137
+        },
+        "channels": {
+          "case_count": 60837,
+          "failure_rate": 0.3086115357430511,
+          "mean_rank_damage": 0.553396781563851,
+          "top10": 0.9908972251446833
+        },
+        "design:mercury": {
+          "case_count": 61477,
+          "failure_rate": 0.24864583502773394,
+          "mean_rank_damage": 0.4390503765635929,
+          "top10": 0.9926203988296785
+        },
+        "design:moon": {
+          "case_count": 61383,
+          "failure_rate": 0.44455305214798885,
+          "mean_rank_damage": 0.7081928221168727,
+          "top10": 0.989968143235642
+        },
+        "design:venus": {
+          "case_count": 61369,
+          "failure_rate": 0.24378758004855872,
+          "mean_rank_damage": 0.41219508220762924,
+          "top10": 0.9932150538013982
+        },
+        "personality:mercury": {
+          "case_count": 61036,
+          "failure_rate": 0.24963955698276427,
+          "mean_rank_damage": 0.43081951635100596,
+          "top10": 0.9926769233116303
+        },
+        "personality:moon": {
+          "case_count": 61443,
+          "failure_rate": 0.4499292026756506,
+          "mean_rank_damage": 0.7002994645443744,
+          "top10": 0.990477389959358
+        },
+        "personality:venus": {
+          "case_count": 60880,
+          "failure_rate": 0.2468462549277267,
+          "mean_rank_damage": 0.41507884362680686,
+          "top10": 0.9930533516455674
+        }
+      },
+      "failure_count": 74609,
+      "leading_competitor_difference_counts": {
+        "activation:design:jupiter": 4141,
+        "activation:design:mars": 4556,
+        "activation:design:neptune": 3923,
+        "activation:design:pluto": 3890,
+        "activation:design:saturn": 3998,
+        "activation:design:south_node": 3987,
+        "activation:design:uranus": 3952,
+        "activation:personality:jupiter": 4099,
+        "activation:personality:mars": 4627,
+        "activation:personality:neptune": 3908,
+        "activation:personality:pluto": 3897,
+        "activation:personality:saturn": 4011,
+        "activation:personality:south_node": 3986,
+        "activation:personality:uranus": 3966,
+        "baseline_observable:0": 1857,
+        "baseline_observable:10": 689,
+        "baseline_observable:11": 3087,
+        "baseline_observable:12": 3225,
+        "baseline_observable:13": 3333,
+        "baseline_observable:14": 2393,
+        "baseline_observable:15": 3362,
+        "baseline_observable:16": 3032,
+        "baseline_observable:17": 5667,
+        "baseline_observable:18": 7841,
+        "baseline_observable:19": 6085,
+        "baseline_observable:20": 3076,
+        "baseline_observable:21": 2197,
+        "baseline_observable:22": 2382,
+        "baseline_observable:23": 2390,
+        "baseline_observable:25": 2098,
+        "baseline_observable:7": 2259,
+        "baseline_observable:8": 2983,
+        "baseline_observable:9": 2038,
+        "channels": 11031,
+        "design:mercury": 4505,
+        "design:moon": 20770,
+        "design:venus": 4029,
+        "personality:mercury": 4602,
+        "personality:moon": 20943,
+        "personality:venus": 4036,
+        "profile": 16872
+      },
+      "median_overtaking_candidates_on_failure": 0,
+      "outscored_but_not_eliminated_count": 0,
+      "true_candidate_eliminated_count": 21927
+    }
+  },
+  "feature_ids": [
+    "baseline_observable:0",
+    "baseline_observable:1",
+    "baseline_observable:2",
+    "baseline_observable:3",
+    "baseline_observable:4",
+    "baseline_observable:5",
+    "baseline_observable:6",
+    "baseline_observable:7",
+    "baseline_observable:8",
+    "baseline_observable:9",
+    "baseline_observable:10",
+    "baseline_observable:11",
+    "baseline_observable:12",
+    "baseline_observable:13",
+    "baseline_observable:14",
+    "baseline_observable:15",
+    "baseline_observable:16",
+    "baseline_observable:17",
+    "baseline_observable:18",
+    "baseline_observable:19",
+    "baseline_observable:20",
+    "baseline_observable:21",
+    "baseline_observable:22",
+    "baseline_observable:23",
+    "baseline_observable:24",
+    "baseline_observable:25",
+    "personality:moon",
+    "design:moon",
+    "personality:mercury",
+    "design:mercury",
+    "personality:venus",
+    "design:venus",
+    "channels",
+    "profile",
+    "activation:personality:mars",
+    "activation:design:mars",
+    "activation:design:jupiter",
+    "activation:personality:jupiter",
+    "activation:design:saturn",
+    "activation:personality:saturn",
+    "activation:design:uranus",
+    "activation:personality:uranus",
+    "activation:personality:south_node",
+    "activation:design:south_node",
+    "activation:design:pluto",
+    "activation:personality:neptune",
+    "activation:design:neptune",
+    "activation:personality:pluto"
+  ],
+  "git_commit_sha": "dd37aa4296ac9708029443dcb4cd1544d57ffe86",
+  "optimized_scorer": "python-int-inverted-bitsets-bit-sliced-exact-v1",
+  "overlay_sha256": "03d25392f9639fb985f806d4814743bbb1cf466bc803c42b6bf6ca8588337735",
+  "peak_memory_mib": 3437.71484375,
+  "post_reveal_excluded_from_headline_science": true,
+  "reference_equivalence_status": "required_by_test_suite",
+  "report_content_sha256": "2f5385fb3764cfabe8d3e628bb8294ee3e9bb219719de3950cc1e55e79e918ce",
+  "run_identity_sha256": "9b85f3838bf49224d1cd5ae7c7e5dff87c124cbc5db60e30b6774e6d745f5afe",
+  "runtime_seconds": 32945.108816200984,
+  "scenario_definitions": [
+    {
+      "fraction": 0.0,
+      "minimum_perturbed_answers": 0,
+      "perturbation": "wrong",
+      "scenario_id": "perfect_answers",
+      "seed": 20260827
+    },
+    {
+      "fraction": 0.0,
+      "minimum_perturbed_answers": 1,
+      "perturbation": "wrong",
+      "scenario_id": "one_wrong_classification",
+      "seed": 20260827
+    },
+    {
+      "fraction": 0.05,
+      "minimum_perturbed_answers": 0,
+      "perturbation": "wrong",
+      "scenario_id": "wrong_05pct",
+      "seed": 20260827
+    },
+    {
+      "fraction": 0.1,
+      "minimum_perturbed_answers": 0,
+      "perturbation": "wrong",
+      "scenario_id": "wrong_10pct",
+      "seed": 20260827
+    },
+    {
+      "fraction": 0.2,
+      "minimum_perturbed_answers": 0,
+      "perturbation": "wrong",
+      "scenario_id": "wrong_20pct",
+      "seed": 20260827
+    },
+    {
+      "fraction": 0.05,
+      "minimum_perturbed_answers": 0,
+      "perturbation": "ambiguous",
+      "scenario_id": "ambiguous_05pct",
+      "seed": 20260827
+    },
+    {
+      "fraction": 0.1,
+      "minimum_perturbed_answers": 0,
+      "perturbation": "ambiguous",
+      "scenario_id": "ambiguous_10pct",
+      "seed": 20260827
+    },
+    {
+      "fraction": 0.2,
+      "minimum_perturbed_answers": 0,
+      "perturbation": "ambiguous",
+      "scenario_id": "ambiguous_20pct",
+      "seed": 20260827
+    },
+    {
+      "fraction": 0.1,
+      "minimum_perturbed_answers": 0,
+      "perturbation": "other",
+      "scenario_id": "other_10pct",
+      "seed": 20260827
+    },
+    {
+      "fraction": 0.1,
+      "minimum_perturbed_answers": 0,
+      "perturbation": "uncertain",
+      "scenario_id": "uncertain_10pct",
+      "seed": 20260827
+    },
+    {
+      "fraction": 0.1,
+      "minimum_perturbed_answers": 0,
+      "perturbation": "mixed",
+      "scenario_id": "mixed_10pct",
+      "seed": 20260827
+    },
+    {
+      "fraction": 0.1,
+      "minimum_perturbed_answers": 0,
+      "perturbation": "counterevidence",
+      "scenario_id": "counterevidence_10pct",
+      "seed": 20260827
+    }
+  ],
+  "scenario_summaries": [
+    {
+      "case_count": 288938,
+      "extra_tie_breakers_p90": 1.0,
+      "maximum_extra_tie_breakers": 2,
+      "mean_percentile": 1.0,
+      "mean_rank": 1.0,
+      "median_candidate_survival": 1.0,
+      "median_extra_tie_breakers": 0.0,
+      "median_percentile": 1.0,
+      "median_rank": 1.0,
+      "rank_p90": 1.0,
+      "rank_p95": 1.0,
+      "rank_p99": 1.0,
+      "runtime_seconds": 1889.7968953220407,
+      "scenario_id": "perfect_answers",
+      "stopping_criterion_rate": 1.0,
+      "tie_frequency": 0.0,
+      "top1": 1.0,
+      "top10": 1.0,
+      "top5": 1.0,
+      "true_candidate_elimination_rate": 0.0,
+      "true_candidate_survival_rate": 1.0,
+      "true_score_tie_size_p50": 1.0,
+      "true_score_tie_size_p90": 1.0,
+      "unique_observed_signature_count": 251939
+    },
+    {
+      "case_count": 288938,
+      "extra_tie_breakers_p90": 1.0,
+      "maximum_extra_tie_breakers": 15,
+      "mean_percentile": 0.9999999369945785,
+      "mean_rank": 1.018204597526113,
+      "median_candidate_survival": 1.0,
+      "median_extra_tie_breakers": 0.0,
+      "median_percentile": 1.0,
+      "median_rank": 1.0,
+      "rank_p90": 1.0,
+      "rank_p95": 1.0,
+      "rank_p99": 1.5,
+      "runtime_seconds": 3404.330932775978,
+      "scenario_id": "one_wrong_classification",
+      "stopping_criterion_rate": 0.9751849877828461,
+      "tie_frequency": 0.027047325031667693,
+      "top1": 0.9834445451965473,
+      "top10": 1.0,
+      "top5": 1.0,
+      "true_candidate_elimination_rate": 0.004045850666925084,
+      "true_candidate_survival_rate": 0.9959541493330749,
+      "true_score_tie_size_p50": 1.0,
+      "true_score_tie_size_p90": 1.0,
+      "unique_observed_signature_count": 287996
+    },
+    {
+      "case_count": 288938,
+      "extra_tie_breakers_p90": 1.0,
+      "maximum_extra_tie_breakers": 15,
+      "mean_percentile": 0.9999998639514107,
+      "mean_rank": 1.0393094712360438,
+      "median_candidate_survival": 1.0,
+      "median_extra_tie_breakers": 0.0,
+      "median_percentile": 1.0,
+      "median_rank": 1.0,
+      "rank_p90": 1.0,
+      "rank_p95": 1.5,
+      "rank_p99": 2.0,
+      "runtime_seconds": 4911.395158593077,
+      "scenario_id": "wrong_05pct",
+      "stopping_criterion_rate": 0.9497885359488887,
+      "tie_frequency": 0.055465186302943885,
+      "top1": 0.9655507409894164,
+      "top10": 1.0,
+      "top5": 0.99996554706579,
+      "true_candidate_elimination_rate": 0.008960399808955554,
+      "true_candidate_survival_rate": 0.9910396001910444,
+      "true_score_tie_size_p50": 1.0,
+      "true_score_tie_size_p90": 1.0,
+      "unique_observed_signature_count": 288885
+    },
+    {
+      "case_count": 288938,
+      "extra_tie_breakers_p90": 15.0,
+      "maximum_extra_tie_breakers": 15,
+      "mean_percentile": 0.9999996562131924,
+      "mean_rank": 1.0993327288207158,
+      "median_candidate_survival": 1.0,
+      "median_extra_tie_breakers": 0.0,
+      "median_percentile": 1.0,
+      "median_rank": 1.0,
+      "rank_p90": 1.5,
+      "rank_p95": 1.5,
+      "rank_p99": 2.5,
+      "runtime_seconds": 5885.075695962063,
+      "scenario_id": "wrong_10pct",
+      "stopping_criterion_rate": 0.8967390928157598,
+      "tie_frequency": 0.11924011379603928,
+      "top1": 0.9224004226973722,
+      "top10": 0.9999773524389964,
+      "top5": 0.9994170379147432,
+      "true_candidate_elimination_rate": 0.02443084675605147,
+      "true_candidate_survival_rate": 0.9755691532439486,
+      "true_score_tie_size_p50": 1.0,
+      "true_score_tie_size_p90": 2.0,
+      "unique_observed_signature_count": 288937
+    },
+    {
+      "case_count": 288938,
+      "extra_tie_breakers_p90": 15.0,
+      "maximum_extra_tie_breakers": 15,
+      "mean_percentile": 0.9999985501566082,
+      "mean_rank": 1.4189134001065973,
+      "median_candidate_survival": 1.0,
+      "median_extra_tie_breakers": 1.0,
+      "median_percentile": 1.0,
+      "median_rank": 1.0,
+      "rank_p90": 2.0,
+      "rank_p95": 3.0,
+      "rank_p99": 7.5,
+      "runtime_seconds": 10777.689808052033,
+      "scenario_id": "wrong_20pct",
+      "stopping_criterion_rate": 0.8132678983034423,
+      "tie_frequency": 0.24824356782423912,
+      "top1": 0.825819371991782,
+      "top10": 0.9940504405938596,
+      "top5": 0.9826383337447293,
+      "true_candidate_elimination_rate": 0.07588825284317051,
+      "true_candidate_survival_rate": 0.9241117471568295,
+      "true_score_tie_size_p50": 1.0,
+      "true_score_tie_size_p90": 2.0,
+      "unique_observed_signature_count": 288938
+    },
+    {
+      "case_count": 288938,
+      "extra_tie_breakers_p90": 1.0,
+      "maximum_extra_tie_breakers": 15,
+      "mean_percentile": 0.9999999392704396,
+      "mean_rank": 1.0175470170071088,
+      "median_candidate_survival": 1.0,
+      "median_extra_tie_breakers": 0.0,
+      "median_percentile": 1.0,
+      "median_rank": 1.0,
+      "rank_p90": 1.0,
+      "rank_p95": 1.0,
+      "rank_p99": 1.5,
+      "runtime_seconds": 1767.37006070395,
+      "scenario_id": "ambiguous_05pct",
+      "stopping_criterion_rate": 0.9657954301614879,
+      "tie_frequency": 0.03420456983851207,
+      "top1": 0.9827607191392849,
+      "top10": 1.0,
+      "top5": 0.9999994231749832,
+      "true_candidate_elimination_rate": 0.0,
+      "true_candidate_survival_rate": 1.0,
+      "true_score_tie_size_p50": 1.0,
+      "true_score_tie_size_p90": 1.0,
+      "unique_observed_signature_count": 288853
+    },
+    {
+      "case_count": 288938,
+      "extra_tie_breakers_p90": 1.0,
+      "maximum_extra_tie_breakers": 15,
+      "mean_percentile": 0.9999998669759105,
+      "mean_rank": 1.0384355813357884,
+      "median_candidate_survival": 1.0,
+      "median_extra_tie_breakers": 0.0,
+      "median_percentile": 1.0,
+      "median_rank": 1.0,
+      "rank_p90": 1.0,
+      "rank_p95": 1.5,
+      "rank_p99": 1.5,
+      "runtime_seconds": 4045.208980250987,
+      "scenario_id": "ambiguous_10pct",
+      "stopping_criterion_rate": 0.9276176896081513,
+      "tie_frequency": 0.07238231039184877,
+      "top1": 0.9631576093602549,
+      "top10": 1.0,
+      "top5": 0.99999480857485,
+      "true_candidate_elimination_rate": 0.0,
+      "true_candidate_survival_rate": 1.0,
+      "true_score_tie_size_p50": 1.0,
+      "true_score_tie_size_p90": 1.0,
+      "unique_observed_signature_count": 288938
+    },
+    {
+      "case_count": 288938,
+      "extra_tie_breakers_p90": 15.0,
+      "maximum_extra_tie_breakers": 15,
+      "mean_percentile": 0.9999997309512777,
+      "mean_rank": 1.077738130671632,
+      "median_candidate_survival": 1.0,
+      "median_extra_tie_breakers": 0.0,
+      "median_percentile": 1.0,
+      "median_rank": 1.0,
+      "rank_p90": 1.5,
+      "rank_p95": 1.5,
+      "rank_p99": 2.0,
+      "runtime_seconds": 4720.747693558107,
+      "scenario_id": "ambiguous_20pct",
+      "stopping_criterion_rate": 0.8622334203185459,
+      "tie_frequency": 0.13776657968145414,
+      "top1": 0.9286507832130076,
+      "top10": 1.0,
+      "top5": 0.9999728892242166,
+      "true_candidate_elimination_rate": 0.0,
+      "true_candidate_survival_rate": 1.0,
+      "true_score_tie_size_p50": 1.0,
+      "true_score_tie_size_p90": 2.0,
+      "unique_observed_signature_count": 288938
+    },
+    {
+      "case_count": 288938,
+      "extra_tie_breakers_p90": 1.0,
+      "maximum_extra_tie_breakers": 15,
+      "mean_percentile": 0.9999998654067642,
+      "mean_rank": 1.0388889657988911,
+      "median_candidate_survival": 1.0,
+      "median_extra_tie_breakers": 0.0,
+      "median_percentile": 1.0,
+      "median_rank": 1.0,
+      "rank_p90": 1.0,
+      "rank_p95": 1.5,
+      "rank_p99": 1.5,
+      "runtime_seconds": 2104.0442510719877,
+      "scenario_id": "other_10pct",
+      "stopping_criterion_rate": 0.9267039987817456,
+      "tie_frequency": 0.07329600121825444,
+      "top1": 0.9626912216132049,
+      "top10": 1.0,
+      "top5": 0.9999984343320977,
+      "true_candidate_elimination_rate": 0.0,
+      "true_candidate_survival_rate": 1.0,
+      "true_score_tie_size_p50": 1.0,
+      "true_score_tie_size_p90": 1.0,
+      "unique_observed_signature_count": 288936
+    },
+    {
+      "case_count": 288938,
+      "extra_tie_breakers_p90": 1.0,
+      "maximum_extra_tie_breakers": 15,
+      "mean_percentile": 0.999999868485166,
+      "mean_rank": 1.0379995016231855,
+      "median_candidate_survival": 1.0,
+      "median_extra_tie_breakers": 0.0,
+      "median_percentile": 1.0,
+      "median_rank": 1.0,
+      "rank_p90": 1.0,
+      "rank_p95": 1.5,
+      "rank_p99": 1.5,
+      "runtime_seconds": 2916.9696689349366,
+      "scenario_id": "uncertain_10pct",
+      "stopping_criterion_rate": 0.9286040603866573,
+      "tie_frequency": 0.07139593961334266,
+      "top1": 0.9636333169515028,
+      "top10": 1.0,
+      "top5": 0.9999959622248833,
+      "true_candidate_elimination_rate": 0.0,
+      "true_candidate_survival_rate": 1.0,
+      "true_score_tie_size_p50": 1.0,
+      "true_score_tie_size_p90": 1.0,
+      "unique_observed_signature_count": 288937
+    },
+    {
+      "case_count": 288938,
+      "extra_tie_breakers_p90": 1.0,
+      "maximum_extra_tie_breakers": 15,
+      "mean_percentile": 0.9999999981972783,
+      "mean_rank": 1.0005208729900532,
+      "median_candidate_survival": 1.0,
+      "median_extra_tie_breakers": 0.0,
+      "median_percentile": 1.0,
+      "median_rank": 1.0,
+      "rank_p90": 1.0,
+      "rank_p95": 1.0,
+      "rank_p99": 1.0,
+      "runtime_seconds": 4637.890166759025,
+      "scenario_id": "mixed_10pct",
+      "stopping_criterion_rate": 0.9989582540198936,
+      "tie_frequency": 0.0010417459801064588,
+      "top1": 0.9994791270099468,
+      "top10": 1.0,
+      "top5": 1.0,
+      "true_candidate_elimination_rate": 0.0,
+      "true_candidate_survival_rate": 1.0,
+      "true_score_tie_size_p50": 1.0,
+      "true_score_tie_size_p90": 1.0,
+      "unique_observed_signature_count": 288938
+    },
+    {
+      "case_count": 288938,
+      "extra_tie_breakers_p90": 15.0,
+      "maximum_extra_tie_breakers": 15,
+      "mean_percentile": 0.9999996519070233,
+      "mean_rank": 1.1005769403816736,
+      "median_candidate_survival": 1.0,
+      "median_extra_tie_breakers": 0.0,
+      "median_percentile": 1.0,
+      "median_rank": 1.0,
+      "rank_p90": 1.5,
+      "rank_p95": 1.5,
+      "rank_p99": 2.5,
+      "runtime_seconds": 6370.403615463991,
+      "scenario_id": "counterevidence_10pct",
+      "stopping_criterion_rate": 0.896119582747856,
+      "tie_frequency": 0.12029916452664585,
+      "top1": 0.9217119614390827,
+      "top10": 0.99997760505205,
+      "top5": 0.999365440571253,
+      "true_candidate_elimination_rate": 0.024790785566453703,
+      "true_candidate_survival_rate": 0.9752092144335462,
+      "true_score_tie_size_p50": 1.0,
+      "true_score_tie_size_p90": 2.0,
+      "unique_observed_signature_count": 288938
+    }
+  ],
+  "schema_version": "survey-v2-century-noise-audit-v1",
+  "target_blind_stopping": true
+}
