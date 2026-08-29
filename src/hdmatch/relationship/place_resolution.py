@@ -104,7 +104,5 @@ def timezone_for_coordinates(latitude: float, longitude: float) -> str:
     finder = module.TimezoneFinder(in_memory=True)
     timezone = finder.timezone_at(lat=latitude, lng=longitude)
     if not isinstance(timezone, str) or not timezone:
-        timezone = finder.closest_timezone_at(lat=latitude, lng=longitude)
-    if not isinstance(timezone, str) or not timezone:
         raise RuntimeError("could not resolve an IANA timezone for this birthplace")
     return timezone
