@@ -4,8 +4,14 @@ WORKDIR /app
 
 COPY . /app
 
-RUN python -m pip install --upgrade pip && \
-    python -m pip install --no-cache-dir '.[api,ephemeris]'
+# pyswisseph does not currently publish a compatible wheel for this image, so build
+# its extension from source, then remove the compiler toolchain from the runtime image.
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends build-essential && \
+    python -m pip install --upgrade pip && \
+    python -m pip install --no-cache-dir '.[api,ephemeris]' && \
+    apt-get purge -y --auto-remove build-essential && \
+    rm -rf /var/lib/apt/lists/* /root/.cache/pip
 
 ARG SWISSEPH_COMMIT=3fd0f956d73898b91cc4f67cf18b21af656d1342
 RUN mkdir -p /opt/swisseph && python - <<'PY'
