@@ -1,20 +1,29 @@
 """Participant-confirmed birthplace search with offline timezone resolution.
 
-Only the birthplace query is sent to OpenStreetMap Nominatim. Birth date/time, email,
+Only the birthplace query is sent to the configured geocoder. Birth date/time, email,
 relationship responses, and hidden predictions never leave the application in this step.
+The default public Nominatim backend is cached and globally rate-limited to comply with
+its public-service usage policy.
 """
 
 from __future__ import annotations
 
 import importlib
 import json
+import os
+import threading
+import time
 from dataclasses import dataclass
+from functools import lru_cache
 from typing import Any, cast
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
-NOMINATIM_SEARCH = "https://nominatim.openstreetmap.org/search"
-USER_AGENT = "RelationshipPatternLab/0.1 (+https://u-dont-exist.com/)"
+DEFAULT_NOMINATIM_SEARCH = "https://nominatim.openstreetmap.org/search"
+DEFAULT_USER_AGENT = "RelationshipPatternLab/0.1 (+https://u-dont-exist.com/)"
+_RATE_LOCK = threading.Lock()
+_LAST_UPSTREAM_REQUEST = 0.0
+_MIN_REQUEST_INTERVAL_SECONDS = 1.05
 
 
 @dataclass(frozen=True, slots=True)
@@ -49,6 +58,22 @@ def search_birthplaces(query: str, *, limit: int = 5) -> tuple[PlaceCandidate, .
         raise ValueError("birthplace query must be between 2 and 200 characters")
     if limit < 1 or limit > 8:
         raise ValueError("birthplace result limit must be between 1 and 8")
+    endpoint = os.environ.get("HDMATCH_GEOCODER_URL", DEFAULT_NOMINATIM_SEARCH).strip()
+    user_agent = os.environ.get("HDMATCH_GEOCODER_USER_AGENT", DEFAULT_USER_AGENT).strip()
+    if not endpoint.startswith("https://"):
+        raise RuntimeError("birthplace geocoder must use HTTPS")
+    if not user_agent:
+        raise RuntimeError("birthplace geocoder User-Agent must be configured")
+    return _search_birthplaces_cached(normalized, limit, endpoint, user_agent)
+
+
+@lru_cache(maxsize=512)
+def _search_birthplaces_cached(
+    normalized: str,
+    limit: int,
+    endpoint: str,
+    user_agent: str,
+) -> tuple[PlaceCandidate, ...]:
     params = urlencode(
         {
             "q": normalized,
@@ -58,13 +83,20 @@ def search_birthplaces(query: str, *, limit: int = 5) -> tuple[PlaceCandidate, .
         }
     )
     request = Request(
-        f"{NOMINATIM_SEARCH}?{params}",
-        headers={"User-Agent": USER_AGENT, "Accept": "application/json"},
+        f"{endpoint}?{params}",
+        headers={"User-Agent": user_agent, "Accept": "application/json"},
     )
-    with urlopen(request, timeout=12) as response:  # noqa: S310 - fixed HTTPS endpoint
-        raw: Any = json.loads(response.read().decode())
+    global _LAST_UPSTREAM_REQUEST
+    with _RATE_LOCK:
+        now = time.monotonic()
+        wait_seconds = _MIN_REQUEST_INTERVAL_SECONDS - (now - _LAST_UPSTREAM_REQUEST)
+        if wait_seconds > 0:
+            time.sleep(wait_seconds)
+        with urlopen(request, timeout=12) as response:  # noqa: S310 - configured HTTPS endpoint
+            raw: Any = json.loads(response.read().decode())
+        _LAST_UPSTREAM_REQUEST = time.monotonic()
     if not isinstance(raw, list):
-        raise RuntimeError("Nominatim returned an unexpected response")
+        raise RuntimeError("birthplace geocoder returned an unexpected response")
     results: list[PlaceCandidate] = []
     for row_any in raw:
         if not isinstance(row_any, dict):
