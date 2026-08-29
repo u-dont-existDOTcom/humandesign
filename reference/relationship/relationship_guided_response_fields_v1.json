@@ -1,0 +1,187 @@
+{
+  "schema_version": "relationship-guided-response-fields-v1",
+  "purpose": "Render each broad relationship domain as several narrow human-answerable fields instead of one textarea for many distinct questions. Field-level uncertainty is explicit and may trigger clarification text without exposing chart predictions.",
+  "status_options": ["clear", "mixed", "context_dependent", "unknown", "not_applicable"],
+  "questions": {
+    "RRQ_TRAJECTORY_CONTEXT": {
+      "title": "Relationship timeline & context",
+      "intro": "Start with what actually happened. Exact dates are not required if you only remember approximate periods.",
+      "fields": [
+        {
+          "id": "timeline_exposure",
+          "label": "What was the basic timeline? When did it become romantic, roughly how long did that phase last, and what is the relationship now?",
+          "placeholder": "Example: friends for a year, romantic for about three years, separated in 2019...",
+          "clarification_prompt": "Describe the different phases separately so we do not average them together."
+        },
+        {
+          "id": "distance_cohabitation",
+          "label": "How much were you actually together physically? Include cohabitation and important long-distance or separation periods.",
+          "placeholder": "Mention what changed when together versus apart, if anything.",
+          "clarification_prompt": "Which parts apply when together, and which apply when apart?"
+        },
+        {
+          "id": "transitions_constraints",
+          "label": "What major transitions or constraints mattered?",
+          "placeholder": "Breakups/reunions, marriage, other relationships, religion, family, health, money, immigration, language, sexual opportunity, etc. Only include what materially mattered.",
+          "clarification_prompt": "Separate the constraints or transitions and say which relationship phase each affected."
+        }
+      ]
+    },
+    "RRQ_LOVE_EROS_DIRECTION": {
+      "title": "Love, attraction & being in love",
+      "intro": "Keep the two directions separate. Loving someone and being romantically in love with them are not treated as the same thing.",
+      "fields": [
+        {
+          "id": "a_to_b_attraction_eros",
+          "label": "You toward them: how physically attracted were you, and were you romantically in love with them?",
+          "placeholder": "Distinguish attraction from the feeling of being in love.",
+          "clarification_prompt": "If attraction and being in love differed, describe each separately and when."
+        },
+        {
+          "id": "a_to_b_love_commitment",
+          "label": "You toward them: how much did you love/care about them, and how much did you want a lasting partnership or marriage?",
+          "placeholder": "Love/care can be high even when romantic Eros or long-term fit is not.",
+          "clarification_prompt": "Separate affection/attachment from wanting a durable partnership."
+        },
+        {
+          "id": "b_to_a_attraction_eros",
+          "label": "Them toward you, as best you could tell: how physically attracted were they, and were they romantically in love with you?",
+          "placeholder": "Say what you know directly and what is only your inference.",
+          "clarification_prompt": "Separate observed evidence from what you are inferring, and separate attraction from being in love."
+        },
+        {
+          "id": "b_to_a_love_commitment",
+          "label": "Them toward you, as best you could tell: how much did they love/care about you, and how much did they want a lasting partnership or marriage?",
+          "placeholder": "Include direct statements or behavior if useful.",
+          "clarification_prompt": "Separate love/care from commitment or marriage intent."
+        },
+        {
+          "id": "love_change_over_time",
+          "label": "How did any of those feelings change over time, distance, reciprocity, or major relationship events?",
+          "placeholder": "Only describe changes that were meaningful.",
+          "clarification_prompt": "Name the phase or condition for each different state."
+        }
+      ]
+    },
+    "RRQ_SEXUAL_SYSTEM": {
+      "title": "Sexual system",
+      "intro": "Separate general libido, desire for this specific partner, initiation, and how satisfying the actual sexual interaction was.",
+      "fields": [
+        {
+          "id": "a_sexual_desire_libido",
+          "label": "You: what was your general libido like, how much did you specifically want this partner sexually, and how much did you initiate?",
+          "placeholder": "If general libido and desire for this person differed, say so.",
+          "clarification_prompt": "Separate general libido, partner-specific desire, and actual initiation."
+        },
+        {
+          "id": "b_sexual_desire_libido",
+          "label": "Them, as best you could tell: what was their general libido like, how much did they specifically want you, and how much did they initiate?",
+          "placeholder": "Do not infer libido from low opportunity or prohibition alone.",
+          "clarification_prompt": "Separate what you know about libido/desire from behavior that may have been constrained."
+        },
+        {
+          "id": "sexual_experience_satisfaction",
+          "label": "When sexual contact happened, how satisfying was it for each of you, and how good was the chemistry as a pair?",
+          "placeholder": "It is fine if attraction was high but sex was poor, or vice versa.",
+          "clarification_prompt": "Describe your satisfaction and their satisfaction separately if they differed."
+        },
+        {
+          "id": "sexual_change_constraints",
+          "label": "Did desire change with familiarity, time apart, reunion, novelty, or other constraints?",
+          "placeholder": "Mention religion, virginity, health, distance, opportunity, relationship rules, or other factors if relevant.",
+          "clarification_prompt": "Describe the different conditions separately: what changed, for whom, and under what circumstance?"
+        }
+      ]
+    },
+    "RRQ_MIND_COMMUNICATION": {
+      "title": "Mind & communication",
+      "intro": "Reasoning well together is different from being mentally surprised or expanded by somebody.",
+      "fields": [
+        {
+          "id": "reasoning_comprehension",
+          "label": "How well could you reason together and understand difficult ideas together?",
+          "placeholder": "Think about productive disagreement, mutual comprehension, and actually applying ideas—not education level or talkativeness.",
+          "clarification_prompt": "Separate reasoning compatibility from one person's general intellectual ability if those differ."
+        },
+        {
+          "id": "intellectual_stimulation",
+          "label": "How much did this person surprise you, expand your thinking, or make you see things in genuinely new ways?",
+          "placeholder": "This can be low even when reasoning compatibility is excellent.",
+          "clarification_prompt": "What was easy/familiar versus genuinely new or mind-expanding?"
+        },
+        {
+          "id": "communication_commonality",
+          "label": "What were communication quality, communication amount, and shared interests like?",
+          "placeholder": "Good communication with little to talk about is a valid answer.",
+          "clarification_prompt": "Separate quality of communication, how much you talked, and how much common material you shared."
+        },
+        {
+          "id": "knowledge_spiritual_stimulation",
+          "label": "Did they contribute useful knowledge you lacked or stimulate you spiritually/mystically?",
+          "placeholder": "Useful knowledge, shared spirituality, mystical salience, and intellectual stimulation are separate things.",
+          "clarification_prompt": "Separate useful knowledge, spiritual/mystical resonance, and broader intellectual stimulation."
+        }
+      ]
+    },
+    "RRQ_EMOTIONAL_AUTONOMY": {
+      "title": "Emotional climate & autonomy",
+      "intro": "We separate intimacy, drama, serious conflict, repair, autonomy, and jealousy instead of calling the relationship simply easy or difficult.",
+      "fields": [
+        {
+          "id": "intimacy_readability",
+          "label": "How safe was confiding, how psychologically known did you feel, and how readable were you to each other?",
+          "placeholder": "Someone can be caring but hard to read, or easy to read but unsafe to confide in.",
+          "clarification_prompt": "Separate confiding/safety from how easy each person was to read."
+        },
+        {
+          "id": "drama_conflict",
+          "label": "How much playful/theatrical drama was there versus genuinely serious conflict, hostility, contempt, coercion, or aggression?",
+          "placeholder": "Do not count expressive drama as serious conflict unless it actually was hostile/harmful.",
+          "clarification_prompt": "Describe theatrical/playful episodes separately from serious hostile or harmful conflict."
+        },
+        {
+          "id": "repair_internal_ease",
+          "label": "After conflict, how hard was repair, and how emotionally easy or settled did the relationship feel internally?",
+          "placeholder": "Low visible conflict does not necessarily mean internal ease.",
+          "clarification_prompt": "Separate how quickly you repaired from how easy the relationship felt internally."
+        },
+        {
+          "id": "autonomy_engulfment",
+          "label": "How much freedom and personal space did each person have, and was there pressure to merge, reassure, attend, or organize life around the relationship?",
+          "placeholder": "Mention if this changed with cohabitation or greater attachment.",
+          "clarification_prompt": "Describe each person's autonomy separately and identify when pressure increased or decreased."
+        },
+        {
+          "id": "jealousy_proximity",
+          "label": "What happened around sexual jealousy, romantic-priority jealousy, closeness, distance, and other partners?",
+          "placeholder": "Jealousy about sex can differ from jealousy about love or attention.",
+          "clarification_prompt": "Separate sexual jealousy from jealousy about love/priority, and name any closeness/distance condition that changed it."
+        }
+      ]
+    },
+    "RRQ_PRACTICAL_FUTURE": {
+      "title": "Practical future fit",
+      "intro": "A relationship can contain strong love and commitment while still having poor practical fit.",
+      "fields": [
+        {
+          "id": "future_structure_commitment",
+          "label": "What kind of long-term relationship did each of you actually want?",
+          "placeholder": "Marriage/commitment, monogamy or openness, children/family, community/private life, etc.",
+          "clarification_prompt": "Separate what you wanted from what they wanted."
+        },
+        {
+          "id": "life_domain_fit",
+          "label": "How well did your real-life plans fit on money, work, geography, religion, domestic expectations, lifestyle, family, and community?",
+          "placeholder": "Only cover domains that materially mattered.",
+          "clarification_prompt": "Name which life domains fit and which did not rather than averaging them."
+        },
+        {
+          "id": "continuation_breakup_factors",
+          "label": "Which practical strengths or mismatches actually affected whether the relationship could continue?",
+          "placeholder": "Separate these from love, attraction, or sexual chemistry where possible.",
+          "clarification_prompt": "If several factors mattered, say which were decisive and which were secondary."
+        }
+      ]
+    }
+  }
+}
