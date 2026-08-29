@@ -148,8 +148,8 @@ def _response_output_text(envelope: Mapping[str, Any]) -> str:
 
 def create_relationship_openai_app_from_env() -> FastAPI:
     """Build the relationship app with direct OpenAI Responses API transport."""
-    adaptive_app.OpenRouterRelationshipAuditor = OpenAIResponsesRelationshipAuditor
-    adaptive_app.ADAPTIVE_HTML = OPENAI_HTML
+    adaptive_app.__dict__["OpenRouterRelationshipAuditor"] = OpenAIResponsesRelationshipAuditor
+    adaptive_app.__dict__["ADAPTIVE_HTML"] = OPENAI_HTML
     app = adaptive_app.create_relationship_adaptive_app_from_env()
     app.title = "Relationship Pattern Lab"
     app.version = "0.5.0"
