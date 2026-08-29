@@ -169,7 +169,9 @@ class RelationshipStudyPreflight(StudyModel):
 
     session_id: str
     contact_email_on_file: bool
-    email_verification_status: Literal["not_configured", "pending", "verified"]
+    email_verification_status: Literal[
+        "not_configured", "unverified", "pending", "verified"
+    ]
     birth_intake_complete: bool
     prediction_freeze_present: bool
     prediction_freeze_sha256: str | None = Field(default=None, pattern=r"^[a-f0-9]{64}$")
@@ -231,9 +233,9 @@ def public_preflight(
     session_id: str,
     intake: RelationshipStudyIntake | None,
     prediction_freeze: RelationshipPredictionFreeze | None,
-    email_verification_status: Literal["not_configured", "pending", "verified"] = (
-        "not_configured"
-    ),
+    email_verification_status: Literal[
+        "not_configured", "unverified", "pending", "verified"
+    ] = "not_configured",
 ) -> RelationshipStudyPreflight:
     return RelationshipStudyPreflight(
         session_id=session_id,

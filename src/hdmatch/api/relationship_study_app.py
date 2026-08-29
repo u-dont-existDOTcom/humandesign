@@ -10,21 +10,27 @@ from __future__ import annotations
 import json
 import os
 import re
+from contextlib import suppress
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any, cast
 
 from fastapi import FastAPI, HTTPException, Request
-from pydantic import BaseModel
+from pydantic import BaseModel, Field, field_validator, model_validator
 from starlette.middleware.base import RequestResponseEndpoint
 from starlette.responses import JSONResponse, Response
 
+from hdmatch.api.relationship_email_recovery import (
+    EmailRecoveryService,
+    EmailRecoverySettings,
+)
 from hdmatch.api.relationship_openai_app import create_relationship_openai_app_from_env
 from hdmatch.api.relationship_public_app import RelationshipFileStore
 from hdmatch.relationship.study import (
     RelationshipPredictionFreeze,
     RelationshipStudyIntake,
     bind_noise_policy,
+    normalize_email,
     public_preflight,
 )
 from hdmatch.relationship.study_prediction import build_prediction_freeze
@@ -39,6 +45,53 @@ class StudyTokenRequest(BaseModel):
     token: str
 
 
+def _validate_recovery_email(value: str) -> str:
+    normalized = normalize_email(value)
+    local, separator, domain = normalized.rpartition("@")
+    if (
+        not separator
+        or not local
+        or "." not in domain
+        or domain.startswith(".")
+        or domain.endswith(".")
+    ):
+        raise ValueError("email must look like a valid email address")
+    return normalized
+
+
+class StudyRecoveryRequest(BaseModel):
+    email: str = Field(min_length=3, max_length=320)
+
+    @field_validator("email")
+    @classmethod
+    def validate_email(cls, value: str) -> str:
+        return _validate_recovery_email(value)
+
+
+class StudyRecoveryVerifyRequest(BaseModel):
+    email: str | None = Field(default=None, min_length=3, max_length=320)
+    otp: str | None = Field(default=None, pattern=r"^[0-9]{6}$")
+    session_id: str | None = Field(default=None, pattern=r"^RR-[A-Za-z0-9_-]+$")
+    magic_token: str | None = Field(default=None, min_length=32, max_length=256)
+
+    @field_validator("email")
+    @classmethod
+    def validate_email(cls, value: str | None) -> str | None:
+        return _validate_recovery_email(value) if value is not None else None
+
+    @model_validator(mode="after")
+    def require_one_verification_mode(self) -> StudyRecoveryVerifyRequest:
+        otp_mode = self.email is not None and self.otp is not None
+        magic_mode = self.session_id is not None and self.magic_token is not None
+        if otp_mode == magic_mode:
+            raise ValueError("provide either email + OTP or session_id + magic_token")
+        if otp_mode and (self.session_id is not None or self.magic_token is not None):
+            raise ValueError("OTP verification cannot include magic-link fields")
+        if magic_mode and (self.email is not None or self.otp is not None):
+            raise ValueError("magic-link verification cannot include OTP fields")
+        return self
+
+
 def create_relationship_study_app_from_env() -> FastAPI:
     app = create_relationship_openai_app_from_env()
     app.title = "Relationship Pattern Lab"
@@ -48,6 +101,7 @@ def create_relationship_study_app_from_env() -> FastAPI:
     if not store_value:
         raise RuntimeError("HDMATCH_RELATIONSHIP_STORE is required")
     store = RelationshipFileStore(Path(store_value))
+    recovery = EmailRecoveryService(store, EmailRecoverySettings.from_env())
     repo_root = Path(os.environ.get("HDMATCH_REPO_ROOT", "/app"))
     questionnaire_path = Path(
         os.environ.get(
@@ -58,6 +112,44 @@ def create_relationship_study_app_from_env() -> FastAPI:
     noise_value = os.environ.get("HDMATCH_SURVEY_NOISE_POLICY", "").strip()
     default_noise = repo_root / "state/SURVEY-V2-NOISE-AUDIT.json"
     noise_path = Path(noise_value) if noise_value else default_noise
+
+    @app.get("/api/study/recovery/status")
+    def get_recovery_status() -> dict[str, Any]:
+        return {
+            "configured": recovery.configured,
+            "methods": ["magic_link", "six_digit_otp"] if recovery.configured else [],
+        }
+
+    @app.post("/api/study/recovery/request", status_code=202)
+    def request_study_recovery(request: StudyRecoveryRequest) -> dict[str, str]:
+        # The response is deliberately identical for a missing email, a rate-limited
+        # email, an SMTP failure, and a successful send.
+        with suppress(OSError, RuntimeError):
+            recovery.request(request.email)
+        return {
+            "message": (
+                "If an eligible study exists for that email, a single-use link and "
+                "six-digit code will be sent."
+            )
+        }
+
+    @app.post("/api/study/recovery/verify")
+    def verify_study_recovery(request: StudyRecoveryVerifyRequest) -> dict[str, str]:
+        if request.email is not None and request.otp is not None:
+            recovered = recovery.verify_otp(request.email, request.otp)
+        elif request.session_id is not None and request.magic_token is not None:
+            recovered = recovery.verify_magic(request.session_id, request.magic_token)
+        else:  # The Pydantic validator makes this branch unreachable.
+            recovered = None
+        if recovered is None:
+            raise HTTPException(
+                status_code=401,
+                detail="Recovery credential is invalid, expired, already used, or locked.",
+            )
+        return {
+            "session_id": recovered.session_id,
+            "resume_token": recovered.resume_token,
+        }
 
     @app.middleware("http")
     async def confirmatory_preanswer_guard(
@@ -121,7 +213,9 @@ def create_relationship_study_app_from_env() -> FastAPI:
         payload["study_schema_version"] = "relationship-study-v1"
         payload["study_intake"] = request.intake.model_dump(mode="json")
         payload["contact_email_lookup_sha256"] = request.intake.contact_email_lookup_sha256
-        payload["email_verification_status"] = "not_configured"
+        payload["email_verification_status"] = (
+            "unverified" if recovery.configured else "not_configured"
+        )
         payload["llm_processing_consent_at"] = datetime.now(UTC).isoformat()
         noise_policy = bind_noise_policy(noise_path if noise_path.exists() else None)
         freeze = build_prediction_freeze(
