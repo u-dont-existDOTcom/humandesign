@@ -13,5 +13,9 @@ def test_confirmatory_ui_requires_birth_intake_and_hides_hash_as_technical_recei
     assert "Reveal the blinded Astro/HD prediction" in HTML
     assert "Start a new relationship" in HTML
     assert "existing private frozen record will not be deleted" in HTML
+    assert "Resume a saved study by email" in HTML
+    assert "/api/study/recovery/request" in HTML
+    assert "/api/study/recovery/verify" in HTML
+    assert "single-use magic link and six-digit code" in HTML
     assert "onclick=\"begin()\"" not in HTML
     assert "OpenRouter" not in HTML

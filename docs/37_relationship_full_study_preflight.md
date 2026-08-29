@@ -8,7 +8,18 @@ Participants must not be expected to save SHA-256 receipts. A freeze hash is sci
 
 The full study intake therefore accepts a private contact email. The normalized email and a lookup hash stay in the private datastore; they are never written to the public GitHub repository or included in participant-safe preflight responses.
 
-Email alone is not authentication. The intended production recovery path is a verified magic link or one-time code. Until a mail-delivery provider is connected, the browser resume token remains the actual credential. Do not implement an insecure `email -> session` lookup merely for convenience.
+Email alone is not authentication. The implementation now provides a single-use magic link and six-digit OTP through authenticated SMTP. The browser resume token remains a fallback credential, while a successful email recovery rotates that credential and invalidates the previous browser token.
+
+Recovery security properties:
+
+- valid-email issuance always returns the same public `202` response, whether the address is unknown, rate-limited, SMTP delivery fails, or a message is sent;
+- the datastore contains only domain-separated SHA-256 hashes of the magic token and OTP, never the plaintext recovery credentials;
+- credentials expire after 15 minutes, have a persistent per-session issuance window/cooldown, allow at most eight verification attempts, and are consumed once;
+- magic credentials travel in the URL fragment, so the initial HTTP request and ordinary server access logs do not receive them;
+- successful verification issues a new random resume token and stores only its SHA-256 hash;
+- SMTP requires STARTTLS or implicit TLS. There is no plaintext mode.
+
+`HDMATCH_SMTP_PASSWORD` is the only required Railway secret. The non-secret defaults are `smtp.porkbun.com:587`, STARTTLS, and `joel@u-dont-exist.com` for both authenticated username and sender. They can be overridden with `HDMATCH_SMTP_HOST`, `HDMATCH_SMTP_PORT`, `HDMATCH_SMTP_SECURITY`, `HDMATCH_SMTP_USERNAME`, `HDMATCH_SMTP_FROM`, and `HDMATCH_PUBLIC_BASE_URL`. No SMTP credential belongs in Git.
 
 ## Private intake before behavioral evidence
 
@@ -96,15 +107,21 @@ A version-specific threshold adapter should be added only after the final scorin
 - `POST /api/study/sessions/{session_id}/refresh-prediction-freeze`
   - may rerun the pre-answer builder only while zero behavioral answers exist;
   - rejects any attempt to regenerate predictions after behavioral evidence has been captured.
+- `GET /api/study/recovery/status`
+  - reports only whether magic-link/OTP delivery is configured; it exposes no SMTP credential.
+- `POST /api/study/recovery/request`
+  - accepts a normalized email and always returns a generic response for valid input;
+  - privately chooses only the most recently updated matching confirmatory session.
+- `POST /api/study/recovery/verify`
+  - consumes either `email + OTP` or `session_id + magic_token`;
+  - returns a freshly rotated resume token only after successful one-time verification.
 
 Middleware blocks both saved behavioral answers and live LLM quality calls for a `relationship-study-v1` session until its required prediction layers are computed and frozen.
 
 ## Next implementation work
 
-1. Add participant-friendly birthplace search/confirmation that resolves coordinates + IANA timezone with provenance; never silently choose among ambiguous place matches.
-2. Put verified Swiss Ephemeris files into the Railway runtime and set `HDMATCH_EPHEMERIS_PATH`.
-3. Wire unknown-time/full-day sensitivity rather than inventing noon charts.
-4. When the final noise-scoring schema is canonical, add its version-specific threshold adapter.
-5. Add the chart-blind post-survey phenotype classifier and freeze.
-6. Add reveal/comparison endpoints and write deidentified hit/miss records to the existing relationship learning ledger.
-7. Add a real email provider and verified magic-link/OTP recovery; until then keep browser token authentication.
+1. Merge/bind the authoritative Survey-v2 noise artifact, while keeping Survey noise reliability separate from AstroRRF relationship-outcome calibration.
+2. Wire unknown-time/full-day sensitivity into a separate natal-first, noncircular inference workflow rather than inventing noon charts or selecting a flattering time from relationship answers.
+3. Freeze a pre-outcome AstroRRF ordinal calibration artifact before labeling raw directional scores as high/low or hit/miss.
+4. Write only deidentified, public-safe outcome comparisons to the relationship learning ledger.
+5. Run the exact-head production gates and verify a real SMTP delivery/recovery round trip before enabling email as the primary participant recovery path; keep browser-token fallback in place.

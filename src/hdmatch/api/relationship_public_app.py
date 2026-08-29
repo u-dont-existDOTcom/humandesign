@@ -33,7 +33,6 @@ from hdmatch.relationship.questionnaire import (
     select_next_capture_question,
 )
 
-
 FieldStatus = Literal["clear", "mixed", "context_dependent", "unknown", "not_applicable"]
 
 
@@ -106,14 +105,36 @@ class RelationshipFileStore:
         return payload, token
 
     def read(self, session_id: str, token: str) -> dict[str, Any]:
-        path = self._path(session_id)
-        if not path.exists():
-            raise HTTPException(status_code=404, detail="session not found")
-        payload = cast(dict[str, Any], json.loads(path.read_text(encoding="utf-8")))
+        payload = self.read_private(session_id)
         supplied = hashlib.sha256(token.encode()).hexdigest()
         if not secrets.compare_digest(str(payload["token_sha256"]), supplied):
             raise HTTPException(status_code=403, detail="invalid resume token")
         return payload
+
+    def read_private(self, session_id: str) -> dict[str, Any]:
+        """Load a private session for server-side credential workflows only."""
+
+        path = self._path(session_id)
+        if not path.exists():
+            raise HTTPException(status_code=404, detail="session not found")
+        return cast(dict[str, Any], json.loads(path.read_text(encoding="utf-8")))
+
+    def private_records(self) -> tuple[dict[str, Any], ...]:
+        """Return well-formed private records without exposing them through an API route."""
+
+        records: list[dict[str, Any]] = []
+        for path in sorted(self.root.glob("RR-*.json")):
+            try:
+                raw: Any = json.loads(path.read_text(encoding="utf-8"))
+            except (json.JSONDecodeError, OSError, UnicodeError):
+                continue
+            if not isinstance(raw, dict):
+                continue
+            session_id = raw.get("session_id")
+            if not isinstance(session_id, str) or self._path(session_id) != path:
+                continue
+            records.append(cast(dict[str, Any], raw))
+        return tuple(records)
 
     def save(self, payload: dict[str, Any]) -> None:
         payload["updated_at"] = datetime.now(UTC).isoformat()

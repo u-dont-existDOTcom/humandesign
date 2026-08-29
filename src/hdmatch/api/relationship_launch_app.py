@@ -16,7 +16,7 @@ def create_relationship_launch_app_from_env() -> FastAPI:
     app = create_relationship_full_study_app_from_env()
     base_app._HTML = STUDY_HTML
     app.title = "Relationship Pattern Lab"
-    app.version = "0.8.1"
+    app.version = "0.9.0"
 
     @app.get("/api/study/places")
     def search_places(q: str) -> dict[str, Any]:
