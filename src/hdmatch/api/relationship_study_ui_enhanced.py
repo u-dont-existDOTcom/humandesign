@@ -14,6 +14,11 @@ def _replace_once(text: str, old: str, new: str) -> str:
 HTML = BASE_HTML
 HTML = _replace_once(
     HTML,
+    "Choose the correct result rather than relying on an automatic guess.</p>",
+    "Choose the correct result rather than relying on an automatic guess. Birthplace search data © <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\" rel=\"noopener noreferrer\">OpenStreetMap contributors</a>.</p>",
+)
+HTML = _replace_once(
+    HTML,
     "</details><div id=\"addendumBox\" class=\"hidden\">",
     "</details><button type=\"button\" onclick=\"startNewRelationship()\">Start a new relationship</button><div id=\"addendumBox\" class=\"hidden\">",
 )
