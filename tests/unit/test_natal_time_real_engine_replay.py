@@ -4,6 +4,7 @@ import json
 import subprocess
 from collections.abc import Mapping, Sequence
 from copy import deepcopy
+from dataclasses import replace
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
@@ -16,6 +17,7 @@ from hdmatch.natal_time.replay import (
     ReplayValidationError,
     _event_key,
     _execute_fail_closed,
+    _run_replay,
     _validate_receipt,
     current_repository_commit,
     fake_receipt_executor,
@@ -32,6 +34,46 @@ PROJECT_ROOT = Path(__file__).parents[2]
 
 def _context() -> ReplayContext:
     return load_synthetic_test_context(PROJECT_ROOT)
+
+
+def _production_contract_stub(
+    context: ReplayContext,
+    expectations: tuple[ReplayExpectation, ...],
+) -> Sequence[Mapping[str, Any]]:
+    """Build contract-valid test receipts without executing astronomy."""
+
+    receipts: list[dict[str, Any]] = []
+    for item in expectations:
+        if item.status == "success":
+            verification = {
+                "status": "passed_exact_event_key_agreement",
+                "production_event_count": 0,
+                "independent_event_count": 0,
+                "independent_enumeration_sha256": "a" * 64,
+                "independent_series_certificate_sha256": "b" * 64,
+            }
+        else:
+            verification = {
+                "status": "passed_expected_fail_closed",
+                "enumeration_allowed": False,
+                "failure_type": item.fixture_input["failure_type"],
+                "failure_message": item.fixture_input["failure_message"],
+            }
+        receipts.append(
+            make_receipt(
+                context,
+                item,
+                interval_count=item.committed_interval_count,
+                ordered_interval_list_sha256="c" * 64,
+                ordered_full_state_vector_sha256=(
+                    item.committed_ordered_full_state_vector_sha256
+                ),
+                coverage_receipt_sha256=item.committed_coverage_receipt_sha256,
+                result_sha256=item.committed_result_sha256,
+                independent_verification=verification,
+            )
+        )
+    return tuple(receipts)
 
 
 def test_production_event_key_is_the_expected_seven_tuple() -> None:
@@ -269,3 +311,59 @@ def test_production_rejects_synthetic_context_and_mismatched_independent_counts(
     receipt["receipt_sha256"] = sha256_json(unhashed)
     with pytest.raises(ReplayValidationError, match="event counts differ"):
         _validate_receipt(context, expectation, receipt)
+
+
+def test_source_change_after_executor_writes_no_receipt(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    context = replace(_context(), execution_mode="real_engine_production")
+    checks = 0
+
+    def source_check(_context: ReplayContext, _output_root: Path) -> None:
+        nonlocal checks
+        checks += 1
+        if checks == 2:
+            raise ReplayValidationError("simulated source change after executor")
+
+    monkeypatch.setattr(
+        "hdmatch.natal_time.replay._validate_production_context", source_check
+    )
+    with pytest.raises(ReplayValidationError, match="after executor"):
+        _run_replay(
+            context,
+            tmp_path,
+            executor=_production_contract_stub,
+            aggregate_only=False,
+            progress=None,
+        )
+    assert checks == 2
+    assert not tuple((tmp_path / "receipts").glob("*.json"))
+    assert not (tmp_path / "index.json").exists()
+
+
+def test_source_change_before_aggregate_writes_no_index(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    context = replace(_context(), execution_mode="real_engine_production")
+    checks = 0
+
+    def source_check(_context: ReplayContext, _output_root: Path) -> None:
+        nonlocal checks
+        checks += 1
+        if checks == 17:
+            raise ReplayValidationError("simulated source change before aggregate")
+
+    monkeypatch.setattr(
+        "hdmatch.natal_time.replay._validate_production_context", source_check
+    )
+    with pytest.raises(ReplayValidationError, match="before aggregate"):
+        _run_replay(
+            context,
+            tmp_path,
+            executor=_production_contract_stub,
+            aggregate_only=False,
+            progress=None,
+        )
+    assert checks == 17
+    assert len(tuple((tmp_path / "receipts").glob("*.json"))) == 9
+    assert not (tmp_path / "index.json").exists()

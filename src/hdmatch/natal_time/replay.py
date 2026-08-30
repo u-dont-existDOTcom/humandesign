@@ -508,6 +508,8 @@ def _run_replay(
             generated = tuple(dict(item) for item in executor(context, expectations))
             if progress is not None:
                 progress("done", expectations[0].source_fixture_name)
+            if context.execution_mode == "real_engine_production":
+                _validate_production_context(context, output_root)
             generated_by_id = {cast(str, item.get("receipt_id")): item for item in generated}
             expected_ids = {item.receipt_id for item in expectations}
             if len(generated_by_id) != len(generated) or set(generated_by_id) != expected_ids:
@@ -528,6 +530,8 @@ def _run_replay(
                     write_new_bytes(path, canonical_json_bytes(payload) + b"\n")
                 existing[expectation.receipt_id] = payload
     receipts = _load_valid_receipts(context, receipts_dir, allow_missing=False)
+    if context.execution_mode == "real_engine_production":
+        _validate_production_context(context, output_root)
     index = build_aggregate_index(context, receipts)
     index_path = root / "index.json"
     if index_path.exists():
