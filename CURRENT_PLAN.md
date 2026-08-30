@@ -81,6 +81,21 @@ source commit, and acceptance category. It was generated from source commit
 `da8d3ee5a4208e7e4ffb27daa54affcba4bd9d39`; its logical digest is
 `71a09f8f12a7e44e5848d3f976ecad1eb4fba6f345b2061fcef65540763220d3`.
 
+Checkpoint 6 returned `OWNER DECISION REQUIRED: NO` and `CHECKPOINT-6 VERDICT: QUALIFIED`. Its
+exact ruling is `docs/PRO_SUPERVISION_CHECKPOINT_6_20260830.md`. The one remaining replay-source
+binding gap is now closed by
+`state/NATAL-TIME-CHECKPOINT6-FINAL-REPLAY-SOURCE-CLOSURE.json`: all 58 replay-affecting files and
+28 semantic functions are identical through the checkpoint-5 acceptance, checkpoint-6
+implementation, and documentation-only submission heads; all nine receipts and the unchanged
+index/aggregate reproduce; and every replay-byte mutation requires Route B.
+
+The authorized independent-oracle slice is also complete locally. A standard-library-only oracle
+that neither imports production evaluation code nor constructs or chooses `S_i` agrees with the
+production verifier in all 41 committed adversarial comparisons. All 29 required coverage tags
+are present, 13 major-guard mutations are killed with zero survivors, and the fail-closed
+discrepancy ledger is empty. The checkpoint-7 packet is
+`docs/NATAL_TIME_CHECKPOINT7_ACCEPTANCE_20260830.md`.
+
 Ranking, questionnaires, calibration execution, candidate selection, operating or abstention
 thresholds, participant-facing interpretation, relationship evidence, live records, recruitment,
 public-ledger publication, push, merge, migration, and deployment remain prohibited. Any change to
@@ -89,22 +104,19 @@ boundary semantics, or full-state identity reopens deterministic conformance.
 
 ## Current implementation priority
 
-Complete checkpoint 6 without crossing into inference:
+Complete checkpoint 7 without crossing into inference:
 
-- verify the Phase-0 lineage, replay-resume, operational evidence, metric-v3, replay Route A,
-  reference-custody bundle, and 81-entry acceptance matrix at the exact current head;
-- reproduce the separated schemas/manifests, all 35 inference fixtures, all 35 evaluator custody
-  objects, all 35 postcommit artifacts, and every logical and exact-file digest byte-for-byte;
-- run exact-head full tests, the complete strict-mypy source scope, an exact Git-derived Ruff
-  changed-file scope, the privacy/history/build gate, deterministic artifact checks, and protected
-  qualified-core identity checks;
-- record the exact head, diff surface, commands, outputs, known legacy Ruff baseline, and the fact
-  that no push, merge, migration, deployment, live record, participant inference, or public release
-  occurred; and
-- return the complete checkpoint-6 packet to the existing authenticated ChatGPT Pro conversation.
+- run the forced exact-head full tests, strict-mypy source scope, exact Git-derived Ruff changed-
+  file scope, privacy/history/build gate, all deterministic artifact validators, 48-file protected-
+  core comparison, diff check, and clean index/worktree checks;
+- record the exact final head/tree, test counts, hashes, corrected-command ledger, and unchanged
+  read-only GitHub/Railway state;
+- return the complete checkpoint-7 packet to the same authenticated ChatGPT Pro conversation; and
+- wait for the complete ruling before any substantive next slice.
 
-If checkpoint 6 says `OWNER DECISION REQUIRED: YES`, stop for Joel. Otherwise continue only within
-the next bounded scope that Pro explicitly authorizes.
+If checkpoint 7 says `OWNER DECISION REQUIRED: YES`, stop for Joel. Otherwise continue only within
+the next bounded scope that Pro explicitly authorizes. No push, PR action, merge, migration,
+deployment, live record, participant inference, or public release is authorized.
 
 ## Blocked long-horizon research concepts
 
