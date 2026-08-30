@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import importlib.util
+import json
 import sys
 from copy import deepcopy
 from pathlib import Path
@@ -9,10 +10,11 @@ from typing import Any
 
 import pytest
 
-from hdmatch.util import sha256_json
+from hdmatch.util import canonical_json_bytes, sha256_json
 
 PROJECT_ROOT = Path(__file__).parents[2]
 PRE_CUSTODY_SOURCE = "daa59b8d84f6f7592303187afb1618791deaa175"
+ARTIFACT_PATH = PROJECT_ROOT / "state" / "NATAL-TIME-CHECKPOINT5-ACCEPTANCE-MATRIX.json"
 
 
 def _load_audit_module() -> ModuleType:
@@ -247,3 +249,12 @@ def test_rehashed_requirement_or_matrix_tamper_fails_closed() -> None:
     self_hash["coverage_summary"]["pending_field_count"] = 1
     with pytest.raises(AUDIT.AcceptanceMatrixError, match="matrix self-hash mismatch"):
         AUDIT.validate_matrix_structure(self_hash, required_ids=frozenset({"TEST-ONLY"}))
+
+
+def test_saved_matrix_reproduces_from_its_exact_source_commit() -> None:
+    saved = json.loads(ARTIFACT_PATH.read_bytes())
+    assert saved["entry_count"] == 81
+    assert saved["coverage_summary"]["pending_field_count"] == 0
+    assert saved["coverage_summary"]["pro_minimums_complete"] is True
+    assert ARTIFACT_PATH.read_bytes() == canonical_json_bytes(saved) + b"\n"
+    AUDIT.validate_acceptance_matrix(PROJECT_ROOT, saved)

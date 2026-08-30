@@ -1,9 +1,13 @@
 # Natal-time checkpoint-5 acceptance matrix
 
-Status: generator and requirement inventory only. The final state artifact is
-intentionally not generated until the separated reference-custody bundle,
-receipts, evaluator source, and focused tests are committed at one exact source
-commit.
+Status: finalized from exact source commit
+`da8d3ee5a4208e7e4ffb27daa54affcba4bd9d39` / tree
+`83eedaf647c2d727e735a98827e0d74b053edaf2`.
+
+The 81-entry artifact is
+`state/NATAL-TIME-CHECKPOINT5-ACCEPTANCE-MATRIX.json`. Its logical matrix digest is
+`71a09f8f12a7e44e5848d3f976ecad1eb4fba6f345b2061fcef65540763220d3`; its exact file SHA-256 is
+`6c0c3a4d9ee2c48791b36a457a2bd65a70292c9b020565637e1135b3c9a66d3b`.
 
 ## Purpose and boundary
 
@@ -61,14 +65,13 @@ Final generation fails closed if any of the following is true:
 - any custody-dependent field remains pending; or
 - forbidden evaluator-only reference material appears in the matrix.
 
-## Final artifact workflow
+## Reproduction workflow
 
-After the custody integration owner commits the final evaluator, split bundle,
-receipts, and tests, build from that exact clean source commit:
+The committed artifact was built from the exact clean source commit above:
 
 ```bash
 .venv/bin/python scripts/audit_natal_time_checkpoint5_acceptance_matrix.py \
-  --source-commit <full-40-hex-source-commit>
+  --source-commit da8d3ee5a4208e7e4ffb27daa54affcba4bd9d39
 ```
 
 The expected new artifact path is:
@@ -87,10 +90,10 @@ mypy, changed-file Ruff, privacy/history/build, protected-blob, and clean-tree
 gates. The matrix binds their test and source definitions; it does not invent a
 test-run receipt or claim that an unrecorded command ran.
 
-## Values that remain intentionally dynamic
+## Source-resolved values
 
-No placeholder values are emitted. These fields are resolved only from the
-final committed custody source:
+No placeholder values are emitted. These fields were resolved from the final
+committed custody source:
 
 - exact source commit and tree OID;
 - evaluator source blobs and evaluator-version digest;
