@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "reconciliationId": "ORC-ASTROHD-20260830-EPOCH4-V1",
+  "taskId": "astrohd-relationship-20260830",
+  "trigger": "OWNER_CORRECTION_AND_SUPERVISION_BOOTSTRAP_ADOPTION",
+  "reconciledAt": "2026-08-30T22:35:00Z",
+  "ownerSource": {
+    "ownerRequestId": "OR-ASTROHD-RELATIONSHIP-CONTINUATION-20260830",
+    "ownerOutcomeId": "OO-ASTROHD-RELATIONSHIP-CONTINUATION",
+    "epoch": 4,
+    "canonicalLocator": "state/NATAL-TIME-OWNER-OUTCOME-SOURCE-EPOCH4-20260830.md",
+    "sha256": "2bc3b243f67411907799c9b382dccd9552220a67cfe20d0429949868123db735",
+    "outcomeRecord": "state/NATAL-TIME-OWNER-OUTCOME-EPOCH4-V1.json",
+    "outcomeRecordSha256": "5a731732341ef38b3f34b89be35099148bee88c7cf4c518a0a1c1a9baefae742",
+    "capturedAt": "2026-08-30T22:35:00Z",
+    "capturedBy": "deterministic-tool",
+    "corrections": [
+      {"epoch":2,"relation":"amends_browser_operation"},
+      {"epoch":3,"relation":"clarifies_b1_mapping_destination"},
+      {"epoch":4,"relation":"selects_s6_h1_and_supersedes_supervision_bootstrap"}
+    ]
+  },
+  "independentSupervisorReceipt": {
+    "receiptId": "osr-astrohd-relationship-20260830-epoch4-v1",
+    "path": "state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH4-V1.json",
+    "sha256": "ebe94326e29404126798fb94714c3a1f48f07ee4dfce3a2465d4505be26b01e2",
+    "collector": "deterministic-tool",
+    "sourceSha256": "2bc3b243f67411907799c9b382dccd9552220a67cfe20d0429949868123db735",
+    "workerSuppliedCopySha256": "2bc3b243f67411907799c9b382dccd9552220a67cfe20d0429949868123db735",
+    "comparison": "MATCH",
+    "limitations": [
+      "No durable provider-side message locator was exposed.",
+      "The collector independently verifies bytes and comparison but not provider-side acquisition.",
+      "SDF-20260830-OWNER-SOURCE-INDEPENDENCE-001 asks the shared Pro meta-review lane to clarify the universal capability boundary."
+    ]
+  },
+  "taskContract": {
+    "taskContractId": "TC-B1-S6-H1-NEXT-CONTRACT-20260830-V1",
+    "revision": 1,
+    "path": "state/NATAL-TIME-S6-H1-CHILD-TASK-CONTRACT-V1.json",
+    "sha256": "ded195cbbab42344bb311199d590702671a95a1467213087b602647bd6d3515b",
+    "rootParentOpen": true
+  },
+  "alignment": {
+    "workerToContract": {
+      "status": "GREEN",
+      "evidenceRefs": [
+        "docs/PRO_SUPERVISION_B1_CHECKPOINT10_ACCEPTANCE_20260830.md",
+        "docs/NATAL_TIME_OWNER_DECISION_S6_H1_20260830.md",
+        "state/NATAL-TIME-SUPERVISION-BOOTSTRAP-RECEIPT-V1.json"
+      ],
+      "findings": [
+        "The worker stopped at the required owner decision, recorded S6 plus H1 without generating content, and adopted the hotfix at the next safe checkpoint.",
+        "The active child contract preserves the parent as open and prohibits every unauthorized scientific, human, production, and external action."
+      ]
+    },
+    "contractToOwner": {
+      "status": "PARTIAL",
+      "unmappedOwnerRequirementIds": [],
+      "divergences": [],
+      "authorizedScopeChanges": [
+        "Epoch 2 headless-first browser correction",
+        "Epoch 3 B1 later-mapping clarification",
+        "Epoch 4 S6 plus H1 selection",
+        "Epoch 4 superseding supervision bootstrap"
+      ],
+      "partialReason": "All material requirements are mapped and the child contract honestly leaves the parent open. PARTIAL is retained solely because independent provider-side owner-message acquisition is unavailable; the deterministic exact-text receipt has an explicit capability limitation pending shared Pro meta-review."
+    }
+  },
+  "requirements": [
+    {"ownerRequirementId":"RO-01","ownerRequirementText":"Continue autonomously without treating a routine checkpoint or review proxy as completion.","workerInterpretation":"Checkpoint 10 and S6 plus H1 are supporting states; the relationship/AstroHD parent remains open.","taskCriterionIds":["TC-04","TC-05"],"acceptanceEvidence":["state/NATAL-TIME-OWNER-OUTCOME-EPOCH4-V1.json","CURRENT_PLAN.md"],"status":"MAPPED_CONTRIBUTING","authorizedChangeRef":null},
+    {"ownerRequirementId":"RO-02","ownerRequirementText":"Use fresh project, GitHub, Railway, and runtime authority.","workerInterpretation":"Preserve the completed fresh audit and revalidate at material external-state transitions.","taskCriterionIds":["TC-02","TC-03"],"acceptanceEvidence":["docs/RELATIONSHIP_RESEARCH_HANDOFF.md","state/NATAL-TIME-OWNER-OUTCOME-EPOCH4-V1.json"],"status":"MAPPED_VERIFYING","authorizedChangeRef":null},
+    {"ownerRequirementId":"RO-03","ownerRequirementText":"Use Brave plus ChatGPT Pro supervision and stop only for owner decisions.","workerInterpretation":"Reuse the existing task Pro chat, submit a self-contained reconciled packet, then obey the owner-decision gate.","taskCriterionIds":["TC-04","TC-05"],"acceptanceEvidence":["docs/PRO_SUPERVISION_B1_CHECKPOINT10_ACCEPTANCE_20260830.md"],"status":"MAPPED_DIRECT","authorizedChangeRef":null},
+    {"ownerRequirementId":"RO-04","ownerRequirementText":"Save all work and evidence in the repository.","workerInterpretation":"Commit decision, authority, reconciliation, verdict, packet, feedback, and rulings locally.","taskCriterionIds":["TC-01","TC-02","TC-03","TC-04","TC-06"],"acceptanceEvidence":["git exact-head and clean-tree receipt in the next packet"],"status":"MAPPED_DIRECT","authorizedChangeRef":null},
+    {"ownerRequirementId":"RO-05","ownerRequirementText":"Preserve privacy, secrets, data volume, blinding, and release boundaries.","workerInterpretation":"No live/private/external action occurs in this child; privacy and release gates remain fail-closed.","taskCriterionIds":["TC-04"],"acceptanceEvidence":["state/NATAL-TIME-RESEARCH-SUPERVISION-VERDICT-EPOCH4-V1.json","privacy/history/build gate"],"status":"MAPPED_VERIFYING","authorizedChangeRef":null},
+    {"ownerRequirementId":"RO-06","ownerRequirementText":"Continue the Priority 1 participant-capable natal-first birth-time-window path.","workerInterpretation":"This child obtains the next valid S6 plus H1 contract; the product and empirical outcomes remain explicitly open.","taskCriterionIds":["TC-04","TC-05"],"acceptanceEvidence":["state/NATAL-TIME-S6-H1-CHILD-TASK-CONTRACT-V1.json","CURRENT_PLAN.md"],"status":"MAPPED_CONTRIBUTING","authorizedChangeRef":null},
+    {"ownerRequirementId":"RO-07","ownerRequirementText":"Use B1 plus S6 plus H1, freeze before separate AstroHD mapping, and allow mapping failure.","workerInterpretation":"Screened chart-blind humans alone author content within a staged independent source route; mapping stays later and separately frozen.","taskCriterionIds":["TC-01","TC-04","TC-05"],"acceptanceEvidence":["docs/NATAL_TIME_OWNER_DECISION_S6_H1_20260830.md","docs/NATAL_TIME_OWNER_DECISION_B1_20260830.md"],"status":"MAPPED_DIRECT","authorizedChangeRef":"epoch-4-s6-h1"},
+    {"ownerRequirementId":"RO-08","ownerRequirementText":"Continue Priority 2 AstroRRF outcome calibration without post-hoc thresholds or cohort leakage.","workerInterpretation":"Preserve it as an open parent requirement not terminally bypassed by the natal-first child.","taskCriterionIds":["TC-03"],"acceptanceEvidence":["state/NATAL-TIME-OWNER-OUTCOME-EPOCH4-V1.json","CURRENT_PLAN.md"],"status":"MAPPED_CONTRIBUTING","authorizedChangeRef":null},
+    {"ownerRequirementId":"RO-09","ownerRequirementText":"Continue Priority 3 public-safe outcome ledger work.","workerInterpretation":"Preserve it as an open parent requirement with release adequacy fail-closed.","taskCriterionIds":["TC-03"],"acceptanceEvidence":["state/NATAL-TIME-OWNER-OUTCOME-EPOCH4-V1.json","state/NATAL-TIME-RESEARCH-SUPERVISION-VERDICT-EPOCH4-V1.json"],"status":"MAPPED_CONTRIBUTING","authorizedChangeRef":null},
+    {"ownerRequirementId":"RO-10","ownerRequirementText":"Preserve relationship-study blinding, phenotype separation, prediction freeze, and no soulmate scalar.","workerInterpretation":"Keep canonical relationship architecture protected while this child makes only governance/evidence changes.","taskCriterionIds":["TC-03","TC-04"],"acceptanceEvidence":["docs/RELATIONSHIP_RESEARCH_HANDOFF.md","protected-artifact comparisons"],"status":"MAPPED_VERIFYING","authorizedChangeRef":null},
+    {"ownerRequirementId":"RO-11","ownerRequirementText":"Adopt the superseding bootstrap and all required assurance artifacts.","workerInterpretation":"Use the exact fetched commit and templates; create receipt, reconciliation, dual alignment, completion claim, and three research judgments.","taskCriterionIds":["TC-02","TC-03","TC-06"],"acceptanceEvidence":["state/NATAL-TIME-SUPERVISION-BOOTSTRAP-RECEIPT-V1.json","state/NATAL-TIME-RESEARCH-SUPERVISION-VERDICT-EPOCH4-V1.json"],"status":"MAPPED_DIRECT","authorizedChangeRef":"epoch-4-supervision-hotfix"},
+    {"ownerRequirementId":"RO-12","ownerRequirementText":"Use headless browser control by default and reuse the dedicated headed Brave workspace when required.","workerInterpretation":"Reuse the existing controlled Pro tab on the secondary workspace and avoid opening unnecessary visible windows.","taskCriterionIds":["TC-04","TC-06"],"acceptanceEvidence":["existing controlled Brave task tab and shared-lane browser receipt"],"status":"MAPPED_DIRECT","authorizedChangeRef":"epoch-2-browser-correction"},
+    {"ownerRequirementId":"RO-13","ownerRequirementText":"Route substantive supervision-design feedback to the shared Pro meta-review lane without silently rewriting universal rules.","workerInterpretation":"Route the owner-source independence question as SDF-20260830-OWNER-SOURCE-INDEPENDENCE-001 while continuing unaffected task work.","taskCriterionIds":["TC-06"],"acceptanceEvidence":["state/SUPERVISION-DESIGN-FEEDBACK-SDF-20260830-OWNER-SOURCE-INDEPENDENCE-001.json"],"status":"MAPPED_DIRECT","authorizedChangeRef":"epoch-4-supervision-hotfix"}
+  ],
+  "completionClaim": {
+    "type": "WORKING",
+    "proposedTerminal": false,
+    "candidateRef": null,
+    "evidenceRefs": [
+      "state/NATAL-TIME-S6-H1-CHILD-TASK-CONTRACT-V1.json",
+      "state/NATAL-TIME-OWNER-OUTCOME-EPOCH4-V1.json"
+    ]
+  },
+  "recurringReconciliation": {
+    "previousReconciliationId": null,
+    "nextTriggers": [
+      "next Pro contract",
+      "material discovery",
+      "phase transition",
+      "acceptance criteria or tests change",
+      "owner correction",
+      "owner review",
+      "release, merge, deployment, migration, publication, or root completion preparation",
+      "supervision-design meta-review change"
+    ]
+  },
+  "result": {
+    "overallTraffic": "YELLOW",
+    "rootTerminalizationAllowed": false,
+    "requiredDirective": "CONTINUE_REVERSIBLE_CHILD_AND_ROUTE_META_REVIEW",
+    "findings": [
+      "No owner requirement is omitted, weakened, or proxy-substituted by the child contract.",
+      "The parent relationship/AstroHD outcome remains open.",
+      "Provider-side independence of the owner-source acquisition is unresolved and explicitly limited."
+    ]
+  }
+}

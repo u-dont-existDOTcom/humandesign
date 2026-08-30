@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0.0",
+  "receipt_id": "supervision-bootstrap-receipt-astrohd-20260830-v1",
+  "adopted_at": "2026-08-30T22:35:00Z",
+  "source": {
+    "repository": "u-dont-existDOTcom/universal-dev-architecture",
+    "branch": "architecture/codex-pro-supervision-mission-control-20260830",
+    "commit": "90a230e85f78063080dc627ec36a0237c3234f72",
+    "tree": "c841043cc96cd274872e8a7363651625705edf38",
+    "bootstrap_path": "templates/CURRENT-CODEX-WORKER-SUPERVISION-BOOTSTRAP.md",
+    "bootstrap_sha256": "c8a490c33310afe8a3a238f1b66d31a58ccb133a7d942cce537f7d3e9c67d8ea",
+    "owner_outcome_companion_sha256": "842807c4b01338c2d070fbcdaa83ce13c89fe2a4bb829988aa80870a0e2b92bb",
+    "assurance_planes_companion_sha256": "64a54c939395e6d73a75593911d3e4fa48394ee0e669fc290a4d32792bd03fcc"
+  },
+  "askrigor_protocols": {
+    "universal": {
+      "version": "20.5.15",
+      "revision_date": "2026-08-24",
+      "sha256": "69c5186862ade61d6a97dc842b8c027324c7e2f3fd7147064a360049e0d25172",
+      "integrity_verified": true,
+      "loaded_complete": true
+    },
+    "hrp": {
+      "version": "20.5.23",
+      "revision_date": "2026-08-24",
+      "sha256": "bf2adc1c4daea8241c47b2a111d4a19e6bf7427a6401ecf1b3ba75a58e046299",
+      "integrity_verified": true,
+      "loaded_complete": true
+    }
+  },
+  "owner_outcome": {
+    "id": "OO-ASTROHD-RELATIONSHIP-CONTINUATION",
+    "epoch": 4,
+    "record": "state/NATAL-TIME-OWNER-OUTCOME-EPOCH4-V1.json",
+    "record_sha256": "5a731732341ef38b3f34b89be35099148bee88c7cf4c518a0a1c1a9baefae742",
+    "source_receipt_id": "osr-astrohd-relationship-20260830-epoch4-v1",
+    "source_receipt_sha256": "ebe94326e29404126798fb94714c3a1f48f07ee4dfce3a2465d4505be26b01e2"
+  },
+  "adopted_controls": {
+    "independent_owner_source_receipt": true,
+    "objective_reconciliation_matrix": true,
+    "worker_to_contract_alignment_separate": true,
+    "contract_to_owner_alignment_separate": true,
+    "typed_completion_claim": true,
+    "recurring_reconciliation": true,
+    "operational_scientific_release_adequacy_separate": true,
+    "shared_supervision_design_meta_review": true,
+    "headless_first_browser_hygiene": true
+  },
+  "material_effect": [
+    "Checkpoint 10 and S6 plus H1 are preserved as supporting phase states, not root completion.",
+    "The Priority 1 participant-capable path and Priority 2/3 relationship outcomes remain open.",
+    "The next task Pro packet must validate the owner source, child contract, reconciliation, both alignment planes, completion claim, and research assurance planes before issuing a new bounded contract."
+  ],
+  "completion_claim": "WORKING",
+  "root_outcome_achieved": false
+}

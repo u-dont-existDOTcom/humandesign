@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "feedbackId": "SDF-20260830-OWNER-SOURCE-INDEPENDENCE-001",
+  "createdAt": "2026-08-30T22:35:00Z",
+  "taskId": "astrohd-relationship-20260830",
+  "workerRunId": "codex-astrohd-relationship-continuation-20260830",
+  "ownerOutcome": {
+    "ownerOutcomeId": "OO-ASTROHD-RELATIONSHIP-CONTINUATION",
+    "epoch": 4,
+    "sha256": "5a731732341ef38b3f34b89be35099148bee88c7cf4c518a0a1c1a9baefae742"
+  },
+  "supervisionArchitecture": {
+    "repository": "u-dont-existDOTcom/universal-dev-architecture",
+    "branchOrCommit": "architecture/codex-pro-supervision-mission-control-20260830@90a230e85f78063080dc627ec36a0237c3234f72",
+    "architectureEpoch": "20260830-90a230e",
+    "sha256OrCommit": "90a230e85f78063080dc627ec36a0237c3234f72"
+  },
+  "type": "QUESTION",
+  "category": "CONTRACT_INTEGRITY",
+  "severity": "MATERIAL",
+  "blocksCurrentBoundary": false,
+  "exactIssue": "When a non-Mission-Control worker can see exact owner-message text but the conversation surface exposes no durable provider locator and no independent Extra High or Mission Control collector, does a deterministic byte receipt over a worker-copied exact source block satisfy the independent owner-source requirement for reversible contributing work and task supervision? What stronger fail-closed state is required for root completion or release?",
+  "relevantRule": {
+    "path": "templates/CURRENT-CODEX-WORKER-SUPERVISION-BOOTSTRAP.md",
+    "section": "3. Pro must not depend on GitHub access or a laundered contract / 11. Current-worker receipt",
+    "excerpt": "The owner source must be supplied independently by Mission Control, deterministic tooling, or an Extra High reader—not only through the worker's polished handoff."
+  },
+  "observedOrHypotheticalFailure": "Treating a worker-copied source block as fully independent could allow an accidental omission or transcription error to pass a deterministic hash and later support a false root-completion or release claim. Treating it as unusable in all cases could stall safe reversible work even when exact owner text is visible and limitations are explicit.",
+  "evidenceRefs": [
+    "state/NATAL-TIME-OWNER-OUTCOME-SOURCE-EPOCH4-20260830.md",
+    "state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH4-V1.json",
+    "state/NATAL-TIME-OWNER-OUTCOME-EPOCH4-V1.json"
+  ],
+  "proposedChange": "Define graded receipt capability: deterministic exact-text capture with no provider locator may support reversible contributing work and nonterminal task supervision when marked with explicit limitations, but must yield SOURCE_MISSING or PARTIAL for root completion, release, publication, deployment, or irreversible action until independently retrieved provider bytes or an owner re-attestation is available.",
+  "alternativesConsidered": [
+    "Treat any deterministic hash as fully independent regardless of source acquisition.",
+    "Block all work until a provider-side durable locator or separate reader is available.",
+    "Ask the owner to restate every active task solely to manufacture a fresh receipt."
+  ],
+  "risks": [
+    "A permissive interpretation could reintroduce contract laundering through source capture.",
+    "An absolute block could create unnecessary owner burden and halt harmless reversible work.",
+    "Project-local workarounds could fragment the universal supervision architecture."
+  ],
+  "workerRecommendation": "Adopt the graded capability rule and require the limitation to be visible in every Pro packet until independent retrieval or owner re-attestation closes it.",
+  "workerUncertainty": "The phrase 'deterministic tooling' may already intend to cover this exact capture path, but the independence boundary between acquisition and hashing is not explicit.",
+  "decisionThatCanChange": "Whether this owner-source receipt supports MATCH for nonterminal reversible task supervision and what state it permits for root completion or release.",
+  "routing": {
+    "extraHighPacketPrepared": false,
+    "proMetaReviewRequired": true,
+    "reviewPriority": "BATCH",
+    "sharedProScopeKey": "supervision-architecture/20260830-90a230e"
+  },
+  "status": "PENDING_PRO_META_REVIEW",
+  "proMetaReview": null,
+  "ownerDecisionRef": null,
+  "repositoryChangeRefs": [],
+  "testRefs": []
+}

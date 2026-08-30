@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "receipt_id": "osr-astrohd-relationship-20260830-epoch4-v1",
+  "owner_request_id": "OR-ASTROHD-RELATIONSHIP-CONTINUATION-20260830",
+  "canonical_locator": "state/NATAL-TIME-OWNER-OUTCOME-SOURCE-EPOCH4-20260830.md",
+  "source_sha256": "2bc3b243f67411907799c9b382dccd9552220a67cfe20d0429949868123db735",
+  "captured_at": "2026-08-30T22:35:00Z",
+  "collector": "deterministic-tool",
+  "capture_method": "Exact owner-message text blocks were preserved in a local immutable source file and byte-hashed with sha256sum before normalization.",
+  "worker_supplied_copy_sha256": "2bc3b243f67411907799c9b382dccd9552220a67cfe20d0429949868123db735",
+  "comparison": "MATCH",
+  "correction_epochs_present": [1, 2, 3, 4],
+  "canonical_project_contract_locators": [
+    "AGENTS.md",
+    "CURRENT_PLAN.md",
+    "docs/RELATIONSHIP_RESEARCH_HANDOFF.md"
+  ],
+  "limitations": [
+    "The conversation surface did not expose durable external message IDs.",
+    "The deterministic collector verifies exact local bytes and comparison, not independent retrieval from the conversation provider.",
+    "Root completion, release, publication, deployment, or irreversible mutation remains fail-closed if a later mismatch with provider-side owner text is discovered."
+  ]
+}

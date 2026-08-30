@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0.0",
+  "task_contract_id": "TC-B1-S6-H1-NEXT-CONTRACT-20260830-V1",
+  "revision": 1,
+  "status": "ACTIVE_BOUNDED_CHILD_PARENT_OPEN",
+  "parent_owner_outcome": {
+    "id": "OO-ASTROHD-RELATIONSHIP-CONTINUATION",
+    "epoch": 4,
+    "record": "state/NATAL-TIME-OWNER-OUTCOME-EPOCH4-V1.json",
+    "sha256": "5a731732341ef38b3f34b89be35099148bee88c7cf4c518a0a1c1a9baefae742",
+    "source_receipt_id": "osr-astrohd-relationship-20260830-epoch4-v1"
+  },
+  "contribution_type": "support",
+  "normalized_child_result": "Durably record checkpoint-10 acceptance and the S6 plus H1 owner decision; adopt and reconcile the superseding shared supervision bootstrap; route any triggered supervision-design feedback to the shared meta-review lane; and obtain one self-contained Pro contract for the next bounded S6 plus H1 phase without creating construct content, beginning a construct-specific search, recruiting humans, or claiming the open parent outcome is complete.",
+  "criteria": [
+    {
+      "id": "TC-01",
+      "text": "Preserve the exact checkpoint-10 Pro acceptance and S6 plus H1 owner decision with explicit authority limits.",
+      "acceptance_evidence": ["docs/PRO_SUPERVISION_B1_CHECKPOINT10_ACCEPTANCE_20260830.md", "docs/NATAL_TIME_OWNER_DECISION_S6_H1_20260830.md"]
+    },
+    {
+      "id": "TC-02",
+      "text": "Adopt the current owner-specified supervision bootstrap and verified AskRigor protocols at the next safe checkpoint.",
+      "acceptance_evidence": ["state/NATAL-TIME-SUPERVISION-BOOTSTRAP-RECEIPT-V1.json"]
+    },
+    {
+      "id": "TC-03",
+      "text": "Create a versioned owner-source receipt, objective-reconciliation matrix, separate alignment states, typed completion claim, and separate operational/scientific/release judgments.",
+      "acceptance_evidence": ["state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH4-V1.json", "state/NATAL-TIME-OBJECTIVE-RECONCILIATION-EPOCH4-V1.json", "state/NATAL-TIME-RESEARCH-SUPERVISION-VERDICT-EPOCH4-V1.json"]
+    },
+    {
+      "id": "TC-04",
+      "text": "Return a self-contained packet to the existing task Pro supervisor that includes the independent source receipt limitation, root gaps, child contract, reconciliation, both alignments, completion claim, research assurance planes, and exact verification.",
+      "acceptance_evidence": ["docs/NATAL_TIME_S6_H1_NEXT_CONTRACT_PACKET_20260830.md", "Pro response in the existing supervised conversation"]
+    },
+    {
+      "id": "TC-05",
+      "text": "If Pro requires another owner decision, stop; otherwise continue automatically only inside its new bounded contract.",
+      "acceptance_evidence": ["Durable Pro ruling and subsequent worker state"]
+    },
+    {
+      "id": "TC-06",
+      "text": "Route SDF-20260830-OWNER-SOURCE-INDEPENDENCE-001 to the shared supervision-architecture meta-review lane without blocking unaffected task work.",
+      "acceptance_evidence": ["Meta-review lane URL/scope receipt and durable Pro meta-review status"]
+    }
+  ],
+  "required_outcome_coverage": [
+    {"owner_requirement_id":"RO-01","relation":"contributes","task_criterion_ids":["TC-04","TC-05"],"parent_task_remains_open":true},
+    {"owner_requirement_id":"RO-02","relation":"verifies","task_criterion_ids":["TC-02","TC-03"],"parent_task_remains_open":true},
+    {"owner_requirement_id":"RO-03","relation":"directly_satisfies","task_criterion_ids":["TC-04","TC-05"],"parent_task_remains_open":true},
+    {"owner_requirement_id":"RO-04","relation":"directly_satisfies","task_criterion_ids":["TC-01","TC-02","TC-03","TC-04","TC-06"],"parent_task_remains_open":true},
+    {"owner_requirement_id":"RO-05","relation":"verifies","task_criterion_ids":["TC-04"],"parent_task_remains_open":true},
+    {"owner_requirement_id":"RO-06","relation":"contributes","task_criterion_ids":["TC-04","TC-05"],"parent_task_remains_open":true},
+    {"owner_requirement_id":"RO-07","relation":"directly_satisfies","task_criterion_ids":["TC-01","TC-04","TC-05"],"parent_task_remains_open":true},
+    {"owner_requirement_id":"RO-08","relation":"contributes","task_criterion_ids":["TC-03"],"parent_task_remains_open":true},
+    {"owner_requirement_id":"RO-09","relation":"contributes","task_criterion_ids":["TC-03"],"parent_task_remains_open":true},
+    {"owner_requirement_id":"RO-10","relation":"verifies","task_criterion_ids":["TC-03","TC-04"],"parent_task_remains_open":true},
+    {"owner_requirement_id":"RO-11","relation":"directly_satisfies","task_criterion_ids":["TC-02","TC-03","TC-06"],"parent_task_remains_open":true},
+    {"owner_requirement_id":"RO-12","relation":"directly_satisfies","task_criterion_ids":["TC-04","TC-06"],"parent_task_remains_open":true},
+    {"owner_requirement_id":"RO-13","relation":"directly_satisfies","task_criterion_ids":["TC-06"],"parent_task_remains_open":true}
+  ],
+  "prohibited_in_this_child": [
+    "construct-specific search",
+    "construct or mapping content",
+    "human screening, recruitment, contact, or data collection",
+    "population, language, burden, instrument, reliability, or progression selection",
+    "production src changes",
+    "push, PR, merge, migration, deployment, publication, or release",
+    "Railway mutation or secret access",
+    "root completion claim"
+  ],
+  "completion_claim": "WORKING",
+  "root_parent_open": true,
+  "self_digest_rule": "The exact file SHA-256 is recorded by the objective-reconciliation record; this contract does not contain a self-referential digest."
+}
