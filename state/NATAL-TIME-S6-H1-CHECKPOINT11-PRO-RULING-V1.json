@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-s6-h1-checkpoint11-pro-ruling-v1",
+  "status": "OWNER_DECISION_REQUIRED",
+  "submitted_candidate": {
+    "commit": "28d97738a45fa37f8c991cef4b5058fe6f562d2f",
+    "tree": "ca31a2114c03d2194cbfa14d7bc8df798fc2f7c0",
+    "active_manifest_v2_sha256": "3bf1fc3a5210cf4da9e192b57fc85488935b24c8e53277a8ad4a5145d7281e6a"
+  },
+  "checkpoint_verdict": "NOT_ACCEPTED_AS_60_OF_60",
+  "supported_requirement_count": 59,
+  "required_requirement_count": 60,
+  "blocking_requirement_ids": ["S6H1-30"],
+  "blocking_finding": "The blanket disqualification of generic astrology, owner familiarity, and other peripheral exposure selects an eligibility rule that the neutral dossier and S6H1-30 leave for the owner.",
+  "owner_source": {
+    "capture_integrity": "VERIFIED",
+    "acquisition_mode": "WORKER_COPIED",
+    "receipt_capability": "INTEGRITY_ONLY",
+    "contract_to_captured_source": "MATCH",
+    "independent_source_comparison": "NOT_INDEPENDENT"
+  },
+  "objective_reconciliation": "QUALIFIED",
+  "worker_to_contract_alignment": "YELLOW",
+  "contract_to_owner_alignment": "PARTIAL",
+  "completion_claim": {
+    "type": "WORKING",
+    "qualification": "QUALIFIED",
+    "proposed_terminal": false,
+    "parent_outcome": "OPEN",
+    "root_terminalization_allowed": false
+  },
+  "assurance_planes": {
+    "operational_alignment": "WARN",
+    "scientific_adequacy": "WARN",
+    "release_adequacy": "NOT_APPLICABLE",
+    "release_permission": false,
+    "provenance_status": "WARN_INTEGRITY_ONLY"
+  },
+  "owner_decision": {
+    "required_now": true,
+    "question": "How should prior exposure affect eligibility to serve as an H1 chart-blind construct-content author?",
+    "allowed_responses": ["E1", "E2", "E3"],
+    "options": {
+      "E1": "Broad zero-exposure exclusion",
+      "E2": "Project-specific exclusion with peripheral-exposure adjudication",
+      "E3": "Predeclared graded-exposure policy"
+    },
+    "pro_recommendation": "E2",
+    "selected_response": null
+  },
+  "authorization": {
+    "remediation": false,
+    "next_child": false,
+    "human_workflow": false,
+    "screening_design": false,
+    "construct_specific_search": false,
+    "construct_content": false,
+    "mapping": false,
+    "push_merge_migration_deployment": false,
+    "external_action": false
+  }
+}

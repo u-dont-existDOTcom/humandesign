@@ -195,10 +195,18 @@ fail-closed until the owner source is independently verified or explicitly re-at
 other applicable gate passes. The exact ruling is
 `docs/PRO_SUPERVISION_DESIGN_FEEDBACK_RULING_20260830.md`.
 
-The exact next-contract packet is `docs/NATAL_TIME_S6_H1_NEXT_CONTRACT_PACKET_20260830.md`. Before
-any construct-specific search, human workflow/contact, or content begins, Pro must validate the
-reconciliation and issue one new bounded contract. If it requires another owner choice, stop for
-Joel; otherwise continue automatically inside that contract.
+The exact next-contract packet is `docs/NATAL_TIME_S6_H1_NEXT_CONTRACT_PACKET_20260830.md`. Pro
+authorized and reviewed the bounded pre-human governance child at checkpoint 11, but accepted only
+59/60 requirements. It ruled that the blanket disqualification of generic astrology, owner
+familiarity, and other peripheral exposure preselects an eligibility policy that `S6H1-30` and the
+neutral dossier leave to Joel. Worker-to-contract is therefore `YELLOW`, contract-to-owner remains
+`PARTIAL`, completion is `WORKING — QUALIFIED`, operational alignment is `WARN`, scientific
+adequacy is `WARN`, and release adequacy is `NOT_APPLICABLE` with release closed. The exact ruling
+and E1/E2/E3 owner gate are `docs/PRO_SUPERVISION_S6_H1_CHECKPOINT11_RULING_20260830.md`.
+
+No remediation or next child is authorized until Joel selects E1, E2, or E3 for the prior-exposure
+eligibility policy. Pro recommends E2, project-specific exclusion with separately governed
+peripheral-exposure adjudication.
 
 Option B remains a design-only prerequisite screen. It does not authorize live execution,
 measurement content, participant software, empirical data, or progression to rectification.

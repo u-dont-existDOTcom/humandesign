@@ -101,10 +101,13 @@
 
 ## Next safe action
 
-Finish the meta-review record child and return the self-contained S6/H1 next-contract packet to the
-same authenticated task Pro conversation. If Pro says another owner
-decision is required, stop and wait for Joel; otherwise continue automatically inside its one
-bounded contract. Do not begin a construct-specific search, human workflow/contact, construct or
-mapping content, push, merge, change GitHub
-governance, modify Railway, touch `OPENROUTER_API_KEY`, access participant records, recruit,
-execute baselines, or deploy without the required later authority.
+Stop and wait for Joel's checkpoint-11 owner choice: E1 broad zero-exposure exclusion, E2
+project-specific exclusion with separately governed peripheral-exposure adjudication, or E3 a
+predeclared graded-exposure policy. Pro recommends E2. The exact ruling is
+`docs/PRO_SUPERVISION_S6_H1_CHECKPOINT11_RULING_20260830.md`, and the machine-readable stop state is
+`state/NATAL-TIME-S6-H1-CHECKPOINT11-PRO-RULING-V1.json`.
+
+Do not remediate `S6H1-30` or begin any next child, human workflow/contact, screening design,
+construct-specific search, construct or mapping content, push, merge, GitHub governance change,
+Railway change, secret access, recruitment, baseline execution, migration, deployment, or release
+until the owner choice and a subsequent Pro contract authorize it.
