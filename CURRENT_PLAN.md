@@ -32,7 +32,8 @@ Checkpoint 1 prohibited candidate ranking or elimination, weights, priors, score
 
 Checkpoint 2 returned `OWNER DECISION REQUIRED: NO` and provisionally accepted the architecture, but it found the actual-engine conformance gate still open. The authorized next slice is real-engine deterministic conformance plus a documentation-only literature scan. Its exact acceptance rules and hard stops are recorded in `docs/PRO_SUPERVISION_CHECKPOINT_2_20260830.md`; the pre-search independent conception is frozen in `docs/NATAL_TIME_INDEPENDENT_CONCEPTION_SNAPSHOT_20260830.md`.
 
-The checkpoint-2 conformance slice is now implemented locally and awaits Pro review:
+The checkpoint-2 conformance slice is implemented locally and was qualified by ChatGPT Pro at
+checkpoint 3:
 
 - the single repository-default engine is pinned to strict local-file Swiss Ephemeris, true-node, geocentric apparent tropical ecliptic-of-date behavior with exact source, dependency, runtime, timezone, constants, and ephemeris-file digests;
 - all 65 emitted or derivable runtime dataclass fields are inventoried; 13 are discrete identity fields, 3 advanced-substructure leaves are explicitly unsupported/unavailable because the engine always emits `None`, and every other field has a recorded classification and exclusion reason;
@@ -43,24 +44,51 @@ The checkpoint-2 conformance slice is now implemented locally and awaits Pro rev
 - `state/NATAL-TIME-EVIDENCE-TRANSITION-MATRIX.json` covers all 12 required evidence transitions;
 - `docs/NATAL_TIME_METHODS_SCAN_20260830.md` records the bounded pre-inference methods scan without choosing semantics.
 
-Canonical pending-review artifacts are `state/NATAL-TIME-REAL-ENGINE-IDENTITY-V4.json` and `state/NATAL-TIME-REAL-ENGINE-FIXTURES.json`. Return this conformance and methods packet to the existing authenticated Pro conversation before any inferential work. Ranking, questionnaires, calibration, candidate selection, abstention thresholds, stopping, participant-facing interpretation, push, merge, and deployment remain prohibited.
+Canonical qualified artifacts are `state/NATAL-TIME-REAL-ENGINE-IDENTITY-V4.json` and
+`state/NATAL-TIME-REAL-ENGINE-FIXTURES.json`. Checkpoint 3 returned
+`OWNER DECISION REQUIRED: NO` and `Deterministic-foundation verdict: QUALIFIED`; its exact claim,
+invalidation boundary, replay-hardening requirements, and next-slice contract are recorded in
+`docs/PRO_SUPERVISION_CHECKPOINT_3_20260830.md`.
+
+The only authorized continuation is a synthetic-only **pre-inference study-design,
+falsification, feasibility, and disclosure contract**, plus fixture-granular reproducibility
+hardening. It defines complete candidate sets `C_i`, independently sourced documentary reference
+intervals `T_i`, future returned subsets-or-abstentions `S_i`, a non-scalar
+coverage/temporal-width/state-count/abstention frontier, disjoint connected-component data roles,
+strong ordinary baselines, measurement-development requirements without writing items, visibly
+hypothetical feasibility sensitivities, a release-disabled cohort-aggregate ledger schema, and a
+methods/unresolved-decision ledger. It does not implement participant inference.
+
+Ranking, questionnaires, calibration execution, candidate selection, operating or abstention
+thresholds, participant-facing interpretation, relationship evidence, live records, recruitment,
+public-ledger publication, push, merge, migration, and deployment remain prohibited. Any change to
+the qualified chart engine, ephemeris/runtime identity, transition construction, enumerator,
+boundary semantics, or full-state identity reopens deterministic conformance.
 
 ## Current implementation priority
 
-Before expanding validation, migrate the existing V4.1/V3.2 implementation to the hardened **V4.3/V3.5** contract.
+Complete checkpoint 4 without crossing into inference:
 
-Required migration gates:
+- finish production-only, exact-commit, fixture-granular replay receipts for all eight successful
+  civil days plus the Pacific/Apia fail-closed case;
+- keep the qualified fixture and identity artifacts byte-for-byte unchanged;
+- freeze the content-hashed pre-inference design contract and executable synthetic leakage tests;
+- retain the strongest-baseline matrix, methods dispositions, hypothetical feasibility grids,
+  release-disabled aggregate schema, and unresolved owner-decision register;
+- run exact-head full tests, Ruff, strict mypy, privacy/history/build gates, deterministic artifact
+  checks, and prove the qualified deterministic core did not change; and
+- return the complete packet to the existing authenticated ChatGPT Pro conversation.
 
-- full required feature registry for all frozen mappings;
-- flexibility penalty;
-- dependency/corroboration controls;
-- duration-weighted conditional prevalence;
-- exact V4.3 rank tuple;
-- full-universe rerun after accepted refinements;
-- anti-simplification tests;
-- verified reusable century cache.
+If checkpoint 4 says `OWNER DECISION REQUIRED: YES`, stop for Joel. Otherwise continue only within
+the next bounded scope that Pro explicitly authorizes.
 
-A reduced architecture-only implementation must never identify itself as V4.3.
+## Blocked long-horizon research concepts
+
+The remaining sections preserve prior research concepts for future review. They are not current
+authorization. In particular, no V4.3/V3.5 scoring migration, candidate ranking, questionnaire,
+calibration execution, adaptive selection, human recruitment, participant-facing result, or
+relationship marginalization may begin without a later Pro checkpoint and every owner decision
+identified in `state/NATAL-TIME-UNRESOLVED-DECISIONS.json`.
 
 ## Immediate proof-of-concept ladder
 
