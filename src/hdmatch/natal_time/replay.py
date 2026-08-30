@@ -37,8 +37,12 @@ QUALIFIED_IDENTITY_PACKET_SHA256 = (
 QUALIFIED_IDENTITY_FILE_SHA256 = (
     "05c80517099790b8213e86fb0b3d366c57a56a784577dfcf161c1fbb3ac6f27d"
 )
-RECEIPT_SCHEMA = "natal-time-real-engine-fixture-replay-receipt-v1"
-INDEX_SCHEMA = "natal-time-real-engine-fixture-replay-index-v1"
+PRODUCTION_RECEIPT_SCHEMA = "natal-time-real-engine-fixture-replay-receipt-v1"
+PRODUCTION_INDEX_SCHEMA = "natal-time-real-engine-fixture-replay-index-v1"
+SYNTHETIC_RECEIPT_SCHEMA = "natal-time-replay-synthetic-orchestration-receipt-v1"
+SYNTHETIC_INDEX_SCHEMA = "natal-time-replay-synthetic-orchestration-index-v1"
+SOURCE_VERIFICATION_SCHEMA = "natal-time-real-engine-replay-source-verification-v1"
+PRODUCTION_OUTPUT_REPO_RELATIVE = "state/NATAL-TIME-REAL-ENGINE-REPLAY-V1"
 _ROOT_TOLERANCE_SECONDS = 0.000001
 
 
@@ -72,8 +76,12 @@ class ReplayExpectation:
 
 @dataclass(frozen=True, slots=True)
 class ReplayContext:
+    execution_mode: Literal["real_engine_production", "synthetic_orchestration_test"]
     repository_root: Path
     repository_commit: str
+    commit_tree_oid: str
+    source_verification: dict[str, Any]
+    source_verification_sha256: str
     fixture_artifact_path: Path
     fixture_artifact_file_sha256: str
     fixture_artifact_audit_sha256: str
@@ -108,16 +116,121 @@ def current_repository_commit(repository_root: Path) -> str:
     return completed.stdout.strip()
 
 
+def verify_production_source(
+    repository_root: Path,
+    repository_commit: str,
+    output_root: Path,
+) -> dict[str, Any]:
+    """Verify exact HEAD and a clean source tree, excluding only the output root."""
+
+    root = repository_root.resolve(strict=True)
+    _require_current_head(root, repository_commit)
+    output = output_root.resolve()
+    if output == root or root not in output.parents:
+        raise ReplayValidationError("production output root must be a strict repository child")
+    relative_output = output.relative_to(root).as_posix()
+    if relative_output != PRODUCTION_OUTPUT_REPO_RELATIVE:
+        raise ReplayValidationError(
+            f"production output root must be {PRODUCTION_OUTPUT_REPO_RELATIVE}"
+        )
+    tree_oid = _git_output(root, ["rev-parse", "HEAD^{tree}"])
+    if not _is_git_oid(tree_oid):
+        raise ReplayValidationError("current commit tree OID is invalid")
+    status = subprocess.run(
+        ["git", "status", "--porcelain=v1", "-z", "--untracked-files=all"],
+        cwd=root,
+        check=True,
+        capture_output=True,
+    ).stdout
+    dirty_outside = tuple(
+        path
+        for path in _porcelain_paths(status)
+        if path != relative_output and not path.startswith(f"{relative_output}/")
+    )
+    if dirty_outside:
+        rendered = ", ".join(dirty_outside[:5])
+        raise ReplayValidationError(
+            f"production replay source tree is dirty outside output root: {rendered}"
+        )
+    payload: dict[str, Any] = {
+        "schema_version": SOURCE_VERIFICATION_SCHEMA,
+        "verification_mode": "exact-head-clean-tree-excluding-declared-output-root",
+        "repository_commit": repository_commit,
+        "commit_tree_oid": tree_oid,
+        "head_matches_declared_commit": True,
+        "clean_worktree_excluding_output_root": True,
+        "output_root_repo_relative": relative_output,
+    }
+    payload["source_verification_sha256"] = sha256_json(payload)
+    return payload
+
+
 def load_replay_context(
     repository_root: Path,
     repository_commit: str,
     *,
     fixture_artifact_path: Path | None = None,
     engine_identity_path: Path | None = None,
+    source_verification: Mapping[str, Any] | None = None,
 ) -> ReplayContext:
     """Load and pin the qualified source artifacts and derive nine expectations."""
 
     root = repository_root.resolve(strict=True)
+    _require_current_head(root, repository_commit)
+    verification = (
+        dict(source_verification)
+        if source_verification is not None
+        else _head_only_source_verification(root, repository_commit)
+    )
+    _validate_source_verification(root, repository_commit, verification)
+    return _load_pinned_context(
+        root,
+        repository_commit,
+        execution_mode="real_engine_production",
+        source_verification=verification,
+        fixture_artifact_path=fixture_artifact_path,
+        engine_identity_path=engine_identity_path,
+    )
+
+
+def load_synthetic_test_context(
+    repository_root: Path,
+    *,
+    fixture_artifact_path: Path | None = None,
+    engine_identity_path: Path | None = None,
+) -> ReplayContext:
+    """Load pinned expectations for orchestration tests without real-engine claims."""
+
+    root = repository_root.resolve(strict=True)
+    verification: dict[str, Any] = {
+        "schema_version": "natal-time-replay-synthetic-source-v1",
+        "verification_mode": "synthetic-orchestration-test-no-git-claim",
+        "repository_commit": "synthetic-orchestration-test",
+        "commit_tree_oid": "0" * 40,
+        "head_matches_declared_commit": False,
+        "clean_worktree_excluding_output_root": False,
+        "output_root_repo_relative": None,
+    }
+    verification["source_verification_sha256"] = sha256_json(verification)
+    return _load_pinned_context(
+        root,
+        "synthetic-orchestration-test",
+        execution_mode="synthetic_orchestration_test",
+        source_verification=verification,
+        fixture_artifact_path=fixture_artifact_path,
+        engine_identity_path=engine_identity_path,
+    )
+
+
+def _load_pinned_context(
+    root: Path,
+    repository_commit: str,
+    *,
+    execution_mode: Literal["real_engine_production", "synthetic_orchestration_test"],
+    source_verification: dict[str, Any],
+    fixture_artifact_path: Path | None,
+    engine_identity_path: Path | None,
+) -> ReplayContext:
     fixture_path = (
         fixture_artifact_path or root / "state" / "NATAL-TIME-REAL-ENGINE-FIXTURES.json"
     ).resolve(strict=True)
@@ -138,8 +251,14 @@ def load_replay_context(
         raise ReplayValidationError("fixture artifact is bound to a different engine identity")
     expectations = _build_expectations(fixture)
     return ReplayContext(
+        execution_mode=execution_mode,
         repository_root=root,
         repository_commit=repository_commit,
+        commit_tree_oid=cast(str, source_verification["commit_tree_oid"]),
+        source_verification=source_verification,
+        source_verification_sha256=cast(
+            str, source_verification["source_verification_sha256"]
+        ),
         fixture_artifact_path=fixture_path,
         fixture_artifact_file_sha256=fixture_file_sha,
         fixture_artifact_audit_sha256=cast(str, fixture["audit_sha256"]),
@@ -188,20 +307,29 @@ def make_receipt(
             f"{expectation.receipt_id} ordered interval-list digest is invalid"
         )
     verification = dict(independent_verification)
-    required_status = (
-        "passed_exact_event_key_agreement"
-        if expectation.status == "success"
-        else "passed_expected_fail_closed"
-    )
+    production = context.execution_mode == "real_engine_production"
+    required_status = "synthetic_not_executed"
+    if production:
+        required_status = (
+            "passed_exact_event_key_agreement"
+            if expectation.status == "success"
+            else "passed_expected_fail_closed"
+        )
     if verification.get("status") != required_status:
         raise ReplayValidationError(
             f"{expectation.receipt_id} independent verification did not pass"
         )
+    receipt_schema = PRODUCTION_RECEIPT_SCHEMA if production else SYNTHETIC_RECEIPT_SCHEMA
     payload: dict[str, Any] = {
-        "schema_version": RECEIPT_SCHEMA,
+        "schema_version": receipt_schema,
+        "execution_mode": context.execution_mode,
+        "real_engine_executor": production,
+        "synthetic_orchestration_test_only": not production,
         "receipt_id": expectation.receipt_id,
         "status": expectation.status,
         "repository_commit": context.repository_commit,
+        "commit_tree_oid": context.commit_tree_oid,
+        "source_verification_sha256": context.source_verification_sha256,
         "fixture_artifact_file_sha256": context.fixture_artifact_file_sha256,
         "fixture_artifact_audit_sha256": context.fixture_artifact_audit_sha256,
         "engine_identity_file_sha256": context.engine_identity_file_sha256,
@@ -222,7 +350,7 @@ def make_receipt(
         "committed_components_match": True,
         "independent_verification": verification,
         "independent_verification_sha256": sha256_json(verification),
-        "synthetic_only": True,
+        "fixture_data_synthetic_only": True,
         "inference_semantics_present": False,
     }
     payload["receipt_sha256"] = sha256_json(payload)
@@ -235,6 +363,8 @@ def real_engine_fixture_executor(
 ) -> Sequence[Mapping[str, Any]]:
     """Recompute one original source fixture and independently verify each day."""
 
+    if context.execution_mode != "real_engine_production":
+        raise ReplayValidationError("real-engine executor rejects synthetic test contexts")
     if not expectations:
         raise ReplayValidationError("fixture execution requires at least one expectation")
     first = expectations[0]
@@ -316,10 +446,50 @@ def run_replay(
     context: ReplayContext,
     output_root: Path,
     *,
-    executor: FixtureExecutor = real_engine_fixture_executor,
+    aggregate_only: bool = False,
+    progress: Callable[[str, str], None] | None = None,
+) -> dict[str, Any]:
+    """Run or verify production replay; the real executor cannot be substituted."""
+
+    _validate_production_context(context, output_root)
+    return _run_replay(
+        context,
+        output_root,
+        executor=real_engine_fixture_executor,
+        aggregate_only=aggregate_only,
+        progress=progress,
+    )
+
+
+def run_synthetic_test_replay(
+    context: ReplayContext,
+    output_root: Path,
+    *,
+    executor: FixtureExecutor,
     aggregate_only: bool = False,
 ) -> dict[str, Any]:
-    """Resume missing fixture groups, then build or verify the receipt-only index."""
+    """Exercise resume/aggregation only, using unmistakably synthetic artifacts."""
+
+    if context.execution_mode != "synthetic_orchestration_test":
+        raise ReplayValidationError("synthetic test runner requires a synthetic context")
+    return _run_replay(
+        context,
+        output_root,
+        executor=executor,
+        aggregate_only=aggregate_only,
+        progress=None,
+    )
+
+
+def _run_replay(
+    context: ReplayContext,
+    output_root: Path,
+    *,
+    executor: FixtureExecutor,
+    aggregate_only: bool,
+    progress: Callable[[str, str], None] | None,
+) -> dict[str, Any]:
+    """Shared immutable receipt orchestration behind separated public modes."""
 
     root = output_root
     receipts_dir = root / "receipts"
@@ -331,7 +501,13 @@ def run_replay(
         for expectations in grouped:
             if all(item.receipt_id in existing for item in expectations):
                 continue
+            if context.execution_mode == "real_engine_production":
+                _validate_production_context(context, output_root)
+            if progress is not None:
+                progress("start", expectations[0].source_fixture_name)
             generated = tuple(dict(item) for item in executor(context, expectations))
+            if progress is not None:
+                progress("done", expectations[0].source_fixture_name)
             generated_by_id = {cast(str, item.get("receipt_id")): item for item in generated}
             expected_ids = {item.receipt_id for item in expectations}
             if len(generated_by_id) != len(generated) or set(generated_by_id) != expected_ids:
@@ -377,8 +553,12 @@ def build_aggregate_index(
         }
         for item in context.expectations
     ]
+    production = context.execution_mode == "real_engine_production"
     aggregate_input = {
+        "execution_mode": context.execution_mode,
         "repository_commit": context.repository_commit,
+        "commit_tree_oid": context.commit_tree_oid,
+        "source_verification_sha256": context.source_verification_sha256,
         "fixture_artifact_file_sha256": context.fixture_artifact_file_sha256,
         "fixture_artifact_audit_sha256": context.fixture_artifact_audit_sha256,
         "engine_identity_file_sha256": context.engine_identity_file_sha256,
@@ -386,7 +566,10 @@ def build_aggregate_index(
         "receipt_hashes": ordered,
     }
     payload: dict[str, Any] = {
-        "schema_version": INDEX_SCHEMA,
+        "schema_version": PRODUCTION_INDEX_SCHEMA if production else SYNTHETIC_INDEX_SCHEMA,
+        "real_engine_executor": production,
+        "synthetic_orchestration_test_only": not production,
+        "source_verification": context.source_verification,
         **aggregate_input,
         "receipt_count": len(ordered),
         "successful_civil_day_count": sum(
@@ -396,7 +579,8 @@ def build_aggregate_index(
             item.status == "fail_closed" for item in context.expectations
         ),
         "all_committed_components_match": True,
-        "all_independent_verifications_passed": True,
+        "all_independent_verifications_passed": production,
+        "real_engine_executed": production,
         "aggregate_from_receipt_hashes_without_transition_recomputation": True,
         "aggregate_sha256": sha256_json(aggregate_input),
     }
@@ -604,14 +788,24 @@ def _validate_receipt(
     expectation: ReplayExpectation,
     payload: Mapping[str, Any],
 ) -> None:
-    if payload.get("schema_version") != RECEIPT_SCHEMA:
+    production = context.execution_mode == "real_engine_production"
+    expected_schema = PRODUCTION_RECEIPT_SCHEMA if production else SYNTHETIC_RECEIPT_SCHEMA
+    if payload.get("schema_version") != expected_schema:
         raise ReplayValidationError("replay receipt schema changed")
+    if payload.get("execution_mode") != context.execution_mode:
+        raise ReplayValidationError("replay receipt execution mode mismatch")
+    if payload.get("real_engine_executor") is not production:
+        raise ReplayValidationError("replay receipt executor mode mismatch")
+    if payload.get("synthetic_orchestration_test_only") is not (not production):
+        raise ReplayValidationError("replay receipt synthetic-mode flag mismatch")
     if payload.get("receipt_id") != expectation.receipt_id:
         raise ReplayValidationError("replay receipt ID mismatch")
     if payload.get("status") != expectation.status:
         raise ReplayValidationError("replay receipt status mismatch")
     exact_bindings = {
         "repository_commit": context.repository_commit,
+        "commit_tree_oid": context.commit_tree_oid,
+        "source_verification_sha256": context.source_verification_sha256,
         "fixture_artifact_file_sha256": context.fixture_artifact_file_sha256,
         "fixture_artifact_audit_sha256": context.fixture_artifact_audit_sha256,
         "engine_identity_file_sha256": context.engine_identity_file_sha256,
@@ -648,13 +842,46 @@ def _validate_receipt(
     verification = payload.get("independent_verification")
     if not isinstance(verification, dict):
         raise ReplayValidationError("replay receipt lacks independent verification")
-    required_status = (
-        "passed_exact_event_key_agreement"
-        if expectation.status == "success"
-        else "passed_expected_fail_closed"
-    )
+    required_status = "synthetic_not_executed"
+    if production:
+        required_status = (
+            "passed_exact_event_key_agreement"
+            if expectation.status == "success"
+            else "passed_expected_fail_closed"
+        )
     if verification.get("status") != required_status:
         raise ReplayValidationError("replay receipt independent verification failed")
+    if production and expectation.status == "success":
+        production_count = verification.get("production_event_count")
+        independent_count = verification.get("independent_event_count")
+        if (
+            not isinstance(production_count, int)
+            or production_count < 0
+            or production_count != independent_count
+        ):
+            raise ReplayValidationError("production and independent event counts differ")
+        if not _is_sha256(verification.get("independent_enumeration_sha256")):
+            raise ReplayValidationError("independent enumeration digest is invalid")
+        if not _is_sha256(verification.get("independent_series_certificate_sha256")):
+            raise ReplayValidationError("independent series digest is invalid")
+    if (
+        production
+        and expectation.status == "fail_closed"
+        and verification
+        != {
+            "status": "passed_expected_fail_closed",
+            "enumeration_allowed": False,
+            "failure_type": expectation.fixture_input["failure_type"],
+            "failure_message": expectation.fixture_input["failure_message"],
+        }
+    ):
+        raise ReplayValidationError("fail-closed verification receipt mismatch")
+    if not production and verification != {
+        "status": "synthetic_not_executed",
+        "real_engine_executed": False,
+        "independent_verification_executed": False,
+    }:
+        raise ReplayValidationError("synthetic receipt falsely asserts real verification")
     if payload.get("independent_verification_sha256") != sha256_json(verification):
         raise ReplayValidationError("independent verification digest mismatch")
     unhashed = dict(payload)
@@ -683,6 +910,104 @@ def _group_expectations(
     return tuple(tuple(group) for group in groups)
 
 
+def _validate_production_context(context: ReplayContext, output_root: Path) -> None:
+    if context.execution_mode != "real_engine_production":
+        raise ReplayValidationError("production replay rejects synthetic test contexts")
+    _require_current_head(context.repository_root, context.repository_commit)
+    current_tree = _git_output(context.repository_root, ["rev-parse", "HEAD^{tree}"])
+    if current_tree != context.commit_tree_oid:
+        raise ReplayValidationError("production replay commit tree changed")
+    verification = context.source_verification
+    if verification.get("clean_worktree_excluding_output_root") is not True:
+        raise ReplayValidationError("production replay requires a clean-tree source receipt")
+    output = output_root.resolve()
+    if output == context.repository_root or context.repository_root not in output.parents:
+        raise ReplayValidationError("production output root must be a strict repository child")
+    expected_output = output.relative_to(context.repository_root).as_posix()
+    if verification.get("output_root_repo_relative") != expected_output:
+        raise ReplayValidationError("production output root differs from source verification")
+    fresh = verify_production_source(
+        context.repository_root, context.repository_commit, output_root
+    )
+    if fresh != verification:
+        raise ReplayValidationError("production source verification is stale or mismatched")
+
+
+def _head_only_source_verification(root: Path, repository_commit: str) -> dict[str, Any]:
+    tree_oid = _git_output(root, ["rev-parse", "HEAD^{tree}"])
+    payload: dict[str, Any] = {
+        "schema_version": SOURCE_VERIFICATION_SCHEMA,
+        "verification_mode": "exact-head-only-context-load-no-execution-authorization",
+        "repository_commit": repository_commit,
+        "commit_tree_oid": tree_oid,
+        "head_matches_declared_commit": True,
+        "clean_worktree_excluding_output_root": None,
+        "output_root_repo_relative": None,
+    }
+    payload["source_verification_sha256"] = sha256_json(payload)
+    return payload
+
+
+def _validate_source_verification(
+    root: Path, repository_commit: str, verification: Mapping[str, Any]
+) -> None:
+    if verification.get("schema_version") != SOURCE_VERIFICATION_SCHEMA:
+        raise ReplayValidationError("production source verification schema changed")
+    if verification.get("repository_commit") != repository_commit:
+        raise ReplayValidationError("source verification commit mismatch")
+    if verification.get("head_matches_declared_commit") is not True:
+        raise ReplayValidationError("source verification does not attest exact HEAD")
+    tree_oid = _git_output(root, ["rev-parse", "HEAD^{tree}"])
+    if verification.get("commit_tree_oid") != tree_oid or not _is_git_oid(tree_oid):
+        raise ReplayValidationError("source verification commit tree mismatch")
+    unhashed = dict(verification)
+    embedded = unhashed.pop("source_verification_sha256", None)
+    if embedded != sha256_json(unhashed):
+        raise ReplayValidationError("source verification self-hash mismatch")
+
+
+def _require_current_head(root: Path, repository_commit: str) -> None:
+    if not _is_git_oid(repository_commit):
+        raise ReplayValidationError("repository commit must be an exact 40-hex Git OID")
+    actual = current_repository_commit(root)
+    if actual != repository_commit:
+        raise ReplayValidationError(
+            f"declared repository commit does not match current HEAD: {repository_commit}"
+        )
+
+
+def _git_output(root: Path, arguments: Sequence[str]) -> str:
+    completed = subprocess.run(
+        ["git", *arguments],
+        cwd=root,
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    return completed.stdout.strip()
+
+
+def _porcelain_paths(raw: bytes) -> tuple[str, ...]:
+    tokens = raw.split(b"\0")
+    paths: list[str] = []
+    index = 0
+    while index < len(tokens):
+        record = tokens[index]
+        index += 1
+        if not record:
+            continue
+        if len(record) < 4 or record[2:3] != b" ":
+            raise ReplayValidationError("could not parse Git porcelain status")
+        status = record[:2]
+        paths.append(record[3:].decode("utf-8", errors="surrogateescape"))
+        if b"R" in status or b"C" in status:
+            if index >= len(tokens) or not tokens[index]:
+                raise ReplayValidationError("incomplete Git rename/copy status")
+            paths.append(tokens[index].decode("utf-8", errors="surrogateescape"))
+            index += 1
+    return tuple(paths)
+
+
 def _verify_embedded_hash(
     payload: Mapping[str, Any], hash_field: str, qualified_value: str
 ) -> None:
@@ -707,15 +1032,21 @@ def _is_sha256(value: object) -> bool:
     )
 
 
+def _is_git_oid(value: object) -> bool:
+    return (
+        isinstance(value, str)
+        and len(value) == 40
+        and all(character in "0123456789abcdef" for character in value)
+    )
+
+
 def _receipt_id(source_name: str, civil_date: str) -> str:
     safe = "".join(character if character.isalnum() else "-" for character in source_name)
     return f"{safe.strip('-')}-{civil_date}".lower()
 
 
-def fake_receipt_executor(
-    independent_factory: Callable[[ReplayExpectation], Mapping[str, Any]],
-) -> FixtureExecutor:
-    """Return a deterministic no-astronomy executor for orchestration tests only."""
+def fake_receipt_executor() -> FixtureExecutor:
+    """Return a no-astronomy executor that cannot claim independent verification."""
 
     def execute(
         context: ReplayContext,
@@ -737,7 +1068,11 @@ def fake_receipt_executor(
                 ),
                 coverage_receipt_sha256=item.committed_coverage_receipt_sha256,
                 result_sha256=item.committed_result_sha256,
-                independent_verification=independent_factory(item),
+                independent_verification={
+                    "status": "synthetic_not_executed",
+                    "real_engine_executed": False,
+                    "independent_verification_executed": False,
+                },
             )
             for item in expectations
         )
