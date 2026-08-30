@@ -143,7 +143,12 @@ def build_packet(
     swe = importlib.import_module("swisseph")
     temporal = audit_swiss_temporal_resolution(provider, swe)
     inventory = build_engine_field_inventory()
-    chart = calculate_chart(provider, SYNTHETIC_REFERENCE_UTC)
+    chart = calculate_chart(
+        provider,
+        SYNTHETIC_REFERENCE_UTC,
+        design_time_tolerance_seconds=temporal.design_root_time_tolerance_seconds,
+        design_arc_tolerance_degrees=temporal.design_root_arc_tolerance_degrees,
+    )
     sample_mandala = longitude_to_gate_line(chart.activations[0].longitude)
     source = _source_identity(repository_root)
     dependency_lock = repository_root / "requirements-dev.lock"

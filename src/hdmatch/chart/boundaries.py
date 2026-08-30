@@ -71,6 +71,7 @@ def enumerate_chart_boundaries(
     resolution: BoundaryResolution = BoundaryResolution.LINE,
     root_tolerance_seconds: float = 0.01,
     max_scan_step_seconds: float = 6 * 3600.0,
+    ephemeris_time_quantum_seconds: float = 41e-6,
 ) -> tuple[BoundaryEvent, ...]:
     """Enumerate Personality and Design activation transitions.
 
@@ -86,7 +87,11 @@ def enumerate_chart_boundaries(
     end = _require_utc(end_utc)
     if end <= start:
         raise ValueError("boundary range must have positive duration")
-    if root_tolerance_seconds <= 0.0 or max_scan_step_seconds <= 0.0:
+    if (
+        root_tolerance_seconds <= 0.0
+        or max_scan_step_seconds <= 0.0
+        or ephemeris_time_quantum_seconds <= 0.0
+    ):
         raise ValueError("boundary tolerances and scan step must be positive")
     if len(set(bodies)) != len(bodies):
         raise ValueError("bodies must not contain duplicates")
@@ -115,6 +120,9 @@ def enumerate_chart_boundaries(
                     return provider.position(body, at_utc).longitude
 
                 speed_bound = provider.max_abs_speed_degrees_per_day(body)
+                absolute_position_uncertainty = (
+                    speed_bound * ephemeris_time_quantum_seconds / 86400.0
+                )
             else:
 
                 def longitude_at(at_utc: datetime, body: CelestialBody = body) -> float:
@@ -124,6 +132,11 @@ def enumerate_chart_boundaries(
                     provider.max_abs_speed_degrees_per_day(body)
                     * provider.max_abs_speed_degrees_per_day(CelestialBody.SUN)
                     / provider.min_solar_speed_degrees_per_day()
+                )
+                absolute_position_uncertainty = (
+                    provider.max_abs_speed_degrees_per_day(body)
+                    * (root_tolerance_seconds + ephemeris_time_quantum_seconds)
+                    / 86400.0
                 )
             if speed_bound <= 0.0 or not math.isfinite(speed_bound):
                 raise ValueError(f"invalid speed bound for {body.value}: {speed_bound}")
@@ -135,6 +148,7 @@ def enumerate_chart_boundaries(
                 origin_degrees=RAVE_MANDALA_START_DEGREES,
                 spacing_degrees=spacing,
                 max_speed_degrees_per_day=speed_bound,
+                absolute_position_uncertainty_degrees=absolute_position_uncertainty,
                 root_tolerance_seconds=root_tolerance_seconds,
                 max_scan_step_seconds=max_scan_step_seconds,
             )
@@ -271,6 +285,7 @@ def _enumerate_periodic_crossings(
     origin_degrees: float,
     spacing_degrees: float,
     max_speed_degrees_per_day: float,
+    absolute_position_uncertainty_degrees: float,
     root_tolerance_seconds: float,
     max_scan_step_seconds: float,
 ) -> tuple[tuple[datetime, float], ...]:
@@ -300,6 +315,7 @@ def _enumerate_periodic_crossings(
             origin_degrees,
             spacing_degrees,
             speed_per_second,
+            absolute_position_uncertainty_degrees,
             root_tolerance_seconds,
             roots,
         )
@@ -324,11 +340,12 @@ def _search_possible_crossings(
     origin: float,
     spacing: float,
     speed_per_second: float,
+    absolute_position_uncertainty_degrees: float,
     tolerance_seconds: float,
     roots: list[tuple[datetime, float]],
 ) -> None:
     duration = (right_time - left_time).total_seconds()
-    reach = speed_per_second * duration
+    reach = speed_per_second * duration + absolute_position_uncertainty_degrees
     possible_low = max(left_value - reach, right_value - reach)
     possible_high = min(left_value + reach, right_value + reach)
     levels = _levels_between(origin, spacing, possible_low, possible_high)
@@ -364,6 +381,7 @@ def _search_possible_crossings(
         origin,
         spacing,
         speed_per_second,
+        absolute_position_uncertainty_degrees,
         tolerance_seconds,
         roots,
     )
@@ -376,6 +394,7 @@ def _search_possible_crossings(
         origin,
         spacing,
         speed_per_second,
+        absolute_position_uncertainty_degrees,
         tolerance_seconds,
         roots,
     )

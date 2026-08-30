@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import math
 from dataclasses import asdict
 from hashlib import sha256
 from pathlib import Path
@@ -19,9 +20,10 @@ from hdmatch.natal_time.models import SHA256_PATTERN, NatalTimeModel
 from hdmatch.util import sha256_file, sha256_json
 
 STATE_IDENTITY_VERSION = "natal-full-state-identity-v1"
-ENUMERATOR_VERSION = "natal-civil-day-enumerator-v1"
+ENUMERATOR_VERSION = "natal-civil-day-enumerator-v2"
 CANONICALIZER_VERSION = "hdmatch-canonical-json-v1"
-BOUNDARY_METHOD = "lipschitz-event-search-plus-discrete-transition-verification-v1"
+BOUNDARY_METHOD = "lipschitz-engine-grid-event-search-plus-independent-verification-v2"
+SWISS_JULIAN_DAY_QUANTUM_MICROSECONDS = math.ulp(2_451_544.5) * 86_400_000_000.0
 
 
 class StateIdentityField(NatalTimeModel):
@@ -64,7 +66,7 @@ class EphemerisFileProvenance(NatalTimeModel):
 
 
 class EngineProvenance(NatalTimeModel):
-    schema_version: Literal["natal-engine-provenance-v1"] = "natal-engine-provenance-v1"
+    schema_version: Literal["natal-engine-provenance-v2"] = "natal-engine-provenance-v2"
     repository_commit: str = Field(min_length=7)
     chart_engine_version: str
     dependency_lock_sha256: str = Field(pattern=SHA256_PATTERN)
@@ -78,11 +80,14 @@ class EngineProvenance(NatalTimeModel):
     timezone_database_version: str
     timezone_file_sha256: str = Field(pattern=SHA256_PATTERN)
     canonicalizer_version: Literal["hdmatch-canonical-json-v1"] = "hdmatch-canonical-json-v1"
-    enumerator_version: Literal["natal-civil-day-enumerator-v1"] = "natal-civil-day-enumerator-v1"
-    boundary_method: Literal["lipschitz-event-search-plus-discrete-transition-verification-v1"] = (
-        "lipschitz-event-search-plus-discrete-transition-verification-v1"
-    )
+    enumerator_version: Literal["natal-civil-day-enumerator-v2"] = "natal-civil-day-enumerator-v2"
+    boundary_method: Literal[
+        "lipschitz-engine-grid-event-search-plus-independent-verification-v2"
+    ] = "lipschitz-engine-grid-event-search-plus-independent-verification-v2"
     datetime_input_resolution_microseconds: Literal[1] = 1
+    ephemeris_julian_day_quantum_microseconds: float | None = Field(default=None, gt=0.0)
+    maximum_equal_ephemeris_time_span_microseconds: int = Field(ge=0)
+    astronomical_microsecond_precision_claimed: Literal[False] = False
     boundary_root_tolerance_seconds: float = Field(gt=0.0, le=1.0)
     rounding_convention: Literal["first_changed_representable_microsecond"] = (
         "first_changed_representable_microsecond"
@@ -176,9 +181,10 @@ def build_engine_provenance(
     dependency_lock_path: str | Path,
     runtime_or_container_sha256: str,
     iana_timezone: str,
-    boundary_root_tolerance_seconds: float = 0.01,
+    boundary_root_tolerance_seconds: float = 0.000001,
 ) -> EngineProvenance:
     metadata = provider.metadata
+    is_swiss_binary64 = metadata.provider == "swiss_ephemeris_local_files"
     return EngineProvenance(
         repository_commit=repository_commit,
         chart_engine_version=CHART_ENGINE_VERSION,
@@ -199,6 +205,10 @@ def build_engine_provenance(
         bodygraph_constants_sha256=bodygraph_constants_sha256(),
         timezone_database_version=timezone_database_version(),
         timezone_file_sha256=timezone_file_sha256(iana_timezone),
+        ephemeris_julian_day_quantum_microseconds=(
+            SWISS_JULIAN_DAY_QUANTUM_MICROSECONDS if is_swiss_binary64 else None
+        ),
+        maximum_equal_ephemeris_time_span_microseconds=(40 if is_swiss_binary64 else 0),
         boundary_root_tolerance_seconds=boundary_root_tolerance_seconds,
     )
 

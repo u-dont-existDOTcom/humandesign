@@ -161,6 +161,12 @@ class CoverageReceipt(NatalTimeModel):
     exactly_one_interval_per_representable_instant: Literal[True] = True
     boundary_method: str
     datetime_input_resolution_microseconds: Literal[1] = 1
+    ephemeris_julian_day_quantum_microseconds: float | None = Field(default=None, gt=0.0)
+    maximum_equal_ephemeris_time_span_microseconds: int = Field(ge=0)
+    astronomical_microsecond_precision_claimed: Literal[False] = False
+    exactness_scope: Literal[
+        "declared-coordinate-grid-relative-to-pinned-engine-not-astronomical-microseconds"
+    ] = "declared-coordinate-grid-relative-to-pinned-engine-not-astronomical-microseconds"
     boundary_root_tolerance_seconds: float = Field(gt=0.0)
     rounding_convention: Literal["first_changed_representable_microsecond"] = (
         "first_changed_representable_microsecond"

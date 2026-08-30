@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import math
+from collections.abc import Callable
 from dataclasses import fields
 from datetime import UTC, datetime, timedelta
 from enum import StrEnum
@@ -18,14 +19,19 @@ from hdmatch.chart.calculator import (
     StableActivation,
     StableChartFeatures,
 )
-from hdmatch.chart.design_moment import DesignMomentResult
+from hdmatch.chart.design_moment import DesignMomentResult, solve_design_moment
 from hdmatch.chart.ephemeris import (
     CelestialBody,
     EphemerisMetadata,
     EphemerisProvider,
     _julian_day_ut,
 )
-from hdmatch.chart.rave_mandala import MandalaPosition
+from hdmatch.chart.rave_mandala import (
+    LINE_WIDTH_DEGREES,
+    RAVE_MANDALA_START_DEGREES,
+    MandalaPosition,
+    longitude_to_gate_line,
+)
 from hdmatch.natal_time.models import NatalTimeModel
 from hdmatch.util import sha256_json
 
@@ -118,6 +124,48 @@ class EngineTemporalResolutionAudit(NatalTimeModel):
         "exact-on-declared-python-coordinate-grid-relative-to-pinned-binary64-engine"
     ] = "exact-on-declared-python-coordinate-grid-relative-to-pinned-binary64-engine"
     precision_warning: str = Field(min_length=1)
+
+    @property
+    def content_sha256(self) -> str:
+        return sha256_json(self.model_dump(mode="json"))
+
+
+class IndependentTransition(NatalTimeModel):
+    at_utc: datetime
+    side: Literal["personality", "design"]
+    body: CelestialBody
+    before_gate: int = Field(ge=1, le=64)
+    before_line: int = Field(ge=1, le=6)
+    after_gate: int = Field(ge=1, le=64)
+    after_line: int = Field(ge=1, le=6)
+
+
+class IndependentSeriesCertificate(NatalTimeModel):
+    side: Literal["personality", "design"]
+    body: CelestialBody
+    declared_ephemeris_speed_bound_degrees_per_day: float = Field(gt=0.0)
+    candidate_axis_speed_bound_degrees_per_day: float = Field(gt=0.0)
+    absolute_position_uncertainty_degrees: float = Field(ge=0.0)
+    maximum_observed_abs_ephemeris_speed_degrees_per_day: float = Field(ge=0.0)
+    observed_to_declared_speed_ratio: float = Field(ge=0.0, lt=1.0)
+    evaluated_coordinate_count: int = Field(gt=1)
+    transition_count: int = Field(ge=0)
+
+
+class IndependentTransitionEnumeration(NatalTimeModel):
+    schema_version: Literal["natal-independent-transition-enumeration-v1"] = (
+        "natal-independent-transition-enumeration-v1"
+    )
+    start_utc: datetime
+    end_utc: datetime
+    coordinate_quantum_microseconds: Literal[1] = 1
+    initial_scan_step_seconds: float = Field(gt=0.0)
+    proof_method: Literal[
+        "independent-start-point-lipschitz-pruning-to-adjacent-coordinate-pairs"
+    ] = "independent-start-point-lipschitz-pruning-to-adjacent-coordinate-pairs"
+    endpoint_equality_used_as_stability_proof: Literal[False] = False
+    transitions: tuple[IndependentTransition, ...]
+    series_certificates: tuple[IndependentSeriesCertificate, ...] = Field(min_length=1)
 
     @property
     def content_sha256(self) -> str:
@@ -560,7 +608,7 @@ def audit_swiss_temporal_resolution(
     provider: EphemerisProvider,
     swe_module: ModuleType,
     *,
-    design_root_time_tolerance_seconds: float = 0.01,
+    design_root_time_tolerance_seconds: float = 0.000001,
     design_root_arc_tolerance_degrees: float = 1e-8,
     references: tuple[datetime, ...] = (
         datetime(1900, 1, 1, tzinfo=UTC),
@@ -629,3 +677,230 @@ def audit_swiss_temporal_resolution(
             "microsecond precision; adjacent input microseconds commonly evaluate identically."
         ),
     )
+
+
+def independently_enumerate_line_transitions(
+    provider: EphemerisProvider,
+    start_utc: datetime,
+    end_utc: datetime,
+    *,
+    bodies: tuple[CelestialBody, ...] = tuple(CelestialBody),
+    initial_scan_step_seconds: float = 900.0,
+    design_root_time_tolerance_seconds: float = 0.000001,
+    ephemeris_time_quantum_seconds: float = 41e-6,
+) -> IndependentTransitionEnumeration:
+    """Enumerate transitions without importing or calling the production boundary code.
+
+    Each initial segment is independently certified from its start longitude and
+    the provider's declared absolute speed bound. Segments that could reach any
+    line boundary are bisected until adjacent Python-datetime coordinates are
+    compared directly. Endpoint equality is never treated as a stability proof,
+    so direct, retrograde, stationary, and repeated crossings follow the same path.
+    """
+
+    start = _require_utc(start_utc)
+    end = _require_utc(end_utc)
+    if end <= start:
+        raise ValueError("independent transition range must have positive duration")
+    if initial_scan_step_seconds <= 0.0:
+        raise ValueError("independent scan step must be positive")
+    if design_root_time_tolerance_seconds <= 0.0 or ephemeris_time_quantum_seconds <= 0.0:
+        raise ValueError("independent numerical-resolution bounds must be positive")
+    if len(set(bodies)) != len(bodies):
+        raise ValueError("independent transition bodies must be unique")
+
+    design_cache: dict[datetime, datetime] = {}
+
+    def design_time(candidate_utc: datetime) -> datetime:
+        try:
+            return design_cache[candidate_utc]
+        except KeyError:
+            solved = solve_design_moment(
+                provider,
+                candidate_utc,
+                time_tolerance_seconds=design_root_time_tolerance_seconds,
+            ).design_utc
+            design_cache[candidate_utc] = solved
+            return solved
+
+    all_transitions: list[IndependentTransition] = []
+    certificates: list[IndependentSeriesCertificate] = []
+    sides: tuple[Literal["personality", "design"], ...] = ("personality", "design")
+    for side in sides:
+        for body in bodies:
+            observed_speed = 0.0
+            evaluated_coordinates: set[datetime] = set()
+
+            def position_at(
+                candidate_utc: datetime,
+                *,
+                body: CelestialBody = body,
+                side: Literal["personality", "design"] = side,
+                evaluated: set[datetime] = evaluated_coordinates,
+            ) -> float:
+                nonlocal observed_speed
+                evaluated.add(candidate_utc)
+                ephemeris_utc = (
+                    candidate_utc if side == "personality" else design_time(candidate_utc)
+                )
+                position = provider.position(body, ephemeris_utc)
+                observed_speed = max(observed_speed, abs(position.speed_degrees_per_day))
+                return position.longitude
+
+            body_bound = provider.max_abs_speed_degrees_per_day(body)
+            if side == "personality":
+                coordinate_speed_bound = body_bound
+                absolute_position_uncertainty = (
+                    body_bound * ephemeris_time_quantum_seconds / 86_400.0
+                )
+            else:
+                coordinate_speed_bound = (
+                    body_bound
+                    * provider.max_abs_speed_degrees_per_day(CelestialBody.SUN)
+                    / provider.min_solar_speed_degrees_per_day()
+                )
+                absolute_position_uncertainty = (
+                    body_bound
+                    * (design_root_time_tolerance_seconds + ephemeris_time_quantum_seconds)
+                    / 86_400.0
+                )
+            transitions: list[IndependentTransition] = []
+            left = start
+            left_raw = position_at(left)
+            while left < end:
+                right = min(end, left + timedelta(seconds=initial_scan_step_seconds))
+                _independent_search_segment(
+                    position_at,
+                    left,
+                    right,
+                    left_raw,
+                    coordinate_speed_bound / 86_400.0,
+                    absolute_position_uncertainty,
+                    side,
+                    body,
+                    transitions,
+                )
+                left = right
+                left_raw = position_at(left)
+            transitions = _deduplicate_independent_transitions(transitions)
+            all_transitions.extend(transitions)
+            ratio = observed_speed / body_bound
+            if ratio >= 1.0:
+                raise ValueError(
+                    f"observed {body.value} speed violates declared completeness bound: "
+                    f"{observed_speed} >= {body_bound}"
+                )
+            certificates.append(
+                IndependentSeriesCertificate(
+                    side=side,
+                    body=body,
+                    declared_ephemeris_speed_bound_degrees_per_day=body_bound,
+                    candidate_axis_speed_bound_degrees_per_day=coordinate_speed_bound,
+                    absolute_position_uncertainty_degrees=absolute_position_uncertainty,
+                    maximum_observed_abs_ephemeris_speed_degrees_per_day=observed_speed,
+                    observed_to_declared_speed_ratio=ratio,
+                    evaluated_coordinate_count=len(evaluated_coordinates),
+                    transition_count=len(transitions),
+                )
+            )
+    return IndependentTransitionEnumeration(
+        start_utc=start,
+        end_utc=end,
+        initial_scan_step_seconds=initial_scan_step_seconds,
+        transitions=tuple(
+            sorted(
+                all_transitions,
+                key=lambda item: (item.at_utc, item.side, item.body.value),
+            )
+        ),
+        series_certificates=tuple(certificates),
+    )
+
+
+def _independent_search_segment(
+    longitude_at: Callable[[datetime], float],
+    left: datetime,
+    right: datetime,
+    left_raw: float,
+    speed_degrees_per_second: float,
+    absolute_position_uncertainty_degrees: float,
+    side: Literal["personality", "design"],
+    body: CelestialBody,
+    transitions: list[IndependentTransition],
+) -> None:
+    duration_seconds = (right - left).total_seconds()
+    reach = speed_degrees_per_second * duration_seconds + absolute_position_uncertainty_degrees
+    if not _periodic_boundary_reachable_from_start(left_raw, reach):
+        return
+    quantum = timedelta(microseconds=1)
+    if right - left <= quantum:
+        left_position = longitude_to_gate_line(left_raw)
+        right_position = longitude_to_gate_line(longitude_at(right))
+        before = (left_position.gate, left_position.line)
+        after = (right_position.gate, right_position.line)
+        if before != after:
+            transitions.append(
+                IndependentTransition(
+                    at_utc=right,
+                    side=side,
+                    body=body,
+                    before_gate=before[0],
+                    before_line=before[1],
+                    after_gate=after[0],
+                    after_line=after[1],
+                )
+            )
+        return
+    span_microseconds = (right - left) // quantum
+    midpoint = left + quantum * (span_microseconds // 2)
+    midpoint_raw = longitude_at(midpoint)
+    _independent_search_segment(
+        longitude_at,
+        left,
+        midpoint,
+        left_raw,
+        speed_degrees_per_second,
+        absolute_position_uncertainty_degrees,
+        side,
+        body,
+        transitions,
+    )
+    _independent_search_segment(
+        longitude_at,
+        midpoint,
+        right,
+        midpoint_raw,
+        speed_degrees_per_second,
+        absolute_position_uncertainty_degrees,
+        side,
+        body,
+        transitions,
+    )
+
+
+def _periodic_boundary_reachable_from_start(longitude: float, reach: float) -> bool:
+    normalized = longitude % 360.0
+    first = math.ceil(
+        (normalized - reach - RAVE_MANDALA_START_DEGREES) / LINE_WIDTH_DEGREES - 1e-12
+    )
+    last = math.floor(
+        (normalized + reach - RAVE_MANDALA_START_DEGREES) / LINE_WIDTH_DEGREES + 1e-12
+    )
+    return first <= last
+
+
+def _deduplicate_independent_transitions(
+    transitions: list[IndependentTransition],
+) -> list[IndependentTransition]:
+    result: list[IndependentTransition] = []
+    for transition in sorted(transitions, key=lambda item: item.at_utc):
+        if result and transition == result[-1]:
+            continue
+        result.append(transition)
+    return result
+
+
+def _require_utc(value: datetime) -> datetime:
+    if value.tzinfo is None or value.utcoffset() is None:
+        raise ValueError("conformance timestamps must be timezone-aware")
+    return value.astimezone(UTC)

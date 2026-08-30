@@ -50,7 +50,7 @@ def enumerate_manifest(
             root_tolerance_seconds=tolerance,
         )
         converted = tuple(_convert_interval(civil_date, interval, zone) for interval in stable)
-        _verify_boundary_sides(provider, converted)
+        _verify_boundary_sides(provider, converted, tolerance)
         receipt = _coverage_receipt(
             civil_date,
             manifest.timezone_resolution.iana_timezone,
@@ -60,6 +60,8 @@ def enumerate_manifest(
             zone,
             tolerance,
             manifest.engine_provenance.boundary_method,
+            manifest.engine_provenance.ephemeris_julian_day_quantum_microseconds,
+            manifest.engine_provenance.maximum_equal_ephemeris_time_span_microseconds,
         )
         all_intervals.extend(converted)
         receipts.append(receipt)
@@ -200,14 +202,27 @@ def _convert_interval(civil_date: date, interval: Any, zone: ZoneInfo) -> NatalT
 def _verify_boundary_sides(
     provider: EphemerisProvider,
     intervals: tuple[NatalTimeInterval, ...],
+    design_time_tolerance_seconds: float,
 ) -> None:
     for previous, current in zip(intervals, intervals[1:], strict=False):
         boundary = current.start.utc
         before_hash = sha256_json(
-            _canonical_full_state(calculate_chart(provider, boundary - _QUANTUM).stable_features)
+            _canonical_full_state(
+                calculate_chart(
+                    provider,
+                    boundary - _QUANTUM,
+                    design_time_tolerance_seconds=design_time_tolerance_seconds,
+                ).stable_features
+            )
         )
         at_hash = sha256_json(
-            _canonical_full_state(calculate_chart(provider, boundary).stable_features)
+            _canonical_full_state(
+                calculate_chart(
+                    provider,
+                    boundary,
+                    design_time_tolerance_seconds=design_time_tolerance_seconds,
+                ).stable_features
+            )
         )
         if before_hash != previous.full_state_sha256 or at_hash != current.full_state_sha256:
             raise ValueError("interval boundary sides do not match adjacent complete states")
@@ -222,6 +237,8 @@ def _coverage_receipt(
     zone: ZoneInfo,
     tolerance: float,
     boundary_method: str,
+    ephemeris_julian_day_quantum_microseconds: float | None,
+    maximum_equal_ephemeris_time_span_microseconds: int,
 ) -> CoverageReceipt:
     if not intervals or intervals[0].start.utc != start or intervals[-1].end.utc != end:
         raise ValueError("intervals do not cover the complete civil-date domain")
@@ -241,6 +258,10 @@ def _coverage_receipt(
         interval_state_sha256=tuple(item.full_state_sha256 for item in intervals),
         summed_interval_duration_microseconds=total,
         boundary_method=boundary_method,
+        ephemeris_julian_day_quantum_microseconds=(ephemeris_julian_day_quantum_microseconds),
+        maximum_equal_ephemeris_time_span_microseconds=(
+            maximum_equal_ephemeris_time_span_microseconds
+        ),
         boundary_root_tolerance_seconds=tolerance,
     )
 
