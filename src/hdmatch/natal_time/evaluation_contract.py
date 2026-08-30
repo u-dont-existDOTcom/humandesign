@@ -9,12 +9,14 @@ from __future__ import annotations
 
 import re
 from collections.abc import Callable, Mapping, Sequence
+from copy import deepcopy
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from enum import StrEnum
 from fractions import Fraction
 from pathlib import Path
 from typing import Final, NoReturn, TypeAlias, cast
+from weakref import WeakKeyDictionary
 
 from hdmatch.util import sha256_file, sha256_json
 
@@ -22,14 +24,18 @@ JsonObject: TypeAlias = dict[str, object]
 
 V1_CONTRACT_SHA256: Final = "c721dcdd5ed9e144ca4795523420e226bc13dc8a739669991c365c1bb4d3f6c9"
 V2_CONTRACT_SHA256: Final = "067417a49c158fd7d7d1d31c3b21a584c1d1259aa85d60a30e9a6d3f39976f5e"
+V3_CONTRACT_SHA256: Final = "75a1629203724715054e2a1d7ea1b6ead7dc0ffd6cf5f4df2756c3e622b5f1fe"
 MODULE_PATH: Final = "src/hdmatch/natal_time/evaluation_contract.py"
 BUILDER_PATH: Final = "scripts/build_natal_time_synthetic_evaluation_verifier.py"
+_REFERENCE_CAPABILITY_ISSUER: Final = object()
+_OPENED_REFERENCE_ISSUER: Final = object()
 
 _SHA256_RE = re.compile(r"[0-9a-f]{64}")
 _SYNTHETIC_ID_RE = re.compile(r"SYNTH-[A-Z0-9]+(?:-[A-Z0-9]+)*")
 _INTERVAL_ID_RE = re.compile(r"SYNTH-INTERVAL-[A-Z0-9]+(?:-[A-Z0-9]+)*")
 _SOURCE_ID_RE = re.compile(r"SYNTH-SOURCE-[A-Z0-9]+(?:-[A-Z0-9]+)*")
 _LINEAGE_ID_RE = re.compile(r"SYNTH-LINEAGE-[A-Z0-9]+(?:-[A-Z0-9]+)*")
+_CUSTODY_ID_RE = re.compile(r"SYNTH-CUSTODY-[A-Z0-9]+(?:-[A-Z0-9]+)*")
 _DATE_RE = re.compile(r"2099-\d{2}-\d{2}")
 
 FORBIDDEN_FIELD_FRAGMENTS: Final = (
@@ -172,6 +178,7 @@ METRIC_APPLICABILITY_STATUSES: Final = frozenset(
         "not_applicable_conflicting_eligible_sources",
         "not_applicable_reference_canonicalization_failed",
         "not_applicable_reference_domain_incompatible",
+        "not_applicable_reference_domain_partially_incompatible",
     }
 )
 DISCLOSURE_THREAT_IDS: Final = (
@@ -253,7 +260,6 @@ ALLOWED_VIOLATION_CODES: Final = frozenset(
         "duplicate_synthetic_observation",
         "empty_candidate_domain",
         "empty_component_assignments",
-        "fixture_digest_mismatch",
         "fixture_not_conspicuously_synthetic",
         "foreign_or_manufactured_interval",
         "inapplicable_reference_must_not_include_source",
@@ -273,7 +279,16 @@ ALLOWED_VIOLATION_CODES: Final = frozenset(
         "invalid_fixture_id",
         "invalid_fixture_object",
         "invalid_fixture_schema_version",
-        "invalid_fixture_sha256",
+        "inference_visible_fixture_digest_mismatch",
+        "invalid_inference_visible_fixture_digest",
+        "invalid_reference_custody_digest",
+        "invalid_reference_custody_fields",
+        "invalid_reference_custody_object",
+        "invalid_reference_custody_schema_version",
+        "invalid_reference_custody_classification",
+        "invalid_reference_documentary_classification",
+        "invalid_reference_precision_classification",
+        "invalid_synthetic_custody_id",
         "invalid_evaluator_version_digest",
         "invalid_interval_fields",
         "invalid_interval_id",
@@ -301,8 +316,10 @@ ALLOWED_VIOLATION_CODES: Final = frozenset(
         "invalid_synthetic_source_id",
         "invalid_v1_contract_digest",
         "invalid_v2_contract_digest",
+        "invalid_v3_contract_digest",
         "method_freeze_out_of_order",
         "method_specification_digest_mismatch",
+        "manufactured_interval_not_allowed",
         "metric_receipt_before_t_i_access",
         "metric_receipt_missing",
         "non_string_field_name",
@@ -318,12 +335,18 @@ ALLOWED_VIOLATION_CODES: Final = frozenset(
         "s_i_commitment_out_of_order",
         "s_i_modified_after_t_i_exposure",
         "selection_procedure_prohibited",
+        "early_reference_raw_byte_access",
+        "early_reference_digest_access",
+        "early_reference_metadata_access",
+        "early_reference_alternate_loader_access",
+        "invalid_reference_access_capability",
+        "t_i_mutated_after_evaluator_access",
         "t_i_access_before_s_i_commitment",
         "unknown_execution_event",
     }
 )
 
-_FIXTURE_KEYS: Final = {
+_INFERENCE_FIXTURE_KEYS: Final = {
     "schema_version",
     "fixture_id",
     "synthetic_only",
@@ -334,16 +357,53 @@ _FIXTURE_KEYS: Final = {
     "component_assignments",
     "contamination_status",
     "execution_plan",
-    "hidden_reference",
-    "fixture_sha256",
+    "inference_visible_fixture_digest",
 }
 _EXECUTION_EVENTS: Final = {
     "candidate_domain_freeze",
     "study_method_specification_freeze",
     "preconstructed_s_i_commitment",
     "evaluator_only_t_i_access",
+    "early_reference_raw_byte_access_attempt",
+    "early_reference_digest_access_attempt",
+    "early_reference_metadata_access_attempt",
+    "early_reference_alternate_loader_access_attempt",
     "post_reference_s_i_mutation_attempt",
+    "post_reference_t_i_mutation_attempt",
     "metric_receipt",
+}
+
+REFERENCE_OPERATION_CODES: Final = (
+    "raw_byte",
+    "open",
+    "read",
+    "stat",
+    "path",
+    "size",
+    "parse",
+    "serialization",
+    "hash",
+    "listing",
+    "addressability",
+)
+
+_EARLY_REFERENCE_ATTEMPT_CODES: Final[dict[str, str]] = {
+    "raw_byte": "early_reference_raw_byte_access",
+    "digest": "early_reference_digest_access",
+    "metadata": "early_reference_metadata_access",
+    "alternate_loader": "early_reference_alternate_loader_access",
+}
+
+_REFERENCE_CUSTODY_KEYS: Final = {
+    "schema_version",
+    "custody_id",
+    "synthetic_only",
+    "documentary_source_classification",
+    "precision_classification",
+    "custody_classification",
+    "reference",
+    "mutation_test_mode",
+    "reference_custody_sha256",
 }
 
 
@@ -435,7 +495,8 @@ class PreconstructedOutput:
 @dataclass(frozen=True, slots=True)
 class MethodSpecification:
     study_design_contract_sha256: str
-    metric_semantics_contract_sha256: str
+    preserved_metric_semantics_v2_contract_sha256: str
+    operative_metric_semantics_v3_contract_sha256: str
     s_i_origin: str
     selection_procedure_present: bool
     method_specification_sha256: str
@@ -478,6 +539,81 @@ class ReferenceBundle:
             "canonicalization_status": self.canonicalization_status,
             "sources": [item.to_json() for item in sources],
         }
+
+
+@dataclass(frozen=True, slots=True)
+class EvaluatorReferenceRecord:
+    """A parsed evaluator-only custody object opened after ``S_i`` commitment."""
+
+    custody_id: str
+    reference_custody_sha256: str
+    reference: ReferenceBundle
+    mutation_test_mode: str
+
+
+@dataclass(frozen=True, slots=True, init=False)
+class _ReferenceAccessCapability:
+    """Opaque state-order token released only by a committed session."""
+
+    _seal: object
+    s_i_commitment_sha256: str
+    _authorizer: Callable[[object, str], None]
+
+    def __init__(
+        self,
+        issuer: object,
+        seal: object,
+        s_i_commitment_sha256: str,
+        authorizer: Callable[[object, str], None],
+    ) -> None:
+        if issuer is not _REFERENCE_CAPABILITY_ISSUER:
+            _fail("invalid_reference_access_capability")
+        object.__setattr__(self, "_seal", seal)
+        object.__setattr__(self, "s_i_commitment_sha256", s_i_commitment_sha256)
+        object.__setattr__(self, "_authorizer", authorizer)
+
+    def _authorize(self) -> None:
+        self._authorizer(self._seal, self.s_i_commitment_sha256)
+
+
+@dataclass(frozen=True, slots=True, init=False)
+class _OpenedEvaluatorReference:
+    """Post-commit handoff from evaluator custody to the metric evaluator."""
+
+    record: EvaluatorReferenceRecord
+    custody_access_state_sha256: str
+    s_i_commitment_sha256: str
+    preissue_integrity_rechecked: bool
+
+    def __init__(
+        self,
+        issuer: object,
+        record: EvaluatorReferenceRecord,
+        custody_access_state_sha256: str,
+        s_i_commitment_sha256: str,
+        *,
+        preissue_integrity_rechecked: bool,
+    ) -> None:
+        if issuer is not _OPENED_REFERENCE_ISSUER:
+            _fail("invalid_reference_access_capability")
+        object.__setattr__(self, "record", record)
+        object.__setattr__(
+            self,
+            "custody_access_state_sha256",
+            custody_access_state_sha256,
+        )
+        object.__setattr__(self, "s_i_commitment_sha256", s_i_commitment_sha256)
+        object.__setattr__(
+            self,
+            "preissue_integrity_rechecked",
+            preissue_integrity_rechecked,
+        )
+
+
+class ReferenceCustodyPhase(StrEnum):
+    SEALED = "sealed"
+    OPENED = "opened"
+    INVALIDATED = "invalidated"
 
 
 @dataclass(frozen=True, slots=True)
@@ -696,7 +832,8 @@ def parse_method_specification(value: object) -> MethodSpecification:
         raw,
         {
             "study_design_contract_sha256",
-            "metric_semantics_contract_sha256",
+            "preserved_metric_semantics_v2_contract_sha256",
+            "operative_metric_semantics_v3_contract_sha256",
             "s_i_origin",
             "selection_procedure_present",
             "method_specification_sha256",
@@ -704,8 +841,15 @@ def parse_method_specification(value: object) -> MethodSpecification:
         "invalid_method_specification_fields",
     )
     v1 = _require_digest(raw["study_design_contract_sha256"], "invalid_v1_contract_digest")
-    v2 = _require_digest(raw["metric_semantics_contract_sha256"], "invalid_v2_contract_digest")
-    if v1 != V1_CONTRACT_SHA256 or v2 != V2_CONTRACT_SHA256:
+    v2 = _require_digest(
+        raw["preserved_metric_semantics_v2_contract_sha256"],
+        "invalid_v2_contract_digest",
+    )
+    v3 = _require_digest(
+        raw["operative_metric_semantics_v3_contract_sha256"],
+        "invalid_v3_contract_digest",
+    )
+    if v1 != V1_CONTRACT_SHA256 or v2 != V2_CONTRACT_SHA256 or v3 != V3_CONTRACT_SHA256:
         _fail("contract_digest_mismatch")
     if raw["s_i_origin"] != "preconstructed_test_vector":
         _fail("output_not_preconstructed")
@@ -715,7 +859,7 @@ def parse_method_specification(value: object) -> MethodSpecification:
     payload.pop("method_specification_sha256")
     if sha256_json(payload) != embedded:
         _fail("method_specification_digest_mismatch")
-    return MethodSpecification(v1, v2, "preconstructed_test_vector", False, embedded)
+    return MethodSpecification(v1, v2, v3, "preconstructed_test_vector", False, embedded)
 
 
 def parse_component_assignments(value: object) -> tuple[ComponentAssignment, ...]:
@@ -804,19 +948,193 @@ def parse_reference_bundle(value: object) -> ReferenceBundle:
     return ReferenceBundle(status, tuple(sources))
 
 
-def validate_reference_bundle_shape(value: object) -> None:
-    """Reject nested extras without interpreting or exposing reference-time values."""
+def canonical_reference_custody_payload(value: Mapping[str, object]) -> JsonObject:
+    payload = dict(value)
+    payload.pop("reference_custody_sha256", None)
+    return payload
 
-    raw = _require_object(value, "invalid_reference_bundle_object")
-    _require_exact_keys(raw, {"canonicalization_status", "sources"}, "invalid_reference_fields")
-    source_values = _require_sequence(raw["sources"], "invalid_reference_sources")
-    for item in source_values:
-        raw_source = _require_object(item, "invalid_reference_source_object")
-        _require_exact_keys(
-            raw_source,
-            {"source_id", "lineage_id", "start_utc", "end_utc"},
-            "invalid_reference_source_fields",
+
+def reference_custody_digest(value: Mapping[str, object]) -> str:
+    return sha256_json(canonical_reference_custody_payload(value))
+
+
+def parse_evaluator_reference_record(value: object) -> EvaluatorReferenceRecord:
+    """Parse the closed evaluator-only schema after an authorized custody open."""
+
+    raw = _require_object(value, "invalid_reference_custody_object")
+    validate_no_prohibited_fields(raw)
+    _require_exact_keys(raw, _REFERENCE_CUSTODY_KEYS, "invalid_reference_custody_fields")
+    if raw["schema_version"] != "natal-time-synthetic-evaluator-reference-custody-v1":
+        _fail("invalid_reference_custody_schema_version")
+    custody_id = _require_string(raw["custody_id"], _CUSTODY_ID_RE, "invalid_synthetic_custody_id")
+    _require_bool(raw["synthetic_only"], True, "fixture_not_conspicuously_synthetic")
+    if raw["documentary_source_classification"] != "synthetic_auditable_record":
+        _fail("invalid_reference_documentary_classification")
+    if raw["precision_classification"] != "canonical_half_open_utc_microsecond":
+        _fail("invalid_reference_precision_classification")
+    if raw["custody_classification"] != "evaluator_only_sealed_reference":
+        _fail("invalid_reference_custody_classification")
+    mutation_mode = raw["mutation_test_mode"]
+    if mutation_mode not in {"none", "mutate_after_authorized_open"}:
+        _fail("invalid_reference_custody_classification")
+    embedded = _require_digest(raw["reference_custody_sha256"], "invalid_reference_custody_digest")
+    if reference_custody_digest(raw) != embedded:
+        _fail("invalid_reference_custody_digest")
+    return EvaluatorReferenceRecord(
+        custody_id=custody_id,
+        reference_custody_sha256=embedded,
+        reference=parse_reference_bundle(raw["reference"]),
+        mutation_test_mode=mutation_mode,
+    )
+
+
+_CUSTODY_LOADERS: Final[WeakKeyDictionary[object, Callable[[], object]]] = WeakKeyDictionary()
+
+
+class EvaluatorReferenceCustody:
+    """Evaluator-only loader with an observable, fail-closed access boundary.
+
+    Construction stores only an opaque callable. It performs no reference operation and exposes
+    no locator, byte count, digest, metadata, or enumeration surface. The callable is invoked
+    only after a session-issued capability proves that ``S_i`` is committed.
+    """
+
+    __slots__ = (
+        "_phase",
+        "_operations",
+        "_attempts",
+        "_opened_raw",
+        "_opened_record",
+        "_opened_payload_digest",
+        "_opened_s_i_commitment_sha256",
+        "__weakref__",
+    )
+
+    def __init__(self, loader: Callable[[], object]) -> None:
+        _CUSTODY_LOADERS[self] = loader
+        self._phase = ReferenceCustodyPhase.SEALED
+        self._operations: list[str] = []
+        self._attempts: list[str] = []
+        self._opened_raw: object | None = None
+        self._opened_record: EvaluatorReferenceRecord | None = None
+        self._opened_payload_digest: str | None = None
+        self._opened_s_i_commitment_sha256: str | None = None
+
+    @property
+    def phase(self) -> ReferenceCustodyPhase:
+        return self._phase
+
+    @property
+    def operation_counts(self) -> Mapping[str, int]:
+        return {
+            operation: self._operations.count(operation) for operation in REFERENCE_OPERATION_CODES
+        }
+
+    @property
+    def access_state_digest(self) -> str:
+        return sha256_json(
+            {
+                "phase": self._phase.value,
+                "operations": [
+                    {"sequence": index + 1, "operation": operation}
+                    for index, operation in enumerate(self._operations)
+                ],
+                "rejected_attempts": [
+                    {"sequence": index + 1, "attempt": attempt}
+                    for index, attempt in enumerate(self._attempts)
+                ],
+            }
         )
+
+    def reject_unauthorized_attempt(self, attempt: str) -> NoReturn:
+        """Reject an early probe without touching the loader or reference object."""
+
+        code = _EARLY_REFERENCE_ATTEMPT_CODES.get(attempt)
+        if code is None:
+            raise ValueError("uncontrolled evaluator-reference access attempt")
+        self._attempts.append(attempt)
+        _fail(code)
+
+    def open(self, capability: object) -> _OpenedEvaluatorReference:
+        if self._phase is not ReferenceCustodyPhase.SEALED:
+            _fail("invalid_reference_access_capability")
+        if not isinstance(capability, _ReferenceAccessCapability):
+            _fail("invalid_reference_access_capability")
+        capability._authorize()
+        loader = _CUSTODY_LOADERS.get(self)
+        if loader is None:
+            _fail("invalid_reference_access_capability")
+        self._operations.extend(("addressability", "open", "read"))
+        try:
+            raw = deepcopy(loader())
+        finally:
+            _CUSTODY_LOADERS.pop(self, None)
+        self._operations.append("parse")
+        try:
+            record = parse_evaluator_reference_record(raw)
+            self._operations.extend(("serialization", "hash"))
+            self._operations.extend(("serialization", "hash"))
+            exact_opened_digest = sha256_json(raw)
+        except VerificationError:
+            self._phase = ReferenceCustodyPhase.INVALIDATED
+            raise
+        self._opened_raw = raw
+        self._opened_record = record
+        self._opened_payload_digest = exact_opened_digest
+        self._opened_s_i_commitment_sha256 = capability.s_i_commitment_sha256
+        self._phase = ReferenceCustodyPhase.OPENED
+        return _OpenedEvaluatorReference(
+            _OPENED_REFERENCE_ISSUER,
+            record,
+            self.access_state_digest,
+            capability.s_i_commitment_sha256,
+            preissue_integrity_rechecked=False,
+        )
+
+    def verify_unchanged_after_access(self) -> _OpenedEvaluatorReference:
+        """Invalidate custody if the exact evaluator-only payload changes after opening."""
+
+        if self._phase is not ReferenceCustodyPhase.OPENED or self._opened_raw is None:
+            _fail("invalid_reference_access_capability")
+        self._operations.extend(("serialization", "hash"))
+        try:
+            cached = sha256_json(
+                _require_object(self._opened_raw, "invalid_reference_custody_object")
+            )
+        except VerificationError:
+            self._phase = ReferenceCustodyPhase.INVALIDATED
+            _fail("t_i_mutated_after_evaluator_access")
+        if cached != self._opened_payload_digest:
+            self._phase = ReferenceCustodyPhase.INVALIDATED
+            _fail("t_i_mutated_after_evaluator_access")
+        if self._opened_record is None or self._opened_s_i_commitment_sha256 is None:
+            self._phase = ReferenceCustodyPhase.INVALIDATED
+            _fail("invalid_reference_access_capability")
+        return _OpenedEvaluatorReference(
+            _OPENED_REFERENCE_ISSUER,
+            self._opened_record,
+            self.access_state_digest,
+            self._opened_s_i_commitment_sha256,
+            preissue_integrity_rechecked=True,
+        )
+
+    def apply_synthetic_mutation_probe(self) -> NoReturn:
+        """Mutate a fixed synthetic test vector, then prove custody detects it."""
+
+        if self._phase is not ReferenceCustodyPhase.OPENED or self._opened_raw is None:
+            _fail("invalid_reference_access_capability")
+        if self._opened_record is None or (
+            self._opened_record.mutation_test_mode != "mutate_after_authorized_open"
+        ):
+            raise ValueError("synthetic mutation probe not declared")
+        raw = cast(JsonObject, self._opened_raw)
+        reference = cast(JsonObject, raw["reference"])
+        sources = cast(list[JsonObject], reference["sources"])
+        if not sources:
+            raise ValueError("synthetic mutation probe requires a source")
+        sources[0]["end_utc"] = "2099-01-01T02:00:00.000001Z"
+        self.verify_unchanged_after_access()
+        raise AssertionError("synthetic T_i mutation was not detected")
 
 
 def validate_preregistration_sections(value: Mapping[str, object]) -> PreregistrationValidation:
@@ -884,17 +1202,11 @@ def validate_no_prohibited_fields(value: object) -> None:
     visit(value)
 
 
-def canonical_fixture_payload(value: Mapping[str, object]) -> JsonObject:
-    """Return the public, order-insensitive fixture payload used before ``T_i`` access.
-
-    The hidden-reference subtree is deliberately excluded.  Its exact artifact bytes are
-    bound by the bundle manifest, and its canonical value is bound separately in a valid
-    receipt only after the preconstructed output has been committed.
-    """
+def canonical_inference_visible_fixture_payload(value: Mapping[str, object]) -> JsonObject:
+    """Canonicalize an inference-visible fixture containing no reference material."""
 
     fixture = dict(value)
-    fixture.pop("fixture_sha256", None)
-    fixture.pop("hidden_reference", None)
+    fixture.pop("inference_visible_fixture_digest", None)
     candidate = dict(_require_object(fixture["candidate_set"], "invalid_candidate_set_object"))
     candidate["declared_dates"] = sorted(cast(list[object], candidate["declared_dates"]), key=str)
     candidate["intervals"] = sorted(
@@ -926,8 +1238,8 @@ def canonical_fixture_payload(value: Mapping[str, object]) -> JsonObject:
     return fixture
 
 
-def fixture_digest(value: Mapping[str, object]) -> str:
-    return sha256_json(canonical_fixture_payload(value))
+def inference_visible_fixture_digest(value: Mapping[str, object]) -> str:
+    return sha256_json(canonical_inference_visible_fixture_payload(value))
 
 
 def evaluator_version_packet(project_root: Path) -> JsonObject:
@@ -939,7 +1251,11 @@ def evaluator_version_packet(project_root: Path) -> JsonObject:
     ]
     payload: JsonObject = {
         "schema_version": "natal-time-synthetic-evaluator-version-v1",
-        "contract_sha256": V2_CONTRACT_SHA256,
+        "contract_bindings": {
+            "preserved_v1_contract_sha256": V1_CONTRACT_SHA256,
+            "preserved_v2_contract_sha256": V2_CONTRACT_SHA256,
+            "operative_v3_contract_sha256": V3_CONTRACT_SHA256,
+        },
         "source_files": files,
     }
     payload["evaluator_version_sha256"] = sha256_json(payload)
@@ -993,7 +1309,8 @@ class EvaluationSession:
         self._candidate_set: CandidateSet | None = None
         self._method: MethodSpecification | None = None
         self._output: PreconstructedOutput | None = None
-        self._reference: ReferenceBundle | None = None
+        self._opened_reference: _OpenedEvaluatorReference | None = None
+        self._capability_seal = object()
         self._access_events: list[str] = []
         self._violations: list[str] = []
 
@@ -1070,6 +1387,17 @@ class EvaluationSession:
             for selected in output.selected_intervals:
                 frozen = frozen_by_id.get(selected.interval_id)
                 if frozen is None:
+                    enclosed = [
+                        item
+                        for item in candidate_set.intervals
+                        if item.start_utc >= selected.start_utc and item.end_utc <= selected.end_utc
+                    ]
+                    if (
+                        len(enclosed) > 1
+                        and min(item.start_utc for item in enclosed) == selected.start_utc
+                        and max(item.end_utc for item in enclosed) == selected.end_utc
+                    ):
+                        self._invalidate("manufactured_interval_not_allowed")
                     self._invalidate("foreign_or_manufactured_interval")
                 assert frozen is not None
                 if selected != frozen:
@@ -1089,15 +1417,59 @@ class EvaluationSession:
         self._access_events.append("preconstructed_s_i_commitment")
         self.phase = SessionPhase.OUTPUT_COMMITTED
 
-    def expose_reference(self, supplier: Callable[[], ReferenceBundle]) -> None:
-        """Open hidden T_i only after output commitment; supplier is not called early."""
+    def release_reference_access_capability(self) -> _ReferenceAccessCapability:
+        """Release the only evaluator-custody capability after exact ``S_i`` commitment."""
 
         if self.phase is not SessionPhase.OUTPUT_COMMITTED:
             self._invalidate("t_i_access_before_s_i_commitment")
-        reference = supplier()
-        self._reference = reference
+        output = self._output
+        assert output is not None
+        return _ReferenceAccessCapability(
+            _REFERENCE_CAPABILITY_ISSUER,
+            self._capability_seal,
+            sha256_json(output.canonical_payload()),
+            self._authorize_reference_capability,
+        )
+
+    def _authorize_reference_capability(self, seal: object, commitment: str) -> None:
+        output = self._output
+        if (
+            seal is not self._capability_seal
+            or self.phase is not SessionPhase.OUTPUT_COMMITTED
+            or output is None
+            or commitment != sha256_json(output.canonical_payload())
+        ):
+            self._invalidate("invalid_reference_access_capability")
+
+    def accept_opened_reference(self, opened: object) -> None:
+        if self.phase is not SessionPhase.OUTPUT_COMMITTED:
+            self._invalidate("invalid_reference_access_capability")
+        output = self._output
+        if (
+            not isinstance(opened, _OpenedEvaluatorReference)
+            or opened.preissue_integrity_rechecked
+            or output is None
+            or opened.s_i_commitment_sha256 != sha256_json(output.canonical_payload())
+        ):
+            self._invalidate("invalid_reference_access_capability")
+        assert isinstance(opened, _OpenedEvaluatorReference)
+        self._opened_reference = opened
         self._access_events.append("evaluator_only_t_i_access")
         self.phase = SessionPhase.REFERENCE_EXPOSED
+
+    def accept_preissue_reference_integrity_recheck(self, opened: object) -> None:
+        current = self._opened_reference
+        if (
+            self.phase is not SessionPhase.REFERENCE_EXPOSED
+            or current is None
+            or not isinstance(opened, _OpenedEvaluatorReference)
+            or not opened.preissue_integrity_rechecked
+            or opened.record != current.record
+            or opened.s_i_commitment_sha256 != current.s_i_commitment_sha256
+        ):
+            self._invalidate("invalid_reference_access_capability")
+        assert isinstance(opened, _OpenedEvaluatorReference)
+        self._opened_reference = opened
 
     def attempt_output_recommit(self, output: PreconstructedOutput) -> None:
         """Represent a mutation attempt; post-reference attempts invalidate permanently."""
@@ -1108,10 +1480,11 @@ class EvaluationSession:
         self.commit_preconstructed_output(output)
 
     def _adjudicate_reference(self) -> tuple[str, ReferenceSource | None]:
-        reference = self._reference
-        if reference is None:
+        opened = self._opened_reference
+        if opened is None:
             self._invalidate("reference_not_exposed")
-        assert reference is not None
+        assert opened is not None
+        reference = opened.record.reference
         if reference.canonicalization_status == "no_eligible_reference":
             return ("not_applicable_no_eligible_reference", None)
         if reference.canonicalization_status == "reference_canonicalization_failed":
@@ -1121,31 +1494,44 @@ class EvaluationSession:
             return ("not_applicable_conflicting_eligible_sources", None)
         return ("applicable", reference.sources[0])
 
+    def _reference_domain_status(self, reference: ReferenceSource) -> str:
+        candidate_set = self._candidate_set
+        assert candidate_set is not None
+        overlap_width = 0
+        for interval in candidate_set.intervals:
+            overlap_start = max(interval.start_utc, reference.start_utc)
+            overlap_end = min(interval.end_utc, reference.end_utc)
+            if overlap_start < overlap_end:
+                overlap_width += _timedelta_microseconds(overlap_start, overlap_end)
+        reference_width = _timedelta_microseconds(reference.start_utc, reference.end_utc)
+        if overlap_width == reference_width:
+            return "reference_domain_compatible"
+        if overlap_width > 0:
+            return "reference_domain_partially_incompatible"
+        return "reference_domain_incompatible"
+
     def compute_metrics(self) -> JsonObject:
         if self.phase is not SessionPhase.REFERENCE_EXPOSED:
             self._invalidate("metric_receipt_before_t_i_access")
+        opened = self._opened_reference
+        if opened is None or not opened.preissue_integrity_rechecked:
+            self._invalidate("invalid_reference_access_capability")
         candidate_set = self._candidate_set
         output = self._output
         assert candidate_set is not None and output is not None
         reference_status, operative_reference = self._adjudicate_reference()
         if operative_reference is None:
             return self._reference_failure_metrics(reference_status, output)
-        domain_compatible = any(
-            _overlaps(
-                item.start_utc,
-                item.end_utc,
-                operative_reference.start_utc,
-                operative_reference.end_utc,
-            )
-            for item in candidate_set.intervals
-        )
-        if not domain_compatible:
-            return self._reference_failure_metrics(
-                "not_applicable_reference_domain_incompatible", output
-            )
         documentary_width = _timedelta_microseconds(
             operative_reference.start_utc, operative_reference.end_utc
         )
+        domain_status = self._reference_domain_status(operative_reference)
+        if domain_status != "reference_domain_compatible":
+            return self._reference_failure_metrics(
+                f"not_applicable_{domain_status}",
+                output,
+                documentary_width=documentary_width,
+            )
         if output.output_kind is OutputKind.ABSTENTION:
             status = "not_applicable_abstention"
             return {
@@ -1200,7 +1586,13 @@ class EvaluationSession:
             "abstention": {"status": "applicable", "value": False},
         }
 
-    def _reference_failure_metrics(self, status: str, output: PreconstructedOutput) -> JsonObject:
+    def _reference_failure_metrics(
+        self,
+        status: str,
+        output: PreconstructedOutput,
+        *,
+        documentary_width: int | None = None,
+    ) -> JsonObject:
         return {
             "reference_intersection": _boolean_not_applicable(status),
             "temporal_width_retained": _fraction_not_applicable(status, "width_microseconds"),
@@ -1209,7 +1601,11 @@ class EvaluationSession:
                 status, "unique_state_identity_count"
             ),
             "date_coverage": _fraction_not_applicable(status, "date_count"),
-            "documentary_reference_width": _documentary_width_not_applicable(status),
+            "documentary_reference_width": (
+                _documentary_width_not_applicable(status)
+                if documentary_width is None
+                else {"status": "applicable", "microseconds": documentary_width}
+            ),
             "abstention": {
                 "status": "applicable",
                 "value": output.output_kind is OutputKind.ABSTENTION,
@@ -1220,16 +1616,18 @@ class EvaluationSession:
         self,
         *,
         fixture_id: str,
-        fixture_sha256: str,
+        inference_visible_fixture_digest: str,
         evaluator_version_sha256: str,
     ) -> JsonObject:
-        metrics = self.compute_metrics()
         candidate_set = self._candidate_set
         method = self._method
         output = self._output
-        reference = self._reference
+        opened = self._opened_reference
         assert candidate_set is not None and method is not None and output is not None
-        assert reference is not None
+        assert opened is not None
+        if not opened.preissue_integrity_rechecked:
+            self._invalidate("invalid_reference_access_capability")
+        metrics = self.compute_metrics()
         self._access_events.append("metric_receipt")
         self.phase = SessionPhase.RECEIPT_ISSUED
         statuses = {
@@ -1243,26 +1641,71 @@ class EvaluationSession:
             and "not_applicable_conflicting_eligible_sources" not in statuses
             and "not_applicable_no_eligible_reference" not in statuses
         )
-        payload: JsonObject = {
-            "schema_version": "natal-time-synthetic-evaluation-receipt-v1",
-            "receipt_kind": "descriptive_metric_receipt",
+        _, operative_reference = self._adjudicate_reference()
+        canonical_t_i_sha256: str | None = None
+        if operative_reference is not None:
+            canonical_t_i_sha256 = sha256_json(
+                {
+                    "start_utc": _format_utc(operative_reference.start_utc),
+                    "end_utc": _format_utc(operative_reference.end_utc),
+                }
+            )
+        custody_access_digest = opened.custody_access_state_sha256
+        combined_access_digest = sha256_json(
+            {
+                "evaluation_session_access_state_sha256": self.access_state_digest,
+                "reference_custody_access_state_sha256": custody_access_digest,
+            }
+        )
+        contract_bindings = {
+            "preserved_v1_contract_sha256": V1_CONTRACT_SHA256,
+            "preserved_v2_contract_sha256": V2_CONTRACT_SHA256,
+            "operative_v3_contract_sha256": V3_CONTRACT_SHA256,
+        }
+        common: JsonObject = {
             "synthetic_only": True,
             "fixture_id": fixture_id,
-            "evaluation_eligible": evaluation_eligible,
-            "contract_bindings": {
-                "preserved_v1_contract_sha256": V1_CONTRACT_SHA256,
-                "metric_semantics_v2_contract_sha256": V2_CONTRACT_SHA256,
-            },
-            "fixture_sha256": fixture_sha256,
+            "contract_bindings": contract_bindings,
+            "inference_visible_fixture_digest": inference_visible_fixture_digest,
             "candidate_domain_freeze_sha256": candidate_set.candidate_set_sha256,
             "study_method_specification_sha256": method.method_specification_sha256,
             "s_i_commitment_sha256": sha256_json(output.canonical_payload()),
-            "hidden_reference_sha256": sha256_json(reference.canonical_payload()),
-            "access_state_sha256": self.access_state_digest,
+            "canonical_t_i_sha256": canonical_t_i_sha256,
+            "reference_custody_sha256": opened.record.reference_custody_sha256,
+            "reference_custody_access_state_sha256": custody_access_digest,
+            "access_state_sha256": combined_access_digest,
             "evaluator_version_sha256": evaluator_version_sha256,
+            "inference_or_selection_performed": False,
+        }
+        if operative_reference is not None:
+            domain_status = self._reference_domain_status(operative_reference)
+            if domain_status != "reference_domain_compatible":
+                diagnostic: JsonObject = {
+                    "schema_version": "natal-time-synthetic-reference-domain-diagnostic-v1",
+                    "receipt_kind": "reference_domain_diagnostic",
+                    **common,
+                    "valid_reference_evaluation_receipt": False,
+                    "reference_domain_status": domain_status,
+                    "reference_intersection": _boolean_not_applicable(
+                        f"not_applicable_{domain_status}"
+                    ),
+                    "documentary_reference_width": {
+                        "status": "applicable",
+                        "microseconds": _timedelta_microseconds(
+                            operative_reference.start_utc, operative_reference.end_utc
+                        ),
+                    },
+                }
+                validate_no_prohibited_fields(diagnostic)
+                diagnostic["receipt_sha256"] = sha256_json(diagnostic)
+                return diagnostic
+        payload: JsonObject = {
+            "schema_version": "natal-time-synthetic-evaluation-receipt-v3",
+            "receipt_kind": "descriptive_metric_receipt",
+            **common,
+            "evaluation_eligible": evaluation_eligible,
             "metrics": metrics,
             "metrics_sha256": sha256_json(metrics),
-            "inference_or_selection_performed": False,
         }
         validate_no_prohibited_fields(payload)
         payload["receipt_sha256"] = sha256_json(payload)
@@ -1272,7 +1715,7 @@ class EvaluationSession:
 def build_rejection_receipt(
     *,
     fixture_id: str,
-    fixture_sha256: str,
+    inference_visible_fixture_digest: str,
     evaluator_version_sha256: str,
     access_state_sha256: str,
     violation_codes: Sequence[str],
@@ -1283,16 +1726,17 @@ def build_rejection_receipt(
     if not codes or any(code not in ALLOWED_VIOLATION_CODES for code in codes):
         raise ValueError("uncontrolled rejection violation code")
     payload: JsonObject = {
-        "schema_version": "natal-time-synthetic-evaluation-rejection-v1",
+        "schema_version": "natal-time-synthetic-evaluation-rejection-v3",
         "receipt_kind": "fail_closed_rejection",
         "synthetic_only": True,
         "fixture_id": fixture_id,
         "valid_evaluation_receipt": False,
         "contract_bindings": {
             "preserved_v1_contract_sha256": V1_CONTRACT_SHA256,
-            "metric_semantics_v2_contract_sha256": V2_CONTRACT_SHA256,
+            "preserved_v2_contract_sha256": V2_CONTRACT_SHA256,
+            "operative_v3_contract_sha256": V3_CONTRACT_SHA256,
         },
-        "fixture_sha256": fixture_sha256,
+        "inference_visible_fixture_digest": inference_visible_fixture_digest,
         "access_state_sha256": access_state_sha256,
         "evaluator_version_sha256": evaluator_version_sha256,
         "violation_codes": codes,
@@ -1380,6 +1824,17 @@ def _valid_documentary_width_component(value: object) -> bool:
     )
 
 
+def _valid_applicable_documentary_width(value: object) -> bool:
+    return (
+        isinstance(value, Mapping)
+        and set(value) == {"status", "microseconds"}
+        and value["status"] == "applicable"
+        and isinstance(value["microseconds"], int)
+        and not isinstance(value["microseconds"], bool)
+        and value["microseconds"] > 0
+    )
+
+
 def _valid_metrics(value: object) -> bool:
     if not isinstance(value, Mapping) or set(value) != set(METRIC_COMPONENT_IDS):
         return False
@@ -1455,9 +1910,12 @@ def _metrics_evaluation_eligible(value: object) -> bool | None:
 
 
 def verify_receipt(
-    receipt: Mapping[str, object], *, expected_evaluator_version_sha256: str | None = None
+    receipt: Mapping[str, object],
+    *,
+    expected_evaluator_version_sha256: str | None = None,
+    expected_binding_values: Mapping[str, object] | None = None,
 ) -> bool:
-    """Validate a self-hashed receipt against a closed valid-or-rejection schema."""
+    """Validate a receipt's closed schema and any supplied external bindings."""
 
     try:
         validate_no_prohibited_fields(receipt)
@@ -1471,7 +1929,7 @@ def verify_receipt(
         "synthetic_only",
         "fixture_id",
         "contract_bindings",
-        "fixture_sha256",
+        "inference_visible_fixture_digest",
         "access_state_sha256",
         "evaluator_version_sha256",
         "inference_or_selection_performed",
@@ -1487,17 +1945,27 @@ def verify_receipt(
     bindings = receipt.get("contract_bindings")
     if bindings != {
         "preserved_v1_contract_sha256": V1_CONTRACT_SHA256,
-        "metric_semantics_v2_contract_sha256": V2_CONTRACT_SHA256,
+        "preserved_v2_contract_sha256": V2_CONTRACT_SHA256,
+        "operative_v3_contract_sha256": V3_CONTRACT_SHA256,
     }:
         return False
     if any(
         not _valid_digest_field(receipt.get(field))
-        for field in ("fixture_sha256", "access_state_sha256", "evaluator_version_sha256")
+        for field in (
+            "inference_visible_fixture_digest",
+            "access_state_sha256",
+            "evaluator_version_sha256",
+        )
     ):
         return False
     if (
         expected_evaluator_version_sha256 is not None
         and receipt.get("evaluator_version_sha256") != expected_evaluator_version_sha256
+    ):
+        return False
+    if expected_binding_values is not None and any(
+        key not in receipt or receipt[key] != value
+        for key, value in expected_binding_values.items()
     ):
         return False
     kind = receipt.get("receipt_kind")
@@ -1507,13 +1975,15 @@ def verify_receipt(
             "candidate_domain_freeze_sha256",
             "study_method_specification_sha256",
             "s_i_commitment_sha256",
-            "hidden_reference_sha256",
+            "canonical_t_i_sha256",
+            "reference_custody_sha256",
+            "reference_custody_access_state_sha256",
             "metrics",
             "metrics_sha256",
         }
         if set(receipt) != expected_keys:
             return False
-        if receipt.get("schema_version") != "natal-time-synthetic-evaluation-receipt-v1":
+        if receipt.get("schema_version") != "natal-time-synthetic-evaluation-receipt-v3":
             return False
         if not isinstance(receipt.get("evaluation_eligible"), bool):
             return False
@@ -1523,10 +1993,14 @@ def verify_receipt(
                 "candidate_domain_freeze_sha256",
                 "study_method_specification_sha256",
                 "s_i_commitment_sha256",
-                "hidden_reference_sha256",
+                "reference_custody_sha256",
+                "reference_custody_access_state_sha256",
                 "metrics_sha256",
             )
         ):
+            return False
+        canonical_t_i_sha256 = receipt.get("canonical_t_i_sha256")
+        if canonical_t_i_sha256 is not None and not _valid_digest_field(canonical_t_i_sha256):
             return False
         metrics = receipt.get("metrics")
         eligible = _metrics_evaluation_eligible(metrics)
@@ -1536,6 +2010,46 @@ def verify_receipt(
             and eligible is not None
             and receipt.get("evaluation_eligible") is eligible
         )
+    if kind == "reference_domain_diagnostic":
+        expected_keys = common_keys | {
+            "valid_reference_evaluation_receipt",
+            "candidate_domain_freeze_sha256",
+            "study_method_specification_sha256",
+            "s_i_commitment_sha256",
+            "canonical_t_i_sha256",
+            "reference_custody_sha256",
+            "reference_custody_access_state_sha256",
+            "reference_domain_status",
+            "reference_intersection",
+            "documentary_reference_width",
+        }
+        if set(receipt) != expected_keys:
+            return False
+        if receipt.get("schema_version") != "natal-time-synthetic-reference-domain-diagnostic-v1":
+            return False
+        status = receipt.get("reference_domain_status")
+        if status not in {
+            "reference_domain_partially_incompatible",
+            "reference_domain_incompatible",
+        }:
+            return False
+        expected_na = f"not_applicable_{status}"
+        return (
+            receipt.get("valid_reference_evaluation_receipt") is False
+            and all(
+                _valid_digest_field(receipt.get(field))
+                for field in (
+                    "candidate_domain_freeze_sha256",
+                    "study_method_specification_sha256",
+                    "s_i_commitment_sha256",
+                    "canonical_t_i_sha256",
+                    "reference_custody_sha256",
+                    "reference_custody_access_state_sha256",
+                )
+            )
+            and receipt.get("reference_intersection") == {"status": expected_na, "value": None}
+            and _valid_applicable_documentary_width(receipt.get("documentary_reference_width"))
+        )
     if kind == "fail_closed_rejection":
         expected_keys = common_keys | {
             "valid_evaluation_receipt",
@@ -1544,7 +2058,7 @@ def verify_receipt(
         }
         if set(receipt) != expected_keys:
             return False
-        if receipt.get("schema_version") != "natal-time-synthetic-evaluation-rejection-v1":
+        if receipt.get("schema_version") != "natal-time-synthetic-evaluation-rejection-v3":
             return False
         codes = receipt.get("violation_codes")
         return (
@@ -1559,12 +2073,13 @@ def verify_receipt(
     return False
 
 
-def verify_synthetic_fixture(
-    value: object,
+def verify_separated_synthetic_fixture(
+    inference_visible_value: object,
+    evaluator_custody: EvaluatorReferenceCustody,
     *,
     evaluator_version_sha256: str,
 ) -> JsonObject:
-    """Run a fixed fixture through the ordered verifier and return a hashed receipt."""
+    """Evaluate separated synthetic bundles without giving inference actors custody access."""
 
     if (
         _SHA256_RE.fullmatch(evaluator_version_sha256) is None
@@ -1574,21 +2089,23 @@ def verify_synthetic_fixture(
     session = EvaluationSession()
     fallback_id = "SYNTH-FIXTURE-REJECTED-INPUT"
     fixture_id = fallback_id
-    fixture_sha256 = sha256_json({"fixture_id": fallback_id})
+    visible_digest = sha256_json({"fixture_id": fallback_id})
     try:
-        raw = _require_object(value, "invalid_fixture_object")
-        public_envelope = {key: item for key, item in raw.items() if key != "hidden_reference"}
-        validate_no_prohibited_fields(public_envelope)
-        _require_exact_keys(raw, _FIXTURE_KEYS, "invalid_fixture_fields")
-        if raw["schema_version"] != "natal-time-synthetic-evaluation-fixture-v1":
+        raw = _require_object(inference_visible_value, "invalid_fixture_object")
+        validate_no_prohibited_fields(raw)
+        _require_exact_keys(raw, _INFERENCE_FIXTURE_KEYS, "invalid_fixture_fields")
+        if raw["schema_version"] != "natal-time-synthetic-inference-visible-fixture-v2":
             _fail("invalid_fixture_schema_version")
         fixture_id = _require_string(raw["fixture_id"], _SYNTHETIC_ID_RE, "invalid_fixture_id")
         _require_bool(raw["synthetic_only"], True, "fixture_not_conspicuously_synthetic")
         _require_bool(raw["preconstructed_s_i"], True, "preconstructed_output_flag_required")
-        embedded_fixture_sha256 = _require_digest(raw["fixture_sha256"], "invalid_fixture_sha256")
-        fixture_sha256 = fixture_digest(raw)
-        if embedded_fixture_sha256 != fixture_sha256:
-            _fail("fixture_digest_mismatch")
+        embedded_visible_digest = _require_digest(
+            raw["inference_visible_fixture_digest"],
+            "invalid_inference_visible_fixture_digest",
+        )
+        visible_digest = inference_visible_fixture_digest(raw)
+        if embedded_visible_digest != visible_digest:
+            _fail("inference_visible_fixture_digest_mismatch")
         candidate_set = parse_candidate_set(raw["candidate_set"])
         method = parse_method_specification(raw["method_specification"])
         output = parse_preconstructed_output(raw["preconstructed_output"])
@@ -1601,12 +2118,6 @@ def verify_synthetic_fixture(
             _fail("unknown_execution_event")
         plan = cast(list[str], raw_plan)
 
-        def reference_supplier() -> ReferenceBundle:
-            hidden_reference = raw["hidden_reference"]
-            validate_no_prohibited_fields(hidden_reference)
-            validate_reference_bundle_shape(hidden_reference)
-            return parse_reference_bundle(hidden_reference)
-
         for event in plan:
             if event == "candidate_domain_freeze":
                 session.freeze_candidate_domain(candidate_set, assignments, contamination_status)
@@ -1615,21 +2126,43 @@ def verify_synthetic_fixture(
             elif event == "preconstructed_s_i_commitment":
                 session.commit_preconstructed_output(output)
             elif event == "evaluator_only_t_i_access":
-                session.expose_reference(reference_supplier)
+                capability = session.release_reference_access_capability()
+                opened = evaluator_custody.open(capability)
+                session.accept_opened_reference(opened)
+            elif event == "early_reference_raw_byte_access_attempt":
+                evaluator_custody.reject_unauthorized_attempt("raw_byte")
+            elif event == "early_reference_digest_access_attempt":
+                evaluator_custody.reject_unauthorized_attempt("digest")
+            elif event == "early_reference_metadata_access_attempt":
+                evaluator_custody.reject_unauthorized_attempt("metadata")
+            elif event == "early_reference_alternate_loader_access_attempt":
+                evaluator_custody.reject_unauthorized_attempt("alternate_loader")
             elif event == "post_reference_s_i_mutation_attempt":
                 session.attempt_output_recommit(output)
+            elif event == "post_reference_t_i_mutation_attempt":
+                evaluator_custody.apply_synthetic_mutation_probe()
             elif event == "metric_receipt":
+                session.accept_preissue_reference_integrity_recheck(
+                    evaluator_custody.verify_unchanged_after_access()
+                )
                 return session.issue_receipt(
                     fixture_id=fixture_id,
-                    fixture_sha256=fixture_sha256,
+                    inference_visible_fixture_digest=visible_digest,
                     evaluator_version_sha256=evaluator_version_sha256,
                 )
         _fail("metric_receipt_missing")
     except VerificationError as error:
         return build_rejection_receipt(
             fixture_id=fixture_id,
-            fixture_sha256=fixture_sha256,
+            inference_visible_fixture_digest=visible_digest,
             evaluator_version_sha256=evaluator_version_sha256,
-            access_state_sha256=session.access_state_digest,
+            access_state_sha256=sha256_json(
+                {
+                    "evaluation_session_access_state_sha256": session.access_state_digest,
+                    "reference_custody_access_state_sha256": (
+                        evaluator_custody.access_state_digest
+                    ),
+                }
+            ),
             violation_codes=(error.code, *session.violations),
         )

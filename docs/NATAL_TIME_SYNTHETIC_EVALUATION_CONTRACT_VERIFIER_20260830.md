@@ -1,163 +1,190 @@
 # Natal-time synthetic evaluation-contract verifier — 2026-08-30
 
-## Scope
+## Scope and contract bindings
 
-This local Phase-1 verifier exercises only the already frozen pre-inference evaluation contract.
-It is bound to preserved v1 digest
-`c721dcdd5ed9e144ca4795523420e226bc13dc8a739669991c365c1bb4d3f6c9` and operative
+This local verifier exercises only frozen, preconstructed synthetic evaluation vectors. It is
+bound to preserved study-design v1 digest
+`c721dcdd5ed9e144ca4795523420e226bc13dc8a739669991c365c1bb4d3f6c9`, preserved
 metric-semantics v2 digest
-`067417a49c158fd7d7d1d31c3b21a584c1d1259aa85d60a30e9a6d3f39976f5e`.
+`067417a49c158fd7d7d1d31c3b21a584c1d1259aa85d60a30e9a6d3f39976f5e`, and operative
+metric/reference-domain v3 digest
+`75a1629203724715054e2a1d7ea1b6ead7dc0ffd6cf5f4df2756c3e622b5f1fe`.
 
-Every vector is conspicuously synthetic, uses only dates in 2099, and supplies `S_i` as a fixed
-preconstructed test vector. The verifier has no function that chooses, ranks, prunes, scores,
-weights, or recommends an interval. It imports no chart engine, Human Design model,
-questionnaire, relationship module, random selector, or non-HD selector. A passing synthetic
-receipt is not evidence of human recoverability, Human Design validity, calibration, accuracy,
-rectification, or product usefulness.
+Every vector uses synthetic 2099 dates and supplies `S_i` as a fixed test vector. The verifier has
+no function that constructs, ranks, prunes, scores, weights, or recommends `S_i`. It imports no
+chart engine, Human Design inference model, questionnaire, relationship module, or selector. A
+passing receipt is not evidence of recoverability, calibration, validity, rectification, accuracy
+on people, or product usefulness.
 
-## Capability and access order
+## Physically separate bundles
 
-`EvaluationSession` enforces the following state transition rather than trusting caller-provided
-freeze booleans:
+The generated state tree has three deliberately separated surfaces:
 
-1. freeze the complete candidate domain and connected-component role assignment;
-2. freeze a method specification bound to v1 and v2, declaring the supplied `S_i` to be a
-   preconstructed test vector and declaring that no selection procedure exists;
-3. validate and commit the exact `S_i` record;
-4. permit the independent synthetic evaluator to invoke the hidden-reference supplier; and
-5. compute separate components and issue a receipt.
+```text
+state/NATAL-TIME-SYNTHETIC-EVALUATION-V1/
+├── inference/
+│   ├── schema.json
+│   ├── manifest.json
+│   └── fixtures/SYNTH-FIXTURE-*.json
+├── evaluator/
+│   ├── schema.json
+│   ├── manifest.json
+│   └── references/SYNTH-CUSTODY-*.json
+├── receipts/SYNTH-FIXTURE-*.json
+└── evaluation-manifest.json
+```
 
-Calling the hidden-reference supplier before step 3 invalidates the session without invoking the
-supplier. Attempting to recommit or mutate `S_i` after step 4 also invalidates the session. These
-paths produce only a `fail_closed_rejection` artifact with `valid_evaluation_receipt: false`, no
-metrics, and a controlled violation code.
+The inference-visible fixture contains only frozen `C_i`, the frozen method specification, the
+preconstructed `S_i`, component-role declarations, contamination state, execution plan, and
+`inference_visible_fixture_digest`. It contains no `T_i`, reference-custody identifier or digest,
+canonical-`T_i` digest, reference path, byte size, combined-file digest, or evaluator manifest
+locator. Its manifest binds only inference-visible schema and fixture files.
+Evaluator-version data and exact evaluator/generator source-file hashes are deliberately absent
+from that schema and manifest because the generator contains evaluator-only synthetic reference
+vectors. Those bindings appear only on the evaluator side and in postcommit artifacts.
 
-Before step 3, the verifier checks and hashes only the public fixture envelope; it neither parses
-nor includes the hidden-reference subtree in that pre-commit digest. The subtree's closed-schema,
-prohibited-field, status, source, canonical-instant validation, and canonical digest occur inside
-the evaluator supplier after commitment. The bundle manifest separately binds the exact bytes of
-the complete fixture file, including its still-opaque hidden subtree. This packaging-integrity hash
-is produced only after receipt construction and is not exposed to candidate, method, or output
-actors.
+The evaluator-only object has a different closed schema and an opaque `SYNTH-CUSTODY-*` identity.
+It contains the synthetic reference, documentary-source classification, precision
+classification, custody classification, mutation-test mode, and its self-hash. Only the
+evaluator-only manifest maps a frozen inference fixture to that object. The postcommit evaluation
+manifest binds both separated manifests and the resulting artifacts; it is not an inference-role
+input.
 
-Connected-component assignments contain only synthetic observation and component codes. Every
-component must occupy exactly one of `development`, `calibration`, or `locked_validation`.
-Cross-role or contaminated components fail before hidden-reference access.
+Changing only `T_i` or evaluator custody changes no inference-visible byte, fixture digest, or
+inference-manifest entry.
 
-## Exact interval and reference semantics
+## Custody capability and access order
 
-`C_i` is unordered for commitment purposes. Candidate intervals may span nonconsecutive declared
-civil dates. Intervals must be contiguous within each declared date and may not overlap globally;
-gaps between separate date domains are allowed. Candidate-set commitment canonicalizes order but
-does not deduplicate records.
+`EvaluationSession` and `EvaluatorReferenceCustody` use ordered states, not caller-provided freeze
+booleans:
 
-A non-abstaining `S_i` must contain one or more exact whole records from `C_i`. Equality includes
-the manifest digest, candidate-set digest, interval ID, both UTC endpoints, full-state digest, and
-civil date. Duplicate IDs or records are rejected before canonical ordering. Proper subintervals,
-manufactured unions, foreign IDs, substituted state/provenance, and altered civil dates are
-rejected. Explicit abstention requires an empty selection.
+1. validate and freeze complete `C_i` plus connected-component role assignments;
+2. freeze a v1/v2/v3-bound method specification that declares a preconstructed `S_i` and no
+   selection procedure;
+3. validate exact membership and commit canonical `S_i`;
+4. release an opaque capability bound to that exact `S_i` commitment;
+5. let evaluator custody authorize the capability, then address, open, read, parse, serialize, and
+   hash the evaluator-only object;
+6. hand canonical reference data and custody binding to the metric evaluator; and
+7. consume the loader into a deep-copied, version-locked custody snapshot, destroy the loader,
+   and re-hash that exact snapshot immediately before metric computation and artifact issuance.
 
-The hidden synthetic reference is already expressed as a positive-width canonical half-open UTC
-interval. Multiple surviving sources are usable only if their canonical intervals are exactly
-identical. Distinct intervals fail closed even when they overlap; they are never averaged,
-intersected, unioned, clipped, or selected. A reference is domain-compatible when it overlaps
-`C_i` with positive width. Endpoint touching alone is not overlap. Partial overlap—including a
-one-microsecond overlap—remains compatible, and the full unchanged documentary interval and width
-are retained.
+Before step 3, the custody operation counters for raw byte, open, read, stat, path, size, parse,
+serialization, hash, listing, and addressability are all zero. Constructing custody places its
+loader in an evaluator-private weak registry rather than on the custody instance. The inference
+session holds no evaluator object, loader, locator, metadata, or enumeration surface. Calling the
+normal access event early, presenting an unissued capability, or forging a reference handoff fails
+before the loader is invoked. The one-shot loader registry entry is removed during authorized open.
+Explicit early raw-byte, digest, metadata, and alternate-loader probes likewise fail closed while
+all underlying operation counts remain zero.
 
-`no_eligible_reference` and `reference_canonicalization_failed` are explicit reference states.
-They produce typed not-applicable components rather than parser defaults, zeros, false coverage,
-or inference misses.
+After authorized access, a change to the version-locked snapshot fails the mandatory pre-artifact
+custody check with `t_i_mutated_after_evaluator_access`. Replacement or mutation of the caller's
+former loader backing cannot alter that consumed snapshot. Receipt issuance also requires the
+evaluator-issued, exact-`S_i`-bound integrity-recheck handoff; a caller-supplied digest is not
+accepted. Post-access `S_i` recommitment likewise invalidates the session. None of these paths can
+emit a valid metric receipt or domain diagnostic.
+
+## Exact `C_i` and unconstrained subset geometry
+
+`C_i` remains the complete unordered candidate collection. Its positive-width half-open intervals
+must be contiguous and non-overlapping within every declared civil-date domain and must not
+overlap globally. Gaps between nonconsecutive declared date domains remain outside `D_i`.
+
+A non-abstaining `S_i` is any nonempty unordered subset of exact whole `C_i` records. Equality
+includes manifest and set digests, interval ID, endpoints, full-state digest, provenance, and civil
+date. Duplicate IDs or complete records are rejected before canonical ordering. Proper
+subintervals, manufactured spanning windows, foreign IDs, and substituted state or provenance are
+rejected. `S_i` has no adjacency, contiguity, connectivity, or one-window validity requirement.
+
+The fixed disconnected case has one synthetic date partitioned into four intervals and selects
+only the first and third. Its temporal width sums those two intervals without filling the
+unselected middle interval; interval retention is `2/4`; the repeated full-state identity is
+counted once; and date coverage is independent. Reversing the same exact members preserves the
+canonical fixture, `S_i` commitment, and receipt. A duplicated member and a manufactured first-to-
+third spanning interval fail closed.
+
+## Exact domain union and three-way reference status
+
+`D_i` is the exact set union of unchanged `C_i` intervals, not their convex hull. After source
+eligibility, lineage adjudication, precision preservation, and canonicalization, the evaluator
+sums the exact positive-width intersection of `T_i` with the non-overlapping `C_i` partition:
+
+- `reference_domain_compatible`: the overlap width equals the complete unchanged `T_i` width, so
+  `T_i` is a subset of `D_i`;
+- `reference_domain_partially_incompatible`: overlap width is positive but less than the complete
+  `T_i` width; or
+- `reference_domain_incompatible`: overlap width is zero, including endpoint-only contact.
+
+Containment may span adjacent candidate intervals. A boundary inside `T_i` is not a defect.
+Containment on either declared date of a multiple-date domain is compatible. A reference on an
+excluded intervening date remains incompatible because the gap is not filled.
+
+Partial or complete incompatibility never clips, intersects, expands, or replaces `T_i` or changes
+`C_i`. It emits a closed `reference_domain_diagnostic`, not a valid reference-evaluation receipt.
+That diagnostic binds exact `S_i`, canonical `T_i`, custody, access state, evaluator version, and
+all three contracts. It contains only the controlled domain status, typed-null
+`reference_intersection`, and the positive full documentary-reference width. It gives the method
+neither credit nor error and contains no component metric object.
+
+Fixed domain cases cover containment in one interval, containment across adjacent intervals,
+extension before, extension after, extension across both date-domain ends, wholly outside,
+endpoint-only contact, and included versus excluded dates in a multiple-date domain.
 
 ## Separate descriptive components
 
-A valid descriptive receipt contains exactly these components:
+For a compatible operative reference, a non-abstaining descriptive receipt reports only:
 
 - reference intersection;
-- retained temporal-width numerator, denominator, and exact rational fraction;
-- retained canonical-interval-count numerator, denominator, and exact rational fraction;
-- retained unique full-state-identity-count numerator, denominator, and exact rational fraction;
-- represented-date-count numerator, denominator, and exact rational fraction;
+- retained temporal-width numerator, denominator, and exact fraction;
+- retained canonical-interval-count numerator, denominator, and exact fraction;
+- retained unique full-state-identity-count numerator, denominator, and exact fraction;
+- represented-date-count numerator, denominator, and exact fraction;
 - documentary-reference width in integer microseconds; and
 - explicit abstention.
 
-No scalar summary or component ordering exists. Repeated nonadjacent intervals with the same full
-state remain separate intervals while contributing one unique state identity. Date coverage is
-reported independently of temporal width. Full `C_i` produces unit retention fractions without a
-success label.
+No scalar summary or component ordering exists. Repeated nonadjacent intervals remain distinct
+intervals while contributing one state identity. Endpoint-only contact is not intersection.
+Abstention gives every `S_i`-dependent component a typed-null `not_applicable_abstention` value
+while retaining documentary width for an otherwise operative compatible reference.
 
-Not-applicable metric objects preserve their component-specific fields with JSON `null` values.
-For abstention, all `S_i`-dependent components are `not_applicable_abstention`; documentary width
-remains available when the reference is otherwise operative and compatible. For missing,
-uncanonicalizable, conflicting, or domain-incompatible references, every reference-dependent
-component uses its specific typed not-applicable status. The abstention field remains the explicit
-fact of the committed output.
+No eligible reference, canonicalization failure, and conflicting distinct source intervals retain
+their v2 typed not-applicable behavior. Exactly identical intervals from separate documentary
+sources corroborate one operative `T_i`; distinct intervals fail closed and are never averaged,
+intersected, unioned, clipped, or selected.
 
-## Commitments and artifacts
+## Receipts, schemas, and fixed failures
 
-The generator is
-`scripts/build_natal_time_synthetic_evaluation_verifier.py`. It derives an evaluator-version
-packet from the exact bytes of that generator and
-`src/hdmatch/natal_time/evaluation_contract.py`. Receipts bind:
+Every ordinary receipt binds the preserved v1 and v2 digests, operative v3 digest,
+`inference_visible_fixture_digest`, candidate freeze, frozen method, canonical `S_i`, canonical
+`T_i` when one exists, evaluator-custody digest, custody access-state digest, combined access-state
+digest, evaluator-version digest derived from exact module and generator bytes, and metrics digest.
+Each ordinary receipt, domain diagnostic, and fail-closed rejection has a closed shape and a
+self-hash; rehashing an unknown top-level or nested field does not make it valid. Contextual
+validation additionally compares externally frozen fixture, `S_i`, custody, access, and evaluator
+bindings; recomputing a receipt self-hash after changing one of those bindings does not satisfy the
+contextual validator.
 
-- the logical v1 and v2 contract digests;
-- the public, order-insensitive fixture digest;
-- the candidate-domain freeze digest;
-- the frozen method-specification digest;
-- the canonical preconstructed-`S_i` commitment;
-- the hidden-reference digest;
-- the capability/access-state digest;
-- the evaluator-version digest; and
-- the separate metrics-object digest.
+Fixed failures cover empty non-abstention; partial, duplicate, foreign, and manufactured intervals;
+early ordinary reference access; early raw-byte, digest, metadata, and alternate-loader probes;
+post-access `S_i` and `T_i` mutation; cross-role connected components; and contamination. Rejected
+artifacts carry controlled violation codes and no metrics.
 
-Each receipt and rejection is self-hashed. The manifest additionally binds every fixture's
-public logical digest, exact complete-file digest, receipt digest, exact receipt-file digest,
-evaluator version, and verifier schema. The exact file digest plus the post-commit
-hidden-reference digest bind both halves without granting pre-commit reference access. Artifacts live under
-`state/NATAL-TIME-SYNTHETIC-EVALUATION-V1/`.
-
-## Fixed adversarial vectors
-
-The bundle includes valid component vectors for full `C_i`, abstention, selected/reference
-boundary touching, repeated state identities, nonconsecutive multiple dates, wide documentary
-precision, and a one-microsecond partial-domain overlap. Reference-inapplicability vectors cover
-exactly identical corroborating source intervals, distinct overlapping documentary sources,
-domain incompatibility by endpoint touch, no eligible reference, and canonicalization failure.
-
-Fail-closed vectors cover empty non-abstention, proper partial interval, duplicate interval,
-reordered output with duplication, foreign interval, manufactured union, early reference access,
-post-reference `S_i` mutation, cross-role component assignment, and contamination. In-memory
-mutants additionally exercise nested extra fields, prohibited personal/free-text/relationship and
-inferential fields, invalid synthetic dates, and substituted civil-date/state/provenance fields.
-
-## Preregistration structural verifier
-
-The preregistration verifier accepts no prose, item content, choices, scoring keys, or generic
-headings. It requires exact controlled identifier sets copied or normalized from the frozen
-contracts:
-
-- all 15 baseline/falsification IDs;
-- all 11 measurement-development and reliability IDs;
-- all three data-role and six actor-access IDs;
-- all documentary eligibility, eligible-class, ineligible-class, and precision-rule IDs;
-- all connected-component edge and leakage/contamination IDs;
-- all seven separate metric-component IDs;
-- all disclosure-threat and unresolved disclosure-control IDs;
-- the complete prohibited-public-field set; and
-- explicit `cohort-aggregate-only`, `release-disabled`, pre-release threat-review, and
-  threat-model-not-anonymity-evidence declarations.
-
-Missing, duplicate, unknown, or heading-only substitutes fail structural validation.
+The preregistration structural validator accepts no prose, item content, choices, scoring keys, or
+generic headings. It requires exact controlled sets for all 15 baselines, 11 measurement
+requirements, data roles, actor access, source eligibility and precision, connected-component
+edges, leakage/contamination, metric components, disclosure threats and controls, prohibited
+public fields, and disclosure-surface declarations.
 
 ## Privacy and implementation boundary
 
-Fixture parsers are closed schemas at every nesting level. IDs, status values, roles, event codes,
-digests, synthetic dates, and canonical instants have controlled values or patterns. Arbitrary
-free text and extra fields are not accepted. Real-person, contact, consent, recovery, exact
-personal birth-record, relationship, household, response, and questionnaire fields are
-prohibited. Receipt fields containing rank, best-candidate, score, weight, probability,
-confidence, utility, stopping threshold, or recommendation semantics are prohibited recursively.
+All schemas are closed. IDs, status values, roles, event codes, digests, synthetic dates, and UTC
+instants use controlled values or patterns. Participant, contact, consent, recovery, personal
+birth-record, relationship, household, response, questionnaire, arbitrary free-text, rank,
+best-candidate, score, weight, probability, confidence, utility, threshold, and recommendation
+fields are prohibited recursively.
 
-The release-disabled aggregate schema from Phase 0 remains only a threat-model artifact. It is not
-anonymity, de-identification, disclosure-safety, or release evidence. This Phase-1 verifier does
-not implement or publish a ledger and does not authorize a participant-facing output.
+The release-disabled aggregate schema from Phase 0 remains only a threat-model artifact, not
+anonymity, de-identification, disclosure-safety, or release evidence. This verifier does not run on
+people, create a selector or estimator, modify protected deterministic chart components, authorize
+a participant-facing output, or alter replay/provenance artifacts.
