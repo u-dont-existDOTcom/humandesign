@@ -1,6 +1,6 @@
 # Current state
 
-- As of: `2026-08-30 03:17 GMT`
+- As of: `2026-08-30 03:31 GMT`
 - Task ID: `astrohd-relationship-continuation-20260830`
 - Goal: continue the relationship/AstroHD program under the blocking Brave + ChatGPT Pro supervision contract in `docs/RELATIONSHIP_RESEARCH_HANDOFF.md`, beginning with the separate natal-first `Find my birth-time window` priority unless supervision changes the sequence.
 - Authoritative Git baseline: `main` and `origin/main` at `b7660b8c9bcf52cbb14bc5442c13a3a8635aad32` (`Add canonical relationship research handoff and Pro supervision protocol`).
@@ -9,12 +9,12 @@
 
 ## Fresh audit
 
-- GitHub repository `u-dont-existDOTcom/humandesign` is public and uses `main` as its default branch. Exact-head `b7660b8` CI run `33283895301` passed. The other triggered workflows skipped because the handoff-only commit did not affect their paths.
+- The final read-only GitHub refresh reconfirmed that repository `u-dont-existDOTcom/humandesign` is public and uses `main` as its default branch at `b7660b8c9bcf52cbb14bc5442c13a3a8635aad32`. Exact-head CI run `33283895301` passed. The other triggered workflows skipped because the handoff-only commit did not affect their paths.
 - PRs `#16` (Survey-v2 empirical robustness) and `#17` (relationship email recovery) are merged. One old draft PR, `#1` (`codex/harness-integration`), remains open and failed its last 2026-08-25 CI run. A fresh diff audit found it at `3bab2c58`, conflicting/dirty against `main`, with 215 changed files (`+56030/-494`) and broad historical harness/cache/model work. It is not authoritative or safely reusable for this bounded foundation branch; it remains untouched pending owner authority.
 - Hosted governance gap: GitHub reports no repository rulesets and `main` is not branch-protected. Continue to use a task branch/PR and exact-head verification despite the absent hosted enforcement.
-- Railway project `humandesign-relationship`, production service `relationship-web`, is healthy. The checkpoint-2 re-audit confirmed the same latest successful deployment `60c360b2-6591-4e96-9d82-66e6808f82e5` at code commit `450d806` (the newer Git commit is documentation only), one `ams` replica, the confirmatory launch command, `/healthz`, and a persistent `/data` volume.
-- Direct runtime checks passed: `/healthz` returned `{"status":"ok"}`; `/api/llm-status` reported configured direct OpenAI `gpt-5.6-sol`; `/api/study/recovery/status` reported configured magic-link and six-digit-OTP recovery.
-- Railway exposes the expected service domain and variable names without values. `OPENROUTER_API_KEY` is still provisioned even though the active code path is direct OpenAI. Do not remove it until active-path and rollback dependency checks prove it unused. Preserve all existing secrets and the `/data` volume.
+- Railway project `humandesign-relationship`, production service `relationship-web`, remains healthy. The final authenticated Brave refresh reconfirmed the active successful deployment `60c360b2-6591-4e96-9d82-66e6808f82e5` for merge commit `450d806` (PR #17; the newer Git commit is documentation only), one EU West replica, the public service domain, and the persistent `relationship-web-data` volume. No Railway setting, variable, deployment, or data was changed.
+- Final direct runtime checks passed: `/healthz` returned `{"status":"ok"}`; `/api/llm-status` reported configured direct OpenAI `gpt-5.6-sol`; `/api/study/recovery/status` reported configured magic-link and six-digit-OTP recovery.
+- Railway exposes the expected service domain and variable names without values. The final audit checked only variable-name presence and reconfirmed both `OPENAI_API_KEY` and `OPENROUTER_API_KEY`; no secret value was read or exposed. `OPENROUTER_API_KEY` remains provisioned even though the active code path is direct OpenAI. Do not remove it until active-path and rollback dependency checks prove it unused. Preserve all existing secrets and the `/data` volume.
 - Live UI inspection confirmed the exact-time Relationship Pattern Lab intake, participant-confirmed birthplace search, privacy disclosures, three consent gates, email recovery, and pre-answer sealing language. No participant record was created or modified during the audit.
 
 ## Scientific/implementation status
@@ -53,7 +53,7 @@
 - Still prohibited: every inferential or participant-facing semantic, relationship-assisted pruning, live data, public mounting, migration, Railway changes, merge, and deploy. Stop and return to Pro if the canonical engine is ambiguous, cannot be pinned, lacks a defensible complete transition method, or requires a substantive precision/scope choice.
 - Browser-control default from the owner: prefer headless operation. When the authenticated headed Brave session is genuinely required, reuse the existing controlled window on a dedicated secondary workspace or secondary physical monitor so it does not steal focus or cover the active screen. Do not repeatedly open and close visible windows.
 - Test-efficiency telemetry is active under task ID `astrohd-relationship-20260830` in `.git/codex-test-efficiency/`.
-- Foundation verification was green at its recorded exact head: the full suite passed 261 tests; the focused API/foundation suite passed 33 tests; Ruff passed; strict mypy found no issues across 131 source files; the privacy gate passed; and both canonical synthetic artifacts reproduced byte-for-byte. Real-engine focused checks have also passed during development; a final exact-head full verification is required immediately before the next Pro packet.
+- Final verification at branch head `255a94d68a3fef50b78249b5773fd3297475e8e6` passed all 266 tests in 18.10 seconds, Ruff, strict mypy across 129 source files, and the private-artifact/history/build gate. The API trace, evidence matrix, and V4 identity packet reproduced byte-for-byte at the current source; the foundation audit reproduced byte-for-byte from its immutable implementation commit `592ff22`. The heavy real-engine fixture audit was generated from the unchanged current implementation at `320d5af`; its replay separately revalidated every civil-day group before the execution wrapper timed out during the final aggregate transition recomputation, which is also covered by the independent/production conformance tests.
 - Before merge/deploy: exact-head focused/full tests, Ruff, strict mypy, participant JavaScript syntax checks if UI changes, privacy/blinding review, pre-merge Pro checkpoint, pre-deploy Pro checkpoint, exact-commit deployment, and production smoke verification.
 
 ## Next safe action
