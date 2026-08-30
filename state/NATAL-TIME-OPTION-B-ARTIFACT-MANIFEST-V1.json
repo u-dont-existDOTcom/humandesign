@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-option-b-artifact-manifest-v1",
+  "status": "BYTE_EXACT_CONTENT_HASHES",
+  "active_purpose": "measurement_reliability_prerequisite_screen",
+  "provenance": {
+    "owner_record_sha256": "c24bb062bd90466f0be1a5be03211c8933e80bc1b4eaeee9509d5856bea02fc4",
+    "checkpoint_8_accepted_head": "63bfb78909a97eb5b8b31efe55e065a6f78973a2",
+    "conception_source_commit": "aaec2fecad74a1dfc9fa6fa7ec75d90a77f9c1fd",
+    "scan_source_commit": "98b829e812c4cf2fdff7e02f00fa39ce137e6872",
+    "architecture_and_test_source_commit": "7340f5d785f5693ca20105dd1f4d3a17576713d3"
+  },
+  "digest_algorithm": "sha256",
+  "artifacts": [
+    {"path":"docs/NATAL_TIME_OPTION_B_INDEPENDENT_CONCEPTION_SNAPSHOT_20260830.md","sha256":"4a9d579e4dddf773eb7532ae725cc610662396806870a4235f1d7e5cccf5cf7e"},
+    {"path":"state/NATAL-TIME-OPTION-B-INDEPENDENT-CONCEPTION-SNAPSHOT-V1.json","sha256":"d8b1692283271c2195a802d48e4b71307371424b075ff69ab502db51ca5d3ba8"},
+    {"path":"docs/PRO_SUPERVISION_OPTION_B_CONTRACT_20260830.md","sha256":"4c5d94b8a0db55c0e00d8062e8a975a0fcab1ad84ea36016fc6134ee9464cdc2"},
+    {"path":"docs/NATAL_TIME_OPTION_B_METHODS_SCAN_20260830.md","sha256":"2532dbaf3989de7d4527936d0768183e328d72b5e4317c8d0012ffafef02407c"},
+    {"path":"state/NATAL-TIME-OPTION-B-SOURCE-LEDGER-V1.json","sha256":"76a10057b92b782249e8a25ed48e0bcc49010fb435e5af0ff08c2372c871dfd8"},
+    {"path":"state/NATAL-TIME-OPTION-B-METHODS-DECISION-LEDGER-V1.json","sha256":"6cada6e33c265fc7c5d161d57532a9ae53eab121f252f88a4fce77ae3ef0ef6a"},
+    {"path":"state/NATAL-TIME-MEASUREMENT-RELIABILITY-CONTRACT-V1.json","sha256":"b89e809f18373fb495dda14bfc546bab4da4fe333fd18e3ca9ed0f3458ef9b1d"},
+    {"path":"state/NATAL-TIME-MEASUREMENT-RELIABILITY-ADMINISTRATION-SCHEMA-V1.json","sha256":"d0e11f9158fa9d6204cac1117defe2635cdfd5f51bfd56f1088400fd1574ec71"},
+    {"path":"state/NATAL-TIME-MEASUREMENT-RELIABILITY-CODING-SCHEMA-V1.json","sha256":"caec509fa723cf06bbf7f1becd4974bca5c2b397e93a7120c6943a3620078d86"},
+    {"path":"state/NATAL-TIME-MEASUREMENT-RELIABILITY-PROPERTY-PLAN-SCHEMA-V1.json","sha256":"bca87a576d9669e3e38dda4aa8916e8efbaca80c2e17052058ed91cae2122b91"},
+    {"path":"state/NATAL-TIME-MEASUREMENT-RELIABILITY-THREAT-MODEL-V1.json","sha256":"a7ff74d06315f6abcc03f9a0d620af862cc27bbf78fc837848b8be784c8d1ad3"},
+    {"path":"state/NATAL-TIME-OPTION-B-UNRESOLVED-DECISIONS-V1.json","sha256":"3eadd6c79ca65027f683952bc161dc400e55c9514d9c1f0fac880e6b66a0cbbd"},
+    {"path":"state/NATAL-TIME-OPTION-B-SYNTHETIC-FIXTURE-MANIFEST-V1.json","sha256":"d9a0015eeb42c98646e67f157b10ec798fc36d222cc12f0701639fe2824a0f2a"},
+    {"path":"tests/fixtures/option_b/administration_valid.json","sha256":"c5fe540c726de2bcf85e39592f896a3da91bd2145589576738bd4de8eddf73af"},
+    {"path":"tests/fixtures/option_b/coding_valid.json","sha256":"4d7778bab9b4a02bcc8ec337336c8671ebc9fb08faf71b9e0f213582f162ac92"},
+    {"path":"tests/fixtures/option_b/property_plan_valid.json","sha256":"26d81c41a5cca11ce7be73ed6b91d8672eb1342f7c996ff3d2ad8f9a371d76d9"},
+    {"path":"tests/fixtures/option_b/invalid_probes.json","sha256":"f0592f58db652ee4ed698a2e6544baa0e6d0f5b5bd23a63d9bb44b19e8a38e11"},
+    {"path":"tests/option_b/validator.py","sha256":"1b9e735050e6d07aeded9c97a0f675638b2a65a61b346a09af5c91d3f7c6b416"},
+    {"path":"tests/option_b/acceptance.py","sha256":"c579ed84e895baf39ffff656ad56b36adc008daad35e1fd07d3b216451b87069"},
+    {"path":"tests/unit/test_natal_time_option_b_reliability_architecture.py","sha256":"2f79879e12a07873c00acffdbf8cf3f3ee85a04647e8b15ef6376df3c24f668d"},
+    {"path":"state/NATAL-TIME-OPTION-B-ACCEPTANCE-MATRIX-V1.json","sha256":"8a25f7b2660c6890caebf96dca1b82de6d055b17b7a0d11a11634c5d4179a552"}
+  ],
+  "artifact_count": 21,
+  "self_digest_rule": "This manifest does not contain its own digest; its exact file SHA-256 is recorded in the checkpoint-9 evidence packet.",
+  "all_recorded_artifacts_byte_exact": true
+}
