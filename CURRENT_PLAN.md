@@ -175,11 +175,14 @@ append-only contamination, unassigned separated roles, a construct freeze gate, 
 claim lanes, mapping-failure preservation, and post-exposure change control. It creates no
 construct or mapping content.
 
-The exact checkpoint-10 packet is
-`docs/NATAL_TIME_B1_CHECKPOINT10_ACCEPTANCE_20260830.md`. Before any construct source is selected,
-content is authored, or a construct-specific search begins, Pro must rule on checkpoint 10 and
-Joel must choose the source-route class plus human, fresh-isolated-model, or separated-hybrid
-authorship. If Pro says an owner decision is required, stop and wait for Joel.
+Pro's first checkpoint-10 review returned `OWNER DECISION REQUIRED: NO`, qualified 63/64
+requirements, and authorized only a B1-62 traceability-cardinality closure. That closure preserves
+the v1 manifest and original matrix while a superseding v2 manifest assigns exactly one primary
+requirement to each of the same 33 substantive artifacts. The exact closure packet is
+`docs/NATAL_TIME_B1_CHECKPOINT10_REQUIREMENT62_CLOSURE_20260830.md`. Before any construct source is
+selected, content is authored, or a construct-specific search begins, Pro must accept the closure;
+if Pro then requires the source-route plus human, fresh-isolated-model, or separated-hybrid
+authorship choice, stop and wait for Joel.
 
 Option B remains a design-only prerequisite screen. It does not authorize live execution,
 measurement content, participant software, empirical data, or progression to rectification.

@@ -88,8 +88,8 @@
 - Joel selected **B1 — independent-first constructs** and clarified that the eventual scientific path must still test how independently frozen chart-blind constructs map onto AstroHD. The owner record is `docs/NATAL_TIME_OWNER_DECISION_B1_20260830.md`. The mapping is a later, separately frozen and blinded phase that must permit a null/nonmapping result; it is not authorized now.
 - Pro returned `OWNER DECISION REQUIRED: NO` for the B1 selection and authorized only pre-content source governance, a content embargo, and an AstroHD mapping firewall. The authorized architecture is complete at implementation/correction head `39834d91c1aa751bb9bd26c6eff182fe384678c6` / tree `14d6a7215e9c71ff8a1a11699899b8cb91514030`, with byte-evidence child `7688e7b8cddcdf02e6378a133d55d2ca36d76aa0` / tree `e0afad65c7e1dcca8f2e8782accc41d8523e1995`.
 - `state/NATAL-TIME-B1-BASELINE-ATTESTATION-V1.json` records the complete checkpoint-9-to-B1 topology and diff. The conception commit precedes all 20 exact generic methods queries and remains byte-identical. All source routes remain unselected; the future construct-specific scan is not executed; all content-bearing freeze and mapping slots are unset.
-- Three closed schemas and test-only validators accept only conspicuously synthetic opaque metadata. The 64-row matrix passes all 64 requirements, and the 33-artifact manifest is byte-exact. R reliability, M mapping, and I incremental value remain separate, with no scalar or automatic progression. Null/weak/unstable/nonreplicating mappings remain reportable and cannot repair a construct in place.
-- The checkpoint-10 packet is `docs/NATAL_TIME_B1_CHECKPOINT10_ACCEPTANCE_20260830.md`; the neutral future decision dossier is `docs/NATAL_TIME_B1_OWNER_SOURCE_ROUTE_DOSSIER_20260830.md`. The required next authority is Pro's checkpoint-10 ruling followed, if requested, by Joel's source-route and authorship-class choice.
+- Three closed schemas and test-only validators accept only conspicuously synthetic opaque metadata. The 64-row matrix passes all 64 requirements. Pro's first checkpoint-10 review qualified 63/64 and identified only a traceability-cardinality defect in B1-62: v1 allowed multiple controlling requirement IDs per artifact. The superseding v2 manifest now preserves the same 33 substantive paths with exactly one primary assignment each and separately binds two immutable matrix dependencies. R reliability, M mapping, and I incremental value remain separate, with no scalar or automatic progression. Null/weak/unstable/nonreplicating mappings remain reportable and cannot repair a construct in place.
+- The original packet is `docs/NATAL_TIME_B1_CHECKPOINT10_ACCEPTANCE_20260830.md`; the narrow closure packet is `docs/NATAL_TIME_B1_CHECKPOINT10_REQUIREMENT62_CLOSURE_20260830.md`; and the neutral future decision dossier remains `docs/NATAL_TIME_B1_OWNER_SOURCE_ROUTE_DOSSIER_20260830.md`. The required next action is Pro's closure ruling. If checkpoint 10 is accepted and Pro requires the already identified source-route/authorship choice, stop for Joel.
 - Still prohibited: every inferential or participant-facing semantic, relationship-assisted pruning, live data, recruitment, public mounting or ledger release, migration, Railway changes, push, merge, and deploy. A later owner decision is explicitly required before questionnaire development, participant-facing use, selection of a coverage/width/abstention operating point, a human cohort size/burden/cost, ranking/exclusion, probabilistic language, public-ledger deployment, push, merge, migration, or deployment.
 - Browser-control default from the owner: prefer headless operation. When the authenticated headed Brave session is genuinely required, reuse the existing controlled window on a dedicated secondary workspace or secondary physical monitor so it does not steal focus or cover the active screen. Do not repeatedly open and close visible windows.
 - Test-efficiency telemetry is active under task ID `astrohd-relationship-20260830` in `.git/codex-test-efficiency/`.
@@ -98,9 +98,10 @@
 
 ## Next safe action
 
-Return the exact B1 checkpoint-10 packet to the same authenticated Pro conversation. If Pro says
-an owner decision is required, stop and wait for Joel; otherwise proceed only inside a newly
-authorized bounded contract. Do not select a source route or authorship class, begin a
+Run the exact-head gates for the B1 requirement-62 traceability-cardinality closure and return the
+narrow closure packet to the same authenticated Pro conversation. If Pro accepts checkpoint 10
+and says the source-route/authorship owner decision is required, stop and wait for Joel. Do not
+select a source route or authorship class, begin a
 construct-specific search, create construct or mapping content, push, merge, change GitHub
 governance, modify Railway, touch `OPENROUTER_API_KEY`, access participant records, recruit,
 execute baselines, or deploy without the required later authority.
