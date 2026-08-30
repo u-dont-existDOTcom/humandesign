@@ -16,11 +16,11 @@ this packet.
 
 ## Independently preserved owner source
 
-Owner request ID: `OR-ASTROHD-RELATIONSHIP-CONTINUATION-20260830`  
-Owner outcome ID/epoch: `OO-ASTROHD-RELATIONSHIP-CONTINUATION` / `4`  
+Owner request ID: `OR-ASTROHD-RELATIONSHIP-CONTINUATION-20260830`
+Owner outcome ID/epoch: `OO-ASTROHD-RELATIONSHIP-CONTINUATION` / `4`
 Exact source SHA-256:
-`2bc3b243f67411907799c9b382dccd9552220a67cfe20d0429949868123db735`  
-Receipt ID: `osr-astrohd-relationship-20260830-epoch4-v1`  
+`2bc3b243f67411907799c9b382dccd9552220a67cfe20d0429949868123db735`
+Receipt ID: `osr-astrohd-relationship-20260830-epoch4-v1`
 Receipt SHA-256:
 `ebe94326e29404126798fb94714c3a1f48f07ee4dfce3a2465d4505be26b01e2`
 
@@ -112,11 +112,11 @@ integrity verification and loaded completely.
 ## Objective reconciliation and dual alignment
 
 Owner-outcome record SHA-256:
-`5a731732341ef38b3f34b89be35099148bee88c7cf4c518a0a1c1a9baefae742`  
+`5a731732341ef38b3f34b89be35099148bee88c7cf4c518a0a1c1a9baefae742`
 Child task-contract SHA-256:
-`ded195cbbab42344bb311199d590702671a95a1467213087b602647bd6d3515b`  
+`ded195cbbab42344bb311199d590702671a95a1467213087b602647bd6d3515b`
 Objective-reconciliation SHA-256:
-`becfdbae1e79685cb2202830e1171912aa641e87b5e6197ed3063735b33d3717`  
+`becfdbae1e79685cb2202830e1171912aa641e87b5e6197ed3063735b33d3717`
 Research-verdict SHA-256:
 `ebca609fa6033b5ec9b10a7ac528b23e716c4d9a063bc001df86cbfa2ede2693`
 

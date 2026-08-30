@@ -130,4 +130,3 @@ The machine-readable register is
 `state/NATAL-TIME-S6-H1-UNRESOLVED-DECISIONS-V1.json`. Its selection count is zero. Until a future
 owner decision and fresh Pro contract are recorded, all human, content, search, measurement,
 reliability, mapping, production, and release lanes remain closed.
-

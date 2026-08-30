@@ -128,4 +128,3 @@ or deployment was created, read, or mutated.
 - **Release adequacy: NOT_APPLICABLE**, with release permission false.
 
 No work beyond this bounded child is authorized without the checkpoint-11 Pro ruling.
-

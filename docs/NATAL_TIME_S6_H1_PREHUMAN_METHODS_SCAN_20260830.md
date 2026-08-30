@@ -111,4 +111,3 @@ mapping content.
   chart blindness, construct reliability or validity, mapping feasibility, or participant benefit.
 - **Release adequacy: NOT_APPLICABLE.** No release, human action, publication, deployment, or
   production change is proposed or authorized.
-
