@@ -1,6 +1,6 @@
 # Current state
 
-- As of: `2026-08-30 01:28 GMT`
+- As of: `2026-08-30 01:38 GMT`
 - Task ID: `astrohd-relationship-continuation-20260830`
 - Goal: continue the relationship/AstroHD program under the blocking Brave + ChatGPT Pro supervision contract in `docs/RELATIONSHIP_RESEARCH_HANDOFF.md`, beginning with the separate natal-first `Find my birth-time window` priority unless supervision changes the sequence.
 - Authoritative Git baseline: `main` and `origin/main` at `b7660b8c9bcf52cbb14bc5442c13a3a8635aad32` (`Add canonical relationship research handoff and Pro supervision protocol`).
@@ -10,9 +10,9 @@
 ## Fresh audit
 
 - GitHub repository `u-dont-existDOTcom/humandesign` is public and uses `main` as its default branch. Exact-head `b7660b8` CI run `33283895301` passed. The other triggered workflows skipped because the handoff-only commit did not affect their paths.
-- PRs `#16` (Survey-v2 empirical robustness) and `#17` (relationship email recovery) are merged. One old draft PR, `#1` (`codex/harness-integration`), remains open and failed its last 2026-08-25 CI run; it is not authoritative for this task.
+- PRs `#16` (Survey-v2 empirical robustness) and `#17` (relationship email recovery) are merged. One old draft PR, `#1` (`codex/harness-integration`), remains open and failed its last 2026-08-25 CI run. A fresh diff audit found it at `3bab2c58`, conflicting/dirty against `main`, with 215 changed files (`+56030/-494`) and broad historical harness/cache/model work. It is not authoritative or safely reusable for this bounded foundation branch; it remains untouched pending owner authority.
 - Hosted governance gap: GitHub reports no repository rulesets and `main` is not branch-protected. Continue to use a task branch/PR and exact-head verification despite the absent hosted enforcement.
-- Railway project `humandesign-relationship`, production service `relationship-web`, is healthy. Latest successful deployment `60c360b2-6591-4e96-9d82-66e6808f82e5` runs code commit `450d806` (the newer Git commit is documentation only), one `ams` replica, the confirmatory launch command, `/healthz`, and a persistent `/data` volume.
+- Railway project `humandesign-relationship`, production service `relationship-web`, is healthy. The checkpoint-2 re-audit confirmed the same latest successful deployment `60c360b2-6591-4e96-9d82-66e6808f82e5` at code commit `450d806` (the newer Git commit is documentation only), one `ams` replica, the confirmatory launch command, `/healthz`, and a persistent `/data` volume.
 - Direct runtime checks passed: `/healthz` returned `{"status":"ok"}`; `/api/llm-status` reported configured direct OpenAI `gpt-5.6-sol`; `/api/study/recovery/status` reported configured magic-link and six-digit-OTP recovery.
 - Railway exposes the expected service domain and variable names without values. `OPENROUTER_API_KEY` is still provisioned even though the active code path is direct OpenAI. Do not remove it until active-path and rollback dependency checks prove it unused. Preserve all existing secrets and the `/data` volume.
 - Live UI inspection confirmed the exact-time Relationship Pattern Lab intake, participant-confirmed birthplace search, privacy disclosures, three consent gates, email recovery, and pre-answer sealing language. No participant record was created or modified during the audit.
@@ -24,6 +24,7 @@
 - Partial: `src/hdmatch/relationship/uncertain_time.py` aggregates already-enumerated partner-time intervals into stable and variable connection mechanics. It does not enumerate a civil day, collect natal behavioral evidence, rank natal states, or propagate a ranked distribution through the public relationship flow.
 - Implemented on the non-production task branch at `592ff22fd914614a73e4c72861aa3c6514a796f4`: the Pro-approved deterministic natal-first foundation. It includes immutable evidence lineages, a server-enforced independent weekday lock, fail-closed date conflict states, explicit unordered candidate-date sets, a standalone natal-only API/private storage namespace, complete civil-day interval enumeration, full-state identity/provenance, immutable manifest/freeze/result records, stable/variable set facts, and a synthetic-only public allowlist boundary.
 - Candidate-complete edge fixtures now cover ordinary/leap days, DST gap/fold days, a historical offset change, skipped-date failure, day-boundary transitions, multiple candidate dates, and reduced-signature collisions. The canonical synthetic receipt is `state/NATAL-TIME-FOUNDATION-AUDIT.json`, generated from implementation commit `592ff22`.
+- The standalone API now also supports injected clocks and identifier factories solely for deterministic audit fixtures while retaining secure random/time defaults. `state/NATAL-TIME-WEEKDAY-LOCK-TRACE.json`, generated from implementation commit `3337b46`, records the synthetic intake and post-lock assessment responses and proves that the asserted date and implied weekday are absent from the first response.
 - Still not implemented and explicitly blocked until checkpoint 2: reliability-aware natal questionnaire semantics, candidate ranking/elimination, weights/priors, score or duration mass, probability/confidence labels, stopping rules, participant-facing time-window recommendations, or downstream relationship marginalization.
 - Not implemented: separately versioned AstroRRF raw-signal-to-ordinal outcome calibration; calibration/validation cohort workflow; or the public-safe outcome ledger required for durable model comparison.
 
@@ -32,7 +33,7 @@
 - Private email, exact birth data, raw narratives, resume/recovery credentials, and classifier evidence remain on Railway/private storage. Public Git may receive only code, schemas, non-enumerable commitments, deidentified aggregates, and public-safe model/calibration artifacts.
 - Do not use relationship evidence to infer natal time in the default workflow. Any future relationship-assisted rectification is exploratory and disqualifies that same relationship as validation evidence for the inferred chart/time.
 - Do not convert raw symbolic/rubric scores into probabilities or high/low outcome labels without a separately frozen, supervised calibration layer.
-- `.gitignore` currently lacks several private-artifact classes required by `docs/34_relationship_participant_data_storage.md`; harden it during the first implementation slice without deleting existing data.
+- `.gitignore`, `.dockerignore`, CI, and `scripts/check_private_artifacts.py` now enforce private-path, staged/tracked secret, build-context, branch-diff, and reachable-history checks without deleting existing data.
 
 ## Supervision and verification
 
@@ -42,8 +43,9 @@
 - Pro hard-blocked ranking, candidate elimination, weights, priors, duration-normalized mass, probabilities, confidence percentages, stopping rules, time-window recommendations, relationship evidence, production migration, public deployment, and merge to `main` until checkpoint 2.
 - Browser-control default from the owner: prefer headless operation. When the authenticated headed Brave session is genuinely required, reuse the existing controlled window on a dedicated secondary workspace or secondary physical monitor so it does not steal focus or cover the active screen. Do not repeatedly open and close visible windows.
 - Test-efficiency telemetry is active under task ID `astrohd-relationship-20260830` in `.git/codex-test-efficiency/`.
+- Foundation verification is green through local head `3337b46`: the focused API/foundation suite passed 33 tests; the preceding exact-head full suite passed 260 tests; Ruff and strict mypy passed. The final evidence commit still requires one exact-head full rerun before checkpoint 2.
 - Before merge/deploy: exact-head focused/full tests, Ruff, strict mypy, participant JavaScript syntax checks if UI changes, privacy/blinding review, pre-merge Pro checkpoint, pre-deploy Pro checkpoint, exact-commit deployment, and production smoke verification.
 
 ## Next safe action
 
-Commit the synthetic audit/state update, rerun the exact-head verification and privacy gate, audit the stale PR and GitHub ruleset status read-only, then send the complete checkpoint-2 packet to the same Pro conversation. Do not merge, push, change GitHub governance, modify Railway, touch `OPENROUTER_API_KEY`, or deploy before the checkpoint-2 ruling and the applicable owner authority boundary.
+Commit the synthetic API trace/state update, rerun exact-head full verification and the privacy gate, then send the complete checkpoint-2 packet to the same Pro conversation. Do not merge, push, change GitHub governance, modify Railway, touch `OPENROUTER_API_KEY`, or deploy before the checkpoint-2 ruling and the applicable owner authority boundary.

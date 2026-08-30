@@ -28,7 +28,9 @@ Implemented in the approved slice:
 - a synthetic-only public allowlist serializer;
 - separate natal routes/private storage namespace and privacy/build/history gates.
 
-Still prohibited before checkpoint 2: candidate ranking or elimination, weights, priors, score mass, probability/confidence labels, stopping rules, time-window recommendations, relationship evidence, production migration, public deployment, or merge to `main`. The checkpoint-1 contract is `docs/PRO_SUPERVISION_CHECKPOINT_1_20260830.md`; the canonical synthetic verification artifact is `state/NATAL-TIME-FOUNDATION-AUDIT.json`.
+Still prohibited before checkpoint 2: candidate ranking or elimination, weights, priors, score mass, probability/confidence labels, stopping rules, time-window recommendations, relationship evidence, production migration, public deployment, or merge to `main`. The checkpoint-1 contract is `docs/PRO_SUPERVISION_CHECKPOINT_1_20260830.md`; the canonical synthetic verification artifact is `state/NATAL-TIME-FOUNDATION-AUDIT.json`, and `state/NATAL-TIME-WEEKDAY-LOCK-TRACE.json` records a reproducible two-request API trace proving that implied-weekday feedback is withheld until after the server lock.
+
+Checkpoint 2 remains the current blocking scientific gate. Its evidence packet must report the exact local branch and SHA, the unchanged GitHub/Railway state, exact-head verification, full state fields and exclusions, boundary and coverage receipts, synthetic object digests, privacy gates, the absent GitHub ruleset, the stale conflicting PR #1, and the intentionally retained `OPENROUTER_API_KEY` variable name. Do not push, merge, alter repository governance, migrate production, or deploy without the applicable owner authority and Pro gate.
 
 ## Current implementation priority
 
