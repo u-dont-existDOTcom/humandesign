@@ -4,12 +4,18 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
+from collections.abc import Mapping, Sequence
 from pathlib import Path
+from typing import Any
 
 from hdmatch.natal_time.replay import (
+    ReplayContext,
+    ReplayExpectation,
     ReplayValidationError,
     current_repository_commit,
     load_replay_context,
+    real_engine_fixture_executor,
     run_replay,
 )
 
@@ -25,9 +31,21 @@ def main() -> int:
     repository_commit = args.repository_commit or current_repository_commit(root)
     try:
         context = load_replay_context(root, repository_commit)
+
+        def reporting_executor(
+            replay_context: ReplayContext,
+            expectations: tuple[ReplayExpectation, ...],
+        ) -> Sequence[Mapping[str, Any]]:
+            name = expectations[0].source_fixture_name
+            print(f"REAL_ENGINE_REPLAY_START:{name}", file=sys.stderr, flush=True)
+            receipts = real_engine_fixture_executor(replay_context, expectations)
+            print(f"REAL_ENGINE_REPLAY_DONE:{name}", file=sys.stderr, flush=True)
+            return receipts
+
         index = run_replay(
             context,
             args.output_root,
+            executor=reporting_executor,
             aggregate_only=args.aggregate_only,
         )
     except ReplayValidationError as exc:
