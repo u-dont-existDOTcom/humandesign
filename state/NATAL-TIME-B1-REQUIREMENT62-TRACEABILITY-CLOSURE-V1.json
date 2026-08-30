@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-b1-requirement62-traceability-closure-v1",
+  "status": "CLOSED_LOCALLY_PENDING_PRO_ACCEPTANCE",
+  "scope": "REQUIREMENT_62_TRACEABILITY_CARDINALITY_CLOSURE_ONLY",
+  "authority": {
+    "record": "docs/PRO_SUPERVISION_B1_CHECKPOINT10_REQUIREMENT62_REMEDIATION_20260830.md",
+    "record_sha256": "d43372ce36646899caecc849a65e1062cb92ae07ac4b946847bdd17c4170be86",
+    "owner_decision_required": false
+  },
+  "route": {
+    "selected": "B",
+    "reason": "The immutable v1 manifest uses plural requirement_ids arrays with multiple entries, so accurate closure requires a superseding manifest.",
+    "v1_preserved": true
+  },
+  "implementation": {
+    "commit": "c7ba8d2bfc6d5546754036a90e4860925bb2b704",
+    "tree": "2d26b14868b72a0fd4fbac1cd2f2b636a29fe82b",
+    "superseding_manifest": "state/NATAL-TIME-B1-ARTIFACT-MANIFEST-V2.json",
+    "superseding_manifest_sha256": "2e43991833150b590bff56abd4501a4c38bcc8366227e25ede5cdb88d21354f9",
+    "validator": "tests/b1_precontent/acceptance.py",
+    "validator_sha256": "b2f0a8da9733b35f4339ba6d3baf2bd9971ad9956b2a53549db57c31e3d6e990",
+    "validator_tests": "tests/unit/test_natal_time_b1_precontent_governance.py",
+    "validator_tests_sha256": "ff009cb3d40fe3afba0af749b3aa618c4e284c4a2faa12b8f6c9240aec63d4fe"
+  },
+  "preserved_traceability": {
+    "v1_manifest_sha256": "9755682f8e4b0e634d36ef1a4170b9caa919cf7a3d8e4a3216e6371065298f11",
+    "acceptance_matrix_sha256": "104d8b8f920a64250ca78ca0411186bebe92bbe5e1af2a3c1ec62418ff797861",
+    "substantive_artifact_count": 33,
+    "immutable_matrix_dependency_count": 2,
+    "matrix_requirement_count": 64
+  },
+  "closed_conditions": {
+    "one_scalar_primary_requirement_per_substantive_artifact": true,
+    "secondary_references_explicitly_noncontrolling": true,
+    "zero_primary_rejected": true,
+    "multiple_primary_rejected": true,
+    "unknown_primary_rejected": true,
+    "malformed_primary_rejected": true,
+    "nonstring_primary_rejected": true,
+    "duplicate_artifact_rejected": true,
+    "duplicate_or_primary_secondary_overlap_rejected": true,
+    "silent_omission_rejected": true,
+    "all_matrix_rows_resolve_to_bound_exact_digest": true,
+    "primary_assignment_change_changes_manifest_digest": true
+  },
+  "focused_verification": {
+    "command": ".venv/bin/python -m pytest -q tests/unit/test_natal_time_b1_precontent_governance.py",
+    "result": "95 passed in 0.46s",
+    "ruff_changed_python": "PASS",
+    "full_exact_head_gates": "PENDING_DOCUMENTATION_CHILD"
+  },
+  "scientific_and_operational_boundaries": {
+    "scientific_or_governance_artifact_changed": false,
+    "construct_content_created": false,
+    "construct_specific_scan_started": false,
+    "source_route_or_authorship_selected": false,
+    "mapping_work_started": false,
+    "production_src_changed": false,
+    "external_action_occurred": false
+  }
+}
