@@ -268,6 +268,9 @@ def test_methods_ledger_covers_required_families_without_estimator_choice() -> N
     )
     assert all(entry["reason"] for entry in ledger["entries"])
     assert all(entry["evidence_required_before_use"] for entry in ledger["entries"])
+    assert by_family["prior_sensitivity"]["classification"] == "unresolved_experimental"
+    assert by_family["measurement_reliability"]["classification"] == "direct_reuse"
+    assert by_family["selective_post_selection_inference"]["classification"] == "direct_reuse"
 
 
 def test_unresolved_register_selects_nothing_and_preserves_owner_boundaries() -> None:

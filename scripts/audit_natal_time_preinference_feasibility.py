@@ -624,10 +624,10 @@ def build_methods_decision_ledger(repository_commit: str) -> dict[str, Any]:
         },
         {
             "method_family": "prior_sensitivity",
-            "classification": "adaptation",
+            "classification": "unresolved_experimental",
             "reason": (
-                "Relevant only if a later supervised design independently selects a "
-                "prior-bearing model."
+                "No defensible natal candidate prior is established, and this contract "
+                "selects none."
             ),
             "evidence_required_before_use": [
                 "external evidence for every prior family",
@@ -675,10 +675,10 @@ def build_methods_decision_ledger(repository_commit: str) -> dict[str, Any]:
         },
         {
             "method_family": "measurement_reliability",
-            "classification": "adaptation",
+            "classification": "direct_reuse",
             "reason": (
-                "Reliability methods require a specified construct, rater model, and "
-                "repeated-measure design."
+                "Reliability, missingness, response-style, and invariance checks transfer as "
+                "design constraints without selecting natal semantics."
             ),
             "evidence_required_before_use": [
                 "separate item-development checkpoint",
@@ -726,10 +726,10 @@ def build_methods_decision_ledger(repository_commit: str) -> dict[str, Any]:
         },
         {
             "method_family": "selective_post_selection_inference",
-            "classification": "adaptation",
+            "classification": "direct_reuse",
             "reason": (
-                "Selection invalidates ordinary inference unless accounted for or moved to a "
-                "new cohort."
+                "Post-selection claim limits apply directly whenever outcomes influence method "
+                "or subgroup choices."
             ),
             "evidence_required_before_use": [
                 "selection-event inventory",
