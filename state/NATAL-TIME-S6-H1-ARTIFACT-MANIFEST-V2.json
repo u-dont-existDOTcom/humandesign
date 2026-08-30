@@ -1,0 +1,19 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_id": "natal-time-s6-h1-artifact-manifest-v2",
+  "status": "SUPERSEDING_SINGLE_PRIMARY_CONTENT_HASHED_EVIDENCE_SET",
+  "supersedes": {
+    "artifact_id": "natal-time-s6-h1-artifact-manifest-v1",
+    "path": "state/NATAL-TIME-S6-H1-ARTIFACT-MANIFEST-V1.json",
+    "sha256": "f8961e3892e6d829e9eb4f9ccef6c8910b772dd9f843000f34e786fb1e0fc9ba"
+  },
+  "change_base_commit": "54b2e7d18a4203a38a0f04fdd9f9215d553f1796",
+  "digest_algorithm": "sha256",
+  "merge_semantics": "Start with every v1 artifact, replace records whose path appears below, then append new paths. Each resulting path has exactly one primary requirement assignment.",
+  "changed_or_added_artifacts": [
+    {"path":"docs/NATAL_TIME_S6_H1_CHECKPOINT11_ACCEPTANCE_20260830.md","sha256":"c227fb530f31eba68e25b6aa5497b8fb8cfdf6775ce50778a8b8261ef522ff2d","primary_requirement_id":"S6H1-57","supports_requirement_ids":["S6H1-01","S6H1-07","S6H1-08","S6H1-09","S6H1-12","S6H1-16","S6H1-26","S6H1-37","S6H1-41","S6H1-46","S6H1-53","S6H1-54","S6H1-56","S6H1-58","S6H1-59","S6H1-60"]},
+    {"path":"tests/s6_h1_prehuman/acceptance.py","sha256":"e14439b83148aa97b07864333f7984bafa421f7fe91ac11b1908732d938e674f","primary_requirement_id":"S6H1-56","supports_requirement_ids":["S6H1-53","S6H1-54","S6H1-55","S6H1-57"]}
+  ],
+  "artifact_count": 25,
+  "self_digest_rule": "The active manifest does not contain a self-referential digest. Its exact bytes are content-addressed by the evidence commit tree and reported in the checkpoint-11 Pro return."
+}

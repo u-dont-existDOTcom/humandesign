@@ -41,7 +41,7 @@ P = {
     "methods": ROOT / "state/NATAL-TIME-S6-H1-PREHUMAN-METHODS-DECISION-LEDGER-V1.json",
     "execution": ROOT / "state/NATAL-TIME-S6-H1-EXECUTION-LEDGER-V1.json",
     "matrix": ROOT / "state/NATAL-TIME-S6-H1-ACCEPTANCE-MATRIX-V1.json",
-    "manifest": ROOT / "state/NATAL-TIME-S6-H1-ARTIFACT-MANIFEST-V1.json",
+    "manifest": ROOT / "state/NATAL-TIME-S6-H1-ARTIFACT-MANIFEST-V2.json",
     "dossier": ROOT / "docs/NATAL_TIME_S6_H1_PREHUMAN_OWNER_DOSSIER_20260830.md",
 }
 
@@ -466,9 +466,15 @@ def check_requirement(requirement_id: str) -> None:
     elif number == 54:
         manifest = load_json(P["manifest"])
         assert manifest["digest_algorithm"] == "sha256"
-        assert manifest["artifact_count"] == len(manifest["artifacts"])
-        assert len({item["path"] for item in manifest["artifacts"]}) == manifest["artifact_count"]
-        for item in manifest["artifacts"]:
+        v1_path = ROOT / manifest["supersedes"]["path"]
+        assert _sha256(v1_path) == manifest["supersedes"]["sha256"]
+        inherited = load_json(v1_path)["artifacts"]
+        replacements = {item["path"]: item for item in manifest["changed_or_added_artifacts"]}
+        artifacts = [replacements.pop(item["path"], item) for item in inherited]
+        artifacts.extend(replacements.values())
+        assert manifest["artifact_count"] == len(artifacts)
+        assert len({item["path"] for item in artifacts}) == manifest["artifact_count"]
+        for item in artifacts:
             assert re.fullmatch(r"[0-9a-f]{64}", item["sha256"])
             assert item["primary_requirement_id"] in VALID_IDS
             assert _sha256(ROOT / item["path"]) == item["sha256"]
