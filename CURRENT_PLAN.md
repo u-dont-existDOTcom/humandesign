@@ -59,15 +59,27 @@ v1 without mutating it. V2 closes abstention, empty non-abstention, source-confl
 canonicalization-failure, domain-compatibility, half-open-boundary, documentary-width, rounding,
 interval-count, and unique-state-count semantics without defining a scalar outcome.
 
-Checkpoint 4 authorized only **checkpoint-4 closure and a synthetic evaluation-contract
-verifier**. That verifier is implemented at `3c12801a8ec44e97579f869a96643aebc24a37f9` with 22 fixed
-2099-only fixtures and 22 content-hashed receipts: 12 descriptive-component receipts and 10
-fail-closed rejections. It accepts only preconstructed `S_i` vectors, enforces
-`C_i -> method/preregistration -> S_i commitment -> evaluator-only T_i access -> receipt`, and
-contains no candidate chooser, baseline implementation, measurement content, fitting, inference,
-or participant workflow. The pre-commit fixture digest excludes the opaque hidden reference; the
-manifest binds exact complete fixture bytes and a valid receipt binds the canonical hidden
-reference only after authorized access.
+Checkpoint 5 returned `OWNER DECISION REQUIRED: NO` and `CHECKPOINT-5 VERDICT: QUALIFIED`. Its
+exact ruling is `docs/PRO_SUPERVISION_CHECKPOINT_5_20260830.md`. Pro accepted the deterministic
+foundation and Phase-0 closure, then authorized only bounded reference-custody, metric-v3,
+replay-provenance, and acceptance-matrix remediation.
+
+That remediation is complete locally. Metric-semantics v3 preserves v1 and v2 while defining
+`S_i` as any nonempty unordered subset of whole `C_i` intervals and classifying the exact `D_i`
+union as compatible, partially incompatible, or incompatible. Replay Route A is attested through
+the acceptance source. The synthetic verifier now has 35 physically separated inference fixtures,
+35 evaluator-only custody objects, and 35 postcommit artifacts. The inference schema contains no
+`T_i`, evaluator source/version digest, custody ID/digest, reference path/size, or combined digest.
+Authorized access consumes a one-shot loader into an exact version-locked custody snapshot; valid
+artifacts bind `S_i`, canonical `T_i` when defined, custody, access state, evaluator bytes, and v1,
+v2, and v3. Disconnected same-date subsets and all required reference-domain edge cases are fixed
+test vectors, never procedure outputs.
+
+`state/NATAL-TIME-CHECKPOINT5-ACCEPTANCE-MATRIX.json` maps 81 prior/current rules to exact committed
+tests, fixtures, outcomes, controlled codes, receipt/access digests, contracts, evaluator version,
+source commit, and acceptance category. It was generated from source commit
+`da8d3ee5a4208e7e4ffb27daa54affcba4bd9d39`; its logical digest is
+`71a09f8f12a7e44e5848d3f976ecad1eb4fba6f345b2061fcef65540763220d3`.
 
 Ranking, questionnaires, calibration execution, candidate selection, operating or abstention
 thresholds, participant-facing interpretation, relationship evidence, live records, recruitment,
@@ -77,21 +89,21 @@ boundary semantics, or full-state identity reopens deterministic conformance.
 
 ## Current implementation priority
 
-Complete checkpoint 5 without crossing into inference:
+Complete checkpoint 6 without crossing into inference:
 
-- verify the Phase-0 lineage, source-equivalence, replay-resume, metric-v2, and operational-evidence
-  artifacts at the exact current head;
-- reproduce the committed synthetic verifier schema, all 22 fixtures, all 22 receipts, and every
-  logical and exact-file digest byte-for-byte;
+- verify the Phase-0 lineage, replay-resume, operational evidence, metric-v3, replay Route A,
+  reference-custody bundle, and 81-entry acceptance matrix at the exact current head;
+- reproduce the separated schemas/manifests, all 35 inference fixtures, all 35 evaluator custody
+  objects, all 35 postcommit artifacts, and every logical and exact-file digest byte-for-byte;
 - run exact-head full tests, the complete strict-mypy source scope, an exact Git-derived Ruff
   changed-file scope, the privacy/history/build gate, deterministic artifact checks, and protected
   qualified-core identity checks;
 - record the exact head, diff surface, commands, outputs, known legacy Ruff baseline, and the fact
   that no push, merge, migration, deployment, live record, participant inference, or public release
   occurred; and
-- return the complete checkpoint-5 packet to the existing authenticated ChatGPT Pro conversation.
+- return the complete checkpoint-6 packet to the existing authenticated ChatGPT Pro conversation.
 
-If checkpoint 5 says `OWNER DECISION REQUIRED: YES`, stop for Joel. Otherwise continue only within
+If checkpoint 6 says `OWNER DECISION REQUIRED: YES`, stop for Joel. Otherwise continue only within
 the next bounded scope that Pro explicitly authorizes.
 
 ## Blocked long-horizon research concepts
