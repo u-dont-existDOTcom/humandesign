@@ -1,0 +1,377 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-option-b-source-ledger-v1",
+  "status": "BOUNDED_SCAN_COMPLETE_NO_METHOD_SELECTED",
+  "search_date": "2026-08-30",
+  "active_purpose": "measurement_reliability_prerequisite_screen",
+  "provenance": {
+    "owner_record_sha256": "c24bb062bd90466f0be1a5be03211c8933e80bc1b4eaeee9509d5856bea02fc4",
+    "checkpoint_8_accepted_head": "63bfb78909a97eb5b8b31efe55e065a6f78973a2",
+    "independent_conception_commit": "aaec2fecad74a1dfc9fa6fa7ec75d90a77f9c1fd",
+    "independent_conception_markdown_sha256": "4a9d579e4dddf773eb7532ae725cc610662396806870a4235f1d7e5cccf5cf7e",
+    "independent_conception_json_sha256": "d8b1692283271c2195a802d48e4b71307371424b075ff69ab502db51ca5d3ba8"
+  },
+  "scope": {
+    "strategy": "BOUNDED_PROBLEM_FAMILY_SCAN",
+    "included": [
+      "official_current_standards_and_guidance",
+      "original_or_peer_reviewed_methods_papers",
+      "primary_empirical_threat_evidence",
+      "official_reporting_guidelines"
+    ],
+    "excluded": [
+      "human_design_specific_validity_claims",
+      "instrument_or_item_selection",
+      "method_or_threshold_selection",
+      "participant_procedures",
+      "secondary_search_result_summaries_when_primary_or_official_source_available",
+      "copyrighted_full_text_corpus_storage"
+    ],
+    "eligibility_rule": "Retain a source only when it directly constrains a required Option B problem family and is an official standard/guideline, an original methods contribution, or primary empirical evidence. Record but do not adopt any coefficient, estimator, model, cutoff, interval, sample, instrument, item, or procedure.",
+    "stopping_rule": "Stop when every Pro-required problem family has at least one suitable constraint source or is explicitly classified as unresolved/later review; do not expand into a systematic review."
+  },
+  "searches": [
+    {
+      "search_id": "Q01",
+      "query": "site:cosmin.nl reliability measurement error checklist repeated measurements time interval COSMIN official",
+      "sites": ["cosmin.nl"]
+    },
+    {
+      "search_id": "Q02",
+      "query": "GRRAS Guidelines for Reporting Reliability and Agreement Studies original paper official",
+      "sites": ["equator-network.org", "pubmed.ncbi.nlm.nih.gov"]
+    },
+    {
+      "search_id": "Q03",
+      "query": "site:testingstandards.net Standards for Educational and Psychological Testing reliability intended use population error 2014 PDF",
+      "sites": ["testingstandards.net"]
+    },
+    {
+      "search_id": "Q04",
+      "query": "site:w3.org WCAG 2.2 cognitive accessibility guidance official",
+      "sites": ["w3.org"]
+    },
+    {
+      "search_id": "Q05",
+      "query": "measurement invariance differential item functioning translation cultural adaptation primary research paper DOI",
+      "sites": ["pubmed.ncbi.nlm.nih.gov"]
+    },
+    {
+      "search_id": "Q06",
+      "query": "response styles acquiescence extreme midpoint social desirability measurement invariance primary paper PubMed",
+      "sites": ["pubmed.ncbi.nlm.nih.gov", "pmc.ncbi.nlm.nih.gov"]
+    },
+    {
+      "search_id": "Q07",
+      "query": "reverse worded items method effects acquiescence primary research paper PubMed",
+      "sites": ["pubmed.ncbi.nlm.nih.gov"]
+    },
+    {
+      "search_id": "Q08",
+      "query": "missing data reasons denominator sensitivity analysis measurement study guidance primary paper PubMed",
+      "sites": ["pubmed.ncbi.nlm.nih.gov"]
+    },
+    {
+      "search_id": "Q09",
+      "query": "Forer 1949 personal validation fallacy original paper DOI PubMed",
+      "sites": ["pubmed.ncbi.nlm.nih.gov"]
+    },
+    {
+      "search_id": "Q10",
+      "query": "test retest reliability agreement correlation not agreement measurement error primary paper DOI",
+      "sites": ["journals.sagepub.com"]
+    },
+    {
+      "search_id": "Q11",
+      "query": "interrater intrarater reliability blinded independent coding rater drift primary methods paper",
+      "sites": ["pubmed.ncbi.nlm.nih.gov", "eric.ed.gov"]
+    },
+    {
+      "search_id": "Q12",
+      "query": "generalizability theory facets measurement error original paper Cronbach Gleser Nanda Rajaratnam",
+      "sites": ["onlinelibrary.wiley.com", "cambridge.org", "eric.ed.gov"]
+    },
+    {
+      "search_id": "Q13",
+      "query": "cross cultural adaptation self report measures Beaton Bombardier Guillemin Ferraz 2000 PubMed",
+      "sites": ["pubmed.ncbi.nlm.nih.gov"]
+    },
+    {
+      "search_id": "Q14",
+      "query": "COSMIN internal consistency reflective model structural validity official",
+      "sites": ["cosmin.nl", "pmc.ncbi.nlm.nih.gov"]
+    },
+    {
+      "search_id": "Q15",
+      "query": "COSMIN reliability measurement error risk of bias tool 2020 official PDF",
+      "sites": ["cosmin.nl"]
+    },
+    {
+      "search_id": "Q16",
+      "query": "Guidelines measurement invariance cross cultural research original paper DOI PubMed",
+      "sites": ["pubmed.ncbi.nlm.nih.gov"]
+    },
+    {
+      "search_id": "Q17",
+      "query": "independent blinded coding coder drift inter-coder reliability qualitative content analysis primary methods paper PMC",
+      "sites": ["pmc.ncbi.nlm.nih.gov"]
+    },
+    {
+      "search_id": "Q18",
+      "query": "coder drift reliability coding protocol independent coders study DOI",
+      "sites": ["eric.ed.gov", "academic.oup.com"]
+    },
+    {
+      "search_id": "Q19",
+      "query": "repeated participation duplicate participants household leakage research study design connected components",
+      "sites": []
+    },
+    {
+      "search_id": "Q20",
+      "query": "expectancy demand characteristics prior feedback repeated measurement reliability primary paper",
+      "sites": []
+    },
+    {
+      "search_id": "Q21",
+      "query": "National Research Council prevention treatment missing data clinical trials principles official PDF",
+      "sites": ["nationalacademies.org", "ncbi.nlm.nih.gov"]
+    },
+    {
+      "search_id": "Q22",
+      "query": "ICH E9 R1 missing data intercurrent events sensitivity analysis official guideline",
+      "sites": ["ema.europa.eu", "ich.org"]
+    },
+    {
+      "search_id": "Q23",
+      "query": "CONSORT missing data reasons attrition denominators official guideline",
+      "sites": ["bmj.com", "pmc.ncbi.nlm.nih.gov"]
+    },
+    {
+      "search_id": "Q24",
+      "query": "AAPOR survey missing data item nonresponse reasons denominator reporting standards official",
+      "sites": ["aapor.org", "census.gov"]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "S01",
+      "title": "COSMIN Manual, version 2.0",
+      "version_or_date": "version 2.0; accessed 2026-08-30",
+      "identifier": "official manual",
+      "url": "https://www.cosmin.nl/wp-content/uploads/COSMIN-manual-V2_final.pdf",
+      "eligible_for": ["taxonomy", "reliability", "measurement_error", "internal_consistency_prerequisites"],
+      "use_limit": "Terminology and prerequisite structure only; no instrument or statistic selected."
+    },
+    {
+      "source_id": "S02",
+      "title": "COSMIN Risk of Bias tool for reliability and measurement error",
+      "version_or_date": "2020 tool; official file accessed 2026-08-30",
+      "identifier": "PMCID: PMC7712525",
+      "url": "https://www.cosmin.nl/wp-content/uploads/COSMIN-RoB-tool_reliability-and-measurement-error_1.pdf",
+      "eligible_for": ["replication_facets", "stable_conditions", "retest_reasoning", "rater_independence"],
+      "use_limit": "Design questions and error-source distinctions only; all quantitative choices remain unresolved."
+    },
+    {
+      "source_id": "S03",
+      "title": "Guidelines for Reporting Reliability and Agreement Studies checklist",
+      "version_or_date": "2011 checklist; EQUATOR record updated 2022-01-14",
+      "identifier": "PMID: 21130355",
+      "url": "https://www.equator-network.org/wp-content/uploads/2012/12/GRRAS-checklist-for-reporting-of-studies-of-reliability-and-agreement.pdf",
+      "eligible_for": ["reporting", "blinding", "independence", "uncertainty"],
+      "use_limit": "Reporting-field architecture only; the ongoing GRRAS-COSMIN update prevents treating the 2011 checklist as a final current analysis method."
+    },
+    {
+      "source_id": "S04",
+      "title": "GRRAS-COSMIN update project",
+      "version_or_date": "project duration 2025-06-01 through 2027-11-30; accessed 2026-08-30",
+      "identifier": "official project site",
+      "url": "https://www.grras-cosmin.org/",
+      "eligible_for": ["reporting_version_status"],
+      "use_limit": "Records that the original reporting guideline is under revision; supplies no finalized replacement."
+    },
+    {
+      "source_id": "S05",
+      "title": "Standards for Educational and Psychological Testing",
+      "version_or_date": "2014 edition; current open-access edition checked 2026-08-30",
+      "identifier": "ISBN: 978-0-935302-35-6",
+      "url": "https://www.testingstandards.net/uploads/7/6/6/4/76643089/standards_2014edition.pdf",
+      "eligible_for": ["intended_use", "population_conditionality", "error_sources", "versions", "accommodations", "no_universal_index"],
+      "use_limit": "General principles and documentation obligations only; no use, population, model, or method selected."
+    },
+    {
+      "source_id": "S06",
+      "title": "Web Content Accessibility Guidelines 2.2",
+      "version_or_date": "W3C Recommendation; accessed 2026-08-30",
+      "identifier": "WCAG 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "eligible_for": ["future_accessibility_target", "automated_and_human_evaluation"],
+      "use_limit": "Future target only; no interface or conformance claim."
+    },
+    {
+      "source_id": "S07",
+      "title": "W3C cognitive accessibility supplemental guidance",
+      "version_or_date": "accessed 2026-08-30",
+      "identifier": "W3C WAI supplemental guidance",
+      "url": "https://www.w3.org/WAI/WCAG2/supplemental/",
+      "eligible_for": ["cognitive_accessibility_limit"],
+      "use_limit": "Future review requirement only; no accommodation selected."
+    },
+    {
+      "source_id": "S08",
+      "title": "Theory of generalizability: a liberalization of reliability theory",
+      "version_or_date": "1963",
+      "identifier": "DOI: 10.1111/j.2044-8317.1963.tb00206.x",
+      "url": "https://bpspsychub.onlinelibrary.wiley.com/doi/10.1111/j.2044-8317.1963.tb00206.x",
+      "eligible_for": ["facet_based_error_models"],
+      "use_limit": "Conceptual evidence that error may have multiple facets; no model or coefficient selected."
+    },
+    {
+      "source_id": "S09",
+      "title": "Test-retest: Agreement or reliability?",
+      "version_or_date": "2016",
+      "identifier": "DOI: 10.1177/2059799116672875",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/2059799116672875",
+      "eligible_for": ["reliability_agreement_distinction", "correlation_limit"],
+      "use_limit": "Conceptual distinction only; no estimator selected."
+    },
+    {
+      "source_id": "S10",
+      "title": "The fallacy of personal validation; a classroom demonstration of gullibility",
+      "version_or_date": "1949",
+      "identifier": "PMID: 18110193; DOI: 10.1037/h0059240",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18110193/",
+      "eligible_for": ["personal_validation_threat"],
+      "use_limit": "Threat rationale only; no control statement, item, manipulation, or score imported."
+    },
+    {
+      "source_id": "S11",
+      "title": "The stability of individual response styles",
+      "version_or_date": "2010",
+      "identifier": "PMID: 20230106; DOI: 10.1037/a0018721",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20230106/",
+      "eligible_for": ["response_style_stability_threat"],
+      "use_limit": "Threat classes only; no adjustment method or response format selected."
+    },
+    {
+      "source_id": "S12",
+      "title": "Using reversed items in Likert scales: A questionable practice",
+      "version_or_date": "2018",
+      "identifier": "PMID: 29694314",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29694314/",
+      "eligible_for": ["reverse_wording_method_effect"],
+      "use_limit": "Supports rejection of automatic reverse wording; no item format selected."
+    },
+    {
+      "source_id": "S13",
+      "title": "Mean and Covariance Structures analyses of cross-cultural data",
+      "version_or_date": "1997",
+      "identifier": "PMID: 26751106; DOI: 10.1207/s15327906mbr3201_3",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26751106/",
+      "eligible_for": ["measurement_equivalence_problem"],
+      "use_limit": "Justifies blocking comparison absent evidence; no model, fit rule, group, or partial-equivalence policy selected."
+    },
+    {
+      "source_id": "S14",
+      "title": "The Mismeasure of Culture: Why Measurement Invariance Is Rarely Appropriate for Comparative Research in Psychology",
+      "version_or_date": "2026",
+      "identifier": "PMID: 40515498; DOI: 10.1177/01461672251341402",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40515498/",
+      "eligible_for": ["invariance_assumption_limits"],
+      "use_limit": "Records a current methodological challenge to automatic invariance workflows; no alternative selected."
+    },
+    {
+      "source_id": "S15",
+      "title": "Guidelines for the process of cross-cultural adaptation of self-report measures",
+      "version_or_date": "2000",
+      "identifier": "PMID: 11124735; DOI: 10.1097/00007632-200012150-00014",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11124735/",
+      "eligible_for": ["translation_and_cultural_adaptation"],
+      "use_limit": "Supports treating adaptation as a versioned process; no language, translation process, or instrument selected."
+    },
+    {
+      "source_id": "S16",
+      "title": "Coder Drift: A Reliability Problem for Teacher Observations",
+      "version_or_date": "1978",
+      "identifier": "ERIC: ED161897",
+      "url": "https://eric.ed.gov/?id=ED161897",
+      "eligible_for": ["coder_drift_threat"],
+      "use_limit": "Primary experimental threat evidence only; no monitoring schedule or coder count selected."
+    },
+    {
+      "source_id": "S17",
+      "title": "Intercoder Reliability in Qualitative Research: Debates and Practical Guidelines",
+      "version_or_date": "2020",
+      "identifier": "DOI: 10.1177/1609406919899220",
+      "url": "https://journals.sagepub.com/doi/10.1177/1609406919899220",
+      "eligible_for": ["independent_coding", "adjudication_limits", "epistemic_fit"],
+      "use_limit": "Confirms method choice depends on future coding purpose; no coding approach, category, or coefficient selected."
+    },
+    {
+      "source_id": "S18",
+      "title": "The Prevention and Treatment of Missing Data in Clinical Trials",
+      "version_or_date": "2010",
+      "identifier": "PMID: 24983040; DOI: 10.17226/12955",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK209904/",
+      "eligible_for": ["missingness_prevention", "assumption_transparency", "sensitivity_requirement"],
+      "use_limit": "General missingness principles only; no active missing-data method selected."
+    },
+    {
+      "source_id": "S19",
+      "title": "AAPOR Disclosure Standards",
+      "version_or_date": "April 2021 standards; page accessed 2026-08-30",
+      "identifier": "official disclosure checklist",
+      "url": "https://aapor.org/standards-and-ethics/disclosure-standards/",
+      "eligible_for": ["mode_language_denominator_and_process_reporting"],
+      "use_limit": "Future reporting fields only; no survey or recruitment procedure selected."
+    },
+    {
+      "source_id": "S20",
+      "title": "AAPOR Standard Definitions",
+      "version_or_date": "December 2025 establishment-survey report listed; page accessed 2026-08-30",
+      "identifier": "official standard-definitions page",
+      "url": "https://aapor.org/standards-and-ethics/standard-definitions/",
+      "eligible_for": ["nonresponse_reason_and_denominator_provenance"],
+      "use_limit": "Reason/provenance principle only; no response-rate formula or handling rule selected."
+    }
+  ],
+  "excluded_results": [
+    {
+      "class": "search_aggregator_or_encyclopedia",
+      "reason": "Primary or official sources were available."
+    },
+    {
+      "class": "discussion_forum",
+      "reason": "Not eligible evidence for the architecture."
+    },
+    {
+      "class": "instrument_specific_validation_study",
+      "reason": "Could import a construct, instrument, item, population, language, model, or threshold."
+    },
+    {
+      "class": "active_quantitative_method_tutorial",
+      "reason": "The slice prohibits selecting an estimator, coefficient, model, or cutoff."
+    },
+    {
+      "class": "connected_component_split_algorithm",
+      "reason": "No sufficiently direct human-measurement source was identified in the bounded scan; allocation remains unimplemented and requires later review."
+    },
+    {
+      "class": "copyrighted_full_text_corpus",
+      "reason": "Only bibliographic metadata, official links, and bounded notes are retained."
+    }
+  ],
+  "nonselection_confirmation": {
+    "construct": "UNSELECTED",
+    "instrument": "UNSELECTED",
+    "item": "UNSELECTED",
+    "coding_category": "UNSELECTED",
+    "coefficient_or_estimator": "UNSELECTED",
+    "model": "UNSELECTED",
+    "threshold": "UNSELECTED",
+    "retest_interval": "UNSELECTED",
+    "population": "UNSELECTED",
+    "language": "UNSELECTED",
+    "mode": "UNSELECTED",
+    "human_procedure": "UNSELECTED"
+  }
+}
