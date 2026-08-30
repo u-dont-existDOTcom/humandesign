@@ -25,6 +25,13 @@
       "observed": "Ruff required an explicit strict argument for zip.",
       "resolution": "Specify strict false; validation semantics are unchanged.",
       "scientific_artifact_changed": false
+    },
+    {
+      "correction_id": "B1-CORR-04",
+      "stage": "CHECKPOINT_10_PRIVACY_HISTORY_BUILD_GATE",
+      "observed": "The reachable-history byte scanner lacked the token-start word boundary already used by the index scanner and misclassified the public URL fragment risk-management as a credential prefix.",
+      "resolution": "Align both scanners on a token-start word boundary and add positive credential-canary plus negative public-URL history regressions; the canonical gate then passed.",
+      "scientific_artifact_changed": false
     }
   ],
   "open_correction_count": 0,

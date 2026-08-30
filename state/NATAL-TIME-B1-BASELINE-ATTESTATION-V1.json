@@ -34,8 +34,8 @@
   },
   "topology_and_diff": {
     "baseline_commit": "d6af8d472f1a8352b2d710b12aedeb3e904060d0",
-    "implementation_head": "d36cf919b1be3c9aa22d91694759e0b000ec03d8",
-    "implementation_tree": "fcbdd067df8e5c66554c0921c36629ea4e788194",
+    "implementation_head": "39834d91c1aa751bb9bd26c6eff182fe384678c6",
+    "implementation_tree": "14d6a7215e9c71ff8a1a11699899b8cb91514030",
     "baseline_is_ancestor": true,
     "ordered_commits": [
       "070348adb45ad1d3863ebab68d1bf1eea7439d53",
@@ -43,29 +43,38 @@
       "496143ed1c04fce8b6f92f010d8f7bd7a11da30c",
       "e72d3e7e7c5701713a3b1502bdebbdb17bdd6197",
       "1b6f851e5ad3b116d589cf421dbb145d9a2ba3be",
-      "d36cf919b1be3c9aa22d91694759e0b000ec03d8"
+      "d36cf919b1be3c9aa22d91694759e0b000ec03d8",
+      "b0aa2c64b7934138139fd94e35cf15dfbbacc0e8",
+      "39834d91c1aa751bb9bd26c6eff182fe384678c6"
     ],
     "name_status_diff": [
       "M\tCURRENT_PLAN.md",
+      "A\tdocs/NATAL_TIME_B1_OWNER_SOURCE_ROUTE_DOSSIER_20260830.md",
       "A\tdocs/NATAL_TIME_B1_PRECONTENT_INDEPENDENT_CONCEPTION_SNAPSHOT_20260830.md",
       "A\tdocs/NATAL_TIME_B1_PRECONTENT_METHODS_SCAN_20260830.md",
       "A\tdocs/NATAL_TIME_OWNER_DECISION_B1_20260830.md",
       "A\tdocs/PRO_SUPERVISION_B1_PRECONTENT_CONTRACT_20260830.md",
       "A\tdocs/PRO_SUPERVISION_CHECKPOINT_9_20260830.md",
+      "M\tscripts/check_private_artifacts.py",
       "M\tstate/CURRENT-STATE.md",
+      "A\tstate/NATAL-TIME-B1-ACCEPTANCE-MATRIX-V1.json",
       "A\tstate/NATAL-TIME-B1-ACCESS-AND-CONTAMINATION-SCHEMA-V1.json",
+      "A\tstate/NATAL-TIME-B1-ARTIFACT-MANIFEST-V1.json",
       "A\tstate/NATAL-TIME-B1-ASTROHD-MAPPING-FIREWALL-V1.json",
+      "A\tstate/NATAL-TIME-B1-BASELINE-ATTESTATION-V1.json",
       "A\tstate/NATAL-TIME-B1-CLAIM-LANE-REGISTRY-V1.json",
       "A\tstate/NATAL-TIME-B1-CONSTRUCT-CANDIDATE-METADATA-SCHEMA-V1.json",
       "A\tstate/NATAL-TIME-B1-CONSTRUCT-FREEZE-GATE-V1.json",
       "A\tstate/NATAL-TIME-B1-CONSTRUCT-SOURCE-GOVERNANCE-V1.json",
       "A\tstate/NATAL-TIME-B1-CONSTRUCT-SPECIFIC-SCAN-PROTOCOL-V1.json",
       "A\tstate/NATAL-TIME-B1-CONTENT-EMBARGO-SCHEMA-V1.json",
+      "A\tstate/NATAL-TIME-B1-CORRECTION-LEDGER-V1.json",
       "A\tstate/NATAL-TIME-B1-POST-FREEZE-CHANGE-CONTROL-V1.json",
       "A\tstate/NATAL-TIME-B1-PRECONTENT-INDEPENDENT-CONCEPTION-SNAPSHOT-V1.json",
       "A\tstate/NATAL-TIME-B1-PRECONTENT-METHODS-DECISION-LEDGER-V1.json",
       "A\tstate/NATAL-TIME-B1-PRECONTENT-SOURCE-LEDGER-V1.json",
       "A\tstate/NATAL-TIME-B1-ROLE-ACCESS-MATRIX-V1.json",
+      "A\tstate/NATAL-TIME-B1-SYNTHETIC-FIXTURE-MANIFEST-V1.json",
       "A\tstate/NATAL-TIME-B1-THREAT-MODEL-V1.json",
       "A\tstate/NATAL-TIME-B1-UNRESOLVED-DECISIONS-V1.json",
       "A\ttests/b1_precontent/__init__.py",
@@ -75,7 +84,8 @@
       "A\ttests/fixtures/b1_precontent/candidate_metadata_valid.json",
       "A\ttests/fixtures/b1_precontent/content_embargo_valid.json",
       "A\ttests/fixtures/b1_precontent/invalid_probes.json",
-      "A\ttests/unit/test_natal_time_b1_precontent_governance.py"
+      "A\ttests/unit/test_natal_time_b1_precontent_governance.py",
+      "M\ttests/unit/test_private_artifact_gate.py"
     ]
   },
   "accepted_artifact_comparison": {
@@ -86,8 +96,8 @@
   "exact_head_gate_plan": {
     "FULL_TESTS": {"required": true, "command": ".venv/bin/python -m pytest -q"},
     "STRICT_MYPY": {"required": true, "command": ".venv/bin/mypy --strict src"},
-    "CHANGED_FILE_RUFF": {"required": true, "command": ".venv/bin/ruff check tests/b1_precontent tests/unit/test_natal_time_b1_precontent_governance.py"},
-    "PRIVACY_HISTORY_BUILD": {"required": true, "command": ".venv/bin/python -m pytest tests/unit/test_private_artifact_gate.py -q"},
+    "CHANGED_FILE_RUFF": {"required": true, "command": ".venv/bin/ruff check scripts/check_private_artifacts.py tests/b1_precontent tests/unit/test_natal_time_b1_precontent_governance.py tests/unit/test_private_artifact_gate.py"},
+    "PRIVACY_HISTORY_BUILD": {"required": true, "command": ".venv/bin/python scripts/check_private_artifacts.py --diff-base b7660b8c9bcf52cbb14bc5442c13a3a8635aad32"},
     "PROTECTED_COMPARISON": {"required": true, "command": "B1 acceptance requirement B1-05"},
     "ACCEPTED_ARTIFACT_COMPARISON": {"required": true, "command": "B1 acceptance requirement B1-06"},
     "GIT_DIFF_CHECK": {"required": true, "command": "git diff --check"},
