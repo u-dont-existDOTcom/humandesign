@@ -1,6 +1,6 @@
 # Current state
 
-- As of: `2026-08-30 01:09 GMT`
+- As of: `2026-08-30 01:28 GMT`
 - Task ID: `astrohd-relationship-continuation-20260830`
 - Goal: continue the relationship/AstroHD program under the blocking Brave + ChatGPT Pro supervision contract in `docs/RELATIONSHIP_RESEARCH_HANDOFF.md`, beginning with the separate natal-first `Find my birth-time window` priority unless supervision changes the sequence.
 - Authoritative Git baseline: `main` and `origin/main` at `b7660b8c9bcf52cbb14bc5442c13a3a8635aad32` (`Add canonical relationship research handoff and Pro supervision protocol`).
@@ -22,7 +22,9 @@
 - Complete: deterministic exact-time HD connection mechanics; strict Swiss-backed Western geometry; frozen AstroRRF V0.1 raw directional scoring plus V0.2-V0.4 feature-family flags; chart-blind GPT-5.6 Sol answer audit and phenotype classifier; pre-answer relationship freeze; immutable response/phenotype reveal flow; secure email recovery.
 - Survey-v2 status: `state/SURVEY-V2-NOISE-AUDIT.json` covers the complete `288938`-state universe and all 12 declared synthetic scenarios with reference equivalence. Its claim scope is synthetic oracle robustness only. It does not calibrate human classifier reliability, AstroRRF outcomes, or birth-time probabilities.
 - Partial: `src/hdmatch/relationship/uncertain_time.py` aggregates already-enumerated partner-time intervals into stable and variable connection mechanics. It does not enumerate a civil day, collect natal behavioral evidence, rank natal states, or propagate a ranked distribution through the public relationship flow.
-- Not implemented: separate natal-first `Find my birth-time window` participant mode; independent remembered-weekday capture and date-conflict handling; exact full-day state enumeration in that mode; reliability-aware natal questionnaire/audit/freeze; uncalibrated rank/mass output over windows; display of feature variation; or downstream relationship prediction marginalized over that distribution.
+- Implemented on the non-production task branch at `592ff22fd914614a73e4c72861aa3c6514a796f4`: the Pro-approved deterministic natal-first foundation. It includes immutable evidence lineages, a server-enforced independent weekday lock, fail-closed date conflict states, explicit unordered candidate-date sets, a standalone natal-only API/private storage namespace, complete civil-day interval enumeration, full-state identity/provenance, immutable manifest/freeze/result records, stable/variable set facts, and a synthetic-only public allowlist boundary.
+- Candidate-complete edge fixtures now cover ordinary/leap days, DST gap/fold days, a historical offset change, skipped-date failure, day-boundary transitions, multiple candidate dates, and reduced-signature collisions. The canonical synthetic receipt is `state/NATAL-TIME-FOUNDATION-AUDIT.json`, generated from implementation commit `592ff22`.
+- Still not implemented and explicitly blocked until checkpoint 2: reliability-aware natal questionnaire semantics, candidate ranking/elimination, weights/priors, score or duration mass, probability/confidence labels, stopping rules, participant-facing time-window recommendations, or downstream relationship marginalization.
 - Not implemented: separately versioned AstroRRF raw-signal-to-ordinal outcome calibration; calibration/validation cohort workflow; or the public-safe outcome ledger required for durable model comparison.
 
 ## Privacy, blinding, and leakage boundaries
@@ -44,4 +46,4 @@
 
 ## Next safe action
 
-Implement only the checkpoint-1 deterministic foundation on `codex/astrohd-relationship-continuation` with synthetic fixtures. If any Pro hard stop is reached, return to the same dedicated conversation. Otherwise finish the approved slice, verify it, and send the exact commit/diff/evidence packet to checkpoint 2 before any merge, push-dependent release action, or deployment.
+Commit the synthetic audit/state update, rerun the exact-head verification and privacy gate, audit the stale PR and GitHub ruleset status read-only, then send the complete checkpoint-2 packet to the same Pro conversation. Do not merge, push, change GitHub governance, modify Railway, touch `OPENROUTER_API_KEY`, or deploy before the checkpoint-2 ruling and the applicable owner authority boundary.

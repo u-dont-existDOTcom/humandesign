@@ -13,6 +13,23 @@ This repository separates four claims:
 
 These claims must not be conflated.
 
+## 2026-08-30 relationship/AstroHD continuation gate
+
+The separate natal-first `Find my birth-time window` foundation now precedes any new relationship/AstroHD ranking or calibration semantics. ChatGPT Pro checkpoint 1 returned `OWNER DECISION REQUIRED: NO` and approved only the deterministic substrate on `codex/astrohd-relationship-continuation`.
+
+Implemented in the approved slice:
+
+- immutable date/source/independently remembered-weekday evidence lineages;
+- a server-enforced weekday lock before any implied-weekday reveal;
+- fail-closed documentary and memory conflict transitions with explicit unordered candidate-date sets;
+- exact candidate-complete civil-day interval partitions relative to the pinned engine and timezone data;
+- a versioned full state identity that does not collapse to the reduced model-visible signature;
+- immutable manifest, freeze, result, coverage, and provenance records;
+- a synthetic-only public allowlist serializer;
+- separate natal routes/private storage namespace and privacy/build/history gates.
+
+Still prohibited before checkpoint 2: candidate ranking or elimination, weights, priors, score mass, probability/confidence labels, stopping rules, time-window recommendations, relationship evidence, production migration, public deployment, or merge to `main`. The checkpoint-1 contract is `docs/PRO_SUPERVISION_CHECKPOINT_1_20260830.md`; the canonical synthetic verification artifact is `state/NATAL-TIME-FOUNDATION-AUDIT.json`.
+
 ## Current implementation priority
 
 Before expanding validation, migrate the existing V4.1/V3.2 implementation to the hardened **V4.3/V3.5** contract.
