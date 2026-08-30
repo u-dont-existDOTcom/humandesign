@@ -50,14 +50,24 @@ Canonical qualified artifacts are `state/NATAL-TIME-REAL-ENGINE-IDENTITY-V4.json
 invalidation boundary, replay-hardening requirements, and next-slice contract are recorded in
 `docs/PRO_SUPERVISION_CHECKPOINT_3_20260830.md`.
 
-The only authorized continuation is a synthetic-only **pre-inference study-design,
-falsification, feasibility, and disclosure contract**, plus fixture-granular reproducibility
-hardening. It defines complete candidate sets `C_i`, independently sourced documentary reference
-intervals `T_i`, future returned subsets-or-abstentions `S_i`, a non-scalar
-coverage/temporal-width/state-count/abstention frontier, disjoint connected-component data roles,
-strong ordinary baselines, measurement-development requirements without writing items, visibly
-hypothetical feasibility sensitivities, a release-disabled cohort-aggregate ledger schema, and a
-methods/unresolved-decision ledger. It does not implement participant inference.
+Checkpoint 4 returned `OWNER DECISION REQUIRED: NO` and `CHECKPOINT-4 VERDICT: QUALIFIED`. Its
+exact ruling is `docs/PRO_SUPERVISION_CHECKPOINT_4_20260830.md`. The required Phase-0 closure is
+complete: commit/tree lineage and replay-source equivalence are machine-attested; a deliberate
+interruption/resume integration test covers missing, duplicate, corrupt, stale, wrong-head,
+wrong-engine, truncated, incomplete, and omitted-Apia receipts; and metric-semantics v2 supersedes
+v1 without mutating it. V2 closes abstention, empty non-abstention, source-conflict,
+canonicalization-failure, domain-compatibility, half-open-boundary, documentary-width, rounding,
+interval-count, and unique-state-count semantics without defining a scalar outcome.
+
+Checkpoint 4 authorized only **checkpoint-4 closure and a synthetic evaluation-contract
+verifier**. That verifier is implemented at `3c12801a8ec44e97579f869a96643aebc24a37f9` with 22 fixed
+2099-only fixtures and 22 content-hashed receipts: 12 descriptive-component receipts and 10
+fail-closed rejections. It accepts only preconstructed `S_i` vectors, enforces
+`C_i -> method/preregistration -> S_i commitment -> evaluator-only T_i access -> receipt`, and
+contains no candidate chooser, baseline implementation, measurement content, fitting, inference,
+or participant workflow. The pre-commit fixture digest excludes the opaque hidden reference; the
+manifest binds exact complete fixture bytes and a valid receipt binds the canonical hidden
+reference only after authorized access.
 
 Ranking, questionnaires, calibration execution, candidate selection, operating or abstention
 thresholds, participant-facing interpretation, relationship evidence, live records, recruitment,
@@ -67,19 +77,21 @@ boundary semantics, or full-state identity reopens deterministic conformance.
 
 ## Current implementation priority
 
-Complete checkpoint 4 without crossing into inference:
+Complete checkpoint 5 without crossing into inference:
 
-- finish production-only, exact-commit, fixture-granular replay receipts for all eight successful
-  civil days plus the Pacific/Apia fail-closed case;
-- keep the qualified fixture and identity artifacts byte-for-byte unchanged;
-- freeze the content-hashed pre-inference design contract and executable synthetic leakage tests;
-- retain the strongest-baseline matrix, methods dispositions, hypothetical feasibility grids,
-  release-disabled aggregate schema, and unresolved owner-decision register;
-- run exact-head full tests, Ruff, strict mypy, privacy/history/build gates, deterministic artifact
-  checks, and prove the qualified deterministic core did not change; and
-- return the complete packet to the existing authenticated ChatGPT Pro conversation.
+- verify the Phase-0 lineage, source-equivalence, replay-resume, metric-v2, and operational-evidence
+  artifacts at the exact current head;
+- reproduce the committed synthetic verifier schema, all 22 fixtures, all 22 receipts, and every
+  logical and exact-file digest byte-for-byte;
+- run exact-head full tests, the complete strict-mypy source scope, an exact Git-derived Ruff
+  changed-file scope, the privacy/history/build gate, deterministic artifact checks, and protected
+  qualified-core identity checks;
+- record the exact head, diff surface, commands, outputs, known legacy Ruff baseline, and the fact
+  that no push, merge, migration, deployment, live record, participant inference, or public release
+  occurred; and
+- return the complete checkpoint-5 packet to the existing authenticated ChatGPT Pro conversation.
 
-If checkpoint 4 says `OWNER DECISION REQUIRED: YES`, stop for Joel. Otherwise continue only within
+If checkpoint 5 says `OWNER DECISION REQUIRED: YES`, stop for Joel. Otherwise continue only within
 the next bounded scope that Pro explicitly authorizes.
 
 ## Blocked long-horizon research concepts
