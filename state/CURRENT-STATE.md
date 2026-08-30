@@ -101,13 +101,20 @@
 
 ## Next safe action
 
-Stop and wait for Joel's checkpoint-11 owner choice: E1 broad zero-exposure exclusion, E2
-project-specific exclusion with separately governed peripheral-exposure adjudication, or E3 a
-predeclared graded-exposure policy. Pro recommends E2. The exact ruling is
-`docs/PRO_SUPERVISION_S6_H1_CHECKPOINT11_RULING_20260830.md`, and the machine-readable stop state is
-`state/NATAL-TIME-S6-H1-CHECKPOINT11-PRO-RULING-V1.json`.
+The checkpoint-11 owner gate is resolved by the direct epoch-5 ruling. Prior exposure alone is
+permitted. The clean-H1 policy now targets semantic/self-concept contamination with three statuses:
+`ELIGIBLE`, `REQUIRES_BLIND_ADJUDICATION`, and `INELIGIBLE_CLEAN_H1_AUTHOR`. Deep semantic or
+technical familiarity requires blind adjudication regardless of belief; identity-defining or
+intentionally theory-derived framing is ineligible for clean pre-freeze authorship. The verbatim
+source, source receipt, normalized ruling, and current reconciliation are:
 
-Do not remediate `S6H1-30` or begin any next child, human workflow/contact, screening design,
-construct-specific search, construct or mapping content, push, merge, GitHub governance change,
-Railway change, secret access, recruitment, baseline execution, migration, deployment, or release
-until the owner choice and a subsequent Pro contract authorize it.
+- `state/NATAL-TIME-OWNER-OUTCOME-SOURCE-EPOCH5-20260830.md`;
+- `state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH5-V1.json`;
+- `docs/NATAL_TIME_OWNER_DECISION_H1_CONTAMINATION_POLICY_20260830.md`; and
+- `state/NATAL-TIME-S6-H1-OBJECTIVE-RECONCILIATION-V2.json`.
+
+Commit the owner-correction record, then return the self-contained epoch-5 packet to the existing
+task Pro supervisor. Do not remediate `S6H1-30` or begin any next child, human workflow/contact,
+human-facing screen, construct-specific search, construct or mapping content, push, merge, GitHub
+governance change, Railway change, secret access, recruitment, migration, deployment, publication,
+or release until the subsequent Pro ruling authorizes it.

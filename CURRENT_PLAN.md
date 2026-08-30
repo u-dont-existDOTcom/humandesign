@@ -204,9 +204,19 @@ neutral dossier leave to Joel. Worker-to-contract is therefore `YELLOW`, contrac
 adequacy is `WARN`, and release adequacy is `NOT_APPLICABLE` with release closed. The exact ruling
 and E1/E2/E3 owner gate are `docs/PRO_SUPERVISION_S6_H1_CHECKPOINT11_RULING_20260830.md`.
 
-No remediation or next child is authorized until Joel selects E1, E2, or E3 for the prior-exposure
-eligibility policy. Pro recommends E2, project-specific exclusion with separately governed
-peripheral-exposure adjudication.
+Joel has now resolved that gate with a more precise owner-authored policy. Prior HD or astrology
+exposure alone is permitted; neither belief nor skepticism controls. The relevant risk is
+semantic/self-concept contamination. Incidental/shallow exposure may be `ELIGIBLE`; substantial
+semantic or technical knowledge is `REQUIRES_BLIND_ADJUDICATION` regardless of belief; and an
+identity-defining, comprehensive, authoritative, or intentionally theory-derived framework is
+`INELIGIBLE_CLEAN_H1_AUTHOR`. Such people may be useful only in later authorized post-freeze
+adversarial/comparison roles. The verbatim epoch-5 source and normalized ruling are
+`state/NATAL-TIME-OWNER-OUTCOME-SOURCE-EPOCH5-20260830.md` and
+`docs/NATAL_TIME_OWNER_DECISION_H1_CONTAMINATION_POLICY_20260830.md`.
+
+The prior blanket exposure implementation remains unaccepted and unremediated. The next action is
+to return the current owner correction and epoch-5 reconciliation to the same task Pro supervisor;
+if no further owner decision is required, implement only its bounded remediation contract.
 
 Option B remains a design-only prerequisite screen. It does not authorize live execution,
 measurement content, participant software, empirical data, or progression to rectification.
