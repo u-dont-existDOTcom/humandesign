@@ -510,6 +510,13 @@ def test_full_candidate_set_has_unit_fractions_without_success_semantics(
     assert receipt["inference_or_selection_performed"] is False
 
 
+def test_endpoint_only_contact_does_not_count_as_reference_intersection(
+    bundle: GeneratedBundle,
+) -> None:
+    metrics = _metrics(_receipts_by_id(bundle)["SYNTH-FIXTURE-BOUNDARY-TOUCH"])
+    assert metrics["reference_intersection"] == {"status": "applicable", "value": False}
+
+
 def test_repeated_state_interval_and_unique_state_counts_diverge(
     bundle: GeneratedBundle,
 ) -> None:

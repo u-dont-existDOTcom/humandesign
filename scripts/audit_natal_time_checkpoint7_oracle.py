@@ -574,43 +574,48 @@ def _run_mutation_suite(
         "tests/unit/test_natal_time_synthetic_evaluation_contract.py",
         "--tb=short",
         "--maxfail=1",
+        "-k",
+        "not committed_split_bundle_matches_builder_and_hashes",
     )
-    environment = os.environ.copy()
-    if mutated_source is None:
-        environment["PYTHONPATH"] = f"{root / 'src'}:{root}"
+    with tempfile.TemporaryDirectory(prefix="natal-oracle-mutant-") as directory:
+        temporary = Path(directory)
+        shutil.copytree(root / "src" / "hdmatch", temporary / "src" / "hdmatch")
+        temporary_builder = temporary / BUILDER_PATH
+        temporary_builder.parent.mkdir(parents=True)
+        shutil.copy2(root / BUILDER_PATH, temporary_builder)
+        temporary_test = (
+            temporary
+            / "tests"
+            / "unit"
+            / "test_natal_time_synthetic_evaluation_contract.py"
+        )
+        temporary_test.parent.mkdir(parents=True)
+        shutil.copy2(
+            root / "tests/unit/test_natal_time_synthetic_evaluation_contract.py",
+            temporary_test,
+        )
+        if mutated_source is not None:
+            target = temporary / PRODUCTION_PATH
+            target.write_text(mutated_source, encoding="utf-8")
+        environment = os.environ.copy()
+        environment["PYTHONPATH"] = f"{temporary / 'src'}:{temporary}"
         result = subprocess.run(
             command,
-            cwd=root,
+            cwd=temporary,
             env=environment,
             check=False,
             capture_output=True,
             text=True,
         )
-    else:
-        with tempfile.TemporaryDirectory(prefix="natal-oracle-mutant-") as directory:
-            temporary = Path(directory)
-            overlay = temporary / "src" / "hdmatch"
-            shutil.copytree(root / "src" / "hdmatch", overlay)
-            target = temporary / "src" / "hdmatch" / "natal_time" / "evaluation_contract.py"
-            target.write_text(mutated_source, encoding="utf-8")
-            environment["PYTHONPATH"] = f"{temporary / 'src'}:{root / 'src'}:{root}"
-            result = subprocess.run(
-                command,
-                cwd=root,
-                env=environment,
-                check=False,
-                capture_output=True,
-                text=True,
-            )
     combined = result.stdout + result.stderr
-    failed_nodes = sorted(
+    non_green_nodes = sorted(
         {
-            line.removeprefix("FAILED ").split(" - ", maxsplit=1)[0]
+            line.split(" ", maxsplit=1)[1].split(" - ", maxsplit=1)[0]
             for line in combined.splitlines()
-            if line.startswith("FAILED ")
+            if line.startswith(("FAILED ", "ERROR "))
         }
     )
-    return (result.returncode, failed_nodes, " ".join(command))
+    return (result.returncode, non_green_nodes, " ".join(command))
 
 
 def _mutation_report(
