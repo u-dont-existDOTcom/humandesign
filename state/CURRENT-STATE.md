@@ -1,6 +1,6 @@
 # Current state
 
-- As of: `2026-08-30 19:58 GMT`
+- As of: `2026-08-30 20:01 GMT`
 - Task ID: `astrohd-relationship-continuation-20260830`
 - Goal: continue the relationship/AstroHD program under the blocking Brave + ChatGPT Pro supervision contract in `docs/RELATIONSHIP_RESEARCH_HANDOFF.md`, beginning with the separate natal-first `Find my birth-time window` priority unless supervision changes the sequence.
 - Authoritative Git baseline: `main` and `origin/main` at `b7660b8c9bcf52cbb14bc5442c13a3a8635aad32` (`Add canonical relationship research handoff and Pro supervision protocol`).
@@ -85,6 +85,7 @@
 - Checkpoint 9 was submitted from exact documentation head `d6af8d472f1a8352b2d710b12aedeb3e904060d0` / tree `ea39f44cbf5d7de42f54d396706c4257871f3ff7`. The forced exact-head full suite passed 507/507 in 319.67 seconds; strict mypy, the five-file Git-derived Option B Ruff scope, all prior immutable validators, privacy/history/build, 48/48 protected paths, `git diff --check`, and clean index/worktree checks passed.
 - Pro returned `OWNER DECISION REQUIRED: YES` and `CHECKPOINT-9 VERDICT: QUALIFIED`. It found no blocking acceptance defect, qualified all nine evidence surfaces, preserved the deterministic/Phase-0 foundation, and qualified Option B only for construct-neutral design-contract completeness. Its single scope correction is that the generic scan's no-overlap result cannot exclude an established instrument for a later specific construct; a fresh construct-specific instrument/method scan is mandatory after construct-source authorization and before bespoke content.
 - Pro requires Joel to choose **B1 — independent-first constructs** or **B2 — HD-derived constructs** before any substantive next slice. Pro recommends B1 for the strongest circularity and leakage protection. No substantive next slice is authorized merely by the selection; after Joel rules, a new bounded Pro contract is required.
+- Joel selected **B1 — independent-first constructs** and clarified that the eventual scientific path must still test how independently frozen chart-blind constructs map onto AstroHD. The owner record is `docs/NATAL_TIME_OWNER_DECISION_B1_20260830.md`. The mapping is a later, separately frozen and blinded phase that must permit a null/nonmapping result; it is not authorized now.
 - Still prohibited: every inferential or participant-facing semantic, relationship-assisted pruning, live data, recruitment, public mounting or ledger release, migration, Railway changes, push, merge, and deploy. A later owner decision is explicitly required before questionnaire development, participant-facing use, selection of a coverage/width/abstention operating point, a human cohort size/burden/cost, ranking/exclusion, probabilistic language, public-ledger deployment, push, merge, migration, or deployment.
 - Browser-control default from the owner: prefer headless operation. When the authenticated headed Brave session is genuinely required, reuse the existing controlled window on a dedicated secondary workspace or secondary physical monitor so it does not steal focus or cover the active screen. Do not repeatedly open and close visible windows.
 - Test-efficiency telemetry is active under task ID `astrohd-relationship-20260830` in `.git/codex-test-efficiency/`.
@@ -93,10 +94,10 @@
 
 ## Next safe action
 
-Stop for Joel's B1/B2 construct-source decision. Pro recommends B1 — independent-first constructs.
-After Joel chooses, return the exact choice to the same authenticated Pro conversation and obtain a
-new bounded contract before any substantive work. Do not push without Joel's direct authority, and
-do not merge, change GitHub governance, modify Railway, touch `OPENROUTER_API_KEY`, access
-participant records, recruit, name or describe constructs, implement questionnaire content or an
-estimator, execute baselines, or deploy unless a later bounded ruling explicitly authorizes that
-action.
+Return Joel's B1 ruling and explicit later-AstroHD-mapping intent to the same authenticated Pro
+conversation and obtain a new bounded contract before substantive work. If Pro requires another
+owner decision, stop for Joel; otherwise proceed only inside the returned contract. Do not push
+without Joel's direct authority, and do not merge, change GitHub governance, modify Railway, touch
+`OPENROUTER_API_KEY`, access participant records, recruit, name or describe constructs, implement
+questionnaire content or an estimator, design or execute the mapping, execute baselines, or deploy
+unless a later bounded ruling explicitly authorizes that action.

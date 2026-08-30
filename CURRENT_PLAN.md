@@ -149,8 +149,8 @@ boundary semantics, or full-state identity reopens deterministic conformance.
 
 ## Current implementation priority
 
-Checkpoint 9 is qualified, but Pro returned `OWNER DECISION REQUIRED: YES`. Stop substantive work
-until Joel selects one construct-source direction:
+Checkpoint 9 is qualified. Pro returned `OWNER DECISION REQUIRED: YES`, and Joel selected
+**B1 — Independent-first constructs**:
 
 1. **B1 — Independent-first constructs (Pro recommendation):** later define ordinary behavioral,
    experiential, or phenomenological constructs through a chart-blind process and freeze them
@@ -161,10 +161,17 @@ until Joel selects one construct-source direction:
    and potentially shorter, but has substantially greater circularity, cueing, familiarity,
    expectancy, and personal-validation risk.
 
+Joel explicitly confirmed that B1 must still lead to a later test of how the chart-blind constructs
+map onto AstroHD. B1 therefore changes the sequence, not the eventual mapping question: construct
+definitions, measurement model, reliability evidence, and analysis boundaries must first be
+developed and frozen independently; a later separately frozen and blinded AstroHD mapping may then
+be tested and must be allowed to fail without post-hoc remapping.
+
 The selection establishes direction only. It does not itself authorize construct writing,
-instrument development, items/prompts/categories/scoring, model or reliability-method selection,
-population/language/mode choices, human work, or any external action. After Joel chooses, return
-the ruling to Pro for a new bounded supervision contract before substantive implementation.
+instrument development, items/prompts/categories/scoring, mapping design or execution, model or
+reliability-method selection, population/language/mode choices, human work, or any external action.
+Return Joel's B1 ruling to Pro for a new bounded supervision contract before substantive
+implementation.
 
 Option B remains a design-only prerequisite screen. It does not authorize live execution,
 measurement content, participant software, empirical data, or progression to rectification.
