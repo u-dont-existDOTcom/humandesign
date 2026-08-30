@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:hdmatch:natal-time:measurement-reliability:coding:v1",
+  "title": "Synthetic-only coding metadata",
+  "type": "object",
+  "additionalProperties": false,
+  "x-provenance": {
+    "owner_record_sha256": "c24bb062bd90466f0be1a5be03211c8933e80bc1b4eaeee9509d5856bea02fc4",
+    "checkpoint_8_accepted_head": "63bfb78909a97eb5b8b31efe55e065a6f78973a2",
+    "active_purpose": "measurement_reliability_prerequisite_screen"
+  },
+  "required": [
+    "record_class",
+    "contract_version",
+    "synthetic_response_bundle_digest",
+    "synthetic_coder_id",
+    "coder_role",
+    "role_partition",
+    "coding_protocol_version_id",
+    "independent_blinded_status",
+    "prior_code_visibility",
+    "original_commitment_frozen",
+    "code_bundle_digest",
+    "adjudication_status",
+    "contamination_status"
+  ],
+  "properties": {
+    "record_class": {"const": "CONSPICUOUSLY_SYNTHETIC_CODING"},
+    "contract_version": {"const": "natal-time-measurement-reliability-contract-v1"},
+    "synthetic_response_bundle_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "synthetic_coder_id": {"type": "string", "pattern": "^SYNTH-CODER-[A-Z0-9]{8}$"},
+    "coder_role": {"enum": ["CODER_A", "CODER_B", "ADJUDICATOR"]},
+    "role_partition": {"enum": ["DEVELOPMENT", "LOCKED_EVALUATION", "AUDIT_ONLY"]},
+    "coding_protocol_version_id": {"type": "string", "pattern": "^SYNTH-CODING-PROTOCOL-V[0-9]+$"},
+    "independent_blinded_status": {"enum": ["UNRESOLVED", "CONFIRMED_SYNTHETIC", "FAILED"]},
+    "prior_code_visibility": {"type": "boolean"},
+    "original_commitment_frozen": {"type": "boolean"},
+    "code_bundle_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "adjudication_status": {"enum": ["NOT_APPLICABLE", "PENDING", "RECORDED_SEPARATELY", "PROHIBITED_REWRITE_ATTEMPT"]},
+    "contamination_status": {
+      "enum": [
+        "CLEAN_SYNTHETIC",
+        "CONTAMINATED_PRIOR_RESPONSE_VISIBILITY",
+        "CONTAMINATED_PRIOR_CODE_VISIBILITY",
+        "CONTAMINATED_CHART_OR_LABEL_EXPOSURE",
+        "CONTAMINATED_INDIVIDUALIZED_FEEDBACK",
+        "CONTAMINATED_REFERENCE_TIME_EXPOSURE",
+        "CONTAMINATED_ROLE_REASSIGNMENT_AFTER_EXPOSURE",
+        "CONTAMINATED_CONNECTED_COMPONENT_LEAKAGE",
+        "CONTAMINATED_PROTOCOL_VERSION_DRIFT",
+        "CONTAMINATION_UNKNOWN"
+      ]
+    }
+  }
+}

@@ -1,0 +1,235 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-option-b-unresolved-decisions-v1",
+  "status": "ALL_CHOICES_BLOCKED_UNSELECTED",
+  "active_purpose": "measurement_reliability_prerequisite_screen",
+  "provenance": {
+    "owner_record_sha256": "c24bb062bd90466f0be1a5be03211c8933e80bc1b4eaeee9509d5856bea02fc4",
+    "checkpoint_8_accepted_head": "63bfb78909a97eb5b8b31efe55e065a6f78973a2",
+    "methods_scan_commit": "98b829e812c4cf2fdff7e02f00fa39ce137e6872"
+  },
+  "decisions": [
+    {
+      "decision_id": "UD-01",
+      "decision": "construct_source",
+      "owner": "JOEL",
+      "earliest_checkpoint": "AFTER_CHECKPOINT_9_AND_NEW_PRO_RULING",
+      "required_evidence": ["construct_neutrality_audit", "reuse_adapt_comparison", "noncircularity_analysis"],
+      "viable_options": ["SYSTEM_DERIVED", "ORDINARY_LANGUAGE_BEHAVIORAL", "PHENOMENOLOGICAL", "OBSERVER_CODED", "OWNER_APPROVED_COMBINATION", "STOP"],
+      "consequences": "Determines the future measurement-development question and circularity risk.",
+      "resolving_authorizes_additional_work": false,
+      "status": "BLOCKED_UNSELECTED"
+    },
+    {
+      "decision_id": "UD-02",
+      "decision": "measurement_model",
+      "owner": "PRO",
+      "earliest_checkpoint": "AFTER_CONSTRUCT_SOURCE_AND_DEFINITION",
+      "required_evidence": ["construct_definition", "causal_indicator_rationale", "structural_evidence_plan"],
+      "viable_options": ["REFLECTIVE", "FORMATIVE", "OTHER_JUSTIFIED_MODEL", "INELIGIBLE"],
+      "consequences": "Controls whether internal-structure and consistency analyses could be interpretable.",
+      "resolving_authorizes_additional_work": false,
+      "status": "BLOCKED_UNSELECTED"
+    },
+    {
+      "decision_id": "UD-03",
+      "decision": "measurement_content_and_response_form",
+      "owner": "PRO",
+      "earliest_checkpoint": "AFTER_OWNER_SELECTS_CONSTRUCT_SOURCE",
+      "required_evidence": ["existing_instrument_reuse_review", "content_development_plan", "bias_and_accessibility_review"],
+      "viable_options": ["REUSE_EXISTING", "ADAPT_EXISTING", "DEVELOP_SEPARATELY", "STOP"],
+      "consequences": "Would permit a later content-development slice only if separately authorized.",
+      "resolving_authorizes_additional_work": true,
+      "status": "BLOCKED_UNSELECTED"
+    },
+    {
+      "decision_id": "UD-04",
+      "decision": "population_language_country_age_and_literacy",
+      "owner": "JOEL",
+      "earliest_checkpoint": "AFTER_CHECKPOINT_9_AND_CONSTRUCT_SOURCE",
+      "required_evidence": ["intended_use_rationale", "accessibility_analysis", "translation_and_equivalence_plan"],
+      "viable_options": ["DEFINE_LATER", "LIMIT_SCOPE", "STOP"],
+      "consequences": "Defines the population to which any future reliability evidence could apply.",
+      "resolving_authorizes_additional_work": false,
+      "status": "BLOCKED_UNSELECTED"
+    },
+    {
+      "decision_id": "UD-05",
+      "decision": "administration_mode_and_accommodation_policy",
+      "owner": "JOEL",
+      "earliest_checkpoint": "AFTER_POPULATION_AND_CONTENT_EXIST",
+      "required_evidence": ["accessibility_requirements", "mode_feasibility", "version_equivalence_plan"],
+      "viable_options": ["DEFINE_LATER", "MODE_SPECIFIC_EVIDENCE", "STOP"],
+      "consequences": "Determines version lineage, access, burden, and which mode/accommodation effects require study.",
+      "resolving_authorizes_additional_work": false,
+      "status": "BLOCKED_UNSELECTED"
+    },
+    {
+      "decision_id": "UD-06",
+      "decision": "intended_use",
+      "owner": "JOEL",
+      "earliest_checkpoint": "AFTER_CONSTRUCT_AND_POPULATION",
+      "required_evidence": ["decision_consequence_analysis", "precision_requirements", "harm_analysis"],
+      "viable_options": ["GROUP_DESCRIPTION", "INDIVIDUAL_DECISION", "NO_EMPIRICAL_USE"],
+      "consequences": "Determines the evidence and precision burden; individual use creates stricter requirements.",
+      "resolving_authorizes_additional_work": false,
+      "status": "BLOCKED_UNSELECTED"
+    },
+    {
+      "decision_id": "UD-07",
+      "decision": "replication_facets_and_conditions",
+      "owner": "PRO",
+      "earliest_checkpoint": "AFTER_CONSTRUCT_MODE_AND_INTENDED_USE",
+      "required_evidence": ["error_source_analysis", "temporal_ontology", "administration_and_coding_plan"],
+      "viable_options": ["OCCASION_FACET", "RATER_FACET", "FORM_FACET", "MULTIFACET", "INELIGIBLE"],
+      "consequences": "Defines which variations are treated as replications and which enter error.",
+      "resolving_authorizes_additional_work": false,
+      "status": "BLOCKED_UNSELECTED"
+    },
+    {
+      "decision_id": "UD-08",
+      "decision": "administration_count_and_retest_window",
+      "owner": "JOEL",
+      "earliest_checkpoint": "AFTER_TEMPORAL_ONTOLOGY_AND_RECALL_ANALYSIS",
+      "required_evidence": ["expected_stability_evidence", "recall_risk", "interim_change_risk", "burden_analysis"],
+      "viable_options": ["DEFINE_LATER", "NO_RETEST", "STOP"],
+      "consequences": "Determines burden and interpretability of temporal replication.",
+      "resolving_authorizes_additional_work": false,
+      "status": "BLOCKED_UNSELECTED"
+    },
+    {
+      "decision_id": "UD-09",
+      "decision": "participant_burden_sessions_and_duration",
+      "owner": "JOEL",
+      "earliest_checkpoint": "AFTER_CONTENT_MODE_AND_REPLICATION_PLAN",
+      "required_evidence": ["burden_estimate", "accessibility_analysis", "attrition_risk"],
+      "viable_options": ["DEFINE_LIMITS", "REDESIGN", "STOP"],
+      "consequences": "Constrains design feasibility, accessibility, missingness, and attrition.",
+      "resolving_authorizes_additional_work": false,
+      "status": "BLOCKED_UNSELECTED"
+    },
+    {
+      "decision_id": "UD-10",
+      "decision": "coder_count_training_and_adjudication",
+      "owner": "PRO",
+      "earliest_checkpoint": "AFTER_CODING_CONTENT_AND_EPISTEMIC_PURPOSE",
+      "required_evidence": ["coding_protocol", "independence_plan", "drift_plan", "adjudication_boundary"],
+      "viable_options": ["DEFINE_LATER", "NO_HUMAN_CODING", "INELIGIBLE"],
+      "consequences": "Determines rater replication and the separation of development from locked evaluation.",
+      "resolving_authorizes_additional_work": false,
+      "status": "BLOCKED_UNSELECTED"
+    },
+    {
+      "decision_id": "UD-11",
+      "decision": "property_family_estimand_coefficient_and_model",
+      "owner": "PRO",
+      "earliest_checkpoint": "AFTER_DATA_CLASS_FACETS_AND_INTENDED_USE",
+      "required_evidence": ["observation_data_class", "replication_design", "assumption_check_plan", "uncertainty_plan"],
+      "viable_options": ["RELATIVE_RELIABILITY", "AGREEMENT", "MEASUREMENT_ERROR", "MULTIPLE_SEPARATE_PROPERTIES", "INELIGIBLE"],
+      "consequences": "Determines which distinct measurement property a later analysis could estimate.",
+      "resolving_authorizes_additional_work": false,
+      "status": "BLOCKED_UNSELECTED"
+    },
+    {
+      "decision_id": "UD-12",
+      "decision": "acceptance_threshold_or_success_rule",
+      "owner": "PRO",
+      "earliest_checkpoint": "AFTER_INTENDED_USE_AND_ESTIMAND",
+      "required_evidence": ["consequence_analysis", "measurement_error_context", "uncertainty_and_precision_plan"],
+      "viable_options": ["PREDECLARED_CONTEXTUAL_RULE", "NO_DICHOTOMOUS_RULE", "STOP"],
+      "consequences": "Would determine how future evidence is interpreted; no universal cutoff is admissible.",
+      "resolving_authorizes_additional_work": false,
+      "status": "BLOCKED_UNSELECTED"
+    },
+    {
+      "decision_id": "UD-13",
+      "decision": "sample_size",
+      "owner": "PRO",
+      "earliest_checkpoint": "AFTER_DESIGN_ESTIMAND_AND_PRECISION_TARGET",
+      "required_evidence": ["design", "estimand", "precision_target", "missingness_allowance"],
+      "viable_options": ["JUSTIFIED_LATER", "INFEASIBLE", "STOP"],
+      "consequences": "Controls attainable uncertainty and resource needs.",
+      "resolving_authorizes_additional_work": false,
+      "status": "BLOCKED_UNSELECTED"
+    },
+    {
+      "decision_id": "UD-14",
+      "decision": "missing_data_estimand_and_handling",
+      "owner": "PRO",
+      "earliest_checkpoint": "AFTER_DESIGN_AND_MISSINGNESS_RISKS",
+      "required_evidence": ["missingness_mechanism_analysis", "denominator_definition", "assumption_and_sensitivity_plan"],
+      "viable_options": ["DEFINE_LATER", "REDESIGN_FOR_PREVENTION", "INELIGIBLE"],
+      "consequences": "Determines assumptions and whether future estimates remain interpretable.",
+      "resolving_authorizes_additional_work": false,
+      "status": "BLOCKED_UNSELECTED"
+    },
+    {
+      "decision_id": "UD-15",
+      "decision": "equivalence_invariance_or_pooling_plan",
+      "owner": "PRO",
+      "earliest_checkpoint": "AFTER_VERSIONS_GROUPS_AND_MODEL_EXIST",
+      "required_evidence": ["comparison_purpose", "version_lineage", "model_assumptions", "bias_analysis"],
+      "viable_options": ["SEPARATE_EVIDENCE", "LATER_APPROVED_EQUIVALENCE_PLAN", "NO_COMPARISON"],
+      "consequences": "Controls whether cross-version or cross-group results may be compared or pooled.",
+      "resolving_authorizes_additional_work": false,
+      "status": "BLOCKED_UNSELECTED"
+    },
+    {
+      "decision_id": "UD-16",
+      "decision": "recruitment_incentives_budget_staffing_and_timeline",
+      "owner": "JOEL",
+      "earliest_checkpoint": "AFTER_APPROVED_HUMAN_STUDY_PROTOCOL",
+      "required_evidence": ["ethics_and_privacy_plan", "scientific_design", "resource_and_risk_estimate"],
+      "viable_options": ["AUTHORIZE_LATER", "DEFER", "STOP"],
+      "consequences": "Would authorize operational planning but not data collection without separate authority.",
+      "resolving_authorizes_additional_work": true,
+      "status": "BLOCKED_UNSELECTED"
+    },
+    {
+      "decision_id": "UD-17",
+      "decision": "reliability_failure_termination_or_redevelopment",
+      "owner": "JOEL",
+      "earliest_checkpoint": "BEFORE_ANY_EMPIRICAL_SUCCESS_RULE_IS_FROZEN",
+      "required_evidence": ["failure_modes", "redevelopment_cost", "circularity_risk", "termination_rule_options"],
+      "viable_options": ["TERMINATE_DIRECTION", "ALLOW_SEPARATELY_SUPERVISED_REDEVELOPMENT", "STOP_BEFORE_HUMAN_WORK"],
+      "consequences": "Controls whether negative evidence ends the direction or permits a bounded redesign.",
+      "resolving_authorizes_additional_work": false,
+      "status": "BLOCKED_UNSELECTED"
+    },
+    {
+      "decision_id": "UD-18",
+      "decision": "favorable_result_progression_to_blinded_falsification",
+      "owner": "JOEL",
+      "earliest_checkpoint": "AFTER_SEPARATELY_APPROVED_EMPIRICAL_RELIABILITY_RESULT",
+      "required_evidence": ["complete_reliability_report", "nonclaim_audit", "falsification_design_dossier"],
+      "viable_options": ["CONSIDER_SEPARATE_DESIGN", "DO_NOT_PROGRESS", "STOP"],
+      "consequences": "A favorable result would still not validate HD or automatically authorize rectification research.",
+      "resolving_authorizes_additional_work": true,
+      "status": "BLOCKED_UNSELECTED"
+    },
+    {
+      "decision_id": "UD-19",
+      "decision": "participant_feedback_or_debrief_content",
+      "owner": "JOEL",
+      "earliest_checkpoint": "AFTER_APPROVED_HUMAN_PROTOCOL_AND_CONTAMINATION_PLAN",
+      "required_evidence": ["ethics_review", "feedback_timing", "contamination_analysis"],
+      "viable_options": ["DEFINE_LATER", "NO_FEEDBACK", "DEFER_UNTIL_ALL_COMMITMENTS_FREEZE"],
+      "consequences": "Could affect expectancy, demand, selective completion, and future eligibility.",
+      "resolving_authorizes_additional_work": false,
+      "status": "BLOCKED_UNSELECTED"
+    },
+    {
+      "decision_id": "UD-20",
+      "decision": "push_publication_merge_deploy_or_public_disclosure",
+      "owner": "JOEL",
+      "earliest_checkpoint": "AFTER_CHECKPOINT_9_PRO_RULING",
+      "required_evidence": ["exact_head_evidence", "privacy_and_scope_audit", "release_or_merge_dossier"],
+      "viable_options": ["AUTHORIZE_SPECIFIC_ACTION", "KEEP_LOCAL", "STOP"],
+      "consequences": "Controls external state; no external action is currently authorized.",
+      "resolving_authorizes_additional_work": true,
+      "status": "BLOCKED_UNSELECTED"
+    }
+  ],
+  "resolved_decisions": [],
+  "additional_work_authorized_by_this_register": false
+}

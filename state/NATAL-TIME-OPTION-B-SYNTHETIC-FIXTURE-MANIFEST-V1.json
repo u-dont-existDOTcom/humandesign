@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-option-b-synthetic-fixture-manifest-v1",
+  "status": "CONSPICUOUSLY_SYNTHETIC_ONLY",
+  "active_purpose": "measurement_reliability_prerequisite_screen",
+  "provenance": {
+    "owner_record_sha256": "c24bb062bd90466f0be1a5be03211c8933e80bc1b4eaeee9509d5856bea02fc4",
+    "checkpoint_8_accepted_head": "63bfb78909a97eb5b8b31efe55e065a6f78973a2"
+  },
+  "fixtures": [
+    {
+      "path": "tests/fixtures/option_b/administration_valid.json",
+      "sha256": "c5fe540c726de2bcf85e39592f896a3da91bd2145589576738bd4de8eddf73af",
+      "expected_result": "PASS"
+    },
+    {
+      "path": "tests/fixtures/option_b/coding_valid.json",
+      "sha256": "4d7778bab9b4a02bcc8ec337336c8671ebc9fb08faf71b9e0f213582f162ac92",
+      "expected_result": "PASS"
+    },
+    {
+      "path": "tests/fixtures/option_b/property_plan_valid.json",
+      "sha256": "26d81c41a5cca11ce7be73ed6b91d8672eb1342f7c996ff3d2ad8f9a371d76d9",
+      "expected_result": "PASS"
+    },
+    {
+      "path": "tests/fixtures/option_b/invalid_probes.json",
+      "sha256": "f0592f58db652ee4ed698a2e6544baa0e6d0f5b5bd23a63d9bb44b19e8a38e11",
+      "expected_result": "CONTROLLED_REJECTIONS"
+    }
+  ],
+  "content_audit": {
+    "plausible_real_name_count": 0,
+    "email_count": 0,
+    "phone_count": 0,
+    "exact_personal_birth_date_count": 0,
+    "birthplace_count": 0,
+    "relationship_narrative_count": 0,
+    "free_text_count": 0,
+    "participant_response_count": 0,
+    "item_or_prompt_content_count": 0,
+    "response_option_content_count": 0,
+    "coding_category_or_exemplar_content_count": 0,
+    "prohibited_field_name_probe_count": 8,
+    "prohibited_field_probe_values": "PROHIBITED_FIELD_SENTINEL_ONLY"
+  },
+  "identity_boundary": {
+    "identifier_prefix": "SYNTH-",
+    "deterministic_live_or_private_linkage": "PROHIBITED_AND_ABSENT",
+    "live_or_private_source": "NONE",
+    "production_record_direct_validation": "CONTROLLED_REJECTION"
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:hdmatch:natal-time:measurement-reliability:administration:v1",
+  "title": "Synthetic-only administration metadata",
+  "type": "object",
+  "additionalProperties": false,
+  "x-provenance": {
+    "owner_record_sha256": "c24bb062bd90466f0be1a5be03211c8933e80bc1b4eaeee9509d5856bea02fc4",
+    "checkpoint_8_accepted_head": "63bfb78909a97eb5b8b31efe55e065a6f78973a2",
+    "active_purpose": "measurement_reliability_prerequisite_screen"
+  },
+  "required": [
+    "record_class",
+    "contract_version",
+    "synthetic_participant_id",
+    "synthetic_component_id",
+    "protocol_version_id",
+    "form_version_id",
+    "language_version_id",
+    "mode_version_id",
+    "accommodation_version_id",
+    "occasion_number",
+    "scheduled_window_id",
+    "administration_status",
+    "prior_response_visibility",
+    "prior_feedback_or_chart_exposure",
+    "interim_event_status",
+    "contamination_status",
+    "missingness_class",
+    "missingness_reason_provenance",
+    "denominator_provenance",
+    "response_bundle_digest"
+  ],
+  "properties": {
+    "record_class": {"const": "CONSPICUOUSLY_SYNTHETIC_ADMINISTRATION"},
+    "contract_version": {"const": "natal-time-measurement-reliability-contract-v1"},
+    "synthetic_participant_id": {"type": "string", "pattern": "^SYNTH-P-[A-Z0-9]{8}$"},
+    "synthetic_component_id": {"type": "string", "pattern": "^SYNTH-CC-[A-Z0-9]{8}$"},
+    "protocol_version_id": {"type": "string", "pattern": "^SYNTH-PROTOCOL-V[0-9]+$"},
+    "form_version_id": {"type": "string", "pattern": "^SYNTH-FORM-V[0-9]+$"},
+    "language_version_id": {"type": "string", "pattern": "^SYNTH-LANGUAGE-V[0-9]+$"},
+    "mode_version_id": {"type": "string", "pattern": "^SYNTH-MODE-V[0-9]+$"},
+    "accommodation_version_id": {"type": "string", "pattern": "^SYNTH-ACCOMMODATION-V[0-9]+$"},
+    "occasion_number": {"type": "integer", "minimum": 1},
+    "scheduled_window_id": {"type": "string", "pattern": "^SYNTH-WINDOW-UNSELECTED$"},
+    "administration_status": {
+      "enum": ["NOT_STARTED", "STARTED", "COMPLETE", "MISSING"]
+    },
+    "prior_response_visibility": {"type": "boolean"},
+    "prior_feedback_or_chart_exposure": {
+      "enum": ["NONE_RECORDED", "CONTAMINATED_PRIOR_FEEDBACK", "CONTAMINATED_CHART_EXPOSURE", "UNKNOWN"]
+    },
+    "interim_event_status": {
+      "enum": ["UNSELECTED", "NONE_RECORDED_SYNTHETIC", "EVENT_RECORDED_SYNTHETIC", "UNKNOWN"]
+    },
+    "contamination_status": {
+      "enum": [
+        "CLEAN_SYNTHETIC",
+        "CONTAMINATED_PRIOR_RESPONSE_VISIBILITY",
+        "CONTAMINATED_CHART_OR_LABEL_EXPOSURE",
+        "CONTAMINATED_INDIVIDUALIZED_FEEDBACK",
+        "CONTAMINATED_REFERENCE_TIME_EXPOSURE",
+        "CONTAMINATED_CONNECTED_COMPONENT_LEAKAGE",
+        "CONTAMINATED_SELECTIVE_COMPLETION_AFTER_FEEDBACK",
+        "CONTAMINATION_UNKNOWN"
+      ]
+    },
+    "missingness_class": {
+      "enum": [
+        "NOT_MISSING",
+        "ITEM_MISSING",
+        "OCCASION_MISSING",
+        "DROPOUT",
+        "REFUSAL",
+        "TECHNICAL_FAILURE",
+        "ACCESSIBILITY_FAILURE",
+        "STRUCTURAL_NOT_APPLICABLE",
+        "PLANNED_MISSING",
+        "UNKNOWN_REASON"
+      ]
+    },
+    "missingness_reason_provenance": {
+      "enum": ["NOT_APPLICABLE", "SYNTHETIC_DECLARED", "SYNTHETIC_SYSTEM", "UNKNOWN"]
+    },
+    "denominator_provenance": {
+      "enum": ["SYNTHETIC_PROTOCOL_EXPECTED", "SYNTHETIC_STRUCTURAL_NOT_APPLICABLE", "UNRESOLVED"]
+    },
+    "response_bundle_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  }
+}

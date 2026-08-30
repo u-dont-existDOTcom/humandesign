@@ -1,0 +1,197 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-measurement-reliability-threat-model-v1",
+  "status": "CONSTRUCT_NEUTRAL_SYNTHETIC_ONLY",
+  "active_purpose": "measurement_reliability_prerequisite_screen",
+  "provenance": {
+    "owner_record_sha256": "c24bb062bd90466f0be1a5be03211c8933e80bc1b4eaeee9509d5856bea02fc4",
+    "checkpoint_8_accepted_head": "63bfb78909a97eb5b8b31efe55e065a6f78973a2",
+    "methods_scan_commit": "98b829e812c4cf2fdff7e02f00fa39ce137e6872"
+  },
+  "threat_state_vocabulary": [
+    "UNASSESSED",
+    "ARCHITECTURALLY_BLOCKED",
+    "CONTAMINATION_IF_OBSERVED",
+    "REQUIRES_LATER_REVIEW"
+  ],
+  "threats": [
+    {
+      "threat_id": "TM-01",
+      "class": "CONSTRUCT_CONTAMINATION_SYSTEM_LANGUAGE",
+      "current_state": "ARCHITECTURALLY_BLOCKED",
+      "boundary": "No construct or measurement content may be proposed in this slice."
+    },
+    {
+      "threat_id": "TM-02",
+      "class": "CHART_TYPE_AUTHORITY_PROFILE_CENTER_GATE_LINE_OR_REFERENCE_TIME_EXPOSURE",
+      "current_state": "ARCHITECTURALLY_BLOCKED",
+      "boundary": "Schemas contain no chart, label, birth, candidate, or reference-time field."
+    },
+    {
+      "threat_id": "TM-03",
+      "class": "PRIOR_INDIVIDUALIZED_FEEDBACK",
+      "current_state": "CONTAMINATION_IF_OBSERVED",
+      "boundary": "Exposure must append contamination and cannot be silently cleaned."
+    },
+    {
+      "threat_id": "TM-04",
+      "class": "PARTICIPANT_EXPECTANCY",
+      "current_state": "REQUIRES_LATER_REVIEW",
+      "boundary": "Threat registry only; no item, manipulation, or adjustment."
+    },
+    {
+      "threat_id": "TM-05",
+      "class": "DEMAND_CHARACTERISTICS",
+      "current_state": "REQUIRES_LATER_REVIEW",
+      "boundary": "Threat registry only; no participant procedure."
+    },
+    {
+      "threat_id": "TM-06",
+      "class": "BARNUM_OR_UNIVERSAL_DESCRIPTION_OR_PERSONAL_VALIDATION_ACCEPTANCE",
+      "current_state": "REQUIRES_LATER_REVIEW",
+      "boundary": "Stable personal validation cannot be labeled target reliability; no control statement is written."
+    },
+    {
+      "threat_id": "TM-07",
+      "class": "SOCIAL_DESIRABILITY",
+      "current_state": "REQUIRES_LATER_REVIEW",
+      "boundary": "No measure, item, correction, or score is selected."
+    },
+    {
+      "threat_id": "TM-08",
+      "class": "ACQUIESCENCE",
+      "current_state": "REQUIRES_LATER_REVIEW",
+      "boundary": "No reverse-worded or forced-choice remedy is selected."
+    },
+    {
+      "threat_id": "TM-09",
+      "class": "DISACQUIESCENCE",
+      "current_state": "REQUIRES_LATER_REVIEW",
+      "boundary": "Response style remains distinct from any future target."
+    },
+    {
+      "threat_id": "TM-10",
+      "class": "EXTREME_RESPONDING",
+      "current_state": "REQUIRES_LATER_REVIEW",
+      "boundary": "Response style remains distinct from any future target."
+    },
+    {
+      "threat_id": "TM-11",
+      "class": "MIDPOINT_RESPONDING",
+      "current_state": "REQUIRES_LATER_REVIEW",
+      "boundary": "Response style remains distinct from any future target."
+    },
+    {
+      "threat_id": "TM-12",
+      "class": "STRAIGHTLINING",
+      "current_state": "REQUIRES_LATER_REVIEW",
+      "boundary": "No detection or adjustment rule is selected."
+    },
+    {
+      "threat_id": "TM-13",
+      "class": "POSITIVE_VALENCE_ASYMMETRY_AUTHORITY_CUES_OR_PRIOR_FAMILIARITY",
+      "current_state": "REQUIRES_LATER_REVIEW",
+      "boundary": "No content or adjustment is selected."
+    },
+    {
+      "threat_id": "TM-14",
+      "class": "RECALL_OR_PRACTICE_EFFECT",
+      "current_state": "REQUIRES_LATER_REVIEW",
+      "boundary": "Retest eligibility remains blocked while recall risk is unresolved."
+    },
+    {
+      "threat_id": "TM-15",
+      "class": "GENUINE_TEMPORAL_CHANGE",
+      "current_state": "REQUIRES_LATER_REVIEW",
+      "boundary": "Temporal ontology, expected stability, interim events, and interval rationale remain unresolved."
+    },
+    {
+      "threat_id": "TM-16",
+      "class": "ADMINISTRATION_MODE_EFFECT",
+      "current_state": "REQUIRES_LATER_REVIEW",
+      "boundary": "Each mode version is distinct and pooling is blocked."
+    },
+    {
+      "threat_id": "TM-17",
+      "class": "LANGUAGE_OR_TRANSLATION_EFFECT",
+      "current_state": "REQUIRES_LATER_REVIEW",
+      "boundary": "Translation requires a new version and separate evidence."
+    },
+    {
+      "threat_id": "TM-18",
+      "class": "ACCESSIBILITY_OR_ACCOMMODATION_EFFECT",
+      "current_state": "REQUIRES_LATER_REVIEW",
+      "boundary": "Accommodation variation is a potential measurement facet, not presumed participant error."
+    },
+    {
+      "threat_id": "TM-19",
+      "class": "RATER_DRIFT",
+      "current_state": "REQUIRES_LATER_REVIEW",
+      "boundary": "Coding-protocol lineage and drift state are required; no monitoring schedule is selected."
+    },
+    {
+      "threat_id": "TM-20",
+      "class": "RATER_COLLUSION_OR_PRIOR_CODE_VISIBILITY",
+      "current_state": "CONTAMINATION_IF_OBSERVED",
+      "boundary": "Independent commitments freeze before cross-code access."
+    },
+    {
+      "threat_id": "TM-21",
+      "class": "ADJUDICATOR_LEAKAGE_INTO_LOCKED_EVALUATION",
+      "current_state": "CONTAMINATION_IF_OBSERVED",
+      "boundary": "Adjudication is separate and cannot rewrite originals or become ground truth without a later freeze."
+    },
+    {
+      "threat_id": "TM-22",
+      "class": "REPEATED_PARTICIPANT_ALIAS_PARTNER_OR_HOUSEHOLD_LEAKAGE",
+      "current_state": "REQUIRES_LATER_REVIEW",
+      "boundary": "Connected-component edges are represented without a live source or split algorithm."
+    },
+    {
+      "threat_id": "TM-23",
+      "class": "SHARED_RECRUITER_CUSTODIAN_SOURCE_OR_CODER_LEAKAGE",
+      "current_state": "REQUIRES_LATER_REVIEW",
+      "boundary": "Label-transmitting edges and transitive components are represented; no allocation is performed."
+    },
+    {
+      "threat_id": "TM-24",
+      "class": "MISSINGNESS_OR_SELECTIVE_COMPLETION",
+      "current_state": "REQUIRES_LATER_REVIEW",
+      "boundary": "Cause and denominator provenance remain distinct; no handling rule is active."
+    },
+    {
+      "threat_id": "TM-25",
+      "class": "ATTRITION_CONDITIONED_ON_PRIOR_RESPONSE_OR_FEEDBACK",
+      "current_state": "CONTAMINATION_IF_OBSERVED",
+      "boundary": "Selective completion after feedback is contamination and cannot silently enter a clean estimate."
+    },
+    {
+      "threat_id": "TM-26",
+      "class": "FREE_TEXT_OR_PERSONAL_DATA_LEAKAGE",
+      "current_state": "ARCHITECTURALLY_BLOCKED",
+      "boundary": "Schemas contain no free-text or live-identity field."
+    },
+    {
+      "threat_id": "TM-27",
+      "class": "SYNTHETIC_TO_LIVE_BOUNDARY_FAILURE",
+      "current_state": "ARCHITECTURALLY_BLOCKED",
+      "boundary": "Test-only validator rejects non-synthetic record classes and is not imported by production."
+    },
+    {
+      "threat_id": "TM-28",
+      "class": "POST_HOC_CONSTRUCT_METRIC_OR_THRESHOLD_SELECTION",
+      "current_state": "ARCHITECTURALLY_BLOCKED",
+      "boundary": "All such fields and operations are prohibited; unresolved choices cannot receive defaults."
+    },
+    {
+      "threat_id": "TM-29",
+      "class": "SELECTIVE_REPORTING_OF_FAVORABLE_RELIABILITY_COEFFICIENTS",
+      "current_state": "ARCHITECTURALLY_BLOCKED",
+      "boundary": "No coefficient or quality band exists and reporting slots require context, uncertainty, error, and assumptions."
+    }
+  ],
+  "clean_estimate_rule": "NO_ACTIVE_ESTIMATE; CONTAMINATED_OBSERVATIONS_CANNOT_BE_SILENTLY_CLASSIFIED_CLEAN",
+  "selected_mitigations": [],
+  "selected_metrics": [],
+  "selected_thresholds": []
+}

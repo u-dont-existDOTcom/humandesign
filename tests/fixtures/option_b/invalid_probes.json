@@ -1,0 +1,123 @@
+{
+  "fixture_class": "CONSPICUOUSLY_SYNTHETIC_INVALID_PROBES",
+  "cases": [
+    {
+      "case_id": "SYNTH-INVALID-UNKNOWN-FIELD",
+      "schema": "administration",
+      "base_fixture": "administration_valid.json",
+      "mutation": {"field": "unknown_field", "value": "PROHIBITED_FIELD_SENTINEL"},
+      "expected_code": "OB_UNKNOWN_FIELD"
+    },
+    {
+      "case_id": "SYNTH-INVALID-CONSTRUCT-FIELD",
+      "schema": "administration",
+      "base_fixture": "administration_valid.json",
+      "mutation": {"field": "construct_name", "value": "PROHIBITED_FIELD_SENTINEL"},
+      "expected_code": "OB_PROHIBITED_FIELD"
+    },
+    {
+      "case_id": "SYNTH-INVALID-REHASHED-CONSTRUCT",
+      "schema": "administration",
+      "base_fixture": "administration_valid.json",
+      "mutation": {
+        "field": "construct_name",
+        "value": "PROHIBITED_FIELD_SENTINEL",
+        "also_rehash": true
+      },
+      "expected_code": "OB_PROHIBITED_FIELD"
+    },
+    {
+      "case_id": "SYNTH-INVALID-PRODUCTION-CLASS",
+      "schema": "administration",
+      "base_fixture": "administration_valid.json",
+      "mutation": {"field": "record_class", "value": "PRODUCTION_RECORD_SENTINEL"},
+      "expected_code": "OB_NON_SYNTHETIC_INPUT"
+    },
+    {
+      "case_id": "SYNTH-INVALID-PARTICIPANT-ID",
+      "schema": "administration",
+      "base_fixture": "administration_valid.json",
+      "mutation": {"field": "synthetic_participant_id", "value": "NON_SYNTHETIC_SENTINEL"},
+      "expected_code": "OB_SYNTHETIC_ID_REQUIRED"
+    },
+    {
+      "case_id": "SYNTH-INVALID-CHART-FIELD",
+      "schema": "administration",
+      "base_fixture": "administration_valid.json",
+      "mutation": {"field": "chart", "value": "PROHIBITED_FIELD_SENTINEL"},
+      "expected_code": "OB_PROHIBITED_FIELD"
+    },
+    {
+      "case_id": "SYNTH-INVALID-REFERENCE-SET-FIELD",
+      "schema": "property_plan",
+      "base_fixture": "property_plan_valid.json",
+      "mutation": {"field": "T_i", "value": "PROHIBITED_FIELD_SENTINEL"},
+      "expected_code": "OB_PROHIBITED_FIELD"
+    },
+    {
+      "case_id": "SYNTH-INVALID-SCORE-FIELD",
+      "schema": "property_plan",
+      "base_fixture": "property_plan_valid.json",
+      "mutation": {"field": "score", "value": "PROHIBITED_FIELD_SENTINEL"},
+      "expected_code": "OB_PROHIBITED_FIELD"
+    },
+    {
+      "case_id": "SYNTH-INVALID-THRESHOLD-FIELD",
+      "schema": "property_plan",
+      "base_fixture": "property_plan_valid.json",
+      "mutation": {"field": "threshold", "value": "PROHIBITED_FIELD_SENTINEL"},
+      "expected_code": "OB_PROHIBITED_FIELD"
+    },
+    {
+      "case_id": "SYNTH-INVALID-CODING-CATEGORY",
+      "schema": "coding",
+      "base_fixture": "coding_valid.json",
+      "mutation": {"field": "coding_category", "value": "PROHIBITED_FIELD_SENTINEL"},
+      "expected_code": "OB_PROHIBITED_FIELD"
+    },
+    {
+      "case_id": "SYNTH-INVALID-PRIOR-CODE-CLEAN",
+      "schema": "coding",
+      "base_fixture": "coding_valid.json",
+      "mutations": [
+        {"field": "prior_code_visibility", "value": true},
+        {"field": "contamination_status", "value": "CLEAN_SYNTHETIC"}
+      ],
+      "expected_code": "OB_VISIBILITY_CONTAMINATION_REQUIRED"
+    },
+    {
+      "case_id": "SYNTH-INVALID-ADJUDICATION-REWRITE",
+      "schema": "coding",
+      "base_fixture": "coding_valid.json",
+      "mutations": [
+        {"field": "coder_role", "value": "ADJUDICATOR"},
+        {"field": "adjudication_status", "value": "PROHIBITED_REWRITE_ATTEMPT"}
+      ],
+      "expected_code": "OB_ORIGINAL_COMMITMENT_REWRITE"
+    },
+    {
+      "case_id": "SYNTH-INVALID-RETEST-RESOLVED",
+      "schema": "property_plan",
+      "base_fixture": "property_plan_valid.json",
+      "mutation": {
+        "field": "test_retest_eligibility.construct_temporal_ontology",
+        "value": "RESOLVED_WITHOUT_LATER_CONTRACT"
+      },
+      "expected_code": "OB_CONST_VIOLATION"
+    },
+    {
+      "case_id": "SYNTH-INVALID-MISSING-AS-ZERO",
+      "schema": "administration",
+      "base_fixture": "administration_valid.json",
+      "mutation": {"field": "missing_value", "value": 0},
+      "expected_code": "OB_UNKNOWN_FIELD"
+    },
+    {
+      "case_id": "SYNTH-INVALID-RESPONSE-CONTENT",
+      "schema": "administration",
+      "base_fixture": "administration_valid.json",
+      "mutation": {"field": "response_text", "value": "PROHIBITED_FIELD_SENTINEL"},
+      "expected_code": "OB_PROHIBITED_FIELD"
+    }
+  ]
+}
