@@ -10,6 +10,7 @@ from typing import Any
 
 from pydantic import ValidationError
 
+from hdmatch.experiments.canonical import write_new_bytes
 from hdmatch.natal_time.evidence import assess_evidence
 from hdmatch.natal_time.models import (
     CandidateDateSetEvidence,
@@ -389,8 +390,13 @@ def build_matrix(repository_commit: str) -> dict[str, Any]:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--repository-commit", required=True)
+    parser.add_argument("--output", type=Path)
     args = parser.parse_args()
-    print(canonical_json_bytes(build_matrix(args.repository_commit)).decode())
+    encoded = canonical_json_bytes(build_matrix(args.repository_commit)) + b"\n"
+    if args.output is None:
+        print(encoded.decode(), end="")
+    else:
+        write_new_bytes(args.output, encoded)
     return 0
 
 
