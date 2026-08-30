@@ -149,10 +149,22 @@ boundary semantics, or full-state identity reopens deterministic conformance.
 
 ## Current implementation priority
 
-Assemble checkpoint 9 from the exact local implementation/evidence head, run all required
-exact-head gates, and return the packet to the same authenticated ChatGPT Pro conversation. If Pro
-requires a new owner decision, stop for Joel. Otherwise continue only within a new explicit Pro
-ruling; the current contract authorizes no further scientific implementation after checkpoint 9.
+Checkpoint 9 is qualified, but Pro returned `OWNER DECISION REQUIRED: YES`. Stop substantive work
+until Joel selects one construct-source direction:
+
+1. **B1 — Independent-first constructs (Pro recommendation):** later define ordinary behavioral,
+   experiential, or phenomenological constructs through a chart-blind process and freeze them
+   before any HD mapping. This gives the strongest circularity/leakage protection but may produce
+   reliable constructs that do not map cleanly to HD.
+2. **B2 — HD-derived constructs:** later derive constructs from HD theory while keeping the
+   measurement study separated from actual charts/candidate times. This is more directly relevant
+   and potentially shorter, but has substantially greater circularity, cueing, familiarity,
+   expectancy, and personal-validation risk.
+
+The selection establishes direction only. It does not itself authorize construct writing,
+instrument development, items/prompts/categories/scoring, model or reliability-method selection,
+population/language/mode choices, human work, or any external action. After Joel chooses, return
+the ruling to Pro for a new bounded supervision contract before substantive implementation.
 
 Option B remains a design-only prerequisite screen. It does not authorize live execution,
 measurement content, participant software, empirical data, or progression to rectification.

@@ -1,6 +1,6 @@
 # Current state
 
-- As of: `2026-08-30 19:38 GMT`
+- As of: `2026-08-30 19:58 GMT`
 - Task ID: `astrohd-relationship-continuation-20260830`
 - Goal: continue the relationship/AstroHD program under the blocking Brave + ChatGPT Pro supervision contract in `docs/RELATIONSHIP_RESEARCH_HANDOFF.md`, beginning with the separate natal-first `Find my birth-time window` priority unless supervision changes the sequence.
 - Authoritative Git baseline: `main` and `origin/main` at `b7660b8c9bcf52cbb14bc5442c13a3a8635aad32` (`Add canonical relationship research handoff and Pro supervision protocol`).
@@ -81,7 +81,10 @@
 - Exact accepted-head evidence: 417 tests passed in 175.09 seconds; strict mypy passed 132 source files; the exact 10-file Git-derived Ruff scope passed; every required artifact validator and the privacy/history/build gate passed; all 48 protected paths matched; `git diff --check` passed; and the index/worktree were clean. Fresh read-only GitHub, Railway, and runtime state remained unchanged.
 - At checkpoint 8, Pro recommended B — measurement reliability before rectification — as a prerequisite screen that reduces the risk of a later blinded study measuring questionnaire noise, while requiring Joel to choose explicitly. Joel's later B ruling satisfies that checkpoint-8 choice gate.
 - Joel selected B — measurement reliability before rectification. `docs/NATAL_TIME_OWNER_DECISION_B_20260830.md` records the choice and its limits. The choice authorizes return to Pro for one bounded design-only contract; it does not authorize questionnaire content, live data, recruitment, scoring, chart-linked inference, cohort/budget decisions, external actions, or execution.
-- Pro returned `OWNER DECISION REQUIRED: NO` and authorized only the construct-neutral architecture. The implementation-head focused Option B suite passed 90/90; the full repository suite passed 507/507; strict mypy passed all 132 source files; Ruff, every prior immutable artifact validator, the privacy/history/build gate, all 48 protected-path comparisons, and `git diff --check` passed. Exact documentation-child verification is required before checkpoint-9 submission.
+- Pro returned `OWNER DECISION REQUIRED: NO` and authorized only the construct-neutral architecture. The implementation-head focused Option B suite passed 90/90; the full repository suite passed 507/507; strict mypy passed all 132 source files; Ruff, every prior immutable artifact validator, the privacy/history/build gate, all 48 protected-path comparisons, and `git diff --check` passed. The subsequently required exact documentation-child verification is recorded below.
+- Checkpoint 9 was submitted from exact documentation head `d6af8d472f1a8352b2d710b12aedeb3e904060d0` / tree `ea39f44cbf5d7de42f54d396706c4257871f3ff7`. The forced exact-head full suite passed 507/507 in 319.67 seconds; strict mypy, the five-file Git-derived Option B Ruff scope, all prior immutable validators, privacy/history/build, 48/48 protected paths, `git diff --check`, and clean index/worktree checks passed.
+- Pro returned `OWNER DECISION REQUIRED: YES` and `CHECKPOINT-9 VERDICT: QUALIFIED`. It found no blocking acceptance defect, qualified all nine evidence surfaces, preserved the deterministic/Phase-0 foundation, and qualified Option B only for construct-neutral design-contract completeness. Its single scope correction is that the generic scan's no-overlap result cannot exclude an established instrument for a later specific construct; a fresh construct-specific instrument/method scan is mandatory after construct-source authorization and before bespoke content.
+- Pro requires Joel to choose **B1 — independent-first constructs** or **B2 — HD-derived constructs** before any substantive next slice. Pro recommends B1 for the strongest circularity and leakage protection. No substantive next slice is authorized merely by the selection; after Joel rules, a new bounded Pro contract is required.
 - Still prohibited: every inferential or participant-facing semantic, relationship-assisted pruning, live data, recruitment, public mounting or ledger release, migration, Railway changes, push, merge, and deploy. A later owner decision is explicitly required before questionnaire development, participant-facing use, selection of a coverage/width/abstention operating point, a human cohort size/burden/cost, ranking/exclusion, probabilistic language, public-ledger deployment, push, merge, migration, or deployment.
 - Browser-control default from the owner: prefer headless operation. When the authenticated headed Brave session is genuinely required, reuse the existing controlled window on a dedicated secondary workspace or secondary physical monitor so it does not steal focus or cover the active screen. Do not repeatedly open and close visible windows.
 - Test-efficiency telemetry is active under task ID `astrohd-relationship-20260830` in `.git/codex-test-efficiency/`.
@@ -90,10 +93,10 @@
 
 ## Next safe action
 
-Commit the documentation-only checkpoint-9 evidence child, run the forced exact-head verification,
-and return it to the same authenticated ChatGPT Pro conversation. If Pro requires another owner
-decision, stop for Joel; otherwise continue only inside a new explicit ruling. Do not push without
-Joel's direct authority, and do not merge, change GitHub governance, modify Railway, touch
-`OPENROUTER_API_KEY`, access participant records, recruit, implement questionnaire content or an
+Stop for Joel's B1/B2 construct-source decision. Pro recommends B1 — independent-first constructs.
+After Joel chooses, return the exact choice to the same authenticated Pro conversation and obtain a
+new bounded contract before any substantive work. Do not push without Joel's direct authority, and
+do not merge, change GitHub governance, modify Railway, touch `OPENROUTER_API_KEY`, access
+participant records, recruit, name or describe constructs, implement questionnaire content or an
 estimator, execute baselines, or deploy unless a later bounded ruling explicitly authorizes that
 action.
