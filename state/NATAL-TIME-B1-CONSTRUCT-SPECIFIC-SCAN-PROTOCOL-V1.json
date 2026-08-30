@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-b1-construct-specific-scan-protocol-v1",
+  "status": "FUTURE_TEMPLATE_NOT_EXECUTED",
+  "active_purpose": "b1_independent_construct_precontent_governance",
+  "provenance": {
+    "owner_b1_record_commit": "cc6e8c3c05551c772d788d336994c3996d02ab78",
+    "methods_scan_commit": "1b6f851e5ad3b116d589cf421dbb145d9a2ba3be"
+  },
+  "prerequisite_sequence": [
+    "OWNER_SELECTS_SOURCE_ROUTE_AND_AUTHORSHIP_CLASS",
+    "FRESH_CHART_BLIND_ENVIRONMENT_ESTABLISHED",
+    "CONSTRUCT_SPECIFIC_CONCEPTION_AND_BOUNDARIES_FROZEN_OUTSIDE_ASTROHD_CONTEXT",
+    "CONCEPTION_BYTES_HASHED_AND_TIMESTAMPED_BEFORE_FIRST_QUERY",
+    "ASTROHD_EXPOSURE_AND_ACCESS_ATTESTATION_PASSES",
+    "FIRST_CONSTRUCT_SPECIFIC_QUERY_MAY_BEGIN_ONLY_AFTER_PRIOR_STEPS"
+  ],
+  "required_search_dimensions": [
+    "EXACT_TERMINOLOGY",
+    "SYNONYMS_AND_PRIOR_TERMINOLOGY",
+    "NEIGHBORING_CONSTRUCTS_AND_REDUNDANCY",
+    "EXISTING_QUESTIONNAIRES_AND_SCALES",
+    "INTERVIEW_AND_CODING_PROTOCOLS",
+    "OBSERVER_REPORTS",
+    "BEHAVIORAL_OR_OBJECTIVE_PROXIES_AND_TASKS",
+    "TAXONOMIES_AND_THEORY",
+    "MEASUREMENT_EVIDENCE_AND_ADVERSE_FINDINGS",
+    "POPULATION_LANGUAGE_TRANSLATION_MODE_AND_ACCESSIBILITY_VARIANTS",
+    "LICENSING_PERMISSIONS_COST_BURDEN_AND_TOOLING",
+    "FAILURE_NONREPLICATION_AND_OTHER_ADVERSE_EVIDENCE",
+    "VERSION_AND_SUPERSESSION_HISTORY"
+  ],
+  "required_source_receipt_fields": [
+    "exact_query",
+    "query_timestamp",
+    "source_identifier",
+    "source_version_or_date",
+    "source_url_or_repository_locator",
+    "eligibility_disposition",
+    "exclusion_reason",
+    "provenance_digest",
+    "exposure_state"
+  ],
+  "allowed_terminal_decisions": [
+    "REUSE",
+    "ADAPT",
+    "COMPOSE",
+    "BOUNDED_COMPARATIVE_EXPERIMENT",
+    "DEVELOP_NEW"
+  ],
+  "terminal_decision": "UNSELECTED",
+  "decision_freeze_rule": "FREEZE_AND_HASH_BEFORE_BESPOKE_CONTENT",
+  "bespoke_baseline_rule": "BENCHMARK_AGAINST_STRONGEST_APPLICABLE_EXISTING_BASELINE",
+  "boundary_change_for_mapping_fit": "PROHIBITED",
+  "executed_query_count": 0,
+  "search_results_present": false,
+  "construct_content_present": false,
+  "additional_work_authorized_by_this_template": false
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-b1-construct-freeze-gate-v1",
+  "status": "CLOSED_PRECONTENT_ALL_CONTENT_SLOTS_UNSET",
+  "active_purpose": "b1_independent_construct_precontent_governance",
+  "provenance": {
+    "owner_b1_record_commit": "cc6e8c3c05551c772d788d336994c3996d02ab78",
+    "methods_scan_commit": "1b6f851e5ad3b116d589cf421dbb145d9a2ba3be"
+  },
+  "future_required_slots": [
+    {"slot_id": "INDEPENDENT_CONCEPTION", "current_status": "UNSET_CONTENT_EMBARGOED"},
+    {"slot_id": "CONSTRUCT_DEFINITION_AND_BOUNDARIES", "current_status": "UNSET_CONTENT_EMBARGOED"},
+    {"slot_id": "SOURCE_PROVENANCE", "current_status": "UNSET_CONTENT_EMBARGOED"},
+    {"slot_id": "CONSTRUCT_SPECIFIC_SCAN_RECEIPT", "current_status": "UNSET_CONTENT_EMBARGOED"},
+    {"slot_id": "REUSE_ADAPT_COMPOSE_EXPERIMENT_OR_INVENT_DECISION", "current_status": "UNSET_CONTENT_EMBARGOED"},
+    {"slot_id": "MEASUREMENT_MODEL_AND_PROTOCOL", "current_status": "UNSET_CONTENT_EMBARGOED"},
+    {"slot_id": "RELIABILITY_BOUNDARY_AND_EVIDENCE", "current_status": "UNSET_CONTENT_EMBARGOED"},
+    {"slot_id": "BLINDING_AND_ACCESS_RECEIPT", "current_status": "UNSET_CONTENT_EMBARGOED"},
+    {"slot_id": "VERSION_AND_CONTENT_DIGEST", "current_status": "UNSET_CONTENT_EMBARGOED"},
+    {"slot_id": "SUPERSESSION_AND_CHANGE_STATUS", "current_status": "UNSET_CONTENT_EMBARGOED"}
+  ],
+  "eligibility_rules": {
+    "specific_scan_receipt_required": true,
+    "explicit_source_decision_required": true,
+    "known_provenance_required": true,
+    "clean_chart_blind_authorship_receipt_required": true,
+    "content_digest_required": true,
+    "all_required_slots_frozen_together": true,
+    "partial_freeze": "INVALID",
+    "unknown_or_missing_slot": "FAIL_CLOSED"
+  },
+  "current_gate_state": "CLOSED",
+  "current_freeze_valid": false,
+  "content_bearing_values_present": false,
+  "construct_specific_scan_receipt_present": false,
+  "source_decision_present": false,
+  "mapping_access_authorized": false
+}

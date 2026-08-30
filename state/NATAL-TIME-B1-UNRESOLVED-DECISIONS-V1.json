@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-b1-unresolved-decisions-v1",
+  "status": "ALL_SCIENTIFIC_AND_OPERATIONAL_CHOICES_BLOCKED_UNSELECTED",
+  "active_purpose": "b1_independent_construct_precontent_governance",
+  "provenance": {
+    "owner_b1_record_commit": "cc6e8c3c05551c772d788d336994c3996d02ab78",
+    "methods_scan_commit": "1b6f851e5ad3b116d589cf421dbb145d9a2ba3be"
+  },
+  "decisions": [
+    {"decision_id": "UNRESOLVED-B1-01", "decision_class": "CONSTRUCT_SOURCE_ROUTE", "status": "OWNER_DECISION_REQUIRED_AFTER_CHECKPOINT_10"},
+    {"decision_id": "UNRESOLVED-B1-02", "decision_class": "HUMAN_ISOLATED_MODEL_OR_HYBRID_AUTHORSHIP", "status": "OWNER_DECISION_REQUIRED_AFTER_CHECKPOINT_10"},
+    {"decision_id": "UNRESOLVED-B1-03", "decision_class": "CONSTRUCT_DOMAIN_DEFINITION_AND_BOUNDARIES", "status": "BLOCKED_UNSELECTED"},
+    {"decision_id": "UNRESOLVED-B1-04", "decision_class": "ESTABLISHED_INSTRUMENT_OR_NEW_DEVELOPMENT", "status": "BLOCKED_PENDING_SPECIFIC_SCAN"},
+    {"decision_id": "UNRESOLVED-B1-05", "decision_class": "MEASUREMENT_MODEL_AND_CONTENT_FORMAT", "status": "BLOCKED_UNSELECTED"},
+    {"decision_id": "UNRESOLVED-B1-06", "decision_class": "POPULATION_LANGUAGE_COUNTRY_AGE_LITERACY_MODE_AND_ACCESSIBILITY", "status": "OWNER_DECISION_REQUIRED_LATER"},
+    {"decision_id": "UNRESOLVED-B1-07", "decision_class": "BURDEN_SESSIONS_DURATION_RETEST_STAFFING_COST_AND_TIMELINE", "status": "OWNER_DECISION_REQUIRED_LATER"},
+    {"decision_id": "UNRESOLVED-B1-08", "decision_class": "RELIABILITY_DESIGN_ESTIMATOR_METRIC_AND_THRESHOLD", "status": "BLOCKED_UNSELECTED"},
+    {"decision_id": "UNRESOLVED-B1-09", "decision_class": "FAILURE_REPEAT_OR_REDEVELOPMENT_POLICY", "status": "OWNER_DECISION_REQUIRED_LATER"},
+    {"decision_id": "UNRESOLVED-B1-10", "decision_class": "PROGRESSION_AFTER_FAVORABLE_RELIABILITY", "status": "OWNER_DECISION_REQUIRED_LATER"},
+    {"decision_id": "UNRESOLVED-B1-11", "decision_class": "MAPPING_ONTOLOGY_FEATURE_HYPOTHESIS_MODEL_METRIC_AND_SUCCESS_RULE", "status": "BLOCKED_UNSELECTED"},
+    {"decision_id": "UNRESOLVED-B1-12", "decision_class": "MAPPING_TARGET_DISCLOSURE_AND_FEEDBACK", "status": "OWNER_DECISION_REQUIRED_LATER"},
+    {"decision_id": "UNRESOLVED-B1-13", "decision_class": "ORDINARY_NON_HD_ALTERNATIVES_AND_NULL_CONTROLS", "status": "BLOCKED_UNSELECTED"},
+    {"decision_id": "UNRESOLVED-B1-14", "decision_class": "PUSH_PR_MERGE_PUBLICATION_DEPLOYMENT_OR_RELEASE", "status": "OWNER_AUTHORITY_REQUIRED"}
+  ],
+  "source_route_selected": false,
+  "authorship_class_selected": false,
+  "construct_content_present": false,
+  "mapping_content_present": false,
+  "human_workflow_present": false,
+  "additional_work_authorized_by_this_register": false
+}

@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "natal-time-b1-content-embargo-schema-v1",
+  "title": "B1 closed synthetic content-embargo metadata",
+  "type": "object",
+  "additionalProperties": false,
+  "x-provenance": {
+    "active_purpose": "b1_independent_construct_precontent_governance",
+    "owner_b1_record_commit": "cc6e8c3c05551c772d788d336994c3996d02ab78",
+    "methods_scan_commit": "1b6f851e5ad3b116d589cf421dbb145d9a2ba3be",
+    "test_only_instances": true
+  },
+  "required": [
+    "schema_version",
+    "record_class",
+    "synthetic_candidate_id",
+    "source_route_status",
+    "provenance_digest",
+    "session_digest",
+    "access_ledger_digest",
+    "synthetic_actor_id",
+    "role_id",
+    "astrohd_exposure_state",
+    "contamination_state",
+    "version_id",
+    "supersession_status",
+    "specific_scan_status",
+    "freeze_status",
+    "unresolved_decision_ids",
+    "content_embargo_status"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.0.0"},
+    "record_class": {"type": "string", "const": "CONSPICUOUSLY_SYNTHETIC_B1_CONTENT_EMBARGO_METADATA"},
+    "synthetic_candidate_id": {"type": "string", "pattern": "^SYNTH-B1-CANDIDATE-[A-Z0-9]{4,16}$"},
+    "source_route_status": {"type": "string", "const": "UNSELECTED"},
+    "provenance_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "session_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "access_ledger_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "synthetic_actor_id": {"type": "string", "pattern": "^SYNTH-B1-ACTOR-[A-Z0-9]{4,16}$"},
+    "role_id": {"type": "string", "enum": ["ASTROHD_AWARE_GOVERNANCE", "UNASSIGNED"]},
+    "astrohd_exposure_state": {"type": "string", "enum": ["PROCESS_METADATA_ONLY", "UNKNOWN_FAIL_CLOSED", "EXPOSED_CONTAMINATED"]},
+    "contamination_state": {"type": "string", "enum": ["CLEAN_SYNTHETIC_METADATA_ONLY", "CONTAMINATED_INELIGIBLE", "UNKNOWN_FAIL_CLOSED"]},
+    "version_id": {"type": "string", "pattern": "^SYNTH-B1-VERSION-[A-Z0-9]{4,16}$"},
+    "supersession_status": {"type": "string", "enum": ["NONE", "FUTURE_EXPLORATORY_REQUIRED", "SUPERSEDED_PRESERVED"]},
+    "specific_scan_status": {"type": "string", "enum": ["NOT_STARTED", "FUTURE_RECEIPT_REQUIRED"]},
+    "freeze_status": {"type": "string", "enum": ["NOT_FROZEN", "METADATA_GATE_CLOSED"]},
+    "unresolved_decision_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^UNRESOLVED-B1-[0-9]{2}$"}
+    },
+    "content_embargo_status": {"type": "string", "const": "ACTIVE_NO_CONTENT"}
+  },
+  "x-prohibited-field-names": [
+    "construct_name", "construct_label", "construct_definition", "construct_description",
+    "domain", "facet", "example", "exemplar", "item", "items", "prompt", "probe",
+    "interview", "free_text", "response", "response_content", "response_choices",
+    "coding_category", "coding_manual", "scoring_key", "measurement_model",
+    "reliability_method", "reliability_threshold", "coefficient", "estimator", "metric",
+    "cutoff", "quality_band", "success_rule", "population", "language", "country", "age",
+    "literacy", "mode", "accommodation", "burden", "timing", "occasion_count", "coder_count",
+    "sample_size", "hd_label", "astrohd_label", "chart_field", "birth_time",
+    "candidate_time", "relationship_record", "reference_record", "live_record",
+    "mapping_ontology", "mapping_rule", "mapping_feature", "mapping_model", "mapping_metric",
+    "mapping_threshold", "mapping_recommendation", "mapping_hypothesis"
+  ]
+}

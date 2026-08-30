@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-b1-claim-lane-registry-v1",
+  "status": "THREE_LANES_SEPARATE_NO_RESULTS",
+  "active_purpose": "b1_independent_construct_precontent_governance",
+  "provenance": {
+    "owner_b1_record_commit": "cc6e8c3c05551c772d788d336994c3996d02ab78",
+    "methods_scan_commit": "1b6f851e5ad3b116d589cf421dbb145d9a2ba3be"
+  },
+  "lanes": [
+    {
+      "lane_id": "R_RELIABILITY",
+      "future_question_class": "REPRODUCIBILITY_UNDER_FROZEN_CONDITIONS",
+      "result_status": "NOT_IMPLEMENTED_NO_EVIDENCE",
+      "cannot_establish": ["ASTROHD_CORRESPONDENCE", "VALIDITY", "BIRTH_TIME_RECOVERY"]
+    },
+    {
+      "lane_id": "M_MAPPING",
+      "future_question_class": "OUT_OF_SAMPLE_CORRESPONDENCE_TO_SEPARATELY_FROZEN_ASTROHD_HYPOTHESIS",
+      "result_status": "NOT_IMPLEMENTED_NO_EVIDENCE",
+      "cannot_establish": ["INCREMENTAL_VALUE", "CAUSALITY", "ALL_HD_VALIDITY"]
+    },
+    {
+      "lane_id": "I_INCREMENTAL_VALUE",
+      "future_question_class": "OUT_OF_SAMPLE_INFORMATION_BEYOND_ORDINARY_NON_HD_AND_NULL_CONTROLS",
+      "result_status": "NOT_IMPLEMENTED_NO_EVIDENCE",
+      "cannot_establish": ["CAUSALITY", "UNIVERSAL_HD_VALIDITY", "PARTICIPANT_BENEFIT"]
+    }
+  ],
+  "evidence_transfer_rules": {
+    "reliability_to_mapping": "PROHIBITED",
+    "mapping_to_incremental_value": "PROHIBITED",
+    "incremental_value_to_causality": "PROHIBITED",
+    "cross_lane_result_population": "PROHIBITED"
+  },
+  "ordinary_non_hd_and_null_controls": "FUTURE_RESERVED_UNSELECTED_NOT_IMPLEMENTED",
+  "combined_scalar": "PROHIBITED",
+  "combined_confidence": "PROHIBITED",
+  "automatic_progression": "PROHIBITED",
+  "lane_results_present": false
+}

@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-b1-post-freeze-change-control-v1",
+  "status": "FUTURE_CHANGE_POLICY_FROZEN_NO_CONTENT_VERSION_EXISTS",
+  "active_purpose": "b1_independent_construct_precontent_governance",
+  "provenance": {
+    "owner_b1_record_commit": "cc6e8c3c05551c772d788d336994c3996d02ab78",
+    "methods_scan_commit": "1b6f851e5ad3b116d589cf421dbb145d9a2ba3be"
+  },
+  "controlled_changes_after_mapping_exposure": [
+    "RENAME",
+    "MERGE",
+    "SPLIT",
+    "DELETE",
+    "NARROW",
+    "BROADEN",
+    "REDEFINE"
+  ],
+  "required_disposition_for_any_controlled_change": {
+    "in_place_change": "PROHIBITED",
+    "new_version": "REQUIRED",
+    "new_version_claim_status": "EXPLORATORY",
+    "original_version": "PRESERVED_IMMUTABLE",
+    "original_result": "PRESERVED_REPORTABLE",
+    "change_rationale": "CONTENT_HASHED_AND_TIMESTAMPED",
+    "exposed_evidence_or_components_for_confirmation": "INELIGIBLE",
+    "new_nonexposed_evidence_for_confirmation": "FUTURE_REQUIRED"
+  },
+  "null_result_policy": {
+    "null_weak_unstable_or_nonreplicating_result": "PRESERVE_AND_REPORT",
+    "construct_repair_to_rescue_result": "PROHIBITED",
+    "selective_suppression": "PROHIBITED"
+  },
+  "supersession_history": "APPEND_ONLY",
+  "existing_content_versions": 0,
+  "existing_mapping_results": 0
+}

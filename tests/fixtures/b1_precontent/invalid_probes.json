@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0.0",
+  "record_class": "CONSPICUOUSLY_SYNTHETIC_B1_INVALID_PROBES",
+  "content_policy": "FIELD_NAMES_AND_SENTINELS_ONLY_NO_MEANINGFUL_CONTENT",
+  "cases": [
+    {"case_id": "B1-INVALID-UNKNOWN-FIELD", "schema": "candidate", "base_fixture": "candidate_metadata_valid.json", "mutation": {"field": "unexpected_metadata", "value": "SYNTHETIC_SENTINEL"}, "expected_code": "B1_UNKNOWN_FIELD"},
+    {"case_id": "B1-INVALID-CONSTRUCT-NAME", "schema": "candidate", "base_fixture": "candidate_metadata_valid.json", "mutation": {"field": "construct_name", "value": "SYNTHETIC_PROHIBITED_SENTINEL"}, "expected_code": "B1_PROHIBITED_FIELD"},
+    {"case_id": "B1-INVALID-RESPONSE-CONTENT", "schema": "candidate", "base_fixture": "candidate_metadata_valid.json", "mutation": {"field": "response_content", "value": "SYNTHETIC_PROHIBITED_SENTINEL"}, "expected_code": "B1_PROHIBITED_FIELD"},
+    {"case_id": "B1-INVALID-MEASUREMENT-MODEL", "schema": "candidate", "base_fixture": "candidate_metadata_valid.json", "mutation": {"field": "measurement_model", "value": "SYNTHETIC_PROHIBITED_SENTINEL"}, "expected_code": "B1_PROHIBITED_FIELD"},
+    {"case_id": "B1-INVALID-COEFFICIENT", "schema": "candidate", "base_fixture": "candidate_metadata_valid.json", "mutation": {"field": "coefficient", "value": "SYNTHETIC_PROHIBITED_SENTINEL"}, "expected_code": "B1_PROHIBITED_FIELD"},
+    {"case_id": "B1-INVALID-POPULATION", "schema": "candidate", "base_fixture": "candidate_metadata_valid.json", "mutation": {"field": "population", "value": "SYNTHETIC_PROHIBITED_SENTINEL"}, "expected_code": "B1_PROHIBITED_FIELD"},
+    {"case_id": "B1-INVALID-CHART-FIELD", "schema": "candidate", "base_fixture": "candidate_metadata_valid.json", "mutation": {"field": "chart_field", "value": "SYNTHETIC_PROHIBITED_SENTINEL"}, "expected_code": "B1_PROHIBITED_FIELD"},
+    {"case_id": "B1-INVALID-MAPPING-RULE", "schema": "candidate", "base_fixture": "candidate_metadata_valid.json", "mutation": {"field": "mapping_rule", "value": "SYNTHETIC_PROHIBITED_SENTINEL"}, "expected_code": "B1_PROHIBITED_FIELD"},
+    {"case_id": "B1-INVALID-REHASHED-MAPPING", "schema": "candidate", "base_fixture": "candidate_metadata_valid.json", "mutation": {"field": "mapping_hypothesis", "value": "SYNTHETIC_PROHIBITED_SENTINEL", "also_rehash": true}, "expected_code": "B1_PROHIBITED_FIELD"},
+    {"case_id": "B1-INVALID-OPAQUE-ID", "schema": "candidate", "base_fixture": "candidate_metadata_valid.json", "mutation": {"field": "synthetic_candidate_id", "value": "NOT-OPAQUE"}, "expected_code": "B1_PATTERN_VIOLATION"},
+    {"case_id": "B1-INVALID-UNKNOWN-PROVENANCE-CLEAN", "schema": "candidate", "base_fixture": "candidate_metadata_valid.json", "mutations": [{"field": "source_provenance_status", "value": "UNKNOWN_FAIL_CLOSED"}, {"field": "contamination_state", "value": "CLEAN_SYNTHETIC_METADATA_ONLY"}], "expected_code": "B1_UNKNOWN_PROVENANCE"},
+    {"case_id": "B1-INVALID-EXPOSURE-CLEAN", "schema": "candidate", "base_fixture": "candidate_metadata_valid.json", "mutations": [{"field": "astrohd_exposure_state", "value": "EXPOSED_CONTAMINATED"}, {"field": "contamination_state", "value": "CLEAN_SYNTHETIC_METADATA_ONLY"}], "expected_code": "B1_EXPOSURE_CONTAMINATION_REQUIRED"},
+    {"case_id": "B1-INVALID-APPEND-ONLY-FALSE", "schema": "access", "base_fixture": "access_event_valid.json", "mutation": {"field": "append_only", "value": false}, "expected_code": "B1_CONST_VIOLATION"},
+    {"case_id": "B1-INVALID-ROLE-ERASES-EXPOSURE", "schema": "access", "base_fixture": "access_event_valid.json", "mutation": {"field": "role_reassignment_erases_exposure", "value": true}, "expected_code": "B1_CONST_VIOLATION"}
+  ]
+}

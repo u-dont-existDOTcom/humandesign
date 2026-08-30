@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "natal-time-b1-access-and-contamination-schema-v1",
+  "title": "B1 closed synthetic access and contamination metadata",
+  "type": "object",
+  "additionalProperties": false,
+  "x-provenance": {
+    "active_purpose": "b1_independent_construct_precontent_governance",
+    "owner_b1_record_commit": "cc6e8c3c05551c772d788d336994c3996d02ab78",
+    "methods_scan_commit": "1b6f851e5ad3b116d589cf421dbb145d9a2ba3be",
+    "test_only_instances": true
+  },
+  "required": [
+    "schema_version",
+    "record_class",
+    "synthetic_access_event_id",
+    "synthetic_candidate_id",
+    "synthetic_actor_id",
+    "synthetic_session_id",
+    "synthetic_source_id",
+    "actor_role_id",
+    "event_sequence",
+    "event_class",
+    "provenance_digest",
+    "previous_event_digest",
+    "access_event_digest",
+    "astrohd_exposure_state",
+    "contamination_state",
+    "append_only",
+    "role_reassignment_erases_exposure",
+    "content_present"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.0.0"},
+    "record_class": {"type": "string", "const": "CONSPICUOUSLY_SYNTHETIC_B1_ACCESS_METADATA"},
+    "synthetic_access_event_id": {"type": "string", "pattern": "^SYNTH-B1-EVENT-[A-Z0-9]{4,16}$"},
+    "synthetic_candidate_id": {"type": "string", "pattern": "^SYNTH-B1-CANDIDATE-[A-Z0-9]{4,16}$"},
+    "synthetic_actor_id": {"type": "string", "pattern": "^SYNTH-B1-ACTOR-[A-Z0-9]{4,16}$"},
+    "synthetic_session_id": {"type": "string", "pattern": "^SYNTH-B1-SESSION-[A-Z0-9]{4,16}$"},
+    "synthetic_source_id": {"type": "string", "pattern": "^SYNTH-B1-SOURCE-[A-Z0-9]{4,16}$"},
+    "actor_role_id": {"type": "string", "enum": ["ASTROHD_AWARE_GOVERNANCE", "CHART_BLIND_AUTHORSHIP", "CONSTRUCT_SOURCE_REVIEW", "CONTENT_CUSTODY", "MEASUREMENT_DEVELOPMENT", "RELIABILITY_ANALYSIS", "MAPPING", "MAPPING_EVALUATION", "INCREMENTAL_VALUE_EVALUATION", "DATA_AND_ACCESS_CUSTODY", "UNASSIGNED"]},
+    "event_sequence": {"type": "integer", "minimum": 0},
+    "event_class": {"type": "string", "enum": ["SYNTHETIC_METADATA_CREATE", "SYNTHETIC_METADATA_READ", "SYNTHETIC_ROLE_CHANGE", "SYNTHETIC_EXPOSURE_MARK"]},
+    "provenance_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "previous_event_digest": {"type": "string", "pattern": "^(GENESIS|sha256:[0-9a-f]{64})$"},
+    "access_event_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "astrohd_exposure_state": {"type": "string", "enum": ["NONE_RECORDED_SYNTHETIC", "PROCESS_METADATA_ONLY", "UNKNOWN_FAIL_CLOSED", "EXPOSED_CONTAMINATED"]},
+    "contamination_state": {"type": "string", "enum": ["CLEAN_SYNTHETIC_METADATA_ONLY", "CONTAMINATED_INELIGIBLE", "UNKNOWN_FAIL_CLOSED"]},
+    "append_only": {"type": "boolean", "const": true},
+    "role_reassignment_erases_exposure": {"type": "boolean", "const": false},
+    "content_present": {"type": "boolean", "const": false}
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-b1-role-access-matrix-v1",
+  "status": "ROLE_CLASSES_DEFINED_NO_REAL_ASSIGNMENTS",
+  "active_purpose": "b1_independent_construct_precontent_governance",
+  "provenance": {
+    "owner_b1_record_commit": "cc6e8c3c05551c772d788d336994c3996d02ab78",
+    "methods_scan_commit": "1b6f851e5ad3b116d589cf421dbb145d9a2ba3be"
+  },
+  "roles": [
+    {"role_id": "ASTROHD_AWARE_GOVERNANCE", "assignment": "UNASSIGNED", "pre_freeze_content_access": "HASH_AND_PROCESS_METADATA_ONLY", "content_authorship_eligibility": "INELIGIBLE"},
+    {"role_id": "CHART_BLIND_AUTHORSHIP", "assignment": "UNASSIGNED", "pre_freeze_content_access": "FUTURE_ISOLATED_CONTENT_ONLY", "content_authorship_eligibility": "FUTURE_OWNER_GATED"},
+    {"role_id": "CONSTRUCT_SOURCE_REVIEW", "assignment": "UNASSIGNED", "pre_freeze_content_access": "FUTURE_FROZEN_BOUNDARY_AND_NON_HD_SOURCES_ONLY", "content_authorship_eligibility": "INELIGIBLE_TO_REWRITE_FOR_ASTROHD_FIT"},
+    {"role_id": "CONTENT_CUSTODY", "assignment": "UNASSIGNED", "pre_freeze_content_access": "FUTURE_SEALED_CONTENT", "content_authorship_eligibility": "INELIGIBLE"},
+    {"role_id": "MEASUREMENT_DEVELOPMENT", "assignment": "UNASSIGNED", "pre_freeze_content_access": "FUTURE_OWNER_GATED_AFTER_SPECIFIC_SCAN", "content_authorship_eligibility": "FUTURE_OWNER_GATED"},
+    {"role_id": "RELIABILITY_ANALYSIS", "assignment": "UNASSIGNED", "pre_freeze_content_access": "FUTURE_FROZEN_MEASUREMENT_PACKAGE_ONLY", "content_authorship_eligibility": "INELIGIBLE_TO_REDEFINE_CONSTRUCT"},
+    {"role_id": "MAPPING", "assignment": "UNASSIGNED", "pre_freeze_content_access": "DENIED_UNTIL_CONSTRUCT_AND_RELIABILITY_FREEZE", "content_authorship_eligibility": "INELIGIBLE"},
+    {"role_id": "MAPPING_EVALUATION", "assignment": "UNASSIGNED", "pre_freeze_content_access": "DENIED_UNTIL_SEPARATE_MAPPING_PREREGISTRATION", "content_authorship_eligibility": "INELIGIBLE"},
+    {"role_id": "INCREMENTAL_VALUE_EVALUATION", "assignment": "UNASSIGNED", "pre_freeze_content_access": "DENIED_UNTIL_SEPARATE_INCREMENTAL_VALUE_FREEZE", "content_authorship_eligibility": "INELIGIBLE"},
+    {"role_id": "DATA_AND_ACCESS_CUSTODY", "assignment": "UNASSIGNED", "pre_freeze_content_access": "FUTURE_LEAST_PRIVILEGE_CUSTODY_ONLY", "content_authorship_eligibility": "INELIGIBLE"}
+  ],
+  "astrohd_aware_context": {
+    "allowed": ["PROCESS_AUDIT", "PROVENANCE_AUDIT", "HASH_AUDIT", "ACCESS_METADATA_AUDIT", "EMBARGO_SCHEMA_AUDIT"],
+    "prohibited": ["AUTHOR_CONTENT", "EDIT_CONTENT", "SELECT_CONTENT", "RANK_CONTENT", "REFINE_CONTENT", "APPROVE_CONTENT"]
+  },
+  "future_isolated_model_must_not_receive": [
+    "ASTROHD_MEMORY_OR_RETRIEVAL",
+    "ASTROHD_PROMPT_HISTORY",
+    "ASTROHD_REPOSITORY",
+    "ASTROHD_MECHANICS_OR_LABELS",
+    "ASTROHD_RESULTS_OR_MAPPING_SUGGESTIONS",
+    "BIRTH_OR_CANDIDATE_TIME_DATA",
+    "RELATIONSHIP_PREDICTIONS_OR_EVIDENCE",
+    "FIT_SELECTED_EXAMPLES"
+  ],
+  "astrohd_exposed_model_blindness_by_instruction": "IMPOSSIBLE_FOR_B1_ELIGIBILITY",
+  "mapping_team_pre_freeze_influence": "PROHIBITED",
+  "source_reviewer_mapping_fit_rewrite": "PROHIBITED",
+  "cross_role_rule": "ACTOR_SESSION_SOURCE_OR_CONNECTED_EVIDENCE_CROSSING_INCOMPATIBLE_ROLES_MARKS_CONTAMINATION",
+  "real_assignments_present": false,
+  "human_access_system_implemented": false,
+  "participant_workflow_implemented": false
+}

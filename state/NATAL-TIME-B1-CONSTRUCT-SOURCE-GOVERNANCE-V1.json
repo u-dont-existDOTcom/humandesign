@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-b1-construct-source-governance-v1",
+  "status": "PRECONTENT_GOVERNANCE_ACTIVE_ALL_ROUTES_UNSELECTED",
+  "active_purpose": "b1_independent_construct_precontent_governance",
+  "provenance": {
+    "owner_b1_record_commit": "cc6e8c3c05551c772d788d336994c3996d02ab78",
+    "checkpoint_9_ruling_record_commit": "070348adb45ad1d3863ebab68d1bf1eea7439d53",
+    "conception_commit": "496143ed1c04fce8b6f92f010d8f7bd7a11da30c",
+    "methods_scan_commit": "1b6f851e5ad3b116d589cf421dbb145d9a2ba3be"
+  },
+  "source_route_classes": [
+    {"route_class": "ESTABLISHED_NON_HD_CONSTRUCT_OR_INSTRUMENT", "selection_status": "UNSELECTED"},
+    {"route_class": "CHART_BLIND_CONCEPT_ELICITATION", "selection_status": "UNSELECTED"},
+    {"route_class": "CHART_BLIND_BEHAVIORAL_OR_OBSERVATIONAL_TAXONOMY", "selection_status": "UNSELECTED"},
+    {"route_class": "CHART_BLIND_PHENOMENOLOGICAL_TAXONOMY", "selection_status": "UNSELECTED"},
+    {"route_class": "INDEPENDENT_NON_HD_THEORY_DERIVATION", "selection_status": "UNSELECTED"},
+    {"route_class": "STAGED_INDEPENDENT_HYBRID", "selection_status": "UNSELECTED"},
+    {"route_class": "UNSELECTED", "selection_status": "ACTIVE_PLACEHOLDER"}
+  ],
+  "route_selection": {
+    "selected_route": "UNSELECTED",
+    "preferred_route": "NONE",
+    "default_route": "NONE",
+    "authorized_route": "NONE",
+    "ranking_present": false,
+    "owner_decision_required_before_selection": true
+  },
+  "required_exclusion_states": [
+    "ASTROHD_SEEDED",
+    "CHART_EXPOSED_AUTHOR",
+    "MAPPING_BACKSOLVED",
+    "PRIOR_INDIVIDUALIZED_FEEDBACK_EXPOSED",
+    "BIRTH_TIME_OR_CANDIDATE_TIME_EXPOSED",
+    "RELATIONSHIP_EVIDENCE_EXPOSED",
+    "SAME_EVIDENCE_DISCOVERY_AND_TEST",
+    "POST_MAPPING_REDEFINED",
+    "UNKNOWN_SOURCE_PROVENANCE",
+    "LLM_CONTEXT_CONTAMINATED",
+    "OWNER_PROMPT_HD_SEEDED"
+  ],
+  "future_source_record_required_metadata": [
+    "opaque_source_id",
+    "route_selection_status",
+    "provenance_digest",
+    "source_session_digest",
+    "actor_role_id",
+    "astrohd_exposure_state",
+    "contamination_state",
+    "version_id",
+    "supersession_status",
+    "specific_scan_status",
+    "freeze_status"
+  ],
+  "eligibility_rules": {
+    "unknown_provenance": "FAIL_CLOSED_INELIGIBLE",
+    "astrohd_seeded_or_exposed": "INELIGIBLE_FOR_CLEAN_B1",
+    "mapping_backsolved": "INELIGIBLE_FOR_CLEAN_B1",
+    "feedback_or_birth_time_exposed": "INELIGIBLE_FOR_CLEAN_B1",
+    "same_evidence_discovery_and_test": "INELIGIBLE_FOR_CONFIRMATION",
+    "post_mapping_redefined": "NEW_EXPLORATORY_VERSION_ONLY",
+    "role_reassignment_after_exposure": "DOES_NOT_ERASE_CONTAMINATION"
+  },
+  "generic_scan_claim_limit": "NO_CLAIM_ABOUT_EXISTENCE_OR_ABSENCE_OF_AN_ESTABLISHED_INSTRUMENT_FOR_A_FUTURE_CONSTRUCT",
+  "construct_specific_scan_executed": false,
+  "construct_content_created": false,
+  "mapping_content_created": false,
+  "human_work_authorized": false,
+  "external_actions_authorized": false
+}
