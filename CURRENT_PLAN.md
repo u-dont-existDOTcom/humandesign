@@ -32,6 +32,10 @@ Still prohibited before checkpoint 2: candidate ranking or elimination, weights,
 
 Checkpoint 2 remains the current blocking scientific gate. Its evidence packet must report the exact local branch and SHA, the unchanged GitHub/Railway state, exact-head verification, full state fields and exclusions, boundary and coverage receipts, synthetic object digests, privacy gates, the absent GitHub ruleset, the stale conflicting PR #1, and the intentionally retained `OPENROUTER_API_KEY` variable name. Do not push, merge, alter repository governance, migrate production, or deploy without the applicable owner authority and Pro gate.
 
+Checkpoint 2 returned `OWNER DECISION REQUIRED: NO` and provisionally accepted the architecture, but it found the actual-engine conformance gate still open. The authorized next slice is real-engine deterministic conformance plus a documentation-only literature scan. Its exact acceptance rules and hard stops are recorded in `docs/PRO_SUPERVISION_CHECKPOINT_2_20260830.md`; the pre-search independent conception is frozen in `docs/NATAL_TIME_INDEPENDENT_CONCEPTION_SNAPSHOT_20260830.md`.
+
+Before any inferential work, identify and pin the single canonical engine, demonstrate its actual temporal resolution, inventory all emitted/derivable fields, certify transition completeness for the full identity, produce real-engine synthetic edge receipts and an independent checker, and publish the complete evidence-state test matrix. Return to Pro after that packet. Ranking, questionnaires, calibration, candidate selection, abstention thresholds, stopping, participant-facing interpretation, merge, and deployment remain prohibited.
+
 ## Current implementation priority
 
 Before expanding validation, migrate the existing V4.1/V3.2 implementation to the hardened **V4.3/V3.5** contract.

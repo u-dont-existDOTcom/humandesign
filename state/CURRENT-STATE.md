@@ -1,6 +1,6 @@
 # Current state
 
-- As of: `2026-08-30 01:43 GMT`
+- As of: `2026-08-30 01:54 GMT`
 - Task ID: `astrohd-relationship-continuation-20260830`
 - Goal: continue the relationship/AstroHD program under the blocking Brave + ChatGPT Pro supervision contract in `docs/RELATIONSHIP_RESEARCH_HANDOFF.md`, beginning with the separate natal-first `Find my birth-time window` priority unless supervision changes the sequence.
 - Authoritative Git baseline: `main` and `origin/main` at `b7660b8c9bcf52cbb14bc5442c13a3a8635aad32` (`Add canonical relationship research handoff and Pro supervision protocol`).
@@ -41,6 +41,9 @@
 - Checkpoint 1 completed on 2026-08-30. Pro returned `OWNER DECISION REQUIRED: NO` and approved **Option A — foundation only**. The full actionable contract is recorded in `docs/PRO_SUPERVISION_CHECKPOINT_1_20260830.md`.
 - Approved now: a separate natal-first intake/evidence state machine, server-enforced independent weekday lock, exact candidate-complete civil-day interval enumeration, immutable manifest/freeze/result records, a synthetic-only public allowlist contract, privacy/build hardening, and focused tests.
 - Pro hard-blocked ranking, candidate elimination, weights, priors, duration-normalized mass, probabilities, confidence percentages, stopping rules, time-window recommendations, relationship evidence, production migration, public deployment, and merge to `main` until checkpoint 2.
+- Checkpoint 2 completed on 2026-08-30. Pro returned `OWNER DECISION REQUIRED: NO`, provisionally accepted the deterministic architecture, and identified actual-engine conformance as the remaining scientific foundation gate. The actionable contract is `docs/PRO_SUPERVISION_CHECKPOINT_2_20260830.md`.
+- Authorized now: identify and pin the canonical repository chart engine, establish its actual temporal resolution, inventory every engine field, certify complete transitions, generate real-engine synthetic edge receipts, add an independent checker and evidence-state matrix, and conduct a documentation-only literature scan from `docs/NATAL_TIME_INDEPENDENT_CONCEPTION_SNAPSHOT_20260830.md`.
+- Still prohibited: every inferential or participant-facing semantic, relationship-assisted pruning, live data, public mounting, migration, Railway changes, merge, and deploy. Stop and return to Pro if the canonical engine is ambiguous, cannot be pinned, lacks a defensible complete transition method, or requires a substantive precision/scope choice.
 - Browser-control default from the owner: prefer headless operation. When the authenticated headed Brave session is genuinely required, reuse the existing controlled window on a dedicated secondary workspace or secondary physical monitor so it does not steal focus or cover the active screen. Do not repeatedly open and close visible windows.
 - Test-efficiency telemetry is active under task ID `astrohd-relationship-20260830` in `.git/codex-test-efficiency/`.
 - Foundation verification is green through the current local branch head: the final exact-head full suite passed 261 tests; the focused API/foundation suite passed 33 tests; Ruff passed; strict mypy found no issues across 131 source files; the privacy gate passed; and both canonical synthetic artifacts reproduced byte-for-byte.
@@ -48,4 +51,4 @@
 
 ## Next safe action
 
-Send the complete checkpoint-2 packet to the same Pro conversation and follow its ruling. Do not merge, push, change GitHub governance, modify Railway, touch `OPENROUTER_API_KEY`, or deploy before the checkpoint-2 ruling and the applicable owner authority boundary.
+Audit the repository's actual chart-engine path against the checkpoint-2 contract. If one canonical engine is unambiguous, implement only its deterministic conformance adapter, fixtures, independent checker, field inventory, resolution evidence, and transition matrix; otherwise stop and return to Pro. Do not push without Joel's direct authority, and do not merge, change GitHub governance, modify Railway, touch `OPENROUTER_API_KEY`, or deploy.
