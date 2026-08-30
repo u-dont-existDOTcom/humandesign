@@ -11,7 +11,7 @@ import subprocess
 from collections import deque
 from copy import deepcopy
 from pathlib import Path
-from typing import Any
+from typing import Any, cast
 
 from hdmatch.experiments.canonical import write_new_bytes
 from hdmatch.util import canonical_json_bytes, sha256_json
@@ -196,7 +196,7 @@ def _run(
         capture_output=True,
         text=text,
     )
-    return completed.stdout
+    return cast(bytes | str, completed.stdout)
 
 
 def _text(root: Path, arguments: list[str]) -> str:
