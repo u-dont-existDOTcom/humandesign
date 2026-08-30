@@ -23,11 +23,15 @@ from hdmatch.natal_time.provenance import (
     full_state_identity_specification,
     synthetic_runtime_digest,
 )
-from hdmatch.natal_time.public import serialize_synthetic_public_artifact
+from hdmatch.natal_time.public import (
+    SyntheticPublicNatalTimeArtifact,
+    serialize_synthetic_public_artifact,
+)
 from hdmatch.natal_time.records import (
     FixtureClassification,
     NatalTimeFreeze,
     NatalTimeManifest,
+    NatalTimeResult,
     TimezoneResolution,
     deterministic_computation_sha256,
 )
@@ -57,7 +61,13 @@ def _fixture(
     *,
     repository_root: Path,
     repository_commit: str,
-) -> tuple[dict[str, object], NatalTimeManifest, NatalTimeFreeze, object, object]:
+) -> tuple[
+    dict[str, object],
+    NatalTimeManifest,
+    NatalTimeFreeze,
+    NatalTimeResult,
+    SyntheticPublicNatalTimeArtifact,
+]:
     provider = SyntheticAnalyticEphemerisProvider()
     lineage = EvidenceLineage(
         lineage_id=_fixed_id("NTL", index),
