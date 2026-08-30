@@ -1,0 +1,121 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-option-b-independent-conception-snapshot-v1",
+  "status": "FROZEN_BEFORE_OPTION_B_METHODS_SCAN",
+  "freeze_date": "2026-08-30",
+  "active_purpose": "measurement_reliability_prerequisite_screen",
+  "provenance": {
+    "owner_record_sha256": "c24bb062bd90466f0be1a5be03211c8933e80bc1b4eaeee9509d5856bea02fc4",
+    "checkpoint_8_accepted_head": "63bfb78909a97eb5b8b31efe55e065a6f78973a2",
+    "canonical_companion": "docs/NATAL_TIME_OPTION_B_INDEPENDENT_CONCEPTION_SNAPSHOT_20260830.md"
+  },
+  "problem": "A later measurement-reliability study needs an auditable architecture that can distinguish variation in still-undefined observations from leakage, memory, response habits, expectancy, generic personal validation, administration differences, version drift, accessibility barriers, genuine interim change, and missing observations without selecting measurement content or a success rule.",
+  "limited_purpose": "Specify and audit a closed construct-neutral prerequisite architecture; do not claim empirical reliability, validity, accuracy, calibration, utility, recoverability, or authorization for human work.",
+  "separation_from_rectification": {
+    "gate": "HARD_ONE_WAY_UNSELECTED",
+    "prohibited_inputs": [
+      "birth_time",
+      "chart",
+      "relationship_evidence",
+      "candidate",
+      "reference_time",
+      "ranking",
+      "interpretation",
+      "feedback"
+    ],
+    "favorable_result_effect": "NO_AUTOMATIC_PROGRESSION",
+    "unfavorable_result_effect": "NO_AUTOMATIC_TERMINATION_OR_REDEVELOPMENT"
+  },
+  "candidate_error_sources": [
+    "occasion",
+    "rater",
+    "administration_mode",
+    "wording_or_form",
+    "language",
+    "accessibility_adaptation",
+    "recall",
+    "interim_true_change",
+    "social_desirability",
+    "response_style",
+    "expectancy",
+    "barnum_or_personal_validation",
+    "prior_feedback_or_chart_exposure"
+  ],
+  "candidate_architectural_mechanisms": [
+    "repeated_administrations",
+    "blinded_independent_coding",
+    "immutable_protocol_versions",
+    "role_separation",
+    "contamination_records",
+    "connected_component_splitting_without_allocation",
+    "missingness_provenance"
+  ],
+  "constraints": {
+    "synthetic_only": true,
+    "closed_unknown_fields": true,
+    "production_isolation": true,
+    "participant_like_content": "PROHIBITED",
+    "unresolved_choices": "BLOCKED_WITHOUT_DEFAULT"
+  },
+  "prohibited_content_classes": [
+    "measurement_content",
+    "live_identity",
+    "free_text",
+    "birth_or_chart_data",
+    "relationship_data",
+    "candidate_data",
+    "scores",
+    "rankings",
+    "probabilities",
+    "confidence",
+    "thresholds",
+    "recommendations",
+    "participant_facing_actions"
+  ],
+  "independently_generated_insights": [
+    "Future reliability claims must remain conditional on versions, conditions, replication facets, and intended use.",
+    "Leakage is a connected-graph property spanning aliases, repeat participation, relationships, shared sources, recruiters, custodians, and role changes.",
+    "Contamination must remain monotonic history rather than being erased by reassignment or adjudication.",
+    "Missingness is provenance rather than a measurement value and must preserve distinct causes and denominators.",
+    "Coding agreement does not establish correct or unexposed coding, so independence, access order, version freeze, and original commitments remain separate.",
+    "Repeated stability can arise from memory, expectancy, response style, prior feedback, or generic personal validation.",
+    "Form, language, mode, and accommodation changes require explicit version lineage without presumed comparability.",
+    "Synthetic validation may prove closure and controlled rejection but must not calculate a substantive measurement result or accept live records."
+  ],
+  "open_question_classes": [
+    "measurement_identity_and_source",
+    "measurement_model_and_content_form",
+    "population_language_literacy_mode_and_accessibility",
+    "replication_facets_conditions_and_intended_use",
+    "uncertainty_measurement_error_and_decision_standard",
+    "missingness_response_style_temporal_change_translation_and_leakage",
+    "failure_redevelopment_and_future_progression"
+  ],
+  "explicit_nonselections": {
+    "construct": "UNSELECTED",
+    "item_or_prompt": "UNSELECTED",
+    "response_option": "UNSELECTED",
+    "coding_category": "UNSELECTED",
+    "scoring_rule": "UNSELECTED",
+    "metric_or_coefficient": "UNSELECTED",
+    "model": "UNSELECTED",
+    "cutoff_or_threshold": "UNSELECTED",
+    "retest_interval": "UNSELECTED",
+    "occasion_count": "UNSELECTED",
+    "rater_count": "UNSELECTED",
+    "sample_size": "UNSELECTED",
+    "population": "UNSELECTED",
+    "language": "UNSELECTED",
+    "administration_mode": "UNSELECTED",
+    "accommodation": "UNSELECTED",
+    "participant_workflow": "UNSELECTED",
+    "human_procedure": "UNSELECTED"
+  },
+  "excluded_reference_material": {
+    "source_names": 0,
+    "citations": 0,
+    "urls": 0,
+    "doi_identifiers": 0,
+    "named_measurement_frameworks": 0
+  }
+}
