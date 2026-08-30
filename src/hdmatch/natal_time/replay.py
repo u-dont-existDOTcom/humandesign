@@ -1022,7 +1022,10 @@ def _verify_embedded_hash(
 
 
 def _load_json_object(path: Path) -> dict[str, Any]:
-    value = json.loads(path.read_bytes())
+    try:
+        value = json.loads(path.read_bytes())
+    except (json.JSONDecodeError, UnicodeDecodeError, OSError) as exc:
+        raise ReplayValidationError(f"invalid JSON artifact: {path}") from exc
     if not isinstance(value, dict):
         raise ReplayValidationError(f"JSON artifact is not an object: {path}")
     return cast(dict[str, Any], value)
