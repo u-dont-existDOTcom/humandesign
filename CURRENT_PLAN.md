@@ -124,6 +124,23 @@ selects the next direction only; it does not authorize questionnaire content, hu
 recruitment, scoring, chart-linked inference, cohort/budget choices, external actions, or live
 execution.
 
+ChatGPT Pro subsequently returned `OWNER DECISION REQUIRED: NO` and authorized only the
+construct-neutral Option B measurement-reliability architecture recorded in
+`docs/PRO_SUPERVISION_OPTION_B_CONTRACT_20260830.md`. The controlling correction fixes its
+acceptance total at 72; there is no requirement 73. The required independent conception was
+committed before the bounded methods scan, and its bytes remain unchanged.
+
+The authorized architecture is complete locally at implementation head
+`226b91559f41da970c9a16f79f0688bf38c35359` / tree
+`076b9cb5093a3d3c5c58a58002081c861f568d70`. It consists only of a construct-neutral contract,
+three closed synthetic-only schemas, a threat model, source/method/unresolved-decision ledgers,
+four conspicuously synthetic fixtures, test-only validators, a 72-row acceptance matrix, and a
+byte-exact artifact manifest. It selects no construct, item, questionnaire, coding category,
+coefficient, estimator, model, threshold, retest interval, occasion/coder count, population,
+language, mode, sample size, participant workflow, missing-data method, or rectification method.
+Passing therefore establishes design-contract completeness only, not empirical reliability,
+validity, Human Design correctness, or birth-time recoverability.
+
 Ranking, questionnaires, calibration execution, candidate selection, operating or abstention
 thresholds, participant-facing interpretation, relationship evidence, live records, recruitment,
 public-ledger publication, push, merge, migration, and deployment remain prohibited. Any change to
@@ -132,12 +149,13 @@ boundary semantics, or full-state identity reopens deterministic conformance.
 
 ## Current implementation priority
 
-Return Joel's Option B ruling to the same authenticated ChatGPT Pro conversation and obtain one
-bounded, design-only measurement-reliability contract before substantive work. If Pro requires a
-new owner decision, stop for Joel. Otherwise continue only within the exact authorized contract.
+Assemble checkpoint 9 from the exact local implementation/evidence head, run all required
+exact-head gates, and return the packet to the same authenticated ChatGPT Pro conversation. If Pro
+requires a new owner decision, stop for Joel. Otherwise continue only within a new explicit Pro
+ruling; the current contract authorizes no further scientific implementation after checkpoint 9.
 
-Option B authorizes only a later bounded design and supervision step, not live execution. Until
-Pro returns the next contract, no substantive scientific implementation may continue.
+Option B remains a design-only prerequisite screen. It does not authorize live execution,
+measurement content, participant software, empirical data, or progression to rectification.
 No push, PR action, merge, migration, deployment, live record, participant inference, recruitment,
 questionnaire, estimator, candidate selection, baseline execution, relationship evidence, or
 public release is authorized.
