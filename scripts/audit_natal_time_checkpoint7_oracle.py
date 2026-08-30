@@ -565,7 +565,7 @@ def _apply_replacements(source: str, replacements: object) -> str:
 
 def _run_mutation_suite(
     root: Path, *, mutated_source: str | None
-) -> tuple[int, str, str]:
+) -> tuple[int, list[str], str]:
     command = (
         sys.executable,
         "-m",
@@ -603,7 +603,14 @@ def _run_mutation_suite(
                 text=True,
             )
     combined = result.stdout + result.stderr
-    return (result.returncode, _sha256(combined.encode("utf-8")), " ".join(command))
+    failed_nodes = sorted(
+        {
+            line.removeprefix("FAILED ").split(" - ", maxsplit=1)[0]
+            for line in combined.splitlines()
+            if line.startswith("FAILED ")
+        }
+    )
+    return (result.returncode, failed_nodes, " ".join(command))
 
 
 def _mutation_report(
@@ -612,17 +619,18 @@ def _mutation_report(
     production_source = (root / PRODUCTION_PATH).read_text(encoding="utf-8")
     if production_source.encode("utf-8") != _git_file(root, source_commit, PRODUCTION_PATH):
         raise OracleAuditError("production evaluator differs from oracle audit source commit")
-    baseline_code, baseline_output_sha, command = _run_mutation_suite(
+    baseline_code, baseline_failures, command = _run_mutation_suite(
         root, mutated_source=None
     )
-    if baseline_code != 0:
+    if baseline_code != 0 or baseline_failures:
         raise OracleAuditError("mutation baseline test suite is not green")
     records: list[JsonObject] = []
     for operator in MUTATION_OPERATORS:
         mutated = _apply_replacements(production_source, operator["replacements"])
-        return_code, output_sha, mutant_command = _run_mutation_suite(
+        return_code, failure_nodes, mutant_command = _run_mutation_suite(
             root, mutated_source=mutated
         )
+        killed = return_code != 0 and bool(failure_nodes)
         records.append(
             {
                 "mutation_id": operator["mutation_id"],
@@ -634,8 +642,8 @@ def _mutation_report(
                 ),
                 "test_command": mutant_command,
                 "return_code": return_code,
-                "output_sha256": output_sha,
-                "killed": return_code != 0,
+                "failing_test_node_ids": failure_nodes,
+                "killed": killed,
             }
         )
     survivors = [item["mutation_id"] for item in records if not item["killed"]]
@@ -651,7 +659,7 @@ def _mutation_report(
             "baseline": {
                 "test_command": command,
                 "return_code": baseline_code,
-                "output_sha256": baseline_output_sha,
+                "failing_test_node_ids": [],
                 "passed": True,
             },
             "mutation_count": len(records),
