@@ -8,6 +8,14 @@ This is the frozen, synthetic-only study-design contract authorized by
 removing only its top-level `contract_sha256` field and canonicalizing the remaining object with
 sorted keys and compact JSON separators.
 
+Phase-0 correction 2.4 preserves that v1 contract and its
+`c721dcdd5ed9e144ca4795523420e226bc13dc8a739669991c365c1bb4d3f6c9` digest. Its interval,
+documentary-reference, returned-output, and metric semantics are superseded by the content-hashed
+`state/NATAL-TIME-PREINFERENCE-METRIC-SEMANTICS-V2.json` contract
+(`067417a49c158fd7d7d1d31c3b21a584c1d1259aa85d60a30e9a6d3f39976f5e`) and
+`docs/NATAL_TIME_PREINFERENCE_METRIC_SEMANTICS_V2_20260830.md`. V1 remains authoritative for
+every other study-design surface. No v1 bytes were overwritten.
+
 This contract defines evaluation objects, documentary eligibility, leakage controls,
 falsification baselines, and future measurement-development requirements. It does **not** define
 participant inference. It contains no questionnaire question, response choice, scoring key,

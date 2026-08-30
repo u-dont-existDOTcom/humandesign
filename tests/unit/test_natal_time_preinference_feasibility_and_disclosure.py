@@ -286,6 +286,17 @@ def test_unresolved_register_selects_nothing_and_preserves_owner_boundaries() ->
     participant_facing = by_decision["participant_facing_use_case_and_output"]
     assert "explicit owner choice" in participant_facing["evidence_or_authority_required"]
     assert "new Pro checkpoint" in participant_facing["evidence_or_authority_required"]
+    references = register["metric_semantics_contract_references"]
+    assert references["preserved_v1"] == {
+        "path": "state/NATAL-TIME-PREINFERENCE-DESIGN-CONTRACT.json",
+        "contract_sha256": ("c721dcdd5ed9e144ca4795523420e226bc13dc8a739669991c365c1bb4d3f6c9"),
+        "status": "preserved_and_superseded_only_for_metric_semantics",
+    }
+    assert references["operative_v2"] == {
+        "path": "state/NATAL-TIME-PREINFERENCE-METRIC-SEMANTICS-V2.json",
+        "contract_sha256": ("067417a49c158fd7d7d1d31c3b21a584c1d1259aa85d60a30e9a6d3f39976f5e"),
+        "status": "phase_0_metric_semantics_contract",
+    }
 
 
 def test_committed_machine_artifacts_match_their_builders() -> None:
@@ -335,5 +346,7 @@ def test_threat_model_addresses_every_checkpoint_threat_without_policy_selection
         "Versioned corrections",
         "cohort-aggregate",
         "No small-cell suppression threshold, privacy budget, release cadence",
+        "only a threat-model artifact",
+        "not evidence of anonymity",
     )
     assert all(phrase in text for phrase in required_phrases)

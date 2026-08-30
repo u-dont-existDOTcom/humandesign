@@ -4,6 +4,8 @@
 
 This is a design review for a possible future public-safe outcome ledger. It does not deploy, publish, or authorize a ledger. The default and only schema considered here is cohort-aggregate. The companion machine-readable artifact, `state/NATAL-TIME-PUBLIC-LEDGER-SYNTHETIC-SCHEMA.json`, is conspicuously synthetic, requires `release_authorized: false`, and is not a release policy.
 
+The release-disabled aggregate schema is only a threat-model artifact. Its existence, structural validation, and synthetic example are **not evidence of anonymity, de-identification, acceptable disclosure risk, or release safety** for any real cohort.
+
 Participant-level natal rows, chart intervals, exact birth dates or times, places, timezones, source documents, relationship identifiers, free text, and deterministic personal-data hashes are prohibited from the public surface. They remain private even if names are removed.
 
 No small-cell suppression threshold, privacy budget, release cadence, subgroup policy, withdrawal policy, or correction policy is selected in this slice.

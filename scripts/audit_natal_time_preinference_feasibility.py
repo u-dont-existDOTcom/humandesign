@@ -21,6 +21,14 @@ CREATED_AT = datetime(2026, 8, 30, 4, 15, tzinfo=UTC)
 NOMINAL_TWO_SIDED_TAIL_AREA = 0.05
 NORMAL_QUANTILE = 1.959963984540054
 SAMPLE_SIZES = (50, 100, 200, 400, 800)
+PREINFERENCE_DESIGN_CONTRACT_V1_PATH = "state/NATAL-TIME-PREINFERENCE-DESIGN-CONTRACT.json"
+PREINFERENCE_DESIGN_CONTRACT_V1_SHA256 = (
+    "c721dcdd5ed9e144ca4795523420e226bc13dc8a739669991c365c1bb4d3f6c9"
+)
+PREINFERENCE_METRIC_SEMANTICS_V2_PATH = "state/NATAL-TIME-PREINFERENCE-METRIC-SEMANTICS-V2.json"
+PREINFERENCE_METRIC_SEMANTICS_V2_SHA256 = (
+    "067417a49c158fd7d7d1d31c3b21a584c1d1259aa85d60a30e9a6d3f39976f5e"
+)
 
 
 def _round(value: float) -> float:
@@ -905,6 +913,18 @@ def build_unresolved_decision_register(repository_commit: str) -> dict[str, Any]
         "created_at_utc": CREATED_AT.isoformat().replace("+00:00", "Z"),
         "owner_decision_required_now": False,
         "status": "preinference_slice_can_continue_without_resolving_these_choices",
+        "metric_semantics_contract_references": {
+            "preserved_v1": {
+                "path": PREINFERENCE_DESIGN_CONTRACT_V1_PATH,
+                "contract_sha256": PREINFERENCE_DESIGN_CONTRACT_V1_SHA256,
+                "status": "preserved_and_superseded_only_for_metric_semantics",
+            },
+            "operative_v2": {
+                "path": PREINFERENCE_METRIC_SEMANTICS_V2_PATH,
+                "contract_sha256": PREINFERENCE_METRIC_SEMANTICS_V2_SHA256,
+                "status": "phase_0_metric_semantics_contract",
+            },
+        },
         "decisions": entries,
     }
     return _self_hash(payload, "register_sha256")
