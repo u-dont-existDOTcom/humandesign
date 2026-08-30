@@ -118,6 +118,12 @@ qualification and its nonclaims, and qualified the owner dossier as neutral and 
 recommends B — measurement reliability before rectification — as the strongest next scientific
 move, while leaving A/B/C to Joel.
 
+Joel selected **B — Measurement reliability before rectification**. The bounded owner ruling and
+its unchanged prohibitions are recorded in `docs/NATAL_TIME_OWNER_DECISION_B_20260830.md`. This
+selects the next direction only; it does not authorize questionnaire content, human data,
+recruitment, scoring, chart-linked inference, cohort/budget choices, external actions, or live
+execution.
+
 Ranking, questionnaires, calibration execution, candidate selection, operating or abstention
 thresholds, participant-facing interpretation, relationship evidence, live records, recruitment,
 public-ledger publication, push, merge, migration, and deployment remain prohibited. Any change to
@@ -126,15 +132,12 @@ boundary semantics, or full-state identity reopens deterministic conformance.
 
 ## Current implementation priority
 
-**STOP FOR JOEL'S EXPLICIT A/B/C RULING.**
+Return Joel's Option B ruling to the same authenticated ChatGPT Pro conversation and obtain one
+bounded, design-only measurement-reliability contract before substantive work. If Pro requires a
+new owner decision, stop for Joel. Otherwise continue only within the exact authorized contract.
 
-- **A — Stop and archive the deterministic foundation.**
-- **B — Measurement reliability before rectification.** Pro recommends this option.
-- **C — Blinded falsification study design.**
-
-No option begins by implication. Selecting B or C authorizes only a later bounded design and
-supervision step, not live execution. No substantive scientific implementation may continue
-without Joel's ruling.
+Option B authorizes only a later bounded design and supervision step, not live execution. Until
+Pro returns the next contract, no substantive scientific implementation may continue.
 No push, PR action, merge, migration, deployment, live record, participant inference, recruitment,
 questionnaire, estimator, candidate selection, baseline execution, relationship evidence, or
 public release is authorized.

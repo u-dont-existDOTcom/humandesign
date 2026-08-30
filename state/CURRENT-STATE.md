@@ -1,6 +1,6 @@
 # Current state
 
-- As of: `2026-08-30 18:26 GMT`
+- As of: `2026-08-30 18:29 GMT`
 - Task ID: `astrohd-relationship-continuation-20260830`
 - Goal: continue the relationship/AstroHD program under the blocking Brave + ChatGPT Pro supervision contract in `docs/RELATIONSHIP_RESEARCH_HANDOFF.md`, beginning with the separate natal-first `Find my birth-time window` priority unless supervision changes the sequence.
 - Authoritative Git baseline: `main` and `origin/main` at `b7660b8c9bcf52cbb14bc5442c13a3a8635aad32` (`Add canonical relationship research handoff and Pro supervision protocol`).
@@ -77,6 +77,7 @@
 - Checkpoint 8 completed on 2026-08-30 at accepted head `63bfb78909a97eb5b8b31efe55e065a6f78973a2` / tree `dac780d07acecc2a80adf9a180873c664b9b1b71`. Pro returned `OWNER DECISION REQUIRED: YES` and `CHECKPOINT-8 VERDICT: ACCEPTED`, identified no blocking defect, qualified the current-head closure and neutral dossier, and preserved the deterministic/Phase-0 qualification. Its exact ruling is `docs/PRO_SUPERVISION_CHECKPOINT_8_20260830.md`.
 - Exact accepted-head evidence: 417 tests passed in 175.09 seconds; strict mypy passed 132 source files; the exact 10-file Git-derived Ruff scope passed; every required artifact validator and the privacy/history/build gate passed; all 48 protected paths matched; `git diff --check` passed; and the index/worktree were clean. Fresh read-only GitHub, Railway, and runtime state remained unchanged.
 - Pro recommends B — measurement reliability before rectification — as a prerequisite screen that reduces the risk of a later blinded study measuring questionnaire noise. Joel must explicitly choose A, B, or C; no option begins by implication.
+- Joel selected B — measurement reliability before rectification. `docs/NATAL_TIME_OWNER_DECISION_B_20260830.md` records the choice and its limits. The choice authorizes return to Pro for one bounded design-only contract; it does not authorize questionnaire content, live data, recruitment, scoring, chart-linked inference, cohort/budget decisions, external actions, or execution.
 - Still prohibited: every inferential or participant-facing semantic, relationship-assisted pruning, live data, recruitment, public mounting or ledger release, migration, Railway changes, push, merge, and deploy. A later owner decision is explicitly required before questionnaire development, participant-facing use, selection of a coverage/width/abstention operating point, a human cohort size/burden/cost, ranking/exclusion, probabilistic language, public-ledger deployment, push, merge, migration, or deployment.
 - Browser-control default from the owner: prefer headless operation. When the authenticated headed Brave session is genuinely required, reuse the existing controlled window on a dedicated secondary workspace or secondary physical monitor so it does not steal focus or cover the active screen. Do not repeatedly open and close visible windows.
 - Test-efficiency telemetry is active under task ID `astrohd-relationship-20260830` in `.git/codex-test-efficiency/`.
@@ -85,4 +86,4 @@
 
 ## Next safe action
 
-Wait for Joel's explicit A/B/C ruling. Do not begin any option by implication. Even after a choice, do not push without Joel's direct authority, and do not merge, change GitHub governance, modify Railway, touch `OPENROUTER_API_KEY`, access participant records, recruit, implement questionnaire content or an estimator, execute baselines, or deploy unless a later bounded ruling explicitly authorizes that action.
+Return Joel's Option B ruling to the same authenticated ChatGPT Pro conversation and request one exact bounded design-only measurement-reliability contract. If Pro requires another owner decision, stop for Joel; otherwise continue only inside the returned contract. Do not push without Joel's direct authority, and do not merge, change GitHub governance, modify Railway, touch `OPENROUTER_API_KEY`, access participant records, recruit, implement questionnaire content or an estimator, execute baselines, or deploy unless a later bounded ruling explicitly authorizes that action.
