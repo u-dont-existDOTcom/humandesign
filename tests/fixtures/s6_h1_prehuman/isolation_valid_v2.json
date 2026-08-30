@@ -1,0 +1,36 @@
+{
+  "schema_version": "NATAL-TIME-S6-H1-ISOLATION-PROVENANCE-V2",
+  "record_class": "CONSPICUOUSLY_SYNTHETIC_S6_H1_ISOLATION_V2_FIXTURE",
+  "synthetic_isolation_id": "SYN-S6H1-ISO-1001",
+  "synthetic_candidate_id": "SYN-S6H1-CAND-1001",
+  "environment": {
+    "synthetic_environment_id": "SYN-S6H1-ENV-1001",
+    "provenance_state": "COMPLETE_SYNTHETIC_TEST_PROVENANCE"
+  },
+  "session": {
+    "synthetic_session_id": "SYN-S6H1-SES-1001",
+    "history_state": "EMPTY_SYNTHETIC_TEST_HISTORY"
+  },
+  "tool": {
+    "synthetic_tool_id": "SYN-S6H1-TOOL-1001",
+    "use_class": "NO_TOOL_USE"
+  },
+  "retrieval": {
+    "state": "DISABLED",
+    "source_count": 0
+  },
+  "actor": {
+    "synthetic_actor_id": "SYN-S6H1-ACTOR-1001",
+    "role_id": "CHART_BLIND_HUMAN_CONCEPT_AUTHOR",
+    "human_policy_state": "GOVERNED_BY_SEPARATE_EPOCH5_POLICY",
+    "content_generation_context_exposure_state": "DISCLOSED_NO_ASTROHD_CONTEXT_EXPOSURE"
+  },
+  "access": {
+    "event_state": "NO_ACCESS_EVENTS",
+    "prefreeze_content_access": false,
+    "astrohd_surface_access": false
+  },
+  "fresh_isolation_state": "ESTABLISHED_SYNTHETIC_TEST_ONLY",
+  "model_content_authorship_allowed": false,
+  "human_action_occurred": false
+}

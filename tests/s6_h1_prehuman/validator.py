@@ -11,15 +11,15 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-VALIDATOR_VERSION = "s6-h1-prehuman-synthetic-validator-v1"
+VALIDATOR_VERSION = "s6-h1-prehuman-synthetic-validator-v2"
 ROOT = Path(__file__).resolve().parents[2]
 STATE = ROOT / "state"
 FIXTURES = ROOT / "tests" / "fixtures" / "s6_h1_prehuman"
 ALLOWED_SOURCE = "CONSPICUOUSLY_SYNTHETIC_S6_H1_FIXTURE"
 
 SCHEMA_PATHS = {
-    "screening": STATE / "NATAL-TIME-S6-H1-SCREENING-METADATA-SCHEMA-V1.json",
-    "isolation": STATE / "NATAL-TIME-S6-H1-ISOLATION-PROVENANCE-SCHEMA-V1.json",
+    "screening": STATE / "NATAL-TIME-S6-H1-SCREENING-METADATA-SCHEMA-V2.json",
+    "isolation": STATE / "NATAL-TIME-S6-H1-ISOLATION-PROVENANCE-SCHEMA-V2.json",
 }
 
 
@@ -137,35 +137,181 @@ def _check_synthetic_boundary(record: dict[str, Any], source: str) -> None:
 
 
 def _check_screening_semantics(record: dict[str, Any]) -> None:
-    exposures = set(record["exposure_states"].values())
-    conflict = record["conflict_provenance"]
-    eligibility = record["eligibility_state"]
-    if (
-        "DISCLOSED_EXPOSURE_CONTAMINATED" in exposures
-        and eligibility != "CONTAMINATED_INELIGIBLE"
-    ):
+    """Enforce owner-policy consistency without classifying any real person."""
+
+    provenance = set(record["exposure_provenance"].values())
+    familiarity = record["familiarity"]
+    familiarity_values = set(familiarity.values())
+    evidence_state = record["evidence_state"]
+    process_state = record["process_state"]
+    outcome = record["substantive_outcome"]
+    assignment = record["role_assignment_eligibility"]
+
+    has_unknown = (
+        "UNKNOWN" in provenance
+        or record["exposure_depth"] == "UNKNOWN"
+        or "UNKNOWN" in familiarity_values
+        or record["self_concept_integration"] == "UNKNOWN"
+        or record["intentional_derivation_risk"] == "UNKNOWN"
+    )
+    has_conflict = (
+        "CONFLICTING" in provenance
+        or record["exposure_depth"] == "CONFLICTING"
+        or "CONFLICTING" in familiarity_values
+        or record["self_concept_integration"] == "CONFLICTING"
+        or record["intentional_derivation_risk"] == "CONFLICTING"
+    )
+
+    if evidence_state == "INCOMPLETE":
+        if not has_unknown or has_conflict:
+            raise ValidationFailure(
+                "S6H1_EVIDENCE_STATE_INCONSISTENT",
+                "$.evidence_state",
+                "incomplete evidence must contain unknown and no conflict",
+            )
+        if process_state != "EVIDENCE_INCOMPLETE" or outcome is not None:
+            raise ValidationFailure(
+                "S6H1_INCOMPLETE_EVIDENCE_HAS_OUTCOME",
+                "$.substantive_outcome",
+                "incomplete evidence permits no substantive outcome",
+            )
+        if assignment != "BLOCKED_NO_SUBSTANTIVE_OUTCOME":
+            raise ValidationFailure(
+                "S6H1_INCOMPLETE_EVIDENCE_ROLE_ASSIGNMENT",
+                "$.role_assignment_eligibility",
+                "incomplete evidence blocks clean-role assignment",
+            )
+        return
+
+    if evidence_state == "CONFLICTING":
+        if not has_conflict:
+            raise ValidationFailure(
+                "S6H1_EVIDENCE_STATE_INCONSISTENT",
+                "$.evidence_state",
+                "conflicting evidence must contain a conflict",
+            )
+        if process_state != "EVIDENCE_CONFLICT" or outcome is not None:
+            raise ValidationFailure(
+                "S6H1_CONFLICTING_EVIDENCE_HAS_OUTCOME",
+                "$.substantive_outcome",
+                "conflicting evidence permits no substantive outcome",
+            )
+        if assignment != "BLOCKED_NO_SUBSTANTIVE_OUTCOME":
+            raise ValidationFailure(
+                "S6H1_CONFLICTING_EVIDENCE_ROLE_ASSIGNMENT",
+                "$.role_assignment_eligibility",
+                "conflicting evidence blocks clean-role assignment",
+            )
+        return
+
+    if has_unknown or has_conflict:
         raise ValidationFailure(
-            "S6H1_CONTAMINATION_NOT_INELIGIBLE",
-            "$.eligibility_state",
-            "positive exposure must be ineligible",
+            "S6H1_COMPLETE_EVIDENCE_CONTAINS_GAP",
+            "$.evidence_state",
+            "complete evidence cannot contain unknown or conflicting dimensions",
         )
-    if (
-        "NOT_ASSESSED_FAIL_CLOSED" in exposures
-        or conflict == "UNKNOWN_FAIL_CLOSED"
-    ) and eligibility != "NOT_ASSESSED_FAIL_CLOSED":
+
+    if outcome is None:
+        if process_state not in {"NOT_ASSESSED", "DECISION_PENDING"}:
+            raise ValidationFailure(
+                "S6H1_PROCESS_OUTCOME_INCONSISTENT",
+                "$.process_state",
+                "no outcome requires an unresolved process state",
+            )
+        if assignment != "BLOCKED_NO_SUBSTANTIVE_OUTCOME":
+            raise ValidationFailure(
+                "S6H1_NO_OUTCOME_ROLE_ASSIGNMENT",
+                "$.role_assignment_eligibility",
+                "no substantive outcome blocks clean-role assignment",
+            )
+        return
+
+    if process_state != "DECISION_RECORDED":
         raise ValidationFailure(
-            "S6H1_UNKNOWN_NOT_FAIL_CLOSED",
-            "$.eligibility_state",
-            "unknown exposure or conflict must fail closed",
+            "S6H1_PROCESS_OUTCOME_INCONSISTENT",
+            "$.process_state",
+            "a substantive outcome requires a recorded synthetic policy decision",
         )
-    if (
-        conflict == "DISCLOSED_CONFLICT_CONTAMINATED"
-        and eligibility != "CONTAMINATED_INELIGIBLE"
-    ):
+
+    ineligibility_basis = (
+        record["self_concept_integration"]
+        == "IDENTITY_DEFINING_OR_COMPREHENSIVE_ESTABLISHED"
+        or record["intentional_derivation_risk"]
+        == "INTENTIONAL_DERIVATION_ESTABLISHED"
+    )
+    substantial_knowledge = (
+        familiarity["semantic_knowledge"] == "SUBSTANTIAL_KNOWLEDGE_ESTABLISHED"
+        or familiarity["technical_knowledge"] == "SUBSTANTIAL_KNOWLEDGE_ESTABLISHED"
+        or familiarity["ontology_reproduction_capability"]
+        == "SUBSTANTIAL_CAPABILITY_ESTABLISHED"
+    )
+
+    if ineligibility_basis:
+        if outcome != "INELIGIBLE_CLEAN_H1_AUTHOR":
+            raise ValidationFailure(
+                "S6H1_INELIGIBILITY_BASIS_OUTCOME_MISMATCH",
+                "$.substantive_outcome",
+                "identity-defining integration or intentional derivation requires "
+                "the clean-role ineligibility outcome",
+            )
+        if assignment != "BLOCKED_INELIGIBLE_CLEAN_H1_AUTHOR":
+            raise ValidationFailure(
+                "S6H1_INELIGIBLE_ROLE_ASSIGNMENT",
+                "$.role_assignment_eligibility",
+                "clean-role ineligibility cannot authorize pre-freeze authorship",
+            )
+        return
+
+    if substantial_knowledge:
+        if outcome == "ELIGIBLE":
+            raise ValidationFailure(
+                "S6H1_SUBSTANTIAL_KNOWLEDGE_REQUIRES_ADJUDICATION",
+                "$.substantive_outcome",
+                "substantial knowledge is not structurally clean",
+            )
+        if outcome == "INELIGIBLE_CLEAN_H1_AUTHOR":
+            raise ValidationFailure(
+                "S6H1_SUBSTANTIAL_KNOWLEDGE_NOT_AUTOMATIC_INELIGIBILITY",
+                "$.substantive_outcome",
+                "substantial knowledge alone is not automatic ineligibility",
+            )
+        if outcome != "REQUIRES_BLIND_ADJUDICATION":
+            raise ValidationFailure(
+                "S6H1_SUBSTANTIAL_KNOWLEDGE_REQUIRES_ADJUDICATION",
+                "$.substantive_outcome",
+                "substantial knowledge requires blind adjudication",
+            )
+        if assignment != "BLOCKED_REQUIRES_BLIND_ADJUDICATION":
+            raise ValidationFailure(
+                "S6H1_ADJUDICATION_CANNOT_AUTHOR_PREFREEZE",
+                "$.role_assignment_eligibility",
+                "pending blind adjudication blocks pre-freeze authorship",
+            )
+        return
+
+    if outcome == "INELIGIBLE_CLEAN_H1_AUTHOR":
         raise ValidationFailure(
-            "S6H1_CONFLICT_NOT_INELIGIBLE",
-            "$.eligibility_state",
-            "disclosed conflict must be ineligible",
+            "S6H1_PRIOR_EXPOSURE_NOT_AUTOMATIC_INELIGIBILITY",
+            "$.substantive_outcome",
+            "no identity-defining or intentional-derivation basis is recorded",
+        )
+    if outcome == "REQUIRES_BLIND_ADJUDICATION":
+        raise ValidationFailure(
+            "S6H1_ADJUDICATION_WITHOUT_SUBSTANTIAL_KNOWLEDGE",
+            "$.substantive_outcome",
+            "no substantial semantic or technical familiarity is recorded",
+        )
+    if record["exposure_depth"] != "NONE_OR_INCIDENTAL_OR_SHALLOW_ESTABLISHED":
+        raise ValidationFailure(
+            "S6H1_ELIGIBLE_EXPOSURE_DEPTH_INCONSISTENT",
+            "$.exposure_depth",
+            "eligible requires complete evidence of no more than incidental or shallow exposure",
+        )
+    if assignment != "STRUCTURALLY_CONSISTENT_BUT_NOT_AUTHORIZED":
+        raise ValidationFailure(
+            "S6H1_ELIGIBLE_ROLE_STATE_INCONSISTENT",
+            "$.role_assignment_eligibility",
+            "eligible is only structurally consistent and does not authorize a real assignment",
         )
 
 
@@ -176,7 +322,10 @@ def _check_isolation_semantics(record: dict[str, Any]) -> None:
         record["environment"]["provenance_state"] == "COMPLETE_SYNTHETIC_TEST_PROVENANCE",
         record["session"]["history_state"] == "EMPTY_SYNTHETIC_TEST_HISTORY",
         record["retrieval"]["state"] == "DISABLED",
-        record["actor"]["exposure_state"] == "DISCLOSED_NO_EXPOSURE",
+        record["actor"]["human_policy_state"]
+        == "GOVERNED_BY_SEPARATE_EPOCH5_POLICY",
+        record["actor"]["content_generation_context_exposure_state"]
+        == "DISCLOSED_NO_ASTROHD_CONTEXT_EXPOSURE",
         record["access"]["event_state"] == "NO_ACCESS_EVENTS",
     ]
     if not all(checks):

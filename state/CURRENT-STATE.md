@@ -1,6 +1,6 @@
 # Current state
 
-- As of: `2026-08-30 23:00 GMT`
+- As of: `2026-08-30 23:54 GMT`
 - Task ID: `astrohd-relationship-continuation-20260830`
 - Goal: continue the relationship/AstroHD program under the blocking Brave + ChatGPT Pro supervision contract in `docs/RELATIONSHIP_RESEARCH_HANDOFF.md`, beginning with the separate natal-first `Find my birth-time window` priority unless supervision changes the sequence.
 - Authoritative Git baseline: `main` and `origin/main` at `b7660b8c9bcf52cbb14bc5442c13a3a8635aad32` (`Add canonical relationship research handoff and Pro supervision protocol`).
@@ -101,20 +101,15 @@
 
 ## Next safe action
 
-The checkpoint-11 owner gate is resolved by the direct epoch-5 ruling. Prior exposure alone is
-permitted. The clean-H1 policy now targets semantic/self-concept contamination with three statuses:
-`ELIGIBLE`, `REQUIRES_BLIND_ADJUDICATION`, and `INELIGIBLE_CLEAN_H1_AUTHOR`. Deep semantic or
-technical familiarity requires blind adjudication regardless of belief; identity-defining or
-intentionally theory-derived framing is ineligible for clean pre-freeze authorship. The verbatim
-source, source receipt, normalized ruling, and current reconciliation are:
+Pro ruled `OWNER DECISION REQUIRED: NO` and authorized one bounded checkpoint-11 epoch-5 policy
+reconciliation. The local metadata-only and synthetic-test-only implementation is complete. It
+preserves V1 as the rejected blanket-exposure candidate and activates additive V2 policy,
+workflow, role/access, screening/isolation schema, threat, unresolved-decision, reconciliation,
+assurance, acceptance-matrix, and manifest records. The validator checks only logical consistency
+of conspicuously synthetic records; 28 hostile cases cover the complete Pro-required corpus.
 
-- `state/NATAL-TIME-OWNER-OUTCOME-SOURCE-EPOCH5-20260830.md`;
-- `state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH5-V1.json`;
-- `docs/NATAL_TIME_OWNER_DECISION_H1_CONTAMINATION_POLICY_20260830.md`; and
-- `state/NATAL-TIME-S6-H1-OBJECTIVE-RECONCILIATION-V2.json`.
-
-Commit the owner-correction record, then return the self-contained epoch-5 packet to the existing
-task Pro supervisor. Do not remediate `S6H1-30` or begin any next child, human workflow/contact,
-human-facing screen, construct-specific search, construct or mapping content, push, merge, GitHub
-governance change, Railway change, secret access, recruitment, migration, deployment, publication,
-or release until the subsequent Pro ruling authorizes it.
+Run the complete exact-head gates from the committed implementation evidence head, then return the
+self-contained checkpoint-11 packet to the same task Pro supervisor. Do not begin any next child,
+human workflow/contact or assessment, human-facing screen, construct-specific search, construct or
+mapping content, push, merge, GitHub governance change, Railway change, secret access, recruitment,
+migration, deployment, publication, or release unless the subsequent Pro ruling authorizes it.

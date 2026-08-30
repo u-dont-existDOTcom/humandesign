@@ -1,0 +1,422 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_id": "natal-time-s6-h1-prehuman-methods-decision-ledger-v2",
+  "status": "DIRECT_OWNER_POLICY_RECONCILIATION_NO_NEW_SCAN",
+  "source_ledger": "state/NATAL-TIME-S6-H1-PREHUMAN-SOURCE-LEDGER-V1.json",
+  "allowed_classifications": [
+    "REUSE_DIRECTLY",
+    "ADAPT",
+    "COMPOSE",
+    "BASELINE_OR_DIAGNOSTIC_ONLY",
+    "INCOMPATIBLE",
+    "UNRESOLVED",
+    "REQUIRES_PRO_REVIEW",
+    "REQUIRES_OWNER_DECISION"
+  ],
+  "decisions": [
+    {
+      "decision_id": "MD-01",
+      "method_family": "role_responsibility_delegation_and_oversight",
+      "classification": "REUSE_DIRECTLY",
+      "source_ids": [
+        "S01",
+        "S02",
+        "S14",
+        "S17"
+      ],
+      "adopted_constraint": "Document logically distinct roles, assigned responsibility, delegation, and oversight without assigning a real person.",
+      "not_selected": [
+        "person",
+        "organization",
+        "staffing",
+        "delegation_instance"
+      ]
+    },
+    {
+      "decision_id": "MD-02",
+      "method_family": "qualification_and_duty_matched_training",
+      "classification": "REUSE_DIRECTLY",
+      "source_ids": [
+        "S01",
+        "S14"
+      ],
+      "adopted_constraint": "A future role assignment requires documented qualification and training proportional to the authorized duties.",
+      "not_selected": [
+        "qualification_threshold",
+        "training_program",
+        "person"
+      ]
+    },
+    {
+      "decision_id": "MD-03",
+      "method_family": "masking_blinding_and_unblinding_control",
+      "classification": "ADAPT",
+      "source_ids": [
+        "S01",
+        "S02",
+        "S03",
+        "S17"
+      ],
+      "adopted_constraint": "Represent role-aware access, blinding state, and append-only premature-access receipts; unknown, incomplete, or conflicting human evidence blocks clean-role assignment without issuing a substantive eligibility outcome.",
+      "not_selected": [
+        "human_facing_question",
+        "evidence_standard",
+        "threshold",
+        "adjudicator",
+        "exception"
+      ]
+    },
+    {
+      "decision_id": "MD-04",
+      "method_family": "separation_of_duties_least_privilege_and_access_logging",
+      "classification": "COMPOSE",
+      "source_ids": [
+        "S03",
+        "S13"
+      ],
+      "adopted_constraint": "Combine explicit separated duties, minimum access, protected event histories, and complete actor/time/source/outcome metadata.",
+      "not_selected": [
+        "live_system",
+        "account",
+        "credential",
+        "retention_period"
+      ]
+    },
+    {
+      "decision_id": "MD-05",
+      "method_family": "immutable_preregistration_and_conception_before_search",
+      "classification": "ADAPT",
+      "source_ids": [
+        "S05",
+        "S08",
+        "S17"
+      ],
+      "adopted_constraint": "Freeze a content identity before outcome-relevant search and represent later changes as separate versions, not edits in place.",
+      "not_selected": [
+        "external_registry",
+        "construct_query",
+        "content"
+      ]
+    },
+    {
+      "decision_id": "MD-06",
+      "method_family": "protocol_deviation_and_amendment_control",
+      "classification": "REUSE_DIRECTLY",
+      "source_ids": [
+        "S01",
+        "S06",
+        "S07"
+      ],
+      "adopted_constraint": "Record the nature, timing, reason, decision authority, exposure state, and independent review status of every material deviation.",
+      "not_selected": [
+        "amendment",
+        "decision_authority_person",
+        "reviewer_person"
+      ]
+    },
+    {
+      "decision_id": "MD-07",
+      "method_family": "conflict_disclosure_prior_familiarity_and_recusal",
+      "classification": "ADAPT",
+      "source_ids": [
+        "S10",
+        "S16"
+      ],
+      "adopted_constraint": "Record prior and connected exposure as provenance and contamination evidence. Human eligibility follows the epoch-5 three-outcome owner policy; substantial semantic or technical familiarity requires blind adjudication absent a separate ineligibility basis.",
+      "not_selected": [
+        "human_facing_question",
+        "evidence_standard",
+        "threshold",
+        "adjudicator",
+        "exception",
+        "real_candidate"
+      ]
+    },
+    {
+      "decision_id": "MD-08",
+      "method_family": "independent_adjudication",
+      "classification": "COMPOSE",
+      "source_ids": [
+        "S07",
+        "S10",
+        "S14",
+        "S16"
+      ],
+      "adopted_constraint": "Material disputes and substantive amendments require a logically independent evaluator without unresolved conflicts or content influence.",
+      "not_selected": [
+        "adjudicator",
+        "panel_size",
+        "voting_rule",
+        "appeal_rule"
+      ]
+    },
+    {
+      "decision_id": "MD-09",
+      "method_family": "privacy_by_design_data_minimization_and_controlled_access",
+      "classification": "ADAPT",
+      "source_ids": [
+        "S11",
+        "S12",
+        "S13"
+      ],
+      "adopted_constraint": "Collect the minimum authorized metadata, assess privacy prospectively, and restrict access even when identifiers are opaque.",
+      "not_selected": [
+        "human_data",
+        "retention_period",
+        "legal_basis",
+        "sharing_destination"
+      ]
+    },
+    {
+      "decision_id": "MD-10",
+      "method_family": "content_and_record_custody",
+      "classification": "ADAPT",
+      "source_ids": [
+        "S03",
+        "S11",
+        "S16"
+      ],
+      "adopted_constraint": "Separate custody from authorship and review; use inventory, secure sequestration, supervised access, digests, and append-only events.",
+      "not_selected": [
+        "custodian_person",
+        "storage_system",
+        "credential",
+        "content"
+      ]
+    },
+    {
+      "decision_id": "MD-11",
+      "method_family": "recruitment_consent_compensation_withdrawal_governance",
+      "classification": "BASELINE_OR_DIAGNOSTIC_ONLY",
+      "source_ids": [
+        "S01",
+        "S09",
+        "S10"
+      ],
+      "adopted_constraint": "Expose unresolved owner decisions about voluntariness, understandable consent, undue influence, fair payment, partial payment, withdrawal, and role conflicts without drafting text or taking human action.",
+      "not_selected": [
+        "recruitment_route",
+        "consent_text",
+        "compensation",
+        "burden",
+        "withdrawal_rule"
+      ]
+    },
+    {
+      "decision_id": "MD-12",
+      "method_family": "AI_tool_session_and_retrieval_provenance",
+      "classification": "ADAPT",
+      "source_ids": [
+        "S04",
+        "S14",
+        "S15"
+      ],
+      "adopted_constraint": "Record actor, tool, model, session, retrieval, source, purpose, input class, output class, and access provenance for any future non-content tool use; models cannot author or revise construct content.",
+      "not_selected": [
+        "tool",
+        "model",
+        "session",
+        "retrieval",
+        "workflow"
+      ]
+    },
+    {
+      "decision_id": "MD-13",
+      "method_family": "null_result_preservation_and_outcome_driven_revision_prevention",
+      "classification": "COMPOSE",
+      "source_ids": [
+        "S05",
+        "S06",
+        "S07",
+        "S08",
+        "S17"
+      ],
+      "adopted_constraint": "Preserve original freezes, results, deviations, and superseding exploratory versions; null, weak, unstable, or nonreplicating outcomes cannot repair the original in place.",
+      "not_selected": [
+        "outcome",
+        "threshold",
+        "retry",
+        "replacement",
+        "progression_rule"
+      ]
+    },
+    {
+      "decision_id": "MD-14",
+      "method_family": "astrohd_specific_content_firewall_and_mapping_order",
+      "classification": "COMPOSE",
+      "source_ids": [
+        "S03",
+        "S04",
+        "S05",
+        "S13"
+      ],
+      "adopted_constraint": "Keep pre-freeze content outside AstroHD-exposed repository and contexts, freeze independent conception before specific search, and keep mapping later, separate, and closed.",
+      "not_selected": [
+        "construct",
+        "content",
+        "specific_search",
+        "mapping_question",
+        "mapping_method"
+      ]
+    },
+    {
+      "decision_id": "MD-15",
+      "method_family": "astrohd_exposed_nonhuman_content_generation_and_human_prior_exposure_policy",
+      "classification": "ADAPT",
+      "source_ids": [
+        "S01",
+        "S03",
+        "S13"
+      ],
+      "adopted_constraint": "AstroHD-exposed repositories, conversations, retrieval contexts, models, and model sessions remain absolutely ineligible to originate or revise chart-blind content. Human prior exposure alone is not automatic exclusion and is governed by the epoch-5 semantic/self-concept contamination policy.",
+      "not_selected": [
+        "human_facing_question",
+        "evidence_standard",
+        "threshold",
+        "adjudicator",
+        "exception"
+      ]
+    },
+    {
+      "decision_id": "MD-16",
+      "method_family": "human_program_choices_and_progression_authority",
+      "classification": "REQUIRES_OWNER_DECISION",
+      "source_ids": [
+        "S09",
+        "S10",
+        "S11",
+        "S14"
+      ],
+      "adopted_constraint": "Keep all human, population, recruitment, compensation, burden, custody, failure, reliability, and mapping progression choices explicitly unselected.",
+      "not_selected": [
+        "all_owner_dossier_choices"
+      ]
+    }
+  ],
+  "independent_insight_mapping": [
+    {
+      "insight_index": 1,
+      "post_scan_status": "ADAPTED_AND_COMPOSED",
+      "decision_ids": [
+        "MD-03",
+        "MD-04",
+        "MD-10",
+        "MD-12"
+      ]
+    },
+    {
+      "insight_index": 2,
+      "post_scan_status": "ADAPTED",
+      "decision_ids": [
+        "MD-03",
+        "MD-07",
+        "MD-12"
+      ]
+    },
+    {
+      "insight_index": 3,
+      "post_scan_status": "REUSED_AND_ADAPTED",
+      "decision_ids": [
+        "MD-05",
+        "MD-06",
+        "MD-14"
+      ]
+    },
+    {
+      "insight_index": 4,
+      "post_scan_status": "ADAPTED",
+      "decision_ids": [
+        "MD-01",
+        "MD-12",
+        "MD-15"
+      ]
+    },
+    {
+      "insight_index": 5,
+      "post_scan_status": "ADAPTED",
+      "decision_ids": [
+        "MD-04",
+        "MD-09",
+        "MD-10"
+      ]
+    },
+    {
+      "insight_index": 6,
+      "post_scan_status": "COMPOSED",
+      "decision_ids": [
+        "MD-05",
+        "MD-06",
+        "MD-13"
+      ]
+    },
+    {
+      "insight_index": 7,
+      "post_scan_status": "COMPOSED",
+      "decision_ids": [
+        "MD-13",
+        "MD-14"
+      ]
+    },
+    {
+      "insight_index": 8,
+      "post_scan_status": "PRESERVED_OWNER_GATED",
+      "decision_ids": [
+        "MD-16"
+      ]
+    },
+    {
+      "insight_index": 9,
+      "post_scan_status": "PRESERVED_AS_LIMIT",
+      "decision_ids": [
+        "MD-02",
+        "MD-08",
+        "MD-13"
+      ]
+    }
+  ],
+  "superseded_independent_insights": [],
+  "strongest_external_baseline": "Compose current role, training, masking, least-privilege, audit, immutable-registration, deviation, privacy, custody, conflict, human-protection, and provenance standards; keep the AstroHD-specific information firewall explicit as a project adaptation.",
+  "bespoke_remainder": [
+    "epoch5_semantic_self_concept_contamination_metadata",
+    "human_only_construct_content_authorship",
+    "absolute_nonhuman_astrohd_context_exclusion",
+    "pre_freeze_content_escrow_outside_exposed_surfaces",
+    "separately_closed_later_astrohd_mapping_lane"
+  ],
+  "human_action_authorized": false,
+  "construct_content_created": false,
+  "construct_specific_search_executed": false,
+  "mapping_content_created": false,
+  "owner_choice_selected": false,
+  "primary_traceability_requirement_id": "S6H1-14",
+  "supersedes": {
+    "path": "state/NATAL-TIME-S6-H1-PREHUMAN-METHODS-DECISION-LEDGER-V1.json",
+    "sha256": "6fadbb0c000cba0481bc88d5fda37fadecea0d19df657d123ebb3b241fce2369"
+  },
+  "owner_policy_binding": {
+    "owner_outcome_epoch": 5,
+    "owner_source": {
+      "path": "state/NATAL-TIME-OWNER-OUTCOME-SOURCE-EPOCH5-20260830.md",
+      "sha256": "ae31f03e2d2e83373be50c451f0bf998175a64ed83811570e613112035ebd131"
+    },
+    "normalized_decision": {
+      "path": "docs/NATAL_TIME_OWNER_DECISION_H1_CONTAMINATION_POLICY_20260830.md",
+      "sha256": "9016c1965ce60c198f10ebb56339471f9b3fd46e3974bce29dec5c7944417be6"
+    },
+    "owner_source_receipt": {
+      "path": "state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH5-V1.json",
+      "sha256": "332c48e97802617d1867dd769a7fa9d866b2ca8e864ace2ff9db5cb36124bc98",
+      "capability": "OWNER_REATTESTED",
+      "scope": "EPOCH5_H1_PRIOR_EXPOSURE_AND_SEMANTIC_CONTAMINATION_POLICY_ONLY"
+    },
+    "owner_outcome": {
+      "path": "state/NATAL-TIME-OWNER-OUTCOME-EPOCH5-V1.json",
+      "sha256": "02f199808dbb50bfd31a3bb7cc29a84f7b904caaba79d6589e7e172d9ed63fa2"
+    },
+    "pro_ruling": {
+      "path": "state/NATAL-TIME-S6-H1-CHECKPOINT11-PRO-RULING-V2.json",
+      "sha256": "ff16efda132a2ae99fbc6b603609dd368d131a2b43e03e12db3bc74f0e2f4e1c"
+    }
+  },
+  "literature_scan_for_epoch5_repair": "NOT_REQUIRED_NOT_AUTHORIZED_BY_PRO"
+}

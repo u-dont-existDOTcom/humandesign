@@ -1,0 +1,140 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-s6-h1-prior-exposure-policy-v1",
+  "status": "OWNER_RESOLVED_METADATA_ONLY_NO_HUMAN_ASSESSMENT",
+  "primary_traceability_requirement_id": "S6H1-30",
+  "supersedes_policy_rules_in": [
+    {
+      "path": "state/NATAL-TIME-S6-H1-WORKFLOW-CONTRACT-V1.json",
+      "sha256": "798e93e7cd6cff5506dbacf37419d99601eb00264f3b230d96525407d88408ec"
+    },
+    {
+      "path": "state/NATAL-TIME-S6-H1-ROLE-ACCESS-MATRIX-V1.json",
+      "sha256": "622c31264b153eaa80dedd44939be2b2d2a7090c22752d264aaf8c7ced696106"
+    },
+    {
+      "path": "state/NATAL-TIME-S6-H1-SCREENING-METADATA-SCHEMA-V1.json",
+      "sha256": "6e18708d85f4d969a276f8f04a4ba04fee6dcbb9bc805be16b0f3d57e2d4a157"
+    },
+    {
+      "path": "state/NATAL-TIME-S6-H1-THREAT-MODEL-V1.json",
+      "sha256": "aaefeb5193876935d99097abe187091321d060b4740c3f624efd3ba6868c457b"
+    },
+    {
+      "path": "state/NATAL-TIME-S6-H1-PREHUMAN-METHODS-DECISION-LEDGER-V1.json",
+      "sha256": "6fadbb0c000cba0481bc88d5fda37fadecea0d19df657d123ebb3b241fce2369"
+    }
+  ],
+  "owner_policy_binding": {
+    "owner_outcome_epoch": 5,
+    "owner_source": {
+      "path": "state/NATAL-TIME-OWNER-OUTCOME-SOURCE-EPOCH5-20260830.md",
+      "sha256": "ae31f03e2d2e83373be50c451f0bf998175a64ed83811570e613112035ebd131"
+    },
+    "normalized_decision": {
+      "path": "docs/NATAL_TIME_OWNER_DECISION_H1_CONTAMINATION_POLICY_20260830.md",
+      "sha256": "9016c1965ce60c198f10ebb56339471f9b3fd46e3974bce29dec5c7944417be6"
+    },
+    "owner_source_receipt": {
+      "path": "state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH5-V1.json",
+      "sha256": "332c48e97802617d1867dd769a7fa9d866b2ca8e864ace2ff9db5cb36124bc98",
+      "capability": "OWNER_REATTESTED",
+      "scope": "EPOCH5_H1_PRIOR_EXPOSURE_AND_SEMANTIC_CONTAMINATION_POLICY_ONLY"
+    },
+    "owner_outcome": {
+      "path": "state/NATAL-TIME-OWNER-OUTCOME-EPOCH5-V1.json",
+      "sha256": "02f199808dbb50bfd31a3bb7cc29a84f7b904caaba79d6589e7e172d9ed63fa2"
+    },
+    "pro_ruling": {
+      "path": "state/NATAL-TIME-S6-H1-CHECKPOINT11-PRO-RULING-V2.json",
+      "sha256": "ff16efda132a2ae99fbc6b603609dd368d131a2b43e03e12db3bc74f0e2f4e1c"
+    }
+  },
+  "scope": {
+    "human_candidate_prior_exposure_policy": "CONTROLLING",
+    "nonhuman_content_generation_context_policy": "CONTROLLING_ABSOLUTE_EXCLUSION",
+    "human_facing_screening_language": "NOT_AUTHORIZED",
+    "real_person_assessment_or_assignment": "NOT_AUTHORIZED",
+    "construct_content_or_mapping": "NOT_AUTHORIZED"
+  },
+  "substantive_outcomes": [
+    {
+      "id": "ELIGIBLE",
+      "meaning": "Structurally consistent only when future complete nonconflicting evidence establishes no more than incidental or shallow exposure, non-identity-defining self-concept, no intentional derivation, and no substantial ontology-reproducing familiarity.",
+      "clean_prefreeze_authorship": "STRUCTURALLY_PERMITTED_ONLY_AFTER_SEPARATE_FUTURE_AUTHORIZATION"
+    },
+    {
+      "id": "REQUIRES_BLIND_ADJUDICATION",
+      "meaning": "Substantial semantic, technical, or ontology-reproducing familiarity is established without a separate identity-defining or intentional-derivation basis.",
+      "clean_prefreeze_authorship": "BLOCKED_UNRESOLVED"
+    },
+    {
+      "id": "INELIGIBLE_CLEAN_H1_AUTHOR",
+      "meaning": "Identity-defining or comprehensive self-concept integration, or intentional derivation from HD or astrology, is established.",
+      "clean_prefreeze_authorship": "BLOCKED"
+    }
+  ],
+  "process_states": [
+    "NOT_ASSESSED",
+    "EVIDENCE_INCOMPLETE",
+    "EVIDENCE_CONFLICT",
+    "DECISION_PENDING",
+    "DECISION_RECORDED"
+  ],
+  "evidence_dimensions": [
+    "exposure_provenance",
+    "exposure_depth",
+    "semantic_familiarity",
+    "technical_familiarity",
+    "ontology_reproduction_capability",
+    "self_concept_integration",
+    "intentional_derivation_risk",
+    "evidence_completeness",
+    "evidence_conflict",
+    "decision_provenance",
+    "adjudication_requirement",
+    "role_assignment_eligibility"
+  ],
+  "invalid_independent_decision_bases": [
+    "belief",
+    "skepticism",
+    "reported_accuracy",
+    "reported_mismatch",
+    "curiosity",
+    "perceived_usefulness",
+    "product_interest",
+    "absence_of_known_exposure_record"
+  ],
+  "consistency_constraints": [
+    "PRIOR_EXPOSURE_ALONE_NEVER_DETERMINES_A_SUBSTANTIVE_OUTCOME",
+    "UNKNOWN_INCOMPLETE_OR_CONFLICTING_EVIDENCE_YIELDS_NO_SUBSTANTIVE_OUTCOME_AND_BLOCKS_CLEAN_ROLE_ASSIGNMENT",
+    "SUBSTANTIAL_KNOWLEDGE_WITHOUT_SEPARATE_INELIGIBILITY_BASIS_IS_CONSISTENT_ONLY_WITH_REQUIRES_BLIND_ADJUDICATION",
+    "IDENTITY_DEFINING_SELF_CONCEPT_OR_INTENTIONAL_DERIVATION_IS_CONSISTENT_ONLY_WITH_INELIGIBLE_CLEAN_H1_AUTHOR",
+    "ELIGIBLE_REQUIRES_COMPLETE_NONCONFLICTING_EVIDENCE_AND_CANNOT_BE_INFERRED_FROM_MISSING_HISTORY",
+    "REQUIRES_BLIND_ADJUDICATION_CANNOT_AUTHOR_OR_REVISE_THE_CLEAN_PREFREEZE_PACKAGE",
+    "NO_ADJUDICATION_RESULT_EXISTS_WITHOUT_A_SEPARATELY_AUTHORIZED_RECEIPT",
+    "ASTROHD_EXPOSED_REPOSITORY_CONVERSATION_RETRIEVAL_OR_MODEL_CONTEXT_CANNOT_ORIGINATE_OR_REVISE_CHART_BLIND_CONTENT"
+  ],
+  "future_role_boundary": {
+    "postfreeze_adversarial_or_comparison_role_possible": true,
+    "separate_authorization_required": true,
+    "may_shape_clean_prefreeze_package": false
+  },
+  "mapping_boundary": {
+    "lane_state": "CLOSED_NOT_AUTHORIZED",
+    "independently_frozen_future_lane_required": true,
+    "null_weak_unstable_or_nonreplicating_result_admissible": true,
+    "in_place_construct_repair_authorized": false
+  },
+  "unresolved": [
+    "human_facing_questions",
+    "evidence_standard",
+    "qualitative_or_quantitative_threshold",
+    "adjudicator",
+    "adjudication_procedure",
+    "exception_process",
+    "population",
+    "recruitment",
+    "assignment"
+  ]
+}

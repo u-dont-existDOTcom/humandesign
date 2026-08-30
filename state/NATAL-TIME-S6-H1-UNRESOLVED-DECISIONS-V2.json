@@ -1,0 +1,136 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_id": "natal-time-s6-h1-unresolved-decisions-v2",
+  "status": "EPOCH5_POLICY_RESOLVED_REMAINING_HUMAN_PROGRAM_CHOICES_UNSELECTED",
+  "selection_count": 1,
+  "decisions": [
+    {
+      "decision_id": "OD-01",
+      "category": "sufficient_chart_blindness_definition_and_evidence",
+      "status": "UNSELECTED"
+    },
+    {
+      "decision_id": "OD-02",
+      "category": "prior_exposure_semantic_and_self_concept_contamination_policy",
+      "status": "RESOLVED_BOUNDED_OWNER_POLICY_EPOCH5",
+      "resolution": "Three substantive outcomes; prior exposure alone is not automatic exclusion; substantial semantic or technical familiarity requires blind adjudication absent a separate ineligibility basis."
+    },
+    {
+      "decision_id": "OD-03",
+      "category": "author_count_independence_adjudication_and_team_connections",
+      "status": "UNSELECTED"
+    },
+    {
+      "decision_id": "OD-04",
+      "category": "population_geography_language_age_literacy_accessibility_and_intended_use",
+      "status": "UNSELECTED"
+    },
+    {
+      "decision_id": "OD-05",
+      "category": "recruitment_route_exclusions_and_authority",
+      "status": "UNSELECTED"
+    },
+    {
+      "decision_id": "OD-06",
+      "category": "compensation_incentives_budget_staffing_schedule_and_timeline",
+      "status": "UNSELECTED"
+    },
+    {
+      "decision_id": "OD-07",
+      "category": "burden_session_count_duration_mode_and_support",
+      "status": "UNSELECTED"
+    },
+    {
+      "decision_id": "OD-08",
+      "category": "screening_disclosure_recusal_exception_and_adjudication_governance",
+      "status": "UNSELECTED"
+    },
+    {
+      "decision_id": "OD-09",
+      "category": "content_custody_storage_retention_access_and_destruction",
+      "status": "UNSELECTED"
+    },
+    {
+      "decision_id": "OD-10",
+      "category": "non_content_use_of_isolated_models_tools_and_retrieval",
+      "status": "UNSELECTED"
+    },
+    {
+      "decision_id": "OD-11",
+      "category": "ethics_review_consent_confidentiality_withdrawal_and_record_rights",
+      "status": "UNSELECTED"
+    },
+    {
+      "decision_id": "OD-12",
+      "category": "failure_retry_replacement_termination_and_contamination_response",
+      "status": "UNSELECTED"
+    },
+    {
+      "decision_id": "OD-13",
+      "category": "progression_to_construct_specific_search",
+      "status": "UNSELECTED"
+    },
+    {
+      "decision_id": "OD-14",
+      "category": "progression_to_measurement_and_reliability_evaluation",
+      "status": "UNSELECTED"
+    },
+    {
+      "decision_id": "OD-15",
+      "category": "progression_to_separately_frozen_AstroHD_mapping",
+      "status": "UNSELECTED"
+    }
+  ],
+  "recommendation_present": false,
+  "ranking_present": false,
+  "default_present": false,
+  "preselection_present": false,
+  "implied_human_authorization_present": false,
+  "next_authority": "TASK_PRO_CHECKPOINT_11_ACCEPTANCE_AFTER_LOCAL_REMEDIATION",
+  "primary_traceability_requirement_id": "S6H1-47",
+  "supersedes": {
+    "path": "state/NATAL-TIME-S6-H1-UNRESOLVED-DECISIONS-V1.json",
+    "sha256": "3ef09f4d21f751f00218675a16f8a9a41f444e081340f4053f575920b7e0b789"
+  },
+  "owner_policy_binding": {
+    "owner_outcome_epoch": 5,
+    "owner_source": {
+      "path": "state/NATAL-TIME-OWNER-OUTCOME-SOURCE-EPOCH5-20260830.md",
+      "sha256": "ae31f03e2d2e83373be50c451f0bf998175a64ed83811570e613112035ebd131"
+    },
+    "normalized_decision": {
+      "path": "docs/NATAL_TIME_OWNER_DECISION_H1_CONTAMINATION_POLICY_20260830.md",
+      "sha256": "9016c1965ce60c198f10ebb56339471f9b3fd46e3974bce29dec5c7944417be6"
+    },
+    "owner_source_receipt": {
+      "path": "state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH5-V1.json",
+      "sha256": "332c48e97802617d1867dd769a7fa9d866b2ca8e864ace2ff9db5cb36124bc98",
+      "capability": "OWNER_REATTESTED",
+      "scope": "EPOCH5_H1_PRIOR_EXPOSURE_AND_SEMANTIC_CONTAMINATION_POLICY_ONLY"
+    },
+    "owner_outcome": {
+      "path": "state/NATAL-TIME-OWNER-OUTCOME-EPOCH5-V1.json",
+      "sha256": "02f199808dbb50bfd31a3bb7cc29a84f7b904caaba79d6589e7e172d9ed63fa2"
+    },
+    "pro_ruling": {
+      "path": "state/NATAL-TIME-S6-H1-CHECKPOINT11-PRO-RULING-V2.json",
+      "sha256": "ff16efda132a2ae99fbc6b603609dd368d131a2b43e03e12db3bc74f0e2f4e1c"
+    }
+  },
+  "resolved_decision_count": 1,
+  "remaining_unselected_count": 14,
+  "epoch5_policy_does_not_select": [
+    "human_facing_screening_question",
+    "screening_wording",
+    "evidence_standard",
+    "qualitative_or_quantitative_threshold",
+    "adjudicator",
+    "adjudication_procedure",
+    "exception_process",
+    "population",
+    "recruitment",
+    "compensation",
+    "real_person_assignment"
+  ],
+  "owner_decision_required_now": false
+}

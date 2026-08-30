@@ -214,9 +214,14 @@ adversarial/comparison roles. The verbatim epoch-5 source and normalized ruling 
 `state/NATAL-TIME-OWNER-OUTCOME-SOURCE-EPOCH5-20260830.md` and
 `docs/NATAL_TIME_OWNER_DECISION_H1_CONTAMINATION_POLICY_20260830.md`.
 
-The prior blanket exposure implementation remains unaccepted and unremediated. The next action is
-to return the current owner correction and epoch-5 reconciliation to the same task Pro supervisor;
-if no further owner decision is required, implement only its bounded remediation contract.
+The owner correction was returned to the same task Pro supervisor. Pro ruled
+`OWNER DECISION REQUIRED: NO` and authorized only the checkpoint-11 epoch-5 human-exposure policy
+reconciliation child. That local metadata-only and synthetic-test-only remediation is now
+implemented additively: V1 remains frozen as the rejected blanket-exposure candidate, the active
+V2 workflow/schema/role/threat artifacts implement the three-status semantic/self-concept policy,
+and 28 hostile synthetic cases enforce the correction without screening a real person. The next
+action is exact-head verification followed by resubmission to the same Pro lane. No work beyond
+that child is authorized before Pro's checkpoint-11 acceptance ruling.
 
 Option B remains a design-only prerequisite screen. It does not authorize live execution,
 measurement content, participant software, empirical data, or progression to rectification.

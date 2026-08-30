@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 2,
+  "verdictId": "RSV-ASTROHD-20260830-EPOCH5-V2",
+  "taskId": "astrohd-relationship-20260830",
+  "packetId": "S6-H1-CHECKPOINT11-EPOCH5-REMEDIATION-RESUBMISSION-PENDING",
+  "primaryTraceabilityRequirementId": "S6H1-60",
+  "supersedes": {
+    "path": "state/NATAL-TIME-RESEARCH-SUPERVISION-VERDICT-EPOCH5-V1.json",
+    "sha256": "069877c87e38154f4eef76561a90dc33923ac23a0d4ca952c7c7f646469f825c"
+  },
+  "ownerPolicyBinding": {
+    "owner_outcome_epoch": 5,
+    "owner_source": {
+      "path": "state/NATAL-TIME-OWNER-OUTCOME-SOURCE-EPOCH5-20260830.md",
+      "sha256": "ae31f03e2d2e83373be50c451f0bf998175a64ed83811570e613112035ebd131"
+    },
+    "normalized_decision": {
+      "path": "docs/NATAL_TIME_OWNER_DECISION_H1_CONTAMINATION_POLICY_20260830.md",
+      "sha256": "9016c1965ce60c198f10ebb56339471f9b3fd46e3974bce29dec5c7944417be6"
+    },
+    "owner_source_receipt": {
+      "path": "state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH5-V1.json",
+      "sha256": "332c48e97802617d1867dd769a7fa9d866b2ca8e864ace2ff9db5cb36124bc98",
+      "capability": "OWNER_REATTESTED",
+      "scope": "EPOCH5_H1_PRIOR_EXPOSURE_AND_SEMANTIC_CONTAMINATION_POLICY_ONLY"
+    },
+    "owner_outcome": {
+      "path": "state/NATAL-TIME-OWNER-OUTCOME-EPOCH5-V1.json",
+      "sha256": "02f199808dbb50bfd31a3bb7cc29a84f7b904caaba79d6589e7e172d9ed63fa2"
+    },
+    "pro_ruling": {
+      "path": "state/NATAL-TIME-S6-H1-CHECKPOINT11-PRO-RULING-V2.json",
+      "sha256": "ff16efda132a2ae99fbc6b603609dd368d131a2b43e03e12db3bc74f0e2f4e1c"
+    }
+  },
+  "ownerSourceReceiptId": "osr-astrohd-relationship-20260830-epoch5-v1",
+  "objectiveReconciliationId": "ORC-ASTROHD-S6-H1-OWNER-CORRECTION-EPOCH5-20260830-V3",
+  "workerToContractAlignment": "GREEN",
+  "contractToOwnerAlignment": "PARTIAL",
+  "boundedEpoch5PolicyToOwnerAlignment": "MATCH",
+  "completionClaimType": "WORKING",
+  "operationalAlignment": {
+    "status": "PASS",
+    "findings": [
+      "The owner policy is implemented in additive superseding metadata and hostile synthetic tests.",
+      "The validator enforces consistency only and cannot assess or assign a real person.",
+      "Absolute nonhuman AstroHD-context exclusion is preserved."
+    ]
+  },
+  "scientificAdequacy": {
+    "status": "WARN",
+    "findings": [
+      "No real-person evidence standard, threshold, adjudicator, reliability, validity, mapping, rectification, relationship-prediction, or participant-benefit evidence exists.",
+      "The remediation is governance logic, not empirical confirmation."
+    ]
+  },
+  "releaseAdequacy": {
+    "status": "NOT_APPLICABLE",
+    "releasePermission": false,
+    "provenance": "OWNER_REATTESTED_EPOCH5_CORRECTION_ONLY_ROOT_PARTIAL",
+    "findings": [
+      "No release, publication, deployment, merge, migration, recruitment, or participant-facing result is proposed.",
+      "The parent outcome remains open."
+    ]
+  },
+  "askRigorProtocolExecution": {
+    "universal": {
+      "version": "20.5.15",
+      "revisionDate": "2026-08-24",
+      "sha256": "69c5186862ade61d6a97dc842b8c027324c7e2f3fd7147064a360049e0d25172"
+    },
+    "hrp": {
+      "version": "20.5.23",
+      "revisionDate": "2026-08-24",
+      "sha256": "bf2adc1c4daea8241c47b2a111d4a19e6bf7427a6401ecf1b3ba75a58e046299"
+    },
+    "literatureScanForRepair": "NOT_REQUIRED_NOT_AUTHORIZED_BY_PRO"
+  },
+  "ownerDecisionRequired": false,
+  "requiredDirective": "RETURN_EXACT_HEAD_REMEDIATION_PACKET_TO_EXISTING_TASK_PRO",
+  "releasePermission": false
+}

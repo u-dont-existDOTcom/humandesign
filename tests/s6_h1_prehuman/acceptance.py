@@ -9,6 +9,8 @@ import subprocess
 from pathlib import Path
 from typing import Any
 
+import pytest
+
 from tests.s6_h1_prehuman.validator import (
     ALLOWED_SOURCE,
     FIXTURES,
@@ -26,22 +28,24 @@ VALID_IDS = {f"S6H1-{index:02d}" for index in range(1, 61)}
 
 P = {
     "source_alignment": ROOT / "state/NATAL-TIME-S6-H1-SOURCE-ALIGNMENT-ATTESTATION-V1.json",
-    "workflow": ROOT / "state/NATAL-TIME-S6-H1-WORKFLOW-CONTRACT-V1.json",
-    "roles": ROOT / "state/NATAL-TIME-S6-H1-ROLE-ACCESS-MATRIX-V1.json",
-    "screening": ROOT / "state/NATAL-TIME-S6-H1-SCREENING-METADATA-SCHEMA-V1.json",
-    "isolation": ROOT / "state/NATAL-TIME-S6-H1-ISOLATION-PROVENANCE-SCHEMA-V1.json",
+    "policy": ROOT / "state/NATAL-TIME-S6-H1-PRIOR-EXPOSURE-POLICY-V1.json",
+    "workflow": ROOT / "state/NATAL-TIME-S6-H1-WORKFLOW-CONTRACT-V2.json",
+    "roles": ROOT / "state/NATAL-TIME-S6-H1-ROLE-ACCESS-MATRIX-V2.json",
+    "screening": ROOT / "state/NATAL-TIME-S6-H1-SCREENING-METADATA-SCHEMA-V2.json",
+    "isolation": ROOT / "state/NATAL-TIME-S6-H1-ISOLATION-PROVENANCE-SCHEMA-V2.json",
     "escrow": ROOT / "state/NATAL-TIME-S6-H1-CONTENT-ESCROW-CONTRACT-V1.json",
     "machine": ROOT / "state/NATAL-TIME-S6-H1-CONCEPTION-SEARCH-STATE-MACHINE-V1.json",
-    "threats": ROOT / "state/NATAL-TIME-S6-H1-THREAT-MODEL-V1.json",
-    "unresolved": ROOT / "state/NATAL-TIME-S6-H1-UNRESOLVED-DECISIONS-V1.json",
-    "reconciliation": ROOT / "state/NATAL-TIME-S6-H1-OBJECTIVE-RECONCILIATION-V1.json",
-    "assurance": ROOT / "state/NATAL-TIME-S6-H1-ASSURANCE-PLANES-V1.json",
+    "threats": ROOT / "state/NATAL-TIME-S6-H1-THREAT-MODEL-V2.json",
+    "unresolved": ROOT / "state/NATAL-TIME-S6-H1-UNRESOLVED-DECISIONS-V2.json",
+    "reconciliation": ROOT / "state/NATAL-TIME-S6-H1-OBJECTIVE-RECONCILIATION-V3.json",
+    "assurance": ROOT / "state/NATAL-TIME-S6-H1-ASSURANCE-PLANES-V2.json",
     "conception": ROOT / "state/NATAL-TIME-S6-H1-PREHUMAN-INDEPENDENT-CONCEPTION-V1.json",
     "sources": ROOT / "state/NATAL-TIME-S6-H1-PREHUMAN-SOURCE-LEDGER-V1.json",
-    "methods": ROOT / "state/NATAL-TIME-S6-H1-PREHUMAN-METHODS-DECISION-LEDGER-V1.json",
-    "execution": ROOT / "state/NATAL-TIME-S6-H1-EXECUTION-LEDGER-V1.json",
-    "matrix": ROOT / "state/NATAL-TIME-S6-H1-ACCEPTANCE-MATRIX-V1.json",
-    "manifest": ROOT / "state/NATAL-TIME-S6-H1-ARTIFACT-MANIFEST-V2.json",
+    "methods": ROOT / "state/NATAL-TIME-S6-H1-PREHUMAN-METHODS-DECISION-LEDGER-V2.json",
+    "execution": ROOT / "state/NATAL-TIME-S6-H1-EXECUTION-LEDGER-V2.json",
+    "matrix": ROOT / "state/NATAL-TIME-S6-H1-ACCEPTANCE-MATRIX-V2.json",
+    "manifest": ROOT / "state/NATAL-TIME-S6-H1-ARTIFACT-MANIFEST-V3.json",
+    "hostile_cases": FIXTURES / "epoch5_policy_cases.json",
     "dossier": ROOT / "docs/NATAL_TIME_S6_H1_PREHUMAN_OWNER_DOSSIER_20260830.md",
 }
 
@@ -79,19 +83,51 @@ def _set_nested(record: dict[str, Any], field: str, value: Any) -> None:
     target[parts[-1]] = value
 
 
-def _invalid_probe(case_id: str) -> None:
-    probes = load_json(FIXTURES / "invalid_probes.json")
-    case = next(item for item in probes["cases"] if item["case_id"] == case_id)
+def hostile_case_ids() -> list[str]:
+    """Return the ordered epoch-5 hostile synthetic case IDs."""
+
+    return [item["case_id"] for item in load_json(P["hostile_cases"])["cases"]]
+
+
+def run_hostile_case(case_id: str) -> None:
+    corpus = load_json(P["hostile_cases"])
+    case = next(item for item in corpus["cases"] if item["case_id"] == case_id)
     record = copy.deepcopy(load_fixture(case["base_fixture"]))
-    for mutation in case.get("mutations", [case.get("mutation")]):
-        assert mutation is not None
+    for mutation in case.get("mutations", []):
         _set_nested(record, mutation["field"], mutation["value"])
-    try:
+    if case["expectation"] == "VALID":
         validate_record(case["schema"], record)
-    except ValidationFailure as exc:
-        assert exc.code == case["expected_code"], str(exc)
-    else:
-        raise AssertionError(f"expected controlled rejection for {case_id}")
+        return
+    with pytest.raises(ValidationFailure) as error:
+        validate_record(case["schema"], record)
+    assert error.value.code == case["expected_code"], str(error.value)
+
+
+def _expect_rejection(
+    schema_name: str,
+    base_fixture: str,
+    field: str,
+    value: Any,
+    expected_code: str,
+) -> None:
+    record = copy.deepcopy(load_fixture(base_fixture))
+    _set_nested(record, field, value)
+    with pytest.raises(ValidationFailure) as error:
+        validate_record(schema_name, record)
+    assert error.value.code == expected_code, str(error.value)
+
+
+def _manifest_artifacts(manifest: dict[str, Any]) -> list[dict[str, Any]]:
+    if "artifacts" in manifest:
+        return list(manifest["artifacts"])
+    parent = load_json(ROOT / manifest["supersedes"]["path"])
+    inherited = _manifest_artifacts(parent)
+    replacements = {
+        item["path"]: item for item in manifest["changed_or_added_artifacts"]
+    }
+    artifacts = [replacements.pop(item["path"], item) for item in inherited]
+    artifacts.extend(replacements.values())
+    return artifacts
 
 
 def _roles() -> dict[str, dict[str, Any]]:
@@ -243,13 +279,23 @@ def check_requirement(requirement_id: str) -> None:
         assert load_json(P["roles"])["real_person_assignments"] == []
     elif number == 18:
         eligibility = load_json(P["roles"])["content_author_eligibility"]
+        assert eligibility["human_prior_exposure_automatic_ineligibility"] is False
+        assert eligibility["human_prior_exposure_automatic_eligibility"] is False
         assert (
             eligibility[
-                "astrohd_exposed_person_context_conversation_repository_model_session_eligible"
+                "astrohd_exposed_nonhuman_context_repository_conversation_retrieval_environment_eligible"
             ]
             is False
         )
         assert eligibility["current_context_eligible"] is False
+        for case_id in (
+            "prior_chart_shallow_mismatch_eligible",
+            "skeptical_substantial_knowledge_requires_adjudication",
+            "identity_defining_shallow_ineligible_clean_author",
+            "astrohd_exposed_model_session_authorship_rejected",
+            "repository_or_conversation_context_authorship_rejected",
+        ):
+            run_hostile_case(case_id)
     elif number == 19:
         eligibility = load_json(P["roles"])["content_author_eligibility"]
         assert eligibility["human_only"] is True
@@ -296,9 +342,17 @@ def check_requirement(requirement_id: str) -> None:
         isolation = load_json(P["isolation"])
         assert screening["properties"]["synthetic_candidate_id"]["pattern"].startswith("^SYN-")
         assert isolation["properties"]["synthetic_isolation_id"]["pattern"].startswith("^SYN-")
-        _invalid_probe("real_like_candidate_id")
+        _expect_rejection(
+            "screening",
+            "screening_policy_eligible_v2.json",
+            "synthetic_candidate_id",
+            "real-person@example.invalid",
+            "S6H1_PATTERN_VIOLATION",
+        )
     elif number == 28:
-        fields = set(load_json(P["screening"])["properties"]["exposure_states"]["required"])
+        fields = set(
+            load_json(P["screening"])["properties"]["exposure_provenance"]["required"]
+        )
         assert fields == {
             "human_design",
             "astrohd",
@@ -310,23 +364,45 @@ def check_requirement(requirement_id: str) -> None:
             "individualized_feedback",
         }
     elif number == 29:
-        _invalid_probe("unknown_exposure_not_closed")
-        _invalid_probe("contamination_not_ineligible")
+        for case in load_json(P["hostile_cases"])["cases"]:
+            if "S6H1-29" in case["requirement_ids"]:
+                run_hostile_case(case["case_id"])
+        incomplete = load_fixture("screening_policy_incomplete_v2.json")
+        conflict = load_fixture("screening_policy_conflict_v2.json")
+        assert incomplete["substantive_outcome"] is None
+        assert incomplete["role_assignment_eligibility"] == "BLOCKED_NO_SUBSTANTIVE_OUTCOME"
+        assert conflict["substantive_outcome"] is None
+        assert conflict["role_assignment_eligibility"] == "BLOCKED_NO_SUBSTANTIVE_OUTCOME"
     elif number == 30:
-        assert (
-            load_json(P["sources"])["nonselection_confirmation"]["screening_threshold_or_exception"]
-            == "UNSELECTED"
-        )
-        assert unresolved["selection_count"] == 0
+        policy = load_json(P["policy"])
+        assert [item["id"] for item in policy["substantive_outcomes"]] == [
+            "ELIGIBLE",
+            "REQUIRES_BLIND_ADJUDICATION",
+            "INELIGIBLE_CLEAN_H1_AUTHOR",
+        ]
+        assert policy["process_states"] == [
+            "NOT_ASSESSED",
+            "EVIDENCE_INCOMPLETE",
+            "EVIDENCE_CONFLICT",
+            "DECISION_PENDING",
+            "DECISION_RECORDED",
+        ]
+        assert unresolved["selection_count"] == 1
+        assert unresolved["resolved_decision_count"] == 1
+        assert unresolved["remaining_unselected_count"] == 14
+        assert unresolved["epoch5_policy_does_not_select"]
+        for case in load_json(P["hostile_cases"])["cases"]:
+            if "S6H1-30" in case["requirement_ids"]:
+                run_hostile_case(case["case_id"])
     elif number == 31:
-        _invalid_probe("prohibited_human_field")
+        run_hostile_case("human_facing_question_or_threshold_field_rejected")
         dossier = P["dossier"].read_text(encoding="utf-8")
         assert "contains no screening question" in dossier
     elif number == 32:
         prohibited = execution["prohibited_action_record"]
         assert (
             prohibited[
-                "human_identification_contact_screening_recruitment_compensation_assignment_enrollment"
+                "human_identification_contact_assessment_screening_recruitment_compensation_assignment_enrollment"
             ]
             is False
         )
@@ -334,13 +410,16 @@ def check_requirement(requirement_id: str) -> None:
         required = set(load_json(P["isolation"])["required"])
         assert {"environment", "session", "tool", "retrieval", "actor", "access"} <= required
     elif number == 34:
-        _invalid_probe("isolation_with_unknown_session")
+        run_hostile_case("repository_or_conversation_context_authorship_rejected")
         assert "IGNORE_INSTRUCTION_SUBSTITUTED_FOR_ISOLATION" in {
             item["class"] for item in load_json(P["threats"])["threats"]
         }
     elif number == 35:
-        _invalid_probe("model_authorship_true")
-        assert load_fixture("isolation_valid.json")["model_content_authorship_allowed"] is False
+        run_hostile_case("astrohd_exposed_model_session_authorship_rejected")
+        assert (
+            load_fixture("isolation_valid_v2.json")["model_content_authorship_allowed"]
+            is False
+        )
     elif number == 36:
         assert execution["external_mutations"] == []
         assert execution["human_records"] == []
@@ -411,8 +490,11 @@ def check_requirement(requirement_id: str) -> None:
         assert len(unresolved["decisions"]) == 15
         assert P["dossier"].exists()
     elif number == 47:
-        assert unresolved["selection_count"] == 0
-        assert {item["status"] for item in unresolved["decisions"]} == {"UNSELECTED"}
+        statuses = {item["decision_id"]: item["status"] for item in unresolved["decisions"]}
+        assert statuses["OD-02"] == "RESOLVED_BOUNDED_OWNER_POLICY_EPOCH5"
+        assert {status for decision_id, status in statuses.items() if decision_id != "OD-02"} == {
+            "UNSELECTED"
+        }
     elif number == 48:
         assert all(
             unresolved[field] is False
@@ -463,15 +545,21 @@ def check_requirement(requirement_id: str) -> None:
         assert [item["requirement_id"] for item in matrix["requirements"]] == [
             f"S6H1-{index:02d}" for index in range(1, 61)
         ]
+        assert matrix["supersedes"]["sha256"] == _sha256(
+            ROOT / matrix["supersedes"]["path"]
+        )
+        assert all(item["test_node"] for item in matrix["requirements"])
+        case_ids = {item["case_id"] for item in load_json(P["hostile_cases"])["cases"]}
+        mapped_case_ids = {
+            case_id for item in matrix["requirements"] for case_id in item["fixture_case_ids"]
+        }
+        assert case_ids <= mapped_case_ids
     elif number == 54:
         manifest = load_json(P["manifest"])
         assert manifest["digest_algorithm"] == "sha256"
-        v1_path = ROOT / manifest["supersedes"]["path"]
-        assert _sha256(v1_path) == manifest["supersedes"]["sha256"]
-        inherited = load_json(v1_path)["artifacts"]
-        replacements = {item["path"]: item for item in manifest["changed_or_added_artifacts"]}
-        artifacts = [replacements.pop(item["path"], item) for item in inherited]
-        artifacts.extend(replacements.values())
+        parent_path = ROOT / manifest["supersedes"]["path"]
+        assert _sha256(parent_path) == manifest["supersedes"]["sha256"]
+        artifacts = _manifest_artifacts(manifest)
         assert manifest["artifact_count"] == len(artifacts)
         assert len({item["path"] for item in artifacts}) == manifest["artifact_count"]
         for item in artifacts:
@@ -479,10 +567,28 @@ def check_requirement(requirement_id: str) -> None:
             assert item["primary_requirement_id"] in VALID_IDS
             assert _sha256(ROOT / item["path"]) == item["sha256"]
     elif number == 55:
-        validate_record("screening", load_fixture("screening_valid.json"), source=ALLOWED_SOURCE)
-        validate_record("isolation", load_fixture("isolation_valid.json"), source=ALLOWED_SOURCE)
-        _invalid_probe("unknown_field")
-        _invalid_probe("retrieval_source_nonzero")
+        for name in (
+            "screening_policy_eligible_v2.json",
+            "screening_policy_adjudication_v2.json",
+            "screening_policy_ineligible_v2.json",
+            "screening_policy_incomplete_v2.json",
+            "screening_policy_conflict_v2.json",
+        ):
+            validate_record("screening", load_fixture(name), source=ALLOWED_SOURCE)
+        validate_record(
+            "isolation", load_fixture("isolation_valid_v2.json"), source=ALLOWED_SOURCE
+        )
+        corpus = load_json(P["hostile_cases"])
+        assert corpus["case_count"] == 28 == len(corpus["cases"])
+        for case in corpus["cases"]:
+            run_hostile_case(case["case_id"])
+        _expect_rejection(
+            "isolation",
+            "isolation_valid_v2.json",
+            "retrieval.source_count",
+            1,
+            "S6H1_CONST_VIOLATION",
+        )
         production_imports = [
             path
             for path in (ROOT / "src").rglob("*.py")
@@ -509,16 +615,19 @@ def check_requirement(requirement_id: str) -> None:
     elif number == 58:
         browser = execution["browser_operation"]
         assert browser["generic_research_mode"] == "HEADLESS_DEFAULT"
-        assert browser["dedicated_secondary_workspace_reused"] is True
+        assert browser["dedicated_secondary_workspace_policy"] == "DEFAULT_FOR_HEADED_WORK"
+        assert browser["owner_requested_main_workspace_exception"] is True
         assert browser["unnecessary_new_visible_windows_opened"] is False
     elif number == 59:
-        assert len(execution["corrected_commands"]) >= 2
+        assert len(execution["corrected_commands"]) >= 4
         assert execution["external_mutations"] == []
         assert set(execution["prohibited_action_record"].values()) == {False}
+        assert execution["forced_redundant_green_rerun_concealed"] is False
     elif number == 60:
         assurance = load_json(P["assurance"])
         assert assurance["worker_to_contract_alignment"] == "GREEN"
         assert assurance["contract_to_owner_alignment"] == "PARTIAL"
+        assert assurance["bounded_epoch5_policy_to_owner_alignment"] == "MATCH"
         assert assurance["completion_claim"]["type"] == "WORKING"
         assert assurance["completion_claim"]["parent_outcome"] == "OPEN"
         assert assurance["operational_alignment"]["status"] == "PASS"

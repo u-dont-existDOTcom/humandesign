@@ -1,0 +1,104 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_id": "natal-time-s6-h1-execution-ledger-v2",
+  "status": "LOCAL_REVERSIBLE_NO_PROHIBITED_ACTION",
+  "primary_traceability_requirement_id": "S6H1-59",
+  "supersedes": {
+    "path": "state/NATAL-TIME-S6-H1-EXECUTION-LEDGER-V1.json",
+    "sha256": "0fba99da1b5ad3df32c151963f8fb9e7c7a6792fff9efc9a2a1ce4cbb5fcc00a"
+  },
+  "owner_policy_binding": {
+    "owner_outcome_epoch": 5,
+    "owner_source": {
+      "path": "state/NATAL-TIME-OWNER-OUTCOME-SOURCE-EPOCH5-20260830.md",
+      "sha256": "ae31f03e2d2e83373be50c451f0bf998175a64ed83811570e613112035ebd131"
+    },
+    "normalized_decision": {
+      "path": "docs/NATAL_TIME_OWNER_DECISION_H1_CONTAMINATION_POLICY_20260830.md",
+      "sha256": "9016c1965ce60c198f10ebb56339471f9b3fd46e3974bce29dec5c7944417be6"
+    },
+    "owner_source_receipt": {
+      "path": "state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH5-V1.json",
+      "sha256": "332c48e97802617d1867dd769a7fa9d866b2ca8e864ace2ff9db5cb36124bc98",
+      "capability": "OWNER_REATTESTED",
+      "scope": "EPOCH5_H1_PRIOR_EXPOSURE_AND_SEMANTIC_CONTAMINATION_POLICY_ONLY"
+    },
+    "owner_outcome": {
+      "path": "state/NATAL-TIME-OWNER-OUTCOME-EPOCH5-V1.json",
+      "sha256": "02f199808dbb50bfd31a3bb7cc29a84f7b904caaba79d6589e7e172d9ed63fa2"
+    },
+    "pro_ruling": {
+      "path": "state/NATAL-TIME-S6-H1-CHECKPOINT11-PRO-RULING-V2.json",
+      "sha256": "ff16efda132a2ae99fbc6b603609dd368d131a2b43e03e12db3bc74f0e2f4e1c"
+    }
+  },
+  "browser_operation": {
+    "generic_research_mode": "HEADLESS_DEFAULT",
+    "headed_browser_required_for_authenticated_task_supervision": true,
+    "dedicated_secondary_workspace_policy": "DEFAULT_FOR_HEADED_WORK",
+    "dedicated_secondary_workspace_reused_before_owner_override": true,
+    "owner_requested_main_workspace_exception": true,
+    "existing_controlled_task_window_reused": true,
+    "unnecessary_new_visible_windows_opened": false
+  },
+  "corrected_commands": [
+    {
+      "correction_id": "CC-01",
+      "failed_or_imprecise_action": "Attempted to read a guessed B1 test filename that did not exist.",
+      "correction": "Located the authoritative files with rg.",
+      "effect": "NO_REPOSITORY_MUTATION"
+    },
+    {
+      "correction_id": "CC-02",
+      "failed_or_imprecise_action": "An initial multi-source official-page open produced truncated evidence output.",
+      "correction": "Split the bounded official-source review into smaller source and passage batches.",
+      "effect": "NO_SCOPE_CHANGE_NO_REPOSITORY_MUTATION"
+    },
+    {
+      "correction_id": "CC-03",
+      "failed_or_imprecise_action": "The first checkpoint-11 owner-record test command used bare pytest, which was unavailable.",
+      "correction": "Used the repository virtual environment for the focused test.",
+      "effect": "NO_REPOSITORY_MUTATION"
+    },
+    {
+      "correction_id": "CC-04",
+      "failed_or_imprecise_action": "The initially listed AskRigor skill cache path had been superseded by a newer installed cache version.",
+      "correction": "Located the current skill with rg and loaded its complete instructions from the current cache path.",
+      "effect": "NO_REPOSITORY_MUTATION"
+    },
+    {
+      "correction_id": "CC-05",
+      "failed_or_imprecise_action": "The first hostile-policy test invocation used the venv pytest entry point and did not place the repository root on the import path.",
+      "correction": "Used .venv/bin/python -m pytest, which collected and passed the focused hostile-policy suite.",
+      "effect": "NO_REPOSITORY_MUTATION"
+    }
+  ],
+  "verification_rerun_disclosure": {
+    "failed_or_noncollecting_runs": [
+      "bare pytest for the epoch-5 record test was unavailable",
+      ".venv/bin/pytest hostile-policy invocation failed collection because the tests package was not on the import path"
+    ],
+    "green_runs_before_exact_head": [
+      ".venv/bin/python -m pytest -q tests/unit/test_natal_time_s6_h1_prehuman_governance.py -k hostile_policy: 29 passed"
+    ],
+    "exact_head_run_pending_at_artifact_authoring": true
+  },
+  "forced_redundant_green_rerun_concealed": false,
+  "prohibited_action_record": {
+    "human_identification_contact_assessment_screening_recruitment_compensation_assignment_enrollment": false,
+    "screening_questions_interview_prompts_evidence_thresholds_adjudicator_disclosure_consent_or_recruitment_text": false,
+    "construct_instrument_item_prompt_response_option_category_manual_scoring_rule_or_content": false,
+    "construct_specific_search": false,
+    "mapping_content_or_execution": false,
+    "real_chart_birth_time_relationship_reference_participant_or_identity_data": false,
+    "real_identity_credential_storage_account_or_human_record_system": false,
+    "production_or_Railway_mutation": false,
+    "GitHub_push_remote_branch_PR_merge_rebase_cherry_pick_squash_governance_or_external_mutation": false,
+    "secret_value_access": false,
+    "publication_release_or_root_completion_claim": false
+  },
+  "external_mutations": [],
+  "human_records": [],
+  "content_records": [],
+  "mapping_records": []
+}

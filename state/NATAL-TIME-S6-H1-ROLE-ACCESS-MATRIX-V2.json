@@ -1,0 +1,180 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_id": "natal-time-s6-h1-role-access-matrix-v2",
+  "status": "OWNER_POLICY_RECONCILED_LOGICAL_ROLES_ONLY_NO_REAL_ASSIGNMENTS",
+  "assignment_history": "APPEND_ONLY_IF_FUTURE_OWNER_AND_PRO_AUTHORIZED",
+  "access_history": "APPEND_ONLY_IF_FUTURE_OWNER_AND_PRO_AUTHORIZED",
+  "exposure_history": "APPEND_ONLY_FAIL_CLOSED",
+  "real_person_assignments": [],
+  "roles": [
+    {
+      "role_id": "OWNER",
+      "content_origin": "FORBIDDEN",
+      "content_revision": "FORBIDDEN",
+      "prefreeze_content_access": "FORBIDDEN",
+      "construct_search_access": "FORBIDDEN_CURRENT_CHILD",
+      "mapping_access": "FORBIDDEN_CURRENT_CHILD",
+      "responsibility": "human-program and progression decisions"
+    },
+    {
+      "role_id": "GOVERNANCE_SUPERVISOR",
+      "content_origin": "FORBIDDEN",
+      "content_revision": "FORBIDDEN",
+      "prefreeze_content_access": "FORBIDDEN",
+      "construct_search_access": "FORBIDDEN_CURRENT_CHILD",
+      "mapping_access": "FORBIDDEN_CURRENT_CHILD",
+      "responsibility": "contract, stage-gate, conflict, and assurance review"
+    },
+    {
+      "role_id": "SCREENING_ADMINISTRATOR",
+      "content_origin": "FORBIDDEN",
+      "content_revision": "FORBIDDEN",
+      "prefreeze_content_access": "FORBIDDEN",
+      "construct_search_access": "FORBIDDEN",
+      "mapping_access": "FORBIDDEN",
+      "responsibility": "future metadata-only screening administration after authorization"
+    },
+    {
+      "role_id": "CHART_BLIND_HUMAN_CONCEPT_AUTHOR",
+      "content_origin": "H1_ONLY_FUTURE_AFTER_ALL_GATES",
+      "content_revision": "H1_ONLY_BEFORE_FREEZE_AFTER_ALL_GATES",
+      "prefreeze_content_access": "FUTURE_ESCROW_ONLY_AFTER_ALL_GATES",
+      "construct_search_access": "FORBIDDEN_BEFORE_CONCEPTION_FREEZE",
+      "mapping_access": "FORBIDDEN",
+      "responsibility": "future human-only independent conception authorship"
+    },
+    {
+      "role_id": "SOURCE_SEARCH_WORKER",
+      "content_origin": "FORBIDDEN",
+      "content_revision": "FORBIDDEN",
+      "prefreeze_content_access": "FROZEN_DIGEST_AND_APPROVED_PACKAGE_ONLY_FUTURE",
+      "construct_search_access": "FUTURE_AFTER_CONCEPTION_FREEZE_AND_SEPARATE_GATE",
+      "mapping_access": "FORBIDDEN",
+      "responsibility": "future construct-specific source scan without altering conception"
+    },
+    {
+      "role_id": "MEASUREMENT_REVIEWER",
+      "content_origin": "FORBIDDEN",
+      "content_revision": "FORBIDDEN_SILENT_CHANGE",
+      "prefreeze_content_access": "FROZEN_PACKAGE_ONLY_FUTURE",
+      "construct_search_access": "FUTURE_REVIEW_ONLY_AFTER_FREEZE",
+      "mapping_access": "FORBIDDEN",
+      "responsibility": "future measurement review with explicit amendment provenance"
+    },
+    {
+      "role_id": "CONTENT_CUSTODIAN",
+      "content_origin": "FORBIDDEN",
+      "content_revision": "FORBIDDEN",
+      "prefreeze_content_access": "FUTURE_CUSTODY_ONLY_AFTER_ALL_GATES",
+      "construct_search_access": "FORBIDDEN",
+      "mapping_access": "FORBIDDEN",
+      "responsibility": "future custody, inventory, access receipts, and digests"
+    },
+    {
+      "role_id": "RELIABILITY_EVALUATOR",
+      "content_origin": "FORBIDDEN",
+      "content_revision": "FORBIDDEN",
+      "prefreeze_content_access": "FROZEN_MEASUREMENT_PACKAGE_ONLY_FUTURE",
+      "construct_search_access": "FORBIDDEN",
+      "mapping_access": "FORBIDDEN",
+      "responsibility": "future reliability evaluation on separately authorized evidence"
+    },
+    {
+      "role_id": "MAPPING_WORKER",
+      "content_origin": "FORBIDDEN",
+      "content_revision": "FORBIDDEN",
+      "prefreeze_content_access": "FORBIDDEN",
+      "construct_search_access": "FORBIDDEN",
+      "mapping_access": "CLOSED_FUTURE_SEPARATE_LANE_ONLY",
+      "responsibility": "later separately preregistered AstroHD mapping after all freezes"
+    },
+    {
+      "role_id": "INDEPENDENT_EVALUATOR",
+      "content_origin": "FORBIDDEN",
+      "content_revision": "FORBIDDEN",
+      "prefreeze_content_access": "METADATA_ONLY_UNLESS_FUTURE_SEPARATE_AUTHORIZATION",
+      "construct_search_access": "FORBIDDEN_CURRENT_CHILD",
+      "mapping_access": "FORBIDDEN_CURRENT_CHILD",
+      "responsibility": "independent conflict, deviation, gate, and evidence evaluation"
+    }
+  ],
+  "content_author_eligibility": {
+    "required_role": "CHART_BLIND_HUMAN_CONCEPT_AUTHOR",
+    "human_only": true,
+    "model_or_model_session_eligible": false,
+    "astrohd_exposed_nonhuman_context_repository_conversation_retrieval_environment_eligible": false,
+    "human_prior_exposure_automatic_ineligibility": false,
+    "human_prior_exposure_automatic_eligibility": false,
+    "allowed_substantive_outcomes": [
+      "ELIGIBLE",
+      "REQUIRES_BLIND_ADJUDICATION",
+      "INELIGIBLE_CLEAN_H1_AUTHOR"
+    ],
+    "no_substantive_outcome_clean_role_eligible": false,
+    "requires_blind_adjudication_clean_role_eligible": false,
+    "ineligible_clean_h1_author_clean_role_eligible": false,
+    "eligible_status_alone_grants_real_assignment": false,
+    "eligible_status_requires_future_separate_authorization": true,
+    "current_context_eligible": false
+  },
+  "conflict_classes": [
+    "PERSON_ROLE_CONFLICT",
+    "TEAM_CONNECTION_CONFLICT",
+    "SESSION_EXPOSURE_CONFLICT",
+    "SOURCE_EXPOSURE_CONFLICT",
+    "CONNECTED_EVIDENCE_CONFLICT",
+    "UNKNOWN_PROVENANCE_FAIL_CLOSED"
+  ],
+  "current_access_grants": [],
+  "primary_traceability_requirement_id": "S6H1-16",
+  "supersedes": {
+    "path": "state/NATAL-TIME-S6-H1-ROLE-ACCESS-MATRIX-V1.json",
+    "sha256": "622c31264b153eaa80dedd44939be2b2d2a7090c22752d264aaf8c7ced696106"
+  },
+  "owner_policy_binding": {
+    "owner_outcome_epoch": 5,
+    "owner_source": {
+      "path": "state/NATAL-TIME-OWNER-OUTCOME-SOURCE-EPOCH5-20260830.md",
+      "sha256": "ae31f03e2d2e83373be50c451f0bf998175a64ed83811570e613112035ebd131"
+    },
+    "normalized_decision": {
+      "path": "docs/NATAL_TIME_OWNER_DECISION_H1_CONTAMINATION_POLICY_20260830.md",
+      "sha256": "9016c1965ce60c198f10ebb56339471f9b3fd46e3974bce29dec5c7944417be6"
+    },
+    "owner_source_receipt": {
+      "path": "state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH5-V1.json",
+      "sha256": "332c48e97802617d1867dd769a7fa9d866b2ca8e864ace2ff9db5cb36124bc98",
+      "capability": "OWNER_REATTESTED",
+      "scope": "EPOCH5_H1_PRIOR_EXPOSURE_AND_SEMANTIC_CONTAMINATION_POLICY_ONLY"
+    },
+    "owner_outcome": {
+      "path": "state/NATAL-TIME-OWNER-OUTCOME-EPOCH5-V1.json",
+      "sha256": "02f199808dbb50bfd31a3bb7cc29a84f7b904caaba79d6589e7e172d9ed63fa2"
+    },
+    "pro_ruling": {
+      "path": "state/NATAL-TIME-S6-H1-CHECKPOINT11-PRO-RULING-V2.json",
+      "sha256": "ff16efda132a2ae99fbc6b603609dd368d131a2b43e03e12db3bc74f0e2f4e1c"
+    }
+  },
+  "clean_prefreeze_assignment_requirements": [
+    "SUBSTANTIVE_OUTCOME_ELIGIBLE",
+    "DECISION_RECORDED_WITH_AUTHORIZED_PROVENANCE",
+    "NO_PENDING_BLIND_ADJUDICATION",
+    "ALL_OTHER_FUTURE_GATES_PASSED",
+    "SEPARATE_OWNER_AND_PRO_AUTHORIZATION"
+  ],
+  "future_role_classes_not_activated": [
+    {
+      "role_class": "POSTFREEZE_ADVERSARIAL_REVIEWER",
+      "separate_authorization_required": true,
+      "construct_freeze_required": true,
+      "prefreeze_content_influence": "FORBIDDEN"
+    },
+    {
+      "role_class": "POSTFREEZE_COMPARISON_SOURCE",
+      "separate_authorization_required": true,
+      "construct_freeze_required": true,
+      "prefreeze_content_influence": "FORBIDDEN"
+    }
+  ]
+}

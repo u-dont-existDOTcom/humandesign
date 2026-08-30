@@ -1,0 +1,758 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_id": "natal-time-s6-h1-acceptance-matrix-v2",
+  "status": "EXACT_60_REQUIREMENT_CHECKPOINT_11_EPOCH5_SUPERSEDING_MATRIX",
+  "primary_traceability_requirement_id": "S6H1-53",
+  "supersedes": {
+    "path": "state/NATAL-TIME-S6-H1-ACCEPTANCE-MATRIX-V1.json",
+    "sha256": "8399023b2493af6f4506519cff654847d56d44ab55d67eff7889e9ff8dcd88e3"
+  },
+  "owner_policy_binding": {
+    "owner_source": {
+      "path": "state/NATAL-TIME-OWNER-OUTCOME-SOURCE-EPOCH5-20260830.md",
+      "sha256": "ae31f03e2d2e83373be50c451f0bf998175a64ed83811570e613112035ebd131"
+    },
+    "normalized_decision": {
+      "path": "docs/NATAL_TIME_OWNER_DECISION_H1_CONTAMINATION_POLICY_20260830.md",
+      "sha256": "9016c1965ce60c198f10ebb56339471f9b3fd46e3974bce29dec5c7944417be6"
+    },
+    "owner_source_receipt": {
+      "path": "state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH5-V1.json",
+      "sha256": "332c48e97802617d1867dd769a7fa9d866b2ca8e864ace2ff9db5cb36124bc98",
+      "capability": "OWNER_REATTESTED"
+    },
+    "owner_outcome": {
+      "path": "state/NATAL-TIME-OWNER-OUTCOME-EPOCH5-V1.json",
+      "sha256": "02f199808dbb50bfd31a3bb7cc29a84f7b904caaba79d6589e7e172d9ed63fa2"
+    },
+    "pro_ruling": {
+      "path": "state/NATAL-TIME-S6-H1-CHECKPOINT11-PRO-RULING-V2.json",
+      "sha256": "ff16efda132a2ae99fbc6b603609dd368d131a2b43e03e12db3bc74f0e2f4e1c"
+    }
+  },
+  "lineage_rule": "The ordered IDs S6H1-01 through S6H1-60 remain controlling. Rows 18 and 30 are superseded and row 29 is clarified by the epoch-5 owner policy; the other 58 requirement meanings are unchanged.",
+  "requirement_count": 60,
+  "requirements": [
+    {
+      "requirement_id": "S6H1-01",
+      "summary": "Exact owner-source and receipt identities and hashes",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-SOURCE-ALIGNMENT-ATTESTATION-V1.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-01]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-02",
+      "summary": "WORKER_COPIED acquisition mode",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-SOURCE-ALIGNMENT-ATTESTATION-V1.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-02]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-03",
+      "summary": "INTEGRITY_ONLY receipt capability",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-SOURCE-ALIGNMENT-ATTESTATION-V1.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-03]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-04",
+      "summary": "Contract to captured source MATCH",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-SOURCE-ALIGNMENT-ATTESTATION-V1.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-04]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-05",
+      "summary": "Independent source comparison NOT_INDEPENDENT",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-SOURCE-ALIGNMENT-ATTESTATION-V1.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-05]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-06",
+      "summary": "Contract to owner remains PARTIAL",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-SOURCE-ALIGNMENT-ATTESTATION-V1.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-06]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-07",
+      "summary": "All 13 owner requirements reconciled",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-OBJECTIVE-RECONCILIATION-V3.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-07]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-08",
+      "summary": "Parent outcome open and no proxy completion",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-ASSURANCE-PLANES-V2.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-08]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-09",
+      "summary": "Conception committed before first query",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-PREHUMAN-SOURCE-LEDGER-V1.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-09]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-10",
+      "summary": "Conception contains no imported source solution",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-PREHUMAN-INDEPENDENT-CONCEPTION-V1.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-10]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-11",
+      "summary": "Conception contains no content or human choice",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-PREHUMAN-INDEPENDENT-CONCEPTION-V1.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-11]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-12",
+      "summary": "Exact generic scan provenance and exclusions",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-PREHUMAN-SOURCE-LEDGER-V1.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-12]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-13",
+      "summary": "Scan addresses underlying governance problems",
+      "primary_artifact": "docs/NATAL_TIME_S6_H1_PREHUMAN_METHODS_SCAN_20260830.md",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-13]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-14",
+      "summary": "Every method family has allowed classification",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-PREHUMAN-METHODS-DECISION-LEDGER-V2.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-14]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-15",
+      "summary": "No prohibited construct or mapping search",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-PREHUMAN-SOURCE-LEDGER-V1.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-15]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-16",
+      "summary": "All ten required logical roles",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-ROLE-ACCESS-MATRIX-V2.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-16]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-17",
+      "summary": "No real role assignment",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-ROLE-ACCESS-MATRIX-V2.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-17]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-18",
+      "summary": "AstroHD-exposed nonhuman generation contexts are absolutely barred; human prior exposure follows the epoch-5 three-outcome policy and is not automatic exclusion",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-ROLE-ACCESS-MATRIX-V2.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-18]",
+      "fixture_case_ids": [
+        "prior_chart_shallow_mismatch_eligible",
+        "casual_chart_discussion_curiosity_eligible",
+        "generic_astrology_nonidentity_no_ontology_not_excluded",
+        "skeptical_substantial_knowledge_requires_adjudication",
+        "strong_rejection_substantial_ontology_requires_adjudication",
+        "substantial_knowledge_attempted_eligible_rejected",
+        "substantial_knowledge_attempted_automatic_ineligible_rejected",
+        "identity_defining_shallow_ineligible_clean_author",
+        "intentional_derivation_while_rejecting_ineligible",
+        "incidental_owner_acquaintance_not_automatic_exclusion",
+        "owner_astrohd_examples_seed_risk_unresolved",
+        "pending_adjudication_assigned_clean_role_rejected",
+        "ineligible_clean_author_assigned_prefreeze_rejected",
+        "astrohd_exposed_model_session_authorship_rejected",
+        "repository_or_conversation_context_authorship_rejected"
+      ],
+      "fixture_test_nodes": [
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[prior_chart_shallow_mismatch_eligible]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[casual_chart_discussion_curiosity_eligible]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[generic_astrology_nonidentity_no_ontology_not_excluded]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[skeptical_substantial_knowledge_requires_adjudication]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[strong_rejection_substantial_ontology_requires_adjudication]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[substantial_knowledge_attempted_eligible_rejected]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[substantial_knowledge_attempted_automatic_ineligible_rejected]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[identity_defining_shallow_ineligible_clean_author]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[intentional_derivation_while_rejecting_ineligible]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[incidental_owner_acquaintance_not_automatic_exclusion]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[owner_astrohd_examples_seed_risk_unresolved]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[pending_adjudication_assigned_clean_role_rejected]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[ineligible_clean_author_assigned_prefreeze_rejected]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[astrohd_exposed_model_session_authorship_rejected]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[repository_or_conversation_context_authorship_rejected]"
+      ],
+      "lineage": "SUPERSEDES_V1_ROW_18_PER_EPOCH5_OWNER_POLICY"
+    },
+    {
+      "requirement_id": "S6H1-19",
+      "summary": "H1 human-only content authorship",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-ROLE-ACCESS-MATRIX-V2.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-19]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-20",
+      "summary": "S6 ordering cannot be bypassed",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-WORKFLOW-CONTRACT-V2.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-20]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-21",
+      "summary": "Logical role separation",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-WORKFLOW-CONTRACT-V2.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-21]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-22",
+      "summary": "No silent measurement-reviewer alteration",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-ROLE-ACCESS-MATRIX-V2.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-22]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-23",
+      "summary": "Mapping role cannot influence pre-freeze development",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-ROLE-ACCESS-MATRIX-V2.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-23]",
+      "fixture_case_ids": [
+        "postfreeze_role_activated_prefreeze_without_authorization_rejected"
+      ],
+      "fixture_test_nodes": [
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[postfreeze_role_activated_prefreeze_without_authorization_rejected]"
+      ],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-24",
+      "summary": "Assignment access and exposure histories append-only",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-ROLE-ACCESS-MATRIX-V2.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-24]",
+      "fixture_case_ids": [
+        "earlier_exposure_event_erasure_rejected"
+      ],
+      "fixture_test_nodes": [
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[earlier_exposure_event_erasure_rejected]"
+      ],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-25",
+      "summary": "Connected role conflicts are contamination states",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-THREAT-MODEL-V2.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-25]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-26",
+      "summary": "Closed screening schemas reject unknown fields",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-SCREENING-METADATA-SCHEMA-V2.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-26]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-27",
+      "summary": "Opaque conspicuously synthetic IDs only",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-SCREENING-METADATA-SCHEMA-V2.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-27]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-28",
+      "summary": "All required prior exposure states represented",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-SCREENING-METADATA-SCHEMA-V2.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-28]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-29",
+      "summary": "Unknown, incomplete, or conflicting human evidence blocks clean-role assignment and yields no substantive outcome rather than automatic ineligibility",
+      "primary_artifact": "tests/s6_h1_prehuman/validator.py",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-29]",
+      "fixture_case_ids": [
+        "prior_chart_shallow_mismatch_eligible",
+        "substantial_knowledge_attempted_eligible_rejected",
+        "owner_astrohd_examples_seed_risk_unresolved",
+        "unknown_exposure_provenance_no_outcome",
+        "conflicting_exposure_or_self_concept_no_outcome",
+        "absence_of_known_exposure_as_proof_rejected",
+        "pending_adjudication_assigned_clean_role_rejected",
+        "ineligible_clean_author_assigned_prefreeze_rejected",
+        "earlier_exposure_event_erasure_rejected"
+      ],
+      "fixture_test_nodes": [
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[prior_chart_shallow_mismatch_eligible]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[substantial_knowledge_attempted_eligible_rejected]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[owner_astrohd_examples_seed_risk_unresolved]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[unknown_exposure_provenance_no_outcome]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[conflicting_exposure_or_self_concept_no_outcome]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[absence_of_known_exposure_as_proof_rejected]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[pending_adjudication_assigned_clean_role_rejected]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[ineligible_clean_author_assigned_prefreeze_rejected]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[earlier_exposure_event_erasure_rejected]"
+      ],
+      "lineage": "CLARIFIES_V1_ROW_29_FAIL_CLOSED_WITHOUT_INELIGIBILITY_INFERENCE"
+    },
+    {
+      "requirement_id": "S6H1-30",
+      "summary": "Exactly three substantive outcomes remain separate from unresolved process states; no human-facing question, threshold, evidence standard, adjudicator, exception, cutoff, or belief/product proxy is selected",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-PRIOR-EXPOSURE-POLICY-V1.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-30]",
+      "fixture_case_ids": [
+        "prior_chart_shallow_mismatch_eligible",
+        "casual_chart_discussion_curiosity_eligible",
+        "generic_astrology_nonidentity_no_ontology_not_excluded",
+        "positive_belief_shallow_nonidentity_not_excluded",
+        "reported_ninety_percent_sole_basis_rejected",
+        "skeptical_substantial_knowledge_requires_adjudication",
+        "strong_rejection_substantial_ontology_requires_adjudication",
+        "substantial_knowledge_attempted_automatic_ineligible_rejected",
+        "identity_defining_shallow_ineligible_clean_author",
+        "identity_defining_plus_skepticism_still_ineligible",
+        "intentional_derivation_while_rejecting_ineligible",
+        "incidental_owner_acquaintance_not_automatic_exclusion",
+        "absence_of_known_exposure_as_proof_rejected",
+        "multiple_or_list_valued_outcome_rejected",
+        "human_facing_question_or_threshold_field_rejected",
+        "product_use_rationale_as_eligibility_basis_rejected",
+        "belief_mismatch_curiosity_or_usefulness_progression_rejected"
+      ],
+      "fixture_test_nodes": [
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[prior_chart_shallow_mismatch_eligible]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[casual_chart_discussion_curiosity_eligible]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[generic_astrology_nonidentity_no_ontology_not_excluded]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[positive_belief_shallow_nonidentity_not_excluded]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[reported_ninety_percent_sole_basis_rejected]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[skeptical_substantial_knowledge_requires_adjudication]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[strong_rejection_substantial_ontology_requires_adjudication]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[substantial_knowledge_attempted_automatic_ineligible_rejected]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[identity_defining_shallow_ineligible_clean_author]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[identity_defining_plus_skepticism_still_ineligible]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[intentional_derivation_while_rejecting_ineligible]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[incidental_owner_acquaintance_not_automatic_exclusion]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[absence_of_known_exposure_as_proof_rejected]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[multiple_or_list_valued_outcome_rejected]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[human_facing_question_or_threshold_field_rejected]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[product_use_rationale_as_eligibility_basis_rejected]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[belief_mismatch_curiosity_or_usefulness_progression_rejected]"
+      ],
+      "lineage": "SUPERSEDES_V1_ROW_30_PER_EPOCH5_OWNER_POLICY"
+    },
+    {
+      "requirement_id": "S6H1-31",
+      "summary": "No human-facing screening consent or recruitment text",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-SCREENING-METADATA-SCHEMA-V2.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-31]",
+      "fixture_case_ids": [
+        "human_facing_question_or_threshold_field_rejected"
+      ],
+      "fixture_test_nodes": [
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[human_facing_question_or_threshold_field_rejected]"
+      ],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-32",
+      "summary": "No human action",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-EXECUTION-LEDGER-V1.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-32]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-33",
+      "summary": "Isolation records all required provenance classes",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-ISOLATION-PROVENANCE-SCHEMA-V2.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-33]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-34",
+      "summary": "Fresh isolation is explicit and evidence-bound",
+      "primary_artifact": "tests/s6_h1_prehuman/validator.py",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-34]",
+      "fixture_case_ids": [
+        "repository_or_conversation_context_authorship_rejected"
+      ],
+      "fixture_test_nodes": [
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[repository_or_conversation_context_authorship_rejected]"
+      ],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-35",
+      "summary": "No model content authorship or revision",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-ISOLATION-PROVENANCE-SCHEMA-V2.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-35]",
+      "fixture_case_ids": [
+        "astrohd_exposed_model_session_authorship_rejected"
+      ],
+      "fixture_test_nodes": [
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[astrohd_exposed_model_session_authorship_rejected]"
+      ],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-36",
+      "summary": "No live identity credential storage account or record system",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-EXECUTION-LEDGER-V1.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-36]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-37",
+      "summary": "Pre-freeze content stays outside exposed repository surfaces",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-CONTENT-ESCROW-CONTRACT-V1.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-37]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-38",
+      "summary": "Repository metadata and digests only",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-CONTENT-ESCROW-CONTRACT-V1.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-38]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-39",
+      "summary": "AstroHD-exposed roles cannot access pre-freeze content",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-ROLE-ACCESS-MATRIX-V2.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-39]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-40",
+      "summary": "Content access and custody events append-only and hashed",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-CONTENT-ESCROW-CONTRACT-V1.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-40]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-41",
+      "summary": "Conception freeze precedes specific search",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-CONCEPTION-SEARCH-STATE-MACHINE-V1.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-41]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-42",
+      "summary": "Search cannot mutate frozen conception in place",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-CONCEPTION-SEARCH-STATE-MACHINE-V1.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-42]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-43",
+      "summary": "Current state machine stops before human content and search",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-CONCEPTION-SEARCH-STATE-MACHINE-V1.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-43]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-44",
+      "summary": "Later AstroHD mapping question represented but closed",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-CONCEPTION-SEARCH-STATE-MACHINE-V1.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-44]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-45",
+      "summary": "Mapping failure cannot authorize construct repair",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-CONCEPTION-SEARCH-STATE-MACHINE-V1.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-45]",
+      "fixture_case_ids": [
+        "postfreeze_role_activated_prefreeze_without_authorization_rejected",
+        "postmapping_inplace_construct_overwrite_rejected"
+      ],
+      "fixture_test_nodes": [
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[postfreeze_role_activated_prefreeze_without_authorization_rejected]",
+        "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_epoch5_hostile_policy_case[postmapping_inplace_construct_overwrite_rejected]"
+      ],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-46",
+      "summary": "Dossier covers every unresolved owner choice",
+      "primary_artifact": "docs/NATAL_TIME_S6_H1_PREHUMAN_OWNER_DOSSIER_20260830.md",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-46]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-47",
+      "summary": "Every dossier option explicitly unselected",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-UNRESOLVED-DECISIONS-V2.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-47]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-48",
+      "summary": "No recommendation ranking default or preselection",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-UNRESOLVED-DECISIONS-V2.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-48]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-49",
+      "summary": "Population and accessibility choices remain unselected",
+      "primary_artifact": "docs/NATAL_TIME_S6_H1_PREHUMAN_OWNER_DOSSIER_20260830.md",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-49]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-50",
+      "summary": "Recruitment resources schedule and burden remain unselected",
+      "primary_artifact": "docs/NATAL_TIME_S6_H1_PREHUMAN_OWNER_DOSSIER_20260830.md",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-50]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-51",
+      "summary": "Failure reliability and mapping progression remain unselected",
+      "primary_artifact": "docs/NATAL_TIME_S6_H1_PREHUMAN_OWNER_DOSSIER_20260830.md",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-51]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-52",
+      "summary": "Dossier gives no human-contact or screening authority",
+      "primary_artifact": "docs/NATAL_TIME_S6_H1_PREHUMAN_OWNER_DOSSIER_20260830.md",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-52]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-53",
+      "summary": "Exactly 60 ordered acceptance rows",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-ACCEPTANCE-MATRIX-V2.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-53]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-54",
+      "summary": "Single-primary content-hashed artifact manifest",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-ARTIFACT-MANIFEST-V3.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-54]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-55",
+      "summary": "Test-only closed synthetic validators and fixtures",
+      "primary_artifact": "tests/s6_h1_prehuman/validator.py",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-55]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-56",
+      "summary": "Checkpoint 8 through 10 protected bytes unchanged",
+      "primary_artifact": "tests/s6_h1_prehuman/acceptance.py",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-56]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-57",
+      "summary": "All exact-head verification gates pass",
+      "primary_artifact": "docs/NATAL_TIME_S6_H1_CHECKPOINT11_EPOCH5_REMEDIATION_ACCEPTANCE_20260830.md",
+      "status": "PASS_AT_EXACT_HEAD",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-57]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-58",
+      "summary": "Headless default and dedicated headed workspace reuse",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-EXECUTION-LEDGER-V2.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-58]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-59",
+      "summary": "Corrected commands and no prohibited action recorded",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-EXECUTION-LEDGER-V2.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-59]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    },
+    {
+      "requirement_id": "S6H1-60",
+      "summary": "Dual alignment typed completion three assurance planes and open parent",
+      "primary_artifact": "state/NATAL-TIME-S6-H1-ASSURANCE-PLANES-V2.json",
+      "status": "PASS",
+      "test_node": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py::test_s6_h1_prehuman_requirement[S6H1-60]",
+      "fixture_case_ids": [],
+      "fixture_test_nodes": [],
+      "lineage": "UNCHANGED_CONTROLLING_REQUIREMENT_FROM_V1"
+    }
+  ],
+  "hostile_fixture_corpus": {
+    "path": "tests/fixtures/s6_h1_prehuman/epoch5_policy_cases.json",
+    "case_count": 28
+  },
+  "passing_requirement_count": 60,
+  "failing_requirement_ids": [],
+  "claim_boundary": "The matrix proves only the bounded pre-human governance and synthetic logical-consistency contract. It does not prove any real person's eligibility, a human screening or adjudication method, construct reliability, validity, mapping, or release readiness."
+}

@@ -1,0 +1,479 @@
+{
+  "schema_version": "2.0.0",
+  "record_class": "CONSPICUOUSLY_SYNTHETIC_S6_H1_EPOCH5_HOSTILE_CASES",
+  "case_count": 28,
+  "cases": [
+    {
+      "case_id": "prior_chart_shallow_mismatch_eligible",
+      "schema": "screening",
+      "base_fixture": "screening_policy_eligible_v2.json",
+      "expectation": "VALID",
+      "requirement_ids": [
+        "S6H1-18",
+        "S6H1-29",
+        "S6H1-30"
+      ]
+    },
+    {
+      "case_id": "casual_chart_discussion_curiosity_eligible",
+      "schema": "screening",
+      "base_fixture": "screening_policy_eligible_v2.json",
+      "mutations": [
+        {
+          "field": "exposure_provenance.conversation",
+          "value": "PRIOR_EXPOSURE_RECORDED"
+        },
+        {
+          "field": "nondecision_descriptors.curiosity_reported",
+          "value": true
+        }
+      ],
+      "expectation": "VALID",
+      "requirement_ids": [
+        "S6H1-18",
+        "S6H1-30"
+      ]
+    },
+    {
+      "case_id": "generic_astrology_nonidentity_no_ontology_not_excluded",
+      "schema": "screening",
+      "base_fixture": "screening_policy_eligible_v2.json",
+      "mutations": [
+        {
+          "field": "exposure_provenance.astrology",
+          "value": "PRIOR_EXPOSURE_RECORDED"
+        }
+      ],
+      "expectation": "VALID",
+      "requirement_ids": [
+        "S6H1-18",
+        "S6H1-30"
+      ]
+    },
+    {
+      "case_id": "positive_belief_shallow_nonidentity_not_excluded",
+      "schema": "screening",
+      "base_fixture": "screening_policy_eligible_v2.json",
+      "mutations": [
+        {
+          "field": "nondecision_descriptors.belief_report",
+          "value": "POSITIVE"
+        },
+        {
+          "field": "nondecision_descriptors.mismatch_report",
+          "value": "NONE"
+        },
+        {
+          "field": "nondecision_descriptors.usefulness_report",
+          "value": "HIGH"
+        }
+      ],
+      "expectation": "VALID",
+      "requirement_ids": [
+        "S6H1-30"
+      ]
+    },
+    {
+      "case_id": "reported_ninety_percent_sole_basis_rejected",
+      "schema": "screening",
+      "base_fixture": "screening_policy_eligible_v2.json",
+      "mutations": [
+        {
+          "field": "nondecision_descriptors.reported_accuracy_present",
+          "value": true
+        },
+        {
+          "field": "automatic_decision_bases.reported_accuracy",
+          "value": true
+        }
+      ],
+      "expectation": "REJECT",
+      "expected_code": "S6H1_CONST_VIOLATION",
+      "requirement_ids": [
+        "S6H1-30"
+      ]
+    },
+    {
+      "case_id": "skeptical_substantial_knowledge_requires_adjudication",
+      "schema": "screening",
+      "base_fixture": "screening_policy_adjudication_v2.json",
+      "expectation": "VALID",
+      "requirement_ids": [
+        "S6H1-18",
+        "S6H1-30"
+      ]
+    },
+    {
+      "case_id": "strong_rejection_substantial_ontology_requires_adjudication",
+      "schema": "screening",
+      "base_fixture": "screening_policy_adjudication_v2.json",
+      "mutations": [
+        {
+          "field": "nondecision_descriptors.belief_report",
+          "value": "REJECTING"
+        }
+      ],
+      "expectation": "VALID",
+      "requirement_ids": [
+        "S6H1-18",
+        "S6H1-30"
+      ]
+    },
+    {
+      "case_id": "substantial_knowledge_attempted_eligible_rejected",
+      "schema": "screening",
+      "base_fixture": "screening_policy_adjudication_v2.json",
+      "mutations": [
+        {
+          "field": "substantive_outcome",
+          "value": "ELIGIBLE"
+        },
+        {
+          "field": "adjudication_requirement",
+          "value": "NOT_REQUIRED_BY_COMPLETE_RECORDED_METADATA"
+        },
+        {
+          "field": "role_assignment_eligibility",
+          "value": "STRUCTURALLY_CONSISTENT_BUT_NOT_AUTHORIZED"
+        }
+      ],
+      "expectation": "REJECT",
+      "expected_code": "S6H1_SUBSTANTIAL_KNOWLEDGE_REQUIRES_ADJUDICATION",
+      "requirement_ids": [
+        "S6H1-18",
+        "S6H1-29"
+      ]
+    },
+    {
+      "case_id": "substantial_knowledge_attempted_automatic_ineligible_rejected",
+      "schema": "screening",
+      "base_fixture": "screening_policy_adjudication_v2.json",
+      "mutations": [
+        {
+          "field": "substantive_outcome",
+          "value": "INELIGIBLE_CLEAN_H1_AUTHOR"
+        },
+        {
+          "field": "adjudication_requirement",
+          "value": "SEPARATE_INELIGIBILITY_BASIS_RECORDED"
+        },
+        {
+          "field": "role_assignment_eligibility",
+          "value": "BLOCKED_INELIGIBLE_CLEAN_H1_AUTHOR"
+        }
+      ],
+      "expectation": "REJECT",
+      "expected_code": "S6H1_SUBSTANTIAL_KNOWLEDGE_NOT_AUTOMATIC_INELIGIBILITY",
+      "requirement_ids": [
+        "S6H1-18",
+        "S6H1-30"
+      ]
+    },
+    {
+      "case_id": "identity_defining_shallow_ineligible_clean_author",
+      "schema": "screening",
+      "base_fixture": "screening_policy_ineligible_v2.json",
+      "expectation": "VALID",
+      "requirement_ids": [
+        "S6H1-18",
+        "S6H1-30"
+      ]
+    },
+    {
+      "case_id": "identity_defining_plus_skepticism_still_ineligible",
+      "schema": "screening",
+      "base_fixture": "screening_policy_ineligible_v2.json",
+      "mutations": [
+        {
+          "field": "nondecision_descriptors.belief_report",
+          "value": "SKEPTICAL"
+        }
+      ],
+      "expectation": "VALID",
+      "requirement_ids": [
+        "S6H1-30"
+      ]
+    },
+    {
+      "case_id": "intentional_derivation_while_rejecting_ineligible",
+      "schema": "screening",
+      "base_fixture": "screening_policy_ineligible_v2.json",
+      "mutations": [
+        {
+          "field": "self_concept_integration",
+          "value": "NOT_IDENTITY_DEFINING_ESTABLISHED"
+        },
+        {
+          "field": "intentional_derivation_risk",
+          "value": "INTENTIONAL_DERIVATION_ESTABLISHED"
+        },
+        {
+          "field": "nondecision_descriptors.belief_report",
+          "value": "REJECTING"
+        }
+      ],
+      "expectation": "VALID",
+      "requirement_ids": [
+        "S6H1-18",
+        "S6H1-30"
+      ]
+    },
+    {
+      "case_id": "incidental_owner_acquaintance_not_automatic_exclusion",
+      "schema": "screening",
+      "base_fixture": "screening_policy_eligible_v2.json",
+      "mutations": [
+        {
+          "field": "exposure_provenance.owner",
+          "value": "PRIOR_EXPOSURE_RECORDED"
+        }
+      ],
+      "expectation": "VALID",
+      "requirement_ids": [
+        "S6H1-18",
+        "S6H1-30"
+      ]
+    },
+    {
+      "case_id": "owner_astrohd_examples_seed_risk_unresolved",
+      "schema": "screening",
+      "base_fixture": "screening_policy_incomplete_v2.json",
+      "expectation": "VALID",
+      "requirement_ids": [
+        "S6H1-18",
+        "S6H1-29"
+      ]
+    },
+    {
+      "case_id": "unknown_exposure_provenance_no_outcome",
+      "schema": "screening",
+      "base_fixture": "screening_policy_incomplete_v2.json",
+      "mutations": [
+        {
+          "field": "exposure_provenance.owner",
+          "value": "UNKNOWN"
+        }
+      ],
+      "expectation": "VALID",
+      "requirement_ids": [
+        "S6H1-29"
+      ]
+    },
+    {
+      "case_id": "conflicting_exposure_or_self_concept_no_outcome",
+      "schema": "screening",
+      "base_fixture": "screening_policy_conflict_v2.json",
+      "expectation": "VALID",
+      "requirement_ids": [
+        "S6H1-29"
+      ]
+    },
+    {
+      "case_id": "absence_of_known_exposure_as_proof_rejected",
+      "schema": "screening",
+      "base_fixture": "screening_policy_eligible_v2.json",
+      "mutations": [
+        {
+          "field": "automatic_decision_bases.absence_of_known_exposure_record",
+          "value": true
+        }
+      ],
+      "expectation": "REJECT",
+      "expected_code": "S6H1_CONST_VIOLATION",
+      "requirement_ids": [
+        "S6H1-29",
+        "S6H1-30"
+      ]
+    },
+    {
+      "case_id": "pending_adjudication_assigned_clean_role_rejected",
+      "schema": "screening",
+      "base_fixture": "screening_policy_adjudication_v2.json",
+      "mutations": [
+        {
+          "field": "role_assignment_eligibility",
+          "value": "STRUCTURALLY_CONSISTENT_BUT_NOT_AUTHORIZED"
+        }
+      ],
+      "expectation": "REJECT",
+      "expected_code": "S6H1_ADJUDICATION_CANNOT_AUTHOR_PREFREEZE",
+      "requirement_ids": [
+        "S6H1-18",
+        "S6H1-29"
+      ]
+    },
+    {
+      "case_id": "ineligible_clean_author_assigned_prefreeze_rejected",
+      "schema": "screening",
+      "base_fixture": "screening_policy_ineligible_v2.json",
+      "mutations": [
+        {
+          "field": "role_assignment_eligibility",
+          "value": "STRUCTURALLY_CONSISTENT_BUT_NOT_AUTHORIZED"
+        }
+      ],
+      "expectation": "REJECT",
+      "expected_code": "S6H1_INELIGIBLE_ROLE_ASSIGNMENT",
+      "requirement_ids": [
+        "S6H1-18",
+        "S6H1-29"
+      ]
+    },
+    {
+      "case_id": "postfreeze_role_activated_prefreeze_without_authorization_rejected",
+      "schema": "screening",
+      "base_fixture": "screening_policy_eligible_v2.json",
+      "mutations": [
+        {
+          "field": "future_role_access.postfreeze_role_activated",
+          "value": true
+        }
+      ],
+      "expectation": "REJECT",
+      "expected_code": "S6H1_CONST_VIOLATION",
+      "requirement_ids": [
+        "S6H1-23",
+        "S6H1-45"
+      ]
+    },
+    {
+      "case_id": "astrohd_exposed_model_session_authorship_rejected",
+      "schema": "isolation",
+      "base_fixture": "isolation_valid_v2.json",
+      "mutations": [
+        {
+          "field": "model_content_authorship_allowed",
+          "value": true
+        }
+      ],
+      "expectation": "REJECT",
+      "expected_code": "S6H1_CONST_VIOLATION",
+      "requirement_ids": [
+        "S6H1-18",
+        "S6H1-35"
+      ]
+    },
+    {
+      "case_id": "repository_or_conversation_context_authorship_rejected",
+      "schema": "isolation",
+      "base_fixture": "isolation_valid_v2.json",
+      "mutations": [
+        {
+          "field": "actor.content_generation_context_exposure_state",
+          "value": "DISCLOSED_ASTROHD_CONTEXT_EXPOSURE"
+        }
+      ],
+      "expectation": "REJECT",
+      "expected_code": "S6H1_ISOLATION_EVIDENCE_INCOMPLETE",
+      "requirement_ids": [
+        "S6H1-18",
+        "S6H1-34"
+      ]
+    },
+    {
+      "case_id": "earlier_exposure_event_erasure_rejected",
+      "schema": "screening",
+      "base_fixture": "screening_policy_eligible_v2.json",
+      "mutations": [
+        {
+          "field": "exposure_history_integrity.prior_event_erasure_detected",
+          "value": true
+        }
+      ],
+      "expectation": "REJECT",
+      "expected_code": "S6H1_CONST_VIOLATION",
+      "requirement_ids": [
+        "S6H1-24",
+        "S6H1-29"
+      ]
+    },
+    {
+      "case_id": "multiple_or_list_valued_outcome_rejected",
+      "schema": "screening",
+      "base_fixture": "screening_policy_eligible_v2.json",
+      "mutations": [
+        {
+          "field": "substantive_outcome",
+          "value": [
+            "ELIGIBLE",
+            "ELIGIBLE"
+          ]
+        }
+      ],
+      "expectation": "REJECT",
+      "expected_code": "S6H1_ENUM_VIOLATION",
+      "requirement_ids": [
+        "S6H1-30"
+      ]
+    },
+    {
+      "case_id": "human_facing_question_or_threshold_field_rejected",
+      "schema": "screening",
+      "base_fixture": "screening_policy_eligible_v2.json",
+      "mutations": [
+        {
+          "field": "screening_question",
+          "value": "PROHIBITED_SYNTHETIC_FIELD"
+        }
+      ],
+      "expectation": "REJECT",
+      "expected_code": "S6H1_PROHIBITED_FIELD",
+      "requirement_ids": [
+        "S6H1-30",
+        "S6H1-31"
+      ]
+    },
+    {
+      "case_id": "product_use_rationale_as_eligibility_basis_rejected",
+      "schema": "screening",
+      "base_fixture": "screening_policy_eligible_v2.json",
+      "mutations": [
+        {
+          "field": "nondecision_descriptors.product_interest_reported",
+          "value": true
+        },
+        {
+          "field": "automatic_decision_bases.product_interest",
+          "value": true
+        }
+      ],
+      "expectation": "REJECT",
+      "expected_code": "S6H1_CONST_VIOLATION",
+      "requirement_ids": [
+        "S6H1-30"
+      ]
+    },
+    {
+      "case_id": "belief_mismatch_curiosity_or_usefulness_progression_rejected",
+      "schema": "screening",
+      "base_fixture": "screening_policy_eligible_v2.json",
+      "mutations": [
+        {
+          "field": "automatic_decision_bases.curiosity",
+          "value": true
+        }
+      ],
+      "expectation": "REJECT",
+      "expected_code": "S6H1_CONST_VIOLATION",
+      "requirement_ids": [
+        "S6H1-30"
+      ]
+    },
+    {
+      "case_id": "postmapping_inplace_construct_overwrite_rejected",
+      "schema": "screening",
+      "base_fixture": "screening_policy_eligible_v2.json",
+      "mutations": [
+        {
+          "field": "mapping_integrity.in_place_revision_authorized",
+          "value": true
+        }
+      ],
+      "expectation": "REJECT",
+      "expected_code": "S6H1_CONST_VIOLATION",
+      "requirement_ids": [
+        "S6H1-45"
+      ]
+    }
+  ]
+}
