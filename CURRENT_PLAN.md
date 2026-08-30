@@ -167,11 +167,19 @@ definitions, measurement model, reliability evidence, and analysis boundaries mu
 developed and frozen independently; a later separately frozen and blinded AstroHD mapping may then
 be tested and must be allowed to fail without post-hoc remapping.
 
-The selection establishes direction only. It does not itself authorize construct writing,
-instrument development, items/prompts/categories/scoring, mapping design or execution, model or
-reliability-method selection, population/language/mode choices, human work, or any external action.
-Return Joel's B1 ruling to Pro for a new bounded supervision contract before substantive
-implementation.
+Pro accepted the B1 selection without another owner choice and authorized only pre-content source
+governance, content embargo, and the AstroHD mapping firewall. That bounded slice is complete
+locally. The architecture preserves an immutable chart-blind conception-before-search sequence,
+all-unselected source routes, a future construct-specific scan template, closed metadata schemas,
+append-only contamination, unassigned separated roles, a construct freeze gate, separate R/M/I
+claim lanes, mapping-failure preservation, and post-exposure change control. It creates no
+construct or mapping content.
+
+The exact checkpoint-10 packet is
+`docs/NATAL_TIME_B1_CHECKPOINT10_ACCEPTANCE_20260830.md`. Before any construct source is selected,
+content is authored, or a construct-specific search begins, Pro must rule on checkpoint 10 and
+Joel must choose the source-route class plus human, fresh-isolated-model, or separated-hybrid
+authorship. If Pro says an owner decision is required, stop and wait for Joel.
 
 Option B remains a design-only prerequisite screen. It does not authorize live execution,
 measurement content, participant software, empirical data, or progression to rectification.

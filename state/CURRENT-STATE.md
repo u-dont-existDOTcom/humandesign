@@ -1,6 +1,6 @@
 # Current state
 
-- As of: `2026-08-30 20:01 GMT`
+- As of: `2026-08-30 21:39 GMT`
 - Task ID: `astrohd-relationship-continuation-20260830`
 - Goal: continue the relationship/AstroHD program under the blocking Brave + ChatGPT Pro supervision contract in `docs/RELATIONSHIP_RESEARCH_HANDOFF.md`, beginning with the separate natal-first `Find my birth-time window` priority unless supervision changes the sequence.
 - Authoritative Git baseline: `main` and `origin/main` at `b7660b8c9bcf52cbb14bc5442c13a3a8635aad32` (`Add canonical relationship research handoff and Pro supervision protocol`).
@@ -86,6 +86,10 @@
 - Pro returned `OWNER DECISION REQUIRED: YES` and `CHECKPOINT-9 VERDICT: QUALIFIED`. It found no blocking acceptance defect, qualified all nine evidence surfaces, preserved the deterministic/Phase-0 foundation, and qualified Option B only for construct-neutral design-contract completeness. Its single scope correction is that the generic scan's no-overlap result cannot exclude an established instrument for a later specific construct; a fresh construct-specific instrument/method scan is mandatory after construct-source authorization and before bespoke content.
 - Pro requires Joel to choose **B1 — independent-first constructs** or **B2 — HD-derived constructs** before any substantive next slice. Pro recommends B1 for the strongest circularity and leakage protection. No substantive next slice is authorized merely by the selection; after Joel rules, a new bounded Pro contract is required.
 - Joel selected **B1 — independent-first constructs** and clarified that the eventual scientific path must still test how independently frozen chart-blind constructs map onto AstroHD. The owner record is `docs/NATAL_TIME_OWNER_DECISION_B1_20260830.md`. The mapping is a later, separately frozen and blinded phase that must permit a null/nonmapping result; it is not authorized now.
+- Pro returned `OWNER DECISION REQUIRED: NO` for the B1 selection and authorized only pre-content source governance, a content embargo, and an AstroHD mapping firewall. The authorized architecture is complete at implementation/correction head `39834d91c1aa751bb9bd26c6eff182fe384678c6` / tree `14d6a7215e9c71ff8a1a11699899b8cb91514030`, with byte-evidence child `7688e7b8cddcdf02e6378a133d55d2ca36d76aa0` / tree `e0afad65c7e1dcca8f2e8782accc41d8523e1995`.
+- `state/NATAL-TIME-B1-BASELINE-ATTESTATION-V1.json` records the complete checkpoint-9-to-B1 topology and diff. The conception commit precedes all 20 exact generic methods queries and remains byte-identical. All source routes remain unselected; the future construct-specific scan is not executed; all content-bearing freeze and mapping slots are unset.
+- Three closed schemas and test-only validators accept only conspicuously synthetic opaque metadata. The 64-row matrix passes all 64 requirements, and the 33-artifact manifest is byte-exact. R reliability, M mapping, and I incremental value remain separate, with no scalar or automatic progression. Null/weak/unstable/nonreplicating mappings remain reportable and cannot repair a construct in place.
+- The checkpoint-10 packet is `docs/NATAL_TIME_B1_CHECKPOINT10_ACCEPTANCE_20260830.md`; the neutral future decision dossier is `docs/NATAL_TIME_B1_OWNER_SOURCE_ROUTE_DOSSIER_20260830.md`. The required next authority is Pro's checkpoint-10 ruling followed, if requested, by Joel's source-route and authorship-class choice.
 - Still prohibited: every inferential or participant-facing semantic, relationship-assisted pruning, live data, recruitment, public mounting or ledger release, migration, Railway changes, push, merge, and deploy. A later owner decision is explicitly required before questionnaire development, participant-facing use, selection of a coverage/width/abstention operating point, a human cohort size/burden/cost, ranking/exclusion, probabilistic language, public-ledger deployment, push, merge, migration, or deployment.
 - Browser-control default from the owner: prefer headless operation. When the authenticated headed Brave session is genuinely required, reuse the existing controlled window on a dedicated secondary workspace or secondary physical monitor so it does not steal focus or cover the active screen. Do not repeatedly open and close visible windows.
 - Test-efficiency telemetry is active under task ID `astrohd-relationship-20260830` in `.git/codex-test-efficiency/`.
@@ -94,10 +98,9 @@
 
 ## Next safe action
 
-Return Joel's B1 ruling and explicit later-AstroHD-mapping intent to the same authenticated Pro
-conversation and obtain a new bounded contract before substantive work. If Pro requires another
-owner decision, stop for Joel; otherwise proceed only inside the returned contract. Do not push
-without Joel's direct authority, and do not merge, change GitHub governance, modify Railway, touch
-`OPENROUTER_API_KEY`, access participant records, recruit, name or describe constructs, implement
-questionnaire content or an estimator, design or execute the mapping, execute baselines, or deploy
-unless a later bounded ruling explicitly authorizes that action.
+Return the exact B1 checkpoint-10 packet to the same authenticated Pro conversation. If Pro says
+an owner decision is required, stop and wait for Joel; otherwise proceed only inside a newly
+authorized bounded contract. Do not select a source route or authorship class, begin a
+construct-specific search, create construct or mapping content, push, merge, change GitHub
+governance, modify Railway, touch `OPENROUTER_API_KEY`, access participant records, recruit,
+execute baselines, or deploy without the required later authority.
