@@ -44,7 +44,7 @@ Until Pro supplies that contract, this decision authorizes no:
 - Accepted checkpoint-8 evidence head:
   `63bfb78909a97eb5b8b31efe55e065a6f78973a2`.
 - Checkpoint-8 ruling record head:
-  `98cf7118e61502a773d84e0bb8d6e3bcb63132e5`.
+  `98cf7114d22ec1edc22477980a64269635cc7c77`.
 - Owner dossier: `docs/NATAL_TIME_OWNER_DECISION_DOSSIER_20260830.md`.
 - Pro ruling: `docs/PRO_SUPERVISION_CHECKPOINT_8_20260830.md`.
 - Decision register: `state/NATAL-TIME-UNRESOLVED-DECISIONS.json` remains unchanged; Option B does
