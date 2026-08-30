@@ -28,6 +28,8 @@ def main() -> int:
     parser.add_argument("--aggregate-only", action="store_true")
     args = parser.parse_args()
     root = args.repository_root.resolve(strict=True)
+    if str(root) not in sys.path:
+        sys.path.insert(0, str(root))
     repository_commit = args.repository_commit or current_repository_commit(root)
     try:
         context = load_replay_context(root, repository_commit)
