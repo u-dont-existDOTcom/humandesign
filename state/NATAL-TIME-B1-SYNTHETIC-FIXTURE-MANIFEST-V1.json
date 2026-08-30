@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-b1-synthetic-fixture-manifest-v1",
+  "status": "BYTE_EXACT_CONSPICUOUSLY_SYNTHETIC_FIXTURES",
+  "active_purpose": "b1_independent_construct_precontent_governance",
+  "provenance": {
+    "architecture_source_commit": "d36cf919b1be3c9aa22d91694759e0b000ec03d8",
+    "validator_version": "b1-precontent-synthetic-validator-v1"
+  },
+  "fixtures": [
+    {"path": "tests/fixtures/b1_precontent/access_event_valid.json", "sha256": "a306f483af868ffb2fe267bb051f73191e8fcddaf4dd139e7d8c778db9d41c58", "expected": "VALID"},
+    {"path": "tests/fixtures/b1_precontent/candidate_metadata_valid.json", "sha256": "1859404eb87dfd9f2b719dc04549339a852714331b9014b078ef775a3d5fad9e", "expected": "VALID"},
+    {"path": "tests/fixtures/b1_precontent/content_embargo_valid.json", "sha256": "91389a8f9d007288f08b1df68ff7d252ea32ebdd4505cb416eb324bff70ba763", "expected": "VALID"},
+    {"path": "tests/fixtures/b1_precontent/invalid_probes.json", "sha256": "6b7885ee9463df409a5b14d6169ff1f9e96040e260c4110fa32f75051b7ffe52", "expected": "CONTROLLED_REJECTIONS"}
+  ],
+  "content_audit": {
+    "opaque_synthetic_ids_only": true,
+    "meaningful_construct_content_count": 0,
+    "personal_or_live_record_count": 0,
+    "birth_or_candidate_time_count": 0,
+    "chart_or_relationship_content_count": 0,
+    "response_or_narrative_content_count": 0,
+    "meaningful_mapping_content_count": 0,
+    "invalid_probe_values": "SYNTHETIC_SENTINELS_ONLY"
+  },
+  "fixture_count": 4,
+  "test_only": true
+}

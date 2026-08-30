@@ -1,0 +1,108 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-b1-baseline-attestation-v1",
+  "status": "IMPLEMENTATION_HEAD_AND_BASELINE_BOUND",
+  "active_purpose": "b1_independent_construct_precontent_governance",
+  "owner_record": {
+    "commit": "cc6e8c3c05551c772d788d336994c3996d02ab78",
+    "tree": "11519d876c480b839e24bb6ee109f69c1a6a17a4",
+    "path": "docs/NATAL_TIME_OWNER_DECISION_B1_20260830.md",
+    "sha256": "64fe976c98c2b8ba82d86dc96e4bca2dee596338563dcc10c5934733e98b02af",
+    "direct_parent_checkpoint_9_ruling": "070348adb45ad1d3863ebab68d1bf1eea7439d53"
+  },
+  "accepted_checkpoint_9": {
+    "evidence_head": "d6af8d472f1a8352b2d710b12aedeb3e904060d0",
+    "evidence_tree": "ea39f44cbf5d7de42f54d396706c4257871f3ff7",
+    "checkpoint_9_ruling_record": "070348adb45ad1d3863ebab68d1bf1eea7439d53",
+    "checkpoint_9_ruling_tree": "20e3c4990093a3c144c2e168b7f1a239ceb9b107",
+    "checkpoint_9_ruling_sha256": "f70843b53a66284b5115b89e8830a4dd6bba36b12242cd0503ad5b7addc572a8",
+    "option_b_artifact_manifest_sha256": "a017934ce1d664c4d91ea97eedbbc447bd653e6b18fe2d3b3898b82f1a182abd",
+    "option_b_acceptance_matrix_sha256": "8a25f7b2660c6890caebf96dca1b82de6d055b17b7a0d11a11634c5d4179a552",
+    "option_b_acceptance_packet_sha256": "46e343968830652a6d01c954773ba6170be8989c85e144ab0aef7f64b998c86c",
+    "protected_closure_sha256": "2d2f1b3655b810fd830cb2ef0b8bb8ed9b4f0419deae35f6f7d9a4ec70bc763a",
+    "protected_path_count": 48
+  },
+  "owner_decision_delta": {
+    "baseline": "d6af8d472f1a8352b2d710b12aedeb3e904060d0",
+    "owner_head": "cc6e8c3c05551c772d788d336994c3996d02ab78",
+    "name_status_diff": [
+      "M\tCURRENT_PLAN.md",
+      "A\tdocs/NATAL_TIME_OWNER_DECISION_B1_20260830.md",
+      "A\tdocs/PRO_SUPERVISION_CHECKPOINT_9_20260830.md",
+      "M\tstate/CURRENT-STATE.md"
+    ]
+  },
+  "topology_and_diff": {
+    "baseline_commit": "d6af8d472f1a8352b2d710b12aedeb3e904060d0",
+    "implementation_head": "d36cf919b1be3c9aa22d91694759e0b000ec03d8",
+    "implementation_tree": "fcbdd067df8e5c66554c0921c36629ea4e788194",
+    "baseline_is_ancestor": true,
+    "ordered_commits": [
+      "070348adb45ad1d3863ebab68d1bf1eea7439d53",
+      "cc6e8c3c05551c772d788d336994c3996d02ab78",
+      "496143ed1c04fce8b6f92f010d8f7bd7a11da30c",
+      "e72d3e7e7c5701713a3b1502bdebbdb17bdd6197",
+      "1b6f851e5ad3b116d589cf421dbb145d9a2ba3be",
+      "d36cf919b1be3c9aa22d91694759e0b000ec03d8"
+    ],
+    "name_status_diff": [
+      "M\tCURRENT_PLAN.md",
+      "A\tdocs/NATAL_TIME_B1_PRECONTENT_INDEPENDENT_CONCEPTION_SNAPSHOT_20260830.md",
+      "A\tdocs/NATAL_TIME_B1_PRECONTENT_METHODS_SCAN_20260830.md",
+      "A\tdocs/NATAL_TIME_OWNER_DECISION_B1_20260830.md",
+      "A\tdocs/PRO_SUPERVISION_B1_PRECONTENT_CONTRACT_20260830.md",
+      "A\tdocs/PRO_SUPERVISION_CHECKPOINT_9_20260830.md",
+      "M\tstate/CURRENT-STATE.md",
+      "A\tstate/NATAL-TIME-B1-ACCESS-AND-CONTAMINATION-SCHEMA-V1.json",
+      "A\tstate/NATAL-TIME-B1-ASTROHD-MAPPING-FIREWALL-V1.json",
+      "A\tstate/NATAL-TIME-B1-CLAIM-LANE-REGISTRY-V1.json",
+      "A\tstate/NATAL-TIME-B1-CONSTRUCT-CANDIDATE-METADATA-SCHEMA-V1.json",
+      "A\tstate/NATAL-TIME-B1-CONSTRUCT-FREEZE-GATE-V1.json",
+      "A\tstate/NATAL-TIME-B1-CONSTRUCT-SOURCE-GOVERNANCE-V1.json",
+      "A\tstate/NATAL-TIME-B1-CONSTRUCT-SPECIFIC-SCAN-PROTOCOL-V1.json",
+      "A\tstate/NATAL-TIME-B1-CONTENT-EMBARGO-SCHEMA-V1.json",
+      "A\tstate/NATAL-TIME-B1-POST-FREEZE-CHANGE-CONTROL-V1.json",
+      "A\tstate/NATAL-TIME-B1-PRECONTENT-INDEPENDENT-CONCEPTION-SNAPSHOT-V1.json",
+      "A\tstate/NATAL-TIME-B1-PRECONTENT-METHODS-DECISION-LEDGER-V1.json",
+      "A\tstate/NATAL-TIME-B1-PRECONTENT-SOURCE-LEDGER-V1.json",
+      "A\tstate/NATAL-TIME-B1-ROLE-ACCESS-MATRIX-V1.json",
+      "A\tstate/NATAL-TIME-B1-THREAT-MODEL-V1.json",
+      "A\tstate/NATAL-TIME-B1-UNRESOLVED-DECISIONS-V1.json",
+      "A\ttests/b1_precontent/__init__.py",
+      "A\ttests/b1_precontent/acceptance.py",
+      "A\ttests/b1_precontent/validator.py",
+      "A\ttests/fixtures/b1_precontent/access_event_valid.json",
+      "A\ttests/fixtures/b1_precontent/candidate_metadata_valid.json",
+      "A\ttests/fixtures/b1_precontent/content_embargo_valid.json",
+      "A\ttests/fixtures/b1_precontent/invalid_probes.json",
+      "A\ttests/unit/test_natal_time_b1_precontent_governance.py"
+    ]
+  },
+  "accepted_artifact_comparison": {
+    "checkpoint_8_and_option_b_manifest_bytes_unchanged": true,
+    "checkpoint_3_protected_paths_byte_identical": 48,
+    "production_src_paths_changed_by_b1": 0
+  },
+  "exact_head_gate_plan": {
+    "FULL_TESTS": {"required": true, "command": ".venv/bin/python -m pytest -q"},
+    "STRICT_MYPY": {"required": true, "command": ".venv/bin/mypy --strict src"},
+    "CHANGED_FILE_RUFF": {"required": true, "command": ".venv/bin/ruff check tests/b1_precontent tests/unit/test_natal_time_b1_precontent_governance.py"},
+    "PRIVACY_HISTORY_BUILD": {"required": true, "command": ".venv/bin/python -m pytest tests/unit/test_private_artifact_gate.py -q"},
+    "PROTECTED_COMPARISON": {"required": true, "command": "B1 acceptance requirement B1-05"},
+    "ACCEPTED_ARTIFACT_COMPARISON": {"required": true, "command": "B1 acceptance requirement B1-06"},
+    "GIT_DIFF_CHECK": {"required": true, "command": "git diff --check"},
+    "CLEAN_INDEX_AND_WORKTREE": {"required": true, "command": "git status --short"}
+  },
+  "no_external_action_confirmation": {
+    "push_or_remote_branch": false,
+    "pull_request_action": false,
+    "merge_rebase_cherry_pick_squash_or_force": false,
+    "github_governance_or_stale_pr_action": false,
+    "railway_mutation_migration_or_deployment": false,
+    "secret_value_read_or_removal": false,
+    "live_participant_reference_relationship_or_chart_access": false,
+    "recruitment_or_data_collection": false,
+    "publication_public_ledger_release_or_disclosure": false,
+    "all_prohibited_actions_absent": true
+  }
+}
