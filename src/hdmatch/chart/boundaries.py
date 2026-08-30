@@ -168,9 +168,14 @@ def enumerate_chart_boundaries(
                 if event is not None:
                     events.append(event)
 
+    refined_interior_events = tuple(
+        item
+        for item in _deduplicate_events(events, root_tolerance_seconds)
+        if start < item.at_utc < end
+    )
     return tuple(
         sorted(
-            _deduplicate_events(events, root_tolerance_seconds),
+            refined_interior_events,
             key=lambda item: (item.at_utc, item.side, item.body.value),
         )
     )

@@ -491,7 +491,7 @@ def main() -> int:
     parser.add_argument(
         "--engine-identity",
         type=Path,
-        default=Path("state/NATAL-TIME-REAL-ENGINE-IDENTITY-V3.json"),
+        default=Path("state/NATAL-TIME-REAL-ENGINE-IDENTITY-V4.json"),
     )
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
