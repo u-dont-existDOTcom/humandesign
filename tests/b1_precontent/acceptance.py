@@ -51,9 +51,32 @@ THREAT_MODEL = ROOT / "state" / "NATAL-TIME-B1-THREAT-MODEL-V1.json"
 UNRESOLVED = ROOT / "state" / "NATAL-TIME-B1-UNRESOLVED-DECISIONS-V1.json"
 BASELINE_ATTESTATION = ROOT / "state" / "NATAL-TIME-B1-BASELINE-ATTESTATION-V1.json"
 FIXTURE_MANIFEST = ROOT / "state" / "NATAL-TIME-B1-SYNTHETIC-FIXTURE-MANIFEST-V1.json"
-ARTIFACT_MANIFEST = ROOT / "state" / "NATAL-TIME-B1-ARTIFACT-MANIFEST-V1.json"
+ARTIFACT_MANIFEST_V1 = ROOT / "state" / "NATAL-TIME-B1-ARTIFACT-MANIFEST-V1.json"
+ARTIFACT_MANIFEST = ROOT / "state" / "NATAL-TIME-B1-ARTIFACT-MANIFEST-V2.json"
 ACCEPTANCE_MATRIX = ROOT / "state" / "NATAL-TIME-B1-ACCEPTANCE-MATRIX-V1.json"
 CORRECTION_LEDGER = ROOT / "state" / "NATAL-TIME-B1-CORRECTION-LEDGER-V1.json"
+
+VALID_B1_REQUIREMENT_IDS = {f"B1-{index:02d}" for index in range(1, 65)}
+TRACEABILITY_ROOT_KEYS = {
+    "schema_version",
+    "artifact_id",
+    "status",
+    "active_purpose",
+    "provenance",
+    "digest_algorithm",
+    "supersedes",
+    "assignment_semantics",
+    "matrix_dependencies",
+    "artifacts",
+    "artifact_count",
+    "self_digest_rule",
+}
+TRACEABILITY_ARTIFACT_KEYS = {
+    "path",
+    "sha256",
+    "primary_requirement_id",
+    "supports_requirement_ids",
+}
 
 
 def _sha256(path: Path) -> str:
@@ -65,6 +88,93 @@ def _git(*args: str) -> str:
         ["git", *args], cwd=ROOT, check=True, capture_output=True, text=True
     )
     return result.stdout.strip()
+
+
+def _canonical_json_digest(value: Any) -> str:
+    return hashlib.sha256(
+        json.dumps(value, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    ).hexdigest()
+
+
+def _validate_traceability_manifest_data(manifest: dict[str, Any]) -> None:
+    """Fail closed unless v2 gives every v1 artifact one primary assignment."""
+
+    assert set(manifest) == TRACEABILITY_ROOT_KEYS
+    assert manifest["schema_version"] == "2.0.0"
+    assert manifest["artifact_id"] == "natal-time-b1-artifact-manifest-v2"
+    assert manifest["status"] == "SUPERSEDING_SINGLE_PRIMARY_TRACEABILITY"
+    assert manifest["digest_algorithm"] == "sha256"
+
+    supersedes = manifest["supersedes"]
+    assert supersedes == {
+        "artifact_id": "natal-time-b1-artifact-manifest-v1",
+        "path": "state/NATAL-TIME-B1-ARTIFACT-MANIFEST-V1.json",
+        "sha256": _sha256(ARTIFACT_MANIFEST_V1),
+    }
+    assert "sole controlling assignment" in manifest["assignment_semantics"][
+        "primary_requirement_id"
+    ]
+    assert "non-controlling" in manifest["assignment_semantics"][
+        "supports_requirement_ids"
+    ]
+    dependencies = manifest["matrix_dependencies"]
+    assert dependencies == [
+        {
+            "path": "state/NATAL-TIME-CHECKPOINT7-CURRENT-HEAD-CLOSURE.json",
+            "sha256": _sha256(
+                ROOT / "state" / "NATAL-TIME-CHECKPOINT7-CURRENT-HEAD-CLOSURE.json"
+            ),
+            "dependency_type": "PROTECTED_BASELINE_BINDING",
+        },
+        {
+            "path": "state/NATAL-TIME-OPTION-B-ARTIFACT-MANIFEST-V1.json",
+            "sha256": _sha256(
+                ROOT / "state" / "NATAL-TIME-OPTION-B-ARTIFACT-MANIFEST-V1.json"
+            ),
+            "dependency_type": "ACCEPTED_PRIOR_ARTIFACT_BINDING",
+        },
+    ]
+
+    artifacts = manifest["artifacts"]
+    assert isinstance(artifacts, list)
+    assert manifest["artifact_count"] == len(artifacts) == 33
+
+    original = load_json(ARTIFACT_MANIFEST_V1)
+    original_paths = [item["path"] for item in original["artifacts"]]
+    paths = [item.get("path") for item in artifacts]
+    assert len(paths) == len(set(paths))
+    assert set(paths) == set(original_paths)
+
+    for item in artifacts:
+        assert isinstance(item, dict)
+        assert set(item) == TRACEABILITY_ARTIFACT_KEYS
+        path = item["path"]
+        digest = item["sha256"]
+        primary = item["primary_requirement_id"]
+        supports = item["supports_requirement_ids"]
+        assert isinstance(path, str) and path in original_paths
+        assert isinstance(digest, str) and re.fullmatch(r"[0-9a-f]{64}", digest)
+        assert _sha256(ROOT / path) == digest
+        assert isinstance(primary, str) and primary in VALID_B1_REQUIREMENT_IDS
+        assert isinstance(supports, list)
+        assert all(
+            isinstance(requirement, str) and requirement in VALID_B1_REQUIREMENT_IDS
+            for requirement in supports
+        )
+        assert len(supports) == len(set(supports))
+        assert primary not in supports
+
+    records_by_path = {
+        item["path"]: item for item in [*artifacts, *dependencies]
+    }
+    matrix = load_json(ACCEPTANCE_MATRIX)
+    assert matrix["requirement_count"] == 64
+    assert [item["requirement_id"] for item in matrix["requirements"]] == [
+        f"B1-{index:02d}" for index in range(1, 65)
+    ]
+    for requirement in matrix["requirements"]:
+        record = records_by_path[requirement["artifact"]]
+        assert requirement["artifact_digest"] == record["sha256"]
 
 
 def _expect_failure(
@@ -650,16 +760,7 @@ def check_requirement(requirement_id: str) -> None:
 
     if requirement_id == "B1-62":
         manifest = load_json(ARTIFACT_MANIFEST)
-        assert all(
-            _sha256(ROOT / item["path"]) == item["sha256"] for item in manifest["artifacts"]
-        )
-        matrix = load_json(ACCEPTANCE_MATRIX)
-        assert matrix["requirement_count"] == 64
-        assert [item["requirement_id"] for item in matrix["requirements"]] == [
-            f"B1-{index:02d}" for index in range(1, 65)
-        ]
-        assert all(item["artifact_digest"] for item in matrix["requirements"])
-        assert all(item["exact_source_commit"] for item in matrix["requirements"])
+        _validate_traceability_manifest_data(manifest)
         return
 
     if requirement_id == "B1-63":

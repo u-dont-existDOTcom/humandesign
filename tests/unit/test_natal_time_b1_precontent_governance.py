@@ -1,9 +1,18 @@
 """Acceptance tests for the B1 pre-content governance and AstroHD mapping firewall."""
 
+import copy
+
 import pytest
 
-from tests.b1_precontent.acceptance import _expect_failure, _invalid_case, check_requirement
-from tests.b1_precontent.validator import load_fixture, validate_record
+from tests.b1_precontent.acceptance import (
+    ARTIFACT_MANIFEST,
+    _canonical_json_digest,
+    _expect_failure,
+    _invalid_case,
+    _validate_traceability_manifest_data,
+    check_requirement,
+)
+from tests.b1_precontent.validator import load_fixture, load_json, validate_record
 
 
 @pytest.mark.parametrize(
@@ -12,6 +21,74 @@ from tests.b1_precontent.validator import load_fixture, validate_record
 )
 def test_b1_precontent_acceptance(requirement_id: str) -> None:
     check_requirement(requirement_id)
+
+
+def _traceability_manifest() -> dict[str, object]:
+    return copy.deepcopy(load_json(ARTIFACT_MANIFEST))
+
+
+def test_b1_traceability_has_exactly_one_primary_per_artifact() -> None:
+    _validate_traceability_manifest_data(_traceability_manifest())
+
+
+@pytest.mark.parametrize(
+    "invalid_primary",
+    [None, "", 62, "B1-65", "B1-1", ["B1-01", "B1-02"], ["B1-01", "B1-01"]],
+)
+def test_b1_traceability_invalid_primary_fails_closed(invalid_primary: object) -> None:
+    manifest = _traceability_manifest()
+    manifest["artifacts"][0]["primary_requirement_id"] = invalid_primary  # type: ignore[index]
+    with pytest.raises(AssertionError):
+        _validate_traceability_manifest_data(manifest)
+
+
+def test_b1_traceability_missing_primary_fails_closed() -> None:
+    manifest = _traceability_manifest()
+    del manifest["artifacts"][0]["primary_requirement_id"]  # type: ignore[index]
+    with pytest.raises(AssertionError):
+        _validate_traceability_manifest_data(manifest)
+
+
+def test_b1_traceability_duplicate_artifact_fails_closed() -> None:
+    manifest = _traceability_manifest()
+    manifest["artifacts"][1] = copy.deepcopy(manifest["artifacts"][0])  # type: ignore[index]
+    with pytest.raises(AssertionError):
+        _validate_traceability_manifest_data(manifest)
+
+
+def test_b1_traceability_omitted_artifact_fails_closed() -> None:
+    manifest = _traceability_manifest()
+    manifest["artifacts"].pop()  # type: ignore[union-attr]
+    manifest["artifact_count"] = 32
+    with pytest.raises(AssertionError):
+        _validate_traceability_manifest_data(manifest)
+
+
+def test_b1_traceability_secondary_references_are_noncontrolling() -> None:
+    manifest = _traceability_manifest()
+    artifact = manifest["artifacts"][0]  # type: ignore[index]
+    assert len(artifact["supports_requirement_ids"]) > 1  # type: ignore[arg-type,index]
+    _validate_traceability_manifest_data(manifest)
+    artifact["primary_requirement_ids"] = artifact["supports_requirement_ids"]  # type: ignore[index]
+    with pytest.raises(AssertionError):
+        _validate_traceability_manifest_data(manifest)
+
+
+def test_b1_traceability_primary_cannot_be_repeated_as_support() -> None:
+    manifest = _traceability_manifest()
+    artifact = manifest["artifacts"][0]  # type: ignore[index]
+    artifact["supports_requirement_ids"].append(artifact["primary_requirement_id"])  # type: ignore[union-attr,index]
+    with pytest.raises(AssertionError):
+        _validate_traceability_manifest_data(manifest)
+
+
+def test_b1_traceability_primary_assignment_changes_manifest_digest() -> None:
+    manifest = _traceability_manifest()
+    before = _canonical_json_digest(manifest)
+    artifact = manifest["artifacts"][0]  # type: ignore[index]
+    artifact["primary_requirement_id"] = "B1-02"  # type: ignore[index]
+    artifact["supports_requirement_ids"] = ["B1-01", "B1-03"]  # type: ignore[index]
+    assert _canonical_json_digest(manifest) != before
 
 
 @pytest.mark.parametrize(
