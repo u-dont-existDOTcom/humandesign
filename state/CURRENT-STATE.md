@@ -1,6 +1,6 @@
 # Current state
 
-- As of: `2026-08-30 01:38 GMT`
+- As of: `2026-08-30 01:43 GMT`
 - Task ID: `astrohd-relationship-continuation-20260830`
 - Goal: continue the relationship/AstroHD program under the blocking Brave + ChatGPT Pro supervision contract in `docs/RELATIONSHIP_RESEARCH_HANDOFF.md`, beginning with the separate natal-first `Find my birth-time window` priority unless supervision changes the sequence.
 - Authoritative Git baseline: `main` and `origin/main` at `b7660b8c9bcf52cbb14bc5442c13a3a8635aad32` (`Add canonical relationship research handoff and Pro supervision protocol`).
@@ -43,9 +43,9 @@
 - Pro hard-blocked ranking, candidate elimination, weights, priors, duration-normalized mass, probabilities, confidence percentages, stopping rules, time-window recommendations, relationship evidence, production migration, public deployment, and merge to `main` until checkpoint 2.
 - Browser-control default from the owner: prefer headless operation. When the authenticated headed Brave session is genuinely required, reuse the existing controlled window on a dedicated secondary workspace or secondary physical monitor so it does not steal focus or cover the active screen. Do not repeatedly open and close visible windows.
 - Test-efficiency telemetry is active under task ID `astrohd-relationship-20260830` in `.git/codex-test-efficiency/`.
-- Foundation verification is green through local head `3337b46`: the focused API/foundation suite passed 33 tests; the preceding exact-head full suite passed 260 tests; Ruff and strict mypy passed. The final evidence commit still requires one exact-head full rerun before checkpoint 2.
+- Foundation verification is green through the current local branch head: the final exact-head full suite passed 261 tests; the focused API/foundation suite passed 33 tests; Ruff passed; strict mypy found no issues across 131 source files; the privacy gate passed; and both canonical synthetic artifacts reproduced byte-for-byte.
 - Before merge/deploy: exact-head focused/full tests, Ruff, strict mypy, participant JavaScript syntax checks if UI changes, privacy/blinding review, pre-merge Pro checkpoint, pre-deploy Pro checkpoint, exact-commit deployment, and production smoke verification.
 
 ## Next safe action
 
-Commit the synthetic API trace/state update, rerun exact-head full verification and the privacy gate, then send the complete checkpoint-2 packet to the same Pro conversation. Do not merge, push, change GitHub governance, modify Railway, touch `OPENROUTER_API_KEY`, or deploy before the checkpoint-2 ruling and the applicable owner authority boundary.
+Send the complete checkpoint-2 packet to the same Pro conversation and follow its ruling. Do not merge, push, change GitHub governance, modify Railway, touch `OPENROUTER_API_KEY`, or deploy before the checkpoint-2 ruling and the applicable owner authority boundary.
