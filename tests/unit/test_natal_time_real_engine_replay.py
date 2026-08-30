@@ -19,6 +19,7 @@ from hdmatch.natal_time.replay import (
     _execute_fail_closed,
     _run_replay,
     _validate_receipt,
+    build_aggregate_index,
     current_repository_commit,
     fake_receipt_executor,
     load_replay_context,
@@ -28,8 +29,10 @@ from hdmatch.natal_time.replay import (
     run_synthetic_test_replay,
     verify_production_source,
 )
+from hdmatch.util import sha256_json
 
 PROJECT_ROOT = Path(__file__).parents[2]
+COMMITTED_REPLAY_ROOT = PROJECT_ROOT / "state" / "NATAL-TIME-REAL-ENGINE-REPLAY-V1"
 
 
 def _context() -> ReplayContext:
@@ -65,9 +68,7 @@ def _production_contract_stub(
                 item,
                 interval_count=item.committed_interval_count,
                 ordered_interval_list_sha256="c" * 64,
-                ordered_full_state_vector_sha256=(
-                    item.committed_ordered_full_state_vector_sha256
-                ),
+                ordered_full_state_vector_sha256=(item.committed_ordered_full_state_vector_sha256),
                 coverage_receipt_sha256=item.committed_coverage_receipt_sha256,
                 result_sha256=item.committed_result_sha256,
                 independent_verification=verification,
@@ -140,9 +141,7 @@ def test_replay_is_fixture_granular_resumable_and_fail_closed(tmp_path: Path) ->
     assert index["schema_version"].endswith("synthetic-orchestration-index-v1")
     assert index["real_engine_executed"] is False
     assert index["all_independent_verifications_passed"] is False
-    skipped = json.loads(
-        (receipts_dir / "skipped-civil-date-2011-12-30.json").read_text()
-    )
+    skipped = json.loads((receipts_dir / "skipped-civil-date-2011-12-30.json").read_text())
     assert skipped["status"] == "fail_closed"
     assert skipped["schema_version"].endswith("synthetic-orchestration-receipt-v1")
     assert skipped["independent_verification"] == {
@@ -154,9 +153,7 @@ def test_replay_is_fixture_granular_resumable_and_fail_closed(tmp_path: Path) ->
         (receipts_dir / "ordinary-and-multiple-dates-2024-01-15.json").read_text()
     )
     assert ordinary["ordered_interval_list_scope"].startswith("canonical-model-dumps")
-    assert ordinary["ordered_interval_list_sha256"] != ordinary[
-        "ordered_full_state_vector_sha256"
-    ]
+    assert ordinary["ordered_interval_list_sha256"] != ordinary["ordered_full_state_vector_sha256"]
     assert (
         run_synthetic_test_replay(
             context,
@@ -191,9 +188,7 @@ def test_aggregate_fails_tampered_stale_wrong_engine_and_mismatch(
     target = tmp_path / "receipts" / "leap-day-2024-02-29.json"
     _mutate(target, key, value, rehash=rehash)
     with pytest.raises(ReplayValidationError, match=message):
-        run_synthetic_test_replay(
-            context, tmp_path, executor=executor, aggregate_only=True
-        )
+        run_synthetic_test_replay(context, tmp_path, executor=executor, aggregate_only=True)
 
 
 def test_aggregate_fails_missing_and_duplicate_receipts(tmp_path: Path) -> None:
@@ -204,16 +199,12 @@ def test_aggregate_fails_missing_and_duplicate_receipts(tmp_path: Path) -> None:
     missing = receipts / "leap-day-2024-02-29.json"
     missing.unlink()
     with pytest.raises(ReplayValidationError, match="missing replay receipt"):
-        run_synthetic_test_replay(
-            context, tmp_path, executor=executor, aggregate_only=True
-        )
+        run_synthetic_test_replay(context, tmp_path, executor=executor, aggregate_only=True)
 
     duplicate = receipts / "unexpected-copy.json"
     duplicate.write_bytes((receipts / "dst-gap-2024-03-10.json").read_bytes())
     with pytest.raises(ReplayValidationError, match="duplicate or unexpected"):
-        run_synthetic_test_replay(
-            context, tmp_path, executor=executor, aggregate_only=True
-        )
+        run_synthetic_test_replay(context, tmp_path, executor=executor, aggregate_only=True)
 
 
 def test_load_context_rejects_non_sha_and_mismatched_head() -> None:
@@ -244,9 +235,7 @@ def test_source_verification_excludes_only_declared_output_root(tmp_path: Path) 
     receipt = verify_production_source(repository, commit, output)
     assert receipt["head_matches_declared_commit"] is True
     assert receipt["clean_worktree_excluding_output_root"] is True
-    assert receipt["output_root_repo_relative"] == (
-        "state/NATAL-TIME-REAL-ENGINE-REPLAY-V1"
-    )
+    assert receipt["output_root_repo_relative"] == ("state/NATAL-TIME-REAL-ENGINE-REPLAY-V1")
 
     (repository / "source.txt").write_text("dirty\n")
     with pytest.raises(ReplayValidationError, match="dirty outside output root"):
@@ -265,9 +254,7 @@ def test_actual_apia_execution_fails_closed_with_production_receipt() -> None:
     assert receipt["real_engine_executor"] is True
     assert receipt["status"] == "fail_closed"
     assert receipt["interval_count"] == 0
-    assert receipt["independent_verification"]["status"] == (
-        "passed_expected_fail_closed"
-    )
+    assert receipt["independent_verification"]["status"] == ("passed_expected_fail_closed")
 
 
 def test_production_rejects_synthetic_context_and_mismatched_independent_counts(
@@ -293,9 +280,7 @@ def test_production_rejects_synthetic_context_and_mismatched_independent_counts(
         expectation,
         interval_count=expectation.committed_interval_count,
         ordered_interval_list_sha256="c" * 64,
-        ordered_full_state_vector_sha256=(
-            expectation.committed_ordered_full_state_vector_sha256
-        ),
+        ordered_full_state_vector_sha256=(expectation.committed_ordered_full_state_vector_sha256),
         coverage_receipt_sha256=expectation.committed_coverage_receipt_sha256,
         result_sha256=expectation.committed_result_sha256,
         independent_verification=verification,
@@ -303,9 +288,7 @@ def test_production_rejects_synthetic_context_and_mismatched_independent_counts(
     _validate_receipt(context, expectation, receipt)
 
     receipt["independent_verification"]["independent_event_count"] = 2
-    receipt["independent_verification_sha256"] = sha256_json(
-        receipt["independent_verification"]
-    )
+    receipt["independent_verification_sha256"] = sha256_json(receipt["independent_verification"])
     unhashed = deepcopy(receipt)
     unhashed.pop("receipt_sha256")
     receipt["receipt_sha256"] = sha256_json(unhashed)
@@ -325,9 +308,7 @@ def test_source_change_after_executor_writes_no_receipt(
         if checks == 2:
             raise ReplayValidationError("simulated source change after executor")
 
-    monkeypatch.setattr(
-        "hdmatch.natal_time.replay._validate_production_context", source_check
-    )
+    monkeypatch.setattr("hdmatch.natal_time.replay._validate_production_context", source_check)
     with pytest.raises(ReplayValidationError, match="after executor"):
         _run_replay(
             context,
@@ -353,9 +334,7 @@ def test_source_change_before_aggregate_writes_no_index(
         if checks == 17:
             raise ReplayValidationError("simulated source change before aggregate")
 
-    monkeypatch.setattr(
-        "hdmatch.natal_time.replay._validate_production_context", source_check
-    )
+    monkeypatch.setattr("hdmatch.natal_time.replay._validate_production_context", source_check)
     with pytest.raises(ReplayValidationError, match="before aggregate"):
         _run_replay(
             context,
@@ -367,3 +346,46 @@ def test_source_change_before_aggregate_writes_no_index(
     assert checks == 17
     assert len(tuple((tmp_path / "receipts").glob("*.json"))) == 9
     assert not (tmp_path / "index.json").exists()
+
+
+def test_committed_production_replay_index_and_receipts_are_self_consistent() -> None:
+    index = json.loads((COMMITTED_REPLAY_ROOT / "index.json").read_text())
+    index_unhashed = deepcopy(index)
+    embedded_index_sha = index_unhashed.pop("index_sha256")
+    assert embedded_index_sha == sha256_json(index_unhashed)
+
+    source = index["source_verification"]
+    source_unhashed = deepcopy(source)
+    embedded_source_sha = source_unhashed.pop("source_verification_sha256")
+    assert embedded_source_sha == sha256_json(source_unhashed)
+    assert embedded_source_sha == index["source_verification_sha256"]
+    source_tree = subprocess.run(
+        ["git", "rev-parse", f"{index['repository_commit']}^{{tree}}"],
+        cwd=PROJECT_ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout.strip()
+    assert source_tree == index["commit_tree_oid"] == source["commit_tree_oid"]
+
+    synthetic_context = load_synthetic_test_context(PROJECT_ROOT)
+    context = replace(
+        synthetic_context,
+        execution_mode="real_engine_production",
+        repository_commit=index["repository_commit"],
+        commit_tree_oid=index["commit_tree_oid"],
+        source_verification=source,
+        source_verification_sha256=index["source_verification_sha256"],
+    )
+    receipt_refs = index["receipt_hashes"]
+    assert len(receipt_refs) == len(context.expectations) == 9
+    receipts: dict[str, dict[str, Any]] = {}
+    for expectation, receipt_ref in zip(context.expectations, receipt_refs, strict=True):
+        assert receipt_ref["receipt_id"] == expectation.receipt_id
+        receipt_path = COMMITTED_REPLAY_ROOT / "receipts" / f"{expectation.receipt_id}.json"
+        receipt = json.loads(receipt_path.read_text())
+        _validate_receipt(context, expectation, receipt)
+        assert receipt["receipt_sha256"] == receipt_ref["receipt_sha256"]
+        receipts[expectation.receipt_id] = receipt
+
+    assert build_aggregate_index(context, receipts) == index
