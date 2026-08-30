@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-s6-h1-content-escrow-contract-v1",
+  "status": "METADATA_ONLY_NO_CONTENT_ESCROW_CREATED",
+  "current_repository_content_bearing_bytes_allowed": false,
+  "astrohd_exposed_surface_prefreeze_content_allowed": false,
+  "live_storage_created": false,
+  "external_account_created": false,
+  "credential_created_or_read": false,
+  "permitted_repository_fields": ["opaque_synthetic_id","status","sha256_content_digest","provenance_receipt","append_only_access_event","append_only_custody_event","freeze_receipt"],
+  "prohibited_repository_fields": ["construct_text","definition","dimension","category","item","prompt","response_anchor","manual","score","screening_question","consent_text","recruitment_text","mapping_hypothesis","mapping_rule"],
+  "future_custody_invariants": [
+    "CONTENT_CUSTODIAN_IS_LOGICALLY_DISTINCT_FROM_AUTHOR_SEARCH_REVIEW_RELIABILITY_AND_MAPPING_ROLES",
+    "PREFREEZE_CONTENT_STORE_IS_OUTSIDE_ASTROHD_EXPOSED_REPOSITORY_AND_CONTEXTS",
+    "EVERY_CONTENT_VERSION_HAS_A_SHA256_DIGEST_AND_IMMUTABLE_IDENTITY",
+    "EVERY_ACCESS_AND_CUSTODY_EVENT_IS_APPEND_ONLY_HASH_LINKED_AND_ROLE_ATTRIBUTED",
+    "ASTROHD_EXPOSED_ROLES_HAVE_NO_PREFREEZE_CONTENT_ACCESS",
+    "UNKNOWN_ACCESS_OR_CUSTODY_PROVENANCE_FAILS_CLOSED",
+    "LATER_SEARCH_OR_MAPPING_NEVER_MUTATES_THE_FROZEN_ORIGINAL_IN_PLACE"
+  ],
+  "closed_synthetic_event_shape": {
+    "allowed_keys": ["schema_version","record_class","synthetic_event_id","synthetic_content_id","event_sequence","event_type","synthetic_actor_id","actor_role_id","content_digest","previous_event_digest","event_digest","event_time_class"],
+    "synthetic_id_patterns": {"event":"^SYN-S6H1-ESC-[0-9]{4}$","content":"^SYN-S6H1-CONTENT-[0-9]{4}$","actor":"^SYN-S6H1-ACTOR-[0-9]{4}$"},
+    "event_types": ["SYNTHETIC_CUSTODY_RECEIPT","SYNTHETIC_ACCESS_DENIAL","SYNTHETIC_FREEZE_RECEIPT"],
+    "event_time_class": "SYNTHETIC_LOGICAL_TIME_ONLY",
+    "content_bytes_field_allowed": false
+  },
+  "current_content_objects": [],
+  "current_access_events": [],
+  "current_custody_events": [],
+  "claim_boundary": "This contract specifies future metadata constraints; it does not establish secure live custody or authorize content creation."
+}

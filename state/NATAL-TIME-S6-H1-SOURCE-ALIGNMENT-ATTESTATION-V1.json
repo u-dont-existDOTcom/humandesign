@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-s6-h1-source-alignment-attestation-v1",
+  "status": "QUALIFIED_REVERSIBLE_CHILD_ALIGNMENT",
+  "owner_source": {
+    "owner_request_id": "OR-ASTROHD-RELATIONSHIP-CONTINUATION-20260830",
+    "owner_outcome_id": "OO-ASTROHD-RELATIONSHIP-CONTINUATION",
+    "epoch": 4,
+    "canonical_locator": "state/NATAL-TIME-OWNER-OUTCOME-SOURCE-EPOCH4-20260830.md",
+    "sha256": "2bc3b243f67411907799c9b382dccd9552220a67cfe20d0429949868123db735",
+    "receipt_id": "osr-astrohd-relationship-20260830-epoch4-v1",
+    "receipt_path": "state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH4-V1.json",
+    "receipt_sha256": "ddc542e03079fba0a06577500dd98a13f7784e13d5ea56130676525611427e47"
+  },
+  "capture_integrity": "VERIFIED",
+  "acquisition_mode": "WORKER_COPIED",
+  "receipt_capability": "INTEGRITY_ONLY",
+  "contract_to_captured_source_alignment": "MATCH",
+  "independent_source_comparison": "NOT_INDEPENDENT",
+  "worker_to_contract_alignment": "GREEN",
+  "contract_to_owner_alignment": "PARTIAL",
+  "completion_claim": "WORKING",
+  "root_terminalization_allowed": false,
+  "release_allowed": false,
+  "source_upgrade_requirements": [
+    "INDEPENDENT_SOURCE_VERIFIED or OWNER_REATTESTED",
+    "current epoch, source hash, and corrections matched",
+    "contract_to_owner_alignment MATCH",
+    "all other scientific, privacy, release, and owner gates satisfied"
+  ],
+  "current_child_authority": "LOCAL_REVERSIBLE_METADATA_ONLY_PREHUMAN_GOVERNANCE",
+  "pro_ruling": "docs/PRO_SUPERVISION_S6_H1_PREHUMAN_CONTRACT_20260830.md",
+  "meta_review_ruling": "docs/PRO_SUPERVISION_DESIGN_FEEDBACK_RULING_20260830.md",
+  "parent_outcome_open": true
+}

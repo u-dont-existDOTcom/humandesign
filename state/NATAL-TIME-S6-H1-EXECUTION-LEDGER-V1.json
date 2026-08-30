@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-s6-h1-execution-ledger-v1",
+  "status": "LOCAL_REVERSIBLE_NO_PROHIBITED_ACTION",
+  "browser_operation": {
+    "generic_research_mode": "HEADLESS_DEFAULT",
+    "headed_browser_required_for_task_supervision": true,
+    "dedicated_secondary_workspace_reused": true,
+    "existing_controlled_task_and_meta_review_windows_reused": true,
+    "unnecessary_new_visible_windows_opened": false
+  },
+  "corrected_commands": [
+    {"correction_id":"CC-01","failed_or_imprecise_action":"Attempted to read a guessed B1 test filename that did not exist.","correction":"Located the authoritative files with rg and read tests/b1_precontent/validator.py, tests/b1_precontent/acceptance.py, and tests/unit/test_natal_time_b1_precontent_governance.py.","effect":"NO_REPOSITORY_MUTATION"},
+    {"correction_id":"CC-02","failed_or_imprecise_action":"An initial multi-source official-page open produced truncated evidence output.","correction":"Split the bounded official-source review into smaller source and passage batches.","effect":"NO_SCOPE_CHANGE_NO_REPOSITORY_MUTATION"}
+  ],
+  "prohibited_action_record": {
+    "human_identification_contact_screening_recruitment_compensation_assignment_enrollment": false,
+    "screening_questions_interview_prompts_disclosure_consent_or_recruitment_text": false,
+    "construct_instrument_item_prompt_category_manual_score_or_content": false,
+    "construct_specific_search": false,
+    "mapping_content_or_execution": false,
+    "real_identity_credential_storage_account_or_human_record_system": false,
+    "production_or_Railway_mutation": false,
+    "GitHub_push_PR_merge_governance_or_external_mutation": false,
+    "secret_value_access": false,
+    "publication_release_or_root_completion_claim": false
+  },
+  "external_mutations": [],
+  "human_records": [],
+  "content_records": [],
+  "mapping_records": []
+}

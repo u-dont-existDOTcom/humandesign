@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:humandesign:natal-time:s6-h1:isolation-provenance:v1",
+  "title": "Closed conspicuously synthetic S6/H1 isolation provenance",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version","record_class","synthetic_isolation_id","synthetic_candidate_id","environment","session","tool","retrieval","actor","access","fresh_isolation_state","model_content_authorship_allowed","human_action_occurred"],
+  "properties": {
+    "schema_version":{"const":"NATAL-TIME-S6-H1-ISOLATION-PROVENANCE-V1"},
+    "record_class":{"const":"CONSPICUOUSLY_SYNTHETIC_S6_H1_ISOLATION_FIXTURE"},
+    "synthetic_isolation_id":{"type":"string","pattern":"^SYN-S6H1-ISO-[0-9]{4}$"},
+    "synthetic_candidate_id":{"type":"string","pattern":"^SYN-S6H1-CAND-[0-9]{4}$"},
+    "environment":{"type":"object","additionalProperties":false,"required":["synthetic_environment_id","provenance_state"],"properties":{"synthetic_environment_id":{"type":"string","pattern":"^SYN-S6H1-ENV-[0-9]{4}$"},"provenance_state":{"enum":["UNKNOWN_FAIL_CLOSED","COMPLETE_SYNTHETIC_TEST_PROVENANCE"]}}},
+    "session":{"type":"object","additionalProperties":false,"required":["synthetic_session_id","history_state"],"properties":{"synthetic_session_id":{"type":"string","pattern":"^SYN-S6H1-SES-[0-9]{4}$"},"history_state":{"enum":["UNKNOWN_FAIL_CLOSED","EMPTY_SYNTHETIC_TEST_HISTORY"]}}},
+    "tool":{"type":"object","additionalProperties":false,"required":["synthetic_tool_id","use_class"],"properties":{"synthetic_tool_id":{"type":"string","pattern":"^SYN-S6H1-TOOL-[0-9]{4}$"},"use_class":{"enum":["NO_TOOL_USE","NON_CONTENT_METADATA_ONLY"]}}},
+    "retrieval":{"type":"object","additionalProperties":false,"required":["state","source_count"],"properties":{"state":{"enum":["DISABLED","UNKNOWN_FAIL_CLOSED"]},"source_count":{"const":0}}},
+    "actor":{"type":"object","additionalProperties":false,"required":["synthetic_actor_id","role_id","exposure_state"],"properties":{"synthetic_actor_id":{"type":"string","pattern":"^SYN-S6H1-ACTOR-[0-9]{4}$"},"role_id":{"const":"CHART_BLIND_HUMAN_CONCEPT_AUTHOR"},"exposure_state":{"enum":["NOT_ASSESSED_FAIL_CLOSED","DISCLOSED_NO_EXPOSURE"]}}},
+    "access":{"type":"object","additionalProperties":false,"required":["event_state","prefreeze_content_access","astrohd_surface_access"],"properties":{"event_state":{"enum":["NO_ACCESS_EVENTS","UNKNOWN_FAIL_CLOSED"]},"prefreeze_content_access":{"const":false},"astrohd_surface_access":{"const":false}}},
+    "fresh_isolation_state":{"enum":["NOT_ESTABLISHED_FAIL_CLOSED","ESTABLISHED_SYNTHETIC_TEST_ONLY"]},
+    "model_content_authorship_allowed":{"const":false},
+    "human_action_occurred":{"const":false}
+  },
+  "x-prohibited-field-names": ["name","email","phone","address","credential","secret","screening_question","consent_text","recruitment_text","construct","instrument","item","prompt","content","mapping_content"]
+}
