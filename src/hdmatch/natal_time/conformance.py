@@ -761,7 +761,10 @@ def independently_enumerate_line_transitions(
                 )
                 absolute_position_uncertainty = (
                     body_bound
-                    * (design_root_time_tolerance_seconds + ephemeris_time_quantum_seconds)
+                    * (
+                        design_root_time_tolerance_seconds
+                        + 3.0 * ephemeris_time_quantum_seconds
+                    )
                     / 86_400.0
                 )
             transitions: list[IndependentTransition] = []

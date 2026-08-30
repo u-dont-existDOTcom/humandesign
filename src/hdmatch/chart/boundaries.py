@@ -135,7 +135,7 @@ def enumerate_chart_boundaries(
                 )
                 absolute_position_uncertainty = (
                     provider.max_abs_speed_degrees_per_day(body)
-                    * (root_tolerance_seconds + ephemeris_time_quantum_seconds)
+                    * (root_tolerance_seconds + 3.0 * ephemeris_time_quantum_seconds)
                     / 86400.0
                 )
             if speed_bound <= 0.0 or not math.isfinite(speed_bound):
