@@ -35,10 +35,7 @@ def wilson_interval(sample_size: int, assumed_rate: float) -> dict[str, float]:
     center = (assumed_rate + z2 / (2 * sample_size)) / denominator
     half_width = (
         NORMAL_QUANTILE
-        * math.sqrt(
-            assumed_rate * (1 - assumed_rate) / sample_size
-            + z2 / (4 * sample_size**2)
-        )
+        * math.sqrt(assumed_rate * (1 - assumed_rate) / sample_size + z2 / (4 * sample_size**2))
         / denominator
     )
     return {
@@ -51,18 +48,48 @@ def wilson_interval(sample_size: int, assumed_rate: float) -> dict[str, float]:
 def hoeffding_half_width(sample_size: int) -> float:
     """Distribution-free illustration for a mean of participant-level [0, 1] values."""
 
-    return _round(
-        math.sqrt(math.log(2 / NOMINAL_TWO_SIDED_TAIL_AREA) / (2 * sample_size))
-    )
+    return _round(math.sqrt(math.log(2 / NOMINAL_TWO_SIDED_TAIL_AREA) / (2 * sample_size)))
 
 
 def paired_required_sample_size(net_difference: float, discordant_rate: float) -> int:
-    """Approximate paired sample needed for a symmetric interval to exclude zero."""
+    """Approximate paired sample needed for a Wald interval to exclude zero.
+
+    The hypothetical paired difference is encoded as -1, 0, or +1,
+    ``discordant_rate`` is P(|difference| = 1), and ``net_difference`` is the
+    absolute assumed E[difference]. This is a precision illustration, not a
+    selected test, power calculation, or sample-size recommendation.
+    """
 
     if not 0 < net_difference <= discordant_rate <= 1:
         raise ValueError("require 0 < net_difference <= discordant_rate <= 1")
     variance = discordant_rate - net_difference**2
     return math.ceil((NORMAL_QUANTILE**2 * variance) / net_difference**2)
+
+
+def calibration_error_interval(
+    sample_size: int,
+    hypothetical_predicted_rate: float,
+    hypothetical_signed_deviation: float,
+) -> dict[str, float]:
+    """Return a hypothetical signed calibration-error uncertainty interval.
+
+    Error is defined only for this synthetic surface as observed event rate
+    minus hypothetical predicted rate. The function does not select a
+    calibrator, probability target, binning scheme, or operating point.
+    """
+
+    assumed_observed_rate = hypothetical_predicted_rate + hypothetical_signed_deviation
+    if not 0 <= hypothetical_predicted_rate <= 1:
+        raise ValueError("hypothetical_predicted_rate must be in [0, 1]")
+    if not 0 <= assumed_observed_rate <= 1:
+        raise ValueError("predicted rate plus signed deviation must be in [0, 1]")
+    observed_interval = wilson_interval(sample_size, assumed_observed_rate)
+    return {
+        "assumed_observed_rate": _round(assumed_observed_rate),
+        "signed_error_lower": _round(observed_interval["lower"] - hypothetical_predicted_rate),
+        "signed_error_upper": _round(observed_interval["upper"] - hypothetical_predicted_rate),
+        "sampling_half_width": observed_interval["half_width"],
+    }
 
 
 def _self_hash(payload: dict[str, Any], field: str) -> dict[str, Any]:
@@ -113,19 +140,21 @@ def build_feasibility_report(repository_commit: str) -> dict[str, Any]:
         for discordance in (0.1, 0.3, 0.5)
     ]
 
-    calibration_rows: list[dict[str, Any]] = []
-    for sample_size in (100, 200, 400, 800):
-        for bin_count in (5, 10):
-            expected_bin_size = sample_size // bin_count
-            for assumed_event_rate in (0.1, 0.5, 0.9):
-                calibration_rows.append(
+    calibration_error_rows: list[dict[str, Any]] = []
+    for sample_size in (20, 50, 100, 200):
+        for hypothetical_predicted_rate in (0.2, 0.5, 0.8):
+            for hypothetical_signed_deviation in (-0.1, 0.0, 0.1):
+                calibration_error_rows.append(
                     {
-                        "total_sample_size": sample_size,
-                        "hypothetical_equal_bin_count": bin_count,
-                        "expected_participants_per_bin": expected_bin_size,
-                        "assumed_event_rate_within_bin": assumed_event_rate,
-                        "outcome_rate_interval": wilson_interval(
-                            expected_bin_size, assumed_event_rate
+                        "hypothetical_calibration_cell_size": sample_size,
+                        "hypothetical_predicted_rate": hypothetical_predicted_rate,
+                        "hypothetical_signed_calibration_deviation": (
+                            hypothetical_signed_deviation
+                        ),
+                        "illustrative_signed_error_interval": calibration_error_interval(
+                            sample_size,
+                            hypothetical_predicted_rate,
+                            hypothetical_signed_deviation,
                         ),
                     }
                 )
@@ -186,17 +215,44 @@ def build_feasibility_report(repository_commit: str) -> dict[str, Any]:
                 "approximate paired-participant sensitivity, not a power guarantee or "
                 "expected effect"
             ),
+            "assumptions": [
+                "paired outcome difference is encoded as -1, 0, or +1",
+                "discordant_rate is P(abs(paired_difference)=1)",
+                "net_difference is abs(E[paired_difference])",
+                "paired_difference variance is discordant_rate minus net_difference squared",
+                "a two-sided Wald-normal interval uses the displayed fixed normal quantile",
+                "connected components, not rows, are the independent units",
+                (
+                    "no target power, attrition allowance, multiplicity adjustment, or "
+                    "finite-sample exact guarantee is selected"
+                ),
+            ],
             "requires_future_comparator_and_outcome_definition": True,
+            "target_power_selected": False,
             "rows": paired_rows,
         },
-        "potential_future_calibration_precision": {
-            "formula": "Wilson outcome-rate interval within hypothetical equal-size bins",
+        "potential_future_calibration_error_sensitivity": {
+            "formula": (
+                "Wilson interval for the assumed observed event rate, translated by "
+                "subtracting the hypothetical predicted rate"
+            ),
+            "signed_error_definition": "observed event rate minus hypothetical predicted rate",
             "purpose": (
-                "illustrate sampling imprecision only; does not bound model error, calibration "
-                "error, selection bias, or population shift"
+                "illustrate uncertainty around explicitly hypothetical signed calibration "
+                "deviations; no predictive target, calibrator, binning scheme, or operating "
+                "point is selected"
             ),
             "calibrated_outputs_do_not_exist": True,
-            "rows": calibration_rows,
+            "all_predicted_rates_and_deviations_are_hypothetical": True,
+            "limitations": [
+                "the rows illustrate one synthetic calibration cell at a time",
+                (
+                    "they do not bound model error, selection bias, distribution shift, "
+                    "or multiplicity"
+                ),
+                "they are not evidence that a probability-bearing natal output can be calibrated",
+            ],
+            "rows": calibration_error_rows,
         },
         "subgroup_and_source_quality_sensitivity": {
             "formula": "floor(total_n*assumed_prevalence), then Wilson outcome-rate interval",
@@ -232,6 +288,131 @@ def build_feasibility_report(repository_commit: str) -> dict[str, Any]:
     return _self_hash(payload, "artifact_sha256")
 
 
+PUBLIC_UNRESOLVED_CONTROL_CODES = (
+    "correction_and_withdrawal_policy",
+    "privacy_budget_if_any",
+    "release_cadence",
+    "small_cell_suppression_threshold",
+)
+PUBLIC_AGGREGATE_INVARIANTS = (
+    "included_count_lte_eligible_count",
+    "included_count_eq_abstention_plus_non_abstaining_evaluable",
+    "coverage_intersection_count_lte_non_abstaining_evaluable_count",
+    "date_coverage_eligible_count_lte_included_count",
+    "date_coverage_evaluable_count_lte_date_coverage_eligible_count",
+    "date_coverage_evaluable_count_lte_non_abstaining_evaluable_count",
+    "date_coverage_intersection_count_lte_date_coverage_evaluable_count",
+    "ratio_summary_counts_eq_non_abstaining_evaluable_count",
+    "ratio_summary_values_null_iff_evaluable_count_is_zero",
+)
+
+
+def validate_public_aggregate_semantics(record: dict[str, Any]) -> tuple[str, ...]:
+    """Return fail-closed cross-field violations for one candidate public record."""
+
+    aggregate = record.get("cohort_aggregate")
+    if not isinstance(aggregate, dict):
+        return ("cohort_aggregate_missing_or_invalid",)
+
+    errors: list[str] = []
+    count_names = (
+        "eligible_count",
+        "included_count",
+        "non_abstaining_evaluable_count",
+        "coverage_intersection_count",
+        "abstention_count",
+        "date_coverage_eligible_count",
+        "date_coverage_evaluable_count",
+        "date_coverage_intersection_count",
+    )
+    counts: dict[str, int] = {}
+    for name in count_names:
+        value = aggregate.get(name)
+        if type(value) is not int or value < 0:
+            errors.append(f"{name}_must_be_nonnegative_integer")
+        else:
+            counts[name] = value
+
+    summary_names = (
+        "temporal_width_retained_ratio_summary",
+        "full_state_count_retained_ratio_summary",
+    )
+    summary_counts: dict[str, int] = {}
+    for name in summary_names:
+        summary = aggregate.get(name)
+        if not isinstance(summary, dict):
+            errors.append(f"{name}_missing_or_invalid")
+            continue
+        eligible_count = summary.get("eligible_count")
+        if type(eligible_count) is not int or eligible_count < 0:
+            errors.append(f"{name}_eligible_count_must_be_nonnegative_integer")
+            continue
+        summary_counts[name] = eligible_count
+        for statistic in ("mean", "median"):
+            value = summary.get(statistic)
+            if eligible_count == 0:
+                if value is not None:
+                    errors.append(f"{name}_{statistic}_must_be_null_when_count_is_zero")
+            elif (
+                isinstance(value, bool)
+                or not isinstance(value, (int, float))
+                or not 0 <= value <= 1
+            ):
+                errors.append(f"{name}_{statistic}_must_be_unit_interval_number")
+
+    if {"eligible_count", "included_count"} <= counts.keys() and (
+        counts["included_count"] > counts["eligible_count"]
+    ):
+        errors.append("included_count_exceeds_eligible_count")
+    if {
+        "included_count",
+        "abstention_count",
+        "non_abstaining_evaluable_count",
+    } <= counts.keys() and counts["included_count"] != (
+        counts["abstention_count"] + counts["non_abstaining_evaluable_count"]
+    ):
+        errors.append("included_count_not_abstention_plus_non_abstaining_evaluable")
+    if {
+        "coverage_intersection_count",
+        "non_abstaining_evaluable_count",
+    } <= counts.keys() and (
+        counts["coverage_intersection_count"] > counts["non_abstaining_evaluable_count"]
+    ):
+        errors.append("coverage_intersection_count_exceeds_evaluable_count")
+    if {"date_coverage_eligible_count", "included_count"} <= counts.keys() and (
+        counts["date_coverage_eligible_count"] > counts["included_count"]
+    ):
+        errors.append("date_coverage_eligible_count_exceeds_included_count")
+    if {
+        "date_coverage_evaluable_count",
+        "date_coverage_eligible_count",
+    } <= counts.keys() and (
+        counts["date_coverage_evaluable_count"] > counts["date_coverage_eligible_count"]
+    ):
+        errors.append("date_coverage_evaluable_count_exceeds_eligible_count")
+    if {
+        "date_coverage_evaluable_count",
+        "non_abstaining_evaluable_count",
+    } <= counts.keys() and (
+        counts["date_coverage_evaluable_count"] > counts["non_abstaining_evaluable_count"]
+    ):
+        errors.append("date_coverage_evaluable_count_exceeds_non_abstaining_count")
+    if {
+        "date_coverage_intersection_count",
+        "date_coverage_evaluable_count",
+    } <= counts.keys() and (
+        counts["date_coverage_intersection_count"] > counts["date_coverage_evaluable_count"]
+    ):
+        errors.append("date_coverage_intersection_count_exceeds_evaluable_count")
+
+    non_abstaining = counts.get("non_abstaining_evaluable_count")
+    if non_abstaining is not None:
+        for name, summary_count in summary_counts.items():
+            if summary_count != non_abstaining:
+                errors.append(f"{name}_eligible_count_not_non_abstaining_evaluable_count")
+    return tuple(errors)
+
+
 def build_public_ledger_schema(repository_commit: str) -> dict[str, Any]:
     """Return a release-disabled candidate schema plus one synthetic aggregate example."""
 
@@ -257,9 +438,11 @@ def build_public_ledger_schema(repository_commit: str) -> dict[str, Any]:
                 "required": [
                     "eligible_count",
                     "included_count",
+                    "non_abstaining_evaluable_count",
                     "coverage_intersection_count",
                     "abstention_count",
                     "date_coverage_eligible_count",
+                    "date_coverage_evaluable_count",
                     "date_coverage_intersection_count",
                     "temporal_width_retained_ratio_summary",
                     "full_state_count_retained_ratio_summary",
@@ -267,9 +450,14 @@ def build_public_ledger_schema(repository_commit: str) -> dict[str, Any]:
                 "properties": {
                     "eligible_count": {"type": "integer", "minimum": 0},
                     "included_count": {"type": "integer", "minimum": 0},
+                    "non_abstaining_evaluable_count": {
+                        "type": "integer",
+                        "minimum": 0,
+                    },
                     "coverage_intersection_count": {"type": "integer", "minimum": 0},
                     "abstention_count": {"type": "integer", "minimum": 0},
                     "date_coverage_eligible_count": {"type": "integer", "minimum": 0},
+                    "date_coverage_evaluable_count": {"type": "integer", "minimum": 0},
                     "date_coverage_intersection_count": {"type": "integer", "minimum": 0},
                     "temporal_width_retained_ratio_summary": {"$ref": "#/$defs/ratio_summary"},
                     "full_state_count_retained_ratio_summary": {"$ref": "#/$defs/ratio_summary"},
@@ -280,8 +468,14 @@ def build_public_ledger_schema(repository_commit: str) -> dict[str, Any]:
                 "additionalProperties": False,
                 "required": ["protocol_version", "method_version", "software_commit"],
                 "properties": {
-                    "protocol_version": {"type": "string", "minLength": 1},
-                    "method_version": {"type": "string", "minLength": 1},
+                    "protocol_version": {
+                        "type": "string",
+                        "pattern": "^NT-PROTOCOL-[0-9]{8}-V[0-9]+$",
+                    },
+                    "method_version": {
+                        "type": "string",
+                        "pattern": "^NT-METHOD-[A-Z0-9]+-V[0-9]+$",
+                    },
                     "software_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
                 },
             },
@@ -293,7 +487,10 @@ def build_public_ledger_schema(repository_commit: str) -> dict[str, Any]:
                     "status": {"const": "synthetic_not_reviewed_for_release"},
                     "unresolved_controls": {
                         "type": "array",
-                        "items": {"type": "string"},
+                        "items": {
+                            "type": "string",
+                            "enum": list(PUBLIC_UNRESOLVED_CONTROL_CODES),
+                        },
                         "minItems": 1,
                         "uniqueItems": True,
                     },
@@ -307,10 +504,28 @@ def build_public_ledger_schema(repository_commit: str) -> dict[str, Any]:
                 "required": ["eligible_count", "mean", "median"],
                 "properties": {
                     "eligible_count": {"type": "integer", "minimum": 0},
-                    "mean": {"type": "number", "minimum": 0, "maximum": 1},
-                    "median": {"type": "number", "minimum": 0, "maximum": 1},
+                    "mean": {
+                        "oneOf": [
+                            {"type": "number", "minimum": 0, "maximum": 1},
+                            {"type": "null"},
+                        ]
+                    },
+                    "median": {
+                        "oneOf": [
+                            {"type": "number", "minimum": 0, "maximum": 1},
+                            {"type": "null"},
+                        ]
+                    },
                 },
-            }
+            },
+        },
+        "x-semantic-validator": {
+            "required": True,
+            "implementation": (
+                "scripts.audit_natal_time_preinference_feasibility."
+                "validate_public_aggregate_semantics"
+            ),
+            "invariant_codes": list(PUBLIC_AGGREGATE_INVARIANTS),
         },
     }
     synthetic_example = {
@@ -320,36 +535,39 @@ def build_public_ledger_schema(repository_commit: str) -> dict[str, Any]:
         "cohort_aggregate": {
             "eligible_count": 200,
             "included_count": 180,
-            "coverage_intersection_count": 126,
+            "non_abstaining_evaluable_count": 135,
+            "coverage_intersection_count": 94,
             "abstention_count": 45,
             "date_coverage_eligible_count": 40,
-            "date_coverage_intersection_count": 28,
+            "date_coverage_evaluable_count": 30,
+            "date_coverage_intersection_count": 21,
             "temporal_width_retained_ratio_summary": {
-                "eligible_count": 180,
+                "eligible_count": 135,
                 "mean": 0.5,
                 "median": 0.5,
             },
             "full_state_count_retained_ratio_summary": {
-                "eligible_count": 180,
+                "eligible_count": 135,
                 "mean": 0.5,
                 "median": 0.5,
             },
         },
         "nonpersonal_provenance": {
-            "protocol_version": "CONSPICUOUSLY-SYNTHETIC-PROTOCOL",
-            "method_version": "CONSPICUOUSLY-SYNTHETIC-METHOD",
+            "protocol_version": "NT-PROTOCOL-00000000-V0",
+            "method_version": "NT-METHOD-SYNTHETIC-V0",
             "software_commit": "0" * 40,
         },
         "disclosure_review": {
             "status": "synthetic_not_reviewed_for_release",
-            "unresolved_controls": [
-                "correction_and_withdrawal_policy",
-                "privacy_budget_if_any",
-                "release_cadence",
-                "small_cell_suppression_threshold",
-            ],
+            "unresolved_controls": list(PUBLIC_UNRESOLVED_CONTROL_CODES),
         },
     }
+    semantic_violations = validate_public_aggregate_semantics(synthetic_example)
+    if semantic_violations:
+        raise ValueError(
+            "synthetic public aggregate violates semantic contract: "
+            + ", ".join(semantic_violations)
+        )
     payload: dict[str, Any] = {
         "schema_version": "natal-time-public-ledger-synthetic-schema-artifact-v1",
         "repository_commit": repository_commit,
@@ -358,6 +576,12 @@ def build_public_ledger_schema(repository_commit: str) -> dict[str, Any]:
         "status": "candidate_schema_not_a_release_policy",
         "public_release_authorized": False,
         "default_granularity": "cohort_aggregate_only",
+        "semantic_validation": {
+            "required_after_structural_schema_validation": True,
+            "validator": "validate_public_aggregate_semantics",
+            "synthetic_example_status": "passed",
+            "invariant_codes": list(PUBLIC_AGGREGATE_INVARIANTS),
+        },
         "record_schema": record_schema,
         "synthetic_example": synthetic_example,
         "prohibited_public_fields": [
@@ -492,8 +716,7 @@ def build_methods_decision_ledger(repository_commit: str) -> dict[str, Any]:
             "method_family": "permutation_and_negative_controls",
             "classification": "baseline_only",
             "reason": (
-                "They test null and leakage behavior but do not supply a natal inference "
-                "estimator."
+                "They test null and leakage behavior but do not supply a natal inference estimator."
             ),
             "evidence_required_before_use": [
                 "participant or connected-component exchange unit",
@@ -649,6 +872,19 @@ def build_unresolved_decision_register(repository_commit: str) -> dict[str, Any]
             "repository_push_merge_migration_or_deployment",
             "Local implementation authority does not authorize external state changes.",
             ["owner authorization"],
+        ),
+        (
+            "UDR-012",
+            "participant_facing_use_case_and_output",
+            (
+                "A participant-facing use case changes product purpose, claim exposure, safety, "
+                "and the consequences of unresolved or abstaining output."
+            ),
+            [
+                "explicit owner choice",
+                "new Pro checkpoint",
+                "participant-safety and claims review",
+            ],
         ),
     ]
     entries = [
