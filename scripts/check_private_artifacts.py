@@ -168,8 +168,8 @@ def audit_reachable_history_secrets(root: Path) -> tuple[PrivacyFinding, ...]:
     pattern = re.compile(
         b"-" * 5
         + rb"BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY"
-        + rb"|sk-[A-Za-z0-9_-]{32,}"
-        + rb"|gh[pousr]_[A-Za-z0-9]{30,}"
+        + rb"|\bsk-[A-Za-z0-9_-]{32,}"
+        + rb"|\bgh[pousr]_[A-Za-z0-9]{30,}"
     )
     objects: dict[str, str] = {}
     for line in _git_lines(root, "rev-list", "--objects", "--all"):

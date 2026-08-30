@@ -81,3 +81,21 @@ def test_reachable_history_secret_scan_finds_committed_credential_shape(tmp_path
 
     assert findings
     assert "leak.txt" in findings[0].detail
+
+
+def test_reachable_history_secret_scan_ignores_token_fragment_inside_public_url(
+    tmp_path: Path,
+) -> None:
+    subprocess.run(("git", "init", "-q"), cwd=tmp_path, check=True)
+    subprocess.run(("git", "config", "user.name", "Synthetic Test"), cwd=tmp_path, check=True)
+    subprocess.run(
+        ("git", "config", "user.email", "synthetic@example.invalid"),
+        cwd=tmp_path,
+        check=True,
+    )
+    public_url = "https://example.invalid/risk-" + "management-framework-generative-ai"
+    (tmp_path / "source.json").write_text(public_url, encoding="utf-8")
+    subprocess.run(("git", "add", "source.json"), cwd=tmp_path, check=True)
+    subprocess.run(("git", "commit", "-qm", "synthetic source"), cwd=tmp_path, check=True)
+
+    assert not audit_reachable_history_secrets(tmp_path)
