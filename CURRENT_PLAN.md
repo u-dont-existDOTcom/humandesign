@@ -28,13 +28,22 @@ Implemented in the approved slice:
 - a synthetic-only public allowlist serializer;
 - separate natal routes/private storage namespace and privacy/build/history gates.
 
-Still prohibited before checkpoint 2: candidate ranking or elimination, weights, priors, score mass, probability/confidence labels, stopping rules, time-window recommendations, relationship evidence, production migration, public deployment, or merge to `main`. The checkpoint-1 contract is `docs/PRO_SUPERVISION_CHECKPOINT_1_20260830.md`; the canonical synthetic verification artifact is `state/NATAL-TIME-FOUNDATION-AUDIT.json`, and `state/NATAL-TIME-WEEKDAY-LOCK-TRACE.json` records a reproducible two-request API trace proving that implied-weekday feedback is withheld until after the server lock.
-
-Checkpoint 2 remains the current blocking scientific gate. Its evidence packet must report the exact local branch and SHA, the unchanged GitHub/Railway state, exact-head verification, full state fields and exclusions, boundary and coverage receipts, synthetic object digests, privacy gates, the absent GitHub ruleset, the stale conflicting PR #1, and the intentionally retained `OPENROUTER_API_KEY` variable name. Do not push, merge, alter repository governance, migrate production, or deploy without the applicable owner authority and Pro gate.
+Checkpoint 1 prohibited candidate ranking or elimination, weights, priors, score mass, probability/confidence labels, stopping rules, time-window recommendations, relationship evidence, production migration, public deployment, and merge to `main`. Those prohibitions remain active because no later checkpoint has authorized inferential work. The checkpoint-1 contract is `docs/PRO_SUPERVISION_CHECKPOINT_1_20260830.md`; the canonical synthetic verification artifact is `state/NATAL-TIME-FOUNDATION-AUDIT.json`, and `state/NATAL-TIME-WEEKDAY-LOCK-TRACE.json` records a reproducible two-request API trace proving that implied-weekday feedback is withheld until after the server lock.
 
 Checkpoint 2 returned `OWNER DECISION REQUIRED: NO` and provisionally accepted the architecture, but it found the actual-engine conformance gate still open. The authorized next slice is real-engine deterministic conformance plus a documentation-only literature scan. Its exact acceptance rules and hard stops are recorded in `docs/PRO_SUPERVISION_CHECKPOINT_2_20260830.md`; the pre-search independent conception is frozen in `docs/NATAL_TIME_INDEPENDENT_CONCEPTION_SNAPSHOT_20260830.md`.
 
-Before any inferential work, identify and pin the single canonical engine, demonstrate its actual temporal resolution, inventory all emitted/derivable fields, certify transition completeness for the full identity, produce real-engine synthetic edge receipts and an independent checker, and publish the complete evidence-state test matrix. Return to Pro after that packet. Ranking, questionnaires, calibration, candidate selection, abstention thresholds, stopping, participant-facing interpretation, merge, and deployment remain prohibited.
+The checkpoint-2 conformance slice is now implemented locally and awaits Pro review:
+
+- the single repository-default engine is pinned to strict local-file Swiss Ephemeris, true-node, geocentric apparent tropical ecliptic-of-date behavior with exact source, dependency, runtime, timezone, constants, and ephemeris-file digests;
+- all 65 emitted or derivable runtime dataclass fields are inventoried; 13 are discrete identity fields, 3 advanced-substructure leaves are explicitly unsupported/unavailable because the engine always emits `None`, and every other field has a recorded classification and exclusion reason;
+- temporal input is a one-microsecond Python coordinate grid passed through binary64 Julian dates whose measured ULP is about 40.233 microseconds; timestamps therefore do not claim astronomical microsecond precision;
+- the design-root solver is pinned to one-microsecond time tolerance and `1e-8`-degree arc tolerance, and transition-side verification includes the numerical uncertainty introduced by Julian conversion;
+- production and structurally independent enumerators agree on exact transition keys for the audit day, including direct/repeated crossings, design-side changes, coincident Sun/Earth events, 68.813-second near-coincident events, day-edge exclusion, and reduced-signature collisions;
+- real-engine fixtures cover ordinary/multiple dates, leap day, DST gap/fold, Lord Howe's non-one-hour DST, historical Monrovia seconds offset, Kathmandu's non-integer offset, and fail-closed skipped-date behavior;
+- `state/NATAL-TIME-EVIDENCE-TRANSITION-MATRIX.json` covers all 12 required evidence transitions;
+- `docs/NATAL_TIME_METHODS_SCAN_20260830.md` records the bounded pre-inference methods scan without choosing semantics.
+
+Canonical pending-review artifacts are `state/NATAL-TIME-REAL-ENGINE-IDENTITY-V4.json` and `state/NATAL-TIME-REAL-ENGINE-FIXTURES.json`. Return this conformance and methods packet to the existing authenticated Pro conversation before any inferential work. Ranking, questionnaires, calibration, candidate selection, abstention thresholds, stopping, participant-facing interpretation, push, merge, and deployment remain prohibited.
 
 ## Current implementation priority
 
