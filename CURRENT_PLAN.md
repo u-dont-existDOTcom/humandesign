@@ -175,14 +175,21 @@ append-only contamination, unassigned separated roles, a construct freeze gate, 
 claim lanes, mapping-failure preservation, and post-exposure change control. It creates no
 construct or mapping content.
 
-Pro's first checkpoint-10 review returned `OWNER DECISION REQUIRED: NO`, qualified 63/64
-requirements, and authorized only a B1-62 traceability-cardinality closure. That closure preserves
-the v1 manifest and original matrix while a superseding v2 manifest assigns exactly one primary
-requirement to each of the same 33 substantive artifacts. The exact closure packet is
-`docs/NATAL_TIME_B1_CHECKPOINT10_REQUIREMENT62_CLOSURE_20260830.md`. Before any construct source is
-selected, content is authored, or a construct-specific search begins, Pro must accept the closure;
-if Pro then requires the source-route plus human, fresh-isolated-model, or separated-hybrid
-authorship choice, stop and wait for Joel.
+Checkpoint 10 is accepted 64/64. Joel selected **S6 — staged independent hybrid sourcing** and
+**H1 — screened chart-blind humans only as construct-content authors**. The decision and its limits
+are `docs/NATAL_TIME_OWNER_DECISION_S6_H1_20260830.md`.
+
+The superseding supervision bootstrap is adopted at owner-outcome epoch 4. The exact source receipt,
+open-parent outcome, bounded child contract, objective reconciliation, separate alignment planes,
+typed `WORKING` completion claim, and separate operational/scientific/release judgments are under
+`state/NATAL-TIME-*EPOCH4*` and `state/NATAL-TIME-S6-H1-CHILD-TASK-CONTRACT-V1.json`. Checkpoint 10,
+tests, and design completeness remain supporting states rather than root completion. Priority 1
+participant-capable work and Priorities 2/3 remain open.
+
+The exact next-contract packet is `docs/NATAL_TIME_S6_H1_NEXT_CONTRACT_PACKET_20260830.md`. Before
+any construct-specific search, human workflow/contact, or content begins, Pro must validate the
+reconciliation and issue one new bounded contract. If it requires another owner choice, stop for
+Joel; otherwise continue automatically inside that contract.
 
 Option B remains a design-only prerequisite screen. It does not authorize live execution,
 measurement content, participant software, empirical data, or progression to rectification.

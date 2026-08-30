@@ -103,4 +103,7 @@ def test_supervision_design_feedback_is_routed_to_shared_scope() -> None:
         "supervision-architecture/20260830-90a230e"
     )
     assert feedback["routing"]["reviewPriority"] == "BATCH"
-    assert feedback["status"] == "PENDING_PRO_META_REVIEW"
+    assert feedback["routing"]["conversationUrl"] == (
+        "https://chatgpt.com/c/6a937aa4-1db8-83ea-813a-350bbab44ddf"
+    )
+    assert feedback["status"] == "SUBMITTED_PENDING_PRO_META_REVIEW"
