@@ -96,6 +96,21 @@ are present, 13 major-guard mutations are killed with zero survivors, and the fa
 discrepancy ledger is empty. The checkpoint-7 packet is
 `docs/NATAL_TIME_CHECKPOINT7_ACCEPTANCE_20260830.md`.
 
+Checkpoint 7 returned `OWNER DECISION REQUIRED: NO` for its bounded remediation and
+`CHECKPOINT-7 STATUS: QUALIFIED, WITH ONE NARROW CURRENT-HEAD PROVENANCE CLOSURE REQUIRED`; the
+complete ruling is `docs/PRO_SUPERVISION_CHECKPOINT_7_20260830.md`. That closure is complete in
+`state/NATAL-TIME-CHECKPOINT7-CURRENT-HEAD-CLOSURE.json`. All 21 acceptance tests pass; all 58
+replay-affecting paths and 28 semantic functions are unchanged through the required checkpoint-7
+implementation head; all nine receipts and four oracle artifacts reproduce; and all 48 protected
+paths remain byte-identical. The closure's logical digest is
+`5780b3285bc212e4a1830bca518fef617a06e538a08a4cdbe9e6bcc969f9751b`.
+
+The documentation-only owner dossier required by checkpoint 7 is
+`docs/NATAL_TIME_OWNER_DECISION_DOSSIER_20260830.md`. It neutrally presents three directions:
+stop/archive, measurement reliability before rectification, or blinded falsification study
+design. It selects no direction, questionnaire, estimator, operating point, cohort size,
+recruitment plan, probability interpretation, participant objective, or disclosure regime.
+
 Ranking, questionnaires, calibration execution, candidate selection, operating or abstention
 thresholds, participant-facing interpretation, relationship evidence, live records, recruitment,
 public-ledger publication, push, merge, migration, and deployment remain prohibited. Any change to
@@ -104,19 +119,22 @@ boundary semantics, or full-state identity reopens deterministic conformance.
 
 ## Current implementation priority
 
-Complete checkpoint 7 without crossing into inference:
+Complete checkpoint 8 without crossing the owner-decision boundary:
 
-- run the forced exact-head full tests, strict-mypy source scope, exact Git-derived Ruff changed-
-  file scope, privacy/history/build gate, all deterministic artifact validators, 48-file protected-
-  core comparison, diff check, and clean index/worktree checks;
-- record the exact final head/tree, test counts, hashes, corrected-command ledger, and unchanged
-  read-only GitHub/Railway state;
-- return the complete checkpoint-7 packet to the same authenticated ChatGPT Pro conversation; and
-- wait for the complete ruling before any substantive next slice.
+- freeze the neutral owner dossier and a documentation-only checkpoint-8 acceptance packet;
+- run forced exact-head full tests, strict-mypy source scope, exact Git-derived Ruff changed-file
+  scope, privacy/history/build gate, every deterministic/pre-inference/replay/oracle/current-head
+  artifact validator, 48-file protected-core comparison, diff check, and clean index/worktree
+  checks;
+- record the exact final head/tree, test counts, artifact hashes, corrected-command ledger, and
+  unchanged read-only GitHub/Railway state;
+- return checkpoint 8 to the same authenticated ChatGPT Pro conversation; and
+- stop for Joel's explicit A/B/C choice when Pro confirms the mandatory owner boundary.
 
-If checkpoint 7 says `OWNER DECISION REQUIRED: YES`, stop for Joel. Otherwise continue only within
-the next bounded scope that Pro explicitly authorizes. No push, PR action, merge, migration,
-deployment, live record, participant inference, or public release is authorized.
+No substantive scientific implementation may continue after the dossier without Joel's ruling.
+No push, PR action, merge, migration, deployment, live record, participant inference, recruitment,
+questionnaire, estimator, candidate selection, baseline execution, relationship evidence, or
+public release is authorized.
 
 ## Blocked long-horizon research concepts
 
