@@ -2049,7 +2049,10 @@ def build_acceptance_matrix(
         )
         for dimension in DIMENSIONS
     }
-    checkpoint_counts = dict(sorted(Counter(spec.checkpoint for spec in REQUIREMENTS).items()))
+    checkpoint_counts = {
+        str(checkpoint): count
+        for checkpoint, count in sorted(Counter(spec.checkpoint for spec in REQUIREMENTS).items())
+    }
     domain_counts = dict(sorted(Counter(spec.domain for spec in REQUIREMENTS).items()))
     payload: dict[str, Any] = {
         "schema_version": "natal-time-checkpoint5-acceptance-matrix-v1",
