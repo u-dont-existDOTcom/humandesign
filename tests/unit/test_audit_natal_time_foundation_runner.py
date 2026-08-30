@@ -3,9 +3,10 @@ from __future__ import annotations
 from copy import deepcopy
 from pathlib import Path
 
-from hdmatch.util import sha256_json
 from scripts.audit_natal_time_api_trace import build_trace
 from scripts.audit_natal_time_foundation import build_audit
+
+from hdmatch.util import sha256_json
 
 PROJECT_ROOT = Path(__file__).parents[2]
 
