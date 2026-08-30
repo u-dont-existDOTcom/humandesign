@@ -111,6 +111,13 @@ stop/archive, measurement reliability before rectification, or blinded falsifica
 design. It selects no direction, questionnaire, estimator, operating point, cohort size,
 recruitment plan, probability interpretation, participant objective, or disclosure regime.
 
+Checkpoint 8 returned `OWNER DECISION REQUIRED: YES` and `CHECKPOINT-8 VERDICT: ACCEPTED`; the
+complete ruling is `docs/PRO_SUPERVISION_CHECKPOINT_8_20260830.md`. Pro identified no blocking
+defect, qualified the 21-test current-head closure, preserved the deterministic/Phase-0
+qualification and its nonclaims, and qualified the owner dossier as neutral and sufficient. Pro
+recommends B — measurement reliability before rectification — as the strongest next scientific
+move, while leaving A/B/C to Joel.
+
 Ranking, questionnaires, calibration execution, candidate selection, operating or abstention
 thresholds, participant-facing interpretation, relationship evidence, live records, recruitment,
 public-ledger publication, push, merge, migration, and deployment remain prohibited. Any change to
@@ -119,19 +126,15 @@ boundary semantics, or full-state identity reopens deterministic conformance.
 
 ## Current implementation priority
 
-Complete checkpoint 8 without crossing the owner-decision boundary:
+**STOP FOR JOEL'S EXPLICIT A/B/C RULING.**
 
-- freeze the neutral owner dossier and a documentation-only checkpoint-8 acceptance packet;
-- run forced exact-head full tests, strict-mypy source scope, exact Git-derived Ruff changed-file
-  scope, privacy/history/build gate, every deterministic/pre-inference/replay/oracle/current-head
-  artifact validator, 48-file protected-core comparison, diff check, and clean index/worktree
-  checks;
-- record the exact final head/tree, test counts, artifact hashes, corrected-command ledger, and
-  unchanged read-only GitHub/Railway state;
-- return checkpoint 8 to the same authenticated ChatGPT Pro conversation; and
-- stop for Joel's explicit A/B/C choice when Pro confirms the mandatory owner boundary.
+- **A — Stop and archive the deterministic foundation.**
+- **B — Measurement reliability before rectification.** Pro recommends this option.
+- **C — Blinded falsification study design.**
 
-No substantive scientific implementation may continue after the dossier without Joel's ruling.
+No option begins by implication. Selecting B or C authorizes only a later bounded design and
+supervision step, not live execution. No substantive scientific implementation may continue
+without Joel's ruling.
 No push, PR action, merge, migration, deployment, live record, participant inference, recruitment,
 questionnaire, estimator, candidate selection, baseline execution, relationship evidence, or
 public release is authorized.
