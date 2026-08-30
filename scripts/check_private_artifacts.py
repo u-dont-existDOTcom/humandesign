@@ -162,6 +162,55 @@ def audit_reachable_history_paths(root: Path) -> tuple[PrivacyFinding, ...]:
     return audit_path_list(paths, surface="reachable-history")
 
 
+def audit_reachable_history_secrets(root: Path) -> tuple[PrivacyFinding, ...]:
+    """Search every reachable revision for high-confidence credential shapes."""
+
+    pattern = re.compile(
+        b"-" * 5
+        + rb"BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY"
+        + rb"|sk-[A-Za-z0-9_-]{32,}"
+        + rb"|gh[pousr]_[A-Za-z0-9]{30,}"
+    )
+    objects: dict[str, str] = {}
+    for line in _git_lines(root, "rev-list", "--objects", "--all"):
+        object_id, _, path = line.partition(" ")
+        objects.setdefault(object_id, path or "<unpathed-object>")
+
+    process = subprocess.Popen(
+        ("git", "cat-file", "--batch"),
+        cwd=root,
+        stdin=subprocess.PIPE,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+    )
+    if process.stdin is None or process.stdout is None:
+        raise RuntimeError("could not open Git history scanner pipes")
+    try:
+        for object_id, path in objects.items():
+            process.stdin.write(object_id.encode("ascii") + b"\n")
+            process.stdin.flush()
+            header = process.stdout.readline().decode("ascii", errors="replace").strip()
+            parts = header.split()
+            if len(parts) != 3 or parts[1] == "missing":
+                raise RuntimeError(f"invalid git cat-file response: {header}")
+            size = int(parts[2])
+            content = process.stdout.read(size)
+            if process.stdout.read(1) != b"\n":
+                raise RuntimeError("invalid git cat-file object terminator")
+            if size <= 2 * 1024 * 1024 and pattern.search(content):
+                return (
+                    PrivacyFinding(
+                        "reachable-history",
+                        f"credential-shaped content in historical object {object_id} ({path})",
+                    ),
+                )
+    finally:
+        process.stdin.close()
+        process.terminate()
+        process.wait(timeout=5)
+    return ()
+
+
 def run_audit(root: Path, *, diff_base: str | None = None) -> tuple[PrivacyFinding, ...]:
     resolved = root.resolve(strict=True)
     findings = (
@@ -169,6 +218,7 @@ def run_audit(root: Path, *, diff_base: str | None = None) -> tuple[PrivacyFindi
         *audit_tracked_files(resolved),
         *audit_branch_diff(resolved, diff_base),
         *audit_reachable_history_paths(resolved),
+        *audit_reachable_history_secrets(resolved),
     )
     return tuple(findings)
 

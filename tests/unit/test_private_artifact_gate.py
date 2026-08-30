@@ -8,6 +8,7 @@ from scripts.check_private_artifacts import (
     REQUIRED_GITIGNORE_LINES,
     audit_ignore_contract,
     audit_path_list,
+    audit_reachable_history_secrets,
     audit_tracked_files,
     is_private_path,
 )
@@ -61,3 +62,22 @@ def test_branch_path_gate_rejects_generated_private_suffix() -> None:
     assert [finding.detail for finding in findings] == [
         "forbidden private path: exports/pair_001.private.json"
     ]
+
+
+def test_reachable_history_secret_scan_finds_committed_credential_shape(tmp_path: Path) -> None:
+    subprocess.run(("git", "init", "-q"), cwd=tmp_path, check=True)
+    subprocess.run(("git", "config", "user.name", "Synthetic Test"), cwd=tmp_path, check=True)
+    subprocess.run(
+        ("git", "config", "user.email", "synthetic@example.invalid"),
+        cwd=tmp_path,
+        check=True,
+    )
+    token = "sk" + "-" + "A" * 40
+    (tmp_path / "leak.txt").write_text(token, encoding="utf-8")
+    subprocess.run(("git", "add", "leak.txt"), cwd=tmp_path, check=True)
+    subprocess.run(("git", "commit", "-qm", "synthetic leak"), cwd=tmp_path, check=True)
+
+    findings = audit_reachable_history_secrets(tmp_path)
+
+    assert findings
+    assert "leak.txt" in findings[0].detail
