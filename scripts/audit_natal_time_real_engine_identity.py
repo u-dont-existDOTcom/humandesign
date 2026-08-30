@@ -160,7 +160,7 @@ def build_packet(
     provider_metadata = asdict(provider.metadata)
     provider_metadata["files"] = ephemeris_files
     packet: dict[str, Any] = {
-        "schema_version": "natal-real-engine-identity-packet-v2",
+        "schema_version": "natal-real-engine-identity-packet-v3",
         "created_at_utc": CREATED_AT.isoformat().replace("+00:00", "Z"),
         "repository_commit": repository_commit,
         "synthetic_only": True,
