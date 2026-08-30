@@ -34,12 +34,14 @@
 
 ## Supervision and verification
 
-- Required supervisor surface: one authenticated ChatGPT Pro conversation in Brave, reused throughout this task. The existing `Romance Blind Reader Test` chat is a frozen-reader experiment and must remain unchanged; start one dedicated supervision conversation.
-- First mandatory checkpoint: send Pro this audit and the exact implementation choice before scientific implementation. Recommended first slice: natal-first intake + source/weekday conflict semantics + exact state enumeration + immutable freeze/result schemas, while keeping ranking weights/probability semantics explicitly unresolved until a later supervised checkpoint.
-- If Pro says an owner decision is required, stop. Otherwise apply its guidance automatically and write the decision back here before continuing.
+- Required supervisor surface: one authenticated ChatGPT Pro conversation in Brave, reused throughout this task. The existing `Romance Blind Reader Test` chat is a frozen-reader experiment and remains unchanged. The dedicated supervision conversation was created and run at Pro power (5/5).
+- Checkpoint 1 completed on 2026-08-30. Pro returned `OWNER DECISION REQUIRED: NO` and approved **Option A — foundation only**. The full actionable contract is recorded in `docs/PRO_SUPERVISION_CHECKPOINT_1_20260830.md`.
+- Approved now: a separate natal-first intake/evidence state machine, server-enforced independent weekday lock, exact candidate-complete civil-day interval enumeration, immutable manifest/freeze/result records, a synthetic-only public allowlist contract, privacy/build hardening, and focused tests.
+- Pro hard-blocked ranking, candidate elimination, weights, priors, duration-normalized mass, probabilities, confidence percentages, stopping rules, time-window recommendations, relationship evidence, production migration, public deployment, and merge to `main` until checkpoint 2.
+- Browser-control default from the owner: prefer headless operation. When the authenticated headed Brave session is genuinely required, reuse the existing controlled window on a dedicated secondary workspace or secondary physical monitor so it does not steal focus or cover the active screen. Do not repeatedly open and close visible windows.
 - Test-efficiency telemetry is active under task ID `astrohd-relationship-20260830` in `.git/codex-test-efficiency/`.
 - Before merge/deploy: exact-head focused/full tests, Ruff, strict mypy, participant JavaScript syntax checks if UI changes, privacy/blinding review, pre-merge Pro checkpoint, pre-deploy Pro checkpoint, exact-commit deployment, and production smoke verification.
 
 ## Next safe action
 
-Post the compact fresh-audit packet to the dedicated Brave ChatGPT Pro supervisor and wait for the complete response. Do not select or implement scientific birth-time ranking/calibration semantics while that checkpoint is pending.
+Implement only the checkpoint-1 deterministic foundation on `codex/astrohd-relationship-continuation` with synthetic fixtures. If any Pro hard stop is reached, return to the same dedicated conversation. Otherwise finish the approved slice, verify it, and send the exact commit/diff/evidence packet to checkpoint 2 before any merge, push-dependent release action, or deployment.
