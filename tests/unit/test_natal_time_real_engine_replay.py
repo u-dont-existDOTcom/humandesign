@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 from collections.abc import Mapping, Sequence
 from copy import deepcopy
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
@@ -12,6 +13,7 @@ from hdmatch.natal_time.replay import (
     ReplayContext,
     ReplayExpectation,
     ReplayValidationError,
+    _event_key,
     fake_receipt_executor,
     load_replay_context,
     run_replay,
@@ -38,6 +40,22 @@ def _verification(expectation: ReplayExpectation) -> dict[str, Any]:
 
 def _context() -> ReplayContext:
     return load_replay_context(PROJECT_ROOT, TEST_COMMIT)
+
+
+def test_production_event_key_is_the_expected_seven_tuple() -> None:
+    encoded = "2024-01-15T01:09:29.742682+00:00|design|moon|6.3->6.4"
+    parsed = _event_key(encoded)
+
+    assert parsed == (
+        datetime(2024, 1, 15, 1, 9, 29, 742682, tzinfo=UTC),
+        "design",
+        "moon",
+        6,
+        3,
+        6,
+        4,
+    )
+    assert len(parsed) == 7
 
 
 def _mutate(path: Path, key: str, value: Any, *, rehash: bool = False) -> None:
@@ -90,6 +108,13 @@ def test_replay_is_fixture_granular_resumable_and_fail_closed(tmp_path: Path) ->
     )
     assert skipped["status"] == "fail_closed"
     assert skipped["independent_verification"]["enumeration_allowed"] is False
+    ordinary = json.loads(
+        (receipts_dir / "ordinary-and-multiple-dates-2024-01-15.json").read_text()
+    )
+    assert ordinary["ordered_interval_list_scope"].startswith("canonical-model-dumps")
+    assert ordinary["ordered_interval_list_sha256"] != ordinary[
+        "ordered_full_state_vector_sha256"
+    ]
     assert run_replay(context, tmp_path, aggregate_only=True) == index
 
 
@@ -100,6 +125,7 @@ def test_replay_is_fixture_granular_resumable_and_fail_closed(tmp_path: Path) ->
         ("repository_commit", "stale-head", True, "repository_commit"),
         ("engine_identity_packet_sha256", "0" * 64, True, "engine_identity"),
         ("result_sha256", "0" * 64, True, "result_sha256"),
+        ("ordered_interval_list_sha256", "0" * 64, True, "existing replay index"),
     ],
 )
 def test_aggregate_fails_tampered_stale_wrong_engine_and_mismatch(

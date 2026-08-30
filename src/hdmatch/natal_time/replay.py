@@ -57,7 +57,7 @@ class ReplayExpectation:
     fixture_input: dict[str, Any]
     civil_day_domain: dict[str, Any]
     committed_interval_count: int
-    committed_ordered_state_sha256: str
+    committed_ordered_full_state_vector_sha256: str
     committed_coverage_receipt_sha256: str
     committed_result_sha256: str
 
@@ -157,7 +157,8 @@ def make_receipt(
     expectation: ReplayExpectation,
     *,
     interval_count: int,
-    ordered_state_sha256: str,
+    ordered_interval_list_sha256: str,
+    ordered_full_state_vector_sha256: str,
     coverage_receipt_sha256: str,
     result_sha256: str,
     independent_verification: Mapping[str, Any],
@@ -166,19 +167,25 @@ def make_receipt(
 
     actual = {
         "interval_count": interval_count,
-        "ordered_interval_list_sha256": ordered_state_sha256,
+        "ordered_full_state_vector_sha256": ordered_full_state_vector_sha256,
         "coverage_receipt_sha256": coverage_receipt_sha256,
         "result_sha256": result_sha256,
     }
     committed = {
         "interval_count": expectation.committed_interval_count,
-        "ordered_interval_list_sha256": expectation.committed_ordered_state_sha256,
+        "ordered_full_state_vector_sha256": (
+            expectation.committed_ordered_full_state_vector_sha256
+        ),
         "coverage_receipt_sha256": expectation.committed_coverage_receipt_sha256,
         "result_sha256": expectation.committed_result_sha256,
     }
     if actual != committed:
         raise ReplayValidationError(
             f"{expectation.receipt_id} does not match committed result components"
+        )
+    if not _is_sha256(ordered_interval_list_sha256):
+        raise ReplayValidationError(
+            f"{expectation.receipt_id} ordered interval-list digest is invalid"
         )
     verification = dict(independent_verification)
     required_status = (
@@ -204,7 +211,11 @@ def make_receipt(
         "civil_day_domain": expectation.civil_day_domain,
         "civil_day_domain_sha256": expectation.civil_day_domain_sha256,
         "ordered_interval_list_scope": (
-            "ordered-complete-full-state-sha256-vector-for-civil-day"
+            "canonical-model-dumps-of-every-complete-ordered-civil-day-interval"
+        ),
+        "ordered_interval_list_sha256": ordered_interval_list_sha256,
+        "ordered_full_state_vector_scope": (
+            "ordered-complete-full-state-sha256-vector-from-coverage-receipt"
         ),
         **actual,
         "committed_expectations": committed,
@@ -279,14 +290,20 @@ def real_engine_fixture_executor(
         )
         if coverage is None:
             raise ReplayValidationError(f"missing coverage receipt for {expectation.receipt_id}")
-        ordered_state_sha = sha256_json([item.full_state_sha256 for item in intervals])
+        ordered_interval_list_sha = sha256_json(
+            [item.model_dump(mode="json") for item in intervals]
+        )
+        ordered_full_state_vector_sha = sha256_json(
+            [item.full_state_sha256 for item in intervals]
+        )
         verification = _independent_verification(provider, intervals, coverage)
         output.append(
             make_receipt(
                 context,
                 expectation,
                 interval_count=len(intervals),
-                ordered_state_sha256=ordered_state_sha,
+                ordered_interval_list_sha256=ordered_interval_list_sha,
+                ordered_full_state_vector_sha256=ordered_full_state_vector_sha,
                 coverage_receipt_sha256=sha256_json(coverage.model_dump(mode="json")),
                 result_sha256=result.content_sha256,
                 independent_verification=verification,
@@ -427,7 +444,7 @@ def _build_expectations(fixture: Mapping[str, Any]) -> tuple[ReplayExpectation, 
                     fixture_input=fixture_input,
                     civil_day_domain=domain,
                     committed_interval_count=cast(int, coverage["interval_count"]),
-                    committed_ordered_state_sha256=sha256_json(states),
+                    committed_ordered_full_state_vector_sha256=sha256_json(states),
                     committed_coverage_receipt_sha256=sha256_json(coverage),
                     committed_result_sha256=cast(str, source["result_sha256"]),
                 )
@@ -450,7 +467,7 @@ def _build_expectations(fixture: Mapping[str, Any]) -> tuple[ReplayExpectation, 
             fixture_input=skip_input,
             civil_day_domain=skip_domain,
             committed_interval_count=0,
-            committed_ordered_state_sha256=sha256_json([]),
+            committed_ordered_full_state_vector_sha256=sha256_json([]),
             committed_coverage_receipt_sha256=sha256_json(skip_domain),
             committed_result_sha256=sha256_json(skip_input),
         )
@@ -491,7 +508,8 @@ def _execute_fail_closed(
         context,
         expectation,
         interval_count=0,
-        ordered_state_sha256=sha256_json([]),
+        ordered_interval_list_sha256=sha256_json([]),
+        ordered_full_state_vector_sha256=sha256_json([]),
         coverage_receipt_sha256=sha256_json(expectation.civil_day_domain),
         result_sha256=sha256_json(actual),
         independent_verification=verification,
@@ -601,7 +619,9 @@ def _validate_receipt(
         "fixture_input_sha256": expectation.fixture_input_sha256,
         "civil_day_domain_sha256": expectation.civil_day_domain_sha256,
         "interval_count": expectation.committed_interval_count,
-        "ordered_interval_list_sha256": expectation.committed_ordered_state_sha256,
+        "ordered_full_state_vector_sha256": (
+            expectation.committed_ordered_full_state_vector_sha256
+        ),
         "coverage_receipt_sha256": expectation.committed_coverage_receipt_sha256,
         "result_sha256": expectation.committed_result_sha256,
     }
@@ -616,11 +636,15 @@ def _validate_receipt(
         raise ReplayValidationError("replay receipt civil-day domain mismatch")
     if payload.get("committed_expectations") != {
         "interval_count": expectation.committed_interval_count,
-        "ordered_interval_list_sha256": expectation.committed_ordered_state_sha256,
+        "ordered_full_state_vector_sha256": (
+            expectation.committed_ordered_full_state_vector_sha256
+        ),
         "coverage_receipt_sha256": expectation.committed_coverage_receipt_sha256,
         "result_sha256": expectation.committed_result_sha256,
     }:
         raise ReplayValidationError("replay receipt committed expectations mismatch")
+    if not _is_sha256(payload.get("ordered_interval_list_sha256")):
+        raise ReplayValidationError("replay receipt ordered interval-list digest is invalid")
     verification = payload.get("independent_verification")
     if not isinstance(verification, dict):
         raise ReplayValidationError("replay receipt lacks independent verification")
@@ -675,6 +699,14 @@ def _load_json_object(path: Path) -> dict[str, Any]:
     return cast(dict[str, Any], value)
 
 
+def _is_sha256(value: object) -> bool:
+    return (
+        isinstance(value, str)
+        and len(value) == 64
+        and all(character in "0123456789abcdef" for character in value)
+    )
+
+
 def _receipt_id(source_name: str, civil_date: str) -> str:
     safe = "".join(character if character.isalnum() else "-" for character in source_name)
     return f"{safe.strip('-')}-{civil_date}".lower()
@@ -694,7 +726,15 @@ def fake_receipt_executor(
                 context,
                 item,
                 interval_count=item.committed_interval_count,
-                ordered_state_sha256=item.committed_ordered_state_sha256,
+                ordered_interval_list_sha256=sha256_json(
+                    {
+                        "synthetic_orchestration_test_only": True,
+                        "receipt_id": item.receipt_id,
+                    }
+                ),
+                ordered_full_state_vector_sha256=(
+                    item.committed_ordered_full_state_vector_sha256
+                ),
                 coverage_receipt_sha256=item.committed_coverage_receipt_sha256,
                 result_sha256=item.committed_result_sha256,
                 independent_verification=independent_factory(item),
