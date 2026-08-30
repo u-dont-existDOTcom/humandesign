@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+from typing import Any
 
 import pytest
 
@@ -21,8 +22,15 @@ PROJECT_ROOT = Path(__file__).parents[2]
 ARTIFACT = PROJECT_ROOT / "state/NATAL-TIME-CHECKPOINT6-FINAL-REPLAY-SOURCE-CLOSURE.json"
 
 
-def test_exact_anchor_chain_and_documentation_only_submission() -> None:
-    payload = build_replay_closure(PROJECT_ROOT)
+@pytest.fixture(scope="module")
+def closure_payload() -> dict[str, Any]:
+    return build_replay_closure(PROJECT_ROOT)
+
+
+def test_exact_anchor_chain_and_documentation_only_submission(
+    closure_payload: dict[str, Any],
+) -> None:
+    payload = closure_payload
 
     assert payload["anchors"]["checkpoint5_acceptance_source"]["commit"] == ACCEPTANCE_SOURCE
     assert payload["anchors"]["checkpoint6_implementation_source"]["commit"] == (
@@ -39,8 +47,10 @@ def test_exact_anchor_chain_and_documentation_only_submission() -> None:
     ]
 
 
-def test_all_replay_files_and_functions_close_at_implementation_head() -> None:
-    payload = build_replay_closure(PROJECT_ROOT)
+def test_all_replay_files_and_functions_close_at_implementation_head(
+    closure_payload: dict[str, Any],
+) -> None:
+    payload = closure_payload
 
     assert payload["replay_affecting_file_count"] == 58
     assert payload["semantic_function_count"] == 28
@@ -57,8 +67,10 @@ def test_all_replay_files_and_functions_close_at_implementation_head() -> None:
     )
 
 
-def test_every_replay_file_mutation_forces_route_b() -> None:
-    payload = build_replay_closure(PROJECT_ROOT)
+def test_every_replay_file_mutation_forces_route_b(
+    closure_payload: dict[str, Any],
+) -> None:
+    payload = closure_payload
 
     assert payload["semantic_byte_mutation_probe_count"] == 58
     assert all(item["route_b_required"] for item in payload["semantic_byte_mutation_probes"])
@@ -66,8 +78,10 @@ def test_every_replay_file_mutation_forces_route_b() -> None:
         _assert_unchanged_replay_bytes("probe", b"accepted", b"changed")
 
 
-def test_receipts_index_and_semantic_mutation_validate_at_implementation() -> None:
-    validation = build_replay_closure(PROJECT_ROOT)["implementation_source_validation"]
+def test_receipts_index_and_semantic_mutation_validate_at_implementation(
+    closure_payload: dict[str, Any],
+) -> None:
+    validation = closure_payload["implementation_source_validation"]
 
     assert validation["receipt_count"] == 9
     assert validation["all_nine_receipts_valid"] is True
@@ -98,8 +112,10 @@ def test_saved_closure_reproduces_and_rehashed_tamper_fails() -> None:
         validate_replay_closure(PROJECT_ROOT, tampered)
 
 
-def test_prior_attestation_and_receipt_bytes_are_preserved() -> None:
-    payload = build_replay_closure(PROJECT_ROOT)
+def test_prior_attestation_and_receipt_bytes_are_preserved(
+    closure_payload: dict[str, Any],
+) -> None:
+    payload = closure_payload
 
     assert payload["prior_checkpoint5_attestation"]["preserved_not_overwritten"] is True
     assert payload["assertions"]["prior_attestation_and_receipts_preserved"] is True
