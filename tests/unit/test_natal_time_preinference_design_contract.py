@@ -5,6 +5,16 @@ from copy import deepcopy
 from pathlib import Path
 from typing import Any
 
+from hdmatch.natal_time.preinference_validation import (
+    ContaminationEvent,
+    DataRole,
+    ReferenceAccessEvent,
+    ReferenceActor,
+    ReferencePurpose,
+    RoleAssignment,
+    reference_access_violations,
+    validate_synthetic_case,
+)
 from hdmatch.util import sha256_json
 
 PROJECT_ROOT = Path(__file__).parents[2]
@@ -56,6 +66,8 @@ def test_formal_objects_preserve_complete_candidates_hidden_reference_and_set_ou
     assert "complete unordered set" in objects["C_i"]["definition"]
     assert "before any inferential response" in objects["C_i"]["freeze_rule"]
     assert "T_i is unavailable" in objects["C_i"]["reference_independence"]
+    assert "any source class accepted" in objects["C_i"]["candidate_evidence_rule"]
+    assert "isolated" in objects["C_i"]["candidate_evidence_rule"]
 
     assert "independently sourced documentary" in objects["T_i"]["definition"]
     assert objects["T_i"]["point_promotion_prohibited"] is True
@@ -118,6 +130,10 @@ def test_documentary_reference_eligibility_preserves_coarse_precision() -> None:
     ]
     assert "never define T_i" in precision["memory_only"]
     assert "invalid for calibration or validation" in reference["leakage_invalidation_rule"]
+    assert "independent calibration evaluator" in reference[
+        "authorized_calibration_comparison_rule"
+    ]
+    assert "methodological revision" in reference["authorized_calibration_comparison_rule"]
 
 
 def test_baseline_falsification_matrix_is_complete_and_keeps_random_controls_distinct() -> None:
@@ -190,9 +206,14 @@ def test_roles_withhold_raw_reference_and_fail_closed_after_contamination() -> N
     assert access["measurement_developer"]["raw_T_i"] is False
     assert access["inference_procedure"]["raw_T_i"] is False
     assert access["reference_custodian"]["raw_T_i"] is True
-    assert access["independent_evaluator"]["raw_T_i"] is True
+    assert access["independent_calibration_evaluator"]["raw_T_i"] is True
+    assert access["independent_validation_evaluator"]["raw_T_i"] is True
     assert access["reference_custodian"]["committed_S_i"] is False
-    assert access["independent_evaluator"]["committed_S_i"] is True
+    assert access["independent_calibration_evaluator"]["committed_S_i"] is True
+    assert access["independent_validation_evaluator"]["committed_S_i"] is True
+    assert "method and output frozen" in access["independent_calibration_evaluator"][
+        "access_condition"
+    ]
 
 
 def test_connected_component_rules_cover_identity_relationship_household_and_source() -> None:
@@ -217,7 +238,50 @@ def test_connected_component_rules_cover_identity_relationship_household_and_sou
     assert "permanently disqualifies" in split["relationship_rule"]
 
 
-def test_synthetic_leakage_cases_accept_only_the_clean_disjoint_case() -> None:
+def _assignments(case: dict[str, Any]) -> tuple[RoleAssignment, ...]:
+    return tuple(
+        RoleAssignment(
+            observation_id=item["observation_id"],
+            participant_id=item["participant_id"],
+            role=DataRole(item["role"]),
+            alias_keys=tuple(item["alias_keys"]),
+            household_keys=tuple(item["household_keys"]),
+            relationship_keys=tuple(item["relationship_keys"]),
+            shared_record_source_keys=tuple(item["shared_record_source_keys"]),
+        )
+        for item in case["assignments"]
+    )
+
+
+def _reference_events(case: dict[str, Any]) -> tuple[ReferenceAccessEvent, ...]:
+    return tuple(
+        ReferenceAccessEvent(
+            participant_id=item["participant_id"],
+            actor=ReferenceActor(item["actor"]),
+            purpose=ReferencePurpose(item["purpose"]),
+            method_frozen=item["method_frozen"],
+            output_frozen=item["output_frozen"],
+        )
+        for item in case["reference_access_events"]
+    )
+
+
+def _contamination_events(case: dict[str, Any]) -> tuple[ContaminationEvent, ...]:
+    return tuple(
+        ContaminationEvent(
+            role=DataRole(item["role"]),
+            methodology_changed_after_outcome_access=item[
+                "methodology_changed_after_outcome_access"
+            ],
+            relationship_evidence_used_for_natal_inference=item[
+                "relationship_evidence_used_for_natal_inference"
+            ],
+        )
+        for item in case["contamination_events"]
+    )
+
+
+def test_structured_synthetic_leakage_cases_execute_the_validator() -> None:
     cases = _contract()["synthetic_leakage_cases"]
     by_id = {case["id"]: case for case in cases}
 
@@ -238,13 +302,17 @@ def test_synthetic_leakage_cases_accept_only_the_clean_disjoint_case() -> None:
         "validation-peek-changes-method",
         "relationship-evidence-assisted-inference",
     }
-    assert by_id["clean-disjoint-components"]["expected_valid"] is True
-    assert all(
-        case["expected_valid"] is False
-        for case_id, case in by_id.items()
-        if case_id != "clean-disjoint-components"
-    )
-    assert all(case["expected_disposition"] for case in cases)
+    for case in cases:
+        violations = validate_synthetic_case(
+            _assignments(case),
+            _reference_events(case),
+            _contamination_events(case),
+        )
+        assert list(violations) == case["expected_violation_codes"], case["id"]
+        assert (not violations) is case["expected_valid"], case["id"]
+        assert case["expected_disposition"]
+
+    assert not by_id["clean-disjoint-components"]["expected_violation_codes"]
     assert (
         "new untouched validation cohort"
         in by_id["validation-peek-changes-method"]["expected_disposition"]
@@ -253,6 +321,60 @@ def test_synthetic_leakage_cases_accept_only_the_clean_disjoint_case() -> None:
         "permanently ineligible"
         in by_id["relationship-evidence-assisted-inference"]["expected_disposition"]
     )
+
+
+def test_reference_access_requires_role_appropriate_post_freeze_comparison() -> None:
+    authorized = ReferenceAccessEvent(
+        participant_id="SYN-P-CAL",
+        actor=ReferenceActor.INDEPENDENT_CALIBRATION_EVALUATOR,
+        purpose=ReferencePurpose.POST_FREEZE_CALIBRATION_COMPARISON,
+        method_frozen=True,
+        output_frozen=True,
+    )
+    assert not reference_access_violations((authorized,))
+
+    assert reference_access_violations(
+        (
+            ReferenceAccessEvent(
+                participant_id="SYN-P-CAL",
+                actor=ReferenceActor.INDEPENDENT_CALIBRATION_EVALUATOR,
+                purpose=ReferencePurpose.POST_FREEZE_CALIBRATION_COMPARISON,
+                method_frozen=False,
+                output_frozen=True,
+            ),
+        )
+    ) == ("calibration_method_not_frozen",)
+    assert reference_access_violations(
+        (
+            ReferenceAccessEvent(
+                participant_id="SYN-P-CAL",
+                actor=ReferenceActor.MODEL_DEVELOPER,
+                purpose=ReferencePurpose.MODEL_FITTING,
+                method_frozen=False,
+                output_frozen=False,
+            ),
+        )
+    ) == ("reference_leakage",)
+
+    wrong_role_violations = validate_synthetic_case(
+        (
+            RoleAssignment(
+                observation_id="SYN-WRONG-ROLE",
+                participant_id="SYN-P-WRONG-ROLE",
+                role=DataRole.LOCKED_VALIDATION,
+            ),
+        ),
+        (
+            ReferenceAccessEvent(
+                participant_id="SYN-P-WRONG-ROLE",
+                actor=ReferenceActor.INDEPENDENT_CALIBRATION_EVALUATOR,
+                purpose=ReferencePurpose.POST_FREEZE_CALIBRATION_COMPARISON,
+                method_frozen=True,
+                output_frozen=True,
+            ),
+        ),
+    )
+    assert wrong_role_violations == ("reference_role_mismatch",)
 
 
 def test_measurement_requirements_are_controls_only_and_prove_zero_item_content() -> None:

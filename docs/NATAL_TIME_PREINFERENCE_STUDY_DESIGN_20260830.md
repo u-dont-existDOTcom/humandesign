@@ -29,9 +29,11 @@ that identity unit.
 ### `C_i`: frozen complete candidate interval set
 
 For participant `i`, `C_i` is the complete unordered set of maximal, engine-distinct intervals
-over every manifest-valid candidate civil date, place, and timezone in the documentary candidate
-domain. `C_i` and its construction manifest must be content-hashed and frozen before inferential
-response evidence is collected or exposed.
+over every manifest-valid candidate civil date, place, and timezone in the frozen
+candidate-construction evidence domain. Candidate date, weekday, source, and lineage fields may
+come from any source class accepted by the evidence state machine; they remain isolated from the
+hidden value, precision, and derivatives of `T_i`. `C_i` and its construction manifest must be
+content-hashed and frozen before inferential response evidence is collected or exposed.
 
 Completeness means that no qualifying interval is omitted. There is no ranking, duration mass,
 candidate weight, or favorable-story selection. A full-state change always creates an interval
@@ -118,9 +120,14 @@ Precision must not be manufactured:
   interval of every source-compatible interpretation and mark the ambiguity.
 - Preserve endpoint convention and timezone provenance with the reference receipt.
 
-If `T_i` or any deterministic derivative of it influences `C_i`, wording, coding, model choice,
-fitting, calibration input, stopping, or `S_i`, that participant is development-only and invalid
-for calibration or validation.
+If `T_i` or any deterministic derivative of it influences `C_i`, candidate-evidence lineage,
+wording, coding, model choice, fitting, procedure execution, stopping, or `S_i`, that participant
+is development-only and invalid for calibration or validation. This prohibition does not block a
+separately authorized independent calibration evaluator from comparing post-freeze method outputs
+and committed `S_i` values with `T_i` for a predeclared calibration procedure. The method,
+measurement specification, target, output form, and analysis must already be frozen; any
+outcome-prompted methodological revision converts the exposed calibration component to
+development and requires fresh calibration components.
 
 ## Data roles and access
 
@@ -129,13 +136,14 @@ Development, calibration, and locked validation are disjoint at the connected-co
 | Role | Permitted purpose | Raw `T_i` available to method actors? | Contamination result |
 | --- | --- | --- | --- |
 | Development | All adaptive design: concepts/wording, features/coding, missingness, model family, priors, hyperparameters, operating or abstention rules, baselines, subgroups, and outcome transformations | No; only an independent evaluator may compare a committed `S_i` and release permitted development diagnostics | Any outcome-informed revision remains development and creates a new version |
-| Calibration | Calibrate only a method, measurement specification, output form, and analysis plan frozen before calibration access | No; an independent calibration evaluator alone holds the reference | If diagnostics change methodology, every exposed component becomes development and fresh calibration components are required |
+| Calibration | Apply a predeclared calibration procedure to outputs from a method, measurement specification, target, output form, and analysis plan frozen before calibration access | No; an independent calibration evaluator alone may compare post-freeze outputs with the reference | If diagnostics or reference outcomes change methodology, every exposed component becomes development and fresh calibration components are required |
 | Locked validation | Evaluate the fully frozen method and analysis plan after release of the validation lock | No; an independent validation evaluator alone holds the reference | If any validation information affects methodology, every exposed component becomes development and a new untouched validation cohort is required |
 
 Candidate constructors can access candidate-domain inputs but not inferential responses or `T_i`.
 The future procedure can access frozen `C_i` and admissible responses but not `T_i`. The reference
-custodian can access `T_i` but neither response evidence nor `S_i`. An independent evaluator gains
-access to the committed `S_i` and `T_i` only after the applicable freeze.
+custodian can access `T_i` but neither response evidence nor `S_i`. An independent calibration or
+validation evaluator gains access to the committed `S_i` and `T_i` only after the applicable
+method and output freezes, and only for the predeclared role-appropriate comparison.
 
 Calibration cannot become repeated development. Locked-validation records, responses, labels,
 references, and outcomes remain inaccessible until method, baselines, analyses, and disclosure
@@ -164,8 +172,9 @@ become permanently ineligible for natal calibration and validation.
 
 ## Synthetic leakage acceptance cases
 
-The machine-readable contract declares one valid case and deliberate invalid cases. These are
-contract tests, not participant records.
+The machine-readable contract declares one valid case and deliberate invalid cases as structured
+synthetic role assignments, reference-access events, and contamination events. These are contract
+tests, not participant records.
 
 | Synthetic case | Expected result |
 | --- | --- |
@@ -184,7 +193,11 @@ contract tests, not participant records.
 | A validation peek changes methodology | Validation becomes development; obtain a new untouched cohort |
 | Partner or relationship evidence assists natal inference | Entire relationship component permanently ineligible for natal calibration or validation |
 
-Automated tests require the clean case to pass and every deliberate leakage case to fail with an
+`hdmatch.natal_time.preinference_validation` constructs connected components from shared real
+identity, alias, household, relationship, and label-transmitting record-source keys. It separately
+enforces the post-freeze evaluator-only `T_i` access boundary. Automated tests execute every
+structured case through that validator, require the clean calibration/validation comparisons to
+pass, and require every deliberate leakage case to fail with the declared violation code and
 explicit disposition.
 
 ## Complete baseline and falsification matrix
@@ -271,7 +284,8 @@ The underlying literature dispositions and citations are preserved in
 - documentary eligibility and precision preservation;
 - completeness of the baseline matrix;
 - role access and contamination rules;
-- connected-component edge classes and every synthetic leakage case;
+- executable connected-component/reference-access validation and every structured synthetic
+  leakage case;
 - the item-writing checkpoint gate and zero-content proof; and
 - fail-closed forbidden-semantics flags.
 

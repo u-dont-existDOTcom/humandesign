@@ -18,12 +18,13 @@
   "formal_objects": {
     "C_i": {
       "name": "complete_candidate_interval_set",
-      "definition": "For participant i, C_i is the complete unordered set of maximal half-open, engine-distinct intervals over every manifest-valid candidate civil date, place, and timezone in the frozen documentary candidate domain.",
+      "definition": "For participant i, C_i is the complete unordered set of maximal half-open, engine-distinct intervals over every manifest-valid candidate civil date, place, and timezone in the frozen candidate-construction evidence domain.",
       "freeze_rule": "C_i and its construction manifest are content-hashed and frozen before any inferential response evidence is collected or exposed.",
       "completeness_rule": "No interval may be omitted, ranked, duration-weighted, pruned, or merged across a full-state change.",
       "ordering_semantics": "none",
       "identity_unit": "one qualified full-state stable interval",
-      "reference_independence": "T_i is unavailable to candidate construction and cannot alter C_i."
+      "candidate_evidence_rule": "Candidate date, weekday, source, and lineage fields may come from any source class accepted by the evidence state machine, but remain isolated from the hidden value, precision, and deterministic derivatives of T_i.",
+      "reference_independence": "T_i is unavailable to candidate construction and cannot alter C_i or its evidence lineage."
     },
     "T_i": {
       "name": "withheld_documentary_reference_interval",
@@ -64,7 +65,7 @@
       "family recollection without an independently inspected documentary source",
       "a time produced or adjusted through astrological or Human Design rectification",
       "relationship history or partner testimony used as inferential evidence",
-      "a source whose reference value entered candidate construction, questionnaire generation, fitting, calibration input, stopping, or returned-set construction"
+      "a source whose reference value entered candidate construction, questionnaire generation, model fitting, procedure execution, stopping, or returned-set construction outside an authorized post-freeze evaluator comparison"
     ],
     "precision_rules": {
       "general": "Represent exactly the source-supported interval and its endpoint convention; never promote a coarse, rounded, bounded, or ambiguous record to an exact minute.",
@@ -78,7 +79,8 @@
       ],
       "memory_only": "Memory-only times may support separately approved feasibility or reliability work but never define T_i for accuracy claims."
     },
-    "leakage_invalidation_rule": "If T_i or any deterministic derivative of T_i influences C_i, measurement content, model development, inference, calibration inputs, stopping, or S_i, participant i is invalid for calibration or validation and is reclassified as development-only."
+    "leakage_invalidation_rule": "If T_i or any deterministic derivative of T_i influences C_i, candidate-evidence lineage, measurement content, model development, procedure execution, stopping, or S_i, participant i is invalid for calibration or validation and is reclassified as development-only.",
+    "authorized_calibration_comparison_rule": "After the method, measurement specification, target, output form, analysis, and participant output are frozen, a separately authorized independent calibration evaluator may compare committed outputs with T_i only through the predeclared calibration procedure. Any outcome-prompted methodological revision converts exposed calibration components to development and requires fresh calibration components."
   },
   "non_scalar_estimand": {
     "primary_target": "joint coverage-temporal-width-state-count-abstention frontier",
@@ -237,7 +239,7 @@
       "outcome_feedback": "Only an independent evaluator may compare a committed S_i with T_i. Released development diagnostics may inform a later version, after which the affected component remains development-only."
     },
     "calibration": {
-      "purpose": "Calibrate only a method, measurement specification, output form, and analysis plan frozen before calibration access.",
+      "purpose": "Apply a predeclared calibration procedure to outputs from a method, measurement specification, target, output form, and analysis plan frozen before calibration access.",
       "raw_T_i_access": false,
       "reference_access_actor": "independent calibration evaluator only",
       "contamination_rule": "Any methodological revision prompted by calibration data converts every exposed calibration connected component to development and requires a fresh unexposed calibration cohort."
@@ -275,11 +277,19 @@
       "raw_T_i": true,
       "committed_S_i": false
     },
-    "independent_evaluator": {
+    "independent_calibration_evaluator": {
       "C_i_inputs": "frozen manifest and component identity only",
       "inferential_responses": false,
       "raw_T_i": true,
-      "committed_S_i": true
+      "committed_S_i": true,
+      "access_condition": "method and output frozen; predeclared calibration comparison only"
+    },
+    "independent_validation_evaluator": {
+      "C_i_inputs": "frozen manifest and component identity only",
+      "inferential_responses": false,
+      "raw_T_i": true,
+      "committed_S_i": true,
+      "access_condition": "method and output frozen; predeclared validation comparison only"
     }
   },
   "connected_component_split": {
@@ -303,86 +313,187 @@
   "synthetic_leakage_cases": [
     {
       "id": "clean-disjoint-components",
-      "synthetic_setup": "Distinct pseudonymous participants, households, relationships, and record sources are each assigned wholly to one role; T_i is custodian-only until committed-output evaluation.",
+      "assignments": [
+        {"observation_id": "SYN-DEV-1", "participant_id": "SYN-P-DEV", "role": "development", "alias_keys": ["SYN-A-DEV"], "household_keys": ["SYN-H-DEV"], "relationship_keys": ["SYN-R-DEV"], "shared_record_source_keys": ["SYN-SRC-DEV"]},
+        {"observation_id": "SYN-CAL-1", "participant_id": "SYN-P-CAL", "role": "calibration", "alias_keys": ["SYN-A-CAL"], "household_keys": ["SYN-H-CAL"], "relationship_keys": ["SYN-R-CAL"], "shared_record_source_keys": ["SYN-SRC-CAL"]},
+        {"observation_id": "SYN-VAL-1", "participant_id": "SYN-P-VAL", "role": "locked_validation", "alias_keys": ["SYN-A-VAL"], "household_keys": ["SYN-H-VAL"], "relationship_keys": ["SYN-R-VAL"], "shared_record_source_keys": ["SYN-SRC-VAL"]}
+      ],
+      "reference_access_events": [
+        {"participant_id": "SYN-P-CAL", "actor": "independent_calibration_evaluator", "purpose": "post_freeze_calibration_comparison", "method_frozen": true, "output_frozen": true},
+        {"participant_id": "SYN-P-VAL", "actor": "independent_validation_evaluator", "purpose": "post_freeze_validation_comparison", "method_frozen": true, "output_frozen": true}
+      ],
+      "contamination_events": [],
       "expected_valid": true,
+      "expected_violation_codes": [],
       "expected_disposition": "role assignment remains eligible"
     },
     {
       "id": "same-participant-cross-role",
-      "synthetic_setup": "Two observations of the same participant are assigned to development and locked validation.",
+      "assignments": [
+        {"observation_id": "SYN-SAME-DEV", "participant_id": "SYN-P-SAME", "role": "development", "alias_keys": [], "household_keys": [], "relationship_keys": [], "shared_record_source_keys": []},
+        {"observation_id": "SYN-SAME-VAL", "participant_id": "SYN-P-SAME", "role": "locked_validation", "alias_keys": [], "household_keys": [], "relationship_keys": [], "shared_record_source_keys": []}
+      ],
+      "reference_access_events": [],
+      "contamination_events": [],
       "expected_valid": false,
+      "expected_violation_codes": ["cross_role_same_participant"],
       "expected_disposition": "the connected component is development-only; replace validation"
     },
     {
       "id": "alias-cross-role",
-      "synthetic_setup": "Two pseudonyms resolve to one repeated identity split between calibration and locked validation.",
+      "assignments": [
+        {"observation_id": "SYN-ALIAS-CAL", "participant_id": "SYN-P-ALIAS-A", "role": "calibration", "alias_keys": ["SYN-ALIAS-SHARED"], "household_keys": [], "relationship_keys": [], "shared_record_source_keys": []},
+        {"observation_id": "SYN-ALIAS-VAL", "participant_id": "SYN-P-ALIAS-B", "role": "locked_validation", "alias_keys": ["SYN-ALIAS-SHARED"], "household_keys": [], "relationship_keys": [], "shared_record_source_keys": []}
+      ],
+      "reference_access_events": [],
+      "contamination_events": [],
       "expected_valid": false,
+      "expected_violation_codes": ["cross_role_alias"],
       "expected_disposition": "the connected component is development-only; replace calibration and validation as applicable"
     },
     {
       "id": "partners-cross-role",
-      "synthetic_setup": "Relationship partners are assigned to development and locked validation.",
+      "assignments": [
+        {"observation_id": "SYN-PARTNER-DEV", "participant_id": "SYN-P-PARTNER-A", "role": "development", "alias_keys": [], "household_keys": [], "relationship_keys": ["SYN-REL-PARTNERS"], "shared_record_source_keys": []},
+        {"observation_id": "SYN-PARTNER-VAL", "participant_id": "SYN-P-PARTNER-B", "role": "locked_validation", "alias_keys": [], "household_keys": [], "relationship_keys": ["SYN-REL-PARTNERS"], "shared_record_source_keys": []}
+      ],
+      "reference_access_events": [],
+      "contamination_events": [],
       "expected_valid": false,
+      "expected_violation_codes": ["cross_role_relationship"],
       "expected_disposition": "the relationship connected component is development-only; replace validation"
     },
     {
       "id": "household-cross-role",
-      "synthetic_setup": "Members of one household are assigned to calibration and locked validation.",
+      "assignments": [
+        {"observation_id": "SYN-HOUSE-CAL", "participant_id": "SYN-P-HOUSE-A", "role": "calibration", "alias_keys": [], "household_keys": ["SYN-HOUSE-SHARED"], "relationship_keys": [], "shared_record_source_keys": []},
+        {"observation_id": "SYN-HOUSE-VAL", "participant_id": "SYN-P-HOUSE-B", "role": "locked_validation", "alias_keys": [], "household_keys": ["SYN-HOUSE-SHARED"], "relationship_keys": [], "shared_record_source_keys": []}
+      ],
+      "reference_access_events": [],
+      "contamination_events": [],
       "expected_valid": false,
+      "expected_violation_codes": ["cross_role_household"],
       "expected_disposition": "the household connected component is development-only; replace calibration and validation as applicable"
     },
     {
       "id": "relationship-chain-cross-role",
-      "synthetic_setup": "A development participant and validation participant are linked through an intermediate relationship participant.",
+      "assignments": [
+        {"observation_id": "SYN-CHAIN-DEV", "participant_id": "SYN-P-CHAIN-A", "role": "development", "alias_keys": [], "household_keys": [], "relationship_keys": ["SYN-REL-CHAIN-1"], "shared_record_source_keys": []},
+        {"observation_id": "SYN-CHAIN-MID", "participant_id": "SYN-P-CHAIN-B", "role": "development", "alias_keys": [], "household_keys": [], "relationship_keys": ["SYN-REL-CHAIN-1", "SYN-REL-CHAIN-2"], "shared_record_source_keys": []},
+        {"observation_id": "SYN-CHAIN-VAL", "participant_id": "SYN-P-CHAIN-C", "role": "locked_validation", "alias_keys": [], "household_keys": [], "relationship_keys": ["SYN-REL-CHAIN-2"], "shared_record_source_keys": []}
+      ],
+      "reference_access_events": [],
+      "contamination_events": [],
       "expected_valid": false,
+      "expected_violation_codes": ["cross_role_relationship"],
       "expected_disposition": "the transitive relationship connected component is development-only; replace validation"
     },
     {
       "id": "shared-record-source-cross-role",
-      "synthetic_setup": "Participants assigned to different roles share a record source or custodian capable of transmitting reference labels.",
+      "assignments": [
+        {"observation_id": "SYN-SOURCE-CAL", "participant_id": "SYN-P-SOURCE-A", "role": "calibration", "alias_keys": [], "household_keys": [], "relationship_keys": [], "shared_record_source_keys": ["SYN-SOURCE-SHARED"]},
+        {"observation_id": "SYN-SOURCE-VAL", "participant_id": "SYN-P-SOURCE-B", "role": "locked_validation", "alias_keys": [], "household_keys": [], "relationship_keys": [], "shared_record_source_keys": ["SYN-SOURCE-SHARED"]}
+      ],
+      "reference_access_events": [],
+      "contamination_events": [],
       "expected_valid": false,
+      "expected_violation_codes": ["cross_role_shared_record_source"],
       "expected_disposition": "the shared-source connected component is development-only; replace later-role cohorts"
     },
     {
       "id": "reference-enters-candidate-construction",
-      "synthetic_setup": "T_i narrows the dates or intervals used to construct C_i.",
+      "assignments": [
+        {"observation_id": "SYN-REF-CANDIDATE", "participant_id": "SYN-P-REF-CANDIDATE", "role": "locked_validation", "alias_keys": [], "household_keys": [], "relationship_keys": [], "shared_record_source_keys": []}
+      ],
+      "reference_access_events": [
+        {"participant_id": "SYN-P-REF-CANDIDATE", "actor": "candidate_constructor", "purpose": "candidate_construction", "method_frozen": false, "output_frozen": false}
+      ],
+      "contamination_events": [],
       "expected_valid": false,
+      "expected_violation_codes": ["reference_leakage"],
       "expected_disposition": "participant is development-only and invalid for calibration or validation"
     },
     {
       "id": "reference-enters-measurement-development",
-      "synthetic_setup": "T_i or its chart derivative is available during concepts, wording, or coding design.",
+      "assignments": [
+        {"observation_id": "SYN-REF-MEASURE", "participant_id": "SYN-P-REF-MEASURE", "role": "calibration", "alias_keys": [], "household_keys": [], "relationship_keys": [], "shared_record_source_keys": []}
+      ],
+      "reference_access_events": [
+        {"participant_id": "SYN-P-REF-MEASURE", "actor": "measurement_developer", "purpose": "measurement_development", "method_frozen": false, "output_frozen": false}
+      ],
+      "contamination_events": [],
       "expected_valid": false,
+      "expected_violation_codes": ["reference_leakage"],
       "expected_disposition": "affected connected components are development-only; regenerate measurement work without held-out labels"
     },
     {
       "id": "reference-enters-fitting",
-      "synthetic_setup": "T_i or a deterministic derivative influences features, model choice, fitting, or priors before S_i is committed.",
+      "assignments": [
+        {"observation_id": "SYN-REF-FIT", "participant_id": "SYN-P-REF-FIT", "role": "calibration", "alias_keys": [], "household_keys": [], "relationship_keys": [], "shared_record_source_keys": []}
+      ],
+      "reference_access_events": [
+        {"participant_id": "SYN-P-REF-FIT", "actor": "model_developer", "purpose": "model_fitting", "method_frozen": false, "output_frozen": false}
+      ],
+      "contamination_events": [],
       "expected_valid": false,
+      "expected_violation_codes": ["reference_leakage"],
       "expected_disposition": "participant is development-only and invalid for calibration or validation"
     },
     {
       "id": "reference-enters-stopping",
-      "synthetic_setup": "Knowledge of T_i determines when inference stops or whether a candidate subset is returned.",
+      "assignments": [
+        {"observation_id": "SYN-REF-STOP", "participant_id": "SYN-P-REF-STOP", "role": "locked_validation", "alias_keys": [], "household_keys": [], "relationship_keys": [], "shared_record_source_keys": []}
+      ],
+      "reference_access_events": [
+        {"participant_id": "SYN-P-REF-STOP", "actor": "inference_procedure", "purpose": "stopping", "method_frozen": true, "output_frozen": false}
+      ],
+      "contamination_events": [],
       "expected_valid": false,
+      "expected_violation_codes": ["reference_leakage"],
       "expected_disposition": "participant is development-only and invalid for calibration or validation"
     },
     {
       "id": "calibration-becomes-adaptive",
-      "synthetic_setup": "Calibration diagnostics prompt a method, baseline, subgroup, outcome, or output-rule revision.",
+      "assignments": [
+        {"observation_id": "SYN-CAL-ADAPT", "participant_id": "SYN-P-CAL-ADAPT", "role": "calibration", "alias_keys": [], "household_keys": [], "relationship_keys": [], "shared_record_source_keys": []}
+      ],
+      "reference_access_events": [
+        {"participant_id": "SYN-P-CAL-ADAPT", "actor": "independent_calibration_evaluator", "purpose": "post_freeze_calibration_comparison", "method_frozen": true, "output_frozen": true}
+      ],
+      "contamination_events": [
+        {"role": "calibration", "methodology_changed_after_outcome_access": true, "relationship_evidence_used_for_natal_inference": false}
+      ],
       "expected_valid": false,
+      "expected_violation_codes": ["calibration_became_development"],
       "expected_disposition": "all exposed calibration components become development; obtain fresh calibration components"
     },
     {
       "id": "validation-peek-changes-method",
-      "synthetic_setup": "Any locked-validation input, reference, label, response, or outcome affects methodology.",
+      "assignments": [
+        {"observation_id": "SYN-VAL-ADAPT", "participant_id": "SYN-P-VAL-ADAPT", "role": "locked_validation", "alias_keys": [], "household_keys": [], "relationship_keys": [], "shared_record_source_keys": []}
+      ],
+      "reference_access_events": [
+        {"participant_id": "SYN-P-VAL-ADAPT", "actor": "independent_validation_evaluator", "purpose": "post_freeze_validation_comparison", "method_frozen": true, "output_frozen": true}
+      ],
+      "contamination_events": [
+        {"role": "locked_validation", "methodology_changed_after_outcome_access": true, "relationship_evidence_used_for_natal_inference": false}
+      ],
       "expected_valid": false,
+      "expected_violation_codes": ["validation_became_development"],
       "expected_disposition": "all exposed validation components become development; obtain a new untouched validation cohort"
     },
     {
       "id": "relationship-evidence-assisted-inference",
-      "synthetic_setup": "Partner or relationship evidence is used to select, eliminate, rank, or stop natal candidates.",
+      "assignments": [
+        {"observation_id": "SYN-REL-INF-A", "participant_id": "SYN-P-REL-INF-A", "role": "development", "alias_keys": [], "household_keys": [], "relationship_keys": ["SYN-REL-INF"], "shared_record_source_keys": []},
+        {"observation_id": "SYN-REL-INF-B", "participant_id": "SYN-P-REL-INF-B", "role": "development", "alias_keys": [], "household_keys": [], "relationship_keys": ["SYN-REL-INF"], "shared_record_source_keys": []}
+      ],
+      "reference_access_events": [],
+      "contamination_events": [
+        {"role": "development", "methodology_changed_after_outcome_access": false, "relationship_evidence_used_for_natal_inference": true}
+      ],
       "expected_valid": false,
+      "expected_violation_codes": ["relationship_evidence_assisted_inference"],
       "expected_disposition": "the entire relationship connected component is permanently ineligible for natal calibration or validation"
     }
   ],
@@ -534,5 +645,5 @@
     "prohibit_public_ledger_implementation_or_release": true,
     "prohibit_hd_validity_rectification_accuracy_or_human_calibration_claims": true
   },
-  "contract_sha256": "b46756d58fd16c60a78bf8f7b456cc3eefc018556b9a66d64d3bce94e5d4936b"
+  "contract_sha256": "c721dcdd5ed9e144ca4795523420e226bc13dc8a739669991c365c1bb4d3f6c9"
 }
