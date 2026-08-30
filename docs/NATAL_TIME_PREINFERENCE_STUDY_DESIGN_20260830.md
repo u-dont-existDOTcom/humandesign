@@ -9,12 +9,16 @@ removing only its top-level `contract_sha256` field and canonicalizing the remai
 sorted keys and compact JSON separators.
 
 Phase-0 correction 2.4 preserves that v1 contract and its
-`c721dcdd5ed9e144ca4795523420e226bc13dc8a739669991c365c1bb4d3f6c9` digest. Its interval,
-documentary-reference, returned-output, and metric semantics are superseded by the content-hashed
-`state/NATAL-TIME-PREINFERENCE-METRIC-SEMANTICS-V2.json` contract
-(`067417a49c158fd7d7d1d31c3b21a584c1d1259aa85d60a30e9a6d3f39976f5e`) and
-`docs/NATAL_TIME_PREINFERENCE_METRIC_SEMANTICS_V2_20260830.md`. V1 remains authoritative for
-every other study-design surface. No v1 bytes were overwritten.
+`c721dcdd5ed9e144ca4795523420e226bc13dc8a739669991c365c1bb4d3f6c9` digest. Checkpoint-5
+contract remediation also preserves the v2 metric contract at
+`067417a49c158fd7d7d1d31c3b21a584c1d1259aa85d60a30e9a6d3f39976f5e`. The operative
+selected-subset and candidate/reference-domain semantics are now the content-hashed
+`state/NATAL-TIME-PREINFERENCE-METRIC-SEMANTICS-V3.json` contract
+(`75a1629203724715054e2a1d7ea1b6ead7dc0ffd6cf5f4df2756c3e622b5f1fe`) and
+`docs/NATAL_TIME_PREINFERENCE_METRIC_SEMANTICS_V3_20260830.md`. V3 supersedes v2 only for
+selected-subset adjacency and candidate/reference-domain compatibility; all other v2 rules and
+every non-superseded v1 study-design surface remain authoritative. No v1 or v2 bytes were
+overwritten.
 
 This contract defines evaluation objects, documentary eligibility, leakage controls,
 falsification baselines, and future measurement-development requirements. It does **not** define
@@ -65,12 +69,27 @@ not accuracy ground truth.
 
 For participant `i`, `S_i` is either:
 
-- a returned subset of unchanged, whole intervals from the frozen `C_i`; or
+- any nonempty unordered subset of exact unchanged, whole intervals from the frozen `C_i`; or
 - explicit abstention, in which case no candidate subset is returned.
 
 An abstention is reported as its own outcome. It is neither a success nor an error. `S_i` cannot
 be a newly manufactured window, a ranked list, a single best minute, or a candidate carrying a
-probability or confidence label.
+probability or confidence label. Selected intervals need not be adjacent or contiguous, including
+within one date. This does not relax candidate construction: `C_i` must still be complete and form
+the canonical gap-free, non-overlapping partition within every declared civil-day domain.
+
+### `D_i`: exact candidate-domain union and reference compatibility
+
+`D_i` is exactly the set union of all unchanged intervals in `C_i`, not their convex hull. An
+operative canonical `T_i` is `reference_domain_compatible` only when `T_i` is a subset of `D_i`.
+It is `reference_domain_partially_incompatible` when it has positive-width overlap with `D_i` but
+is not a subset, and `reference_domain_incompatible` when overlap width is zero, including
+endpoint-only contact.
+
+Partial and complete incompatibility issue no valid reference-accuracy result. Reference
+intersection is the corresponding typed not-applicable state rather than true or false, and the
+method receives neither credit nor error. The evaluator must not clip or otherwise mutate `T_i`,
+fill a gap in `D_i`, or change `C_i`. Documentary width and domain status may remain diagnostics.
 
 ## Non-scalar evaluation frontier
 
@@ -78,9 +97,10 @@ The primary target is a joint coverage–temporal-width–state-count–abstenti
 correct-minute endpoint, raw rank, or weighted utility scalar. For each untouched validation
 participant, the following components remain separate:
 
-1. **Reference intersection.** If the procedure did not abstain and an eligible `T_i` exists,
-   report whether the union of `S_i` intersects `T_i`. For abstention or absent `T_i`, record the
-   corresponding not-applicable state instead of false.
+1. **Reference intersection.** If the procedure did not abstain and an eligible `T_i` is wholly
+   contained in `D_i`, report whether the union of `S_i` intersects `T_i`. For abstention, absent
+   `T_i`, or partial/complete domain incompatibility, record the corresponding typed
+   not-applicable state instead of false.
 2. **Temporal width retained.** If the procedure did not abstain, report `mu(S_i)`, `mu(C_i)`, and
    `mu(S_i) / mu(C_i)`.
 3. **Full-state interval count retained.** If the procedure did not abstain, report `|S_i|`,

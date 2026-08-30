@@ -29,6 +29,10 @@ PREINFERENCE_METRIC_SEMANTICS_V2_PATH = "state/NATAL-TIME-PREINFERENCE-METRIC-SE
 PREINFERENCE_METRIC_SEMANTICS_V2_SHA256 = (
     "067417a49c158fd7d7d1d31c3b21a584c1d1259aa85d60a30e9a6d3f39976f5e"
 )
+PREINFERENCE_METRIC_SEMANTICS_V3_PATH = "state/NATAL-TIME-PREINFERENCE-METRIC-SEMANTICS-V3.json"
+PREINFERENCE_METRIC_SEMANTICS_V3_SHA256 = (
+    "75a1629203724715054e2a1d7ea1b6ead7dc0ffd6cf5f4df2756c3e622b5f1fe"
+)
 
 
 def _round(value: float) -> float:
@@ -913,6 +917,7 @@ def build_unresolved_decision_register(repository_commit: str) -> dict[str, Any]
         "created_at_utc": CREATED_AT.isoformat().replace("+00:00", "Z"),
         "owner_decision_required_now": False,
         "status": "preinference_slice_can_continue_without_resolving_these_choices",
+        "current_operative_metric_semantics_contract": "operative_v3",
         "metric_semantics_contract_references": {
             "preserved_v1": {
                 "path": PREINFERENCE_DESIGN_CONTRACT_V1_PATH,
@@ -923,6 +928,11 @@ def build_unresolved_decision_register(repository_commit: str) -> dict[str, Any]
                 "path": PREINFERENCE_METRIC_SEMANTICS_V2_PATH,
                 "contract_sha256": PREINFERENCE_METRIC_SEMANTICS_V2_SHA256,
                 "status": "phase_0_metric_semantics_contract",
+            },
+            "operative_v3": {
+                "path": PREINFERENCE_METRIC_SEMANTICS_V3_PATH,
+                "contract_sha256": PREINFERENCE_METRIC_SEMANTICS_V3_SHA256,
+                "status": "checkpoint_5_metric_reference_domain_contract",
             },
         },
         "decisions": entries,
