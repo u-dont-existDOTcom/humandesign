@@ -38,9 +38,11 @@ class NatalTimeIntakeService:
         store: NatalTimePrivateStore,
         *,
         clock: Callable[[], datetime] | None = None,
+        id_factory: Callable[[str], str] | None = None,
     ) -> None:
         self.store = store
         self._clock = clock or (lambda: datetime.now(UTC))
+        self._id_factory = id_factory or _id
         self._lock_sequence = 0
 
     def capture_initial_evidence(
@@ -58,11 +60,11 @@ class NatalTimeIntakeService:
         now = self._now()
         self._lock_sequence += 1
         lineage = EvidenceLineage(
-            lineage_id=_id("NTL"),
+            lineage_id=self._id_factory("NTL"),
             version=1,
             date_evidence=(
                 DateEvidence(
-                    evidence_id=_id("NTE"),
+                    evidence_id=self._id_factory("NTE"),
                     asserted_date=asserted_date,
                     source=date_source,
                     documentary_verification=documentary_verification,
@@ -71,7 +73,7 @@ class NatalTimeIntakeService:
                 ),
             ),
             weekday_evidence=WeekdayEvidence(
-                evidence_id=_id("NTE"),
+                evidence_id=self._id_factory("NTE"),
                 answer_status=weekday_answer_status,
                 asserted_weekday=asserted_weekday,
                 entered_at_utc=now,
@@ -109,7 +111,7 @@ class NatalTimeIntakeService:
             date_evidence=previous.date_evidence,
             weekday_evidence=previous.weekday_evidence,
             candidate_date_set=CandidateDateSetEvidence(
-                evidence_id=_id("NTE"),
+                evidence_id=self._id_factory("NTE"),
                 candidate_dates=candidate_dates,
                 declared_date_evidence_ids=tuple(
                     item.evidence_id for item in previous.date_evidence
@@ -142,7 +144,7 @@ class NatalTimeIntakeService:
         if superseded_evidence_id not in existing_ids:
             raise ValueError("superseded date evidence does not exist")
         replacement = DateEvidence(
-            evidence_id=_id("NTE"),
+            evidence_id=self._id_factory("NTE"),
             asserted_date=asserted_date,
             source=source,
             documentary_verification=documentary_verification,

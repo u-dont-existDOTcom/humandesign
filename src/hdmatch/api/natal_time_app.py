@@ -2,7 +2,8 @@
 
 from __future__ import annotations
 
-from datetime import date
+from collections.abc import Callable
+from datetime import date, datetime
 from pathlib import Path
 from typing import Literal
 
@@ -58,10 +59,19 @@ class ConfirmCandidateDatesResponse(NatalTimeModel):
     assessment: EvidenceAssessment
 
 
-def create_natal_time_app(store_root: str | Path) -> FastAPI:
+def create_natal_time_app(
+    store_root: str | Path,
+    *,
+    clock: Callable[[], datetime] | None = None,
+    id_factory: Callable[[str], str] | None = None,
+) -> FastAPI:
     """Create a non-production natal-time API with its own private namespace."""
 
-    service = NatalTimeIntakeService(NatalTimePrivateStore(store_root))
+    service = NatalTimeIntakeService(
+        NatalTimePrivateStore(store_root),
+        clock=clock,
+        id_factory=id_factory,
+    )
     app = FastAPI(title="Natal Time Foundation", version="0.1.0")
 
     @app.get("/healthz")
