@@ -1,0 +1,162 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-b1-precontent-methods-decision-ledger-v1",
+  "status": "GENERIC_GOVERNANCE_DECISIONS_ONLY_NO_ROUTE_OR_CONTENT_SELECTED",
+  "active_purpose": "b1_independent_construct_precontent_governance",
+  "provenance": {
+    "owner_b1_record_commit": "cc6e8c3c05551c772d788d336994c3996d02ab78",
+    "independent_conception_commit": "496143ed1c04fce8b6f92f010d8f7bd7a11da30c",
+    "source_ledger": "state/NATAL-TIME-B1-PRECONTENT-SOURCE-LEDGER-V1.json"
+  },
+  "allowed_classifications": [
+    "REUSE_DIRECTLY",
+    "ADAPT",
+    "COMPOSE",
+    "BASELINE_OR_DIAGNOSTIC_ONLY",
+    "INCOMPATIBLE",
+    "UNRESOLVED",
+    "REQUIRES_PRO_REVIEW",
+    "REQUIRES_OWNER_DECISION"
+  ],
+  "decisions": [
+    {
+      "decision_id": "MD-01",
+      "method_family": "construct_definition_before_instrument_selection",
+      "classification": "REUSE_DIRECTLY",
+      "source_ids": ["S01", "S02", "S04"],
+      "adopted_constraint": "A future construct and context boundary must be independently specified before instrument selection or development.",
+      "not_selected": ["construct", "domain", "context_of_use", "instrument"]
+    },
+    {
+      "decision_id": "MD-02",
+      "method_family": "existing_instrument_review_before_bespoke_content",
+      "classification": "REUSE_DIRECTLY",
+      "source_ids": ["S01", "S02", "S04", "S10"],
+      "adopted_constraint": "A future construct-specific scan must review established instruments before any bespoke content and preserve its receipt.",
+      "not_selected": ["query", "construct", "instrument", "development_route"]
+    },
+    {
+      "decision_id": "MD-03",
+      "method_family": "content_validity_and_chart_blind_elicitation_governance",
+      "classification": "COMPOSE",
+      "source_ids": ["S03", "S04", "S05", "S10"],
+      "adopted_constraint": "Reserve future relevance, comprehensiveness, comprehensibility, concept-elicitation, observer-boundary, and documentation fields without instantiating content or a route.",
+      "not_selected": ["source_route", "participant_group", "item", "prompt", "probe", "observer_protocol"]
+    },
+    {
+      "decision_id": "MD-04",
+      "method_family": "synonym_neighbor_redundancy_and_proliferation_review",
+      "classification": "ADAPT",
+      "source_ids": ["S06", "S07", "S08", "S09", "S10"],
+      "adopted_constraint": "The future specific scan must assess synonyms, prior terminology, neighboring constructs, redundancy, proliferation, and adverse evidence rather than infer uniqueness from a label.",
+      "not_selected": ["construct_label", "neighbor", "redundancy_rule", "new_measure"]
+    },
+    {
+      "decision_id": "MD-05",
+      "method_family": "preregistration_and_confirmatory_exploratory_separation",
+      "classification": "REUSE_DIRECTLY",
+      "source_ids": ["S11", "S12"],
+      "adopted_constraint": "Freeze formulation before outcome access and keep exploratory changes distinct from confirmatory evaluation.",
+      "not_selected": ["study", "hypothesis", "outcome", "analysis"]
+    },
+    {
+      "decision_id": "MD-06",
+      "method_family": "same_evidence_discovery_and_evaluation",
+      "classification": "INCOMPATIBLE",
+      "source_ids": ["S11", "S12", "S16"],
+      "adopted_constraint": "Evidence used to formulate or select a construct or mapping cannot confirm that same formulation.",
+      "not_selected": ["split", "sample", "model", "evaluation_metric"]
+    },
+    {
+      "decision_id": "MD-07",
+      "method_family": "theory_construct_mapping_governance",
+      "classification": "BASELINE_OR_DIAGNOSTIC_ONLY",
+      "source_ids": ["S13"],
+      "adopted_constraint": "A future theory-derived route must make definitions, inferential structure, and falsifiable implications explicit before evaluation.",
+      "not_selected": ["theory", "construct", "correspondence", "ontology", "feature"]
+    },
+    {
+      "decision_id": "MD-08",
+      "method_family": "provenance_versioning_and_post_exposure_change_control",
+      "classification": "ADAPT",
+      "source_ids": ["S11", "S14"],
+      "adopted_constraint": "Use content-hashed identities, revision/invalidation lineage, immutable originals, and exploratory supersession after exposure.",
+      "not_selected": ["content", "change", "result", "new_version_content"]
+    },
+    {
+      "decision_id": "MD-09",
+      "method_family": "model_context_and_retrieval_contamination",
+      "classification": "ADAPT",
+      "source_ids": ["S15", "S16", "S17"],
+      "adopted_constraint": "Record model/session/retrieval/repository/history exposure, fail closed on unknown provenance, and never treat an AstroHD-exposed model as chart-blind by instruction.",
+      "not_selected": ["model_provider", "model", "session", "authorship_workflow"]
+    },
+    {
+      "decision_id": "MD-10",
+      "method_family": "astrohd_mapping_firewall",
+      "classification": "COMPOSE",
+      "source_ids": ["S11", "S12", "S14", "S16"],
+      "adopted_constraint": "Require an independently frozen construct package before a separately frozen later mapping and preserve mapping failure against in-place construct revision.",
+      "not_selected": ["mapping_ontology", "mapping_rule", "feature", "hypothesis", "model", "metric", "threshold"]
+    },
+    {
+      "decision_id": "MD-11",
+      "method_family": "construct_source_route",
+      "classification": "REQUIRES_OWNER_DECISION",
+      "source_ids": ["S01", "S04", "S05", "S10", "S13"],
+      "adopted_constraint": "Keep every authorized route class unselected, without preference, default, ranking, or authorization.",
+      "not_selected": ["source_route"]
+    },
+    {
+      "decision_id": "MD-12",
+      "method_family": "future_chart_blind_authorship_actor_type",
+      "classification": "REQUIRES_OWNER_DECISION",
+      "source_ids": ["S15", "S17"],
+      "adopted_constraint": "Do not choose human, isolated model, or hybrid authorship; any future model route requires a fresh isolated context and still needs provenance limits.",
+      "not_selected": ["human_authorship", "model_authorship", "hybrid_authorship", "actor_assignment"]
+    },
+    {
+      "decision_id": "MD-13",
+      "method_family": "future_construct_specific_scan",
+      "classification": "UNRESOLVED",
+      "source_ids": ["S01", "S02", "S03", "S04", "S06", "S07", "S10"],
+      "adopted_constraint": "Provide only a future protocol template; freeze a fresh chart-blind construct conception before its first query and execute nothing now.",
+      "not_selected": ["construct", "query", "instrument", "search_result", "disposition"]
+    },
+    {
+      "decision_id": "MD-14",
+      "method_family": "closed_metadata_content_embargo",
+      "classification": "ADAPT",
+      "source_ids": ["S14", "S15", "S16", "S17"],
+      "adopted_constraint": "Permit only opaque identifiers and provenance/access/version/freeze metadata; reject content-bearing and mapping-bearing fields regardless of their hash.",
+      "not_selected": ["construct_content", "measurement_content", "mapping_content"]
+    }
+  ],
+  "independent_insight_mapping": [
+    {"insight_index": 1, "post_scan_status": "COMPOSED_AND_ADAPTED", "decision_ids": ["MD-09", "MD-14"]},
+    {"insight_index": 2, "post_scan_status": "REUSED_AND_COMPOSED", "decision_ids": ["MD-05", "MD-06", "MD-10"]},
+    {"insight_index": 3, "post_scan_status": "COMPOSED", "decision_ids": ["MD-05", "MD-06", "MD-10"]},
+    {"insight_index": 4, "post_scan_status": "ADAPTED", "decision_ids": ["MD-05", "MD-08", "MD-10"]},
+    {"insight_index": 5, "post_scan_status": "REUSED", "decision_ids": ["MD-01", "MD-02", "MD-13"]},
+    {"insight_index": 6, "post_scan_status": "ADAPTED", "decision_ids": ["MD-04", "MD-06", "MD-09"]},
+    {"insight_index": 7, "post_scan_status": "ADAPTED", "decision_ids": ["MD-09", "MD-14"]},
+    {"insight_index": 8, "post_scan_status": "COMPOSED_AND_ADAPTED", "decision_ids": ["MD-05", "MD-08", "MD-10"]}
+  ],
+  "superseded_independent_insights": [],
+  "novel_remainder": [
+    "astrohd_specific_information_firewall",
+    "closed_content_embargo_for_precontent_metadata",
+    "astrohd_exposure_contamination_states",
+    "separate_mapping_escrow_and_failure_preservation"
+  ],
+  "strongest_external_baseline": "Compose current construct-definition and instrument-selection guidance with preregistration, circular-analysis controls, provenance standards, and leakage governance; do not invent a new measurement-development method.",
+  "overlapping_established_instrument_claim": "NOT_EVALUATED_CONSTRUCT_SPECIFIC_SCAN_PROHIBITED",
+  "source_route_selected": false,
+  "construct_content_created": false,
+  "mapping_content_created": false,
+  "new_owner_decisions_confirmed": [
+    "construct_source_route",
+    "human_isolated_model_or_hybrid_authorship"
+  ],
+  "owner_decision_note": "Both decisions are expected only after checkpoint 10; neither is needed to complete the currently authorized governance slice."
+}
