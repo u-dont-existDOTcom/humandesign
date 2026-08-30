@@ -8,7 +8,13 @@
   "collector": "deterministic-tool",
   "capture_method": "Exact owner-message text blocks were preserved in a local immutable source file and byte-hashed with sha256sum before normalization.",
   "worker_supplied_copy_sha256": "2bc3b243f67411907799c9b382dccd9552220a67cfe20d0429949868123db735",
-  "comparison": "MATCH",
+  "captured_source_comparison": "MATCH",
+  "comparison": "NOT_INDEPENDENT",
+  "capture_integrity": "VERIFIED",
+  "acquisition_mode": "WORKER_COPIED",
+  "receipt_capability": "INTEGRITY_ONLY",
+  "source_gate_eligible_for_root_terminalization": false,
+  "source_gate_eligible_for_release": false,
   "correction_epochs_present": [1, 2, 3, 4],
   "canonical_project_contract_locators": [
     "AGENTS.md",
@@ -17,7 +23,8 @@
   ],
   "limitations": [
     "The conversation surface did not expose durable external message IDs.",
-    "The deterministic collector verifies exact local bytes and comparison, not independent retrieval from the conversation provider.",
+    "The deterministic collector verifies exact local bytes and same-provenance comparison, not independent retrieval from the conversation provider.",
+    "The ACCEPT_WITH_REVISION meta-review classifies this receipt as INTEGRITY_ONLY and its independent-source comparison as NOT_INDEPENDENT.",
     "Root completion, release, publication, deployment, or irreversible mutation remains fail-closed if a later mismatch with provider-side owner text is discovered."
   ]
 }

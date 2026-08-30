@@ -186,6 +186,15 @@ typed `WORKING` completion claim, and separate operational/scientific/release ju
 tests, and design completeness remain supporting states rather than root completion. Priority 1
 participant-capable work and Priorities 2/3 remain open.
 
+The shared supervision-design meta-review returned `ACCEPT_WITH_REVISION` and no owner decision.
+It classifies the worker-copied exact-text receipt as `INTEGRITY_ONLY`, its independent-source
+comparison as `NOT_INDEPENDENT`, contract-to-captured-source as `MATCH`, and contract-to-owner as
+`PARTIAL`. Safe reversible contributing work remains valid. Root completion, release,
+publication, deployment, migration, irreversible action, and equivalent terminal acceptance stay
+fail-closed until the owner source is independently verified or explicitly re-attested and every
+other applicable gate passes. The exact ruling is
+`docs/PRO_SUPERVISION_DESIGN_FEEDBACK_RULING_20260830.md`.
+
 The exact next-contract packet is `docs/NATAL_TIME_S6_H1_NEXT_CONTRACT_PACKET_20260830.md`. Before
 any construct-specific search, human workflow/contact, or content begins, Pro must validate the
 reconciliation and issue one new bounded contract. If it requires another owner choice, stop for

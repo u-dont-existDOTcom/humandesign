@@ -35,7 +35,13 @@ def test_owner_source_and_receipt_are_exactly_bound() -> None:
     outcome = _load(OUTCOME)
     assert receipt["source_sha256"] == _sha256(SOURCE)
     assert receipt["worker_supplied_copy_sha256"] == _sha256(SOURCE)
-    assert receipt["comparison"] == "MATCH"
+    assert receipt["captured_source_comparison"] == "MATCH"
+    assert receipt["comparison"] == "NOT_INDEPENDENT"
+    assert receipt["capture_integrity"] == "VERIFIED"
+    assert receipt["acquisition_mode"] == "WORKER_COPIED"
+    assert receipt["receipt_capability"] == "INTEGRITY_ONLY"
+    assert receipt["source_gate_eligible_for_root_terminalization"] is False
+    assert receipt["source_gate_eligible_for_release"] is False
     assert receipt["limitations"]
     assert outcome["source"]["sha256"] == _sha256(SOURCE)
     assert outcome["source"]["receipt_id"] == receipt["receipt_id"]
@@ -78,6 +84,11 @@ def test_reconciliation_keeps_alignment_planes_and_completion_claim_separate() -
     )
     assert reconciliation["alignment"]["workerToContract"]["status"] == "GREEN"
     assert reconciliation["alignment"]["contractToOwner"]["status"] == "PARTIAL"
+    assert reconciliation["contractToCapturedSourceAlignment"] == "MATCH"
+    assert reconciliation["ownerSourceCaptureIntegrity"] == "VERIFIED"
+    assert reconciliation["ownerSourceAcquisitionMode"] == "WORKER_COPIED"
+    assert reconciliation["independentSupervisorReceipt"]["capability"] == "INTEGRITY_ONLY"
+    assert reconciliation["independentSupervisorReceipt"]["comparison"] == "NOT_INDEPENDENT"
     assert reconciliation["alignment"]["contractToOwner"]["unmappedOwnerRequirementIds"] == []
     assert reconciliation["completionClaim"]["type"] == "WORKING"
     assert reconciliation["completionClaim"]["proposedTerminal"] is False
@@ -93,6 +104,8 @@ def test_research_assurance_planes_are_independent_and_release_is_closed() -> No
     assert verdict["completionClaimType"] == "WORKING"
     assert verdict["workerToContractAlignment"] == "GREEN"
     assert verdict["contractToOwnerAlignment"] == "PARTIAL"
+    assert verdict["contractToCapturedSourceAlignment"] == "MATCH"
+    assert verdict["ownerSourceReceiptCapability"] == "INTEGRITY_ONLY"
 
 
 def test_supervision_design_feedback_is_routed_to_shared_scope() -> None:
@@ -106,4 +119,7 @@ def test_supervision_design_feedback_is_routed_to_shared_scope() -> None:
     assert feedback["routing"]["conversationUrl"] == (
         "https://chatgpt.com/c/6a937aa4-1db8-83ea-813a-350bbab44ddf"
     )
-    assert feedback["status"] == "SUBMITTED_PENDING_PRO_META_REVIEW"
+    assert feedback["status"] == "ACCEPTED_WITH_REVISION"
+    assert feedback["proMetaReview"]["verdict"] == "ACCEPT_WITH_REVISION"
+    assert feedback["proMetaReview"]["ownerDecisionRequired"] is False
+    assert feedback["proMetaReview"]["currentTaskBoundaryBlocked"] is False

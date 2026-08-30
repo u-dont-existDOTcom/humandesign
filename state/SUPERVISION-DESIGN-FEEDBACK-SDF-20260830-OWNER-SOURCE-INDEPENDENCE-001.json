@@ -53,9 +53,34 @@
     "conversationUrl": "https://chatgpt.com/c/6a937aa4-1db8-83ea-813a-350bbab44ddf",
     "submittedAt": "2026-08-30T22:45:00Z"
   },
-  "status": "SUBMITTED_PENDING_PRO_META_REVIEW",
-  "proMetaReview": null,
+  "status": "ACCEPTED_WITH_REVISION",
+  "proMetaReview": {
+    "reviewedAt": "2026-08-30T23:00:00Z",
+    "verdict": "ACCEPT_WITH_REVISION",
+    "feedbackId": "SDF-20260830-OWNER-SOURCE-INDEPENDENCE-001",
+    "scopeKey": "supervision-architecture/20260830-90a230e",
+    "architectureEpoch": "20260830-90a230e",
+    "architectureCommit": "90a230e85f78063080dc627ec36a0237c3234f72",
+    "architectureTree": "c841043cc96cd274872e8a7363651625705edf38",
+    "ownerDecisionRequired": false,
+    "projectLocalOnly": false,
+    "currentTaskBoundaryBlocked": false,
+    "astroHdTaskAuthorizedByThisReview": false,
+    "architectureMutatedByThisReview": false,
+    "ruling": "A worker-copied exact source block with deterministic byte verification is an INTEGRITY_ONLY receipt, not an independent owner-source receipt. Its captured-source comparison is MATCH, but its independent-source comparison is NOT_INDEPENDENT and contract-to-owner remains PARTIAL.",
+    "currentTaskEffect": "The current WORKING state and safe reversible contributing-work permission remain valid. Root completion, release, publication, deployment, migration, irreversible mutation, and equivalent terminal acceptance remain prohibited.",
+    "terminalSourceGate": "Before terminal or release-adjacent action, owner-source capability must be INDEPENDENT_SOURCE_VERIFIED or OWNER_REATTESTED, contract-to-owner must be MATCH, and every other applicable gate must independently pass.",
+    "requiredArchitectureAction": "Create a new universal architecture epoch that separates byte integrity from acquisition independence, adds explicit receipt-capability fields and projection rules, bumps three schemas to v2, adds six hostile fixtures, documents migration, and runs the complete universal test suite.",
+    "conversationUrl": "https://chatgpt.com/c/6a937aa4-1db8-83ea-813a-350bbab44ddf"
+  },
   "ownerDecisionRef": null,
-  "repositoryChangeRefs": [],
-  "testRefs": []
+  "repositoryChangeRefs": [
+    "docs/PRO_SUPERVISION_DESIGN_FEEDBACK_RULING_20260830.md",
+    "state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH4-V1.json",
+    "state/NATAL-TIME-OBJECTIVE-RECONCILIATION-EPOCH4-V1.json",
+    "state/NATAL-TIME-RESEARCH-SUPERVISION-VERDICT-EPOCH4-V1.json"
+  ],
+  "testRefs": [
+    "tests/unit/test_natal_time_supervision_reconciliation.py"
+  ]
 }

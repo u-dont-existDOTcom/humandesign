@@ -8,6 +8,8 @@
   "objectiveReconciliationId": "ORC-ASTROHD-20260830-EPOCH4-V1",
   "workerToContractAlignment": "GREEN",
   "contractToOwnerAlignment": "PARTIAL",
+  "contractToCapturedSourceAlignment": "MATCH",
+  "ownerSourceReceiptCapability": "INTEGRITY_ONLY",
   "operationalAlignment": {
     "status": "PASS",
     "findings": [
@@ -57,7 +59,7 @@
     "findings": [
       "No release, publication, deployment, merge, participant-facing result, or empirical claim is proposed in this child.",
       "Release remains prohibited and would require a fresh reconciliation plus privacy, consent, licensing, freshness, provenance, security, product, owner-outcome, and Pro gates.",
-      "Owner-source acquisition independence remains limited pending shared Pro meta-review."
+      "Owner-source acquisition is INTEGRITY_ONLY under the shared Pro meta-review and is not eligible for root terminalization or release."
     ],
     "evidenceRefs": [
       "state/NATAL-TIME-OBJECTIVE-RECONCILIATION-EPOCH4-V1.json",
@@ -69,7 +71,7 @@
     "allowed": false,
     "reason": "No release is proposed or authorized; the root owner outcome remains open and release-specific hard gates have not been evaluated."
   },
-  "requiredDirective": "COMPLETE_RECONCILED_PRO_PACKET_AND_CONTINUE_IF_NO_OWNER_DECISION",
+  "requiredDirective": "COMPLETE_RECONCILED_PRO_PACKET_AND_CONTINUE_SAFE_REVERSIBLE_WORK_IF_NO_OWNER_DECISION",
   "ownerDecisionRequired": false,
   "ownerDecision": "S6 plus H1 was supplied for the prior gate; no additional owner choice has yet been requested by the next-contract supervisor.",
   "supervisionDesignFeedbackIds": ["SDF-20260830-OWNER-SOURCE-INDEPENDENCE-001"]

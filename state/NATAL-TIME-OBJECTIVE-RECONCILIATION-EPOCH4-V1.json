@@ -23,17 +23,26 @@
   "independentSupervisorReceipt": {
     "receiptId": "osr-astrohd-relationship-20260830-epoch4-v1",
     "path": "state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH4-V1.json",
-    "sha256": "ebe94326e29404126798fb94714c3a1f48f07ee4dfce3a2465d4505be26b01e2",
+    "sha256": "ddc542e03079fba0a06577500dd98a13f7784e13d5ea56130676525611427e47",
     "collector": "deterministic-tool",
     "sourceSha256": "2bc3b243f67411907799c9b382dccd9552220a67cfe20d0429949868123db735",
     "workerSuppliedCopySha256": "2bc3b243f67411907799c9b382dccd9552220a67cfe20d0429949868123db735",
-    "comparison": "MATCH",
+    "capturedSourceComparison": "MATCH",
+    "comparison": "NOT_INDEPENDENT",
+    "capability": "INTEGRITY_ONLY",
+    "captureIntegrity": "VERIFIED",
+    "acquisitionMode": "WORKER_COPIED",
     "limitations": [
       "No durable provider-side message locator was exposed.",
-      "The collector independently verifies bytes and comparison but not provider-side acquisition.",
-      "SDF-20260830-OWNER-SOURCE-INDEPENDENCE-001 asks the shared Pro meta-review lane to clarify the universal capability boundary."
+      "The collector independently verifies bytes and same-provenance comparison but not provider-side acquisition.",
+      "The ACCEPT_WITH_REVISION meta-review classifies this as INTEGRITY_ONLY and NOT_INDEPENDENT."
     ]
   },
+  "contractToCapturedSourceAlignment": "MATCH",
+  "ownerSourceCaptureIntegrity": "VERIFIED",
+  "ownerSourceAcquisitionMode": "WORKER_COPIED",
+  "sourceGateEligibleForRootTerminalization": false,
+  "sourceGateEligibleForRelease": false,
   "taskContract": {
     "taskContractId": "TC-B1-S6-H1-NEXT-CONTRACT-20260830-V1",
     "revision": 1,
@@ -64,7 +73,7 @@
         "Epoch 4 S6 plus H1 selection",
         "Epoch 4 superseding supervision bootstrap"
       ],
-      "partialReason": "All material requirements are mapped and the child contract honestly leaves the parent open. PARTIAL is retained solely because independent provider-side owner-message acquisition is unavailable; the deterministic exact-text receipt has an explicit capability limitation pending shared Pro meta-review."
+      "partialReason": "All material requirements are mapped and the child contract honestly leaves the parent open. PARTIAL is retained because the exact-text receipt is INTEGRITY_ONLY: provider-side or independent-reader acquisition is unavailable, and the shared Pro meta-review classifies its comparison as NOT_INDEPENDENT."
     }
   },
   "requirements": [
@@ -107,11 +116,11 @@
   "result": {
     "overallTraffic": "YELLOW",
     "rootTerminalizationAllowed": false,
-    "requiredDirective": "CONTINUE_REVERSIBLE_CHILD_AND_ROUTE_META_REVIEW",
+    "requiredDirective": "CONTINUE_SAFE_REVERSIBLE_CHILD_UNDER_INTEGRITY_ONLY_SOURCE_GATE",
     "findings": [
       "No owner requirement is omitted, weakened, or proxy-substituted by the child contract.",
       "The parent relationship/AstroHD outcome remains open.",
-      "Provider-side independence of the owner-source acquisition is unresolved and explicitly limited."
+      "Owner-source acquisition is explicitly INTEGRITY_ONLY and NOT_INDEPENDENT; root terminalization and release remain prohibited."
     ]
   }
 }

@@ -182,8 +182,13 @@ Bootstrap/S6-H1 adoption implementation commit:
 `4988657c3c4da0392a5390ed82a27234055d57a0` / tree
 `ce35246069f15b308dc24c82cb1bd21808bc986f`.
 
-The documentation/routing child and exact-head verification identity are supplied in the actual Pro
-return rather than self-referentially embedded here.
+The documentation/routing contract head is
+`810278077ef099e68ef43ec124e9ec67ca2d124f` / tree
+`d5f5f72540ec2a05a6f2bac4b7a1bdbaa2dff59c`. Its exact-head full repository suite passed
+609/609 in 237.62 seconds; the six focused reconciliation tests, Ruff, strict mypy across 132
+source files, canonical privacy/history/build gate, JSON/diff checks, and clean-tree check also
+passed. The subsequent meta-review record child changes only documentation, state JSON, and its
+focused deterministic test; its exact identity and checks are supplied in the actual Pro return.
 
 Local adoption tests cover owner-source/receipt binding, bootstrap/protocol identity, all 13
 required-outcome coverage rows, open-parent semantics, separate alignment states, `WORKING`
@@ -197,8 +202,16 @@ completion/release. It recommends graded acquisition capability rather than trea
 as acquisition independence.
 
 The self-contained packet was submitted to the existing shared supervision-workflow Pro thread at
-scope `supervision-architecture/20260830-90a230e`. The feedback does not block this reversible task
-boundary. No universal file or rule was changed.
+scope `supervision-architecture/20260830-90a230e`. Pro returned `ACCEPT_WITH_REVISION`,
+`owner_decision_required: NO`, and `current_task_boundary_blocked: NO`. It classifies the receipt
+as `INTEGRITY_ONLY`, the captured-source alignment as `MATCH`, the independent-source comparison
+as `NOT_INDEPENDENT`, and contract-to-owner as `PARTIAL`. The exact ruling is
+`docs/PRO_SUPERVISION_DESIGN_FEEDBACK_RULING_20260830.md`.
+
+Safe reversible contributing work may continue under `WORKING`. Root completion, release,
+publication, deployment, migration, irreversible action, and equivalent terminal acceptance stay
+blocked until independent source verification or explicit owner re-attestation plus every other
+applicable gate. No universal file or rule was changed by this project.
 
 ## Recommended next bounded slice
 
