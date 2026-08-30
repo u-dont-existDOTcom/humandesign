@@ -1,0 +1,114 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_id": "natal-time-s6-h1-checkpoint11-pro-ruling-v2",
+  "supersedes": "state/NATAL-TIME-S6-H1-CHECKPOINT11-PRO-RULING-V1.json",
+  "status": "OWNER_GATE_RESOLVED_BOUNDED_REMEDIATION_AUTHORIZED",
+  "submitted_owner_correction_head": {
+    "commit": "9a39410bf72ca07c7c9149244e04b5c8f307ae95",
+    "tree": "15dd9aa31861c750218b8d5a53b89d779ecc8471"
+  },
+  "pro_ruling_record": {
+    "path": "docs/PRO_SUPERVISION_S6_H1_CHECKPOINT11_OWNER_CORRECTION_RULING_20260830.md",
+    "sha256": "1bc398e5d4c1663815d2ef6d137e1d52e183fe4613f3bb541911cbb9e11ab268"
+  },
+  "owner_decision_required": false,
+  "owner_gate_resolution": "The direct epoch-5 owner correction resolves the H1 prior-exposure policy gate. No further owner choice is required for the bounded remediation child.",
+  "owner_source_capability": {
+    "capture_integrity": "VERIFIED",
+    "acquisition_mode": "DIRECT_OWNER_MESSAGE",
+    "receipt_capability": "OWNER_REATTESTED",
+    "reattestation_scope": "EPOCH5_H1_PRIOR_EXPOSURE_AND_SEMANTIC_CONTAMINATION_POLICY_ONLY",
+    "independent_source_comparison": "NOT_INDEPENDENT"
+  },
+  "owner_source_bindings": {
+    "verbatim_source_path": "state/NATAL-TIME-OWNER-OUTCOME-SOURCE-EPOCH5-20260830.md",
+    "verbatim_source_sha256": "ae31f03e2d2e83373be50c451f0bf998175a64ed83811570e613112035ebd131",
+    "normalized_decision_path": "docs/NATAL_TIME_OWNER_DECISION_H1_CONTAMINATION_POLICY_20260830.md",
+    "normalized_decision_sha256": "9016c1965ce60c198f10ebb56339471f9b3fd46e3974bce29dec5c7944417be6",
+    "receipt_path": "state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH5-V1.json",
+    "receipt_sha256": "332c48e97802617d1867dd769a7fa9d866b2ca8e864ace2ff9db5cb36124bc98",
+    "owner_outcome_path": "state/NATAL-TIME-OWNER-OUTCOME-EPOCH5-V1.json",
+    "owner_outcome_sha256": "02f199808dbb50bfd31a3bb7cc29a84f7b904caaba79d6589e7e172d9ed63fa2"
+  },
+  "controlling_policy": {
+    "prior_exposure_automatic_exclusion": false,
+    "semantic_or_self_concept_contamination_controls": true,
+    "substantive_outcomes": [
+      "ELIGIBLE",
+      "REQUIRES_BLIND_ADJUDICATION",
+      "INELIGIBLE_CLEAN_H1_AUTHOR"
+    ],
+    "process_states": [
+      "NOT_ASSESSED",
+      "EVIDENCE_INCOMPLETE",
+      "EVIDENCE_CONFLICT",
+      "DECISION_PENDING",
+      "DECISION_RECORDED"
+    ],
+    "substantial_knowledge_rule": "Requires blind adjudication absent a separate ineligibility basis; it does not establish clean eligibility or automatic exclusion.",
+    "identity_or_intentional_derivation_rule": "Consistent only with INELIGIBLE_CLEAN_H1_AUTHOR.",
+    "belief_or_reported_accuracy_rule": "Belief, skepticism, mismatch, curiosity, usefulness, reported accuracy, and product interest are not automatic decision rules.",
+    "unknown_or_conflict_rule": "Blocks clean-role assignment and yields no substantive outcome; it does not create automatic ineligibility.",
+    "nonhuman_context_rule": "AstroHD-exposed repositories, conversations, retrieval contexts, model sessions, and other content-generation environments remain absolutely ineligible to originate or revise chart-blind construct content."
+  },
+  "checkpoint_status_before_remediation": {
+    "supported_requirement_count": 59,
+    "required_requirement_count": 60,
+    "blocking_requirement_ids": [
+      "S6H1-30"
+    ],
+    "worker_to_contract_alignment": "YELLOW",
+    "bounded_epoch5_policy_to_owner": "MATCH",
+    "root_contract_to_owner_alignment": "PARTIAL",
+    "completion_claim": "WORKING",
+    "operational_alignment": "WARN",
+    "scientific_adequacy": "WARN",
+    "release_adequacy": "NOT_APPLICABLE",
+    "release_permission": false,
+    "parent_outcome": "OPEN"
+  },
+  "authorized_child": {
+    "id": "CHECKPOINT-11 EPOCH-5 HUMAN-EXPOSURE POLICY RECONCILIATION ONLY",
+    "local_additive_commits": true,
+    "metadata_only": true,
+    "synthetic_test_only": true,
+    "literature_scan": false,
+    "production_change": false,
+    "external_mutation": false,
+    "push": false,
+    "merge": false,
+    "deployment": false,
+    "human_action": false,
+    "construct_content": false,
+    "mapping_execution": false
+  },
+  "acceptance_contract": {
+    "authoritative_requirement_count": 60,
+    "immutable_v1_matrix": true,
+    "required_v2_matrix": true,
+    "superseded_requirement_ids": [
+      "S6H1-18",
+      "S6H1-30"
+    ],
+    "clarified_requirement_ids": [
+      "S6H1-29"
+    ],
+    "hostile_fixture_minimum": 28,
+    "required_post_remediation_states": {
+      "worker_to_contract_alignment": "GREEN",
+      "bounded_epoch5_policy_to_owner": "MATCH",
+      "root_contract_to_owner_alignment": "PARTIAL",
+      "completion_claim": "WORKING",
+      "operational_alignment": "PASS",
+      "scientific_adequacy": "WARN",
+      "release_adequacy": "NOT_APPLICABLE",
+      "release_permission": false,
+      "parent_outcome": "OPEN"
+    }
+  },
+  "next_checkpoint": {
+    "same_pro_lane": true,
+    "required_after_local_remediation": true,
+    "work_beyond_child_authorized": false
+  }
+}
