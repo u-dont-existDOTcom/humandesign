@@ -1,0 +1,538 @@
+{
+  "schema_version": "natal-time-preinference-design-contract-v1",
+  "contract_id": "natal-time-preinference-study-design-20260830",
+  "created_on": "2026-08-30",
+  "authorization": {
+    "checkpoint": "docs/PRO_SUPERVISION_CHECKPOINT_3_20260830.md",
+    "authorized_slice": "pre-inference study-design, falsification, and disclosure contract only",
+    "local_commits_only": true,
+    "participant_inference_authorized": false,
+    "synthetic_only": true
+  },
+  "canonicalization": {
+    "algorithm": "sha256",
+    "serialization": "UTF-8 JSON with keys sorted lexicographically and separators ',' and ':'",
+    "hash_scope": "the complete decoded JSON object after removing only the top-level contract_sha256 field",
+    "implementation": "hdmatch.util.sha256_json"
+  },
+  "formal_objects": {
+    "C_i": {
+      "name": "complete_candidate_interval_set",
+      "definition": "For participant i, C_i is the complete unordered set of maximal half-open, engine-distinct intervals over every manifest-valid candidate civil date, place, and timezone in the frozen documentary candidate domain.",
+      "freeze_rule": "C_i and its construction manifest are content-hashed and frozen before any inferential response evidence is collected or exposed.",
+      "completeness_rule": "No interval may be omitted, ranked, duration-weighted, pruned, or merged across a full-state change.",
+      "ordering_semantics": "none",
+      "identity_unit": "one qualified full-state stable interval",
+      "reference_independence": "T_i is unavailable to candidate construction and cannot alter C_i."
+    },
+    "T_i": {
+      "name": "withheld_documentary_reference_interval",
+      "definition": "For participant i, T_i is an independently sourced documentary reference-time interval that preserves the source record's actual temporal precision.",
+      "custody_rule": "Raw T_i remains with an independent reference custodian and is unavailable to candidate construction, measurement development, model development, procedure execution, stopping, and returned-set construction.",
+      "evaluation_rule": "An independent evaluator may compare a previously committed S_i with T_i only after the applicable method and output are frozen.",
+      "absence_rule": "If no eligible independent reference interval exists, T_i is absent and participant i is ineligible for calibration or validation claims about recovery accuracy.",
+      "point_promotion_prohibited": true
+    },
+    "S_i": {
+      "name": "returned_candidate_subset_or_abstention",
+      "definition": "For participant i, S_i is either an explicitly returned subset of C_i containing whole full-state intervals, or an explicit abstention.",
+      "subset_rule": "Every non-abstaining member of S_i must be an unchanged member of the frozen C_i.",
+      "abstention_rule": "Abstention returns no candidate subset and is reported separately; it is neither success nor error.",
+      "prohibited_forms": [
+        "a newly manufactured interval not present in C_i",
+        "a ranked or weighted candidate list",
+        "a single best minute",
+        "a probabilistic or confidence-labelled candidate"
+      ]
+    }
+  },
+  "reference_standard": {
+    "eligibility_requirements": [
+      "the source is documentary rather than memory-only",
+      "the record was created or maintained independently of this study's natal inference process",
+      "the source and custody lineage are auditable without exposing the reference to candidate construction or inference",
+      "the record's precision and rounding convention are recoverable as an interval",
+      "the reference was not derived from astrology, Human Design, relationship interpretation, questionnaire responses, or candidate comparison"
+    ],
+    "eligible_source_classes": [
+      "independently obtained civil or clinical birth record with auditable provenance",
+      "independently obtained certified extract or archive transcription with auditable chain to the underlying record"
+    ],
+    "ineligible_as_accuracy_ground_truth": [
+      "memory-only time or date",
+      "participant assertion without independently inspected documentary support",
+      "family recollection without an independently inspected documentary source",
+      "a time produced or adjusted through astrological or Human Design rectification",
+      "relationship history or partner testimony used as inferential evidence",
+      "a source whose reference value entered candidate construction, questionnaire generation, fitting, calibration input, stopping, or returned-set construction"
+    ],
+    "precision_rules": {
+      "general": "Represent exactly the source-supported interval and its endpoint convention; never promote a coarse, rounded, bounded, or ambiguous record to an exact minute.",
+      "known_rounding": "A record rounded to a declared unit is represented by the complete source-compatible rounding cell under the documented rounding convention.",
+      "unknown_rounding_convention": "If the rounding unit is known but the direction or convention is not, preserve the union or bounding interval of all source-compatible interpretations and mark the ambiguity.",
+      "bounded_record": "A before/after or between-times record remains the corresponding interval.",
+      "examples_of_coarse_precision": [
+        "five-minute precision remains a five-minute-scale reference interval",
+        "fifteen-minute precision remains a fifteen-minute-scale reference interval",
+        "hour precision remains an hour-scale reference interval"
+      ],
+      "memory_only": "Memory-only times may support separately approved feasibility or reliability work but never define T_i for accuracy claims."
+    },
+    "leakage_invalidation_rule": "If T_i or any deterministic derivative of T_i influences C_i, measurement content, model development, inference, calibration inputs, stopping, or S_i, participant i is invalid for calibration or validation and is reclassified as development-only."
+  },
+  "non_scalar_estimand": {
+    "primary_target": "joint coverage-temporal-width-state-count-abstention frontier",
+    "participant_level_components": {
+      "reference_intersection": {
+        "definition": "For a non-abstaining output, report whether the union of intervals in S_i intersects T_i.",
+        "values": [
+          "true",
+          "false",
+          "not_applicable_due_to_abstention",
+          "not_applicable_no_eligible_T_i"
+        ]
+      },
+      "temporal_width_retained": {
+        "definition": "For a non-abstaining output, report both the summed temporal duration of S_i and the ratio of that duration to the summed temporal duration of C_i.",
+        "unit": "elapsed seconds plus a dimensionless retained fraction",
+        "separate_from_state_count": true
+      },
+      "full_state_interval_count_retained": {
+        "definition": "For a non-abstaining output, report both the number of full-state intervals in S_i and the ratio of that count to the number in C_i.",
+        "unit": "interval count plus a dimensionless retained fraction",
+        "separate_from_temporal_width": true
+      },
+      "abstention": {
+        "definition": "Report whether the procedure explicitly abstained. Abstention is neither success nor error and is not recoded as covered or uncovered.",
+        "values": [
+          "true",
+          "false"
+        ]
+      },
+      "date_coverage": {
+        "definition": "When C_i spans civil dates, report the candidate dates represented by S_i, their count relative to dates represented by C_i, and whether any represented date intersects T_i; keep these outputs distinct from temporal width and state count.",
+        "applies_when": "C_i contains intervals on more than one civil date"
+      }
+    },
+    "aggregation_rule": "Report every component separately at participant and cohort level with abstentions visible. Do not combine components into a utility, score, preferred frontier point, or operating rule.",
+    "not_selected": [
+      "operating threshold",
+      "coverage target",
+      "temporal-width target",
+      "state-count target",
+      "abstention threshold",
+      "preferred frontier point"
+    ]
+  },
+  "baseline_falsification_matrix": [
+    {
+      "id": "complete-unordered-candidate-set",
+      "family": "deterministic candidate control",
+      "definition": "Return all of C_i without ordering or inferential response use.",
+      "falsification_role": "Detects whether a proposed method improves on candidate construction alone and preserves candidate completeness."
+    },
+    {
+      "id": "no-pruning-after-responses",
+      "family": "no-inference behavioral control",
+      "definition": "Collect the same admissible responses but return all of C_i unchanged.",
+      "falsification_role": "Detects whether apparent improvement comes from the response procedure rather than candidate structure or reporting conventions."
+    },
+    {
+      "id": "random-subset-temporal-width-matched",
+      "family": "random subset control",
+      "definition": "Generate participant-level random or permuted subsets matched to a proposed output's retained temporal width without matching on state count.",
+      "falsification_role": "Tests incremental information beyond temporal compression alone; it is not a probability model."
+    },
+    {
+      "id": "random-subset-state-count-matched",
+      "family": "random subset control",
+      "definition": "Generate participant-level random or permuted subsets matched to a proposed output's retained full-state interval count without matching on temporal width.",
+      "falsification_role": "Tests incremental information beyond state-count compression alone; it is not a probability model."
+    },
+    {
+      "id": "calendar-only",
+      "family": "ordinary-information control",
+      "definition": "Use admissible calendar structure without any HD state.",
+      "falsification_role": "Tests whether calendar information accounts for the observed frontier."
+    },
+    {
+      "id": "season-only",
+      "family": "ordinary-information control",
+      "definition": "Use admissible seasonal structure without any HD state.",
+      "falsification_role": "Tests whether seasonal information accounts for the observed frontier."
+    },
+    {
+      "id": "birthplace-only",
+      "family": "ordinary-information control",
+      "definition": "Use admissible birthplace information without any HD state.",
+      "falsification_role": "Tests whether location structure accounts for the observed frontier."
+    },
+    {
+      "id": "timezone-only",
+      "family": "ordinary-information control",
+      "definition": "Use admissible timezone information without any HD state.",
+      "falsification_role": "Tests whether timezone structure accounts for the observed frontier."
+    },
+    {
+      "id": "cohort-only",
+      "family": "ordinary-information control",
+      "definition": "Use admissible cohort membership without any HD state.",
+      "falsification_role": "Tests whether cohort structure accounts for the observed frontier."
+    },
+    {
+      "id": "source-quality-only",
+      "family": "ordinary-information control",
+      "definition": "Use admissible candidate-source quality metadata without any HD state or access to T_i.",
+      "falsification_role": "Tests whether source-quality structure accounts for the observed frontier."
+    },
+    {
+      "id": "response-style-only",
+      "family": "measurement-process control",
+      "definition": "Use only predeclared response-process features such as missingness or generic response style, without questionnaire content meaning or HD state.",
+      "falsification_role": "Tests whether response process artifacts account for the observed frontier."
+    },
+    {
+      "id": "participant-chart-label-permutation",
+      "family": "label negative control",
+      "definition": "Permute participant-to-chart labels at the participant or connected-component unit while preserving the predeclared clustering structure.",
+      "falsification_role": "Tests whether the result survives destruction of the participant-chart association."
+    },
+    {
+      "id": "plausible-mismatched-chart",
+      "family": "chart negative control",
+      "definition": "Compare with plausible charts not belonging to the participant while matching predeclared nuisance structure.",
+      "falsification_role": "Tests specificity to the concealed participant-chart association rather than generic descriptive fit."
+    },
+    {
+      "id": "blinded-matching",
+      "family": "blinding control",
+      "definition": "Evaluate concealed candidate-to-participant matches with collectors, coders, method operators, and evaluators blinded according to their role.",
+      "falsification_role": "Tests whether unblinded expectancy, identity cues, or Forer/Barnum acceptance explains the apparent result."
+    },
+    {
+      "id": "strongest-ordinary-non-hd",
+      "family": "external performance baseline",
+      "definition": "Use the strongest supportable ordinary non-HD method given exactly the same admissible inputs and development opportunity.",
+      "falsification_role": "A future HD method must add out-of-sample information beyond this baseline; beating random assignment alone is insufficient."
+    }
+  ],
+  "baseline_claim_rule": "No future HD recovery claim is supportable unless the frozen method shows incremental out-of-sample performance over the strongest applicable non-HD baseline and survives all applicable negative controls on untouched connected components; beating random assignment alone is insufficient.",
+  "data_roles": {
+    "assignment_unit": "connected_component",
+    "development": {
+      "purpose": "All adaptive design and revision.",
+      "adaptive_choices": [
+        "concepts and wording",
+        "features and coding",
+        "missingness handling",
+        "model family",
+        "priors",
+        "hyperparameters",
+        "operating and abstention rules",
+        "baselines",
+        "subgroup definitions",
+        "outcome transformations"
+      ],
+      "raw_T_i_access": false,
+      "outcome_feedback": "Only an independent evaluator may compare a committed S_i with T_i. Released development diagnostics may inform a later version, after which the affected component remains development-only."
+    },
+    "calibration": {
+      "purpose": "Calibrate only a method, measurement specification, output form, and analysis plan frozen before calibration access.",
+      "raw_T_i_access": false,
+      "reference_access_actor": "independent calibration evaluator only",
+      "contamination_rule": "Any methodological revision prompted by calibration data converts every exposed calibration connected component to development and requires a fresh unexposed calibration cohort."
+    },
+    "locked_validation": {
+      "purpose": "Evaluate the fully frozen method and analysis plan once the validation lock is released.",
+      "raw_T_i_access": false,
+      "reference_access_actor": "independent validation evaluator only",
+      "access_rule": "Validation candidate records, responses, references, labels, and outcomes remain inaccessible to developers and calibration actors until the method, baselines, analyses, and disclosure plan are content-hashed and frozen.",
+      "contamination_rule": "If validation information affects methodology, all exposed connected components become development and a new untouched validation cohort is required."
+    }
+  },
+  "actor_access_matrix": {
+    "candidate_constructor": {
+      "C_i_inputs": true,
+      "inferential_responses": false,
+      "raw_T_i": false,
+      "committed_S_i": false
+    },
+    "measurement_developer": {
+      "C_i_inputs": false,
+      "inferential_responses": "development-only under a later approved item-writing protocol",
+      "raw_T_i": false,
+      "committed_S_i": false
+    },
+    "inference_procedure": {
+      "C_i_inputs": true,
+      "inferential_responses": true,
+      "raw_T_i": false,
+      "committed_S_i": "produces and commits before evaluation"
+    },
+    "reference_custodian": {
+      "C_i_inputs": false,
+      "inferential_responses": false,
+      "raw_T_i": true,
+      "committed_S_i": false
+    },
+    "independent_evaluator": {
+      "C_i_inputs": "frozen manifest and component identity only",
+      "inferential_responses": false,
+      "raw_T_i": true,
+      "committed_S_i": true
+    }
+  },
+  "connected_component_split": {
+    "graph_definition": "Construct an undirected graph before role assignment. Participant identities are vertices. Add an edge whenever either identity could transmit labels, reference information, response content, or relationship information to the other. Assign entire connected components to exactly one data role.",
+    "edge_classes": [
+      "same participant or repeated identity under any alias",
+      "partners or members of the same relationship pair",
+      "members of the same household",
+      "participants connected through any relationship chain",
+      "participants linked to the same label-transmitting record source or record custodian"
+    ],
+    "cross_role_rule": "No vertex, repeated observation, alias, partner, household member, relationship-connected participant, or shared record-source component may cross development, calibration, and locked-validation roles.",
+    "freeze_evidence": [
+      "pseudonymous vertex manifest digest",
+      "edge manifest digest with reason codes",
+      "connected-component assignment digest",
+      "data-role manifest digest"
+    ],
+    "relationship_rule": "Relationship evidence is excluded from natal inference. Any later separately approved relationship-assisted exploration permanently disqualifies the relationship and its entire connected component from natal calibration and validation."
+  },
+  "synthetic_leakage_cases": [
+    {
+      "id": "clean-disjoint-components",
+      "synthetic_setup": "Distinct pseudonymous participants, households, relationships, and record sources are each assigned wholly to one role; T_i is custodian-only until committed-output evaluation.",
+      "expected_valid": true,
+      "expected_disposition": "role assignment remains eligible"
+    },
+    {
+      "id": "same-participant-cross-role",
+      "synthetic_setup": "Two observations of the same participant are assigned to development and locked validation.",
+      "expected_valid": false,
+      "expected_disposition": "the connected component is development-only; replace validation"
+    },
+    {
+      "id": "alias-cross-role",
+      "synthetic_setup": "Two pseudonyms resolve to one repeated identity split between calibration and locked validation.",
+      "expected_valid": false,
+      "expected_disposition": "the connected component is development-only; replace calibration and validation as applicable"
+    },
+    {
+      "id": "partners-cross-role",
+      "synthetic_setup": "Relationship partners are assigned to development and locked validation.",
+      "expected_valid": false,
+      "expected_disposition": "the relationship connected component is development-only; replace validation"
+    },
+    {
+      "id": "household-cross-role",
+      "synthetic_setup": "Members of one household are assigned to calibration and locked validation.",
+      "expected_valid": false,
+      "expected_disposition": "the household connected component is development-only; replace calibration and validation as applicable"
+    },
+    {
+      "id": "relationship-chain-cross-role",
+      "synthetic_setup": "A development participant and validation participant are linked through an intermediate relationship participant.",
+      "expected_valid": false,
+      "expected_disposition": "the transitive relationship connected component is development-only; replace validation"
+    },
+    {
+      "id": "shared-record-source-cross-role",
+      "synthetic_setup": "Participants assigned to different roles share a record source or custodian capable of transmitting reference labels.",
+      "expected_valid": false,
+      "expected_disposition": "the shared-source connected component is development-only; replace later-role cohorts"
+    },
+    {
+      "id": "reference-enters-candidate-construction",
+      "synthetic_setup": "T_i narrows the dates or intervals used to construct C_i.",
+      "expected_valid": false,
+      "expected_disposition": "participant is development-only and invalid for calibration or validation"
+    },
+    {
+      "id": "reference-enters-measurement-development",
+      "synthetic_setup": "T_i or its chart derivative is available during concepts, wording, or coding design.",
+      "expected_valid": false,
+      "expected_disposition": "affected connected components are development-only; regenerate measurement work without held-out labels"
+    },
+    {
+      "id": "reference-enters-fitting",
+      "synthetic_setup": "T_i or a deterministic derivative influences features, model choice, fitting, or priors before S_i is committed.",
+      "expected_valid": false,
+      "expected_disposition": "participant is development-only and invalid for calibration or validation"
+    },
+    {
+      "id": "reference-enters-stopping",
+      "synthetic_setup": "Knowledge of T_i determines when inference stops or whether a candidate subset is returned.",
+      "expected_valid": false,
+      "expected_disposition": "participant is development-only and invalid for calibration or validation"
+    },
+    {
+      "id": "calibration-becomes-adaptive",
+      "synthetic_setup": "Calibration diagnostics prompt a method, baseline, subgroup, outcome, or output-rule revision.",
+      "expected_valid": false,
+      "expected_disposition": "all exposed calibration components become development; obtain fresh calibration components"
+    },
+    {
+      "id": "validation-peek-changes-method",
+      "synthetic_setup": "Any locked-validation input, reference, label, response, or outcome affects methodology.",
+      "expected_valid": false,
+      "expected_disposition": "all exposed validation components become development; obtain a new untouched validation cohort"
+    },
+    {
+      "id": "relationship-evidence-assisted-inference",
+      "synthetic_setup": "Partner or relationship evidence is used to select, eliminate, rank, or stop natal candidates.",
+      "expected_valid": false,
+      "expected_disposition": "the entire relationship connected component is permanently ineligible for natal calibration or validation"
+    }
+  ],
+  "measurement_development_requirements": {
+    "checkpoint_gate": "Any item-writing phase requires a new ChatGPT Pro checkpoint before questions, response choices, scoring keys, or chart-linked interpretations are authored.",
+    "required_future_evidence": [
+      {
+        "id": "test-retest-reliability",
+        "requirement": "Estimate stability over a predeclared retest design while retaining within-participant clustering."
+      },
+      {
+        "id": "inter-rater-reliability",
+        "requirement": "Predeclare the coding unit, rater population, and agreement target before any human or model-assisted coding reliability claim."
+      },
+      {
+        "id": "missingness",
+        "requirement": "Characterize item and participant missingness without treating unknown or context-dependent responses as chart support."
+      },
+      {
+        "id": "acquiescence-and-response-style",
+        "requirement": "Measure generic assent, extremity, and other response-style effects separately from any future target."
+      },
+      {
+        "id": "social-desirability",
+        "requirement": "Assess whether desirable self-presentation explains response patterns."
+      },
+      {
+        "id": "forer-barnum-susceptibility",
+        "requirement": "Use blinded and mismatched-description controls to test generic personal-validation effects."
+      },
+      {
+        "id": "item-transparency-and-chart-cueing",
+        "requirement": "Audit whether wording exposes a chart label, system vocabulary, intended feature, or preferred answer."
+      },
+      {
+        "id": "construct-overlap",
+        "requirement": "Map dependence and redundancy among future constructs so repeated wording is not counted as independent evidence."
+      },
+      {
+        "id": "language-and-population-invariance",
+        "requirement": "Evaluate response-process and measurement comparability across every language and population for which a claim is contemplated."
+      },
+      {
+        "id": "blinded-authorship-and-evaluation",
+        "requirement": "Separate authorship, coding, and evaluation from held-out chart and T_i labels wherever practical, and record every unavoidable exposure."
+      },
+      {
+        "id": "item-generation-label-separation",
+        "requirement": "Generate and revise future measurement content only in development, with held-out calibration and validation labels inaccessible."
+      }
+    ],
+    "proof_no_measurement_content_written": {
+      "questionnaire_items_authored": 0,
+      "response_choices_authored": 0,
+      "scoring_keys_authored": 0,
+      "chart_linked_interpretations_authored": 0,
+      "participant_semantics_selected": 0,
+      "estimator_formulas_selected": 0,
+      "operating_thresholds_selected": 0,
+      "participant_records_accessed": 0,
+      "assertion": "This contract specifies only future measurement-development controls and contains no questionnaire content, response scale, scoring key, chart-to-response mapping, or participant interpretation."
+    }
+  },
+  "methods_decision_ledger": [
+    {
+      "family": "interval-censored reference data",
+      "classification": "adaptation",
+      "reason": "Interval representation preserves documentary precision, but population censoring methods do not directly choose among one participant's candidates.",
+      "evidence_required_before_use": "A frozen estimand and evidence that the adapted method is valid for participant-level set evaluation without inventing within-interval mass."
+    },
+    {
+      "family": "prior sensitivity",
+      "classification": "unresolved/experimental",
+      "reason": "No defensible natal candidate prior is established, and this contract prohibits selecting one.",
+      "evidence_required_before_use": "Independent external justification, a predeclared sensitivity family, untouched validation, and a new Pro authorization."
+    },
+    {
+      "family": "calibration",
+      "classification": "adaptation",
+      "reason": "Calibration principles constrain claims, but no probabilistic or operating semantics are selected.",
+      "evidence_required_before_use": "A frozen output target, separate untouched calibration components, appropriate diagnostics, and subsequent validation."
+    },
+    {
+      "family": "abstention and rejection",
+      "classification": "adaptation",
+      "reason": "Explicit abstention prevents forced precision, but choosing a reject rule requires a later operating-point decision.",
+      "evidence_required_before_use": "A frozen loss-independent reporting design, separate calibration, frontier evidence, and owner authorization of an operating point."
+    },
+    {
+      "family": "conformal and set-valued approaches",
+      "classification": "unresolved/experimental",
+      "reason": "Set-valued output is structurally relevant, but exchangeability, sample scale, target definition, and connected grouping remain unresolved.",
+      "evidence_required_before_use": "A fixed target, exchangeable untouched calibration components, participant-level grouping, and empirical coverage evaluation."
+    },
+    {
+      "family": "measurement reliability",
+      "classification": "direct reuse",
+      "reason": "Reliability, missingness, response-style, and invariance checks are standard constraints that do not select natal semantics.",
+      "evidence_required_before_use": "A later approved frozen measurement protocol and development-only reliability evidence before inferential use."
+    },
+    {
+      "family": "participant and connected-component splitting",
+      "classification": "direct reuse",
+      "reason": "Group separation directly prevents identity, household, relationship, and shared-source leakage.",
+      "evidence_required_before_use": "A pre-outcome graph and role-assignment digest plus synthetic leakage tests."
+    },
+    {
+      "family": "nested adaptation",
+      "classification": "direct reuse",
+      "reason": "Every adaptive operation belongs inside development; final evaluation must use untouched connected components.",
+      "evidence_required_before_use": "Executable provenance showing that all adaptive choices and data transformations remained within development."
+    },
+    {
+      "family": "permutation and negative controls",
+      "classification": "baseline only",
+      "reason": "They test association and leakage but do not produce participant probabilities or establish validity by themselves.",
+      "evidence_required_before_use": "Predeclared component-level permutation units, nuisance preservation, and all applicable baseline results."
+    },
+    {
+      "family": "selective and post-selection inference",
+      "classification": "direct reuse",
+      "reason": "Post-selection claim limits apply whenever outcomes influence method or subgroup choices.",
+      "evidence_required_before_use": "Selection provenance and a genuinely untouched cohort for any confirmatory claim."
+    },
+    {
+      "family": "disclosure control",
+      "classification": "adaptation",
+      "reason": "Aggregate disclosure governance transfers, but small-cell, repeated-release, and linkage controls require a separate threat-model decision.",
+      "evidence_required_before_use": "A separately approved public-ledger threat model, synthetic release audit, and owner-approved release policy."
+    },
+    {
+      "family": "traditional natal rectification heuristics",
+      "classification": "incompatible",
+      "reason": "They do not provide established blinded out-of-sample evidence and would introduce undeclared ranking semantics.",
+      "evidence_required_before_use": "New independent blinded evidence and a later checkpoint would be required before reconsideration."
+    }
+  ],
+  "forbidden_semantics": {
+    "prohibit_candidate_ranking_pruning_or_elimination": true,
+    "prohibit_priors_weights_scores_probabilities_confidence_or_duration_mass": true,
+    "prohibit_numeric_operating_or_abstention_thresholds": true,
+    "prohibit_estimator_selection": true,
+    "prohibit_questionnaire_items_choices_scoring_keys_or_chart_linked_interpretations": true,
+    "prohibit_participant_semantics_and_participant_facing_output": true,
+    "prohibit_relationship_evidence_or_inference": true,
+    "prohibit_reference_leakage": true,
+    "prohibit_live_records_recruitment_or_human_execution": true,
+    "prohibit_final_cohort_size_burden_cost_or_expenditure_commitment": true,
+    "prohibit_public_ledger_implementation_or_release": true,
+    "prohibit_hd_validity_rectification_accuracy_or_human_calibration_claims": true
+  },
+  "contract_sha256": "b46756d58fd16c60a78bf8f7b456cc3eefc018556b9a66d64d3bce94e5d4936b"
+}
