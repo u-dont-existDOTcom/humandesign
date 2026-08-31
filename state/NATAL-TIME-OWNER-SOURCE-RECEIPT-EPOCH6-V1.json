@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0.0",
+  "receipt_id": "osr-astrohd-relationship-20260831-epoch6-v1",
+  "owner_request_id": "OR-ASTROHD-RELATIONSHIP-CONTINUATION-20260830",
+  "owner_outcome_id": "OO-ASTROHD-RELATIONSHIP-CONTINUATION",
+  "ratifying_message": {
+    "path": "state/NATAL-TIME-OWNER-P1-RATIFICATION-SOURCE-EPOCH6-20260831.json",
+    "artifact_sha256": "2faee461ba44273c267edd0c106be2cd46377e820098ce6b3047bbcf477a6efa",
+    "exact_text": "p1 approved exactly as stated",
+    "exact_message_sha256": "31423d9b3cf9744f0110e1a6449b6174ecc0dd527f2c4fd144ce30e438c9a17f",
+    "exact_message_byte_length": 29,
+    "author": "OWNER",
+    "acquisition_mode": "DIRECT_OWNER_MESSAGE"
+  },
+  "ratified_policy": {
+    "path": "state/NATAL-TIME-P1-PROPOSAL-TEXT-EPOCH6-20260831.txt",
+    "sha256": "664c875137f7d671685db0df074429cfc0a243a78d549f7ee1143af8eacb5a00",
+    "text_origin": "ASSISTANT_PROPOSED",
+    "option_id": "P1",
+    "substantive_term_count": 5
+  },
+  "sequence": [
+    "ASSISTANT_PROPOSED_P1",
+    "OWNER_EXPLICITLY_RATIFIED_P1"
+  ],
+  "ratifying_message_author": "OWNER",
+  "ratifying_message_acquisition_mode": "DIRECT_OWNER_MESSAGE",
+  "ratified_policy_text_origin": "ASSISTANT_PROPOSED",
+  "owner_action": "EXPLICIT_RATIFICATION",
+  "receipt_capability": "OWNER_REATTESTED",
+  "reattestation_scope": "EPOCH5_H1_PRIOR_EXPOSURE_AND_SEMANTIC_CONTAMINATION_POLICY_ONLY",
+  "independent_source_comparison": "NOT_INDEPENDENT",
+  "capture_integrity": "VERIFIED",
+  "eligible_for_bounded_epoch5_contract_reconciliation": true,
+  "source_gate_eligible_for_root_terminalization": false,
+  "source_gate_eligible_for_release": false,
+  "supersedes": {
+    "path": "state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH5-V1.json",
+    "sha256": "332c48e97802617d1867dd769a7fa9d866b2ca8e864ace2ff9db5cb36124bc98",
+    "reason": "SOURCE_AUTHOR_MISCLASSIFICATION",
+    "historical_bytes_preserved": true
+  },
+  "historical_source_classification": {
+    "path": "state/NATAL-TIME-OWNER-OUTCOME-SOURCE-EPOCH5-20260830.md",
+    "sha256": "ae31f03e2d2e83373be50c451f0bf998175a64ed83811570e613112035ebd131",
+    "actual_origin": "ASSISTANT_INTERPRETATION",
+    "scientifically_rejected": false,
+    "corrupted": false,
+    "controlling_by_current_owner_ratification": true
+  },
+  "limitations": [
+    "The P1 proposal is controlling by subsequent explicit owner ratification, not by original owner authorship.",
+    "Independent source comparison remains NOT_INDEPENDENT.",
+    "The ratification is bounded to the epoch-5 H1 policy and does not re-attest the historical root outcome.",
+    "Root completion and release remain fail-closed."
+  ]
+}

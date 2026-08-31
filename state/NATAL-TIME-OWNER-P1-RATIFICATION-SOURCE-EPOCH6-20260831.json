@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-owner-p1-ratification-source-epoch6-20260831",
+  "capture_integrity": "VERIFIED",
+  "source_role": "OWNER",
+  "acquisition_mode": "DIRECT_OWNER_MESSAGE",
+  "message_text_exact": "p1 approved exactly as stated",
+  "message_encoding": "UTF-8",
+  "message_terminator_present": false,
+  "message_byte_length": 29,
+  "message_utf8_hex": "703120617070726f7665642065786163746c7920617320737461746564",
+  "message_sha256": "31423d9b3cf9744f0110e1a6449b6174ecc0dd527f2c4fd144ce30e438c9a17f",
+  "owner_action": "EXPLICIT_RATIFICATION",
+  "ratified_option_id": "P1",
+  "capture_context": "The owner sent this message directly in the active Codex owner conversation immediately after the worker restated the Pro supervisor's P1 choice in plain language.",
+  "assistant_relay_to_pro": {
+    "text": "Direct owner response: P1 approved exactly as stated.",
+    "classification": "ASSISTANT_RELAY_OF_DIRECT_OWNER_DECISION",
+    "not_the_canonical_owner_source": true
+  },
+  "limitations": [
+    "The chat surface did not expose a durable provider message identifier.",
+    "The assistant relay added an attribution prefix, capitalization, and terminal punctuation; it is preserved as a relay and is not substituted for the exact direct owner bytes.",
+    "The message ratifies the separately preserved P1 proposal and does not establish that the proposal was originally owner-authored.",
+    "The ratification scope is bounded to the epoch-5 H1 prior-exposure and semantic/self-concept-contamination policy."
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "schema_version": "4.0.0",
+  "artifact_id": "natal-time-s6-h1-objective-reconciliation-v4",
+  "reconciliation_id": "ORC-ASTROHD-S6-H1-P1-RATIFICATION-EPOCH6-20260831-V4",
+  "primary_traceability_requirement_id": "S6H1-07",
+  "supersedes": {
+    "path": "state/NATAL-TIME-S6-H1-OBJECTIVE-RECONCILIATION-V3.json",
+    "sha256": "877dc2bf94cb9cdc69313c51a51d008fe4ce1070751cec79af232eade392358d"
+  },
+  "owner_policy_binding": {
+    "owner_outcome_epoch": 6,
+    "ratifying_message": {
+      "path": "state/NATAL-TIME-OWNER-P1-RATIFICATION-SOURCE-EPOCH6-20260831.json",
+      "artifact_sha256": "2faee461ba44273c267edd0c106be2cd46377e820098ce6b3047bbcf477a6efa",
+      "exact_message_sha256": "31423d9b3cf9744f0110e1a6449b6174ecc0dd527f2c4fd144ce30e438c9a17f",
+      "author": "OWNER",
+      "acquisition_mode": "DIRECT_OWNER_MESSAGE"
+    },
+    "ratified_policy": {
+      "path": "state/NATAL-TIME-P1-PROPOSAL-TEXT-EPOCH6-20260831.txt",
+      "sha256": "664c875137f7d671685db0df074429cfc0a243a78d549f7ee1143af8eacb5a00",
+      "text_origin": "ASSISTANT_PROPOSED",
+      "owner_action": "EXPLICIT_RATIFICATION"
+    },
+    "owner_source_receipt": {
+      "path": "state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH6-V1.json",
+      "sha256": "4eb5600e9f46f07c35546f65e5dd6ed15438a3683ffa87590f81b808edaac3ff",
+      "capability": "OWNER_REATTESTED",
+      "scope": "EPOCH5_H1_PRIOR_EXPOSURE_AND_SEMANTIC_CONTAMINATION_POLICY_ONLY"
+    },
+    "owner_outcome": {
+      "path": "state/NATAL-TIME-OWNER-OUTCOME-EPOCH6-V1.json",
+      "sha256": "e6b4608a4849fa3acde1ab71db8026af55a04b21070529c6d5bc8eb20cbf8001"
+    },
+    "pro_ruling": {
+      "path": "state/NATAL-TIME-S6-H1-CHECKPOINT11-PRO-RULING-V4.json",
+      "sha256": "745835c30d65034792c2ad63d5d384ef99edfaf3efe945168050f933ffb24b33"
+    }
+  },
+  "trigger": "DIRECT_OWNER_P1_RATIFICATION_AND_PRO_AUTHORIZED_PROVENANCE_CLOSURE",
+  "owner_outcome_id": "OO-ASTROHD-RELATIONSHIP-CONTINUATION",
+  "owner_outcome_epoch": 6,
+  "worker_to_contract_alignment": "GREEN",
+  "contract_to_owner_alignment": "PARTIAL",
+  "bounded_epoch5_policy_to_owner_alignment": "MATCH",
+  "completion_claim": "WORKING",
+  "requirements": [
+    {"owner_requirement_id": "RO-01", "relation": "MAPPED_CONTRIBUTING", "status": "PARENT_OPEN", "evidence": ["state/NATAL-TIME-OWNER-OUTCOME-EPOCH6-V1.json"]},
+    {"owner_requirement_id": "RO-02", "relation": "MAPPED_VERIFYING", "status": "FRESH_PROJECT_AND_SHARED_INSTRUCTIONS_READ", "evidence": ["AGENTS.md", "CURRENT_PLAN.md", "docs/RELATIONSHIP_RESEARCH_HANDOFF.md"]},
+    {"owner_requirement_id": "RO-03", "relation": "MAPPED_DIRECT", "status": "P1_OWNER_GATE_RESOLVED_PROVENANCE_CLOSURE_AUTHORIZED", "evidence": ["state/NATAL-TIME-S6-H1-CHECKPOINT11-PRO-RULING-V4.json"]},
+    {"owner_requirement_id": "RO-04", "relation": "MAPPED_DIRECT", "status": "DIRECT_RATIFICATION_AND_SEPARATE_PROPOSAL_RECEIPT_COMMITTED", "evidence": ["state/NATAL-TIME-OWNER-P1-RATIFICATION-SOURCE-EPOCH6-20260831.json", "state/NATAL-TIME-P1-PROPOSAL-TEXT-EPOCH6-20260831.txt", "state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH6-V1.json"]},
+    {"owner_requirement_id": "RO-05", "relation": "MAPPED_VERIFYING", "status": "NO_LIVE_DATA_SECRET_RELEASE_OR_EXTERNAL_ACTION", "evidence": ["state/NATAL-TIME-S6-H1-EXECUTION-LEDGER-V3.json"]},
+    {"owner_requirement_id": "RO-06", "relation": "MAPPED_CONTRIBUTING", "status": "PARENT_OPEN_UNCHANGED", "evidence": ["state/NATAL-TIME-OWNER-OUTCOME-EPOCH6-V1.json"]},
+    {"owner_requirement_id": "RO-07", "relation": "OWNER_RATIFIED", "status": "P1_POLICY_SEMANTICS_UNCHANGED_PROVENANCE_CLOSURE_PENDING_ACCEPTANCE", "evidence": ["state/NATAL-TIME-S6-H1-PRIOR-EXPOSURE-POLICY-V1.json", "state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH6-V1.json"]},
+    {"owner_requirement_id": "RO-08", "relation": "MAPPED_CONTRIBUTING", "status": "PARENT_OPEN_UNCHANGED", "evidence": ["state/NATAL-TIME-OWNER-OUTCOME-EPOCH6-V1.json"]},
+    {"owner_requirement_id": "RO-09", "relation": "MAPPED_CONTRIBUTING", "status": "PARENT_OPEN_RELEASE_FALSE", "evidence": ["state/NATAL-TIME-S6-H1-ASSURANCE-PLANES-V3.json"]},
+    {"owner_requirement_id": "RO-10", "relation": "MAPPED_VERIFYING", "status": "PROTECTED_BASELINE_UNCHANGED", "evidence": ["tests/s6_h1_prehuman/acceptance.py"]},
+    {"owner_requirement_id": "RO-11", "relation": "MAPPED_DIRECT", "status": "EPOCH6_RECEIPT_RECONCILIATION_AND_ASSURANCE_CURRENT", "evidence": ["state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH6-V1.json", "state/NATAL-TIME-S6-H1-OBJECTIVE-RECONCILIATION-V4.json", "state/NATAL-TIME-S6-H1-ASSURANCE-PLANES-V3.json"]},
+    {"owner_requirement_id": "RO-12", "relation": "MAPPED_DIRECT", "status": "EXISTING_TASK_PRO_CHAT_REUSED", "evidence": ["state/NATAL-TIME-S6-H1-CHECKPOINT11-PRO-RULING-V4.json"]},
+    {"owner_requirement_id": "RO-13", "relation": "MAPPED_DIRECT", "status": "NO_NEW_SUPERVISION_DESIGN_DEFECT", "evidence": ["docs/PRO_SUPERVISION_DESIGN_FEEDBACK_RULING_20260830.md"]}
+  ],
+  "requirement_count": 13,
+  "changed_owner_requirement_ids": ["RO-03", "RO-04", "RO-05", "RO-07", "RO-09", "RO-11", "RO-12"],
+  "unmapped_owner_requirement_ids": [],
+  "divergences": [
+    {
+      "id": "DIV-EPOCH6-P1-SOURCE-AUTHORSHIP",
+      "status": "REMEDIATED_PENDING_PRO_ACCEPTANCE",
+      "historical_misclassification": "The assistant-proposed policy text was classified as a verbatim direct owner message.",
+      "active_representation": "The policy origin is ASSISTANT_PROPOSED and the separate exact owner message performs EXPLICIT_RATIFICATION.",
+      "active_receipt": "state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH6-V1.json"
+    }
+  ],
+  "recurring_reconciliation": {
+    "previous_reconciliation_id": "ORC-ASTROHD-S6-H1-OWNER-CORRECTION-EPOCH5-20260830-V3",
+    "next_triggers": [
+      "checkpoint 11 provenance-closure resubmission",
+      "checkpoint 11 Pro acceptance ruling",
+      "acceptance criteria change",
+      "material discovery",
+      "phase transition",
+      "release merge deployment migration publication or root completion preparation"
+    ]
+  },
+  "parent_outcome_open": true,
+  "root_terminalization_allowed": false,
+  "release_allowed": false
+}

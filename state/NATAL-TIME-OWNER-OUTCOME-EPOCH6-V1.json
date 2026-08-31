@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.0.0",
+  "owner_outcome_id": "OO-ASTROHD-RELATIONSHIP-CONTINUATION",
+  "owner_request_id": "OR-ASTROHD-RELATIONSHIP-CONTINUATION-20260830",
+  "epoch": 6,
+  "status": "ACTIVE_PARENT_OUTCOME_OPEN",
+  "source": {
+    "ratifying_message_path": "state/NATAL-TIME-OWNER-P1-RATIFICATION-SOURCE-EPOCH6-20260831.json",
+    "ratifying_message_artifact_sha256": "2faee461ba44273c267edd0c106be2cd46377e820098ce6b3047bbcf477a6efa",
+    "ratifying_message_exact_sha256": "31423d9b3cf9744f0110e1a6449b6174ecc0dd527f2c4fd144ce30e438c9a17f",
+    "ratified_policy_path": "state/NATAL-TIME-P1-PROPOSAL-TEXT-EPOCH6-20260831.txt",
+    "ratified_policy_sha256": "664c875137f7d671685db0df074429cfc0a243a78d549f7ee1143af8eacb5a00",
+    "receipt_path": "state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH6-V1.json",
+    "receipt_id": "osr-astrohd-relationship-20260831-epoch6-v1",
+    "receipt_sha256": "4eb5600e9f46f07c35546f65e5dd6ed15438a3683ffa87590f81b808edaac3ff",
+    "ratifying_message_author": "OWNER",
+    "ratifying_message_acquisition_mode": "DIRECT_OWNER_MESSAGE",
+    "ratified_policy_text_origin": "ASSISTANT_PROPOSED",
+    "owner_action": "EXPLICIT_RATIFICATION",
+    "receipt_capability": "OWNER_REATTESTED",
+    "reattestation_scope": "EPOCH5_H1_PRIOR_EXPOSURE_AND_SEMANTIC_CONTAMINATION_POLICY_ONLY",
+    "independent_source_comparison": "NOT_INDEPENDENT"
+  },
+  "normalized_result": "P1 is directly owner-ratified. Prior HD or astrology exposure alone is not disqualifying. Substantial semantic, technical, or ontology-reproducing familiarity requires blind adjudication unless another ineligibility basis applies. Identity-defining or comprehensive HD/astrology self-concept, or intentional derivation from it, is ineligible for the clean H1 author role. Unknown, incomplete, or conflicting evidence produces no substantive outcome and blocks clean-role assignment. Belief, skepticism, mismatch, perceived accuracy, curiosity, usefulness, and product interest are not automatic decision rules.",
+  "controlling_policy_terms": [
+    "Prior HD or astrology exposure is not automatically disqualifying.",
+    "Substantial semantic, technical, or ontology-reproducing familiarity requires blind adjudication unless another ineligibility basis applies.",
+    "Identity-defining or comprehensive HD/astrology self-concept, or intentional derivation of constructs from that framework, makes the person ineligible for the clean H1 author role.",
+    "Unknown, incomplete, or conflicting evidence produces no substantive eligibility outcome and blocks clean-role assignment.",
+    "Belief, skepticism, reported mismatch, perceived accuracy, curiosity, usefulness, and product interest are not automatic decision rules."
+  ],
+  "substantive_outcomes": [
+    "ELIGIBLE",
+    "REQUIRES_BLIND_ADJUDICATION",
+    "INELIGIBLE_CLEAN_H1_AUTHOR"
+  ],
+  "process_states": [
+    "NOT_ASSESSED",
+    "EVIDENCE_INCOMPLETE",
+    "EVIDENCE_CONFLICT",
+    "DECISION_PENDING",
+    "DECISION_RECORDED"
+  ],
+  "required_outcome_inheritance": {
+    "source_path": "state/NATAL-TIME-OWNER-OUTCOME-EPOCH5-V1.json",
+    "source_sha256": "02f199808dbb50bfd31a3bb7cc29a84f7b904caaba79d6589e7e172d9ed63fa2",
+    "inherited_ids": [
+      "RO-01",
+      "RO-02",
+      "RO-03",
+      "RO-04",
+      "RO-05",
+      "RO-06",
+      "RO-08",
+      "RO-09",
+      "RO-10",
+      "RO-11",
+      "RO-12",
+      "RO-13"
+    ],
+    "superseded_ids": [
+      "RO-07"
+    ]
+  },
+  "superseding_required_outcomes": [
+    {
+      "id": "RO-07",
+      "text": "Develop chart-blind constructs under B1, S6, and H1 human-only content authorship using the directly ratified P1 policy. Prior exposure alone is permitted. Substantial semantic, technical, or ontology-reproducing familiarity requires blind adjudication unless another ineligibility basis applies. Identity-defining or comprehensive HD/astrology self-concept, or intentional derivation from it, is ineligible for the clean H1 author role. Unknown, incomplete, or conflicting evidence produces no substantive outcome and blocks clean-role assignment. Belief, skepticism, mismatch, perceived accuracy, curiosity, usefulness, and product interest are not automatic decision rules. Only after independent construct and reliability freeze may later authorized adversarial review and separately frozen AstroHD mapping occur, with null or weak outcomes preserved.",
+      "modality": "must",
+      "terminal_required": true
+    }
+  ],
+  "required_outcome_count": 13,
+  "source_authorship_correction": {
+    "earlier_policy_text_origin": "ASSISTANT_INTERPRETATION",
+    "earlier_receipt_status": "SUPERSEDED_SOURCE_AUTHOR_MISCLASSIFICATION",
+    "earlier_bytes_preserved": true,
+    "policy_scientifically_rejected": false,
+    "policy_controlling_basis": "SUBSEQUENT_EXPLICIT_OWNER_RATIFICATION"
+  },
+  "current_gaps": [
+    "Checkpoint 11 still requires exact-head provenance-closure acceptance by Pro.",
+    "No human-facing screen, evidence threshold, blind adjudicator, adjudication procedure, or human action is authorized.",
+    "No construct content, construct-specific search, measurement, reliability, or mapping execution is authorized.",
+    "Priority 1 participant-capable work, Priority 2 calibration, and Priority 3 public-safe ledger remain open parent outcomes.",
+    "No push, merge, migration, deployment, publication, participant execution, or release is authorized."
+  ],
+  "known_non_satisfying_proxies": [
+    "P1 owner ratification",
+    "Checkpoint 11 policy acceptance",
+    "All tests pass",
+    "A local provenance-closure commit",
+    "Pro supervisor approval"
+  ],
+  "supersedes": {
+    "path": "state/NATAL-TIME-OWNER-OUTCOME-EPOCH5-V1.json",
+    "sha256": "02f199808dbb50bfd31a3bb7cc29a84f7b904caaba79d6589e7e172d9ed63fa2",
+    "epoch": 5
+  },
+  "parent_outcome_open": true,
+  "root_terminalization_allowed": false,
+  "release_allowed": false,
+  "self_digest_rule": "This record is content-addressed by its Git tree and later packet; it does not contain a self-referential digest."
+}

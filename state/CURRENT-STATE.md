@@ -1,6 +1,6 @@
 # Current state
 
-- As of: `2026-08-31 00:20 GMT`
+- As of: `2026-08-31 00:53 GMT`
 - Task ID: `astrohd-relationship-continuation-20260830`
 - Goal: continue the relationship/AstroHD program under the blocking Brave + ChatGPT Pro supervision contract in `docs/RELATIONSHIP_RESEARCH_HANDOFF.md`, beginning with the separate natal-first `Find my birth-time window` priority unless supervision changes the sequence.
 - Authoritative Git baseline: `main` and `origin/main` at `b7660b8c9bcf52cbb14bc5442c13a3a8635aad32` (`Add canonical relationship research handoff and Pro supervision protocol`).
@@ -101,17 +101,20 @@
 
 ## Next safe action
 
-Pro returned `OWNER DECISION REQUIRED: YES` and
-`CHECKPOINT-11 VERDICT: NOT ACCEPTED — 59/60`. `S6H1-18` and `S6H1-29` are accepted; `S6H1-30`
-remains blocked because Pro determined that the purported direct owner source is assistant-authored
-interpretation and therefore cannot establish explicit owner ratification. The exact ruling is
-`docs/PRO_SUPERVISION_S6_H1_CHECKPOINT11_RESUBMISSION_RULING_20260831.md`; its typed record is
-`state/NATAL-TIME-S6-H1-CHECKPOINT11-PRO-RULING-V3.json`.
+Joel explicitly selected `P1`. Pro returned `OWNER DECISION REQUIRED: NO`, accepted substantive
+`S6H1-30`, and authorized only `CHECKPOINT-11 P1 RATIFICATION AND PROVENANCE CLOSURE ONLY`. The
+exact ratification, assistant-proposed P1 text, superseding receipt/outcome, policy-authority
+overlay, reconciliation, assurance, verdict, matrix, manifest, execution ledger, and synthetic
+provenance tests are implemented locally. The exact direct owner message is preserved separately
+from the assistant relay and the policy proposal; no eligibility semantics changed. The focused
+closure plus checkpoint-11 suite currently passes 103/103 before the implementation-evidence
+commit.
 
-Wait for Joel to select `P1`, `P2`, or `P3` with a revised rule. Until then, worker-to-contract is
-`YELLOW`, bounded epoch-5 policy-to-owner alignment is `UNCONFIRMED`, root contract-to-owner is
-`PARTIAL`, completion is `WORKING`, operational alignment is `WARN`, scientific adequacy is
-`WARN`, release adequacy is `NOT_APPLICABLE`, release is false, and the parent outcome is `OPEN`.
-Do not perform remediation, human action, screening design, construct or construct-specific search,
-mapping work, push, merge, migration, deployment, publication, or external mutation before the
-owner response.
+Create the reversible local implementation-evidence commit, run the exact-head focused/full,
+strict-mypy, changed-file Ruff, privacy/history/build, JSON/hash, protected-byte, production-no-diff,
+diff, and clean-tree gates, then return the self-contained closure to the same Pro lane. Current
+target states are worker-to-contract `GREEN`, bounded policy-to-owner `MATCH`, root
+contract-to-owner `PARTIAL`, completion `WORKING`, operational alignment `PASS`, scientific
+adequacy `WARN`, release adequacy `NOT_APPLICABLE`, release false, and parent `OPEN`. Do not perform
+human action, screening design, construct or construct-specific search, mapping work, push, merge,
+migration, deployment, publication, or external mutation.

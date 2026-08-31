@@ -1,0 +1,68 @@
+{
+  "schema_version": "4.0.0",
+  "artifact_id": "natal-time-s6-h1-checkpoint11-pro-ruling-v4",
+  "supersedes": {
+    "path": "state/NATAL-TIME-S6-H1-CHECKPOINT11-PRO-RULING-V3.json",
+    "sha256": "61c53fa3f9fcd1a9d483d9fc1c6c32e832a850ff14648fd9cde5dcda8b81227d"
+  },
+  "status": "P1_OWNER_RATIFIED_PROVENANCE_CLOSURE_AUTHORIZED",
+  "pro_ruling_record": {
+    "path": "docs/PRO_SUPERVISION_S6_H1_CHECKPOINT11_P1_RATIFICATION_RULING_20260831.md",
+    "sha256": "5ba8447b57d90c8ec54a6e660aa8a8e9815a3ec8f5dc2e6e0d092e536d653db2"
+  },
+  "owner_decision_required": false,
+  "owner_gate_resolved": true,
+  "ratified_option": "P1",
+  "substantive_requirement_ruling": {
+    "requirement_id": "S6H1-30",
+    "status": "ACCEPTED",
+    "policy_semantics_disputed": false
+  },
+  "checkpoint_status": "REMEDIATION_REQUIRED_PENDING_PROVENANCE_CLOSURE",
+  "authorized_child": {
+    "id": "CHECKPOINT-11 P1 RATIFICATION AND PROVENANCE CLOSURE ONLY",
+    "local_reversible_additive_commits": true,
+    "literature_scan": false,
+    "eligibility_semantics_change": false,
+    "source_receipt_and_owner_outcome_correction": true,
+    "reconciliation_assurance_verdict_manifest_matrix_evidence_correction": true,
+    "synthetic_provenance_tests": true
+  },
+  "required_provenance_representation": {
+    "ratifying_message_author": "OWNER",
+    "ratifying_message_acquisition_mode": "DIRECT_OWNER_MESSAGE",
+    "ratified_policy_text_origin": "ASSISTANT_PROPOSED",
+    "owner_action": "EXPLICIT_RATIFICATION",
+    "receipt_capability": "OWNER_REATTESTED",
+    "reattestation_scope": "EPOCH5_H1_PRIOR_EXPOSURE_AND_SEMANTIC_CONTAMINATION_POLICY_ONLY",
+    "independent_source_comparison": "NOT_INDEPENDENT"
+  },
+  "required_successful_states": {
+    "worker_to_contract_alignment": "GREEN",
+    "bounded_epoch5_policy_to_owner_alignment": "MATCH",
+    "root_contract_to_owner_alignment": "PARTIAL",
+    "completion_claim": "WORKING",
+    "parent_outcome": "OPEN",
+    "operational_alignment": "PASS",
+    "scientific_adequacy": "WARN",
+    "release_adequacy": "NOT_APPLICABLE",
+    "release_permission": false
+  },
+  "continuing_prohibitions": {
+    "human_action": true,
+    "human_facing_screening_language": true,
+    "construct_content_or_specific_search": true,
+    "measurement_or_reliability_execution": true,
+    "mapping_content_or_execution": true,
+    "real_data": true,
+    "push_pr_merge_or_history_rewrite": true,
+    "github_governance_change": true,
+    "railway_mutation_secret_access_or_deployment": true,
+    "publication_disclosure_release_or_root_completion": true
+  },
+  "next_checkpoint": {
+    "same_pro_lane": true,
+    "required_after_local_closure": true,
+    "work_beyond_child_authorized": false
+  }
+}

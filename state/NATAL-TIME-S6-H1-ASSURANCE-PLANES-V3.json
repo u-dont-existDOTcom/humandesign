@@ -1,0 +1,68 @@
+{
+  "schema_version": "3.0.0",
+  "artifact_id": "natal-time-s6-h1-assurance-planes-v3",
+  "status": "P1_OWNER_RATIFIED_PROVENANCE_CLOSURE_SEPARATE_GRADED_ASSURANCE",
+  "primary_traceability_requirement_id": "S6H1-60",
+  "supersedes": {
+    "path": "state/NATAL-TIME-S6-H1-ASSURANCE-PLANES-V2.json",
+    "sha256": "b9578235fa4754aed1452bbe4b7dad3967d4db1dc4e20858a07b7a75d474051e"
+  },
+  "owner_policy_binding": {
+    "owner_outcome_epoch": 6,
+    "ratifying_message_path": "state/NATAL-TIME-OWNER-P1-RATIFICATION-SOURCE-EPOCH6-20260831.json",
+    "ratifying_message_artifact_sha256": "2faee461ba44273c267edd0c106be2cd46377e820098ce6b3047bbcf477a6efa",
+    "ratifying_message_exact_sha256": "31423d9b3cf9744f0110e1a6449b6174ecc0dd527f2c4fd144ce30e438c9a17f",
+    "ratified_policy_path": "state/NATAL-TIME-P1-PROPOSAL-TEXT-EPOCH6-20260831.txt",
+    "ratified_policy_sha256": "664c875137f7d671685db0df074429cfc0a243a78d549f7ee1143af8eacb5a00",
+    "owner_source_receipt_path": "state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH6-V1.json",
+    "owner_source_receipt_sha256": "4eb5600e9f46f07c35546f65e5dd6ed15438a3683ffa87590f81b808edaac3ff",
+    "owner_outcome_path": "state/NATAL-TIME-OWNER-OUTCOME-EPOCH6-V1.json",
+    "owner_outcome_sha256": "e6b4608a4849fa3acde1ab71db8026af55a04b21070529c6d5bc8eb20cbf8001",
+    "pro_ruling_path": "state/NATAL-TIME-S6-H1-CHECKPOINT11-PRO-RULING-V4.json",
+    "pro_ruling_sha256": "745835c30d65034792c2ad63d5d384ef99edfaf3efe945168050f933ffb24b33"
+  },
+  "worker_to_contract_alignment": "GREEN",
+  "bounded_epoch5_policy_to_owner_alignment": "MATCH",
+  "contract_to_owner_alignment": "PARTIAL",
+  "contract_to_owner_scope_note": "MATCH applies only to the directly ratified bounded P1 policy. Historical root alignment remains PARTIAL.",
+  "completion_claim": {
+    "type": "WORKING",
+    "proposed_terminal": false,
+    "parent_outcome": "OPEN",
+    "root_terminalization_allowed": false
+  },
+  "operational_alignment": {
+    "status": "PASS",
+    "scope": "CHECKPOINT11_P1_RATIFICATION_AND_PROVENANCE_CLOSURE_ONLY",
+    "findings": [
+      "The exact direct owner message and exact assistant-proposed P1 text are separately preserved and content-hashed.",
+      "The active receipt records proposal authorship and subsequent explicit owner ratification without conflation.",
+      "Eligibility semantics and the 28 hostile synthetic cases are unchanged.",
+      "No human, construct, mapping, production, release, or external action is part of this child."
+    ],
+    "does_not_claim": ["real-person eligibility", "human-facing screening adequacy", "adjudication adequacy", "live content custody"]
+  },
+  "scientific_adequacy": {
+    "status": "WARN",
+    "findings": [
+      "P1 is owner-authorized governance policy, not empirical evidence that the future screen or adjudication process is reliable or valid.",
+      "No evidence standard, threshold, question, adjudicator, reliability evidence, validity evidence, mapping evidence, rectification evidence, relationship prediction, or participant-benefit evidence exists.",
+      "A later null, weak, unstable, or nonreplicating AstroHD mapping remains admissible and cannot repair frozen constructs in place."
+    ],
+    "required_for_pass": ["separately authorized human evidence and adjudication design", "authorized screened-human construct development", "frozen measurement package", "claim-appropriate reliability and validity evidence", "separately preregistered independent mapping evidence"]
+  },
+  "release_adequacy": {
+    "status": "NOT_APPLICABLE",
+    "release_permission": false,
+    "findings": ["No release, deployment, publication, merge, migration, recruitment, or participant-facing result is proposed.", "OWNER_REATTESTED applies only to bounded P1; the parent remains open and root alignment remains partial."],
+    "privacy": "NOT_APPLICABLE_NO_HUMAN_DATA",
+    "consent": "NOT_APPLICABLE_NO_HUMAN_ACTION",
+    "licensing": "NOT_APPLICABLE_NO_RELEASE",
+    "freshness": "NOT_APPLICABLE_NO_RELEASE",
+    "provenance": "OWNER_REATTESTED_BY_EXPLICIT_RATIFICATION_BOUNDED_P1_ONLY_ROOT_PARTIAL",
+    "security": "NOT_APPLICABLE_NO_LIVE_SYSTEM",
+    "product_rules": "NOT_APPLICABLE_NO_PRODUCT_CHANGE"
+  },
+  "owner_decision_required_now": false,
+  "required_directive": "RETURN_EXACT_HEAD_P1_PROVENANCE_CLOSURE_TO_EXISTING_TASK_PRO"
+}

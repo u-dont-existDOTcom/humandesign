@@ -223,8 +223,18 @@ worker-to-contract `YELLOW`, bounded policy-to-owner `UNCONFIRMED`, root contrac
 `PARTIAL`, typed completion `WORKING`, operational alignment `WARN`, scientific adequacy `WARN`,
 release adequacy `NOT_APPLICABLE`, release false, and parent `OPEN`. The exact ruling and owner
 options P1/P2/P3 are
-`docs/PRO_SUPERVISION_S6_H1_CHECKPOINT11_RESUBMISSION_RULING_20260831.md`. No remediation or later
-task work is authorized before Joel selects one of those options.
+`docs/PRO_SUPERVISION_S6_H1_CHECKPOINT11_RESUBMISSION_RULING_20260831.md`.
+
+Joel then explicitly selected `P1` with the direct message `p1 approved exactly as stated`. Pro
+returned `OWNER DECISION REQUIRED: NO`, accepted substantive `S6H1-30`, and authorized only
+`CHECKPOINT-11 P1 RATIFICATION AND PROVENANCE CLOSURE ONLY`. The active provenance chain now keeps
+three distinct facts: the exact owner message is `DIRECT_OWNER_MESSAGE`; the exact policy proposal
+origin is `ASSISTANT_PROPOSED`; and the owner action is `EXPLICIT_RATIFICATION`. The assistant's
+normalized relay to Pro is preserved but is not substituted for the direct owner bytes. Earlier
+misclassified artifacts remain byte-identical historical evidence. Eligibility semantics, all 28
+hostile policy cases, the nonhuman-context exclusion, and the later mapping firewall are unchanged.
+The closure is implemented locally and awaits exact-head verification and return to the same Pro
+lane; no human, content, mapping, production, external, or release work is authorized in this child.
 
 Option B remains a design-only prerequisite screen. It does not authorize live execution,
 measurement content, participant software, empirical data, or progression to rectification.

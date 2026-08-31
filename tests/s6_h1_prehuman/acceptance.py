@@ -29,6 +29,14 @@ VALID_IDS = {f"S6H1-{index:02d}" for index in range(1, 61)}
 P = {
     "source_alignment": ROOT / "state/NATAL-TIME-S6-H1-SOURCE-ALIGNMENT-ATTESTATION-V1.json",
     "policy": ROOT / "state/NATAL-TIME-S6-H1-PRIOR-EXPOSURE-POLICY-V1.json",
+    "policy_authority": ROOT / "state/NATAL-TIME-S6-H1-PRIOR-EXPOSURE-POLICY-AUTHORITY-V1.json",
+    "owner_ratification": (
+        ROOT / "state/NATAL-TIME-OWNER-P1-RATIFICATION-SOURCE-EPOCH6-20260831.json"
+    ),
+    "p1_proposal": ROOT / "state/NATAL-TIME-P1-PROPOSAL-TEXT-EPOCH6-20260831.txt",
+    "owner_receipt": ROOT / "state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH6-V1.json",
+    "owner_outcome": ROOT / "state/NATAL-TIME-OWNER-OUTCOME-EPOCH6-V1.json",
+    "pro_ruling": ROOT / "state/NATAL-TIME-S6-H1-CHECKPOINT11-PRO-RULING-V4.json",
     "workflow": ROOT / "state/NATAL-TIME-S6-H1-WORKFLOW-CONTRACT-V2.json",
     "roles": ROOT / "state/NATAL-TIME-S6-H1-ROLE-ACCESS-MATRIX-V2.json",
     "screening": ROOT / "state/NATAL-TIME-S6-H1-SCREENING-METADATA-SCHEMA-V2.json",
@@ -37,14 +45,14 @@ P = {
     "machine": ROOT / "state/NATAL-TIME-S6-H1-CONCEPTION-SEARCH-STATE-MACHINE-V1.json",
     "threats": ROOT / "state/NATAL-TIME-S6-H1-THREAT-MODEL-V2.json",
     "unresolved": ROOT / "state/NATAL-TIME-S6-H1-UNRESOLVED-DECISIONS-V2.json",
-    "reconciliation": ROOT / "state/NATAL-TIME-S6-H1-OBJECTIVE-RECONCILIATION-V3.json",
-    "assurance": ROOT / "state/NATAL-TIME-S6-H1-ASSURANCE-PLANES-V2.json",
+    "reconciliation": ROOT / "state/NATAL-TIME-S6-H1-OBJECTIVE-RECONCILIATION-V4.json",
+    "assurance": ROOT / "state/NATAL-TIME-S6-H1-ASSURANCE-PLANES-V3.json",
     "conception": ROOT / "state/NATAL-TIME-S6-H1-PREHUMAN-INDEPENDENT-CONCEPTION-V1.json",
     "sources": ROOT / "state/NATAL-TIME-S6-H1-PREHUMAN-SOURCE-LEDGER-V1.json",
     "methods": ROOT / "state/NATAL-TIME-S6-H1-PREHUMAN-METHODS-DECISION-LEDGER-V2.json",
-    "execution": ROOT / "state/NATAL-TIME-S6-H1-EXECUTION-LEDGER-V2.json",
-    "matrix": ROOT / "state/NATAL-TIME-S6-H1-ACCEPTANCE-MATRIX-V2.json",
-    "manifest": ROOT / "state/NATAL-TIME-S6-H1-ARTIFACT-MANIFEST-V3.json",
+    "execution": ROOT / "state/NATAL-TIME-S6-H1-EXECUTION-LEDGER-V3.json",
+    "matrix": ROOT / "state/NATAL-TIME-S6-H1-ACCEPTANCE-MATRIX-V3.json",
+    "manifest": ROOT / "state/NATAL-TIME-S6-H1-ARTIFACT-MANIFEST-V4.json",
     "hostile_cases": FIXTURES / "epoch5_policy_cases.json",
     "dossier": ROOT / "docs/NATAL_TIME_S6_H1_PREHUMAN_OWNER_DOSSIER_20260830.md",
 }
@@ -375,6 +383,54 @@ def check_requirement(requirement_id: str) -> None:
         assert conflict["role_assignment_eligibility"] == "BLOCKED_NO_SUBSTANTIVE_OUTCOME"
     elif number == 30:
         policy = load_json(P["policy"])
+        authority = load_json(P["policy_authority"])
+        ratification = load_json(P["owner_ratification"])
+        receipt = load_json(P["owner_receipt"])
+        outcome = load_json(P["owner_outcome"])
+        exact_message = ratification["message_text_exact"].encode("utf-8")
+        assert exact_message == bytes.fromhex(ratification["message_utf8_hex"])
+        assert len(exact_message) == ratification["message_byte_length"] == 29
+        assert hashlib.sha256(exact_message).hexdigest() == ratification["message_sha256"]
+        assert ratification["message_text_exact"] == "p1 approved exactly as stated"
+        assert ratification["assistant_relay_to_pro"]["not_the_canonical_owner_source"] is True
+        assert receipt["ratifying_message_author"] == "OWNER"
+        assert receipt["ratifying_message_acquisition_mode"] == "DIRECT_OWNER_MESSAGE"
+        assert receipt["ratified_policy_text_origin"] == "ASSISTANT_PROPOSED"
+        assert receipt["owner_action"] == "EXPLICIT_RATIFICATION"
+        assert receipt["receipt_capability"] == "OWNER_REATTESTED"
+        assert receipt["independent_source_comparison"] == "NOT_INDEPENDENT"
+        assert receipt["ratifying_message"]["exact_message_sha256"] == ratification[
+            "message_sha256"
+        ]
+        assert receipt["ratifying_message"]["artifact_sha256"] == _sha256(
+            P["owner_ratification"]
+        )
+        assert receipt["ratified_policy"]["sha256"] == _sha256(P["p1_proposal"])
+        assert receipt["ratified_policy"]["text_origin"] == "ASSISTANT_PROPOSED"
+        assert receipt["sequence"] == [
+            "ASSISTANT_PROPOSED_P1",
+            "OWNER_EXPLICITLY_RATIFIED_P1",
+        ]
+        assert receipt["supersedes"]["sha256"] == _sha256(
+            ROOT / receipt["supersedes"]["path"]
+        )
+        assert receipt["supersedes"]["reason"] == "SOURCE_AUTHOR_MISCLASSIFICATION"
+        assert receipt["historical_source_classification"]["actual_origin"] == (
+            "ASSISTANT_INTERPRETATION"
+        )
+        assert receipt["historical_source_classification"]["scientifically_rejected"] is False
+        assert receipt["historical_source_classification"]["corrupted"] is False
+        assert outcome["source"]["ratified_policy_text_origin"] == "ASSISTANT_PROPOSED"
+        assert outcome["source"]["owner_action"] == "EXPLICIT_RATIFICATION"
+        assert len(outcome["controlling_policy_terms"]) == 5
+        assert authority["semantics_artifact"]["sha256"] == _sha256(P["policy"])
+        assert authority["semantics_artifact"]["semantics_changed_by_overlay"] is False
+        assert authority["active_owner_policy_binding"]["owner_source_receipt_sha256"] == (
+            _sha256(P["owner_receipt"])
+        )
+        assert authority["active_owner_policy_binding"]["ratified_policy_text_origin"] == (
+            "ASSISTANT_PROPOSED"
+        )
         assert [item["id"] for item in policy["substantive_outcomes"]] == [
             "ELIGIBLE",
             "REQUIRES_BLIND_ADJUDICATION",
@@ -391,6 +447,12 @@ def check_requirement(requirement_id: str) -> None:
         assert unresolved["resolved_decision_count"] == 1
         assert unresolved["remaining_unselected_count"] == 14
         assert unresolved["epoch5_policy_does_not_select"]
+        assert _sha256(
+            ROOT / "state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH5-V1.json"
+        ) == "332c48e97802617d1867dd769a7fa9d866b2ca8e864ace2ff9db5cb36124bc98"
+        assert _sha256(
+            ROOT / "state/NATAL-TIME-OWNER-OUTCOME-SOURCE-EPOCH5-20260830.md"
+        ) == "ae31f03e2d2e83373be50c451f0bf998175a64ed83811570e613112035ebd131"
         for case in load_json(P["hostile_cases"])["cases"]:
             if "S6H1-30" in case["requirement_ids"]:
                 run_hostile_case(case["case_id"])

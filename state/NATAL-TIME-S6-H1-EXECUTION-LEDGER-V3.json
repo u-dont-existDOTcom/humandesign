@@ -1,0 +1,64 @@
+{
+  "schema_version": "3.0.0",
+  "artifact_id": "natal-time-s6-h1-execution-ledger-v3",
+  "status": "LOCAL_REVERSIBLE_NO_PROHIBITED_ACTION",
+  "primary_traceability_requirement_id": "S6H1-59",
+  "supersedes": {
+    "path": "state/NATAL-TIME-S6-H1-EXECUTION-LEDGER-V2.json",
+    "sha256": "f19698e6d819c2ca6fac4049bc95f8dbff8fa7f029e11df968d03089c9bbaa93"
+  },
+  "owner_policy_binding": {
+    "owner_outcome_epoch": 6,
+    "ratifying_message_path": "state/NATAL-TIME-OWNER-P1-RATIFICATION-SOURCE-EPOCH6-20260831.json",
+    "ratifying_message_exact_sha256": "31423d9b3cf9744f0110e1a6449b6174ecc0dd527f2c4fd144ce30e438c9a17f",
+    "ratified_policy_path": "state/NATAL-TIME-P1-PROPOSAL-TEXT-EPOCH6-20260831.txt",
+    "ratified_policy_sha256": "664c875137f7d671685db0df074429cfc0a243a78d549f7ee1143af8eacb5a00",
+    "owner_source_receipt_path": "state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH6-V1.json",
+    "owner_source_receipt_sha256": "4eb5600e9f46f07c35546f65e5dd6ed15438a3683ffa87590f81b808edaac3ff",
+    "owner_outcome_path": "state/NATAL-TIME-OWNER-OUTCOME-EPOCH6-V1.json",
+    "owner_outcome_sha256": "e6b4608a4849fa3acde1ab71db8026af55a04b21070529c6d5bc8eb20cbf8001",
+    "pro_ruling_path": "state/NATAL-TIME-S6-H1-CHECKPOINT11-PRO-RULING-V4.json",
+    "pro_ruling_sha256": "745835c30d65034792c2ad63d5d384ef99edfaf3efe945168050f933ffb24b33"
+  },
+  "browser_operation": {
+    "generic_research_mode": "HEADLESS_DEFAULT",
+    "headed_browser_required_for_authenticated_task_supervision": true,
+    "dedicated_secondary_workspace_policy": "DEFAULT_FOR_HEADED_WORK",
+    "owner_requested_main_workspace_exception": true,
+    "existing_controlled_task_window_reused": true,
+    "unnecessary_new_visible_windows_opened": false
+  },
+  "corrected_commands": [
+    {"correction_id": "CC-01", "failed_or_imprecise_action": "Attempted to read a guessed B1 test filename that did not exist.", "correction": "Located authoritative files with rg.", "effect": "NO_REPOSITORY_MUTATION"},
+    {"correction_id": "CC-02", "failed_or_imprecise_action": "An initial multi-source official-page open produced truncated evidence output.", "correction": "Split the bounded official-source review into smaller batches.", "effect": "NO_SCOPE_CHANGE_NO_REPOSITORY_MUTATION"},
+    {"correction_id": "CC-03", "failed_or_imprecise_action": "The first checkpoint-11 owner-record test command used bare pytest, which was unavailable.", "correction": "Used the repository virtual environment.", "effect": "NO_REPOSITORY_MUTATION"},
+    {"correction_id": "CC-04", "failed_or_imprecise_action": "The initially listed AskRigor cache path was superseded.", "correction": "Located and loaded the current installed skill.", "effect": "NO_REPOSITORY_MUTATION"},
+    {"correction_id": "CC-05", "failed_or_imprecise_action": "The venv pytest entry point lacked the repository root on the import path.", "correction": "Used .venv/bin/python -m pytest.", "effect": "NO_REPOSITORY_MUTATION"},
+    {"correction_id": "CC-06", "failed_or_imprecise_action": "The assistant relay to Pro added an attribution prefix, capitalization, and terminal punctuation to the owner's direct lowercase message.", "correction": "Preserved the exact direct owner bytes and the assistant relay separately; the relay is not the canonical owner source.", "effect": "PROVENANCE_CLARIFIED_NO_POLICY_CHANGE"},
+    {"correction_id": "CC-07", "failed_or_imprecise_action": "apply_patch rejected a no-newline marker for a raw text capture.", "correction": "Captured the exact 29 UTF-8 message bytes, hex, length, and SHA-256 in a structured source artifact.", "effect": "NO_POLICY_CHANGE_NO_EXTERNAL_MUTATION"}
+  ],
+  "verification_rerun_disclosure": {
+    "prior_exact_implementation_head": "04d34b5b81587e29355cc9a4cec0a4e173d3fd50",
+    "prior_full_suite": "699 passed",
+    "current_provenance_closure_exact_head_run_pending_at_artifact_authoring": true,
+    "forced_redundant_green_rerun_concealed": false
+  },
+  "forced_redundant_green_rerun_concealed": false,
+  "prohibited_action_record": {
+    "human_identification_contact_assessment_screening_recruitment_compensation_assignment_enrollment": false,
+    "screening_questions_interview_prompts_evidence_thresholds_adjudicator_disclosure_consent_or_recruitment_text": false,
+    "construct_instrument_item_prompt_response_option_category_manual_scoring_rule_or_content": false,
+    "construct_specific_search": false,
+    "mapping_content_or_execution": false,
+    "real_chart_birth_time_relationship_reference_participant_or_identity_data": false,
+    "real_identity_credential_storage_account_or_human_record_system": false,
+    "production_or_Railway_mutation": false,
+    "GitHub_push_remote_branch_PR_merge_rebase_cherry_pick_squash_governance_or_external_mutation": false,
+    "secret_value_access": false,
+    "publication_release_or_root_completion_claim": false
+  },
+  "external_mutations": [],
+  "human_records": [],
+  "content_records": [],
+  "mapping_records": []
+}
