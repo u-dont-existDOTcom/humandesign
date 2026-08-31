@@ -14,8 +14,8 @@ from hdmatch.participant.models import (
     EvidenceInput,
     PredictionDimension,
     PredictionFreeze,
-    RankScope,
     RankingSnapshot,
+    RankScope,
     ResolvedBirth,
     SessionMode,
 )
@@ -279,6 +279,12 @@ def test_posthoc_profile_gets_separate_exploratory_rank_without_rewriting_blind_
     reveal = service.reveal(session_id)
     assert reveal.confirmatory_ranking.true_state_rank == 7.0
     assert reveal.confirmatory_ranking.scientific_status == "confirmatory_blind"
+    assert reveal.schema_version == "participant-reveal-v2"
+    assert reveal.model_receipt.prediction_freeze_sha256 == (
+        service.store.load_session(session_id).prediction_freeze_sha256
+    )
+    assert reveal.model_receipt.model_version == "test-model"
+    assert reveal.model_receipt.candidate_universe_state_count == 12
 
     service.append_evidence(
         session_id,
@@ -316,7 +322,9 @@ def test_posthoc_other_can_remove_a_confirmatory_dimension_from_final_profile(
     )
 
     final = service.finalize_exploratory(session_id)
-    assert [response.question_id for response in final.exploratory.final_profile_responses] == ["Q2"]
+    assert [response.question_id for response in final.exploratory.final_profile_responses] == [
+        "Q2"
+    ]
     assert final.exploratory.changed_question_ids == ("Q1",)
 
 

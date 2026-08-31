@@ -56,9 +56,23 @@ Adequacy states:
 - **Release adequacy:** `OPEN_OWNER_ONLY`; the questionnaire is ready for the owner's
   fresh test. External participant sharing remains closed until that smoke completes.
 
-Next: the owner completes one fresh production questionnaire using the authorized
-email address. Codex then verifies recovery end to end, records the result, and only
-after that boundary prepares the friend-facing link/handoff.
+The owner subsequently corrected the test order: natal AstroHD must be tested before
+AstroRRF because relationship predictions depend on two natal layers. The relationship
+questionnaire remains a secondary development mode and no arbitrary response count is
+required before showing its frozen raw predictions. Neither runtime currently retrains
+automatically from a submission.
+
+Current continuation branch `codex/issue18-release-receipt` and draft PR `#21` now
+contain the relationship `[object Object]` validation-message repair plus an
+AstroHD-first owner route. The local real-engine/browser smoke creates a sealed natal
+session in about 8.6 seconds from an exact hash-pinned century-cache month slice.
+Details and scientific boundaries are in `docs/36_astrohd_owner_pilot.md`.
+
+Next: finish exact-diff Extra High review, choose a production-safe way to place the
+non-sensitive 28 MB verified cache on Railway without exposing credentials or bloating
+the repository unnecessarily, configure the private/unlisted Custom GPT interviewer
+link, and deploy only the bounded owner test. External participant sharing remains
+closed until the owner completes that smoke.
 
 ## Core hypothesis
 

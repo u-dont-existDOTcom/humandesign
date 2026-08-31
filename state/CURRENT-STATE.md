@@ -27,9 +27,25 @@
 - Adequacy: operational deployment `PASS`, recovery round trip
   `PENDING_OWNER_SESSION`, scientific validity `NOT_ESTABLISHED`, release
   `OPEN_OWNER_ONLY`.
-- Next executable: owner completes the live questionnaire once. Codex then requests
-  and verifies a single-use recovery credential, confirms replay rejection, and
-  updates the public-safe release receipt.
+- Owner correction: natal AstroHD is now the first product/scientific test; AstroRRF
+  relationship work remains secondary because it depends on two natal layers. There
+  is no minimum-response gate before frozen predictions may be revealed.
+- Current continuation: draft PR `#21`, branch `codex/issue18-release-receipt`, contains
+  the relationship `[object Object]` formatter fix and the unmerged AstroHD-first owner
+  pilot described in `docs/36_astrohd_owner_pilot.md`.
+- Local owner-path evidence: the exact pinned-cache intake, birthplace search, consent,
+  single-use access gate, real prediction freeze, and opaque session creation pass in
+  the dedicated browser test. The real freeze takes about 8.6 seconds.
+- Model boundary: the natal symbolic scoring/reveal runtime exists, but the holistic
+  AstroHD mapping is incomplete. AstroRRF raw directional scoring exists, while
+  ordinal calibration and formal hit/miss scoring do not. Neither model automatically
+  retrains from submissions.
+- Adequacy now: operational `LOCAL_PASS / PRODUCTION_STAGING_OPEN`; scientific
+  `DEVELOPMENT_CASE_ONLY / HUMAN_VALIDITY_NOT_ESTABLISHED`; release
+  `CLOSED_PENDING_EXACT_DIFF_REVIEW_AND_CACHE_DELIVERY`.
+- Next executable: complete exact-diff Extra High review, stage the verified
+  non-sensitive century cache for Railway, configure the private interviewer link,
+  and deploy only the owner test. Friends remain out of scope until that smoke passes.
 
 - As of: `2026-08-27`
 - Task ID: `participant-session-v1`

@@ -103,6 +103,10 @@ Call `revealParticipantResult`. Explain separately:
 - that outcome/timing/environment evidence was not allowed to improve the natal behavioral score.
 
 Do not inflate ties or approximate ranks into stronger claims than the returned data support.
+Show the participant the returned model receipt so the result is tied to the exact
+model, mapping, question bank, engine, candidate universe and pre-answer prediction
+freeze used for this session. Explain that the submission did not change that bundle
+and does not automatically retrain the next participant's model.
 
 ## Post-hoc self-discovery phase
 

@@ -23,9 +23,9 @@ from hdmatch.experiments.canonical import (
 from hdmatch.schemas import CandidateState, StructuralChartFeatures
 from hdmatch.search import split_interval_by_local_date
 
-BOUNDARY_POLICY_VERSION: Final[
-    Literal["activation-gates-plus-sun-lines-forward-design-v2"]
-] = "activation-gates-plus-sun-lines-forward-design-v2"
+BOUNDARY_POLICY_VERSION: Final[Literal["activation-gates-plus-sun-lines-forward-design-v2"]] = (
+    "activation-gates-plus-sun-lines-forward-design-v2"
+)
 CENTURY_CACHE_SCHEMA_VERSION: Final[Literal["century-candidate-cache-v2"]] = (
     "century-candidate-cache-v2"
 )
@@ -91,9 +91,9 @@ class CenturyCacheManifest(_FrozenModel):
     interval_count: int = Field(ge=1)
     canonical_rows_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
     engine_fingerprint: str = Field(pattern=r"^[a-f0-9]{64}$")
-    boundary_policy_version: Literal[
-        "activation-gates-plus-sun-lines-forward-design-v2"
-    ] = BOUNDARY_POLICY_VERSION
+    boundary_policy_version: Literal["activation-gates-plus-sun-lines-forward-design-v2"] = (
+        BOUNDARY_POLICY_VERSION
+    )
     design_root_tolerance_seconds: float = Field(gt=0.0)
     generation_commit: str
     created_at_utc: datetime
@@ -223,6 +223,135 @@ def load_century_candidate_states(
             boundary_events=state.boundary_events,
         )
         for state in states
+    )
+
+
+def verify_pinned_century_cache(
+    cache_dir: str | Path,
+    *,
+    expected_engine_fingerprint: str,
+    expected_manifest_sha256: str,
+    expected_canonical_rows_sha256: str,
+) -> CenturyCacheManifest:
+    """Verify an exact released cache without expanding every irrelevant shard.
+
+    The exact manifest hash pins the shard inventory and each compressed shard hash.
+    The logical-universe hash and engine fingerprint independently bind the scientific
+    content and chart engine. This permits a known-month request to parse only the
+    overlapping decade shard while still hashing every released compressed shard.
+    """
+
+    root = Path(cache_dir)
+    manifest_path = root / "manifest.json"
+    try:
+        if sha256_file(manifest_path) != expected_manifest_sha256:
+            raise CenturyCacheVerificationError("century-cache manifest hash mismatch")
+        manifest = CenturyCacheManifest.model_validate(
+            load_json_bytes(manifest_path, require_canonical=True)
+        )
+    except CenturyCacheVerificationError:
+        raise
+    except (OSError, ValueError) as exc:
+        raise CenturyCacheVerificationError("invalid century-cache manifest") from exc
+    if manifest.engine_fingerprint != expected_engine_fingerprint:
+        raise CenturyCacheVerificationError(
+            "century-cache engine fingerprint does not match the deployed chart engine"
+        )
+    if manifest.canonical_rows_sha256 != expected_canonical_rows_sha256:
+        raise CenturyCacheVerificationError("century-cache logical universe hash mismatch")
+    for shard in manifest.shards:
+        try:
+            observed = sha256_file(root / shard.filename)
+        except OSError as exc:
+            raise CenturyCacheVerificationError(
+                f"cannot read century-cache shard: {shard.filename}"
+            ) from exc
+        if observed != shard.sha256:
+            raise CenturyCacheVerificationError(
+                f"century-cache shard hash mismatch: {shard.filename}"
+            )
+    return manifest
+
+
+def load_pinned_century_candidate_states_for_range(
+    cache_dir: str | Path,
+    *,
+    timezone_name: str,
+    expected_engine_fingerprint: str,
+    expected_manifest_sha256: str,
+    expected_canonical_rows_sha256: str,
+    range_start_utc: datetime,
+    range_end_utc: datetime,
+) -> tuple[CandidateState, ...]:
+    """Load an exact UTC slice from a fully hash-pinned released century cache."""
+
+    start = _require_utc(range_start_utc)
+    end = _require_utc(range_end_utc)
+    if end <= start:
+        raise ValueError("candidate range must have positive duration")
+    root = Path(cache_dir)
+    manifest = verify_pinned_century_cache(
+        root,
+        expected_engine_fingerprint=expected_engine_fingerprint,
+        expected_manifest_sha256=expected_manifest_sha256,
+        expected_canonical_rows_sha256=expected_canonical_rows_sha256,
+    )
+    if start < manifest.utc_start or end > manifest.utc_end_exclusive:
+        raise CenturyCacheVerificationError(
+            "requested candidate range is outside the pinned century-cache horizon"
+        )
+
+    selected: list[GlobalCandidateState] = []
+    for shard in manifest.shards:
+        if shard.last_state_end_utc <= start or shard.first_state_utc >= end:
+            continue
+        path = root / shard.filename
+        try:
+            raw = gzip.decompress(path.read_bytes())
+        except (OSError, gzip.BadGzipFile) as exc:
+            raise CenturyCacheVerificationError(
+                f"cannot read century-cache shard: {shard.filename}"
+            ) from exc
+        if len(raw) != shard.uncompressed_bytes:
+            raise CenturyCacheVerificationError(
+                f"century-cache shard byte count mismatch: {shard.filename}"
+            )
+        parsed = _parse_canonical_rows(raw, shard.filename)
+        if len(parsed) != shard.state_count:
+            raise CenturyCacheVerificationError(
+                f"century-cache shard state count mismatch: {shard.filename}"
+            )
+        if parsed[0].start_utc != shard.first_state_utc:
+            raise CenturyCacheVerificationError(
+                f"century-cache shard start mismatch: {shard.filename}"
+            )
+        if parsed[-1].end_utc != shard.last_state_end_utc:
+            raise CenturyCacheVerificationError(
+                f"century-cache shard end mismatch: {shard.filename}"
+            )
+        selected.extend(
+            state for state in parsed if state.start_utc < end and state.end_utc > start
+        )
+    if not selected:
+        raise CenturyCacheVerificationError("pinned century cache produced an empty range")
+    if selected[0].start_utc > start or selected[-1].end_utc < end:
+        raise CenturyCacheVerificationError("pinned century cache does not cover the range")
+
+    return tuple(
+        CandidateState(
+            state_id=state.state_id,
+            start_utc=max(state.start_utc, start),
+            end_utc=min(state.end_utc, end),
+            chart_features_hash=state.chart_features_hash,
+            chart_features=state.chart_features,
+            local_date_overlaps=split_interval_by_local_date(
+                max(state.start_utc, start),
+                min(state.end_utc, end),
+                timezone_name,
+            ),
+            boundary_events=state.boundary_events,
+        )
+        for state in selected
     )
 
 

@@ -1,0 +1,152 @@
+openapi: 3.1.0
+info:
+  title: AstroHD Blind Interview Actions
+  version: 1.0.0
+  description: >-
+    Interview-only actions for a natal AstroHD session already created by the
+    trusted same-origin intake. These actions never accept birth data and do not
+    expose the frozen chart or true rank before confirmatory lock.
+servers:
+  - url: https://YOUR_API_HOST
+paths:
+  /v1/participant-sessions/{session_id}/progress:
+    get:
+      operationId: getParticipantProgress
+      summary: Get participant-safe progress
+      description: >-
+        Returns coverage and candidate discrimination but never the concealed
+        true birth-state/date rank.
+      parameters:
+        - $ref: '#/components/parameters/SessionId'
+      responses:
+        '200':
+          description: Participant-safe progress.
+          content:
+            application/json:
+              schema: {type: object, additionalProperties: true}
+  /v1/participant-sessions/{session_id}/next-question:
+    get:
+      operationId: getParticipantNextQuestion
+      summary: Select the next neutral interview question
+      description: >-
+        Uses candidate-blind discrimination to suggest an informative frozen
+        dimension. Other/free-form responses must always remain available.
+      parameters:
+        - $ref: '#/components/parameters/SessionId'
+      responses:
+        '200':
+          description: Suggested question or open-narrative guidance.
+          content:
+            application/json:
+              schema: {type: object, additionalProperties: true}
+  /v1/participant-sessions/{session_id}/evidence:
+    post:
+      operationId: appendParticipantEvidence
+      summary: Append one atomic participant observation
+      description: >-
+        Only trait/behavior observations with an honestly matching frozen answer
+        token can affect natal ranking. Use answer=null for unmatched free text.
+      parameters:
+        - $ref: '#/components/parameters/SessionId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EvidenceInput'
+      responses:
+        '200':
+          description: Immutable appended evidence record.
+          content:
+            application/json:
+              schema: {type: object, additionalProperties: true}
+  /v1/participant-sessions/{session_id}/lock:
+    post:
+      operationId: lockParticipantConfirmatoryEvidence
+      summary: Lock pre-reveal confirmatory evidence
+      parameters:
+        - $ref: '#/components/parameters/SessionId'
+      responses:
+        '200':
+          description: Confirmatory evidence-lock metadata.
+          content:
+            application/json:
+              schema: {type: object, additionalProperties: true}
+  /v1/participant-sessions/{session_id}/reveal:
+    post:
+      operationId: revealParticipantResult
+      summary: Reveal frozen predictions and confirmatory rank
+      description: >-
+        Available only after lock. Returns the true birth state, confirmatory
+        ranking, and dimension-level comparisons to predictions frozen before answers.
+      parameters:
+        - $ref: '#/components/parameters/SessionId'
+      responses:
+        '200':
+          description: Confirmatory reveal report.
+          content:
+            application/json:
+              schema: {type: object, additionalProperties: true}
+  /v1/participant-sessions/{session_id}/finalize-exploratory:
+    post:
+      operationId: finalizeParticipantExploratoryProfile
+      summary: Finalize the post-reveal exploratory profile
+      description: >-
+        Produces a separately labeled post-hoc ranking and never overwrites the
+        confirmatory result.
+      parameters:
+        - $ref: '#/components/parameters/SessionId'
+      responses:
+        '200':
+          description: Confirmatory and exploratory results side by side.
+          content:
+            application/json:
+              schema: {type: object, additionalProperties: true}
+  /v1/participant-sessions/{session_id}/final-report:
+    get:
+      operationId: getParticipantFinalReport
+      summary: Fetch the completed participant report
+      parameters:
+        - $ref: '#/components/parameters/SessionId'
+      responses:
+        '200':
+          description: Completed confirmatory plus exploratory report.
+          content:
+            application/json:
+              schema: {type: object, additionalProperties: true}
+components:
+  parameters:
+    SessionId:
+      name: session_id
+      in: path
+      required: true
+      schema:
+        type: string
+        pattern: '^HD-[A-F0-9]{32}$'
+  schemas:
+    EvidenceInput:
+      type: object
+      additionalProperties: false
+      required: [domain, narrative]
+      properties:
+        domain:
+          type: string
+          enum: [trait, behavior, outcome, timing, environment, conventional_covariate]
+        question_id: {type: [string, 'null'], default: null}
+        cluster_id: {type: [string, 'null'], default: null}
+        answer:
+          type: [string, 'null']
+          default: null
+          description: >-
+            A frozen response token only when it genuinely fits. Null preserves
+            free text without forcing a scoring category.
+        behavioral_confidence: {type: number, minimum: 0, maximum: 1, default: 0.5}
+        measurement_reliability: {type: number, minimum: 0, maximum: 1, default: 0.75}
+        narrative: {type: string, minLength: 1}
+        childhood_pattern: {type: [string, 'null'], default: null}
+        adult_pattern: {type: [string, 'null'], default: null}
+        contexts: {type: array, items: {type: string}, default: []}
+        exceptions: {type: array, items: {type: string}, default: []}
+        example_text: {type: [string, 'null'], default: null}
+        counterexample_text: {type: [string, 'null'], default: null}
+        supersedes_evidence_id: {type: [string, 'null'], default: null}

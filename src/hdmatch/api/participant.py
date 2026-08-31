@@ -7,7 +7,7 @@ from typing import TypeVar
 
 from fastapi import FastAPI
 
-from hdmatch.api.errors import ApiProblem, ERROR_RESPONSES
+from hdmatch.api.errors import ERROR_RESPONSES, ApiProblem
 from hdmatch.chart.timezone import TimezoneResolutionError
 from hdmatch.participant.backend import UnsupportedRankScopeError
 from hdmatch.participant.models import (
@@ -23,7 +23,6 @@ from hdmatch.participant.models import (
 )
 from hdmatch.participant.service import ParticipantSessionService, ParticipantStateError
 from hdmatch.participant.store import SessionStorageError
-
 
 T = TypeVar("T")
 
@@ -46,17 +45,21 @@ def _execute(operation: Callable[[], T]) -> T:
 def register_participant_routes(
     service: FastAPI,
     sessions: ParticipantSessionService,
+    *,
+    include_session_creation: bool = True,
 ) -> None:
     """Register only participant-safe orchestration routes."""
 
-    @service.post(
-        "/v1/participant-sessions",
-        response_model=SessionRecord,
-        responses=ERROR_RESPONSES,
-        operation_id="createParticipantSession",
-    )
-    async def create_participant_session(request: BirthIntake) -> SessionRecord:
-        return _execute(lambda: sessions.create_session(request))
+    if include_session_creation:
+
+        @service.post(
+            "/v1/participant-sessions",
+            response_model=SessionRecord,
+            responses=ERROR_RESPONSES,
+            operation_id="createParticipantSession",
+        )
+        async def create_participant_session(request: BirthIntake) -> SessionRecord:
+            return _execute(lambda: sessions.create_session(request))
 
     @service.get(
         "/v1/participant-sessions/{session_id}/progress",

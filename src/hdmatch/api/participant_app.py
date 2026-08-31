@@ -34,6 +34,8 @@ def create_participant_app_from_env() -> FastAPI:
 
     - ``HDMATCH_CANDIDATE_CACHE``: persistent exact month-universe cache directory
     - ``HDMATCH_CENTURY_CACHE``: verified exact century-wide candidate cache directory
+    - ``HDMATCH_CENTURY_MANIFEST_SHA256``: exact released manifest hash for fast month slices
+    - ``HDMATCH_CENTURY_CANONICAL_ROWS_SHA256``: released logical-universe hash
     - ``HDMATCH_CODE_COMMIT``: deployed source revision for prediction provenance
     """
 
@@ -43,6 +45,8 @@ def create_participant_app_from_env() -> FastAPI:
     session_store = _required_env("HDMATCH_PARTICIPANT_STORE")
     candidate_cache = os.environ.get("HDMATCH_CANDIDATE_CACHE") or None
     century_cache = os.environ.get("HDMATCH_CENTURY_CACHE") or None
+    century_manifest_sha256 = os.environ.get("HDMATCH_CENTURY_MANIFEST_SHA256") or None
+    century_canonical_rows_sha256 = os.environ.get("HDMATCH_CENTURY_CANONICAL_ROWS_SHA256") or None
     code_commit = os.environ.get("HDMATCH_CODE_COMMIT", "unknown")
 
     backend = CenturyCapableParticipantBackend(
@@ -51,6 +55,8 @@ def create_participant_app_from_env() -> FastAPI:
         question_bank_path=question_bank_path,
         candidate_cache_dir=candidate_cache,
         century_cache_dir=century_cache,
+        century_manifest_sha256=century_manifest_sha256,
+        century_canonical_rows_sha256=century_canonical_rows_sha256,
         code_commit=code_commit,
     )
     sessions = ParticipantSessionService(

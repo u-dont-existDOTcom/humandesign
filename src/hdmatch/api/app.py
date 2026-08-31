@@ -66,7 +66,11 @@ class ApiDependencies:
     code_commit: str = "unknown"
 
 
-def create_app(dependencies: ApiDependencies | None = None) -> FastAPI:
+def create_app(
+    dependencies: ApiDependencies | None = None,
+    *,
+    include_participant_session_creation: bool = True,
+) -> FastAPI:
     """Build an application without acquiring any answer-key capability."""
 
     deps = dependencies or ApiDependencies()
@@ -290,7 +294,11 @@ def create_app(dependencies: ApiDependencies | None = None) -> FastAPI:
         return NextQuestionResponse(selection=response)
 
     if deps.participant_sessions is not None:
-        register_participant_routes(service, deps.participant_sessions)
+        register_participant_routes(
+            service,
+            deps.participant_sessions,
+            include_session_creation=include_participant_session_creation,
+        )
     register_unresolved_run_routes(service)
     return service
 
