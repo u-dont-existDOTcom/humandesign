@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-a1-gpt-heavy-owner-author-conflict-contract-v1",
+  "status": "MANAGEABLE_DISCLOSED_CONFLICT_ARCHITECTURE_ONLY",
+  "primary_traceability_requirement_id": "A1G-39",
+  "dual_role_actor": "JOEL",
+  "roles": ["JOEL_OWNER", "JOEL_AUTHOR"],
+  "role_event_types": {
+    "JOEL_OWNER": ["OWNER_SCOPE_DECISION", "OWNER_GOVERNANCE_DECISION", "OWNER_SUPERVISION_DECISION"],
+    "JOEL_AUTHOR": ["HUMAN_SOURCE_ORIGINATION", "SEMANTIC_ACCEPTANCE", "SEMANTIC_REJECTION", "SEMANTIC_REWRITE", "SEMANTIC_DEFER", "FINAL_FIDELITY_ATTESTATION"]
+  },
+  "events_interchangeable": false,
+  "owner_event_can_satisfy_semantic_acceptance": false,
+  "author_event_can_override_gpt_adjudication": false,
+  "owner_pressure_or_override_creates_clean_result": false,
+  "postfreeze_owner_revision_overwrites_frozen_entity": false,
+  "lack_of_hd_interpretation_knowledge": {
+    "recorded_owner_context": true,
+    "eligibility_effect": "NON_DISPOSITIVE",
+    "cleanliness_guarantee": false
+  },
+  "single_author_limit": {
+    "prospective_human_author_count": 1,
+    "cross_author_convergence_available": false,
+    "cross_author_robustness_claim_allowed": false
+  },
+  "ineligible_outcome_requires_new_owner_decision_before_clean_authorship": true,
+  "requires_blind_adjudication_outcome_blocks_until_valid_receipt": true,
+  "real_role_event_executed": false,
+  "completion_claim": "WORKING",
+  "root_completion": false,
+  "release_permission": false
+}

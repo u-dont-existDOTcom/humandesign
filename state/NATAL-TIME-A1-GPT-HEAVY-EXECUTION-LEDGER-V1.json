@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-a1-gpt-heavy-execution-ledger-v1",
+  "status": "LOCAL_REVERSIBLE_CHECKPOINT13_IMPLEMENTATION",
+  "primary_traceability_requirement_id": "A1G-48",
+  "corrected_checkpoint_baseline": {"head": "497bfed7c554c52dc3b22b2548b41fef844c84a9", "tree": "9e4777142c7e08f605b4e50b848d1ca985b5ac70", "superseded_bad_sha": "497bfed64e4433f91c0fb857d4f87ae1eb745b2b"},
+  "chronology": [
+    {"event": "OWNER_AND_PRO_CONTRACT_COMMIT", "commit": "a310834"},
+    {"event": "SOURCE_FREE_CONCEPTION_COMMIT", "commit": "5091d16fd22e78ed2147b4de839bbd8e99e00e0c"},
+    {"event": "BOUNDED_METHODS_SCAN_COMMIT", "commit": "028f9432cd80702a87ab5db34a1990a919bf5b4f"},
+    {"event": "CONTENT_FREE_ARCHITECTURE_IMPLEMENTATION", "commit": "BOUND_BY_ENCLOSING_COMMIT_AND_PRO_RETURN_RECEIPT"}
+  ],
+  "protected_artifacts": [
+    {"path": "docs/NATAL_TIME_A1_GPT_HEAVY_PREELICITATION_CONCEPTION_20260831.md", "sha256": "05cbce1ae583d9a188bfc0f11d1d8d97741c97f83007e9a82ff1d91e4e178a96", "byte_identical": true},
+    {"path": "state/NATAL-TIME-A1-GPT-HEAVY-PREELICITATION-CONCEPTION-V1.json", "sha256": "05117102b5b88b3041657d3bfe25885b0c77231484e3dfe8ce772eab81f212f3", "byte_identical": true},
+    {"path": "state/NATAL-TIME-OWNER-A1-GPT-HEAVY-SOURCE-EPOCH8-20260831.json", "message_sha256": "97ce6179532c73e9668a5cff47b41006f49a536cf76e449084f3834847d28e59", "exact_message_verified": true}
+  ],
+  "verification": {
+    "checkpoint13_tests": "34/34 PASS",
+    "focused_supervision_tests": "168/168 PASS",
+    "precommit_dirty_tree_full_suite": "755 PASS; 21 EXPECTED CLEAN_WORKTREE_CLOSURE_ERRORS; 1 DESELECTED",
+    "clean_exact_head_full_suite": "RUN_AFTER_CONTENT_ADDRESSED_COMMIT; RESULT_AND_EXACT_HEAD_REPORTED_IN_PRO_RETURN_RECEIPT",
+    "clean_exact_head_expected_test_count": 777,
+    "strict_mypy": "PASS_132_SOURCE_FILES",
+    "changed_file_ruff": "PASS",
+    "tracked_json_parse": "PASS_397_TRACKED_FILES",
+    "privacy_history_build": "PASS",
+    "production_source_diff": "EMPTY",
+    "protected_bytes": "PASS",
+    "git_diff_check": "PASS",
+    "artifact_manifest": "PASS_CONTENT_ADDRESSED_EXCLUDING_SELF"
+  },
+  "corrected_commands": [
+    {"failed_command": ".venv/bin/pytest -q tests/unit/test_natal_time_a1_gpt_heavy_architecture.py", "failure": "console-script invocation did not place repository package root on import path", "corrected_command": ".venv/bin/python -m pytest -q tests/unit/test_natal_time_a1_gpt_heavy_architecture.py", "concealed": false},
+    {"failed_input": "10.1097/ACM.0000000000000388", "failure": "AskRigor DOI lowercase validation", "corrected_input": "10.1097/acm.0000000000000388", "corrected_result": "possibly useful lead with explicit access boundary", "concealed": false}
+  ],
+  "browser_control": {"default_mode": "HEADLESS", "existing_controlled_window_reused": true, "new_visible_window_opened": false, "owner_requested_main_workspace_exception_preserved": true},
+  "prohibited_actions": {
+    "real_person_eligibility_adjudication": false,
+    "human_facing_screening_or_elicitation": false,
+    "construct_or_instrument_work": false,
+    "reliability_execution": false,
+    "astrohd_mapping": false,
+    "real_chart_birth_time_relationship_or_identity_data": false,
+    "production_source_change": false,
+    "github_mutation": false,
+    "railway_mutation": false,
+    "push_pr_merge_or_history_rewrite": false,
+    "deployment_migration_or_secret_access": false,
+    "publication_disclosure_or_release": false
+  },
+  "unresolved_decisions_path": "state/NATAL-TIME-A1-GPT-HEAVY-UNRESOLVED-DECISIONS-V1.json",
+  "worker_to_contract_alignment": "GREEN",
+  "contract_to_owner_alignment": "PARTIAL_ROOT_OPEN",
+  "completion_claim": "WORKING",
+  "parent_outcome": "OPEN",
+  "root_completion": false,
+  "release_permission": false
+}

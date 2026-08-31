@@ -261,25 +261,6 @@ release remain unselected or prohibited. The verified implementation head is
 exact Ruff, privacy/history/build, `374` tracked JSON, manifest `25/25`, protected identity,
 production-no-diff, diff, and clean-tree gates passed. Return to the same Pro lane is next.
 
-Pro accepted checkpoint 12 at 48/48 and initially exposed an author/adjudication owner gate. Joel
-then ruled that GPT, not humans, performs eligibility adjudication. Pro accepted that correction and
-superseded the `J1/J2` human-staffing framing while retaining run/context independence as a future
-GPT topology question. Joel selected `A1` with the direct message `A1 yes i can help altho GPT
-should be doing most of this`. Pro returned `OWNER DECISION REQUIRED: NO`, nominated Joel as the
-one prospective chart-blind human author without declaring eligibility, and made maximum
-scientifically permissible GPT automation a binding workflow constraint. Joel retains human
-semantic origin and final semantic authority; GPT performs the procedural, provenance, checking,
-and source-constrained derivative work permitted by the two-freeze firewall.
-
-The only authorized next child is `CHECKPOINT-13 — A1/GPT-HEAVY PRE-ELICITATION
-SEMANTIC-AUTHORITY, ROLE, AND CUSTODY ARCHITECTURE ONLY`, recorded in
-`docs/PRO_SUPERVISION_S6_H1_CHECKPOINT13_CONTRACT_20260831.md`. Before any checkpoint-13 query,
-commit the required source-free conception artifacts. The child is content-free and synthetic-only:
-it may define GPT context classes, human/GPT semantic authority, raw-origin and clean-conception
-freezes, lineage/fidelity/custody schemas, GPT adjudication-run topology, and dual-role controls. It
-may not adjudicate Joel, write human-facing elicitation, create constructs, perform construct-
-specific search, map AstroHD, change production, or mutate any external system.
-
 Option B remains a design-only prerequisite screen. It does not authorize live execution,
 measurement content, participant software, empirical data, or progression to rectification.
 No push, PR action, merge, migration, deployment, live record, participant inference, recruitment,

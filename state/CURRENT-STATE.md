@@ -21,6 +21,18 @@
 
 - Complete: deterministic exact-time HD connection mechanics; strict Swiss-backed Western geometry; frozen AstroRRF V0.1 raw directional scoring plus V0.2-V0.4 feature-family flags; chart-blind GPT-5.6 Sol answer audit and phenotype classifier; pre-answer relationship freeze; immutable response/phenotype reveal flow; secure email recovery.
 - Survey-v2 status: `state/SURVEY-V2-NOISE-AUDIT.json` covers the complete `288938`-state universe and all 12 declared synthetic scenarios with reference equivalence. Its claim scope is synthetic oracle robustness only. It does not calibrate human classifier reliability, AstroRRF outcomes, or birth-time probabilities.
+- Checkpoint 13 status: Joel selected A1 and asked GPT to do most of the work. Pro authorized only a
+  content-free A1/GPT-heavy role, semantic-authority, and custody child. The source-free conception
+  is frozen at `5091d16fd22e78ed2147b4de839bbd8e99e00e0c`; the bounded generic methods scan is
+  `028f9432cd80702a87ab5db34a1990a919bf5b4f`. Local metadata schemas and hostile synthetic tests
+  now separate aware governance, isolated content support, two sealed GPT initial-adjudication
+  runs, separate reconciliation, Joel-author decisions, and Joel-owner governance; enforce the
+  raw-origin and clean-conception freezes; and fail closed on unsourced GPT semantics, owner
+  override, cross-run leakage, duplicate deletion, conflict omission, pre-freeze protected
+  exposure, post-freeze overwrite, human-facing fields, and real eligibility records. No real
+  eligibility, elicitation, construct, reliability, mapping, production, GitHub, or Railway action
+  occurred. Operational alignment is `PASS`, scientific adequacy is `WARN`, release adequacy is
+  `NOT_APPLICABLE`, release is false, completion is `WORKING`, and the parent remains `OPEN`.
 - Partial: `src/hdmatch/relationship/uncertain_time.py` aggregates already-enumerated partner-time intervals into stable and variable connection mechanics. It does not enumerate a civil day, collect natal behavioral evidence, rank natal states, or propagate a ranked distribution through the public relationship flow.
 - Implemented on the non-production task branch beginning at `592ff22fd914614a73e4c72861aa3c6514a796f4`: the Pro-approved deterministic natal-first foundation. It includes immutable evidence lineages, a server-enforced independent weekday lock, fail-closed date conflict states, explicit unordered candidate-date sets, a standalone natal-only API/private storage namespace, complete civil-day interval enumeration, full-state identity/provenance, immutable manifest/freeze/result records, stable/variable set facts, and a synthetic-only public allowlist boundary.
 - Candidate-complete edge fixtures now cover ordinary/leap days, DST gap/fold days, a historical offset change, skipped-date failure, day-boundary transitions, multiple candidate dates, and reduced-signature collisions. The canonical synthetic receipt is `state/NATAL-TIME-FOUNDATION-AUDIT.json`, generated from implementation commit `592ff22`.

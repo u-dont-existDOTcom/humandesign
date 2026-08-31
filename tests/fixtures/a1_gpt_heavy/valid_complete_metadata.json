@@ -1,0 +1,84 @@
+{
+  "schema_version": "NATAL-TIME-A1-GPT-HEAVY-CUSTODY-V1",
+  "record_class": "CONSPICUOUSLY_SYNTHETIC_A1_GPT_HEAVY_PACKAGE",
+  "synthetic_package_id": "SYN-A1G-PKG-0001",
+  "stage": "CLEAN_FROZEN",
+  "real_person_record": false,
+  "human_facing_content_present": false,
+  "semantic_content_present": false,
+  "eligibility_outcome_present": false,
+  "selected_configuration_present": false,
+  "context_controls": {
+    "governance_prefreeze_content_access": false,
+    "governance_semantic_work": false,
+    "content_support_protected_domain_access": false,
+    "content_support_repository_context_access": false
+  },
+  "raw_freeze": {
+    "source_id": "SYN-A1G-SRC-0001",
+    "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "committed": true,
+    "before_semantic_transformation": true,
+    "original_source_preserved": true,
+    "timestamp_state": "SYNTHETIC_OPAQUE_RECORDED",
+    "uncertainty_preserved": true
+  },
+  "transformations": [
+    {"event_id": "SYN-A1G-TEVT-0001", "kind": "TRANSCRIPTION", "source_ids": ["SYN-A1G-SRC-0001"], "human_source_ids": ["SYN-A1G-SRC-0001"], "derivative_id": "SYN-A1G-DRV-0001", "authority_state": "MECHANICAL_NONAUTHORITATIVE", "decision_event_id": null, "occurred_after_raw_freeze": true, "original_source_preserved": true, "source_offsets": null, "timestamps_preserved": true, "uncertainty_preserved": true, "mechanical_meaning_change": false, "mechanical_hierarchy_change": false, "mechanical_grouping_change": false, "record_action": "PRESERVE_AND_DERIVE", "autonomous_semantic_control": false, "preserves_conflict": true, "accepted_unit_ids": []},
+    {"event_id": "SYN-A1G-TEVT-0002", "kind": "EXACT_QUOTE_EXTRACTION", "source_ids": ["SYN-A1G-SRC-0001"], "human_source_ids": ["SYN-A1G-SRC-0001"], "derivative_id": "SYN-A1G-DRV-0002", "authority_state": "MECHANICAL_NONAUTHORITATIVE", "decision_event_id": null, "occurred_after_raw_freeze": true, "original_source_preserved": true, "source_offsets": {"source_id": "SYN-A1G-SRC-0001", "start": 8, "end": 21, "unit": "BYTE"}, "timestamps_preserved": true, "uncertainty_preserved": true, "mechanical_meaning_change": false, "mechanical_hierarchy_change": false, "mechanical_grouping_change": false, "record_action": "PRESERVE_AND_DERIVE", "autonomous_semantic_control": false, "preserves_conflict": true, "accepted_unit_ids": []},
+    {"event_id": "SYN-A1G-TEVT-0003", "kind": "MECHANICAL_FORMATTING", "source_ids": ["SYN-A1G-DRV-0001"], "human_source_ids": ["SYN-A1G-SRC-0001"], "derivative_id": "SYN-A1G-DRV-0003", "authority_state": "MECHANICAL_NONAUTHORITATIVE", "decision_event_id": null, "occurred_after_raw_freeze": true, "original_source_preserved": true, "source_offsets": null, "timestamps_preserved": true, "uncertainty_preserved": true, "mechanical_meaning_change": false, "mechanical_hierarchy_change": false, "mechanical_grouping_change": false, "record_action": "PRESERVE_AND_DERIVE", "autonomous_semantic_control": false, "preserves_conflict": true, "accepted_unit_ids": []},
+    {"event_id": "SYN-A1G-TEVT-0004", "kind": "EXACT_DUPLICATE_FLAG", "source_ids": ["SYN-A1G-DRV-0001", "SYN-A1G-DRV-0003"], "human_source_ids": ["SYN-A1G-SRC-0001"], "derivative_id": "SYN-A1G-DRV-0004", "authority_state": "MECHANICAL_NONAUTHORITATIVE", "decision_event_id": null, "occurred_after_raw_freeze": true, "original_source_preserved": true, "source_offsets": null, "timestamps_preserved": true, "uncertainty_preserved": true, "mechanical_meaning_change": false, "mechanical_hierarchy_change": false, "mechanical_grouping_change": false, "record_action": "FLAG_ONLY_PRESERVE_ALL", "autonomous_semantic_control": false, "preserves_conflict": true, "accepted_unit_ids": []},
+    {"event_id": "SYN-A1G-TEVT-0005", "kind": "NEAR_DUPLICATE_FLAG", "source_ids": ["SYN-A1G-DRV-0001", "SYN-A1G-DRV-0002"], "human_source_ids": ["SYN-A1G-SRC-0001"], "derivative_id": "SYN-A1G-DRV-0005", "authority_state": "MECHANICAL_NONAUTHORITATIVE", "decision_event_id": null, "occurred_after_raw_freeze": true, "original_source_preserved": true, "source_offsets": null, "timestamps_preserved": true, "uncertainty_preserved": true, "mechanical_meaning_change": false, "mechanical_hierarchy_change": false, "mechanical_grouping_change": false, "record_action": "FLAG_ONLY_PRESERVE_ALL", "autonomous_semantic_control": false, "preserves_conflict": true, "accepted_unit_ids": []},
+    {"event_id": "SYN-A1G-TEVT-0006", "kind": "GPT_PARAPHRASE_CANDIDATE", "source_ids": ["SYN-A1G-DRV-0002"], "human_source_ids": ["SYN-A1G-SRC-0001"], "derivative_id": "SYN-A1G-DRV-0006", "authority_state": "JOEL_ACCEPTED_SOURCE_LINKED", "decision_event_id": "SYN-A1G-DEVT-0001", "occurred_after_raw_freeze": true, "original_source_preserved": true, "source_offsets": {"source_id": "SYN-A1G-SRC-0001", "start": 8, "end": 21, "unit": "BYTE"}, "timestamps_preserved": true, "uncertainty_preserved": true, "mechanical_meaning_change": false, "mechanical_hierarchy_change": false, "mechanical_grouping_change": false, "record_action": "ACCEPTED_SOURCE_LINKED_DERIVATIVE", "autonomous_semantic_control": false, "preserves_conflict": true, "accepted_unit_ids": []},
+    {"event_id": "SYN-A1G-TEVT-0007", "kind": "GPT_CATEGORY_CANDIDATE", "source_ids": ["SYN-A1G-DRV-0006"], "human_source_ids": ["SYN-A1G-SRC-0001"], "derivative_id": "SYN-A1G-DRV-0007", "authority_state": "JOEL_ACCEPTED_SOURCE_LINKED", "decision_event_id": "SYN-A1G-DEVT-0002", "occurred_after_raw_freeze": true, "original_source_preserved": true, "source_offsets": null, "timestamps_preserved": true, "uncertainty_preserved": true, "mechanical_meaning_change": false, "mechanical_hierarchy_change": false, "mechanical_grouping_change": false, "record_action": "ACCEPTED_SOURCE_LINKED_DERIVATIVE", "autonomous_semantic_control": false, "preserves_conflict": true, "accepted_unit_ids": []},
+    {"event_id": "SYN-A1G-TEVT-0008", "kind": "GPT_LABEL_CANDIDATE", "source_ids": ["SYN-A1G-DRV-0007"], "human_source_ids": ["SYN-A1G-SRC-0001"], "derivative_id": "SYN-A1G-DRV-0008", "authority_state": "JOEL_ACCEPTED_SOURCE_LINKED", "decision_event_id": "SYN-A1G-DEVT-0003", "occurred_after_raw_freeze": true, "original_source_preserved": true, "source_offsets": null, "timestamps_preserved": true, "uncertainty_preserved": true, "mechanical_meaning_change": false, "mechanical_hierarchy_change": false, "mechanical_grouping_change": false, "record_action": "ACCEPTED_SOURCE_LINKED_DERIVATIVE", "autonomous_semantic_control": false, "preserves_conflict": true, "accepted_unit_ids": []},
+    {"event_id": "SYN-A1G-TEVT-0009", "kind": "GPT_SYNTHESIS_CANDIDATE", "source_ids": ["SYN-A1G-DRV-0006", "SYN-A1G-DRV-0007", "SYN-A1G-DRV-0008"], "human_source_ids": ["SYN-A1G-SRC-0001"], "derivative_id": "SYN-A1G-DRV-0009", "authority_state": "JOEL_ACCEPTED_SOURCE_LINKED", "decision_event_id": "SYN-A1G-DEVT-0004", "occurred_after_raw_freeze": true, "original_source_preserved": true, "source_offsets": null, "timestamps_preserved": true, "uncertainty_preserved": true, "mechanical_meaning_change": false, "mechanical_hierarchy_change": false, "mechanical_grouping_change": false, "record_action": "COMPILE_ACCEPTED_UNITS_PRESERVE_CONFLICT", "autonomous_semantic_control": false, "preserves_conflict": true, "accepted_unit_ids": ["SYN-A1G-UNIT-0001"]}
+  ],
+  "decision_events": [
+    {"event_id": "SYN-A1G-DEVT-0001", "event_type": "JOEL_AUTHOR_SEMANTIC_DECISION", "actor_role": "JOEL_AUTHOR", "target_derivative_id": "SYN-A1G-DRV-0006", "human_source_ids": ["SYN-A1G-SRC-0001"], "decision": "ACCEPT"},
+    {"event_id": "SYN-A1G-DEVT-0002", "event_type": "JOEL_AUTHOR_SEMANTIC_DECISION", "actor_role": "JOEL_AUTHOR", "target_derivative_id": "SYN-A1G-DRV-0007", "human_source_ids": ["SYN-A1G-SRC-0001"], "decision": "ACCEPT"},
+    {"event_id": "SYN-A1G-DEVT-0003", "event_type": "JOEL_AUTHOR_SEMANTIC_DECISION", "actor_role": "JOEL_AUTHOR", "target_derivative_id": "SYN-A1G-DRV-0008", "human_source_ids": ["SYN-A1G-SRC-0001"], "decision": "ACCEPT"},
+    {"event_id": "SYN-A1G-DEVT-0004", "event_type": "JOEL_AUTHOR_SEMANTIC_DECISION", "actor_role": "JOEL_AUTHOR", "target_derivative_id": "SYN-A1G-DRV-0009", "human_source_ids": ["SYN-A1G-SRC-0001"], "decision": "ACCEPT"},
+    {"event_id": "SYN-A1G-DEVT-0005", "event_type": "JOEL_AUTHOR_FINAL_FIDELITY_ATTESTATION", "actor_role": "JOEL_AUTHOR", "target_derivative_id": "SYN-A1G-DRV-0009", "human_source_ids": ["SYN-A1G-SRC-0001"], "decision": "ATTEST_FIDELITY"},
+    {"event_id": "SYN-A1G-DEVT-0006", "event_type": "JOEL_OWNER_GOVERNANCE_DECISION", "actor_role": "JOEL_OWNER", "target_derivative_id": null, "human_source_ids": [], "decision": "GOVERNANCE_ONLY"}
+  ],
+  "clean_units": [
+    {"unit_id": "SYN-A1G-UNIT-0001", "human_source_ids": ["SYN-A1G-SRC-0001"], "derivative_id": "SYN-A1G-DRV-0009", "decision_event_id": "SYN-A1G-DEVT-0004", "unresolved_conflict_visible": true}
+  ],
+  "clean_freeze": {
+    "freeze_id": "SYN-A1G-FREEZE-0001",
+    "committed": true,
+    "raw_freeze_predecessor_present": true,
+    "all_units_source_linked": true,
+    "all_units_joel_decided": true,
+    "conflicts_preserved": true,
+    "final_fidelity_attestation_event_id": "SYN-A1G-DEVT-0005",
+    "before_protected_access": true,
+    "immutable": true
+  },
+  "adjudication": {
+    "evidence_packet": {"packet_id": "SYN-A1G-ADJ-PKT-0001", "packet_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb", "content_present": false},
+    "access_events": ["SYN-A1G-ACCESS-0001", "SYN-A1G-ACCESS-0002"],
+    "initial_slots": [
+      {"slot_id": "GPT_INITIAL_RUN_SLOT_A", "run_id": "SYN-A1G-RUN-A", "context_id": "SYN-A1G-CTX-A", "model_identity_state": "UNSELECTED", "access_event_id": "SYN-A1G-ACCESS-0001", "output_id": "SYN-A1G-ADJ-OUT-A", "sealed_before_peer_access": true, "can_see_peer_unsealed_output": false},
+      {"slot_id": "GPT_INITIAL_RUN_SLOT_B", "run_id": "SYN-A1G-RUN-B", "context_id": "SYN-A1G-CTX-B", "model_identity_state": "UNSELECTED", "access_event_id": "SYN-A1G-ACCESS-0002", "output_id": "SYN-A1G-ADJ-OUT-B", "sealed_before_peer_access": true, "can_see_peer_unsealed_output": false}
+    ],
+    "outputs": [
+      {"output_id": "SYN-A1G-ADJ-OUT-A", "run_id": "SYN-A1G-RUN-A", "packet_id": "SYN-A1G-ADJ-PKT-0001", "sealed": true, "opaque_judgment_only": true},
+      {"output_id": "SYN-A1G-ADJ-OUT-B", "run_id": "SYN-A1G-RUN-B", "packet_id": "SYN-A1G-ADJ-PKT-0001", "sealed": true, "opaque_judgment_only": true}
+    ],
+    "reconciliation": {"slot_id": "GPT_RECONCILIATION_SLOT", "context_id": "SYN-A1G-CTX-RECON", "input_output_ids": ["SYN-A1G-ADJ-OUT-A", "SYN-A1G-ADJ-OUT-B"], "output_id": "SYN-A1G-ADJ-RECON-OUT", "preserves_initial_outputs": true, "preserves_disagreement": true, "selected_rule": null},
+    "owner_override_allowed": false,
+    "independent_model_claimed": false
+  },
+  "postfreeze_controls": {
+    "protected_access_before_clean_freeze": false,
+    "prefreeze_protected_exposure": false,
+    "contamination_state": "NONE",
+    "revision_attempted_after_protected_access": true,
+    "overwrites_frozen_package": false,
+    "revision_branch_state": "POSTFREEZE_NON_CLEAN_BRANCH",
+    "owner_override_attempted": false,
+    "cross_author_robustness_claimed": false
+  }
+}
