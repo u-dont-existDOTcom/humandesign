@@ -1,0 +1,155 @@
+{
+  "authorization_boundary": "Specification and freeze only. This package does not authorize H1 authorship, participant use, implementation, deployment, merge, or release.",
+  "claim_scope": "H1 interpretation-author or construct-author independence only; never participant eligibility or Human Design validity.",
+  "decision_semantics": {
+    "ambiguous_or_insufficient": "The author is not eligible for the clean H1 role unless a new, independently frozen evidence packet resolves the missing or conflicting fact.",
+    "identity_defining_or_comprehensive": "ineligible",
+    "intentionally_hd_derived": "ineligible",
+    "mixed_team_rule": "Each author and role requires a separate packet. Any ineligible, ambiguous, protocol-invalid, or unresolved technical-failure result blocks that H1 artifact.",
+    "shallow_or_incidental": "eligible",
+    "substantial_semantic_or_technical": {
+      "ambiguous": "Timing, semantic overlap, quarantine, or independence is not affirmatively established.",
+      "eligible": "Technical exposure within the relevant authorship window was affirmatively nonsemantic, disjoint, and quarantined from H1 sources, content, chart candidates, and predictions.",
+      "ineligible": "Prior or overlapping semantic or technical exposure materially overlaps, reproduces, or could shape H1 interpretation or construct creation. A bare non-use assertion cannot override documented overlap."
+    }
+  },
+  "evidence_custody": {
+    "append_only": "Corrected or additional evidence receives new opaque IDs; prior adjudication evidence is never silently replaced.",
+    "custodian": "An independent preprocessing step assigns opaque random evidence IDs, removes direct identifiers, and retains the raw-to-redacted crosswalk outside the model packet and repository.",
+    "forbidden_inputs": [
+      "identity or deanonymizing metadata",
+      "birth tuple or personal chart values",
+      "candidate state, true state, prediction, score, rank, or result",
+      "participant material",
+      "actual H1 content or construct wording",
+      "owner verdict or prior adjudicator output",
+      "raw-to-redacted evidence crosswalk"
+    ],
+    "hash_receipts": [
+      "raw evidence packet SHA-256 retained privately",
+      "redacted evidence packet SHA-256",
+      "request SHA-256",
+      "raw response SHA-256",
+      "parsed output SHA-256"
+    ],
+    "identity_boundary": "The adjudicator receives only pseudonymous subject, role, artifact, and evidence IDs; it may not infer or reconstruct identity.",
+    "permitted_generic_terms": "Generic construct-family names such as type, authority, profile, center, channel, gate, planet, aspect, house, or zodiac may describe the breadth of exposure only when no personal value, H1 content, candidate, or prediction is supplied.",
+    "serialization_rule": "evidence_packet_sha256 is SHA-256 of the exact stored canonical UTF-8 JSON artifact containing the ordered evidence_units array and no custody crosswalk. Canonical JSON uses sorted object keys, indent=2, ensure_ascii=false, allow_nan=false, LF endings, and exactly one trailing newline. Each redacted_statement_sha256 hashes the exact stored UTF-8 statement bytes without normalization."
+  },
+  "model_transport": {
+    "authorized_incremental_spend_usd": 0,
+    "candidate_blind_fresh_context_required": true,
+    "model_family_mismatch_rule": "TECHNICAL_FAIL with no decision",
+    "paid_api_calls_authorized": false,
+    "requested_model": "gpt-5.6-sol",
+    "required_model_family": "gpt-5.6-sol",
+    "required_receipts": [
+      "attempt number",
+      "selected model label",
+      "returned model label",
+      "per-attempt request SHA-256",
+      "raw response SHA-256",
+      "parsed output SHA-256"
+    ],
+    "retry_identity_rule": "The sole transport retry must replay byte-identical request content and therefore the same request SHA-256. Every attempt records its own attempt number, selected and returned model labels, request SHA-256, and raw-response SHA-256.",
+    "semantic_retry_count": 0,
+    "serialization_rule": "Request and parsed-output hashes are SHA-256 of exact stored UTF-8 artifact bytes. JSON uses sorted object keys, indent=2, ensure_ascii=false, allow_nan=false, LF endings, and exactly one trailing newline.",
+    "surface": "included ChatGPT Pro or Codex entitlement",
+    "tools_or_retrieval": "none",
+    "transport_failure_rule": "One identical transport retry; a second failure is TECHNICAL_FAIL with no decision.",
+    "unavailable_rule": "If a zero-cost fresh entitled context cannot be executed, adjudication is BLOCKED."
+  },
+  "operational_classes": {
+    "ambiguous_or_insufficient": "Within the relevant authorship window, timing, breadth, depth, semantic retention, technical capability, identity use, derivation, quarantine, or independence is missing, conflicting, or not affirmatively established.",
+    "identity_defining_or_comprehensive": "Within the relevant authorship window, HD or astrology is central to identity, worldview, community, or profession; or the author routinely reads, teaches, coaches, practices, interprets charts, completed comprehensive multi-module training, authored HD explanations or mappings, or can independently reproduce relevant ontology across construct families.",
+    "intentionally_hd_derived": "Within the relevant authorship window, HD or astrology sources, remembered mappings, archetype catalogs, charts, candidates, predictions, or outputs were consulted, translated, paraphrased, adapted, or used to select or revise H1 wording, examples, categories, or constructs.",
+    "shallow_or_incidental": "Within the relevant authorship window, there was no exposure or only isolated, passive, or unstructured contact with affirmative evidence of no retained semantic or technical mastery, repeated practice, identity organization, or HD/astrology-source use during H1 creation. Prior chart generation or a personal reading alone does not decide this class.",
+    "substantial_semantic_or_technical": "Within the relevant authorship window, there was repeated or structured study; demonstrated ability to explain or apply meanings or mechanics; or calculation, mapping, software, or ontology familiarity, without established identity/comprehensive status or intentional H1 derivation. Skepticism does not make substantial knowledge shallow."
+  },
+  "output_validation": {
+    "allowed_outcome_matrix": {
+      "ambiguous_or_insufficient": [
+        "ambiguous_or_insufficient"
+      ],
+      "identity_defining_or_comprehensive": [
+        "ineligible"
+      ],
+      "intentionally_hd_derived": [
+        "ineligible"
+      ],
+      "shallow_or_incidental": [
+        "eligible"
+      ],
+      "substantial_semantic_or_technical": [
+        "eligible",
+        "ineligible",
+        "ambiguous_or_insufficient"
+      ]
+    },
+    "attestation_rule": "Every identity, chart, candidate, H1-content, and no-tools attestation must be true and forced_decision must be false.",
+    "class_decision_mapping": "Shallow maps only to eligible; identity-defining/comprehensive and intentionally derived map only to ineligible; ambiguous class maps only to ambiguous_or_insufficient; substantial follows its three frozen branch rules.",
+    "completed_rule": "top_level_status=completed requires one non-null adjudication and exact request_id equality.",
+    "evidence_id_rule": "Supporting and counterevidence IDs are unique, pairwise disjoint subsets of the supplied evidence IDs; no unknown or hallucinated ID is permitted.",
+    "failure_rule": "Malformed JSON, schema failure, invalid class/decision combination, unknown or overlapping evidence IDs, false attestation, model mismatch, or second transport failure is TECHNICAL_FAIL with no eligibility decision.",
+    "forbidden_rule": "Forbidden request material requires top_level_status=forbidden_input and adjudication=null, producing PROTOCOL_INVALID with no eligibility decision.",
+    "model_context_rule": "For model_context_author, unknown_or_unauditable pretrained semantic exposure prohibits eligibility. It produces ambiguous_or_insufficient unless higher-precedence evidence independently establishes intentional derivation, identity/comprehensive exposure, or substantial material semantic overlap, in which case the applicable ineligible result is preserved. An eligible decision requires model_training_exposure_assessment=audited_ontology_absent; ontology_present is ineligible.",
+    "parsed_output_hash_rule": "parsed_output_sha256 is SHA-256 of the exact stored canonical JSON bytes after parsing and before semantic validation, using the frozen transport serialization rule.",
+    "subject_echo_rule": "Response subject_kind and subject_role must exactly equal the request values without repair or normalization."
+  },
+  "owner_policy": {
+    "deep_knowledge_is_adjudicated_not_presumed_clean": true,
+    "identity_defining_or_intentionally_derived_is_ineligible": true,
+    "prior_exposure_alone_is_not_exclusion": true,
+    "shallow_or_incidental_is_eligible": true,
+    "substantial_semantic_or_technical_requires_blind_gpt_adjudication": true
+  },
+  "parent_contract": "survey-v2-human-measurement-scoring-contract-v1.0.0",
+  "relevant_window": {
+    "end": "exact H1 content-hash freeze",
+    "mutation_rule": "Any change to H1 bytes changes the content hash, reopens the exposure window, and requires a new evidence packet and adjudication.",
+    "post_freeze_rule": "Exposure occurring only after the exact frozen bytes cannot contaminate those bytes and does not determine the exposure class for those bytes, but remains recorded and becomes relevant if any edit reopens the window.",
+    "start": "before the first contribution to the H1 artifact"
+  },
+  "request_contract": {
+    "admissible_evidence_fact_kinds": [
+      "exposure_event",
+      "semantic_capability",
+      "technical_capability",
+      "identity_or_professional_role",
+      "h1_derivation_process",
+      "non_exposure_or_non_use_attestation",
+      "timing_fact"
+    ],
+    "admissible_source_kinds": [
+      "author_attestation",
+      "contemporaneous_record",
+      "independent_attestation",
+      "redacted_document_excerpt",
+      "model_context_manifest",
+      "h1_process_record"
+    ],
+    "evidence_id_rule": "Evidence IDs are unique opaque random identifiers; exact duplicate IDs or replacement of existing IDs is invalid.",
+    "hash_rule": "Contract, prompt, output-schema, H1-content-freeze, redacted-statement, and evidence-packet hashes must match exact locked bytes before transport. Evidence-packet serialization and scope are frozen by evidence_custody.serialization_rule.",
+    "model_context_author_rule": "A fresh or HD-free visible prompt does not establish a clean model author because pretrained semantic exposure remains relevant. model_context_author cannot be eligible from context-manifest evidence alone. Unknown or unauditable training exposure prohibits eligibility and is ambiguous_or_insufficient unless higher-precedence evidence independently establishes an ineligible class. Eligibility requires an independently auditable training-corpus receipt establishing absence of HD/astrology ontology during the relevant model-training window.",
+    "one_subject_one_role": true,
+    "recursive_leakage_rule": "After schema validation, recursively reject forbidden keys and forbidden identifying, chart, participant, candidate, prediction, score, result, owner-verdict, prior-adjudication, or actual-H1-content material.",
+    "roles": [
+      "interpretation_author",
+      "construct_author"
+    ],
+    "routing_rule": "Every prospective clean H1 author-role packet is adjudicated by the frozen GPT procedure. Deterministic preprocessing only validates schema, hashes, evidence-ID uniqueness, and forbidden-input leakage; it never assigns an exposure class or eligibility decision.",
+    "subject_kinds": [
+      "human_author",
+      "model_context_author"
+    ]
+  },
+  "route_precedence": [
+    "forbidden_or_protocol_invalid",
+    "intentionally_hd_derived",
+    "identity_defining_or_comprehensive",
+    "substantial_semantic_or_technical",
+    "shallow_or_incidental",
+    "ambiguous_or_insufficient"
+  ],
+  "schema_version": "survey-v2-h1-exposure-adjudication-contract-v1.0.0"
+}

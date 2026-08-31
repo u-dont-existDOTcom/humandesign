@@ -1,0 +1,120 @@
+{
+  "artifacts": [
+    {
+      "byte_count": 89768,
+      "path": "reference/core/survey_v2_human_measurement_scoring_contract_v1_0_0.json",
+      "sha256": "9fa0aafab594a2c7cfaa1e6265176bbec4c6fb416a308fbb1d8a4e42cf1f506b"
+    },
+    {
+      "byte_count": 5454,
+      "path": "reference/core/survey_v2_classifier_system_prompt_v1_0_0.txt",
+      "sha256": "5daca1c7ccfc13ade2ea752d4dee9d04924d67ff37da9c4995d2c00a0be7fe53"
+    },
+    {
+      "byte_count": 6908,
+      "path": "reference/core/survey_v2_classifier_output_schema_v1_0_0.json",
+      "sha256": "30abd5e0e3691ebbe4e903cb9f69c397a714ff033e59c656e243ba8487b97450"
+    },
+    {
+      "byte_count": 86070,
+      "path": "reference/core/survey_v2_human_measurement_synthetic_fixtures_v1_0_0.json",
+      "sha256": "21b856e2f9b39b81e345464e5c110918e90b75db53582970a2d6956f4fef5ae7"
+    },
+    {
+      "byte_count": 23177,
+      "path": "reference/core/survey_v2_field_dependency_map_v1_0_0.json",
+      "sha256": "8895235775fd343bf587073de43ffd014cd824cc09ee06613720a879881ca3ad"
+    },
+    {
+      "byte_count": 12277,
+      "path": "reference/core/survey_v2_h1_exposure_adjudication_contract_v1_0_0.json",
+      "sha256": "b26e8ca398eb805125ed4ea475243e1d0cb5134bee4c509dd29223355ff1b070"
+    },
+    {
+      "byte_count": 5924,
+      "path": "reference/core/survey_v2_h1_exposure_adjudication_request_schema_v1_0_0.json",
+      "sha256": "1c7f55040d473fd8f4b47107b0edd296a448d9a5121845e907c6fd5eaf412240"
+    },
+    {
+      "byte_count": 5108,
+      "path": "reference/core/survey_v2_h1_exposure_adjudicator_system_prompt_v1_0_0.txt",
+      "sha256": "236c3cfe5fbfc9ee3e03abfa49a3b7c5030276226a953778bb1dc0bef95f8100"
+    },
+    {
+      "byte_count": 18956,
+      "path": "reference/core/survey_v2_h1_exposure_adjudicator_output_schema_v1_0_0.json",
+      "sha256": "9ec56a40cac3c6d31650ae5983083e74985b9ccca56bf2b616cba5787fb9c46c"
+    },
+    {
+      "byte_count": 8751,
+      "path": "reference/core/survey_v2_h1_exposure_adjudication_fixtures_v1_0_0.json",
+      "sha256": "c5f2e976bd378b4c513183f86585ee6e5187c74b3ff34638b92e34319787bdf8"
+    },
+    {
+      "byte_count": 2552,
+      "path": "state/SURVEY-V2-H1-EXPOSURE-ADJUDICATION-FREEZE-MANIFEST-v1.0.0.json",
+      "sha256": "e920ac03ae51c811c2ed4fd54a7e7c28076c8769833c193ff40ea33d57337a80"
+    },
+    {
+      "byte_count": 5976,
+      "path": "docs/SURVEY-V2-HUMAN-MEASUREMENT-METHODS-CHECK-v1.0.0.md",
+      "sha256": "332127c213b7d8a253f716150b5fdd83ac7359cc87b256c10cfa714dd19ed7e8"
+    }
+  ],
+  "authorization_boundary": "This manifest never authorizes implementation, deployment, merge, participant use, recruitment, or human scientific execution. The single named Pro review returned only SV2-FREEZE-B1 through B4 for correction; this corrected candidate may only return to the existing Issue #18 / Extra High exact-diff boundary. No additional Pro review is authorized.",
+  "canonicalization": {
+    "digest": "SHA-256",
+    "encoding": "UTF-8",
+    "json": "indent=2,sort_keys=true,ensure_ascii=false,allow_nan=false",
+    "line_endings": "LF",
+    "trailing_newline": true
+  },
+  "contract_version": "survey-v2-human-measurement-scoring-contract-v1.0.0",
+  "fixture_acceptance": {
+    "definition_validation_passed": 83,
+    "failed": 0,
+    "h1_fixture_definitions": 14,
+    "participant_fixture_definitions": 69,
+    "required_fixture_count": 83,
+    "runtime_behavior_passed": 0,
+    "skipped": 0,
+    "status": "SPECIFICATION_ONLY_RUNTIME_NOT_IMPLEMENTED"
+  },
+  "implementation_authorization": "NOT_AUTHORIZED_BY_THIS_MANIFEST",
+  "model_contract": {
+    "authorized_incremental_spend_usd": 0,
+    "candidate_blind_fresh_context_required": true,
+    "paid_api_calls_authorized": false,
+    "requested_model": "gpt-5.6-sol",
+    "required_model_family": "gpt-5.6-sol",
+    "surface": "included ChatGPT Pro or Codex entitlement"
+  },
+  "repository_base": "b7660b8c9bcf52cbb14bc5442c13a3a8635aad32",
+  "representation": {
+    "adaptive_count": 15,
+    "baseline_binary_count": 26,
+    "channel_binary_count": 36,
+    "dependency_cluster_count": 45,
+    "field_count": 83,
+    "field_to_source_predicate_trace_count": 83,
+    "fixed_planetary_count": 6,
+    "overlapping_channel_fields_moved_to_construct_clusters": 19,
+    "residual_channel_family_count": 17,
+    "residual_channel_family_max_weight": 1
+  },
+  "schema_version": "survey-v2-human-measurement-freeze-manifest-v1.0.0",
+  "source_locks": {
+    "reference/core/channel_archetypes_v1.json": "439dd31d060d83b93df8adc893c9218a41f5694085bab91d80b8b0efaef85b76",
+    "reference/core/gate_archetypes_v1.json": "f15e8c7c6e5344ceda69fcdf1776f01b4ff42cb11e577b78e4a76c0b38abb692",
+    "reference/core/profile_archetypes_v1.json": "44be85ed6d8d1e068262c356c727dc2bbf5967a58a645c5caf4fcfb9908d4ae9",
+    "reference/core/profile_v3_6_v43_mapping_frozen_2026_08_22.json": "f16565094a1a8eede720dd369dfdd4c0d4700a213520b535de28f8f88dd40afd",
+    "reference/core/profile_v3_6_v43_mapping_overlay_v2_2026_08_22.json": "03d25392f9639fb985f806d4814743bbb1cf466bc803c42b6bf6ca8588337735",
+    "reference/core/survey_v2_behavioral_domains.json": "6e8e5404dc8840a0df3b9617d72cc287a828e7186a21e1e97945d956fb36e68e",
+    "reference/core/survey_v2_blind_classifier_protocol.json": "4d32f3cd9159771049927a5aec9badb822bc27dbeecf3b31ad9c144d7803ab30",
+    "reference/core/survey_v2_classifier_reliability_protocol_v1.json": "ddd5c2cb905ac951792d8ec122bbf2794fdbffcc819a3534ae852dfea2de3210"
+  },
+  "supervisor_corrections": [
+    "HD-ISSUE18-C1-SEMANTIC-GAP-RULING-v1.1.0",
+    "SURVEYV2-HUMAN-MEASUREMENT-AND-SCORING-FREEZE-v1.PRO-RULING-v1.0.0:SV2-FREEZE-B1-B4"
+  ]
+}

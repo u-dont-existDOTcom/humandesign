@@ -1,0 +1,60 @@
+{
+  "artifacts": [
+    {
+      "byte_count": 12277,
+      "path": "reference/core/survey_v2_h1_exposure_adjudication_contract_v1_0_0.json",
+      "sha256": "b26e8ca398eb805125ed4ea475243e1d0cb5134bee4c509dd29223355ff1b070"
+    },
+    {
+      "byte_count": 5924,
+      "path": "reference/core/survey_v2_h1_exposure_adjudication_request_schema_v1_0_0.json",
+      "sha256": "1c7f55040d473fd8f4b47107b0edd296a448d9a5121845e907c6fd5eaf412240"
+    },
+    {
+      "byte_count": 5108,
+      "path": "reference/core/survey_v2_h1_exposure_adjudicator_system_prompt_v1_0_0.txt",
+      "sha256": "236c3cfe5fbfc9ee3e03abfa49a3b7c5030276226a953778bb1dc0bef95f8100"
+    },
+    {
+      "byte_count": 18956,
+      "path": "reference/core/survey_v2_h1_exposure_adjudicator_output_schema_v1_0_0.json",
+      "sha256": "9ec56a40cac3c6d31650ae5983083e74985b9ccca56bf2b616cba5787fb9c46c"
+    },
+    {
+      "byte_count": 8751,
+      "path": "reference/core/survey_v2_h1_exposure_adjudication_fixtures_v1_0_0.json",
+      "sha256": "c5f2e976bd378b4c513183f86585ee6e5187c74b3ff34638b92e34319787bdf8"
+    }
+  ],
+  "authorization_boundary": "This separate H1 manifest freezes specification artifacts only. It does not authorize H1 authorship, participant use, implementation, deployment, merge, release, or human contact.",
+  "canonicalization": {
+    "digest": "SHA-256",
+    "encoding": "UTF-8",
+    "json": "indent=2,sort_keys=true,ensure_ascii=false,allow_nan=false",
+    "line_endings": "LF",
+    "trailing_newline": true
+  },
+  "contract_version": "survey-v2-h1-exposure-adjudication-contract-v1.0.0",
+  "fixture_acceptance": {
+    "definition_validation_passed": 14,
+    "failed": 0,
+    "required_fixture_count": 14,
+    "runtime_behavior_passed": 0,
+    "skipped": 0,
+    "status": "SPECIFICATION_ONLY_RUNTIME_NOT_IMPLEMENTED"
+  },
+  "implementation_authorization": "NOT_AUTHORIZED_BY_THIS_MANIFEST",
+  "model_contract": {
+    "authorized_incremental_spend_usd": 0,
+    "candidate_blind_fresh_context_required": true,
+    "paid_api_calls_authorized": false,
+    "requested_model": "gpt-5.6-sol",
+    "required_model_family": "gpt-5.6-sol",
+    "surface": "included ChatGPT Pro or Codex entitlement"
+  },
+  "schema_version": "survey-v2-h1-exposure-adjudication-freeze-manifest-v1.0.0",
+  "source_locks": {
+    "reference/core/survey_v2_human_measurement_scoring_contract_v1_0_0.json": "9fa0aafab594a2c7cfaa1e6265176bbec4c6fb416a308fbb1d8a4e42cf1f506b"
+  },
+  "supervisor_correction": "SURVEYV2-HUMAN-MEASUREMENT-AND-SCORING-FREEZE-v1.PRO-RULING-v1.0.0:SV2-FREEZE-B3"
+}
