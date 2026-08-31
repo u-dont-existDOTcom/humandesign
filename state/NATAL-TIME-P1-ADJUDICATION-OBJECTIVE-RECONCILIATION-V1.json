@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-p1-adjudication-objective-reconciliation-v1",
+  "status": "CHECKPOINT12_WORKING_RECONCILIATION",
+  "primary_traceability_requirement_id": "P1A-48",
+  "owner_source_receipt": {
+    "path": "state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH6-V1.json",
+    "sha256": "4eb5600e9f46f07c35546f65e5dd6ed15438a3683ffa87590f81b808edaac3ff",
+    "capability": "DIRECT_OWNER_RATIFICATION_BINDING_P1_ONLY"
+  },
+  "objective_matrix": [
+    {
+      "objective_id": "OBJ-01",
+      "owner_objective": "Continue supervised relationship and AstroHD research without bypassing owner decisions.",
+      "active_contract_scope": "P1 blind-adjudication and H1 author-configuration decision architecture only.",
+      "relationship": "CONTRIBUTES",
+      "boundary": "No construct, instrument, relationship, or mapping work in this child."
+    },
+    {
+      "objective_id": "OBJ-02",
+      "owner_objective": "Prior exposure alone is permitted; meaningful semantic or self-concept contamination is the scientific concern.",
+      "active_contract_scope": "Represent the ratified P1 distinctions, blind-adjudication holding state, and access firewall without selecting a human procedure.",
+      "relationship": "MATCH_BOUNDED_P1_POLICY",
+      "boundary": "No real-person assessment or human-facing rule."
+    },
+    {
+      "objective_id": "OBJ-03",
+      "owner_objective": "Eventually compare chart-blind constructs with the target mapping framework.",
+      "active_contract_scope": "Keep later mapping as a distinct barred role and future lane.",
+      "relationship": "DEFERRED_NOT_CONTRADICTED",
+      "boundary": "Mapping remains unauthorized until independent conception and later gates are frozen."
+    }
+  ],
+  "worker_to_contract_alignment": "GREEN_PENDING_FINAL_VERIFICATION",
+  "contract_to_owner_alignment": "PARTIAL_ROOT_OPEN",
+  "bounded_p1_policy_to_owner_alignment": "MATCH",
+  "completion_claim": "WORKING",
+  "parent_outcome": "OPEN",
+  "root_completion": false,
+  "release_permission": false,
+  "reconciliation_trigger": "CHECKPOINT12_PRE_RETURN_AND_AFTER_ANY_OWNER_PRO_OR_SCOPE_CHANGE"
+}

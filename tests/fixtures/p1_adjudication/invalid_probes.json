@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0.0",
+  "record_class": "CONSPICUOUSLY_SYNTHETIC_P1_INVALID_PROBES",
+  "probes": [
+    {"probe_id": "IP-01", "mutation": "UNKNOWN_FIELD", "field": "unexpected"},
+    {"probe_id": "IP-02", "mutation": "PROHIBITED_FIELD", "field": "name"},
+    {"probe_id": "IP-03", "mutation": "PROHIBITED_FIELD", "field": "narrative"},
+    {"probe_id": "IP-04", "mutation": "PROHIBITED_FIELD", "field": "question"},
+    {"probe_id": "IP-05", "mutation": "PROHIBITED_FIELD", "field": "threshold"},
+    {"probe_id": "IP-06", "mutation": "PROHIBITED_FIELD", "field": "construct_name"},
+    {"probe_id": "IP-07", "mutation": "PROHIBITED_FIELD", "field": "birth_time"},
+    {"probe_id": "IP-08", "mutation": "PROHIBITED_VALUE", "field": "synthetic_case_id", "value": "AstroHD label"},
+    {"probe_id": "IP-09", "mutation": "PERSONAL_VALUE", "field": "synthetic_case_id", "value": "person@example.com"},
+    {"probe_id": "IP-10", "mutation": "REAL_PERSON_TRUE", "field": "real_person_record"},
+    {"probe_id": "IP-11", "mutation": "HUMAN_ACTION_TRUE", "field": "human_action_occurred"},
+    {"probe_id": "IP-12", "mutation": "ENUM_ESCAPE", "field": "substantive_outcome", "value": "AUTO_ELIGIBLE"},
+    {"probe_id": "IP-13", "mutation": "EMPTY_PROVENANCE", "field": "exposure_provenance"},
+    {"probe_id": "IP-14", "mutation": "DUPLICATE_PROVENANCE", "field": "exposure_provenance"},
+    {"probe_id": "IP-15", "mutation": "NON_SYNTHETIC_SOURCE", "field": "source"}
+  ]
+}

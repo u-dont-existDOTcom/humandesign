@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:humandesign:natal-time:p1:evidence-classification:v1",
+  "title": "Closed conspicuously synthetic P1 evidence-package metadata",
+  "x-artifact-id": "natal-time-p1-evidence-classification-schema-v1",
+  "x-schema-version": "1.0.0",
+  "x-primary-traceability-requirement-id": "P1A-15",
+  "x-scope": "SYNTHETIC_METADATA_ONLY_NO_HUMAN_CLASSIFIER",
+  "x-prohibited-field-names": [
+    "name",
+    "email",
+    "phone",
+    "address",
+    "identity",
+    "narrative",
+    "free_text",
+    "question",
+    "prompt",
+    "instruction",
+    "consent",
+    "accuracy_percentage",
+    "threshold",
+    "cutoff",
+    "weight",
+    "score",
+    "algorithm",
+    "construct_name",
+    "construct_description",
+    "item",
+    "response_choice",
+    "manual",
+    "birth_time",
+    "candidate_interval",
+    "chart",
+    "relationship",
+    "mapping_hypothesis"
+  ],
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_class",
+    "synthetic_case_id",
+    "evidence_package",
+    "exposure_provenance",
+    "familiarity",
+    "self_concept_integration_state",
+    "intentional_derivation_risk_state",
+    "evidence_completeness_state",
+    "evidence_conflict_state",
+    "non_dispositive_metadata_classes",
+    "process_state",
+    "substantive_outcome",
+    "adjudication_state",
+    "role_access_state",
+    "custody_receipts",
+    "supersession",
+    "human_action_occurred",
+    "real_person_record"
+  ],
+  "properties": {
+    "schema_version": {"const": "NATAL-TIME-P1-EVIDENCE-CLASSIFICATION-V1"},
+    "record_class": {"const": "CONSPICUOUSLY_SYNTHETIC_P1_EVIDENCE_PACKAGE"},
+    "synthetic_case_id": {"type": "string", "pattern": "^SYN-P1-CASE-[0-9]{4}$"},
+    "evidence_package": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["package_id", "version", "custody_state"],
+      "properties": {
+        "package_id": {"type": "string", "pattern": "^SYN-P1-EVID-[0-9]{4}$"},
+        "version": {"type": "integer", "minimum": 1},
+        "custody_state": {"enum": ["REGISTERED", "SUPERSEDED", "WITHDRAWN_PRESERVED"]}
+      }
+    },
+    "exposure_provenance": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "NO_EXPOSURE_ESTABLISHED",
+          "INCIDENTAL_OR_SHALLOW_EXPOSURE_RECORDED",
+          "SUBSTANTIAL_EXPOSURE_RECORDED",
+          "TECHNICAL_DOMAIN_EXPOSURE_RECORDED",
+          "REPOSITORY_OR_MODEL_CONTEXT_EXPOSURE_RECORDED",
+          "MAPPING_CONTEXT_EXPOSURE_RECORDED",
+          "UNKNOWN",
+          "CONFLICTING"
+        ]
+      }
+    },
+    "familiarity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["semantic", "technical", "ontology_reproduction"],
+      "properties": {
+        "semantic": {"enum": ["NO_SUBSTANTIAL_FAMILIARITY_ESTABLISHED", "SUBSTANTIAL_FAMILIARITY_ESTABLISHED", "UNKNOWN", "CONFLICTING"]},
+        "technical": {"enum": ["NO_SUBSTANTIAL_FAMILIARITY_ESTABLISHED", "SUBSTANTIAL_FAMILIARITY_ESTABLISHED", "UNKNOWN", "CONFLICTING"]},
+        "ontology_reproduction": {"enum": ["NO_SUBSTANTIAL_CAPABILITY_ESTABLISHED", "SUBSTANTIAL_CAPABILITY_ESTABLISHED", "UNKNOWN", "CONFLICTING"]}
+      }
+    },
+    "self_concept_integration_state": {"enum": ["NOT_IDENTITY_DEFINING_ESTABLISHED", "IDENTITY_DEFINING_OR_COMPREHENSIVE_ESTABLISHED", "UNKNOWN", "CONFLICTING"]},
+    "intentional_derivation_risk_state": {"enum": ["NO_INTENTIONAL_DERIVATION_ESTABLISHED", "INTENTIONAL_DERIVATION_ESTABLISHED", "UNKNOWN", "CONFLICTING"]},
+    "evidence_completeness_state": {"enum": ["COMPLETE", "INCOMPLETE", "NOT_EVALUATED"]},
+    "evidence_conflict_state": {"enum": ["NO_CONFLICT_RECORDED", "CONFLICT_RECORDED", "NOT_EVALUATED"]},
+    "non_dispositive_metadata_classes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"enum": ["BELIEF", "SKEPTICISM", "MISMATCH", "PERCEIVED_ACCURACY", "CURIOSITY", "USEFULNESS", "PRODUCT_INTEREST"]}
+    },
+    "process_state": {"enum": ["NOT_ASSESSED", "EVIDENCE_INCOMPLETE", "EVIDENCE_CONFLICT", "DECISION_PENDING", "DECISION_RECORDED"]},
+    "substantive_outcome": {"enum": [null, "ELIGIBLE", "REQUIRES_BLIND_ADJUDICATION", "INELIGIBLE_CLEAN_H1_AUTHOR"]},
+    "adjudication_state": {"enum": ["NOT_STARTED", "PENDING_FUTURE_AUTHORIZATION", "INITIAL_JUDGMENTS_RECORDED", "DISAGREEMENT_PRESERVED", "RESOLUTION_RECORDED", "CLOSED_WITHOUT_RESOLUTION"]},
+    "role_access_state": {"enum": ["NO_ACCESS", "BLOCKED_EVIDENCE_INCOMPLETE", "BLOCKED_EVIDENCE_CONFLICT", "BLOCKED_PENDING_ADJUDICATION", "BLOCKED_INELIGIBLE", "STRUCTURALLY_CONSISTENT_NOT_AUTHORIZED"]},
+    "custody_receipts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["receipt_id", "event_id", "sha256"],
+        "properties": {
+          "receipt_id": {"type": "string", "pattern": "^SYN-P1-RCPT-[0-9]{4}$"},
+          "event_id": {"type": "string", "pattern": "^SYN-P1-EVT-[0-9]{4}$"},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "supersession": {
+      "oneOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["prior_package_id", "prior_version", "reason_class"],
+          "properties": {
+            "prior_package_id": {"type": "string", "pattern": "^SYN-P1-EVID-[0-9]{4}$"},
+            "prior_version": {"type": "integer", "minimum": 1},
+            "reason_class": {"enum": ["NEW_EVIDENCE", "CONFLICT_RECORDED", "CUSTODY_CORRECTION", "AUTHORIZED_REVIEW"]}
+          }
+        }
+      ]
+    },
+    "human_action_occurred": {"const": false},
+    "real_person_record": {"const": false}
+  }
+}

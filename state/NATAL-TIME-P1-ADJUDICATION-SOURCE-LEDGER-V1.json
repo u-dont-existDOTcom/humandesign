@@ -1,0 +1,306 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-p1-adjudication-source-ledger-v1",
+  "status": "CHECKPOINT12_BOUNDED_SCAN_COMPLETE_NO_METHOD_SELECTED",
+  "primary_traceability_requirement_id": "P1A-11",
+  "conception_commit": "7d914af30bfe4c4817692067f8e4471f3c3e3987",
+  "conception_document_sha256": "40e32809fa8f882394414aa6e412ec6f90f5eed3392395fd1f3da34475c3d8b1",
+  "conception_state_sha256": "91a3421fa7241d08478a8705a1a964170da242558ec8ed603d2db08b078ab799",
+  "scan_started_after_conception_commit": true,
+  "search_date": "2026-08-31",
+  "retrieval_boundary": "PUBLIC_WEB_PRIMARY_OR_OFFICIAL_SOURCES_ONLY_WHERE_AVAILABLE",
+  "queries": [
+    {"sequence": 1, "query": "site:fda.gov clinical endpoint adjudication committee blinded independent charter guidance", "date": "2026-08-31"},
+    {"sequence": 2, "query": "site:ema.europa.eu blinded endpoint adjudication committee guideline clinical trials", "date": "2026-08-31"},
+    {"sequence": 3, "query": "site:icmje.org disclosure conflicts of interest recommendations authors contributors", "date": "2026-08-31"},
+    {"sequence": 4, "query": "site:ori.hhs.gov recusal conflict of interest research integrity adjudication", "date": "2026-08-31"},
+    {"sequence": 5, "query": "inter-rater reliability qualitative eligibility adjudication disagreement resolution primary research paper", "date": "2026-08-31"},
+    {"sequence": 6, "query": "blinded independent adjudication committee disagreement resolution study reliability", "date": "2026-08-31"},
+    {"sequence": 7, "query": "double blind peer review bias randomized trial author identity primary study", "date": "2026-08-31"},
+    {"sequence": 8, "query": "masked review conflict of interest recusal independent judgment protocol study", "date": "2026-08-31"},
+    {"sequence": 9, "query": "group brainstorming production blocking independent ideas before discussion experimental study", "date": "2026-08-31"},
+    {"sequence": 10, "query": "social influence undermines wisdom of crowds independent judgments PNAS experiment", "date": "2026-08-31"},
+    {"sequence": 11, "query": "nominal group technique independent idea generation versus interacting groups experiment", "date": "2026-08-31"},
+    {"sequence": 12, "query": "group discussion convergence independent judgments herding peer review randomized trial", "date": "2026-08-31"},
+    {"sequence": 13, "query": "site:eur-lex.europa.eu GDPR Article 5 data minimisation storage limitation accuracy official", "date": "2026-08-31"},
+    {"sequence": 14, "query": "site:nist.gov privacy framework data minimization governance records access control", "date": "2026-08-31"},
+    {"sequence": 15, "query": "selection bias excluding participants based on exposure belief expertise epidemiology paper", "date": "2026-08-31"},
+    {"sequence": 16, "query": "theory conditioned self description demand characteristics experiment self report prior knowledge", "date": "2026-08-31"},
+    {"sequence": 17, "query": "site:ori.hhs.gov research misconduct appeals recusal records protocol deviation preservation", "date": "2026-08-31"},
+    {"sequence": 18, "query": "site:publicationethics.org appeals complaints recusal editorial decisions guidelines", "date": "2026-08-31"},
+    {"sequence": 19, "query": "negative disputed eligibility determinations audit trail append only research records guidance", "date": "2026-08-31"},
+    {"sequence": 20, "query": "site:clinicaltrials.gov results reporting negative inconclusive studies preservation policy", "date": "2026-08-31"},
+    {"sequence": 21, "query": "site:ema.europa.eu ICH E6 R3 guideline good clinical practice 2025 endpoint adjudication committee", "date": "2026-08-31"},
+    {"sequence": 22, "query": "site:fda.gov independent review committee charter blinding disagreement resolution clinical trial guidance", "date": "2026-08-31"},
+    {"sequence": 23, "query": "inter-rater reliability agreement reporting guideline GRRAS primary paper", "date": "2026-08-31"},
+    {"sequence": 24, "query": "conflict of interest disclosure can increase bias strategic exaggeration randomized experiment", "date": "2026-08-31"}
+  ],
+  "query_count": 24,
+  "retrieval_notes": [
+    "Queries 13 through 16 were repeated in smaller batches after an earlier combined result was truncated; the exact query text did not change.",
+    "An EMA draft PDF returned HTTP 429 on direct open; the current official EMA guideline page and indexed official document metadata were used instead.",
+    "No query contained a construct name, instrument name, target-domain mapping term, human-facing screening wording, or real-person identifier."
+  ],
+  "sources": [
+    {
+      "source_id": "SRC-01",
+      "title": "ICMJE: Disclosure of Financial and Non-Financial Relationships and Activities, and Conflicts of Interest",
+      "url": "https://www.icmje.org/recommendations/browse/roles-and-responsibilities/author-responsibilities--conflicts-of-interest.html",
+      "publisher": "International Committee of Medical Journal Editors",
+      "version_or_date": "current page retrieved 2026-08-31",
+      "eligibility_decision": "ELIGIBLE",
+      "reason": "Official current guidance distinguishing disclosure from automatic problematic influence and describing intellectual interests and recusal."
+    },
+    {
+      "source_id": "SRC-02",
+      "title": "ICMJE: Defining the Role of Authors and Contributors",
+      "url": "https://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html",
+      "publisher": "International Committee of Medical Journal Editors",
+      "version_or_date": "current page retrieved 2026-08-31",
+      "eligibility_decision": "ELIGIBLE",
+      "reason": "Official role, accountability, contribution, and authorship-change guidance."
+    },
+    {
+      "source_id": "SRC-03",
+      "title": "ICH E6 Good clinical practice - Scientific guideline",
+      "url": "https://www.ema.europa.eu/en/ich-e6-good-clinical-practice-scientific-guideline",
+      "publisher": "European Medicines Agency",
+      "version_or_date": "ICH E6(R3) Principles and Annex 1 effective 2025-07-23; page retrieved 2026-08-31",
+      "eligibility_decision": "ELIGIBLE",
+      "reason": "Current official source for prespecified roles, records, quality, and blinded committee governance."
+    },
+    {
+      "source_id": "SRC-04",
+      "title": "Guideline on Data Monitoring Committees",
+      "url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-data-monitoring-committees_en.pdf",
+      "publisher": "European Medicines Agency",
+      "version_or_date": "official guideline retrieved 2026-08-31",
+      "eligibility_decision": "ELIGIBLE",
+      "reason": "Official guidance on independence, blinded assessment, conflicts, and limits of committee value."
+    },
+    {
+      "source_id": "SRC-05",
+      "title": "Clinical Trial Endpoints for the Approval of Cancer Drugs and Biologics",
+      "url": "https://www.fda.gov/media/71195/download",
+      "publisher": "U.S. Food and Drug Administration",
+      "version_or_date": "December 2018",
+      "eligibility_decision": "ELIGIBLE",
+      "reason": "Official guidance on independent review, charters, storage, audit procedures, and disagreement resolution."
+    },
+    {
+      "source_id": "SRC-06",
+      "title": "Guidance for Clinical Trial Sponsors: Establishment and Operation of Clinical Trial Data Monitoring Committees",
+      "url": "https://www.fda.gov/media/75398/download",
+      "publisher": "U.S. Food and Drug Administration",
+      "version_or_date": "March 2006; current FDA-hosted guidance retrieved 2026-08-31",
+      "eligibility_decision": "ELIGIBLE",
+      "reason": "Official role-separation, confidentiality, conflict, charter, and bias-minimization guidance."
+    },
+    {
+      "source_id": "SRC-07",
+      "title": "Federal Research Misconduct Policy",
+      "url": "https://ori.hhs.gov/federal-research-misconduct-policy",
+      "publisher": "U.S. Office of Research Integrity",
+      "version_or_date": "federal policy page retrieved 2026-08-31",
+      "eligibility_decision": "ELIGIBLE",
+      "reason": "Official separation of inquiry, investigation, adjudication, and appeal, with objectivity and conflict controls."
+    },
+    {
+      "source_id": "SRC-08",
+      "title": "PHS Policies on Research Misconduct - 42 CFR Part 93",
+      "url": "https://ori.hhs.gov/public-health-service-phs-policies-research-misconduct-%E2%80%93-42-cfr-part-93-%E2%80%93-june-2005",
+      "publisher": "U.S. Office of Research Integrity",
+      "version_or_date": "June 2005 regulation page retrieved 2026-08-31",
+      "eligibility_decision": "ELIGIBLE",
+      "reason": "Official requirements for evidence custody, comments, complete records, retention, findings, and appeals."
+    },
+    {
+      "source_id": "SRC-09",
+      "title": "Sample Policies and Procedures for Addressing Allegations of Research Misconduct",
+      "url": "https://ori.hhs.gov/sites/default/files/2025-06/Sample%20Policies%20and%20Procedures_final.pdf",
+      "publisher": "U.S. Office of Research Integrity",
+      "version_or_date": "2025-06-04",
+      "eligibility_decision": "ELIGIBLE",
+      "reason": "Current official sample structure for indexed records, decisions, appeals, and unrelied-on evidence descriptions."
+    },
+    {
+      "source_id": "SRC-10",
+      "title": "NIST Privacy Framework: A Tool for Improving Privacy through Enterprise Risk Management",
+      "url": "https://csrc.nist.gov/pubs/cswp/10/nist-privacy-framework-version-10/final",
+      "publisher": "National Institute of Standards and Technology",
+      "version_or_date": "Version 1.0, 2020-01-16",
+      "eligibility_decision": "ELIGIBLE",
+      "reason": "Official data minimization, lifecycle, role, access, audit-log, and accountability framework."
+    },
+    {
+      "source_id": "SRC-11",
+      "title": "Regulation (EU) 2016/679, Article 5",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R0679",
+      "publisher": "European Union",
+      "version_or_date": "Regulation 2016/679; consolidated official text retrieved 2026-08-31",
+      "eligibility_decision": "ELIGIBLE",
+      "reason": "Primary law stating purpose limitation, data minimization, accuracy, storage limitation, and accountability principles."
+    },
+    {
+      "source_id": "SRC-12",
+      "title": "Guidelines for Reporting Reliability and Agreement Studies (GRRAS) were proposed",
+      "url": "https://doi.org/10.1016/j.ijnurstu.2011.01.016",
+      "publisher": "International Journal of Nursing Studies",
+      "version_or_date": "2011; 48(6):661-671",
+      "eligibility_decision": "ELIGIBLE",
+      "reason": "Primary reporting guideline explaining agreement as error/consistency evidence and requiring transparent design reporting."
+    },
+    {
+      "source_id": "SRC-13",
+      "title": "Added Value of a Blinded Outcome Adjudication Committee in an Open-Label Randomized Stroke Trial",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8700318/",
+      "publisher": "Stroke",
+      "version_or_date": "2021-10-05; issue 2022-01",
+      "eligibility_decision": "ELIGIBLE",
+      "reason": "Primary evaluation of independent masked judgments, third-adjudicator resolution, and limited added value in one context."
+    },
+    {
+      "source_id": "SRC-14",
+      "title": "A randomized comparison of masked and unmasked peer review",
+      "url": "https://jamanetwork.com/journals/jama/fullarticle/187748",
+      "publisher": "JAMA",
+      "version_or_date": "primary randomized study; retrieved 2026-08-31",
+      "eligibility_decision": "ELIGIBLE",
+      "reason": "Direct experimental evidence that masking is not a universal review-quality or error-detection improvement."
+    },
+    {
+      "source_id": "SRC-15",
+      "title": "Randomized trial of masking reviewers to author identity",
+      "url": "https://jamanetwork.com/journals/jama/fullarticle/187758",
+      "publisher": "JAMA",
+      "version_or_date": "primary randomized study; retrieved 2026-08-31",
+      "eligibility_decision": "ELIGIBLE",
+      "reason": "Independent direct evidence on the limits of identity masking."
+    },
+    {
+      "source_id": "SRC-16",
+      "title": "Double-blind review and prestige bias at WSDM",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5715744/",
+      "publisher": "Proceedings of the National Academy of Sciences",
+      "version_or_date": "2017",
+      "eligibility_decision": "ELIGIBLE",
+      "reason": "Primary real-venue evidence that identity information can affect judgments, supporting explicit masking metadata."
+    },
+    {
+      "source_id": "SRC-17",
+      "title": "How Social Influence Can Undermine the Wisdom of Crowd Effect",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3107299/",
+      "publisher": "Proceedings of the National Academy of Sciences",
+      "version_or_date": "2011",
+      "eligibility_decision": "ELIGIBLE",
+      "reason": "Primary experiment showing narrowed diversity after social information exposure."
+    },
+    {
+      "source_id": "SRC-18",
+      "title": "Network structure and social information can improve collective intelligence",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5495222/",
+      "publisher": "Proceedings of the National Academy of Sciences",
+      "version_or_date": "2017",
+      "eligibility_decision": "ELIGIBLE",
+      "reason": "Primary counterevidence showing that social information is not uniformly harmful."
+    },
+    {
+      "source_id": "SRC-19",
+      "title": "Does group discussion induce herding in peer review? A randomized controlled trial",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10337975/",
+      "publisher": "PLOS ONE",
+      "version_or_date": "2023",
+      "eligibility_decision": "ELIGIBLE",
+      "reason": "Primary randomized evidence distinguishing observed convergence from causal herding."
+    },
+    {
+      "source_id": "SRC-20",
+      "title": "The Effects of Demand Characteristics on Research Participant Behaviours in Non-Laboratory Settings: A Systematic Review",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3378517/",
+      "publisher": "PLOS ONE",
+      "version_or_date": "2012",
+      "eligibility_decision": "ELIGIBLE_WITH_LIMITATIONS",
+      "reason": "Directly relevant synthesis, but heterogeneous constructs and limited high-quality primary evidence prevent operational reuse."
+    },
+    {
+      "source_id": "SRC-21",
+      "title": "Personal exposure assessment studies may suffer from exposure-relevant selection bias",
+      "url": "https://www.nature.com/articles/7500088",
+      "publisher": "Journal of Exposure Science & Environmental Epidemiology",
+      "version_or_date": "2000; 10:251-266",
+      "eligibility_decision": "ELIGIBLE_WITH_LIMITATIONS",
+      "reason": "Primary demonstration that selection correlated with exposure-relevant characteristics can distort a sample; domain differs."
+    },
+    {
+      "source_id": "SRC-22",
+      "title": "The Dirt on Coming Clean: Perverse Effects of Disclosing Conflicts of Interest",
+      "url": "https://doi.org/10.1086/426699",
+      "publisher": "The Journal of Legal Studies",
+      "version_or_date": "2005; 34(1)",
+      "eligibility_decision": "ELIGIBLE_WITH_LIMITATIONS",
+      "reason": "Primary experiments showing disclosure alone can be insufficient or counterproductive; advisory setting differs."
+    },
+    {
+      "source_id": "SRC-23",
+      "title": "HHS HIPAA Audit Protocol - disputed amendment recordkeeping",
+      "url": "https://www.hhs.gov/hipaa/for-professionals/compliance-enforcement/audit/protocol/index.html",
+      "publisher": "U.S. Department of Health and Human Services",
+      "version_or_date": "updated July 2018; retrieved 2026-08-31",
+      "eligibility_decision": "ELIGIBLE_FOR_STRUCTURAL_ANALOGY_ONLY",
+      "reason": "Official append-or-link treatment of requests, denials, disagreement, and rebuttal; not a P1 evidence rule."
+    },
+    {
+      "source_id": "SRC-24",
+      "title": "Clinical Trial Reporting Requirements",
+      "url": "https://clinicaltrials.gov/policy/reporting-requirements",
+      "publisher": "ClinicalTrials.gov / U.S. National Library of Medicine",
+      "version_or_date": "current policy page retrieved 2026-08-31",
+      "eligibility_decision": "ELIGIBLE_FOR_PRESERVATION_PRINCIPLE_ONLY",
+      "reason": "Official prospective registration and results-reporting structure supports nonselective record preservation, not P1 classification."
+    },
+    {
+      "source_id": "EXC-01",
+      "title": "Wikipedia and general explainer pages",
+      "url": "https://en.wikipedia.org/wiki/Demand_characteristics",
+      "publisher": "various",
+      "version_or_date": "search results retrieved 2026-08-31",
+      "eligibility_decision": "EXCLUDED",
+      "reason": "Secondary summaries were unnecessary because primary papers and official guidance were available."
+    },
+    {
+      "source_id": "EXC-02",
+      "title": "Reddit discussion results",
+      "url": "https://www.reddit.com/r/AcademicPsychology/comments/nujux1/",
+      "publisher": "Reddit",
+      "version_or_date": "search results retrieved 2026-08-31",
+      "eligibility_decision": "EXCLUDED",
+      "reason": "Informal commentary cannot support scientific or governance claims in this scan."
+    },
+    {
+      "source_id": "EXC-03",
+      "title": "Draft ICH E6(R3) Step 2b",
+      "url": "https://www.ema.europa.eu/en/documents/scientific-guideline/draft-ich-e6-r3-guideline-good-clinical-practice-gcp-step-2b_en.pdf",
+      "publisher": "European Medicines Agency",
+      "version_or_date": "2023 draft",
+      "eligibility_decision": "EXCLUDED_SUPERSEDED",
+      "reason": "The current effective EMA ICH E6(R3) source was available; direct draft retrieval also returned HTTP 429."
+    },
+    {
+      "source_id": "EXC-04",
+      "title": "The Two-Process Theory of Machine Self-Report",
+      "url": "https://arxiv.org/abs/2607.20082",
+      "publisher": "arXiv",
+      "version_or_date": "2026 preprint",
+      "eligibility_decision": "EXCLUDED_OUT_OF_SCOPE",
+      "reason": "Model self-report is not human semantic-contamination or adjudication evidence."
+    }
+  ],
+  "included_source_count": 24,
+  "excluded_source_count": 4,
+  "construct_specific_search_count": 0,
+  "mapping_search_count": 0,
+  "human_facing_wording_search_count": 0,
+  "method_or_threshold_selected": false,
+  "author_or_adjudicator_configuration_selected": false,
+  "human_action_authorized": false
+}

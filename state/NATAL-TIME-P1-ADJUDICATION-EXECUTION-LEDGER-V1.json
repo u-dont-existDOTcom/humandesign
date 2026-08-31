@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-p1-adjudication-execution-ledger-v1",
+  "status": "CHECKPOINT12_IMPLEMENTED_FINAL_VERIFICATION_PENDING",
+  "primary_traceability_requirement_id": "P1A-48",
+  "branch": "codex/astrohd-relationship-continuation",
+  "checkpoint11_accepted_implementation_commit": "f63d1f3aed410dfcc457e4cc07b0771fd12a9485",
+  "checkpoint11_documentation_commit": "a0d0ff2d017767cf5f307a9ac2bff7b9035bcee0",
+  "checkpoint12_conception_commit": "7d914af30bfe4c4817692067f8e4471f3c3e3987",
+  "chronology": [
+    {"sequence": 1, "event": "PRO_AUTHORIZED_CHECKPOINT12", "result": "RECORDED"},
+    {"sequence": 2, "event": "SOURCE_FREE_CONCEPTION_FROZEN_IN_IMMUTABLE_COMMIT", "result": "RECORDED"},
+    {"sequence": 3, "event": "BOUNDED_METHODS_SCAN_PERFORMED", "result": "RECORDED"},
+    {"sequence": 4, "event": "METHOD_FAMILIES_CLASSIFIED_WITHOUT_SELECTION", "result": "RECORDED"},
+    {"sequence": 5, "event": "CONTENT_FREE_DECISION_ARCHITECTURE_IMPLEMENTED", "result": "RECORDED"},
+    {"sequence": 6, "event": "SYNTHETIC_TEST_ONLY_VALIDATION_ADDED", "result": "RECORDED"}
+  ],
+  "corrected_commands": [
+    {
+      "attempt": "python -m ruff check tests/p1_adjudication/validator.py",
+      "failure_class": "MODULE_NOT_ON_SYSTEM_PYTHON_PATH",
+      "correction": ".venv/bin/ruff check tests/p1_adjudication/validator.py",
+      "scope_effect": "NONE"
+    },
+    {
+      "attempt": "COMBINED_SEARCH_BATCH_FOR_QUERIES_13_THROUGH_16",
+      "failure_class": "SEARCH_OUTPUT_TRUNCATED",
+      "correction": "REPEATED_EXACT_QUERIES_IN_SMALLER_BATCHES",
+      "scope_effect": "NONE"
+    },
+    {
+      "attempt": "PYTHONPATH_UNSET_FOCUSED_PYTEST_INVOCATION",
+      "failure_class": "LOCAL_TEST_PACKAGE_IMPORT_NOT_RESOLVED",
+      "correction": "PYTHONPATH=. .venv/bin/pytest -q WITH_THE_EXACT_FOCUSED_PATHS",
+      "scope_effect": "NONE"
+    },
+    {
+      "attempt": "npm test",
+      "failure_class": "WRONG_REPOSITORY_TEST_RUNNER_NO_PACKAGE_JSON",
+      "correction": ".venv/bin/python -m pytest -q",
+      "scope_effect": "NONE"
+    },
+    {
+      "attempt": ".venv/bin/python -m pytest -q ON_DIRTY_IMPLEMENTATION_TREE",
+      "failure_class": "ONLY_21_EXPECTED_CLEAN_TREE_CLOSURE_ERRORS_AFTER_722_PASSES",
+      "correction": "COMMIT_AUTHORIZED_LOCAL_CHILD_THEN_RERUN_FROM_CLEAN_HEAD",
+      "scope_effect": "NONE"
+    }
+  ],
+  "verification": {
+    "focused_tests": "PENDING",
+    "full_tests": "PENDING",
+    "strict_mypy": "PENDING",
+    "exact_ruff": "PENDING",
+    "privacy_history_build": "PENDING",
+    "tracked_json_parse": "PENDING",
+    "manifest_hashes": "PENDING",
+    "protected_artifact_identity": "PENDING",
+    "production_source_no_diff": "PENDING",
+    "git_diff_check": "PENDING",
+    "clean_tree": "PENDING"
+  },
+  "prohibited_actions": {
+    "human_action": false,
+    "human_facing_wording": false,
+    "real_person_assessment": false,
+    "construct_or_instrument_work": false,
+    "construct_specific_search": false,
+    "mapping": false,
+    "production_source_change": false,
+    "external_mutation": false,
+    "push": false,
+    "merge": false,
+    "railway_mutation_or_secret_access": false,
+    "deploy": false,
+    "publication_or_release": false
+  },
+  "worker_to_contract_alignment": "GREEN_PENDING_FINAL_VERIFICATION",
+  "contract_to_owner_alignment": "PARTIAL_ROOT_OPEN",
+  "bounded_policy_to_owner_alignment": "MATCH",
+  "completion_claim": "WORKING",
+  "operational_alignment": "PASS_PENDING_FINAL_EXACT_HEAD_GATES",
+  "scientific_adequacy": "WARN",
+  "release_adequacy": "NOT_APPLICABLE",
+  "release_permission": false,
+  "parent_outcome": "OPEN",
+  "root_completion": false,
+  "next_action": "FINAL_EXACT_HEAD_VERIFICATION_THEN_EXISTING_PRO_LANE_REVIEW"
+}

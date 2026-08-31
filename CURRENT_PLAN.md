@@ -245,10 +245,17 @@ Pro returned `OWNER DECISION REQUIRED: NO` and accepted checkpoint 11 at 60/60. 
 `CHECKPOINT-12 — P1 BLIND-ADJUDICATION AND H1 AUTHOR-CONFIGURATION DECISION ARCHITECTURE ONLY`, a
 local, reversible, pre-human, content-free child. The authoritative contract is
 `docs/PRO_SUPERVISION_S6_H1_CHECKPOINT12_CONTRACT_20260831.md`. The required source-free conception
-artifacts are prepared for the mandatory pre-search freeze. After their immutable commit, the
-bounded methods scan may begin; no human-facing rule, selected method/configuration, human action,
-construct/instrument content, construct-specific search, mapping, production/external mutation,
-push, merge, deployment, publication, or release is authorized.
+artifacts were frozen before search in commit `7d914af30bfe4c4817692067f8e4471f3c3e3987`. The
+bounded 24-query methods scan and content-free architecture are implemented locally. They preserve
+P1's exposure/familiarity/self-concept/derivation distinctions, separate evidence custody, blind
+adjudication, clean authorship, protected-content custody, reliability, and later mapping roles,
+and represent single-author, independent-pair, and independent-panel families without selecting
+one. Closed synthetic metadata and a test-only schema validator contain no human classifier.
+Human-facing wording, evidence standards, adjudicators, disagreement/appeal procedures, counts,
+population, recruitment, burden, compensation, budget, timeline, retention, human activity,
+construct work, mapping, production/external mutation, push, merge, deployment, publication, and
+release remain unselected or prohibited. Final exact-head verification and return to the same Pro
+lane are in progress.
 
 Option B remains a design-only prerequisite screen. It does not authorize live execution,
 measurement content, participant software, empirical data, or progression to rectification.

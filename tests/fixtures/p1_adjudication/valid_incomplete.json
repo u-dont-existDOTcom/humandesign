@@ -1,0 +1,35 @@
+{
+  "schema_version": "NATAL-TIME-P1-EVIDENCE-CLASSIFICATION-V1",
+  "record_class": "CONSPICUOUSLY_SYNTHETIC_P1_EVIDENCE_PACKAGE",
+  "synthetic_case_id": "SYN-P1-CASE-0001",
+  "evidence_package": {
+    "package_id": "SYN-P1-EVID-0001",
+    "version": 1,
+    "custody_state": "REGISTERED"
+  },
+  "exposure_provenance": ["UNKNOWN"],
+  "familiarity": {
+    "semantic": "UNKNOWN",
+    "technical": "UNKNOWN",
+    "ontology_reproduction": "UNKNOWN"
+  },
+  "self_concept_integration_state": "UNKNOWN",
+  "intentional_derivation_risk_state": "UNKNOWN",
+  "evidence_completeness_state": "INCOMPLETE",
+  "evidence_conflict_state": "NOT_EVALUATED",
+  "non_dispositive_metadata_classes": [],
+  "process_state": "EVIDENCE_INCOMPLETE",
+  "substantive_outcome": null,
+  "adjudication_state": "NOT_STARTED",
+  "role_access_state": "BLOCKED_EVIDENCE_INCOMPLETE",
+  "custody_receipts": [
+    {
+      "receipt_id": "SYN-P1-RCPT-0001",
+      "event_id": "SYN-P1-EVT-0001",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    }
+  ],
+  "supersession": null,
+  "human_action_occurred": false,
+  "real_person_record": false
+}
