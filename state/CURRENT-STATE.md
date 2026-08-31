@@ -1,5 +1,9 @@
 # Current state
 
+> **Superseded task routing (2026-08-31):** For the active relationship/AstroHD continuation,
+> use `state/RELATIONSHIP-ASTROHD-CURRENT-STATE.md` and GitHub issue #18. The older Pro-checkpoint
+> next action retained below is historical and must not be resumed.
+
 - As of: `2026-08-31 10:11 UTC`
 - Task ID: `astrohd-relationship-continuation-20260830`
 - Goal: continue the relationship/AstroHD program under the blocking Brave + ChatGPT Pro supervision contract in `docs/RELATIONSHIP_RESEARCH_HANDOFF.md`, beginning with the separate natal-first `Find my birth-time window` priority unless supervision changes the sequence.
