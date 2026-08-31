@@ -93,6 +93,7 @@ _HTML = r"""<!doctype html>
       </select>
 
       <label class="check"><input id="storageConsent" type="checkbox" required><span>I consent to private storage of my exact birth data and interview evidence for this owner pilot.</span></label>
+      <label class="check"><input id="openAIConsent" type="checkbox" required><span>I consent to my questionnaire answers and the birth-redacted prediction comparison being processed by OpenAI in the private AstroHD interviewer. My exact birth record and raw chart stay on this trusted site.</span></label>
       <label class="check"><input id="developmentConsent" type="checkbox"><span>I also permit this case to be considered for a future deidentified development dataset. This is optional and does not automatically update the current model.</span></label>
 
       <button id="submitButton" type="submit">Freeze predictions and create my session</button>
@@ -122,15 +123,19 @@ function apiErrorMessage(problem,fallback){
 function showStatus(message,isError=false){statusBox.classList.remove('hidden','error');if(isError)statusBox.classList.add('error');statusBox.textContent=message}
 function readTwoDigit(id,max,label,optional=false){const text=document.getElementById(id).value.trim();if(optional&&!text)return 0;if(!/^\d{1,2}$/.test(text))throw new Error('Enter '+label+' as a number.');const value=Number(text);if(value>max)throw new Error('Enter '+label+' from 00 to '+String(max).padStart(2,'0')+'.');return value}
 function localDateTime(){const date=document.getElementById('birthDate').value;if(!date)throw new Error('Enter your local birth date.');const hour=readTwoDigit('birthHour',23,'birth hour');const minute=readTwoDigit('birthMinute',59,'birth minute');const second=readTwoDigit('birthSecond',59,'birth second',true);return date+'T'+String(hour).padStart(2,'0')+':'+String(minute).padStart(2,'0')+':'+String(second).padStart(2,'0')}
-function showSession(sessionId){
+function showSession(sessionId,sessionToken){
   submitButton.disabled=true;submitButton.textContent='Session created';
   statusBox.classList.remove('hidden','error');statusBox.textContent='';
   const heading=document.createElement('strong');heading.textContent='Your sealed session is ready.';
-  const code=document.createElement('code');code.textContent=sessionId;
-  const note=document.createElement('p');note.textContent='Open the interviewer and paste only this code. Do not paste your birth data or chart into that chat.';
-  statusBox.append(heading,code,note);
+  const sessionLabel=document.createElement('p');sessionLabel.textContent='Session ID';
+  const sessionCode=document.createElement('code');sessionCode.textContent=sessionId;
+  const tokenLabel=document.createElement('p');tokenLabel.textContent='Private session token';
+  const tokenCode=document.createElement('code');tokenCode.textContent=sessionToken;
+  const note=document.createElement('p');note.textContent='Copy both values into the interviewer. Do not paste your birth data or chart. The token is shown once and is stored here only as a SHA-256 digest.';
+  statusBox.append(heading,sessionLabel,sessionCode,tokenLabel,tokenCode,note);
   if(interviewerUrl){const link=document.createElement('a');link.className='button';link.href=interviewerUrl;link.target='_blank';link.rel='noopener';link.textContent='Open the AstroHD interviewer';statusBox.append(link)}
   else{const pending=document.createElement('p');pending.className='note';pending.textContent='The interviewer link is not configured yet. Keep this code private.';statusBox.append(pending)}
+  const result=document.createElement('a');result.className='button';result.href='./result';result.textContent='Open trusted result page after the interview';statusBox.append(result)
 }
 document.getElementById('searchButton').addEventListener('click',async()=>{
   const query=document.getElementById('placeQuery').value.trim();if(query.length<2)return showStatus('Enter a city or place to search.',true);
@@ -141,6 +146,7 @@ document.getElementById('searchButton').addEventListener('click',async()=>{
 form.addEventListener('submit',async event=>{
   event.preventDefault();
   if(!document.getElementById('storageConsent').checked)return showStatus('Private-storage consent is required for this pilot.',true);
+  if(!document.getElementById('openAIConsent').checked)return showStatus('Consent to the birth-redacted OpenAI interview is required.',true);
   if(!selectedPlace)return showStatus('Search for and select your birthplace.',true);
   const pilotCode=document.getElementById('pilotCode').value;
   if(!pilotCode)return showStatus('Enter the owner pilot access code.',true);
@@ -149,25 +155,85 @@ form.addEventListener('submit',async event=>{
   const body={local_datetime,birthplace:selectedPlace.display_name,iana_timezone:selectedPlace.iana_timezone,fold:foldValue===''?null:Number(foldValue),mode:'scientific_blind',ranking_scope:'known_birth_month'};
   submitButton.disabled=true;submitButton.textContent='Loading and freezing predictions…';showStatus('Creating the session from the verified candidate cache before any answer is accepted. This normally takes only a few seconds.');
   try{
-    const response=await fetch('./v1/participant-sessions',{method:'POST',headers:{'content-type':'application/json','x-astrohd-pilot-token':pilotCode,'x-astrohd-storage-consent':'yes','x-astrohd-development-consent':document.getElementById('developmentConsent').checked?'yes':'no'},body:JSON.stringify(body)});
+    const response=await fetch('./v1/participant-sessions',{method:'POST',headers:{'content-type':'application/json','x-astrohd-pilot-token':pilotCode,'x-astrohd-storage-consent':'yes','x-astrohd-openai-consent':'yes','x-astrohd-development-consent':document.getElementById('developmentConsent').checked?'yes':'no'},body:JSON.stringify(body)});
     const payload=await response.json();if(!response.ok)throw new Error(apiErrorMessage(payload,'Could not create the natal session.'));
-    document.getElementById('pilotCode').value='';localStorage.setItem('astrohd_owner_session',payload.session_id);showSession(payload.session_id)
+    document.getElementById('pilotCode').value='';showSession(payload.session_id,payload.session_token)
   }catch(error){showStatus(error instanceof Error?error.message:'Could not create the natal session.',true);submitButton.disabled=false;submitButton.textContent='Freeze predictions and create my session'}
 });
-const savedSession=localStorage.getItem('astrohd_owner_session');if(savedSession)showSession(savedSession);
 </script>
 </body>
 </html>
 """
 
+_RESULT_HTML = r"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AstroHD trusted result</title>
+  <style>
+    :root { color-scheme:light; --ink:#1f2933; --muted:#52606d; --line:#cbd2d9; --soft:#f5f7fa; --accent:#2f5d62; --danger:#a61b1b; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); font:16px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    main { width:min(48rem,calc(100% - 2rem)); margin:2.5rem auto 5rem; }
+    h1 { font-size:clamp(2rem,7vw,3.2rem); line-height:1.05; letter-spacing:-.035em; }
+    form,.card { padding:1.1rem; border:1px solid var(--line); border-radius:.75rem; margin:1rem 0; }
+    label { display:block; margin:.8rem 0; font-weight:700; }
+    input,button { width:100%; min-height:2.75rem; margin-top:.3rem; padding:.7rem .8rem; border:1px solid #9aa5b1; border-radius:.45rem; font:inherit; }
+    button { border-color:var(--accent); background:var(--accent); color:#fff; font-weight:750; cursor:pointer; }
+    button:disabled { opacity:.55; }
+    .note { color:var(--muted); }
+    .status { padding:.85rem; background:var(--soft); }
+    .error { color:var(--danger); border:1px solid #e8a1a1; background:#fff5f5; }
+    .hidden { display:none; }
+    dl { display:grid; grid-template-columns:max-content 1fr; gap:.35rem .8rem; }
+    dt { font-weight:750; } dd { margin:0; overflow-wrap:anywhere; }
+    pre { white-space:pre-wrap; overflow-wrap:anywhere; background:var(--soft); padding:.8rem; }
+  </style>
+</head>
+<body><main>
+  <p class="note">Trusted same-origin result</p>
+  <h1>See the complete frozen AstroHD result</h1>
+  <p>Your external interviewer receives the prediction comparison and ranks, but not your exact birth record or raw chart. Enter the two values created by the intake to view those sensitive details here.</p>
+  <form id="resultForm">
+    <label for="sessionId">Session ID<input id="sessionId" autocomplete="off" required></label>
+    <label for="sessionToken">Private session token<input id="sessionToken" type="password" autocomplete="off" required></label>
+    <button id="loadButton" type="submit">Load my trusted result</button>
+  </form>
+  <div id="status" class="status hidden" role="status" aria-live="polite"></div>
+  <section id="result" class="hidden" aria-live="polite">
+    <div class="card"><h2>Confirmatory rank</h2><dl id="ranking"></dl></div>
+    <div class="card"><h2>Frozen predictions compared with answers</h2><div id="comparisons"></div></div>
+    <div class="card"><h2>Exact model receipt</h2><pre id="receipt"></pre></div>
+    <details class="card"><summary><strong>Sensitive birth record and raw chart</strong></summary><pre id="sensitive"></pre></details>
+  </section>
+<script>
+const form=document.getElementById('resultForm');const statusBox=document.getElementById('status');const result=document.getElementById('result');
+function apiErrorMessage(problem,fallback){if(problem&&typeof problem==='object'&&!Array.isArray(problem)&&problem.error)problem=problem.error;if(problem&&typeof problem==='object'&&!Array.isArray(problem)&&problem.detail!==undefined)problem=problem.detail;if(typeof problem==='string'&&problem.trim())return problem.trim();const root=problem&&typeof problem==='object'&&typeof problem.message==='string'?problem.message.trim():'';const issues=problem&&typeof problem==='object'&&Array.isArray(problem.issues)?problem.issues:(Array.isArray(problem)?problem:[]);const details=issues.map(item=>item&&typeof item==='object'?(item.message||item.msg||''):'').filter(Boolean);return details.join(' ')||root||fallback}
+function status(message,error=false){statusBox.classList.remove('hidden','error');if(error)statusBox.classList.add('error');statusBox.textContent=message}
+function addRow(list,label,value){const term=document.createElement('dt');term.textContent=label;const detail=document.createElement('dd');detail.textContent=String(value);list.append(term,detail)}
+function show(payload){
+  const rank=payload.confirmatory_ranking;const list=document.getElementById('ranking');list.textContent='';addRow(list,'True date rank',rank.true_date_rank+' of '+rank.candidate_date_count);addRow(list,'True state rank',rank.true_state_rank+' of '+rank.candidate_state_count);addRow(list,'Date percentile',rank.true_date_percentile);addRow(list,'State percentile',rank.true_state_percentile);addRow(list,'Top state ties',rank.top_state_tie_count);addRow(list,'Scientific status',rank.scientific_status);
+  const comparisons=document.getElementById('comparisons');comparisons.textContent='';payload.prediction_comparisons.forEach(item=>{const card=document.createElement('article');card.className='card';const title=document.createElement('h3');title.textContent=item.question_id+' · '+item.classification;const predicted=document.createElement('p');predicted.textContent='Frozen predicted answer: '+item.predicted_answer;const observed=document.createElement('p');observed.textContent='Observed answer: '+(item.observed_answer===null?'insufficient evidence':item.observed_answer);const statements=document.createElement('p');statements.textContent=(item.behavioral_statements||[]).join(' ');card.append(title,predicted,observed,statements);comparisons.append(card)});
+  document.getElementById('receipt').textContent=JSON.stringify(payload.model_receipt,null,2);document.getElementById('sensitive').textContent=JSON.stringify({birth:payload.birth,chart:payload.chart},null,2);result.classList.remove('hidden');status('Result loaded from the private AstroHD store.');
+}
+form.addEventListener('submit',async event=>{event.preventDefault();const sessionId=document.getElementById('sessionId').value.trim();const token=document.getElementById('sessionToken').value.trim();if(!sessionId||!token)return status('Enter both the session ID and private session token.',true);const button=document.getElementById('loadButton');button.disabled=true;status('Loading the immutable reveal…');try{const response=await fetch('./trusted/v1/participant-sessions/'+encodeURIComponent(sessionId)+'/reveal',{method:'POST',headers:{'x-astrohd-session-token':token}});const payload=await response.json();if(!response.ok)throw new Error(apiErrorMessage(payload,'Could not load the result.'));show(payload)}catch(error){status(error instanceof Error?error.message:'Could not load the result.',true)}finally{button.disabled=false}});
+</script>
+</main></body></html>"""
+
 
 def render_natal_pilot_html(interviewer_url: str | None) -> str:
     """Render the static intake without allowing a configured URL to become markup."""
 
+    safe_url = json.dumps((interviewer_url or "").strip()).replace("<", "\\u003c")
     return _HTML.replace(
         "__INTERVIEWER_URL_JSON__",
-        json.dumps((interviewer_url or "").strip()),
+        safe_url,
     )
+
+
+def render_natal_result_html() -> str:
+    return _RESULT_HTML
 
 
 HTML = render_natal_pilot_html(None)

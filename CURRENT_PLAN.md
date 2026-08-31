@@ -68,11 +68,19 @@ AstroHD-first owner route. The local real-engine/browser smoke creates a sealed 
 session in about 8.6 seconds from an exact hash-pinned century-cache month slice.
 Details and scientific boundaries are in `docs/36_astrohd_owner_pilot.md`.
 
-Next: finish exact-diff Extra High review, choose a production-safe way to place the
-non-sensitive 28 MB verified cache on Railway without exposing credentials or bloating
-the repository unnecessarily, configure the private/unlisted Custom GPT interviewer
-link, and deploy only the bounded owner test. External participant sharing remains
-closed until the owner completes that smoke.
+The first exact-diff Extra High review required changes. The local repair set now
+requires a distinct high-entropy session token in addition to the opaque session ID,
+keeps exact birth/chart data out of the external interviewer responses, records exact
+OpenAI consent, rejects owner-pilot mode/scope changes, fails closed if the active
+source/model/mapping/question-bank/engine differs from the frozen session, preserves
+legacy reveal readability, and uses private filesystem modes.
+
+Next: verify this repair set and route its new exact head/diff back to Extra High;
+privately transfer the verified 28 MB cache into the Railway volume and prove its
+hashes plus restart persistence; configure the private/unlisted Custom GPT and its
+model receipt; then deploy and smoke only the bounded owner test. Do not publish the
+cache artifact. External participant sharing remains closed until the owner completes
+that smoke.
 
 ## Core hypothesis
 

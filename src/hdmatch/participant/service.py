@@ -48,6 +48,8 @@ class ParticipantBackend(Protocol):
         created_at_utc: datetime,
     ) -> PredictionFreeze: ...
 
+    def assert_freeze_compatible(self, freeze: PredictionFreeze) -> None: ...
+
     def rank(
         self,
         *,
@@ -202,6 +204,8 @@ class ParticipantSessionService:
             raise ParticipantStateError(
                 "adaptive confirmatory questions stop when evidence is locked"
             )
+        freeze = self.store.load_freeze(session_id)
+        self.backend.assert_freeze_compatible(freeze)
         records = tuple(
             record
             for record in self.store.load_evidence(session_id)
@@ -229,7 +233,6 @@ class ParticipantSessionService:
             )
         responses = self._latest_scoreable_responses(records)
         answered = frozenset(response.question_id for response in responses)
-        freeze = self.store.load_freeze(session_id)
         selected = self.backend.select_question(
             freeze=freeze,
             responses=responses,

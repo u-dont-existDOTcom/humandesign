@@ -18,6 +18,7 @@ from starlette.types import Message, Scope
 import hdmatch.api.relationship_public_app as relationship_base_app
 import hdmatch.api.relationship_launch_app as relationship_launch_app
 from hdmatch.api.natal_pilot_app import NatalPilotConfig, create_natal_pilot_app
+from hdmatch.api.natal_pilot_ui import render_natal_pilot_html
 from hdmatch.participant.models import BirthIntake, RankScope, SessionMode, SessionRecord
 from hdmatch.participant.service import ParticipantSessionService
 from hdmatch.runtime.century_cache import (
@@ -125,13 +126,18 @@ def _request(
 
 
 def _app(tmp_path: Path, sessions: FakeSessions, token: str = "owner-code") -> FastAPI:
-    template = "servers:\n  - url: https://YOUR_API_HOST\npaths:\n  /v1/x: {}\n"
+    template = (
+        "servers:\n  - url: https://YOUR_API_HOST\npaths:\n  /v1/x: {}\n"
+        "components:\n  parameters:\n    token:\n"
+        "      name: X-AstroHD-Session-Token\n      in: header\n"
+    )
     config = NatalPilotConfig(
         invite_token_sha256=hashlib.sha256(token.encode()).hexdigest(),
         invite_state_root=tmp_path / "invites",
         health_probe_root=tmp_path / "sessions" / ".health",
         public_base_url="https://example.test",
         interviewer_url="https://chatgpt.com/g/g-test-astrohd",
+        interviewer_model_receipt="custom-gpt-test-config:gpt-5.6",
         action_schema_template=template,
         runtime_receipt={
             "model_version": "test-model",
@@ -168,6 +174,27 @@ def test_intake_is_natal_first_explicit_time_and_truthfully_versioned(tmp_path: 
     assert "does not silently retrain" in response.text
     assert "developmental symbolic model" in response.text
     assert "https://chatgpt.com/g/g-test-astrohd" in response.text
+    assert 'id="openAIConsent"' in response.text
+    assert "exact birth record and raw chart stay on this trusted site" in response.text
+    assert "localStorage" not in response.text
+
+
+def test_interviewer_url_is_validated_and_script_escaped(tmp_path: Path) -> None:
+    with pytest.raises(ValueError, match="chatgpt.com"):
+        NatalPilotConfig(
+            invite_token_sha256="a" * 64,
+            invite_state_root=tmp_path / "invites",
+            health_probe_root=tmp_path / "health",
+            public_base_url="https://example.test",
+            interviewer_url="https://example.test/g/not-chatgpt",
+            interviewer_model_receipt="test",
+            action_schema_template="openapi: 3.1.0",
+            runtime_receipt={},
+        )
+
+    rendered = render_natal_pilot_html("https://chatgpt.com/g/test</script><script>alert(1)")
+    assert "</script><script>alert(1)" not in rendered
+    assert "\\u003c/script>" in rendered
 
 
 def test_single_use_invite_requires_consent_and_never_stores_raw_token(
@@ -178,15 +205,32 @@ def test_single_use_invite_requires_consent_and_never_stores_raw_token(
     headers = {
         "x-astrohd-pilot-token": "owner-code",
         "x-astrohd-storage-consent": "yes",
+        "x-astrohd-openai-consent": "yes",
         "x-astrohd-development-consent": "yes",
     }
+
+    missing_openai_consent = _request(
+        app,
+        "POST",
+        "/v1/participant-sessions",
+        body=_birth(),
+        headers={
+            "x-astrohd-pilot-token": "owner-code",
+            "x-astrohd-storage-consent": "yes",
+        },
+    )
+    assert missing_openai_consent.status_code == 400
+    assert not (tmp_path / "invites").exists()
 
     missing = _request(
         app,
         "POST",
         "/v1/participant-sessions",
         body=_birth(),
-        headers={"x-astrohd-storage-consent": "yes"},
+        headers={
+            "x-astrohd-storage-consent": "yes",
+            "x-astrohd-openai-consent": "yes",
+        },
     )
     assert missing.status_code == 403
     assert missing.json["error"]["message"] == "invalid or unavailable pilot access code"
@@ -200,13 +244,18 @@ def test_single_use_invite_requires_consent_and_never_stores_raw_token(
     )
     assert created.status_code == 200
     assert created.json["session_id"] == "HD-" + "A" * 32
+    session_token = str(created.json["session_token"])
+    assert len(session_token) >= 32
     assert len(sessions.created) == 1
 
     receipt_path = next((tmp_path / "invites").glob("*.json"))
     receipt = receipt_path.read_text(encoding="utf-8")
     assert "owner-code" not in receipt
+    assert session_token not in receipt
     assert '"consent_to_private_research_storage": true' in receipt
     assert '"consent_to_future_deidentified_model_development": true' in receipt
+    assert '"consent_to_openai_redacted_interview_processing": true' in receipt
+    assert oct(receipt_path.stat().st_mode & 0o777) == "0o600"
 
     replay = _request(
         app,
@@ -227,6 +276,7 @@ def test_validation_failure_does_not_consume_invite_and_has_structured_error(
     headers = {
         "x-astrohd-pilot-token": "owner-code",
         "x-astrohd-storage-consent": "yes",
+        "x-astrohd-openai-consent": "yes",
     }
     invalid = _birth()
     invalid["local_datetime"] = "not-a-date"
@@ -270,6 +320,77 @@ def test_health_probes_private_storage_and_action_schema_excludes_birth_intake(
     assert "https://example.test/astrohd" in schema.text
     assert "https://YOUR_API_HOST" not in schema.text
     assert "BirthIntake" not in schema.text
+    assert "X-AstroHD-Session-Token" in schema.text
+    reveal_route = next(
+        route
+        for route in app.routes
+        if isinstance(route, APIRoute)
+        and route.path == "/v1/participant-sessions/{session_id}/reveal"
+    )
+    response_fields = reveal_route.response_model.model_fields  # type: ignore[union-attr]
+    assert "birth" not in response_fields
+    assert "chart" not in response_fields
+
+
+def test_session_id_alone_cannot_access_interview_routes(tmp_path: Path) -> None:
+    app = _app(tmp_path, FakeSessions())
+    created = _request(
+        app,
+        "POST",
+        "/v1/participant-sessions",
+        body=_birth(),
+        headers={
+            "x-astrohd-pilot-token": "owner-code",
+            "x-astrohd-storage-consent": "yes",
+            "x-astrohd-openai-consent": "yes",
+        },
+    )
+    session_id = str(created.json["session_id"])
+
+    missing = _request(app, "GET", f"/v1/participant-sessions/{session_id}/progress")
+    wrong = _request(
+        app,
+        "GET",
+        f"/v1/participant-sessions/{session_id}/progress",
+        headers={"x-astrohd-session-token": "wrong"},
+    )
+
+    assert missing.status_code == 403
+    assert wrong.status_code == 403
+    assert missing.json["error"]["message"] == "invalid session access"
+
+
+@pytest.mark.parametrize(
+    ("field", "value", "message"),
+    [
+        ("mode", "self_discovery", "scientific_blind"),
+        ("ranking_scope", "century_global", "known_birth_month"),
+    ],
+)
+def test_owner_endpoint_rejects_wrong_mode_or_scope_without_consuming_invite(
+    tmp_path: Path,
+    field: str,
+    value: str,
+    message: str,
+) -> None:
+    app = _app(tmp_path, FakeSessions())
+    body = _birth()
+    body[field] = value
+    response = _request(
+        app,
+        "POST",
+        "/v1/participant-sessions",
+        body=body,
+        headers={
+            "x-astrohd-pilot-token": "owner-code",
+            "x-astrohd-storage-consent": "yes",
+            "x-astrohd-openai-consent": "yes",
+        },
+    )
+
+    assert response.status_code == 400
+    assert message in response.json["error"]["message"]
+    assert not (tmp_path / "invites").exists()
 
 
 def test_committed_interviewer_schema_has_no_trusted_birth_creation_action() -> None:
@@ -278,6 +399,7 @@ def test_committed_interviewer_schema_has_no_trusted_birth_creation_action() -> 
     ).read_text(encoding="utf-8")
     assert "createParticipantSession" not in schema
     assert "BirthIntake" not in schema
+    assert "X-AstroHD-Session-Token" in schema
     assert "revealParticipantResult" in schema
     assert "finalizeParticipantExploratoryProfile" in schema
 
@@ -394,6 +516,7 @@ def test_production_factory_verifies_real_pinned_cache_when_ephemeris_installed(
         hashlib.sha256(b"owner-code").hexdigest(),
     )
     monkeypatch.setenv("HDMATCH_PUBLIC_BASE_URL", "https://example.test")
+    monkeypatch.setenv("HDMATCH_CODE_COMMIT", "a" * 40)
     original_html = relationship_base_app._HTML
     try:
         app = relationship_launch_app.create_relationship_launch_app_from_env()

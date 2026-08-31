@@ -13,20 +13,68 @@ from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Annotated, Any, TypeVar
+from urllib.parse import urlsplit
 
 from fastapi import FastAPI, Header, HTTPException
 from fastapi.responses import HTMLResponse, PlainTextResponse
 
 from hdmatch.api.errors import ERROR_RESPONSES, install_error_handlers
-from hdmatch.api.natal_pilot_ui import render_natal_pilot_html
+from hdmatch.api.natal_pilot_ui import render_natal_pilot_html, render_natal_result_html
 from hdmatch.api.participant import _execute, register_participant_routes
 from hdmatch.participant import ParticipantSessionService, ParticipantSessionStore
 from hdmatch.participant.century_backend import CenturyCapableParticipantBackend
-from hdmatch.participant.models import BirthIntake, SessionRecord
+from hdmatch.participant.models import (
+    BirthIntake,
+    EvidenceRecord,
+    ExploratoryRankingReport,
+    FinalParticipantReport,
+    ParticipantModel,
+    ParticipantModelReceipt,
+    PredictionComparison,
+    RankScope,
+    RankingSnapshot,
+    ResearchLayer,
+    RevealReport,
+    SessionMode,
+    SessionRecord,
+)
 from hdmatch.relationship.place_resolution import search_birthplaces
 
 T = TypeVar("T")
 _SHA256_RE = re.compile(r"^[a-f0-9]{64}$")
+_SOURCE_COMMIT_RE = re.compile(r"^[a-f0-9]{40,64}$")
+
+
+class NatalPilotSessionCreated(SessionRecord):
+    session_token: str
+
+
+class InterviewerRevealReport(ParticipantModel):
+    """Chart- and birth-redacted reveal safe for the external interviewer."""
+
+    schema_version: str = "participant-interviewer-reveal-v1"
+    session_id: str
+    revealed_at_utc: datetime
+    confirmatory_ranking: RankingSnapshot
+    prediction_comparisons: tuple[PredictionComparison, ...]
+    model_receipt: ParticipantModelReceipt
+    primary_test_statement: str
+    trusted_result_url: str
+    interviewer_model_receipt: str
+    interviewer_instructions_sha256: str
+    interviewer_action_schema_sha256: str
+
+
+class InterviewerFinalReport(ParticipantModel):
+    """Final report with the sensitive birth and raw chart retained server-side."""
+
+    schema_version: str = "participant-interviewer-final-report-v1"
+    session_id: str
+    mode: SessionMode
+    confirmatory: InterviewerRevealReport
+    exploratory: ExploratoryRankingReport
+    retained_secondary_evidence: tuple[EvidenceRecord, ...]
+    research_layers: tuple[ResearchLayer, ...]
 
 
 @dataclass(frozen=True, slots=True)
@@ -36,14 +84,32 @@ class NatalPilotConfig:
     health_probe_root: Path
     public_base_url: str
     interviewer_url: str | None
+    interviewer_model_receipt: str | None
     action_schema_template: str
     runtime_receipt: dict[str, str | int | bool]
 
     def __post_init__(self) -> None:
         if not _SHA256_RE.fullmatch(self.invite_token_sha256):
             raise ValueError("natal pilot invite token must be supplied as a SHA-256 digest")
-        if not self.public_base_url.startswith(("https://", "http://localhost")):
+        public = urlsplit(self.public_base_url)
+        if not (
+            public.scheme == "https"
+            or (public.scheme == "http" and public.hostname in {"localhost", "127.0.0.1"})
+        ):
             raise ValueError("HDMATCH_PUBLIC_BASE_URL must be HTTPS outside localhost")
+        if (self.interviewer_url is None) != (self.interviewer_model_receipt is None):
+            raise ValueError("interviewer URL and model receipt must be configured together")
+        if self.interviewer_url is not None:
+            parsed = urlsplit(self.interviewer_url)
+            if (
+                parsed.scheme != "https"
+                or parsed.hostname != "chatgpt.com"
+                or parsed.username is not None
+                or parsed.password is not None
+                or parsed.port is not None
+                or not parsed.path.startswith("/g/")
+            ):
+                raise ValueError("interviewer URL must be an HTTPS chatgpt.com Custom GPT link")
 
 
 class SingleUsePilotInvite:
@@ -59,11 +125,13 @@ class SingleUsePilotInvite:
         operation: Callable[[], T],
         *,
         development_consent: bool,
+        openai_consent: bool,
     ) -> T:
         supplied_sha256 = hashlib.sha256((supplied_token or "").encode()).hexdigest()
         if not secrets.compare_digest(self.expected_sha256, supplied_sha256):
             raise HTTPException(status_code=403, detail="invalid or unavailable pilot access code")
-        self.root.mkdir(parents=True, exist_ok=True)
+        self.root.mkdir(parents=True, exist_ok=True, mode=0o700)
+        os.chmod(self.root, 0o700)
         claim_path = self.root / f"{self.expected_sha256}.json"
         try:
             descriptor = os.open(
@@ -94,10 +162,16 @@ class SingleUsePilotInvite:
                 "consumed_at_utc": datetime.now(UTC).isoformat(),
                 "consent_to_private_research_storage": True,
                 "consent_to_future_deidentified_model_development": development_consent,
+                "consent_to_openai_redacted_interview_processing": openai_consent,
             }
             session_id = getattr(result, "session_id", None)
             if isinstance(session_id, str):
                 receipt["session_id"] = session_id
+            session_token = getattr(result, "session_token", None)
+            if isinstance(session_token, str) and session_token:
+                receipt["session_token_sha256"] = hashlib.sha256(
+                    session_token.encode()
+                ).hexdigest()
             temporary = claim_path.with_suffix(".tmp")
             temporary.write_text(
                 json.dumps(receipt, sort_keys=True) + "\n",
@@ -110,6 +184,22 @@ class SingleUsePilotInvite:
             if not created:
                 claim_path.unlink(missing_ok=True)
             raise
+
+    def authorize_session(self, session_id: str, supplied_token: str | None) -> None:
+        """Require the separate session bearer secret without storing it in plaintext."""
+
+        claim_path = self.root / f"{self.expected_sha256}.json"
+        try:
+            receipt = json.loads(claim_path.read_text(encoding="utf-8"))
+            expected_token_sha256 = receipt["session_token_sha256"]
+            expected_session_id = receipt["session_id"]
+        except (OSError, KeyError, TypeError, ValueError) as exc:
+            raise HTTPException(status_code=403, detail="invalid session access") from exc
+        observed = hashlib.sha256((supplied_token or "").encode()).hexdigest()
+        if expected_session_id != session_id or not secrets.compare_digest(
+            str(expected_token_sha256), observed
+        ):
+            raise HTTPException(status_code=403, detail="invalid session access")
 
 
 def create_natal_pilot_app(
@@ -127,12 +217,22 @@ def create_natal_pilot_app(
         openapi_url=None,
     )
     install_error_handlers(app)
-    register_participant_routes(app, sessions, include_session_creation=False)
     invite = SingleUsePilotInvite(config.invite_token_sha256, config.invite_state_root)
+    register_participant_routes(
+        app,
+        sessions,
+        include_session_creation=False,
+        include_result_routes=False,
+        authorize_session=invite.authorize_session,
+    )
 
     @app.get("/", response_class=HTMLResponse, include_in_schema=False)
     async def home() -> str:
         return render_natal_pilot_html(config.interviewer_url)
+
+    @app.get("/result", response_class=HTMLResponse, include_in_schema=False)
+    async def trusted_result_page() -> str:
+        return render_natal_result_html()
 
     @app.get("/places", include_in_schema=False)
     async def search_places(q: str) -> dict[str, Any]:
@@ -152,7 +252,7 @@ def create_natal_pilot_app(
 
     @app.post(
         "/v1/participant-sessions",
-        response_model=SessionRecord,
+        response_model=NatalPilotSessionCreated,
         responses=ERROR_RESPONSES,
         include_in_schema=False,
     )
@@ -170,14 +270,103 @@ def create_natal_pilot_app(
             str | None,
             Header(alias="X-AstroHD-Development-Consent"),
         ] = None,
-    ) -> SessionRecord:
+        openai_consent: Annotated[
+            str | None,
+            Header(alias="X-AstroHD-OpenAI-Consent"),
+        ] = None,
+    ) -> NatalPilotSessionCreated:
+        if request.mode is not SessionMode.SCIENTIFIC_BLIND:
+            raise HTTPException(status_code=400, detail="owner pilot requires scientific_blind")
+        if request.ranking_scope is not RankScope.KNOWN_BIRTH_MONTH:
+            raise HTTPException(status_code=400, detail="owner pilot requires known_birth_month")
         if storage_consent != "yes":
             raise HTTPException(status_code=400, detail="private-storage consent is required")
+        if openai_consent != "yes":
+            raise HTTPException(status_code=400, detail="OpenAI interview consent is required")
+        session_token = secrets.token_urlsafe(32)
+
+        def create() -> NatalPilotSessionCreated:
+            record = _execute(lambda: sessions.create_session(request))
+            return NatalPilotSessionCreated(
+                **record.model_dump(mode="python"),
+                session_token=session_token,
+            )
+
         return invite.consume(
             pilot_token,
-            lambda: _execute(lambda: sessions.create_session(request)),
+            create,
             development_consent=development_consent == "yes",
+            openai_consent=True,
         )
+
+    @app.post(
+        "/v1/participant-sessions/{session_id}/reveal",
+        response_model=InterviewerRevealReport,
+        responses=ERROR_RESPONSES,
+        operation_id="revealParticipantResult",
+    )
+    async def reveal_for_interviewer(
+        session_id: str,
+        session_token: Annotated[
+            str | None,
+            Header(alias="X-AstroHD-Session-Token"),
+        ] = None,
+    ) -> InterviewerRevealReport:
+        invite.authorize_session(session_id, session_token)
+        report = _execute(lambda: sessions.reveal(session_id))
+        return _interviewer_reveal(report, config)
+
+    @app.post(
+        "/v1/participant-sessions/{session_id}/finalize-exploratory",
+        response_model=InterviewerFinalReport,
+        responses=ERROR_RESPONSES,
+        operation_id="finalizeParticipantExploratoryProfile",
+    )
+    async def finalize_for_interviewer(
+        session_id: str,
+        session_token: Annotated[
+            str | None,
+            Header(alias="X-AstroHD-Session-Token"),
+        ] = None,
+    ) -> InterviewerFinalReport:
+        invite.authorize_session(session_id, session_token)
+        report = _execute(lambda: sessions.finalize_exploratory(session_id))
+        return _interviewer_final(report, config)
+
+    @app.get(
+        "/v1/participant-sessions/{session_id}/final-report",
+        response_model=InterviewerFinalReport,
+        responses=ERROR_RESPONSES,
+        operation_id="getParticipantFinalReport",
+    )
+    async def final_report_for_interviewer(
+        session_id: str,
+        session_token: Annotated[
+            str | None,
+            Header(alias="X-AstroHD-Session-Token"),
+        ] = None,
+    ) -> InterviewerFinalReport:
+        invite.authorize_session(session_id, session_token)
+        report = sessions.store.load_final_report(session_id)
+        if report is None:
+            raise HTTPException(status_code=409, detail="exploratory profile is not finalized")
+        return _interviewer_final(report, config)
+
+    @app.post(
+        "/trusted/v1/participant-sessions/{session_id}/reveal",
+        response_model=RevealReport,
+        responses=ERROR_RESPONSES,
+        include_in_schema=False,
+    )
+    async def trusted_sensitive_reveal(
+        session_id: str,
+        session_token: Annotated[
+            str | None,
+            Header(alias="X-AstroHD-Session-Token"),
+        ] = None,
+    ) -> RevealReport:
+        invite.authorize_session(session_id, session_token)
+        return _execute(lambda: sessions.reveal(session_id))
 
     @app.get("/healthz", include_in_schema=False)
     async def healthz() -> dict[str, Any]:
@@ -202,6 +391,44 @@ def create_natal_pilot_app(
     return app
 
 
+def _interviewer_reveal(
+    report: RevealReport,
+    config: NatalPilotConfig,
+) -> InterviewerRevealReport:
+    if report.model_receipt is None:
+        raise RuntimeError("legacy reveal has no model receipt for interviewer display")
+    return InterviewerRevealReport(
+        session_id=report.session_id,
+        revealed_at_utc=report.revealed_at_utc,
+        confirmatory_ranking=report.confirmatory_ranking,
+        prediction_comparisons=report.prediction_comparisons,
+        model_receipt=report.model_receipt,
+        primary_test_statement=report.primary_test_statement,
+        trusted_result_url=config.public_base_url.rstrip("/") + "/astrohd/result",
+        interviewer_model_receipt=config.interviewer_model_receipt or "not_configured",
+        interviewer_instructions_sha256=str(
+            config.runtime_receipt.get("interviewer_instructions_sha256", "not_configured")
+        ),
+        interviewer_action_schema_sha256=str(
+            config.runtime_receipt.get("interviewer_action_schema_sha256", "not_configured")
+        ),
+    )
+
+
+def _interviewer_final(
+    report: FinalParticipantReport,
+    config: NatalPilotConfig,
+) -> InterviewerFinalReport:
+    return InterviewerFinalReport(
+        session_id=report.session_id,
+        mode=report.mode,
+        confirmatory=_interviewer_reveal(report.confirmatory, config),
+        exploratory=report.exploratory,
+        retained_secondary_evidence=report.retained_secondary_evidence,
+        research_layers=report.research_layers,
+    )
+
+
 def create_natal_pilot_app_from_env() -> FastAPI:
     """Construct the owner pilot from explicit immutable artifacts and private storage."""
 
@@ -222,7 +449,19 @@ def create_natal_pilot_app_from_env() -> FastAPI:
     century_cache = _required_env("HDMATCH_CENTURY_CACHE")
     century_manifest_sha256 = _required_env("HDMATCH_CENTURY_MANIFEST_SHA256")
     century_canonical_rows_sha256 = _required_env("HDMATCH_CENTURY_CANONICAL_ROWS_SHA256")
-    code_commit = os.environ.get("HDMATCH_CODE_COMMIT", "unknown")
+    code_commit = (
+        os.environ.get("RAILWAY_GIT_COMMIT_SHA")
+        or os.environ.get("HDMATCH_CODE_COMMIT")
+        or ""
+    ).strip()
+    if not _SOURCE_COMMIT_RE.fullmatch(code_commit):
+        raise RuntimeError("an exact deployed source commit is required for the natal pilot")
+    interviewer_url = os.environ.get("HDMATCH_NATAL_INTERVIEWER_URL") or None
+    interviewer_model_receipt = (
+        _required_env("HDMATCH_NATAL_INTERVIEWER_MODEL_RECEIPT")
+        if interviewer_url is not None
+        else None
+    )
 
     backend = CenturyCapableParticipantBackend(
         ephemeris_path=ephemeris_path,
@@ -249,7 +488,8 @@ def create_natal_pilot_app_from_env() -> FastAPI:
             invite_state_root=Path(session_store) / ".pilot-invitations",
             health_probe_root=Path(session_store) / ".health",
             public_base_url=public_base_url,
-            interviewer_url=os.environ.get("HDMATCH_NATAL_INTERVIEWER_URL") or None,
+            interviewer_url=interviewer_url,
+            interviewer_model_receipt=interviewer_model_receipt,
             action_schema_template=schema_template,
             runtime_receipt={
                 "model_version": backend.model.library.model_version,
@@ -262,6 +502,16 @@ def create_natal_pilot_app_from_env() -> FastAPI:
                 "ranking_scope": "known_birth_month",
                 "month_universe_source": "pinned_verified_century_cache_slice",
                 "century_global_enabled": True,
+                "interviewer_model_receipt": interviewer_model_receipt or "not_configured",
+                "interviewer_instructions_sha256": hashlib.sha256(
+                    (
+                        repo_root
+                        / "reference/custom_gpt/participant_interviewer_instructions_under_8000_v1.md"
+                    ).read_bytes()
+                ).hexdigest(),
+                "interviewer_action_schema_sha256": hashlib.sha256(
+                    schema_template.encode()
+                ).hexdigest(),
             },
         ),
     )
@@ -275,7 +525,8 @@ def _required_env(name: str) -> str:
 
 
 def _verify_private_storage(root: Path) -> None:
-    root.mkdir(parents=True, exist_ok=True)
+    root.mkdir(parents=True, exist_ok=True, mode=0o700)
+    os.chmod(root, 0o700)
     path: Path | None = None
     try:
         with tempfile.NamedTemporaryFile(dir=root, prefix="probe-", delete=False) as handle:

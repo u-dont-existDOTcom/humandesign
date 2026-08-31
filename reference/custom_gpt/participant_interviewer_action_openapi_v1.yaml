@@ -18,6 +18,7 @@ paths:
         true birth-state/date rank.
       parameters:
         - $ref: '#/components/parameters/SessionId'
+        - $ref: '#/components/parameters/SessionToken'
       responses:
         '200':
           description: Participant-safe progress.
@@ -33,6 +34,7 @@ paths:
         dimension. Other/free-form responses must always remain available.
       parameters:
         - $ref: '#/components/parameters/SessionId'
+        - $ref: '#/components/parameters/SessionToken'
       responses:
         '200':
           description: Suggested question or open-narrative guidance.
@@ -48,6 +50,7 @@ paths:
         token can affect natal ranking. Use answer=null for unmatched free text.
       parameters:
         - $ref: '#/components/parameters/SessionId'
+        - $ref: '#/components/parameters/SessionToken'
       requestBody:
         required: true
         content:
@@ -66,6 +69,7 @@ paths:
       summary: Lock pre-reveal confirmatory evidence
       parameters:
         - $ref: '#/components/parameters/SessionId'
+        - $ref: '#/components/parameters/SessionToken'
       responses:
         '200':
           description: Confirmatory evidence-lock metadata.
@@ -77,10 +81,12 @@ paths:
       operationId: revealParticipantResult
       summary: Reveal frozen predictions and confirmatory rank
       description: >-
-        Available only after lock. Returns the true birth state, confirmatory
-        ranking, and dimension-level comparisons to predictions frozen before answers.
+        Available only after lock. Returns confirmatory ranks and dimension-level
+        comparisons to predictions frozen before answers. Exact birth data and the
+        raw chart remain on the trusted AstroHD result page.
       parameters:
         - $ref: '#/components/parameters/SessionId'
+        - $ref: '#/components/parameters/SessionToken'
       responses:
         '200':
           description: Confirmatory reveal report.
@@ -96,6 +102,7 @@ paths:
         confirmatory result.
       parameters:
         - $ref: '#/components/parameters/SessionId'
+        - $ref: '#/components/parameters/SessionToken'
       responses:
         '200':
           description: Confirmatory and exploratory results side by side.
@@ -108,6 +115,7 @@ paths:
       summary: Fetch the completed participant report
       parameters:
         - $ref: '#/components/parameters/SessionId'
+        - $ref: '#/components/parameters/SessionToken'
       responses:
         '200':
           description: Completed confirmatory plus exploratory report.
@@ -123,6 +131,16 @@ components:
       schema:
         type: string
         pattern: '^HD-[A-F0-9]{32}$'
+    SessionToken:
+      name: X-AstroHD-Session-Token
+      in: header
+      required: true
+      description: >-
+        The separate private session token shown once by trusted intake. It is not
+        the owner invite code and must never be placed in a URL.
+      schema:
+        type: string
+        minLength: 32
   schemas:
     EvidenceInput:
       type: object

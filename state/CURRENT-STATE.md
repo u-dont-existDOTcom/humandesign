@@ -33,19 +33,26 @@
 - Current continuation: draft PR `#21`, branch `codex/issue18-release-receipt`, contains
   the relationship `[object Object]` formatter fix and the unmerged AstroHD-first owner
   pilot described in `docs/36_astrohd_owner_pilot.md`.
-- Local owner-path evidence: the exact pinned-cache intake, birthplace search, consent,
-  single-use access gate, real prediction freeze, and opaque session creation pass in
-  the dedicated browser test. The real freeze takes about 8.6 seconds.
+- Local owner-path evidence: the pre-review exact pinned-cache intake, birthplace
+  search, consent, single-use access gate, real prediction freeze, and opaque session
+  creation passed in the dedicated browser test. The real freeze takes about 8.6
+  seconds. A fresh smoke of the new two-token/trusted-result boundary is pending.
 - Model boundary: the natal symbolic scoring/reveal runtime exists, but the holistic
   AstroHD mapping is incomplete. AstroRRF raw directional scoring exists, while
   ordinal calibration and formal hit/miss scoring do not. Neither model automatically
   retrains from submissions.
-- Adequacy now: operational `LOCAL_PASS / PRODUCTION_STAGING_OPEN`; scientific
+- First exact-diff review: `CHANGES_REQUIRED`. The local repair now requires a
+  separate high-entropy session token for all actions, redacts birth/chart data from
+  the GPT-facing reveal, records exact OpenAI consent, enforces owner mode/scope,
+  fails closed on frozen-runtime drift, keeps v1 reveals readable, and applies private
+  file modes. It is not accepted until the repaired exact diff is re-reviewed.
+- Adequacy now: operational `REPAIR_IMPLEMENTED / REVERIFICATION_OPEN`; scientific
   `DEVELOPMENT_CASE_ONLY / HUMAN_VALIDITY_NOT_ESTABLISHED`; release
-  `CLOSED_PENDING_EXACT_DIFF_REVIEW_AND_CACHE_DELIVERY`.
-- Next executable: complete exact-diff Extra High review, stage the verified
-  non-sensitive century cache for Railway, configure the private interviewer link,
-  and deploy only the owner test. Friends remain out of scope until that smoke passes.
+  `CLOSED_PENDING_CLEAN_EXACT_DIFF_REVIEW_PRIVATE_CACHE_AND_ACTION_SMOKE`.
+- Next executable: verify and re-review the repair; privately stage the verified
+  century cache for Railway with outer ZIP/manifest/shard/engine checks and
+  restart/readback; configure the private interviewer link/model receipt; and deploy
+  only the owner test. Friends remain out of scope until that smoke passes.
 
 - As of: `2026-08-27`
 - Task ID: `participant-session-v1`

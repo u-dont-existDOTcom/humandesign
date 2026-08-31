@@ -6,7 +6,8 @@ from pathlib import Path
 
 import pytest
 
-from hdmatch.experiments.canonical import sha256_file
+from hdmatch.api.natal_pilot_app import NatalPilotConfig, _interviewer_reveal
+from hdmatch.experiments.canonical import canonical_json_bytes, sha256_file
 from hdmatch.participant.backend import DiscriminationDiagnostics, SelectedQuestion
 from hdmatch.participant.models import (
     BirthIntake,
@@ -28,6 +29,9 @@ from hdmatch.search import QuestionUtility
 
 class FakeParticipantBackend:
     scoreable_question_ids = frozenset({"Q1", "Q2"})
+
+    def assert_freeze_compatible(self, freeze: PredictionFreeze) -> None:
+        del freeze
 
     def build_prediction_freeze(
         self,
@@ -280,6 +284,7 @@ def test_posthoc_profile_gets_separate_exploratory_rank_without_rewriting_blind_
     assert reveal.confirmatory_ranking.true_state_rank == 7.0
     assert reveal.confirmatory_ranking.scientific_status == "confirmatory_blind"
     assert reveal.schema_version == "participant-reveal-v2"
+    assert reveal.model_receipt is not None
     assert reveal.model_receipt.prediction_freeze_sha256 == (
         service.store.load_session(session_id).prediction_freeze_sha256
     )
@@ -301,6 +306,75 @@ def test_posthoc_profile_gets_separate_exploratory_rank_without_rewriting_blind_
     assert final.exploratory.ranking.scientific_status == "posthoc_exploratory_not_independent"
     assert final.exploratory.changed_question_ids == ("Q1",)
     assert "not independent" in final.exploratory.disclaimer
+
+
+def test_interviewer_reveal_redacts_birth_and_raw_chart(tmp_path: Path) -> None:
+    service = _service(tmp_path)
+    session_id = _new_session(service)
+    service.append_evidence(session_id, _behavior("Q1", "yes", narrative="Stable."))
+    service.lock_confirmatory(session_id)
+    sensitive = service.reveal(session_id)
+
+    config = NatalPilotConfig(
+        invite_token_sha256="a" * 64,
+        invite_state_root=tmp_path / "invites",
+        health_probe_root=tmp_path / "health",
+        public_base_url="https://example.test",
+        interviewer_url="https://chatgpt.com/g/test",
+        interviewer_model_receipt="custom-gpt-test:gpt-5.6",
+        action_schema_template="openapi: 3.1.0",
+        runtime_receipt={
+            "interviewer_instructions_sha256": "b" * 64,
+            "interviewer_action_schema_sha256": "c" * 64,
+        },
+    )
+    public = _interviewer_reveal(sensitive, config)
+    payload = public.model_dump(mode="json")
+
+    assert "birth" not in payload
+    assert "chart" not in payload
+    assert payload["trusted_result_url"] == "https://example.test/astrohd/result"
+    assert payload["interviewer_model_receipt"] == "custom-gpt-test:gpt-5.6"
+    assert payload["prediction_comparisons"]
+
+
+def test_legacy_v1_reveal_remains_readable_without_rewriting_it(tmp_path: Path) -> None:
+    service = _service(tmp_path)
+    session_id = _new_session(service)
+    service.append_evidence(session_id, _behavior("Q1", "yes", narrative="Legacy."))
+    service.lock_confirmatory(session_id)
+    created = service.reveal(session_id)
+    path = tmp_path / "sessions" / session_id / "reveal.json"
+    legacy = created.model_dump(mode="json")
+    legacy["schema_version"] = "participant-reveal-v1"
+    legacy.pop("model_receipt")
+    path.write_bytes(canonical_json_bytes(legacy))
+
+    loaded = service.store.load_reveal(session_id)
+
+    assert loaded is not None
+    assert loaded.schema_version == "participant-reveal-v1"
+    assert loaded.model_receipt is None
+    assert path.read_bytes() == canonical_json_bytes(legacy)
+
+
+def test_participant_store_uses_private_permissions(tmp_path: Path) -> None:
+    service = _service(tmp_path)
+    session_id = _new_session(service)
+    service.append_evidence(session_id, _behavior("Q1", "yes", narrative="Private."))
+    service.lock_confirmatory(session_id)
+    directory = tmp_path / "sessions" / session_id
+
+    assert directory.stat().st_mode & 0o777 == 0o700
+    for name in (
+        "session.json",
+        "prediction.freeze.json",
+        "evidence.events.jsonl",
+        ".evidence.lock",
+        "confirmatory.lock.json",
+        "confirmatory.ranking.json",
+    ):
+        assert (directory / name).stat().st_mode & 0o777 == 0o600
 
 
 def test_posthoc_other_can_remove_a_confirmatory_dimension_from_final_profile(

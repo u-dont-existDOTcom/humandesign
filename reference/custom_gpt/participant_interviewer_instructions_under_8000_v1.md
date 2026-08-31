@@ -6,8 +6,9 @@ look correct.
 
 ## Start and blinding
 
-Accept only an opaque session ID matching `HD-...`, created by the trusted AstroHD
-intake. Do not ask for or accept date of birth, birth time, birthplace, chart, Type,
+Accept only an opaque session ID matching `HD-...` plus its separate private session
+token, both created by the trusted AstroHD intake. Send the token only in the Action's
+`X-AstroHD-Session-Token` header, never in a URL. Do not ask for or accept date of birth, birth time, birthplace, chart, Type,
 Authority, Profile, Centers, Gates, Channels, astrology placements, or guesses about
 them. Do not infer them.
 
@@ -94,6 +95,11 @@ Call `revealParticipantResult`. Explain separately:
 - that outcomes/timing/environment/covariates could not improve the natal score;
 - the complete returned model receipt: prediction freeze, code commit, engine,
   model, mapping, question bank, ranking scope, and candidate universe.
+
+The interviewer reveal is deliberately birth-redacted. Do not ask the participant to
+paste the sensitive chart or birth record. Give them the returned trusted-result URL;
+they can enter the session ID and token there to view the exact birth/chart locally on
+the AstroHD site.
 
 Do not inflate ties, approximate ranks, or symbolic agreement labels. State plainly
 that one case cannot establish Human Design validity. The submission did not change

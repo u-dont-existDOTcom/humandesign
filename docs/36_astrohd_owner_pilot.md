@@ -21,14 +21,22 @@ rectification workflow described in the research handoff.
    digest is configured; the raw code is never written to the session store.
 3. The backend computes and freezes the current chart-derived predictions and exact
    known-month candidate universe before accepting any behavioral answer.
-4. The page returns only an opaque `HD-...` session ID to paste into the neutral
-   AstroHD Custom GPT interviewer. Birth data is not sent to that GPT.
+4. The page returns an opaque `HD-...` session ID plus a separate high-entropy
+   session token. The token is shown once and only its SHA-256 digest is stored.
+   Both values are required for every interview action; a session ID alone grants
+   no access.
 5. The interviewer appends evidence, locks the confirmatory evidence, and only then
    calls reveal.
-6. Reveal returns the frozen chart/prediction comparisons, the true state/date rank
-   in the declared candidate set, and a public-safe receipt identifying the exact
-   model, mapping, question bank, chart engine, candidate universe, code commit, and
-   prediction freeze.
+6. The interviewer-facing reveal returns birth-redacted prediction comparisons,
+   the true state/date rank in the declared candidate set, and a public-safe receipt
+   identifying the exact model, mapping, question bank, chart engine, candidate
+   universe, code commit, prediction freeze, and configured interviewer assets.
+   Exact birth data and the raw chart remain available only through the same-origin
+   trusted result page using the session ID plus token.
+
+The required OpenAI consent names the actual boundary: questionnaire answers and
+the birth-redacted comparison may be processed by OpenAI; exact birth data and the
+raw chart are not included in the interviewer Action responses.
 
 The deployable Custom GPT instruction block is
 `reference/custom_gpt/participant_interviewer_instructions_under_8000_v1.md`; the
@@ -60,9 +68,12 @@ deidentified development dataset. Any improvement must be trained offline, evalu
 versioned, reviewed, and activated only for later sessions. The participant's frozen
 result never mutates.
 
-Before model promotion is implemented for simultaneous/public use, the runtime must
-also dispatch every in-progress session to its exact frozen model bundle rather than
-merely recording hashes from the bundle active at session creation.
+Every rank, discrimination, and question-selection operation now compares the active
+runtime with the session's exact frozen source commit, chart-engine fingerprint,
+model version and bytes, mapping bytes, and question-bank version and bytes. Any
+drift fails closed instead of silently scoring with a different bundle. Existing
+`participant-reveal-v1` artifacts remain readable without being rewritten; newly
+created reveals use v2 with the required model receipt.
 
 ## Runtime and integrity boundary
 
@@ -74,6 +85,8 @@ HDMATCH_PARTICIPANT_STORE=<private persistent directory>
 HDMATCH_NATAL_PILOT_TOKEN_SHA256=<sha256 of strong single-use owner code>
 HDMATCH_PUBLIC_BASE_URL=<HTTPS production origin>
 HDMATCH_NATAL_INTERVIEWER_URL=<private/unlisted Custom GPT URL>
+HDMATCH_NATAL_INTERVIEWER_MODEL_RECEIPT=<exact configured GPT/model receipt>
+RAILWAY_GIT_COMMIT_SHA=<exact deployed 40-character commit, supplied by Railway>
 HDMATCH_CENTURY_CACHE=<verified extracted century-cache directory>
 HDMATCH_CENTURY_MANIFEST_SHA256=154f2a27d4dc1e632a81c13b82b109fe83064cac5fe3673f82303ac6c24deae8
 HDMATCH_CENTURY_CANONICAL_ROWS_SHA256=eb58516030f2176d4c136055829a8168ffe33715a35bfe0b4095c83824c88dfa
@@ -83,12 +96,17 @@ The chart engine must match fingerprint
 `09e811ca0fe517975f9718ea7e12b72f66bf3d2509e049bc29f47169adef5397`.
 Startup hashes the exact manifest and every compressed shard and fails closed on a
 pin, inventory, content, or engine mismatch. A known-month request then parses only
-the overlapping shard and clips the exact UTC range.
+the overlapping shard and clips the exact UTC range. Participant directories are
+created with mode `0700`; session, freeze, evidence, lock, reveal, and invitation
+receipt files use mode `0600`.
 
 The verified cache is GitHub Actions artifact `9653492396` from run `33088719809`.
-It contains 288,938 structural intervals and no participant data. GitHub's anonymous
-artifact endpoint returns `401`, so the production volume still needs a reviewed
-artifact-delivery method before deployment.
+It contains 288,938 structural intervals and no participant data. Its outer ZIP
+SHA-256 is `c1db39b07d36ea88d5be95c809168fc8e8717ee416cd29963262b70f9c977237`.
+It must be transferred privately into the Railway volume, extracted through a
+temporary path, verified against the outer ZIP, manifest, shard, canonical-row, and
+engine pins, then atomically installed and verified again after restart. Publishing
+the artifact is not part of this owner-only release.
 
 ## Verification receipt
 
@@ -97,18 +115,21 @@ artifact-delivery method before deployment.
 - Real freeze through the owner intake: approximately 8.6 seconds, versus more than
   seven minutes when regenerating irrelevant month boundaries on demand.
 - Predictions remained unchanged through confirmatory lock and reveal.
-- Browser smoke: AstroHD is the primary landing choice; explicit time controls,
-  live OpenStreetMap search, participant-selected timezone, consent, single-use gate,
-  real prediction freeze, and opaque session creation all passed with synthetic data.
+- Browser smoke before the review repair: AstroHD is the primary landing choice;
+  explicit time controls, live OpenStreetMap search, participant-selected timezone,
+  consent, single-use gate, real prediction freeze, and opaque session creation all
+  passed with synthetic data. The new session-token and trusted-result flow requires
+  a fresh smoke after this repair set.
 - The relationship validation formatter no longer renders FastAPI issue objects as
   `[object Object]`.
 
 Adequacy is deliberately split:
 
-- **Operational alignment:** local path passes; production artifact staging and the
-  configured interviewer link remain open.
+- **Operational alignment:** review repairs are implemented locally; fresh tests,
+  private production artifact staging, restart/readback, and the configured
+  interviewer Action smoke remain open.
 - **Scientific adequacy:** the blind freeze/reveal design is suitable for an owner
   development case; human predictive validity is not established and the mapping is
   incomplete.
 - **Release adequacy:** closed for friends and not yet deployed; bounded owner-only
-  release awaits exact-diff review and the cache-delivery decision.
+  release awaits a clean second exact-diff review plus the operational gates above.
