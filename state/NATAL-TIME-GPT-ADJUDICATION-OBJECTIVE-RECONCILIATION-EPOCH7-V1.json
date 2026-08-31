@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-gpt-adjudication-objective-reconciliation-epoch7-v1",
+  "status": "OWNER_GPT_ADJUDICATOR_RULING_RECONCILED_AWAITING_AUTHOR_CONFIGURATION",
+  "owner_source_receipt": {
+    "path": "state/NATAL-TIME-OWNER-GPT-ADJUDICATION-SOURCE-EPOCH7-20260831.json",
+    "message_sha256": "1b5b66c0e3dafb6ea0a0e2c109b3cf88ad764d40d1c34d9179cc3ce4d437a826",
+    "capability": "DIRECT_OWNER_SELECTION_OF_GPT_ADJUDICATOR_ACTOR_CLASS"
+  },
+  "objective_matrix": [
+    {
+      "owner_requirement": "Continue the supervised relationship and AstroHD outcome rather than treating an accepted checkpoint as root completion.",
+      "worker_interpretation": "Preserve checkpoint 12 as a completed supporting architecture child and keep the parent program open.",
+      "task_criterion": "No root-completion or release claim while constructs, reliability, mapping, and relationship outcomes remain unmet.",
+      "acceptance_evidence": "Checkpoint-12 Pro reconciliation ruling and unchanged root scope locks.",
+      "status": "PARTIAL_PARENT_OPEN",
+      "authorized_change": "NONE"
+    },
+    {
+      "owner_requirement": "GPT itself performs eligibility adjudication instead of human adjudicators.",
+      "worker_interpretation": "Replace the human-staffing premise of the J gate with a future GPT run/context topology while retaining the P1 evidence and role firewall.",
+      "task_criterion": "Do not assign a human adjudicator or force the owner ruling into the obsolete J1/J2 staffing codes.",
+      "acceptance_evidence": "Direct owner source receipt and Pro's bounded ruling-to-owner MATCH verdict.",
+      "status": "MATCH",
+      "authorized_change": "OWNER_CORRECTION_EPOCH7"
+    },
+    {
+      "owner_requirement": "Prior exposure alone remains permitted; semantic/self-concept contamination is adjudicated under P1.",
+      "worker_interpretation": "The adjudicator actor changes to GPT without changing P1's three outcomes, five process states, or non-dispositive variables.",
+      "task_criterion": "No automatic exposure or belief-based exclusion and no executable threshold is inferred.",
+      "acceptance_evidence": "Pro ruling preserves P1 and the accepted checkpoint-12 evidence architecture.",
+      "status": "MATCH",
+      "authorized_change": "NONE"
+    },
+    {
+      "owner_requirement": "Clean H1 construct authorship remains independent of later AstroHD mapping.",
+      "worker_interpretation": "Keep clean construct authors as screened chart-blind humans and prohibit AstroHD-exposed model contexts from authoring or revising constructs.",
+      "task_criterion": "Select A1, A2, or A3 before configuring the author workflow; keep mapping separately frozen and later.",
+      "acceptance_evidence": "Pro's owner gate and preserved scope locks.",
+      "status": "BLOCKED_OWNER_DECISION",
+      "authorized_change": "NONE"
+    }
+  ],
+  "resolved": {
+    "adjudicator_actor_class": "GPT",
+    "human_adjudicators_required": false,
+    "original_j1_j2_human_staffing_framing": "SUPERSEDED"
+  },
+  "remaining_owner_decision": {
+    "category": "CLEAN_H1_HUMAN_AUTHOR_CONFIGURATION",
+    "allowed_codes": ["A1", "A2", "A3"],
+    "pro_recommendation": "A2",
+    "next_child_authorized": false
+  },
+  "worker_to_contract_alignment": "GREEN",
+  "bounded_gpt_adjudicator_ruling_to_owner_alignment": "MATCH",
+  "contract_to_owner_alignment": "PARTIAL",
+  "completion_claim": "BLOCKED_OWNER_DECISION",
+  "parent_outcome": "OPEN",
+  "root_completion": false,
+  "operational_alignment": "PASS",
+  "scientific_adequacy": "WARN",
+  "release_adequacy": "NOT_APPLICABLE",
+  "release_permission": false,
+  "reconciliation_trigger": "AFTER_OWNER_A1_A2_OR_A3_SELECTION"
+}

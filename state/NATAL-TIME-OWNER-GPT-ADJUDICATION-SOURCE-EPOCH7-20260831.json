@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-owner-gpt-adjudication-source-epoch7-20260831",
+  "capture_integrity": "VERIFIED",
+  "source_role": "OWNER",
+  "acquisition_mode": "DIRECT_OWNER_MESSAGE",
+  "message_text_exact": "GPT itself will be adjudicating, there are no human authors who could adjudicate better than GPT currently.",
+  "message_encoding": "UTF-8",
+  "message_terminator_present": false,
+  "message_byte_length": 107,
+  "message_utf8_hex": "47505420697473656c662077696c6c2062652061646a756469636174696e672c20746865726520617265206e6f2068756d616e20617574686f72732077686f20636f756c642061646a7564696361746520626574746572207468616e204750542063757272656e746c792e",
+  "message_sha256": "1b5b66c0e3dafb6ea0a0e2c109b3cf88ad764d40d1c34d9179cc3ce4d437a826",
+  "owner_action": "SELECT_GPT_AS_ELIGIBILITY_ADJUDICATOR_ACTOR_CLASS",
+  "supersedes": [
+    "Any checkpoint-12 owner-choice framing that presupposes human adjudicators",
+    "Treating J1 or J2 as human-staffing choices"
+  ],
+  "does_not_select": [
+    "Clean H1 author count or A1/A2/A3",
+    "Model provider, model family, or model version",
+    "One versus several GPT runs",
+    "Shared versus isolated GPT contexts",
+    "Admissible-evidence rules, prompt, evidence standard, or threshold",
+    "Disagreement-resolution or final-reconciliation procedure"
+  ],
+  "capture_context": "The owner sent this message directly in the active Codex owner conversation after Pro accepted checkpoint 12 and requested one human-author configuration and one blind-adjudication configuration.",
+  "assistant_relay_to_pro": {
+    "pro_chat_url": "https://chatgpt.com/c/6a937fe2-68a4-83e9-b92d-3b0f82799513",
+    "pro_chat_title": "Scientific Audit Checkpoint",
+    "relay_preserved_exact_owner_text": true,
+    "classification": "ASSISTANT_RELAY_OF_DIRECT_OWNER_DECISION",
+    "not_the_canonical_owner_source": true
+  },
+  "limitations": [
+    "The chat surface did not expose a durable provider message identifier.",
+    "The ruling selects GPT as the eligibility-adjudicator actor class but does not establish task-specific scientific validity, reliability, lack of bias, or superiority.",
+    "The ruling does not authorize construct authorship by an AstroHD-exposed model context.",
+    "The ruling does not select a clean H1 human-author configuration."
+  ]
+}
