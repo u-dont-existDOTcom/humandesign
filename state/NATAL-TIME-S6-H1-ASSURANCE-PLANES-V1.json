@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-s6-h1-assurance-planes-v1",
+  "status": "SEPARATE_GRADED_ASSURANCE",
+  "worker_to_contract_alignment": "GREEN",
+  "contract_to_owner_alignment": "PARTIAL",
+  "completion_claim": {"type":"WORKING","proposed_terminal":false,"parent_outcome":"OPEN"},
+  "operational_alignment": {
+    "status":"PASS",
+    "scope":"PREHUMAN_METADATA_ONLY_CHILD",
+    "findings":["Independent conception preceded every new generic query.","Official-source methods, closed schemas, role separation, stage gates, and neutral owner decisions are represented.","No human, content, construct-specific search, mapping, production, or external mutation is part of the child."],
+    "does_not_claim":["live human workflow","live content custody","chart-blind person eligibility"]
+  },
+  "scientific_adequacy": {
+    "status":"WARN",
+    "findings":["Governance architecture is not evidence of construct reliability, validity, mapping feasibility, birth-time recovery, relationship prediction, or participant benefit.","Unknown exposure and self-report limitations remain residual risks.","A later null, weak, unstable, or nonreplicating mapping remains an allowed outcome."],
+    "required_for_pass":["authorized screened-human construct development","frozen measurement package","claim-appropriate reliability and validity evidence","separately preregistered independent mapping evidence"]
+  },
+  "release_adequacy": {
+    "status":"NOT_APPLICABLE",
+    "release_permission":false,
+    "findings":["No release, deployment, publication, merge, migration, recruitment, or participant-facing result is proposed.","INTEGRITY_ONLY owner-source receipt and PARTIAL contract-to-owner alignment are ineligible for release or root terminalization."],
+    "privacy":"NOT_APPLICABLE_NO_HUMAN_DATA",
+    "consent":"NOT_APPLICABLE_NO_HUMAN_ACTION",
+    "licensing":"NOT_APPLICABLE_NO_RELEASE",
+    "freshness":"NOT_APPLICABLE_NO_RELEASE",
+    "provenance":"WARN_INTEGRITY_ONLY_OWNER_SOURCE",
+    "security":"NOT_APPLICABLE_NO_LIVE_SYSTEM",
+    "product_rules":"NOT_APPLICABLE_NO_PRODUCT_CHANGE"
+  },
+  "owner_decision_required_now": false,
+  "required_directive": "COMPLETE_LOCAL_CHECKPOINT_11_AND_RETURN_TO_EXISTING_PRO_SUPERVISOR"
+}

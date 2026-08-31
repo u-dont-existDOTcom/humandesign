@@ -1,0 +1,268 @@
+{
+  "schema_version": "natal-time-preinference-metric-semantics-contract-v2",
+  "contract_id": "natal-time-preinference-metric-semantics-20260830-v2",
+  "created_on": "2026-08-30",
+  "status": {
+    "phase": "phase_0_correction_2_4",
+    "document_only": true,
+    "synthetic_only": true,
+    "metric_evaluator_implemented": false,
+    "participant_inference_authorized": false,
+    "operating_point_selected": false
+  },
+  "supersession": {
+    "supersedes_scope": "metric and reference semantics only",
+    "preserved_v1_path": "state/NATAL-TIME-PREINFERENCE-DESIGN-CONTRACT.json",
+    "preserved_v1_contract_sha256": "c721dcdd5ed9e144ca4795523420e226bc13dc8a739669991c365c1bb4d3f6c9",
+    "preserved_v1_unchanged": true,
+    "rule": "This v2 contract supersedes v1 only where it gives more specific interval, reference, output-validity, or metric semantics. Every other v1 study-design, leakage, role, baseline, measurement, and prohibition rule remains in force."
+  },
+  "canonicalization": {
+    "algorithm": "sha256",
+    "serialization": "UTF-8 JSON with keys sorted lexicographically and separators ',' and ':'",
+    "hash_scope": "the complete decoded JSON object after removing only the top-level contract_sha256 field",
+    "implementation": "hdmatch.util.sha256_json"
+  },
+  "canonical_interval_model": {
+    "coordinate_system": "UTC instants on the pinned Python datetime one-microsecond coordinate grid",
+    "interval_form": "half-open [start_utc, end_utc)",
+    "positive_width_required": true,
+    "successor_quantum_microseconds": 1,
+    "candidate_interval_identity": [
+      "candidate_manifest_sha256",
+      "candidate_set_sha256",
+      "interval_id",
+      "start_utc",
+      "end_utc",
+      "full_state_sha256"
+    ],
+    "candidate_membership_equality": "A selected interval is a member of C_i only when every candidate_interval_identity field exactly equals one frozen C_i record. Matching endpoints or state identity alone is insufficient.",
+    "endpoint_conversion": {
+      "closed_lower": "Preserve the stated lower coordinate as start_utc.",
+      "open_lower": "Set start_utc to the first representable microsecond after the stated lower coordinate.",
+      "open_upper": "Preserve the stated upper coordinate as end_utc.",
+      "closed_upper": "Set end_utc to the first representable microsecond after the stated upper coordinate.",
+      "invalid_result": "Fail closed if canonical end_utc is not strictly later than canonical start_utc."
+    },
+    "rounding_canonicalization": {
+      "required_metadata": [
+        "recorded local or UTC value",
+        "declared rounding quantum",
+        "rounding direction or explicit unknown-direction status",
+        "source timezone and fold/offset resolution",
+        "source endpoint convention"
+      ],
+      "floor_or_truncate": "For recorded value v and declared quantum q, use [v, v+q).",
+      "nearest": "Use [v-q/2, v+q/2); if a half-quantum endpoint is not on the coordinate grid, round the start outward toward earlier time and the end outward toward later time.",
+      "ceiling": "The source-compatible cell is (v-q, v]; canonicalize it as [successor(v-q), successor(v)).",
+      "known_quantum_unknown_direction": "Use the smallest half-open bounding interval containing the floor/truncate, nearest, and ceiling cells; record rounding_direction_unresolved and do not present the envelope as finer evidence.",
+      "missing_quantum_or_unresolved_utc_mapping": "No eligible canonical T_i is produced. Mark reference_canonicalization_failed and exclude the participant from calibration or validation recovery claims.",
+      "point_promotion_prohibited": "A displayed clock value never becomes a zero-width point merely because trailing units are printed. The declared source precision determines its cell."
+    }
+  },
+  "candidate_set_contract": {
+    "C_i_definition": "C_i is the frozen complete unordered collection of positive-width canonical candidate intervals from one candidate manifest and candidate-set digest.",
+    "domain_definition": "D_i is the union of the canonical half-open intervals in C_i.",
+    "requirements": [
+      "C_i is non-empty",
+      "every C_i interval belongs to the same participant-local candidate manifest and candidate-set digest",
+      "every C_i interval has a unique interval_id and unique complete candidate_interval_identity tuple",
+      "C_i contains no overlap, gap inside a declared civil-day domain, or duplicate serialized interval",
+      "C_i interval records retain their full-state identity digests without reduced-signature substitution"
+    ]
+  },
+  "reference_standard_v2": {
+    "source_canonicalization": "Canonicalize each independently eligible documentary source separately before comparing sources or constructing an operative T_i.",
+    "source_lineage_rule": "Multiple extracts or transcriptions from the same underlying record are one source lineage, not independent corroboration. Preserve every receipt while deduplicating the lineage for adjudication.",
+    "supersession_rule": "A source is superseded only by an explicit documentary correction or archive lineage recorded before the evaluation freeze. Method output, questionnaire response, chart fit, or favorable result can never select a source.",
+    "multiple_source_adjudication": {
+      "one_eligible_source": "Its canonical interval is the operative T_i.",
+      "identical_sources": "If all non-superseded eligible sources canonicalize to exactly the same interval, that unchanged interval is the operative T_i; preserve every source interval and width in the audit receipt.",
+      "conflicting_sources": "If two or more non-superseded eligible sources canonicalize to distinct intervals, status is conflicting_eligible_documentary_sources. This contract does not infer consistency from overlap. Produce no operative T_i, compute no validation frontier metrics, and exclude the connected component from calibration or validation recovery claims until qualifying documentary supersession evidence leaves one interval or all surviving intervals are exactly identical.",
+      "silent_combination_or_choice_prohibited": "Do not average, intersect, union, clip, or otherwise combine distinct source intervals, and do not select the narrower, more favorable, newer-looking, or method-consistent source without qualifying documentary supersession evidence."
+    },
+    "reference_domain_compatibility": {
+      "compatible_when": "After successful canonicalization, an operative positive-width T_i is domain-compatible when it has a positive-width intersection with D_i.",
+      "set_condition": "There must be at least one C_i interval for which max(candidate.start_utc, T_i.start_utc) is strictly earlier than min(candidate.end_utc, T_i.end_utc). Endpoint touching alone is no intersection.",
+      "partial_overlap_rule": "Partial overlap does not produce reference_domain_incompatible. Retain the complete unchanged T_i and its full documentary-reference width; do not clip T_i to D_i.",
+      "incompatible_status": "reference_domain_incompatible",
+      "failure_rule": "If T_i has no positive-width intersection with D_i, do not label the output uncovered, incorrect, or abstaining. All validation-frontier metrics are not_applicable_reference_domain_incompatible, and the participant is excluded from calibration or validation recovery claims for that frozen candidate domain.",
+      "diagnostic_boundary": "Private non-evaluative output geometry may be retained for debugging, but cannot enter validation frontier summaries."
+    },
+    "documentary_reference_width": {
+      "definition": "The elapsed microseconds in the operative canonical half-open T_i: end_utc minus start_utc.",
+      "field": "documentary_reference_width_microseconds",
+      "source_widths_preserved": true,
+      "interpretation": "A reference-standard precision descriptor, not a procedure-performance metric, probability, weight, confidence, or denominator adjustment.",
+      "availability": "Report only when an operative T_i exists. It may remain descriptively available on abstention, while every S_i-dependent metric is not applicable."
+    }
+  },
+  "returned_output_contract": {
+    "allowed_output_kinds": [
+      "candidate_subset",
+      "abstention"
+    ],
+    "candidate_subset": {
+      "non_empty_required": true,
+      "selected_intervals_rule": "selected_intervals contains one or more exact, whole, unchanged frozen C_i interval records.",
+      "duplicate_policy": "Reject duplicate interval_id values or duplicate complete candidate_interval_identity tuples. Never silently deduplicate before counting.",
+      "partial_interval_policy": "Reject any selected record whose start_utc or end_utc differs from its frozen C_i member, even when it lies inside that member.",
+      "manufactured_interval_policy": "Reject any interval not exactly present in C_i, including unions, splits, interpolated windows, or records carrying substituted state identity.",
+      "foreign_interval_policy": "Reject any interval from another participant, candidate manifest, candidate-set digest, civil-domain freeze, or engine/state-identity provenance.",
+      "empty_policy": "An empty selected_intervals collection with output_kind candidate_subset is invalid_output_empty_non_abstention. It is never converted to abstention."
+    },
+    "abstention": {
+      "selected_intervals_required_value": [],
+      "rule": "Abstention is explicit and returns no S_i subset. A non-empty selected_intervals collection with output_kind abstention is invalid.",
+      "interpretation": "Abstention is neither success nor error and cannot be inferred from an empty or malformed candidate-subset record."
+    },
+    "validation_order": [
+      "validate frozen C_i identity and domain",
+      "validate output_kind and selected_intervals shape",
+      "reject empty non-abstention",
+      "reject duplicate, partial, manufactured, or foreign intervals",
+      "adjudicate and canonicalize documentary reference sources",
+      "validate T_i domain compatibility",
+      "only then determine metric applicability"
+    ]
+  },
+  "metric_semantics": {
+    "applicability_status_codes": [
+      "applicable",
+      "not_applicable_abstention",
+      "not_applicable_no_eligible_reference",
+      "not_applicable_conflicting_eligible_sources",
+      "not_applicable_reference_canonicalization_failed",
+      "not_applicable_reference_domain_incompatible",
+      "not_computed_invalid_output"
+    ],
+    "invalid_output_rule": "If the candidate set or returned output fails any identity, membership, non-empty, duplicate, partial, manufactured, or foreign-interval rule, compute no metric and use not_computed_invalid_output.",
+    "abstention_rule": "For explicit valid abstention, reference intersection, retained temporal width, retained interval count, retained unique state-identity count, and date coverage are all not_applicable_abstention. Only the abstention indicator is true. Documentary-reference width may remain a separate T_i precision descriptor when T_i is otherwise operative and domain-compatible.",
+    "reference_failure_rule": "When no operative compatible T_i exists, compute no validation-frontier metric and use the specific reference not-applicable status. Never convert reference failure into uncovered, error, abstention, or zero.",
+    "components": {
+      "reference_intersection": {
+        "definition": "For a valid non-abstaining S_i and compatible operative T_i, true exactly when at least one selected half-open interval has max(selected.start_utc, T_i.start_utc) strictly earlier than min(selected.end_utc, T_i.end_utc). Endpoint touching alone is false.",
+        "values": [
+          "true",
+          "false"
+        ],
+        "requires_compatible_T_i": true
+      },
+      "temporal_width_retained": {
+        "candidate_width_microseconds": "Sum end_utc-start_utc over every interval in C_i.",
+        "selected_width_microseconds": "Sum end_utc-start_utc over every exact interval in S_i.",
+        "retained_fraction": "selected_width_microseconds divided by candidate_width_microseconds",
+        "separate_from_all_count_metrics": true
+      },
+      "canonical_interval_count_retained": {
+        "candidate_interval_count": "The number of canonical interval records in C_i.",
+        "selected_interval_count": "The number of canonical interval records in S_i after validation; duplicates are rejected rather than collapsed.",
+        "retained_fraction": "selected_interval_count divided by candidate_interval_count",
+        "separate_from_unique_state_identity_count": true
+      },
+      "unique_state_identity_count_retained": {
+        "candidate_unique_state_identity_count": "The number of distinct full_state_sha256 values represented by C_i.",
+        "selected_unique_state_identity_count": "The number of distinct full_state_sha256 values represented by S_i.",
+        "retained_fraction": "selected_unique_state_identity_count divided by candidate_unique_state_identity_count",
+        "same_state_multiple_intervals_rule": "Disjoint intervals carrying the same full-state identity count as multiple intervals but one unique state identity. Do not merge the intervals for temporal-width or interval-count metrics.",
+        "reduced_signature_prohibited": true
+      },
+      "date_coverage": {
+        "candidate_date_count": "The number of declared candidate civil dates represented in C_i.",
+        "selected_date_count": "The number of those declared dates represented by at least one S_i interval.",
+        "retained_fraction": "selected_date_count divided by candidate_date_count",
+        "reference_date_intersection": "Report separately whether any selected represented-date domain intersects operative T_i."
+      },
+      "abstention": {
+        "definition": "True only for an explicit valid abstention output_kind; false only for a valid non-empty candidate_subset output.",
+        "separate_from_success_and_error": true
+      },
+      "documentary_reference_width": {
+        "definition": "Copy the independently defined documentary_reference_width_microseconds descriptor without combining it with output metrics.",
+        "procedure_performance_metric": false
+      }
+    },
+    "joint_reporting_rule": "Report applicable components separately with their own numerators, denominators, units, and applicability status.",
+    "scalar_combination_prohibited": true,
+    "prohibited_combination_forms": [
+      "weighted utility",
+      "single composite success score",
+      "coverage-minus-width tradeoff score",
+      "duration-weighted probability or mass",
+      "preferred frontier point",
+      "implicit ordering produced by collapsing components"
+    ]
+  },
+  "contract_rejection_cases": [
+    {
+      "id": "empty-non-abstention",
+      "condition": "output_kind is candidate_subset and selected_intervals is empty",
+      "expected_status": "not_computed_invalid_output",
+      "expected_violation": "invalid_output_empty_non_abstention"
+    },
+    {
+      "id": "duplicate-selected-interval",
+      "condition": "a selected interval_id or complete candidate identity occurs more than once",
+      "expected_status": "not_computed_invalid_output",
+      "expected_violation": "duplicate_selected_interval"
+    },
+    {
+      "id": "partial-selected-interval",
+      "condition": "selected endpoints are a proper subinterval of a C_i member",
+      "expected_status": "not_computed_invalid_output",
+      "expected_violation": "partial_interval_not_allowed"
+    },
+    {
+      "id": "manufactured-selected-interval",
+      "condition": "selected record is a union, split, interpolation, or otherwise absent from C_i",
+      "expected_status": "not_computed_invalid_output",
+      "expected_violation": "manufactured_interval_not_allowed"
+    },
+    {
+      "id": "foreign-selected-interval",
+      "condition": "selected record has another manifest, candidate-set, participant-local domain, or state provenance",
+      "expected_status": "not_computed_invalid_output",
+      "expected_violation": "foreign_interval_not_allowed"
+    },
+    {
+      "id": "abstention-with-selected-interval",
+      "condition": "output_kind is abstention and selected_intervals is non-empty",
+      "expected_status": "not_computed_invalid_output",
+      "expected_violation": "abstention_must_not_select_intervals"
+    },
+    {
+      "id": "conflicting-documentary-sources",
+      "condition": "two or more eligible non-superseded sources canonicalize to distinct intervals",
+      "expected_status": "not_applicable_conflicting_eligible_sources",
+      "expected_violation": "conflicting_eligible_documentary_sources"
+    },
+    {
+      "id": "reference-outside-candidate-domain",
+      "condition": "operative T_i has no positive-width intersection with D_i",
+      "expected_status": "not_applicable_reference_domain_incompatible",
+      "expected_violation": "reference_domain_incompatible"
+    },
+    {
+      "id": "valid-explicit-abstention",
+      "condition": "output_kind is abstention and selected_intervals is empty",
+      "expected_status": "not_applicable_abstention",
+      "expected_violation": null
+    }
+  ],
+  "implementation_boundary": {
+    "metric_or_evaluator_execution_present": false,
+    "authorized_work": "contract, documentation, content hashing, and structural contract tests only",
+    "future_execution_gate": "A later separately authorized phase must implement executable validators and metric evaluation from this contract before any synthetic or participant evaluation.",
+    "protected_deterministic_components_modified": false
+  },
+  "forbidden_semantics": {
+    "candidate_ranking_or_pruning": true,
+    "probability_weight_score_confidence_or_duration_mass": true,
+    "numeric_operating_or_abstention_threshold": true,
+    "scalar_metric_combination": true,
+    "questionnaire_or_participant_semantics": true,
+    "relationship_evidence_or_inference": true,
+    "participant_facing_output": true
+  },
+  "contract_sha256": "067417a49c158fd7d7d1d31c3b21a584c1d1259aa85d60a30e9a6d3f39976f5e"
+}

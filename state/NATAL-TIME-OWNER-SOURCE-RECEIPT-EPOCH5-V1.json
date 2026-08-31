@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "receipt_id": "osr-astrohd-relationship-20260830-epoch5-v1",
+  "owner_request_id": "OR-ASTROHD-RELATIONSHIP-CONTINUATION-20260830",
+  "canonical_locator": "state/NATAL-TIME-OWNER-OUTCOME-SOURCE-EPOCH5-20260830.md",
+  "source_sha256": "ae31f03e2d2e83373be50c451f0bf998175a64ed83811570e613112035ebd131",
+  "captured_at": "2026-08-30T23:14:20Z",
+  "collector": "deterministic-tool",
+  "capture_method": "The exact current owner-message text was received directly in the active owner conversation, preserved in an append-only epoch-5 source file, and byte-hashed before normalization.",
+  "worker_supplied_copy_sha256": "ae31f03e2d2e83373be50c451f0bf998175a64ed83811570e613112035ebd131",
+  "captured_source_comparison": "MATCH",
+  "independent_source_comparison": "NOT_INDEPENDENT",
+  "capture_integrity": "VERIFIED",
+  "acquisition_mode": "DIRECT_OWNER_MESSAGE",
+  "receipt_capability": "OWNER_REATTESTED",
+  "reattestation_scope": "EPOCH5_H1_PRIOR_EXPOSURE_AND_SEMANTIC_CONTAMINATION_POLICY_ONLY",
+  "eligible_for_bounded_epoch5_contract_reconciliation": true,
+  "source_gate_eligible_for_root_terminalization": false,
+  "source_gate_eligible_for_release": false,
+  "correction_epochs_present": [1, 2, 3, 4, 5],
+  "superseded_source": {
+    "path": "state/NATAL-TIME-OWNER-OUTCOME-SOURCE-EPOCH4-20260830.md",
+    "sha256": "2bc3b243f67411907799c9b382dccd9552220a67cfe20d0429949868123db735",
+    "receipt_capability": "INTEGRITY_ONLY"
+  },
+  "limitations": [
+    "The conversation surface did not expose a durable provider message ID.",
+    "The current message directly re-attests the epoch-5 H1 contamination policy, not every earlier root-outcome sentence.",
+    "Independent acquisition remains NOT_INDEPENDENT; the OWNER_REATTESTED capability applies only to this explicit current correction.",
+    "Root completion and release remain fail-closed because the parent outcome is open and all other scientific, privacy, release, and authority gates remain unmet."
+  ]
+}

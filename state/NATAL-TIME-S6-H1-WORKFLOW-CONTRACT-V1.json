@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-s6-h1-workflow-contract-v1",
+  "status": "PREHUMAN_METADATA_ONLY_STOP_BEFORE_HUMAN_ACTION",
+  "owner_decisions": {"source_route":"S6_STAGED_INDEPENDENT_HYBRID","construct_content_authorship":"H1_SCREENED_CHART_BLIND_HUMANS_ONLY"},
+  "current_child": {
+    "start_state": "PREHUMAN_GOVERNANCE_CONCEPTION_FROZEN",
+    "end_state": "CHECKPOINT_11_RETURNED_TO_PRO",
+    "human_action_allowed": false,
+    "construct_content_allowed": false,
+    "construct_specific_search_allowed": false,
+    "mapping_allowed": false,
+    "production_or_external_mutation_allowed": false
+  },
+  "invariants": [
+    "S6_ORDER_CANNOT_BE_BYPASSED",
+    "H1_HUMANS_ONLY_ORIGINATE_OR_REVISE_CONSTRUCT_CONTENT",
+    "ASTROHD_EXPOSED_ACTORS_CONTEXTS_AND_SESSIONS_CANNOT_AUTHOR_OR_REVISE_CONTENT",
+    "UNKNOWN_EXPOSURE_OR_CONFLICT_FAILS_CLOSED",
+    "CONCEPTION_FREEZE_PRECEDES_CONSTRUCT_SPECIFIC_SEARCH",
+    "SEARCH_RESULTS_CANNOT_MUTATE_FROZEN_CONCEPTION_IN_PLACE",
+    "MAPPING_IS_LATER_SEPARATELY_FROZEN_AND_CURRENTLY_CLOSED",
+    "MAPPING_FAILURE_CANNOT_AUTHORIZE_IN_PLACE_CONSTRUCT_REPAIR",
+    "ROLE_ACCESS_AND_EXPOSURE_HISTORY_IS_APPEND_ONLY",
+    "REPOSITORY_STORES_NO_PREFREEZE_CONTENT_BEARING_BYTES"
+  ],
+  "logical_role_separations": [
+    ["CHART_BLIND_HUMAN_CONCEPT_AUTHOR","SOURCE_SEARCH_WORKER"],
+    ["CHART_BLIND_HUMAN_CONCEPT_AUTHOR","MEASUREMENT_REVIEWER"],
+    ["CHART_BLIND_HUMAN_CONCEPT_AUTHOR","CONTENT_CUSTODIAN"],
+    ["CHART_BLIND_HUMAN_CONCEPT_AUTHOR","RELIABILITY_EVALUATOR"],
+    ["CHART_BLIND_HUMAN_CONCEPT_AUTHOR","MAPPING_WORKER"],
+    ["SOURCE_SEARCH_WORKER","MAPPING_WORKER"],
+    ["MEASUREMENT_REVIEWER","MAPPING_WORKER"],
+    ["RELIABILITY_EVALUATOR","MAPPING_WORKER"],
+    ["GOVERNANCE_SUPERVISOR","INDEPENDENT_EVALUATOR"]
+  ],
+  "future_positive_evidence_gates": [
+    {"gate_id":"G1","before":"HUMAN_SCREENING","requires":["OWNER_HUMAN_PROGRAM_CHOICES","PRO_CONTRACT","ETHICS_PRIVACY_CONSENT_AUTHORITY","SCREENING_RULES_FROZEN"]},
+    {"gate_id":"G2","before":"HUMAN_CONTENT_CREATION","requires":["SCREENING_COMPLETE","CHART_BLINDNESS_EVIDENCE_ACCEPTED","ISOLATED_ENVIRONMENT_ESTABLISHED","CONTENT_CUSTODY_ESTABLISHED"]},
+    {"gate_id":"G3","before":"CONSTRUCT_SPECIFIC_SEARCH","requires":["HUMAN_CONCEPTION_FROZEN","CONTENT_DIGEST_RECEIPT","SEARCH_PROTOCOL_SEPARATELY_FROZEN"]},
+    {"gate_id":"G4","before":"RELIABILITY_EVALUATION","requires":["MEASUREMENT_PACKAGE_FROZEN","OWNER_RELIABILITY_CHOICES","PRO_CONTRACT"]},
+    {"gate_id":"G5","before":"ASTROHD_MAPPING","requires":["CONSTRUCT_AND_RELIABILITY_PACKAGE_FROZEN","MAPPING_QUESTION_SEPARATELY_PREREGISTERED","INDEPENDENT_MAPPING_EVIDENCE_RESERVED","OWNER_AND_PRO_GATES"]}
+  ],
+  "current_gate_results": [{"gate_id":"G1","status":"BLOCKED_NOT_AUTHORIZED"},{"gate_id":"G2","status":"BLOCKED_NOT_AUTHORIZED"},{"gate_id":"G3","status":"BLOCKED_NOT_AUTHORIZED"},{"gate_id":"G4","status":"BLOCKED_NOT_AUTHORIZED"},{"gate_id":"G5","status":"CLOSED_NOT_AUTHORIZED"}],
+  "claim_boundary": "Architecture completeness does not establish a viable human workflow, chart blindness, construct quality, reliability, validity, mapping feasibility, or participant benefit.",
+  "parent_outcome_status": "WORKING_OPEN"
+}

@@ -1,0 +1,170 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:humandesign:natal-time:a1-gpt-heavy:custody:v1",
+  "title": "Closed conspicuously synthetic A1 GPT-heavy custody metadata",
+  "x-artifact-id": "natal-time-a1-gpt-heavy-custody-schema-v1",
+  "x-schema-version": "1.0.0",
+  "x-primary-traceability-requirement-id": "A1G-45",
+  "x-scope": "SYNTHETIC_METADATA_ONLY_NO_HUMAN_FACING_OR_SEMANTIC_CONTENT",
+  "x-prohibited-field-names": ["name", "email", "phone", "address", "identity", "narrative", "free_text", "content", "text", "question", "prompt", "instruction", "consent", "answer", "response", "eligibility_outcome", "threshold", "cutoff", "weight", "score", "algorithm", "construct", "construct_name", "construct_description", "category_name", "label_text", "instrument", "item", "response_choice", "manual", "birth_time", "candidate_interval", "chart", "relationship", "mapping_hypothesis", "mapping_result", "astrology"],
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "record_class", "synthetic_package_id", "stage", "real_person_record", "human_facing_content_present", "semantic_content_present", "eligibility_outcome_present", "selected_configuration_present", "context_controls", "raw_freeze", "transformations", "decision_events", "clean_units", "clean_freeze", "adjudication", "postfreeze_controls"],
+  "properties": {
+    "schema_version": {"const": "NATAL-TIME-A1-GPT-HEAVY-CUSTODY-V1"},
+    "record_class": {"const": "CONSPICUOUSLY_SYNTHETIC_A1_GPT_HEAVY_PACKAGE"},
+    "synthetic_package_id": {"type": "string", "pattern": "^SYN-A1G-PKG-[0-9]{4}$"},
+    "stage": {"enum": ["RAW_FROZEN", "SOURCE_LINKED_PROCESSING", "CLEAN_FROZEN", "CONTAMINATED_FAIL_CLOSED", "POSTFREEZE_NON_CLEAN_BRANCH"]},
+    "real_person_record": {"const": false},
+    "human_facing_content_present": {"const": false},
+    "semantic_content_present": {"const": false},
+    "eligibility_outcome_present": {"const": false},
+    "selected_configuration_present": {"const": false},
+    "context_controls": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["governance_prefreeze_content_access", "governance_semantic_work", "content_support_protected_domain_access", "content_support_repository_context_access"],
+      "properties": {
+        "governance_prefreeze_content_access": {"const": false},
+        "governance_semantic_work": {"const": false},
+        "content_support_protected_domain_access": {"const": false},
+        "content_support_repository_context_access": {"const": false}
+      }
+    },
+    "raw_freeze": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_id", "source_sha256", "committed", "before_semantic_transformation", "original_source_preserved", "timestamp_state", "uncertainty_preserved"],
+      "properties": {
+        "source_id": {"type": "string", "pattern": "^SYN-A1G-SRC-[0-9]{4}$"},
+        "source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "committed": {"const": true},
+        "before_semantic_transformation": {"const": true},
+        "original_source_preserved": {"const": true},
+        "timestamp_state": {"const": "SYNTHETIC_OPAQUE_RECORDED"},
+        "uncertainty_preserved": {"const": true}
+      }
+    },
+    "transformations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["event_id", "kind", "source_ids", "human_source_ids", "derivative_id", "authority_state", "decision_event_id", "occurred_after_raw_freeze", "original_source_preserved", "source_offsets", "timestamps_preserved", "uncertainty_preserved", "mechanical_meaning_change", "mechanical_hierarchy_change", "mechanical_grouping_change", "record_action", "autonomous_semantic_control", "preserves_conflict", "accepted_unit_ids"],
+        "properties": {
+          "event_id": {"type": "string", "pattern": "^SYN-A1G-TEVT-[0-9]{4}$"},
+          "kind": {"enum": ["TRANSCRIPTION", "EXACT_QUOTE_EXTRACTION", "MECHANICAL_FORMATTING", "EXACT_DUPLICATE_FLAG", "NEAR_DUPLICATE_FLAG", "GPT_PARAPHRASE_CANDIDATE", "GPT_CATEGORY_CANDIDATE", "GPT_LABEL_CANDIDATE", "GPT_SYNTHESIS_CANDIDATE"]},
+          "source_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^SYN-A1G-(?:SRC|DRV)-[0-9]{4}$"}},
+          "human_source_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^SYN-A1G-SRC-[0-9]{4}$"}},
+          "derivative_id": {"type": "string", "pattern": "^SYN-A1G-DRV-[0-9]{4}$"},
+          "authority_state": {"enum": ["MECHANICAL_NONAUTHORITATIVE", "NONAUTHORITATIVE_PENDING_JOEL", "JOEL_ACCEPTED_SOURCE_LINKED"]},
+          "decision_event_id": {"oneOf": [{"type": "null"}, {"type": "string", "pattern": "^SYN-A1G-DEVT-[0-9]{4}$"}]},
+          "occurred_after_raw_freeze": {"const": true},
+          "original_source_preserved": {"const": true},
+          "source_offsets": {"oneOf": [{"type": "null"}, {"type": "object", "additionalProperties": false, "required": ["source_id", "start", "end", "unit"], "properties": {"source_id": {"type": "string", "pattern": "^SYN-A1G-SRC-[0-9]{4}$"}, "start": {"type": "integer", "minimum": 0}, "end": {"type": "integer", "minimum": 1}, "unit": {"enum": ["BYTE", "MILLISECOND", "TOKEN_INDEX"]}}}]},
+          "timestamps_preserved": {"type": "boolean"},
+          "uncertainty_preserved": {"type": "boolean"},
+          "mechanical_meaning_change": {"const": false},
+          "mechanical_hierarchy_change": {"const": false},
+          "mechanical_grouping_change": {"const": false},
+          "record_action": {"enum": ["PRESERVE_AND_DERIVE", "FLAG_ONLY_PRESERVE_ALL", "ACCEPTED_SOURCE_LINKED_DERIVATIVE", "COMPILE_ACCEPTED_UNITS_PRESERVE_CONFLICT"]},
+          "autonomous_semantic_control": {"const": false},
+          "preserves_conflict": {"type": "boolean"},
+          "accepted_unit_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^SYN-A1G-UNIT-[0-9]{4}$"}}
+        }
+      }
+    },
+    "decision_events": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["event_id", "event_type", "actor_role", "target_derivative_id", "human_source_ids", "decision"],
+        "properties": {
+          "event_id": {"type": "string", "pattern": "^SYN-A1G-DEVT-[0-9]{4}$"},
+          "event_type": {"enum": ["JOEL_AUTHOR_SEMANTIC_DECISION", "JOEL_AUTHOR_FINAL_FIDELITY_ATTESTATION", "JOEL_OWNER_GOVERNANCE_DECISION"]},
+          "actor_role": {"enum": ["JOEL_AUTHOR", "JOEL_OWNER"]},
+          "target_derivative_id": {"oneOf": [{"type": "null"}, {"type": "string", "pattern": "^SYN-A1G-DRV-[0-9]{4}$"}]},
+          "human_source_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^SYN-A1G-SRC-[0-9]{4}$"}},
+          "decision": {"enum": ["ACCEPT", "REJECT", "REWRITE", "DEFER", "ATTEST_FIDELITY", "GOVERNANCE_ONLY"]}
+        }
+      }
+    },
+    "clean_units": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["unit_id", "human_source_ids", "derivative_id", "decision_event_id", "unresolved_conflict_visible"],
+        "properties": {
+          "unit_id": {"type": "string", "pattern": "^SYN-A1G-UNIT-[0-9]{4}$"},
+          "human_source_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^SYN-A1G-SRC-[0-9]{4}$"}},
+          "derivative_id": {"type": "string", "pattern": "^SYN-A1G-DRV-[0-9]{4}$"},
+          "decision_event_id": {"type": "string", "pattern": "^SYN-A1G-DEVT-[0-9]{4}$"},
+          "unresolved_conflict_visible": {"const": true}
+        }
+      }
+    },
+    "clean_freeze": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["freeze_id", "committed", "raw_freeze_predecessor_present", "all_units_source_linked", "all_units_joel_decided", "conflicts_preserved", "final_fidelity_attestation_event_id", "before_protected_access", "immutable"],
+      "properties": {
+        "freeze_id": {"type": "string", "pattern": "^SYN-A1G-FREEZE-[0-9]{4}$"},
+        "committed": {"const": true},
+        "raw_freeze_predecessor_present": {"const": true},
+        "all_units_source_linked": {"const": true},
+        "all_units_joel_decided": {"const": true},
+        "conflicts_preserved": {"const": true},
+        "final_fidelity_attestation_event_id": {"type": "string", "pattern": "^SYN-A1G-DEVT-[0-9]{4}$"},
+        "before_protected_access": {"const": true},
+        "immutable": {"const": true}
+      }
+    },
+    "adjudication": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["evidence_packet", "access_events", "initial_slots", "outputs", "reconciliation", "owner_override_allowed", "independent_model_claimed"],
+      "properties": {
+        "evidence_packet": {"type": "object", "additionalProperties": false, "required": ["packet_id", "packet_sha256", "content_present"], "properties": {"packet_id": {"type": "string", "pattern": "^SYN-A1G-ADJ-PKT-[0-9]{4}$"}, "packet_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "content_present": {"const": false}}},
+        "access_events": {"type": "array", "minItems": 2, "uniqueItems": true, "items": {"type": "string", "pattern": "^SYN-A1G-ACCESS-[0-9]{4}$"}},
+        "initial_slots": {"type": "array", "minItems": 2, "items": {"type": "object", "additionalProperties": false, "required": ["slot_id", "run_id", "context_id", "model_identity_state", "access_event_id", "output_id", "sealed_before_peer_access", "can_see_peer_unsealed_output"], "properties": {"slot_id": {"enum": ["GPT_INITIAL_RUN_SLOT_A", "GPT_INITIAL_RUN_SLOT_B"]}, "run_id": {"type": "string", "pattern": "^SYN-A1G-RUN-[AB]$"}, "context_id": {"type": "string", "pattern": "^SYN-A1G-CTX-[AB]$"}, "model_identity_state": {"const": "UNSELECTED"}, "access_event_id": {"type": "string", "pattern": "^SYN-A1G-ACCESS-[0-9]{4}$"}, "output_id": {"type": "string", "pattern": "^SYN-A1G-ADJ-OUT-[AB]$"}, "sealed_before_peer_access": {"const": true}, "can_see_peer_unsealed_output": {"const": false}}}},
+        "outputs": {"type": "array", "minItems": 2, "items": {"type": "object", "additionalProperties": false, "required": ["output_id", "run_id", "packet_id", "sealed", "opaque_judgment_only"], "properties": {"output_id": {"type": "string", "pattern": "^SYN-A1G-ADJ-OUT-[AB]$"}, "run_id": {"type": "string", "pattern": "^SYN-A1G-RUN-[AB]$"}, "packet_id": {"type": "string", "pattern": "^SYN-A1G-ADJ-PKT-[0-9]{4}$"}, "sealed": {"const": true}, "opaque_judgment_only": {"const": true}}}},
+        "reconciliation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["slot_id", "context_id", "input_output_ids", "output_id", "preserves_initial_outputs", "preserves_disagreement", "selected_rule"],
+          "properties": {
+            "slot_id": {"const": "GPT_RECONCILIATION_SLOT"},
+            "context_id": {"const": "SYN-A1G-CTX-RECON"},
+            "input_output_ids": {"type": "array", "minItems": 2, "uniqueItems": true, "items": {"type": "string", "pattern": "^SYN-A1G-ADJ-OUT-[AB]$"}},
+            "output_id": {"const": "SYN-A1G-ADJ-RECON-OUT"},
+            "preserves_initial_outputs": {"const": true},
+            "preserves_disagreement": {"const": true},
+            "selected_rule": {"type": "null"}
+          }
+        },
+        "owner_override_allowed": {"const": false},
+        "independent_model_claimed": {"const": false}
+      }
+    },
+    "postfreeze_controls": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["protected_access_before_clean_freeze", "prefreeze_protected_exposure", "contamination_state", "revision_attempted_after_protected_access", "overwrites_frozen_package", "revision_branch_state", "owner_override_attempted", "cross_author_robustness_claimed"],
+      "properties": {
+        "protected_access_before_clean_freeze": {"const": false},
+        "prefreeze_protected_exposure": {"const": false},
+        "contamination_state": {"enum": ["NONE", "FAIL_CLOSED"]},
+        "revision_attempted_after_protected_access": {"type": "boolean"},
+        "overwrites_frozen_package": {"const": false},
+        "revision_branch_state": {"enum": ["NO_REVISION", "POSTFREEZE_NON_CLEAN_BRANCH"]},
+        "owner_override_attempted": {"const": false},
+        "cross_author_robustness_claimed": {"const": false}
+      }
+    }
+  }
+}

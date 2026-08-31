@@ -1,0 +1,238 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-b1-precontent-source-ledger-v1",
+  "status": "BOUNDED_GENERIC_SCAN_COMPLETE_NO_ROUTE_OR_CONTENT_SELECTED",
+  "search_date": "2026-08-30",
+  "active_purpose": "b1_independent_construct_precontent_governance",
+  "provenance": {
+    "owner_b1_record_commit": "cc6e8c3c05551c772d788d336994c3996d02ab78",
+    "owner_b1_record_sha256": "64fe976c98c2b8ba82d86dc96e4bca2dee596338563dcc10c5934733e98b02af",
+    "checkpoint_9_ruling_record_commit": "070348adb45ad1d3863ebab68d1bf1eea7439d53",
+    "independent_conception_commit": "496143ed1c04fce8b6f92f010d8f7bd7a11da30c",
+    "independent_conception_markdown_sha256": "628f806f2dae876a58802113c7a2ef198420f13fc62d24e77ace922e187ce62d",
+    "independent_conception_json_sha256": "0aab29cc1bdfae050581b3c7654603aad5fc8d195ce65a507a5245de8efa754e"
+  },
+  "scope": {
+    "strategy": "BOUNDED_GENERIC_PROBLEM_FAMILY_SCAN",
+    "included": [
+      "independent_construct_definition_and_source_governance",
+      "existing_instrument_discovery",
+      "synonym_neighbor_redundancy_and_proliferation",
+      "content_validity_and_qualitative_elicitation_governance",
+      "observer_and_behavioral_development_governance",
+      "measurement_decision_sequencing",
+      "preregistration_and_discovery_validation_separation",
+      "theory_construct_mapping_governance",
+      "blinded_mapping_and_double_use_controls",
+      "provenance_versioning_and_post_exposure_change_control"
+    ],
+    "excluded": [
+      "construct_specific_query_or_instrument_search",
+      "construct_content_or_candidate",
+      "source_route_selection_or_preference",
+      "instrument_model_or_reliability_selection",
+      "population_language_mode_or_human_procedure",
+      "astrohd_mapping_content_or_method",
+      "copyrighted_full_text_corpus_storage"
+    ],
+    "eligibility_rule": "Retain official standards or guidance, original methods work, and primary empirical evidence that directly constrains generic B1 governance without introducing a construct candidate, instrument selection, mapping content, or human procedure.",
+    "stopping_rule": "Stop when the authorized generic governance families are decision-sufficient for reuse/adapt/compose/incompatible/unresolved classification and further searching would primarily enter construct-specific or implementation choices."
+  },
+  "searches": [
+    {"search_id": "Q01", "query": "site:cosmin.nl construct definition instrument selection content validity guidance", "sites": ["cosmin.nl"]},
+    {"search_id": "Q02", "query": "site:fda.gov patient-focused drug development selecting developing modifying fit-for-purpose clinical outcome assessments guidance construct context of use", "sites": ["fda.gov"]},
+    {"search_id": "Q03", "query": "construct proliferation jingle jangle fallacy measurement scale development primary research paper", "sites": []},
+    {"search_id": "Q04", "query": "site:cos.io preregistration registered reports confirmatory exploratory research", "sites": ["cos.io"]},
+    {"search_id": "Q05", "query": "COSMIN methodology instrument selection define construct existing instruments content validity official", "sites": ["cosmin.nl", "pmc.ncbi.nlm.nih.gov"]},
+    {"search_id": "Q06", "query": "site:cosmin.nl/wp-content/uploads COSMIN methodology selecting outcome measurement instruments PDF construct", "sites": ["cosmin.nl"]},
+    {"search_id": "Q07", "query": "site:osf.io preregistration distinguish confirmatory exploratory same data selection evaluation circular analysis", "sites": ["osf.io"]},
+    {"search_id": "Q08", "query": "Kriegeskorte circular analysis systems neuroscience double dipping independent data PMC 2009", "sites": ["pmc.ncbi.nlm.nih.gov"]},
+    {"search_id": "Q09", "query": "site:cos.io preregistration confirmatory exploratory official Center for Open Science", "sites": ["cos.io"]},
+    {"search_id": "Q10", "query": "site:cos.io/rr registered reports peer review before results official", "sites": ["cos.io"]},
+    {"search_id": "Q11", "query": "measurement schmeasurement questionable measurement practices construct validity Flake Pek 2017 primary paper", "sites": ["journals.sagepub.com"]},
+    {"search_id": "Q12", "query": "best practices scale development construct definition content validation conceptual overlap primary paper open access", "sites": ["pmc.ncbi.nlm.nih.gov"]},
+    {"search_id": "Q13", "query": "site:fda.gov patient-focused drug development methods identify what is important patients guidance 2 qualitative concept elicitation final 2022", "sites": ["fda.gov"]},
+    {"search_id": "Q14", "query": "site:fda.gov observer reported outcome observable behavior proxy report clinical outcome assessment guidance", "sites": ["fda.gov"]},
+    {"search_id": "Q15", "query": "theory construction methodology construct definition mapping theory constructs primary paper open access", "sites": ["psychologicalscience.org"]},
+    {"search_id": "Q16", "query": "discovery validation separation model selection held out data primary paper selective inference", "sites": []},
+    {"search_id": "Q17", "query": "site:nist.gov AI 600-1 generative AI profile data provenance pre-deployment testing content provenance", "sites": ["nist.gov"]},
+    {"search_id": "Q18", "query": "site:w3.org/TR/prov-o provenance entities activities agents revision invalidation specification", "sites": ["w3.org"]},
+    {"search_id": "Q19", "query": "LLM data contamination evaluation leakage primary research paper benchmark contamination 2024", "sites": ["aclanthology.org"]},
+    {"search_id": "Q20", "query": "machine learning data leakage taxonomy primary peer reviewed paper information leakage model evaluation", "sites": ["pmc.ncbi.nlm.nih.gov"]}
+  ],
+  "sources": [
+    {
+      "source_id": "S01",
+      "title": "COSMIN Manual for Systematic Reviews of PROMs, version 2.0",
+      "version_or_date": "version 2.0; accessed 2026-08-30",
+      "identifier": "official manual",
+      "url": "https://www.cosmin.nl/wp-content/uploads/COSMIN-manual-V2_final.pdf",
+      "eligible_for": ["construct_before_instrument", "existing_instrument_review", "content_validity", "context_and_population"],
+      "use_limit": "Generic decision sequence only; no construct, instrument, population, or method selected."
+    },
+    {
+      "source_id": "S02",
+      "title": "The COnsensus-based Standards for the selection of health Measurement INstruments (COSMIN) and how to select an outcome measurement instrument",
+      "version_or_date": "2016",
+      "identifier": "PMCID: PMC4900032",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4900032/",
+      "eligible_for": ["define_what_to_measure", "instrument_selection_sequence", "population_and_use_conditionality"],
+      "use_limit": "Selection architecture only; no outcome, construct, or instrument selected."
+    },
+    {
+      "source_id": "S03",
+      "title": "COSMIN methodology for assessing the content validity of PROMs",
+      "version_or_date": "2018",
+      "identifier": "PMCID: PMC5891557",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5891557/",
+      "eligible_for": ["relevance", "comprehensiveness", "comprehensibility", "content_validity_governance"],
+      "use_limit": "Future governance fields only; no content, respondent group, or evaluation method selected."
+    },
+    {
+      "source_id": "S04",
+      "title": "Patient-Focused Drug Development: Selecting, Developing, or Modifying Fit-for-Purpose Clinical Outcome Assessments",
+      "version_or_date": "final guidance; October 2025",
+      "identifier": "FDA-2022-D-1385",
+      "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/patient-focused-drug-development-selecting-developing-or-modifying-fit-purpose-clinical-outcome",
+      "eligible_for": ["concept_and_context_of_use", "existing_coa_first", "observer_report_boundaries", "fit_for_purpose"],
+      "use_limit": "General development sequence only; no clinical, participant, construct, or instrument choice."
+    },
+    {
+      "source_id": "S05",
+      "title": "Patient-Focused Drug Development: Methods to Identify What Is Important to Patients",
+      "version_or_date": "final guidance; February 2022",
+      "identifier": "FDA-2019-D-4247",
+      "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/patient-focused-drug-development-methods-identify-what-important-patients",
+      "eligible_for": ["qualitative_concept_elicitation_governance", "saturation_and_documentation_concepts"],
+      "use_limit": "Potential future process baseline only; no route, population, interview, probe, or human procedure selected."
+    },
+    {
+      "source_id": "S06",
+      "title": "A Fragmented Field: Construct and Measure Proliferation in Psychology",
+      "version_or_date": "2025",
+      "identifier": "DOI: 10.1177/25152459251360642",
+      "url": "https://journals.sagepub.com/doi/10.1177/25152459251360642",
+      "eligible_for": ["construct_proliferation", "measure_proliferation", "jingle_jangle_risk"],
+      "use_limit": "Threat and redundancy rationale only; no construct taxonomy imported."
+    },
+    {
+      "source_id": "S07",
+      "title": "Tackling the Problem of Construct Proliferation",
+      "version_or_date": "2016",
+      "identifier": "DOI: 10.1177/1094428115598239",
+      "url": "https://journals.sagepub.com/doi/pdf/10.1177/1094428115598239",
+      "eligible_for": ["construct_redundancy", "neighbor_assessment", "proliferation_risk"],
+      "use_limit": "Generic diagnostic rationale only; no construct candidate or decision rule imported."
+    },
+    {
+      "source_id": "S08",
+      "title": "Measurement Schmeasurement: Questionable Measurement Practices and How to Avoid Them",
+      "version_or_date": "2020",
+      "identifier": "DOI: 10.1177/2515245920952393",
+      "url": "https://doi.org/10.1177/2515245920952393",
+      "eligible_for": ["measurement_transparency", "construct_measure_alignment", "questionable_practice_threats"],
+      "use_limit": "Transparency and threat baseline only; no measure or model selected."
+    },
+    {
+      "source_id": "S09",
+      "title": "Construct Validation in Social and Personality Research",
+      "version_or_date": "2017",
+      "identifier": "DOI: 10.1177/1948550617693063",
+      "url": "https://journals.sagepub.com/doi/abs/10.1177/1948550617693063",
+      "eligible_for": ["construct_validation_transparency", "operationalization_documentation"],
+      "use_limit": "Generic reporting and validity discipline only; no construct or operationalization selected."
+    },
+    {
+      "source_id": "S10",
+      "title": "Best Practices for Developing and Validating Scales for Health, Social, and Behavioral Research",
+      "version_or_date": "2018",
+      "identifier": "DOI: 10.3389/fpubh.2018.00149; PMCID: PMC6004510",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6004510/",
+      "eligible_for": ["domain_definition_before_items", "existing_instrument_check", "new_measure_justification"],
+      "use_limit": "Sequence and review baseline only; no item, scale, sample, model, or method selected."
+    },
+    {
+      "source_id": "S11",
+      "title": "Registered Reports",
+      "version_or_date": "official initiative page; accessed 2026-08-30",
+      "identifier": "Center for Open Science initiative",
+      "url": "https://www.cos.io/initiatives/registered-reports",
+      "eligible_for": ["protocol_before_results", "confirmatory_exploratory_separation", "results_independent_acceptance"],
+      "use_limit": "Governance principle only; no study, hypothesis, model, or journal process selected."
+    },
+    {
+      "source_id": "S12",
+      "title": "Circular analysis in systems neuroscience: the dangers of double dipping",
+      "version_or_date": "2009",
+      "identifier": "DOI: 10.1038/nn.2303; PMID: 19396166; PMCID: PMC2841687",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2841687/",
+      "eligible_for": ["selection_evaluation_separation", "independent_data", "circularity_threat"],
+      "use_limit": "Structural double-use principle only; no mapping formulation or statistical method selected."
+    },
+    {
+      "source_id": "S13",
+      "title": "Theory Construction Methodology: A Practical Framework for Building Theories in Psychology",
+      "version_or_date": "2021",
+      "identifier": "DOI: 10.1177/1745691620969647",
+      "url": "https://www.psychologicalscience.org/journals/perspectives/1745691620969647/",
+      "eligible_for": ["explicit_construct_definition", "theory_structure", "falsifiable_implications"],
+      "use_limit": "Future theory/construct reasoning baseline only; no theory, construct, or mapping content selected."
+    },
+    {
+      "source_id": "S14",
+      "title": "PROV-DM: The PROV Data Model",
+      "version_or_date": "W3C Recommendation; 30 April 2013",
+      "identifier": "W3C PROV-DM",
+      "url": "https://www.w3.org/TR/prov-dm/",
+      "eligible_for": ["entity_activity_agent_provenance", "revision", "invalidation", "derivation"],
+      "use_limit": "Provenance concepts only; B1-specific content hashes and contamination semantics are adaptations."
+    },
+    {
+      "source_id": "S15",
+      "title": "Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile",
+      "version_or_date": "NIST AI 600-1; July 2024",
+      "identifier": "DOI: 10.6028/NIST.AI.600-1",
+      "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence",
+      "eligible_for": ["provenance_risk", "predeployment_testing", "generative_ai_risk_governance"],
+      "use_limit": "Risk-governance baseline only; does not certify chart blindness or authorize model authorship."
+    },
+    {
+      "source_id": "S16",
+      "title": "Leakage and the Reproducibility Crisis in Machine-Learning-Based Science",
+      "version_or_date": "2023",
+      "identifier": "PMCID: PMC10499856",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10499856/",
+      "eligible_for": ["data_leakage_taxonomy", "workflow_separation", "selection_evaluation_independence"],
+      "use_limit": "Leakage analogy and architecture only; no machine-learning model or mapping selected."
+    },
+    {
+      "source_id": "S17",
+      "title": "Leak, Cheat, Repeat: Data Contamination and Evaluation Malpractices in Closed-Source LLMs",
+      "version_or_date": "2024",
+      "identifier": "EACL 2024 long paper 5",
+      "url": "https://aclanthology.org/2024.eacl-long.5.pdf",
+      "eligible_for": ["llm_context_contamination_risk", "benchmark_exposure", "evaluation_integrity"],
+      "use_limit": "Risk evidence only; cannot prove whether a future isolated session is uncontaminated."
+    }
+  ],
+  "excluded_results": [
+    {"class": "search_aggregator_or_secondary_summary", "reason": "A primary paper, official standard, or official guidance source was available."},
+    {"class": "construct_or_instrument_specific_validation_study", "reason": "Would exceed the generic scan and could seed future content or route selection."},
+    {"class": "astrohd_or_astrology_mapping_source", "reason": "Mapping content is prohibited before the independent construct package is frozen."},
+    {"class": "source_route_recommendation", "reason": "Route selection requires an owner decision after checkpoint 10."},
+    {"class": "active_measurement_or_reliability_tutorial", "reason": "This slice cannot select a model, estimator, metric, threshold, sample, or human procedure."},
+    {"class": "copyrighted_full_text_corpus", "reason": "Only bibliographic metadata, official links, and bounded notes are retained."}
+  ],
+  "nonselection_confirmation": {
+    "construct_or_domain": "UNSELECTED",
+    "source_route": "UNSELECTED",
+    "instrument_or_content": "UNSELECTED",
+    "measurement_model": "UNSELECTED",
+    "reliability_method_or_threshold": "UNSELECTED",
+    "population_language_mode_or_burden": "UNSELECTED",
+    "human_workflow": "UNSELECTED",
+    "mapping_ontology_feature_hypothesis_model_metric_or_threshold": "UNSELECTED",
+    "ordinary_alternative_or_null_control": "UNSELECTED",
+    "progression_rule": "UNSELECTED"
+  }
+}

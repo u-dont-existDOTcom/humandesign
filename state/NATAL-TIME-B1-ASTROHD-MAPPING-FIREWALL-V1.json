@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-b1-astrohd-mapping-firewall-v1",
+  "status": "MAPPING_GATE_CLOSED_PRECONTENT",
+  "active_purpose": "b1_independent_construct_precontent_governance",
+  "provenance": {
+    "owner_b1_record_commit": "cc6e8c3c05551c772d788d336994c3996d02ab78",
+    "methods_scan_commit": "1b6f851e5ad3b116d589cf421dbb145d9a2ba3be"
+  },
+  "ordered_stages": [
+    {"order": 1, "stage_id": "CHART_BLIND_CONCEPTION_FREEZE", "current_status": "NOT_STARTED"},
+    {"order": 2, "stage_id": "CONSTRUCT_SPECIFIC_EXISTING_WORK_SCAN", "current_status": "NOT_STARTED"},
+    {"order": 3, "stage_id": "DEFINITION_AND_BOUNDARY_FREEZE", "current_status": "NOT_STARTED"},
+    {"order": 4, "stage_id": "MEASUREMENT_MODEL_AND_PROTOCOL_FREEZE", "current_status": "NOT_STARTED"},
+    {"order": 5, "stage_id": "RELIABILITY_EVIDENCE_AND_BOUNDARY_FREEZE", "current_status": "NOT_STARTED"},
+    {"order": 6, "stage_id": "SEALED_CONSTRUCT_PACKAGE", "current_status": "NOT_STARTED"},
+    {"order": 7, "stage_id": "SEPARATE_MAPPING_PREREGISTRATION", "current_status": "BLOCKED_BY_PRIOR_STAGES"},
+    {"order": 8, "stage_id": "MAPPING_ROLE_ACCESS", "current_status": "BLOCKED_BY_PRIOR_STAGES"},
+    {"order": 9, "stage_id": "NONFORMULATION_MAPPING_EVALUATION", "current_status": "BLOCKED_BY_PRIOR_STAGES"},
+    {"order": 10, "stage_id": "SEPARATE_INCREMENTAL_VALUE_COMPARISON", "current_status": "BLOCKED_BY_PRIOR_STAGES"}
+  ],
+  "gate_rules": {
+    "mapping_gate_before_complete_construct_freeze": "CLOSED",
+    "mapping_hypothesis_identity": "FUTURE_SEPARATE_CONTENT_HASH_REQUIRED",
+    "mapping_preregistration_time": "AFTER_CONSTRUCT_AND_RELIABILITY_FREEZE",
+    "formulation_and_evaluation_evidence": "MUST_BE_SEPARATE",
+    "mapping_evidence_may_modify_construct_in_place": false,
+    "post_mapping_change": "NEW_EXPLORATORY_VERSION_PRESERVE_ORIGINAL_AND_RESULT",
+    "exposed_evidence_may_confirm_changed_version": false,
+    "null_weak_unstable_or_nonreplicating_result": "REPORTABLE_NOT_REPAIR_AUTHORITY"
+  },
+  "mapping_content_slots": {
+    "ontology": "UNSET",
+    "rule": "UNSET",
+    "feature": "UNSET",
+    "hypothesis": "UNSET",
+    "model": "UNSET",
+    "metric": "UNSET",
+    "threshold": "UNSET",
+    "recommendation": "UNSET"
+  },
+  "mapping_content_present": false,
+  "mapping_work_authorized": false,
+  "incremental_value_work_authorized": false
+}

@@ -93,9 +93,34 @@ def test_boundary_inside_one_minute_is_found_to_declared_tolerance() -> None:
     personality = [item for item in events if item.side == "personality"]
 
     assert len(personality) == 1
+    assert personality[0].at_utc == start + _days(1) / 2880
     assert (personality[0].at_utc - start).total_seconds() == pytest.approx(30.0, abs=0.01)
     assert personality[0].before_gate == 60
     assert personality[0].after_gate == 41
+
+
+def test_transition_at_range_start_or_end_does_not_break_half_open_coverage() -> None:
+    epoch = datetime(2020, 1, 1, tzinfo=UTC)
+    provider = BoundaryProvider(epoch, linear=True)
+    transition = epoch + _days(1) / 2880
+
+    after_events = enumerate_chart_boundaries(
+        provider,
+        transition,
+        transition + _days(1) / 86400,
+        bodies=(CelestialBody.MERCURY,),
+        resolution=BoundaryResolution.GATE,
+    )
+    before_events = enumerate_chart_boundaries(
+        provider,
+        transition - _days(1) / 86400,
+        transition,
+        bodies=(CelestialBody.MERCURY,),
+        resolution=BoundaryResolution.GATE,
+    )
+
+    assert after_events == ()
+    assert before_events == ()
 
 
 def test_two_interior_crossings_found_when_endpoints_have_same_gate() -> None:

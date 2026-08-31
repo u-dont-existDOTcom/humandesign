@@ -1,0 +1,263 @@
+{
+  "schema_version": "natal-time-preinference-metric-semantics-contract-v3",
+  "contract_id": "natal-time-preinference-metric-semantics-20260830-v3",
+  "created_on": "2026-08-30",
+  "status": {
+    "phase": "checkpoint_5_metric_contract_remediation_2_2_2_3",
+    "document_only": true,
+    "synthetic_only": true,
+    "operative_metric_reference_contract": true,
+    "participant_inference_authorized": false,
+    "operating_point_selected": false
+  },
+  "supersession": {
+    "supersedes_scope": "selected-subset adjacency and candidate-reference-domain compatibility semantics only",
+    "preserved_v1": {
+      "path": "state/NATAL-TIME-PREINFERENCE-DESIGN-CONTRACT.json",
+      "contract_sha256": "c721dcdd5ed9e144ca4795523420e226bc13dc8a739669991c365c1bb4d3f6c9",
+      "file_sha256": "dc76792218c32ccca392ecdfb2cd706f3f3df6112df2a15a40310bd99be0ed04",
+      "unchanged": true
+    },
+    "preserved_v2": {
+      "path": "state/NATAL-TIME-PREINFERENCE-METRIC-SEMANTICS-V2.json",
+      "contract_sha256": "067417a49c158fd7d7d1d31c3b21a584c1d1259aa85d60a30e9a6d3f39976f5e",
+      "file_sha256": "a1244378acbb7c0cf5a3f6464c7d1186dda9c70dac300357e28f9d530cb5adfd",
+      "unchanged": true
+    },
+    "rule": "V3 supersedes v2 only where v2 permits partial candidate/reference-domain overlap as compatible or could be read to permit an adjacency condition on S_i. Every other v2 interval, documentary-source, output-validity, metric, and prohibition rule remains in force; every non-superseded v1 study-design rule remains in force. V1 and v2 bytes are preserved."
+  },
+  "canonicalization": {
+    "algorithm": "sha256",
+    "serialization": "UTF-8 JSON with keys sorted lexicographically and separators ',' and ':'",
+    "hash_scope": "the complete decoded JSON object after removing only the top-level contract_sha256 field",
+    "implementation": "hdmatch.util.sha256_json"
+  },
+  "set_semantics_v3": {
+    "C_i": {
+      "definition": "C_i remains the frozen complete unordered collection of positive-width canonical candidate intervals from one candidate manifest and candidate-set digest.",
+      "partition_requirement": "Within every declared candidate civil-day domain, the complete C_i intervals form the canonical gap-free, non-overlapping partition required by the preserved candidate-set contract.",
+      "partition_scope": "C_i completeness and within-declared-domain partition validation apply to candidate construction, not to the geometry of a selected S_i subset.",
+      "preserved_rules": [
+        "C_i is non-empty",
+        "every interval is a positive-width half-open interval [start_utc, end_utc)",
+        "every interval retains its exact candidate manifest, candidate-set, interval, endpoint, civil-date, provenance, and full-state identity fields",
+        "no qualifying candidate interval is omitted or merged across a full-state change",
+        "within each declared civil-day domain C_i has no overlap or gap"
+      ]
+    },
+    "D_i": {
+      "definition": "D_i is exactly the set union of all unchanged half-open intervals in C_i across every declared candidate date.",
+      "formula": "D_i = union_{I in C_i} I",
+      "no_convex_hull_rule": "D_i is not the convex hull or bounding interval of C_i; gaps between declared candidate-date domains remain outside D_i.",
+      "mutation_prohibited": "Neither compatibility classification nor evaluation may fill a D_i gap, expand, clip, intersect, or otherwise mutate C_i."
+    },
+    "S_i_candidate_subset": {
+      "definition": "A non-abstaining S_i is any nonempty unordered subset of exact unchanged whole interval records from C_i.",
+      "allowed_geometry": "S_i may contain disconnected intervals, including nonadjacent intervals on the same civil date and intervals separated by one or more unselected C_i members.",
+      "adjacency_rule": "Temporal adjacency, contiguity, one-window shape, and within-date connectivity are not validity conditions for the generic S_i candidate_subset output.",
+      "distinct_from_C_i_partition": "C_i must still pass complete within-date partition validation. That candidate-domain requirement does not require S_i to be complete, gap-free, adjacent, contiguous, or connected.",
+      "ordering_rule": "Input order has no ranking semantics. After duplicate and exact-membership validation, canonical reordering of the same members produces the same semantic commitment and receipt.",
+      "validation_requirements": [
+        "one or more selected intervals",
+        "exact complete-record membership in frozen C_i",
+        "no duplicate interval ID or complete identity",
+        "no changed endpoint or partial interval",
+        "no manufactured union, split, interpolation, or spanning window",
+        "no foreign candidate manifest, candidate set, civil domain, provenance, or full-state identity",
+        "no overlap beyond overlap already present in canonical C_i"
+      ],
+      "future_window_boundary": "A contiguous-window or best-window output type would be a separate method and product decision and is not authorized by this contract."
+    },
+    "abstention": {
+      "rule": "Explicit abstention remains distinct from candidate_subset and carries selected_intervals equal to an empty list.",
+      "interpretation": "Abstention is neither success nor error and is not inferred from an invalid or empty candidate_subset."
+    }
+  },
+  "reference_domain_compatibility_v3": {
+    "precondition": "Classify only an operative positive-width canonical half-open T_i after documentary eligibility, source-lineage adjudication, precision preservation, and canonicalization pass.",
+    "intersection_measure": "Let overlap_width be the summed positive elapsed width of T_i intersected with the exact union D_i. Endpoint-only contact contributes zero width.",
+    "states": [
+      {
+        "status": "reference_domain_compatible",
+        "condition": "T_i is a subset of D_i; equivalently, every coordinate of T_i is covered by the union of C_i intervals and no positive-width part of T_i lies outside D_i.",
+        "reference_intersection_applicability": "applicable_after_valid_nonabstaining_S_i",
+        "valid_reference_evaluation_receipt_allowed": true
+      },
+      {
+        "status": "reference_domain_partially_incompatible",
+        "condition": "overlap_width is positive and T_i is not a subset of D_i.",
+        "reference_intersection_applicability": "not_applicable_reference_domain_partially_incompatible",
+        "valid_reference_evaluation_receipt_allowed": false
+      },
+      {
+        "status": "reference_domain_incompatible",
+        "condition": "overlap_width is zero, including wholly disjoint intervals and endpoint-only contact.",
+        "reference_intersection_applicability": "not_applicable_reference_domain_incompatible",
+        "valid_reference_evaluation_receipt_allowed": false
+      }
+    ],
+    "full_containment_across_boundaries": "T_i may be compatible while spanning two or more adjacent C_i intervals because D_i is their set union; a canonical interval boundary inside T_i does not create a domain defect.",
+    "partial_or_complete_incompatibility_rule": "For reference_domain_partially_incompatible or reference_domain_incompatible, issue no valid reference-accuracy result or valid reference-evaluation receipt. Reference intersection is the typed not-applicable status for that state, never true or false. Give the method neither credit nor error.",
+    "immutability_rule": "Never clip T_i to D_i, replace T_i by its intersection, expand D_i, fill a candidate-domain gap, or modify any C_i or T_i endpoint to change the classification.",
+    "diagnostics": {
+      "permitted": [
+        "reference_domain_status",
+        "documentary_reference_width_microseconds"
+      ],
+      "documentary_width_rule": "Retain the complete unchanged T_i width when an operative T_i exists; the width is a documentary-precision diagnostic, not credit, error, coverage, probability, confidence, or an accuracy result.",
+      "prohibited_characterizations": [
+        "inference miss",
+        "uncovered",
+        "incorrect",
+        "abstention",
+        "success",
+        "partial credit",
+        "method error"
+      ]
+    }
+  },
+  "metric_applicability_v3": {
+    "reference_intersection": {
+      "applicable_condition": "A valid nonempty nonabstaining S_i and reference_domain_compatible operative T_i.",
+      "true_condition": "At least one exact selected half-open interval has a positive-width intersection with T_i.",
+      "false_condition": "The reference domain is compatible but no selected interval has a positive-width intersection with T_i.",
+      "partial_incompatibility_value": "not_applicable_reference_domain_partially_incompatible",
+      "complete_incompatibility_value": "not_applicable_reference_domain_incompatible",
+      "endpoint_touch_rule": "Endpoint-only contact is not an intersection."
+    },
+    "retained_components_for_disconnected_S_i": {
+      "temporal_width": "Sum only the widths of exact selected S_i members; never fill unselected gaps.",
+      "canonical_interval_count": "Count exact selected interval records, whether or not adjacent.",
+      "unique_full_state_count": "Count distinct selected full_state_sha256 values independently of interval adjacency and interval count.",
+      "date_coverage": "Count only declared dates represented by at least one selected member; an unselected intervening date or interval remains excluded."
+    },
+    "joint_reporting_only": true,
+    "scalar_combination_prohibited": true,
+    "operating_point_selected": false
+  },
+  "acceptance_edge_cases": [
+    {
+      "id": "s-i-disconnected-first-and-third-same-date",
+      "kind": "selected_subset",
+      "setup": "One synthetic date has four canonical C_i intervals; S_i contains only the first and third.",
+      "expected_status": "valid_candidate_subset",
+      "expected_temporal_width": "sum of first and third interval widths only",
+      "expected_interval_count_fraction": "2/4",
+      "expected_unique_state_count": "distinct full-state identities represented by the first and third intervals"
+    },
+    {
+      "id": "s-i-disconnected-reordered",
+      "kind": "selected_subset",
+      "setup": "The same disconnected exact members are supplied in reverse order.",
+      "expected_status": "valid_candidate_subset",
+      "expected_commitment": "identical to canonical commitment for the original ordering",
+      "expected_receipt": "identical after canonical ordering"
+    },
+    {
+      "id": "s-i-disconnected-duplicate",
+      "kind": "selected_subset",
+      "setup": "One selected exact member appears twice.",
+      "expected_status": "not_computed_invalid_output",
+      "expected_violation": "duplicate_selected_interval"
+    },
+    {
+      "id": "s-i-manufactured-spanning-window",
+      "kind": "selected_subset",
+      "setup": "One manufactured interval spans the first through third intervals and fills the unselected gap.",
+      "expected_status": "not_computed_invalid_output",
+      "expected_violation": "manufactured_interval_not_allowed"
+    },
+    {
+      "id": "reference-contained-in-one-interval",
+      "kind": "reference_domain",
+      "expected_status": "reference_domain_compatible",
+      "valid_reference_evaluation_receipt_allowed": true
+    },
+    {
+      "id": "reference-contained-across-adjacent-intervals",
+      "kind": "reference_domain",
+      "expected_status": "reference_domain_compatible",
+      "valid_reference_evaluation_receipt_allowed": true
+    },
+    {
+      "id": "reference-extends-before-domain",
+      "kind": "reference_domain",
+      "expected_status": "reference_domain_partially_incompatible",
+      "expected_reference_intersection": "not_applicable_reference_domain_partially_incompatible",
+      "valid_reference_evaluation_receipt_allowed": false
+    },
+    {
+      "id": "reference-extends-after-domain",
+      "kind": "reference_domain",
+      "expected_status": "reference_domain_partially_incompatible",
+      "expected_reference_intersection": "not_applicable_reference_domain_partially_incompatible",
+      "valid_reference_evaluation_receipt_allowed": false
+    },
+    {
+      "id": "reference-extends-across-both-domain-ends",
+      "kind": "reference_domain",
+      "expected_status": "reference_domain_partially_incompatible",
+      "expected_reference_intersection": "not_applicable_reference_domain_partially_incompatible",
+      "valid_reference_evaluation_receipt_allowed": false
+    },
+    {
+      "id": "reference-wholly-outside-domain",
+      "kind": "reference_domain",
+      "expected_status": "reference_domain_incompatible",
+      "expected_reference_intersection": "not_applicable_reference_domain_incompatible",
+      "valid_reference_evaluation_receipt_allowed": false
+    },
+    {
+      "id": "reference-endpoint-only-contact",
+      "kind": "reference_domain",
+      "expected_status": "reference_domain_incompatible",
+      "expected_reference_intersection": "not_applicable_reference_domain_incompatible",
+      "valid_reference_evaluation_receipt_allowed": false
+    },
+    {
+      "id": "reference-multidate-included-date",
+      "kind": "reference_domain",
+      "setup": "C_i contains more than one declared date and T_i is wholly contained in D_i on an included date.",
+      "expected_status": "reference_domain_compatible",
+      "valid_reference_evaluation_receipt_allowed": true
+    },
+    {
+      "id": "reference-multidate-excluded-date",
+      "kind": "reference_domain",
+      "setup": "C_i contains more than one declared date and T_i lies on a date absent from D_i.",
+      "expected_status": "reference_domain_incompatible",
+      "expected_reference_intersection": "not_applicable_reference_domain_incompatible",
+      "valid_reference_evaluation_receipt_allowed": false
+    }
+  ],
+  "audit_requirements": {
+    "preserve_v1_v2_exact_bytes": true,
+    "verify_v3_canonical_self_hash": true,
+    "verify_C_i_partition_distinct_from_S_i_adjacency": true,
+    "verify_all_three_reference_domain_states": true,
+    "verify_all_acceptance_edge_cases_present": true,
+    "verify_no_reference_clipping_or_candidate_mutation": true,
+    "verify_no_contiguous_window_semantics": true,
+    "verify_no_estimator_or_S_i_selector": true
+  },
+  "implementation_boundary": {
+    "metric_evaluator_modified_by_this_contract": false,
+    "fixture_bundle_modified_by_this_contract": false,
+    "replay_modified_by_this_contract": false,
+    "checkpoint_acceptance_matrix_modified_by_this_contract": false,
+    "authorized_work": "content-hashed metric/reference-domain policy, documentation, audit, and structural tests only",
+    "protected_deterministic_components_modified": false
+  },
+  "forbidden_semantics": {
+    "candidate_ranking_pruning_elimination_or_recommendation": true,
+    "probability_weight_score_confidence_utility_or_duration_mass": true,
+    "numeric_operating_or_abstention_threshold": true,
+    "scalar_metric_combination": true,
+    "contiguity_or_adjacency_requirement_on_generic_S_i": true,
+    "reference_clipping_or_candidate_domain_mutation": true,
+    "questionnaire_or_participant_semantics": true,
+    "relationship_evidence_or_inference": true,
+    "participant_facing_output": true
+  },
+  "contract_sha256": "75a1629203724715054e2a1d7ea1b6ead7dc0ffd6cf5f4df2756c3e622b5f1fe"
+}

@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-p1-adjudication-execution-ledger-v1",
+  "status": "CHECKPOINT12_IMPLEMENTATION_VERIFIED_AWAITING_PRO_REVIEW",
+  "primary_traceability_requirement_id": "P1A-48",
+  "branch": "codex/astrohd-relationship-continuation",
+  "checkpoint11_accepted_implementation_commit": "f63d1f3aed410dfcc457e4cc07b0771fd12a9485",
+  "checkpoint11_documentation_commit": "a0d0ff2d017767cf5f307a9ac2bff7b9035bcee0",
+  "checkpoint12_conception_commit": "7d914af30bfe4c4817692067f8e4471f3c3e3987",
+  "checkpoint12_implementation_commit": "0fe39a9d4f9fb3e2a44e0e5bc15b6ee3446482bf",
+  "checkpoint12_implementation_tree": "94668f0bd39413b893a017414500d0001e6ba067",
+  "chronology": [
+    {"sequence": 1, "event": "PRO_AUTHORIZED_CHECKPOINT12", "result": "RECORDED"},
+    {"sequence": 2, "event": "SOURCE_FREE_CONCEPTION_FROZEN_IN_IMMUTABLE_COMMIT", "result": "RECORDED"},
+    {"sequence": 3, "event": "BOUNDED_METHODS_SCAN_PERFORMED", "result": "RECORDED"},
+    {"sequence": 4, "event": "METHOD_FAMILIES_CLASSIFIED_WITHOUT_SELECTION", "result": "RECORDED"},
+    {"sequence": 5, "event": "CONTENT_FREE_DECISION_ARCHITECTURE_IMPLEMENTED", "result": "RECORDED"},
+    {"sequence": 6, "event": "SYNTHETIC_TEST_ONLY_VALIDATION_ADDED", "result": "RECORDED"}
+  ],
+  "corrected_commands": [
+    {
+      "attempt": "python -m ruff check tests/p1_adjudication/validator.py",
+      "failure_class": "MODULE_NOT_ON_SYSTEM_PYTHON_PATH",
+      "correction": ".venv/bin/ruff check tests/p1_adjudication/validator.py",
+      "scope_effect": "NONE"
+    },
+    {
+      "attempt": "COMBINED_SEARCH_BATCH_FOR_QUERIES_13_THROUGH_16",
+      "failure_class": "SEARCH_OUTPUT_TRUNCATED",
+      "correction": "REPEATED_EXACT_QUERIES_IN_SMALLER_BATCHES",
+      "scope_effect": "NONE"
+    },
+    {
+      "attempt": "PYTHONPATH_UNSET_FOCUSED_PYTEST_INVOCATION",
+      "failure_class": "LOCAL_TEST_PACKAGE_IMPORT_NOT_RESOLVED",
+      "correction": "PYTHONPATH=. .venv/bin/pytest -q WITH_THE_EXACT_FOCUSED_PATHS",
+      "scope_effect": "NONE"
+    },
+    {
+      "attempt": "npm test",
+      "failure_class": "WRONG_REPOSITORY_TEST_RUNNER_NO_PACKAGE_JSON",
+      "correction": ".venv/bin/python -m pytest -q",
+      "scope_effect": "NONE"
+    },
+    {
+      "attempt": ".venv/bin/python -m pytest -q ON_DIRTY_IMPLEMENTATION_TREE",
+      "failure_class": "ONLY_21_EXPECTED_CLEAN_TREE_CLOSURE_ERRORS_AFTER_722_PASSES",
+      "correction": "COMMIT_AUTHORIZED_LOCAL_CHILD_THEN_RERUN_FROM_CLEAN_HEAD",
+      "scope_effect": "NONE"
+    }
+  ],
+  "verification": {
+    "focused_tests": "PASS_140",
+    "checkpoint12_tests": "PASS_31",
+    "full_tests": "PASS_743",
+    "strict_mypy": "PASS_132_SOURCE_FILES",
+    "exact_ruff": "PASS_2_FILES_CHECKED_AND_FORMAT_VERIFIED",
+    "privacy_history_build": "PASS",
+    "tracked_json_parse": "PASS_374",
+    "manifest_hashes": "PASS_25_OF_25_ZERO_MISMATCHES",
+    "checkpoint11_acceptance": "PASS_60_OF_60",
+    "checkpoint11_hostile_policy_cases": "PASS_28_OF_28",
+    "checkpoint11_p1_provenance_suite": "PASS_13",
+    "protected_artifact_identity": "PASS_VIA_FULL_SUITE_AND_EXACT_DIGEST_ASSERTIONS",
+    "production_source_no_diff": "PASS_EMPTY_FROM_F63D1F3",
+    "git_diff_check": "PASS",
+    "clean_tree": "PASS_AT_IMPLEMENTATION_HEAD"
+  },
+  "prohibited_actions": {
+    "human_action": false,
+    "human_facing_wording": false,
+    "real_person_assessment": false,
+    "construct_or_instrument_work": false,
+    "construct_specific_search": false,
+    "mapping": false,
+    "production_source_change": false,
+    "external_mutation": false,
+    "push": false,
+    "merge": false,
+    "railway_mutation_or_secret_access": false,
+    "deploy": false,
+    "publication_or_release": false
+  },
+  "worker_to_contract_alignment": "GREEN",
+  "contract_to_owner_alignment": "PARTIAL_ROOT_OPEN",
+  "bounded_policy_to_owner_alignment": "MATCH",
+  "completion_claim": "WORKING",
+  "operational_alignment": "PASS",
+  "scientific_adequacy": "WARN",
+  "release_adequacy": "NOT_APPLICABLE",
+  "release_permission": false,
+  "parent_outcome": "OPEN",
+  "root_completion": false,
+  "next_action": "EXISTING_PRO_LANE_CHECKPOINT12_REVIEW"
+}

@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-gpt-adjudication-premethod-conception-v1",
+  "status": "SOURCE_FREE_PREMETHOD_CONCEPTION_FROZEN",
+  "accepted_checkpoint13_baseline": {
+    "head": "b2d745d350487095f355c3e8a1afc3d0d26c4154",
+    "tree": "4204a3d9d17854663126c2d03fd74dd83d951c4d"
+  },
+  "checkpoint14_contract": {
+    "path": "docs/PRO_SUPERVISION_S6_H1_CHECKPOINT14_CONTRACT_20260831.md",
+    "receipt_commit": "1316a545bb234cf5448feb6069ba65932b6e69df",
+    "owner_decision_required": false,
+    "checkpoint13_verdict": "ACCEPTED_48_OF_48"
+  },
+  "conception_document": {
+    "path": "docs/NATAL_TIME_GPT_ADJUDICATION_PREMETHOD_CONCEPTION_20260831.md",
+    "sha256": "2114d392c74f35b3dfacf6a0e88b31b445c98bc7d211aecc88bd99b05227e261",
+    "byte_length": 7454
+  },
+  "research_state": {
+    "checkpoint14_methods_search_started": false,
+    "query_count": 0,
+    "queries": [],
+    "external_sources_seen": []
+  },
+  "required_elements_present": {
+    "future_adjudication_problem": true,
+    "model_run_context_identity_distinction": true,
+    "correlated_error_risk": true,
+    "evidence_packet_and_access_order": true,
+    "sealed_initial_commitments": true,
+    "disagreement_and_reconciliation_risk": true,
+    "owner_override_and_confirmation_risk": true,
+    "candidate_independent_mechanisms": true,
+    "constraints": true,
+    "unresolved_topics": true,
+    "success_conditions": true
+  },
+  "prohibited_content_present": {
+    "citation_or_framework_name": false,
+    "specific_model_or_provider_name": false,
+    "prompt_or_question_wording": false,
+    "real_person_evidence": false,
+    "evidence_threshold": false,
+    "decision_rule": false,
+    "reconciliation_algorithm": false,
+    "eligibility_result": false,
+    "construct_content": false,
+    "astrohd_mapping_content": false
+  },
+  "candidate_mechanism_classes": [
+    "SEPARATE_OPAQUE_IDENTITY_AND_DIGEST_OBJECTS",
+    "TWO_SEPARATELY_INITIALIZED_SYNTHETIC_RUN_SLOTS",
+    "APPEND_ONLY_INITIAL_COMMITMENTS",
+    "SEPARATELY_INITIALIZED_RECONCILIATION_SLOT",
+    "FAIL_CLOSED_ACCESS_ORDER_LEDGER",
+    "NON_RESOLVING_TYPED_STATE_VOCABULARY",
+    "CLOSED_REAL_USE_READINESS_REGISTER",
+    "SYNTHETIC_RESULT_SMUGGLING_PROBES"
+  ],
+  "operative_selections": {
+    "model_provider": null,
+    "model_family": null,
+    "model_version": null,
+    "model_artifact_or_service_revision": null,
+    "sampling_configuration": null,
+    "adjudication_prompt": null,
+    "evidence_standard": null,
+    "decision_rule": null,
+    "threshold_or_cutoff": null,
+    "reconciliation_rule": null,
+    "real_person_procedure": null
+  },
+  "real_person_adjudication_executed": false,
+  "external_model_or_api_called": false,
+  "human_facing_content_present": false,
+  "construct_or_mapping_content_present": false,
+  "production_or_external_mutation": false,
+  "worker_to_contract_alignment": "GREEN",
+  "root_contract_to_owner_alignment": "PARTIAL",
+  "completion_claim": "WORKING",
+  "parent_outcome": "OPEN",
+  "root_completion": false,
+  "release_permission": false
+}

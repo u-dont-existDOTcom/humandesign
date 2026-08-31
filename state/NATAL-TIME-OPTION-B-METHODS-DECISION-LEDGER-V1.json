@@ -1,0 +1,220 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-option-b-methods-decision-ledger-v1",
+  "status": "NO_FINAL_METHOD_SELECTED",
+  "active_purpose": "measurement_reliability_prerequisite_screen",
+  "provenance": {
+    "owner_record_sha256": "c24bb062bd90466f0be1a5be03211c8933e80bc1b4eaeee9509d5856bea02fc4",
+    "checkpoint_8_accepted_head": "63bfb78909a97eb5b8b31efe55e065a6f78973a2",
+    "independent_conception_commit": "aaec2fecad74a1dfc9fa6fa7ec75d90a77f9c1fd",
+    "source_ledger": "state/NATAL-TIME-OPTION-B-SOURCE-LEDGER-V1.json"
+  },
+  "allowed_classifications": [
+    "REUSE_DIRECTLY",
+    "ADAPT",
+    "BASELINE_OR_DIAGNOSTIC_ONLY",
+    "INCOMPATIBLE",
+    "UNRESOLVED",
+    "REQUIRES_OWNER_DECISION",
+    "REQUIRES_LATER_PRO_REVIEW"
+  ],
+  "decisions": [
+    {
+      "decision_id": "MD-01",
+      "method_family": "reliability_measurement_error_taxonomy",
+      "classification": "REUSE_DIRECTLY",
+      "source_ids": ["S01", "S02", "S05"],
+      "adopted_constraint": "Represent relative reliability, agreement, and measurement error as distinct future property families tied to explicit replication facets and intended use.",
+      "not_selected": ["coefficient", "estimator", "model", "cutoff"]
+    },
+    {
+      "decision_id": "MD-02",
+      "method_family": "reliability_and_agreement_reporting",
+      "classification": "REUSE_DIRECTLY",
+      "source_ids": ["S03", "S04"],
+      "adopted_constraint": "Reserve design, sample/context, rater, independence, estimate, uncertainty, and practical-interpretation reporting slots while tracking the in-progress reporting-guideline update.",
+      "not_selected": ["study_design", "sample", "rater_count", "analysis"]
+    },
+    {
+      "decision_id": "MD-03",
+      "method_family": "intended_use_population_and_error_source_conditionality",
+      "classification": "REUSE_DIRECTLY",
+      "source_ids": ["S05"],
+      "adopted_constraint": "Block unqualified reliability claims and require later evidence to match intended use, population, administration variations, and relevant error sources.",
+      "not_selected": ["intended_use", "population", "administration"]
+    },
+    {
+      "decision_id": "MD-04",
+      "method_family": "test_retest_reliability_versus_agreement",
+      "classification": "REUSE_DIRECTLY",
+      "source_ids": ["S02", "S09"],
+      "adopted_constraint": "Keep relative reliability, agreement, and measurement error distinct; association alone cannot satisfy agreement.",
+      "not_selected": ["interval", "occasion_count", "statistic"]
+    },
+    {
+      "decision_id": "MD-05",
+      "method_family": "inter_rater_and_intra_rater_design",
+      "classification": "ADAPT",
+      "source_ids": ["S02", "S03", "S16", "S17"],
+      "adopted_constraint": "Encode future independence, prior-code visibility, preserved original commitments, adjudication separation, versioning, and drift as eligibility/provenance fields.",
+      "not_selected": ["coder_count", "training", "coding_method", "coefficient"]
+    },
+    {
+      "decision_id": "MD-06",
+      "method_family": "facet_based_error_models",
+      "classification": "BASELINE_OR_DIAGNOSTIC_ONLY",
+      "source_ids": ["S05", "S08"],
+      "adopted_constraint": "Represent candidate replication facets and acknowledge interacting error sources without instantiating a variance model.",
+      "not_selected": ["facet_set", "model", "coefficient", "design"]
+    },
+    {
+      "decision_id": "MD-07",
+      "method_family": "internal_consistency",
+      "classification": "INCOMPATIBLE",
+      "source_ids": ["S01"],
+      "adopted_constraint": "Keep the branch ineligible unless a later contract selects a reflective model and supplies structural evidence.",
+      "not_selected": ["reflective_or_formative_model", "statistic", "item_rule", "dimensionality"]
+    },
+    {
+      "decision_id": "MD-08",
+      "method_family": "missing_data_design_and_reporting",
+      "classification": "ADAPT",
+      "source_ids": ["S18", "S19", "S20"],
+      "adopted_constraint": "Prevent silent value conversion; preserve missingness class, reason, planned status, occasion/item distinction, and denominator provenance; require later assumption and sensitivity decisions.",
+      "not_selected": ["imputation", "weighting", "deletion", "complete_case", "sensitivity_method"]
+    },
+    {
+      "decision_id": "MD-09",
+      "method_family": "response_styles_and_social_desirability",
+      "classification": "ADAPT",
+      "source_ids": ["S11", "S12"],
+      "adopted_constraint": "Register stable response-style and desirability threats separately from any future target and reject automatic reverse wording.",
+      "not_selected": ["control_item", "reverse_item", "forced_choice", "adjustment", "score"]
+    },
+    {
+      "decision_id": "MD-10",
+      "method_family": "personal_validation_and_expectancy",
+      "classification": "BASELINE_OR_DIAGNOSTIC_ONLY",
+      "source_ids": ["S10", "S11"],
+      "adopted_constraint": "Treat prior feedback, authority cues, expectancy, familiarity, positive-valence asymmetry, and generic personal validation as contamination/threat classes; repeated acceptance is not target reliability.",
+      "not_selected": ["control_statement", "suggestibility_measure", "manipulation", "score"]
+    },
+    {
+      "decision_id": "MD-11",
+      "method_family": "measurement_invariance_and_differential_functioning",
+      "classification": "REQUIRES_LATER_PRO_REVIEW",
+      "source_ids": ["S05", "S13", "S14"],
+      "adopted_constraint": "Block cross-version and cross-group pooling while equivalence is unresolved; current literature does not justify a universal workflow independent of construct, use, groups, and model assumptions.",
+      "not_selected": ["group", "model", "fit_rule", "partial_equivalence_policy", "differential_functioning_method"]
+    },
+    {
+      "decision_id": "MD-12",
+      "method_family": "translation_and_cultural_adaptation",
+      "classification": "ADAPT",
+      "source_ids": ["S05", "S15"],
+      "adopted_constraint": "Treat every translation or material cultural adaptation as a distinct version requiring documented process and later evidence; never presume equivalence.",
+      "not_selected": ["language", "translation_process", "culture", "equivalence_method"]
+    },
+    {
+      "decision_id": "MD-13",
+      "method_family": "accessibility_mode_and_accommodation",
+      "classification": "ADAPT",
+      "source_ids": ["S05", "S06", "S07"],
+      "adopted_constraint": "Record version lineage and accommodation-related variation; reserve a future accessibility target and cognitive review; make no conformance or equivalence claim.",
+      "not_selected": ["interface", "mode", "accommodation", "exclusion_policy"]
+    },
+    {
+      "decision_id": "MD-14",
+      "method_family": "blinded_coding_and_coder_drift",
+      "classification": "ADAPT",
+      "source_ids": ["S03", "S16", "S17"],
+      "adopted_constraint": "Enforce access ordering, independent commitments, immutable originals, development/evaluation separation, drift threat recording, and protocol-version boundaries.",
+      "not_selected": ["coding_content", "training", "monitoring_schedule", "adjudication_rule"]
+    },
+    {
+      "decision_id": "MD-15",
+      "method_family": "connected_component_leakage_and_repeat_participation",
+      "classification": "REQUIRES_LATER_PRO_REVIEW",
+      "source_ids": [],
+      "adopted_constraint": "Represent person, alias, repeat, partner, household, shared-source/recruiter/custodian/coder, and transitive edges as future leakage constraints without implementing a split or allocation.",
+      "not_selected": ["split_algorithm", "cohort", "role_assignment", "live_source"]
+    },
+    {
+      "decision_id": "MD-16",
+      "method_family": "correlation_only_agreement_claim",
+      "classification": "INCOMPATIBLE",
+      "source_ids": ["S09"],
+      "adopted_constraint": "Reject correlation-only evidence as satisfaction of an agreement requirement.",
+      "not_selected": ["replacement_statistic"]
+    },
+    {
+      "decision_id": "MD-17",
+      "method_family": "global_reliability_score_or_universal_cutoff",
+      "classification": "INCOMPATIBLE",
+      "source_ids": ["S05"],
+      "adopted_constraint": "Reject a global scalar, preferred default coefficient, numerical cutoff, and verbal quality band.",
+      "not_selected": ["score", "coefficient", "cutoff", "quality_band"]
+    },
+    {
+      "decision_id": "MD-18",
+      "method_family": "human_design_specific_bespoke_measure",
+      "classification": "REQUIRES_OWNER_DECISION",
+      "source_ids": [],
+      "adopted_constraint": "Do not define whether a future construct is system-derived or independently defined and do not create measurement content.",
+      "not_selected": ["construct_source", "construct", "instrument", "item"]
+    }
+  ],
+  "independent_insight_mapping": [
+    {
+      "insight_index": 1,
+      "post_scan_status": "REUSED",
+      "decision_ids": ["MD-01", "MD-03"]
+    },
+    {
+      "insight_index": 2,
+      "post_scan_status": "STILL_NOVEL",
+      "decision_ids": ["MD-15"]
+    },
+    {
+      "insight_index": 3,
+      "post_scan_status": "STILL_NOVEL",
+      "decision_ids": ["MD-05", "MD-14", "MD-15"]
+    },
+    {
+      "insight_index": 4,
+      "post_scan_status": "ADAPTED",
+      "decision_ids": ["MD-08"]
+    },
+    {
+      "insight_index": 5,
+      "post_scan_status": "ADAPTED",
+      "decision_ids": ["MD-05", "MD-14"]
+    },
+    {
+      "insight_index": 6,
+      "post_scan_status": "ADAPTED",
+      "decision_ids": ["MD-09", "MD-10"]
+    },
+    {
+      "insight_index": 7,
+      "post_scan_status": "ADAPTED",
+      "decision_ids": ["MD-11", "MD-12", "MD-13"]
+    },
+    {
+      "insight_index": 8,
+      "post_scan_status": "STILL_NOVEL",
+      "decision_ids": []
+    }
+  ],
+  "superseded_independent_insights": [],
+  "overlapping_established_instrument_found": false,
+  "new_owner_decisions_found": [
+    "construct_source",
+    "intended_population_language_country_age_and_literacy",
+    "participant_burden_sessions_duration_and_retest_window",
+    "failure_termination_or_redevelopment",
+    "favorable_result_progression"
+  ],
+  "new_owner_decision_note": "These are the already anticipated owner gates confirmed by the scan; none is resolved or needed to finish the authorized construct-neutral architecture.",
+  "final_method_selected": false
+}

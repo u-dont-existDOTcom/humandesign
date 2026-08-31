@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-s6-h1-prior-exposure-policy-authority-v1",
+  "status": "P1_SEMANTICS_OWNER_RATIFIED_PROVENANCE_ONLY_OVERLAY",
+  "primary_traceability_requirement_id": "S6H1-30",
+  "semantics_artifact": {
+    "path": "state/NATAL-TIME-S6-H1-PRIOR-EXPOSURE-POLICY-V1.json",
+    "sha256": "198120ca5b0ad39177936603c259653f2f144a82355662dc825513b6a88b87d9",
+    "semantics_changed_by_overlay": false
+  },
+  "supersedes_owner_policy_binding_in": {
+    "path": "state/NATAL-TIME-S6-H1-PRIOR-EXPOSURE-POLICY-V1.json",
+    "superseded_receipt_path": "state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH5-V1.json",
+    "superseded_receipt_sha256": "332c48e97802617d1867dd769a7fa9d866b2ca8e864ace2ff9db5cb36124bc98",
+    "reason": "SOURCE_AUTHOR_MISCLASSIFICATION"
+  },
+  "active_owner_policy_binding": {
+    "owner_outcome_epoch": 6,
+    "ratifying_message_path": "state/NATAL-TIME-OWNER-P1-RATIFICATION-SOURCE-EPOCH6-20260831.json",
+    "ratifying_message_artifact_sha256": "2faee461ba44273c267edd0c106be2cd46377e820098ce6b3047bbcf477a6efa",
+    "ratifying_message_exact_sha256": "31423d9b3cf9744f0110e1a6449b6174ecc0dd527f2c4fd144ce30e438c9a17f",
+    "ratified_policy_path": "state/NATAL-TIME-P1-PROPOSAL-TEXT-EPOCH6-20260831.txt",
+    "ratified_policy_sha256": "664c875137f7d671685db0df074429cfc0a243a78d549f7ee1143af8eacb5a00",
+    "owner_source_receipt_path": "state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH6-V1.json",
+    "owner_source_receipt_sha256": "4eb5600e9f46f07c35546f65e5dd6ed15438a3683ffa87590f81b808edaac3ff",
+    "owner_outcome_path": "state/NATAL-TIME-OWNER-OUTCOME-EPOCH6-V1.json",
+    "owner_outcome_sha256": "e6b4608a4849fa3acde1ab71db8026af55a04b21070529c6d5bc8eb20cbf8001",
+    "ratifying_message_author": "OWNER",
+    "ratifying_message_acquisition_mode": "DIRECT_OWNER_MESSAGE",
+    "ratified_policy_text_origin": "ASSISTANT_PROPOSED",
+    "owner_action": "EXPLICIT_RATIFICATION",
+    "receipt_capability": "OWNER_REATTESTED",
+    "reattestation_scope": "EPOCH5_H1_PRIOR_EXPOSURE_AND_SEMANTIC_CONTAMINATION_POLICY_ONLY",
+    "independent_source_comparison": "NOT_INDEPENDENT"
+  },
+  "effective_policy_rule": "Use the unchanged V1 eligibility semantics under the epoch-6 explicit owner-ratification authority chain.",
+  "root_terminalization_allowed": false,
+  "release_allowed": false
+}

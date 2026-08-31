@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "natal-time-b1-construct-candidate-metadata-schema-v1",
+  "title": "B1 closed opaque synthetic candidate metadata",
+  "type": "object",
+  "additionalProperties": false,
+  "x-provenance": {
+    "active_purpose": "b1_independent_construct_precontent_governance",
+    "owner_b1_record_commit": "cc6e8c3c05551c772d788d336994c3996d02ab78",
+    "methods_scan_commit": "1b6f851e5ad3b116d589cf421dbb145d9a2ba3be",
+    "test_only_instances": true
+  },
+  "required": [
+    "schema_version",
+    "record_class",
+    "synthetic_candidate_id",
+    "source_route_status",
+    "source_provenance_status",
+    "provenance_digest",
+    "authorship_session_digest",
+    "access_ledger_digest",
+    "synthetic_author_id",
+    "authorship_role_status",
+    "astrohd_exposure_state",
+    "contamination_state",
+    "version_id",
+    "supersession_status",
+    "specific_scan_status",
+    "freeze_status",
+    "unresolved_decision_ids",
+    "content_present"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.0.0"},
+    "record_class": {"type": "string", "const": "CONSPICUOUSLY_SYNTHETIC_B1_CANDIDATE_METADATA"},
+    "synthetic_candidate_id": {"type": "string", "pattern": "^SYNTH-B1-CANDIDATE-[A-Z0-9]{4,16}$"},
+    "source_route_status": {"type": "string", "const": "UNSELECTED"},
+    "source_provenance_status": {"type": "string", "enum": ["SYNTHETIC_KNOWN", "UNKNOWN_FAIL_CLOSED", "CONTAMINATED_INELIGIBLE"]},
+    "provenance_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "authorship_session_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "access_ledger_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "synthetic_author_id": {"type": "string", "pattern": "^SYNTH-B1-ACTOR-[A-Z0-9]{4,16}$"},
+    "authorship_role_status": {"type": "string", "const": "UNASSIGNED"},
+    "astrohd_exposure_state": {"type": "string", "enum": ["NONE_RECORDED_SYNTHETIC", "UNKNOWN_FAIL_CLOSED", "EXPOSED_CONTAMINATED"]},
+    "contamination_state": {"type": "string", "enum": ["CLEAN_SYNTHETIC_METADATA_ONLY", "CONTAMINATED_INELIGIBLE", "UNKNOWN_FAIL_CLOSED"]},
+    "version_id": {"type": "string", "pattern": "^SYNTH-B1-VERSION-[A-Z0-9]{4,16}$"},
+    "supersession_status": {"type": "string", "enum": ["NONE", "FUTURE_EXPLORATORY_REQUIRED", "SUPERSEDED_PRESERVED"]},
+    "specific_scan_status": {"type": "string", "const": "NOT_STARTED"},
+    "freeze_status": {"type": "string", "const": "NOT_FROZEN"},
+    "unresolved_decision_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^UNRESOLVED-B1-[0-9]{2}$"}
+    },
+    "content_present": {"type": "boolean", "const": false}
+  }
+}

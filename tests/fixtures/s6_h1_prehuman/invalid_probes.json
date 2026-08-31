@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0.0",
+  "record_class": "CONSPICUOUSLY_SYNTHETIC_S6_H1_INVALID_PROBES",
+  "cases": [
+    {"case_id":"unknown_field","schema":"screening","base_fixture":"screening_valid.json","mutation":{"field":"unexpected","value":"x"},"expected_code":"S6H1_UNKNOWN_FIELD"},
+    {"case_id":"real_like_candidate_id","schema":"screening","base_fixture":"screening_valid.json","mutation":{"field":"synthetic_candidate_id","value":"joel@example.com"},"expected_code":"S6H1_PATTERN_VIOLATION"},
+    {"case_id":"prohibited_human_field","schema":"screening","base_fixture":"screening_valid.json","mutation":{"field":"name","value":"Example Person"},"expected_code":"S6H1_PROHIBITED_FIELD"},
+    {"case_id":"unknown_exposure_not_closed","schema":"screening","base_fixture":"screening_valid.json","mutations":[{"field":"exposure_states.astrohd","value":"NOT_ASSESSED_FAIL_CLOSED"},{"field":"eligibility_state","value":"OWNER_RULES_PENDING"}],"expected_code":"S6H1_UNKNOWN_NOT_FAIL_CLOSED"},
+    {"case_id":"contamination_not_ineligible","schema":"screening","base_fixture":"screening_valid.json","mutations":[{"field":"exposure_states.mapping","value":"DISCLOSED_EXPOSURE_CONTAMINATED"},{"field":"eligibility_state","value":"OWNER_RULES_PENDING"}],"expected_code":"S6H1_CONTAMINATION_NOT_INELIGIBLE"},
+    {"case_id":"model_authorship_true","schema":"isolation","base_fixture":"isolation_valid.json","mutation":{"field":"model_content_authorship_allowed","value":true},"expected_code":"S6H1_CONST_VIOLATION"},
+    {"case_id":"isolation_with_unknown_session","schema":"isolation","base_fixture":"isolation_valid.json","mutation":{"field":"session.history_state","value":"UNKNOWN_FAIL_CLOSED"},"expected_code":"S6H1_ISOLATION_EVIDENCE_INCOMPLETE"},
+    {"case_id":"retrieval_source_nonzero","schema":"isolation","base_fixture":"isolation_valid.json","mutation":{"field":"retrieval.source_count","value":1},"expected_code":"S6H1_CONST_VIOLATION"}
+  ]
+}

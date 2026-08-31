@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "verdictId": "RSV-ASTROHD-20260830-EPOCH5-V1",
+  "taskId": "astrohd-relationship-20260830",
+  "packetId": "S6-H1-EPOCH5-OWNER-CORRECTION-PRO-PACKET-PENDING",
+  "reviewedAt": "2026-08-30T23:14:20Z",
+  "ownerSourceReceiptId": "osr-astrohd-relationship-20260830-epoch5-v1",
+  "objectiveReconciliationId": "ORC-ASTROHD-S6-H1-OWNER-CORRECTION-EPOCH5-20260830-V2",
+  "workerToContractAlignment": "YELLOW",
+  "contractToOwnerAlignment": "PARTIAL",
+  "currentCorrectionToOwnerAlignment": "MATCH",
+  "completionClaimType": "WORKING",
+  "operationalAlignment": {
+    "status": "WARN",
+    "findings": [
+      "The direct epoch-5 owner correction is preserved exactly and normalized separately.",
+      "The checkpoint-11 blanket exposure rule conflicts with the new owner policy and remains unremediated pending the required Pro ruling.",
+      "No human action, content, construct-specific search, mapping, production change, or external mutation occurred."
+    ]
+  },
+  "scientificAdequacy": {
+    "status": "WARN",
+    "findings": [
+      "The owner policy targets semantic/self-concept contamination rather than crude exposure or belief proxies.",
+      "No human-facing screening evidence, adjudication protocol, reliability, validity, mapping, birth-time recovery, relationship prediction, or participant-benefit evidence exists.",
+      "Deep technical familiarity remains a contamination/adjudication issue regardless of skepticism."
+    ]
+  },
+  "releaseAdequacy": {
+    "status": "NOT_APPLICABLE",
+    "releasePermission": false,
+    "provenance": "OWNER_REATTESTED_EPOCH5_CORRECTION_ONLY",
+    "findings": [
+      "No release, publication, deployment, merge, migration, recruitment, or participant-facing result is proposed.",
+      "The parent owner outcome remains open and root source/release gates remain unsatisfied."
+    ]
+  },
+  "ownerDecisionRequired": false,
+  "ownerDecision": "The checkpoint-11 prior-exposure gate is resolved by the epoch-5 semantic/self-concept contamination policy.",
+  "requiredDirective": "COMMIT_OWNER_CORRECTION_RECORD_AND_RETURN_TO_EXISTING_TASK_PRO_BEFORE_REMEDIATION",
+  "releasePermission": false,
+  "supervisionDesignFeedbackIds": ["SDF-20260830-OWNER-SOURCE-INDEPENDENCE-001"]
+}

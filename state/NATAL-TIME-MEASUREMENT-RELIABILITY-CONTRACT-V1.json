@@ -1,0 +1,307 @@
+{
+  "schema_version": "1.0.0",
+  "contract_version": "natal-time-measurement-reliability-contract-v1",
+  "status": "CONSTRUCT_NEUTRAL_ARCHITECTURE_ONLY",
+  "active_purpose": "measurement_reliability_prerequisite_screen",
+  "provenance": {
+    "owner_record_sha256": "c24bb062bd90466f0be1a5be03211c8933e80bc1b4eaeee9509d5856bea02fc4",
+    "checkpoint_8_accepted_head": "63bfb78909a97eb5b8b31efe55e065a6f78973a2",
+    "independent_conception_commit": "aaec2fecad74a1dfc9fa6fa7ec75d90a77f9c1fd",
+    "methods_scan_commit": "98b829e812c4cf2fdff7e02f00fa39ce137e6872",
+    "pro_ruling_record": "docs/PRO_SUPERVISION_OPTION_B_CONTRACT_20260830.md",
+    "methods_scan": "docs/NATAL_TIME_OPTION_B_METHODS_SCAN_20260830.md"
+  },
+  "current_claim": "The repository contains a construct-neutral, leakage-resistant, provenance-bound protocol architecture capable of specifying and later auditing a measurement-reliability study without selecting a construct, instrument, item, coding category, reliability coefficient, acceptance threshold, retest interval, population, language, mode, or human-data procedure.",
+  "passing_meaning": "DESIGN_CONTRACT_COMPLETENESS_NOT_EMPIRICAL_RELIABILITY",
+  "nonclaims": [
+    "HUMAN_DESIGN_OR_ASTROLOGICAL_VALIDITY",
+    "BIRTH_TIME_RECOVERABILITY",
+    "CORRECTNESS_OF_CHART_DERIVED_CONSTRUCT",
+    "CONTENT_VALIDITY",
+    "CONSTRUCT_VALIDITY",
+    "CRITERION_VALIDITY",
+    "PREDICTIVE_VALIDITY",
+    "TRUE_TRAIT_FROM_STABILITY",
+    "INDIVIDUAL_PRECISION_FROM_AGREEMENT",
+    "TEMPORAL_RELIABILITY_FROM_INTERNAL_CONSISTENCY",
+    "CORRECT_CODING_FROM_INTER_RATER_RELIABILITY",
+    "TRANSFER_ACROSS_POPULATION_LANGUAGE_MODE_ACCESSIBILITY_OR_CULTURE",
+    "IGNORABLE_OR_VALUED_MISSINGNESS",
+    "PARTICIPANT_BENEFIT",
+    "CLINICAL_OR_RELATIONSHIP_UTILITY",
+    "CALIBRATION",
+    "PRODUCTION_READINESS",
+    "RECTIFICATION_PROGRESSION_AUTHORIZATION"
+  ],
+  "permitted_future_measurement_property_families": [
+    {
+      "family": "REPEATABILITY",
+      "status": "UNSELECTED",
+      "preconditions": ["REPLICATION_FACETS_FROZEN", "INTENDED_USE_FROZEN", "CONDITIONS_FROZEN"]
+    },
+    {
+      "family": "RELATIVE_RELIABILITY",
+      "status": "UNSELECTED",
+      "preconditions": ["OBSERVATION_DATA_CLASS_FROZEN", "ERROR_SOURCES_FROZEN", "CONTEXT_FROZEN"]
+    },
+    {
+      "family": "AGREEMENT",
+      "status": "UNSELECTED",
+      "preconditions": ["AGREEMENT_TARGET_FROZEN", "MEASUREMENT_SCALE_FROZEN", "CONDITIONS_FROZEN"]
+    },
+    {
+      "family": "MEASUREMENT_ERROR",
+      "status": "UNSELECTED",
+      "preconditions": ["MEASUREMENT_SCALE_FROZEN", "ERROR_SOURCES_FROZEN", "CONTEXT_FROZEN"]
+    },
+    {
+      "family": "TEST_RETEST",
+      "status": "INELIGIBLE",
+      "preconditions": [
+        "TEMPORAL_ONTOLOGY_RESOLVED",
+        "EXPECTED_STABILITY_EVIDENCE_PRESENT",
+        "RECALL_RISK_RESOLVED",
+        "INTERIM_EVENT_PLAN_RESOLVED",
+        "CONDITION_EQUIVALENCE_RESOLVED",
+        "INTERVAL_RATIONALE_APPROVED"
+      ]
+    },
+    {
+      "family": "INTER_RATER",
+      "status": "INELIGIBLE",
+      "preconditions": ["CODING_CONTENT_FROZEN_LATER", "INDEPENDENT_CODING", "NO_PRIOR_CODE_VISIBILITY"]
+    },
+    {
+      "family": "INTRA_RATER",
+      "status": "INELIGIBLE",
+      "preconditions": ["CODING_CONTENT_FROZEN_LATER", "REPLICATION_CONDITIONS_FROZEN", "RECALL_RISK_RESOLVED"]
+    },
+    {
+      "family": "INTERNAL_CONSISTENCY",
+      "status": "INELIGIBLE",
+      "preconditions": ["REFLECTIVE_MODEL_SELECTED_BY_LATER_CONTRACT", "STRUCTURAL_VALIDITY_EVIDENCE_PRESENT"]
+    }
+  ],
+  "replication_facet_registry": [
+    {"facet": "OCCASION", "status": "UNSELECTED"},
+    {"facet": "RATER", "status": "UNSELECTED"},
+    {"facet": "WORDING_OR_FORM_VERSION", "status": "UNSELECTED"},
+    {"facet": "LANGUAGE_VERSION", "status": "UNSELECTED"},
+    {"facet": "ADMINISTRATION_MODE_VERSION", "status": "UNSELECTED"},
+    {"facet": "ACCESSIBILITY_OR_ACCOMMODATION_VERSION", "status": "UNSELECTED"}
+  ],
+  "role_and_access_boundaries": {
+    "roles": [
+      "SYNTHETIC_ADMINISTRATION_RECORDER",
+      "SYNTHETIC_CODER_A",
+      "SYNTHETIC_CODER_B",
+      "SYNTHETIC_ADJUDICATOR",
+      "SYNTHETIC_EVALUATION_CUSTODIAN",
+      "SYNTHETIC_AUDITOR"
+    ],
+    "rules": [
+      "CODERS_CANNOT_READ_PEER_CODES_BEFORE_BOTH_COMMITMENTS_FREEZE",
+      "ADJUDICATOR_CANNOT_REWRITE_ORIGINAL_COMMITMENTS",
+      "DEVELOPMENT_ADJUDICATION_CANNOT_BECOME_LOCKED_GROUND_TRUTH_WITHOUT_LATER_FREEZE",
+      "PRIOR_RESPONSE_OR_CODE_VISIBILITY_IS_CONTAMINATION",
+      "CHART_LABEL_FEEDBACK_OR_REFERENCE_TIME_EXPOSURE_IS_CONTAMINATION",
+      "ROLE_REASSIGNMENT_AFTER_EXPOSURE_APPENDS_CONTAMINATION",
+      "SYNTHETIC_AUDITOR_HAS_NO_LIVE_DATA_ACCESS"
+    ]
+  },
+  "contamination_states": [
+    "CLEAN_SYNTHETIC",
+    "CONTAMINATED_PRIOR_RESPONSE_VISIBILITY",
+    "CONTAMINATED_PRIOR_CODE_VISIBILITY",
+    "CONTAMINATED_CHART_OR_LABEL_EXPOSURE",
+    "CONTAMINATED_INDIVIDUALIZED_FEEDBACK",
+    "CONTAMINATED_REFERENCE_TIME_EXPOSURE",
+    "CONTAMINATED_ROLE_REASSIGNMENT_AFTER_EXPOSURE",
+    "CONTAMINATED_CONNECTED_COMPONENT_LEAKAGE",
+    "CONTAMINATED_SELECTIVE_COMPLETION_AFTER_FEEDBACK",
+    "CONTAMINATED_PROTOCOL_VERSION_DRIFT",
+    "CONTAMINATION_UNKNOWN"
+  ],
+  "contamination_semantics": {
+    "history": "APPEND_ONLY_MONOTONIC",
+    "clean_estimate_eligibility": "CONTAMINATED_OBSERVATIONS_PROHIBITED_UNTIL_LATER_APPROVED_RULE",
+    "silent_repair": "PROHIBITED"
+  },
+  "missingness_classes": [
+    "NOT_MISSING",
+    "ITEM_MISSING",
+    "OCCASION_MISSING",
+    "DROPOUT",
+    "REFUSAL",
+    "TECHNICAL_FAILURE",
+    "ACCESSIBILITY_FAILURE",
+    "STRUCTURAL_NOT_APPLICABLE",
+    "PLANNED_MISSING",
+    "UNKNOWN_REASON"
+  ],
+  "missingness_semantics": {
+    "value_conversion": "PROHIBITED",
+    "reason_provenance": "REQUIRED",
+    "denominator_provenance": "REQUIRED",
+    "complete_case_default": "PROHIBITED",
+    "imputation": "UNSELECTED",
+    "weighting": "UNSELECTED",
+    "deletion": "UNSELECTED",
+    "sensitivity_method": "UNSELECTED",
+    "planned_vs_unplanned": "DISTINCT",
+    "missing_retest_classification": "NEITHER_AGREEMENT_DISAGREEMENT_NOR_ABSTENTION"
+  },
+  "versioning_and_supersession": {
+    "immutability": "REQUIRED_AFTER_COMMIT",
+    "correction_mode": "NEW_SUPERSEDING_ARTIFACT_WITH_EXPLICIT_LINEAGE",
+    "language_change": "NEW_VERSION_REQUIRED",
+    "mode_change": "NEW_VERSION_REQUIRED",
+    "form_change": "NEW_VERSION_REQUIRED",
+    "material_accommodation_change": "NEW_VERSION_REQUIRED",
+    "coding_protocol_change": "NEW_VERSION_AND_NO_UNQUALIFIED_POOLING"
+  },
+  "future_estimate_reserved_slots": [
+    "POINT_ESTIMATE",
+    "UNCERTAINTY_INTERVAL",
+    "MEASUREMENT_ERROR",
+    "SAMPLE_AND_CONTEXT_DESCRIPTION",
+    "ASSUMPTIONS"
+  ],
+  "future_estimate_slot_status": "PROHIBITED_UNTIL_LATER_APPROVED_CONTRACT",
+  "equivalence_and_pooling": {
+    "cross_language": "BLOCKED_UNRESOLVED",
+    "cross_mode": "BLOCKED_UNRESOLVED",
+    "cross_form": "BLOCKED_UNRESOLVED",
+    "cross_accommodation": "BLOCKED_UNRESOLVED",
+    "cross_group": "BLOCKED_UNRESOLVED"
+  },
+  "semantic_guards": {
+    "correlation_only_satisfies_agreement": false,
+    "reliability_may_populate_validity": false,
+    "reliability_may_populate_rectification": false,
+    "stable_barnum_acceptance_is_construct_reliability": false,
+    "reverse_wording_is_default_remedy": false,
+    "response_style_adjustment_may_merge_with_target": false,
+    "accessibility_metadata_may_silently_exclude": false,
+    "accommodation_variation_is_automatically_participant_error": false
+  },
+  "feedback_order_rule": "NO_INDIVIDUALIZED_CHART_OR_PERSONALITY_FEEDBACK_BEFORE_ALL_FUTURE_ADMINISTRATIONS_AND_CODING_COMMITMENTS_ARE_COMPLETE",
+  "accessibility_boundary": {
+    "future_target": "WCAG_2_2_AA",
+    "conformance_claim": "NONE",
+    "required_future_evaluation": ["AUTOMATED", "HUMAN", "COGNITIVE_ACCESSIBILITY"],
+    "interface_implemented": false,
+    "accommodation_selected": false
+  },
+  "connected_component_boundary": {
+    "entity_classes": [
+      "SYNTHETIC_PERSON",
+      "SYNTHETIC_ALIAS",
+      "SYNTHETIC_REPEAT_PARTICIPATION",
+      "SYNTHETIC_PARTNER",
+      "SYNTHETIC_HOUSEHOLD_MEMBER",
+      "SYNTHETIC_TRANSITIVE_COMPONENT"
+    ],
+    "edge_classes": [
+      "SYNTHETIC_ALIAS_EDGE",
+      "SYNTHETIC_REPEAT_EDGE",
+      "SYNTHETIC_PARTNER_EDGE",
+      "SYNTHETIC_HOUSEHOLD_EDGE",
+      "SYNTHETIC_SHARED_RECRUITER_EDGE",
+      "SYNTHETIC_SHARED_SOURCE_EDGE",
+      "SYNTHETIC_SHARED_CUSTODIAN_EDGE",
+      "SYNTHETIC_SHARED_CODER_EDGE",
+      "SYNTHETIC_OTHER_LABEL_TRANSMISSION_EDGE"
+    ],
+    "multiple_future_data_roles_per_component": "PROHIBITED",
+    "role_reassignment_after_exposure": "APPEND_CONTAMINATION_DO_NOT_REWRITE_HISTORY",
+    "split_algorithm": "NOT_IMPLEMENTED",
+    "cohort_allocation": "NOT_IMPLEMENTED",
+    "live_relationship_source": "PROHIBITED"
+  },
+  "future_decision_gates": [
+    "CONSTRUCT_SOURCE_OWNER_DECISION",
+    "CONSTRUCT_AND_MEASUREMENT_MODEL_LATER_PRO_REVIEW",
+    "POPULATION_LANGUAGE_COUNTRY_AGE_LITERACY_OWNER_DECISION",
+    "MODE_AND_ACCESSIBILITY_OWNER_DECISION",
+    "BURDEN_SESSIONS_DURATION_INTERVAL_OWNER_DECISION",
+    "CONTENT_AND_CODING_LATER_PRO_REVIEW",
+    "PROPERTY_FAMILY_ESTIMAND_MODEL_THRESHOLD_SAMPLE_LATER_PRO_REVIEW",
+    "MISSINGNESS_AND_EQUIVALENCE_LATER_PRO_REVIEW",
+    "FAILURE_REDEVELOPMENT_OWNER_DECISION",
+    "FAVORABLE_RESULT_PROGRESSION_OWNER_DECISION",
+    "HUMAN_WORK_SEPARATE_AUTHORIZATION"
+  ],
+  "prohibited_fields": [
+    "construct",
+    "construct_name",
+    "construct_description",
+    "instrument",
+    "item",
+    "prompt",
+    "probe",
+    "response",
+    "response_text",
+    "response_options",
+    "coding_category",
+    "category_description",
+    "exemplar",
+    "scoring",
+    "scoring_key",
+    "score",
+    "coefficient",
+    "estimator",
+    "model",
+    "threshold",
+    "retest_interval",
+    "number_of_occasions",
+    "number_of_coders",
+    "sample_size",
+    "population",
+    "language",
+    "mode",
+    "accommodation",
+    "rank",
+    "weight",
+    "probability",
+    "confidence",
+    "validity",
+    "prediction",
+    "rectification",
+    "chart_interpretation",
+    "recommended_action",
+    "birth_time",
+    "birth_date",
+    "birthplace",
+    "chart",
+    "T_i",
+    "C_i",
+    "S_i",
+    "candidate_interval",
+    "compatibility",
+    "relationship_evidence",
+    "free_text",
+    "live_identity"
+  ],
+  "prohibited_operations": [
+    "CALCULATE_RELIABILITY_RESULT",
+    "SELECT_COEFFICIENT_ESTIMATOR_MODEL_OR_THRESHOLD",
+    "SELECT_RETEST_INTERVAL_OCCASION_COUNT_RATER_COUNT_OR_SAMPLE_SIZE",
+    "CREATE_MEASUREMENT_CONTENT",
+    "CREATE_PARTICIPANT_WORKFLOW",
+    "ACCEPT_LIVE_OR_PRIVATE_RECORD",
+    "READ_PARTICIPANT_DOCUMENTARY_RELATIONSHIP_OR_SECRET_DATA",
+    "SELECT_RANK_PRUNE_OR_INTERPRET_NATAL_TIME",
+    "POOL_UNRESOLVED_VERSIONS_OR_GROUPS",
+    "CONVERT_MISSINGNESS_TO_VALUE",
+    "MODIFY_PRODUCTION_ROUTE_STORAGE_OR_CONFIGURATION",
+    "RECRUIT_OR_COLLECT_DATA",
+    "PUSH_MERGE_DEPLOY_OR_PUBLISH"
+  ],
+  "global_reliability_scalar": "PROHIBITED",
+  "preferred_default_coefficient": "NONE",
+  "numeric_acceptance_threshold": "NONE",
+  "verbal_quality_band": "NONE",
+  "human_work_authorized": false,
+  "rectification_authorized": false
+}

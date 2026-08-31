@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-s6-h1-objective-reconciliation-v1",
+  "reconciliation_id": "ORC-ASTROHD-S6-H1-PREHUMAN-20260830-V1",
+  "trigger": "PHASE_TRANSITION_FROM_METHODS_SCAN_TO_METADATA_ARCHITECTURE",
+  "owner_source_receipt_id": "osr-astrohd-relationship-20260830-epoch4-v1",
+  "owner_source_receipt_capability": "INTEGRITY_ONLY",
+  "worker_to_contract_alignment": "GREEN",
+  "contract_to_owner_alignment": "PARTIAL",
+  "completion_claim": "WORKING",
+  "requirements": [
+    {"owner_requirement_id":"RO-01","relation":"CONTRIBUTES","status":"MAPPED_PARENT_OPEN","evidence":["state/NATAL-TIME-S6-H1-WORKFLOW-CONTRACT-V1.json"]},
+    {"owner_requirement_id":"RO-02","relation":"VERIFIES","status":"MAPPED_NO_EXTERNAL_TRANSITION","evidence":["docs/RELATIONSHIP_RESEARCH_HANDOFF.md"]},
+    {"owner_requirement_id":"RO-03","relation":"DIRECT","status":"MAPPED_CHECKPOINT_11_PENDING","evidence":["docs/PRO_SUPERVISION_S6_H1_PREHUMAN_CONTRACT_20260830.md"]},
+    {"owner_requirement_id":"RO-04","relation":"DIRECT","status":"MAPPED_LOCAL_REPOSITORY_ONLY","evidence":["state/NATAL-TIME-S6-H1-WORKFLOW-CONTRACT-V1.json"]},
+    {"owner_requirement_id":"RO-05","relation":"VERIFIES","status":"MAPPED_NO_LIVE_DATA_SECRET_OR_RELEASE","evidence":["state/NATAL-TIME-S6-H1-CONTENT-ESCROW-CONTRACT-V1.json","state/NATAL-TIME-S6-H1-ASSURANCE-PLANES-V1.json"]},
+    {"owner_requirement_id":"RO-06","relation":"CONTRIBUTES","status":"MAPPED_PREHUMAN_GOVERNANCE_ONLY","evidence":["state/NATAL-TIME-S6-H1-WORKFLOW-CONTRACT-V1.json"]},
+    {"owner_requirement_id":"RO-07","relation":"DIRECT","status":"MAPPED_S6_H1_ORDER_AND_LATER_MAPPING_CLOSED","evidence":["state/NATAL-TIME-S6-H1-CONCEPTION-SEARCH-STATE-MACHINE-V1.json","state/NATAL-TIME-S6-H1-ROLE-ACCESS-MATRIX-V1.json"]},
+    {"owner_requirement_id":"RO-08","relation":"CONTRIBUTES","status":"MAPPED_PARENT_OPEN_UNCHANGED","evidence":["state/NATAL-TIME-OWNER-OUTCOME-EPOCH4-V1.json"]},
+    {"owner_requirement_id":"RO-09","relation":"CONTRIBUTES","status":"MAPPED_PARENT_OPEN_RELEASE_FALSE","evidence":["state/NATAL-TIME-S6-H1-ASSURANCE-PLANES-V1.json"]},
+    {"owner_requirement_id":"RO-10","relation":"VERIFIES","status":"MAPPED_PROTECTED_BASELINE_UNCHANGED","evidence":["protected artifact comparison at exact head"]},
+    {"owner_requirement_id":"RO-11","relation":"DIRECT","status":"MAPPED_RECURRING_RECONCILIATION_AND_DUAL_ALIGNMENT","evidence":["state/NATAL-TIME-S6-H1-SOURCE-ALIGNMENT-ATTESTATION-V1.json","state/NATAL-TIME-S6-H1-ASSURANCE-PLANES-V1.json"]},
+    {"owner_requirement_id":"RO-12","relation":"DIRECT","status":"MAPPED_HEADLESS_DEFAULT_AND_EXISTING_DEDICATED_WINDOW","evidence":["checkpoint 11 browser-operation record"]},
+    {"owner_requirement_id":"RO-13","relation":"DIRECT","status":"MAPPED_FEEDBACK_ROUTED_NO_NEW_DEFECT","evidence":["docs/PRO_SUPERVISION_DESIGN_FEEDBACK_RULING_20260830.md"]}
+  ],
+  "requirement_count": 13,
+  "unmapped_owner_requirement_ids": [],
+  "divergences": [],
+  "authorized_scope_changes": ["S6 plus H1 owner choice","epoch-4 supervision bootstrap hotfix","task Pro pre-human governance contract"],
+  "recurring_reconciliation": {
+    "previous_reconciliation_id":"ORC-ASTROHD-20260830-EPOCH4-V1",
+    "next_triggers":["checkpoint 11 Pro verdict","material discovery","phase transition","acceptance criteria change","owner correction","release merge deployment migration publication or root completion preparation","supervision-design meta-review change"]
+  },
+  "parent_outcome_open": true,
+  "root_terminalization_allowed": false,
+  "release_allowed": false
+}

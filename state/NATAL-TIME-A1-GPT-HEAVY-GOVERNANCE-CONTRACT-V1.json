@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-a1-gpt-heavy-governance-contract-v1",
+  "status": "CONTENT_FREE_SYNTHETIC_ONLY_ARCHITECTURE",
+  "primary_traceability_requirement_id": "A1G-05",
+  "owner_source": {
+    "path": "state/NATAL-TIME-OWNER-A1-GPT-HEAVY-SOURCE-EPOCH8-20260831.json",
+    "sha256": "97ce6179532c73e9668a5cff47b41006f49a536cf76e449084f3834847d28e59",
+    "byte_length": 56,
+    "role_nomination": "ONE_PROSPECTIVE_HUMAN_AUTHOR",
+    "eligibility_verdict": "NOT_MADE",
+    "workflow_preference": "GPT_MAXIMUM_SCIENTIFICALLY_PERMITTED_ASSISTANCE"
+  },
+  "p1": {
+    "eligibility_adjudicator_actor_class": "GPT",
+    "process_states": ["NOT_ASSESSED", "EVIDENCE_INCOMPLETE", "EVIDENCE_CONFLICT", "DECISION_PENDING", "DECISION_RECORDED"],
+    "substantive_outcomes": ["ELIGIBLE", "REQUIRES_BLIND_ADJUDICATION", "INELIGIBLE_CLEAN_H1_AUTHOR"],
+    "process_and_outcome_vocabularies_unchanged": true,
+    "real_person_adjudication_executed": false
+  },
+  "semantic_authority": {
+    "controlling_origin_role": "JOEL_AUTHOR",
+    "final_fidelity_authority_role": "JOEL_AUTHOR",
+    "gpt_may_automate": ["TRANSCRIPTION", "EXACT_QUOTE_EXTRACTION", "MEANING_NEUTRAL_FORMATTING", "HASHING", "INDEXING", "PROVENANCE", "EXACT_DUPLICATE_FLAGGING", "NEAR_DUPLICATE_FLAGGING", "SOURCE_CONSTRAINED_NONAUTHORITATIVE_DERIVATIVE_DRAFTING", "MECHANICAL_VALIDATION"],
+    "gpt_may_not_autonomously_control": ["NEW_SEMANTIC_PROPOSITION", "SEMANTIC_EQUIVALENCE", "INCLUSION", "EXCLUSION", "PRIORITY", "MERGE", "SPLIT", "OMISSION", "AUTHORITATIVE_GROUPING", "AUTHORITATIVE_LABEL", "CONFLICT_RESOLUTION", "FINAL_FIDELITY"],
+    "every_controlling_unit_requires_human_source": true,
+    "every_controlling_unit_requires_joel_author_decision": true,
+    "gpt_fidelity_review_replaces_human_attestation": false
+  },
+  "freezes": [
+    {"freeze_id": "RAW_HUMAN_ORIGIN_FREEZE", "must_precede": "GPT_SEMANTIC_TRANSFORMATION", "immutable": true},
+    {"freeze_id": "CLEAN_CONCEPTION_FREEZE", "must_precede": "PROTECTED_MAPPING_ACCESS", "immutable": true}
+  ],
+  "later_mapping_firewall_unchanged": true,
+  "later_mapping_admissible_results": ["NULL", "WEAK", "UNSTABLE", "NONREPLICATING", "OTHER_EVIDENCE_SUPPORTED_RESULT"],
+  "single_author_limit": {
+    "prospective_human_author_count": 1,
+    "cross_author_robustness_claim_allowed": false,
+    "owner_author_conflict_state": "MANAGEABLE_DISCLOSED_CONFLICT"
+  },
+  "selected_model": null,
+  "selected_provider": null,
+  "selected_model_version": null,
+  "selected_prompt": null,
+  "selected_evidence_standard": null,
+  "selected_threshold": null,
+  "selected_reconciliation_rule": null,
+  "selected_human_procedure": null,
+  "human_facing_language_present": false,
+  "semantic_content_present": false,
+  "construct_or_instrument_present": false,
+  "mapping_content_present": false,
+  "production_change_authorized": false,
+  "external_mutation_authorized": false,
+  "completion_claim": "WORKING",
+  "parent_outcome": "OPEN",
+  "root_completion": false,
+  "release_permission": false
+}

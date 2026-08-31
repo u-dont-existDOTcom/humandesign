@@ -1,0 +1,190 @@
+{
+  "schema_version": "3.0.0",
+  "artifact_id": "natal-time-s6-h1-objective-reconciliation-v3",
+  "reconciliation_id": "ORC-ASTROHD-S6-H1-OWNER-CORRECTION-EPOCH5-20260830-V3",
+  "primary_traceability_requirement_id": "S6H1-07",
+  "supersedes": {
+    "path": "state/NATAL-TIME-S6-H1-OBJECTIVE-RECONCILIATION-V2.json",
+    "sha256": "dc4134999e17bed0b99dcc0668fdc9e5896a5cedc36384fc93515236b3a91b49"
+  },
+  "owner_policy_binding": {
+    "owner_outcome_epoch": 5,
+    "owner_source": {
+      "path": "state/NATAL-TIME-OWNER-OUTCOME-SOURCE-EPOCH5-20260830.md",
+      "sha256": "ae31f03e2d2e83373be50c451f0bf998175a64ed83811570e613112035ebd131"
+    },
+    "normalized_decision": {
+      "path": "docs/NATAL_TIME_OWNER_DECISION_H1_CONTAMINATION_POLICY_20260830.md",
+      "sha256": "9016c1965ce60c198f10ebb56339471f9b3fd46e3974bce29dec5c7944417be6"
+    },
+    "owner_source_receipt": {
+      "path": "state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH5-V1.json",
+      "sha256": "332c48e97802617d1867dd769a7fa9d866b2ca8e864ace2ff9db5cb36124bc98",
+      "capability": "OWNER_REATTESTED",
+      "scope": "EPOCH5_H1_PRIOR_EXPOSURE_AND_SEMANTIC_CONTAMINATION_POLICY_ONLY"
+    },
+    "owner_outcome": {
+      "path": "state/NATAL-TIME-OWNER-OUTCOME-EPOCH5-V1.json",
+      "sha256": "02f199808dbb50bfd31a3bb7cc29a84f7b904caaba79d6589e7e172d9ed63fa2"
+    },
+    "pro_ruling": {
+      "path": "state/NATAL-TIME-S6-H1-CHECKPOINT11-PRO-RULING-V2.json",
+      "sha256": "ff16efda132a2ae99fbc6b603609dd368d131a2b43e03e12db3bc74f0e2f4e1c"
+    }
+  },
+  "trigger": "AUTHORIZED_EPOCH5_POLICY_REMEDIATION_IMPLEMENTED",
+  "owner_outcome_id": "OO-ASTROHD-RELATIONSHIP-CONTINUATION",
+  "owner_outcome_epoch": 5,
+  "worker_to_contract_alignment": "GREEN",
+  "contract_to_owner_alignment": "PARTIAL",
+  "bounded_epoch5_policy_to_owner_alignment": "MATCH",
+  "completion_claim": "WORKING",
+  "requirements": [
+    {
+      "owner_requirement_id": "RO-01",
+      "relation": "MAPPED_CONTRIBUTING",
+      "status": "PARENT_OPEN",
+      "evidence": [
+        "state/NATAL-TIME-OWNER-OUTCOME-EPOCH5-V1.json"
+      ]
+    },
+    {
+      "owner_requirement_id": "RO-02",
+      "relation": "MAPPED_VERIFYING",
+      "status": "FRESH_PROJECT_AND_SHARED_INSTRUCTIONS_READ",
+      "evidence": [
+        "AGENTS.md",
+        "CURRENT_PLAN.md",
+        "docs/RELATIONSHIP_RESEARCH_HANDOFF.md"
+      ]
+    },
+    {
+      "owner_requirement_id": "RO-03",
+      "relation": "MAPPED_DIRECT",
+      "status": "OWNER_GATE_RESOLVED_PRO_REMEDIATION_AUTHORIZED",
+      "evidence": [
+        "docs/NATAL_TIME_OWNER_DECISION_H1_CONTAMINATION_POLICY_20260830.md",
+        "docs/PRO_SUPERVISION_S6_H1_CHECKPOINT11_OWNER_CORRECTION_RULING_20260830.md"
+      ]
+    },
+    {
+      "owner_requirement_id": "RO-04",
+      "relation": "MAPPED_DIRECT",
+      "status": "OWNER_SOURCE_DECISION_AND_RECEIPT_COMMITTED",
+      "evidence": [
+        "state/NATAL-TIME-OWNER-OUTCOME-SOURCE-EPOCH5-20260830.md",
+        "state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH5-V1.json"
+      ]
+    },
+    {
+      "owner_requirement_id": "RO-05",
+      "relation": "MAPPED_VERIFYING",
+      "status": "NO_LIVE_DATA_SECRET_RELEASE_OR_EXTERNAL_ACTION",
+      "evidence": [
+        "state/NATAL-TIME-S6-H1-EXECUTION-LEDGER-V2.json"
+      ]
+    },
+    {
+      "owner_requirement_id": "RO-06",
+      "relation": "MAPPED_CONTRIBUTING",
+      "status": "PARENT_OPEN_UNCHANGED",
+      "evidence": [
+        "state/NATAL-TIME-OWNER-OUTCOME-EPOCH5-V1.json"
+      ]
+    },
+    {
+      "owner_requirement_id": "RO-07",
+      "relation": "OWNER_AMENDED",
+      "status": "EPOCH5_POLICY_IMPLEMENTED_PENDING_PRO_ACCEPTANCE",
+      "evidence": [
+        "state/NATAL-TIME-S6-H1-PRIOR-EXPOSURE-POLICY-V1.json",
+        "state/NATAL-TIME-S6-H1-SCREENING-METADATA-SCHEMA-V2.json"
+      ],
+      "authorized_change": "Exposure alone is neither automatic eligibility nor ineligibility; semantic or self-concept contamination controls; substantial knowledge requires blind adjudication absent a separate ineligibility basis."
+    },
+    {
+      "owner_requirement_id": "RO-08",
+      "relation": "MAPPED_CONTRIBUTING",
+      "status": "PARENT_OPEN_UNCHANGED",
+      "evidence": [
+        "state/NATAL-TIME-OWNER-OUTCOME-EPOCH5-V1.json"
+      ]
+    },
+    {
+      "owner_requirement_id": "RO-09",
+      "relation": "MAPPED_CONTRIBUTING",
+      "status": "PARENT_OPEN_RELEASE_FALSE",
+      "evidence": [
+        "state/NATAL-TIME-S6-H1-ASSURANCE-PLANES-V2.json"
+      ]
+    },
+    {
+      "owner_requirement_id": "RO-10",
+      "relation": "MAPPED_VERIFYING",
+      "status": "PROTECTED_BASELINE_UNCHANGED",
+      "evidence": [
+        "tests/s6_h1_prehuman/acceptance.py"
+      ]
+    },
+    {
+      "owner_requirement_id": "RO-11",
+      "relation": "MAPPED_DIRECT",
+      "status": "EPOCH5_RECEIPT_RECONCILIATION_AND_ASSURANCE_CURRENT",
+      "evidence": [
+        "state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH5-V1.json",
+        "state/NATAL-TIME-S6-H1-OBJECTIVE-RECONCILIATION-V3.json",
+        "state/NATAL-TIME-S6-H1-ASSURANCE-PLANES-V2.json"
+      ]
+    },
+    {
+      "owner_requirement_id": "RO-12",
+      "relation": "MAPPED_DIRECT",
+      "status": "EXISTING_TASK_PRO_CHAT_REUSED",
+      "evidence": [
+        "state/NATAL-TIME-S6-H1-CHECKPOINT11-PRO-RULING-V2.json"
+      ]
+    },
+    {
+      "owner_requirement_id": "RO-13",
+      "relation": "MAPPED_DIRECT",
+      "status": "NO_NEW_SUPERVISION_DESIGN_DEFECT",
+      "evidence": [
+        "docs/PRO_SUPERVISION_DESIGN_FEEDBACK_RULING_20260830.md"
+      ]
+    }
+  ],
+  "requirement_count": 13,
+  "changed_owner_requirement_ids": [
+    "RO-03",
+    "RO-04",
+    "RO-05",
+    "RO-07",
+    "RO-09",
+    "RO-11",
+    "RO-12"
+  ],
+  "unmapped_owner_requirement_ids": [],
+  "divergences": [
+    {
+      "id": "DIV-EPOCH5-H1-BLANKET-EXPOSURE",
+      "status": "REMEDIATED_PENDING_PRO_ACCEPTANCE",
+      "historical_rule": "Any HD/AstroHD/astrology exposure fails content-author eligibility.",
+      "owner_correction": "Exposure alone is permitted; semantic or self-concept contamination controls, and substantial semantic knowledge requires blind adjudication regardless of belief.",
+      "active_policy": "state/NATAL-TIME-S6-H1-PRIOR-EXPOSURE-POLICY-V1.json"
+    }
+  ],
+  "recurring_reconciliation": {
+    "previous_reconciliation_id": "ORC-ASTROHD-S6-H1-OWNER-CORRECTION-EPOCH5-20260830-V2",
+    "next_triggers": [
+      "checkpoint 11 resubmission",
+      "checkpoint 11 Pro acceptance ruling",
+      "acceptance criteria change",
+      "material discovery",
+      "phase transition",
+      "release merge deployment migration publication or root completion preparation"
+    ]
+  },
+  "parent_outcome_open": true,
+  "root_terminalization_allowed": false,
+  "release_allowed": false
+}

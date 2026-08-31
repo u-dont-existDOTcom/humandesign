@@ -1,0 +1,230 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:humandesign:natal-time:s6-h1:isolation-provenance:v2",
+  "title": "Closed conspicuously synthetic S6/H1 isolation provenance separated from human prior-exposure policy",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_class",
+    "synthetic_isolation_id",
+    "synthetic_candidate_id",
+    "environment",
+    "session",
+    "tool",
+    "retrieval",
+    "actor",
+    "access",
+    "fresh_isolation_state",
+    "model_content_authorship_allowed",
+    "human_action_occurred"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "NATAL-TIME-S6-H1-ISOLATION-PROVENANCE-V2"
+    },
+    "record_class": {
+      "const": "CONSPICUOUSLY_SYNTHETIC_S6_H1_ISOLATION_V2_FIXTURE"
+    },
+    "synthetic_isolation_id": {
+      "type": "string",
+      "pattern": "^SYN-S6H1-ISO-[0-9]{4}$"
+    },
+    "synthetic_candidate_id": {
+      "type": "string",
+      "pattern": "^SYN-S6H1-CAND-[0-9]{4}$"
+    },
+    "environment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "synthetic_environment_id",
+        "provenance_state"
+      ],
+      "properties": {
+        "synthetic_environment_id": {
+          "type": "string",
+          "pattern": "^SYN-S6H1-ENV-[0-9]{4}$"
+        },
+        "provenance_state": {
+          "enum": [
+            "UNKNOWN_FAIL_CLOSED",
+            "COMPLETE_SYNTHETIC_TEST_PROVENANCE"
+          ]
+        }
+      }
+    },
+    "session": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "synthetic_session_id",
+        "history_state"
+      ],
+      "properties": {
+        "synthetic_session_id": {
+          "type": "string",
+          "pattern": "^SYN-S6H1-SES-[0-9]{4}$"
+        },
+        "history_state": {
+          "enum": [
+            "UNKNOWN_FAIL_CLOSED",
+            "EMPTY_SYNTHETIC_TEST_HISTORY"
+          ]
+        }
+      }
+    },
+    "tool": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "synthetic_tool_id",
+        "use_class"
+      ],
+      "properties": {
+        "synthetic_tool_id": {
+          "type": "string",
+          "pattern": "^SYN-S6H1-TOOL-[0-9]{4}$"
+        },
+        "use_class": {
+          "enum": [
+            "NO_TOOL_USE",
+            "NON_CONTENT_METADATA_ONLY"
+          ]
+        }
+      }
+    },
+    "retrieval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state",
+        "source_count"
+      ],
+      "properties": {
+        "state": {
+          "enum": [
+            "DISABLED",
+            "UNKNOWN_FAIL_CLOSED"
+          ]
+        },
+        "source_count": {
+          "const": 0
+        }
+      }
+    },
+    "actor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "synthetic_actor_id",
+        "role_id",
+        "human_policy_state",
+        "content_generation_context_exposure_state"
+      ],
+      "properties": {
+        "synthetic_actor_id": {
+          "type": "string",
+          "pattern": "^SYN-S6H1-ACTOR-[0-9]{4}$"
+        },
+        "role_id": {
+          "const": "CHART_BLIND_HUMAN_CONCEPT_AUTHOR"
+        },
+        "human_policy_state": {
+          "const": "GOVERNED_BY_SEPARATE_EPOCH5_POLICY"
+        },
+        "content_generation_context_exposure_state": {
+          "enum": [
+            "DISCLOSED_NO_ASTROHD_CONTEXT_EXPOSURE",
+            "UNKNOWN_FAIL_CLOSED",
+            "DISCLOSED_ASTROHD_CONTEXT_EXPOSURE"
+          ]
+        }
+      }
+    },
+    "access": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "event_state",
+        "prefreeze_content_access",
+        "astrohd_surface_access"
+      ],
+      "properties": {
+        "event_state": {
+          "enum": [
+            "NO_ACCESS_EVENTS",
+            "UNKNOWN_FAIL_CLOSED"
+          ]
+        },
+        "prefreeze_content_access": {
+          "const": false
+        },
+        "astrohd_surface_access": {
+          "const": false
+        }
+      }
+    },
+    "fresh_isolation_state": {
+      "enum": [
+        "NOT_ESTABLISHED_FAIL_CLOSED",
+        "ESTABLISHED_SYNTHETIC_TEST_ONLY"
+      ]
+    },
+    "model_content_authorship_allowed": {
+      "const": false
+    },
+    "human_action_occurred": {
+      "const": false
+    }
+  },
+  "x-prohibited-field-names": [
+    "name",
+    "email",
+    "phone",
+    "address",
+    "credential",
+    "secret",
+    "screening_question",
+    "consent_text",
+    "recruitment_text",
+    "construct",
+    "instrument",
+    "item",
+    "prompt",
+    "content",
+    "mapping_content"
+  ],
+  "x-artifact-id": "natal-time-s6-h1-isolation-provenance-schema-v2",
+  "x-schema-version": "2.0.0",
+  "x-primary-traceability-requirement-id": "S6H1-33",
+  "x-supersedes": {
+    "path": "state/NATAL-TIME-S6-H1-ISOLATION-PROVENANCE-SCHEMA-V1.json",
+    "sha256": "ffa6237cfad2bea68464e3c8517fc2ffc0fd4739d2990ace6d05d2a8ec284803"
+  },
+  "x-owner-policy-binding": {
+    "owner_outcome_epoch": 5,
+    "owner_source": {
+      "path": "state/NATAL-TIME-OWNER-OUTCOME-SOURCE-EPOCH5-20260830.md",
+      "sha256": "ae31f03e2d2e83373be50c451f0bf998175a64ed83811570e613112035ebd131"
+    },
+    "normalized_decision": {
+      "path": "docs/NATAL_TIME_OWNER_DECISION_H1_CONTAMINATION_POLICY_20260830.md",
+      "sha256": "9016c1965ce60c198f10ebb56339471f9b3fd46e3974bce29dec5c7944417be6"
+    },
+    "owner_source_receipt": {
+      "path": "state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH5-V1.json",
+      "sha256": "332c48e97802617d1867dd769a7fa9d866b2ca8e864ace2ff9db5cb36124bc98",
+      "capability": "OWNER_REATTESTED",
+      "scope": "EPOCH5_H1_PRIOR_EXPOSURE_AND_SEMANTIC_CONTAMINATION_POLICY_ONLY"
+    },
+    "owner_outcome": {
+      "path": "state/NATAL-TIME-OWNER-OUTCOME-EPOCH5-V1.json",
+      "sha256": "02f199808dbb50bfd31a3bb7cc29a84f7b904caaba79d6589e7e172d9ed63fa2"
+    },
+    "pro_ruling": {
+      "path": "state/NATAL-TIME-S6-H1-CHECKPOINT11-PRO-RULING-V2.json",
+      "sha256": "ff16efda132a2ae99fbc6b603609dd368d131a2b43e03e12db3bc74f0e2f4e1c"
+    }
+  }
+}

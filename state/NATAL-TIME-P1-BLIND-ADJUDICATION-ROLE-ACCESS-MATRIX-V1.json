@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-p1-blind-adjudication-role-access-matrix-v1",
+  "status": "LOGICAL_ROLES_ONLY_NO_REAL_ASSIGNMENTS_OR_ACCESS_GRANTS",
+  "primary_traceability_requirement_id": "P1A-25",
+  "history_policy": "APPEND_ONLY",
+  "real_person_assignments": [],
+  "current_access_grants": [],
+  "roles": [
+    {
+      "role_id": "ELIGIBILITY_EVIDENCE_CUSTODIAN",
+      "may_hold_identity_linkage": "FUTURE_OPTION_UNSELECTED",
+      "may_view_evidence_package": "FUTURE_OPTION_UNSELECTED",
+      "may_make_substantive_decision": false,
+      "may_author_protected_content": false,
+      "may_view_prefreeze_content": false,
+      "may_view_later_mapping": false
+    },
+    {
+      "role_id": "BLIND_ELIGIBILITY_ADJUDICATOR",
+      "may_hold_identity_linkage": false,
+      "may_view_evidence_package": "MASKED_PACKAGE_ONLY_FUTURE_OPTION",
+      "may_make_substantive_decision": "FUTURE_OPTION_UNSELECTED",
+      "may_author_protected_content": false,
+      "may_view_prefreeze_content": false,
+      "may_view_later_mapping": false
+    },
+    {
+      "role_id": "CLEAN_H1_AUTHOR",
+      "may_hold_identity_linkage": "SELF_ONLY_IF_FUTURE_AUTHORIZED",
+      "may_view_evidence_package": false,
+      "may_make_substantive_decision": false,
+      "may_author_protected_content": "FUTURE_ONLY_AFTER_ALL_GATES",
+      "may_view_prefreeze_content": "OWN_INDEPENDENT_CONTENT_ONLY_FUTURE",
+      "may_view_later_mapping": false
+    },
+    {
+      "role_id": "PROTECTED_CONTENT_CUSTODIAN",
+      "may_hold_identity_linkage": "FUTURE_OPTION_UNSELECTED",
+      "may_view_evidence_package": false,
+      "may_make_substantive_decision": false,
+      "may_author_protected_content": false,
+      "may_view_prefreeze_content": "CUSTODY_ONLY_FUTURE",
+      "may_view_later_mapping": false
+    },
+    {
+      "role_id": "RELIABILITY_EVALUATOR",
+      "may_hold_identity_linkage": false,
+      "may_view_evidence_package": false,
+      "may_make_substantive_decision": false,
+      "may_author_protected_content": false,
+      "may_view_prefreeze_content": "FROZEN_PACKAGE_ONLY_FUTURE",
+      "may_view_later_mapping": false
+    },
+    {
+      "role_id": "LATER_MAPPING_EVALUATOR",
+      "may_hold_identity_linkage": false,
+      "may_view_evidence_package": false,
+      "may_make_substantive_decision": false,
+      "may_author_protected_content": false,
+      "may_view_prefreeze_content": false,
+      "may_view_later_mapping": "SEPARATE_FUTURE_LANE_ONLY"
+    }
+  ],
+  "role_count": 6,
+  "masking_dimensions_unselected": [
+    "IDENTITY_LINKAGE",
+    "BELIEF_RELATED_METADATA",
+    "EXPOSURE_DETAIL",
+    "DESIRED_ROLE",
+    "OTHER_INITIAL_JUDGMENTS",
+    "LATER_OUTCOMES"
+  ],
+  "access_invariants": {
+    "requires_blind_adjudication_can_receive_clean_author_access_without_future_receipt": false,
+    "ineligible_clean_h1_author_can_receive_prefreeze_author_access": false,
+    "unknown_or_conflicting_evidence_can_receive_clean_author_access": false,
+    "eligible_status_alone_grants_assignment": false,
+    "target_domain_exposed_model_repository_conversation_or_retrieval_context_can_author": false,
+    "recusal_or_replacement_erases_prior_access": false,
+    "later_mapping_can_influence_prefreeze_author_work": false
+  },
+  "adjudicator_selected": false,
+  "evidence_standard_selected": false,
+  "appeal_or_exception_selected": false,
+  "current_context_eligible_for_author_role": false
+}

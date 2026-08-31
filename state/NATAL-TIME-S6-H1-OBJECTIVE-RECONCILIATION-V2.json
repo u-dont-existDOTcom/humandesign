@@ -1,0 +1,62 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_id": "natal-time-s6-h1-objective-reconciliation-v2",
+  "reconciliation_id": "ORC-ASTROHD-S6-H1-OWNER-CORRECTION-EPOCH5-20260830-V2",
+  "trigger": "OWNER_CORRECTION_EPOCH5_AFTER_CHECKPOINT11",
+  "owner_outcome_id": "OO-ASTROHD-RELATIONSHIP-CONTINUATION",
+  "owner_outcome_epoch": 5,
+  "owner_source_sha256": "ae31f03e2d2e83373be50c451f0bf998175a64ed83811570e613112035ebd131",
+  "owner_source_receipt_id": "osr-astrohd-relationship-20260830-epoch5-v1",
+  "owner_source_receipt_capability": "OWNER_REATTESTED",
+  "owner_reattestation_scope": "EPOCH5_H1_PRIOR_EXPOSURE_AND_SEMANTIC_CONTAMINATION_POLICY_ONLY",
+  "worker_to_contract_alignment": "YELLOW",
+  "contract_to_owner_alignment": "PARTIAL",
+  "current_correction_to_owner_alignment": "MATCH",
+  "completion_claim": "WORKING",
+  "requirements": [
+    {"owner_requirement_id":"RO-01","relation":"MAPPED_CONTRIBUTING","status":"PARENT_OPEN","evidence":["state/NATAL-TIME-OWNER-OUTCOME-EPOCH5-V1.json"]},
+    {"owner_requirement_id":"RO-02","relation":"MAPPED_VERIFYING","status":"FRESH_PROJECT_AND_SHARED_INSTRUCTIONS_READ","evidence":["AGENTS.md","CURRENT_PLAN.md","docs/RELATIONSHIP_RESEARCH_HANDOFF.md"]},
+    {"owner_requirement_id":"RO-03","relation":"MAPPED_DIRECT","status":"OWNER_GATE_RESOLVED_PRO_REVIEW_PENDING","evidence":["docs/NATAL_TIME_OWNER_DECISION_H1_CONTAMINATION_POLICY_20260830.md","docs/PRO_SUPERVISION_S6_H1_CHECKPOINT11_RULING_20260830.md"]},
+    {"owner_requirement_id":"RO-04","relation":"MAPPED_DIRECT","status":"OWNER_DECISION_RECORD_CHILD_PENDING_COMMIT","evidence":["state/NATAL-TIME-OWNER-OUTCOME-SOURCE-EPOCH5-20260830.md"]},
+    {"owner_requirement_id":"RO-05","relation":"MAPPED_VERIFYING","status":"NO_LIVE_DATA_SECRET_OR_RELEASE_ACTION","evidence":["state/NATAL-TIME-S6-H1-CHECKPOINT11-PRO-RULING-V1.json"]},
+    {"owner_requirement_id":"RO-06","relation":"MAPPED_CONTRIBUTING","status":"PARENT_OPEN_UNCHANGED","evidence":["state/NATAL-TIME-OWNER-OUTCOME-EPOCH5-V1.json"]},
+    {"owner_requirement_id":"RO-07","relation":"OWNER_AMENDED","status":"BLANKET_EXPOSURE_RULE_DIVERGED_REMEDIATION_PENDING","evidence":["state/NATAL-TIME-OWNER-OUTCOME-SOURCE-EPOCH5-20260830.md","docs/NATAL_TIME_OWNER_DECISION_H1_CONTAMINATION_POLICY_20260830.md"],"authorized_change":"Replace automatic exposure disqualification with the owner-selected three-status semantic/self-concept contamination policy; preserve human/action prohibitions."},
+    {"owner_requirement_id":"RO-08","relation":"MAPPED_CONTRIBUTING","status":"PARENT_OPEN_UNCHANGED","evidence":["state/NATAL-TIME-OWNER-OUTCOME-EPOCH5-V1.json"]},
+    {"owner_requirement_id":"RO-09","relation":"MAPPED_CONTRIBUTING","status":"PARENT_OPEN_RELEASE_FALSE","evidence":["state/NATAL-TIME-OWNER-OUTCOME-EPOCH5-V1.json"]},
+    {"owner_requirement_id":"RO-10","relation":"MAPPED_VERIFYING","status":"PROTECTED_BASELINE_UNCHANGED","evidence":["checkpoint-10 protected artifact comparison"]},
+    {"owner_requirement_id":"RO-11","relation":"MAPPED_DIRECT","status":"EPOCH5_RECEIPT_AND_RECONCILIATION_CURRENT","evidence":["state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH5-V1.json","state/NATAL-TIME-S6-H1-OBJECTIVE-RECONCILIATION-V2.json"]},
+    {"owner_requirement_id":"RO-12","relation":"MAPPED_DIRECT","status":"EXISTING_PRO_CHAT_REUSED","evidence":["browser-operation record"]},
+    {"owner_requirement_id":"RO-13","relation":"MAPPED_DIRECT","status":"NO_NEW_SUPERVISION_DESIGN_DEFECT","evidence":["docs/PRO_SUPERVISION_DESIGN_FEEDBACK_RULING_20260830.md"]}
+  ],
+  "requirement_count": 13,
+  "changed_owner_requirement_ids": ["RO-07", "RO-11", "RO-12"],
+  "unmapped_owner_requirement_ids": [],
+  "divergences": [
+    {
+      "id": "DIV-EPOCH5-H1-BLANKET-EXPOSURE",
+      "status": "OWNER_RESOLVED_REMEDIATION_PENDING",
+      "historical_rule": "Any HD/AstroHD/astrology exposure fails content-author eligibility.",
+      "owner_correction": "Exposure alone is permitted; semantic/self-concept contamination controls, and substantial semantic knowledge requires blind adjudication regardless of belief."
+    }
+  ],
+  "authorized_scope_changes": [
+    "Epoch-5 H1 semantic/self-concept contamination policy",
+    "Three statuses: ELIGIBLE, REQUIRES_BLIND_ADJUDICATION, INELIGIBLE_CLEAN_H1_AUTHOR",
+    "Post-freeze adversarial-review possibility remains future and unauthorized now"
+  ],
+  "recurring_reconciliation": {
+    "previous_reconciliation_id": "ORC-ASTROHD-S6-H1-PREHUMAN-20260830-V1",
+    "next_triggers": [
+      "task Pro owner-correction ruling",
+      "acceptance criteria change",
+      "authorized remediation completion",
+      "checkpoint 11 resubmission",
+      "material discovery",
+      "phase transition",
+      "release merge deployment migration publication or root completion preparation"
+    ]
+  },
+  "parent_outcome_open": true,
+  "root_terminalization_allowed": false,
+  "release_allowed": false
+}

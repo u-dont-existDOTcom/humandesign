@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-p1-adjudication-checkpoint12-pro-ruling-v1",
+  "captured_date": "2026-08-31",
+  "source": "EXISTING_TASK_CHATGPT_PRO_SUPERVISOR_LANE",
+  "owner_decision_required": true,
+  "checkpoint12_verdict": "ACCEPTED",
+  "passing_requirements": 48,
+  "failing_requirements": 0,
+  "requirement_ranges": [
+    {"surface": "IDENTITY_AND_AUTHORITY", "ids": "P1A-01_THROUGH_P1A-06", "verdict": "PASS"},
+    {"surface": "CONCEPTION_AND_METHODS_CHRONOLOGY", "ids": "P1A-07_THROUGH_P1A-14", "verdict": "PASS"},
+    {"surface": "EVIDENCE_ARCHITECTURE", "ids": "P1A-15_THROUGH_P1A-24", "verdict": "PASS"},
+    {"surface": "ROLES_AND_BLIND_ADJUDICATION", "ids": "P1A-25_THROUGH_P1A-33", "verdict": "PASS"},
+    {"surface": "AUTHOR_CONFIGURATIONS_AND_OWNER_DOSSIER", "ids": "P1A-34_THROUGH_P1A-40", "verdict": "PASS"},
+    {"surface": "SYNTHETIC_PROVENANCE_AND_OPERATIONAL_CLOSURE", "ids": "P1A-41_THROUGH_P1A-48", "verdict": "PASS"}
+  ],
+  "evidence_boundary": "PRO_REVIEWED_SUBMITTED_PACKET_AND_DID_NOT_INDEPENDENTLY_INSPECT_REPOSITORY_OR_RERUN_VALIDATORS",
+  "supervisory_states": {
+    "worker_to_contract_alignment": "GREEN",
+    "bounded_p1_policy_to_owner_alignment": "MATCH",
+    "root_contract_to_owner_alignment": "PARTIAL",
+    "completion_claim": "WORKING",
+    "parent_outcome": "OPEN",
+    "root_completion": false,
+    "operational_alignment": "PASS",
+    "scientific_adequacy": "WARN",
+    "release_adequacy": "NOT_APPLICABLE",
+    "release_permission": false
+  },
+  "owner_gate": {
+    "decision_1": {
+      "category": "CLEAN_H1_AUTHOR_CONFIGURATION_FAMILY",
+      "allowed_codes": ["A1", "A2", "A3"],
+      "options": {
+        "A1": "SINGLE_AUTHOR_FAMILY",
+        "A2": "INDEPENDENT_PAIR_FAMILY",
+        "A3": "INDEPENDENT_PANEL_FAMILY"
+      }
+    },
+    "decision_2": {
+      "category": "BLIND_ADJUDICATION_CONFIGURATION_FAMILY",
+      "allowed_codes": ["J1", "J2"],
+      "options": {
+        "J1": "SHARED_BLIND_ADJUDICATION",
+        "J2": "SEPARATED_BLIND_ADJUDICATION"
+      }
+    },
+    "pro_recommendation": "A2_PLUS_J2"
+  },
+  "choice_selects_only_configuration_families": true,
+  "choice_does_not_authorize_human_or_construct_or_mapping_or_production_activity": true,
+  "next_child_authorized": false,
+  "blocking_condition": "WAIT_FOR_DIRECT_OWNER_A_AND_J_CHOICE"
+}

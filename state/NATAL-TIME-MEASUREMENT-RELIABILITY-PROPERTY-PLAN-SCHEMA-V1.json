@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:hdmatch:natal-time:measurement-reliability:property-plan:v1",
+  "title": "Construct-neutral measurement-property plan slots",
+  "type": "object",
+  "additionalProperties": false,
+  "x-provenance": {
+    "owner_record_sha256": "c24bb062bd90466f0be1a5be03211c8933e80bc1b4eaeee9509d5856bea02fc4",
+    "checkpoint_8_accepted_head": "63bfb78909a97eb5b8b31efe55e065a6f78973a2",
+    "active_purpose": "measurement_reliability_prerequisite_screen"
+  },
+  "required": [
+    "record_class",
+    "contract_version",
+    "replication_facet_class",
+    "observation_data_class",
+    "intended_use_class",
+    "candidate_estimand_family_list",
+    "required_assumptions",
+    "test_retest_eligibility",
+    "internal_consistency_eligibility",
+    "status"
+  ],
+  "properties": {
+    "record_class": {"const": "CONSPICUOUSLY_SYNTHETIC_PROPERTY_PLAN"},
+    "contract_version": {"const": "natal-time-measurement-reliability-contract-v1"},
+    "replication_facet_class": {
+      "enum": ["OCCASION", "RATER", "FORM_VERSION", "LANGUAGE_VERSION", "MODE_VERSION", "ACCOMMODATION_VERSION", "UNSELECTED"]
+    },
+    "observation_data_class": {
+      "enum": ["NOMINAL", "ORDINAL", "COUNT", "CONTINUOUS", "MULTILEVEL", "UNSELECTED"]
+    },
+    "intended_use_class": {
+      "enum": ["GROUP_DESCRIPTION", "INDIVIDUAL_DECISION", "UNSELECTED"]
+    },
+    "candidate_estimand_family_list": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": ["RELATIVE_RELIABILITY", "AGREEMENT", "MEASUREMENT_ERROR", "REPEATABILITY"]
+      }
+    },
+    "required_assumptions": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "TEMPORAL_ONTOLOGY_UNRESOLVED",
+          "EXPECTED_STABILITY_UNRESOLVED",
+          "RECALL_RISK_UNRESOLVED",
+          "INTERIM_EVENT_PLAN_UNRESOLVED",
+          "CONDITION_EQUIVALENCE_UNRESOLVED",
+          "INTERVAL_RATIONALE_UNRESOLVED",
+          "CODER_INDEPENDENCE_UNRESOLVED",
+          "PRIOR_CODE_VISIBILITY_UNRESOLVED",
+          "MEASUREMENT_MODEL_UNRESOLVED",
+          "STRUCTURAL_EVIDENCE_UNRESOLVED"
+        ]
+      }
+    },
+    "test_retest_eligibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "construct_temporal_ontology",
+        "expected_stability_evidence",
+        "recall_risk",
+        "interim_events",
+        "administration_condition_equivalence",
+        "proposed_interval_rationale"
+      ],
+      "properties": {
+        "construct_temporal_ontology": {"const": "UNRESOLVED"},
+        "expected_stability_evidence": {"const": "UNRESOLVED"},
+        "recall_risk": {"const": "UNRESOLVED"},
+        "interim_events": {"const": "UNRESOLVED"},
+        "administration_condition_equivalence": {"const": "UNRESOLVED"},
+        "proposed_interval_rationale": {"const": "UNRESOLVED"}
+      }
+    },
+    "internal_consistency_eligibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reflective_model_status", "structural_validity_status", "status"],
+      "properties": {
+        "reflective_model_status": {"const": "UNSELECTED"},
+        "structural_validity_status": {"const": "UNSELECTED"},
+        "status": {"const": "INELIGIBLE"}
+      }
+    },
+    "status": {"enum": ["UNSELECTED", "INELIGIBLE", "REQUIRES_LATER_REVIEW"]}
+  }
+}

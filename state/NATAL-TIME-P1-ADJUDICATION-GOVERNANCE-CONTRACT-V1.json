@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-p1-adjudication-governance-contract-v1",
+  "status": "PREHUMAN_DECISION_ARCHITECTURE_ONLY",
+  "primary_traceability_requirement_id": "P1A-24",
+  "authority": {
+    "checkpoint": "CHECKPOINT_12",
+    "pro_contract_path": "docs/PRO_SUPERVISION_S6_H1_CHECKPOINT12_CONTRACT_20260831.md",
+    "pro_contract_sha256": "2e7d8fc31e1e79227d3796fa2ab0d77180ab8ac258bfdcc92a84c34d15ee5de5",
+    "checkpoint11_pro_ruling_path": "state/NATAL-TIME-S6-H1-CHECKPOINT11-PRO-RULING-V5.json",
+    "checkpoint11_pro_ruling_sha256": "2cae4899eb7b31e913552d2ec6ba0f2c73427b8eeec0be9d3281d65f3d1c2c5c",
+    "owner_policy_authority_path": "state/NATAL-TIME-S6-H1-PRIOR-EXPOSURE-POLICY-AUTHORITY-V1.json",
+    "owner_policy_authority_sha256": "5334ffd43189747a475592c59afcd173c66e14a0e8a39b1928b9dcae8b484e17"
+  },
+  "binding_p1_semantics": {
+    "prior_exposure_automatic_exclusion": false,
+    "prior_exposure_automatic_eligibility": false,
+    "substantive_outcomes": [
+      "ELIGIBLE",
+      "REQUIRES_BLIND_ADJUDICATION",
+      "INELIGIBLE_CLEAN_H1_AUTHOR"
+    ],
+    "process_states": [
+      "NOT_ASSESSED",
+      "EVIDENCE_INCOMPLETE",
+      "EVIDENCE_CONFLICT",
+      "DECISION_PENDING",
+      "DECISION_RECORDED"
+    ],
+    "non_dispositive_classes": [
+      "BELIEF",
+      "SKEPTICISM",
+      "MISMATCH",
+      "PERCEIVED_ACCURACY",
+      "CURIOSITY",
+      "USEFULNESS",
+      "PRODUCT_INTEREST"
+    ]
+  },
+  "governed_objects": [
+    "EVIDENCE_PACKAGE_VERSION",
+    "CUSTODY_RECEIPT",
+    "MASKING_RECEIPT",
+    "INITIAL_JUDGMENT_RECORD",
+    "DISAGREEMENT_RECORD",
+    "DECISION_RECORD",
+    "RECUSAL_RECORD",
+    "REPLACEMENT_RECORD",
+    "DEVIATION_RECORD",
+    "ROLE_ACCESS_RECEIPT",
+    "INDEPENDENT_CONCEPTION_FREEZE_RECEIPT",
+    "SYNTHESIS_ACCESS_RECEIPT"
+  ],
+  "separation_invariants": [
+    "EXPOSURE_PROVENANCE_DISTINCT_FROM_FAMILIARITY",
+    "FAMILIARITY_DISTINCT_FROM_SELF_CONCEPT_INTEGRATION",
+    "SELF_CONCEPT_INTEGRATION_DISTINCT_FROM_INTENTIONAL_DERIVATION_RISK",
+    "EVIDENCE_COMPLETENESS_DISTINCT_FROM_EVIDENCE_CONFLICT",
+    "PROCESS_STATE_DISTINCT_FROM_SUBSTANTIVE_OUTCOME",
+    "SUBSTANTIVE_OUTCOME_DISTINCT_FROM_ROLE_ACCESS",
+    "INITIAL_JUDGMENT_DISTINCT_FROM_RESOLUTION",
+    "INDEPENDENT_CONCEPTION_DISTINCT_FROM_LATER_SYNTHESIS"
+  ],
+  "fail_closed_invariants": [
+    "MISSING_EXPOSURE_HISTORY_NEVER_PROVES_ELIGIBILITY",
+    "NO_SINGLE_EVIDENCE_FIELD_AUTOMATICALLY_CREATES_A_SUBSTANTIVE_OUTCOME",
+    "REQUIRES_BLIND_ADJUDICATION_HAS_NO_CLEAN_AUTHOR_ACCESS_WITHOUT_FUTURE_AUTHORIZED_RECEIPT",
+    "INELIGIBLE_CLEAN_H1_AUTHOR_HAS_NO_PREFREEZE_AUTHOR_ACCESS",
+    "UNKNOWN_OR_CONFLICTING_EVIDENCE_HAS_NO_SUBSTANTIVE_OUTCOME",
+    "RECUSAL_OR_REPLACEMENT_NEVER_ERASES_PRIOR_ACCESS_OR_EXPOSURE",
+    "CONFLICTING_EVIDENCE_IS_PRESERVED",
+    "TARGET_DOMAIN_EXPOSED_NONHUMAN_CONTEXT_CANNOT_AUTHOR_PROTECTED_CONTENT",
+    "MAPPING_INFORMATION_CANNOT_REVISE_PREFREEZE_ELIGIBILITY_HISTORY"
+  ],
+  "current_unselected_controls": {
+    "human_facing_wording": null,
+    "evidence_source_standard": null,
+    "evidence_completeness_standard": null,
+    "substantive_decision_standard": null,
+    "masking_configuration": null,
+    "adjudicator_configuration": null,
+    "disagreement_resolution": null,
+    "appeal_procedure": null,
+    "exception_procedure": null,
+    "author_configuration": null,
+    "population": null,
+    "language": null,
+    "geography": null,
+    "recruitment": null,
+    "burden": null,
+    "compensation": null,
+    "budget": null,
+    "timeline": null,
+    "retention_period": null
+  },
+  "current_authorizations": {
+    "synthetic_metadata_validation": true,
+    "real_person_assessment": false,
+    "human_facing_design": false,
+    "recruitment": false,
+    "role_assignment": false,
+    "protected_content_authorship": false,
+    "construct_or_instrument_work": false,
+    "mapping_work": false,
+    "production_change": false,
+    "external_mutation": false,
+    "release": false
+  },
+  "root_completion": false,
+  "parent_outcome": "OPEN"
+}

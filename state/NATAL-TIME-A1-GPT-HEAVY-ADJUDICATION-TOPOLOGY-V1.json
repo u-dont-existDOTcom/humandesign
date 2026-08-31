@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-a1-gpt-heavy-adjudication-topology-v1",
+  "status": "UNEXECUTED_METADATA_SLOTS_ONLY",
+  "primary_traceability_requirement_id": "A1G-20",
+  "actor_class": "GPT",
+  "evidence_packet_slot": {
+    "slot_id": "FUTURE_AUTHORIZED_EVIDENCE_PACKET",
+    "selected_packet": null,
+    "access_event_log_required": true,
+    "content_present": false
+  },
+  "initial_run_slots": [
+    {"slot_id": "GPT_INITIAL_RUN_SLOT_A", "run_identity_state": "UNASSIGNED_DISTINCT_RUN", "context_identity_state": "UNASSIGNED_ISOLATED_CONTEXT", "model_identity_state": "UNSELECTED", "output_commitment_required_before_peer_access": true, "peer_unsealed_access_allowed": false, "executed": false},
+    {"slot_id": "GPT_INITIAL_RUN_SLOT_B", "run_identity_state": "UNASSIGNED_DISTINCT_RUN", "context_identity_state": "UNASSIGNED_ISOLATED_CONTEXT", "model_identity_state": "UNSELECTED", "output_commitment_required_before_peer_access": true, "peer_unsealed_access_allowed": false, "executed": false}
+  ],
+  "reconciliation_slot": {
+    "slot_id": "GPT_RECONCILIATION_SLOT",
+    "context_identity_state": "UNASSIGNED_SEPARATE_CONTEXT",
+    "inputs": ["SEALED_OUTPUT_SLOT_A", "SEALED_OUTPUT_SLOT_B"],
+    "initial_outputs_immutable": true,
+    "disagreement_must_remain_visible": true,
+    "selected_rule": null,
+    "executed": false
+  },
+  "identity_dimensions": ["ACTOR_CLASS", "MODEL_IDENTITY", "PROVIDER_IDENTITY", "MODEL_VERSION_IDENTITY", "RUN_IDENTITY", "CONTEXT_IDENTITY", "INPUT_PACKET_IDENTITY", "ACCESS_EVENT_IDENTITY", "OUTPUT_COMMITMENT_IDENTITY"],
+  "same_model_multiple_runs_claim": "INDEPENDENT_RUNS_NOT_INDEPENDENT_MODELS",
+  "independent_model_claim_allowed": false,
+  "evidence_packets_access_outputs_and_reconciliation_separately_bound": true,
+  "owner_override_into_clean_eligibility_allowed": false,
+  "model_selected": false,
+  "provider_selected": false,
+  "prompt_selected": false,
+  "threshold_selected": false,
+  "evidence_standard_selected": false,
+  "reconciliation_rule_selected": false,
+  "real_adjudication_executed": false,
+  "completion_claim": "WORKING",
+  "root_completion": false,
+  "release_permission": false
+}

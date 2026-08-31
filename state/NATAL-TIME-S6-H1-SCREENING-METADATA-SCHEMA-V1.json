@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:humandesign:natal-time:s6-h1:screening-metadata:v1",
+  "title": "Closed conspicuously synthetic S6/H1 screening metadata",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version","record_class","synthetic_candidate_id","synthetic_role_id","exposure_states","conflict_provenance","eligibility_state","human_action_occurred"],
+  "properties": {
+    "schema_version": {"const":"NATAL-TIME-S6-H1-SCREENING-METADATA-V1"},
+    "record_class": {"const":"CONSPICUOUSLY_SYNTHETIC_S6_H1_SCREENING_FIXTURE"},
+    "synthetic_candidate_id": {"type":"string","pattern":"^SYN-S6H1-CAND-[0-9]{4}$"},
+    "synthetic_role_id": {"const":"CHART_BLIND_HUMAN_CONCEPT_AUTHOR"},
+    "exposure_states": {
+      "type":"object","additionalProperties":false,
+      "required":["human_design","astrohd","astrology","repository","conversation","mapping","owner","individualized_feedback"],
+      "properties": {
+        "human_design":{"enum":["NOT_ASSESSED_FAIL_CLOSED","DISCLOSED_NO_EXPOSURE","DISCLOSED_EXPOSURE_CONTAMINATED"]},
+        "astrohd":{"enum":["NOT_ASSESSED_FAIL_CLOSED","DISCLOSED_NO_EXPOSURE","DISCLOSED_EXPOSURE_CONTAMINATED"]},
+        "astrology":{"enum":["NOT_ASSESSED_FAIL_CLOSED","DISCLOSED_NO_EXPOSURE","DISCLOSED_EXPOSURE_CONTAMINATED"]},
+        "repository":{"enum":["NOT_ASSESSED_FAIL_CLOSED","DISCLOSED_NO_EXPOSURE","DISCLOSED_EXPOSURE_CONTAMINATED"]},
+        "conversation":{"enum":["NOT_ASSESSED_FAIL_CLOSED","DISCLOSED_NO_EXPOSURE","DISCLOSED_EXPOSURE_CONTAMINATED"]},
+        "mapping":{"enum":["NOT_ASSESSED_FAIL_CLOSED","DISCLOSED_NO_EXPOSURE","DISCLOSED_EXPOSURE_CONTAMINATED"]},
+        "owner":{"enum":["NOT_ASSESSED_FAIL_CLOSED","DISCLOSED_NO_EXPOSURE","DISCLOSED_EXPOSURE_CONTAMINATED"]},
+        "individualized_feedback":{"enum":["NOT_ASSESSED_FAIL_CLOSED","DISCLOSED_NO_EXPOSURE","DISCLOSED_EXPOSURE_CONTAMINATED"]}
+      }
+    },
+    "conflict_provenance": {"enum":["UNKNOWN_FAIL_CLOSED","COMPLETE_SYNTHETIC_TEST_PROVENANCE","DISCLOSED_CONFLICT_CONTAMINATED"]},
+    "eligibility_state": {"enum":["NOT_ASSESSED_FAIL_CLOSED","CONTAMINATED_INELIGIBLE","OWNER_RULES_PENDING"]},
+    "human_action_occurred": {"const":false}
+  },
+  "x-prohibited-field-names": ["name","email","phone","address","birth_date","birth_time","birth_place","screening_question","interview_prompt","disclosure_wording","consent_text","recruitment_text","construct","instrument","item","prompt","content","mapping_content"]
+}

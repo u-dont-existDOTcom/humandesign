@@ -1,0 +1,39 @@
+{
+  "schema_version": "NATAL-TIME-P1-EVIDENCE-CLASSIFICATION-V1",
+  "record_class": "CONSPICUOUSLY_SYNTHETIC_P1_EVIDENCE_PACKAGE",
+  "synthetic_case_id": "SYN-P1-CASE-0002",
+  "evidence_package": {
+    "package_id": "SYN-P1-EVID-0002",
+    "version": 2,
+    "custody_state": "REGISTERED"
+  },
+  "exposure_provenance": ["SUBSTANTIAL_EXPOSURE_RECORDED", "TECHNICAL_DOMAIN_EXPOSURE_RECORDED"],
+  "familiarity": {
+    "semantic": "SUBSTANTIAL_FAMILIARITY_ESTABLISHED",
+    "technical": "SUBSTANTIAL_FAMILIARITY_ESTABLISHED",
+    "ontology_reproduction": "SUBSTANTIAL_CAPABILITY_ESTABLISHED"
+  },
+  "self_concept_integration_state": "NOT_IDENTITY_DEFINING_ESTABLISHED",
+  "intentional_derivation_risk_state": "NO_INTENTIONAL_DERIVATION_ESTABLISHED",
+  "evidence_completeness_state": "COMPLETE",
+  "evidence_conflict_state": "NO_CONFLICT_RECORDED",
+  "non_dispositive_metadata_classes": ["SKEPTICISM", "MISMATCH", "CURIOSITY"],
+  "process_state": "DECISION_RECORDED",
+  "substantive_outcome": "REQUIRES_BLIND_ADJUDICATION",
+  "adjudication_state": "PENDING_FUTURE_AUTHORIZATION",
+  "role_access_state": "BLOCKED_PENDING_ADJUDICATION",
+  "custody_receipts": [
+    {
+      "receipt_id": "SYN-P1-RCPT-0002",
+      "event_id": "SYN-P1-EVT-0002",
+      "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    }
+  ],
+  "supersession": {
+    "prior_package_id": "SYN-P1-EVID-0002",
+    "prior_version": 1,
+    "reason_class": "NEW_EVIDENCE"
+  },
+  "human_action_occurred": false,
+  "real_person_record": false
+}

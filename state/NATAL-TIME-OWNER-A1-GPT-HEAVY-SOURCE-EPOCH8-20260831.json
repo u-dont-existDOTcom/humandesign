@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-owner-a1-gpt-heavy-source-epoch8-20260831",
+  "capture_integrity": "VERIFIED",
+  "source_role": "OWNER",
+  "acquisition_mode": "DIRECT_OWNER_MESSAGE",
+  "message_text_exact": "A1 yes i can help altho GPT should be doing most of this",
+  "message_encoding": "UTF-8",
+  "message_terminator_present": false,
+  "message_byte_length": 56,
+  "message_utf8_hex": "41312079657320692063616e2068656c7020616c74686f204750542073686f756c6420626520646f696e67206d6f7374206f662074686973",
+  "message_sha256": "97ce6179532c73e9668a5cff47b41006f49a536cf76e449084f3834847d28e59",
+  "owner_actions": [
+    "SELECT_A1_SINGLE_CLEAN_HUMAN_AUTHOR_CONFIGURATION",
+    "REQUIRE_GPT_HEAVY_WORKFLOW_WITH_MINIMIZED_OWNER_BURDEN"
+  ],
+  "material_preceding_context": [
+    "The owner stated that he is currently the only person working on the project.",
+    "The owner stated that he does not know how to interpret astrology or Human Design.",
+    "The worker explained that chart-blind constructs are ordinary non-astrological relationship traits created before later AstroHD comparison.",
+    "The worker explained that A1 makes the owner the one prospective chart-blind human author while GPT performs eligibility adjudication."
+  ],
+  "bounded_interpretation": {
+    "clean_h1_author_configuration": "A1_SINGLE_AUTHOR_FAMILY",
+    "prospective_human_author": "JOEL_OWNER",
+    "eligibility_status": "NOT_YET_ADJUDICATED",
+    "workflow_preference": "GPT_SHOULD_AUTONOMOUSLY_PERFORM_ALL_SCIENTIFICALLY_PERMITTED_NONCONTAMINATING_WORK",
+    "irreducible_boundary": "GPT_MUST_NOT_SILENTLY_REPLACE_THE_CHART_BLIND_HUMAN_SEMANTIC_ORIGIN"
+  },
+  "assistant_relay_to_pro": {
+    "pro_chat_url": "https://chatgpt.com/c/6a937fe2-68a4-83e9-b92d-3b0f82799513",
+    "pro_chat_title": "Scientific Audit Checkpoint",
+    "relay_preserved_exact_owner_text": true,
+    "classification": "ASSISTANT_RELAY_OF_DIRECT_OWNER_DECISION",
+    "not_the_canonical_owner_source": true
+  },
+  "limitations": [
+    "A1 selection does not itself establish the prospective author's P1 eligibility.",
+    "The owner's lack of HD or astrology interpretation knowledge is relevant provenance but is not an automatic eligibility verdict.",
+    "The GPT-heavy preference does not itself authorize GPT to author, seed, select, merge, semantically revise, or backfit clean constructs.",
+    "The ruling does not authorize construct content, elicitation content, mapping, recruitment, production changes, or release."
+  ]
+}

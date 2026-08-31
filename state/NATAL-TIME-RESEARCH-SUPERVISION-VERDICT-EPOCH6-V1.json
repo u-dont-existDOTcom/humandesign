@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "verdictId": "RSV-ASTROHD-20260831-EPOCH6-V1",
+  "taskId": "astrohd-relationship-20260830",
+  "packetId": "S6-H1-CHECKPOINT11-P1-PROVENANCE-CLOSURE-PENDING",
+  "primaryTraceabilityRequirementId": "S6H1-60",
+  "supersedes": {
+    "path": "state/NATAL-TIME-RESEARCH-SUPERVISION-VERDICT-EPOCH5-V2.json",
+    "sha256": "de0a010e2be9608a0015cc2970551fe1d92fd3484a4b16666cde98076a1d7f48"
+  },
+  "ownerPolicyBinding": {
+    "ownerOutcomeEpoch": 6,
+    "ratifyingMessagePath": "state/NATAL-TIME-OWNER-P1-RATIFICATION-SOURCE-EPOCH6-20260831.json",
+    "ratifyingMessageExactSha256": "31423d9b3cf9744f0110e1a6449b6174ecc0dd527f2c4fd144ce30e438c9a17f",
+    "ratifiedPolicyPath": "state/NATAL-TIME-P1-PROPOSAL-TEXT-EPOCH6-20260831.txt",
+    "ratifiedPolicySha256": "664c875137f7d671685db0df074429cfc0a243a78d549f7ee1143af8eacb5a00",
+    "ownerSourceReceiptPath": "state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH6-V1.json",
+    "ownerSourceReceiptSha256": "4eb5600e9f46f07c35546f65e5dd6ed15438a3683ffa87590f81b808edaac3ff",
+    "ownerOutcomePath": "state/NATAL-TIME-OWNER-OUTCOME-EPOCH6-V1.json",
+    "ownerOutcomeSha256": "e6b4608a4849fa3acde1ab71db8026af55a04b21070529c6d5bc8eb20cbf8001",
+    "proRulingPath": "state/NATAL-TIME-S6-H1-CHECKPOINT11-PRO-RULING-V4.json",
+    "proRulingSha256": "745835c30d65034792c2ad63d5d384ef99edfaf3efe945168050f933ffb24b33",
+    "ratifiedPolicyTextOrigin": "ASSISTANT_PROPOSED",
+    "ownerAction": "EXPLICIT_RATIFICATION"
+  },
+  "ownerSourceReceiptId": "osr-astrohd-relationship-20260831-epoch6-v1",
+  "objectiveReconciliationId": "ORC-ASTROHD-S6-H1-P1-RATIFICATION-EPOCH6-20260831-V4",
+  "workerToContractAlignment": "GREEN",
+  "contractToOwnerAlignment": "PARTIAL",
+  "boundedEpoch5PolicyToOwnerAlignment": "MATCH",
+  "completionClaimType": "WORKING",
+  "operationalAlignment": {"status": "PASS", "findings": ["Direct owner ratification and assistant-proposed P1 text are separately bound.", "Policy semantics are unchanged and only synthetic provenance validation is added."]},
+  "scientificAdequacy": {"status": "WARN", "findings": ["The ratification resolves policy authority, not empirical adequacy.", "No human screening, reliability, validity, mapping, or participant evidence exists."]},
+  "releaseAdequacy": {"status": "NOT_APPLICABLE", "releasePermission": false, "provenance": "OWNER_REATTESTED_BY_EXPLICIT_RATIFICATION_BOUNDED_P1_ONLY_ROOT_PARTIAL", "findings": ["No release or participant-facing action is proposed.", "The parent outcome remains open."]},
+  "askRigorProtocolExecution": {
+    "universal": {"version": "20.5.15", "revisionDate": "2026-08-24", "sha256": "69c5186862ade61d6a97dc842b8c027324c7e2f3fd7147064a360049e0d25172"},
+    "hrp": {"version": "20.5.23", "revisionDate": "2026-08-24", "sha256": "bf2adc1c4daea8241c47b2a111d4a19e6bf7427a6401ecf1b3ba75a58e046299"},
+    "literatureScanForClosure": "NOT_REQUIRED_NOT_AUTHORIZED_BY_PRO"
+  },
+  "ownerDecisionRequired": false,
+  "requiredDirective": "RETURN_EXACT_HEAD_P1_PROVENANCE_CLOSURE_TO_EXISTING_TASK_PRO",
+  "releasePermission": false
+}

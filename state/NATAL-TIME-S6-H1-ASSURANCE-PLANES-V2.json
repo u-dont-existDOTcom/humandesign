@@ -1,0 +1,95 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_id": "natal-time-s6-h1-assurance-planes-v2",
+  "status": "EPOCH5_OWNER_POLICY_RECONCILED_SEPARATE_GRADED_ASSURANCE",
+  "primary_traceability_requirement_id": "S6H1-60",
+  "supersedes": {
+    "path": "state/NATAL-TIME-S6-H1-ASSURANCE-PLANES-V1.json",
+    "sha256": "bac94c4a3c4791f62cffffff4ac4af08d6c3d8c88be77674bd58c1ee7e0c3f45"
+  },
+  "owner_policy_binding": {
+    "owner_outcome_epoch": 5,
+    "owner_source": {
+      "path": "state/NATAL-TIME-OWNER-OUTCOME-SOURCE-EPOCH5-20260830.md",
+      "sha256": "ae31f03e2d2e83373be50c451f0bf998175a64ed83811570e613112035ebd131"
+    },
+    "normalized_decision": {
+      "path": "docs/NATAL_TIME_OWNER_DECISION_H1_CONTAMINATION_POLICY_20260830.md",
+      "sha256": "9016c1965ce60c198f10ebb56339471f9b3fd46e3974bce29dec5c7944417be6"
+    },
+    "owner_source_receipt": {
+      "path": "state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH5-V1.json",
+      "sha256": "332c48e97802617d1867dd769a7fa9d866b2ca8e864ace2ff9db5cb36124bc98",
+      "capability": "OWNER_REATTESTED",
+      "scope": "EPOCH5_H1_PRIOR_EXPOSURE_AND_SEMANTIC_CONTAMINATION_POLICY_ONLY"
+    },
+    "owner_outcome": {
+      "path": "state/NATAL-TIME-OWNER-OUTCOME-EPOCH5-V1.json",
+      "sha256": "02f199808dbb50bfd31a3bb7cc29a84f7b904caaba79d6589e7e172d9ed63fa2"
+    },
+    "pro_ruling": {
+      "path": "state/NATAL-TIME-S6-H1-CHECKPOINT11-PRO-RULING-V2.json",
+      "sha256": "ff16efda132a2ae99fbc6b603609dd368d131a2b43e03e12db3bc74f0e2f4e1c"
+    }
+  },
+  "worker_to_contract_alignment": "GREEN",
+  "bounded_epoch5_policy_to_owner_alignment": "MATCH",
+  "contract_to_owner_alignment": "PARTIAL",
+  "contract_to_owner_scope_note": "MATCH applies only to the bounded epoch-5 prior-exposure correction. The historical root outcome remains PARTIAL.",
+  "completion_claim": {
+    "type": "WORKING",
+    "proposed_terminal": false,
+    "parent_outcome": "OPEN",
+    "root_terminalization_allowed": false
+  },
+  "operational_alignment": {
+    "status": "PASS",
+    "scope": "CHECKPOINT11_EPOCH5_METADATA_AND_SYNTHETIC_TEST_REMEDIATION_ONLY",
+    "findings": [
+      "The active contract distinguishes human exposure provenance from semantic or self-concept contamination and no longer treats exposure alone as automatic ineligibility.",
+      "Exactly three substantive outcomes are separate from unresolved process states.",
+      "The test-only validator checks supplied synthetic metadata for logical consistency and does not classify a real person.",
+      "AstroHD-exposed repositories, conversations, retrieval contexts, models, and model sessions remain barred from chart-blind content authorship.",
+      "No human, construct, mapping, production, release, or external action is part of this child."
+    ],
+    "does_not_claim": [
+      "real-person eligibility",
+      "human-facing screening adequacy",
+      "adjudication adequacy",
+      "live content custody"
+    ]
+  },
+  "scientific_adequacy": {
+    "status": "WARN",
+    "findings": [
+      "The owner correction is scientifically more relevant than a blanket exposure or belief proxy because it targets semantic and self-concept contamination.",
+      "No human-facing evidence standard, threshold, question, adjudicator, reliability evidence, validity evidence, mapping evidence, birth-time recovery evidence, relationship prediction, or participant-benefit evidence exists.",
+      "Substantial semantic or technical familiarity remains unresolved pending a separately authorized blind-adjudication process.",
+      "A later null, weak, unstable, or nonreplicating AstroHD mapping remains admissible and cannot repair frozen constructs in place."
+    ],
+    "required_for_pass": [
+      "separately authorized human evidence and adjudication design",
+      "authorized screened-human construct development",
+      "frozen measurement package",
+      "claim-appropriate reliability and validity evidence",
+      "separately preregistered independent mapping evidence"
+    ]
+  },
+  "release_adequacy": {
+    "status": "NOT_APPLICABLE",
+    "release_permission": false,
+    "findings": [
+      "No release, deployment, publication, merge, migration, recruitment, or participant-facing result is proposed.",
+      "OWNER_REATTESTED applies only to the bounded epoch-5 correction; root source alignment remains partial and the parent outcome remains open."
+    ],
+    "privacy": "NOT_APPLICABLE_NO_HUMAN_DATA",
+    "consent": "NOT_APPLICABLE_NO_HUMAN_ACTION",
+    "licensing": "NOT_APPLICABLE_NO_RELEASE",
+    "freshness": "NOT_APPLICABLE_NO_RELEASE",
+    "provenance": "OWNER_REATTESTED_EPOCH5_CORRECTION_ONLY_ROOT_PARTIAL",
+    "security": "NOT_APPLICABLE_NO_LIVE_SYSTEM",
+    "product_rules": "NOT_APPLICABLE_NO_PRODUCT_CHANGE"
+  },
+  "owner_decision_required_now": false,
+  "required_directive": "RETURN_EXACT_HEAD_CHECKPOINT_11_REMEDIATION_TO_EXISTING_TASK_PRO"
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-b1-threat-model-v1",
+  "status": "PRECONTENT_THREATS_REGISTERED_NO_LIVE_ASSESSMENT",
+  "active_purpose": "b1_independent_construct_precontent_governance",
+  "provenance": {
+    "owner_b1_record_commit": "cc6e8c3c05551c772d788d336994c3996d02ab78",
+    "methods_scan_commit": "1b6f851e5ad3b116d589cf421dbb145d9a2ba3be"
+  },
+  "threats": [
+    {"threat_id": "TM-01", "class": "DIRECT_ASTROHD_TERMINOLOGY_LEAKAGE", "fail_closed_state": "CONTAMINATED_INELIGIBLE"},
+    {"threat_id": "TM-02", "class": "INDIRECT_SEMANTIC_OR_FAVORED_SOURCE_LEAKAGE", "fail_closed_state": "CONTAMINATED_OR_OWNER_REVIEW"},
+    {"threat_id": "TM-03", "class": "OWNER_PROMPT_OR_EXAMPLE_LEAKAGE", "fail_closed_state": "CONTAMINATED_INELIGIBLE"},
+    {"threat_id": "TM-04", "class": "REPOSITORY_ACCESS_LEAKAGE", "fail_closed_state": "CONTAMINATED_INELIGIBLE"},
+    {"threat_id": "TM-05", "class": "RETRIEVAL_OR_EMBEDDING_LEAKAGE", "fail_closed_state": "CONTAMINATED_INELIGIBLE"},
+    {"threat_id": "TM-06", "class": "PROMPT_HISTORY_OR_MODEL_MEMORY_LEAKAGE", "fail_closed_state": "UNKNOWN_FAIL_CLOSED_OR_CONTAMINATED"},
+    {"threat_id": "TM-07", "class": "ASTROHD_EXPOSED_MODEL_GENERATION", "fail_closed_state": "CONTAMINATED_INELIGIBLE"},
+    {"threat_id": "TM-08", "class": "SOURCE_SELECTION_FOR_MAPPING_LIKELIHOOD", "fail_closed_state": "CONTAMINATED_INELIGIBLE"},
+    {"threat_id": "TM-09", "class": "MAPPING_TEAM_INFLUENCE_ON_DEVELOPMENT", "fail_closed_state": "CONTAMINATED_INELIGIBLE"},
+    {"threat_id": "TM-10", "class": "SELECTIVE_CONSTRUCT_RETENTION", "fail_closed_state": "EXPLORATORY_ONLY_PRESERVE_ALL_VERSIONS"},
+    {"threat_id": "TM-11", "class": "POST_HOC_RENAME_MERGE_SPLIT_DELETE_OR_REDEFINITION", "fail_closed_state": "NEW_EXPLORATORY_VERSION_ONLY"},
+    {"threat_id": "TM-12", "class": "CONSTRUCT_PROLIFERATION_OR_REDUNDANCY", "fail_closed_state": "SPECIFIC_SCAN_AND_OWNER_REVIEW_REQUIRED"},
+    {"threat_id": "TM-13", "class": "NAMING_AND_OPERATIONALIZATION_MISMATCH", "fail_closed_state": "SPECIFIC_SCAN_AND_CONTENT_REVIEW_REQUIRED"},
+    {"threat_id": "TM-14", "class": "RELIABILITY_CHERRY_PICKING", "fail_closed_state": "PRESERVE_ALL_PREREGISTERED_RESULTS"},
+    {"threat_id": "TM-15", "class": "MAPPING_CHERRY_PICKING", "fail_closed_state": "PRESERVE_ALL_PREREGISTERED_RESULTS"},
+    {"threat_id": "TM-16", "class": "DISCOVERY_EVIDENCE_REUSED_FOR_CONFIRMATION", "fail_closed_state": "INELIGIBLE_FOR_CONFIRMATION"},
+    {"threat_id": "TM-17", "class": "CONNECTED_ACTOR_SESSION_SOURCE_OR_EVIDENCE_LEAKAGE", "fail_closed_state": "CONNECTED_COMPONENT_CONTAMINATED"},
+    {"threat_id": "TM-18", "class": "NULL_WEAK_UNSTABLE_OR_NONREPLICATING_RESULT_SUPPRESSION", "fail_closed_state": "PRESERVE_AND_REPORT"},
+    {"threat_id": "TM-19", "class": "RELIABILITY_MAPPING_OR_INCREMENTAL_VALUE_LANE_CONFLATION", "fail_closed_state": "CLAIM_BLOCKED"},
+    {"threat_id": "TM-20", "class": "SYNTHETIC_TO_LIVE_TRANSITION_WITHOUT_NEW_AUTHORITY", "fail_closed_state": "LIVE_WORK_PROHIBITED"}
+  ],
+  "exposure_semantics": {
+    "history": "APPEND_ONLY_MONOTONIC",
+    "unknown_provenance": "FAIL_CLOSED",
+    "role_reassignment": "DOES_NOT_ERASE_PRIOR_EXPOSURE",
+    "later_isolation": "DOES_NOT_RETROACTIVELY_CLEAN_PRIOR_EXPOSURE"
+  },
+  "live_assessment_performed": false,
+  "live_data_present": false
+}

@@ -29,3 +29,42 @@ runs/*/revealed_key*
 # scripts/fetch_swisseph_ephemeris.py. Do not accidentally vendor binary data.
 data/ephemeris/*.se1
 data/ephemeris/swisseph_ephemeris_manifest.json
+
+# Private participant and natal-time material. Public-safe synthetic fixtures
+# live under tests/fixtures/synthetic_* and are intentionally not ignored.
+/data/relationship_sessions/
+/data/natal_time_private/
+/relationship_sessions/
+/natal_time_private/
+/private_participant_store/
+/participant_records/
+/contact_exports/
+/consent_exports/
+/raw_response_exports/
+/free_text_exports/
+/private_birth_inputs/
+/private_classifier_transcripts/
+/private_learning_cases/
+/private_exports/
+/private_backups/
+/private_uploads/
+/uploads/birth_records/
+/tmp/private/
+/state/private/
+*.sqlite
+*.sqlite3
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
+*.db
+*.db-journal
+*.log
+*.private.json
+*.private.jsonl
+*.private.csv
+*.private.tsv
+*.private.zip
+*.private.tar
+*.private.tar.gz
+*.session-token
+*.recovery-token

@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-b1-correction-ledger-v1",
+  "status": "NO_OPEN_CORRECTIONS",
+  "active_purpose": "b1_independent_construct_precontent_governance",
+  "architecture_source_commit": "d36cf919b1be3c9aa22d91694759e0b000ec03d8",
+  "closed_corrections": [
+    {
+      "correction_id": "B1-CORR-01",
+      "stage": "PRE_ARCHITECTURE_COMMIT_FOCUSED_TEST",
+      "observed": "Owner-record assertion did not normalize Markdown emphasis and line wrapping.",
+      "resolution": "Normalize emphasis and whitespace before checking the exact integral mapping clarification.",
+      "scientific_artifact_changed": false
+    },
+    {
+      "correction_id": "B1-CORR-02",
+      "stage": "PRE_ARCHITECTURE_COMMIT_FOCUSED_TEST",
+      "observed": "Pairwise access-history iteration used strict zip on deliberately offset lists.",
+      "resolution": "Use explicit strict false for adjacent-event iteration while separately enforcing contiguous sequence length.",
+      "scientific_artifact_changed": false
+    },
+    {
+      "correction_id": "B1-CORR-03",
+      "stage": "PRE_ARCHITECTURE_COMMIT_RUFF",
+      "observed": "Ruff required an explicit strict argument for zip.",
+      "resolution": "Specify strict false; validation semantics are unchanged.",
+      "scientific_artifact_changed": false
+    },
+    {
+      "correction_id": "B1-CORR-04",
+      "stage": "CHECKPOINT_10_PRIVACY_HISTORY_BUILD_GATE",
+      "observed": "The reachable-history byte scanner lacked the token-start word boundary already used by the index scanner and misclassified the public URL fragment risk-management as a credential prefix.",
+      "resolution": "Align both scanners on a token-start word boundary and add positive credential-canary plus negative public-URL history regressions; the canonical gate then passed.",
+      "scientific_artifact_changed": false
+    }
+  ],
+  "open_correction_count": 0,
+  "unresolved_discrepancy_count": 0
+}

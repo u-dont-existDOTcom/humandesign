@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-a1-gpt-heavy-unresolved-decisions-v1",
+  "status": "NO_DECISION_REQUIRED_IN_CHECKPOINT13",
+  "primary_traceability_requirement_id": "A1G-07",
+  "decisions": [
+    {"decision_id": "A1G-UD-01", "topic": "REAL_P1_EVIDENCE_PACKET", "status": "UNSELECTED"},
+    {"decision_id": "A1G-UD-02", "topic": "GPT_MODEL_PROVIDER_AND_VERSION", "status": "UNSELECTED"},
+    {"decision_id": "A1G-UD-03", "topic": "GPT_ADJUDICATION_PROMPT_AND_EVIDENCE_STANDARD", "status": "UNSELECTED"},
+    {"decision_id": "A1G-UD-04", "topic": "GPT_ADJUDICATION_THRESHOLD_OR_DECISION_RULE", "status": "UNSELECTED"},
+    {"decision_id": "A1G-UD-05", "topic": "RECONCILIATION_RULE_AND_DISAGREEMENT_OUTCOME", "status": "UNSELECTED"},
+    {"decision_id": "A1G-UD-06", "topic": "NEUTRAL_FACILITATION_PROCEDURE", "status": "UNSELECTED"},
+    {"decision_id": "A1G-UD-07", "topic": "HUMAN_FACING_LANGUAGE_AND_CONSENT", "status": "UNSELECTED"},
+    {"decision_id": "A1G-UD-08", "topic": "RECORDING_AND_TRANSCRIPTION_FORMAT", "status": "UNSELECTED"},
+    {"decision_id": "A1G-UD-09", "topic": "FIDELITY_DIAGNOSTIC_AND_ACCEPTANCE_PROCESS", "status": "UNSELECTED"},
+    {"decision_id": "A1G-UD-10", "topic": "RETENTION_PRIVACY_AND_ACCESS_OPERATION", "status": "UNSELECTED"},
+    {"decision_id": "A1G-UD-11", "topic": "REAL_ELIGIBILITY_ADJUDICATION", "status": "UNSELECTED"},
+    {"decision_id": "A1G-UD-12", "topic": "REAL_ELICITATION_OR_CONSTRUCT_WORK", "status": "UNSELECTED"},
+    {"decision_id": "A1G-UD-13", "topic": "CLEAN_FREEZE_EXECUTION", "status": "UNSELECTED"},
+    {"decision_id": "A1G-UD-14", "topic": "LATER_MAPPING_HANDOFF", "status": "UNSELECTED"},
+    {"decision_id": "A1G-UD-15", "topic": "SCIENTIFIC_VALIDATION_AND_RELEASE", "status": "UNSELECTED"}
+  ],
+  "decision_count": 15,
+  "selected_decision_ids": [],
+  "owner_decision_required_now": false,
+  "owner_decision_required_before_real_person_adjudication_or_human_facing_activity": true,
+  "completion_claim": "WORKING",
+  "root_completion": false,
+  "release_permission": false
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-s6-h1-threat-model-v1",
+  "status": "PREHUMAN_METADATA_THREATS_ONLY",
+  "threats": [
+    {"threat_id":"T01","class":"ASTROHD_EXPOSED_CONTENT_AUTHOR","risk":"AstroHD knowledge shapes supposedly chart-blind content.","controls":["H1_HUMAN_ONLY","EXPOSURE_METADATA","ROLE_INELIGIBILITY"],"failure":"HARD_STOP"},
+    {"threat_id":"T02","class":"UNKNOWN_OR_INCOMPLETE_EXPOSURE_PROVENANCE","risk":"Missing history is mistaken for no exposure.","controls":["UNKNOWN_FAILS_CLOSED","NO_ELIGIBILITY_THRESHOLD_SELECTED"],"failure":"INELIGIBLE_OR_OWNER_GATED"},
+    {"threat_id":"T03","class":"CONNECTED_PERSON_TEAM_SESSION_SOURCE_OR_EVIDENCE_CONTAMINATION","risk":"Information crosses an apparently isolated boundary.","controls":["CONNECTED_CONFLICT_STATES","APPEND_ONLY_EXPOSURE_HISTORY"],"failure":"HARD_STOP"},
+    {"threat_id":"T04","class":"ROLE_CONFLICT_OR_SELF_ADJUDICATION","risk":"A role approves its own work or silently changes content.","controls":["ROLE_SEPARATION","INDEPENDENT_EVALUATOR","NO_SILENT_MEASUREMENT_REVISION"],"failure":"HARD_STOP"},
+    {"threat_id":"T05","class":"MODEL_OR_MODEL_SESSION_CONTENT_AUTHORSHIP","risk":"A model imports latent or contextual AstroHD content.","controls":["MODEL_CONTENT_AUTHORSHIP_FALSE","H1_HUMAN_ONLY","TOOL_PROVENANCE"],"failure":"HARD_STOP"},
+    {"threat_id":"T06","class":"IGNORE_INSTRUCTION_SUBSTITUTED_FOR_ISOLATION","risk":"An instruction is treated as evidence of a fresh boundary.","controls":["EXPLICIT_FRESH_ISOLATION_STATE","ENVIRONMENT_SESSION_RETRIEVAL_PROVENANCE"],"failure":"FAIL_CLOSED"},
+    {"threat_id":"T07","class":"PREFREEZE_CONTENT_ON_EXPOSED_REPOSITORY_OR_CONTEXT","risk":"Content is visible before the approved freeze boundary.","controls":["CONTENT_ESCROW_OUTSIDE_EXPOSED_SURFACES","REPOSITORY_METADATA_ONLY"],"failure":"HARD_STOP"},
+    {"threat_id":"T08","class":"MISSING_OR_MUTABLE_ACCESS_CUSTODY_LOG","risk":"Content access cannot be reconstructed or is rewritten.","controls":["APPEND_ONLY_HASH_LINKED_EVENTS","PROTECTED_AUDIT_TRAIL","LEAST_PRIVILEGE"],"failure":"FAIL_CLOSED"},
+    {"threat_id":"T09","class":"SEARCH_BEFORE_CONCEPTION_FREEZE","risk":"Established terminology or hoped-for mappings seed the conception.","controls":["S6_STATE_MACHINE","POSITIVE_PREDECESSOR_EVIDENCE"],"failure":"HARD_STOP"},
+    {"threat_id":"T10","class":"POST_SEARCH_IN_PLACE_CONCEPTION_REVISION","risk":"Later evidence is laundered into the original conception.","controls":["IMMUTABLE_FREEZE","EXPLICIT_SUPERSESSION_AND_DEVIATION"],"failure":"EXPLORATORY_NEW_VERSION_ONLY"},
+    {"threat_id":"T11","class":"MAPPING_FEEDBACK_REPAIRS_CONSTRUCT","risk":"Null or weak mapping drives construct edits and circular confirmation.","controls":["SEPARATE_MAPPING_LANE","NULL_RESULT_PRESERVATION","NO_IN_PLACE_REPAIR"],"failure":"HARD_STOP"},
+    {"threat_id":"T12","class":"OWNER_DOSSIER_DEFAULT_OR_IMPLIED_APPROVAL","risk":"Unselected human-program choices become operational defaults.","controls":["EVERY_OPTION_UNSELECTED","NO_RECOMMENDATION_RANKING_DEFAULT_OR_PRESELECTION"],"failure":"OWNER_DECISION_REQUIRED"},
+    {"threat_id":"T13","class":"LIVE_IDENTITY_DATA_ACCOUNT_CREDENTIAL_OR_STORAGE","risk":"Metadata design silently becomes human or production operation.","controls":["OPAQUE_SYNTHETIC_IDS_ONLY","NO_EXTERNAL_MUTATION","NO_LIVE_STORAGE"],"failure":"HARD_STOP"},
+    {"threat_id":"T14","class":"GOVERNANCE_PROXY_FOR_SCIENTIFIC_OR_RELEASE_ADEQUACY","risk":"Passing architecture tests is presented as reliability, validity, mapping, or release readiness.","controls":["SEPARATE_ASSURANCE_PLANES","WORKING_COMPLETION","PARENT_OPEN"],"failure":"CLAIM_REJECTED"}
+  ],
+  "residual_risks": ["No metadata scheme can prove that a future person has no unreported or indirect exposure.","No governance artifact establishes scientific feasibility or validity.","Operational privacy and custody cannot be assessed before a real owner-approved workflow and system exist."],
+  "current_exposure_to_human_or_content_risk": "NONE_NO_HUMAN_OR_CONTENT_ACTION"
+}

@@ -13,22 +13,267 @@ This repository separates four claims:
 
 These claims must not be conflated.
 
+## 2026-08-30 relationship/AstroHD continuation gate
+
+The separate natal-first `Find my birth-time window` foundation now precedes any new relationship/AstroHD ranking or calibration semantics. ChatGPT Pro checkpoint 1 returned `OWNER DECISION REQUIRED: NO` and approved only the deterministic substrate on `codex/astrohd-relationship-continuation`.
+
+Implemented in the approved slice:
+
+- immutable date/source/independently remembered-weekday evidence lineages;
+- a server-enforced weekday lock before any implied-weekday reveal;
+- fail-closed documentary and memory conflict transitions with explicit unordered candidate-date sets;
+- exact candidate-complete civil-day interval partitions relative to the pinned engine and timezone data;
+- a versioned full state identity that does not collapse to the reduced model-visible signature;
+- immutable manifest, freeze, result, coverage, and provenance records;
+- a synthetic-only public allowlist serializer;
+- separate natal routes/private storage namespace and privacy/build/history gates.
+
+Checkpoint 1 prohibited candidate ranking or elimination, weights, priors, score mass, probability/confidence labels, stopping rules, time-window recommendations, relationship evidence, production migration, public deployment, and merge to `main`. Those prohibitions remain active because no later checkpoint has authorized inferential work. The checkpoint-1 contract is `docs/PRO_SUPERVISION_CHECKPOINT_1_20260830.md`; the canonical synthetic verification artifact is `state/NATAL-TIME-FOUNDATION-AUDIT.json`, and `state/NATAL-TIME-WEEKDAY-LOCK-TRACE.json` records a reproducible two-request API trace proving that implied-weekday feedback is withheld until after the server lock.
+
+Checkpoint 2 returned `OWNER DECISION REQUIRED: NO` and provisionally accepted the architecture, but it found the actual-engine conformance gate still open. The authorized next slice is real-engine deterministic conformance plus a documentation-only literature scan. Its exact acceptance rules and hard stops are recorded in `docs/PRO_SUPERVISION_CHECKPOINT_2_20260830.md`; the pre-search independent conception is frozen in `docs/NATAL_TIME_INDEPENDENT_CONCEPTION_SNAPSHOT_20260830.md`.
+
+The checkpoint-2 conformance slice is implemented locally and was qualified by ChatGPT Pro at
+checkpoint 3:
+
+- the single repository-default engine is pinned to strict local-file Swiss Ephemeris, true-node, geocentric apparent tropical ecliptic-of-date behavior with exact source, dependency, runtime, timezone, constants, and ephemeris-file digests;
+- all 65 emitted or derivable runtime dataclass fields are inventoried; 13 are discrete identity fields, 3 advanced-substructure leaves are explicitly unsupported/unavailable because the engine always emits `None`, and every other field has a recorded classification and exclusion reason;
+- temporal input is a one-microsecond Python coordinate grid passed through binary64 Julian dates whose measured ULP is about 40.233 microseconds; timestamps therefore do not claim astronomical microsecond precision;
+- the design-root solver is pinned to one-microsecond time tolerance and `1e-8`-degree arc tolerance, and transition-side verification includes the numerical uncertainty introduced by Julian conversion;
+- production and structurally independent enumerators agree on exact transition keys for the audit day, including direct/repeated crossings, design-side changes, coincident Sun/Earth events, 68.813-second near-coincident events, day-edge exclusion, and reduced-signature collisions;
+- real-engine fixtures cover ordinary/multiple dates, leap day, DST gap/fold, Lord Howe's non-one-hour DST, historical Monrovia seconds offset, Kathmandu's non-integer offset, and fail-closed skipped-date behavior;
+- `state/NATAL-TIME-EVIDENCE-TRANSITION-MATRIX.json` covers all 12 required evidence transitions;
+- `docs/NATAL_TIME_METHODS_SCAN_20260830.md` records the bounded pre-inference methods scan without choosing semantics.
+
+Canonical qualified artifacts are `state/NATAL-TIME-REAL-ENGINE-IDENTITY-V4.json` and
+`state/NATAL-TIME-REAL-ENGINE-FIXTURES.json`. Checkpoint 3 returned
+`OWNER DECISION REQUIRED: NO` and `Deterministic-foundation verdict: QUALIFIED`; its exact claim,
+invalidation boundary, replay-hardening requirements, and next-slice contract are recorded in
+`docs/PRO_SUPERVISION_CHECKPOINT_3_20260830.md`.
+
+Checkpoint 4 returned `OWNER DECISION REQUIRED: NO` and `CHECKPOINT-4 VERDICT: QUALIFIED`. Its
+exact ruling is `docs/PRO_SUPERVISION_CHECKPOINT_4_20260830.md`. The required Phase-0 closure is
+complete: commit/tree lineage and replay-source equivalence are machine-attested; a deliberate
+interruption/resume integration test covers missing, duplicate, corrupt, stale, wrong-head,
+wrong-engine, truncated, incomplete, and omitted-Apia receipts; and metric-semantics v2 supersedes
+v1 without mutating it. V2 closes abstention, empty non-abstention, source-conflict,
+canonicalization-failure, domain-compatibility, half-open-boundary, documentary-width, rounding,
+interval-count, and unique-state-count semantics without defining a scalar outcome.
+
+Checkpoint 5 returned `OWNER DECISION REQUIRED: NO` and `CHECKPOINT-5 VERDICT: QUALIFIED`. Its
+exact ruling is `docs/PRO_SUPERVISION_CHECKPOINT_5_20260830.md`. Pro accepted the deterministic
+foundation and Phase-0 closure, then authorized only bounded reference-custody, metric-v3,
+replay-provenance, and acceptance-matrix remediation.
+
+That remediation is complete locally. Metric-semantics v3 preserves v1 and v2 while defining
+`S_i` as any nonempty unordered subset of whole `C_i` intervals and classifying the exact `D_i`
+union as compatible, partially incompatible, or incompatible. Replay Route A is attested through
+the acceptance source. The synthetic verifier now has 35 physically separated inference fixtures,
+35 evaluator-only custody objects, and 35 postcommit artifacts. The inference schema contains no
+`T_i`, evaluator source/version digest, custody ID/digest, reference path/size, or combined digest.
+Authorized access consumes a one-shot loader into an exact version-locked custody snapshot; valid
+artifacts bind `S_i`, canonical `T_i` when defined, custody, access state, evaluator bytes, and v1,
+v2, and v3. Disconnected same-date subsets and all required reference-domain edge cases are fixed
+test vectors, never procedure outputs.
+
+`state/NATAL-TIME-CHECKPOINT5-ACCEPTANCE-MATRIX.json` maps 81 prior/current rules to exact committed
+tests, fixtures, outcomes, controlled codes, receipt/access digests, contracts, evaluator version,
+source commit, and acceptance category. It was generated from source commit
+`da8d3ee5a4208e7e4ffb27daa54affcba4bd9d39`; its logical digest is
+`71a09f8f12a7e44e5848d3f976ecad1eb4fba6f345b2061fcef65540763220d3`.
+
+Checkpoint 6 returned `OWNER DECISION REQUIRED: NO` and `CHECKPOINT-6 VERDICT: QUALIFIED`. Its
+exact ruling is `docs/PRO_SUPERVISION_CHECKPOINT_6_20260830.md`. The one remaining replay-source
+binding gap is now closed by
+`state/NATAL-TIME-CHECKPOINT6-FINAL-REPLAY-SOURCE-CLOSURE.json`: all 58 replay-affecting files and
+28 semantic functions are identical through the checkpoint-5 acceptance, checkpoint-6
+implementation, and documentation-only submission heads; all nine receipts and the unchanged
+index/aggregate reproduce; and every replay-byte mutation requires Route B.
+
+The authorized independent-oracle slice is also complete locally. A standard-library-only oracle
+that neither imports production evaluation code nor constructs or chooses `S_i` agrees with the
+production verifier in all 41 committed adversarial comparisons. All 29 required coverage tags
+are present, 13 major-guard mutations are killed with zero survivors, and the fail-closed
+discrepancy ledger is empty. The checkpoint-7 packet is
+`docs/NATAL_TIME_CHECKPOINT7_ACCEPTANCE_20260830.md`.
+
+Checkpoint 7 returned `OWNER DECISION REQUIRED: NO` for its bounded remediation and
+`CHECKPOINT-7 STATUS: QUALIFIED, WITH ONE NARROW CURRENT-HEAD PROVENANCE CLOSURE REQUIRED`; the
+complete ruling is `docs/PRO_SUPERVISION_CHECKPOINT_7_20260830.md`. That closure is complete in
+`state/NATAL-TIME-CHECKPOINT7-CURRENT-HEAD-CLOSURE.json`. All 21 acceptance tests pass; all 58
+replay-affecting paths and 28 semantic functions are unchanged through the required checkpoint-7
+implementation head; all nine receipts and four oracle artifacts reproduce; and all 48 protected
+paths remain byte-identical. The closure's logical digest is
+`5780b3285bc212e4a1830bca518fef617a06e538a08a4cdbe9e6bcc969f9751b`.
+
+The documentation-only owner dossier required by checkpoint 7 is
+`docs/NATAL_TIME_OWNER_DECISION_DOSSIER_20260830.md`. It neutrally presents three directions:
+stop/archive, measurement reliability before rectification, or blinded falsification study
+design. It selects no direction, questionnaire, estimator, operating point, cohort size,
+recruitment plan, probability interpretation, participant objective, or disclosure regime.
+
+Checkpoint 8 returned `OWNER DECISION REQUIRED: YES` and `CHECKPOINT-8 VERDICT: ACCEPTED`; the
+complete ruling is `docs/PRO_SUPERVISION_CHECKPOINT_8_20260830.md`. Pro identified no blocking
+defect, qualified the 21-test current-head closure, preserved the deterministic/Phase-0
+qualification and its nonclaims, and qualified the owner dossier as neutral and sufficient. Pro
+recommends B — measurement reliability before rectification — as the strongest next scientific
+move, while leaving A/B/C to Joel.
+
+Joel selected **B — Measurement reliability before rectification**. The bounded owner ruling and
+its unchanged prohibitions are recorded in `docs/NATAL_TIME_OWNER_DECISION_B_20260830.md`. This
+selects the next direction only; it does not authorize questionnaire content, human data,
+recruitment, scoring, chart-linked inference, cohort/budget choices, external actions, or live
+execution.
+
+ChatGPT Pro subsequently returned `OWNER DECISION REQUIRED: NO` and authorized only the
+construct-neutral Option B measurement-reliability architecture recorded in
+`docs/PRO_SUPERVISION_OPTION_B_CONTRACT_20260830.md`. The controlling correction fixes its
+acceptance total at 72; there is no requirement 73. The required independent conception was
+committed before the bounded methods scan, and its bytes remain unchanged.
+
+The authorized architecture is complete locally at implementation head
+`226b91559f41da970c9a16f79f0688bf38c35359` / tree
+`076b9cb5093a3d3c5c58a58002081c861f568d70`. It consists only of a construct-neutral contract,
+three closed synthetic-only schemas, a threat model, source/method/unresolved-decision ledgers,
+four conspicuously synthetic fixtures, test-only validators, a 72-row acceptance matrix, and a
+byte-exact artifact manifest. It selects no construct, item, questionnaire, coding category,
+coefficient, estimator, model, threshold, retest interval, occasion/coder count, population,
+language, mode, sample size, participant workflow, missing-data method, or rectification method.
+Passing therefore establishes design-contract completeness only, not empirical reliability,
+validity, Human Design correctness, or birth-time recoverability.
+
+Ranking, questionnaires, calibration execution, candidate selection, operating or abstention
+thresholds, participant-facing interpretation, relationship evidence, live records, recruitment,
+public-ledger publication, push, merge, migration, and deployment remain prohibited. Any change to
+the qualified chart engine, ephemeris/runtime identity, transition construction, enumerator,
+boundary semantics, or full-state identity reopens deterministic conformance.
+
 ## Current implementation priority
 
-Before expanding validation, migrate the existing V4.1/V3.2 implementation to the hardened **V4.3/V3.5** contract.
+Checkpoint 9 is qualified. Pro returned `OWNER DECISION REQUIRED: YES`, and Joel selected
+**B1 — Independent-first constructs**:
 
-Required migration gates:
+1. **B1 — Independent-first constructs (Pro recommendation):** later define ordinary behavioral,
+   experiential, or phenomenological constructs through a chart-blind process and freeze them
+   before any HD mapping. This gives the strongest circularity/leakage protection but may produce
+   reliable constructs that do not map cleanly to HD.
+2. **B2 — HD-derived constructs:** later derive constructs from HD theory while keeping the
+   measurement study separated from actual charts/candidate times. This is more directly relevant
+   and potentially shorter, but has substantially greater circularity, cueing, familiarity,
+   expectancy, and personal-validation risk.
 
-- full required feature registry for all frozen mappings;
-- flexibility penalty;
-- dependency/corroboration controls;
-- duration-weighted conditional prevalence;
-- exact V4.3 rank tuple;
-- full-universe rerun after accepted refinements;
-- anti-simplification tests;
-- verified reusable century cache.
+Joel explicitly confirmed that B1 must still lead to a later test of how the chart-blind constructs
+map onto AstroHD. B1 therefore changes the sequence, not the eventual mapping question: construct
+definitions, measurement model, reliability evidence, and analysis boundaries must first be
+developed and frozen independently; a later separately frozen and blinded AstroHD mapping may then
+be tested and must be allowed to fail without post-hoc remapping.
 
-A reduced architecture-only implementation must never identify itself as V4.3.
+Pro accepted the B1 selection without another owner choice and authorized only pre-content source
+governance, content embargo, and the AstroHD mapping firewall. That bounded slice is complete
+locally. The architecture preserves an immutable chart-blind conception-before-search sequence,
+all-unselected source routes, a future construct-specific scan template, closed metadata schemas,
+append-only contamination, unassigned separated roles, a construct freeze gate, separate R/M/I
+claim lanes, mapping-failure preservation, and post-exposure change control. It creates no
+construct or mapping content.
+
+Checkpoint 10 is accepted 64/64. Joel selected **S6 — staged independent hybrid sourcing** and
+**H1 — screened chart-blind humans only as construct-content authors**. The decision and its limits
+are `docs/NATAL_TIME_OWNER_DECISION_S6_H1_20260830.md`.
+
+The superseding supervision bootstrap is adopted at owner-outcome epoch 4. The exact source receipt,
+open-parent outcome, bounded child contract, objective reconciliation, separate alignment planes,
+typed `WORKING` completion claim, and separate operational/scientific/release judgments are under
+`state/NATAL-TIME-*EPOCH4*` and `state/NATAL-TIME-S6-H1-CHILD-TASK-CONTRACT-V1.json`. Checkpoint 10,
+tests, and design completeness remain supporting states rather than root completion. Priority 1
+participant-capable work and Priorities 2/3 remain open.
+
+The shared supervision-design meta-review returned `ACCEPT_WITH_REVISION` and no owner decision.
+It classifies the worker-copied exact-text receipt as `INTEGRITY_ONLY`, its independent-source
+comparison as `NOT_INDEPENDENT`, contract-to-captured-source as `MATCH`, and contract-to-owner as
+`PARTIAL`. Safe reversible contributing work remains valid. Root completion, release,
+publication, deployment, migration, irreversible action, and equivalent terminal acceptance stay
+fail-closed until the owner source is independently verified or explicitly re-attested and every
+other applicable gate passes. The exact ruling is
+`docs/PRO_SUPERVISION_DESIGN_FEEDBACK_RULING_20260830.md`.
+
+The exact next-contract packet is `docs/NATAL_TIME_S6_H1_NEXT_CONTRACT_PACKET_20260830.md`. Pro
+authorized and reviewed the bounded pre-human governance child at checkpoint 11, but accepted only
+59/60 requirements. It ruled that the blanket disqualification of generic astrology, owner
+familiarity, and other peripheral exposure preselects an eligibility policy that `S6H1-30` and the
+neutral dossier leave to Joel. Worker-to-contract is therefore `YELLOW`, contract-to-owner remains
+`PARTIAL`, completion is `WORKING — QUALIFIED`, operational alignment is `WARN`, scientific
+adequacy is `WARN`, and release adequacy is `NOT_APPLICABLE` with release closed. The exact ruling
+and E1/E2/E3 owner gate are `docs/PRO_SUPERVISION_S6_H1_CHECKPOINT11_RULING_20260830.md`.
+
+An epoch-5 policy interpretation was returned to the same task Pro supervisor. Pro initially ruled
+`OWNER DECISION REQUIRED: NO` and authorized only the checkpoint-11 epoch-5 human-exposure policy
+reconciliation child. The additive metadata/synthetic-test implementation is complete at
+`04d34b5b81587e29355cc9a4cec0a4e173d3fd50`: V1 remains frozen as the rejected blanket-exposure
+candidate, the active V2 workflow/schema/role/threat artifacts implement the three-status
+semantic/self-concept policy, and all 28 hostile synthetic cases pass without assessing a real
+person. All 60 V2 acceptance nodes pass; the full repository suite passed 699/699; strict mypy,
+Ruff, privacy/history/build, JSON/hash, protected-byte, production-no-diff, diff, and clean-tree
+gates passed.
+
+On resubmission, Pro corrected its preceding ruling and returned
+`OWNER DECISION REQUIRED: YES` plus `CHECKPOINT-11 VERDICT: NOT ACCEPTED — 59/60`. Pro ruled that
+the text preserved as a direct verbatim owner correction is assistant-authored interpretation,
+so it cannot establish `OWNER_REATTESTED` or bounded owner `MATCH` without explicit owner
+confirmation. `S6H1-18` and `S6H1-29` are accepted; `S6H1-30` remains blocked. Current states are
+worker-to-contract `YELLOW`, bounded policy-to-owner `UNCONFIRMED`, root contract-to-owner
+`PARTIAL`, typed completion `WORKING`, operational alignment `WARN`, scientific adequacy `WARN`,
+release adequacy `NOT_APPLICABLE`, release false, and parent `OPEN`. The exact ruling and owner
+options P1/P2/P3 are
+`docs/PRO_SUPERVISION_S6_H1_CHECKPOINT11_RESUBMISSION_RULING_20260831.md`.
+
+Joel then explicitly selected `P1` with the direct message `p1 approved exactly as stated`. Pro
+returned `OWNER DECISION REQUIRED: NO`, accepted substantive `S6H1-30`, and authorized only
+`CHECKPOINT-11 P1 RATIFICATION AND PROVENANCE CLOSURE ONLY`. The active provenance chain now keeps
+three distinct facts: the exact owner message is `DIRECT_OWNER_MESSAGE`; the exact policy proposal
+origin is `ASSISTANT_PROPOSED`; and the owner action is `EXPLICIT_RATIFICATION`. The assistant's
+normalized relay to Pro is preserved but is not substituted for the direct owner bytes. Earlier
+misclassified artifacts remain byte-identical historical evidence. Eligibility semantics, all 28
+hostile policy cases, the nonhuman-context exclusion, and the later mapping firewall are unchanged.
+The closure implementation evidence is `f63d1f3aed410dfcc457e4cc07b0771fd12a9485` / tree
+`bafd1d3d292cc70640ff34686ae3cf1cc65a33c8`. The full suite passed 712/712, the focused suite
+passed 103/103, and strict mypy, changed-file Ruff, privacy/history/build, all tracked JSON,
+recursive manifest, 43 accepted-artifact, 48 deterministic-artifact, production-no-diff,
+`git diff --check`, and clean-tree gates passed. The self-contained evidence is
+`docs/NATAL_TIME_S6_H1_CHECKPOINT11_P1_PROVENANCE_CLOSURE_EVIDENCE_20260831.md`. The next action is
+return to the same Pro lane.
+
+Pro returned `OWNER DECISION REQUIRED: NO` and accepted checkpoint 11 at 60/60. It authorized only
+`CHECKPOINT-12 — P1 BLIND-ADJUDICATION AND H1 AUTHOR-CONFIGURATION DECISION ARCHITECTURE ONLY`, a
+local, reversible, pre-human, content-free child. The authoritative contract is
+`docs/PRO_SUPERVISION_S6_H1_CHECKPOINT12_CONTRACT_20260831.md`. The required source-free conception
+artifacts were frozen before search in commit `7d914af30bfe4c4817692067f8e4471f3c3e3987`. The
+bounded 24-query methods scan and content-free architecture are implemented locally. They preserve
+P1's exposure/familiarity/self-concept/derivation distinctions, separate evidence custody, blind
+adjudication, clean authorship, protected-content custody, reliability, and later mapping roles,
+and represent single-author, independent-pair, and independent-panel families without selecting
+one. Closed synthetic metadata and a test-only schema validator contain no human classifier.
+Human-facing wording, evidence standards, adjudicators, disagreement/appeal procedures, counts,
+population, recruitment, burden, compensation, budget, timeline, retention, human activity,
+construct work, mapping, production/external mutation, push, merge, deployment, publication, and
+release remain unselected or prohibited. The verified implementation head is
+`0fe39a9d4f9fb3e2a44e0e5bc15b6ee3446482bf` / tree
+`94668f0bd39413b893a017414500d0001e6ba067`: full suite `743/743`, focused supervision suite
+`140/140`, checkpoint-12 suite `31/31`, checkpoint-11 `60/60`, strict mypy `132` source files,
+exact Ruff, privacy/history/build, `374` tracked JSON, manifest `25/25`, protected identity,
+production-no-diff, diff, and clean-tree gates passed. Return to the same Pro lane is next.
+
+Option B remains a design-only prerequisite screen. It does not authorize live execution,
+measurement content, participant software, empirical data, or progression to rectification.
+No push, PR action, merge, migration, deployment, live record, participant inference, recruitment,
+questionnaire, estimator, candidate selection, baseline execution, relationship evidence, or
+public release is authorized.
+
+## Blocked long-horizon research concepts
+
+The remaining sections preserve prior research concepts for future review. They are not current
+authorization. In particular, no V4.3/V3.5 scoring migration, candidate ranking, questionnaire,
+calibration execution, adaptive selection, human recruitment, participant-facing result, or
+relationship marginalization may begin without a later Pro checkpoint and every owner decision
+identified in `state/NATAL-TIME-UNRESOLVED-DECISIONS.json`.
 
 ## Immediate proof-of-concept ladder
 

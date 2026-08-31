@@ -1,0 +1,224 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_id": "natal-time-s6-h1-threat-model-v2",
+  "status": "OWNER_POLICY_RECONCILED_PREHUMAN_METADATA_THREATS_ONLY",
+  "threats": [
+    {
+      "threat_id": "T01",
+      "class": "ASTROHD_EXPOSED_NONHUMAN_CONTENT_GENERATION_CONTEXT",
+      "risk": "Repository, conversation, retrieval, tool, model, or model-session context imports AstroHD content into supposedly chart-blind work.",
+      "controls": [
+        "ABSOLUTE_NONHUMAN_CONTEXT_EXCLUSION",
+        "MODEL_CONTENT_AUTHORSHIP_FALSE",
+        "ENVIRONMENT_SESSION_RETRIEVAL_PROVENANCE"
+      ],
+      "failure": "HARD_STOP"
+    },
+    {
+      "threat_id": "T02",
+      "class": "HUMAN_PRIOR_EXPOSURE_USED_AS_AUTOMATIC_EXCLUSION_OR_ELIGIBILITY",
+      "risk": "Exposure provenance is substituted for semantic and self-concept contamination evidence.",
+      "controls": [
+        "EPOCH5_THREE_OUTCOME_POLICY",
+        "EXPOSURE_SEPARATE_FROM_DECISION",
+        "NO_AUTOMATIC_EXPOSURE_RULE"
+      ],
+      "failure": "CLAIM_REJECTED"
+    },
+    {
+      "threat_id": "T03",
+      "class": "UNKNOWN_INCOMPLETE_OR_CONFLICTING_EVIDENCE_ASSIGNED_A_SUBSTANTIVE_OUTCOME",
+      "risk": "Missing or conflicting history is treated as proof of eligibility or ineligibility.",
+      "controls": [
+        "NO_SUBSTANTIVE_OUTCOME",
+        "CLEAN_ROLE_ASSIGNMENT_BLOCKED",
+        "PROCESS_STATE_SEPARATION"
+      ],
+      "failure": "FAIL_CLOSED_WITHOUT_INELIGIBILITY_INFERENCE"
+    },
+    {
+      "threat_id": "T04",
+      "class": "SUBSTANTIAL_KNOWLEDGE_MISCLASSIFIED",
+      "risk": "Deep semantic or technical familiarity is treated as clean eligibility or automatic exclusion based on belief.",
+      "controls": [
+        "REQUIRES_BLIND_ADJUDICATION",
+        "BELIEF_INDEPENDENT_RULE",
+        "NO_PREFREEZE_AUTHORSHIP"
+      ],
+      "failure": "HARD_STOP"
+    },
+    {
+      "threat_id": "T05",
+      "class": "IDENTITY_OR_INTENTIONAL_DERIVATION_BASIS_IGNORED",
+      "risk": "Identity-defining self-concept or intentional derivation is allowed into clean H1 authorship.",
+      "controls": [
+        "INELIGIBLE_CLEAN_H1_AUTHOR",
+        "ROLE_ASSIGNMENT_BLOCK"
+      ],
+      "failure": "HARD_STOP"
+    },
+    {
+      "threat_id": "T06",
+      "class": "BELIEF_ACCURACY_MISMATCH_CURIOSITY_USEFULNESS_OR_PRODUCT_PROXY",
+      "risk": "A noncontrolling descriptor becomes the eligibility rule.",
+      "controls": [
+        "INVALID_DECISION_BASES_CONST_FALSE",
+        "HOSTILE_SYNTHETIC_PROBES"
+      ],
+      "failure": "CLAIM_REJECTED"
+    },
+    {
+      "threat_id": "T07",
+      "class": "UNAUTHORIZED_ADJUDICATION_RESULT",
+      "risk": "A future unresolved adjudication is fabricated or used to authorize authorship.",
+      "controls": [
+        "NO_FUTURE_ADJUDICATION_RECEIPT_CURRENT_CHILD",
+        "SEPARATE_AUTHORIZATION_REQUIRED"
+      ],
+      "failure": "HARD_STOP"
+    },
+    {
+      "threat_id": "T08",
+      "class": "EARLIER_EXPOSURE_HISTORY_ERASURE",
+      "risk": "A prior exposure event is deleted and replaced by a clean history.",
+      "controls": [
+        "APPEND_ONLY_EXPOSURE_HISTORY",
+        "ERASURE_DETECTION"
+      ],
+      "failure": "HARD_STOP"
+    },
+    {
+      "threat_id": "T09",
+      "class": "CONNECTED_PERSON_TEAM_SESSION_SOURCE_OR_EVIDENCE_CONTAMINATION",
+      "risk": "Information crosses an apparently isolated boundary.",
+      "controls": [
+        "CONNECTED_CONFLICT_STATES",
+        "APPEND_ONLY_EXPOSURE_HISTORY"
+      ],
+      "failure": "HARD_STOP_OR_UNRESOLVED_ADJUDICATION"
+    },
+    {
+      "threat_id": "T10",
+      "class": "ROLE_CONFLICT_OR_SELF_ADJUDICATION",
+      "risk": "A role approves its own work or silently changes content.",
+      "controls": [
+        "ROLE_SEPARATION",
+        "INDEPENDENT_EVALUATOR",
+        "NO_SILENT_MEASUREMENT_REVISION"
+      ],
+      "failure": "HARD_STOP"
+    },
+    {
+      "threat_id": "T11",
+      "class": "IGNORE_INSTRUCTION_SUBSTITUTED_FOR_ISOLATION",
+      "risk": "An instruction is treated as evidence of a fresh boundary.",
+      "controls": [
+        "EXPLICIT_FRESH_ISOLATION_STATE",
+        "ENVIRONMENT_SESSION_RETRIEVAL_PROVENANCE"
+      ],
+      "failure": "FAIL_CLOSED"
+    },
+    {
+      "threat_id": "T12",
+      "class": "PREFREEZE_CONTENT_ON_EXPOSED_REPOSITORY_OR_CONTEXT",
+      "risk": "Content is visible before the approved freeze boundary.",
+      "controls": [
+        "CONTENT_ESCROW_OUTSIDE_EXPOSED_SURFACES",
+        "REPOSITORY_METADATA_ONLY"
+      ],
+      "failure": "HARD_STOP"
+    },
+    {
+      "threat_id": "T13",
+      "class": "SEARCH_BEFORE_CONCEPTION_FREEZE_OR_POSTSEARCH_REWRITE",
+      "risk": "Established terminology or hoped-for mappings seed or rewrite the independent conception.",
+      "controls": [
+        "S6_STATE_MACHINE",
+        "IMMUTABLE_FREEZE",
+        "EXPLICIT_SUPERSESSION"
+      ],
+      "failure": "HARD_STOP"
+    },
+    {
+      "threat_id": "T14",
+      "class": "MAPPING_FEEDBACK_REPAIRS_CONSTRUCT",
+      "risk": "Null, weak, unstable, or nonreplicating mapping drives in-place construct edits.",
+      "controls": [
+        "SEPARATE_MAPPING_LANE",
+        "NULL_RESULT_PRESERVATION",
+        "NO_IN_PLACE_REPAIR"
+      ],
+      "failure": "HARD_STOP"
+    },
+    {
+      "threat_id": "T15",
+      "class": "POSTFREEZE_ROLE_PREMATURELY_ACTIVATED",
+      "risk": "A possible adversarial or comparison role shapes the package before freeze or separate authorization.",
+      "controls": [
+        "FREEZE_REQUIRED",
+        "SEPARATE_AUTHORIZATION_REQUIRED",
+        "NO_PREFREEZE_INFLUENCE"
+      ],
+      "failure": "HARD_STOP"
+    },
+    {
+      "threat_id": "T16",
+      "class": "LIVE_IDENTITY_DATA_ACCOUNT_CREDENTIAL_OR_STORAGE",
+      "risk": "Metadata design silently becomes human or production operation.",
+      "controls": [
+        "OPAQUE_SYNTHETIC_IDS_ONLY",
+        "NO_EXTERNAL_MUTATION",
+        "NO_LIVE_STORAGE"
+      ],
+      "failure": "HARD_STOP"
+    },
+    {
+      "threat_id": "T17",
+      "class": "GOVERNANCE_PROXY_FOR_SCIENTIFIC_OR_RELEASE_ADEQUACY",
+      "risk": "Passing architecture tests is presented as reliability, validity, mapping, or release readiness.",
+      "controls": [
+        "SEPARATE_ASSURANCE_PLANES",
+        "WORKING_COMPLETION",
+        "PARENT_OPEN"
+      ],
+      "failure": "CLAIM_REJECTED"
+    }
+  ],
+  "residual_risks": [
+    "No metadata scheme can establish that a future evidence record is truthful, complete, or sufficient.",
+    "No human-facing evidence standard, threshold, adjudicator, or procedure is selected.",
+    "No governance artifact establishes real-person eligibility, scientific feasibility, reliability, validity, mapping, or participant benefit.",
+    "Operational privacy and custody cannot be assessed before a real owner-approved workflow and system exist."
+  ],
+  "current_exposure_to_human_or_content_risk": "NONE_NO_HUMAN_OR_CONTENT_ACTION",
+  "primary_traceability_requirement_id": "S6H1-25",
+  "supersedes": {
+    "path": "state/NATAL-TIME-S6-H1-THREAT-MODEL-V1.json",
+    "sha256": "aaefeb5193876935d99097abe187091321d060b4740c3f624efd3ba6868c457b"
+  },
+  "owner_policy_binding": {
+    "owner_outcome_epoch": 5,
+    "owner_source": {
+      "path": "state/NATAL-TIME-OWNER-OUTCOME-SOURCE-EPOCH5-20260830.md",
+      "sha256": "ae31f03e2d2e83373be50c451f0bf998175a64ed83811570e613112035ebd131"
+    },
+    "normalized_decision": {
+      "path": "docs/NATAL_TIME_OWNER_DECISION_H1_CONTAMINATION_POLICY_20260830.md",
+      "sha256": "9016c1965ce60c198f10ebb56339471f9b3fd46e3974bce29dec5c7944417be6"
+    },
+    "owner_source_receipt": {
+      "path": "state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH5-V1.json",
+      "sha256": "332c48e97802617d1867dd769a7fa9d866b2ca8e864ace2ff9db5cb36124bc98",
+      "capability": "OWNER_REATTESTED",
+      "scope": "EPOCH5_H1_PRIOR_EXPOSURE_AND_SEMANTIC_CONTAMINATION_POLICY_ONLY"
+    },
+    "owner_outcome": {
+      "path": "state/NATAL-TIME-OWNER-OUTCOME-EPOCH5-V1.json",
+      "sha256": "02f199808dbb50bfd31a3bb7cc29a84f7b904caaba79d6589e7e172d9ed63fa2"
+    },
+    "pro_ruling": {
+      "path": "state/NATAL-TIME-S6-H1-CHECKPOINT11-PRO-RULING-V2.json",
+      "sha256": "ff16efda132a2ae99fbc6b603609dd368d131a2b43e03e12db3bc74f0e2f4e1c"
+    }
+  }
+}

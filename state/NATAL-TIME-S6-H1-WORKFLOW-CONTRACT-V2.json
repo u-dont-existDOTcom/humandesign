@@ -1,0 +1,179 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_id": "natal-time-s6-h1-workflow-contract-v2",
+  "status": "PREHUMAN_OWNER_POLICY_RECONCILED_METADATA_ONLY_STOP_BEFORE_HUMAN_ACTION",
+  "owner_decisions": {
+    "source_route": "S6_STAGED_INDEPENDENT_HYBRID",
+    "construct_content_authorship": "H1_SCREENED_CHART_BLIND_HUMANS_ONLY"
+  },
+  "current_child": {
+    "start_state": "PREHUMAN_GOVERNANCE_CONCEPTION_FROZEN",
+    "end_state": "CHECKPOINT_11_RETURNED_TO_PRO",
+    "human_action_allowed": false,
+    "construct_content_allowed": false,
+    "construct_specific_search_allowed": false,
+    "mapping_allowed": false,
+    "production_or_external_mutation_allowed": false
+  },
+  "invariants": [
+    "S6_ORDER_CANNOT_BE_BYPASSED",
+    "H1_HUMANS_ONLY_ORIGINATE_OR_REVISE_CONSTRUCT_CONTENT",
+    "ASTROHD_EXPOSED_NONHUMAN_CONTEXTS_REPOSITORIES_RETRIEVAL_AND_MODEL_SESSIONS_CANNOT_AUTHOR_OR_REVISE_CONTENT",
+    "HUMAN_PRIOR_EXPOSURE_ALONE_NEITHER_ESTABLISHES_ELIGIBILITY_NOR_INELIGIBILITY",
+    "UNKNOWN_INCOMPLETE_OR_CONFLICTING_EVIDENCE_BLOCKS_ROLE_ASSIGNMENT_WITHOUT_A_SUBSTANTIVE_OUTCOME",
+    "REQUIRES_BLIND_ADJUDICATION_CANNOT_AUTHOR_OR_REVISE_PREFREEZE_CONTENT",
+    "NO_ADJUDICATION_OUTCOME_WITHOUT_SEPARATELY_AUTHORIZED_RECEIPT",
+    "CONCEPTION_FREEZE_PRECEDES_CONSTRUCT_SPECIFIC_SEARCH",
+    "SEARCH_RESULTS_CANNOT_MUTATE_FROZEN_CONCEPTION_IN_PLACE",
+    "MAPPING_IS_LATER_SEPARATELY_FROZEN_AND_CURRENTLY_CLOSED",
+    "MAPPING_FAILURE_CANNOT_AUTHORIZE_IN_PLACE_CONSTRUCT_REPAIR",
+    "ROLE_ACCESS_AND_EXPOSURE_HISTORY_IS_APPEND_ONLY",
+    "REPOSITORY_STORES_NO_PREFREEZE_CONTENT_BEARING_BYTES"
+  ],
+  "logical_role_separations": [
+    [
+      "CHART_BLIND_HUMAN_CONCEPT_AUTHOR",
+      "SOURCE_SEARCH_WORKER"
+    ],
+    [
+      "CHART_BLIND_HUMAN_CONCEPT_AUTHOR",
+      "MEASUREMENT_REVIEWER"
+    ],
+    [
+      "CHART_BLIND_HUMAN_CONCEPT_AUTHOR",
+      "CONTENT_CUSTODIAN"
+    ],
+    [
+      "CHART_BLIND_HUMAN_CONCEPT_AUTHOR",
+      "RELIABILITY_EVALUATOR"
+    ],
+    [
+      "CHART_BLIND_HUMAN_CONCEPT_AUTHOR",
+      "MAPPING_WORKER"
+    ],
+    [
+      "SOURCE_SEARCH_WORKER",
+      "MAPPING_WORKER"
+    ],
+    [
+      "MEASUREMENT_REVIEWER",
+      "MAPPING_WORKER"
+    ],
+    [
+      "RELIABILITY_EVALUATOR",
+      "MAPPING_WORKER"
+    ],
+    [
+      "GOVERNANCE_SUPERVISOR",
+      "INDEPENDENT_EVALUATOR"
+    ]
+  ],
+  "future_positive_evidence_gates": [
+    {
+      "gate_id": "G1",
+      "before": "HUMAN_SCREENING",
+      "requires": [
+        "OWNER_HUMAN_PROGRAM_CHOICES",
+        "PRO_CONTRACT",
+        "ETHICS_PRIVACY_CONSENT_AUTHORITY",
+        "SCREENING_RULES_FROZEN",
+        "EPOCH5_OWNER_POLICY_BOUND",
+        "NO_SCREENING_ALGORITHM_SELECTED"
+      ]
+    },
+    {
+      "gate_id": "G2",
+      "before": "HUMAN_CONTENT_CREATION",
+      "requires": [
+        "SCREENING_COMPLETE",
+        "SUBSTANTIVE_OUTCOME_ELIGIBLE_WITH_DECISION_RECEIPT",
+        "NO_PENDING_BLIND_ADJUDICATION",
+        "ISOLATED_ENVIRONMENT_ESTABLISHED",
+        "CONTENT_CUSTODY_ESTABLISHED"
+      ]
+    },
+    {
+      "gate_id": "G3",
+      "before": "CONSTRUCT_SPECIFIC_SEARCH",
+      "requires": [
+        "HUMAN_CONCEPTION_FROZEN",
+        "CONTENT_DIGEST_RECEIPT",
+        "SEARCH_PROTOCOL_SEPARATELY_FROZEN"
+      ]
+    },
+    {
+      "gate_id": "G4",
+      "before": "RELIABILITY_EVALUATION",
+      "requires": [
+        "MEASUREMENT_PACKAGE_FROZEN",
+        "OWNER_RELIABILITY_CHOICES",
+        "PRO_CONTRACT"
+      ]
+    },
+    {
+      "gate_id": "G5",
+      "before": "ASTROHD_MAPPING",
+      "requires": [
+        "CONSTRUCT_AND_RELIABILITY_PACKAGE_FROZEN",
+        "MAPPING_QUESTION_SEPARATELY_PREREGISTERED",
+        "INDEPENDENT_MAPPING_EVIDENCE_RESERVED",
+        "OWNER_AND_PRO_GATES"
+      ]
+    }
+  ],
+  "current_gate_results": [
+    {
+      "gate_id": "G1",
+      "status": "BLOCKED_NOT_AUTHORIZED"
+    },
+    {
+      "gate_id": "G2",
+      "status": "BLOCKED_NOT_AUTHORIZED"
+    },
+    {
+      "gate_id": "G3",
+      "status": "BLOCKED_NOT_AUTHORIZED"
+    },
+    {
+      "gate_id": "G4",
+      "status": "BLOCKED_NOT_AUTHORIZED"
+    },
+    {
+      "gate_id": "G5",
+      "status": "CLOSED_NOT_AUTHORIZED"
+    }
+  ],
+  "claim_boundary": "Architecture and synthetic consistency validation do not establish a viable human workflow, a real person's eligibility, chart blindness, construct quality, reliability, validity, mapping feasibility, or participant benefit.",
+  "parent_outcome_status": "WORKING_OPEN",
+  "primary_traceability_requirement_id": "S6H1-20",
+  "supersedes": {
+    "path": "state/NATAL-TIME-S6-H1-WORKFLOW-CONTRACT-V1.json",
+    "sha256": "798e93e7cd6cff5506dbacf37419d99601eb00264f3b230d96525407d88408ec"
+  },
+  "owner_policy_binding": {
+    "owner_outcome_epoch": 5,
+    "owner_source": {
+      "path": "state/NATAL-TIME-OWNER-OUTCOME-SOURCE-EPOCH5-20260830.md",
+      "sha256": "ae31f03e2d2e83373be50c451f0bf998175a64ed83811570e613112035ebd131"
+    },
+    "normalized_decision": {
+      "path": "docs/NATAL_TIME_OWNER_DECISION_H1_CONTAMINATION_POLICY_20260830.md",
+      "sha256": "9016c1965ce60c198f10ebb56339471f9b3fd46e3974bce29dec5c7944417be6"
+    },
+    "owner_source_receipt": {
+      "path": "state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH5-V1.json",
+      "sha256": "332c48e97802617d1867dd769a7fa9d866b2ca8e864ace2ff9db5cb36124bc98",
+      "capability": "OWNER_REATTESTED",
+      "scope": "EPOCH5_H1_PRIOR_EXPOSURE_AND_SEMANTIC_CONTAMINATION_POLICY_ONLY"
+    },
+    "owner_outcome": {
+      "path": "state/NATAL-TIME-OWNER-OUTCOME-EPOCH5-V1.json",
+      "sha256": "02f199808dbb50bfd31a3bb7cc29a84f7b904caaba79d6589e7e172d9ed63fa2"
+    },
+    "pro_ruling": {
+      "path": "state/NATAL-TIME-S6-H1-CHECKPOINT11-PRO-RULING-V2.json",
+      "sha256": "ff16efda132a2ae99fbc6b603609dd368d131a2b43e03e12db3bc74f0e2f4e1c"
+    }
+  },
+  "active_prior_exposure_policy": "state/NATAL-TIME-S6-H1-PRIOR-EXPOSURE-POLICY-V1.json"
+}

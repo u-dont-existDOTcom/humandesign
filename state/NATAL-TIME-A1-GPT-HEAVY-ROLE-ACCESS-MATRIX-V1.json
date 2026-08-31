@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-a1-gpt-heavy-role-access-matrix-v1",
+  "status": "NO_REAL_ASSIGNMENTS_NO_ACCESS_GRANTS",
+  "primary_traceability_requirement_id": "A1G-17",
+  "roles": [
+    {
+      "role_id": "ASTROHD_AWARE_GOVERNANCE_GPT",
+      "context_class": "GOVERNANCE_CONTEXT",
+      "permitted_metadata": ["GOVERNANCE_CONTRACT", "HASH", "PROVENANCE_RECEIPT", "ACCESS_RECEIPT", "SEALED_PACKAGE_EXISTENCE", "FREEZE_STATE"],
+      "prohibited_access_or_action": ["UNSEALED_HUMAN_SOURCE", "UNSEALED_DERIVATIVE", "PREFREEZE_SEMANTIC_WORK", "CONTENT_FIDELITY_REVIEW", "CONSTRUCT_AUTHORSHIP", "SEMANTIC_REVISION"]
+    },
+    {
+      "role_id": "ISOLATED_GPT_ADJUDICATION_RUN",
+      "context_class": "ADJUDICATION_CONTEXT",
+      "permitted_metadata": ["AUTHORIZED_EVIDENCE_PACKET", "OWN_ACCESS_RECEIPT", "OWN_SEALED_INITIAL_OUTPUT"],
+      "prohibited_access_or_action": ["PEER_UNSEALED_OUTPUT", "CONTENT_AUTHORSHIP", "REPOSITORY_CONTEXT", "PROTECTED_MAPPING_MATERIAL", "OWNER_OVERRIDE"]
+    },
+    {
+      "role_id": "GPT_ADJUDICATION_RECONCILIATION",
+      "context_class": "RECONCILIATION_CONTEXT",
+      "permitted_metadata": ["SEALED_INITIAL_OUTPUT_A", "SEALED_INITIAL_OUTPUT_B", "DISAGREEMENT_STATE", "RECONCILIATION_RECEIPT"],
+      "prohibited_access_or_action": ["OVERWRITE_INITIAL_OUTPUT", "ERASE_DISAGREEMENT", "CONTENT_AUTHORSHIP", "OWNER_OVERRIDE"]
+    },
+    {
+      "role_id": "ISOLATED_CHART_BLIND_CONTENT_SUPPORT_GPT",
+      "context_class": "CONTENT_SUPPORT_CONTEXT",
+      "permitted_metadata": ["RAW_FROZEN_SOURCE", "SOURCE_OFFSET", "NONAUTHORITATIVE_DERIVATIVE", "JOEL_AUTHOR_DECISION", "CLEAN_FREEZE_RECEIPT"],
+      "prohibited_access_or_action": ["REPOSITORY_CONTEXT", "PROTECTED_MAPPING_MATERIAL", "PREFREEZE_GPT_SEMANTIC_PROPOSITION", "AUTONOMOUS_SEMANTIC_AUTHORITY", "ELIGIBILITY_ADJUDICATION"]
+    },
+    {
+      "role_id": "JOEL_AUTHOR",
+      "context_class": "HUMAN_SEMANTIC_SOURCE",
+      "permitted_metadata": ["ORIGINAL_HUMAN_SOURCE", "DERIVATIVE_CANDIDATE", "SEMANTIC_DECISION", "FINAL_FIDELITY_ATTESTATION"],
+      "prohibited_access_or_action": ["OVERRIDE_GPT_ADJUDICATION_INTO_CLEAN_ELIGIBILITY", "POSTFREEZE_OVERWRITE", "CROSS_AUTHOR_ROBUSTNESS_CLAIM"]
+    },
+    {
+      "role_id": "JOEL_OWNER",
+      "context_class": "OWNER_GOVERNANCE_SOURCE",
+      "permitted_metadata": ["OWNER_SCOPE_DECISION", "GOVERNANCE_DECISION", "SUPERVISION_DECISION"],
+      "prohibited_access_or_action": ["SEMANTIC_ACCEPTANCE_AS_OWNER", "OVERRIDE_GPT_ADJUDICATION_INTO_CLEAN_ELIGIBILITY", "POSTFREEZE_OVERWRITE"]
+    }
+  ],
+  "role_count": 6,
+  "real_person_assignments": [],
+  "current_access_grants": [],
+  "access_invariants": {
+    "governance_context_can_access_unsealed_content": false,
+    "adjudication_run_can_access_peer_before_both_commit": false,
+    "content_support_context_can_access_protected_mapping_material": false,
+    "owner_role_can_accept_semantics_as_author": false,
+    "author_role_can_override_adjudication": false,
+    "same_actor_role_events_are_interchangeable": false,
+    "protected_access_can_precede_clean_freeze": false,
+    "contaminated_context_can_create_clean_result": false
+  },
+  "completion_claim": "WORKING",
+  "root_completion": false,
+  "release_permission": false
+}

@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-p1-adjudication-threat-model-v1",
+  "status": "PREHUMAN_STRUCTURAL_THREATS_AND_GUARDS_ONLY",
+  "primary_traceability_requirement_id": "P1A-31",
+  "threats": [
+    {"threat_id": "TH-01", "threat": "EXPOSURE_EQUIVALENCE", "failure": "Any prior exposure is treated as automatic ineligibility or eligibility.", "structural_guard": "Separate exposure provenance from familiarity and substantive outcome."},
+    {"threat_id": "TH-02", "threat": "BELIEF_PROXY", "failure": "Belief, skepticism, mismatch, accuracy, curiosity, usefulness, or interest becomes a decision rule.", "structural_guard": "Closed non-dispositive metadata classes and no single-field outcome transition."},
+    {"threat_id": "TH-03", "threat": "MISSINGNESS_AS_CLEANLINESS", "failure": "Unrecorded exposure is interpreted as eligibility.", "structural_guard": "Incomplete evidence has a process state and blocks access."},
+    {"threat_id": "TH-04", "threat": "CONFLICT_ERASURE", "failure": "A later record silently replaces conflicting evidence.", "structural_guard": "Append-only conflict and supersession events preserve both versions."},
+    {"threat_id": "TH-05", "threat": "MASKING_OVERCLAIM", "failure": "A blind role label hides which attributes remain inferable.", "structural_guard": "Explicit masking dimensions and masking receipts."},
+    {"threat_id": "TH-06", "threat": "ADJUDICATOR_CONFLICT", "failure": "Evidence custodian, adjudicator, or assigner has an unrecorded conflict.", "structural_guard": "Distinct roles with append-only recusal and replacement history."},
+    {"threat_id": "TH-07", "threat": "AGREEMENT_AS_VALIDITY", "failure": "Consistent judgments are treated as proof of a correct standard.", "structural_guard": "Agreement classified as diagnostic only."},
+    {"threat_id": "TH-08", "threat": "FORCED_SUBSTANTIVE_OUTCOME", "failure": "Incomplete or conflicting evidence is forced into one of the three outcomes.", "structural_guard": "Process states remain distinct and null outcome is permitted."},
+    {"threat_id": "TH-09", "threat": "OUTCOME_TO_ACCESS_COLLAPSE", "failure": "A substantive outcome silently grants a protected role.", "structural_guard": "Separate access state and future authority receipt."},
+    {"threat_id": "TH-10", "threat": "PREFREEZE_CONVERGENCE", "failure": "Authors see one another's content before independent conception freezes.", "structural_guard": "Independent freeze receipts must precede synthesis access."},
+    {"threat_id": "TH-11", "threat": "ROLE_REASSIGNMENT_LAUNDERING", "failure": "Recusal or replacement conceals earlier access.", "structural_guard": "Assignment and access histories are append-only."},
+    {"threat_id": "TH-12", "threat": "NONHUMAN_CONTEXT_CONTAMINATION", "failure": "An exposed model, repository, conversation, or retrieval context authors protected content.", "structural_guard": "Categorical role-access prohibition."},
+    {"threat_id": "TH-13", "threat": "POSTOUTCOME_REVISION", "failure": "Later evaluation or mapping knowledge alters eligibility or conception history.", "structural_guard": "Later lanes cannot mutate prefreeze events."},
+    {"threat_id": "TH-14", "threat": "STRATUM_SELECTION", "failure": "Believers, skeptics, experts, or negative cases are systematically removed without preserved accounting.", "structural_guard": "Preserve negative, excluded, disputed, and unresolved metadata counts in future designs."},
+    {"threat_id": "TH-15", "threat": "DATA_OVER_COLLECTION", "failure": "Audit goals cause unnecessary personal or narrative data capture.", "structural_guard": "Closed metadata classes, opaque IDs, purpose limitation, and unselected retention."},
+    {"threat_id": "TH-16", "threat": "AUDIT_UNDER_COLLECTION", "failure": "Minimization removes the provenance needed to detect contamination or dispute.", "structural_guard": "Hash-bound event and custody receipts with explicit future retention decision."},
+    {"threat_id": "TH-17", "threat": "CONFIGURATION_PRESELECTION", "failure": "A single, pair, or panel option becomes an implicit default.", "structural_guard": "Neutral registry with no recommendation, ranking, default, or selected count."},
+    {"threat_id": "TH-18", "threat": "AUTOMATED_HUMAN_CLASSIFICATION", "failure": "Synthetic validation logic is repurposed as a real-person classifier.", "structural_guard": "Test-only validator checks shape/prohibitions and contains no outcome algorithm."}
+  ],
+  "threat_count": 18,
+  "residual_risks": [
+    "SEMANTIC_CONTAMINATION_HAS_NO_VALIDATED_P1_MEASURE",
+    "MASKED_ATTRIBUTES_MAY_REMAIN_INFERABLE",
+    "COMMON_PIPELINE_EFFECTS_CAN_CORRELATE_INDEPENDENT_JUDGMENTS",
+    "DATA_MINIMIZATION_AND_AUDITABILITY_REQUIRE_A_FUTURE_OWNER_TRADEOFF",
+    "AUTHOR_CONFIGURATION_FEASIBILITY_IS_UNTESTED"
+  ],
+  "risk_threshold_selected": false,
+  "guard_sufficiency_claimed": false,
+  "human_process_ready": false
+}

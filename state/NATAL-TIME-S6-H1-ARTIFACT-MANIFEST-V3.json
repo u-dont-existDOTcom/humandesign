@@ -1,0 +1,333 @@
+{
+  "schema_version": "3.0.0",
+  "artifact_id": "natal-time-s6-h1-artifact-manifest-v3",
+  "status": "EPOCH5_SUPERSEDING_SINGLE_PRIMARY_CONTENT_HASHED_EVIDENCE_SET",
+  "primary_traceability_requirement_id": "S6H1-54",
+  "supersedes": {
+    "artifact_id": "natal-time-s6-h1-artifact-manifest-v2",
+    "path": "state/NATAL-TIME-S6-H1-ARTIFACT-MANIFEST-V2.json",
+    "sha256": "3bf1fc3a5210cf4da9e192b57fc85488935b24c8e53277a8ad4a5145d7281e6a"
+  },
+  "owner_policy_binding": {
+    "owner_source_sha256": "ae31f03e2d2e83373be50c451f0bf998175a64ed83811570e613112035ebd131",
+    "normalized_decision_sha256": "9016c1965ce60c198f10ebb56339471f9b3fd46e3974bce29dec5c7944417be6",
+    "owner_source_receipt_sha256": "332c48e97802617d1867dd769a7fa9d866b2ca8e864ace2ff9db5cb36124bc98",
+    "owner_outcome_sha256": "02f199808dbb50bfd31a3bb7cc29a84f7b904caaba79d6589e7e172d9ed63fa2",
+    "pro_ruling_v2_sha256": "ff16efda132a2ae99fbc6b603609dd368d131a2b43e03e12db3bc74f0e2f4e1c"
+  },
+  "change_base_candidate_commit": "28d97738a45fa37f8c991cef4b5058fe6f562d2f",
+  "owner_correction_commit": "9a39410bf72ca07c7c9149244e04b5c8f307ae95",
+  "pro_ruling_record_commit": "ffec3fdcffe4d336af43c5cbe50a05ce1f6e9419",
+  "digest_algorithm": "sha256",
+  "merge_semantics": "Resolve V2 recursively, replace records whose path appears below, then append new paths. Every resulting artifact has exactly one primary requirement assignment; support IDs are noncontrolling traceability.",
+  "changed_or_added_artifacts": [
+    {
+      "path": "docs/NATAL_TIME_OWNER_DECISION_H1_CONTAMINATION_POLICY_20260830.md",
+      "sha256": "9016c1965ce60c198f10ebb56339471f9b3fd46e3974bce29dec5c7944417be6",
+      "primary_requirement_id": "S6H1-30",
+      "supports_requirement_ids": []
+    },
+    {
+      "path": "docs/PRO_SUPERVISION_S6_H1_CHECKPOINT11_RULING_20260830.md",
+      "sha256": "c6eda3aa4fc30f8c7f0d9c4de5a7cee0a582753710b2f095a1250fbf748b0793",
+      "primary_requirement_id": "S6H1-30",
+      "supports_requirement_ids": []
+    },
+    {
+      "path": "docs/PRO_SUPERVISION_S6_H1_CHECKPOINT11_OWNER_CORRECTION_RULING_20260830.md",
+      "sha256": "1bc398e5d4c1663815d2ef6d137e1d52e183fe4613f3bb541911cbb9e11ab268",
+      "primary_requirement_id": "S6H1-30",
+      "supports_requirement_ids": []
+    },
+    {
+      "path": "docs/NATAL_TIME_S6_H1_CHECKPOINT11_EPOCH5_REMEDIATION_ACCEPTANCE_20260830.md",
+      "sha256": "f29e7fb11b17ab77b7554eb90fde801aaed889306ed664eeda4bd9733897803d",
+      "primary_requirement_id": "S6H1-57",
+      "supports_requirement_ids": []
+    },
+    {
+      "path": "state/NATAL-TIME-OWNER-OUTCOME-SOURCE-EPOCH5-20260830.md",
+      "sha256": "ae31f03e2d2e83373be50c451f0bf998175a64ed83811570e613112035ebd131",
+      "primary_requirement_id": "S6H1-01",
+      "supports_requirement_ids": []
+    },
+    {
+      "path": "state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH5-V1.json",
+      "sha256": "332c48e97802617d1867dd769a7fa9d866b2ca8e864ace2ff9db5cb36124bc98",
+      "primary_requirement_id": "S6H1-01",
+      "supports_requirement_ids": []
+    },
+    {
+      "path": "state/NATAL-TIME-OWNER-OUTCOME-EPOCH5-V1.json",
+      "sha256": "02f199808dbb50bfd31a3bb7cc29a84f7b904caaba79d6589e7e172d9ed63fa2",
+      "primary_requirement_id": "S6H1-01",
+      "supports_requirement_ids": []
+    },
+    {
+      "path": "state/NATAL-TIME-S6-H1-CHECKPOINT11-PRO-RULING-V1.json",
+      "sha256": "129cf16f2c98e399f129dd4ffd039665ae4807605b5b8ae0679e5615c847de77",
+      "primary_requirement_id": "S6H1-30",
+      "supports_requirement_ids": []
+    },
+    {
+      "path": "state/NATAL-TIME-S6-H1-CHECKPOINT11-PRO-RULING-V2.json",
+      "sha256": "ff16efda132a2ae99fbc6b603609dd368d131a2b43e03e12db3bc74f0e2f4e1c",
+      "primary_requirement_id": "S6H1-30",
+      "supports_requirement_ids": []
+    },
+    {
+      "path": "state/NATAL-TIME-S6-H1-PRIOR-EXPOSURE-POLICY-V1.json",
+      "sha256": "198120ca5b0ad39177936603c259653f2f144a82355662dc825513b6a88b87d9",
+      "primary_requirement_id": "S6H1-30",
+      "supports_requirement_ids": [
+        "S6H1-18",
+        "S6H1-29",
+        "S6H1-30",
+        "S6H1-45"
+      ]
+    },
+    {
+      "path": "state/NATAL-TIME-S6-H1-WORKFLOW-CONTRACT-V2.json",
+      "sha256": "da81f43f1a979198ad3cf1127828208ba3b1b4f6f92c905a874e14233818be6d",
+      "primary_requirement_id": "S6H1-20",
+      "supports_requirement_ids": [
+        "S6H1-18",
+        "S6H1-19",
+        "S6H1-21",
+        "S6H1-41",
+        "S6H1-43",
+        "S6H1-44",
+        "S6H1-45"
+      ]
+    },
+    {
+      "path": "state/NATAL-TIME-S6-H1-ROLE-ACCESS-MATRIX-V2.json",
+      "sha256": "e2860e094318dea4d2b584ac7763330f9c975b5f43abbc11a32c057b3f5792fe",
+      "primary_requirement_id": "S6H1-16",
+      "supports_requirement_ids": [
+        "S6H1-17",
+        "S6H1-18",
+        "S6H1-19",
+        "S6H1-21",
+        "S6H1-22",
+        "S6H1-23",
+        "S6H1-24",
+        "S6H1-25",
+        "S6H1-39"
+      ]
+    },
+    {
+      "path": "state/NATAL-TIME-S6-H1-SCREENING-METADATA-SCHEMA-V2.json",
+      "sha256": "0ffe4635b62cb33e2b5989a496a6c47b075111a753531bc73f77a34a5925ee74",
+      "primary_requirement_id": "S6H1-26",
+      "supports_requirement_ids": [
+        "S6H1-27",
+        "S6H1-28",
+        "S6H1-29",
+        "S6H1-30",
+        "S6H1-31"
+      ]
+    },
+    {
+      "path": "state/NATAL-TIME-S6-H1-ISOLATION-PROVENANCE-SCHEMA-V2.json",
+      "sha256": "10a4c4fe2b0767055207625a33dc877dc13eef05909f9343f679fbe839960bd9",
+      "primary_requirement_id": "S6H1-33",
+      "supports_requirement_ids": [
+        "S6H1-26",
+        "S6H1-27",
+        "S6H1-34",
+        "S6H1-35"
+      ]
+    },
+    {
+      "path": "state/NATAL-TIME-S6-H1-THREAT-MODEL-V2.json",
+      "sha256": "f8ba68b9c4c6d3747b9ad88ecc1436f4852896726322272273c5f6a62ce29a3a",
+      "primary_requirement_id": "S6H1-25",
+      "supports_requirement_ids": [
+        "S6H1-18",
+        "S6H1-29",
+        "S6H1-30",
+        "S6H1-34",
+        "S6H1-35",
+        "S6H1-37",
+        "S6H1-45"
+      ]
+    },
+    {
+      "path": "state/NATAL-TIME-S6-H1-UNRESOLVED-DECISIONS-V2.json",
+      "sha256": "7f54d8d863f03b2db48a86af2046e32ef5f456de310560b639b543934373983c",
+      "primary_requirement_id": "S6H1-47",
+      "supports_requirement_ids": [
+        "S6H1-30",
+        "S6H1-46",
+        "S6H1-48",
+        "S6H1-49",
+        "S6H1-50",
+        "S6H1-51",
+        "S6H1-52"
+      ]
+    },
+    {
+      "path": "state/NATAL-TIME-S6-H1-PREHUMAN-METHODS-DECISION-LEDGER-V2.json",
+      "sha256": "5f13218a0b1e3f48f3b0a8521322a65e6027da7d07fc513011d501138f85d8ad",
+      "primary_requirement_id": "S6H1-14",
+      "supports_requirement_ids": []
+    },
+    {
+      "path": "state/NATAL-TIME-S6-H1-OBJECTIVE-RECONCILIATION-V2.json",
+      "sha256": "dc4134999e17bed0b99dcc0668fdc9e5896a5cedc36384fc93515236b3a91b49",
+      "primary_requirement_id": "S6H1-07",
+      "supports_requirement_ids": [
+        "S6H1-60"
+      ]
+    },
+    {
+      "path": "state/NATAL-TIME-S6-H1-OBJECTIVE-RECONCILIATION-V3.json",
+      "sha256": "877dc2bf94cb9cdc69313c51a51d008fe4ce1070751cec79af232eade392358d",
+      "primary_requirement_id": "S6H1-07",
+      "supports_requirement_ids": [
+        "S6H1-08",
+        "S6H1-60"
+      ]
+    },
+    {
+      "path": "state/NATAL-TIME-S6-H1-ASSURANCE-PLANES-V2.json",
+      "sha256": "b9578235fa4754aed1452bbe4b7dad3967d4db1dc4e20858a07b7a75d474051e",
+      "primary_requirement_id": "S6H1-60",
+      "supports_requirement_ids": [
+        "S6H1-08",
+        "S6H1-18",
+        "S6H1-30"
+      ]
+    },
+    {
+      "path": "state/NATAL-TIME-RESEARCH-SUPERVISION-VERDICT-EPOCH5-V1.json",
+      "sha256": "069877c87e38154f4eef76561a90dc33923ac23a0d4ca952c7c7f646469f825c",
+      "primary_requirement_id": "S6H1-60",
+      "supports_requirement_ids": [
+        "S6H1-07"
+      ]
+    },
+    {
+      "path": "state/NATAL-TIME-RESEARCH-SUPERVISION-VERDICT-EPOCH5-V2.json",
+      "sha256": "de0a010e2be9608a0015cc2970551fe1d92fd3484a4b16666cde98076a1d7f48",
+      "primary_requirement_id": "S6H1-60",
+      "supports_requirement_ids": []
+    },
+    {
+      "path": "state/NATAL-TIME-S6-H1-EXECUTION-LEDGER-V2.json",
+      "sha256": "f19698e6d819c2ca6fac4049bc95f8dbff8fa7f029e11df968d03089c9bbaa93",
+      "primary_requirement_id": "S6H1-59",
+      "supports_requirement_ids": [
+        "S6H1-32",
+        "S6H1-36",
+        "S6H1-58"
+      ]
+    },
+    {
+      "path": "state/NATAL-TIME-S6-H1-ACCEPTANCE-MATRIX-V2.json",
+      "sha256": "d688a3af30d8a056e1212e9596d63065ddd9cfb8720c1bfbaac7b334b5292854",
+      "primary_requirement_id": "S6H1-53",
+      "supports_requirement_ids": [
+        "S6H1-18",
+        "S6H1-29",
+        "S6H1-30",
+        "S6H1-57",
+        "S6H1-60"
+      ]
+    },
+    {
+      "path": "tests/fixtures/s6_h1_prehuman/screening_policy_eligible_v2.json",
+      "sha256": "7e0ffeb34b01ad973fa570a435b90f25b4794a4a5615a3f693decd2177706200",
+      "primary_requirement_id": "S6H1-28",
+      "supports_requirement_ids": []
+    },
+    {
+      "path": "tests/fixtures/s6_h1_prehuman/screening_policy_adjudication_v2.json",
+      "sha256": "4cd89484b741c720e464528be87dc9674700cd3f68b0b6160b2f45cf696882d7",
+      "primary_requirement_id": "S6H1-29",
+      "supports_requirement_ids": []
+    },
+    {
+      "path": "tests/fixtures/s6_h1_prehuman/screening_policy_ineligible_v2.json",
+      "sha256": "ae3f8519e1865b550910f6c54db855a52692fc344c8bfcda5879e77284090b94",
+      "primary_requirement_id": "S6H1-29",
+      "supports_requirement_ids": []
+    },
+    {
+      "path": "tests/fixtures/s6_h1_prehuman/screening_policy_incomplete_v2.json",
+      "sha256": "687b418ae15e2e5729f7e247bff898c3c993450a762cd670273c4bf8eee26bc8",
+      "primary_requirement_id": "S6H1-29",
+      "supports_requirement_ids": []
+    },
+    {
+      "path": "tests/fixtures/s6_h1_prehuman/screening_policy_conflict_v2.json",
+      "sha256": "5055b741271a935628d8f79f227c370c03e24121b7c8dd9b91d9b3f56ef5f7ad",
+      "primary_requirement_id": "S6H1-29",
+      "supports_requirement_ids": []
+    },
+    {
+      "path": "tests/fixtures/s6_h1_prehuman/isolation_valid_v2.json",
+      "sha256": "ca7612025f6a15066371137c8dd30a77a0aac4cda9a44f98e562198afee0d614",
+      "primary_requirement_id": "S6H1-34",
+      "supports_requirement_ids": []
+    },
+    {
+      "path": "tests/fixtures/s6_h1_prehuman/epoch5_policy_cases.json",
+      "sha256": "57a36ee3d11a851ff383711b4675e624a7b629d184ec427a3f57c3f46b493ee4",
+      "primary_requirement_id": "S6H1-55",
+      "supports_requirement_ids": [
+        "S6H1-18",
+        "S6H1-23",
+        "S6H1-24",
+        "S6H1-29",
+        "S6H1-30",
+        "S6H1-31",
+        "S6H1-34",
+        "S6H1-35",
+        "S6H1-45"
+      ]
+    },
+    {
+      "path": "tests/s6_h1_prehuman/validator.py",
+      "sha256": "d7991916eabd4355b1ccc9efa4b27d9965dd48fd8cc09e9edaa2c95181cb27fe",
+      "primary_requirement_id": "S6H1-55",
+      "supports_requirement_ids": [
+        "S6H1-18",
+        "S6H1-26",
+        "S6H1-27",
+        "S6H1-29",
+        "S6H1-30",
+        "S6H1-34",
+        "S6H1-35"
+      ]
+    },
+    {
+      "path": "tests/s6_h1_prehuman/acceptance.py",
+      "sha256": "4b372822b39f182da74213e9c0d2813c2ad71923a511b52a7855e18aa0b74424",
+      "primary_requirement_id": "S6H1-56",
+      "supports_requirement_ids": [
+        "S6H1-53",
+        "S6H1-54",
+        "S6H1-55",
+        "S6H1-57"
+      ]
+    },
+    {
+      "path": "tests/unit/test_natal_time_s6_h1_prehuman_governance.py",
+      "sha256": "e7f9e0f8c693a8733991b9a023ffe316470e4a724669c57c8759d9677119faca",
+      "primary_requirement_id": "S6H1-53",
+      "supports_requirement_ids": [
+        "S6H1-54",
+        "S6H1-55",
+        "S6H1-56",
+        "S6H1-57",
+        "S6H1-60"
+      ]
+    }
+  ],
+  "artifact_count": 56,
+  "active_requirement_matrix": "state/NATAL-TIME-S6-H1-ACCEPTANCE-MATRIX-V2.json",
+  "hostile_fixture_case_count": 28,
+  "self_digest_rule": "The active manifest does not contain a self-referential digest. Its exact bytes are content-addressed by the implementation evidence commit tree and reported in the checkpoint-11 return."
+}

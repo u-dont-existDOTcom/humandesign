@@ -1,0 +1,465 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:humandesign:natal-time:s6-h1:screening-metadata:v2",
+  "title": "Closed conspicuously synthetic S6/H1 epoch-5 contamination metadata",
+  "x-artifact-id": "natal-time-s6-h1-screening-metadata-schema-v2",
+  "x-schema-version": "2.0.0",
+  "x-primary-traceability-requirement-id": "S6H1-26",
+  "x-supersedes": {
+    "path": "state/NATAL-TIME-S6-H1-SCREENING-METADATA-SCHEMA-V1.json",
+    "sha256": "6e18708d85f4d969a276f8f04a4ba04fee6dcbb9bc805be16b0f3d57e2d4a157"
+  },
+  "x-owner-policy-binding": {
+    "owner_outcome_epoch": 5,
+    "owner_source": {
+      "path": "state/NATAL-TIME-OWNER-OUTCOME-SOURCE-EPOCH5-20260830.md",
+      "sha256": "ae31f03e2d2e83373be50c451f0bf998175a64ed83811570e613112035ebd131"
+    },
+    "normalized_decision": {
+      "path": "docs/NATAL_TIME_OWNER_DECISION_H1_CONTAMINATION_POLICY_20260830.md",
+      "sha256": "9016c1965ce60c198f10ebb56339471f9b3fd46e3974bce29dec5c7944417be6"
+    },
+    "owner_source_receipt": {
+      "path": "state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH5-V1.json",
+      "sha256": "332c48e97802617d1867dd769a7fa9d866b2ca8e864ace2ff9db5cb36124bc98",
+      "capability": "OWNER_REATTESTED",
+      "scope": "EPOCH5_H1_PRIOR_EXPOSURE_AND_SEMANTIC_CONTAMINATION_POLICY_ONLY"
+    },
+    "owner_outcome": {
+      "path": "state/NATAL-TIME-OWNER-OUTCOME-EPOCH5-V1.json",
+      "sha256": "02f199808dbb50bfd31a3bb7cc29a84f7b904caaba79d6589e7e172d9ed63fa2"
+    },
+    "pro_ruling": {
+      "path": "state/NATAL-TIME-S6-H1-CHECKPOINT11-PRO-RULING-V2.json",
+      "sha256": "ff16efda132a2ae99fbc6b603609dd368d131a2b43e03e12db3bc74f0e2f4e1c"
+    }
+  },
+  "x-scope": "SYNTHETIC_LOGICAL_CONSISTENCY_ONLY_NOT_A_HUMAN_SCREENING_ALGORITHM",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_class",
+    "synthetic_candidate_id",
+    "synthetic_role_id",
+    "exposure_provenance",
+    "exposure_depth",
+    "familiarity",
+    "self_concept_integration",
+    "intentional_derivation_risk",
+    "evidence_state",
+    "process_state",
+    "substantive_outcome",
+    "decision_provenance",
+    "adjudication_requirement",
+    "role_assignment_eligibility",
+    "nondecision_descriptors",
+    "automatic_decision_bases",
+    "exposure_history_integrity",
+    "future_role_access",
+    "mapping_integrity",
+    "human_action_occurred"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "NATAL-TIME-S6-H1-SCREENING-METADATA-V2"
+    },
+    "record_class": {
+      "const": "CONSPICUOUSLY_SYNTHETIC_S6_H1_SCREENING_POLICY_FIXTURE"
+    },
+    "synthetic_candidate_id": {
+      "type": "string",
+      "pattern": "^SYN-S6H1-CAND-[0-9]{4}$"
+    },
+    "synthetic_role_id": {
+      "const": "CHART_BLIND_HUMAN_CONCEPT_AUTHOR"
+    },
+    "exposure_provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "human_design",
+        "astrohd",
+        "astrology",
+        "repository",
+        "conversation",
+        "mapping",
+        "owner",
+        "individualized_feedback"
+      ],
+      "properties": {
+        "human_design": {
+          "enum": [
+            "NO_EXPOSURE_ESTABLISHED",
+            "PRIOR_EXPOSURE_RECORDED",
+            "UNKNOWN",
+            "CONFLICTING"
+          ]
+        },
+        "astrohd": {
+          "enum": [
+            "NO_EXPOSURE_ESTABLISHED",
+            "PRIOR_EXPOSURE_RECORDED",
+            "UNKNOWN",
+            "CONFLICTING"
+          ]
+        },
+        "astrology": {
+          "enum": [
+            "NO_EXPOSURE_ESTABLISHED",
+            "PRIOR_EXPOSURE_RECORDED",
+            "UNKNOWN",
+            "CONFLICTING"
+          ]
+        },
+        "repository": {
+          "enum": [
+            "NO_EXPOSURE_ESTABLISHED",
+            "PRIOR_EXPOSURE_RECORDED",
+            "UNKNOWN",
+            "CONFLICTING"
+          ]
+        },
+        "conversation": {
+          "enum": [
+            "NO_EXPOSURE_ESTABLISHED",
+            "PRIOR_EXPOSURE_RECORDED",
+            "UNKNOWN",
+            "CONFLICTING"
+          ]
+        },
+        "mapping": {
+          "enum": [
+            "NO_EXPOSURE_ESTABLISHED",
+            "PRIOR_EXPOSURE_RECORDED",
+            "UNKNOWN",
+            "CONFLICTING"
+          ]
+        },
+        "owner": {
+          "enum": [
+            "NO_EXPOSURE_ESTABLISHED",
+            "PRIOR_EXPOSURE_RECORDED",
+            "UNKNOWN",
+            "CONFLICTING"
+          ]
+        },
+        "individualized_feedback": {
+          "enum": [
+            "NO_EXPOSURE_ESTABLISHED",
+            "PRIOR_EXPOSURE_RECORDED",
+            "UNKNOWN",
+            "CONFLICTING"
+          ]
+        }
+      }
+    },
+    "exposure_depth": {
+      "enum": [
+        "NONE_OR_INCIDENTAL_OR_SHALLOW_ESTABLISHED",
+        "SUBSTANTIAL_EXPOSURE_ESTABLISHED",
+        "UNKNOWN",
+        "CONFLICTING"
+      ]
+    },
+    "familiarity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "semantic_knowledge",
+        "technical_knowledge",
+        "ontology_reproduction_capability"
+      ],
+      "properties": {
+        "semantic_knowledge": {
+          "enum": [
+            "NO_SUBSTANTIAL_KNOWLEDGE_ESTABLISHED",
+            "SUBSTANTIAL_KNOWLEDGE_ESTABLISHED",
+            "UNKNOWN",
+            "CONFLICTING"
+          ]
+        },
+        "technical_knowledge": {
+          "enum": [
+            "NO_SUBSTANTIAL_KNOWLEDGE_ESTABLISHED",
+            "SUBSTANTIAL_KNOWLEDGE_ESTABLISHED",
+            "UNKNOWN",
+            "CONFLICTING"
+          ]
+        },
+        "ontology_reproduction_capability": {
+          "enum": [
+            "NO_SUBSTANTIAL_CAPABILITY_ESTABLISHED",
+            "SUBSTANTIAL_CAPABILITY_ESTABLISHED",
+            "UNKNOWN",
+            "CONFLICTING"
+          ]
+        }
+      }
+    },
+    "self_concept_integration": {
+      "enum": [
+        "NOT_IDENTITY_DEFINING_ESTABLISHED",
+        "IDENTITY_DEFINING_OR_COMPREHENSIVE_ESTABLISHED",
+        "UNKNOWN",
+        "CONFLICTING"
+      ]
+    },
+    "intentional_derivation_risk": {
+      "enum": [
+        "NO_INTENTIONAL_DERIVATION_ESTABLISHED",
+        "INTENTIONAL_DERIVATION_ESTABLISHED",
+        "UNKNOWN",
+        "CONFLICTING"
+      ]
+    },
+    "evidence_state": {
+      "enum": [
+        "COMPLETE_NONCONFLICTING",
+        "INCOMPLETE",
+        "CONFLICTING"
+      ]
+    },
+    "process_state": {
+      "enum": [
+        "NOT_ASSESSED",
+        "EVIDENCE_INCOMPLETE",
+        "EVIDENCE_CONFLICT",
+        "DECISION_PENDING",
+        "DECISION_RECORDED"
+      ]
+    },
+    "substantive_outcome": {
+      "enum": [
+        null,
+        "ELIGIBLE",
+        "REQUIRES_BLIND_ADJUDICATION",
+        "INELIGIBLE_CLEAN_H1_AUTHOR"
+      ]
+    },
+    "decision_provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "policy_consistency_receipt_id",
+        "future_adjudication_receipt_state"
+      ],
+      "properties": {
+        "policy_consistency_receipt_id": {
+          "type": "string",
+          "pattern": "^SYN-S6H1-POLICY-[0-9]{4}$"
+        },
+        "future_adjudication_receipt_state": {
+          "const": "NOT_PRESENT_CURRENT_CHILD"
+        }
+      }
+    },
+    "adjudication_requirement": {
+      "enum": [
+        "NOT_REQUIRED_BY_COMPLETE_RECORDED_METADATA",
+        "REQUIRED_UNRESOLVED",
+        "SEPARATE_INELIGIBILITY_BASIS_RECORDED",
+        "UNKNOWN_DUE_TO_INCOMPLETE_OR_CONFLICTING_EVIDENCE"
+      ]
+    },
+    "role_assignment_eligibility": {
+      "enum": [
+        "STRUCTURALLY_CONSISTENT_BUT_NOT_AUTHORIZED",
+        "BLOCKED_NO_SUBSTANTIVE_OUTCOME",
+        "BLOCKED_REQUIRES_BLIND_ADJUDICATION",
+        "BLOCKED_INELIGIBLE_CLEAN_H1_AUTHOR"
+      ]
+    },
+    "nondecision_descriptors": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "belief_report",
+        "mismatch_report",
+        "curiosity_reported",
+        "usefulness_report",
+        "reported_accuracy_present",
+        "product_interest_reported"
+      ],
+      "properties": {
+        "belief_report": {
+          "enum": [
+            "POSITIVE",
+            "SKEPTICAL",
+            "REJECTING",
+            "MIXED",
+            "NOT_RECORDED"
+          ]
+        },
+        "mismatch_report": {
+          "enum": [
+            "SUBSTANTIAL",
+            "PARTIAL",
+            "NONE",
+            "NOT_RECORDED"
+          ]
+        },
+        "curiosity_reported": {
+          "type": "boolean"
+        },
+        "usefulness_report": {
+          "enum": [
+            "HIGH",
+            "PARTIAL",
+            "NONE",
+            "NOT_RECORDED"
+          ]
+        },
+        "reported_accuracy_present": {
+          "type": "boolean"
+        },
+        "product_interest_reported": {
+          "type": "boolean"
+        }
+      }
+    },
+    "automatic_decision_bases": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "belief",
+        "skepticism",
+        "reported_accuracy",
+        "reported_mismatch",
+        "curiosity",
+        "perceived_usefulness",
+        "product_interest",
+        "absence_of_known_exposure_record"
+      ],
+      "properties": {
+        "belief": {
+          "const": false
+        },
+        "skepticism": {
+          "const": false
+        },
+        "reported_accuracy": {
+          "const": false
+        },
+        "reported_mismatch": {
+          "const": false
+        },
+        "curiosity": {
+          "const": false
+        },
+        "perceived_usefulness": {
+          "const": false
+        },
+        "product_interest": {
+          "const": false
+        },
+        "absence_of_known_exposure_record": {
+          "const": false
+        }
+      }
+    },
+    "exposure_history_integrity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "append_only",
+        "prior_event_erasure_detected"
+      ],
+      "properties": {
+        "append_only": {
+          "const": true
+        },
+        "prior_event_erasure_detected": {
+          "const": false
+        }
+      }
+    },
+    "future_role_access": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "construct_freeze_state",
+        "separate_authorization_state",
+        "postfreeze_role_activated"
+      ],
+      "properties": {
+        "construct_freeze_state": {
+          "const": "NOT_FROZEN_CURRENT_CHILD"
+        },
+        "separate_authorization_state": {
+          "const": "NOT_AUTHORIZED_CURRENT_CHILD"
+        },
+        "postfreeze_role_activated": {
+          "const": false
+        }
+      }
+    },
+    "mapping_integrity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mapping_lane_state",
+        "original_frozen_construct_state",
+        "in_place_revision_authorized"
+      ],
+      "properties": {
+        "mapping_lane_state": {
+          "const": "CLOSED_NOT_AUTHORIZED"
+        },
+        "original_frozen_construct_state": {
+          "const": "PRESERVED"
+        },
+        "in_place_revision_authorized": {
+          "const": false
+        }
+      }
+    },
+    "human_action_occurred": {
+      "const": false
+    }
+  },
+  "x-substantive-outcomes": [
+    "ELIGIBLE",
+    "REQUIRES_BLIND_ADJUDICATION",
+    "INELIGIBLE_CLEAN_H1_AUTHOR"
+  ],
+  "x-process-states": [
+    "NOT_ASSESSED",
+    "EVIDENCE_INCOMPLETE",
+    "EVIDENCE_CONFLICT",
+    "DECISION_PENDING",
+    "DECISION_RECORDED"
+  ],
+  "x-prohibited-field-names": [
+    "name",
+    "email",
+    "phone",
+    "address",
+    "birth_date",
+    "birth_time",
+    "birth_place",
+    "screening_question",
+    "screening_wording",
+    "question_text",
+    "interview_prompt",
+    "disclosure_wording",
+    "consent_text",
+    "recruitment_text",
+    "evidence_threshold",
+    "accuracy_cutoff",
+    "evidence_standard",
+    "adjudicator",
+    "adjudication_question",
+    "exception_process",
+    "construct",
+    "instrument",
+    "item",
+    "prompt",
+    "content",
+    "mapping_content",
+    "scoring_rule",
+    "response_option",
+    "category",
+    "manual"
+  ]
+}
