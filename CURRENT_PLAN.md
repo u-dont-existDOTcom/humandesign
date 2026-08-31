@@ -1,52 +1,64 @@
 # Current Research Plan
 
+## Owner coordination directive — 2026-08-31
+
+- Continue routine, safe, in-scope execution autonomously. Do not ask the owner to
+  approve obvious implementation steps, choose an execution mode, or reconfirm an
+  authority already granted.
+- Ask the owner only when a genuine product/scientific/policy tradeoff, an
+  irreversible or materially consequential choice, missing authority, or a
+  mandatory security boundary requires owner action. When a choice is genuinely
+  required, explain the viable options, material benefits and drawbacks,
+  consequences for the result, and the recommended option before asking.
+- When a service requires the owner to complete a private authentication step,
+  state the exact action needed; do not present it as a discretionary project
+  decision or restart governance review.
+
 ## Active Issue #18 execution state — 2026-08-31
 
-This section supersedes the generic next-action order below for the active
-`codex/issue18-surveyv2-natal-one-case` continuation. Human Design issue #18 is the
-controlling chat-authored supervisor directive.
+This section supersedes the generic next-action order below. Human Design issue #18
+remains the controlling chat-authored supervisor directive. The owner subsequently
+authorized the exact PR #20 merge, production deployment, and one owner-only live
+questionnaire/recovery test. That authorization superseded the earlier release-closed
+checkpoint only for this bounded owner test; first external participants remain out
+of scope.
 
-- Current base: `b7660b8c9bcf52cbb14bc5442c13a3a8635aad32`.
-- The relationship intake failure reported by the owner is consistent with the
-  native browser time control showing typed segments while exposing an empty value.
-  The local repair replaces both native
-  time inputs with explicit 24-hour hour/minute/optional-second fields, produces
-  exact `HH:MM:SS` values (blank seconds become `00`), preserves values across the
-  unknown-time toggle, gives role-specific accessible errors, and rejects offsets
-  or fractional seconds on the server.
-- Verification for the time repair and corrected mechanical freeze package: original
-  focused repair tests `15 passed`; current freeze tests `11 passed`; current full
-  suite `237 passed`;
-  Ruff excluding this pre-existing generated-HTML file's E501 style debt passed;
-  mypy passed; synthetic headless Brave submissions sent `05:07:00`, `00:00:00`,
-  and explicit `00:00:09` values correctly.
-- Extra High correction `HD-ISSUE18-C1-SEMANTIC-GAP-RULING-v1.1.0` admitted the
-  exact `74ddb10` package to the single named Pro review. Pro ruling
-  `SURVEYV2-HUMAN-MEASUREMENT-AND-SCORING-FREEZE-v1.PRO-RULING-v1.0.0`
-  returned `BLOCKING_DEFECTS`, explicitly `OWNER_DECISION_REQUIRED: NO`, and allowed
-  only `SV2-FREEZE-B1` through `SV2-FREEZE-B4` correction followed by return to the
-  existing Issue #18 / Extra High boundary.
-- The corrected specification now freezes atomic request/result bijection; typed
-  support/contrast/counterevidence assessments; a separate zero-cost blind H1
-  exposure-adjudication package; and an exhaustive declared partition of 83 fields
-  into 45 construct-level weighting clusters. It contains 69 participant/classifier/
-  scoring fixture definitions plus 14 H1 adjudication fixture definitions. Runtime
-  behavior remains explicitly `0` and the package remains specification-only; the
-  partition is not a claim of exhaustive structural or statistical independence.
-- No real-person material has been processed, no friend has been contacted, and no
-  merge or deployment has occurred from this branch.
-- Existing-lane disposition
-  `ISSUE18-POST-PRO-CORRECTED-FREEZE-DISPOSITION-v1.0.0` reviewed exact corrected
-  head `cd7e3915c7d6cd7bddc9221ecb8439b91af05a3f` and returned
-  `ACCEPT_CORRECTED_FREEZE`, `OWNER_DECISION_REQUIRED: NO`, operational alignment
-  pass, scientific adequacy only as a corrected frozen specification, release
-  closed, and no remaining B1-B4 defect. It explicitly authorizes and requires no
-  additional Pro review.
+- PR #20 head `7f24ebc9936cb98db7e69a9ffa8dfbe018008a3c` passed required CI and was merged
+  to `main` as `b5c2cc57513d4b5505fd23a8e4c605e4607c11b9`.
+- Railway production deployment `0c26073a-ff83-449b-a976-7ae4342d7e00` is `SUCCESS`
+  and is bound to that exact merge commit on `main`.
+- Railway GitHub App access is restricted to this repository, the production source
+  is `main`, and automatic deployment on GitHub push is enabled.
+- Railway's retired Amsterdam region identifier was replaced by the current
+  `EU West (Amsterdam, Netherlands)` identifier. The geography did not change.
+  The mounted private volume's file count, total bytes, and aggregate digest matched
+  exactly before and after migration; raw records and the private digest were not
+  copied into Git.
+- Public `/healthz` returns `{"status":"ok"}`. Recovery status reports both
+  `magic_link` and `six_digit_otp`. The live questionnaire exposes explicit
+  hour/minute/optional-second controls for both people and no native browser time
+  controls.
+- One authorized recovery request for the owner's address returned the deliberately
+  generic `202` response. A privacy-safe private check found no saved study associated
+  with that address, so no email was sent. This is correct anti-enumeration behavior,
+  not an SMTP failure. A complete email/OTP round trip requires the owner first to
+  create a study using that address.
+- No friend has been contacted and no new scientific result exists. Incremental paid
+  spending remains `$0`.
 
-Next: stop at the accepted corrected specification freeze. Issue #18 independently
-requires owner authorization before first human contact or any new scientific
-production deployment/merge. The local time-control repair remains in the draft PR
-but must not be deployed before that boundary.
+Adequacy states:
+
+- **Operational alignment:** `PASS` for deployment, persistence, live repaired time
+  intake, and recovery configuration; `PENDING_OWNER_SESSION` for a real email/OTP
+  round trip because no eligible owner study exists yet.
+- **Scientific adequacy:** `NOT_ESTABLISHED`; the deployment and owner usability smoke
+  are not evidence that AstroHD or AstroRRF predicts humans.
+- **Release adequacy:** `OPEN_OWNER_ONLY`; the questionnaire is ready for the owner's
+  fresh test. External participant sharing remains closed until that smoke completes.
+
+Next: the owner completes one fresh production questionnaire using the authorized
+email address. Codex then verifies recovery end to end, records the result, and only
+after that boundary prepares the friend-facing link/handoff.
 
 ## Core hypothesis
 

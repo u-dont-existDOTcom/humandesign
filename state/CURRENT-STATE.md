@@ -1,5 +1,36 @@
 # Current state
 
+## Active task override — Issue #18 owner-only release smoke
+
+- As of: `2026-08-31`.
+- Controlling task: Human Design issue `#18`, plus the owner's bounded authorization
+  to merge/deploy PR `#20` and run one owner-only production questionnaire/recovery
+  test. This section supersedes the older `participant-session-v1` next-action state
+  below for relationship/AstroHD continuation work.
+- Canonical main: `b5c2cc57513d4b5505fd23a8e4c605e4607c11b9` (merged PR `#20`; reviewed head
+  `7f24ebc9936cb98db7e69a9ffa8dfbe018008a3c`).
+- Canonical production: Railway deployment
+  `0c26073a-ff83-449b-a976-7ae4342d7e00`, status `SUCCESS`, sourced from that exact
+  main commit.
+- Live state: health is green; explicit hour/minute/optional-second birth-time inputs
+  for both people are present; magic-link and six-digit-code recovery are configured;
+  and the private mounted volume matched exactly across the required same-geography
+  Railway region-identifier migration.
+- Recovery boundary: an authorized request for the owner's email produced no message
+  because no saved study is associated with that address. The private check disclosed
+  only a zero match count and status, not participant content. A true round trip is
+  pending the owner's first fresh study using that email.
+- Human-contact boundary: owner-only test authorized. No friend has been contacted;
+  external sharing remains closed until the owner smoke succeeds.
+- Spending boundary: `$0` incremental paid spending; no purchase or plan upgrade was
+  made.
+- Adequacy: operational deployment `PASS`, recovery round trip
+  `PENDING_OWNER_SESSION`, scientific validity `NOT_ESTABLISHED`, release
+  `OPEN_OWNER_ONLY`.
+- Next executable: owner completes the live questionnaire once. Codex then requests
+  and verifies a single-use recovery credential, confirms replay rejection, and
+  updates the public-safe release receipt.
+
 - As of: `2026-08-27`
 - Task ID: `participant-session-v1`
 - Goal: ship the first participant-facing AstroHD interview harness with immutable pre-answer predictions, candidate-blind adaptive interviewing, confirmatory reveal, and a separately labeled post-hoc holistic-profile ranking.
