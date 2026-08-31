@@ -51,3 +51,14 @@ def test_unknown_time_disables_both_numeric_time_fields_without_erasing_them() -
     assert "document.getElementById(role+'BirthHour').value=" not in HTML
     assert "document.getElementById(role+'BirthMinute').value=" not in HTML
     assert "document.getElementById(role+'BirthSecond').value=" not in HTML
+
+
+def test_api_validation_errors_are_rendered_as_text_not_object_coercions() -> None:
+    assert "function apiErrorMessage(problem,fallback)" in HTML
+    assert "problem.error" in HTML
+    assert "problem.detail" in HTML
+    assert "Array.isArray(problem)?problem:[problem]" in HTML
+    assert "item.loc" in HTML
+    assert "item.msg" in HTML
+    assert "status.textContent=apiErrorMessage(d,'Could not save study intake.')" in HTML
+    assert "status.textContent=d.detail||'Could not save study intake.'" not in HTML
