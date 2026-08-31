@@ -115,19 +115,23 @@ the artifact is not part of this owner-only release.
 - Real freeze through the owner intake: approximately 8.6 seconds, versus more than
   seven minutes when regenerating irrelevant month boundaries on demand.
 - Predictions remained unchanged through confirmatory lock and reveal.
-- Browser smoke before the review repair: AstroHD is the primary landing choice;
-  explicit time controls, live OpenStreetMap search, participant-selected timezone,
-  consent, single-use gate, real prediction freeze, and opaque session creation all
-  passed with synthetic data. The new session-token and trusted-result flow requires
-  a fresh smoke after this repair set.
+- Post-repair browser/API smoke at source commit
+  `cc00febe382acb8f66628cbfc43e5668a0dba4a0`: AstroHD is the primary landing
+  choice; explicit time controls, live OpenStreetMap search, participant-selected
+  timezone, both required consents, the single-use gate, real prediction freeze,
+  and two-credential session creation passed with synthetic data. Session-ID-only
+  access returned `403`; the authorized flow accepted evidence, locked it, and
+  revealed a 6-of-31 date rank over 251 exact states. The interviewer response had
+  no `birth` or `chart` field, while the same-origin trusted page displayed both
+  only after receiving the separate token.
 - The relationship validation formatter no longer renders FastAPI issue objects as
   `[object Object]`.
 
 Adequacy is deliberately split:
 
-- **Operational alignment:** review repairs are implemented locally; fresh tests,
-  private production artifact staging, restart/readback, and the configured
-  interviewer Action smoke remain open.
+- **Operational alignment:** local unit/static/full-suite and real-cache two-token
+  browser/API smokes pass; private production artifact staging, restart/readback,
+  and the configured real Custom GPT Action smoke remain open.
 - **Scientific adequacy:** the blind freeze/reveal design is suitable for an owner
   development case; human predictive validity is not established and the mapping is
   incomplete.

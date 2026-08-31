@@ -75,8 +75,12 @@ OpenAI consent, rejects owner-pilot mode/scope changes, fails closed if the acti
 source/model/mapping/question-bank/engine differs from the frozen session, preserves
 legacy reveal readability, and uses private filesystem modes.
 
-Next: verify this repair set and route its new exact head/diff back to Extra High;
-privately transfer the verified 28 MB cache into the Railway volume and prove its
+Local reverification now passes 262 tests plus a real-cache two-token browser/API
+smoke: session-ID-only access is rejected, the interviewer reveal omits birth/chart,
+and the trusted result page requires both credentials and shows the complete result.
+
+Next: route the new exact head/diff back to Extra High; privately transfer the
+verified 28 MB cache into the Railway volume and prove its
 hashes plus restart persistence; configure the private/unlisted Custom GPT and its
 model receipt; then deploy and smoke only the bounded owner test. Do not publish the
 cache artifact. External participant sharing remains closed until the owner completes
