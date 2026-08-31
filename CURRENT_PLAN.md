@@ -35,14 +35,18 @@ controlling chat-authored supervisor directive.
   partition is not a claim of exhaustive structural or statistical independence.
 - No real-person material has been processed, no friend has been contacted, and no
   merge or deployment has occurred from this branch.
+- Existing-lane disposition
+  `ISSUE18-POST-PRO-CORRECTED-FREEZE-DISPOSITION-v1.0.0` reviewed exact corrected
+  head `cd7e3915c7d6cd7bddc9221ecb8439b91af05a3f` and returned
+  `ACCEPT_CORRECTED_FREEZE`, `OWNER_DECISION_REQUIRED: NO`, operational alignment
+  pass, scientific adequacy only as a corrected frozen specification, release
+  closed, and no remaining B1-B4 defect. It explicitly authorizes and requires no
+  additional Pro review.
 
-Next: complete independent defect-by-defect verification, refresh exact hashes, push
-the corrected candidate to draft PR #20, route its exact diff/hash packet back to the
-existing Extra High lane, and follow only that disposition. No additional Pro review
-is authorized. Issue #18 independently requires owner authorization before first
-human contact or any new scientific production deployment/merge. The local
-time-control repair remains in the exact draft diff but must not be deployed before
-that boundary.
+Next: stop at the accepted corrected specification freeze. Issue #18 independently
+requires owner authorization before first human contact or any new scientific
+production deployment/merge. The local time-control repair remains in the draft PR
+but must not be deployed before that boundary.
 
 ## Core hypothesis
 
