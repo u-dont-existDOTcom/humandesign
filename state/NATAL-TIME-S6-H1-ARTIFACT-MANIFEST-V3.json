@@ -174,6 +174,14 @@
       "supports_requirement_ids": []
     },
     {
+      "path": "state/NATAL-TIME-S6-H1-OBJECTIVE-RECONCILIATION-V2.json",
+      "sha256": "dc4134999e17bed0b99dcc0668fdc9e5896a5cedc36384fc93515236b3a91b49",
+      "primary_requirement_id": "S6H1-07",
+      "supports_requirement_ids": [
+        "S6H1-60"
+      ]
+    },
+    {
       "path": "state/NATAL-TIME-S6-H1-OBJECTIVE-RECONCILIATION-V3.json",
       "sha256": "877dc2bf94cb9cdc69313c51a51d008fe4ce1070751cec79af232eade392358d",
       "primary_requirement_id": "S6H1-07",
@@ -190,6 +198,14 @@
         "S6H1-08",
         "S6H1-18",
         "S6H1-30"
+      ]
+    },
+    {
+      "path": "state/NATAL-TIME-RESEARCH-SUPERVISION-VERDICT-EPOCH5-V1.json",
+      "sha256": "069877c87e38154f4eef76561a90dc33923ac23a0d4ca952c7c7f646469f825c",
+      "primary_requirement_id": "S6H1-60",
+      "supports_requirement_ids": [
+        "S6H1-07"
       ]
     },
     {
@@ -310,7 +326,7 @@
       ]
     }
   ],
-  "artifact_count": 54,
+  "artifact_count": 56,
   "active_requirement_matrix": "state/NATAL-TIME-S6-H1-ACCEPTANCE-MATRIX-V2.json",
   "hostile_fixture_case_count": 28,
   "self_digest_rule": "The active manifest does not contain a self-referential digest. Its exact bytes are content-addressed by the implementation evidence commit tree and reported in the checkpoint-11 return."

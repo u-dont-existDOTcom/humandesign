@@ -216,12 +216,14 @@ adversarial/comparison roles. The verbatim epoch-5 source and normalized ruling 
 
 The owner correction was returned to the same task Pro supervisor. Pro ruled
 `OWNER DECISION REQUIRED: NO` and authorized only the checkpoint-11 epoch-5 human-exposure policy
-reconciliation child. That local metadata-only and synthetic-test-only remediation is now
-implemented additively: V1 remains frozen as the rejected blanket-exposure candidate, the active
-V2 workflow/schema/role/threat artifacts implement the three-status semantic/self-concept policy,
-and 28 hostile synthetic cases enforce the correction without screening a real person. The next
-action is exact-head verification followed by resubmission to the same Pro lane. No work beyond
-that child is authorized before Pro's checkpoint-11 acceptance ruling.
+reconciliation child. The additive metadata/synthetic-test remediation is complete at
+`04d34b5b81587e29355cc9a4cec0a4e173d3fd50`: V1 remains frozen as the rejected blanket-exposure
+candidate, the active V2 workflow/schema/role/threat artifacts implement the three-status
+semantic/self-concept policy, and all 28 hostile synthetic cases pass without assessing a real
+person. All 60 V2 acceptance nodes pass; the full repository suite passed 699/699; strict mypy,
+Ruff, privacy/history/build, JSON/hash, protected-byte, production-no-diff, diff, and clean-tree
+gates passed. The next action is resubmission to the same Pro lane. No work beyond this child is
+authorized before Pro's checkpoint-11 acceptance ruling.
 
 Option B remains a design-only prerequisite screen. It does not authorize live execution,
 measurement content, participant software, empirical data, or progression to rectification.

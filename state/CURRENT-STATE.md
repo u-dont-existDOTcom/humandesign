@@ -1,6 +1,6 @@
 # Current state
 
-- As of: `2026-08-30 23:54 GMT`
+- As of: `2026-08-31 00:09 GMT`
 - Task ID: `astrohd-relationship-continuation-20260830`
 - Goal: continue the relationship/AstroHD program under the blocking Brave + ChatGPT Pro supervision contract in `docs/RELATIONSHIP_RESEARCH_HANDOFF.md`, beginning with the separate natal-first `Find my birth-time window` priority unless supervision changes the sequence.
 - Authoritative Git baseline: `main` and `origin/main` at `b7660b8c9bcf52cbb14bc5442c13a3a8635aad32` (`Add canonical relationship research handoff and Pro supervision protocol`).
@@ -102,14 +102,17 @@
 ## Next safe action
 
 Pro ruled `OWNER DECISION REQUIRED: NO` and authorized one bounded checkpoint-11 epoch-5 policy
-reconciliation. The local metadata-only and synthetic-test-only implementation is complete. It
-preserves V1 as the rejected blanket-exposure candidate and activates additive V2 policy,
-workflow, role/access, screening/isolation schema, threat, unresolved-decision, reconciliation,
-assurance, acceptance-matrix, and manifest records. The validator checks only logical consistency
-of conspicuously synthetic records; 28 hostile cases cover the complete Pro-required corpus.
+reconciliation. The implementation evidence head is
+`04d34b5b81587e29355cc9a4cec0a4e173d3fd50` / tree
+`328ff04d7b26fbe4e8f136b3861f45fbad6164a0`. All 60 V2 acceptance nodes and 28 hostile cases pass;
+the full repository suite passed 699/699; strict mypy across 132 source files, changed-file Ruff,
+privacy/history/build, all-JSON parsing, manifest hashes, 43 accepted checkpoint-8-through-10
+paths, 48 qualified deterministic paths, production `src/` no-diff, `git diff --check`, and clean
+index/worktree gates passed. Operational alignment is `PASS`, scientific adequacy remains `WARN`,
+release adequacy is `NOT_APPLICABLE`, release is false, root owner alignment remains `PARTIAL`, and
+the parent outcome remains `OPEN`.
 
-Run the complete exact-head gates from the committed implementation evidence head, then return the
-self-contained checkpoint-11 packet to the same task Pro supervisor. Do not begin any next child,
+Return the self-contained checkpoint-11 packet to the same task Pro supervisor. Do not begin any next child,
 human workflow/contact or assessment, human-facing screen, construct-specific search, construct or
 mapping content, push, merge, GitHub governance change, Railway change, secret access, recruitment,
 migration, deployment, publication, or release unless the subsequent Pro ruling authorizes it.
