@@ -16,8 +16,8 @@ from starlette.routing import Mount
 from starlette.types import Message, Scope
 
 import hdmatch.api.relationship_public_app as relationship_base_app
+import hdmatch.api.relationship_launch_app as relationship_launch_app
 from hdmatch.api.natal_pilot_app import NatalPilotConfig, create_natal_pilot_app
-from hdmatch.api.relationship_launch_app import create_relationship_launch_app_from_env
 from hdmatch.participant.models import BirthIntake, RankScope, SessionMode, SessionRecord
 from hdmatch.participant.service import ParticipantSessionService
 from hdmatch.runtime.century_cache import (
@@ -282,10 +282,45 @@ def test_committed_interviewer_schema_has_no_trusted_birth_creation_action() -> 
     assert "finalizeParticipantExploratoryProfile" in schema
 
 
-def test_production_factory_keeps_relationship_route_and_mounts_natal_first(
+def test_launch_factory_keeps_relationship_route_and_mounts_natal_first(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
+    monkeypatch.chdir(PROJECT_ROOT)
+    monkeypatch.setenv("HDMATCH_RELATIONSHIP_STORE", str(tmp_path / "relationship"))
+    monkeypatch.setenv("HDMATCH_NATAL_PILOT_ENABLED", "1")
+    natal = FastAPI()
+
+    @natal.get("/")
+    async def natal_home() -> str:
+        return "natal"
+
+    monkeypatch.setattr(
+        relationship_launch_app,
+        "create_natal_pilot_app_from_env",
+        lambda: natal,
+    )
+    original_html = relationship_base_app._HTML
+    try:
+        app = relationship_launch_app.create_relationship_launch_app_from_env()
+        routes = {route.path: route for route in app.routes}
+        landing_html = cast(APIRoute, routes["/"]).endpoint()
+        relationship_html = cast(APIRoute, routes["/relationship"]).endpoint()
+        natal_mount = cast(Mount, routes["/astrohd"])
+    finally:
+        relationship_base_app._HTML = original_html
+
+    assert "Start with one person" in landing_html
+    assert "Seal prediction &amp; begin questionnaire" in relationship_html
+    assert natal_mount.app is natal
+
+
+def test_production_factory_verifies_real_pinned_cache_when_ephemeris_installed(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    if not tuple((PROJECT_ROOT / "data/ephemeris").glob("*.se1")):
+        pytest.skip("official Swiss Ephemeris files are not installed")
     monkeypatch.chdir(PROJECT_ROOT)
     monkeypatch.setenv("HDMATCH_REPO_ROOT", str(PROJECT_ROOT))
     monkeypatch.setenv(
@@ -361,7 +396,7 @@ def test_production_factory_keeps_relationship_route_and_mounts_natal_first(
     monkeypatch.setenv("HDMATCH_PUBLIC_BASE_URL", "https://example.test")
     original_html = relationship_base_app._HTML
     try:
-        app = create_relationship_launch_app_from_env()
+        app = relationship_launch_app.create_relationship_launch_app_from_env()
         routes = {route.path: route for route in app.routes}
         root_route = cast(APIRoute, routes["/"])
         relationship_route = cast(APIRoute, routes["/relationship"])
