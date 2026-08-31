@@ -4,7 +4,7 @@ Status: candidate freeze pending Extra High verification and the single named Pr
 
 ## Scope
 
-This package makes one blinded convenience-sample natal DEVELOPMENT case executable. It is not a validation result, population estimate, product-release basis, or evidence that Human Design predicts people. The V3.6 source is one clean one-off mapping family of 26 binary observables, not a complete canonical V4.3 mapping library.
+This package specifies the frozen semantics required to make one blinded convenience-sample natal DEVELOPMENT case executable once runtime implementation is separately authorized and accepted. It is not a validation result, population estimate, product-release basis, or evidence that Human Design predicts people. The V3.6 source is one clean one-off mapping family of 26 binary observables, not a complete canonical V4.3 mapping library.
 
 ## Independent conception
 
@@ -24,7 +24,7 @@ This package makes one blinded convenience-sample natal DEVELOPMENT case executa
 
 ## Owner-source corrections
 
-Prior HD/astrology exposure alone does not exclude a participant; it is recorded for stratification. H1 clean authors instead use the owner-approved contamination rule: shallow/incidental exposure is eligible, substantial semantic/technical familiarity requires blind GPT adjudication, and identity-defining/comprehensive or intentionally HD-derived framing is ineligible. Owner form testing is usability evidence only. Incremental spending is exactly $0; GPT classification must use a fresh candidate-blind ChatGPT Pro/Codex context under an included entitlement or the case remains blocked.
+Prior HD/astrology exposure alone does not exclude a participant; it is recorded for stratification because the participant supplies measured narrative. H1 requires an independently clean author of interpretation or construct content and therefore uses the owner-approved contamination rule: shallow/incidental exposure is eligible, substantial semantic/technical familiarity requires blind GPT adjudication, and identity-defining/comprehensive or intentionally HD-derived framing is ineligible. Owner form testing is usability evidence only. Incremental spending is exactly $0; GPT adjudication/classification must use a fresh candidate-blind ChatGPT Pro/Codex context under an included entitlement or the case remains blocked.
 
 ## Adequacy
 

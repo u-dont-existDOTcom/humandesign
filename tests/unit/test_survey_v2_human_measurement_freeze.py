@@ -30,7 +30,9 @@ def test_manifest_hashes_every_frozen_artifact_and_source_lock() -> None:
         "skipped": 0,
         "status": "SPECIFICATION_ONLY_RUNTIME_NOT_IMPLEMENTED",
     }
-    assert manifest["implementation_authorization"].startswith("BLOCKED_")
+    assert manifest["implementation_authorization"] == "NOT_AUTHORIZED_BY_THIS_MANIFEST"
+    assert "never authorizes implementation" in manifest["authorization_boundary"]
+    assert manifest["model_contract"]["required_model_family"] == "gpt-5.6-sol"
 
     for artifact in manifest["artifacts"]:
         path = ROOT / artifact["path"]
@@ -70,11 +72,24 @@ def test_owner_corrections_and_zero_cost_transport_are_bound() -> None:
         "substantial_semantic_or_technical": "requires_blind_gpt_adjudication",
     }
     assert "not an automatic participant exclusion" in exposure["participant_exposure_rule"]
+    assert "participant supplies measured narrative" in (
+        exposure["participant_h1_exposure_divergence_reason"]
+    )
 
     transport = contract["classifier_transport"]
     assert transport["authorized_incremental_spend_usd"] == 0
     assert transport["paid_api_calls_authorized"] is False
+    assert transport["requested_model"] == "gpt-5.6-sol"
+    assert transport["required_model_family"] == "gpt-5.6-sol"
+    assert transport["applies_to"] == [
+        "required_h1_gpt_adjudication",
+        "participant_evidence_classification",
+    ]
     assert "fresh ChatGPT Pro or Codex context" in transport["candidate_blind_context"]
+    assert "top_level_status=completed" in contract["scoring"]["eligibility"]
+    assert "candidate_blind_attestation=true for every result" in (
+        contract["scoring"]["eligibility"]
+    )
     assert contract["status"] == "candidate_freeze_pending_extra_high_and_pro_review"
 
 
@@ -106,6 +121,15 @@ def test_all_49_named_fixture_definitions_are_unique_and_complete() -> None:
     assert prior_exposure["expected_validator_state"] == (
         "exposure_recorded_not_automatic_exclusion"
     )
+
+    mixed_all = next(
+        fixture for fixture in fixtures if fixture["fixture_id"] == "MIXED_FULL_VOCAB"
+    )
+    assert set(mixed_all["input"]["candidate_values"].values()) == {"a", "b", "c", "d", "e"}
+    duplicate = next(
+        fixture for fixture in fixtures if fixture["fixture_id"] == "DUPLICATE_LABEL_INVALID"
+    )
+    assert set(duplicate["input"]["candidate_values"].values()) == {"a", "b"}
 
 
 def test_prompt_and_schema_preserve_candidate_blinding_and_strict_output() -> None:

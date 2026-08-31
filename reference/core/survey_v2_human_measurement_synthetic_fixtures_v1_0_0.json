@@ -731,8 +731,11 @@
       "fixture_id": "MIXED_FULL_VOCAB",
       "input": {
         "candidate_values": {
-          "candidate-0": "0",
-          "candidate-1": "1"
+          "candidate-a": "a",
+          "candidate-b": "b",
+          "candidate-c": "c",
+          "candidate-d": "d",
+          "candidate-e": "e"
         },
         "evidence_unit_ids": [
           "e-child",
@@ -783,8 +786,8 @@
       "fixture_id": "DUPLICATE_LABEL_INVALID",
       "input": {
         "candidate_values": {
-          "candidate-0": "0",
-          "candidate-1": "1"
+          "candidate-a": "a",
+          "candidate-b": "b"
         },
         "evidence_unit_ids": [
           "e-child",

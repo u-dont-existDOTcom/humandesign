@@ -29,11 +29,11 @@ controlling chat-authored supervisor directive.
 - No real-person material has been processed, no friend has been contacted, and no
   merge or deployment has occurred from this branch.
 
-Next: obtain a complete owner-aligned Extra High package, transcribe and hash it,
-route the exact freeze once through the named Pro review, then continue the bounded
-implementation and synthetic acceptance sequence. The local time-control repair may
-be included in that exact diff but must not be deployed before the applicable owner
-and review boundary.
+Next: correct the exact mechanical defects, re-hash, obtain Extra High verification,
+route exactly one named Pro freeze review, and then stop for the next authorized
+directive. Issue #18 independently requires owner authorization before first human
+contact or any new scientific production deployment/merge. The local time-control
+repair remains in the exact draft diff but must not be deployed before that boundary.
 
 ## Core hypothesis
 

@@ -126,6 +126,7 @@
       "substantial_semantic_or_technical": "requires_blind_gpt_adjudication"
     },
     "participant_exposure_rule": "Record prior HD/astrology exposure descriptively for stratification; exposure alone is not an automatic participant exclusion.",
+    "participant_h1_exposure_divergence_reason": "Participant exposure is descriptive rather than an automatic exclusion because the participant supplies measured narrative, whereas H1 requires an independently clean author of interpretation or construct content.",
     "source_boundary": "No source-document image is collected. The declared recorded time defines the tested true state and does not prove the historical birth moment was error-free."
   },
   "candidate_normalization": {
@@ -207,6 +208,10 @@
     ]
   },
   "classifier_transport": {
+    "applies_to": [
+      "required_h1_gpt_adjudication",
+      "participant_evidence_classification"
+    ],
     "authorized_incremental_spend_usd": 0,
     "candidate_blind_context": "A fresh ChatGPT Pro or Codex context containing only the frozen classifier contract and admissible sealed case material.",
     "forbidden_context": [
@@ -216,12 +221,15 @@
       "evaluator_answer"
     ],
     "paid_api_calls_authorized": false,
+    "requested_model": "gpt-5.6-sol",
+    "required_model_family": "gpt-5.6-sol",
     "required_receipts": [
       "selected model label",
       "request SHA-256",
       "raw response SHA-256",
       "parsed output SHA-256"
     ],
+    "selected_model_family_mismatch_rule": "A selected or returned different model family produces TECHNICAL_FAIL with no score or rank.",
     "semantic_retry_count": 0,
     "tools_or_retrieval": "none",
     "transport_failure_rule": "One identical transport retry; second failure is TECHNICAL_FAIL with no rank.",
@@ -2454,12 +2462,15 @@
     "eligibility": [
       "valid JSON and output schema",
       "semantic status/cardinality valid",
+      "top_level_status=completed",
+      "candidate_blind_attestation=true for every result",
       "minimum_evidence_passed=true",
       "confidence>=0.65",
       "all labels in supplied complete vocabulary",
       "all evidence IDs belong to the job",
       "no forbidden or duplicate evidence use"
     ],
+    "fail_closed_blinding_rule": "Any forbidden_input top-level status or false candidate_blind_attestation is PROTOCOL_INVALID with no score, rank, or scientific result.",
     "status_cardinality": [
       {
         "cardinality": 1,

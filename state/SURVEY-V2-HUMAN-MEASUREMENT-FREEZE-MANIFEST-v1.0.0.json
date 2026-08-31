@@ -1,9 +1,9 @@
 {
   "artifacts": [
     {
-      "byte_count": 78406,
+      "byte_count": 79270,
       "path": "reference/core/survey_v2_human_measurement_scoring_contract_v1_0_0.json",
-      "sha256": "c5f1114cbe76f0b8f27800571de085706720e299a137f03934cf2bed75b8c05b"
+      "sha256": "53e88db86e6a64c2fc572a5db80ea0694914601ad63b6ea045f18e2ec0e3801c"
     },
     {
       "byte_count": 3008,
@@ -16,16 +16,17 @@
       "sha256": "8df8fd59c2bbe03f059c786622b60d8df24bb826fb31558fbe7def71cd8e561f"
     },
     {
-      "byte_count": 48826,
+      "byte_count": 48916,
       "path": "reference/core/survey_v2_human_measurement_synthetic_fixtures_v1_0_0.json",
-      "sha256": "ca2c1d192e1995f3483d889fda3996f2a1ec4c87d00b66924225ca10b0ff5746"
+      "sha256": "030c64ed67a4686888d8728332161e9155939fb6b7a59ca3e4b994f5c784c0fd"
     },
     {
-      "byte_count": 3956,
+      "byte_count": 4200,
       "path": "docs/SURVEY-V2-HUMAN-MEASUREMENT-METHODS-CHECK-v1.0.0.md",
-      "sha256": "0e6ed11681b5e348a7f74858371acfa20e073e02083b8e68dddfa918cb846472"
+      "sha256": "1f8e4427cd6d9d78dc6ca8f8fe00b09d1654f06205b2f21a5c08e4bd63d32f7e"
     }
   ],
+  "authorization_boundary": "This manifest never authorizes implementation, deployment, merge, or human execution. Extra High acceptance only admits the named SURVEYV2-HUMAN-MEASUREMENT-AND-SCORING-FREEZE-v1 Pro review.",
   "canonicalization": {
     "digest": "SHA-256",
     "encoding": "UTF-8",
@@ -42,11 +43,13 @@
     "skipped": 0,
     "status": "SPECIFICATION_ONLY_RUNTIME_NOT_IMPLEMENTED"
   },
-  "implementation_authorization": "BLOCKED_PENDING_EXTRA_HIGH_VERIFICATION_AND_EXPLICIT_PRO_ACCEPTANCE_OF_THIS_EXACT_MANIFEST",
+  "implementation_authorization": "NOT_AUTHORIZED_BY_THIS_MANIFEST",
   "model_contract": {
     "authorized_incremental_spend_usd": 0,
     "candidate_blind_fresh_context_required": true,
     "paid_api_calls_authorized": false,
+    "requested_model": "gpt-5.6-sol",
+    "required_model_family": "gpt-5.6-sol",
     "surface": "included ChatGPT Pro or Codex entitlement"
   },
   "repository_base": "b7660b8c9bcf52cbb14bc5442c13a3a8635aad32",
