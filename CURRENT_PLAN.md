@@ -204,26 +204,27 @@ neutral dossier leave to Joel. Worker-to-contract is therefore `YELLOW`, contrac
 adequacy is `WARN`, and release adequacy is `NOT_APPLICABLE` with release closed. The exact ruling
 and E1/E2/E3 owner gate are `docs/PRO_SUPERVISION_S6_H1_CHECKPOINT11_RULING_20260830.md`.
 
-Joel has now resolved that gate with a more precise owner-authored policy. Prior HD or astrology
-exposure alone is permitted; neither belief nor skepticism controls. The relevant risk is
-semantic/self-concept contamination. Incidental/shallow exposure may be `ELIGIBLE`; substantial
-semantic or technical knowledge is `REQUIRES_BLIND_ADJUDICATION` regardless of belief; and an
-identity-defining, comprehensive, authoritative, or intentionally theory-derived framework is
-`INELIGIBLE_CLEAN_H1_AUTHOR`. Such people may be useful only in later authorized post-freeze
-adversarial/comparison roles. The verbatim epoch-5 source and normalized ruling are
-`state/NATAL-TIME-OWNER-OUTCOME-SOURCE-EPOCH5-20260830.md` and
-`docs/NATAL_TIME_OWNER_DECISION_H1_CONTAMINATION_POLICY_20260830.md`.
-
-The owner correction was returned to the same task Pro supervisor. Pro ruled
+An epoch-5 policy interpretation was returned to the same task Pro supervisor. Pro initially ruled
 `OWNER DECISION REQUIRED: NO` and authorized only the checkpoint-11 epoch-5 human-exposure policy
-reconciliation child. The additive metadata/synthetic-test remediation is complete at
+reconciliation child. The additive metadata/synthetic-test implementation is complete at
 `04d34b5b81587e29355cc9a4cec0a4e173d3fd50`: V1 remains frozen as the rejected blanket-exposure
 candidate, the active V2 workflow/schema/role/threat artifacts implement the three-status
 semantic/self-concept policy, and all 28 hostile synthetic cases pass without assessing a real
 person. All 60 V2 acceptance nodes pass; the full repository suite passed 699/699; strict mypy,
 Ruff, privacy/history/build, JSON/hash, protected-byte, production-no-diff, diff, and clean-tree
-gates passed. The next action is resubmission to the same Pro lane. No work beyond this child is
-authorized before Pro's checkpoint-11 acceptance ruling.
+gates passed.
+
+On resubmission, Pro corrected its preceding ruling and returned
+`OWNER DECISION REQUIRED: YES` plus `CHECKPOINT-11 VERDICT: NOT ACCEPTED — 59/60`. Pro ruled that
+the text preserved as a direct verbatim owner correction is assistant-authored interpretation,
+so it cannot establish `OWNER_REATTESTED` or bounded owner `MATCH` without explicit owner
+confirmation. `S6H1-18` and `S6H1-29` are accepted; `S6H1-30` remains blocked. Current states are
+worker-to-contract `YELLOW`, bounded policy-to-owner `UNCONFIRMED`, root contract-to-owner
+`PARTIAL`, typed completion `WORKING`, operational alignment `WARN`, scientific adequacy `WARN`,
+release adequacy `NOT_APPLICABLE`, release false, and parent `OPEN`. The exact ruling and owner
+options P1/P2/P3 are
+`docs/PRO_SUPERVISION_S6_H1_CHECKPOINT11_RESUBMISSION_RULING_20260831.md`. No remediation or later
+task work is authorized before Joel selects one of those options.
 
 Option B remains a design-only prerequisite screen. It does not authorize live execution,
 measurement content, participant software, empirical data, or progression to rectification.

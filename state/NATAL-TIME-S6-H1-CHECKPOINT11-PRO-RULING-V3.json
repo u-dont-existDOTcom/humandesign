@@ -1,0 +1,78 @@
+{
+  "schema_version": "3.0.0",
+  "artifact_id": "natal-time-s6-h1-checkpoint11-pro-ruling-v3",
+  "supersedes": "state/NATAL-TIME-S6-H1-CHECKPOINT11-PRO-RULING-V2.json",
+  "status": "OWNER_DECISION_REQUIRED_CHECKPOINT_NOT_ACCEPTED",
+  "submitted_heads": {
+    "implementation_evidence_commit": "04d34b5b81587e29355cc9a4cec0a4e173d3fd50",
+    "implementation_evidence_tree": "328ff04d7b26fbe4e8f136b3861f45fbad6164a0",
+    "documentation_child_commit": "4069b935a0bef2ac9d0ffe66789b3a3e040acae6",
+    "documentation_child_tree": "26e5a1ce5f1fec01d66a8526a13e6ecc48315935"
+  },
+  "pro_ruling_record": {
+    "path": "docs/PRO_SUPERVISION_S6_H1_CHECKPOINT11_RESUBMISSION_RULING_20260831.md",
+    "sha256": "6090a32eba4858f57ace8049c28c2d0ad62a4abc4d26e613b6475bf3969f0628"
+  },
+  "owner_decision_required": true,
+  "checkpoint_verdict": "NOT_ACCEPTED",
+  "supported_requirement_count": 59,
+  "required_requirement_count": 60,
+  "blocking_requirement_ids": [
+    "S6H1-30"
+  ],
+  "accepted_requirement_ids_from_superseding_policy": [
+    "S6H1-18",
+    "S6H1-29"
+  ],
+  "pro_correction": {
+    "prior_ruling_corrected": true,
+    "blocking_defect": "The text previously classified as a verbatim direct owner correction is assistant-authored interpretation and cannot establish direct owner re-attestation without explicit owner confirmation.",
+    "capture_integrity": "VERIFIED",
+    "acquisition_mode": "ASSISTANT_INTERPRETATION",
+    "receipt_capability": "INTERPRETIVE_NORMALIZATION_ONLY",
+    "bounded_epoch5_policy_to_owner_alignment": "UNCONFIRMED"
+  },
+  "required_states": {
+    "worker_to_contract_alignment": "YELLOW",
+    "bounded_epoch5_policy_to_owner_alignment": "UNCONFIRMED",
+    "root_contract_to_owner_alignment": "PARTIAL",
+    "completion_claim": "WORKING",
+    "parent_outcome": "OPEN",
+    "operational_alignment": "WARN",
+    "scientific_adequacy": "WARN",
+    "release_adequacy": "NOT_APPLICABLE",
+    "release_permission": false
+  },
+  "owner_options": {
+    "P1": {
+      "label": "RATIFY_IMPLEMENTED_THREE_STATUS_POLICY",
+      "pro_recommendation": true,
+      "consequence": "Retain current substantive semantics and correct only owner-source receipt and provenance records after owner ratification."
+    },
+    "P2": {
+      "label": "USE_NARROWER_LITERAL_POLICY",
+      "pro_recommendation": false,
+      "consequence": "Revise the current implementation to permit prior exposure, exclude only people who say HD or astrology works completely for them, and avoid a technical-familiarity adjudication requirement unless later selected."
+    },
+    "P3": {
+      "label": "SUPPLY_REVISED_POLICY",
+      "pro_recommendation": false,
+      "consequence": "Keep the implementation frozen until the revised policy is recorded and reviewed."
+    }
+  },
+  "required_owner_response": "P1, P2, or P3 with the revised rule",
+  "hard_stop": {
+    "active": true,
+    "remediation_authorized": false,
+    "human_action_authorized": false,
+    "screening_design_authorized": false,
+    "construct_work_authorized": false,
+    "construct_specific_search_authorized": false,
+    "mapping_work_authorized": false,
+    "push_authorized": false,
+    "merge_authorized": false,
+    "migration_authorized": false,
+    "deployment_authorized": false,
+    "external_mutation_authorized": false
+  }
+}
