@@ -1,6 +1,6 @@
 # Checkpoint-12 P1 adjudication architecture evidence
 
-Status: implementation complete; final exact-head verification pending
+Status: implementation verified; awaiting checkpoint-12 Pro review
 
 ## Authorized result
 
@@ -55,18 +55,38 @@ overlay, and Pro ruling remain protected by exact digests in the test suite.
 
 ## Verification
 
-Final exact-head results will replace this pending section after the implementation files and
-manifest are stable.
+At implementation head `0fe39a9d4f9fb3e2a44e0e5bc15b6ee3446482bf` / tree
+`94668f0bd39413b893a017414500d0001e6ba067`:
+
+- complete repository suite: `743 passed in 158.60s`;
+- focused checkpoint-11/12 supervision suite: `140 passed in 1.44s`;
+- checkpoint-12-specific suite: `31 passed`;
+- checkpoint-11 acceptance requirements: `60/60`;
+- checkpoint-11 hostile policy cases: `28/28`;
+- checkpoint-11 P1 provenance suite: `13 passed`;
+- strict mypy: no issues in `132 source files`;
+- Ruff check and format verification over the exact two changed Python files: passed;
+- canonical privacy/history/build gate: passed;
+- all `374` tracked JSON files: parsed;
+- checkpoint-12 manifest: `25/25` paths, zero digest mismatches;
+- accepted/protected prior artifacts: passed through the full suite and exact digest assertions;
+- production `src/` diff from accepted checkpoint-11 implementation `f63d1f3...`: empty;
+- `git diff --check`: passed; and
+- worktree/index at the implementation head: clean.
+
+A precommit full-suite attempt produced `722 passed` and only the 21 expected repository closure
+errors that intentionally require a clean worktree. The authorized local implementation commit
+resolved that state, and the clean-head rerun passed all 743 tests. No test failure is concealed.
 
 ## Reconciliation and assurance
 
-- Worker-to-contract alignment: `GREEN_PENDING_FINAL_VERIFICATION`.
+- Worker-to-contract alignment: `GREEN`.
 - Bounded P1 policy-to-owner alignment: `MATCH`.
 - Root contract-to-owner alignment: `PARTIAL`.
 - Completion claim: `WORKING`.
 - Parent outcome: `OPEN`.
-- Operational alignment: `PASS_PENDING_FINAL_EXACT_HEAD_GATES`.
+- Operational alignment: `PASS`.
 - Scientific adequacy: `WARN` because no P1 assessment or author configuration is validated.
 - Release adequacy: `NOT_APPLICABLE`; release permission is false.
 
-The next action is exact-head verification followed by resubmission to the existing task Pro lane.
+The next action is resubmission to the existing task Pro lane. No further child is authorized.

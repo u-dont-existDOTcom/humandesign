@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "artifact_id": "natal-time-p1-adjudication-objective-reconciliation-v1",
-  "status": "CHECKPOINT12_WORKING_RECONCILIATION",
+  "status": "CHECKPOINT12_IMPLEMENTATION_VERIFIED_AWAITING_PRO_REVIEW",
   "primary_traceability_requirement_id": "P1A-48",
   "owner_source_receipt": {
     "path": "state/NATAL-TIME-OWNER-SOURCE-RECEIPT-EPOCH6-V1.json",
@@ -31,7 +31,7 @@
       "boundary": "Mapping remains unauthorized until independent conception and later gates are frozen."
     }
   ],
-  "worker_to_contract_alignment": "GREEN_PENDING_FINAL_VERIFICATION",
+  "worker_to_contract_alignment": "GREEN",
   "contract_to_owner_alignment": "PARTIAL_ROOT_OPEN",
   "bounded_p1_policy_to_owner_alignment": "MATCH",
   "completion_claim": "WORKING",

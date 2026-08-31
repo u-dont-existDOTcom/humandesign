@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0.0",
   "artifact_id": "natal-time-p1-adjudication-assurance-planes-v1",
-  "status": "CHECKPOINT12_PRE_RETURN",
+  "status": "CHECKPOINT12_VERIFIED_PRE_PRO_RETURN",
   "primary_traceability_requirement_id": "P1A-48",
   "operational_alignment": {
-    "state": "PASS_PENDING_FINAL_EXACT_HEAD_GATES",
-    "basis": "Local additive content-free architecture, closed synthetic schema, test-only validator, no production or external mutation."
+    "state": "PASS",
+    "basis": "Local additive content-free architecture, closed synthetic schema, test-only validator, full and focused tests, static analysis, privacy/history/build, digest, protected-identity, production-no-diff, and clean-head gates passed."
   },
   "scientific_adequacy": {
     "state": "WARN",
@@ -16,7 +16,7 @@
     "release_permission": false,
     "basis": "No human activity, production change, deployment, publication, construct work, or mapping is in scope."
   },
-  "worker_to_contract_alignment": "GREEN_PENDING_FINAL_VERIFICATION",
+  "worker_to_contract_alignment": "GREEN",
   "contract_to_owner_alignment": "PARTIAL",
   "bounded_policy_to_owner_alignment": "MATCH",
   "completion_claim": "WORKING",

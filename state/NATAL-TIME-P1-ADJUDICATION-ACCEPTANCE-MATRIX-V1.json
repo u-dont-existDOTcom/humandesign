@@ -50,8 +50,8 @@
     {"requirement_id": "P1A-44", "title": "Substantive artifacts hashed with one primary requirement", "status": "PASS", "evidence": ["state/NATAL-TIME-P1-ADJUDICATION-ARTIFACT-MANIFEST-V1.json"]},
     {"requirement_id": "P1A-45", "title": "Matrix exactly P1A-01 through P1A-48", "status": "PASS", "evidence": ["state/NATAL-TIME-P1-ADJUDICATION-ACCEPTANCE-MATRIX-V1.json"]},
     {"requirement_id": "P1A-46", "title": "Accepted checkpoint artifacts remain byte-identical", "status": "PASS", "evidence": ["state/NATAL-TIME-P1-ADJUDICATION-EXECUTION-LEDGER-V1.json"]},
-    {"requirement_id": "P1A-47", "title": "Exact verification gates pass", "status": "PASS_PENDING_FINAL_RUN", "evidence": ["docs/NATAL_TIME_P1_ADJUDICATION_CHECKPOINT12_EVIDENCE_20260831.md"]},
-    {"requirement_id": "P1A-48", "title": "Return preserves boundaries and separate assurance states", "status": "PASS_PENDING_FINAL_RUN", "evidence": ["state/NATAL-TIME-P1-ADJUDICATION-EXECUTION-LEDGER-V1.json", "state/NATAL-TIME-P1-ADJUDICATION-ASSURANCE-PLANES-V1.json"]}
+    {"requirement_id": "P1A-47", "title": "Exact verification gates pass", "status": "PASS", "evidence": ["docs/NATAL_TIME_P1_ADJUDICATION_CHECKPOINT12_EVIDENCE_20260831.md"]},
+    {"requirement_id": "P1A-48", "title": "Return preserves boundaries and separate assurance states", "status": "PASS", "evidence": ["state/NATAL-TIME-P1-ADJUDICATION-EXECUTION-LEDGER-V1.json", "state/NATAL-TIME-P1-ADJUDICATION-ASSURANCE-PLANES-V1.json"]}
   ],
   "requirement_count": 48,
   "ordered_requirement_ids": "P1A-01_THROUGH_P1A-48",

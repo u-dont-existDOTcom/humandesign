@@ -254,8 +254,12 @@ one. Closed synthetic metadata and a test-only schema validator contain no human
 Human-facing wording, evidence standards, adjudicators, disagreement/appeal procedures, counts,
 population, recruitment, burden, compensation, budget, timeline, retention, human activity,
 construct work, mapping, production/external mutation, push, merge, deployment, publication, and
-release remain unselected or prohibited. Final exact-head verification and return to the same Pro
-lane are in progress.
+release remain unselected or prohibited. The verified implementation head is
+`0fe39a9d4f9fb3e2a44e0e5bc15b6ee3446482bf` / tree
+`94668f0bd39413b893a017414500d0001e6ba067`: full suite `743/743`, focused supervision suite
+`140/140`, checkpoint-12 suite `31/31`, checkpoint-11 `60/60`, strict mypy `132` source files,
+exact Ruff, privacy/history/build, `374` tracked JSON, manifest `25/25`, protected identity,
+production-no-diff, diff, and clean-tree gates passed. Return to the same Pro lane is next.
 
 Option B remains a design-only prerequisite screen. It does not authorize live execution,
 measurement content, participant software, empirical data, or progression to rectification.
