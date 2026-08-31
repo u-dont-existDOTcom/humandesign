@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "natal-time-p1-adjudication-premethod-conception-v1",
+  "status": "FROZEN_PRE_SEARCH",
+  "primary_traceability_requirement_id": "P1A-07",
+  "document_path": "docs/NATAL_TIME_P1_ADJUDICATION_PREMETHOD_CONCEPTION_20260831.md",
+  "freeze_scope": "CHECKPOINT12_P1_BLIND_ADJUDICATION_AND_H1_AUTHOR_CONFIGURATION_ARCHITECTURE",
+  "problem": "Represent evidence and uncertainty for P1 eligibility, blind adjudication, and independent human authorship without selecting a human-facing rule, method, threshold, person, or configuration.",
+  "distinctions": [
+    "EXPOSURE_PROVENANCE_VS_SEMANTIC_OR_TECHNICAL_FAMILIARITY",
+    "FAMILIARITY_VS_SELF_CONCEPT_INTEGRATION",
+    "SELF_CONCEPT_INTEGRATION_VS_INTENTIONAL_DERIVATION_RISK",
+    "EVIDENCE_COMPLETENESS_VS_EVIDENCE_CONFLICT",
+    "PROCESS_STATE_VS_SUBSTANTIVE_OUTCOME",
+    "SUBSTANTIVE_OUTCOME_VS_ROLE_ACCESS"
+  ],
+  "blind_adjudication_role": "A fail-closed holding boundary for substantial familiarity cases; it cannot grant clean-author access without a later separately authorized decision receipt.",
+  "candidate_error_classes": [
+    "EXPOSURE_EQUIVALENCE_ERROR",
+    "MISSING_HISTORY_AS_ELIGIBILITY_ERROR",
+    "BELIEF_PROXY_ERROR",
+    "REPORTED_ACCURACY_PROXY_ERROR",
+    "SELF_PRESENTATION_ERROR",
+    "IDENTITY_OR_DESIRED_OUTCOME_INFERENCE",
+    "ASYMMETRIC_GROUP_STANDARD",
+    "FORCED_OUTCOME_FROM_INCOMPLETE_OR_CONFLICTING_EVIDENCE",
+    "HISTORY_ERASURE",
+    "PREFREEZE_GROUP_CONVERGENCE",
+    "ROLE_REASSIGNMENT_ACCESS_ERASURE",
+    "POSTMAPPING_REVISION"
+  ],
+  "candidate_author_independence_option_families": [
+    "ONE_ISOLATED_CONCEPTION_SOURCE",
+    "MULTIPLE_INDEPENDENT_PARALLEL_CONCEPTION_SOURCES",
+    "INDEPENDENT_FREEZES_THEN_SEPARATELY_GOVERNED_SYNTHESIS",
+    "SEPARATE_OR_SHARED_ADJUDICATION_STRUCTURES",
+    "HISTORY_PRESERVING_REPLACEMENT_OR_RECUSAL"
+  ],
+  "required_role_separation": [
+    "ELIGIBILITY_EVIDENCE_CUSTODY",
+    "BLIND_ADJUDICATION",
+    "CLEAN_CONSTRUCT_AUTHORSHIP",
+    "PROTECTED_CONTENT_CUSTODY",
+    "RELIABILITY_EVALUATION",
+    "LATER_MAPPING_EVALUATION"
+  ],
+  "candidate_structural_mechanisms": [
+    "CLOSED_VERSIONED_METADATA",
+    "APPEND_ONLY_EVIDENCE_ACCESS_DECISION_AND_DEVIATION_EVENTS",
+    "SEPARATE_INITIAL_JUDGMENT_AND_RESOLUTION_STATES",
+    "EXPLICIT_MASKING_DIMENSIONS",
+    "FAIL_CLOSED_ACCESS_WITHOUT_VALID_RECEIPT",
+    "PRESERVE_NEGATIVE_DISPUTED_REPLACED_AND_UNRESOLVED_STATES",
+    "HASH_BOUND_CUSTODY_AND_TRANSITIONS",
+    "NEUTRAL_UNSELECTED_CONFIGURATION_REGISTRY"
+  ],
+  "independent_candidate_insight_count": 8,
+  "open_decision_classes": [
+    "EVIDENCE_SOURCE_AND_COMPLETENESS",
+    "MASKING_BOUNDARIES",
+    "JUDGMENT_AND_SYNTHESIS_INDEPENDENCE",
+    "DISAGREEMENT_CONFLICT_RECUSAL_REPLACEMENT_AND_DEVIATION",
+    "VERSIONING_RETENTION_AND_DATA_MINIMIZATION",
+    "AUTHOR_AND_ADJUDICATOR_CONFIGURATION",
+    "POPULATION_LANGUAGE_GEOGRAPHY_ACCESSIBILITY_RECRUITMENT_AND_RESOURCES",
+    "HUMAN_FACING_WORDING_AND_EVIDENCE_STANDARD"
+  ],
+  "prohibited_content_flags": {
+    "citations_present": false,
+    "source_names_present": false,
+    "urls_present": false,
+    "named_method_or_framework_present": false,
+    "human_facing_questions_or_prompts_present": false,
+    "evidence_threshold_present": false,
+    "selected_adjudication_method_present": false,
+    "selected_author_or_adjudicator_count_present": false,
+    "population_language_recruitment_or_burden_selected": false,
+    "construct_or_instrument_content_present": false,
+    "mapping_content_present": false,
+    "real_person_or_identity_present": false
+  },
+  "selected_option_ids": [],
+  "search_count_at_freeze": 0,
+  "search_started": false,
+  "human_action_authorized": false,
+  "production_change_authorized": false,
+  "external_mutation_authorized": false,
+  "self_digest_rule": "The exact document and JSON hashes are recorded after this pre-search commit and must remain unchanged for the remainder of checkpoint 12."
+}

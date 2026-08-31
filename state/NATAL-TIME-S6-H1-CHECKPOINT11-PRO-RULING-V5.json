@@ -1,0 +1,64 @@
+{
+  "schema_version": "5.0.0",
+  "artifact_id": "natal-time-s6-h1-checkpoint11-pro-ruling-v5",
+  "supersedes": {
+    "path": "state/NATAL-TIME-S6-H1-CHECKPOINT11-PRO-RULING-V4.json",
+    "sha256": "745835c30d65034792c2ad63d5d384ef99edfaf3efe945168050f933ffb24b33"
+  },
+  "status": "CHECKPOINT11_ACCEPTED_CHECKPOINT12_ARCHITECTURE_AUTHORIZED",
+  "pro_ruling_record": {
+    "path": "docs/PRO_SUPERVISION_S6_H1_CHECKPOINT12_CONTRACT_20260831.md",
+    "sha256": "2e7d8fc31e1e79227d3796fa2ab0d77180ab8ac258bfdcc92a84c34d15ee5de5"
+  },
+  "owner_decision_required": false,
+  "checkpoint_11": {
+    "verdict": "ACCEPTED",
+    "passing_requirement_count": 60,
+    "failing_requirement_ids": [],
+    "implementation_head": "f63d1f3aed410dfcc457e4cc07b0771fd12a9485",
+    "implementation_tree": "bafd1d3d292cc70640ff34686ae3cf1cc65a33c8",
+    "documentation_child": "a0d0ff2d017767cf5f307a9ac2bff7b9035bcee0",
+    "documentation_tree": "198ff0bb52a7d12f7e6d79ffd01140a4d266ec29",
+    "s6h1_18": "ACCEPTED",
+    "s6h1_29": "ACCEPTED",
+    "s6h1_30": "ACCEPTED"
+  },
+  "accepted_states": {
+    "worker_to_contract_alignment": "GREEN",
+    "bounded_epoch5_policy_to_owner_alignment": "MATCH",
+    "root_contract_to_owner_alignment": "PARTIAL",
+    "completion_claim": "WORKING",
+    "parent_outcome": "OPEN",
+    "operational_alignment": "PASS",
+    "scientific_adequacy": "WARN",
+    "release_adequacy": "NOT_APPLICABLE",
+    "release_permission": false
+  },
+  "authorized_child": {
+    "id": "CHECKPOINT-12 P1 BLIND-ADJUDICATION AND H1 AUTHOR-CONFIGURATION DECISION ARCHITECTURE ONLY",
+    "local_reversible_additive_commits": true,
+    "pre_human": true,
+    "content_free": true,
+    "bounded_methods_scan_after_conception_commit": true,
+    "authoritative_requirement_count": 48,
+    "push": false,
+    "production_change": false,
+    "human_action": false,
+    "human_facing_design": false,
+    "construct_content_or_specific_search": false,
+    "measurement_or_reliability_execution": false,
+    "mapping_content_or_execution": false,
+    "external_mutation": false
+  },
+  "required_conception": {
+    "document_path": "docs/NATAL_TIME_P1_ADJUDICATION_PREMETHOD_CONCEPTION_20260831.md",
+    "state_path": "state/NATAL-TIME-P1-ADJUDICATION-PREMETHOD-CONCEPTION-V1.json",
+    "must_precede_every_checkpoint12_query": true,
+    "must_remain_byte_identical_after_scan": true
+  },
+  "next_checkpoint": {
+    "same_pro_lane": true,
+    "required_after_local_child": true,
+    "work_beyond_child_authorized": false
+  }
+}

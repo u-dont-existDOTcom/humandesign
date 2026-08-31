@@ -1,6 +1,6 @@
 # Current state
 
-- As of: `2026-08-31 01:02 GMT`
+- As of: `2026-08-31 01:13 GMT`
 - Task ID: `astrohd-relationship-continuation-20260830`
 - Goal: continue the relationship/AstroHD program under the blocking Brave + ChatGPT Pro supervision contract in `docs/RELATIONSHIP_RESEARCH_HANDOFF.md`, beginning with the separate natal-first `Find my birth-time window` priority unless supervision changes the sequence.
 - Authoritative Git baseline: `main` and `origin/main` at `b7660b8c9bcf52cbb14bc5442c13a3a8635aad32` (`Add canonical relationship research handoff and Pro supervision protocol`).
@@ -110,12 +110,15 @@ from the assistant relay and the policy proposal; no eligibility semantics chang
 closure plus checkpoint-11 suite passed 103/103 at the exact implementation-evidence commit.
 
 The implementation-evidence identity is `f63d1f3aed410dfcc457e4cc07b0771fd12a9485` / tree
-`bafd1d3d292cc70640ff34686ae3cf1cc65a33c8`. The full suite passed 712/712, and exact-head focused,
-strict-mypy, changed-file Ruff, privacy/history/build, JSON/hash, protected-byte,
-production-no-diff, diff, and clean-tree gates passed. Return the self-contained evidence in
-`docs/NATAL_TIME_S6_H1_CHECKPOINT11_P1_PROVENANCE_CLOSURE_EVIDENCE_20260831.md` to the same Pro
-lane. Current states are worker-to-contract `GREEN`, bounded policy-to-owner `MATCH`, root
+`bafd1d3d292cc70640ff34686ae3cf1cc65a33c8`. Pro accepted checkpoint 11 at 60/60 and returned
+`OWNER DECISION REQUIRED: NO`. Current states are worker-to-contract `GREEN`, bounded
+policy-to-owner `MATCH`, root
 contract-to-owner `PARTIAL`, completion `WORKING`, operational alignment `PASS`, scientific
-adequacy `WARN`, release adequacy `NOT_APPLICABLE`, release false, and parent `OPEN`. Do not perform
-human action, screening design, construct or construct-specific search, mapping work, push, merge,
-migration, deployment, publication, or external mutation.
+adequacy `WARN`, release adequacy `NOT_APPLICABLE`, release false, and parent `OPEN`.
+
+The only authorized next child is checkpoint 12's content-free decision architecture. Commit the
+source-free conception document and state artifact before every checkpoint-12 methods query, record
+their exact commit/tree and hashes, then run the bounded AskRigor methods scan. Do not perform human
+action, human-facing screening design, select an adjudication method or author configuration,
+create construct/instrument content, run construct-specific search or mapping, change production,
+push, merge, migrate, deploy, publish, release, or mutate an external system.

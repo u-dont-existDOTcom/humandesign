@@ -239,8 +239,16 @@ passed 103/103, and strict mypy, changed-file Ruff, privacy/history/build, all t
 recursive manifest, 43 accepted-artifact, 48 deterministic-artifact, production-no-diff,
 `git diff --check`, and clean-tree gates passed. The self-contained evidence is
 `docs/NATAL_TIME_S6_H1_CHECKPOINT11_P1_PROVENANCE_CLOSURE_EVIDENCE_20260831.md`. The next action is
-return to the same Pro lane; no human, content, mapping, production, external, or release work is
-authorized before that ruling.
+return to the same Pro lane.
+
+Pro returned `OWNER DECISION REQUIRED: NO` and accepted checkpoint 11 at 60/60. It authorized only
+`CHECKPOINT-12 — P1 BLIND-ADJUDICATION AND H1 AUTHOR-CONFIGURATION DECISION ARCHITECTURE ONLY`, a
+local, reversible, pre-human, content-free child. The authoritative contract is
+`docs/PRO_SUPERVISION_S6_H1_CHECKPOINT12_CONTRACT_20260831.md`. The required source-free conception
+artifacts are prepared for the mandatory pre-search freeze. After their immutable commit, the
+bounded methods scan may begin; no human-facing rule, selected method/configuration, human action,
+construct/instrument content, construct-specific search, mapping, production/external mutation,
+push, merge, deployment, publication, or release is authorized.
 
 Option B remains a design-only prerequisite screen. It does not authorize live execution,
 measurement content, participant software, empirical data, or progression to rectification.
