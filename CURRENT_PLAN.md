@@ -233,8 +233,14 @@ origin is `ASSISTANT_PROPOSED`; and the owner action is `EXPLICIT_RATIFICATION`.
 normalized relay to Pro is preserved but is not substituted for the direct owner bytes. Earlier
 misclassified artifacts remain byte-identical historical evidence. Eligibility semantics, all 28
 hostile policy cases, the nonhuman-context exclusion, and the later mapping firewall are unchanged.
-The closure is implemented locally and awaits exact-head verification and return to the same Pro
-lane; no human, content, mapping, production, external, or release work is authorized in this child.
+The closure implementation evidence is `f63d1f3aed410dfcc457e4cc07b0771fd12a9485` / tree
+`bafd1d3d292cc70640ff34686ae3cf1cc65a33c8`. The full suite passed 712/712, the focused suite
+passed 103/103, and strict mypy, changed-file Ruff, privacy/history/build, all tracked JSON,
+recursive manifest, 43 accepted-artifact, 48 deterministic-artifact, production-no-diff,
+`git diff --check`, and clean-tree gates passed. The self-contained evidence is
+`docs/NATAL_TIME_S6_H1_CHECKPOINT11_P1_PROVENANCE_CLOSURE_EVIDENCE_20260831.md`. The next action is
+return to the same Pro lane; no human, content, mapping, production, external, or release work is
+authorized before that ruling.
 
 Option B remains a design-only prerequisite screen. It does not authorize live execution,
 measurement content, participant software, empirical data, or progression to rectification.
