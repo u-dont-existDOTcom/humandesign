@@ -1,6 +1,6 @@
 # Current state
 
-- As of: `2026-08-31 01:13 GMT`
+- As of: `2026-08-31 10:11 UTC`
 - Task ID: `astrohd-relationship-continuation-20260830`
 - Goal: continue the relationship/AstroHD program under the blocking Brave + ChatGPT Pro supervision contract in `docs/RELATIONSHIP_RESEARCH_HANDOFF.md`, beginning with the separate natal-first `Find my birth-time window` priority unless supervision changes the sequence.
 - Authoritative Git baseline: `main` and `origin/main` at `b7660b8c9bcf52cbb14bc5442c13a3a8635aad32` (`Add canonical relationship research handoff and Pro supervision protocol`).
@@ -101,24 +101,24 @@
 
 ## Next safe action
 
-Joel explicitly selected `P1`. Pro returned `OWNER DECISION REQUIRED: NO`, accepted substantive
-`S6H1-30`, and authorized only `CHECKPOINT-11 P1 RATIFICATION AND PROVENANCE CLOSURE ONLY`. The
-exact ratification, assistant-proposed P1 text, superseding receipt/outcome, policy-authority
-overlay, reconciliation, assurance, verdict, matrix, manifest, execution ledger, and synthetic
-provenance tests are implemented locally. The exact direct owner message is preserved separately
-from the assistant relay and the policy proposal; no eligibility semantics changed. The focused
-closure plus checkpoint-11 suite passed 103/103 at the exact implementation-evidence commit.
+Checkpoint 12 is accepted 48/48. Joel selected GPT as the eligibility-adjudicator actor class and
+then selected `A1` with the exact direct message `A1 yes i can help altho GPT should be doing most
+of this`. Pro returned `OWNER DECISION REQUIRED: NO`. Joel is the one prospective chart-blind
+human author but is not yet declared eligible. GPT must perform the maximum scientifically
+permitted work while Joel retains irreducible semantic origin and final semantic authority.
 
-The implementation-evidence identity is `f63d1f3aed410dfcc457e4cc07b0771fd12a9485` / tree
-`bafd1d3d292cc70640ff34686ae3cf1cc65a33c8`. Pro accepted checkpoint 11 at 60/60 and returned
-`OWNER DECISION REQUIRED: NO`. Current states are worker-to-contract `GREEN`, bounded
-policy-to-owner `MATCH`, root
-contract-to-owner `PARTIAL`, completion `WORKING`, operational alignment `PASS`, scientific
-adequacy `WARN`, release adequacy `NOT_APPLICABLE`, release false, and parent `OPEN`.
+The authoritative checkpoint-13 contract is
+`docs/PRO_SUPERVISION_S6_H1_CHECKPOINT13_CONTRACT_20260831.md`. The pre-implementation ancestry is
+HEAD `497bfed7c554c52dc3b22b2548b41fef844c84a9`, tree
+`9e4777142c7e08f605b4e50b848d1ca985b5ac70`. The previously relayed expanded SHA ending
+`...1eb745b2b` is a superseded transcription error; Pro ruled that correction did not change the
+contract. Current states are worker-to-contract `GREEN`, bounded A1/GPT-heavy decision-to-owner
+`MATCH`, root contract-to-owner `PARTIAL`, completion `WORKING`, operational alignment `PASS`,
+scientific adequacy `WARN`, release adequacy `NOT_APPLICABLE`, release false, and parent `OPEN`.
 
-The only authorized next child is checkpoint 12's content-free decision architecture. Commit the
-source-free conception document and state artifact before every checkpoint-12 methods query, record
-their exact commit/tree and hashes, then run the bounded AskRigor methods scan. Do not perform human
-action, human-facing screening design, select an adjudication method or author configuration,
-create construct/instrument content, run construct-specific search or mapping, change production,
-push, merge, migrate, deploy, publish, release, or mutate an external system.
+The next action is to freeze and commit the checkpoint-13 independent conception artifacts before
+any checkpoint-13 methods query. Then run the bounded AskRigor generic scan and implement only the
+content-free, synthetic role/custody/lineage/two-freeze/adjudication architecture. Do not attempt a
+real eligibility verdict, write human-facing screening or elicitation language, create a construct,
+run construct-specific search, map AstroHD, change production, push, merge, migrate, deploy,
+publish, release, or mutate an external system.
