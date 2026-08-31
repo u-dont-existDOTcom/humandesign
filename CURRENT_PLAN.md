@@ -10,18 +10,22 @@ controlling chat-authored supervisor directive.
 - The relationship intake failure reported by the owner is consistent with the
   native browser time control showing typed segments while exposing an empty value.
   The local repair replaces both native
-  time inputs with explicit 24-hour hour/minute fields, produces exact `HH:MM:00`
-  values, preserves values across the unknown-time toggle, and gives role-specific
-  accessible errors.
-- Verification for that repair: focused tests `9 passed`; full suite `225 passed`;
+  time inputs with explicit 24-hour hour/minute/optional-second fields, produces
+  exact `HH:MM:SS` values (blank seconds become `00`), preserves values across the
+  unknown-time toggle, gives role-specific accessible errors, and rejects offsets
+  or fractional seconds on the server.
+- Verification for that repair and the mechanical freeze package: focused tests
+  `15 passed`; full suite `231 passed`;
   Ruff excluding this pre-existing generated-HTML file's E501 style debt passed;
-  mypy passed; a synthetic headless Brave submission sent `05:07:00` and
-  `00:00:00` for the two people.
-- Extra High's first Survey-v2 human-measurement package remains unaccepted: it was
-  truncated, did not provide complete executable fixture bodies, contradicted the
-  owner's prior-exposure ruling, and assumed paid API use despite the exact `$0`
-  spending boundary. A correction was routed to the same Extra High lane; no new
-  governance or Pro lane was opened.
+  mypy passed; synthetic headless Brave submissions sent `05:07:00`, `00:00:00`,
+  and explicit `00:00:09` values correctly.
+- Extra High correction `HD-ISSUE18-C1-SEMANTIC-GAP-RULING-v1.1.0` resolves the
+  truncated first package: all 49 listed fixtures are required, participant exposure
+  is descriptive rather than an automatic exclusion, H1 authors use the approved
+  three-status contamination rule, and all GPT work must use a fresh candidate-blind
+  included ChatGPT Pro/Codex context at `$0` or remain blocked. The resulting
+  83-field contract and fixture package is mechanically encoded and awaits exact-diff
+  verification by Extra High before the single named Pro review.
 - No real-person material has been processed, no friend has been contacted, and no
   merge or deployment has occurred from this branch.
 

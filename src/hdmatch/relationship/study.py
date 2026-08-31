@@ -54,6 +54,17 @@ class RelationshipBirthInput(StudyModel):
     latitude: float | None = Field(default=None, ge=-90.0, le=90.0)
     longitude: float | None = Field(default=None, ge=-180.0, le=180.0)
 
+    @field_validator("local_time")
+    @classmethod
+    def validate_local_time_precision(cls, value: time | None) -> time | None:
+        if value is None:
+            return None
+        if value.utcoffset() is not None:
+            raise ValueError("local_time must not include a UTC offset")
+        if value.microsecond:
+            raise ValueError("local_time must use whole-second precision")
+        return value
+
     @model_validator(mode="after")
     def validate_time_uncertainty(self) -> RelationshipBirthInput:
         if self.local_time is None:

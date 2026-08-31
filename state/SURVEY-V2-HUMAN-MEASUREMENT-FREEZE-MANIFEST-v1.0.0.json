@@ -1,0 +1,73 @@
+{
+  "artifacts": [
+    {
+      "byte_count": 78406,
+      "path": "reference/core/survey_v2_human_measurement_scoring_contract_v1_0_0.json",
+      "sha256": "c5f1114cbe76f0b8f27800571de085706720e299a137f03934cf2bed75b8c05b"
+    },
+    {
+      "byte_count": 3008,
+      "path": "reference/core/survey_v2_classifier_system_prompt_v1_0_0.txt",
+      "sha256": "0462ab593e523d5fe08b24e838d4aea4a8fd651f7d3226c435fe542c235bf343"
+    },
+    {
+      "byte_count": 3090,
+      "path": "reference/core/survey_v2_classifier_output_schema_v1_0_0.json",
+      "sha256": "8df8fd59c2bbe03f059c786622b60d8df24bb826fb31558fbe7def71cd8e561f"
+    },
+    {
+      "byte_count": 48826,
+      "path": "reference/core/survey_v2_human_measurement_synthetic_fixtures_v1_0_0.json",
+      "sha256": "ca2c1d192e1995f3483d889fda3996f2a1ec4c87d00b66924225ca10b0ff5746"
+    },
+    {
+      "byte_count": 3956,
+      "path": "docs/SURVEY-V2-HUMAN-MEASUREMENT-METHODS-CHECK-v1.0.0.md",
+      "sha256": "0e6ed11681b5e348a7f74858371acfa20e073e02083b8e68dddfa918cb846472"
+    }
+  ],
+  "canonicalization": {
+    "digest": "SHA-256",
+    "encoding": "UTF-8",
+    "json": "indent=2,sort_keys=true,ensure_ascii=false,allow_nan=false",
+    "line_endings": "LF",
+    "trailing_newline": true
+  },
+  "contract_version": "survey-v2-human-measurement-scoring-contract-v1.0.0",
+  "fixture_acceptance": {
+    "definition_validation_passed": 49,
+    "failed": 0,
+    "required_fixture_count": 49,
+    "runtime_behavior_passed": 0,
+    "skipped": 0,
+    "status": "SPECIFICATION_ONLY_RUNTIME_NOT_IMPLEMENTED"
+  },
+  "implementation_authorization": "BLOCKED_PENDING_EXTRA_HIGH_VERIFICATION_AND_EXPLICIT_PRO_ACCEPTANCE_OF_THIS_EXACT_MANIFEST",
+  "model_contract": {
+    "authorized_incremental_spend_usd": 0,
+    "candidate_blind_fresh_context_required": true,
+    "paid_api_calls_authorized": false,
+    "surface": "included ChatGPT Pro or Codex entitlement"
+  },
+  "repository_base": "b7660b8c9bcf52cbb14bc5442c13a3a8635aad32",
+  "representation": {
+    "adaptive_count": 15,
+    "baseline_binary_count": 26,
+    "channel_binary_count": 36,
+    "channel_family_max_weight": 1,
+    "field_count": 83,
+    "fixed_planetary_count": 6
+  },
+  "schema_version": "survey-v2-human-measurement-freeze-manifest-v1.0.0",
+  "source_locks": {
+    "reference/core/channel_archetypes_v1.json": "439dd31d060d83b93df8adc893c9218a41f5694085bab91d80b8b0efaef85b76",
+    "reference/core/gate_archetypes_v1.json": "f15e8c7c6e5344ceda69fcdf1776f01b4ff42cb11e577b78e4a76c0b38abb692",
+    "reference/core/profile_archetypes_v1.json": "44be85ed6d8d1e068262c356c727dc2bbf5967a58a645c5caf4fcfb9908d4ae9",
+    "reference/core/profile_v3_6_v43_mapping_frozen_2026_08_22.json": "f16565094a1a8eede720dd369dfdd4c0d4700a213520b535de28f8f88dd40afd",
+    "reference/core/profile_v3_6_v43_mapping_overlay_v2_2026_08_22.json": "03d25392f9639fb985f806d4814743bbb1cf466bc803c42b6bf6ca8588337735",
+    "reference/core/survey_v2_behavioral_domains.json": "6e8e5404dc8840a0df3b9617d72cc287a828e7186a21e1e97945d956fb36e68e",
+    "reference/core/survey_v2_blind_classifier_protocol.json": "4d32f3cd9159771049927a5aec9badb822bc27dbeecf3b31ad9c144d7803ab30",
+    "reference/core/survey_v2_classifier_reliability_protocol_v1.json": "ddd5c2cb905ac951792d8ec122bbf2794fdbffcc819a3534ae852dfea2de3210"
+  },
+  "supervisor_correction": "HD-ISSUE18-C1-SEMANTIC-GAP-RULING-v1.1.0"
+}

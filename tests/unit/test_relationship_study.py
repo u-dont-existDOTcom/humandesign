@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import UTC, date, datetime, time
+from datetime import UTC, date, datetime, time, timedelta, timezone
 from pathlib import Path
 
 import pytest
@@ -56,6 +56,26 @@ def test_unknown_time_is_explicit_and_cannot_have_uncertainty_window() -> None:
             iana_timezone="UTC",
             time_source=BirthTimeSource.UNKNOWN,
             uncertainty_minutes=60,
+        )
+
+
+def test_local_birth_time_rejects_offsets_and_fractional_seconds() -> None:
+    with pytest.raises(ValueError, match="must not include a UTC offset"):
+        RelationshipBirthInput(
+            birth_date=date(1990, 1, 1),
+            local_time=time(10, 30, tzinfo=timezone(timedelta(hours=1))),
+            birthplace="Example",
+            iana_timezone="UTC",
+            time_source=BirthTimeSource.BIRTH_CERTIFICATE,
+        )
+
+    with pytest.raises(ValueError, match="whole-second precision"):
+        RelationshipBirthInput(
+            birth_date=date(1990, 1, 1),
+            local_time=time(10, 30, 0, 1),
+            birthplace="Example",
+            iana_timezone="UTC",
+            time_source=BirthTimeSource.BIRTH_CERTIFICATE,
         )
 
 
