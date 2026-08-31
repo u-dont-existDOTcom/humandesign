@@ -1,5 +1,36 @@
 # Current Research Plan
 
+## Active Issue #18 execution state — 2026-08-31
+
+This section supersedes the generic next-action order below for the active
+`codex/issue18-surveyv2-natal-one-case` continuation. Human Design issue #18 is the
+controlling chat-authored supervisor directive.
+
+- Current base: `b7660b8c9bcf52cbb14bc5442c13a3a8635aad32`.
+- The relationship intake failure reported by the owner is consistent with the
+  native browser time control showing typed segments while exposing an empty value.
+  The local repair replaces both native
+  time inputs with explicit 24-hour hour/minute fields, produces exact `HH:MM:00`
+  values, preserves values across the unknown-time toggle, and gives role-specific
+  accessible errors.
+- Verification for that repair: focused tests `9 passed`; full suite `225 passed`;
+  Ruff excluding this pre-existing generated-HTML file's E501 style debt passed;
+  mypy passed; a synthetic headless Brave submission sent `05:07:00` and
+  `00:00:00` for the two people.
+- Extra High's first Survey-v2 human-measurement package remains unaccepted: it was
+  truncated, did not provide complete executable fixture bodies, contradicted the
+  owner's prior-exposure ruling, and assumed paid API use despite the exact `$0`
+  spending boundary. A correction was routed to the same Extra High lane; no new
+  governance or Pro lane was opened.
+- No real-person material has been processed, no friend has been contacted, and no
+  merge or deployment has occurred from this branch.
+
+Next: obtain a complete owner-aligned Extra High package, transcribe and hash it,
+route the exact freeze once through the named Pro review, then continue the bounded
+implementation and synthetic acceptance sequence. The local time-control repair may
+be included in that exact diff but must not be deployed before the applicable owner
+and review boundary.
+
 ## Core hypothesis
 
 Human Design can be tested as an information-recovery problem: if birth-derived chart structure predicts sufficiently specific behavior, a blinded behavioral questionnaire should rank the person's true concealed birth state above alternatives.
