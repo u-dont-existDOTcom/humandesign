@@ -1,7 +1,48 @@
 {
+  "$comment": "Runtime semantic validation additionally requires an exact ordered bijection between request jobs and results, unique request (job_id, field_id) pairs, unique evidence-assessment span IDs, role/archetype consistency, and exact category/custody matching to the request.",
   "$id": "survey-v2-classifier-output-schema-v1.0.0",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "top_level_status": {
+            "const": "completed"
+          }
+        },
+        "required": [
+          "top_level_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "results": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "top_level_status": {
+            "const": "forbidden_input"
+          }
+        },
+        "required": [
+          "top_level_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "results": {
+            "maxItems": 0
+          }
+        }
+      }
+    }
+  ],
   "properties": {
     "contract_version": {
       "const": "survey-v2-human-measurement-scoring-contract-v1.0.0"
@@ -39,19 +80,114 @@
           "context_notes": {
             "type": "string"
           },
-          "counterevidence_span_ids": {
+          "evidence_assessments": {
             "items": {
-              "type": "string"
+              "additionalProperties": false,
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "evidence_role": {
+                        "const": "support"
+                      }
+                    },
+                    "required": [
+                      "evidence_role"
+                    ]
+                  },
+                  "then": {
+                    "properties": {
+                      "archetype_ids": {
+                        "minItems": 1
+                      },
+                      "custody_role": {
+                        "const": "support_required"
+                      }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "evidence_role": {
+                        "const": "contrast"
+                      }
+                    },
+                    "required": [
+                      "evidence_role"
+                    ]
+                  },
+                  "then": {
+                    "properties": {
+                      "archetype_ids": {
+                        "maxItems": 0
+                      },
+                      "custody_role": {
+                        "const": "contrast_required"
+                      }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "evidence_role": {
+                        "const": "counterevidence"
+                      }
+                    },
+                    "required": [
+                      "evidence_role"
+                    ]
+                  },
+                  "then": {
+                    "properties": {
+                      "archetype_ids": {
+                        "minItems": 1
+                      }
+                    }
+                  }
+                }
+              ],
+              "properties": {
+                "archetype_ids": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "category_id": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "custody_role": {
+                  "enum": [
+                    "support_required",
+                    "contrast_required"
+                  ]
+                },
+                "evidence_role": {
+                  "enum": [
+                    "support",
+                    "contrast",
+                    "counterevidence"
+                  ]
+                },
+                "span_id": {
+                  "minLength": 1,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "span_id",
+                "category_id",
+                "custody_role",
+                "evidence_role",
+                "archetype_ids"
+              ],
+              "type": "object"
             },
-            "type": "array",
-            "uniqueItems": true
-          },
-          "evidence_span_ids": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "uniqueItems": true
+            "type": "array"
           },
           "field_id": {
             "minLength": 1,
@@ -98,8 +234,7 @@
           "secondary_archetypes",
           "confidence",
           "minimum_evidence_passed",
-          "evidence_span_ids",
-          "counterevidence_span_ids",
+          "evidence_assessments",
           "context_notes",
           "childhood_continuity",
           "forced_choice",
@@ -107,7 +242,8 @@
         ],
         "type": "object"
       },
-      "type": "array"
+      "type": "array",
+      "uniqueItems": true
     },
     "schema_version": {
       "const": "survey-v2-classifier-output-schema-v1.0.0"

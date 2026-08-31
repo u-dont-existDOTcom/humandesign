@@ -14,26 +14,35 @@ controlling chat-authored supervisor directive.
   exact `HH:MM:SS` values (blank seconds become `00`), preserves values across the
   unknown-time toggle, gives role-specific accessible errors, and rejects offsets
   or fractional seconds on the server.
-- Verification for that repair and the mechanical freeze package: focused tests
-  `15 passed`; full suite `231 passed`;
+- Verification for the time repair and corrected mechanical freeze package: original
+  focused repair tests `15 passed`; current freeze tests `11 passed`; current full
+  suite `237 passed`;
   Ruff excluding this pre-existing generated-HTML file's E501 style debt passed;
   mypy passed; synthetic headless Brave submissions sent `05:07:00`, `00:00:00`,
   and explicit `00:00:09` values correctly.
-- Extra High correction `HD-ISSUE18-C1-SEMANTIC-GAP-RULING-v1.1.0` resolves the
-  truncated first package: all 49 listed fixtures are required, participant exposure
-  is descriptive rather than an automatic exclusion, H1 authors use the approved
-  three-status contamination rule, and all GPT work must use a fresh candidate-blind
-  included ChatGPT Pro/Codex context at `$0` or remain blocked. The resulting
-  83-field contract and fixture package is mechanically encoded and awaits exact-diff
-  verification by Extra High before the single named Pro review.
+- Extra High correction `HD-ISSUE18-C1-SEMANTIC-GAP-RULING-v1.1.0` admitted the
+  exact `74ddb10` package to the single named Pro review. Pro ruling
+  `SURVEYV2-HUMAN-MEASUREMENT-AND-SCORING-FREEZE-v1.PRO-RULING-v1.0.0`
+  returned `BLOCKING_DEFECTS`, explicitly `OWNER_DECISION_REQUIRED: NO`, and allowed
+  only `SV2-FREEZE-B1` through `SV2-FREEZE-B4` correction followed by return to the
+  existing Issue #18 / Extra High boundary.
+- The corrected specification now freezes atomic request/result bijection; typed
+  support/contrast/counterevidence assessments; a separate zero-cost blind H1
+  exposure-adjudication package; and an exhaustive declared partition of 83 fields
+  into 45 construct-level weighting clusters. It contains 69 participant/classifier/
+  scoring fixture definitions plus 14 H1 adjudication fixture definitions. Runtime
+  behavior remains explicitly `0` and the package remains specification-only; the
+  partition is not a claim of exhaustive structural or statistical independence.
 - No real-person material has been processed, no friend has been contacted, and no
   merge or deployment has occurred from this branch.
 
-Next: correct the exact mechanical defects, re-hash, obtain Extra High verification,
-route exactly one named Pro freeze review, and then stop for the next authorized
-directive. Issue #18 independently requires owner authorization before first human
-contact or any new scientific production deployment/merge. The local time-control
-repair remains in the exact draft diff but must not be deployed before that boundary.
+Next: complete independent defect-by-defect verification, refresh exact hashes, push
+the corrected candidate to draft PR #20, route its exact diff/hash packet back to the
+existing Extra High lane, and follow only that disposition. No additional Pro review
+is authorized. Issue #18 independently requires owner authorization before first
+human contact or any new scientific production deployment/merge. The local
+time-control repair remains in the exact draft diff but must not be deployed before
+that boundary.
 
 ## Core hypothesis
 

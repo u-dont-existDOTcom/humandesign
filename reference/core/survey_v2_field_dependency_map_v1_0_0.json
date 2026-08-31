@@ -1,0 +1,804 @@
+{
+  "cluster_count": 45,
+  "cluster_scoring": {
+    "abstention": "Remove an abstaining member from the cluster macro-average; never score it as zero. Omit a cluster only when every member abstains.",
+    "cluster_formula": "For candidate c and eligible non-abstaining members E_d: cluster_score_d(c)=sum(field_score_f(c) for f in E_d)/|E_d|.",
+    "denominator": "Each eligible dependency cluster contributes exactly one denominator unit. The residual channel family is one cluster.",
+    "exact_arithmetic": "Exact rational Fraction arithmetic only.",
+    "partial_overlap": "Members in a partially overlapping OR-predicate cluster may have different candidate values; average their field scores rather than rejecting the differing columns.",
+    "raw_score": "For candidate c, raw_score(c)=sum(cluster_score_d(c) for every eligible dependency cluster d).",
+    "repeated_probe_rule": "Distinct repeated probes are exact-rational macro-averaged within one field after removing abstaining probes; all-probe abstention omits the field. They cannot create another field member, cluster, or denominator unit. Exact probe-ID replay is invalid."
+  },
+  "constructor_rules": {
+    "baseline": "Load 42 non-post-selection mappings plus one contradiction. OR raw predicates within each observable. Preserve the three PROFILE_STRUCTURE mapping IDs as separate baseline observables.",
+    "parents": "Source parent predicates are provenance only and are not evaluated by the frozen _clean_observable_patterns constructor.",
+    "source_mapping": "reference/core/profile_v3_6_v43_mapping_frozen_2026_08_22.json plus reference/core/profile_v3_6_v43_mapping_overlay_v2_2026_08_22.json"
+  },
+  "field_count": 83,
+  "field_dependencies": [
+    {
+      "dependency_cluster_id": "DC:AUTHORITY_SOMATIC",
+      "field_id": "baseline:AUTHORITY_SOMATIC",
+      "source_mapping_ids": [
+        "AUTH_SPLENIC_SIGNAL",
+        "GATE_57_SOMATIC_ALT"
+      ],
+      "source_predicates": [
+        "authority=Splenic",
+        "activation_gate:any=57"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:CENTER_G",
+      "field_id": "baseline:CENTER_G",
+      "source_mapping_ids": [
+        "CENTER_G_DEFINED"
+      ],
+      "source_predicates": [
+        "center:G:defined=true"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:CENTER_HEART",
+      "field_id": "baseline:CENTER_HEART",
+      "source_mapping_ids": [
+        "CENTER_HEART_DEFINED"
+      ],
+      "source_predicates": [
+        "center:Heart:defined=true"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:CENTER_ROOT",
+      "field_id": "baseline:CENTER_ROOT",
+      "source_mapping_ids": [
+        "CENTER_ROOT_OPEN"
+      ],
+      "source_predicates": [
+        "center:Root:defined=false"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:CENTER_SACRAL",
+      "field_id": "baseline:CENTER_SACRAL",
+      "source_mapping_ids": [
+        "CENTER_SACRAL_OPEN"
+      ],
+      "source_predicates": [
+        "center:Sacral:defined=false"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:CENTER_SOLAR_PLEXUS",
+      "field_id": "baseline:CENTER_SOLAR_PLEXUS",
+      "source_mapping_ids": [
+        "CENTER_SP_OPEN"
+      ],
+      "source_predicates": [
+        "center:Solar Plexus:defined=false"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:CENTER_SPLEEN",
+      "field_id": "baseline:CENTER_SPLEEN",
+      "source_mapping_ids": [
+        "CENTER_SPLEEN_DEFINED"
+      ],
+      "source_predicates": [
+        "center:Spleen:defined=true"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:CONCENTRATED_FOCUS",
+      "field_id": "baseline:CONCENTRATED_FOCUS",
+      "source_mapping_ids": [
+        "GATE_52_FOCUS"
+      ],
+      "source_predicates": [
+        "activation_gate:any=52"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:CONSEQUENTIAL_CORRECTION",
+      "field_id": "baseline:CONSEQUENTIAL_CORRECTION",
+      "source_mapping_ids": [
+        "CH_18_58_CORRECTION",
+        "GATE_18_CORRECTION_ALT",
+        "GATE_58_IMPROVEMENT_ALT"
+      ],
+      "source_predicates": [
+        "channel=18-58",
+        "activation_gate:any=18",
+        "activation_gate:any=58"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:CONTINUITY_PRESERVATION",
+      "field_id": "baseline:CONTINUITY_PRESERVATION",
+      "source_mapping_ids": [
+        "GATE_32_CONTINUITY"
+      ],
+      "source_predicates": [
+        "activation_gate:any=32"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:MASTERY_REPETITION",
+      "field_id": "baseline:CONTRADICTION:MASTERY_REPETITION",
+      "source_mapping_ids": [
+        "CONTRA_16_48_MASTERY_DRIVE"
+      ],
+      "source_predicates": [
+        "channel=16-48"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:ENTERPRISE_PERSUASION_PATTERN",
+      "field_id": "baseline:ENTERPRISE_PERSUASION_PATTERN",
+      "source_mapping_ids": [
+        "CH_26_44_ENTERPRISE",
+        "GATE_26_PERSUASION_ALT",
+        "GATE_44_PATTERN_ALT"
+      ],
+      "source_predicates": [
+        "channel=26-44",
+        "activation_gate:any=26",
+        "activation_gate:any=44"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:EXISTENTIAL_MYSTERY",
+      "field_id": "baseline:EXISTENTIAL_MYSTERY",
+      "source_mapping_ids": [
+        "CH_24_61_MYSTERY",
+        "CH_47_64_MEANING_ALT",
+        "GATE_61_MYSTERY_ALT",
+        "GATE_24_RETURN_ALT"
+      ],
+      "source_predicates": [
+        "channel=24-61",
+        "channel=47-64",
+        "activation_gate:any=61",
+        "activation_gate:any=24"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:INSIGHT_TO_STRUCTURE",
+      "field_id": "baseline:INSIGHT_TO_STRUCTURE",
+      "source_mapping_ids": [
+        "CH_23_43_STRUCTURING",
+        "GATE_43_INSIGHT_ALT",
+        "GATE_23_EXPRESSION_ALT"
+      ],
+      "source_predicates": [
+        "channel=23-43",
+        "activation_gate:any=43",
+        "activation_gate:any=23"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:NEEDS_SENSITIVITY",
+      "field_id": "baseline:NEEDS_SENSITIVITY",
+      "source_mapping_ids": [
+        "GATE_19_NEEDS"
+      ],
+      "source_predicates": [
+        "activation_gate:any=19"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:ORGANIZED_DETAIL",
+      "field_id": "baseline:ORGANIZED_DETAIL",
+      "source_mapping_ids": [
+        "CH_17_62_ORGANIZE",
+        "GATE_62_DETAIL_ALT",
+        "GATE_17_OPINION_ALT"
+      ],
+      "source_predicates": [
+        "channel=17-62",
+        "activation_gate:any=62",
+        "activation_gate:any=17"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:ORIGINAL_CONTRIBUTION",
+      "field_id": "baseline:ORIGINAL_CONTRIBUTION",
+      "source_mapping_ids": [
+        "CH_1_8_ORIGINAL",
+        "GATE_1_ORIGINAL_ALT",
+        "GATE_8_CONTRIBUTION_ALT"
+      ],
+      "source_predicates": [
+        "channel=1-8",
+        "activation_gate:any=1",
+        "activation_gate:any=8"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:PROFILE_STRUCTURE",
+      "field_id": "baseline:PROFILE_24",
+      "source_mapping_ids": [
+        "PROFILE_24"
+      ],
+      "source_predicates": [
+        "profile=2/4"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:PROFILE_STRUCTURE",
+      "field_id": "baseline:PROFILE_LINE5_PROJECTION",
+      "source_mapping_ids": [
+        "PROFILE_LINE5_PROJECTION"
+      ],
+      "source_predicates": [
+        "profile_has_line=5"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:PROFILE_STRUCTURE",
+      "field_id": "baseline:PROFILE_LINE6_PHASES",
+      "source_mapping_ids": [
+        "PROFILE_LINE6_PHASES"
+      ],
+      "source_predicates": [
+        "profile_has_line=6"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:PURPOSE_STRUGGLE",
+      "field_id": "baseline:PURPOSE_STRUGGLE",
+      "source_mapping_ids": [
+        "CH_28_38_PURPOSE",
+        "GATE_28_PURPOSE_ALT",
+        "GATE_38_FIGHTER_ALT"
+      ],
+      "source_predicates": [
+        "channel=28-38",
+        "activation_gate:any=28",
+        "activation_gate:any=38"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:RESOURCE_SOVEREIGNTY",
+      "field_id": "baseline:RESOURCE_SOVEREIGNTY",
+      "source_mapping_ids": [
+        "GATE_21_RESOURCES"
+      ],
+      "source_predicates": [
+        "activation_gate:any=21"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:RETREAT_PRIVACY",
+      "field_id": "baseline:RETREAT_PRIVACY",
+      "source_mapping_ids": [
+        "CH_13_33_RETREAT",
+        "GATE_33_RETREAT_ALT"
+      ],
+      "source_predicates": [
+        "channel=13-33",
+        "activation_gate:any=33"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:RHYTHM_ROUTINE",
+      "field_id": "baseline:RHYTHM_ROUTINE",
+      "source_mapping_ids": [
+        "GATE_5_ROUTINE"
+      ],
+      "source_predicates": [
+        "activation_gate:any=5"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:TYPE_ENTRY",
+      "field_id": "baseline:TYPE_ENTRY",
+      "source_mapping_ids": [
+        "TYPE_PROJECTOR_ENTRY"
+      ],
+      "source_predicates": [
+        "type=Projector"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:VALUES_RESPONSIBILITY",
+      "field_id": "baseline:VALUES_RESPONSIBILITY",
+      "source_mapping_ids": [
+        "GATE_50_VALUES"
+      ],
+      "source_predicates": [
+        "activation_gate:any=50"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:PERSONALITY:MOON",
+      "field_id": "personality:moon",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "activation:personality:moon=gate:<label>"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:DESIGN:MOON",
+      "field_id": "design:moon",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "activation:design:moon=gate:<label>"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:PERSONALITY:MERCURY",
+      "field_id": "personality:mercury",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "activation:personality:mercury=gate:<label>"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:DESIGN:MERCURY",
+      "field_id": "design:mercury",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "activation:design:mercury=gate:<label>"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:PERSONALITY:VENUS",
+      "field_id": "personality:venus",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "activation:personality:venus=gate:<label>"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:DESIGN:VENUS",
+      "field_id": "design:venus",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "activation:design:venus=gate:<label>"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:ORIGINAL_CONTRIBUTION",
+      "field_id": "channel:1-8",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "channel=1-8"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:CHANNEL_RESIDUAL_FAMILY",
+      "field_id": "channel:2-14",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "channel=2-14"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:CHANNEL_RESIDUAL_FAMILY",
+      "field_id": "channel:3-60",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "channel=3-60"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:CHANNEL_RESIDUAL_FAMILY",
+      "field_id": "channel:4-63",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "channel=4-63"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:RHYTHM_ROUTINE",
+      "field_id": "channel:5-15",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "channel=5-15"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:CHANNEL_RESIDUAL_FAMILY",
+      "field_id": "channel:6-59",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "channel=6-59"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:CHANNEL_RESIDUAL_FAMILY",
+      "field_id": "channel:7-31",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "channel=7-31"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:CONCENTRATED_FOCUS",
+      "field_id": "channel:9-52",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "channel=9-52"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:CHANNEL_RESIDUAL_FAMILY",
+      "field_id": "channel:10-20",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "channel=10-20"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:CHANNEL_RESIDUAL_FAMILY",
+      "field_id": "channel:10-34",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "channel=10-34"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:AUTHORITY_SOMATIC",
+      "field_id": "channel:10-57",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "channel=10-57"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:CHANNEL_RESIDUAL_FAMILY",
+      "field_id": "channel:11-56",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "channel=11-56"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:CHANNEL_RESIDUAL_FAMILY",
+      "field_id": "channel:12-22",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "channel=12-22"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:RETREAT_PRIVACY",
+      "field_id": "channel:13-33",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "channel=13-33"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:MASTERY_REPETITION",
+      "field_id": "channel:16-48",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "channel=16-48"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:ORGANIZED_DETAIL",
+      "field_id": "channel:17-62",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "channel=17-62"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:CONSEQUENTIAL_CORRECTION",
+      "field_id": "channel:18-58",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "channel=18-58"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:NEEDS_SENSITIVITY",
+      "field_id": "channel:19-49",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "channel=19-49"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:CHANNEL_RESIDUAL_FAMILY",
+      "field_id": "channel:20-34",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "channel=20-34"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:AUTHORITY_SOMATIC",
+      "field_id": "channel:20-57",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "channel=20-57"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:RESOURCE_SOVEREIGNTY",
+      "field_id": "channel:21-45",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "channel=21-45"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:INSIGHT_TO_STRUCTURE",
+      "field_id": "channel:23-43",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "channel=23-43"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:EXISTENTIAL_MYSTERY",
+      "field_id": "channel:24-61",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "channel=24-61"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:CHANNEL_RESIDUAL_FAMILY",
+      "field_id": "channel:25-51",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "channel=25-51"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:ENTERPRISE_PERSUASION_PATTERN",
+      "field_id": "channel:26-44",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "channel=26-44"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:VALUES_RESPONSIBILITY",
+      "field_id": "channel:27-50",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "channel=27-50"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:PURPOSE_STRUGGLE",
+      "field_id": "channel:28-38",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "channel=28-38"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:CHANNEL_RESIDUAL_FAMILY",
+      "field_id": "channel:29-46",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "channel=29-46"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:CHANNEL_RESIDUAL_FAMILY",
+      "field_id": "channel:30-41",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "channel=30-41"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:CONTINUITY_PRESERVATION",
+      "field_id": "channel:32-54",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "channel=32-54"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:AUTHORITY_SOMATIC",
+      "field_id": "channel:34-57",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "channel=34-57"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:CHANNEL_RESIDUAL_FAMILY",
+      "field_id": "channel:35-36",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "channel=35-36"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:CHANNEL_RESIDUAL_FAMILY",
+      "field_id": "channel:37-40",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "channel=37-40"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:CHANNEL_RESIDUAL_FAMILY",
+      "field_id": "channel:39-55",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "channel=39-55"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:CHANNEL_RESIDUAL_FAMILY",
+      "field_id": "channel:42-53",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "channel=42-53"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:EXISTENTIAL_MYSTERY",
+      "field_id": "channel:47-64",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "channel=47-64"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:PROFILE_STRUCTURE",
+      "field_id": "profile",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "profile=<label>"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:ACTIVATION:PERSONALITY:MARS",
+      "field_id": "activation:personality:mars",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "activation:personality:mars=gate:<label>"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:ACTIVATION:DESIGN:MARS",
+      "field_id": "activation:design:mars",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "activation:design:mars=gate:<label>"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:ACTIVATION:DESIGN:JUPITER",
+      "field_id": "activation:design:jupiter",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "activation:design:jupiter=gate:<label>"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:ACTIVATION:PERSONALITY:JUPITER",
+      "field_id": "activation:personality:jupiter",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "activation:personality:jupiter=gate:<label>"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:ACTIVATION:DESIGN:SATURN",
+      "field_id": "activation:design:saturn",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "activation:design:saturn=gate:<label>"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:ACTIVATION:PERSONALITY:SATURN",
+      "field_id": "activation:personality:saturn",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "activation:personality:saturn=gate:<label>"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:ACTIVATION:DESIGN:URANUS",
+      "field_id": "activation:design:uranus",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "activation:design:uranus=gate:<label>"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:ACTIVATION:PERSONALITY:URANUS",
+      "field_id": "activation:personality:uranus",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "activation:personality:uranus=gate:<label>"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:ACTIVATION:PERSONALITY:SOUTH_NODE",
+      "field_id": "activation:personality:south_node",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "activation:personality:south_node=gate:<label>"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:ACTIVATION:DESIGN:SOUTH_NODE",
+      "field_id": "activation:design:south_node",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "activation:design:south_node=gate:<label>"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:ACTIVATION:DESIGN:PLUTO",
+      "field_id": "activation:design:pluto",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "activation:design:pluto=gate:<label>"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:ACTIVATION:PERSONALITY:NEPTUNE",
+      "field_id": "activation:personality:neptune",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "activation:personality:neptune=gate:<label>"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:ACTIVATION:DESIGN:NEPTUNE",
+      "field_id": "activation:design:neptune",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "activation:design:neptune=gate:<label>"
+      ]
+    },
+    {
+      "dependency_cluster_id": "DC:ACTIVATION:PERSONALITY:PLUTO",
+      "field_id": "activation:personality:pluto",
+      "source_mapping_ids": [],
+      "source_predicates": [
+        "activation:personality:pluto=gate:<label>"
+      ]
+    }
+  ],
+  "schema_version": "survey-v2-field-dependency-map-v1.0.0",
+  "scope_and_limits": {
+    "construct_level_partition": "The map is an exhaustive declared partition of the 83 frozen participant-observable fields under this construct-level weighting policy; it is not a proof of structural or statistical independence.",
+    "declared_latent_overlap_channels": [
+      "5-15",
+      "9-52",
+      "10-57",
+      "19-49",
+      "20-57",
+      "21-45",
+      "27-50",
+      "32-54",
+      "34-57"
+    ],
+    "derived_overlap": "Channel definitions determine center states, and body-specific activation fields may conditionally overlap any-activation-gate baseline predicates. These are disclosed but not collapsed because the frozen participant-observable constructs differ.",
+    "exact_overlap_channels": [
+      "1-8",
+      "13-33",
+      "16-48",
+      "17-62",
+      "18-58",
+      "23-43",
+      "24-61",
+      "26-44",
+      "28-38",
+      "47-64"
+    ],
+    "moved_channels": "Ten channel fields share exact frozen baseline channel predicates; nine more share declared gate or latent themes. These 19 move into construct clusters.",
+    "residual_family": "The 17 remaining channels are distinct constructs grouped into one residual normalization family solely to cap aggregate channel weight; the family is not asserted to be one latent construct."
+  },
+  "source_locks": {
+    "reference/core/profile_v3_6_v43_mapping_frozen_2026_08_22.json": "f16565094a1a8eede720dd369dfdd4c0d4700a213520b535de28f8f88dd40afd",
+    "reference/core/profile_v3_6_v43_mapping_overlay_v2_2026_08_22.json": "03d25392f9639fb985f806d4814743bbb1cf466bc803c42b6bf6ca8588337735"
+  }
+}

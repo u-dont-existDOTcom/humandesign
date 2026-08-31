@@ -1,6 +1,6 @@
 {
   "contract_version": "survey-v2-human-measurement-scoring-contract-v1.0.0",
-  "fixture_count": 49,
+  "fixture_count": 69,
   "fixtures": [
     {
       "expected_abstention": false,
@@ -15,10 +15,22 @@
           "candidate-0": "0",
           "candidate-1": "1"
         },
-        "evidence_unit_ids": [
-          "e-child",
-          "e-current",
-          "e-contrast"
+        "evidence_units": [
+          {
+            "category_id": "childhood",
+            "custody_role": "support_required",
+            "span_id": "e-child"
+          },
+          {
+            "category_id": "current",
+            "custody_role": "support_required",
+            "span_id": "e-current"
+          },
+          {
+            "category_id": "contrast",
+            "custody_role": "contrast_required",
+            "span_id": "e-contrast"
+          }
         ],
         "field_id": "baseline:AUTHORITY_SOMATIC",
         "kind": "classifier_result_validation_and_score",
@@ -27,10 +39,32 @@
           "childhood_continuity": "present_since_childhood",
           "confidence": 0.8,
           "context_notes": "synthetic fixture",
-          "counterevidence_span_ids": [],
-          "evidence_span_ids": [
-            "e-child",
-            "e-current"
+          "evidence_assessments": [
+            {
+              "archetype_ids": [
+                "1"
+              ],
+              "category_id": "childhood",
+              "custody_role": "support_required",
+              "evidence_role": "support",
+              "span_id": "e-child"
+            },
+            {
+              "archetype_ids": [
+                "1"
+              ],
+              "category_id": "current",
+              "custody_role": "support_required",
+              "evidence_role": "support",
+              "span_id": "e-current"
+            },
+            {
+              "archetype_ids": [],
+              "category_id": "contrast",
+              "custody_role": "contrast_required",
+              "evidence_role": "contrast",
+              "span_id": "e-contrast"
+            }
           ],
           "field_id": "baseline:AUTHORITY_SOMATIC",
           "forced_choice": false,
@@ -62,10 +96,22 @@
           "candidate-0": "0",
           "candidate-1": "1"
         },
-        "evidence_unit_ids": [
-          "e-child",
-          "e-current",
-          "e-contrast"
+        "evidence_units": [
+          {
+            "category_id": "childhood",
+            "custody_role": "support_required",
+            "span_id": "e-child"
+          },
+          {
+            "category_id": "current",
+            "custody_role": "support_required",
+            "span_id": "e-current"
+          },
+          {
+            "category_id": "contrast",
+            "custody_role": "contrast_required",
+            "span_id": "e-contrast"
+          }
         ],
         "field_id": "baseline:AUTHORITY_SOMATIC",
         "kind": "classifier_result_validation_and_score",
@@ -74,10 +120,32 @@
           "childhood_continuity": "present_since_childhood",
           "confidence": 0.8,
           "context_notes": "synthetic fixture",
-          "counterevidence_span_ids": [],
-          "evidence_span_ids": [
-            "e-child",
-            "e-current"
+          "evidence_assessments": [
+            {
+              "archetype_ids": [
+                "0"
+              ],
+              "category_id": "childhood",
+              "custody_role": "support_required",
+              "evidence_role": "support",
+              "span_id": "e-child"
+            },
+            {
+              "archetype_ids": [
+                "0"
+              ],
+              "category_id": "current",
+              "custody_role": "support_required",
+              "evidence_role": "support",
+              "span_id": "e-current"
+            },
+            {
+              "archetype_ids": [],
+              "category_id": "contrast",
+              "custody_role": "contrast_required",
+              "evidence_role": "contrast",
+              "span_id": "e-contrast"
+            }
           ],
           "field_id": "baseline:AUTHORITY_SOMATIC",
           "forced_choice": false,
@@ -106,10 +174,22 @@
           "candidate-0": "0",
           "candidate-1": "1"
         },
-        "evidence_unit_ids": [
-          "e-child",
-          "e-current",
-          "e-contrast"
+        "evidence_units": [
+          {
+            "category_id": "childhood",
+            "custody_role": "support_required",
+            "span_id": "e-child"
+          },
+          {
+            "category_id": "current",
+            "custody_role": "support_required",
+            "span_id": "e-current"
+          },
+          {
+            "category_id": "contrast",
+            "custody_role": "contrast_required",
+            "span_id": "e-contrast"
+          }
         ],
         "field_id": "baseline:AUTHORITY_SOMATIC",
         "kind": "classifier_result_validation_and_score",
@@ -118,10 +198,34 @@
           "childhood_continuity": "present_since_childhood",
           "confidence": 0.8,
           "context_notes": "synthetic fixture",
-          "counterevidence_span_ids": [],
-          "evidence_span_ids": [
-            "e-child",
-            "e-current"
+          "evidence_assessments": [
+            {
+              "archetype_ids": [
+                "0",
+                "1"
+              ],
+              "category_id": "childhood",
+              "custody_role": "support_required",
+              "evidence_role": "support",
+              "span_id": "e-child"
+            },
+            {
+              "archetype_ids": [
+                "0",
+                "1"
+              ],
+              "category_id": "current",
+              "custody_role": "support_required",
+              "evidence_role": "support",
+              "span_id": "e-current"
+            },
+            {
+              "archetype_ids": [],
+              "category_id": "contrast",
+              "custody_role": "contrast_required",
+              "evidence_role": "contrast",
+              "span_id": "e-contrast"
+            }
           ],
           "field_id": "baseline:AUTHORITY_SOMATIC",
           "forced_choice": false,
@@ -152,10 +256,22 @@
           "candidate-0": "0",
           "candidate-1": "1"
         },
-        "evidence_unit_ids": [
-          "e-child",
-          "e-current",
-          "e-contrast"
+        "evidence_units": [
+          {
+            "category_id": "childhood",
+            "custody_role": "support_required",
+            "span_id": "e-child"
+          },
+          {
+            "category_id": "current",
+            "custody_role": "support_required",
+            "span_id": "e-current"
+          },
+          {
+            "category_id": "contrast",
+            "custody_role": "contrast_required",
+            "span_id": "e-contrast"
+          }
         ],
         "field_id": "baseline:AUTHORITY_SOMATIC",
         "kind": "classifier_result_validation_and_score",
@@ -164,10 +280,32 @@
           "childhood_continuity": "present_since_childhood",
           "confidence": 0.95,
           "context_notes": "synthetic fixture",
-          "counterevidence_span_ids": [],
-          "evidence_span_ids": [
-            "e-child",
-            "e-current"
+          "evidence_assessments": [
+            {
+              "archetype_ids": [
+                "1"
+              ],
+              "category_id": "childhood",
+              "custody_role": "support_required",
+              "evidence_role": "support",
+              "span_id": "e-child"
+            },
+            {
+              "archetype_ids": [
+                "1"
+              ],
+              "category_id": "current",
+              "custody_role": "support_required",
+              "evidence_role": "support",
+              "span_id": "e-current"
+            },
+            {
+              "archetype_ids": [],
+              "category_id": "contrast",
+              "custody_role": "contrast_required",
+              "evidence_role": "contrast",
+              "span_id": "e-contrast"
+            }
           ],
           "field_id": "baseline:AUTHORITY_SOMATIC",
           "forced_choice": false,
@@ -196,10 +334,22 @@
           "candidate-0": "0",
           "candidate-1": "1"
         },
-        "evidence_unit_ids": [
-          "e-child",
-          "e-current",
-          "e-contrast"
+        "evidence_units": [
+          {
+            "category_id": "childhood",
+            "custody_role": "support_required",
+            "span_id": "e-child"
+          },
+          {
+            "category_id": "current",
+            "custody_role": "support_required",
+            "span_id": "e-current"
+          },
+          {
+            "category_id": "contrast",
+            "custody_role": "contrast_required",
+            "span_id": "e-contrast"
+          }
         ],
         "field_id": "baseline:AUTHORITY_SOMATIC",
         "kind": "classifier_result_validation_and_score",
@@ -208,10 +358,32 @@
           "childhood_continuity": "present_since_childhood",
           "confidence": 0.5,
           "context_notes": "synthetic fixture",
-          "counterevidence_span_ids": [],
-          "evidence_span_ids": [
-            "e-child",
-            "e-current"
+          "evidence_assessments": [
+            {
+              "archetype_ids": [
+                "1"
+              ],
+              "category_id": "childhood",
+              "custody_role": "support_required",
+              "evidence_role": "support",
+              "span_id": "e-child"
+            },
+            {
+              "archetype_ids": [
+                "1"
+              ],
+              "category_id": "current",
+              "custody_role": "support_required",
+              "evidence_role": "support",
+              "span_id": "e-current"
+            },
+            {
+              "archetype_ids": [],
+              "category_id": "contrast",
+              "custody_role": "contrast_required",
+              "evidence_role": "contrast",
+              "span_id": "e-contrast"
+            }
           ],
           "field_id": "baseline:AUTHORITY_SOMATIC",
           "forced_choice": false,
@@ -240,10 +412,22 @@
           "candidate-0": "0",
           "candidate-1": "1"
         },
-        "evidence_unit_ids": [
-          "e-child",
-          "e-current",
-          "e-contrast"
+        "evidence_units": [
+          {
+            "category_id": "childhood",
+            "custody_role": "support_required",
+            "span_id": "e-child"
+          },
+          {
+            "category_id": "current",
+            "custody_role": "support_required",
+            "span_id": "e-current"
+          },
+          {
+            "category_id": "contrast",
+            "custody_role": "contrast_required",
+            "span_id": "e-contrast"
+          }
         ],
         "field_id": "baseline:AUTHORITY_SOMATIC",
         "kind": "classifier_result_validation_and_score",
@@ -252,8 +436,15 @@
           "childhood_continuity": "present_since_childhood",
           "confidence": 0.0,
           "context_notes": "synthetic fixture",
-          "counterevidence_span_ids": [],
-          "evidence_span_ids": [],
+          "evidence_assessments": [
+            {
+              "archetype_ids": [],
+              "category_id": "contrast",
+              "custody_role": "contrast_required",
+              "evidence_role": "contrast",
+              "span_id": "e-contrast"
+            }
+          ],
           "field_id": "baseline:AUTHORITY_SOMATIC",
           "forced_choice": false,
           "job_id": "job-1",
@@ -281,10 +472,22 @@
           "candidate-0": "0",
           "candidate-1": "1"
         },
-        "evidence_unit_ids": [
-          "e-child",
-          "e-current",
-          "e-contrast"
+        "evidence_units": [
+          {
+            "category_id": "childhood",
+            "custody_role": "support_required",
+            "span_id": "e-child"
+          },
+          {
+            "category_id": "current",
+            "custody_role": "support_required",
+            "span_id": "e-current"
+          },
+          {
+            "category_id": "contrast",
+            "custody_role": "contrast_required",
+            "span_id": "e-contrast"
+          }
         ],
         "field_id": "baseline:AUTHORITY_SOMATIC",
         "kind": "classifier_result_validation_and_score",
@@ -293,8 +496,15 @@
           "childhood_continuity": "present_since_childhood",
           "confidence": 0.0,
           "context_notes": "synthetic fixture",
-          "counterevidence_span_ids": [],
-          "evidence_span_ids": [],
+          "evidence_assessments": [
+            {
+              "archetype_ids": [],
+              "category_id": "contrast",
+              "custody_role": "contrast_required",
+              "evidence_role": "contrast",
+              "span_id": "e-contrast"
+            }
+          ],
           "field_id": "baseline:AUTHORITY_SOMATIC",
           "forced_choice": false,
           "job_id": "job-1",
@@ -322,10 +532,22 @@
           "candidate-0": "0",
           "candidate-1": "1"
         },
-        "evidence_unit_ids": [
-          "e-child",
-          "e-current",
-          "e-contrast"
+        "evidence_units": [
+          {
+            "category_id": "childhood",
+            "custody_role": "support_required",
+            "span_id": "e-child"
+          },
+          {
+            "category_id": "current",
+            "custody_role": "support_required",
+            "span_id": "e-current"
+          },
+          {
+            "category_id": "contrast",
+            "custody_role": "contrast_required",
+            "span_id": "e-contrast"
+          }
         ],
         "field_id": "baseline:AUTHORITY_SOMATIC",
         "kind": "classifier_result_validation_and_score",
@@ -334,8 +556,15 @@
           "childhood_continuity": "present_since_childhood",
           "confidence": 0.0,
           "context_notes": "synthetic fixture",
-          "counterevidence_span_ids": [],
-          "evidence_span_ids": [],
+          "evidence_assessments": [
+            {
+              "archetype_ids": [],
+              "category_id": "contrast",
+              "custody_role": "contrast_required",
+              "evidence_role": "contrast",
+              "span_id": "e-contrast"
+            }
+          ],
           "field_id": "baseline:AUTHORITY_SOMATIC",
           "forced_choice": false,
           "job_id": "job-1",
@@ -363,10 +592,22 @@
           "candidate-0": "0",
           "candidate-1": "1"
         },
-        "evidence_unit_ids": [
-          "e-child",
-          "e-current",
-          "e-contrast"
+        "evidence_units": [
+          {
+            "category_id": "childhood",
+            "custody_role": "support_required",
+            "span_id": "e-child"
+          },
+          {
+            "category_id": "current",
+            "custody_role": "support_required",
+            "span_id": "e-current"
+          },
+          {
+            "category_id": "contrast",
+            "custody_role": "contrast_required",
+            "span_id": "e-contrast"
+          }
         ],
         "field_id": "baseline:AUTHORITY_SOMATIC",
         "kind": "classifier_result_validation_and_score",
@@ -375,10 +616,28 @@
           "childhood_continuity": "present_since_childhood",
           "confidence": 0.8,
           "context_notes": "synthetic fixture",
-          "counterevidence_span_ids": [],
-          "evidence_span_ids": [
-            "e-child",
-            "e-current"
+          "evidence_assessments": [
+            {
+              "archetype_ids": [],
+              "category_id": "childhood",
+              "custody_role": "support_required",
+              "evidence_role": "support",
+              "span_id": "e-child"
+            },
+            {
+              "archetype_ids": [],
+              "category_id": "current",
+              "custody_role": "support_required",
+              "evidence_role": "support",
+              "span_id": "e-current"
+            },
+            {
+              "archetype_ids": [],
+              "category_id": "contrast",
+              "custody_role": "contrast_required",
+              "evidence_role": "contrast",
+              "span_id": "e-contrast"
+            }
           ],
           "field_id": "baseline:AUTHORITY_SOMATIC",
           "forced_choice": false,
@@ -407,10 +666,22 @@
           "candidate-0": "0",
           "candidate-1": "1"
         },
-        "evidence_unit_ids": [
-          "e-child",
-          "e-current",
-          "e-contrast"
+        "evidence_units": [
+          {
+            "category_id": "childhood",
+            "custody_role": "support_required",
+            "span_id": "e-child"
+          },
+          {
+            "category_id": "current",
+            "custody_role": "support_required",
+            "span_id": "e-current"
+          },
+          {
+            "category_id": "contrast",
+            "custody_role": "contrast_required",
+            "span_id": "e-contrast"
+          }
         ],
         "field_id": "baseline:AUTHORITY_SOMATIC",
         "kind": "classifier_result_validation_and_score",
@@ -419,10 +690,34 @@
           "childhood_continuity": "present_since_childhood",
           "confidence": 0.8,
           "context_notes": "synthetic fixture",
-          "counterevidence_span_ids": [],
-          "evidence_span_ids": [
-            "e-child",
-            "e-current"
+          "evidence_assessments": [
+            {
+              "archetype_ids": [
+                "0",
+                "1"
+              ],
+              "category_id": "childhood",
+              "custody_role": "support_required",
+              "evidence_role": "support",
+              "span_id": "e-child"
+            },
+            {
+              "archetype_ids": [
+                "0",
+                "1"
+              ],
+              "category_id": "current",
+              "custody_role": "support_required",
+              "evidence_role": "support",
+              "span_id": "e-current"
+            },
+            {
+              "archetype_ids": [],
+              "category_id": "contrast",
+              "custody_role": "contrast_required",
+              "evidence_role": "contrast",
+              "span_id": "e-contrast"
+            }
           ],
           "field_id": "baseline:AUTHORITY_SOMATIC",
           "forced_choice": false,
@@ -453,10 +748,22 @@
           "candidate-0": "0",
           "candidate-1": "1"
         },
-        "evidence_unit_ids": [
-          "e-child",
-          "e-current",
-          "e-contrast"
+        "evidence_units": [
+          {
+            "category_id": "childhood",
+            "custody_role": "support_required",
+            "span_id": "e-child"
+          },
+          {
+            "category_id": "current",
+            "custody_role": "support_required",
+            "span_id": "e-current"
+          },
+          {
+            "category_id": "contrast",
+            "custody_role": "contrast_required",
+            "span_id": "e-contrast"
+          }
         ],
         "field_id": "baseline:AUTHORITY_SOMATIC",
         "kind": "classifier_result_validation_and_score",
@@ -465,10 +772,32 @@
           "childhood_continuity": "present_since_childhood",
           "confidence": 0.8,
           "context_notes": "synthetic fixture",
-          "counterevidence_span_ids": [],
-          "evidence_span_ids": [
-            "e-child",
-            "e-current"
+          "evidence_assessments": [
+            {
+              "archetype_ids": [
+                "1"
+              ],
+              "category_id": "childhood",
+              "custody_role": "support_required",
+              "evidence_role": "support",
+              "span_id": "e-child"
+            },
+            {
+              "archetype_ids": [
+                "1"
+              ],
+              "category_id": "current",
+              "custody_role": "support_required",
+              "evidence_role": "support",
+              "span_id": "e-current"
+            },
+            {
+              "archetype_ids": [],
+              "category_id": "contrast",
+              "custody_role": "contrast_required",
+              "evidence_role": "contrast",
+              "span_id": "e-contrast"
+            }
           ],
           "field_id": "baseline:AUTHORITY_SOMATIC",
           "forced_choice": false,
@@ -506,10 +835,22 @@
           "candidate-d": "d",
           "candidate-e": "e"
         },
-        "evidence_unit_ids": [
-          "e-child",
-          "e-current",
-          "e-contrast"
+        "evidence_units": [
+          {
+            "category_id": "childhood",
+            "custody_role": "support_required",
+            "span_id": "e-child"
+          },
+          {
+            "category_id": "current",
+            "custody_role": "support_required",
+            "span_id": "e-current"
+          },
+          {
+            "category_id": "contrast",
+            "custody_role": "contrast_required",
+            "span_id": "e-contrast"
+          }
         ],
         "field_id": "baseline:AUTHORITY_SOMATIC",
         "kind": "classifier_result_validation_and_score",
@@ -518,10 +859,34 @@
           "childhood_continuity": "present_since_childhood",
           "confidence": 0.8,
           "context_notes": "synthetic fixture",
-          "counterevidence_span_ids": [],
-          "evidence_span_ids": [
-            "e-child",
-            "e-current"
+          "evidence_assessments": [
+            {
+              "archetype_ids": [
+                "a",
+                "b"
+              ],
+              "category_id": "childhood",
+              "custody_role": "support_required",
+              "evidence_role": "support",
+              "span_id": "e-child"
+            },
+            {
+              "archetype_ids": [
+                "a",
+                "b"
+              ],
+              "category_id": "current",
+              "custody_role": "support_required",
+              "evidence_role": "support",
+              "span_id": "e-current"
+            },
+            {
+              "archetype_ids": [],
+              "category_id": "contrast",
+              "custody_role": "contrast_required",
+              "evidence_role": "contrast",
+              "span_id": "e-contrast"
+            }
           ],
           "field_id": "baseline:AUTHORITY_SOMATIC",
           "forced_choice": false,
@@ -564,10 +929,22 @@
           "candidate-d": "d",
           "candidate-e": "e"
         },
-        "evidence_unit_ids": [
-          "e-child",
-          "e-current",
-          "e-contrast"
+        "evidence_units": [
+          {
+            "category_id": "childhood",
+            "custody_role": "support_required",
+            "span_id": "e-child"
+          },
+          {
+            "category_id": "current",
+            "custody_role": "support_required",
+            "span_id": "e-current"
+          },
+          {
+            "category_id": "contrast",
+            "custody_role": "contrast_required",
+            "span_id": "e-contrast"
+          }
         ],
         "field_id": "baseline:AUTHORITY_SOMATIC",
         "kind": "classifier_result_validation_and_score",
@@ -576,10 +953,36 @@
           "childhood_continuity": "present_since_childhood",
           "confidence": 0.8,
           "context_notes": "synthetic fixture",
-          "counterevidence_span_ids": [],
-          "evidence_span_ids": [
-            "e-child",
-            "e-current"
+          "evidence_assessments": [
+            {
+              "archetype_ids": [
+                "a",
+                "b",
+                "c"
+              ],
+              "category_id": "childhood",
+              "custody_role": "support_required",
+              "evidence_role": "support",
+              "span_id": "e-child"
+            },
+            {
+              "archetype_ids": [
+                "a",
+                "b",
+                "c"
+              ],
+              "category_id": "current",
+              "custody_role": "support_required",
+              "evidence_role": "support",
+              "span_id": "e-current"
+            },
+            {
+              "archetype_ids": [],
+              "category_id": "contrast",
+              "custody_role": "contrast_required",
+              "evidence_role": "contrast",
+              "span_id": "e-contrast"
+            }
           ],
           "field_id": "baseline:AUTHORITY_SOMATIC",
           "forced_choice": false,
@@ -623,10 +1026,22 @@
           "candidate-d": "d",
           "candidate-e": "e"
         },
-        "evidence_unit_ids": [
-          "e-child",
-          "e-current",
-          "e-contrast"
+        "evidence_units": [
+          {
+            "category_id": "childhood",
+            "custody_role": "support_required",
+            "span_id": "e-child"
+          },
+          {
+            "category_id": "current",
+            "custody_role": "support_required",
+            "span_id": "e-current"
+          },
+          {
+            "category_id": "contrast",
+            "custody_role": "contrast_required",
+            "span_id": "e-contrast"
+          }
         ],
         "field_id": "baseline:AUTHORITY_SOMATIC",
         "kind": "classifier_result_validation_and_score",
@@ -635,10 +1050,38 @@
           "childhood_continuity": "present_since_childhood",
           "confidence": 0.8,
           "context_notes": "synthetic fixture",
-          "counterevidence_span_ids": [],
-          "evidence_span_ids": [
-            "e-child",
-            "e-current"
+          "evidence_assessments": [
+            {
+              "archetype_ids": [
+                "a",
+                "b",
+                "c",
+                "d"
+              ],
+              "category_id": "childhood",
+              "custody_role": "support_required",
+              "evidence_role": "support",
+              "span_id": "e-child"
+            },
+            {
+              "archetype_ids": [
+                "a",
+                "b",
+                "c",
+                "d"
+              ],
+              "category_id": "current",
+              "custody_role": "support_required",
+              "evidence_role": "support",
+              "span_id": "e-current"
+            },
+            {
+              "archetype_ids": [],
+              "category_id": "contrast",
+              "custody_role": "contrast_required",
+              "evidence_role": "contrast",
+              "span_id": "e-contrast"
+            }
           ],
           "field_id": "baseline:AUTHORITY_SOMATIC",
           "forced_choice": false,
@@ -683,10 +1126,22 @@
           "candidate-d": "d",
           "candidate-e": "e"
         },
-        "evidence_unit_ids": [
-          "e-child",
-          "e-current",
-          "e-contrast"
+        "evidence_units": [
+          {
+            "category_id": "childhood",
+            "custody_role": "support_required",
+            "span_id": "e-child"
+          },
+          {
+            "category_id": "current",
+            "custody_role": "support_required",
+            "span_id": "e-current"
+          },
+          {
+            "category_id": "contrast",
+            "custody_role": "contrast_required",
+            "span_id": "e-contrast"
+          }
         ],
         "field_id": "baseline:AUTHORITY_SOMATIC",
         "kind": "classifier_result_validation_and_score",
@@ -695,10 +1150,38 @@
           "childhood_continuity": "present_since_childhood",
           "confidence": 0.8,
           "context_notes": "synthetic fixture",
-          "counterevidence_span_ids": [],
-          "evidence_span_ids": [
-            "e-child",
-            "e-current"
+          "evidence_assessments": [
+            {
+              "archetype_ids": [
+                "a",
+                "b",
+                "c",
+                "d"
+              ],
+              "category_id": "childhood",
+              "custody_role": "support_required",
+              "evidence_role": "support",
+              "span_id": "e-child"
+            },
+            {
+              "archetype_ids": [
+                "a",
+                "b",
+                "c",
+                "d"
+              ],
+              "category_id": "current",
+              "custody_role": "support_required",
+              "evidence_role": "support",
+              "span_id": "e-current"
+            },
+            {
+              "archetype_ids": [],
+              "category_id": "contrast",
+              "custody_role": "contrast_required",
+              "evidence_role": "contrast",
+              "span_id": "e-contrast"
+            }
           ],
           "field_id": "baseline:AUTHORITY_SOMATIC",
           "forced_choice": false,
@@ -737,10 +1220,22 @@
           "candidate-d": "d",
           "candidate-e": "e"
         },
-        "evidence_unit_ids": [
-          "e-child",
-          "e-current",
-          "e-contrast"
+        "evidence_units": [
+          {
+            "category_id": "childhood",
+            "custody_role": "support_required",
+            "span_id": "e-child"
+          },
+          {
+            "category_id": "current",
+            "custody_role": "support_required",
+            "span_id": "e-current"
+          },
+          {
+            "category_id": "contrast",
+            "custody_role": "contrast_required",
+            "span_id": "e-contrast"
+          }
         ],
         "field_id": "baseline:AUTHORITY_SOMATIC",
         "kind": "classifier_result_validation_and_score",
@@ -749,10 +1244,40 @@
           "childhood_continuity": "present_since_childhood",
           "confidence": 0.8,
           "context_notes": "synthetic fixture",
-          "counterevidence_span_ids": [],
-          "evidence_span_ids": [
-            "e-child",
-            "e-current"
+          "evidence_assessments": [
+            {
+              "archetype_ids": [
+                "a",
+                "b",
+                "c",
+                "d",
+                "e"
+              ],
+              "category_id": "childhood",
+              "custody_role": "support_required",
+              "evidence_role": "support",
+              "span_id": "e-child"
+            },
+            {
+              "archetype_ids": [
+                "a",
+                "b",
+                "c",
+                "d",
+                "e"
+              ],
+              "category_id": "current",
+              "custody_role": "support_required",
+              "evidence_role": "support",
+              "span_id": "e-current"
+            },
+            {
+              "archetype_ids": [],
+              "category_id": "contrast",
+              "custody_role": "contrast_required",
+              "evidence_role": "contrast",
+              "span_id": "e-contrast"
+            }
           ],
           "field_id": "baseline:AUTHORITY_SOMATIC",
           "forced_choice": false,
@@ -789,10 +1314,22 @@
           "candidate-a": "a",
           "candidate-b": "b"
         },
-        "evidence_unit_ids": [
-          "e-child",
-          "e-current",
-          "e-contrast"
+        "evidence_units": [
+          {
+            "category_id": "childhood",
+            "custody_role": "support_required",
+            "span_id": "e-child"
+          },
+          {
+            "category_id": "current",
+            "custody_role": "support_required",
+            "span_id": "e-current"
+          },
+          {
+            "category_id": "contrast",
+            "custody_role": "contrast_required",
+            "span_id": "e-contrast"
+          }
         ],
         "field_id": "baseline:AUTHORITY_SOMATIC",
         "kind": "classifier_result_validation_and_score",
@@ -801,10 +1338,34 @@
           "childhood_continuity": "present_since_childhood",
           "confidence": 0.8,
           "context_notes": "synthetic fixture",
-          "counterevidence_span_ids": [],
-          "evidence_span_ids": [
-            "e-child",
-            "e-current"
+          "evidence_assessments": [
+            {
+              "archetype_ids": [
+                "a",
+                "a"
+              ],
+              "category_id": "childhood",
+              "custody_role": "support_required",
+              "evidence_role": "support",
+              "span_id": "e-child"
+            },
+            {
+              "archetype_ids": [
+                "a",
+                "a"
+              ],
+              "category_id": "current",
+              "custody_role": "support_required",
+              "evidence_role": "support",
+              "span_id": "e-current"
+            },
+            {
+              "archetype_ids": [],
+              "category_id": "contrast",
+              "custody_role": "contrast_required",
+              "evidence_role": "contrast",
+              "span_id": "e-contrast"
+            }
           ],
           "field_id": "baseline:AUTHORITY_SOMATIC",
           "forced_choice": false,
@@ -835,10 +1396,22 @@
           "candidate-0": "0",
           "candidate-1": "1"
         },
-        "evidence_unit_ids": [
-          "e-child",
-          "e-current",
-          "e-contrast"
+        "evidence_units": [
+          {
+            "category_id": "childhood",
+            "custody_role": "support_required",
+            "span_id": "e-child"
+          },
+          {
+            "category_id": "current",
+            "custody_role": "support_required",
+            "span_id": "e-current"
+          },
+          {
+            "category_id": "contrast",
+            "custody_role": "contrast_required",
+            "span_id": "e-contrast"
+          }
         ],
         "field_id": "baseline:AUTHORITY_SOMATIC",
         "kind": "classifier_result_validation_and_score",
@@ -847,10 +1420,32 @@
           "childhood_continuity": "present_since_childhood",
           "confidence": 0.8,
           "context_notes": "synthetic fixture",
-          "counterevidence_span_ids": [],
-          "evidence_span_ids": [
-            "e-child",
-            "e-current"
+          "evidence_assessments": [
+            {
+              "archetype_ids": [
+                "unknown-label"
+              ],
+              "category_id": "childhood",
+              "custody_role": "support_required",
+              "evidence_role": "support",
+              "span_id": "e-child"
+            },
+            {
+              "archetype_ids": [
+                "unknown-label"
+              ],
+              "category_id": "current",
+              "custody_role": "support_required",
+              "evidence_role": "support",
+              "span_id": "e-current"
+            },
+            {
+              "archetype_ids": [],
+              "category_id": "contrast",
+              "custody_role": "contrast_required",
+              "evidence_role": "contrast",
+              "span_id": "e-contrast"
+            }
           ],
           "field_id": "baseline:AUTHORITY_SOMATIC",
           "forced_choice": false,
@@ -879,10 +1474,22 @@
           "candidate-0": "0",
           "candidate-1": "1"
         },
-        "evidence_unit_ids": [
-          "e-child",
-          "e-current",
-          "e-contrast"
+        "evidence_units": [
+          {
+            "category_id": "childhood",
+            "custody_role": "support_required",
+            "span_id": "e-child"
+          },
+          {
+            "category_id": "current",
+            "custody_role": "support_required",
+            "span_id": "e-current"
+          },
+          {
+            "category_id": "contrast",
+            "custody_role": "contrast_required",
+            "span_id": "e-contrast"
+          }
         ],
         "field_id": "baseline:AUTHORITY_SOMATIC",
         "kind": "classifier_result_validation_and_score",
@@ -891,10 +1498,32 @@
           "childhood_continuity": "present_since_childhood",
           "confidence": 0.0,
           "context_notes": "synthetic fixture",
-          "counterevidence_span_ids": [],
-          "evidence_span_ids": [
-            "e-child",
-            "e-current"
+          "evidence_assessments": [
+            {
+              "archetype_ids": [
+                "1"
+              ],
+              "category_id": "childhood",
+              "custody_role": "support_required",
+              "evidence_role": "support",
+              "span_id": "e-child"
+            },
+            {
+              "archetype_ids": [
+                "1"
+              ],
+              "category_id": "current",
+              "custody_role": "support_required",
+              "evidence_role": "support",
+              "span_id": "e-current"
+            },
+            {
+              "archetype_ids": [],
+              "category_id": "contrast",
+              "custody_role": "contrast_required",
+              "evidence_role": "contrast",
+              "span_id": "e-contrast"
+            }
           ],
           "field_id": "baseline:AUTHORITY_SOMATIC",
           "forced_choice": false,
@@ -984,10 +1613,22 @@
           "candidate-0": "0",
           "candidate-1": "1"
         },
-        "evidence_unit_ids": [
-          "e-child",
-          "e-current",
-          "e-contrast"
+        "evidence_units": [
+          {
+            "category_id": "childhood",
+            "custody_role": "support_required",
+            "span_id": "e-child"
+          },
+          {
+            "category_id": "current",
+            "custody_role": "support_required",
+            "span_id": "e-current"
+          },
+          {
+            "category_id": "contrast",
+            "custody_role": "contrast_required",
+            "span_id": "e-contrast"
+          }
         ],
         "field_id": "baseline:AUTHORITY_SOMATIC",
         "kind": "classifier_result_validation_and_score",
@@ -996,9 +1637,23 @@
           "childhood_continuity": "present_since_childhood",
           "confidence": 0.8,
           "context_notes": "synthetic fixture",
-          "counterevidence_span_ids": [],
-          "evidence_span_ids": [
-            "other-job:evidence"
+          "evidence_assessments": [
+            {
+              "archetype_ids": [
+                "1"
+              ],
+              "category_id": "childhood",
+              "custody_role": "support_required",
+              "evidence_role": "support",
+              "span_id": "other-job:evidence"
+            },
+            {
+              "archetype_ids": [],
+              "category_id": "contrast",
+              "custody_role": "contrast_required",
+              "evidence_role": "contrast",
+              "span_id": "e-contrast"
+            }
           ],
           "field_id": "baseline:AUTHORITY_SOMATIC",
           "forced_choice": false,
@@ -1693,6 +2348,596 @@
       },
       "required_assertions": [
         "canonical_score_rank_bytes_identical"
+      ]
+    },
+    {
+      "expected_abstention": true,
+      "expected_validator_state": "technical_fail_no_score_or_rank",
+      "fixture_id": "COMPLETED_EMPTY_RESULTS_TECHNICAL_FAIL",
+      "input": {
+        "kind": "classifier_envelope_validation",
+        "request_jobs": [
+          {
+            "field_id": "baseline:TYPE_ENTRY",
+            "job_id": "job-1"
+          }
+        ],
+        "response": {
+          "results": [],
+          "top_level_status": "completed"
+        }
+      },
+      "required_assertions": [
+        "completed_requires_nonempty_exact_bijection",
+        "no_partial_score",
+        "no_rank"
+      ]
+    },
+    {
+      "expected_abstention": true,
+      "expected_validator_state": "technical_fail_no_score_or_rank",
+      "fixture_id": "COMPLETED_OMITTED_RESULT_TECHNICAL_FAIL",
+      "input": {
+        "kind": "classifier_envelope_validation",
+        "request_jobs": [
+          {
+            "field_id": "baseline:TYPE_ENTRY",
+            "job_id": "job-1"
+          },
+          {
+            "field_id": "baseline:CENTER_G",
+            "job_id": "job-2"
+          }
+        ],
+        "response_result_identities": [
+          {
+            "field_id": "baseline:TYPE_ENTRY",
+            "job_id": "job-1"
+          }
+        ],
+        "top_level_status": "completed"
+      },
+      "required_assertions": [
+        "omitted_job_fails_batch_atomically",
+        "no_field_level_abstention",
+        "no_rank"
+      ]
+    },
+    {
+      "expected_abstention": true,
+      "expected_validator_state": "technical_fail_no_score_or_rank",
+      "fixture_id": "COMPLETED_DUPLICATE_RESULT_TECHNICAL_FAIL",
+      "input": {
+        "kind": "classifier_envelope_validation",
+        "request_jobs": [
+          {
+            "field_id": "baseline:TYPE_ENTRY",
+            "job_id": "job-1"
+          },
+          {
+            "field_id": "baseline:CENTER_G",
+            "job_id": "job-2"
+          }
+        ],
+        "response_result_identities": [
+          {
+            "field_id": "baseline:TYPE_ENTRY",
+            "job_id": "job-1"
+          },
+          {
+            "field_id": "baseline:TYPE_ENTRY",
+            "job_id": "job-1"
+          }
+        ],
+        "top_level_status": "completed"
+      },
+      "required_assertions": [
+        "duplicate_result_fails_batch_atomically",
+        "no_rank"
+      ]
+    },
+    {
+      "expected_abstention": true,
+      "expected_validator_state": "technical_fail_no_score_or_rank",
+      "fixture_id": "COMPLETED_EXTRA_RESULT_TECHNICAL_FAIL",
+      "input": {
+        "kind": "classifier_envelope_validation",
+        "request_jobs": [
+          {
+            "field_id": "baseline:TYPE_ENTRY",
+            "job_id": "job-1"
+          }
+        ],
+        "response_result_identities": [
+          {
+            "field_id": "baseline:TYPE_ENTRY",
+            "job_id": "job-1"
+          },
+          {
+            "field_id": "baseline:CENTER_G",
+            "job_id": "job-extra"
+          }
+        ],
+        "top_level_status": "completed"
+      },
+      "required_assertions": [
+        "extra_result_fails_batch_atomically",
+        "no_rank"
+      ]
+    },
+    {
+      "expected_abstention": true,
+      "expected_validator_state": "technical_fail_no_score_or_rank",
+      "fixture_id": "COMPLETED_JOB_FIELD_ORDER_MISMATCH_TECHNICAL_FAIL",
+      "input": {
+        "kind": "classifier_envelope_validation",
+        "request_jobs": [
+          {
+            "field_id": "baseline:TYPE_ENTRY",
+            "job_id": "job-1"
+          },
+          {
+            "field_id": "baseline:CENTER_G",
+            "job_id": "job-2"
+          }
+        ],
+        "response_result_identities": [
+          {
+            "field_id": "baseline:CENTER_G",
+            "job_id": "job-2"
+          },
+          {
+            "field_id": "baseline:TYPE_ENTRY",
+            "job_id": "job-1"
+          }
+        ],
+        "top_level_status": "completed"
+      },
+      "required_assertions": [
+        "request_order_is_identity",
+        "exact_string_match_no_normalization",
+        "no_rank"
+      ]
+    },
+    {
+      "expected_abstention": true,
+      "expected_validator_state": "technical_fail_before_transport",
+      "fixture_id": "DUPLICATE_REQUEST_JOB_IDENTITY_TECHNICAL_FAIL",
+      "input": {
+        "kind": "classifier_request_validation",
+        "request_jobs": [
+          {
+            "field_id": "baseline:TYPE_ENTRY",
+            "job_id": "job-1"
+          },
+          {
+            "field_id": "baseline:TYPE_ENTRY",
+            "job_id": "job-1"
+          }
+        ]
+      },
+      "required_assertions": [
+        "request_job_pair_must_be_unique",
+        "no_transport",
+        "no_rank"
+      ]
+    },
+    {
+      "expected_abstention": true,
+      "expected_validator_state": "protocol_invalid_no_score_or_rank",
+      "fixture_id": "FORBIDDEN_OUTPUT_NONEMPTY_RESULTS_INVALID",
+      "input": {
+        "kind": "classifier_envelope_validation",
+        "response_result_identities": [
+          {
+            "field_id": "baseline:TYPE_ENTRY",
+            "job_id": "job-1"
+          }
+        ],
+        "top_level_status": "forbidden_input"
+      },
+      "required_assertions": [
+        "forbidden_input_requires_empty_results",
+        "no_rank"
+      ]
+    },
+    {
+      "expected_abstention": false,
+      "expected_validator_state": "valid",
+      "fixture_id": "POSITIVE_CATEGORIES_SUPPORT_NEUTRAL_CONTRAST_VALID",
+      "input": {
+        "assessments": [
+          {
+            "archetype_ids": [
+              "gate:24"
+            ],
+            "category_id": "childhood_driver",
+            "custody_role": "support_required",
+            "evidence_role": "support",
+            "span_id": "e-child"
+          },
+          {
+            "archetype_ids": [
+              "gate:24"
+            ],
+            "category_id": "current_driver",
+            "custody_role": "support_required",
+            "evidence_role": "support",
+            "span_id": "e-current"
+          },
+          {
+            "archetype_ids": [],
+            "category_id": "non_driver_contrast",
+            "custody_role": "contrast_required",
+            "evidence_role": "contrast",
+            "span_id": "e-contrast"
+          }
+        ],
+        "evidence_units": [
+          {
+            "category_id": "childhood_driver",
+            "custody_role": "support_required",
+            "span_id": "e-child"
+          },
+          {
+            "category_id": "current_driver",
+            "custody_role": "support_required",
+            "span_id": "e-current"
+          },
+          {
+            "category_id": "non_driver_contrast",
+            "custody_role": "contrast_required",
+            "span_id": "e-contrast"
+          }
+        ],
+        "kind": "categorical_evidence_role_validation",
+        "required_contrast_categories": [
+          "non_driver_contrast"
+        ],
+        "required_positive_categories": [
+          "childhood_driver",
+          "current_driver"
+        ]
+      },
+      "required_assertions": [
+        "all_positive_categories_support",
+        "mandatory_contrast_evaluated",
+        "contrast_not_positive_support"
+      ]
+    },
+    {
+      "expected_abstention": true,
+      "expected_validator_state": "insufficient_evidence",
+      "fixture_id": "MISSING_MANDATORY_CONTRAST_INSUFFICIENT",
+      "input": {
+        "assessments": [
+          {
+            "archetype_ids": [
+              "gate:24"
+            ],
+            "category_id": "childhood_driver",
+            "custody_role": "support_required",
+            "evidence_role": "support",
+            "span_id": "e-child"
+          },
+          {
+            "archetype_ids": [
+              "gate:24"
+            ],
+            "category_id": "current_driver",
+            "custody_role": "support_required",
+            "evidence_role": "support",
+            "span_id": "e-current"
+          }
+        ],
+        "evidence_units": [
+          {
+            "category_id": "childhood_driver",
+            "custody_role": "support_required",
+            "span_id": "e-child"
+          },
+          {
+            "category_id": "current_driver",
+            "custody_role": "support_required",
+            "span_id": "e-current"
+          }
+        ],
+        "kind": "categorical_evidence_role_validation",
+        "required_contrast_categories": [
+          "non_driver_contrast"
+        ],
+        "required_positive_categories": [
+          "childhood_driver",
+          "current_driver"
+        ]
+      },
+      "required_assertions": [
+        "minimum_evidence_passed_false",
+        "missing_contrast_abstains"
+      ]
+    },
+    {
+      "expected_abstention": false,
+      "expected_validator_state": "valid",
+      "fixture_id": "CONTRAST_RULES_OUT_ALTERNATIVE_WITHOUT_CONTRADICTING_SELECTED",
+      "input": {
+        "contrast_assessment": {
+          "archetype_ids": [],
+          "category_id": "non_driver_contrast",
+          "custody_role": "contrast_required",
+          "evidence_role": "contrast",
+          "span_id": "e-contrast"
+        },
+        "evidence_units": [
+          {
+            "category_id": "non_driver_contrast",
+            "custody_role": "contrast_required",
+            "span_id": "e-contrast"
+          }
+        ],
+        "kind": "categorical_evidence_role_validation",
+        "required_contrast_categories": [
+          "non_driver_contrast"
+        ],
+        "required_positive_categories": [],
+        "returned_label": "gate:24",
+        "ruled_out_alternative": "gate:61"
+      },
+      "required_assertions": [
+        "selected_label_unchanged",
+        "contrast_does_not_become_support",
+        "contrast_not_counterevidence"
+      ]
+    },
+    {
+      "expected_abstention": true,
+      "expected_validator_state": "counterevidence_requires_revised_classification",
+      "fixture_id": "CONTRAST_DIRECTLY_CONTRADICTS_SELECTED_LABEL",
+      "input": {
+        "contrast_assessment": {
+          "archetype_ids": [
+            "gate:24"
+          ],
+          "category_id": "non_driver_contrast",
+          "custody_role": "contrast_required",
+          "evidence_role": "counterevidence",
+          "span_id": "e-contrast"
+        },
+        "evidence_units": [
+          {
+            "category_id": "non_driver_contrast",
+            "custody_role": "contrast_required",
+            "span_id": "e-contrast"
+          }
+        ],
+        "kind": "categorical_evidence_role_validation",
+        "required_contrast_categories": [
+          "non_driver_contrast"
+        ],
+        "required_positive_categories": [],
+        "unchanged_returned_label": "gate:24"
+      },
+      "required_assertions": [
+        "contrast_custody_retained",
+        "counterevidence_names_contradicted_label",
+        "status_label_set_or_confidence_must_change"
+      ]
+    },
+    {
+      "expected_abstention": false,
+      "expected_candidate_scores": {
+        "full-1-8": "1",
+        "hanging-gate-only": "1/2",
+        "neither": "0"
+      },
+      "expected_validator_state": "valid",
+      "fixture_id": "DEPENDENCY_ORIGINAL_CHANNEL_CAP",
+      "input": {
+        "cluster_id": "DC:ORIGINAL_CONTRIBUTION",
+        "field_scores_by_candidate": {
+          "full-1-8": {
+            "baseline:ORIGINAL_CONTRIBUTION": "1",
+            "channel:1-8": "1"
+          },
+          "hanging-gate-only": {
+            "baseline:ORIGINAL_CONTRIBUTION": "1",
+            "channel:1-8": "0"
+          },
+          "neither": {
+            "baseline:ORIGINAL_CONTRIBUTION": "0",
+            "channel:1-8": "0"
+          }
+        },
+        "kind": "dependency_cluster_score"
+      },
+      "required_assertions": [
+        "cluster_weight_at_most_one",
+        "one_denominator_unit",
+        "partial_or_values_macro_averaged"
+      ]
+    },
+    {
+      "expected_abstention": false,
+      "expected_candidate_scores": {
+        "all-four-match": "1",
+        "two-of-four-match": "1/2"
+      },
+      "expected_validator_state": "valid",
+      "fixture_id": "DEPENDENCY_PROFILE_DERIVED_CAP",
+      "input": {
+        "cluster_id": "DC:PROFILE_STRUCTURE",
+        "field_ids": [
+          "baseline:PROFILE_24",
+          "baseline:PROFILE_LINE5_PROJECTION",
+          "baseline:PROFILE_LINE6_PHASES",
+          "profile"
+        ],
+        "field_scores_by_candidate": {
+          "all-four-match": {
+            "baseline:PROFILE_24": "1",
+            "baseline:PROFILE_LINE5_PROJECTION": "1",
+            "baseline:PROFILE_LINE6_PHASES": "1",
+            "profile": "1"
+          },
+          "two-of-four-match": {
+            "baseline:PROFILE_24": "1",
+            "baseline:PROFILE_LINE5_PROJECTION": "1",
+            "baseline:PROFILE_LINE6_PHASES": "0",
+            "profile": "0"
+          }
+        },
+        "kind": "dependency_cluster_score"
+      },
+      "required_assertions": [
+        "four_members_macro_averaged",
+        "one_denominator_unit",
+        "adaptive_profile_not_extra_weight"
+      ]
+    },
+    {
+      "expected_abstention": false,
+      "expected_candidate_scores": {
+        "gate-1-no-channel": "1/2"
+      },
+      "expected_validator_state": "valid",
+      "fixture_id": "DEPENDENCY_PARTIAL_OR_DIVERGENCE",
+      "input": {
+        "candidate_values": {
+          "baseline:ORIGINAL_CONTRIBUTION": "1",
+          "channel:1-8": "0"
+        },
+        "kind": "dependency_cluster_score"
+      },
+      "required_assertions": [
+        "differing_member_columns_are_valid",
+        "exact_macro_average"
+      ]
+    },
+    {
+      "expected_abstention": false,
+      "expected_candidate_scores": {
+        "candidate": "1"
+      },
+      "expected_validator_state": "valid",
+      "fixture_id": "DEPENDENCY_MEMBER_ABSTAINS",
+      "input": {
+        "field_scores": {
+          "baseline:ORIGINAL_CONTRIBUTION": "1",
+          "channel:1-8": "abstain"
+        },
+        "kind": "dependency_cluster_score"
+      },
+      "required_assertions": [
+        "abstention_removed_not_zero",
+        "cluster_still_one_denominator_unit"
+      ]
+    },
+    {
+      "expected_abstention": false,
+      "expected_candidate_scores": {
+        "candidate": "1/2"
+      },
+      "expected_validator_state": "valid",
+      "fixture_id": "DEPENDENCY_REPEATED_PROBE_NO_EXTRA_WEIGHT",
+      "input": {
+        "field_id": "baseline:ORIGINAL_CONTRIBUTION",
+        "kind": "within_field_probe_aggregation",
+        "probe_ids": [
+          "probe-1",
+          "probe-2"
+        ],
+        "probe_scores": {
+          "probe-1": "1",
+          "probe-2": "0"
+        }
+      },
+      "required_assertions": [
+        "probe_macro_inside_field",
+        "no_extra_cluster",
+        "no_extra_denominator_unit",
+        "duplicate_probe_id_invalid"
+      ]
+    },
+    {
+      "expected_abstention": false,
+      "expected_candidate_scores": {
+        "candidate": "2/3"
+      },
+      "expected_validator_state": "valid",
+      "fixture_id": "DEPENDENCY_EXACT_RATIONAL_MACRO",
+      "input": {
+        "eligible_member_scores": [
+          "1",
+          "1/3"
+        ],
+        "kind": "dependency_cluster_score"
+      },
+      "required_assertions": [
+        "exact_fraction_two_thirds",
+        "no_float_conversion",
+        "exact_tie_preserved"
+      ]
+    },
+    {
+      "expected_abstention": true,
+      "expected_validator_state": "technical_fail_no_score_or_rank",
+      "fixture_id": "COMPLETED_REQUEST_ID_MISMATCH_TECHNICAL_FAIL",
+      "input": {
+        "kind": "classifier_envelope_validation",
+        "request_id": "request-1",
+        "request_jobs": [
+          {
+            "field_id": "baseline:TYPE_ENTRY",
+            "job_id": "job-1"
+          }
+        ],
+        "response_request_id": "request-1-padded",
+        "response_result_identities": [
+          {
+            "field_id": "baseline:TYPE_ENTRY",
+            "job_id": "job-1"
+          }
+        ],
+        "top_level_status": "completed"
+      },
+      "required_assertions": [
+        "request_id_exact_string_match",
+        "no_normalization_or_repair",
+        "no_rank"
+      ]
+    },
+    {
+      "expected_abstention": true,
+      "expected_validator_state": "cluster_omitted_no_denominator_unit",
+      "fixture_id": "DEPENDENCY_ALL_MEMBERS_ABSTAIN_OMITS_CLUSTER",
+      "input": {
+        "field_scores": {
+          "baseline:ORIGINAL_CONTRIBUTION": "abstain",
+          "channel:1-8": "abstain"
+        },
+        "kind": "dependency_cluster_score"
+      },
+      "required_assertions": [
+        "all_members_abstain",
+        "cluster_not_scored_as_zero",
+        "cluster_removed_from_denominator"
+      ]
+    },
+    {
+      "expected_abstention": true,
+      "expected_validator_state": "technical_fail_duplicate_probe_id",
+      "fixture_id": "DEPENDENCY_DUPLICATE_PROBE_ID_TECHNICAL_FAIL",
+      "input": {
+        "field_id": "baseline:ORIGINAL_CONTRIBUTION",
+        "kind": "within_field_probe_aggregation",
+        "probe_ids": [
+          "probe-1",
+          "probe-1"
+        ]
+      },
+      "required_assertions": [
+        "exact_probe_id_replay_invalid",
+        "no_score_or_rank"
       ]
     }
   ],

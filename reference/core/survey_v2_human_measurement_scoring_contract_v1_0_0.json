@@ -1,5 +1,6 @@
 {
   "adaptive_selection": {
+    "dependency_cluster_rule": "An adaptive field updates its assigned cluster score and never creates an additional denominator unit when that cluster is already eligible; profile therefore remains inside DC:PROFILE_STRUCTURE.",
     "field_order": [
       "profile",
       "activation:personality:mars",
@@ -30,11 +31,17 @@
       "classified": 0.95,
       "mixed": 0.8
     },
+    "evidence_categories": {
+      "childhood": "support_required",
+      "contrast": "contrast_required",
+      "current": "support_required"
+    },
     "evidence_units": [
       "<field_id>:childhood",
       "<field_id>:current",
       "<field_id>:contrast"
     ],
+    "minimum_evidence_gate": "For classified output, childhood and current must support the selected label and the contrast category must be present and evaluated. For mixed output, each required life-stage category must support at least one returned label and contrast must be present and evaluated. Missing contrast makes minimum_evidence_passed=false.",
     "prompt_template": "Consider both patterns below. Do not choose the one that sounds better. Describe what actually happened.\nPattern A: {display_anchor_a}\nPattern B: {display_anchor_b}\nChildhood, before age 13: give one specific event or repeated situation showing which pattern, if either, was more characteristic.\nCurrent adult life: give one specific event or repeated situation in a different setting showing which pattern, if either, is more characteristic now.\nContrast: give one specific situation where your usual pattern did not apply or changed.\nIf you cannot remember or neither pattern fits, say that directly.",
     "rules": [
       {
@@ -125,6 +132,14 @@
       "shallow_or_incidental": "eligible",
       "substantial_semantic_or_technical": "requires_blind_gpt_adjudication"
     },
+    "h1_exposure_adjudication_package": {
+      "contract": "reference/core/survey_v2_h1_exposure_adjudication_contract_v1_0_0.json",
+      "fixtures": "reference/core/survey_v2_h1_exposure_adjudication_fixtures_v1_0_0.json",
+      "manifest": "state/SURVEY-V2-H1-EXPOSURE-ADJUDICATION-FREEZE-MANIFEST-v1.0.0.json",
+      "output_schema": "reference/core/survey_v2_h1_exposure_adjudicator_output_schema_v1_0_0.json",
+      "request_schema": "reference/core/survey_v2_h1_exposure_adjudication_request_schema_v1_0_0.json",
+      "system_prompt": "reference/core/survey_v2_h1_exposure_adjudicator_system_prompt_v1_0_0.txt"
+    },
     "participant_exposure_rule": "Record prior HD/astrology exposure descriptively for stratification; exposure alone is not an automatic participant exclusion.",
     "participant_h1_exposure_divergence_reason": "Participant exposure is descriptive rather than an automatic exclusion because the participant supplies measured narrative, whereas H1 requires an independently clean author of interpretation or construct content.",
     "source_boundary": "No source-document image is collected. The declared recorded time defines the tested true state and does not prove the historical birth moment was error-free."
@@ -139,12 +154,17 @@
   },
   "channel_measurement": {
     "allocation": "One process record and one evidence-unit ID may support at most one channel.",
+    "context_only_evidence_categories": {
+      "ability_or_process_description": "support_required",
+      "different_setting_absent": "support_required",
+      "setting_present": "support_required"
+    },
     "context_only_record_fields": [
       "ability_or_process_description",
       "setting_present",
       "different_setting_absent"
     ],
-    "family_score": "If m channel fields are scorable, matched_binary_labels/m; omit the family when m=0; maximum family weight is 1.",
+    "family_score": "The 17 channel fields assigned to DC:CHANNEL_RESIDUAL_FAMILY are exact-rational macro-averaged over eligible members and contribute at most one cluster weight. The other 19 channel fields are macro-averaged inside their cross-family dependency clusters and are never counted again.",
     "independent_binary_rules": {
       "0": "One context-only record demonstrates in two settings that the proposed process is not stable cross-context.",
       "1": "One reliable-process record has childhood and current units that both support the channel construct.",
@@ -154,7 +174,14 @@
       "context_only_process_records": 6,
       "reliable_process_records": 6
     },
+    "minimum_evidence_gate": "Every support_required category for the chosen channel rule must have a support assessment and every contrast_required category must be present and evaluated as contrast or counterevidence. Missing required contrast makes minimum_evidence_passed=false.",
     "omission_rule": "Unmentioned channels are abstentions, never inferred absences; unobserved candidates receive neither credit nor penalty.",
+    "reliable_process_evidence_categories": {
+      "childhood_example": "support_required",
+      "current_different_setting_example": "support_required",
+      "process_description": "support_required",
+      "weakened_or_absent_context": "contrast_required"
+    },
     "reliable_process_record_fields": [
       "process_description",
       "childhood_example",
@@ -179,9 +206,10 @@
       "prompt_sha256",
       "request_id",
       "jobs",
-      "per-job field ID, task kind, side lens, body/domain role, complete vocabulary, anchors, minimum-evidence rule, confidence rubric, and evidence units",
+      "per-job field ID, task kind, side lens, body/domain role, complete vocabulary, anchors, positive and mandatory-contrast evidence categories, minimum-evidence rule, confidence rubric, and evidence units with immutable category_id and custody_role",
       "pseudonymous session and evidence IDs"
     ],
+    "forbidden_input_output_rule": "top_level_status=forbidden_input requires results=[] and produces PROTOCOL_INVALID with no score, rank, or scientific result.",
     "forbidden_recursive_keys": [
       "email",
       "name",
@@ -205,7 +233,11 @@
       "leader",
       "fit",
       "any hash derived from forbidden values"
-    ]
+    ],
+    "job_identity_rule": "Every request contains at least one job and every (job_id, field_id) pair is unique; duplicate identities fail before transport.",
+    "request_id_rule": "The response request_id must exactly equal the request request_id.",
+    "result_bijection_failure": "A missing, extra, duplicate, reordered, or mismatched result is TECHNICAL_FAIL with no score, rank, or scientific result; it is not field-level abstention.",
+    "result_bijection_rule": "top_level_status=completed requires exactly one result for every requested job in request order, with job_id and field_id exactly matching the corresponding request job using exact string equality without trimming, case folding, normalization, or repair."
   },
   "classifier_transport": {
     "applies_to": [
@@ -225,17 +257,31 @@
     "required_model_family": "gpt-5.6-sol",
     "required_receipts": [
       "selected model label",
-      "request SHA-256",
+      "returned model label",
+      "per-attempt request SHA-256",
       "raw response SHA-256",
       "parsed output SHA-256"
     ],
+    "retry_identity_rule": "The sole transport retry must use byte-identical request content and therefore the same request SHA-256; every attempt records attempt number, selected model label, returned model label, request SHA-256, and raw-response SHA-256.",
     "selected_model_family_mismatch_rule": "A selected or returned different model family produces TECHNICAL_FAIL with no score or rank.",
     "semantic_retry_count": 0,
+    "serialization_rule": "Every request and parsed output hash is SHA-256 of the exact stored UTF-8 artifact bytes. JSON artifacts use the manifest canonicalization: sorted object keys, indent=2, ensure_ascii=false, allow_nan=false, LF endings, and exactly one trailing newline.",
     "tools_or_retrieval": "none",
     "transport_failure_rule": "One identical transport retry; second failure is TECHNICAL_FAIL with no rank.",
     "unavailable_rule": "If a $0 candidate-blind entitled context cannot be executed, the scientific case is BLOCKED."
   },
   "date_aggregation": "OMITTED_AND_PROHIBITED_FOR_THIS_CASE",
+  "dependency_weighting": {
+    "dependency_cluster_count": 45,
+    "field_dependency_map": "reference/core/survey_v2_field_dependency_map_v1_0_0.json",
+    "field_trace_count": 83,
+    "maximum_weight_per_cluster": 1,
+    "raw_score": "raw_score(c)=sum(cluster_score_d(c) for every eligible dependency cluster d).",
+    "rule": "Exact-rational macro-average over eligible non-abstaining members within each dependency cluster; each eligible cluster appears exactly once in the denominator.",
+    "scope_limit": "This is an exhaustive declared partition of all 83 fields under the frozen construct-level weighting policy, not a claim of exhaustive structural or statistical independence. Center/channel derivations and conditional overlap between any-activation-gate baselines and body-specific activation fields remain disclosed but are not collapsed because their participant-observable constructs differ.",
+    "structural_overlap_rule": "Ten channel fields sharing an exact frozen baseline channel predicate and nine channel fields sharing a declared gate/latent theme move into construct clusters. The 17 remaining distinct channel constructs form one residual normalization family, not one latent construct.",
+    "within_field_probe_rule": "Distinct repeated probes for one field are exact-rational macro-averaged after removing abstaining probes; all-probe abstention omits the field. They never create another field member, cluster, or denominator unit, and exact probe-ID replay is invalid."
+  },
   "development_result_labels": {
     "DEVELOPMENT_SIGNAL_AMBIGUOUS": "true state best_rank=1 and worst_rank>1",
     "DEVELOPMENT_SIGNAL_NEGATIVE": "true state best_rank>1",
@@ -248,47 +294,121 @@
     "design_prompt": "Describe the recurring pattern in this domain that happens automatically, surprises you afterward, or has repeatedly been noticed by other people even when you do not strongly identify with it. Give one specific example before age 13, one specific current example in a different setting, and one nearby pattern that does not fit.",
     "domain_roles": {
       "jupiter": {
+        "mandatory_contrast_categories": [],
         "minimum_evidence": "Two life stages or contexts and one example where violating the principle produced an obstacle or loss of growth.",
+        "positive_evidence_categories": [
+          "earlier_or_first_context",
+          "current_or_second_context",
+          "violation_consequence"
+        ],
         "role": "A recurring principle, opportunity pattern, protection, or personal rule associated with sustainable growth."
       },
       "mars": {
+        "mandatory_contrast_categories": [],
         "minimum_evidence": "An early manifestation, a current manifestation, and an explicit description of change.",
+        "positive_evidence_categories": [
+          "early_manifestation",
+          "current_manifestation",
+          "developmental_change"
+        ],
         "role": "A theme that begins immaturely or awkwardly and develops through repeated experience and maturation."
       },
       "mercury": {
+        "mandatory_contrast_categories": [
+          "important_but_not_repeatedly_communicated"
+        ],
         "minimum_evidence": "Two life stages or communication contexts supporting each eligible label, plus a subject that matters but is not repeatedly communicated.",
+        "positive_evidence_categories": [
+          "earlier_or_first_communication_context",
+          "current_or_second_communication_context"
+        ],
         "role": "Subjects or messages repeatedly expressed in speech, writing, teaching, explanation, advice, or argument."
       },
       "moon": {
+        "mandatory_contrast_categories": [
+          "non_driver_contrast"
+        ],
         "minimum_evidence": "Childhood and current examples supporting each eligible gate label, plus a non-driver contrast.",
+        "positive_evidence_categories": [
+          "childhood_driver",
+          "current_driver"
+        ],
         "role": "Recurring drive or pressure that gets action moving."
       },
       "neptune": {
+        "mandatory_contrast_categories": [],
         "minimum_evidence": "Two life-stage/context examples and explicit uncertainty or opacity; clarity alone cannot satisfy this domain.",
+        "positive_evidence_categories": [
+          "earlier_or_first_context",
+          "current_or_second_context",
+          "uncertainty_or_opacity"
+        ],
         "role": "Recurring mystery, imagination, spirituality, obscurity, or a domain difficult for the person to see clearly."
       },
       "pluto": {
+        "mandatory_contrast_categories": [],
         "minimum_evidence": "Earlier and current manifestations plus an explicit transformation or deepening.",
+        "positive_evidence_categories": [
+          "earlier_manifestation",
+          "current_manifestation",
+          "transformation_or_deepening"
+        ],
         "role": "Long-duration transformation, truth-seeking, renewal, or a theme that deepens through major experience."
       },
       "profile": {
+        "mandatory_contrast_categories": [
+          "negative_profile_contrast"
+        ],
         "minimum_evidence": "Two life stages, one relational or opportunity example, and one negative profile contrast.",
+        "positive_evidence_categories": [
+          "earlier_life_stage",
+          "current_life_stage",
+          "relational_or_opportunity_pattern"
+        ],
         "role": "Combined learning style, social role, relational/opportunity pattern, and developmental trajectory."
       },
       "saturn": {
+        "mandatory_contrast_categories": [
+          "lesson_not_central"
+        ],
         "minimum_evidence": "One earlier difficulty, one current mature or continuing form, and a contrast showing where this lesson is not central.",
+        "positive_evidence_categories": [
+          "earlier_difficulty",
+          "current_mature_or_continuing_form"
+        ],
         "role": "Recurring discipline, accountability, consequence, or demanding lesson that matures into competence."
       },
       "south_node": {
+        "mandatory_contrast_categories": [
+          "later_life_environment_contrast"
+        ],
         "minimum_evidence": "One childhood environment, one adolescent or early-adult environment, and one later-life contrast.",
+        "positive_evidence_categories": [
+          "childhood_environment",
+          "adolescent_or_early_adult_environment"
+        ],
         "role": "Earlier-life environment, scenery, or perspective; it must not be coded as a personality trait."
       },
       "uranus": {
+        "mandatory_contrast_categories": [
+          "convention_followed"
+        ],
         "minimum_evidence": "Two contexts or life stages and one convention the participant does follow.",
+        "positive_evidence_categories": [
+          "earlier_or_first_unconventional_context",
+          "current_or_second_unconventional_context"
+        ],
         "role": "Recurring unconventional originality, mutation, or departure from convention."
       },
       "venus": {
+        "mandatory_contrast_categories": [
+          "value_contrast"
+        ],
         "minimum_evidence": "Early-life and adult examples supporting each eligible label, plus a value contrast.",
+        "positive_evidence_categories": [
+          "early_life_value_pattern",
+          "adult_value_pattern"
+        ],
         "role": "Values, ethics, boundaries, ideals, integrity, or what is worth protecting."
       }
     },
@@ -307,6 +427,22 @@
     ],
     "personality_prompt": "Describe the recurring pattern in this domain that you consciously recognize and identify as your own. Give one specific example before age 13, one specific current example in a different setting, and one nearby pattern that does not fit you.",
     "ties": "Return every tied eligible label; first is primary_archetype and all others are secondary_archetypes; scoring treats the set symmetrically."
+  },
+  "evidence_role_contract": {
+    "contrast": "A mandatory boundary or negative-comparison unit that is present and evaluated but need not positively support the selected label.",
+    "contrast_becomes_counterevidence": "A contrast becomes counterevidence when it directly negates a selected label's required recurring pattern or positively supports an incompatible label. The classifier must then change status, label set, minimum_evidence_passed, or confidence; the same classification may not be preserved by relabeling contradiction as contrast.",
+    "counterevidence": "A unit that substantively contradicts the selected label or supports an incompatible label.",
+    "evidence_assessment_fields": [
+      "span_id",
+      "category_id",
+      "custody_role",
+      "evidence_role",
+      "archetype_ids"
+    ],
+    "minimum_evidence_rule": "For categorical jobs, every positive category supports each eligible label. For classified binary/channel jobs, every support_required category supports the selected label. For mixed binary/channel jobs, every support_required category supports at least one returned label. For every job kind, every contrast_required category is present and evaluated as contrast or counterevidence. Missing mandatory contrast makes minimum_evidence_passed=false. Required contrast is not positive support.",
+    "request_unit_typing": "Every request evidence unit carries immutable category_id and custody_role=support_required|contrast_required.",
+    "role_custody": "Every cited span has exactly one evidence assessment; every ID belongs to the current job and retains its declared category_id and custody_role. Support requires support_required custody. Neutral contrast requires contrast_required custody and no archetype_ids. Counterevidence retains either original custody role and names every contradicted archetype. A span cannot support and counter the same archetype.",
+    "support": "A unit that positively supports an eligible label in a declared positive evidence category."
   },
   "lock_order": [
     "hash_bound_manifest_accepted",
@@ -2450,24 +2586,28 @@
   "repository_base": "b7660b8c9bcf52cbb14bc5442c13a3a8635aad32",
   "representation_revision": {
     "change": "Replace the single complete defined-channel tuple with 36 independently abstainable binary channel fields.",
-    "channel_family_max_weight": 1,
+    "dependency_cluster_count": 45,
     "information_preservation": "Candidate-side binary values encode the original channel set without loss.",
     "new_field_count": 83,
     "old_field_count": 48,
-    "reason": "Participant narrative cannot establish that every unmentioned channel is absent."
+    "reason": "Participant narrative cannot establish that every unmentioned channel is absent.",
+    "residual_channel_family_max_weight": 1
   },
   "schema_version": "survey-v2-human-measurement-scoring-contract-v1.0.0",
   "scoring": {
-    "denominator": "eligible non-channel field count plus one when at least one channel field is eligible",
+    "batch_atomicity": "No field is scored unless request job identities are unique and the completed response is an exact ordered bijection. Any batch-integrity failure is TECHNICAL_FAIL with no score or rank.",
+    "denominator": "D is the count of dependency clusters with at least one eligible non-abstaining member. All 17 residual channel fields belong to one dependency cluster and therefore add at most one denominator unit.",
     "eligibility": [
       "valid JSON and output schema",
+      "request has at least one job and unique exact (job_id,field_id) identities",
       "semantic status/cardinality valid",
       "top_level_status=completed",
+      "results are an exact ordered bijection with request jobs and request_id matches exactly",
       "candidate_blind_attestation=true for every result",
       "minimum_evidence_passed=true",
       "confidence>=0.65",
       "all labels in supplied complete vocabulary",
-      "all evidence IDs belong to the job",
+      "all evidence assessment IDs, categories, custody roles, and archetypes match the job",
       "no forbidden or duplicate evidence use"
     ],
     "fail_closed_blinding_rule": "Any forbidden_input top-level status or false candidate_blind_attestation is PROTOCOL_INVALID with no score, rank, or scientific result.",
@@ -2514,7 +2654,7 @@
     "reference/core/survey_v2_blind_classifier_protocol.json": "4d32f3cd9159771049927a5aec9badb822bc27dbeecf3b31ad9c144d7803ab30",
     "reference/core/survey_v2_classifier_reliability_protocol_v1.json": "ddd5c2cb905ac951792d8ec122bbf2794fdbffcc819a3534ae852dfea2de3210"
   },
-  "status": "candidate_freeze_pending_extra_high_and_pro_review",
-  "supervisor_correction": "HD-ISSUE18-C1-SEMANTIC-GAP-RULING-v1.1.0",
+  "status": "corrected_candidate_pending_issue18_extra_high_disposition",
+  "supervisor_correction": "SURVEYV2-HUMAN-MEASUREMENT-AND-SCORING-FREEZE-v1.PRO-RULING-v1.0.0:SV2-FREEZE-B1-B4",
   "v3_6_caveat": "The 26 binary observables are the frozen clean V3.6 one-off mapping family collapsed from 42 active mappings. They are not a complete canonical V4.3 mapping library and must never be described as one."
 }

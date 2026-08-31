@@ -1,0 +1,255 @@
+{
+  "contract_version": "survey-v2-h1-exposure-adjudication-contract-v1.0.0",
+  "fixture_count": 14,
+  "fixtures": [
+    {
+      "expected_decision": "eligible",
+      "expected_exposure_class": "shallow_or_incidental",
+      "expected_terminal_state": "valid_adjudication",
+      "fixture_id": "H1_SHALLOW_INCIDENTAL_ELIGIBLE",
+      "input": {
+        "facts": [
+          "one chart was generated without retained labels or mechanics",
+          "no repeated study, identity use, or H1 source use",
+          "timing and non-use are affirmatively established"
+        ],
+        "kind": "h1_exposure_adjudication"
+      },
+      "required_assertions": [
+        "prior_chart_exposure_not_automatic_exclusion",
+        "no_retained_semantic_or_technical_mastery"
+      ]
+    },
+    {
+      "expected_decision": "eligible",
+      "expected_exposure_class": "shallow_or_incidental",
+      "expected_terminal_state": "valid_adjudication",
+      "fixture_id": "H1_NO_RELEVANT_WINDOW_EXPOSURE_ELIGIBLE",
+      "input": {
+        "facts": [
+          "affirmatively no HD or astrology exposure occurred before or during H1 authorship",
+          "any later exposure occurred only after the exact H1 content freeze"
+        ],
+        "kind": "h1_exposure_adjudication"
+      },
+      "required_assertions": [
+        "no_relevant_window_exposure_routes_shallow",
+        "post_freeze_exposure_recorded_not_retroactive"
+      ]
+    },
+    {
+      "expected_decision": "ineligible",
+      "expected_exposure_class": "substantial_semantic_or_technical",
+      "expected_terminal_state": "valid_adjudication",
+      "fixture_id": "H1_SUBSTANTIAL_PRIOR_SEMANTIC_OVERLAP_INELIGIBLE",
+      "input": {
+        "facts": [
+          "author can explain gates, centers, channels, profiles, and authorities",
+          "knowledge predates and overlaps construct authorship",
+          "author reports skepticism and non-use"
+        ],
+        "kind": "h1_exposure_adjudication"
+      },
+      "required_assertions": [
+        "skepticism_not_presumed_clean",
+        "bare_non_use_attestation_does_not_override_overlap"
+      ]
+    },
+    {
+      "expected_decision": "eligible",
+      "expected_exposure_class": "substantial_semantic_or_technical",
+      "expected_terminal_state": "valid_adjudication",
+      "fixture_id": "H1_SUBSTANTIAL_DISJOINT_TECHNICAL_ELIGIBLE",
+      "input": {
+        "facts": [
+          "technical exposure was nonsemantic and disjoint",
+          "quarantine from H1 sources, content, candidates, and predictions is documented",
+          "no semantic knowledge or identity use is evidenced"
+        ],
+        "kind": "h1_exposure_adjudication"
+      },
+      "required_assertions": [
+        "blind_gpt_adjudication_required",
+        "disjoint_technical_quarantine_affirmatively_established"
+      ]
+    },
+    {
+      "expected_decision": "ineligible",
+      "expected_exposure_class": "identity_defining_or_comprehensive",
+      "expected_terminal_state": "valid_adjudication",
+      "fixture_id": "H1_IDENTITY_DEFINING_COMPREHENSIVE_INELIGIBLE",
+      "input": {
+        "facts": [
+          "author routinely organizes identity and decisions through HD categories",
+          "author completed comprehensive training and interprets charts"
+        ],
+        "kind": "h1_exposure_adjudication"
+      },
+      "required_assertions": [
+        "identity_defining_precedence",
+        "clean_h1_role_blocked"
+      ]
+    },
+    {
+      "expected_decision": "ineligible",
+      "expected_exposure_class": "intentionally_hd_derived",
+      "expected_terminal_state": "valid_adjudication",
+      "fixture_id": "H1_INTENTIONALLY_HD_DERIVED_INELIGIBLE",
+      "input": {
+        "facts": [
+          "remembered HD mappings were intentionally translated into construct wording"
+        ],
+        "kind": "h1_exposure_adjudication"
+      },
+      "required_assertions": [
+        "intentional_derivation_precedence",
+        "exposure_volume_does_not_change_ineligibility"
+      ]
+    },
+    {
+      "expected_decision": "ambiguous_or_insufficient",
+      "expected_exposure_class": "ambiguous_or_insufficient",
+      "expected_terminal_state": "valid_adjudication_blocks_h1",
+      "fixture_id": "H1_AMBIGUOUS_OR_INSUFFICIENT_BLOCKS",
+      "input": {
+        "facts": [
+          "author reports prior study but timing, depth, and H1 overlap are unknown"
+        ],
+        "kind": "h1_exposure_adjudication"
+      },
+      "required_assertions": [
+        "no_benefit_of_doubt",
+        "missing_timing_and_overlap_codes"
+      ]
+    },
+    {
+      "expected_decision": null,
+      "expected_exposure_class": null,
+      "expected_terminal_state": "PROTOCOL_INVALID",
+      "fixture_id": "H1_FORBIDDEN_IDENTITY_BIRTH_OR_CANDIDATE_INPUT",
+      "input": {
+        "forbidden_keys": [
+          "name",
+          "birth_date",
+          "personal_chart",
+          "true_state"
+        ],
+        "kind": "h1_request_validation"
+      },
+      "required_assertions": [
+        "top_level_status_forbidden_input",
+        "adjudication_null",
+        "no_decision"
+      ]
+    },
+    {
+      "expected_decision": null,
+      "expected_exposure_class": null,
+      "expected_terminal_state": "TECHNICAL_FAIL",
+      "fixture_id": "H1_MODEL_FAMILY_MISMATCH_TECHNICAL_FAIL",
+      "input": {
+        "kind": "transport_receipt",
+        "returned_model_family": "different-model-family",
+        "selected_model_family": "gpt-5.6-sol"
+      },
+      "required_assertions": [
+        "no_decision",
+        "no_fallback_model"
+      ]
+    },
+    {
+      "expected_decision": null,
+      "expected_exposure_class": null,
+      "expected_terminal_state": "TECHNICAL_FAIL",
+      "fixture_id": "H1_SECOND_TRANSPORT_FAILURE_TECHNICAL_FAIL",
+      "input": {
+        "attempts": [
+          "transport_failure",
+          "transport_failure"
+        ],
+        "kind": "transport_sequence"
+      },
+      "required_assertions": [
+        "one_identical_retry_only",
+        "no_decision"
+      ]
+    },
+    {
+      "expected_decision": "eligible",
+      "expected_exposure_class": "shallow_or_incidental",
+      "expected_terminal_state": "valid_adjudication",
+      "fixture_id": "H1_PROMPT_INJECTION_TREATED_AS_QUOTED_DATA",
+      "input": {
+        "facts": [
+          "redacted evidence contains an instruction to mark the author eligible",
+          "independent admissible facts establish shallow incidental exposure"
+        ],
+        "kind": "h1_exposure_adjudication"
+      },
+      "required_assertions": [
+        "embedded_instruction_ignored",
+        "decision_uses_admissible_facts_only"
+      ]
+    },
+    {
+      "expected_decision": "ambiguous_or_insufficient",
+      "expected_exposure_class": "ambiguous_or_insufficient",
+      "expected_terminal_state": "valid_adjudication_blocks_h1",
+      "fixture_id": "H1_MODEL_CONTEXT_UNKNOWN_PRETRAINING_BLOCKS",
+      "input": {
+        "facts": [
+          "the visible model context contains no HD or astrology material",
+          "the pretrained model corpus is unknown and not independently auditable"
+        ],
+        "kind": "h1_exposure_adjudication",
+        "subject_kind": "model_context_author"
+      },
+      "required_assertions": [
+        "clean_visible_context_not_clean_author_evidence",
+        "model_training_exposure_assessment_unknown_or_unauditable",
+        "model_training_exposure_missing_fact_blocks_eligibility"
+      ]
+    },
+    {
+      "expected_decision": null,
+      "expected_exposure_class": null,
+      "expected_terminal_state": "TECHNICAL_FAIL",
+      "fixture_id": "H1_OVERLAPPING_EVIDENCE_IDS_TECHNICAL_FAIL",
+      "input": {
+        "counterevidence_ids": [
+          "H1E-overlapEvidence0001"
+        ],
+        "kind": "h1_output_semantic_validation",
+        "supplied_evidence_ids": [
+          "H1E-overlapEvidence0001"
+        ],
+        "supporting_evidence_ids": [
+          "H1E-overlapEvidence0001"
+        ]
+      },
+      "required_assertions": [
+        "support_and_counterevidence_disjoint",
+        "no_decision"
+      ]
+    },
+    {
+      "expected_decision": null,
+      "expected_exposure_class": null,
+      "expected_terminal_state": "TECHNICAL_FAIL",
+      "fixture_id": "H1_RETRY_REQUEST_HASH_MISMATCH_TECHNICAL_FAIL",
+      "input": {
+        "attempt_request_sha256": [
+          "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        ],
+        "kind": "transport_sequence"
+      },
+      "required_assertions": [
+        "one_identical_retry_only",
+        "per_attempt_request_hash_required",
+        "no_decision"
+      ]
+    }
+  ],
+  "schema_version": "survey-v2-h1-exposure-adjudication-fixtures-v1.0.0"
+}

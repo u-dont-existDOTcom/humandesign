@@ -1,32 +1,67 @@
 {
   "artifacts": [
     {
-      "byte_count": 79270,
+      "byte_count": 89768,
       "path": "reference/core/survey_v2_human_measurement_scoring_contract_v1_0_0.json",
-      "sha256": "53e88db86e6a64c2fc572a5db80ea0694914601ad63b6ea045f18e2ec0e3801c"
+      "sha256": "9fa0aafab594a2c7cfaa1e6265176bbec4c6fb416a308fbb1d8a4e42cf1f506b"
     },
     {
-      "byte_count": 3008,
+      "byte_count": 5454,
       "path": "reference/core/survey_v2_classifier_system_prompt_v1_0_0.txt",
-      "sha256": "0462ab593e523d5fe08b24e838d4aea4a8fd651f7d3226c435fe542c235bf343"
+      "sha256": "5daca1c7ccfc13ade2ea752d4dee9d04924d67ff37da9c4995d2c00a0be7fe53"
     },
     {
-      "byte_count": 3090,
+      "byte_count": 6908,
       "path": "reference/core/survey_v2_classifier_output_schema_v1_0_0.json",
-      "sha256": "8df8fd59c2bbe03f059c786622b60d8df24bb826fb31558fbe7def71cd8e561f"
+      "sha256": "30abd5e0e3691ebbe4e903cb9f69c397a714ff033e59c656e243ba8487b97450"
     },
     {
-      "byte_count": 48916,
+      "byte_count": 86070,
       "path": "reference/core/survey_v2_human_measurement_synthetic_fixtures_v1_0_0.json",
-      "sha256": "030c64ed67a4686888d8728332161e9155939fb6b7a59ca3e4b994f5c784c0fd"
+      "sha256": "21b856e2f9b39b81e345464e5c110918e90b75db53582970a2d6956f4fef5ae7"
     },
     {
-      "byte_count": 4200,
+      "byte_count": 23177,
+      "path": "reference/core/survey_v2_field_dependency_map_v1_0_0.json",
+      "sha256": "8895235775fd343bf587073de43ffd014cd824cc09ee06613720a879881ca3ad"
+    },
+    {
+      "byte_count": 12277,
+      "path": "reference/core/survey_v2_h1_exposure_adjudication_contract_v1_0_0.json",
+      "sha256": "b26e8ca398eb805125ed4ea475243e1d0cb5134bee4c509dd29223355ff1b070"
+    },
+    {
+      "byte_count": 5924,
+      "path": "reference/core/survey_v2_h1_exposure_adjudication_request_schema_v1_0_0.json",
+      "sha256": "1c7f55040d473fd8f4b47107b0edd296a448d9a5121845e907c6fd5eaf412240"
+    },
+    {
+      "byte_count": 5108,
+      "path": "reference/core/survey_v2_h1_exposure_adjudicator_system_prompt_v1_0_0.txt",
+      "sha256": "236c3cfe5fbfc9ee3e03abfa49a3b7c5030276226a953778bb1dc0bef95f8100"
+    },
+    {
+      "byte_count": 18956,
+      "path": "reference/core/survey_v2_h1_exposure_adjudicator_output_schema_v1_0_0.json",
+      "sha256": "9ec56a40cac3c6d31650ae5983083e74985b9ccca56bf2b616cba5787fb9c46c"
+    },
+    {
+      "byte_count": 8751,
+      "path": "reference/core/survey_v2_h1_exposure_adjudication_fixtures_v1_0_0.json",
+      "sha256": "c5f2e976bd378b4c513183f86585ee6e5187c74b3ff34638b92e34319787bdf8"
+    },
+    {
+      "byte_count": 2552,
+      "path": "state/SURVEY-V2-H1-EXPOSURE-ADJUDICATION-FREEZE-MANIFEST-v1.0.0.json",
+      "sha256": "e920ac03ae51c811c2ed4fd54a7e7c28076c8769833c193ff40ea33d57337a80"
+    },
+    {
+      "byte_count": 5976,
       "path": "docs/SURVEY-V2-HUMAN-MEASUREMENT-METHODS-CHECK-v1.0.0.md",
-      "sha256": "1f8e4427cd6d9d78dc6ca8f8fe00b09d1654f06205b2f21a5c08e4bd63d32f7e"
+      "sha256": "332127c213b7d8a253f716150b5fdd83ac7359cc87b256c10cfa714dd19ed7e8"
     }
   ],
-  "authorization_boundary": "This manifest never authorizes implementation, deployment, merge, or human execution. Extra High acceptance only admits the named SURVEYV2-HUMAN-MEASUREMENT-AND-SCORING-FREEZE-v1 Pro review.",
+  "authorization_boundary": "This manifest never authorizes implementation, deployment, merge, participant use, recruitment, or human scientific execution. The single named Pro review returned only SV2-FREEZE-B1 through B4 for correction; this corrected candidate may only return to the existing Issue #18 / Extra High exact-diff boundary. No additional Pro review is authorized.",
   "canonicalization": {
     "digest": "SHA-256",
     "encoding": "UTF-8",
@@ -36,9 +71,11 @@
   },
   "contract_version": "survey-v2-human-measurement-scoring-contract-v1.0.0",
   "fixture_acceptance": {
-    "definition_validation_passed": 49,
+    "definition_validation_passed": 83,
     "failed": 0,
-    "required_fixture_count": 49,
+    "h1_fixture_definitions": 14,
+    "participant_fixture_definitions": 69,
+    "required_fixture_count": 83,
     "runtime_behavior_passed": 0,
     "skipped": 0,
     "status": "SPECIFICATION_ONLY_RUNTIME_NOT_IMPLEMENTED"
@@ -57,9 +94,13 @@
     "adaptive_count": 15,
     "baseline_binary_count": 26,
     "channel_binary_count": 36,
-    "channel_family_max_weight": 1,
+    "dependency_cluster_count": 45,
     "field_count": 83,
-    "fixed_planetary_count": 6
+    "field_to_source_predicate_trace_count": 83,
+    "fixed_planetary_count": 6,
+    "overlapping_channel_fields_moved_to_construct_clusters": 19,
+    "residual_channel_family_count": 17,
+    "residual_channel_family_max_weight": 1
   },
   "schema_version": "survey-v2-human-measurement-freeze-manifest-v1.0.0",
   "source_locks": {
@@ -72,5 +113,8 @@
     "reference/core/survey_v2_blind_classifier_protocol.json": "4d32f3cd9159771049927a5aec9badb822bc27dbeecf3b31ad9c144d7803ab30",
     "reference/core/survey_v2_classifier_reliability_protocol_v1.json": "ddd5c2cb905ac951792d8ec122bbf2794fdbffcc819a3534ae852dfea2de3210"
   },
-  "supervisor_correction": "HD-ISSUE18-C1-SEMANTIC-GAP-RULING-v1.1.0"
+  "supervisor_corrections": [
+    "HD-ISSUE18-C1-SEMANTIC-GAP-RULING-v1.1.0",
+    "SURVEYV2-HUMAN-MEASUREMENT-AND-SCORING-FREEZE-v1.PRO-RULING-v1.0.0:SV2-FREEZE-B1-B4"
+  ]
 }

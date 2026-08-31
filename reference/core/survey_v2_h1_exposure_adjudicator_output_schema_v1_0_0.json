@@ -1,0 +1,759 @@
+{
+  "$id": "survey-v2-h1-exposure-adjudicator-output-schema-v1.0.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "top_level_status": {
+            "const": "completed"
+          }
+        },
+        "required": [
+          "top_level_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "adjudication": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "top_level_status": {
+            "const": "forbidden_input"
+          }
+        },
+        "required": [
+          "top_level_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "adjudication": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "adjudication": {
+            "type": "object"
+          },
+          "subject_kind": {
+            "const": "model_context_author"
+          }
+        },
+        "required": [
+          "subject_kind",
+          "adjudication"
+        ]
+      },
+      "then": {
+        "properties": {
+          "adjudication": {
+            "properties": {
+              "model_training_exposure_assessment": {
+                "enum": [
+                  "audited_ontology_absent",
+                  "unknown_or_unauditable",
+                  "ontology_present"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "adjudication": {
+            "properties": {
+              "exposure_class": {
+                "const": "shallow_or_incidental"
+              }
+            },
+            "required": [
+              "exposure_class"
+            ],
+            "type": "object"
+          }
+        },
+        "required": [
+          "adjudication"
+        ]
+      },
+      "then": {
+        "properties": {
+          "adjudication": {
+            "properties": {
+              "decision": {
+                "const": "eligible"
+              },
+              "evidence_sufficiency": {
+                "const": "sufficient"
+              },
+              "missing_fact_codes": {
+                "maxItems": 0
+              },
+              "relevant_window_assessment": {
+                "enum": [
+                  "before_or_during_h1_authorship",
+                  "no_exposure_in_relevant_window"
+                ]
+              },
+              "semantic_overlap_assessment": {
+                "const": "none_affirmatively_established"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "adjudication": {
+            "properties": {
+              "exposure_class": {
+                "const": "identity_defining_or_comprehensive"
+              }
+            },
+            "required": [
+              "exposure_class"
+            ],
+            "type": "object"
+          }
+        },
+        "required": [
+          "adjudication"
+        ]
+      },
+      "then": {
+        "properties": {
+          "adjudication": {
+            "properties": {
+              "decision": {
+                "const": "ineligible"
+              },
+              "evidence_sufficiency": {
+                "const": "sufficient"
+              },
+              "missing_fact_codes": {
+                "maxItems": 0
+              },
+              "relevant_window_assessment": {
+                "const": "before_or_during_h1_authorship"
+              },
+              "semantic_overlap_assessment": {
+                "const": "material_or_foreseeable_overlap"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "adjudication": {
+            "properties": {
+              "exposure_class": {
+                "const": "intentionally_hd_derived"
+              }
+            },
+            "required": [
+              "exposure_class"
+            ],
+            "type": "object"
+          }
+        },
+        "required": [
+          "adjudication"
+        ]
+      },
+      "then": {
+        "properties": {
+          "adjudication": {
+            "properties": {
+              "decision": {
+                "const": "ineligible"
+              },
+              "evidence_sufficiency": {
+                "const": "sufficient"
+              },
+              "missing_fact_codes": {
+                "maxItems": 0
+              },
+              "relevant_window_assessment": {
+                "const": "before_or_during_h1_authorship"
+              },
+              "semantic_overlap_assessment": {
+                "const": "intentional_derivation"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "adjudication": {
+            "properties": {
+              "exposure_class": {
+                "const": "ambiguous_or_insufficient"
+              }
+            },
+            "required": [
+              "exposure_class"
+            ],
+            "type": "object"
+          }
+        },
+        "required": [
+          "adjudication"
+        ]
+      },
+      "then": {
+        "properties": {
+          "adjudication": {
+            "properties": {
+              "decision": {
+                "const": "ambiguous_or_insufficient"
+              },
+              "evidence_sufficiency": {
+                "enum": [
+                  "insufficient",
+                  "conflicting"
+                ]
+              },
+              "missing_fact_codes": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "adjudication": {
+            "properties": {
+              "decision": {
+                "const": "eligible"
+              },
+              "exposure_class": {
+                "const": "substantial_semantic_or_technical"
+              }
+            },
+            "required": [
+              "exposure_class",
+              "decision"
+            ],
+            "type": "object"
+          }
+        },
+        "required": [
+          "adjudication"
+        ]
+      },
+      "then": {
+        "properties": {
+          "adjudication": {
+            "properties": {
+              "evidence_sufficiency": {
+                "const": "sufficient"
+              },
+              "missing_fact_codes": {
+                "maxItems": 0
+              },
+              "relevant_window_assessment": {
+                "const": "before_or_during_h1_authorship"
+              },
+              "semantic_overlap_assessment": {
+                "const": "disjoint_technical_only"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "adjudication": {
+            "properties": {
+              "decision": {
+                "const": "ineligible"
+              },
+              "exposure_class": {
+                "const": "substantial_semantic_or_technical"
+              }
+            },
+            "required": [
+              "exposure_class",
+              "decision"
+            ],
+            "type": "object"
+          }
+        },
+        "required": [
+          "adjudication"
+        ]
+      },
+      "then": {
+        "properties": {
+          "adjudication": {
+            "properties": {
+              "evidence_sufficiency": {
+                "const": "sufficient"
+              },
+              "missing_fact_codes": {
+                "maxItems": 0
+              },
+              "relevant_window_assessment": {
+                "const": "before_or_during_h1_authorship"
+              },
+              "semantic_overlap_assessment": {
+                "const": "material_or_foreseeable_overlap"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "adjudication": {
+            "properties": {
+              "decision": {
+                "const": "ambiguous_or_insufficient"
+              },
+              "exposure_class": {
+                "const": "substantial_semantic_or_technical"
+              }
+            },
+            "required": [
+              "exposure_class",
+              "decision"
+            ],
+            "type": "object"
+          }
+        },
+        "required": [
+          "adjudication"
+        ]
+      },
+      "then": {
+        "properties": {
+          "adjudication": {
+            "properties": {
+              "evidence_sufficiency": {
+                "enum": [
+                  "insufficient",
+                  "conflicting"
+                ]
+              },
+              "missing_fact_codes": {
+                "minItems": 1
+              },
+              "semantic_overlap_assessment": {
+                "const": "unknown"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "adjudication": {
+            "type": "object"
+          },
+          "subject_kind": {
+            "const": "human_author"
+          }
+        },
+        "required": [
+          "subject_kind",
+          "adjudication"
+        ]
+      },
+      "then": {
+        "properties": {
+          "adjudication": {
+            "properties": {
+              "model_training_exposure_assessment": {
+                "const": "not_applicable"
+              }
+            },
+            "type": "object"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "adjudication": {
+            "properties": {
+              "decision": {
+                "const": "eligible"
+              }
+            },
+            "required": [
+              "decision"
+            ],
+            "type": "object"
+          },
+          "subject_kind": {
+            "const": "model_context_author"
+          }
+        },
+        "required": [
+          "subject_kind",
+          "adjudication"
+        ]
+      },
+      "then": {
+        "properties": {
+          "adjudication": {
+            "properties": {
+              "model_training_exposure_assessment": {
+                "const": "audited_ontology_absent"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "adjudication": {
+            "properties": {
+              "model_training_exposure_assessment": {
+                "const": "unknown_or_unauditable"
+              }
+            },
+            "required": [
+              "model_training_exposure_assessment"
+            ],
+            "type": "object"
+          },
+          "subject_kind": {
+            "const": "model_context_author"
+          }
+        },
+        "required": [
+          "subject_kind",
+          "adjudication"
+        ]
+      },
+      "then": {
+        "properties": {
+          "adjudication": {
+            "properties": {
+              "decision": {
+                "enum": [
+                  "ineligible",
+                  "ambiguous_or_insufficient"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "adjudication": {
+            "properties": {
+              "decision": {
+                "const": "ambiguous_or_insufficient"
+              },
+              "model_training_exposure_assessment": {
+                "const": "unknown_or_unauditable"
+              }
+            },
+            "required": [
+              "model_training_exposure_assessment",
+              "decision"
+            ],
+            "type": "object"
+          },
+          "subject_kind": {
+            "const": "model_context_author"
+          }
+        },
+        "required": [
+          "subject_kind",
+          "adjudication"
+        ]
+      },
+      "then": {
+        "properties": {
+          "adjudication": {
+            "properties": {
+              "exposure_class": {
+                "const": "ambiguous_or_insufficient"
+              },
+              "missing_fact_codes": {
+                "contains": {
+                  "const": "MODEL_TRAINING_EXPOSURE"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "adjudication": {
+            "properties": {
+              "model_training_exposure_assessment": {
+                "const": "ontology_present"
+              }
+            },
+            "required": [
+              "model_training_exposure_assessment"
+            ],
+            "type": "object"
+          },
+          "subject_kind": {
+            "const": "model_context_author"
+          }
+        },
+        "required": [
+          "subject_kind",
+          "adjudication"
+        ]
+      },
+      "then": {
+        "properties": {
+          "adjudication": {
+            "properties": {
+              "decision": {
+                "const": "ineligible"
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "properties": {
+    "adjudication": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "candidate_blind_attestation": {
+              "const": true
+            },
+            "chart_blind_attestation": {
+              "const": true
+            },
+            "counterevidence_ids": {
+              "items": {
+                "pattern": "^H1E-[A-Za-z0-9_-]{16,}$",
+                "type": "string"
+              },
+              "type": "array",
+              "uniqueItems": true
+            },
+            "decision": {
+              "enum": [
+                "eligible",
+                "ineligible",
+                "ambiguous_or_insufficient"
+              ]
+            },
+            "evidence_sufficiency": {
+              "enum": [
+                "sufficient",
+                "insufficient",
+                "conflicting"
+              ]
+            },
+            "exposure_class": {
+              "enum": [
+                "shallow_or_incidental",
+                "substantial_semantic_or_technical",
+                "identity_defining_or_comprehensive",
+                "intentionally_hd_derived",
+                "ambiguous_or_insufficient"
+              ]
+            },
+            "forced_decision": {
+              "const": false
+            },
+            "h1_content_blind_attestation": {
+              "const": true
+            },
+            "identity_blind_attestation": {
+              "const": true
+            },
+            "missing_fact_codes": {
+              "items": {
+                "enum": [
+                  "EXPOSURE_BREADTH",
+                  "EXPOSURE_DEPTH",
+                  "EXPOSURE_TIMING",
+                  "H1_DERIVATION",
+                  "IDENTITY_USE",
+                  "INDEPENDENCE",
+                  "MODEL_TRAINING_EXPOSURE",
+                  "QUARANTINE",
+                  "SEMANTIC_OVERLAP"
+                ]
+              },
+              "type": "array",
+              "uniqueItems": true
+            },
+            "model_training_exposure_assessment": {
+              "enum": [
+                "not_applicable",
+                "audited_ontology_absent",
+                "unknown_or_unauditable",
+                "ontology_present"
+              ]
+            },
+            "no_external_tools_attestation": {
+              "const": true
+            },
+            "relevant_window_assessment": {
+              "enum": [
+                "before_or_during_h1_authorship",
+                "after_exact_h1_freeze_only",
+                "no_exposure_in_relevant_window",
+                "unknown"
+              ]
+            },
+            "rule_codes": {
+              "items": {
+                "enum": [
+                  "SHALLOW_NO_RETAINED_SEMANTICS",
+                  "PERSONAL_READING_NOT_AUTOMATIC_EXCLUSION",
+                  "SUBSTANTIAL_SEMANTIC_KNOWLEDGE",
+                  "SUBSTANTIAL_TECHNICAL_KNOWLEDGE",
+                  "POST_FREEZE_ONLY",
+                  "DISJOINT_TECHNICAL_QUARANTINE",
+                  "SEMANTIC_OVERLAP_WITH_H1_ROLE",
+                  "IDENTITY_DEFINING_USE",
+                  "COMPREHENSIVE_OR_PROFESSIONAL_USE",
+                  "INTENTIONAL_HD_DERIVATION",
+                  "INTENTIONAL_ASTROLOGY_DERIVATION",
+                  "TIMING_UNKNOWN",
+                  "OVERLAP_UNKNOWN",
+                  "QUARANTINE_UNKNOWN",
+                  "EVIDENCE_CONFLICT",
+                  "EVIDENCE_INSUFFICIENT",
+                  "MODEL_TRAINING_AUDITED_ONTOLOGY_ABSENT",
+                  "MODEL_TRAINING_UNKNOWN_OR_UNAUDITABLE",
+                  "MODEL_TRAINING_ONTOLOGY_PRESENT"
+                ]
+              },
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "semantic_overlap_assessment": {
+              "enum": [
+                "none_affirmatively_established",
+                "disjoint_technical_only",
+                "material_or_foreseeable_overlap",
+                "intentional_derivation",
+                "unknown"
+              ]
+            },
+            "supporting_evidence_ids": {
+              "items": {
+                "pattern": "^H1E-[A-Za-z0-9_-]{16,}$",
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "exposure_class",
+            "decision",
+            "relevant_window_assessment",
+            "semantic_overlap_assessment",
+            "evidence_sufficiency",
+            "rule_codes",
+            "supporting_evidence_ids",
+            "counterevidence_ids",
+            "missing_fact_codes",
+            "forced_decision",
+            "identity_blind_attestation",
+            "chart_blind_attestation",
+            "candidate_blind_attestation",
+            "h1_content_blind_attestation",
+            "no_external_tools_attestation",
+            "model_training_exposure_assessment"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "contract_version": {
+      "const": "survey-v2-h1-exposure-adjudication-contract-v1.0.0"
+    },
+    "request_id": {
+      "pattern": "^H1R-[A-Za-z0-9_-]{16,}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "survey-v2-h1-exposure-adjudicator-output-schema-v1.0.0"
+    },
+    "subject_kind": {
+      "enum": [
+        "human_author",
+        "model_context_author"
+      ]
+    },
+    "subject_role": {
+      "enum": [
+        "interpretation_author",
+        "construct_author"
+      ]
+    },
+    "top_level_status": {
+      "enum": [
+        "completed",
+        "forbidden_input"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "contract_version",
+    "request_id",
+    "subject_kind",
+    "subject_role",
+    "top_level_status",
+    "adjudication"
+  ],
+  "type": "object"
+}
