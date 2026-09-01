@@ -14,6 +14,9 @@ from urllib.request import Request as URLRequest
 from urllib.request import urlopen
 
 from .phenotype import (
+    VALIDATION_CONTRACT_SHA256,
+    VALIDATION_CONTRACT_VERSION,
+    AxisScope,
     PhenotypeProviderReceipt,
     RelationshipPhenotypeFreeze,
     RelationshipPhenotypeOutput,
@@ -46,7 +49,10 @@ drama, conflict, or the two jealousy types.
 Evidence and counterevidence spans MUST be short exact verbatim substrings copied from
 the supplied participant responses. Do not paraphrase evidence spans. A classified
 ordinal result must meet the frozen minimum confidence. Otherwise return an unresolved
-status instead of forcing a choice. Return only the required JSON object."""
+status instead of forcing a choice. For each question, return only its declared target
+axes and use only directions permitted by each rubric scope: directional axes use
+a_to_b/b_to_a, dyadic axes use dyadic, and person axes use person_a/person_b. Return
+only the required JSON object."""
 
 
 def _output_schema() -> dict[str, Any]:
@@ -202,12 +208,22 @@ class OpenAIRelationshipPhenotypeClassifier:
         questionnaire = _load_json_object(questionnaire_path)
         rubric = _load_json_object(rubric_path)
         protocol = _load_json_object(protocol_path)
-        submitted_question_ids = {str(row.get("question_id", "")) for row in answers}
-        allowed_axis_ids = {
-            str(row["id"])
-            for row in cast(list[dict[str, Any]], rubric.get("axes", []))
-            if isinstance(row.get("id"), str)
-        }
+        submitted_question_rows = [row.get("question_id") for row in answers]
+        if not submitted_question_rows or not all(
+            isinstance(question_id, str) and question_id for question_id in submitted_question_rows
+        ):
+            raise ValueError("participant answers require nonempty question ids")
+        submitted_question_ids = set(cast(list[str], submitted_question_rows))
+        if len(submitted_question_ids) != len(submitted_question_rows):
+            raise ValueError("participant answers contain duplicate question ids")
+        axis_scopes = _axis_scope_registry(rubric)
+        allowed_axis_ids = set(axis_scopes)
+        question_target_axis_ids = _question_target_registry(
+            questionnaire,
+            allowed_axis_ids=allowed_axis_ids,
+        )
+        if not submitted_question_ids <= set(question_target_axis_ids):
+            raise ValueError("participant answers contain an unknown question id")
         classifier_payload = {
             "minimum_confidence": MINIMUM_CONFIDENCE,
             "classifier_protocol": protocol,
@@ -230,10 +246,14 @@ class OpenAIRelationshipPhenotypeClassifier:
             output,
             submitted_question_ids=submitted_question_ids,
             allowed_axis_ids=allowed_axis_ids,
-            source_texts=source_text_corpus(answers, semantic_audit),
+            question_target_axis_ids=question_target_axis_ids,
+            axis_scopes=axis_scopes,
+            source_texts_by_question=source_text_corpus(answers, semantic_audit),
             minimum_confidence=MINIMUM_CONFIDENCE,
         )
         return RelationshipPhenotypeFreeze(
+            validation_contract_version=VALIDATION_CONTRACT_VERSION,
+            validation_contract_sha256=VALIDATION_CONTRACT_SHA256,
             session_id=session_id,
             created_at_utc=datetime.now(UTC),
             response_record_sha256=response_record_sha256(answers, semantic_audit),
@@ -284,6 +304,58 @@ def _load_json_object(path: Path) -> dict[str, Any]:
     if not isinstance(raw, dict):
         raise ValueError(f"expected JSON object: {path}")
     return cast(dict[str, Any], raw)
+
+
+def _axis_scope_registry(rubric: dict[str, Any]) -> dict[str, AxisScope]:
+    rows = rubric.get("axes")
+    if not isinstance(rows, list):
+        raise ValueError("relationship outcome rubric axes must be a list")
+    registry: dict[str, AxisScope] = {}
+    for row in rows:
+        if not isinstance(row, dict):
+            raise ValueError("relationship outcome rubric axes must be objects")
+        axis_id = row.get("id")
+        scope = row.get("scope")
+        if not isinstance(axis_id, str) or not axis_id:
+            raise ValueError("relationship outcome rubric contains an invalid axis id")
+        if scope not in {"directional", "dyadic", "person"}:
+            raise ValueError("relationship outcome rubric contains an invalid axis scope")
+        if axis_id in registry:
+            raise ValueError("relationship outcome rubric contains duplicate axis ids")
+        registry[axis_id] = cast(AxisScope, scope)
+    return registry
+
+
+def _question_target_registry(
+    questionnaire: dict[str, Any],
+    *,
+    allowed_axis_ids: set[str],
+) -> dict[str, set[str]]:
+    rows = questionnaire.get("questions")
+    if not isinstance(rows, list):
+        raise ValueError("relationship questionnaire questions must be a list")
+    registry: dict[str, set[str]] = {}
+    for row in rows:
+        if not isinstance(row, dict):
+            raise ValueError("relationship questionnaire questions must be objects")
+        question_id = row.get("id")
+        targets = row.get("target_axes")
+        if not isinstance(question_id, str) or not question_id:
+            raise ValueError("relationship questionnaire contains an invalid question id")
+        if question_id in registry:
+            raise ValueError("relationship questionnaire contains duplicate question ids")
+        if not isinstance(targets, list) or not all(
+            isinstance(axis_id, str) and axis_id for axis_id in targets
+        ):
+            raise ValueError("relationship questionnaire target_axes must be a string list")
+        target_ids = cast(list[str], targets)
+        if len(target_ids) != len(set(target_ids)):
+            raise ValueError("relationship questionnaire contains duplicate target axes")
+        unknown = set(target_ids) - allowed_axis_ids
+        if unknown:
+            raise ValueError(f"relationship questionnaire targets unknown axes: {sorted(unknown)}")
+        registry[question_id] = set(target_ids)
+    return registry
 
 
 def _parse_openai_json(raw: bytes) -> dict[str, Any]:

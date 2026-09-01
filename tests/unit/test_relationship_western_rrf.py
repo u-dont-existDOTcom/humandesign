@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import math
 from datetime import UTC, datetime
 from pathlib import Path
 
@@ -49,6 +50,12 @@ def test_major_aspect_and_circular_midpoint_geometry() -> None:
     assert classify_major_aspect(359.0, 1.0) == ("conjunction", 2.0)
     assert classify_major_aspect(0.0, 44.0) is None
     assert circular_midpoint(350.0, 10.0) == 0.0
+    assert circular_midpoint(0.0, 180.0) == 90.0
+    assert circular_midpoint(180.0, 0.0) == 90.0
+    near_forward = circular_midpoint(0.0, 179.9999999)
+    near_reverse = circular_midpoint(179.9999999, 0.0)
+    assert math.isclose(near_forward, near_reverse, rel_tol=0.0, abs_tol=1e-12)
+    assert not math.isclose(near_forward, 90.0, rel_tol=0.0, abs_tol=1e-12)
 
 
 def test_house_assignment_wraps_across_zero() -> None:

@@ -1,0 +1,90 @@
+{
+  "schema_version": "astro-rrf-atomic-feature-schema-v1",
+  "status": "frozen_outcome_blind_geometry_for_future_development_calibration",
+  "freeze_date": "2026-09-01",
+  "purpose": "Preserve deterministic actor-directional and dyadic Western geometry before later outcome calibration without assigning new meanings, weights, thresholds, probabilities, or hit/miss labels.",
+  "max_orb_degrees": 3.0,
+  "orb_kernel": "exp(-0.5 * (orb / 3.0)^2)",
+  "composite_midpoint_tie_rule": "For an exact 180-degree natal-body separation, choose the lower of the two antipodal midpoint longitudes so the atomic composite remains invariant under actor swapping.",
+  "bodies": [
+    "sun",
+    "moon",
+    "mercury",
+    "venus",
+    "mars",
+    "jupiter",
+    "saturn",
+    "uranus",
+    "neptune",
+    "pluto",
+    "north_node"
+  ],
+  "composite_bodies": [
+    "sun",
+    "moon",
+    "mercury",
+    "venus",
+    "mars",
+    "jupiter",
+    "saturn",
+    "uranus",
+    "neptune",
+    "pluto",
+    "north_node"
+  ],
+  "house_overlay_bodies": [
+    "sun",
+    "moon",
+    "mercury",
+    "venus",
+    "mars",
+    "jupiter",
+    "saturn",
+    "uranus",
+    "neptune",
+    "pluto",
+    "north_node"
+  ],
+  "house_overlay_target_houses": [3, 5, 7, 8, 9, 11, 12],
+  "angle_contacts": [
+    {
+      "partner_body": "uranus",
+      "actor_angle": "ascendant"
+    }
+  ],
+  "fixed_key_rules": {
+    "directional_synastry": "For each actor a and b, emit the Cartesian product of bodies as actor_BODY__partner_BODY.",
+    "house_overlays": "For each actor, partner body, and declared target house, emit partner_BODY__actor_house_N.",
+    "composite_aspects": "Emit each unordered pair of composite_bodies exactly once as BODY_A__BODY_B in schema order.",
+    "novelty_flags": [
+      "natal_uranus_house_5",
+      "natal_uranus_major_aspect_venus",
+      "natal_uranus_major_aspect_mars",
+      "synastry_actor_mars__partner_uranus",
+      "partner_uranus__actor_house_5"
+    ]
+  },
+  "missingness_encoding": {
+    "available_no_major_aspect": {
+      "present": false,
+      "aspect": null,
+      "orb_degrees": null,
+      "orb_kernel": 0.0
+    },
+    "unavailable_geometry": {
+      "present": null,
+      "aspect": null,
+      "orb_degrees": null,
+      "orb_kernel": null
+    },
+    "available_house_flag_not_present": false,
+    "unavailable_house_geometry": null
+  },
+  "scientific_boundary": [
+    "The complete geometry is frozen so later feature selection can be audited; it does not authorize unrestricted post-outcome selection.",
+    "Legacy AstroRRF V0.1 weighted scores remain unchanged and separately identifiable.",
+    "No V0.2 through V0.4 narrative or unweighted family is converted into a numeric rule by this schema.",
+    "A later ordinal model must be trained only on a preassigned development cohort and evaluated on a person-exclusive cohort not used to choose features, weights, thresholds, or outcome bindings.",
+    "These atomic values are not calibrated relationship outcomes or probabilities."
+  ]
+}

@@ -12,9 +12,13 @@ from hdmatch.relationship.study import (
     RelationshipBirthInput,
     RelationshipStudyIntake,
     bind_noise_policy,
+    file_sha256,
     public_preflight,
 )
-from hdmatch.relationship.study_prediction import build_prediction_freeze
+from hdmatch.relationship.study_prediction import (
+    ASTRO_RRF_ATOMIC_SCHEMA_FILE,
+    build_prediction_freeze,
+)
 
 
 def _birth(*, day: int, hour: int | None) -> RelationshipBirthInput:
@@ -23,7 +27,11 @@ def _birth(*, day: int, hour: int | None) -> RelationshipBirthInput:
         local_time=time(hour, 30) if hour is not None else None,
         birthplace="Example City, Example Country",
         iana_timezone="UTC",
-        time_source=(BirthTimeSource.BIRTH_CERTIFICATE if hour is not None else BirthTimeSource.UNKNOWN),
+        time_source=(
+            BirthTimeSource.BIRTH_CERTIFICATE
+            if hour is not None
+            else BirthTimeSource.UNKNOWN
+        ),
     )
 
 
@@ -107,6 +115,15 @@ def test_prediction_freeze_binds_models_but_stays_locked_without_engines(
     statuses = {layer.layer_id: layer.status for layer in freeze.layers}
     assert statuses["human_design_connection_v1"] is PredictionLayerStatus.PENDING_ENGINE
     assert statuses["astro_rrf_directional_v0_4"] is PredictionLayerStatus.INSUFFICIENT_BIRTH_DATA
+    astro_layer = next(
+        layer for layer in freeze.layers if layer.layer_id == "astro_rrf_directional_v0_4"
+    )
+    receipts = {
+        item["path"]: item["sha256"] for item in astro_layer.payload["frozen_model_files"]
+    }
+    assert receipts[ASTRO_RRF_ATOMIC_SCHEMA_FILE] == file_sha256(
+        root / ASTRO_RRF_ATOMIC_SCHEMA_FILE
+    )
     assert freeze.confirmatory_ready is False
     assert len(freeze.freeze_sha256) == 64
 
