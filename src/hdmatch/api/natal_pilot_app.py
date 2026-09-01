@@ -17,6 +17,7 @@ from urllib.parse import urlsplit
 
 from fastapi import FastAPI, Header, HTTPException
 from fastapi.responses import HTMLResponse, PlainTextResponse
+from pydantic import Field
 
 from hdmatch.api.errors import ERROR_RESPONSES, install_error_handlers
 from hdmatch.api.natal_pilot_ui import render_natal_pilot_html, render_natal_result_html
@@ -25,14 +26,18 @@ from hdmatch.participant import ParticipantSessionService, ParticipantSessionSto
 from hdmatch.participant.century_backend import CenturyCapableParticipantBackend
 from hdmatch.participant.models import (
     BirthIntake,
+    ConfirmatoryLock,
+    EvidenceInput,
     EvidenceRecord,
     ExploratoryRankingReport,
     FinalParticipantReport,
+    NextInterviewQuestion,
     ParticipantModel,
     ParticipantModelReceipt,
     PredictionComparison,
-    RankScope,
+    PublicProgress,
     RankingSnapshot,
+    RankScope,
     ResearchLayer,
     RevealReport,
     SessionMode,
@@ -47,6 +52,17 @@ _SOURCE_COMMIT_RE = re.compile(r"^[a-f0-9]{40,64}$")
 
 class NatalPilotSessionCreated(SessionRecord):
     session_token: str
+
+
+class InterviewerSessionAccess(ParticipantModel):
+    """Per-session bearer capability carried in an Action request body, never a URL."""
+
+    session_id: str = Field(pattern=r"^HD-[A-F0-9]{32}$")
+    session_token: str = Field(min_length=32)
+
+
+class InterviewerEvidenceAccess(InterviewerSessionAccess):
+    evidence: EvidenceInput
 
 
 class InterviewerRevealReport(ParticipantModel):
@@ -300,54 +316,92 @@ def create_natal_pilot_app(
         )
 
     @app.post(
-        "/v1/participant-sessions/{session_id}/reveal",
+        "/v1/interviewer/progress",
+        response_model=PublicProgress,
+        responses=ERROR_RESPONSES,
+        operation_id="getParticipantProgress",
+    )
+    async def progress_for_interviewer(
+        request: InterviewerSessionAccess,
+    ) -> PublicProgress:
+        invite.authorize_session(request.session_id, request.session_token)
+        return _execute(lambda: sessions.public_progress(request.session_id))
+
+    @app.post(
+        "/v1/interviewer/next-question",
+        response_model=NextInterviewQuestion,
+        responses=ERROR_RESPONSES,
+        operation_id="getParticipantNextQuestion",
+    )
+    async def next_question_for_interviewer(
+        request: InterviewerSessionAccess,
+    ) -> NextInterviewQuestion:
+        invite.authorize_session(request.session_id, request.session_token)
+        return _execute(lambda: sessions.next_question(request.session_id))
+
+    @app.post(
+        "/v1/interviewer/evidence",
+        response_model=EvidenceRecord,
+        responses=ERROR_RESPONSES,
+        operation_id="appendParticipantEvidence",
+    )
+    async def evidence_for_interviewer(
+        request: InterviewerEvidenceAccess,
+    ) -> EvidenceRecord:
+        invite.authorize_session(request.session_id, request.session_token)
+        return _execute(
+            lambda: sessions.append_evidence(request.session_id, request.evidence)
+        )
+
+    @app.post(
+        "/v1/interviewer/lock",
+        response_model=ConfirmatoryLock,
+        responses=ERROR_RESPONSES,
+        operation_id="lockParticipantConfirmatoryEvidence",
+    )
+    async def lock_for_interviewer(
+        request: InterviewerSessionAccess,
+    ) -> ConfirmatoryLock:
+        invite.authorize_session(request.session_id, request.session_token)
+        return _execute(lambda: sessions.lock_confirmatory(request.session_id))
+
+    @app.post(
+        "/v1/interviewer/reveal",
         response_model=InterviewerRevealReport,
         responses=ERROR_RESPONSES,
         operation_id="revealParticipantResult",
     )
     async def reveal_for_interviewer(
-        session_id: str,
-        session_token: Annotated[
-            str | None,
-            Header(alias="X-AstroHD-Session-Token"),
-        ] = None,
+        request: InterviewerSessionAccess,
     ) -> InterviewerRevealReport:
-        invite.authorize_session(session_id, session_token)
-        report = _execute(lambda: sessions.reveal(session_id))
+        invite.authorize_session(request.session_id, request.session_token)
+        report = _execute(lambda: sessions.reveal(request.session_id))
         return _interviewer_reveal(report, config)
 
     @app.post(
-        "/v1/participant-sessions/{session_id}/finalize-exploratory",
+        "/v1/interviewer/finalize-exploratory",
         response_model=InterviewerFinalReport,
         responses=ERROR_RESPONSES,
         operation_id="finalizeParticipantExploratoryProfile",
     )
     async def finalize_for_interviewer(
-        session_id: str,
-        session_token: Annotated[
-            str | None,
-            Header(alias="X-AstroHD-Session-Token"),
-        ] = None,
+        request: InterviewerSessionAccess,
     ) -> InterviewerFinalReport:
-        invite.authorize_session(session_id, session_token)
-        report = _execute(lambda: sessions.finalize_exploratory(session_id))
+        invite.authorize_session(request.session_id, request.session_token)
+        report = _execute(lambda: sessions.finalize_exploratory(request.session_id))
         return _interviewer_final(report, config)
 
-    @app.get(
-        "/v1/participant-sessions/{session_id}/final-report",
+    @app.post(
+        "/v1/interviewer/final-report",
         response_model=InterviewerFinalReport,
         responses=ERROR_RESPONSES,
         operation_id="getParticipantFinalReport",
     )
     async def final_report_for_interviewer(
-        session_id: str,
-        session_token: Annotated[
-            str | None,
-            Header(alias="X-AstroHD-Session-Token"),
-        ] = None,
+        request: InterviewerSessionAccess,
     ) -> InterviewerFinalReport:
-        invite.authorize_session(session_id, session_token)
-        report = sessions.store.load_final_report(session_id)
+        invite.authorize_session(request.session_id, request.session_token)
+        report = sessions.store.load_final_report(request.session_id)
         if report is None:
             raise HTTPException(status_code=409, detail="exploratory profile is not finalized")
         return _interviewer_final(report, config)
@@ -506,7 +560,8 @@ def create_natal_pilot_app_from_env() -> FastAPI:
                 "interviewer_instructions_sha256": hashlib.sha256(
                     (
                         repo_root
-                        / "reference/custom_gpt/participant_interviewer_instructions_under_8000_v1.md"
+                        / "reference/custom_gpt/"
+                        "participant_interviewer_instructions_under_8000_v1.md"
                     ).read_bytes()
                 ).hexdigest(),
                 "interviewer_action_schema_sha256": hashlib.sha256(

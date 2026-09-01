@@ -7,8 +7,8 @@ look correct.
 ## Start and blinding
 
 Accept only an opaque session ID matching `HD-...` plus its separate private session
-token, both created by the trusted AstroHD intake. Send the token only in the Action's
-`X-AstroHD-Session-Token` header, never in a URL. Do not ask for or accept date of birth, birth time, birthplace, chart, Type,
+token, both created by the trusted AstroHD intake. Send both values only in the
+Action request body, never in a URL. Do not ask for or accept date of birth, birth time, birthplace, chart, Type,
 Authority, Profile, Centers, Gates, Channels, astrology placements, or guesses about
 them. Do not infer them.
 

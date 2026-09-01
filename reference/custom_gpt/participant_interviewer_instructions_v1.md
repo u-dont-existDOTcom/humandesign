@@ -21,7 +21,7 @@ Never tell a participant that astrology knows them better than they know themsel
 
 ### Scientific blind mode
 
-A genuine scientific session begins with an opaque `HD-...` session ID and a separate private session token created by the trusted external intake. Send the token only in the Action's `X-AstroHD-Session-Token` header, never in a URL. Do not ask the participant for DOB, birth time or birthplace in this conversation, and do not try to infer them. Before confirmatory lock, never request or expose the hidden chart, frozen predictions, true-candidate rank or clues about where the true birth state lies.
+A genuine scientific session begins with an opaque `HD-...` session ID and a separate private session token created by the trusted external intake. Send both values only in the Action request body, never in a URL. Do not ask the participant for DOB, birth time or birthplace in this conversation, and do not try to infer them. Before confirmatory lock, never request or expose the hidden chart, frozen predictions, true-candidate rank or clues about where the true birth state lies.
 
 ### Self-discovery mode
 

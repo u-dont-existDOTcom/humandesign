@@ -15,11 +15,20 @@ from fastapi.routing import APIRoute
 from starlette.routing import Mount
 from starlette.types import Message, Scope
 
-import hdmatch.api.relationship_public_app as relationship_base_app
 import hdmatch.api.relationship_launch_app as relationship_launch_app
+import hdmatch.api.relationship_public_app as relationship_base_app
 from hdmatch.api.natal_pilot_app import NatalPilotConfig, create_natal_pilot_app
 from hdmatch.api.natal_pilot_ui import render_natal_pilot_html
-from hdmatch.participant.models import BirthIntake, RankScope, SessionMode, SessionRecord
+from hdmatch.participant.models import (
+    BirthIntake,
+    EvidenceInput,
+    EvidenceRecord,
+    PublicProgress,
+    RankScope,
+    SessionMode,
+    SessionPhase,
+    SessionRecord,
+)
 from hdmatch.participant.service import ParticipantSessionService
 from hdmatch.runtime.century_cache import (
     GlobalCandidateState,
@@ -52,6 +61,7 @@ class AsgiResponse:
 class FakeSessions:
     def __init__(self) -> None:
         self.created: list[BirthIntake] = []
+        self.appended: list[EvidenceInput] = []
 
     def create_session(self, intake: BirthIntake) -> SessionRecord:
         self.created.append(intake)
@@ -61,6 +71,31 @@ class FakeSessions:
             ranking_scope=RankScope.KNOWN_BIRTH_MONTH,
             created_at_utc=datetime(2026, 8, 31, 20, 0, tzinfo=UTC),
             prediction_freeze_sha256="b" * 64,
+        )
+
+    def public_progress(self, session_id: str) -> PublicProgress:
+        return PublicProgress(
+            session_id=session_id,
+            phase=SessionPhase.CONFIRMATORY_BLIND,
+            confirmatory_observation_count=len(self.appended),
+            scoreable_observation_count=len(self.appended),
+            non_natal_observation_count=0,
+            scoreable_question_count=len(self.appended),
+            scoreable_coverage=0.0,
+        )
+
+    def append_evidence(
+        self,
+        session_id: str,
+        evidence: EvidenceInput,
+    ) -> EvidenceRecord:
+        self.appended.append(evidence)
+        return EvidenceRecord(
+            evidence_id=f"EV-{len(self.appended)}",
+            session_id=session_id,
+            phase="confirmatory_blind",
+            created_at_utc=datetime(2026, 8, 31, 20, 1, tzinfo=UTC),
+            evidence=evidence,
         )
 
 
@@ -127,10 +162,8 @@ def _request(
 
 def _app(tmp_path: Path, sessions: FakeSessions, token: str = "owner-code") -> FastAPI:
     template = (
-        "servers:\n  - url: https://YOUR_API_HOST\npaths:\n  /v1/x: {}\n"
-        "components:\n  parameters:\n    token:\n"
-        "      name: X-AstroHD-Session-Token\n      in: header\n"
-    )
+        PROJECT_ROOT / "reference/custom_gpt/participant_interviewer_action_openapi_v1.yaml"
+    ).read_text(encoding="utf-8")
     config = NatalPilotConfig(
         invite_token_sha256=hashlib.sha256(token.encode()).hexdigest(),
         invite_state_root=tmp_path / "invites",
@@ -320,12 +353,13 @@ def test_health_probes_private_storage_and_action_schema_excludes_birth_intake(
     assert "https://example.test/astrohd" in schema.text
     assert "https://YOUR_API_HOST" not in schema.text
     assert "BirthIntake" not in schema.text
-    assert "X-AstroHD-Session-Token" in schema.text
+    assert "X-AstroHD-Session-Token" not in schema.text
+    assert "in: header" not in schema.text
     reveal_route = next(
         route
         for route in app.routes
         if isinstance(route, APIRoute)
-        and route.path == "/v1/participant-sessions/{session_id}/reveal"
+        and route.path == "/v1/interviewer/reveal"
     )
     response_fields = reveal_route.response_model.model_fields  # type: ignore[union-attr]
     assert "birth" not in response_fields
@@ -358,6 +392,89 @@ def test_session_id_alone_cannot_access_interview_routes(tmp_path: Path) -> None
     assert missing.status_code == 403
     assert wrong.status_code == 403
     assert missing.json["error"]["message"] == "invalid session access"
+
+
+def test_interviewer_body_capability_rejects_missing_or_wrong_token(
+    tmp_path: Path,
+) -> None:
+    sessions = FakeSessions()
+    app = _app(tmp_path, sessions)
+    created = _request(
+        app,
+        "POST",
+        "/v1/participant-sessions",
+        body=_birth(),
+        headers={
+            "x-astrohd-pilot-token": "owner-code",
+            "x-astrohd-storage-consent": "yes",
+            "x-astrohd-openai-consent": "yes",
+        },
+    )
+    session_id = str(created.json["session_id"])
+    session_token = str(created.json["session_token"])
+
+    missing = _request(
+        app,
+        "POST",
+        "/v1/interviewer/progress",
+        body={"session_id": session_id},
+    )
+    wrong = _request(
+        app,
+        "POST",
+        "/v1/interviewer/progress",
+        body={"session_id": session_id, "session_token": "x" * 32},
+    )
+    allowed = _request(
+        app,
+        "POST",
+        "/v1/interviewer/progress",
+        body={"session_id": session_id, "session_token": session_token},
+    )
+
+    assert missing.status_code == 422
+    assert wrong.status_code == 403
+    assert wrong.json["error"]["message"] == "invalid session access"
+    assert allowed.status_code == 200
+    assert allowed.json["true_birth_rank_concealed"] is True
+
+
+def test_interviewer_evidence_wrapper_unwraps_nested_evidence(tmp_path: Path) -> None:
+    sessions = FakeSessions()
+    app = _app(tmp_path, sessions)
+    created = _request(
+        app,
+        "POST",
+        "/v1/participant-sessions",
+        body=_birth(),
+        headers={
+            "x-astrohd-pilot-token": "owner-code",
+            "x-astrohd-storage-consent": "yes",
+            "x-astrohd-openai-consent": "yes",
+        },
+    )
+    session_id = str(created.json["session_id"])
+    response = _request(
+        app,
+        "POST",
+        "/v1/interviewer/evidence",
+        body={
+            "session_id": session_id,
+            "session_token": str(created.json["session_token"]),
+            "evidence": {
+                "domain": "trait",
+                "question_id": "Q-TEST",
+                "cluster_id": "C-TEST",
+                "answer": "sometimes",
+                "narrative": "It depends strongly on context.",
+            },
+        },
+    )
+
+    assert response.status_code == 200
+    assert response.json["evidence"]["narrative"] == "It depends strongly on context."
+    assert len(sessions.appended) == 1
+    assert sessions.appended[0].question_id == "Q-TEST"
 
 
 @pytest.mark.parametrize(
@@ -399,7 +516,15 @@ def test_committed_interviewer_schema_has_no_trusted_birth_creation_action() -> 
     ).read_text(encoding="utf-8")
     assert "createParticipantSession" not in schema
     assert "BirthIntake" not in schema
-    assert "X-AstroHD-Session-Token" in schema
+    assert "X-AstroHD-Session-Token" not in schema
+    assert "in: header" not in schema
+    assert "{session_id}" not in schema
+    assert schema.count("/v1/interviewer/") == 7
+    assert schema.count("    post:") == 7
+    assert "required: [session_id, session_token]" in schema
+    assert "writeOnly: true" in schema
+    assert "#/components/parameters/" not in schema
+    assert "schema: {type: object, additionalProperties: true}" not in schema
     assert "revealParticipantResult" in schema
     assert "finalizeParticipantExploratoryProfile" in schema
 
