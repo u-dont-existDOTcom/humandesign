@@ -218,6 +218,14 @@ def angular_separation(longitude_a: float, longitude_b: float) -> float:
 
 def circular_midpoint(longitude_a: float, longitude_b: float) -> float:
     signed_delta = ((longitude_b - longitude_a + 180.0) % 360.0) - 180.0
+    if math.isclose(abs(signed_delta), 180.0, rel_tol=0.0, abs_tol=1e-12):
+        # Exact opposition has two equally short midpoint solutions. Choose the
+        # lower longitude so the shared geometry is invariant under actor order.
+        candidates = (
+            (longitude_a + 90.0) % 360.0,
+            (longitude_a - 90.0) % 360.0,
+        )
+        return min(candidates)
     return (longitude_a + signed_delta / 2.0) % 360.0
 
 

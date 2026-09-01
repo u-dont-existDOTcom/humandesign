@@ -1,0 +1,47 @@
+{
+  "version": "astro-rrf-case-role-manifest-v1",
+  "status": "frozen_before_new_calibration_cases",
+  "freeze_date": "2026-09-01",
+  "purpose": "Prevent the six outcome-exposed AstroRRF development relationships from being silently reused as calibration or validation evidence.",
+  "cases": [
+    {
+      "case_id": "pair_1",
+      "role": "development_diagnostic_only",
+      "reason": "Outcome evidence informed the V0.1 feature meanings and weights."
+    },
+    {
+      "case_id": "pair_2",
+      "role": "development_diagnostic_only",
+      "reason": "Outcome evidence informed the V0.1 feature meanings and weights."
+    },
+    {
+      "case_id": "pair_3",
+      "role": "development_diagnostic_only",
+      "reason": "Outcome evidence informed V0.1 and the V0.2 target corrections."
+    },
+    {
+      "case_id": "pair_4",
+      "role": "development_diagnostic_only",
+      "reason": "The phenotype informed V0.3 target decomposition before chart inspection."
+    },
+    {
+      "case_id": "pair_5",
+      "role": "development_diagnostic_only",
+      "reason": "The phenotype informed V0.4 target decomposition and the case has already been evaluated."
+    },
+    {
+      "case_id": "pair_6",
+      "role": "development_diagnostic_only",
+      "reason": "The phenotype and chart have already been used for model diagnosis and recalculation."
+    }
+  ],
+  "prohibited_roles_for_listed_cases": [
+    "ordinal_calibration",
+    "feature_selection_holdout",
+    "threshold_selection_holdout",
+    "untouched_validation",
+    "headline_accuracy"
+  ],
+  "next_calibration_rule": "Use a new preassigned calibration cohort and a separate person-exclusive validation cohort. Freeze cohort membership, outcome bindings, feature schema, fitting method, thresholds, and stopping rules before validation outcomes are inspected.",
+  "privacy": "Pseudonymous case roles only; no names, birth records, contact data, chart vectors, or narratives are stored here."
+}

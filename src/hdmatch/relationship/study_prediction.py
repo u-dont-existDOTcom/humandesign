@@ -24,13 +24,19 @@ from .study import (
 HD_LAYER_ID = "human_design_connection_v1"
 ASTRO_RRF_LAYER_ID = "astro_rrf_directional_v0_4"
 HD_MODEL_VERSION = "hd-partnership-mechanics-v1"
-ASTRO_RRF_MODEL_VERSION = "astro-rrf-v0.1-through-v0.4-frozen-family"
+ASTRO_RRF_MODEL_VERSION = (
+    "astro-rrf-v0.1-through-v0.4-frozen-family+atomic-features-v1"
+)
+ASTRO_RRF_ATOMIC_SCHEMA_FILE = (
+    "reference/relationship/astro_rrf_atomic_feature_schema_v1.json"
+)
 
 ASTRO_RRF_MODEL_FILES = (
     "reference/development_models/astro_rrf_directional_v0_1.json",
     "reference/development_models/astro_rrf_state_conditional_v0_2.json",
     "reference/development_models/astro_rrf_dyadic_v0_3.json",
     "docs/30_astro_rrf_novelty_habituation_v0_4.md",
+    ASTRO_RRF_ATOMIC_SCHEMA_FILE,
 )
 
 
@@ -303,6 +309,7 @@ def _calculate_astro_rrf_payload(
     from hdmatch.runtime.chart_adapter import declared_ephemeris_files
 
     from .astro_rrf import result_payload, score_astro_rrf_v01
+    from .astro_rrf_features import atomic_feature_payload, freeze_atomic_features_v1
     from .western import natal_snapshot, relationship_features
 
     if respondent.latitude is None or respondent.longitude is None:
@@ -328,20 +335,33 @@ def _calculate_astro_rrf_payload(
     if not isinstance(model_raw, dict):
         raise ValueError("AstroRRF V0.1 model must be a JSON object")
     scored = score_astro_rrf_v01(features, model_raw)
+    atomic_schema_path = repo_root / ASTRO_RRF_ATOMIC_SCHEMA_FILE
+    atomic_schema = json.loads(atomic_schema_path.read_text(encoding="utf-8"))
+    if not isinstance(atomic_schema, dict):
+        raise ValueError("AstroRRF atomic feature schema must be a JSON object")
+    atomic = freeze_atomic_features_v1(
+        features,
+        atomic_schema,
+        schema_sha256=file_sha256(atomic_schema_path),
+    )
+    if atomic.max_orb_degrees != scored.max_orb_degrees:
+        raise ValueError("AstroRRF atomic and V0.1 score orbs must match")
     return {
         "respondent_chart_sha256": chart_a.chart_features_sha256,
         "partner_chart_sha256": chart_b.chart_features_sha256,
         "ephemeris": _ephemeris_payload(chart_a),
         "frozen_model_files": file_receipts,
         "v0_1_raw_scoring": result_payload(scored),
+        "atomic_features_v1": atomic_feature_payload(atomic),
         "birth_geometry": {
             "respondent_houses_available": natal_a.house_cusps is not None,
             "partner_houses_available": natal_b.house_cusps is not None,
         },
         "prediction_boundary": (
             "Only frozen weighted V0.1 axes receive numeric scores here. V0.2–V0.4 "
-            "extensions remain feature-family flags unless a separately frozen calibration "
-            "defines an outcome mapping. Unmapped questionnaire axes are not predicted."
+            "extensions remain feature-family flags, and atomic_features_v1 is outcome-blind "
+            "geometry only. A separately frozen calibration must define any outcome mapping; "
+            "unmapped questionnaire axes are not predicted."
         ),
     }
 

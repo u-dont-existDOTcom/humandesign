@@ -79,6 +79,25 @@ The full-study prediction builder now computes this AstroRRF layer when both peo
 
 V0.2–V0.4 are primarily target/feature-family extensions rather than complete weighted outcome maps. Their frozen feature flags can be bound pre-answer, while any later calibration from raw feature/score values to ordinal relationship outcomes must be versioned separately and frozen before use as confirmatory prediction.
 
+`ASTRORRF-ATOMIC-FEATURE-FREEZE-V1` now freezes the already executable Western
+geometry under the hash-bound schema
+`reference/relationship/astro_rrf_atomic_feature_schema_v1.json`. The private
+pre-answer payload preserves fixed actor-directional synastry aspect atoms, declared
+house-owner overlay flags, the current Uranus/novelty atoms, and dyadic composite
+aspect atoms. An available but absent aspect has `present=false` and
+`orb_kernel=0`; unavailable house/angle geometry is `null`. This payload does not
+parse V0.1 contribution prose and does not add outcome meanings, weights,
+probabilities, thresholds, or hit/miss labels.
+
+Pairs 1–6 are now explicitly role-frozen as `development_diagnostic_only` in
+`reference/development_cases/astro_rrf_case_role_manifest_v1.json`. They may be
+used to diagnose architecture but not to fit ordinal calibration and then count as
+calibration holdout, untouched validation, or headline accuracy. A later ordinal
+calibration still requires a newly preassigned development cohort plus a separate
+person-exclusive validation cohort, with the feature schema, outcome bindings,
+fitting method, thresholds, and stopping rules frozen before validation outcomes
+are inspected.
+
 The remaining deployment blockers are therefore operational rather than conceptual: verified Swiss files must be available to Railway, and ordinary participant birthplace text needs a trustworthy coordinate/timezone resolution step or explicit confirmed coordinates.
 
 ## Survey-v2 noise policy

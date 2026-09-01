@@ -1,5 +1,55 @@
 # Current state
 
+## Active task override — AstroHD owner run + AstroRRF atomic scoring — 2026-09-01
+
+- Controlling task: Human Design issue `#18` plus the owner's direct instructions to
+  merge/deploy PR `#21` for one owner-only AstroHD test and, while the owner completes
+  that entry, continue the unfinished AstroRRF scoring work. This section supersedes
+  the older active-task sections below.
+- Canonical main: `afc0bb82de0e481ae5a5d3453e0bcaf82b2a0286` (merged PR `#21`; exact
+  reviewed branch head `dfbb586d2a49507f7bbe7da22e37865a604194e4`).
+- Canonical production: Railway owner-code rotation deployment
+  `907ed82b-ac87-4d45-9530-178921aab7e9`, status `SUCCESS`, sourced from the exact
+  main commit. Production health reports `owner_only_exact_time_natal_pilot`; the
+  private century-cache and Custom GPT receipts match their pinned hashes.
+- Owner-test state: the one-use owner access code is staged and unconsumed. The owner
+  is completing the AstroHD intake/interview. A complete production synthetic Action
+  sequence already passed and its temporary code was invalidated. Friends/external
+  recruitment remain closed. Incremental paid spending remains `$0`.
+- Current AstroRRF branch: `codex/astrorrf-ordinal-calibration-v1`, based exactly on
+  `afc0bb82de0e481ae5a5d3453e0bcaf82b2a0286`.
+- Scientific correction: do not calibrate the legacy V0.1 sums directly. Later
+  development split attraction, desire, and Eros; compatibility and stimulation; and
+  visible versus internal/state-conditional emotional ease. Cutoffs on the old sums
+  would freeze known construct errors.
+- Current implementation slice: `ASTRORRF-ATOMIC-FEATURE-FREEZE-V1` adds a
+  hash-bound, actor-directional fixed-key Western geometry payload alongside the
+  unchanged V0.1 raw scores. Available absence is represented as `0/false` and
+  unavailable house/angle geometry as `null`. No outcome meaning, weight, threshold,
+  probability, or hit/miss label is added.
+- Existing Pairs 1–6 are role-frozen as `development_diagnostic_only`; they cannot be
+  reused as calibration, calibration holdout, untouched validation, or headline
+  accuracy evidence.
+- Verification at the latest local checkpoint: 270 tests pass; strict mypy passes for
+  all 120 source modules; touched-file Ruff passes; relationship-only tests pass
+  61/61; `git diff --check` passes. Repository-wide Ruff still has known pre-existing
+  legacy/style findings outside this diff, so touched-file Ruff is the applicable
+  clean gate.
+- Review: the first independent exact-diff review found two deterministic
+  contract defects: divergent exact-opposition composite midpoint handling and an
+  incorrect coupling of the case-role manifest to the raw-model hash. A repeat review
+  then found the shared midpoint's default relative tolerance could classify a narrow
+  near-opposition band inconsistently under actor swapping; the repair now uses an
+  explicit zero relative tolerance and tests that boundary. The final repeat review
+  returned `READY` with operational `PASS` and no owner decision.
+- Current step: commit/push the atomic feature slice and open a draft PR. The next safe scoring
+  blocker is ledger-safe chart-blind phenotype validation (per-question target and
+  scope/direction enforcement plus duplicate/conflict handling) before any future
+  calibration extractor can be trusted.
+- Adequacy: operational `LOCAL_VERIFICATION_AND_REVIEW_PASS`; scientific
+  `CALIBRATION_READY_GEOMETRY_ONLY / HUMAN_VALIDITY_NOT_ESTABLISHED`; release
+  `OWNER_ASTROHD_TEST_OPEN / ASTRORRF_ORDINAL_RELEASE_CLOSED`.
+
 ## Active task override — Issue #18 owner-only release smoke
 
 - As of: `2026-08-31`.
