@@ -1,5 +1,24 @@
 # Current state
 
+## Fresh supervision-routing checkpoint — 2026-09-01
+
+- Fresh GitHub and Railway state, exact canonical pointers to both Mission Control failure
+  packets, and the verified-Extra-High routing prompt are preserved in
+  `state/EXTRA-HIGH-SUPERVISION-HANDOFF-2026-09-01.md`.
+- Draft Human Design PR `#23` remains at `69c2d57`; draft Mission Control PR `#52`
+  remains at `6ec7380`; neither has a verified Extra High or Pro verdict.
+- Supported Browser recovery still reports zero available browser surfaces. No signed-in
+  ChatGPT, visible Extra High mode, conversation identity, submission, or response receipt
+  exists, so routing remains `PENDING_VERIFIED_CHATGPT_EXTRA_HIGH_BROWSER_SESSION`.
+- Fresh Railway readback shows production `relationship-web` healthy on deployment
+  `907ed82b-ac87-4d45-9530-178921aab7e9`, exact `main` commit `afc0bb8`; PR `#23` is not
+  deployed. No mutation, secret/value access, participant-data access, spending, or
+  contact occurred.
+- Next safe action: restore a supported controlled browser, bind the actual signed-in
+  ChatGPT surface/mode/session receipts, route both packets to visible Extra High, wait
+  for its verdict and next bounded directive, and use the shared Pro lane only afterward
+  when that directive requires it.
+
 ## Active owner-test defect repair — 2026-09-01
 
 - Owner evidence: the natal intro did not explain the combined AstroHD research

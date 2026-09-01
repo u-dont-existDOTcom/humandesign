@@ -1,5 +1,16 @@
 # Current Research Plan
 
+## Durable Extra High routing packet — 2026-09-01
+
+The fresh GitHub/Railway/browser audit and both Mission Control failure packets are
+preserved in `state/EXTRA-HIGH-SUPERVISION-HANDOFF-2026-09-01.md`. Browser discovery
+still reports no controlled surface, so no ChatGPT Extra High identity or verdict is
+claimed. Resume by routing both canonical Mission Control packets plus the handoff context
+through a visibly selected, signed-in ChatGPT Extra High conversation; wait for its
+complete bounded directive; then perform the required shared-Pro meta-review. Do not
+merge, deploy, rotate an invitation, start a replacement owner session, contact a
+participant, or spend money from this checkpoint.
+
 ## Restart priority — 2026-09-01 supervision and owner-intake recovery
 
 This section supersedes the older continuation details below until resolved.
