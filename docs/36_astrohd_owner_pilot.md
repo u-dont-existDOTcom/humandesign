@@ -1,7 +1,8 @@
 # AstroHD-first owner pilot
 
-Status: implemented and locally verified on `codex/issue18-release-receipt`; not yet
-merged or deployed.
+Status: owner-only pilot merged and deployed from main `afc0bb8`; the 2026-09-01
+evidence-quality/participant-explanation repair is in progress on
+`codex/astrohd-owner-intake-quality-v1`.
 
 ## Why this is the first test
 
@@ -12,6 +13,16 @@ it is not being discarded or delayed until an arbitrary sample count.
 
 The owner pilot uses an exact recorded birth time. It is not the separate unknown-time
 rectification workflow described in the research handoff.
+
+The participant page now states the research motivation plainly. This is the
+project's first real blinded test of astrology, Human Design, and their proposed
+combined use. It arose from Joel's chance one-person finding that the systems appeared
+surprisingly informative together only after mismatches were interrogated rather than
+explained away. That observation motivates a test; it is not itself validation. The
+page also explains why the simpler personality metrics used by the astrology/HD tests
+this project compares against are inadequate for the detailed claims under study and
+why participants must not rush their answers. A required in-page acknowledgment makes
+the time/detail expectation explicit before session creation.
 
 ## Participant path
 
@@ -37,6 +48,54 @@ rectification workflow described in the research handoff.
 The required OpenAI consent names the actual boundary: questionnaire answers and
 the birth-redacted comparison may be processed by OpenAI; exact birth data and the
 raw chart are not included in the interviewer Action responses.
+
+The two credentials can be copied together with one click. The page explains their
+roles: the ID selects the sealed session and the token proves private access. There is
+no credential-bearing magic link because URLs leak into history, logs, screenshots,
+and forwarded messages. The ChatGPT interviewer link itself contains no credential.
+This is separate from the relationship study's email magic-link recovery flow.
+
+The owner invitation code is also explained in place: it exists only because this is
+an owner-restricted pilot, authorizes one session, and is not a participant identity.
+Ongoing session authorization is now stored separately by opaque session ID, so
+rotating the one-use invitation for a new test cannot strand an existing session.
+Already-deployed invitation receipts migrate to that layout after successful session
+authorization without ever storing the raw token.
+The daylight-saving `fold` control is hidden unless the submitted local time actually
+occurred twice; if needed, the page explains earlier versus later occurrence in plain
+language.
+
+## Interview evidence-quality gate
+
+The first deployed interviewer could advance after fluent but incomplete or random
+text, and the server could lock after one scoreable observation. That is not adequate
+for the stated study.
+
+The repaired contract now:
+
+- returns each selected question's frozen `minimum_evidence` requirement;
+- treats a broad claim as domain-specific until cross-domain examples support a broader
+  conclusion (the chess example is the explicit regression case);
+- requires the interviewer to check new claims against earlier claims and reconcile
+  apparent contradictions by context or life-stage change;
+- does not count random, joke-like, off-topic, incoherent, or refused clarification as
+  adequate evidence;
+- requires each trait/behavior observation to carry a minimum-evidence decision,
+  consistency status, and evidence-specific quality rationale;
+- keeps legacy/unreceipted observations readable but removes them from scoring until
+  adequately reassessed; and
+- makes the owner endpoint reject confirmatory lock until every frozen in-interview
+  confirmatory dimension has been adequately assessed. The five separately phased
+  validation tasks—including prospective logs—do not block the initial reveal and
+  cannot enter its score or prediction comparison even if submitted early. They remain
+  retained for a separately frozen validation analysis. An adequately explored
+  dimension may remain unscored when no response token honestly fits; completeness
+  never forces an answer.
+
+Joel may invite only people he reasonably expects to take a long, candid interview
+seriously. That screen should be based on willingness and data quality, not on expected
+AstroHD agreement, astrology/HD belief, or a desired result. Invitation judgment cannot
+prove truthfulness, so the in-session completeness and coherence checks remain required.
 
 The deployable Custom GPT instruction block is
 `reference/custom_gpt/participant_interviewer_instructions_under_8000_v1.md`; the

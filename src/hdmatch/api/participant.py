@@ -51,6 +51,7 @@ def register_participant_routes(
     include_session_creation: bool = True,
     include_result_routes: bool = True,
     authorize_session: Callable[[str, str | None], None] | None = None,
+    require_complete_profile: bool = False,
 ) -> None:
     """Register only participant-safe orchestration routes."""
 
@@ -132,7 +133,12 @@ def register_participant_routes(
         ] = None,
     ) -> ConfirmatoryLock:
         require_access(session_id, session_token)
-        return _execute(lambda: sessions.lock_confirmatory(session_id))
+        return _execute(
+            lambda: sessions.lock_confirmatory(
+                session_id,
+                require_complete_profile=require_complete_profile,
+            )
+        )
 
     if include_result_routes:
 

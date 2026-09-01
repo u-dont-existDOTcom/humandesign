@@ -13,6 +13,7 @@ from hdmatch.schemas import BehavioralResponse
 
 from .backend import DiscriminationDiagnostics, SelectedQuestion
 from .models import (
+    NATAL_EVIDENCE_QUALITY_CONTRACT_VERSION,
     BirthIntake,
     ConfirmatoryLock,
     EvidenceInput,
@@ -38,6 +39,9 @@ from .store import ParticipantSessionStore
 class ParticipantBackend(Protocol):
     @property
     def scoreable_question_ids(self) -> frozenset[str]: ...
+
+    @property
+    def required_confirmatory_question_ids(self) -> frozenset[str]: ...
 
     def build_prediction_freeze(
         self,
@@ -184,8 +188,17 @@ class ParticipantSessionService:
         )
         freeze = self.store.load_freeze(session_id)
         diagnostics = self.backend.discrimination(freeze=freeze, responses=responses)
-        total_scoreable = len(self.backend.scoreable_question_ids)
+        required_confirmatory_ids = self.backend.required_confirmatory_question_ids
+        total_scoreable = len(required_confirmatory_ids)
         coverage = len(scoreable_ids) / total_scoreable if total_scoreable else 0.0
+        adequately_assessed_ids = (
+            self._latest_adequately_assessed_question_ids(confirmatory) & required_confirmatory_ids
+        )
+        assessed_coverage = (
+            len(adequately_assessed_ids) / len(required_confirmatory_ids)
+            if required_confirmatory_ids
+            else 0.0
+        )
         return PublicProgress(
             session_id=session_id,
             phase=current,
@@ -194,6 +207,13 @@ class ParticipantSessionService:
             non_natal_observation_count=non_natal,
             scoreable_question_count=total_scoreable,
             scoreable_coverage=coverage,
+            required_confirmatory_question_count=len(required_confirmatory_ids),
+            adequately_assessed_question_count=len(adequately_assessed_ids),
+            adequately_assessed_coverage=assessed_coverage,
+            unresolved_question_count=max(
+                0,
+                len(required_confirmatory_ids) - len(adequately_assessed_ids),
+            ),
             candidate_state_count=diagnostics.candidate_state_count,
             top_state_tie_count=diagnostics.top_state_tie_count,
             top_margin_rubric_bits=diagnostics.top_margin_rubric_bits,
@@ -225,6 +245,10 @@ class ParticipantSessionService:
                 response_format=(
                     "Open narrative; concrete patterns are more useful than isolated events."
                 ),
+                minimum_evidence=(
+                    "Cover recurring patterns across the named domains with concrete examples, "
+                    "exceptions or counterexamples, and childhood-to-adult continuity or change."
+                ),
                 followups=(
                     "Which of those patterns was already visible in childhood?",
                     "Where does the pattern reliably fail or reverse?",
@@ -232,7 +256,12 @@ class ParticipantSessionService:
                 ),
             )
         responses = self._latest_scoreable_responses(records)
-        answered = frozenset(response.question_id for response in responses)
+        noninterview_question_ids = (
+            self.backend.scoreable_question_ids - self.backend.required_confirmatory_question_ids
+        )
+        answered = (
+            self._latest_adequately_assessed_question_ids(records) | noninterview_question_ids
+        )
         selected = self.backend.select_question(
             freeze=freeze,
             responses=responses,
@@ -248,6 +277,10 @@ class ParticipantSessionService:
                     "or weakly evidenced part of the holistic profile before locking it."
                 ),
                 response_format="Open narrative.",
+                minimum_evidence=(
+                    "Resolve every consequential contradiction or explicitly leave the affected "
+                    "dimension insufficient; confirm the final profile summary before lock."
+                ),
                 followups=(
                     "What would make your current description misleading?",
                     "What is the strongest counterexample?",
@@ -259,12 +292,18 @@ class ParticipantSessionService:
             question_id=question.id,
             prompt=question.prompt,
             response_format=question.response_format,
+            minimum_evidence=question.minimum_evidence,
             followups=question.followups,
             expected_information_gain=selected.utility.expected_information_gain,
             adjusted_utility=selected.utility.adjusted_utility,
         )
 
-    def lock_confirmatory(self, session_id: str) -> ConfirmatoryLock:
+    def lock_confirmatory(
+        self,
+        session_id: str,
+        *,
+        require_complete_profile: bool = False,
+    ) -> ConfirmatoryLock:
         existing = self.store.load_confirmatory_lock(session_id)
         if existing is not None:
             if self.store.load_confirmatory_ranking(session_id) is None:
@@ -277,6 +316,18 @@ class ParticipantSessionService:
             for record in self.store.load_evidence(session_id)
             if record.phase == "confirmatory_blind"
         )
+        assessed = self._latest_adequately_assessed_question_ids(records)
+        required_question_ids = self.backend.required_confirmatory_question_ids
+        if require_complete_profile:
+            missing = sorted(required_question_ids - assessed)
+            if missing:
+                preview = ", ".join(missing[:12])
+                suffix = "" if len(missing) <= 12 else f" and {len(missing) - 12} more"
+                raise ParticipantStateError(
+                    "confirmatory evidence is incomplete: "
+                    f"{len(missing)} frozen dimensions still need adequate, "
+                    f"consistency-checked evidence ({preview}{suffix})"
+                )
         responses = self._latest_scoreable_responses(records)
         if not responses:
             raise ParticipantStateError(
@@ -292,6 +343,10 @@ class ParticipantSessionService:
             excluded_non_natal_evidence_count=sum(
                 not record.evidence.domain.natal_ranking_eligible for record in records
             ),
+            evidence_quality_contract_version=NATAL_EVIDENCE_QUALITY_CONTRACT_VERSION,
+            adequately_assessed_question_count=len(assessed & required_question_ids),
+            required_question_count=len(required_question_ids),
+            complete_profile_required=require_complete_profile,
         )
         ranking = self._calculate_ranking(
             session_id,
@@ -438,7 +493,7 @@ class ParticipantSessionService:
             if (
                 not evidence.domain.natal_ranking_eligible
                 or question_id is None
-                or question_id not in self.backend.scoreable_question_ids
+                or question_id not in self.backend.required_confirmatory_question_ids
             ):
                 continue
             response = evidence.scoring_response()
@@ -449,6 +504,25 @@ class ParticipantSessionService:
             else:
                 by_question[question_id] = response
         return tuple(by_question[key] for key in sorted(by_question))
+
+    def _latest_adequately_assessed_question_ids(
+        self,
+        records: Sequence[EvidenceRecord],
+    ) -> frozenset[str]:
+        latest: dict[str, bool] = {}
+        for record in records:
+            evidence = record.evidence
+            question_id = evidence.question_id
+            if (
+                not evidence.domain.natal_ranking_eligible
+                or question_id is None
+                or question_id not in self.backend.scoreable_question_ids
+            ):
+                continue
+            latest[question_id] = (
+                evidence.minimum_evidence_passed and evidence.consistency_status.adequate
+            )
+        return frozenset(question_id for question_id, passed in latest.items() if passed)
 
     def _apply_posthoc_overrides(
         self,
@@ -462,7 +536,7 @@ class ParticipantSessionService:
             if (
                 not evidence.domain.natal_ranking_eligible
                 or question_id is None
-                or question_id not in self.backend.scoreable_question_ids
+                or question_id not in self.backend.required_confirmatory_question_ids
             ):
                 continue
             response = evidence.scoring_response()
@@ -485,7 +559,7 @@ class ParticipantSessionService:
             if (
                 not evidence.domain.natal_ranking_eligible
                 or question_id is None
-                or question_id not in self.backend.scoreable_question_ids
+                or question_id not in self.backend.required_confirmatory_question_ids
             ):
                 continue
             response = evidence.scoring_response()

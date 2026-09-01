@@ -1,5 +1,33 @@
 # Current Research Plan
 
+## Restart priority — 2026-09-01 supervision and owner-intake recovery
+
+This section supersedes the older continuation details below until resolved.
+
+1. Restore the supported browser-control connection first. The 2026-09-01 Browser
+   runtime discovery returned no available controlled browser, so the existing Pro
+   supervision chat could not be surfaced. Reconnect the intended persistent browser,
+   reuse the existing supervision conversation, and keep any owner-visible window on
+   the workspace the owner requests.
+2. Do not treat `76` as an established questionnaire requirement. The 81-item bank has
+   five validation-phase items, but the production frozen model currently has 27
+   frozen rules spanning only 23 unique question IDs; the remaining non-validation
+   items are six `empirical_only` and 47 `unresolved`. The 23-versus-76 burden/scope
+   choice remains unresolved owner authority.
+3. Resume from draft owner-quality branch
+   `codex/astrohd-owner-intake-quality-v1`. Preserve the completed UI, invitation,
+   evidence-receipt, phase-separation, and Action-contract repairs, but resolve the
+   server-authoritative `cluster_id` finding before release.
+4. Treat the pre-repair owner run as diagnostic unless the owner chooses otherwise.
+   Exact source-commit compatibility correctly prevents an unlocked session frozen on
+   deployed `afc0bb8` from continuing under a repaired deployment commit.
+5. No merge, deployment, invitation rotation, or fresh session until the blocked
+   scientific scope and session-replacement choices are resolved. External
+   participants remain closed and incremental spending remains `$0`.
+
+Adequacy: operational `BLOCKED_BROWSER_AND_CLUSTER_CONTRACT`; scientific
+`BLOCKED_23_VERSUS_76_OWNER_SCOPE`; release `BLOCKED_NO_MERGE_OR_DEPLOY`.
+
 ## Owner coordination directive — 2026-08-31
 
 - Continue routine, safe, in-scope execution autonomously. Do not ask the owner to

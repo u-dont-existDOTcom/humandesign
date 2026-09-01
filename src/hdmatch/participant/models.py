@@ -17,6 +17,8 @@ from pydantic import (
 
 from hdmatch.schemas import BehavioralResponse, ChartFeatures, ScoredState
 
+NATAL_EVIDENCE_QUALITY_CONTRACT_VERSION = "astrohd-natal-evidence-quality-v1"
+
 
 class ParticipantModel(BaseModel):
     """Strict immutable base for participant-session records."""
@@ -55,6 +57,17 @@ class EvidenceDomain(StrEnum):
         """Only latent traits/behaviors may enter the natal fingerprint score."""
 
         return self in {EvidenceDomain.TRAIT, EvidenceDomain.BEHAVIOR}
+
+
+class EvidenceConsistency(StrEnum):
+    NOT_CHECKED = "not_checked"
+    CONSISTENT = "consistent"
+    RECONCILED = "reconciled"
+    UNRESOLVED = "unresolved"
+
+    @property
+    def adequate(self) -> bool:
+        return self in {EvidenceConsistency.CONSISTENT, EvidenceConsistency.RECONCILED}
 
 
 class ResearchLayer(StrEnum):
@@ -201,12 +214,34 @@ class EvidenceInput(ParticipantModel):
     exceptions: tuple[str, ...] = ()
     example_text: str | None = None
     counterexample_text: str | None = None
+    minimum_evidence_passed: bool = False
+    consistency_status: EvidenceConsistency = EvidenceConsistency.NOT_CHECKED
+    quality_rationale: str | None = None
     supersedes_evidence_id: str | None = None
+
+    @model_validator(mode="after")
+    def require_quality_receipt_for_scoreable_answer(self) -> EvidenceInput:
+        if not self.domain.natal_ranking_eligible:
+            return self
+        if self.minimum_evidence_passed:
+            if self.question_id is None or self.cluster_id is None:
+                raise ValueError(
+                    "adequately assessed natal evidence requires question_id and cluster_id"
+                )
+            if not self.consistency_status.adequate:
+                raise ValueError(
+                    "minimum-evidence pass requires a consistent or reconciled profile check"
+                )
+            if self.quality_rationale is None or not self.quality_rationale.strip():
+                raise ValueError("minimum-evidence pass requires a quality rationale")
+        return self
 
     def scoring_response(self) -> BehavioralResponse | None:
         """Return scoreable natal evidence or None for outcomes/covariates/free text."""
 
         if not self.domain.natal_ranking_eligible:
+            return None
+        if not self.minimum_evidence_passed or not self.consistency_status.adequate:
             return None
         if self.question_id is None or self.cluster_id is None or self.answer is None:
             return None
@@ -222,7 +257,9 @@ class EvidenceInput(ParticipantModel):
 
 
 class EvidenceRecord(ParticipantModel):
-    schema_version: Literal["participant-evidence-v1"] = "participant-evidence-v1"
+    schema_version: Literal["participant-evidence-v1", "participant-evidence-v2"] = (
+        "participant-evidence-v2"
+    )
     evidence_id: str
     session_id: str
     phase: Literal["confirmatory_blind", "posthoc_exploratory"]
@@ -238,13 +275,19 @@ class EvidenceRecord(ParticipantModel):
 
 
 class ConfirmatoryLock(ParticipantModel):
-    schema_version: Literal["participant-confirmatory-lock-v1"] = "participant-confirmatory-lock-v1"
+    schema_version: Literal[
+        "participant-confirmatory-lock-v1", "participant-confirmatory-lock-v2"
+    ] = "participant-confirmatory-lock-v2"
     session_id: str
     locked_at_utc: datetime
     evidence_ids: tuple[str, ...]
     scoring_responses: tuple[BehavioralResponse, ...]
     scoring_responses_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
     excluded_non_natal_evidence_count: int = Field(ge=0)
+    evidence_quality_contract_version: str | None = None
+    adequately_assessed_question_count: int | None = Field(default=None, ge=0)
+    required_question_count: int | None = Field(default=None, ge=0)
+    complete_profile_required: bool = False
 
     @field_validator("locked_at_utc")
     @classmethod
@@ -288,7 +331,7 @@ class RankingSnapshot(ParticipantModel):
 class PublicProgress(ParticipantModel):
     """Safe pre-reveal progress. It never contains the true birth rank."""
 
-    schema_version: Literal["participant-progress-v1"] = "participant-progress-v1"
+    schema_version: Literal["participant-progress-v2"] = "participant-progress-v2"
     session_id: str
     phase: SessionPhase
     confirmatory_observation_count: int = Field(ge=0)
@@ -296,6 +339,10 @@ class PublicProgress(ParticipantModel):
     non_natal_observation_count: int = Field(ge=0)
     scoreable_question_count: int = Field(ge=0)
     scoreable_coverage: float = Field(ge=0.0, le=1.0)
+    required_confirmatory_question_count: int = Field(ge=0)
+    adequately_assessed_question_count: int = Field(ge=0)
+    adequately_assessed_coverage: float = Field(ge=0.0, le=1.0)
+    unresolved_question_count: int = Field(ge=0)
     candidate_state_count: int | None = Field(default=None, ge=1)
     top_state_tie_count: int | None = Field(default=None, ge=1)
     top_margin_rubric_bits: float | None = None
@@ -303,11 +350,12 @@ class PublicProgress(ParticipantModel):
 
 
 class NextInterviewQuestion(ParticipantModel):
-    schema_version: Literal["participant-next-question-v1"] = "participant-next-question-v1"
+    schema_version: Literal["participant-next-question-v2"] = "participant-next-question-v2"
     session_id: str
     question_id: str | None
     prompt: str
     response_format: str
+    minimum_evidence: str
     followups: tuple[str, ...] = ()
     expected_information_gain: float | None = None
     adjusted_utility: float | None = None

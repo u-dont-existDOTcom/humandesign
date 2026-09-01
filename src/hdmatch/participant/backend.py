@@ -30,8 +30,8 @@ from hdmatch.search import (
 from .models import (
     PredictionDimension,
     PredictionFreeze,
-    RankScope,
     RankingSnapshot,
+    RankScope,
     ResolvedBirth,
     SessionMode,
 )
@@ -97,6 +97,16 @@ class AstroHDParticipantBackend:
             question_id
             for mapping in self.model.library.frozen_mappings
             for question_id in mapping.question_ids
+        )
+
+    @property
+    def required_confirmatory_question_ids(self) -> frozenset[str]:
+        """Scoreable interview questions, excluding separately phased validation tasks."""
+
+        return frozenset(
+            question_id
+            for question_id in self.scoreable_question_ids
+            if self.question_bank.by_id(question_id).phase != "validation"
         )
 
     def build_prediction_freeze(
@@ -206,7 +216,9 @@ class AstroHDParticipantBackend:
         )
         if actual_date is None:
             raise RuntimeError("true local birth date is outside its declared candidate universe")
-        top_state_ties = sum(math.isclose(item.rank, ranked_states[0].rank) for item in ranked_states)
+        top_state_ties = sum(
+            math.isclose(item.rank, ranked_states[0].rank) for item in ranked_states
+        )
         top_date_score = ranked_dates[0].date_score
         top_date_ties = sum(
             math.isclose(
@@ -431,9 +443,7 @@ class AstroHDParticipantBackend:
                 )
                 for state in states
             }
-        by_signature: dict[
-            tuple[str, str, str, str, tuple[str, ...]], ScoredState
-        ] = {}
+        by_signature: dict[tuple[str, str, str, str, tuple[str, ...]], ScoredState] = {}
         result: dict[str, ScoredState] = {}
         for state in states:
             signature = self.model.scoring_signature(state.chart_features)
@@ -480,9 +490,7 @@ class AstroHDParticipantBackend:
             timezone_name=freeze.birth.iana_timezone,
         )
         if observed != freeze.candidate_universe_sha256:
-            raise RuntimeError(
-                "candidate universe changed after the pre-answer prediction freeze"
-            )
+            raise RuntimeError("candidate universe changed after the pre-answer prediction freeze")
         if len(states) != freeze.candidate_universe_state_count:
             raise RuntimeError("candidate universe state count changed after freeze")
         if states[0].start_utc != freeze.candidate_universe_utc_start:
@@ -520,14 +528,11 @@ class AstroHDParticipantBackend:
             state = ordered[position]
             key = _evidence_tie_key(scores[state.state_id])
             end = position + 1
-            while end < len(ordered) and _evidence_tie_key(
-                scores[ordered[end].state_id]
-            ) == key:
+            while end < len(ordered) and _evidence_tie_key(scores[ordered[end].state_id]) == key:
                 end += 1
             midrank = (position + 1 + end) / 2.0
             result.extend(
-                _RankedState(item, scores[item.state_id], midrank)
-                for item in ordered[position:end]
+                _RankedState(item, scores[item.state_id], midrank) for item in ordered[position:end]
             )
             position = end
         return tuple(result)
@@ -624,7 +629,4 @@ def _likelihood_row(
     if len(unique) == 1:
         return {unique[0]: 1.0}
     mismatch = (1.0 - match_probability) / (len(unique) - 1)
-    return {
-        token: match_probability if token == expected else mismatch
-        for token in unique
-    }
+    return {token: match_probability if token == expected else mismatch for token in unique}

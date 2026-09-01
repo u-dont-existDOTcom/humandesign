@@ -1,5 +1,45 @@
 # Current state
 
+## Active owner-test defect repair — 2026-09-01
+
+- Owner evidence: the natal intro did not explain the combined AstroHD research
+  motivation; the GPT advanced after domain-limited, incomplete, and deliberately
+  random answers; the server allowed premature lock; credential/time/access controls
+  were unexplained.
+- Working branch: `codex/astrohd-owner-intake-quality-v1`, based on deployed main
+  `afc0bb82de0e481ae5a5d3453e0bcaf82b2a0286` (merged PR `#21`).
+- Implementation boundary: improve participant explanation and credentials UX; expose
+  frozen minimum-evidence requirements; require per-observation evidence-quality and
+  consistency receipts; keep legacy evidence readable but unscoreable; reject owner
+  lock until every in-interview confirmatory dimension is adequately assessed; keep
+  separately phased prospective validation tasks outside that immediate gate; do not
+  force tokens.
+- Magic-link boundary: the natal pilot intentionally keeps credentials out of URLs;
+  this is distinct from relationship-email recovery. The UI now provides one-click
+  copy of both credentials and explains the separation. Session authorization is now
+  independent of the active one-use invitation, with legacy receipt migration, so a
+  later test-code rotation cannot strand the current session.
+- Independent exact-diff review is `BLOCKED`. The 81-item question bank contains five
+  validation-phase items, but production has only 27 frozen rules spanning 23 unique
+  question IDs. The previously stated `76` immediate gate was an unverified inference,
+  not a Pro/owner decision. Of the other 53 non-validation items, six are
+  `empirical_only` and 47 are `unresolved`. The owner has not selected a 23-construct
+  scored pilot or a 76-item holistic acquisition gate with explicit unscored evidence.
+- The Action also cannot yet supply the `cluster_id` that adequate evidence currently
+  requires; the resumed worker must either return and validate a server-authoritative
+  cluster or remove the scientifically unnecessary client-authored requirement.
+- Browser recovery is the first restart action. Supported Browser discovery returned
+  no available controlled browser on 2026-09-01, so the existing supervision chat
+  could not be shown. Do not fabricate a chat or supervisor provenance and do not
+  substitute an unsupported browser-control path.
+- Current local verification: 269 tests passed, one skipped because official Swiss
+  files are unavailable; strict mypy passed for 119 source files; touched Ruff and
+  participant JavaScript syntax passed. Whole-repository Ruff still has pre-existing
+  unrelated baseline failures.
+- Adequacy: operational `BLOCKED_BROWSER_AND_CLUSTER_CONTRACT`; scientific
+  `BLOCKED_23_VERSUS_76_OWNER_SCOPE / HUMAN_VALIDITY_NOT_ESTABLISHED`; release
+  `BLOCKED_NO_MERGE_OR_DEPLOY`. Friends/public recruitment remains closed.
+
 ## Active task override — Issue #18 owner-only release smoke
 
 - As of: `2026-08-31`.
@@ -28,8 +68,9 @@
   `PENDING_OWNER_SESSION`, scientific validity `NOT_ESTABLISHED`, release
   `OPEN_OWNER_ONLY`.
 - Owner correction: natal AstroHD is now the first product/scientific test; AstroRRF
-  relationship work remains secondary because it depends on two natal layers. There
-  is no minimum-response gate before frozen predictions may be revealed.
+  relationship work remains secondary because it depends on two natal layers. The
+  earlier absence of a minimum-response gate is superseded by the 2026-09-01 active
+  evidence-quality repair above.
 - Current continuation: draft PR `#21`, branch `codex/issue18-release-receipt`, contains
   the relationship `[object Object]` formatter fix and the unmerged AstroHD-first owner
   pilot described in `docs/36_astrohd_owner_pilot.md`.

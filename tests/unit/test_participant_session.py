@@ -11,6 +11,7 @@ from hdmatch.experiments.canonical import canonical_json_bytes, sha256_file
 from hdmatch.participant.backend import DiscriminationDiagnostics, SelectedQuestion
 from hdmatch.participant.models import (
     BirthIntake,
+    EvidenceConsistency,
     EvidenceDomain,
     EvidenceInput,
     PredictionDimension,
@@ -29,6 +30,7 @@ from hdmatch.search import QuestionUtility
 
 class FakeParticipantBackend:
     scoreable_question_ids = frozenset({"Q1", "Q2"})
+    required_confirmatory_question_ids = frozenset({"Q1", "Q2"})
 
     def assert_freeze_compatible(self, freeze: PredictionFreeze) -> None:
         del freeze
@@ -173,6 +175,38 @@ class FakeParticipantBackend:
         )
 
 
+class PhasedParticipantBackend(FakeParticipantBackend):
+    scoreable_question_ids = frozenset({"Q1", "Q2", "V03"})
+    required_confirmatory_question_ids = frozenset({"Q1", "Q2"})
+
+    def build_prediction_freeze(
+        self,
+        *,
+        session_id: str,
+        birth: ResolvedBirth,
+        ranking_scope: RankScope,
+        created_at_utc: datetime,
+    ) -> PredictionFreeze:
+        freeze = super().build_prediction_freeze(
+            session_id=session_id,
+            birth=birth,
+            ranking_scope=ranking_scope,
+            created_at_utc=created_at_utc,
+        )
+        validation_prediction = PredictionDimension(
+            question_id="V03",
+            cluster_id="PROSPECTIVE_VALIDATION",
+            canonical_answer="yes",
+            support_answers=("yes",),
+            contradiction_answers=("no",),
+            behavioral_statements=("Prospective validation observation.",),
+            mapping_ids=("MAP-TEST-V03",),
+        )
+        return freeze.model_copy(
+            update={"dimensions": (*freeze.dimensions, validation_prediction)}
+        )
+
+
 def _service(tmp_path: Path) -> ParticipantSessionService:
     return ParticipantSessionService(
         store=ParticipantSessionStore(tmp_path / "sessions"),
@@ -206,6 +240,9 @@ def _behavior(
         behavioral_confidence=0.9,
         measurement_reliability=0.9,
         narrative=narrative,
+        minimum_evidence_passed=True,
+        consistency_status=EvidenceConsistency.CONSISTENT,
+        quality_rationale="The response meets the frozen test minimum and fits prior evidence.",
     )
 
 
@@ -226,7 +263,89 @@ def test_prediction_is_frozen_before_answers_and_progress_conceals_true_rank(
     assert "true_state_rank" not in progress.model_dump()
     assert "true_date_rank" not in progress.model_dump()
     assert progress.scoreable_coverage == 0.5
+    assert progress.required_confirmatory_question_count == 2
+    assert progress.adequately_assessed_coverage == 0.5
+    assert progress.unresolved_question_count == 1
     assert sha256_file(freeze_path) == before
+
+
+def test_unreceipted_legacy_answer_remains_readable_but_is_not_scoreable() -> None:
+    evidence = EvidenceInput(
+        domain=EvidenceDomain.BEHAVIOR,
+        question_id="Q1",
+        cluster_id="DECISION",
+        answer="yes",
+        narrative="A legacy answer remains readable.",
+    )
+
+    assert evidence.scoring_response() is None
+
+
+def test_owner_quality_gate_refuses_incomplete_profile_then_accepts_full_coverage(
+    tmp_path: Path,
+) -> None:
+    service = _service(tmp_path)
+    session_id = _new_session(service)
+    service.append_evidence(session_id, _behavior("Q1", "no", narrative="Q1 evidence."))
+
+    with pytest.raises(ParticipantStateError, match="1 frozen dimensions"):
+        service.lock_confirmatory(session_id, require_complete_profile=True)
+
+    service.append_evidence(session_id, _behavior("Q2", None, narrative="No option fits Q2."))
+    progress = service.public_progress(session_id)
+    assert progress.adequately_assessed_coverage == 1.0
+    assert progress.scoreable_coverage == 0.5
+    assert progress.unresolved_question_count == 0
+
+    lock = service.lock_confirmatory(session_id, require_complete_profile=True)
+    assert [response.question_id for response in lock.scoring_responses] == ["Q1"]
+    assert lock.schema_version == "participant-confirmatory-lock-v2"
+    assert lock.complete_profile_required is True
+    assert lock.adequately_assessed_question_count == 2
+    assert lock.required_question_count == 2
+    assert lock.evidence_quality_contract_version == "astrohd-natal-evidence-quality-v1"
+
+
+def test_validation_phase_evidence_cannot_enter_initial_rank_or_comparison(
+    tmp_path: Path,
+) -> None:
+    service = ParticipantSessionService(
+        store=ParticipantSessionStore(tmp_path / "sessions"),
+        backend=PhasedParticipantBackend(),
+    )
+    session_id = _new_session(service)
+    service.append_evidence(
+        session_id,
+        _behavior("V03", "yes", narrative="Premature prospective validation evidence."),
+    )
+    service.append_evidence(session_id, _behavior("Q1", "yes", narrative="Q1 evidence."))
+    service.append_evidence(session_id, _behavior("Q2", "yes", narrative="Q2 evidence."))
+
+    progress = service.public_progress(session_id)
+    assert progress.scoreable_question_count == 2
+    assert progress.scoreable_coverage == 1.0
+    assert progress.adequately_assessed_coverage == 1.0
+
+    lock = service.lock_confirmatory(session_id, require_complete_profile=True)
+    assert [response.question_id for response in lock.scoring_responses] == ["Q1", "Q2"]
+
+    reveal = service.reveal(session_id)
+    validation_comparison = next(
+        item for item in reveal.prediction_comparisons if item.question_id == "V03"
+    )
+    assert validation_comparison.observed_answer is None
+    assert validation_comparison.evidence_id is None
+    assert validation_comparison.classification == "insufficient_evidence"
+
+    service.append_evidence(
+        session_id,
+        _behavior("V03", "no", narrative="Post-reveal validation observation."),
+    )
+    final = service.finalize_exploratory(session_id)
+    assert [response.question_id for response in final.exploratory.final_profile_responses] == [
+        "Q1",
+        "Q2",
+    ]
 
 
 def test_outcomes_are_retained_but_excluded_from_natal_confirmatory_rank(

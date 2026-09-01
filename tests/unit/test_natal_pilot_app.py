@@ -3,6 +3,8 @@ from __future__ import annotations
 import asyncio
 import hashlib
 import json
+import re
+import subprocess
 from dataclasses import dataclass
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
@@ -10,6 +12,7 @@ from typing import Any, cast
 from urllib.parse import urlsplit
 
 import pytest
+import yaml
 from fastapi import FastAPI
 from fastapi.routing import APIRoute
 from starlette.routing import Mount
@@ -21,6 +24,7 @@ from hdmatch.api.natal_pilot_app import NatalPilotConfig, create_natal_pilot_app
 from hdmatch.api.natal_pilot_ui import render_natal_pilot_html
 from hdmatch.participant.models import (
     BirthIntake,
+    ConfirmatoryLock,
     EvidenceInput,
     EvidenceRecord,
     PublicProgress,
@@ -62,6 +66,7 @@ class FakeSessions:
     def __init__(self) -> None:
         self.created: list[BirthIntake] = []
         self.appended: list[EvidenceInput] = []
+        self.lock_requirements: list[bool] = []
 
     def create_session(self, intake: BirthIntake) -> SessionRecord:
         self.created.append(intake)
@@ -82,6 +87,10 @@ class FakeSessions:
             non_natal_observation_count=0,
             scoreable_question_count=len(self.appended),
             scoreable_coverage=0.0,
+            required_confirmatory_question_count=len(self.appended),
+            adequately_assessed_question_count=0,
+            adequately_assessed_coverage=0.0,
+            unresolved_question_count=len(self.appended),
         )
 
     def append_evidence(
@@ -96,6 +105,25 @@ class FakeSessions:
             phase="confirmatory_blind",
             created_at_utc=datetime(2026, 8, 31, 20, 1, tzinfo=UTC),
             evidence=evidence,
+        )
+
+    def lock_confirmatory(
+        self,
+        session_id: str,
+        *,
+        require_complete_profile: bool = False,
+    ) -> ConfirmatoryLock:
+        self.lock_requirements.append(require_complete_profile)
+        return ConfirmatoryLock(
+            session_id=session_id,
+            locked_at_utc=datetime(2026, 8, 31, 20, 2, tzinfo=UTC),
+            evidence_ids=(),
+            scoring_responses=(),
+            scoring_responses_sha256="c" * 64,
+            excluded_non_natal_evidence_count=0,
+            adequately_assessed_question_count=0,
+            required_question_count=0,
+            complete_profile_required=require_complete_profile,
         )
 
 
@@ -199,7 +227,13 @@ def test_intake_is_natal_first_explicit_time_and_truthfully_versioned(tmp_path: 
     response = _request(app, "GET", "/")
 
     assert response.status_code == 200
-    assert "Test AstroHD before relationship matching" in response.text
+    assert "first real blinded test of astrology and Human Design" in response.text
+    assert "Please do not take this interview in a rush" in response.text
+    assert 'id="effortAcknowledgment"' in response.text
+    assert "One-time owner-test invitation code" in response.text
+    assert "Copy both credentials" in response.text
+    assert "There is deliberately no credential-bearing magic link" in response.text
+    assert "rare case when daylight-saving clocks" in response.text
     assert 'id="birthHour"' in response.text
     assert 'id="birthMinute"' in response.text
     assert 'id="birthSecond"' in response.text
@@ -210,6 +244,30 @@ def test_intake_is_natal_first_explicit_time_and_truthfully_versioned(tmp_path: 
     assert 'id="openAIConsent"' in response.text
     assert "exact birth record and raw chart stay on this trusted site" in response.text
     assert "localStorage" not in response.text
+
+
+def test_copy_failure_handler_preserves_the_credential_container() -> None:
+    html = render_natal_pilot_html(None)
+    function = re.search(r"function showCredentialCopyFailure\([^}]+\}", html)
+    assert function is not None
+    assert "catch(error){showCredentialCopyFailure(copyMessage,error)}" in html
+    probe = function.group(0) + """
+const credentials={textContent:'one-time-session-id and token'};
+const classes=[];
+const message={textContent:'',classList:{add:value=>classes.push(value)}};
+showCredentialCopyFailure(message,new Error('copy failed'));
+if(credentials.textContent!=='one-time-session-id and token')process.exit(2);
+if(!classes.includes('error'))process.exit(3);
+if(!message.textContent.includes('still shown above'))process.exit(4);
+"""
+    completed = subprocess.run(
+        ["node", "-e", probe],
+        check=False,
+        capture_output=True,
+        text=True,
+        timeout=5,
+    )
+    assert completed.returncode == 0, completed.stderr
 
 
 def test_interviewer_url_is_validated_and_script_escaped(tmp_path: Path) -> None:
@@ -289,6 +347,11 @@ def test_single_use_invite_requires_consent_and_never_stores_raw_token(
     assert '"consent_to_future_deidentified_model_development": true' in receipt
     assert '"consent_to_openai_redacted_interview_processing": true' in receipt
     assert oct(receipt_path.stat().st_mode & 0o777) == "0o600"
+    access_path = tmp_path / "invites" / "session-access" / f"{created.json['session_id']}.json"
+    access_receipt = access_path.read_text(encoding="utf-8")
+    assert session_token not in access_receipt
+    assert hashlib.sha256(session_token.encode()).hexdigest() in access_receipt
+    assert oct(access_path.stat().st_mode & 0o777) == "0o600"
 
     replay = _request(
         app,
@@ -299,6 +362,37 @@ def test_single_use_invite_requires_consent_and_never_stores_raw_token(
     )
     assert replay.status_code == 410
     assert len(sessions.created) == 1
+
+
+def test_invite_rotation_preserves_and_migrates_existing_session_access(tmp_path: Path) -> None:
+    sessions = FakeSessions()
+    original = _app(tmp_path, sessions, token="owner-code")
+    created = _request(
+        original,
+        "POST",
+        "/v1/participant-sessions",
+        body=_birth(),
+        headers={
+            "x-astrohd-pilot-token": "owner-code",
+            "x-astrohd-storage-consent": "yes",
+            "x-astrohd-openai-consent": "yes",
+        },
+    )
+    session_id = str(created.json["session_id"])
+    session_token = str(created.json["session_token"])
+    access_path = tmp_path / "invites" / "session-access" / f"{session_id}.json"
+    access_path.unlink()
+
+    rotated = _app(tmp_path, sessions, token="fresh-owner-code")
+    progress = _request(
+        rotated,
+        "POST",
+        "/v1/interviewer/progress",
+        body={"session_id": session_id, "session_token": session_token},
+    )
+
+    assert progress.status_code == 200
+    assert access_path.exists()
 
 
 def test_validation_failure_does_not_consume_invite_and_has_structured_error(
@@ -358,8 +452,7 @@ def test_health_probes_private_storage_and_action_schema_excludes_birth_intake(
     reveal_route = next(
         route
         for route in app.routes
-        if isinstance(route, APIRoute)
-        and route.path == "/v1/interviewer/reveal"
+        if isinstance(route, APIRoute) and route.path == "/v1/interviewer/reveal"
     )
     response_fields = reveal_route.response_model.model_fields  # type: ignore[union-attr]
     assert "birth" not in response_fields
@@ -467,6 +560,9 @@ def test_interviewer_evidence_wrapper_unwraps_nested_evidence(tmp_path: Path) ->
                 "cluster_id": "C-TEST",
                 "answer": "sometimes",
                 "narrative": "It depends strongly on context.",
+                "minimum_evidence_passed": True,
+                "consistency_status": "consistent",
+                "quality_rationale": "The participant supplied the required context.",
             },
         },
     )
@@ -475,6 +571,41 @@ def test_interviewer_evidence_wrapper_unwraps_nested_evidence(tmp_path: Path) ->
     assert response.json["evidence"]["narrative"] == "It depends strongly on context."
     assert len(sessions.appended) == 1
     assert sessions.appended[0].question_id == "Q-TEST"
+
+
+def test_both_owner_lock_routes_require_the_complete_profile_gate(tmp_path: Path) -> None:
+    sessions = FakeSessions()
+    app = _app(tmp_path, sessions)
+    created = _request(
+        app,
+        "POST",
+        "/v1/participant-sessions",
+        body=_birth(),
+        headers={
+            "x-astrohd-pilot-token": "owner-code",
+            "x-astrohd-storage-consent": "yes",
+            "x-astrohd-openai-consent": "yes",
+        },
+    )
+    session_id = str(created.json["session_id"])
+    session_token = str(created.json["session_token"])
+
+    generic = _request(
+        app,
+        "POST",
+        f"/v1/participant-sessions/{session_id}/lock",
+        headers={"x-astrohd-session-token": session_token},
+    )
+    interviewer = _request(
+        app,
+        "POST",
+        "/v1/interviewer/lock",
+        body={"session_id": session_id, "session_token": session_token},
+    )
+
+    assert generic.status_code == 200
+    assert interviewer.status_code == 200
+    assert sessions.lock_requirements == [True, True]
 
 
 @pytest.mark.parametrize(
@@ -522,6 +653,28 @@ def test_committed_interviewer_schema_has_no_trusted_birth_creation_action() -> 
     assert schema.count("/v1/interviewer/") == 7
     assert schema.count("    post:") == 7
     assert "required: [session_id, session_token]" in schema
+    assert "minimum_evidence_passed" in schema
+    assert "consistency_status" in schema
+    assert "quality_rationale" in schema
+    action_contract = yaml.safe_load(schema)
+    components = action_contract["components"]["schemas"]
+    progress_response = components["ProgressResponse"]
+    next_question_response = components["NextQuestionResponse"]
+    assert "adequately_assessed_coverage" in progress_response["required"]
+    assert progress_response["properties"]["adequately_assessed_coverage"]["maximum"] == 1
+    assert set(progress_response["properties"]["phase"]["enum"]) == {
+        phase.value for phase in SessionPhase
+    }
+    assert "minimum_evidence" in next_question_response["required"]
+    assert next_question_response["properties"]["minimum_evidence"]["type"] == "string"
+
+    instructions = (
+        PROJECT_ROOT / "reference/custom_gpt/participant_interviewer_instructions_under_8000_v1.md"
+    ).read_text()
+    assert len(instructions.encode()) < 8000
+    assert "I learned chess very quickly" in " ".join(instructions.split())
+    assert "random, joke-like" in instructions
+    assert "adequately_assessed_coverage=1.0" in instructions
     assert "writeOnly: true" in schema
     assert "#/components/parameters/" not in schema
     assert "schema: {type: object, additionalProperties: true}" not in schema
@@ -662,7 +815,7 @@ def test_production_factory_verifies_real_pinned_cache_when_ephemeris_installed(
 
     assert "Start with one person" in landing_html
     assert "Seal prediction &amp; begin questionnaire" in relationship_html
-    assert "Test AstroHD before relationship matching" in natal_html
+    assert "first real blinded test of astrology and Human Design" in natal_html
     assert natal_health["status"] == "ok"
     assert natal_health["ranking_scope"] == "known_birth_month"
     assert natal_health["month_universe_source"] == "pinned_verified_century_cache_slice"

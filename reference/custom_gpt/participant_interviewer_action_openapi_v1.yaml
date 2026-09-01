@@ -28,18 +28,15 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  schema_version: {type: string}
-                  session_id: {type: string}
-                additionalProperties: true
+                $ref: '#/components/schemas/ProgressResponse'
   /v1/interviewer/next-question:
     post:
       operationId: getParticipantNextQuestion
       summary: Select the next neutral interview question
       description: >-
         Uses candidate-blind discrimination to suggest an informative frozen
-        dimension. Other/free-form responses must always remain available.
+        dimension and its minimum-evidence requirement. Other/free-form responses
+        must always remain available.
       requestBody:
         required: true
         content:
@@ -52,11 +49,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  schema_version: {type: string}
-                  session_id: {type: string}
-                additionalProperties: true
+                $ref: '#/components/schemas/NextQuestionResponse'
   /v1/interviewer/evidence:
     post:
       operationId: appendParticipantEvidence
@@ -174,6 +167,73 @@ paths:
                 additionalProperties: true
 components:
   schemas:
+    ProgressResponse:
+      type: object
+      additionalProperties: true
+      required:
+        - schema_version
+        - session_id
+        - phase
+        - required_confirmatory_question_count
+        - adequately_assessed_question_count
+        - adequately_assessed_coverage
+        - unresolved_question_count
+        - true_birth_rank_concealed
+      properties:
+        schema_version: {type: string, const: participant-progress-v2}
+        session_id: {type: string}
+        phase:
+          type: string
+          enum:
+            - confirmatory_blind
+            - confirmatory_locked
+            - revealed
+            - posthoc_exploratory
+            - finalized
+        confirmatory_observation_count: {type: integer, minimum: 0}
+        scoreable_observation_count: {type: integer, minimum: 0}
+        non_natal_observation_count: {type: integer, minimum: 0}
+        scoreable_question_count: {type: integer, minimum: 0}
+        scoreable_coverage: {type: number, minimum: 0, maximum: 1}
+        required_confirmatory_question_count: {type: integer, minimum: 0}
+        adequately_assessed_question_count: {type: integer, minimum: 0}
+        adequately_assessed_coverage:
+          type: number
+          minimum: 0
+          maximum: 1
+          description: Must equal 1.0 before requesting the confirmatory lock.
+        unresolved_question_count: {type: integer, minimum: 0}
+        candidate_state_count: {type: [integer, 'null'], minimum: 1}
+        top_state_tie_count: {type: [integer, 'null'], minimum: 1}
+        top_margin_rubric_bits: {type: [number, 'null']}
+        true_birth_rank_concealed: {type: boolean, const: true}
+    NextQuestionResponse:
+      type: object
+      additionalProperties: true
+      required:
+        - schema_version
+        - session_id
+        - question_id
+        - prompt
+        - response_format
+        - minimum_evidence
+        - followups
+        - allow_other
+        - guidance
+      properties:
+        schema_version: {type: string, const: participant-next-question-v2}
+        session_id: {type: string}
+        question_id: {type: [string, 'null']}
+        prompt: {type: string}
+        response_format: {type: string}
+        minimum_evidence:
+          type: string
+          description: The evidence that must be acquired before this dimension can pass.
+        followups: {type: array, items: {type: string}}
+        expected_information_gain: {type: [number, 'null']}
+        adjusted_utility: {type: [number, 'null']}
+        allow_other: {type: boolean, const: true}
+        guidance: {type: string}
     SessionAccess:
       type: object
       additionalProperties: false
@@ -233,4 +293,23 @@ components:
         exceptions: {type: array, items: {type: string}, default: []}
         example_text: {type: [string, 'null'], default: null}
         counterexample_text: {type: [string, 'null'], default: null}
+        minimum_evidence_passed:
+          type: boolean
+          default: false
+          description: >-
+            True only when the current question's returned minimum-evidence
+            requirement has actually been met.
+        consistency_status:
+          type: string
+          enum: [not_checked, consistent, reconciled, unresolved]
+          default: not_checked
+          description: >-
+            Whether this observation agrees with prior evidence, was reconciled by
+            context or life-stage change, or remains unresolved.
+        quality_rationale:
+          type: [string, 'null']
+          default: null
+          description: >-
+            Short evidence-specific reason for passing the minimum and consistency
+            gates. Required by the server for adequate trait/behavior evidence.
         supersedes_evidence_id: {type: [string, 'null'], default: null}
