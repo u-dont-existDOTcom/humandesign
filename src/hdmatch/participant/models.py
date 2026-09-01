@@ -70,6 +70,15 @@ class EvidenceConsistency(StrEnum):
         return self in {EvidenceConsistency.CONSISTENT, EvidenceConsistency.RECONCILED}
 
 
+class CompletionPolicyStatus(StrEnum):
+    """Authority state for the server-owned confirmatory completion policy."""
+
+    UNRESOLVED_OWNER_AUTHORITY = "UNRESOLVED_OWNER_AUTHORITY"
+    AUTHORIZED = "AUTHORIZED"
+    REVOKED = "REVOKED"
+    STALE = "STALE"
+
+
 class ResearchLayer(StrEnum):
     NATAL_BEHAVIORAL_FINGERPRINT = "natal_behavioral_fingerprint"
     BEHAVIOR_TO_OUTCOME = "behavior_plus_environment_to_outcome"
@@ -198,12 +207,70 @@ class SessionRecord(ParticipantModel):
         return value.astimezone(UTC)
 
 
+class CompletionPolicySnapshot(ParticipantModel):
+    """Server-owned policy snapshot; mapped artifacts cannot populate it implicitly."""
+
+    schema_version: Literal["participant-completion-policy-v1"] = "participant-completion-policy-v1"
+    status: CompletionPolicyStatus = CompletionPolicyStatus.UNRESOLVED_OWNER_AUTHORITY
+    policy_id: str | None = None
+    authority_source_ref: str | None = None
+    required_question_ids: tuple[str, ...] | None = None
+    policy_digest: str | None = Field(default=None, pattern=r"^[a-f0-9]{64}$")
+
+    @model_validator(mode="after")
+    def authorized_policy_is_complete(self) -> CompletionPolicySnapshot:
+        if self.status is CompletionPolicyStatus.AUTHORIZED:
+            if (
+                self.policy_id is None
+                or self.authority_source_ref is None
+                or self.required_question_ids is None
+                or self.policy_digest is None
+            ):
+                raise ValueError("authorized completion policy requires complete authority binding")
+        elif any(
+            value is not None
+            for value in (
+                self.policy_id,
+                self.authority_source_ref,
+                self.required_question_ids,
+                self.policy_digest,
+            )
+        ):
+            raise ValueError(
+                "unresolved, revoked, or stale completion policy must not set criteria"
+            )
+        return self
+
+
+class PredictionFreezeRef(ParticipantModel):
+    """Immutable identity of the prediction freeze used for server-side resolution."""
+
+    session_id: str
+    freeze_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
+
+
+class FrozenDimensionBinding(ParticipantModel):
+    """Server-resolved question binding that is never accepted from a client."""
+
+    question_id: str
+    resolved_cluster_id: str
+    freeze_ref: PredictionFreezeRef
+    dimension_index: int = Field(ge=0)
+    resolved_at_utc: datetime
+
+    @field_validator("resolved_at_utc")
+    @classmethod
+    def binding_timestamp_is_utc(cls, value: datetime) -> datetime:
+        if value.tzinfo is None or value.utcoffset() is None:
+            raise ValueError("resolved_at_utc must be timezone-aware")
+        return value.astimezone(UTC)
+
+
 class EvidenceInput(ParticipantModel):
-    """One atomic observation extracted from participant narrative."""
+    """Client-authored observation; hidden prediction bindings are forbidden."""
 
     domain: EvidenceDomain
     question_id: str | None = None
-    cluster_id: str | None = None
     answer: str | None = None
     behavioral_confidence: float = Field(default=0.5, ge=0.0, le=1.0)
     measurement_reliability: float = Field(default=0.75, ge=0.0, le=1.0)
@@ -224,10 +291,8 @@ class EvidenceInput(ParticipantModel):
         if not self.domain.natal_ranking_eligible:
             return self
         if self.minimum_evidence_passed:
-            if self.question_id is None or self.cluster_id is None:
-                raise ValueError(
-                    "adequately assessed natal evidence requires question_id and cluster_id"
-                )
+            if self.question_id is None:
+                raise ValueError("adequately assessed natal evidence requires question_id")
             if not self.consistency_status.adequate:
                 raise ValueError(
                     "minimum-evidence pass requires a consistent or reconciled profile check"
@@ -236,18 +301,38 @@ class EvidenceInput(ParticipantModel):
                 raise ValueError("minimum-evidence pass requires a quality rationale")
         return self
 
+
+class StoredEvidenceInput(EvidenceInput):
+    """Persisted evidence with an internal binding or a readable legacy cluster."""
+
+    # Kept only so pre-repair evidence events remain readable. New evidence never sets it,
+    # and it cannot participate in repaired-protocol scoring.
+    cluster_id: str | None = None
+    frozen_dimension_binding: FrozenDimensionBinding | None = None
+
+    @model_validator(mode="after")
+    def internal_binding_matches_question(self) -> StoredEvidenceInput:
+        binding = self.frozen_dimension_binding
+        if binding is not None:
+            if self.question_id != binding.question_id:
+                raise ValueError("frozen dimension binding question does not match evidence")
+            if self.cluster_id is not None:
+                raise ValueError("new bound evidence cannot also carry a legacy cluster_id")
+        return self
+
     def scoring_response(self) -> BehavioralResponse | None:
-        """Return scoreable natal evidence or None for outcomes/covariates/free text."""
+        """Score only evidence bound by the server to the immutable prediction freeze."""
 
         if not self.domain.natal_ranking_eligible:
             return None
         if not self.minimum_evidence_passed or not self.consistency_status.adequate:
             return None
-        if self.question_id is None or self.cluster_id is None or self.answer is None:
+        binding = self.frozen_dimension_binding
+        if self.question_id is None or binding is None or self.answer is None:
             return None
         return BehavioralResponse(
             question_id=self.question_id,
-            cluster_id=self.cluster_id,
+            cluster_id=binding.resolved_cluster_id,
             answer=self.answer,
             behavioral_confidence=self.behavioral_confidence,
             measurement_reliability=self.measurement_reliability,
@@ -257,14 +342,14 @@ class EvidenceInput(ParticipantModel):
 
 
 class EvidenceRecord(ParticipantModel):
-    schema_version: Literal["participant-evidence-v1", "participant-evidence-v2"] = (
-        "participant-evidence-v2"
-    )
+    schema_version: Literal[
+        "participant-evidence-v1", "participant-evidence-v2", "participant-evidence-v3"
+    ] = "participant-evidence-v3"
     evidence_id: str
     session_id: str
     phase: Literal["confirmatory_blind", "posthoc_exploratory"]
     created_at_utc: datetime
-    evidence: EvidenceInput
+    evidence: StoredEvidenceInput
 
     @field_validator("created_at_utc")
     @classmethod
@@ -273,10 +358,47 @@ class EvidenceRecord(ParticipantModel):
             raise ValueError("created_at_utc must be timezone-aware")
         return value.astimezone(UTC)
 
+    def public_view(self) -> PublicEvidenceRecord:
+        """Return the client-safe record without hidden cluster or freeze binding."""
+
+        public_evidence = EvidenceInput.model_validate(
+            self.evidence.model_dump(
+                mode="python",
+                exclude={"cluster_id", "frozen_dimension_binding"},
+            )
+        )
+        return PublicEvidenceRecord(
+            evidence_id=self.evidence_id,
+            session_id=self.session_id,
+            phase=self.phase,
+            created_at_utc=self.created_at_utc,
+            evidence=public_evidence,
+        )
+
+
+class PublicEvidenceRecord(ParticipantModel):
+    """Client-safe evidence receipt with no server-owned prediction binding."""
+
+    schema_version: Literal["participant-public-evidence-v1"] = "participant-public-evidence-v1"
+    evidence_id: str
+    session_id: str
+    phase: Literal["confirmatory_blind", "posthoc_exploratory"]
+    created_at_utc: datetime
+    evidence: EvidenceInput
+
+    @field_validator("created_at_utc")
+    @classmethod
+    def public_evidence_timestamp_is_utc(cls, value: datetime) -> datetime:
+        if value.tzinfo is None or value.utcoffset() is None:
+            raise ValueError("created_at_utc must be timezone-aware")
+        return value.astimezone(UTC)
+
 
 class ConfirmatoryLock(ParticipantModel):
     schema_version: Literal[
-        "participant-confirmatory-lock-v1", "participant-confirmatory-lock-v2"
+        "participant-confirmatory-lock-v1",
+        "participant-confirmatory-lock-v2",
+        "participant-confirmatory-lock-v3",
     ] = "participant-confirmatory-lock-v2"
     session_id: str
     locked_at_utc: datetime
@@ -288,10 +410,68 @@ class ConfirmatoryLock(ParticipantModel):
     adequately_assessed_question_count: int | None = Field(default=None, ge=0)
     required_question_count: int | None = Field(default=None, ge=0)
     complete_profile_required: bool = False
+    completion_policy_id: str | None = None
+    completion_policy_digest: str | None = Field(default=None, pattern=r"^[a-f0-9]{64}$")
+    completion_authority_source_ref: str | None = None
 
     @field_validator("locked_at_utc")
     @classmethod
     def lock_timestamp_is_utc(cls, value: datetime) -> datetime:
+        if value.tzinfo is None or value.utcoffset() is None:
+            raise ValueError("locked_at_utc must be timezone-aware")
+        return value.astimezone(UTC)
+
+    @model_validator(mode="after")
+    def conforming_lock_has_policy_binding(self) -> ConfirmatoryLock:
+        if self.schema_version == "participant-confirmatory-lock-v3" and (
+            self.completion_policy_id is None
+            or self.completion_policy_digest is None
+            or self.completion_authority_source_ref is None
+        ):
+            raise ValueError("participant-confirmatory-lock-v3 requires completion policy binding")
+        return self
+
+    def public_view(self) -> PublicConfirmatoryLock:
+        """Return lock metadata without evidence IDs, answers, or hidden clusters."""
+
+        return PublicConfirmatoryLock(
+            session_id=self.session_id,
+            locked_at_utc=self.locked_at_utc,
+            evidence_count=len(self.evidence_ids),
+            scoring_response_count=len(self.scoring_responses),
+            scoring_responses_sha256=self.scoring_responses_sha256,
+            excluded_non_natal_evidence_count=self.excluded_non_natal_evidence_count,
+            evidence_quality_contract_version=self.evidence_quality_contract_version,
+            adequately_assessed_question_count=self.adequately_assessed_question_count,
+            required_question_count=self.required_question_count,
+            completion_policy_id=self.completion_policy_id,
+            completion_policy_digest=self.completion_policy_digest,
+            completion_authority_source_ref=self.completion_authority_source_ref,
+        )
+
+
+class PublicConfirmatoryLock(ParticipantModel):
+    """Client-safe lock receipt; scoring responses and hidden clusters stay internal."""
+
+    schema_version: Literal["participant-public-confirmatory-lock-v1"] = (
+        "participant-public-confirmatory-lock-v1"
+    )
+    session_id: str
+    locked_at_utc: datetime
+    evidence_count: int = Field(ge=0)
+    scoring_response_count: int = Field(ge=0)
+    scoring_responses_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
+    excluded_non_natal_evidence_count: int = Field(ge=0)
+    evidence_quality_contract_version: str | None = None
+    adequately_assessed_question_count: int | None = Field(default=None, ge=0)
+    required_question_count: int | None = Field(default=None, ge=0)
+    completion_policy_id: str | None = None
+    completion_policy_digest: str | None = Field(default=None, pattern=r"^[a-f0-9]{64}$")
+    completion_authority_source_ref: str | None = None
+
+    @field_validator("locked_at_utc")
+    @classmethod
+    def public_lock_timestamp_is_utc(cls, value: datetime) -> datetime:
         if value.tzinfo is None or value.utcoffset() is None:
             raise ValueError("locked_at_utc must be timezone-aware")
         return value.astimezone(UTC)
@@ -331,18 +511,20 @@ class RankingSnapshot(ParticipantModel):
 class PublicProgress(ParticipantModel):
     """Safe pre-reveal progress. It never contains the true birth rank."""
 
-    schema_version: Literal["participant-progress-v2"] = "participant-progress-v2"
+    schema_version: Literal["participant-progress-v3"] = "participant-progress-v3"
     session_id: str
     phase: SessionPhase
     confirmatory_observation_count: int = Field(ge=0)
     scoreable_observation_count: int = Field(ge=0)
     non_natal_observation_count: int = Field(ge=0)
-    scoreable_question_count: int = Field(ge=0)
-    scoreable_coverage: float = Field(ge=0.0, le=1.0)
-    required_confirmatory_question_count: int = Field(ge=0)
-    adequately_assessed_question_count: int = Field(ge=0)
-    adequately_assessed_coverage: float = Field(ge=0.0, le=1.0)
-    unresolved_question_count: int = Field(ge=0)
+    mapped_scoreable_question_count: int = Field(ge=0)
+    mapped_scoreable_coverage: float = Field(ge=0.0, le=1.0)
+    adequately_assessed_mapped_question_count: int = Field(ge=0)
+    completion_policy_status: CompletionPolicyStatus
+    completion_policy_id: str | None = None
+    completion_required_question_count: int | None = Field(default=None, ge=0)
+    completion_coverage: float | None = Field(default=None, ge=0.0, le=1.0)
+    completion_authority_source_ref: str | None = None
     candidate_state_count: int | None = Field(default=None, ge=1)
     top_state_tie_count: int | None = Field(default=None, ge=1)
     top_margin_rubric_bits: float | None = None

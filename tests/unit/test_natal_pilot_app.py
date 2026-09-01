@@ -24,16 +24,20 @@ from hdmatch.api.natal_pilot_app import NatalPilotConfig, create_natal_pilot_app
 from hdmatch.api.natal_pilot_ui import render_natal_pilot_html
 from hdmatch.participant.models import (
     BirthIntake,
+    CompletionPolicyStatus,
     ConfirmatoryLock,
     EvidenceInput,
     EvidenceRecord,
+    FrozenDimensionBinding,
+    PredictionFreezeRef,
     PublicProgress,
     RankScope,
     SessionMode,
     SessionPhase,
     SessionRecord,
+    StoredEvidenceInput,
 )
-from hdmatch.participant.service import ParticipantSessionService
+from hdmatch.participant.service import ParticipantProtocolError, ParticipantSessionService
 from hdmatch.runtime.century_cache import (
     GlobalCandidateState,
     structural_features_sha256,
@@ -66,7 +70,7 @@ class FakeSessions:
     def __init__(self) -> None:
         self.created: list[BirthIntake] = []
         self.appended: list[EvidenceInput] = []
-        self.lock_requirements: list[bool] = []
+        self.lock_calls: list[str] = []
 
     def create_session(self, intake: BirthIntake) -> SessionRecord:
         self.created.append(intake)
@@ -85,12 +89,10 @@ class FakeSessions:
             confirmatory_observation_count=len(self.appended),
             scoreable_observation_count=len(self.appended),
             non_natal_observation_count=0,
-            scoreable_question_count=len(self.appended),
-            scoreable_coverage=0.0,
-            required_confirmatory_question_count=len(self.appended),
-            adequately_assessed_question_count=0,
-            adequately_assessed_coverage=0.0,
-            unresolved_question_count=len(self.appended),
+            mapped_scoreable_question_count=len(self.appended),
+            mapped_scoreable_coverage=0.0,
+            adequately_assessed_mapped_question_count=0,
+            completion_policy_status=CompletionPolicyStatus.UNRESOLVED_OWNER_AUTHORITY,
         )
 
     def append_evidence(
@@ -99,21 +101,35 @@ class FakeSessions:
         evidence: EvidenceInput,
     ) -> EvidenceRecord:
         self.appended.append(evidence)
+        stored = StoredEvidenceInput.model_validate(evidence.model_dump())
+        if evidence.question_id is not None:
+            stored = stored.model_copy(
+                update={
+                    "frozen_dimension_binding": FrozenDimensionBinding(
+                        question_id=evidence.question_id,
+                        resolved_cluster_id="SERVER-ONLY",
+                        freeze_ref=PredictionFreezeRef(
+                            session_id=session_id,
+                            freeze_sha256="f" * 64,
+                        ),
+                        dimension_index=0,
+                        resolved_at_utc=datetime(2026, 8, 31, 20, 1, tzinfo=UTC),
+                    )
+                }
+            )
         return EvidenceRecord(
             evidence_id=f"EV-{len(self.appended)}",
             session_id=session_id,
             phase="confirmatory_blind",
             created_at_utc=datetime(2026, 8, 31, 20, 1, tzinfo=UTC),
-            evidence=evidence,
+            evidence=stored,
         )
 
     def lock_confirmatory(
         self,
         session_id: str,
-        *,
-        require_complete_profile: bool = False,
     ) -> ConfirmatoryLock:
-        self.lock_requirements.append(require_complete_profile)
+        self.lock_calls.append(session_id)
         return ConfirmatoryLock(
             session_id=session_id,
             locked_at_utc=datetime(2026, 8, 31, 20, 2, tzinfo=UTC),
@@ -123,7 +139,15 @@ class FakeSessions:
             excluded_non_natal_evidence_count=0,
             adequately_assessed_question_count=0,
             required_question_count=0,
-            complete_profile_required=require_complete_profile,
+        )
+
+
+class UnresolvedPolicySessions(FakeSessions):
+    def lock_confirmatory(self, session_id: str) -> ConfirmatoryLock:
+        del session_id
+        raise ParticipantProtocolError(
+            "SCIENTIFIC_COMPLETENESS_POLICY_UNRESOLVED",
+            "scientific completeness policy is unresolved owner authority",
         )
 
 
@@ -229,6 +253,7 @@ def test_intake_is_natal_first_explicit_time_and_truthfully_versioned(tmp_path: 
     assert response.status_code == 200
     assert "first real blinded test of astrology and Human Design" in response.text
     assert "Please do not take this interview in a rush" in response.text
+    assert "owner-controlled completion policy is unresolved" in response.text
     assert 'id="effortAcknowledgment"' in response.text
     assert "One-time owner-test invitation code" in response.text
     assert "Copy both credentials" in response.text
@@ -251,7 +276,9 @@ def test_copy_failure_handler_preserves_the_credential_container() -> None:
     function = re.search(r"function showCredentialCopyFailure\([^}]+\}", html)
     assert function is not None
     assert "catch(error){showCredentialCopyFailure(copyMessage,error)}" in html
-    probe = function.group(0) + """
+    probe = (
+        function.group(0)
+        + """
 const credentials={textContent:'one-time-session-id and token'};
 const classes=[];
 const message={textContent:'',classList:{add:value=>classes.push(value)}};
@@ -260,6 +287,7 @@ if(credentials.textContent!=='one-time-session-id and token')process.exit(2);
 if(!classes.includes('error'))process.exit(3);
 if(!message.textContent.includes('still shown above'))process.exit(4);
 """
+    )
     completed = subprocess.run(
         ["node", "-e", probe],
         check=False,
@@ -532,7 +560,7 @@ def test_interviewer_body_capability_rejects_missing_or_wrong_token(
     assert allowed.json["true_birth_rank_concealed"] is True
 
 
-def test_interviewer_evidence_wrapper_unwraps_nested_evidence(tmp_path: Path) -> None:
+def test_hidden_cluster_or_prediction_is_not_exposed_to_action(tmp_path: Path) -> None:
     sessions = FakeSessions()
     app = _app(tmp_path, sessions)
     created = _request(
@@ -557,7 +585,6 @@ def test_interviewer_evidence_wrapper_unwraps_nested_evidence(tmp_path: Path) ->
             "evidence": {
                 "domain": "trait",
                 "question_id": "Q-TEST",
-                "cluster_id": "C-TEST",
                 "answer": "sometimes",
                 "narrative": "It depends strongly on context.",
                 "minimum_evidence_passed": True,
@@ -569,11 +596,51 @@ def test_interviewer_evidence_wrapper_unwraps_nested_evidence(tmp_path: Path) ->
 
     assert response.status_code == 200
     assert response.json["evidence"]["narrative"] == "It depends strongly on context."
+    assert "cluster_id" not in response.json["evidence"]
+    assert "frozen_dimension_binding" not in response.json["evidence"]
     assert len(sessions.appended) == 1
     assert sessions.appended[0].question_id == "Q-TEST"
 
 
-def test_both_owner_lock_routes_require_the_complete_profile_gate(tmp_path: Path) -> None:
+@pytest.mark.parametrize(
+    "field",
+    ["cluster_id", "resolved_cluster_id", "frozen_cluster_id", "frozen_dimension_ref"],
+)
+def test_interviewer_evidence_rejects_client_binding_fields(
+    tmp_path: Path,
+    field: str,
+) -> None:
+    sessions = FakeSessions()
+    app = _app(tmp_path, sessions)
+    created = _request(
+        app,
+        "POST",
+        "/v1/participant-sessions",
+        body=_birth(),
+        headers={
+            "x-astrohd-pilot-token": "owner-code",
+            "x-astrohd-storage-consent": "yes",
+            "x-astrohd-openai-consent": "yes",
+        },
+    )
+    evidence = {"domain": "trait", "narrative": "Stable pattern.", field: "injected"}
+    response = _request(
+        app,
+        "POST",
+        "/v1/interviewer/evidence",
+        body={
+            "session_id": str(created.json["session_id"]),
+            "session_token": str(created.json["session_token"]),
+            "evidence": evidence,
+        },
+    )
+
+    assert response.status_code == 422
+    assert response.json["error"]["issues"][0]["location"][-1] == field
+    assert sessions.appended == []
+
+
+def test_route_boolean_cannot_select_completion_policy(tmp_path: Path) -> None:
     sessions = FakeSessions()
     app = _app(tmp_path, sessions)
     created = _request(
@@ -605,7 +672,39 @@ def test_both_owner_lock_routes_require_the_complete_profile_gate(tmp_path: Path
 
     assert generic.status_code == 200
     assert interviewer.status_code == 200
-    assert sessions.lock_requirements == [True, True]
+    assert sessions.lock_calls == [session_id, session_id]
+    for response in (generic, interviewer):
+        assert "scoring_responses" not in response.json
+        assert "evidence_ids" not in response.json
+        assert "cluster_id" not in response.text
+
+
+def test_lock_action_preserves_unresolved_completion_error_code(tmp_path: Path) -> None:
+    sessions = UnresolvedPolicySessions()
+    app = _app(tmp_path, sessions)
+    created = _request(
+        app,
+        "POST",
+        "/v1/participant-sessions",
+        body=_birth(),
+        headers={
+            "x-astrohd-pilot-token": "owner-code",
+            "x-astrohd-storage-consent": "yes",
+            "x-astrohd-openai-consent": "yes",
+        },
+    )
+    response = _request(
+        app,
+        "POST",
+        "/v1/interviewer/lock",
+        body={
+            "session_id": str(created.json["session_id"]),
+            "session_token": str(created.json["session_token"]),
+        },
+    )
+
+    assert response.status_code == 409
+    assert response.json["error"]["code"] == "SCIENTIFIC_COMPLETENESS_POLICY_UNRESOLVED"
 
 
 @pytest.mark.parametrize(
@@ -641,7 +740,7 @@ def test_owner_endpoint_rejects_wrong_mode_or_scope_without_consuming_invite(
     assert not (tmp_path / "invites").exists()
 
 
-def test_committed_interviewer_schema_has_no_trusted_birth_creation_action() -> None:
+def test_action_openapi_has_no_cluster_id() -> None:
     schema = (
         PROJECT_ROOT / "reference/custom_gpt/participant_interviewer_action_openapi_v1.yaml"
     ).read_text(encoding="utf-8")
@@ -650,18 +749,29 @@ def test_committed_interviewer_schema_has_no_trusted_birth_creation_action() -> 
     assert "X-AstroHD-Session-Token" not in schema
     assert "in: header" not in schema
     assert "{session_id}" not in schema
-    assert schema.count("/v1/interviewer/") == 7
-    assert schema.count("    post:") == 7
+    assert schema.count("/v1/interviewer/") == 8
+    assert schema.count("    post:") == 8
     assert "required: [session_id, session_token]" in schema
     assert "minimum_evidence_passed" in schema
     assert "consistency_status" in schema
     assert "quality_rationale" in schema
+    assert "cluster_id" not in schema
     action_contract = yaml.safe_load(schema)
     components = action_contract["components"]["schemas"]
     progress_response = components["ProgressResponse"]
     next_question_response = components["NextQuestionResponse"]
-    assert "adequately_assessed_coverage" in progress_response["required"]
-    assert progress_response["properties"]["adequately_assessed_coverage"]["maximum"] == 1
+    assert "mapped_scoreable_coverage" in progress_response["required"]
+    assert progress_response["properties"]["mapped_scoreable_coverage"]["maximum"] == 1
+    assert progress_response["properties"]["mapped_scoreable_coverage"]["description"] == (
+        "Descriptive artifact coverage only; never a completion criterion."
+    )
+    assert progress_response["properties"]["completion_policy_status"]["enum"] == [
+        "UNRESOLVED_OWNER_AUTHORITY",
+        "AUTHORIZED",
+        "REVOKED",
+        "STALE",
+    ]
+    assert "cluster_id" not in components["EvidenceInput"]["properties"]
     assert set(progress_response["properties"]["phase"]["enum"]) == {
         phase.value for phase in SessionPhase
     }
@@ -674,12 +784,42 @@ def test_committed_interviewer_schema_has_no_trusted_birth_creation_action() -> 
     assert len(instructions.encode()) < 8000
     assert "I learned chess very quickly" in " ".join(instructions.split())
     assert "random, joke-like" in instructions
-    assert "adequately_assessed_coverage=1.0" in instructions
+    assert "UNRESOLVED_OWNER_AUTHORITY" in instructions
+    assert "Neither\n23 nor 76" in instructions
+    assert "Never send `cluster_id`" in instructions
     assert "writeOnly: true" in schema
     assert "#/components/parameters/" not in schema
     assert "schema: {type: object, additionalProperties: true}" not in schema
     assert "revealParticipantResult" in schema
     assert "finalizeParticipantExploratoryProfile" in schema
+
+    generic_schema = (
+        PROJECT_ROOT / "reference/custom_gpt/participant_action_openapi_v1.yaml"
+    ).read_text(encoding="utf-8")
+    generic_contract = yaml.safe_load(generic_schema)
+    generic_evidence = generic_contract["components"]["schemas"]["EvidenceInput"]["properties"]
+    assert "cluster_id" not in generic_evidence
+    assert {
+        "minimum_evidence_passed",
+        "consistency_status",
+        "quality_rationale",
+    } <= set(generic_evidence)
+
+
+def test_pr_and_state_prose_require_owner_explicit_authority() -> None:
+    prose = "\n".join(
+        (PROJECT_ROOT / relative).read_text(encoding="utf-8")
+        for relative in (
+            "CURRENT_PLAN.md",
+            "state/CURRENT-STATE.md",
+            "docs/36_astrohd_owner_pilot.md",
+        )
+    )
+
+    assert "owner-explicit" in prose
+    assert "23 versus 76" in prose or "23-versus-76" in prose
+    assert "UNRESOLVED_OWNER_AUTHORITY" in prose
+    assert "Extra High can bind the completeness" not in prose
 
 
 def test_launch_factory_keeps_relationship_route_and_mounts_natal_first(

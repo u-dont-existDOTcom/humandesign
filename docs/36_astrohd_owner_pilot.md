@@ -36,9 +36,10 @@ the time/detail expectation explicit before session creation.
    session token. The token is shown once and only its SHA-256 digest is stored.
    Both values are required for every interview action; a session ID alone grants
    no access.
-5. The interviewer appends evidence, locks the confirmatory evidence, and only then
-   calls reveal.
-6. The interviewer-facing reveal returns birth-redacted prediction comparisons,
+5. The interviewer appends evidence. A new conforming lock and reveal require a
+   server-owned completion policy with owner-explicit authority. That policy is
+   currently unresolved, so both operations fail closed.
+6. When a policy-bound result is available, the interviewer-facing reveal returns birth-redacted prediction comparisons,
    the true state/date rank in the declared candidate set, and a public-safe receipt
    identifying the exact model, mapping, question bank, chart engine, candidate
    universe, code commit, prediction freeze, and configured interviewer assets.
@@ -82,20 +83,23 @@ The repaired contract now:
   adequate evidence;
 - requires each trait/behavior observation to carry a minimum-evidence decision,
   consistency status, and evidence-specific quality rationale;
-- keeps legacy/unreceipted observations readable but removes them from scoring until
-  adequately reassessed; and
-- makes the owner endpoint reject confirmatory lock until every frozen in-interview
-  confirmatory dimension has been adequately assessed. The five separately phased
-  validation tasks—including prospective logs—do not block the initial reveal and
-  cannot enter its score or prediction comparison even if submitted early. They remain
-  retained for a separately frozen validation analysis. An adequately explored
-  dimension may remain unscored when no response token honestly fits; completeness
-  never forces an answer.
+- keeps legacy/unreceipted observations readable but never silently migrates them into
+  the repaired scoring protocol;
+- removes client-authored cluster IDs and binds an eligible `question_id` only to its
+  unique server-owned dimension in the immutable session freeze; and
+- stores a server-owned completion-policy snapshot. Its current status is
+  `UNRESOLVED_OWNER_AUTHORITY`, with no policy ID, required-question count, coverage,
+  or authority source. The 23 mapped question IDs and the 76 non-validation bank items
+  are descriptive facts, not authorized completion criteria. New lock/reveal therefore
+  fails with `SCIENTIFIC_COMPLETENESS_POLICY_UNRESOLVED` until Joel explicitly selects
+  and sources a scientific completion policy. An adequately assessed `answer: null`
+  remains unscored and never forces a token.
 
 Joel may invite only people he reasonably expects to take a long, candid interview
 seriously. That screen should be based on willingness and data quality, not on expected
 AstroHD agreement, astrology/HD belief, or a desired result. Invitation judgment cannot
-prove truthfulness, so the in-session completeness and coherence checks remain required.
+prove truthfulness, so the in-session evidence-quality and coherence checks remain
+important even though they do not choose the unresolved completion policy.
 
 The deployable Custom GPT instruction block is
 `reference/custom_gpt/participant_interviewer_instructions_under_8000_v1.md`; the
@@ -104,8 +108,9 @@ interview-only Action schema is
 
 ## What is and is not scored
 
-The current natal participant runtime has a complete executable symbolic scoring and
-reveal path. It can classify each frozen mapped dimension as supported, partially
+The natal participant runtime has an executable symbolic scoring path and a preserved
+historical diagnostic reveal format. Once a separately authorized completion policy
+exists, it can classify each frozen mapped dimension as supported, partially
 supported, contradicted, or insufficiently evidenced and rank the true birth
 state/date against the declared known-month universe.
 

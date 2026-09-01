@@ -14,8 +14,9 @@ paths:
       operationId: getParticipantProgress
       summary: Get participant-safe progress
       description: >-
-        Returns coverage and candidate discrimination but never the concealed
-        true birth-state/date rank.
+        Returns descriptive mapped-question coverage, unresolved completion-policy
+        status, and candidate discrimination, but never the concealed true
+        birth-state/date rank. Mapped coverage is not a completion criterion.
       requestBody:
         required: true
         content:
@@ -69,15 +70,15 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  schema_version: {type: string}
-                  session_id: {type: string}
-                additionalProperties: true
+                $ref: '#/components/schemas/PublicEvidenceRecord'
   /v1/interviewer/lock:
     post:
       operationId: lockParticipantConfirmatoryEvidence
       summary: Lock pre-reveal confirmatory evidence
+      description: >-
+        Fails with SCIENTIFIC_COMPLETENESS_POLICY_UNRESOLVED until an owner-explicit,
+        server-owned completion policy is authorized. Mapped question coverage does
+        not authorize a lock.
       requestBody:
         required: true
         content:
@@ -90,19 +91,16 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  schema_version: {type: string}
-                  session_id: {type: string}
-                additionalProperties: true
+                $ref: '#/components/schemas/PublicConfirmatoryLock'
   /v1/interviewer/reveal:
     post:
       operationId: revealParticipantResult
       summary: Reveal frozen predictions and confirmatory rank
       description: >-
-        Available only after lock. Returns confirmatory ranks and dimension-level
-        comparisons to predictions frozen before answers. Exact birth data and the
-        raw chart remain on the trusted AstroHD result page.
+        Available only after a conforming lock bound to an authorized server-owned
+        completion policy. While policy authority is unresolved, a new reveal is
+        unavailable. Exact birth data and the raw chart remain on the trusted AstroHD
+        result page.
       requestBody:
         required: true
         content:
@@ -118,6 +116,33 @@ paths:
                 type: object
                 properties:
                   schema_version: {type: string}
+                  session_id: {type: string}
+                additionalProperties: true
+  /v1/interviewer/diagnostic-reveal:
+    post:
+      operationId: getHistoricalDiagnosticReveal
+      summary: Read an existing pre-repair diagnostic result
+      description: >-
+        Read-only compatibility path for an already-created historical result. It
+        never creates a lock or reveal and returns protocol_status=historical_diagnostic;
+        it must not be relabeled as conforming to the repaired protocol.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SessionAccess'
+      responses:
+        '200':
+          description: Existing historical diagnostic reveal.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [schema_version, protocol_status, session_id]
+                properties:
+                  schema_version: {type: string}
+                  protocol_status: {type: string, const: historical_diagnostic}
                   session_id: {type: string}
                 additionalProperties: true
   /v1/interviewer/finalize-exploratory:
@@ -174,13 +199,17 @@ components:
         - schema_version
         - session_id
         - phase
-        - required_confirmatory_question_count
-        - adequately_assessed_question_count
-        - adequately_assessed_coverage
-        - unresolved_question_count
+        - mapped_scoreable_question_count
+        - mapped_scoreable_coverage
+        - adequately_assessed_mapped_question_count
+        - completion_policy_status
+        - completion_policy_id
+        - completion_required_question_count
+        - completion_coverage
+        - completion_authority_source_ref
         - true_birth_rank_concealed
       properties:
-        schema_version: {type: string, const: participant-progress-v2}
+        schema_version: {type: string, const: participant-progress-v3}
         session_id: {type: string}
         phase:
           type: string
@@ -193,16 +222,26 @@ components:
         confirmatory_observation_count: {type: integer, minimum: 0}
         scoreable_observation_count: {type: integer, minimum: 0}
         non_natal_observation_count: {type: integer, minimum: 0}
-        scoreable_question_count: {type: integer, minimum: 0}
-        scoreable_coverage: {type: number, minimum: 0, maximum: 1}
-        required_confirmatory_question_count: {type: integer, minimum: 0}
-        adequately_assessed_question_count: {type: integer, minimum: 0}
-        adequately_assessed_coverage:
+        mapped_scoreable_question_count:
+          type: integer
+          minimum: 0
+          description: Count of scoreable questions present in the frozen mapping artifact.
+        mapped_scoreable_coverage:
           type: number
           minimum: 0
           maximum: 1
-          description: Must equal 1.0 before requesting the confirmatory lock.
-        unresolved_question_count: {type: integer, minimum: 0}
+          description: Descriptive artifact coverage only; never a completion criterion.
+        adequately_assessed_mapped_question_count:
+          type: integer
+          minimum: 0
+          description: Descriptive count only; it does not imply scientific completeness.
+        completion_policy_status:
+          type: string
+          enum: [UNRESOLVED_OWNER_AUTHORITY, AUTHORIZED, REVOKED, STALE]
+        completion_policy_id: {type: [string, 'null']}
+        completion_required_question_count: {type: [integer, 'null'], minimum: 0}
+        completion_coverage: {type: [number, 'null'], minimum: 0, maximum: 1}
+        completion_authority_source_ref: {type: [string, 'null']}
         candidate_state_count: {type: [integer, 'null'], minimum: 1}
         top_state_tie_count: {type: [integer, 'null'], minimum: 1}
         top_margin_rubric_bits: {type: [number, 'null']}
@@ -277,7 +316,6 @@ components:
           type: string
           enum: [trait, behavior, outcome, timing, environment, conventional_covariate]
         question_id: {type: [string, 'null'], default: null}
-        cluster_id: {type: [string, 'null'], default: null}
         answer:
           type: [string, 'null']
           default: null
@@ -313,3 +351,44 @@ components:
             Short evidence-specific reason for passing the minimum and consistency
             gates. Required by the server for adequate trait/behavior evidence.
         supersedes_evidence_id: {type: [string, 'null'], default: null}
+    PublicEvidenceRecord:
+      type: object
+      additionalProperties: false
+      required: [schema_version, evidence_id, session_id, phase, created_at_utc, evidence]
+      properties:
+        schema_version: {type: string, const: participant-public-evidence-v1}
+        evidence_id: {type: string}
+        session_id: {type: string}
+        phase:
+          type: string
+          enum: [confirmatory_blind, posthoc_exploratory]
+        created_at_utc: {type: string, format: date-time}
+        evidence:
+          $ref: '#/components/schemas/EvidenceInput'
+    PublicConfirmatoryLock:
+      type: object
+      additionalProperties: false
+      required:
+        - schema_version
+        - session_id
+        - locked_at_utc
+        - evidence_count
+        - scoring_response_count
+        - scoring_responses_sha256
+        - excluded_non_natal_evidence_count
+      properties:
+        schema_version: {type: string, const: participant-public-confirmatory-lock-v1}
+        session_id: {type: string}
+        locked_at_utc: {type: string, format: date-time}
+        evidence_count: {type: integer, minimum: 0}
+        scoring_response_count: {type: integer, minimum: 0}
+        scoring_responses_sha256: {type: string, pattern: '^[a-f0-9]{64}$'}
+        excluded_non_natal_evidence_count: {type: integer, minimum: 0}
+        evidence_quality_contract_version: {type: [string, 'null']}
+        adequately_assessed_question_count: {type: [integer, 'null'], minimum: 0}
+        required_question_count: {type: [integer, 'null'], minimum: 0}
+        completion_policy_id: {type: [string, 'null']}
+        completion_policy_digest:
+          type: [string, 'null']
+          pattern: '^[a-f0-9]{64}$'
+        completion_authority_source_ref: {type: [string, 'null']}

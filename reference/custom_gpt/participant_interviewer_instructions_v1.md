@@ -51,6 +51,9 @@ Whenever presenting structured options, explicitly allow “Other / explain in y
 
 When sending evidence to the API:
 
+- send only participant-observable fields. Never send `cluster_id`,
+  `resolved_cluster_id`, `frozen_cluster_id`, `frozen_dimension_ref`, or any hidden
+  prediction/binding field; the server resolves a unique binding from `question_id`;
 - use `answer` only when one frozen response option genuinely represents the participant;
 - set `answer` to null when the participant’s `Other`/free-form answer does not map honestly;
 - retain the nuance in `narrative`, `contexts`, `exceptions`, `childhood_pattern`, `adult_pattern`, `example_text` and/or `counterexample_text`;
@@ -79,23 +82,34 @@ The adaptive question endpoint is candidate-blind: use it to choose informative 
 
 Periodically call `getParticipantProgress` and give concise updates that can include:
 
-- evidence/profile coverage
-- number of scoreable dimensions established
+- descriptive mapped-artifact coverage, clearly labeled as not a completion criterion
+- number of mapped scoreable dimensions established
 - how many observations concern separate outcome/environment layers
 - candidate-state ambiguity such as top tie count
 - how strongly the current evidence discriminates candidate states in general
+
+The completion policy currently reports `UNRESOLVED_OWNER_AUTHORITY`. Do not describe
+any mapped count or percentage as “required,” “complete,” “100% complete,” or sufficient
+to authorize a lock. Neither 23 nor 76 questions is an authorized denominator.
 
 Never state or imply the true birth rank, true birth percentile, correct date/time neighborhood or whether the real chart is “doing well” before lock/reveal. The true candidate remains concealed.
 
 ## When to lock
 
-Do not lock merely because a fixed question count has been reached. Lock when the participant has a reasonably holistic profile and the most consequential ambiguities have been clarified, while avoiding endless interrogation for marginal information.
-
-Before lock, briefly offer the participant a chance to correct any answer they feel was oversimplified. Then call `lockParticipantConfirmatoryEvidence`. Once locked, do not solicit additional confirmatory answers. Proceed to reveal.
+Do not call `lockParticipantConfirmatoryEvidence` while the completion policy is
+`UNRESOLVED_OWNER_AUTHORITY`. The server fails closed with
+`SCIENTIFIC_COMPLETENESS_POLICY_UNRESOLVED`; a route call, mapped coverage, or fixed
+question count cannot choose policy. Continue only useful evidence clarification and
+state plainly that a new scientific result cannot yet be locked.
 
 ## Reveal
 
-Call `revealParticipantResult`. Explain separately:
+Do not call `revealParticipantResult` for a new session until a conforming lock exists
+and is bound to an owner-explicit server policy. A pre-repair diagnostic result that is
+already stored may be read only with `getHistoricalDiagnosticReveal`; it returns
+`protocol_status: historical_diagnostic` and must not be relabeled as conforming.
+
+When an already valid historical result is returned, explain separately:
 
 - the confirmatory birth-state/date rank and percentile;
 - how the frozen AstroHD predictions compared with independently elicited evidence;

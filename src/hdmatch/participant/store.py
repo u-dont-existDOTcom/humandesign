@@ -21,6 +21,7 @@ from hdmatch.experiments.canonical import (
 )
 
 from .models import (
+    CompletionPolicySnapshot,
     ConfirmatoryLock,
     EvidenceRecord,
     ExploratoryRankingReport,
@@ -30,7 +31,6 @@ from .models import (
     RevealReport,
     SessionRecord,
 )
-
 
 _SESSION_RE = re.compile(r"^HD-[A-F0-9]{32}$")
 T = TypeVar("T", bound=BaseModel)
@@ -53,7 +53,12 @@ class ParticipantSessionStore:
             raise ValueError("invalid participant session ID")
         return self.root / session_id
 
-    def create(self, record: SessionRecord, freeze: PredictionFreeze) -> None:
+    def create(
+        self,
+        record: SessionRecord,
+        freeze: PredictionFreeze,
+        completion_policy: CompletionPolicySnapshot,
+    ) -> None:
         directory = self._directory(record.session_id)
         if freeze.session_id != record.session_id:
             raise ValueError("session and prediction freeze IDs differ")
@@ -64,6 +69,11 @@ class ParticipantSessionStore:
             write_new_canonical_json(freeze_path, freeze, mode=0o600)
             if sha256_file(freeze_path) != record.prediction_freeze_sha256:
                 raise SessionStorageError("prediction freeze hash does not match session record")
+            write_new_canonical_json(
+                directory / "completion.policy.json",
+                completion_policy,
+                mode=0o600,
+            )
             write_new_canonical_json(directory / "session.json", record, mode=0o600)
         except BaseException:
             if not (directory / "session.json").exists():
@@ -101,8 +111,28 @@ class ParticipantSessionStore:
             raise SessionStorageError("prediction freeze belongs to a different session")
         return freeze
 
+    def load_completion_policy(self, session_id: str) -> CompletionPolicySnapshot | None:
+        """Load the immutable policy snapshot; legacy sessions legitimately have none."""
+
+        self.load_session(session_id)
+        path = self._directory(session_id) / "completion.policy.json"
+        if not path.exists():
+            return None
+        try:
+            return CompletionPolicySnapshot.model_validate(
+                load_json_bytes(path, require_canonical=True)
+            )
+        except (OSError, ValueError) as exc:
+            raise SessionStorageError("invalid completion policy snapshot") from exc
+
     def append_evidence(self, record: EvidenceRecord) -> None:
-        self.load_session(record.session_id)
+        session = self.load_session(record.session_id)
+        if record.evidence.frozen_dimension_binding is not None:
+            self._validate_evidence_binding(
+                record,
+                session,
+                self.load_freeze(record.session_id),
+            )
         directory = self._directory(record.session_id)
         event_path = directory / "evidence.events.jsonl"
         lock_path = directory / ".evidence.lock"
@@ -135,10 +165,11 @@ class ParticipantSessionStore:
                 fcntl.flock(lock_handle.fileno(), fcntl.LOCK_UN)
 
     def load_evidence(self, session_id: str) -> tuple[EvidenceRecord, ...]:
-        self.load_session(session_id)
+        session = self.load_session(session_id)
         path = self._directory(session_id) / "evidence.events.jsonl"
         envelopes = self._read_event_envelopes(path)
         records: list[EvidenceRecord] = []
+        freeze: PredictionFreeze | None = None
         for envelope in envelopes:
             try:
                 record = EvidenceRecord.model_validate(envelope["payload"])
@@ -146,8 +177,38 @@ class ParticipantSessionStore:
                 raise SessionStorageError("invalid evidence event payload") from exc
             if record.session_id != session_id:
                 raise SessionStorageError("evidence event belongs to a different session")
+            if record.evidence.frozen_dimension_binding is not None:
+                if freeze is None:
+                    freeze = self.load_freeze(session_id)
+                self._validate_evidence_binding(record, session, freeze)
             records.append(record)
         return tuple(records)
+
+    @staticmethod
+    def _validate_evidence_binding(
+        record: EvidenceRecord,
+        session: SessionRecord,
+        freeze: PredictionFreeze,
+    ) -> None:
+        binding = record.evidence.frozen_dimension_binding
+        if binding is None:
+            return
+        if (
+            binding.freeze_ref.session_id != session.session_id
+            or binding.freeze_ref.freeze_sha256 != session.prediction_freeze_sha256
+        ):
+            raise SessionStorageError("evidence binding does not match the session freeze identity")
+        try:
+            dimension = freeze.dimensions[binding.dimension_index]
+        except IndexError as exc:
+            raise SessionStorageError(
+                "evidence binding dimension index is outside the freeze"
+            ) from exc
+        if (
+            dimension.question_id != binding.question_id
+            or dimension.cluster_id != binding.resolved_cluster_id
+        ):
+            raise SessionStorageError("evidence binding does not match its frozen dimension")
 
     def _read_event_envelopes(self, path: Path) -> list[dict[str, Any]]:
         if not path.exists():

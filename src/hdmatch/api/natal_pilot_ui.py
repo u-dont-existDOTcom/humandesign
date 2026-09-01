@@ -57,11 +57,11 @@ _HTML = r"""<!doctype html>
   <p>The astrology and Human Design studies this project is comparing against generally use much simpler personality measures than the detailed claims AstroHD makes. This study therefore needs concrete examples across different domains, life stages, contexts, and counterexamples. A quick or superficial interview cannot tell a wrong prediction from an incomplete description.</p>
   <div class="callout">
     <strong>Please do not take this interview in a rush</strong>
-    <p>Detailed, candid answers—including contradictions and places where a pattern does not fit—are the data. The interviewer should pause when an answer is too broad, incomplete, inconsistent, random, or unclear. If enough evidence cannot be obtained, the session will not produce a scientific result.</p>
+    <p>Detailed, candid answers—including contradictions and places where a pattern does not fit—are the data. The interviewer should pause when an answer is too broad, inconsistent, random, or unclear. Evidence quality does not choose the scientific completion policy: that separate owner decision is unresolved, so a new result cannot yet be locked or revealed.</p>
   </div>
   <div class="callout">
     <strong>What you will see afterward</strong>
-    <p>The reveal shows the exact prediction-versus-answer comparisons and your true birth state/date rank within the declared candidate set. It may show support, contradiction, partial support, or insufficient evidence.</p>
+    <p>If an owner-authorized, policy-bound result later becomes available, its reveal will show the exact prediction-versus-answer comparisons and true birth state/date rank within the declared candidate set. It may show support, contradiction, partial support, or insufficient evidence.</p>
     <p class="note">This is a developmental symbolic model, not a validated personality test. Your submission does not silently retrain the model during your session; later versions must be trained and released separately.</p>
   </div>
 
@@ -103,7 +103,7 @@ _HTML = r"""<!doctype html>
 
       <label class="check"><input id="storageConsent" type="checkbox" required><span>I consent to private storage of my exact birth data and interview evidence for this owner pilot.</span></label>
       <label class="check"><input id="openAIConsent" type="checkbox" required><span>I consent to my questionnaire answers and the birth-redacted prediction comparison being processed by OpenAI in the private AstroHD interviewer. My exact birth record and raw chart stay on this trusted site.</span></label>
-      <label class="check"><input id="effortAcknowledgment" type="checkbox" required><span>I understand this is not a quick quiz. I can take the time to give candid details, examples, exceptions, and corrections; an incomplete interview will not produce a scientific result.</span></label>
+      <label class="check"><input id="effortAcknowledgment" type="checkbox" required><span>I understand this is not a quick quiz. I can give candid details, examples, exceptions, and corrections, but those answers do not authorize scientific completion; the owner-controlled completion policy is unresolved.</span></label>
       <label class="check"><input id="developmentConsent" type="checkbox"><span>I also permit this case to be considered for a future deidentified development dataset. This is optional and does not automatically update the current model.</span></label>
 
       <button id="submitButton" type="submit">Freeze predictions and create my session</button>
@@ -166,7 +166,7 @@ form.addEventListener('submit',async event=>{
   event.preventDefault();
   if(!document.getElementById('storageConsent').checked)return showStatus('Private-storage consent is required for this pilot.',true);
   if(!document.getElementById('openAIConsent').checked)return showStatus('Consent to the birth-redacted OpenAI interview is required.',true);
-  if(!document.getElementById('effortAcknowledgment').checked)return showStatus('Confirm that you can take the time needed for a complete, candid interview.',true);
+  if(!document.getElementById('effortAcknowledgment').checked)return showStatus('Confirm that you can give candid detail without treating interview coverage as completion authority.',true);
   if(!selectedPlace)return showStatus('Search for and select your birthplace.',true);
   const pilotCode=document.getElementById('pilotCode').value;
   if(!pilotCode)return showStatus('Enter the owner pilot access code.',true);
@@ -214,7 +214,7 @@ _RESULT_HTML = r"""<!doctype html>
 </head>
 <body><main>
   <p class="note">Trusted same-origin result</p>
-  <h1>See the complete frozen AstroHD result</h1>
+  <h1>See an existing policy-bound or historical AstroHD result</h1>
   <p>Your external interviewer receives the prediction comparison and ranks, but not your exact birth record or raw chart. Enter the two values created by the intake to view those sensitive details here.</p>
   <form id="resultForm">
     <label for="sessionId">Session ID<input id="sessionId" autocomplete="off" required></label>
@@ -234,11 +234,11 @@ function apiErrorMessage(problem,fallback){if(problem&&typeof problem==='object'
 function status(message,error=false){statusBox.classList.remove('hidden','error');if(error)statusBox.classList.add('error');statusBox.textContent=message}
 function addRow(list,label,value){const term=document.createElement('dt');term.textContent=label;const detail=document.createElement('dd');detail.textContent=String(value);list.append(term,detail)}
 function show(payload){
-  const rank=payload.confirmatory_ranking;const list=document.getElementById('ranking');list.textContent='';addRow(list,'True date rank',rank.true_date_rank+' of '+rank.candidate_date_count);addRow(list,'True state rank',rank.true_state_rank+' of '+rank.candidate_state_count);addRow(list,'Date percentile',rank.true_date_percentile);addRow(list,'State percentile',rank.true_state_percentile);addRow(list,'Top state ties',rank.top_state_tie_count);addRow(list,'Scientific status',rank.scientific_status);
+  const rank=payload.confirmatory_ranking;const list=document.getElementById('ranking');list.textContent='';addRow(list,'Protocol status',payload.protocol_status);addRow(list,'True date rank',rank.true_date_rank+' of '+rank.candidate_date_count);addRow(list,'True state rank',rank.true_state_rank+' of '+rank.candidate_state_count);addRow(list,'Date percentile',rank.true_date_percentile);addRow(list,'State percentile',rank.true_state_percentile);addRow(list,'Top state ties',rank.top_state_tie_count);addRow(list,'Scientific status',rank.scientific_status);
   const comparisons=document.getElementById('comparisons');comparisons.textContent='';payload.prediction_comparisons.forEach(item=>{const card=document.createElement('article');card.className='card';const title=document.createElement('h3');title.textContent=item.question_id+' · '+item.classification;const predicted=document.createElement('p');predicted.textContent='Frozen predicted answer: '+item.predicted_answer;const observed=document.createElement('p');observed.textContent='Observed answer: '+(item.observed_answer===null?'insufficient evidence':item.observed_answer);const statements=document.createElement('p');statements.textContent=(item.behavioral_statements||[]).join(' ');card.append(title,predicted,observed,statements);comparisons.append(card)});
-  document.getElementById('receipt').textContent=JSON.stringify(payload.model_receipt,null,2);document.getElementById('sensitive').textContent=JSON.stringify({birth:payload.birth,chart:payload.chart},null,2);result.classList.remove('hidden');status('Result loaded from the private AstroHD store.');
+  document.getElementById('receipt').textContent=JSON.stringify(payload.model_receipt,null,2);document.getElementById('sensitive').textContent=JSON.stringify({birth:payload.birth,chart:payload.chart},null,2);result.classList.remove('hidden');status(payload.protocol_status==='historical_diagnostic'?'Historical diagnostic result loaded without migration or relabeling.':'Policy-bound result loaded from the private AstroHD store.');
 }
-form.addEventListener('submit',async event=>{event.preventDefault();const sessionId=document.getElementById('sessionId').value.trim();const token=document.getElementById('sessionToken').value.trim();if(!sessionId||!token)return status('Enter both the session ID and private session token.',true);const button=document.getElementById('loadButton');button.disabled=true;status('Loading the immutable reveal…');try{const response=await fetch('./trusted/v1/participant-sessions/'+encodeURIComponent(sessionId)+'/reveal',{method:'POST',headers:{'x-astrohd-session-token':token}});const payload=await response.json();if(!response.ok)throw new Error(apiErrorMessage(payload,'Could not load the result.'));show(payload)}catch(error){status(error instanceof Error?error.message:'Could not load the result.',true)}finally{button.disabled=false}});
+form.addEventListener('submit',async event=>{event.preventDefault();const sessionId=document.getElementById('sessionId').value.trim();const token=document.getElementById('sessionToken').value.trim();if(!sessionId||!token)return status('Enter both the session ID and private session token.',true);const button=document.getElementById('loadButton');button.disabled=true;status('Loading the immutable reveal…');try{const base='./trusted/v1/participant-sessions/'+encodeURIComponent(sessionId);const options={method:'POST',headers:{'x-astrohd-session-token':token}};let response=await fetch(base+'/reveal',options);let payload=await response.json();let protocolStatus='policy_bound_conforming';if(!response.ok&&payload&&payload.error&&payload.error.code==='SCIENTIFIC_COMPLETENESS_POLICY_UNRESOLVED'){response=await fetch(base+'/diagnostic-reveal',options);payload=await response.json();protocolStatus='historical_diagnostic'}if(!response.ok)throw new Error(apiErrorMessage(payload,'Could not load the result.'));payload.protocol_status=protocolStatus;show(payload)}catch(error){status(error instanceof Error?error.message:'Could not load the result.',true)}finally{button.disabled=false}});
 </script>
 </main></body></html>"""
 

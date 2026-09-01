@@ -13,17 +13,19 @@ from hdmatch.schemas import BehavioralResponse
 
 from .backend import DiscriminationDiagnostics, SelectedQuestion
 from .models import (
-    NATAL_EVIDENCE_QUALITY_CONTRACT_VERSION,
     BirthIntake,
+    CompletionPolicySnapshot,
+    CompletionPolicyStatus,
     ConfirmatoryLock,
     EvidenceInput,
     EvidenceRecord,
     ExploratoryRankingReport,
     FinalParticipantReport,
+    FrozenDimensionBinding,
     NextInterviewQuestion,
-    ParticipantModelReceipt,
     PredictionComparison,
     PredictionFreeze,
+    PredictionFreezeRef,
     PublicProgress,
     RankingSnapshot,
     RankScope,
@@ -32,6 +34,7 @@ from .models import (
     SessionMode,
     SessionPhase,
     SessionRecord,
+    StoredEvidenceInput,
 )
 from .store import ParticipantSessionStore
 
@@ -41,7 +44,7 @@ class ParticipantBackend(Protocol):
     def scoreable_question_ids(self) -> frozenset[str]: ...
 
     @property
-    def required_confirmatory_question_ids(self) -> frozenset[str]: ...
+    def mapped_scoreable_question_ids(self) -> frozenset[str]: ...
 
     def build_prediction_freeze(
         self,
@@ -82,6 +85,14 @@ class ParticipantBackend(Protocol):
 
 class ParticipantStateError(RuntimeError):
     """Raised when an operation is invalid in the current session phase."""
+
+
+class ParticipantProtocolError(ParticipantStateError):
+    """Fail-closed protocol error with a stable API-facing code."""
+
+    def __init__(self, code: str, message: str) -> None:
+        super().__init__(message)
+        self.code = code
 
 
 class ParticipantSessionService:
@@ -129,7 +140,7 @@ class ParticipantSessionService:
             created_at_utc=now,
             prediction_freeze_sha256=freeze_sha256,
         )
-        self.store.create(record, freeze)
+        self.store.create(record, freeze, CompletionPolicySnapshot())
         return record
 
     def phase(self, session_id: str) -> SessionPhase:
@@ -147,6 +158,17 @@ class ParticipantSessionService:
             return SessionPhase.CONFIRMATORY_LOCKED
         return SessionPhase.CONFIRMATORY_BLIND
 
+    def _current_completion_policy(self, session_id: str) -> CompletionPolicySnapshot:
+        """Load only the owner-authorized policy state implemented by this protocol."""
+
+        policy = self.store.load_completion_policy(session_id) or CompletionPolicySnapshot()
+        if policy.status is not CompletionPolicyStatus.UNRESOLVED_OWNER_AUTHORITY:
+            raise ParticipantProtocolError(
+                "SCIENTIFIC_COMPLETENESS_POLICY_UNRESOLVED",
+                "stored completion-policy authority cannot be verified by this protocol",
+            )
+        return policy
+
     def append_evidence(
         self,
         session_id: str,
@@ -163,15 +185,59 @@ class ParticipantSessionService:
             )
         else:
             raise ParticipantStateError("finalized sessions cannot accept more evidence")
+        resolved_evidence = self._resolve_evidence(session_id, evidence)
         record = EvidenceRecord(
             evidence_id="EV-" + secrets.token_hex(12).upper(),
             session_id=session_id,
             phase=evidence_phase,  # type: ignore[arg-type]
             created_at_utc=datetime.now(UTC),
-            evidence=evidence,
+            evidence=resolved_evidence,
         )
         self.store.append_evidence(record)
         return record
+
+    def _resolve_evidence(
+        self,
+        session_id: str,
+        evidence: EvidenceInput,
+    ) -> StoredEvidenceInput:
+        """Bind client evidence to exactly one immutable server-side dimension."""
+
+        values = evidence.model_dump(mode="python")
+        if not evidence.domain.natal_ranking_eligible or evidence.question_id is None:
+            return StoredEvidenceInput(**values)
+
+        freeze = self.store.load_freeze(session_id)
+        self.backend.assert_freeze_compatible(freeze)
+        matches = [
+            (index, dimension)
+            for index, dimension in enumerate(freeze.dimensions)
+            if dimension.question_id == evidence.question_id
+        ]
+        if not matches:
+            raise ParticipantProtocolError(
+                "FROZEN_QUESTION_BINDING_MISSING",
+                f"question_id {evidence.question_id!r} is absent from the session freeze",
+            )
+        if len(matches) > 1:
+            raise ParticipantProtocolError(
+                "FROZEN_QUESTION_BINDING_AMBIGUOUS",
+                f"question_id {evidence.question_id!r} has multiple frozen dimensions",
+            )
+
+        dimension_index, dimension = matches[0]
+        session = self.store.load_session(session_id)
+        binding = FrozenDimensionBinding(
+            question_id=evidence.question_id,
+            resolved_cluster_id=dimension.cluster_id,
+            freeze_ref=PredictionFreezeRef(
+                session_id=session_id,
+                freeze_sha256=session.prediction_freeze_sha256,
+            ),
+            dimension_index=dimension_index,
+            resolved_at_utc=datetime.now(UTC),
+        )
+        return StoredEvidenceInput(**values, frozen_dimension_binding=binding)
 
     def public_progress(self, session_id: str) -> PublicProgress:
         current = self.phase(session_id)
@@ -188,32 +254,29 @@ class ParticipantSessionService:
         )
         freeze = self.store.load_freeze(session_id)
         diagnostics = self.backend.discrimination(freeze=freeze, responses=responses)
-        required_confirmatory_ids = self.backend.required_confirmatory_question_ids
-        total_scoreable = len(required_confirmatory_ids)
-        coverage = len(scoreable_ids) / total_scoreable if total_scoreable else 0.0
+        mapped_scoreable_ids = self.backend.mapped_scoreable_question_ids
+        total_mapped = len(mapped_scoreable_ids)
+        mapped_coverage = (
+            len(scoreable_ids & mapped_scoreable_ids) / total_mapped if total_mapped else 0.0
+        )
         adequately_assessed_ids = (
-            self._latest_adequately_assessed_question_ids(confirmatory) & required_confirmatory_ids
+            self._latest_adequately_assessed_question_ids(confirmatory) & mapped_scoreable_ids
         )
-        assessed_coverage = (
-            len(adequately_assessed_ids) / len(required_confirmatory_ids)
-            if required_confirmatory_ids
-            else 0.0
-        )
+        policy = self._current_completion_policy(session_id)
         return PublicProgress(
             session_id=session_id,
             phase=current,
             confirmatory_observation_count=len(confirmatory),
             scoreable_observation_count=len(scoreable_ids),
             non_natal_observation_count=non_natal,
-            scoreable_question_count=total_scoreable,
-            scoreable_coverage=coverage,
-            required_confirmatory_question_count=len(required_confirmatory_ids),
-            adequately_assessed_question_count=len(adequately_assessed_ids),
-            adequately_assessed_coverage=assessed_coverage,
-            unresolved_question_count=max(
-                0,
-                len(required_confirmatory_ids) - len(adequately_assessed_ids),
-            ),
+            mapped_scoreable_question_count=total_mapped,
+            mapped_scoreable_coverage=mapped_coverage,
+            adequately_assessed_mapped_question_count=len(adequately_assessed_ids),
+            completion_policy_status=policy.status,
+            completion_policy_id=None,
+            completion_required_question_count=None,
+            completion_coverage=None,
+            completion_authority_source_ref=None,
             candidate_state_count=diagnostics.candidate_state_count,
             top_state_tie_count=diagnostics.top_state_tie_count,
             top_margin_rubric_bits=diagnostics.top_margin_rubric_bits,
@@ -257,7 +320,7 @@ class ParticipantSessionService:
             )
         responses = self._latest_scoreable_responses(records)
         noninterview_question_ids = (
-            self.backend.scoreable_question_ids - self.backend.required_confirmatory_question_ids
+            self.backend.scoreable_question_ids - self.backend.mapped_scoreable_question_ids
         )
         answered = (
             self._latest_adequately_assessed_question_ids(records) | noninterview_question_ids
@@ -272,14 +335,14 @@ class ParticipantSessionService:
                 session_id=session_id,
                 question_id=None,
                 prompt=(
-                    "The frozen scoreable dimensions are covered. Ask about any remaining "
+                    "No further mapped question was selected. Ask about any remaining "
                     "important contradiction, context dependence, childhood-to-adult change, "
                     "or weakly evidenced part of the holistic profile before locking it."
                 ),
                 response_format="Open narrative.",
                 minimum_evidence=(
                     "Resolve every consequential contradiction or explicitly leave the affected "
-                    "dimension insufficient; confirm the final profile summary before lock."
+                    "dimension insufficient. Completion policy remains unresolved owner authority."
                 ),
                 followups=(
                     "What would make your current description misleading?",
@@ -301,104 +364,29 @@ class ParticipantSessionService:
     def lock_confirmatory(
         self,
         session_id: str,
-        *,
-        require_complete_profile: bool = False,
     ) -> ConfirmatoryLock:
-        existing = self.store.load_confirmatory_lock(session_id)
-        if existing is not None:
-            if self.store.load_confirmatory_ranking(session_id) is None:
-                self._store_confirmatory_ranking(session_id, existing.scoring_responses)
-            return existing
-        if self.phase(session_id) is not SessionPhase.CONFIRMATORY_BLIND:
-            raise ParticipantStateError("confirmatory evidence cannot be locked in this phase")
-        records = tuple(
-            record
-            for record in self.store.load_evidence(session_id)
-            if record.phase == "confirmatory_blind"
+        self._current_completion_policy(session_id)
+        raise ParticipantProtocolError(
+            "SCIENTIFIC_COMPLETENESS_POLICY_UNRESOLVED",
+            "scientific completeness policy is unresolved owner authority",
         )
-        assessed = self._latest_adequately_assessed_question_ids(records)
-        required_question_ids = self.backend.required_confirmatory_question_ids
-        if require_complete_profile:
-            missing = sorted(required_question_ids - assessed)
-            if missing:
-                preview = ", ".join(missing[:12])
-                suffix = "" if len(missing) <= 12 else f" and {len(missing) - 12} more"
-                raise ParticipantStateError(
-                    "confirmatory evidence is incomplete: "
-                    f"{len(missing)} frozen dimensions still need adequate, "
-                    f"consistency-checked evidence ({preview}{suffix})"
-                )
-        responses = self._latest_scoreable_responses(records)
-        if not responses:
-            raise ParticipantStateError(
-                "at least one frozen scoreable trait/behavior observation is required"
-            )
-        response_hash = sha256_bytes(canonical_json_bytes(responses))
-        lock = ConfirmatoryLock(
-            session_id=session_id,
-            locked_at_utc=datetime.now(UTC),
-            evidence_ids=tuple(record.evidence_id for record in records),
-            scoring_responses=responses,
-            scoring_responses_sha256=response_hash,
-            excluded_non_natal_evidence_count=sum(
-                not record.evidence.domain.natal_ranking_eligible for record in records
-            ),
-            evidence_quality_contract_version=NATAL_EVIDENCE_QUALITY_CONTRACT_VERSION,
-            adequately_assessed_question_count=len(assessed & required_question_ids),
-            required_question_count=len(required_question_ids),
-            complete_profile_required=require_complete_profile,
-        )
-        ranking = self._calculate_ranking(
-            session_id,
-            responses,
-            analysis_kind="pre_reveal",
-        )
-        self.store.write_confirmatory_lock(lock)
-        self.store.write_confirmatory_ranking(ranking)
-        return lock
 
     def reveal(self, session_id: str) -> RevealReport:
-        existing = self.store.load_reveal(session_id)
-        if existing is not None:
-            return existing
+        self._current_completion_policy(session_id)
+        raise ParticipantProtocolError(
+            "SCIENTIFIC_COMPLETENESS_POLICY_UNRESOLVED",
+            "new conforming reveal is unavailable without verified owner authority",
+        )
+
+    def load_historical_diagnostic_reveal(self, session_id: str) -> RevealReport:
+        """Read an existing pre-repair reveal without relabeling or mutating it."""
+
+        report = self.store.load_reveal(session_id)
+        if report is None:
+            raise ParticipantStateError("no historical diagnostic reveal exists")
         lock = self.store.load_confirmatory_lock(session_id)
-        if lock is None:
-            raise ParticipantStateError("lock confirmatory evidence before reveal")
-        ranking = self.store.load_confirmatory_ranking(session_id)
-        if ranking is None:
-            ranking = self._store_confirmatory_ranking(
-                session_id,
-                lock.scoring_responses,
-            )
-        freeze = self.store.load_freeze(session_id)
-        comparisons = self._prediction_comparisons(
-            freeze,
-            self.store.load_evidence(session_id),
-        )
-        report = RevealReport(
-            session_id=session_id,
-            revealed_at_utc=datetime.now(UTC),
-            birth=freeze.birth,
-            chart=freeze.chart,
-            confirmatory_ranking=ranking,
-            prediction_comparisons=comparisons,
-            model_receipt=ParticipantModelReceipt(
-                prediction_freeze_sha256=self.store.load_session(
-                    session_id
-                ).prediction_freeze_sha256,
-                code_commit=freeze.code_commit,
-                engine_fingerprint=freeze.engine_fingerprint,
-                model_version=freeze.model_version,
-                model_sha256=freeze.model_sha256,
-                mapping_sha256=freeze.mapping_sha256,
-                question_bank_version=freeze.question_bank_version,
-                question_bank_sha256=freeze.question_bank_sha256,
-                ranking_scope=freeze.ranking_scope,
-                candidate_universe_sha256=freeze.candidate_universe_sha256,
-                candidate_universe_state_count=freeze.candidate_universe_state_count,
-            ),
-        )
-        self.store.write_reveal(report)
+        if lock is None or lock.schema_version == "participant-confirmatory-lock-v3":
+            raise ParticipantStateError("stored result is not a pre-repair diagnostic reveal")
         return report
 
     def finalize_exploratory(self, session_id: str) -> FinalParticipantReport:
@@ -493,7 +481,7 @@ class ParticipantSessionService:
             if (
                 not evidence.domain.natal_ranking_eligible
                 or question_id is None
-                or question_id not in self.backend.required_confirmatory_question_ids
+                or question_id not in self.backend.mapped_scoreable_question_ids
             ):
                 continue
             response = evidence.scoring_response()
@@ -536,7 +524,7 @@ class ParticipantSessionService:
             if (
                 not evidence.domain.natal_ranking_eligible
                 or question_id is None
-                or question_id not in self.backend.required_confirmatory_question_ids
+                or question_id not in self.backend.mapped_scoreable_question_ids
             ):
                 continue
             response = evidence.scoring_response()
@@ -559,7 +547,7 @@ class ParticipantSessionService:
             if (
                 not evidence.domain.natal_ranking_eligible
                 or question_id is None
-                or question_id not in self.backend.required_confirmatory_question_ids
+                or question_id not in self.backend.mapped_scoreable_question_ids
             ):
                 continue
             response = evidence.scoring_response()

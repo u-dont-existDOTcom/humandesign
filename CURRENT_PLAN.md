@@ -1,14 +1,22 @@
 # Current Research Plan
 
+## Execute admitted visible-Pro REVISE directive
+
+Treat the Extra High meta-review attempt as rejected routing evidence, not Pro authority.
+The corrected visible-Pro session `6a974b8a-31dc-83ea-90b5-f653b825a631` completed and
+is admitted as `PRO_META_REVIEW_ADMITTED_REVISE`; its exact response and receipt are in
+`state/PRO-META-REVIEW-2026-09-01.md`. Execute the bounded Mission Control and Human
+Design draft-branch revisions, retain 23 versus 76 as unresolved owner authority, and
+stop before any merge, deployment, session replacement, contact, or spending.
+
 ## Browser-impact correction
 
-Route `MC-BROWSER-REPO-TAB-SPRAWL-20260901-001` to the shared Pro supervisor with the
-authority-provenance packet. Keep GitHub operations on `gh`/local Git and reserve the
-connected Brave extension for the signed-in ChatGPT supervision surfaces that require
-it. Do not treat the proposed browser-necessity/tab-lifecycle guard as accepted until
-the Pro verdict is complete.
+The admitted Pro supervisor accepted `MC-BROWSER-REPO-TAB-SPRAWL-20260901-001` and
+required an independent browser-operation receipt, GitHub work through `gh`/local Git,
+a one-agent-tab default, and fail-closed cleanup when tab ownership is unknown. Reserve
+the connected Brave extension for signed-in ChatGPT supervision surfaces that require it.
 
-## Verified Extra High directive — awaiting required Pro meta-review
+## Verified Extra High directive — superseded by admitted Pro meta-review
 
 The browser selector defect is resolved: use the generic connected-extension selector
 to bind the active Brave Browser extension. The exact verified Extra High response and
@@ -19,31 +27,25 @@ Directive `XH-MC-HD-AUTHORITY-PROVENANCE-20260901` v1.0.0 says: revise the Missi
 Control authority-provenance proposal; implement session-bound reasoning-surface
 receipts; remove client-authored `cluster_id` and resolve a unique frozen server-side
 binding; keep 23 versus 76 unresolved; and fail lock/reveal closed while the owner-level
-completeness policy is absent. Before draft implementation, send the assembled
-self-contained packet to the existing shared visible-Pro lane under
-`supervision-architecture/a40d413-authority-provenance-v1` and wait for its complete
-verdict. That lane is currently busy with an earlier turn, so no Pro verdict is claimed.
+completeness policy is absent. The subsequent visible-Pro review is now admitted and is
+the governing bounded directive described above.
 
-## Durable Extra High routing packet — 2026-09-01
+## Historical Extra High routing packet — superseded 2026-09-01
 
 The fresh GitHub/Railway/browser audit and both Mission Control failure packets are
-preserved in `state/EXTRA-HIGH-SUPERVISION-HANDOFF-2026-09-01.md`. Browser discovery
-still reports no controlled surface, so no ChatGPT Extra High identity or verdict is
-claimed. Resume by routing both canonical Mission Control packets plus the handoff context
-through a visibly selected, signed-in ChatGPT Extra High conversation; wait for its
-complete bounded directive; then perform the required shared-Pro meta-review. Do not
-merge, deploy, rotate an invitation, start a replacement owner session, contact a
-participant, or spend money from this checkpoint.
+preserved in `state/EXTRA-HIGH-SUPERVISION-HANDOFF-2026-09-01.md`. Its earlier no-browser
+state is superseded by the verified Extra High and admitted visible-Pro receipts above.
+The prohibition on merge, deployment, invitation rotation, replacement owner sessions,
+participant contact, and spending remains active.
 
-## Restart priority — 2026-09-01 supervision and owner-intake recovery
+## Historical restart priority — superseded by admitted Pro directive
 
-This section supersedes the older continuation details below until resolved.
+This section records the pre-routing checkpoint; the admitted Pro directive above now
+controls execution.
 
-1. Restore the supported browser-control connection first. The 2026-09-01 Browser
-   runtime discovery returned no available controlled browser, so the existing Pro
-   supervision chat could not be surfaced. Reconnect the intended persistent browser,
-   reuse the existing supervision conversation, and keep any owner-visible window on
-   the workspace the owner requests.
+1. Browser control was restored through the generic connected-extension selector bound
+   to Brave. GitHub work now uses local Git/`gh`, and the separate browser-operation
+   receipt governs supervision-tab ownership.
 2. Do not treat `76` as an established questionnaire requirement. The 81-item bank has
    five validation-phase items, but the production frozen model currently has 27
    frozen rules spanning only 23 unique question IDs; the remaining non-validation
@@ -51,8 +53,8 @@ This section supersedes the older continuation details below until resolved.
    choice remains unresolved owner authority.
 3. Resume from draft owner-quality branch
    `codex/astrohd-owner-intake-quality-v1`. Preserve the completed UI, invitation,
-   evidence-receipt, phase-separation, and Action-contract repairs, but resolve the
-   server-authoritative `cluster_id` finding before release.
+   evidence-receipt, phase-separation, and Action-contract repairs. The current draft
+   removes client-authored cluster IDs and resolves exact frozen bindings server-side.
 4. Treat the pre-repair owner run as diagnostic unless the owner chooses otherwise.
    Exact source-commit compatibility correctly prevents an unlocked session frozen on
    deployed `afc0bb8` from continuing under a repaired deployment commit.
@@ -60,8 +62,8 @@ This section supersedes the older continuation details below until resolved.
    scientific scope and session-replacement choices are resolved. External
    participants remain closed and incremental spending remains `$0`.
 
-Adequacy: operational `BLOCKED_BROWSER_AND_CLUSTER_CONTRACT`; scientific
-`BLOCKED_23_VERSUS_76_OWNER_SCOPE`; release `BLOCKED_NO_MERGE_OR_DEPLOY`.
+Adequacy: operational repair `IMPLEMENTED_AND_LOCALLY_VERIFIED`; scientific completion
+policy `UNRESOLVED_OWNER_AUTHORITY`; release `BLOCKED_NO_MERGE_OR_DEPLOY`.
 
 ## Owner coordination directive — 2026-08-31
 

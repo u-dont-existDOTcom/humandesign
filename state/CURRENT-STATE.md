@@ -1,5 +1,24 @@
 # Current state
 
+## Verified visible-Pro directive admitted — 2026-09-01
+
+- The first clean meta-review attempt used Extra High on a Pro account and is therefore
+  non-authoritative for the required visible-Pro lane. Its self-rejection and hashes are
+  recorded in `state/PRO-MODE-ROUTING-ATTEMPT-2026-09-01.md` under incident
+  `MC-PRO-MODE-RECEIPT-MISMATCH-20260901-001`.
+- The same single ChatGPT tab was corrected from reasoning power 4 of 5 (Extra High) to
+  5 of 5 (Pro). Session `6a974b8a-31dc-83ea-90b5-f653b825a631` has verified signed-in
+  account, Chat surface, visible Pro pre-mode, staged-payload, same-session completed
+  response, response hash, and visible Pro post-mode receipts.
+- The admitted state is `PRO_META_REVIEW_ADMITTED_REVISE`. Complete response and
+  observed-UI receipt: `state/PRO-META-REVIEW-2026-09-01.md`. This is not a
+  cryptographic platform attestation.
+- Bounded draft directive:
+  `PRO-HD-PR23-SERVER-BINDING-UNRESOLVED-COMPLETION-20260901` v1.0.0. It authorizes
+  server-resolved frozen question bindings and an explicitly unresolved completion
+  policy, while keeping 23 versus 76 undecided and preserving the legacy owner session
+  as diagnostic.
+
 ## Browser-control incident routed to Pro — 2026-09-01
 
 - Incident `MC-BROWSER-REPO-TAB-SPRAWL-20260901-001`: six unnecessary GitHub tabs were
@@ -8,8 +27,9 @@
 - The tabs are closed or stale, supervision chats remain intact, and repository work now
   uses `gh`/local Git. The evidence-bounded cause and candidate prevention control are in
   `state/BROWSER-CONTROL-INCIDENT-2026-09-01.md`.
-- The incident is queued into the same required shared-Pro meta-review. Its proposed
-  control remains unaccepted until that supervisor returns a complete verdict.
+- The admitted Pro meta-review accepted the incident and required an independent
+  browser-operation receipt, local Git/`gh` as the GitHub default, a one-agent-tab
+  limit absent a recorded exception, and fail-closed cleanup for unknown tab ownership.
 
 ## Verified Extra High directive / Pro queue — 2026-09-01
 
@@ -34,35 +54,24 @@
   injected bindings. Neither 23 nor 76 is selected. Separate descriptive mapped IDs
   from an owner-authorized completion criterion; while absent, lock/reveal must fail
   closed with `SCIENTIFIC_COMPLETENESS_POLICY_UNRESOLVED`.
-- Required shared Pro lane is consolidated as
-  `supervision-architecture/a40d413-authority-provenance-v1`, packet
-  `PRO-META-A40D413-AUTHORITY-PROVENANCE-20260901-v1`. The self-contained 47,360-character
-  packet is assembled. The existing signed-in visible-Pro `Mission Control Brainstorming`
-  conversation is still processing an earlier turn, so this packet has not been sent and
-  no Pro verdict is claimed.
-- Next safe action: wait for that shared Pro lane to become idle, submit the exact packet,
-  wait for its complete response, record the same-session receipts, then execute only the
-  draft-branch work that the resulting Pro verdict permits. No merge, deploy, invitation
-  rotation, replacement owner session, participant contact, or spending.
+- The required shared-Pro lane subsequently completed with visible Pro pre/post-mode,
+  same-session submission, and completed-response receipts. The admitted `REVISE`
+  response is preserved in `state/PRO-META-REVIEW-2026-09-01.md`; this older queue state
+  is superseded.
 
-## Fresh supervision-routing checkpoint — 2026-09-01
+## Historical supervision-routing checkpoint — superseded 2026-09-01
 
 - Fresh GitHub and Railway state, exact canonical pointers to both Mission Control failure
   packets, and the verified-Extra-High routing prompt are preserved in
   `state/EXTRA-HIGH-SUPERVISION-HANDOFF-2026-09-01.md`.
-- Draft Human Design PR `#23` remains at `69c2d57`; draft Mission Control PR `#52`
-  remains at `6ec7380`; neither has a verified Extra High or Pro verdict.
-- Supported Browser recovery still reports zero available browser surfaces. No signed-in
-  ChatGPT, visible Extra High mode, conversation identity, submission, or response receipt
-  exists, so routing remains `PENDING_VERIFIED_CHATGPT_EXTRA_HIGH_BROWSER_SESSION`.
+- At that checkpoint, Human Design PR `#23` was at `69c2d57` and Mission Control PR
+  `#52` was at `6ec7380`. The no-browser and no-verdict state recorded there is
+  superseded by the verified Extra High and admitted visible-Pro receipts above.
 - Fresh Railway readback shows production `relationship-web` healthy on deployment
   `907ed82b-ac87-4d45-9530-178921aab7e9`, exact `main` commit `afc0bb8`; PR `#23` is not
   deployed. No mutation, secret/value access, participant-data access, spending, or
   contact occurred.
-- Next safe action: restore a supported controlled browser, bind the actual signed-in
-  ChatGPT surface/mode/session receipts, route both packets to visible Extra High, wait
-  for its verdict and next bounded directive, and use the shared Pro lane only afterward
-  when that directive requires it.
+- Browser supervision routing is complete; GitHub work now uses local Git/`gh`.
 
 ## Active owner-test defect repair — 2026-09-01
 
@@ -74,34 +83,30 @@
   `afc0bb82de0e481ae5a5d3453e0bcaf82b2a0286` (merged PR `#21`).
 - Implementation boundary: improve participant explanation and credentials UX; expose
   frozen minimum-evidence requirements; require per-observation evidence-quality and
-  consistency receipts; keep legacy evidence readable but unscoreable; reject owner
-  lock until every in-interview confirmatory dimension is adequately assessed; keep
-  separately phased prospective validation tasks outside that immediate gate; do not
-  force tokens.
+  consistency receipts; keep legacy evidence readable but unscoreable; resolve unique
+  frozen dimensions server-side; and reject new lock/reveal while the owner-explicit
+  completion policy is unresolved. Do not force tokens or infer a denominator.
 - Magic-link boundary: the natal pilot intentionally keeps credentials out of URLs;
   this is distinct from relationship-email recovery. The UI now provides one-click
   copy of both credentials and explains the separation. Session authorization is now
   independent of the active one-use invitation, with legacy receipt migration, so a
   later test-code rotation cannot strand the current session.
-- Independent exact-diff review is `BLOCKED`. The 81-item question bank contains five
+- The prior exact-diff review found the scientific authority defect. The 81-item question bank contains five
   validation-phase items, but production has only 27 frozen rules spanning 23 unique
   question IDs. The previously stated `76` immediate gate was an unverified inference,
   not a Pro/owner decision. Of the other 53 non-validation items, six are
   `empirical_only` and 47 are `unresolved`. The owner has not selected a 23-construct
   scored pilot or a 76-item holistic acquisition gate with explicit unscored evidence.
-- The Action also cannot yet supply the `cluster_id` that adequate evidence currently
-  requires; the resumed worker must either return and validate a server-authoritative
-  cluster or remove the scientifically unnecessary client-authored requirement.
-- Browser recovery is the first restart action. Supported Browser discovery returned
-  no available controlled browser on 2026-09-01, so the existing supervision chat
-  could not be shown. Do not fabricate a chat or supervisor provenance and do not
-  substitute an unsupported browser-control path.
-- Current local verification: 269 tests passed, one skipped because official Swiss
-  files are unavailable; strict mypy passed for 119 source files; touched Ruff and
-  participant JavaScript syntax passed. Whole-repository Ruff still has pre-existing
-  unrelated baseline failures.
-- Adequacy: operational `BLOCKED_BROWSER_AND_CLUSTER_CONTRACT`; scientific
-  `BLOCKED_23_VERSUS_76_OWNER_SCOPE / HUMAN_VALIDITY_NOT_ESTABLISHED`; release
+- The admitted Pro directive resolves the Action defect by forbidding client-authored
+  cluster/binding fields and requiring exact server-side resolution from the immutable
+  prediction freeze. The browser was recovered through the generic connected-extension
+  selector bound to Brave; GitHub access stays on `gh`/local Git.
+- Current repaired-draft verification: 293 tests passed, one skipped because official
+  Swiss files are unavailable; strict mypy passed for 119 source files; touched Ruff,
+  both participant JavaScript syntax checks, OpenAPI parse/spec validation, and
+  `git diff --check` passed. Whole-repository Ruff retains unrelated baseline failures.
+- Adequacy: operational `IMPLEMENTED_AND_LOCALLY_VERIFIED`; scientific
+  `UNRESOLVED_OWNER_AUTHORITY / HUMAN_VALIDITY_NOT_ESTABLISHED`; release
   `BLOCKED_NO_MERGE_OR_DEPLOY`. Friends/public recruitment remains closed.
 
 ## Active task override — Issue #18 owner-only release smoke
