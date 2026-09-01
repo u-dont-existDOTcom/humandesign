@@ -98,6 +98,24 @@ person-exclusive validation cohort, with the feature schema, outcome bindings,
 fitting method, thresholds, and stopping rules frozen before validation outcomes
 are inspected.
 
+The chart-blind phenotype boundary is also calibration-ledger-safe at the individual
+case level. Classifier output is rejected if it uses an axis outside the current
+question's frozen targets, uses a direction incompatible with the rubric's
+directional/dyadic/person scope, duplicates one axis/direction within a question, or
+classifies an ordinal without literal participant evidence from that same question,
+including clarifications routed by their source-question identity. A separate extraction
+step refuses to count the same classified axis/direction from multiple questions;
+the questionnaire legitimately revisits constructs, so any future consolidation
+rule must be frozen explicitly rather than silently averaging or double-weighting
+repeated answers. If any repeated probe for an axis remains unresolved, the whole
+axis is calibration-ineligible because the current unresolved record has no direction.
+Only freezes carrying the current validation-contract receipt can enter this extractor;
+legacy freezes remain readable for participant reveal but cannot be mistaken for
+validated calibration rows. Their historical hash remains computed over the original
+v1 field set rather than changing because newer nullable receipt fields exist. This
+still creates no calibration and no
+participant-facing hit/miss result.
+
 The remaining deployment blockers are therefore operational rather than conceptual: verified Swiss files must be available to Railway, and ordinary participant birthplace text needs a trustworthy coordinate/timezone resolution step or explicit confirmed coordinates.
 
 ## Survey-v2 noise policy

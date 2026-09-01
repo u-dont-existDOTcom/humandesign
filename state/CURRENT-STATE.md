@@ -42,10 +42,25 @@
   near-opposition band inconsistently under actor swapping; the repair now uses an
   explicit zero relative tolerance and tests that boundary. The final repeat review
   returned `READY` with operational `PASS` and no owner decision.
-- Current step: commit/push the atomic feature slice and open a draft PR. The next safe scoring
-  blocker is ledger-safe chart-blind phenotype validation (per-question target and
-  scope/direction enforcement plus duplicate/conflict handling) before any future
-  calibration extractor can be trusted.
+- Durable checkpoint: atomic feature slice committed as `4abff0f`, pushed to
+  `codex/astrorrf-ordinal-calibration-v1`, and opened as draft PR `#22`.
+- Completed scoring checkpoint: ledger-safe chart-blind phenotype validation.
+  The classifier now fails closed on off-target axes, rubric-scope/direction mismatch,
+  duplicate axis/direction rows within a question, and classified ordinals without
+  literal same-question evidence. Semantic clarification evidence is routed by frozen
+  source-question identity. The calibration extractor requires the current
+  validation-contract receipt, refuses cross-question duplicate axis/direction
+  weighting, and excludes an entire axis when a repeated unresolved probe lacks
+  direction. Legacy phenotype freezes retain their historical v1 hash and remain
+  reveal-compatible but calibration-ineligible.
+- Verification: relationship suite `72 passed`; full suite `279 passed`; strict
+  MyPy `120 source files`; touched-file Ruff, diff check, and secret-pattern scan
+  pass. The repeat independent exact-diff review returned `READY` with operational
+  `PASS`, scientific ledger-safety `PASS`, and no owner decision.
+- Next boundary: no ordinal calibration may be fitted from Pairs 1–6.
+  Actual calibration requires newly preassigned development cases and a separate
+  person-exclusive validation cohort; no owner decision or human contact is required
+  for the current code-safety checkpoint.
 - Adequacy: operational `LOCAL_VERIFICATION_AND_REVIEW_PASS`; scientific
   `CALIBRATION_READY_GEOMETRY_ONLY / HUMAN_VALIDITY_NOT_ESTABLISHED`; release
   `OWNER_ASTROHD_TEST_OPEN / ASTRORRF_ORDINAL_RELEASE_CLOSED`.
