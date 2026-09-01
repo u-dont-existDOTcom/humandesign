@@ -1,5 +1,50 @@
 # Current state
 
+## Browser-control incident routed to Pro — 2026-09-01
+
+- Incident `MC-BROWSER-REPO-TAB-SPRAWL-20260901-001`: six unnecessary GitHub tabs were
+  opened in the owner's active Brave session while assembling supervision evidence,
+  despite authenticated `gh` and a local checkout being available.
+- The tabs are closed or stale, supervision chats remain intact, and repository work now
+  uses `gh`/local Git. The evidence-bounded cause and candidate prevention control are in
+  `state/BROWSER-CONTROL-INCIDENT-2026-09-01.md`.
+- The incident is queued into the same required shared-Pro meta-review. Its proposed
+  control remains unaccepted until that supervisor returns a complete verdict.
+
+## Verified Extra High directive / Pro queue — 2026-09-01
+
+- Browser recovery succeeded through the generic connected-extension selector, which
+  bound the active Brave Browser extension. The earlier default-selector conclusion that
+  no browser was available is superseded.
+- A clean signed-in ChatGPT Chat conversation was visibly set to Extra High and used for
+  the two exact Mission Control packets plus the Human Design/Railway receipt. Session:
+  `6a973fd5-9228-83e9-abad-b5f0a5510de2`; input payload SHA-256
+  `a65c4bcceeabf88b56ed3413c4183ed77f228cd8e5765a36c0ccec80a34b8309`; response
+  payload SHA-256 `e8772e5509415121933277881125378ba8a080dbb76bde29778235819e7d5607`.
+  Pre/post visible mode, submission, completed-response, and same-session receipts pass.
+- Complete response and independent receipt:
+  `state/EXTRA-HIGH-DIRECTIVE-2026-09-01.md`.
+- Directive `XH-MC-HD-AUTHORITY-PROVENANCE-20260901` v1.0.0 verdict is `REVISE`:
+  preserve the candidate claim-authority core but add authority ceilings, explicit
+  fact-to-criterion promotion, subject-bound provenance, bounded independent
+  reproduction, and semantic-reclassification failures; add session-bound reasoning
+  surface/account/mode/submission/response receipts.
+- Human Design directive: remove `cluster_id` from client input and derive it only from
+  the unique frozen server-side prediction dimension; reject missing, ambiguous, or
+  injected bindings. Neither 23 nor 76 is selected. Separate descriptive mapped IDs
+  from an owner-authorized completion criterion; while absent, lock/reveal must fail
+  closed with `SCIENTIFIC_COMPLETENESS_POLICY_UNRESOLVED`.
+- Required shared Pro lane is consolidated as
+  `supervision-architecture/a40d413-authority-provenance-v1`, packet
+  `PRO-META-A40D413-AUTHORITY-PROVENANCE-20260901-v1`. The self-contained 47,360-character
+  packet is assembled. The existing signed-in visible-Pro `Mission Control Brainstorming`
+  conversation is still processing an earlier turn, so this packet has not been sent and
+  no Pro verdict is claimed.
+- Next safe action: wait for that shared Pro lane to become idle, submit the exact packet,
+  wait for its complete response, record the same-session receipts, then execute only the
+  draft-branch work that the resulting Pro verdict permits. No merge, deploy, invitation
+  rotation, replacement owner session, participant contact, or spending.
+
 ## Fresh supervision-routing checkpoint — 2026-09-01
 
 - Fresh GitHub and Railway state, exact canonical pointers to both Mission Control failure

@@ -1,5 +1,29 @@
 # Current Research Plan
 
+## Browser-impact correction
+
+Route `MC-BROWSER-REPO-TAB-SPRAWL-20260901-001` to the shared Pro supervisor with the
+authority-provenance packet. Keep GitHub operations on `gh`/local Git and reserve the
+connected Brave extension for the signed-in ChatGPT supervision surfaces that require
+it. Do not treat the proposed browser-necessity/tab-lifecycle guard as accepted until
+the Pro verdict is complete.
+
+## Verified Extra High directive — awaiting required Pro meta-review
+
+The browser selector defect is resolved: use the generic connected-extension selector
+to bind the active Brave Browser extension. The exact verified Extra High response and
+independently observed session/mode/submission/response receipt are preserved in
+`state/EXTRA-HIGH-DIRECTIVE-2026-09-01.md`.
+
+Directive `XH-MC-HD-AUTHORITY-PROVENANCE-20260901` v1.0.0 says: revise the Mission
+Control authority-provenance proposal; implement session-bound reasoning-surface
+receipts; remove client-authored `cluster_id` and resolve a unique frozen server-side
+binding; keep 23 versus 76 unresolved; and fail lock/reveal closed while the owner-level
+completeness policy is absent. Before draft implementation, send the assembled
+self-contained packet to the existing shared visible-Pro lane under
+`supervision-architecture/a40d413-authority-provenance-v1` and wait for its complete
+verdict. That lane is currently busy with an earlier turn, so no Pro verdict is claimed.
+
 ## Durable Extra High routing packet — 2026-09-01
 
 The fresh GitHub/Railway/browser audit and both Mission Control failure packets are

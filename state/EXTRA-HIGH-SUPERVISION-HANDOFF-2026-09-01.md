@@ -1,6 +1,13 @@
 # Extra High supervision handoff — 2026-09-01
 
-Status: `PENDING_VERIFIED_CHATGPT_EXTRA_HIGH_BROWSER_SESSION`
+Status: `SUPERSEDED_BY_VERIFIED_EXTRA_HIGH_DIRECTIVE_PENDING_PRO_META_REVIEW`
+
+Superseding receipt and complete response:
+`state/EXTRA-HIGH-DIRECTIVE-2026-09-01.md`.
+
+Browser-control correction: select the generic connected browser extension to bind the
+active Brave Browser instance. The earlier default-selector/browser-inventory failure
+did not prove that the connected extension was unavailable.
 
 This handoff preserves a privacy-safe routing summary and exact canonical packet pointers
 for use after supported browser control is available. The two canonical JSON packets,
