@@ -5,12 +5,15 @@ from pathlib import Path
 
 import pytest
 
+from hdmatch.experiments.canonical import sha256_file
 from hdmatch.runtime.century_cache import (
     CenturyCacheVerificationError,
     GlobalCandidateState,
     load_century_candidate_states,
+    load_pinned_century_candidate_states_for_range,
     structural_features_sha256,
     verify_century_cache,
+    verify_pinned_century_cache,
     write_verified_century_cache,
 )
 from hdmatch.schemas import StructuralChartFeatures
@@ -130,4 +133,52 @@ def test_century_cache_rejects_adjacent_identical_features(tmp_path: Path) -> No
             engine_fingerprint="c" * 64,
             generation_commit="test-commit",
             created_at_utc=datetime(2026, 8, 27, tzinfo=UTC),
+        )
+
+
+def test_pinned_range_loader_verifies_release_and_clips_exact_bounds(
+    tmp_path: Path,
+) -> None:
+    root = _write(tmp_path)
+    manifest = verify_century_cache(root)
+    manifest_sha256 = sha256_file(root / "manifest.json")
+    start = datetime(2000, 1, 1, 6, tzinfo=UTC)
+    end = datetime(2000, 1, 1, 18, tzinfo=UTC)
+
+    verified = verify_pinned_century_cache(
+        root,
+        expected_engine_fingerprint="c" * 64,
+        expected_manifest_sha256=manifest_sha256,
+        expected_canonical_rows_sha256=manifest.canonical_rows_sha256,
+    )
+    states = load_pinned_century_candidate_states_for_range(
+        root,
+        timezone_name="UTC",
+        expected_engine_fingerprint="c" * 64,
+        expected_manifest_sha256=manifest_sha256,
+        expected_canonical_rows_sha256=manifest.canonical_rows_sha256,
+        range_start_utc=start,
+        range_end_utc=end,
+    )
+
+    assert verified == manifest
+    assert len(states) == 2
+    assert states[0].start_utc == start
+    assert states[-1].end_utc == end
+    assert sum((state.end_utc - state.start_utc).total_seconds() for state in states) == 12 * 3600
+
+
+def test_pinned_range_loader_rejects_wrong_manifest_pin(tmp_path: Path) -> None:
+    root = _write(tmp_path)
+    manifest = verify_century_cache(root)
+
+    with pytest.raises(CenturyCacheVerificationError, match="manifest hash mismatch"):
+        load_pinned_century_candidate_states_for_range(
+            root,
+            timezone_name="UTC",
+            expected_engine_fingerprint="c" * 64,
+            expected_manifest_sha256="0" * 64,
+            expected_canonical_rows_sha256=manifest.canonical_rows_sha256,
+            range_start_utc=datetime(2000, 1, 1, tzinfo=UTC),
+            range_end_utc=datetime(2000, 1, 2, tzinfo=UTC),
         )

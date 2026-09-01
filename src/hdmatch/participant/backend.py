@@ -41,6 +41,10 @@ class UnsupportedRankScopeError(RuntimeError):
     """Raised when a requested candidate universe has no reusable production backend."""
 
 
+class FrozenRuntimeMismatchError(RuntimeError):
+    """Raised when an in-progress session meets a different runtime bundle."""
+
+
 @dataclass(frozen=True, slots=True)
 class DiscriminationDiagnostics:
     candidate_state_count: int
@@ -172,6 +176,7 @@ class AstroHDParticipantBackend:
         mode: SessionMode,
         analysis_kind: str,
     ) -> RankingSnapshot:
+        self.assert_freeze_compatible(freeze)
         self._require_supported_scope(freeze.ranking_scope)
         states = self._states_for_birth(freeze.birth)
         self._assert_frozen_universe(freeze, states)
@@ -258,6 +263,7 @@ class AstroHDParticipantBackend:
     ) -> DiscriminationDiagnostics:
         """Return only non-answer-key diagnostics safe to show before reveal."""
 
+        self.assert_freeze_compatible(freeze)
         self._require_supported_scope(freeze.ranking_scope)
         states = self._states_for_birth(freeze.birth)
         self._assert_frozen_universe(freeze, states)
@@ -279,6 +285,7 @@ class AstroHDParticipantBackend:
     ) -> SelectedQuestion | None:
         """Choose a neutral answer-blind question using candidate discrimination."""
 
+        self.assert_freeze_compatible(freeze)
         self._require_supported_scope(freeze.ranking_scope)
         remaining = self.scoreable_question_ids - answered_question_ids
         if not remaining:
@@ -328,6 +335,34 @@ class AstroHDParticipantBackend:
             question=self.question_bank.by_id(utility.question_id),
             utility=utility,
         )
+
+    def assert_freeze_compatible(self, freeze: PredictionFreeze) -> None:
+        """Fail closed if an in-progress session meets a different runtime bundle."""
+
+        expected = {
+            "source commit": self.code_commit,
+            "chart engine": self.chart_engine.fingerprint,
+            "model version": self.model.library.model_version,
+            "model bytes": self.model.model_sha256,
+            "mapping bytes": self.model.mapping_sha256,
+            "question bank version": self.question_bank.version,
+            "question bank bytes": self.model.question_bank_sha256,
+        }
+        frozen = {
+            "source commit": freeze.code_commit,
+            "chart engine": freeze.engine_fingerprint,
+            "model version": freeze.model_version,
+            "model bytes": freeze.model_sha256,
+            "mapping bytes": freeze.mapping_sha256,
+            "question bank version": freeze.question_bank_version,
+            "question bank bytes": freeze.question_bank_sha256,
+        }
+        mismatches = tuple(name for name, value in expected.items() if frozen[name] != value)
+        if mismatches:
+            raise FrozenRuntimeMismatchError(
+                "active participant runtime differs from the frozen session bundle: "
+                + ", ".join(mismatches)
+            )
 
     def _states_for_birth(self, birth: ResolvedBirth) -> tuple[CandidateState, ...]:
         key = (

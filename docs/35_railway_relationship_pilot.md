@@ -80,7 +80,8 @@ GitHub may receive only public-safe artifacts defined in `docs/34_relationship_p
 3. participant-editable review before freeze;
 4. personalized non-astrological Relationship Fingerprint;
 5. optional private birth-data intake after/alongside the appropriate freeze boundary;
-6. post-freeze Astro/HD hit/miss/unresolved reveal;
+6. post-freeze Astro/HD raw-signal and unresolved reveal, without formal hit/miss
+   labels until a separate calibration version exists;
 7. de-identified automatic-learning ledger export;
 8. authenticated researcher/admin tools;
 9. migration from volume-backed JSON to Postgres when recruitment scale or operational requirements justify it.

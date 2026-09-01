@@ -6,7 +6,14 @@ from datetime import UTC, datetime
 from enum import StrEnum
 from typing import Literal
 
-from pydantic import BaseModel, ConfigDict, Field, field_serializer, field_validator
+from pydantic import (
+    BaseModel,
+    ConfigDict,
+    Field,
+    field_serializer,
+    field_validator,
+    model_validator,
+)
 
 from hdmatch.schemas import BehavioralResponse, ChartFeatures, ScoredState
 
@@ -122,9 +129,7 @@ class PredictionDimension(ParticipantModel):
 class PredictionFreeze(ParticipantModel):
     """Immutable predictions, search universe, and provenance frozen before answers."""
 
-    schema_version: Literal["participant-prediction-freeze-v2"] = (
-        "participant-prediction-freeze-v2"
-    )
+    schema_version: Literal["participant-prediction-freeze-v2"] = "participant-prediction-freeze-v2"
     session_id: str
     created_at_utc: datetime
     birth: ResolvedBirth
@@ -233,9 +238,7 @@ class EvidenceRecord(ParticipantModel):
 
 
 class ConfirmatoryLock(ParticipantModel):
-    schema_version: Literal["participant-confirmatory-lock-v1"] = (
-        "participant-confirmatory-lock-v1"
-    )
+    schema_version: Literal["participant-confirmatory-lock-v1"] = "participant-confirmatory-lock-v1"
     session_id: str
     locked_at_utc: datetime
     evidence_ids: tuple[str, ...]
@@ -300,9 +303,7 @@ class PublicProgress(ParticipantModel):
 
 
 class NextInterviewQuestion(ParticipantModel):
-    schema_version: Literal["participant-next-question-v1"] = (
-        "participant-next-question-v1"
-    )
+    schema_version: Literal["participant-next-question-v1"] = "participant-next-question-v1"
     session_id: str
     question_id: str | None
     prompt: str
@@ -329,14 +330,33 @@ class PredictionComparison(ParticipantModel):
     evidence_id: str | None = None
 
 
+class ParticipantModelReceipt(ParticipantModel):
+    """Public-safe provenance for the exact model frozen before this interview."""
+
+    prediction_freeze_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
+    code_commit: str
+    engine_fingerprint: str
+    model_version: str
+    model_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
+    mapping_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
+    question_bank_version: str
+    question_bank_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
+    ranking_scope: RankScope
+    candidate_universe_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
+    candidate_universe_state_count: int = Field(ge=1)
+
+
 class RevealReport(ParticipantModel):
-    schema_version: Literal["participant-reveal-v1"] = "participant-reveal-v1"
+    schema_version: Literal["participant-reveal-v1", "participant-reveal-v2"] = (
+        "participant-reveal-v2"
+    )
     session_id: str
     revealed_at_utc: datetime
     birth: ResolvedBirth
     chart: ChartFeatures
     confirmatory_ranking: RankingSnapshot
     prediction_comparisons: tuple[PredictionComparison, ...]
+    model_receipt: ParticipantModelReceipt | None = None
     primary_test_statement: str = (
         "The natal confirmatory test uses only persistent trait/behavior evidence. "
         "Outcomes, event timing, environment, and conventional covariates are retained "
@@ -349,6 +369,14 @@ class RevealReport(ParticipantModel):
         if value.tzinfo is None or value.utcoffset() is None:
             raise ValueError("revealed_at_utc must be timezone-aware")
         return value.astimezone(UTC)
+
+    @model_validator(mode="after")
+    def receipt_matches_schema_version(self) -> RevealReport:
+        if self.schema_version == "participant-reveal-v2" and self.model_receipt is None:
+            raise ValueError("participant-reveal-v2 requires a model receipt")
+        if self.schema_version == "participant-reveal-v1" and self.model_receipt is not None:
+            raise ValueError("participant-reveal-v1 cannot contain a model receipt")
+        return self
 
 
 class ExploratoryRankingReport(ParticipantModel):

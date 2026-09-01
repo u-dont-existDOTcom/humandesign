@@ -45,6 +45,8 @@ class ParticipantSessionStore:
 
     def __init__(self, root: str | Path) -> None:
         self.root = Path(root)
+        self.root.mkdir(parents=True, exist_ok=True, mode=0o700)
+        os.chmod(self.root, 0o700)
 
     def _directory(self, session_id: str) -> Path:
         if not _SESSION_RE.fullmatch(session_id):
@@ -56,12 +58,13 @@ class ParticipantSessionStore:
         if freeze.session_id != record.session_id:
             raise ValueError("session and prediction freeze IDs differ")
         try:
-            directory.mkdir(parents=True, exist_ok=False)
+            directory.mkdir(parents=True, exist_ok=False, mode=0o700)
+            os.chmod(directory, 0o700)
             freeze_path = directory / "prediction.freeze.json"
-            write_new_canonical_json(freeze_path, freeze)
+            write_new_canonical_json(freeze_path, freeze, mode=0o600)
             if sha256_file(freeze_path) != record.prediction_freeze_sha256:
                 raise SessionStorageError("prediction freeze hash does not match session record")
-            write_new_canonical_json(directory / "session.json", record)
+            write_new_canonical_json(directory / "session.json", record, mode=0o600)
         except BaseException:
             if not (directory / "session.json").exists():
                 shutil.rmtree(directory, ignore_errors=True)
@@ -103,7 +106,8 @@ class ParticipantSessionStore:
         directory = self._directory(record.session_id)
         event_path = directory / "evidence.events.jsonl"
         lock_path = directory / ".evidence.lock"
-        lock_path.touch(exist_ok=True)
+        lock_path.touch(exist_ok=True, mode=0o600)
+        os.chmod(lock_path, 0o600)
         with lock_path.open("rb") as lock_handle:
             fcntl.flock(lock_handle.fileno(), fcntl.LOCK_EX)
             try:
@@ -117,7 +121,13 @@ class ParticipantSessionStore:
                 }
                 envelope = {**body, "event_sha256": sha256_bytes(canonical_json_bytes(body))}
                 line = canonical_json_bytes(envelope) + b"\n"
-                with event_path.open("ab") as handle:
+                descriptor = os.open(
+                    event_path,
+                    os.O_APPEND | os.O_CREAT | os.O_WRONLY,
+                    0o600,
+                )
+                os.fchmod(descriptor, 0o600)
+                with os.fdopen(descriptor, "ab") as handle:
                     handle.write(line)
                     handle.flush()
                     os.fsync(handle.fileno())
@@ -204,7 +214,11 @@ class ParticipantSessionStore:
 
     def _write_artifact(self, session_id: str, filename: str, value: BaseModel) -> None:
         self.load_session(session_id)
-        write_new_canonical_json(self._directory(session_id) / filename, value)
+        write_new_canonical_json(
+            self._directory(session_id) / filename,
+            value,
+            mode=0o600,
+        )
 
     def _load_optional(
         self,

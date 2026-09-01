@@ -80,7 +80,8 @@ def test_openai_ui_explains_scientific_and_participant_payoff() -> None:
     assert "Relationship Pattern Lab" in HTML
     assert "blind astrology &amp; Human Design relationship study" in HTML
     assert "structured map of one real relationship" in HTML
-    assert "what the blinded system predicted well, what it missed" in HTML
+    assert "exact developmental signals frozen before your answers" in HTML
+    assert "not yet calibrated as high/low or formal hits/misses" in HTML
     assert "prospectively checking likely relationship dynamics" in HTML
     assert "testing that possibility, not assuming it" in HTML
     assert "OpenAI's API" in HTML

@@ -9,9 +9,12 @@ from datetime import datetime
 from hdmatch.runtime.century_cache import (
     CenturyCacheVerificationError,
     load_century_candidate_states,
+    load_pinned_century_candidate_states_for_range,
     verify_century_cache,
+    verify_pinned_century_cache,
 )
 from hdmatch.schemas import BehavioralResponse, CandidateState
+from hdmatch.search import local_month_utc_bounds
 
 from .backend import (
     AstroHDParticipantBackend,
@@ -21,8 +24,8 @@ from .backend import (
 )
 from .models import (
     PredictionFreeze,
-    RankScope,
     RankingSnapshot,
+    RankScope,
     ResolvedBirth,
     SessionMode,
 )
@@ -39,6 +42,8 @@ class CenturyCapableParticipantBackend(AstroHDParticipantBackend):
         question_bank_path: str,
         candidate_cache_dir: str | None = None,
         century_cache_dir: str | None = None,
+        century_manifest_sha256: str | None = None,
+        century_canonical_rows_sha256: str | None = None,
         code_commit: str = "unknown",
     ) -> None:
         super().__init__(
@@ -49,6 +54,8 @@ class CenturyCapableParticipantBackend(AstroHDParticipantBackend):
             code_commit=code_commit,
         )
         self.century_cache_dir = century_cache_dir
+        self.century_manifest_sha256 = century_manifest_sha256
+        self.century_canonical_rows_sha256 = century_canonical_rows_sha256
         self._active_scope: ContextVar[RankScope] = ContextVar(
             "hdmatch_participant_rank_scope",
             default=RankScope.KNOWN_BIRTH_MONTH,
@@ -130,7 +137,37 @@ class CenturyCapableParticipantBackend(AstroHDParticipantBackend):
             self._active_scope.reset(token)
 
     def _states_for_birth(self, birth: ResolvedBirth) -> tuple[CandidateState, ...]:
-        if self._active_scope.get() is not RankScope.CENTURY_GLOBAL:
+        scope = self._active_scope.get()
+        if scope is RankScope.KNOWN_BIRTH_MONTH and self._pinned_century_ready:
+            key = (
+                birth.supplied_local.year,
+                birth.supplied_local.month,
+                birth.iana_timezone,
+            )
+            cached_month = self._universe_cache.get(key)
+            if cached_month is not None:
+                return cached_month
+            start, end = local_month_utc_bounds(key[0], key[1], key[2])
+            assert self.century_cache_dir is not None
+            assert self.century_manifest_sha256 is not None
+            assert self.century_canonical_rows_sha256 is not None
+            try:
+                states = load_pinned_century_candidate_states_for_range(
+                    self.century_cache_dir,
+                    timezone_name=birth.iana_timezone,
+                    expected_engine_fingerprint=self.chart_engine.fingerprint,
+                    expected_manifest_sha256=self.century_manifest_sha256,
+                    expected_canonical_rows_sha256=self.century_canonical_rows_sha256,
+                    range_start_utc=start,
+                    range_end_utc=end,
+                )
+            except CenturyCacheVerificationError as exc:
+                raise UnsupportedRankScopeError(
+                    f"known_birth_month pinned cache verification failed: {exc}"
+                ) from exc
+            self._universe_cache[key] = states
+            return states
+        if scope is not RankScope.CENTURY_GLOBAL:
             return super()._states_for_birth(birth)
         cached = self._century_universe_cache.get(birth.iana_timezone)
         if cached is not None:
@@ -179,4 +216,35 @@ class CenturyCapableParticipantBackend(AstroHDParticipantBackend):
                 f"century_global cache verification failed: {exc}"
             ) from exc
         self._century_verified = True
+        return self.century_cache_dir
+
+    @property
+    def _pinned_century_ready(self) -> bool:
+        return (
+            self.century_cache_dir is not None
+            and self.century_manifest_sha256 is not None
+            and self.century_canonical_rows_sha256 is not None
+        )
+
+    def verify_pinned_month_cache_ready(self) -> str:
+        """Fail closed unless the exact released artifact is ready for month slicing."""
+
+        if not self._pinned_century_ready:
+            raise UnsupportedRankScopeError(
+                "known_birth_month fast path requires the century cache and both release hashes"
+            )
+        assert self.century_cache_dir is not None
+        assert self.century_manifest_sha256 is not None
+        assert self.century_canonical_rows_sha256 is not None
+        try:
+            verify_pinned_century_cache(
+                self.century_cache_dir,
+                expected_engine_fingerprint=self.chart_engine.fingerprint,
+                expected_manifest_sha256=self.century_manifest_sha256,
+                expected_canonical_rows_sha256=self.century_canonical_rows_sha256,
+            )
+        except CenturyCacheVerificationError as exc:
+            raise UnsupportedRankScopeError(
+                f"known_birth_month pinned cache verification failed: {exc}"
+            ) from exc
         return self.century_cache_dir

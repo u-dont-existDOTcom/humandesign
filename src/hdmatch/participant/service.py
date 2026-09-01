@@ -20,11 +20,12 @@ from .models import (
     ExploratoryRankingReport,
     FinalParticipantReport,
     NextInterviewQuestion,
+    ParticipantModelReceipt,
     PredictionComparison,
     PredictionFreeze,
     PublicProgress,
-    RankScope,
     RankingSnapshot,
+    RankScope,
     ResolvedBirth,
     RevealReport,
     SessionMode,
@@ -46,6 +47,8 @@ class ParticipantBackend(Protocol):
         ranking_scope: RankScope,
         created_at_utc: datetime,
     ) -> PredictionFreeze: ...
+
+    def assert_freeze_compatible(self, freeze: PredictionFreeze) -> None: ...
 
     def rank(
         self,
@@ -135,11 +138,7 @@ class ParticipantSessionService:
                 record.phase == "posthoc_exploratory"
                 for record in self.store.load_evidence(session_id)
             )
-            return (
-                SessionPhase.POSTHOC_EXPLORATORY
-                if posthoc
-                else SessionPhase.REVEALED
-            )
+            return SessionPhase.POSTHOC_EXPLORATORY if posthoc else SessionPhase.REVEALED
         if self.store.load_confirmatory_lock(session_id) is not None:
             return SessionPhase.CONFIRMATORY_LOCKED
         return SessionPhase.CONFIRMATORY_BLIND
@@ -173,9 +172,7 @@ class ParticipantSessionService:
     def public_progress(self, session_id: str) -> PublicProgress:
         current = self.phase(session_id)
         records = self.store.load_evidence(session_id)
-        confirmatory = tuple(
-            record for record in records if record.phase == "confirmatory_blind"
-        )
+        confirmatory = tuple(record for record in records if record.phase == "confirmatory_blind")
         locked = self.store.load_confirmatory_lock(session_id)
         if locked is not None:
             responses = locked.scoring_responses
@@ -204,7 +201,11 @@ class ParticipantSessionService:
 
     def next_question(self, session_id: str) -> NextInterviewQuestion:
         if self.phase(session_id) is not SessionPhase.CONFIRMATORY_BLIND:
-            raise ParticipantStateError("adaptive confirmatory questions stop when evidence is locked")
+            raise ParticipantStateError(
+                "adaptive confirmatory questions stop when evidence is locked"
+            )
+        freeze = self.store.load_freeze(session_id)
+        self.backend.assert_freeze_compatible(freeze)
         records = tuple(
             record
             for record in self.store.load_evidence(session_id)
@@ -232,7 +233,6 @@ class ParticipantSessionService:
             )
         responses = self._latest_scoreable_responses(records)
         answered = frozenset(response.question_id for response in responses)
-        freeze = self.store.load_freeze(session_id)
         selected = self.backend.select_question(
             freeze=freeze,
             responses=responses,
@@ -327,6 +327,21 @@ class ParticipantSessionService:
             chart=freeze.chart,
             confirmatory_ranking=ranking,
             prediction_comparisons=comparisons,
+            model_receipt=ParticipantModelReceipt(
+                prediction_freeze_sha256=self.store.load_session(
+                    session_id
+                ).prediction_freeze_sha256,
+                code_commit=freeze.code_commit,
+                engine_fingerprint=freeze.engine_fingerprint,
+                model_version=freeze.model_version,
+                model_sha256=freeze.model_sha256,
+                mapping_sha256=freeze.mapping_sha256,
+                question_bank_version=freeze.question_bank_version,
+                question_bank_sha256=freeze.question_bank_sha256,
+                ranking_scope=freeze.ranking_scope,
+                candidate_universe_sha256=freeze.candidate_universe_sha256,
+                candidate_universe_state_count=freeze.candidate_universe_state_count,
+            ),
         )
         self.store.write_reveal(report)
         return report
@@ -344,9 +359,7 @@ class ParticipantSessionService:
         if lock is None:
             raise ParticipantStateError("confirmatory lock is missing")
         records = self.store.load_evidence(session_id)
-        posthoc = tuple(
-            record for record in records if record.phase == "posthoc_exploratory"
-        )
+        posthoc = tuple(record for record in records if record.phase == "posthoc_exploratory")
         final_responses = self._apply_posthoc_overrides(
             lock.scoring_responses,
             posthoc,
@@ -377,9 +390,7 @@ class ParticipantSessionService:
             confirmatory=reveal,
             exploratory=exploratory,
             retained_secondary_evidence=tuple(
-                record
-                for record in records
-                if not record.evidence.domain.natal_ranking_eligible
+                record for record in records if not record.evidence.domain.natal_ranking_eligible
             ),
         )
         self.store.write_exploratory(exploratory)
@@ -466,9 +477,7 @@ class ParticipantSessionService:
         freeze: PredictionFreeze,
         records: Sequence[EvidenceRecord],
     ) -> tuple[PredictionComparison, ...]:
-        confirmatory = tuple(
-            record for record in records if record.phase == "confirmatory_blind"
-        )
+        confirmatory = tuple(record for record in records if record.phase == "confirmatory_blind")
         active: dict[str, tuple[BehavioralResponse, str]] = {}
         for record in confirmatory:
             evidence = record.evidence
