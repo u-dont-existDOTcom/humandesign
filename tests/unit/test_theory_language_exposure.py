@@ -60,6 +60,7 @@ def test_interviewer_first_same_phrase_is_not_spontaneous() -> None:
         assessment.occurrences[0].provenance
         is OccurrenceProvenance.PARTICIPANT_AFTER_INTERVIEWER_SAME_TERM
     )
+    assert assessment.theory_specific_exposure_evidence_present is False
 
 
 def test_ordinary_exclusion_and_context_dependent_are_not_promoted() -> None:
@@ -88,7 +89,9 @@ def test_explicit_stance_is_preserved_independently_from_occurrence() -> None:
 def test_runtime_stance_defaults_to_unknown_without_authorized_annotation() -> None:
     spontaneous = _assessment("participant_spontaneous_theoryterm")
 
+    assert spontaneous.occurrences[0].provenance is OccurrenceProvenance.PARTICIPANT_SPONTANEOUS
     assert spontaneous.occurrences[0].stance is ParticipantStance.STANCE_UNKNOWN
+    assert spontaneous.theory_specific_exposure_evidence_present is True
 
 
 def test_unsupported_and_absent_language_metadata_fail_closed() -> None:

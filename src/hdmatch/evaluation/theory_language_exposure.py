@@ -207,6 +207,8 @@ def assess_theory_language_exposure(
         occurrences=tuple(occurrences),
         theory_specific_exposure_evidence_present=any(
             occurrence.lexical_specificity is LexicalSpecificity.THEORY_SPECIFIC
+            and occurrence.provenance
+            is not OccurrenceProvenance.PARTICIPANT_AFTER_INTERVIEWER_SAME_TERM
             for occurrence in occurrences
         ),
         codebook_sha256=codebook_sha256,
