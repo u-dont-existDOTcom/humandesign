@@ -1,0 +1,2193 @@
+{
+  "dependency_cluster_groups": [
+    {
+      "cluster_id": "AUTHORITY_DECISION",
+      "observation_count": 4,
+      "observation_ids": [
+        "OBS-AUTH-EMOTIONAL-WAIT",
+        "OBS-AUTH-SACRAL-RESPONSE",
+        "OBS-AUTH-SPLENIC-IMMEDIATE",
+        "OBS-CENTER-EMOTIONAL-WAVE"
+      ],
+      "prompt_count": 4,
+      "prompt_ids": [
+        "C02",
+        "D01",
+        "D02",
+        "D03"
+      ],
+      "rule_count": 6,
+      "rule_ids": [
+        "MAP-AUTH-EMOTIONAL-D01",
+        "MAP-AUTH-EMOTIONAL-D03",
+        "MAP-AUTH-SACRAL-D01",
+        "MAP-AUTH-SPLENIC-D01",
+        "MAP-AUTH-SPLENIC-D02",
+        "MAP-CENTER-SOLARPLEXUS-DEFINED-C02"
+      ]
+    },
+    {
+      "cluster_id": "CENTER_EGO_STATE",
+      "observation_count": 1,
+      "observation_ids": [
+        "OBS-CENTER-EGO-PROVING"
+      ],
+      "prompt_count": 1,
+      "prompt_ids": [
+        "C03"
+      ],
+      "rule_count": 1,
+      "rule_ids": [
+        "MAP-CENTER-EGO-UNDEFINED-C03"
+      ]
+    },
+    {
+      "cluster_id": "CENTER_G_STATE",
+      "observation_count": 2,
+      "observation_ids": [
+        "OBS-CENTER-G-ENVIRONMENTAL-DIRECTION",
+        "OBS-CENTER-G-STABLE-DIRECTION"
+      ],
+      "prompt_count": 2,
+      "prompt_ids": [
+        "C09",
+        "D07"
+      ],
+      "rule_count": 3,
+      "rule_ids": [
+        "MAP-CENTER-G-DEFINED-D07",
+        "MAP-CENTER-G-UNDEFINED-C09",
+        "MAP-CENTER-G-UNDEFINED-D07"
+      ]
+    },
+    {
+      "cluster_id": "CENTER_ROOT_STATE",
+      "observation_count": 1,
+      "observation_ids": [
+        "OBS-CENTER-ROOT-PRESSURE-CLEARING"
+      ],
+      "prompt_count": 1,
+      "prompt_ids": [
+        "C07"
+      ],
+      "rule_count": 1,
+      "rule_ids": [
+        "MAP-CENTER-ROOT-UNDEFINED-C07"
+      ]
+    },
+    {
+      "cluster_id": "CENTER_SOLAR_PLEXUS_STATE",
+      "observation_count": 1,
+      "observation_ids": [
+        "OBS-CENTER-EMOTIONAL-AMPLIFICATION"
+      ],
+      "prompt_count": 1,
+      "prompt_ids": [
+        "C01"
+      ],
+      "rule_count": 1,
+      "rule_ids": [
+        "MAP-CENTER-SOLARPLEXUS-UNDEFINED-C01"
+      ]
+    },
+    {
+      "cluster_id": "PROFILE_ARCHITECTURE",
+      "observation_count": 6,
+      "observation_ids": [
+        "OBS-PROFILE-LINE1-FOUNDATION",
+        "OBS-PROFILE-LINE2-NATURAL",
+        "OBS-PROFILE-LINE3-TRIAL-ERROR",
+        "OBS-PROFILE-LINE4-NETWORK",
+        "OBS-PROFILE-LINE5-PROJECTION",
+        "OBS-PROFILE-LINE6-DEVELOPMENT"
+      ],
+      "prompt_count": 9,
+      "prompt_ids": [
+        "P01",
+        "P02",
+        "P03",
+        "P05",
+        "P07",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "rule_count": 9,
+      "rule_ids": [
+        "MAP-PROFILE-LINE1-P01",
+        "MAP-PROFILE-LINE2-P02",
+        "MAP-PROFILE-LINE2-P09",
+        "MAP-PROFILE-LINE3-P03",
+        "MAP-PROFILE-LINE3-P11",
+        "MAP-PROFILE-LINE4-P10",
+        "MAP-PROFILE-LINE5-P05",
+        "MAP-PROFILE-LINE6-P07",
+        "MAP-PROFILE-LINE6-P12"
+      ]
+    },
+    {
+      "cluster_id": "TYPE_STRATEGY_ARCHITECTURE",
+      "observation_count": 5,
+      "observation_ids": [
+        "OBS-CENTER-NONSACRAL-DEPLETION",
+        "OBS-CENTER-SACRAL-ENERGY",
+        "OBS-TYPE-GENERATOR-RESPONSE",
+        "OBS-TYPE-GENERATOR-SACRAL-ENERGY",
+        "OBS-TYPE-PROJECTOR-RECOGNITION"
+      ],
+      "prompt_count": 5,
+      "prompt_ids": [
+        "C08",
+        "S02",
+        "S03",
+        "S04",
+        "S05"
+      ],
+      "rule_count": 6,
+      "rule_ids": [
+        "MAP-CENTER-SACRAL-DEFINED-C08",
+        "MAP-CENTER-SACRAL-UNDEFINED-C08",
+        "MAP-TYPE-GENERATOR-S02",
+        "MAP-TYPE-GENERATOR-S05",
+        "MAP-TYPE-PROJECTOR-S03",
+        "MAP-TYPE-PROJECTOR-S04"
+      ]
+    }
+  ],
+  "frozen_rules": [
+    {
+      "chart_feature_predicate": {
+        "feature": "authority",
+        "operator": "equals_any",
+        "values": [
+          "Emotional",
+          "Emotional Solar Plexus",
+          "Solar Plexus"
+        ]
+      },
+      "contradiction_rule": {
+        "answer_tokens": [
+          "a_gut_like_yes_no_energy",
+          "an_immediate_quiet_sense"
+        ],
+        "severity": 1.0
+      },
+      "dependency_cluster": "AUTHORITY_DECISION",
+      "has_explicit_contradiction_rule": true,
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-AUTH-EMOTIONAL-D01",
+      "observation_id": "OBS-AUTH-EMOTIONAL-WAIT",
+      "predicted_response": {
+        "canonical_answer_token": "clarity_that_changes_over_hours_or_days",
+        "support_answer_tokens": [
+          "clarity_that_changes_over_hours_or_days"
+        ]
+      },
+      "question_ids": [
+        "D01"
+      ],
+      "structural_class": "authority",
+      "structural_salience": 1.0
+    },
+    {
+      "chart_feature_predicate": {
+        "feature": "authority",
+        "operator": "equals_any",
+        "values": [
+          "Emotional",
+          "Emotional Solar Plexus",
+          "Solar Plexus"
+        ]
+      },
+      "dependency_cluster": "AUTHORITY_DECISION",
+      "has_explicit_contradiction_rule": false,
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-AUTH-EMOTIONAL-D03",
+      "observation_id": "OBS-AUTH-EMOTIONAL-WAIT",
+      "predicted_response": {
+        "canonical_answer_token": "fluctuate_with_emotional_highs_and_lows",
+        "support_answer_tokens": [
+          "become_clearer_only_after_sleeping_on_it",
+          "fluctuate_with_emotional_highs_and_lows"
+        ]
+      },
+      "question_ids": [
+        "D03"
+      ],
+      "structural_class": "authority",
+      "structural_salience": 1.0
+    },
+    {
+      "chart_feature_predicate": {
+        "feature": "authority",
+        "operator": "equals_any",
+        "values": [
+          "Sacral"
+        ]
+      },
+      "contradiction_rule": {
+        "answer_tokens": [
+          "clarity_that_changes_over_hours_or_days"
+        ],
+        "severity": 1.0
+      },
+      "dependency_cluster": "AUTHORITY_DECISION",
+      "has_explicit_contradiction_rule": true,
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-AUTH-SACRAL-D01",
+      "observation_id": "OBS-AUTH-SACRAL-RESPONSE",
+      "predicted_response": {
+        "canonical_answer_token": "a_gut_like_yes_no_energy",
+        "support_answer_tokens": [
+          "a_gut_like_yes_no_energy"
+        ]
+      },
+      "question_ids": [
+        "D01"
+      ],
+      "structural_class": "authority",
+      "structural_salience": 1.0
+    },
+    {
+      "chart_feature_predicate": {
+        "feature": "authority",
+        "operator": "equals_any",
+        "values": [
+          "Splenic"
+        ]
+      },
+      "contradiction_rule": {
+        "answer_tokens": [
+          "clarity_that_changes_over_hours_or_days"
+        ],
+        "severity": 1.0
+      },
+      "dependency_cluster": "AUTHORITY_DECISION",
+      "has_explicit_contradiction_rule": true,
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-AUTH-SPLENIC-D01",
+      "observation_id": "OBS-AUTH-SPLENIC-IMMEDIATE",
+      "predicted_response": {
+        "canonical_answer_token": "an_immediate_quiet_sense",
+        "support_answer_tokens": [
+          "an_immediate_quiet_sense"
+        ]
+      },
+      "question_ids": [
+        "D01"
+      ],
+      "structural_class": "authority",
+      "structural_salience": 1.0
+    },
+    {
+      "chart_feature_predicate": {
+        "feature": "authority",
+        "operator": "equals_any",
+        "values": [
+          "Splenic"
+        ]
+      },
+      "dependency_cluster": "AUTHORITY_DECISION",
+      "has_explicit_contradiction_rule": false,
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-AUTH-SPLENIC-D02",
+      "observation_id": "OBS-AUTH-SPLENIC-IMMEDIATE",
+      "predicted_response": {
+        "canonical_answer_token": "brief_and_nonrepeating",
+        "support_answer_tokens": [
+          "brief_and_nonrepeating"
+        ]
+      },
+      "question_ids": [
+        "D02"
+      ],
+      "structural_class": "authority",
+      "structural_salience": 1.0
+    },
+    {
+      "chart_feature_predicate": {
+        "feature": "defined_centers",
+        "operator": "not_contains_any",
+        "values": [
+          "Ego",
+          "Heart",
+          "Heart Ego",
+          "Will"
+        ]
+      },
+      "dependency_cluster": "CENTER_EGO_STATE",
+      "has_explicit_contradiction_rule": false,
+      "mapping_directness": 0.75,
+      "mapping_directness_class": "strong",
+      "mapping_id": "MAP-CENTER-EGO-UNDEFINED-C03",
+      "observation_id": "OBS-CENTER-EGO-PROVING",
+      "predicted_response": {
+        "canonical_answer_token": "very_often",
+        "support_answer_tokens": [
+          "very_often"
+        ]
+      },
+      "question_ids": [
+        "C03"
+      ],
+      "structural_class": "diagnostic_center",
+      "structural_salience": 0.9
+    },
+    {
+      "chart_feature_predicate": {
+        "feature": "defined_centers",
+        "operator": "contains_any",
+        "values": [
+          "G",
+          "Identity"
+        ]
+      },
+      "dependency_cluster": "CENTER_G_STATE",
+      "has_explicit_contradiction_rule": false,
+      "mapping_directness": 0.75,
+      "mapping_directness_class": "strong",
+      "mapping_id": "MAP-CENTER-G-DEFINED-D07",
+      "observation_id": "OBS-CENTER-G-STABLE-DIRECTION",
+      "predicted_response": {
+        "canonical_answer_token": "feel_a_stable_internal_sense_of_who_you_are_and_where_you_are_going",
+        "support_answer_tokens": [
+          "feel_a_stable_internal_sense_of_who_you_are_and_where_you_are_going"
+        ]
+      },
+      "question_ids": [
+        "D07"
+      ],
+      "structural_class": "diagnostic_center",
+      "structural_salience": 0.9
+    },
+    {
+      "chart_feature_predicate": {
+        "feature": "defined_centers",
+        "operator": "not_contains_any",
+        "values": [
+          "G",
+          "Identity"
+        ]
+      },
+      "dependency_cluster": "CENTER_G_STATE",
+      "has_explicit_contradiction_rule": false,
+      "mapping_directness": 0.75,
+      "mapping_directness_class": "strong",
+      "mapping_id": "MAP-CENTER-G-UNDEFINED-C09",
+      "observation_id": "OBS-CENTER-G-ENVIRONMENTAL-DIRECTION",
+      "predicted_response": {
+        "canonical_answer_token": "extremely",
+        "support_answer_tokens": [
+          "extremely"
+        ]
+      },
+      "question_ids": [
+        "C09"
+      ],
+      "structural_class": "diagnostic_center",
+      "structural_salience": 0.9
+    },
+    {
+      "chart_feature_predicate": {
+        "feature": "defined_centers",
+        "operator": "not_contains_any",
+        "values": [
+          "G",
+          "Identity"
+        ]
+      },
+      "dependency_cluster": "CENTER_G_STATE",
+      "has_explicit_contradiction_rule": false,
+      "mapping_directness": 0.75,
+      "mapping_directness_class": "strong",
+      "mapping_id": "MAP-CENTER-G-UNDEFINED-D07",
+      "observation_id": "OBS-CENTER-G-ENVIRONMENTAL-DIRECTION",
+      "predicted_response": {
+        "canonical_answer_token": "direction_become_clearer_through_the_people_and_places_around_you",
+        "support_answer_tokens": [
+          "direction_become_clearer_through_the_people_and_places_around_you"
+        ]
+      },
+      "question_ids": [
+        "D07"
+      ],
+      "structural_class": "diagnostic_center",
+      "structural_salience": 0.9
+    },
+    {
+      "chart_feature_predicate": {
+        "feature": "defined_centers",
+        "operator": "not_contains_any",
+        "values": [
+          "Root"
+        ]
+      },
+      "dependency_cluster": "CENTER_ROOT_STATE",
+      "has_explicit_contradiction_rule": false,
+      "mapping_directness": 0.75,
+      "mapping_directness_class": "strong",
+      "mapping_id": "MAP-CENTER-ROOT-UNDEFINED-C07",
+      "observation_id": "OBS-CENTER-ROOT-PRESSURE-CLEARING",
+      "predicted_response": {
+        "canonical_answer_token": "feel_a_strong_need_to_clear_them_quickly_so_pressure_disappears",
+        "support_answer_tokens": [
+          "feel_a_strong_need_to_clear_them_quickly_so_pressure_disappears"
+        ]
+      },
+      "question_ids": [
+        "C07"
+      ],
+      "structural_class": "diagnostic_center",
+      "structural_salience": 0.9
+    },
+    {
+      "chart_feature_predicate": {
+        "feature": "defined_centers",
+        "operator": "contains_any",
+        "values": [
+          "Sacral"
+        ]
+      },
+      "contradiction_rule": {
+        "answer_tokens": [
+          "prolonged_work_deplete_you_even_when_it_is_meaningful"
+        ],
+        "severity": 0.75
+      },
+      "dependency_cluster": "TYPE_STRATEGY_ARCHITECTURE",
+      "has_explicit_contradiction_rule": true,
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-CENTER-SACRAL-DEFINED-C08",
+      "observation_id": "OBS-CENTER-SACRAL-ENERGY",
+      "predicted_response": {
+        "canonical_answer_token": "physical_energy_renew_through_doing_the_right_work",
+        "support_answer_tokens": [
+          "physical_energy_renew_through_doing_the_right_work"
+        ]
+      },
+      "question_ids": [
+        "C08"
+      ],
+      "structural_class": "diagnostic_center",
+      "structural_salience": 0.9
+    },
+    {
+      "chart_feature_predicate": {
+        "feature": "defined_centers",
+        "operator": "not_contains_any",
+        "values": [
+          "Sacral"
+        ]
+      },
+      "contradiction_rule": {
+        "answer_tokens": [
+          "physical_energy_renew_through_doing_the_right_work"
+        ],
+        "severity": 0.75
+      },
+      "dependency_cluster": "TYPE_STRATEGY_ARCHITECTURE",
+      "has_explicit_contradiction_rule": true,
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-CENTER-SACRAL-UNDEFINED-C08",
+      "observation_id": "OBS-CENTER-NONSACRAL-DEPLETION",
+      "predicted_response": {
+        "canonical_answer_token": "prolonged_work_deplete_you_even_when_it_is_meaningful",
+        "support_answer_tokens": [
+          "prolonged_work_deplete_you_even_when_it_is_meaningful"
+        ]
+      },
+      "question_ids": [
+        "C08"
+      ],
+      "structural_class": "diagnostic_center",
+      "structural_salience": 0.9
+    },
+    {
+      "chart_feature_predicate": {
+        "feature": "defined_centers",
+        "operator": "contains_any",
+        "values": [
+          "Solar Plexus"
+        ]
+      },
+      "dependency_cluster": "AUTHORITY_DECISION",
+      "has_explicit_contradiction_rule": false,
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-CENTER-SOLARPLEXUS-DEFINED-C02",
+      "observation_id": "OBS-CENTER-EMOTIONAL-WAVE",
+      "predicted_response": {
+        "canonical_answer_token": "wave_like",
+        "support_answer_tokens": [
+          "wave_like"
+        ]
+      },
+      "question_ids": [
+        "C02"
+      ],
+      "structural_class": "diagnostic_center",
+      "structural_salience": 0.9
+    },
+    {
+      "chart_feature_predicate": {
+        "feature": "defined_centers",
+        "operator": "not_contains_any",
+        "values": [
+          "Solar Plexus"
+        ]
+      },
+      "dependency_cluster": "CENTER_SOLAR_PLEXUS_STATE",
+      "has_explicit_contradiction_rule": false,
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-CENTER-SOLARPLEXUS-UNDEFINED-C01",
+      "observation_id": "OBS-CENTER-EMOTIONAL-AMPLIFICATION",
+      "predicted_response": {
+        "canonical_answer_token": "become_amplified_inside_you",
+        "support_answer_tokens": [
+          "become_amplified_inside_you"
+        ]
+      },
+      "question_ids": [
+        "C01"
+      ],
+      "structural_class": "diagnostic_center",
+      "structural_salience": 0.9
+    },
+    {
+      "chart_feature_predicate": {
+        "feature": "profile",
+        "operator": "profile_has_line",
+        "values": [
+          "1"
+        ]
+      },
+      "dependency_cluster": "PROFILE_ARCHITECTURE",
+      "has_explicit_contradiction_rule": false,
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-PROFILE-LINE1-P01",
+      "observation_id": "OBS-PROFILE-LINE1-FOUNDATION",
+      "predicted_response": {
+        "canonical_answer_token": "very_often",
+        "support_answer_tokens": [
+          "very_often"
+        ]
+      },
+      "question_ids": [
+        "P01"
+      ],
+      "structural_class": "profile",
+      "structural_salience": 0.85
+    },
+    {
+      "chart_feature_predicate": {
+        "feature": "profile",
+        "operator": "profile_has_line",
+        "values": [
+          "2"
+        ]
+      },
+      "dependency_cluster": "PROFILE_ARCHITECTURE",
+      "has_explicit_contradiction_rule": false,
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-PROFILE-LINE2-P02",
+      "observation_id": "OBS-PROFILE-LINE2-NATURAL",
+      "predicted_response": {
+        "canonical_answer_token": "very_often",
+        "support_answer_tokens": [
+          "very_often"
+        ]
+      },
+      "question_ids": [
+        "P02"
+      ],
+      "structural_class": "profile",
+      "structural_salience": 0.85
+    },
+    {
+      "chart_feature_predicate": {
+        "feature": "profile",
+        "operator": "profile_has_line",
+        "values": [
+          "2"
+        ]
+      },
+      "dependency_cluster": "PROFILE_ARCHITECTURE",
+      "has_explicit_contradiction_rule": false,
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-PROFILE-LINE2-P09",
+      "observation_id": "OBS-PROFILE-LINE2-NATURAL",
+      "predicted_response": {
+        "canonical_answer_token": "relief_and_mobilization",
+        "support_answer_tokens": [
+          "relief_and_mobilization"
+        ]
+      },
+      "question_ids": [
+        "P09"
+      ],
+      "structural_class": "profile",
+      "structural_salience": 0.85
+    },
+    {
+      "chart_feature_predicate": {
+        "feature": "profile",
+        "operator": "profile_has_line",
+        "values": [
+          "3"
+        ]
+      },
+      "dependency_cluster": "PROFILE_ARCHITECTURE",
+      "has_explicit_contradiction_rule": false,
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-PROFILE-LINE3-P03",
+      "observation_id": "OBS-PROFILE-LINE3-TRIAL-ERROR",
+      "predicted_response": {
+        "canonical_answer_token": "very_often",
+        "support_answer_tokens": [
+          "very_often"
+        ]
+      },
+      "question_ids": [
+        "P03"
+      ],
+      "structural_class": "profile",
+      "structural_salience": 0.85
+    },
+    {
+      "chart_feature_predicate": {
+        "feature": "profile",
+        "operator": "profile_has_line",
+        "values": [
+          "3"
+        ]
+      },
+      "dependency_cluster": "PROFILE_ARCHITECTURE",
+      "has_explicit_contradiction_rule": false,
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-PROFILE-LINE3-P11",
+      "observation_id": "OBS-PROFILE-LINE3-TRIAL-ERROR",
+      "predicted_response": {
+        "canonical_answer_token": "treat_it_as_data",
+        "support_answer_tokens": [
+          "treat_it_as_data"
+        ]
+      },
+      "question_ids": [
+        "P11"
+      ],
+      "structural_class": "profile",
+      "structural_salience": 0.85
+    },
+    {
+      "chart_feature_predicate": {
+        "feature": "profile",
+        "operator": "profile_has_line",
+        "values": [
+          "4"
+        ]
+      },
+      "dependency_cluster": "PROFILE_ARCHITECTURE",
+      "has_explicit_contradiction_rule": false,
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-PROFILE-LINE4-P10",
+      "observation_id": "OBS-PROFILE-LINE4-NETWORK",
+      "predicted_response": {
+        "canonical_answer_token": "extremely",
+        "support_answer_tokens": [
+          "extremely"
+        ]
+      },
+      "question_ids": [
+        "P10"
+      ],
+      "structural_class": "profile",
+      "structural_salience": 0.85
+    },
+    {
+      "chart_feature_predicate": {
+        "feature": "profile",
+        "operator": "profile_has_line",
+        "values": [
+          "5"
+        ]
+      },
+      "dependency_cluster": "PROFILE_ARCHITECTURE",
+      "has_explicit_contradiction_rule": false,
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-PROFILE-LINE5-P05",
+      "observation_id": "OBS-PROFILE-LINE5-PROJECTION",
+      "predicted_response": {
+        "canonical_answer_token": "very_often",
+        "support_answer_tokens": [
+          "very_often"
+        ]
+      },
+      "question_ids": [
+        "P05"
+      ],
+      "structural_class": "profile",
+      "structural_salience": 0.85
+    },
+    {
+      "chart_feature_predicate": {
+        "feature": "profile",
+        "operator": "profile_has_line",
+        "values": [
+          "6"
+        ]
+      },
+      "dependency_cluster": "PROFILE_ARCHITECTURE",
+      "has_explicit_contradiction_rule": false,
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-PROFILE-LINE6-P07",
+      "observation_id": "OBS-PROFILE-LINE6-DEVELOPMENT",
+      "predicted_response": {
+        "canonical_answer_token": "strongly",
+        "support_answer_tokens": [
+          "strongly"
+        ]
+      },
+      "question_ids": [
+        "P07"
+      ],
+      "structural_class": "profile",
+      "structural_salience": 0.85
+    },
+    {
+      "chart_feature_predicate": {
+        "feature": "profile",
+        "operator": "profile_has_line",
+        "values": [
+          "6"
+        ]
+      },
+      "dependency_cluster": "PROFILE_ARCHITECTURE",
+      "has_explicit_contradiction_rule": false,
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-PROFILE-LINE6-P12",
+      "observation_id": "OBS-PROFILE-LINE6-DEVELOPMENT",
+      "predicted_response": {
+        "canonical_answer_token": "because_of_what_you_have_lived_through",
+        "support_answer_tokens": [
+          "because_of_what_you_have_lived_through"
+        ]
+      },
+      "question_ids": [
+        "P12"
+      ],
+      "structural_class": "profile",
+      "structural_salience": 0.85
+    },
+    {
+      "chart_feature_predicate": {
+        "feature": "type",
+        "operator": "equals_any",
+        "values": [
+          "Generator",
+          "Manifesting Generator"
+        ]
+      },
+      "dependency_cluster": "TYPE_STRATEGY_ARCHITECTURE",
+      "has_explicit_contradiction_rule": false,
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-TYPE-GENERATOR-S02",
+      "observation_id": "OBS-TYPE-GENERATOR-RESPONSE",
+      "predicted_response": {
+        "canonical_answer_token": "very_often",
+        "support_answer_tokens": [
+          "very_often"
+        ]
+      },
+      "question_ids": [
+        "S02"
+      ],
+      "structural_class": "type_strategy",
+      "structural_salience": 1.0
+    },
+    {
+      "chart_feature_predicate": {
+        "feature": "type",
+        "operator": "equals_any",
+        "values": [
+          "Generator",
+          "Manifesting Generator"
+        ]
+      },
+      "contradiction_rule": {
+        "answer_tokens": [
+          "even_good_projects_eventually_require_disproportionate_retreat"
+        ],
+        "severity": 0.75
+      },
+      "dependency_cluster": "TYPE_STRATEGY_ARCHITECTURE",
+      "has_explicit_contradiction_rule": true,
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-TYPE-GENERATOR-S05",
+      "observation_id": "OBS-TYPE-GENERATOR-SACRAL-ENERGY",
+      "predicted_response": {
+        "canonical_answer_token": "sustain_daily_workforce_energy_indefinitely_if_sleep_and_health_are_adequate",
+        "support_answer_tokens": [
+          "sustain_daily_workforce_energy_indefinitely_if_sleep_and_health_are_adequate"
+        ]
+      },
+      "question_ids": [
+        "S05"
+      ],
+      "structural_class": "type_strategy",
+      "structural_salience": 1.0
+    },
+    {
+      "chart_feature_predicate": {
+        "feature": "type",
+        "operator": "equals_any",
+        "values": [
+          "Projector"
+        ]
+      },
+      "dependency_cluster": "TYPE_STRATEGY_ARCHITECTURE",
+      "has_explicit_contradiction_rule": false,
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-TYPE-PROJECTOR-S03",
+      "observation_id": "OBS-TYPE-PROJECTOR-RECOGNITION",
+      "predicted_response": {
+        "canonical_answer_token": "extremely",
+        "support_answer_tokens": [
+          "extremely"
+        ]
+      },
+      "question_ids": [
+        "S03"
+      ],
+      "structural_class": "type_strategy",
+      "structural_salience": 1.0
+    },
+    {
+      "chart_feature_predicate": {
+        "feature": "type",
+        "operator": "equals_any",
+        "values": [
+          "Projector"
+        ]
+      },
+      "dependency_cluster": "TYPE_STRATEGY_ARCHITECTURE",
+      "has_explicit_contradiction_rule": false,
+      "mapping_directness": 1.0,
+      "mapping_directness_class": "direct",
+      "mapping_id": "MAP-TYPE-PROJECTOR-S04",
+      "observation_id": "OBS-TYPE-PROJECTOR-RECOGNITION",
+      "predicted_response": {
+        "canonical_answer_token": "function_better_after_a_clear_mutual_opening_than_after_assigning_yourself_a_role",
+        "support_answer_tokens": [
+          "function_better_after_a_clear_mutual_opening_than_after_assigning_yourself_a_role"
+        ]
+      },
+      "question_ids": [
+        "S04"
+      ],
+      "structural_class": "type_strategy",
+      "structural_salience": 1.0
+    }
+  ],
+  "frozen_summary": {
+    "distinct_frozen_mapped_prompt_count": 23,
+    "distinct_frozen_rule_count": 27
+  },
+  "mapped_prompts": [
+    {
+      "behavioral_constructs": [
+        "emotional permeability"
+      ],
+      "declared_answer_token_count": 1,
+      "declared_answer_tokens": [
+        "become_amplified_inside_you"
+      ],
+      "dependency_cluster_count": 1,
+      "dependency_clusters": [
+        "CENTER_SOLAR_PLEXUS_STATE"
+      ],
+      "domain": "emotional_permeability",
+      "explicit_contradiction_token_count": 0,
+      "explicit_contradiction_tokens": [],
+      "frozen_support_token_count": 1,
+      "frozen_support_tokens": [
+        "become_amplified_inside_you"
+      ],
+      "minimum_evidence": "two interpersonal examples",
+      "observation_count": 1,
+      "observation_ids": [
+        "OBS-CENTER-EMOTIONAL-AMPLIFICATION"
+      ],
+      "phase": "structured",
+      "question_id": "C01",
+      "response_format": "context matrix",
+      "rule_count": 1,
+      "rule_ids": [
+        "MAP-CENTER-SOLARPLEXUS-UNDEFINED-C01"
+      ],
+      "structural_class_count": 1,
+      "structural_classes": [
+        "diagnostic_center"
+      ],
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "behavioral_constructs": [
+        "emotional baseline"
+      ],
+      "declared_answer_token_count": 1,
+      "declared_answer_tokens": [
+        "wave_like"
+      ],
+      "dependency_cluster_count": 1,
+      "dependency_clusters": [
+        "AUTHORITY_DECISION"
+      ],
+      "domain": "emotional_baseline",
+      "explicit_contradiction_token_count": 0,
+      "explicit_contradiction_tokens": [],
+      "frozen_support_token_count": 1,
+      "frozen_support_tokens": [
+        "wave_like"
+      ],
+      "minimum_evidence": "two periods",
+      "observation_count": 1,
+      "observation_ids": [
+        "OBS-CENTER-EMOTIONAL-WAVE"
+      ],
+      "phase": "structured",
+      "question_id": "C02",
+      "response_format": "ranked choice plus narrative",
+      "rule_count": 1,
+      "rule_ids": [
+        "MAP-CENTER-SOLARPLEXUS-DEFINED-C02"
+      ],
+      "structural_class_count": 1,
+      "structural_classes": [
+        "diagnostic_center"
+      ],
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "behavioral_constructs": [
+        "will conditioning"
+      ],
+      "declared_answer_token_count": 1,
+      "declared_answer_tokens": [
+        "very_often"
+      ],
+      "dependency_cluster_count": 1,
+      "dependency_clusters": [
+        "CENTER_EGO_STATE"
+      ],
+      "domain": "will_proving",
+      "explicit_contradiction_token_count": 0,
+      "explicit_contradiction_tokens": [],
+      "frozen_support_token_count": 1,
+      "frozen_support_tokens": [
+        "very_often"
+      ],
+      "minimum_evidence": "one example",
+      "observation_count": 1,
+      "observation_ids": [
+        "OBS-CENTER-EGO-PROVING"
+      ],
+      "phase": "structured",
+      "question_id": "C03",
+      "response_format": "never/rarely/sometimes/often/very often",
+      "rule_count": 1,
+      "rule_ids": [
+        "MAP-CENTER-EGO-UNDEFINED-C03"
+      ],
+      "structural_class_count": 1,
+      "structural_classes": [
+        "diagnostic_center"
+      ],
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "behavioral_constructs": [
+        "pressure response"
+      ],
+      "declared_answer_token_count": 1,
+      "declared_answer_tokens": [
+        "feel_a_strong_need_to_clear_them_quickly_so_pressure_disappears"
+      ],
+      "dependency_cluster_count": 1,
+      "dependency_clusters": [
+        "CENTER_ROOT_STATE"
+      ],
+      "domain": "root_pressure",
+      "explicit_contradiction_token_count": 0,
+      "explicit_contradiction_tokens": [],
+      "frozen_support_token_count": 1,
+      "frozen_support_tokens": [
+        "feel_a_strong_need_to_clear_them_quickly_so_pressure_disappears"
+      ],
+      "minimum_evidence": "one example",
+      "observation_count": 1,
+      "observation_ids": [
+        "OBS-CENTER-ROOT-PRESSURE-CLEARING"
+      ],
+      "phase": "structured",
+      "question_id": "C07",
+      "response_format": "ranked choice",
+      "rule_count": 1,
+      "rule_ids": [
+        "MAP-CENTER-ROOT-UNDEFINED-C07"
+      ],
+      "structural_class_count": 1,
+      "structural_classes": [
+        "diagnostic_center"
+      ],
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "behavioral_constructs": [
+        "energy renewal"
+      ],
+      "declared_answer_token_count": 2,
+      "declared_answer_tokens": [
+        "physical_energy_renew_through_doing_the_right_work",
+        "prolonged_work_deplete_you_even_when_it_is_meaningful"
+      ],
+      "dependency_cluster_count": 1,
+      "dependency_clusters": [
+        "TYPE_STRATEGY_ARCHITECTURE"
+      ],
+      "domain": "sacral_availability",
+      "explicit_contradiction_token_count": 2,
+      "explicit_contradiction_tokens": [
+        "physical_energy_renew_through_doing_the_right_work",
+        "prolonged_work_deplete_you_even_when_it_is_meaningful"
+      ],
+      "frozen_support_token_count": 2,
+      "frozen_support_tokens": [
+        "physical_energy_renew_through_doing_the_right_work",
+        "prolonged_work_deplete_you_even_when_it_is_meaningful"
+      ],
+      "minimum_evidence": "two workdays",
+      "observation_count": 2,
+      "observation_ids": [
+        "OBS-CENTER-NONSACRAL-DEPLETION",
+        "OBS-CENTER-SACRAL-ENERGY"
+      ],
+      "phase": "structured",
+      "question_id": "C08",
+      "response_format": "forced distinction plus nuance",
+      "rule_count": 2,
+      "rule_ids": [
+        "MAP-CENTER-SACRAL-DEFINED-C08",
+        "MAP-CENTER-SACRAL-UNDEFINED-C08"
+      ],
+      "structural_class_count": 1,
+      "structural_classes": [
+        "diagnostic_center"
+      ],
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "behavioral_constructs": [
+        "environmental identity"
+      ],
+      "declared_answer_token_count": 1,
+      "declared_answer_tokens": [
+        "extremely"
+      ],
+      "dependency_cluster_count": 1,
+      "dependency_clusters": [
+        "CENTER_G_STATE"
+      ],
+      "domain": "direction_in_environment",
+      "explicit_contradiction_token_count": 0,
+      "explicit_contradiction_tokens": [],
+      "frozen_support_token_count": 1,
+      "frozen_support_tokens": [
+        "extremely"
+      ],
+      "minimum_evidence": "two places",
+      "observation_count": 1,
+      "observation_ids": [
+        "OBS-CENTER-G-ENVIRONMENTAL-DIRECTION"
+      ],
+      "phase": "structured",
+      "question_id": "C09",
+      "response_format": "not at all/a little/moderately/a lot/extremely",
+      "rule_count": 1,
+      "rule_ids": [
+        "MAP-CENTER-G-UNDEFINED-C09"
+      ],
+      "structural_class_count": 1,
+      "structural_classes": [
+        "diagnostic_center"
+      ],
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "behavioral_constructs": [
+        "decision timing"
+      ],
+      "declared_answer_token_count": 6,
+      "declared_answer_tokens": [
+        "a_gut_like_yes_no_energy",
+        "an_immediate_quiet_sense",
+        "clarity_from_being_in_the_right_place_or_with_the_right_listener",
+        "clarity_that_changes_over_hours_or_days",
+        "hearing_your_own_words_reveal_the_answer",
+        "no_stable_pattern"
+      ],
+      "dependency_cluster_count": 1,
+      "dependency_clusters": [
+        "AUTHORITY_DECISION"
+      ],
+      "domain": "decision_timing",
+      "explicit_contradiction_token_count": 3,
+      "explicit_contradiction_tokens": [
+        "a_gut_like_yes_no_energy",
+        "an_immediate_quiet_sense",
+        "clarity_that_changes_over_hours_or_days"
+      ],
+      "frozen_support_token_count": 3,
+      "frozen_support_tokens": [
+        "a_gut_like_yes_no_energy",
+        "an_immediate_quiet_sense",
+        "clarity_that_changes_over_hours_or_days"
+      ],
+      "minimum_evidence": "three episodes",
+      "observation_count": 3,
+      "observation_ids": [
+        "OBS-AUTH-EMOTIONAL-WAIT",
+        "OBS-AUTH-SACRAL-RESPONSE",
+        "OBS-AUTH-SPLENIC-IMMEDIATE"
+      ],
+      "phase": "structured",
+      "question_id": "D01",
+      "response_format": "ranked choice plus examples",
+      "rule_count": 3,
+      "rule_ids": [
+        "MAP-AUTH-EMOTIONAL-D01",
+        "MAP-AUTH-SACRAL-D01",
+        "MAP-AUTH-SPLENIC-D01"
+      ],
+      "structural_class_count": 1,
+      "structural_classes": [
+        "authority"
+      ],
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "behavioral_constructs": [
+        "immediate signal quality"
+      ],
+      "declared_answer_token_count": 5,
+      "declared_answer_tokens": [
+        "brief_and_nonrepeating",
+        "emotionally_charged",
+        "loud_and_energizing",
+        "mostly_a_later_interpretation",
+        "persistent_until_acted_upon"
+      ],
+      "dependency_cluster_count": 1,
+      "dependency_clusters": [
+        "AUTHORITY_DECISION"
+      ],
+      "domain": "immediate_signal",
+      "explicit_contradiction_token_count": 0,
+      "explicit_contradiction_tokens": [],
+      "frozen_support_token_count": 1,
+      "frozen_support_tokens": [
+        "brief_and_nonrepeating"
+      ],
+      "minimum_evidence": "two examples",
+      "observation_count": 1,
+      "observation_ids": [
+        "OBS-AUTH-SPLENIC-IMMEDIATE"
+      ],
+      "phase": "structured",
+      "question_id": "D02",
+      "response_format": "multiple choice plus narrative",
+      "rule_count": 1,
+      "rule_ids": [
+        "MAP-AUTH-SPLENIC-D02"
+      ],
+      "structural_class_count": 1,
+      "structural_classes": [
+        "authority"
+      ],
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "behavioral_constructs": [
+        "time-dependent clarity"
+      ],
+      "declared_answer_token_count": 3,
+      "declared_answer_tokens": [
+        "become_clearer_only_after_sleeping_on_it",
+        "fluctuate_with_emotional_highs_and_lows",
+        "remain_stable"
+      ],
+      "dependency_cluster_count": 1,
+      "dependency_clusters": [
+        "AUTHORITY_DECISION"
+      ],
+      "domain": "emotional_timing",
+      "explicit_contradiction_token_count": 0,
+      "explicit_contradiction_tokens": [],
+      "frozen_support_token_count": 2,
+      "frozen_support_tokens": [
+        "become_clearer_only_after_sleeping_on_it",
+        "fluctuate_with_emotional_highs_and_lows"
+      ],
+      "minimum_evidence": "one example and baseline frequency",
+      "observation_count": 1,
+      "observation_ids": [
+        "OBS-AUTH-EMOTIONAL-WAIT"
+      ],
+      "phase": "structured",
+      "question_id": "D03",
+      "response_format": "frequency matrix",
+      "rule_count": 1,
+      "rule_ids": [
+        "MAP-AUTH-EMOTIONAL-D03"
+      ],
+      "structural_class_count": 1,
+      "structural_classes": [
+        "authority"
+      ],
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "behavioral_constructs": [
+        "identity/direction stability"
+      ],
+      "declared_answer_token_count": 2,
+      "declared_answer_tokens": [
+        "direction_become_clearer_through_the_people_and_places_around_you",
+        "feel_a_stable_internal_sense_of_who_you_are_and_where_you_are_going"
+      ],
+      "dependency_cluster_count": 1,
+      "dependency_clusters": [
+        "CENTER_G_STATE"
+      ],
+      "domain": "identity_direction",
+      "explicit_contradiction_token_count": 0,
+      "explicit_contradiction_tokens": [],
+      "frozen_support_token_count": 2,
+      "frozen_support_tokens": [
+        "direction_become_clearer_through_the_people_and_places_around_you",
+        "feel_a_stable_internal_sense_of_who_you_are_and_where_you_are_going"
+      ],
+      "minimum_evidence": "two periods",
+      "observation_count": 2,
+      "observation_ids": [
+        "OBS-CENTER-G-ENVIRONMENTAL-DIRECTION",
+        "OBS-CENTER-G-STABLE-DIRECTION"
+      ],
+      "phase": "structured",
+      "question_id": "D07",
+      "response_format": "continuum plus examples",
+      "rule_count": 2,
+      "rule_ids": [
+        "MAP-CENTER-G-DEFINED-D07",
+        "MAP-CENTER-G-UNDEFINED-D07"
+      ],
+      "structural_class_count": 1,
+      "structural_classes": [
+        "diagnostic_center"
+      ],
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "behavioral_constructs": [
+        "foundation investigation"
+      ],
+      "declared_answer_token_count": 1,
+      "declared_answer_tokens": [
+        "very_often"
+      ],
+      "dependency_cluster_count": 1,
+      "dependency_clusters": [
+        "PROFILE_ARCHITECTURE"
+      ],
+      "domain": "foundation_seeking",
+      "explicit_contradiction_token_count": 0,
+      "explicit_contradiction_tokens": [],
+      "frozen_support_token_count": 1,
+      "frozen_support_tokens": [
+        "very_often"
+      ],
+      "minimum_evidence": "one example",
+      "observation_count": 1,
+      "observation_ids": [
+        "OBS-PROFILE-LINE1-FOUNDATION"
+      ],
+      "phase": "structured",
+      "question_id": "P01",
+      "response_format": "never/rarely/sometimes/often/very often",
+      "rule_count": 1,
+      "rule_ids": [
+        "MAP-PROFILE-LINE1-P01"
+      ],
+      "structural_class_count": 1,
+      "structural_classes": [
+        "profile"
+      ],
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "behavioral_constructs": [
+        "natural talent",
+        "recognition",
+        "withdrawal"
+      ],
+      "declared_answer_token_count": 1,
+      "declared_answer_tokens": [
+        "very_often"
+      ],
+      "dependency_cluster_count": 1,
+      "dependency_clusters": [
+        "PROFILE_ARCHITECTURE"
+      ],
+      "domain": "natural_withdrawal",
+      "explicit_contradiction_token_count": 0,
+      "explicit_contradiction_tokens": [],
+      "frozen_support_token_count": 1,
+      "frozen_support_tokens": [
+        "very_often"
+      ],
+      "minimum_evidence": "two examples",
+      "observation_count": 1,
+      "observation_ids": [
+        "OBS-PROFILE-LINE2-NATURAL"
+      ],
+      "phase": "structured",
+      "question_id": "P02",
+      "response_format": "never/rarely/sometimes/often/very often",
+      "rule_count": 1,
+      "rule_ids": [
+        "MAP-PROFILE-LINE2-P02"
+      ],
+      "structural_class_count": 1,
+      "structural_classes": [
+        "profile"
+      ],
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "behavioral_constructs": [
+        "experiential learning"
+      ],
+      "declared_answer_token_count": 1,
+      "declared_answer_tokens": [
+        "very_often"
+      ],
+      "dependency_cluster_count": 1,
+      "dependency_clusters": [
+        "PROFILE_ARCHITECTURE"
+      ],
+      "domain": "trial_error",
+      "explicit_contradiction_token_count": 0,
+      "explicit_contradiction_tokens": [],
+      "frozen_support_token_count": 1,
+      "frozen_support_tokens": [
+        "very_often"
+      ],
+      "minimum_evidence": "two examples",
+      "observation_count": 1,
+      "observation_ids": [
+        "OBS-PROFILE-LINE3-TRIAL-ERROR"
+      ],
+      "phase": "structured",
+      "question_id": "P03",
+      "response_format": "never/rarely/sometimes/often/very often",
+      "rule_count": 1,
+      "rule_ids": [
+        "MAP-PROFILE-LINE3-P03"
+      ],
+      "structural_class_count": 1,
+      "structural_classes": [
+        "profile"
+      ],
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "behavioral_constructs": [
+        "projection dynamics"
+      ],
+      "declared_answer_token_count": 1,
+      "declared_answer_tokens": [
+        "very_often"
+      ],
+      "dependency_cluster_count": 1,
+      "dependency_clusters": [
+        "PROFILE_ARCHITECTURE"
+      ],
+      "domain": "projection_field",
+      "explicit_contradiction_token_count": 0,
+      "explicit_contradiction_tokens": [],
+      "frozen_support_token_count": 1,
+      "frozen_support_tokens": [
+        "very_often"
+      ],
+      "minimum_evidence": "two examples",
+      "observation_count": 1,
+      "observation_ids": [
+        "OBS-PROFILE-LINE5-PROJECTION"
+      ],
+      "phase": "structured",
+      "question_id": "P05",
+      "response_format": "never/rarely/sometimes/often/very often",
+      "rule_count": 1,
+      "rule_ids": [
+        "MAP-PROFILE-LINE5-P05"
+      ],
+      "structural_class_count": 1,
+      "structural_classes": [
+        "profile"
+      ],
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "behavioral_constructs": [
+        "three-phase development"
+      ],
+      "declared_answer_token_count": 1,
+      "declared_answer_tokens": [
+        "strongly"
+      ],
+      "dependency_cluster_count": 1,
+      "dependency_clusters": [
+        "PROFILE_ARCHITECTURE"
+      ],
+      "domain": "developmental_phases",
+      "explicit_contradiction_token_count": 0,
+      "explicit_contradiction_tokens": [],
+      "frozen_support_token_count": 1,
+      "frozen_support_tokens": [
+        "strongly"
+      ],
+      "minimum_evidence": "timeline evidence",
+      "observation_count": 1,
+      "observation_ids": [
+        "OBS-PROFILE-LINE6-DEVELOPMENT"
+      ],
+      "phase": "structured",
+      "question_id": "P07",
+      "response_format": "not at all/partly/strongly/uncertain",
+      "rule_count": 1,
+      "rule_ids": [
+        "MAP-PROFILE-LINE6-P07"
+      ],
+      "structural_class_count": 1,
+      "structural_classes": [
+        "profile"
+      ],
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "behavioral_constructs": [
+        "recognition response"
+      ],
+      "declared_answer_token_count": 1,
+      "declared_answer_tokens": [
+        "relief_and_mobilization"
+      ],
+      "dependency_cluster_count": 1,
+      "dependency_clusters": [
+        "PROFILE_ARCHITECTURE"
+      ],
+      "domain": "calling_out",
+      "explicit_contradiction_token_count": 0,
+      "explicit_contradiction_tokens": [],
+      "frozen_support_token_count": 1,
+      "frozen_support_tokens": [
+        "relief_and_mobilization"
+      ],
+      "minimum_evidence": "one example",
+      "observation_count": 1,
+      "observation_ids": [
+        "OBS-PROFILE-LINE2-NATURAL"
+      ],
+      "phase": "structured",
+      "question_id": "P09",
+      "response_format": "ranked choice",
+      "rule_count": 1,
+      "rule_ids": [
+        "MAP-PROFILE-LINE2-P09"
+      ],
+      "structural_class_count": 1,
+      "structural_classes": [
+        "profile"
+      ],
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "behavioral_constructs": [
+        "network reputation"
+      ],
+      "declared_answer_token_count": 1,
+      "declared_answer_tokens": [
+        "extremely"
+      ],
+      "dependency_cluster_count": 1,
+      "dependency_clusters": [
+        "PROFILE_ARCHITECTURE"
+      ],
+      "domain": "role_reputation",
+      "explicit_contradiction_token_count": 0,
+      "explicit_contradiction_tokens": [],
+      "frozen_support_token_count": 1,
+      "frozen_support_tokens": [
+        "extremely"
+      ],
+      "minimum_evidence": "two examples",
+      "observation_count": 1,
+      "observation_ids": [
+        "OBS-PROFILE-LINE4-NETWORK"
+      ],
+      "phase": "structured",
+      "question_id": "P10",
+      "response_format": "not at all/a little/moderately/a lot/extremely",
+      "rule_count": 1,
+      "rule_ids": [
+        "MAP-PROFILE-LINE4-P10"
+      ],
+      "structural_class_count": 1,
+      "structural_classes": [
+        "profile"
+      ],
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "behavioral_constructs": [
+        "failure processing"
+      ],
+      "declared_answer_token_count": 1,
+      "declared_answer_tokens": [
+        "treat_it_as_data"
+      ],
+      "dependency_cluster_count": 1,
+      "dependency_clusters": [
+        "PROFILE_ARCHITECTURE"
+      ],
+      "domain": "mistake_relationship",
+      "explicit_contradiction_token_count": 0,
+      "explicit_contradiction_tokens": [],
+      "frozen_support_token_count": 1,
+      "frozen_support_tokens": [
+        "treat_it_as_data"
+      ],
+      "minimum_evidence": "two examples",
+      "observation_count": 1,
+      "observation_ids": [
+        "OBS-PROFILE-LINE3-TRIAL-ERROR"
+      ],
+      "phase": "structured",
+      "question_id": "P11",
+      "response_format": "ranked choice",
+      "rule_count": 1,
+      "rule_ids": [
+        "MAP-PROFILE-LINE3-P11"
+      ],
+      "structural_class_count": 1,
+      "structural_classes": [
+        "profile"
+      ],
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "behavioral_constructs": [
+        "mature guidance source"
+      ],
+      "declared_answer_token_count": 1,
+      "declared_answer_tokens": [
+        "because_of_what_you_have_lived_through"
+      ],
+      "dependency_cluster_count": 1,
+      "dependency_clusters": [
+        "PROFILE_ARCHITECTURE"
+      ],
+      "domain": "maturation",
+      "explicit_contradiction_token_count": 0,
+      "explicit_contradiction_tokens": [],
+      "frozen_support_token_count": 1,
+      "frozen_support_tokens": [
+        "because_of_what_you_have_lived_through"
+      ],
+      "minimum_evidence": "three examples",
+      "observation_count": 1,
+      "observation_ids": [
+        "OBS-PROFILE-LINE6-DEVELOPMENT"
+      ],
+      "phase": "structured",
+      "question_id": "P12",
+      "response_format": "ranked choice",
+      "rule_count": 1,
+      "rule_ids": [
+        "MAP-PROFILE-LINE6-P12"
+      ],
+      "structural_class_count": 1,
+      "structural_classes": [
+        "profile"
+      ],
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "behavioral_constructs": [
+        "response mechanics"
+      ],
+      "declared_answer_token_count": 1,
+      "declared_answer_tokens": [
+        "very_often"
+      ],
+      "dependency_cluster_count": 1,
+      "dependency_clusters": [
+        "TYPE_STRATEGY_ARCHITECTURE"
+      ],
+      "domain": "response",
+      "explicit_contradiction_token_count": 0,
+      "explicit_contradiction_tokens": [],
+      "frozen_support_token_count": 1,
+      "frozen_support_tokens": [
+        "very_often"
+      ],
+      "minimum_evidence": "one example",
+      "observation_count": 1,
+      "observation_ids": [
+        "OBS-TYPE-GENERATOR-RESPONSE"
+      ],
+      "phase": "structured",
+      "question_id": "S02",
+      "response_format": "never/rarely/sometimes/often/very often",
+      "rule_count": 1,
+      "rule_ids": [
+        "MAP-TYPE-GENERATOR-S02"
+      ],
+      "structural_class_count": 1,
+      "structural_classes": [
+        "type_strategy"
+      ],
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "behavioral_constructs": [
+        "recognition sensitivity"
+      ],
+      "declared_answer_token_count": 1,
+      "declared_answer_tokens": [
+        "extremely"
+      ],
+      "dependency_cluster_count": 1,
+      "dependency_clusters": [
+        "TYPE_STRATEGY_ARCHITECTURE"
+      ],
+      "domain": "recognition",
+      "explicit_contradiction_token_count": 0,
+      "explicit_contradiction_tokens": [],
+      "frozen_support_token_count": 1,
+      "frozen_support_tokens": [
+        "extremely"
+      ],
+      "minimum_evidence": "two examples",
+      "observation_count": 1,
+      "observation_ids": [
+        "OBS-TYPE-PROJECTOR-RECOGNITION"
+      ],
+      "phase": "structured",
+      "question_id": "S03",
+      "response_format": "not at all/a little/moderately/a lot/extremely",
+      "rule_count": 1,
+      "rule_ids": [
+        "MAP-TYPE-PROJECTOR-S03"
+      ],
+      "structural_class_count": 1,
+      "structural_classes": [
+        "type_strategy"
+      ],
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "behavioral_constructs": [
+        "permission-sensitive entry"
+      ],
+      "declared_answer_token_count": 1,
+      "declared_answer_tokens": [
+        "function_better_after_a_clear_mutual_opening_than_after_assigning_yourself_a_role"
+      ],
+      "dependency_cluster_count": 1,
+      "dependency_clusters": [
+        "TYPE_STRATEGY_ARCHITECTURE"
+      ],
+      "domain": "invitation",
+      "explicit_contradiction_token_count": 0,
+      "explicit_contradiction_tokens": [],
+      "frozen_support_token_count": 1,
+      "frozen_support_tokens": [
+        "function_better_after_a_clear_mutual_opening_than_after_assigning_yourself_a_role"
+      ],
+      "minimum_evidence": "two examples",
+      "observation_count": 1,
+      "observation_ids": [
+        "OBS-TYPE-PROJECTOR-RECOGNITION"
+      ],
+      "phase": "structured",
+      "question_id": "S04",
+      "response_format": "context matrix",
+      "rule_count": 1,
+      "rule_ids": [
+        "MAP-TYPE-PROJECTOR-S04"
+      ],
+      "structural_class_count": 1,
+      "structural_classes": [
+        "type_strategy"
+      ],
+      "unmapped_answer_policy": "neutral"
+    },
+    {
+      "behavioral_constructs": [
+        "sustainable workforce energy"
+      ],
+      "declared_answer_token_count": 2,
+      "declared_answer_tokens": [
+        "even_good_projects_eventually_require_disproportionate_retreat",
+        "sustain_daily_workforce_energy_indefinitely_if_sleep_and_health_are_adequate"
+      ],
+      "dependency_cluster_count": 1,
+      "dependency_clusters": [
+        "TYPE_STRATEGY_ARCHITECTURE"
+      ],
+      "domain": "sustainable_energy",
+      "explicit_contradiction_token_count": 1,
+      "explicit_contradiction_tokens": [
+        "even_good_projects_eventually_require_disproportionate_retreat"
+      ],
+      "frozen_support_token_count": 1,
+      "frozen_support_tokens": [
+        "sustain_daily_workforce_energy_indefinitely_if_sleep_and_health_are_adequate"
+      ],
+      "minimum_evidence": "one long period",
+      "observation_count": 1,
+      "observation_ids": [
+        "OBS-TYPE-GENERATOR-SACRAL-ENERGY"
+      ],
+      "phase": "structured",
+      "question_id": "S05",
+      "response_format": "forced distinction plus narrative",
+      "rule_count": 1,
+      "rule_ids": [
+        "MAP-TYPE-GENERATOR-S05"
+      ],
+      "structural_class_count": 1,
+      "structural_classes": [
+        "type_strategy"
+      ],
+      "unmapped_answer_policy": "neutral"
+    }
+  ],
+  "observation_groups": [
+    {
+      "observation_id": "OBS-AUTH-EMOTIONAL-WAIT",
+      "prompt_count": 2,
+      "prompt_ids": [
+        "D01",
+        "D03"
+      ],
+      "rule_count": 2,
+      "rule_ids": [
+        "MAP-AUTH-EMOTIONAL-D01",
+        "MAP-AUTH-EMOTIONAL-D03"
+      ]
+    },
+    {
+      "observation_id": "OBS-AUTH-SACRAL-RESPONSE",
+      "prompt_count": 1,
+      "prompt_ids": [
+        "D01"
+      ],
+      "rule_count": 1,
+      "rule_ids": [
+        "MAP-AUTH-SACRAL-D01"
+      ]
+    },
+    {
+      "observation_id": "OBS-AUTH-SPLENIC-IMMEDIATE",
+      "prompt_count": 2,
+      "prompt_ids": [
+        "D01",
+        "D02"
+      ],
+      "rule_count": 2,
+      "rule_ids": [
+        "MAP-AUTH-SPLENIC-D01",
+        "MAP-AUTH-SPLENIC-D02"
+      ]
+    },
+    {
+      "observation_id": "OBS-CENTER-EGO-PROVING",
+      "prompt_count": 1,
+      "prompt_ids": [
+        "C03"
+      ],
+      "rule_count": 1,
+      "rule_ids": [
+        "MAP-CENTER-EGO-UNDEFINED-C03"
+      ]
+    },
+    {
+      "observation_id": "OBS-CENTER-EMOTIONAL-AMPLIFICATION",
+      "prompt_count": 1,
+      "prompt_ids": [
+        "C01"
+      ],
+      "rule_count": 1,
+      "rule_ids": [
+        "MAP-CENTER-SOLARPLEXUS-UNDEFINED-C01"
+      ]
+    },
+    {
+      "observation_id": "OBS-CENTER-EMOTIONAL-WAVE",
+      "prompt_count": 1,
+      "prompt_ids": [
+        "C02"
+      ],
+      "rule_count": 1,
+      "rule_ids": [
+        "MAP-CENTER-SOLARPLEXUS-DEFINED-C02"
+      ]
+    },
+    {
+      "observation_id": "OBS-CENTER-G-ENVIRONMENTAL-DIRECTION",
+      "prompt_count": 2,
+      "prompt_ids": [
+        "C09",
+        "D07"
+      ],
+      "rule_count": 2,
+      "rule_ids": [
+        "MAP-CENTER-G-UNDEFINED-C09",
+        "MAP-CENTER-G-UNDEFINED-D07"
+      ]
+    },
+    {
+      "observation_id": "OBS-CENTER-G-STABLE-DIRECTION",
+      "prompt_count": 1,
+      "prompt_ids": [
+        "D07"
+      ],
+      "rule_count": 1,
+      "rule_ids": [
+        "MAP-CENTER-G-DEFINED-D07"
+      ]
+    },
+    {
+      "observation_id": "OBS-CENTER-NONSACRAL-DEPLETION",
+      "prompt_count": 1,
+      "prompt_ids": [
+        "C08"
+      ],
+      "rule_count": 1,
+      "rule_ids": [
+        "MAP-CENTER-SACRAL-UNDEFINED-C08"
+      ]
+    },
+    {
+      "observation_id": "OBS-CENTER-ROOT-PRESSURE-CLEARING",
+      "prompt_count": 1,
+      "prompt_ids": [
+        "C07"
+      ],
+      "rule_count": 1,
+      "rule_ids": [
+        "MAP-CENTER-ROOT-UNDEFINED-C07"
+      ]
+    },
+    {
+      "observation_id": "OBS-CENTER-SACRAL-ENERGY",
+      "prompt_count": 1,
+      "prompt_ids": [
+        "C08"
+      ],
+      "rule_count": 1,
+      "rule_ids": [
+        "MAP-CENTER-SACRAL-DEFINED-C08"
+      ]
+    },
+    {
+      "observation_id": "OBS-PROFILE-LINE1-FOUNDATION",
+      "prompt_count": 1,
+      "prompt_ids": [
+        "P01"
+      ],
+      "rule_count": 1,
+      "rule_ids": [
+        "MAP-PROFILE-LINE1-P01"
+      ]
+    },
+    {
+      "observation_id": "OBS-PROFILE-LINE2-NATURAL",
+      "prompt_count": 2,
+      "prompt_ids": [
+        "P02",
+        "P09"
+      ],
+      "rule_count": 2,
+      "rule_ids": [
+        "MAP-PROFILE-LINE2-P02",
+        "MAP-PROFILE-LINE2-P09"
+      ]
+    },
+    {
+      "observation_id": "OBS-PROFILE-LINE3-TRIAL-ERROR",
+      "prompt_count": 2,
+      "prompt_ids": [
+        "P03",
+        "P11"
+      ],
+      "rule_count": 2,
+      "rule_ids": [
+        "MAP-PROFILE-LINE3-P03",
+        "MAP-PROFILE-LINE3-P11"
+      ]
+    },
+    {
+      "observation_id": "OBS-PROFILE-LINE4-NETWORK",
+      "prompt_count": 1,
+      "prompt_ids": [
+        "P10"
+      ],
+      "rule_count": 1,
+      "rule_ids": [
+        "MAP-PROFILE-LINE4-P10"
+      ]
+    },
+    {
+      "observation_id": "OBS-PROFILE-LINE5-PROJECTION",
+      "prompt_count": 1,
+      "prompt_ids": [
+        "P05"
+      ],
+      "rule_count": 1,
+      "rule_ids": [
+        "MAP-PROFILE-LINE5-P05"
+      ]
+    },
+    {
+      "observation_id": "OBS-PROFILE-LINE6-DEVELOPMENT",
+      "prompt_count": 2,
+      "prompt_ids": [
+        "P07",
+        "P12"
+      ],
+      "rule_count": 2,
+      "rule_ids": [
+        "MAP-PROFILE-LINE6-P07",
+        "MAP-PROFILE-LINE6-P12"
+      ]
+    },
+    {
+      "observation_id": "OBS-TYPE-GENERATOR-RESPONSE",
+      "prompt_count": 1,
+      "prompt_ids": [
+        "S02"
+      ],
+      "rule_count": 1,
+      "rule_ids": [
+        "MAP-TYPE-GENERATOR-S02"
+      ]
+    },
+    {
+      "observation_id": "OBS-TYPE-GENERATOR-SACRAL-ENERGY",
+      "prompt_count": 1,
+      "prompt_ids": [
+        "S05"
+      ],
+      "rule_count": 1,
+      "rule_ids": [
+        "MAP-TYPE-GENERATOR-S05"
+      ]
+    },
+    {
+      "observation_id": "OBS-TYPE-PROJECTOR-RECOGNITION",
+      "prompt_count": 2,
+      "prompt_ids": [
+        "S03",
+        "S04"
+      ],
+      "rule_count": 2,
+      "rule_ids": [
+        "MAP-TYPE-PROJECTOR-S03",
+        "MAP-TYPE-PROJECTOR-S04"
+      ]
+    }
+  ],
+  "schema_version": "astrohd-frozen-scoring-structure-v1",
+  "source": {
+    "mapping_library": {
+      "path": "mappings/mapping_library_v1.json",
+      "sha256": "3424672432f7f071ec90ef9ddce52a67ff6794911e92b1a1e04f079262ea6200"
+    },
+    "prior_mechanical_mapping_audit_path": "reference/audits/astrohd_frozen_rule_prompt_mapping_v1.json",
+    "question_bank": {
+      "path": "reference/core/question_bank_v1.json",
+      "sha256": "31f813efc3da7263569ef010a8336b1b1b0c44801b7aa0f91e33b3fa4587d820"
+    }
+  },
+  "status": "mechanical_audit_descriptive_only_no_runtime_effect",
+  "structural_classes": [
+    {
+      "core_weight": 30.0,
+      "dependency_clusters": [
+        "AUTHORITY_DECISION"
+      ],
+      "observation_ids": [
+        "OBS-AUTH-EMOTIONAL-WAIT",
+        "OBS-AUTH-SACRAL-RESPONSE",
+        "OBS-AUTH-SPLENIC-IMMEDIATE"
+      ],
+      "prompt_count": 3,
+      "prompt_ids": [
+        "D01",
+        "D02",
+        "D03"
+      ],
+      "rule_count": 5,
+      "rule_ids": [
+        "MAP-AUTH-EMOTIONAL-D01",
+        "MAP-AUTH-EMOTIONAL-D03",
+        "MAP-AUTH-SACRAL-D01",
+        "MAP-AUTH-SPLENIC-D01",
+        "MAP-AUTH-SPLENIC-D02"
+      ],
+      "structural_class": "authority"
+    },
+    {
+      "core_weight": 25.0,
+      "dependency_clusters": [
+        "AUTHORITY_DECISION",
+        "CENTER_EGO_STATE",
+        "CENTER_G_STATE",
+        "CENTER_ROOT_STATE",
+        "CENTER_SOLAR_PLEXUS_STATE",
+        "TYPE_STRATEGY_ARCHITECTURE"
+      ],
+      "observation_ids": [
+        "OBS-CENTER-EGO-PROVING",
+        "OBS-CENTER-EMOTIONAL-AMPLIFICATION",
+        "OBS-CENTER-EMOTIONAL-WAVE",
+        "OBS-CENTER-G-ENVIRONMENTAL-DIRECTION",
+        "OBS-CENTER-G-STABLE-DIRECTION",
+        "OBS-CENTER-NONSACRAL-DEPLETION",
+        "OBS-CENTER-ROOT-PRESSURE-CLEARING",
+        "OBS-CENTER-SACRAL-ENERGY"
+      ],
+      "prompt_count": 7,
+      "prompt_ids": [
+        "C01",
+        "C02",
+        "C03",
+        "C07",
+        "C08",
+        "C09",
+        "D07"
+      ],
+      "rule_count": 9,
+      "rule_ids": [
+        "MAP-CENTER-EGO-UNDEFINED-C03",
+        "MAP-CENTER-G-DEFINED-D07",
+        "MAP-CENTER-G-UNDEFINED-C09",
+        "MAP-CENTER-G-UNDEFINED-D07",
+        "MAP-CENTER-ROOT-UNDEFINED-C07",
+        "MAP-CENTER-SACRAL-DEFINED-C08",
+        "MAP-CENTER-SACRAL-UNDEFINED-C08",
+        "MAP-CENTER-SOLARPLEXUS-DEFINED-C02",
+        "MAP-CENTER-SOLARPLEXUS-UNDEFINED-C01"
+      ],
+      "structural_class": "diagnostic_center"
+    },
+    {
+      "core_weight": 15.0,
+      "dependency_clusters": [
+        "PROFILE_ARCHITECTURE"
+      ],
+      "observation_ids": [
+        "OBS-PROFILE-LINE1-FOUNDATION",
+        "OBS-PROFILE-LINE2-NATURAL",
+        "OBS-PROFILE-LINE3-TRIAL-ERROR",
+        "OBS-PROFILE-LINE4-NETWORK",
+        "OBS-PROFILE-LINE5-PROJECTION",
+        "OBS-PROFILE-LINE6-DEVELOPMENT"
+      ],
+      "prompt_count": 9,
+      "prompt_ids": [
+        "P01",
+        "P02",
+        "P03",
+        "P05",
+        "P07",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "rule_count": 9,
+      "rule_ids": [
+        "MAP-PROFILE-LINE1-P01",
+        "MAP-PROFILE-LINE2-P02",
+        "MAP-PROFILE-LINE2-P09",
+        "MAP-PROFILE-LINE3-P03",
+        "MAP-PROFILE-LINE3-P11",
+        "MAP-PROFILE-LINE4-P10",
+        "MAP-PROFILE-LINE5-P05",
+        "MAP-PROFILE-LINE6-P07",
+        "MAP-PROFILE-LINE6-P12"
+      ],
+      "structural_class": "profile"
+    },
+    {
+      "core_weight": 30.0,
+      "dependency_clusters": [
+        "TYPE_STRATEGY_ARCHITECTURE"
+      ],
+      "observation_ids": [
+        "OBS-TYPE-GENERATOR-RESPONSE",
+        "OBS-TYPE-GENERATOR-SACRAL-ENERGY",
+        "OBS-TYPE-PROJECTOR-RECOGNITION"
+      ],
+      "prompt_count": 4,
+      "prompt_ids": [
+        "S02",
+        "S03",
+        "S04",
+        "S05"
+      ],
+      "rule_count": 4,
+      "rule_ids": [
+        "MAP-TYPE-GENERATOR-S02",
+        "MAP-TYPE-GENERATOR-S05",
+        "MAP-TYPE-PROJECTOR-S03",
+        "MAP-TYPE-PROJECTOR-S04"
+      ],
+      "structural_class": "type_strategy"
+    }
+  ]
+}
