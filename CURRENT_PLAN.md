@@ -1,5 +1,32 @@
 # Current Research Plan
 
+## Extra High language-exposure and coverage directive — 2026-09-02
+
+A fresh signed-in ChatGPT Chat session visibly set to Extra High reviewed two owner
+proposals together. Receipt and verdict:
+`state/EXTRA-HIGH-CONTAMINATION-COVERAGE-REVIEW-2026-09-02.md`.
+
+The terminology proposal is accepted only after revision into a chart-blind,
+prediction-blind, non-blocking **theory-language exposure signal**. It describes
+observable wording consistent with prior terminology exposure; it does not label a
+participant contaminated or infer altered answers, endorsement, target knowledge, or
+causal bias. The participant continues. Eligibility, stopping, prompt flow, scoring,
+exclusion, and primary analysis remain unchanged.
+
+The questionnaire-expansion question is accepted for investigation, with no numeric
+mandate. The current audit finds 81 bank records (76 non-validation plus 5 validation),
+27 frozen mappings across 23 unique questions, 6 empirical-only questions, and 52
+unresolved questions. These are descriptive facts, not a completion policy. Audit the
+existing construct/rule coverage and non-frozen records before authoring additions;
+freeze any later candidate wording, mapping, scoring, and analysis lane prospectively.
+The endpoint is the smallest adequate questionnaire, not “70 more” or another quota.
+
+Draft specification, codebook, hostile synthetic dry run, coverage audit, future-item
+template, and analysis-lane boundary are in
+`docs/38_astrohd_theory_language_exposure_and_coverage.md`. This draft does not change
+the live questionnaire or participant runtime. A post-questionnaire exposure self-report
+and any future primary/sensitivity use remain unapproved design choices.
+
 ## Owner correction: no completion policy existed — 2026-09-02
 
 The owner corrected the governing premise exactly: **“there was never a completion

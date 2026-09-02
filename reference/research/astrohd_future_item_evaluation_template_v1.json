@@ -1,0 +1,43 @@
+{
+  "schema_version": "astrohd-future-item-evaluation-template-v1",
+  "status": "candidate_only_not_authorized",
+  "instructions": [
+    "Use one copy per candidate question only after the current coverage audit identifies a prospective construct gap.",
+    "Do not select an item because a participant answer, chart, score, hit, or miss suggests it would help.",
+    "Treat repeated probes as multiple indicators of one construct, not independent confirmations.",
+    "Freeze accepted wording, mappings, scoring rules, and analysis lane before participant answers are inspected.",
+    "Item count is an output of the adequacy review, never an input or quota."
+  ],
+  "candidate": {
+    "candidate_item_id": null,
+    "candidate_wording": null,
+    "response_format": null,
+    "target_construct": null,
+    "current_coverage_gap": null,
+    "existing_questions_reviewed": [],
+    "direct_or_indirect_evidence": null,
+    "incremental_information_rationale": null,
+    "redundancy_or_repeated_probe_role": null,
+    "discriminative_value_rationale": null,
+    "reliability_plan": null,
+    "response_process_risk": null,
+    "respondent_burden": null,
+    "theory_language_leakage_or_demand_risk": null,
+    "multilingual_and_translation_status": null,
+    "planned_missing_or_unassessable_handling": null,
+    "proposed_mapping_and_scoring_rule": null,
+    "analysis_lane": null,
+    "prospective_freeze_status": "not_frozen",
+    "authorization_status": "candidate_only_not_authorized",
+    "review_outcome": null,
+    "rejection_or_revision_reason": null
+  },
+  "allowed_analysis_lanes": [
+    "primary_confirmatory_future_version",
+    "diagnostic_only",
+    "prespecified_secondary_sensitivity",
+    "exploratory_future_version_only"
+  ],
+  "acceptance_condition": "smallest questionnaire that adequately represents the prospectively defined construct space with sufficient independent evidence and acceptable response quality",
+  "required_additional_question_count": null
+}

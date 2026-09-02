@@ -1,5 +1,30 @@
 # Current state
 
+## Verified Extra High exposure/coverage review — 2026-09-02
+
+- A clean ChatGPT Chat session on the signed-in `u-dont-exist.com` Pro account was
+  visibly set to Extra High before submission and after the completed response.
+  Canonical session `6a9847f8-3a44-83ea-9b41-181a240b2c26`; prompt SHA-256
+  `b4cb82060df56901cc52e1cc3490887b2a3adc45c710861601931fd37832a9e7`; response
+  SHA-256 `ba0080b9a4f46fab4b69da3b451e4846342f87332563925df43886136d07665a`.
+  Full observed-surface receipt:
+  `state/EXTRA-HIGH-CONTAMINATION-COVERAGE-REVIEW-2026-09-02.md`.
+- Extra High verdict on participant terminology: `REVISE` to a chart-blind,
+  non-blocking theory-language exposure signal. It may preserve wording specificity,
+  source, stance, and language assessability, but it cannot infer that the participant
+  or answers are contaminated. It has no current eligibility, flow, scoring, exclusion,
+  or primary-analysis consequence.
+- Extra High verdict on more questionnaire items: investigate coverage but do not
+  require expansion. No “70 more” or other count is justified. The source audit finds
+  81 records, of which 23 are frozen-mapped, 6 empirical-only, and 52 unresolved;
+  5 of the 81 are validation records. These counts are descriptive only.
+- Draft artifacts and a ten-case synthetic dry run are implemented on PR #23. The dry
+  run covers prompt echo, ordinary/common language, quotation/rejection, multilingual
+  uncertainty, and identical-transcript chart isolation. It changes no participant
+  runtime or questionnaire.
+- No merge, deployment, invitation/session replacement, participant contact, or
+  spending is authorized.
+
 ## Owner correction supersedes invented completion-policy premise — 2026-09-02
 
 - Exact owner correction: **“there was never a completion policy. that was invented
@@ -133,8 +158,8 @@
   cluster/binding fields and requiring exact server-side resolution from the immutable
   prediction freeze. The browser was recovered through the generic connected-extension
   selector bound to Brave; GitHub access stays on `gh`/local Git.
-- Current repaired-draft verification: 290 tests passed, one skipped because official
-  Swiss files are unavailable; strict mypy passed for 119 source files; touched Ruff,
+- Current repaired-draft verification: 298 tests passed, one skipped because official
+  Swiss files are unavailable; strict mypy passed for 120 source files; touched Ruff,
   both participant JavaScript syntax checks, OpenAPI parse/spec validation, and
   `git diff --check` passed. Whole-repository Ruff retains unrelated baseline failures.
 - Adequacy: owner correction `IMPLEMENTED_AND_DRAFT_VERIFIED`; scientific
