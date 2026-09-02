@@ -123,6 +123,63 @@ new-question classification.
   automatic language inference, translation classification, or chart-fit input exists.
 - No merge, rebase, reset, deployment, participant contact, or spending occurred.
 
+## Extra-High correction review and execution
+
+Supervising review surface evidence:
+
+- Chat URL/session: `https://chatgpt.com/c/6a9847f8-3a44-83ea-9b41-181a240b2c26`
+- Visible conversation title: `Review contamination and coverage`
+- Visible signed-in account/plan: `u-dont-exist.com` / `Pro`
+- Visible selected reasoning mode: `Extra High`
+- Review verdict at PR head `33fa6557eacbe0b92723cceb7a679323416dc010`:
+  `REVISE`
+
+The review identified one bounded mismatch: the `interviewer_first_same_term`
+fixture correctly retained provenance
+`participant_after_interviewer_same_term`, but the aggregate prior-exposure
+evidence boolean was `true`. The reasoning chat directed that an occurrence with
+that provenance must not, by itself, set the aggregate boolean.
+
+Correction starting HEAD: `33fa6557eacbe0b92723cceb7a679323416dc010`
+
+Correction implementation HEAD: `24c6f5b5a326e021f2458ff3cba2f8cfaebefdcc`
+
+Files changed by the correction:
+
+- `src/hdmatch/evaluation/theory_language_exposure.py`
+- `reference/core/astrohd_theory_language_exposure_synthetic_fixtures_v1.json`
+- `tests/unit/test_theory_language_exposure.py`
+
+The `interviewer_first_same_term` expected aggregate boolean is now `false` while
+its occurrence provenance remains `participant_after_interviewer_same_term`.
+A spontaneous theory-specific occurrence still produces aggregate evidence
+`true`.
+
+Correction verification:
+
+1. `.venv/bin/pytest -q tests/unit/test_theory_language_exposure.py`
+   — `9 passed`.
+2. `.venv/bin/python scripts/audit_astrohd_theory_language_exposure.py`
+   — `9/9 synthetic cases passed`.
+3. `.venv/bin/pytest -q tests/unit/test_theory_language_exposure.py tests/unit/test_astrohd_frozen_mapping_extract.py tests/unit/test_model_mapping_library.py tests/unit/test_questionnaire_bank.py`
+   — `22 passed`.
+4. `.venv/bin/pytest -q`
+   — `302 passed, 1 skipped`; the existing skip is for unavailable official
+   Swiss Ephemeris files.
+5. `.venv/bin/mypy src/hdmatch`
+   — `Success: no issues found in 120 source files`.
+6. `.venv/bin/ruff check src/hdmatch/evaluation/theory_language_exposure.py tests/unit/test_theory_language_exposure.py`
+   — `PASS`.
+7. `.venv/bin/python -m json.tool reference/core/astrohd_theory_language_exposure_synthetic_fixtures_v1.json`
+   — `PASS`.
+8. `git diff --check`
+   — `PASS`.
+
+This correction changed no production questionnaire, scoring, eligibility,
+stopping, progress, lock/reveal, mapping, primary-analysis, or deployment
+behavior. It added no real theory vocabulary and no participant data. No merge,
+deployment, participant contact, or spending occurred.
+
 ## Unresolved authority boundary
 
 The three unresolved items are preserved verbatim in the draft specification and were
