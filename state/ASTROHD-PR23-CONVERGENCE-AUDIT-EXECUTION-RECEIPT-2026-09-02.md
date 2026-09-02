@@ -250,6 +250,16 @@ No judgment about the text and no document edit was made.
    - no production/source mutation during regeneration: `PASS`
    - `git diff --check`: `PASS`
 
+7. First hosted shallow-checkout diagnostic:
+
+   The first GitHub Actions run did not contain the bound base or intermediate
+   audited commit objects. Three tests that reproduce Git history therefore
+   errored before reaching their assertions; the intended runtime-symbol test
+   also failed. The Git-dependent tests now skip only when either exact bound
+   commit object is absent. In the local full-history checkout they continue to
+   run and pass. All artifact-content assertions continue to run in either
+   environment, including the intended five-versus-zero runtime-symbol failure.
+
 ## Verification-efficiency telemetry
 
 - observed elapsed task time at summary: `499.02s`

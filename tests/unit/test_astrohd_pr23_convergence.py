@@ -3,9 +3,12 @@ from __future__ import annotations
 import hashlib
 import importlib.util
 import json
+import subprocess
 from pathlib import Path
 from types import ModuleType
 from typing import Any
+
+import pytest
 
 ROOT = Path(__file__).parents[2]
 AUDIT_PATH = ROOT / "reference/audits/astrohd_pr23_convergence_v1.json"
@@ -35,6 +38,18 @@ def _source_hashes() -> dict[str, str]:
     }
 
 
+def _require_bound_git_history() -> None:
+    for ref in (BASE_COMMIT, AUDITED_HEAD):
+        available = subprocess.run(
+            ("git", "cat-file", "-e", f"{ref}^{{commit}}"),
+            cwd=ROOT,
+            capture_output=True,
+            check=False,
+        )
+        if available.returncode != 0:
+            pytest.skip(f"shallow checkout does not contain bound audit commit {ref}")
+
+
 def test_audited_git_boundary_is_exact() -> None:
     audit = _load()
 
@@ -45,12 +60,14 @@ def test_audited_git_boundary_is_exact() -> None:
 
 
 def test_changed_file_inventory_reproduces_from_git() -> None:
+    _require_bound_git_history()
     auditor = _auditor()
 
     assert _load()["pr_delta_inventory"] == auditor._pr_delta_inventory(ROOT)
 
 
 def test_owner_correction_literal_scan_reproduces() -> None:
+    _require_bound_git_history()
     auditor = _auditor()
     scan = _load()["owner_correction_remnant_scan"]
 
@@ -211,6 +228,7 @@ def test_coordination_document_headings_are_recorded_mechanically() -> None:
 
 
 def test_generated_json_regenerates_without_modifying_production_source(tmp_path: Path) -> None:
+    _require_bound_git_history()
     auditor = _auditor()
     before = _source_hashes()
     output = tmp_path / AUDIT_PATH.name
