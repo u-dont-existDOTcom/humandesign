@@ -12,7 +12,7 @@ from collections.abc import Callable
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
-from typing import Annotated, Any, Literal, TypeVar
+from typing import Annotated, Any, TypeVar
 from urllib.parse import urlsplit
 
 from fastapi import FastAPI, Header, HTTPException
@@ -70,7 +70,6 @@ class InterviewerRevealReport(ParticipantModel):
     """Chart- and birth-redacted reveal safe for the external interviewer."""
 
     schema_version: str = "participant-interviewer-reveal-v1"
-    protocol_status: Literal["policy_bound_conforming", "historical_diagnostic"]
     session_id: str
     revealed_at_utc: datetime
     confirmatory_ranking: RankingSnapshot
@@ -296,6 +295,7 @@ def create_natal_pilot_app(
         include_session_creation=False,
         include_result_routes=False,
         authorize_session=invite.authorize_session,
+        require_mapped_question_quality=True,
     )
 
     @app.get("/", response_class=HTMLResponse, include_in_schema=False)
@@ -418,7 +418,12 @@ def create_natal_pilot_app(
         request: InterviewerSessionAccess,
     ) -> PublicConfirmatoryLock:
         invite.authorize_session(request.session_id, request.session_token)
-        lock = _execute(lambda: sessions.lock_confirmatory(request.session_id))
+        lock = _execute(
+            lambda: sessions.lock_confirmatory(
+                request.session_id,
+                require_mapped_question_quality=True,
+            )
+        )
         return lock.public_view()
 
     @app.post(
@@ -432,20 +437,7 @@ def create_natal_pilot_app(
     ) -> InterviewerRevealReport:
         invite.authorize_session(request.session_id, request.session_token)
         report = _execute(lambda: sessions.reveal(request.session_id))
-        return _interviewer_reveal(report, config, protocol_status="policy_bound_conforming")
-
-    @app.post(
-        "/v1/interviewer/diagnostic-reveal",
-        response_model=InterviewerRevealReport,
-        responses=ERROR_RESPONSES,
-        operation_id="getHistoricalDiagnosticReveal",
-    )
-    async def diagnostic_reveal_for_interviewer(
-        request: InterviewerSessionAccess,
-    ) -> InterviewerRevealReport:
-        invite.authorize_session(request.session_id, request.session_token)
-        report = _execute(lambda: sessions.load_historical_diagnostic_reveal(request.session_id))
-        return _interviewer_reveal(report, config, protocol_status="historical_diagnostic")
+        return _interviewer_reveal(report, config)
 
     @app.post(
         "/v1/interviewer/finalize-exploratory",
@@ -491,22 +483,6 @@ def create_natal_pilot_app(
         invite.authorize_session(session_id, session_token)
         return _execute(lambda: sessions.reveal(session_id))
 
-    @app.post(
-        "/trusted/v1/participant-sessions/{session_id}/diagnostic-reveal",
-        response_model=RevealReport,
-        responses=ERROR_RESPONSES,
-        include_in_schema=False,
-    )
-    async def trusted_historical_diagnostic_reveal(
-        session_id: str,
-        session_token: Annotated[
-            str | None,
-            Header(alias="X-AstroHD-Session-Token"),
-        ] = None,
-    ) -> RevealReport:
-        invite.authorize_session(session_id, session_token)
-        return _execute(lambda: sessions.load_historical_diagnostic_reveal(session_id))
-
     @app.get("/healthz", include_in_schema=False)
     async def healthz() -> dict[str, Any]:
         _verify_private_storage(config.health_probe_root)
@@ -533,16 +509,11 @@ def create_natal_pilot_app(
 def _interviewer_reveal(
     report: RevealReport,
     config: NatalPilotConfig,
-    *,
-    protocol_status: Literal[
-        "policy_bound_conforming", "historical_diagnostic"
-    ] = "historical_diagnostic",
 ) -> InterviewerRevealReport:
     if report.model_receipt is None:
         raise RuntimeError("legacy reveal has no model receipt for interviewer display")
     return InterviewerRevealReport(
         session_id=report.session_id,
-        protocol_status=protocol_status,
         revealed_at_utc=report.revealed_at_utc,
         confirmatory_ranking=report.confirmatory_ranking,
         prediction_comparisons=report.prediction_comparisons,
@@ -566,11 +537,7 @@ def _interviewer_final(
     return InterviewerFinalReport(
         session_id=report.session_id,
         mode=report.mode,
-        confirmatory=_interviewer_reveal(
-            report.confirmatory,
-            config,
-            protocol_status="historical_diagnostic",
-        ),
+        confirmatory=_interviewer_reveal(report.confirmatory, config),
         exploratory=report.exploratory,
         retained_secondary_evidence=tuple(
             record.public_view() for record in report.retained_secondary_evidence

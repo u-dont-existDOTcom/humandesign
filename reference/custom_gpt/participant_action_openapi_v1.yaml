@@ -36,9 +36,8 @@ paths:
       operationId: getParticipantProgress
       summary: Get participant-safe progress
       description: >-
-        Safe before reveal. Returns descriptive mapped coverage, unresolved completion
-        policy status, and general candidate discrimination, never the true
-        birth-state/date rank. Mapped coverage is not a completion criterion.
+        Safe before reveal. Returns mapped-question evidence quality and general
+        candidate discrimination, never the true birth-state/date rank.
       parameters:
         - $ref: '#/components/parameters/SessionId'
       responses:
@@ -94,9 +93,8 @@ paths:
       operationId: lockParticipantConfirmatoryEvidence
       summary: Lock pre-reveal confirmatory evidence
       description: >-
-        Fails with SCIENTIFIC_COMPLETENESS_POLICY_UNRESOLVED until an owner-explicit,
-        server-owned completion policy is authorized. Mapped coverage cannot authorize
-        a lock.
+        A configured owner-pilot route may reject lock while a frozen mapped question
+        lacks adequate, consistency-checked evidence.
       parameters:
         - $ref: '#/components/parameters/SessionId'
       responses:
@@ -111,9 +109,7 @@ paths:
       operationId: revealParticipantResult
       summary: Reveal frozen predictions and confirmatory rank
       description: >-
-        Available only after a conforming lock bound to an authorized server-owned
-        completion policy. A new reveal is unavailable while owner authority is
-        unresolved.
+        Available only after a confirmatory lock.
       parameters:
         - $ref: '#/components/parameters/SessionId'
       responses:
@@ -333,11 +329,6 @@ components:
         evidence_quality_contract_version: {type: [string, 'null']}
         adequately_assessed_question_count: {type: [integer, 'null'], minimum: 0}
         required_question_count: {type: [integer, 'null'], minimum: 0}
-        completion_policy_id: {type: [string, 'null']}
-        completion_policy_digest:
-          type: [string, 'null']
-          pattern: '^[a-f0-9]{64}$'
-        completion_authority_source_ref: {type: [string, 'null']}
     PublicProgress:
       type: object
       additionalProperties: false
@@ -350,11 +341,8 @@ components:
         - mapped_scoreable_question_count
         - mapped_scoreable_coverage
         - adequately_assessed_mapped_question_count
-        - completion_policy_status
-        - completion_policy_id
-        - completion_required_question_count
-        - completion_coverage
-        - completion_authority_source_ref
+        - unassessed_mapped_question_count
+        - mapped_question_quality_gate_passed
         - true_birth_rank_concealed
       properties:
         session_id: {type: string}
@@ -372,20 +360,19 @@ components:
         mapped_scoreable_question_count:
           type: integer
           minimum: 0
-          description: Descriptive count from the frozen mapping artifact, not policy.
+          description: Count of frozen mapped questions in the active runtime.
         mapped_scoreable_coverage:
           type: number
           minimum: 0
           maximum: 1
-          description: Descriptive mapped-artifact coverage, not scientific completeness.
+          description: Coverage of frozen mapped questions by scoreable evidence.
         adequately_assessed_mapped_question_count: {type: integer, minimum: 0}
-        completion_policy_status:
-          type: string
-          enum: [UNRESOLVED_OWNER_AUTHORITY, AUTHORIZED, REVOKED, STALE]
-        completion_policy_id: {type: [string, 'null']}
-        completion_required_question_count: {type: [integer, 'null'], minimum: 0}
-        completion_coverage: {type: [number, 'null'], minimum: 0, maximum: 1}
-        completion_authority_source_ref: {type: [string, 'null']}
+        unassessed_mapped_question_count: {type: integer, minimum: 0}
+        mapped_question_quality_gate_passed:
+          type: boolean
+          description: >-
+            True only when each frozen mapped question has adequate,
+            consistency-checked evidence. This is not evidence of model validity.
         candidate_state_count:
           type: [integer, 'null']
         top_state_tie_count:

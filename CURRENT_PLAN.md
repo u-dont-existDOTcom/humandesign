@@ -1,24 +1,28 @@
 # Current Research Plan
 
-## Execute admitted visible-Pro REVISE directive
+## Owner correction: no completion policy existed — 2026-09-02
 
-Treat the Extra High meta-review attempt as rejected routing evidence, not Pro authority.
-The corrected visible-Pro session `6a974b8a-31dc-83ea-90b5-f653b825a631` completed and
-is admitted as `PRO_META_REVIEW_ADMITTED_REVISE`; its exact response and receipt are in
-`state/PRO-META-REVIEW-2026-09-01.md`. Execute the bounded Mission Control and Human
-Design draft-branch revisions, retain 23 versus 76 as unresolved owner authority, and
-stop before any merge, deployment, session replacement, contact, or spending.
+The owner corrected the governing premise exactly: **“there was never a completion
+policy. that was invented nonsense by codex.”** The correction and dependent impact are
+recorded in `state/OWNER-CORRECTION-2026-09-02.md`.
 
-## Draft checkpoints pushed and verified — 2026-09-02
+The `76` count remains a descriptive question-bank fact, and `23` remains a descriptive
+frozen-mapping fact. Codex first invented a 76-item acceptance rule, then converted its
+own error into a second invented 23-versus-76 owner decision. The verified Extra High
+and visible-Pro responses inherited that false premise; their exact receipts remain
+historical evidence but do not govern this corrected task.
 
-- Human Design draft PR `#23` is open, draft, and clean at
-  `bf8fa12bb133faa042e20a7408a0990aadf72eb6`; both GitHub `verify` checks passed.
-- Mission Control draft PR `#52` is open, draft, and clean at
-  `abd27cfc47a16a5e92bfed86b5ef8e16f6daaf8d`; its deterministic repository audit
-  passed. The final independent read-only review returned `BLOCKERS: NONE` after
-  340 tests and 68 executable provenance/browser scenarios passed.
-- No merge or deployment is authorized. The scientific 23-versus-76 completion policy
-  remains unresolved owner authority, so normal lock/reveal remains fail-closed.
+Draft PR `#23` must therefore remove the completion-policy snapshot, unresolved-policy
+API state, diagnostic-only reveal detour, and lock/reveal prohibition. Preserve the
+valid repairs: participant explanation, credential UX, evidence-quality receipts,
+phase separation, client-safe Action responses, and unique server-side binding of each
+eligible `question_id` to its immutable frozen dimension. The owner pilot's existing
+mechanical quality guard continues to reject lock while a frozen mapped question lacks
+adequate, consistency-checked evidence; this is implementation behavior, not a new
+owner policy choice or evidence of AstroHD validity.
+
+No merge or deployment is authorized. Do not replace the owner session, rotate an
+invitation, contact participants, or spend money.
 
 ## Browser-impact correction
 
@@ -27,19 +31,17 @@ required an independent browser-operation receipt, GitHub work through `gh`/loca
 a one-agent-tab default, and fail-closed cleanup when tab ownership is unknown. Reserve
 the connected Brave extension for signed-in ChatGPT supervision surfaces that require it.
 
-## Verified Extra High directive — superseded by admitted Pro meta-review
+## Historical Extra High/Pro routing — superseded by owner correction
 
 The browser selector defect is resolved: use the generic connected-extension selector
 to bind the active Brave Browser extension. The exact verified Extra High response and
 independently observed session/mode/submission/response receipt are preserved in
 `state/EXTRA-HIGH-DIRECTIVE-2026-09-01.md`.
 
-Directive `XH-MC-HD-AUTHORITY-PROVENANCE-20260901` v1.0.0 says: revise the Mission
-Control authority-provenance proposal; implement session-bound reasoning-surface
-receipts; remove client-authored `cluster_id` and resolve a unique frozen server-side
-binding; keep 23 versus 76 unresolved; and fail lock/reveal closed while the owner-level
-completeness policy is absent. The subsequent visible-Pro review is now admitted and is
-the governing bounded directive described above.
+Directive `XH-MC-HD-AUTHORITY-PROVENANCE-20260901` and the later visible-Pro response
+correctly required session-bound reasoning receipts and server-side frozen-dimension
+binding. They incorrectly accepted the invented completion-policy premise. The current
+owner correction supersedes that portion without rewriting the historical receipts.
 
 ## Historical Extra High routing packet — superseded 2026-09-01
 
@@ -49,19 +51,16 @@ state is superseded by the verified Extra High and admitted visible-Pro receipts
 The prohibition on merge, deployment, invitation rotation, replacement owner sessions,
 participant contact, and spending remains active.
 
-## Historical restart priority — superseded by admitted Pro directive
+## Historical restart priority — superseded by owner correction
 
-This section records the pre-routing checkpoint; the admitted Pro directive above now
+This section records the pre-routing checkpoint; the owner correction at the top now
 controls execution.
 
 1. Browser control was restored through the generic connected-extension selector bound
    to Brave. GitHub work now uses local Git/`gh`, and the separate browser-operation
    receipt governs supervision-tab ownership.
-2. Do not treat `76` as an established questionnaire requirement. The 81-item bank has
-   five validation-phase items, but the production frozen model currently has 27
-   frozen rules spanning only 23 unique question IDs; the remaining non-validation
-   items are six `empirical_only` and 47 `unresolved`. The 23-versus-76 burden/scope
-   choice remains unresolved owner authority.
+2. Do not treat `76` as an established questionnaire requirement or transform the
+   correction into a supposed 23-versus-76 choice. No such owner decision exists.
 3. Resume from draft owner-quality branch
    `codex/astrohd-owner-intake-quality-v1`. Preserve the completed UI, invitation,
    evidence-receipt, phase-separation, and Action-contract repairs. The current draft
@@ -69,12 +68,12 @@ controls execution.
 4. Treat the pre-repair owner run as diagnostic unless the owner chooses otherwise.
    Exact source-commit compatibility correctly prevents an unlocked session frozen on
    deployed `afc0bb8` from continuing under a repaired deployment commit.
-5. No merge, deployment, invitation rotation, or fresh session until the blocked
-   scientific scope and session-replacement choices are resolved. External
-   participants remain closed and incremental spending remains `$0`.
+5. No merge, deployment, invitation rotation, or fresh session is authorized in this
+   draft-repair cycle. External participants remain closed and incremental spending
+   remains `$0`.
 
-Adequacy: operational repair `IMPLEMENTED_AND_DRAFT_VERIFIED`; scientific completion
-policy `UNRESOLVED_OWNER_AUTHORITY`; release `BLOCKED_NO_MERGE_OR_DEPLOY`.
+Adequacy: owner correction `IMPLEMENTED_AND_DRAFT_VERIFIED`; human validity `NOT_ESTABLISHED`;
+release `BLOCKED_NO_MERGE_OR_DEPLOY`.
 
 ## Owner coordination directive — 2026-08-31
 

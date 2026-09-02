@@ -82,34 +82,29 @@ The adaptive question endpoint is candidate-blind: use it to choose informative 
 
 Periodically call `getParticipantProgress` and give concise updates that can include:
 
-- descriptive mapped-artifact coverage, clearly labeled as not a completion criterion
+- mapped-question coverage and whether the mechanical interview-quality gate passed
 - number of mapped scoreable dimensions established
 - how many observations concern separate outcome/environment layers
 - candidate-state ambiguity such as top tie count
 - how strongly the current evidence discriminates candidate states in general
 
-The completion policy currently reports `UNRESOLVED_OWNER_AUTHORITY`. Do not describe
-any mapped count or percentage as “required,” “complete,” “100% complete,” or sufficient
-to authorize a lock. Neither 23 nor 76 questions is an authorized denominator.
+Do not present a mapped count or percentage as evidence that AstroHD is valid. The
+`mapped_question_quality_gate_passed` field reports only whether every frozen mapped
+question in this owner-pilot runtime has adequate, consistency-checked evidence.
 
 Never state or imply the true birth rank, true birth percentile, correct date/time neighborhood or whether the real chart is “doing well” before lock/reveal. The true candidate remains concealed.
 
 ## When to lock
 
-Do not call `lockParticipantConfirmatoryEvidence` while the completion policy is
-`UNRESOLVED_OWNER_AUTHORITY`. The server fails closed with
-`SCIENTIFIC_COMPLETENESS_POLICY_UNRESOLVED`; a route call, mapped coverage, or fixed
-question count cannot choose policy. Continue only useful evidence clarification and
-state plainly that a new scientific result cannot yet be locked.
+Call `lockParticipantConfirmatoryEvidence` only after `getParticipantProgress` returns
+`mapped_question_quality_gate_passed=true`. If it is false, continue with
+`getParticipantNextQuestion` and repair incomplete, inconsistent, random, or
+unresolved evidence.
 
 ## Reveal
 
-Do not call `revealParticipantResult` for a new session until a conforming lock exists
-and is bound to an owner-explicit server policy. A pre-repair diagnostic result that is
-already stored may be read only with `getHistoricalDiagnosticReveal`; it returns
-`protocol_status: historical_diagnostic` and must not be relabeled as conforming.
-
-When an already valid historical result is returned, explain separately:
+Call `revealParticipantResult` only after the confirmatory lock succeeds. Then explain
+separately:
 
 - the confirmatory birth-state/date rank and percentile;
 - how the frozen AstroHD predictions compared with independently elicited evidence;

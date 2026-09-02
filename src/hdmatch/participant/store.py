@@ -21,7 +21,6 @@ from hdmatch.experiments.canonical import (
 )
 
 from .models import (
-    CompletionPolicySnapshot,
     ConfirmatoryLock,
     EvidenceRecord,
     ExploratoryRankingReport,
@@ -53,12 +52,7 @@ class ParticipantSessionStore:
             raise ValueError("invalid participant session ID")
         return self.root / session_id
 
-    def create(
-        self,
-        record: SessionRecord,
-        freeze: PredictionFreeze,
-        completion_policy: CompletionPolicySnapshot,
-    ) -> None:
+    def create(self, record: SessionRecord, freeze: PredictionFreeze) -> None:
         directory = self._directory(record.session_id)
         if freeze.session_id != record.session_id:
             raise ValueError("session and prediction freeze IDs differ")
@@ -69,11 +63,6 @@ class ParticipantSessionStore:
             write_new_canonical_json(freeze_path, freeze, mode=0o600)
             if sha256_file(freeze_path) != record.prediction_freeze_sha256:
                 raise SessionStorageError("prediction freeze hash does not match session record")
-            write_new_canonical_json(
-                directory / "completion.policy.json",
-                completion_policy,
-                mode=0o600,
-            )
             write_new_canonical_json(directory / "session.json", record, mode=0o600)
         except BaseException:
             if not (directory / "session.json").exists():
@@ -110,20 +99,6 @@ class ParticipantSessionStore:
         if freeze.session_id != session_id:
             raise SessionStorageError("prediction freeze belongs to a different session")
         return freeze
-
-    def load_completion_policy(self, session_id: str) -> CompletionPolicySnapshot | None:
-        """Load the immutable policy snapshot; legacy sessions legitimately have none."""
-
-        self.load_session(session_id)
-        path = self._directory(session_id) / "completion.policy.json"
-        if not path.exists():
-            return None
-        try:
-            return CompletionPolicySnapshot.model_validate(
-                load_json_bytes(path, require_canonical=True)
-            )
-        except (OSError, ValueError) as exc:
-            raise SessionStorageError("invalid completion policy snapshot") from exc
 
     def append_evidence(self, record: EvidenceRecord) -> None:
         session = self.load_session(record.session_id)

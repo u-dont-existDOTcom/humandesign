@@ -16,8 +16,6 @@ from hdmatch.participant.backend import (
 )
 from hdmatch.participant.models import (
     BirthIntake,
-    CompletionPolicySnapshot,
-    CompletionPolicyStatus,
     ConfirmatoryLock,
     EvidenceConsistency,
     EvidenceDomain,
@@ -31,11 +29,13 @@ from hdmatch.participant.models import (
     ResolvedBirth,
     RevealReport,
     SessionMode,
+    SessionPhase,
     StoredEvidenceInput,
 )
 from hdmatch.participant.service import (
     ParticipantProtocolError,
     ParticipantSessionService,
+    ParticipantStateError,
 )
 from hdmatch.participant.store import ParticipantSessionStore, SessionStorageError
 from hdmatch.questionnaire import Question
@@ -352,15 +352,12 @@ def test_prediction_is_frozen_before_answers_and_progress_conceals_true_rank(
     assert progress.mapped_scoreable_coverage == 0.5
     assert progress.mapped_scoreable_question_count == 2
     assert progress.adequately_assessed_mapped_question_count == 1
-    assert progress.completion_policy_status == "UNRESOLVED_OWNER_AUTHORITY"
-    assert progress.completion_policy_id is None
-    assert progress.completion_required_question_count is None
-    assert progress.completion_coverage is None
-    assert progress.completion_authority_source_ref is None
+    assert progress.unassessed_mapped_question_count == 1
+    assert progress.mapped_question_quality_gate_passed is False
     assert sha256_file(freeze_path) == before
 
 
-def test_mapped_counts_are_descriptive_not_required(tmp_path: Path) -> None:
+def test_mapped_counts_report_the_existing_interview_quality_gate(tmp_path: Path) -> None:
     service = _service(tmp_path)
     session_id = _new_session(service)
     service.append_evidence(session_id, _behavior("Q1", "yes", narrative="Adequate Q1."))
@@ -369,21 +366,25 @@ def test_mapped_counts_are_descriptive_not_required(tmp_path: Path) -> None:
     assert payload["mapped_scoreable_question_count"] == 2
     assert payload["adequately_assessed_mapped_question_count"] == 1
     assert payload["mapped_scoreable_coverage"] == 0.5
+    assert payload["unassessed_mapped_question_count"] == 1
+    assert payload["mapped_question_quality_gate_passed"] is False
     assert "required_confirmatory_question_count" not in payload
     assert "adequately_assessed_coverage" not in payload
     assert "unresolved_question_count" not in payload
 
 
-def test_unresolved_policy_has_null_required_count_and_coverage(tmp_path: Path) -> None:
+def test_quality_gate_passes_when_every_mapped_question_is_adequately_assessed(
+    tmp_path: Path,
+) -> None:
     service = _service(tmp_path)
     session_id = _new_session(service)
+    service.append_evidence(session_id, _behavior("Q1", "yes", narrative="Adequate Q1."))
+    service.append_evidence(session_id, _behavior("Q2", None, narrative="Adequate Q2."))
     progress = service.public_progress(session_id)
 
-    assert progress.completion_policy_status == "UNRESOLVED_OWNER_AUTHORITY"
-    assert progress.completion_policy_id is None
-    assert progress.completion_required_question_count is None
-    assert progress.completion_coverage is None
-    assert progress.completion_authority_source_ref is None
+    assert progress.unassessed_mapped_question_count == 0
+    assert progress.mapped_question_quality_gate_passed is True
+    assert progress.scoreable_observation_count == 1
 
 
 def test_client_model_rejects_cluster_id() -> None:
@@ -558,38 +559,39 @@ def test_ambiguous_frozen_question_binding_fails_closed(tmp_path: Path) -> None:
     assert service.store.load_evidence(session_id) == ()
 
 
-def test_lock_fails_when_completion_policy_is_unresolved(tmp_path: Path) -> None:
+def test_owner_quality_gate_refuses_unassessed_mapped_questions_then_locks(
+    tmp_path: Path,
+) -> None:
+    service = _service(tmp_path)
+    session_id = _new_session(service)
+    service.append_evidence(session_id, _behavior("Q1", "yes", narrative="Adequate Q1."))
+
+    with pytest.raises(ParticipantStateError, match="1 frozen mapped questions"):
+        service.lock_confirmatory(session_id, require_mapped_question_quality=True)
+
+    service.append_evidence(session_id, _behavior("Q2", None, narrative="Adequate Q2."))
+    lock = service.lock_confirmatory(session_id, require_mapped_question_quality=True)
+
+    assert [response.question_id for response in lock.scoring_responses] == ["Q1"]
+    assert lock.adequately_assessed_question_count == 2
+    assert lock.required_question_count == 2
+    assert lock.complete_profile_required is True
+
+
+def test_reveal_requires_a_lock_and_returns_the_frozen_result(tmp_path: Path) -> None:
     service = _service(tmp_path)
     session_id = _new_session(service)
     service.append_evidence(session_id, _behavior("Q1", "yes", narrative="Adequate Q1."))
     service.append_evidence(session_id, _behavior("Q2", None, narrative="Adequate Q2."))
 
-    with pytest.raises(ParticipantProtocolError) as lock_error:
-        service.lock_confirmatory(session_id)
-    assert lock_error.value.code == "SCIENTIFIC_COMPLETENESS_POLICY_UNRESOLVED"
-
-
-def test_reveal_cannot_bypass_unresolved_completion_policy(tmp_path: Path) -> None:
-    service = _service(tmp_path)
-    session_id = _new_session(service)
-    service.append_evidence(session_id, _behavior("Q1", "yes", narrative="Adequate Q1."))
-    _seed_historical_lock(service, session_id)
-    with pytest.raises(ParticipantProtocolError) as reveal_error:
+    with pytest.raises(ParticipantStateError, match="lock confirmatory evidence"):
         service.reveal(session_id)
-    assert reveal_error.value.code == "SCIENTIFIC_COMPLETENESS_POLICY_UNRESOLVED"
+    service.lock_confirmatory(session_id, require_mapped_question_quality=True)
+    reveal = service.reveal(session_id)
 
-
-def test_neither_23_nor_76_populates_completion_policy(tmp_path: Path) -> None:
-    service = _service(tmp_path)
-    session_id = _new_session(service)
-    policy = service.store.load_completion_policy(session_id)
-
-    assert policy is not None
-    assert policy.status == "UNRESOLVED_OWNER_AUTHORITY"
-    assert policy.required_question_ids is None
-    assert policy.policy_id is None
-    assert policy.authority_source_ref is None
-    assert policy.policy_digest is None
+    assert reveal.session_id == session_id
+    assert reveal.model_receipt is not None
+    assert service.phase(session_id) is SessionPhase.REVEALED
 
 
 def test_source_or_protocol_mismatch_blocks_conforming_reuse(tmp_path: Path) -> None:
@@ -606,27 +608,6 @@ def test_source_or_protocol_mismatch_blocks_conforming_reuse(tmp_path: Path) -> 
         )
 
     assert service.store.load_evidence(session_id) == ()
-
-
-def test_fabricated_authorized_policy_cannot_manufacture_completion(tmp_path: Path) -> None:
-    service = _service(tmp_path)
-    session_id = _new_session(service)
-    path = tmp_path / "sessions" / session_id / "completion.policy.json"
-    fabricated = CompletionPolicySnapshot(
-        status=CompletionPolicyStatus.AUTHORIZED,
-        policy_id="FABRICATED",
-        authority_source_ref="self-asserted-owner",
-        required_question_ids=("Q1",),
-        policy_digest="a" * 64,
-    )
-    path.write_bytes(canonical_json_bytes(fabricated))
-
-    with pytest.raises(ParticipantProtocolError, match="cannot be verified") as progress_error:
-        service.public_progress(session_id)
-    assert progress_error.value.code == "SCIENTIFIC_COMPLETENESS_POLICY_UNRESOLVED"
-    with pytest.raises(ParticipantProtocolError) as lock_error:
-        service.lock_confirmatory(session_id)
-    assert lock_error.value.code == "SCIENTIFIC_COMPLETENESS_POLICY_UNRESOLVED"
 
 
 def test_validation_phase_evidence_cannot_enter_initial_rank_or_comparison(
@@ -762,7 +743,7 @@ def test_interviewer_reveal_redacts_birth_and_raw_chart(tmp_path: Path) -> None:
     assert payload["prediction_comparisons"]
 
 
-def test_legacy_session_remains_readable_and_diagnostic(tmp_path: Path) -> None:
+def test_legacy_session_remains_readable_without_rewriting(tmp_path: Path) -> None:
     service = _service(tmp_path)
     session_id = _new_session(service)
     service.append_evidence(session_id, _behavior("Q1", "yes", narrative="Legacy."))
@@ -772,14 +753,9 @@ def test_legacy_session_remains_readable_and_diagnostic(tmp_path: Path) -> None:
     legacy["schema_version"] = "participant-reveal-v1"
     legacy.pop("model_receipt")
     path.write_bytes(canonical_json_bytes(legacy))
-    (tmp_path / "sessions" / session_id / "completion.policy.json").unlink()
     before = path.read_bytes()
 
-    with pytest.raises(ParticipantProtocolError) as ordinary_reveal:
-        service.reveal(session_id)
-    assert ordinary_reveal.value.code == "SCIENTIFIC_COMPLETENESS_POLICY_UNRESOLVED"
-
-    loaded = service.load_historical_diagnostic_reveal(session_id)
+    loaded = service.reveal(session_id)
 
     assert loaded is not None
     assert loaded.schema_version == "participant-reveal-v1"
@@ -826,11 +802,11 @@ def test_participant_store_uses_private_permissions(tmp_path: Path) -> None:
     for name in (
         "session.json",
         "prediction.freeze.json",
-        "completion.policy.json",
         "evidence.events.jsonl",
         ".evidence.lock",
     ):
         assert (directory / name).stat().st_mode & 0o777 == 0o600
+    assert not (directory / "completion.policy.json").exists()
 
 
 def test_posthoc_other_can_remove_a_confirmatory_dimension_from_final_profile(

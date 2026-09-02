@@ -70,15 +70,6 @@ class EvidenceConsistency(StrEnum):
         return self in {EvidenceConsistency.CONSISTENT, EvidenceConsistency.RECONCILED}
 
 
-class CompletionPolicyStatus(StrEnum):
-    """Authority state for the server-owned confirmatory completion policy."""
-
-    UNRESOLVED_OWNER_AUTHORITY = "UNRESOLVED_OWNER_AUTHORITY"
-    AUTHORIZED = "AUTHORIZED"
-    REVOKED = "REVOKED"
-    STALE = "STALE"
-
-
 class ResearchLayer(StrEnum):
     NATAL_BEHAVIORAL_FINGERPRINT = "natal_behavioral_fingerprint"
     BEHAVIOR_TO_OUTCOME = "behavior_plus_environment_to_outcome"
@@ -205,41 +196,6 @@ class SessionRecord(ParticipantModel):
         if value.tzinfo is None or value.utcoffset() is None:
             raise ValueError("created_at_utc must be timezone-aware")
         return value.astimezone(UTC)
-
-
-class CompletionPolicySnapshot(ParticipantModel):
-    """Server-owned policy snapshot; mapped artifacts cannot populate it implicitly."""
-
-    schema_version: Literal["participant-completion-policy-v1"] = "participant-completion-policy-v1"
-    status: CompletionPolicyStatus = CompletionPolicyStatus.UNRESOLVED_OWNER_AUTHORITY
-    policy_id: str | None = None
-    authority_source_ref: str | None = None
-    required_question_ids: tuple[str, ...] | None = None
-    policy_digest: str | None = Field(default=None, pattern=r"^[a-f0-9]{64}$")
-
-    @model_validator(mode="after")
-    def authorized_policy_is_complete(self) -> CompletionPolicySnapshot:
-        if self.status is CompletionPolicyStatus.AUTHORIZED:
-            if (
-                self.policy_id is None
-                or self.authority_source_ref is None
-                or self.required_question_ids is None
-                or self.policy_digest is None
-            ):
-                raise ValueError("authorized completion policy requires complete authority binding")
-        elif any(
-            value is not None
-            for value in (
-                self.policy_id,
-                self.authority_source_ref,
-                self.required_question_ids,
-                self.policy_digest,
-            )
-        ):
-            raise ValueError(
-                "unresolved, revoked, or stale completion policy must not set criteria"
-            )
-        return self
 
 
 class PredictionFreezeRef(ParticipantModel):
@@ -398,7 +354,6 @@ class ConfirmatoryLock(ParticipantModel):
     schema_version: Literal[
         "participant-confirmatory-lock-v1",
         "participant-confirmatory-lock-v2",
-        "participant-confirmatory-lock-v3",
     ] = "participant-confirmatory-lock-v2"
     session_id: str
     locked_at_utc: datetime
@@ -410,9 +365,6 @@ class ConfirmatoryLock(ParticipantModel):
     adequately_assessed_question_count: int | None = Field(default=None, ge=0)
     required_question_count: int | None = Field(default=None, ge=0)
     complete_profile_required: bool = False
-    completion_policy_id: str | None = None
-    completion_policy_digest: str | None = Field(default=None, pattern=r"^[a-f0-9]{64}$")
-    completion_authority_source_ref: str | None = None
 
     @field_validator("locked_at_utc")
     @classmethod
@@ -420,16 +372,6 @@ class ConfirmatoryLock(ParticipantModel):
         if value.tzinfo is None or value.utcoffset() is None:
             raise ValueError("locked_at_utc must be timezone-aware")
         return value.astimezone(UTC)
-
-    @model_validator(mode="after")
-    def conforming_lock_has_policy_binding(self) -> ConfirmatoryLock:
-        if self.schema_version == "participant-confirmatory-lock-v3" and (
-            self.completion_policy_id is None
-            or self.completion_policy_digest is None
-            or self.completion_authority_source_ref is None
-        ):
-            raise ValueError("participant-confirmatory-lock-v3 requires completion policy binding")
-        return self
 
     def public_view(self) -> PublicConfirmatoryLock:
         """Return lock metadata without evidence IDs, answers, or hidden clusters."""
@@ -444,9 +386,6 @@ class ConfirmatoryLock(ParticipantModel):
             evidence_quality_contract_version=self.evidence_quality_contract_version,
             adequately_assessed_question_count=self.adequately_assessed_question_count,
             required_question_count=self.required_question_count,
-            completion_policy_id=self.completion_policy_id,
-            completion_policy_digest=self.completion_policy_digest,
-            completion_authority_source_ref=self.completion_authority_source_ref,
         )
 
 
@@ -465,9 +404,6 @@ class PublicConfirmatoryLock(ParticipantModel):
     evidence_quality_contract_version: str | None = None
     adequately_assessed_question_count: int | None = Field(default=None, ge=0)
     required_question_count: int | None = Field(default=None, ge=0)
-    completion_policy_id: str | None = None
-    completion_policy_digest: str | None = Field(default=None, pattern=r"^[a-f0-9]{64}$")
-    completion_authority_source_ref: str | None = None
 
     @field_validator("locked_at_utc")
     @classmethod
@@ -520,11 +456,8 @@ class PublicProgress(ParticipantModel):
     mapped_scoreable_question_count: int = Field(ge=0)
     mapped_scoreable_coverage: float = Field(ge=0.0, le=1.0)
     adequately_assessed_mapped_question_count: int = Field(ge=0)
-    completion_policy_status: CompletionPolicyStatus
-    completion_policy_id: str | None = None
-    completion_required_question_count: int | None = Field(default=None, ge=0)
-    completion_coverage: float | None = Field(default=None, ge=0.0, le=1.0)
-    completion_authority_source_ref: str | None = None
+    unassessed_mapped_question_count: int = Field(ge=0)
+    mapped_question_quality_gate_passed: bool
     candidate_state_count: int | None = Field(default=None, ge=1)
     top_state_tie_count: int | None = Field(default=None, ge=1)
     top_margin_rubric_bits: float | None = None

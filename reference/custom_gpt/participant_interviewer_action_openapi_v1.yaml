@@ -14,9 +14,8 @@ paths:
       operationId: getParticipantProgress
       summary: Get participant-safe progress
       description: >-
-        Returns descriptive mapped-question coverage, unresolved completion-policy
-        status, and candidate discrimination, but never the concealed true
-        birth-state/date rank. Mapped coverage is not a completion criterion.
+        Returns mapped-question evidence quality and candidate discrimination, but
+        never the concealed true birth-state/date rank.
       requestBody:
         required: true
         content:
@@ -76,9 +75,8 @@ paths:
       operationId: lockParticipantConfirmatoryEvidence
       summary: Lock pre-reveal confirmatory evidence
       description: >-
-        Fails with SCIENTIFIC_COMPLETENESS_POLICY_UNRESOLVED until an owner-explicit,
-        server-owned completion policy is authorized. Mapped question coverage does
-        not authorize a lock.
+        The owner-pilot route rejects lock while any frozen mapped question lacks
+        adequate, consistency-checked evidence.
       requestBody:
         required: true
         content:
@@ -97,10 +95,8 @@ paths:
       operationId: revealParticipantResult
       summary: Reveal frozen predictions and confirmatory rank
       description: >-
-        Available only after a conforming lock bound to an authorized server-owned
-        completion policy. While policy authority is unresolved, a new reveal is
-        unavailable. Exact birth data and the raw chart remain on the trusted AstroHD
-        result page.
+        Available only after a confirmatory lock. Exact birth data and the raw chart
+        remain on the trusted AstroHD result page.
       requestBody:
         required: true
         content:
@@ -116,33 +112,6 @@ paths:
                 type: object
                 properties:
                   schema_version: {type: string}
-                  session_id: {type: string}
-                additionalProperties: true
-  /v1/interviewer/diagnostic-reveal:
-    post:
-      operationId: getHistoricalDiagnosticReveal
-      summary: Read an existing pre-repair diagnostic result
-      description: >-
-        Read-only compatibility path for an already-created historical result. It
-        never creates a lock or reveal and returns protocol_status=historical_diagnostic;
-        it must not be relabeled as conforming to the repaired protocol.
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/SessionAccess'
-      responses:
-        '200':
-          description: Existing historical diagnostic reveal.
-          content:
-            application/json:
-              schema:
-                type: object
-                required: [schema_version, protocol_status, session_id]
-                properties:
-                  schema_version: {type: string}
-                  protocol_status: {type: string, const: historical_diagnostic}
                   session_id: {type: string}
                 additionalProperties: true
   /v1/interviewer/finalize-exploratory:
@@ -202,11 +171,8 @@ components:
         - mapped_scoreable_question_count
         - mapped_scoreable_coverage
         - adequately_assessed_mapped_question_count
-        - completion_policy_status
-        - completion_policy_id
-        - completion_required_question_count
-        - completion_coverage
-        - completion_authority_source_ref
+        - unassessed_mapped_question_count
+        - mapped_question_quality_gate_passed
         - true_birth_rank_concealed
       properties:
         schema_version: {type: string, const: participant-progress-v3}
@@ -230,18 +196,16 @@ components:
           type: number
           minimum: 0
           maximum: 1
-          description: Descriptive artifact coverage only; never a completion criterion.
+          description: Coverage of the frozen mapped questions by scoreable evidence.
         adequately_assessed_mapped_question_count:
           type: integer
           minimum: 0
-          description: Descriptive count only; it does not imply scientific completeness.
-        completion_policy_status:
-          type: string
-          enum: [UNRESOLVED_OWNER_AUTHORITY, AUTHORIZED, REVOKED, STALE]
-        completion_policy_id: {type: [string, 'null']}
-        completion_required_question_count: {type: [integer, 'null'], minimum: 0}
-        completion_coverage: {type: [number, 'null'], minimum: 0, maximum: 1}
-        completion_authority_source_ref: {type: [string, 'null']}
+        unassessed_mapped_question_count: {type: integer, minimum: 0}
+        mapped_question_quality_gate_passed:
+          type: boolean
+          description: >-
+            True only when each frozen mapped question has adequate,
+            consistency-checked evidence. This is not evidence of model validity.
         candidate_state_count: {type: [integer, 'null'], minimum: 1}
         top_state_tie_count: {type: [integer, 'null'], minimum: 1}
         top_margin_rubric_bits: {type: [number, 'null']}
@@ -387,8 +351,3 @@ components:
         evidence_quality_contract_version: {type: [string, 'null']}
         adequately_assessed_question_count: {type: [integer, 'null'], minimum: 0}
         required_question_count: {type: [integer, 'null'], minimum: 0}
-        completion_policy_id: {type: [string, 'null']}
-        completion_policy_digest:
-          type: [string, 'null']
-          pattern: '^[a-f0-9]{64}$'
-        completion_authority_source_ref: {type: [string, 'null']}

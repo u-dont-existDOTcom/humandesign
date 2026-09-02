@@ -57,6 +57,7 @@ def register_participant_routes(
     include_session_creation: bool = True,
     include_result_routes: bool = True,
     authorize_session: Callable[[str, str | None], None] | None = None,
+    require_mapped_question_quality: bool = False,
 ) -> None:
     """Register only participant-safe orchestration routes."""
 
@@ -139,7 +140,12 @@ def register_participant_routes(
         ] = None,
     ) -> PublicConfirmatoryLock:
         require_access(session_id, session_token)
-        lock = _execute(lambda: sessions.lock_confirmatory(session_id))
+        lock = _execute(
+            lambda: sessions.lock_confirmatory(
+                session_id,
+                require_mapped_question_quality=require_mapped_question_quality,
+            )
+        )
         return lock.public_view()
 
     if include_result_routes:

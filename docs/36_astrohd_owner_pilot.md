@@ -36,10 +36,10 @@ the time/detail expectation explicit before session creation.
    session token. The token is shown once and only its SHA-256 digest is stored.
    Both values are required for every interview action; a session ID alone grants
    no access.
-5. The interviewer appends evidence. A new conforming lock and reveal require a
-   server-owned completion policy with owner-explicit authority. That policy is
-   currently unresolved, so both operations fail closed.
-6. When a policy-bound result is available, the interviewer-facing reveal returns birth-redacted prediction comparisons,
+5. The interviewer appends evidence. The owner-pilot lock rejects incomplete,
+   inconsistent, or unresolved frozen mapped questions through the existing
+   evidence-quality gate; after a successful lock, ordinary reveal is available.
+6. The interviewer-facing reveal returns birth-redacted prediction comparisons,
    the true state/date rank in the declared candidate set, and a public-safe receipt
    identifying the exact model, mapping, question bank, chart engine, candidate
    universe, code commit, prediction freeze, and configured interviewer assets.
@@ -87,19 +87,21 @@ The repaired contract now:
   the repaired scoring protocol;
 - removes client-authored cluster IDs and binds an eligible `question_id` only to its
   unique server-owned dimension in the immutable session freeze; and
-- stores a server-owned completion-policy snapshot. Its current status is
-  `UNRESOLVED_OWNER_AUTHORITY`, with no policy ID, required-question count, coverage,
-  or authority source. The 23 mapped question IDs and the 76 non-validation bank items
-  are descriptive facts, not authorized completion criteria. New lock/reveal therefore
-  fails with `SCIENTIFIC_COMPLETENESS_POLICY_UNRESOLVED` until Joel explicitly selects
-  and sources a scientific completion policy. An adequately assessed `answer: null`
-  remains unscored and never forces a token.
+- rejects owner-pilot lock while any frozen mapped question lacks an adequate,
+  consistency-checked evidence receipt. An adequately assessed `answer: null` remains
+  unscored and never forces a token.
+
+The 2026-09-02 owner correction is explicit: there was never a separate completion
+policy. Codex invented the 76-item rule and then invented a 23-versus-76 policy choice
+while trying to correct it. See `../state/OWNER-CORRECTION-2026-09-02.md`. The mapped
+question gate above is the existing mechanical response-quality safeguard for this
+owner pilot, not a newly selected scientific policy and not evidence of model validity.
 
 Joel may invite only people he reasonably expects to take a long, candid interview
 seriously. That screen should be based on willingness and data quality, not on expected
 AstroHD agreement, astrology/HD belief, or a desired result. Invitation judgment cannot
 prove truthfulness, so the in-session evidence-quality and coherence checks remain
-important even though they do not choose the unresolved completion policy.
+important even though they cannot prove participant truthfulness or model validity.
 
 The deployable Custom GPT instruction block is
 `reference/custom_gpt/participant_interviewer_instructions_under_8000_v1.md`; the
@@ -108,11 +110,11 @@ interview-only Action schema is
 
 ## What is and is not scored
 
-The natal participant runtime has an executable symbolic scoring path and a preserved
-historical diagnostic reveal format. Once a separately authorized completion policy
-exists, it can classify each frozen mapped dimension as supported, partially
-supported, contradicted, or insufficiently evidenced and rank the true birth
-state/date against the declared known-month universe.
+The natal participant runtime has an executable symbolic scoring path and read
+compatibility for historical reveal artifacts. After confirmatory evidence is locked,
+it can classify each frozen mapped dimension as supported, partially supported,
+contradicted, or insufficiently evidenced and rank the true birth state/date against
+the declared known-month universe.
 
 That does **not** mean the scientific scoring/model-development job is finished. The
 active model is the limited frozen `V4/V3.2-symbolic-v1` mapping, not the intended

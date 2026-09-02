@@ -101,7 +101,7 @@ class AstroHDParticipantBackend:
 
     @property
     def mapped_scoreable_question_ids(self) -> frozenset[str]:
-        """Descriptively mapped interview questions; this is not a completion policy."""
+        """Frozen mapped interview questions, excluding separately phased validation tasks."""
 
         return frozenset(
             question_id

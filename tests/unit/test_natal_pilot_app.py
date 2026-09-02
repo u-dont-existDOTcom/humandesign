@@ -24,7 +24,6 @@ from hdmatch.api.natal_pilot_app import NatalPilotConfig, create_natal_pilot_app
 from hdmatch.api.natal_pilot_ui import render_natal_pilot_html
 from hdmatch.participant.models import (
     BirthIntake,
-    CompletionPolicyStatus,
     ConfirmatoryLock,
     EvidenceInput,
     EvidenceRecord,
@@ -37,7 +36,7 @@ from hdmatch.participant.models import (
     SessionRecord,
     StoredEvidenceInput,
 )
-from hdmatch.participant.service import ParticipantProtocolError, ParticipantSessionService
+from hdmatch.participant.service import ParticipantSessionService
 from hdmatch.runtime.century_cache import (
     GlobalCandidateState,
     structural_features_sha256,
@@ -71,6 +70,7 @@ class FakeSessions:
         self.created: list[BirthIntake] = []
         self.appended: list[EvidenceInput] = []
         self.lock_calls: list[str] = []
+        self.lock_quality_flags: list[bool] = []
 
     def create_session(self, intake: BirthIntake) -> SessionRecord:
         self.created.append(intake)
@@ -92,7 +92,8 @@ class FakeSessions:
             mapped_scoreable_question_count=len(self.appended),
             mapped_scoreable_coverage=0.0,
             adequately_assessed_mapped_question_count=0,
-            completion_policy_status=CompletionPolicyStatus.UNRESOLVED_OWNER_AUTHORITY,
+            unassessed_mapped_question_count=len(self.appended),
+            mapped_question_quality_gate_passed=False,
         )
 
     def append_evidence(
@@ -128,8 +129,11 @@ class FakeSessions:
     def lock_confirmatory(
         self,
         session_id: str,
+        *,
+        require_mapped_question_quality: bool = False,
     ) -> ConfirmatoryLock:
         self.lock_calls.append(session_id)
+        self.lock_quality_flags.append(require_mapped_question_quality)
         return ConfirmatoryLock(
             session_id=session_id,
             locked_at_utc=datetime(2026, 8, 31, 20, 2, tzinfo=UTC),
@@ -140,16 +144,6 @@ class FakeSessions:
             adequately_assessed_question_count=0,
             required_question_count=0,
         )
-
-
-class UnresolvedPolicySessions(FakeSessions):
-    def lock_confirmatory(self, session_id: str) -> ConfirmatoryLock:
-        del session_id
-        raise ParticipantProtocolError(
-            "SCIENTIFIC_COMPLETENESS_POLICY_UNRESOLVED",
-            "scientific completeness policy is unresolved owner authority",
-        )
-
 
 def _request(
     app: FastAPI,
@@ -253,7 +247,7 @@ def test_intake_is_natal_first_explicit_time_and_truthfully_versioned(tmp_path: 
     assert response.status_code == 200
     assert "first real blinded test of astrology and Human Design" in response.text
     assert "Please do not take this interview in a rush" in response.text
-    assert "owner-controlled completion policy is unresolved" in response.text
+    assert "an incomplete interview will not produce a scientific result" in response.text
     assert 'id="effortAcknowledgment"' in response.text
     assert "One-time owner-test invitation code" in response.text
     assert "Copy both credentials" in response.text
@@ -640,7 +634,9 @@ def test_interviewer_evidence_rejects_client_binding_fields(
     assert sessions.appended == []
 
 
-def test_route_boolean_cannot_select_completion_policy(tmp_path: Path) -> None:
+def test_lock_routes_apply_the_owner_pilot_quality_gate_and_redact_receipts(
+    tmp_path: Path,
+) -> None:
     sessions = FakeSessions()
     app = _app(tmp_path, sessions)
     created = _request(
@@ -673,39 +669,11 @@ def test_route_boolean_cannot_select_completion_policy(tmp_path: Path) -> None:
     assert generic.status_code == 200
     assert interviewer.status_code == 200
     assert sessions.lock_calls == [session_id, session_id]
+    assert sessions.lock_quality_flags == [True, True]
     for response in (generic, interviewer):
         assert "scoring_responses" not in response.json
         assert "evidence_ids" not in response.json
         assert "cluster_id" not in response.text
-
-
-def test_lock_action_preserves_unresolved_completion_error_code(tmp_path: Path) -> None:
-    sessions = UnresolvedPolicySessions()
-    app = _app(tmp_path, sessions)
-    created = _request(
-        app,
-        "POST",
-        "/v1/participant-sessions",
-        body=_birth(),
-        headers={
-            "x-astrohd-pilot-token": "owner-code",
-            "x-astrohd-storage-consent": "yes",
-            "x-astrohd-openai-consent": "yes",
-        },
-    )
-    response = _request(
-        app,
-        "POST",
-        "/v1/interviewer/lock",
-        body={
-            "session_id": str(created.json["session_id"]),
-            "session_token": str(created.json["session_token"]),
-        },
-    )
-
-    assert response.status_code == 409
-    assert response.json["error"]["code"] == "SCIENTIFIC_COMPLETENESS_POLICY_UNRESOLVED"
-
 
 @pytest.mark.parametrize(
     ("field", "value", "message"),
@@ -749,8 +717,8 @@ def test_action_openapi_has_no_cluster_id() -> None:
     assert "X-AstroHD-Session-Token" not in schema
     assert "in: header" not in schema
     assert "{session_id}" not in schema
-    assert schema.count("/v1/interviewer/") == 8
-    assert schema.count("    post:") == 8
+    assert schema.count("/v1/interviewer/") == 7
+    assert schema.count("    post:") == 7
     assert "required: [session_id, session_token]" in schema
     assert "minimum_evidence_passed" in schema
     assert "consistency_status" in schema
@@ -763,14 +731,10 @@ def test_action_openapi_has_no_cluster_id() -> None:
     assert "mapped_scoreable_coverage" in progress_response["required"]
     assert progress_response["properties"]["mapped_scoreable_coverage"]["maximum"] == 1
     assert progress_response["properties"]["mapped_scoreable_coverage"]["description"] == (
-        "Descriptive artifact coverage only; never a completion criterion."
+        "Coverage of the frozen mapped questions by scoreable evidence."
     )
-    assert progress_response["properties"]["completion_policy_status"]["enum"] == [
-        "UNRESOLVED_OWNER_AUTHORITY",
-        "AUTHORIZED",
-        "REVOKED",
-        "STALE",
-    ]
+    assert "mapped_question_quality_gate_passed" in progress_response["required"]
+    assert "completion_policy_status" not in progress_response["properties"]
     assert "cluster_id" not in components["EvidenceInput"]["properties"]
     assert set(progress_response["properties"]["phase"]["enum"]) == {
         phase.value for phase in SessionPhase
@@ -784,8 +748,8 @@ def test_action_openapi_has_no_cluster_id() -> None:
     assert len(instructions.encode()) < 8000
     assert "I learned chess very quickly" in " ".join(instructions.split())
     assert "random, joke-like" in instructions
-    assert "UNRESOLVED_OWNER_AUTHORITY" in instructions
-    assert "Neither\n23 nor 76" in instructions
+    assert "mapped_question_quality_gate_passed" in instructions
+    assert "completion policy" not in instructions.lower()
     assert "Never send `cluster_id`" in instructions
     assert "writeOnly: true" in schema
     assert "#/components/parameters/" not in schema
@@ -806,7 +770,7 @@ def test_action_openapi_has_no_cluster_id() -> None:
     } <= set(generic_evidence)
 
 
-def test_pr_and_state_prose_require_owner_explicit_authority() -> None:
+def test_pr_and_state_prose_record_owner_correction_without_fake_policy() -> None:
     prose = "\n".join(
         (PROJECT_ROOT / relative).read_text(encoding="utf-8")
         for relative in (
@@ -816,10 +780,9 @@ def test_pr_and_state_prose_require_owner_explicit_authority() -> None:
         )
     )
 
-    assert "owner-explicit" in prose
-    assert "23 versus 76" in prose or "23-versus-76" in prose
-    assert "UNRESOLVED_OWNER_AUTHORITY" in prose
-    assert "Extra High can bind the completeness" not in prose
+    assert "there was never a completion policy" in prose.lower()
+    assert "OWNER-CORRECTION-2026-09-02.md" in prose
+    assert "SCIENTIFIC_COMPLETENESS_POLICY_UNRESOLVED" not in prose
 
 
 def test_launch_factory_keeps_relationship_route_and_mounts_natal_first(
