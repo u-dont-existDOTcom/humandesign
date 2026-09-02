@@ -12,6 +12,7 @@ import pytest
 
 ROOT = Path(__file__).parents[2]
 AUDIT_PATH = ROOT / "reference/audits/astrohd_cross_class_core_fit_v1.json"
+AUDIT_SHA256 = "a113fb53de13f38d5053955975912a1fb194f527c57f610c82d0efc38bc32a70"
 
 SOURCE_HASHES = {
     "mappings/mapping_library_v1.json": (
@@ -187,12 +188,12 @@ def test_ranking_case_orders_high_ahead_only_on_core_fit() -> None:
     assert ranking["scientific_rank_by_state_id"] == {"HIGH": 1.0, "LOW": 2.0}
 
 
-def test_source_files_and_recorded_hashes_remain_byte_identical() -> None:
+def test_historical_source_hashes_remain_recorded_byte_identically() -> None:
     source_rows = _load()["source"]
     recorded = {row["path"]: row["sha256"] for row in source_rows.values()}
 
     assert recorded == SOURCE_HASHES
-    assert {path: _sha256(ROOT / path) for path in SOURCE_HASHES} == SOURCE_HASHES
+    assert _sha256(AUDIT_PATH) == AUDIT_SHA256
 
 
 def test_directed_mapping_facts_and_source_behavior_are_mechanical() -> None:
@@ -246,10 +247,13 @@ def test_artifact_has_no_prohibited_interpretive_terms() -> None:
     assert prohibited.isdisjoint(_words(_load()))
 
 
-def test_generated_json_regenerates_byte_identically(tmp_path: Path) -> None:
+def test_historical_audit_refuses_regeneration_after_source_change(tmp_path: Path) -> None:
     auditor = _auditor()
     output = tmp_path / AUDIT_PATH.name
 
-    auditor.write_audit(ROOT, output=output)
-
-    assert output.read_bytes() == AUDIT_PATH.read_bytes()
+    with pytest.raises(
+        auditor.HistoricalAuditSourceMismatch,
+        match="historical audit describes pre-patch source",
+    ):
+        auditor.write_audit(ROOT, output=output)
+    assert not output.exists()

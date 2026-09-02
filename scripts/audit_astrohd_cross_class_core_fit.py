@@ -31,6 +31,13 @@ SYMBOLIC_SCORE_PATH = Path("src/hdmatch/model/symbolic_score.py")
 PARTICIPANT_BACKEND_PATH = Path("src/hdmatch/participant/backend.py")
 OUTPUT_PATH = Path("reference/audits/astrohd_cross_class_core_fit_v1.json")
 
+HISTORICAL_SOURCE_SHA256 = {
+    MAPPING_LIBRARY_PATH: "3424672432f7f071ec90ef9ddce52a67ff6794911e92b1a1e04f079262ea6200",
+    DEPENDENCIES_PATH: "a49672a0edbca3ecbd121d563f7f7758b521a3cdf317c058b42ad9f137504a7d",
+    SYMBOLIC_SCORE_PATH: "fd1f216c2579aab0ba9aef74249fa5804cb7433b7eb13f452dfe1381b09f0aaa",
+    PARTICIPANT_BACKEND_PATH: "80ad02402ec0ea3a094bcd2977e9843c68d296b198bcfc7e836ef71043313198",
+}
+
 JsonObject = dict[str, Any]
 Chart = Mapping[str, Any]
 
@@ -42,12 +49,32 @@ BLOCK_FOR_CLASS = (
 )
 
 
+class HistoricalAuditSourceMismatch(RuntimeError):
+    """Raised when regeneration is attempted outside the audited pre-patch baseline."""
+
+
 def sha256_file(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
 def render_json(payload: JsonObject) -> bytes:
     return (json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False) + "\n").encode()
+
+
+def _assert_historical_source_baseline(repository_root: Path) -> None:
+    mismatches = []
+    for relative_path, expected_sha256 in HISTORICAL_SOURCE_SHA256.items():
+        observed_sha256 = sha256_file(repository_root / relative_path)
+        if observed_sha256 != expected_sha256:
+            mismatches.append(
+                f"{relative_path.as_posix()} expected {expected_sha256} observed {observed_sha256}"
+            )
+    if mismatches:
+        details = "; ".join(mismatches)
+        raise HistoricalAuditSourceMismatch(
+            "historical audit describes pre-patch source and must not be regenerated "
+            f"against changed production semantics: {details}"
+        )
 
 
 def _source_metadata(repository_root: Path) -> JsonObject:
@@ -462,6 +489,7 @@ def write_audit(
     *,
     output: Path | None = None,
 ) -> Path:
+    _assert_historical_source_baseline(repository_root)
     output_path = output or repository_root / OUTPUT_PATH
     output_path.write_bytes(render_json(build_audit(repository_root)))
     return output_path

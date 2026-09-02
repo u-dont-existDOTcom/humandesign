@@ -72,7 +72,6 @@ def aggregate_dates(
                 item.net_rubric_bits,
                 -item.meaningful_contradictions,
                 item.detailed_support,
-                item.core_fit,
                 item.state_id,
             ),
         )

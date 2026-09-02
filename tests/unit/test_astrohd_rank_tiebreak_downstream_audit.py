@@ -7,8 +7,11 @@ from pathlib import Path
 from types import ModuleType
 from typing import Any
 
+import pytest
+
 ROOT = Path(__file__).parents[2]
 AUDIT_PATH = ROOT / "reference/audits/astrohd_rank_tiebreak_downstream_v1.json"
+AUDIT_SHA256 = "c9fb9ee6060c4bbb346c7ac6981a543d3d602a60bb1da83e245cea638a680103"
 
 
 def _auditor() -> ModuleType:
@@ -120,13 +123,11 @@ def test_ordered_sequence_consumers_match_mechanical_scan() -> None:
     ]
 
 
-def test_source_consumer_inventory_is_deterministic_and_traceable() -> None:
-    auditor = _auditor()
+def test_historical_source_consumer_inventory_is_recorded_and_traceable() -> None:
     audit = _load()
 
-    assert audit["source_locations"] == auditor._scan_locations(ROOT)
-    assert audit["ordered_sequence_consumers"] == auditor._ordered_sequence_consumers(ROOT)
-    assert audit["source_locations"]
+    assert len(audit["source_locations"]) == 33
+    assert len(audit["ordered_sequence_consumers"]) == 7
     assert all(row["traceability"] == "traceable" for row in audit["source_locations"])
     assert {row["token"] for row in audit["source_locations"]} >= {
         "_rank_states",
@@ -141,15 +142,18 @@ def test_source_consumer_inventory_is_deterministic_and_traceable() -> None:
     }
 
 
-def test_all_scanned_source_hashes_match_current_files() -> None:
+def test_historical_source_hashes_and_artifact_remain_recorded_byte_identically() -> None:
     hashes = _load()["source_file_hashes"]
-    expected_paths = sorted(
-        path.relative_to(ROOT).as_posix() for path in (ROOT / "src/hdmatch").rglob("*.py")
-    )
+    recorded = {row["path"]: row["sha256"] for row in hashes}
 
-    assert [row["path"] for row in hashes] == expected_paths
-    for row in hashes:
-        assert hashlib.sha256((ROOT / row["path"]).read_bytes()).hexdigest() == row["sha256"]
+    assert len(hashes) == 120
+    assert recorded["src/hdmatch/participant/backend.py"] == (
+        "80ad02402ec0ea3a094bcd2977e9843c68d296b198bcfc7e836ef71043313198"
+    )
+    assert recorded["src/hdmatch/search/date_aggregator.py"] == (
+        "d358c0914f84d341b69ced1771c5d26a9818837ed24ae45c9808920e08c8a3ce"
+    )
+    assert hashlib.sha256(AUDIT_PATH.read_bytes()).hexdigest() == AUDIT_SHA256
 
 
 def test_research_comparators_are_not_referenced_by_production_source() -> None:
@@ -171,10 +175,13 @@ def test_audit_uses_synthetic_inputs_only() -> None:
     assert set(fixture["scores"]) == {"LOW", "HIGH"}
 
 
-def test_generated_json_regenerates_byte_identically(tmp_path: Path) -> None:
+def test_historical_audit_refuses_regeneration_after_source_change(tmp_path: Path) -> None:
     auditor = _auditor()
     output = tmp_path / AUDIT_PATH.name
 
-    auditor.write_audit(ROOT, output=output)
-
-    assert output.read_bytes() == AUDIT_PATH.read_bytes()
+    with pytest.raises(
+        auditor.HistoricalAuditSourceMismatch,
+        match="historical audit describes pre-patch source",
+    ):
+        auditor.write_audit(ROOT, output=output)
+    assert not output.exists()

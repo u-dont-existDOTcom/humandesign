@@ -25,6 +25,7 @@ from hdmatch.schemas import (
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE_ROOT = Path("src/hdmatch")
 OUTPUT_PATH = Path("reference/audits/astrohd_rank_tiebreak_downstream_v1.json")
+HISTORICAL_ARTIFACT_SHA256 = "c9fb9ee6060c4bbb346c7ac6981a543d3d602a60bb1da83e245cea638a680103"
 
 JsonObject = dict[str, Any]
 SortKey = Callable[[CandidateState], tuple[Any, ...]]
@@ -42,6 +43,10 @@ CONNECTED_RANK_FIELDS = (
 )
 
 
+class HistoricalAuditSourceMismatch(RuntimeError):
+    """Raised when regeneration is attempted outside the audited pre-patch baseline."""
+
+
 class ResearchRankedState(NamedTuple):
     state: CandidateState
     score: ScoredState
@@ -54,6 +59,32 @@ def sha256_file(path: Path) -> str:
 
 def render_json(payload: JsonObject) -> bytes:
     return (json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False) + "\n").encode()
+
+
+def _assert_historical_source_baseline(repository_root: Path) -> None:
+    artifact_path = repository_root / OUTPUT_PATH
+    observed_artifact_sha256 = sha256_file(artifact_path)
+    if observed_artifact_sha256 != HISTORICAL_ARTIFACT_SHA256:
+        raise HistoricalAuditSourceMismatch(
+            "historical audit describes pre-patch source and must not be regenerated "
+            "against changed production semantics: historical artifact hash mismatch"
+        )
+
+    historical = json.loads(artifact_path.read_text(encoding="utf-8"))
+    mismatches = []
+    for row in historical["source_file_hashes"]:
+        relative_path = Path(row["path"])
+        observed_sha256 = sha256_file(repository_root / relative_path)
+        if observed_sha256 != row["sha256"]:
+            mismatches.append(
+                f"{relative_path.as_posix()} expected {row['sha256']} observed {observed_sha256}"
+            )
+    if mismatches:
+        details = "; ".join(mismatches)
+        raise HistoricalAuditSourceMismatch(
+            "historical audit describes pre-patch source and must not be regenerated "
+            f"against changed production semantics: {details}"
+        )
 
 
 def _source_files(repository_root: Path) -> list[Path]:
@@ -436,6 +467,7 @@ def write_audit(
     *,
     output: Path | None = None,
 ) -> Path:
+    _assert_historical_source_baseline(repository_root)
     output_path = output or repository_root / OUTPUT_PATH
     output_path.write_bytes(render_json(build_audit(repository_root)))
     return output_path

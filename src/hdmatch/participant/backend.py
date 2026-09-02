@@ -503,12 +503,13 @@ class AstroHDParticipantBackend:
         states: Sequence[CandidateState],
         scores: dict[str, ScoredState],
     ) -> tuple[_RankedState, ...]:
-        """Rank by evidence score; duration only gives deterministic display order.
+        """Rank by dependency-controlled evidence and deterministic display order.
 
-        State duration must never turn an evidence-equivalent set into distinct
-        scientific ranks.  In particular, with zero behavioral evidence every
-        candidate state receives the same midrank and the top tie count equals the
-        full universe.
+        Scientific rank uses net rubric bits, meaningful contradictions, and detailed
+        support.  Core fit remains descriptive and does not split scientific ties.
+        Duration and start time only give deterministic order inside a scientific tie.
+        In particular, with zero behavioral evidence every candidate state receives
+        the same midrank and the top tie count equals the full universe.
         """
 
         ordered = sorted(
@@ -517,7 +518,6 @@ class AstroHDParticipantBackend:
                 -scores[state.state_id].net_rubric_bits,
                 scores[state.state_id].meaningful_contradictions,
                 -scores[state.state_id].detailed_support,
-                -scores[state.state_id].core_fit,
                 -(state.end_utc - state.start_utc).total_seconds(),
                 state.start_utc,
             ),
@@ -609,7 +609,6 @@ def _evidence_tie_key(score: ScoredState) -> tuple[float | int, ...]:
         round(score.net_rubric_bits, 12),
         score.meaningful_contradictions,
         round(score.detailed_support, 12),
-        round(score.core_fit, 12),
     )
 
 
