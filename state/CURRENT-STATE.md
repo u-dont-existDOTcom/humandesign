@@ -31,6 +31,23 @@
   browser-operation receipt, local Git/`gh` as the GitHub default, a one-agent-tab
   limit absent a recorded exception, and fail-closed cleanup for unknown tab ownership.
 
+## Draft repair checkpoints verified — 2026-09-02
+
+- Human Design draft PR `#23` is open, draft, and clean at exact head
+  `bf8fa12bb133faa042e20a7408a0990aadf72eb6`. Both GitHub `verify` checks passed.
+- Mission Control draft PR `#52` is open, draft, and clean at exact head
+  `abd27cfc47a16a5e92bfed86b5ef8e16f6daaf8d`. Its deterministic repository audit
+  passed. The branch retains the exact `6ec73802cf9439be7160f9ac2eea58c7bb95e683`
+  checkpoint as its reviewed base and records incident
+  `MC-BROWSER-REPO-TAB-SPRAWL-20260901-001` plus the authority-laundering repair.
+- Final Mission Control verification: 340 tests passed; the provenance validator passed
+  20 checks and executed 68 scenarios (25 claim, 31 reasoning, 12 browser); exact
+  Human Design evidence extraction passed; the deterministic audit reported no
+  findings; and a fresh independent read-only review returned `BLOCKERS: NONE`.
+- No browser tab was opened or closed during repository work after the incident. No
+  merge, deployment, invitation/session replacement, participant contact, or spending
+  occurred. The 23-versus-76 completion policy remains unresolved owner authority.
+
 ## Verified Extra High directive / Pro queue — 2026-09-01
 
 - Browser recovery succeeded through the generic connected-extension selector, which
@@ -105,7 +122,7 @@
   Swiss files are unavailable; strict mypy passed for 119 source files; touched Ruff,
   both participant JavaScript syntax checks, OpenAPI parse/spec validation, and
   `git diff --check` passed. Whole-repository Ruff retains unrelated baseline failures.
-- Adequacy: operational `IMPLEMENTED_AND_LOCALLY_VERIFIED`; scientific
+- Adequacy: operational `IMPLEMENTED_AND_DRAFT_VERIFIED`; scientific
   `UNRESOLVED_OWNER_AUTHORITY / HUMAN_VALIDITY_NOT_ESTABLISHED`; release
   `BLOCKED_NO_MERGE_OR_DEPLOY`. Friends/public recruitment remains closed.
 

@@ -9,6 +9,17 @@ is admitted as `PRO_META_REVIEW_ADMITTED_REVISE`; its exact response and receipt
 Design draft-branch revisions, retain 23 versus 76 as unresolved owner authority, and
 stop before any merge, deployment, session replacement, contact, or spending.
 
+## Draft checkpoints pushed and verified — 2026-09-02
+
+- Human Design draft PR `#23` is open, draft, and clean at
+  `bf8fa12bb133faa042e20a7408a0990aadf72eb6`; both GitHub `verify` checks passed.
+- Mission Control draft PR `#52` is open, draft, and clean at
+  `abd27cfc47a16a5e92bfed86b5ef8e16f6daaf8d`; its deterministic repository audit
+  passed. The final independent read-only review returned `BLOCKERS: NONE` after
+  340 tests and 68 executable provenance/browser scenarios passed.
+- No merge or deployment is authorized. The scientific 23-versus-76 completion policy
+  remains unresolved owner authority, so normal lock/reveal remains fail-closed.
+
 ## Browser-impact correction
 
 The admitted Pro supervisor accepted `MC-BROWSER-REPO-TAB-SPRAWL-20260901-001` and
@@ -62,7 +73,7 @@ controls execution.
    scientific scope and session-replacement choices are resolved. External
    participants remain closed and incremental spending remains `$0`.
 
-Adequacy: operational repair `IMPLEMENTED_AND_LOCALLY_VERIFIED`; scientific completion
+Adequacy: operational repair `IMPLEMENTED_AND_DRAFT_VERIFIED`; scientific completion
 policy `UNRESOLVED_OWNER_AUTHORITY`; release `BLOCKED_NO_MERGE_OR_DEPLOY`.
 
 ## Owner coordination directive — 2026-08-31
