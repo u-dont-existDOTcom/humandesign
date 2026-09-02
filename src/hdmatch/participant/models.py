@@ -362,9 +362,9 @@ class ConfirmatoryLock(ParticipantModel):
     scoring_responses_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
     excluded_non_natal_evidence_count: int = Field(ge=0)
     evidence_quality_contract_version: str | None = None
-    adequately_assessed_question_count: int | None = Field(default=None, ge=0)
-    required_question_count: int | None = Field(default=None, ge=0)
-    complete_profile_required: bool = False
+    adequately_assessed_mapped_question_count: int | None = Field(default=None, ge=0)
+    mapped_scoreable_question_count: int | None = Field(default=None, ge=0)
+    mapped_question_quality_gate_enforced: bool = False
 
     @field_validator("locked_at_utc")
     @classmethod
@@ -384,8 +384,10 @@ class ConfirmatoryLock(ParticipantModel):
             scoring_responses_sha256=self.scoring_responses_sha256,
             excluded_non_natal_evidence_count=self.excluded_non_natal_evidence_count,
             evidence_quality_contract_version=self.evidence_quality_contract_version,
-            adequately_assessed_question_count=self.adequately_assessed_question_count,
-            required_question_count=self.required_question_count,
+            adequately_assessed_mapped_question_count=(
+                self.adequately_assessed_mapped_question_count
+            ),
+            mapped_scoreable_question_count=self.mapped_scoreable_question_count,
         )
 
 
@@ -402,8 +404,8 @@ class PublicConfirmatoryLock(ParticipantModel):
     scoring_responses_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
     excluded_non_natal_evidence_count: int = Field(ge=0)
     evidence_quality_contract_version: str | None = None
-    adequately_assessed_question_count: int | None = Field(default=None, ge=0)
-    required_question_count: int | None = Field(default=None, ge=0)
+    adequately_assessed_mapped_question_count: int | None = Field(default=None, ge=0)
+    mapped_scoreable_question_count: int | None = Field(default=None, ge=0)
 
     @field_validator("locked_at_utc")
     @classmethod

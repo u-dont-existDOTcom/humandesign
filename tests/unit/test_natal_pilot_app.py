@@ -141,9 +141,10 @@ class FakeSessions:
             scoring_responses=(),
             scoring_responses_sha256="c" * 64,
             excluded_non_natal_evidence_count=0,
-            adequately_assessed_question_count=0,
-            required_question_count=0,
+            adequately_assessed_mapped_question_count=0,
+            mapped_scoreable_question_count=0,
         )
+
 
 def _request(
     app: FastAPI,
@@ -674,6 +675,7 @@ def test_lock_routes_apply_the_owner_pilot_quality_gate_and_redact_receipts(
         assert "scoring_responses" not in response.json
         assert "evidence_ids" not in response.json
         assert "cluster_id" not in response.text
+
 
 @pytest.mark.parametrize(
     ("field", "value", "message"),

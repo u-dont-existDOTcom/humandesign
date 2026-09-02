@@ -573,9 +573,43 @@ def test_owner_quality_gate_refuses_unassessed_mapped_questions_then_locks(
     lock = service.lock_confirmatory(session_id, require_mapped_question_quality=True)
 
     assert [response.question_id for response in lock.scoring_responses] == ["Q1"]
-    assert lock.adequately_assessed_question_count == 2
-    assert lock.required_question_count == 2
-    assert lock.complete_profile_required is True
+    assert lock.adequately_assessed_mapped_question_count == 2
+    assert lock.mapped_scoreable_question_count == 2
+    assert lock.mapped_question_quality_gate_enforced is True
+    assert {
+        "adequately_assessed_question_count",
+        "required_question_count",
+        "complete_profile_required",
+    }.isdisjoint(lock.model_dump())
+
+
+def test_legacy_v1_lock_without_quality_receipt_fields_remains_readable(
+    tmp_path: Path,
+) -> None:
+    service = _service(tmp_path)
+    session_id = _new_session(service)
+    path = tmp_path / "sessions" / session_id / "confirmatory.lock.json"
+    path.write_bytes(
+        canonical_json_bytes(
+            {
+                "schema_version": "participant-confirmatory-lock-v1",
+                "session_id": session_id,
+                "locked_at_utc": datetime.now(UTC),
+                "evidence_ids": [],
+                "scoring_responses": [],
+                "scoring_responses_sha256": "a" * 64,
+                "excluded_non_natal_evidence_count": 0,
+            }
+        )
+    )
+
+    lock = service.store.load_confirmatory_lock(session_id)
+
+    assert lock is not None
+    assert lock.schema_version == "participant-confirmatory-lock-v1"
+    assert lock.adequately_assessed_mapped_question_count is None
+    assert lock.mapped_scoreable_question_count is None
+    assert lock.mapped_question_quality_gate_enforced is False
 
 
 def test_reveal_requires_a_lock_and_returns_the_frozen_result(tmp_path: Path) -> None:

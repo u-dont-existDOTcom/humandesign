@@ -393,9 +393,9 @@ class ParticipantSessionService:
                 not record.evidence.domain.natal_ranking_eligible for record in records
             ),
             evidence_quality_contract_version=NATAL_EVIDENCE_QUALITY_CONTRACT_VERSION,
-            adequately_assessed_question_count=len(assessed & mapped_question_ids),
-            required_question_count=len(mapped_question_ids),
-            complete_profile_required=require_mapped_question_quality,
+            adequately_assessed_mapped_question_count=len(assessed & mapped_question_ids),
+            mapped_scoreable_question_count=len(mapped_question_ids),
+            mapped_question_quality_gate_enforced=require_mapped_question_quality,
         )
         ranking = self._calculate_ranking(
             session_id,

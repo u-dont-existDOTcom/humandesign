@@ -327,8 +327,8 @@ components:
         scoring_responses_sha256: {type: string, pattern: '^[a-f0-9]{64}$'}
         excluded_non_natal_evidence_count: {type: integer, minimum: 0}
         evidence_quality_contract_version: {type: [string, 'null']}
-        adequately_assessed_question_count: {type: [integer, 'null'], minimum: 0}
-        required_question_count: {type: [integer, 'null'], minimum: 0}
+        adequately_assessed_mapped_question_count: {type: [integer, 'null'], minimum: 0}
+        mapped_scoreable_question_count: {type: [integer, 'null'], minimum: 0}
     PublicProgress:
       type: object
       additionalProperties: false
