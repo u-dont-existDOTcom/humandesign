@@ -5,22 +5,38 @@ from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 import pytest
+from pydantic import ValidationError
 
 from hdmatch.api.natal_pilot_app import NatalPilotConfig, _interviewer_reveal
-from hdmatch.experiments.canonical import canonical_json_bytes, sha256_file
-from hdmatch.participant.backend import DiscriminationDiagnostics, SelectedQuestion
+from hdmatch.experiments.canonical import canonical_json_bytes, sha256_bytes, sha256_file
+from hdmatch.participant.backend import (
+    DiscriminationDiagnostics,
+    FrozenRuntimeMismatchError,
+    SelectedQuestion,
+)
 from hdmatch.participant.models import (
     BirthIntake,
+    ConfirmatoryLock,
+    EvidenceConsistency,
     EvidenceDomain,
     EvidenceInput,
+    EvidenceRecord,
+    ParticipantModelReceipt,
     PredictionDimension,
     PredictionFreeze,
     RankingSnapshot,
     RankScope,
     ResolvedBirth,
+    RevealReport,
     SessionMode,
+    SessionPhase,
+    StoredEvidenceInput,
 )
-from hdmatch.participant.service import ParticipantSessionService, ParticipantStateError
+from hdmatch.participant.service import (
+    ParticipantProtocolError,
+    ParticipantSessionService,
+    ParticipantStateError,
+)
 from hdmatch.participant.store import ParticipantSessionStore, SessionStorageError
 from hdmatch.questionnaire import Question
 from hdmatch.schemas import BehavioralResponse, ChartFeatures, ScoredState
@@ -29,6 +45,7 @@ from hdmatch.search import QuestionUtility
 
 class FakeParticipantBackend:
     scoreable_question_ids = frozenset({"Q1", "Q2"})
+    mapped_scoreable_question_ids = frozenset({"Q1", "Q2"})
 
     def assert_freeze_compatible(self, freeze: PredictionFreeze) -> None:
         del freeze
@@ -68,6 +85,15 @@ class FakeParticipantBackend:
                     contradiction_answers=("no",),
                     behavioral_statements=("Usually follows the predicted decision pattern.",),
                     mapping_ids=("MAP-TEST-Q1",),
+                ),
+                PredictionDimension(
+                    question_id="Q2",
+                    cluster_id="LEARNING",
+                    canonical_answer="yes",
+                    support_answers=("yes",),
+                    contradiction_answers=("no",),
+                    behavioral_statements=("Usually follows the predicted learning pattern.",),
+                    mapping_ids=("MAP-TEST-Q2",),
                 ),
             ),
             code_commit="test-commit",
@@ -173,6 +199,36 @@ class FakeParticipantBackend:
         )
 
 
+class PhasedParticipantBackend(FakeParticipantBackend):
+    scoreable_question_ids = frozenset({"Q1", "Q2", "V03"})
+    mapped_scoreable_question_ids = frozenset({"Q1", "Q2"})
+
+    def build_prediction_freeze(
+        self,
+        *,
+        session_id: str,
+        birth: ResolvedBirth,
+        ranking_scope: RankScope,
+        created_at_utc: datetime,
+    ) -> PredictionFreeze:
+        freeze = super().build_prediction_freeze(
+            session_id=session_id,
+            birth=birth,
+            ranking_scope=ranking_scope,
+            created_at_utc=created_at_utc,
+        )
+        validation_prediction = PredictionDimension(
+            question_id="V03",
+            cluster_id="PROSPECTIVE_VALIDATION",
+            canonical_answer="yes",
+            support_answers=("yes",),
+            contradiction_answers=("no",),
+            behavioral_statements=("Prospective validation observation.",),
+            mapping_ids=("MAP-TEST-V03",),
+        )
+        return freeze.model_copy(update={"dimensions": (*freeze.dimensions, validation_prediction)})
+
+
 def _service(tmp_path: Path) -> ParticipantSessionService:
     return ParticipantSessionService(
         store=ParticipantSessionStore(tmp_path / "sessions"),
@@ -201,12 +257,80 @@ def _behavior(
     return EvidenceInput(
         domain=EvidenceDomain.BEHAVIOR,
         question_id=question_id,
-        cluster_id="DECISION",
         answer=answer,
         behavioral_confidence=0.9,
         measurement_reliability=0.9,
         narrative=narrative,
+        minimum_evidence_passed=True,
+        consistency_status=EvidenceConsistency.CONSISTENT,
+        quality_rationale="The response meets the frozen test minimum and fits prior evidence.",
     )
+
+
+def _seed_historical_lock(
+    service: ParticipantSessionService,
+    session_id: str,
+) -> tuple[ConfirmatoryLock, RankingSnapshot]:
+    """Create a pre-repair diagnostic lock without authorizing repaired-protocol lock."""
+
+    records = tuple(
+        record
+        for record in service.store.load_evidence(session_id)
+        if record.phase == "confirmatory_blind"
+    )
+    responses = service._latest_scoreable_responses(records)
+    lock = ConfirmatoryLock(
+        schema_version="participant-confirmatory-lock-v2",
+        session_id=session_id,
+        locked_at_utc=datetime.now(UTC),
+        evidence_ids=tuple(record.evidence_id for record in records),
+        scoring_responses=responses,
+        scoring_responses_sha256=sha256_bytes(canonical_json_bytes(responses)),
+        excluded_non_natal_evidence_count=sum(
+            not record.evidence.domain.natal_ranking_eligible for record in records
+        ),
+    )
+    ranking = service._calculate_ranking(session_id, responses, analysis_kind="pre_reveal")
+    service.store.write_confirmatory_lock(lock)
+    service.store.write_confirmatory_ranking(ranking)
+    return lock, ranking
+
+
+def _seed_historical_result(
+    service: ParticipantSessionService,
+    session_id: str,
+) -> RevealReport:
+    """Persist an already-created historical diagnostic result for compatibility tests."""
+
+    _, ranking = _seed_historical_lock(service, session_id)
+    freeze = service.store.load_freeze(session_id)
+    session = service.store.load_session(session_id)
+    report = RevealReport(
+        session_id=session_id,
+        revealed_at_utc=datetime.now(UTC),
+        birth=freeze.birth,
+        chart=freeze.chart,
+        confirmatory_ranking=ranking,
+        prediction_comparisons=service._prediction_comparisons(
+            freeze,
+            service.store.load_evidence(session_id),
+        ),
+        model_receipt=ParticipantModelReceipt(
+            prediction_freeze_sha256=session.prediction_freeze_sha256,
+            code_commit=freeze.code_commit,
+            engine_fingerprint=freeze.engine_fingerprint,
+            model_version=freeze.model_version,
+            model_sha256=freeze.model_sha256,
+            mapping_sha256=freeze.mapping_sha256,
+            question_bank_version=freeze.question_bank_version,
+            question_bank_sha256=freeze.question_bank_sha256,
+            ranking_scope=freeze.ranking_scope,
+            candidate_universe_sha256=freeze.candidate_universe_sha256,
+            candidate_universe_state_count=freeze.candidate_universe_state_count,
+        ),
+    )
+    service.store.write_reveal(report)
+    return report
 
 
 def test_prediction_is_frozen_before_answers_and_progress_conceals_true_rank(
@@ -225,8 +349,332 @@ def test_prediction_is_frozen_before_answers_and_progress_conceals_true_rank(
     assert progress.true_birth_rank_concealed is True
     assert "true_state_rank" not in progress.model_dump()
     assert "true_date_rank" not in progress.model_dump()
-    assert progress.scoreable_coverage == 0.5
+    assert progress.mapped_scoreable_coverage == 0.5
+    assert progress.mapped_scoreable_question_count == 2
+    assert progress.adequately_assessed_mapped_question_count == 1
+    assert progress.unassessed_mapped_question_count == 1
+    assert progress.mapped_question_quality_gate_passed is False
     assert sha256_file(freeze_path) == before
+
+
+def test_mapped_counts_report_the_existing_interview_quality_gate(tmp_path: Path) -> None:
+    service = _service(tmp_path)
+    session_id = _new_session(service)
+    service.append_evidence(session_id, _behavior("Q1", "yes", narrative="Adequate Q1."))
+    payload = service.public_progress(session_id).model_dump(mode="json")
+
+    assert payload["mapped_scoreable_question_count"] == 2
+    assert payload["adequately_assessed_mapped_question_count"] == 1
+    assert payload["mapped_scoreable_coverage"] == 0.5
+    assert payload["unassessed_mapped_question_count"] == 1
+    assert payload["mapped_question_quality_gate_passed"] is False
+    assert "required_confirmatory_question_count" not in payload
+    assert "adequately_assessed_coverage" not in payload
+    assert "unresolved_question_count" not in payload
+
+
+def test_quality_gate_passes_when_every_mapped_question_is_adequately_assessed(
+    tmp_path: Path,
+) -> None:
+    service = _service(tmp_path)
+    session_id = _new_session(service)
+    service.append_evidence(session_id, _behavior("Q1", "yes", narrative="Adequate Q1."))
+    service.append_evidence(session_id, _behavior("Q2", None, narrative="Adequate Q2."))
+    progress = service.public_progress(session_id)
+
+    assert progress.unassessed_mapped_question_count == 0
+    assert progress.mapped_question_quality_gate_passed is True
+    assert progress.scoreable_observation_count == 1
+
+
+def test_client_model_rejects_cluster_id() -> None:
+    with pytest.raises(ValidationError, match="cluster_id"):
+        EvidenceInput.model_validate(
+            {
+                "domain": "behavior",
+                "narrative": "Client data cannot choose a hidden binding.",
+                "cluster_id": "INJECTED",
+            }
+        )
+
+
+@pytest.mark.parametrize(
+    "field",
+    ["resolved_cluster_id", "frozen_cluster_id", "frozen_dimension_ref"],
+)
+def test_client_model_rejects_resolved_cluster_aliases(field: str) -> None:
+    with pytest.raises(ValidationError, match=field):
+        EvidenceInput.model_validate(
+            {
+                "domain": "behavior",
+                "narrative": "Client data cannot choose a hidden binding.",
+                field: "INJECTED",
+            }
+        )
+
+
+def test_unbound_narrative_remains_readable_and_nonscoreable(tmp_path: Path) -> None:
+    service = _service(tmp_path)
+    session_id = _new_session(service)
+
+    record = service.append_evidence(
+        session_id,
+        EvidenceInput(
+            domain=EvidenceDomain.BEHAVIOR,
+            narrative="A recurring pattern described before a mapped question is selected.",
+        ),
+    )
+
+    assert record.evidence.narrative.startswith("A recurring pattern")
+    assert record.evidence.frozen_dimension_binding is None
+    assert record.evidence.scoring_response() is None
+
+
+def test_unreceipted_legacy_answer_remains_readable_but_is_not_scoreable() -> None:
+    evidence = StoredEvidenceInput(
+        domain=EvidenceDomain.BEHAVIOR,
+        question_id="Q1",
+        cluster_id="DECISION",
+        answer="yes",
+        narrative="A legacy answer remains readable.",
+    )
+
+    assert evidence.scoring_response() is None
+
+
+def test_server_resolves_cluster_from_session_freeze(
+    tmp_path: Path,
+) -> None:
+    service = _service(tmp_path)
+    session_id = _new_session(service)
+    record = service.append_evidence(
+        session_id,
+        _behavior("Q2", "yes", narrative="Q2 evidence."),
+    )
+
+    binding = record.evidence.frozen_dimension_binding
+    assert binding is not None
+    assert binding.question_id == "Q2"
+    assert binding.resolved_cluster_id == "LEARNING"
+    assert binding.dimension_index == 1
+
+
+def test_server_binding_records_exact_freeze_identity(tmp_path: Path) -> None:
+    service = _service(tmp_path)
+    session_id = _new_session(service)
+    record = service.append_evidence(
+        session_id,
+        _behavior("Q2", "yes", narrative="Q2 evidence."),
+    )
+    binding = record.evidence.frozen_dimension_binding
+
+    assert binding is not None
+    assert binding.freeze_ref.session_id == session_id
+    assert binding.freeze_ref.freeze_sha256 == (
+        service.store.load_session(session_id).prediction_freeze_sha256
+    )
+
+
+def test_persisted_scoreable_evidence_uses_server_resolved_cluster(tmp_path: Path) -> None:
+    service = _service(tmp_path)
+    session_id = _new_session(service)
+    service.append_evidence(
+        session_id,
+        _behavior("Q2", "yes", narrative="Q2 evidence."),
+    )
+    persisted = service.store.load_evidence(session_id)[0]
+    response = persisted.evidence.scoring_response()
+    assert response is not None
+    assert response.cluster_id == "LEARNING"
+
+
+def test_null_answer_can_be_adequately_assessed_without_becoming_scoreable(
+    tmp_path: Path,
+) -> None:
+    service = _service(tmp_path)
+    session_id = _new_session(service)
+    record = service.append_evidence(
+        session_id,
+        _behavior("Q2", None, narrative="No frozen answer fits Q2."),
+    )
+    progress = service.public_progress(session_id)
+
+    assert record.evidence.frozen_dimension_binding is not None
+    assert record.evidence.scoring_response() is None
+    assert progress.adequately_assessed_mapped_question_count == 1
+    assert progress.scoreable_observation_count == 0
+    assert progress.mapped_scoreable_coverage == 0.0
+
+
+class AmbiguousParticipantBackend(FakeParticipantBackend):
+    def build_prediction_freeze(
+        self,
+        *,
+        session_id: str,
+        birth: ResolvedBirth,
+        ranking_scope: RankScope,
+        created_at_utc: datetime,
+    ) -> PredictionFreeze:
+        freeze = super().build_prediction_freeze(
+            session_id=session_id,
+            birth=birth,
+            ranking_scope=ranking_scope,
+            created_at_utc=created_at_utc,
+        )
+        return freeze.model_copy(update={"dimensions": (*freeze.dimensions, freeze.dimensions[0])})
+
+
+class MismatchedParticipantBackend(FakeParticipantBackend):
+    def assert_freeze_compatible(self, freeze: PredictionFreeze) -> None:
+        raise FrozenRuntimeMismatchError(
+            f"session {freeze.session_id} was frozen by a different runtime bundle"
+        )
+
+
+def test_missing_frozen_question_binding_fails_closed(tmp_path: Path) -> None:
+    service = _service(tmp_path)
+    session_id = _new_session(service)
+
+    with pytest.raises(ParticipantProtocolError) as captured:
+        service.append_evidence(
+            session_id,
+            _behavior("Q-MISSING", "yes", narrative="Unknown frozen question."),
+        )
+
+    assert captured.value.code == "FROZEN_QUESTION_BINDING_MISSING"
+    assert service.store.load_evidence(session_id) == ()
+
+
+def test_ambiguous_frozen_question_binding_fails_closed(tmp_path: Path) -> None:
+    service = ParticipantSessionService(
+        store=ParticipantSessionStore(tmp_path / "sessions"),
+        backend=AmbiguousParticipantBackend(),
+    )
+    session_id = _new_session(service)
+
+    with pytest.raises(ParticipantProtocolError) as captured:
+        service.append_evidence(session_id, _behavior("Q1", "yes", narrative="Ambiguous."))
+
+    assert captured.value.code == "FROZEN_QUESTION_BINDING_AMBIGUOUS"
+    assert service.store.load_evidence(session_id) == ()
+
+
+def test_owner_quality_gate_refuses_unassessed_mapped_questions_then_locks(
+    tmp_path: Path,
+) -> None:
+    service = _service(tmp_path)
+    session_id = _new_session(service)
+    service.append_evidence(session_id, _behavior("Q1", "yes", narrative="Adequate Q1."))
+
+    with pytest.raises(ParticipantStateError, match="1 frozen mapped questions"):
+        service.lock_confirmatory(session_id, require_mapped_question_quality=True)
+
+    service.append_evidence(session_id, _behavior("Q2", None, narrative="Adequate Q2."))
+    lock = service.lock_confirmatory(session_id, require_mapped_question_quality=True)
+
+    assert [response.question_id for response in lock.scoring_responses] == ["Q1"]
+    assert lock.adequately_assessed_mapped_question_count == 2
+    assert lock.mapped_scoreable_question_count == 2
+    assert lock.mapped_question_quality_gate_enforced is True
+    assert {
+        "adequately_assessed_question_count",
+        "required_question_count",
+        "complete_profile_required",
+    }.isdisjoint(lock.model_dump())
+
+
+def test_legacy_v1_lock_without_quality_receipt_fields_remains_readable(
+    tmp_path: Path,
+) -> None:
+    service = _service(tmp_path)
+    session_id = _new_session(service)
+    path = tmp_path / "sessions" / session_id / "confirmatory.lock.json"
+    path.write_bytes(
+        canonical_json_bytes(
+            {
+                "schema_version": "participant-confirmatory-lock-v1",
+                "session_id": session_id,
+                "locked_at_utc": datetime.now(UTC),
+                "evidence_ids": [],
+                "scoring_responses": [],
+                "scoring_responses_sha256": "a" * 64,
+                "excluded_non_natal_evidence_count": 0,
+            }
+        )
+    )
+
+    lock = service.store.load_confirmatory_lock(session_id)
+
+    assert lock is not None
+    assert lock.schema_version == "participant-confirmatory-lock-v1"
+    assert lock.adequately_assessed_mapped_question_count is None
+    assert lock.mapped_scoreable_question_count is None
+    assert lock.mapped_question_quality_gate_enforced is False
+
+
+def test_reveal_requires_a_lock_and_returns_the_frozen_result(tmp_path: Path) -> None:
+    service = _service(tmp_path)
+    session_id = _new_session(service)
+    service.append_evidence(session_id, _behavior("Q1", "yes", narrative="Adequate Q1."))
+    service.append_evidence(session_id, _behavior("Q2", None, narrative="Adequate Q2."))
+
+    with pytest.raises(ParticipantStateError, match="lock confirmatory evidence"):
+        service.reveal(session_id)
+    service.lock_confirmatory(session_id, require_mapped_question_quality=True)
+    reveal = service.reveal(session_id)
+
+    assert reveal.session_id == session_id
+    assert reveal.model_receipt is not None
+    assert service.phase(session_id) is SessionPhase.REVEALED
+
+
+def test_source_or_protocol_mismatch_blocks_conforming_reuse(tmp_path: Path) -> None:
+    service = ParticipantSessionService(
+        store=ParticipantSessionStore(tmp_path / "sessions"),
+        backend=MismatchedParticipantBackend(),
+    )
+    session_id = _new_session(service)
+
+    with pytest.raises(FrozenRuntimeMismatchError, match="different runtime bundle"):
+        service.append_evidence(
+            session_id,
+            _behavior("Q1", "yes", narrative="Must not reuse a mismatched freeze."),
+        )
+
+    assert service.store.load_evidence(session_id) == ()
+
+
+def test_validation_phase_evidence_cannot_enter_initial_rank_or_comparison(
+    tmp_path: Path,
+) -> None:
+    service = ParticipantSessionService(
+        store=ParticipantSessionStore(tmp_path / "sessions"),
+        backend=PhasedParticipantBackend(),
+    )
+    session_id = _new_session(service)
+    service.append_evidence(
+        session_id,
+        _behavior("V03", "yes", narrative="Premature prospective validation evidence."),
+    )
+    service.append_evidence(session_id, _behavior("Q1", "yes", narrative="Q1 evidence."))
+    service.append_evidence(session_id, _behavior("Q2", "yes", narrative="Q2 evidence."))
+
+    progress = service.public_progress(session_id)
+    assert progress.scoreable_observation_count == 2
+    assert progress.mapped_scoreable_coverage == 1.0
+    assert progress.adequately_assessed_mapped_question_count == 2
+
+    lock, _ = _seed_historical_lock(service, session_id)
+    assert [response.question_id for response in lock.scoring_responses] == ["Q1", "Q2"]
+    freeze = service.store.load_freeze(session_id)
+    comparisons = service._prediction_comparisons(
+        freeze,
+        service.store.load_evidence(session_id),
+    )
+    validation_comparison = next(item for item in comparisons if item.question_id == "V03")
+    assert validation_comparison.observed_answer is None
+    assert validation_comparison.evidence_id is None
+    assert validation_comparison.classification == "insufficient_evidence"
 
 
 def test_outcomes_are_retained_but_excluded_from_natal_confirmatory_rank(
@@ -243,16 +691,9 @@ def test_outcomes_are_retained_but_excluded_from_natal_confirmatory_rank(
         ),
     )
 
-    lock = service.lock_confirmatory(session_id)
+    lock, _ = _seed_historical_lock(service, session_id)
     assert [response.question_id for response in lock.scoring_responses] == ["Q1"]
     assert lock.excluded_non_natal_evidence_count == 1
-    with pytest.raises(ParticipantStateError):
-        service.append_evidence(session_id, _behavior("Q2", "yes", narrative="Too late."))
-
-    service.reveal(session_id)
-    final = service.finalize_exploratory(session_id)
-    assert len(final.retained_secondary_evidence) == 1
-    assert final.retained_secondary_evidence[0].evidence.domain is EvidenceDomain.OUTCOME
 
 
 def test_later_other_neutralizes_an_earlier_forced_choice_before_lock(tmp_path: Path) -> None:
@@ -269,8 +710,8 @@ def test_later_other_neutralizes_an_earlier_forced_choice_before_lock(tmp_path: 
     )
     service.append_evidence(session_id, _behavior("Q2", "yes", narrative="Q2 remains clear."))
 
-    lock = service.lock_confirmatory(session_id)
-    assert [response.question_id for response in lock.scoring_responses] == ["Q2"]
+    responses = service._latest_scoreable_responses(service.store.load_evidence(session_id))
+    assert [response.question_id for response in responses] == ["Q2"]
 
 
 def test_posthoc_profile_gets_separate_exploratory_rank_without_rewriting_blind_rank(
@@ -279,8 +720,7 @@ def test_posthoc_profile_gets_separate_exploratory_rank_without_rewriting_blind_
     service = _service(tmp_path)
     session_id = _new_session(service)
     service.append_evidence(session_id, _behavior("Q1", "no", narrative="Initial self-report."))
-    service.lock_confirmatory(session_id)
-    reveal = service.reveal(session_id)
+    reveal = _seed_historical_result(service, session_id)
     assert reveal.confirmatory_ranking.true_state_rank == 7.0
     assert reveal.confirmatory_ranking.scientific_status == "confirmatory_blind"
     assert reveal.schema_version == "participant-reveal-v2"
@@ -312,8 +752,7 @@ def test_interviewer_reveal_redacts_birth_and_raw_chart(tmp_path: Path) -> None:
     service = _service(tmp_path)
     session_id = _new_session(service)
     service.append_evidence(session_id, _behavior("Q1", "yes", narrative="Stable."))
-    service.lock_confirmatory(session_id)
-    sensitive = service.reveal(session_id)
+    sensitive = _seed_historical_result(service, session_id)
 
     config = NatalPilotConfig(
         invite_token_sha256="a" * 64,
@@ -338,31 +777,59 @@ def test_interviewer_reveal_redacts_birth_and_raw_chart(tmp_path: Path) -> None:
     assert payload["prediction_comparisons"]
 
 
-def test_legacy_v1_reveal_remains_readable_without_rewriting_it(tmp_path: Path) -> None:
+def test_legacy_session_remains_readable_without_rewriting(tmp_path: Path) -> None:
     service = _service(tmp_path)
     session_id = _new_session(service)
     service.append_evidence(session_id, _behavior("Q1", "yes", narrative="Legacy."))
-    service.lock_confirmatory(session_id)
-    created = service.reveal(session_id)
+    created = _seed_historical_result(service, session_id)
     path = tmp_path / "sessions" / session_id / "reveal.json"
     legacy = created.model_dump(mode="json")
     legacy["schema_version"] = "participant-reveal-v1"
     legacy.pop("model_receipt")
     path.write_bytes(canonical_json_bytes(legacy))
+    before = path.read_bytes()
 
-    loaded = service.store.load_reveal(session_id)
+    loaded = service.reveal(session_id)
 
     assert loaded is not None
     assert loaded.schema_version == "participant-reveal-v1"
     assert loaded.model_receipt is None
-    assert path.read_bytes() == canonical_json_bytes(legacy)
+    assert path.read_bytes() == before
+
+
+def test_legacy_evidence_is_not_silently_migrated(tmp_path: Path) -> None:
+    service = _service(tmp_path)
+    session_id = _new_session(service)
+    legacy = EvidenceRecord(
+        schema_version="participant-evidence-v2",
+        evidence_id="EV-LEGACY",
+        session_id=session_id,
+        phase="confirmatory_blind",
+        created_at_utc=datetime.now(UTC),
+        evidence=StoredEvidenceInput(
+            domain=EvidenceDomain.BEHAVIOR,
+            question_id="Q1",
+            cluster_id="DECISION",
+            answer="yes",
+            narrative="Historical client-authored cluster remains diagnostic only.",
+        ),
+    )
+    service.store.append_evidence(legacy)
+    log_path = tmp_path / "sessions" / session_id / "evidence.events.jsonl"
+    before = log_path.read_bytes()
+
+    loaded = service.store.load_evidence(session_id)[0]
+
+    assert loaded.evidence.cluster_id == "DECISION"
+    assert loaded.evidence.frozen_dimension_binding is None
+    assert loaded.evidence.scoring_response() is None
+    assert log_path.read_bytes() == before
 
 
 def test_participant_store_uses_private_permissions(tmp_path: Path) -> None:
     service = _service(tmp_path)
     session_id = _new_session(service)
     service.append_evidence(session_id, _behavior("Q1", "yes", narrative="Private."))
-    service.lock_confirmatory(session_id)
     directory = tmp_path / "sessions" / session_id
 
     assert directory.stat().st_mode & 0o777 == 0o700
@@ -371,10 +838,9 @@ def test_participant_store_uses_private_permissions(tmp_path: Path) -> None:
         "prediction.freeze.json",
         "evidence.events.jsonl",
         ".evidence.lock",
-        "confirmatory.lock.json",
-        "confirmatory.ranking.json",
     ):
         assert (directory / name).stat().st_mode & 0o777 == 0o600
+    assert not (directory / "completion.policy.json").exists()
 
 
 def test_posthoc_other_can_remove_a_confirmatory_dimension_from_final_profile(
@@ -384,8 +850,7 @@ def test_posthoc_other_can_remove_a_confirmatory_dimension_from_final_profile(
     session_id = _new_session(service)
     service.append_evidence(session_id, _behavior("Q1", "no", narrative="Initial answer."))
     service.append_evidence(session_id, _behavior("Q2", "yes", narrative="Stable Q2."))
-    service.lock_confirmatory(session_id)
-    service.reveal(session_id)
+    _seed_historical_result(service, session_id)
     service.append_evidence(
         session_id,
         _behavior(

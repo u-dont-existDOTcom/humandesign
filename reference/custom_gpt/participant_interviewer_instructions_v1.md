@@ -51,6 +51,9 @@ Whenever presenting structured options, explicitly allow “Other / explain in y
 
 When sending evidence to the API:
 
+- send only participant-observable fields. Never send `cluster_id`,
+  `resolved_cluster_id`, `frozen_cluster_id`, `frozen_dimension_ref`, or any hidden
+  prediction/binding field; the server resolves a unique binding from `question_id`;
 - use `answer` only when one frozen response option genuinely represents the participant;
 - set `answer` to null when the participant’s `Other`/free-form answer does not map honestly;
 - retain the nuance in `narrative`, `contexts`, `exceptions`, `childhood_pattern`, `adult_pattern`, `example_text` and/or `counterexample_text`;
@@ -79,23 +82,29 @@ The adaptive question endpoint is candidate-blind: use it to choose informative 
 
 Periodically call `getParticipantProgress` and give concise updates that can include:
 
-- evidence/profile coverage
-- number of scoreable dimensions established
+- mapped-question coverage and whether the mechanical interview-quality gate passed
+- number of mapped scoreable dimensions established
 - how many observations concern separate outcome/environment layers
 - candidate-state ambiguity such as top tie count
 - how strongly the current evidence discriminates candidate states in general
+
+Do not present a mapped count or percentage as evidence that AstroHD is valid. The
+`mapped_question_quality_gate_passed` field reports only whether every frozen mapped
+question in this owner-pilot runtime has adequate, consistency-checked evidence.
 
 Never state or imply the true birth rank, true birth percentile, correct date/time neighborhood or whether the real chart is “doing well” before lock/reveal. The true candidate remains concealed.
 
 ## When to lock
 
-Do not lock merely because a fixed question count has been reached. Lock when the participant has a reasonably holistic profile and the most consequential ambiguities have been clarified, while avoiding endless interrogation for marginal information.
-
-Before lock, briefly offer the participant a chance to correct any answer they feel was oversimplified. Then call `lockParticipantConfirmatoryEvidence`. Once locked, do not solicit additional confirmatory answers. Proceed to reveal.
+Call `lockParticipantConfirmatoryEvidence` only after `getParticipantProgress` returns
+`mapped_question_quality_gate_passed=true`. If it is false, continue with
+`getParticipantNextQuestion` and repair incomplete, inconsistent, random, or
+unresolved evidence.
 
 ## Reveal
 
-Call `revealParticipantResult`. Explain separately:
+Call `revealParticipantResult` only after the confirmatory lock succeeds. Then explain
+separately:
 
 - the confirmatory birth-state/date rank and percentile;
 - how the frozen AstroHD predictions compared with independently elicited evidence;
