@@ -17,20 +17,29 @@ from pathlib import Path
 from types import ModuleType
 from typing import Any
 
+import yaml
+
 ROOT = Path(__file__).resolve().parents[1]
 BASE_COMMIT = "afc0bb82de0e481ae5a5d3453e0bcaf82b2a0286"
-AUDITED_HEAD = "b3da97274c161a31e44cee3ef4159ca0d1d9a0dd"
+AUDITED_HEAD = "b5fd8b6a8c3e59374c1ac33bd518ed59bd81cdd5"
 RANK_CORRECTION_START = "f5a967c2efbb0f73a7a56c42a06fe4d7fb7e2b59"
-OUTPUT_PATH = Path("reference/audits/astrohd_pr23_convergence_v1.json")
+OUTPUT_PATH = Path("reference/audits/astrohd_pr23_convergence_v2.json")
 
 MAPPING_PATH = Path("mappings/mapping_library_v1.json")
 QUESTION_BANK_PATH = Path("reference/core/question_bank_v1.json")
 FUTURE_CORE_PATH = Path("reference/research/astrohd_future_core_coverage_candidate_matrix_v1.json")
 CROSS_CLASS_AUDIT_PATH = Path("reference/audits/astrohd_cross_class_core_fit_v1.json")
 DOWNSTREAM_AUDIT_PATH = Path("reference/audits/astrohd_rank_tiebreak_downstream_v1.json")
+PRIOR_CONVERGENCE_AUDIT_PATH = Path("reference/audits/astrohd_pr23_convergence_v1.json")
 THEORY_LANGUAGE_MODULE_PATH = Path("src/hdmatch/evaluation/theory_language_exposure.py")
 PARTICIPANT_BACKEND_PATH = Path("src/hdmatch/participant/backend.py")
 DATE_AGGREGATOR_PATH = Path("src/hdmatch/search/date_aggregator.py")
+PARTICIPANT_MODELS_PATH = Path("src/hdmatch/participant/models.py")
+PARTICIPANT_SERVICE_PATH = Path("src/hdmatch/participant/service.py")
+CUSTOM_GPT_OPENAPI_PATHS = (
+    Path("reference/custom_gpt/participant_action_openapi_v1.yaml"),
+    Path("reference/custom_gpt/participant_interviewer_action_openapi_v1.yaml"),
+)
 
 EXPECTED_MAPPING_SHA256 = "3424672432f7f071ec90ef9ddce52a67ff6794911e92b1a1e04f079262ea6200"
 EXPECTED_QUESTION_BANK_SHA256 = "31f813efc3da7263569ef010a8336b1b1b0c44801b7aa0f91e33b3fa4587d820"
@@ -39,6 +48,24 @@ EXPECTED_CROSS_CLASS_AUDIT_SHA256 = (
 )
 EXPECTED_DOWNSTREAM_AUDIT_SHA256 = (
     "c9fb9ee6060c4bbb346c7ac6981a543d3d602a60bb1da83e245cea638a680103"
+)
+EXPECTED_PRIOR_CONVERGENCE_AUDIT_SHA256 = (
+    "952565c9da16d683711f2bdae1fc8cae974f9c17ce98166a2de00b54d6856e73"
+)
+
+CURRENT_INTERNAL_LOCK_FIELDS = (
+    "adequately_assessed_mapped_question_count",
+    "mapped_scoreable_question_count",
+    "mapped_question_quality_gate_enforced",
+)
+CURRENT_PUBLIC_LOCK_FIELDS = (
+    "adequately_assessed_mapped_question_count",
+    "mapped_scoreable_question_count",
+)
+SUPERSEDED_LOCK_FIELDS = (
+    "adequately_assessed_question_count",
+    "required_question_count",
+    "complete_profile_required",
 )
 
 REMNANT_TERMS = (
@@ -276,6 +303,92 @@ def _runtime_symbol_scan(repository_root: Path) -> JsonObject:
         "occurrence_count": len(rows),
         "occurrences": rows,
         "scanned_file_count": len(paths),
+    }
+
+
+def _class_field_names(source: str, name: str) -> list[str]:
+    tree = ast.parse(source)
+    matches = [node for node in tree.body if isinstance(node, ast.ClassDef) and node.name == name]
+    if len(matches) != 1:
+        raise ValueError(f"expected exactly one class named {name}, observed {len(matches)}")
+    return [
+        node.target.id
+        for node in matches[0].body
+        if isinstance(node, ast.AnnAssign) and isinstance(node.target, ast.Name)
+    ]
+
+
+def _constructor_keywords(source: str, function_name: str, constructor_name: str) -> list[str]:
+    function = _find_function(ast.parse(source), function_name)
+    calls = [
+        node
+        for node in ast.walk(function)
+        if isinstance(node, ast.Call)
+        and isinstance(node.func, ast.Name)
+        and node.func.id == constructor_name
+    ]
+    if len(calls) != 1:
+        raise ValueError(
+            f"expected one {constructor_name} call in {function_name}, observed {len(calls)}"
+        )
+    return [keyword.arg for keyword in calls[0].keywords if keyword.arg is not None]
+
+
+def _literal_counts_by_term(source: str, terms: tuple[str, ...]) -> dict[str, int]:
+    return {term: source.count(term) for term in terms}
+
+
+def _lock_receipt_contract(repository_root: Path) -> JsonObject:
+    models_source = _git_blob(repository_root, AUDITED_HEAD, PARTICIPANT_MODELS_PATH).decode(
+        "utf-8"
+    )
+    service_source = _git_blob(repository_root, AUDITED_HEAD, PARTICIPANT_SERVICE_PATH).decode(
+        "utf-8"
+    )
+    runtime_paths = tuple(
+        path
+        for path in _git_paths(repository_root, AUDITED_HEAD)
+        if path.startswith("src/hdmatch/") and path.endswith(".py")
+    )
+    runtime_source = "\n".join(
+        _git_blob(repository_root, AUDITED_HEAD, Path(path)).decode("utf-8")
+        for path in runtime_paths
+    )
+    openapi_rows: list[JsonObject] = []
+    combined_openapi_source = ""
+    for path in CUSTOM_GPT_OPENAPI_PATHS:
+        raw = _git_blob(repository_root, AUDITED_HEAD, path)
+        source = raw.decode("utf-8")
+        combined_openapi_source += source
+        payload = yaml.safe_load(source)
+        properties = payload["components"]["schemas"]["PublicConfirmatoryLock"]["properties"]
+        if not isinstance(properties, dict):
+            raise ValueError(f"{path} PublicConfirmatoryLock properties must be an object")
+        openapi_rows.append(
+            {
+                "path": path.as_posix(),
+                "public_confirmatory_lock_property_names": list(properties),
+                "sha256": sha256_bytes(raw),
+            }
+        )
+    return {
+        "active_openapi_superseded_literal_counts": _literal_counts_by_term(
+            combined_openapi_source, SUPERSEDED_LOCK_FIELDS
+        ),
+        "confirmatory_lock_field_names": _class_field_names(models_source, "ConfirmatoryLock"),
+        "current_internal_lock_fields": list(CURRENT_INTERNAL_LOCK_FIELDS),
+        "current_public_lock_fields": list(CURRENT_PUBLIC_LOCK_FIELDS),
+        "custom_gpt_openapi_schemas": openapi_rows,
+        "lock_confirmatory_constructor_keywords": _constructor_keywords(
+            service_source, "lock_confirmatory", "ConfirmatoryLock"
+        ),
+        "public_confirmatory_lock_field_names": _class_field_names(
+            models_source, "PublicConfirmatoryLock"
+        ),
+        "runtime_superseded_literal_counts": _literal_counts_by_term(
+            runtime_source, SUPERSEDED_LOCK_FIELDS
+        ),
+        "superseded_lock_fields": list(SUPERSEDED_LOCK_FIELDS),
     }
 
 
@@ -666,6 +779,7 @@ def _historical_write_result(repository_root: Path, script_name: str) -> JsonObj
 def _historical_audit_invariants(repository_root: Path) -> JsonObject:
     cross_bytes = _git_blob(repository_root, AUDITED_HEAD, CROSS_CLASS_AUDIT_PATH)
     downstream_bytes = _git_blob(repository_root, AUDITED_HEAD, DOWNSTREAM_AUDIT_PATH)
+    prior_convergence_bytes = _git_blob(repository_root, AUDITED_HEAD, PRIOR_CONVERGENCE_AUDIT_PATH)
     return {
         "artifacts": [
             {
@@ -683,6 +797,11 @@ def _historical_audit_invariants(repository_root: Path) -> JsonObject:
             _historical_write_result(repository_root, "audit_astrohd_cross_class_core_fit.py"),
             _historical_write_result(repository_root, "audit_astrohd_rank_tiebreak_downstream.py"),
         ],
+        "prior_convergence_audit": {
+            "expected_sha256": EXPECTED_PRIOR_CONVERGENCE_AUDIT_SHA256,
+            "path": PRIOR_CONVERGENCE_AUDIT_PATH.as_posix(),
+            "sha256": sha256_bytes(prior_convergence_bytes),
+        },
     }
 
 
@@ -773,12 +892,13 @@ def build_audit(repository_root: Path = ROOT) -> JsonObject:
             repository_root
         ),
         "historical_audit_invariants": _historical_audit_invariants(repository_root),
+        "lock_receipt_contract": _lock_receipt_contract(repository_root),
         "mapping_question_bank_invariants": _mapping_question_bank_invariants(repository_root),
         "owner_correction_remnant_scan": _owner_correction_remnant_scan(repository_root),
         "pr_delta_inventory": _pr_delta_inventory(repository_root),
         "rank_semantics": _rank_semantics(repository_root),
         "runtime_symbol_scan": _runtime_symbol_scan(repository_root),
-        "schema_version": "astrohd-pr23-convergence-audit-v1",
+        "schema_version": "astrohd-pr23-convergence-v2",
         "status": "mechanical_final_pr_convergence_audit_no_runtime_effect",
         "theory_language_runtime_isolation": _theory_language_runtime_isolation(repository_root),
     }

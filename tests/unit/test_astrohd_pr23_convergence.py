@@ -11,9 +11,11 @@ from typing import Any
 import pytest
 
 ROOT = Path(__file__).parents[2]
-AUDIT_PATH = ROOT / "reference/audits/astrohd_pr23_convergence_v1.json"
+AUDIT_PATH = ROOT / "reference/audits/astrohd_pr23_convergence_v2.json"
+PRIOR_AUDIT_PATH = ROOT / "reference/audits/astrohd_pr23_convergence_v1.json"
+PRIOR_AUDIT_SHA256 = "952565c9da16d683711f2bdae1fc8cae974f9c17ce98166a2de00b54d6856e73"
 BASE_COMMIT = "afc0bb82de0e481ae5a5d3453e0bcaf82b2a0286"
-AUDITED_HEAD = "b3da97274c161a31e44cee3ef4159ca0d1d9a0dd"
+AUDITED_HEAD = "b5fd8b6a8c3e59374c1ac33bd518ed59bd81cdd5"
 
 
 def _auditor() -> ModuleType:
@@ -53,7 +55,7 @@ def _require_bound_git_history() -> None:
 def test_audited_git_boundary_is_exact() -> None:
     audit = _load()
 
-    assert audit["schema_version"] == "astrohd-pr23-convergence-audit-v1"
+    assert audit["schema_version"] == "astrohd-pr23-convergence-v2"
     assert audit["status"] == "mechanical_final_pr_convergence_audit_no_runtime_effect"
     assert audit["base_commit"] == BASE_COMMIT
     assert audit["audited_head"] == AUDITED_HEAD
@@ -83,6 +85,44 @@ def test_production_runtime_symbol_scan_contains_zero_forbidden_identifiers() ->
     assert scan["expected_production_runtime_occurrence_count"] == 0
     assert scan["occurrence_count"] == 0
     assert scan["occurrences"] == []
+
+
+def test_lock_receipt_contract_uses_only_resolved_mapped_question_names() -> None:
+    contract = _load()["lock_receipt_contract"]
+    internal = set(contract["confirmatory_lock_field_names"])
+    public = set(contract["public_confirmatory_lock_field_names"])
+    constructor = set(contract["lock_confirmatory_constructor_keywords"])
+    expected_internal = {
+        "adequately_assessed_mapped_question_count",
+        "mapped_scoreable_question_count",
+        "mapped_question_quality_gate_enforced",
+    }
+    expected_public = {
+        "adequately_assessed_mapped_question_count",
+        "mapped_scoreable_question_count",
+    }
+    superseded = {
+        "adequately_assessed_question_count",
+        "required_question_count",
+        "complete_profile_required",
+    }
+
+    assert set(contract["current_internal_lock_fields"]) == expected_internal
+    assert set(contract["current_public_lock_fields"]) == expected_public
+    assert expected_internal <= internal
+    assert expected_internal <= constructor
+    assert expected_public <= public
+    assert "mapped_question_quality_gate_enforced" not in public
+    assert superseded.isdisjoint(internal | public | constructor)
+    assert contract["runtime_superseded_literal_counts"] == {name: 0 for name in sorted(superseded)}
+    assert contract["active_openapi_superseded_literal_counts"] == {
+        name: 0 for name in sorted(superseded)
+    }
+    for schema in contract["custom_gpt_openapi_schemas"]:
+        fields = set(schema["public_confirmatory_lock_property_names"])
+        assert expected_public <= fields
+        assert "mapped_question_quality_gate_enforced" not in fields
+        assert superseded.isdisjoint(fields)
 
 
 def test_rank_order_and_equality_keys_match_corrected_specification() -> None:
@@ -194,6 +234,12 @@ def test_historical_audits_retain_hashes_and_generators_fail_closed() -> None:
         row["exception_class"] == "HistoricalAuditSourceMismatch" and row["output_created"] is False
         for row in invariant["generator_results_against_current_source"]
     )
+    assert invariant["prior_convergence_audit"] == {
+        "expected_sha256": PRIOR_AUDIT_SHA256,
+        "path": "reference/audits/astrohd_pr23_convergence_v1.json",
+        "sha256": PRIOR_AUDIT_SHA256,
+    }
+    assert hashlib.sha256(PRIOR_AUDIT_PATH.read_bytes()).hexdigest() == PRIOR_AUDIT_SHA256
 
 
 def test_freeze_compatibility_retains_exact_source_commit_binding() -> None:
