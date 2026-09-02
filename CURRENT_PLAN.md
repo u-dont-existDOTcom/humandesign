@@ -1,31 +1,28 @@
 # Current Research Plan
 
-## Extra High language-exposure and coverage directive — 2026-09-02
+## Execution-only theory-language scaffold correction — 2026-09-02
 
-A fresh signed-in ChatGPT Chat session visibly set to Extra High reviewed two owner
-proposals together. Receipt and verdict:
-`state/EXTRA-HIGH-CONTAMINATION-COVERAGE-REVIEW-2026-09-02.md`.
+The current reasoning-chat directive supersedes the substantive vocabulary and
+interpretive coverage artifacts first committed at `c0f401a`. The repository now
+contains only:
 
-The terminology proposal is accepted only after revision into a chart-blind,
-prediction-blind, non-blocking **theory-language exposure signal**. It describes
-observable wording consistent with prior terminology exposure; it does not label a
-participant contaminated or infer altered answers, endorsement, target knowledge, or
-causal bias. The participant continues. Eligibility, stopping, prompt flow, scoring,
-exclusion, and primary analysis remain unchanged.
+- the non-authoritative design input in
+  `docs/research/ASTROHD_THEORY_LANGUAGE_EXPOSURE_SIGNAL_SPEC.md`;
+- an exact-match detector scaffold with no production wiring;
+- a synthetic-placeholder-only codebook template and deterministic fixtures;
+- a mechanical extract of the existing frozen rule-to-prompt relationships; and
+- a blank future-item review template reserved for Extra-High/Pro scientific review.
 
-The questionnaire-expansion question is accepted for investigation, with no numeric
-mandate. The current audit finds 81 bank records (76 non-validation plus 5 validation),
-27 frozen mappings across 23 unique questions, 6 empirical-only questions, and 52
-unresolved questions. These are descriptive facts, not a completion policy. Audit the
-existing construct/rule coverage and non-frozen records before authoring additions;
-freeze any later candidate wording, mapping, scoring, and analysis lane prospectively.
-The endpoint is the smallest adequate questionnaire, not “70 more” or another quota.
+The mechanical source is `mappings/mapping_library_v1.json`. Filtering only records
+whose stored status is `frozen` yields exactly 27 distinct rules and 23 distinct mapped
+prompt identifiers. This is not a questionnaire-completeness denominator. The extract
+makes no construct-coverage, redundancy, discrimination, reliability, burden, leakage,
+or new-question judgment.
 
-Draft specification, codebook, hostile synthetic dry run, coverage audit, future-item
-template, and analysis-lane boundary are in
-`docs/38_astrohd_theory_language_exposure_and_coverage.md`. This draft does not change
-the live questionnaire or participant runtime. A post-questionnaire exposure self-report
-and any future primary/sensitivity use remain unapproved design choices.
+The theory-language feature remains diagnostic/stratification metadata with no current
+effect on eligibility, stopping, prompting, interviewer behavior, scoring, evidence
+sufficiency, progress, lock/reveal, primary analysis, exclusion, or release. No real
+astrology/Human Design vocabulary is present in the codebook template or fixtures.
 
 ## Owner correction: no completion policy existed — 2026-09-02
 

@@ -14,20 +14,18 @@ it is not being discarded or delayed until an arbitrary sample count.
 The owner pilot uses an exact recorded birth time. It is not the separate unknown-time
 rectification workflow described in the research handoff.
 
-The 2026-09-02 terminology proposal is now specified as a separate chart-blind,
-non-blocking theory-language exposure diagnostic. It can record participant wording
-consistent with prior astrology/HD terminology exposure while preserving prompt echo,
-stance, and language-assessability distinctions. It cannot call a participant
-contaminated, receive chart/prediction/result inputs, or change eligibility, interview
-flow, scoring, exclusion, or primary analysis. The draft is not integrated into this
-owner-pilot runtime; see
-`38_astrohd_theory_language_exposure_and_coverage.md`.
+The 2026-09-02 terminology proposal is specified separately as a chart-blind,
+non-blocking theory-language exposure diagnostic. Its repository implementation is an
+isolated exact-match scaffold using synthetic placeholders only. It cannot call a
+participant contaminated, receive chart/prediction/result inputs, or change eligibility,
+interview flow, evidence sufficiency, scoring, exclusion, lock/reveal, or primary
+analysis. It is not integrated into the owner-pilot runtime; see
+`research/ASTROHD_THEORY_LANGUAGE_EXPOSURE_SIGNAL_SPEC.md`.
 
-The same review found no basis for “70 more” questions or any item quota. The current
-bank already holds 81 records, while 27 frozen rules use 23 unique question IDs. The
-remaining empirical-only and unresolved records must be audited for prospective
-construct gaps before authoring additions. These counts are descriptive facts, not a
-completion policy or participant requirement.
+The frozen mapping mechanically contains 27 rules across 23 unique question IDs. Those
+counts are descriptive mapping facts, not a questionnaire-completeness denominator,
+participant requirement, or authorization to add questions. The mechanical extract is
+`../reference/audits/astrohd_frozen_rule_prompt_mapping_v1.json`.
 
 The participant page now states the research motivation plainly. This is the
 project's first real blinded test of astrology, Human Design, and their proposed

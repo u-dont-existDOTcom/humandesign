@@ -1,6 +1,6 @@
 # Current state
 
-## Verified Extra High exposure/coverage review — 2026-09-02
+## Execution-only theory-language scaffold — 2026-09-02
 
 - A clean ChatGPT Chat session on the signed-in `u-dont-exist.com` Pro account was
   visibly set to Extra High before submission and after the completed response.
@@ -9,19 +9,20 @@
   SHA-256 `ba0080b9a4f46fab4b69da3b451e4846342f87332563925df43886136d07665a`.
   Full observed-surface receipt:
   `state/EXTRA-HIGH-CONTAMINATION-COVERAGE-REVIEW-2026-09-02.md`.
-- Extra High verdict on participant terminology: `REVISE` to a chart-blind,
-  non-blocking theory-language exposure signal. It may preserve wording specificity,
-  source, stance, and language assessability, but it cannot infer that the participant
-  or answers are contaminated. It has no current eligibility, flow, scoring, exclusion,
-  or primary-analysis consequence.
-- Extra High verdict on more questionnaire items: investigate coverage but do not
-  require expansion. No “70 more” or other count is justified. The source audit finds
-  81 records, of which 23 are frozen-mapped, 6 empirical-only, and 52 unresolved;
-  5 of the 81 are validation records. These counts are descriptive only.
-- Draft artifacts and a ten-case synthetic dry run are implemented on PR #23. The dry
-  run covers prompt echo, ordinary/common language, quotation/rejection, multilingual
-  uncertainty, and identical-transcript chart isolation. It changes no participant
-  runtime or questionnaire.
+- The later execution-only directive supersedes the first `c0f401a` implementation's
+  real vocabulary and interpretive coverage analysis. Those artifacts are removed from
+  the current tree rather than treated as scientific authority.
+- The current scaffold uses only synthetic placeholder terms, exact normalized phrase
+  matching, explicit language metadata, and optional authorized stance/provenance
+  annotations. Stance defaults to `stance_unknown`; no automatic semantic stance,
+  translation, fuzzy, embedding, LLM, or chart-fit path exists.
+- The exact frozen mapping source is `mappings/mapping_library_v1.json`. A mechanical
+  status=`frozen` extract returns exactly 27 distinct rules and 23 distinct mapped
+  prompt identifiers. It makes no completeness, coverage, redundancy, quality, burden,
+  leakage, or new-question judgment.
+- The scaffold changes no participant runtime, questionnaire, eligibility, stopping,
+  prompting, evidence sufficiency, scoring, progress, lock/reveal, primary analysis,
+  exclusion, or release behavior.
 - No merge, deployment, invitation/session replacement, participant contact, or
   spending is authorized.
 
@@ -158,7 +159,7 @@
   cluster/binding fields and requiring exact server-side resolution from the immutable
   prediction freeze. The browser was recovered through the generic connected-extension
   selector bound to Brave; GitHub access stays on `gh`/local Git.
-- Current repaired-draft verification: 298 tests passed, one skipped because official
+- Current repaired-draft verification: 302 tests passed, one skipped because official
   Swiss files are unavailable; strict mypy passed for 120 source files; touched Ruff,
   both participant JavaScript syntax checks, OpenAPI parse/spec validation, and
   `git diff --check` passed. Whole-repository Ruff retains unrelated baseline failures.

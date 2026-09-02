@@ -1,10 +1,11 @@
-"""Chart-blind diagnostic for observable astrology/HD language exposure signals."""
+"""Exact-match, chart-blind theory-language exposure research scaffold."""
 
 from __future__ import annotations
 
 import hashlib
 import json
 import re
+import unicodedata
 from collections.abc import Sequence
 from enum import StrEnum
 from pathlib import Path
@@ -17,120 +18,125 @@ class FrozenModel(BaseModel):
     model_config = ConfigDict(extra="forbid", frozen=True)
 
 
-class LanguageSpecificity(StrEnum):
+class LexicalSpecificity(StrEnum):
     THEORY_SPECIFIC = "theory_specific"
     CONTEXT_DEPENDENT = "context_dependent"
-    ORDINARY_LANGUAGE_EXCLUSION = "ordinary_language_exclusion"
+    ORDINARY_LANGUAGE_EXCLUDED = "ordinary_language_excluded"
+
+
+class OccurrenceProvenance(StrEnum):
+    PARTICIPANT_SPONTANEOUS = "participant_spontaneous"
+    PARTICIPANT_AFTER_INTERVIEWER_SAME_TERM = "participant_after_interviewer_same_term"
+    QUOTED_OR_REPORTED_SOURCE = "quoted_or_reported_source"
+    PROVENANCE_UNKNOWN = "provenance_unknown"
 
 
 class ParticipantStance(StrEnum):
-    AFFIRMATIVE = "affirmative"
-    NEUTRAL_QUOTE = "neutral_quote"
-    EXPLICIT_REJECTION = "explicit_rejection"
-    PREVIOUS_EXPOSURE_MENTION = "previous_exposure_mention"
-    UNRESOLVED = "unresolved"
-
-
-class MatchSource(StrEnum):
-    PARTICIPANT_SPONTANEOUS = "participant_spontaneous"
-    INTERVIEWER_INTRODUCED_OR_ECHOED = "interviewer_introduced_or_echoed"
-    PARTICIPANT_QUOTED_OR_REPORTED = "participant_quoted_or_reported"
+    AFFIRMED = "affirmed"
+    NEUTRAL_OR_QUOTED = "neutral_or_quoted"
+    REJECTED = "rejected"
+    STANCE_UNKNOWN = "stance_unknown"
 
 
 class LanguageAssessability(StrEnum):
-    FULLY_ASSESSABLE = "fully_assessable"
-    PARTIALLY_ASSESSABLE = "partially_assessable"
-    NOT_ADEQUATELY_ASSESSABLE = "not_adequately_assessable"
-
-
-class ExposureSignalLevel(StrEnum):
-    THEORY_SPECIFIC_EXPOSURE_SIGNAL_PRESENT = "theory_specific_exposure_signal_present"
-    INTERVIEWER_ECHO_ONLY = "interviewer_echo_only"
-    CONTEXT_DEPENDENT_LANGUAGE_ONLY = "context_dependent_language_only"
-    NO_USABLE_THEORY_LANGUAGE_SIGNAL = "no_usable_theory_language_signal"
-    NOT_ASSESSED = "not_assessed"
+    ASSESSABLE = "assessable"
+    NOT_ASSESSABLE = "not_assessable"
+    LANGUAGE_UNKNOWN = "language_unknown"
 
 
 class TheoryLanguageEntry(FrozenModel):
-    entry_id: str = Field(pattern=r"^TL-[A-Z0-9-]+$")
-    theory: Literal["astrology", "human_design", "cross_theory"]
-    specificity: LanguageSpecificity
-    language: str = Field(pattern=r"^[a-z]{2,3}(?:-[A-Za-z0-9]+)*$")
-    expressions: tuple[str, ...] = Field(min_length=1)
-    rationale: str = Field(min_length=1)
-    validation_status: Literal["draft_not_validated"] = "draft_not_validated"
+    entry_id: str = Field(pattern=r"^[A-Z][A-Z0-9_-]*$")
+    exact_phrase: str = Field(min_length=1)
+    language_code: str = Field(min_length=1)
+    lexical_specificity: LexicalSpecificity
+    rationale_or_provenance_note: str | None = None
+    version: str = Field(min_length=1)
+    freeze_identifier: str = Field(min_length=1)
 
-    @field_validator("expressions")
+    @field_validator("exact_phrase", "language_code", "version", "freeze_identifier")
     @classmethod
-    def expressions_are_nonblank(cls, value: tuple[str, ...]) -> tuple[str, ...]:
-        if any(not expression.strip() for expression in value):
-            raise ValueError("codebook expressions cannot be blank")
+    def required_strings_are_not_whitespace(cls, value: str) -> str:
+        if not value.strip():
+            raise ValueError("required codebook strings cannot be whitespace")
         return value
 
 
 class TheoryLanguageCodebook(FrozenModel):
-    schema_version: Literal["astrohd-theory-language-codebook-v0.1"]
-    status: Literal["draft_evaluation_only_not_validated"]
-    supported_languages: tuple[str, ...] = Field(min_length=1)
+    schema_version: Literal["astrohd-theory-language-codebook-template-v1"]
+    status: Literal["draft_synthetic_template_non_authority"]
+    version: str = Field(min_length=1)
+    freeze_identifier: str = Field(min_length=1)
     entries: tuple[TheoryLanguageEntry, ...] = Field(min_length=1)
-    forbidden_uses: tuple[str, ...] = Field(min_length=1)
 
     @model_validator(mode="after")
-    def identifiers_and_expressions_are_unique(self) -> TheoryLanguageCodebook:
-        ids = [entry.entry_id for entry in self.entries]
-        if len(ids) != len(set(ids)):
+    def identifiers_and_exact_phrases_are_unique(self) -> TheoryLanguageCodebook:
+        identifiers = [entry.entry_id for entry in self.entries]
+        if len(identifiers) != len(set(identifiers)):
             raise ValueError("theory-language entry IDs must be unique")
-        seen: set[tuple[str, str]] = set()
+
+        phrase_keys: set[tuple[str, str]] = set()
         for entry in self.entries:
-            if entry.language not in self.supported_languages:
-                raise ValueError("entry language must be declared supported")
-            for expression in entry.expressions:
-                key = (entry.language, _normalize(expression))
-                if key in seen:
-                    raise ValueError("codebook expressions must be unique per language")
-                seen.add(key)
+            if entry.version != self.version:
+                raise ValueError("entry version must match codebook version")
+            if entry.freeze_identifier != self.freeze_identifier:
+                raise ValueError("entry freeze identifier must match the codebook")
+            key = (entry.language_code, normalize_for_exact_matching(entry.exact_phrase))
+            if key in phrase_keys:
+                raise ValueError("exact phrases must be unique per language")
+            phrase_keys.add(key)
         return self
+
+    @property
+    def language_codes(self) -> frozenset[str]:
+        return frozenset(entry.language_code for entry in self.entries)
 
 
 class TranscriptTurn(FrozenModel):
     turn_id: str = Field(pattern=r"^TURN-[A-Za-z0-9_-]+$")
     speaker: Literal["interviewer", "participant"]
     text: str = Field(min_length=1)
-    language: str = Field(pattern=r"^[a-z]{2,3}(?:-[A-Za-z0-9]+)*$")
-    stance_annotation: ParticipantStance = ParticipantStance.UNRESOLVED
+    response_language: str | None = None
+    stance_annotation: ParticipantStance = ParticipantStance.STANCE_UNKNOWN
+    provenance_annotation: (
+        Literal[
+            OccurrenceProvenance.QUOTED_OR_REPORTED_SOURCE,
+            OccurrenceProvenance.PROVENANCE_UNKNOWN,
+        ]
+        | None
+    ) = None
+
+    @field_validator("response_language")
+    @classmethod
+    def language_is_not_blank(cls, value: str | None) -> str | None:
+        if value is not None and not value.strip():
+            raise ValueError("response language cannot be blank")
+        return value
 
 
-class TheoryLanguageMatch(FrozenModel):
+class TheoryLanguageOccurrence(FrozenModel):
     turn_id: str
     entry_id: str
-    theory: Literal["astrology", "human_design", "cross_theory"]
-    specificity: LanguageSpecificity
-    matched_expression: str
-    source: MatchSource
+    normalized_exact_phrase: str
+    language_code: str
+    lexical_specificity: LexicalSpecificity
+    provenance: OccurrenceProvenance
     stance: ParticipantStance
 
 
-class ExposureConsequences(FrozenModel):
-    diagnostic_or_stratification_only: Literal[True] = True
-    eligibility_unchanged: Literal[True] = True
-    questionnaire_flow_unchanged: Literal[True] = True
-    scoring_unchanged: Literal[True] = True
-    primary_analysis_unchanged: Literal[True] = True
-
-
 class TheoryLanguageExposureAssessment(FrozenModel):
-    schema_version: Literal["astrohd-theory-language-exposure-assessment-v0.1"] = (
-        "astrohd-theory-language-exposure-assessment-v0.1"
+    schema_version: Literal["astrohd-theory-language-exposure-assessment-v1"] = (
+        "astrohd-theory-language-exposure-assessment-v1"
     )
-    signal_level: ExposureSignalLevel
+    status: Literal["draft_non_authority_no_runtime_effect"] = (
+        "draft_non_authority_no_runtime_effect"
+    )
+    matching_policy: Literal["frozen_exact_phrase_only"] = "frozen_exact_phrase_only"
     language_assessability: LanguageAssessability
-    assessed_languages: tuple[str, ...]
-    unassessed_languages: tuple[str, ...]
-    matches: tuple[TheoryLanguageMatch, ...]
+    occurrences: tuple[TheoryLanguageOccurrence, ...]
+    theory_specific_exposure_evidence_present: bool
     codebook_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
-    chart_and_prediction_inputs_absent: Literal[True] = True
-    causal_contamination_inference_permitted: Literal[False] = False
-    consequences: ExposureConsequences = Field(default_factory=ExposureConsequences)
+    target_chart_and_prediction_inputs_absent: Literal[True] = True
+    participant_effects: Literal["none_diagnostic_metadata_only"] = "none_diagnostic_metadata_only"
 
 
 def load_theory_language_codebook(
@@ -148,132 +154,95 @@ def assess_theory_language_exposure(
     codebook: TheoryLanguageCodebook,
     codebook_sha256: str,
 ) -> TheoryLanguageExposureAssessment:
-    """Assess observable wording without access to charts, predictions, scores, or results."""
+    """Return exact lexical occurrences without chart, prediction, or outcome inputs."""
 
-    assessed_languages = sorted(
-        {turn.language for turn in transcript if turn.language in codebook.supported_languages}
-    )
-    unassessed_languages = sorted(
-        {turn.language for turn in transcript if turn.language not in codebook.supported_languages}
-    )
-    if assessed_languages and unassessed_languages:
-        assessability = LanguageAssessability.PARTIALLY_ASSESSABLE
-    elif assessed_languages:
-        assessability = LanguageAssessability.FULLY_ASSESSABLE
-    else:
-        assessability = LanguageAssessability.NOT_ADEQUATELY_ASSESSABLE
+    participant_turns = tuple(turn for turn in transcript if turn.speaker == "participant")
+    language_assessability = _language_assessability(participant_turns, codebook)
+    if language_assessability is not LanguageAssessability.ASSESSABLE:
+        return TheoryLanguageExposureAssessment(
+            language_assessability=language_assessability,
+            occurrences=(),
+            theory_specific_exposure_evidence_present=False,
+            codebook_sha256=codebook_sha256,
+        )
 
     entries_by_language: dict[str, tuple[TheoryLanguageEntry, ...]] = {
-        language: tuple(entry for entry in codebook.entries if entry.language == language)
-        for language in codebook.supported_languages
+        language_code: tuple(
+            entry for entry in codebook.entries if entry.language_code == language_code
+        )
+        for language_code in codebook.language_codes
     }
-    interviewer_seen: set[str] = set()
-    matches: list[TheoryLanguageMatch] = []
+    interviewer_phrases_seen: set[tuple[str, str]] = set()
+    occurrences: list[TheoryLanguageOccurrence] = []
     for turn in transcript:
-        if turn.language not in codebook.supported_languages:
+        if turn.response_language is None:
             continue
-        for entry, expression in _turn_matches(turn.text, entries_by_language[turn.language]):
-            if turn.speaker == "interviewer":
-                interviewer_seen.add(entry.entry_id)
+        for entry in entries_by_language.get(turn.response_language, ()):
+            normalized_phrase = normalize_for_exact_matching(entry.exact_phrase)
+            if not _contains_exact_phrase(turn.text, normalized_phrase):
                 continue
-            if entry.entry_id in interviewer_seen:
-                source = MatchSource.INTERVIEWER_INTRODUCED_OR_ECHOED
-            elif turn.stance_annotation in {
-                ParticipantStance.NEUTRAL_QUOTE,
-                ParticipantStance.EXPLICIT_REJECTION,
-                ParticipantStance.PREVIOUS_EXPOSURE_MENTION,
-            }:
-                source = MatchSource.PARTICIPANT_QUOTED_OR_REPORTED
-            else:
-                source = MatchSource.PARTICIPANT_SPONTANEOUS
-            matches.append(
-                TheoryLanguageMatch(
+            phrase_key = (turn.response_language, normalized_phrase)
+            if turn.speaker == "interviewer":
+                interviewer_phrases_seen.add(phrase_key)
+                continue
+            provenance = _participant_provenance(
+                turn,
+                phrase_key=phrase_key,
+                interviewer_phrases_seen=interviewer_phrases_seen,
+            )
+            occurrences.append(
+                TheoryLanguageOccurrence(
                     turn_id=turn.turn_id,
                     entry_id=entry.entry_id,
-                    theory=entry.theory,
-                    specificity=entry.specificity,
-                    matched_expression=expression,
-                    source=source,
+                    normalized_exact_phrase=normalized_phrase,
+                    language_code=entry.language_code,
+                    lexical_specificity=entry.lexical_specificity,
+                    provenance=provenance,
                     stance=turn.stance_annotation,
                 )
             )
 
-    signal_level = _signal_level(matches, assessability)
     return TheoryLanguageExposureAssessment(
-        signal_level=signal_level,
-        language_assessability=assessability,
-        assessed_languages=tuple(assessed_languages),
-        unassessed_languages=tuple(unassessed_languages),
-        matches=tuple(matches),
+        language_assessability=language_assessability,
+        occurrences=tuple(occurrences),
+        theory_specific_exposure_evidence_present=any(
+            occurrence.lexical_specificity is LexicalSpecificity.THEORY_SPECIFIC
+            for occurrence in occurrences
+        ),
         codebook_sha256=codebook_sha256,
     )
 
 
-def _signal_level(
-    matches: Sequence[TheoryLanguageMatch],
-    assessability: LanguageAssessability,
-) -> ExposureSignalLevel:
-    if assessability is LanguageAssessability.NOT_ADEQUATELY_ASSESSABLE:
-        return ExposureSignalLevel.NOT_ASSESSED
-    theory_specific = [
-        match for match in matches if match.specificity is LanguageSpecificity.THEORY_SPECIFIC
-    ]
-    if any(
-        match.source is not MatchSource.INTERVIEWER_INTRODUCED_OR_ECHOED
-        for match in theory_specific
-    ):
-        return ExposureSignalLevel.THEORY_SPECIFIC_EXPOSURE_SIGNAL_PRESENT
-    if theory_specific:
-        return ExposureSignalLevel.INTERVIEWER_ECHO_ONLY
-    if any(match.specificity is LanguageSpecificity.CONTEXT_DEPENDENT for match in matches):
-        return ExposureSignalLevel.CONTEXT_DEPENDENT_LANGUAGE_ONLY
-    return ExposureSignalLevel.NO_USABLE_THEORY_LANGUAGE_SIGNAL
+def normalize_for_exact_matching(text: str) -> str:
+    """Apply only NFKC, case folding, and whitespace normalization."""
+
+    return " ".join(unicodedata.normalize("NFKC", text).casefold().split())
 
 
-def _normalize(text: str) -> str:
-    return " ".join(text.casefold().split())
+def _language_assessability(
+    participant_turns: Sequence[TranscriptTurn], codebook: TheoryLanguageCodebook
+) -> LanguageAssessability:
+    if not participant_turns or any(turn.response_language is None for turn in participant_turns):
+        return LanguageAssessability.LANGUAGE_UNKNOWN
+    if any(turn.response_language not in codebook.language_codes for turn in participant_turns):
+        return LanguageAssessability.NOT_ASSESSABLE
+    return LanguageAssessability.ASSESSABLE
 
 
-def _first_match(text: str, expressions: Sequence[str]) -> str | None:
-    match = _first_match_with_span(text, expressions)
-    return None if match is None else match[0]
+def _contains_exact_phrase(text: str, normalized_phrase: str) -> bool:
+    normalized_text = normalize_for_exact_matching(text)
+    escaped_phrase = re.escape(normalized_phrase).replace(r"\ ", r"\s+")
+    return re.search(rf"(?<!\w){escaped_phrase}(?!\w)", normalized_text) is not None
 
 
-def _first_match_with_span(
-    text: str, expressions: Sequence[str]
-) -> tuple[str, tuple[int, int]] | None:
-    normalized = _normalize(text)
-    for expression in expressions:
-        candidate = _normalize(expression)
-        escaped_candidate = re.escape(candidate).replace(r"\ ", r"\s+")
-        pattern = rf"(?<!\w){escaped_candidate}(?!\w)"
-        if match := re.search(pattern, normalized):
-            return expression, match.span()
-    return None
-
-
-def _turn_matches(
-    text: str, entries: Sequence[TheoryLanguageEntry]
-) -> tuple[tuple[TheoryLanguageEntry, str], ...]:
-    raw: list[tuple[TheoryLanguageEntry, str, tuple[int, int]]] = []
-    for entry in entries:
-        if match := _first_match_with_span(text, entry.expressions):
-            expression, span = match
-            raw.append((entry, expression, span))
-
-    specificity_rank = {
-        LanguageSpecificity.CONTEXT_DEPENDENT: 1,
-        LanguageSpecificity.ORDINARY_LANGUAGE_EXCLUSION: 2,
-        LanguageSpecificity.THEORY_SPECIFIC: 3,
-    }
-    retained = []
-    for entry, expression, span in raw:
-        contained_by_more_specific = any(
-            other_span[0] <= span[0]
-            and other_span[1] >= span[1]
-            and specificity_rank[other_entry.specificity] > specificity_rank[entry.specificity]
-            for other_entry, _, other_span in raw
-        )
-        if not contained_by_more_specific:
-            retained.append((entry, expression))
-    return tuple(retained)
+def _participant_provenance(
+    turn: TranscriptTurn,
+    *,
+    phrase_key: tuple[str, str],
+    interviewer_phrases_seen: set[tuple[str, str]],
+) -> OccurrenceProvenance:
+    if phrase_key in interviewer_phrases_seen:
+        return OccurrenceProvenance.PARTICIPANT_AFTER_INTERVIEWER_SAME_TERM
+    if turn.provenance_annotation is not None:
+        return OccurrenceProvenance(turn.provenance_annotation)
+    return OccurrenceProvenance.PARTICIPANT_SPONTANEOUS

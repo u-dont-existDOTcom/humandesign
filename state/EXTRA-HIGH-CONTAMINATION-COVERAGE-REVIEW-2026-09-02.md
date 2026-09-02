@@ -94,11 +94,11 @@ primary-analysis isolation, no numeric mandate, and prospective candidate-item f
 No current questionnaire, scoring, flow, lock, or participant-runtime change was
 authorized.
 
-## Execution result
+## Superseded execution result
 
-The bounded artifacts are implemented in draft PR #23. The source audit reports 81
-question-bank records: 76 non-validation and 5 validation. It reports 27 frozen mapping
-rules across 23 unique questions, 6 empirical-only questions, and 52 unresolved
-questions. These are descriptive coverage facts, not a completion policy. The synthetic
-dry run passes all ten cases, including two identical transcript copies, without any
-chart or prediction input.
+The first implementation at `c0f401a` exceeded the later execution-only directive by
+adding substantive vocabulary and interpretive coverage material. The subsequent
+directive preserves this historical review receipt but supersedes that implementation.
+The final tree uses only synthetic codebook/fixture placeholders and a mechanical
+27-rule/23-prompt extract. It makes no coverage-adequacy or new-question judgment and
+has no participant-runtime effect.
