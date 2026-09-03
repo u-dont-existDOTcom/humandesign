@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import os
 from pathlib import Path
+from typing import Any
 
 from fastapi import FastAPI
 
@@ -26,4 +27,23 @@ def create_life_patterns_product_app_from_env() -> FastAPI:
         store=product_store,
         coach=OpenAILifePatternsCoach.from_env(),
     )
+
+    # Replace the lower-level interview health response with the capabilities of this
+    # composed product surface so operations do not falsely report voice as disabled.
+    app.router.routes[:] = [
+        route for route in app.router.routes if getattr(route, "path", None) != "/healthz"
+    ]
+
+    @app.get("/healthz")
+    def product_health() -> dict[str, Any]:
+        return {
+            "status": "ok",
+            "product": "discover-your-unique-life-patterns",
+            "email_recovery_configured": bool(os.environ.get("HDMATCH_SMTP_PASSWORD", "").strip()),
+            "participant_review_required": True,
+            "voice_enabled": True,
+            "behavioral_freeze_enabled": True,
+            "coach_enabled": True,
+        }
+
     return app
