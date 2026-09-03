@@ -17,7 +17,11 @@ from hdmatch.api.life_patterns_recovery import LifePatternsRecoveryService, Life
 
 
 class FakeMapper:
+    def __init__(self) -> None:
+        self.seen: list[dict[str, Any]] | None = None
+
     def build(self, episodes: list[dict[str, Any]]) -> tuple[LifePatternsMap, dict[str, str]]:
+        self.seen = episodes
         if len(episodes) < 2:
             raise ValueError("at least two saved episodes are required before generating a map")
         return (
@@ -132,7 +136,7 @@ async def _asgi_request(
             "root_path": "",
             "headers": headers,
             "client": ("test", 123),
-            "server": ("test", 443),
+            "server": ("testserver", 443),
             "state": {},
         },
     )
@@ -182,6 +186,17 @@ def _create(app: FastAPI) -> tuple[str, str]:
     return str(payload["session_id"]), str(payload["resume_token"])
 
 
+def _approve(app: FastAPI, session_id: str, token: str, episode_id: str) -> dict[str, Any]:
+    status, payload = _request(
+        app,
+        "POST",
+        f"/api/life-patterns/interview/sessions/{session_id}/episodes/{episode_id}/review",
+        body={"token": token, "action": "approve"},
+    )
+    assert status == 200
+    return payload
+
+
 def test_interviewer_is_model_blind_and_email_is_hash_only(tmp_path: Path) -> None:
     store = LifePatternsFileStore(tmp_path / "patterns")
     interviewer = FakeInterviewer()
@@ -204,9 +219,162 @@ def test_interviewer_is_model_blind_and_email_is_hash_only(tmp_path: Path) -> No
     )
     assert status == 200
     assert payload["episode_saved"] is True
+    assert payload["episode"]["review_status"] == "pending"
+    assert payload["progress"]["episode_count"] == 0
     serialized = json.dumps(interviewer.calls[0]).casefold()
     for forbidden in ("birth", "astrology", "human design", "candidate_state", "chart", "model_fit", "rank"):
         assert forbidden not in serialized
+
+
+def test_pending_episode_requires_participant_review_before_evidence_use(tmp_path: Path) -> None:
+    store = LifePatternsFileStore(tmp_path / "patterns")
+    mapper = FakeMapper()
+    app = create_life_patterns_interview_app(
+        store=store,
+        interviewer=FakeInterviewer(),
+        mapper=mapper,
+        recovery=LifePatternsRecoveryService(store, None),
+    )
+    session_id, token = _create(app)
+    status, turn = _request(
+        app,
+        "POST",
+        f"/api/life-patterns/interview/sessions/{session_id}/turns",
+        body={"token": token, "message": "A concrete decision episode.", "input_modality": "typed"},
+    )
+    assert status == 200
+    episode_id = str(turn["episode"]["episode_id"])
+    assert turn["progress"]["provisional_episode_count"] == 1
+    assert turn["map_available"] is False
+
+    status, _ = _request(
+        app,
+        "POST",
+        f"/api/life-patterns/interview/sessions/{session_id}/map",
+        body={"token": token},
+    )
+    assert status == 409
+    assert mapper.seen == []
+
+    reviewed = _approve(app, session_id, token, episode_id)
+    assert reviewed["episode"]["review_status"] == "approved"
+    assert reviewed["progress"]["episode_count"] == 1
+    assert reviewed["progress"]["provisional_episode_count"] == 0
+
+
+def test_participant_can_edit_or_reject_ai_episode_summary(tmp_path: Path) -> None:
+    store = LifePatternsFileStore(tmp_path / "patterns")
+    app = create_life_patterns_interview_app(
+        store=store,
+        interviewer=FakeInterviewer(),
+        mapper=FakeMapper(),
+        recovery=LifePatternsRecoveryService(store, None),
+    )
+    session_id, token = _create(app)
+    status, turn = _request(
+        app,
+        "POST",
+        f"/api/life-patterns/interview/sessions/{session_id}/turns",
+        body={"token": token, "message": "A story the AI may oversimplify.", "input_modality": "typed"},
+    )
+    assert status == 200
+    episode_id = str(turn["episode"]["episode_id"])
+    status, edited = _request(
+        app,
+        "POST",
+        f"/api/life-patterns/interview/sessions/{session_id}/episodes/{episode_id}/review",
+        body={
+            "token": token,
+            "action": "edit",
+            "domain": "work_projects",
+            "title": "My corrected title",
+            "narrative": "This is what I actually meant, preserving the context I care about.",
+            "counterexample": "There was also a case where I acted differently.",
+        },
+    )
+    assert status == 200
+    episode = cast(dict[str, Any], edited["episode"])
+    assert episode["review_status"] == "approved"
+    assert episode["participant_revision"] is True
+    assert episode["domain"] == "work_projects"
+    assert episode["title"] == "My corrected title"
+
+    payload = store.read(session_id, token)
+    episodes = cast(list[dict[str, Any]], payload["episodes"])
+    episodes.append(
+        {
+            "episode_id": "EP-REJECT",
+            "domain": "other",
+            "title": "Bad summary",
+            "narrative": "Incorrect.",
+            "counterexample": None,
+            "input_modality": "typed",
+            "source_turn_ids": [],
+            "review_status": "pending",
+            "participant_revision": False,
+            "reviewed_at_utc": None,
+            "created_at_utc": datetime.now(UTC).isoformat(),
+        }
+    )
+    store.save(payload)
+    status, rejected = _request(
+        app,
+        "POST",
+        f"/api/life-patterns/interview/sessions/{session_id}/episodes/EP-REJECT/review",
+        body={"token": token, "action": "reject"},
+    )
+    assert status == 200
+    assert rejected["episode"]["review_status"] == "rejected"
+    assert rejected["progress"]["rejected_episode_count"] == 1
+    assert rejected["progress"]["episode_count"] == 1
+
+
+def test_map_and_export_use_only_participant_approved_episodes(tmp_path: Path) -> None:
+    store = LifePatternsFileStore(tmp_path / "patterns")
+    mapper = FakeMapper()
+    app = create_life_patterns_interview_app(
+        store=store,
+        interviewer=FakeInterviewer(),
+        mapper=mapper,
+        recovery=LifePatternsRecoveryService(store, None),
+    )
+    session_id, token = _create(app)
+    payload = store.read(session_id, token)
+    base = {
+        "counterexample": None,
+        "input_modality": "typed",
+        "source_turn_ids": [],
+        "participant_revision": False,
+        "reviewed_at_utc": datetime.now(UTC).isoformat(),
+        "created_at_utc": datetime.now(UTC).isoformat(),
+    }
+    payload["episodes"] = [
+        {**base, "episode_id": "EP-A", "domain": "decisions", "title": "Approved A", "narrative": "First approved episode.", "review_status": "approved"},
+        {**base, "episode_id": "EP-B", "domain": "relationships", "title": "Approved B", "narrative": "Second approved episode.", "review_status": "approved"},
+        {**base, "episode_id": "EP-P", "domain": "work_projects", "title": "Pending", "narrative": "Not yet accepted.", "review_status": "pending", "reviewed_at_utc": None},
+        {**base, "episode_id": "EP-R", "domain": "other", "title": "Rejected", "narrative": "Rejected evidence.", "review_status": "rejected"},
+    ]
+    store.save(payload)
+
+    status, _ = _request(
+        app,
+        "POST",
+        f"/api/life-patterns/interview/sessions/{session_id}/map",
+        body={"token": token},
+    )
+    assert status == 200
+    assert mapper.seen is not None
+    assert [row["episode_id"] for row in mapper.seen] == ["EP-A", "EP-B"]
+
+    status, exported = _request(
+        app,
+        "GET",
+        f"/api/life-patterns/interview/sessions/{session_id}/export?token={token}",
+    )
+    assert status == 200
+    profile = cast(dict[str, Any], exported["profile_json"])
+    assert profile["evidence_episode_ids"] == ["EP-A", "EP-B"]
+    assert profile["evidence_policy"] == "participant_approved_episodes_only"
 
 
 def test_user_turn_survives_provider_failure(tmp_path: Path) -> None:
@@ -275,19 +443,21 @@ def test_otp_recovery_hashes_code_and_rotates_token(tmp_path: Path) -> None:
 
 def test_inner_signal_export_is_consent_read_only_policy(tmp_path: Path) -> None:
     store = LifePatternsFileStore(tmp_path / "patterns")
+    mapper = FakeMapper()
     app = create_life_patterns_interview_app(
         store=store,
         interviewer=FakeInterviewer(),
-        mapper=FakeMapper(),
+        mapper=mapper,
         recovery=LifePatternsRecoveryService(store, None),
     )
     session_id, token = _create(app)
     payload = store.read(session_id, token)
+    now = datetime.now(UTC).isoformat()
     payload["episodes"] = [
-        {"episode_id": "EP-1", "domain": "decisions", "title": "One", "narrative": "First.", "counterexample": None, "input_modality": "typed", "created_at_utc": datetime.now(UTC).isoformat()},
-        {"episode_id": "EP-2", "domain": "relationships", "title": "Two", "narrative": "Second.", "counterexample": None, "input_modality": "typed", "created_at_utc": datetime.now(UTC).isoformat()},
+        {"episode_id": "EP-1", "domain": "decisions", "title": "One", "narrative": "First.", "counterexample": None, "input_modality": "typed", "source_turn_ids": [], "review_status": "approved", "participant_revision": False, "reviewed_at_utc": now, "created_at_utc": now},
+        {"episode_id": "EP-2", "domain": "relationships", "title": "Two", "narrative": "Second.", "counterexample": None, "input_modality": "typed", "source_turn_ids": [], "review_status": "approved", "participant_revision": False, "reviewed_at_utc": now, "created_at_utc": now},
     ]
-    mapped, _ = FakeMapper().build(cast(list[dict[str, Any]], payload["episodes"]))
+    mapped, _ = mapper.build(cast(list[dict[str, Any]], payload["episodes"]))
     payload["life_patterns_map"] = mapped.model_dump(mode="json")
     store.save(payload)
 
