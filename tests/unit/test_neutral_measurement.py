@@ -224,6 +224,14 @@ def _freeze_artifact() -> dict[str, object]:
     }
 
 
+def _rebind_outer_freeze_identity(artifact: dict[str, object]) -> None:
+    payload = artifact["payload"]
+    assert isinstance(payload, dict)
+    digest = sha256_json(payload)
+    artifact["freeze_sha256"] = digest
+    artifact["freeze_id"] = f"BPF-{digest[:20].upper()}"
+
+
 def _human_coder() -> CoderIdentity:
     return CoderIdentity(
         coder_id="HUMAN-CODER-SYNTHETIC",
@@ -373,7 +381,28 @@ def test_freeze_evidence_index_binds_episode_hashes_and_provenance() -> None:
     episodes = source["approved_episodes"]
     assert isinstance(episodes, list)
     episodes[0]["narrative"] = "TAMPERED"
+    with pytest.raises(ValueError, match="content-address verification"):
+        freeze_evidence_index_from_artifact(artifact)
+
+    _rebind_outer_freeze_identity(artifact)
     with pytest.raises(ValueError, match="episode hash"):
+        freeze_evidence_index_from_artifact(artifact)
+
+
+def test_freeze_evidence_index_binds_source_turn_hashes() -> None:
+    artifact = _freeze_artifact()
+    payload = artifact["payload"]
+    assert isinstance(payload, dict)
+    source = payload["behavioral_source"]
+    assert isinstance(source, dict)
+    turns = source["participant_source_turns"]
+    assert isinstance(turns, list)
+    turns[0]["text"] = "TAMPERED SOURCE TURN"
+    with pytest.raises(ValueError, match="content-address verification"):
+        freeze_evidence_index_from_artifact(artifact)
+
+    _rebind_outer_freeze_identity(artifact)
+    with pytest.raises(ValueError, match="source-turn hash"):
         freeze_evidence_index_from_artifact(artifact)
 
 
