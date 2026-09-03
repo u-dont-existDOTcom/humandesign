@@ -12,7 +12,6 @@ import json
 import os
 import uuid
 from datetime import UTC, datetime
-from pathlib import Path
 from typing import Any, Literal, cast
 
 from fastapi import FastAPI, HTTPException
@@ -92,7 +91,9 @@ def _source_turns(
     return [
         row
         for row in turns
-        if row.get("role") == "user" and isinstance(row.get("turn_id"), str) and row["turn_id"] in wanted
+        if row.get("role") == "user"
+        and isinstance(row.get("turn_id"), str)
+        and row["turn_id"] in wanted
     ]
 
 
@@ -381,7 +382,11 @@ def register_life_patterns_freeze_routes(
         if request.action == "edit":
             assert request.summary is not None
             revision = {
-                "title": request.title.strip() if request.title and request.title.strip() else original["title"],
+                "title": (
+                    request.title.strip()
+                    if request.title and request.title.strip()
+                    else original["title"]
+                ),
                 "summary": request.summary.strip(),
                 "status": request.status or original["status"],
             }
@@ -423,7 +428,10 @@ def register_life_patterns_freeze_routes(
         if _current_candidate_digest(payload) != candidate.get("candidate_sha256"):
             raise HTTPException(
                 status_code=409,
-                detail="the live evidence changed after this review candidate was created; rebuild the current map and review a new candidate",
+                detail=(
+                    "the live evidence changed after this review candidate was created; "
+                    "rebuild the current map and review a new candidate"
+                ),
             )
         effective_claims, admissible = _effective_claims(candidate)
         source = cast(dict[str, Any], candidate["source"])
@@ -458,7 +466,10 @@ def register_life_patterns_freeze_routes(
                 ],
                 "entities": {
                     "participant_source_turn_ids": list(
-                        cast(dict[str, str], source.get("participant_source_turn_sha256", {})).keys()
+                        cast(
+                            dict[str, str],
+                            source.get("participant_source_turn_sha256", {}),
+                        ).keys()
                     ),
                     "approved_episode_ids": list(
                         cast(dict[str, str], source.get("approved_episode_sha256", {})).keys()
@@ -494,7 +505,10 @@ def register_life_patterns_freeze_routes(
         try:
             relpath = _write_immutable_freeze(store, artifact=artifact, freeze_id=freeze_id)
         except (OSError, UnicodeError, RuntimeError) as exc:
-            raise HTTPException(status_code=500, detail="behavioral freeze artifact could not be finalized") from exc
+            raise HTTPException(
+                status_code=500,
+                detail="behavioral freeze artifact could not be finalized",
+            ) from exc
         receipt = FreezeReceipt(
             freeze_id=freeze_id,
             freeze_sha256=digest,
