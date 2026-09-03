@@ -32,7 +32,8 @@ The current PR #24 branch may implement only **content-neutral measurement infra
 - generic human/automated reliability-report schemas;
 - generic deterministic aggregation interfaces;
 - synthetic fixtures using obviously non-substantive placeholders such as `OBSERVABLE_ALPHA`;
-- validators that block substantive execution until an eligible human-authored content artifact is supplied and separately approved/frozen.
+- validators that block substantive execution until an eligible human-authored content artifact is supplied and separately approved/frozen;
+- verification/import adapters that bind externally validated H1 receipts to exact content hashes without performing H1 adjudication.
 
 ## Synthetic fixture rule
 
@@ -63,7 +64,9 @@ A future substantive release must carry an external human-content authority rece
 - content-review status;
 - reliability/validation status required by the measurement-bridge specification.
 
-Software tests in this PR can verify that the receipt is structurally required. They cannot manufacture or satisfy that human scientific authority.
+The Life Patterns H1 adapter is **verification/import only**. It reuses the exact frozen Survey-v2 H1 contract and may verify already validated receipts, but it does not run adjudication, call an adjudication model, contact authors, or create eligibility. The existing Survey-v2 H1 freeze manifest is specification-only and does not itself authorize adjudication execution or H1 authorship.
+
+Software tests in this PR can verify that receipts are structurally required and internally bound. They cannot manufacture or satisfy the human scientific authority.
 
 ## No validity inference
 
