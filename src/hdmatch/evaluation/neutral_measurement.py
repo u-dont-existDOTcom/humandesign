@@ -559,14 +559,41 @@ def freeze_evidence_index_from_artifact(artifact: dict[str, Any]) -> FreezeEvide
         raise ValueError("behavioral freeze artifact has no behavioral source")
     episodes_raw = source.get("approved_episodes")
     episode_hashes_raw = source.get("approved_episode_sha256")
+    turns_raw = source.get("participant_source_turns")
     turn_hashes_raw = source.get("participant_source_turn_sha256")
-    if not isinstance(episodes_raw, list) or not isinstance(episode_hashes_raw, dict) or not isinstance(
-        turn_hashes_raw, dict
+    if (
+        not isinstance(episodes_raw, list)
+        or not isinstance(episode_hashes_raw, dict)
+        or not isinstance(turns_raw, list)
+        or not isinstance(turn_hashes_raw, dict)
     ):
         raise ValueError("behavioral freeze evidence index is incomplete")
     episodes = cast(list[dict[str, Any]], episodes_raw)
     episode_hashes = cast(dict[str, str], episode_hashes_raw)
+    turns = cast(list[dict[str, Any]], turns_raw)
     turn_hashes = cast(dict[str, str], turn_hashes_raw)
+    turn_ids: list[str] = []
+    for turn in turns:
+        turn_id = turn.get("turn_id")
+        if not isinstance(turn_id, str) or not turn_id:
+            raise ValueError("behavioral freeze contains a source turn with an invalid identity")
+        turn_ids.append(turn_id)
+    if len(turn_ids) != len(set(turn_ids)):
+        raise ValueError("behavioral freeze contains duplicate source-turn identities")
+    if set(turn_ids) != set(turn_hashes):
+        raise ValueError("behavioral freeze source-turn hash index does not match frozen source turns")
+    if not all(
+        isinstance(turn_id, str)
+        and turn_id
+        and isinstance(turn_hash, str)
+        and len(turn_hash) == 64
+        for turn_id, turn_hash in turn_hashes.items()
+    ):
+        raise ValueError("behavioral freeze source-turn hash index is invalid")
+    for turn in turns:
+        turn_id = cast(str, turn["turn_id"])
+        if sha256_json(turn) != turn_hashes[turn_id]:
+            raise ValueError("behavioral freeze source-turn hash does not match source-turn content")
     episode_sources: dict[str, tuple[str, ...]] = {}
     modalities: dict[str, InputModality] = {}
     revised: dict[str, bool] = {}
