@@ -7,7 +7,7 @@ from .life_patterns_voice_ui import VOICE_SCRIPT
 REVIEW_SCRIPT = r'''<script>
 (function(){
   const reviewRoot=document.createElement('div');reviewRoot.id='episodeReviews';reviewRoot.className='card hidden';
-  reviewRoot.innerHTML='<h2>Check what I understood</h2><p class="note">AI summaries are provisional. Approve, edit, or reject them before they count toward your Life Patterns Map.</p><div id="episodeReviewList"></div>';
+  reviewRoot.innerHTML='<h2>Check what I understood</h2><p class="note">AI summaries are provisional. Approve, edit, or reject them before they count toward your Life Patterns Map. Review this summary before continuing the interview.</p><div id="episodeReviewList"></div>';
   const progressCard=document.getElementById('progress')?.closest('.card');
   if(progressCard)progressCard.insertAdjacentElement('afterend',reviewRoot);
   let refreshTimer=null;
@@ -17,7 +17,7 @@ REVIEW_SCRIPT = r'''<script>
     await api(`/api/life-patterns/interview/sessions/${encodeURIComponent(session.session_id)}/episodes/${encodeURIComponent(episodeId)}/review`,{method:'POST',body:JSON.stringify({token:session.resume_token,...body})});
     await refreshReviews();
     const payload=await api(`/api/life-patterns/interview/sessions/${encodeURIComponent(session.session_id)}?token=${encodeURIComponent(session.resume_token)}`);
-    renderProgress(payload.progress);
+    renderProgress(payload.progress);const send=document.getElementById('send');if(send)send.disabled=false;
   }
   function renderReview(episode){
     const box=document.createElement('div');box.className='card soft';
@@ -49,7 +49,8 @@ REVIEW_SCRIPT = r'''<script>
       const pending=(payload.episodes||[]).filter(row=>row.review_status==='pending');
       const list=document.getElementById('episodeReviewList');list.textContent='';
       if(!pending.length){reviewRoot.classList.add('hidden');return}
-      reviewRoot.classList.remove('hidden');for(const episode of pending)list.append(renderReview(episode));
+      const send=document.getElementById('send');if(send)send.disabled=true;
+      reviewRoot.classList.remove('hidden');for(const episode of pending)list.append(renderReview(episode));reviewRoot.scrollIntoView({behavior:'smooth',block:'nearest'});
     }catch{}
   }
   const observer=new MutationObserver(()=>{clearTimeout(refreshTimer);refreshTimer=setTimeout(refreshReviews,150)});
