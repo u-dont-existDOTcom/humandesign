@@ -809,8 +809,10 @@ def aggregate_person_observables(
         records = by_observable[observable_id]
         state_counts = Counter(record.state for record in records)
         applicable = len(records) - state_counts["not_applicable"]
-        informative = sum(
-            state_counts[state] for state in ("observed", "contradicted", "mixed")
+        informative = (
+            state_counts["observed"]
+            + state_counts["contradicted"]
+            + state_counts["mixed"]
         )
         counts: Counter[tuple[str, str]] = Counter()
         raw_values: dict[tuple[str, str], ScalarValue] = {}
