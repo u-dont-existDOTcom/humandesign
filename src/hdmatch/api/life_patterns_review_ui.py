@@ -7,6 +7,7 @@ from .life_patterns_voice_ui import VOICE_SCRIPT
 
 REVIEW_SCRIPT = r'''<script>
 (function(){
+  for(const note of document.querySelectorAll('#intro .note')){if(note.textContent.includes('Voice is planned next.'))note.textContent='Voice input is available: record an answer, review and correct the transcript, then send it. Typed and voice answers can be mixed in the same interview.'}
   const reviewRoot=document.createElement('div');reviewRoot.id='episodeReviews';reviewRoot.className='card hidden';
   reviewRoot.innerHTML='<h2>Check what I understood</h2><p class="note">AI summaries are provisional. Approve, edit, or reject them before they count toward your Life Patterns Map. Review this summary before continuing the interview.</p><div id="episodeReviewList"></div>';
   const progressCard=document.getElementById('progress')?.closest('.card');
