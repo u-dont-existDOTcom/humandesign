@@ -64,4 +64,12 @@ Actual progress beyond development infrastructure requires blind human double-co
 
 ## CI
 
-The final CI result for the current milestone head should be recorded here once the latest workflow run completes. Earlier fully gated code milestone: `0a948cf32a72678f519bc37f9916a441bc04a85d` — 412 passed, 6 expected skips, Ruff clean, mypy clean across 137 source files.
+Verified implementation head: `77de467c66be30c90902a83bfb4fa3fa66c7c1b2`.
+
+GitHub Actions CI run: `33815444885` (`ci`, run #1128), conclusion **success**.
+
+- `python -m pytest`: **422 passed, 6 expected skips**
+- `ruff check src tests --ignore E501,I001`: **all checks passed**
+- `mypy src/hdmatch`: **success, no issues in 139 source files**
+
+The immediately preceding run had the same 422-pass test result and failed only Ruff `SIM102` on one nested `if` in `theory_blind_authority.py`; commit `77de467c...` made the non-semantic one-line control-flow cleanup and the full gate then passed.
