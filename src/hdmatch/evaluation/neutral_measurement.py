@@ -723,6 +723,32 @@ def coding_run_scoreability_blockers(
         blockers.append("ontology is not frozen for validation")
     if ontology.payload.human_content_authority is None:
         blockers.append("ontology lacks H1 human-content authority")
+    if not payload.records:
+        blockers.append("coding run contains no coded episode records")
+    definitions = {row.observable_id: row for row in ontology.payload.observables}
+    used_ids = sorted({row.observable_id for row in payload.records})
+    validity_not_ready = [
+        observable_id
+        for observable_id in used_ids
+        if observable_id in definitions
+        and definitions[observable_id].validity_status != "validation_candidate"
+    ]
+    if validity_not_ready:
+        blockers.append(
+            "coded observables are not validation candidates: " + ", ".join(validity_not_ready)
+        )
+    reliability_not_ready = [
+        observable_id
+        for observable_id in used_ids
+        if observable_id in definitions
+        and definitions[observable_id].reliability_status
+        not in {"human_baseline_evaluated", "automation_evaluated"}
+    ]
+    if reliability_not_ready:
+        blockers.append(
+            "coded observables lack a human reliability baseline: "
+            + ", ".join(reliability_not_ready)
+        )
     if payload.run_type != "validation":
         blockers.append("coding run is not a validation run")
     if payload.coder.coder_type in {"llm", "deterministic"} and (
