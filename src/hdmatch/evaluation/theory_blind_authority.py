@@ -87,9 +87,10 @@ class TheoryBlindDevelopmentProvenance(AuthorityModel):
 
     @model_validator(mode="after")
     def authorship_fields_match_author_kind(self) -> TheoryBlindDevelopmentProvenance:
-        if self.author_kind in {"ai", "mixed"}:
-            if self.exact_prompt_sha256 is None or self.exact_first_output_sha256 is None:
-                raise ValueError("AI-influenced authorship requires exact prompt and first-output hashes")
+        if self.author_kind in {"ai", "mixed"} and (
+            self.exact_prompt_sha256 is None or self.exact_first_output_sha256 is None
+        ):
+            raise ValueError("AI-influenced authorship requires exact prompt and first-output hashes")
         if self.author_kind == "human" and self.prompt_seed_level == "not_applicable":
             return self
         if self.prompt_seed_level == "not_applicable" and self.exact_prompt_sha256 is not None:
