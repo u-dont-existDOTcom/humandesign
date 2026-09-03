@@ -1,0 +1,21 @@
+# ruff: noqa: E501
+"""Push-to-talk browser controls for the Life Patterns conversational UI."""
+
+VOICE_SCRIPT = r'''<script>
+(function(){
+  if(!navigator.mediaDevices||!window.MediaRecorder)return;
+  const sendButton=document.getElementById('send');const messageBox=document.getElementById('message');if(!sendButton||!messageBox)return;
+  let recorder=null,chunks=[],voicePending=false,stream=null;
+  const row=sendButton.parentElement;const record=document.createElement('button');record.type='button';record.className='secondary';record.textContent='🎙 Speak answer';
+  const stop=document.createElement('button');stop.type='button';stop.className='secondary hidden';stop.textContent='■ Stop recording';
+  const readLabel=document.createElement('label');readLabel.className='check';const readToggle=document.createElement('input');readToggle.type='checkbox';const readText=document.createElement('span');readText.textContent='Read interviewer replies aloud';readLabel.append(readToggle,readText);
+  row.append(record,stop);row.insertAdjacentElement('afterend',readLabel);
+  function speak(text){if(!readToggle.checked||!window.speechSynthesis||!text)return;window.speechSynthesis.cancel();const utterance=new SpeechSynthesisUtterance(text);utterance.rate=1.03;window.speechSynthesis.speak(utterance)}
+  record.onclick=async()=>{try{stream=await navigator.mediaDevices.getUserMedia({audio:true});chunks=[];recorder=new MediaRecorder(stream);recorder.ondataavailable=e=>{if(e.data.size)chunks.push(e.data)};recorder.onstop=async()=>{record.classList.remove('hidden');stop.classList.add('hidden');const blob=new Blob(chunks,{type:recorder.mimeType||'audio/webm'});stream?.getTracks().forEach(track=>track.stop());stream=null;if(!session)return;setStatus('turnStatus','Transcribing your voice…');try{const response=await fetch(`/api/life-patterns/interview/sessions/${encodeURIComponent(session.session_id)}/transcribe`,{method:'POST',headers:{'Authorization':'Bearer '+session.resume_token,'Content-Type':blob.type||'audio/webm'},body:blob});const payload=await response.json();if(!response.ok)throw new Error(payload.detail||'Transcription failed');messageBox.value=payload.text;voicePending=true;messageBox.focus();setStatus('turnStatus','Transcript ready. Read it, correct anything wrong, then Send. Raw audio was not saved.')}catch(e){setStatus('turnStatus',e.message,true)}};recorder.start();record.classList.add('hidden');stop.classList.remove('hidden');setStatus('turnStatus','Recording… speak naturally, then press Stop.')}catch(e){setStatus('turnStatus','Microphone access failed: '+e.message,true)}};
+  stop.onclick=()=>{if(recorder&&recorder.state==='recording')recorder.stop()};
+  const typedSend=sendButton.onclick;
+  sendButton.onclick=async()=>{if(!voicePending){return typedSend?.call(sendButton)}const text=messageBox.value.trim();if(!text||!session)return;addBubble('user',text);messageBox.value='';sendButton.disabled=true;$('saveState').textContent='Saving…';try{const payload=await api(`/api/life-patterns/interview/sessions/${encodeURIComponent(session.session_id)}/turns`,{method:'POST',body:JSON.stringify({token:session.resume_token,message:text,input_modality:'voice'})});voicePending=false;$('saveState').textContent='Saved';addBubble('ai',payload.reply);speak(payload.reply);renderProgress(payload.progress);if(payload.provisional_insight){$('insight').textContent=payload.provisional_insight;$('insight').classList.remove('hidden')}setStatus('turnStatus',payload.episode_saved?'Voice transcript saved; check the extracted episode summary below.':'Voice transcript saved.')}catch(e){$('saveState').textContent='Your transcript was saved if the request reached the server';setStatus('turnStatus',e.message,true)}finally{sendButton.disabled=false}};
+  messageBox.addEventListener('input',()=>{if(!messageBox.value.trim())voicePending=false});
+  const chat=document.getElementById('chat');if(chat){const observer=new MutationObserver(mutations=>{if(!readToggle.checked)return;for(const mutation of mutations){for(const node of mutation.addedNodes){if(node.nodeType===1&&node.classList?.contains('ai')){const text=node.lastElementChild?.textContent||'';speak(text)}}}});observer.observe(chat,{childList:true})}
+})();
+</script>'''
