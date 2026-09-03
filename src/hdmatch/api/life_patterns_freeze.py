@@ -7,7 +7,6 @@ original synthesis, participant review events, and final participant-endorsed cl
 
 from __future__ import annotations
 
-import hashlib
 import json
 import os
 import uuid
@@ -16,6 +15,8 @@ from typing import Any, Literal, cast
 
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, ConfigDict, Field, model_validator
+
+from hdmatch.experiments.canonical import canonical_json_bytes, sha256_json, write_new_bytes
 
 from .life_patterns_app import LifePatternsFileStore, LifePatternsMap, PatternStatus
 
@@ -60,16 +61,15 @@ class FreezeReceipt(_FrozenModel):
 
 
 def _canonical_json(value: Any) -> bytes:
-    return json.dumps(
-        value,
-        ensure_ascii=False,
-        sort_keys=True,
-        separators=(",", ":"),
-    ).encode("utf-8")
+    """Use the repository-wide canonical JSON representation."""
+
+    return canonical_json_bytes(value)
 
 
 def _sha256_json(value: Any) -> str:
-    return hashlib.sha256(_canonical_json(value)).hexdigest()
+    """Use the repository-wide canonical JSON hash primitive."""
+
+    return sha256_json(value)
 
 
 def _approved_episodes(payload: dict[str, Any]) -> list[dict[str, Any]]:
@@ -375,23 +375,13 @@ def _write_immutable_freeze(
         if path.read_bytes() != serialized:
             raise RuntimeError("behavioral freeze hash collision or artifact tampering detected")
         return str(path.relative_to(store.root))
-    temporary = directory / f".{freeze_id}.{uuid.uuid4().hex}.tmp"
     try:
-        with temporary.open("xb") as handle:
-            handle.write(serialized)
-            handle.flush()
-            os.fsync(handle.fileno())
-        os.chmod(temporary, 0o400)
-        try:
-            os.link(temporary, path)
-        except FileExistsError:
-            if path.read_bytes() != serialized:
-                raise RuntimeError(
-                    "behavioral freeze hash collision or artifact tampering detected"
-                ) from None
-        os.chmod(path, 0o400)
-    finally:
-        temporary.unlink(missing_ok=True)
+        write_new_bytes(path, serialized, mode=0o400)
+    except FileExistsError:
+        if path.read_bytes() != serialized:
+            raise RuntimeError(
+                "behavioral freeze hash collision or artifact tampering detected"
+            ) from None
     return str(path.relative_to(store.root))
 
 
