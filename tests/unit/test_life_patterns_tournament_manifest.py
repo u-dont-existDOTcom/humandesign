@@ -17,7 +17,6 @@ from hdmatch.evaluation.tournament_manifest import (
     build_tournament_manifest,
     load_analysis_authorization,
     load_tournament_manifest,
-    tournament_execution_blockers,
     tournament_manifest_integrity_errors,
     write_analysis_authorization,
     write_tournament_manifest,
