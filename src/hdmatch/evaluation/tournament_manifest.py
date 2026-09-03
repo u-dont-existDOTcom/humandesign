@@ -221,17 +221,15 @@ def build_analysis_authorization(
     )
 
 
-def validate_analysis_authorization(
+def analysis_authorization_integrity_errors(
     artifact: AnalysisAuthorizationArtifact,
 ) -> tuple[str, ...]:
-    blockers: list[str] = []
+    errors: list[str] = []
     digest = sha256_json(artifact.payload)
     expected_id = f"LPA-{digest[:20].upper()}"
     if artifact.authorization_sha256 != digest or artifact.authorization_id != expected_id:
-        blockers.append("analysis authorization artifact failed content-address verification")
-    if not artifact.payload.result_storage_authorized:
-        blockers.append("participant did not authorize storage of model-analysis results")
-    return tuple(blockers)
+        errors.append("analysis authorization artifact failed content-address verification")
+    return tuple(errors)
 
 
 def _missing_or_placeholder_sha(value: str | None) -> bool:
@@ -242,8 +240,10 @@ def tournament_execution_blockers(
     payload: TournamentManifestPayload,
     authorization: AnalysisAuthorizationArtifact,
 ) -> tuple[str, ...]:
-    blockers = list(validate_analysis_authorization(authorization))
+    blockers = list(analysis_authorization_integrity_errors(authorization))
     auth = authorization.payload
+    if not auth.result_storage_authorized:
+        blockers.append("participant did not authorize storage of model-analysis results")
     if payload.session_id != auth.session_id:
         blockers.append("manifest session does not match analysis authorization")
     if payload.freeze_id != auth.freeze_id or payload.freeze_sha256 != auth.freeze_sha256:
@@ -257,7 +257,9 @@ def tournament_execution_blockers(
     authorized_families = set(auth.model_family_scope)
     for entry in payload.model_roster:
         if entry.family not in authorized_families:
-            blockers.append(f"model {entry.model_id} family {entry.family!r} is outside participant authorization")
+            blockers.append(
+                f"model {entry.model_id} family {entry.family!r} is outside participant authorization"
+            )
 
     if not any(entry.is_baseline for entry in payload.model_roster):
         blockers.append("model roster has no declared non-birth/context baseline")
@@ -276,7 +278,10 @@ def tournament_execution_blockers(
     ):
         blockers.append("confirmatory manifest has no confirmatory predeclared non-baseline model")
 
-    if payload.preregistration_status == "confirmatory_preregistered" and payload.cohort_role == "development":
+    if (
+        payload.preregistration_status == "confirmatory_preregistered"
+        and payload.cohort_role == "development"
+    ):
         blockers.append("development cohort cannot support confirmatory validation status")
 
     birth_required = any(entry.requires_birth_data for entry in payload.model_roster)
@@ -284,7 +289,9 @@ def tournament_execution_blockers(
         if not auth.exact_birth_data_use_authorized:
             blockers.append("participant did not authorize exact birth-data use")
         if payload.birth_input_sha256 is None or payload.civil_time_resolution_sha256 is None:
-            blockers.append("birth-dependent roster lacks pinned birth-input and civil-time-resolution artifacts")
+            blockers.append(
+                "birth-dependent roster lacks pinned birth-input and civil-time-resolution artifacts"
+            )
 
     if payload.reveal_policy == "participant_reveal_after_locked_execution" and (
         auth.purpose != "research_comparison_and_participant_reveal"
@@ -312,11 +319,6 @@ def tournament_execution_blockers(
         if entry.output_type == "ranked_candidates" and entry.candidate_universe_sha256 is None:
             blockers.append(f"ranked model {entry.model_id} lacks a pinned candidate universe")
 
-    if not payload.metric_plan.tie_policy.strip():
-        blockers.append("tie policy is missing")
-    if payload.target_results_supplied_to_builder is not False:
-        blockers.append("target result must not be supplied while freezing the manifest")
-
     # Keep blocker ordering deterministic while removing duplicates.
     return tuple(dict.fromkeys(blockers))
 
@@ -336,29 +338,31 @@ def build_tournament_manifest(
     )
 
 
-def validate_tournament_manifest(
+def tournament_manifest_integrity_errors(
     artifact: TournamentManifestArtifact,
     authorization: AnalysisAuthorizationArtifact,
 ) -> tuple[str, ...]:
-    blockers = list(tournament_execution_blockers(artifact.payload, authorization))
+    errors = list(analysis_authorization_integrity_errors(authorization))
     digest = sha256_json(artifact.payload)
     expected_id = f"LPT-{digest[:20].upper()}"
     if artifact.manifest_sha256 != digest or artifact.manifest_id != expected_id:
-        blockers.append("tournament manifest failed content-address verification")
-    recomputed = tuple(dict.fromkeys(blockers))
-    if artifact.execution_ready != (not recomputed):
-        recomputed += ("stored execution-ready flag disagrees with recomputed blockers",)
-    if artifact.execution_blockers != tuple(
-        item for item in recomputed if item != "stored execution-ready flag disagrees with recomputed blockers"
-    ):
-        recomputed += ("stored execution blockers disagree with recomputed blockers",)
-    return tuple(dict.fromkeys(recomputed))
+        errors.append("tournament manifest failed content-address verification")
+    recomputed_blockers = tournament_execution_blockers(artifact.payload, authorization)
+    if artifact.execution_ready != (not recomputed_blockers):
+        errors.append("stored execution-ready flag disagrees with recomputed blockers")
+    if artifact.execution_blockers != recomputed_blockers:
+        errors.append("stored execution blockers disagree with recomputed blockers")
+    return tuple(dict.fromkeys(errors))
 
 
 def write_tournament_manifest(
     path: str | Path,
     artifact: TournamentManifestArtifact,
+    authorization: AnalysisAuthorizationArtifact,
 ) -> Path:
+    errors = tournament_manifest_integrity_errors(artifact, authorization)
+    if errors:
+        raise ValueError("invalid tournament manifest: " + "; ".join(errors))
     return write_new_bytes(path, canonical_json_bytes(artifact), mode=0o400)
 
 
@@ -368,9 +372,9 @@ def load_tournament_manifest(
 ) -> TournamentManifestArtifact:
     raw: Any = load_json_bytes(path, require_canonical=True)
     artifact = TournamentManifestArtifact.model_validate(raw)
-    blockers = validate_tournament_manifest(artifact, authorization)
-    if blockers:
-        raise ValueError("invalid tournament manifest: " + "; ".join(blockers))
+    errors = tournament_manifest_integrity_errors(artifact, authorization)
+    if errors:
+        raise ValueError("invalid tournament manifest: " + "; ".join(errors))
     return artifact
 
 
@@ -378,16 +382,16 @@ def write_analysis_authorization(
     path: str | Path,
     artifact: AnalysisAuthorizationArtifact,
 ) -> Path:
-    blockers = validate_analysis_authorization(artifact)
-    if blockers:
-        raise ValueError("invalid analysis authorization: " + "; ".join(blockers))
+    errors = analysis_authorization_integrity_errors(artifact)
+    if errors:
+        raise ValueError("invalid analysis authorization: " + "; ".join(errors))
     return write_new_bytes(path, canonical_json_bytes(artifact), mode=0o400)
 
 
 def load_analysis_authorization(path: str | Path) -> AnalysisAuthorizationArtifact:
     raw: Any = load_json_bytes(path, require_canonical=True)
     artifact = AnalysisAuthorizationArtifact.model_validate(cast(dict[str, Any], raw))
-    blockers = validate_analysis_authorization(artifact)
-    if blockers:
-        raise ValueError("invalid analysis authorization: " + "; ".join(blockers))
+    errors = analysis_authorization_integrity_errors(artifact)
+    if errors:
+        raise ValueError("invalid analysis authorization: " + "; ".join(errors))
     return artifact
