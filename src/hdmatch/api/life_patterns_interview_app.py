@@ -1,8 +1,8 @@
 """Adaptive chart-blind interviewer for Discover Your Unique Life Patterns.
 
-The interviewer receives only participant-authored conversation turns, completed neutral
-episodes, and descriptive evidence coverage. It never receives birth data, chart data,
-model predictions, candidate states, or model fit.
+AI-extracted episodes are provisional until the participant approves, edits, or rejects
+them. Only participant-approved episodes feed evidence progress, pattern synthesis, and
+portable exports.
 """
 
 from __future__ import annotations
@@ -14,7 +14,7 @@ import uuid
 from contextlib import suppress
 from datetime import UTC, datetime
 from pathlib import Path
-from typing import Any, cast
+from typing import Any, Literal, cast
 from urllib.error import HTTPError, URLError
 from urllib.request import Request as URLRequest
 from urllib.request import urlopen
@@ -41,6 +41,9 @@ from .life_patterns_recovery import (
     LifePatternsRecoverySettings,
     normalize_email,
 )
+from .life_patterns_review_ui import REVIEW_SCRIPT
+
+ReviewAction = Literal["approve", "edit", "reject"]
 
 
 class _FrozenModel(BaseModel):
@@ -57,6 +60,15 @@ class InterviewTurnRequest(BaseModel):
     token: str = Field(min_length=16)
     message: str = Field(min_length=1, max_length=20000)
     input_modality: InputModality = "typed"
+
+
+class EpisodeReviewRequest(BaseModel):
+    token: str = Field(min_length=16)
+    action: ReviewAction
+    domain: Area | None = None
+    title: str | None = Field(default=None, max_length=160)
+    narrative: str | None = Field(default=None, max_length=20000)
+    counterexample: str | None = Field(default=None, max_length=12000)
 
 
 class RecoveryRequest(BaseModel):
@@ -91,7 +103,7 @@ class InterviewerResult(_FrozenModel):
 
 
 _INTERVIEW_SYSTEM = """You are the chart-blind interviewer for Discover Your Unique Life Patterns.
-You receive only the participant's own conversation turns, previously completed neutral life
+You receive only the participant's own conversation turns, participant-approved neutral life
 episodes, and descriptive evidence-area progress. You receive no birth data, astrology,
 Human Design, candidate classification, model prediction, rank, or model fit.
 
@@ -127,14 +139,15 @@ facts. Do not invent motives. A counterexample may be null when none has yet bee
 Use one of these neutral domains: decisions, work_projects, relationships,
 self_initiated_actions, learning_adaptation, conflict_stress, life_transitions, other.
 
-A completed episode is not a declaration that an evidence area is scientifically complete.
-The progress object is descriptive only.
+An extracted episode is only a provisional summary. The participant must approve or correct
+it before it becomes evidence. A completed episode is not a declaration that an evidence area
+is scientifically complete. Progress is descriptive only.
 
 PROVISIONAL INSIGHT
 A provisional_insight is optional. Use it only when there is a useful evidence-grounded
-contrast or repeated pattern that could make the interview rewarding. It must invite revision,
-for example: 'Across these two episodes, X seems different when Y changes. I may be making
-that too simple.' Never state that the pattern is destiny or that a mechanism is correct.
+contrast or repeated pattern among participant-approved episodes that could make the interview
+rewarding. It must invite revision. Never state that the pattern is destiny or that a mechanism
+is correct.
 
 Return only the required JSON object."""
 
@@ -143,10 +156,7 @@ def _interviewer_schema() -> dict[str, Any]:
     nullable_string = {"anyOf": [{"type": "string"}, {"type": "null"}]}
     nullable_area = {
         "anyOf": [
-            {
-                "type": "string",
-                "enum": [*AREA_LABELS.keys(), "other"],
-            },
+            {"type": "string", "enum": [*AREA_LABELS.keys(), "other"]},
             {"type": "null"},
         ]
     }
@@ -213,7 +223,7 @@ class OpenAILifePatternsInterviewer:
         if not self.api_key:
             raise RuntimeError("Life Patterns interviewer is not configured")
         payload = {
-            "completed_episodes": episodes,
+            "participant_approved_episodes": episodes,
             "recent_conversation_turns": turns[-18:],
             "descriptive_evidence_progress": progress,
         }
@@ -258,6 +268,22 @@ class OpenAILifePatternsInterviewer:
         }
 
 
+def _approved_episodes(episodes: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    return [row for row in episodes if row.get("review_status") == "approved"]
+
+
+def _interview_progress(episodes: list[dict[str, Any]]) -> dict[str, Any]:
+    approved = _approved_episodes(episodes)
+    progress = _progress(approved)
+    progress["provisional_episode_count"] = sum(
+        row.get("review_status") == "pending" for row in episodes
+    )
+    progress["rejected_episode_count"] = sum(
+        row.get("review_status") == "rejected" for row in episodes
+    )
+    return progress
+
+
 def _conversation_public_session(payload: dict[str, Any]) -> dict[str, Any]:
     episodes = cast(list[dict[str, Any]], payload.get("episodes", []))
     return {
@@ -269,10 +295,17 @@ def _conversation_public_session(payload: dict[str, Any]) -> dict[str, Any]:
         "status": payload["status"],
         "conversation_turns": payload.get("conversation_turns", []),
         "episodes": episodes,
-        "progress": _progress(episodes),
+        "progress": _interview_progress(episodes),
         "life_patterns_map": payload.get("life_patterns_map"),
         "map_provider_receipt": payload.get("map_provider_receipt"),
     }
+
+
+def _find_episode(episodes: list[dict[str, Any]], episode_id: str) -> dict[str, Any]:
+    for episode in episodes:
+        if episode.get("episode_id") == episode_id:
+            return episode
+    raise HTTPException(status_code=404, detail="episode not found")
 
 
 def create_life_patterns_interview_app(
@@ -282,11 +315,11 @@ def create_life_patterns_interview_app(
     mapper: OpenAILifePatternsMapper | Any,
     recovery: LifePatternsRecoveryService,
 ) -> FastAPI:
-    app = FastAPI(title="Discover Your Unique Life Patterns", version="0.2.0")
+    app = FastAPI(title="Discover Your Unique Life Patterns", version="0.3.0")
 
     @app.get("/", response_class=HTMLResponse, include_in_schema=False)
     def landing() -> str:
-        return HTML
+        return HTML.replace("</body>", f"{REVIEW_SCRIPT}</body>")
 
     @app.get("/healthz")
     def health() -> dict[str, Any]:
@@ -294,6 +327,7 @@ def create_life_patterns_interview_app(
             "status": "ok",
             "product": "discover-your-unique-life-patterns",
             "email_recovery_configured": recovery.configured,
+            "participant_review_required": True,
             "voice_enabled": False,
         }
 
@@ -308,7 +342,7 @@ def create_life_patterns_interview_app(
         except ValueError as exc:
             raise HTTPException(status_code=422, detail=str(exc)) from exc
         payload, token = store.create()
-        payload["interview_schema_version"] = "life-patterns-conversation-v1"
+        payload["interview_schema_version"] = "life-patterns-conversation-v2"
         payload["consent_to_llm_processing"] = True
         payload["contact_email_lookup_sha256"] = hashlib.sha256(email.encode()).hexdigest()
         payload["conversation_turns"] = []
@@ -318,7 +352,10 @@ def create_life_patterns_interview_app(
             "session_id": payload["session_id"],
             "resume_token": token,
             "email_recovery_configured": recovery.configured,
-            "privacy_note": "The research record stores only a one-way email lookup hash, not the plaintext address.",
+            "privacy_note": (
+                "The research record stores only a one-way email lookup hash, "
+                "not the plaintext address."
+            ),
         }
 
     @app.get("/api/life-patterns/interview/sessions/{session_id}")
@@ -332,6 +369,7 @@ def create_life_patterns_interview_app(
             raise HTTPException(status_code=409, detail="AI-processing consent is missing")
         turns = cast(list[dict[str, Any]], payload.setdefault("conversation_turns", []))
         episodes = cast(list[dict[str, Any]], payload.setdefault("episodes", []))
+        approved = _approved_episodes(episodes)
         user_turn = {
             "turn_id": f"TURN-{uuid.uuid4().hex[:12].upper()}",
             "role": "user",
@@ -343,14 +381,17 @@ def create_life_patterns_interview_app(
         store.save(payload)
         try:
             result, receipt = interviewer.respond(
-                episodes=episodes,
+                episodes=approved,
                 turns=turns,
-                progress=_progress(episodes),
+                progress=_progress(approved),
             )
         except RuntimeError as exc:
             raise HTTPException(
                 status_code=502,
-                detail="Your message was saved, but the interviewer could not respond. You can safely try again.",
+                detail=(
+                    "Your message was saved, but the interviewer could not respond. "
+                    "You can safely try again."
+                ),
             ) from exc
 
         episode: dict[str, Any] | None = None
@@ -377,11 +418,12 @@ def create_life_patterns_interview_app(
                 ),
                 "input_modality": request.input_modality,
                 "source_turn_ids": source_turn_ids,
+                "review_status": "pending",
+                "participant_revision": False,
+                "reviewed_at_utc": None,
                 "created_at_utc": datetime.now(UTC).isoformat(),
             }
             episodes.append(episode)
-            payload["life_patterns_map"] = None
-            payload["map_provider_receipt"] = None
 
         assistant_turn = {
             "turn_id": f"TURN-{uuid.uuid4().hex[:12].upper()}",
@@ -394,32 +436,79 @@ def create_life_patterns_interview_app(
         if episode is not None:
             payload["last_completed_turn_index"] = len(turns)
         store.save(payload)
-        provisional = result.provisional_insight if len(episodes) >= 2 else None
+        provisional = result.provisional_insight if len(approved) >= 2 else None
         return {
             "reply": result.reply,
             "provisional_insight": provisional,
             "coverage_focus": result.coverage_focus,
             "episode_saved": episode is not None,
             "episode": episode,
-            "progress": _progress(episodes),
-            "map_available": len(episodes) >= 2,
+            "episode_requires_participant_review": episode is not None,
+            "progress": _interview_progress(episodes),
+            "map_available": len(approved) >= 2,
         }
+
+    @app.post(
+        "/api/life-patterns/interview/sessions/{session_id}/episodes/{episode_id}/review"
+    )
+    def review_episode(
+        session_id: str,
+        episode_id: str,
+        request: EpisodeReviewRequest,
+    ) -> dict[str, Any]:
+        payload = store.read(session_id, request.token)
+        episodes = cast(list[dict[str, Any]], payload.setdefault("episodes", []))
+        episode = _find_episode(episodes, episode_id)
+        if episode.get("review_status") != "pending":
+            raise HTTPException(status_code=409, detail="episode has already been reviewed")
+        if request.action == "edit":
+            title = (request.title or "").strip()
+            narrative = (request.narrative or "").strip()
+            if not title or not narrative:
+                raise HTTPException(
+                    status_code=422,
+                    detail="an edited episode requires a title and corrected narrative",
+                )
+            episode["domain"] = request.domain or episode.get("domain", "other")
+            episode["title"] = title
+            episode["narrative"] = narrative
+            episode["counterexample"] = (
+                request.counterexample.strip()
+                if request.counterexample and request.counterexample.strip()
+                else None
+            )
+            episode["participant_revision"] = True
+            episode["review_status"] = "approved"
+        elif request.action == "approve":
+            episode["review_status"] = "approved"
+        else:
+            episode["review_status"] = "rejected"
+        episode["reviewed_at_utc"] = datetime.now(UTC).isoformat()
+        payload["life_patterns_map"] = None
+        payload["map_provider_receipt"] = None
+        store.save(payload)
+        return {"episode": episode, "progress": _interview_progress(episodes)}
 
     @app.post("/api/life-patterns/interview/sessions/{session_id}/map")
     def build_map(session_id: str, request: MapRequest) -> dict[str, Any]:
         payload = store.read(session_id, request.token)
         episodes = cast(list[dict[str, Any]], payload.get("episodes", []))
+        approved = _approved_episodes(episodes)
         try:
-            result, receipt = mapper.build(episodes)
+            result, receipt = mapper.build(approved)
         except ValueError as exc:
             raise HTTPException(status_code=409, detail=str(exc)) from exc
         except RuntimeError as exc:
             raise HTTPException(
                 status_code=502,
-                detail="The Life Patterns Map could not be generated. Your saved interview was not changed.",
+                detail=(
+                    "The Life Patterns Map could not be generated. "
+                    "Your saved interview was not changed."
+                ),
             ) from exc
         payload["life_patterns_map"] = result.model_dump(mode="json")
         payload["map_provider_receipt"] = receipt
+        payload["map_approved_episode_ids"] = [str(row["episode_id"]) for row in approved]
         store.save(payload)
         return {"life_patterns_map": payload["life_patterns_map"], "provider_receipt": receipt}
 
@@ -431,19 +520,24 @@ def create_life_patterns_interview_app(
             raise HTTPException(status_code=409, detail="generate a Life Patterns Map before exporting")
         result = LifePatternsMap.model_validate(raw_map)
         episodes = cast(list[dict[str, Any]], payload.get("episodes", []))
+        approved = _approved_episodes(episodes)
         return {
             "profile_json": {
                 "schema_version": "life-patterns-portable-profile-v1",
                 "session_id": session_id,
                 "life_patterns_map": result.model_dump(mode="json"),
-                "evidence_episode_ids": [str(row["episode_id"]) for row in episodes],
+                "evidence_episode_ids": [str(row["episode_id"]) for row in approved],
+                "evidence_policy": "participant_approved_episodes_only",
                 "interpretation_boundary": "historical_tendencies_not_fixed_traits",
                 "integration_policy": {
                     "readable_by_coaching_or_inner_signal_with_user_consent": True,
                     "downstream_apps_must_not_silently_rewrite_research_evidence": True,
                 },
             },
-            "coaching_markdown": _coaching_markdown(payload, result),
+            "coaching_markdown": _coaching_markdown(
+                {**payload, "episodes": approved},
+                result,
+            ),
         }
 
     @app.post("/api/life-patterns/interview/recovery/request")
@@ -452,7 +546,10 @@ def create_life_patterns_interview_app(
             recovery.request(request.email)
         return {
             "status": "accepted",
-            "message": "If a matching interview exists and recovery is configured, a one-time code has been sent.",
+            "message": (
+                "If a matching interview exists and recovery is configured, "
+                "a one-time code has been sent."
+            ),
         }
 
     @app.post("/api/life-patterns/interview/recovery/verify")
