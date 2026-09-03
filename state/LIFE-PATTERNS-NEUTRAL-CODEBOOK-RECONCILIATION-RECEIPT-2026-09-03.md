@@ -74,4 +74,4 @@ GitHub Actions CI run: `33815444885` (`ci`, run #1128), conclusion **success**.
 
 The immediately preceding run had the same 422-pass test result and failed only Ruff `SIM102` on one nested `if` in `theory_blind_authority.py`; commit `77de467c...` made the non-semantic one-line control-flow cleanup and the full gate then passed.
 
-This receipt was updated after the gated implementation run. Receipt/documentation-only commits after `77de467c...` do not alter implementation semantics and should be independently CI-checked by the normal PR workflow before merge consideration.
+This receipt is a documentation-only record of the gated implementation milestone. Later documentation-only commits must still pass the normal PR workflow before merge consideration.
