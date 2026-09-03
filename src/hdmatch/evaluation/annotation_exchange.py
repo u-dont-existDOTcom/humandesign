@@ -3,9 +3,9 @@
 from __future__ import annotations
 
 import json
-from typing import Any, cast
+from typing import Any, Literal, cast
 
-from pydantic import ConfigDict, BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 from hdmatch.experiments.canonical import canonical_json_bytes
 
@@ -22,7 +22,9 @@ from .neutral_measurement import (
 class AnnotationResponse(BaseModel):
     model_config = ConfigDict(extra="forbid", frozen=True, allow_inf_nan=False)
 
-    schema_version: str = Field(default="life-patterns-annotation-response-v1")
+    schema_version: Literal["life-patterns-annotation-response-v1"] = (
+        "life-patterns-annotation-response-v1"
+    )
     task_id: str = Field(min_length=1)
     freeze_id: str = Field(pattern=r"^BPF-[0-9A-F]{20}$")
     freeze_sha256: str = Field(pattern=r"^[0-9a-f]{64}$")
