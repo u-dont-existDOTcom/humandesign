@@ -11,9 +11,10 @@ import hashlib
 import json
 import os
 import uuid
+from contextlib import suppress
 from datetime import UTC, datetime
 from pathlib import Path
-from typing import Any, Literal, cast
+from typing import Any, cast
 from urllib.error import HTTPError, URLError
 from urllib.request import Request as URLRequest
 from urllib.request import urlopen
@@ -447,10 +448,8 @@ def create_life_patterns_interview_app(
 
     @app.post("/api/life-patterns/interview/recovery/request")
     def request_recovery(request: RecoveryRequest) -> dict[str, str]:
-        try:
+        with suppress(ValueError):
             recovery.request(request.email)
-        except ValueError:
-            pass
         return {
             "status": "accepted",
             "message": "If a matching interview exists and recovery is configured, a one-time code has been sent.",
