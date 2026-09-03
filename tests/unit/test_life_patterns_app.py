@@ -22,6 +22,8 @@ class FakeMapper:
         self.seen_episodes: list[dict[str, Any]] | None = None
 
     def build(self, episodes: list[dict[str, Any]]) -> tuple[LifePatternsMap, dict[str, str]]:
+        if len(episodes) < 2:
+            raise ValueError("at least two saved episodes are required before generating a map")
         self.seen_episodes = episodes
         return (
             LifePatternsMap(
