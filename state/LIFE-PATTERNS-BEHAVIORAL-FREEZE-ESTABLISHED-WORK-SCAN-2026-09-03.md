@@ -1,7 +1,7 @@
 # Life Patterns Behavioral Freeze — Established-Work Scan
 
 Date: 2026-09-03  
-Independent conception snapshots: `18eccfe` and `d876f97`  
+Independent conception snapshot: `18eccfe`
 Scope: provenance/versioning, participant correction, immutable records, and
 reproducible evaluation separation
 
@@ -86,10 +86,12 @@ restricted, or otherwise handled under applicable law.
 ### Project adaptation
 
 Preserve the provisional AI extraction, append the participant's approve/edit/reject
-event, and keep the corrected value separately attributable. At profile freeze, record
-approval or a participant-authored correction addendum without erasing the reviewed AI
-map. Describe review as participant confirmation/correction of representation, not as
-proof of objective truth.
+event, and keep the corrected value separately attributable. At profile freeze,
+preserve every original AI claim and the latest attributable participant decision over
+that claim. An edit supplies participant-authored wording and is marked as new
+review-phase data; rejected and uncertain claims remain auditable but do not enter the
+admissible behavioral claim set. Describe review as participant
+confirmation/correction of representation, not as proof of objective truth.
 
 This milestone deliberately stops before a post-freeze supersession workflow. Its
 schema declares that later correction requires a new linked version. Erasure,
@@ -122,10 +124,11 @@ state. New states do not rewrite the registration.
 ### Project adaptation
 
 Create a dedicated canonical JSON freeze artifact with exclusive-create semantics and
-a digest over exact bytes. Keep the live session and frozen artifact conceptually
-separate. Block application-level behavioral mutations after freeze. Retain provider
-and participant-review metadata. Treat file permissions as defense in depth; the digest
-and refusal to overwrite provide the testable integrity contract.
+a digest over exact bytes. Keep the live participant-owned session and frozen research
+artifact separate: later interviewing and map regeneration may continue, but cannot
+alter or silently supersede the prior freeze. Retain provider and participant-review
+metadata. Treat file permissions as defense in depth; the digest and refusal to
+overwrite provide the testable integrity contract.
 
 Decision: **adapt**.
 
@@ -177,6 +180,10 @@ The scan supports the conception with these refinements:
    freeze digest.
 
 ## Implementation authorization boundary
+
+The controlling implementation contract is
+`docs/research/LIFE_PATTERNS_BEHAVIORAL_FREEZE_SPEC.md`; where an earlier local draft
+differs, that canonical spec governs.
 
 This scan supports implementation of the bounded participant-reviewed freeze on PR #24.
 It does not authorize merge, deployment, participant recruitment, birth-model scoring,
