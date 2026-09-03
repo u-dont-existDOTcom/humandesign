@@ -1,6 +1,7 @@
 # ruff: noqa: E501
-"""Participant-review and voice UI injected into the Life Patterns conversation."""
+"""Participant-review, voice, and coaching UI for Life Patterns."""
 
+from .life_patterns_coach_ui import COACH_SCRIPT
 from .life_patterns_voice_ui import VOICE_SCRIPT
 
 REVIEW_SCRIPT = r'''<script>
@@ -55,4 +56,4 @@ REVIEW_SCRIPT = r'''<script>
   const chat=document.getElementById('chat');if(chat)observer.observe(chat,{childList:true,subtree:true});
   window.addEventListener('focus',refreshReviews);setTimeout(refreshReviews,300);
 })();
-</script>''' + VOICE_SCRIPT
+</script>''' + VOICE_SCRIPT + COACH_SCRIPT
