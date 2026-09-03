@@ -1,6 +1,8 @@
 # Life Patterns Neutral Measurement — H1 Human-Only Content Boundary
 
-Status: binding execution boundary for the neutral measurement-bridge milestone. This reasserts the project's existing H1 measurement-content policy; it does not authorize new substantive construct content.
+> **Status update (2026-09-03): superseded for Life Patterns substantive measurement content.** The owner approved a broader theory-blind authorship policy allowing either humans or AI/model sessions to author substantive neutral content when the target theory is absent from the relevant authorship context and provenance/contamination controls are satisfied. See `docs/research/LIFE_PATTERNS_THEORY_BLIND_CONTENT_AUTHORITY_POLICY.md`. The separately frozen Survey-v2 H1 specification remains unchanged, and the current Life Patterns software still contains legacy human-only authority receipt types that must be generalized before AI-authored content can pass software authority gates.
+
+Status: historical record of the previously binding execution boundary for the neutral measurement-bridge milestone. This document records the former H1 measurement-content policy; it no longer defines the current Life Patterns substantive-content authority rule.
 
 Date: 2026-09-03
 
