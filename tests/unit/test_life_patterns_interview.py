@@ -298,6 +298,13 @@ def test_participant_can_edit_or_reject_ai_episode_summary(tmp_path: Path) -> No
     assert episode["participant_revision"] is True
     assert episode["domain"] == "work_projects"
     assert episode["title"] == "My corrected title"
+    assert episode["provisional_extraction"]["title"] == "A consequential decision"
+    assert (
+        episode["provisional_extraction"]["narrative"]
+        == "The participant described how one decision unfolded."
+    )
+    assert episode["review_events"][0]["action"] == "edit"
+    assert episode["review_events"][0]["participant_revision"]["title"] == "My corrected title"
 
     payload = store.read(session_id, token)
     episodes = cast(list[dict[str, Any]], payload["episodes"])
@@ -375,6 +382,8 @@ def test_map_and_export_use_only_participant_approved_episodes(tmp_path: Path) -
     profile = cast(dict[str, Any], exported["profile_json"])
     assert profile["evidence_episode_ids"] == ["EP-A", "EP-B"]
     assert profile["evidence_policy"] == "participant_approved_episodes_only"
+    assert profile["research_freezes"] == []
+    assert "immutable research snapshot" in profile["research_freeze_policy"]
 
 
 def test_user_turn_survives_provider_failure(tmp_path: Path) -> None:

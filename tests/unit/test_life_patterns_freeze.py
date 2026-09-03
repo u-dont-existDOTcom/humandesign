@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import asyncio
 import json
+import stat
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any, cast
@@ -488,3 +489,101 @@ def test_finalization_rejects_candidate_after_live_evidence_changes(tmp_path: Pa
     status, response = _finalize(app, session_id, token, candidate_id)
     assert status == 409
     assert "live evidence changed" in response["detail"] or "older than the approved evidence" in response["detail"]
+
+
+def test_frozen_artifact_is_canonical_read_only_retrievable_and_tamper_evident(
+    tmp_path: Path,
+) -> None:
+    store, app, session_id, token = _ready_session(tmp_path)
+    candidate = _candidate(app, session_id, token)
+    candidate_id = str(candidate["candidate_id"])
+    for claim_id in ("P1", "P2"):
+        status, _ = _review(app, session_id, token, candidate_id, claim_id, action="approve")
+        assert status == 200
+    status, frozen = _finalize(app, session_id, token, candidate_id)
+    assert status == 200
+    receipt = cast(dict[str, Any], frozen["freeze_receipt"])
+    artifact_path = store.root / str(receipt["artifact_relpath"])
+    raw = artifact_path.read_bytes()
+    assert raw.endswith(b"\n")
+    assert b"\n  " not in raw
+    assert stat.S_IMODE(artifact_path.stat().st_mode) == 0o400
+
+    status, loaded = _request(
+        app,
+        "GET",
+        f"/api/life-patterns/interview/sessions/{session_id}/freezes/"
+        f"{receipt['freeze_id']}?token={token}",
+    )
+    assert status == 200
+    assert loaded["integrity_verified"] is True
+    assert loaded["artifact"]["freeze_sha256"] == receipt["freeze_sha256"]
+
+    artifact_path.chmod(0o600)
+    tampered = raw.replace(b"Information gathering varies", b"Information gathering changed", 1)
+    assert tampered != raw
+    artifact_path.write_bytes(tampered)
+    status, response = _request(
+        app,
+        "GET",
+        f"/api/life-patterns/interview/sessions/{session_id}/freezes/"
+        f"{receipt['freeze_id']}?token={token}",
+    )
+    assert status == 500
+    assert "integrity verification" in response["detail"]
+
+
+def test_candidate_rejects_broken_evidence_and_source_turn_provenance(tmp_path: Path) -> None:
+    store, app, session_id, token = _ready_session(tmp_path / "unknown-evidence")
+    payload = store.read(session_id, token)
+    raw_map = cast(dict[str, Any], payload["life_patterns_map"])
+    patterns = cast(list[dict[str, Any]], raw_map["patterns"])
+    patterns[0]["supporting_episode_ids"] = ["EP-NOT-APPROVED"]
+    store.save(payload)
+    status, response = _request(
+        app,
+        "POST",
+        f"/api/life-patterns/interview/sessions/{session_id}/freeze-candidate",
+        body={"token": token},
+    )
+    assert status == 409
+    assert "outside the approved episode set" in response["detail"]
+
+    store, app, session_id, token = _ready_session(tmp_path / "missing-source-turn")
+    payload = store.read(session_id, token)
+    payload["conversation_turns"] = [
+        row
+        for row in cast(list[dict[str, Any]], payload["conversation_turns"])
+        if row.get("turn_id") != "TURN-A"
+    ]
+    store.save(payload)
+    status, response = _request(
+        app,
+        "POST",
+        f"/api/life-patterns/interview/sessions/{session_id}/freeze-candidate",
+        body={"token": token},
+    )
+    assert status == 409
+    assert "source turns" in response["detail"]
+
+
+def test_candidate_review_detects_mutated_candidate_source(tmp_path: Path) -> None:
+    store, app, session_id, token = _ready_session(tmp_path)
+    candidate = _candidate(app, session_id, token)
+    payload = store.read(session_id, token)
+    stored_candidate = cast(list[dict[str, Any]], payload["behavioral_freeze_candidates"])[0]
+    source = cast(dict[str, Any], stored_candidate["source"])
+    claims = cast(list[dict[str, Any]], source["claims"])
+    claims[0]["summary"] = "A silently changed synthesis."
+    store.save(payload)
+
+    status, response = _review(
+        app,
+        session_id,
+        token,
+        str(candidate["candidate_id"]),
+        "P1",
+        action="approve",
+    )
+    assert status == 500
+    assert "integrity verification" in response["detail"]
