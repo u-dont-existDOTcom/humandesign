@@ -298,6 +298,7 @@ def _conversation_public_session(payload: dict[str, Any]) -> dict[str, Any]:
         "progress": _interview_progress(episodes),
         "life_patterns_map": payload.get("life_patterns_map"),
         "map_provider_receipt": payload.get("map_provider_receipt"),
+        "behavioral_freeze_receipts": payload.get("behavioral_freeze_receipts", []),
     }
 
 
@@ -423,6 +424,13 @@ def create_life_patterns_interview_app(
                 "reviewed_at_utc": None,
                 "created_at_utc": datetime.now(UTC).isoformat(),
             }
+            episode["provisional_extraction"] = {
+                "domain": episode["domain"],
+                "title": episode["title"],
+                "narrative": episode["narrative"],
+                "counterexample": episode["counterexample"],
+            }
+            episode["review_events"] = []
             episodes.append(episode)
 
         assistant_turn = {
@@ -461,6 +469,15 @@ def create_life_patterns_interview_app(
         episode = _find_episode(episodes, episode_id)
         if episode.get("review_status") != "pending":
             raise HTTPException(status_code=409, detail="episode has already been reviewed")
+        if not isinstance(episode.get("provisional_extraction"), dict):
+            episode["provisional_extraction"] = {
+                "domain": episode.get("domain"),
+                "title": episode.get("title"),
+                "narrative": episode.get("narrative"),
+                "counterexample": episode.get("counterexample"),
+            }
+        reviewed_at = datetime.now(UTC).isoformat()
+        participant_revision: dict[str, Any] | None = None
         if request.action == "edit":
             title = (request.title or "").strip()
             narrative = (request.narrative or "").strip()
@@ -479,11 +496,28 @@ def create_life_patterns_interview_app(
             )
             episode["participant_revision"] = True
             episode["review_status"] = "approved"
+            participant_revision = {
+                "domain": episode["domain"],
+                "title": episode["title"],
+                "narrative": episode["narrative"],
+                "counterexample": episode["counterexample"],
+            }
         elif request.action == "approve":
             episode["review_status"] = "approved"
         else:
             episode["review_status"] = "rejected"
-        episode["reviewed_at_utc"] = datetime.now(UTC).isoformat()
+        review_events = episode.setdefault("review_events", [])
+        if not isinstance(review_events, list):
+            raise HTTPException(status_code=500, detail="stored episode review events are invalid")
+        cast(list[dict[str, Any]], review_events).append(
+            {
+                "review_event_id": f"EPR-{uuid.uuid4().hex[:16].upper()}",
+                "action": request.action,
+                "participant_revision": participant_revision,
+                "reviewed_at_utc": reviewed_at,
+            }
+        )
+        episode["reviewed_at_utc"] = reviewed_at
         payload["life_patterns_map"] = None
         payload["map_provider_receipt"] = None
         store.save(payload)
@@ -533,6 +567,11 @@ def create_life_patterns_interview_app(
                     "readable_by_coaching_or_inner_signal_with_user_consent": True,
                     "downstream_apps_must_not_silently_rewrite_research_evidence": True,
                 },
+                "research_freezes": payload.get("behavioral_freeze_receipts", []),
+                "research_freeze_policy": (
+                    "each receipt identifies a separate immutable research snapshot; "
+                    "this live export may continue evolving"
+                ),
             },
             "coaching_markdown": _coaching_markdown(
                 {**payload, "episodes": approved},
