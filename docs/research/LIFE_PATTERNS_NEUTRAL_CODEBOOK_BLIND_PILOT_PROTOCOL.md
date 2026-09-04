@@ -1,8 +1,8 @@
-# Life Patterns Neutral Codebook — Blind Human Reliability Pilot Protocol
+# Life Patterns Neutral Codebook — Conventional Blind Human Benchmark Protocol
 
-Status: execution-ready development protocol; **does not authorize recruitment/contact, spending, target-model execution, or validation-candidate promotion**.
+Status: **optional conventional human-human validation/development route**. It is no longer the default Life Patterns development workflow. The owner-approved default is `LIFE_PATTERNS_LLM_PRIMARY_CODING_PROTOCOL.md`. This document does not authorize recruitment/contact, spending, target-model execution, or validation-candidate promotion.
 
-Date: 2026-09-03
+Date: 2026-09-03; route status revised 2026-09-04.
 
 Canonical development candidate:
 
@@ -10,9 +10,11 @@ Canonical development candidate:
 
 ## Purpose
 
-The first pilot tests whether independent theory-blind human coders can reproducibly recover the reconciled codebook's episode boundaries, prerequisites, substantive values, missingness, sequence, context, and derived summaries from first-person autobiographical evidence.
+This protocol defines the **conventional human-human benchmark route** for testing whether independent theory-blind human coders can reproducibly recover the reconciled codebook's episode boundaries, prerequisites, substantive values, missingness, sequence, context, and derived summaries from first-person autobiographical evidence.
 
-The pilot is a **measurement-development exercise**. It does not test Human Design, AstroHD, astrology, any birth-derived model, participant benefit, or construct validity.
+It remains scientifically valid when the project chooses a full human benchmark. It is not required merely to begin development, and it is not the only route to validation-candidate authority. The alternative LLM-primary/human-calibrated route is specified separately.
+
+The protocol is a measurement-development/validation procedure. It does not test Human Design, AstroHD, astrology, any birth-derived model, participant benefit, or construct validity.
 
 ## Non-negotiable blind
 
@@ -75,9 +77,11 @@ Keep two sets separate:
 
 Training cases must never be counted in the first-pass reliability estimates.
 
-### Operational starting target
+### Operational starting target for this route
 
-For the first development pass, use two independent human coders and a corpus large enough to exercise every common observable and each high-priority confusion pair multiple times. As an operational planning target, start with roughly **60–100 independently codable episodes** rather than trying to force equal counts per observable.
+If the project deliberately chooses the conventional human-human route, use two independent human coders and a corpus large enough to exercise every common observable and each high-priority confusion pair multiple times. As an operational planning target, roughly **60–100 independently codable episodes** is reasonable for an initial development pass, rather than forcing equal counts per observable.
+
+This target applies only to this route. It is **not** a prerequisite for the LLM-primary/human-calibrated development workflow.
 
 Sparse prerequisites such as recognized possible-loss exposure, recognized error, interpersonal repair, or explicit rule/procedure response should be reported as sparse. Do **not** weaken prerequisites to fill cells.
 
@@ -269,15 +273,13 @@ Substantive v2 changes must occur in a theory-blind revision context. The exact 
 
 No revision may be made because a change improves correspondence with Human Design, AstroHD, astrology, another candidate model, or any model-fit result.
 
-## Validation-candidate promotion gate
+## Validation-candidate promotion under the conventional route
 
-The reconciled v1 candidate is **not** validation-ready merely because it was independently generated/reconciled.
-
-Promotion requires, at minimum:
+If this conventional human-human route is chosen, promotion requires, at minimum:
 
 - exact content/provenance freeze;
 - independent theory-blind replication/reconciliation requirement satisfied;
-- completed blind human development double-coding;
+- completed blind human double-coding;
 - reliability report bound to the exact ontology/coding procedure/corpus;
 - documented handling of unreliable or ambiguous distinctions;
 - a final theory-blind content review/revision decision;
@@ -285,9 +287,11 @@ Promotion requires, at minimum:
 
 The project does not predeclare a universal numeric coefficient cutoff. Promotion decisions must inspect raw agreement, prevalence, confusion matrices, abstention, error categories, and the consequences of disagreement, and must be made before target-model results exist.
 
+Alternative validation routes are governed by `LIFE_PATTERNS_LLM_PRIMARY_CODING_PROTOCOL.md` and the machine-checkable theory-blind authority contracts. LLM self-consistency alone is never sufficient for validation.
+
 ## Current authorization boundary
 
-This document prepares the pilot but does **not** authorize:
+This document specifies the conventional route but does **not** authorize:
 
 - contacting or recruiting coders/participants;
 - paying coders;
