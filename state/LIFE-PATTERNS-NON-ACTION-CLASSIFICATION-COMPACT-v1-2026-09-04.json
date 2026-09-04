@@ -1,0 +1,49 @@
+{
+  "schema_version": "life-patterns-non-action-classification-compact-v1",
+  "source_scope": "NBM-R01..NBM-R22",
+  "source_subcode_count": 206,
+  "rule": "Every source subcode not listed in non_action_ids or ambiguous_ids is classified not_non_action by the returned theory-blind classification pass.",
+  "non_action_ids": [
+    "R01-h",
+    "R03-h",
+    "R05-O2",
+    "R05-R8",
+    "R07-i",
+    "R08-c",
+    "R08-f",
+    "R10-k",
+    "R11-G7",
+    "R13-g",
+    "R14-i",
+    "R15-b",
+    "R15-c",
+    "R15-l",
+    "R16-c",
+    "R16-f",
+    "R16-l",
+    "R17-h",
+    "R18-f",
+    "R19-f",
+    "R20-j",
+    "R21-f",
+    "R21-k",
+    "R22-g"
+  ],
+  "ambiguous_ids": [
+    "R07-a",
+    "R11-I6",
+    "R15-h",
+    "R16-d",
+    "R17-g",
+    "R19-e",
+    "R20-g",
+    "R21-i"
+  ],
+  "counts": {
+    "non_action": 24,
+    "not_non_action": 174,
+    "ambiguous": 8,
+    "total": 206
+  },
+  "provenance": "Compact mechanical representation of the complete theory-blind classification returned by the user on 2026-09-04; see LIFE-PATTERNS-NON-ACTION-CLASSIFICATION-RESULT-RECEIPT-2026-09-04.md."
+}
