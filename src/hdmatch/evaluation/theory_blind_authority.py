@@ -2,8 +2,8 @@
 
 This module generalizes the Life Patterns content-authority policy beyond the legacy
 human-only H1 path. It does not author measurement constructs, run exposure adjudication,
-contact humans, or establish construct validity. It only records and validates provenance,
-blindness, replication/reconciliation, human reliability, and review receipts.
+contact humans, or establish construct validity. It records and validates provenance,
+blindness, replication/reconciliation, calibration evidence, and review receipts.
 """
 
 from __future__ import annotations
@@ -26,6 +26,11 @@ _SHA256_PATTERN = r"^[0-9a-f]{64}$"
 AuthorKind = Literal["human", "ai", "mixed"]
 PromptSeedLevel = Literal["minimally_seeded", "detailed_domain_seeded", "not_applicable"]
 AuthorityStage = Literal["development_candidate", "validation_candidate"]
+ValidationRoute = Literal[
+    "human_human_benchmark",
+    "statistically_justified_llm_substitution",
+    "automated_measurement_instrument",
+]
 ContentReviewOutcome = Literal[
     "approved_development_only",
     "approved_validation_candidate",
@@ -103,7 +108,7 @@ class TheoryBlindDevelopmentProvenance(AuthorityModel):
 
 
 class BlindHumanReliabilityReceipt(AuthorityModel):
-    """Binding to the human-human development reliability evidence."""
+    """Legacy-compatible conventional human-human development benchmark evidence."""
 
     schema_version: Literal["life-patterns-blind-human-reliability-receipt-v1"] = (
         "life-patterns-blind-human-reliability-receipt-v1"
@@ -125,6 +130,73 @@ class BlindHumanReliabilityReceipt(AuthorityModel):
     def reliability_time_is_utc(cls, value: datetime) -> datetime:
         if value.tzinfo is None or value.utcoffset() is None:
             raise ValueError("reliability-receipt timestamp must be timezone-aware")
+        return value.astimezone(UTC)
+
+
+class StatisticalLLMSubstitutionReceipt(AuthorityModel):
+    """Evidence that an automated annotator may substitute for full human coding.
+
+    The statistical analysis itself remains an external immutable artifact. This receipt
+    records its exact specification, result, decision rule, and human-calibration provenance.
+    """
+
+    schema_version: Literal["life-patterns-statistical-llm-substitution-v1"] = (
+        "life-patterns-statistical-llm-substitution-v1"
+    )
+    content_sha256: str = Field(pattern=_SHA256_PATTERN)
+    automated_human_calibration_artifact_sha256: str = Field(pattern=_SHA256_PATTERN)
+    calibration_sample_manifest_sha256: str = Field(pattern=_SHA256_PATTERN)
+    statistical_method_id: str = Field(min_length=1)
+    statistical_test_spec_sha256: str = Field(pattern=_SHA256_PATTERN)
+    statistical_test_result_sha256: str = Field(pattern=_SHA256_PATTERN)
+    decision_rule_sha256: str = Field(pattern=_SHA256_PATTERN)
+    substitution_decision: Literal["supported"] = "supported"
+    human_auditor_count: int = Field(ge=1)
+    human_first_pass_frozen_before_llm_exposure: Literal[True] = True
+    route_frozen_before_target_model_scoring: Literal[True] = True
+    target_model_outputs_available: Literal[False] = False
+    birth_or_chart_data_available: Literal[False] = False
+    substitution_does_not_establish_construct_validity: Literal[True] = True
+    created_at_utc: datetime
+
+    @field_validator("created_at_utc")
+    @classmethod
+    def substitution_time_is_utc(cls, value: datetime) -> datetime:
+        if value.tzinfo is None or value.utcoffset() is None:
+            raise ValueError("LLM-substitution timestamp must be timezone-aware")
+        return value.astimezone(UTC)
+
+
+class AutomatedMeasurementInstrumentReceipt(AuthorityModel):
+    """Preregistered automated-instrument route without a human-gold-standard claim."""
+
+    schema_version: Literal["life-patterns-automated-measurement-instrument-v1"] = (
+        "life-patterns-automated-measurement-instrument-v1"
+    )
+    content_sha256: str = Field(pattern=_SHA256_PATTERN)
+    instrument_spec_sha256: str = Field(pattern=_SHA256_PATTERN)
+    automated_prompt_sha256: str = Field(pattern=_SHA256_PATTERN)
+    model_or_ensemble_spec_sha256: str = Field(pattern=_SHA256_PATTERN)
+    stability_report_sha256: str = Field(pattern=_SHA256_PATTERN)
+    automated_human_calibration_artifact_sha256: str = Field(pattern=_SHA256_PATTERN)
+    calibration_sample_manifest_sha256: str = Field(pattern=_SHA256_PATTERN)
+    unresolved_units_policy_sha256: str = Field(pattern=_SHA256_PATTERN)
+    sensitivity_analysis_spec_sha256: str = Field(pattern=_SHA256_PATTERN)
+    automated_pass_count: int = Field(ge=3)
+    human_auditor_count: int = Field(ge=1)
+    human_first_pass_frozen_before_llm_exposure: Literal[True] = True
+    route_frozen_before_target_model_scoring: Literal[True] = True
+    explicit_no_human_gold_standard_equivalence_claim: Literal[True] = True
+    target_model_outputs_available: Literal[False] = False
+    birth_or_chart_data_available: Literal[False] = False
+    instrument_validation_does_not_establish_construct_validity: Literal[True] = True
+    created_at_utc: datetime
+
+    @field_validator("created_at_utc")
+    @classmethod
+    def instrument_time_is_utc(cls, value: datetime) -> datetime:
+        if value.tzinfo is None or value.utcoffset() is None:
+            raise ValueError("automated-instrument timestamp must be timezone-aware")
         return value.astimezone(UTC)
 
 
@@ -170,6 +242,8 @@ class TheoryBlindContentAuthorityPayload(AuthorityModel):
     authority_stage: AuthorityStage
     development_provenance: TheoryBlindDevelopmentProvenance
     human_reliability: BlindHumanReliabilityReceipt | None = None
+    llm_substitution: StatisticalLLMSubstitutionReceipt | None = None
+    automated_instrument: AutomatedMeasurementInstrumentReceipt | None = None
     content_review: TheoryBlindContentReviewReceipt
     authorized_at_utc: datetime
     exact_content_frozen: Literal[True] = True
@@ -183,6 +257,16 @@ class TheoryBlindContentAuthorityPayload(AuthorityModel):
             raise ValueError("content-authority timestamp must be timezone-aware")
         return value.astimezone(UTC)
 
+    @property
+    def validation_route(self) -> ValidationRoute | None:
+        if self.human_reliability is not None:
+            return "human_human_benchmark"
+        if self.llm_substitution is not None:
+            return "statistically_justified_llm_substitution"
+        if self.automated_instrument is not None:
+            return "automated_measurement_instrument"
+        return None
+
     @model_validator(mode="after")
     def authority_chronology_and_stage_are_coherent(self) -> TheoryBlindContentAuthorityPayload:
         if self.development_provenance.content_sha256 != self.content_sha256:
@@ -192,10 +276,16 @@ class TheoryBlindContentAuthorityPayload(AuthorityModel):
         if self.content_review.reviewed_at_utc < self.development_provenance.generated_at_utc:
             raise ValueError("content review cannot precede substantive content generation")
         latest_dependency = self.content_review.reviewed_at_utc
+        evidence_count = sum(
+            row is not None
+            for row in (self.human_reliability, self.llm_substitution, self.automated_instrument)
+        )
 
         if self.authority_stage == "development_candidate":
             if self.content_review.review_outcome != "approved_development_only":
                 raise ValueError("development authority requires an approved-development-only review")
+            if evidence_count:
+                raise ValueError("development authority must not carry validation-route evidence")
         else:
             provenance = self.development_provenance
             if provenance.requires_independent_replication_for_validation and (
@@ -205,13 +295,24 @@ class TheoryBlindContentAuthorityPayload(AuthorityModel):
                 raise ValueError(
                     "validation authority requires independent replication and reconciliation for a detailed theory-exposed seed prompt"
                 )
-            if self.human_reliability is None:
-                raise ValueError("validation authority requires blind human-human reliability evidence")
-            if self.human_reliability.content_sha256 != self.content_sha256:
-                raise ValueError("human reliability receipt does not bind authority content")
+            if evidence_count != 1:
+                raise ValueError("validation authority requires exactly one frozen validation-evidence route")
             if self.content_review.review_outcome != "approved_validation_candidate":
                 raise ValueError("validation authority requires validation-candidate content review")
-            latest_dependency = max(latest_dependency, self.human_reliability.created_at_utc)
+
+            if self.human_reliability is not None:
+                if self.human_reliability.content_sha256 != self.content_sha256:
+                    raise ValueError("human reliability receipt does not bind authority content")
+                latest_dependency = max(latest_dependency, self.human_reliability.created_at_utc)
+            elif self.llm_substitution is not None:
+                if self.llm_substitution.content_sha256 != self.content_sha256:
+                    raise ValueError("LLM-substitution receipt does not bind authority content")
+                latest_dependency = max(latest_dependency, self.llm_substitution.created_at_utc)
+            else:
+                assert self.automated_instrument is not None
+                if self.automated_instrument.content_sha256 != self.content_sha256:
+                    raise ValueError("automated-instrument receipt does not bind authority content")
+                latest_dependency = max(latest_dependency, self.automated_instrument.created_at_utc)
 
         if self.authorized_at_utc < latest_dependency:
             raise ValueError("content authority cannot precede its latest dependency")
@@ -237,6 +338,7 @@ class TheoryBlindContentAuthorityReceipt(AuthorityModel):
     authority_id: str = Field(pattern=r"^LPTB-[0-9A-F]{20}$")
     authority_sha256: str = Field(pattern=_SHA256_PATTERN)
     authority_stage: AuthorityStage
+    validation_route: ValidationRoute | None = None
     authorized_at_utc: datetime
 
     @field_validator("authorized_at_utc")
@@ -245,6 +347,14 @@ class TheoryBlindContentAuthorityReceipt(AuthorityModel):
         if value.tzinfo is None or value.utcoffset() is None:
             raise ValueError("content-authority receipt timestamp must be timezone-aware")
         return value.astimezone(UTC)
+
+    @model_validator(mode="after")
+    def route_matches_stage(self) -> TheoryBlindContentAuthorityReceipt:
+        if self.authority_stage == "development_candidate" and self.validation_route is not None:
+            raise ValueError("development content-authority receipt cannot claim a validation route")
+        if self.authority_stage == "validation_candidate" and self.validation_route is None:
+            raise ValueError("validation content-authority receipt requires a validation route")
+        return self
 
 
 def build_theory_blind_content_authority(
@@ -279,6 +389,7 @@ def compact_theory_blind_content_authority_receipt(
         authority_id=artifact.authority_id,
         authority_sha256=artifact.authority_sha256,
         authority_stage=artifact.payload.authority_stage,
+        validation_route=artifact.payload.validation_route,
         authorized_at_utc=artifact.payload.authorized_at_utc,
     )
 
