@@ -5,8 +5,9 @@ behavioral construct definitions. It provides immutable/versioned ontology artif
 episode-level coding records, evidence-provenance validation, deterministic descriptive
 aggregation, annotation exchange objects, and reliability-report contracts.
 
-Substantive construct content remains blocked behind the project's H1 human-only content
-authority boundary. Software validity does not establish construct validity or reliability.
+Substantive construct content remains blocked behind exact content-authority and calibration
+receipts. Legacy H1 human authority remains supported, but is no longer the only valid Life
+Patterns authority route. Software validity does not establish construct validity or reliability.
 """
 
 from __future__ import annotations
@@ -18,6 +19,7 @@ from typing import Any, Literal, cast
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
+from hdmatch.evaluation.theory_blind_authority import TheoryBlindContentAuthorityReceipt
 from hdmatch.experiments.canonical import (
     canonical_json_bytes,
     load_json_bytes,
@@ -85,6 +87,8 @@ class ExternalConceptReference(MeasurementModel):
 
 
 class HumanContentAuthorityReceipt(MeasurementModel):
+    """Legacy stricter H1 human-only authority receipt."""
+
     schema_version: Literal["life-patterns-h1-content-authority-v1"] = (
         "life-patterns-h1-content-authority-v1"
     )
@@ -180,6 +184,7 @@ class OntologyReleasePayload(MeasurementModel):
     released_at_utc: datetime
     synthetic_fixture_only: bool
     human_content_authority: HumanContentAuthorityReceipt | None = None
+    theory_blind_content_authority: TheoryBlindContentAuthorityReceipt | None = None
     software_validation_does_not_establish_construct_validity: Literal[True] = True
 
     @field_validator("released_at_utc")
@@ -201,8 +206,12 @@ class OntologyReleasePayload(MeasurementModel):
         return value
 
     @model_validator(mode="after")
-    def h1_authority_gate(self) -> OntologyReleasePayload:
+    def content_authority_gate(self) -> OntologyReleasePayload:
         origins = {row.origin_status for row in self.observables}
+        authority_count = sum(
+            row is not None
+            for row in (self.human_content_authority, self.theory_blind_content_authority)
+        )
         if self.synthetic_fixture_only:
             if origins != {"synthetic_placeholder"}:
                 raise ValueError(
@@ -210,13 +219,22 @@ class OntologyReleasePayload(MeasurementModel):
                 )
             if self.release_status == "frozen_for_validation":
                 raise ValueError("synthetic ontology releases cannot be frozen for validation")
-            if self.human_content_authority is not None:
-                raise ValueError("synthetic ontology releases must not carry human-content authority")
+            if authority_count:
+                raise ValueError("synthetic ontology releases must not carry content authority")
         elif "synthetic_placeholder" in origins:
             raise ValueError("substantive ontology releases cannot contain synthetic placeholders")
-        if self.release_status == "frozen_for_validation" and self.human_content_authority is None:
+
+        if authority_count > 1:
+            raise ValueError("ontology release must use exactly one content-authority path")
+        if self.release_status == "frozen_for_validation" and authority_count != 1:
+            raise ValueError("frozen substantive ontology requires a validation content-authority receipt")
+        if (
+            self.release_status == "frozen_for_validation"
+            and self.theory_blind_content_authority is not None
+            and self.theory_blind_content_authority.authority_stage != "validation_candidate"
+        ):
             raise ValueError(
-                "frozen substantive ontology requires an H1 human-content authority receipt"
+                "frozen substantive ontology requires validation-candidate theory-blind authority"
             )
         return self
 
@@ -449,19 +467,30 @@ class ReliabilityReportArtifact(MeasurementModel):
     payload: ReliabilityReportPayload
 
 
+def _ontology_content_sha256(payload: OntologyReleasePayload) -> str:
+    return sha256_json(
+        {
+            "ontology_id": payload.ontology_id,
+            "ontology_version": payload.ontology_version,
+            "scope_statement": payload.scope_statement,
+            "observables": payload.observables,
+        }
+    )
+
+
 def build_ontology_release(payload: OntologyReleasePayload) -> OntologyReleaseArtifact:
     digest = sha256_json(payload)
-    if payload.human_content_authority is not None:
-        expected_content = sha256_json(
-            {
-                "ontology_id": payload.ontology_id,
-                "ontology_version": payload.ontology_version,
-                "scope_statement": payload.scope_statement,
-                "observables": payload.observables,
-            }
-        )
-        if payload.human_content_authority.content_sha256 != expected_content:
-            raise ValueError("H1 human-content authority does not bind this ontology content")
+    expected_content = _ontology_content_sha256(payload)
+    if (
+        payload.human_content_authority is not None
+        and payload.human_content_authority.content_sha256 != expected_content
+    ):
+        raise ValueError("legacy H1 human-content authority does not bind this ontology content")
+    if (
+        payload.theory_blind_content_authority is not None
+        and payload.theory_blind_content_authority.content_sha256 != expected_content
+    ):
+        raise ValueError("theory-blind content authority does not bind this ontology content")
     return OntologyReleaseArtifact(
         artifact_id=f"LPO-{digest[:20].upper()}",
         ontology_sha256=digest,
@@ -474,17 +503,17 @@ def ontology_integrity_errors(artifact: OntologyReleaseArtifact) -> tuple[str, .
     digest = sha256_json(artifact.payload)
     if artifact.ontology_sha256 != digest or artifact.artifact_id != f"LPO-{digest[:20].upper()}":
         errors.append("ontology artifact failed content-address verification")
-    if artifact.payload.human_content_authority is not None:
-        expected_content = sha256_json(
-            {
-                "ontology_id": artifact.payload.ontology_id,
-                "ontology_version": artifact.payload.ontology_version,
-                "scope_statement": artifact.payload.scope_statement,
-                "observables": artifact.payload.observables,
-            }
-        )
-        if artifact.payload.human_content_authority.content_sha256 != expected_content:
-            errors.append("H1 human-content authority does not bind ontology content")
+    expected_content = _ontology_content_sha256(artifact.payload)
+    if (
+        artifact.payload.human_content_authority is not None
+        and artifact.payload.human_content_authority.content_sha256 != expected_content
+    ):
+        errors.append("legacy H1 human-content authority does not bind ontology content")
+    if (
+        artifact.payload.theory_blind_content_authority is not None
+        and artifact.payload.theory_blind_content_authority.content_sha256 != expected_content
+    ):
+        errors.append("theory-blind content authority does not bind ontology content")
     return tuple(errors)
 
 
@@ -721,8 +750,16 @@ def coding_run_scoreability_blockers(
         blockers.append("synthetic ontology cannot produce scoreable research evidence")
     if ontology.payload.release_status != "frozen_for_validation":
         blockers.append("ontology is not frozen for validation")
-    if ontology.payload.human_content_authority is None:
-        blockers.append("ontology lacks H1 human-content authority")
+    if (
+        ontology.payload.human_content_authority is None
+        and ontology.payload.theory_blind_content_authority is None
+    ):
+        blockers.append("ontology lacks validation content authority")
+    if (
+        ontology.payload.theory_blind_content_authority is not None
+        and ontology.payload.theory_blind_content_authority.authority_stage != "validation_candidate"
+    ):
+        blockers.append("ontology theory-blind content authority is not validation-candidate")
     if not payload.records:
         blockers.append("coding run contains no coded episode records")
     definitions = {row.observable_id: row for row in ontology.payload.observables}
@@ -746,7 +783,7 @@ def coding_run_scoreability_blockers(
     ]
     if reliability_not_ready:
         blockers.append(
-            "coded observables lack a human reliability baseline: "
+            "coded observables lack completed reliability/calibration status: "
             + ", ".join(reliability_not_ready)
         )
     if payload.run_type != "validation":
@@ -754,7 +791,7 @@ def coding_run_scoreability_blockers(
     if payload.coder.coder_type in {"llm", "deterministic"} and (
         payload.coder.automation_validation_receipt_sha256 is None
     ):
-        blockers.append("automated coder lacks a human-benchmark validation receipt")
+        blockers.append("automated coder lacks a frozen calibration/validation receipt")
     return tuple(dict.fromkeys(blockers))
 
 
