@@ -37,7 +37,7 @@ def _observable() -> ObservableDefinition:
         definition="Software-only fixture with no substantive behavioral interpretation.",
         unit_of_analysis="episode",
         value_type="nominal",
-        allowed_values=("VALUE_START", "VALUE_STOP", "VALUE_NO_ACTION"),
+        allowed_values=("VALUE_START", "VALUE_STOP", "VALUE_NO_ACTION", "OS"),
         insufficient_semantics="Use when structural fixture evidence is insufficient.",
         not_applicable_semantics="Use when structural fixture prerequisite is absent.",
         inclusion_criteria=("Structural fixture inclusion.",),
@@ -82,6 +82,7 @@ def _procedure(ontology):
                 ObservableProcedureExtensionV2(
                     observable_id="STRUCTURED_ALPHA",
                     non_action_values=("VALUE_NO_ACTION",),
+                    other_specified_value="OS",
                 ),
             ),
             created_at_utc=NOW,
@@ -221,6 +222,47 @@ def test_non_action_registry_requires_all_four_prerequisites() -> None:
             procedure=procedure,
         )
     )
+
+
+def test_other_specified_requires_concrete_description_and_missingness_is_explicit() -> None:
+    ontology = _ontology()
+    procedure = _procedure(ontology)
+    freeze = _freeze_artifact()
+    evidence = freeze_evidence_index_from_artifact(freeze)
+    task = build_structured_annotation_tasks_v2(freeze, ontology, procedure)[0]
+
+    missing_description = _response(task, procedure, coded_values=("OS",))
+    errors = structured_annotation_response_errors(
+        missing_description,
+        task=task,
+        evidence=evidence,
+        ontology=ontology,
+        procedure=procedure,
+    )
+    assert "Other Specified value requires a concrete behavioral description" in errors
+
+    response = _response(
+        task,
+        procedure,
+        coded_values=("OS",),
+        other_specified_description="Concrete structural behavior not represented by listed values.",
+        missingness_flags=("APPROX", "UNCLEAR-SEQUENCE"),
+    )
+    assert response.missingness_flags == ("APPROX", "UNCLEAR-SEQUENCE")
+    assert structured_annotation_response_errors(
+        response,
+        task=task,
+        evidence=evidence,
+        ontology=ontology,
+        procedure=procedure,
+    ) == ()
+
+    with pytest.raises(ValueError, match="duplicate missingness flags"):
+        _response(
+            task,
+            procedure,
+            missingness_flags=("UNK", "UNK"),
+        )
 
 
 def test_influence_and_source_provenance_are_explicit_and_task_bound() -> None:
