@@ -1,6 +1,6 @@
 # Life Patterns Neutral Codebook — Reconciliation / Pilot Milestone Receipt
 
-Date: 2026-09-03
+Date: 2026-09-04
 
 Status: development milestone only. No merge, deploy, recruitment, spending, validation promotion, or target-model execution is authorized.
 
@@ -12,66 +12,76 @@ Status: development milestone only. No merge, deploy, recruitment, spending, val
 - `state/LIFE-PATTERNS-NEUTRAL-CODEBOOK-RECONCILIATION-PROMPT-v1-2026-09-03.md`
 - `state/LIFE-PATTERNS-NEUTRAL-CODEBOOK-THEORY-BLIND-RECONCILED-CANDIDATE-v1-2026-09-03.md`
 
-The reconciled candidate was produced in a theory-blind context from the two preserved source drafts. It contains 22 primary episode-level observables and explicitly moves cross-episode recurrence, context variability, temporal change, and several state-linked comparisons into metadata/derived summaries to avoid double-counting the same underlying evidence.
+The reconciled candidate was produced in a theory-blind context from the two preserved source drafts. It contains 22 primary episode-level observables and moves cross-episode recurrence, context variability, temporal change, and several state-linked comparisons into metadata/derived summaries to avoid double-counting the same underlying evidence.
 
 ## Theory-leakage disposition
 
 No obvious direct Human Design/AstroHD/astrology-specific construct leakage was identified in the first draft, minimally seeded replication, or reconciled candidate.
 
-The initial detailed prompt was authored by a theory-exposed project context and therefore remains documented as a prompt-steering contamination risk. That risk is addressed at the development stage by the separately preserved minimally seeded replication and blind reconciliation. It is not represented as proof of zero pretraining exposure or construct validity.
+The initial detailed prompt was authored by a theory-exposed project context and remains documented as a prompt-steering contamination risk. That risk is addressed at the development stage by the separately preserved minimally seeded replication and blind reconciliation. It is not represented as proof of zero pretraining exposure or construct validity.
 
-## Blind human reliability protocol
+## Owner methodology correction — LLM-primary coding
 
-Added:
+The earlier default plan required two humans to code the full development corpus. The owner identified a practical and methodological weakness: a 22-observable codebook with prerequisite, missingness, sequence, and context decisions creates substantial human attention burden, and exact human-human agreement is neither realistic nor the scientific objective.
+
+The default development route is now:
+
+- high-capability theory-blind LLM as primary full-corpus coder;
+- at least three isolated repeated automated passes when feasible;
+- all raw passes frozen before consensus/adjudication;
+- unresolved model disagreement preserved rather than forced;
+- one theory-blind human auditor codes a strategically sampled subset independently, without seeing model labels first;
+- theory-exposed owner may code only as a separate post-freeze sensitivity analysis.
+
+Canonical protocol:
+
+- `docs/research/LIFE_PATTERNS_LLM_PRIMARY_CODING_PROTOCOL.md`
+
+The prior all-human protocol remains available as a stricter alternative:
 
 - `docs/research/LIFE_PATTERNS_NEUTRAL_CODEBOOK_BLIND_PILOT_PROTOCOL.md`
 
-The protocol requires independent pre-adjudication human coding, explicit non-action prerequisites, separate reliability reporting for segmentation/applicability/value/sequence/missingness/context/derived summaries, preserved original coder outputs, and theory-blind post-pilot revision.
+A second human is not required to begin the development pilot.
 
 ## Machine-checkable contracts
 
-Added:
+Implemented:
 
 - `src/hdmatch/evaluation/theory_blind_authority.py`
-- `tests/unit/test_theory_blind_authority.py`
 - `src/hdmatch/evaluation/pilot_reliability.py`
-- `tests/unit/test_pilot_reliability.py`
+- `src/hdmatch/evaluation/automated_annotation_calibration.py`
+- corresponding unit tests.
 
-The theory-blind authority contract supports human or AI substantive authorship but keeps validation promotion blocked unless required independent replication/reconciliation and blind human-human reliability evidence exist.
+The automated calibration layer content-addresses repeated isolated model passes, frozen consensus/stability reporting, blind human calibration output, and the model-human comparison. It explicitly records that model self-consistency does not establish correctness or construct validity.
 
-The pilot receipt contract content-addresses the development corpus manifest, independent first-pass freeze, and post-freeze adjudication chain.
+## Validation-route policy
 
-## Policy/spec updates
+Full-corpus human coding is no longer a universal scientific requirement.
 
-Updated:
+Before confirmatory model scoring, the project must freeze one validation route without seeing target-model results:
 
-- `docs/research/LIFE_PATTERNS_THEORY_BLIND_CONTENT_AUTHORITY_POLICY.md`
-- `docs/research/LIFE_PATTERNS_NEUTRAL_MEASUREMENT_BRIDGE_SPEC.md`
+1. conventional independent human benchmark;
+2. statistically justified automated-annotator substitution on a human calibration subset; or
+3. explicitly preregistered automated measurement instrument with replicated stability plus independent human audit, without claiming a human gold standard.
 
-They now reflect the owner-approved theory-blind authorship policy, the preserved reconciliation, the blind-pilot chronology, and the generic authority/pilot receipt implementations.
+The current software validation authority contracts are still stricter than this revised policy and fail closed on the legacy human-human/H1 path. That mismatch must be generalized before a non-human-benchmark validation route can be represented. It must not be bypassed with fabricated receipts.
 
-## Remaining implementation mismatch
+## Current human role assignment
 
-`src/hdmatch/evaluation/neutral_measurement.py` still wires `frozen_for_validation` to the legacy `HumanContentAuthorityReceipt` / H1 human-only field.
+The owner-designated external person is represented only as pseudonymous `BLIND-HUMAN-AUDITOR-A`, pending blind attestation. Personal identity is not stored in the public repository.
 
-The generic theory-blind authority contract is implemented, but the core ontology gate has not yet been generalized. This must not be bypassed by fabricating a legacy human receipt for AI-authored content.
-
-This mismatch is not currently blocking development because the reconciled codebook cannot legitimately be promoted to validation status until real blind human reliability evidence exists anyway.
+The owner is theory-exposed and may perform a post-freeze sensitivity pass, but does not count as a blind auditor.
 
 ## Scientific next dependency
 
-Actual progress beyond development infrastructure requires blind human double-coding under the frozen pilot protocol. No coder recruitment/contact or spending has been authorized in this milestone.
+The next substantive development step is to pin the exact primary automated coder/model and coding prompt, select/freeze a development corpus, run independent blinded automated passes, and obtain the blind human calibration subset. No human contact or spending is authorized by this receipt.
 
-## CI
+## Last verified implementation gate before this methodology extension
 
-Verified implementation head: `77de467c66be30c90902a83bfb4fa3fa66c7c1b2`.
+Implementation head `77de467c66be30c90902a83bfb4fa3fa66c7c1b2`:
 
-GitHub Actions CI run: `33815444885` (`ci`, run #1128), conclusion **success**.
+- 422 passed, 6 expected skips;
+- Ruff all checks passed;
+- mypy success, no issues in 139 source files.
 
-- `python -m pytest`: **422 passed, 6 expected skips**
-- `ruff check src tests --ignore E501,I001`: **all checks passed**
-- `mypy src/hdmatch`: **success, no issues in 139 source files**
-
-The immediately preceding run had the same 422-pass test result and failed only Ruff `SIM102` on one nested `if` in `theory_blind_authority.py`; commit `77de467c...` made the non-semantic one-line control-flow cleanup and the full gate then passed.
-
-This receipt is a documentation-only record of the gated implementation milestone. Later documentation-only commits must still pass the normal PR workflow before merge consideration.
+The current automated-calibration extension is subject to its own normal CI run before being treated as fully gated.
