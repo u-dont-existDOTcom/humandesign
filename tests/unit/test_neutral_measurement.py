@@ -311,7 +311,7 @@ def test_synthetic_ontology_is_content_addressed_read_only_and_not_validation_au
         )
 
 
-def test_h1_authority_is_structurally_required_and_binds_exact_content() -> None:
+def test_validation_authority_is_required_and_legacy_h1_binds_exact_content() -> None:
     observable = _structural_test_observable()
     base = {
         "ontology_id": "life-patterns-structural-test",
@@ -329,7 +329,7 @@ def test_h1_authority_is_structurally_required_and_binds_exact_content() -> None
         "released_at_utc": datetime(2026, 9, 3, 17, 47, tzinfo=UTC),
         "synthetic_fixture_only": False,
     }
-    with pytest.raises(ValueError, match="requires an H1 human-content authority"):
+    with pytest.raises(ValueError, match="requires a validation content-authority receipt"):
         OntologyReleasePayload(**base)
 
     valid = _authorized_structural_ontology()
@@ -439,7 +439,7 @@ def test_structurally_authorized_human_validation_path_can_be_scoreable() -> Non
     assert artifact.scoreability_blockers == ()
 
 
-def test_automated_validation_requires_human_benchmark_receipt() -> None:
+def test_automated_validation_requires_frozen_calibration_receipt() -> None:
     ontology = _authorized_structural_ontology()
     evidence = freeze_evidence_index_from_artifact(_freeze_artifact())
     record = _observed_record("STRUCTURAL_TEST_ALPHA", "EP-A", "TURN-A")
@@ -459,7 +459,7 @@ def test_automated_validation_requires_human_benchmark_receipt() -> None:
         ontology,
         evidence,
     )
-    assert "automated coder lacks a human-benchmark validation receipt" in blocked.scoreability_blockers
+    assert "automated coder lacks a frozen calibration/validation receipt" in blocked.scoreability_blockers
 
     validated_coder = CoderIdentity(
         coder_id="LLM-STRUCTURAL-TEST",
