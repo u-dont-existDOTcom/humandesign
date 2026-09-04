@@ -192,9 +192,10 @@ class StructuredAnnotationResponseV2(StructuredAnnotationModel):
                 "insufficient/not-applicable structured annotations cannot assert substantive values"
             )
 
-        if self.asserts_non_action:
-            if self.non_action_gate is None or not self.non_action_gate.all_established:
-                raise ValueError("substantive non-action requires all four gate elements established")
+        if self.asserts_non_action and (
+            self.non_action_gate is None or not self.non_action_gate.all_established
+        ):
+            raise ValueError("substantive non-action requires all four gate elements established")
 
         if self.influence_relation == "none_reported" and self.influence_source_turn_ids:
             raise ValueError("no reported influence cannot cite influence source turns")
@@ -265,9 +266,7 @@ def _validate_scalar_value(value: ScalarValue, definition: Any) -> bool:
     numeric = float(value)
     if definition.numeric_min is not None and numeric < definition.numeric_min:
         return False
-    if definition.numeric_max is not None and numeric > definition.numeric_max:
-        return False
-    return True
+    return definition.numeric_max is None or numeric <= definition.numeric_max
 
 
 def structured_annotation_response_errors(
