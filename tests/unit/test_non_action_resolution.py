@@ -15,6 +15,8 @@ from hdmatch.evaluation.non_action_resolution import (
     parse_ambiguity_resolution_jsonl,
 )
 from hdmatch.evaluation.reconciled_codebook_source import parse_reconciled_codebook_file
+from hdmatch.evaluation.reconciled_ontology import build_development_ontology_from_resolved_view
+from hdmatch.evaluation.resolved_coding_procedure import build_structured_procedure_from_resolved_view
 from hdmatch.experiments.canonical import sha256_json
 
 CODEBOOK_PATH = Path(
@@ -61,6 +63,16 @@ def _artifact():
     )
 
 
+def _resolved():
+    source, compact, artifact = _artifact()
+    resolved = build_resolved_codebook_view_v2(
+        source=source,
+        compact=compact,
+        resolution=artifact,
+    )
+    return source, compact, artifact, resolved
+
+
 def test_compact_first_pass_matches_exact_frozen_source() -> None:
     source = parse_reconciled_codebook_file(CODEBOOK_PATH)
     compact = load_compact_non_action_classification(COMPACT_PATH)
@@ -74,7 +86,7 @@ def test_compact_first_pass_matches_exact_frozen_source() -> None:
 
 
 def test_real_theory_blind_resolution_covers_exactly_eight_ambiguities() -> None:
-    source, compact, artifact = _artifact()
+    source, compact, artifact, resolved = _resolved()
     assert len(artifact.payload.decisions) == 8
     assert {row.original_subcode_id for row in artifact.payload.decisions} == set(
         compact.ambiguous_ids
@@ -83,11 +95,6 @@ def test_real_theory_blind_resolution_covers_exactly_eight_ambiguities() -> None
     assert sum(row.resolution == "split" for row in artifact.payload.decisions) == 2
     assert sum(row.resolution == "clarify_without_split" for row in artifact.payload.decisions) == 6
 
-    resolved = build_resolved_codebook_view_v2(
-        source=source,
-        compact=compact,
-        resolution=artifact,
-    )
     assert resolved.payload.original_subcode_count == 206
     assert resolved.payload.resolved_subcode_count == 208
     assert resolved.payload.non_action_count == 28
@@ -110,6 +117,52 @@ def test_real_theory_blind_resolution_covers_exactly_eight_ambiguities() -> None
     assert by_id["R19-e"].classification == "not_non_action"
     assert by_id["R20-g"].classification == "not_non_action"
     assert by_id["R21-i"].classification == "non_action"
+
+
+def test_resolved_view_projects_exact_values_and_non_action_registry() -> None:
+    source, _, _, resolved = _resolved()
+    ontology = build_development_ontology_from_resolved_view(
+        source,
+        resolved,
+        ontology_id="life-patterns-theory-blind-resolved-development-test",
+        ontology_version="v2-test",
+        coding_manual_id="life-patterns-automated-coding-v2-test",
+        coding_manual_sha256="a" * 64,
+        aggregation_policy_id="life-patterns-descriptive-aggregation-test",
+        aggregation_policy_sha256="b" * 64,
+        theory_contamination_policy_id="life-patterns-theory-blind-policy-test",
+        theory_contamination_policy_sha256="c" * 64,
+        source_commit="d" * 40,
+        released_at_utc=NOW,
+    )
+    definitions = {row.observable_id: row for row in ontology.payload.observables}
+    assert "R07-a" not in definitions["NBM-R07"].allowed_values
+    assert {"R07-a1", "R07-a2"}.issubset(definitions["NBM-R07"].allowed_values)
+    assert "R16-d" not in definitions["NBM-R16"].allowed_values
+    assert {"R16-d1", "R16-d2"}.issubset(definitions["NBM-R16"].allowed_values)
+    assert any(
+        evidence.startswith("R07-a2:")
+        for evidence in definitions["NBM-R07"].evidence_requirements
+    )
+
+    procedure = build_structured_procedure_from_resolved_view(
+        source=source,
+        resolved=resolved,
+        ontology=ontology,
+        coding_manual_sha256="a" * 64,
+        created_at_utc=NOW,
+    )
+    extensions = {row.observable_id: row for row in procedure.payload.observable_extensions}
+    assert sum(len(row.non_action_values) for row in extensions.values()) == 28
+    assert set(extensions["NBM-R07"].non_action_values) == {"R07-a2", "R07-i"}
+    assert set(extensions["NBM-R16"].non_action_values) == {
+        "R16-c",
+        "R16-d2",
+        "R16-f",
+        "R16-l",
+    }
+    assert set(extensions["NBM-R17"].non_action_values) == {"R17-g", "R17-h"}
+    assert procedure.payload.reconciled_codebook_sha256 == resolved.view_sha256
 
 
 def test_resolution_rejects_missing_blind_decision() -> None:
