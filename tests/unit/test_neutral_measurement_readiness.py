@@ -147,7 +147,7 @@ def test_validation_run_blocks_observable_without_validation_candidate_status() 
     )
 
 
-def test_validation_run_blocks_observable_without_human_reliability_baseline() -> None:
+def test_validation_run_blocks_observable_without_completed_reliability_or_calibration() -> None:
     ontology = _ontology(
         validity="validation_candidate",
         reliability="not_evaluated",
@@ -159,15 +159,29 @@ def test_validation_run_blocks_observable_without_human_reliability_baseline() -
     )
     assert artifact.scoreable_for_model_tournament is False
     assert (
-        "coded observables lack a human reliability baseline: STRUCTURAL_READINESS_ALPHA"
+        "coded observables lack completed reliability/calibration status: STRUCTURAL_READINESS_ALPHA"
         in artifact.scoreability_blockers
     )
 
 
-def test_validation_run_is_scoreable_only_after_declared_measurement_readiness() -> None:
+def test_validation_run_is_scoreable_after_human_measurement_readiness() -> None:
     ontology = _ontology(
         validity="validation_candidate",
         reliability="human_baseline_evaluated",
+    )
+    artifact = build_coding_run_artifact(
+        _payload(ontology, records=(_record(),)),
+        ontology,
+        _evidence(),
+    )
+    assert artifact.scoreable_for_model_tournament is True
+    assert artifact.scoreability_blockers == ()
+
+
+def test_validation_run_accepts_completed_automation_calibration_status() -> None:
+    ontology = _ontology(
+        validity="validation_candidate",
+        reliability="automation_evaluated",
     )
     artifact = build_coding_run_artifact(
         _payload(ontology, records=(_record(),)),
