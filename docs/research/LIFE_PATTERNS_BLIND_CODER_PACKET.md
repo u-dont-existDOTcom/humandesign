@@ -1,10 +1,12 @@
-# Life Patterns Neutral Codebook — Blind Coder Packet
+# Life Patterns — Blind Human Calibration Auditor Packet
 
 Status: development-pilot packet. This document does not reveal or describe any external target theory or model.
 
 ## Your role
 
 You are helping test whether a behavioral coding manual can be applied consistently to first-person autobiographical stories.
+
+You will independently code a **calibration subset**, not the full research corpus.
 
 Your task is not to diagnose anyone, judge them, assign personality types, infer hidden motives, or decide whether their behavior was good or bad. Your task is to record what the narrative supports under the supplied behavioral codebook.
 
@@ -14,22 +16,25 @@ You will receive:
 
 1. the frozen candidate codebook;
 2. a short coding-procedure sheet;
-3. training examples with answers;
-4. a separate reliability set to code independently;
+3. training examples with answers, if used;
+4. a frozen calibration set to code independently;
 5. a coding form or annotation file.
+
+You must not receive any automated coder's answers for the calibration set before your own first-pass output is frozen.
 
 Do not search for or ask about any external theory, personality system, birth-based system, research hypothesis, model, or prediction that might later be compared with these behavioral codes.
 
 ## Before beginning: eligibility/blind attestation
 
-Confirm all of the following for the reliability pass:
+Confirm all of the following for the calibration pass:
 
 - I have not been shown participant birth data for this task.
 - I have not been shown chart outputs for this task.
 - I have not been shown any target-model predictions, mappings, scores, rankings, residuals, or fit results for this task.
 - I have not been told which behavioral codes would favor or disfavor any eventual external model.
+- I have not seen the automated coder's labels for the calibration episodes.
 - I will not seek that information while coding.
-- I will code independently and will not view another coder's labels or notes before my first-pass output is frozen.
+- I will code independently and will not view another coder's/model's labels or notes before my first-pass output is frozen.
 
 If any statement is false, stop and report it before coding.
 
@@ -99,25 +104,27 @@ Statements such as "I never ask for help" or "I always finish what I start" can 
 
 ### 10. Do not optimize for agreement
 
-Your job is not to match another coder. Disagreement is useful data. Code what you think the frozen rules support.
+Your job is not to match the automated coder. Disagreement is useful data. Code what you think the frozen rules support.
 
 ## Workflow
 
-1. Complete training examples.
-2. Review any training corrections before the reliability set begins.
-3. Segment the reliability narratives into episodes before assigning substantive codes.
+1. Complete training examples if supplied.
+2. Review any training corrections before the calibration set begins.
+3. Segment calibration narratives into episodes before assigning substantive codes.
 4. Code independently.
 5. Record prerequisite/applicability before substantive value.
 6. Record uncertainty/missingness explicitly.
-7. Freeze/submit your first-pass output before discussing any case with another coder.
-8. Only after both first-pass outputs are frozen may disagreement review occur.
+7. Freeze/submit your first-pass output before viewing automated labels or discussing ambiguous cases.
+8. Only after first-pass outputs are frozen may disagreement review occur.
 
-## Questions during the reliability pass
+## Questions during the calibration pass
 
-If wording is unclear, log the question rather than obtaining a new substantive interpretation that only one coder receives. Unless the entire run is formally restarted under a new frozen procedure, codebook clarifications discovered mid-pass are deferred to post-pilot revision.
+If wording is unclear, log the question rather than asking the project owner how a particular case should be coded. Unless the run is formally restarted under a new frozen procedure, substantive clarifications discovered mid-pass are deferred to post-pilot revision.
 
-## What this pilot can show
+## What this calibration can show
 
-The pilot may show that some codes are clear, some overlap, some are too sparse, some need narrower wording, or some should be merged or removed. That is a successful measurement-development result.
+The calibration may show that some codes are clear, some overlap, some are too sparse, some need narrower wording, or some should be merged or removed. It may also reveal systematic automated-coder errors.
+
+Agreement with the automated coder is not required. Neither the human nor the model is treated as infallible.
 
 Do not infer anything about any external theory or model from the coding task.
