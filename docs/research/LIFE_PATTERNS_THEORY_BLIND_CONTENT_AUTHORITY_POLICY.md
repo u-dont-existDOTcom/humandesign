@@ -171,7 +171,7 @@ Default LLM-primary development route:
 
 `docs/research/LIFE_PATTERNS_LLM_PRIMARY_CODING_PROTOCOL.md`
 
-Stricter alternate all-human benchmark route:
+Conventional alternate all-human benchmark route:
 
 `docs/research/LIFE_PATTERNS_NEUTRAL_CODEBOOK_BLIND_PILOT_PROTOCOL.md`
 
@@ -179,27 +179,45 @@ The latter remains methodologically usable but is no longer a prerequisite for c
 
 Neither protocol authorizes coder recruitment/contact or spending by itself.
 
-## Implemented theory-blind authority contracts
+## Implemented theory-blind authority and calibration contracts
 
 The generic machine-checkable authority contract is implemented in:
 
 `src/hdmatch/evaluation/theory_blind_authority.py`
 
-It currently encodes the earlier stricter human-human reliability requirement for validation promotion. That contract is now **more conservative than this policy** and must be generalized before a non-Route-A validation candidate can be represented in software.
+It now represents exactly one of three mutually exclusive validation-evidence routes:
 
-This mismatch is safe in the short term because it fails closed; it must not be bypassed by fabricated human receipts.
+- `human_human_benchmark`;
+- `statistically_justified_llm_substitution`;
+- `automated_measurement_instrument`.
 
-Blind reliability-pilot receipt contracts are implemented in:
+A validation-candidate authority cannot exist without exactly one frozen route. Detailed theory-exposed seed prompts still require the independently preserved replication and reconciliation. Route-B and Route-C receipts require independent human calibration provenance; LLM self-consistency alone cannot satisfy the authority gate.
+
+Repeated automated coding and independent human-calibration provenance are implemented in:
+
+`src/hdmatch/evaluation/automated_annotation_calibration.py`
+
+The automated ensemble requires at least three isolated passes binding the same corpus, codebook, procedure, and prompt. The blind human audit receipt requires that LLM outputs were unavailable before the auditor's first pass.
+
+Human reliability-pilot receipt contracts remain implemented in:
 
 `src/hdmatch/evaluation/pilot_reliability.py`
 
-They remain useful for any human-coded calibration or benchmark subset. Additional machine-checkable receipts for repeated LLM passes and LLM-human calibration should be added before automated development coding is treated as a frozen pipeline.
+They support Route A and any human-coded calibration subset used in Routes B/C.
+
+The neutral ontology/coding gate in:
+
+`src/hdmatch/evaluation/neutral_measurement.py`
+
+now accepts either the legacy stricter `HumanContentAuthorityReceipt` or the generic `TheoryBlindContentAuthorityReceipt`, never both. Frozen theory-blind ontologies require validation-candidate authority; automated coding additionally requires a frozen calibration/validation receipt. Observable readiness accepts either `human_baseline_evaluated` or `automation_evaluated` status.
+
+This resolves the former Life Patterns core H1-only implementation mismatch while preserving the legacy H1 path for artifacts that genuinely used it.
 
 ## Current codebook disposition
 
 The initial independent draft used a detailed prompt authored by a theory-exposed context, so it was not sufficient alone. That prompt-steering concern has been addressed at the development stage by the separately preserved minimally seeded replication and theory-blind reconciliation.
 
-The current reconciled artifact remains a **development candidate**. It is not promoted merely because several AI generations converged.
+The current reconciled artifact remains a **development candidate**. It is not promoted merely because several AI generations converged or because the software can represent alternate validation routes. Actual calibration evidence and a frozen route decision are still required before validation promotion.
 
 ## Relationship to the previous H1 human-only boundary
 
@@ -207,7 +225,7 @@ The current reconciled artifact remains a **development candidate**. It is not p
 
 The old `HumanContentAuthorityReceipt` / H1 adapter remains in the repository as a legacy compatible path for content that actually used that stricter process. It must not be used to relabel AI-authored content as human-authored.
 
-`src/hdmatch/evaluation/neutral_measurement.py` also still wires `frozen_for_validation` directly to the legacy human-only receipt field. Until that core integration is generalized, software validation may continue to block an otherwise policy-compliant non-Route-A validation candidate. This is a remaining implementation mismatch, not a scientific requirement.
+The generic theory-blind path is now integrated into the core neutral measurement gate. The legacy path is backward-compatible rather than mandatory.
 
 ## Non-negotiable chronology
 
