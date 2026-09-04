@@ -125,7 +125,7 @@ def test_resolved_view_projects_exact_values_and_non_action_registry() -> None:
         source,
         resolved,
         ontology_id="life-patterns-theory-blind-resolved-development-test",
-        ontology_version="v2-test",
+        ontology_version="v2.0.0",
         coding_manual_id="life-patterns-automated-coding-v2-test",
         coding_manual_sha256="a" * 64,
         aggregation_policy_id="life-patterns-descriptive-aggregation-test",
