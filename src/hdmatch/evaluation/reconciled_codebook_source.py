@@ -127,9 +127,12 @@ def _bullet_items(block: str) -> tuple[str, ...]:
         for line in block.splitlines()
         if line.startswith("* ") and not line.startswith("* **")
     )
-    if not items:
-        raise ValueError("expected at least one Markdown bullet item")
-    return items
+    if items:
+        return items
+    stripped = block.strip()
+    if stripped:
+        return (stripped,)
+    raise ValueError("expected a non-empty criteria block")
 
 
 def _numbered_items(block: str) -> tuple[str, ...]:
