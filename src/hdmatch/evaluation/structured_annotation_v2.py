@@ -3,11 +3,12 @@
 V1 annotation artifacts are intentionally left unchanged because adding default fields to the
 existing Pydantic models would alter canonical serialization and content hashes. V2 adds the
 measurement details required by the reconciled codebook: ordered within-episode sequences,
-explicit non-action prerequisites, and narrator-influence versus temporal-precedence fields.
+explicit non-action prerequisites, missingness flags, Other Specified descriptions, and
+narrator-influence versus temporal-precedence fields.
 
 This module is still content-neutral. Substantive observable definitions and the designation of
-which categorical values represent non-action come from separately frozen ontology/procedure
-artifacts.
+which categorical values represent non-action/Other-Specified come from separately frozen
+ontology/procedure artifacts.
 """
 
 from __future__ import annotations
@@ -44,6 +45,18 @@ InfluenceRelation = Literal[
     "narrator_explicit_influence",
     "temporal_precedence_only",
 ]
+MissingnessFlag = Literal[
+    "UNK",
+    "APPROX",
+    "CONFLICTING-RECALL",
+    "UNCLEAR-AGENCY",
+    "UNCLEAR-AWARENESS",
+    "UNCLEAR-OPPORTUNITY",
+    "UNCLEAR-FEASIBILITY",
+    "UNCLEAR-WINDOW",
+    "UNCLEAR-SEQUENCE",
+    "UNCLEAR-ENDPOINT",
+]
 
 
 class StructuredAnnotationModel(BaseModel):
@@ -74,6 +87,7 @@ class NonActionGateAssessmentV2(StructuredAnnotationModel):
 class ObservableProcedureExtensionV2(StructuredAnnotationModel):
     observable_id: str = Field(min_length=1)
     non_action_values: tuple[str, ...] = ()
+    other_specified_value: str | None = None
 
     @field_validator("non_action_values")
     @classmethod
@@ -81,6 +95,12 @@ class ObservableProcedureExtensionV2(StructuredAnnotationModel):
         if len(value) != len(set(value)):
             raise ValueError("observable procedure contains duplicate non-action values")
         return value
+
+    @model_validator(mode="after")
+    def special_values_do_not_conflict(self) -> ObservableProcedureExtensionV2:
+        if self.other_specified_value is not None and self.other_specified_value in self.non_action_values:
+            raise ValueError("Other Specified value cannot also be registered as non-action")
+        return self
 
 
 class StructuredCodingProcedurePayloadV2(StructuredAnnotationModel):
@@ -163,9 +183,11 @@ class StructuredAnnotationResponseV2(StructuredAnnotationModel):
     value_relation: ValueRelation | None = None
     asserts_non_action: bool = False
     non_action_gate: NonActionGateAssessmentV2 | None = None
+    other_specified_description: str | None = None
     supporting_source_turn_ids: tuple[str, ...] = ()
     counterevidence_source_turn_ids: tuple[str, ...] = ()
     context_qualifiers: tuple[str, ...] = ()
+    missingness_flags: tuple[MissingnessFlag, ...] = ()
     life_phase_qualifier: str | None = None
     language: str | None = None
     influence_relation: InfluenceRelation = "none_reported"
@@ -173,6 +195,16 @@ class StructuredAnnotationResponseV2(StructuredAnnotationModel):
     theory_exposure: TheoryExposureState = "unknown"
     annotation_note: str | None = None
     person_level_contradiction_or_mixed_not_encoded_here: Literal[True] = True
+
+    @field_validator("missingness_flags")
+    @classmethod
+    def missingness_flags_are_unique(
+        cls,
+        value: tuple[MissingnessFlag, ...],
+    ) -> tuple[MissingnessFlag, ...]:
+        if len(value) != len(set(value)):
+            raise ValueError("structured annotation contains duplicate missingness flags")
+        return value
 
     @model_validator(mode="after")
     def state_and_values_are_coherent(self) -> StructuredAnnotationResponseV2:
@@ -192,6 +224,8 @@ class StructuredAnnotationResponseV2(StructuredAnnotationModel):
                 "insufficient/not-applicable structured annotations cannot assert substantive values"
             )
 
+        if self.state != "observed" and self.other_specified_description is not None:
+            raise ValueError("Other Specified description requires an observed substantive value")
         if self.asserts_non_action and (
             self.non_action_gate is None or not self.non_action_gate.all_established
         ):
@@ -237,6 +271,13 @@ def structured_procedure_errors(
                 f"non-action registry for {observable_id} contains values outside its codebook: "
                 + ", ".join(unknown_values)
             )
+        if extension.other_specified_value is not None:
+            if definition.value_type not in {"nominal", "ordinal"}:
+                errors.append(f"Other Specified registry for {observable_id} requires categorical values")
+            elif extension.other_specified_value not in definition.allowed_values:
+                errors.append(
+                    f"Other Specified registry for {observable_id} contains value outside its codebook"
+                )
     return tuple(dict.fromkeys(errors))
 
 
@@ -332,6 +373,16 @@ def structured_annotation_response_errors(
         response.non_action_gate is None or not response.non_action_gate.all_established
     ):
         errors.append("structured annotation non-action value lacks fully established gate")
+
+    expected_other_specified = bool(
+        extension
+        and extension.other_specified_value is not None
+        and extension.other_specified_value in response.coded_values
+    )
+    if expected_other_specified and not response.other_specified_description:
+        errors.append("Other Specified value requires a concrete behavioral description")
+    if not expected_other_specified and response.other_specified_description is not None:
+        errors.append("Other Specified description supplied without registered Other Specified value")
 
     task_turn_ids = {
         str(row["turn_id"])
