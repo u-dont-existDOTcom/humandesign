@@ -90,7 +90,7 @@ def test_parser_copies_operational_fields_without_substantive_rewriting() -> Non
     r02 = _observable(artifact, "NBM-R02")
     assert r02.short_behavioral_name == "Information seeking."
     assert r02.operational_definition.startswith("Deliberate action to obtain")
-    assert "recognized information gap" in r02.inclusion_criteria[0]
+    assert "unknown or unresolved factual question" in r02.inclusion_criteria[0]
     assert "Recognized information gap" in r02.minimum_evidence_requirements
     assert r02.raw_section_markdown in markdown
 
