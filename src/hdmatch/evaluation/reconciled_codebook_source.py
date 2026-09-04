@@ -15,7 +15,12 @@ from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
-from hdmatch.experiments.canonical import canonical_json_bytes, load_json_bytes, sha256_json, write_new_bytes
+from hdmatch.experiments.canonical import (
+    canonical_json_bytes,
+    load_json_bytes,
+    sha256_json,
+    write_new_bytes,
+)
 
 _SHA256_PATTERN = r"^[0-9a-f]{64}$"
 _OBSERVABLE_HEADING = re.compile(r"^## (NBM-R\d{2}) — (.+?)\s*$", re.MULTILINE)
@@ -69,6 +74,8 @@ class ReconciledCodebookSourcePayload(ReconciledSourceModel):
     )
     source_markdown_sha256: str = Field(pattern=_SHA256_PATTERN)
     source_title: str = Field(min_length=1)
+    universal_insufficient_evidence_text: str = Field(min_length=1)
+    universal_not_applicable_text: str = Field(min_length=1)
     universal_other_specified_id: Literal["OS"] = "OS"
     universal_other_specified_text: str = Field(min_length=1)
     observables: tuple[ReconciledObservableSource, ...] = Field(min_length=1)
@@ -108,12 +115,10 @@ def _field_value(section: str, label: str) -> str:
     match = re.search(rf"^\*\*{re.escape(label)}:\*\*\s*(.*)$", section, re.MULTILINE)
     if match is None:
         raise ValueError(f"reconciled observable is missing field: {label}")
-    start = match.start()
     header_end = match.end() - len(match.group(1))
     following = _FIELD_HEADING.search(section, match.end())
     end = following.start() if following is not None else len(section)
-    block = section[header_end:end].strip()
-    return block
+    return section[header_end:end].strip()
 
 
 def _bullet_items(block: str) -> tuple[str, ...]:
@@ -171,6 +176,15 @@ def _source_title(markdown: str) -> str:
     return match.group(1).strip()
 
 
+def _universal_evidence_state_text(markdown: str, state_heading: str) -> str:
+    match = re.search(rf"^### {re.escape(state_heading)}\s*$", markdown, re.MULTILINE)
+    if match is None:
+        raise ValueError(f"reconciled codebook has no universal evidence state: {state_heading}")
+    following = re.search(r"^### .+$", markdown[match.end() :], re.MULTILINE)
+    end = match.end() + following.start() if following is not None else len(markdown)
+    return markdown[match.end() : end].strip()
+
+
 def _universal_other_specified(markdown: str) -> str:
     match = re.search(r"^\*\*OS — Other specified:\*\*\s*(.+)$", markdown, re.MULTILINE)
     if match is None:
@@ -226,6 +240,14 @@ def parse_reconciled_codebook_markdown(markdown: str) -> ReconciledCodebookSourc
     payload = ReconciledCodebookSourcePayload(
         source_markdown_sha256=_sha256_text(markdown),
         source_title=_source_title(markdown),
+        universal_insufficient_evidence_text=_universal_evidence_state_text(
+            markdown,
+            "IE — Insufficient evidence",
+        ),
+        universal_not_applicable_text=_universal_evidence_state_text(
+            markdown,
+            "NA — Not applicable",
+        ),
         universal_other_specified_text=_universal_other_specified(markdown),
         observables=tuple(observables),
     )
