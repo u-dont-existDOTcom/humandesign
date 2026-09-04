@@ -61,7 +61,7 @@ Development requirements:
 - human-versus-model disagreement is inspected against source evidence and operational definitions;
 - theory-exposed owner coding, if used, is a separate post-freeze sensitivity analysis only.
 
-The stricter full human-human pilot remains available at:
+The conventional full human-human benchmark remains available at:
 
 `docs/research/LIFE_PATTERNS_NEUTRAL_CODEBOOK_BLIND_PILOT_PROTOCOL.md`
 
@@ -80,6 +80,13 @@ but is no longer the required default development route.
 - origin, validity, and reliability status;
 - immutable/content-addressed release artifacts;
 - semantic-fingerprint checks preventing silent meaning changes under the same stable ID.
+
+A validation-frozen ontology must carry exactly one content-authority path:
+
+- legacy stricter `HumanContentAuthorityReceipt`; or
+- generic `TheoryBlindContentAuthorityReceipt`.
+
+The two authority paths cannot be asserted simultaneously.
 
 ### Behavioral-freeze evidence binding
 
@@ -137,21 +144,36 @@ Episode coding cannot directly assign non-episode derived observables.
 
 `pilot_reliability.py` remains available for human-coded calibration/benchmark subsets, preserving corpus manifests, pre-adjudication first-pass freezes, and post-freeze adjudication.
 
-## Validation route
+## Validation authority routes
 
-Before confirmatory target-model scoring, the project must freeze one measurement-validation route without seeing target-model results:
+Before confirmatory target-model scoring, the project must freeze exactly one measurement-validation route without seeing target-model results:
 
-1. conventional independent human benchmark;
-2. statistically justified automated-annotator substitution using a frozen human calibration design; or
-3. explicit automated measurement instrument with preregistered stability/human-audit acceptance criteria and no claim of human-gold-standard equivalence.
+1. `human_human_benchmark` — conventional independent human benchmark;
+2. `statistically_justified_llm_substitution` — frozen statistical substitution decision using independent human calibration data; or
+3. `automated_measurement_instrument` — preregistered automated instrument with stability/human-audit evidence and an explicit no-human-gold-standard-equivalence claim.
+
+`TheoryBlindContentAuthorityPayload` enforces exactly one route for validation-candidate authority. Development-candidate authority must not carry a validation route.
+
+For a detailed theory-exposed seed prompt, validation authority still requires the independent minimally seeded replication and reconciliation already preserved by this project.
 
 Route choice cannot depend on which route favors the target model.
 
-## Current software mismatch
+## Scoreability gate
 
-`neutral_measurement.py` and `theory_blind_authority.py` still contain legacy stricter gates that require human/H1 or human-human receipts for validation promotion. These gates fail closed and are safe, but they are now more restrictive than the owner-approved policy.
+`neutral_measurement.py` now implements the generic authority path as well as the legacy H1-compatible path.
 
-They must be generalized before a non-human-benchmark validation route can be represented. They must not be bypassed with fabricated receipts.
+For scoreable validation coding:
+
+- ontology must be `frozen_for_validation`;
+- exactly one valid content-authority path must be present;
+- a generic theory-blind receipt must itself be `validation_candidate`;
+- used observables must be `validation_candidate`;
+- used observables must have completed readiness status (`human_baseline_evaluated` or `automation_evaluated`);
+- coding run must be a validation run;
+- automated coders must carry a frozen calibration/validation receipt;
+- ordinary integrity/provenance checks must pass.
+
+LLM self-consistency alone cannot create a scoreable artifact.
 
 ## Tournament boundary
 
@@ -161,6 +183,12 @@ Do not rewrite preregistration artifacts post hoc to contain observed target out
 
 ## Current blocker
 
-The development methodology and receipt infrastructure are sufficient to begin a theory-blind LLM-primary coding pilot once the owner separately authorizes execution and the exact primary automated coder/model, prompt, corpus, and human calibration subset are pinned.
+The former software-only H1/human-human mismatch is resolved. The remaining blocker is **empirical rather than structural**:
 
-No target-model adapter or tournament execution should be built merely to bypass this measurement chronology.
+- the current 22-observable codebook is still a development candidate;
+- no real repeated automated development-coding ensemble has yet been frozen against the exact codebook/corpus/prompt;
+- no independent human calibration subset has yet been completed/frozen;
+- no Route A/B/C validation decision has yet been frozen;
+- therefore no validation-candidate ontology or target-model scoreable coding artifact exists.
+
+The next legitimate step is to pin the exact automated coding prompt/model/corpus and human calibration selection rule, then run the theory-blind development calibration sequence under separate authorization. No target-model adapter or tournament execution should be used to bypass this chronology.
