@@ -76,12 +76,12 @@ The owner is theory-exposed and may perform a post-freeze sensitivity pass, but 
 
 The next substantive development step is to pin the exact primary automated coder/model and coding prompt, select/freeze a development corpus, run independent blinded automated passes, and obtain the blind human calibration subset. No human contact or spending is authorized by this receipt.
 
-## Last verified implementation gate before this methodology extension
+## CI baseline
 
-Implementation head `77de467c66be30c90902a83bfb4fa3fa66c7c1b2`:
+Implementation head `77de467c66be30c90902a83bfb4fa3fa66c7c1b2` previously passed:
 
-- 422 passed, 6 expected skips;
+- 422 tests, 6 expected skips;
 - Ruff all checks passed;
 - mypy success, no issues in 139 source files.
 
-The current automated-calibration extension is subject to its own normal CI run before being treated as fully gated.
+The later LLM-primary/calibration extension has its own normal CI runs and must pass before merge consideration.
