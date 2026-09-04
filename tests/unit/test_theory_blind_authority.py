@@ -7,7 +7,9 @@ from pathlib import Path
 import pytest
 
 from hdmatch.evaluation.theory_blind_authority import (
+    AutomatedMeasurementInstrumentReceipt,
     BlindHumanReliabilityReceipt,
+    StatisticalLLMSubstitutionReceipt,
     TheoryBlindContentAuthorityPayload,
     TheoryBlindContentReviewReceipt,
     TheoryBlindDevelopmentProvenance,
@@ -73,6 +75,41 @@ def _reliability(*, content_sha: str = "a" * 64) -> BlindHumanReliabilityReceipt
     )
 
 
+def _llm_substitution(
+    *, content_sha: str = "a" * 64
+) -> StatisticalLLMSubstitutionReceipt:
+    return StatisticalLLMSubstitutionReceipt(
+        content_sha256=content_sha,
+        automated_human_calibration_artifact_sha256="5" * 64,
+        calibration_sample_manifest_sha256="6" * 64,
+        statistical_method_id="STRUCTURAL_ALT_ANNOTATOR_TEST",
+        statistical_test_spec_sha256="7" * 64,
+        statistical_test_result_sha256="8" * 64,
+        decision_rule_sha256="9" * 64,
+        human_auditor_count=1,
+        created_at_utc=datetime(2026, 9, 3, 21, 0, tzinfo=UTC),
+    )
+
+
+def _automated_instrument(
+    *, content_sha: str = "a" * 64
+) -> AutomatedMeasurementInstrumentReceipt:
+    return AutomatedMeasurementInstrumentReceipt(
+        content_sha256=content_sha,
+        instrument_spec_sha256="5" * 64,
+        automated_prompt_sha256="6" * 64,
+        model_or_ensemble_spec_sha256="7" * 64,
+        stability_report_sha256="8" * 64,
+        automated_human_calibration_artifact_sha256="9" * 64,
+        calibration_sample_manifest_sha256="0" * 64,
+        unresolved_units_policy_sha256="b" * 64,
+        sensitivity_analysis_spec_sha256="c" * 64,
+        automated_pass_count=3,
+        human_auditor_count=1,
+        created_at_utc=datetime(2026, 9, 3, 21, 0, tzinfo=UTC),
+    )
+
+
 def test_ai_authorship_requires_exact_prompt_and_first_output_hashes() -> None:
     with pytest.raises(ValueError, match="exact prompt and first-output hashes"):
         TheoryBlindDevelopmentProvenance(
@@ -94,24 +131,34 @@ def test_detailed_theory_exposed_seed_is_allowed_for_development_only() -> None:
         authorized_at_utc=datetime(2026, 9, 3, 20, 45, tzinfo=UTC),
     )
     artifact = build_theory_blind_content_authority(payload)
+    receipt = compact_theory_blind_content_authority_receipt(artifact)
     assert artifact.payload.authority_stage == "development_candidate"
-    assert compact_theory_blind_content_authority_receipt(artifact).authority_stage == (
-        "development_candidate"
-    )
+    assert receipt.authority_stage == "development_candidate"
+    assert receipt.validation_route is None
+
+    with pytest.raises(ValueError, match="must not carry validation-route evidence"):
+        TheoryBlindContentAuthorityPayload(
+            content_sha256="a" * 64,
+            authority_stage="development_candidate",
+            development_provenance=_development_provenance(with_replication=True),
+            human_reliability=_reliability(),
+            content_review=_review(),
+            authorized_at_utc=datetime(2026, 9, 3, 21, 15, tzinfo=UTC),
+        )
 
 
-def test_validation_requires_replication_reconciliation_and_human_reliability() -> None:
+def test_validation_requires_replication_reconciliation_and_exactly_one_route() -> None:
     with pytest.raises(ValueError, match="independent replication and reconciliation"):
         TheoryBlindContentAuthorityPayload(
             content_sha256="a" * 64,
             authority_stage="validation_candidate",
             development_provenance=_development_provenance(with_replication=False),
-            human_reliability=_reliability(),
+            llm_substitution=_llm_substitution(),
             content_review=_review(validation=True),
             authorized_at_utc=datetime(2026, 9, 3, 21, 15, tzinfo=UTC),
         )
 
-    with pytest.raises(ValueError, match="human-human reliability evidence"):
+    with pytest.raises(ValueError, match="exactly one frozen validation-evidence route"):
         TheoryBlindContentAuthorityPayload(
             content_sha256="a" * 64,
             authority_stage="validation_candidate",
@@ -120,8 +167,19 @@ def test_validation_requires_replication_reconciliation_and_human_reliability() 
             authorized_at_utc=datetime(2026, 9, 3, 21, 15, tzinfo=UTC),
         )
 
+    with pytest.raises(ValueError, match="exactly one frozen validation-evidence route"):
+        TheoryBlindContentAuthorityPayload(
+            content_sha256="a" * 64,
+            authority_stage="validation_candidate",
+            development_provenance=_development_provenance(with_replication=True),
+            human_reliability=_reliability(),
+            llm_substitution=_llm_substitution(),
+            content_review=_review(validation=True),
+            authorized_at_utc=datetime(2026, 9, 3, 21, 15, tzinfo=UTC),
+        )
 
-def test_validation_path_binds_exact_content_and_chronology() -> None:
+
+def test_conventional_human_validation_route_binds_exact_content_and_chronology() -> None:
     payload = TheoryBlindContentAuthorityPayload(
         content_sha256="a" * 64,
         authority_stage="validation_candidate",
@@ -134,7 +192,7 @@ def test_validation_path_binds_exact_content_and_chronology() -> None:
     assert theory_blind_content_authority_integrity_errors(artifact) == ()
     receipt = compact_theory_blind_content_authority_receipt(artifact)
     assert receipt.content_sha256 == "a" * 64
-    assert receipt.authority_stage == "validation_candidate"
+    assert receipt.validation_route == "human_human_benchmark"
 
     with pytest.raises(ValueError, match="human reliability receipt does not bind"):
         TheoryBlindContentAuthorityPayload(
@@ -155,6 +213,49 @@ def test_validation_path_binds_exact_content_and_chronology() -> None:
             content_review=_review(validation=True),
             authorized_at_utc=datetime(2026, 9, 3, 20, 45, tzinfo=UTC),
         )
+
+
+def test_statistically_justified_llm_substitution_allows_one_blind_human_auditor() -> None:
+    payload = TheoryBlindContentAuthorityPayload(
+        content_sha256="a" * 64,
+        authority_stage="validation_candidate",
+        development_provenance=_development_provenance(with_replication=True),
+        llm_substitution=_llm_substitution(),
+        content_review=_review(validation=True),
+        authorized_at_utc=datetime(2026, 9, 3, 21, 15, tzinfo=UTC),
+    )
+    artifact = build_theory_blind_content_authority(payload)
+    receipt = compact_theory_blind_content_authority_receipt(artifact)
+    assert receipt.validation_route == "statistically_justified_llm_substitution"
+    assert payload.llm_substitution is not None
+    assert payload.llm_substitution.human_auditor_count == 1
+
+    with pytest.raises(ValueError, match="LLM-substitution receipt does not bind"):
+        TheoryBlindContentAuthorityPayload(
+            content_sha256="a" * 64,
+            authority_stage="validation_candidate",
+            development_provenance=_development_provenance(with_replication=True),
+            llm_substitution=_llm_substitution(content_sha="9" * 64),
+            content_review=_review(validation=True),
+            authorized_at_utc=datetime(2026, 9, 3, 21, 15, tzinfo=UTC),
+        )
+
+
+def test_preregistered_automated_measurement_instrument_is_distinct_route() -> None:
+    payload = TheoryBlindContentAuthorityPayload(
+        content_sha256="a" * 64,
+        authority_stage="validation_candidate",
+        development_provenance=_development_provenance(with_replication=True),
+        automated_instrument=_automated_instrument(),
+        content_review=_review(validation=True),
+        authorized_at_utc=datetime(2026, 9, 3, 21, 15, tzinfo=UTC),
+    )
+    artifact = build_theory_blind_content_authority(payload)
+    receipt = compact_theory_blind_content_authority_receipt(artifact)
+    assert receipt.validation_route == "automated_measurement_instrument"
+    assert payload.automated_instrument is not None
+    assert payload.automated_instrument.automated_pass_count == 3
+    assert payload.automated_instrument.explicit_no_human_gold_standard_equivalence_claim is True
 
 
 def test_validation_review_cannot_silently_change_content() -> None:
