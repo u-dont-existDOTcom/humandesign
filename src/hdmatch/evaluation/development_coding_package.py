@@ -1,9 +1,10 @@
 """Public-safe binding manifest for a private Life Patterns development coding package.
 
-The private package may contain autobiographical text.  This artifact contains identifiers,
-hashes, counts, provenance limits, and chronology gates only.  It binds the v8/v8.1 transfer
-corpus to the exact resolved development measurement stack and to a pre-label human calibration
-selection without making the transfer corpus a canonical behavioral freeze.
+The private package may contain autobiographical text. This artifact contains identifiers,
+hashes, counts, provenance limits, and chronology gates only. It binds the v8/v8.1 transfer
+corpus to the exact resolved development measurement stack, explicit transport prompts, and a
+pre-label human calibration selection without making the transfer corpus a canonical behavioral
+freeze.
 """
 
 from __future__ import annotations
@@ -55,7 +56,9 @@ class DevelopmentCodingPackagePayload(DevelopmentCodingPackageModel):
     ontology_sha256: str = Field(pattern=_SHA256_PATTERN)
     procedure_id: str = Field(pattern=r"^LPSP-[0-9A-F]{20}$")
     procedure_sha256: str = Field(pattern=_SHA256_PATTERN)
-    coder_prompt_sha256: str = Field(pattern=_SHA256_PATTERN)
+    coding_manual_sha256: str = Field(pattern=_SHA256_PATTERN)
+    episode_transport_prompt_sha256: str = Field(pattern=_SHA256_PATTERN)
+    series_transport_prompt_sha256: str | None = Field(default=None, pattern=_SHA256_PATTERN)
     observable_count: Literal[22] = 22
     resolved_subcode_count: Literal[208] = 208
     resolved_non_action_count: Literal[28] = 28
@@ -94,12 +97,22 @@ class DevelopmentCodingPackagePayload(DevelopmentCodingPackageModel):
         return value.astimezone(UTC)
 
     @model_validator(mode="after")
-    def series_counts_have_matching_hash(self) -> DevelopmentCodingPackagePayload:
+    def series_bindings_are_coherent(self) -> DevelopmentCodingPackagePayload:
         if self.series_task_count:
-            if self.series_task_set_sha256 is None or self.series_observable_unit_count < 1:
-                raise ValueError("series task count requires a bound nonempty series task set")
-        elif self.series_task_set_sha256 is not None or self.series_observable_unit_count:
-            raise ValueError("empty series task set cannot carry series task hash/units")
+            if (
+                self.series_task_set_sha256 is None
+                or self.series_transport_prompt_sha256 is None
+                or self.series_observable_unit_count < 1
+            ):
+                raise ValueError(
+                    "series task count requires bound nonempty tasks and series transport prompt"
+                )
+        elif (
+            self.series_task_set_sha256 is not None
+            or self.series_transport_prompt_sha256 is not None
+            or self.series_observable_unit_count
+        ):
+            raise ValueError("empty series task set cannot carry series task/prompt bindings")
         return self
 
 
@@ -118,14 +131,18 @@ def build_development_coding_package(
     stack: ResolvedDevelopmentStack,
     episode_tasks: tuple[DevelopmentEpisodeCodingTask, ...],
     episode_manifest: DevelopmentTaskSetManifestArtifact,
+    episode_transport_prompt_sha256: str,
     series_tasks: tuple[DevelopmentSeriesCodingTask, ...],
     series_manifest: DevelopmentSeriesCodingManifestArtifact | None,
+    series_transport_prompt_sha256: str | None,
     blocked_summary_only_series_ids: tuple[str, ...],
     calibration: DevelopmentCalibrationSamplingArtifact,
     created_at_utc: datetime,
 ) -> DevelopmentCodingPackageArtifact:
     if corpus.payload.canonical_behavioral_freeze_eligible:
-        raise ValueError("development package refuses a transfer corpus claiming canonical freeze eligibility")
+        raise ValueError(
+            "development package refuses a transfer corpus claiming canonical freeze eligibility"
+        )
     if not corpus.payload.validation_use_forbidden:
         raise ValueError("development package requires validation use to remain forbidden")
     if episode_manifest.payload.corpus_id != corpus.corpus_id:
@@ -134,14 +151,14 @@ def build_development_coding_package(
         raise ValueError("episode task manifest does not bind exact corpus hash")
     if episode_manifest.payload.task_set_sha256 != sha256_json(episode_tasks):
         raise ValueError("episode task manifest does not bind supplied episode task set")
-    if tuple(task.observable_ids for task in episode_tasks) and any(
-        task.observable_ids != stack.observable_ids for task in episode_tasks
-    ):
+    if any(task.observable_ids != stack.observable_ids for task in episode_tasks):
         raise ValueError("episode tasks do not use exact resolved observable universe")
 
     if series_tasks:
         if series_manifest is None:
             raise ValueError("series tasks require a series task manifest")
+        if series_transport_prompt_sha256 is None:
+            raise ValueError("series tasks require a series transport prompt hash")
         if series_manifest.payload.corpus_id != corpus.corpus_id:
             raise ValueError("series task manifest does not bind development corpus")
         if series_manifest.payload.corpus_sha256 != corpus.corpus_sha256:
@@ -150,10 +167,13 @@ def build_development_coding_package(
             raise ValueError("series task manifest does not bind supplied series task set")
         if any(task.observable_ids != stack.observable_ids for task in series_tasks):
             raise ValueError("series tasks do not use exact resolved observable universe")
-    elif series_manifest is not None:
-        raise ValueError("series task manifest supplied without series tasks")
+    elif series_manifest is not None or series_transport_prompt_sha256 is not None:
+        raise ValueError("series task/prompt binding supplied without series tasks")
 
-    if calibration.payload.corpus_id != corpus.corpus_id or calibration.payload.corpus_sha256 != corpus.corpus_sha256:
+    if (
+        calibration.payload.corpus_id != corpus.corpus_id
+        or calibration.payload.corpus_sha256 != corpus.corpus_sha256
+    ):
         raise ValueError("calibration manifest does not bind exact development corpus")
     if calibration.payload.episode_task_set_sha256 != sha256_json(episode_tasks):
         raise ValueError("calibration manifest does not bind episode task set")
@@ -163,7 +183,9 @@ def build_development_coding_package(
 
     participant_exposure = corpus.payload.participant_theory_exposure
     if participant_exposure not in {"prior_exposure_possible", "unknown"}:
-        raise ValueError("development package requires participant theory exposure to remain explicit")
+        raise ValueError(
+            "development package requires participant theory exposure to remain explicit"
+        )
 
     payload = DevelopmentCodingPackagePayload(
         corpus_id=corpus.corpus_id,
@@ -182,7 +204,9 @@ def build_development_coding_package(
         ontology_sha256=stack.ontology.ontology_sha256,
         procedure_id=stack.procedure.procedure_id,
         procedure_sha256=stack.procedure.procedure_sha256,
-        coder_prompt_sha256=stack.coder_prompt_sha256,
+        coding_manual_sha256=stack.coding_manual_sha256,
+        episode_transport_prompt_sha256=episode_transport_prompt_sha256,
+        series_transport_prompt_sha256=series_transport_prompt_sha256,
         episode_task_set_sha256=sha256_json(episode_tasks),
         episode_task_count=len(episode_tasks),
         episode_observable_unit_count=sum(len(task.observable_ids) for task in episode_tasks),
