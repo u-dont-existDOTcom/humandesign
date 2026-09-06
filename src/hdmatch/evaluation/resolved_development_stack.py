@@ -53,7 +53,7 @@ RAW_RESOLUTION_REL = Path(
 RESOLUTION_PROMPT_REL = Path(
     "state/LIFE-PATTERNS-NON-ACTION-AMBIGUITY-RESOLUTION-PROMPT-v1-2026-09-04.txt"
 )
-CODER_PROMPT_REL = Path("state/LIFE-PATTERNS-AUTOMATED-CODING-PROMPT-v3-2026-09-04.txt")
+CODING_MANUAL_REL = Path("state/LIFE-PATTERNS-DEVELOPMENT-CODING-MANUAL-v1-2026-09-06.md")
 AGGREGATION_POLICY_REL = Path("docs/research/LIFE_PATTERNS_NEUTRAL_MEASUREMENT_BRIDGE_SPEC.md")
 THEORY_POLICY_REL = Path("docs/research/LIFE_PATTERNS_THEORY_BLIND_CONTENT_AUTHORITY_POLICY.md")
 
@@ -68,7 +68,7 @@ class ResolvedDevelopmentStack:
     resolved: ResolvedCodebookViewArtifactV2
     ontology: OntologyReleaseArtifact
     procedure: StructuredCodingProcedureArtifactV2
-    coder_prompt_sha256: str
+    coding_manual_sha256: str
     aggregation_policy_sha256: str
     theory_policy_sha256: str
     observable_ids: tuple[str, ...]
@@ -93,7 +93,7 @@ def build_repository_resolved_development_stack(
     resolution_path = root / RESOLUTION_REL
     raw_resolution_path = root / RAW_RESOLUTION_REL
     resolution_prompt_path = root / RESOLUTION_PROMPT_REL
-    coder_prompt_path = root / CODER_PROMPT_REL
+    coding_manual_path = root / CODING_MANUAL_REL
     aggregation_policy_path = root / AGGREGATION_POLICY_REL
     theory_policy_path = root / THEORY_POLICY_REL
     required = (
@@ -102,7 +102,7 @@ def build_repository_resolved_development_stack(
         resolution_path,
         raw_resolution_path,
         resolution_prompt_path,
-        coder_prompt_path,
+        coding_manual_path,
         aggregation_policy_path,
         theory_policy_path,
     )
@@ -137,7 +137,7 @@ def build_repository_resolved_development_stack(
         resolution=resolution,
     )
 
-    coder_prompt_sha256 = file_sha256(coder_prompt_path)
+    coding_manual_sha256 = file_sha256(coding_manual_path)
     aggregation_policy_sha256 = file_sha256(aggregation_policy_path)
     theory_policy_sha256 = file_sha256(theory_policy_path)
     ontology = build_development_ontology_from_resolved_view(
@@ -145,8 +145,8 @@ def build_repository_resolved_development_stack(
         resolved,
         ontology_id="life-patterns-theory-blind-resolved-development-v2",
         ontology_version="v2.0.0",
-        coding_manual_id="life-patterns-automated-coding-prompt-v3",
-        coding_manual_sha256=coder_prompt_sha256,
+        coding_manual_id="life-patterns-development-coding-manual-v1",
+        coding_manual_sha256=coding_manual_sha256,
         aggregation_policy_id="life-patterns-neutral-measurement-bridge",
         aggregation_policy_sha256=aggregation_policy_sha256,
         theory_contamination_policy_id="life-patterns-theory-blind-content-authority-policy",
@@ -158,7 +158,7 @@ def build_repository_resolved_development_stack(
         source=source,
         resolved=resolved,
         ontology=ontology,
-        coding_manual_sha256=coder_prompt_sha256,
+        coding_manual_sha256=coding_manual_sha256,
         created_at_utc=released_at_utc,
     )
     observable_ids = tuple(row.observable_id for row in ontology.payload.observables)
@@ -177,7 +177,7 @@ def build_repository_resolved_development_stack(
         resolved=resolved,
         ontology=ontology,
         procedure=procedure,
-        coder_prompt_sha256=coder_prompt_sha256,
+        coding_manual_sha256=coding_manual_sha256,
         aggregation_policy_sha256=aggregation_policy_sha256,
         theory_policy_sha256=theory_policy_sha256,
         observable_ids=observable_ids,
