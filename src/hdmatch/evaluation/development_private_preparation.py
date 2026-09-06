@@ -1,11 +1,12 @@
 """Prepare a private v8/v8.1 development coding package without running any coder.
 
-This is the final deterministic preparation stage before isolated theory-blind coding.  It reads
+This is the final deterministic preparation stage before isolated theory-blind coding. It reads
 the two participant transfer JSON objects, builds the development-only corpus, binds the exact
-resolved measurement stack, generates episode and exact-source repeated-series task sets, and
-freezes a human calibration subset before automated labels exist.
+resolved measurement stack, generates episode and exact-source repeated-series task sets, freezes
+a human calibration subset before automated labels exist, and binds explicit development
+transport prompts.
 
-No model is called here.  No target-model information is accepted.  Private text remains only in
+No model is called here. No target-model information is accepted. Private text remains only in
 the returned private artifacts; the package receipt is public-safe by construction.
 """
 
@@ -44,9 +45,16 @@ from .development_transfer_corpus import (
 from .resolved_development_stack import (
     ResolvedDevelopmentStack,
     build_repository_resolved_development_stack,
+    file_sha256,
 )
 
 CALIBRATION_SEED_POLICY = "life-patterns-v8-v8.1-development-calibration-seed-v1"
+EPISODE_TRANSPORT_PROMPT_REL = Path(
+    "state/LIFE-PATTERNS-DEVELOPMENT-EPISODE-CODING-PROMPT-v1-2026-09-06.txt"
+)
+SERIES_TRANSPORT_PROMPT_REL = Path(
+    "state/LIFE-PATTERNS-DEVELOPMENT-SERIES-CODING-PROMPT-v1-2026-09-06.txt"
+)
 DEFAULT_EPISODE_CALIBRATION_UNITS = 44
 DEFAULT_SERIES_CALIBRATION_UNITS = 22
 DEFAULT_EPISODE_PER_OBSERVABLE_FLOOR = 2
@@ -64,6 +72,8 @@ class PrivateDevelopmentPreparation:
     calibration: DevelopmentCalibrationSamplingArtifact
     package: DevelopmentCodingPackageArtifact
     calibration_seed_sha256: str
+    episode_transport_prompt_sha256: str
+    series_transport_prompt_sha256: str | None
 
 
 def deterministic_calibration_seed(
@@ -81,6 +91,29 @@ def deterministic_calibration_seed(
     return hashlib.sha256(material).hexdigest()
 
 
+def _required_transport_prompt_hashes(
+    repo_root: Path,
+    *,
+    series_tasks_present: bool,
+) -> tuple[str, str | None]:
+    episode_path = repo_root / EPISODE_TRANSPORT_PROMPT_REL
+    if not episode_path.is_file():
+        raise ValueError(
+            "development package is missing episode transport prompt: "
+            + str(EPISODE_TRANSPORT_PROMPT_REL)
+        )
+    episode_sha256 = file_sha256(episode_path)
+    if not series_tasks_present:
+        return episode_sha256, None
+    series_path = repo_root / SERIES_TRANSPORT_PROMPT_REL
+    if not series_path.is_file():
+        raise ValueError(
+            "development package is missing series transport prompt: "
+            + str(SERIES_TRANSPORT_PROMPT_REL)
+        )
+    return episode_sha256, file_sha256(series_path)
+
+
 def prepare_v8_private_development_package(
     *,
     original: dict[str, Any],
@@ -93,8 +126,9 @@ def prepare_v8_private_development_package(
     episode_per_observable_floor: int = DEFAULT_EPISODE_PER_OBSERVABLE_FLOOR,
     series_per_observable_floor: int = DEFAULT_SERIES_PER_OBSERVABLE_FLOOR,
 ) -> PrivateDevelopmentPreparation:
+    root = Path(repo_root)
     stack = build_repository_resolved_development_stack(
-        repo_root,
+        root,
         source_commit=source_commit,
         released_at_utc=created_at_utc,
     )
@@ -122,6 +156,10 @@ def prepare_v8_private_development_package(
         build_development_series_manifest(series_report, created_at_utc=created_at_utc)
         if series_tasks
         else None
+    )
+    episode_prompt_sha256, series_prompt_sha256 = _required_transport_prompt_hashes(
+        root,
+        series_tasks_present=bool(series_tasks),
     )
 
     if episode_calibration_units > len(episode_tasks) * len(stack.observable_ids):
@@ -153,8 +191,10 @@ def prepare_v8_private_development_package(
         stack=stack,
         episode_tasks=episode_tasks,
         episode_manifest=episode_manifest,
+        episode_transport_prompt_sha256=episode_prompt_sha256,
         series_tasks=series_tasks,
         series_manifest=series_manifest,
+        series_transport_prompt_sha256=series_prompt_sha256,
         blocked_summary_only_series_ids=series_report.blocked_summary_only_series_ids,
         calibration=calibration,
         created_at_utc=created_at_utc,
@@ -169,6 +209,8 @@ def prepare_v8_private_development_package(
         calibration=calibration,
         package=package,
         calibration_seed_sha256=seed,
+        episode_transport_prompt_sha256=episode_prompt_sha256,
+        series_transport_prompt_sha256=series_prompt_sha256,
     )
 
 
@@ -190,7 +232,9 @@ def private_preparation_safe_summary(
         "ontology_sha256": package.ontology_sha256,
         "procedure_id": package.procedure_id,
         "procedure_sha256": package.procedure_sha256,
-        "coder_prompt_sha256": package.coder_prompt_sha256,
+        "coding_manual_sha256": package.coding_manual_sha256,
+        "episode_transport_prompt_sha256": package.episode_transport_prompt_sha256,
+        "series_transport_prompt_sha256": package.series_transport_prompt_sha256,
         "episode_task_count": package.episode_task_count,
         "episode_observable_unit_count": package.episode_observable_unit_count,
         "series_task_count": package.series_task_count,
@@ -214,7 +258,7 @@ def write_private_development_preparation(
     output_dir: str | Path,
     preparation: PrivateDevelopmentPreparation,
 ) -> dict[str, Path]:
-    """Write private artifacts read-only; only the package/safe summary are safe for public Git."""
+    """Write private artifacts read-only; only package/safe summary are public-safe."""
 
     root = Path(output_dir)
     root.mkdir(parents=True, exist_ok=True)
