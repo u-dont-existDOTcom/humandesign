@@ -1,8 +1,8 @@
 """Development-only episode annotation responses for partial-source v8/v8.1 transfer tasks.
 
 This mirrors the substantive Structured Annotation V2 semantics without pretending the source is
-a canonical BPF freeze.  Evidence citations use exact participant source-segment IDs supplied by
-the development task.  Transfer summaries may orient the coder but cannot substitute for exact
+a canonical BPF freeze. Evidence citations use exact participant source-segment IDs supplied by
+the development task. Transfer summaries may orient the coder but cannot substitute for exact
 source text when asserting an observed value.
 """
 
@@ -13,7 +13,12 @@ from typing import Literal
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 from .development_transfer_corpus import DevelopmentEpisodeCodingTask
-from .neutral_measurement import OntologyReleaseArtifact, ScalarValue, TheoryExposureState
+from .neutral_measurement import (
+    ObservableDefinition,
+    OntologyReleaseArtifact,
+    ScalarValue,
+    TheoryExposureState,
+)
 from .structured_annotation_v2 import (
     InfluenceRelation,
     MissingnessFlag,
@@ -105,20 +110,17 @@ class DevelopmentEpisodeAnnotationResponse(DevelopmentEpisodeModel):
         return self
 
 
-def _value_allowed(value: ScalarValue, definition: object) -> bool:
-    value_type = getattr(definition, "value_type")
-    if value_type in {"nominal", "ordinal"}:
-        return isinstance(value, str) and value in getattr(definition, "allowed_values")
-    if value_type == "boolean":
+def _value_allowed(value: ScalarValue, definition: ObservableDefinition) -> bool:
+    if definition.value_type in {"nominal", "ordinal"}:
+        return isinstance(value, str) and value in definition.allowed_values
+    if definition.value_type == "boolean":
         return isinstance(value, bool)
     if isinstance(value, bool) or not isinstance(value, (int, float)):
         return False
     numeric = float(value)
-    minimum = getattr(definition, "numeric_min")
-    maximum = getattr(definition, "numeric_max")
-    if minimum is not None and numeric < minimum:
+    if definition.numeric_min is not None and numeric < definition.numeric_min:
         return False
-    return maximum is None or numeric <= maximum
+    return definition.numeric_max is None or numeric <= definition.numeric_max
 
 
 def development_episode_response_errors(
