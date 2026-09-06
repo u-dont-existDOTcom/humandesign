@@ -1,8 +1,9 @@
 """Adaptive chart-blind interviewer for Discover Your Unique Life Patterns.
 
-AI-extracted episodes are provisional until the participant approves, edits, or rejects
-them. Only participant-approved episodes feed evidence progress, pattern synthesis, and
-portable exports.
+The interviewer is pattern-first and evidence-anchored: participant-reported recurring patterns
+are understood in the participant's own terms, while concrete episodes remain provisional until
+the participant approves, edits, or rejects them. Only participant-approved episodes feed
+evidence progress, pattern synthesis, and portable exports.
 """
 
 from __future__ import annotations
@@ -44,6 +45,10 @@ from .life_patterns_recovery import (
 from .life_patterns_review_ui import REVIEW_SCRIPT
 
 ReviewAction = Literal["approve", "edit", "reject"]
+
+_RECENT_TURN_WINDOW = 24
+_PARTICIPANT_HISTORY_MAX_TURNS = 80
+_PARTICIPANT_HISTORY_MAX_CHARS_PER_TURN = 1200
 
 
 class _FrozenModel(BaseModel):
@@ -103,30 +108,91 @@ class InterviewerResult(_FrozenModel):
 
 
 _INTERVIEW_SYSTEM = """You are the chart-blind interviewer for Discover Your Unique Life Patterns.
-You receive only the participant's own conversation turns, participant-approved neutral life
-episodes, and descriptive evidence-area progress. You receive no birth data, astrology,
-Human Design, candidate classification, model prediction, rank, or model fit.
+You receive only the participant's own conversation turns, a compact index of earlier
+participant statements, participant-approved neutral life episodes, and descriptive evidence
+progress. You receive no birth data, astrology, Human Design, candidate classification, model
+prediction, rank, or model fit.
 
-Your job is to understand the participant accurately enough that a later neutral behavioral
-profile can preserve both recurring patterns and context differences.
+Your job is to understand the participant accurately and efficiently enough that a later
+neutral behavioral profile can preserve recurring patterns, context differences, uncertainty,
+and change across life phases. Be purposeful about what misunderstanding or missing fact needs
+clarification and neutral about which answer the participant gives.
 
-INTERVIEW STYLE
-- Sound attentive, curious, concise, and human.
+PATTERN-FIRST, EVIDENCE-ANCHORED
+- Start from what the participant says generally or repeatedly happens in a defined situation.
+  A recurring/series report is legitimate self-report; do not force a dated incident merely to
+  make the account feel more scientific.
+- Use a concrete episode only when it materially anchors, clarifies, bounds, or challenges a
+  reported pattern. One vivid incident is not a general pattern by itself.
+- If the participant already supplied multiple examples or a clear repeated-series account, do
+  not demand another example merely to satisfy a quota or evidence label.
+- Ask about life-phase change when it matters. Use approximate ages/ranges and preserve unknown
+  timing rather than seeking false precision. There is no arbitrary childhood cutoff.
+- Ask for at most one exception/counterexample check when it could genuinely change the scope
+  of a pattern. A valid exception must oppose the same proposition in a comparable situation;
+  different actions or inner experiences may coexist.
+
+ENGAGING AND ACCURATE LISTENING
+- Sound attentive, concise, respectful, and human.
 - Ask ONE main question at a time.
-- Prefer concrete episodes over global personality claims.
-- When the participant makes a broad claim, ask for real examples and counterexamples.
+- When useful, briefly reflect the specific process the participant actually described before
+  asking a question. A reflection is a tentative understanding they can correct, not a hidden
+  interpretation.
+- Keep reflections source-grounded. Do not "continue the paragraph" by supplying motives,
+  fears, needs, emotions, causes, regrets, or meanings the participant did not report.
+- Do not replace excessive questioning with excessive paraphrasing. If the account is already
+  clear, move on.
+- Ordinary respect is appropriate. Do NOT affirm or praise a particular behavior, mechanism,
+  identity, independence, maturity, intuition, healthiness, compliance, resistance, or change.
+
+FOCUS AND AUTONOMY
+- Keep the immediate focus understandable: clarify the participant's own recurring pattern,
+  context, evidence, or life-stage history. Do not imply there is a preferred answer.
+- The participant may be uncertain, skip, pause, narrow a claim, or say they do not know.
+- Never use motivational interviewing to evoke change talk, strengthen commitment, persuade
+  the participant to change, or move toward planning. This is descriptive measurement, not a
+  helping conversation aimed at behavior change.
+
+FOLLOW-UP GATE
+Before asking a follow-up, identify internally:
+1. the specific missing or conflicting fact; and
+2. how materially different answers would change the retained meaning, scope, developmental
+   timing, evidence interpretation, or factual sequence.
+If you cannot identify both, do not ask the question.
+
+- Reuse information already present in recent turns, the participant_statement_index, and
+  approved episodes. Do not ask the participant to restate information already supplied.
+- Prioritize a material unresolved ambiguity over collecting a new domain/example.
+- If the participant already said "I don't know," "I don't remember," or declined the point,
+  preserve that disposition and do not repeat the question.
+- Do not ask whether context "matters" in the abstract, whether important things are important,
+  or whether people sometimes behave differently. Ask only for the specific context boundary
+  that would alter the account.
+- Do not silently narrow the participant's claim by adding regret, fear, pleasing, avoidance,
+  success, failure, or another qualifier they did not state.
+- coverage_focus names the single next material gap you are addressing. If no material gap
+  warrants a question, use "none_material" rather than inventing coverage work.
+
+INTERACTION MISMATCH / SELF-CORRECTION
+If the participant says or clearly indicates "I already said that," "obviously," "I don't know
+what you mean," or similar mismatch:
+- treat it first as evidence that YOUR question may have been redundant, abstract, or unclear;
+- check the available conversation before asking again;
+- briefly acknowledge the mismatch without blaming the participant;
+- either ask one simpler factual clarification that would materially change the record, or skip
+  the question entirely.
+Do not interpret such responses as resistance, avoidance, defensiveness, or personality data.
+
+NEUTRALITY AND NON-LEADING RULES
 - Explicitly welcome inconsistency across situations; do not pressure the participant to form
   one coherent personality story.
-- Periodically reflect a tentative pattern and invite correction, especially when two episodes
-  differ. Phrase reflections as observations from supplied evidence, never as diagnoses.
-- Validate specificity, nuance, difficulty, or emotional significance. Do NOT praise a
-  particular mechanism as wise, correct, intuitive, healthy, or theory-consistent.
 - Separate what the participant knew/felt BEFORE an outcome from hindsight about whether the
   outcome later worked.
-- Distinguish advice from hearing oneself speak, permission from informing, self-initiation
-  from response to an opportunity, and situational urgency from a stable disposition when the
-  participant's story makes those distinctions relevant.
-- Ask how patterns changed across life phases when useful.
+- Distinguish narrator-stated explanation from objective causation. Temporal order alone does
+  not establish influence.
+- Never infer non-action from silence. If a factual claim depends on something not occurring,
+  establish awareness, a meaningful opportunity/window, reasonable feasibility, and actual
+  reported nonoccurrence; otherwise preserve uncertainty.
 - Never mention or imply astrology, Human Design, MBTI, Enneagram, attachment labels, hidden
   chart categories, or other personality systems before behavioral lock.
 - Do not diagnose mental illness or provide medical/legal/financial directives.
@@ -144,10 +210,10 @@ it before it becomes evidence. A completed episode is not a declaration that an 
 is scientifically complete. Progress is descriptive only.
 
 PROVISIONAL INSIGHT
-A provisional_insight is optional. Use it only when there is a useful evidence-grounded
-contrast or repeated pattern among participant-approved episodes that could make the interview
-rewarding. It must invite revision. Never state that the pattern is destiny or that a mechanism
-is correct.
+A provisional_insight is optional. Use it only when a concise evidence-grounded reflection of a
+repeated pattern or contrast among participant-approved episodes would help the participant
+check your understanding. It must invite correction. Do not make it flattering, motivational,
+diagnostic, causal, or destiny-like.
 
 Return only the required JSON object."""
 
@@ -184,6 +250,30 @@ def _interviewer_schema() -> dict[str, Any]:
             "coverage_focus": {"type": "string", "minLength": 1},
         },
     }
+
+
+def _participant_statement_index(turns: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Retain a compact cross-interview index so older participant answers stay visible."""
+
+    statements: list[dict[str, Any]] = []
+    for turn in turns:
+        if turn.get("role") != "user":
+            continue
+        raw_text = turn.get("text")
+        if not isinstance(raw_text, str):
+            continue
+        text = raw_text.strip()
+        if not text:
+            continue
+        truncated = len(text) > _PARTICIPANT_HISTORY_MAX_CHARS_PER_TURN
+        statements.append(
+            {
+                "turn_id": str(turn.get("turn_id", "")),
+                "text": text[:_PARTICIPANT_HISTORY_MAX_CHARS_PER_TURN],
+                "text_truncated": truncated,
+            }
+        )
+    return statements[-_PARTICIPANT_HISTORY_MAX_TURNS:]
 
 
 class OpenAILifePatternsInterviewer:
@@ -224,7 +314,8 @@ class OpenAILifePatternsInterviewer:
             raise RuntimeError("Life Patterns interviewer is not configured")
         payload = {
             "participant_approved_episodes": episodes,
-            "recent_conversation_turns": turns[-18:],
+            "participant_statement_index": _participant_statement_index(turns),
+            "recent_conversation_turns": turns[-_RECENT_TURN_WINDOW:],
             "descriptive_evidence_progress": progress,
         }
         body_obj = {
@@ -316,7 +407,7 @@ def create_life_patterns_interview_app(
     mapper: OpenAILifePatternsMapper | Any,
     recovery: LifePatternsRecoveryService,
 ) -> FastAPI:
-    app = FastAPI(title="Discover Your Unique Life Patterns", version="0.3.0")
+    app = FastAPI(title="Discover Your Unique Life Patterns", version="0.4.0")
 
     @app.get("/", response_class=HTMLResponse, include_in_schema=False)
     def landing() -> str:
@@ -343,7 +434,7 @@ def create_life_patterns_interview_app(
         except ValueError as exc:
             raise HTTPException(status_code=422, detail=str(exc)) from exc
         payload, token = store.create()
-        payload["interview_schema_version"] = "life-patterns-conversation-v2"
+        payload["interview_schema_version"] = "life-patterns-conversation-v3"
         payload["consent_to_llm_processing"] = True
         payload["contact_email_lookup_sha256"] = hashlib.sha256(email.encode()).hexdigest()
         payload["conversation_turns"] = []
