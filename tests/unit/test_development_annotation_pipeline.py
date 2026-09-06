@@ -104,7 +104,7 @@ def _ontology() -> OntologyReleaseArtifact:
     )
     payload = OntologyReleasePayload(
         ontology_id="development-pipeline-test",
-        ontology_version="v1",
+        ontology_version="v1.0",
         release_status="development",
         scope_statement="Synthetic pipeline test.",
         observables=(observable,),
