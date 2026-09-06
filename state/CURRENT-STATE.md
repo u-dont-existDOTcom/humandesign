@@ -1,5 +1,66 @@
 # Current state
 
+## Life Patterns development transfer continuation — 2026-09-06
+
+- Active task: `life-patterns-development-transfer-v1`; branch
+  `codex/discover-life-patterns-mvp`; draft PR #24, base
+  `codex/astrohd-owner-intake-quality-v1`.
+- Current owner instruction selects this task. Historical next actions below and
+  the inherited `participant-session-v1` lock are superseded for this branch only.
+  Other worktrees and historical evidence remain intact.
+- Preflight: `python scripts/task_preflight.py`.
+- Engineering verification command:
+  `.venv/bin/python -m pytest tests/unit/test_development_*.py tests/unit/test_resolved_development_stack.py`.
+  This is the legacy lock's `completionCommand` field, not scientific completion.
+  The nine artifact criteria in
+  `state/LIFE-PATTERNS-DEVELOPMENT-HANDOFF-2026-09-06.md` remain controlling.
+- GitHub revalidated: main `afc0bb82de0e481ae5a5d3453e0bcaf82b2a0286`,
+  main CI 33454801631 successful; PR #24 head
+  `5a278d135af4de5190d9b74d8e55489dc92efaf1`, open/draft/unmerged,
+  CI 34059401473 successful. Recheck live head after subsequent commits.
+- Handoff steps 1–4 executed on the exact private v8/v8.1 files. Package
+  `LPKG-18170B8D3EEC8423A523`, corpus `LPDC-F2BBDA6F39040BF41D96`, calibration
+  `LPCA-5B3E6CFCCE49807050DF`. Actual shape: 17 episodes, 13 series reports,
+  5 exact-source series, 8 blocked summary-only series; 374 episode and 110 series
+  units, with 44 and 22 preselected human units respectively.
+- Exact original-file hashes and distinct canonical-JSON hashes are recorded in
+  `state/life-patterns-development-preparation-2026-09-06/execution-receipt.json`.
+  Originals are unchanged. Replaying preparation at its original timestamp and
+  source commit reproduced the corpus, package, calibration and all 16 packet bytes.
+- Public-safe receipts, detailed execution order, privacy review and scientific
+  limitations: `state/life-patterns-development-preparation-2026-09-06/README.md`.
+  Raw records and all narrative-bearing outputs remain ignored/private.
+- A human-only handoff is saved locally at
+  `experiments/private/life-patterns/human-calibration-2026-09-06/` and its sibling
+  `.zip`: 8 unchanged human packets, response schemas, 66 unfilled JSONL rows,
+  instructions and an unfilled attestation. The 15-member archive was read back
+  and verified against every file. Only its safe hash receipt is committed.
+- **Blocked at handoff step 5:** no independent human first pass or actual
+  exposure/independence attestation has been received. The owner identified a
+  possible later auditor; no person was contacted and no participation/blindness
+  was inferred. The owner can provide separately identified sensitivity coding.
+- Next: obtain/freeze the independent blind human first pass. Only then run at
+  least three isolated automated passes per stratum, separate consensus and the
+  human comparison. No labels, consensus, comparison, measurement revision,
+  validation-route choice or target-model result exists from this execution.
+- Narrow repairs: public receipt identifier fields reject arbitrary narrative;
+  human handoff export adds schemas/blank forms while preserving frozen packets;
+  a legacy audit rejection probe now reads its declared historical commit instead
+  of later checkout files. Historical audit result bytes remain unchanged.
+- Final local verification: **579 passed, 1 expected skip** (official Swiss files
+  unavailable); CI-equivalent Ruff plus touched-script Ruff passed; strict mypy
+  passed for **163 source files**; preflight and `git diff --check` passed.
+  Local full history exercises checks that shallow hosted CI skips. Current-head
+  hosted CI is recorded on GitHub PR #24; recheck it rather than inferring success
+  from the entry baseline run above.
+- `development_only=true`, `validation_use_forbidden=true`, canonical BPF
+  eligibility false, target-model scoring unauthorized. No merge/deployment,
+  recruitment/contact, spending, or target-model reveal is in scope.
+- Universal lessons activated at task time: GitHub-first bootstrap at remote/head
+  reconciliation; context recovery and exclusive task identity here and in
+  `tasks/ACTIVE-TASK.json`; native-default component policy at tool selection;
+  privacy-safe evidence and verification at preparation/commit review.
+
 ## Execution-only theory-language scaffold — 2026-09-02
 
 - A clean ChatGPT Chat session on the signed-in `u-dont-exist.com` Pro account was

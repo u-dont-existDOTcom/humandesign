@@ -10,7 +10,7 @@ never contain automated labels.
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Literal, cast
+from typing import Annotated, Literal, cast
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
@@ -128,7 +128,9 @@ class BlindDevelopmentPacketReceiptPayload(BlindPacketModel):
     package_sha256: str = Field(pattern=r"^[0-9a-f]{64}$")
     instruction_prompt_sha256: str = Field(pattern=r"^[0-9a-f]{64}$")
     coding_manual_sha256: str = Field(pattern=r"^[0-9a-f]{64}$")
-    task_ids: tuple[str, ...] = Field(min_length=1, max_length=5)
+    task_ids: tuple[
+        Annotated[str, Field(pattern=r"^LP(?:DT|ST)-[0-9A-F]{20}$")], ...
+    ] = Field(min_length=1, max_length=5)
     assigned_unit_count: int = Field(ge=1)
     calibration_manifest_id: str | None = None
     calibration_manifest_sha256: str | None = Field(default=None, pattern=r"^[0-9a-f]{64}$")

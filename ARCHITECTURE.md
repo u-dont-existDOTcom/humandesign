@@ -18,6 +18,24 @@ Implement an end-to-end research system that can:
 12. generate independently frozen future life-state timelines for two partners and test multi-domain future concordance against random-partner null distributions;
 13. test pair-specific relationship-transition hazards separately from relationship quality/mutuality outcomes.
 
+## Life Patterns development transfer boundary
+
+The private v8/v8.1 transfer path is a separate measurement-development pipeline:
+exact private JSONs → development corpus → separate episode and exact-source series
+tasks → deterministic pre-label human calibration selection → frozen blind packets
+→ independent human first-pass freeze → isolated automated passes → separate-stratum
+consensus and human comparison. The v8/v8.1 material is never a canonical BPF freeze
+or validation corpus. Target-model scoring remains separately gated and unauthorized.
+
+`development_human_handoff.py` exports unchanged human packets with response schemas
+and unfilled forms; it performs no coding and attests to no human identity/blinding.
+Narrative-bearing artifacts remain under ignored `experiments/private/`; only inspected
+hash/count receipts enter Git. The real preparation receipt, module/transport details,
+scientific limits and next gate are indexed in
+`state/life-patterns-development-preparation-2026-09-06/README.md` and the current
+`state/CURRENT-STATE.md`. Historical scoring architecture below does not authorize
+target-model work on these development annotations.
+
 ## Core principle
 
 The project distinguishes **model fitting** from **model validation**.

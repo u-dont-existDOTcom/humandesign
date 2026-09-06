@@ -222,6 +222,25 @@ def test_public_safe_packet_receipt_does_not_repeat_private_text() -> None:
     assert receipt.payload.target_model_information_available is False
 
 
+def test_public_receipts_reject_narrative_in_identifier_fields() -> None:
+    prep = _preparation()
+    package_payload = prep.package.payload.model_dump(mode="json")
+    package_payload["blocked_summary_only_series_ids"] = [PRIVATE_MARKER]
+    with pytest.raises(ValueError, match="blocked_summary_only_series_ids"):
+        type(prep.package.payload).model_validate(package_payload)
+    package_payload["blocked_summary_only_series_ids"] = ["SER-002", "ADD-EV-002"]
+    type(prep.package.payload).model_validate(package_payload)
+
+    packet = build_blind_development_packets(
+        prep, repo_root=Path("."), coder_role="automated", evidence_kind="episode"
+    )[0]
+    receipt = packet_public_safe_receipt(packet)
+    receipt_payload = receipt.payload.model_dump(mode="json")
+    receipt_payload["task_ids"] = [PRIVATE_MARKER]
+    with pytest.raises(ValueError, match="task_ids"):
+        type(receipt.payload).model_validate(receipt_payload)
+
+
 def test_packet_batch_size_is_bounded_to_five_tasks() -> None:
     with pytest.raises(ValueError, match="between 1 and 5"):
         build_blind_development_packets(

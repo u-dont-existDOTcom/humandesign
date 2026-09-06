@@ -10,7 +10,7 @@ freeze.
 from __future__ import annotations
 
 from datetime import UTC, datetime
-from typing import Literal
+from typing import Annotated, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
@@ -69,7 +69,11 @@ class DevelopmentCodingPackagePayload(DevelopmentCodingPackageModel):
     series_task_set_sha256: str | None = Field(default=None, pattern=_SHA256_PATTERN)
     series_task_count: int = Field(ge=0)
     series_observable_unit_count: int = Field(ge=0)
-    blocked_summary_only_series_ids: tuple[str, ...]
+    # These identifiers are copied from private records into a public receipt.
+    # Keep arbitrary source text out without rewriting the private source IDs.
+    blocked_summary_only_series_ids: tuple[
+        Annotated[str, Field(pattern=r"^(?:SER|ADD-EV)-[0-9]{3}$")], ...
+    ]
     series_reports_are_not_pseudo_episodes: Literal[True] = True
 
     calibration_manifest_id: str = Field(pattern=r"^LPCA-[0-9A-F]{20}$")
