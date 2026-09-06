@@ -6,7 +6,7 @@ from pathlib import Path
 import pytest
 
 from hdmatch.evaluation.resolved_development_stack import (
-    CODER_PROMPT_REL,
+    CODING_MANUAL_REL,
     RESOLUTION_ARTIFACT_RECONSTRUCTION_AT_UTC,
     build_repository_resolved_development_stack,
     file_sha256,
@@ -28,9 +28,9 @@ def test_real_repository_stack_binds_exact_resolved_measurement_chain() -> None:
     assert stack.resolved.payload.not_non_action_count == 180
     assert stack.observable_ids == tuple(f"NBM-R{index:02d}" for index in range(1, 23))
     assert stack.procedure.payload.reconciled_codebook_sha256 == stack.resolved.view_sha256
-    assert stack.procedure.payload.coding_manual_sha256 == stack.coder_prompt_sha256
-    assert stack.ontology.payload.coding_procedure_sha256 == stack.coder_prompt_sha256
-    assert stack.coder_prompt_sha256 == file_sha256(CODER_PROMPT_REL)
+    assert stack.procedure.payload.coding_manual_sha256 == stack.coding_manual_sha256
+    assert stack.ontology.payload.coding_procedure_sha256 == stack.coding_manual_sha256
+    assert stack.coding_manual_sha256 == file_sha256(CODING_MANUAL_REL)
     assert sum(
         len(row.non_action_values) for row in stack.procedure.payload.observable_extensions
     ) == 28
