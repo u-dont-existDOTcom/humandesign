@@ -1,7 +1,7 @@
 """Blind human first-pass calibration for development transfer coding.
 
 The human coder sees only the preselected calibration units and frozen theory-neutral measurement
-materials.  This module validates that a first-pass output covers exactly those units, records a
+materials. This module validates that a first-pass output covers exactly those units, records a
 public-safe hash receipt, and later compares the frozen human coding with automated consensus.
 It never rewrites either side and defines no pass/fail threshold.
 """
@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import hashlib
 from datetime import UTC, datetime
-from typing import Any, Literal, cast
+from typing import Literal, cast
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
@@ -18,6 +18,7 @@ from hdmatch.experiments.canonical import canonical_json_bytes, sha256_json
 
 from .development_annotation_pipeline import (
     DevelopmentConsensusArtifact,
+    development_consensus_integrity_errors,
     load_development_episode_responses_jsonl,
     load_development_series_responses_jsonl,
     normalize_development_episode_responses_jsonl,
@@ -350,7 +351,10 @@ class DevelopmentHumanConsensusComparisonPayload(HumanCalibrationModel):
     def counts_are_coherent(self) -> DevelopmentHumanConsensusComparisonPayload:
         if self.sampled_units != len(self.units):
             raise ValueError("human-consensus comparison sampled unit count disagrees with rows")
-        if self.consensus_resolved_sample_units + self.unresolved_consensus_sample_units != self.sampled_units:
+        if (
+            self.consensus_resolved_sample_units + self.unresolved_consensus_sample_units
+            != self.sampled_units
+        ):
             raise ValueError("human-consensus resolved/unresolved counts must sum to sampled units")
         if self.state_agreement_units > self.consensus_resolved_sample_units:
             raise ValueError("state agreement cannot exceed resolved consensus sample")
@@ -395,6 +399,9 @@ def build_development_human_consensus_comparison(
     errors = development_human_first_pass_integrity_errors(human_first_pass)
     if errors:
         raise ValueError("invalid human first-pass artifact: " + "; ".join(errors))
+    consensus_errors = development_consensus_integrity_errors(consensus)
+    if consensus_errors:
+        raise ValueError("invalid development consensus artifact: " + "; ".join(consensus_errors))
     if _sha256_bytes(human_normalized_output) != human_first_pass.payload.normalized_output_sha256:
         raise ValueError("human comparison bytes do not bind first-pass artifact")
     if consensus.payload.evidence_kind != human_first_pass.payload.evidence_kind:
@@ -403,7 +410,10 @@ def build_development_human_consensus_comparison(
         raise ValueError("human first pass and automated consensus do not bind same corpus")
     if consensus.payload.codebook_sha256 != human_first_pass.payload.codebook_sha256:
         raise ValueError("human first pass and automated consensus do not bind same codebook")
-    if consensus.payload.coding_procedure_sha256 != human_first_pass.payload.coding_procedure_sha256:
+    if (
+        consensus.payload.coding_procedure_sha256
+        != human_first_pass.payload.coding_procedure_sha256
+    ):
         raise ValueError("human first pass and automated consensus do not bind same procedure")
 
     if human_first_pass.payload.evidence_kind == "episode":
