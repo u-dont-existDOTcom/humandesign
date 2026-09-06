@@ -2,7 +2,7 @@
 
 Packets contain private participant evidence and therefore belong in gitignored/private storage.
 A separate receipt contains only hashes, task identities, counts, and blind-state assertions and is
-safe to commit.  Automated and human-calibration packets are rendered from the same frozen
+safe to commit. Automated and human-calibration packets are rendered from the same frozen
 measurement stack, but human packets are restricted to the preselected calibration units and
 never contain automated labels.
 """
@@ -17,6 +17,7 @@ from pydantic import BaseModel, ConfigDict, Field, model_validator
 from hdmatch.experiments.canonical import canonical_json_bytes, sha256_json, write_new_bytes
 
 from .development_calibration_sampling import (
+    development_calibration_integrity_errors,
     human_episode_calibration_tasks,
     human_series_calibration_tasks,
 )
@@ -27,14 +28,14 @@ from .development_private_preparation import (
 )
 from .development_series_evidence import DevelopmentSeriesCodingTask
 from .development_transfer_corpus import DevelopmentEpisodeCodingTask
+from .neutral_measurement import OntologyReleaseArtifact
 from .non_action_resolution import (
     NonActionAmbiguityResolutionArtifact,
     ResolvedCodebookViewArtifactV2,
 )
 from .reconciled_codebook_source import ReconciledCodebookSourceArtifact
-from .neutral_measurement import OntologyReleaseArtifact
-from .structured_annotation_v2 import StructuredCodingProcedureArtifactV2
 from .resolved_development_stack import CODING_MANUAL_REL, file_sha256
+from .structured_annotation_v2 import StructuredCodingProcedureArtifactV2
 
 BlindCoderRole = Literal["automated", "human_calibration"]
 BlindEvidenceKind = Literal["episode", "series"]
@@ -167,6 +168,14 @@ def _task_view(
         if evidence_kind == "episode":
             return cast(tuple[BlindTask, ...], preparation.episode_tasks)
         return cast(tuple[BlindTask, ...], preparation.series_report.tasks)
+
+    errors = development_calibration_integrity_errors(
+        preparation.calibration,
+        episode_tasks=preparation.episode_tasks,
+        series_tasks=preparation.series_report.tasks,
+    )
+    if errors:
+        raise ValueError("invalid development calibration manifest: " + "; ".join(errors))
     if evidence_kind == "episode":
         return cast(
             tuple[BlindTask, ...],
@@ -220,9 +229,7 @@ def build_blind_development_packets(
         raise ValueError(f"no {coder_role} {evidence_kind} tasks are available for packet rendering")
 
     packets: list[BlindDevelopmentPacketArtifact] = []
-    calibration_id = (
-        preparation.calibration.manifest_id if coder_role == "human_calibration" else None
-    )
+    calibration_id = preparation.calibration.manifest_id if coder_role == "human_calibration" else None
     calibration_sha = (
         preparation.calibration.manifest_sha256 if coder_role == "human_calibration" else None
     )
