@@ -351,7 +351,9 @@ def test_duplicate_observable_ids_fail_task_build() -> None:
         )
 
 
-def test_payload_cannot_be_mutated_into_validation_eligible_state() -> None:
+def test_payload_cannot_validate_as_validation_eligible_state() -> None:
     artifact = _build()
+    invalid = artifact.payload.model_dump(mode="python")
+    invalid["canonical_behavioral_freeze_eligible"] = True
     with pytest.raises(ValidationError):
-        artifact.payload.model_copy(update={"canonical_behavioral_freeze_eligible": True})
+        type(artifact.payload).model_validate(invalid)
