@@ -11,7 +11,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-import shutil
+import os
 import subprocess
 import sys
 import tempfile
@@ -32,6 +32,7 @@ EXPECTED_CALIBRATION_SHA256 = "5b3e6cfcce49807050df03f8ab27cbfbb610869dcb9cfa300
 EXPECTED_EPISODE_UNITS = 44
 EXPECTED_SERIES_UNITS = 22
 EXPECTED_HANDOFF_FILE_COUNT = 15
+HANDOFF_RECEIPT_NAME = "human_handoff_public_safe_receipt.json"
 SAFE_HANDOFF_RECEIPT = Path(
     "state/life-patterns-development-preparation-2026-09-06/"
     "human_handoff_public_safe_receipt.json"
@@ -50,35 +51,52 @@ def _load_json(path: Path) -> dict[str, Any]:
 
 
 def _find_exact_sources(source_archive: Path, extraction_root: Path) -> tuple[Path, Path]:
+    """Read only exact hash-matching members; never extract arbitrary archive paths."""
+
+    extraction_root.mkdir(parents=True)
+    by_digest: dict[str, bytes] = {}
     with zipfile.ZipFile(source_archive) as archive:
         members = [info for info in archive.infolist() if not info.is_dir()]
         if not members:
             raise ValueError("recovery archive contains no files")
-        archive.extractall(extraction_root)
-
-    by_digest: dict[str, Path] = {}
-    for path in extraction_root.rglob("*"):
-        if not path.is_file():
-            continue
-        raw = path.read_bytes()
-        digest = _sha256(raw)
-        if digest in {V8_SHA256, V8_1_SHA256}:
+        for info in members:
+            raw = archive.read(info)
+            digest = _sha256(raw)
+            if digest not in {V8_SHA256, V8_1_SHA256}:
+                continue
             if digest in by_digest:
                 raise ValueError(f"recovery archive repeats exact source digest {digest}")
-            by_digest[digest] = path
+            by_digest[digest] = raw
 
     if set(by_digest) != {V8_SHA256, V8_1_SHA256}:
         missing = sorted({V8_SHA256, V8_1_SHA256} - set(by_digest))
         raise ValueError("recovery archive is missing exact frozen source bytes: " + ", ".join(missing))
-    if by_digest[V8_SHA256].stat().st_size != V8_BYTES:
+    if len(by_digest[V8_SHA256]) != V8_BYTES:
         raise ValueError("v8 exact source byte count disagrees with recovery receipt")
-    if by_digest[V8_1_SHA256].stat().st_size != V8_1_BYTES:
+    if len(by_digest[V8_1_SHA256]) != V8_1_BYTES:
         raise ValueError("v8.1 exact source byte count disagrees with recovery receipt")
-    return by_digest[V8_SHA256], by_digest[V8_1_SHA256]
+
+    v8 = extraction_root / "v8.exact.json"
+    v8_1 = extraction_root / "v8.1.exact.json"
+    v8.write_bytes(by_digest[V8_SHA256])
+    v8_1.write_bytes(by_digest[V8_1_SHA256])
+    return v8, v8_1
 
 
 def _run(command: list[str], *, cwd: Path) -> None:
-    result = subprocess.run(command, cwd=cwd, text=True, capture_output=True, check=False)
+    env = os.environ.copy()
+    source_path = str(cwd / "src")
+    env["PYTHONPATH"] = (
+        source_path if not env.get("PYTHONPATH") else source_path + os.pathsep + env["PYTHONPATH"]
+    )
+    result = subprocess.run(
+        command,
+        cwd=cwd,
+        env=env,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
     if result.returncode != 0:
         detail = result.stderr.strip() or result.stdout.strip() or "no diagnostic output"
         raise RuntimeError(f"command failed ({result.returncode}): {' '.join(command)}\n{detail}")
@@ -102,33 +120,42 @@ def _verify_prepared(prepared_dir: Path) -> None:
         "development_only": True,
         "validation_use_forbidden": True,
     }
-    mismatches = {key: (payload.get(key), value) for key, value in expected.items() if payload.get(key) != value}
+    mismatches = {
+        key: (payload.get(key), value)
+        for key, value in expected.items()
+        if payload.get(key) != value
+    }
     if mismatches:
         raise ValueError(f"regenerated package differs from frozen preparation: {mismatches}")
 
 
 def _verify_handoff(handoff_dir: Path, repo_root: Path) -> dict[str, Any]:
-    expected_receipt = _load_json(repo_root / SAFE_HANDOFF_RECEIPT)
-    actual_receipt = _load_json(handoff_dir / "human_handoff_public_safe_receipt.json")
+    committed_receipt_path = repo_root / SAFE_HANDOFF_RECEIPT
+    actual_receipt_path = handoff_dir / HANDOFF_RECEIPT_NAME
+    expected_receipt = _load_json(committed_receipt_path)
+    actual_receipt = _load_json(actual_receipt_path)
     if actual_receipt != expected_receipt:
-        raise ValueError("regenerated human handoff receipt is not byte/content-equivalent to frozen receipt")
+        raise ValueError("regenerated human handoff receipt content differs from frozen receipt")
+    if actual_receipt_path.read_bytes() != committed_receipt_path.read_bytes():
+        raise ValueError("regenerated human handoff receipt bytes differ from frozen receipt bytes")
 
     payload = expected_receipt.get("payload")
     if not isinstance(payload, dict) or not isinstance(payload.get("files"), dict):
         raise ValueError("committed human handoff receipt is malformed")
-    expected_files = payload["files"]
+    expected_payload_files = payload["files"]
     actual_files = sorted(path for path in handoff_dir.rglob("*") if path.is_file())
     relative_actual = {path.relative_to(handoff_dir).as_posix(): path for path in actual_files}
-    if set(relative_actual) != set(expected_files):
-        missing = sorted(set(expected_files) - set(relative_actual))
-        extra = sorted(set(relative_actual) - set(expected_files))
+    expected_file_names = set(expected_payload_files) | {HANDOFF_RECEIPT_NAME}
+    if set(relative_actual) != expected_file_names:
+        missing = sorted(expected_file_names - set(relative_actual))
+        extra = sorted(set(relative_actual) - expected_file_names)
         raise ValueError(f"regenerated handoff file set differs; missing={missing}; extra={extra}")
     if len(relative_actual) != EXPECTED_HANDOFF_FILE_COUNT:
         raise ValueError("regenerated human handoff does not contain exactly 15 frozen files")
 
     mismatched_hashes = {
         name: (_sha256(relative_actual[name].read_bytes()), expected_digest)
-        for name, expected_digest in expected_files.items()
+        for name, expected_digest in expected_payload_files.items()
         if _sha256(relative_actual[name].read_bytes()) != expected_digest
     }
     if mismatched_hashes:
@@ -149,14 +176,32 @@ def _write_deterministic_zip(source_dir: Path, output_zip: Path) -> tuple[str, i
     if output_zip.exists() or output_zip.is_symlink():
         raise FileExistsError(f"output archive already exists: {output_zip}")
     paths = sorted(path for path in source_dir.rglob("*") if path.is_file())
-    with zipfile.ZipFile(output_zip, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
+    with zipfile.ZipFile(
+        output_zip,
+        "w",
+        compression=zipfile.ZIP_DEFLATED,
+        compresslevel=9,
+    ) as archive:
         for path in paths:
             relative = path.relative_to(source_dir).as_posix()
             info = zipfile.ZipInfo(relative, date_time=(1980, 1, 1, 0, 0, 0))
             info.compress_type = zipfile.ZIP_DEFLATED
             info.external_attr = 0o100400 << 16
-            archive.writestr(info, path.read_bytes(), compress_type=zipfile.ZIP_DEFLATED, compresslevel=9)
+            archive.writestr(
+                info,
+                path.read_bytes(),
+                compress_type=zipfile.ZIP_DEFLATED,
+                compresslevel=9,
+            )
     raw = output_zip.read_bytes()
+    with zipfile.ZipFile(output_zip) as archive:
+        names = archive.namelist()
+        if len(names) != len(paths) or len(names) != len(set(names)):
+            raise ValueError("output ZIP did not round-trip the exact handoff member set")
+        for path in paths:
+            relative = path.relative_to(source_dir).as_posix()
+            if archive.read(relative) != path.read_bytes():
+                raise ValueError(f"output ZIP member changed bytes: {relative}")
     return _sha256(raw), len(raw), len(paths)
 
 
@@ -216,7 +261,10 @@ def main() -> None:
             cwd=repo_root,
         )
         receipt = _verify_handoff(handoff, repo_root)
-        archive_sha256, archive_bytes, archive_members = _write_deterministic_zip(handoff, output_zip)
+        archive_sha256, archive_bytes, archive_members = _write_deterministic_zip(
+            handoff,
+            output_zip,
+        )
 
     result = {
         "schema_version": "life-patterns-regenerated-human-handoff-transfer-v1",
