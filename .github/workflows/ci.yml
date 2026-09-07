@@ -34,6 +34,45 @@ jobs:
       - name: Type check
         run: mypy src/hdmatch
 
+  public-replay-snapshot-once:
+    if: ${{ github.event_name == 'push' && contains(github.event.head_commit.message, 'Export public replay snapshot') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - name: Emit public deterministic-replay source snapshot
+        shell: bash
+        run: |
+          set -euo pipefail
+          tar -czf /tmp/life-patterns-public-replay.tar.gz \
+            pyproject.toml \
+            src/hdmatch/__init__.py \
+            src/hdmatch/evaluation \
+            src/hdmatch/experiments \
+            scripts/prepare_life_patterns_development_package.py \
+            scripts/export_life_patterns_human_calibration_bundle.py \
+            scripts/regenerate_life_patterns_human_calibration_from_recovery.py \
+            state/LIFE-PATTERNS-NEUTRAL-CODEBOOK-THEORY-BLIND-RECONCILED-CANDIDATE-v1-2026-09-03.md \
+            state/LIFE-PATTERNS-NON-ACTION-CLASSIFICATION-COMPACT-v1-2026-09-04.json \
+            state/LIFE-PATTERNS-NON-ACTION-AMBIGUITY-RESOLUTION-NORMALIZED-v1-2026-09-04.jsonl \
+            state/LIFE-PATTERNS-NON-ACTION-AMBIGUITY-RESOLUTION-RAW-v1-2026-09-04.jsonl.txt \
+            state/LIFE-PATTERNS-NON-ACTION-AMBIGUITY-RESOLUTION-PROMPT-v1-2026-09-04.txt \
+            state/LIFE-PATTERNS-DEVELOPMENT-CODING-MANUAL-v1-2026-09-06.md \
+            state/LIFE-PATTERNS-DEVELOPMENT-EPISODE-CODING-PROMPT-v1-2026-09-06.txt \
+            state/LIFE-PATTERNS-DEVELOPMENT-SERIES-CODING-PROMPT-v1-2026-09-06.txt \
+            state/LIFE-PATTERNS-DEVELOPMENT-HUMAN-CALIBRATION-PROMPT-v1-2026-09-06.txt \
+            state/life-patterns-development-preparation-2026-09-06/human_handoff_public_safe_receipt.json \
+            state/life-patterns-development-preparation-2026-09-06/development_coding_package_public_safe.json \
+            docs/research/LIFE_PATTERNS_NEUTRAL_MEASUREMENT_BRIDGE_SPEC.md \
+            docs/research/LIFE_PATTERNS_THEORY_BLIND_CONTENT_AUTHORITY_POLICY.md
+          echo "REPLAY_SNAPSHOT_SHA256=$(sha256sum /tmp/life-patterns-public-replay.tar.gz | cut -d' ' -f1)"
+          echo "REPLAY_SNAPSHOT_BYTES=$(stat -c %s /tmp/life-patterns-public-replay.tar.gz)"
+          echo REPLAY_SNAPSHOT_BASE64_BEGIN
+          base64 -w0 /tmp/life-patterns-public-replay.tar.gz
+          echo
+          echo REPLAY_SNAPSHOT_BASE64_END
+
   castille-synastry-once:
     if: ${{ github.event_name == 'push' && contains(github.event.head_commit.message, 'Run Castille synastry via CI') }}
     permissions:
