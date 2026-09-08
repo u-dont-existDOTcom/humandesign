@@ -8,7 +8,7 @@ new series/human transport prompts. No target-model information is accepted.
 from __future__ import annotations
 
 from datetime import UTC, datetime
-from typing import Annotated, Literal
+from typing import Annotated, Literal, cast
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
@@ -199,6 +199,7 @@ def build_development_coding_package_v2(
     participant_exposure = corpus.payload.participant_theory_exposure
     if participant_exposure not in {"prior_exposure_possible", "unknown"}:
         raise ValueError("v2 development package requires explicit theory exposure state")
+    bounded_exposure = cast(Literal["prior_exposure_possible", "unknown"], participant_exposure)
 
     payload = DevelopmentCodingPackagePayloadV2(
         corpus_id=corpus.corpus_id,
@@ -206,7 +207,7 @@ def build_development_coding_package_v2(
         source_record_sha256=corpus.payload.source_record_sha256,
         supplement_sha256=corpus.payload.supplement_sha256,
         source_transcript_completeness=corpus.payload.source_transcript_completeness,
-        participant_theory_exposure=participant_exposure,
+        participant_theory_exposure=bounded_exposure,
         reconciled_source_artifact_id=stack.source.artifact_id,
         reconciled_source_sha256=stack.source.artifact_sha256,
         ambiguity_resolution_id=stack.resolution.resolution_id,
