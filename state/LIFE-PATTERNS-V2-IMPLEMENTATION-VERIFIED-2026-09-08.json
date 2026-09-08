@@ -1,0 +1,38 @@
+{
+  "schema_version": "life-patterns-recurrence-v2-implementation-verification-v1",
+  "status": "implementation_green_private_freeze_pending",
+  "implementation_head": "7b689f3adb49da599abb40ec2bff27ad97d3887f",
+  "ci_run": 34271174611,
+  "ci_conclusion": "success",
+  "verification": {
+    "pytest_passed": 602,
+    "pytest_skipped": 7,
+    "ruff": "all_checks_passed",
+    "mypy": "success_no_issues_in_171_source_files"
+  },
+  "method_revision": {
+    "prior_work_scan": "docs/research/LIFE_PATTERNS_RECURRENCE_EVIDENCE_PRIOR_WORK_SCAN_2026-09-08.md",
+    "recurrence_policy_v2": "docs/research/LIFE_PATTERNS_RECURRENCE_EVIDENCE_POLICY_v2_2026-09-08.md",
+    "coding_manual_v2": "state/LIFE-PATTERNS-DEVELOPMENT-CODING-MANUAL-v2-2026-09-08.md",
+    "series_response_schema_v2": "life-patterns-development-series-annotation-response-v2",
+    "series_prompt_v2": "state/LIFE-PATTERNS-DEVELOPMENT-SERIES-CODING-PROMPT-v2-2026-09-08.txt",
+    "human_prompt_v2": "state/LIFE-PATTERNS-DEVELOPMENT-HUMAN-CALIBRATION-PROMPT-v2-2026-09-08.txt",
+    "confirming_episodes_are_not_frequency_counts": true,
+    "generalized_behavioral_recurrence_self_report_is_evidence": true,
+    "minimum_numeric_occurrence_count_required_for_generalized_recurrence": false,
+    "exception_status_separate_from_recurrence_strength": true,
+    "frequency_evidence_basis_explicit": true,
+    "historical_prelabel_selection_reused_without_resampling_by_design": true,
+    "target_model_information_used_for_revision": false
+  },
+  "historical_artifacts_preserved": true,
+  "historical_calibration_manifest_id": "LPCA-5B3E6CFCCE49807050DF",
+  "historical_calibration_manifest_sha256": "5b3e6cfcce49807050df03f8ab27cbfbb610869dcb9cfa30064cd485d4646140",
+  "private_v2_package_frozen_from_real_sources": false,
+  "human_first_pass_received": false,
+  "automated_coding_run": false,
+  "target_model_scoring_run": false,
+  "development_only": true,
+  "validation_use_forbidden": true,
+  "next_gate": "Execute tasks/LIFE-PATTERNS-V2-PRIVATE-FREEZE-WORKER-2026-09-08.md on the exact recovered private sources against this pinned implementation head, reuse the exact historical 44+22 calibration selection without resampling, export/verify/deliver the private LPHB2 handoff, and commit only public-safe receipts."
+}
