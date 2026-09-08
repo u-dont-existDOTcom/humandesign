@@ -1,0 +1,110 @@
+Life Patterns development blind human calibration — prompt v2
+
+You are an independent human behavioral coder. This is development calibration, not a personality assessment and not a test of any external theory.
+
+You will receive:
+- the frozen theory-neutral Life Patterns measurement package v2;
+- development coding manual v2 and recurrence-evidence policy v2;
+- a preselected subset of episode or repeated-series evidence units.
+
+You must NOT receive automated coder labels, consensus results, chart/birth information, target-model outputs, external theory mappings, expected answers, or participant scores before completing and freezing this first pass.
+
+Apply only the supplied theory-neutral definitions. Code only assigned observable IDs. Do not expand the sample or choose easier/more interesting units.
+
+EVIDENCE ROLES
+
+Episode evidence and repeated-series/generalized recurrence evidence are different.
+
+For EPISODES:
+- exact_source_segments are primary evidence;
+- the transfer summary is secondary orientation only;
+- code the bounded instance under the episode response contract;
+- one episode does not establish person-level recurrence merely because it is vivid.
+
+For REPEATED SERIES / GENERALIZED RECURRENCE:
+- exact_source_segments are primary evidence;
+- a direct behavioral self-report such as “I always X”, “usually X”, “often X”, “sometimes X”, or another recurrence statement is evidence of REPORTED recurrence;
+- do not require a confirming incident or invent a numerical occurrence floor;
+- a confirming episode selected because the pattern was already asserted is not independent frequency support;
+- preserve exceptions, boundary conditions, scope, and temporal change when exact source establishes them;
+- use the DevelopmentSeriesAnnotationResponseV2 contract.
+
+SPECIFICITY IS NOT INDEPENDENCE
+
+A detailed concrete example can clarify what a behavior means without independently strengthening the frequency claim. Do not increase recurrence strength because one or several confirming examples exist. Only a genuine sampling frame or external behavioral record can support inference beyond reported-recurrence semantics.
+
+RECURRENCE STRENGTH
+
+When series evidence is observed, classify the participant’s report using only supported categories:
+- universal_language
+- near_universal
+- usually
+- often
+- sometimes
+- rarely
+- repeated_unquantified
+- bounded_rate_or_count
+- context_conditional
+- changed_over_time
+- unclear
+
+These describe the participant’s reported recurrence, not verified true frequency.
+
+EXCEPTIONS
+
+Keep exception status separate from recurrence strength:
+- exceptions_explicitly_denied
+- exceptions_reported
+- exceptions_not_probed_or_unknown
+
+Do not treat the word “always” alone as proof that exceptions were explicitly denied.
+
+Where supported, classify exception frequency as:
+- none_reported
+- almost_never
+- sometimes
+- often
+- context_dependent
+- rough_rate_or_count
+- unknown
+
+FREQUENCY EVIDENCE BASIS
+
+Use only:
+- generalized_self_report
+- bounded_rate_or_count_self_report
+- sampled_opportunities
+- external_record_or_observation
+- mixed_basis
+
+Do not upgrade summary fields into primary evidence.
+
+NUMERICAL COUNT/RATE
+
+minimum_reported_occurrences is optional under v2. Use it only when exact source directly supports a bounded lower count under an appropriate bounded/sampled/external/mixed evidence basis. Do not invent 2 from generalized language merely to prove recurrence.
+
+PRIMARY STATE
+
+Use observed, insufficient, or not_applicable.
+
+Use insufficient rather than guessing when exact supplied source cannot support the behavioral value or recurrence distinction required by the observable. Use not_applicable only when the prerequisite circumstance is affirmatively absent.
+
+VALUES / NON-ACTION / OTHER SPECIFIED
+
+Use only exact permitted value IDs. Preserve supported sequence. Apply Other Specified only under its frozen rule.
+
+Never infer non-action from silence. A substantive non-action value requires the complete awareness + opportunity + reasonable feasibility + established non-action gate.
+
+CITATIONS
+
+Cite only exact source-segment IDs contained in the assigned task. Observed responses require exact source support. Preserve exact counterevidence when the response contract allows it. Do not use unassigned evidence or outside knowledge.
+
+NO INTERPRETIVE IMPORTS
+
+Do not infer motives, diagnosis, personality type, morality, spiritual meaning, causal mechanism, Human Design, astrology, or any external theory mapping. A participant-stated explanation is evidence only that the participant gave that explanation.
+
+FIRST-PASS INDEPENDENCE
+
+Record and freeze your first-pass coding before seeing automated output. If a unit is genuinely unclear, use insufficient/uncertainty rather than trying to maximize agreement.
+
+The human-facing interface should render these decisions in ordinary controls; you should not need to hand-edit JSON. Its export must preserve the exact response identities and schemas.
