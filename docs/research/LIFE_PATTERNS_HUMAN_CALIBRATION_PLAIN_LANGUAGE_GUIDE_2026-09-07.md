@@ -19,11 +19,17 @@ The automated Life Patterns coder reads selected autobiographical evidence and a
 
 They independently answer questions of the form:
 
-> Given only this specific episode and this neutral observable definition, what does the evidence actually support?
+> Given only this specific episode or repeated-series report and this neutral observable definition, what does the evidence actually support?
 
 Depending on the frozen schema, that may mean deciding that the observable is supported/observed, insufficiently evidenced, not applicable, or assigning the appropriate permitted behavioral value and recording exact supporting/counterevidence.
 
 The purpose is to measure whether a competent blind human applies the neutral coding system similarly to the automated coder, and to expose ambiguous or unreliable codes.
+
+## The auditor should not edit JSON directly
+
+The verified private handoff is a machine interchange artifact, not an appropriate default user interface. The substantive task is human judgment; JSON/JSONL exists so the result can be deterministically validated and frozen.
+
+Before an auditor is asked to complete the first pass, provide a theory-neutral local/offline annotation interface that renders the same frozen evidence and rules in ordinary form controls and exports the unchanged response contract. The interface must not alter packet bytes, codebook semantics, selected units, allowed values, or blinding. Requirements are recorded in `docs/research/LIFE_PATTERNS_HUMAN_CALIBRATION_UI_REQUIREMENTS_2026-09-08.md`.
 
 ## What they are NOT doing
 
@@ -52,23 +58,44 @@ versus
 
 Agreement and disagreement are then measured. Neither side is automatically treated as ground truth. Disagreement can reveal unclear definitions, insufficient evidence, unstable automated coding, or a human mistake that needs adjudication after the first pass is frozen.
 
+## How to interpret statements such as “I always X”
+
+A behavioral self-report such as **“I always X” is evidence**. The system should not throw it away.
+
+What it establishes is narrower than the literal wording may suggest:
+
+- it is direct evidence that the narrator **reports/perceives X as recurrent**;
+- it is not, by itself, a bounded **episode-level observation**;
+- it does not prove the literal universal claim that X happened on every possible opportunity;
+- it does not establish a numerical occurrence count unless multiple opportunities/instances are also supported;
+- when the source provides a sufficiently bounded repeated-series report with exact participant text and recurrence information, the separate **series evidence** layer can code that recurrence.
+
+This is why the codebook separates narrator claims, episodes, and repeated-series evidence. The rule “a global claim is not behavioral proof” should be read as **“do not silently convert one generalized sentence into one or more invented concrete episodes or a proven universal frequency.”** It does not mean the sentence is evidentially worthless.
+
+There is also an important difference between:
+
+- **behavioral recurrence:** “I always checked the door before leaving”; and
+- **trait interpretation:** “I am always cautious.”
+
+The first directly reports a recurring behavior. The second mostly reports the narrator's interpretation/label and needs behavioral content before it can support a behavioral code.
+
 ## What the human receives
 
 The exported private bundle contains the preselected calibration packets, the embedded frozen instructions/manual, response schemas, blank response templates, and an unfilled independence/exposure attestation.
 
 The human should receive the bundle privately because the packets may contain participant text. Private participant evidence must not be committed to the public repository.
 
-## What the human fills in
+## What the interface must ultimately export
 
-The human works from copies of the blank templates and completes every assigned unit exactly once:
+The human-facing UI should produce completed working copies equivalent to:
 
 - `episode_responses.blank.jsonl` -> completed episode-response JSONL;
 - `series_responses.blank.jsonl` -> completed series-response JSONL;
 - `auditor_attestation.blank.json` -> completed attestation.
 
-Exact filenames used for a returned completed bundle may be chosen operationally, but the original blank files and frozen packets should be preserved unchanged.
+The auditor should not need to understand or hand-edit those formats.
 
-For each assigned row, the human:
+For each assigned unit, the human:
 
 1. keeps the supplied task/evidence/observable identities unchanged;
 2. reads only the supplied source evidence and frozen coding instructions;
