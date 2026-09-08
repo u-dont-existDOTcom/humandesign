@@ -135,3 +135,11 @@ as the independent blind benchmark.
 Only after the independent human first pass is frozen may the >=3 isolated automated
 development passes begin. Consensus and human-vs-automated comparison come after those passes;
 target-model comparison remains a later separately authorized/frozen stage.
+
+## Preserved owner correction from earlier branch work
+
+The unrelated owner-test repair invariant must remain visible in current branch state because
+existing regression tests and downstream task history rely on it. Exact owner correction:
+**“there was never a completion policy. that was invented nonsense by codex.”** The project must
+not recreate a completion-policy premise or silently turn artifact counts into such a policy.
+This historical invariant does not change the Life Patterns recurrence-v2 gate above.
