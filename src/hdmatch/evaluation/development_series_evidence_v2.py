@@ -12,7 +12,12 @@ from typing import Literal
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 from .development_series_evidence import DevelopmentSeriesCodingTask, SeriesEvidenceState
-from .neutral_measurement import OntologyReleaseArtifact, ScalarValue, TheoryExposureState
+from .neutral_measurement import (
+    ObservableDefinition,
+    OntologyReleaseArtifact,
+    ScalarValue,
+    TheoryExposureState,
+)
 from .structured_annotation_v2 import (
     MissingnessFlag,
     NonActionGateAssessmentV2,
@@ -188,20 +193,17 @@ class DevelopmentSeriesAnnotationResponseV2(DevelopmentSeriesV2Model):
         return self
 
 
-def _value_allowed(value: ScalarValue, definition: object) -> bool:
-    value_type = getattr(definition, "value_type")
-    if value_type in {"nominal", "ordinal"}:
-        return isinstance(value, str) and value in getattr(definition, "allowed_values")
-    if value_type == "boolean":
+def _value_allowed(value: ScalarValue, definition: ObservableDefinition) -> bool:
+    if definition.value_type in {"nominal", "ordinal"}:
+        return isinstance(value, str) and value in definition.allowed_values
+    if definition.value_type == "boolean":
         return isinstance(value, bool)
     if isinstance(value, bool) or not isinstance(value, (int, float)):
         return False
     numeric = float(value)
-    numeric_min = getattr(definition, "numeric_min")
-    numeric_max = getattr(definition, "numeric_max")
-    if numeric_min is not None and numeric < numeric_min:
+    if definition.numeric_min is not None and numeric < definition.numeric_min:
         return False
-    return numeric_max is None or numeric <= numeric_max
+    return definition.numeric_max is None or numeric <= definition.numeric_max
 
 
 def development_series_response_errors_v2(
