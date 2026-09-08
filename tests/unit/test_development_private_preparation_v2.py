@@ -4,10 +4,20 @@ import json
 from datetime import UTC, datetime
 from pathlib import Path
 
+from hdmatch.evaluation.development_blind_packets_v2 import (
+    build_blind_development_packets_v2,
+    packet_public_safe_receipt_v2,
+    write_private_blind_packet_v2,
+    write_public_safe_packet_receipt_v2,
+)
+from hdmatch.evaluation.development_human_handoff_v2 import (
+    export_development_human_calibration_bundle_v2,
+)
 from hdmatch.evaluation.development_private_preparation import prepare_v8_private_development_package
 from hdmatch.evaluation.development_private_preparation_v2 import (
     prepare_v8_private_development_package_v2,
     private_preparation_v2_safe_summary,
+    write_private_development_preparation_v2,
 )
 
 HISTORICAL_TIME = datetime(2026, 9, 6, 21, 30, tzinfo=UTC)
@@ -167,6 +177,27 @@ def _v2():
     )
 
 
+def _write_human_packet_groups(prepared: Path, preparation) -> None:
+    root = prepared / "blind_packets_v2"
+    for kind in ("episode", "series"):
+        packets = build_blind_development_packets_v2(
+            preparation,
+            repo_root=Path("."),
+            coder_role="human_calibration",
+            evidence_kind=kind,
+            max_tasks_per_packet=3,
+        )
+        group = root / f"human_calibration_{kind}"
+        group.mkdir(parents=True, exist_ok=True)
+        for packet in packets:
+            stem = f"packet-{packet.payload.batch_index:03d}"
+            write_private_blind_packet_v2(group / f"{stem}.json", packet)
+            write_public_safe_packet_receipt_v2(
+                group / f"{stem}.receipt.json",
+                packet_public_safe_receipt_v2(packet),
+            )
+
+
 def test_v2_reuses_exact_prelabel_selection_without_resampling() -> None:
     historical = _historical()
     v2 = _v2()
@@ -199,3 +230,54 @@ def test_v2_public_safe_summary_contains_no_private_text() -> None:
     assert '"contains_private_participant_text": false' in rendered
     assert '"calibration_selection_reused_without_resampling": true' in rendered
     assert '"confirming_episodes_are_not_frequency_counts": true' in rendered
+
+
+def test_v2_human_packets_bind_manual_policy_and_reused_selection() -> None:
+    preparation = _v2()
+    series_packets = build_blind_development_packets_v2(
+        preparation,
+        repo_root=Path("."),
+        coder_role="human_calibration",
+        evidence_kind="series",
+    )
+    assert len(series_packets) == 1
+    packet = series_packets[0]
+    assert packet.payload.package_id == preparation.package.package_id
+    assert packet.payload.recurrence_policy_sha256 == preparation.stack.recurrence_policy_sha256
+    assert packet.payload.calibration_manifest_id == preparation.calibration.manifest_id
+    assert packet.payload.confirming_episodes_counted_as_frequency_evidence is False
+    assert packet.payload.series_response_schema_version.endswith("response-v2")
+    assert packet.payload.target_model_information_available is False
+
+
+def test_v2_human_handoff_exports_v2_series_schema_without_annotations(tmp_path: Path) -> None:
+    preparation = _v2()
+    prepared = tmp_path / "prepared"
+    output = tmp_path / "handoff"
+    write_private_development_preparation_v2(prepared, preparation)
+    _write_human_packet_groups(prepared, preparation)
+
+    receipt = export_development_human_calibration_bundle_v2(prepared, output)
+    payload = receipt["payload"]
+    assert receipt["receipt_id"].startswith("LPHB2-")
+    assert payload["package_id"] == preparation.package.package_id
+    assert payload["series_response_schema_version"] == (
+        "life-patterns-development-series-annotation-response-v2"
+    )
+    assert payload["calibration_selection_reused_without_resampling"] is True
+    assert payload["confirming_episodes_are_not_frequency_counts"] is True
+    assert payload["human_facing_ui_required_before_collection"] is True
+    assert payload["response_templates_are_annotations"] is False
+    assert payload["readiness"] == "awaiting_human_ui"
+
+    series_rows = [
+        json.loads(line)
+        for line in (output / "series_responses.blank.jsonl").read_text().splitlines()
+    ]
+    assert len(series_rows) == 1
+    assert series_rows[0]["schema_version"] == (
+        "life-patterns-development-series-annotation-response-v2"
+    )
+    assert series_rows[0]["reported_recurrence_strength"] is None
+    assert series_rows[0]["minimum_reported_occurrences"] is None
+    assert series_rows[0]["confirming_episode_counted_as_independent_frequency_evidence"] is False
