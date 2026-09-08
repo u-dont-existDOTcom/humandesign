@@ -14,10 +14,9 @@
   This is the legacy lock's `completionCommand` field, not scientific completion.
   The nine artifact criteria in
   `state/LIFE-PATTERNS-DEVELOPMENT-HANDOFF-2026-09-06.md` remain controlling.
-- GitHub revalidated: main `afc0bb82de0e481ae5a5d3453e0bcaf82b2a0286`,
-  main CI 33454801631 successful; PR #24 head
-  `5a278d135af4de5190d9b74d8e55489dc92efaf1`, open/draft/unmerged,
-  CI 34059401473 successful. Recheck live head after subsequent commits.
+- GitHub revalidated before regeneration: PR #24 head
+  `8e0c891b33bcef726eb9d4a6ba79b9e2c3e67ab3`, open/draft/unmerged. Recheck the
+  live head and hosted CI after subsequent commits.
 - Handoff steps 1–4 executed on the exact private v8/v8.1 files. Package
   `LPKG-18170B8D3EEC8423A523`, corpus `LPDC-F2BBDA6F39040BF41D96`, calibration
   `LPCA-5B3E6CFCCE49807050DF`. Actual shape: 17 episodes, 13 series reports,
@@ -30,11 +29,15 @@
 - Public-safe receipts, detailed execution order, privacy review and scientific
   limitations: `state/life-patterns-development-preparation-2026-09-06/README.md`.
   Raw records and all narrative-bearing outputs remain ignored/private.
-- A human-only handoff is saved locally at
-  `experiments/private/life-patterns/human-calibration-2026-09-06/` and its sibling
-  `.zip`: 8 unchanged human packets, response schemas, 66 unfilled JSONL rows,
-  instructions and an unfilled attestation. The 15-member archive was read back
-  and verified against every file. Only its safe hash receipt is committed.
+- The private human-only handoff was deterministically regenerated on 2026-09-08
+  from the exact recovered source archive and returned to the owner as a new
+  transport ZIP. The helper reproduced package `LPKG-18170B8D3EEC8423A523`,
+  calibration `LPCA-5B3E6CFCCE49807050DF`, the 44 episode + 22 series selection,
+  the byte-identical frozen handoff receipt, and all committed internal file hashes.
+  The new 15-member transport ZIP is 378,206 bytes with SHA-256
+  `8ff24ea90e06b393f50761a3a2317f831d3bc0f6dda30e91c20965fa1c1f6d5a`.
+  Only `state/LIFE-PATTERNS-HUMAN-HANDOFF-REGENERATION-VERIFIED-2026-09-08.json`
+  is committed; participant narrative and private handoff bytes remain outside Git.
 - **Blocked at handoff step 5:** no independent human first pass or actual
   exposure/independence attestation has been received. The owner identified a
   possible later auditor; no person was contacted and no participation/blindness
@@ -47,12 +50,11 @@
   human handoff export adds schemas/blank forms while preserving frozen packets;
   a legacy audit rejection probe now reads its declared historical commit instead
   of later checkout files. Historical audit result bytes remain unchanged.
-- Final local verification: **579 passed, 1 expected skip** (official Swiss files
-  unavailable); CI-equivalent Ruff plus touched-script Ruff passed; strict mypy
-  passed for **163 source files**; preflight and `git diff --check` passed.
-  Local full history exercises checks that shallow hosted CI skips. Current-head
-  hosted CI is recorded on GitHub PR #24; recheck it rather than inferring success
-  from the entry baseline run above.
+- Post-regeneration local verification: the focused development suite passed
+  **67 tests**; the full suite passed **577 tests with 3 expected skips** because
+  official Swiss files are unavailable; CI-equivalent Ruff passed; strict mypy
+  passed for **163 source files**; and preflight passed. Local full history exercises
+  checks that shallow hosted CI skips. Recheck hosted CI on the final exact PR head.
 - `development_only=true`, `validation_use_forbidden=true`, canonical BPF
   eligibility false, target-model scoring unauthorized. No merge/deployment,
   recruitment/contact, spending, or target-model reveal is in scope.
