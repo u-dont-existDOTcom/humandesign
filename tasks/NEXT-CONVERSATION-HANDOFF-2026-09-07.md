@@ -9,76 +9,103 @@ Draft PR: `#24`
 Before doing any substantive work, fetch the **current PR #24 head** and treat GitHub as canonical. Then read, in this order:
 
 1. `tasks/ACTIVE-TASK.json`
-2. `state/LIFE-PATTERNS-RECURRENCE-EVIDENCE-CORRECTION-2026-09-08.md`
-3. `docs/research/LIFE_PATTERNS_RECURRENCE_EVIDENCE_PRIOR_WORK_SCAN_2026-09-08.md`
-4. `docs/research/LIFE_PATTERNS_RECURRENCE_EVIDENCE_POLICY_v2_2026-09-08.md`
-5. `state/LIFE-PATTERNS-DEVELOPMENT-CODING-MANUAL-v2-2026-09-08.md`
-6. `tasks/LIFE-PATTERNS-V2-PRIVATE-FREEZE-WORKER-2026-09-08.md`
-7. `state/LIFE-PATTERNS-PRIVATE-ARTIFACT-RECOVERY-VERIFIED-2026-09-07.json`
-8. `state/LIFE-PATTERNS-HUMAN-HANDOFF-REGENERATION-VERIFIED-2026-09-08.json`
-9. `docs/research/LIFE_PATTERNS_HUMAN_CALIBRATION_UI_REQUIREMENTS_2026-09-08.md`
-10. `state/CURRENT-STATE.md`
-11. `state/life-patterns-development-preparation-2026-09-06/README.md`
+2. `state/LIFE-PATTERNS-V2-PRIVATE-FREEZE-VERIFIED-2026-09-08.json`
+3. `state/LIFE-PATTERNS-HUMAN-CALIBRATION-UI-V2-VERIFIED-2026-09-08.json`
+4. `docs/research/LIFE_PATTERNS_HUMAN_CALIBRATION_UI_V2_2026-09-08.md`
+5. `docs/research/LIFE_PATTERNS_HUMAN_CALIBRATION_UI_REQUIREMENTS_2026-09-08.md`
+6. `docs/research/LIFE_PATTERNS_RECURRENCE_EVIDENCE_POLICY_v2_2026-09-08.md`
+7. `state/LIFE-PATTERNS-DEVELOPMENT-CODING-MANUAL-v2-2026-09-08.md`
+8. `state/LIFE-PATTERNS-RECURRENCE-EVIDENCE-CORRECTION-2026-09-08.md`
+9. `docs/research/LIFE_PATTERNS_RECURRENCE_EVIDENCE_PRIOR_WORK_SCAN_2026-09-08.md`
+10. `state/LIFE-PATTERNS-PRIVATE-ARTIFACT-RECOVERY-VERIFIED-2026-09-07.json`
+11. `state/CURRENT-STATE.md`
 12. `state/LIFE-PATTERNS-DEVELOPMENT-HANDOFF-2026-09-06.md`
 
 ## Current controlling state
 
-The recurrence-evidence defect is no longer merely identified: it has been implemented as a **new additive theory-blind v2 development measurement path** while preserving all historical v1 artifacts unchanged.
+The earlier recovery, recurrence-method revision, private-v2-freeze and offline-UI implementation gates are now complete at the engineering/artifact level.
 
-Pinned implementation-bearing head:
+### Recurrence-corrected method
+
+Pinned substantive method implementation head:
 
 `7b689f3adb49da599abb40ec2bff27ad97d3887f`
 
-Hosted CI run `34271174611` on that exact head is **green**:
+CI `34271174611`: success.
 
-- full pytest passed;
-- Ruff passed;
-- strict mypy passed.
+The new additive v2 path preserves historical v1 artifacts while correcting the episode-centric recurrence defect. Generalized behavioral self-report is direct **reported recurrence** evidence; a self-selected confirming anecdote is not independent frequency evidence. Exceptions, recurrence strength and evidence basis remain distinct. No target-model information was used to make this revision.
 
-The v2 implementation includes:
+### Exact private v2 freeze
 
-- a prior-work scan with the owner conception preserved before external exposure;
-- recurrence evidence policy v2;
-- development coding manual v2;
-- series response schema v2 separating reported recurrence strength, exception status/frequency and frequency evidence basis;
-- a hard firewall against counting self-selected confirming episodes as frequency evidence;
-- no mandatory fake occurrence count for generalized recurrence language;
-- a v2 resolved development stack preserving the exact theory-blind 22-observable base and 28-value non-action registry;
-- versioned series and human calibration prompts;
-- a content-addressed `LPKG2-*` package contract;
-- private preparation v2 that reconstructs and **reuses the exact historical pre-label calibration selection without resampling**;
-- v2 blind packet and human-handoff exporters;
-- v2 auditor attestation and human first-pass validation contracts;
-- tests for the corrected recurrence semantics, selection reuse, privacy-safe handoff, and fail-closed contamination/coverage behavior.
+The owner reuploaded the generated recurrence-corrected private handoff, and the continuation independently reverified it before UI work.
 
-## Exact next action
+- package: `LPKG2-F93D8245B78CD9FDCF5D`
+- package SHA-256: `f93d8245b78cd9fdcf5dd96f1cc321171f628015ca155b8fae0df4fcb826313a`
+- handoff: `LPHB2-F34245FAE32B513DDCFE`
+- handoff SHA-256: `f34245fae32b513ddcfe22b7d21081997e8c28e18fccd25b962c30af2fe0a78f`
+- owner-reuploaded transport ZIP: 422,297 bytes; SHA-256 `f038237a6a1ce776bb28846b76ff49339e7a9e7f28d33c5d1ad877e0d916d837`; 15 members
+- reused historical calibration: `LPCA-5B3E6CFCCE49807050DF`
+- selected units: 44 episode + 22 series
+- selection reused without resampling
+- no human labels, automated labels, consensus or target scoring exist.
 
-The v2 method implementation is green, but the **real private v2 package/handoff has not yet been frozen from the exact recovered owner source bytes**.
+No private participant text or private handoff bytes are committed.
 
-Execute `tasks/LIFE-PATTERNS-V2-PRIVATE-FREEZE-WORKER-2026-09-08.md` in a private local/Codex execution surface. The private run must execute against the pinned green implementation head above and must use:
+### Offline human calibration UI
 
-- exact recovered v8/v8.1 source bytes;
-- historical selection source commit `5a278d135af4de5190d9b74d8e55489dc92efaf1`;
-- historical selection timestamp `2026-09-06T22:10:58.534703Z`;
-- exact historical calibration `LPCA-5B3E6CFCCE49807050DF` / SHA-256 `5b3e6cfcce49807050df03f8ab27cbfbb610869dcb9cfa30064cd485d4646140`;
-- exact 44 episode + 22 series selected units;
-- **no resampling**.
+A standalone local/offline annotation interface is implemented and reproducible from the verified private handoff.
 
-The execution must create a new verified `LPKG2-*` and private `LPHB2-*` human handoff, attach/deliver the actual private ZIP to the owner, and commit only public-safe execution/state receipts. No annotations or model calls are part of that private freeze.
+Committed source/test components:
 
-## What follows, but not before the private freeze
+- `scripts/build_life_patterns_human_calibration_ui_v2.py`
+- `scripts/life_patterns_human_calibration_ui_v2_template.zlib.b64`
+- `tests/unit/test_life_patterns_human_calibration_ui_v2.py`
 
-After the real v2 private package/handoff is frozen and verified, the next operational prerequisite is the theory-neutral **local/offline human calibration UI**. The UI must render the frozen handoff without network calls or AI, prevent invalid response combinations, and export the exact v2 episode/series response and auditor-attestation contracts. The auditor must not hand-edit JSON.
+Implementation/test-bearing head:
 
-Only after that UI is verified may the independent blind human first pass be collected and frozen. Automated coding remains blocked until the human pass is frozen. Target-model scoring/reveal remains unauthorized.
+`aba22fe18f65dcf7cb3f67b494b9cc343b0c752e`
 
-## Private continuity
+CI `34290496491`: success — 605 passed, 7 expected skips, Ruff passed, strict mypy passed for 171 source files.
 
-The exact recovered source identities remain:
+The exact private HTML produced from the owner-reuploaded handoff is:
 
-- v8: 54,488 bytes; SHA-256 `3c37c0c76174c7ba698966155f991f0303cd4f0833d39ff475dfb0e1c5348637`
-- v8.1: 25,844 bytes; SHA-256 `93f838bb61e6a910ba0dbeb96a66b56c72986350dda5386243b098a738b818e7`
+- filename: `Life-Patterns-Human-Calibration-V2-OFFLINE.html`
+- bytes: 3,980,290
+- SHA-256: `63baa191a93c49cbdfb459d4d5e3f96ff541bdddc3dd2183e5af743f48ce987b`
 
-Never reconstruct private source material from summaries, receipts, chat memory or transcript fragments. No participant narrative belongs in GitHub.
+That HTML embeds private participant evidence and must remain private/offline; it is not committed.
 
-Do not merge, deploy, contact/recruit participants or auditors, spend money, run automated coding, run target-model scoring/reveal, or overwrite any frozen artifact unless separately authorized.
+The UI re-verifies the handoff before displaying evidence, presents one selected unit at a time, exposes only theory-neutral measurement material, blocks invalid response combinations, has no AI/network dependency, supports bound progress save/reload, collects the blinding attestation without favorable defaults, and exports exactly:
+
+- `episode_responses.completed.jsonl`
+- `series_responses.completed.jsonl`
+- `auditor_attestation.completed.json`
+
+## Exact next gate
+
+A **real normal-browser visual/interaction smoke pass** is still required before asking an external independent auditor to use the UI. The continuation environment's Chromium runtime hung even on an empty page, so browser usability is explicitly **unverified**, not inferred from static tests.
+
+Bounded smoke criteria:
+
+1. open the exact private standalone HTML locally;
+2. confirm its integrity verification succeeds and the first evidence unit renders;
+3. navigate between units and inspect exact source + observable content;
+4. save one valid response, download progress, reload that progress and confirm the saved response returns;
+5. verify the final attestation/export controls are present;
+6. confirm the browser does not make external network requests.
+
+If that passes, the exact same private UI may be given to an **independent theory-blind human auditor**. The participant/theory-exposed owner cannot serve as the independent benchmark, though a separately identified owner sensitivity coding remains possible.
+
+The independent auditor must complete and freeze all 44 episode + 22 series units plus the v2 attestation **before seeing any automated output**.
+
+Only after that human first pass is frozen may the >=3 isolated automated development passes begin. Consensus and human-vs-automated comparison come later. Target-model scoring/reveal remains unauthorized.
+
+## Hard boundaries
+
+- never reconstruct private source material from summaries, receipts, memory or transcript fragments;
+- never commit participant narrative or the private standalone HTML;
+- no merge/deploy;
+- no participant/auditor recruitment or contact without separate authorization;
+- no spending;
+- no automated Life Patterns coding before the human first pass is frozen;
+- no target-model scoring/reveal.
