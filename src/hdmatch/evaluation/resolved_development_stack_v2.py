@@ -106,7 +106,10 @@ def build_repository_resolved_development_stack_v2(
         raise ValueError("v2 procedure does not bind frozen resolved codebook view")
     if procedure.payload.coding_manual_sha256 != coding_manual_sha256:
         raise ValueError("v2 procedure does not bind recurrence-corrected coding manual")
-    if ontology.payload.coding_manual_sha256 != coding_manual_sha256:
+    if (
+        ontology.payload.coding_procedure_id != "life-patterns-development-coding-manual-v2"
+        or ontology.payload.coding_procedure_sha256 != coding_manual_sha256
+    ):
         raise ValueError("v2 ontology does not bind recurrence-corrected coding manual")
     if sum(len(row.non_action_values) for row in procedure.payload.observable_extensions) != 28:
         raise ValueError("v2 procedure does not preserve exact 28-value non-action registry")
