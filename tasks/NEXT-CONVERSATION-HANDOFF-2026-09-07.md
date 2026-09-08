@@ -8,40 +8,33 @@ Draft PR: `#24`
 
 Before doing any substantive work, fetch the **current PR #24 head** and treat GitHub as canonical. Then read, in this order:
 
-1. `state/LIFE-PATTERNS-PRIVATE-ARTIFACT-RECOVERY-2026-09-07.md`
-2. `state/LIFE-PATTERNS-PRIVATE-ARTIFACT-RECOVERY-VERIFIED-2026-09-07.json`
-3. `state/LIFE-PATTERNS-HUMAN-HANDOFF-REGENERATION-VERIFIED-2026-09-08.json`
-4. `state/LIFE-PATTERNS-HUMAN-HANDOFF-OWNER-REUPLOAD-REVERIFIED-2026-09-08.json`
-5. `tasks/ACTIVE-TASK.json`
-6. `docs/research/LIFE_PATTERNS_INDEPENDENT_AUDITOR_START_HERE_2026-09-08.md`
-7. `tasks/LIFE-PATTERNS-HUMAN-HANDOFF-REGEN-WORKER-2026-09-07.md`
-8. `state/CURRENT-STATE.md`
-9. `state/life-patterns-development-preparation-2026-09-06/README.md`
-10. `state/LIFE-PATTERNS-DEVELOPMENT-HANDOFF-2026-09-06.md`
+1. `state/LIFE-PATTERNS-RECURRENCE-EVIDENCE-CORRECTION-2026-09-08.md`
+2. `state/LIFE-PATTERNS-PRIVATE-ARTIFACT-RECOVERY-2026-09-07.md`
+3. `state/LIFE-PATTERNS-PRIVATE-ARTIFACT-RECOVERY-VERIFIED-2026-09-07.json`
+4. `state/LIFE-PATTERNS-HUMAN-HANDOFF-REGENERATION-VERIFIED-2026-09-08.json`
+5. `state/LIFE-PATTERNS-HUMAN-HANDOFF-OWNER-REUPLOAD-REVERIFIED-2026-09-08.json`
+6. `tasks/ACTIVE-TASK.json`
+7. `docs/research/LIFE_PATTERNS_HUMAN_CALIBRATION_UI_REQUIREMENTS_2026-09-08.md`
+8. `docs/research/LIFE_PATTERNS_INDEPENDENT_AUDITOR_START_HERE_2026-09-08.md`
+9. `tasks/LIFE-PATTERNS-HUMAN-HANDOFF-REGEN-WORKER-2026-09-07.md`
+10. `state/CURRENT-STATE.md`
+11. `state/life-patterns-development-preparation-2026-09-06/README.md`
+12. `state/LIFE-PATTERNS-DEVELOPMENT-HANDOFF-2026-09-06.md`
 
-The earlier private-continuity blocker is **scientifically resolved**. On 2026-09-07 the owner supplied a private recovery archive containing both exact source JSONs, and both independently matched the previously committed byte sizes, SHA-256 identities and schema versions. On 2026-09-08 the deterministic recovery helper regenerated the private human-calibration handoff and verified the frozen package/calibration identities, the exact 44 episode + 22 series selection, the byte-identical handoff receipt, and every internal file against the committed hashes. The new outer transport ZIP has SHA-256 `8ff24ea90e06b393f50761a3a2317f831d3bc0f6dda30e91c20965fa1c1f6d5a`, is 378,206 bytes, and contains 15 members. The owner then returned that exact regenerated transport to the continuation chat; it was independently reread and reverified against the committed regeneration receipt, frozen handoff receipt, all payload-file hashes, and all eight packet payload hashes. No participant narrative was committed.
+## Current controlling correction
 
-This does **not** mean a fresh runtime automatically has the private bytes. Before using narrative-bearing material, reacquire either the regenerated private handoff matching the transport identity above or the exact private recovery archive/source files from the owner-accessible attachment/File Library. If regeneration is ever necessary again, verify:
+The previous next action — build the annotation UI and then collect the independent human first pass on the existing frozen recurrence rule — is superseded.
 
-- v8: 54,488 bytes; SHA-256 `3c37c0c76174c7ba698966155f991f0303cd4f0833d39ff475dfb0e1c5348637`
-- v8.1: 25,844 bytes; SHA-256 `93f838bb61e6a910ba0dbeb96a66b56c72986350dda5386243b098a738b818e7`
+The owner identified a conceptual defect before any human or automated coding pass occurred: a generalized behavioral self-report such as `I always X` is direct recurrence self-report, while a concrete incident elicited as an example of that already-stated pattern is **not an independent frequency observation and does not automatically add support for the recurrence claim**. Such an incident is useful only when it adds information about meaning, process, context, prerequisites, exceptions/counterevidence, consequences, or another discriminating uncertainty. Do not ask for concrete incidents merely to satisfy an episode quota or ritual corroboration.
 
-Do not reconstruct either source from summaries, memories, public receipts or transcript fragments.
+The existing reconciled codebook/package/handoff remain preserved unchanged as historical development artifacts. Human calibration on that version is paused. The next substantive task is a **new versioned theory-blind recurrence-evidence/measurement revision** implementing `state/LIFE-PATTERNS-RECURRENCE-EVIDENCE-CORRECTION-2026-09-08.md`. The revision must not use Human Design mappings, chart/birth data, target-model fit/results, automated labels, expected answers, or desired outcomes.
 
-The repository provides the fail-closed deterministic recovery helper used for the completed regeneration:
+After that revised measurement is frozen, regenerate a new development package/calibration handoff, then implement/use the local human-facing annotation UI against the revised frozen contract, and only then collect the independent blind human first pass. Automated coding remains blocked until that revised human pass is frozen.
 
-`scripts/regenerate_life_patterns_human_calibration_from_recovery.py`
+## Private continuity state
 
-and bounded execution instructions:
+The earlier private-continuity blocker is resolved. The exact v8/v8.1 sources were recovered and hash-verified; the private human-calibration handoff was deterministically regenerated and reverified. The current transport ZIP identity remains SHA-256 `8ff24ea90e06b393f50761a3a2317f831d3bc0f6dda30e91c20965fa1c1f6d5a`, 378,206 bytes, 15 members. No participant narrative was committed.
 
-`tasks/LIFE-PATTERNS-HUMAN-HANDOFF-REGEN-WORKER-2026-09-07.md`
+A fresh runtime must still reacquire private narrative-bearing bytes before using them. Never reconstruct source material from summaries, memories, public receipts, or transcript fragments.
 
-If the regenerated private handoff is unavailable in a future runtime, use only those exact recovered source bytes with that helper. It replays the already-frozen preparation/export procedure with the original source-commit/timestamp binding and fails unless it reproduces the frozen package/calibration identities, all committed internal handoff file hashes, the byte-identical handoff receipt, and the exact 44 episode + 22 series selection. A regenerated outer ZIP is only a transport container and need not reproduce the lost historical ZIP's metadata/compression hash. Do not tweak selection, packet content, measurement definitions, archive metadata, or labels to force agreement.
-
-The recovery/regeneration portion of handoff step 5 is complete. Its sole remaining substep is to obtain and freeze an **independent blind human first pass** plus actual exposure/independence attestation before any automated-label exposure.
-
-Blank forms are not annotations. The independent human codes Life Patterns neutral behavioral evidence; they are not auditing Survey-v2 answers or Survey-v2 scoring. Give the auditor only the private calibration transport plus the theory-neutral start guide. Do not send the owner/coordinator's Human Design explanatory material, target-model information, automated labels, chart/birth data, or any material that reveals expected outcomes.
-
-Only after the human first pass is frozen may handoff steps 6 onward proceed: at least three isolated automated passes per stratum, separate deterministic consensus, comparison with the already-frozen human pass, theory-blind retain/revise decision, and a separately frozen validation route if justified.
-
-Do not merge, deploy, contact/recruit participants or auditors, spend money, run automated coding before the human gate, run target-model scoring/reveal, or alter the frozen measurement chain unless separately authorized.
+Do not merge, deploy, contact/recruit participants or auditors, spend money, run automated coding, run target-model scoring/reveal, or overwrite any frozen artifact unless separately authorized.
