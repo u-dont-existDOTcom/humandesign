@@ -39,7 +39,8 @@ def test_v2_reuses_theory_blind_base_but_rebinds_manual_and_procedure() -> None:
     assert v2.coding_manual_sha256 == file_sha256(ROOT / CODING_MANUAL_V2_REL)
     assert v2.coding_manual_sha256 != file_sha256(ROOT / CODING_MANUAL_REL)
     assert v2.recurrence_policy_sha256 == file_sha256(ROOT / RECURRENCE_POLICY_V2_REL)
-    assert v2.ontology.payload.coding_manual_sha256 == v2.coding_manual_sha256
+    assert v2.ontology.payload.coding_procedure_id == "life-patterns-development-coding-manual-v2"
+    assert v2.ontology.payload.coding_procedure_sha256 == v2.coding_manual_sha256
     assert v2.procedure.payload.coding_manual_sha256 == v2.coding_manual_sha256
     assert v2.procedure.payload.reconciled_codebook_sha256 == v2.resolved.view_sha256
     assert v2.target_model_information_used_for_revision is False
