@@ -9,6 +9,7 @@ attestation and controlled handoff remain necessary evidence.
 from __future__ import annotations
 
 import hashlib
+import json
 from datetime import UTC, datetime
 from typing import Any, Literal, cast
 
@@ -26,7 +27,10 @@ from .development_calibration_sampling import (
     human_episode_calibration_tasks,
     human_series_calibration_tasks,
 )
-from .development_coding_package_v2 import DevelopmentCodingPackageArtifactV2
+from .development_coding_package_v2 import (
+    DevelopmentCodingPackageArtifactV2,
+    development_coding_package_v2_integrity_errors,
+)
 from .development_episode_evidence import development_episode_response_errors
 from .development_series_evidence import DevelopmentSeriesCodingTask
 from .development_series_evidence_v2 import (
@@ -34,6 +38,8 @@ from .development_series_evidence_v2 import (
     development_series_response_errors_v2,
 )
 from .development_transfer_corpus import DevelopmentEpisodeCodingTask
+from .neutral_measurement import OntologyReleaseArtifact
+from .structured_annotation_v2 import StructuredCodingProcedureArtifactV2
 
 HumanCalibrationEvidenceKindV2 = Literal["episode", "series"]
 
@@ -47,8 +53,6 @@ def _sha256_bytes(value: bytes) -> str:
 
 
 def _decode_json_object_stream(data: bytes) -> tuple[dict[str, Any], ...]:
-    import json
-
     try:
         text = data.decode("utf-8")
     except UnicodeDecodeError as exc:
@@ -158,12 +162,15 @@ class DevelopmentHumanFirstPassArtifactV2(HumanCalibrationV2Model):
     payload: DevelopmentHumanFirstPassPayloadV2
 
 
-def _check_selection(
+def _check_package_and_selection(
+    package: DevelopmentCodingPackageArtifactV2,
     calibration: DevelopmentCalibrationSamplingArtifact,
     *,
     episode_tasks: tuple[DevelopmentEpisodeCodingTask, ...],
     series_tasks: tuple[DevelopmentSeriesCodingTask, ...],
 ) -> None:
+    if development_coding_package_v2_integrity_errors(package):
+        raise ValueError("invalid recurrence-corrected development package content address")
     errors = development_calibration_integrity_errors(
         calibration,
         episode_tasks=episode_tasks,
@@ -171,41 +178,88 @@ def _check_selection(
     )
     if errors:
         raise ValueError("invalid reused v2 calibration selection: " + "; ".join(errors))
+    bound = package.payload
+    if (
+        calibration.manifest_id != bound.calibration_manifest_id
+        or calibration.manifest_sha256 != bound.calibration_manifest_sha256
+        or calibration.payload.corpus_id != bound.corpus_id
+        or calibration.payload.corpus_sha256 != bound.corpus_sha256
+        or sha256_json(episode_tasks) != bound.episode_task_set_sha256
+        or (sha256_json(series_tasks) if series_tasks else None) != bound.series_task_set_sha256
+    ):
+        raise ValueError("recurrence-corrected package does not bind supplied calibration/tasks")
 
 
-def _base_payload_fields(
+def _make_episode_payload(
     *,
     auditor_id: str,
     package: DevelopmentCodingPackageArtifactV2,
     calibration: DevelopmentCalibrationSamplingArtifact,
+    selected: tuple[DevelopmentEpisodeCodingTask, ...],
     raw_output: bytes,
     normalized_output: bytes,
-    selected_task_set_sha256: str,
     expected_unit_count: int,
     validated_unit_count: int,
     created_at_utc: datetime,
-) -> dict[str, Any]:
+) -> DevelopmentHumanFirstPassPayloadV2:
     bound = package.payload
-    return {
-        "auditor_id": auditor_id,
-        "package_id": package.package_id,
-        "package_sha256": package.package_sha256,
-        "calibration_manifest_id": calibration.manifest_id,
-        "calibration_manifest_sha256": calibration.manifest_sha256,
-        "corpus_id": bound.corpus_id,
-        "corpus_sha256": bound.corpus_sha256,
-        "codebook_sha256": bound.resolved_view_sha256,
-        "coding_procedure_sha256": bound.procedure_sha256,
-        "coding_manual_sha256": bound.coding_manual_sha256,
-        "recurrence_policy_sha256": bound.recurrence_policy_sha256,
-        "human_prompt_sha256": bound.human_calibration_prompt_sha256,
-        "selected_task_set_sha256": selected_task_set_sha256,
-        "raw_output_sha256": _sha256_bytes(raw_output),
-        "normalized_output_sha256": _sha256_bytes(normalized_output),
-        "expected_unit_count": expected_unit_count,
-        "validated_unit_count": validated_unit_count,
-        "created_at_utc": created_at_utc,
-    }
+    return DevelopmentHumanFirstPassPayloadV2(
+        evidence_kind="episode",
+        auditor_id=auditor_id,
+        package_id=package.package_id,
+        package_sha256=package.package_sha256,
+        calibration_manifest_id=calibration.manifest_id,
+        calibration_manifest_sha256=calibration.manifest_sha256,
+        corpus_id=bound.corpus_id,
+        corpus_sha256=bound.corpus_sha256,
+        codebook_sha256=bound.resolved_view_sha256,
+        coding_procedure_sha256=bound.procedure_sha256,
+        coding_manual_sha256=bound.coding_manual_sha256,
+        recurrence_policy_sha256=bound.recurrence_policy_sha256,
+        human_prompt_sha256=bound.human_calibration_prompt_sha256,
+        selected_task_set_sha256=sha256_json(selected),
+        raw_output_sha256=_sha256_bytes(raw_output),
+        normalized_output_sha256=_sha256_bytes(normalized_output),
+        expected_unit_count=expected_unit_count,
+        validated_unit_count=validated_unit_count,
+        created_at_utc=created_at_utc,
+    )
+
+
+def _make_series_payload(
+    *,
+    auditor_id: str,
+    package: DevelopmentCodingPackageArtifactV2,
+    calibration: DevelopmentCalibrationSamplingArtifact,
+    selected: tuple[DevelopmentSeriesCodingTask, ...],
+    raw_output: bytes,
+    normalized_output: bytes,
+    expected_unit_count: int,
+    validated_unit_count: int,
+    created_at_utc: datetime,
+) -> DevelopmentHumanFirstPassPayloadV2:
+    bound = package.payload
+    return DevelopmentHumanFirstPassPayloadV2(
+        evidence_kind="series",
+        auditor_id=auditor_id,
+        package_id=package.package_id,
+        package_sha256=package.package_sha256,
+        calibration_manifest_id=calibration.manifest_id,
+        calibration_manifest_sha256=calibration.manifest_sha256,
+        corpus_id=bound.corpus_id,
+        corpus_sha256=bound.corpus_sha256,
+        codebook_sha256=bound.resolved_view_sha256,
+        coding_procedure_sha256=bound.procedure_sha256,
+        coding_manual_sha256=bound.coding_manual_sha256,
+        recurrence_policy_sha256=bound.recurrence_policy_sha256,
+        human_prompt_sha256=bound.human_calibration_prompt_sha256,
+        selected_task_set_sha256=sha256_json(selected),
+        raw_output_sha256=_sha256_bytes(raw_output),
+        normalized_output_sha256=_sha256_bytes(normalized_output),
+        expected_unit_count=expected_unit_count,
+        validated_unit_count=validated_unit_count,
+        created_at_utc=created_at_utc,
+    )
 
 
 def build_development_human_episode_first_pass_v2(
@@ -217,11 +271,20 @@ def build_development_human_episode_first_pass_v2(
     calibration: DevelopmentCalibrationSamplingArtifact,
     episode_tasks: tuple[DevelopmentEpisodeCodingTask, ...],
     series_tasks: tuple[DevelopmentSeriesCodingTask, ...],
-    ontology,
-    procedure,
+    ontology: OntologyReleaseArtifact,
+    procedure: StructuredCodingProcedureArtifactV2,
     created_at_utc: datetime,
 ) -> DevelopmentHumanFirstPassArtifactV2:
-    _check_selection(calibration, episode_tasks=episode_tasks, series_tasks=series_tasks)
+    _check_package_and_selection(
+        package,
+        calibration,
+        episode_tasks=episode_tasks,
+        series_tasks=series_tasks,
+    )
+    if ontology.ontology_sha256 != package.payload.ontology_sha256:
+        raise ValueError("human episode v2 validator ontology does not bind package")
+    if procedure.procedure_sha256 != package.payload.procedure_sha256:
+        raise ValueError("human episode v2 validator procedure does not bind package")
     selected = human_episode_calibration_tasks(episode_tasks, calibration)
     if not selected:
         raise ValueError("human episode calibration v2 selection is empty")
@@ -250,19 +313,16 @@ def build_development_human_episode_first_pass_v2(
                 f"invalid human episode v2 response {response.task_id}/{response.observable_id}: "
                 + "; ".join(errors)
             )
-    payload = DevelopmentHumanFirstPassPayloadV2(
-        evidence_kind="episode",
-        **_base_payload_fields(
-            auditor_id=auditor_id,
-            package=package,
-            calibration=calibration,
-            raw_output=raw_output,
-            normalized_output=normalized_output,
-            selected_task_set_sha256=sha256_json(selected),
-            expected_unit_count=len(expected),
-            validated_unit_count=len(responses),
-            created_at_utc=created_at_utc,
-        ),
+    payload = _make_episode_payload(
+        auditor_id=auditor_id,
+        package=package,
+        calibration=calibration,
+        selected=selected,
+        raw_output=raw_output,
+        normalized_output=normalized_output,
+        expected_unit_count=len(expected),
+        validated_unit_count=len(responses),
+        created_at_utc=created_at_utc,
     )
     digest = sha256_json(payload)
     return DevelopmentHumanFirstPassArtifactV2(
@@ -281,11 +341,20 @@ def build_development_human_series_first_pass_v2(
     calibration: DevelopmentCalibrationSamplingArtifact,
     episode_tasks: tuple[DevelopmentEpisodeCodingTask, ...],
     series_tasks: tuple[DevelopmentSeriesCodingTask, ...],
-    ontology,
-    procedure,
+    ontology: OntologyReleaseArtifact,
+    procedure: StructuredCodingProcedureArtifactV2,
     created_at_utc: datetime,
 ) -> DevelopmentHumanFirstPassArtifactV2:
-    _check_selection(calibration, episode_tasks=episode_tasks, series_tasks=series_tasks)
+    _check_package_and_selection(
+        package,
+        calibration,
+        episode_tasks=episode_tasks,
+        series_tasks=series_tasks,
+    )
+    if ontology.ontology_sha256 != package.payload.ontology_sha256:
+        raise ValueError("human series v2 validator ontology does not bind package")
+    if procedure.procedure_sha256 != package.payload.procedure_sha256:
+        raise ValueError("human series v2 validator procedure does not bind package")
     selected = human_series_calibration_tasks(episode_tasks, series_tasks, calibration)
     if not selected:
         raise ValueError("human series calibration v2 selection is empty")
@@ -314,19 +383,16 @@ def build_development_human_series_first_pass_v2(
                 f"invalid human series v2 response {response.task_id}/{response.observable_id}: "
                 + "; ".join(errors)
             )
-    payload = DevelopmentHumanFirstPassPayloadV2(
-        evidence_kind="series",
-        **_base_payload_fields(
-            auditor_id=auditor_id,
-            package=package,
-            calibration=calibration,
-            raw_output=raw_output,
-            normalized_output=normalized_output,
-            selected_task_set_sha256=sha256_json(selected),
-            expected_unit_count=len(expected),
-            validated_unit_count=len(responses),
-            created_at_utc=created_at_utc,
-        ),
+    payload = _make_series_payload(
+        auditor_id=auditor_id,
+        package=package,
+        calibration=calibration,
+        selected=selected,
+        raw_output=raw_output,
+        normalized_output=normalized_output,
+        expected_unit_count=len(expected),
+        validated_unit_count=len(responses),
+        created_at_utc=created_at_utc,
     )
     digest = sha256_json(payload)
     return DevelopmentHumanFirstPassArtifactV2(
