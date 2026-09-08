@@ -26,6 +26,8 @@ Selected confirming examples are conditionally sampled on the claim and should n
 
 A concrete counterexample can be highly informative because it can falsify a literal universal claim and, more generally, reveal context boundaries or nuance. Asking for exceptions, failure cases, or conditions where the pattern does not hold can therefore have high information value.
 
+A concrete counterexample is not always necessary either. If the participant can state the boundary condition and approximate exception frequency clearly, that information can be recorded directly. Ask for a specific exception episode only when it would resolve remaining ambiguity about the condition, sequence, opportunity, feasibility, or meaning.
+
 ### Informative episode sampling
 
 Episodes can inform frequency only when the sampling design makes them informative about the opportunity distribution: for example, prospective diary sampling, random/structured opportunity sampling, or a bounded exhaustive set of opportunities. Ordinary volunteered or prompted examples are not that.
@@ -37,6 +39,18 @@ Episodes can inform frequency only when the sampling design makes them informati
 `I am always cautious` is primarily a trait/interpretive label unless behavioral content is supplied.
 
 These should not be collapsed.
+
+## Exception-first recurrence probing
+
+When a participant gives a generalized behavioral recurrence statement such as `I always X`, the default follow-up sequence should target the denominator and possible falsifiers rather than solicit a confirming anecdote.
+
+1. **Define the opportunity/scope if unclear.** Ask what class of situations the quantifier applies to, for example: `When you say always, do you mean whenever [relevant opportunity] occurs? In which contexts or life period?`
+2. **Probe boundary conditions.** Ask: `Are there any conditions that would lead you not to X?`
+3. **Probe exception frequency.** Ask: `When the relevant opportunity occurs, how often does X not happen?` Accept the participant's natural resolution: never, almost never, sometimes, often, context-dependent, a rough fraction/percentage, or a count over a bounded period. Do not force false numeric precision.
+4. **Probe change over time only if relevant.** Ask whether the recurrence/boundaries have changed across life periods when that distinction matters to the construct.
+5. **Ask for a concrete incident only if it has additional information value.** Examples include clarifying an exception, distinguishing interpretations, resolving sequence/prerequisites, or characterizing a boundary condition. Do not ask for a confirming incident merely to corroborate the original recurrence statement.
+
+This approach treats `always` as a participant-supplied quantifier to be calibrated by its scope and exceptions. It does not automatically interpret ordinary-language `always` as a logically exceptionless universal, but an acknowledged exception must qualify the recorded recurrence strength rather than being silently rescued.
 
 ## Interview-design rule
 
