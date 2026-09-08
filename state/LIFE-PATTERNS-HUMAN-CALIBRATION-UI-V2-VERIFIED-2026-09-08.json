@@ -1,0 +1,81 @@
+{
+  "schema_version": "life-patterns-human-calibration-ui-v2-verification-v1",
+  "status": "ui_implementation_engineering_verified_private_browser_smoke_pending",
+  "verified_date": "2026-09-08",
+  "private_handoff": {
+    "receipt_id": "LPHB2-F34245FAE32B513DDCFE",
+    "receipt_sha256": "f34245fae32b513ddcfe22b7d21081997e8c28e18fccd25b962c30af2fe0a78f",
+    "transport_zip_sha256": "f038237a6a1ce776bb28846b76ff49339e7a9e7f28d33c5d1ad877e0d916d837",
+    "transport_zip_bytes": 422297,
+    "member_count": 15,
+    "episode_units": 44,
+    "series_units": 22,
+    "packet_count": 8,
+    "all_receipt_declared_member_hashes_reverified": true,
+    "all_packet_content_addresses_reverified": true,
+    "selected_unit_coverage_reverified": true
+  },
+  "private_freeze_verification": "state/LIFE-PATTERNS-V2-PRIVATE-FREEZE-VERIFIED-2026-09-08.json",
+  "ui_source": {
+    "builder": "scripts/build_life_patterns_human_calibration_ui_v2.py",
+    "template": "scripts/life_patterns_human_calibration_ui_v2_template.zlib.b64",
+    "tests": "tests/unit/test_life_patterns_human_calibration_ui_v2.py",
+    "implementation_and_test_head": "aba22fe18f65dcf7cb3f67b494b9cc343b0c752e",
+    "ci_run": 34290496491,
+    "ci_conclusion": "success",
+    "pytest_passed": 605,
+    "pytest_skipped": 7,
+    "ruff_passed": true,
+    "mypy_passed": true,
+    "mypy_source_files": 171
+  },
+  "generated_private_ui": {
+    "filename": "Life-Patterns-Human-Calibration-V2-OFFLINE.html",
+    "bytes": 3980290,
+    "sha256": "63baa191a93c49cbdfb459d4d5e3f96ff541bdddc3dd2183e5af743f48ce987b",
+    "deterministic_reproduction_confirmed": true,
+    "embeds_private_participant_evidence": true,
+    "committed_to_git": false
+  },
+  "offline_boundary": {
+    "standalone_html": true,
+    "server_required": false,
+    "ai_or_automated_judgment_used": false,
+    "external_network_requests_required": false,
+    "csp_default_src_none": true,
+    "csp_connect_src_none": true,
+    "static_network_api_scan_passed": true,
+    "javascript_node_syntax_check_passed": true
+  },
+  "human_workflow_contract": {
+    "one_selected_unit_at_a_time": true,
+    "exact_source_primary": true,
+    "transfer_summary_secondary": true,
+    "invalid_response_combinations_blocked": true,
+    "generalized_recurrence_requires_fake_numeric_floor": false,
+    "confirming_anecdotes_counted_as_frequency_support": false,
+    "attestation_favorable_defaults_prefilled": false,
+    "final_export_requires_complete_valid_66_unit_coverage": true,
+    "final_export_requires_eligible_blinding_attestation": true,
+    "final_exports": [
+      "episode_responses.completed.jsonl",
+      "series_responses.completed.jsonl",
+      "auditor_attestation.completed.json"
+    ]
+  },
+  "browser_verification": {
+    "normal_browser_visual_smoke_passed": false,
+    "attempted_in_continuation_environment": true,
+    "reason": "The available Chromium runtime hung even on an empty page in the container, so a genuine browser visual/interaction pass could not be completed. No pass is inferred from static or unit tests.",
+    "required_before_external_auditor_use": true
+  },
+  "contains_private_participant_text": false,
+  "private_ui_bytes_committed": false,
+  "human_first_pass_received": false,
+  "automated_coding_run": false,
+  "automated_consensus_exists": false,
+  "target_model_scoring_run": false,
+  "development_only": true,
+  "validation_use_forbidden": true,
+  "next_gate": "Open the exact generated private standalone HTML in a normal local browser and perform a bounded visual/interaction smoke check. If it loads, verifies the handoff, navigates units, saves/reloads progress and exposes the final export controls without network activity, the independent blind human auditor may then complete and freeze the 44 episode + 22 series first pass. Automated coding remains blocked until that human pass is frozen."
+}
