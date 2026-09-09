@@ -54,6 +54,16 @@ def test_multiple_sources_keep_only_useful_provenance_choice() -> None:
     assert "with several, choose only the quote(s) you relied on" in patched
 
 
+def test_human_never_has_to_decode_source_segment_ids() -> None:
+    _, _, patched = _patched_template()
+
+    assert 'const quoteName=i=>segments.length===1?"Exact quote":`Exact quote ${i+1}`' in patched
+    assert 'const quoteText=s=>s.exact_text||s.exact_participant_text||""' in patched
+    assert 'class="quotesnippet"' in patched
+    assert '<b>${esc(s.segment_id)}</b>' not in patched
+    assert '> ${esc(s.segment_id)}</label>' not in patched
+
+
 def test_counterevidence_is_optional_secondary_exception_control() -> None:
     _, _, patched = _patched_template()
 
@@ -61,6 +71,7 @@ def test_counterevidence_is_optional_secondary_exception_control() -> None:
     assert "Most units need nothing here" in patched
     assert 'data-source="counter"' in patched
     assert "This quote qualifies or goes against my selected behavior" not in patched
+    assert "quotesnippet" in patched
 
 
 def test_no_or_cant_tell_require_no_source_citation() -> None:
