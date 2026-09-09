@@ -4,7 +4,7 @@ Status: public-safe controlling overlay for the active Life Patterns development
 
 ## Current scientific gate
 
-**Awaiting the independent theory-blind human first pass.**
+**Awaiting the independent theory-blind human first pass, after owner acceptance of the current direct-choice UI.**
 
 No qualifying human annotations have been received. No automated Life Patterns coding, automated consensus, human-vs-automated comparison, target-model scoring, or reveal has occurred.
 
@@ -14,7 +14,7 @@ Closed prerequisites include:
 2. recurrence-evidence correction in additive theory-blind v2;
 3. exact private recurrence-v2 package/handoff freeze with the historical pre-label 44+22 calibration selection reused without resampling;
 4. offline/no-network human UI implementation;
-5. owner-led pre-collection usability correction until the task is actually understandable and minimal for a human auditor.
+5. owner-led pre-collection usability corrections through the current direct-choice interaction model.
 
 ## Measurement identities remain unchanged
 
@@ -28,83 +28,84 @@ Closed prerequisites include:
 
 The recurrence correction remains controlling: generalized behavioral self-report is evidence of **reported recurrence**; a self-selected confirming anecdote is not independent frequency evidence; recurrence strength and exceptions remain distinct; no fake numerical occurrence floor is required.
 
-## Human-first UI correction
+## Human-first direct-choice correction
 
-Owner browser review exposed a broader design error: even after plain-language cleanup, the interface was still shaped around the response schema rather than around a human's actual judgment task.
+Owner review established that asking whether there was **“Enough information to code”** before displaying the concrete behavioral values was itself a design error. A human cannot judge information sufficiency for an unspecified downstream choice.
 
-Examples caught before collection:
+The current UI therefore asks the substantive judgment directly:
 
-- asking whether multiple selected behaviors happened in “this order” before any order was shown;
-- displaying the order only after that answer, using opaque code IDs;
-- showing many optional metadata controls that a rational auditor would skip, creating needless burden and missing-not-at-random auxiliary data;
-- asking which quote established an influence relation when only one quote existed;
-- exposing internal source IDs and code IDs;
-- surfacing errors such as value-relation/non-action schema failures instead of telling the person what to fix.
+> **Which behavior or behaviors does the exact source clearly show?**
 
-The controlling policy is:
+The concrete plain-language behavior values are visible immediately.
 
-`docs/research/LIFE_PATTERNS_HUMAN_CALIBRATION_MINIMAL_BURDEN_POLICY_2026-09-09.md`
+The software derives the machine-facing applicability state:
+
+- one or more selected behaviors -> `observed`;
+- **Doesn't apply to this story** -> `not_applicable`;
+- **Not enough information** -> `insufficient`.
+
+There is no generic `Partially` state because different kinds of partial evidence have different meanings:
+
+- if only some listed behaviors are clearly supported, select those behaviors;
+- if several behaviors clearly occurred, select several;
+- if the source contains suggestive but insufficient information to choose a behavior reliably, use Not enough information;
+- if the prerequisite situation is absent, use Doesn't apply.
 
 Correction record:
 
-`state/LIFE-PATTERNS-HUMAN-UI-HUMAN-FIRST-CORRECTION-2026-09-09.md`
+`state/LIFE-PATTERNS-HUMAN-UI-DIRECT-CHOICE-CORRECTION-2026-09-09.md`
 
-### Current human flow
+Public-safe verification:
 
-The independent auditor now sees only judgments that can change the planned calibration:
+`state/LIFE-PATTERNS-HUMAN-CALIBRATION-UI-DIRECT-CHOICE-VERIFIED-2026-09-09.json`
 
-1. one exact story/pattern source + one plain behavioral question;
-2. `Yes — clearly shown`, `No — does not fit`, or `Can't tell`;
-3. if Yes, select the behavior(s) shown;
-4. if one behavior is selected, `value_relation=single` is automatic and no relation control appears;
-5. only if two or more behaviors are selected, ask whether the story establishes an order;
-6. only if the auditor says Yes, show those selected behaviors in **plain language** and let the auditor arrange them;
-7. only if a non-action behavior is selected, show the four required prerequisite checks;
-8. only if Other Specified is selected, request a description;
-9. repeated-series units ask the required recurrence/exception judgments in plain language;
-10. one exact quote is auto-bound as provenance; if several exact quotes exist, show their actual text and ask which were relied on.
+## Remaining human-first interaction rules
 
-Generic optional influence, counterevidence, context qualifier, missingness, language and free-note entry are omitted from the normal first-pass flow. Their valid transport defaults are serialized automatically. The exact source remains preserved for later disagreement adjudication.
+- one selected behavior -> `value_relation=single` is automatic;
+- multiple selected behaviors -> first ask whether the story establishes an order;
+- only after Yes -> show selected behaviors in plain language and allow ordering;
+- non-action prerequisite checks appear only for selected non-action values;
+- Other Specified description appears only when selected;
+- repeated-series recurrence/exception questions remain because they are required comparison fields;
+- one exact quote -> source provenance auto-bound;
+- multiple exact quotes -> actual quote text shown and auditor selects the quote(s) used;
+- internal source IDs and Rxx/NBM value IDs are not human tasks;
+- generic optional influence/counterevidence/context/missingness/language/note fields are omitted from the normal first pass;
+- errors state what the human must do rather than exposing schema jargon.
 
-This is a presentation/collection-burden correction only. The response schemas, code values, selected units and measurement semantics are unchanged.
+This is presentation/control-flow only. The response schemas, code values, selected units and measurement semantics are unchanged.
 
 ## Public implementation verification
 
-Current final human-first builder:
+Current direct-choice builder:
 
-`scripts/build_life_patterns_human_calibration_ui_v2_auditor_final.py`
+`scripts/build_life_patterns_human_calibration_ui_v2_direct_choice.py`
 
 Tests:
 
-`tests/unit/test_life_patterns_human_calibration_ui_v2_auditor_final.py`
+`tests/unit/test_life_patterns_human_calibration_ui_v2_direct_choice.py`
 
 Implementation/test head:
 
-`3447565cb56d5a6cd39d1a44877b3ca2604fdd1c`
+`196b37e8369c9493380393b506eaa9f9d0bebedc`
 
-Hosted CI `34384054801`: **success**
+Hosted CI `34398433777`: **success**
 
-- 635 passed;
+- 645 passed;
 - 7 expected skips;
 - Ruff passed;
 - strict mypy passed for 172 source files.
 
-The later state/policy head `46bb7010cb487d31435702ef4031ac3124d440d5` also passed CI `34384155046`.
+## Current exact private owner-review artifact
 
-Public-safe exact private verification receipt:
+Use only the direct-choice artifact:
 
-`state/LIFE-PATTERNS-HUMAN-CALIBRATION-UI-HUMAN-FIRST-VERIFIED-2026-09-09.json`
-
-## Current exact private auditor artifact
-
-Use only the human-first artifact:
-
-- HTML: `Life-Patterns-Human-Calibration-V2-AUDITOR-2026-09-09.html`
-  - bytes: `3,995,302`
-  - SHA-256: `7866b98b9aab72a329825675bb037e951354c9093a35b0f218d335ef7a0a8b3e`
-- kit: `Life-Patterns-Independent-Auditor-Kit-V2-AUDITOR-2026-09-09.zip`
-  - bytes: `802,576`
-  - SHA-256: `8e97c264045867b69db6a29af21cde8b2f3d5e3587a852b802504a38a0de1673`
+- HTML: `Life-Patterns-Human-Calibration-V2-DIRECT-CHOICE-2026-09-09.html`
+  - bytes: `3,996,334`
+  - SHA-256: `2fadb3c827379efc3ec0988be43ffff4f5e4708d91a7f7a9c48dc25a391ad4b5`
+- kit: `Life-Patterns-Independent-Auditor-Kit-V2-DIRECT-CHOICE-2026-09-09.zip`
+  - bytes: `802,612`
+  - SHA-256: `2dfc836fa2d7757e904ed593efba51baba22fefd9a9bf3ccfb209b80ef44c5e4`
   - two members: private HTML + `START-HERE.md`.
 
 All earlier auditor kits are superseded for new collection.
@@ -113,22 +114,19 @@ All earlier auditor kits are superseded for new collection.
 
 The current exact HTML bytes were rendered/operated in Chromium and passed:
 
-- `Bundle verified` / exact handoff/package identities;
-- 66 units total;
+- `Bundle verified`;
+- direct behavior question visible;
+- meta “Enough information to code” prompt absent;
+- concrete behavior choices visible before any machine-state derivation;
+- two fallback choices visible;
+- selecting a behavior clears fallback selection;
 - zero external network requests;
 - zero page errors;
-- zero console errors;
-- one behavior selected -> no relation task;
-- multiple behaviors selected -> order question appears first;
-- ordered selection -> plain-language behavior list appears for arrangement, with no internal Rxx IDs;
-- one exact quote -> source provenance automatic;
-- multiple exact quotes -> quote text shown for selection;
-- generic influence/counterevidence/advanced optional fields absent;
-- tested non-action failure produces a concrete human-readable instruction rather than schema jargon.
+- zero console errors.
 
 ## Exact next action
 
-An eligible independent theory-blind human auditor uses only the current human-first kit and completes all 66 selected units plus the independence/exposure attestation before seeing any automated result.
+Continue owner review of the current direct-choice artifact until accepted. Then an eligible independent theory-blind human auditor completes all 66 selected units plus the independence/exposure attestation before seeing any automated result.
 
 They return exactly:
 
