@@ -6,17 +6,15 @@ Status: public-safe controlling overlay for the active Life Patterns development
 
 **Awaiting the independent theory-blind human first pass.**
 
-Closed prerequisites now include:
+No qualifying human annotations have been received. No automated Life Patterns coding, automated consensus, human-vs-automated comparison, target-model scoring, or reveal has occurred.
+
+Closed prerequisites include:
 
 1. exact private v8/v8.1 recovery and hash verification;
-2. recurrence-evidence defect correction in additive theory-blind v2;
-3. exact private recurrence-v2 package/handoff freeze with historical pre-label calibration selection reused without resampling;
-4. original offline human UI implementation and portability verification;
-5. owner-detected human-comprehension correction before any qualifying human coding;
-6. owner-detected redundant source-provenance control correction before any qualifying human coding;
-7. engineering CI and exact-browser verification for the current human transport.
-
-No qualifying independent human annotations have been received. No automated Life Patterns coding, automated consensus, human-vs-automated comparison, target-model scoring, or reveal has occurred.
+2. recurrence-evidence correction in additive theory-blind v2;
+3. exact private recurrence-v2 package/handoff freeze with the historical pre-label 44+22 calibration selection reused without resampling;
+4. offline/no-network human UI implementation;
+5. owner-led pre-collection usability correction until the task is actually understandable and minimal for a human auditor.
 
 ## Measurement identities remain unchanged
 
@@ -28,91 +26,119 @@ No qualifying independent human annotations have been received. No automated Lif
 - selected units: 44 episode + 22 repeated-series
 - calibration resampled after revision: false.
 
-The 2026-09-08 recurrence correction remains controlling: generalized behavioral self-report is evidence of **reported recurrence**; a self-selected confirming anecdote is not independent frequency evidence; recurrence strength, exception status/frequency and evidence basis remain separate; no fake numerical occurrence floor is required.
+The recurrence correction remains controlling: generalized behavioral self-report is evidence of **reported recurrence**; a self-selected confirming anecdote is not independent frequency evidence; recurrence strength and exceptions remain distinct; no fake numerical occurrence floor is required.
 
-## Human transport corrections
+## Human-first UI correction
 
-Owner browser review found two usability defects before independent collection:
+Owner browser review exposed a broader design error: even after plain-language cleanup, the interface was still shaped around the response schema rather than around a human's actual judgment task.
 
-1. codebook/machine language obscured what behavior question was actually being asked and who the narrator/actor was;
-2. after answering Yes and choosing a behavior, the UI still asked a redundant source-level `does this quote support/oppose it?` question even when there was only one exact source segment.
+Examples caught before collection:
 
-The second defect is recorded at:
+- asking whether multiple selected behaviors happened in “this order” before any order was shown;
+- displaying the order only after that answer, using opaque code IDs;
+- showing many optional metadata controls that a rational auditor would skip, creating needless burden and missing-not-at-random auxiliary data;
+- asking which quote established an influence relation when only one quote existed;
+- exposing internal source IDs and code IDs;
+- surfacing errors such as value-relation/non-action schema failures instead of telling the person what to fix.
 
-`state/LIFE-PATTERNS-HUMAN-UI-REDUNDANT-CITATION-CONTROL-2026-09-09.md`
+The controlling policy is:
 
-The correction preserves provenance without turning it into another substantive judgment:
+`docs/research/LIFE_PATTERNS_HUMAN_CALIBRATION_MINIMAL_BURDEN_POLICY_2026-09-09.md`
 
-- single exact source + Yes: source segment is auto-bound as supporting provenance with no visible citation checkbox;
-- multiple exact sources + Yes: auditor selects only the exact quote(s) actually relied on;
-- optional counterevidence lives in a collapsed exception/conflict control;
-- No / Can't tell: no source-citation controls;
-- response schemas/values, source-segment IDs, selected units, recurrence semantics, blinding and target-model isolation are unchanged.
+Correction record:
 
-Current public-safe implementation:
+`state/LIFE-PATTERNS-HUMAN-UI-HUMAN-FIRST-CORRECTION-2026-09-09.md`
 
-- `scripts/build_life_patterns_human_calibration_ui_v2_plain.py`
-- `tests/unit/test_life_patterns_human_calibration_ui_v2_plain.py`
-- `scripts/build_life_patterns_human_calibration_ui_v2_plain_provenance.py`
-- `tests/unit/test_life_patterns_human_calibration_ui_v2_plain_provenance.py`
-- `docs/research/LIFE_PATTERNS_INDEPENDENT_AUDITOR_START_HERE_PLAIN_2026-09-09.md`
+### Current human flow
 
-Provenance-simplification implementation/test head `3ec4b9dc95f80fee46a4a44d9e052e03088c303a` passed hosted CI `34373413686`:
+The independent auditor now sees only judgments that can change the planned calibration:
 
-- 622 passed;
+1. one exact story/pattern source + one plain behavioral question;
+2. `Yes — clearly shown`, `No — does not fit`, or `Can't tell`;
+3. if Yes, select the behavior(s) shown;
+4. if one behavior is selected, `value_relation=single` is automatic and no relation control appears;
+5. only if two or more behaviors are selected, ask whether the story establishes an order;
+6. only if the auditor says Yes, show those selected behaviors in **plain language** and let the auditor arrange them;
+7. only if a non-action behavior is selected, show the four required prerequisite checks;
+8. only if Other Specified is selected, request a description;
+9. repeated-series units ask the required recurrence/exception judgments in plain language;
+10. one exact quote is auto-bound as provenance; if several exact quotes exist, show their actual text and ask which were relied on.
+
+Generic optional influence, counterevidence, context qualifier, missingness, language and free-note entry are omitted from the normal first-pass flow. Their valid transport defaults are serialized automatically. The exact source remains preserved for later disagreement adjudication.
+
+This is a presentation/collection-burden correction only. The response schemas, code values, selected units and measurement semantics are unchanged.
+
+## Public implementation verification
+
+Current final human-first builder:
+
+`scripts/build_life_patterns_human_calibration_ui_v2_auditor_final.py`
+
+Tests:
+
+`tests/unit/test_life_patterns_human_calibration_ui_v2_auditor_final.py`
+
+Implementation/test head:
+
+`3447565cb56d5a6cd39d1a44877b3ca2604fdd1c`
+
+Hosted CI `34384054801`: **success**
+
+- 635 passed;
 - 7 expected skips;
 - Ruff passed;
 - strict mypy passed for 172 source files.
 
-## Current private plain-language UI
+The later state/policy head `46bb7010cb487d31435702ef4031ac3124d440d5` also passed CI `34384155046`.
 
-- delivery filename inside the kit: `Life-Patterns-Human-Calibration-V2-PLAIN.html`
-- bytes: `3,997,285`
-- SHA-256: `0d123b0eca37988157282f9b70f0030e7af106e33155e04b30ffe76f68eff568`
-- private participant evidence embedded: true
-- committed to Git: false
-- embedded handoff fragment unchanged: true
-- selected units changed: false
-- response contract changed: false
-- measurement semantics changed: false
-- external network required: false.
+Public-safe exact private verification receipt:
 
-Exact-browser verification on those private bytes confirmed:
+`state/LIFE-PATTERNS-HUMAN-CALIBRATION-UI-HUMAN-FIRST-VERIFIED-2026-09-09.json`
 
-- `Bundle verified` before evidence display;
-- all 66 selected units bound;
-- single-source `EP-002 / NBM-R22`: Yes shows zero visible supporting-citation checkboxes, auto-binds the sole exact source, and `readForm` exports `EP-002-SEG-01` as supporting provenance;
-- multi-source `EP-003 / NBM-R07`: Yes shows two source choices under `Which quote(s) show the behavior you selected?`;
-- optional counterevidence is collapsed by default;
-- zero external network requests, page errors, or console errors.
+## Current exact private auditor artifact
 
-Public-safe receipt:
+Use only the human-first artifact:
 
-`state/LIFE-PATTERNS-HUMAN-UI-PROVENANCE-SIMPLIFICATION-VERIFIED-2026-09-09.json`
+- HTML: `Life-Patterns-Human-Calibration-V2-AUDITOR-2026-09-09.html`
+  - bytes: `3,995,302`
+  - SHA-256: `7866b98b9aab72a329825675bb037e951354c9093a35b0f218d335ef7a0a8b3e`
+- kit: `Life-Patterns-Independent-Auditor-Kit-V2-AUDITOR-2026-09-09.zip`
+  - bytes: `802,576`
+  - SHA-256: `8e97c264045867b69db6a29af21cde8b2f3d5e3587a852b802504a38a0de1673`
+  - two members: private HTML + `START-HERE.md`.
 
-## Current private auditor delivery kit
+All earlier auditor kits are superseded for new collection.
 
-Use only:
+### Exact private Chromium smoke
 
-`Life-Patterns-Independent-Auditor-Kit-V2-PLAIN-PROVENANCE-2026-09-09.zip`
+The current exact HTML bytes were rendered/operated in Chromium and passed:
 
-- bytes: `804,132`
-- SHA-256: `291ffaa9bf886e6fe4bcf778b2d41264275bc3b74c11ce82d1df24894bf768d3`
-- members: exact current private HTML + `START-HERE.md`.
-
-All earlier auditor kits are historical/superseded for new human collection.
+- `Bundle verified` / exact handoff/package identities;
+- 66 units total;
+- zero external network requests;
+- zero page errors;
+- zero console errors;
+- one behavior selected -> no relation task;
+- multiple behaviors selected -> order question appears first;
+- ordered selection -> plain-language behavior list appears for arrangement, with no internal Rxx IDs;
+- one exact quote -> source provenance automatic;
+- multiple exact quotes -> quote text shown for selection;
+- generic influence/counterevidence/advanced optional fields absent;
+- tested non-action failure produces a concrete human-readable instruction rather than schema jargon.
 
 ## Exact next action
 
-An eligible independent theory-blind human auditor uses the current provenance-simplified kit and completes all 44 episode + 22 repeated-pattern units plus the independence/exposure attestation **before seeing any automated output**.
+An eligible independent theory-blind human auditor uses only the current human-first kit and completes all 66 selected units plus the independence/exposure attestation before seeing any automated result.
 
-The three raw exports are:
+They return exactly:
 
 - `episode_responses.completed.jsonl`
 - `series_responses.completed.jsonl`
 - `auditor_attestation.completed.json`
 
-Preserve those exact bytes unchanged, validate/content-address/freeze them, and only then begin the >=3 isolated theory-blind automated development coding passes.
+Preserve those exact raw bytes unchanged. Validate/content-address/freeze them before exposing automated output.
+
+Only after that freeze may the >=3 isolated theory-blind automated development coding passes begin.
 
 ## Boundaries
 
