@@ -1,10 +1,9 @@
 """Validate and freeze a Life Patterns v2 human first pass from the private handoff.
 
-This module is deliberately portable: the exact frozen human-handoff ZIP plus the auditor's three
-raw exports are sufficient.  It does not require the earlier private preparation directory, does
-not call a model, and does not expose target-model information.  Private response/attestation
-bytes are preserved unchanged; only a separate public-safe content-addressed receipt is suitable
-for Git.
+The exact frozen human-handoff ZIP plus the auditor's three raw exports are sufficient. The
+portable freeze does not require the earlier private preparation directory, call a model, or
+expose target-model information. Private response and attestation bytes are preserved unchanged;
+only a separate public-safe content-addressed receipt is suitable for Git.
 """
 
 from __future__ import annotations
@@ -26,10 +25,7 @@ from .development_annotation_pipeline import (
     normalize_development_episode_responses_jsonl,
 )
 from .development_blind_packets_v2 import BlindDevelopmentPacketArtifactV2
-from .development_episode_evidence import (
-    DevelopmentEpisodeAnnotationResponse,
-    development_episode_response_errors,
-)
+from .development_episode_evidence import development_episode_response_errors
 from .development_human_attestation_v2 import (
     DevelopmentHumanAuditorAttestationReceiptArtifactV2,
     DevelopmentHumanAuditorAttestationV2,
@@ -155,9 +151,8 @@ def _load_json_object(data: bytes, *, label: str) -> dict[str, Any]:
 def _load_jsonl_objects(data: bytes, *, label: str) -> tuple[dict[str, Any], ...]:
     rows: list[dict[str, Any]] = []
     for line_number, line in enumerate(data.splitlines(), start=1):
-        if not line.strip():
-            continue
-        rows.append(_load_json_object(line, label=f"{label} line {line_number}"))
+        if line.strip():
+            rows.append(_load_json_object(line, label=f"{label} line {line_number}"))
     return tuple(rows)
 
 
@@ -177,33 +172,10 @@ def _verify_address(
     return digest
 
 
-def verify_human_handoff_for_first_pass_v2(
-    handoff_zip: str | Path,
-) -> VerifiedHumanHandoffForFirstPassV2:
-    """Verify the exact private handoff and recover only its frozen human task universe."""
-
-    source = Path(handoff_zip)
-    raw_zip = source.read_bytes()
-    with zipfile.ZipFile(source) as archive:
-        names = archive.namelist()
-        if len(names) != len(set(names)):
-            raise ValueError("human handoff v2 contains duplicate ZIP member names")
-        if any(name.endswith("/") for name in names):
-            raise ValueError("human handoff v2 must contain files only")
-        if HANDOFF_RECEIPT_NAME not in names:
-            raise ValueError("human handoff v2 is missing its public-safe receipt")
-        files = {name: archive.read(name) for name in names}
-
-    receipt = _load_json_object(files[HANDOFF_RECEIPT_NAME], label=HANDOFF_RECEIPT_NAME)
-    payload = receipt.get("payload")
-    if not isinstance(payload, dict) or payload.get("schema_version") != EXPECTED_HANDOFF_SCHEMA:
-        raise ValueError("human handoff v2 receipt has the wrong schema")
-    receipt_digest = sha256_json(payload)
-    if receipt.get("receipt_sha256") != receipt_digest or receipt.get("receipt_id") != (
-        f"LPHB2-{receipt_digest[:20].upper()}"
-    ):
-        raise ValueError("human handoff v2 receipt failed content-address verification")
-
+def _verify_receipted_members(
+    files: dict[str, bytes],
+    payload: dict[str, Any],
+) -> None:
     declared_files = payload.get("files")
     if not isinstance(declared_files, dict) or not declared_files:
         raise ValueError("human handoff v2 receipt does not declare member hashes")
@@ -216,6 +188,8 @@ def verify_human_handoff_for_first_pass_v2(
         if _sha256_bytes(files[name]) != expected_hash:
             raise ValueError(f"human handoff v2 member hash mismatch: {name}")
 
+
+def _verify_handoff_flags(payload: dict[str, Any]) -> None:
     required_flags = {
         "selected_unit_coverage_verified": True,
         "calibration_selection_reused_without_resampling": True,
@@ -231,15 +205,47 @@ def verify_human_handoff_for_first_pass_v2(
         if payload.get(field) is not expected:
             raise ValueError(f"human handoff v2 has unexpected {field}")
 
+
+def verify_human_handoff_for_first_pass_v2(
+    handoff_zip: str | Path,
+) -> VerifiedHumanHandoffForFirstPassV2:
+    """Verify the exact private handoff and recover its frozen selected task universe."""
+
+    source = Path(handoff_zip)
+    raw_zip = source.read_bytes()
+    with zipfile.ZipFile(source) as archive:
+        names = archive.namelist()
+        if len(names) != len(set(names)):
+            raise ValueError("human handoff v2 contains duplicate ZIP member names")
+        if any(name.endswith("/") for name in names):
+            raise ValueError("human handoff v2 must contain files only")
+        if HANDOFF_RECEIPT_NAME not in names:
+            raise ValueError("human handoff v2 is missing its public-safe receipt")
+        files = {name: archive.read(name) for name in names}
+
+    receipt = _load_json_object(files[HANDOFF_RECEIPT_NAME], label=HANDOFF_RECEIPT_NAME)
+    receipt_payload = receipt.get("payload")
+    if not isinstance(receipt_payload, dict) or receipt_payload.get("schema_version") != (
+        EXPECTED_HANDOFF_SCHEMA
+    ):
+        raise ValueError("human handoff v2 receipt has the wrong schema")
+    receipt_digest = sha256_json(receipt_payload)
+    if receipt.get("receipt_sha256") != receipt_digest or receipt.get("receipt_id") != (
+        f"LPHB2-{receipt_digest[:20].upper()}"
+    ):
+        raise ValueError("human handoff v2 receipt failed content-address verification")
+    _verify_receipted_members(files, receipt_payload)
+    _verify_handoff_flags(receipt_payload)
+
     packet_names = sorted(
         name for name in files if name.startswith("packets/") and name.endswith(".json")
     )
-    if len(packet_names) != payload.get("packet_count"):
+    if len(packet_names) != receipt_payload.get("packet_count"):
         raise ValueError("human handoff v2 packet count disagrees with receipt")
 
     episode_tasks: list[DevelopmentEpisodeCodingTask] = []
     series_tasks: list[DevelopmentSeriesCodingTask] = []
-    packet_hashes: list[str] = []
+    packet_hashes: set[str] = set()
     seen_task_ids: set[str] = set()
     ontology: OntologyReleaseArtifact | None = None
     procedure: StructuredCodingProcedureArtifactV2 | None = None
@@ -254,55 +260,77 @@ def verify_human_handoff_for_first_pass_v2(
             f"LPBP2-{packet_digest[:20].upper()}"
         ):
             raise ValueError(f"{name} failed LPBP2 content-address verification")
-        packet_hashes.append(packet_digest)
-        pp = packet.payload
-        if pp.coder_role != "human_calibration":
+        if packet_digest in packet_hashes:
+            raise ValueError("human handoff v2 repeats an LPBP2 content address")
+        packet_hashes.add(packet_digest)
+        packet_payload = packet.payload
+        if packet_payload.coder_role != "human_calibration":
             raise ValueError(f"{name} is not a human-calibration packet")
         if any(
             (
-                pp.prior_automated_labels_available,
-                pp.automated_consensus_available,
-                pp.target_model_information_available,
-                pp.birth_or_chart_data_available,
-                pp.confirming_episodes_counted_as_frequency_evidence,
-                pp.calibration_selection_resampled_after_revision,
+                packet_payload.prior_automated_labels_available,
+                packet_payload.automated_consensus_available,
+                packet_payload.target_model_information_available,
+                packet_payload.birth_or_chart_data_available,
+                packet_payload.confirming_episodes_counted_as_frequency_evidence,
+                packet_payload.calibration_selection_resampled_after_revision,
             )
         ):
             raise ValueError(f"{name} violates the blind first-pass chronology")
         if (
-            pp.package_id != payload.get("package_id")
-            or pp.package_sha256 != payload.get("package_sha256")
-            or pp.calibration_manifest_id != payload.get("calibration_manifest_id")
-            or pp.calibration_manifest_sha256 != payload.get("calibration_manifest_sha256")
-            or pp.coding_manual_sha256 != payload.get("coding_manual_sha256")
-            or pp.recurrence_policy_sha256 != payload.get("recurrence_policy_sha256")
-            or pp.instruction_prompt_sha256 != payload.get("human_prompt_sha256")
+            packet_payload.package_id != receipt_payload.get("package_id")
+            or packet_payload.package_sha256 != receipt_payload.get("package_sha256")
+            or packet_payload.calibration_manifest_id
+            != receipt_payload.get("calibration_manifest_id")
+            or packet_payload.calibration_manifest_sha256
+            != receipt_payload.get("calibration_manifest_sha256")
+            or packet_payload.coding_manual_sha256
+            != receipt_payload.get("coding_manual_sha256")
+            or packet_payload.recurrence_policy_sha256
+            != receipt_payload.get("recurrence_policy_sha256")
+            or packet_payload.instruction_prompt_sha256
+            != receipt_payload.get("human_prompt_sha256")
         ):
             raise ValueError(f"{name} does not bind the frozen human handoff")
 
-        _verify_address(pp.resolved_view, id_field="view_id", hash_field="view_sha256", prefix="LPRV")
-        _verify_address(pp.ontology, id_field="artifact_id", hash_field="ontology_sha256", prefix="LPO")
-        _verify_address(pp.procedure, id_field="procedure_id", hash_field="procedure_sha256", prefix="LPSP")
+        _verify_address(
+            packet_payload.resolved_view,
+            id_field="view_id",
+            hash_field="view_sha256",
+            prefix="LPRV",
+        )
+        _verify_address(
+            packet_payload.ontology,
+            id_field="artifact_id",
+            hash_field="ontology_sha256",
+            prefix="LPO",
+        )
+        _verify_address(
+            packet_payload.procedure,
+            id_field="procedure_id",
+            hash_field="procedure_sha256",
+            prefix="LPSP",
+        )
         if ontology is None:
-            ontology = pp.ontology
-            procedure = pp.procedure
-            resolved_view_sha256 = pp.resolved_view.view_sha256
-            corpus_id = pp.corpus_id
-            corpus_sha256 = pp.corpus_sha256
+            ontology = packet_payload.ontology
+            procedure = packet_payload.procedure
+            resolved_view_sha256 = packet_payload.resolved_view.view_sha256
+            corpus_id = packet_payload.corpus_id
+            corpus_sha256 = packet_payload.corpus_sha256
         elif (
-            pp.ontology != ontology
-            or pp.procedure != procedure
-            or pp.resolved_view.view_sha256 != resolved_view_sha256
-            or pp.corpus_id != corpus_id
-            or pp.corpus_sha256 != corpus_sha256
+            packet_payload.ontology != ontology
+            or packet_payload.procedure != procedure
+            or packet_payload.resolved_view.view_sha256 != resolved_view_sha256
+            or packet_payload.corpus_id != corpus_id
+            or packet_payload.corpus_sha256 != corpus_sha256
         ):
-            raise ValueError("human handoff v2 packets disagree on their frozen measurement stack")
+            raise ValueError("human handoff v2 packets disagree on the frozen measurement stack")
 
-        for task in pp.tasks:
+        for task in packet_payload.tasks:
             if task.task_id in seen_task_ids:
                 raise ValueError("human handoff v2 repeats a selected task identity")
             seen_task_ids.add(task.task_id)
-            if pp.evidence_kind == "episode":
+            if packet_payload.evidence_kind == "episode":
                 if not isinstance(task, DevelopmentEpisodeCodingTask):
                     raise ValueError("episode human packet contains the wrong task type")
                 episode_tasks.append(task)
@@ -311,7 +339,12 @@ def verify_human_handoff_for_first_pass_v2(
                     raise ValueError("series human packet contains the wrong task type")
                 series_tasks.append(task)
 
-    if set(packet_hashes) != set(cast(list[str], payload.get("packet_sha256s", []))):
+    expected_packet_hashes = receipt_payload.get("packet_sha256s")
+    if not isinstance(expected_packet_hashes, list) or not all(
+        isinstance(value, str) for value in expected_packet_hashes
+    ):
+        raise ValueError("human handoff v2 packet hash list is malformed")
+    if packet_hashes != set(expected_packet_hashes):
         raise ValueError("human handoff v2 packet hashes differ from receipt")
     if ontology is None or procedure is None or resolved_view_sha256 is None:
         raise ValueError("human handoff v2 contains no usable measurement stack")
@@ -328,8 +361,14 @@ def verify_human_handoff_for_first_pass_v2(
         for task in series_tasks
         for observable_id in task.observable_ids
     }
-    blank_episode_rows = _load_jsonl_objects(files[EPISODE_BLANK_NAME], label=EPISODE_BLANK_NAME)
-    blank_series_rows = _load_jsonl_objects(files[SERIES_BLANK_NAME], label=SERIES_BLANK_NAME)
+    blank_episode_rows = _load_jsonl_objects(
+        files[EPISODE_BLANK_NAME],
+        label=EPISODE_BLANK_NAME,
+    )
+    blank_series_rows = _load_jsonl_objects(
+        files[SERIES_BLANK_NAME],
+        label=SERIES_BLANK_NAME,
+    )
     actual_blank_episode_units = {
         (row.get("task_id"), row.get("episode_id"), row.get("observable_id"))
         for row in blank_episode_rows
@@ -345,24 +384,24 @@ def verify_human_handoff_for_first_pass_v2(
         or len(actual_blank_series_units) != len(blank_series_rows)
     ):
         raise ValueError("human handoff v2 blank responses do not exactly cover packet units")
-    if len(expected_episode_units) != payload.get("episode_unit_count"):
+    if len(expected_episode_units) != receipt_payload.get("episode_unit_count"):
         raise ValueError("human handoff v2 episode unit count disagrees with receipt")
-    if len(expected_series_units) != payload.get("series_unit_count"):
+    if len(expected_series_units) != receipt_payload.get("series_unit_count"):
         raise ValueError("human handoff v2 series unit count disagrees with receipt")
 
     return VerifiedHumanHandoffForFirstPassV2(
         receipt_id=cast(str, receipt["receipt_id"]),
         receipt_sha256=cast(str, receipt["receipt_sha256"]),
-        package_id=cast(str, payload["package_id"]),
-        package_sha256=cast(str, payload["package_sha256"]),
-        calibration_manifest_id=cast(str, payload["calibration_manifest_id"]),
-        calibration_manifest_sha256=cast(str, payload["calibration_manifest_sha256"]),
+        package_id=cast(str, receipt_payload["package_id"]),
+        package_sha256=cast(str, receipt_payload["package_sha256"]),
+        calibration_manifest_id=cast(str, receipt_payload["calibration_manifest_id"]),
+        calibration_manifest_sha256=cast(str, receipt_payload["calibration_manifest_sha256"]),
         corpus_id=corpus_id,
         corpus_sha256=corpus_sha256,
         resolved_view_sha256=resolved_view_sha256,
-        coding_manual_sha256=cast(str, payload["coding_manual_sha256"]),
-        recurrence_policy_sha256=cast(str, payload["recurrence_policy_sha256"]),
-        human_prompt_sha256=cast(str, payload["human_prompt_sha256"]),
+        coding_manual_sha256=cast(str, receipt_payload["coding_manual_sha256"]),
+        recurrence_policy_sha256=cast(str, receipt_payload["recurrence_policy_sha256"]),
+        human_prompt_sha256=cast(str, receipt_payload["human_prompt_sha256"]),
         ontology=ontology,
         procedure=procedure,
         episode_tasks=tuple(episode_tasks),
@@ -428,7 +467,7 @@ def freeze_human_first_pass_from_handoff_v2(
     bytes,
     bytes,
 ]:
-    """Validate complete raw exports and return private artifacts plus a public-safe freeze receipt."""
+    """Validate complete raw exports and return private artifacts plus a public-safe receipt."""
 
     if frozen_at_utc.tzinfo is None or frozen_at_utc.utcoffset() is None:
         raise ValueError("human first-pass freeze timestamp must be timezone-aware")
@@ -448,23 +487,25 @@ def freeze_human_first_pass_from_handoff_v2(
         for observable_id in task.observable_ids
     }
     actual_episode_units = {
-        (row.task_id, row.episode_id, row.observable_id) for row in episode_responses
+        (episode_response.task_id, episode_response.episode_id, episode_response.observable_id)
+        for episode_response in episode_responses
     }
     if len(episode_responses) != len(actual_episode_units) or actual_episode_units != (
         expected_episode_units
     ):
         raise ValueError("human episode first pass does not exactly cover frozen selected units")
     episode_task_by_id = {task.task_id: task for task in handoff.episode_tasks}
-    for response in episode_responses:
+    for episode_response in episode_responses:
         errors = development_episode_response_errors(
-            response,
-            task=episode_task_by_id[response.task_id],
+            episode_response,
+            task=episode_task_by_id[episode_response.task_id],
             ontology=handoff.ontology,
             procedure=handoff.procedure,
         )
         if errors:
             raise ValueError(
-                f"invalid human episode response {response.task_id}/{response.observable_id}: "
+                "invalid human episode response "
+                f"{episode_response.task_id}/{episode_response.observable_id}: "
                 + "; ".join(errors)
             )
 
@@ -476,23 +517,25 @@ def freeze_human_first_pass_from_handoff_v2(
         for observable_id in task.observable_ids
     }
     actual_series_units = {
-        (row.task_id, row.series_id, row.observable_id) for row in series_responses
+        (series_response.task_id, series_response.series_id, series_response.observable_id)
+        for series_response in series_responses
     }
     if len(series_responses) != len(actual_series_units) or actual_series_units != (
         expected_series_units
     ):
         raise ValueError("human series first pass does not exactly cover frozen selected units")
     series_task_by_id = {task.task_id: task for task in handoff.series_tasks}
-    for response in series_responses:
+    for series_response in series_responses:
         errors = development_series_response_errors_v2(
-            response,
-            task=series_task_by_id[response.task_id],
+            series_response,
+            task=series_task_by_id[series_response.task_id],
             ontology=handoff.ontology,
             procedure=handoff.procedure,
         )
         if errors:
             raise ValueError(
-                f"invalid human series response {response.task_id}/{response.observable_id}: "
+                "invalid human series response "
+                f"{series_response.task_id}/{series_response.observable_id}: "
                 + "; ".join(errors)
             )
 
