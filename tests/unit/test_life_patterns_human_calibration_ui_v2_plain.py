@@ -68,8 +68,6 @@ def test_plain_layer_preserves_embedded_handoff_placeholder_and_response_contrac
         '"observed"',
         '"insufficient"',
         '"not_applicable"',
-        "life-patterns-development-episode-annotation-response-v1",
-        "life-patterns-development-series-annotation-response-v2",
         "episode_responses.completed.jsonl",
         "series_responses.completed.jsonl",
         "auditor_attestation.completed.json",
@@ -91,5 +89,5 @@ def test_plain_layer_collapses_advanced_material_instead_of_removing_it() -> Non
 def test_plain_layer_fails_closed_on_template_drift() -> None:
     plain = _load(PLAIN_SCRIPT, "life_patterns_ui_v2_plain_drift_test")
 
-    with pytest.raises(ValueError, match="influence constant"):
+    with pytest.raises(ValueError, match="cannot locate embedded handoff payload"):
         plain.patch_html_for_plain_human_ui("<html>template drift</html>")
