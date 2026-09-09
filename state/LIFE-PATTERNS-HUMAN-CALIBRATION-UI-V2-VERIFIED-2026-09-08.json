@@ -1,7 +1,7 @@
 {
-  "schema_version": "life-patterns-human-calibration-ui-v2-verification-v1",
-  "status": "ui_implementation_engineering_verified_private_browser_smoke_pending",
-  "verified_date": "2026-09-08",
+  "schema_version": "life-patterns-human-calibration-ui-v2-verification-v2",
+  "status": "ui_engineering_and_chromium_interaction_smoke_passed_awaiting_independent_human",
+  "verified_date": "2026-09-09",
   "private_handoff": {
     "receipt_id": "LPHB2-F34245FAE32B513DDCFE",
     "receipt_sha256": "f34245fae32b513ddcfe22b7d21081997e8c28e18fccd25b962c30af2fe0a78f",
@@ -17,13 +17,15 @@
   },
   "private_freeze_verification": "state/LIFE-PATTERNS-V2-PRIVATE-FREEZE-VERIFIED-2026-09-08.json",
   "ui_source": {
-    "builder": "scripts/build_life_patterns_human_calibration_ui_v2.py",
+    "base_builder": "scripts/build_life_patterns_human_calibration_ui_v2.py",
     "template": "scripts/life_patterns_human_calibration_ui_v2_template.zlib.b64",
-    "tests": "tests/unit/test_life_patterns_human_calibration_ui_v2.py",
-    "implementation_and_test_head": "aba22fe18f65dcf7cb3f67b494b9cc343b0c752e",
-    "ci_run": 34290496491,
+    "portable_builder": "scripts/build_life_patterns_human_calibration_ui_v2_portable.py",
+    "base_tests": "tests/unit/test_life_patterns_human_calibration_ui_v2.py",
+    "portability_tests": "tests/unit/test_life_patterns_human_calibration_ui_v2_portability.py",
+    "portable_implementation_and_test_head": "878ffb21d964a643acd04056f14064f323de0545",
+    "ci_run": 34302364461,
     "ci_conclusion": "success",
-    "pytest_passed": 605,
+    "pytest_passed": 608,
     "pytest_skipped": 7,
     "ruff_passed": true,
     "mypy_passed": true,
@@ -31,11 +33,13 @@
   },
   "generated_private_ui": {
     "filename": "Life-Patterns-Human-Calibration-V2-OFFLINE.html",
-    "bytes": 3980290,
-    "sha256": "63baa191a93c49cbdfb459d4d5e3f96ff541bdddc3dd2183e5af743f48ce987b",
-    "deterministic_reproduction_confirmed": true,
+    "bytes": 3982068,
+    "sha256": "66fda4ceada51b4f82fe2c7f8a93c6d9efe886e1063a9d23fece88b79f1f6690",
     "embeds_private_participant_evidence": true,
-    "committed_to_git": false
+    "committed_to_git": false,
+    "portability_change_only": true,
+    "measurement_semantics_changed": false,
+    "response_contract_changed": false
   },
   "offline_boundary": {
     "standalone_html": true,
@@ -45,7 +49,8 @@
     "csp_default_src_none": true,
     "csp_connect_src_none": true,
     "static_network_api_scan_passed": true,
-    "javascript_node_syntax_check_passed": true
+    "native_webcrypto_preferred": true,
+    "pure_javascript_sha256_fallback_available": true
   },
   "human_workflow_contract": {
     "one_selected_unit_at_a_time": true,
@@ -64,10 +69,24 @@
     ]
   },
   "browser_verification": {
-    "normal_browser_visual_smoke_passed": false,
-    "attempted_in_continuation_environment": true,
-    "reason": "The available Chromium runtime hung even on an empty page in the container, so a genuine browser visual/interaction pass could not be completed. No pass is inferred from static or unit tests.",
-    "required_before_external_auditor_use": true
+    "receipt": "state/LIFE-PATTERNS-HUMAN-CALIBRATION-UI-V2-BROWSER-SMOKE-2026-09-09.json",
+    "chromium_render_and_interaction_smoke_passed": true,
+    "exact_html_bytes_tested": true,
+    "bundle_cryptographic_verification_passed": true,
+    "initial_episode_rendered": true,
+    "series_unit_rendered": true,
+    "recurrence_specific_controls_rendered": true,
+    "progress_save_download_reload_passed": true,
+    "incomplete_final_export_failed_closed": true,
+    "request_count": 0,
+    "page_error_count": 0,
+    "console_error_count": 0,
+    "private_screenshots_reviewed": true,
+    "sha256_fallback_exercised": true,
+    "direct_file_or_http_navigation_attempted": true,
+    "direct_navigation_result": "blocked by execution-container administrator policy",
+    "render_method_used": "Chromium page.set_content on the exact standalone HTML bytes",
+    "external_local_file_opening_note": "The execution container cannot test file:// navigation because navigation is administratively blocked. This is a container limitation, not a UI failure. The exact HTML bytes completed cryptographic verification and the full interaction smoke inside Chromium. An auditor should confirm that the file opens normally on their local browser before starting, but no additional scientific-method decision is pending."
   },
   "contains_private_participant_text": false,
   "private_ui_bytes_committed": false,
@@ -77,5 +96,5 @@
   "target_model_scoring_run": false,
   "development_only": true,
   "validation_use_forbidden": true,
-  "next_gate": "Open the exact generated private standalone HTML in a normal local browser and perform a bounded visual/interaction smoke check. If it loads, verifies the handoff, navigates units, saves/reloads progress and exposes the final export controls without network activity, the independent blind human auditor may then complete and freeze the 44 episode + 22 series first pass. Automated coding remains blocked until that human pass is frozen."
+  "next_gate": "Provide the verified private standalone HTML to an eligible independent theory-blind human auditor. The auditor must complete and export all 44 episode + 22 repeated-series responses plus the completed independence/exposure attestation before seeing any automated labels or consensus. Preserve and validate that raw first pass before automated coding begins."
 }
