@@ -13,19 +13,21 @@ Before substantive work, fetch the **current PR #24 head** and treat GitHub as c
 3. `state/LIFE-PATTERNS-V2-PRIVATE-FREEZE-VERIFIED-2026-09-08.json`
 4. `state/LIFE-PATTERNS-HUMAN-CALIBRATION-UI-V2-VERIFIED-2026-09-08.json`
 5. `state/LIFE-PATTERNS-HUMAN-CALIBRATION-UI-V2-BROWSER-SMOKE-2026-09-09.json`
-6. `docs/research/LIFE_PATTERNS_HUMAN_CALIBRATION_UI_V2_2026-09-08.md`
-7. `docs/research/LIFE_PATTERNS_HUMAN_CALIBRATION_UI_REQUIREMENTS_2026-09-08.md`
-8. `docs/research/LIFE_PATTERNS_RECURRENCE_EVIDENCE_POLICY_v2_2026-09-08.md`
-9. `state/LIFE-PATTERNS-DEVELOPMENT-CODING-MANUAL-v2-2026-09-08.md`
-10. `state/LIFE-PATTERNS-RECURRENCE-EVIDENCE-CORRECTION-2026-09-08.md`
-11. `docs/research/LIFE_PATTERNS_RECURRENCE_EVIDENCE_PRIOR_WORK_SCAN_2026-09-08.md`
-12. `state/LIFE-PATTERNS-PRIVATE-ARTIFACT-RECOVERY-VERIFIED-2026-09-07.json`
-13. `state/CURRENT-STATE.md`
-14. `state/LIFE-PATTERNS-DEVELOPMENT-HANDOFF-2026-09-06.md`
+6. `state/LIFE-PATTERNS-INDEPENDENT-AUDITOR-DELIVERY-KIT-RECEIPT-2026-09-09.json`
+7. `docs/research/LIFE_PATTERNS_INDEPENDENT_AUDITOR_START_HERE_2026-09-08.md`
+8. `docs/research/LIFE_PATTERNS_HUMAN_CALIBRATION_UI_V2_2026-09-08.md`
+9. `docs/research/LIFE_PATTERNS_HUMAN_CALIBRATION_UI_REQUIREMENTS_2026-09-08.md`
+10. `docs/research/LIFE_PATTERNS_RECURRENCE_EVIDENCE_POLICY_v2_2026-09-08.md`
+11. `state/LIFE-PATTERNS-DEVELOPMENT-CODING-MANUAL-v2-2026-09-08.md`
+12. `state/LIFE-PATTERNS-RECURRENCE-EVIDENCE-CORRECTION-2026-09-08.md`
+13. `docs/research/LIFE_PATTERNS_RECURRENCE_EVIDENCE_PRIOR_WORK_SCAN_2026-09-08.md`
+14. `state/LIFE-PATTERNS-PRIVATE-ARTIFACT-RECOVERY-VERIFIED-2026-09-07.json`
+15. `state/CURRENT-STATE.md`
+16. `state/LIFE-PATTERNS-DEVELOPMENT-HANDOFF-2026-09-06.md`
 
 ## Current controlling state
 
-Recovery, recurrence-method correction, the exact private recurrence-v2 freeze, and the human-facing offline UI gate are complete. **The current scientific blocker is the independent theory-blind human first pass.** No automated Life Patterns coding may start before that pass is frozen.
+Recovery, recurrence-method correction, the exact private recurrence-v2 freeze, the human-facing offline UI gate, and owner-deliverable auditor transport preparation are complete. **The current scientific blocker is the independent theory-blind human first pass.** No automated Life Patterns coding may start before that pass is frozen.
 
 ### Recurrence-corrected method
 
@@ -61,17 +63,6 @@ No private participant text or private handoff bytes are committed.
 
 ### Offline human calibration UI — gate closed
 
-Base UI components:
-
-- `scripts/build_life_patterns_human_calibration_ui_v2.py`
-- `scripts/life_patterns_human_calibration_ui_v2_template.zlib.b64`
-- `tests/unit/test_life_patterns_human_calibration_ui_v2.py`
-
-Portable local-crypto layer:
-
-- `scripts/build_life_patterns_human_calibration_ui_v2_portable.py`
-- `tests/unit/test_life_patterns_human_calibration_ui_v2_portability.py`
-
 Portable implementation/test head:
 
 `878ffb21d964a643acd04056f14064f323de0545`
@@ -84,26 +75,31 @@ The exact private portable standalone HTML is:
 - bytes: 3,982,068
 - SHA-256: `66fda4ceada51b4f82fe2c7f8a93c6d9efe886e1063a9d23fece88b79f1f6690`
 
-It embeds private participant evidence and must remain private/offline; it is not committed. Native WebCrypto is preferred; a self-contained pure-JavaScript SHA-256 fallback preserves local content-address verification when WebCrypto is unavailable. This changes no measurement or response semantics.
+It embeds private participant evidence and must remain private/offline; it is not committed. A Chromium render/interaction smoke passed on those exact HTML bytes: cryptographic verification, episode and series rendering, recurrence-v2 controls, temporary save/progress download/reload, fail-closed incomplete final export, zero network requests, zero page errors, and zero console errors.
 
-A Chromium render/interaction smoke passed on those exact HTML bytes. The UI:
+### Current owner-deliverable auditor kit
 
-- cryptographically verified `LPHB2-F34245FAE32B513DDCFE` before showing evidence;
-- rendered the first episode and exact participant source;
-- navigated to repeated-series evidence;
-- exposed the recurrence-v2 fields when `Observed` was selected;
-- saved one explicitly temporary smoke response, downloaded progress, reloaded it, and restored state;
-- failed closed when final export was attempted without all 66 units and a valid attestation;
-- made **zero network requests**;
-- produced zero page errors and zero console errors.
+The current private delivery wrapper contains exactly two files:
 
-The temporary smoke response was not a research annotation and was never submitted or committed. Container policy blocks `file://`/HTTP navigation, so the exact bytes were loaded into Chromium via `page.set_content`; the auditor should simply confirm the private file opens normally on their own browser before beginning.
+- the exact verified private HTML above;
+- the current theory-neutral `START-HERE.md` guide from `docs/research/LIFE_PATTERNS_INDEPENDENT_AUDITOR_START_HERE_2026-09-08.md`.
+
+Current delivery kit:
+
+- filename: `Life-Patterns-Independent-Auditor-Kit-V2-2026-09-09.zip`
+- bytes: `801,580`
+- SHA-256: `af1b65bb7eafcd1da2cc3ca79aedc6373f265aea95a6d5064943413410093405`
+- member count: 2
+
+Receipt: `state/LIFE-PATTERNS-INDEPENDENT-AUDITOR-DELIVERY-KIT-RECEIPT-2026-09-09.json`.
+
+This is a new transport wrapper around the **same measurement-bearing HTML bytes**; it does not alter the selected units, measurement stack, handoff, or response contracts. The earlier private kit receipt remains historical provenance only.
 
 ## Exact next gate — independent human first pass
 
-Give the exact verified private standalone HTML to an **eligible independent theory-blind human auditor**. The participant/theory-exposed owner cannot serve as the independent benchmark, although a separately identified owner sensitivity pass remains possible.
+Give the current private delivery kit to an **eligible independent theory-blind human auditor**. The participant/theory-exposed owner cannot serve as the independent benchmark, although a separately identified owner sensitivity pass remains possible.
 
-Before beginning, the auditor should confirm the file opens normally. During the first pass they must not have access to:
+Before beginning, the auditor should confirm the HTML opens normally. During the first pass they must not have access to:
 
 - automated coder labels;
 - automated consensus;
