@@ -54,6 +54,7 @@ def patch_html_for_nonredundant_provenance(html: str) -> str:
 .provenancebox h3{margin:0 0 5px;font-size:15px}.provenancebox p{margin:0 0 8px}
 .provenancenote{margin:10px 0 0;padding:9px 11px;border-radius:9px;background:#f3f7f5;color:#51605a;font-size:12px}
 .provenancelist{display:grid;gap:7px}.provenancelist label{display:flex;gap:8px;align-items:flex-start}
+.quotelabel{font-weight:700}.quotesnippet{display:block;color:#46554f;margin-top:2px}
 </style>
 </head>""",
         1,
@@ -62,7 +63,7 @@ def patch_html_for_nonredundant_provenance(html: str) -> str:
     html = _replace_function(
         html,
         "renderSources",
-        '''function renderSources(u,r){const segments=u.task.exact_source_segments||[];const support=new Set(r.supporting_source_segment_ids||[]),counter=new Set(r.counterevidence_source_segment_ids||[]);const observed=r.state==="observed";const cards=segments.map(s=>`<article class="source"><div class="sourceid">${esc(s.segment_id)}</div><p>${esc(s.exact_text||s.exact_participant_text||"")}</p></article>`).join("");let provenance="";if(observed&&segments.length===1){const s=segments[0];provenance=`<div class="provenancenote"><input type="checkbox" hidden data-source="support" value="${esc(s.segment_id)}" checked>Because there is only one exact quote in this unit, it will be saved automatically as the source for your Yes answer. No extra citation decision is needed.</div>`}else if(observed&&segments.length>1){provenance=`<div class="provenancebox"><h3>Which quote(s) show the behavior you selected?</h3><p class="hint">This is only source bookkeeping. Select the exact quote(s) you actually relied on for your Yes answer.</p><div class="provenancelist">${segments.map(s=>`<label><input type="checkbox" data-source="support" value="${esc(s.segment_id)}" ${support.has(s.segment_id)?"checked":""}> <span><b>${esc(s.segment_id)}</b></span></label>`).join("")}</div></div>`}if(observed&&segments.length){provenance+=`<details class="details provenancebox"><summary>Optional: does any quote contain an exception or conflicting detail?</summary><p class="hint">Use this only when some exact text genuinely limits, qualifies, or conflicts with the behavior you selected. Most units need nothing here.</p><div class="provenancelist">${segments.map(s=>`<label><input type="checkbox" data-source="counter" value="${esc(s.segment_id)}" ${counter.has(s.segment_id)?"checked":""}> <span>${esc(s.segment_id)}</span></label>`).join("")}</div></details>`}$("sources").innerHTML=cards+provenance}''',
+        '''function renderSources(u,r){const segments=u.task.exact_source_segments||[];const support=new Set(r.supporting_source_segment_ids||[]),counter=new Set(r.counterevidence_source_segment_ids||[]);const observed=r.state==="observed";const quoteName=i=>segments.length===1?"Exact quote":`Exact quote ${i+1}`;const quoteText=s=>s.exact_text||s.exact_participant_text||"";const cards=segments.map((s,i)=>`<article class="source"><div class="sourceid">${esc(quoteName(i))}</div><p>${esc(quoteText(s))}</p></article>`).join("");let provenance="";if(observed&&segments.length===1){const s=segments[0];provenance=`<div class="provenancenote"><input type="checkbox" hidden data-source="support" value="${esc(s.segment_id)}" checked>Because there is only one exact quote in this unit, it will be saved automatically as the source for your Yes answer. No extra citation decision is needed.</div>`}else if(observed&&segments.length>1){provenance=`<div class="provenancebox"><h3>Which quote(s) show the behavior you selected?</h3><p class="hint">This is only source bookkeeping. Select the exact quote(s) you actually relied on for your Yes answer.</p><div class="provenancelist">${segments.map((s,i)=>`<label><input type="checkbox" data-source="support" value="${esc(s.segment_id)}" ${support.has(s.segment_id)?"checked":""}> <span><span class="quotelabel">${esc(quoteName(i))}</span><span class="quotesnippet">${esc(quoteText(s))}</span></span></label>`).join("")}</div></div>`}if(observed&&segments.length){provenance+=`<details class="details provenancebox"><summary>Optional: does any quote contain an exception or conflicting detail?</summary><p class="hint">Use this only when some exact text genuinely limits, qualifies, or conflicts with the behavior you selected. Most units need nothing here.</p><div class="provenancelist">${segments.map((s,i)=>`<label><input type="checkbox" data-source="counter" value="${esc(s.segment_id)}" ${counter.has(s.segment_id)?"checked":""}> <span><span class="quotelabel">${esc(quoteName(i))}</span><span class="quotesnippet">${esc(quoteText(s))}</span></span></label>`).join("")}</div></details>`}$("sources").innerHTML=cards+provenance}''',
     )
     html = _replace_function(
         html,
@@ -82,6 +83,8 @@ def patch_html_for_nonredundant_provenance(html: str) -> str:
         raise ValueError("provenance UI patch is missing multi-source provenance selector")
     if "No extra citation decision is needed" not in html:
         raise ValueError("provenance UI patch is missing single-source auto-binding explanation")
+    if "Exact quote ${i+1}" not in html or "quotesnippet" not in html:
+        raise ValueError("provenance UI patch must identify source choices by human-readable quote text")
     return html
 
 
@@ -115,6 +118,8 @@ def build_plain_provenance_standalone_human_calibration_ui_v2(
         single_source_support_auto_bound=True,
         multi_source_support_requires_explicit_selection=True,
         counterevidence_control_optional_and_secondary=True,
+        opaque_source_ids_hidden_from_human_choices=True,
+        source_choices_show_quote_text=True,
         embedded_private_handoff_unchanged=True,
         selected_calibration_units_changed=False,
         response_contract_changed=False,
