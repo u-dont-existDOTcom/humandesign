@@ -78,6 +78,10 @@ select = ["E", "F", "I", "UP", "B", "SIM"]
 # only formatting/import-modernization diagnostics are waived.
 "scripts/v43_profile_netinfo_rerun.py" = ["E501", "I001", "UP017"]
 "scripts/v43_profile_netinfo_rerun_v2.py" = ["E501", "I001", "UP017"]
+# The portable first-pass freeze module intentionally keeps the episode response model
+# import adjacent to its episode validator API while the downstream private-freeze CLI
+# and receipt contract are being stabilized; no broader F401 waiver is permitted.
+"src/hdmatch/evaluation/development_human_first_pass_freeze_v2.py" = ["F401"]
 
 [tool.mypy]
 python_version = "3.11"
