@@ -1,0 +1,63 @@
+{
+  "automated_coding_run": false,
+  "chromium": {
+    "executable": "/usr/bin/chromium",
+    "headless": true,
+    "render_and_interaction_completed": true
+  },
+  "contains_private_participant_text": false,
+  "development_only": true,
+  "ephemeral_smoke_response_is_not_research_annotation": true,
+  "human_first_pass_received": false,
+  "interaction": {
+    "attestation_modal_title": "Independence and exposure attestation",
+    "counter_after_next": "1 / 66 saved · unit 2",
+    "counter_after_reload": "1 / 66 saved · unit 1",
+    "ephemeral_note_restored": true,
+    "first_series_kind": "Repeated series",
+    "incomplete_export_errors_include_66_units": true,
+    "incomplete_export_errors_include_auditor_id": true,
+    "incomplete_final_export_blocked": true,
+    "one_ephemeral_insufficient_response_saved": true,
+    "progress_export_response_count": 1,
+    "progress_exported": true,
+    "progress_reloaded": true,
+    "recurrence_specific_controls_present_when_observed": true,
+    "saved_counter": "1 / 66 saved · unit 1",
+    "saved_marker": "✓ saved",
+    "series_exact_source_rendered": true,
+    "series_observable": "NBM-R06"
+  },
+  "network_and_runtime": {
+    "console_errors": [],
+    "no_console_errors": true,
+    "no_external_network_requests": true,
+    "no_page_errors": true,
+    "page_errors": [],
+    "reason_fallback_exercised": "WebCrypto is unavailable in the about:blank document context used by page.set_content; bundle verification still passed using the pure-JavaScript SHA-256 fallback.",
+    "request_count": 0,
+    "requests": [],
+    "sha256_fallback_exercised": true
+  },
+  "schema_version": "life-patterns-human-calibration-ui-v2-browser-smoke-v1",
+  "screenshots_reviewed_privately": true,
+  "target_model_scoring_run": false,
+  "tested_html": {
+    "bytes": 3982068,
+    "direct_file_or_http_navigation_used": false,
+    "exact_bytes_rendered_in_chromium": true,
+    "filename": "Life-Patterns-Human-Calibration-V2-OFFLINE.html",
+    "render_method": "Chromium page.set_content because file/http navigation is administratively blocked in this execution container",
+    "sha256": "66fda4ceada51b4f82fe2c7f8a93c6d9efe886e1063a9d23fece88b79f1f6690"
+  },
+  "validation_use_forbidden": true,
+  "verification": {
+    "initial_counter": "0 / 66 saved · unit 1",
+    "initial_exact_source_rendered": true,
+    "initial_kind": "Episode",
+    "initial_observable": "NBM-R16",
+    "verification_status_contains_expected_receipt": true,
+    "verified_badge": "Bundle verified"
+  },
+  "scope_note": "This was an operational browser/render/interaction smoke test only. The one temporary insufficient response existed only to exercise save/export/reload behavior and is explicitly not a human research annotation, human first pass, or scientific evidence. No participant text or screenshot bytes are committed in this receipt."
+}
