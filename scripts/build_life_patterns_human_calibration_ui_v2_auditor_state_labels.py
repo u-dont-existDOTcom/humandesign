@@ -16,7 +16,7 @@ from pathlib import Path
 from typing import Any
 
 from build_life_patterns_human_calibration_ui_v2_auditor_final import (
-    build_final_auditor_human_calibration_ui_v2,
+    build_final_auditor_ui_v2,
 )
 
 
@@ -87,7 +87,7 @@ def build_state_clarified_auditor_ui_v2(
         raise FileExistsError(f"output already exists: {output}")
     with tempfile.TemporaryDirectory(prefix="life-patterns-ui-v2-state-labels-") as temporary:
         base = Path(temporary) / "auditor.html"
-        base_receipt = build_final_auditor_human_calibration_ui_v2(handoff_zip, base)
+        base_receipt = build_final_auditor_ui_v2(handoff_zip, base)
         before = base.read_text(encoding="utf-8")
         after = patch_html_for_evidence_state_clarity(before)
     output.parent.mkdir(parents=True, exist_ok=True)
