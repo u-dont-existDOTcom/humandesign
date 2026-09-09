@@ -20,7 +20,7 @@ from pathlib import Path
 from typing import Any
 
 from build_life_patterns_human_calibration_ui_v2_auditor_final import (
-    build_final_auditor_human_calibration_ui_v2,
+    build_final_auditor_ui_v2,
 )
 
 
@@ -124,7 +124,7 @@ def build_direct_choice_human_calibration_ui_v2(
 
     with tempfile.TemporaryDirectory(prefix="life-patterns-ui-v2-direct-choice-") as temporary:
         previous = Path(temporary) / "auditor.html"
-        base_receipt = build_final_auditor_human_calibration_ui_v2(handoff_zip, previous)
+        base_receipt = build_final_auditor_ui_v2(handoff_zip, previous)
         before = previous.read_text(encoding="utf-8")
         after = patch_html_for_direct_behavior_choice(before)
 
