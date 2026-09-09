@@ -29,7 +29,9 @@ Source citation is bookkeeping, not a second behavioral judgment:
 - if there are **several exact quotes**, select only the quote(s) you actually relied on for the behavior you chose;
 - an optional collapsed control lets you mark a quote that genuinely contains an exception, limitation, or conflicting detail. Most units need nothing there.
 
-You do not need to understand internal R16-a / R16-b style codes. They are identifiers for the exported data.
+You do **not** need to interpret internal source identifiers such as `EP-002-SEG-01`. Those are stable machine provenance keys used only in the exported data. Human-facing source choices show `Exact quote`, `Exact quote 1`, etc. plus the actual quote text.
+
+You do not need to understand internal R16-a / R16-b style codes either. They are identifiers for the exported data.
 
 Open **Formal definition and coding rules** only when the plain question is not enough to decide.
 
@@ -51,11 +53,11 @@ If you have already seen disqualifying information, say so honestly in the attes
 
 Open:
 
-`Life-Patterns-Human-Calibration-V2-PLAIN.html`
+`Life-Patterns-Human-Calibration-V2-PLAIN-READABLE-SOURCES.html`
 
 Expected SHA-256:
 
-`0d123b0eca37988157282f9b70f0030e7af106e33155e04b30ffe76f68eff568`
+`f5889d34d6160a44fc902263fd68a7b3d13404418127967400221334ae8379f3`
 
 The page should say **Bundle verified**. If it does not, stop and report the technical problem.
 
