@@ -17,7 +17,7 @@ The independent human coder should not hand-edit JSON. This interface turns the 
 
 ## Implementation
 
-Builder:
+Base verified builder:
 
 `./scripts/build_life_patterns_human_calibration_ui_v2.py`
 
@@ -25,12 +25,18 @@ Compressed public-safe standalone template:
 
 `./scripts/life_patterns_human_calibration_ui_v2_template.zlib.b64`
 
+Portable local-cryptography wrapper:
+
+`./scripts/build_life_patterns_human_calibration_ui_v2_portable.py`
+
 The compressed template contains only interface code/copy. It contains no participant evidence. Private participant-bearing handoff members are embedded only when the builder runs locally against a verified private handoff ZIP.
 
-Example private build:
+The portable wrapper does **not** reinterpret or rewrite the measurement. It first calls the base verified builder, then fail-closed replaces exactly one strict WebCrypto-only SHA-256 gate with a verifier that prefers native `crypto.subtle` and falls back to a self-contained pure-JavaScript SHA-256 implementation when WebCrypto is unavailable in the local document context. The response contract, evidence, codebook, recurrence semantics, packet identities and offline/no-network boundary remain unchanged.
+
+Recommended private build:
 
 ```bash
-python scripts/build_life_patterns_human_calibration_ui_v2.py \
+python scripts/build_life_patterns_human_calibration_ui_v2_portable.py \
   --handoff-zip /private/path/human-calibration-v2.zip \
   --output-html /private/path/Life-Patterns-Human-Calibration-V2-OFFLINE.html
 ```
@@ -108,26 +114,47 @@ The owner-reuploaded recurrence-corrected handoff verified on 2026-09-08 is:
 - package: `LPKG2-F93D8245B78CD9FDCF5D`
 - selected units: `44 episode + 22 series`
 
-A private standalone UI was generated from those exact bytes:
+The current private portable standalone UI generated from those exact bytes is:
 
 - filename: `Life-Patterns-Human-Calibration-V2-OFFLINE.html`
-- bytes: `3,980,290`
-- SHA-256: `63baa191a93c49cbdfb459d4d5e3f96ff541bdddc3dd2183e5af743f48ce987b`
+- bytes: `3,982,068`
+- SHA-256: `66fda4ceada51b4f82fe2c7f8a93c6d9efe886e1063a9d23fece88b79f1f6690`
 
 The generated private HTML is not committed.
 
-## Verification performed in the continuation runtime
+## Verification performed
+
+Engineering verification:
 
 - input private handoff independently reverified before UI generation;
-- builder deterministically reproduced the same private HTML bytes after source/template separation;
-- generated JavaScript extracted and passed `node --check`;
+- base builder deterministically reproduced its expected private HTML bytes after source/template separation;
+- generated JavaScript extracted and passed syntax checking;
 - static scan found zero `fetch(`, `XMLHttpRequest`, `WebSocket`, `EventSource`, `http://`, `https://`, `<img>`, `<iframe>`, or `<link>` usage;
-- synthetic unit tests cover valid generation, member-hash tampering and unreceipted-extra-member rejection;
-- repository CI is the engineering gate for the committed builder/tests.
+- unit tests cover valid generation, member-hash tampering and unreceipted-extra-member rejection;
+- portability tests fail closed on template drift and verify native-WebCrypto preference plus the SHA-256 fallback injection;
+- hosted CI `34302364461` on portability implementation/test head `878ffb21d964a643acd04056f14064f323de0545` passed **608 tests with 7 expected skips**, Ruff, and strict mypy for 171 source files.
 
-### Visual verification limitation
+### Chromium render/interaction smoke — passed 2026-09-09
 
-A browser screenshot/interaction confirmation was attempted in the continuation environment, but the available Chromium runtime hung even on an empty page because of the container/browser environment. Therefore browser visual confirmation is **not claimed** here. This is an explicit degraded-mode verification gap, not a passed check. The standalone interface should receive a normal-browser smoke/visual pass before an external auditor is asked to use it if a suitable local browser execution surface is available.
+The exact current private portable HTML bytes completed a bounded Chromium interaction smoke. Public-safe receipt:
+
+`state/LIFE-PATTERNS-HUMAN-CALIBRATION-UI-V2-BROWSER-SMOKE-2026-09-09.json`
+
+Verified behavior included:
+
+- embedded handoff cryptographic verification completed before evidence display;
+- first episode and exact participant source rendered;
+- repeated-series evidence rendered separately;
+- recurrence-v2 controls appeared for observed series evidence;
+- one explicitly temporary smoke-only response was saved, progress was downloaded/reloaded and state was restored;
+- incomplete final export failed closed until all 66 units and the eligible attestation are complete;
+- zero external network requests;
+- zero page errors;
+- zero console errors.
+
+The temporary smoke response is **not** a research annotation and was not submitted or committed. Private screenshots used for visual inspection are not committed.
+
+The execution container administratively blocks direct `file://` and local HTTP navigation, so the exact HTML bytes were rendered in Chromium via `page.set_content`. The auditor should confirm the file opens normally in their own local browser before beginning. This is an operational environment caveat, not an unresolved measurement-method decision.
 
 ## Scientific boundary
 
@@ -139,4 +166,4 @@ The UI is measurement transport only. It does not establish:
 - target-theory truth;
 - eligibility for validation use.
 
-Independent human coding must be completed and frozen before any automated Life Patterns coding is run. Human and automated outputs must then remain separately preserved before comparison.
+The **current scientific gate is the independent theory-blind human first pass**. It must be completed and frozen before any automated Life Patterns coding is run. Human and automated outputs must then remain separately preserved before comparison.
