@@ -21,9 +21,15 @@ Example: if the question asks whether the narrator **sought or used someone else
 
 ## If you answer Yes
 
-Choose the behavior that the exact quote shows. Then mark the quote(s) that are evidence for that selected behavior.
+Choose the behavior that the exact quote shows.
 
-You do not need to understand the internal R16-a / R16-b style codes. They are identifiers for the exported data.
+Source citation is bookkeeping, not a second behavioral judgment:
+
+- if the unit contains **one exact quote**, the interface saves that quote automatically as the source for your Yes answer; there is no extra citation checkbox to answer;
+- if there are **several exact quotes**, select only the quote(s) you actually relied on for the behavior you chose;
+- an optional collapsed control lets you mark a quote that genuinely contains an exception, limitation, or conflicting detail. Most units need nothing there.
+
+You do not need to understand internal R16-a / R16-b style codes. They are identifiers for the exported data.
 
 Open **Formal definition and coding rules** only when the plain question is not enough to decide.
 
@@ -49,7 +55,7 @@ Open:
 
 Expected SHA-256:
 
-`5d064760d05c1ba7e04bef5eb4469f258eb448b15e4870fbd065a62a7c9384bb`
+`0d123b0eca37988157282f9b70f0030e7af106e33155e04b30ffe76f68eff568`
 
 The page should say **Bundle verified**. If it does not, stop and report the technical problem.
 
