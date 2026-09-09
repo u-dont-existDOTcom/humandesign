@@ -12,14 +12,15 @@ Before substantive work, fetch the **current PR #24 head** and treat GitHub as c
 2. `state/LIFE-PATTERNS-CURRENT-STATE-2026-09-09.md`
 3. `state/LIFE-PATTERNS-HUMAN-UI-COMPREHENSION-DEFECT-2026-09-09.md`
 4. `state/LIFE-PATTERNS-HUMAN-CALIBRATION-UI-PLAIN-VERIFIED-2026-09-09.json`
-5. `docs/research/LIFE_PATTERNS_INDEPENDENT_AUDITOR_START_HERE_PLAIN_2026-09-09.md`
-6. `state/LIFE-PATTERNS-V2-PRIVATE-FREEZE-VERIFIED-2026-09-08.json`
-7. `docs/research/LIFE_PATTERNS_RECURRENCE_EVIDENCE_POLICY_v2_2026-09-08.md`
-8. `state/LIFE-PATTERNS-DEVELOPMENT-CODING-MANUAL-v2-2026-09-08.md`
-9. `state/LIFE-PATTERNS-RECURRENCE-EVIDENCE-CORRECTION-2026-09-08.md`
-10. `state/LIFE-PATTERNS-PRIVATE-ARTIFACT-RECOVERY-VERIFIED-2026-09-07.json`
-11. `state/CURRENT-STATE.md`
-12. `state/LIFE-PATTERNS-DEVELOPMENT-HANDOFF-2026-09-06.md`
+5. `state/LIFE-PATTERNS-INDEPENDENT-AUDITOR-PLAIN-KIT-RECEIPT-2026-09-09.json`
+6. `docs/research/LIFE_PATTERNS_INDEPENDENT_AUDITOR_START_HERE_PLAIN_2026-09-09.md`
+7. `state/LIFE-PATTERNS-V2-PRIVATE-FREEZE-VERIFIED-2026-09-08.json`
+8. `docs/research/LIFE_PATTERNS_RECURRENCE_EVIDENCE_POLICY_v2_2026-09-08.md`
+9. `state/LIFE-PATTERNS-DEVELOPMENT-CODING-MANUAL-v2-2026-09-08.md`
+10. `state/LIFE-PATTERNS-RECURRENCE-EVIDENCE-CORRECTION-2026-09-08.md`
+11. `state/LIFE-PATTERNS-PRIVATE-ARTIFACT-RECOVERY-VERIFIED-2026-09-07.json`
+12. `state/CURRENT-STATE.md`
+13. `state/LIFE-PATTERNS-DEVELOPMENT-HANDOFF-2026-09-06.md`
 
 ## Current controlling state
 
@@ -29,7 +30,7 @@ The exact private source recovery, recurrence-v2 method correction, private v2 f
 
 Owner browser review of the earlier auditor kit showed that the UI exposed machine/codebook semantics instead of an intelligible human task. The decisive example paired a story where the narrator offered help to another person with `NBM-R16 — Help seeking/use`; the old screen did not plainly say that R16 asks whether the **narrator sought, accepted, declined, delegated to, or used somebody else's help for the narrator's own need**. `Supporting` and `Narrator influence / precedence` were also underspecified.
 
-That earlier delivery kit is superseded for new human collection.
+All earlier auditor kits are superseded for new human collection.
 
 The new presentation layer:
 
@@ -63,6 +64,10 @@ Current private auditor kit:
 - bytes: `803,546`
 - SHA-256: `1375a70fa6387e71f2402888d6b17e298c234f11b5c127da49d7f3cb969c6b49`
 - members: the exact private plain HTML + `START-HERE.md`.
+
+Public-safe receipt:
+
+`state/LIFE-PATTERNS-INDEPENDENT-AUDITOR-PLAIN-KIT-RECEIPT-2026-09-09.json`
 
 Focused browser verification on the exact HTML confirmed bundle verification, R16 help-direction clarity, No-path field suppression, scoped Yes-path citations/influence, humanized series recurrence controls, progress save/download/reload, fail-closed incomplete final export, and zero network requests/page errors.
 
