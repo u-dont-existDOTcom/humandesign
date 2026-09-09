@@ -67,6 +67,11 @@ def patch_html_for_nonredundant_provenance(html: str) -> str:
     )
     html = _replace_function(
         html,
+        "episodeInfluence",
+        '''function episodeInfluence(u,r){const rel=r.influence_relation||"none_reported";const inf=new Set(r.influence_source_segment_ids||[]);const segments=u.task.exact_source_segments||[];const quoteName=i=>segments.length===1?"Exact quote":`Exact quote ${i+1}`;const quoteText=s=>s.exact_text||s.exact_participant_text||"";return`<details class="section details"><summary>Optional: does the narrator explicitly say something influenced the behavior you selected?</summary><p class="hint">This is only about the behavior you coded above. Do not record a causal statement about some other action in the story.</p>${selectField("influenceRelation","Relation to the selected behavior",INFLUENCE,rel,false)}${rel!=="none_reported"?`<div class="field"><span class="labelish">Which exact quote states or establishes that relation?</span><div class="provenancelist">${segments.map((s,i)=>`<label><input type="checkbox" data-source="influence" value="${esc(s.segment_id)}" ${inf.has(s.segment_id)?"checked":""}> <span><span class="quotelabel">${esc(quoteName(i))}</span><span class="quotesnippet">${esc(quoteText(s))}</span></span></label>`).join("")}</div></div>`:""}</details>`}''',
+    )
+    html = _replace_function(
+        html,
         "updateStateSemantics",
         '''function updateStateSemantics(u,state){$("stateSemantics").textContent=state==="observed"?"If Yes, choose the behavior below. With one exact quote, source provenance is saved automatically; with several, choose only the quote(s) you relied on.":state==="not_applicable"?"No behavioral value or source citation is needed.":state==="insufficient"?"No behavioral value or source citation is needed; use an uncertainty flag or note only if it helps explain why.":""}''',
     )
