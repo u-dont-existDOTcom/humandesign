@@ -10,119 +10,91 @@ Before substantive work, fetch the **current PR #24 head** and treat GitHub as c
 
 1. `tasks/ACTIVE-TASK.json`
 2. `state/LIFE-PATTERNS-CURRENT-STATE-2026-09-09.md`
-3. `state/LIFE-PATTERNS-V2-PRIVATE-FREEZE-VERIFIED-2026-09-08.json`
-4. `state/LIFE-PATTERNS-HUMAN-CALIBRATION-UI-V2-VERIFIED-2026-09-08.json`
-5. `state/LIFE-PATTERNS-HUMAN-CALIBRATION-UI-V2-BROWSER-SMOKE-2026-09-09.json`
-6. `state/LIFE-PATTERNS-INDEPENDENT-AUDITOR-DELIVERY-KIT-RECEIPT-2026-09-09.json`
-7. `docs/research/LIFE_PATTERNS_INDEPENDENT_AUDITOR_START_HERE_2026-09-08.md`
-8. `docs/research/LIFE_PATTERNS_HUMAN_CALIBRATION_UI_V2_2026-09-08.md`
-9. `docs/research/LIFE_PATTERNS_HUMAN_CALIBRATION_UI_REQUIREMENTS_2026-09-08.md`
-10. `docs/research/LIFE_PATTERNS_RECURRENCE_EVIDENCE_POLICY_v2_2026-09-08.md`
-11. `state/LIFE-PATTERNS-DEVELOPMENT-CODING-MANUAL-v2-2026-09-08.md`
-12. `state/LIFE-PATTERNS-RECURRENCE-EVIDENCE-CORRECTION-2026-09-08.md`
-13. `docs/research/LIFE_PATTERNS_RECURRENCE_EVIDENCE_PRIOR_WORK_SCAN_2026-09-08.md`
-14. `state/LIFE-PATTERNS-PRIVATE-ARTIFACT-RECOVERY-VERIFIED-2026-09-07.json`
-15. `state/CURRENT-STATE.md`
-16. `state/LIFE-PATTERNS-DEVELOPMENT-HANDOFF-2026-09-06.md`
+3. `state/LIFE-PATTERNS-HUMAN-UI-COMPREHENSION-DEFECT-2026-09-09.md`
+4. `state/LIFE-PATTERNS-HUMAN-CALIBRATION-UI-PLAIN-VERIFIED-2026-09-09.json`
+5. `docs/research/LIFE_PATTERNS_INDEPENDENT_AUDITOR_START_HERE_PLAIN_2026-09-09.md`
+6. `state/LIFE-PATTERNS-V2-PRIVATE-FREEZE-VERIFIED-2026-09-08.json`
+7. `docs/research/LIFE_PATTERNS_RECURRENCE_EVIDENCE_POLICY_v2_2026-09-08.md`
+8. `state/LIFE-PATTERNS-DEVELOPMENT-CODING-MANUAL-v2-2026-09-08.md`
+9. `state/LIFE-PATTERNS-RECURRENCE-EVIDENCE-CORRECTION-2026-09-08.md`
+10. `state/LIFE-PATTERNS-PRIVATE-ARTIFACT-RECOVERY-VERIFIED-2026-09-07.json`
+11. `state/CURRENT-STATE.md`
+12. `state/LIFE-PATTERNS-DEVELOPMENT-HANDOFF-2026-09-06.md`
 
 ## Current controlling state
 
-Recovery, recurrence-method correction, the exact private recurrence-v2 freeze, the human-facing offline UI gate, and owner-deliverable auditor transport preparation are complete. **The current scientific blocker is the independent theory-blind human first pass.** No automated Life Patterns coding may start before that pass is frozen.
+The exact private source recovery, recurrence-v2 method correction, private v2 freeze, and human-facing transport correction are complete. **The current scientific blocker is the independent theory-blind human first pass.** No automated Life Patterns coding may start before that pass is frozen.
 
-### Recurrence-corrected method
+## Owner-identified UI defect — resolved before human collection
 
-Pinned substantive method head:
+Owner browser review of the earlier auditor kit showed that the UI exposed machine/codebook semantics instead of an intelligible human task. The decisive example paired a story where the narrator offered help to another person with `NBM-R16 — Help seeking/use`; the old screen did not plainly say that R16 asks whether the **narrator sought, accepted, declined, delegated to, or used somebody else's help for the narrator's own need**. `Supporting` and `Narrator influence / precedence` were also underspecified.
 
-`7b689f3adb49da599abb40ec2bff27ad97d3887f`
+That earlier delivery kit is superseded for new human collection.
 
-CI `34271174611`: success.
+The new presentation layer:
 
-The additive v2 method preserves historical v1 artifacts while correcting the episode-centric recurrence defect:
+- asks one ordinary-language behavior question per story/unit;
+- explicitly defines narrator direction;
+- says story/question pairs do not have to match;
+- renders states as `Yes — clearly shown`, `No — does not fit`, and `Can't tell` while exporting the same frozen values;
+- for R16 explicitly distinguishes seeking/using help from offering help;
+- labels source citation as `Use this quote as evidence for the behavior I selected`;
+- exposes influence only as optional metadata scoped to the selected behavior;
+- collapses formal rules and advanced metadata unless needed;
+- preserves the exact embedded private handoff, 44+22 units, response contracts, recurrence semantics and no-network/no-AI boundary.
 
-- generalized behavioral self-report is direct **reported recurrence** evidence;
-- a confirming anecdote selected after the recurrence claim is not independent frequency evidence;
-- recurrence strength, exception status/frequency, and evidence basis remain separate;
-- no fake numerical occurrence floor is required for generalized recurrence language;
-- no target-model information was used to make the revision.
+Public implementation/test head:
 
-### Exact private v2 freeze
+`5583e4241f6c5146127db3100c59b2366e2a939a`
 
-Verified private identities:
+CI `34370038001`: **success — 617 passed, 7 expected skips; Ruff passed; strict mypy passed for 172 source files.**
 
-- package: `LPKG2-F93D8245B78CD9FDCF5D`
-- package SHA-256: `f93d8245b78cd9fdcf5dd96f1cc321171f628015ca155b8fae0df4fcb826313a`
-- handoff: `LPHB2-F34245FAE32B513DDCFE`
-- handoff SHA-256: `f34245fae32b513ddcfe22b7d21081997e8c28e18fccd25b962c30af2fe0a78f`
-- owner-reuploaded transport ZIP: 422,297 bytes; SHA-256 `f038237a6a1ce776bb28846b76ff49339e7a9e7f28d33c5d1ad877e0d916d837`; 15 members
-- historical calibration selection reused exactly: `LPCA-5B3E6CFCCE49807050DF`
-- selected units: 44 episode + 22 repeated-series units
-- no resampling
-- no human labels, automated labels, consensus, or target scoring.
+## Current private human UI and delivery kit
 
-No private participant text or private handoff bytes are committed.
+Private plain HTML:
 
-### Offline human calibration UI — gate closed
+- delivery filename: `Life-Patterns-Human-Calibration-V2-PLAIN.html`
+- bytes: `3,995,747`
+- SHA-256: `5d064760d05c1ba7e04bef5eb4469f258eb448b15e4870fbd065a62a7c9384bb`
 
-Portable implementation/test head:
+Current private auditor kit:
 
-`878ffb21d964a643acd04056f14064f323de0545`
+- filename: `Life-Patterns-Independent-Auditor-Kit-V2-PLAIN-2026-09-09.zip`
+- bytes: `803,546`
+- SHA-256: `1375a70fa6387e71f2402888d6b17e298c234f11b5c127da49d7f3cb969c6b49`
+- members: the exact private plain HTML + `START-HERE.md`.
 
-CI `34302364461`: **success — 608 passed, 7 expected skips; Ruff passed; strict mypy passed for 171 source files.**
+Focused browser verification on the exact HTML confirmed bundle verification, R16 help-direction clarity, No-path field suppression, scoped Yes-path citations/influence, humanized series recurrence controls, progress save/download/reload, fail-closed incomplete final export, and zero network requests/page errors.
 
-The exact private portable standalone HTML is:
+The measurement-bearing handoff remains:
 
-- filename: `Life-Patterns-Human-Calibration-V2-OFFLINE.html`
-- bytes: 3,982,068
-- SHA-256: `66fda4ceada51b4f82fe2c7f8a93c6d9efe886e1063a9d23fece88b79f1f6690`
+- `LPHB2-F34245FAE32B513DDCFE`
+- SHA-256 `f34245fae32b513ddcfe22b7d21081997e8c28e18fccd25b962c30af2fe0a78f`
+- 44 episode + 22 repeated-series units
+- historical `LPCA-5B3E6CFCCE49807050DF` selection reused without resampling.
 
-It embeds private participant evidence and must remain private/offline; it is not committed. A Chromium render/interaction smoke passed on those exact HTML bytes: cryptographic verification, episode and series rendering, recurrence-v2 controls, temporary save/progress download/reload, fail-closed incomplete final export, zero network requests, zero page errors, and zero console errors.
+## Exact next gate
 
-### Current owner-deliverable auditor kit
+Give the current plain-language private kit to an **eligible independent theory-blind human auditor**. The participant/theory-exposed owner cannot serve as the independent benchmark, though a separately identified sensitivity coding is possible.
 
-The current private delivery wrapper contains exactly two files:
+Before and during the first pass, the auditor must not have access to automated labels, automated consensus, target-model outputs/mappings, birth/chart data, expected answers, or AI assistance for coding judgments.
 
-- the exact verified private HTML above;
-- the current theory-neutral `START-HERE.md` guide from `docs/research/LIFE_PATTERNS_INDEPENDENT_AUDITOR_START_HERE_2026-09-08.md`.
-
-Current delivery kit:
-
-- filename: `Life-Patterns-Independent-Auditor-Kit-V2-2026-09-09.zip`
-- bytes: `801,580`
-- SHA-256: `af1b65bb7eafcd1da2cc3ca79aedc6373f265aea95a6d5064943413410093405`
-- member count: 2
-
-Receipt: `state/LIFE-PATTERNS-INDEPENDENT-AUDITOR-DELIVERY-KIT-RECEIPT-2026-09-09.json`.
-
-This is a new transport wrapper around the **same measurement-bearing HTML bytes**; it does not alter the selected units, measurement stack, handoff, or response contracts. The earlier private kit receipt remains historical provenance only.
-
-## Exact next gate — independent human first pass
-
-Give the current private delivery kit to an **eligible independent theory-blind human auditor**. The participant/theory-exposed owner cannot serve as the independent benchmark, although a separately identified owner sensitivity pass remains possible.
-
-Before beginning, the auditor should confirm the HTML opens normally. During the first pass they must not have access to:
-
-- automated coder labels;
-- automated consensus;
-- target-model outputs or mappings;
-- birth/chart data;
-- expected answers.
-
-The auditor must complete all **44 episode + 22 repeated-series units** and the independence/exposure attestation. The UI exports exactly:
+The auditor completes all 66 selected units plus the independence/exposure attestation and returns exactly:
 
 - `episode_responses.completed.jsonl`
 - `series_responses.completed.jsonl`
 - `auditor_attestation.completed.json`
 
-Preserve those exact raw exports unchanged. Validate and freeze them with the v2 first-pass/attestation validators before exposing any automated output.
+Preserve those raw bytes unchanged. Validate and freeze them before exposing any automated output.
 
-Only after the independent human first pass is frozen may the >=3 isolated theory-blind automated development passes begin. Consensus and human-vs-automated comparison come later. Target-model scoring/reveal remains unauthorized.
+Only after that freeze may the >=3 isolated theory-blind automated development passes begin. Consensus and human-vs-automated comparison come later. Target-model scoring/reveal remains unauthorized.
 
 ## Hard boundaries
 
-- never reconstruct private source material from summaries, receipts, memory, or transcript fragments;
-- never commit participant narrative or the private standalone HTML;
-- no merge/deploy;
-- no assistant-initiated participant/auditor recruitment or contact without separate authorization;
-- no spending;
+- do not use any earlier auditor kit for new human collection;
+- do not reselect calibration units after seeing evidence just because some unit pairs are negative/inapplicable;
+- never reconstruct private source material from summaries or receipts;
+- never commit participant narrative or private HTML;
 - no automated Life Patterns coding before the human first pass is frozen;
-- no target-model scoring/reveal.
+- no target-model scoring/reveal;
+- no merge/deploy, assistant-initiated auditor recruitment/contact, or spending without separate authorization.
