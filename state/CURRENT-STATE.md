@@ -1,145 +1,64 @@
 # Current state
 
-## Authoritative branch overlay — Life Patterns recurrence-v2 human calibration — 2026-09-08
+## Authoritative branch overlay — Life Patterns — 2026-09-10
 
-This file is the concise current-state overlay for branch
-`codex/discover-life-patterns-mvp`, draft PR #24. Historical branch state remains
-preserved in Git history and the dated `state/` artifacts; do not infer a current
-next action from superseded sections in older commits.
+This is the concise branch pointer for `codex/discover-life-patterns-mvp`, draft PR #24. Historical state remains preserved in Git history and dated artifacts. Do **not** infer a current next action from older sections or earlier UI/calibration artifacts.
 
-Before substantive continuation, fetch the live PR #24 head and read
-`tasks/NEXT-CONVERSATION-HANDOFF-2026-09-07.md` and `tasks/ACTIVE-TASK.json`.
+Before substantive continuation:
 
-### Scientific/method state
+1. fetch the live PR #24 head;
+2. read `tasks/ACTIVE-TASK.json`;
+3. read `state/LIFE-PATTERNS-CURRENT-STATE-2026-09-10.md`;
+4. read `tasks/NEXT-CONVERSATION-HANDOFF-2026-09-07.md`.
 
-- The owner-identified recurrence-evidence defect was caught **before any human or
-  automated Life Patterns annotation pass existed**.
-- The corrected additive theory-blind v2 method is implemented at pinned substantive
-  head `7b689f3adb49da599abb40ec2bff27ad97d3887f`; hosted CI `34271174611` succeeded.
-- Governing recurrence rule: generalized behavioral self-report is direct evidence of
-  **reported recurrence**. A concrete example selected after that claim is not an
-  independent frequency observation and is not counted as additive frequency support.
-  Recurrence strength, exception status/frequency and evidence basis remain separate.
-- Historical v1 codebook/package artifacts remain unchanged and reproducible; v2 reuses
-  the same theory-blind behavioral base and exact 28-value non-action registry while
-  binding the recurrence-corrected manual/policy/response contract.
-- No Human Design mapping, chart/birth data, target-model result, automated label or
-  expected answer was used to make the recurrence revision.
+## Current gate
 
-Primary v2 method artifacts:
+The independent target-theory-blind v4 contract review is frozen at:
 
-- `state/LIFE-PATTERNS-RECURRENCE-EVIDENCE-CORRECTION-2026-09-08.md`
-- `docs/research/LIFE_PATTERNS_RECURRENCE_EVIDENCE_PRIOR_WORK_SCAN_2026-09-08.md`
-- `docs/research/LIFE_PATTERNS_RECURRENCE_EVIDENCE_POLICY_v2_2026-09-08.md`
-- `state/LIFE-PATTERNS-DEVELOPMENT-CODING-MANUAL-v2-2026-09-08.md`
+`f5f02c976b11fbabc7c136f9c80fbd312600d91d`
 
-### Exact private v2 freeze/handoff
+CI `34524321911`: SUCCESS.
 
-The exact recovered v8/v8.1 sources were used in a bounded private execution. The
-owner then reuploaded the recurrence-corrected private human handoff to the continuation,
-and it was independently reverified before UI work.
+It re-reviewed all 45 original OA blockers plus `NR-001` and found:
 
-- source v8: 54,488 bytes; SHA-256
-  `3c37c0c76174c7ba698966155f991f0303cd4f0833d39ff475dfb0e1c5348637`
-- source v8.1: 25,844 bytes; SHA-256
-  `93f838bb61e6a910ba0dbeb96a66b56c72986350dda5386243b098a738b818e7`
-- corpus: `LPDC-F2BBDA6F39040BF41D96`; SHA-256
-  `f2bbda6f39040bf41d9612fec322497c8e3fb30d49df913d0c06f0cd26f19172`
-- reused historical calibration: `LPCA-5B3E6CFCCE49807050DF`; SHA-256
-  `5b3e6cfcce49807050df03f8ab27cbfbb610869dcb9cfa30064cd485d4646140`
-- selected human units: **44 episode + 22 repeated-series = 66**, reused without
-  resampling after the method revision.
-- recurrence-v2 package: `LPKG2-F93D8245B78CD9FDCF5D`; SHA-256
-  `f93d8245b78cd9fdcf5dd96f1cc321171f628015ca155b8fae0df4fcb826313a`
-- private human handoff: `LPHB2-F34245FAE32B513DDCFE`; SHA-256
-  `f34245fae32b513ddcfe22b7d21081997e8c28e18fccd25b962c30af2fe0a78f`
-- owner-reuploaded transport ZIP: 422,297 bytes, 15 members; SHA-256
-  `f038237a6a1ce776bb28846b76ff49339e7a9e7f28d33c5d1ad877e0d916d837`.
+- 46/46 carried findings RESOLVED;
+- no PARTIAL, UNRESOLVED, or REGRESSED carried finding;
+- R05 still resolved;
+- absence/missingness still resolved;
+- response-contract blockers resolved;
+- `semantic_change_required=false`;
+- one new material blocker: `NR2-001`;
+- `safe_for_implementation=false`.
 
-All receipt-declared member hashes, all eight LPBP2 packet content addresses and exact
-44+22 blank selected-unit coverage were reverified. No participant narrative or private
-handoff bytes were committed.
+`NR2-001` is a record-model containment/referential-integrity defect: referenced value assertions, component assertions, absence conditions, and source provenance are not all normatively contained, and component assertions are not uniquely bound to one event stage and that stage's evidence unit.
 
-Public-safe verification:
-`state/LIFE-PATTERNS-V2-PRIVATE-FREEZE-VERIFIED-2026-09-08.json`.
+The exact next action is a **fresh target-theory-blind contract-only repair** using:
 
-### Offline human calibration UI
+- `tasks/LIFE-PATTERNS-RECORD-CONTAINMENT-REPAIR-WORKER-2026-09-10.md`
+- `state/LIFE-PATTERNS-RECORD-CONTAINMENT-REPAIR-PROMPT-v1-2026-09-10.txt`
 
-A standalone theory-neutral local/offline UI now exists for the exact v2 handoff.
-Committed implementation:
+followed by a distinct fresh blind re-review using:
 
-- `scripts/build_life_patterns_human_calibration_ui_v2.py`
-- `scripts/life_patterns_human_calibration_ui_v2_template.zlib.b64`
-- `tests/unit/test_life_patterns_human_calibration_ui_v2.py`
-- `docs/research/LIFE_PATTERNS_HUMAN_CALIBRATION_UI_V2_2026-09-08.md`
+- `tasks/LIFE-PATTERNS-RECORD-CONTAINMENT-REVIEW-WORKER-2026-09-10.md`
+- `state/LIFE-PATTERNS-RECORD-CONTAINMENT-REVIEW-PROMPT-v1-2026-09-10.txt`.
 
-Implementation/test-bearing head `aba22fe18f65dcf7cb3f67b494b9cc343b0c752e` passed hosted CI
-`34290496491`: **605 passed, 7 expected skips**, Ruff passed, strict mypy passed
-for 171 source files.
+Implementation may begin only if that re-review resolves all 45 OA findings, `NR-001`, and `NR2-001`, finds no blocking `NR3-*`, reports no semantic regression, and sets `safe_for_implementation=true`.
 
-Exact private generated UI:
+## Human-calibration chronology remains unchanged
 
-- `Life-Patterns-Human-Calibration-V2-OFFLINE.html`
-- 3,980,290 bytes
-- SHA-256 `63baa191a93c49cbdfb459d4d5e3f96ff541bdddc3dd2183e5af743f48ce987b`.
+No qualifying independent human first pass has been collected. Existing auditor kits are superseded/ineligible for new collection until the accepted neutral measurement is mechanically implemented and the regenerated human UI passes owner usability review.
 
-The generated HTML embeds private participant evidence and is deliberately not in Git.
-It is standalone, uses no AI/server/network dependency, re-verifies the embedded handoff
-before showing evidence, prevents invalid response combinations, supports receipt-bound
-progress save/reload, and exports exactly:
+Only after the revised independent human first pass is frozen may automated Life Patterns participant coding begin. Target-model scoring/reveal remains later and separately unauthorized.
 
-- `episode_responses.completed.jsonl`
-- `series_responses.completed.jsonl`
-- `auditor_attestation.completed.json`.
+## Hard boundaries
 
-Engineering/static verification includes deterministic regeneration, Node JavaScript syntax,
-no-network API/static scan and synthetic tamper/fail-closed tests.
+- no theory-exposed substantive neutral-codebook repair;
+- no engineering implementation before the passing v5 blind review;
+- no automated participant coding before the revised human first pass is frozen;
+- no target-model scoring/reveal;
+- never commit private participant narrative or private calibration HTML;
+- no merge/deploy, assistant-initiated recruitment/contact, or spending without separate authorization.
 
-**Outstanding UI verification:** a genuine normal-browser visual/interaction smoke pass has
-not been completed. The continuation container's Chromium runtime hung even on an empty page,
-so this check is explicitly unverified rather than inferred from tests. Public-safe receipt:
-`state/LIFE-PATTERNS-HUMAN-CALIBRATION-UI-V2-VERIFIED-2026-09-08.json`.
+## Preserved owner correction
 
-### Current gate / exact next action
-
-Blocked at human-calibration step 5 pending:
-
-1. open the exact private standalone HTML in a normal local browser;
-2. verify the integrity-success screen/first unit renders;
-3. navigate units, save one valid response, export and reload progress, confirm the saved
-   response returns, and verify final attestation/export controls are present;
-4. confirm no external network requests occur;
-5. if the smoke pass succeeds, give the same private UI to an **independent theory-blind
-   human auditor** who is not the participant/theory-exposed owner;
-6. freeze the complete 44 episode + 22 series first pass and v2 attestation before the
-   auditor sees any automated output.
-
-The owner may later provide separately identified sensitivity coding, but it cannot be treated
-as the independent blind benchmark.
-
-### Still absent / forbidden
-
-- independent human first-pass labels: **absent**
-- completed human blinding/independence attestation: **absent**
-- automated Life Patterns passes: **not run**
-- automated consensus: **absent**
-- human-vs-automated comparison: **absent**
-- validation-route promotion: **not made**
-- target-model scoring/reveal: **not run / unauthorized**
-- merge/deploy: **not authorized**
-- participant/auditor recruitment or contact: **not authorized**
-- spending: **not authorized**
-
-`development_only=true`; `validation_use_forbidden=true`.
-
-Only after the independent human first pass is frozen may the >=3 isolated automated
-development passes begin. Consensus and human-vs-automated comparison come after those passes;
-target-model comparison remains a later separately authorized/frozen stage.
-
-## Preserved owner correction from earlier branch work
-
-The unrelated owner-test repair invariant must remain visible in current branch state because
-existing regression tests and downstream task history rely on it. Exact owner correction:
-**“there was never a completion policy. that was invented nonsense by codex.”** The project must
-not recreate a completion-policy premise or silently turn artifact counts into such a policy.
-This historical invariant does not change the Life Patterns recurrence-v2 gate above.
+The unrelated owner-test invariant remains binding: **“there was never a completion policy. that was invented nonsense by codex.”** Do not recreate a completion-policy premise or silently turn artifact counts into such a policy.
