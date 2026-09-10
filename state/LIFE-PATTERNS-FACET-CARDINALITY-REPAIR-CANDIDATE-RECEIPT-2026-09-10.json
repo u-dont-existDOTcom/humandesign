@@ -1,0 +1,50 @@
+{
+  "schema_version": "life-patterns-facet-cardinality-repair-candidate-receipt-v1",
+  "repair_commit": "7ba5654fe99017e1c84a4b8868e5a3da50c55be6",
+  "repair_commit_message": "docs: repair Life Patterns facet cardinality contract",
+  "predecessor_candidate_commit": "458bede3cf83b1947c332a408b47ec84236d69ed",
+  "prior_blind_review_commit": "4f51d075cb200e57820486e4f9686d81c7fc604f",
+  "frozen_audit_commit": "7ea0641e0913815306f8c182be5e7e8b18115fff",
+  "artifacts": {
+    "state/LIFE-PATTERNS-FACET-RELATION-CONTRACT-v4-CANDIDATE-2026-09-10.json": {
+      "sha256_reported": "84159a22c38be9efa2673aca2f5aaa4dc127630ca6fa67151f9c92ec80f4f6a3",
+      "bytes_reported": 40339
+    },
+    "state/LIFE-PATTERNS-FACET-CARDINALITY-REPAIR-DISPOSITION-v1-2026-09-10.jsonl": {
+      "sha256_reported": "008073f71b3a014c6af97c2d0695a648fe3eec9f6dd480fb653ec7ae04b29a8d",
+      "bytes_reported": 4922,
+      "rows": 8
+    },
+    "state/LIFE-PATTERNS-FACET-CARDINALITY-REPAIR-SUMMARY-v1-2026-09-10.json": {
+      "sha256_reported": "30be764c938336d5ac27e0cf15f0ff3388eb6611f5d9437ac01e229cb9e85ad8",
+      "bytes_reported": 832
+    }
+  },
+  "required_blockers": [
+    "OA-007",
+    "OA-011",
+    "OA-076",
+    "OA-084",
+    "OA-085",
+    "OA-114",
+    "OA-121",
+    "NR-001"
+  ],
+  "disposition_row_count": 8,
+  "addressed_count": 8,
+  "not_addressed_count": 0,
+  "semantic_change_required": false,
+  "substantive_codebook_edited_reported": false,
+  "existing_candidate_or_review_artifact_edited_reported": false,
+  "target_model_information_used_reported": false,
+  "safe_for_blind_re_review": true,
+  "ci": {
+    "workflow_run": 34517777654,
+    "conclusion": "success"
+  },
+  "implementation_authorized": false,
+  "human_calibration_authorized": false,
+  "automated_life_patterns_coding_authorized": false,
+  "target_model_scoring_authorized": false,
+  "next_gate": "independent target-theory-blind re-review of all 45 original OA blockers plus NR-001 against the v2 codebook clarification and v4 contract"
+}
