@@ -32,7 +32,14 @@ However, `R05-O2` itself is structurally hybrid: **“accepts one/default option
 - `R05-R1` (selects without reported comparison / first acceptable option), and
 - `R05-R4` (follows an explicit rule, prior commitment, or default).
 
-Whether this is acceptable complementary facet coding or creates redundant/double-counted measurement is a substantive theory-neutral codebook question and must be audited before human calibration.
+There is an additional evidence-boundary concern in `R05-R1` itself. Its slash wording combines:
+
+- an affirmative behavioral proposition: **first acceptable option**; and
+- a potentially missingness-based proposition: **without reported comparison**.
+
+“Comparison was not reported” is not automatically the same as “the narrator did not compare.” If R05-R1 permits coding solely because comparison is absent from the transcript, it conflicts with the project-wide rule against upgrading non-mention into substantive non-action. If the intended meaning is instead an affirmatively evidenced first-acceptable-option strategy, the frozen wording does not cleanly separate those cases.
+
+Whether these are acceptable complementary facet codes, a response-contract limitation, or redundant/ambiguous measurement is a substantive theory-neutral question and must be audited before human calibration.
 
 ## Why R05-O2 appears in the non-action registry
 
@@ -71,8 +78,9 @@ The screenshot suggests this is not only a wording defect. Before another audito
 2. **semantic overlap/nesting** — subcodes that may encode the same behavioral fact more than once;
 3. **hybrid affirmative+absence values** — affirmative behavior whose truth also requires proving a missing action;
 4. **absence-target ambiguity** — non-action gates where the exact absent behavior is not obvious to a human;
-5. **sequence vs facet co-occurrence** — multiple values that coexist as different aspects of one episode rather than forming a temporal sequence;
-6. **downstream double-count risk** — redundant subcodes potentially treated as independent evidence later.
+5. **non-mention masquerading as behavior** — wording such as “without reported X” that may conflate unreported evidence with affirmative evidence that X did not occur;
+6. **sequence vs facet co-occurrence** — multiple values that coexist as different aspects of one episode rather than forming a temporal sequence;
+7. **downstream double-count risk** — redundant subcodes potentially treated as independent evidence later.
 
 This audit must be target-theory-blind. The theory-exposed owner/project chat may identify the defect and preserve examples, but it must not silently rewrite substantive neutral subcodes to improve downstream model fit.
 
@@ -93,6 +101,7 @@ This audit must be target-theory-blind. The theory-exposed owner/project chat ma
 - Do not expose a multi-facet observable as if every listed value were one mutually exclusive answer set.
 - Do not call an affirmative behavior “non-action” merely because the code includes an absence qualifier.
 - When a code depends on absence, name the **specific absent action** being tested.
+- Do not infer “did not X” from “X was not reported.”
 - Human-facing evidence gates must state the concrete proposition the human is evaluating.
 - Do not make the human reverse-engineer a schema classification to understand ordinary behavior.
 
