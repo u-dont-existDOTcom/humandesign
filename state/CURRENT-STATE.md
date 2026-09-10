@@ -2,7 +2,7 @@
 
 ## Authoritative branch overlay — Life Patterns — 2026-09-10
 
-This is the concise branch pointer for `codex/discover-life-patterns-mvp`, draft PR #24. Historical state remains preserved in Git history and dated artifacts. Do **not** infer a current next action from older sections or earlier UI/calibration artifacts.
+This is the concise branch pointer for `codex/discover-life-patterns-mvp`, draft PR #24. Historical state remains preserved in Git history and dated artifacts. Do **not** infer the current next action from superseded UI/calibration artifacts.
 
 Before substantive continuation:
 
@@ -13,36 +13,33 @@ Before substantive continuation:
 
 ## Current gate
 
-The independent target-theory-blind v4 contract review is frozen at:
+The fresh target-theory-blind v5 record-containment repair is frozen at:
 
-`f5f02c976b11fbabc7c136f9c80fbd312600d91d`
+`320cb577f4adfbcc644c986f7f532feef0fbe80b`
 
-CI `34524321911`: SUCCESS.
+CI `34526916770`: SUCCESS.
 
-It re-reviewed all 45 original OA blockers plus `NR-001` and found:
+It adds exactly three contract-only artifacts and reports:
 
-- 46/46 carried findings RESOLVED;
-- no PARTIAL, UNRESOLVED, or REGRESSED carried finding;
-- R05 still resolved;
-- absence/missingness still resolved;
-- response-contract blockers resolved;
+- `NR2-001` addressed;
 - `semantic_change_required=false`;
-- one new material blocker: `NR2-001`;
-- `safe_for_implementation=false`.
+- no substantive codebook edit;
+- no prior candidate/review edit;
+- no target-model information used;
+- `safe_for_blind_re_review=true`.
 
-`NR2-001` is a record-model containment/referential-integrity defect: referenced value assertions, component assertions, absence conditions, and source provenance are not all normatively contained, and component assertions are not uniquely bound to one event stage and that stage's evidence unit.
+Its central structural change is normative response-level containment plus exact-one referential integrity for value assertions, component assertions, absence conditions, and source provenance, with unique component binding to one event stage and that stage's evidence unit.
 
-The exact next action is a **fresh target-theory-blind contract-only repair** using:
+This is **not implementation authority**.
 
-- `tasks/LIFE-PATTERNS-RECORD-CONTAINMENT-REPAIR-WORKER-2026-09-10.md`
-- `state/LIFE-PATTERNS-RECORD-CONTAINMENT-REPAIR-PROMPT-v1-2026-09-10.txt`
-
-followed by a distinct fresh blind re-review using:
+The exact next action is an independent fresh target-theory-blind v5 regression review using:
 
 - `tasks/LIFE-PATTERNS-RECORD-CONTAINMENT-REVIEW-WORKER-2026-09-10.md`
-- `state/LIFE-PATTERNS-RECORD-CONTAINMENT-REVIEW-PROMPT-v1-2026-09-10.txt`.
+- `state/LIFE-PATTERNS-RECORD-CONTAINMENT-REVIEW-PROMPT-v1-2026-09-10.txt`
 
-Implementation may begin only if that re-review resolves all 45 OA findings, `NR-001`, and `NR2-001`, finds no blocking `NR3-*`, reports no semantic regression, and sets `safe_for_implementation=true`.
+The reviewer must re-grade all **47 carried findings**: 45 original OA blockers, `NR-001`, and `NR2-001`, plus any genuine new `NR3-*` defects.
+
+Implementation may begin only if all 47 carried findings resolve with no regression or blocking NR3 finding, record containment is mechanically complete, `semantic_change_required=false`, and `safe_for_implementation=true`.
 
 ## Human-calibration chronology remains unchanged
 
