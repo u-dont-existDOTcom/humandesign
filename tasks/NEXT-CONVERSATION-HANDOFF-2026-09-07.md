@@ -9,115 +9,138 @@ Draft PR: `#24`
 Before substantive work, fetch the **current PR #24 head** and treat GitHub as canonical. Then read, in this order:
 
 1. `tasks/ACTIVE-TASK.json`
-2. `state/LIFE-PATTERNS-SUBCODE-OVERLAP-ABSENCE-AUDIT-FAILED-RUN-2026-09-10.md`
-3. `tasks/LIFE-PATTERNS-SUBCODE-OVERLAP-ABSENCE-AUDIT-WORKER-2026-09-10.md`
-4. `state/LIFE-PATTERNS-SUBCODE-OVERLAP-ABSENCE-AUDIT-PROMPT-v1-2026-09-10.txt`
-5. `state/LIFE-PATTERNS-R05-FACET-OVERLAP-AND-ABSENCE-SEMANTICS-DEFECT-2026-09-10.md`
-6. `state/LIFE-PATTERNS-CURRENT-STATE-2026-09-10.md`
-7. `state/LIFE-PATTERNS-HUMAN-UI-DIRECT-CHOICE-CORRECTION-2026-09-09.md`
-8. `docs/research/LIFE_PATTERNS_HUMAN_CALIBRATION_MINIMAL_BURDEN_POLICY_2026-09-09.md`
-9. `state/LIFE-PATTERNS-V2-PRIVATE-FREEZE-VERIFIED-2026-09-08.json`
-10. `docs/research/LIFE_PATTERNS_RECURRENCE_EVIDENCE_POLICY_v2_2026-09-08.md`
-11. `state/LIFE-PATTERNS-DEVELOPMENT-CODING-MANUAL-v2-2026-09-08.md`
-12. `state/LIFE-PATTERNS-PRIVATE-ARTIFACT-RECOVERY-VERIFIED-2026-09-07.json`
-13. `state/CURRENT-STATE.md`
-14. `state/LIFE-PATTERNS-DEVELOPMENT-HANDOFF-2026-09-06.md`
+2. `state/LIFE-PATTERNS-CURRENT-STATE-2026-09-10.md`
+3. `state/LIFE-PATTERNS-SUBCODE-OVERLAP-ABSENCE-AUDIT-SUMMARY-v1-2026-09-10.json`
+4. `state/LIFE-PATTERNS-SUBCODE-OVERLAP-ABSENCE-AUDIT-RAW-v1-2026-09-10.jsonl`
+5. `state/LIFE-PATTERNS-SUBCODE-OVERLAP-ABSENCE-AUDIT-EXPOSED-REVIEW-2026-09-10.md`
+6. `state/LIFE-PATTERNS-NEUTRAL-MEASUREMENT-REPAIR-PROMPT-v1-2026-09-10.txt`
+7. `tasks/LIFE-PATTERNS-NEUTRAL-MEASUREMENT-REPAIR-WORKER-2026-09-10.md`
+8. `state/LIFE-PATTERNS-NEUTRAL-MEASUREMENT-REPAIR-REVIEW-PROMPT-v1-2026-09-10.txt`
+9. `tasks/LIFE-PATTERNS-NEUTRAL-MEASUREMENT-REPAIR-REVIEW-WORKER-2026-09-10.md`
+10. `state/LIFE-PATTERNS-R05-FACET-OVERLAP-AND-ABSENCE-SEMANTICS-DEFECT-2026-09-10.md`
+11. `docs/research/LIFE_PATTERNS_HUMAN_CALIBRATION_MINIMAL_BURDEN_POLICY_2026-09-09.md`
+12. `state/LIFE-PATTERNS-V2-PRIVATE-FREEZE-VERIFIED-2026-09-08.json`
+13. `docs/research/LIFE_PATTERNS_RECURRENCE_EVIDENCE_POLICY_v2_2026-09-08.md`
+14. `state/LIFE-PATTERNS-DEVELOPMENT-CODING-MANUAL-v2-2026-09-08.md`
+15. `state/LIFE-PATTERNS-PRIVATE-ARTIFACT-RECOVERY-VERIFIED-2026-09-07.json`
+16. `state/CURRENT-STATE.md`
+17. `state/LIFE-PATTERNS-DEVELOPMENT-HANDOFF-2026-09-06.md`
 
 ## Current controlling state
 
-The exact private source recovery, recurrence-v2 correction, private v2 freeze, and owner-led human-interface simplification are complete through the direct-choice UI. Human calibration is nevertheless **blocked before collection** by the new theory-neutral subcode-overlap / absence-semantics audit.
+The overlap/absence audit is **complete and authoritative**. The earlier malformed run remains rejected wholesale and is historical only.
 
-No qualifying independent human first pass has been collected. No automated Life Patterns coding, consensus, human-vs-automated comparison, target-model scoring, or reveal has occurred.
+Authoritative audit commit:
 
-## The first overlap/absence audit attempt is invalid
+`7ea0641e0913815306f8c182be5e7e8b18115fff`
 
-The owner returned the first attempted fresh blind worker output on 2026-09-10. Treat it as a failed execution/transport artifact, not as substantive audit evidence.
+CI `34472686547`: SUCCESS.
 
-Public-safe identity of the returned text:
+Frozen audit identities:
 
-- bytes: `17554`
-- SHA-256: `0e3b339c9e7ffa6362ada0a13ec2b2d11911608e7b5cdca4c39216a79f5a5b81`
+- raw JSONL: SHA-256 `37642f31135f3d446488a3a0a6736468b30b6114d5a292bcaf01096d65fb16e6`, 83,030 bytes, 134 findings;
+- summary JSON: SHA-256 `7184f89a9d6c8fa0560e0ceba07287f101f559ddcf872b3db62e39de34cb7b47`, 1,170 bytes.
 
-Why it is invalid:
+The summary reports:
 
-- Markdown escaping inserted illegal JSON `\_` escapes throughout the returned lines;
-- after diagnostic removal of those presentation escapes, only `OA-001` through `OA-009` form a parseable prefix;
-- attempted `OA-010` is syntactically corrupted;
-- the remainder is process/meta commentary about response construction/truncation rather than audit findings;
-- no complete 22-observable result and no valid final summary JSON exist.
+- 22 observables reviewed;
+- 48 presentation-only findings;
+- 5 response-contract limitations;
+- 40 substantive-codebook-overlap findings;
+- 41 no-change-needed findings;
+- 45 blocking findings;
+- `human_calibration_safe_to_start_without_revision=false`;
+- R05 requires `versioned_codebook_clarification`.
 
-**Do not salvage or use the first nine partial findings.** They are not authoritative and must not be supplied as substantive guidance to the rerun.
+The 45 blockers affect 16 observables:
 
-Failure record:
+`R02, R03, R05, R06, R07, R10, R11, R12, R13, R14, R15, R16, R18, R19, R20, R21`.
 
-`state/LIFE-PATTERNS-SUBCODE-OVERLAP-ABSENCE-AUDIT-FAILED-RUN-2026-09-10.md`
+## Scientific conclusion from exposed review
 
-## Exact next gate — fresh blind rerun with file-based transport
+This is **not** another UI-only problem. Do not build or distribute another auditor kit against the current measurement.
+
+The audit confirms three distinct repair classes:
+
+1. presentation/facet grouping issues;
+2. response-contract insufficiency;
+3. substantive neutral-codebook overlap/boundary/absence problems.
+
+Exactly five original findings require response-contract change:
+
+- OA-029 / R05;
+- OA-034 / R07;
+- OA-085 / R16;
+- OA-114 / R20;
+- OA-121 / R21.
+
+The existing one-global-relation representation cannot encode co-present facet attributes plus meaningful within-episode sequence without false ordering or information loss.
+
+Substantive blockers additionally include nested/general-specific values, composite values duplicating components, hybrid affirmative-plus-absence semantics, missingness accidentally treated as nonoccurrence, underbounded absence targets, and same-act double-count risk.
+
+## Exact next gate — fresh blind repair proposal
 
 Run:
 
-`tasks/LIFE-PATTERNS-SUBCODE-OVERLAP-ABSENCE-AUDIT-WORKER-2026-09-10.md`
+`tasks/LIFE-PATTERNS-NEUTRAL-MEASUREMENT-REPAIR-WORKER-2026-09-10.md`
 
-in a **new target-theory-blind context**.
+in a **NEW target-theory-blind context**.
 
-For substantive reasoning that worker reads only the original frozen audit prompt plus its four authoritative measurement inputs. It must not inspect the failed run or target-theory material.
+It follows:
 
-Instead of pasting a giant answer into chat, it writes exactly:
+`state/LIFE-PATTERNS-NEUTRAL-MEASUREMENT-REPAIR-PROMPT-v1-2026-09-10.txt`
 
-- `state/LIFE-PATTERNS-SUBCODE-OVERLAP-ABSENCE-AUDIT-RAW-v1-2026-09-10.jsonl`
-- `state/LIFE-PATTERNS-SUBCODE-OVERLAP-ABSENCE-AUDIT-SUMMARY-v1-2026-09-10.json`
+and creates exactly:
 
-Then it runs:
+1. `state/LIFE-PATTERNS-NEUTRAL-CODEBOOK-CLARIFICATION-v2-CANDIDATE-2026-09-10.md`
+2. `state/LIFE-PATTERNS-FACET-RELATION-CONTRACT-v3-CANDIDATE-2026-09-10.json`
+3. `state/LIFE-PATTERNS-OVERLAP-AUDIT-BLOCKER-RESOLUTION-v1-2026-09-10.jsonl`
 
-```bash
-python scripts/validate_life_patterns_subcode_overlap_absence_audit.py \
-  --findings state/LIFE-PATTERNS-SUBCODE-OVERLAP-ABSENCE-AUDIT-RAW-v1-2026-09-10.jsonl \
-  --summary state/LIFE-PATTERNS-SUBCODE-OVERLAP-ABSENCE-AUDIT-SUMMARY-v1-2026-09-10.json
-```
+The blocker matrix must contain all and only the 45 blocking OA IDs exactly once. The worker may clarify, split, retire redundant composites, assign facets, or define specificity/precedence rules only as needed to resolve the blind audit. Historical artifacts remain immutable. It must not implement software/UI/package changes or run any participant coding.
 
-The validator is mechanical only: JSON syntax, exact fields/enums, sequential IDs, internal summary counts, blocking-finding references, and 22-observable coverage. It does not judge substantive correctness.
+## Mandatory second blind review
 
-The fresh worker commits the validated raw audit artifacts and returns only commit SHA, file hashes/sizes, validator result, and finding count. It does **not** revise the codebook/UI/response contract.
+After the repair proposal is committed, use a **different fresh target-theory-blind context** with:
 
-## Why the audit remains necessary
+- `tasks/LIFE-PATTERNS-NEUTRAL-MEASUREMENT-REPAIR-REVIEW-WORKER-2026-09-10.md`
+- `state/LIFE-PATTERNS-NEUTRAL-MEASUREMENT-REPAIR-REVIEW-PROMPT-v1-2026-09-10.txt`
 
-Owner review exposed that NBM-R05 is explicitly two-facet but was flattened in the human UI:
+The reviewer must independently grade every one of the 45 original blockers and scan for new material defects. Engineering implementation remains blocked unless:
 
-- option-set construction: `R05-O1..R05-O6`;
-- choice resolution: `R05-R1..R05-R9`.
+- all 45 blockers are RESOLVED;
+- no new material blocker remains;
+- all five response-contract limitations are resolved;
+- all R05 blockers are resolved;
+- absence/missingness semantics are adequately bounded;
+- summary sets `safe_for_implementation=true`.
 
-Some values can co-occur across facets. `R05-O2` is also structurally hybrid: affirmative default acceptance plus an absence-of-alternative-search condition. Its `non_action` registry status concerns the **absence of search**, not the affirmative acceptance itself. The audit must determine whether this and analogous issues across all 22 observables are presentation-only, response-contract limitations, or substantive codebook overlap requiring versioned theory-blind repair.
+## Only after blind review passes
 
-## Disposition only after the valid blind audit is frozen
+The exposed engineering context may mechanically implement the accepted versioned neutral measurement and response contract, regenerate the private package/handoff/UI, and resume owner usability review.
 
-- presentation-only findings -> repair UI grouping/copy and exact absence-target prompts;
-- response-contract limitations -> make a versioned response contract before collection;
-- substantive codebook overlap -> make a versioned theory-blind codebook clarification/revision, preserving historical artifacts, then regenerate dependent package/handoff/UI.
+Only after the revised UI is owner-accepted may the independent human first pass begin. Only after that first pass is frozen may automated Life Patterns participant coding begin.
 
-Do not use target-model information for any repair.
+## Existing corrections remain controlling
 
-## Human calibration remains suspended
-
-All current auditor kits are historical owner-review artifacts only. Do not give them to an independent auditor until the valid overlap/absence audit is frozen and all blocking findings are resolved.
-
-The following prior design corrections remain controlling:
-
-- ask the substantive human question directly;
-- derive machine states behind the scenes;
-- hide machine IDs;
-- one-source provenance automatic;
-- no optional research-data busywork;
-- multiple-value ordering asked only after multiple values are selected;
-- errors tell the human what action to take;
 - generalized behavioral recurrence self-report is direct reported-recurrence evidence;
-- self-selected confirming anecdotes are not independent frequency evidence.
+- self-selected confirming anecdotes are not independent frequency evidence;
+- concrete incidents are requested only for information gain;
+- specificity is not evidential independence;
+- machine schema is not the human interface;
+- ask substantive human questions directly;
+- hide machine IDs and optional research busywork;
+- one-source provenance is automatic;
+- multi-value order is asked only when order matters;
+- affirmative behavior is not non-action merely because a separate absence condition exists;
+- absence gates must name the exact absent proposition;
+- `not reported` / `unknown` is not behavioral nonoccurrence.
 
 ## Hard boundaries
 
-- no current auditor kit may be used for new human collection;
-- no partial finding from the failed first audit may steer substantive repair;
-- no theory-exposed substantive neutral-codebook repair before the valid blind audit is frozen;
-- no automated Life Patterns coding before the eventual revised independent human first pass is frozen;
+- all existing auditor kits remain ineligible for new human collection;
+- do not make theory-exposed substantive neutral-codebook repairs;
+- do not implement the repair before the second blind review passes;
+- no automated participant coding before the eventual revised human first pass is frozen;
 - no target-model scoring/reveal;
 - never commit private participant narrative or private calibration HTML;
 - no merge/deploy, assistant-initiated auditor recruitment/contact, or spending without separate authorization.
