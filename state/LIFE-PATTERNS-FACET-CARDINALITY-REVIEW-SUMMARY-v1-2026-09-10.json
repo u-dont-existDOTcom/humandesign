@@ -1,0 +1,19 @@
+{
+  "schema_version": "life-patterns-facet-cardinality-review-v1",
+  "original_oa_blockers_reviewed": 45,
+  "carried_forward_nr_reviewed": 1,
+  "resolved_count": 46,
+  "partial_count": 0,
+  "unresolved_count": 0,
+  "regressed_count": 0,
+  "new_material_findings_count": 1,
+  "response_contract_blockers_resolved": true,
+  "r05_blockers_resolved": true,
+  "absence_semantics_resolved": true,
+  "semantic_change_required": false,
+  "safe_for_implementation": false,
+  "blocking_ids": [
+    "NR2-001"
+  ],
+  "notes": "All 45 original OA blockers and carried-forward NR-001 are resolved by the combined v2 clarification and v4 scoped-cardinality contract. Cardinality is local to event stages or typed measurement windows; ordered same-facet trajectories remain representable, same-scope alternatives remain exclusive, and same-act evidence remains counted once. Implementation is still blocked by NR2-001 because the record model does not normatively contain all referenced assertion/absence/provenance records or uniquely bind component assertions to one stage/evidence unit. No substantive semantic change is required."
+}
