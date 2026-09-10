@@ -26,26 +26,53 @@ The frozen non-action registry includes R05-O2 because its truth depends on prov
 
 The same R05-O2 wording also appears potentially overlapping with R05-R1 (selects without reported comparison / first acceptable option) and R05-R4 (follows an explicit rule, prior commitment, or default). Whether that is acceptable complementary facet coding, a response-contract problem, or substantive redundancy must be resolved theory-blind before collection.
 
-## Required audit
+## First overlap/absence audit attempt — invalid
 
-Canonical audit prompt:
+The owner returned the first attempted fresh blind audit output on 2026-09-10. It is **not an authoritative audit artifact**.
+
+Returned text identity:
+
+- bytes: `17554`
+- SHA-256: `0e3b339c9e7ffa6362ada0a13ec2b2d11911608e7b5cdca4c39216a79f5a5b81`
+
+Failure facts:
+
+- Markdown escaping made the returned lines invalid JSON as transported;
+- after diagnostic removal of the presentation-only underscore escapes, only OA-001..OA-009 form a parseable prefix;
+- OA-010 is corrupted;
+- the remainder contains process/meta commentary rather than required findings;
+- no complete 22-observable audit or final summary JSON exists.
+
+Do not salvage or use the partial prefix. The rerun must be fresh and must not receive those partial findings as substantive input.
+
+Failure record:
+
+`state/LIFE-PATTERNS-SUBCODE-OVERLAP-ABSENCE-AUDIT-FAILED-RUN-2026-09-10.md`
+
+## Required audit rerun
+
+Canonical substantive audit prompt:
 
 `state/LIFE-PATTERNS-SUBCODE-OVERLAP-ABSENCE-AUDIT-PROMPT-v1-2026-09-10.txt`
 
-Run it in a fresh target-theory-blind context against only the exact reconciled codebook, compact non-action classification, frozen ambiguity-resolution amendment, and original non-action-classification prompt.
+Execution wrapper:
 
-It must review all 22 observables for:
+`tasks/LIFE-PATTERNS-SUBCODE-OVERLAP-ABSENCE-AUDIT-WORKER-2026-09-10.md`
 
-- facet structure and whether values are mutually exclusive/co-occurring/sequential;
-- semantic overlap, nesting, near-duplication, and unclear boundaries;
-- hybrid affirmative+absence values;
-- the exact absent action/proposition each non-action gate applies to;
-- response-contract limits for facets + sequences;
-- measurement-level double-count/redundancy risk.
+Run the wrapper in a new target-theory-blind context. For substantive reasoning the worker uses only the frozen audit prompt and its four authoritative measurement inputs.
 
-Preserve raw audit output before theory-exposed review.
+To avoid another large-response transport failure, the worker writes the complete audit directly to:
 
-## Disposition rules
+- `state/LIFE-PATTERNS-SUBCODE-OVERLAP-ABSENCE-AUDIT-RAW-v1-2026-09-10.jsonl`
+- `state/LIFE-PATTERNS-SUBCODE-OVERLAP-ABSENCE-AUDIT-SUMMARY-v1-2026-09-10.json`
+
+Then it must pass the mechanical validator:
+
+`scripts/validate_life_patterns_subcode_overlap_absence_audit.py`
+
+The validator checks transport/schema/internal consistency only; it does not judge substantive correctness.
+
+## Disposition rules after a valid blind audit is frozen
 
 - Presentation-only finding -> repair the human UI, explicitly group facets, and name the precise absence proposition in any evidence gate.
 - Response-contract limitation -> create a new versioned contract before collection.
