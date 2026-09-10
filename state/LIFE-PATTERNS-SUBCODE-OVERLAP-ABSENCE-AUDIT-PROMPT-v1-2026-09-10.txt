@@ -23,7 +23,7 @@ A pre-collection human-interface review noticed that NBM-R05 contains a flat-loo
 - R05-R1: selects without reported comparison / first acceptable option
 - R05-R4: follows an explicit rule, prior commitment, or default
 
-appear potentially overlapping. R05-O2 is also in the non-action registry even though it contains affirmative behavior (`accepts`) plus an absence qualifier (`without searching for alternatives`).
+appear potentially overlapping. R05-O2 is also in the non-action registry even though it contains affirmative behavior (`accepts`) plus an absence qualifier (`without searching for alternatives`). R05-R1 separately contains the phrase `without reported comparison`, which may conflate **comparison was not reported** with **comparison did not occur** unless the frozen evidence rule resolves that distinction.
 
 Your job is to audit this independently from the frozen text. Do not assume the concern is correct and do not force a revision.
 
@@ -79,6 +79,12 @@ E. DOUBLE-COUNT / REDUNDANCY RISK
 
 Without looking at any target model, identify subcode pairs/sets where coding the same underlying behavioral fact into several values could create apparent multiple evidence if a downstream analyst naively treats each value as independent. Do not speculate about actual downstream scoring; simply identify the measurement-level redundancy risk.
 
+F. NON-MENTION VS ESTABLISHED ABSENCE
+
+Audit every value whose wording contains constructions such as `without reported`, `not reported`, `no reported`, `unreported`, or another phrase that could make a substantive code depend on missing transcript content rather than positive evidence.
+
+For each such value determine whether the codebook requires affirmative evidence that the behavior/action did not occur, or merely permits coding it because the action was not mentioned. Treat the latter as a potential substantive codability defect: **non-mention is not evidence of nonoccurrence** unless the measurement explicitly defines a bounded exhaustive reporting frame that makes it so.
+
 SPECIAL REQUIRED R05 ANALYSIS
 
 For NBM-R05, explicitly answer:
@@ -88,8 +94,9 @@ For NBM-R05, explicitly answer:
 3. Does R05-O2 cross the facet boundary by combining affirmative acceptance/default selection with absence of alternative search?
 4. What is the exact absence proposition in R05-O2 that would justify its current non-action classification?
 5. How does R05-O2 differ from R05-R1 and R05-R4? Is that distinction sufficiently operational for blind humans?
-6. Can the current `single / ordered_sequence / unordered_multiple` value-relation contract faithfully encode multiple R05 facet values, including a case where one facet has temporal sequence and another facet is simply co-present?
-7. Is R05 repairable presentation-only, or does it require a versioned measurement/response-contract change?
+6. Does `R05-R1 selects without reported comparison / first acceptable option` improperly combine missingness (`comparison not reported`) with an affirmative behavioral strategy (`first acceptable option`), or do the frozen evidence requirements adequately disambiguate it?
+7. Can the current `single / ordered_sequence / unordered_multiple` value-relation contract faithfully encode multiple R05 facet values, including a case where one facet has temporal sequence and another facet is simply co-present?
+8. Is R05 repairable presentation-only, or does it require a versioned measurement/response-contract change?
 
 SCIENTIFIC DISCIPLINE
 
@@ -100,6 +107,7 @@ SCIENTIFIC DISCIPLINE
 - Do not assume mutually exclusive categories unless the codebook supports exclusivity.
 - Do not call an affirmative action “non-action” merely because one clause requires proving absence; keep affirmative behavior and absence condition conceptually separate.
 - If a code is hybrid, say exactly which component needs the non-action gate.
+- Do not infer `did not X` from `X was not reported` unless the frozen measurement establishes an exhaustive reporting frame that warrants that inference.
 
 OUTPUT
 
@@ -109,7 +117,7 @@ ARTIFACT 1 — JSONL FINDINGS
 
 One JSON object per material finding, with exactly these fields:
 
-{"finding_id":"OA-001","observable_id":"NBM-R05","subcode_ids":["R05-O2","R05-R1"],"finding_type":"semantic_relation|facet_structure|absence_structure|response_contract|double_count_risk","classification":"<allowed classification for that finding type>","exact_issue":"Concise theory-neutral explanation grounded only in frozen wording.","human_coding_consequence":"What a blind human could confuse or be forced to infer.","recommended_disposition":"presentation_only|response_contract_change|versioned_codebook_clarification|no_change","confidence":"high|medium|low"}
+{"finding_id":"OA-001","observable_id":"NBM-R05","subcode_ids":["R05-O2","R05-R1"],"finding_type":"semantic_relation|facet_structure|absence_structure|nonmention_boundary|response_contract|double_count_risk","classification":"<allowed classification for that finding type>","exact_issue":"Concise theory-neutral explanation grounded only in frozen wording.","human_coding_consequence":"What a blind human could confuse or be forced to infer.","recommended_disposition":"presentation_only|response_contract_change|versioned_codebook_clarification|no_change","confidence":"high|medium|low"}
 
 Use stable sequential finding IDs. Do not include target-theory terms.
 
