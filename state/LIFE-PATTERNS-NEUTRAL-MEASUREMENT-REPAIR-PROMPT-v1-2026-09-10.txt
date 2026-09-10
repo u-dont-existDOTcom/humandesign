@@ -1,0 +1,177 @@
+Life Patterns neutral measurement — target-theory-blind overlap/facet repair v1
+
+You are performing a versioned theory-neutral measurement repair. You do NOT know what external hypothesis, model, typology, birth-derived system, prediction, or score may eventually be compared with this behavioral measurement.
+
+Do not guess or ask about that external purpose. Do not use Human Design, astrology, personality typologies, diagnoses, spiritual/esoteric systems, target mappings, birth/chart data, target-model outputs, participant-specific model results, or model-fit results.
+
+AUTHORITATIVE INPUTS
+
+Read only these artifacts for substantive reasoning:
+
+1. `state/LIFE-PATTERNS-NEUTRAL-CODEBOOK-THEORY-BLIND-RECONCILED-CANDIDATE-v1-2026-09-03.md`
+2. `state/LIFE-PATTERNS-NON-ACTION-CLASSIFICATION-COMPACT-v1-2026-09-04.json`
+3. `state/LIFE-PATTERNS-NON-ACTION-AMBIGUITY-RESOLUTION-NORMALIZED-v1-2026-09-04.jsonl`
+4. `state/LIFE-PATTERNS-NON-ACTION-CLASSIFICATION-PROMPT-v1-2026-09-04.txt` only to understand what the registry label means
+5. `state/LIFE-PATTERNS-SUBCODE-OVERLAP-ABSENCE-AUDIT-RAW-v1-2026-09-10.jsonl`
+6. `state/LIFE-PATTERNS-SUBCODE-OVERLAP-ABSENCE-AUDIT-SUMMARY-v1-2026-09-10.json`
+7. `docs/research/LIFE_PATTERNS_RECURRENCE_EVIDENCE_POLICY_v2_2026-09-08.md` only where repeated-series or evidence-independence semantics are relevant
+8. the existing neutral response-contract definitions in:
+   - `src/hdmatch/evaluation/structured_annotation_v2.py`
+   - `src/hdmatch/evaluation/development_episode_evidence.py`
+   - `src/hdmatch/evaluation/development_series_evidence_v2.py`
+
+Do not inspect any target-theory or mapping files. Do not inspect participant-specific target results. Do not use the exposed project review as substantive authority; the frozen blind audit is the repair problem statement.
+
+BACKGROUND
+
+The complete blind audit reviewed all 22 observables and returned 134 material findings, including 45 blockers. It concluded that human calibration is not safe to start without revision. The findings include substantive overlap/nesting, hybrid affirmative-plus-absence values, transcript-missingness being confusable with behavioral absence, hidden facet structure, and five response-contract limitations where one global `single / ordered_sequence / unordered_multiple` relation cannot represent co-present facets plus meaningful temporal sequence.
+
+YOUR TASK
+
+Create the **smallest sufficient versioned neutral-measurement repair** that resolves every blocking audit finding without gratuitously rewriting the measurement.
+
+The historical v1 codebook, non-action artifacts, recurrence-v2 artifacts, and response schemas must remain immutable historical records. Your output is a new candidate revision, not an edit-in-place.
+
+REQUIRED PRINCIPLES
+
+1. **Specificity is not independence.** Do not treat several codes derived from the same behavioral act as several independent observations merely because they capture different levels of description.
+2. **Missingness is not nonoccurrence.** Phrases such as `not reported`, `unknown`, or transcript silence cannot establish that an action did not occur unless an explicit exhaustive evidence frame justifies that inference.
+3. **Affirmative-plus-absence hybrids must be decomposed conceptually.** If a code says the narrator affirmatively did X while Y did not occur, define the affirmative behavior separately from the exact absent proposition. The Awareness–Opportunity–Feasibility–Established-Non-Action gate applies only to the absent proposition.
+4. **Name the absence target.** Never use a generic `did not act` gate where the relevant absence is, for example, no alternative search, no request, no comparison, no discussion, no engagement, or no transition.
+5. **Facets must be explicit.** When an observable mixes timing, content, mechanism, ownership, source, outcome, extent, or another separable facet, identify facet membership and whether cross-facet values may co-occur.
+6. **Do not force one global relation onto unlike facts.** The revised response contract must support co-present facets and preserve temporal order where order is genuinely established.
+7. **Resolve nesting and composites.** Where a broad value, narrow value, and/or composite sequence can all describe the same fact, specify a deterministic specificity/precedence/cumulative-coding rule. Do not leave blind coders to decide ad hoc.
+8. **Preserve chronology when it matters.** Composite trajectories may need event/stage-level representation rather than several apparently independent static labels.
+9. **Preserve uncertainty.** If a boundary cannot be resolved from the current neutral concept, prefer an explicit versioned clarification, split, or retirement over fake precision.
+10. **No target optimization.** No repair may be justified by how well it could fit any external model.
+
+BLOCKER COVERAGE REQUIREMENT
+
+You must explicitly resolve every blocking finding listed in the frozen summary:
+
+OA-007, OA-008, OA-011, OA-017, OA-019, OA-020, OA-021, OA-022, OA-026, OA-027, OA-029, OA-033, OA-034, OA-037, OA-039, OA-049, OA-050, OA-058, OA-062, OA-063, OA-064, OA-065, OA-069, OA-075, OA-076, OA-077, OA-078, OA-079, OA-084, OA-085, OA-092, OA-103, OA-105, OA-106, OA-108, OA-109, OA-113, OA-114, OA-116, OA-118, OA-120, OA-121, OA-124, OA-127, OA-128.
+
+Do not merely repeat audit text. For each blocker, state the exact repair and why the revised rule resolves the ambiguity/double-count/contract limitation.
+
+SPECIAL REQUIRED R05 REPAIR
+
+R05 must receive an explicit solution for all of these:
+
+- option-set construction versus choice-resolution facet membership;
+- R05-O2's affirmative default acceptance versus absence of alternative search;
+- the R05-O2 / R05-R1 / R05-R4 overlap;
+- `without reported comparison` must not be treated as evidence that no comparison occurred;
+- comparison / constraint / rule/default specificity and cumulative-coding rules;
+- O6 combination-as-option-construction versus R9 combination-as-final-resolution;
+- response representation for cross-facet co-presence plus an ordered within-facet sequence;
+- double-count protection so multiple facet labels from one act are not treated as independent episodes/evidence units.
+
+RESPONSE-CONTRACT CAPABILITY REQUIREMENTS
+
+Design a neutral contract that can represent at minimum:
+
+- one or more **facet groups** per observable;
+- zero/one/multiple selected values per applicable facet as the measurement definition allows;
+- co-present values from separate facets without assigning false temporal order;
+- temporal order among actions/stages where order is established;
+- multiple values attached to one event/stage without counting them as separate behavioral events;
+- an exact source provenance set for each coded assertion or event/stage;
+- absence-dependent conditions attached to the exact code/component they qualify;
+- observed / insufficient / not_applicable at an appropriate scope;
+- deterministic handling of nested/specific/composite values;
+- compatibility with theory-blind human and automated coding.
+
+You may recommend an event/stage representation, facet-specific relations, or another structure if it satisfies the capabilities above. Do not preserve the existing contract merely for backward compatibility if it cannot faithfully represent the measurement. Historical v2 data structures remain historical.
+
+CODEBOOK CHANGE DISCIPLINE
+
+For each substantive change use the least invasive adequate operation:
+
+- `clarify_boundary`
+- `clarify_evidence_rule`
+- `clarify_specificity_precedence`
+- `assign_facet`
+- `split_value`
+- `retire_redundant_value`
+- `replace_composite_with_components`
+- `no_substantive_change`
+
+Splitting or retiring values is allowed when needed, but explain why a clarification alone is insufficient. Preserve stable IDs where semantics remain stable; create new versioned IDs only when semantics change materially.
+
+Do not create new personality traits, latent dimensions, scores, favorable/unfavorable scales, or target-theory proxies.
+
+REQUIRED OUTPUT ARTIFACTS
+
+Create exactly three substantive artifacts.
+
+ARTIFACT 1 — VERSIONED CODEBOOK CLARIFICATION CANDIDATE
+
+Path:
+
+`state/LIFE-PATTERNS-NEUTRAL-CODEBOOK-CLARIFICATION-v2-CANDIDATE-2026-09-10.md`
+
+It must contain:
+
+- scope and authority;
+- explicit statement that v1 remains immutable;
+- all changed/clarified observables and subcodes;
+- facet definitions where needed;
+- exclusivity/co-occurrence/sequence rules;
+- exact absence targets and evidence rules;
+- specificity/precedence rules;
+- retired/split/new IDs, if any;
+- double-count protection;
+- unchanged observables/values need not be rewritten in full.
+
+ARTIFACT 2 — FACET / RELATION RESPONSE CONTRACT CANDIDATE
+
+Path:
+
+`state/LIFE-PATTERNS-FACET-RELATION-CONTRACT-v3-CANDIDATE-2026-09-10.json`
+
+Use valid JSON. It must define, at minimum:
+
+- schema/version identity;
+- response-state scope;
+- facet/group model;
+- event/stage model if used;
+- value assertion model;
+- source-provenance binding;
+- temporal relation representation;
+- co-presence representation;
+- absence-condition/gate attachment;
+- specificity/precedence representation;
+- invariants preventing false global order and double counting;
+- development-only / target-theory-blind status.
+
+This is a semantic contract candidate, not implementation code.
+
+ARTIFACT 3 — BLOCKER RESOLUTION MATRIX
+
+Path:
+
+`state/LIFE-PATTERNS-OVERLAP-AUDIT-BLOCKER-RESOLUTION-v1-2026-09-10.jsonl`
+
+Exactly one JSON object for each of the 45 blocking OA IDs, one physical line each, with exactly these fields:
+
+{"finding_id":"OA-007","observable_id":"NBM-R02","repair_operation":"clarify_boundary|clarify_evidence_rule|clarify_specificity_precedence|assign_facet|split_value|retire_redundant_value|replace_composite_with_components|response_contract_change|no_substantive_change","affected_subcode_ids":["..."],"repair_artifact_reference":"Concise section/path reference","resolution":"Concise exact rule that resolves the finding","residual_risk":"none|low|medium|high","ready_for_blind_review":true|false}
+
+All 45 blocker IDs must appear exactly once. Do not add nonblocking IDs to this matrix.
+
+SELF-CHECK BEFORE COMMIT
+
+Before finalizing, verify:
+
+- all 45 blockers are addressed exactly once in the matrix;
+- every blocker marked ready for blind review has a concrete rule, not a promise to decide later;
+- R05 receives both substantive and response-contract repair;
+- the five response-contract findings OA-029, OA-034, OA-085, OA-114, OA-121 are representable under the proposed contract;
+- no `not reported` / unknown text is converted to nonoccurrence;
+- every retained absence-dependent code has a named absent proposition;
+- no same-act multi-facet coding is called independent evidence;
+- historical IDs/artifacts are not overwritten;
+- no target-model information was used.
+
+STOP BOUNDARY
+
+Do not implement software, rebuild a package, modify the human UI, code participant evidence, run automated annotation, contact an auditor, merge/deploy, or score/reveal any target model. Stop after the three candidate repair artifacts are committed for a separate fresh blind review.
