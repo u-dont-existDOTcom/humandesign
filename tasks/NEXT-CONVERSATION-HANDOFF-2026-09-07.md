@@ -10,117 +10,143 @@ Before substantive work, fetch the **current PR #24 head** and treat GitHub as c
 
 1. `tasks/ACTIVE-TASK.json`
 2. `state/LIFE-PATTERNS-CURRENT-STATE-2026-09-10.md`
-3. `state/LIFE-PATTERNS-NEUTRAL-MEASUREMENT-REPAIR-CANDIDATE-RECEIPT-2026-09-10.json`
-4. `state/LIFE-PATTERNS-NEUTRAL-CODEBOOK-CLARIFICATION-v2-CANDIDATE-2026-09-10.md`
-5. `state/LIFE-PATTERNS-FACET-RELATION-CONTRACT-v3-CANDIDATE-2026-09-10.json`
-6. `state/LIFE-PATTERNS-OVERLAP-AUDIT-BLOCKER-RESOLUTION-v1-2026-09-10.jsonl`
-7. `state/LIFE-PATTERNS-NEUTRAL-MEASUREMENT-REPAIR-REVIEW-PROMPT-v1-2026-09-10.txt`
-8. `tasks/LIFE-PATTERNS-NEUTRAL-MEASUREMENT-REPAIR-REVIEW-WORKER-2026-09-10.md`
-9. `state/LIFE-PATTERNS-SUBCODE-OVERLAP-ABSENCE-AUDIT-SUMMARY-v1-2026-09-10.json`
-10. `state/LIFE-PATTERNS-SUBCODE-OVERLAP-ABSENCE-AUDIT-RAW-v1-2026-09-10.jsonl`
-11. `state/LIFE-PATTERNS-SUBCODE-OVERLAP-ABSENCE-AUDIT-EXPOSED-REVIEW-2026-09-10.md`
-12. `state/LIFE-PATTERNS-R05-FACET-OVERLAP-AND-ABSENCE-SEMANTICS-DEFECT-2026-09-10.md`
-13. `docs/research/LIFE_PATTERNS_HUMAN_CALIBRATION_MINIMAL_BURDEN_POLICY_2026-09-09.md`
-14. `state/LIFE-PATTERNS-V2-PRIVATE-FREEZE-VERIFIED-2026-09-08.json`
-15. `docs/research/LIFE_PATTERNS_RECURRENCE_EVIDENCE_POLICY_v2_2026-09-08.md`
-16. `state/LIFE-PATTERNS-DEVELOPMENT-CODING-MANUAL-v2-2026-09-08.md`
-17. `state/LIFE-PATTERNS-PRIVATE-ARTIFACT-RECOVERY-VERIFIED-2026-09-07.json`
-18. `state/CURRENT-STATE.md`
-19. `state/LIFE-PATTERNS-DEVELOPMENT-HANDOFF-2026-09-06.md`
+3. `state/LIFE-PATTERNS-NEUTRAL-MEASUREMENT-REPAIR-REVIEW-RECEIPT-2026-09-10.json`
+4. `state/LIFE-PATTERNS-NEUTRAL-MEASUREMENT-REPAIR-REVIEW-SUMMARY-v1-2026-09-10.json`
+5. `state/LIFE-PATTERNS-NEUTRAL-MEASUREMENT-REPAIR-REVIEW-RAW-v1-2026-09-10.jsonl`
+6. `state/LIFE-PATTERNS-FACET-CARDINALITY-REPAIR-PROMPT-v1-2026-09-10.txt`
+7. `tasks/LIFE-PATTERNS-FACET-CARDINALITY-REPAIR-WORKER-2026-09-10.md`
+8. `state/LIFE-PATTERNS-FACET-CARDINALITY-REVIEW-PROMPT-v1-2026-09-10.txt`
+9. `tasks/LIFE-PATTERNS-FACET-CARDINALITY-REVIEW-WORKER-2026-09-10.md`
+10. `state/LIFE-PATTERNS-NEUTRAL-CODEBOOK-CLARIFICATION-v2-CANDIDATE-2026-09-10.md`
+11. `state/LIFE-PATTERNS-FACET-RELATION-CONTRACT-v3-CANDIDATE-2026-09-10.json`
+12. `state/LIFE-PATTERNS-OVERLAP-AUDIT-BLOCKER-RESOLUTION-v1-2026-09-10.jsonl`
+13. `state/LIFE-PATTERNS-SUBCODE-OVERLAP-ABSENCE-AUDIT-SUMMARY-v1-2026-09-10.json`
+14. `state/LIFE-PATTERNS-SUBCODE-OVERLAP-ABSENCE-AUDIT-RAW-v1-2026-09-10.jsonl`
+15. `docs/research/LIFE_PATTERNS_HUMAN_CALIBRATION_MINIMAL_BURDEN_POLICY_2026-09-09.md`
+16. `state/LIFE-PATTERNS-V2-PRIVATE-FREEZE-VERIFIED-2026-09-08.json`
+17. `docs/research/LIFE_PATTERNS_RECURRENCE_EVIDENCE_POLICY_v2_2026-09-08.md`
+18. `state/LIFE-PATTERNS-DEVELOPMENT-CODING-MANUAL-v2-2026-09-08.md`
+19. `state/LIFE-PATTERNS-PRIVATE-ARTIFACT-RECOVERY-VERIFIED-2026-09-07.json`
+20. `state/CURRENT-STATE.md`
+21. `state/LIFE-PATTERNS-DEVELOPMENT-HANDOFF-2026-09-06.md`
 
 ## Current controlling state
 
-The valid overlap/absence audit and first blind repair proposal are both frozen. **The exact next gate is a second independent target-theory-blind review of the repair proposal.** Do not implement it yet.
+The original blind overlap/absence audit, the first blind repair candidate, and the required second independent blind review are now all frozen. **The second review failed the implementation gate.** Do not implement v3.
 
 No qualifying independent human first pass has been collected. No automated Life Patterns participant coding, consensus, human-vs-automated comparison, target-model scoring, or reveal has occurred.
 
 ## Frozen audit
 
-Authoritative audit commit:
-
-`7ea0641e0913815306f8c182be5e7e8b18115fff`
+Audit commit: `7ea0641e0913815306f8c182be5e7e8b18115fff`.
 
 CI `34472686547`: SUCCESS.
 
-- raw audit SHA-256 `37642f31135f3d446488a3a0a6736468b30b6114d5a292bcaf01096d65fb16e6`, 83,030 bytes, 134 findings;
-- summary SHA-256 `7184f89a9d6c8fa0560e0ceba07287f101f559ddcf872b3db62e39de34cb7b47`, 1,170 bytes;
-- 22 observables reviewed;
-- 45 blocking findings across 16 observables;
-- 5 response-contract limitations;
+- 22 observables;
+- 134 material findings;
+- 45 original blocking findings across 16 observables;
 - `human_calibration_safe_to_start_without_revision=false`.
 
-## Frozen repair candidate
+## First blind repair candidate
 
-Candidate commit:
-
-`458bede3cf83b1947c332a408b47ec84236d69ed`
-
-Candidate artifacts:
+Candidate commit: `458bede3cf83b1947c332a408b47ec84236d69ed`.
 
 - codebook clarification v2 candidate: SHA-256 `f179c04ff0940c701414abb10d48f8dafe574f3d1ff0727597802ffbf7bee8a0`, 29,122 bytes;
 - facet/relation contract v3 candidate: SHA-256 `513716ddd39a89a10287f546d4fe647da9823079ebc01e4cb322fd7ec5ae98ee`, 26,037 bytes;
 - blocker-resolution matrix: SHA-256 `4ec4b0d963932b5f1bff910e2464ef9754e7fee8dbbe5db601c681c124416309`, 25,324 bytes, 45 rows.
 
-Worker reported all 45 original blocking OA IDs exactly once, no software/UI/package implementation, and no target-model information used.
+No implementation was performed and no target-model information was reported used. Candidate CI rerun completed successfully.
 
-CI run `34506025354` initially hit an unrelated Node subprocess timeout in `test_natal_pilot_app` after 648 passed / 7 skipped. The failed job was rerun; verify job `102970354108` completed SUCCESS, including unit/integration tests, Ruff, and mypy. This is engineering baseline only, not semantic approval.
+## Second independent blind review — authoritative result
 
-## Exact next gate — SECOND independent blind review
+Review commit: `4f51d075cb200e57820486e4f9686d81c7fc604f`.
 
-Use a **different fresh target-theory-blind context** that did not author candidate commit `458bede3cf83b1947c332a408b47ec84236d69ed`.
+CI `34509829399`: SUCCESS.
+
+Review raw: worker-reported SHA-256 `0678acb8a4b24f0d8305cb8d5ed0dbf6022a07e74f6a94c674b406d2f1630b11`, 24,400 bytes.
+
+Review summary: worker-reported SHA-256 `bfde3a4906d3aa1f2260e492c33794d50230f2769f4630db60935b68a5318aa4`, 693 bytes.
+
+Counts:
+
+- 45 OA rows;
+- 38 RESOLVED;
+- 7 PARTIAL;
+- 0 UNRESOLVED;
+- 1 new material finding (`NR-001`);
+- R05 blockers resolved = true;
+- absence/missingness semantics resolved = true;
+- response-contract blockers resolved = false;
+- `safe_for_implementation=false`.
+
+Blocking IDs:
+
+`OA-007, OA-011, OA-076, OA-084, OA-085, OA-114, OA-121, NR-001`.
+
+The review commit adds only its two review artifacts; the candidate was not edited. The reviewer reported no target-model information used.
+
+## Residual defect
+
+This is now primarily a representation-contract problem, not a reopened substantive-codebook problem.
+
+The v3 contract scopes facet cardinality at whole-response level. Some facets are `zero_or_one`, but the accepted semantic overlay permits distinct values in the same facet at different ordered events/stages/windows. That can make a valid multi-stage trajectory unrepresentable or allow an implementation to discard an earlier stage.
+
+Named partial blockers:
+
+- OA-007 / R02 search disposition;
+- OA-011 / R03 temporal disposition;
+- OA-076 and OA-084 / R15 endpoint extent/timing;
+- OA-085 / R16 offer response/use;
+- OA-114 / R20 interaction disposition;
+- OA-121 / R21 contact disposition.
+
+`NR-001` generalizes the defect and requires checking the entire contract, including similarly staged R10/R12 trajectories.
+
+Do not reopen R05 or absence/missingness semantics merely because this contract issue remains; those passed the independent review.
+
+## Exact next gate — fresh blind contract-only repair
 
 Run:
 
-`tasks/LIFE-PATTERNS-NEUTRAL-MEASUREMENT-REPAIR-REVIEW-WORKER-2026-09-10.md`
+`tasks/LIFE-PATTERNS-FACET-CARDINALITY-REPAIR-WORKER-2026-09-10.md`
 
-following:
+in a NEW target-theory-blind context, following:
 
-`state/LIFE-PATTERNS-NEUTRAL-MEASUREMENT-REPAIR-REVIEW-PROMPT-v1-2026-09-10.txt`
+`state/LIFE-PATTERNS-FACET-CARDINALITY-REPAIR-PROMPT-v1-2026-09-10.txt`.
 
-The reviewer must independently evaluate each of the 45 original OA blockers; the candidate's blocker matrix is a claim to test, not an answer key. It must also scan the candidate for genuinely new material defects (`NR-*`).
+It must create exactly:
 
-Special checks:
+1. `state/LIFE-PATTERNS-FACET-RELATION-CONTRACT-v4-CANDIDATE-2026-09-10.json`
+2. `state/LIFE-PATTERNS-FACET-CARDINALITY-REPAIR-DISPOSITION-v1-2026-09-10.jsonl`
+3. `state/LIFE-PATTERNS-FACET-CARDINALITY-REPAIR-SUMMARY-v1-2026-09-10.json`
 
-- response-contract blockers: OA-029, OA-034, OA-085, OA-114, OA-121;
-- all R05 blockers: OA-017, OA-019, OA-020, OA-021, OA-022, OA-026, OA-027, OA-029;
-- missingness/absence semantics: nonmention/unknown/silence never become absence; every absence-dependent code names its exact absent proposition; the four-part gate applies to that proposition only; the affirmative half of a hybrid code is not mislabeled as non-action.
+The disposition must contain exactly the eight carried blocking IDs once each. Existing candidate and review files are immutable. The repair must remain contract-only; if a substantive codebook semantic change is required, the worker must report that and stop rather than making it.
 
-The review writes exactly:
+## Mandatory independent re-review
 
-1. `state/LIFE-PATTERNS-NEUTRAL-MEASUREMENT-REPAIR-REVIEW-RAW-v1-2026-09-10.jsonl`
-2. `state/LIFE-PATTERNS-NEUTRAL-MEASUREMENT-REPAIR-REVIEW-SUMMARY-v1-2026-09-10.json`
+After the v4 repair commit exists, use a distinct fresh target-theory-blind reviewer with:
 
-It must contain exactly 45 `OA-*` review rows plus only genuine `NR-*` findings.
+- `tasks/LIFE-PATTERNS-FACET-CARDINALITY-REVIEW-WORKER-2026-09-10.md`
+- `state/LIFE-PATTERNS-FACET-CARDINALITY-REVIEW-PROMPT-v1-2026-09-10.txt`.
 
-### Implementation criterion
+The reviewer must re-grade **all 45 original OA blockers plus carried NR-001**, not merely the seven partial OA rows, so regressions in previously resolved semantics are detectable. It may add only genuine new findings as `NR2-*`.
 
-Implementation is allowed only if the second blind summary sets `safe_for_implementation=true`, which requires:
+Implementation is allowed only if the new summary sets `safe_for_implementation=true`, requiring all 46 carried findings resolved, no blocking NR2 finding, no semantic regression, all five original response-contract blockers resolved, R05 still resolved, absence/missingness still resolved, and `semantic_change_required=false`.
 
-- all 45 original blockers = RESOLVED;
-- no blocking NR finding;
-- all five response-contract blockers resolved;
-- all R05 blockers resolved;
-- absence semantics adequately bounded.
+## Only after blind re-review passes
 
-If any original/new blocker remains, route only those unresolved/new issues into another fresh theory-blind repair cycle. Do not patch around them in the exposed project context.
-
-## Only after blind review passes
-
-Mechanically implement the accepted versioned neutral measurement and facet/event relation contract; regenerate the private package/handoff/UI; then resume owner usability review.
+The exposed engineering context may mechanically implement the accepted versioned neutral measurement and relation contract, regenerate the private package/handoff/UI, and resume owner usability review.
 
 Only after the revised UI is owner-accepted may the independent human first pass begin. Only after that first pass is frozen may automated Life Patterns participant coding begin.
 
-## Existing owner corrections remain controlling
+## Existing corrections remain controlling
 
 - generalized behavioral recurrence self-report is direct reported-recurrence evidence;
 - self-selected confirming anecdotes are not independent frequency evidence;
-- concrete incidents are requested only for information gain;
 - specificity is not evidential independence;
 - machine schema is not the human interface;
-- ask substantive human questions directly;
-- hide machine IDs and optional research busywork;
 - one-source provenance is automatic;
-- multi-value order is asked only where temporal order actually matters;
+- temporal ordering is asked only where meaningful;
 - affirmative behavior is not non-action merely because a separate clause depends on absence;
 - absence gates name the exact absent proposition;
 - `not reported`, `unknown`, and silence are not behavioral nonoccurrence.
@@ -128,7 +154,7 @@ Only after the revised UI is owner-accepted may the independent human first pass
 ## Hard boundaries
 
 - all existing auditor kits remain ineligible for human collection;
-- do not implement the candidate before the second blind review passes;
+- do not implement v3 or any v4 repair before a passing independent blind re-review;
 - do not make theory-exposed substantive neutral-codebook repairs;
 - no automated participant coding before the eventual revised human first pass is frozen;
 - no target-model scoring/reveal;
