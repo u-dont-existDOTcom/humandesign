@@ -1,103 +1,128 @@
 # Life Patterns current state — 2026-09-10
 
-Status: public-safe controlling overlay for the active Life Patterns development-transfer task. This supersedes the 2026-09-09 overlay for current next-action state but does not erase historical records.
+Status: public-safe controlling overlay for the active Life Patterns development-transfer task. This supersedes the earlier 2026-09-10 pre-audit overlay for current next-action state but preserves all historical records.
 
 ## Current scientific gate
 
-**Human calibration is paused before collection.** Owner UI review exposed a possible substantive neutral-measurement defect in NBM-R05 and a broader need to audit all subcodes for overlap/facet/absence semantics before an independent human first pass.
+**Human calibration remains paused before collection, but the overlap/absence audit itself is complete.**
 
-No qualifying independent human first-pass annotations have been collected. No automated Life Patterns coding, consensus, human-vs-automated comparison, target-model scoring, or reveal has occurred.
+The valid fresh target-theory-blind audit is frozen at commit:
 
-## R05 finding
+`7ea0641e0913815306f8c182be5e7e8b18115fff`
 
-The frozen reconciled codebook explicitly defines NBM-R05 as two facets:
+GitHub Actions CI `34472686547`: SUCCESS.
 
-1. option-set construction (`R05-O1..O6`);
-2. choice resolution (`R05-R1..R9`).
-
-The current human UI flattened them into one list, hiding that values from different facets may legitimately co-occur.
-
-`R05-O2` — “accepts one/default option without searching for alternatives” — is additionally hybrid:
-
-- **affirmative behavior:** accepts/selects one/default option;
-- **absence condition:** does not search for alternatives.
-
-The frozen non-action registry includes R05-O2 because its truth depends on proving the **absence of alternative search**, not because accepting an option is itself non-action. The prior generic UI wording “did not act” was therefore semantically wrong for this value.
-
-The same R05-O2 wording also appears potentially overlapping with R05-R1 (selects without reported comparison / first acceptable option) and R05-R4 (follows an explicit rule, prior commitment, or default). Whether that is acceptable complementary facet coding, a response-contract problem, or substantive redundancy must be resolved theory-blind before collection.
-
-## First overlap/absence audit attempt — invalid
-
-The owner returned the first attempted fresh blind audit output on 2026-09-10. It is **not an authoritative audit artifact**.
-
-Returned text identity:
-
-- bytes: `17554`
-- SHA-256: `0e3b339c9e7ffa6362ada0a13ec2b2d11911608e7b5cdca4c39216a79f5a5b81`
-
-Failure facts:
-
-- Markdown escaping made the returned lines invalid JSON as transported;
-- after diagnostic removal of the presentation-only underscore escapes, only OA-001..OA-009 form a parseable prefix;
-- OA-010 is corrupted;
-- the remainder contains process/meta commentary rather than required findings;
-- no complete 22-observable audit or final summary JSON exists.
-
-Do not salvage or use the partial prefix. The rerun must be fresh and must not receive those partial findings as substantive input.
-
-Failure record:
-
-`state/LIFE-PATTERNS-SUBCODE-OVERLAP-ABSENCE-AUDIT-FAILED-RUN-2026-09-10.md`
-
-## Required audit rerun
-
-Canonical substantive audit prompt:
-
-`state/LIFE-PATTERNS-SUBCODE-OVERLAP-ABSENCE-AUDIT-PROMPT-v1-2026-09-10.txt`
-
-Execution wrapper:
-
-`tasks/LIFE-PATTERNS-SUBCODE-OVERLAP-ABSENCE-AUDIT-WORKER-2026-09-10.md`
-
-Run the wrapper in a new target-theory-blind context. For substantive reasoning the worker uses only the frozen audit prompt and its four authoritative measurement inputs.
-
-To avoid another large-response transport failure, the worker writes the complete audit directly to:
+Audit artifacts:
 
 - `state/LIFE-PATTERNS-SUBCODE-OVERLAP-ABSENCE-AUDIT-RAW-v1-2026-09-10.jsonl`
+  - 134 findings
+  - worker-reported SHA-256 `37642f31135f3d446488a3a0a6736468b30b6114d5a292bcaf01096d65fb16e6`
+  - worker-reported bytes `83030`
 - `state/LIFE-PATTERNS-SUBCODE-OVERLAP-ABSENCE-AUDIT-SUMMARY-v1-2026-09-10.json`
+  - worker-reported SHA-256 `7184f89a9d6c8fa0560e0ceba07287f101f559ddcf872b3db62e39de34cb7b47`
+  - worker-reported bytes `1170`
 
-Then it must pass the mechanical validator:
+Mechanical validator: PASS.
 
-`scripts/validate_life_patterns_subcode_overlap_absence_audit.py`
+No qualifying independent human first-pass annotations have been collected. No automated Life Patterns participant coding, consensus, human-vs-automated comparison, target-model scoring, or reveal has occurred.
 
-The validator checks transport/schema/internal consistency only; it does not judge substantive correctness.
+## Audit conclusion
 
-## Disposition rules after a valid blind audit is frozen
+Frozen summary counts:
 
-- Presentation-only finding -> repair the human UI, explicitly group facets, and name the precise absence proposition in any evidence gate.
-- Response-contract limitation -> create a new versioned contract before collection.
-- Substantive codebook overlap -> perform a new theory-blind versioned neutral-measurement clarification/revision, preserving all historical v1/v2 artifacts unchanged, then regenerate dependent package/handoff/UI.
+- observables reviewed: **22**;
+- material findings: **134**;
+- presentation-only: **48**;
+- response-contract limitations: **5**;
+- substantive-codebook overlap: **40**;
+- no-change-needed: **41**;
+- blocking findings: **45**;
+- `human_calibration_safe_to_start_without_revision = false`.
 
-Do not tune any revision using target-model information.
+The 45 blockers affect 16 observables:
+
+`R02, R03, R05, R06, R07, R10, R11, R12, R13, R14, R15, R16, R18, R19, R20, R21`.
+
+R05 requires versioned codebook clarification. The audit confirms that its option-set and resolution facets legitimately co-occur, while `R05-O2` crosses the facet boundary and contains affirmative default acceptance plus a separately absence-dependent no-alternative-search condition. It also identifies overlap among O2/R1/R4 and a response-contract failure for cross-facet co-presence plus ordered within-facet sequence.
+
+## Structural contract issue
+
+Exactly five audit findings classify the current response contract as insufficient:
+
+- OA-029 — R05;
+- OA-034 — R07;
+- OA-085 — R16;
+- OA-114 — R20;
+- OA-121 — R21.
+
+The common defect is that one global `single / ordered_sequence / unordered_multiple` relation cannot encode both co-present facet attributes and meaningful temporal order. A versioned facet/event-aware response contract is therefore required.
+
+## Substantive repair issue
+
+The audit also identifies recurring codebook problems that cannot be solved by UI copy alone:
+
+- nested/general/specific values without deterministic specificity rules;
+- composite values that duplicate their component actions;
+- missingness phrases such as `not reported` / `unknown` that can be misread as behavioral absence;
+- hybrid affirmative-plus-absence values where only the absence component should receive a non-action gate;
+- underbounded absence targets;
+- same-act double-count risk;
+- ambiguous boundaries among completion/closure, search termination, communication, negotiation, repair, and other trajectories.
+
+Public-safe exposed review:
+
+`state/LIFE-PATTERNS-SUBCODE-OVERLAP-ABSENCE-AUDIT-EXPOSED-REVIEW-2026-09-10.md`
+
+## Exact next stage — fresh blind repair proposal
+
+Run:
+
+`tasks/LIFE-PATTERNS-NEUTRAL-MEASUREMENT-REPAIR-WORKER-2026-09-10.md`
+
+in a new target-theory-blind context.
+
+The substantive prompt is:
+
+`state/LIFE-PATTERNS-NEUTRAL-MEASUREMENT-REPAIR-PROMPT-v1-2026-09-10.txt`
+
+The worker must create a versioned neutral-codebook clarification candidate, a facet/relation response-contract candidate, and a 45-row blocker-resolution matrix. It must resolve every blocking OA ID explicitly and stop without implementation.
+
+## Mandatory second blind review
+
+After the repair worker commits its proposal, run a second independent target-theory-blind context using:
+
+- `tasks/LIFE-PATTERNS-NEUTRAL-MEASUREMENT-REPAIR-REVIEW-WORKER-2026-09-10.md`
+- `state/LIFE-PATTERNS-NEUTRAL-MEASUREMENT-REPAIR-REVIEW-PROMPT-v1-2026-09-10.txt`
+
+Implementation is blocked unless that review resolves all 45 original blockers, identifies no new blocking material defect, and sets `safe_for_implementation=true`.
+
+## Only after blind repair review passes
+
+The exposed engineering context may then implement the accepted versioned codebook/contract mechanically, regenerate the private package/handoff/UI, and resume owner usability review. Only after that revised UI is accepted may the independent human first pass begin.
 
 ## Suspended artifacts
 
-Every existing private auditor kit remains historical owner-review material only and is **not eligible for new independent human collection** until this audit gate is cleared.
+Every existing private auditor kit remains historical owner-review material only and is **not eligible for new independent human collection**.
 
 ## Existing corrections that remain controlling
 
 - generalized behavioral recurrence self-report is evidence of reported recurrence;
 - confirming anecdotes are not independent frequency observations;
 - concrete examples are requested only for information gain;
+- specificity is not evidential independence;
 - human UI asks substantive behavioral questions directly and derives machine state behind the scenes;
 - machine IDs and optional research-data busywork are not human tasks;
 - one-source provenance is automatic;
-- ordering is asked only after multiple behaviors are selected and must use plain-language behavior labels.
+- ordering is asked only when genuine ordering information is required;
+- affirmative behavior must not be mislabeled as non-action because a separate clause depends on absence;
+- absence gates must name the exact absent proposition;
+- `not reported` / `unknown` must not become behavioral nonoccurrence.
 
 ## Hard boundaries
 
 - no independent human collection yet;
-- no automated coding before the eventual revised human first pass is frozen;
+- no engineering implementation of the overlap repair until the second blind review passes;
+- no automated participant coding before the eventual revised human first pass is frozen;
 - no theory-exposed substantive neutral-codebook repair;
 - no target-model scoring/reveal;
 - no merge/deploy, assistant-initiated auditor contact/recruitment, or spending;
