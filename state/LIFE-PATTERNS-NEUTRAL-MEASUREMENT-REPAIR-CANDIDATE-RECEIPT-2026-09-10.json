@@ -31,7 +31,12 @@
     "first_attempt": "failed_unrelated_node_subprocess_timeout_in_test_natal_pilot_app",
     "first_attempt_life_patterns_repair_test_failure": false,
     "rerun_requested": true,
-    "rerun_status_at_receipt_write": "in_progress"
+    "rerun_verify_job_id": 102970354108,
+    "rerun_status": "completed",
+    "rerun_conclusion": "success",
+    "unit_and_integration_tests": "success",
+    "ruff": "success",
+    "mypy": "success"
   },
   "development_only": true,
   "validation_use_forbidden": true,
