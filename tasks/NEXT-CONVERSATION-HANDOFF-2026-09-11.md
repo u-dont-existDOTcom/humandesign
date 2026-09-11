@@ -8,14 +8,13 @@ GitHub is canonical. Before substantive work, fetch the current PR #24 head and 
 
 1. `tasks/ACTIVE-TASK.json`
 2. `state/LIFE-PATTERNS-CURRENT-STATE-2026-09-11.md`
-3. `state/LIFE-PATTERNS-V5-PRIVATE-UI-OWNER-REVIEW-CANDIDATE-2026-09-11.json`
+3. `state/LIFE-PATTERNS-V5-OWNER-USABILITY-FEEDBACK-001-2026-09-11.json`
 4. `tasks/LIFE-PATTERNS-V5-OWNER-USABILITY-REVIEW-2026-09-11.md`
-5. `docs/research/LIFE_PATTERNS_V5_PRIVATE_PORTABLE_ADAPTER_2026-09-11.md`
-6. `state/LIFE-PATTERNS-V5-MECHANICAL-IMPLEMENTATION-VERIFIED-2026-09-11.json`
-7. `state/LIFE-PATTERNS-V2-PRIVATE-FREEZE-VERIFIED-2026-09-08.json`
-8. `state/LIFE-PATTERNS-RECORD-CONTAINMENT-REVIEW-VERIFIED-2026-09-10.json`
-9. `state/LIFE-PATTERNS-FACET-RELATION-CONTRACT-v5-CANDIDATE-2026-09-10.json`
-10. `state/CURRENT-STATE.md`
+5. `state/LIFE-PATTERNS-V5-MECHANICAL-IMPLEMENTATION-VERIFIED-2026-09-11.json`
+6. `state/LIFE-PATTERNS-V2-PRIVATE-FREEZE-VERIFIED-2026-09-08.json`
+7. `state/LIFE-PATTERNS-RECORD-CONTAINMENT-REVIEW-VERIFIED-2026-09-10.json`
+8. `state/LIFE-PATTERNS-FACET-RELATION-CONTRACT-v5-CANDIDATE-2026-09-10.json`
+9. `state/CURRENT-STATE.md`
 
 ## Closed gates
 
@@ -25,7 +24,7 @@ The public V5 mechanical implementation passed at code head `35a2daf7a9cf0628e97
 
 Do not redo those gates unless new evidence demonstrates a genuine defect.
 
-## Exact calibration source — recovered and verified
+## Frozen calibration source
 
 Outer transport:
 
@@ -41,47 +40,62 @@ Inner receipt:
 
 All receipt-bound member and packet hashes reverified. Coverage remains 44 episode + 22 series units.
 
-## Private V5 owner-review candidate — ready
+## Owner usability defect 001 — diagnosed as presentation only
 
-A private owner-review candidate was generated from the exact verified transport and technically smoke-tested.
+The first private owner-review candidate is superseded.
 
-Public-safe receipt:
+Owner feedback exposed a contradiction in the human presentation: a broad observable question could be clearly applicable while the closest specific substantive value was absence-dependent and correctly could not satisfy its required four-part gate. The generic `Not enough information` fallback sounded as if it denied the obvious applicability of the story.
 
-`state/LIFE-PATTERNS-V5-PRIVATE-UI-OWNER-REVIEW-CANDIDATE-2026-09-11.json`
+The accepted V5 semantics already support the needed distinction:
+
+- `observed` requires a sufficiently established **specific** value/affirmative component;
+- `insufficient` can apply even when the general situation clearly applies but no specific distinction can be supported without inference;
+- `not_applicable` requires affirmative absence of the prerequisite situation.
+
+The four-part absence gate is **not** weakened.
+
+Public-safe disposition:
+
+`state/LIFE-PATTERNS-V5-OWNER-USABILITY-FEEDBACK-001-2026-09-11.json`
+
+## Private R2 owner-review candidate
 
 Private package identity:
 
-- filename `Life-Patterns-V5-PRIVATE-Owner-Review-2026-09-11.zip`
-- SHA-256 `0ff2a6db516a9005eea2c2a91e2b19597d81d97629684958a84473e6a25da2f5`
-- bytes `632723`
+- filename `Life-Patterns-V5-PRIVATE-Owner-Review-R2-2026-09-11.zip`
+- SHA-256 `d5293e0a363c0aa210c8c4031959534c065b375b158335569f4d63098757f5c9`
+- 633219 bytes
+- HTML SHA-256 `55b4a92b73cf42a58f43339c792a6f53c475311395eec2f96c3e3bbf431290a9`
+- HTML bytes `1608348`
 
-The package itself is private and is not committed to GitHub.
+R2 changes only the human presentation:
 
-Technical smoke passed save/reload persistence, exact fallback semantics, R05-O2 separate affirmative/four-gate absence behavior, R14-i four-gate pure absence fail-closed behavior, claim-specific multi-source provenance, progress/attestation downloads, incomplete-export fail-closed behavior, zero external network requests, and zero console errors. Public-only synthetic export smoke passed for pure absence, partial hybrid, ordered two-stage/single-evidence-unit behavior, and recurrence-v2 fields.
+- evidence-state prompt: `Which statement best matches the evidence?`
+- observed: `Yes — a specific behavior below is established`
+- not applicable: `Doesn't apply to this story`
+- insufficient: `Not enough information for a specific behavior`
+- insufficient copy explicitly says the general situation can still clearly apply;
+- absence-dependent choices are labelled before selection;
+- incomplete absence gates explain that the value cannot count and point to the specific-value insufficient state instead of implying the story is irrelevant.
 
-The sandbox could not execute the canonical compressed-template builder chain because the connected GitHub files cannot be mounted locally and Git/network checkout is blocked. A portable execution adapter preserving the accepted V5 semantics was used instead. The architecture and explicit smoke limitation are documented at `docs/research/LIFE_PATTERNS_V5_PRIVATE_PORTABLE_ADAPTER_2026-09-11.md`.
+The package itself remains private and is not committed to GitHub.
 
-## Exact next gate — owner usability review
+## Exact next gate — owner review of R2
 
-Run/follow:
+The owner should review representative units in the R2 package, especially the previously problematic R05 shape, and return either:
 
-`tasks/LIFE-PATTERNS-V5-OWNER-USABILITY-REVIEW-2026-09-11.md`
+1. explicit presentation acceptance; or
+2. another concrete usability defect.
 
-The owner should review representative units in the private package and return either explicit presentation acceptance or concrete usability defects. Do not treat this as a 66-unit annotation pass.
+This is not the 66-unit annotation pass. Technical smoke does not equal owner acceptance.
 
-Technical smoke does not equal owner acceptance.
+## After R2 presentation acceptance
 
-## After owner presentation acceptance
-
-Before human collection, make the accepted surface reproducible through one of:
-
-1. promote the portable adapter implementation plus focused tests to the public repo and obtain green CI against the V5 validator; or
-2. regenerate the accepted surface with `scripts/build_life_patterns_human_calibration_ui_v5_final.py` in an environment with the complete local repo/template chain and smoke that exact result.
-
-Only after owner acceptance + green reproducibility may the independent human first pass begin. Only after that pass is complete and frozen may automated participant coding begin.
+Promote the same presentation-only repair into the canonical public builder with focused tests and green CI. Only after owner acceptance + green reproducibility may the independent human first pass begin. Only after that pass is complete and frozen may automated participant coding begin.
 
 ## Hard boundaries
 
+- do not weaken the four-part absence gate to make a narrative fit;
 - no private exact text or generated private UI in public GitHub;
 - no human collection before owner acceptance and green reproducibility;
 - no automated participant coding before the revised independent human pass is frozen;
