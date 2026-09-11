@@ -1,140 +1,86 @@
 # Life Patterns current state — 2026-09-11
 
-Status: public-safe controlling overlay for the active Life Patterns development-transfer task. GitHub is canonical; historical artifacts remain immutable.
+Status: public-safe controlling overlay for `codex/discover-life-patterns-mvp`, draft PR #24.
 
 ## Current gate
 
-**The blind V5 semantic/contract gate and the public mechanical implementation gate have both PASSED.**
+The blind V5 semantic/contract gate and the public mechanical implementation gate have passed. The exact previously frozen calibration transport has now also been recovered and fully reverified.
 
-The current blocker is narrower: the exact existing **outer private V2 transport ZIP** is not available in the current context, so it cannot yet be regenerated through the final V5 builder, browser-smoked as the real private package, and accepted by the owner for usability. Independent human collection remains blocked until that owner UI gate passes.
+A V5 owner-review candidate has been generated and technically smoke-tested. **The next action is owner usability review. Human collection remains unauthorized.**
 
-No qualifying independent human first-pass annotations have been collected. No automated Life Patterns participant coding, consensus, human-vs-automated comparison, target-model scoring, or reveal has occurred.
+## Accepted public V5 implementation
 
-## Accepted blind semantic chain
-
-The record-containment repair is frozen at:
-
-`320cb577f4adfbcc644c986f7f532feef0fbe80b`
-
-The independent fresh blind V5 regression review is frozen at:
-
-`ce04642146c41a7d5d94f85360572c78de887682`
-
-That review re-graded all **47 carried findings** — 45 original OA blockers, `NR-001`, and `NR2-001` — and resolved all 47 with no partial, unresolved, regressed, or new blocking finding. It preserved the accepted R05, absence/missingness, stage-local cardinality, response-contract, record-containment, and same-act anti-double-counting semantics, with `semantic_change_required=false` and `safe_for_implementation=true`.
-
-Public verification receipt:
-
-`state/LIFE-PATTERNS-RECORD-CONTAINMENT-REVIEW-VERIFIED-2026-09-10.json`
-
-## Public V5 mechanical implementation — VERIFIED
-
-Owner-facing implementation code head:
-
-`35a2daf7a9cf0628e976b7b57f810c2f90a2bf02`
-
-GitHub Actions CI `34623829382`: **SUCCESS**.
-
-Verification result:
-
-- **675 passed, 7 expected skips, 0 failed**;
-- Ruff: **all checks passed**;
-- strict mypy: **no issues in 174 source files**.
+- record-containment repair: `320cb577f4adfbcc644c986f7f532feef0fbe80b`
+- independent blind V5 review: `ce04642146c41a7d5d94f85360572c78de887682`
+- all 47 carried findings resolved
+- `semantic_change_required=false`
+- implementation head: `35a2daf7a9cf0628e976b7b57f810c2f90a2bf02`
+- CI `34623829382`: SUCCESS
+- 675 passed, 7 expected skips, 0 failed
+- Ruff clean
+- strict mypy clean across 174 source files
 
 Public verification receipt:
 
 `state/LIFE-PATTERNS-V5-MECHANICAL-IMPLEMENTATION-VERIFIED-2026-09-11.json`
 
-### Implemented measurement mechanics
+## Recovered calibration source identity
 
-The V5 graph implementation now enforces the accepted response-level record model and referential integrity, including:
+Outer transport:
 
-- direct containment of value assertions, component assertions, absence conditions, provenance, stages, windows, and evidence units;
-- exact-one typed reference resolution within one observable response;
-- unique component binding to one event stage and that stage's evidence unit;
-- stage-local cardinality;
-- cross-facet co-presence without inventing temporal order;
-- same sourced fact anti-double-counting;
-- claim-specific provenance;
-- four-part absence gates;
-- distinct handling of mixed hybrid values versus pure absence-dependent values;
-- retention of a supported hybrid affirmative component when its paired absence gate is insufficient, without asserting the combined parent value;
-- the recurrence-v2 firewall for repeated series, including no fake independent frequency support from a confirming anecdote.
+- filename `Life-Patterns-Recurrence-Corrected-Human-Calibration-V2-PRIVATE-2026-09-08.zip`
+- SHA-256 `f038237a6a1ce776bb28846b76ff49339e7a9e7f28d33c5d1ad877e0d916d837`
+- 422297 bytes
+- 15 members
 
-A prior implementation-only assumption that every component had to belong to a hybrid parent was rejected. Pure absence-dependent values such as `R14-i` require one separately gated absence component. The focused V5 graph and development-envelope tests cover this distinction.
+Inner receipt:
 
-## Final V5 human-first UI implementation — VERIFIED PUBLICLY
+- id `LPHB2-F34245FAE32B513DDCFE`
+- SHA-256 `f34245fae32b513ddcfe22b7d21081997e8c28e18fccd25b962c30af2fe0a78f`
+- 8 packets
 
-The controlling owner-facing builder is:
+All receipt-declared member hashes and packet content addresses reverified. Selected coverage remains exactly 44 episode + 22 series = 66 units. The outer and inner hashes identify different objects.
 
-`scripts/build_life_patterns_human_calibration_ui_v5_final.py`
+## V5 owner-review candidate
 
-It reuses the verified final V2 auditor surface while leaving historical V2 builders/contracts unchanged. The human layer now:
+Public-safe receipt:
 
-- groups choices by behavioral facet instead of asking one global relation question;
-- never turns cross-facet co-presence into a global ordered sequence;
-- asks same-facet stage separation only when multiple active facts create a real stage/window question;
-- asks chronology only after distinct stages are established and creates temporal edges only when the auditor explicitly establishes the order;
-- separates hybrid affirmative and absence components;
-- retains the affirmative fact if the absence gate is insufficient while withholding the combined hybrid parent;
-- uses claim-specific quote provenance when multiple exact source segments exist and automatic provenance when there is only one source;
-- hides graph/stage/evidence IDs from the human task;
-- exports versioned V5 episode/series response envelopes;
-- keeps the existing auditor attestation boundary;
-- remains offline / no-network;
-- uses **“Doesn't apply to this story”** only when the prerequisite is affirmatively absent and **“Not enough information”** when the exact source is insufficient; silence/non-mention does not count as not-applicable.
+`state/LIFE-PATTERNS-V5-PRIVATE-UI-OWNER-REVIEW-CANDIDATE-2026-09-11.json`
 
-The browser exporter is tested by executing its pure JavaScript graph builder under Node and validating the resulting envelopes with the Python V5 models/contract for both a gated pure absence (`R14-i`) and a partial hybrid (`R05-O2`). Synthetic private-handoff builds are also tested for byte preservation and plaintext non-leakage.
+Candidate identities:
 
-## Exact private source identity
+- HTML SHA-256 `e0fd7e90fdb923cc03ec16e41470689267bb0a537a9ea2f9e59beb25eb3ebd27`
+- HTML bytes `1607323`
+- owner-review ZIP SHA-256 `0ff2a6db516a9005eea2c2a91e2b19597d81d97629684958a84473e6a25da2f5`
+- ZIP bytes `632723`
 
-The exact source required for real regeneration has **two different identities**:
+The sandbox could not execute the canonical builder chain because the connected repository template chain could not be mounted locally and Git/network checkout is blocked. A portable execution adapter was therefore used while preserving the accepted V5 facet, hybrid/absence, stage, provenance, recurrence, and envelope semantics.
 
-Outer transport ZIP supplied to the builder:
+Architecture and limitation record:
 
-- filename: `Life-Patterns-Recurrence-Corrected-Human-Calibration-V2-PRIVATE-2026-09-08.zip`
-- SHA-256: `f038237a6a1ce776bb28846b76ff49339e7a9e7f28d33c5d1ad877e0d916d837`
-- byte count: `422297`
-- archive members: `15`
+`docs/research/LIFE_PATTERNS_V5_PRIVATE_PORTABLE_ADAPTER_2026-09-11.md`
 
-Inner public-safe LPHB2 receipt that must independently verify inside that ZIP:
+Technical smoke passed for save/reload persistence, exact fallback semantics, R05-O2 separate affirmative plus four-part absence controls, R14-i four-part absence fail-closed behavior, claim-specific multi-source provenance, backup and attestation downloads, incomplete-export fail-closed behavior, zero external network requests, and zero console errors. Public-only synthetic export smoke also passed for pure absence, partial hybrid, ordered multi-stage/single-evidence-unit behavior, and recurrence-v2 fields.
 
-- receipt id: `LPHB2-F34245FAE32B513DDCFE`
-- receipt SHA-256: `f34245fae32b513ddcfe22b7d21081997e8c28e18fccd25b962c30af2fe0a78f`
-- packet count: `8`
+Managed Chromium in this sandbox blocks normal local navigation, so DOM/interactions were exercised in-memory after the outer transport was independently cryptographically verified. This limitation is recorded in the receipt.
 
-**The receipt SHA is not the ZIP SHA.**
+## Exact next action
 
-Current-context recovery was attempted through the File Library three times, including exact filename/hash lookup; the retrieval service returned errors and no bytes. Prior-context retrieval also did not surface the ZIP bytes. Public GitHub correctly does not contain them. Public-safe blocked receipt:
+Owner should review:
 
-`state/LIFE-PATTERNS-V5-PRIVATE-UI-REGEN-BLOCKED-2026-09-11.json`
+`Life-Patterns-V5-PRIVATE-Owner-Review-2026-09-11.zip`
 
-Do not reconstruct the private package from public artifacts, summaries, or memory.
+If the owner accepts the UI, preserve the explicit acceptance and then make the accepted surface reproducible before human collection by either:
 
-## Exact next gate — real private V5 regeneration, browser smoke, owner review
+1. promoting/testing the portable adapter in the public repo with green CI; or
+2. regenerating the accepted surface with `scripts/build_life_patterns_human_calibration_ui_v5_final.py` in an environment with a full local repo/template checkout.
 
-Use:
-
-`tasks/LIFE-PATTERNS-V5-PRIVATE-UI-REGEN-OWNER-REVIEW-WORKER-2026-09-11.md`
-
-Required sequence:
-
-1. recover/re-supply the exact outer ZIP and verify its SHA-256/byte count;
-2. verify the inner LPHB2 receipt and receipt-declared member/packet bindings;
-3. build the final offline V5 UI with `scripts/build_life_patterns_human_calibration_ui_v5_final.py`;
-4. browser-smoke the real private build, including save/reload, partial hybrid handling, absence fallback semantics, claim-specific provenance where applicable, V5 response download, progress backup, and auditor attestation;
-5. return the private UI/package to the owner for usability review;
-6. only after explicit owner acceptance, record the acceptance publicly without exposing private evidence and unlock the independent human first pass.
+Technical smoke does not equal owner acceptance.
 
 ## Hard boundaries
 
-- **human collection is not authorized yet**;
-- existing/superseded auditor kits remain ineligible for new human collection;
-- never commit private participant narrative, private handoff bytes, or generated private calibration HTML;
-- no reconstruction of missing private evidence;
+- no independent human collection before owner acceptance plus a green reproducible generation path;
 - no automated participant coding before the revised independent human first pass is completed and frozen;
 - no target-model scoring/reveal;
-- no merge/deploy, assistant-initiated recruitment/contact, or spending without separate authorization.
-
-## Preserved owner correction
-
-The unrelated owner-test invariant remains binding: **“there was never a completion policy. that was invented nonsense by codex.”** Do not recreate a completion-policy premise or silently turn artifact counts into such a policy.
+- generated private review files are not committed to the public repo;
+- no merge/deploy, recruitment/contact, or spending without separate authorization.
