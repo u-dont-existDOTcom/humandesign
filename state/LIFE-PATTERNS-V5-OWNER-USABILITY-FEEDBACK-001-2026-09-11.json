@@ -1,0 +1,52 @@
+{
+  "schema_version": "life-patterns-v5-owner-usability-feedback-v1",
+  "date": "2026-09-11",
+  "feedback_id": "LP-V5-UI-001",
+  "status": "presentation_repair_candidate_generated",
+  "owner_feedback": "A broad observable question could be clearly applicable while the closest specific substantive value was absence-dependent and could not be asserted because its required four-part gate was not fully established. The generic insufficient fallback therefore read as if it denied the obvious applicability of the story.",
+  "affected_shape": {
+    "observable_id": "NBM-R05",
+    "evidence_kind": "episode",
+    "private_exact_text_recorded_publicly": false
+  },
+  "diagnosis": {
+    "scientific_gate_defect": false,
+    "presentation_defect": true,
+    "semantic_change_required": false,
+    "four_part_absence_gate_should_be_weakened": false,
+    "root_cause": "The UI conflated observable-level applicability with evidence sufficiency for a specific V5 substantive value."
+  },
+  "controlling_semantics": {
+    "observed": "At least one specific substantive value or affirmative component is sufficiently established.",
+    "insufficient": "The general situation may apply or even clearly apply, while the required specific distinction cannot be supported without inference.",
+    "not_applicable": "The prerequisite situation itself is affirmatively absent; non-mention is not enough."
+  },
+  "presentation_repair": {
+    "evidence_state_heading": "Which statement best matches the evidence?",
+    "observed_label": "Yes — a specific behavior below is established",
+    "not_applicable_label": "Doesn't apply to this story",
+    "insufficient_label": "Not enough information for a specific behavior",
+    "insufficient_copy_explicitly_states_general_situation_can_still_apply": true,
+    "absence_dependent_choices_prelabelled_before_selection": true,
+    "incomplete_absence_error_directs_to_insufficient_without_calling_story_irrelevant": true
+  },
+  "private_r2_candidate": {
+    "filename": "Life-Patterns-V5-PRIVATE-Owner-Review-R2-2026-09-11.zip",
+    "sha256": "d5293e0a363c0aa210c8c4031959534c065b375b158335569f4d63098757f5c9",
+    "bytes": 633219,
+    "html_sha256": "55b4a92b73cf42a58f43339c792a6f53c475311395eec2f96c3e3bbf431290a9",
+    "html_bytes": 1608348,
+    "private_bytes_committed_to_github": false
+  },
+  "verification": {
+    "javascript_syntax_check": true,
+    "targeted_r05_owner_feedback_interaction_smoke": true,
+    "four_part_absence_gate_unchanged": true,
+    "underlying_selected_units_changed": false,
+    "underlying_private_transport_changed": false,
+    "canonical_public_builder_promotion_complete": false
+  },
+  "owner_usability_review_pending": true,
+  "human_collection_authorized": false,
+  "next_gate": "Owner reviews the R2 private candidate. If the presentation repair is accepted, promote the same presentation-only distinction into the canonical public builder with tests and green CI before authorizing human collection."
+}
