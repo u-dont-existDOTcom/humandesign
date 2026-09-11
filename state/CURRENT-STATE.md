@@ -2,82 +2,60 @@
 
 ## Authoritative branch overlay — Life Patterns — 2026-09-11
 
-This is the concise branch pointer for `codex/discover-life-patterns-mvp`, draft PR #24. Historical state remains preserved in Git history and dated artifacts. Do **not** infer the current next action from superseded semantic-review or V2 UI/calibration artifacts.
+This is the concise pointer for `codex/discover-life-patterns-mvp`, draft PR #24. Historical artifacts remain preserved in Git history.
 
 Before substantive continuation:
 
-1. fetch the live PR #24 head;
+1. fetch live PR #24 head;
 2. read `tasks/ACTIVE-TASK.json`;
 3. read `state/LIFE-PATTERNS-CURRENT-STATE-2026-09-11.md`;
-4. read `state/LIFE-PATTERNS-V5-MECHANICAL-IMPLEMENTATION-VERIFIED-2026-09-11.json`;
-5. read `state/LIFE-PATTERNS-V5-PRIVATE-UI-REGEN-BLOCKED-2026-09-11.json`;
-6. read `tasks/LIFE-PATTERNS-V5-PRIVATE-UI-REGEN-OWNER-REVIEW-WORKER-2026-09-11.md`;
+4. read `state/LIFE-PATTERNS-V5-PRIVATE-UI-OWNER-REVIEW-CANDIDATE-2026-09-11.json`;
+5. read `tasks/LIFE-PATTERNS-V5-OWNER-USABILITY-REVIEW-2026-09-11.md`;
+6. read `docs/research/LIFE_PATTERNS_V5_PRIVATE_PORTABLE_ADAPTER_2026-09-11.md`;
 7. read `tasks/NEXT-CONVERSATION-HANDOFF-2026-09-11.md`.
 
 ## Current gate
 
-The target-theory-blind V5 contract gate has passed. Independent review commit:
+The target-theory-blind V5 contract gate and public V5 mechanical implementation are closed successfully.
 
-`ce04642146c41a7d5d94f85360572c78de887682`
+- independent V5 review: `ce04642146c41a7d5d94f85360572c78de887682`
+- all 47 carried findings resolved
+- implementation code head: `35a2daf7a9cf0628e976b7b57f810c2f90a2bf02`
+- CI `34623829382`: SUCCESS
+- 675 passed, 7 expected skips, Ruff clean, strict mypy clean across 174 source files
 
-All **47 carried findings** are resolved with no blocking new finding, `semantic_change_required=false`, and `safe_for_implementation=true`.
+The exact calibration transport has now been recovered and fully verified. A private V5 owner-review candidate has been generated and technically smoked.
 
-The public V5 mechanical implementation has also passed. Owner-facing implementation code head:
+Private owner-review package identity:
 
-`35a2daf7a9cf0628e976b7b57f810c2f90a2bf02`
+- `Life-Patterns-V5-PRIVATE-Owner-Review-2026-09-11.zip`
+- SHA-256 `0ff2a6db516a9005eea2c2a91e2b19597d81d97629684958a84473e6a25da2f5`
+- 632723 bytes
 
-CI `34623829382`: **SUCCESS**.
+The package is private and is not committed to GitHub. Its public-safe receipt is:
 
-- **675 passed, 7 expected skips, 0 failed**
-- Ruff: **all checks passed**
-- strict mypy: **no issues in 174 source files**
-
-Verification receipt:
-
-`state/LIFE-PATTERNS-V5-MECHANICAL-IMPLEMENTATION-VERIFIED-2026-09-11.json`
-
-The final owner-facing builder is:
-
-`scripts/build_life_patterns_human_calibration_ui_v5_final.py`
+`state/LIFE-PATTERNS-V5-PRIVATE-UI-OWNER-REVIEW-CANDIDATE-2026-09-11.json`
 
 ## Exact next action
 
-Do **not** redo semantic repair/review or public implementation.
+Owner performs a hands-on presentation/usability review following:
 
-Recover or re-supply the exact outer transport:
+`tasks/LIFE-PATTERNS-V5-OWNER-USABILITY-REVIEW-2026-09-11.md`
 
-- `Life-Patterns-Recurrence-Corrected-Human-Calibration-V2-PRIVATE-2026-09-08.zip`
-- `422297` bytes
-- SHA-256 `f038237a6a1ce776bb28846b76ff49339e7a9e7f28d33c5d1ad877e0d916d837`
+This is not the 66-unit human annotation pass. Owner should report either presentation acceptance or concrete usability defects.
 
-Then independently verify the inner receipt:
+The sandbox could not execute the canonical compressed-template builder chain because GitHub-connected template bytes could not be mounted locally and Git/network checkout is blocked. A portable adapter preserving accepted V5 semantics generated the owner-review candidate. Architecture and the explicit browser-smoke limitation are recorded at:
 
-- `LPHB2-F34245FAE32B513DDCFE`
-- receipt SHA-256 `f34245fae32b513ddcfe22b7d21081997e8c28e18fccd25b962c30af2fe0a78f`
+`docs/research/LIFE_PATTERNS_V5_PRIVATE_PORTABLE_ADAPTER_2026-09-11.md`
 
-The two hashes identify different objects; the receipt SHA is **not** the ZIP SHA.
+If the owner accepts the surface, make it reproducible before human collection by either promoting/testing that adapter with green public CI or canonical-regenerating the accepted surface in a full local repo checkout and smoking that exact output.
 
-The current context attempted File Library recovery three times, including exact filename/hash lookup, but the retrieval service errored and returned no bytes. Prior-context retrieval also did not recover the ZIP bytes. Do not reconstruct it. See:
-
-`state/LIFE-PATTERNS-V5-PRIVATE-UI-REGEN-BLOCKED-2026-09-11.json`
-
-Once the exact ZIP is available, run:
-
-`tasks/LIFE-PATTERNS-V5-PRIVATE-UI-REGEN-OWNER-REVIEW-WORKER-2026-09-11.md`
-
-Regenerate the private final V5 UI outside the public repository, browser-smoke the real private package, persist only a public-safe hash/status receipt, and return the private package to the owner for hands-on usability review.
-
-**Human collection remains unauthorized until explicit owner acceptance.**
+**Human collection remains unauthorized until owner acceptance plus green reproducibility.**
 
 ## Hard boundaries
 
-- never commit private participant narrative, exact private handoff bytes, decrypted private evidence, or generated private calibration HTML;
-- no reconstruction of missing private evidence;
-- no independent human collection before owner acceptance of the regenerated V5 UI;
+- no private exact text or generated private calibration UI in public GitHub;
+- no independent human collection before owner acceptance and reproducibility;
 - no automated participant coding before the complete revised independent human first pass is frozen;
 - no target-model scoring/reveal;
-- no merge/deploy, assistant-initiated recruitment/contact, or spending without separate authorization.
-
-## Preserved owner correction
-
-The unrelated owner-test invariant remains binding: **“there was never a completion policy. that was invented nonsense by codex.”** Do not recreate a completion-policy premise or silently turn artifact counts into such a policy.
+- no merge/deploy, recruitment/contact, or spending without separate authorization.
