@@ -9,52 +9,35 @@ Before substantive continuation:
 1. fetch live PR #24 head;
 2. read `tasks/ACTIVE-TASK.json`;
 3. read `state/LIFE-PATTERNS-CURRENT-STATE-2026-09-11.md`;
-4. read `state/LIFE-PATTERNS-V5-OWNER-USABILITY-FEEDBACK-001-2026-09-11.json`;
-5. read `tasks/LIFE-PATTERNS-V5-OWNER-USABILITY-REVIEW-2026-09-11.md`;
+4. read `docs/research/LIFE_PATTERNS_PARTICIPANT_CO_CODING_ARCHITECTURE_2026-09-11.md`;
+5. read `tasks/LIFE-PATTERNS-PARTICIPANT-CO-CODING-SEMANTIC-REPAIR-WORKER-2026-09-11.md`;
 6. read `tasks/NEXT-CONVERSATION-HANDOFF-2026-09-11.md`.
 
 ## Current gate
 
-The target-theory-blind V5 contract gate and public V5 mechanical implementation are closed successfully.
+The prior V5 contract and mechanical implementation passed their original gates, but owner review has exposed a **new substantive neutral-measurement defect**.
 
-- independent V5 review: `ce04642146c41a7d5d94f85360572c78de887682`
-- all 47 carried findings resolved
-- implementation code head: `35a2daf7a9cf0628e976b7b57f810c2f90a2bf02`
-- CI `34623829382`: SUCCESS
-- 675 passed, 7 expected skips, Ruff clean, strict mypy clean across 174 source files
+The defect is not that the four-part absence/non-action gate is too strict. The gate remains binding. The defect is that V5 can discard separately supported positive behavior when the closest enumerated value is absence-dependent and its stronger gate is not met. Historical V2 also had an `OS` / Other Specified gap-discovery route that V5 dropped.
 
-The exact private calibration transport was recovered and fully verified.
+A second architecture correction is now controlling: the external classifier is not the final authority on person-level recurrence. Episodes are evidence/elicitation anchors; candidate recurring patterns must be recursively proposed to and adjudicated by the participant.
 
-The first owner-review candidate is now **superseded** because owner review found a presentation contradiction: a story could clearly fit the broad observable question while the closest specific value was absence-dependent and could not meet the four-part evidence gate. The gate is not being weakened.
+Preferred loop:
 
-R2 separates general observable applicability from evidence sufficiency for a specific V5 value.
+`episode -> factual decomposition -> candidate pattern question -> participant adjudication -> nuance/examples/counterexamples -> revised question -> participant adjudication -> accepted/rejected/unresolved pattern`
 
-Private R2 package identity:
-
-- `Life-Patterns-V5-PRIVATE-Owner-Review-R2-2026-09-11.zip`
-- SHA-256 `d5293e0a363c0aa210c8c4031959534c065b375b158335569f4d63098757f5c9`
-- 633219 bytes
-- HTML SHA-256 `55b4a92b73cf42a58f43339c792a6f53c475311395eec2f96c3e3bbf431290a9`
-
-The package is private and not committed to GitHub. Public-safe feedback/disposition:
-
-`state/LIFE-PATTERNS-V5-OWNER-USABILITY-FEEDBACK-001-2026-09-11.json`
+Examples elicited after a candidate pattern is proposed are useful mainly for nuance and boundary refinement. Their existence is not intrinsically meaningful as empirical frequency evidence because they were elicited, not sampled from an unbiased opportunity frame.
 
 ## Exact next action
 
-Owner reviews R2, especially the previously problematic R05 shape.
+Run in a **fresh target-theory-blind context**:
 
-The intended distinction is now explicit:
+`tasks/LIFE-PATTERNS-PARTICIPANT-CO-CODING-SEMANTIC-REPAIR-WORKER-2026-09-11.md`
 
-- **Yes — a specific behavior below is established** → observed;
-- **Doesn't apply to this story** → prerequisite situation affirmatively absent;
-- **Not enough information for a specific behavior** → the general situation may clearly apply, but no specific coded behavior meets its evidence requirements without inference.
+The worker must preserve strict absence gates while restoring preservation of positive episode facts, narrator-reported appraisals, Other Specified/gap discovery, and participant-adjudicated person-level pattern construction. Produce versioned candidate semantics and a separate blind-review prompt. Do not implement production changes until that review passes.
 
-Absence-dependent options are labelled before selection. If their four-part gate is incomplete, the UI explains that they cannot be counted and directs the reviewer to the specific-value insufficient state rather than implying that the story is irrelevant.
+The existing private owner-review candidates are superseded for acceptance by this semantic finding.
 
-If the owner accepts R2, promote the same presentation-only repair into the canonical public builder with focused tests and green CI before any human collection.
-
-**Human collection remains unauthorized until owner acceptance plus green reproducibility.**
+**Human collection remains unauthorized.**
 
 ## Preserved owner correction
 
@@ -62,9 +45,9 @@ If the owner accepts R2, promote the same presentation-only repair into the cano
 
 ## Hard boundaries
 
-- do not weaken the four-part absence gate merely to make a narrative fit;
-- no private exact text or generated private calibration UI in public GitHub;
-- no independent human collection before owner acceptance and reproducibility;
-- no automated participant coding before the complete revised independent human first pass is frozen;
-- no target-model scoring/reveal;
-- no merge/deploy, recruitment/contact, or spending without separate authorization.
+- no target-theory material in the semantic repair context;
+- do not weaken absence/non-action evidence requirements merely to force a case into a category;
+- do not discard supported positive behavior because a stronger absence claim fails;
+- do not treat elicited examples as unbiased recurrence/frequency observations;
+- do not give an external classifier final authority over participant-level recurring patterns;
+- no human collection, automated participant coding, target-model scoring/reveal, merge/deploy, recruitment/contact, or spending until the revised blind semantic chain authorizes it.
