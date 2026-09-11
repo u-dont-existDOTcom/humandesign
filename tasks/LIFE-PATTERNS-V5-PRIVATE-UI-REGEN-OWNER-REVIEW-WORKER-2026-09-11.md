@@ -25,24 +25,36 @@ Before doing work, fetch the current PR #24 head and read:
 
 The public implementation authority is the successful CI run `34623829382` for implementation head `35a2daf7a9cf0628e976b7b57f810c2f90a2bf02`: 675 passed, 7 expected skips, Ruff clean, strict mypy clean.
 
-## Private source requirement
+## Exact private source requirement
 
-Use **only the exact existing private V2 handoff bytes** corresponding to the preserved receipt:
+There are **two distinct content identities**. Do not confuse them.
+
+### Outer private transport ZIP — bytes supplied to the builder
+
+- filename: `Life-Patterns-Recurrence-Corrected-Human-Calibration-V2-PRIVATE-2026-09-08.zip`
+- SHA-256: `f038237a6a1ce776bb28846b76ff49339e7a9e7f28d33c5d1ad877e0d916d837`
+- bytes: `422297`
+- archive members: `15`
+
+### Inner public-safe LPHB2 handoff receipt — must also verify after opening the transport
 
 - receipt id: `LPHB2-F34245FAE32B513DDCFE`
-- SHA-256: `f34245fae32b513ddcfe22b7d21081997e8c28e18fccd25b962c30af2fe0a78f`
+- receipt SHA-256: `f34245fae32b513ddcfe22b7d21081997e8c28e18fccd25b962c30af2fe0a78f`
+- packet count: `8`
 
-If those exact bytes are not available in the working/private context, **stop at this boundary**. Do not reconstruct the handoff from public artifacts, chat summaries, or memory. Report that the exact private handoff must be re-supplied/re-mounted.
+Use **only** the exact outer transport bytes above, then independently verify the inner LPHB2 receipt and receipt-declared member/packet bindings. The receipt hash is **not** the ZIP hash.
+
+If the exact outer transport bytes are not available in the working/private context, **stop at this boundary**. Do not reconstruct the handoff from public artifacts, chat summaries, or memory. Report that the exact private transport ZIP must be re-supplied/re-mounted.
 
 Never commit, paste into public state, or otherwise expose private participant narrative, private handoff bytes, decrypted private evidence, or generated private calibration HTML.
 
 ## Required build
 
-From a private/local working location outside the public repository, run the final builder against the exact verified handoff:
+From a private/local working location outside the public repository, first verify the outer ZIP SHA-256 and byte count. Then run the final builder against that exact verified transport:
 
 ```bash
 python scripts/build_life_patterns_human_calibration_ui_v5_final.py \
-  --handoff-zip /PRIVATE/PATH/exact-v2-handoff.zip \
+  --handoff-zip /PRIVATE/PATH/Life-Patterns-Recurrence-Corrected-Human-Calibration-V2-PRIVATE-2026-09-08.zip \
   --output-html /PRIVATE/PATH/life-patterns-human-calibration-v5-final.html
 ```
 
@@ -92,7 +104,8 @@ After the real private smoke passes, write **one public-safe receipt only**, con
 
 It may record:
 
-- exact private handoff receipt id/hash verification result;
+- outer transport filename, SHA-256, byte-count verification result;
+- inner LPHB2 receipt id/hash and member/packet-binding verification result;
 - final builder commit/path;
 - generated HTML SHA-256 and byte count only;
 - offline/network status;
