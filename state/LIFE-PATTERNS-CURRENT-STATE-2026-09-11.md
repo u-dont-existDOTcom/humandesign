@@ -4,96 +4,100 @@ Status: public-safe controlling overlay for `codex/discover-life-patterns-mvp`, 
 
 ## Current gate
 
-The blind V5 semantic/contract gate and public V5 mechanical implementation gate have passed. The exact frozen private calibration transport was recovered and fully reverified.
+The previously accepted V5 record-containment/facet implementation remains mechanically verified, but owner review exposed a **new substantive measurement-architecture problem**. Owner UI review is therefore paused; human collection remains unauthorized.
 
-Owner review then found one **presentation defect** in the first private V5 candidate: the broad observable question could clearly apply while the closest specific value was an absence-dependent value that correctly could not be asserted unless its four-part evidence gate was fully established. The generic `Not enough information` fallback therefore sounded as if it denied the obvious applicability of the story.
+Two linked issues now control continuation:
 
-This is **not a reason to weaken the absence gate**. The accepted V5 semantics already distinguish:
+1. strict absence/non-action gates are valid and must remain strict, but failure of an absence gate must not erase separately supported positive behavioral facts or narrator-reported appraisals;
+2. person-level recurring Life Patterns should be **participant-adjudicated recursively**, not inferred solely by an external human/automated classifier from elicited episodes.
 
-- `observed`: at least one specific substantive value or affirmative component is sufficiently established;
-- `insufficient`: the general situation may apply, including clearly applying, while the specific distinction cannot be supported without inference;
-- `not_applicable`: the prerequisite situation itself is affirmatively absent; non-mention is not enough.
+Historical V2 also supported `OS` / Other Specified with a concrete description as a gap-discovery path. V5 dropped that route. This can turn a clearly informative episode into `insufficient` merely because no enumerated V5 value fits cleanly.
 
-An R2 private owner-review candidate now makes that distinction explicit. **The next action is owner usability review of R2. Human collection remains unauthorized.**
+The next action is a fresh target-theory-blind semantic repair, not more UI polishing.
 
-## Accepted public V5 implementation
+## Preserved accepted mechanics
 
-- record-containment repair: `320cb577f4adfbcc644c986f7f532feef0fbe80b`
-- independent blind V5 review: `ce04642146c41a7d5d94f85360572c78de887682`
-- all 47 carried findings resolved
-- `semantic_change_required=false`
+- independent V5 review: `ce04642146c41a7d5d94f85360572c78de887682`
 - implementation head: `35a2daf7a9cf0628e976b7b57f810c2f90a2bf02`
 - CI `34623829382`: SUCCESS
-- 675 passed, 7 expected skips, 0 failed
-- Ruff clean
-- strict mypy clean across 174 source files
+- 675 passed, 7 expected skips, Ruff clean, strict mypy clean across 174 source files
 
-Public verification receipt:
+These remain useful implementation history. The new finding does not justify weakening record containment, stage/evidence ownership, provenance, or the four-part absence gate.
 
-`state/LIFE-PATTERNS-V5-MECHANICAL-IMPLEMENTATION-VERIFIED-2026-09-11.json`
+## New architecture correction
 
-## Frozen calibration source
+Public-safe owner-directed architecture:
 
-Outer transport:
+`docs/research/LIFE_PATTERNS_PARTICIPANT_CO_CODING_ARCHITECTURE_2026-09-11.md`
 
-- `Life-Patterns-Recurrence-Corrected-Human-Calibration-V2-PRIVATE-2026-09-08.zip`
-- SHA-256 `f038237a6a1ce776bb28846b76ff49339e7a9e7f28d33c5d1ad877e0d916d837`
-- 422297 bytes / 15 members
+Core principle:
 
-Inner receipt:
+> Episodes are concrete elicitation/evidence anchors. The participant is the primary authority on whether a proposed recurring person-level pattern actually characterizes them. GPT/human coding organizes episode facts, notices candidate structure, formulates non-leading follow-up hypotheses, and recursively incorporates participant corrections.
 
-- `LPHB2-F34245FAE32B513DDCFE`
-- SHA-256 `f34245fae32b513ddcfe22b7d21081997e8c28e18fccd25b962c30af2fe0a78f`
-- 8 packets
+Preferred loop:
 
-All receipt-declared member hashes and packet content addresses reverified. Coverage remains exactly 44 episode + 22 series = 66 units.
+`episode -> minimal factual decomposition -> candidate pattern question -> participant adjudication -> nuance/examples/counterexamples -> revised question -> participant adjudication -> accepted/rejected/unresolved pattern`
 
-## Owner usability feedback 001
+Examples elicited after a candidate pattern is proposed are mainly useful for nuance, scope, contradiction, and better subsequent questions. Their existence is not intrinsically important as empirical recurrence, because the examples were elicited rather than sampled from an unbiased opportunity frame.
 
-Public-safe disposition:
+If a participant endorses a pattern but cannot retrieve examples, preserve and probe that discrepancy. It may reflect retrieval difficulty, vague identity belief, low salience, privacy, misunderstanding, limited self-observation, or something else. Do not infer lack of self-awareness from one such failure. Repeated retrieval/awareness discrepancies may themselves become a candidate meta-pattern only through participant adjudication.
 
-`state/LIFE-PATTERNS-V5-OWNER-USABILITY-FEEDBACK-001-2026-09-11.json`
+## Episode coding implication
 
-The R2 presentation repair:
+The primary episode layer is not meant to be a complete taxonomy of personality traits. It should preserve useful factual dimensions with minimal inference, including where relevant:
 
-- keeps the observable-specific behavioral question;
-- changes the next prompt to **`Which statement best matches the evidence?`**;
-- labels observed as **`Yes — a specific behavior below is established`**;
-- keeps **`Doesn't apply to this story`** for affirmative absence of the prerequisite situation;
-- changes insufficient to **`Not enough information for a specific behavior`** and explicitly says the general situation can still clearly apply;
-- labels absence-dependent choices before selection;
-- when an absence gate is incomplete, explains that the value cannot be counted and directs the reviewer to the specific-value insufficient state rather than implying the story is irrelevant.
+- what happened / choice or action state;
+- timing and sequence;
+- outcome or resolution;
+- narrator-reported appraisal or reason, explicitly attributed to the narrator rather than converted into an objective condition;
+- context;
+- strictly gated absence/non-action claims only when their stronger prerequisites are established.
 
-The four-part absence gate, V5 machine states, selected units, private source, recurrence semantics, and target-theory blind are unchanged.
+For example, `choice delayed`, `narrator considered proposed course too difficult`, and `later rejected proposed course` are distinct positive facts. None should disappear merely because a stronger claim such as `remained unresolved during a feasible window` fails its feasibility gate.
 
-## Private R2 owner-review candidate
+## Other Specified / gap discovery
 
-Private package identity only:
+Historical V2's `OS` function must be restored or replaced by an equivalent V5 mechanism that:
 
-- filename `Life-Patterns-V5-PRIVATE-Owner-Review-R2-2026-09-11.zip`
-- SHA-256 `d5293e0a363c0aa210c8c4031959534c065b375b158335569f4d63098757f5c9`
-- 633219 bytes
-- HTML SHA-256 `55b4a92b73cf42a58f43339c792a6f53c475311395eec2f96c3e3bbf431290a9`
-- HTML bytes `1608348`
+- preserves clear substantive behavior not adequately represented by enumerated values;
+- captures a concrete behavioral description with exact provenance;
+- binds it to the appropriate facet/stage when known, without inventing facet certainty when it is not known;
+- feeds later theory-blind codebook refinement rather than becoming a permanent miscellaneous bucket.
 
-The previous owner-review ZIP `0ff2a6db…a25da2f5` is superseded for owner review.
+OS/gap cases can then be reviewed theory-blind to determine whether they fit an existing code with clearer wording, reveal a missing recurring category, belong to another facet, or should remain open-ended.
 
-Targeted smoke verified JavaScript syntax, the revised evidence-state wording, pre-labelled absence-dependent choices, and actionable handling of the previously problematic R05 absence-dependent shape. Managed sandbox Chromium still blocks direct local navigation, so that limitation remains part of the private package receipt; no private candidate bytes are committed publicly.
+## Calibration implication
+
+External human/automated calibration remains useful for the episode-fact layer. Person-level pattern calibration should instead evaluate whether the system faithfully preserves source facts, separates appraisal from objective condition, generates useful non-leading candidate-pattern questions, incorporates participant corrections, preserves uncertainty and counterexamples, and yields a final pattern formulation the participant recognizes as accurate and properly scoped.
+
+Do not define person-level success as external-coder agreement on one supposedly true recurring label that the participant has not adjudicated.
 
 ## Exact next action
 
-Owner reviews the R2 private package. In the previously problematic choice-resolution shape, confirm that it now makes sense to say the general situation clearly applies while choosing `Not enough information for a specific behavior` if the absence-dependent value cannot satisfy all four evidence checks.
+Run in a **fresh target-theory-blind context**:
 
-If R2 is accepted, promote the same **presentation-only** repair into the canonical public builder with focused tests and green CI before human collection begins.
+`tasks/LIFE-PATTERNS-PARTICIPANT-CO-CODING-SEMANTIC-REPAIR-WORKER-2026-09-11.md`
+
+The worker must produce versioned candidate semantic/contract repairs and a separate blind-review prompt. Do not implement production changes until that separate blind review passes.
+
+## Private calibration source remains frozen
+
+The exact private transport and inner receipt remain verified and unchanged:
+
+- outer ZIP SHA-256 `f038237a6a1ce776bb28846b76ff49339e7a9e7f28d33c5d1ad877e0d916d837`
+- inner LPHB2 receipt SHA-256 `f34245fae32b513ddcfe22b7d21081997e8c28e18fccd25b962c30af2fe0a78f`
+- selected coverage remains 44 episode + 22 series units.
+
+The existing private owner-review candidates are superseded for acceptance by this semantic finding. Keep them only as development evidence of how the problem was discovered.
 
 ## Hard boundaries
 
-- no independent human collection before explicit owner acceptance plus green reproducible generation of the accepted surface;
-- do not weaken the four-part absence gate merely to make a narrative fit a value;
-- no automated participant coding before the revised independent human first pass is complete and frozen;
-- no target-model scoring/reveal;
-- private exact text and generated private UI remain outside public GitHub;
-- no merge/deploy, recruitment/contact, or spending without separate authorization.
+- no target-theory information in the semantic repair context;
+- do not weaken absence/non-action gates merely to force a case into a value;
+- do not discard supported positive behavior because a stronger absence claim fails;
+- do not treat elicited examples as unbiased frequency evidence;
+- do not give an external classifier final authority over person-level recurrence;
+- no human collection, automated participant coding, target-model scoring/reveal, merge/deploy, recruitment/contact, or spending until the revised blind semantic chain authorizes it.
 
 ## Preserved owner correction
 
