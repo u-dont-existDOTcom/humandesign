@@ -9,10 +9,9 @@ Before substantive continuation:
 1. fetch live PR #24 head;
 2. read `tasks/ACTIVE-TASK.json`;
 3. read `state/LIFE-PATTERNS-CURRENT-STATE-2026-09-11.md`;
-4. read `state/LIFE-PATTERNS-V5-PRIVATE-UI-OWNER-REVIEW-CANDIDATE-2026-09-11.json`;
+4. read `state/LIFE-PATTERNS-V5-OWNER-USABILITY-FEEDBACK-001-2026-09-11.json`;
 5. read `tasks/LIFE-PATTERNS-V5-OWNER-USABILITY-REVIEW-2026-09-11.md`;
-6. read `docs/research/LIFE_PATTERNS_V5_PRIVATE_PORTABLE_ADAPTER_2026-09-11.md`;
-7. read `tasks/NEXT-CONVERSATION-HANDOFF-2026-09-11.md`.
+6. read `tasks/NEXT-CONVERSATION-HANDOFF-2026-09-11.md`.
 
 ## Current gate
 
@@ -24,31 +23,36 @@ The target-theory-blind V5 contract gate and public V5 mechanical implementation
 - CI `34623829382`: SUCCESS
 - 675 passed, 7 expected skips, Ruff clean, strict mypy clean across 174 source files
 
-The exact calibration transport has now been recovered and fully verified. A private V5 owner-review candidate has been generated and technically smoked.
+The exact private calibration transport was recovered and fully verified.
 
-Private owner-review package identity:
+The first owner-review candidate is now **superseded** because owner review found a presentation contradiction: a story could clearly fit the broad observable question while the closest specific value was absence-dependent and could not meet the four-part evidence gate. The gate is not being weakened.
 
-- `Life-Patterns-V5-PRIVATE-Owner-Review-2026-09-11.zip`
-- SHA-256 `0ff2a6db516a9005eea2c2a91e2b19597d81d97629684958a84473e6a25da2f5`
-- 632723 bytes
+R2 separates general observable applicability from evidence sufficiency for a specific V5 value.
 
-The package is private and is not committed to GitHub. Its public-safe receipt is:
+Private R2 package identity:
 
-`state/LIFE-PATTERNS-V5-PRIVATE-UI-OWNER-REVIEW-CANDIDATE-2026-09-11.json`
+- `Life-Patterns-V5-PRIVATE-Owner-Review-R2-2026-09-11.zip`
+- SHA-256 `d5293e0a363c0aa210c8c4031959534c065b375b158335569f4d63098757f5c9`
+- 633219 bytes
+- HTML SHA-256 `55b4a92b73cf42a58f43339c792a6f53c475311395eec2f96c3e3bbf431290a9`
+
+The package is private and not committed to GitHub. Public-safe feedback/disposition:
+
+`state/LIFE-PATTERNS-V5-OWNER-USABILITY-FEEDBACK-001-2026-09-11.json`
 
 ## Exact next action
 
-Owner performs a hands-on presentation/usability review following:
+Owner reviews R2, especially the previously problematic R05 shape.
 
-`tasks/LIFE-PATTERNS-V5-OWNER-USABILITY-REVIEW-2026-09-11.md`
+The intended distinction is now explicit:
 
-This is not the 66-unit human annotation pass. Owner should report either presentation acceptance or concrete usability defects.
+- **Yes — a specific behavior below is established** → observed;
+- **Doesn't apply to this story** → prerequisite situation affirmatively absent;
+- **Not enough information for a specific behavior** → the general situation may clearly apply, but no specific coded behavior meets its evidence requirements without inference.
 
-The sandbox could not execute the canonical compressed-template builder chain because GitHub-connected template bytes could not be mounted locally and Git/network checkout is blocked. A portable adapter preserving accepted V5 semantics generated the owner-review candidate. Architecture and the explicit browser-smoke limitation are recorded at:
+Absence-dependent options are labelled before selection. If their four-part gate is incomplete, the UI explains that they cannot be counted and directs the reviewer to the specific-value insufficient state rather than implying that the story is irrelevant.
 
-`docs/research/LIFE_PATTERNS_V5_PRIVATE_PORTABLE_ADAPTER_2026-09-11.md`
-
-If the owner accepts the surface, make it reproducible before human collection by either promoting/testing that adapter with green public CI or canonical-regenerating the accepted surface in a full local repo checkout and smoking that exact output.
+If the owner accepts R2, promote the same presentation-only repair into the canonical public builder with focused tests and green CI before any human collection.
 
 **Human collection remains unauthorized until owner acceptance plus green reproducibility.**
 
@@ -58,6 +62,7 @@ If the owner accepts the surface, make it reproducible before human collection b
 
 ## Hard boundaries
 
+- do not weaken the four-part absence gate merely to make a narrative fit;
 - no private exact text or generated private calibration UI in public GitHub;
 - no independent human collection before owner acceptance and reproducibility;
 - no automated participant coding before the complete revised independent human first pass is frozen;
