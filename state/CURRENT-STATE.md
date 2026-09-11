@@ -9,23 +9,32 @@ Before substantive continuation:
 1. fetch live PR #24 head;
 2. read `tasks/ACTIVE-TASK.json`;
 3. read `state/LIFE-PATTERNS-CURRENT-STATE-2026-09-11.md`;
-4. read `docs/research/LIFE_PATTERNS_PARTICIPANT_CO_CODING_ARCHITECTURE_2026-09-11.md`;
-5. read `tasks/LIFE-PATTERNS-PARTICIPANT-CO-CODING-SEMANTIC-REPAIR-WORKER-2026-09-11.md`;
-6. read `tasks/NEXT-CONVERSATION-HANDOFF-2026-09-11.md`.
+4. read `docs/research/LIFE_PATTERNS_CODEBOOK_ARCHITECTURE_ROOT_CAUSE_AUDIT_2026-09-11.md`;
+5. read `docs/research/LIFE_PATTERNS_PARTICIPANT_CO_CODING_ARCHITECTURE_2026-09-11.md`;
+6. read `tasks/LIFE-PATTERNS-PARTICIPANT-CO-CODING-SEMANTIC-REPAIR-WORKER-2026-09-11.md`;
+7. read `tasks/NEXT-CONVERSATION-HANDOFF-2026-09-11.md`.
 
 ## Current gate
 
-The prior V5 contract and mechanical implementation passed their original gates, but owner review has exposed a **new substantive neutral-measurement defect**.
+The prior V5 contract and mechanical implementation passed their original gates, but owner review exposed a deeper architecture error.
 
-The defect is not that the four-part absence/non-action gate is too strict. The gate remains binding. The defect is that V5 can discard separately supported positive behavior when the closest enumerated value is absence-dependent and its stronger gate is not met. Historical V2 also had an `OS` / Other Specified gap-discovery route that V5 dropped.
+The root-cause audit found that the project correctly required one frozen theory-blind behavioral substrate for competing models, then **incorrectly treated that as proof that the substrate had to be a fixed externally coded ontology**. This displaced the already-existing participant-reviewed Life Patterns Map and made external episode classification plus frozen aggregation the semantic authority for person-level patterns.
 
-A second architecture correction is now controlling: the external classifier is not the final authority on person-level recurrence. Episodes are evidence/elicitation anchors; candidate recurring patterns must be recursively proposed to and adjudicated by the participant.
+Root-cause audit:
 
-Preferred loop:
+`docs/research/LIFE_PATTERNS_CODEBOOK_ARCHITECTURE_ROOT_CAUSE_AUDIT_2026-09-11.md`
 
-`episode -> factual decomposition -> candidate pattern question -> participant adjudication -> nuance/examples/counterexamples -> revised question -> participant adjudication -> accepted/rejected/unresolved pattern`
+The fixed 22-observable/V5 taxonomy remains immutable development history and may supply useful mechanics. It is no longer presumed to be the primary architecture.
 
-Examples elicited after a candidate pattern is proposed are useful mainly for nuance and boundary refinement. Their existence is not intrinsically meaningful as empirical frequency evidence because they were elicited, not sampled from an unbiased opportunity frame.
+The replacement direction is participant co-coding:
+
+`episode -> minimal factual decomposition -> candidate pattern question -> participant adjudication -> nuance/examples/counterexamples -> revised question -> participant adjudication -> accepted/rejected/unresolved pattern`
+
+External coding may organize literal episode facts and propose candidate structure. The participant adjudicates whether a recurring person-level pattern actually characterizes them and its scope/conditions.
+
+Strict genuine absence/non-action gates remain binding. They apply to absence claims only; failure of a stronger absence claim must not erase separately supported positive behavior or narrator-reported appraisal.
+
+Examples elicited after a pattern is proposed are mainly nuance/boundary evidence, not an unbiased recurrence/frequency sample.
 
 ## Exact next action
 
@@ -33,9 +42,9 @@ Run in a **fresh target-theory-blind context**:
 
 `tasks/LIFE-PATTERNS-PARTICIPANT-CO-CODING-SEMANTIC-REPAIR-WORKER-2026-09-11.md`
 
-The worker must preserve strict absence gates while restoring preservation of positive episode facts, narrator-reported appraisals, Other Specified/gap discovery, and participant-adjudicated person-level pattern construction. Produce versioned candidate semantics and a separate blind-review prompt. Do not implement production changes until that review passes.
+The worker must determine the **minimum shared frozen substrate actually required** for anti-leakage rather than assuming the current ontology is necessary. Produce versioned candidate semantics/contracts plus a separate fresh blind-review prompt. Do not implement production changes until that review passes.
 
-The existing private owner-review candidates are superseded for acceptance by this semantic finding.
+The existing private owner-review candidates are superseded for acceptance by this architecture finding.
 
 **Human collection remains unauthorized.**
 
@@ -46,7 +55,8 @@ The existing private owner-review candidates are superseded for acceptance by th
 ## Hard boundaries
 
 - no target-theory material in the semantic repair context;
-- do not weaken absence/non-action evidence requirements merely to force a case into a category;
+- do not preserve the fixed taxonomy merely because it already exists;
+- do not weaken genuine absence/non-action evidence requirements merely to force a case into a category;
 - do not discard supported positive behavior because a stronger absence claim fails;
 - do not treat elicited examples as unbiased recurrence/frequency observations;
 - do not give an external classifier final authority over participant-level recurring patterns;
