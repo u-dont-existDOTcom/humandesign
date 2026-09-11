@@ -6,7 +6,7 @@ Status: public-safe controlling overlay for the active Life Patterns development
 
 **The blind V5 semantic/contract gate and the public mechanical implementation gate have both PASSED.**
 
-The current blocker is narrower: the exact existing **private V2 handoff** has not yet been regenerated through the final V5 builder, browser-smoked as the real private package, and accepted by the owner for usability. Independent human collection remains blocked until that owner UI gate passes.
+The current blocker is narrower: the exact existing **outer private V2 transport ZIP** is not available in the current context, so it cannot yet be regenerated through the final V5 builder, browser-smoked as the real private package, and accepted by the owner for usability. Independent human collection remains blocked until that owner UI gate passes.
 
 No qualifying independent human first-pass annotations have been collected. No automated Life Patterns participant coding, consensus, human-vs-automated comparison, target-model scoring, or reveal has occurred.
 
@@ -85,27 +85,52 @@ It reuses the verified final V2 auditor surface while leaving historical V2 buil
 
 The browser exporter is tested by executing its pure JavaScript graph builder under Node and validating the resulting envelopes with the Python V5 models/contract for both a gated pure absence (`R14-i`) and a partial hybrid (`R05-O2`). Synthetic private-handoff builds are also tested for byte preservation and plaintext non-leakage.
 
+## Exact private source identity
+
+The exact source required for real regeneration has **two different identities**:
+
+Outer transport ZIP supplied to the builder:
+
+- filename: `Life-Patterns-Recurrence-Corrected-Human-Calibration-V2-PRIVATE-2026-09-08.zip`
+- SHA-256: `f038237a6a1ce776bb28846b76ff49339e7a9e7f28d33c5d1ad877e0d916d837`
+- byte count: `422297`
+- archive members: `15`
+
+Inner public-safe LPHB2 receipt that must independently verify inside that ZIP:
+
+- receipt id: `LPHB2-F34245FAE32B513DDCFE`
+- receipt SHA-256: `f34245fae32b513ddcfe22b7d21081997e8c28e18fccd25b962c30af2fe0a78f`
+- packet count: `8`
+
+**The receipt SHA is not the ZIP SHA.**
+
+Current-context recovery was attempted through the File Library three times, including exact filename/hash lookup; the retrieval service returned errors and no bytes. Prior-context retrieval also did not surface the ZIP bytes. Public GitHub correctly does not contain them. Public-safe blocked receipt:
+
+`state/LIFE-PATTERNS-V5-PRIVATE-UI-REGEN-BLOCKED-2026-09-11.json`
+
+Do not reconstruct the private package from public artifacts, summaries, or memory.
+
 ## Exact next gate — real private V5 regeneration, browser smoke, owner review
 
 Use:
 
 `tasks/LIFE-PATTERNS-V5-PRIVATE-UI-REGEN-OWNER-REVIEW-WORKER-2026-09-11.md`
 
-The next worker must use the **exact existing private V2 handoff** identified by the preserved private receipt. It must not reconstruct participant evidence from public state and must never commit private participant narrative or generated private HTML.
-
 Required sequence:
 
-1. verify the exact private handoff bytes against the preserved receipt;
-2. build the final offline V5 UI with `scripts/build_life_patterns_human_calibration_ui_v5_final.py`;
-3. browser-smoke the real private build, including save/reload, partial hybrid handling, absence fallback semantics, claim-specific provenance where applicable, V5 response download, progress backup, and auditor attestation;
-4. return the private UI/package to the owner for usability review;
-5. only after explicit owner acceptance, record the acceptance publicly without exposing private evidence and unlock the independent human first pass.
+1. recover/re-supply the exact outer ZIP and verify its SHA-256/byte count;
+2. verify the inner LPHB2 receipt and receipt-declared member/packet bindings;
+3. build the final offline V5 UI with `scripts/build_life_patterns_human_calibration_ui_v5_final.py`;
+4. browser-smoke the real private build, including save/reload, partial hybrid handling, absence fallback semantics, claim-specific provenance where applicable, V5 response download, progress backup, and auditor attestation;
+5. return the private UI/package to the owner for usability review;
+6. only after explicit owner acceptance, record the acceptance publicly without exposing private evidence and unlock the independent human first pass.
 
 ## Hard boundaries
 
 - **human collection is not authorized yet**;
 - existing/superseded auditor kits remain ineligible for new human collection;
 - never commit private participant narrative, private handoff bytes, or generated private calibration HTML;
+- no reconstruction of missing private evidence;
 - no automated participant coding before the revised independent human first pass is completed and frozen;
 - no target-model scoring/reveal;
 - no merge/deploy, assistant-initiated recruitment/contact, or spending without separate authorization.
