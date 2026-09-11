@@ -1,0 +1,37 @@
+{
+  "schema_version": "life-patterns-v5-private-ui-regeneration-blocked-v1",
+  "date": "2026-09-11",
+  "status": "blocked_on_exact_private_transport_bytes",
+  "repository": "u-dont-existDOTcom/humandesign",
+  "branch": "codex/discover-life-patterns-mvp",
+  "public_v5_implementation_verified": true,
+  "public_v5_implementation_code_head": "35a2daf7a9cf0628e976b7b57f810c2f90a2bf02",
+  "public_v5_implementation_ci_run": 34623829382,
+  "outer_private_transport": {
+    "filename": "Life-Patterns-Recurrence-Corrected-Human-Calibration-V2-PRIVATE-2026-09-08.zip",
+    "sha256": "f038237a6a1ce776bb28846b76ff49339e7a9e7f28d33c5d1ad877e0d916d837",
+    "bytes": 422297,
+    "member_count": 15
+  },
+  "inner_lphb2_receipt": {
+    "receipt_id": "LPHB2-F34245FAE32B513DDCFE",
+    "receipt_sha256": "f34245fae32b513ddcfe22b7d21081997e8c28e18fccd25b962c30af2fe0a78f",
+    "packet_count": 8
+  },
+  "identity_note": "The inner LPHB2 receipt SHA-256 is not the outer transport ZIP SHA-256. The final V5 builder requires the exact outer ZIP bytes; the inner receipt must then be independently verified inside that transport.",
+  "current_context_recovery": {
+    "exact_outer_transport_bytes_available": false,
+    "file_library_lookup_attempted": true,
+    "file_library_lookup_attempts": 3,
+    "file_library_lookup_result": "retrieval service error; no file bytes returned",
+    "prior_context_retrieval_attempted": true,
+    "prior_context_exact_bytes_found": false,
+    "repository_contains_private_transport_bytes": false
+  },
+  "reconstruction_forbidden": true,
+  "private_v5_regeneration_complete": false,
+  "real_private_browser_smoke_complete": false,
+  "owner_usability_acceptance_complete": false,
+  "human_collection_authorized": false,
+  "next_action": "Recover or re-supply the exact outer private transport ZIP with SHA-256 f038237a6a1ce776bb28846b76ff49339e7a9e7f28d33c5d1ad877e0d916d837 and byte count 422297. Do not reconstruct it. Then run tasks/LIFE-PATTERNS-V5-PRIVATE-UI-REGEN-OWNER-REVIEW-WORKER-2026-09-11.md."
+}
