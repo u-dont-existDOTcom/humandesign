@@ -59,6 +59,32 @@ V5_CONTRACT_VERSION = "5.0.0-candidate"
 V5_REVIEW_COMMIT = "ce04642146c41a7d5d94f85360572c78de887682"
 V5_REPAIR_COMMIT = "320cb577f4adfbcc644c986f7f532feef0fbe80b"
 
+# These are the non-hybrid absence-dependent values carried by the theory-blind
+# non-action classification plus the v2 R07-a split. Each requires a separately
+# represented absence component and four-part gate when selected. Hybrid values
+# are read from the accepted contract at runtime because that mapping is already
+# normative there.
+V5_NON_HYBRID_ABSENCE_DEPENDENT_VALUE_IDS = frozenset(
+    {
+        "R01-h",
+        "R03-h",
+        "R05-R8",
+        "R07-a2",
+        "R08-c",
+        "R08-f",
+        "R10-k",
+        "R11-G7",
+        "R13-g",
+        "R14-i",
+        "R15-l",
+        "R16-l",
+        "R17-h",
+        "R19-f",
+        "R21-k",
+        "R22-g",
+    }
+)
+
 
 class V5Model(BaseModel):
     model_config = ConfigDict(extra="forbid", frozen=True, allow_inf_nan=False)
@@ -421,11 +447,16 @@ def observable_response_v5_errors(
             )
 
     stage_to_units: Counter[str] = Counter()
-    for unit in response.evidence_units:
-        if unit.response_scope_id != response.response_scope_id:
-            errors.append(f"evidence unit {unit.evidence_unit_id} has the wrong response_scope_id")
-        _require_many(unit.event_stage_ids, stages, f"evidence unit {unit.evidence_unit_id}", errors)
-        for stage_id in unit.event_stage_ids:
+    for evidence_unit in response.evidence_units:
+        if evidence_unit.response_scope_id != response.response_scope_id:
+            errors.append(f"evidence unit {evidence_unit.evidence_unit_id} has the wrong response_scope_id")
+        _require_many(
+            evidence_unit.event_stage_ids,
+            stages,
+            f"evidence unit {evidence_unit.evidence_unit_id}",
+            errors,
+        )
+        for stage_id in evidence_unit.event_stage_ids:
             stage_to_units[stage_id] += 1
 
     assertion_stage_backrefs: Counter[str] = Counter()
@@ -449,8 +480,8 @@ def observable_response_v5_errors(
             assertion_stage_backrefs[assertion_id] += 1
         for component_id in stage.component_assertion_ids:
             component_stage_backrefs[component_id] += 1
-        unit = evidence.get(stage.evidence_unit_id)
-        if unit is not None and stage.event_stage_id not in unit.event_stage_ids:
+        stage_evidence = evidence.get(stage.evidence_unit_id)
+        if stage_evidence is not None and stage.event_stage_id not in stage_evidence.event_stage_ids:
             errors.append(
                 f"event stage {stage.event_stage_id} is not back-referenced by evidence unit "
                 f"{stage.evidence_unit_id}"
@@ -498,14 +529,14 @@ def observable_response_v5_errors(
             if isinstance(explicit_values, list) and set(group.allowed_value_ids) != set(explicit_values):
                 errors.append(f"facet group {group.facet_group_id} allowed values disagree with profile")
             if isinstance(group.cardinality_scope, MeasurementWindowScope):
-                window = _require(
+                scope_window = _require(
                     group.cardinality_scope.window_id,
                     windows,
                     f"facet group {group.facet_group_id}",
                     errors,
                 )
                 expected_kind = scope_spec.get("window_kind") if isinstance(scope_spec, Mapping) else None
-                if window is not None and expected_kind and window.window_kind != expected_kind:
+                if scope_window is not None and expected_kind and scope_window.window_kind != expected_kind:
                     errors.append(
                         f"facet group {group.facet_group_id} uses wrong measurement-window kind"
                     )
@@ -518,29 +549,46 @@ def observable_response_v5_errors(
                 )
 
         for assertion_id in group.assertion_ids:
-            assertion = assertions.get(assertion_id)
-            if assertion is None:
+            assertion_ref = assertions.get(assertion_id)
+            if assertion_ref is None:
                 continue
-            if assertion.facet_group_id != group.facet_group_id or assertion.facet_id != group.facet_id:
+            if (
+                assertion_ref.facet_group_id != group.facet_group_id
+                or assertion_ref.facet_id != group.facet_id
+            ):
                 errors.append(f"assertion {assertion_id} disagrees with its facet group")
-            if assertion.value_id not in group.allowed_value_ids:
+            if assertion_ref.value_id not in group.allowed_value_ids:
                 errors.append(f"assertion {assertion_id} uses value outside its facet group")
             if isinstance(group.cardinality_scope, EventStageScope):
-                if assertion.event_stage_id != group.cardinality_scope.event_stage_id:
+                if assertion_ref.event_stage_id != group.cardinality_scope.event_stage_id:
                     errors.append(
                         f"assertion {assertion_id} is outside its event-stage cardinality scope"
                     )
             else:
-                window = windows.get(group.cardinality_scope.window_id)
-                if window is not None and assertion.event_stage_id not in window.event_stage_ids:
+                membership_window = windows.get(group.cardinality_scope.window_id)
+                if (
+                    membership_window is not None
+                    and assertion_ref.event_stage_id not in membership_window.event_stage_ids
+                ):
                     errors.append(
                         f"assertion {assertion_id} is outside its measurement-window scope"
                     )
 
     component_parent_backrefs: Counter[str] = Counter()
+    selected_parent_by_component: dict[str, str] = {}
     for assertion in response.value_assertions:
-        group = _require(assertion.facet_group_id, groups, f"assertion {assertion.assertion_id}", errors)
-        stage = _require(assertion.event_stage_id, stages, f"assertion {assertion.assertion_id}", errors)
+        group_ref = _require(
+            assertion.facet_group_id,
+            groups,
+            f"assertion {assertion.assertion_id}",
+            errors,
+        )
+        stage_ref = _require(
+            assertion.event_stage_id,
+            stages,
+            f"assertion {assertion.assertion_id}",
+            errors,
+        )
         _require(assertion.evidence_unit_id, evidence, f"assertion {assertion.assertion_id}", errors)
         _require_many(
             assertion.component_assertion_ids,
@@ -556,28 +604,31 @@ def observable_response_v5_errors(
         )
         for component_id in assertion.component_assertion_ids:
             component_parent_backrefs[component_id] += 1
+            selected_parent_by_component.setdefault(component_id, assertion.assertion_id)
         if assertion_group_backrefs[assertion.assertion_id] != 1:
             errors.append(f"assertion {assertion.assertion_id} must occur in exactly one facet group")
         if assertion_stage_backrefs[assertion.assertion_id] != 1:
             errors.append(f"assertion {assertion.assertion_id} must occur in exactly one event stage")
-        if group is not None and (
-            group.facet_id != assertion.facet_id or assertion.value_id not in group.allowed_value_ids
+        if group_ref is not None and (
+            group_ref.facet_id != assertion.facet_id
+            or assertion.value_id not in group_ref.allowed_value_ids
         ):
             errors.append(f"assertion {assertion.assertion_id} does not match its facet group")
-        if stage is not None and stage.evidence_unit_id != assertion.evidence_unit_id:
+        if stage_ref is not None and stage_ref.evidence_unit_id != assertion.evidence_unit_id:
             errors.append(f"assertion {assertion.assertion_id} evidence unit disagrees with event stage")
 
-    absence_by_component: Counter[str] = Counter()
     hybrid_values_raw = contract.get("hybrid_value_components") or {}
     hybrid_values = set(hybrid_values_raw) if isinstance(hybrid_values_raw, Mapping) else set()
+    absence_dependent_values = hybrid_values | set(V5_NON_HYBRID_ABSENCE_DEPENDENT_VALUE_IDS)
+    absence_by_component: Counter[str] = Counter()
     for component in response.component_assertions:
-        group = _require(
+        component_group = _require(
             component.facet_group_id,
             groups,
             f"component {component.component_assertion_id}",
             errors,
         )
-        stage = _require(
+        component_stage = _require(
             component.event_stage_id,
             stages,
             f"component {component.component_assertion_id}",
@@ -603,115 +654,151 @@ def observable_response_v5_errors(
             errors.append(
                 f"component {component.component_assertion_id} belongs to more than one parent assertion"
             )
-        if group is not None:
-            if group.facet_id != component.facet_id:
+        if component_group is not None:
+            if component_group.facet_id != component.facet_id:
                 errors.append(f"component {component.component_assertion_id} has wrong facet id")
-            if component.parent_value_id not in group.allowed_value_ids:
+            if component.parent_value_id not in component_group.allowed_value_ids:
                 errors.append(
                     f"component {component.component_assertion_id} parent value is outside facet"
                 )
-        if stage is not None and stage.evidence_unit_id != component.evidence_unit_id:
+        if (
+            component_stage is not None
+            and component_stage.evidence_unit_id != component.evidence_unit_id
+        ):
             errors.append(
                 f"component {component.component_assertion_id} evidence unit disagrees with event stage"
             )
-        if component.parent_value_id not in hybrid_values:
+        if component.component_role == "affirmative" and component.parent_value_id not in hybrid_values:
             errors.append(
-                f"component {component.component_assertion_id} refers to non-hybrid parent "
+                f"affirmative component {component.component_assertion_id} refers to non-hybrid parent "
+                f"{component.parent_value_id}"
+            )
+        if component.component_role == "absence" and component.parent_value_id not in absence_dependent_values:
+            errors.append(
+                f"absence component {component.component_assertion_id} refers to value without an absence dependency "
                 f"{component.parent_value_id}"
             )
         if component.component_role == "absence" and component.absence_condition_id:
-            condition = _require(
+            condition_ref = _require(
                 component.absence_condition_id,
                 absences,
                 f"component {component.component_assertion_id}",
                 errors,
             )
-            if condition is not None:
+            if condition_ref is not None:
                 absence_by_component[component.component_assertion_id] += 1
-                if condition.qualified_component_id != component.component_assertion_id:
+                if condition_ref.qualified_component_id != component.component_assertion_id:
                     errors.append(
-                        f"absence condition {condition.absence_condition_id} points to a different component"
+                        f"absence condition {condition_ref.absence_condition_id} points to a different component"
                     )
-                if component.state == "observed" and not condition.all_established:
+                if component.state == "observed" and not condition_ref.all_established:
                     errors.append(
                         f"observed absence component {component.component_assertion_id} lacks a fully established gate"
                     )
-                if condition.all_established and component.state != "observed":
+                if condition_ref.all_established and component.state != "observed":
                     errors.append(
-                        f"fully established absence condition {condition.absence_condition_id} "
+                        f"fully established absence condition {condition_ref.absence_condition_id} "
                         "has a non-observed component"
                     )
 
     for condition in response.absence_conditions:
-        component = _require(
+        component_ref = _require(
             condition.qualified_component_id,
             components,
             f"absence condition {condition.absence_condition_id}",
             errors,
         )
-        _require(condition.window_id, windows, f"absence condition {condition.absence_condition_id}", errors)
+        _require(
+            condition.window_id,
+            windows,
+            f"absence condition {condition.absence_condition_id}",
+            errors,
+        )
         _require_many(
             condition.source_provenance_ids,
             provenance,
             f"absence condition {condition.absence_condition_id}",
             errors,
         )
-        if component is not None:
-            if component.component_role != "absence":
+        if component_ref is not None:
+            if component_ref.component_role != "absence":
                 errors.append(
                     f"absence condition {condition.absence_condition_id} qualifies a non-absence component"
                 )
-            if component.absence_condition_id != condition.absence_condition_id:
+            if component_ref.absence_condition_id != condition.absence_condition_id:
                 errors.append(
                     f"absence condition {condition.absence_condition_id} lacks component back-reference"
                 )
+
+        selected_parent_id = selected_parent_by_component.get(condition.qualified_component_id)
+        if selected_parent_id is None:
+            if condition.qualified_assertion_id is not None:
+                errors.append(
+                    f"absence condition {condition.absence_condition_id} names a parent assertion "
+                    "when its component has no selected parent"
+                )
+        elif condition.qualified_assertion_id != selected_parent_id:
+            errors.append(
+                f"absence condition {condition.absence_condition_id} must name its selected parent assertion"
+            )
+
         if condition.qualified_assertion_id is not None:
-            parent = _require(
+            parent_ref = _require(
                 condition.qualified_assertion_id,
                 assertions,
                 f"absence condition {condition.absence_condition_id}",
                 errors,
             )
-            if parent is not None and component is not None:
-                if component.component_assertion_id not in parent.component_assertion_ids:
+            if parent_ref is not None and component_ref is not None:
+                if component_ref.component_assertion_id not in parent_ref.component_assertion_ids:
                     errors.append(
                         f"absence condition {condition.absence_condition_id} parent does not contain its component"
                     )
                 if (
-                    parent.value_id != component.parent_value_id
-                    or parent.facet_id != component.facet_id
-                    or parent.facet_group_id != component.facet_group_id
-                    or parent.event_stage_id != component.event_stage_id
-                    or parent.evidence_unit_id != component.evidence_unit_id
+                    parent_ref.value_id != component_ref.parent_value_id
+                    or parent_ref.facet_id != component_ref.facet_id
+                    or parent_ref.facet_group_id != component_ref.facet_group_id
+                    or parent_ref.event_stage_id != component_ref.event_stage_id
+                    or parent_ref.evidence_unit_id != component_ref.evidence_unit_id
                 ):
                     errors.append(
                         f"absence condition {condition.absence_condition_id} parent/component bindings disagree"
                     )
 
     for component in response.component_assertions:
-        if component.component_role == "absence" and absence_by_component[component.component_assertion_id] != 1:
+        if (
+            component.component_role == "absence"
+            and absence_by_component[component.component_assertion_id] != 1
+        ):
             errors.append(
                 f"absence component {component.component_assertion_id} must resolve to exactly one absence condition"
             )
 
     for assertion in response.value_assertions:
-        if assertion.value_id not in hybrid_values and assertion.component_assertion_ids:
-            errors.append(
-                f"non-hybrid assertion {assertion.assertion_id} cannot contain component assertions"
-            )
+        children = [components.get(component_id) for component_id in assertion.component_assertion_ids]
+        roles = {child.component_role for child in children if child is not None}
         if assertion.value_id in hybrid_values:
-            children = [components.get(cid) for cid in assertion.component_assertion_ids]
-            roles = {child.component_role for child in children if child is not None}
             if len(children) != 2 or roles != {"affirmative", "absence"}:
                 errors.append(
                     f"hybrid assertion {assertion.assertion_id} must contain one affirmative and one absence component"
                 )
+        elif assertion.value_id in V5_NON_HYBRID_ABSENCE_DEPENDENT_VALUE_IDS:
+            if len(children) != 1 or roles != {"absence"}:
+                errors.append(
+                    f"absence-dependent assertion {assertion.assertion_id} must contain exactly one absence component"
+                )
+        elif assertion.component_assertion_ids:
+            errors.append(
+                f"non-component assertion {assertion.assertion_id} cannot contain component assertions"
+            )
+
+        if assertion.value_id in absence_dependent_values:
             for child in children:
                 if child is None:
                     continue
                 if child.state != "observed":
                     errors.append(
-                        f"hybrid assertion {assertion.assertion_id} contains non-observed component"
+                        f"selected absence-dependent assertion {assertion.assertion_id} contains non-observed component"
                     )
                 if (
                     child.parent_value_id != assertion.value_id
@@ -721,7 +808,7 @@ def observable_response_v5_errors(
                     or child.evidence_unit_id != assertion.evidence_unit_id
                 ):
                     errors.append(
-                        f"hybrid assertion {assertion.assertion_id} component bindings disagree"
+                        f"absence-dependent assertion {assertion.assertion_id} component bindings disagree"
                     )
 
     duplicate_fact_keys: Counter[tuple[str, str, str]] = Counter(
