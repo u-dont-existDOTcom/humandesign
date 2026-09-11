@@ -4,9 +4,17 @@ Status: public-safe controlling overlay for `codex/discover-life-patterns-mvp`, 
 
 ## Current gate
 
-The blind V5 semantic/contract gate and the public mechanical implementation gate have passed. The exact previously frozen calibration transport has now also been recovered and fully reverified.
+The blind V5 semantic/contract gate and public V5 mechanical implementation gate have passed. The exact frozen private calibration transport was recovered and fully reverified.
 
-A V5 owner-review candidate has been generated and technically smoke-tested. **The next action is owner usability review. Human collection remains unauthorized.**
+Owner review then found one **presentation defect** in the first private V5 candidate: the broad observable question could clearly apply while the closest specific value was an absence-dependent value that correctly could not be asserted unless its four-part evidence gate was fully established. The generic `Not enough information` fallback therefore sounded as if it denied the obvious applicability of the story.
+
+This is **not a reason to weaken the absence gate**. The accepted V5 semantics already distinguish:
+
+- `observed`: at least one specific substantive value or affirmative component is sufficiently established;
+- `insufficient`: the general situation may apply, including clearly applying, while the specific distinction cannot be supported without inference;
+- `not_applicable`: the prerequisite situation itself is affirmatively absent; non-mention is not enough.
+
+An R2 private owner-review candidate now makes that distinction explicit. **The next action is owner usability review of R2. Human collection remains unauthorized.**
 
 ## Accepted public V5 implementation
 
@@ -24,63 +32,69 @@ Public verification receipt:
 
 `state/LIFE-PATTERNS-V5-MECHANICAL-IMPLEMENTATION-VERIFIED-2026-09-11.json`
 
-## Recovered calibration source identity
+## Frozen calibration source
 
 Outer transport:
 
-- filename `Life-Patterns-Recurrence-Corrected-Human-Calibration-V2-PRIVATE-2026-09-08.zip`
+- `Life-Patterns-Recurrence-Corrected-Human-Calibration-V2-PRIVATE-2026-09-08.zip`
 - SHA-256 `f038237a6a1ce776bb28846b76ff49339e7a9e7f28d33c5d1ad877e0d916d837`
-- 422297 bytes
-- 15 members
+- 422297 bytes / 15 members
 
 Inner receipt:
 
-- id `LPHB2-F34245FAE32B513DDCFE`
+- `LPHB2-F34245FAE32B513DDCFE`
 - SHA-256 `f34245fae32b513ddcfe22b7d21081997e8c28e18fccd25b962c30af2fe0a78f`
 - 8 packets
 
-All receipt-declared member hashes and packet content addresses reverified. Selected coverage remains exactly 44 episode + 22 series = 66 units. The outer and inner hashes identify different objects.
+All receipt-declared member hashes and packet content addresses reverified. Coverage remains exactly 44 episode + 22 series = 66 units.
 
-## V5 owner-review candidate
+## Owner usability feedback 001
 
-Public-safe receipt:
+Public-safe disposition:
 
-`state/LIFE-PATTERNS-V5-PRIVATE-UI-OWNER-REVIEW-CANDIDATE-2026-09-11.json`
+`state/LIFE-PATTERNS-V5-OWNER-USABILITY-FEEDBACK-001-2026-09-11.json`
 
-Candidate identities:
+The R2 presentation repair:
 
-- HTML SHA-256 `e0fd7e90fdb923cc03ec16e41470689267bb0a537a9ea2f9e59beb25eb3ebd27`
-- HTML bytes `1607323`
-- owner-review ZIP SHA-256 `0ff2a6db516a9005eea2c2a91e2b19597d81d97629684958a84473e6a25da2f5`
-- ZIP bytes `632723`
+- keeps the observable-specific behavioral question;
+- changes the next prompt to **`Which statement best matches the evidence?`**;
+- labels observed as **`Yes — a specific behavior below is established`**;
+- keeps **`Doesn't apply to this story`** for affirmative absence of the prerequisite situation;
+- changes insufficient to **`Not enough information for a specific behavior`** and explicitly says the general situation can still clearly apply;
+- labels absence-dependent choices before selection;
+- when an absence gate is incomplete, explains that the value cannot be counted and directs the reviewer to the specific-value insufficient state rather than implying the story is irrelevant.
 
-The sandbox could not execute the canonical builder chain because the connected repository template chain could not be mounted locally and Git/network checkout is blocked. A portable execution adapter was therefore used while preserving the accepted V5 facet, hybrid/absence, stage, provenance, recurrence, and envelope semantics.
+The four-part absence gate, V5 machine states, selected units, private source, recurrence semantics, and target-theory blind are unchanged.
 
-Architecture and limitation record:
+## Private R2 owner-review candidate
 
-`docs/research/LIFE_PATTERNS_V5_PRIVATE_PORTABLE_ADAPTER_2026-09-11.md`
+Private package identity only:
 
-Technical smoke passed for save/reload persistence, exact fallback semantics, R05-O2 separate affirmative plus four-part absence controls, R14-i four-part absence fail-closed behavior, claim-specific multi-source provenance, backup and attestation downloads, incomplete-export fail-closed behavior, zero external network requests, and zero console errors. Public-only synthetic export smoke also passed for pure absence, partial hybrid, ordered multi-stage/single-evidence-unit behavior, and recurrence-v2 fields.
+- filename `Life-Patterns-V5-PRIVATE-Owner-Review-R2-2026-09-11.zip`
+- SHA-256 `d5293e0a363c0aa210c8c4031959534c065b375b158335569f4d63098757f5c9`
+- 633219 bytes
+- HTML SHA-256 `55b4a92b73cf42a58f43339c792a6f53c475311395eec2f96c3e3bbf431290a9`
+- HTML bytes `1608348`
 
-Managed Chromium in this sandbox blocks normal local navigation, so DOM/interactions were exercised in-memory after the outer transport was independently cryptographically verified. This limitation is recorded in the receipt.
+The previous owner-review ZIP `0ff2a6db…a25da2f5` is superseded for owner review.
+
+Targeted smoke verified JavaScript syntax, the revised evidence-state wording, pre-labelled absence-dependent choices, and actionable handling of the previously problematic R05 absence-dependent shape. Managed sandbox Chromium still blocks direct local navigation, so that limitation remains part of the private package receipt; no private candidate bytes are committed publicly.
 
 ## Exact next action
 
-Owner should review:
+Owner reviews the R2 private package. In the previously problematic choice-resolution shape, confirm that it now makes sense to say the general situation clearly applies while choosing `Not enough information for a specific behavior` if the absence-dependent value cannot satisfy all four evidence checks.
 
-`Life-Patterns-V5-PRIVATE-Owner-Review-2026-09-11.zip`
-
-If the owner accepts the UI, preserve the explicit acceptance and then make the accepted surface reproducible before human collection by either:
-
-1. promoting/testing the portable adapter in the public repo with green CI; or
-2. regenerating the accepted surface with `scripts/build_life_patterns_human_calibration_ui_v5_final.py` in an environment with a full local repo/template checkout.
-
-Technical smoke does not equal owner acceptance.
+If R2 is accepted, promote the same **presentation-only** repair into the canonical public builder with focused tests and green CI before human collection begins.
 
 ## Hard boundaries
 
-- no independent human collection before owner acceptance plus a green reproducible generation path;
-- no automated participant coding before the revised independent human first pass is completed and frozen;
+- no independent human collection before explicit owner acceptance plus green reproducible generation of the accepted surface;
+- do not weaken the four-part absence gate merely to make a narrative fit a value;
+- no automated participant coding before the revised independent human first pass is complete and frozen;
 - no target-model scoring/reveal;
-- generated private review files are not committed to the public repo;
+- private exact text and generated private UI remain outside public GitHub;
 - no merge/deploy, recruitment/contact, or spending without separate authorization.
+
+## Preserved owner correction
+
+**There was never a completion policy.** That premise was invented earlier and must not be recreated or inferred from artifact counts.
