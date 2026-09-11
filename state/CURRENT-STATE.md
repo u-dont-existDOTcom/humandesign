@@ -52,6 +52,10 @@ If the owner accepts the surface, make it reproducible before human collection b
 
 **Human collection remains unauthorized until owner acceptance plus green reproducibility.**
 
+## Preserved owner correction
+
+**There was never a completion policy.** That was invented nonsense by Codex. Do not recreate a completion-policy premise or silently turn artifact counts, calibration counts, or gating state into such a policy.
+
 ## Hard boundaries
 
 - no private exact text or generated private calibration UI in public GitHub;
