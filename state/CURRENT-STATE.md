@@ -10,8 +10,9 @@ Before substantive continuation:
 2. read `tasks/ACTIVE-TASK.json`;
 3. read `state/LIFE-PATTERNS-CURRENT-STATE-2026-09-11.md`;
 4. read `state/LIFE-PATTERNS-V5-MECHANICAL-IMPLEMENTATION-VERIFIED-2026-09-11.json`;
-5. read `tasks/LIFE-PATTERNS-V5-PRIVATE-UI-REGEN-OWNER-REVIEW-WORKER-2026-09-11.md`;
-6. read `tasks/NEXT-CONVERSATION-HANDOFF-2026-09-11.md`.
+5. read `state/LIFE-PATTERNS-V5-PRIVATE-UI-REGEN-BLOCKED-2026-09-11.json`;
+6. read `tasks/LIFE-PATTERNS-V5-PRIVATE-UI-REGEN-OWNER-REVIEW-WORKER-2026-09-11.md`;
+7. read `tasks/NEXT-CONVERSATION-HANDOFF-2026-09-11.md`.
 
 ## Current gate
 
@@ -41,13 +42,30 @@ The final owner-facing builder is:
 
 ## Exact next action
 
-Do **not** redo semantic repair/review or public implementation. Run:
+Do **not** redo semantic repair/review or public implementation.
+
+Recover or re-supply the exact outer transport:
+
+- `Life-Patterns-Recurrence-Corrected-Human-Calibration-V2-PRIVATE-2026-09-08.zip`
+- `422297` bytes
+- SHA-256 `f038237a6a1ce776bb28846b76ff49339e7a9e7f28d33c5d1ad877e0d916d837`
+
+Then independently verify the inner receipt:
+
+- `LPHB2-F34245FAE32B513DDCFE`
+- receipt SHA-256 `f34245fae32b513ddcfe22b7d21081997e8c28e18fccd25b962c30af2fe0a78f`
+
+The two hashes identify different objects; the receipt SHA is **not** the ZIP SHA.
+
+The current context attempted File Library recovery three times, including exact filename/hash lookup, but the retrieval service errored and returned no bytes. Prior-context retrieval also did not recover the ZIP bytes. Do not reconstruct it. See:
+
+`state/LIFE-PATTERNS-V5-PRIVATE-UI-REGEN-BLOCKED-2026-09-11.json`
+
+Once the exact ZIP is available, run:
 
 `tasks/LIFE-PATTERNS-V5-PRIVATE-UI-REGEN-OWNER-REVIEW-WORKER-2026-09-11.md`
 
-using only the exact existing private V2 handoff bound to receipt `LPHB2-F34245FAE32B513DDCFE` / SHA-256 `f34245fae32b513ddcfe22b7d21081997e8c28e18fccd25b962c30af2fe0a78f`.
-
-If those exact bytes are unavailable, do not reconstruct them. With them available, regenerate the private final V5 UI outside the public repository, browser-smoke the real private package, persist only a public-safe hash/status receipt, and return the private package to the owner for hands-on usability review.
+Regenerate the private final V5 UI outside the public repository, browser-smoke the real private package, persist only a public-safe hash/status receipt, and return the private package to the owner for hands-on usability review.
 
 **Human collection remains unauthorized until explicit owner acceptance.**
 
