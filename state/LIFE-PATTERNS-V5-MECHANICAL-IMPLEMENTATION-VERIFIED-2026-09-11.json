@@ -57,11 +57,20 @@
     "synthetic_private_handoff_build_tested": true,
     "synthetic_private_plaintext_leak_detected": false
   },
+  "private_source_identity": {
+    "outer_transport_filename": "Life-Patterns-Recurrence-Corrected-Human-Calibration-V2-PRIVATE-2026-09-08.zip",
+    "outer_transport_sha256": "f038237a6a1ce776bb28846b76ff49339e7a9e7f28d33c5d1ad877e0d916d837",
+    "outer_transport_bytes": 422297,
+    "outer_transport_member_count": 15,
+    "inner_handoff_receipt_id": "LPHB2-F34245FAE32B513DDCFE",
+    "inner_handoff_receipt_sha256": "f34245fae32b513ddcfe22b7d21081997e8c28e18fccd25b962c30af2fe0a78f",
+    "identity_distinction_required": true
+  },
   "private_v5_regeneration_complete": false,
   "real_private_browser_smoke_complete": false,
   "owner_usability_acceptance_complete": false,
   "human_collection_authorized": false,
   "automated_participant_coding_authorized": false,
   "target_model_scoring_or_reveal_authorized": false,
-  "next_gate": "Regenerate the final V5 offline UI from the exact existing private V2 handoff outside the public repository, browser-smoke the real private build, return the private UI to the owner for usability review, and record owner acceptance before any independent human collection begins."
+  "next_gate": "Regenerate the final V5 offline UI from the exact outer private transport ZIP (SHA-256 f038237a6a1ce776bb28846b76ff49339e7a9e7f28d33c5d1ad877e0d916d837) and independently verify the inner LPHB2 receipt (SHA-256 f34245fae32b513ddcfe22b7d21081997e8c28e18fccd25b962c30af2fe0a78f), browser-smoke the real private build, return the private UI to the owner for usability review, and record owner acceptance before any independent human collection begins."
 }
