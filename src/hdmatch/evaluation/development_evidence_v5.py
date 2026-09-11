@@ -18,14 +18,11 @@ from .development_series_evidence_v2 import (
     ReportedRecurrenceStrength,
 )
 from .development_transfer_corpus import DevelopmentEpisodeCodingTask
-from .facet_relation_v5 import (
-    ObservableResponseV5,
-    V5_REVIEW_COMMIT,
-    observable_response_v5_errors,
-)
+from .facet_relation_v5 import ObservableResponseV5, observable_response_v5_errors
 from .neutral_measurement import OntologyReleaseArtifact
 
 _SHA256_PATTERN = r"^[0-9a-f]{64}$"
+_V5_REVIEW_COMMIT = "ce04642146c41a7d5d94f85360572c78de887682"
 
 
 class DevelopmentV5Model(BaseModel):
@@ -42,7 +39,9 @@ class DevelopmentEpisodeAnnotationResponseV5(DevelopmentV5Model):
     episode_id: str = Field(min_length=1)
     observable_id: str = Field(pattern=r"^NBM-R\d{2}$")
     response_graph: ObservableResponseV5
-    accepted_contract_review_commit: Literal[V5_REVIEW_COMMIT] = V5_REVIEW_COMMIT
+    accepted_contract_review_commit: Literal[
+        "ce04642146c41a7d5d94f85360572c78de887682"
+    ] = _V5_REVIEW_COMMIT
     transfer_summary_is_not_primary_source: Literal[True] = True
     development_only: Literal[True] = True
     validation_use_forbidden: Literal[True] = True
@@ -79,7 +78,9 @@ class DevelopmentSeriesAnnotationResponseV5(DevelopmentV5Model):
     series_is_recurrence_support_not_primary_episode: Literal[True] = True
     reported_recurrence_is_not_verified_true_frequency: Literal[True] = True
     summary_fields_are_not_primary_source: Literal[True] = True
-    accepted_contract_review_commit: Literal[V5_REVIEW_COMMIT] = V5_REVIEW_COMMIT
+    accepted_contract_review_commit: Literal[
+        "ce04642146c41a7d5d94f85360572c78de887682"
+    ] = _V5_REVIEW_COMMIT
     development_only: Literal[True] = True
     validation_use_forbidden: Literal[True] = True
 
