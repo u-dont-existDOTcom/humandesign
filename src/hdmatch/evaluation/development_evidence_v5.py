@@ -22,7 +22,6 @@ from .facet_relation_v5 import ObservableResponseV5, observable_response_v5_erro
 from .neutral_measurement import OntologyReleaseArtifact
 
 _SHA256_PATTERN = r"^[0-9a-f]{64}$"
-_V5_REVIEW_COMMIT = "ce04642146c41a7d5d94f85360572c78de887682"
 
 
 class DevelopmentV5Model(BaseModel):
@@ -41,7 +40,7 @@ class DevelopmentEpisodeAnnotationResponseV5(DevelopmentV5Model):
     response_graph: ObservableResponseV5
     accepted_contract_review_commit: Literal[
         "ce04642146c41a7d5d94f85360572c78de887682"
-    ] = _V5_REVIEW_COMMIT
+    ] = "ce04642146c41a7d5d94f85360572c78de887682"
     transfer_summary_is_not_primary_source: Literal[True] = True
     development_only: Literal[True] = True
     validation_use_forbidden: Literal[True] = True
@@ -80,7 +79,7 @@ class DevelopmentSeriesAnnotationResponseV5(DevelopmentV5Model):
     summary_fields_are_not_primary_source: Literal[True] = True
     accepted_contract_review_commit: Literal[
         "ce04642146c41a7d5d94f85360572c78de887682"
-    ] = _V5_REVIEW_COMMIT
+    ] = "ce04642146c41a7d5d94f85360572c78de887682"
     development_only: Literal[True] = True
     validation_use_forbidden: Literal[True] = True
 
