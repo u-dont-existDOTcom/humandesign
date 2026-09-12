@@ -283,3 +283,28 @@ def test_generated_json_regenerates_without_modifying_production_source(tmp_path
 
     assert output.read_bytes() == AUDIT_PATH.read_bytes()
     assert _source_hashes() == before
+
+
+def test_historical_guard_probe_reads_the_pinned_source_tree(monkeypatch: pytest.MonkeyPatch) -> None:
+    _require_bound_git_history()
+    auditor = _auditor()
+    load_module = auditor._load_module
+    inspected = []
+
+    def inspect_snapshot(path: Path, name: str) -> ModuleType:
+        assert path.parent != ROOT / "scripts"
+        source_path = Path("src/hdmatch/api/relationship_launch_app.py")
+        assert (path.parents[1] / source_path).read_bytes() == auditor._git_blob(
+            ROOT, AUDITED_HEAD, source_path
+        )
+        assert path.read_bytes() == auditor._git_blob(
+            ROOT, AUDITED_HEAD, Path("scripts") / path.name
+        )
+        inspected.append(path)
+        return load_module(path, name)
+
+    monkeypatch.setattr(auditor, "_load_module", inspect_snapshot)
+    observed = auditor._historical_write_result(ROOT, "audit_astrohd_rank_tiebreak_downstream.py")
+    expected = _load()["historical_audit_invariants"]["generator_results_against_current_source"][1]
+    assert observed == expected
+    assert len(inspected) == 1

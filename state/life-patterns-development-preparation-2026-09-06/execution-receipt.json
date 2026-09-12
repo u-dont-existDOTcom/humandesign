@@ -1,0 +1,54 @@
+{
+  "actual_counts": {
+    "blocked_summary_only_series": 8,
+    "eligible_exact_source_series": 5,
+    "episode_units": 374,
+    "episodes": 17,
+    "human_episode_units": 44,
+    "human_series_units": 22,
+    "series_reports": 13,
+    "series_units": 110
+  },
+  "automated_coding_passes_run": 0,
+  "canonical_behavioral_freeze_eligible": false,
+  "deterministic_replay": {
+    "all_16_packet_bytes_equal": true,
+    "calibration_manifest_bytes_equal": true,
+    "corpus_bytes_equal": true,
+    "package_bytes_equal": true
+  },
+  "development_only": true,
+  "human_first_pass_received": false,
+  "package_id": "LPKG-18170B8D3EEC8423A523",
+  "package_sha256": "18170b8d3eec8423a523cc2151020a2e2dfead8abf3a9ea5b941fdc9194dd66f",
+  "packet_counts": {
+    "automated_episode": 6,
+    "automated_series": 2,
+    "human_calibration_episode": 6,
+    "human_calibration_series": 2
+  },
+  "preparation_source_commit": "5a278d135af4de5190d9b74d8e55489dc92efaf1",
+  "prepared_at_utc": "2026-09-06T22:10:58.534703Z",
+  "private_artifacts_gitignored": true,
+  "private_text_committed": false,
+  "public_receipt_string_allowlist_passed": true,
+  "schema_version": "life-patterns-development-preparation-execution-receipt-v1",
+  "source_files": {
+    "v8": {
+      "canonical_json_sha256": "0a0aa1995d9bcf7f434f7b66d0a91b00d13dd9821ee513eb08c3e26e6ad130f5",
+      "file_bytes": 54488,
+      "file_sha256": "3c37c0c76174c7ba698966155f991f0303cd4f0833d39ff475dfb0e1c5348637",
+      "original_bytes_unchanged": true
+    },
+    "v8_1": {
+      "canonical_json_sha256": "92d2783ecaf4fcddf79bcf675ea736b3ae3a76c156d74fb139608d02dfb56367",
+      "file_bytes": 25844,
+      "file_sha256": "93f838bb61e6a910ba0dbeb96a66b56c72986350dda5386243b098a738b818e7",
+      "original_bytes_unchanged": true
+    }
+  },
+  "source_hash_semantics": "Package source hashes cover canonical parsed JSON; file_sha256 covers exact original bytes.",
+  "target_model_scoring_authorized": false,
+  "target_model_scoring_run": false,
+  "validation_use_forbidden": true
+}

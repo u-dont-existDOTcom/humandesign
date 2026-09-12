@@ -1,0 +1,36 @@
+{
+  "schema_version": "life-patterns-private-artifact-recovery-verification-v1",
+  "status": "exact_sources_recovered_and_hash_verified",
+  "verified_date": "2026-09-07",
+  "recovery_method": "owner supplied a private recovery ZIP in the continuation chat; the two JSON members were extracted and independently hash-verified against the committed recovery identities",
+  "recovery_archive": {
+    "sha256": "7b6e2d4e901093cfd0bf54b6ab8eab66d0cdc28e2feaba720672a38452d8a450",
+    "bytes": 20460,
+    "member_count": 3,
+    "archive_identity_is_not_the_frozen_human_calibration_archive": true
+  },
+  "v8": {
+    "bytes": 54488,
+    "sha256": "3c37c0c76174c7ba698966155f991f0303cd4f0833d39ff475dfb0e1c5348637",
+    "schema_version": "life-patterns-pattern-first-longitudinal-interview-v8",
+    "matches_committed_expected_identity": true
+  },
+  "v8_1": {
+    "bytes": 25844,
+    "sha256": "93f838bb61e6a910ba0dbeb96a66b56c72986350dda5386243b098a738b818e7",
+    "schema_version": "life-patterns-v8-repair-supplement-v8.1",
+    "matches_committed_expected_identity": true
+  },
+  "existing_frozen_package_id": "LPKG-18170B8D3EEC8423A523",
+  "existing_calibration_manifest_id": "LPCA-5B3E6CFCCE49807050DF",
+  "private_source_text_committed": false,
+  "private_source_bytes_embedded_in_this_receipt": false,
+  "reconstruction_from_summaries_used": false,
+  "automated_coding_passes_run": 0,
+  "human_first_pass_received": false,
+  "target_model_scoring_run": false,
+  "development_only": true,
+  "validation_use_forbidden": true,
+  "next_gate": "Using only these exact recovered source bytes and the already-frozen repository procedure, deterministically regenerate/verify the private human-calibration handoff if the original handoff ZIP is not available; then obtain and freeze the independent blind human first pass before any automated labels are exposed.",
+  "continuity_note": "This receipt proves exact source recovery in the 2026-09-07 continuation. It does not place the private bytes in GitHub. A fresh runtime must reacquire the exact private source archive or exact regenerated human-calibration archive and verify hashes before acting on narrative-bearing material."
+}

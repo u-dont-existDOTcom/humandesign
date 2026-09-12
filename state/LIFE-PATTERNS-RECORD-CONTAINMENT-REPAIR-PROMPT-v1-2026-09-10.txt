@@ -1,0 +1,101 @@
+You are the target-theory-blind neutral measurement CONTRACT REPAIRER for a DEVELOPMENT / DISCOVERY run.
+
+Your task is narrow: repair only the record-model containment and referential-integrity defect NR2-001 found by the independent v4 review. Do not redesign the substantive neutral codebook and do not implement software, UI, package, or coding changes.
+
+AUTHORITATIVE INPUTS
+
+1. Frozen overlap/absence audit commit:
+   7ea0641e0913815306f8c182be5e7e8b18115fff
+2. First blind semantic repair candidate:
+   458bede3cf83b1947c332a408b47ec84236d69ed
+3. Prior independent blind review:
+   4f51d075cb200e57820486e4f9686d81c7fc604f
+4. V4 cardinality repair:
+   7ba5654fe99017e1c84a4b8868e5a3da50c55be6
+5. Independent v4 re-review:
+   f5f02c976b11fbabc7c136f9c80fbd312600d91d
+6. Relevant artifacts:
+   - state/LIFE-PATTERNS-NEUTRAL-CODEBOOK-CLARIFICATION-v2-CANDIDATE-2026-09-10.md
+   - state/LIFE-PATTERNS-FACET-RELATION-CONTRACT-v4-CANDIDATE-2026-09-10.json
+   - state/LIFE-PATTERNS-FACET-CARDINALITY-REVIEW-RAW-v1-2026-09-10.jsonl
+   - state/LIFE-PATTERNS-FACET-CARDINALITY-REVIEW-SUMMARY-v1-2026-09-10.json
+
+BLINDING
+
+Use a fresh target-theory-blind context distinct from the reviewer that authored f5f02c976b11fbabc7c136f9c80fbd312600d91d. Do not inspect Human Design, astrology, target mappings, chart/birth data, target-model outputs, participant-specific target results, model-fit results, or theory-exposed commentary. Work only from the neutral artifacts above and neutral methodological dependencies they explicitly cite.
+
+CONTROLLING REVIEW RESULT
+
+The v4 re-review independently found:
+- all 45 original OA blockers RESOLVED;
+- carried NR-001 RESOLVED;
+- 0 partial, unresolved, or regressed carried findings;
+- R05 blockers resolved;
+- absence/missingness semantics resolved;
+- response-contract blockers resolved;
+- one new material blocking defect: NR2-001;
+- semantic_change_required=false;
+- safe_for_implementation=false.
+
+NR2-001 states that the v4 observable_response model has no normative containment for value_assertion, component_assertion, absence_condition, or source_provenance records even though substantive records refer to those objects by ID. It also finds that component_assertion lacks a mechanically unique binding to one event_stage and that stage's evidence_unit. A conforming implementation could therefore omit referenced records, leave IDs unresolved, or attach one component to multiple stages, corrupting stage-preserving evidence identity.
+
+TASK
+
+Produce the smallest contract-only revision that makes record containment and referential integrity mechanically unambiguous while preserving all accepted semantics.
+
+Requirements:
+1. Do NOT edit any existing candidate, repair, or review artifact.
+2. Preserve every substantive semantic decision already accepted, including R05, absence/missingness, stage-local facet cardinality, same-act anti-double-counting, and partial-order rules.
+3. Do not create new behavioral distinctions, value meanings, facets, or target-facing constructs.
+4. Define normative containment/storage for every value_assertion, component_assertion, absence_condition, and source_provenance record referenced from an observable_response or its contained records.
+5. Require every referenced record ID to resolve exactly once to the appropriate contained record type. Prevent dangling references and ambiguous duplicate IDs.
+6. Require every value_assertion and every retained component_assertion to bind uniquely to one event_stage and to that stage's evidence_unit, either through explicit fields or through a mechanically one-to-one referential-integrity rule. The representation must not permit the same component assertion to belong to multiple stages/evidence units.
+7. Preserve parent/child integrity for hybrid values: component assertions and any absence conditions/provenance must remain attached to the correct parent assertion and stage/evidence unit without turning components into independent occurrence counts.
+8. Provenance containment must not imply that every provenance record supports every assertion. Assertion/component/absence records must refer to their own exact source provenance IDs.
+9. Preserve stable substantive value IDs and previously accepted facet/event/window semantics. Add only structural fields/collections/invariants required to close NR2-001.
+10. If you conclude a substantive codebook semantic change is required, STOP instead of making it. Set semantic_change_required=true in the summary and explain why.
+
+REQUIRED OUTPUTS
+
+Create exactly these three new artifacts:
+
+1. state/LIFE-PATTERNS-FACET-RELATION-CONTRACT-v5-CANDIDATE-2026-09-10.json
+   - complete superseding contract, not a patch;
+   - identify v4 as predecessor;
+   - bind repair commit 7ba5654fe99017e1c84a4b8868e5a3da50c55be6 and review commit f5f02c976b11fbabc7c136f9c80fbd312600d91d;
+   - make normative record containment and referential integrity explicit.
+
+2. state/LIFE-PATTERNS-RECORD-CONTAINMENT-REPAIR-DISPOSITION-v1-2026-09-10.jsonl
+   - exactly 1 row for NR2-001;
+   - fields: finding_id, observable_id, status (ADDRESSED or NOT_ADDRESSED), repair_reference, explanation, regression_risk_checked.
+
+3. state/LIFE-PATTERNS-RECORD-CONTAINMENT-REPAIR-SUMMARY-v1-2026-09-10.json
+   - fields: schema_version, predecessor_contract, new_contract, required_blocker_count, addressed_count, not_addressed_count, semantic_change_required, substantive_codebook_edited, prior_candidate_or_review_artifact_edited, target_model_information_used, safe_for_blind_re_review, notes.
+   - safe_for_blind_re_review may be true if complete enough for independent review; it does NOT authorize implementation.
+
+MECHANICAL CHECKS BEFORE COMMIT
+
+- all three outputs parse where applicable;
+- disposition contains exactly one NR2-001 row;
+- no prior candidate/repair/review artifact changed;
+- every assertion/component/absence/provenance reference in v5 has a normative containment location and exact-one resolution rule;
+- no component assertion can resolve to more than one stage or evidence unit;
+- hybrid components remain non-independent for occurrence counting;
+- stage-local cardinality and previously accepted R02/R03/R10/R12/R15/R16/R20/R21 trajectories remain representable;
+- R05 and absence/missingness rules are unchanged;
+- no target-model information appears in outputs.
+
+COMMIT / STOP
+
+Commit and push only the three required artifacts to codex/discover-life-patterns-mvp. Do not implement software/schema code/UI/package generation, participant coding, automated annotation, human calibration, target scoring/reveal, merge/deploy, recruitment/contact, or spending.
+
+Return only:
+- GitHub-visible commit SHA;
+- SHA-256 and byte size of each output;
+- disposition row count;
+- addressed/not-addressed counts;
+- semantic_change_required;
+- safe_for_blind_re_review;
+- confirmation no prior candidate/repair/review artifact was edited;
+- confirmation no substantive codebook was edited;
+- confirmation no target-model information was used.

@@ -1,0 +1,32 @@
+{
+  "schema_version": "life-patterns-independent-auditor-kit-receipt-v1",
+  "created_date": "2026-09-09",
+  "private_auditor_kit_filename": "Life-Patterns-Independent-Auditor-Kit-V2-2026-09-09.zip",
+  "private_auditor_kit_sha256": "c4c409b8574d60aad3499b4ab908256e2aed5ffb3adf1ed4a15b2cd684fd532d",
+  "private_auditor_kit_bytes": 800041,
+  "private_auditor_kit_member_count": 2,
+  "members": {
+    "Life-Patterns-Human-Calibration-V2-OFFLINE.html": {
+      "sha256": "66fda4ceada51b4f82fe2c7f8a93c6d9efe886e1063a9d23fece88b79f1f6690",
+      "bytes": 3982068,
+      "embeds_private_participant_evidence": true
+    },
+    "START-HERE.md": {
+      "sha256": "d193eab1d80797bc40793bdfcd67d7f6bc1eb3f40828bed7fdd9e9603614b836",
+      "bytes": 3602,
+      "contains_private_participant_evidence": false
+    }
+  },
+  "bound_handoff_receipt_id": "LPHB2-F34245FAE32B513DDCFE",
+  "bound_handoff_receipt_sha256": "f34245fae32b513ddcfe22b7d21081997e8c28e18fccd25b962c30af2fe0a78f",
+  "selected_episode_units": 44,
+  "selected_series_units": 22,
+  "human_first_pass_received": false,
+  "automated_coding_run": false,
+  "target_model_scoring_run": false,
+  "development_only": true,
+  "validation_use_forbidden": true,
+  "public_receipt_contains_private_participant_text": false,
+  "private_kit_bytes_committed": false,
+  "next_gate": "Owner supplies this exact private auditor kit to an eligible independent theory-blind human. Preserve the three final raw exports unchanged and validate/freeze them before any automated Life Patterns coding."
+}

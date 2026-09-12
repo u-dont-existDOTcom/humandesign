@@ -1,0 +1,14 @@
+{
+  "schema_version": "life-patterns-facet-cardinality-repair-summary-v1",
+  "predecessor_contract": "state/LIFE-PATTERNS-FACET-RELATION-CONTRACT-v3-CANDIDATE-2026-09-10.json",
+  "new_contract": "state/LIFE-PATTERNS-FACET-RELATION-CONTRACT-v4-CANDIDATE-2026-09-10.json",
+  "required_blocker_count": 8,
+  "addressed_count": 8,
+  "not_addressed_count": 0,
+  "semantic_change_required": false,
+  "substantive_codebook_edited": false,
+  "candidate_or_review_artifact_edited": false,
+  "target_model_information_used": false,
+  "safe_for_blind_re_review": true,
+  "notes": "Contract-only repair. The v4 candidate adds explicit per-event-stage or typed measurement-window facet cardinality scope and retains the accepted v2 codebook semantics, including all R05 and absence/missingness decisions. It does not authorize implementation."
+}

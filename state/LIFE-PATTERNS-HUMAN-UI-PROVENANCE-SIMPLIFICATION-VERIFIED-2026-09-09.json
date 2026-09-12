@@ -1,0 +1,75 @@
+{
+  "schema_version": "life-patterns-human-ui-provenance-simplification-verification-v1",
+  "verified_date": "2026-09-09",
+  "defect_record": "state/LIFE-PATTERNS-HUMAN-UI-REDUNDANT-CITATION-CONTROL-2026-09-09.md",
+  "implementation": {
+    "builder": "scripts/build_life_patterns_human_calibration_ui_v2_plain_provenance.py",
+    "tests": "tests/unit/test_life_patterns_human_calibration_ui_v2_plain_provenance.py",
+    "implementation_head": "3ec4b9dc95f80fee46a4a44d9e052e03088c303a",
+    "ci_run": 34373413686,
+    "ci_conclusion": "success",
+    "pytest_passed": 622,
+    "pytest_skipped": 7,
+    "ruff_passed": true,
+    "mypy_passed": true,
+    "mypy_source_files": 172
+  },
+  "private_html": {
+    "auditor_filename": "Life-Patterns-Human-Calibration-V2-PLAIN.html",
+    "sha256": "0d123b0eca37988157282f9b70f0030e7af106e33155e04b30ffe76f68eff568",
+    "bytes": 3997285,
+    "embeds_private_participant_evidence": true,
+    "committed_to_git": false,
+    "bound_handoff_receipt_id": "LPHB2-F34245FAE32B513DDCFE",
+    "bound_handoff_receipt_sha256": "f34245fae32b513ddcfe22b7d21081997e8c28e18fccd25b962c30af2fe0a78f",
+    "selected_episode_units": 44,
+    "selected_series_units": 22,
+    "embedded_private_handoff_unchanged": true
+  },
+  "interaction_semantics": {
+    "single_exact_source_observed": "sole source segment auto-bound as supporting provenance with no visible citation checkbox",
+    "multiple_exact_sources_observed": "auditor selects only exact quote(s) actually relied on",
+    "counterevidence": "optional collapsed exception/conflict provenance control",
+    "no_or_cant_tell": "no source citation control required",
+    "provenance_is_second_behavioral_judgment": false,
+    "response_contract_changed": false,
+    "measurement_semantics_changed": false,
+    "recurrence_semantics_changed": false
+  },
+  "exact_browser_smoke": {
+    "browser": "system Chromium via Playwright set_content on exact private HTML bytes",
+    "bundle_verified": true,
+    "verified_handoff_id": "LPHB2-F34245FAE32B513DDCFE",
+    "unit_count": 66,
+    "single_source_test_unit": "EP-002 / NBM-R22",
+    "single_source_visible_support_checkbox_count_after_yes": 0,
+    "single_source_hidden_support_binding_count_after_yes": 1,
+    "single_source_read_form_supporting_source_segment_ids": ["EP-002-SEG-01"],
+    "multi_source_test_unit": "EP-003 / NBM-R07",
+    "multi_source_visible_support_choice_count_after_yes": 2,
+    "optional_counterevidence_control_collapsed_by_default": true,
+    "external_network_requests": 0,
+    "page_errors": 0,
+    "console_errors": 0
+  },
+  "current_private_delivery_kit": {
+    "filename": "Life-Patterns-Independent-Auditor-Kit-V2-PLAIN-PROVENANCE-2026-09-09.zip",
+    "sha256": "291ffaa9bf886e6fe4bcf778b2d41264275bc3b74c11ce82d1df24894bf768d3",
+    "bytes": 804132,
+    "member_count": 2,
+    "guide_member_sha256": "3bdd032219c2a28bbd4d5253e31ce8564c6da0ac0cd92e20802f32249d823007"
+  },
+  "supersedes_for_new_human_collection": [
+    "Life-Patterns-Independent-Auditor-Kit-V2-2026-09-09.zip",
+    "Life-Patterns-Independent-Auditor-Kit-V2-PLAIN-2026-09-09.zip"
+  ],
+  "human_first_pass_received": false,
+  "automated_coding_run": false,
+  "automated_consensus_exists": false,
+  "target_model_scoring_run": false,
+  "contains_private_participant_text": false,
+  "private_html_bytes_committed": false,
+  "development_only": true,
+  "validation_use_forbidden": true,
+  "next_gate": "Use only the provenance-simplified private auditor kit for an eligible independent theory-blind human first pass. Freeze the three exact final exports before exposing any automated label."
+}

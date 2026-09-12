@@ -1,0 +1,667 @@
+{
+  "schema_version": "life-patterns-facet-relation-contract-v3-candidate",
+  "contract_version": "3.0.0-candidate",
+  "artifact_date": "2026-09-10",
+  "status": {
+    "development_only": true,
+    "target_theory_blind": true,
+    "target_theory_information_available": false,
+    "target_theory_information_used": false,
+    "implementation_status": "semantic_contract_only",
+    "ready_for_separate_fresh_blind_review": true,
+    "validation_use_forbidden": true
+  },
+  "authority": {
+    "codebook_overlay": "state/LIFE-PATTERNS-NEUTRAL-CODEBOOK-CLARIFICATION-v2-CANDIDATE-2026-09-10.md",
+    "frozen_audit_commit": "7ea0641e0913815306f8c182be5e7e8b18115fff",
+    "frozen_audit_raw_sha256": "37642f31135f3d446488a3a0a6736468b30b6114d5a292bcaf01096d65fb16e6",
+    "frozen_audit_summary_sha256": "7184f89a9d6c8fa0560e0ceba07287f101f559ddcf872b3db62e39de34cb7b47",
+    "historical_artifacts_immutable": true,
+    "historical_contracts_superseded_for_new_v3_responses_only": [
+      "life-patterns-structured-annotation-response-v2",
+      "life-patterns-development-episode-annotation-response-v1",
+      "life-patterns-development-series-annotation-response-v2"
+    ]
+  },
+  "response_state_scope": {
+    "allowed_states": [
+      "observed",
+      "insufficient",
+      "not_applicable"
+    ],
+    "state_bearing_scopes": [
+      "observable_response",
+      "facet_group",
+      "event_stage",
+      "component_assertion"
+    ],
+    "observable_state_rules": {
+      "observed": "The observable prerequisite is established and at least one applicable facet is observed.",
+      "insufficient": "The observable may apply but the prerequisite or all applicable facet distinctions lack sufficient evidence.",
+      "not_applicable": "The observable prerequisite is affirmatively established as absent in the bounded response scope."
+    },
+    "facet_state_rules": {
+      "observed": "At least one allowed value assertion is supported in this facet.",
+      "insufficient": "The facet is applicable but no allowed value can be supported without inference.",
+      "not_applicable": "A facet-specific prerequisite is affirmatively absent."
+    },
+    "empty_assertion_rule": "A facet or event_stage whose state is insufficient or not_applicable contains no substantive value assertions.",
+    "nonmention_rule": "Non-mention, unknown content, transcript silence, or an incomplete evidence frame yields insufficient, never not_applicable or established nonoccurrence."
+  },
+  "record_model": {
+    "observable_response": {
+      "required_fields": [
+        "response_id",
+        "observable_id",
+        "response_scope_id",
+        "state",
+        "facet_groups",
+        "event_stages",
+        "temporal_edges",
+        "evidence_units"
+      ],
+      "rules": [
+        "One observable_response may contain one or more facet_groups.",
+        "No global value_relation field is permitted.",
+        "Every referenced facet_group, event_stage, assertion, source provenance item, absence condition, and evidence unit is locally unique."
+      ]
+    },
+    "facet_group": {
+      "required_fields": [
+        "facet_id",
+        "state",
+        "cardinality",
+        "allowed_value_ids",
+        "assertion_ids"
+      ],
+      "cardinality_values": [
+        "zero_or_one",
+        "zero_one_or_multiple"
+      ],
+      "rules": [
+        "Cardinality is evaluated within the facet, not across the observable.",
+        "Multiple values in one facet require either distinct components, distinct event_stages, or an explicit multiple-copresence rule in the codebook overlay.",
+        "Cross-facet assertions may be co-present without being placed in a temporal sequence."
+      ]
+    },
+    "event_stage": {
+      "required_fields": [
+        "event_stage_id",
+        "state",
+        "evidence_unit_id",
+        "assertion_ids",
+        "component_assertion_ids",
+        "source_provenance_ids"
+      ],
+      "rules": [
+        "One event_stage represents one bounded act, utterance, decision, or meaningful status transition.",
+        "All source_provenance_ids form the exact source set supporting the event_stage boundary and content.",
+        "Assertions on the same event_stage are co-present unless a separate event_stage and temporal edge is supplied.",
+        "Several facet labels on one event_stage do not create several behavioral events."
+      ]
+    },
+    "value_assertion": {
+      "required_fields": [
+        "assertion_id",
+        "value_id",
+        "facet_id",
+        "event_stage_id",
+        "evidence_unit_id",
+        "component_assertion_ids",
+        "source_provenance_ids",
+        "specificity_disposition"
+      ],
+      "specificity_disposition_values": [
+        "direct",
+        "narrow_replaces_broad",
+        "component_of_ordered_trajectory",
+        "cross_facet_copresence",
+        "derived_not_countable"
+      ],
+      "rules": [
+        "Every observed assertion has a nonempty exact source provenance set.",
+        "Every assertion binds to exactly one event_stage and the same evidence_unit_id used by that event_stage.",
+        "A hybrid parent value is observed only when every required component_assertion is observed.",
+        "An observed affirmative component may be retained when its paired absence component is insufficient, but the hybrid parent value is then not selected.",
+        "An absence-dependent value with no established absence condition is not an observed parent assertion."
+      ]
+    },
+    "component_assertion": {
+      "required_fields": [
+        "component_assertion_id",
+        "parent_value_id",
+        "component_role",
+        "state",
+        "proposition",
+        "source_provenance_ids",
+        "absence_condition_id"
+      ],
+      "component_role_values": [
+        "affirmative",
+        "absence"
+      ],
+      "rules": [
+        "An affirmative component is observed only from positive report content and never from failure to mention an alternative action.",
+        "An absence component is observed only when absence_condition_id names a fully established gate for that exact component.",
+        "absence_condition_id is null for an affirmative component and required for an absence component.",
+        "An insufficient component carries no substantive proposition assertion but may retain missingness and uncertainty at its event_stage.",
+        "Component-level state preserves observed affirmative behavior even when the full hybrid parent value cannot be selected."
+      ]
+    },
+    "absence_condition": {
+      "required_fields": [
+        "absence_condition_id",
+        "qualified_assertion_id",
+        "qualified_component_id",
+        "absent_actor",
+        "absent_proposition_id",
+        "absent_proposition",
+        "window_id",
+        "awareness",
+        "opportunity",
+        "feasibility",
+        "established_nonoccurrence",
+        "source_provenance_ids"
+      ],
+      "gate_status_values": [
+        "established",
+        "not_established",
+        "unclear"
+      ],
+      "rules": [
+        "All four gate fields must be established before the qualified absence component is observed.",
+        "The source_provenance_ids are the exact source set for the named absence target, window, and gate facts.",
+        "A gate cannot be reused for a different absent proposition, actor, or window.",
+        "Missing or partial reporting cannot set established_nonoccurrence to established."
+      ]
+    },
+    "source_provenance": {
+      "required_fields": [
+        "source_provenance_id",
+        "source_record_id",
+        "locator"
+      ],
+      "optional_fields": [
+        "exact_segment_hash",
+        "exact_text_available"
+      ],
+      "rules": [
+        "Every cited source_record_id must belong to the supplied coding task.",
+        "An event_stage and each assertion/component carry their own exact provenance set; one set is not silently inherited as proof of a different claim.",
+        "Summary or orientation text cannot replace exact primary-source provenance."
+      ]
+    },
+    "evidence_unit": {
+      "required_fields": [
+        "evidence_unit_id",
+        "response_scope_id",
+        "event_stage_ids",
+        "independence_class"
+      ],
+      "independence_class_values": [
+        "single_bounded_behavioral_occurrence",
+        "derived_status_of_same_occurrence",
+        "repeated_series_self_report",
+        "sampled_opportunity",
+        "external_record_occurrence"
+      ],
+      "rules": [
+        "All labels derived from one act, utterance, choice, terminal course, or endpoint trajectory share an evidence unit unless a genuinely new opportunity is established.",
+        "Specificity, extra facets, extra labels, and derived trajectories never increase the independent evidence count.",
+        "Repeated-series self-report and self-selected examples follow the recurrence-v2 evidence firewall."
+      ]
+    }
+  },
+  "relation_model": {
+    "temporal_edge": {
+      "required_fields": [
+        "from_event_stage_id",
+        "to_event_stage_id",
+        "relation",
+        "source_provenance_ids"
+      ],
+      "relation_values": [
+        "before",
+        "immediately_before"
+      ],
+      "rules": [
+        "Temporal edges form an acyclic partial order.",
+        "An edge is added only when order is established by exact source evidence.",
+        "No edge is created merely from array position or cross-facet co-presence.",
+        "Unknown order remains unrepresented and may carry an uncertainty flag."
+      ]
+    },
+    "copresence": {
+      "representation": "Assertions that reference the same event_stage_id are co-present.",
+      "rules": [
+        "Co-presence is compatible with different facet_ids.",
+        "Co-presence never implies simultaneity finer than the event_stage boundary and never implies temporal order.",
+        "Co-present assertions use the same evidence_unit_id."
+      ]
+    }
+  },
+  "specificity_and_precedence": {
+    "default_rule": "Within one facet and event_stage, retain the narrowest supported value and suppress any broad value that adds no distinct sourced fact.",
+    "cumulative_rule": "Broad and narrow values may both be asserted only for different sourced components or different event_stages; assertions from the same behavioral occurrence still share one evidence unit.",
+    "composite_rule": "A composite trajectory is represented by component assertions and temporal edges. If a retained derived label is displayed, its specificity_disposition is derived_not_countable and it creates no evidence unit.",
+    "uncertain_boundary_rule": "If the required boundary fact is not established, the affected facet is insufficient; the coder does not select among competing values by intuition.",
+    "observable_specific_rules_authority": "state/LIFE-PATTERNS-NEUTRAL-CODEBOOK-CLARIFICATION-v2-CANDIDATE-2026-09-10.md#3-observable-specific-clarifications"
+  },
+  "hybrid_value_components": {
+    "R05-O2": {
+      "affirmative": "acceptance or selection of an existing option or designated default",
+      "absence": "no additional alternative search during the named feasible preselection search opportunity"
+    },
+    "R07-i": {
+      "affirmative": "continued preparation",
+      "absence": "no transition to focal action during the named feasible observed period"
+    },
+    "R15-b": {
+      "affirmative": "eventual completion",
+      "absence": "no completion by the defined due point or condition"
+    },
+    "R15-c": {
+      "affirmative": "completion of one or more named endpoint components",
+      "absence": "noncompletion of one or more other named endpoint components during the assessment window"
+    },
+    "R16-c": {
+      "affirmative": "eventual request after prompting",
+      "absence": "no request during the named feasible pre-prompt request opportunity"
+    },
+    "R16-d2": {
+      "affirmative": "waiting for an offer",
+      "absence": "no direct help request during the named feasible request window"
+    },
+    "R16-f": {
+      "affirmative": "acceptance of offered help",
+      "absence": "no use of the accepted help during the named feasible use window"
+    },
+    "R18-d": {
+      "affirmative": "communication of a named subset of the relevant condition",
+      "absence": "no communication of a named remaining part during a sufficiently observed feasible communication opportunity"
+    },
+    "R18-f": {
+      "affirmative": "communication after a realized consequence",
+      "absence": "no communication of the named condition during the defined feasible preconsequence window"
+    },
+    "R20-j": {
+      "affirmative": "repetition of the narrator's previously stated position",
+      "absence": "no address, answer, or other engagement with the other party's identified content during the defined exchange"
+    },
+    "R21-f": {
+      "affirmative": "resumption of contact",
+      "absence": "no discussion of the recognized rupture during the relevant resumed-contact interaction or named feasible discussion opportunity"
+    },
+    "R21-i": {
+      "affirmative": "later repair action",
+      "absence": "no repair action during the initial named feasible repair window"
+    }
+  },
+  "default_observable_profile": {
+    "applies_to": "Any codebook observable without a more specific profile below.",
+    "facets": {
+      "substantive_response": {
+        "cardinality": "zero_one_or_multiple",
+        "value_ids_source": "The allowed values in the bound versioned codebook."
+      }
+    },
+    "rules": [
+      "Co-present assertions attach to one event_stage; sourced sequential actions use separate event_stages and temporal edges.",
+      "The global invariants, evidence-unit rule, specificity rule, and exact absence-condition rule apply unchanged."
+    ]
+  },
+  "observable_facet_profiles": {
+    "NBM-R02": {
+      "facets": {
+        "acquisition_method": {
+          "cardinality": "zero_one_or_multiple",
+          "value_ids": ["R02-a", "R02-b", "R02-c", "R02-d", "R02-e"]
+        },
+        "search_disposition": {
+          "cardinality": "zero_or_one",
+          "value_ids": ["R02-f", "R02-g"]
+        }
+      }
+    },
+    "NBM-R03": {
+      "facets": {
+        "action_extent": {
+          "cardinality": "zero_or_one",
+          "value_ids": ["R03-a", "R03-b"]
+        },
+        "decision_procedure_or_ownership": {
+          "cardinality": "zero_one_or_multiple",
+          "value_ids": ["R03-d", "R03-e", "R03-f"]
+        },
+        "temporal_disposition": {
+          "cardinality": "zero_or_one",
+          "value_ids": ["R03-c", "R03-g", "R03-h"]
+        }
+      }
+    },
+    "NBM-R05": {
+      "facets": {
+        "option_construction": {
+          "cardinality": "zero_one_or_multiple",
+          "value_ids": ["R05-O1", "R05-O3", "R05-O4", "R05-O5", "R05-O6"]
+        },
+        "alternative_search_disposition": {
+          "cardinality": "zero_or_one",
+          "value_ids": ["R05-O2"]
+        },
+        "choice_resolution": {
+          "cardinality": "zero_one_or_multiple",
+          "value_ids": ["R05-R1", "R05-R2", "R05-R3", "R05-R4", "R05-R5", "R05-R6", "R05-R7", "R05-R8", "R05-R9"],
+          "multiple_rule": "Multiple resolution values require distinct components or ordered event_stages under the codebook precedence rules."
+        }
+      },
+      "false_global_order_forbidden": true
+    },
+    "NBM-R06": {
+      "facets": {
+        "revision_or_status": {
+          "cardinality": "zero_one_or_multiple",
+          "value_ids": ["R06-a", "R06-b", "R06-c", "R06-d", "R06-e", "R06-f", "R06-g", "R06-h"]
+        },
+        "subsequent_course_information": {
+          "cardinality": "zero_or_one",
+          "value_ids": [],
+          "missingness_allowed": true
+        }
+      }
+    },
+    "NBM-R07": {
+      "retired_source_value_ids": ["R07-a"],
+      "facets": {
+        "preparation_extent": {
+          "cardinality": "zero_or_one",
+          "value_ids": ["R07-a1", "R07-a2"]
+        },
+        "preparation_type": {
+          "cardinality": "zero_one_or_multiple",
+          "value_ids": ["R07-b", "R07-c", "R07-d", "R07-e", "R07-f", "R07-g", "R07-h"]
+        },
+        "transition_status": {
+          "cardinality": "zero_or_one",
+          "value_ids": ["R07-i"]
+        }
+      },
+      "false_global_order_forbidden": true
+    },
+    "NBM-R10": {
+      "facets": {
+        "allocation_schedule": {
+          "cardinality": "zero_or_one",
+          "value_ids": ["R10-a", "R10-c", "R10-d", "R10-e"]
+        },
+        "allocation_mechanism": {
+          "cardinality": "zero_one_or_multiple",
+          "value_ids": ["R10-b", "R10-f", "R10-g", "R10-h", "R10-j"]
+        },
+        "displaced_course_status": {
+          "cardinality": "zero_or_one",
+          "value_ids": ["R10-i", "R10-k"]
+        }
+      }
+    },
+    "NBM-R11": {
+      "facets": {
+        "immediate_response": {
+          "cardinality": "zero_one_or_multiple",
+          "value_ids": ["R11-I1", "R11-I2", "R11-I3", "R11-I4", "R11-I5", "R11-I6", "R11-I7", "R11-I8"]
+        },
+        "later_goal_status": {
+          "cardinality": "zero_one_or_multiple",
+          "value_ids": ["R11-G1", "R11-G2", "R11-G3", "R11-G4", "R11-G5", "R11-G6", "R11-G7"],
+          "multiple_rule": "Multiple values require distinct status components or ordered stages; G6 and G7 require distinct stop and follow-up evidence."
+        }
+      }
+    },
+    "NBM-R12": {
+      "facets": {
+        "structural_relation": {
+          "cardinality": "zero_or_one",
+          "value_ids": ["R12-a", "R12-b", "R12-c", "R12-d", "R12-g", "R12-h"]
+        },
+        "resource_or_scope_direction": {
+          "cardinality": "zero_one_or_multiple",
+          "value_ids": ["R12-e", "R12-f"]
+        }
+      }
+    },
+    "NBM-R13": {
+      "facets": {
+        "checking_timing": {
+          "cardinality": "zero_or_one",
+          "value_ids": ["R13-a", "R13-b", "R13-f"]
+        },
+        "checking_method_or_source": {
+          "cardinality": "zero_one_or_multiple",
+          "value_ids": ["R13-c", "R13-d"]
+        },
+        "checking_frequency_or_absence": {
+          "cardinality": "zero_or_one",
+          "value_ids": ["R13-e", "R13-g"]
+        }
+      }
+    },
+    "NBM-R14": {
+      "facets": {
+        "error_response_sequence": {
+          "cardinality": "zero_one_or_multiple",
+          "value_ids": ["R14-a", "R14-b", "R14-c", "R14-d", "R14-e", "R14-f", "R14-g", "R14-h", "R14-i"]
+        }
+      }
+    },
+    "NBM-R15": {
+      "facets": {
+        "endpoint_extent_and_timing": {
+          "cardinality": "zero_or_one",
+          "value_ids": ["R15-a", "R15-b", "R15-c", "R15-l"]
+        },
+        "endpoint_modification_or_transfer": {
+          "cardinality": "zero_one_or_multiple",
+          "value_ids": ["R15-d", "R15-e", "R15-f", "R15-g"]
+        },
+        "affirmative_terminal_disposition": {
+          "cardinality": "zero_or_one",
+          "value_ids": ["R15-h", "R15-i", "R15-j"]
+        },
+        "later_closure": {
+          "cardinality": "zero_or_one",
+          "value_ids": ["R15-k"]
+        }
+      }
+    },
+    "NBM-R16": {
+      "retired_source_value_ids": ["R16-d"],
+      "facets": {
+        "request_timing_or_trigger": {
+          "cardinality": "zero_one_or_multiple",
+          "value_ids": ["R16-a", "R16-b", "R16-c"]
+        },
+        "indirect_or_nonrequest_pathway": {
+          "cardinality": "zero_one_or_multiple",
+          "value_ids": ["R16-d1", "R16-d2", "R16-l"]
+        },
+        "offer_response_and_use": {
+          "cardinality": "zero_or_one",
+          "value_ids": ["R16-e", "R16-f", "R16-g"]
+        },
+        "task_transfer": {
+          "cardinality": "zero_or_one",
+          "value_ids": ["R16-h"]
+        },
+        "help_type": {
+          "cardinality": "zero_one_or_multiple",
+          "value_ids": ["R16-i", "R16-j"]
+        },
+        "source_breadth": {
+          "cardinality": "zero_or_one",
+          "value_ids": ["R16-k"]
+        }
+      },
+      "false_global_order_forbidden": true
+    },
+    "NBM-R18": {
+      "facets": {
+        "communication_timing": {
+          "cardinality": "zero_or_one",
+          "value_ids": ["R18-a", "R18-b", "R18-f"]
+        },
+        "directness": {
+          "cardinality": "zero_or_one",
+          "value_ids": ["R18-c"]
+        },
+        "content_extent_or_withholding": {
+          "cardinality": "zero_one_or_multiple",
+          "value_ids": ["R18-d", "R18-h"]
+        },
+        "channel": {
+          "cardinality": "zero_or_one",
+          "value_ids": ["R18-e"]
+        },
+        "revision": {
+          "cardinality": "zero_or_one",
+          "value_ids": ["R18-g"]
+        }
+      }
+    },
+    "NBM-R19": {
+      "retired_source_value_ids": ["R19-g"],
+      "facets": {
+        "ordered_response_acts": {
+          "cardinality": "zero_one_or_multiple",
+          "value_ids": ["R19-a", "R19-b", "R19-c", "R19-d", "R19-e", "R19-f", "R19-h", "R19-j"]
+        },
+        "response_mechanism": {
+          "cardinality": "zero_or_one",
+          "value_ids": ["R19-i"]
+        }
+      }
+    },
+    "NBM-R20": {
+      "facets": {
+        "dialogue_content": {
+          "cardinality": "zero_one_or_multiple",
+          "value_ids": ["R20-a", "R20-b", "R20-c", "R20-d"]
+        },
+        "position_change_or_proposal": {
+          "cardinality": "zero_one_or_multiple",
+          "value_ids": ["R20-e", "R20-f"]
+        },
+        "interaction_disposition": {
+          "cardinality": "zero_or_one",
+          "value_ids": ["R20-g", "R20-h"]
+        },
+        "mechanism": {
+          "cardinality": "zero_or_one",
+          "value_ids": ["R20-i"]
+        },
+        "engagement_pattern": {
+          "cardinality": "zero_or_one",
+          "value_ids": ["R20-j"]
+        },
+        "escalation_feature": {
+          "cardinality": "zero_or_one",
+          "value_ids": ["R20-k"]
+        }
+      },
+      "false_global_order_forbidden": true
+    },
+    "NBM-R21": {
+      "facets": {
+        "repair_content": {
+          "cardinality": "zero_one_or_multiple",
+          "value_ids": ["R21-a", "R21-b", "R21-c", "R21-d", "R21-e"]
+        },
+        "response_origin": {
+          "cardinality": "zero_or_one",
+          "value_ids": ["R21-g"]
+        },
+        "channel": {
+          "cardinality": "zero_or_one",
+          "value_ids": ["R21-h"]
+        },
+        "timing_or_trajectory": {
+          "cardinality": "zero_or_one",
+          "value_ids": ["R21-i"]
+        },
+        "contact_disposition": {
+          "cardinality": "zero_or_one",
+          "value_ids": ["R21-f", "R21-j"]
+        },
+        "absence_of_repair": {
+          "cardinality": "zero_or_one",
+          "value_ids": ["R21-k"]
+        }
+      },
+      "false_global_order_forbidden": true
+    }
+  },
+  "invariants": [
+    {
+      "id": "INV-001",
+      "rule": "Every observed value assertion binds to one facet, one event_stage, one evidence unit, and a nonempty exact source provenance set."
+    },
+    {
+      "id": "INV-002",
+      "rule": "No observable-level global relation may impose one order on all selected values."
+    },
+    {
+      "id": "INV-003",
+      "rule": "Temporal order exists only as sourced edges between event_stage identities and must be acyclic."
+    },
+    {
+      "id": "INV-004",
+      "rule": "Assertions on one event_stage are co-present; array order has no temporal meaning."
+    },
+    {
+      "id": "INV-005",
+      "rule": "All assertions derived from the same behavioral act or trajectory share one evidence unit and count at most once as occurrence support."
+    },
+    {
+      "id": "INV-006",
+      "rule": "Specificity and number of facet labels never establish independence."
+    },
+    {
+      "id": "INV-007",
+      "rule": "Every absence condition names exactly one absent actor, proposition, and window; all four gate elements must be established from exact provenance."
+    },
+    {
+      "id": "INV-008",
+      "rule": "Unknown, not reported, transcript silence, or a partial evidence frame cannot establish nonoccurrence."
+    },
+    {
+      "id": "INV-009",
+      "rule": "A more specific value suppresses a broad value for the same facet fact unless distinct sourced components or stages are represented."
+    },
+    {
+      "id": "INV-010",
+      "rule": "A derived or composite trajectory creates no evidence unit beyond its component events."
+    },
+    {
+      "id": "INV-011",
+      "rule": "An insufficient or not_applicable scope contains no substantive value assertion."
+    },
+    {
+      "id": "INV-012",
+      "rule": "Not_applicable requires affirmative absence of the relevant prerequisite; non-mention is insufficient."
+    },
+    {
+      "id": "INV-013",
+      "rule": "Historical v1 and v2 records are never reinterpreted in place; v3 responses use new schema identity and explicit source-version bindings."
+    },
+    {
+      "id": "INV-014",
+      "rule": "The contract is compatible with theory-blind human and automated coding because both receive the same codebook overlay, facet profile, exact evidence, precedence rules, and absence gates while remaining label-isolated."
+    }
+  ],
+  "blocking_contract_finding_representation": {
+    "OA-029": "NBM-R05 can place option-construction or search-disposition assertions on an event_stage while preserving a partial order among separate resolution stages; no false cross-facet order is created.",
+    "OA-034": "NBM-R07 preparation-type assertions may be co-present on one preparation stage, while a later R07-i transition-status stage is temporally ordered and carries its own absence condition.",
+    "OA-085": "NBM-R16 request and offer stages preserve chronology while help type, source breadth, and use assertions attach co-presently to the relevant stage.",
+    "OA-114": "NBM-R20 stores each dialogue turn as an event_stage, permits content and escalation assertions on one turn, and orders only sourced turns.",
+    "OA-121": "NBM-R21 stores co-present repair content, origin, and channel on a repair event while timing, contact disposition, later repair, and withdrawal remain ordered stages."
+  }
+}

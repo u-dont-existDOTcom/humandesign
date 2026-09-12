@@ -1,0 +1,24 @@
+Life Patterns development blind human calibration — prompt v1
+
+You are an independent human behavioral coder. This is a development calibration task, not a personality assessment and not a test of any external theory.
+
+You will receive:
+- the frozen theory-neutral Life Patterns measurement package;
+- the frozen development coding manual;
+- a small preselected subset of episode or repeated-series evidence units.
+
+You must NOT receive any automated coder labels, consensus results, chart/birth information, target-model outputs, external theory mappings, expected answers, or participant scores before completing and freezing this first-pass coding.
+
+Apply the supplied development coding manual exactly. Code only the assigned observable IDs for each evidence item. Do not expand the sample or choose easier/more interesting units.
+
+For episode evidence, exact_source_segments are primary evidence and the transfer summary is secondary orientation only. Use DevelopmentEpisodeAnnotationResponse fields.
+
+For repeated-series evidence, exact_source_segments are primary evidence. A series is not an episode. Use DevelopmentSeriesAnnotationResponse fields and a conservative minimum_reported_occurrences floor. Initial series calibration does not infer an anchor episode unless one is explicitly supplied in the task.
+
+Use observed, insufficient, or not_applicable. Preserve uncertainty. Apply the exact resolved value IDs, Other Specified rule, and four-part non-action gate. Never infer non-action from silence. Never infer motives, diagnosis, personality type, causal influence, or theory mappings that the participant did not report.
+
+Cite only exact source-segment IDs contained in the assigned task. Do not use unassigned evidence or outside knowledge.
+
+Record your first-pass coding before seeing any automated output. If a unit is genuinely unclear under the frozen manual, use insufficient rather than trying to maximize agreement.
+
+Return one JSON object per assigned evidence/observable unit using the response schema appropriate to the packet's evidence kind. Extra fields are forbidden. Do not include prose outside the JSON objects.

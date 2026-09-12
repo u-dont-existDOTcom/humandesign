@@ -1,0 +1,130 @@
+Life Patterns neutral measurement — theory-blind subcode overlap / absence audit v1
+
+You are performing a narrow theory-neutral measurement audit. You do NOT know what external hypothesis, theory, model, typology, birth-derived system, prediction, or score may eventually be compared with this behavioral measurement.
+
+Do not guess or ask about that external purpose. Do not use astrology, Human Design, personality typologies, diagnoses, spiritual/esoteric systems, or any external target theory.
+
+AUTHORITATIVE INPUTS
+
+Read only these measurement artifacts plus this prompt:
+
+1. `state/LIFE-PATTERNS-NEUTRAL-CODEBOOK-THEORY-BLIND-RECONCILED-CANDIDATE-v1-2026-09-03.md`
+2. `state/LIFE-PATTERNS-NON-ACTION-CLASSIFICATION-COMPACT-v1-2026-09-04.json`
+3. `state/LIFE-PATTERNS-NON-ACTION-AMBIGUITY-RESOLUTION-NORMALIZED-v1-2026-09-04.jsonl`
+4. `state/LIFE-PATTERNS-NON-ACTION-CLASSIFICATION-PROMPT-v1-2026-09-04.txt` solely to understand what the existing `non_action` label means.
+
+Do not inspect target-model mappings, birth/chart data, model scores, target predictions, participant-specific target results, or theory-exposed interpretation files.
+
+BACKGROUND DEFECT TO AUDIT, NOT TO ACCEPT AS GROUND TRUTH
+
+A pre-collection human-interface review noticed that NBM-R05 contains a flat-looking set of values even though the codebook defines two facets: option-set construction and choice resolution. In particular:
+
+- R05-O2: accepts one/default option without searching for alternatives
+- R05-R1: selects without reported comparison / first acceptable option
+- R05-R4: follows an explicit rule, prior commitment, or default
+
+appear potentially overlapping. R05-O2 is also in the non-action registry even though it contains affirmative behavior (`accepts`) plus an absence qualifier (`without searching for alternatives`). R05-R1 separately contains the phrase `without reported comparison`, which may conflate **comparison was not reported** with **comparison did not occur** unless the frozen evidence rule resolves that distinction.
+
+Your job is to audit this independently from the frozen text. Do not assume the concern is correct and do not force a revision.
+
+YOUR TASK
+
+Audit **every substantive subcode in NBM-R01 through NBM-R22**, not only R05, for the following properties.
+
+A. FACET STRUCTURE
+
+For each primary observable:
+
+- identify whether the codebook explicitly or implicitly contains multiple distinct facets/dimensions;
+- state whether values across those facets are intended to be mutually exclusive, simultaneously selectable, sequential, or not specified;
+- identify any value whose wording appears to straddle more than one facet.
+
+B. PAIRWISE SEMANTIC RELATION
+
+Within each observable, inspect plausible overlapping subcode pairs and classify each material relation using exactly one of:
+
+- `distinct_mutually_exclusive`
+- `distinct_can_cooccur`
+- `sequential_can_cooccur`
+- `nested_or_subset`
+- `partial_overlap`
+- `near_duplicate`
+- `boundary_unclear`
+
+Do not emit all possible mathematical pairs mechanically. Emit every pair where a competent coder could reasonably hesitate because the boundaries are close, nested, overlapping, or co-occurring.
+
+For each finding explain the exact behavioral distinction, if one exists, using only the codebook wording.
+
+C. ABSENCE-DEPENDENT VALUES
+
+For every subcode currently classified as `non_action`, classify its internal structure using exactly one of:
+
+- `pure_absence` — the substantive behavior is itself nonoccurrence/omission during a meaningful window;
+- `affirmative_plus_absence_condition` — an affirmative act/state is coded but truth also depends on establishing a specified action did not occur;
+- `resolved_hybrid` — a prior ambiguity was split/clarified by the frozen ambiguity-resolution amendment; identify the resulting evidence rule;
+- `classification_boundary_unclear` — the current frozen wording still does not make the relevant absence proposition sufficiently precise.
+
+For every absence-dependent value, name the **exact absent action/proposition** that the Awareness–Opportunity–Feasibility–Established-Non-Action gate must apply to. Do not use generic phrases such as “did not act” unless the subcode itself is literally about no action.
+
+D. HUMAN-CODABILITY
+
+For every material finding, classify the consequence as exactly one of:
+
+- `presentation_only` — frozen semantics are adequate, but a human UI must group/label/ask differently;
+- `response_contract_limitation` — the codebook distinction may be adequate but the current single response structure cannot represent it cleanly;
+- `substantive_codebook_overlap` — the frozen subcodes are too overlapping/nested/ambiguous for reliable coding without a versioned substantive clarification/revision;
+- `no_change_needed`.
+
+E. DOUBLE-COUNT / REDUNDANCY RISK
+
+Without looking at any target model, identify subcode pairs/sets where coding the same underlying behavioral fact into several values could create apparent multiple evidence if a downstream analyst naively treats each value as independent. Do not speculate about actual downstream scoring; simply identify the measurement-level redundancy risk.
+
+F. NON-MENTION VS ESTABLISHED ABSENCE
+
+Audit every value whose wording contains constructions such as `without reported`, `not reported`, `no reported`, `unreported`, or another phrase that could make a substantive code depend on missing transcript content rather than positive evidence.
+
+For each such value determine whether the codebook requires affirmative evidence that the behavior/action did not occur, or merely permits coding it because the action was not mentioned. Treat the latter as a potential substantive codability defect: **non-mention is not evidence of nonoccurrence** unless the measurement explicitly defines a bounded exhaustive reporting frame that makes it so.
+
+SPECIAL REQUIRED R05 ANALYSIS
+
+For NBM-R05, explicitly answer:
+
+1. Are Option-set (`R05-O*`) and Resolution (`R05-R*`) genuinely separate facets under the codebook?
+2. Can values across those facets legitimately co-occur?
+3. Does R05-O2 cross the facet boundary by combining affirmative acceptance/default selection with absence of alternative search?
+4. What is the exact absence proposition in R05-O2 that would justify its current non-action classification?
+5. How does R05-O2 differ from R05-R1 and R05-R4? Is that distinction sufficiently operational for blind humans?
+6. Does `R05-R1 selects without reported comparison / first acceptable option` improperly combine missingness (`comparison not reported`) with an affirmative behavioral strategy (`first acceptable option`), or do the frozen evidence requirements adequately disambiguate it?
+7. Can the current `single / ordered_sequence / unordered_multiple` value-relation contract faithfully encode multiple R05 facet values, including a case where one facet has temporal sequence and another facet is simply co-present?
+8. Is R05 repairable presentation-only, or does it require a versioned measurement/response-contract change?
+
+SCIENTIFIC DISCIPLINE
+
+- Preserve the frozen v1 artifacts unchanged.
+- Do not improve wording merely because you prefer another style.
+- Recommend a substantive change only when the current wording creates a real codability, overlap, facet, or evidence-boundary problem.
+- Do not resolve uncertainty by inventing target-theory relevance.
+- Do not assume mutually exclusive categories unless the codebook supports exclusivity.
+- Do not call an affirmative action “non-action” merely because one clause requires proving absence; keep affirmative behavior and absence condition conceptually separate.
+- If a code is hybrid, say exactly which component needs the non-action gate.
+- Do not infer `did not X` from `X was not reported` unless the frozen measurement establishes an exhaustive reporting frame that warrants that inference.
+
+OUTPUT
+
+Return exactly two artifacts.
+
+ARTIFACT 1 — JSONL FINDINGS
+
+One JSON object per material finding, with exactly these fields:
+
+{"finding_id":"OA-001","observable_id":"NBM-R05","subcode_ids":["R05-O2","R05-R1"],"finding_type":"semantic_relation|facet_structure|absence_structure|nonmention_boundary|response_contract|double_count_risk","classification":"<allowed classification for that finding type>","exact_issue":"Concise theory-neutral explanation grounded only in frozen wording.","human_coding_consequence":"What a blind human could confuse or be forced to infer.","recommended_disposition":"presentation_only|response_contract_change|versioned_codebook_clarification|no_change","confidence":"high|medium|low"}
+
+Use stable sequential finding IDs. Do not include target-theory terms.
+
+ARTIFACT 2 — SUMMARY JSON
+
+One final JSON object with exactly:
+
+{"schema_version":"life-patterns-subcode-overlap-absence-audit-v1","observables_reviewed":22,"material_findings":<int>,"presentation_only_count":<int>,"response_contract_limitation_count":<int>,"substantive_codebook_overlap_count":<int>,"no_change_needed_count":<int>,"r05_disposition":"presentation_only|response_contract_change|versioned_codebook_clarification|no_change","human_calibration_safe_to_start_without_revision":true|false,"blocking_findings":["OA-..."],"notes":"Concise theory-neutral summary."}
+
+Do not output Markdown, prose outside the JSONL findings plus final summary JSON, or revised codebook text.

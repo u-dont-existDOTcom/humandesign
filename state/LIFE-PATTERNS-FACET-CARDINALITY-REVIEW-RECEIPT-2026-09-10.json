@@ -1,0 +1,53 @@
+{
+  "schema_version": "life-patterns-facet-cardinality-review-receipt-v1",
+  "review_commit": "f5f02c976b11fbabc7c136f9c80fbd312600d91d",
+  "review_commit_message": "Add blind facet cardinality re-review",
+  "reviewed_repair_commit": "7ba5654fe99017e1c84a4b8868e5a3da50c55be6",
+  "frozen_audit_commit": "7ea0641e0913815306f8c182be5e7e8b18115fff",
+  "first_repair_candidate_commit": "458bede3cf83b1947c332a408b47ec84236d69ed",
+  "prior_review_commit": "4f51d075cb200e57820486e4f9686d81c7fc604f",
+  "artifacts": {
+    "state/LIFE-PATTERNS-FACET-CARDINALITY-REVIEW-RAW-v1-2026-09-10.jsonl": {
+      "sha256_reported": "3a268d95132451a69a36e7dcbb965c9f6ac3b1d3f3742173570c98b61a5ff1f2",
+      "bytes_reported": 30180,
+      "oa_rows": 45,
+      "nr001_rows": 1,
+      "nr2_rows": 1
+    },
+    "state/LIFE-PATTERNS-FACET-CARDINALITY-REVIEW-SUMMARY-v1-2026-09-10.json": {
+      "sha256_reported": "76e2c372b5d0485a8ee762123a9e2c69858134300be1aeb829b0075e0721e1b4",
+      "bytes_reported": 1121
+    }
+  },
+  "review_result": {
+    "original_oa_blockers_reviewed": 45,
+    "carried_forward_nr_reviewed": 1,
+    "resolved_count": 46,
+    "partial_count": 0,
+    "unresolved_count": 0,
+    "regressed_count": 0,
+    "new_material_findings_count": 1,
+    "response_contract_blockers_resolved": true,
+    "r05_blockers_resolved": true,
+    "absence_semantics_resolved": true,
+    "semantic_change_required": false,
+    "safe_for_implementation": false,
+    "blocking_ids": ["NR2-001"]
+  },
+  "nr2_001": {
+    "type": "record-model containment and referential-integrity defect",
+    "summary": "The v4 observable_response contract does not normatively contain all referenced value_assertion, component_assertion, absence_condition, and source_provenance records, and component_assertion is not uniquely bound to one event stage and that stage's evidence unit.",
+    "required_repair_scope": "contract-only; define normative storage/containment for all referenced assertion, absence-condition, and provenance records and unique stage/evidence-unit binding for component assertions without changing substantive neutral-codebook semantics"
+  },
+  "candidate_artifact_edited_reported": false,
+  "target_model_information_used_reported": false,
+  "ci": {
+    "workflow_run": 34524321911,
+    "conclusion": "success"
+  },
+  "implementation_authorized": false,
+  "human_calibration_authorized": false,
+  "automated_life_patterns_coding_authorized": false,
+  "target_model_scoring_authorized": false,
+  "next_gate": "fresh target-theory-blind contract-only NR2-001 repair followed by a distinct independent blind re-review of all 45 OA findings, NR-001, and NR2-001"
+}

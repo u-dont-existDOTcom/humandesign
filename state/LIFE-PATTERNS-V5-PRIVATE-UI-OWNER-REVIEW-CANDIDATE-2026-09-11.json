@@ -1,0 +1,71 @@
+{
+  "schema_version": "life-patterns-v5-private-ui-owner-review-candidate-v1",
+  "date": "2026-09-11",
+  "status": "private_owner_review_candidate_generated_and_smoked",
+  "source_outer_transport": {
+    "filename": "Life-Patterns-Recurrence-Corrected-Human-Calibration-V2-PRIVATE-2026-09-08.zip",
+    "sha256": "f038237a6a1ce776bb28846b76ff49339e7a9e7f28d33c5d1ad877e0d916d837",
+    "bytes": 422297,
+    "member_count": 15,
+    "verified": true
+  },
+  "inner_handoff_receipt": {
+    "receipt_id": "LPHB2-F34245FAE32B513DDCFE",
+    "receipt_sha256": "f34245fae32b513ddcfe22b7d21081997e8c28e18fccd25b962c30af2fe0a78f",
+    "packet_count": 8,
+    "member_hashes_verified": true,
+    "packet_content_addresses_verified": true
+  },
+  "selected_units": {
+    "episode": 44,
+    "series": 22,
+    "total": 66
+  },
+  "generation": {
+    "method": "sandbox portable execution adapter matching accepted V5 facet/hybrid/absence/stage/export semantics",
+    "canonical_builder_executed": false,
+    "canonical_builder_execution_blocker": "The sandbox cannot mount the GitHub connector's compressed V2 template chain and blocks Git/network checkout.",
+    "output_html_sha256": "e0fd7e90fdb923cc03ec16e41470689267bb0a537a9ea2f9e59beb25eb3ebd27",
+    "output_html_bytes": 1607323,
+    "embedded_exact_outer_transport_sha256_verified": true,
+    "private_exact_source_full_strings_checked_for_plaintext_leak": 29,
+    "private_exact_source_full_string_plaintext_leaks": 0,
+    "csp_connect_src_none": true
+  },
+  "browser_smoke": {
+    "headless_chromium_version": "144.0.7559.96",
+    "exact_html_dom_and_interaction_smoke": true,
+    "navigation_mode": "Playwright set_content because managed Chromium blocks file:// and localhost navigation",
+    "outer_sha_verified_outside_browser": true,
+    "unlock_flow_exercised_with_preverified_digest_shim": true,
+    "save_reload_persistence": true,
+    "fallback_labels": true,
+    "nonmention_warning": true,
+    "r05_o2_separate_affirmative_and_four_gate_absence": true,
+    "r14_i_four_gate_absence_and_fail_closed": true,
+    "multi_source_claim_specific_provenance": true,
+    "progress_backup_download": "life-patterns-v5-progress-backup.json",
+    "auditor_attestation_download": "auditor_attestation.completed.json",
+    "incomplete_final_export_fails_closed": true,
+    "complete_private_final_export_not_executed": "Would require fabricating 66 annotations; synthetic public-only graph/envelope mechanics were tested instead.",
+    "external_network_request_count": 0,
+    "console_error_count": 0
+  },
+  "synthetic_public_only_export_smoke": {
+    "pure_absence_r14_i": true,
+    "partial_hybrid_r05_o2": true,
+    "ordered_two_stage_single_evidence_unit": true,
+    "series_recurrence_v2_fields": true
+  },
+  "private_owner_review_zip": {
+    "filename": "Life-Patterns-V5-PRIVATE-Owner-Review-2026-09-11.zip",
+    "sha256": "0ff2a6db516a9005eea2c2a91e2b19597d81d97629684958a84473e6a25da2f5",
+    "bytes": 632723,
+    "committed_to_github": false
+  },
+  "owner_usability_review_pending": true,
+  "human_collection_authorized": false,
+  "automated_participant_coding_authorized": false,
+  "target_model_scoring_or_reveal_authorized": false,
+  "next_gate": "Owner hands-on usability review of the private candidate. If accepted, promote and CI the portable adapter or regenerate the accepted UI with the canonical builder in an environment where its public template chain is locally available before authorizing human collection."
+}

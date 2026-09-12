@@ -9,6 +9,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse
 
 import hdmatch.api.relationship_public_app as base_app
+from hdmatch.api.life_patterns_product import create_life_patterns_product_app_from_env
 from hdmatch.api.natal_pilot_app import create_natal_pilot_app_from_env
 from hdmatch.api.relationship_full_study_app import create_relationship_full_study_app_from_env
 from hdmatch.api.relationship_launch_ui import HTML as LAUNCH_HTML
@@ -31,6 +32,10 @@ def create_relationship_launch_app_from_env() -> FastAPI:
             return STUDY_HTML
 
         app.mount("/astrohd", create_natal_pilot_app_from_env())
+
+    life_patterns_enabled = os.environ.get("HDMATCH_LIFE_PATTERNS_ENABLED", "").strip() == "1"
+    if life_patterns_enabled:
+        app.mount("/patterns", create_life_patterns_product_app_from_env())
 
     @app.get("/api/study/places")
     def search_places(q: str) -> dict[str, Any]:

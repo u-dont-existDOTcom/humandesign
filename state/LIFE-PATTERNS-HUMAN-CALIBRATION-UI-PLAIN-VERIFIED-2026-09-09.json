@@ -1,0 +1,103 @@
+{
+  "schema_version": "life-patterns-human-calibration-ui-plain-verification-v1",
+  "status": "plain_language_private_ui_verified_ready_for_independent_human_first_pass",
+  "verified_date": "2026-09-09",
+  "defect_record": "state/LIFE-PATTERNS-HUMAN-UI-COMPREHENSION-DEFECT-2026-09-09.md",
+  "private_handoff": {
+    "receipt_id": "LPHB2-F34245FAE32B513DDCFE",
+    "receipt_sha256": "f34245fae32b513ddcfe22b7d21081997e8c28e18fccd25b962c30af2fe0a78f",
+    "episode_units": 44,
+    "series_units": 22,
+    "selected_units_changed": false,
+    "embedded_handoff_fragment_identical_to_prior_verified_ui": true
+  },
+  "plain_ui_implementation": {
+    "builder": "scripts/build_life_patterns_human_calibration_ui_v2_plain.py",
+    "tests": "tests/unit/test_life_patterns_human_calibration_ui_v2_plain.py",
+    "implementation_and_test_head": "5583e4241f6c5146127db3100c59b2366e2a939a",
+    "ci_run": 34370038001,
+    "ci_conclusion": "success",
+    "pytest_passed": 617,
+    "pytest_skipped": 7,
+    "ruff_passed": true,
+    "mypy_passed": true,
+    "mypy_source_files": 172,
+    "plain_language_observable_questions": 22,
+    "response_contract_changed": false,
+    "measurement_semantics_changed": false,
+    "target_model_information_used": false,
+    "automated_judgment_used": false
+  },
+  "private_plain_ui": {
+    "filename_in_delivery_kit": "Life-Patterns-Human-Calibration-V2-PLAIN.html",
+    "bytes": 3995747,
+    "sha256": "5d064760d05c1ba7e04bef5eb4469f258eb448b15e4870fbd065a62a7c9384bb",
+    "embeds_private_participant_evidence": true,
+    "committed_to_git": false,
+    "network_requests_required": false
+  },
+  "human_comprehension_corrections": {
+    "unit_has_plain_behavior_question": true,
+    "narrator_role_explicit": true,
+    "nonmatching_story_question_pairs_explained": true,
+    "states_rendered_as_yes_no_cant_tell": true,
+    "observable_specific_boundary_clarification": true,
+    "r16_help_direction_explicit": true,
+    "bare_supporting_label_removed": true,
+    "supporting_quote_object_explicit": true,
+    "generic_influence_label_removed": true,
+    "influence_optional_and_scoped_to_selected_behavior": true,
+    "formal_codebook_rules_collapsed": true,
+    "uncertainty_context_metadata_collapsed": true,
+    "internal_value_ids_deemphasized": true
+  },
+  "focused_browser_smoke": {
+    "bundle_verified_before_evidence": true,
+    "selected_unit_count_rendered": 66,
+    "first_unit_observable": "NBM-R16",
+    "first_unit_question_distinguishes_seeking_or_using_help_from_offering_help": true,
+    "no_not_applicable_path_hides_behavior_values": true,
+    "no_not_applicable_path_hides_source_citation_controls": true,
+    "no_not_applicable_path_hides_influence_controls": true,
+    "observed_path_uses_scoped_supporting_quote_label": true,
+    "observed_path_uses_scoped_counterevidence_label": true,
+    "observed_episode_influence_is_optional_and_behavior_scoped": true,
+    "series_recurrence_fields_render_plain_labels": true,
+    "progress_download_succeeded": true,
+    "progress_reload_restored_saved_response": true,
+    "final_export_failed_closed_with_incomplete_66_unit_coverage_and_missing_attestation": true,
+    "external_network_requests_observed": 0,
+    "page_errors_observed": 0
+  },
+  "current_private_delivery_kit": {
+    "filename": "Life-Patterns-Independent-Auditor-Kit-V2-PLAIN-2026-09-09.zip",
+    "sha256": "1375a70fa6387e71f2402888d6b17e298c234f11b5c127da49d7f3cb969c6b49",
+    "bytes": 803546,
+    "member_count": 2,
+    "members": {
+      "Life-Patterns-Human-Calibration-V2-PLAIN.html": {
+        "sha256": "5d064760d05c1ba7e04bef5eb4469f258eb448b15e4870fbd065a62a7c9384bb",
+        "bytes": 3995747,
+        "private_participant_evidence": true
+      },
+      "START-HERE.md": {
+        "sha256": "9513a85804592736f153cd235bbabf6891687c973ac740b42dc4eaeb8b335ab7",
+        "bytes": 3025,
+        "private_participant_evidence": false
+      }
+    },
+    "kit_bytes_committed": false
+  },
+  "supersedes_for_human_collection": [
+    "state/LIFE-PATTERNS-INDEPENDENT-AUDITOR-KIT-RECEIPT-2026-09-09.json",
+    "state/LIFE-PATTERNS-INDEPENDENT-AUDITOR-DELIVERY-KIT-RECEIPT-2026-09-09.json"
+  ],
+  "human_first_pass_received": false,
+  "automated_coding_run": false,
+  "automated_consensus_exists": false,
+  "target_model_scoring_run": false,
+  "contains_private_participant_text": false,
+  "development_only": true,
+  "validation_use_forbidden": true,
+  "next_gate": "Owner gives the current plain-language private delivery kit to an eligible independent theory-blind human auditor. Freeze the three raw final exports before exposing any automated Life Patterns label."
+}

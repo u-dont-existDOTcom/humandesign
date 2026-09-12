@@ -1,0 +1,36 @@
+{
+  "schema_version": "life-patterns-independent-auditor-delivery-kit-receipt-v1",
+  "created_date": "2026-09-09",
+  "status": "new_transport_wrapper_same_verified_private_ui",
+  "private_delivery_kit_filename": "Life-Patterns-Independent-Auditor-Kit-V2-2026-09-09.zip",
+  "private_delivery_kit_sha256": "af1b65bb7eafcd1da2cc3ca79aedc6373f265aea95a6d5064943413410093405",
+  "private_delivery_kit_bytes": 801580,
+  "private_delivery_kit_member_count": 2,
+  "members": {
+    "Life-Patterns-Human-Calibration-V2-OFFLINE.html": {
+      "sha256": "66fda4ceada51b4f82fe2c7f8a93c6d9efe886e1063a9d23fece88b79f1f6690",
+      "bytes": 3982068,
+      "embeds_private_participant_evidence": true,
+      "measurement_bytes_unchanged": true
+    },
+    "START-HERE.md": {
+      "sha256": "1957f643b57f0b49ab051c2bfb4a828ce6a34808fa92f3690f425baf2c774b4e",
+      "bytes": 8015,
+      "source": "docs/research/LIFE_PATTERNS_INDEPENDENT_AUDITOR_START_HERE_2026-09-08.md",
+      "contains_private_participant_evidence": false
+    }
+  },
+  "bound_handoff_receipt_id": "LPHB2-F34245FAE32B513DDCFE",
+  "bound_handoff_receipt_sha256": "f34245fae32b513ddcfe22b7d21081997e8c28e18fccd25b962c30af2fe0a78f",
+  "selected_episode_units": 44,
+  "selected_series_units": 22,
+  "transport_wrapper_changes_measurement": false,
+  "human_first_pass_received": false,
+  "automated_coding_run": false,
+  "target_model_scoring_run": false,
+  "development_only": true,
+  "validation_use_forbidden": true,
+  "public_receipt_contains_private_participant_text": false,
+  "private_kit_bytes_committed": false,
+  "next_gate": "Owner supplies this private delivery kit to an eligible independent theory-blind human. Preserve the three final raw exports unchanged and validate/freeze them before any automated Life Patterns coding."
+}

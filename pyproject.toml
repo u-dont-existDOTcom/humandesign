@@ -78,6 +78,9 @@ select = ["E", "F", "I", "UP", "B", "SIM"]
 # only formatting/import-modernization diagnostics are waived.
 "scripts/v43_profile_netinfo_rerun.py" = ["E501", "I001", "UP017"]
 "scripts/v43_profile_netinfo_rerun_v2.py" = ["E501", "I001", "UP017"]
+# The v5 response graph is generated directly from a reviewed semantic contract. Keep
+# the implementation text stable while allowing equivalent typing modernization forms.
+"src/hdmatch/evaluation/facet_relation_v5.py" = ["UP035", "UP037"]
 
 [tool.mypy]
 python_version = "3.11"

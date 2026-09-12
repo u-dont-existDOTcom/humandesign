@@ -1,0 +1,14 @@
+{
+  "schema_version": "life-patterns-record-containment-repair-summary-v1",
+  "predecessor_contract": "state/LIFE-PATTERNS-FACET-RELATION-CONTRACT-v4-CANDIDATE-2026-09-10.json",
+  "new_contract": "state/LIFE-PATTERNS-FACET-RELATION-CONTRACT-v5-CANDIDATE-2026-09-10.json",
+  "required_blocker_count": 1,
+  "addressed_count": 1,
+  "not_addressed_count": 0,
+  "semantic_change_required": false,
+  "substantive_codebook_edited": false,
+  "prior_candidate_or_review_artifact_edited": false,
+  "target_model_information_used": false,
+  "safe_for_blind_re_review": true,
+  "notes": "NR2-001 is addressed by a contract-only v5 revision that adds normative response-level containment, typed exact-one reference resolution, and unique component-to-stage/evidence-unit bindings. Accepted substantive values, facets, cardinality scopes, R05 and absence/missingness semantics, same-act counting, and partial-order rules are unchanged. Independent fresh target-theory-blind re-review remains mandatory before implementation."
+}
