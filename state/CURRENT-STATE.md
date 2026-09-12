@@ -8,70 +8,54 @@ Before substantive continuation:
 
 1. fetch live PR #24 head;
 2. read `tasks/ACTIVE-TASK.json`;
-3. read `state/LIFE-PATTERNS-CURRENT-STATE-2026-09-11.md`;
-4. read `docs/research/LIFE_PATTERNS_CODEBOOK_ARCHITECTURE_ROOT_CAUSE_AUDIT_2026-09-11.md`;
-5. read `tasks/LIFE-PATTERNS-FRESH-THEORY-BLIND-SEMANTIC-REPAIR-LAUNCH-2026-09-12.md`;
-6. read `docs/research/LIFE_PATTERNS_PARTICIPANT_CO_CODING_ARCHITECTURE_2026-09-11.md`;
-7. read `tasks/LIFE-PATTERNS-PARTICIPANT-CO-CODING-SEMANTIC-REPAIR-WORKER-2026-09-11.md`;
-8. read `tasks/NEXT-CONVERSATION-HANDOFF-2026-09-11.md`.
+3. read `state/LIFE-PATTERNS-CURRENT-STATE-2026-09-12.md`;
+4. follow the exact next-action launch/prompt named there.
 
 ## Current gate
 
-The prior V5 contract and mechanical implementation passed their original gates, but owner review exposed a deeper architecture error.
+The fresh target-theory-blind semantic-repair worker has produced a replacement candidate and stopped before production implementation.
 
-The root-cause audit found that the project correctly required one frozen theory-blind behavioral substrate for competing models, then **incorrectly treated that as proof that the substrate had to be a fixed externally coded ontology**. This displaced the already-existing participant-reviewed Life Patterns Map and made external episode classification plus frozen aggregation the semantic authority for person-level patterns.
+Candidate-producing head:
 
-Root-cause audit:
+`d5f95598c2f48b0a6a4ddfedd35b6e6e9e58d7eb`
 
-`docs/research/LIFE_PATTERNS_CODEBOOK_ARCHITECTURE_ROOT_CAUSE_AUDIT_2026-09-11.md`
+Candidate architecture:
 
-The fixed 22-observable/V5 taxonomy remains immutable development history and may supply useful mechanics. It is no longer presumed to be the primary architecture.
+`state/LIFE-PATTERNS-PARTICIPANT-ADJUDICATED-NEUTRAL-SUBSTRATE-v1-CANDIDATE-2026-09-12.md`
 
-The replacement direction is participant co-coding:
+Candidate contract:
 
-`episode -> minimal factual decomposition -> candidate pattern question -> participant adjudication -> nuance/examples/counterexamples -> revised question -> participant adjudication -> accepted/rejected/unresolved pattern`
+`state/LIFE-PATTERNS-PARTICIPANT-ADJUDICATED-NEUTRAL-CONTRACT-v1-CANDIDATE-2026-09-12.json`
 
-External coding may organize literal episode facts and propose candidate structure. The participant adjudicates whether a recurring person-level pattern actually characterizes them and its scope/conditions.
+Candidate-specific blind-review prompt:
 
-Strict genuine absence/non-action gates remain binding. They apply to absence claims only; failure of a stronger absence claim must not erase separately supported positive behavior or narrator-reported appraisal.
+`tasks/LIFE-PATTERNS-PARTICIPANT-ADJUDICATED-NEUTRAL-v1-FRESH-BLIND-REVIEW-2026-09-12.md`
 
-Examples elicited after a pattern is proposed are mainly nuance/boundary evidence, not an unbiased recurrence/frequency sample.
+The candidate's core decision is to use **open-world source-grounded episode facts plus participant-adjudicated person-level patterns** as the shared frozen substrate. A fixed comprehensive behavioral ontology is no longer presumed necessary. Optional indexing vocabulary is non-authoritative.
 
-## Fresh-context requirement is binding
-
-The next substantive semantic repair must be authored in a **genuinely fresh target-theory-blind context**. The current supervising conversation has already been exposed to target-model context and therefore must not author the replacement semantics and then represent them as fresh/blind.
-
-Launch packet:
-
-`tasks/LIFE-PATTERNS-FRESH-THEORY-BLIND-SEMANTIC-REPAIR-LAUNCH-2026-09-12.md`
-
-The current chat may supervise repository state, preserve handoffs, and verify outputs. It may not self-certify as the fresh semantic worker or the later independent blind reviewer.
+Historical V1/V2/V5 work remains immutable development evidence. Reusable safeguards such as exact provenance, content addressing, missingness, strict genuine-absence gates, positive-fact preservation, and downstream no-reread enforcement are retained.
 
 ## Exact next action
 
-Open a new ChatGPT conversation / fresh worker context and give it the launch packet above. That worker must fetch the live PR head and execute:
+Run a **different fresh target-theory-blind review context** using:
 
-`tasks/LIFE-PATTERNS-PARTICIPANT-CO-CODING-SEMANTIC-REPAIR-WORKER-2026-09-11.md`
+`tasks/LIFE-PATTERNS-FRESH-THEORY-BLIND-SEMANTIC-REVIEW-LAUNCH-2026-09-12.md`
 
-The worker must determine the **minimum shared frozen substrate actually required** for anti-leakage rather than assuming the current ontology is necessary. It should commit versioned candidate semantics/contracts plus a separate fresh blind-review prompt, then stop before production implementation.
+Then follow the candidate-specific review prompt named above.
 
-The resulting review prompt must then be run in another fresh target-theory-blind context.
-
-The existing private owner-review candidates are superseded for acceptance by this architecture finding.
-
-**Human collection remains unauthorized.**
-
-## Preserved owner correction
-
-**There was never a completion policy.** That was invented nonsense by Codex. Do not recreate a completion-policy premise or silently turn artifact counts, calibration counts, or gating state into such a policy.
+The review must produce a public-safe disposition with `PASS | BLOCKED`, `semantic_change_required`, `safe_for_implementation`, and exact blocking findings if any. The reviewer must not repair the candidate in the same context.
 
 ## Hard boundaries
 
-- no target-theory material in the semantic repair context;
-- do not preserve the fixed taxonomy merely because it already exists;
-- do not weaken genuine absence/non-action evidence requirements merely to force a case into a category;
-- do not discard supported positive behavior because a stronger absence claim fails;
-- do not treat elicited examples as unbiased recurrence/frequency observations;
-- do not give an external classifier final authority over participant-level recurring patterns;
-- do not falsely represent a target-model-exposed context as fresh/blind;
-- no human collection, automated participant coding, target-model scoring/reveal, merge/deploy, recruitment/contact, or spending until the revised blind semantic chain authorizes it.
+Until that independent review passes:
+
+- no production implementation;
+- no human collection;
+- no automated participant coding;
+- no target-model mapping/scoring/reveal;
+- no target-model fit/results, birth/chart outputs, or prior predictions in the blind review context;
+- no merge/deploy;
+- no recruitment/contact;
+- no spending.
+
+**There was never a completion policy.** Do not recreate one from artifact counts or gate status.
