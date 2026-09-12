@@ -1,0 +1,312 @@
+{
+  "schema_version": "life-patterns-participant-pattern-record-contract-v1-candidate",
+  "contract_version": "1.0.0-candidate",
+  "status": {
+    "candidate_only": true,
+    "production_authority": false,
+    "development_only": true,
+    "target_theory_blind": true,
+    "validation_use_forbidden_until_independent_review": true,
+    "historical_v1_v2_v5_artifacts_immutable": true,
+    "authoring_base_commit": "1ebc72153e985abbe85b2f88e0d76c3512ce8d11"
+  },
+  "authority": {
+    "architecture_candidate": "state/LIFE-PATTERNS-PARTICIPANT-ADJUDICATED-SEMANTIC-REPAIR-CANDIDATE-v1-2026-09-12.md",
+    "launch_packet": "tasks/LIFE-PATTERNS-FRESH-THEORY-BLIND-SEMANTIC-REPAIR-LAUNCH-2026-09-12.md",
+    "required_next_gate": "separate_fresh_target_theory_blind_semantic_review"
+  },
+  "north_star": "Discover Your Unique Life Patterns through source-faithful episode decomposition and participant adjudication of person-level recurrence, scope, conditions and exceptions.",
+  "core_invariants": [
+    "Neutrality does not require a closed behavioral taxonomy.",
+    "Every later competing model must consume the same immutable pre-model semantic bundle.",
+    "Later model adapters must not reread raw participant narrative to create model-specific semantics.",
+    "Episode facts are source-supported propositions, not person-level traits.",
+    "Narrator-reported appraisal must remain distinct from an objectively established condition.",
+    "A genuine absence assertion is established only when awareness, opportunity, reasonable feasibility and established nonoccurrence are all established for the defined window.",
+    "Failure of an absence gate never deletes independently supported positive facts.",
+    "Clear behavior remains representable even when no category, facet or index term fits.",
+    "Episode counts and external classifier agreement may support question generation or QA but cannot finalize participant-level recurrence, typicality or scope.",
+    "Only participant adjudication may finalize a person-level pattern as accepted, rejected or unresolved.",
+    "Elicited examples are boundary and meaning evidence by default, not an unbiased recurrence-frequency sample.",
+    "System proposals, participant corrections and subsequent revisions remain separately inspectable and are never overwritten in place.",
+    "Rejected and unresolved hypotheses remain first-class frozen records rather than being collapsed into missingness."
+  ],
+  "episode_fact_record": {
+    "purpose": "Preserve the smallest source-supported positive proposition needed for faithful source representation, follow-up questioning and later participant adjudication without requiring a personality taxonomy.",
+    "required_fields": [
+      "fact_id",
+      "episode_id",
+      "fact_kind",
+      "epistemic_role",
+      "proposition",
+      "source_provenance_ids"
+    ],
+    "fact_kind_values": [
+      "action_or_choice",
+      "timing_or_sequence",
+      "outcome_or_resolution",
+      "consultation_or_information",
+      "appraisal_or_reason",
+      "context",
+      "other_positive_fact"
+    ],
+    "epistemic_role_values": [
+      "reported_event",
+      "reported_appraisal",
+      "externally_supported_condition",
+      "context"
+    ],
+    "field_semantics": {
+      "fact_id": "Stable identifier for this atomic proposition. A substantive proposition change requires a successor record rather than silent mutation.",
+      "episode_id": "Identifier of the frozen source episode to which the proposition belongs.",
+      "fact_kind": "Coarse process/indexing role. It organizes questioning and retrieval and is not a personality construct.",
+      "epistemic_role": "Controls what kind of claim the proposition is allowed to make. reported_appraisal cannot be promoted to externally_supported_condition without independent source support.",
+      "proposition": "Neutral source-faithful proposition in ordinary language. Open-world text is authoritative over optional tags.",
+      "source_provenance_ids": "One or more exact frozen source references supporting the proposition.",
+      "sequence_refs": "Optional ordered references to other fact IDs when source-supported temporal ordering matters.",
+      "context_qualifiers": "Optional source-supported context or life-phase qualifiers.",
+      "index_tags": "Optional extensible retrieval/question-generation tags. No tag is required for a fact to remain valid and tags never replace proposition text.",
+      "uncertainty_note": "Optional explicit uncertainty or ambiguity that does not justify discarding the supported portion of the proposition."
+    },
+    "rules": [
+      "A clear positive proposition with exact provenance is valid even if index_tags is empty.",
+      "No category or facet mismatch may convert a clear positive proposition into insufficient evidence.",
+      "Do not encode nonoccurrence as an episode_fact_record; use absence_assessment_record.",
+      "Do not combine a narrator appraisal and an objective condition into one proposition unless the source independently establishes both and they are separately representable.",
+      "A proposition may be narrower than the source sentence when decomposition is needed, but it may not add causal, dispositional, frequency or trait meaning absent from the source."
+    ]
+  },
+  "absence_assessment_record": {
+    "purpose": "Represent a proposed genuine absence/nonoccurrence claim without allowing silence, missing detail or a failed counterfactual gate to masquerade as observed absence.",
+    "required_fields": [
+      "absence_assessment_id",
+      "episode_id",
+      "absent_actor",
+      "absent_proposition",
+      "window_description",
+      "awareness",
+      "opportunity",
+      "reasonable_feasibility",
+      "established_nonoccurrence",
+      "source_provenance_ids",
+      "assertion_status"
+    ],
+    "gate_status_values": [
+      "established",
+      "not_established",
+      "unclear"
+    ],
+    "assertion_status_values": [
+      "established_absence",
+      "unestablished_absence",
+      "unclear_absence"
+    ],
+    "establishment_rule": "assertion_status may equal established_absence if and only if awareness == established AND opportunity == established AND reasonable_feasibility == established AND established_nonoccurrence == established.",
+    "rules": [
+      "Unmentioned action is not established nonoccurrence.",
+      "Unclear or not-established gate elements may be retained for audit and follow-up question generation.",
+      "An unestablished or unclear absence assessment cannot delete, weaken or reclassify independently supported positive episode facts.",
+      "Narrator belief that an action was impossible belongs in a reported_appraisal fact unless reasonable feasibility is independently established as an objective condition."
+    ]
+  },
+  "pattern_candidate_record": {
+    "purpose": "Preserve a proposed person-level generalization as a hypothesis/question before participant adjudication.",
+    "required_fields": [
+      "pattern_candidate_id",
+      "candidate_origin",
+      "proposal_round",
+      "proposal_text",
+      "question_text",
+      "supporting_fact_ids"
+    ],
+    "candidate_origin_values": [
+      "system_from_episode_facts",
+      "system_from_prior_adjudication",
+      "participant_spontaneous_generalization"
+    ],
+    "field_semantics": {
+      "proposal_text": "System's current neutral formulation of the possible recurring pattern; not yet participant truth.",
+      "question_text": "Non-leading question actually presented or proposed for presentation to the participant.",
+      "supporting_fact_ids": "Facts that motivated the candidate. Multiplicity may justify asking a question but cannot finalize recurrence.",
+      "proposed_scope": "Optional hypothesis about contexts/life phases; must remain visibly provisional.",
+      "proposed_conditions": "Optional hypothesis about conditions/triggers; must remain visibly provisional.",
+      "parent_candidate_id": "Optional predecessor when a candidate is revised after participant feedback."
+    },
+    "rules": [
+      "A candidate may be generated from one episode if the purpose is to ask a useful neutral question; it is still not a person-level pattern until adjudicated.",
+      "Multiple similar episodes do not automatically promote a candidate to accepted recurrence.",
+      "Question wording must permit rejection, contextualization, exception and uncertainty rather than presupposing that the pattern exists.",
+      "The system proposal remains separately inspectable after participant correction."
+    ]
+  },
+  "pattern_adjudication_round_record": {
+    "purpose": "Capture the participant's response to a particular candidate formulation and preserve corrections without overwriting the proposal.",
+    "required_fields": [
+      "adjudication_round_id",
+      "pattern_candidate_id",
+      "round_number",
+      "participant_judgment",
+      "adjudication_source_provenance_ids"
+    ],
+    "participant_judgment_values": [
+      "accepted_as_worded",
+      "accepted_with_revision",
+      "rejected",
+      "unresolved"
+    ],
+    "field_semantics": {
+      "participant_formulation": "Participant wording or faithfully normalized participant-confirmed wording when the proposal is revised or accepted.",
+      "recurrence_statement": "Participant-confirmed statement about whether/how this recurs. Free text is allowed so the schema does not force artificial frequency bins.",
+      "scope_statement": "Participant-confirmed contexts, domains or life phases in which the formulation applies.",
+      "condition_statements": "Participant-confirmed conditions/triggers/qualifiers.",
+      "exception_statements": "Participant-confirmed exceptions or contexts where the proposed pattern does not apply.",
+      "adjudication_source_provenance_ids": "Exact source references for the participant judgment/correction.",
+      "example_links": "Examples/counterexamples/nuance records linked with explicit evidence roles.",
+      "example_retrieval_status": "Optional state recording whether examples were retrieved, not retrieved, withheld/private, or not requested.",
+      "retrieval_discrepancy_note": "Optional neutral note when endorsement and example retrieval diverge; does not imply poor self-awareness."
+    },
+    "example_evidence_roles": [
+      "source_episode",
+      "elicited_example",
+      "elicited_counterexample",
+      "elicited_nuance"
+    ],
+    "example_retrieval_status_values": [
+      "not_requested",
+      "retrieved",
+      "not_retrieved",
+      "withheld_or_private",
+      "unclear"
+    ],
+    "rules": [
+      "Elicited examples and counterexamples primarily refine meaning, scope and boundary conditions.",
+      "An elicited example is not an unbiased recurrence-frequency observation merely because the participant can produce it.",
+      "A participant may accept a pattern while failing to retrieve examples. Preserve both facts and probe neutrally if appropriate.",
+      "Do not infer poor self-awareness from endorsement-without-example retrieval.",
+      "A repeated endorsement/retrieval discrepancy may become a candidate meta-pattern only through the same participant-adjudication process.",
+      "Rejected and unresolved judgments are retained and can motivate revised questions; they are not missing data."
+    ]
+  },
+  "final_pattern_record": {
+    "purpose": "Represent the participant-adjudicated current disposition of a person-level pattern while preserving the full proposal/adjudication history.",
+    "required_fields": [
+      "pattern_id",
+      "final_state",
+      "terminal_adjudication_round_id",
+      "candidate_history_ids"
+    ],
+    "final_state_values": [
+      "accepted",
+      "rejected",
+      "unresolved"
+    ],
+    "field_semantics": {
+      "canonical_formulation": "Participant-confirmed formulation for accepted patterns; may also preserve the exact rejected/unresolved formulation for audit.",
+      "recurrence_statement": "Participant-confirmed recurrence/typicality statement where applicable.",
+      "scope_statement": "Participant-confirmed scope where applicable.",
+      "condition_statements": "Participant-confirmed conditions where applicable.",
+      "exception_statements": "Participant-confirmed exceptions where applicable.",
+      "supporting_fact_ids": "Episode facts linked as source support or context. Their count is descriptive only.",
+      "candidate_history_ids": "Ordered candidate/adjudication history sufficient to reconstruct revisions without overwriting earlier states."
+    },
+    "rules": [
+      "Only a participant adjudication record may determine final_state.",
+      "No count threshold, external coder consensus or automated classifier result may directly determine final_state.",
+      "Accepted patterns require a participant-confirmed formulation or an explicit accepted-as-worded adjudication.",
+      "Rejected patterns remain adapter-visible as rejected hypotheses/constraints.",
+      "Unresolved patterns remain adapter-visible with their uncertainty rather than being coerced to accepted/rejected.",
+      "Finalization does not claim objective causal truth; it records participant-adjudicated self-characterization and scope."
+    ]
+  },
+  "optional_index_vocabulary": {
+    "status": "secondary_only",
+    "purpose": "Retrieval, question generation, coverage diagnostics and theory-blind vocabulary-gap discovery.",
+    "rules": [
+      "No index category is required for semantic preservation.",
+      "A fact with no suitable term remains valid with an empty tag set.",
+      "Repeated unmatched clear facts may create a vocabulary_gap_candidate.",
+      "Vocabulary-gap handling must never rewrite or discard the underlying fact.",
+      "If a future bounded vocabulary is made normative for a narrow decision, it requires its own open-world escape and fresh theory-blind review."
+    ],
+    "historical_os_disposition": "The historical universal OS safeguard is superseded as a mandatory core code because open-world fact propositions themselves provide the escape. Its preservation principle remains mandatory."
+  },
+  "descriptive_aggregation": {
+    "allowed_uses": [
+      "question_generation",
+      "coverage_diagnostics",
+      "underexplored_context_detection",
+      "quality_assurance",
+      "calibration_sampling"
+    ],
+    "forbidden_uses": [
+      "automatic_pattern_acceptance",
+      "automatic_pattern_rejection",
+      "automatic_recurrence_finalization",
+      "automatic_typicality_finalization",
+      "automatic_scope_finalization"
+    ],
+    "required_label": "descriptive_only_no_person_pattern_adjudication"
+  },
+  "adapter_input_bundle": {
+    "purpose": "Give every later competing model the same immutable neutral semantic input while preventing model-specific rereading of raw narrative.",
+    "required_content": [
+      "bundle_id",
+      "bundle_sha256",
+      "episode_fact_records",
+      "absence_assessment_records",
+      "final_pattern_records",
+      "pattern_history_projection",
+      "gap_records",
+      "provenance_manifest"
+    ],
+    "raw_source_policy": "Raw transcript/episode narrative is audit provenance, not an adapter input surface. Model adapters must consume the frozen semantic projection rather than rereading raw narrative for model-specific interpretation.",
+    "adapter_rules": [
+      "All competing model adapters bind the same bundle_sha256.",
+      "Adapters may not mutate episode facts, epistemic roles, participant judgments, scope, conditions or exceptions.",
+      "Adapters may not promote reported appraisal to objective condition.",
+      "Adapters may not derive a replacement recurrence judgment from episode counts.",
+      "Adapters may not hide rejected or unresolved participant pattern records by treating them as absent.",
+      "If a model requires information absent from the bundle, record model-input missingness rather than performing a model-specific source reread.",
+      "Model-specific mapping may occur only downstream of this frozen neutral bundle under its own versioned/frozen protocol."
+    ],
+    "forbidden_fields": [
+      "target_model_label",
+      "target_model_score",
+      "predicted_fit_direction",
+      "fit_result",
+      "birth_data",
+      "chart_output",
+      "prior_prediction"
+    ]
+  },
+  "calibration_contract": {
+    "episode_fact_extraction_may_be_calibrated_for": [
+      "source_fidelity",
+      "provenance_integrity",
+      "epistemic_role_accuracy",
+      "appraisal_objective_separation",
+      "positive_fact_preservation",
+      "absence_gate_correctness",
+      "appropriate_uncertainty_or_abstention",
+      "open_world_retention"
+    ],
+    "person_pattern_process_may_be_calibrated_for": [
+      "non_leading_candidate_questions",
+      "faithful_participant_correction_capture",
+      "scope_condition_exception_preservation",
+      "rejected_and_unresolved_hypothesis_preservation",
+      "elicited_example_role_accuracy",
+      "participant_recognizability_of_final_formulation",
+      "separation_of_system_proposal_from_participant_adjudication"
+    ],
+    "forbidden_success_definition": "External-coder agreement on a supposedly true person-level label that the participant has not adjudicated."
+  },
+  "implementation_gate": {
+    "production_implementation_allowed_now": false,
+    "human_collection_allowed_now": false,
+    "automated_participant_coding_allowed_now": false,
+    "target_model_scoring_or_reveal_allowed_now": false,
+    "merge_or_deployment_allowed_now": false,
+    "unblock_condition": "Independent fresh target-theory-blind review must approve this exact candidate architecture and contract, with review identity bound to their exact committed contents."
+  }
+}
