@@ -8,8 +8,10 @@ Independent semantic review: `state/LIFE-PATTERNS-PARTICIPANT-ADJUDICATED-NEUTRA
 
 Review disposition: **PASS** — `semantic_change_required=false`, `safe_for_implementation=true`, `blocking_findings=0`.
 
+Implementation launch: `tasks/LIFE-PATTERNS-v2-IMPLEMENTATION-LAUNCH-2026-09-12.md`
+
 Current task: `tasks/ACTIVE-TASK.json`
 
 Dated overlay: `state/LIFE-PATTERNS-CURRENT-STATE-2026-09-12.md`
 
-Next gate: production implementation may proceed only in a separate non-review context under the frozen v2 candidate and contract. Human collection, automated participant coding, target-model activity, merge/deploy, recruitment/contact, and spending remain unauthorized unless later canonical state explicitly changes those boundaries.
+Next gate: execute the frozen v2 core implementation in a separate non-review context. `tasks/ACTIVE-TASK.json` remains authoritative for all unchanged boundaries.
