@@ -1,0 +1,319 @@
+{
+  "schema_version": "life-patterns-participant-adjudicated-neutral-contract-v1-candidate",
+  "artifact_kind": "candidate_semantic_contract",
+  "release_status": "candidate_only",
+  "validation_use": "forbidden_until_separate_fresh_target_theory_blind_review_passes",
+  "production_use": "forbidden",
+  "purpose": "Freeze one target-theory-blind behavioral substrate that preserves literal episode evidence and participant-adjudicated person-level patterns without requiring a comprehensive behavioral ontology.",
+  "authority_split": {
+    "episode_fact_authority": "source-grounded theory-blind extraction, with participant corrections preserved when provided",
+    "person_level_pattern_authority": "participant adjudication",
+    "external_reviewer_role": "calibrate episode-fact fidelity and procedural integrity; do not substitute an external recurrence label for participant adjudication"
+  },
+  "semantic_layers": [
+    "source_provenance",
+    "episode",
+    "episode_fact",
+    "absence_assessment",
+    "pattern_proposal",
+    "pattern_evidence_link",
+    "participant_adjudication",
+    "resolved_pattern",
+    "freeze_envelope"
+  ],
+  "structural_enums": {
+    "episode_fact_assertion_type": [
+      "positive_occurrence",
+      "reported_appraisal_or_belief",
+      "reported_outcome_or_resolution",
+      "context",
+      "temporal_relation",
+      "admitted_absence"
+    ],
+    "absence_gate_status": [
+      "established",
+      "not_established",
+      "unclear"
+    ],
+    "pattern_evidence_role": [
+      "preproposal_anchor",
+      "preproposal_counterexample",
+      "postproposal_scope_example",
+      "postproposal_counterexample",
+      "participant_added_exception"
+    ],
+    "participant_adjudication_decision": [
+      "accept",
+      "revise",
+      "reject",
+      "unresolved"
+    ],
+    "resolved_pattern_status": [
+      "accepted",
+      "rejected",
+      "unresolved"
+    ]
+  },
+  "objects": {
+    "source_provenance": {
+      "required_fields": [
+        "source_provenance_id",
+        "source_record_id",
+        "locator",
+        "content_sha256",
+        "exact_text_available"
+      ],
+      "notes": [
+        "The semantic freeze stores locator/hash metadata, not raw source narrative in the downstream adapter projection.",
+        "The source archive is separately bound by hash and remains available for theory-blind extraction/calibration only."
+      ]
+    },
+    "episode": {
+      "required_fields": [
+        "episode_id",
+        "neutral_summary",
+        "source_provenance_ids",
+        "fact_ids"
+      ],
+      "optional_fields": [
+        "uncertainty_notes"
+      ],
+      "notes": [
+        "An episode is a bounded reported occurrence used to ground candidate patterns.",
+        "No fixed behavioral-domain or observable membership is required."
+      ]
+    },
+    "episode_fact": {
+      "required_fields": [
+        "fact_id",
+        "episode_id",
+        "assertion_type",
+        "actor",
+        "proposition",
+        "source_provenance_ids"
+      ],
+      "optional_fields": [
+        "participant_correction_note",
+        "absence_assessment_id"
+      ],
+      "rules": [
+        "proposition must be an atomic, source-grounded statement with no latent trait or hidden-cause inference",
+        "reported_appraisal_or_belief must remain explicitly reported rather than converted into objective fact",
+        "temporal_relation requires explicit source support",
+        "absence_assessment_id is required when assertion_type is admitted_absence and forbidden otherwise",
+        "a fact does not need membership in any fixed behavioral vocabulary"
+      ]
+    },
+    "absence_assessment": {
+      "required_fields": [
+        "absence_assessment_id",
+        "episode_id",
+        "actor",
+        "absent_proposition",
+        "window_or_opportunity",
+        "awareness",
+        "opportunity",
+        "reasonable_feasibility",
+        "established_nonoccurrence",
+        "source_provenance_ids"
+      ],
+      "derived_fields": {
+        "admission_status": "admitted only when awareness, opportunity, reasonable_feasibility, and established_nonoccurrence are all established; otherwise not_admitted"
+      },
+      "rules": [
+        "not_admitted assessments remain audit records and do not instantiate an admitted_absence episode_fact",
+        "failure or uncertainty in an absence assessment cannot delete, weaken, recode, or demote independently supported positive episode facts",
+        "silence or missing evidence is never established_nonoccurrence"
+      ]
+    },
+    "pattern_proposal": {
+      "required_fields": [
+        "proposal_id",
+        "pattern_thread_id",
+        "revision_index",
+        "proposition",
+        "question_text",
+        "evidence_link_ids"
+      ],
+      "optional_fields": [
+        "previous_proposal_id"
+      ],
+      "rules": [
+        "a first proposal requires at least one preproposal_anchor evidence link",
+        "proposal wording is a hypothesis/question until participant adjudication",
+        "revision_index must be monotonic inside a pattern_thread_id",
+        "previous_proposal_id must refer to the immediately prior proposal in the thread when revision_index is greater than zero"
+      ]
+    },
+    "pattern_evidence_link": {
+      "required_fields": [
+        "evidence_link_id",
+        "proposal_id",
+        "episode_id",
+        "fact_ids",
+        "role"
+      ],
+      "rules": [
+        "fact_ids must belong to the referenced episode",
+        "postproposal_scope_example and postproposal_counterexample records are scope/boundary evidence, not an unbiased recurrence-frequency sample",
+        "the contract defines no automatic recurrence count or count threshold"
+      ]
+    },
+    "participant_adjudication": {
+      "required_fields": [
+        "adjudication_id",
+        "proposal_id",
+        "decision",
+        "participant_response_provenance_ids"
+      ],
+      "optional_fields": [
+        "participant_approved_wording",
+        "scope_note",
+        "exception_note",
+        "counterexample_evidence_link_ids",
+        "retrieval_discrepancy_note"
+      ],
+      "rules": [
+        "adjudications are append-only",
+        "accept requires participant_approved_wording",
+        "revise requires participant_approved_wording and must be followed by a new pattern_proposal before the thread can resolve accepted",
+        "reject and unresolved remain audit history and are not admissible resolved patterns",
+        "lack of a newly recalled postproposal example does not by itself invalidate an acceptance; it may be recorded as a retrieval discrepancy"
+      ]
+    },
+    "resolved_pattern": {
+      "derivation": "derived from the latest valid adjudication chain for one pattern_thread_id",
+      "required_fields": [
+        "pattern_thread_id",
+        "status",
+        "terminal_proposal_id",
+        "participant_approved_wording",
+        "supporting_preproposal_evidence_link_ids",
+        "scope_note",
+        "exception_note"
+      ],
+      "rules": [
+        "accepted status requires a participant accept decision and at least one preproposal_anchor",
+        "no episode-count threshold can create accepted status without participant acceptance",
+        "multiple supporting episodes cannot override participant rejection",
+        "rejected and unresolved threads are retained in the research audit but omitted from the admissible downstream pattern projection"
+      ]
+    },
+    "freeze_envelope": {
+      "required_fields": [
+        "contract_schema_version",
+        "contract_sha256",
+        "source_archive_sha256",
+        "episodes",
+        "episode_facts",
+        "absence_assessments",
+        "pattern_proposals",
+        "pattern_evidence_links",
+        "participant_adjudications",
+        "resolved_patterns",
+        "freeze_payload_sha256"
+      ],
+      "rules": [
+        "canonical serialization must deterministically produce freeze_payload_sha256",
+        "historical proposal/adjudication records are append-only and remain inspectable",
+        "a semantic correction after freeze produces a new freeze rather than mutating the old one",
+        "there is no completion denominator or implied coverage claim"
+      ]
+    }
+  },
+  "open_world_policy": {
+    "fact_capture": "free-text atomic facts are first-class even when no existing indexing term describes them",
+    "other_specified": "not required as a semantic escape hatch because the core fact layer is open text",
+    "optional_index_layer": [
+      "may be generated for retrieval or question generation",
+      "must be separately versioned and theory-blind",
+      "must never be required to preserve a fact",
+      "must never replace the fact proposition",
+      "may emit a vocabulary-gap record without changing semantic admissibility"
+    ]
+  },
+  "participant_loop": [
+    "capture bounded episode",
+    "extract minimal source-grounded episode facts",
+    "propose candidate person-level pattern from one or more preproposal anchors",
+    "ask participant the candidate pattern question",
+    "record accept, revise, reject, or unresolved",
+    "collect nuance, scope, exceptions, and counterexamples when useful",
+    "if revised, issue a new proposal in the same thread and adjudicate again",
+    "resolve only from participant adjudication; retain full audit chain"
+  ],
+  "admissible_downstream_projection": {
+    "includes": [
+      "episode facts whose semantic claims are admissible under this contract",
+      "accepted resolved patterns with participant-approved wording",
+      "scope and exception information attached to accepted patterns",
+      "preproposal anchors and explicit counterexamples linked to accepted patterns",
+      "provenance identifiers, locators, and content hashes",
+      "freeze and contract hashes"
+    ],
+    "excludes": [
+      "raw transcript or raw narrative text",
+      "source-resolver capability",
+      "not_admitted absence assessments as negative evidence",
+      "rejected or unresolved proposals as substantive person-level patterns",
+      "target-specific mappings, predictions, fit information, or post-result recoding"
+    ],
+    "anti_rereading_rules": [
+      "downstream adapters receive only this frozen projection, never the source archive",
+      "every downstream result must bind the exact freeze_payload_sha256",
+      "if a distinction is not represented in the frozen projection, the adapter must return unmeasured/not_represented rather than reread source narrative",
+      "all downstream adapters for the same comparison consume the same freeze payload",
+      "a later substrate revision must pass through the theory-blind process and create a new freeze before any later authorized comparison"
+    ]
+  },
+  "external_calibration_boundary": {
+    "appropriate_targets": [
+      "episode-fact source fidelity",
+      "provenance alignment",
+      "separation of observed occurrence from reported appraisal",
+      "temporal/sequence fidelity",
+      "absence-gate correctness",
+      "preservation of positive facts when absence gates fail",
+      "question non-leadingness and accurate incorporation of participant corrections",
+      "freeze determinism and adapter anti-rereading enforcement"
+    ],
+    "inappropriate_targets": [
+      "external-coder majority vote as ground truth for whether a person-level pattern characterizes the participant",
+      "episode-count recurrence thresholds that override participant adjudication"
+    ]
+  },
+  "normative_invariants": [
+    "Theory-blindness is required for substantive fact extraction, semantic schema changes, and participant-pattern question generation.",
+    "Positive observed facts and genuine absence claims are separate records with separate admissibility logic.",
+    "No silence-to-absence inference is permitted.",
+    "No participant-level recurrence claim becomes accepted solely from episode counts.",
+    "No participant rejection is overridden by external episode counts.",
+    "Postproposal examples can refine scope and contradiction but are not treated as an unbiased recurrence-frequency sample.",
+    "Reported appraisal or belief remains reported appraisal or belief.",
+    "Open-world facts must remain representable without fixed categorical membership.",
+    "Raw narrative cannot be reread by downstream adapters.",
+    "Historical frozen artifacts are immutable.",
+    "No completion policy is inferred from artifact counts."
+  ],
+  "focused_semantic_test_requirements": [
+    "an uncategorized positive fact survives capture, freeze, and adapter projection without an Other Specified code",
+    "dropping or changing an optional index term cannot delete or alter the underlying fact proposition",
+    "a four-part absence assessment with any gate not established cannot instantiate an admitted_absence fact",
+    "a failed or unclear absence assessment leaves all independently supported positive facts unchanged",
+    "silence or absent source evidence cannot satisfy established_nonoccurrence",
+    "reported appraisal remains distinct from an occurrence/outcome assertion",
+    "an explicit temporal relation is rejected when its source provenance does not support sequence",
+    "a pattern with one preproposal anchor can become accepted through participant adjudication without a minimum episode count",
+    "multiple supporting episodes cannot produce an accepted pattern after participant rejection",
+    "participant acceptance is not invalidated solely because no new postproposal example is recalled",
+    "postproposal examples are marked by role and cannot be consumed as automatic recurrence counts",
+    "a revise adjudication preserves the prior proposal and creates a monotonic new proposal revision",
+    "rejected and unresolved pattern threads remain auditable but are absent from the admissible downstream pattern projection",
+    "adapter projection contains no raw source text and exposes no source resolver",
+    "an adapter cannot recover an unrepresented distinction by requesting source narrative",
+    "all adapters in one comparison bind the identical freeze_payload_sha256",
+    "canonical serialization is deterministic and any semantic mutation changes the freeze hash",
+    "target-specific, prediction-derived, fit-derived, birth-derived, or chart-derived fields are rejected from the neutral substrate",
+    "the contract exposes no completion denominator and no automatic coverage claim"
+  ]
+}
