@@ -12,6 +12,16 @@ This policy changes the Life Patterns content-authority rule from `human-only H1
 
 It does **not** alter the separately frozen Survey-v2 H1 exposure-adjudication contract or authorize execution under that contract. It applies to the Life Patterns neutral measurement bridge only.
 
+## Context sufficiency — owner clarification, 2026-09-12
+
+Blinding protects the judgment from target-model steering; it must not remove the information needed to do the job. This policy governs neutral construct development and coding. An interview's chart/prediction blind and an engineer's permitted repository access are different roles, not one universal information ban.
+
+A neutral producer or reviewer must understand the real product: **Discover Your Unique Life Patterns** helps a participant describe, examine, and correct patterns in their life. The longitudinal context includes childhood, adolescence, and later life, with continuity, change, circumstances, counterexamples, and uncertainty preserved rather than a presumption of lifelong stability. The research purpose is a shared frozen behavioral record for later comparison of independently specified models, without model-specific post-hoc rereading. Freezing a shared record does not require a fixed external ontology.
+
+Supply the current task, stage, source meaning, participant authority, required output, and acceptance criteria. The **Required blind** below still controls target-sensitive identities, terminology, mappings, predictions, birth/chart data, and results for this neutral role; explain purpose in theory-neutral language instead of deleting purpose. Do not extend that restriction to an interview or engineering role whose own contract permits more context.
+
+Before substantive work, establish that the worker can explain the task and intended use from the permitted inputs. Missing necessary context requires a bounded, non-leading source/context supplement from the supervisor, not guessing, meaningless labels, a new ontology, or disclosure of prediction keys. Use the existing launch and review process; this clarification creates no new sandbox, permission service, or validation campaign and does not retroactively certify earlier blind runs.
+
 ## Eligible substantive authors
 
 Substantive neutral construct content may be authored by either:
