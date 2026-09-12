@@ -9,7 +9,7 @@ def test_root_agents_activates_current_universal_supervision() -> None:
     required = (
         "## Universal development supervision activation",
         "u-dont-existDOTcom/universal-dev-architecture",
-        "beginning with `LESSON-INDEX.md`",
+        "beginning with its live root `AGENTS.md`, then `LESSON-INDEX.md`",
         "activate only the task-relevant current patterns",
         "Record how that guidance entered the current reasoning path",
         "`the rule exists in GitHub` is not activation evidence",

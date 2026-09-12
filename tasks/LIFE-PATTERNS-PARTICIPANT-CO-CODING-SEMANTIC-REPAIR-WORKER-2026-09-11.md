@@ -6,7 +6,7 @@ Draft PR: `#24`
 
 ## Context boundary
 
-Perform this work in a **fresh target-theory-blind context**. Do not use Human Design, AstroHD, astrology, birth data, chart outputs, model mappings, target-model scores, fit results, prediction logic, or any indication of which neutral behaviors would favor a candidate theory.
+Perform this work in a **fresh target-theory-blind context** under `docs/research/LIFE_PATTERNS_THEORY_BLIND_CONTENT_AUTHORITY_POLICY.md`, including its context-sufficiency section. Keep the real product purpose, childhood-to-later-life context, current task, participant authority, and required result understandable. The policy's Required blind excludes target-model steering information; it does not require an aimless or context-free task. Do not use prediction keys, mappings, fit results, or indications of which neutral behaviors favor a theory to choose the substantive content.
 
 This task now incorporates an owner-directed root-cause audit. The audit found that a legitimate anti-leakage requirement was incorrectly converted into a fixed external-ontology requirement. The repair must solve the anti-leakage problem without assuming that a comprehensive externally coded taxonomy is the correct semantic core.
 
