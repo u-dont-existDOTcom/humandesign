@@ -9,51 +9,43 @@ Before substantive continuation:
 1. fetch live PR #24 head;
 2. read `tasks/ACTIVE-TASK.json`;
 3. read `state/LIFE-PATTERNS-CURRENT-STATE-2026-09-12.md`;
-4. follow the exact next-action launch/prompt named there.
+4. follow the exact next action named there.
 
 ## Current gate
 
-The fresh target-theory-blind semantic-repair worker has produced a replacement candidate and stopped before production implementation.
+The independent fresh target-theory-blind semantic review of the participant-adjudicated neutral-substrate v1 candidate is complete and **BLOCKED**.
 
-Candidate-producing head:
+Review artifact:
 
-`d5f95598c2f48b0a6a4ddfedd35b6e6e9e58d7eb`
+`state/LIFE-PATTERNS-PARTICIPANT-ADJUDICATED-NEUTRAL-v1-INDEPENDENT-SEMANTIC-REVIEW-2026-09-12.md`
 
-Candidate architecture:
+Review commit:
 
-`state/LIFE-PATTERNS-PARTICIPANT-ADJUDICATED-NEUTRAL-SUBSTRATE-v1-CANDIDATE-2026-09-12.md`
+`9ef485b4b96603a895cacecb1fa60246eff306ae`
 
-Candidate contract:
+Disposition:
 
-`state/LIFE-PATTERNS-PARTICIPANT-ADJUDICATED-NEUTRAL-CONTRACT-v1-CANDIDATE-2026-09-12.json`
+- `semantic_change_required: true`
+- `safe_for_implementation: false`
+- six blocking semantic findings
 
-Candidate-specific blind-review prompt:
-
-`tasks/LIFE-PATTERNS-PARTICIPANT-ADJUDICATED-NEUTRAL-v1-FRESH-BLIND-REVIEW-2026-09-12.md`
-
-The candidate's core decision is to use **open-world source-grounded episode facts plus participant-adjudicated person-level patterns** as the shared frozen substrate. A fixed comprehensive behavioral ontology is no longer presumed necessary. Optional indexing vocabulary is non-authoritative.
-
-Historical V1/V2/V5 work remains immutable development evidence. Reusable safeguards such as exact provenance, content addressing, missingness, strict genuine-absence gates, positive-fact preservation, and downstream no-reread enforcement are retained.
+The review found that the candidate successfully removes the manufactured comprehensive fixed-ontology prerequisite, but it still needs narrow semantic repairs for absence-route exclusivity, evidence-role chronology across revisions, terminal proposal grounding, episode-fact correction provenance/supersession, fact-level uncertainty preservation, and downstream protection against reconstructing participant-rejected person-level recurrence from episode facts.
 
 ## Exact next action
 
-Run a **different fresh target-theory-blind review context** using:
+Use a **different fresh target-theory-blind semantic-repair context** from both the v1 producer and the v1 reviewer.
 
-`tasks/LIFE-PATTERNS-FRESH-THEORY-BLIND-SEMANTIC-REVIEW-LAUNCH-2026-09-12.md`
-
-Then follow the candidate-specific review prompt named above.
-
-The review must produce a public-safe disposition with `PASS | BLOCKED`, `semantic_change_required`, `safe_for_implementation`, and exact blocking findings if any. The reviewer must not repair the candidate in the same context.
+Read the dated Life Patterns overlay for the exact blocker ledger and repair-cycle requirements. Produce a new versioned candidate plus a new exact independent-review prompt, update canonical state, and stop before production implementation.
 
 ## Hard boundaries
 
-Until that independent review passes:
+Until a later independent semantic review records `safe_for_implementation=true` with zero semantic blockers:
 
 - no production implementation;
 - no human collection;
 - no automated participant coding;
 - no target-model mapping/scoring/reveal;
-- no target-model fit/results, birth/chart outputs, or prior predictions in the blind review context;
+- no target-model fit/results, birth/chart outputs, or prior predictions in blind repair/review contexts;
 - no merge/deploy;
 - no recruitment/contact;
 - no spending.
