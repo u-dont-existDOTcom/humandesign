@@ -8,11 +8,17 @@ Use this only **after** the fresh semantic-repair worker has committed its candi
 
 This review must run in a **different new ChatGPT conversation / fresh worker context** from both the supervising conversation and the candidate-producing conversation. The reviewer must not have seen target-model mappings, scores, chart outputs, birth-derived predictions, fit results, or the candidate producer's private reasoning.
 
+## Usable context and launch scope
+
+Use the context-sufficiency section of `docs/research/LIFE_PATTERNS_THEORY_BLIND_CONTENT_AUTHORITY_POLICY.md` before substantive work. Keep the product purpose, longitudinal life context, current task, and acceptance criteria available. Withhold target-model steering information, not the meaning of the job.
+
+This is the existing fresh, selective-reading **Chat reasoning** lane, not an instruction to start a blind semantic task inside a fully loaded Codex checkout. Do not follow the unblinded repository-root reading list or repository-global historical state into scoring/results. Code execution and Git transport may use a separate execution-only worker; they cannot substitute for this semantic role. Preserve actual exposure/provenance rather than claiming that a fresh session alone proves blindness.
+
 ## Start exactly here
 
 1. Fetch the live head of PR #24.
 2. Read `tasks/ACTIVE-TASK.json`.
-3. Read `state/CURRENT-STATE.md` and the dated Life Patterns current-state overlay it names.
+3. Read the task-local `state/LIFE-PATTERNS-CURRENT-STATE-2026-09-11.md` overlay. Do not load repository-global `state/CURRENT-STATE.md` as a blind-worker bootstrap; it mixes unrelated research history. If the active task names a newer overlay, have the supervisor provide its exact permitted context before continuing.
 4. Confirm that canonical state explicitly names:
    - the candidate semantic/contract artifacts to review;
    - the exact compact independent-review prompt produced by the repair worker;

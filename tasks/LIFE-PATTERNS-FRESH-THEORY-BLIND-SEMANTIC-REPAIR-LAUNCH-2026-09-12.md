@@ -8,6 +8,12 @@ This launch packet is designed for a **new ChatGPT conversation / fresh worker c
 
 GitHub is canonical. Do not rely on any chat summary for implementation state.
 
+## Usable context and launch scope
+
+Use the context-sufficiency section of `docs/research/LIFE_PATTERNS_THEORY_BLIND_CONTENT_AUTHORITY_POLICY.md` before substantive work. Keep the product purpose, longitudinal life context, current task, and acceptance criteria available. Withhold target-model steering information, not the meaning of the job.
+
+This is the existing fresh, selective-reading **Chat reasoning** lane, not an instruction to start a blind semantic task inside a fully loaded Codex checkout. Do not follow the unblinded repository-root reading list or repository-global historical state into scoring/results. Code execution and Git transport may use a separate execution-only worker; they cannot substitute for this semantic role. Preserve actual exposure/provenance rather than claiming that a fresh session alone proves blindness.
+
 ## Start exactly here
 
 1. Fetch the live head of PR #24.
