@@ -1,6 +1,6 @@
 # Current state
 
-## Authoritative branch overlay — Life Patterns — 2026-09-11
+## Authoritative branch overlay — Life Patterns — 2026-09-12
 
 This is the concise pointer for `codex/discover-life-patterns-mvp`, draft PR #24. Historical artifacts remain preserved in Git history.
 
@@ -10,9 +10,10 @@ Before substantive continuation:
 2. read `tasks/ACTIVE-TASK.json`;
 3. read `state/LIFE-PATTERNS-CURRENT-STATE-2026-09-11.md`;
 4. read `docs/research/LIFE_PATTERNS_CODEBOOK_ARCHITECTURE_ROOT_CAUSE_AUDIT_2026-09-11.md`;
-5. read `docs/research/LIFE_PATTERNS_PARTICIPANT_CO_CODING_ARCHITECTURE_2026-09-11.md`;
-6. read `tasks/LIFE-PATTERNS-PARTICIPANT-CO-CODING-SEMANTIC-REPAIR-WORKER-2026-09-11.md`;
-7. read `tasks/NEXT-CONVERSATION-HANDOFF-2026-09-11.md`.
+5. read `tasks/LIFE-PATTERNS-FRESH-THEORY-BLIND-SEMANTIC-REPAIR-LAUNCH-2026-09-12.md`;
+6. read `docs/research/LIFE_PATTERNS_PARTICIPANT_CO_CODING_ARCHITECTURE_2026-09-11.md`;
+7. read `tasks/LIFE-PATTERNS-PARTICIPANT-CO-CODING-SEMANTIC-REPAIR-WORKER-2026-09-11.md`;
+8. read `tasks/NEXT-CONVERSATION-HANDOFF-2026-09-11.md`.
 
 ## Current gate
 
@@ -36,13 +37,25 @@ Strict genuine absence/non-action gates remain binding. They apply to absence cl
 
 Examples elicited after a pattern is proposed are mainly nuance/boundary evidence, not an unbiased recurrence/frequency sample.
 
+## Fresh-context requirement is binding
+
+The next substantive semantic repair must be authored in a **genuinely fresh target-theory-blind context**. The current supervising conversation has already been exposed to target-model context and therefore must not author the replacement semantics and then represent them as fresh/blind.
+
+Launch packet:
+
+`tasks/LIFE-PATTERNS-FRESH-THEORY-BLIND-SEMANTIC-REPAIR-LAUNCH-2026-09-12.md`
+
+The current chat may supervise repository state, preserve handoffs, and verify outputs. It may not self-certify as the fresh semantic worker or the later independent blind reviewer.
+
 ## Exact next action
 
-Run in a **fresh target-theory-blind context**:
+Open a new ChatGPT conversation / fresh worker context and give it the launch packet above. That worker must fetch the live PR head and execute:
 
 `tasks/LIFE-PATTERNS-PARTICIPANT-CO-CODING-SEMANTIC-REPAIR-WORKER-2026-09-11.md`
 
-The worker must determine the **minimum shared frozen substrate actually required** for anti-leakage rather than assuming the current ontology is necessary. Produce versioned candidate semantics/contracts plus a separate fresh blind-review prompt. Do not implement production changes until that review passes.
+The worker must determine the **minimum shared frozen substrate actually required** for anti-leakage rather than assuming the current ontology is necessary. It should commit versioned candidate semantics/contracts plus a separate fresh blind-review prompt, then stop before production implementation.
+
+The resulting review prompt must then be run in another fresh target-theory-blind context.
 
 The existing private owner-review candidates are superseded for acceptance by this architecture finding.
 
@@ -60,4 +73,5 @@ The existing private owner-review candidates are superseded for acceptance by th
 - do not discard supported positive behavior because a stronger absence claim fails;
 - do not treat elicited examples as unbiased recurrence/frequency observations;
 - do not give an external classifier final authority over participant-level recurring patterns;
+- do not falsely represent a target-model-exposed context as fresh/blind;
 - no human collection, automated participant coding, target-model scoring/reveal, merge/deploy, recruitment/contact, or spending until the revised blind semantic chain authorizes it.
