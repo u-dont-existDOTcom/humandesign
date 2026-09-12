@@ -187,13 +187,16 @@
         "pattern_thread_id",
         "status",
         "terminal_proposal_id",
+        "supporting_preproposal_evidence_link_ids"
+      ],
+      "optional_fields": [
         "participant_approved_wording",
-        "supporting_preproposal_evidence_link_ids",
         "scope_note",
         "exception_note"
       ],
       "rules": [
-        "accepted status requires a participant accept decision and at least one preproposal_anchor",
+        "accepted status requires a participant accept decision, participant_approved_wording, and at least one preproposal_anchor",
+        "participant_approved_wording is not required for rejected or unresolved status",
         "no episode-count threshold can create accepted status without participant acceptance",
         "multiple supporting episodes cannot override participant rejection",
         "rejected and unresolved threads are retained in the research audit but omitted from the admissible downstream pattern projection"
