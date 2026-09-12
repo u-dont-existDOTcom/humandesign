@@ -4,7 +4,26 @@ Status: public-safe controlling overlay for `codex/discover-life-patterns-mvp`, 
 
 ## Current gate
 
-The required fresh target-theory-blind semantic-repair worker has completed the **candidate-producing** stage.
+The required fresh target-theory-blind independent semantic review of the participant-adjudicated open-world neutral-substrate v1 candidate is complete.
+
+Review artifact:
+
+`state/LIFE-PATTERNS-PARTICIPANT-ADJUDICATED-NEUTRAL-v1-INDEPENDENT-SEMANTIC-REVIEW-2026-09-12.md`
+
+Review commit:
+
+`9ef485b4b96603a895cacecb1fa60246eff306ae`
+
+Disposition:
+
+- `verdict: BLOCKED`
+- `semantic_change_required: true`
+- `safe_for_implementation: false`
+- `blocking_findings: 6`
+
+Production implementation remains blocked. Human collection and downstream target-model activity remain blocked.
+
+## Reviewed candidate identity
 
 Candidate-producing head:
 
@@ -22,141 +41,69 @@ Candidate-specific independent review prompt:
 
 `tasks/LIFE-PATTERNS-PARTICIPANT-ADJUDICATED-NEUTRAL-v1-FRESH-BLIND-REVIEW-2026-09-12.md`
 
-The candidate remains **candidate-only / implementation-blocked / human-collection-blocked** until a different fresh target-theory-blind context completes the independent semantic review and records a passing disposition.
+The reviewed candidate blobs at the live review head matched the blobs at the candidate-producing head exactly.
 
-## Candidate decision
+## Review conclusion
 
-The real scientific prerequisite is one immutable theory-blind behavioral substrate shared by downstream adapters, with no post-freeze rereading of raw narrative.
+The candidate **does correct the main upstream architecture error**. It does not recreate a comprehensive fixed behavioral ontology, fixed 22-observable coverage scheme, universal event-stage graph, recurrence threshold, or `Other Specified` escape hatch as the semantic core. Open-world source-grounded facts plus participant-adjudicated person-level patterns remain the correct direction.
 
-The candidate rejects the earlier manufactured prerequisite that this shared substrate must therefore be a comprehensive fixed external ontology.
+The candidate is nevertheless not yet semantically safe to implement because six narrower contract defects remain:
 
-The proposed minimum substrate is:
+1. `LP-PAN-v1-REV-001` — a genuine real-world nonoccurrence can be encoded under a non-absence free-text assertion type and thereby bypass the four-part absence gate.
+2. `LP-PAN-v1-REV-002` — evidence timing is proposal-relative, so an example elicited after the first pattern proposal can be relabeled `preproposal_anchor` for a later revision.
+3. `LP-PAN-v1-REV-003` — only the first proposal is required to have a preproposal anchor; a revised terminal accepted proposition can drift from the factual anchor while inheriting an earlier link.
+4. `LP-PAN-v1-REV-004` — participant correction of episode facts has no deterministic append-only provenance/supersession semantics; `participant_correction_note` alone does not determine the current admissible fact.
+5. `LP-PAN-v1-REV-005` — uncertainty exists only as optional episode-level notes and is not guaranteed to travel with the affected episode fact into the downstream projection.
+6. `LP-PAN-v1-REV-006` — downstream adapters receive episode facts while rejected/unresolved pattern threads are omitted, but no explicit rule prevents target-specific post-freeze aggregation of those facts into a person-level recurrence claim that functionally overrides participant rejection.
 
-`bounded episode -> open-world source-grounded episode facts -> candidate pattern question -> participant adjudication -> nuance/examples/counterexamples -> revision when needed -> accepted/rejected/unresolved pattern -> immutable freeze -> adapter-only projection`
+These blockers require semantic repair, not a return to the fixed-codebook architecture.
 
-The semantic core therefore contains:
-
-- exact source provenance;
-- bounded episodes;
-- atomic episode facts with epistemic claim type, not behavioral trait taxonomy;
-- a separate strict four-part absence assessment;
-- candidate pattern proposals grounded in preproposal facts;
-- explicit preproposal/postproposal evidence roles;
-- append-only participant adjudication;
-- accepted participant-approved resolved patterns;
-- deterministic immutable freeze;
-- a downstream projection with no raw source narrative or source resolver.
-
-A compact vocabulary may exist only as optional separately versioned indexing/question-generation metadata. It is not required to preserve a fact and does not control semantic admissibility.
-
-## Disposition of historical V1/V2/V5 mechanics
-
-### Retained
-
-- theory-blind substantive authoring/review;
-- bounded episode grounding;
-- exact provenance;
-- immutable/content-addressed artifacts;
-- missingness distinct from negative evidence;
-- reported appraisal distinct from objective fact;
-- explicit sequence only when supported;
-- awareness/opportunity/reasonable-feasibility/nonoccurrence gates for genuine absence claims;
-- positive facts cannot be erased by failure of a stronger absence claim;
-- downstream no-reread boundary.
-
-### Adapted
-
-- participant review -> recursive participant pattern adjudication;
-- `OS` gap handling -> first-class open-world facts plus optional vocabulary-gap reporting;
-- recurrence firewall -> evidence-role provenance plus participant person-level authority;
-- external-coder reliability -> episode-fact fidelity and procedural calibration;
-- universal stage/evidence graph -> simple fact/evidence links unless extra structure is actually needed.
-
-### Superseded as presumed universal core
-
-- fixed 22-observable coverage requirement;
-- exhaustive categorical subcode membership;
-- automatic person-level recurrence from episode counts;
-- complete non-action classification of all values;
-- universal facet/event-stage/evidence-unit graph;
-- closed-code `OS` as the only way to preserve novel behavior.
-
-Historical artifacts remain immutable development evidence.
-
-## Corrective invariants carried forward
+## Corrective invariants that remain accepted
 
 1. neutrality does not imply a closed taxonomy;
 2. person-level recurrence/typicality is participant-adjudicated;
 3. episode fact, reported appraisal, absence assessment, system proposal, participant adjudication and accepted pattern remain distinct;
-4. absence gates apply only to genuine absence claims;
+4. absence gates apply only to genuine real-world absence/nonoccurrence claims;
 5. failed/unclear absence assessment cannot damage independent positive facts;
 6. silence is not nonoccurrence;
-7. examples elicited after a proposal are scope/boundary evidence, not automatically an unbiased recurrence sample;
+7. examples elicited after the first pattern proposal are selected scope/boundary evidence, not an unbiased recurrence sample, and revision must not reset that status;
 8. participant recognition is not automatically invalidated by failure to recall a new example on demand;
-9. multiple similar episodes cannot override participant rejection of the person-level generalization;
+9. multiple similar episodes cannot override participant rejection of the person-level generalization, including downstream after freeze;
 10. open-world positive behavior must remain losslessly representable without fixed categorical membership;
-11. downstream adapters receive the same frozen projection and cannot call back into raw source narrative;
-12. there is no completion denominator or inferred completion policy.
+11. participant corrections and epistemic uncertainty must remain exact enough to survive into the admissible frozen projection without silent mutation or flattening;
+12. downstream adapters receive the same frozen projection and cannot call back into raw source narrative;
+13. there is no completion denominator or inferred completion policy.
 
 ## Exact next action
 
-Use a **different new fresh target-theory-blind context** from both the supervising context and the candidate producer.
+Run a **new fresh target-theory-blind semantic-repair context**, different from both the v1 candidate producer and this independent reviewer.
 
-Launch with:
+The new repair worker must use the review artifact above as the exact blocker ledger and:
 
-`tasks/LIFE-PATTERNS-FRESH-THEORY-BLIND-SEMANTIC-REVIEW-LAUNCH-2026-09-12.md`
+1. preserve the open-world participant-adjudicated architecture;
+2. repair the six blocking findings with the smallest semantic changes required;
+3. publish a new versioned candidate architecture/contract rather than mutate the reviewed v1 artifacts;
+4. produce an exact compact candidate-specific prompt for another separate fresh target-theory-blind reviewer;
+5. update `tasks/ACTIVE-TASK.json`, `state/CURRENT-STATE.md`, and this overlay with the new candidate-producing head and review prompt;
+6. stop before production implementation.
 
-Then follow the exact candidate-specific prompt:
-
-`tasks/LIFE-PATTERNS-PARTICIPANT-ADJUDICATED-NEUTRAL-v1-FRESH-BLIND-REVIEW-2026-09-12.md`
-
-The independent reviewer must commit a public-safe disposition with:
-
-- `verdict: PASS | BLOCKED`;
-- `semantic_change_required: true | false`;
-- `safe_for_implementation: true | false`;
-- exact blocking findings if any.
-
-The reviewer must not repair the candidate in the same review context.
-
-## Focused implementation requirements already specified
-
-The candidate contract includes focused future-test requirements covering at least:
-
-- open-world positive facts without `OS`;
-- optional indexing unable to alter fact semantics;
-- all-four absence-gate enforcement;
-- positive-fact preservation on gate failure;
-- no silence-to-absence inference;
-- appraisal/sequence epistemic separation;
-- participant acceptance without arbitrary recurrence counts;
-- participant rejection not overridable by counts;
-- postproposal examples excluded from automatic recurrence counting;
-- append-only revision history;
-- rejected/unresolved patterns excluded from admissible adapter patterns;
-- no raw narrative/source resolver in adapter input;
-- identical freeze binding across adapters;
-- deterministic freeze hashing;
-- neutral-substrate rejection of target/result-derived fields;
-- no manufactured completion denominator.
-
-These are requirements for a later implementation **only if** the independent semantic review passes.
+The next candidate must then receive a separate fresh blind semantic review. No review context may self-repair and self-approve the same candidate.
 
 ## Hard boundaries
 
-Until canonical state records a passing independent semantic review:
+Until canonical state records a later passing independent semantic review:
 
-- no production implementation of this candidate;
+- no production implementation of the candidate;
 - no human collection;
 - no automated participant coding;
 - no target-model mapping/scoring/reveal;
-- no reading target-model fit/results in the blind review context;
-- no birth/chart outputs or prior predictions in the blind review context;
+- no reading target-model fit/results in the blind repair/review contexts;
+- no birth/chart outputs or prior predictions in those contexts;
 - no merge/deploy;
 - no recruitment/contact;
 - no spending.
 
-The private historical V5 owner-review materials remain frozen development evidence and are not acceptance inputs for this candidate.
+The private historical V5 owner-review materials remain frozen development evidence and are not acceptance inputs for the semantic repair/review cycle.
 
 ## Preserved owner correction
 
