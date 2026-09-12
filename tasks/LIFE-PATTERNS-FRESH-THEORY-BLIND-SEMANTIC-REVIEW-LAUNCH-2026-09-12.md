@@ -12,12 +12,13 @@ This review must run in a **different new ChatGPT conversation / fresh worker co
 
 1. Fetch the live head of PR #24.
 2. Read `tasks/ACTIVE-TASK.json`.
-3. Read `state/CURRENT-STATE.md` and the dated Life Patterns current-state overlay it names.
+3. Read `state/LIFE-PATTERNS-CURRENT-STATE-2026-09-11.md`, or a newer dated Life Patterns current-state overlay if canonical state on this branch explicitly names one.
 4. Confirm that canonical state explicitly names:
    - the candidate semantic/contract artifacts to review;
    - the exact compact independent-review prompt produced by the repair worker;
    - the candidate-producing commit/head.
-5. Read and follow that exact independent-review prompt. Do not substitute this launch packet for the candidate-specific review instructions.
+5. Read `docs/research/LIFE_PATTERNS_THEORY_BLIND_CONTENT_AUTHORITY_POLICY.md`, especially its context-sufficiency rule.
+6. Read and follow that exact independent-review prompt. Do not substitute this launch packet for the candidate-specific review instructions.
 
 If canonical state does not yet identify the candidate and exact review prompt, stop: the candidate-producing worker is not complete.
 
@@ -26,6 +27,8 @@ If canonical state does not yet identify the candidate and exact review prompt, 
 Do not read target-model mapping/scoring material, model-fit results, birth/chart outputs, or any material whose purpose is to reveal which neutral behaviors help or hurt a target theory.
 
 Do not use the candidate producer's rationale except where the candidate-specific review packet explicitly requires a disposition document as review evidence. Form the semantic judgment from the permitted source authority and candidate artifacts.
+
+Use the intended Chat lane for this semantic review. The reviewer must be fresh and target-theory-blind, but must still understand the participant-centered Life Patterns product, the longitudinal context, participant corrections, uncertainty, and the later model-comparison use of the frozen record.
 
 ## Review objective
 

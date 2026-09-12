@@ -37,6 +37,18 @@ During substantive construct generation, revision, or neutral coding, the releva
 
 The author/coder may receive ordinary behavioral narratives, generic measurement requirements, coding constraints, and theory-neutral methodological requirements.
 
+## Context sufficiency for neutral Life Patterns work
+
+Theory-blind does not mean context-starved. A neutral semantic producer, coder, or reviewer must receive enough theory-neutral context to understand the participant-centered Life Patterns product, the longitudinal childhood/adolescence/later-life frame, participant corrections, uncertainty/missingness handling, and the fact that the shared frozen record will later be used for model comparison.
+
+If the worker cannot identify the product purpose, decision it is supporting, source authority, acceptance criteria, or what kind of artifact it is judging, supply the smallest non-leading context supplement that resolves that gap. Do not guess, invent a new ontology, or continue with a blind so narrow that the worker no longer understands the semantic task.
+
+The target-theory exclusion above still controls target-sensitive information for neutral semantic roles. It is not automatically imposed on an interviewer's chart/prediction blind or on ordinary unblinded engineering and supervision sessions. Keep separate:
+
+- information withheld because it would steer a neutral judgment toward a target theory;
+- information required to make the neutral judgment meaningful at all;
+- unblinded repository-wide engineering or supervision context.
+
 ## AI authorship/coding provenance
 
 When an AI/model authors substantive content or performs primary coding, preserve as much of the following as available:

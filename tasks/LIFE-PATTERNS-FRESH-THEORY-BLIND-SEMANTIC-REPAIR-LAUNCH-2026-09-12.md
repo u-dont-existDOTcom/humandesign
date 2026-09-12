@@ -16,9 +16,12 @@ GitHub is canonical. Do not rely on any chat summary for implementation state.
 4. Read `docs/research/LIFE_PATTERNS_CODEBOOK_ARCHITECTURE_ROOT_CAUSE_AUDIT_2026-09-11.md`.
 5. Read `docs/research/LIFE_PATTERNS_PARTICIPANT_CO_CODING_ARCHITECTURE_2026-09-11.md`.
 6. Read `tasks/LIFE-PATTERNS-PARTICIPANT-CO-CODING-SEMANTIC-REPAIR-WORKER-2026-09-11.md`.
-7. Follow the worker's remaining required-read order and hard boundaries.
+7. Read `docs/research/LIFE_PATTERNS_THEORY_BLIND_CONTENT_AUTHORITY_POLICY.md`, especially its context-sufficiency rule.
+8. Follow the worker's remaining required-read order and hard boundaries.
 
 Do **not** read target-model mapping/scoring material, model-fit results, birth/chart outputs, or anything whose purpose is to show which neutral behaviors help or hurt a target theory.
+
+Use the intended Chat lane for the semantic architecture work: reason from the permitted source authority and write the candidate artifacts directly. Do not create a new sandbox, move the root research instructions, hide the project from ordinary engineering/supervision, or add a new orchestration system merely to preserve target-theory blindness.
 
 ## Task
 
