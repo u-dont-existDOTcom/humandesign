@@ -2,7 +2,7 @@
 
 ## Life Patterns — 2026-09-13
 
-Active task: `life-patterns-v2-owner-html-prototype` — OWNER HTML PROTOTYPE REQUIRED.
+Active task: `life-patterns-v2-owner-real-data-browser-prototype` — OWNER REAL-DATA BROWSER JUDGMENT REQUIRED.
 
 Frozen semantic candidate head: `10d57a19b96f38303b2a30abff4281d6abfff83b`.
 
@@ -10,37 +10,42 @@ Independent semantic review: **PASS** — zero blockers, `semantic_change_requir
 
 Bounded v2 core repair head: `75c2fa4366e2721dc257ec839532b10f54f1de20`.
 
-Interactive CLI repair head: `e915c8ec911c3ff06748c86a70c9868fe33096cc`; focused verification and preflight were reported green.
+Synthetic HTML owner probe head: `894fc8c237221b51106f81c0e7c276dd27a878fb`.
+
+Real-data owner browser implementation head: `002d6264f05a7e380d4cac7e188f8c9455fbf971`; hosted repository CI is green on that implementation head.
 
 Core implementation disposition remains **PASS**. The accepted v2 semantics remain unchanged.
 
-### Owner product feedback
+### What the owner judgment established
 
-The owner rejected the Work-mediated terminal/CLI relay as an adequate product-judgment surface and explicitly pointed back to the earlier HTML app. The earlier participant-facing HTML shell still exists at `src/hdmatch/api/life_patterns_interview_ui.py` and remains a useful presentation asset.
+The direct HTML/card/chat surface is the correct interaction direction. The prior terminal/Work relay is not the owner-facing product surface. The owner also identified that two questions must stay separate in ordinary language:
 
-The mistake was treating the old presentation layer and the superseded backend semantics as one thing. The old automatic person-level map-generation path remains superseded; the HTML/card/chat interaction itself does not need to be discarded.
+1. whether a revised pattern feels true of the person;
+2. whether the particular examples on screen actually support that revised wording.
 
-Feedback record: `state/LIFE-PATTERNS-v2-OWNER-UX-HTML-FEEDBACK-2026-09-13.md`.
+A revision known from other situations must not be treated as established by the current examples.
+
+### Active bounded experiment
+
+The current task is defined in `tasks/LIFE-PATTERNS-v2-OWNER-REAL-DATA-BROWSER-PROTOTYPE-2026-09-13.md`.
+
+The new owner-only browser app lives at:
+
+- `src/hdmatch/api/life_patterns_v2_owner_app.py`
+- `src/hdmatch/api/life_patterns_v2_owner_ui.py`
+
+It uses the owner's own real episodes, not the synthetic checklist toy. Runtime narratives stay in memory only. A target-theory-blind model extracts literal/minimally normalized facts. The owner reviews those facts. After two reviewed episodes in this bounded product probe, the model may propose at most one cross-episode pattern hypothesis backed by reviewed facts from at least two episodes. The owner alone accepts, revises, rejects, or leaves the pattern unresolved.
+
+The two-reviewed-episode wait is a development-probe design choice, not a universal scientific sufficiency threshold.
+
+The browser app does not import or invoke the historical `OpenAILifePatternsMapper` or `/map` person-level generator. Accepted/rejected/unresolved results pass through the frozen v2 validation/freeze/projection path.
 
 ### Current gate
 
-Build the smallest directly usable HTML/browser owner prototype defined in `tasks/LIFE-PATTERNS-v2-OWNER-HTML-PROTOTYPE-2026-09-13.md`.
+Run the owner-only browser app with **2–3 real episodes** and judge whether the interaction actually feels intelligent and natural. Do not scale the interview architecture before that owner judgment.
 
-Requirements:
-
-- reuse the existing HTML visual language where useful;
-- no terminal or Work prompt-courier requirement for the owner;
-- internal research codes should be hidden behind natural-language controls;
-- accepted v2 semantics remain authoritative;
-- do not restore the historical `/map` generator as person-level authority;
-- no production auth/recovery/voice/deployment expansion is required for this bounded test.
-
-Authorized: bounded owner-only HTML/product-surface development and testing.
-
-Still closed: external participant collection, automated participant coding, target-model activity, merge/deploy, recruitment/contact, and spending.
+Still closed: external participant collection, automated participant coding, target-model activity, public deployment, recruitment/contact, merge/release, and unapproved spending.
 
 Current task lock: `tasks/ACTIVE-TASK.json`.
-
-Next gate after delivery of a directly usable HTML/browser surface: **OWNER PRODUCT JUDGMENT**.
 
 **There was never a completion policy.** Do not infer one from artifact counts, test counts, review status, or gate status.
