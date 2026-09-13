@@ -50,6 +50,8 @@ Historical fixed-codebook and automatic map-generation behavior is development h
 7. Show resolved status, accepted wording when applicable, scope/exception notes, and evidence provenance.
 8. Produce and validate the corresponding v2 record through `participant_adjudicated_v2.py`.
 
+**Owner-visible means the owner personally makes these choices at runtime. A scripted demonstration with preselected correction/revision/acceptance does not satisfy this requirement or reach OWNER PRODUCT JUDGMENT.**
+
 Use synthetic fixtures and/or already-existing owner development material at runtime. Do not commit narrative-bearing development inputs to Git.
 
 ## Non-goals
@@ -70,7 +72,8 @@ Prove at minimum:
 - postproposal evidence cannot become preproposal evidence;
 - absence routing remains gated;
 - resulting record passes the frozen v2 validator;
-- historical auto-map generation is not used to create accepted patterns.
+- historical auto-map generation is not used to create accepted patterns;
+- runtime owner inputs, not hard-coded demo choices, determine the interactive result.
 
 Run the focused prototype tests plus `tests/unit/test_participant_adjudicated_v2.py`.
 
@@ -82,4 +85,4 @@ Still unauthorized: external participant collection, recruitment/contact, target
 
 ## Stop boundary
 
-Stop after a small owner-usable prototype and focused green tests. The next gate is **owner product judgment**. Do not scale the architecture before that judgment.
+Stop after a small genuinely owner-usable prototype and focused green tests. The next gate is **owner product judgment**. Do not scale the architecture before that judgment.
