@@ -16,6 +16,8 @@ The synthetic HTML probe established that the direct browser/card/chat direction
 
 Task: `tasks/LIFE-PATTERNS-v2-OWNER-REAL-DATA-BROWSER-PROTOTYPE-2026-09-13.md`.
 
+Work launcher: `tasks/LIFE-PATTERNS-v2-OWNER-REAL-DATA-BROWSER-WORK-RUNNER-2026-09-13.md`. Work may prepare the environment and launch the local browser, but it must not act as a prompt courier; the owner interacts with the web UI directly.
+
 Implementation:
 
 - `src/hdmatch/api/life_patterns_v2_owner_app.py`
