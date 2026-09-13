@@ -2,7 +2,7 @@
 
 ## Life Patterns — 2026-09-13
 
-Active task: `life-patterns-v2-owner-prototype-interaction-repair-001` — OWNER PRODUCT JUDGMENT REQUIRED.
+Active task: `life-patterns-v2-owner-html-prototype` — OWNER HTML PROTOTYPE REQUIRED.
 
 Frozen semantic candidate head: `10d57a19b96f38303b2a30abff4281d6abfff83b`.
 
@@ -10,38 +10,37 @@ Independent semantic review: **PASS** — zero blockers, `semantic_change_requir
 
 Bounded v2 core repair head: `75c2fa4366e2721dc257ec839532b10f54f1de20`.
 
-Scripted owner prototype implementation head: `1624c94f9ed130a446d86eed7fafd4309255c4a6`.
-
-Work receipt/final state head reviewed by supervisor: `67546de3f46f6c1999dce2f1dcc54b5e89a3cd9f`; hosted `verify` is green.
+Interactive CLI repair head: `e915c8ec911c3ff06748c86a70c9868fe33096cc`; focused verification and preflight were reported green.
 
 Core implementation disposition remains **PASS**. The accepted v2 semantics remain unchanged.
 
-### Prototype interaction defect
+### Owner product feedback
 
-`LP-PAN-v2-PROT-001`: the executable owner prototype is scripted rather than owner-controlled. `run_synthetic_owner_demo()` hard-codes fact correction, pattern revision, and final acceptance. Its unit tests prove the underlying plumbing and scripted transcript, but the owner cannot yet make those choices while running the advertised command.
+The owner rejected the Work-mediated terminal/CLI relay as an adequate product-judgment surface and explicitly pointed back to the earlier HTML app. The earlier participant-facing HTML shell still exists at `src/hdmatch/api/life_patterns_interview_ui.py` and remains a useful presentation asset.
 
-Defect record: `state/LIFE-PATTERNS-v2-OWNER-PROTOTYPE-INTERACTION-DEFECT-001-2026-09-13.md`.
+The mistake was treating the old presentation layer and the superseded backend semantics as one thing. The old automatic person-level map-generation path remains superseded; the HTML/card/chat interaction itself does not need to be discarded.
 
-Repair task: `tasks/LIFE-PATTERNS-v2-OWNER-PROTOTYPE-INTERACTION-REPAIR-001-2026-09-13.md`.
-
-This is an implementation/usability defect only; `semantic_change_required=false`.
+Feedback record: `state/LIFE-PATTERNS-v2-OWNER-UX-HTML-FEEDBACK-2026-09-13.md`.
 
 ### Current gate
 
-The project has **not yet reached OWNER PRODUCT JUDGMENT** because there is no owner-controlled runtime interaction to judge.
+Build the smallest directly usable HTML/browser owner prototype defined in `tasks/LIFE-PATTERNS-v2-OWNER-HTML-PROTOTYPE-2026-09-13.md`.
 
-Required repair: add the smallest interactive local surface over the existing v2 prototype so owner runtime inputs control fact accept/correct/not-supported and pattern accept/revise/reject/unresolved, including one refinement turn. A CLI is sufficient; no web/auth/voice/deployment expansion is authorized.
+Requirements:
 
-Focused completion command:
+- reuse the existing HTML visual language where useful;
+- no terminal or Work prompt-courier requirement for the owner;
+- internal research codes should be hidden behind natural-language controls;
+- accepted v2 semantics remain authoritative;
+- do not restore the historical `/map` generator as person-level authority;
+- no production auth/recovery/voice/deployment expansion is required for this bounded test.
 
-`.venv/bin/python -m pytest tests/unit/test_participant_adjudicated_v2_prototype.py tests/unit/test_participant_adjudicated_v2.py -q`
-
-Also require focused lint/typecheck and `python scripts/task_preflight.py` to pass before returning to owner judgment.
+Authorized: bounded owner-only HTML/product-surface development and testing.
 
 Still closed: external participant collection, automated participant coding, target-model activity, merge/deploy, recruitment/contact, and spending.
 
 Current task lock: `tasks/ACTIVE-TASK.json`.
 
-Next gate: **OWNER PRODUCT JUDGMENT REQUIRED**. Run `.venv/bin/python -m hdmatch.evaluation.participant_adjudicated_v2_prototype` and judge the interaction before scaling.
+Next gate after delivery of a directly usable HTML/browser surface: **OWNER PRODUCT JUDGMENT**.
 
 **There was never a completion policy.** Do not infer one from artifact counts, test counts, review status, or gate status.
