@@ -11,7 +11,7 @@ V2 independent semantic review: **PASS**.
 - Scripted owner prototype head: `1624c94f9ed130a446d86eed7fafd4309255c4a6`
 - Work receipt/final state head: `67546de3f46f6c1999dce2f1dcc54b5e89a3cd9f`
 - Hosted verify on receipt head: `success`
-- Active task: `life-patterns-v2-owner-prototype-interaction-repair-001` — IMPLEMENTATION REPAIR REQUIRED
+- Active task: `life-patterns-v2-owner-prototype-interaction-repair-001` — OWNER PRODUCT JUDGMENT REQUIRED
 
 `LP-PAN-v2-PROT-001`: the prototype plumbing is green, but the executable demo hard-codes the fact correction, pattern revision, and final acceptance. It therefore does not yet provide the owner-controlled interaction required for **OWNER PRODUCT JUDGMENT**.
 
@@ -21,7 +21,7 @@ Repair task: `tasks/LIFE-PATTERNS-v2-OWNER-PROTOTYPE-INTERACTION-REPAIR-001-2026
 
 This is a narrow implementation/usability repair. The accepted v2 semantics/contract and bounded core implementation remain unchanged.
 
-Required next gate: add a small interactive local surface in which owner runtime choices control fact review and pattern adjudication/refinement, then pass focused prototype/core tests, focused lint/typecheck, and `python scripts/task_preflight.py`.
+Required next gate: **OWNER PRODUCT JUDGMENT REQUIRED**. Run `.venv/bin/python -m hdmatch.evaluation.participant_adjudicated_v2_prototype` and judge the interaction before scaling.
 
 Only after that repair returns green does the task return to **OWNER PRODUCT JUDGMENT REQUIRED**.
 

@@ -2,7 +2,7 @@
 
 ## Life Patterns — 2026-09-13
 
-Active task: `life-patterns-v2-owner-prototype-interaction-repair-001` — IMPLEMENTATION REPAIR REQUIRED.
+Active task: `life-patterns-v2-owner-prototype-interaction-repair-001` — OWNER PRODUCT JUDGMENT REQUIRED.
 
 Frozen semantic candidate head: `10d57a19b96f38303b2a30abff4281d6abfff83b`.
 
@@ -41,5 +41,7 @@ Also require focused lint/typecheck and `python scripts/task_preflight.py` to pa
 Still closed: external participant collection, automated participant coding, target-model activity, merge/deploy, recruitment/contact, and spending.
 
 Current task lock: `tasks/ACTIVE-TASK.json`.
+
+Next gate: **OWNER PRODUCT JUDGMENT REQUIRED**. Run `.venv/bin/python -m hdmatch.evaluation.participant_adjudicated_v2_prototype` and judge the interaction before scaling.
 
 **There was never a completion policy.** Do not infer one from artifact counts, test counts, review status, or gate status.

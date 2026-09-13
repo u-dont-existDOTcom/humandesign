@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "life-patterns-v2-owner-prototype-interaction-repair-001",
-  "status": "implementation_repair_required",
+  "status": "owner_product_judgment_required",
   "exclusive": true,
   "requiredBranch": "codex/discover-life-patterns-mvp",
   "pullRequest": 24,
@@ -24,7 +24,7 @@
   "recruitmentContactAuthorized": false,
   "spendingAuthorized": false,
   "completionCommand": ".venv/bin/python -m pytest tests/unit/test_participant_adjudicated_v2_prototype.py tests/unit/test_participant_adjudicated_v2.py -q",
-  "nextAction": "Repair the owner prototype so runtime owner inputs, rather than hard-coded choices, control fact review and pattern adjudication. After focused tests, lint/typecheck, and task preflight pass, return to OWNER PRODUCT JUDGMENT REQUIRED.",
+  "nextAction": "OWNER PRODUCT JUDGMENT REQUIRED: run .venv/bin/python -m hdmatch.evaluation.participant_adjudicated_v2_prototype and judge the interaction before any scaling.",
   "ownerAuthority": "Proceed with the smallest bounded implementation repair needed to make the already-authorized owner-development prototype genuinely owner-usable. Do not change accepted v2 semantics or broaden into production infrastructure.",
   "preflightCommand": "python scripts/task_preflight.py",
   "suspendedTaskSources": [

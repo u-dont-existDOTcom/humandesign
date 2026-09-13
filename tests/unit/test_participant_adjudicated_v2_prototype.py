@@ -6,8 +6,42 @@ import pytest
 
 from hdmatch.evaluation.participant_adjudicated_v2_prototype import (
     OwnerPrototypeSessionV2,
+    run_interactive_owner_demo,
     run_synthetic_owner_demo,
 )
+
+
+def _run(answers: list[str]) -> tuple[dict[str, object] | None, list[str]]:
+    values = iter(answers)
+    output: list[str] = []
+    result = run_interactive_owner_demo(lambda _prompt: next(values), output.append)
+    return result, output
+
+
+def test_interactive_accept_path_uses_owner_inputs() -> None:
+    result, _ = _run(["accept", "accept"])
+    assert result is not None and result["status"] == "accepted"
+
+
+def test_interactive_correction_revision_and_arbitrary_wording() -> None:
+    result, output = _run(
+        [
+            "correct",
+            "The participant drafted a plan.",
+            "revise",
+            "I draft plans first.",
+            "yes",
+            "accept",
+        ]
+    )
+    assert result is not None and result["wording"] == "I draft plans first."
+    assert any("Revised candidate question" in line for line in output)
+
+
+def test_interactive_negative_adjudication_paths() -> None:
+    assert _run(["not-supported"])[0] is None
+    assert _run(["accept", "reject"])[0]["status"] == "rejected"  # type: ignore[index]
+    assert _run(["accept", "unresolved"])[0]["status"] == "unresolved"  # type: ignore[index]
 
 
 def test_owner_demo_is_human_readable_and_accepted() -> None:

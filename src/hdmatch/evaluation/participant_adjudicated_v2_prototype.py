@@ -6,6 +6,7 @@ synthetic source provenance, while every persisted decision crosses the frozen v
 
 from __future__ import annotations
 
+from collections.abc import Callable
 from dataclasses import dataclass, field
 
 from hdmatch.evaluation.participant_adjudicated_v2 import (
@@ -56,6 +57,7 @@ class OwnerPrototypeSessionV2:
 
     record: LifePatternsRecordV2
     unsupported_fact_ids: set[str] = field(default_factory=set)
+    grounded_wordings: set[str] = field(default_factory=set)
     _proposal_revision: int = 0
 
     @classmethod
@@ -189,6 +191,10 @@ class OwnerPrototypeSessionV2:
             }
         )
 
+    def confirm_grounding(self, wording: str) -> None:
+        """Record the owner's explicit development-only grounding confirmation."""
+        self.grounded_wordings.add(wording)
+
     def refine_once(self, wording: str) -> PatternProposalV2:
         if self.record.participant_adjudications[-1].decision != "revise":
             raise ValueError("refinement requires a revise decision")
@@ -196,9 +202,17 @@ class OwnerPrototypeSessionV2:
         return self.propose_pattern(wording)
 
     def result(self) -> dict[str, object]:
-        validate_life_patterns_record_v2(self.record, callbacks=_CALLBACKS)
-        freeze = freeze_life_patterns_record_v2(self.record, callbacks=_CALLBACKS)
-        projection = build_adapter_projection_v2(freeze, callbacks=_CALLBACKS)
+        callbacks = TheoryBlindSemanticCallbacksV2(
+            provenance=_CALLBACKS.provenance,
+            asserts_real_world_nonoccurrence=_CALLBACKS.asserts_real_world_nonoccurrence,
+            grounding_supports_current_proposition=lambda proposal, link, facts: (
+                _CALLBACKS.grounding_supports_current_proposition(proposal, link, facts)
+                or proposal.proposition in self.grounded_wordings
+            ),
+        )
+        validate_life_patterns_record_v2(self.record, callbacks=callbacks)
+        freeze = freeze_life_patterns_record_v2(self.record, callbacks=callbacks)
+        projection = build_adapter_projection_v2(freeze, callbacks=callbacks)
         resolved = (
             freeze.payload.resolved_patterns[-1]
             if freeze.payload.resolved_patterns
@@ -235,5 +249,58 @@ def run_synthetic_owner_demo() -> list[str]:
     return lines
 
 
+def run_interactive_owner_demo(
+    input_fn: Callable[[str], str] = input,
+    output_fn: Callable[[str], None] = print,
+) -> dict[str, object] | None:
+    """Run the owner-controlled terminal slice with injectable I/O for tests."""
+    session = OwnerPrototypeSessionV2.synthetic()
+    output_fn("Episode: A bounded planning episode.")
+    output_fn("Proposed fact: The participant made a checklist before complex work.")
+    action = input_fn("Fact review [accept/correct/not-supported]: ").strip().lower()
+    if action == "correct":
+        wording = input_fn("Replacement fact wording: ").strip()
+        session.review_fact("FACT-1", action, wording)
+    elif action in {"accept", "not-supported"}:
+        session.review_fact("FACT-1", action)
+    else:
+        raise ValueError("choose accept, correct, or not-supported")
+    if action == "not-supported":
+        output_fn("No usable fact remains; no person-level pattern claim was made.")
+        return None
+
+    session.propose_pattern()
+    output_fn("Candidate question: Does this fit your experience: I prepare before complex work.")
+    decision = input_fn("Pattern decision [accept/revise/reject/unresolved]: ").strip().lower()
+    if decision == "revise":
+        wording = input_fn("Participant-approved wording: ").strip()
+        grounding = input_fn(
+            "Does the episode evidence support this wording? [yes/no]: "
+        ).strip().lower()
+        if grounding != "yes":
+            raise ValueError("explicit development grounding confirmation is required")
+        session.confirm_grounding(wording)
+        session.adjudicate("revise", wording)
+        revised = session.refine_once(wording)
+        output_fn(f"Revised candidate question: {revised.question_text}")
+        decision = input_fn("Final decision [accept/reject/unresolved]: ").strip().lower()
+        session.adjudicate(decision, wording if decision == "accept" else None)
+    elif decision in {"accept", "reject", "unresolved"}:
+        session.adjudicate(
+            decision,
+            "I prepare before complex work." if decision == "accept" else None,
+        )
+    else:
+        raise ValueError("choose accept, revise, reject, or unresolved")
+    result = session.result()
+    output_fn(f"Result: {result['status']}")
+    if result["wording"]:
+        output_fn(f"Accepted wording: {result['wording']}")
+    evidence_fact_ids = result["evidence_fact_ids"]
+    if isinstance(evidence_fact_ids, tuple):
+        output_fn(f"Evidence facts: {', '.join(str(value) for value in evidence_fact_ids)}")
+    return result
+
+
 if __name__ == "__main__":
-    print("\n".join(run_synthetic_owner_demo()))
+    run_interactive_owner_demo()
