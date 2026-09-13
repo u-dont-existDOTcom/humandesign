@@ -10,7 +10,7 @@ V2 independent semantic review: **PASS**.
 - Bounded v2 core implementation verified: `true`
 - State-only closure head: `37eb206c009880ec7b273e96c66fd0f8af018be6`
 - State-only hosted CI: `success`
-- Active task: `life-patterns-v2-owner-development-prototype`
+- Active task: `life-patterns-v2-owner-development-prototype` — OWNER PRODUCT JUDGMENT REQUIRED
 
 The next phase is intentionally small: an owner-usable development prototype exercising episode facts, append-only fact correction, candidate pattern questioning, participant adjudication/revision, and resolved pattern output through the accepted v2 implementation.
 
@@ -25,5 +25,7 @@ Authorized: owner-only development/stress testing of the prototype.
 Still closed: external participant collection, automated participant coding, target-model activity, merge/deploy, recruitment/contact, and spending.
 
 The next gate is **owner product judgment** after an owner-usable prototype and focused green tests.
+
+Owner prototype head: `1624c94f9ed130a446d86eed7fafd4309255c4a6`.
 
 **There was never a completion policy.** Do not infer one from artifact counts, test counts, review status, or gate status.
