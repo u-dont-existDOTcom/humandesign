@@ -25,6 +25,8 @@ This is an implementation/usability repair. Do **not** change the accepted v2 se
 
 The executable path is scripted: `run_synthetic_owner_demo()` preselects fact correction, pattern revision, and final acceptance. The owner cannot make those choices while running the advertised command. Tests prove plumbing, not owner interaction.
 
+There is a second implementation detail inside the same defect: the current prototype-only semantic grounding callback recognizes only two hard-coded pattern wordings (`I prepare before complex work.` and `I plan before complex work.`). A naive interactive repair that accepts arbitrary participant revision text would therefore fail validation for wording outside that whitelist. Do not solve this by weakening the production v2 contract.
+
 ## Required repair
 
 Implement the smallest terminal interaction over the existing prototype session. Prefer injected I/O so it is deterministic under tests.
@@ -42,6 +44,8 @@ Required runtime behavior:
 - validate/freeze/project through the existing v2 core before reporting success;
 - do not hard-code the owner's substantive choices in the interactive path.
 
+For owner-entered revised wording, keep any flexibility strictly inside the **development harness**. The production v2 semantic contract must remain unchanged. The prototype may use a development-only, target-theory-blind grounding mechanism bound to the owner interaction (for example an explicit owner confirmation that the episode evidence supports the revised wording, or another equally narrow provenance-marked test double). It must not silently treat every arbitrary proposition as grounded, and it must not modify `participant_adjudicated_v2.py` merely to make the prototype pass.
+
 A CLI is sufficient. Do not add web UI, auth, email recovery, voice, deployment, paid inference, target-model logic, comprehensive taxonomies, or historical automatic map generation.
 
 ## Tests
@@ -52,7 +56,8 @@ Add direct regression coverage showing that injected owner inputs determine at l
 2. correct fact -> revise pattern wording -> accept revised pattern;
 3. not-supported fact -> no pattern proposal;
 4. reject pattern -> rejected result;
-5. unresolved pattern -> unresolved result.
+5. unresolved pattern -> unresolved result;
+6. owner-entered revised wording outside the old two-string whitelist can complete only through the explicit development-only grounding path, without changing production v2 semantics.
 
 Preserve all existing prototype and v2 core tests.
 
