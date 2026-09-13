@@ -46,6 +46,10 @@ The two-reviewed-episode wait is a development-probe design choice, not a univer
 
 The browser app does not import or invoke the historical `OpenAILifePatternsMapper` or `/map` person-level generator. Accepted/rejected/unresolved results pass through the frozen v2 validation/freeze/projection path.
 
+Focused completion command:
+
+`python -m pytest tests/unit/test_life_patterns_v2_owner_app.py tests/unit/test_participant_adjudicated_v2.py -q`
+
 ### Current gate
 
 Use the owner-only browser app with **2–3 real episodes** and judge whether the interaction actually feels intelligent and natural. Do not scale the interview architecture before that owner judgment.
