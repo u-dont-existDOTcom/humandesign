@@ -34,8 +34,10 @@ Use Work's own cloud terminal/computer. Do not require the owner to locate or co
 6. Run the actual executable interaction:
    `.venv/bin/python -m hdmatch.evaluation.participant_adjudicated_v2_prototype`
    or the equivalent interpreter from Work's environment.
-7. Maintain the terminal process interactively. Each time the executable requests owner input, relay that prompt to the owner in the Work conversation and wait for the owner's answer. Enter exactly the owner's answer into the terminal. Do not select, normalize, reinterpret, improve, or substitute an answer.
-8. Continue until the executable produces the final result or terminates because no usable fact remains.
+7. Maintain the terminal process interactively. **Before requesting each owner answer, show the owner the complete owner-visible terminal output emitted since launch or since the previous owner input, followed by the current input prompt. Never send a bare CLI prompt by itself.** For example, the first relay must include the displayed episode, the proposed fact, and then `Fact review [accept/correct/not-supported]:` in one message.
+8. Wait for the owner's answer. Enter exactly the owner's answer into the terminal. Do not select, normalize, reinterpret, improve, or substitute an answer.
+9. After entering an answer, capture and relay all new owner-visible terminal output before asking for the next answer. Preserve enough context that the owner can understand what they are judging without consulting this task file or source code.
+10. Continue until the executable produces the final result or terminates because no usable fact remains.
 
 ## Important interaction boundary
 
@@ -49,6 +51,8 @@ The owner, not Work, must make the substantive choices:
 - final `accept | reject | unresolved` after a revision.
 
 Work may explain a literal CLI error if one occurs, but must not coach the owner toward any answer.
+
+A relay that contains only an input prompt and omits the immediately preceding episode/fact/question/result context is invalid. If that occurs, do not ask the owner to answer yet; re-display the missing owner-visible context first.
 
 ## Privacy and repository rules
 
