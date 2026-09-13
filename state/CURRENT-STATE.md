@@ -2,30 +2,32 @@
 
 ## Life Patterns — 2026-09-13
 
-Active task: `life-patterns-participant-adjudicated-neutral-v2-core-implementation`
+Active task: `life-patterns-v2-owner-development-prototype`.
 
-Frozen semantic candidate head: `10d57a19b96f38303b2a30abff4281d6abfff83b`
+Frozen semantic candidate head: `10d57a19b96f38303b2a30abff4281d6abfff83b`.
 
-Independent semantic review: `state/LIFE-PATTERNS-PARTICIPANT-ADJUDICATED-NEUTRAL-v2-INDEPENDENT-SEMANTIC-REVIEW-2026-09-12.md`
+Independent semantic review: **PASS** — zero blockers, `semantic_change_required=false`.
 
-Semantic disposition: **PASS** — `semantic_change_required=false`, `safe_for_implementation=true`, `blocking_findings=0`.
+Bounded v2 core repair head: `75c2fa4366e2721dc257ec839532b10f54f1de20`.
 
-Initial bounded implementation head: `122d906dc416948c36910b40d442d5a913928767`
+Core implementation disposition: **PASS** — zero known implementation blockers from that supervision cycle.
 
-Implementation supervisor review: `state/LIFE-PATTERNS-PARTICIPANT-ADJUDICATED-v2-IMPLEMENTATION-SUPERVISOR-REVIEW-2026-09-13.md`
+State-only closure head `37eb206c009880ec7b273e96c66fd0f8af018be6` has hosted CI green.
 
-Adapter-firewall repair head: `75c2fa4366e2721dc257ec839532b10f54f1de20`
+The selected next phase is a **bounded owner-development prototype**. Read `state/LIFE-PATTERNS-v2-OWNER-PROTOTYPE-METHOD-FORK-2026-09-13.md` and `tasks/LIFE-PATTERNS-v2-OWNER-DEVELOPMENT-PROTOTYPE-2026-09-13.md`.
 
-Final implementation disposition: `state/LIFE-PATTERNS-PARTICIPANT-ADJUDICATED-v2-IMPLEMENTATION-FINAL-DISPOSITION-2026-09-13.md`
+Prototype objective: test one interaction slice against the accepted v2 semantics:
 
-Implementation disposition: **PASS** — bounded v2 core implementation verified, `implementationBlockingFindings=0`.
+`episode -> episode facts -> owner fact review/correction -> candidate pattern question -> owner adjudication/revision -> accepted/rejected/unresolved pattern`
 
-Task completion command: `.venv/bin/python -m pytest tests/unit/test_participant_adjudicated_v2.py -q`
+The eventual product surface remains unresolved. The prototype is a reversible implementation-bound experiment. Historical automatic map-generation semantics are not authoritative for this phase.
 
-Current task: `tasks/ACTIVE-TASK.json`
+Authorized now: bounded owner-only development/stress testing of the prototype.
 
-Dated overlay: `state/LIFE-PATTERNS-CURRENT-STATE-2026-09-12.md`
+Still closed: external participant collection, automated participant coding, target-model activity, merge/deploy, recruitment/contact, and spending.
 
-Current gate: the bounded v2 core implementation task is complete. No broader Life Patterns completion is implied, and no further consequential phase is selected by this lock. Existing authorization boundaries remain defined by `tasks/ACTIVE-TASK.json`.
+Next gate: **owner product judgment** after a small owner-usable prototype and focused green tests. Technical completion alone does not authorize scaling.
+
+Current task lock: `tasks/ACTIVE-TASK.json`.
 
 **There was never a completion policy.** Do not infer one from artifact counts, test counts, review status, or gate status.
