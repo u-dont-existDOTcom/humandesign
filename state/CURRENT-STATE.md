@@ -34,7 +34,13 @@ The new owner-only browser app lives at:
 - `src/hdmatch/api/life_patterns_v2_owner_app.py`
 - `src/hdmatch/api/life_patterns_v2_owner_ui.py`
 
-It uses the owner's own real episodes, not the synthetic checklist toy. Runtime narratives stay in memory only. A target-theory-blind model extracts literal/minimally normalized facts. The owner reviews those facts. After two reviewed episodes in this bounded product probe, the model may propose at most one cross-episode pattern hypothesis backed by reviewed facts from at least two episodes. The owner alone accepts, revises, rejects, or leaves the pattern unresolved.
+The execution-only Work launcher is:
+
+- `tasks/LIFE-PATTERNS-v2-OWNER-REAL-DATA-BROWSER-WORK-RUNNER-2026-09-13.md`
+
+Work may prepare the environment and launch the local browser, but it must not return to prompt-by-prompt relay. The owner interacts with the web UI directly.
+
+The app uses the owner's own real episodes, not the synthetic checklist toy. Runtime narratives stay in memory only. A target-theory-blind model extracts literal/minimally normalized facts. The owner reviews those facts. After two reviewed episodes in this bounded product probe, the model may propose at most one cross-episode pattern hypothesis backed by reviewed facts from at least two episodes. The owner alone accepts, revises, rejects, or leaves the pattern unresolved.
 
 The two-reviewed-episode wait is a development-probe design choice, not a universal scientific sufficiency threshold.
 
@@ -42,7 +48,7 @@ The browser app does not import or invoke the historical `OpenAILifePatternsMapp
 
 ### Current gate
 
-Run the owner-only browser app with **2–3 real episodes** and judge whether the interaction actually feels intelligent and natural. Do not scale the interview architecture before that owner judgment.
+Use the owner-only browser app with **2–3 real episodes** and judge whether the interaction actually feels intelligent and natural. Do not scale the interview architecture before that owner judgment.
 
 Still closed: external participant collection, automated participant coding, target-model activity, public deployment, recruitment/contact, merge/release, and unapproved spending.
 
