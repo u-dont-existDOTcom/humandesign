@@ -42,15 +42,17 @@ Therefore a small implementation-bound harness is justified as a reversible expe
 
 Existing private development episode at runtime -> system presents a few source-grounded episode facts -> owner corrects/accepts them -> system proposes a candidate recurring pattern as a question -> owner accepts/revises/rejects/unresolved -> one revised question may follow -> the harness shows the resulting v2 record and accepted wording with scope/exceptions. No target model is available anywhere in the flow.
 
+The owner must actually make those decisions at runtime. A deterministic transcript with preselected correction/revision/acceptance verifies plumbing only and does not reach owner product judgment.
+
 ## Current method status
 
 `UNRESOLVED` for the eventual product surface; `ESTABLISHED` only that an implementation-bound interactive probe is needed before scaling.
 
 ## Recommended next action
 
-Build the smallest reversible owner-development harness that exercises the accepted v2 core end to end. Do not add production auth, recovery, voice, deployment, generalized map generation, model scoring, or broad participant collection.
+Repair `LP-PAN-v2-PROT-001` by adding the smallest owner-controlled runtime interaction over the existing prototype. Do not add production auth, recovery, voice, deployment, generalized map generation, model scoring, or broad participant collection.
 
-Owner action: `NONE`.
+Owner action: `NONE` until the interactive repair is green; then `OWNER PRODUCT JUDGMENT`.
 
 ## Success / stop boundary
 
@@ -62,5 +64,7 @@ Stop after a small owner-usable prototype and focused tests. Return to the super
 
 - Frozen semantic candidate head: `10d57a19b96f38303b2a30abff4281d6abfff83b`
 - Bounded core repair head: `75c2fa4366e2721dc257ec839532b10f54f1de20`
-- Final core disposition: `state/LIFE-PATTERNS-PARTICIPANT-ADJUDICATED-v2-IMPLEMENTATION-FINAL-DISPOSITION-2026-09-13.md`
+- Scripted prototype head: `1624c94f9ed130a446d86eed7fafd4309255c4a6`
+- Defect: `state/LIFE-PATTERNS-v2-OWNER-PROTOTYPE-INTERACTION-DEFECT-001-2026-09-13.md`
+- Repair task: `tasks/LIFE-PATTERNS-v2-OWNER-PROTOTYPE-INTERACTION-REPAIR-001-2026-09-13.md`
 - Universal method-fork guidance: `u-dont-existDOTcom/universal-dev-architecture/templates/METHOD-FORK-CARD.md`
