@@ -5,18 +5,25 @@ V2 independent semantic review: **PASS**.
 - Candidate head: `10d57a19b96f38303b2a30abff4281d6abfff83b`
 - Blocking semantic findings: `0`
 - Semantic change required: `false`
-- Safe for implementation: `true`
-- Initial bounded implementation head: `122d906dc416948c36910b40d442d5a913928767`
 - Adapter-firewall repair head: `75c2fa4366e2721dc257ec839532b10f54f1de20`
 - Implementation blocking findings: `0`
 - Bounded v2 core implementation verified: `true`
-- Active task: `life-patterns-participant-adjudicated-neutral-v2-core-implementation`
-- Completion command: `.venv/bin/python -m pytest tests/unit/test_participant_adjudicated_v2.py -q`
+- State-only closure head: `37eb206c009880ec7b273e96c66fd0f8af018be6`
+- State-only hosted CI: `success`
+- Active task: `life-patterns-v2-owner-development-prototype`
 
-The supervisor-discovered adapter-firewall defect `LP-PAN-v2-IMPL-001` is resolved. Non-inspect episode-fact combination now fails when requested facts span multiple episodes; the exact bypass has a regression test. The frozen v2 semantic candidate and independent semantic review remain unchanged.
+The next phase is intentionally small: an owner-usable development prototype exercising episode facts, append-only fact correction, candidate pattern questioning, participant adjudication/revision, and resolved pattern output through the accepted v2 implementation.
 
-Final implementation disposition: `state/LIFE-PATTERNS-PARTICIPANT-ADJUDICATED-v2-IMPLEMENTATION-FINAL-DISPOSITION-2026-09-13.md`
+Method-fork record: `state/LIFE-PATTERNS-v2-OWNER-PROTOTYPE-METHOD-FORK-2026-09-13.md`.
 
-The bounded v2 core implementation task is complete. This does **not** imply broader Life Patterns completion. No further consequential phase is selected by the current lock; see `tasks/ACTIVE-TASK.json` for standing authorization boundaries.
+Task: `tasks/LIFE-PATTERNS-v2-OWNER-DEVELOPMENT-PROTOTYPE-2026-09-13.md`.
+
+This is a reversible product experiment, not a new semantic revision. The eventual product surface is unresolved. Do not scale or reuse the historical automatic map generator as person-level authority before owner product judgment.
+
+Authorized: owner-only development/stress testing of the prototype.
+
+Still closed: external participant collection, automated participant coding, target-model activity, merge/deploy, recruitment/contact, and spending.
+
+The next gate is **owner product judgment** after an owner-usable prototype and focused green tests.
 
 **There was never a completion policy.** Do not infer one from artifact counts, test counts, review status, or gate status.
