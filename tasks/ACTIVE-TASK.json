@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "taskId": "life-patterns-participant-adjudicated-neutral-v2-independent-semantic-review",
-  "status": "independent_semantic_review_passed",
+  "taskId": "life-patterns-participant-adjudicated-neutral-v2-implementation-supervision",
+  "status": "implementation_candidate_committed_review_required",
   "exclusive": true,
   "requiredBranch": "codex/discover-life-patterns-mvp",
   "pullRequest": 24,
@@ -9,22 +9,28 @@
   "candidateSemanticArchitecture": "state/LIFE-PATTERNS-PARTICIPANT-ADJUDICATED-NEUTRAL-SUBSTRATE-v2-CANDIDATE-2026-09-12.md",
   "candidateSemanticContract": "state/LIFE-PATTERNS-PARTICIPANT-ADJUDICATED-NEUTRAL-CONTRACT-v2-CANDIDATE-2026-09-12.json",
   "candidateProducingHead": "10d57a19b96f38303b2a30abff4281d6abfff83b",
-  "candidateSpecificBlindReviewPrompt": "tasks/LIFE-PATTERNS-PARTICIPANT-ADJUDICATED-NEUTRAL-v2-FRESH-BLIND-REVIEW-2026-09-12.md",
-  "freshSemanticReviewLaunch": "tasks/LIFE-PATTERNS-FRESH-THEORY-BLIND-SEMANTIC-REVIEW-LAUNCH-2026-09-12.md",
   "independentSemanticReview": "state/LIFE-PATTERNS-PARTICIPANT-ADJUDICATED-NEUTRAL-v2-INDEPENDENT-SEMANTIC-REVIEW-2026-09-12.md",
-  "reviewedPrHead": "963229c7e3f859c3393ddb500adf65d68de4adc2",
-  "independentSemanticReviewComplete": true,
   "semanticChangeRequired": false,
   "safeForProductionImplementation": true,
+  "implementationLaunch": "tasks/LIFE-PATTERNS-v2-IMPLEMENTATION-LAUNCH-2026-09-12.md",
+  "implementationHead": "122d906dc416948c36910b40d442d5a913928767",
+  "implementationFiles": [
+    "src/hdmatch/evaluation/participant_adjudicated_v2.py",
+    "tests/unit/test_participant_adjudicated_v2.py"
+  ],
+  "completionCommand": ".venv/bin/python -m pytest tests/unit/test_participant_adjudicated_v2.py -q",
   "humanCollectionAuthorized": false,
-  "nextAction": "Independent v2 semantic review passed with zero blockers. Production implementation may proceed only in a separate non-review context under the frozen v2 candidate and contract. Human collection, automated participant coding, target-model mapping/scoring/reveal or fit/result inspection, merge/deploy, recruitment/contact, and spending remain unauthorized unless later canonical state explicitly changes those boundaries.",
-  "ownerAuthority": "Preserve the open-world participant-adjudicated architecture. V2 is semantically accepted as the frozen implementation target after a separate fresh target-theory-blind PASS. This review context must not implement production code or perform target-model activity.",
+  "automatedParticipantCodingAuthorized": false,
+  "mergeDeployAuthorized": false,
+  "spendingAuthorized": false,
+  "nextAction": "Supervising Chat must review the committed v2 implementation against the frozen v2 contract, repair bounded control-plane defects, and record the implementation disposition before any later phase.",
+  "ownerAuthority": "The v2 semantics are accepted and frozen. The new implementation is a candidate implementation of that contract and is not a merge or deployment authorization.",
   "preflightCommand": "python scripts/task_preflight.py",
   "suspendedTaskSources": [
-    "production implementation inside this independent-review context",
-    "target-model mapping/scoring/reveal or fit/result inspection",
-    "birth/chart outputs or prior predictions in blind contexts",
-    "human collection or automated participant coding",
-    "merge/deploy, recruitment/contact, spending"
+    "merge or deployment",
+    "participant collection",
+    "automated participant coding",
+    "downstream model activity",
+    "recruitment or spending"
   ]
 }
