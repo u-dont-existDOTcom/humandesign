@@ -8,24 +8,25 @@ V2 independent semantic review: **PASS**.
 - Adapter-firewall repair head: `75c2fa4366e2721dc257ec839532b10f54f1de20`
 - Implementation blocking findings: `0`
 - Bounded v2 core implementation verified: `true`
-- State-only closure head: `37eb206c009880ec7b273e96c66fd0f8af018be6`
-- State-only hosted CI: `success`
-- Active task: `life-patterns-v2-owner-development-prototype` — OWNER PRODUCT JUDGMENT REQUIRED
+- Scripted owner prototype head: `1624c94f9ed130a446d86eed7fafd4309255c4a6`
+- Work receipt/final state head: `67546de3f46f6c1999dce2f1dcc54b5e89a3cd9f`
+- Hosted verify on receipt head: `success`
+- Active task: `life-patterns-v2-owner-prototype-interaction-repair-001` — IMPLEMENTATION REPAIR REQUIRED
 
-The next phase is intentionally small: an owner-usable development prototype exercising episode facts, append-only fact correction, candidate pattern questioning, participant adjudication/revision, and resolved pattern output through the accepted v2 implementation.
+`LP-PAN-v2-PROT-001`: the prototype plumbing is green, but the executable demo hard-codes the fact correction, pattern revision, and final acceptance. It therefore does not yet provide the owner-controlled interaction required for **OWNER PRODUCT JUDGMENT**.
 
-Method-fork record: `state/LIFE-PATTERNS-v2-OWNER-PROTOTYPE-METHOD-FORK-2026-09-13.md`.
+Defect record: `state/LIFE-PATTERNS-v2-OWNER-PROTOTYPE-INTERACTION-DEFECT-001-2026-09-13.md`.
 
-Task: `tasks/LIFE-PATTERNS-v2-OWNER-DEVELOPMENT-PROTOTYPE-2026-09-13.md`.
+Repair task: `tasks/LIFE-PATTERNS-v2-OWNER-PROTOTYPE-INTERACTION-REPAIR-001-2026-09-13.md`.
 
-This is a reversible product experiment, not a new semantic revision. The eventual product surface is unresolved. Do not scale or reuse the historical automatic map generator as person-level authority before owner product judgment.
+This is a narrow implementation/usability repair. The accepted v2 semantics/contract and bounded core implementation remain unchanged.
 
-Authorized: owner-only development/stress testing of the prototype.
+Required next gate: add a small interactive local surface in which owner runtime choices control fact review and pattern adjudication/refinement, then pass focused prototype/core tests, focused lint/typecheck, and `python scripts/task_preflight.py`.
+
+Only after that repair returns green does the task return to **OWNER PRODUCT JUDGMENT REQUIRED**.
+
+Authorized: bounded owner-only development/stress testing and this exact prototype repair.
 
 Still closed: external participant collection, automated participant coding, target-model activity, merge/deploy, recruitment/contact, and spending.
-
-The next gate is **owner product judgment** after an owner-usable prototype and focused green tests.
-
-Owner prototype head: `1624c94f9ed130a446d86eed7fafd4309255c4a6`.
 
 **There was never a completion policy.** Do not infer one from artifact counts, test counts, review status, or gate status.
