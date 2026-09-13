@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
-  "taskId": "life-patterns-v2-owner-html-prototype",
-  "status": "owner_html_prototype_required",
+  "taskId": "life-patterns-v2-owner-real-data-browser-prototype",
+  "status": "owner_real_data_browser_judgment_required",
   "exclusive": true,
   "requiredBranch": "codex/discover-life-patterns-mvp",
   "pullRequest": 24,
-  "taskPath": "tasks/LIFE-PATTERNS-v2-OWNER-HTML-PROTOTYPE-2026-09-13.md",
-  "feedbackPath": "state/LIFE-PATTERNS-v2-OWNER-UX-HTML-FEEDBACK-2026-09-13.md",
+  "taskPath": "tasks/LIFE-PATTERNS-v2-OWNER-REAL-DATA-BROWSER-PROTOTYPE-2026-09-13.md",
   "currentStateOverlay": "state/LIFE-PATTERNS-CURRENT-STATE-2026-09-12.md",
   "candidateProducingHead": "10d57a19b96f38303b2a30abff4281d6abfff83b",
   "implementationRepairHead": "75c2fa4366e2721dc257ec839532b10f54f1de20",
-  "interactiveCliHead": "e915c8ec911c3ff06748c86a70c9868fe33096cc",
+  "syntheticHtmlHead": "894fc8c237221b51106f81c0e7c276dd27a878fb",
+  "realDataBrowserImplementationHead": "002d6264f05a7e380d4cac7e188f8c9455fbf971",
   "semanticChangeRequired": false,
   "ownerDevelopmentSelfTestAuthorized": true,
   "humanCollectionAuthorized": false,
@@ -19,9 +19,9 @@
   "mergeDeployAuthorized": false,
   "recruitmentContactAuthorized": false,
   "spendingAuthorized": false,
-  "completionCommand": ".venv/bin/python -m pytest tests/unit/test_participant_adjudicated_v2_prototype.py tests/unit/test_participant_adjudicated_v2.py -q",
-  "nextAction": "Build and deliver the directly usable v2 owner HTML/browser prototype defined in tasks/LIFE-PATTERNS-v2-OWNER-HTML-PROTOTYPE-2026-09-13.md. Reuse the prior HTML presentation shell where useful; do not restore the old automatic person-level map semantics. Do not require terminal interaction from the owner.",
-  "ownerAuthority": "The owner rejected the Work-mediated terminal relay as an adequate product-judgment surface and explicitly preferred the prior HTML-app interaction model. Preserve the accepted v2 semantics while returning the bounded owner test to a direct browser/HTML surface.",
+  "completionCommand": "python -m pytest tests/unit/test_life_patterns_v2_owner_app.py tests/unit/test_participant_adjudicated_v2.py -q",
+  "nextAction": "OWNER REAL-DATA BROWSER JUDGMENT REQUIRED: run the owner-only Life Patterns v2 browser app, use 2-3 real episodes, and judge whether fact review, tentative pattern proposal, revision, evidence-source clarification, and final adjudication feel intelligent and natural. Do not scale before that judgment.",
+  "ownerAuthority": "The owner approved moving past the synthetic HTML wording probe to a real owner-only conversation using the owner's own episodes. Preserve the accepted v2 semantics, reuse the direct browser interaction model, and keep target-model/chart information out of the loop.",
   "preflightCommand": "python scripts/task_preflight.py",
   "suspendedTaskSources": [
     "merge or deployment",
@@ -29,9 +29,9 @@
     "automated participant coding",
     "downstream target-model activity",
     "recruitment or contact",
-    "spending",
-    "production auth/recovery/voice expansion before owner product judgment",
+    "public deployment",
+    "production auth/recovery/voice expansion before owner real-data judgment",
     "historical automatic Life Patterns Map generation as person-level authority",
-    "terminal or Work-relay surface as the final owner product-judgment experience"
+    "terminal or Work prompt relay as the owner-facing interaction"
   ]
 }
