@@ -1086,6 +1086,16 @@ def validate_adapter_operation_v2(
         errors.append(
             f"adapter requested unrepresented accepted patterns: {','.join(missing_patterns)}"
         )
+    if operation.operation != "inspect" and operation.episode_fact_ids:
+        requested_facts = {
+            row.fact.fact_id: row.fact
+            for row in projection.episode_facts
+            if row.fact.fact_id in operation.episode_fact_ids
+        }
+        if len({fact.episode_id for fact in requested_facts.values()}) > 1:
+            errors.append(
+                "non-inspect episode-fact operations cannot cross episode boundaries"
+            )
     if errors:
         raise LifePatternsV2ValidationError(tuple(errors))
 

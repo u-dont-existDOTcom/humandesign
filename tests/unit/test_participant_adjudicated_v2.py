@@ -451,6 +451,17 @@ def test_t006_adapter_firewall_rejects_episode_fact_person_level_aggregation() -
     validate_adapter_operation_v2(accepted_projection, operation)
     assert len(accepted_projection.accepted_patterns) == 1
 
+    cross_episode_operation = AdapterOperationV2(
+        operation="aggregate",
+        output_semantic_level="episode_fact",
+        episode_fact_ids=("FACT-0", "FACT-2"),
+    )
+    with pytest.raises(
+        LifePatternsV2ValidationError,
+        match="cannot cross episode boundaries",
+    ):
+        validate_adapter_operation_v2(projection, cross_episode_operation)
+
 
 def test_freeze_is_deterministic_content_addressed_and_immutable(tmp_path: Path) -> None:
     record = _accepted_record()
