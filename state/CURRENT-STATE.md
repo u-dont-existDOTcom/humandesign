@@ -2,7 +2,7 @@
 
 ## Life Patterns — 2026-09-14
 
-Active task: `life-patterns-v2-hidden-ledger-conversational-insight-probe` — **OWNER CONVERSATIONAL INSIGHT JUDGMENT IN PROGRESS / PRELIMINARY POSITIVE**.
+Active task: `life-patterns-v2-owner-multi-pattern-continuation` — **IMPLEMENTATION IN PROGRESS**.
 
 Frozen semantic candidate head: `10d57a19b96f38303b2a30abff4281d6abfff83b`.
 
@@ -74,7 +74,7 @@ One good turn does not establish that the complete interview strategy is success
 
 ## Current outcome / next gate
 
-Continue the same bounded owner-only session naturally. The next decision-changing evidence is later-turn quality, especially the first deeper discriminating move and, if reached naturally, a cross-situation synthesis / boundary check.
+The current bounded continuation task adds a coherent post-pattern frontier: explore another pattern, finish-for-now summary, and owner-triggered copy/export.
 
 If later turns remain good and produce genuine information gain, the interaction strategy can advance beyond this probe. If it degrades into paraphrase/confirmation, classify that failure rather than polishing around it.
 
@@ -83,5 +83,7 @@ Authorized: bounded owner-only testing of the deployed probe and owner-initiated
 Still closed: external participant collection, automated participant coding, target-model activity, broader public participant deployment, recruitment/contact, merge/release, production auth/recovery/voice expansion, and unapproved spending.
 
 Current task lock: `tasks/ACTIVE-TASK.json`.
+
+Focused completion command: `python -m pytest tests/unit/test_life_patterns_v2_owner_conversation.py tests/unit/test_life_patterns_v2_owner_pattern_first.py -q`
 
 **There was never a completion policy.** Do not infer one from artifact counts, test counts, review status, or gate status.

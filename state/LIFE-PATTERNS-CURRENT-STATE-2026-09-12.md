@@ -12,7 +12,7 @@ V2 independent semantic review: **PASS**.
 - Hosted CI on pattern-first repair head: `success`
 - Railway owner-only deployment ID: `842b13f2-66b2-435e-a918-dbc81cde00e7`
 - Railway owner-only deployment status: `success`
-- Active task: `life-patterns-v2-hidden-ledger-conversational-insight-probe` — OWNER CONVERSATIONAL INSIGHT JUDGMENT REQUIRED
+- Active task: `life-patterns-v2-owner-multi-pattern-continuation` — IMPLEMENTATION IN PROGRESS
 
 ## Owner product judgment and strategy history
 
@@ -70,7 +70,9 @@ Deployment `842b13f2-66b2-435e-a918-dbc81cde00e7` from source head `67b038b27d62
 
 Repaired-surface direct outcome evidence: **NOT YET MEASURED**.
 
-Next gate: **OWNER CONVERSATIONAL INSIGHT JUDGMENT REQUIRED**. Start a fresh owner-only browser session and judge whether the repaired interviewer creates a nontrivial context distinction, developmental change, counterexample/boundary, contrast, or synthesis that was not simply handed to it verbatim.
+Next gate: **OWNER REAL-DATA BROWSER JUDGMENT REQUIRED** after the bounded continuation frontier is deployed and verified.
+
+Focused completion command: `python -m pytest tests/unit/test_life_patterns_v2_owner_conversation.py tests/unit/test_life_patterns_v2_owner_pattern_first.py -q`
 
 If the experience remains primarily paraphrase plus confirmation, fail the strategy rather than polishing the UI.
 

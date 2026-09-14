@@ -81,9 +81,19 @@ button.danger{background:#fff;color:var(--bad);border-color:#e5a6a6}button:disab
 </div>
 
 <div id="result" class="hidden result"></div>
+<div id="continuation" class="hidden card">
+  <h2>Where next?</h2>
+  <p class="note">You can explore another separate pattern thread, or finish for now. This summary does not claim scientific completeness.</p>
+  <div class="row">
+    <button id="exploreAnother">Explore another pattern</button>
+    <button id="finishForNow" class="secondary">Finish for now</button>
+    <button id="copyExport" class="subtle">Copy interview summary</button>
+  </div>
+  <div id="sessionSummary" class="note hidden"></div>
+</div>
 
 <script>
-let sessionId=null;let groundingChoice=null;
+let sessionId=null;let groundingChoice=null;let completedResults=[];
 const $=id=>document.getElementById(id);
 function show(id){$(id).classList.remove('hidden')}function hide(id){$(id).classList.add('hidden')}
 function setStatus(text,error=false){$('status').textContent=text;$('status').className=error?'error':'note'}
@@ -100,6 +110,14 @@ async function start(){
     bubble('ai',p.opening);
     $('message').focus();
   }catch(e){$('sessionState').textContent='Could not start';setStatus(e.message,true)}
+}
+
+async function startFreshPattern(){
+  const p=await api('/api/owner-v2/conversation/sessions',{method:'POST'});
+  sessionId=p.session_id;groundingChoice=null;
+  $('sessionState').textContent='Private conversational probe · new pattern thread';
+  hide('result');hide('continuation');hide('patternPanel');show('composer');
+  $('message').value='';bubble('ai',p.opening);$('message').focus();
 }
 
 $('send').onclick=send;
@@ -162,11 +180,17 @@ function renderResult(p){
   let body='';
   if(p.wording)body+='<p><strong>'+escapeHtml(p.wording)+'</strong></p>';
   if(p.message)body+='<p>'+escapeHtml(p.message)+'</p>';
-  body+='<p class="note">That is the end of this bounded probe. The useful question is whether the conversation got somewhere you did not trivially give it.</p>';
+  body+='<p class="note">This thread is complete. You can continue with another pattern or finish for now.</p>';
   $('result').innerHTML='<div class="meta">Current result</div><h2>'+title+'</h2>'+body;
+  completedResults.push({status:p.status,wording:p.wording||null});
   show('result');
+  show('continuation');
   $('result').scrollIntoView({behavior:'smooth'});
 }
+
+$('exploreAnother').onclick=async()=>{try{await startFreshPattern()}catch(e){$('sessionSummary').textContent=e.message;$('sessionSummary').className='error'}};
+$('finishForNow').onclick=()=>{const summary=completedResults.map((r,i)=>`${i+1}. ${r.status}${r.wording?' — '+r.wording:''}`).join('\n');$('sessionSummary').textContent=summary||'No completed pattern threads yet.';show('sessionSummary')};
+$('copyExport').onclick=async()=>{const transcript=[...document.querySelectorAll('#conversation .bubble')].map(el=>el.innerText).join('\n\n');const results=completedResults.map((r,i)=>`${i+1}. ${r.status}${r.wording?' — '+r.wording:''}`).join('\n');const text=`Life Patterns owner interview\n\n${transcript}\n\nCompleted results\n${results}`;try{await navigator.clipboard.writeText(text);$('sessionSummary').textContent='Interview summary copied to your clipboard.'}catch(e){$('sessionSummary').textContent=text}show('sessionSummary')};
 
 start();
 </script>

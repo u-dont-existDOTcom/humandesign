@@ -218,6 +218,17 @@ def test_ui_keeps_ledger_hidden_and_removes_annotation_workflow() -> None:
     assert "If it mostly paraphrases you, this version fails too." in HTML
 
 
+def test_ui_exposes_multi_pattern_continuation_and_owner_export() -> None:
+    from hdmatch.api.life_patterns_v2_owner_conversation_ui import HTML
+
+    assert "end of this bounded probe" not in HTML
+    assert "Explore another pattern" in HTML
+    assert "Finish for now" in HTML
+    assert "copyExport" in HTML
+    assert "navigator.clipboard.writeText" in HTML
+    assert "hidden evidence ledger" in HTML
+
+
 def test_conversation_module_has_no_historical_map_or_target_theory_language() -> None:
     import hdmatch.api.life_patterns_v2_owner_conversation as module
 
