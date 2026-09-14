@@ -1,6 +1,6 @@
 # Current state
 
-## Life Patterns — 2026-09-13
+## Life Patterns — 2026-09-14
 
 Active task: `life-patterns-v2-owner-real-data-browser-prototype` — OWNER REAL-DATA BROWSER JUDGMENT REQUIRED.
 
@@ -13,6 +13,8 @@ Bounded v2 core repair head: `75c2fa4366e2721dc257ec839532b10f54f1de20`.
 Synthetic HTML owner probe head: `894fc8c237221b51106f81c0e7c276dd27a878fb`.
 
 Real-data owner browser implementation head: `002d6264f05a7e380d4cac7e188f8c9455fbf971`; hosted repository CI is green on that implementation head.
+
+Authenticated deployment wrapper final source head: `bca426b8ab873d02fe5038d271d13b1b814fc813`; hosted repository CI is green on that head.
 
 Core implementation disposition remains **PASS**. The accepted v2 semantics remain unchanged.
 
@@ -29,18 +31,13 @@ A revision known from other situations must not be treated as established by the
 
 The current task is defined in `tasks/LIFE-PATTERNS-v2-OWNER-REAL-DATA-BROWSER-PROTOTYPE-2026-09-13.md`.
 
-The new owner-only browser app lives at:
+The owner-only browser app lives at:
 
 - `src/hdmatch/api/life_patterns_v2_owner_app.py`
 - `src/hdmatch/api/life_patterns_v2_owner_ui.py`
+- deployed access wrapper: `src/hdmatch/api/life_patterns_v2_owner_deployed_app.py`
 
-The execution-only Work launcher is:
-
-- `tasks/LIFE-PATTERNS-v2-OWNER-REAL-DATA-BROWSER-WORK-RUNNER-2026-09-13.md`
-
-Work may prepare the environment and launch the local browser, but it must not return to prompt-by-prompt relay. The owner interacts with the web UI directly.
-
-The app uses the owner's own real episodes, not the synthetic checklist toy. Runtime narratives stay in memory only. A target-theory-blind model extracts literal/minimally normalized facts. The owner reviews those facts. After two reviewed episodes in this bounded product probe, the model may propose at most one cross-episode pattern hypothesis backed by reviewed facts from at least two episodes. The owner alone accepts, revises, rejects, or leaves the pattern unresolved.
+The app uses the owner's own real episodes. Runtime narratives stay in memory only. A target-theory-blind model extracts literal/minimally normalized facts. The owner reviews those facts. After two reviewed episodes in this bounded product probe, the model may propose at most one cross-episode pattern hypothesis backed by reviewed facts from at least two episodes. The owner alone accepts, revises, rejects, or leaves the pattern unresolved.
 
 The two-reviewed-episode wait is a development-probe design choice, not a universal scientific sufficiency threshold.
 
@@ -50,11 +47,28 @@ Focused completion command:
 
 `python -m pytest tests/unit/test_life_patterns_v2_owner_app.py tests/unit/test_participant_adjudicated_v2.py -q`
 
+### Owner-authorized Railway deployment
+
+The owner explicitly authorized this bounded owner-only deployment on 2026-09-14.
+
+Deployment receipt: `state/LIFE-PATTERNS-v2-OWNER-REAL-DATA-BROWSER-RAILWAY-DEPLOYMENT-2026-09-14.md`.
+
+- Railway service: `life-patterns-owner`
+- Service domain: `life-patterns-owner-production.up.railway.app`
+- Deployment `b932cfb5-cf50-4778-b974-c5c783a83336`: **SUCCESS**
+- `/healthz`: HTTP `200`
+- unauthenticated `/`: HTTP `401`
+- all owner-facing paths are protected by HTTP Basic authentication
+- model credential is supplied by a Railway reference to the existing configured service credential; no secret value is committed to Git
+- the existing `relationship-web` application source/start/domain/running deployment were not repurposed
+
+This one owner-only authenticated deployment is authorized and executed. It does **not** authorize external/public participant deployment or broader production rollout.
+
 ### Current gate
 
-Use the owner-only browser app with **2–3 real episodes** and judge whether the interaction actually feels intelligent and natural. Do not scale the interview architecture before that owner judgment.
+Use the authenticated owner browser app with **2–3 real episodes** and judge whether the interaction actually feels intelligent and natural. Do not scale the interview architecture before that owner judgment.
 
-Still closed: external participant collection, automated participant coding, target-model activity, public deployment, recruitment/contact, merge/release, and unapproved spending.
+Still closed: external participant collection, automated participant coding, target-model activity, external/public participant deployment, recruitment/contact, merge/release, and unapproved spending.
 
 Current task lock: `tasks/ACTIVE-TASK.json`.
 
