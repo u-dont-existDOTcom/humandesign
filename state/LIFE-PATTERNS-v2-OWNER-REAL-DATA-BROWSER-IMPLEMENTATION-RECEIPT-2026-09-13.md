@@ -1,6 +1,6 @@
 # Life Patterns v2 owner real-data browser implementation receipt — 2026-09-13
 
-Status: IMPLEMENTED; exact-head final CI pending at receipt creation.
+Status: **IMPLEMENTED / DEPLOYED OWNER-ONLY PROBE; OWNER JUDGMENT REQUIRED**.
 
 ## Implementation head
 
@@ -8,15 +8,18 @@ Status: IMPLEMENTED; exact-head final CI pending at receipt creation.
 
 Hosted repository CI on that implementation head: **success**.
 
+Authenticated deployment wrapper source head: `bca426b8ab873d02fe5038d271d13b1b814fc813`; hosted CI on that head: **success**.
+
 ## Added
 
 - `src/hdmatch/api/life_patterns_v2_owner_app.py`
 - `src/hdmatch/api/life_patterns_v2_owner_ui.py`
+- `src/hdmatch/api/life_patterns_v2_owner_deployed_app.py`
 - `tests/unit/test_life_patterns_v2_owner_app.py`
 
 ## Behavior
 
-The owner-only local browser app:
+The owner-only browser app:
 
 - accepts the owner's own real episode narratives;
 - sends only episode text to a target-theory-blind extraction prompt;
@@ -36,14 +39,22 @@ The owner-only local browser app:
 
 The new app does not import or invoke `life_patterns_app`, `OpenAILifePatternsMapper`, or the historical `/map` person-level generator.
 
+## Owner-only deployed surface
+
+The owner explicitly authorized deployment on 2026-09-14. The deployment is protected by HTTP Basic authentication for all owner-facing routes, with `/healthz` left unauthenticated for Railway health checks.
+
+Deployment receipt: `state/LIFE-PATTERNS-v2-OWNER-REAL-DATA-BROWSER-RAILWAY-DEPLOYMENT-2026-09-14.md`.
+
+This bounded owner-only deployment does not authorize external participant collection or broader public release.
+
 ## Model runtime
 
-The local app reads an owner-controlled runtime key from `HDMATCH_LLM_API_KEY` or `OPENAI_API_KEY`, with configurable model/endpoint environment variables. Committing the app does not initiate a paid model call.
+The deployed app receives its model credential via a Railway service-variable reference to the already configured credential; the secret value is not committed to Git. No birth/chart/target-model information enters the extraction or pattern-hypothesis loop.
 
 ## Scientific boundary
 
-The two-reviewed-episode wait is a bounded product-probe choice, not a universal scientific sufficiency threshold. No birth/chart/target-model information is provided to extraction or hypothesis generation. Genuine absence extraction is deliberately outside this minimal prototype; the frozen four-gate absence route remains authoritative.
+The two-reviewed-episode wait is a bounded product-probe choice, not a universal scientific sufficiency threshold. Genuine absence extraction is deliberately outside this minimal prototype; the frozen four-gate absence route remains authoritative.
 
 ## Next gate
 
-Owner uses the direct browser surface with 2–3 real episodes and gives product judgment before any broader scaling.
+Owner uses the authenticated browser surface with 2–3 real episodes and gives product judgment before any broader scaling.
