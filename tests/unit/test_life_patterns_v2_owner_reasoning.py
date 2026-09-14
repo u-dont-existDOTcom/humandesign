@@ -1,94 +1,180 @@
 from __future__ import annotations
 
-from hdmatch.api.life_patterns_v2_owner_conversation import ConversationMove, TurnExtraction
+from hdmatch.api.life_patterns_v2_owner_conversation import (
+    ConversationMove,
+    HiddenFactCandidate,
+    TurnExtraction,
+)
 from hdmatch.api.life_patterns_v2_owner_pattern_first import PatternFirstOpenAIConversationModel
 from hdmatch.api.life_patterns_v2_owner_reasoning import (
-    ReasoningGuardedPatternFirstOpenAIConversationModel,
-    ReasoningRefinablePatternSession,
+    AdaptivePatternFirstOpenAIConversationModel,
+    AdaptiveRefinablePatternSession,
 )
 
 
-def test_unsupported_comparison_is_intercepted(monkeypatch) -> None:
-    calls: list[str] = []
+def test_adaptive_planner_restores_followup_gate_without_second_audit(monkeypatch) -> None:
+    calls: list[dict[str, object]] = []
 
     def fake_call(self, **kwargs):
-        schema_name = kwargs["schema_name"]
-        calls.append(schema_name)
-        if schema_name == "life_patterns_conversation_move_v1":
-            return {
-                "reply": "A tentative synthesis.",
-                "move_type": "surface_hypothesis",
-                "hypothesis_proposition": "Factor A matters less than factor B.",
-                "evidence_fact_ids": ["F1", "F2"],
-            }
+        calls.append(kwargs)
         return {
-            "acceptable": False,
-            "issue_type": "unsupported_comparison",
-            "repair_question": "When B is similar, does A still change the response?",
-            "internal_reason": (
-                "The record lists both factors but does not compare their importance."
+            "reply": "A narrow supported synthesis.",
+            "move_type": "surface_hypothesis",
+            "hypothesis_proposition": "The reported pattern is straightforward.",
+            "evidence_fact_ids": ["F1"],
+        }
+
+    monkeypatch.setattr(PatternFirstOpenAIConversationModel, "_conversation_call_json", fake_call)
+    model = AdaptivePatternFirstOpenAIConversationModel(api_key="test")
+
+    result = model.plan_turn(
+        current_episode_id=None,
+        episodes=(),
+        operative_facts=(),
+        recent_conversation=(),
+        boundary_answered=False,
+    )
+
+    assert len(calls) == 1
+    instructions = str(calls[0]["instructions"])
+    assert "NO fixed episode quota" in instructions
+    assert "never a mandatory ritual" in instructions
+    assert "If the answer would not materially change" in instructions
+    assert "DO NOT ask the question" in instructions
+    assert "Do not manufacture depth" in instructions
+    assert "explanatory novelty is NOT required" in instructions
+    assert result.move_type == "surface_hypothesis"
+
+
+class OneEpisodeRecurringModel:
+    configured = True
+
+    def extract_turn(self, **kwargs) -> TurnExtraction:
+        return TurnExtraction(
+            episode_summary="Ordinary hunger example",
+            facts=(
+                HiddenFactCandidate(
+                    assertion_type="reported_appraisal_or_belief",
+                    proposition="I tend to get hungry after not eating for a while.",
+                ),
             ),
-        }
+        )
 
-    monkeypatch.setattr(PatternFirstOpenAIConversationModel, "_conversation_call_json", fake_call)
-    model = ReasoningGuardedPatternFirstOpenAIConversationModel(api_key="test")
+    def plan_turn(self, **kwargs) -> ConversationMove:
+        fact_id = kwargs["operative_facts"][0].fact_id
+        return ConversationMove(
+            reply="A tentative pattern is that you tend to get hungry after not eating for a while. Does that fit?",
+            move_type="surface_hypothesis",
+            hypothesis_proposition="I tend to get hungry after not eating for a while.",
+            evidence_fact_ids=(fact_id,),
+        )
 
-    result = model._conversation_call_json(
-        instructions="interview",
-        payload={
-            "episodes": [],
-            "operative_facts": [],
-            "recent_conversation": [],
-            "boundary_answered": True,
-        },
-        schema={},
-        effort="medium",
-        max_output_tokens=500,
-        schema_name="life_patterns_conversation_move_v1",
+
+def test_one_grounded_episode_plus_recurring_self_report_can_surface_pattern() -> None:
+    session = AdaptiveRefinablePatternSession(
+        session_id="OWNER-TEST",
+        model=OneEpisodeRecurringModel(),  # type: ignore[arg-type]
     )
+    session.pattern_focus_established = True
 
-    assert calls == ["life_patterns_conversation_move_v1", "life_patterns_hypothesis_audit_v1"]
+    result = session.turn("I tend to get hungry after not eating for a while.")
+
+    assert result["pattern_active"] is True
+    assert result["episode_count"] == 1
+    assert session.boundary_answered is False
+    assert session.core.active_proposal_id is not None
+
+
+class EpisodeOnlyRestatementModel:
+    configured = True
+
+    def extract_turn(self, **kwargs) -> TurnExtraction:
+        return TurnExtraction(
+            episode_summary="Single event",
+            facts=(
+                HiddenFactCandidate(
+                    assertion_type="positive_occurrence",
+                    proposition="Today I felt hungry after not eating.",
+                ),
+            ),
+        )
+
+    def plan_turn(self, **kwargs) -> ConversationMove:
+        fact_id = kwargs["operative_facts"][0].fact_id
+        return ConversationMove(
+            reply="Does this describe your general pattern?",
+            move_type="surface_hypothesis",
+            hypothesis_proposition="Today I felt hungry after not eating.",
+            evidence_fact_ids=(fact_id,),
+        )
+
+
+def test_single_occurrence_is_not_silently_promoted_to_person_level_pattern() -> None:
+    session = AdaptiveRefinablePatternSession(
+        session_id="OWNER-TEST",
+        model=EpisodeOnlyRestatementModel(),  # type: ignore[arg-type]
+    )
+    session.pattern_focus_established = True
+
+    result = session.turn("Today I felt hungry after not eating.")
+
+    assert result["pattern_active"] is False
     assert result["move_type"] == "follow_up"
-    assert result["hypothesis_proposition"] is None
-    assert result["reply"] == "When B is similar, does A still change the response?"
+    assert session.core.active_proposal_id is None
 
 
-def test_supported_synthesis_survives_audit(monkeypatch) -> None:
-    candidate = {
-        "reply": "A tentative synthesis.",
-        "move_type": "surface_hypothesis",
-        "hypothesis_proposition": "The response changes with explicitly reported context.",
-        "evidence_fact_ids": ["F1", "F2"],
-    }
+class UnknownDoesNotBlockModel:
+    configured = True
 
-    def fake_call(self, **kwargs):
-        if kwargs["schema_name"] == "life_patterns_conversation_move_v1":
-            return candidate
-        return {
-            "acceptable": True,
-            "issue_type": "none",
-            "repair_question": None,
-            "internal_reason": "Every material clause is directly supported.",
-        }
+    def __init__(self) -> None:
+        self.call_count = 0
 
-    monkeypatch.setattr(PatternFirstOpenAIConversationModel, "_conversation_call_json", fake_call)
-    model = ReasoningGuardedPatternFirstOpenAIConversationModel(api_key="test")
+    def extract_turn(self, **kwargs) -> TurnExtraction:
+        self.call_count += 1
+        if self.call_count == 1:
+            return TurnExtraction(
+                episode_summary="Recurring pattern anchor",
+                facts=(
+                    HiddenFactCandidate(
+                        assertion_type="reported_appraisal_or_belief",
+                        proposition="I tend to get hungry after long gaps without food.",
+                    ),
+                ),
+            )
+        return TurnExtraction(episode_summary="No new fact")
 
-    result = model._conversation_call_json(
-        instructions="interview",
-        payload={
-            "episodes": [],
-            "operative_facts": [],
-            "recent_conversation": [],
-            "boundary_answered": True,
-        },
-        schema={},
-        effort="medium",
-        max_output_tokens=500,
-        schema_name="life_patterns_conversation_move_v1",
+    def plan_turn(self, **kwargs) -> ConversationMove:
+        if self.call_count == 1:
+            return ConversationMove(
+                reply="Can you think of an exception?",
+                move_type="boundary_question",
+            )
+        fact_id = kwargs["operative_facts"][0].fact_id
+        return ConversationMove(
+            reply="You are not sure about exceptions, but the narrow recurring pattern is already clear. Does this fit?",
+            move_type="surface_hypothesis",
+            hypothesis_proposition="I tend to get hungry after long gaps without food.",
+            evidence_fact_ids=(fact_id,),
+        )
+
+
+def test_unknown_counterexample_does_not_force_more_interrogation() -> None:
+    model = UnknownDoesNotBlockModel()
+    session = AdaptiveRefinablePatternSession(
+        session_id="OWNER-TEST",
+        model=model,  # type: ignore[arg-type]
     )
+    session.pattern_focus_established = True
 
-    assert result == candidate
+    first = session.turn("I tend to get hungry after long gaps without food.")
+    assert first["move_type"] == "boundary_question"
+    assert session.pending_boundary_question is True
+
+    second = session.turn("I don't know.")
+
+    assert second["pattern_active"] is True
+    assert second["move_type"] == "surface_hypothesis"
+    assert session.core.active_proposal_id is not None
 
 
 class RejectionReasoningModel:
@@ -96,16 +182,13 @@ class RejectionReasoningModel:
 
     def plan_turn(self, **kwargs) -> ConversationMove:
         return ConversationMove(
-            reply=(
-                "I may have ranked two factors the examples never compare"
-                "d. Can we test that directly?"
-            ),
+            reply="I may have added a distinction the conversation did not support. The narrower pattern may be enough.",
             move_type="follow_up",
         )
 
 
 def test_rejected_synthesis_uses_model_led_diagnosis() -> None:
-    session = ReasoningRefinablePatternSession(
+    session = AdaptiveRefinablePatternSession(
         session_id="OWNER-TEST",
         model=RejectionReasoningModel(),  # type: ignore[arg-type]
     )
@@ -115,49 +198,5 @@ def test_rejected_synthesis_uses_model_led_diagnosis() -> None:
 
     assert result["pattern_refining"] is True
     assert result["move_type"] == "follow_up"
-    assert "ranked two factors" in result["reply"]
+    assert "distinction" in result["reply"]
     assert session.core.active_proposal_id == "PROP-TEST"
-
-
-class BoundaryAwareModel:
-    configured = True
-
-    def __init__(self) -> None:
-        self.boundary_flags: list[bool] = []
-
-    def boundary_answer_resolved(self, **kwargs) -> bool:
-        return False
-
-    def extract_turn(self, **kwargs) -> TurnExtraction:
-        return TurnExtraction(episode_summary="Current situation")
-
-    def plan_turn(self, **kwargs) -> ConversationMove:
-        self.boundary_flags.append(bool(kwargs["boundary_answered"]))
-        return ConversationMove(
-            reply="That adds another possible factor, but it does not yet answer the contrast.",
-            move_type="follow_up",
-        )
-
-
-def test_reply_does_not_open_synthesis_gate_when_boundary_is_not_semantically_resolved() -> None:
-    model = BoundaryAwareModel()
-    session = ReasoningRefinablePatternSession(
-        session_id="OWNER-TEST",
-        model=model,  # type: ignore[arg-type]
-    )
-    session.pattern_focus_established = True
-    session.conversation.append(
-        {
-            "turn_id": "TURN-QUESTION",
-            "role": "assistant",
-            "text": "Can you give a case that breaks the apparent contrast?",
-        }
-    )
-    session.pending_boundary_question = True
-
-    result = session.turn("There may also be another state-dependent factor.")
-
-    assert model.boundary_flags == [False]
-    assert session.boundary_answered is False
-    assert result["move_type"] == "follow_up"
-    assert result["pattern_active"] is False
