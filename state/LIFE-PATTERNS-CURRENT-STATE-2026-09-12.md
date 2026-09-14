@@ -7,41 +7,31 @@ V2 independent semantic review: **PASS**.
 - Semantic change required: `false`
 - Adapter-firewall repair head: `75c2fa4366e2721dc257ec839532b10f54f1de20`
 - Bounded v2 core implementation verified: `true`
-- Hidden-ledger conversational base head: `a642a1f907b20dd3da6d8219430b9b12dd3d3301`
 - Pattern-first runtime repair head: `67b038b27d62b941b6beb224c6e89efd0d165bb4`
 - Multi-pattern continuation head: `da3c5f58101d8cc10421e480d44b5162bd12ec78`
-- Hosted continuation CI: `34864954177` — `success`
-- Railway continuation deployment: `4ed43b5a-7249-4cc3-ad2e-1e1401ea0788` — `success`
-- Unresolved-thread continuation repair head: `21d6a4addfd5549ef2d81ce694e8e127bd3eecce`
-- Hosted unresolved-thread repair CI: `34872101510` — `success`
-- Railway unresolved-thread repair deployment: `a1aa5bdf-82f9-4e71-b7c9-9268eecea894` — `success`
 - Rejected-synthesis continuation repair head: `3536bf88f422551abfb9ff41f63e5690ecdb77e4`
-- Hosted rejected-synthesis repair CI: `34876597710` — `success`
-- Railway rejected-synthesis repair deployment: `28e06edc-3266-435d-8830-8adceabfe281` — `success`
+- Hypothesis-reasoning final code/test head: `6a836b68b929f4e11eabcf8602bc2f6b23386b62`
+- Hosted hypothesis-reasoning CI: `34878158579` — `success`
+- Railway hypothesis-reasoning deployment: `bfab11be-16c6-4c78-8931-70ba9ae502d7` — `success`
 - Active task: `life-patterns-v2-owner-multi-pattern-continuation` — OWNER REAL-DATA BROWSER JUDGMENT REQUIRED
 
-## Owner product judgment and strategy history
+## Direct owner product evidence
 
-The first deployed real-data browser produced direct negative strategy evidence. The owner judged the surfaced fact-review flow low-value because it mainly showed that the AI could understand/paraphrase what the owner said and ask the owner to certify the paraphrase. That owner-facing strategy is **FAILED / REPLACED**; the accepted v2 evidence contract remains valid internally.
+The surfaced fact-review/paraphrase strategy is **FAILED / REPLACED**.
 
-The replacement hidden-ledger conversation was then repaired back to a **pattern-first** interview with concrete episodes serving as evidence anchors. A full bounded real owner session later produced useful non-parroting information gain and was judged **GOOD / PASS / PRELIMINARY POSITIVE**.
+The hidden-ledger, pattern-first interview later completed a bounded real owner thread successfully and was judged **GOOD / PASS / PRELIMINARY POSITIVE**.
 
-Repeated-thread testing has since exposed two state-machine/liveness defects rather than a demonstrated failure of the pattern-first strategy:
+Repeated-thread testing then exposed two liveness defects, both repaired: uncertainty was incorrectly terminalized, and later a wrong tentative synthesis followed by `No` terminalized the whole inquiry instead of only rejecting the current synthesis.
 
-1. uncertainty after a tentative synthesis was terminalized as `unresolved` instead of allowing same-thread continuation;
-2. an explicitly wrong tentative synthesis was terminalized by `No` as a final rejection instead of allowing the underlying pattern inquiry to continue.
+The owner then identified the deeper issue: **fixing liveness was not enough because the tentative synthesis itself contained an obvious unsupported inference**. Participants should not have to supply basic reasoning repair after the product has overinterpreted their evidence.
 
-Both recovery defects are now repaired on the owner-only surface and await direct owner retest.
+No private owner interview narrative is stored in repository state.
 
 ## Current participant-facing method
 
-Current architecture:
+The participant starts with a self-noticed pattern. Concrete situations, contrasts, life-phase material, exceptions, and boundary cases are used as evidence anchors in a hidden v2 ledger. A synthesis is tentative and remains subject to participant authority.
 
-`participant-reported pattern -> minimal concrete anchor(s) / contrasts / life-phase evidence -> hidden v2 evidence ledger -> discriminating follow-up / boundary check -> informative synthesis -> participant authority -> immutable freeze`
-
-The first participant pattern description is conversational context only. It does not fabricate an episode/fact/provenance record. Concrete situations may clarify, challenge, distinguish, or falsify the reported pattern.
-
-The current synthesis panel distinguishes:
+The current panel distinguishes:
 
 - `Yes — keep that`;
 - `Close, but change it`;
@@ -50,38 +40,66 @@ The current synthesis panel distinguishes:
 - `Leave it unresolved for now`;
 - `Reject and stop this thread`.
 
-`No — keep investigating` is a nonterminal disagreement with the current synthesis. It preserves the same backend session/proposal inquiry and asks what the synthesis gets wrong or misses. `Reject and stop this thread` is the explicit terminal rejection action.
+`No — keep investigating` rejects the synthesis without terminating the pattern inquiry. `Reject and stop this thread` is the explicit terminal rejection.
 
-Post-proposal participant material remains post-proposal evidence. It may guide continued questioning but may not silently become immutable preproposal support. Neither uncertainty continuation nor rejected-synthesis continuation automatically creates a replacement person-level proposal. Changed participant-authoritative wording still uses the explicit revision/adjudication route.
+## Hypothesis-reasoning failure mechanism
 
-Target-theory blindness remains binding: no astrology or predictive-power language appears before behavioral lock. Private narrative remains process-memory/browser-local; no automatic transcript persistence or request-body logging has been added.
+The observed reasoning error was structurally enabled by the controller:
+
+1. Any reply to a pending boundary/counterexample question automatically set `boundary_answered=true`, even when the reply merely introduced another factor rather than supplying the requested discriminating case.
+2. With that boolean gate open, the planner was encouraged to surface a nontrivial synthesis with explanatory compression.
+3. The planner contract did not explicitly forbid turning an additional factor into a relative-weight claim, projecting a factor from one context into another, merging distinct reported outcomes, using a circular umbrella abstraction, or strengthening scope/quantifiers beyond the evidence.
+
+Thus a new factor could be misread as evidence that an earlier factor mattered less, even though no comparison had been supplied. This was a reasoning-contract defect, not merely an unfortunate wording choice.
+
+## Reasoning-layer repair
+
+Repair receipt: `state/LIFE-PATTERNS-v2-OWNER-HYPOTHESIS-REASONING-REPAIR-2026-09-14.md`.
+
+The primary interviewer is now explicitly constrained to preserve evidence direction:
+
+- additive factors remain additive unless comparative evidence exists;
+- relative-weight language requires direct support;
+- context-specific factors remain context-specific unless linked;
+- distinct reported outcomes remain distinct unless the participant links them;
+- umbrella abstractions cannot merely rename the phenomenon;
+- a reply does not count as resolving a requested boundary merely because a reply occurred;
+- participant disagreement should trigger model-led diagnosis of the weakest unsupported inference, not a generic request that the participant explain the obvious mistake.
+
+In addition, **every proposed surface hypothesis now receives a hidden second-pass support audit before display**. The audit blocks unsupported comparison, unsupported causal weighting, cross-context projection, construct conflation, circular abstraction, unresolved boundary/counterexample, quantifier/scope strengthening, or another unsupported inference.
+
+If the audit fails, the synthesis is not shown. The participant instead gets one targeted discriminating question. Supported syntheses pass through unchanged.
+
+## Scientific and privacy invariants
+
+The repair does not change accepted v2 evidence semantics. Preproposal/post-proposal timing, append-only provenance, participant person-level authority, target-theory blindness, and the episode-fact/person-pattern firewall remain unchanged.
+
+No astrology or target-model hints are exposed. No automatic transcript persistence, Railway volume, or request-body logging was added. No target-model scoring or external participant activity is authorized.
 
 ## Verification / deployment
 
-Rejected-synthesis recovery implementation head: `3536bf88f422551abfb9ff41f63e5690ecdb77e4`.
+Implementation:
 
-GitHub Actions run `34876597710`: **SUCCESS** — unit/integration tests, Ruff, and strict mypy passed.
+- `src/hdmatch/api/life_patterns_v2_owner_reasoning.py`;
+- the secured owner deployment wrapper now uses the reasoning-guarded app;
+- `tests/unit/test_life_patterns_v2_owner_reasoning.py` contains focused regressions for unsupported-comparison interception, supported-synthesis pass-through, and model-led rejection recovery.
 
-The committed source was inspected at the consumer seam: `No — keep investigating` calls the nonterminal `/patterns/disagree` endpoint, while `Reject and stop this thread` alone invokes terminal `decision('reject')`.
+Exact final code/test head `6a836b68b929f4e11eabcf8602bc2f6b23386b62` passed GitHub Actions run `34878158579`: unit/integration tests, Ruff, and strict mypy all succeeded.
 
-A dedicated new reject-path regression file could not be committed because the GitHub write interface blocked the attempted test-file writes. This remains explicit targeted verification debt rather than being treated as covered by the full-suite green result.
-
-Existing authenticated owner-only Railway service reused. Deployment `28e06edc-3266-435d-8830-8adceabfe281` from application source head `3536bf88f422551abfb9ff41f63e5690ecdb77e4` is **SUCCESS**. Runtime startup completed and `/healthz` returned HTTP `200`; the deployed health contract includes `rejected_synthesis_continuation=true`.
-
-No new service, broadened access, persistence layer, or target-model activity was introduced.
+The existing authenticated owner-only service was reused. Deployment `bfab11be-16c6-4c78-8931-70ba9ae502d7` from application source head `b8bc552d0c02370ace4f942db95f1616bb2d4234` is **SUCCESS**. Runtime startup completed and Railway `/healthz` returned HTTP `200`. The deployed health contract includes `hypothesis_support_audit=true` and `rejection_reasoning_recovery=true`.
 
 ## Current gate
 
-One-pattern repaired strategy evidence: **GOOD / PASS / PRELIMINARY POSITIVE**.
+One-pattern strategy evidence: **GOOD / PASS / PRELIMINARY POSITIVE**.
 
-Repeated-thread recovery: **TWO LIVENESS DEFECTS FOUND AND REPAIRED; OWNER RETEST REQUIRED**.
+Observed reasoning defect: **CAUSALLY DIAGNOSED / IMPLEMENTED REPAIR / VERIFIED / DEPLOYED**.
 
-Next gate: **OWNER REAL-DATA BROWSER JUDGMENT REQUIRED**.
+Next gate: **OWNER REAL-DATA REASONING JUDGMENT REQUIRED**.
 
-1. Test a thread where the first synthesis is actually wrong and choose `No — keep investigating`.
-2. Explain what is wrong or missing and judge whether the interviewer productively stays with the same inquiry.
-3. Use a terminal judgment only when genuinely ready to end/settle the thread.
-4. Use `Finish for now` and judge whether the summary is useful enough to justify durable persistence / a real Life Patterns Map.
+1. Run a natural fresh thread and judge whether the interviewer now refuses unsupported comparative weighting and cross-context compression.
+2. Where evidence is still ambiguous, judge whether it asks the missing discriminating question instead of surfacing an elegant but unsupported synthesis.
+3. If a synthesis is still wrong, use `No — keep investigating` and judge whether the interviewer diagnoses the likely unsupported inference itself rather than requiring an obvious explanation from the owner.
+4. Then use `Finish for now` and judge whether the session summary is useful enough to justify durable persistence / a real Life Patterns Map.
 
 Optional copy/export remains owner-triggered. Automatic transcript logging remains out of scope.
 
