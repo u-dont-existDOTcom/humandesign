@@ -4,107 +4,114 @@
 
 Active task: `life-patterns-v2-owner-multi-pattern-continuation` — **OWNER REAL-DATA BROWSER JUDGMENT REQUIRED**.
 
-Frozen semantic candidate head: `10d57a19b96f38303b2a30abff4281d6abfff83b`.
+PR #24 remains **draft / open / unmerged**.
 
-Independent semantic review: **PASS** — zero blockers, `semantic_change_required=false`.
+## Accepted scientific substrate
 
-Bounded v2 core repair head: `75c2fa4366e2721dc257ec839532b10f54f1de20`.
+V2 independent semantic review remains **PASS** with zero blockers and `semantic_change_required=false`.
 
-The accepted v2 substrate remains authoritative: open-world episode facts plus participant-adjudicated person-level patterns, append-only correction/provenance, genuine-absence gating, immutable evidence timing, target-theory blindness, and the episode-fact/person-pattern firewall.
+The accepted substrate is unchanged: open-world episode facts plus participant-adjudicated person-level patterns, append-only correction/provenance, genuine-absence gating, immutable evidence timing, target-theory blindness, and the episode-fact/person-pattern firewall. The participant-facing interview may be changed without weakening these internal semantics.
 
 ## Product strategy history
 
-The surfaced fact-review/paraphrase workflow failed direct owner product judgment and is **FAILED / REPLACED**.
+The surfaced fact-review/paraphrase workflow is **FAILED / REPLACED**.
 
-The replacement hidden-ledger interview was restored to **pattern-first** elicitation. A full bounded real owner session later produced useful non-parroting information gain and was judged **GOOD / PASS / PRELIMINARY POSITIVE**.
+The hidden-ledger pattern-first replacement completed a bounded real owner session successfully and was judged **GOOD / PASS / PRELIMINARY POSITIVE**. Multi-pattern continuation was added. Two later liveness defects were repaired: uncertainty after a synthesis no longer forces terminal unresolved, and `No` no longer terminates the entire inquiry unless the owner explicitly chooses `Reject and stop this thread`.
 
-Repeated-thread owner testing then exposed two liveness defects, both repaired: uncertainty after a tentative synthesis was terminalized, and a wrong tentative synthesis followed by `No` was treated as terminal rejection of the whole inquiry. The current panel separates `Keep trying to pin it down`, `No — keep investigating`, `Leave it unresolved for now`, and `Reject and stop this thread`.
+A later reasoning repair addressed unsupported comparative/cross-context synthesis. Direct owner testing then exposed a more fundamental regression: the interviewer had become severely over-interrogative even on an intentionally ordinary recurring pattern, repeatedly seeking contrasts and distinctions after the useful pattern was already clear.
 
-Receipts:
+No private owner interview narrative is committed; only abstract product findings are preserved.
 
-- `state/LIFE-PATTERNS-v2-OWNER-UNRESOLVED-CONTINUATION-REPAIR-2026-09-14.md`
-- `state/LIFE-PATTERNS-v2-OWNER-REJECTED-SYNTHESIS-CONTINUATION-REPAIR-2026-09-14.md`
+## Current causal diagnosis: requirement accretion
 
-## Hypothesis reasoning failure — causal diagnosis
+Repository comparison confirms the owner's judgment that the earlier interview conduct was better.
 
-The owner explicitly rejected a liveness-only repair as insufficient. The larger defect occurred **before** adjudication: the interviewer produced a plausible-sounding synthesis that materially overreached the evidence, forcing the participant to correct an obvious inference error.
+The historical interviewer explicitly required adaptive burden control:
 
-Code/prompt trace established two coupled causes:
+- ask examples or clarification only when they add something important;
+- main questions, probes, and follow-ups are choices, not a mandatory loop;
+- before any follow-up, identify what different answers would materially change; if neither would change the retained interpretation, move on;
+- do not request restatement of information already supplied;
+- do not demand hypothetical edge cases;
+- unknown / declined may remain unresolved without reopening;
+- do not hunt for contradiction;
+- when a question is called obvious, redundant, confusing, or already answered, inspect the interviewer question first and drop it when not materially necessary.
 
-1. The legacy conversation controller treated the arrival of any reply to a pending boundary/counterexample question as sufficient to set `boundary_answered=true`. It did not distinguish an actual discriminating answer from a reply that merely introduced another possible factor.
-2. With that boolean gate open, the planner was encouraged to produce a nontrivial synthesis with `explanatory compression`, while its contract lacked explicit evidence-direction checks against unsupported factor ranking, causal weighting, cross-context projection, construct conflation, circular umbrella abstractions, and strengthened scope/quantifiers.
+The later v2 product layer accidentally hardened assistant-inferred scaffolding that was **not required by the accepted v2 semantic contract**:
 
-The resulting failure class is not random model error. **Reply-arrival was used as a proxy for boundary resolution, then compression was rewarded before the evidence relationship had been verified.** Introducing an additional factor does not establish that an earlier factor matters less, more, mainly, primarily, or `rather than` the new factor. A context-specific factor also cannot be projected into a different context merely because both episodes concern the same broad pattern.
+1. pressure for at least two concrete episodes;
+2. a boundary/counterexample before synthesis;
+3. a hard `boundary_answered` prerequisite;
+4. a two-episode proposal-creation requirement;
+5. pressure for explanatory compression/novelty;
+6. a later semantic boundary classifier and second pre-surface audit that strengthened the same interrogative scaffold.
 
-## Reasoning-layer repair
+The v2 record schema requires grounded evidence and participant adjudication, but not two episodes, a mandatory counterexample, or explanatory novelty. The historical Life Patterns continuity finding likewise says to request only enough evidence to anchor/challenge a claim and to ask for an exception/counterexample **without forcing one**.
+
+This is classified as **requirement accretion causing product regression**, not simply a low-intelligence model response.
+
+## Current participant-facing strategy: adaptive stopping restored
 
 Repair receipt:
 
-`state/LIFE-PATTERNS-v2-OWNER-HYPOTHESIS-REASONING-REPAIR-2026-09-14.md`
+`state/LIFE-PATTERNS-v2-OWNER-ADAPTIVE-STOPPING-REPAIR-2026-09-14.md`
 
-The deployed owner reasoning path now repairs the controller signal itself, not only its downstream consequence.
+The deployed owner interview now restores the earlier information-gain / burden rule while retaining the hidden v2 ledger and participant authority.
 
-### 1. Semantic boundary-resolution gate
+Current rules:
 
-When a boundary/counterexample question is pending, the reasoning session first asks a hidden target-theory-blind classifier whether the latest participant answer actually supplies discriminating evidence responsive to that question. A reply that merely adds another factor, shifts to an adjacent variable, restates the pattern, expresses uncertainty, or fails to recall a concrete counterexample does **not** resolve the boundary.
+- **no fixed episode quota**;
+- **no mandatory counterexample/boundary gate**;
+- another question is admitted only when plausible answers can materially change the retained pattern's meaning, scope, context, timing, exceptions, or uncertainty;
+- when another answer would not materially change the pattern, surface the narrow supported synthesis;
+- simple/ordinary patterns are allowed to remain simple/ordinary; do not manufacture depth;
+- unknown, not remembered, inapplicable, or declined may remain unresolved without repeated drilling;
+- do not ask participants to distinguish internal states they could not reasonably observe;
+- do not restate or re-ask supplied information;
+- additive factors remain additive unless comparative evidence exists;
+- context-specific factors are not projected across contexts without support;
+- explanatory novelty is not required;
+- one grounded episode may be sufficient when paired with an explicit participant-reported recurring self-description;
+- one isolated occurrence still cannot be silently promoted to recurrence;
+- rejected-synthesis recovery remains model-led;
+- post-proposal evidence timing and all accepted v2 scientific/privacy invariants remain unchanged.
 
-The reasoning session clears the legacy pending flag and sets `boundary_answered` from this semantic result before delegating. Therefore the deployed owner path no longer lets mere reply-arrival open the synthesis gate. Missing recall is not converted into real-world absence.
-
-### 2. Stronger primary interviewer discipline
-
-The planner is explicitly instructed to:
-
-- treat additional reported factors as additive unless direct evidence compares their importance;
-- require discriminating support before using `more`, `less`, `mainly`, `primarily`, or `rather than`;
-- avoid transferring a factor from one episode/context into another without support;
-- preserve distinctions among reported outcomes unless the participant links them;
-- reject explanatory abstractions that merely rename the phenomenon;
-- keep an unresolved counterexample unresolved and ask the useful missing question;
-- after participant disagreement, identify the likely unsupported leap itself rather than defaulting to `what did I get wrong?`.
-
-### 3. Hidden pre-surface hypothesis support audit
-
-Every proposed `surface_hypothesis` receives a second target-theory-blind support audit before display. The audit can block unsupported comparison, unsupported causal weighting, cross-context projection, construct conflation, circular abstraction, unresolved boundary/counterexample, quantifier/scope strengthening, or another unsupported inference.
-
-If the audit fails, the candidate synthesis is suppressed and replaced with one targeted discriminating follow-up question. A supported synthesis passes through unchanged.
-
-`No — keep investigating` also invokes model-led reasoning on the existing evidence/conversation rather than returning a canned request that the participant diagnose the failure.
-
-## Scientific / privacy boundary
-
-This repair changes product reasoning only. Preproposal versus post-proposal provenance, participant authority, target-theory blindness, append-only correction/provenance, and the episode-fact/person-pattern firewall are unchanged. No target-model scoring, astrology hints, broader access, automatic transcript persistence, Railway volume, or request-body logging was added.
-
-Private owner interview narrative was not committed; only the abstract product finding and generic regressions were preserved.
+The previous hidden second-pass hypothesis audit is disabled on the adaptive path because direct owner evidence showed that the stricter scaffold was increasing participant burden rather than improving the product outcome.
 
 ## Verification / deployment
 
-Reasoning implementation:
+Adaptive implementation: `src/hdmatch/api/life_patterns_v2_owner_reasoning.py` (compatibility entry point retained; it now serves the adaptive interviewer).
 
-- `src/hdmatch/api/life_patterns_v2_owner_reasoning.py`;
-- secured owner wrapper routes through the reasoning-guarded app;
-- `tests/unit/test_life_patterns_v2_owner_reasoning.py` covers unsupported-comparison interception, supported-synthesis pass-through, model-led rejection recovery, and the exact state-machine regression that a merely relevant reply must not open the synthesis gate when the boundary is not semantically resolved.
+Regression coverage verifies adaptive stopping, no mandatory episode/counterexample quota, one grounded episode + recurring self-report sufficiency, protection against single-event recurrence promotion, non-reopening after `I don't know`, and model-led rejection recovery.
 
-Exact final code/test head: `b1a54ef62194c28d7e531aeabc3f7e552ebf5064`.
+Exact verified application head: `26057ea84366bd56c59a0725fe7681c7544d3800`.
 
-GitHub Actions run `34879139088`: **SUCCESS** — unit/integration tests, Ruff, and strict mypy all passed.
+GitHub Actions run `34910994811`: **SUCCESS** — unit/integration tests, Ruff, and strict mypy all passed. The immediately preceding run showed **732 passed / 7 skipped** and failed only on one Ruff style suggestion; the lint-only repair produced the fully green final run.
 
-Existing authenticated Railway owner service reused. Deployment `72dd705c-d544-4e13-ace2-29bba7ce2497` from application source head `a4262667f190ec5fa18d3748c7f010d8e0d900c6` is **SUCCESS**. Application startup completed and Railway `/healthz` returned HTTP `200`. The deployed health contract includes `semantic_boundary_resolution=true`, `hypothesis_support_audit=true`, and `rejection_reasoning_recovery=true`.
+Existing authenticated owner-only Railway service reused:
 
-The test-only commit is outside the Railway application watch surface, so deployed application bytes correctly remain the semantic-boundary implementation head. No new service was created and access was not broadened.
+- deployment: `f4a8e388-311f-4418-addf-f4291afc1836`;
+- source head: `26057ea84366bd56c59a0725fe7681c7544d3800`;
+- status: **SUCCESS**;
+- application startup complete;
+- `/healthz` -> HTTP `200`;
+- health contract declares `adaptive_information_gain_gate=true`, `fixed_episode_quota=false`, `mandatory_counterexample_gate=false`, `hypothesis_support_audit=false`.
+
+No new service, broadened access, persistence layer, target-model activity, or private transcript logging was introduced.
 
 ## Current outcome / next gate
 
-Outcome advancement: **PRELIMINARY POSITIVE WITH THE OBSERVED SYNTHESIS-REASONING DEFECT REPAIRED**.
+Outcome advancement: **PRELIMINARY POSITIVE, WITH A REQUIREMENT-ACCRETION REGRESSION IDENTIFIED AND THE PRIOR ADAPTIVE INTERVIEW STRATEGY RESTORED AS THE CURRENT CANDIDATE**.
 
-Strategy efficacy: **VIABLE; REASONING-GUARD OWNER RETEST REQUIRED**.
+Strategy efficacy: **ADAPTIVE RESTORATION VIABLE; OWNER RETEST REQUIRED**.
 
-Next gate: **OWNER REAL-DATA BROWSER JUDGMENT REQUIRED**.
+Next owner test:
 
-1. Refresh the deployed owner-only browser and run a natural pattern thread.
-2. Judge whether a reply only opens synthesis when it actually answers the requested discriminator.
-3. Judge whether additional factors remain additive unless comparative evidence exists, context-specific factors stay context-specific, and unresolved contrasts produce a useful follow-up instead of a premature synthesis.
-4. If a synthesis is still wrong, choose `No — keep investigating` and judge whether the interviewer identifies the likely unsupported inference itself rather than requiring the owner to explain an obvious mistake.
-5. After a satisfactory thread, use `Finish for now` and judge whether the session-level summary is useful enough to justify durable persistence / a real Life Patterns Map.
+1. Use one intentionally ordinary/simple recurring pattern. The interviewer should stop when another question would not materially change the formulation instead of trying to discover hidden complexity.
+2. Use one genuinely nuanced/context-dependent pattern. It should still ask a discriminating question when different answers would materially change the synthesis.
+3. Confirm that `I don't know` and unobservable distinctions are not repeatedly reopened.
+4. If a synthesis is wrong, use `No — keep investigating` and judge whether it repairs intelligently without requiring obvious restatement.
+5. Use `Finish for now` and judge whether the session summary is useful enough to justify durable persistence / a real Life Patterns Map.
 
 Owner-triggered copy/export remains available. Automatic transcript logging remains out of scope.
 
@@ -112,8 +119,4 @@ Authorized: bounded owner-only testing and owner-initiated runtime model use.
 
 Still closed: external participant collection, automated participant coding, target-model activity, broader public participant deployment, recruitment/contact, merge/release, production auth/recovery/voice expansion, and unapproved spending.
 
-Current task lock: `tasks/ACTIVE-TASK.json`.
-
-Focused completion command: `python -m pytest tests/unit/test_life_patterns_v2_owner_conversation.py tests/unit/test_life_patterns_v2_owner_pattern_first.py tests/unit/test_life_patterns_v2_owner_refinement.py tests/unit/test_life_patterns_v2_owner_reasoning.py -q`
-
-**There was never a completion policy.** Do not infer one from artifact counts, test counts, review status, or gate status.
+**There was never a completion policy.**
