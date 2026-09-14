@@ -56,7 +56,7 @@ Result:
 - the interviewer tested the initial generalization with contrast/counterexample material and narrowed the synthesis conditionally rather than merely parroting the owner;
 - direct owner judgment of the bounded strategy: **GOOD / PASS**.
 
-The repaired pattern-first + hidden-ledger strategy therefore has **PRELIMINARY POSITIVE** direct product evidence at the one-pattern level. This does not yet establish that repeated pattern threads remain useful or that a session-level summary deserves durable persistence.
+The repaired pattern-first + hidden-ledger strategy therefore has **PRELIMINARY POSITIVE** direct product evidence at the one-pattern level.
 
 Receipts:
 
@@ -65,11 +65,11 @@ Receipts:
 
 ## Multi-pattern continuation frontier
 
-The post-pattern dead end is repaired without changing accepted v2 semantics.
+The post-pattern dead end was repaired without changing accepted v2 semantics.
 
 Continuation implementation head: `da3c5f58101d8cc10421e480d44b5162bd12ec78`.
 
-Owner-facing behavior now provides:
+Owner-facing behavior provides:
 
 - `Explore another pattern`;
 - `Finish for now`;
@@ -78,40 +78,70 @@ Owner-facing behavior now provides:
 - a compact finish-for-now summary with no completeness claim;
 - owner-triggered client-side copy/export.
 
-The server still keeps narrative/session state in process memory. The continuation adds no Git persistence, Railway volume persistence, private transcript logging, or automatic supervisor transcript ingestion. Railway deploy/HTTP logs inspected for the active deployment contain startup/health/request metadata, not private request bodies.
+The server still keeps narrative/session state in process memory. The continuation adds no Git persistence, Railway volume persistence, private transcript logging, or automatic supervisor transcript ingestion.
 
 Verification:
 
-- focused task command covers `16` tests across `tests/unit/test_life_patterns_v2_owner_conversation.py` and `tests/unit/test_life_patterns_v2_owner_pattern_first.py`;
-- hosted GitHub Actions run `34864954177` on branch head `713582a7e3a1c9dd3f1bdd00c32e3075a3665feb`: **SUCCESS**;
+- focused task command covered `16` tests across the owner conversation and pattern-first suites;
+- hosted GitHub Actions run `34864954177`: **SUCCESS**;
 - the `verify` job passed unit/integration tests, Ruff, and strict mypy.
 
-Existing owner-only Railway service reused; no new service was created and access was not broadened.
+Existing owner-only Railway service reused; no new service was created and access was not broadened. Deployment `4ed43b5a-7249-4cc3-ad2e-1e1401ea0788` from source head `da3c5f58101d8cc10421e480d44b5162bd12ec78` succeeded and `/healthz` returned HTTP `200`.
 
-Current Railway deployment:
+## Repeated-thread unresolved-continuation finding and repair
+
+Direct owner testing of a second fresh pattern thread produced **mixed but still positive** product evidence. The conversation was still generating useful discriminating information after the first tentative synthesis, but the UI converted uncertainty into a terminal `unresolved` adjudication rather than allowing the owner to continue working on the same pattern.
+
+This is classified as a **workflow-liveness / adjudication-frontier defect**, not a failure of the pattern-first interaction strategy.
+
+Repair receipt:
+
+`state/LIFE-PATTERNS-v2-OWNER-UNRESOLVED-CONTINUATION-REPAIR-2026-09-14.md`
+
+The repaired owner surface now distinguishes:
+
+- `Keep trying to pin it down` — continue the same backend pattern session with another discriminating question;
+- `Leave it unresolved for now` — explicitly end the thread unresolved;
+- existing accept / revise / reject participant-authoritative judgments.
+
+Post-proposal answers may add episode facts in the same thread, but they remain post-proposal evidence. The continuation path does not silently write an unresolved adjudication and does not automatically manufacture a replacement person-level proposal from post-proposal material. If the final wording changes, the existing explicit participant revision/adjudication route remains authoritative.
+
+The participant-facing consequence copy is deliberately target-neutral: an unresolved thread contributes no settled person-level pattern to later analysis. Predictive-power or astrological-fit language is not exposed before behavioral lock because target-theory blindness remains binding and predictive performance has not been established.
+
+Exact final verified code/test head:
+
+`21d6a4addfd5549ef2d81ce694e8e127bd3eecce`
+
+Hosted GitHub Actions run `34872101510`: **SUCCESS** — unit/integration tests, Ruff, and strict mypy passed.
+
+The first hosted run of the new regression had failed during test collection because Starlette `TestClient` required an uninstalled `httpx2` dependency. No product assertion ran. The unnecessary test dependency was removed rather than changing project dependencies; the registered FastAPI endpoint/session boundary is now exercised directly.
+
+Current owner-only Railway deployment:
 
 - service: `life-patterns-owner`;
-- deployment ID: `4ed43b5a-7249-4cc3-ad2e-1e1401ea0788`;
-- runtime source head: `da3c5f58101d8cc10421e480d44b5162bd12ec78`;
+- deployment ID: `a1aa5bdf-82f9-4e71-b7c9-9268eecea894`;
+- application source head: `0d2aac5d65076f3ccc03e330c6696807ad5a7661`;
 - status: **SUCCESS**;
-- Railway `/healthz` request: HTTP `200`;
-- owner-facing routes remain HTTP-Basic protected;
-- runtime model credentials remain Railway variable references rather than repository secrets.
+- application startup complete;
+- Railway healthcheck and runtime `/healthz`: HTTP `200`;
+- deployed code declares `unresolved_thread_continuation=true` in the health response;
+- later test/state-only commits are outside the Railway application watch surface.
 
-The later state-only commit `713582a7e3a1c9dd3f1bdd00c32e3075a3665feb` was correctly skipped by Railway because the service watch patterns do not include state/task files; deployed application bytes therefore remain the verified continuation code head above.
+Privacy boundary is unchanged: no automatic transcript persistence or request-body logging was added.
 
 ## Current outcome / next gate
 
-Outcome advancement: **PRELIMINARY POSITIVE** at the bounded one-pattern strategy level.
+Outcome advancement: **PRELIMINARY POSITIVE WITH A REPEATED-THREAD LIVENESS DEFECT FOUND AND REPAIRED**.
 
-Strategy efficacy: **VIABLE, PENDING MULTI-PATTERN OWNER JUDGMENT**.
+Strategy efficacy: **VIABLE; OWNER RETEST REQUIRED**.
 
-Next gate: **OWNER REAL-DATA BROWSER JUDGMENT REQUIRED**. In the deployed owner-only service, complete at least another pattern thread and use `Finish for now`. The decision-changing questions are:
+Next gate: **OWNER REAL-DATA BROWSER JUDGMENT REQUIRED**.
 
-1. Do repeated fresh pattern threads remain useful rather than becoming repetitive/paraphrastic?
-2. Is the session-level summary useful enough to justify durable persistence and development of a real Life Patterns Map?
+1. On a pattern that remains uncertain after a first synthesis, choose `Keep trying to pin it down` and judge whether the interviewer actually continues the same thought with useful discriminating questions rather than forcing closure or starting over.
+2. Then explicitly accept/revise/reject/leave unresolved.
+3. Use `Finish for now` and judge whether the session-level summary is useful enough to justify durable persistence and development of a real Life Patterns Map.
 
-Owner-triggered copy/export is available if the owner chooses to share the browser-local session with the supervisor. Automatic transcript logging remains out of scope.
+Owner-triggered copy/export remains available if the owner chooses to share browser-local output. Automatic transcript logging remains out of scope.
 
 Authorized: bounded owner-only testing of the deployed probe and owner-initiated runtime model use.
 
@@ -119,6 +149,6 @@ Still closed: external participant collection, automated participant coding, tar
 
 Current task lock: `tasks/ACTIVE-TASK.json`.
 
-Focused completion command: `python -m pytest tests/unit/test_life_patterns_v2_owner_conversation.py tests/unit/test_life_patterns_v2_owner_pattern_first.py -q`
+Focused completion command: `python -m pytest tests/unit/test_life_patterns_v2_owner_conversation.py tests/unit/test_life_patterns_v2_owner_pattern_first.py tests/unit/test_life_patterns_v2_owner_refinement.py -q`
 
 **There was never a completion policy.** Do not infer one from artifact counts, test counts, review status, or gate status.
