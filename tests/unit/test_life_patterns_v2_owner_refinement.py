@@ -1,10 +1,14 @@
 from __future__ import annotations
 
-from fastapi.testclient import TestClient
+from collections.abc import Callable
+from typing import Any
+
+from fastapi import FastAPI
 
 from hdmatch.api.life_patterns_v2_owner_app import ExtractedEpisode, PatternSuggestion
 from hdmatch.api.life_patterns_v2_owner_conversation import (
     ConversationMove,
+    ConversationTurnRequest,
     HiddenFactCandidate,
     TurnExtraction,
 )
@@ -88,6 +92,13 @@ def _surface_pattern(session: RefinablePatternFirstConversationalOwnerSession) -
     assert result["pattern_active"] is True
 
 
+def _endpoint(app: FastAPI, path: str, method: str) -> Callable[..., Any]:
+    for route in app.routes:
+        if getattr(route, "path", None) == path and method in getattr(route, "methods", set()):
+            return route.endpoint
+    raise AssertionError(f"missing {method} route {path}")
+
+
 def test_continue_keeps_active_proposal_open_without_terminal_adjudication() -> None:
     model = RefinementScriptedModel(
         ["request_contrast", "boundary_question", "surface_hypothesis", "follow_up"]
@@ -132,29 +143,32 @@ def test_postproposal_answer_adds_evidence_but_cannot_auto_create_replacement_pr
     assert session.core.record.participant_adjudications == ()
 
 
-def test_http_continue_endpoint_preserves_same_backend_session() -> None:
+def test_continue_route_preserves_same_backend_session_without_extra_http_dependency() -> None:
     model = RefinementScriptedModel(
         ["request_contrast", "boundary_question", "surface_hypothesis", "follow_up"]
     )
-    client = TestClient(create_life_patterns_v2_owner_refinement_app(model=model))
-    session_id = client.post("/api/owner-v2/conversation/sessions").json()["session_id"]
-    turn_url = f"/api/owner-v2/conversation/sessions/{session_id}/turns"
+    app = create_life_patterns_v2_owner_refinement_app(model=model)
+    create_session = _endpoint(app, "/api/owner-v2/conversation/sessions", "POST")
+    interview_turn = _endpoint(
+        app, "/api/owner-v2/conversation/sessions/{session_id}/turns", "POST"
+    )
+    continue_pattern = _endpoint(
+        app, "/api/owner-v2/conversation/sessions/{session_id}/patterns/continue", "POST"
+    )
+
+    session_id = create_session().session_id
     for message in (
         "I notice a recurring pattern that changes depending on the person.",
         "In one real situation I disengaged quickly.",
         "In another real situation I stayed involved despite more difficulty.",
         "The difference may be whether I can understand what is happening.",
     ):
-        response = client.post(turn_url, json={"message": message})
-        assert response.status_code == 200
+        payload = interview_turn(session_id, ConversationTurnRequest(message=message))
+        assert isinstance(payload, dict)
 
-    continued = client.post(
-        f"/api/owner-v2/conversation/sessions/{session_id}/patterns/continue"
-    )
-    assert continued.status_code == 200
-    payload = continued.json()
-    assert payload["pattern_active"] is True
-    assert payload["pattern_refining"] is True
+    continued = continue_pattern(session_id)
+    assert continued["pattern_active"] is True
+    assert continued["pattern_refining"] is True
 
 
 def test_ui_makes_continuation_explicit_without_target_theory_leakage() -> None:
