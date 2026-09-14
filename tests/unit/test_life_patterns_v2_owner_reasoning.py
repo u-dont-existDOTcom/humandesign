@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from hdmatch.api.life_patterns_v2_owner_conversation import ConversationMove
+from hdmatch.api.life_patterns_v2_owner_conversation import ConversationMove, TurnExtraction
 from hdmatch.api.life_patterns_v2_owner_pattern_first import PatternFirstOpenAIConversationModel
 from hdmatch.api.life_patterns_v2_owner_reasoning import (
     ReasoningGuardedPatternFirstOpenAIConversationModel,
@@ -111,3 +111,46 @@ def test_rejected_synthesis_uses_model_led_diagnosis() -> None:
     assert result["move_type"] == "follow_up"
     assert "ranked two factors" in result["reply"]
     assert session.core.active_proposal_id == "PROP-TEST"
+
+
+class BoundaryAwareModel:
+    configured = True
+
+    def __init__(self) -> None:
+        self.boundary_flags: list[bool] = []
+
+    def boundary_answer_resolved(self, **kwargs) -> bool:
+        return False
+
+    def extract_turn(self, **kwargs) -> TurnExtraction:
+        return TurnExtraction(episode_summary="Current situation")
+
+    def plan_turn(self, **kwargs) -> ConversationMove:
+        self.boundary_flags.append(bool(kwargs["boundary_answered"]))
+        return ConversationMove(
+            reply="That adds another possible factor, but it does not yet answer the contrast.",
+            move_type="follow_up",
+        )
+
+
+def test_reply_does_not_open_synthesis_gate_when_boundary_is_not_semantically_resolved() -> None:
+    model = BoundaryAwareModel()
+    session = ReasoningRefinablePatternSession(
+        session_id="OWNER-TEST", model=model  # type: ignore[arg-type]
+    )
+    session.pattern_focus_established = True
+    session.conversation.append(
+        {
+            "turn_id": "TURN-QUESTION",
+            "role": "assistant",
+            "text": "Can you give a case that breaks the apparent contrast?",
+        }
+    )
+    session.pending_boundary_question = True
+
+    result = session.turn("There may also be another state-dependent factor.")
+
+    assert model.boundary_flags == [False]
+    assert session.boundary_answered is False
+    assert result["move_type"] == "follow_up"
+    assert result["pattern_active"] is False
