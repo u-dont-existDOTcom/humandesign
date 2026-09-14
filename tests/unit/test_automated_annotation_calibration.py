@@ -63,13 +63,14 @@ def test_ensemble_requires_three_unique_passes_and_coherent_counts() -> None:
 
     with pytest.raises(ValueError, match="duplicate pass IDs"):
         AutomatedCodingEnsembleReceipt(
-            **{**ensemble.model_dump(), "passes": (_pass("P1", "5"), _pass("P1", "6"), _pass("P3", "7"))}
+            **{
+                **ensemble.model_dump(),
+                "passes": (_pass("P1", "5"), _pass("P1", "6"), _pass("P3", "7")),
+            }
         )
 
     with pytest.raises(ValueError, match="sum to total_units"):
-        AutomatedCodingEnsembleReceipt(
-            **{**ensemble.model_dump(), "unresolved_units": 2}
-        )
+        AutomatedCodingEnsembleReceipt(**{**ensemble.model_dump(), "unresolved_units": 2})
 
 
 def test_ensemble_fails_closed_when_pipeline_hashes_differ() -> None:

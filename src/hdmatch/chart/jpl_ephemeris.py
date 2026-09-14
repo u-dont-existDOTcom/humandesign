@@ -18,14 +18,14 @@ from types import ModuleType
 from typing import Final
 
 from .ephemeris import (
+    _SWISS_LOCK,
     CelestialBody,
+    EclipticPosition,
     EphemerisConfigurationError,
     EphemerisFallbackError,
     EphemerisFile,
     EphemerisMetadata,
-    EclipticPosition,
     NodeConvention,
-    _SWISS_LOCK,
 )
 
 _JPL_MAX_SPEEDS: Final[dict[CelestialBody, float]] = {
@@ -138,11 +138,7 @@ class JplEphemerisProvider:
             self._swe.set_jpl_file(self._path.name)
             values, returned_flags = self._swe.calc_ut(julian_day, planet_id, flags)
 
-        mask = (
-            int(self._swe.FLG_JPLEPH)
-            | int(self._swe.FLG_SWIEPH)
-            | int(self._swe.FLG_MOSEPH)
-        )
+        mask = int(self._swe.FLG_JPLEPH) | int(self._swe.FLG_SWIEPH) | int(self._swe.FLG_MOSEPH)
         used = returned_flags & mask
         if used != int(self._swe.FLG_JPLEPH):
             raise EphemerisFallbackError(

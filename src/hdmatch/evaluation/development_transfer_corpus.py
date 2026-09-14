@@ -132,9 +132,9 @@ class DevelopmentTransferCorpusPayload(DevelopmentTransferModel):
     source_transcript_completeness: Literal["partial_exact_segments_only"] = (
         "partial_exact_segments_only"
     )
-    episode_review_scope: Literal[
+    episode_review_scope: Literal["pattern_claims_reviewed_not_every_episode_individually"] = (
         "pattern_claims_reviewed_not_every_episode_individually"
-    ] = "pattern_claims_reviewed_not_every_episode_individually"
+    )
     canonical_behavioral_freeze_eligible: Literal[False] = False
     development_coding_eligible: Literal[True] = True
     validation_use_forbidden: Literal[True] = True
@@ -320,7 +320,8 @@ def _validate_transfer_links(original: dict[str, Any], supplement: dict[str, Any
     if original.get("record_status") != "complete_after_pattern_review":
         raise ValueError("original transfer record is not complete after pattern review")
     if supplement.get("review_status") != (
-        "participant_approved_changed_account; technical_audit_findings_logged_without_overwriting_original"
+        "participant_approved_changed_account; technical_audit_fi"
+        "ndings_logged_without_overwriting_original"
     ):
         raise ValueError("repair supplement lacks the expected participant-approved review state")
 
@@ -331,7 +332,9 @@ def _validate_transfer_links(original: dict[str, Any], supplement: dict[str, Any
     episode_ids = _unique_ids(episodes, "episode_id", "episodes")
     series_ids = _unique_ids(series, "series_id", "series_reports")
 
-    provenance = _require_mapping(original.get("transcript_source_provenance"), "transcript provenance")
+    provenance = _require_mapping(
+        original.get("transcript_source_provenance"), "transcript provenance"
+    )
     source_turn_index = _require_mapping(provenance.get("source_turn_index"), "source_turn_index")
     known_turn_ids = set(source_turn_index)
 
@@ -354,21 +357,27 @@ def _validate_transfer_links(original: dict[str, Any], supplement: dict[str, Any
             unknown_turns = {str(item) for item in raw_turn_ids} - known_turn_ids
             if unknown_turns:
                 raise ValueError(
-                    f"pattern {pattern['pattern_id']} references unknown source turns: {sorted(unknown_turns)}"
+                    f"pattern {pattern['pattern_id']} references unknown source "
+                    f"turns: {sorted(unknown_turns)}"
                 )
 
     for episode in episodes:
         raw_turn_ids = episode.get("source_turn_ids", [])
-        if not isinstance(raw_turn_ids, list) or not all(isinstance(item, str) for item in raw_turn_ids):
+        if not isinstance(raw_turn_ids, list) or not all(
+            isinstance(item, str) for item in raw_turn_ids
+        ):
             raise ValueError(f"episode {episode['episode_id']} has invalid source_turn_ids")
         unknown_turns = set(cast(list[str], raw_turn_ids)) - known_turn_ids
         if unknown_turns:
             raise ValueError(
-                f"episode {episode['episode_id']} references unknown source turns: {sorted(unknown_turns)}"
+                f"episode {episode['episode_id']} references unknown source "
+                f"turns: {sorted(unknown_turns)}"
             )
         segments = episode.get("exact_participant_source_segments")
-        if not isinstance(segments, list) or not segments or not all(
-            isinstance(item, str) and item.strip() for item in segments
+        if (
+            not isinstance(segments, list)
+            or not segments
+            or not all(isinstance(item, str) and item.strip() for item in segments)
         ):
             raise ValueError(
                 f"episode {episode['episode_id']} lacks exact participant source fragments"
@@ -382,10 +391,16 @@ def _validate_transfer_links(original: dict[str, Any], supplement: dict[str, Any
         raise ValueError("repair review approval reference does not resolve")
     response_by_id = {str(row["response_id"]): row for row in responses}
     approval = response_by_id[str(approval_ref)].get("exact_text")
-    if not isinstance(approval, str) or approval.strip().casefold() not in {"yes", "approve", "approved"}:
+    if not isinstance(approval, str) or approval.strip().casefold() not in {
+        "yes",
+        "approve",
+        "approved",
+    }:
         raise ValueError("repair supplement does not contain an affirmative participant approval")
 
-    additions = _require_list(supplement.get("post_review_added_evidence"), "post_review_added_evidence")
+    additions = _require_list(
+        supplement.get("post_review_added_evidence"), "post_review_added_evidence"
+    )
     _unique_ids(additions, "added_evidence_id", "post_review_added_evidence")
     for addition in additions:
         if addition.get("target_pattern_id") not in pattern_ids:
@@ -429,13 +444,17 @@ def build_v8_v8_1_development_corpus(
             for index, text in enumerate(raw_segments, start=1)
         )
         raw_actions = row.get("actions_in_temporal_order", [])
-        actions = tuple(str(value).strip() for value in cast(list[Any], raw_actions) if str(value).strip())
+        actions = tuple(
+            str(value).strip() for value in cast(list[Any], raw_actions) if str(value).strip()
+        )
         episodes.append(
             DevelopmentTransferEpisode(
                 episode_id=episode_id,
                 origin_id=episode_id,
                 collection_phase="v8_original",
-                domain_id=(str(row["domain_id"]) if isinstance(row.get("domain_id"), str) else None),
+                domain_id=(
+                    str(row["domain_id"]) if isinstance(row.get("domain_id"), str) else None
+                ),
                 approximate_age_life_phase=str(row.get("approximate_age_age_range") or "unknown"),
                 age_estimation_basis=(
                     str(row["age_estimation_basis"])
@@ -482,7 +501,9 @@ def build_v8_v8_1_development_corpus(
         for row in _require_list(supplement["repair_responses"], "repair_responses")
     }
     auxiliary: list[DevelopmentAuxiliaryEvidence] = []
-    for addition in _require_list(supplement["post_review_added_evidence"], "post_review_added_evidence"):
+    for addition in _require_list(
+        supplement["post_review_added_evidence"], "post_review_added_evidence"
+    ):
         evidence_type = str(addition.get("evidence_type", ""))
         addition_id = str(addition["added_evidence_id"])
         target_pattern_id = str(addition["target_pattern_id"])
@@ -556,7 +577,9 @@ def build_v8_v8_1_development_corpus(
                 series_id=series_id,
                 origin_id=series_id,
                 collection_phase="v8_original",
-                domain_id=(str(row["domain_id"]) if isinstance(row.get("domain_id"), str) else None),
+                domain_id=(
+                    str(row["domain_id"]) if isinstance(row.get("domain_id"), str) else None
+                ),
                 bounded_period_context=str(row["bounded_period_context"]),
                 approximate_age_life_phase=str(row["approximate_age_life_phase"]),
                 recurrence_language=str(row["participant_recurrence_language"]),

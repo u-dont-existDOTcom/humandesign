@@ -16,9 +16,9 @@ from fastapi.responses import HTMLResponse
 
 from .life_patterns_v2_owner_app import PatternAdjudicationRequest
 from .life_patterns_v2_owner_conversation import (
+    ConversationalOwnerSession,
     ConversationTurnRequest,
     CreateConversationSessionResponse,
-    ConversationalOwnerSession,
     OpenAIConversationModel,
     OwnerConversationModel,
 )
@@ -76,9 +76,12 @@ class PatternFirstOpenAIConversationModel(OpenAIConversationModel):
         if schema_name == "life_patterns_conversation_move_v1":
             instructions += (
                 "\n\nThe conversation may begin with an ungrounded participant-reported pattern. "
-                "Treat that description as conversational context, not episode evidence. After an anchor exists, "
-                "prefer questions that sharpen scope, context, life-phase change, meaningful exceptions, mechanism, "
-                "or a genuinely discriminating contrast. For follow_up, request_contrast, and boundary_question, "
+                "Treat that description as conversational context, not ep"
+                "isode evidence. After an anchor exists, "
+                "prefer questions that sharpen scope, context, life-phase"
+                " change, meaningful exceptions, mechanism, "
+                "or a genuinely discriminating contrast. For follow_up, r"
+                "equest_contrast, and boundary_question, "
                 "return hypothesis_proposition=null and evidence_fact_ids=[]."
             )
 
@@ -161,7 +164,9 @@ class PatternFirstConversationalOwnerSession(ConversationalOwnerSession):
         self.pattern_focus_established = True
         reply = (
             "Give me one real situation where that pattern showed up clearly. What happened? "
-            "A representative example is fine; if the pattern is context-dependent, choose a case that helps show the difference."
+            "A representative example is fine; if the pattern is cont"
+            "ext-dependent, choose a case that helps show the differe"
+            "nce."
         )
         self.conversation.append(
             {
@@ -214,8 +219,10 @@ class PatternFirstConversationRuntime:
 
 
 OPENING = (
-    "Start with a pattern you notice in your life—something that tends to repeat, changes with context, "
-    "has shifted over time, or puzzles you. Describe the pattern in your own words. I’ll use concrete "
+    "Start with a pattern you notice in your life—something t"
+    "hat tends to repeat, changes with context, "
+    "has shifted over time, or puzzles you. Describe the patt"
+    "ern in your own words. I’ll use concrete "
     "situations to test and sharpen it rather than treating one memory as the pattern itself."
 )
 
@@ -263,9 +270,7 @@ def create_life_patterns_v2_owner_pattern_first_app(
             raise HTTPException(status_code=422, detail=str(exc)) from exc
 
     @app.post("/api/owner-v2/conversation/sessions/{session_id}/patterns/adjudicate")
-    def adjudicate_pattern(
-        session_id: str, request: PatternAdjudicationRequest
-    ) -> dict[str, Any]:
+    def adjudicate_pattern(session_id: str, request: PatternAdjudicationRequest) -> dict[str, Any]:
         try:
             return runtime.get(session_id).adjudicate(request)
         except KeyError as exc:

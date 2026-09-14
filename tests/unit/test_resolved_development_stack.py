@@ -12,7 +12,6 @@ from hdmatch.evaluation.resolved_development_stack import (
     file_sha256,
 )
 
-
 NOW = datetime(2026, 9, 6, 21, 0, tzinfo=UTC)
 
 
@@ -31,9 +30,10 @@ def test_real_repository_stack_binds_exact_resolved_measurement_chain() -> None:
     assert stack.procedure.payload.coding_manual_sha256 == stack.coding_manual_sha256
     assert stack.ontology.payload.coding_procedure_sha256 == stack.coding_manual_sha256
     assert stack.coding_manual_sha256 == file_sha256(CODING_MANUAL_REL)
-    assert sum(
-        len(row.non_action_values) for row in stack.procedure.payload.observable_extensions
-    ) == 28
+    assert (
+        sum(len(row.non_action_values) for row in stack.procedure.payload.observable_extensions)
+        == 28
+    )
 
 
 def test_reconstruction_is_deterministic_for_same_release_inputs() -> None:

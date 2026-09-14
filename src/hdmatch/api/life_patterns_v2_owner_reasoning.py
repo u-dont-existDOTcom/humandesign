@@ -2,7 +2,8 @@
 
 Adds semantic boundary resolution plus an epistemic audit before a tentative synthesis reaches
 the participant, and makes proposal disagreement trigger model-led diagnosis rather than asking
-the participant to restate an obvious unsupported leap. Accepted v2 evidence semantics remain unchanged.
+the participant to restate an obvious unsupported leap. Accepted v2 evidence semantics remain \
+unchanged.
 """
 
 from __future__ import annotations
@@ -54,14 +55,22 @@ class ReasoningGuardedPatternFirstOpenAIConversationModel(PatternFirstOpenAIConv
         }
         result = super()._conversation_call_json(
             instructions=(
-                "Decide whether the participant's latest message actually resolves the immediately preceding "
-                "boundary/counterexample question in a target-theory-blind Life Patterns interview. `resolved=true` "
-                "requires discriminating evidence responsive to what was asked: for example a concrete exception, a "
-                "case that breaks or preserves the proposed contrast, or a direct comparison that distinguishes the "
-                "live possibilities. A reply is NOT resolved merely because it is relevant or informative. Return false "
-                "when it only introduces another possible factor, shifts to an adjacent variable, restates the pattern, "
-                "gives general uncertainty, or says no counterexample comes to mind without concrete discriminating "
-                "evidence. Do not interpret missing recall as real-world absence. Judge the relationship between the "
+                "Decide whether the participant's latest message actually"
+                " resolves the immediately preceding "
+                "boundary/counterexample question in a target-theory-blin"
+                "d Life Patterns interview. `resolved=true` "
+                "requires discriminating evidence responsive to what was "
+                "asked: for example a concrete exception, a "
+                "case that breaks or preserves the proposed contrast, or "
+                "a direct comparison that distinguishes the "
+                "live possibilities. A reply is NOT resolved merely becau"
+                "se it is relevant or informative. Return false "
+                "when it only introduces another possible factor, shifts "
+                "to an adjacent variable, restates the pattern, "
+                "gives general uncertainty, or says no counterexample com"
+                "es to mind without concrete discriminating "
+                "evidence. Do not interpret missing recall as real-world "
+                "absence. Judge the relationship between the "
                 "question and answer, not whether the answer sounds plausible."
             ),
             payload={
@@ -96,18 +105,30 @@ class ReasoningGuardedPatternFirstOpenAIConversationModel(PatternFirstOpenAIConv
     ) -> dict[str, Any]:
         if schema_name == "life_patterns_conversation_move_v1":
             instructions += (
-                "\n\nEPISTEMIC DISCIPLINE FOR SYNTHESIS: Treat each participant-supplied factor as additive "
-                "unless the evidence actually compares its importance with another factor. Never infer that a subject, "
-                "cause, or context matters less/more, mainly, primarily, or rather than another merely because the "
-                "participant introduced an additional factor. Do not transfer a factor observed in one episode/context "
-                "to another episode/context without direct support. Keep distinct reported outcomes distinct (for example "
-                "curiosity, meaning, attention, energy) unless the participant explicitly links them. Do not use an umbrella "
-                "label such as 'mental state' as explanatory compression when it merely renames the thing being explained. "
-                "If a requested counterexample/boundary answer merely adds another possible factor without actually resolving "
-                "the requested contrast, ask the discriminating follow-up instead of treating the boundary as established. "
-                "If the latest participant message rejects a synthesis, first inspect the synthesis against the existing "
-                "evidence and target the weakest unsupported leap with one specific question; do not default to asking the "
-                "participant to explain what was obvious from the transcript, and do not immediately surface another synthesis."
+                "\n\nEPISTEMIC DISCIPLINE FOR SYNTHESIS: Treat each partici"
+                "pant-supplied factor as additive "
+                "unless the evidence actually compares its importance wit"
+                "h another factor. Never infer that a subject, "
+                "cause, or context matters less/more, mainly, primarily, "
+                "or rather than another merely because the "
+                "participant introduced an additional factor. Do not tran"
+                "sfer a factor observed in one episode/context "
+                "to another episode/context without direct support. Keep "
+                "distinct reported outcomes distinct (for example "
+                "curiosity, meaning, attention, energy) unless the partic"
+                "ipant explicitly links them. Do not use an umbrella "
+                "label such as 'mental state' as explanatory compression "
+                "when it merely renames the thing being explained. "
+                "If a requested counterexample/boundary answer merely add"
+                "s another possible factor without actually resolving "
+                "the requested contrast, ask the discriminating follow-up"
+                " instead of treating the boundary as established. "
+                "If the latest participant message rejects a synthesis, f"
+                "irst inspect the synthesis against the existing "
+                "evidence and target the weakest unsupported leap with on"
+                "e specific question; do not default to asking the "
+                "participant to explain what was obvious from the transcr"
+                "ipt, and do not immediately surface another synthesis."
             )
 
         result = super()._conversation_call_json(
@@ -154,17 +175,28 @@ class ReasoningGuardedPatternFirstOpenAIConversationModel(PatternFirstOpenAIConv
         }
         audit = super()._conversation_call_json(
             instructions=(
-                "Audit a tentative Life Patterns synthesis for epistemic support before it is shown. Judge only what the "
-                "supplied episode facts and conversation establish, not what sounds psychologically plausible. Fail the "
-                "candidate if any material clause: (1) ranks or displaces factors without a direct comparison; (2) assigns "
-                "causal weight not established by the evidence; (3) projects a factor from one context into another; (4) "
-                "merges distinct constructs without support; (5) uses a broad abstraction that merely renames the outcome; "
-                "(6) treats a non-answer to a requested contrast/counterexample as if that boundary were resolved; or (7) "
-                "strengthens frequency, scope, or certainty beyond the participant's report. Multiple contributing factors "
-                "never imply that one matters less than another unless the participant supplied discriminating evidence. "
-                "If unacceptable, write one participant-facing repair_question aimed at the exact unresolved distinction. "
-                "Do not ask 'what did I get wrong?' when the unsupported leap is already visible from the supplied record. "
-                "The question must remain target-theory-blind and must not mention hidden facts or this audit."
+                "Audit a tentative Life Patterns synthesis for epistemic "
+                "support before it is shown. Judge only what the "
+                "supplied episode facts and conversation establish, not w"
+                "hat sounds psychologically plausible. Fail the "
+                "candidate if any material clause: (1) ranks or displaces"
+                " factors without a direct comparison; (2) assigns "
+                "causal weight not established by the evidence; (3) proje"
+                "cts a factor from one context into another; (4) "
+                "merges distinct constructs without support; (5) uses a b"
+                "road abstraction that merely renames the outcome; "
+                "(6) treats a non-answer to a requested contrast/countere"
+                "xample as if that boundary were resolved; or (7) "
+                "strengthens frequency, scope, or certainty beyond the pa"
+                "rticipant's report. Multiple contributing factors "
+                "never imply that one matters less than another unless th"
+                "e participant supplied discriminating evidence. "
+                "If unacceptable, write one participant-facing repair_que"
+                "stion aimed at the exact unresolved distinction. "
+                "Do not ask 'what did I get wrong?' when the unsupported "
+                "leap is already visible from the supplied record. "
+                "The question must remain target-theory-blind and must no"
+                "t mention hidden facts or this audit."
             ),
             payload={
                 "candidate": result,
@@ -333,9 +365,7 @@ def create_life_patterns_v2_owner_reasoning_app(
             raise HTTPException(status_code=422, detail=str(exc)) from exc
 
     @app.post("/api/owner-v2/conversation/sessions/{session_id}/patterns/adjudicate")
-    def adjudicate_pattern(
-        session_id: str, request: PatternAdjudicationRequest
-    ) -> dict[str, Any]:
+    def adjudicate_pattern(session_id: str, request: PatternAdjudicationRequest) -> dict[str, Any]:
         try:
             return runtime.get(session_id).adjudicate(request)
         except KeyError as exc:

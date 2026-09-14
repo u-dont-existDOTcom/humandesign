@@ -195,16 +195,12 @@ def analyze_partnership(
     payload = {
         "partner_a": {
             "type": partner_a.type.value if partner_a.type is not None else None,
-            "authority": (
-                partner_a.authority.value if partner_a.authority is not None else None
-            ),
+            "authority": (partner_a.authority.value if partner_a.authority is not None else None),
             "profile": partner_a.profile,
         },
         "partner_b": {
             "type": partner_b.type.value if partner_b.type is not None else None,
-            "authority": (
-                partner_b.authority.value if partner_b.authority is not None else None
-            ),
+            "authority": (partner_b.authority.value if partner_b.authority is not None else None),
             "profile": partner_b.profile,
         },
         "composite_active_gates": sorted(composite_gates),

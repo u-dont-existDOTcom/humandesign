@@ -106,7 +106,9 @@ class OpenAILifePatternsCoach:
             endpoint=os.environ.get(
                 "HDMATCH_LLM_API_URL", "https://api.openai.com/v1/responses"
             ).strip(),
-            timeout_seconds=float(os.environ.get("HDMATCH_LIFE_PATTERNS_COACH_TIMEOUT_SECONDS", "90")),
+            timeout_seconds=float(
+                os.environ.get("HDMATCH_LIFE_PATTERNS_COACH_TIMEOUT_SECONDS", "90")
+            ),
         )
 
     def respond(
@@ -160,7 +162,9 @@ class OpenAILifePatternsCoach:
         result = CoachResult.model_validate(_parse_openai_json(raw))
         unknown = set(result.referenced_pattern_ids) - allowed_pattern_ids
         if unknown:
-            raise RuntimeError(f"Life Patterns coach referenced unknown pattern IDs: {sorted(unknown)}")
+            raise RuntimeError(
+                f"Life Patterns coach referenced unknown pattern IDs: {sorted(unknown)}"
+            )
         return result, {
             "model": self.model,
             "endpoint": self.endpoint,
@@ -181,7 +185,9 @@ def register_life_patterns_coach_routes(
             raise HTTPException(status_code=409, detail="AI-processing consent is missing")
         raw_map = payload.get("life_patterns_map")
         if not isinstance(raw_map, dict):
-            raise HTTPException(status_code=409, detail="build your Life Patterns Map before using Coach")
+            raise HTTPException(
+                status_code=409, detail="build your Life Patterns Map before using Coach"
+            )
         life_map = LifePatternsMap.model_validate(raw_map)
         episodes_raw = cast(list[dict[str, Any]], payload.get("episodes", []))
         approved = [row for row in episodes_raw if row.get("review_status") == "approved"]
@@ -193,10 +199,19 @@ def register_life_patterns_coach_routes(
                 message=request.message.strip(),
             )
         except RuntimeError as exc:
-            raise HTTPException(status_code=502, detail="Life Patterns Coach is temporarily unavailable") from exc
-        after = json.dumps(store.read(session_id, request.token), ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+            raise HTTPException(
+                status_code=502, detail="Life Patterns Coach is temporarily unavailable"
+            ) from exc
+        after = json.dumps(
+            store.read(session_id, request.token),
+            ensure_ascii=False,
+            sort_keys=True,
+            separators=(",", ":"),
+        )
         if before != after:
-            raise RuntimeError("read-only Life Patterns coaching unexpectedly mutated the research record")
+            raise RuntimeError(
+                "read-only Life Patterns coaching unexpectedly mutated the research record"
+            )
         return {
             "result": result.model_dump(mode="json"),
             "provider_receipt": receipt,

@@ -53,9 +53,7 @@ def aggregate_restoration_curves(
         groups[(observation.method, observation.cluster_count)].append(observation)
     output: list[CurvePoint] = []
     for (method, count), values in sorted(groups.items()):
-        evaluated = [
-            (item, item.midrank) for item in values if item.midrank is not None
-        ]
+        evaluated = [(item, item.midrank) for item in values if item.midrank is not None]
         ranks = [rank for _, rank in evaluated]
         denominator = float(len(values))
         output.append(
@@ -139,9 +137,7 @@ def aggregate_leave_one_cluster_out(
                 else None
             ),
             worsened_fraction=(
-                statistics.fmean(
-                    float(change > 0) for change in changes if change is not None
-                )
+                statistics.fmean(float(change > 0) for change in changes if change is not None)
                 if any(change is not None for change in changes)
                 else None
             ),

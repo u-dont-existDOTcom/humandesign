@@ -70,7 +70,9 @@ class DevelopmentCalibrationSamplingPayload(DevelopmentCalibrationModel):
             ("series", self.representative_series_units),
         ):
             if any(row.evidence_kind != expected_kind for row in units):
-                raise ValueError(f"{expected_kind} calibration stratum contains wrong evidence kind")
+                raise ValueError(
+                    f"{expected_kind} calibration stratum contains wrong evidence kind"
+                )
             keys = [(row.evidence_id, row.observable_id) for row in units]
             if len(keys) != len(set(keys)):
                 raise ValueError(f"{expected_kind} calibration stratum repeats a unit")
@@ -106,9 +108,7 @@ def episode_unit_universe(
     tasks: tuple[DevelopmentEpisodeCodingTask, ...],
 ) -> tuple[DevelopmentCalibrationUnit, ...]:
     units = {
-        (task.episode_id, observable_id)
-        for task in tasks
-        for observable_id in task.observable_ids
+        (task.episode_id, observable_id) for task in tasks for observable_id in task.observable_ids
     }
     return tuple(
         DevelopmentCalibrationUnit(
@@ -124,9 +124,7 @@ def series_unit_universe(
     tasks: tuple[DevelopmentSeriesCodingTask, ...],
 ) -> tuple[DevelopmentCalibrationUnit, ...]:
     units = {
-        (task.series_id, observable_id)
-        for task in tasks
-        for observable_id in task.observable_ids
+        (task.series_id, observable_id) for task in tasks for observable_id in task.observable_ids
     }
     return tuple(
         DevelopmentCalibrationUnit(

@@ -35,9 +35,9 @@ def test_checkpoint_round_trip_and_identity_guard(tmp_path: Path) -> None:
 
     runner._write_json_atomic(path, checkpoint)
 
-    assert runner._load_checkpoint(
-        path, run_identity_sha256="run-a", scenario=scenario
-    ) == checkpoint
+    assert (
+        runner._load_checkpoint(path, run_identity_sha256="run-a", scenario=scenario) == checkpoint
+    )
     with pytest.raises(ValueError, match="run identity mismatch"):
         runner._load_checkpoint(path, run_identity_sha256="run-b", scenario=scenario)
 

@@ -82,9 +82,7 @@ def audit_survey_v2_capacity(
     steps: list[SurveyV2TargetStep] = []
     remaining = set(TARGET_FEATURES)
     while remaining:
-        choices: list[
-            tuple[float, str, tuple[Hashable, ...], FingerprintMetrics]
-        ] = []
+        choices: list[tuple[float, str, tuple[Hashable, ...], FingerprintMetrics]] = []
         for feature in sorted(remaining):
             candidate: tuple[Hashable, ...] = tuple(
                 (current[index], values[feature][index]) for index in range(len(states))
@@ -128,7 +126,9 @@ def audit_survey_v2_capacity(
 def _clean_observable_patterns(
     structural: Sequence[StructuralChartFeatures], model: Mapping[str, Any]
 ) -> tuple[tuple[int, ...], ...]:
-    mappings = tuple(mapping for mapping in model["mappings"] if not bool(mapping.get("post_selection", False)))
+    mappings = tuple(
+        mapping for mapping in model["mappings"] if not bool(mapping.get("post_selection", False))
+    )
     contradictions = tuple(model.get("contradictions", ()))
     ids = tuple(
         sorted(

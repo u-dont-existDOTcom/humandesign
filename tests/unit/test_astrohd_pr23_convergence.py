@@ -285,7 +285,9 @@ def test_generated_json_regenerates_without_modifying_production_source(tmp_path
     assert _source_hashes() == before
 
 
-def test_historical_guard_probe_reads_the_pinned_source_tree(monkeypatch: pytest.MonkeyPatch) -> None:
+def test_historical_guard_probe_reads_the_pinned_source_tree(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
     _require_bound_git_history()
     auditor = _auditor()
     load_module = auditor._load_module

@@ -49,31 +49,107 @@ def patch_html_for_nonredundant_provenance(html: str) -> str:
 
     html = html.replace(
         "</head>",
-        """<style>
-.provenancebox{margin:12px 0 0;padding:12px 14px;border:1px solid #d8e2dc;border-radius:10px;background:#f8fbf9}
-.provenancebox h3{margin:0 0 5px;font-size:15px}.provenancebox p{margin:0 0 8px}
-.provenancenote{margin:10px 0 0;padding:9px 11px;border-radius:9px;background:#f3f7f5;color:#51605a;font-size:12px}
-.provenancelist{display:grid;gap:7px}.provenancelist label{display:flex;gap:8px;align-items:flex-start}
-.quotelabel{font-weight:700}.quotesnippet{display:block;color:#46554f;margin-top:2px}
-</style>
-</head>""",
+        (
+            "<style>\n.provenancebox{margin:12px 0 0;padding:12px 14px"
+            ";border:1px solid #d8e2dc;border-radius:10px;background:"
+            "#f8fbf9}\n.provenancebox h3{margin:0 0 5px;font-size:15px"
+            "}.provenancebox p{margin:0 0 8px}\n.provenancenote{margin"
+            ":10px 0 0;padding:9px 11px;border-radius:9px;background:"
+            "#f3f7f5;color:#51605a;font-size:12px}\n.provenancelist{di"
+            "splay:grid;gap:7px}.provenancelist label{display:flex;ga"
+            "p:8px;align-items:flex-start}\n.quotelabel{font-weight:70"
+            "0}.quotesnippet{display:block;color:#46554f;margin-top:2"
+            "px}\n</style>\n</head>"
+        ),
         1,
     )
 
     html = _replace_function(
         html,
         "renderSources",
-        '''function renderSources(u,r){const segments=u.task.exact_source_segments||[];const support=new Set(r.supporting_source_segment_ids||[]),counter=new Set(r.counterevidence_source_segment_ids||[]);const observed=r.state==="observed";const quoteName=i=>segments.length===1?"Exact quote":`Exact quote ${i+1}`;const quoteText=s=>s.exact_text||s.exact_participant_text||"";const cards=segments.map((s,i)=>`<article class="source"><div class="sourceid">${esc(quoteName(i))}</div><p>${esc(quoteText(s))}</p></article>`).join("");let provenance="";if(observed&&segments.length===1){const s=segments[0];provenance=`<div class="provenancenote"><input type="checkbox" hidden data-source="support" value="${esc(s.segment_id)}" checked>Because there is only one exact quote in this unit, it will be saved automatically as the source for your Yes answer. No extra citation decision is needed.</div>`}else if(observed&&segments.length>1){provenance=`<div class="provenancebox"><h3>Which quote(s) show the behavior you selected?</h3><p class="hint">This is only source bookkeeping. Select the exact quote(s) you actually relied on for your Yes answer.</p><div class="provenancelist">${segments.map((s,i)=>`<label><input type="checkbox" data-source="support" value="${esc(s.segment_id)}" ${support.has(s.segment_id)?"checked":""}> <span><span class="quotelabel">${esc(quoteName(i))}</span><span class="quotesnippet">${esc(quoteText(s))}</span></span></label>`).join("")}</div></div>`}if(observed&&segments.length){provenance+=`<details class="details provenancebox"><summary>Optional: does any quote contain an exception or conflicting detail?</summary><p class="hint">Use this only when some exact text genuinely limits, qualifies, or conflicts with the behavior you selected. Most units need nothing here.</p><div class="provenancelist">${segments.map((s,i)=>`<label><input type="checkbox" data-source="counter" value="${esc(s.segment_id)}" ${counter.has(s.segment_id)?"checked":""}> <span><span class="quotelabel">${esc(quoteName(i))}</span><span class="quotesnippet">${esc(quoteText(s))}</span></span></label>`).join("")}</div></details>`}$("sources").innerHTML=cards+provenance}''',
+        (
+            "function renderSources(u,r){const segments=u.task.exact_"
+            "source_segments||[];const support=new Set(r.supporting_s"
+            "ource_segment_ids||[]),counter=new Set(r.counterevidence"
+            '_source_segment_ids||[]);const observed=r.state==="obser'
+            'ved";const quoteName=i=>segments.length===1?"Exact quote'
+            '":`Exact quote ${i+1}`;const quoteText=s=>s.exact_text||'
+            's.exact_participant_text||"";const cards=segments.map((s'
+            ',i)=>`<article class="source"><div class="sourceid">${es'
+            "c(quoteName(i))}</div><p>${esc(quoteText(s))}</p></artic"
+            'le>`).join("");let provenance="";if(observed&&segments.l'
+            'ength===1){const s=segments[0];provenance=`<div class="p'
+            'rovenancenote"><input type="checkbox" hidden data-source'
+            '="support" value="${esc(s.segment_id)}" checked>Because '
+            "there is only one exact quote in this unit, it will be s"
+            "aved automatically as the source for your Yes answer. No"
+            " extra citation decision is needed.</div>`}else if(obser"
+            'ved&&segments.length>1){provenance=`<div class="provenan'
+            'cebox"><h3>Which quote(s) show the behavior you selected'
+            '?</h3><p class="hint">This is only source bookkeeping. S'
+            "elect the exact quote(s) you actually relied on for your"
+            ' Yes answer.</p><div class="provenancelist">${segments.m'
+            'ap((s,i)=>`<label><input type="checkbox" data-source="su'
+            'pport" value="${esc(s.segment_id)}" ${support.has(s.segm'
+            'ent_id)?"checked":""}> <span><span class="quotelabel">${'
+            'esc(quoteName(i))}</span><span class="quotesnippet">${es'
+            'c(quoteText(s))}</span></span></label>`).join("")}</div>'
+            "</div>`}if(observed&&segments.length){provenance+=`<deta"
+            'ils class="details provenancebox"><summary>Optional: doe'
+            "s any quote contain an exception or conflicting detail?<"
+            '/summary><p class="hint">Use this only when some exact t'
+            "ext genuinely limits, qualifies, or conflicts with the b"
+            "ehavior you selected. Most units need nothing here.</p><"
+            'div class="provenancelist">${segments.map((s,i)=>`<label'
+            '><input type="checkbox" data-source="counter" value="${e'
+            'sc(s.segment_id)}" ${counter.has(s.segment_id)?"checked"'
+            ':""}> <span><span class="quotelabel">${esc(quoteName(i))'
+            '}</span><span class="quotesnippet">${esc(quoteText(s))}<'
+            '/span></span></label>`).join("")}</div></details>`}$("so'
+            'urces").innerHTML=cards+provenance}'
+        ),
     )
     html = _replace_function(
         html,
         "episodeInfluence",
-        '''function episodeInfluence(u,r){const rel=r.influence_relation||"none_reported";const inf=new Set(r.influence_source_segment_ids||[]);const segments=u.task.exact_source_segments||[];const quoteName=i=>segments.length===1?"Exact quote":`Exact quote ${i+1}`;const quoteText=s=>s.exact_text||s.exact_participant_text||"";return`<details class="section details"><summary>Optional: does the narrator explicitly say something influenced the behavior you selected?</summary><p class="hint">This is only about the behavior you coded above. Do not record a causal statement about some other action in the story.</p>${selectField("influenceRelation","Relation to the selected behavior",INFLUENCE,rel,false)}${rel!=="none_reported"?`<div class="field"><span class="labelish">Which exact quote states or establishes that relation?</span><div class="provenancelist">${segments.map((s,i)=>`<label><input type="checkbox" data-source="influence" value="${esc(s.segment_id)}" ${inf.has(s.segment_id)?"checked":""}> <span><span class="quotelabel">${esc(quoteName(i))}</span><span class="quotesnippet">${esc(quoteText(s))}</span></span></label>`).join("")}</div></div>`:""}</details>`}''',
+        (
+            "function episodeInfluence(u,r){const rel=r.influence_rel"
+            'ation||"none_reported";const inf=new Set(r.influence_sou'
+            "rce_segment_ids||[]);const segments=u.task.exact_source_"
+            'segments||[];const quoteName=i=>segments.length===1?"Exa'
+            'ct quote":`Exact quote ${i+1}`;const quoteText=s=>s.exac'
+            't_text||s.exact_participant_text||"";return`<details cla'
+            'ss="section details"><summary>Optional: does the narrato'
+            "r explicitly say something influenced the behavior you s"
+            'elected?</summary><p class="hint">This is only about the'
+            " behavior you coded above. Do not record a causal statem"
+            "ent about some other action in the story.</p>${selectFie"
+            'ld("influenceRelation","Relation to the selected behavio'
+            'r",INFLUENCE,rel,false)}${rel!=="none_reported"?`<div cl'
+            'ass="field"><span class="labelish">Which exact quote sta'
+            'tes or establishes that relation?</span><div class="prov'
+            'enancelist">${segments.map((s,i)=>`<label><input type="c'
+            'heckbox" data-source="influence" value="${esc(s.segment_'
+            'id)}" ${inf.has(s.segment_id)?"checked":""}> <span><span'
+            ' class="quotelabel">${esc(quoteName(i))}</span><span cla'
+            'ss="quotesnippet">${esc(quoteText(s))}</span></span></la'
+            'bel>`).join("")}</div></div>`:""}</details>`}'
+        ),
     )
     html = _replace_function(
         html,
         "updateStateSemantics",
-        '''function updateStateSemantics(u,state){$("stateSemantics").textContent=state==="observed"?"If Yes, choose the behavior below. With one exact quote, source provenance is saved automatically; with several, choose only the quote(s) you relied on.":state==="not_applicable"?"No behavioral value or source citation is needed.":state==="insufficient"?"No behavioral value or source citation is needed; use an uncertainty flag or note only if it helps explain why.":""}''',
+        (
+            'function updateStateSemantics(u,state){$("stateSemantics'
+            '").textContent=state==="observed"?"If Yes, choose the be'
+            "havior below. With one exact quote, source provenance is"
+            " saved automatically; with several, choose only the quot"
+            'e(s) you relied on.":state==="not_applicable"?"No behavi'
+            'oral value or source citation is needed.":state==="insuf'
+            'ficient"?"No behavioral value or source citation is need'
+            "ed; use an uncertainty flag or note only if it helps exp"
+            'lain why.":""}'
+        ),
     )
 
     if _embedded_fragment(html) != embedded_before:
@@ -89,7 +165,9 @@ def patch_html_for_nonredundant_provenance(html: str) -> str:
     if "No extra citation decision is needed" not in html:
         raise ValueError("provenance UI patch is missing single-source auto-binding explanation")
     if "Exact quote ${i+1}" not in html or "quotesnippet" not in html:
-        raise ValueError("provenance UI patch must identify source choices by human-readable quote text")
+        raise ValueError(
+            "provenance UI patch must identify source choices by human-readable quote text"
+        )
     return html
 
 

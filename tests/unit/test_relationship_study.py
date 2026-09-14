@@ -23,7 +23,9 @@ def _birth(*, day: int, hour: int | None) -> RelationshipBirthInput:
         local_time=time(hour, 30) if hour is not None else None,
         birthplace="Example City, Example Country",
         iana_timezone="UTC",
-        time_source=(BirthTimeSource.BIRTH_CERTIFICATE if hour is not None else BirthTimeSource.UNKNOWN),
+        time_source=(
+            BirthTimeSource.BIRTH_CERTIFICATE if hour is not None else BirthTimeSource.UNKNOWN
+        ),
     )
 
 
@@ -100,7 +102,9 @@ def test_prediction_freeze_binds_models_but_stays_locked_without_engines(
         session_id="RR-TEST",
         intake=intake,
         repo_root=root,
-        questionnaire_path=Path("reference/relationship/relationship_dynamic_questionnaire_v1.json"),
+        questionnaire_path=Path(
+            "reference/relationship/relationship_dynamic_questionnaire_v1.json"
+        ),
         noise_policy=bind_noise_policy(None),
         code_commit="test-commit",
     )

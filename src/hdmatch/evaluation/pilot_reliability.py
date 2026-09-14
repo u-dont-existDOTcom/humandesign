@@ -49,7 +49,9 @@ class PilotCorpusItem(PilotModel):
     @model_validator(mode="after")
     def boundary_reason_requires_tags(self) -> PilotCorpusItem:
         if self.selection_reason == "boundary_case" and not self.boundary_case_tags:
-            raise ValueError("boundary-case pilot items require at least one theory-neutral boundary tag")
+            raise ValueError(
+                "boundary-case pilot items require at least one theory-neutral boundary tag"
+            )
         return self
 
 
@@ -77,7 +79,9 @@ class PilotCorpusManifestPayload(PilotModel):
 
     @field_validator("items")
     @classmethod
-    def pilot_item_ids_are_unique(cls, value: tuple[PilotCorpusItem, ...]) -> tuple[PilotCorpusItem, ...]:
+    def pilot_item_ids_are_unique(
+        cls, value: tuple[PilotCorpusItem, ...]
+    ) -> tuple[PilotCorpusItem, ...]:
         ids = [row.pilot_item_id for row in value]
         if len(ids) != len(set(ids)):
             raise ValueError("pilot corpus contains duplicate pilot_item_id values")
@@ -261,7 +265,9 @@ def build_pilot_adjudication(payload: PilotAdjudicationPayload) -> PilotAdjudica
     )
 
 
-def pilot_corpus_manifest_integrity_errors(artifact: PilotCorpusManifestArtifact) -> tuple[str, ...]:
+def pilot_corpus_manifest_integrity_errors(
+    artifact: PilotCorpusManifestArtifact,
+) -> tuple[str, ...]:
     expected_id, digest = _content_address("LPPM", artifact.payload)
     if artifact.manifest_id != expected_id or artifact.manifest_sha256 != digest:
         return ("pilot corpus manifest failed content-address verification",)

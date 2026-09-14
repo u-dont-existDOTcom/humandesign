@@ -108,7 +108,9 @@ def build_repository_resolved_development_stack(
     )
     missing = [str(path.relative_to(root)) for path in required if not path.is_file()]
     if missing:
-        raise ValueError("resolved development stack is missing repository inputs: " + ", ".join(missing))
+        raise ValueError(
+            "resolved development stack is missing repository inputs: " + ", ".join(missing)
+        )
 
     source = parse_reconciled_codebook_file(codebook_path)
     compact = load_compact_non_action_classification(compact_path)
@@ -168,7 +170,9 @@ def build_repository_resolved_development_stack(
     if procedure.payload.reconciled_codebook_sha256 != resolved.view_sha256:
         raise ValueError("resolved procedure does not bind resolved codebook view")
     if sum(len(row.non_action_values) for row in procedure.payload.observable_extensions) != 28:
-        raise ValueError("resolved procedure does not contain the exact 28-value non-action registry")
+        raise ValueError(
+            "resolved procedure does not contain the exact 28-value non-action registry"
+        )
 
     return ResolvedDevelopmentStack(
         source=source,

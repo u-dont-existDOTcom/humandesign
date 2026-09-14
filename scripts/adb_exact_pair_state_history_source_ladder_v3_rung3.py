@@ -7,6 +7,7 @@ Frozen specs:
 
 No astrology or Human Design features are calculated or inspected.
 """
+
 from __future__ import annotations
 
 import hashlib
@@ -21,8 +22,15 @@ from datetime import date
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
-LADDER_FREEZE = REPO / "reference" / "research" / "adb_exact_pair_state_history_source_ladder_freeze_v3.md"
-PARSER_FREEZE = REPO / "reference" / "research" / "adb_exact_pair_state_history_source_ladder_v3_rung3_parser_freeze.md"
+LADDER_FREEZE = (
+    REPO / "reference" / "research" / "adb_exact_pair_state_history_source_ladder_freeze_v3.md"
+)
+PARSER_FREEZE = (
+    REPO
+    / "reference"
+    / "research"
+    / "adb_exact_pair_state_history_source_ladder_v3_rung3_parser_freeze.md"
+)
 V1 = REPO / "reference" / "research" / "adb_exact_pair_state_history_recovery_v1.json"
 V2 = REPO / "reference" / "research" / "adb_exact_pair_state_history_recovery_v2.json"
 R2 = REPO / "reference" / "research" / "adb_exact_pair_state_history_source_ladder_v3_rung2.json"
@@ -30,7 +38,9 @@ OUT = REPO / "reference" / "research" / "adb_exact_pair_state_history_source_lad
 API = "https://www.wikidata.org/w/api.php"
 UA = "humandesign-state-history-v3-rung3/1.0"
 REL_PROPS = ("P26", "P451")
-NONFATAL_RE = re.compile(r"divorc|separat|annul|split|break\s*[- ]?\s*up|breakup|dissolv|estrang", re.I)
+NONFATAL_RE = re.compile(
+    r"divorc|separat|annul|split|break\s*[- ]?\s*up|breakup|dissolv|estrang", re.I
+)
 FATAL_RE = re.compile(r"death|deceas|widow|killed|murder", re.I)
 GREGORIAN_QID = "Q1985727"
 
@@ -61,19 +71,29 @@ def fetch_entities(qids: list[str], props: str) -> dict[str, dict]:
     seen = set()
     for q in qids:
         if q and q not in seen:
-            seen.add(q); unique.append(q)
+            seen.add(q)
+            unique.append(q)
     out: dict[str, dict] = {}
     batch_size = 25
     for i in range(0, len(unique), batch_size):
-        batch = unique[i:i + batch_size]
-        print(f"wikidata {props} batch {i // batch_size + 1}/{(len(unique) + batch_size - 1) // batch_size} n={len(batch)}", flush=True)
-        data = api_json({
-            "action": "wbgetentities",
-            "ids": "|".join(batch),
-            "props": props,
-            "languages": "en",
-            "format": "json",
-        })
+        batch = unique[i : i + batch_size]
+        print(
+            (
+                f"wikidata {props} batch "
+                f"{i // batch_size + 1}/"
+                f"{(len(unique) + batch_size - 1) // batch_size} n={len(batch)}"
+            ),
+            flush=True,
+        )
+        data = api_json(
+            {
+                "action": "wbgetentities",
+                "ids": "|".join(batch),
+                "props": props,
+                "languages": "en",
+                "format": "json",
+            }
+        )
         if not data:
             if len(batch) == 1:
                 out[batch[0]] = {"id": batch[0], "missing": ""}
@@ -81,10 +101,15 @@ def fetch_entities(qids: list[str], props: str) -> dict[str, dict]:
                 # Transport fallback only: exact QIDs are split into smaller requests;
                 # no identity search or evidence-rule change occurs.
                 for q in batch:
-                    one = api_json({
-                        "action": "wbgetentities", "ids": q, "props": props,
-                        "languages": "en", "format": "json",
-                    })
+                    one = api_json(
+                        {
+                            "action": "wbgetentities",
+                            "ids": q,
+                            "props": props,
+                            "languages": "en",
+                            "format": "json",
+                        }
+                    )
                     out[q] = ((one or {}).get("entities") or {}).get(q, {"id": q, "missing": ""})
             continue
         out.update(data.get("entities", {}))
@@ -104,7 +129,7 @@ def entity_value_id(snak: dict) -> str | None:
 
 def qualifier_entity_ids(statement: dict, prop: str) -> list[str]:
     out = []
-    for snak in ((statement.get("qualifiers") or {}).get(prop) or []):
+    for snak in (statement.get("qualifiers") or {}).get(prop) or []:
         q = entity_value_id(snak)
         if q:
             out.append(q)
@@ -192,11 +217,19 @@ def merge_end_times(snaks: list[dict]) -> dict:
         return {"usable": False, "reason": "nonoverlapping_end_times", "values": parsed}
     # Use the narrowest resulting interval; precision label is descriptive only.
     precision = "day" if lo == hi else "month" if lo[:7] == hi[:7] else "year"
-    return {"usable": True, "precision": precision, "interval_start": lo, "interval_end": hi, "values": parsed}
+    return {
+        "usable": True,
+        "precision": precision,
+        "interval_start": lo,
+        "interval_end": hi,
+        "values": parsed,
+    }
 
 
 def overlap(a: dict, b: dict) -> bool:
-    return max(a["interval_start"], b["interval_start"]) <= min(a["interval_end"], b["interval_end"])
+    return max(a["interval_start"], b["interval_start"]) <= min(
+        a["interval_end"], b["interval_end"]
+    )
 
 
 def main() -> None:
@@ -207,13 +240,15 @@ def main() -> None:
     v2_by = {x["pair_key"]: x for x in v2["pairs"]}
 
     # Exact linked QIDs come only from completed Rung 2 identities.
-    qids = sorted({
-        q
-        for p in r2["pairs"]
-        for ident in (p.get("wikipedia_identity_a") or {}, p.get("wikipedia_identity_b") or {})
-        for q in [ident.get("wikidata_qid")]
-        if q
-    })
+    qids = sorted(
+        {
+            q
+            for p in r2["pairs"]
+            for ident in (p.get("wikipedia_identity_a") or {}, p.get("wikipedia_identity_b") or {})
+            for q in [ident.get("wikidata_qid")]
+            if q
+        }
+    )
     entities = fetch_entities(qids, "claims")
 
     # Collect only P1534 cause-QIDs appearing on exact pair relationship statements.
@@ -238,7 +273,16 @@ def main() -> None:
                         exact_statement_count += 1
                         cause_ids = qualifier_entity_ids(st, "P1534")
                         cause_qids.update(cause_ids)
-                        rows.append({"source_qid": src_q, "other_qid": other_q, "direction": direction, "property": prop, "statement": st, "cause_qids": cause_ids})
+                        rows.append(
+                            {
+                                "source_qid": src_q,
+                                "other_qid": other_q,
+                                "direction": direction,
+                                "property": prop,
+                                "statement": st,
+                                "cause_qids": cause_ids,
+                            }
+                        )
         exact_statements[pk] = rows
 
     cause_entities = fetch_entities(sorted(cause_qids), "labels") if cause_qids else {}
@@ -258,13 +302,36 @@ def main() -> None:
         pk = r2p["pair_key"]
         v1p = v1_by[pk]
         v2p = v2_by[pk]
-        v1_exits = [x for x in v1p.get("merged_transitions", []) if x.get("transition") == "dissolution"]
+        v1_exits = [
+            x for x in v1p.get("merged_transitions", []) if x.get("transition") == "dissolution"
+        ]
         v2_exits = v2p.get("new_v2_nonfatal_exits", [])
         r2_exits = r2p.get("new_rung2_exits", [])
         baseline = (
-            [{"interval_start": x["interval_start"], "interval_end": x["interval_end"], "source": "v1"} for x in v1_exits]
-            + [{"interval_start": x["interval_start"], "interval_end": x["interval_end"], "source": "v2"} for x in v2_exits]
-            + [{"interval_start": x["interval_start"], "interval_end": x["interval_end"], "source": "rung2"} for x in r2_exits]
+            [
+                {
+                    "interval_start": x["interval_start"],
+                    "interval_end": x["interval_end"],
+                    "source": "v1",
+                }
+                for x in v1_exits
+            ]
+            + [
+                {
+                    "interval_start": x["interval_start"],
+                    "interval_end": x["interval_end"],
+                    "source": "v2",
+                }
+                for x in v2_exits
+            ]
+            + [
+                {
+                    "interval_start": x["interval_start"],
+                    "interval_end": x["interval_end"],
+                    "source": "rung2",
+                }
+                for x in r2_exits
+            ]
         )
         had_baseline = bool(baseline) or bool(v1p.get("reunion_sequence_count"))
 
@@ -273,7 +340,7 @@ def main() -> None:
         nonqualifying = []
         for row in exact_statements.get(pk, []):
             st = row["statement"]
-            end = merge_end_times(((st.get("qualifiers") or {}).get("P582") or []))
+            end = merge_end_times((st.get("qualifiers") or {}).get("P582") or [])
             cause_info = []
             for q in row["cause_qids"]:
                 lab = cause_labels.get(q)
@@ -302,11 +369,13 @@ def main() -> None:
                 "cause_conflict": cause_conflict,
             }
             if end.get("usable"):
-                exact.update({
-                    "precision": end["precision"],
-                    "interval_start": end["interval_start"],
-                    "interval_end": end["interval_end"],
-                })
+                exact.update(
+                    {
+                        "precision": end["precision"],
+                        "interval_start": end["interval_start"],
+                        "interval_end": end["interval_end"],
+                    }
+                )
 
             overlaps_baseline = bool(end.get("usable") and any(overlap(end, b) for b in baseline))
             if overlaps_baseline:
@@ -315,7 +384,13 @@ def main() -> None:
                 counts["corroborating_statement_evidence"] += 1
                 continue
 
-            qualifies = bool(end.get("usable") and row["cause_qids"] and any_nonfatal and not any_fatal and not cause_conflict)
+            qualifies = bool(
+                end.get("usable")
+                and row["cause_qids"]
+                and any_nonfatal
+                and not any_fatal
+                and not cause_conflict
+            )
             if qualifies:
                 exact["status"] = "new_rung3_nonfatal_endpoint"
                 accepted.append(exact)
@@ -342,14 +417,16 @@ def main() -> None:
         if accepted and not had_baseline:
             newly_endpoint_pairs += 1
 
-        pair_results.append({
-            "pair_key": pk,
-            "had_clean_through_rung2_endpoint": had_baseline,
-            "exact_wikidata_relationship_statement_count": len(exact_statements.get(pk, [])),
-            "new_rung3_nonfatal_endpoints": accepted,
-            "corroborating_wikidata_endpoints": corroborating,
-            "nonqualifying_wikidata_statements": nonqualifying,
-        })
+        pair_results.append(
+            {
+                "pair_key": pk,
+                "had_clean_through_rung2_endpoint": had_baseline,
+                "exact_wikidata_relationship_statement_count": len(exact_statements.get(pk, [])),
+                "new_rung3_nonfatal_endpoints": accepted,
+                "corroborating_wikidata_endpoints": corroborating,
+                "nonqualifying_wikidata_statements": nonqualifying,
+            }
+        )
 
     out = {
         "status": "development_state_history_source_ladder_rung3",
@@ -362,7 +439,9 @@ def main() -> None:
         "rung2_sha256": sha256(R2),
         "pair_universe": len(r2["pairs"]),
         "linked_wikidata_qids": len(qids),
-        "resolved_claim_entities": sum(1 for q in qids if q in entities and "missing" not in (entities.get(q) or {})),
+        "resolved_claim_entities": sum(
+            1 for q in qids if q in entities and "missing" not in (entities.get(q) or {})
+        ),
         "exact_pair_P26_P451_statements": exact_statement_count,
         "P1534_cause_qids": sorted(cause_qids),
         "P1534_english_labels": cause_labels,
@@ -378,19 +457,37 @@ def main() -> None:
             "endpoint_pairs_observed": total_endpoint_pairs,
             "source_ladder_exhausted": True,
             "sufficiency_gate_passed": total_endpoint_pairs >= 30,
-            "next_action": "freeze_separate_semimarkov_model_spec" if total_endpoint_pairs >= 30 else "declare_public_source_universe_insufficient_do_not_fit",
+            "next_action": "freeze_separate_semimarkov_model_spec"
+            if total_endpoint_pairs >= 30
+            else "declare_public_source_universe_insufficient_do_not_fit",
         },
         "pairs": pair_results,
         "limitations": [
-            "Only exact Wikidata QIDs inherited from the frozen ADB->English-Wikipedia identity chain are used; no Wikidata search occurs.",
-            "Only P26/P451 exact opposite-partner statements and P580/P582/P1534 qualifiers are inspected.",
-            "A new nonfatal endpoint requires a usable P582 plus an exact P1534 English label in the frozen nonfatal lexical families.",
+            (
+                "Only exact Wikidata QIDs inherited from the frozen ADB->"
+                "English-Wikipedia identity chain are used; no Wikidata s"
+                "earch occurs."
+            ),
+            (
+                "Only P26/P451 exact opposite-partner statements and P580"
+                "/P582/P1534 qualifiers are inspected."
+            ),
+            (
+                "A new nonfatal endpoint requires a usable P582 plus an e"
+                "xact P1534 English label in the frozen nonfatal lexical "
+                "families."
+            ),
             "End times without qualifying end cause do not create new endpoint-bearing pairs.",
             "No astrology or Human Design features are calculated or inspected.",
         ],
     }
-    OUT.write_text(json.dumps(out, indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8")
-    print(json.dumps({k: v for k, v in out.items() if k != "pairs"}, indent=2, ensure_ascii=False), flush=True)
+    OUT.write_text(
+        json.dumps(out, indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
+    print(
+        json.dumps({k: v for k, v in out.items() if k != "pairs"}, indent=2, ensure_ascii=False),
+        flush=True,
+    )
 
 
 if __name__ == "__main__":

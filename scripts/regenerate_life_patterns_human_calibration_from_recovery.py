@@ -34,8 +34,7 @@ EXPECTED_SERIES_UNITS = 22
 EXPECTED_HANDOFF_FILE_COUNT = 15
 HANDOFF_RECEIPT_NAME = "human_handoff_public_safe_receipt.json"
 SAFE_HANDOFF_RECEIPT = Path(
-    "state/life-patterns-development-preparation-2026-09-06/"
-    "human_handoff_public_safe_receipt.json"
+    "state/life-patterns-development-preparation-2026-09-06/human_handoff_public_safe_receipt.json"
 )
 
 
@@ -70,7 +69,9 @@ def _find_exact_sources(source_archive: Path, extraction_root: Path) -> tuple[Pa
 
     if set(by_digest) != {V8_SHA256, V8_1_SHA256}:
         missing = sorted({V8_SHA256, V8_1_SHA256} - set(by_digest))
-        raise ValueError("recovery archive is missing exact frozen source bytes: " + ", ".join(missing))
+        raise ValueError(
+            "recovery archive is missing exact frozen source bytes: " + ", ".join(missing)
+        )
     if len(by_digest[V8_SHA256]) != V8_BYTES:
         raise ValueError("v8 exact source byte count disagrees with recovery receipt")
     if len(by_digest[V8_1_SHA256]) != V8_1_BYTES:

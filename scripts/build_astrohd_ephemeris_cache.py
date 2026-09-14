@@ -7,6 +7,7 @@ boundaries must be recomputed directly with the production ephemeris engine.
 Production policy: verified Swiss Ephemeris `.se1` files only. Any Moshier
 fallback is a hard error.
 """
+
 from __future__ import annotations
 
 import argparse
@@ -15,7 +16,7 @@ import json
 import lzma
 import math
 import struct
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 import numpy as np
@@ -105,8 +106,8 @@ def main() -> None:
 
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
-    start = datetime(1926, 5, 15, 10, 42, tzinfo=timezone.utc)
-    end = datetime(2026, 8, 24, 10, 42, tzinfo=timezone.utc)
+    start = datetime(1926, 5, 15, 10, 42, tzinfo=UTC)
+    end = datetime(2026, 8, 24, 10, 42, tzinfo=UTC)
     sj, ej = jd(start), jd(end)
 
     # Fail closed before doing expensive cache work.
@@ -159,10 +160,36 @@ def main() -> None:
         json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8"
     )
 
-    decoder = '''#!/usr/bin/env python3\nimport lzma, struct, numpy as np\ndef decode(path):\n    raw=lzma.decompress(open(path,"rb").read()); q0,d1,n,step=struct.unpack("<qiId",raw[:24]); dd=np.frombuffer(raw[24:],dtype="<i4").astype(np.int64); d=np.empty(n-1,dtype=np.int64); d[0]=d1\n    if n>2: d[1:]=d1+np.cumsum(dd)\n    q=np.empty(n,dtype=np.int64); q[0]=q0; q[1:]=q0+np.cumsum(d); return ((q/1e5)%360).astype(np.float64),step\ndef interpolate(path,start_jd,target_jd):\n    a,step=decode(path); x=(np.asarray(target_jd)-start_jd)*24/step; i=np.floor(x).astype(int); f=x-i; i=np.clip(i,0,len(a)-2); b=a[i]; c=a[i+1]; delta=((c-b+180)%360)-180; return (b+f*delta)%360\n'''
+    decoder = (
+        "#!/usr/bin/env python3\nimport lzma, struct, numpy as np\n"
+        'def decode(path):\n    raw=lzma.decompress(open(path,"rb"'
+        ').read()); q0,d1,n,step=struct.unpack("<qiId",raw[:24]);'
+        ' dd=np.frombuffer(raw[24:],dtype="<i4").astype(np.int64)'
+        "; d=np.empty(n-1,dtype=np.int64); d[0]=d1\n    if n>2: d["
+        "1:]=d1+np.cumsum(dd)\n    q=np.empty(n,dtype=np.int64); q"
+        "[0]=q0; q[1:]=q0+np.cumsum(d); return ((q/1e5)%360).asty"
+        "pe(np.float64),step\ndef interpolate(path,start_jd,target"
+        "_jd):\n    a,step=decode(path); x=(np.asarray(target_jd)-"
+        "start_jd)*24/step; i=np.floor(x).astype(int); f=x-i; i=n"
+        "p.clip(i,0,len(a)-2); b=a[i]; c=a[i+1]; delta=((c-b+180)"
+        "%360)-180; return (b+f*delta)%360\n"
+    )
     (out / "decode_cache.py").write_text(decoder, encoding="utf-8")
 
-    readme = '''# AstroHD generic ephemeris cache v2 (SWIEPH)\n\nReusable coarse-scan longitude cache for HD / Western / AstroHD reverse matching. It starts ~101 days before the declared 100-year scan so HD Design times are covered. Houses are intentionally not cached because they are birthplace-specific and cheap to calculate.\n\nSampling: Moon 1h; Sun/Mercury/Venus/Mars/true Node 3h; Jupiter/Saturn 6h; Uranus/Neptune/Pluto 12h. Every calculation requests SWIEPH and checks returned ephemeris flags; any Moshier fallback aborts the build. Finalists and exact boundaries must be recalculated directly with the production ephemeris rather than trusted to interpolation.\n'''
+    readme = (
+        "# AstroHD generic ephemeris cache v2 (SWIEPH)\n\nReusable "
+        "coarse-scan longitude cache for HD / Western / AstroHD r"
+        "everse matching. It starts ~101 days before the declared"
+        " 100-year scan so HD Design times are covered. Houses ar"
+        "e intentionally not cached because they are birthplace-s"
+        "pecific and cheap to calculate.\n\nSampling: Moon 1h; Sun/"
+        "Mercury/Venus/Mars/true Node 3h; Jupiter/Saturn 6h; Uran"
+        "us/Neptune/Pluto 12h. Every calculation requests SWIEPH "
+        "and checks returned ephemeris flags; any Moshier fallbac"
+        "k aborts the build. Finalists and exact boundaries must "
+        "be recalculated directly with the production ephemeris r"
+        "ather than trusted to interpolation.\n"
+    )
     (out / "README.md").write_text(readme, encoding="utf-8")
 
 

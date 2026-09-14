@@ -36,7 +36,9 @@ class FakeCoach:
             CoachResult(
                 reply="A strategy that helped in work may be worth testing here at low stakes.",
                 referenced_pattern_ids=("P1",),
-                suggested_experiment="Try the strategy once in a reversible situation and compare the result.",
+                suggested_experiment=(
+                    "Try the strategy once in a reversible situation and compare the result."
+                ),
                 important_uncertainty="The profile has only two supporting episodes.",
             ),
             {"model": "fake-coach", "endpoint": "test", "raw_response_sha256": "c" * 64},
@@ -114,8 +116,32 @@ def _seed(store: LifePatternsFileStore) -> tuple[str, str, bytes]:
     payload["consent_to_llm_processing"] = True
     now = datetime.now(UTC).isoformat()
     payload["episodes"] = [
-        {"episode_id": "EP-1", "domain": "work_projects", "title": "Work", "narrative": "I ran a small test before committing.", "counterexample": None, "input_modality": "typed", "source_turn_ids": [], "review_status": "approved", "participant_revision": False, "reviewed_at_utc": now, "created_at_utc": now},
-        {"episode_id": "EP-2", "domain": "relationships", "title": "Relationship", "narrative": "I moved faster and used less explicit testing.", "counterexample": None, "input_modality": "typed", "source_turn_ids": [], "review_status": "approved", "participant_revision": False, "reviewed_at_utc": now, "created_at_utc": now},
+        {
+            "episode_id": "EP-1",
+            "domain": "work_projects",
+            "title": "Work",
+            "narrative": "I ran a small test before committing.",
+            "counterexample": None,
+            "input_modality": "typed",
+            "source_turn_ids": [],
+            "review_status": "approved",
+            "participant_revision": False,
+            "reviewed_at_utc": now,
+            "created_at_utc": now,
+        },
+        {
+            "episode_id": "EP-2",
+            "domain": "relationships",
+            "title": "Relationship",
+            "narrative": "I moved faster and used less explicit testing.",
+            "counterexample": None,
+            "input_modality": "typed",
+            "source_turn_ids": [],
+            "review_status": "approved",
+            "participant_revision": False,
+            "reviewed_at_utc": now,
+            "created_at_utc": now,
+        },
     ]
     payload["life_patterns_map"] = LifePatternsMap(
         overall_summary="Testing behavior differs by context.",

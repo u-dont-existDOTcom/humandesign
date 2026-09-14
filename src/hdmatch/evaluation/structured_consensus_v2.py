@@ -129,10 +129,7 @@ def _responses_by_unit(
     data: bytes,
 ) -> dict[tuple[str, str, str], StructuredAnnotationResponseV2]:
     rows = load_structured_annotation_responses_jsonl_v2(data)
-    output = {
-        (row.task_id, row.episode_id, row.observable_id): row
-        for row in rows
-    }
+    output = {(row.task_id, row.episode_id, row.observable_id): row for row in rows}
     if len(output) != len(rows):
         raise ValueError("structured consensus input repeats annotation units")
     return output
@@ -144,7 +141,12 @@ def build_structured_consensus_v2(
     if len(passes) < 3:
         raise ValueError("structured consensus requires at least three validated passes")
 
-    validated: list[tuple[ValidatedStructuredAutomatedPassArtifactV2, dict[tuple[str, str, str], StructuredAnnotationResponseV2]]] = []
+    validated: list[
+        tuple[
+            ValidatedStructuredAutomatedPassArtifactV2,
+            dict[tuple[str, str, str], StructuredAnnotationResponseV2],
+        ]
+    ] = []
     for artifact, normalized_output in passes:
         errors = validated_structured_automated_pass_integrity_errors(artifact)
         if errors:
@@ -205,13 +207,13 @@ def build_structured_consensus_v2(
 
         agreeing = tuple(sorted(row[0] for row in winner_rows)) if status != "unresolved" else ()
         all_pass_ids = {artifact.payload.automated_pass.pass_id for artifact, _ in validated}
-        dissenting = tuple(sorted(all_pass_ids - set(agreeing))) if status != "unresolved" else tuple(
-            sorted(all_pass_ids)
+        dissenting = (
+            tuple(sorted(all_pass_ids - set(agreeing)))
+            if status != "unresolved"
+            else tuple(sorted(all_pass_ids))
         )
         consensus_response = (
-            min(winner_rows, key=lambda row: row[0])[1]
-            if status != "unresolved"
-            else None
+            min(winner_rows, key=lambda row: row[0])[1] if status != "unresolved" else None
         )
         unit_rows.append(
             StructuredConsensusUnitV2(
@@ -230,9 +232,7 @@ def build_structured_consensus_v2(
     majority = sum(row.status == "majority" for row in unit_rows)
     unresolved = sum(row.status == "unresolved" for row in unit_rows)
     payload = StructuredConsensusPayloadV2(
-        validated_pass_artifact_sha256=tuple(
-            artifact.artifact_sha256 for artifact, _ in validated
-        ),
+        validated_pass_artifact_sha256=tuple(artifact.artifact_sha256 for artifact, _ in validated),
         pass_ids=tuple(artifact.payload.automated_pass.pass_id for artifact, _ in validated),
         corpus_sha256=first_pass.corpus_sha256,
         codebook_sha256=first_pass.codebook_sha256,

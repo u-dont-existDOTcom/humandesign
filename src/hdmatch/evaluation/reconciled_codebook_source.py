@@ -89,7 +89,9 @@ class ReconciledCodebookSourcePayload(ReconciledSourceModel):
             raise ValueError("reconciled codebook source repeats observable IDs")
         expected = [f"NBM-R{index:02d}" for index in range(1, 23)]
         if ids != expected:
-            raise ValueError(f"reconciled codebook observable IDs are not exact R01-R22 sequence: {ids}")
+            raise ValueError(
+                f"reconciled codebook observable IDs are not exact R01-R22 sequence: {ids}"
+            )
         return self
 
 

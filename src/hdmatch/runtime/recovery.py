@@ -97,9 +97,7 @@ def _ranked_payload(
                         **item.best_state.model_dump(mode="json"),
                         "start_utc": state.start_utc.isoformat().replace("+00:00", "Z"),
                         "end_utc": state.end_utc.isoformat().replace("+00:00", "Z"),
-                        "interval_width_seconds": (
-                            state.end_utc - state.start_utc
-                        ).total_seconds(),
+                        "interval_width_seconds": (state.end_utc - state.start_utc).total_seconds(),
                         "chart_features_hash": state.chart_features_hash,
                         "cross_engine_status": state.cross_engine_status,
                     },
@@ -158,10 +156,7 @@ def _likelihood_rows(labels: Sequence[str], match_probability: float) -> list[di
             continue
         mismatch = (1.0 - match_probability) / (len(alphabet) - 1)
         rows.append(
-            {
-                option: match_probability if option == label else mismatch
-                for option in alphabet
-            }
+            {option: match_probability if option == label else mismatch for option in alphabet}
         )
     return rows
 
@@ -284,9 +279,7 @@ def recover_blind_file(
     cache_hashes: dict[str, str] = {}
     for request in sorted(set(requests)):
         path = cache_path(cache_dir, request, engine.fingerprint)
-        cached = load_cached_universe(
-            path, request=request, engine_fingerprint=engine.fingerprint
-        )
+        cached = load_cached_universe(path, request=request, engine_fingerprint=engine.fingerprint)
         universes[request] = cached.states
         cache_hashes[path.name] = cached.sha256
 
@@ -357,8 +350,10 @@ def recover_blind_file(
                     mapping.mapping_id
                     for mapping in model.library.mappings
                     if mapping.status is MappingStatus.UNRESOLVED
-                    and any(question_id in {r.question_id for r in case.responses}
-                            for question_id in mapping.question_ids)
+                    and any(
+                        question_id in {r.question_id for r in case.responses}
+                        for question_id in mapping.question_ids
+                    )
                 ],
                 "prevalence_source": "duration-weighted declared candidate universe",
             }

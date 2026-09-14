@@ -186,16 +186,14 @@ def _feature_vectors(
             "definition+channels",
             "bodygraph_combination",
             tuple(
-                (features.definition, tuple(sorted(features.channels)))
-                for features in structural
+                (features.definition, tuple(sorted(features.channels))) for features in structural
             ),
         ),
         (
             "active_gate_set:any_side",
             "activation_gate_set",
             tuple(
-                tuple(sorted(set(features.activation_gates.values())))
-                for features in structural
+                tuple(sorted(set(features.activation_gates.values()))) for features in structural
             ),
         ),
     ]
@@ -267,9 +265,7 @@ def _capacity_result(
     metrics = summarize_fingerprints(combined, durations)
     reference_value = values[reference_index]
     tie_values = {values[index] for index in reference_tie_indices}
-    remaining_reference = sum(
-        values[index] == reference_value for index in reference_tie_indices
-    )
+    remaining_reference = sum(values[index] == reference_value for index in reference_tie_indices)
     return ResidualFeatureCapacity(
         feature_id=feature_id,
         feature_kind=feature_kind,

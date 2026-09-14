@@ -50,9 +50,7 @@ def test_eligible_attestation_is_accepted_and_receipt_hides_identity_and_notes()
     assert attestation.auditor_id == "private-auditor-001"
     assert receipt.receipt_id.startswith("LPHA2-")
     assert receipt.payload.attestation_sha256 == hashlib.sha256(raw).hexdigest()
-    assert receipt.payload.auditor_id_sha256 == hashlib.sha256(
-        b"private-auditor-001"
-    ).hexdigest()
+    assert receipt.payload.auditor_id_sha256 == hashlib.sha256(b"private-auditor-001").hexdigest()
     assert receipt.payload.contains_auditor_identity is False
     assert receipt.payload.contains_auditor_notes is False
     rendered = receipt.model_dump_json()

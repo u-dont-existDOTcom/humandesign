@@ -161,11 +161,15 @@ def main() -> None:
     completed_scenarios: list[str] = []
     for scenario in scenarios:
         checkpoint_path = checkpoint_dir / f"{scenario.scenario_id}.json"
-        checkpoint = _load_checkpoint(
-            checkpoint_path,
-            run_identity_sha256=run_identity_sha256,
-            scenario=scenario.model_dump(mode="json"),
-        ) if not args.no_resume else None
+        checkpoint = (
+            _load_checkpoint(
+                checkpoint_path,
+                run_identity_sha256=run_identity_sha256,
+                scenario=scenario.model_dump(mode="json"),
+            )
+            if not args.no_resume
+            else None
+        )
         if checkpoint is not None:
             summaries.append(checkpoint["summary"])
             diagnostics[scenario.scenario_id] = checkpoint["diagnostics"]

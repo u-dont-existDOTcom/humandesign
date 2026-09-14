@@ -75,9 +75,7 @@ def _reliability(*, content_sha: str = "a" * 64) -> BlindHumanReliabilityReceipt
     )
 
 
-def _llm_substitution(
-    *, content_sha: str = "a" * 64
-) -> StatisticalLLMSubstitutionReceipt:
+def _llm_substitution(*, content_sha: str = "a" * 64) -> StatisticalLLMSubstitutionReceipt:
     return StatisticalLLMSubstitutionReceipt(
         content_sha256=content_sha,
         automated_human_calibration_artifact_sha256="5" * 64,
@@ -91,9 +89,7 @@ def _llm_substitution(
     )
 
 
-def _automated_instrument(
-    *, content_sha: str = "a" * 64
-) -> AutomatedMeasurementInstrumentReceipt:
+def _automated_instrument(*, content_sha: str = "a" * 64) -> AutomatedMeasurementInstrumentReceipt:
     return AutomatedMeasurementInstrumentReceipt(
         content_sha256=content_sha,
         instrument_spec_sha256="5" * 64,

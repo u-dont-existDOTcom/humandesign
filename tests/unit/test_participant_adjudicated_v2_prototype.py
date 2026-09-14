@@ -84,10 +84,12 @@ def test_revise_creates_next_proposal_with_participant_wording() -> None:
 
 
 def test_prototype_uses_v2_core_and_not_historical_auto_map() -> None:
-    source = inspect.getsource(__import__(
-        "hdmatch.evaluation.participant_adjudicated_v2_prototype",
-        fromlist=["OwnerPrototypeSessionV2"],
-    ))
+    source = inspect.getsource(
+        __import__(
+            "hdmatch.evaluation.participant_adjudicated_v2_prototype",
+            fromlist=["OwnerPrototypeSessionV2"],
+        )
+    )
     assert "life_patterns_app" not in source
     session = OwnerPrototypeSessionV2.synthetic()
     session.propose_pattern()

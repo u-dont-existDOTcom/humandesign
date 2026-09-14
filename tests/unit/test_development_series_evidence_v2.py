@@ -183,12 +183,15 @@ def test_generalized_recurrence_is_observed_without_fake_occurrence_floor() -> N
     assert response.reported_recurrence_strength == "universal_language"
     assert response.confirming_episode_counted_as_independent_frequency_evidence is False
     ontology = _ontology()
-    assert development_series_response_errors_v2(
-        response,
-        task=task,
-        ontology=ontology,
-        procedure=_procedure(ontology),
-    ) == ()
+    assert (
+        development_series_response_errors_v2(
+            response,
+            task=task,
+            ontology=ontology,
+            procedure=_procedure(ontology),
+        )
+        == ()
+    )
 
 
 def test_always_does_not_imply_exceptions_were_explicitly_denied() -> None:

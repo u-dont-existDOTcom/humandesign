@@ -98,5 +98,7 @@ def test_validation_copy_uses_same_human_state_meanings() -> None:
     _, _, patched = _patched()
     validate = _function(patched, "validate")
 
-    assert "Choose Enough information to code, Doesn't apply, or Not enough information." in validate
+    assert (
+        "Choose Enough information to code, Doesn't apply, or Not enough information." in validate
+    )
     assert "Choose Yes, No, or Can't tell." not in validate

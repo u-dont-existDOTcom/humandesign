@@ -225,9 +225,10 @@ class ParticipantAdjudicationV2(LifePatternsV2Model):
 
     @model_validator(mode="after")
     def participant_wording_is_present_when_required(self) -> Self:
-        if self.decision in {"accept", "revise"} and not (
-            self.participant_approved_wording or ""
-        ).strip():
+        if (
+            self.decision in {"accept", "revise"}
+            and not (self.participant_approved_wording or "").strip()
+        ):
             raise ValueError("accept and revise require participant-approved wording")
         return self
 
@@ -447,9 +448,7 @@ def _structure_errors(record: LifePatternsRecordV2) -> tuple[str, ...]:
     provenance = {row.source_provenance_id: row for row in record.source_provenance}
     episodes = {row.episode_id: row for row in record.episodes}
     facts = {row.fact_id: row for row in record.episode_facts}
-    assessments = {
-        row.absence_assessment_id: row for row in record.absence_assessments
-    }
+    assessments = {row.absence_assessment_id: row for row in record.absence_assessments}
     proposals = {row.proposal_id: row for row in record.pattern_proposals}
     evidence_links = {row.evidence_link_id: row for row in record.pattern_evidence_links}
     adjudications = {row.proposal_id: row for row in record.participant_adjudications}
@@ -485,12 +484,9 @@ def _structure_errors(record: LifePatternsRecordV2) -> tuple[str, ...]:
                         f"episode-only uncertainty note {note.note_id} is insufficient for fact "
                         f"{fact_id}"
                     )
-                elif (
-                    fact.qualification.text != note.text
-                    or not set(note.source_provenance_ids).issubset(
-                        fact.qualification.source_provenance_ids
-                    )
-                ):
+                elif fact.qualification.text != note.text or not set(
+                    note.source_provenance_ids
+                ).issubset(fact.qualification.source_provenance_ids):
                     errors.append(
                         f"fact {fact_id} does not preserve its source-bound uncertainty exactly"
                     )
@@ -612,10 +608,7 @@ def _structure_errors(record: LifePatternsRecordV2) -> tuple[str, ...]:
                     errors.append(
                         f"proposal {thread_proposal.proposal_id} lacks a prior revise adjudication"
                     )
-                elif (
-                    thread_proposal.proposition
-                    != prior_adjudication.participant_approved_wording
-                ):
+                elif thread_proposal.proposition != prior_adjudication.participant_approved_wording:
                     errors.append(
                         f"proposal {thread_proposal.proposal_id} does not preserve participant "
                         "revision wording"
@@ -671,8 +664,7 @@ def _structure_errors(record: LifePatternsRecordV2) -> tuple[str, ...]:
                 introducing = proposals.get(counterexample_link.proposal_id)
                 if (
                     introducing is None
-                    or introducing.pattern_thread_id
-                    != adjudicated_proposal.pattern_thread_id
+                    or introducing.pattern_thread_id != adjudicated_proposal.pattern_thread_id
                 ):
                     errors.append(
                         f"adjudication {adjudication.adjudication_id} uses another thread's "
@@ -681,8 +673,7 @@ def _structure_errors(record: LifePatternsRecordV2) -> tuple[str, ...]:
         if (
             adjudication.decision == "accept"
             and adjudicated_proposal is not None
-            and adjudication.participant_approved_wording
-            != adjudicated_proposal.proposition
+            and adjudication.participant_approved_wording != adjudicated_proposal.proposition
         ):
             errors.append(
                 f"accepted proposal {adjudicated_proposal.proposal_id} differs from "
@@ -704,9 +695,7 @@ def _current_fact_ids(record: LifePatternsRecordV2) -> set[str]:
     return {fact.fact_id for fact in record.episode_facts if fact.fact_id not in superseded}
 
 
-def _call_nonoccurrence_twice(
-    callback: NonoccurrenceCallback, fact: EpisodeFactV2
-) -> bool:
+def _call_nonoccurrence_twice(callback: NonoccurrenceCallback, fact: EpisodeFactV2) -> bool:
     first = callback(fact)
     second = callback(fact)
     if type(first) is not bool or type(second) is not bool:  # noqa: E721
@@ -788,8 +777,7 @@ def _semantic_errors(
     errors: list[str] = []
     fact_decisions = {row.fact_id: row for row in receipt.fact_decisions}
     grounding_decisions = {
-        (row.proposal_id, row.evidence_link_id): row
-        for row in receipt.grounding_decisions
+        (row.proposal_id, row.evidence_link_id): row for row in receipt.grounding_decisions
     }
     links = {row.evidence_link_id: row for row in record.pattern_evidence_links}
     current_fact_ids = _current_fact_ids(record)
@@ -1065,9 +1053,7 @@ def build_adapter_projection_v2(
         accepted_patterns=tuple(
             ProjectedResolvedPatternV2(pattern=pattern) for pattern in accepted
         ),
-        operative_evidence_links=tuple(
-            links[link_id] for link_id in sorted(operative_link_ids)
-        ),
+        operative_evidence_links=tuple(links[link_id] for link_id in sorted(operative_link_ids)),
     )
 
 
@@ -1093,9 +1079,7 @@ def validate_adapter_operation_v2(
             if row.fact.fact_id in operation.episode_fact_ids
         }
         if len({fact.episode_id for fact in requested_facts.values()}) > 1:
-            errors.append(
-                "non-inspect episode-fact operations cannot cross episode boundaries"
-            )
+            errors.append("non-inspect episode-fact operations cannot cross episode boundaries")
     if errors:
         raise LifePatternsV2ValidationError(tuple(errors))
 

@@ -37,7 +37,6 @@ from hdmatch.evaluation.resolved_development_stack import (
 )
 from hdmatch.experiments.canonical import sha256_json
 
-
 NOW = datetime(2026, 9, 6, 23, 0, tzinfo=UTC)
 PRIVATE_MARKER = "PRIVATE-SYNTHETIC-PARTICIPANT-TEXT"
 
@@ -106,7 +105,9 @@ def _preparation() -> PrivateDevelopmentPreparation:
         payload=payload,
     )
     episode_tasks = build_development_episode_tasks(corpus, observable_ids=stack.observable_ids)
-    episode_manifest = build_development_task_manifest(corpus, tasks=episode_tasks, created_at_utc=NOW)
+    episode_manifest = build_development_task_manifest(
+        corpus, tasks=episode_tasks, created_at_utc=NOW
+    )
     series_report = build_development_series_tasks(corpus, observable_ids=stack.observable_ids)
     series_manifest = build_development_series_manifest(series_report, created_at_utc=NOW)
     seed = deterministic_calibration_seed(
@@ -167,7 +168,10 @@ def test_automated_episode_packet_contains_full_frozen_task_without_target_infor
     assert len(packet.payload.tasks) == 1
     assert len(packet.payload.tasks[0].observable_ids) == 22
     assert packet.payload.assigned_unit_count == 22
-    assert packet.payload.instruction_prompt_sha256 == prep.package.payload.episode_transport_prompt_sha256
+    assert (
+        packet.payload.instruction_prompt_sha256
+        == prep.package.payload.episode_transport_prompt_sha256
+    )
     assert packet.payload.target_model_information_available is False
     assert packet.payload.birth_or_chart_data_available is False
     assert packet.payload.prior_automated_labels_available is False
@@ -204,7 +208,10 @@ def test_automated_series_packet_uses_separate_series_transport_prompt() -> None
     )[0]
     assert packet.payload.evidence_kind == "series"
     assert packet.payload.assigned_unit_count == 22
-    assert packet.payload.instruction_prompt_sha256 == prep.package.payload.series_transport_prompt_sha256
+    assert (
+        packet.payload.instruction_prompt_sha256
+        == prep.package.payload.series_transport_prompt_sha256
+    )
 
 
 def test_public_safe_packet_receipt_does_not_repeat_private_text() -> None:

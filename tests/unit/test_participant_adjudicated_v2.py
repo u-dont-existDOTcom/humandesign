@@ -206,12 +206,11 @@ def _callbacks(
             validator_version="1",
             validator_sha256="f" * 64,
         ),
-        asserts_real_world_nonoccurrence=lambda fact: fact.proposition.startswith(
-            "NONOCCURRENCE:"
-        ),
+        asserts_real_world_nonoccurrence=lambda fact: fact.proposition.startswith("NONOCCURRENCE:"),
         grounding_supports_current_proposition=(
-            lambda proposal, _link, facts: proposal.proposition in supported_propositions
-            and bool(facts)
+            lambda proposal, _link, facts: (
+                proposal.proposition in supported_propositions and bool(facts)
+            )
         ),
     )
 
@@ -278,9 +277,7 @@ def test_t002_timing_is_immutable_across_pattern_revisions() -> None:
     )
     valid = _record(
         facts=(_fact(), later_fact),
-        proposals=(
-            _proposal(evidence_link_ids=("LINK-0", "LINK-POST")),
-        ),
+        proposals=(_proposal(evidence_link_ids=("LINK-0", "LINK-POST")),),
         links=(_link(), post_link),
         adjudications=(_adjudication(),),
     )
@@ -300,9 +297,7 @@ def test_t002_timing_is_immutable_across_pattern_revisions() -> None:
             "pattern_evidence_links": valid.pattern_evidence_links + (promoted_copy,),
             "pattern_proposals": (
                 valid.pattern_proposals[0].model_copy(
-                    update={
-                        "evidence_link_ids": ("LINK-0", "LINK-POST", "LINK-PROMOTED")
-                    }
+                    update={"evidence_link_ids": ("LINK-0", "LINK-POST", "LINK-PROMOTED")}
                 ),
             ),
         }

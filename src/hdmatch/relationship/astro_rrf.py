@@ -52,15 +52,9 @@ def score_astro_rrf_v01(
         scores.extend(
             (
                 _score_eros(actor_id, actor_natal, partner_natal, overlays, max_orb=max_orb),
-                _score_communication(
-                    actor_id, actor_natal, partner_natal, max_orb=max_orb
-                ),
-                _score_emotional_ease(
-                    actor_id, actor_natal, partner_natal, max_orb=max_orb
-                ),
-                _score_engulfment(
-                    actor_id, actor_natal, partner_natal, overlays, max_orb=max_orb
-                ),
+                _score_communication(actor_id, actor_natal, partner_natal, max_orb=max_orb),
+                _score_emotional_ease(actor_id, actor_natal, partner_natal, max_orb=max_orb),
+                _score_engulfment(actor_id, actor_natal, partner_natal, overlays, max_orb=max_orb),
             )
         )
     return AstroRRFV01Result(
@@ -346,9 +340,7 @@ def _score_engulfment(
     if actor.ascendant is not None:
         best_orb: float | None = None
         for axis in (actor.ascendant, (actor.ascendant + 180.0) % 360.0):
-            match = classify_major_aspect(
-                partner.longitudes["uranus"], axis, max_orb=max_orb
-            )
+            match = classify_major_aspect(partner.longitudes["uranus"], axis, max_orb=max_orb)
             if match is not None and (best_orb is None or match[1] < best_orb):
                 best_orb = match[1]
         if best_orb is not None:
@@ -476,9 +468,7 @@ def _novelty_flags(
         "synastry_actor_mars_partner_uranus": _direct_aspect(
             actor, "mars", partner, "uranus", max_orb=max_orb
         ),
-        "partner_uranus_in_actor_house_5": (
-            overlays.get("uranus") == 5 if overlays else None
-        ),
+        "partner_uranus_in_actor_house_5": (overlays.get("uranus") == 5 if overlays else None),
     }
 
 

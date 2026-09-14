@@ -47,16 +47,54 @@ def patch_html_for_evidence_state_clarity(html: str) -> str:
     html = _replace_function(
         html,
         "renderStates",
-        r'''function renderStates(u,r){const opts=[["observed","Enough information to code","The exact source gives enough information to choose at least one behavior below."],["not_applicable","Doesn't apply","The situation required by this question is clearly not present."],["insufficient","Not enough information","Some pieces may fit, but the exact source is not clear or complete enough to choose a behavior reliably."]];$("stateGrid").innerHTML=`<h3 style="grid-column:1/-1;margin:0">Can this unit be coded for the question above?</h3><p class="hint" style="grid-column:1/-1;margin:0">This is not a fit scale. If it partly fits but you cannot confidently choose a behavior from the exact source, choose <b>Not enough information</b>.</p>`+opts.map(([v,l,d])=>`<label class="state"><b><input type="radio" name="state" value="${v}" ${r.state===v?"checked":""}>${l}</b><span>${d}</span></label>`).join("");updateStateSemantics(u,r.state);document.querySelectorAll('input[name="state"]').forEach(el=>el.addEventListener("change",()=>{const next={...readForm(u),state:el.value};updateStateSemantics(u,el.value);renderSources(u,next);renderObserved(u,next)}))}''',
+        (
+            'function renderStates(u,r){const opts=[["observed","Enou'
+            'gh information to code","The exact source gives enough i'
+            'nformation to choose at least one behavior below."],["no'
+            't_applicable","Doesn\'t apply","The situation required by'
+            ' this question is clearly not present."],["insufficient"'
+            ',"Not enough information","Some pieces may fit, but the '
+            "exact source is not clear or complete enough to choose a"
+            ' behavior reliably."]];$("stateGrid").innerHTML=`<h3 sty'
+            'le="grid-column:1/-1;margin:0">Can this unit be coded fo'
+            'r the question above?</h3><p class="hint" style="grid-co'
+            'lumn:1/-1;margin:0">This is not a fit scale. If it partl'
+            "y fits but you cannot confidently choose a behavior from"
+            " the exact source, choose <b>Not enough information</b>."
+            '</p>`+opts.map(([v,l,d])=>`<label class="state"><b><inpu'
+            't type="radio" name="state" value="${v}" ${r.state===v?"'
+            'checked":""}>${l}</b><span>${d}</span></label>`).join(""'
+            ");updateStateSemantics(u,r.state);document.querySelector"
+            "All('input[name=\"state\"]').forEach(el=>el.addEventListen"
+            'er("change",()=>{const next={...readForm(u),state:el.val'
+            "ue};updateStateSemantics(u,el.value);renderSources(u,nex"
+            "t);renderObserved(u,next)}))}"
+        ),
     )
     html = _replace_function(
         html,
         "updateStateSemantics",
-        r'''function updateStateSemantics(u,state){$("stateSemantics").textContent=state==="observed"?"Choose the behavior or behaviors that the exact source clearly supports.":state==="not_applicable"?"The required situation is absent, so no behavioral value is needed.":state==="insufficient"?"Use this when only part of the needed information is present, or the source is too unclear to choose a behavior reliably.":""}''',
+        (
+            'function updateStateSemantics(u,state){$("stateSemantics'
+            '").textContent=state==="observed"?"Choose the behavior o'
+            'r behaviors that the exact source clearly supports.":sta'
+            'te==="not_applicable"?"The required situation is absent,'
+            ' so no behavioral value is needed.":state==="insufficien'
+            't"?"Use this when only part of the needed information is'
+            " present, or the source is too unclear to choose a behav"
+            'ior reliably.":""}'
+        ),
     )
 
-    old = 'if(!["observed","insufficient","not_applicable"].includes(r.state))e.push("Choose Yes, No, or Can\'t tell.");'
-    new = 'if(!["observed","insufficient","not_applicable"].includes(r.state))e.push("Choose Enough information to code, Doesn\'t apply, or Not enough information.");'
+    old = (
+        'if(!["observed","insufficient","not_applicable"].include'
+        's(r.state))e.push("Choose Yes, No, or Can\'t tell.");'
+    )
+    new = (
+        'if(!["observed","insufficient","not_applicable"].include'
+        's(r.state))e.push("Choose Enough information to code, Do'
+        "esn't apply, or Not enough information.\");"
+    )
     if old not in html:
         raise ValueError("auditor state-label patch could not find primary-state validation copy")
     html = html.replace(old, new, 1)
@@ -72,7 +110,9 @@ def patch_html_for_evidence_state_clarity(html: str) -> str:
         "If it partly fits",
     ):
         if required not in outside:
-            raise ValueError(f"auditor state-label patch is missing required human copy: {required}")
+            raise ValueError(
+                f"auditor state-label patch is missing required human copy: {required}"
+            )
     return html
 
 

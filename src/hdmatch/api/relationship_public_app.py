@@ -171,9 +171,7 @@ def _load_guided_registry(path: Path, spec: RelationshipQuestionnaireSpec) -> Gu
     return registry
 
 
-def _public_question(
-    question: RelationshipQuestion, registry: GuidedRegistry
-) -> dict[str, Any]:
+def _public_question(question: RelationshipQuestion, registry: GuidedRegistry) -> dict[str, Any]:
     guided = registry.questions[question.id]
     return {
         "id": question.id,
@@ -308,9 +306,7 @@ def create_relationship_public_app_from_env() -> FastAPI:
             "next_question": _public_question(question, guided) if question else None,
             "freeze_sha256": payload.get("freeze_sha256"),
             "can_start_clarification": (
-                payload["status"] == "frozen"
-                and _legacy_session(payload)
-                and addendum is None
+                payload["status"] == "frozen" and _legacy_session(payload) and addendum is None
             ),
             "clarification_addendum": addendum,
             "clarification_next_question": (
@@ -370,9 +366,7 @@ def create_relationship_public_app_from_env() -> FastAPI:
         }
 
     @app.put("/api/sessions/{session_id}/answers/{question_id}")
-    def edit_answer(
-        session_id: str, question_id: str, request: AnswerRequest
-    ) -> dict[str, Any]:
+    def edit_answer(session_id: str, question_id: str, request: AnswerRequest) -> dict[str, Any]:
         payload = store.read(session_id, request.token)
         if payload["status"] != "in_progress":
             raise HTTPException(status_code=409, detail="frozen answers cannot be edited")
@@ -422,9 +416,7 @@ def create_relationship_public_app_from_env() -> FastAPI:
         }
 
     @app.post("/api/sessions/{session_id}/clarification/answers")
-    def submit_clarification_answer(
-        session_id: str, request: AnswerRequest
-    ) -> dict[str, Any]:
+    def submit_clarification_answer(session_id: str, request: AnswerRequest) -> dict[str, Any]:
         payload = store.read(session_id, request.token)
         addendum = payload.get("clarification_addendum")
         if not addendum or addendum.get("status") != "in_progress":
@@ -478,41 +470,213 @@ def create_relationship_public_app_from_env() -> FastAPI:
     return app
 
 
-_HTML = r"""<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Relationship X-Ray</title>
-<style>
-body{font-family:system-ui,sans-serif;max-width:850px;margin:0 auto;padding:32px 20px;line-height:1.5;color:#181818}
-button,select,textarea{font:inherit}button{padding:10px 16px;margin:8px 8px 0 0;cursor:pointer}textarea{width:100%;min-height:100px;padding:10px;box-sizing:border-box}.hidden{display:none}.card{border:1px solid #ddd;border-radius:12px;padding:20px;margin-top:18px}.field{border-top:1px solid #e7e7e7;padding:18px 0}.field:first-of-type{border-top:0}.field label{font-weight:650;display:block;margin-bottom:8px}.field select{padding:7px;min-width:210px}.hint{color:#666;font-size:.93rem;margin:6px 0 10px}.clarify{background:#fff8e8;border-left:3px solid #d79d26;padding:10px;margin-top:10px}.answer{white-space:pre-wrap;background:#f6f6f6;padding:10px;border-radius:8px;margin:6px 0}.status{font-size:.9rem;font-weight:650}.uncertain{background:#fff8e8}.unknown{background:#f2f2f2}.progress{font-size:.9rem;color:#666}.review-field{margin:8px 0 14px}.receipt{font-family:ui-monospace,monospace;overflow-wrap:anywhere}
-</style></head>
-<body>
-<h1>Relationship X-Ray</h1>
-<p>Describe one important relationship before any astrology or Human Design result is shown. Each section has separate answer fields so you do not have to remember a list of unrelated questions inside one text box.</p>
-<div id="start" class="card"><label><input id="consent" type="checkbox"> I consent to storing these responses privately for this research session.</label><br><button onclick="begin()">Begin</button></div>
-<div id="survey" class="card hidden"><div class="progress" id="modeLabel"></div><h2 id="title"></h2><p id="intro"></p><div id="fields"></div><button onclick="submitDomain()" id="saveButton">Save & continue</button><button onclick="cancelEdit()" id="cancelEditButton" class="hidden">Cancel edit</button><p><small>Your private resume token is stored only in this browser.</small></p></div>
-<div id="review" class="card hidden"><h2 id="reviewTitle">Review before freezing</h2><p id="ambiguity"></p><div id="answers"></div><button onclick="freezeCurrent()">Freeze these answers</button></div>
-<div id="done" class="card hidden"><h2>Responses frozen</h2><p id="doneText">Your answers are sealed for this pilot.</p><p class="receipt" id="digest"></p><button id="clarifyLegacy" class="hidden" onclick="startClarification()">Add structured clarification</button></div>
-<script>
-let sessionId=localStorage.getItem('rr_session');let token=localStorage.getItem('rr_token');let current=null;let mode='main';let editing=false;let state=null;let questionDefinitions={};
-const statuses=[['','Choose one…'],['clear','Clear enough'],['mixed','Mixed / both'],['context_dependent','Depends on context or time'],['unknown','I don\'t know'],['not_applicable','Not applicable']];
-async function begin(){if(!document.getElementById('consent').checked)return alert('Consent is required.');const r=await fetch('/api/sessions',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({consent_to_store_responses:true})});const d=await r.json();if(!r.ok)return alert(d.detail||'Could not start');sessionId=d.session_id;token=d.resume_token;localStorage.setItem('rr_session',sessionId);localStorage.setItem('rr_token',token);mode='main';showQuestion(d.next_question)}
-function showQuestion(q,existing=null){document.getElementById('start').classList.add('hidden');document.getElementById('review').classList.add('hidden');document.getElementById('done').classList.add('hidden');document.getElementById('survey').classList.remove('hidden');current=q;questionDefinitions[q.id]=q;document.getElementById('modeLabel').textContent=(mode==='clarification'?'Clarification addendum · ':'')+q.title;document.getElementById('title').textContent=q.title;document.getElementById('intro').textContent=q.intro;document.getElementById('fields').innerHTML=q.fields.map(f=>fieldHtml(f,existing)).join('');document.getElementById('saveButton').textContent=editing?'Save changes':'Save & continue';document.getElementById('cancelEditButton').classList.toggle('hidden',!editing);q.fields.forEach(f=>toggleClarification(f.id))}
-function fieldHtml(f,existing){const old=existing&&existing.fields?existing.fields.find(x=>x.field_id===f.id):null;const st=old?old.status:'';const ans=old?old.answer:'';const cl=old?old.clarification:'';return '<div class="field" id="wrap_'+f.id+'"><label>'+escapeHtml(f.label)+'</label><div class="hint">'+escapeHtml(f.placeholder)+'</div><select id="status_'+f.id+'" onchange="toggleClarification(\''+f.id+'\')">'+statuses.map(x=>'<option value="'+x[0]+'" '+(x[0]===st?'selected':'')+'>'+escapeHtml(x[1])+'</option>').join('')+'</select><textarea id="answer_'+f.id+'" placeholder="Your answer">'+escapeHtml(ans)+'</textarea><div id="clarify_'+f.id+'" class="clarify hidden"><div class="hint">'+escapeHtml(f.clarification_prompt)+'</div><textarea id="clarification_'+f.id+'" placeholder="Clarify the difference or context">'+escapeHtml(cl)+'</textarea></div></div>'}
-function toggleClarification(id){const st=document.getElementById('status_'+id).value;const box=document.getElementById('clarify_'+id);box.classList.toggle('hidden',!(st==='mixed'||st==='context_dependent'));document.getElementById('wrap_'+id).classList.toggle('uncertain',st==='mixed'||st==='context_dependent');document.getElementById('wrap_'+id).classList.toggle('unknown',st==='unknown'||st==='not_applicable')}
-function collectFields(){return current.fields.map(f=>({field_id:f.id,status:document.getElementById('status_'+f.id).value,answer:document.getElementById('answer_'+f.id).value.trim(),clarification:document.getElementById('clarification_'+f.id)?document.getElementById('clarification_'+f.id).value.trim():''}))}
-async function submitDomain(){const fields=collectFields();if(fields.some(x=>!x.status))return alert('Choose a status for every field.');for(const x of fields){if(['clear','mixed','context_dependent'].includes(x.status)&&!x.answer)return alert('Write an answer for each clear/mixed/context-dependent field, or mark it unknown/not applicable.');if(['mixed','context_dependent'].includes(x.status)&&!x.clarification)return alert('Please clarify every field marked mixed or context-dependent.')}const base='/api/sessions/'+sessionId+(mode==='clarification'?'/clarification':'')+'/answers';const url=editing?base+'/'+encodeURIComponent(current.id):base;const r=await fetch(url,{method:editing?'PUT':'POST',headers:{'content-type':'application/json'},body:JSON.stringify({token,question_id:current.id,field_answers:fields})});const d=await r.json();if(!r.ok)return alert(d.detail||'Could not save');if(editing){editing=false;return loadReview()}if(d.next_question)showQuestion(d.next_question);else loadReview()}
-async function loadState(){const r=await fetch('/api/sessions/'+sessionId+'?token='+encodeURIComponent(token));const d=await r.json();if(!r.ok)throw new Error(d.detail||'Could not load session');state=d;return d}
-async function loadReview(){const d=await loadState();document.getElementById('survey').classList.add('hidden');document.getElementById('done').classList.add('hidden');document.getElementById('review').classList.remove('hidden');const list=mode==='clarification'?d.clarification_addendum.answers:d.answers;document.getElementById('reviewTitle').textContent=mode==='clarification'?'Review clarification addendum':'Review before freezing';let mixed=0,unknown=0;for(const a of list){if(a.fields)for(const f of a.fields){if(f.status==='mixed'||f.status==='context_dependent')mixed++;if(f.status==='unknown')unknown++}}document.getElementById('ambiguity').textContent=(mixed?'You explicitly marked '+mixed+' field(s) mixed/context-dependent; their clarification text will be preserved. ':'')+(unknown?unknown+' field(s) remain genuinely unknown, which is allowed. ':'')+'Edit anything that still feels misleading before freezing.';document.getElementById('answers').innerHTML=list.map((a,i)=>reviewHtml(a,i)).join('')}
-function reviewHtml(a,i){if(!a.fields)return '<div class="card"><h3>'+(i+1)+'. '+escapeHtml(a.question_id)+'</h3><div class="answer">'+escapeHtml(a.answer||'')+'</div></div>';return '<div class="card"><h3>'+(i+1)+'. '+escapeHtml(a.question_id)+'</h3>'+a.fields.map(f=>'<div class="review-field"><div class="status">'+escapeHtml(f.field_id)+' · '+escapeHtml(f.status)+'</div><div class="answer">'+escapeHtml(f.answer||'(no narrative answer)')+'</div>'+(f.clarification?'<div class="answer uncertain"><strong>Clarification:</strong> '+escapeHtml(f.clarification)+'</div>':'')+'</div>').join('')+'<button onclick="editDomain(\''+escapeHtml(a.question_id)+'\')">Edit this section</button></div>'}
-async function editDomain(qid){const d=await loadState();const list=mode==='clarification'?d.clarification_addendum.answers:d.answers;const existing=list.find(a=>a.question_id===qid);const q=await fetchQuestionDefinition(qid);editing=true;showQuestion(q,existing)}
-async function fetchQuestionDefinition(qid){if(questionDefinitions[qid])return questionDefinitions[qid];const r=await fetch('/api/questions/'+encodeURIComponent(qid));const d=await r.json();if(!r.ok)throw new Error(d.detail||'Could not load question');questionDefinitions[qid]=d;return d}
-function cancelEdit(){editing=false;loadReview()}
-async function freezeCurrent(){const path='/api/sessions/'+sessionId+(mode==='clarification'?'/clarification':'')+'/freeze';const r=await fetch(path,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({token})});const d=await r.json();if(!r.ok)return alert(d.detail||'Could not freeze');showDone(d.freeze_sha256,mode==='clarification')}
-function showDone(receipt,isAddendum=false,canClarify=false){document.getElementById('start').classList.add('hidden');document.getElementById('survey').classList.add('hidden');document.getElementById('review').classList.add('hidden');document.getElementById('done').classList.remove('hidden');document.getElementById('doneText').textContent=isAddendum?'Your clarification addendum is frozen separately from the original response.':'Your answers are sealed. A later classifier/reveal layer may use this frozen record without changing it.';document.getElementById('digest').textContent=(isAddendum?'Clarification freeze receipt: ':'Freeze receipt: ')+receipt;document.getElementById('clarifyLegacy').classList.toggle('hidden',!canClarify)}
-async function startClarification(){const r=await fetch('/api/sessions/'+sessionId+'/clarification',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({token})});const d=await r.json();if(!r.ok)return alert(d.detail||'Could not start clarification');mode='clarification';editing=false;showQuestion(d.next_question)}
-function escapeHtml(s){return String(s??'').replace(/[&<>'\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','\"':'&quot;'}[c]))}
-async function resume(){if(!(sessionId&&token))return;try{const d=await loadState();if(d.status==='frozen'){if(d.clarification_addendum&&d.clarification_addendum.status==='in_progress'){mode='clarification';if(d.clarification_next_question)showQuestion(d.clarification_next_question);else loadReview();return}if(d.clarification_addendum&&d.clarification_addendum.status==='frozen'){showDone(d.clarification_addendum.freeze_sha256,true,false);return}showDone(d.freeze_sha256,false,d.can_start_clarification);return}mode='main';if(d.next_question)showQuestion(d.next_question);else loadReview()}catch(e){}}
-resume();
-</script></body></html>"""
+_HTML = (
+    '<!doctype html>\n<html lang="en">\n<head>\n<meta charset="u'
+    'tf-8"><meta name="viewport" content="width=device-width,'
+    'initial-scale=1">\n<title>Relationship X-Ray</title>\n<sty'
+    "le>\nbody{font-family:system-ui,sans-serif;max-width:850p"
+    "x;margin:0 auto;padding:32px 20px;line-height:1.5;color:"
+    "#181818}\nbutton,select,textarea{font:inherit}button{padd"
+    "ing:10px 16px;margin:8px 8px 0 0;cursor:pointer}textarea"
+    "{width:100%;min-height:100px;padding:10px;box-sizing:bor"
+    "der-box}.hidden{display:none}.card{border:1px solid #ddd"
+    ";border-radius:12px;padding:20px;margin-top:18px}.field{"
+    "border-top:1px solid #e7e7e7;padding:18px 0}.field:first"
+    "-of-type{border-top:0}.field label{font-weight:650;displ"
+    "ay:block;margin-bottom:8px}.field select{padding:7px;min"
+    "-width:210px}.hint{color:#666;font-size:.93rem;margin:6p"
+    "x 0 10px}.clarify{background:#fff8e8;border-left:3px sol"
+    "id #d79d26;padding:10px;margin-top:10px}.answer{white-sp"
+    "ace:pre-wrap;background:#f6f6f6;padding:10px;border-radi"
+    "us:8px;margin:6px 0}.status{font-size:.9rem;font-weight:"
+    "650}.uncertain{background:#fff8e8}.unknown{background:#f"
+    "2f2f2}.progress{font-size:.9rem;color:#666}.review-field"
+    "{margin:8px 0 14px}.receipt{font-family:ui-monospace,mon"
+    "ospace;overflow-wrap:anywhere}\n</style></head>\n<body>\n<h"
+    "1>Relationship X-Ray</h1>\n<p>Describe one important rela"
+    "tionship before any astrology or Human Design result is "
+    "shown. Each section has separate answer fields so you do"
+    " not have to remember a list of unrelated questions insi"
+    'de one text box.</p>\n<div id="start" class="card"><label'
+    '><input id="consent" type="checkbox"> I consent to stori'
+    "ng these responses privately for this research session.<"
+    '/label><br><button onclick="begin()">Begin</button></div'
+    '>\n<div id="survey" class="card hidden"><div class="progr'
+    'ess" id="modeLabel"></div><h2 id="title"></h2><p id="int'
+    'ro"></p><div id="fields"></div><button onclick="submitDo'
+    'main()" id="saveButton">Save & continue</button><button '
+    'onclick="cancelEdit()" id="cancelEditButton" class="hidd'
+    'en">Cancel edit</button><p><small>Your private resume to'
+    "ken is stored only in this browser.</small></p></div>\n<d"
+    'iv id="review" class="card hidden"><h2 id="reviewTitle">'
+    'Review before freezing</h2><p id="ambiguity"></p><div id'
+    '="answers"></div><button onclick="freezeCurrent()">Freez'
+    'e these answers</button></div>\n<div id="done" class="car'
+    'd hidden"><h2>Responses frozen</h2><p id="doneText">Your'
+    ' answers are sealed for this pilot.</p><p class="receipt'
+    '" id="digest"></p><button id="clarifyLegacy" class="hidd'
+    'en" onclick="startClarification()">Add structured clarif'
+    "ication</button></div>\n<script>\nlet sessionId=localStora"
+    "ge.getItem('rr_session');let token=localStorage.getItem("
+    "'rr_token');let current=null;let mode='main';let editing"
+    "=false;let state=null;let questionDefinitions={};\nconst "
+    "statuses=[['','Choose one…'],['clear','Clear enough'],['"
+    "mixed','Mixed / both'],['context_dependent','Depends on "
+    "context or time'],['unknown','I don\\'t know'],['not_appl"
+    "icable','Not applicable']];\nasync function begin(){if(!d"
+    "ocument.getElementById('consent').checked)return alert('"
+    "Consent is required.');const r=await fetch('/api/session"
+    "s',{method:'POST',headers:{'content-type':'application/j"
+    "son'},body:JSON.stringify({consent_to_store_responses:tr"
+    "ue})});const d=await r.json();if(!r.ok)return alert(d.de"
+    "tail||'Could not start');sessionId=d.session_id;token=d."
+    "resume_token;localStorage.setItem('rr_session',sessionId"
+    ");localStorage.setItem('rr_token',token);mode='main';sho"
+    "wQuestion(d.next_question)}\nfunction showQuestion(q,exis"
+    "ting=null){document.getElementById('start').classList.ad"
+    "d('hidden');document.getElementById('review').classList."
+    "add('hidden');document.getElementById('done').classList."
+    "add('hidden');document.getElementById('survey').classLis"
+    "t.remove('hidden');current=q;questionDefinitions[q.id]=q"
+    ";document.getElementById('modeLabel').textContent=(mode="
+    "=='clarification'?'Clarification addendum · ':'')+q.titl"
+    "e;document.getElementById('title').textContent=q.title;d"
+    "ocument.getElementById('intro').textContent=q.intro;docu"
+    "ment.getElementById('fields').innerHTML=q.fields.map(f=>"
+    "fieldHtml(f,existing)).join('');document.getElementById("
+    "'saveButton').textContent=editing?'Save changes':'Save &"
+    " continue';document.getElementById('cancelEditButton').c"
+    "lassList.toggle('hidden',!editing);q.fields.forEach(f=>t"
+    "oggleClarification(f.id))}\nfunction fieldHtml(f,existing"
+    "){const old=existing&&existing.fields?existing.fields.fi"
+    "nd(x=>x.field_id===f.id):null;const st=old?old.status:''"
+    ";const ans=old?old.answer:'';const cl=old?old.clarificat"
+    "ion:'';return '<div class=\"field\" id=\"wrap_'+f.id+'\"><la"
+    "bel>'+escapeHtml(f.label)+'</label><div class=\"hint\">'+e"
+    "scapeHtml(f.placeholder)+'</div><select id=\"status_'+f.i"
+    "d+'\" onchange=\"toggleClarification(\\''+f.id+'\\')\">'+stat"
+    "uses.map(x=>'<option value=\"'+x[0]+'\" '+(x[0]===st?'sele"
+    "cted':'')+'>'+escapeHtml(x[1])+'</option>').join('')+'</"
+    'select><textarea id="answer_\'+f.id+\'" placeholder="Your '
+    "answer\">'+escapeHtml(ans)+'</textarea><div id=\"clarify_'"
+    '+f.id+\'" class="clarify hidden"><div class="hint">\'+esca'
+    "peHtml(f.clarification_prompt)+'</div><textarea id=\"clar"
+    "ification_'+f.id+'\" placeholder=\"Clarify the difference "
+    "or context\">'+escapeHtml(cl)+'</textarea></div></div>'}\n"
+    "function toggleClarification(id){const st=document.getEl"
+    "ementById('status_'+id).value;const box=document.getElem"
+    "entById('clarify_'+id);box.classList.toggle('hidden',!(s"
+    "t==='mixed'||st==='context_dependent'));document.getElem"
+    "entById('wrap_'+id).classList.toggle('uncertain',st==='m"
+    "ixed'||st==='context_dependent');document.getElementById"
+    "('wrap_'+id).classList.toggle('unknown',st==='unknown'||"
+    "st==='not_applicable')}\nfunction collectFields(){return "
+    "current.fields.map(f=>({field_id:f.id,status:document.ge"
+    "tElementById('status_'+f.id).value,answer:document.getEl"
+    "ementById('answer_'+f.id).value.trim(),clarification:doc"
+    "ument.getElementById('clarification_'+f.id)?document.get"
+    "ElementById('clarification_'+f.id).value.trim():''}))}\na"
+    "sync function submitDomain(){const fields=collectFields("
+    ");if(fields.some(x=>!x.status))return alert('Choose a st"
+    "atus for every field.');for(const x of fields){if(['clea"
+    "r','mixed','context_dependent'].includes(x.status)&&!x.a"
+    "nswer)return alert('Write an answer for each clear/mixed"
+    "/context-dependent field, or mark it unknown/not applica"
+    "ble.');if(['mixed','context_dependent'].includes(x.statu"
+    "s)&&!x.clarification)return alert('Please clarify every "
+    "field marked mixed or context-dependent.')}const base='/"
+    "api/sessions/'+sessionId+(mode==='clarification'?'/clari"
+    "fication':'')+'/answers';const url=editing?base+'/'+enco"
+    "deURIComponent(current.id):base;const r=await fetch(url,"
+    "{method:editing?'PUT':'POST',headers:{'content-type':'ap"
+    "plication/json'},body:JSON.stringify({token,question_id:"
+    "current.id,field_answers:fields})});const d=await r.json"
+    "();if(!r.ok)return alert(d.detail||'Could not save');if("
+    "editing){editing=false;return loadReview()}if(d.next_que"
+    "stion)showQuestion(d.next_question);else loadReview()}\na"
+    "sync function loadState(){const r=await fetch('/api/sess"
+    "ions/'+sessionId+'?token='+encodeURIComponent(token));co"
+    "nst d=await r.json();if(!r.ok)throw new Error(d.detail||"
+    "'Could not load session');state=d;return d}\nasync functi"
+    "on loadReview(){const d=await loadState();document.getEl"
+    "ementById('survey').classList.add('hidden');document.get"
+    "ElementById('done').classList.add('hidden');document.get"
+    "ElementById('review').classList.remove('hidden');const l"
+    "ist=mode==='clarification'?d.clarification_addendum.answ"
+    "ers:d.answers;document.getElementById('reviewTitle').tex"
+    "tContent=mode==='clarification'?'Review clarification ad"
+    "dendum':'Review before freezing';let mixed=0,unknown=0;f"
+    "or(const a of list){if(a.fields)for(const f of a.fields)"
+    "{if(f.status==='mixed'||f.status==='context_dependent')m"
+    "ixed++;if(f.status==='unknown')unknown++}}document.getEl"
+    "ementById('ambiguity').textContent=(mixed?'You explicitl"
+    "y marked '+mixed+' field(s) mixed/context-dependent; the"
+    "ir clarification text will be preserved. ':'')+(unknown?"
+    "unknown+' field(s) remain genuinely unknown, which is al"
+    "lowed. ':'')+'Edit anything that still feels misleading "
+    "before freezing.';document.getElementById('answers').inn"
+    "erHTML=list.map((a,i)=>reviewHtml(a,i)).join('')}\nfuncti"
+    "on reviewHtml(a,i){if(!a.fields)return '<div class=\"card"
+    "\"><h3>'+(i+1)+'. '+escapeHtml(a.question_id)+'</h3><div "
+    "class=\"answer\">'+escapeHtml(a.answer||'')+'</div></div>'"
+    ";return '<div class=\"card\"><h3>'+(i+1)+'. '+escapeHtml(a"
+    ".question_id)+'</h3>'+a.fields.map(f=>'<div class=\"revie"
+    'w-field"><div class="status">\'+escapeHtml(f.field_id)+\' '
+    "· '+escapeHtml(f.status)+'</div><div class=\"answer\">'+es"
+    "capeHtml(f.answer||'(no narrative answer)')+'</div>'+(f."
+    'clarification?\'<div class="answer uncertain"><strong>Cla'
+    "rification:</strong> '+escapeHtml(f.clarification)+'</di"
+    "v>':'')+'</div>').join('')+'<button onclick=\"editDomain("
+    "\\''+escapeHtml(a.question_id)+'\\')\">Edit this section</b"
+    "utton></div>'}\nasync function editDomain(qid){const d=aw"
+    "ait loadState();const list=mode==='clarification'?d.clar"
+    "ification_addendum.answers:d.answers;const existing=list"
+    ".find(a=>a.question_id===qid);const q=await fetchQuestio"
+    "nDefinition(qid);editing=true;showQuestion(q,existing)}\n"
+    "async function fetchQuestionDefinition(qid){if(questionD"
+    "efinitions[qid])return questionDefinitions[qid];const r="
+    "await fetch('/api/questions/'+encodeURIComponent(qid));c"
+    "onst d=await r.json();if(!r.ok)throw new Error(d.detail|"
+    "|'Could not load question');questionDefinitions[qid]=d;r"
+    "eturn d}\nfunction cancelEdit(){editing=false;loadReview("
+    ")}\nasync function freezeCurrent(){const path='/api/sessi"
+    "ons/'+sessionId+(mode==='clarification'?'/clarification'"
+    ":'')+'/freeze';const r=await fetch(path,{method:'POST',h"
+    "eaders:{'content-type':'application/json'},body:JSON.str"
+    "ingify({token})});const d=await r.json();if(!r.ok)return"
+    " alert(d.detail||'Could not freeze');showDone(d.freeze_s"
+    "ha256,mode==='clarification')}\nfunction showDone(receipt"
+    ",isAddendum=false,canClarify=false){document.getElementB"
+    "yId('start').classList.add('hidden');document.getElement"
+    "ById('survey').classList.add('hidden');document.getEleme"
+    "ntById('review').classList.add('hidden');document.getEle"
+    "mentById('done').classList.remove('hidden');document.get"
+    "ElementById('doneText').textContent=isAddendum?'Your cla"
+    "rification addendum is frozen separately from the origin"
+    "al response.':'Your answers are sealed. A later classifi"
+    "er/reveal layer may use this frozen record without chang"
+    "ing it.';document.getElementById('digest').textContent=("
+    "isAddendum?'Clarification freeze receipt: ':'Freeze rece"
+    "ipt: ')+receipt;document.getElementById('clarifyLegacy')"
+    ".classList.toggle('hidden',!canClarify)}\nasync function "
+    "startClarification(){const r=await fetch('/api/sessions/"
+    "'+sessionId+'/clarification',{method:'POST',headers:{'co"
+    "ntent-type':'application/json'},body:JSON.stringify({tok"
+    "en})});const d=await r.json();if(!r.ok)return alert(d.de"
+    "tail||'Could not start clarification');mode='clarificati"
+    "on';editing=false;showQuestion(d.next_question)}\nfunctio"
+    "n escapeHtml(s){return String(s??'').replace(/[&<>'\\\"]/g"
+    ",c=>({'&':'&amp;','<':'&lt;','>':'&gt;',\"'\":'&#39;','\\\"'"
+    ":'&quot;'}[c]))}\nasync function resume(){if(!(sessionId&"
+    "&token))return;try{const d=await loadState();if(d.status"
+    "==='frozen'){if(d.clarification_addendum&&d.clarificatio"
+    "n_addendum.status==='in_progress'){mode='clarification';"
+    "if(d.clarification_next_question)showQuestion(d.clarific"
+    "ation_next_question);else loadReview();return}if(d.clari"
+    "fication_addendum&&d.clarification_addendum.status==='fr"
+    "ozen'){showDone(d.clarification_addendum.freeze_sha256,t"
+    "rue,false);return}showDone(d.freeze_sha256,false,d.can_s"
+    "tart_clarification);return}mode='main';if(d.next_questio"
+    "n)showQuestion(d.next_question);else loadReview()}catch("
+    "e){}}\nresume();\n</script></body></html>"
+)

@@ -11,8 +11,8 @@ from hdmatch.experiments.canonical import canonical_json_bytes
 
 from .neutral_measurement import (
     AnnotationTask,
-    CodeState,
     CodedEpisodeRecord,
+    CodeState,
     FreezeEvidenceIndex,
     ScalarValue,
     TheoryExposureState,
@@ -98,9 +98,7 @@ def coded_record_from_annotation_response(
     if response.observable_id not in task.observable_ids:
         raise ValueError("annotation response references an observable outside the task")
     task_turn_ids = {
-        str(row["turn_id"])
-        for row in task.source_turns
-        if isinstance(row.get("turn_id"), str)
+        str(row["turn_id"]) for row in task.source_turns if isinstance(row.get("turn_id"), str)
     }
     cited = set(response.supporting_source_turn_ids) | set(response.counterevidence_source_turn_ids)
     if not cited.issubset(task_turn_ids):
@@ -119,6 +117,8 @@ def coded_record_from_annotation_response(
         language=response.language,
         input_modality=evidence.episode_input_modality[response.episode_id],
         theory_exposure=response.theory_exposure,
-        source_episode_participant_revised=evidence.participant_revised_episode[response.episode_id],
+        source_episode_participant_revised=evidence.participant_revised_episode[
+            response.episode_id
+        ],
         annotation_note=response.annotation_note,
     )

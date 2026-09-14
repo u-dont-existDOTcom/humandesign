@@ -95,7 +95,9 @@ class TheoryBlindDevelopmentProvenance(AuthorityModel):
         if self.author_kind in {"ai", "mixed"} and (
             self.exact_prompt_sha256 is None or self.exact_first_output_sha256 is None
         ):
-            raise ValueError("AI-influenced authorship requires exact prompt and first-output hashes")
+            raise ValueError(
+                "AI-influenced authorship requires exact prompt and first-output hashes"
+            )
         if self.author_kind == "human" and self.prompt_seed_level == "not_applicable":
             return self
         if self.prompt_seed_level == "not_applicable" and self.exact_prompt_sha256 is not None:
@@ -104,7 +106,9 @@ class TheoryBlindDevelopmentProvenance(AuthorityModel):
 
     @property
     def requires_independent_replication_for_validation(self) -> bool:
-        return self.prompt_author_theory_exposed and self.prompt_seed_level == "detailed_domain_seeded"
+        return (
+            self.prompt_author_theory_exposed and self.prompt_seed_level == "detailed_domain_seeded"
+        )
 
 
 class BlindHumanReliabilityReceipt(AuthorityModel):
@@ -227,8 +231,13 @@ class TheoryBlindContentReviewReceipt(AuthorityModel):
 
     @model_validator(mode="after")
     def validation_review_cannot_change_content(self) -> TheoryBlindContentReviewReceipt:
-        if self.review_outcome == "approved_validation_candidate" and self.content_changed_during_review:
-            raise ValueError("changed content requires a new content hash and new validation review")
+        if (
+            self.review_outcome == "approved_validation_candidate"
+            and self.content_changed_during_review
+        ):
+            raise ValueError(
+                "changed content requires a new content hash and new validation review"
+            )
         return self
 
 
@@ -283,7 +292,9 @@ class TheoryBlindContentAuthorityPayload(AuthorityModel):
 
         if self.authority_stage == "development_candidate":
             if self.content_review.review_outcome != "approved_development_only":
-                raise ValueError("development authority requires an approved-development-only review")
+                raise ValueError(
+                    "development authority requires an approved-development-only review"
+                )
             if evidence_count:
                 raise ValueError("development authority must not carry validation-route evidence")
         else:
@@ -293,12 +304,18 @@ class TheoryBlindContentAuthorityPayload(AuthorityModel):
                 or provenance.reconciliation_artifact_sha256 is None
             ):
                 raise ValueError(
-                    "validation authority requires independent replication and reconciliation for a detailed theory-exposed seed prompt"
+                    "validation authority requires independent replication an"
+                    "d reconciliation for a detailed theory-exposed seed prom"
+                    "pt"
                 )
             if evidence_count != 1:
-                raise ValueError("validation authority requires exactly one frozen validation-evidence route")
+                raise ValueError(
+                    "validation authority requires exactly one frozen validation-evidence route"
+                )
             if self.content_review.review_outcome != "approved_validation_candidate":
-                raise ValueError("validation authority requires validation-candidate content review")
+                raise ValueError(
+                    "validation authority requires validation-candidate content review"
+                )
 
             if self.human_reliability is not None:
                 if self.human_reliability.content_sha256 != self.content_sha256:
@@ -351,7 +368,9 @@ class TheoryBlindContentAuthorityReceipt(AuthorityModel):
     @model_validator(mode="after")
     def route_matches_stage(self) -> TheoryBlindContentAuthorityReceipt:
         if self.authority_stage == "development_candidate" and self.validation_route is not None:
-            raise ValueError("development content-authority receipt cannot claim a validation route")
+            raise ValueError(
+                "development content-authority receipt cannot claim a validation route"
+            )
         if self.authority_stage == "validation_candidate" and self.validation_route is None:
             raise ValueError("validation content-authority receipt requires a validation route")
         return self
@@ -373,7 +392,10 @@ def theory_blind_content_authority_integrity_errors(
 ) -> tuple[str, ...]:
     errors: list[str] = []
     digest = sha256_json(artifact.payload)
-    if artifact.authority_sha256 != digest or artifact.authority_id != f"LPTB-{digest[:20].upper()}":
+    if (
+        artifact.authority_sha256 != digest
+        or artifact.authority_id != f"LPTB-{digest[:20].upper()}"
+    ):
         errors.append("theory-blind content authority failed content-address verification")
     return tuple(errors)
 

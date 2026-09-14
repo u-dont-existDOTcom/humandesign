@@ -61,7 +61,9 @@ def _synthetic_observable(
         not_applicable_semantics="Use when the synthetic observable does not apply to the fixture.",
         inclusion_criteria=("Synthetic inclusion criterion only.",),
         exclusion_criteria=("Synthetic exclusion criterion only.",),
-        evidence_requirements=("At least one synthetic source-turn reference for informative codes.",),
+        evidence_requirements=(
+            "At least one synthetic source-turn reference for informative codes.",
+        ),
         positive_examples=("SYNTHETIC_POSITIVE_EXAMPLE",),
         negative_or_near_miss_examples=("SYNTHETIC_NEAR_MISS",),
         ambiguity_examples=("SYNTHETIC_AMBIGUITY",),
@@ -103,7 +105,9 @@ def _structural_test_observable() -> ObservableDefinition:
     return ObservableDefinition(
         observable_id="STRUCTURAL_TEST_ALPHA",
         label="STRUCTURAL TEST PLACEHOLDER",
-        definition="Software-gate fixture only; this string has no intended behavioral construct meaning.",
+        definition=(
+            "Software-gate fixture only; this string has no intended behavioral construct meaning."
+        ),
         unit_of_analysis="episode",
         value_type="nominal",
         allowed_values=("VALUE_ONE", "VALUE_TWO"),
@@ -202,13 +206,9 @@ def _freeze_artifact() -> dict[str, object]:
     ]
     source = {
         "approved_episodes": episodes,
-        "approved_episode_sha256": {
-            str(row["episode_id"]): sha256_json(row) for row in episodes
-        },
+        "approved_episode_sha256": {str(row["episode_id"]): sha256_json(row) for row in episodes},
         "participant_source_turns": turns,
-        "participant_source_turn_sha256": {
-            str(row["turn_id"]): sha256_json(row) for row in turns
-        },
+        "participant_source_turn_sha256": {str(row["turn_id"]): sha256_json(row) for row in turns},
     }
     payload = {
         "schema_version": "life-patterns-behavioral-freeze-payload-v1",
@@ -359,9 +359,7 @@ def test_stable_observable_id_cannot_silently_change_core_meaning() -> None:
 
     successor = _synthetic_ontology(
         version="2026-09-04",
-        observables=(
-            _synthetic_observable("OBSERVABLE_BETA", supersedes="OBSERVABLE_ALPHA"),
-        ),
+        observables=(_synthetic_observable("OBSERVABLE_BETA", supersedes="OBSERVABLE_ALPHA"),),
     )
     assert ontology_successor_errors(previous, successor) == ()
 
@@ -417,7 +415,10 @@ def test_synthetic_coding_run_is_valid_but_never_scoreable(tmp_path: Path) -> No
     )
     artifact = build_coding_run_artifact(payload, ontology, evidence)
     assert artifact.scoreable_for_model_tournament is False
-    assert "synthetic ontology cannot produce scoreable research evidence" in artifact.scoreability_blockers
+    assert (
+        "synthetic ontology cannot produce scoreable research evidence"
+        in artifact.scoreability_blockers
+    )
     assert coding_run_artifact_integrity_errors(artifact, ontology, evidence) == ()
 
     path = tmp_path / "coding.json"
@@ -459,7 +460,10 @@ def test_automated_validation_requires_frozen_calibration_receipt() -> None:
         ontology,
         evidence,
     )
-    assert "automated coder lacks a frozen calibration/validation receipt" in blocked.scoreability_blockers
+    assert (
+        "automated coder lacks a frozen calibration/validation receipt"
+        in blocked.scoreability_blockers
+    )
 
     validated_coder = CoderIdentity(
         coder_id="LLM-STRUCTURAL-TEST",
@@ -503,7 +507,9 @@ def test_coding_fails_closed_on_unknown_turn_and_out_of_codebook_value() -> None
         evidence,
     )
     assert any("outside that episode" in error for error in artifact.scoreability_blockers)
-    assert any("outside its categorical codebook" in error for error in artifact.scoreability_blockers)
+    assert any(
+        "outside its categorical codebook" in error for error in artifact.scoreability_blockers
+    )
     assert coding_run_artifact_integrity_errors(artifact, ontology, evidence)
 
 
@@ -647,4 +653,7 @@ def test_reliability_report_is_auditable_but_not_construct_validity(tmp_path: Pa
             }
         )
     )
-    assert any("unknown observables" in error for error in reliability_report_integrity_errors(bad, ontology))
+    assert any(
+        "unknown observables" in error
+        for error in reliability_report_integrity_errors(bad, ontology)
+    )

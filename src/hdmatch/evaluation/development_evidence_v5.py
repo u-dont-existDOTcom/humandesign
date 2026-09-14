@@ -4,6 +4,7 @@ The historical v1/v2 response contracts remain immutable. New development calibr
 subsequent automated development coding use the facet/stage/provenance graph accepted by the
 independent v5 review while retaining the recurrence-v2 evidence firewall for repeated series.
 """
+
 from __future__ import annotations
 
 from typing import Literal
@@ -38,9 +39,9 @@ class DevelopmentEpisodeAnnotationResponseV5(DevelopmentV5Model):
     episode_id: str = Field(min_length=1)
     observable_id: str = Field(pattern=r"^NBM-R\d{2}$")
     response_graph: ObservableResponseV5
-    accepted_contract_review_commit: Literal[
+    accepted_contract_review_commit: Literal["ce04642146c41a7d5d94f85360572c78de887682"] = (
         "ce04642146c41a7d5d94f85360572c78de887682"
-    ] = "ce04642146c41a7d5d94f85360572c78de887682"
+    )
     transfer_summary_is_not_primary_source: Literal[True] = True
     development_only: Literal[True] = True
     validation_use_forbidden: Literal[True] = True
@@ -77,9 +78,9 @@ class DevelopmentSeriesAnnotationResponseV5(DevelopmentV5Model):
     series_is_recurrence_support_not_primary_episode: Literal[True] = True
     reported_recurrence_is_not_verified_true_frequency: Literal[True] = True
     summary_fields_are_not_primary_source: Literal[True] = True
-    accepted_contract_review_commit: Literal[
+    accepted_contract_review_commit: Literal["ce04642146c41a7d5d94f85360572c78de887682"] = (
         "ce04642146c41a7d5d94f85360572c78de887682"
-    ] = "ce04642146c41a7d5d94f85360572c78de887682"
+    )
     development_only: Literal[True] = True
     validation_use_forbidden: Literal[True] = True
 
@@ -101,7 +102,9 @@ class DevelopmentSeriesAnnotationResponseV5(DevelopmentV5Model):
         )
         if self.response_graph.state == "observed":
             if self.reported_recurrence_strength is None:
-                raise ValueError("observed series v5 response requires reported recurrence strength")
+                raise ValueError(
+                    "observed series v5 response requires reported recurrence strength"
+                )
             if self.exception_status is None:
                 raise ValueError("observed series v5 response requires exception status")
             if self.frequency_evidence_basis is None:
@@ -114,13 +117,22 @@ class DevelopmentSeriesAnnotationResponseV5(DevelopmentV5Model):
         if self.exception_status == "exceptions_explicitly_denied" and self.exception_frequency != (
             "none_reported"
         ):
-            raise ValueError("explicitly denied exceptions require exception_frequency=none_reported")
-        if self.exception_status == "exceptions_reported" and self.exception_frequency == "none_reported":
+            raise ValueError(
+                "explicitly denied exceptions require exception_frequency=none_reported"
+            )
+        if (
+            self.exception_status == "exceptions_reported"
+            and self.exception_frequency == "none_reported"
+        ):
             raise ValueError("reported exceptions cannot have exception_frequency=none_reported")
-        if self.exception_status == "exceptions_not_probed_or_unknown" and self.exception_frequency not in {
-            None,
-            "unknown",
-        }:
+        if (
+            self.exception_status == "exceptions_not_probed_or_unknown"
+            and self.exception_frequency
+            not in {
+                None,
+                "unknown",
+            }
+        ):
             raise ValueError("unknown exception status cannot assert a known exception frequency")
 
         count_bases = {
@@ -129,7 +141,10 @@ class DevelopmentSeriesAnnotationResponseV5(DevelopmentV5Model):
             "external_record_or_observation",
             "mixed_basis",
         }
-        if self.minimum_reported_occurrences is not None and self.frequency_evidence_basis not in count_bases:
+        if (
+            self.minimum_reported_occurrences is not None
+            and self.frequency_evidence_basis not in count_bases
+        ):
             raise ValueError(
                 "minimum reported occurrences require bounded/sampled/external/mixed evidence basis"
             )
@@ -141,7 +156,8 @@ class DevelopmentSeriesAnnotationResponseV5(DevelopmentV5Model):
             )
         ):
             raise ValueError(
-                "bounded rate/count recurrence requires bounded evidence and a supported count/rate description"
+                "bounded rate/count recurrence requires bounded evidence "
+                "and a supported count/rate description"
             )
         return self
 

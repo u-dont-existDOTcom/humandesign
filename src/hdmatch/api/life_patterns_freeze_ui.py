@@ -1,7 +1,7 @@
 # ruff: noqa: E501
 """Participant-facing review and immutable behavioral-freeze controls."""
 
-FREEZE_SCRIPT = r'''<script>
+FREEZE_SCRIPT = r"""<script>
 (function(){
   const mapPanel=document.getElementById('mapPanel');if(!mapPanel)return;
   const actionRow=mapPanel.querySelector('.row');if(!actionRow)return;
@@ -64,4 +64,4 @@ FREEZE_SCRIPT = r'''<script>
     try{const payload=await apiJson(`/api/life-patterns/interview/sessions/${encodeURIComponent(session.session_id)}/freeze-candidates/${encodeURIComponent(candidate.candidate_id)}/finalize`,{token:session.resume_token,attest_profile_reviewed:true,attest_snapshot_immutable:true});candidate=payload.candidate;renderCandidate()}catch(e){status(e.message,true)}finally{button.disabled=false}
   };
 })();
-</script>'''
+</script>"""

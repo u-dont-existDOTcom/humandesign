@@ -26,12 +26,8 @@ def test_legacy_predicates_match_structural_cache_features() -> None:
     features = _features()
     assert predicate_matches(features, {"feature": "type", "equals": "Projector"})
     assert predicate_matches(features, {"feature": "authority", "equals": "Splenic"})
-    assert predicate_matches(
-        features, {"feature": "center", "name": "Sacral", "defined": False}
-    )
-    assert predicate_matches(
-        features, {"feature": "center", "name": "Spleen", "defined": True}
-    )
+    assert predicate_matches(features, {"feature": "center", "name": "Sacral", "defined": False})
+    assert predicate_matches(features, {"feature": "center", "name": "Spleen", "defined": True})
     assert predicate_matches(features, {"feature": "profile", "equals": "2/4"})
     assert predicate_matches(features, {"feature": "profile_has_line", "line": 4})
     assert predicate_matches(features, {"feature": "channel", "equals": "8-1"})

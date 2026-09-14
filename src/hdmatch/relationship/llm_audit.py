@@ -341,7 +341,9 @@ class OpenRouterRelationshipAuditor:
             if (item.source_question_id, item.source_field_id) not in supplied:
                 raise LLMAuditProviderError("LLM clarification referenced an unknown field")
         if len(audit.clarifications) > max_clarifications:
-            audit = audit.model_copy(update={"clarifications": audit.clarifications[:max_clarifications]})
+            audit = audit.model_copy(
+                update={"clarifications": audit.clarifications[:max_clarifications]}
+            )
         return LLMSessionAuditResult(audit=audit, receipt=receipt)
 
     def _call_json(

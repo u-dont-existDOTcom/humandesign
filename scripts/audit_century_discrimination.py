@@ -38,10 +38,14 @@ def main() -> None:
         encoding="utf-8",
     )
     print(
-        "intervals=", report.cache_interval_count,
-        " canonical_fingerprints=", report.canonical_answers.unique_fingerprints,
-        " scoring_fingerprints=", report.scoring_rules.unique_fingerprints,
-        " full_structures=", report.full_cached_structure.unique_fingerprints,
+        "intervals=",
+        report.cache_interval_count,
+        " canonical_fingerprints=",
+        report.canonical_answers.unique_fingerprints,
+        " scoring_fingerprints=",
+        report.scoring_rules.unique_fingerprints,
+        " full_structures=",
+        report.full_cached_structure.unique_fingerprints,
         sep="",
     )
 

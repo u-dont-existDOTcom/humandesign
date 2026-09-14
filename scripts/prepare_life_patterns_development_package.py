@@ -45,7 +45,9 @@ def _git_head(repo_root: Path) -> str:
             text=True,
         )
     except (OSError, subprocess.CalledProcessError) as exc:
-        raise ValueError("could not resolve repository HEAD; pass --source-commit explicitly") from exc
+        raise ValueError(
+            "could not resolve repository HEAD; pass --source-commit explicitly"
+        ) from exc
     value = result.stdout.strip()
     if len(value) < 7:
         raise ValueError("resolved repository HEAD is invalid")

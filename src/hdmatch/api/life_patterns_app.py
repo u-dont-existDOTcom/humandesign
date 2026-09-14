@@ -216,7 +216,10 @@ def _map_schema() -> dict[str, Any]:
             "pattern_id": {"type": "string", "minLength": 1},
             "title": {"type": "string", "minLength": 1},
             "summary": {"type": "string", "minLength": 1},
-            "status": {"type": "string", "enum": ["stable", "context_dependent", "mixed", "tentative"]},
+            "status": {
+                "type": "string",
+                "enum": ["stable", "context_dependent", "mixed", "tentative"],
+            },
             "confidence": {"type": "number", "minimum": 0, "maximum": 1},
             "supporting_episode_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
             "counterexample_episode_ids": {"type": "array", "items": {"type": "string"}},
@@ -250,22 +253,30 @@ def _map_schema() -> dict[str, Any]:
     }
 
 
-_MAP_SYSTEM = """You are a chart-blind behavioral synthesizer for Discover Your Unique Life Patterns.
-You receive only participant-authored life episodes. You receive no birth data, astrology,
-Human Design, candidate classification, hidden model output, rank, or model fit.
-
-Build an evidence-linked behavioral map. Preserve context dependence, developmental change,
-and counterexamples instead of forcing a coherent personality story. Do not diagnose mental
-illness, infer hidden motives as facts, or tell the participant that a tendency is destiny.
-Do not use astrology, Human Design, MBTI, Enneagram, attachment labels, or other personality
-systems as explanatory shortcuts.
-
-Every pattern must cite only supplied episode IDs. Confidence reflects the amount and
-consistency of the supplied evidence, not certainty about the person. Use tentative or mixed
-when evidence is sparse or contradictory. Transfer opportunities should identify strategies
-that appear useful in one supplied context and might be worth testing elsewhere; phrase them
-as hypotheses. Reversible experiments must be low-stakes, concrete tests, never medical,
-legal, financial, or safety-critical directives. Return only the required JSON object."""
+_MAP_SYSTEM = (
+    "You are a chart-blind behavioral synthesizer for Discove"
+    "r Your Unique Life Patterns.\nYou receive only participan"
+    "t-authored life episodes. You receive no birth data, ast"
+    "rology,\nHuman Design, candidate classification, hidden m"
+    "odel output, rank, or model fit.\n\nBuild an evidence-link"
+    "ed behavioral map. Preserve context dependence, developm"
+    "ental change,\nand counterexamples instead of forcing a c"
+    "oherent personality story. Do not diagnose mental\nillnes"
+    "s, infer hidden motives as facts, or tell the participan"
+    "t that a tendency is destiny.\nDo not use astrology, Huma"
+    "n Design, MBTI, Enneagram, attachment labels, or other p"
+    "ersonality\nsystems as explanatory shortcuts.\n\nEvery patt"
+    "ern must cite only supplied episode IDs. Confidence refl"
+    "ects the amount and\nconsistency of the supplied evidence"
+    ", not certainty about the person. Use tentative or mixed"
+    "\nwhen evidence is sparse or contradictory. Transfer oppo"
+    "rtunities should identify strategies\nthat appear useful "
+    "in one supplied context and might be worth testing elsew"
+    "here; phrase them\nas hypotheses. Reversible experiments "
+    "must be low-stakes, concrete tests, never medical,\nlegal"
+    ", financial, or safety-critical directives. Return only "
+    "the required JSON object."
+)
 
 
 class OpenAILifePatternsMapper:
@@ -287,7 +298,9 @@ class OpenAILifePatternsMapper:
         return cls(
             api_key=os.environ.get("HDMATCH_LLM_API_KEY") or os.environ.get("OPENAI_API_KEY"),
             model=os.environ.get("HDMATCH_LIFE_PATTERNS_MODEL", "gpt-5.6-luna").strip(),
-            endpoint=os.environ.get("HDMATCH_LLM_API_URL", "https://api.openai.com/v1/responses").strip(),
+            endpoint=os.environ.get(
+                "HDMATCH_LLM_API_URL", "https://api.openai.com/v1/responses"
+            ).strip(),
             timeout_seconds=float(os.environ.get("HDMATCH_LIFE_PATTERNS_TIMEOUT_SECONDS", "90")),
         )
 
@@ -299,7 +312,9 @@ class OpenAILifePatternsMapper:
         body_obj = {
             "model": self.model,
             "instructions": _MAP_SYSTEM,
-            "input": [{"role": "user", "content": json.dumps({"episodes": episodes}, ensure_ascii=False)}],
+            "input": [
+                {"role": "user", "content": json.dumps({"episodes": episodes}, ensure_ascii=False)}
+            ],
             "store": False,
             "reasoning": {"effort": "low"},
             "max_output_tokens": 8000,
@@ -335,7 +350,9 @@ class OpenAILifePatternsMapper:
         }
         unknown = referenced - known
         if unknown:
-            raise RuntimeError(f"Life Patterns mapper referenced unknown episodes: {sorted(unknown)}")
+            raise RuntimeError(
+                f"Life Patterns mapper referenced unknown episodes: {sorted(unknown)}"
+            )
         return parsed, {
             "model": self.model,
             "endpoint": self.endpoint,
@@ -373,7 +390,10 @@ def _coaching_markdown(payload: dict[str, Any], result: LifePatternsMap) -> str:
         "# Life Patterns Coaching Context",
         "",
         "> Treat these as evidence-linked historical tendencies, not fixed traits or destiny.",
-        "> Prefer reversible experiments and ask for current context before applying an old pattern.",
+        (
+            "> Prefer reversible experiments and ask for current cont"
+            "ext before applying an old pattern."
+        ),
         "",
         "## Overall summary",
         "",
@@ -392,7 +412,10 @@ def _coaching_markdown(payload: dict[str, Any], result: LifePatternsMap) -> str:
                 f"- Status: {pattern.status}",
                 f"- Confidence: {pattern.confidence:.2f}",
                 f"- Supporting episodes: {', '.join(pattern.supporting_episode_ids)}",
-                f"- Counterexample episodes: {', '.join(pattern.counterexample_episode_ids) or 'none recorded'}",
+                (
+                    f"- Counterexample episodes: "
+                    f"{', '.join(pattern.counterexample_episode_ids) or 'none recorded'}"
+                ),
                 f"- Contexts: {', '.join(pattern.contexts) or 'not specified'}",
                 f"- Limits: {', '.join(pattern.limits) or 'none specified'}",
                 "",
@@ -414,7 +437,10 @@ def _coaching_markdown(payload: dict[str, Any], result: LifePatternsMap) -> str:
             "",
             f"- Session: {payload['session_id']}",
             f"- Saved episodes: {len(cast(list[dict[str, Any]], payload.get('episodes', [])))}",
-            "- The map generator received no birth data, astrology, Human Design, candidate rank, or model fit.",
+            (
+                "- The map generator received no birth data, astrology, H"
+                "uman Design, candidate rank, or model fit."
+            ),
         ]
     )
     return "\n".join(lines).rstrip()
@@ -480,7 +506,10 @@ def create_life_patterns_app(
         except RuntimeError as exc:
             raise HTTPException(
                 status_code=502,
-                detail="The Life Patterns Map could not be generated. Your saved episodes were not changed.",
+                detail=(
+                    "The Life Patterns Map could not be generated. Your saved"
+                    " episodes were not changed."
+                ),
             ) from exc
         payload["life_patterns_map"] = result.model_dump(mode="json")
         payload["map_provider_receipt"] = receipt
@@ -492,14 +521,19 @@ def create_life_patterns_app(
         payload = store.read(session_id, token)
         raw_map = payload.get("life_patterns_map")
         if not isinstance(raw_map, dict):
-            raise HTTPException(status_code=409, detail="generate a Life Patterns Map before exporting")
+            raise HTTPException(
+                status_code=409, detail="generate a Life Patterns Map before exporting"
+            )
         result = LifePatternsMap.model_validate(raw_map)
         return {
             "profile_json": {
                 "schema_version": "life-patterns-portable-profile-v1",
                 "session_id": session_id,
                 "life_patterns_map": result.model_dump(mode="json"),
-                "evidence_episode_ids": [row["episode_id"] for row in cast(list[dict[str, Any]], payload.get("episodes", []))],
+                "evidence_episode_ids": [
+                    row["episode_id"]
+                    for row in cast(list[dict[str, Any]], payload.get("episodes", []))
+                ],
                 "interpretation_boundary": "historical_tendencies_not_fixed_traits",
             },
             "coaching_markdown": _coaching_markdown(payload, result),

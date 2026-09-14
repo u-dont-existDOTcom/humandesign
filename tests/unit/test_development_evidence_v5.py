@@ -18,6 +18,7 @@ from hdmatch.evaluation.development_transfer_corpus import (
     DevelopmentSourceSegment,
 )
 from hdmatch.evaluation.facet_relation_v5 import (
+    V5_CONTRACT_SCHEMA_VERSION,
     AbsenceConditionV5,
     ComponentAssertionV5,
     EventStageScope,
@@ -28,7 +29,6 @@ from hdmatch.evaluation.facet_relation_v5 import (
     ObservableResponseV5,
     SourceProvenanceV5,
     ValueAssertionV5,
-    V5_CONTRACT_SCHEMA_VERSION,
 )
 from hdmatch.evaluation.neutral_measurement import (
     ObservableDefinition,
@@ -309,12 +309,15 @@ def test_episode_v5_binds_task_source_ontology_and_contract() -> None:
         observable_id="NBM-R14",
         response_graph=_direct_graph(task.episode_id, "EP-001-SEG-01"),
     )
-    assert development_episode_response_errors_v5(
-        response,
-        task=task,
-        ontology=_ontology(),
-        contract=CONTRACT,
-    ) == ()
+    assert (
+        development_episode_response_errors_v5(
+            response,
+            task=task,
+            ontology=_ontology(),
+            contract=CONTRACT,
+        )
+        == ()
+    )
     assert response.accepted_contract_review_commit == "ce04642146c41a7d5d94f85360572c78de887682"
     assert response.validation_use_forbidden is True
 
@@ -329,12 +332,15 @@ def test_episode_v5_accepts_gated_pure_absence_graph() -> None:
         observable_id="NBM-R14",
         response_graph=_pure_absence_graph(task.episode_id, "EP-001-SEG-01"),
     )
-    assert development_episode_response_errors_v5(
-        response,
-        task=task,
-        ontology=_ontology(),
-        contract=CONTRACT,
-    ) == ()
+    assert (
+        development_episode_response_errors_v5(
+            response,
+            task=task,
+            ontology=_ontology(),
+            contract=CONTRACT,
+        )
+        == ()
+    )
 
 
 def test_episode_v5_source_provenance_outside_task_fails_closed() -> None:
@@ -377,12 +383,15 @@ def _series_response(**overrides: object) -> DevelopmentSeriesAnnotationResponse
 def test_series_v5_preserves_generalized_recurrence_without_fake_frequency() -> None:
     task = _series_task()
     response = _series_response()
-    assert development_series_response_errors_v5(
-        response,
-        task=task,
-        ontology=_ontology(),
-        contract=CONTRACT,
-    ) == ()
+    assert (
+        development_series_response_errors_v5(
+            response,
+            task=task,
+            ontology=_ontology(),
+            contract=CONTRACT,
+        )
+        == ()
+    )
     assert response.minimum_reported_occurrences is None
     assert response.confirming_episode_counted_as_independent_frequency_evidence is False
     assert series_supports_opportunity_level_frequency_inference_v5(response) is False

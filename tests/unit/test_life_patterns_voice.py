@@ -10,7 +10,10 @@ from fastapi import FastAPI
 from starlette.types import Message, Scope
 
 from hdmatch.api.life_patterns_app import LifePatternsFileStore
-from hdmatch.api.life_patterns_interview_app import InterviewerResult, create_life_patterns_interview_app
+from hdmatch.api.life_patterns_interview_app import (
+    InterviewerResult,
+    create_life_patterns_interview_app,
+)
 from hdmatch.api.life_patterns_recovery import LifePatternsRecoveryService
 from hdmatch.api.life_patterns_voice import (
     _multipart_body,
@@ -141,13 +144,16 @@ def test_voice_transcription_requires_session_authorization_and_does_not_store_a
     session_id, token = _create(store)
     audio = b"synthetic-webm-bytes"
 
-    assert _request(
-        app,
-        "POST",
-        f"/api/life-patterns/interview/sessions/{session_id}/transcribe",
-        body=audio,
-        headers={"content-type": "audio/webm"},
-    )[0] == 401
+    assert (
+        _request(
+            app,
+            "POST",
+            f"/api/life-patterns/interview/sessions/{session_id}/transcribe",
+            body=audio,
+            headers={"content-type": "audio/webm"},
+        )[0]
+        == 401
+    )
 
     status, payload = _request(
         app,

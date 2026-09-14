@@ -227,7 +227,9 @@ class OntologyReleasePayload(MeasurementModel):
         if authority_count > 1:
             raise ValueError("ontology release must use exactly one content-authority path")
         if self.release_status == "frozen_for_validation" and authority_count != 1:
-            raise ValueError("frozen substantive ontology requires a validation content-authority receipt")
+            raise ValueError(
+                "frozen substantive ontology requires a validation content-authority receipt"
+            )
         if (
             self.release_status == "frozen_for_validation"
             and self.theory_blind_content_authority is not None
@@ -320,7 +322,9 @@ class CodedEpisodeRecord(MeasurementModel):
         ):
             raise ValueError("informative codes require explicit source-turn evidence")
         if self.state in {"insufficient", "not_applicable"} and self.coder_confidence is not None:
-            raise ValueError("insufficient/not_applicable codes must not imply classifier confidence")
+            raise ValueError(
+                "insufficient/not_applicable codes must not imply classifier confidence"
+            )
         return self
 
 
@@ -395,9 +399,9 @@ class PersonObservableSummary(MeasurementModel):
     value_counts: tuple[ValueCount, ...]
     distinct_observed_values: int = Field(ge=0)
     context_coverage: tuple[ContextCoverage, ...]
-    aggregation_semantics: Literal[
+    aggregation_semantics: Literal["descriptive_distribution_preserving_no_trait_collapse"] = (
         "descriptive_distribution_preserving_no_trait_collapse"
-    ] = "descriptive_distribution_preserving_no_trait_collapse"
+    )
 
 
 class AnnotationTask(MeasurementModel):
@@ -545,16 +549,20 @@ def ontology_successor_errors(
     previous_by_id = {row.observable_id: row for row in previous.payload.observables}
     successor_by_id = {row.observable_id: row for row in successor.payload.observables}
     for observable_id in sorted(previous_by_id.keys() & successor_by_id.keys()):
-        if observable_semantic_fingerprint(previous_by_id[observable_id]) != observable_semantic_fingerprint(
-            successor_by_id[observable_id]
-        ):
+        if observable_semantic_fingerprint(
+            previous_by_id[observable_id]
+        ) != observable_semantic_fingerprint(successor_by_id[observable_id]):
             errors.append(
                 f"observable {observable_id} changed core meaning under the same stable identifier"
             )
     for row in successor.payload.observables:
-        if row.supersedes_observable_id is not None and row.supersedes_observable_id not in previous_by_id:
+        if (
+            row.supersedes_observable_id is not None
+            and row.supersedes_observable_id not in previous_by_id
+        ):
             errors.append(
-                f"observable {row.observable_id} supersedes unknown prior observable {row.supersedes_observable_id}"
+                f"observable {row.observable_id} supersedes unknown prior "
+                f"observable {row.supersedes_observable_id}"
             )
     return tuple(dict.fromkeys(errors))
 
@@ -610,19 +618,20 @@ def freeze_evidence_index_from_artifact(artifact: dict[str, Any]) -> FreezeEvide
     if len(turn_ids) != len(set(turn_ids)):
         raise ValueError("behavioral freeze contains duplicate source-turn identities")
     if set(turn_ids) != set(turn_hashes):
-        raise ValueError("behavioral freeze source-turn hash index does not match frozen source turns")
+        raise ValueError(
+            "behavioral freeze source-turn hash index does not match frozen source turns"
+        )
     if not all(
-        isinstance(turn_id, str)
-        and turn_id
-        and isinstance(turn_hash, str)
-        and len(turn_hash) == 64
+        isinstance(turn_id, str) and turn_id and isinstance(turn_hash, str) and len(turn_hash) == 64
         for turn_id, turn_hash in turn_hashes.items()
     ):
         raise ValueError("behavioral freeze source-turn hash index is invalid")
     for turn in turns:
         turn_id = cast(str, turn["turn_id"])
         if sha256_json(turn) != turn_hashes[turn_id]:
-            raise ValueError("behavioral freeze source-turn hash does not match source-turn content")
+            raise ValueError(
+                "behavioral freeze source-turn hash does not match source-turn content"
+            )
     episode_sources: dict[str, tuple[str, ...]] = {}
     modalities: dict[str, InputModality] = {}
     revised: dict[str, bool] = {}
@@ -631,13 +640,19 @@ def freeze_evidence_index_from_artifact(artifact: dict[str, Any]) -> FreezeEvide
         if not isinstance(episode_id, str) or episode_id not in episode_hashes:
             raise ValueError("behavioral freeze contains an unindexed approved episode")
         if sha256_json(episode) != episode_hashes[episode_id]:
-            raise ValueError("behavioral freeze approved episode hash does not match episode content")
+            raise ValueError(
+                "behavioral freeze approved episode hash does not match episode content"
+            )
         source_ids_raw = episode.get("source_turn_ids", [])
-        if not isinstance(source_ids_raw, list) or not all(isinstance(row, str) for row in source_ids_raw):
+        if not isinstance(source_ids_raw, list) or not all(
+            isinstance(row, str) for row in source_ids_raw
+        ):
             raise ValueError("approved episode source-turn provenance is invalid")
         source_ids = tuple(cast(list[str], source_ids_raw))
         if not set(source_ids).issubset(turn_hashes):
-            raise ValueError("approved episode cites a source turn outside the frozen evidence index")
+            raise ValueError(
+                "approved episode cites a source turn outside the frozen evidence index"
+            )
         episode_sources[episode_id] = source_ids
         modality = episode.get("input_modality", "unknown")
         modalities[episode_id] = modality if modality in {"typed", "voice"} else "unknown"
@@ -657,7 +672,9 @@ def freeze_evidence_index_from_artifact(artifact: dict[str, Any]) -> FreezeEvide
     )
 
 
-def _validate_value_against_definition(record: CodedEpisodeRecord, definition: ObservableDefinition) -> None:
+def _validate_value_against_definition(
+    record: CodedEpisodeRecord, definition: ObservableDefinition
+) -> None:
     values: tuple[ScalarValue, ...]
     if record.state == "observed":
         assert record.coded_value is not None
@@ -670,7 +687,8 @@ def _validate_value_against_definition(record: CodedEpisodeRecord, definition: O
         if definition.value_type in {"nominal", "ordinal"}:
             if not isinstance(value, str) or value not in definition.allowed_values:
                 raise ValueError(
-                    f"observable {definition.observable_id} received a value outside its categorical codebook"
+                    f"observable {definition.observable_id} received a value "
+                    f"outside its categorical codebook"
                 )
         elif definition.value_type == "boolean":
             if not isinstance(value, bool):
@@ -680,9 +698,13 @@ def _validate_value_against_definition(record: CodedEpisodeRecord, definition: O
                 raise ValueError(f"observable {definition.observable_id} requires numeric values")
             numeric = float(value)
             if definition.numeric_min is not None and numeric < definition.numeric_min:
-                raise ValueError(f"observable {definition.observable_id} value is below numeric_min")
+                raise ValueError(
+                    f"observable {definition.observable_id} value is below numeric_min"
+                )
             if definition.numeric_max is not None and numeric > definition.numeric_max:
-                raise ValueError(f"observable {definition.observable_id} value is above numeric_max")
+                raise ValueError(
+                    f"observable {definition.observable_id} value is above numeric_max"
+                )
 
 
 def coding_run_integrity_errors(
@@ -713,25 +735,34 @@ def coding_run_integrity_errors(
             continue
         if definition.unit_of_analysis != "episode":
             errors.append(
-                f"episode coding run cannot directly assign non-episode observable {record.observable_id}"
+                f"episode coding run cannot directly assign non-episode "
+                f"observable {record.observable_id}"
             )
         if record.episode_id not in evidence.episode_sha256:
             errors.append(f"coding record references unknown frozen episode {record.episode_id}")
             continue
         allowed_turns = set(evidence.episode_source_turn_ids[record.episode_id])
-        cited_turns = set(record.supporting_source_turn_ids) | set(record.counterevidence_source_turn_ids)
+        cited_turns = set(record.supporting_source_turn_ids) | set(
+            record.counterevidence_source_turn_ids
+        )
         if not cited_turns.issubset(allowed_turns):
             errors.append(
-                f"coding record for {record.episode_id}/{record.observable_id} cites source turns outside that episode"
+                f"coding record for {record.episode_id}/{record.observable_id} "
+                "cites source turns outside that episode"
             )
         expected_modality = evidence.episode_input_modality[record.episode_id]
         if record.input_modality not in {expected_modality, "unknown"}:
             errors.append(
-                f"coding record for {record.episode_id}/{record.observable_id} changes frozen input modality"
+                f"coding record for {record.episode_id}/{record.observable_id} "
+                "changes frozen input modality"
             )
-        if record.source_episode_participant_revised != evidence.participant_revised_episode[record.episode_id]:
+        if (
+            record.source_episode_participant_revised
+            != evidence.participant_revised_episode[record.episode_id]
+        ):
             errors.append(
-                f"coding record for {record.episode_id}/{record.observable_id} changes participant-revision provenance"
+                f"coding record for {record.episode_id}/{record.observable_id} "
+                "changes participant-revision provenance"
             )
         try:
             _validate_value_against_definition(record, definition)
@@ -757,7 +788,8 @@ def coding_run_scoreability_blockers(
         blockers.append("ontology lacks validation content authority")
     if (
         ontology.payload.theory_blind_content_authority is not None
-        and ontology.payload.theory_blind_content_authority.authority_stage != "validation_candidate"
+        and ontology.payload.theory_blind_content_authority.authority_stage
+        != "validation_candidate"
     ):
         blockers.append("ontology theory-blind content authority is not validation-candidate")
     if not payload.records:
@@ -818,7 +850,10 @@ def coding_run_artifact_integrity_errors(
 ) -> tuple[str, ...]:
     errors = list(coding_run_integrity_errors(artifact.payload, ontology, evidence))
     digest = sha256_json(artifact.payload)
-    if artifact.coding_run_sha256 != digest or artifact.coding_run_id != f"LPC-{digest[:20].upper()}":
+    if (
+        artifact.coding_run_sha256 != digest
+        or artifact.coding_run_id != f"LPC-{digest[:20].upper()}"
+    ):
         errors.append("coding run artifact failed content-address verification")
     blockers = coding_run_scoreability_blockers(artifact.payload, ontology, evidence)
     if artifact.scoreability_blockers != blockers:
@@ -873,9 +908,7 @@ def aggregate_person_observables(
         state_counts = Counter(record.state for record in records)
         applicable = len(records) - state_counts["not_applicable"]
         informative = (
-            state_counts["observed"]
-            + state_counts["contradicted"]
-            + state_counts["mixed"]
+            state_counts["observed"] + state_counts["contradicted"] + state_counts["mixed"]
         )
         counts: Counter[tuple[str, str]] = Counter()
         raw_values: dict[tuple[str, str], ScalarValue] = {}
@@ -938,13 +971,11 @@ def build_annotation_tasks(
     source = cast(dict[str, Any], payload["behavioral_source"])
     episodes = cast(list[dict[str, Any]], source["approved_episodes"])
     turns = cast(list[dict[str, Any]], source.get("participant_source_turns", []))
-    turns_by_id = {
-        str(row["turn_id"]): row
-        for row in turns
-        if isinstance(row.get("turn_id"), str)
-    }
+    turns_by_id = {str(row["turn_id"]): row for row in turns if isinstance(row.get("turn_id"), str)}
     episode_observable_ids = tuple(
-        row.observable_id for row in ontology.payload.observables if row.unit_of_analysis == "episode"
+        row.observable_id
+        for row in ontology.payload.observables
+        if row.unit_of_analysis == "episode"
     )
     if not episode_observable_ids:
         return ()

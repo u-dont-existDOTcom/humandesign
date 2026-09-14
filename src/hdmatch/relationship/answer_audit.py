@@ -540,7 +540,12 @@ def _legacy_concept_covered(field_id: str, lowered: str) -> bool:
         "repair_difficulty": ("repair", "recover", "apolog", "make up", "resolved"),
         "autonomy_engulfment": ("space", "freedom", "engulf", "pressure", "cling"),
         "sexual_jealousy": ("sexual jealousy", "sex with", "sleep with"),
-        "romantic_priority_jealousy": ("romantic jealousy", "in love with", "priority", "attention"),
+        "romantic_priority_jealousy": (
+            "romantic jealousy",
+            "in love with",
+            "priority",
+            "attention",
+        ),
         "practical_life_fit": (
             "money",
             "work",

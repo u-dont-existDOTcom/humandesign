@@ -56,7 +56,9 @@ def _manifest() -> object:
     return build_pilot_corpus_manifest(payload)
 
 
-def _coder_output(coder_id: str, start_minute: int, freeze_minute: int) -> PilotCoderOutputReference:
+def _coder_output(
+    coder_id: str, start_minute: int, freeze_minute: int
+) -> PilotCoderOutputReference:
     return PilotCoderOutputReference(
         coder_id=coder_id,
         training_receipt_sha256=("1" if coder_id == "CODER-A" else "2") * 64,

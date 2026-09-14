@@ -66,7 +66,9 @@ def test_final_v5_keeps_v5_export_and_human_first_controls() -> None:
     assert "data-v5-hybrid-positive" in final
 
 
-def test_final_v5_runtime_builder_keeps_private_handoff_embedded_and_offline(tmp_path: Path) -> None:
+def test_final_v5_runtime_builder_keeps_private_handoff_embedded_and_offline(
+    tmp_path: Path,
+) -> None:
     helper = _load(V2_TEST, "lp_v5f_v2_test_helper")
     final_v5 = _load(FINAL_V5, "lp_v5f_runtime")
     handoff = tmp_path / "private.zip"

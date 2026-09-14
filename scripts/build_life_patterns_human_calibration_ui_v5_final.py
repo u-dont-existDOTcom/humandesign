@@ -6,6 +6,7 @@ prerequisite from insufficient evidence. It replaces the inherited V2 No/Can't-t
 the controlling V5 wording while preserving the exact V5 measurement/export layer and embedded
 private handoff bytes.
 """
+
 from __future__ import annotations
 
 import argparse
@@ -27,16 +28,51 @@ def patch_html_for_v5_final_fallbacks(html: str) -> str:
     html = _replace_function(
         html,
         "renderStates",
-        r'''function renderStates(u,r){const opts=[["observed","Yes — clearly shown","The exact source clearly shows at least one substantive behavior or affirmative component below."],["not_applicable","Doesn't apply to this story","The required situation is affirmatively absent. Do not reinterpret the story to make it fit."],["insufficient","Not enough information","The situation may apply, but the exact source is not sufficient to support a substantive value reliably."]];$("stateGrid").innerHTML=`<h3 style="grid-column:1/-1;margin:0">Does the exact source answer the question above?</h3>`+opts.map(([v,l,d])=>`<label class="state"><b><input type="radio" name="state" value="${v}" ${r.state===v?"checked":""}>${l}</b><span>${d}</span></label>`).join("");updateStateSemantics(u,r.state);document.querySelectorAll('input[name="state"]').forEach(el=>el.addEventListener("change",()=>{const next={...readForm(u),state:el.value};updateStateSemantics(u,el.value);renderSources(u,next);renderObserved(u,next)}))}''',
+        (
+            'function renderStates(u,r){const opts=[["observed","Yes '
+            '— clearly shown","The exact source clearly shows at leas'
+            "t one substantive behavior or affirmative component belo"
+            'w."],["not_applicable","Doesn\'t apply to this story","Th'
+            "e required situation is affirmatively absent. Do not rei"
+            'nterpret the story to make it fit."],["insufficient","No'
+            't enough information","The situation may apply, but the '
+            "exact source is not sufficient to support a substantive "
+            'value reliably."]];$("stateGrid").innerHTML=`<h3 style="'
+            'grid-column:1/-1;margin:0">Does the exact source answer '
+            "the question above?</h3>`+opts.map(([v,l,d])=>`<label cl"
+            'ass="state"><b><input type="radio" name="state" value="$'
+            '{v}" ${r.state===v?"checked":""}>${l}</b><span>${d}</spa'
+            'n></label>`).join("");updateStateSemantics(u,r.state);do'
+            "cument.querySelectorAll('input[name=\"state\"]').forEach(e"
+            'l=>el.addEventListener("change",()=>{const next={...read'
+            "Form(u),state:el.value};updateStateSemantics(u,el.value)"
+            ";renderSources(u,next);renderObserved(u,next)}))}"
+        ),
     )
     html = _replace_function(
         html,
         "updateStateSemantics",
-        r'''function updateStateSemantics(u,state){$("stateSemantics").textContent=state==="observed"?"If Yes, select the substantive fact(s) below. Machine graph bookkeeping is automatic.":state==="not_applicable"?"Use this only when the required situation is affirmatively absent from the story; non-mention is not enough.":state==="insufficient"?"Use this when the situation may apply but the exact source does not support a substantive fact reliably.":""}''',
+        (
+            'function updateStateSemantics(u,state){$("stateSemantics'
+            '").textContent=state==="observed"?"If Yes, select the su'
+            "bstantive fact(s) below. Machine graph bookkeeping is au"
+            'tomatic.":state==="not_applicable"?"Use this only when t'
+            "he required situation is affirmatively absent from the s"
+            'tory; non-mention is not enough.":state==="insufficient"'
+            '?"Use this when the situation may apply but the exact so'
+            'urce does not support a substantive fact reliably.":""}'
+        ),
     )
     html = html.replace(
-        "Choose No when the prerequisite is absent; choose Can't tell when the source is too unclear.",
-        "Choose Doesn't apply to this story when the prerequisite is affirmatively absent; choose Not enough information when the exact source is insufficient.",
+        (
+            "Choose No when the prerequisite is absent; choose Can't "
+            "tell when the source is too unclear."
+        ),
+        (
+            "Choose Doesn't apply to this story when the prerequisite"
+            " is affirmatively absent; choose Not enough information "
+            "when the exact source is insufficient."
+        ),
     )
     if _embedded_fragment(html) != embedded_before:
         raise ValueError("V5 final fallback patch altered embedded private handoff bytes")

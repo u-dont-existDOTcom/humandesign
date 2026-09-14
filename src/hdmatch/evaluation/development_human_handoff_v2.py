@@ -236,7 +236,9 @@ def export_development_human_calibration_bundle_v2(
 
     selected_episode = human_episode_calibration_tasks(episode_tasks, calibration)
     selected_series = human_series_calibration_tasks(episode_tasks, series_tasks, calibration)
-    selected_by_kind: dict[str, tuple[DevelopmentEpisodeCodingTask | DevelopmentSeriesCodingTask, ...]] = {
+    selected_by_kind: dict[
+        str, tuple[DevelopmentEpisodeCodingTask | DevelopmentSeriesCodingTask, ...]
+    ] = {
         "episode": selected_episode,
         "series": selected_series,
     }
@@ -298,7 +300,10 @@ def export_development_human_calibration_bundle_v2(
             canonical_json_bytes(row) + b"\n" for row in rows
         )
 
-    if len(prompt_hashes) != 1 or next(iter(prompt_hashes)) != bound.human_calibration_prompt_sha256:
+    if (
+        len(prompt_hashes) != 1
+        or next(iter(prompt_hashes)) != bound.human_calibration_prompt_sha256
+    ):
         raise ValueError("human packet v2 groups do not share the bound human prompt")
     if (
         unit_counts["episode"] != bound.calibration_episode_unit_count

@@ -66,9 +66,7 @@ def _theory_blind_receipt(
         authority_sha256="a" * 64,
         authority_stage=stage,  # type: ignore[arg-type]
         validation_route=(
-            "statistically_justified_llm_substitution"
-            if stage == "validation_candidate"
-            else None
+            "statistically_justified_llm_substitution" if stage == "validation_candidate" else None
         ),
         authorized_at_utc=NOW,
     )
@@ -161,7 +159,10 @@ def test_theory_blind_llm_substitution_authority_can_replace_legacy_h1_gate() ->
         evidence,
     )
     assert blocked.scoreable_for_model_tournament is False
-    assert "automated coder lacks a frozen calibration/validation receipt" in blocked.scoreability_blockers
+    assert (
+        "automated coder lacks a frozen calibration/validation receipt"
+        in blocked.scoreability_blockers
+    )
 
     allowed = build_coding_run_artifact(
         _automated_payload(ontology, calibrated=True),

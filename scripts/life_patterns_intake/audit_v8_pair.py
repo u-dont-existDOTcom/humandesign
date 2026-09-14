@@ -4,12 +4,13 @@ Uses only Python's standard library. This is not a corpus importer, a label
 normalizer, a source-authenticity check, or authorization for research scoring.
 Reports contain structural identifiers/counts, never participant narrative.
 """
+
 from __future__ import annotations
 
 import argparse
-from collections import Counter
 import hashlib
 import json
+from collections import Counter
 from pathlib import Path
 from typing import Any
 
@@ -32,12 +33,14 @@ def _constant(_: str) -> Any:
 
 def load(path: Path) -> tuple[dict[str, Any], dict[str, Any]]:
     raw = path.read_bytes()
-    value = json.loads(raw.decode("utf-8"), object_pairs_hook=_pairs,
-                       parse_constant=_constant)
+    value = json.loads(raw.decode("utf-8"), object_pairs_hook=_pairs, parse_constant=_constant)
     if not isinstance(value, dict):
         raise ValueError("top-level JSON value must be an object")
-    return value, {"filename": path.name, "bytes": len(raw),
-                   "sha256": hashlib.sha256(raw).hexdigest()}
+    return value, {
+        "filename": path.name,
+        "bytes": len(raw),
+        "sha256": hashlib.sha256(raw).hexdigest(),
+    }
 
 
 def audit(base: dict[str, Any], repair: dict[str, Any]) -> dict[str, Any]:
@@ -68,15 +71,21 @@ def audit(base: dict[str, Any], repair: dict[str, Any]) -> dict[str, Any]:
         if not isinstance(values, list):
             errors.append(f"{label}/{field}: expected reference array")
             return
-        check(all(isinstance(v, str) and v in target for v in values),
-              f"{label}/{field}: unresolved reference")
+        check(
+            all(isinstance(v, str) and v in target for v in values),
+            f"{label}/{field}: unresolved reference",
+        )
 
     check(base.get("schema_version") == BASE_SCHEMA, "unsupported base schema")
     check(repair.get("schema_version") == REPAIR_SCHEMA, "unsupported repair schema")
-    check(repair.get("original_schema_version") == base.get("schema_version"),
-          "original schema reference mismatch")
-    check(repair.get("original_record_status") == base.get("record_status"),
-          "original status reference mismatch")
+    check(
+        repair.get("original_schema_version") == base.get("schema_version"),
+        "original schema reference mismatch",
+    )
+    check(
+        repair.get("original_record_status") == base.get("record_status"),
+        "original status reference mismatch",
+    )
     patterns = index(base, "pattern_claims", "pattern_id")
     series = index(base, "series_reports", "series_id")
     episodes = index(base, "episodes", "episode_id")
@@ -116,14 +125,18 @@ def audit(base: dict[str, Any], repair: dict[str, Any]) -> dict[str, Any]:
             check(row["pattern_id"] in patterns, f"{ident}: unknown pattern")
     for ident, row in changes.items():
         check(ident in patterns, f"{ident}: changed pattern absent from original")
-        check(row.get("review_reference") == review.get("review_id"),
-              f"{ident}: missing review reference")
+        check(
+            row.get("review_reference") == review.get("review_id"),
+            f"{ident}: missing review reference",
+        )
         check(row.get("approval_reference") in responses, f"{ident}: missing approval")
     approval_id = review.get("participant_response_reference")
     check(approval_id in responses, "review approval response missing")
     if approval_id in responses:
-        check(review.get("participant_response") == responses[approval_id].get("exact_text"),
-              "review approval text disagrees with referenced response")
+        check(
+            review.get("participant_response") == responses[approval_id].get("exact_text"),
+            "review approval text disagrees with referenced response",
+        )
     for ident, row in additions.items():
         check(row.get("target_pattern_id") in patterns, f"{ident}: unknown pattern")
         check(row.get("source_reference") in responses, f"{ident}: missing source response")
@@ -131,45 +144,87 @@ def audit(base: dict[str, Any], repair: dict[str, Any]) -> dict[str, Any]:
     for ident, row in metadata.items():
         check(ident in patterns, f"{ident}: metadata target absent")
         if ident in patterns:
-            check(row.get("original_value") == patterns[ident].get(row.get("field")),
-                  f"{ident}: metadata original value mismatch")
+            check(
+                row.get("original_value") == patterns[ident].get(row.get("field")),
+                f"{ident}: metadata original value mismatch",
+            )
         for ref in row.get("source_references", []):
-            check(isinstance(ref, str) and ref.startswith("original:")
-                  and ref.partition(":")[2] in all_base_ids,
-                  f"{ident}: unknown metadata source")
+            check(
+                isinstance(ref, str)
+                and ref.startswith("original:")
+                and ref.partition(":")[2] in all_base_ids,
+                f"{ident}: unknown metadata source",
+            )
 
     label_findings = []
     for ident, row in patterns.items():
         n_ep = len(row.get("supporting_episode_ids", []))
         n_ser = len(row.get("supporting_series_report_ids", []))
         label = row.get("support_state")
-        mismatch = ((label == "anchored_series" and (n_ep < 1 or n_ser < 1))
-                    or (label == "multiple_episodes" and n_ep < 2))
+        mismatch = (label == "anchored_series" and (n_ep < 1 or n_ser < 1)) or (
+            label == "multiple_episodes" and n_ep < 2
+        )
         if mismatch:
-            label_findings.append({"pattern_id": ident, "original_label": label,
-                                   "episode_links": n_ep, "series_links": n_ser,
-                                   "disposition": "retain_original_and_flag; no_automatic_relabel"})
+            label_findings.append(
+                {
+                    "pattern_id": ident,
+                    "original_label": label,
+                    "episode_links": n_ep,
+                    "series_links": n_ser,
+                    "disposition": "retain_original_and_flag; no_automatic_relabel",
+                }
+            )
     return {
         "audit_kind": "structural_pair_check_only",
         "structural_check_passed": not errors,
         "structural_errors": errors,
-        "original_counts": {"patterns": len(patterns), "series": len(series),
-                            "episodes": len(episodes), "indexed_participant_turns": len(turns)},
-        "supplement_counts": {"questions": len(questions), "responses": len(responses),
-                              "recovered_turns": len(recovered), "account_changes": len(changes),
-                              "added_evidence_records": len(additions),
-                              "outstanding_issues": len(outstanding)},
-        "added_evidence_types": dict(sorted(Counter(
-            row.get("evidence_type", "unspecified") for row in additions.values()).items())),
+        "original_counts": {
+            "patterns": len(patterns),
+            "series": len(series),
+            "episodes": len(episodes),
+            "indexed_participant_turns": len(turns),
+        },
+        "supplement_counts": {
+            "questions": len(questions),
+            "responses": len(responses),
+            "recovered_turns": len(recovered),
+            "account_changes": len(changes),
+            "added_evidence_records": len(additions),
+            "outstanding_issues": len(outstanding),
+        },
+        "added_evidence_types": dict(
+            sorted(
+                Counter(
+                    row.get("evidence_type", "unspecified") for row in additions.values()
+                ).items()
+            )
+        ),
         "changed_pattern_ids": sorted(changes),
         "original_support_label_findings": label_findings,
         "limitations": [
-            "Schema/status matches and resolvable IDs do not prove supplement lineage; uploaded bytes are separately hashed.",
-            "Recovered text is an assertion in the supplied file; the original platform transcript was not independently checked.",
-            "No episode segmentation, substantive labels, participant account, or support state is rewritten.",
-            "Counts do not establish truth, comparability, independent recurrence, or participant-wide generality.",
-            "No corpus importer, automatic research freeze, blinded coding, validation promotion, or model scoring is performed."
-        ]
+            (
+                "Schema/status matches and resolvable IDs do not prove su"
+                "pplement lineage; uploaded bytes are separately hashed."
+            ),
+            (
+                "Recovered text is an assertion in the supplied file; the"
+                " original platform transcript was not independently chec"
+                "ked."
+            ),
+            (
+                "No episode segmentation, substantive labels, participant"
+                " account, or support state is rewritten."
+            ),
+            (
+                "Counts do not establish truth, comparability, independen"
+                "t recurrence, or participant-wide generality."
+            ),
+            (
+                "No corpus importer, automatic research freeze, blinded c"
+                "oding, validation promotion, or model scoring is perform"
+                "ed."
+            ),
+        ],
     }
 
 

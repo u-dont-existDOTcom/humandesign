@@ -121,19 +121,28 @@ class DevelopmentSeriesAnnotationResponseV2(DevelopmentSeriesV2Model):
             if not self.coded_values or self.value_relation is None:
                 raise ValueError("observed series v2 evidence requires coded values and relation")
             if not self.supporting_source_segment_ids:
-                raise ValueError("observed series v2 evidence requires exact source-segment support")
+                raise ValueError(
+                    "observed series v2 evidence requires exact source-segment support"
+                )
             if self.reported_recurrence_strength is None:
-                raise ValueError("observed series v2 evidence requires reported recurrence strength")
+                raise ValueError(
+                    "observed series v2 evidence requires reported recurrence strength"
+                )
             if self.exception_status is None:
-                raise ValueError("observed series v2 evidence requires explicit exception-status coding")
+                raise ValueError(
+                    "observed series v2 evidence requires explicit exception-status coding"
+                )
             if self.frequency_evidence_basis is None:
                 raise ValueError("observed series v2 evidence requires a frequency evidence basis")
             if self.value_relation == "single" and len(self.coded_values) != 1:
                 raise ValueError("single series v2 value relation requires exactly one coded value")
-            if self.value_relation in {"ordered_sequence", "unordered_multiple"} and len(
-                self.coded_values
-            ) < 2:
-                raise ValueError("multi-value series v2 relation requires at least two coded values")
+            if (
+                self.value_relation in {"ordered_sequence", "unordered_multiple"}
+                and len(self.coded_values) < 2
+            ):
+                raise ValueError(
+                    "multi-value series v2 relation requires at least two coded values"
+                )
         elif any(
             (
                 self.coded_values,
@@ -150,19 +159,29 @@ class DevelopmentSeriesAnnotationResponseV2(DevelopmentSeriesV2Model):
             )
         ):
             raise ValueError(
-                "insufficient/not-applicable series v2 evidence cannot assert substantive recurrence"
+                "insufficient/not-applicable series v2 evidence cannot as"
+                "sert substantive recurrence"
             )
 
         if self.exception_status == "exceptions_explicitly_denied" and self.exception_frequency != (
             "none_reported"
         ):
-            raise ValueError("explicitly denied exceptions require exception_frequency=none_reported")
-        if self.exception_status == "exceptions_reported" and self.exception_frequency == "none_reported":
+            raise ValueError(
+                "explicitly denied exceptions require exception_frequency=none_reported"
+            )
+        if (
+            self.exception_status == "exceptions_reported"
+            and self.exception_frequency == "none_reported"
+        ):
             raise ValueError("reported exceptions cannot have exception_frequency=none_reported")
-        if self.exception_status == "exceptions_not_probed_or_unknown" and self.exception_frequency not in {
-            None,
-            "unknown",
-        }:
+        if (
+            self.exception_status == "exceptions_not_probed_or_unknown"
+            and self.exception_frequency
+            not in {
+                None,
+                "unknown",
+            }
+        ):
             raise ValueError("unknown exception status cannot assert a known exception frequency")
 
         count_bases = {
@@ -171,7 +190,10 @@ class DevelopmentSeriesAnnotationResponseV2(DevelopmentSeriesV2Model):
             "external_record_or_observation",
             "mixed_basis",
         }
-        if self.minimum_reported_occurrences is not None and self.frequency_evidence_basis not in count_bases:
+        if (
+            self.minimum_reported_occurrences is not None
+            and self.frequency_evidence_basis not in count_bases
+        ):
             raise ValueError(
                 "minimum reported occurrences require bounded/sampled/external/mixed evidence basis"
             )
@@ -183,7 +205,8 @@ class DevelopmentSeriesAnnotationResponseV2(DevelopmentSeriesV2Model):
             )
         ):
             raise ValueError(
-                "bounded rate/count recurrence requires bounded evidence and a supported count/rate description"
+                "bounded rate/count recurrence requires bounded evidence "
+                "and a supported count/rate description"
             )
 
         if self.asserts_non_action and (
@@ -237,7 +260,8 @@ def development_series_response_errors_v2(
         for value in response.coded_values:
             if not _value_allowed(value, definition):
                 errors.append(
-                    f"series v2 annotation for {response.observable_id} contains value outside codebook"
+                    f"series v2 annotation for {response.observable_id} "
+                    f"contains value outside codebook"
                 )
 
     extensions = {row.observable_id: row for row in procedure.payload.observable_extensions}
@@ -265,7 +289,9 @@ def development_series_response_errors_v2(
         )
     )
     if expected_other_specified != (response.other_specified_description is not None):
-        errors.append("series v2 Other Specified description disagrees with frozen procedure registry")
+        errors.append(
+            "series v2 Other Specified description disagrees with frozen procedure registry"
+        )
     return tuple(dict.fromkeys(errors))
 
 

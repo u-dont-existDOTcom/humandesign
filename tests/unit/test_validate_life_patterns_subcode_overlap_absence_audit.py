@@ -53,7 +53,9 @@ def test_validator_accepts_complete_sequential_22_observable_fixture(tmp_path: P
     module = _load()
     findings = [_finding(i, f"NBM-R{i:02d}") for i in range(1, 23)]
     findings_path = tmp_path / "findings.jsonl"
-    findings_path.write_text("\n".join(json.dumps(row) for row in findings) + "\n", encoding="utf-8")
+    findings_path.write_text(
+        "\n".join(json.dumps(row) for row in findings) + "\n", encoding="utf-8"
+    )
     rows = module._load_jsonl(findings_path)
     for index, row in enumerate(rows, start=1):
         module._validate_finding(row, index)

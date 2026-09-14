@@ -336,14 +336,16 @@ def create_life_patterns_interview_app(
         payload["interview_schema_version"] = "life-patterns-conversation-v4"
         payload["consent_to_llm_processing"] = True
         payload["contact_email_lookup_sha256"] = hashlib.sha256(email.encode()).hexdigest()
-        payload["conversation_turns"] = [{
-            "turn_id": f"TURN-{uuid.uuid4().hex[:12].upper()}",
-            "role": "assistant",
-            "text": INTERVIEW_OPENING,
-            "created_at_utc": datetime.now(UTC).isoformat(),
-            "source_kind": "fixed_interview_opening",
-            "interview_methods_version": METHODS_VERSION,
-        }]
+        payload["conversation_turns"] = [
+            {
+                "turn_id": f"TURN-{uuid.uuid4().hex[:12].upper()}",
+                "role": "assistant",
+                "text": INTERVIEW_OPENING,
+                "created_at_utc": datetime.now(UTC).isoformat(),
+                "source_kind": "fixed_interview_opening",
+                "interview_methods_version": METHODS_VERSION,
+            }
+        ]
         payload["last_completed_turn_index"] = 0
         store.save(payload)
         return {
@@ -438,7 +440,9 @@ def create_life_patterns_interview_app(
             "created_at_utc": datetime.now(UTC).isoformat(),
             "provider_receipt": receipt,
             "interview_methods_version": METHODS_VERSION,
-            "clarification_notes": [note.model_dump(mode="json") for note in result.clarification_notes],
+            "clarification_notes": [
+                note.model_dump(mode="json") for note in result.clarification_notes
+            ],
         }
         turns.append(assistant_turn)
         if episode is not None:
@@ -457,9 +461,7 @@ def create_life_patterns_interview_app(
             "map_available": len(approved) >= 2,
         }
 
-    @app.post(
-        "/api/life-patterns/interview/sessions/{session_id}/episodes/{episode_id}/review"
-    )
+    @app.post("/api/life-patterns/interview/sessions/{session_id}/episodes/{episode_id}/review")
     def review_episode(
         session_id: str,
         episode_id: str,
@@ -552,7 +554,9 @@ def create_life_patterns_interview_app(
         payload = store.read(session_id, token)
         raw_map = payload.get("life_patterns_map")
         if not isinstance(raw_map, dict):
-            raise HTTPException(status_code=409, detail="generate a Life Patterns Map before exporting")
+            raise HTTPException(
+                status_code=409, detail="generate a Life Patterns Map before exporting"
+            )
         result = LifePatternsMap.model_validate(raw_map)
         episodes = cast(list[dict[str, Any]], payload.get("episodes", []))
         approved = _approved_episodes(episodes)

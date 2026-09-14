@@ -62,4 +62,6 @@ def test_v2_stack_has_new_content_addresses_without_rewriting_v1() -> None:
     assert v2.ontology.ontology_sha256 != v1.ontology.ontology_sha256
     assert v2.procedure.procedure_id != v1.procedure.procedure_id
     assert v2.procedure.procedure_sha256 != v1.procedure.procedure_sha256
-    assert sum(len(row.non_action_values) for row in v2.procedure.payload.observable_extensions) == 28
+    assert (
+        sum(len(row.non_action_values) for row in v2.procedure.payload.observable_extensions) == 28
+    )

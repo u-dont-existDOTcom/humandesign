@@ -9,7 +9,12 @@ from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
-from hdmatch.experiments.canonical import canonical_json_bytes, load_json_bytes, sha256_json, write_new_bytes
+from hdmatch.experiments.canonical import (
+    canonical_json_bytes,
+    load_json_bytes,
+    sha256_json,
+    write_new_bytes,
+)
 
 from .automated_annotation_calibration import AutomatedCodingPassReceipt
 from .neutral_measurement import FreezeEvidenceIndex, OntologyReleaseArtifact
@@ -100,7 +105,9 @@ def build_validated_structured_automated_pass_v2(
 
     recomputed_normalized = normalize_structured_annotation_responses_jsonl_v2(raw_output)
     if recomputed_normalized != normalized_output:
-        raise ValueError("normalized output is not deterministic normalization of preserved raw output")
+        raise ValueError(
+            "normalized output is not deterministic normalization of preserved raw output"
+        )
     normalized_sha256 = _sha256_bytes(normalized_output)
     if automated_pass.output_sha256 != normalized_sha256:
         raise ValueError("automated pass output hash does not bind canonical normalized output")
@@ -113,8 +120,7 @@ def build_validated_structured_automated_pass_v2(
     responses = load_structured_annotation_responses_jsonl_v2(normalized_output)
     expected_units = _expected_units(tasks)
     actual_units = {
-        (response.task_id, response.episode_id, response.observable_id)
-        for response in responses
+        (response.task_id, response.episode_id, response.observable_id) for response in responses
     }
     if len(actual_units) != len(responses):
         raise ValueError("normalized automated pass repeats structured annotation units")
@@ -136,7 +142,10 @@ def build_validated_structured_automated_pass_v2(
         )
         if errors:
             raise ValueError(
-                f"invalid structured automated response {response.task_id}/{response.observable_id}: "
+                (
+                    f"invalid structured automated response "
+                    f"{response.task_id}/{response.observable_id}: "
+                )
                 + "; ".join(errors)
             )
 

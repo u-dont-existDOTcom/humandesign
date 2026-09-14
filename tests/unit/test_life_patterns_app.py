@@ -27,7 +27,9 @@ class FakeMapper:
         self.seen_episodes = episodes
         return (
             LifePatternsMap(
-                overall_summary="The supplied episodes show both recurring and context-dependent patterns.",
+                overall_summary=(
+                    "The supplied episodes show both recurring and context-dependent patterns."
+                ),
                 patterns=(
                     LifePattern(
                         pattern_id="P1",
@@ -45,7 +47,10 @@ class FakeMapper:
                 strengths=("The participant supplies concrete counterexamples.",),
                 friction_points=("Broad self-descriptions can hide domain differences.",),
                 transfer_opportunities=(
-                    "Test whether a successful work-planning strategy helps in another low-stakes domain.",
+                    (
+                        "Test whether a successful work-planning strategy helps i"
+                        "n another low-stakes domain."
+                    ),
                 ),
                 reversible_experiments=("Try one low-stakes cross-domain planning experiment.",),
                 important_unknowns=("More conflict/stress evidence would improve the map.",),
@@ -203,7 +208,10 @@ def test_map_and_portable_exports_use_only_saved_episode_evidence(tmp_path: Path
         (
             "work_projects",
             "Starting a business",
-            "I compared costs, talked to experienced people, and ran a small test before committing.",
+            (
+                "I compared costs, talked to experienced people, and ran "
+                "a small test before committing."
+            ),
             "One side project began impulsively and worked anyway.",
         ),
     )

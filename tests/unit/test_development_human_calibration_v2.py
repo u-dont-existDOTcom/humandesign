@@ -168,7 +168,9 @@ def _preparation():
 
 def _safe_nominal_value(preparation, observable_id: str) -> str:
     definition = next(
-        row for row in preparation.stack.ontology.payload.observables if row.observable_id == observable_id
+        row
+        for row in preparation.stack.ontology.payload.observables
+        if row.observable_id == observable_id
     )
     extension = next(
         row
@@ -277,7 +279,10 @@ def test_series_first_pass_v2_accepts_generalized_recurrence_without_fake_count(
     assert response.minimum_reported_occurrences is None
     assert response.frequency_evidence_basis == "generalized_self_report"
     assert artifact.payload.expected_unit_count == 1
-    assert artifact.payload.recurrence_policy_sha256 == preparation.package.payload.recurrence_policy_sha256
+    assert (
+        artifact.payload.recurrence_policy_sha256
+        == preparation.package.payload.recurrence_policy_sha256
+    )
     assert development_human_first_pass_v2_integrity_errors(artifact) == ()
 
 

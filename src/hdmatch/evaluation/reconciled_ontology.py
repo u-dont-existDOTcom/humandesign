@@ -38,7 +38,8 @@ _PARTICIPANT_REVIEW_POLICY = (
     "Code only participant-approved frozen episode evidence bound by behavioral-freeze provenance."
 )
 _THEORY_CONTAMINATION_POLICY = (
-    "Target-model, birth, chart, prediction, and model-fit information must be unavailable to coding."
+    "Target-model, birth, chart, prediction, and model-fit in"
+    "formation must be unavailable to coding."
 )
 
 
@@ -141,7 +142,7 @@ def observable_definitions_from_resolved_view(
     source: ReconciledCodebookSourceArtifact,
     resolved: ResolvedCodebookViewArtifactV2,
 ) -> tuple[ObservableDefinition, ...]:
-    """Project exact v1 observable text with only the frozen theory-blind subcode amendment applied."""
+    "Project exact v1 observable text with only the frozen theory-blind subcode amendment applied."
 
     errors = _resolved_view_errors(source, resolved)
     if errors:

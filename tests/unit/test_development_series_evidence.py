@@ -33,7 +33,6 @@ from hdmatch.evaluation.structured_annotation_v2 import (
 )
 from hdmatch.experiments.canonical import sha256_json
 
-
 NOW = datetime(2026, 9, 6, 20, 0, tzinfo=UTC)
 ZERO = "0" * 64
 
@@ -263,15 +262,20 @@ def test_response_validation_binds_non_action_to_frozen_registry_and_gate() -> N
         supporting_source_segment_ids=("SER-EXACT-SEG-01",),
         theory_exposure="prior_exposure_possible",
     )
-    assert development_series_response_errors(
-        response,
-        task=task,
-        ontology=ontology,
-        procedure=procedure,
-    ) == ()
+    assert (
+        development_series_response_errors(
+            response,
+            task=task,
+            ontology=ontology,
+            procedure=procedure,
+        )
+        == ()
+    )
 
 
-def test_series_can_support_episode_plus_series_recurrence_only_with_explicit_anchor_relation() -> None:
+def test_series_can_support_episode_plus_series_recurrence_only_with_explicit_anchor_relation() -> (
+    None
+):
     task = build_development_series_tasks(_corpus(), observable_ids=("NBM-R01",)).tasks[0]
     base = dict(
         task_id=task.task_id,

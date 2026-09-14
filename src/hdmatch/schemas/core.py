@@ -56,9 +56,7 @@ class StructuralChartFeatures(FrozenModel):
     participant chart is still calculated and stored as :class:`ChartFeatures`.
     """
 
-    schema_version: Literal["structural-chart-features-v1"] = (
-        "structural-chart-features-v1"
-    )
+    schema_version: Literal["structural-chart-features-v1"] = "structural-chart-features-v1"
     type: str
     strategy: str
     authority: str

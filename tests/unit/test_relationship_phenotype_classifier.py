@@ -88,7 +88,9 @@ def test_classifier_is_chart_blind_and_freezes_literal_evidence() -> None:
         session_id="RR-TEST",
         answers=_answer_record(),
         semantic_audit=_semantic_audit(),
-        questionnaire_path=Path("reference/relationship/relationship_dynamic_questionnaire_v1.json"),
+        questionnaire_path=Path(
+            "reference/relationship/relationship_dynamic_questionnaire_v1.json"
+        ),
         rubric_path=Path("reference/relationship/relationship_outcome_rubrics_v1.json"),
         protocol_path=Path("reference/relationship/relationship_blind_classifier_protocol_v1.json"),
     )

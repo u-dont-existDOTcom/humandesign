@@ -82,12 +82,15 @@ class DevelopmentEpisodeAnnotationResponse(DevelopmentEpisodeModel):
             if not self.coded_values or self.value_relation is None:
                 raise ValueError("observed development episode requires coded values and relation")
             if not self.supporting_source_segment_ids:
-                raise ValueError("observed development episode requires exact source-segment support")
+                raise ValueError(
+                    "observed development episode requires exact source-segment support"
+                )
             if self.value_relation == "single" and len(self.coded_values) != 1:
                 raise ValueError("single episode value relation requires exactly one coded value")
-            if self.value_relation in {"ordered_sequence", "unordered_multiple"} and len(
-                self.coded_values
-            ) < 2:
+            if (
+                self.value_relation in {"ordered_sequence", "unordered_multiple"}
+                and len(self.coded_values) < 2
+            ):
                 raise ValueError("multi-value episode relation requires at least two coded values")
         elif (
             self.coded_values
@@ -156,7 +159,8 @@ def development_episode_response_errors(
         for value in response.coded_values:
             if not _value_allowed(value, definition):
                 errors.append(
-                    f"development episode annotation for {response.observable_id} contains value outside codebook"
+                    f"development episode annotation for "
+                    f"{response.observable_id} contains value outside codebook"
                 )
 
     extensions = {row.observable_id: row for row in procedure.payload.observable_extensions}

@@ -155,13 +155,16 @@ def test_ordered_sequence_is_preserved_without_mislabeling_as_mixed() -> None:
     )
     assert response.state == "observed"
     assert response.coded_values == ("VALUE_START", "VALUE_STOP")
-    assert structured_annotation_response_errors(
-        response,
-        task=task,
-        evidence=evidence,
-        ontology=ontology,
-        procedure=procedure,
-    ) == ()
+    assert (
+        structured_annotation_response_errors(
+            response,
+            task=task,
+            evidence=evidence,
+            ontology=ontology,
+            procedure=procedure,
+        )
+        == ()
+    )
 
 
 def test_non_action_registry_requires_all_four_prerequisites() -> None:
@@ -198,13 +201,16 @@ def test_non_action_registry_requires_all_four_prerequisites() -> None:
         asserts_non_action=True,
         non_action_gate=gate,
     )
-    assert structured_annotation_response_errors(
-        response,
-        task=task,
-        evidence=evidence,
-        ontology=ontology,
-        procedure=procedure,
-    ) == ()
+    assert (
+        structured_annotation_response_errors(
+            response,
+            task=task,
+            evidence=evidence,
+            ontology=ontology,
+            procedure=procedure,
+        )
+        == ()
+    )
 
     false_flag = _response(
         task,
@@ -245,17 +251,22 @@ def test_other_specified_requires_concrete_description_and_missingness_is_explic
         task,
         procedure,
         coded_values=("OS",),
-        other_specified_description="Concrete structural behavior not represented by listed values.",
+        other_specified_description=(
+            "Concrete structural behavior not represented by listed values."
+        ),
         missingness_flags=("APPROX", "UNCLEAR-SEQUENCE"),
     )
     assert response.missingness_flags == ("APPROX", "UNCLEAR-SEQUENCE")
-    assert structured_annotation_response_errors(
-        response,
-        task=task,
-        evidence=evidence,
-        ontology=ontology,
-        procedure=procedure,
-    ) == ()
+    assert (
+        structured_annotation_response_errors(
+            response,
+            task=task,
+            evidence=evidence,
+            ontology=ontology,
+            procedure=procedure,
+        )
+        == ()
+    )
 
     with pytest.raises(ValueError, match="duplicate missingness flags"):
         _response(
@@ -277,13 +288,16 @@ def test_influence_and_source_provenance_are_explicit_and_task_bound() -> None:
         influence_relation="temporal_precedence_only",
         influence_source_turn_ids=("TURN-A",),
     )
-    assert structured_annotation_response_errors(
-        response,
-        task=task,
-        evidence=evidence,
-        ontology=ontology,
-        procedure=procedure,
-    ) == ()
+    assert (
+        structured_annotation_response_errors(
+            response,
+            task=task,
+            evidence=evidence,
+            ontology=ontology,
+            procedure=procedure,
+        )
+        == ()
+    )
 
     outside = response.model_copy(update={"influence_source_turn_ids": ("TURN-OUTSIDE",)})
     errors = structured_annotation_response_errors(

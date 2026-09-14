@@ -343,11 +343,7 @@ def _entropy_from_weights(weights: Iterable[int | float]) -> float:
     total = sum(values)
     if total <= 0.0:
         raise ValueError("entropy weights require positive total")
-    return -sum(
-        (weight / total) * math.log2(weight / total)
-        for weight in values
-        if weight > 0.0
-    )
+    return -sum((weight / total) * math.log2(weight / total) for weight in values if weight > 0.0)
 
 
 def _canonical_channel(value: str) -> str:

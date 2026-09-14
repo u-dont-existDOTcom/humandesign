@@ -25,9 +25,7 @@ from hdmatch.model.rich_predicate import (
 )
 
 ROOT = Path(__file__).resolve().parents[2]
-LEGACY_MAPPING_LIBRARY_SHA256 = (
-    "e4b1ed725f0310b5434ca58745972b23902ee9e23a10ac795ea420ce0de8d69e"
-)
+LEGACY_MAPPING_LIBRARY_SHA256 = "e4b1ed725f0310b5434ca58745972b23902ee9e23a10ac795ea420ce0de8d69e"
 
 
 def test_activation_gate_predicates_support_scope_and_set_semantics() -> None:
@@ -140,9 +138,7 @@ def test_rich_mapping_library_matches_gate_predicate_without_behavioral_defaults
     library = RichMappingLibrary(
         question_bank_version="synthetic",
         question_bank_sha256="0" * 64,
-        source_artifacts=(
-            SourceArtifact(path="synthetic", sha256="1" * 64),
-        ),
+        source_artifacts=(SourceArtifact(path="synthetic", sha256="1" * 64),),
         answer_specs=(
             QuestionAnswerSpec(
                 question_id="Q1",

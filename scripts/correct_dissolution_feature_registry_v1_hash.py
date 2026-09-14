@@ -6,9 +6,15 @@ the pinned sepl_18.se1 SHA string. No astronomical feature has yet been generate
 This script changes only that exact string and fails closed if the expected typo
 is not present.
 """
+
 from pathlib import Path
 
-P = Path(__file__).resolve().parents[1] / "reference" / "research" / "adb_broad_exact_pair_dissolution_feature_registry_v1.json"
+P = (
+    Path(__file__).resolve().parents[1]
+    / "reference"
+    / "research"
+    / "adb_broad_exact_pair_dissolution_feature_registry_v1.json"
+)
 BAD = "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66a1cbc9b22225872dbe4ccd99a66"
 GOOD = "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66"
 text = P.read_text(encoding="utf-8")

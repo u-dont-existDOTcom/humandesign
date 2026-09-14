@@ -56,7 +56,9 @@ def _helpers(html: str) -> str:
     return html[start:end]
 
 
-def _node_envelope(html: str, unit: dict[str, object], response: dict[str, object]) -> dict[str, object]:
+def _node_envelope(
+    html: str, unit: dict[str, object], response: dict[str, object]
+) -> dict[str, object]:
     script = (
         _helpers(html)
         + "\nconst unit="
@@ -172,11 +174,14 @@ def test_browser_export_builds_validator_clean_pure_absence_graph() -> None:
     assert envelope.response_graph.state == "observed"
     assert envelope.response_graph.value_assertions[0].value_id == "R14-i"
     assert envelope.response_graph.component_assertions[0].component_role == "absence"
-    assert observable_response_v5_errors(
-        envelope.response_graph,
-        contract=contract,
-        valid_source_record_ids={"SEG-1"},
-    ) == ()
+    assert (
+        observable_response_v5_errors(
+            envelope.response_graph,
+            contract=contract,
+            valid_source_record_ids={"SEG-1"},
+        )
+        == ()
+    )
 
 
 def test_browser_export_retains_hybrid_affirmative_when_absence_is_insufficient() -> None:
@@ -213,11 +218,14 @@ def test_browser_export_retains_hybrid_affirmative_when_absence_is_insufficient(
     assert graph.component_assertions[0].state == "observed"
     assert graph.component_assertions[1].state == "insufficient"
     assert graph.absence_conditions[0].qualified_assertion_id is None
-    assert observable_response_v5_errors(
-        graph,
-        contract=contract,
-        valid_source_record_ids={"SEG-1"},
-    ) == ()
+    assert (
+        observable_response_v5_errors(
+            graph,
+            contract=contract,
+            valid_source_record_ids={"SEG-1"},
+        )
+        == ()
+    )
 
 
 def test_v5_builder_reuses_verified_private_handoff_without_plaintext_leak(tmp_path: Path) -> None:

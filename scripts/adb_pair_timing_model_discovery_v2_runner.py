@@ -6,14 +6,14 @@ unchanged:
 1. sklearn receives a deterministic 32-bit projection of the frozen seed;
 2. event-rank ties receive neutral average rank instead of stable-sort priority.
 """
+
 from __future__ import annotations
 
 import math
 from collections import defaultdict
 
-import numpy as np
-
 import adb_pair_timing_model_discovery_v2 as v2
+import numpy as np
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
 
@@ -35,7 +35,7 @@ def fit_l1_32bit(X_train, y_train, X_test, c):
 
 def metric_scores_neutral_ties(rows, scores):
     by_event = defaultdict(list)
-    for row, score in zip(rows, scores):
+    for row, score in zip(rows, scores, strict=False):
         by_event[row["event_key"]].append((float(score), int(row["actual"])))
 
     average_ranks = []

@@ -5,6 +5,7 @@ Specification: reference/research/partner_multidomain_1000_freeze_v2.md
 
 Development/exploratory only. Verified SWIEPH; any Moshier fallback aborts.
 """
+
 from __future__ import annotations
 
 import hashlib
@@ -12,13 +13,12 @@ import json
 import math
 import random
 import statistics
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
-
-import swisseph as swe
 
 import partner_future_pilot as west
 import partner_hd_timing_pilot as hd
+import swisseph as swe
 
 REPO = Path(__file__).resolve().parents[1]
 EPHE = REPO / "data" / "ephemeris"
@@ -27,7 +27,7 @@ OUT = REPO / "reference" / "research" / "partner_multidomain_1000_results_v2.jso
 SEED = 202608252052
 N = 1000
 TROPICAL_YEAR = 365.2422
-MONTHS = [datetime(y, m, 15, 12, 0, tzinfo=timezone.utc) for y in range(2026, 2041) for m in range(1, 13)]
+MONTHS = [datetime(y, m, 15, 12, 0, tzinfo=UTC) for y in range(2026, 2041) for m in range(1, 13)]
 ASPECTS = (0, 60, 90, 120, 180)
 
 DOMAIN_TARGETS = {
@@ -128,7 +128,9 @@ def max_weighted_aspect(
     return best
 
 
-def individual_states(birth: datetime, transits: list[dict[str, float]]) -> dict[str, list[list[float]]]:
+def individual_states(
+    birth: datetime, transits: list[dict[str, float]]
+) -> dict[str, list[list[float]]]:
     natal = natal_planets(birth)
     prog = progressed_positions(birth)
     domains: dict[str, list[list[float]]] = {d: [] for d in DOMAIN_TARGETS}
@@ -137,10 +139,18 @@ def individual_states(birth: datetime, transits: list[dict[str, float]]) -> dict
         for domain, targets_names in DOMAIN_TARGETS.items():
             targets = [natal[n] for n in targets_names]
             support = max_weighted_aspect(
-                transits[i]["Jupiter"], targets, TRANSIT_SIGMA["Jupiter"], SUPPORT_JUPITER, TRANSIT_FACTOR
+                transits[i]["Jupiter"],
+                targets,
+                TRANSIT_SIGMA["Jupiter"],
+                SUPPORT_JUPITER,
+                TRANSIT_FACTOR,
             )
             structure = max_weighted_aspect(
-                transits[i]["Saturn"], targets, TRANSIT_SIGMA["Saturn"], STRUCTURE_SATURN, TRANSIT_FACTOR
+                transits[i]["Saturn"],
+                targets,
+                TRANSIT_SIGMA["Saturn"],
+                STRUCTURE_SATURN,
+                TRANSIT_FACTOR,
             )
             change = 0.0
             stress = 0.0
@@ -148,14 +158,22 @@ def individual_states(birth: datetime, transits: list[dict[str, float]]) -> dict
                 change = max(
                     change,
                     max_weighted_aspect(
-                        transits[i][moving], targets, TRANSIT_SIGMA[moving], CHANGE_OUTER[moving], TRANSIT_FACTOR
+                        transits[i][moving],
+                        targets,
+                        TRANSIT_SIGMA[moving],
+                        CHANGE_OUTER[moving],
+                        TRANSIT_FACTOR,
                     ),
                 )
             for moving in ("Saturn", "Uranus", "Neptune", "Pluto"):
                 stress = max(
                     stress,
                     max_weighted_aspect(
-                        transits[i][moving], targets, TRANSIT_SIGMA[moving], STRESS_OUTER[moving], TRANSIT_FACTOR
+                        transits[i][moving],
+                        targets,
+                        TRANSIT_SIGMA[moving],
+                        STRESS_OUTER[moving],
+                        TRANSIT_FACTOR,
                     ),
                 )
 
@@ -187,7 +205,7 @@ def flatten(rows: list[list[float]]) -> list[float]:
 
 
 def cosine(a: list[float], b: list[float]) -> float:
-    dot = sum(x * y for x, y in zip(a, b))
+    dot = sum(x * y for x, y in zip(a, b, strict=False))
     na = math.sqrt(sum(x * x for x in a))
     nb = math.sqrt(sum(y * y for y in b))
     if na == 0 or nb == 0:
@@ -195,7 +213,9 @@ def cosine(a: list[float], b: list[float]) -> float:
     return dot / (na * nb)
 
 
-def domain_similarity(a: dict[str, list[list[float]]], b: dict[str, list[list[float]]]) -> dict[str, float]:
+def domain_similarity(
+    a: dict[str, list[list[float]]], b: dict[str, list[list[float]]]
+) -> dict[str, float]:
     return {domain: cosine(flatten(a[domain]), flatten(b[domain])) for domain in DOMAIN_TARGETS}
 
 
@@ -204,13 +224,13 @@ def categorical_flags(states: dict[str, list[list[float]]]) -> dict[str, list[bo
     econ = []
     home = []
     work = []
-    for support, structure, change, stress in states["relationship"]:
+    for support, structure, _change, stress in states["relationship"]:
         rel.append(support >= 0.40 and structure >= 0.30 and stress < 0.60)
-    for support, structure, change, stress in states["economy"]:
+    for support, _structure, change, stress in states["economy"]:
         econ.append(change >= 0.50 and support >= 0.25 and stress < 0.75)
-    for support, structure, change, stress in states["home_community"]:
+    for support, structure, _change, stress in states["home_community"]:
         home.append(support >= 0.40 and structure >= 0.25 and stress < 0.60)
-    for support, structure, change, stress in states["work_purpose"]:
+    for _support, _structure, change, _stress in states["work_purpose"]:
         work.append(change >= 0.50)
     return {
         "relationship_stable_candidate": rel,
@@ -220,7 +240,9 @@ def categorical_flags(states: dict[str, list[list[float]]]) -> dict[str, list[bo
     }
 
 
-def categorical_overlap(a: dict[str, list[list[float]]], b: dict[str, list[list[float]]]) -> dict[str, dict[str, float]]:
+def categorical_overlap(
+    a: dict[str, list[list[float]]], b: dict[str, list[list[float]]]
+) -> dict[str, dict[str, float]]:
     fa = categorical_flags(a)
     fb = categorical_flags(b)
     out = {}
@@ -228,8 +250,8 @@ def categorical_overlap(a: dict[str, list[list[float]]], b: dict[str, list[list[
     for k in fa:
         aa = sum(fa[k]) / den
         bb = sum(fb[k]) / den
-        both = sum(x and y for x, y in zip(fa[k], fb[k])) / den
-        union = sum(x or y for x, y in zip(fa[k], fb[k])) / den
+        both = sum(x and y for x, y in zip(fa[k], fb[k], strict=False)) / den
+        union = sum(x or y for x, y in zip(fa[k], fb[k], strict=False)) / den
         jacc = 0.0 if union == 0 else both / union
         out[k] = {
             "person_a_fraction": aa,
@@ -244,7 +266,9 @@ def precompute_hd_transits() -> list[set[int]]:
     return [hd.transit_gate_state(d)[1] for d in MONTHS]
 
 
-def hd_pair_score(a_gates: set[int], b_gates: set[int], transits_hd: list[set[int]]) -> tuple[float, dict[str, float]]:
+def hd_pair_score(
+    a_gates: set[int], b_gates: set[int], transits_hd: list[set[int]]
+) -> tuple[float, dict[str, float]]:
     single = eight = bridge = 0
     static = a_gates | b_gates
     for tg in transits_hd:
@@ -351,10 +375,10 @@ def main() -> None:
 
     # Fail-closed probes across natal and forecast span.
     for d in (
-        datetime(1980, 1, 1, tzinfo=timezone.utc),
-        datetime(1989, 6, 19, 12, tzinfo=timezone.utc),
-        datetime(2033, 1, 1, tzinfo=timezone.utc),
-        datetime(2040, 12, 15, tzinfo=timezone.utc),
+        datetime(1980, 1, 1, tzinfo=UTC),
+        datetime(1989, 6, 19, 12, tzinfo=UTC),
+        datetime(2033, 1, 1, tzinfo=UTC),
+        datetime(2040, 12, 15, tzinfo=UTC),
     ):
         for body in west.NATAL_PLANETS.values():
             west.calc(west.jd(d), body)
@@ -363,22 +387,22 @@ def main() -> None:
     transits_hd = precompute_hd_transits()
     rng = random.Random(SEED)
 
-    joel = datetime(1985, 1, 29, 10, 25, tzinfo=timezone.utc)
+    joel = datetime(1985, 1, 29, 10, 25, tzinfo=UTC)
     bee = {
-        "B_early": datetime(1989, 6, 19, 5, 0, tzinfo=timezone.utc),
-        "B_mid": datetime(1989, 6, 19, 12, 0, tzinfo=timezone.utc),
-        "B_late": datetime(1989, 6, 19, 17, 0, tzinfo=timezone.utc),
+        "B_early": datetime(1989, 6, 19, 5, 0, tzinfo=UTC),
+        "B_mid": datetime(1989, 6, 19, 12, 0, tzinfo=UTC),
+        "B_late": datetime(1989, 6, 19, 17, 0, tzinfo=UTC),
     }
 
     women = random_births(
-        datetime(1984, 6, 19, tzinfo=timezone.utc),
-        datetime(1994, 6, 19, tzinfo=timezone.utc),
+        datetime(1984, 6, 19, tzinfo=UTC),
+        datetime(1994, 6, 19, tzinfo=UTC),
         N,
         rng,
     )
     men = random_births(
-        datetime(1980, 1, 29, tzinfo=timezone.utc),
-        datetime(1990, 1, 29, tzinfo=timezone.utc),
+        datetime(1980, 1, 29, tzinfo=UTC),
+        datetime(1990, 1, 29, tzinfo=UTC),
         N,
         rng,
     )
@@ -415,20 +439,39 @@ def main() -> None:
         "bee_to_random_partners": b_to_m,
         "limitations": [
             "No geography score: Bee's exact time and exact Cameroon birthplace remain unresolved.",
-            "No houses, angles, progressed angles, relocation charts, or astrocartography in V2 null ranking.",
-            "Domain state vectors are frozen symbolic rubric features, not calibrated outcome probabilities.",
-            "Economic-independence and community labels are exploratory diagnostics only and do not affect ranking.",
+            (
+                "No houses, angles, progressed angles, relocation charts,"
+                " or astrocartography in V2 null ranking."
+            ),
+            (
+                "Domain state vectors are frozen symbolic rubric features"
+                ", not calibrated outcome probabilities."
+            ),
+            (
+                "Economic-independence and community labels are explorato"
+                "ry diagnostics only and do not affect ranking."
+            ),
             "Bee remains three representative time states; no state is selected from fit.",
-            "2030-2032 was known before this model; V2 is development evidence, not blind confirmation.",
+            (
+                "2030-2032 was known before this model; V2 is development"
+                " evidence, not blind confirmation."
+            ),
         ],
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(data, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print("wrote", OUT, "sha256", sha256(OUT), flush=True)
-    print(json.dumps({
-        "joel_to_partners": j_to_w["real_states"],
-        "bee_to_partners": {k: v["Joel"] for k, v in b_to_m.items()},
-    }, indent=2, sort_keys=True), flush=True)
+    print(
+        json.dumps(
+            {
+                "joel_to_partners": j_to_w["real_states"],
+                "bee_to_partners": {k: v["Joel"] for k, v in b_to_m.items()},
+            },
+            indent=2,
+            sort_keys=True,
+        ),
+        flush=True,
+    )
 
 
 if __name__ == "__main__":

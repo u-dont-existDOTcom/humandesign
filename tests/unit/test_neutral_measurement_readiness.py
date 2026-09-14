@@ -15,7 +15,6 @@ from hdmatch.evaluation.neutral_measurement import (
 )
 from hdmatch.experiments.canonical import sha256_json
 
-
 NOW = datetime(2026, 9, 3, 19, 10, tzinfo=UTC)
 
 
@@ -159,9 +158,9 @@ def test_validation_run_blocks_observable_without_completed_reliability_or_calib
     )
     assert artifact.scoreable_for_model_tournament is False
     assert (
-        "coded observables lack completed reliability/calibration status: STRUCTURAL_READINESS_ALPHA"
-        in artifact.scoreability_blockers
-    )
+        "coded observables lack completed reliability/calibration"
+        " status: STRUCTURAL_READINESS_ALPHA"
+    ) in artifact.scoreability_blockers
 
 
 def test_validation_run_is_scoreable_after_human_measurement_readiness() -> None:
