@@ -10,7 +10,7 @@ from collections.abc import Awaitable, Callable
 from fastapi import FastAPI, Request, Response
 from fastapi.responses import PlainTextResponse
 
-from .life_patterns_v2_owner_pattern_first import create_life_patterns_v2_owner_pattern_first_app
+from .life_patterns_v2_owner_refinement import create_life_patterns_v2_owner_refinement_app
 
 
 def _unauthorized() -> PlainTextResponse:
@@ -42,7 +42,7 @@ def create_secured_owner_app() -> FastAPI:
     if not expected_password:
         raise RuntimeError("HDMATCH_OWNER_BASIC_PASSWORD is required for the deployed owner app")
 
-    app = create_life_patterns_v2_owner_pattern_first_app()
+    app = create_life_patterns_v2_owner_refinement_app()
 
     @app.middleware("http")
     async def require_owner_auth(
