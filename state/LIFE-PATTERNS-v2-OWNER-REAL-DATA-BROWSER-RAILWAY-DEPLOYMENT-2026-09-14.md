@@ -14,8 +14,8 @@ This authorization applies to this bounded owner-only Life Patterns browser prot
 - Branch: `codex/discover-life-patterns-mvp`
 - Real-data browser implementation head: `002d6264f05a7e380d4cac7e188f8c9455fbf971`
 - Deployment-auth wrapper head: `7ef988e313c8ae8d25d2a7c1f40d78fd115e5c5b`
-- Final deployed source head: `bca426b8ab873d02fe5038d271d13b1b814fc813`
-- Hosted repository CI on final deployed source head: **success**
+- Auth-wrapper typing fix / verified deployment source head: `bca426b8ab873d02fe5038d271d13b1b814fc813`
+- Hosted repository CI on `bca426b8ab873d02fe5038d271d13b1b814fc813`: **success** (`702 passed, 7 expected skips`; Ruff pass; mypy pass)
 
 ## Railway deployment
 
@@ -23,7 +23,7 @@ This authorization applies to this bounded owner-only Life Patterns browser prot
 - Environment: `production`
 - Service: `life-patterns-owner`
 - Service ID: `df2bf91c-7515-4c2e-860f-43c61286a7ab`
-- Deployment ID: `b932cfb5-cf50-4778-b974-c5c783a83336`
+- First successful authenticated-wrapper deployment ID: `b932cfb5-cf50-4778-b974-c5c783a83336`
 - Deployment status: **SUCCESS**
 - Public service domain: `life-patterns-owner-production.up.railway.app`
 - Build path: repository `Dockerfile`
@@ -31,6 +31,8 @@ This authorization applies to this bounded owner-only Life Patterns browser prot
 - Healthcheck: `/healthz`
 
 Deployment logs show application startup completed, Uvicorn bound to Railway's assigned port, and Railway healthcheck returned HTTP `200`.
+
+Subsequent state-only commits on the bound source branch may cause routine Railway redeploys; they do not change the deployed application implementation or authorization boundary.
 
 ## Owner-only access control
 
