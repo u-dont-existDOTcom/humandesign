@@ -34,17 +34,13 @@ Provider repair receipt:
 
 `state/LIFE-PATTERNS-v2-PROVIDER-520-REPAIR-2026-09-14.md`
 
-Runtime repair head:
+Runtime repair head: `8d74d4b89bff1e78922af524dcb5b95f271d9b97`.
 
-`8d74d4b89bff1e78922af524dcb5b95f271d9b97`
-
-Regression-test head:
-
-`b52be2a67e458c5d1334d058d7b73e938c04d1ef`
+Regression-test head: `b52be2a67e458c5d1334d058d7b73e938c04d1ef`.
 
 The owner-only service uses a direct provider Responses path with the existing Railway credential reference. It performs up to three bounded attempts for transient server/network failures and preserves transactional rollback.
 
-GitHub Actions run `34857710301` on regression head `b52be2a67e458c5d1334d058d7b73e938c04d1ef`: **SUCCESS**.
+GitHub Actions run `34857710301`: **SUCCESS**.
 
 ## Direct owner outcome evidence after repair
 
@@ -69,24 +65,11 @@ The post-pattern dead end was repaired without changing accepted v2 semantics.
 
 Continuation implementation head: `da3c5f58101d8cc10421e480d44b5162bd12ec78`.
 
-Owner-facing behavior provides:
-
-- `Explore another pattern`;
-- `Finish for now`;
-- a fresh backend conversation session for each new pattern thread;
-- browser-page-local accumulation of completed pattern results and visible interview text;
-- a compact finish-for-now summary with no completeness claim;
-- owner-triggered client-side copy/export.
+Owner-facing behavior provides `Explore another pattern`, `Finish for now`, a fresh backend session for each new pattern thread, browser-page-local accumulation of completed results and visible interview text, a compact non-completeness summary, and owner-triggered client-side copy/export.
 
 The server still keeps narrative/session state in process memory. The continuation adds no Git persistence, Railway volume persistence, private transcript logging, or automatic supervisor transcript ingestion.
 
-Verification:
-
-- focused task command covered `16` tests across the owner conversation and pattern-first suites;
-- hosted GitHub Actions run `34864954177`: **SUCCESS**;
-- the `verify` job passed unit/integration tests, Ruff, and strict mypy.
-
-Existing owner-only Railway service reused; no new service was created and access was not broadened. Deployment `4ed43b5a-7249-4cc3-ad2e-1e1401ea0788` from source head `da3c5f58101d8cc10421e480d44b5162bd12ec78` succeeded and `/healthz` returned HTTP `200`.
+GitHub Actions run `34864954177`: **SUCCESS**. Existing owner-only Railway deployment `4ed43b5a-7249-4cc3-ad2e-1e1401ea0788` succeeded and `/healthz` returned HTTP `200`.
 
 ## Repeated-thread unresolved-continuation finding and repair
 
@@ -98,50 +81,64 @@ Repair receipt:
 
 `state/LIFE-PATTERNS-v2-OWNER-UNRESOLVED-CONTINUATION-REPAIR-2026-09-14.md`
 
-The repaired owner surface now distinguishes:
+The repaired owner surface distinguishes `Keep trying to pin it down` from `Leave it unresolved for now`. Continuation preserves the same backend pattern session. Post-proposal answers may add episode facts in the same thread, but remain post-proposal evidence; continuation does not silently write an unresolved adjudication and does not automatically manufacture a replacement person-level proposal.
 
-- `Keep trying to pin it down` — continue the same backend pattern session with another discriminating question;
-- `Leave it unresolved for now` — explicitly end the thread unresolved;
-- existing accept / revise / reject participant-authoritative judgments.
+Exact verified code/test head `21d6a4addfd5549ef2d81ce694e8e127bd3eecce` passed GitHub Actions run `34872101510`: **SUCCESS**. Existing owner-only Railway deployment `a1aa5bdf-82f9-4e71-b7c9-9268eecea894` succeeded and `/healthz` returned HTTP `200`.
 
-Post-proposal answers may add episode facts in the same thread, but they remain post-proposal evidence. The continuation path does not silently write an unresolved adjudication and does not automatically manufacture a replacement person-level proposal from post-proposal material. If the final wording changes, the existing explicit participant revision/adjudication route remains authoritative.
+## Rejected-synthesis recovery finding and repair
 
-The participant-facing consequence copy is deliberately target-neutral: an unresolved thread contributes no settled person-level pattern to later analysis. Predictive-power or astrological-fit language is not exposed before behavioral lock because target-theory blindness remains binding and predictive performance has not been established.
+A subsequent direct owner test exposed a separate liveness failure. The interviewer surfaced a tentative synthesis that the owner judged wrong; selecting `No` then terminalized the whole thread as rejected even though only that synthesis had failed and the underlying pattern inquiry was still live.
 
-Exact final verified code/test head:
+Causal mechanism: the unresolved-continuation repair added a separate continuation action, but the existing `No` button remained wired directly to terminal `decision('reject')`. The product therefore conflated **proposal-level disagreement** with **inquiry-level termination**.
 
-`21d6a4addfd5549ef2d81ce694e8e127bd3eecce`
+Repair receipt:
 
-Hosted GitHub Actions run `34872101510`: **SUCCESS** — unit/integration tests, Ruff, and strict mypy passed.
+`state/LIFE-PATTERNS-v2-OWNER-REJECTED-SYNTHESIS-CONTINUATION-REPAIR-2026-09-14.md`
 
-The first hosted run of the new regression had failed during test collection because Starlette `TestClient` required an uninstalled `httpx2` dependency. No product assertion ran. The unnecessary test dependency was removed rather than changing project dependencies; the registered FastAPI endpoint/session boundary is now exercised directly.
+The deployed owner surface now distinguishes:
+
+- `No — keep investigating` — the current synthesis is wrong, but the same backend session/proposal inquiry stays live;
+- the interviewer asks what the synthesis gets wrong or misses and continues collecting discriminating material in that thread;
+- `Reject and stop this thread` — explicit terminal rejection;
+- `Keep trying to pin it down` — uncertainty without outright disagreement;
+- accept / revise / leave unresolved — existing participant-authoritative adjudication routes.
+
+The nonterminal disagreement path does not write a terminal `ParticipantAdjudicationV2` and does not auto-create a replacement person-level proposal. New material after the first proposal remains post-proposal evidence and cannot silently become preproposal support. Target-theory blindness and privacy boundaries are unchanged.
+
+Application repair head: `3536bf88f422551abfb9ff41f63e5690ecdb77e4`.
+
+GitHub Actions run `34876597710`: **SUCCESS** — unit/integration tests, Ruff, and strict mypy all passed.
+
+The committed source was inspected at the consumer seam: the default `No — keep investigating` action calls `/patterns/disagree`; only `Reject and stop this thread` calls terminal `decision('reject')`.
+
+A dedicated new reject-path regression file could not be committed because the GitHub write interface blocked the attempted test-file writes. This remains explicit targeted verification debt; the full hosted suite is green on the exact application repair head.
 
 Current owner-only Railway deployment:
 
 - service: `life-patterns-owner`;
-- deployment ID: `a1aa5bdf-82f9-4e71-b7c9-9268eecea894`;
-- application source head: `0d2aac5d65076f3ccc03e330c6696807ad5a7661`;
+- deployment ID: `28e06edc-3266-435d-8830-8adceabfe281`;
+- application source head: `3536bf88f422551abfb9ff41f63e5690ecdb77e4`;
 - status: **SUCCESS**;
 - application startup complete;
-- Railway healthcheck and runtime `/healthz`: HTTP `200`;
-- deployed code declares `unresolved_thread_continuation=true` in the health response;
-- later test/state-only commits are outside the Railway application watch surface.
+- Railway `/healthz`: HTTP `200`;
+- deployed health contract includes `rejected_synthesis_continuation=true`.
 
-Privacy boundary is unchanged: no automatic transcript persistence or request-body logging was added.
+No new service was created, access was not broadened, and no automatic transcript persistence or request-body logging was added.
 
 ## Current outcome / next gate
 
-Outcome advancement: **PRELIMINARY POSITIVE WITH A REPEATED-THREAD LIVENESS DEFECT FOUND AND REPAIRED**.
+Outcome advancement: **PRELIMINARY POSITIVE WITH TWO REPEATED-THREAD RECOVERY DEFECTS FOUND AND REPAIRED**.
 
-Strategy efficacy: **VIABLE; OWNER RETEST REQUIRED**.
+Strategy efficacy: **VIABLE; REJECTED-SYNTHESIS RECOVERY OWNER RETEST REQUIRED**.
 
 Next gate: **OWNER REAL-DATA BROWSER JUDGMENT REQUIRED**.
 
-1. On a pattern that remains uncertain after a first synthesis, choose `Keep trying to pin it down` and judge whether the interviewer actually continues the same thought with useful discriminating questions rather than forcing closure or starting over.
-2. Then explicitly accept/revise/reject/leave unresolved.
-3. Use `Finish for now` and judge whether the session-level summary is useful enough to justify durable persistence and development of a real Life Patterns Map.
+1. Refresh the deployed owner-only browser and use a thread where the first synthesis is actually wrong.
+2. Choose `No — keep investigating`, explain what the synthesis gets wrong or misses, and judge whether the interviewer stays with the same inquiry and uses the correction to ask a useful discriminating next question rather than terminating or restarting.
+3. When genuinely ready to end the inquiry, use `Reject and stop this thread`, accept, revise, or leave unresolved.
+4. Use `Finish for now` and judge whether the session-level summary is useful enough to justify durable persistence and development of a real Life Patterns Map.
 
-Owner-triggered copy/export remains available if the owner chooses to share browser-local output. Automatic transcript logging remains out of scope.
+Owner-triggered copy/export remains available. Automatic transcript logging remains out of scope.
 
 Authorized: bounded owner-only testing of the deployed probe and owner-initiated runtime model use.
 

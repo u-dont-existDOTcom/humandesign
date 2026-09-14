@@ -15,21 +15,23 @@ V2 independent semantic review: **PASS**.
 - Unresolved-thread continuation repair head: `21d6a4addfd5549ef2d81ce694e8e127bd3eecce`
 - Hosted unresolved-thread repair CI: `34872101510` — `success`
 - Railway unresolved-thread repair deployment: `a1aa5bdf-82f9-4e71-b7c9-9268eecea894` — `success`
+- Rejected-synthesis continuation repair head: `3536bf88f422551abfb9ff41f63e5690ecdb77e4`
+- Hosted rejected-synthesis repair CI: `34876597710` — `success`
+- Railway rejected-synthesis repair deployment: `28e06edc-3266-435d-8830-8adceabfe281` — `success`
 - Active task: `life-patterns-v2-owner-multi-pattern-continuation` — OWNER REAL-DATA BROWSER JUDGMENT REQUIRED
 
 ## Owner product judgment and strategy history
 
-The first deployed real-data browser produced direct negative strategy evidence. The owner judged the surfaced fact-review flow low-value because it mainly showed that the AI could understand/paraphrase what the owner said and ask the owner to certify the paraphrase.
+The first deployed real-data browser produced direct negative strategy evidence. The owner judged the surfaced fact-review flow low-value because it mainly showed that the AI could understand/paraphrase what the owner said and ask the owner to certify the paraphrase. That owner-facing strategy is **FAILED / REPLACED**; the accepted v2 evidence contract remains valid internally.
 
-That owner-facing strategy is **FAILED / REPLACED**. Correct semantics, green tests, and deployment remain supporting work but are not direct evidence of participant value.
+The replacement hidden-ledger conversation was then repaired back to a **pattern-first** interview with concrete episodes serving as evidence anchors. A full bounded real owner session later produced useful non-parroting information gain and was judged **GOOD / PASS / PRELIMINARY POSITIVE**.
 
-The replacement hidden-ledger conversation correctly removed routine annotation work. Owner testing then exposed a live structured-output validation failure and recalled an earlier product-design decision that had been partially lost: the participant-facing interview had already been corrected to **pattern-first**, with concrete episodes serving as evidence anchors rather than as the primary object of the experience.
+Repeated-thread testing has since exposed two state-machine/liveness defects rather than a demonstrated failure of the pattern-first strategy:
 
-Continuity finding: `state/LIFE-PATTERNS-INTERACTIVE-INTERVIEW-CONTINUITY-FINDING-2026-09-14.md`.
+1. uncertainty after a tentative synthesis was terminalized as `unresolved` instead of allowing same-thread continuation;
+2. an explicitly wrong tentative synthesis was terminalized by `No` as a final rejection instead of allowing the underlying pattern inquiry to continue.
 
-The repaired pattern-first probe later completed a full bounded real owner session successfully. The interviewer tested the initial generalization with contrast/counterexample material and produced a narrower conditional synthesis rather than simply parroting the owner. Direct owner judgment: **GOOD / PASS**.
-
-This is **PRELIMINARY POSITIVE** direct product evidence at the one-pattern level.
+Both recovery defects are now repaired on the owner-only surface and await direct owner retest.
 
 ## Current participant-facing method
 
@@ -37,82 +39,52 @@ Current architecture:
 
 `participant-reported pattern -> minimal concrete anchor(s) / contrasts / life-phase evidence -> hidden v2 evidence ledger -> discriminating follow-up / boundary check -> informative synthesis -> participant authority -> immutable freeze`
 
-The first participant pattern description is conversational context only. It does not create an `EpisodeV2`, episode fact, or source-provenance record. The interviewer then requests a representative real situation so evidence anchoring begins only when a real bounded situation is supplied.
+The first participant pattern description is conversational context only. It does not fabricate an episode/fact/provenance record. Concrete situations may clarify, challenge, distinguish, or falsify the reported pattern.
 
-Concrete situations may be used to clarify, challenge, distinguish, or falsify the reported pattern. The interviewer should ask one main question per turn and seek useful context boundaries, developmental change, exceptions, and contrasts rather than exhaustively mining detail.
+The current synthesis panel distinguishes:
 
-The historical v8 pattern-first insight is restored without restoring a closed fixed taxonomy. Historical domains may be optional coverage scaffolding only. The accepted v2 open-world evidence contract remains authoritative.
-
-Repair implementation receipt: `state/LIFE-PATTERNS-v2-PATTERN-FIRST-RUNTIME-REPAIR-IMPLEMENTATION-2026-09-14.md`.
-
-## Runtime repairs
-
-The provider boundary normalizes `hypothesis_proposition=null` and `evidence_fact_ids=[]` for `follow_up`, `request_contrast`, and `boundary_question` before strict `ConversationMove` validation. A real `surface_hypothesis` remains strict and still requires a proposition and evidence IDs.
-
-Model-driven participant turns are transactional. If extraction, planning, move validation, or post-processing fails, pre-turn conversation, hidden v2 record, episode/boundary flags, proposal-support state, and active-proposal state are restored.
-
-Successful participant corrections remain append-only with lineage/provenance. Genuine absence is not silently inferred; the accepted absence route remains authoritative. Historical automatic person-level `/map` authority remains superseded and unused.
-
-## Multi-pattern continuation frontier
-
-The post-pattern dead end is repaired without changing accepted v2 semantics.
-
-The owner-facing surface provides `Explore another pattern`, `Finish for now`, a fresh backend session for each new pattern thread, browser-page-local accumulation of completed results, a compact non-completeness summary, and owner-triggered copy/export.
-
-Private narrative remains in process memory on the backend and in the current browser page. No transcript persistence or automatic transcript logging was added.
-
-Hosted GitHub Actions run `34864954177` succeeded; its `verify` job passed unit/integration tests, Ruff, and strict mypy. The existing authenticated `life-patterns-owner` Railway service was reused. Deployment `4ed43b5a-7249-4cc3-ad2e-1e1401ea0788` from source head `da3c5f58101d8cc10421e480d44b5162bd12ec78` succeeded and health traffic returned HTTP `200`.
-
-## Repeated-thread unresolved-continuation finding and repair
-
-A second fresh real owner pattern thread supplied mixed but still positive strategy evidence. The conversation continued producing useful discriminating information after the first tentative synthesis, but the interface treated uncertainty as terminal instead of exposing an executable same-thread frontier.
-
-This is a **workflow-liveness / adjudication-frontier defect**, not a strategy failure.
-
-Repair receipt: `state/LIFE-PATTERNS-v2-OWNER-UNRESOLVED-CONTINUATION-REPAIR-2026-09-14.md`.
-
-The owner-facing synthesis panel now offers:
-
+- `Yes — keep that`;
+- `Close, but change it`;
+- `No — keep investigating`;
 - `Keep trying to pin it down`;
 - `Leave it unresolved for now`;
-- the existing accept / revise / reject judgments.
+- `Reject and stop this thread`.
 
-Continuation preserves the same backend pattern session. New information acquired after the first proposal remains post-proposal evidence and may not silently become immutable preproposal support. The repair does not automatically create a replacement person-level proposal from that material. Any changed final wording still passes through explicit participant revision/adjudication.
+`No — keep investigating` is a nonterminal disagreement with the current synthesis. It preserves the same backend session/proposal inquiry and asks what the synthesis gets wrong or misses. `Reject and stop this thread` is the explicit terminal rejection action.
 
-The unresolved consequence copy stays target-neutral: leaving the thread unresolved means it contributes no settled person-level pattern to later analysis. Astrological-fit or predictive-power language remains excluded from the pre-freeze interview because target-theory blindness is binding and predictive performance has not been established.
+Post-proposal participant material remains post-proposal evidence. It may guide continued questioning but may not silently become immutable preproposal support. Neither uncertainty continuation nor rejected-synthesis continuation automatically creates a replacement person-level proposal. Changed participant-authoritative wording still uses the explicit revision/adjudication route.
 
-Exact final verified code/test head `21d6a4addfd5549ef2d81ce694e8e127bd3eecce` passed GitHub Actions run `34872101510`: unit/integration tests, Ruff, and strict mypy all succeeded.
+Target-theory blindness remains binding: no astrology or predictive-power language appears before behavioral lock. Private narrative remains process-memory/browser-local; no automatic transcript persistence or request-body logging has been added.
 
-The first hosted regression attempt had failed during collection because Starlette `TestClient` required an uninstalled `httpx2` package; no product assertion ran. The unnecessary test dependency was removed instead of changing project dependencies, and the registered FastAPI app/session boundary is exercised directly.
+## Verification / deployment
 
-The existing authenticated owner-only service was reused. Deployment `a1aa5bdf-82f9-4e71-b7c9-9268eecea894` from application source head `0d2aac5d65076f3ccc03e330c6696807ad5a7661` is **SUCCESS**. Runtime logs show application startup complete and `/healthz` returned HTTP `200`. The deployed code's health contract declares `unresolved_thread_continuation=true`. Later test/state-only commits are outside the service watch surface.
+Rejected-synthesis recovery implementation head: `3536bf88f422551abfb9ff41f63e5690ecdb77e4`.
 
-No automatic transcript persistence or private request-body logging was added.
+GitHub Actions run `34876597710`: **SUCCESS** — unit/integration tests, Ruff, and strict mypy passed.
+
+The committed source was inspected at the consumer seam: `No — keep investigating` calls the nonterminal `/patterns/disagree` endpoint, while `Reject and stop this thread` alone invokes terminal `decision('reject')`.
+
+A dedicated new reject-path regression file could not be committed because the GitHub write interface blocked the attempted test-file writes. This remains explicit targeted verification debt rather than being treated as covered by the full-suite green result.
+
+Existing authenticated owner-only Railway service reused. Deployment `28e06edc-3266-435d-8830-8adceabfe281` from application source head `3536bf88f422551abfb9ff41f63e5690ecdb77e4` is **SUCCESS**. Runtime startup completed and `/healthz` returned HTTP `200`; the deployed health contract includes `rejected_synthesis_continuation=true`.
+
+No new service, broadened access, persistence layer, or target-model activity was introduced.
 
 ## Current gate
 
 One-pattern repaired strategy evidence: **GOOD / PASS / PRELIMINARY POSITIVE**.
 
-Repeated-thread evidence: **USEFUL INFORMATION GAIN CONTINUED, BUT A LIVENESS DEFECT TERMINALIZED UNCERTAINTY**.
-
-Unresolved-thread continuation repair: **IMPLEMENTED / VERIFIED / DEPLOYED; OWNER RETEST REQUIRED**.
+Repeated-thread recovery: **TWO LIVENESS DEFECTS FOUND AND REPAIRED; OWNER RETEST REQUIRED**.
 
 Next gate: **OWNER REAL-DATA BROWSER JUDGMENT REQUIRED**.
 
-1. Use `Keep trying to pin it down` on a pattern that remains uncertain after the first synthesis. Judge whether the interviewer continues the same thought with useful discriminating questions rather than forcing closure or starting over.
-2. Explicitly accept/revise/reject/leave unresolved when ready.
-3. Use `Finish for now` and judge whether the session-level summary is useful enough to justify durable persistence and development of a real Life Patterns Map.
+1. Test a thread where the first synthesis is actually wrong and choose `No — keep investigating`.
+2. Explain what is wrong or missing and judge whether the interviewer productively stays with the same inquiry.
+3. Use a terminal judgment only when genuinely ready to end/settle the thread.
+4. Use `Finish for now` and judge whether the summary is useful enough to justify durable persistence / a real Life Patterns Map.
 
 Optional copy/export remains owner-triggered. Automatic transcript logging remains out of scope.
 
-If same-thread continuation degrades into paraphrase/confirmation, treat that as strategy evidence rather than cosmetically polishing it. If continuation remains useful and the summary earns its keep, the next product step may evaluate durable persistence / a real Life Patterns Map under the same scientific invariants.
-
-Authorized: bounded owner-only testing and owner-initiated runtime model use.
-
 Still closed: external participant collection, automated participant coding, target-model activity, broader public participant deployment, recruitment/contact, merge/release, production auth/recovery/voice expansion, and unapproved spending.
-
-Focused completion command:
-
-`python -m pytest tests/unit/test_life_patterns_v2_owner_conversation.py tests/unit/test_life_patterns_v2_owner_pattern_first.py tests/unit/test_life_patterns_v2_owner_refinement.py -q`
 
 **There was never a completion policy.**
