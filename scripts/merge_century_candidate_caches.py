@@ -27,13 +27,16 @@ def parse_args() -> argparse.Namespace:
 
 
 def _state_id(start: datetime, end: datetime, stable_hash: str) -> str:
-    return "STATE-" + sha256_json(
-        {
-            "start_utc": start.isoformat(),
-            "end_utc": end.isoformat(),
-            "structural_feature_sha256": stable_hash,
-        }
-    )[:24].upper()
+    return (
+        "STATE-"
+        + sha256_json(
+            {
+                "start_utc": start.isoformat(),
+                "end_utc": end.isoformat(),
+                "structural_feature_sha256": stable_hash,
+            }
+        )[:24].upper()
+    )
 
 
 def _merged_state(

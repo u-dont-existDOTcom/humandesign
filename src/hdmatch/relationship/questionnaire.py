@@ -57,9 +57,7 @@ def load_relationship_questionnaire(path: Path) -> RelationshipQuestionnaireSpec
     return spec
 
 
-def question_by_id(
-    spec: RelationshipQuestionnaireSpec, question_id: str
-) -> RelationshipQuestion:
+def question_by_id(spec: RelationshipQuestionnaireSpec, question_id: str) -> RelationshipQuestion:
     for question in spec.questions:
         if question.id == question_id:
             return question
@@ -178,9 +176,7 @@ def _validate_questionnaire(spec: RelationshipQuestionnaireSpec) -> None:
         raise ValueError("core_question_ids must contain every and only stage=core question")
 
 
-def _validated_id_set(
-    spec: RelationshipQuestionnaireSpec, question_ids: Sequence[str]
-) -> set[str]:
+def _validated_id_set(spec: RelationshipQuestionnaireSpec, question_ids: Sequence[str]) -> set[str]:
     known = {question.id for question in spec.questions}
     supplied = set(question_ids)
     unknown = supplied - known

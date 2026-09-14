@@ -82,11 +82,7 @@ def deterministic_calibration_seed(
     supplement_sha256: str,
 ) -> str:
     material = (
-        CALIBRATION_SEED_POLICY
-        + "\0"
-        + source_record_sha256
-        + "\0"
-        + supplement_sha256
+        CALIBRATION_SEED_POLICY + "\0" + source_record_sha256 + "\0" + supplement_sha256
     ).encode()
     return hashlib.sha256(material).hexdigest()
 
@@ -170,7 +166,9 @@ def prepare_v8_private_development_package(
         if series_calibration_units > len(series_tasks) * len(stack.observable_ids):
             raise ValueError("series calibration sample exceeds private series task universe")
     elif series_calibration_units:
-        raise ValueError("series calibration units requested but no exact-source series are available")
+        raise ValueError(
+            "series calibration units requested but no exact-source series are available"
+        )
 
     seed = deterministic_calibration_seed(
         source_record_sha256=corpus.payload.source_record_sha256,

@@ -69,9 +69,7 @@ def build_structured_procedure_from_resolved_view(
         ObservableProcedureExtensionV2(
             observable_id=observable.observable_id,
             non_action_values=tuple(
-                row.subcode_id
-                for row in observable.subcodes
-                if row.classification == "non_action"
+                row.subcode_id for row in observable.subcodes if row.classification == "non_action"
             ),
             other_specified_value=source.payload.universal_other_specified_id,
         )

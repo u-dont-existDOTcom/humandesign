@@ -6,9 +6,14 @@ This is a data-recovery audit for the future semi-Markov pair model. It does not
 fit astrology. Public source pages are queried live; only compact derived data
 are committed.
 """
+
 from __future__ import annotations
 
-import json, re, urllib.parse, urllib.request, xml.etree.ElementTree as ET
+import json
+import re
+import urllib.parse
+import urllib.request
+import xml.etree.ElementTree as ET
 from collections import Counter
 from pathlib import Path
 
@@ -62,15 +67,25 @@ def api_json(params: dict) -> dict | None:
 
 
 def fetch_wikitext(title: str) -> str | None:
-    data = api_json({
-        "action":"query","prop":"revisions","rvprop":"content","rvslots":"main",
-        "titles":title,"formatversion":2,"format":"json"
-    })
-    if not data: return None
+    data = api_json(
+        {
+            "action": "query",
+            "prop": "revisions",
+            "rvprop": "content",
+            "rvslots": "main",
+            "titles": title,
+            "formatversion": 2,
+            "format": "json",
+        }
+    )
+    if not data:
+        return None
     pages = data.get("query", {}).get("pages", [])
-    if not pages: return None
+    if not pages:
+        return None
     revs = pages[0].get("revisions", [])
-    if not revs: return None
+    if not revs:
+        return None
     rev = revs[0]
     slots = rev.get("slots", {})
     return (slots.get("main", {}) or {}).get("content") or rev.get("content") or rev.get("*")
@@ -84,7 +99,9 @@ def search_titles(name: str) -> list[str]:
             variants.append(f"{b} {a}")
     seen = []
     for q in variants:
-        data = api_json({"action":"query","list":"search","srsearch":q,"srlimit":10,"format":"json"})
+        data = api_json(
+            {"action": "query", "list": "search", "srsearch": q, "srlimit": 10, "format": "json"}
+        )
         if not data:
             continue
         for x in data.get("query", {}).get("search", []):
@@ -101,9 +118,23 @@ def field(text: str, name: str) -> str | None:
 
 def parse_dma(text: str) -> dict:
     names = [
-        "DatamainID","sbdate","sbtime","t_unknown","sroddenrating","swikiname",
-        "Place","BirthCountry","slati","slong","TmZnAbbr","stmerid","ctimetype",
-        "stimetype","ccalendar","ctzauto","jd_ut"
+        "DatamainID",
+        "sbdate",
+        "sbtime",
+        "t_unknown",
+        "sroddenrating",
+        "swikiname",
+        "Place",
+        "BirthCountry",
+        "slati",
+        "slong",
+        "TmZnAbbr",
+        "stmerid",
+        "ctimetype",
+        "stimetype",
+        "ccalendar",
+        "ctzauto",
+        "jd_ut",
     ]
     return {n: field(text, n) for n in names}
 
@@ -126,13 +157,16 @@ def main():
     for e in root.findall("adb_entry"):
         aid = int(e.attrib["adb_id"])
         pub = e.find("public_data")
-        if pub is None: continue
+        if pub is None:
+            continue
         rr = (pub.findtext("roddenrating") or "").strip()
         bdata = pub.find("bdata")
         sbtime = bdata.find("sbtime") if bdata is not None else None
-        timed = bool(sbtime is not None and (sbtime.text or "").strip() and sbtime.attrib.get("jd_ut"))
+        timed = bool(
+            sbtime is not None and (sbtime.text or "").strip() and sbtime.attrib.get("jd_ut")
+        )
         research = e.find("research_data")
-        entries[aid] = {"rr":rr,"timed":timed,"research":research}
+        entries[aid] = {"rr": rr, "timed": timed, "research": research}
     internal_ids = set(entries)
 
     targets = {}
@@ -145,77 +179,139 @@ def main():
             continue
         for rel in rel_parent.findall("relationship"):
             try:
-                rid = int(rel.attrib.get("rel_id", "0")); other = int(rel.attrib.get("rel_adb_id", "0"))
+                rid = int(rel.attrib.get("rel_id", "0"))
+                other = int(rel.attrib.get("rel_adb_id", "0"))
             except ValueError:
                 continue
             if rid not in ROMANTIC_REL_IDS or not other or other in internal_ids:
                 continue
-            raw = (rel.text or "").strip(); pname = partner_display_name(raw); toks = name_tokens(pname)
-            if not toks: continue
+            raw = (rel.text or "").strip()
+            pname = partner_display_name(raw)
+            toks = name_tokens(pname)
+            if not toks:
+                continue
             matched_events = []
             for ev in ev_parent.findall("event"):
-                try: eid = int(ev.attrib.get("evn_id", "0"))
-                except ValueError: continue
+                try:
+                    eid = int(ev.attrib.get("evn_id", "0"))
+                except ValueError:
+                    continue
                 if eid in REL_EVENT_IDS and event_matches(ev, toks):
                     matched_events.append(eid)
             if not matched_events:
                 continue
-            t = targets.setdefault(other, {"adb_id":other,"partner_name":pname,"raw_rel_text":raw,"focal_ids":set(),"event_ids":set()})
-            t["focal_ids"].add(aid); t["event_ids"].update(matched_events)
+            t = targets.setdefault(
+                other,
+                {
+                    "adb_id": other,
+                    "partner_name": pname,
+                    "raw_rel_text": raw,
+                    "focal_ids": set(),
+                    "event_ids": set(),
+                },
+            )
+            t["focal_ids"].add(aid)
+            t["event_ids"].update(matched_events)
 
-    rows=[]; stats=Counter()
+    rows = []
+    stats = Counter()
     for i, other in enumerate(sorted(targets), 1):
-        rec=targets[other]; best=None; first_any=None; method=None
+        rec = targets[other]
+        best = None
+        first_any = None
+        method = None
         # Fast path: ADB relationship text often already uses the exact wiki title.
         best, first_any = resolve_exact_id(rec["partner_name"], other)
         if best is not None:
-            method="direct_title"
+            method = "direct_title"
         else:
             for title in search_titles(rec["partner_name"]):
                 matched, any_rec = resolve_exact_id(title, other)
-                if first_any is None and any_rec is not None: first_any=any_rec
+                if first_any is None and any_rec is not None:
+                    first_any = any_rec
                 if matched is not None:
-                    best=matched; method="search"; break
+                    best = matched
+                    method = "search"
+                    break
         if best is None:
-            status="unresolved"
+            status = "unresolved"
         else:
-            stats["id_matched"] += 1; stats[f"method_{method}"] += 1
-            unknown = bool(best.get("t_unknown")) and str(best.get("t_unknown")).strip() not in {"", "0", "None"}
+            stats["id_matched"] += 1
+            stats[f"method_{method}"] += 1
+            unknown = bool(best.get("t_unknown")) and str(best.get("t_unknown")).strip() not in {
+                "",
+                "0",
+                "None",
+            }
             timed = bool(best.get("sbtime")) and not unknown
             if timed:
-                status="exact_time"; stats["exact_time"] += 1
-                if best.get("sroddenrating") in HIGH_RR: stats["high_rr_exact_time"] += 1
-                if best.get("jd_ut"): stats["exact_with_jd_ut"] += 1
+                status = "exact_time"
+                stats["exact_time"] += 1
+                if best.get("sroddenrating") in HIGH_RR:
+                    stats["high_rr_exact_time"] += 1
+                if best.get("jd_ut"):
+                    stats["exact_with_jd_ut"] += 1
             else:
-                status="time_unknown"; stats["time_unknown"] += 1
-        rows.append({
-            "adb_id":other,"partner_name":rec["partner_name"],"status":status,"resolution_method":method,
-            "focal_ids":sorted(rec["focal_ids"]),"event_ids":sorted(rec["event_ids"]),
-            "matched":best,"first_search_hit_if_unmatched":first_any if best is None else None,
-        })
-        print(f"{i}/{len(targets)} {other} {rec['partner_name']} -> {status} ({method})", flush=True)
+                status = "time_unknown"
+                stats["time_unknown"] += 1
+        rows.append(
+            {
+                "adb_id": other,
+                "partner_name": rec["partner_name"],
+                "status": status,
+                "resolution_method": method,
+                "focal_ids": sorted(rec["focal_ids"]),
+                "event_ids": sorted(rec["event_ids"]),
+                "matched": best,
+                "first_search_hit_if_unmatched": first_any if best is None else None,
+            }
+        )
+        print(
+            f"{i}/{len(targets)} {other} {rec['partner_name']} -> {status} ({method})", flush=True
+        )
 
-    n=len(targets); exact=stats["exact_time"]; hi=stats["high_rr_exact_time"]
-    summary={
-        "source":CSAMPLE,"api":API,
-        "eligible_external_eventlinked_targets":n,
-        "status_counts":dict(stats),
-        "exact_time_recovery_fraction": exact/n if n else 0,
-        "high_rr_exact_time_recovery_fraction": hi/n if n else 0,
-        "existing_internal_high_rr_timed_eventlinked_pairs":19,
-        "projected_total_exact_pair_records_after_recovery":19+exact,
-        "projected_total_high_rr_exact_pair_records_after_recovery":19+hi,
-        "records":rows,
-        "notes":[
-            "Eligible targets require A/AA timed focal C-sample record plus the same strict partner-token event linkage used in the C-sample audit.",
+    n = len(targets)
+    exact = stats["exact_time"]
+    hi = stats["high_rr_exact_time"]
+    summary = {
+        "source": CSAMPLE,
+        "api": API,
+        "eligible_external_eventlinked_targets": n,
+        "status_counts": dict(stats),
+        "exact_time_recovery_fraction": exact / n if n else 0,
+        "high_rr_exact_time_recovery_fraction": hi / n if n else 0,
+        "existing_internal_high_rr_timed_eventlinked_pairs": 19,
+        "projected_total_exact_pair_records_after_recovery": 19 + exact,
+        "projected_total_high_rr_exact_pair_records_after_recovery": 19 + hi,
+        "records": rows,
+        "notes": [
+            (
+                "Eligible targets require A/AA timed focal C-sample recor"
+                "d plus the same strict partner-token event linkage used "
+                "in the C-sample audit."
+            ),
             "Exact public record identity is accepted only when wiki DatamainID equals rel_adb_id.",
-            "Direct exact-title lookup is attempted before full-text search; this changes only recovery efficiency, not inclusion.",
-            "Presence of sbtime with t_unknown absent is treated as exact-time availability; Rodden quality is reported separately.",
-            "A full semi-Markov build still needs reliable UTC conversion/JD for recovered partners; this audit records jd_ut if exposed by wiki source but does not invent it."
-        ]
+            (
+                "Direct exact-title lookup is attempted before full-text "
+                "search; this changes only recovery efficiency, not inclu"
+                "sion."
+            ),
+            (
+                "Presence of sbtime with t_unknown absent is treated as e"
+                "xact-time availability; Rodden quality is reported separ"
+                "ately."
+            ),
+            (
+                "A full semi-Markov build still needs reliable UTC conver"
+                "sion/JD for recovered partners; this audit records jd_ut"
+                " if exposed by wiki source but does not invent it."
+            ),
+        ],
     }
-    OUT.parent.mkdir(parents=True,exist_ok=True)
-    OUT.write_text(json.dumps(summary,indent=2,sort_keys=True)+"\n",encoding="utf-8")
-    print(json.dumps({k:v for k,v in summary.items() if k!="records"},indent=2),flush=True)
+    OUT.parent.mkdir(parents=True, exist_ok=True)
+    OUT.write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    print(json.dumps({k: v for k, v in summary.items() if k != "records"}, indent=2), flush=True)
 
-if __name__=="__main__": main()
+
+if __name__ == "__main__":
+    main()

@@ -44,7 +44,6 @@ from hdmatch.evaluation.structured_annotation_v2 import (
 )
 from hdmatch.experiments.canonical import canonical_json_bytes, sha256_json
 
-
 NOW = datetime(2026, 9, 6, 23, 30, tzinfo=UTC)
 CORPUS_ID = "LPDC-00000000000000000001"
 CORPUS_SHA = "1" * 64

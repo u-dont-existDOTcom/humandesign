@@ -93,7 +93,9 @@ def _metrics(*, proper: tuple[str, ...] = ()) -> MetricPlan:
         secondary_metric_ids=("mean_percentile", "tie_rate"),
         proper_scoring_rule_ids=proper,
         tie_policy="fractional-credit-random-within-tie",
-        missing_claim_policy="missing neutral observables remain missing; no model-specific imputation",
+        missing_claim_policy=(
+            "missing neutral observables remain missing; no model-specific imputation"
+        ),
         rejected_claim_policy="participant-rejected claims are excluded from scoring",
         uncertain_claim_policy="participant-uncertain claims are excluded from primary scoring",
         exclusion_policy="apply only exclusions frozen in this manifest before target results",
@@ -199,7 +201,9 @@ def test_manifest_requires_a_real_baseline_and_distinct_model_families() -> None
     manifest = build_tournament_manifest(_payload(authorization, roster=roster), authorization)
     assert manifest.execution_ready is False
     assert "model roster has no declared non-birth/context baseline" in manifest.execution_blockers
-    assert any("distinct non-baseline model families" in blocker for blocker in manifest.execution_blockers)
+    assert any(
+        "distinct non-baseline model families" in blocker for blocker in manifest.execution_blockers
+    )
 
 
 def test_manifest_blocks_missing_measurement_bridge_even_for_implemented_model() -> None:
@@ -211,7 +215,9 @@ def test_manifest_blocks_missing_measurement_bridge_even_for_implemented_model()
     )
     manifest = build_tournament_manifest(_payload(authorization, roster=roster), authorization)
     assert manifest.execution_ready is False
-    assert "model hd_no_bridge lacks a pinned measurement-bridge hash" in manifest.execution_blockers
+    assert (
+        "model hd_no_bridge lacks a pinned measurement-bridge hash" in manifest.execution_blockers
+    )
 
 
 def test_birth_use_and_family_scope_are_separate_authorization_gates() -> None:
@@ -236,8 +242,13 @@ def test_storage_and_reveal_permissions_can_block_execution_without_invalidating
     assert load_analysis_authorization(path) == authorization
 
     manifest = build_tournament_manifest(_payload(authorization), authorization)
-    assert "participant did not authorize storage of model-analysis results" in manifest.execution_blockers
-    assert "participant-facing reveal is outside the authorized purpose" in manifest.execution_blockers
+    assert (
+        "participant did not authorize storage of model-analysis results"
+        in manifest.execution_blockers
+    )
+    assert (
+        "participant-facing reveal is outside the authorized purpose" in manifest.execution_blockers
+    )
 
 
 def test_probabilistic_output_requires_predeclared_proper_scoring_rule() -> None:
@@ -256,13 +267,19 @@ def test_probabilistic_output_requires_predeclared_proper_scoring_rule() -> None
         _payload(authorization, roster=roster, metrics=_metrics(proper=())),
         authorization,
     )
-    assert "probabilistic model output lacks a predeclared proper scoring rule" in without.execution_blockers
+    assert (
+        "probabilistic model output lacks a predeclared proper scoring rule"
+        in without.execution_blockers
+    )
 
     with_rule = build_tournament_manifest(
         _payload(authorization, roster=roster, metrics=_metrics(proper=("brier_score",))),
         authorization,
     )
-    assert "probabilistic model output lacks a predeclared proper scoring rule" not in with_rule.execution_blockers
+    assert (
+        "probabilistic model output lacks a predeclared proper scoring rule"
+        not in with_rule.execution_blockers
+    )
 
 
 def test_development_cohort_cannot_be_labeled_confirmatory_validation() -> None:
@@ -271,7 +288,10 @@ def test_development_cohort_cannot_be_labeled_confirmatory_validation() -> None:
         _payload(authorization, cohort_role="development"),
         authorization,
     )
-    assert "development cohort cannot support confirmatory validation status" in manifest.execution_blockers
+    assert (
+        "development cohort cannot support confirmatory validation status"
+        in manifest.execution_blockers
+    )
 
 
 def test_manifest_detects_payload_tampering_and_stale_readiness_flags(tmp_path: Path) -> None:

@@ -29,12 +29,8 @@ UNIVERSES = (
 
 def test_indexed_scorer_exhaustively_matches_reference_scenarios() -> None:
     scenarios = DEFAULT_NOISE_SCENARIOS + (
-        NoiseScenario(
-            scenario_id="all-other", perturbation="other", fraction=1.0
-        ),
-        NoiseScenario(
-            scenario_id="all-mixed", perturbation="mixed", fraction=1.0
-        ),
+        NoiseScenario(scenario_id="all-other", perturbation="other", fraction=1.0),
+        NoiseScenario(scenario_id="all-mixed", perturbation="mixed", fraction=1.0),
     )
     for rows in UNIVERSES:
         scorer = IndexedSurveyScorer.build(rows)

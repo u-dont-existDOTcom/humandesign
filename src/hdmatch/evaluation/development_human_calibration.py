@@ -364,9 +364,9 @@ class DevelopmentHumanConsensusComparisonPayload(HumanCalibrationModel):
 
 
 class DevelopmentHumanConsensusComparisonArtifact(HumanCalibrationModel):
-    schema_version: Literal[
+    schema_version: Literal["life-patterns-development-human-consensus-comparison-artifact-v1"] = (
         "life-patterns-development-human-consensus-comparison-artifact-v1"
-    ] = "life-patterns-development-human-consensus-comparison-artifact-v1"
+    )
     artifact_id: str = Field(pattern=r"^LPHC-[0-9A-F]{20}$")
     artifact_sha256: str = Field(pattern=_SHA256_PATTERN)
     payload: DevelopmentHumanConsensusComparisonPayload
@@ -424,7 +424,8 @@ def build_development_human_consensus_comparison(
         responses = load_development_series_responses_jsonl(human_normalized_output)
     human_by_unit = {_response_unit_key(response): response for response in responses}
     consensus_by_unit = {
-        (unit.task_id, unit.evidence_id, unit.observable_id): unit for unit in consensus.payload.units
+        (unit.task_id, unit.evidence_id, unit.observable_id): unit
+        for unit in consensus.payload.units
     }
     if not set(human_by_unit).issubset(consensus_by_unit):
         raise ValueError("automated consensus does not cover every sampled human unit")

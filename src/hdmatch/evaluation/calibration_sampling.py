@@ -15,7 +15,12 @@ from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
-from hdmatch.experiments.canonical import canonical_json_bytes, load_json_bytes, sha256_json, write_new_bytes
+from hdmatch.experiments.canonical import (
+    canonical_json_bytes,
+    load_json_bytes,
+    sha256_json,
+    write_new_bytes,
+)
 
 from .structured_annotation_v2 import StructuredAnnotationTaskV2
 
@@ -79,11 +84,11 @@ class CalibrationSamplingManifestArtifact(CalibrationSamplingModel):
     payload: CalibrationSamplingManifestPayload
 
 
-def annotation_unit_universe(tasks: tuple[StructuredAnnotationTaskV2, ...]) -> tuple[CalibrationUnit, ...]:
+def annotation_unit_universe(
+    tasks: tuple[StructuredAnnotationTaskV2, ...],
+) -> tuple[CalibrationUnit, ...]:
     units = {
-        (task.episode_id, observable_id)
-        for task in tasks
-        for observable_id in task.observable_ids
+        (task.episode_id, observable_id) for task in tasks for observable_id in task.observable_ids
     }
     return tuple(
         CalibrationUnit(episode_id=episode_id, observable_id=observable_id)
@@ -109,7 +114,10 @@ def deterministic_representative_sample(
         raise ValueError("representative sample size must be positive")
     if sample_size > len(universe):
         raise ValueError("representative sample size exceeds eligible unit universe")
-    ranked = sorted(universe, key=lambda unit: (_unit_rank(seed_sha256, unit), unit.episode_id, unit.observable_id))
+    ranked = sorted(
+        universe,
+        key=lambda unit: (_unit_rank(seed_sha256, unit), unit.episode_id, unit.observable_id),
+    )
     return tuple(ranked[:sample_size])
 
 
@@ -125,7 +133,9 @@ def build_calibration_sampling_manifest(
     }
     outside = sorted(selected - universe)
     if outside:
-        raise ValueError(f"calibration manifest contains units outside frozen task universe: {outside}")
+        raise ValueError(
+            f"calibration manifest contains units outside frozen task universe: {outside}"
+        )
     expected_task_hash = sha256_json(tasks)
     if payload.task_set_sha256 != expected_task_hash:
         raise ValueError("calibration manifest does not bind exact structured task set")

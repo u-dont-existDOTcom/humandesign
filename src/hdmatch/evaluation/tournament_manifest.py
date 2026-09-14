@@ -119,9 +119,12 @@ class ModelManifestEntry(TournamentModel):
 
     @model_validator(mode="after")
     def candidate_universe_fields_move_together(self) -> ModelManifestEntry:
-        if (self.candidate_universe_sha256 is None) != (self.candidate_universe_state_count is None):
+        if (self.candidate_universe_sha256 is None) != (
+            self.candidate_universe_state_count is None
+        ):
             raise ValueError(
-                "candidate universe hash and state count must either both be present or both be absent"
+                "candidate universe hash and state count must either both"
+                " be present or both be absent"
             )
         return self
 
@@ -194,7 +197,8 @@ class TournamentManifestPayload(TournamentModel):
     def birth_artifact_fields_move_together(self) -> TournamentManifestPayload:
         if (self.birth_input_sha256 is None) != (self.civil_time_resolution_sha256 is None):
             raise ValueError(
-                "birth-input hash and civil-time resolution hash must both be present or both absent"
+                "birth-input hash and civil-time resolution hash must bot"
+                "h be present or both absent"
             )
         return self
 
@@ -258,18 +262,18 @@ def tournament_execution_blockers(
     for entry in payload.model_roster:
         if entry.family not in authorized_families:
             blockers.append(
-                f"model {entry.model_id} family {entry.family!r} is outside participant authorization"
+                f"model {entry.model_id} family {entry.family!r} is outside "
+                f"participant authorization"
             )
 
     if not any(entry.is_baseline for entry in payload.model_roster):
         blockers.append("model roster has no declared non-birth/context baseline")
 
-    nonbaseline_families = {
-        entry.family for entry in payload.model_roster if not entry.is_baseline
-    }
+    nonbaseline_families = {entry.family for entry in payload.model_roster if not entry.is_baseline}
     if len(nonbaseline_families) < payload.minimum_distinct_nonbaseline_families:
         blockers.append(
-            "model roster does not contain enough distinct non-baseline model families for the declared comparison"
+            "model roster does not contain enough distinct non-baseli"
+            "ne model families for the declared comparison"
         )
 
     if payload.preregistration_status == "confirmatory_preregistered" and not any(
@@ -290,7 +294,8 @@ def tournament_execution_blockers(
             blockers.append("participant did not authorize exact birth-data use")
         if payload.birth_input_sha256 is None or payload.civil_time_resolution_sha256 is None:
             blockers.append(
-                "birth-dependent roster lacks pinned birth-input and civil-time-resolution artifacts"
+                "birth-dependent roster lacks pinned birth-input and civi"
+                "l-time-resolution artifacts"
             )
 
     if payload.reveal_policy == "participant_reveal_after_locked_execution" and (

@@ -26,7 +26,6 @@ from hdmatch.evaluation.structured_annotation_v2 import (
 )
 from hdmatch.experiments.canonical import sha256_json
 
-
 NOW = datetime(2026, 9, 6, 22, 0, tzinfo=UTC)
 ZERO = "0" * 64
 
@@ -145,12 +144,15 @@ def test_valid_observed_episode_binds_task_source_ontology_and_procedure() -> No
         supporting_source_segment_ids=("EP-001-SEG-01",),
         theory_exposure="prior_exposure_possible",
     )
-    assert development_episode_response_errors(
-        response,
-        task=task,
-        ontology=ontology,
-        procedure=procedure,
-    ) == ()
+    assert (
+        development_episode_response_errors(
+            response,
+            task=task,
+            ontology=ontology,
+            procedure=procedure,
+        )
+        == ()
+    )
     assert response.transfer_summary_is_not_primary_source is True
     assert response.validation_use_forbidden is True
 
@@ -202,12 +204,15 @@ def test_non_action_requires_registry_match_and_full_gate() -> None:
         non_action_gate=gate,
         supporting_source_segment_ids=("EP-001-SEG-01",),
     )
-    assert development_episode_response_errors(
-        response,
-        task=task,
-        ontology=ontology,
-        procedure=procedure,
-    ) == ()
+    assert (
+        development_episode_response_errors(
+            response,
+            task=task,
+            ontology=ontology,
+            procedure=procedure,
+        )
+        == ()
+    )
 
 
 def test_other_specified_contract_is_checked_against_procedure() -> None:
@@ -226,12 +231,15 @@ def test_other_specified_contract_is_checked_against_procedure() -> None:
         other_specified_description="Concrete synthetic behavior not represented by listed values.",
         supporting_source_segment_ids=("EP-001-SEG-01",),
     )
-    assert development_episode_response_errors(
-        response,
-        task=task,
-        ontology=ontology,
-        procedure=procedure,
-    ) == ()
+    assert (
+        development_episode_response_errors(
+            response,
+            task=task,
+            ontology=ontology,
+            procedure=procedure,
+        )
+        == ()
+    )
 
 
 def test_influence_relation_requires_exact_source_provenance() -> None:

@@ -8,8 +8,8 @@ from hdmatch.api.life_patterns_v2_owner_app import (
     PatternSuggestion,
 )
 from hdmatch.api.life_patterns_v2_owner_conversation import (
-    ConversationMove,
     ConversationalOwnerSession,
+    ConversationMove,
     HiddenFactCandidate,
     HiddenFactCorrection,
     TurnExtraction,
@@ -77,7 +77,9 @@ class ScriptedConversationModel:
             )
         if move == "request_contrast":
             return ConversationMove(
-                reply="Give me a contrasting situation where you handled the uncertainty differently.",
+                reply=(
+                    "Give me a contrasting situation where you handled the uncertainty differently."
+                ),
                 move_type="request_contrast",
             )
         if move == "boundary_question":
@@ -93,7 +95,8 @@ class ScriptedConversationModel:
             return ConversationMove(
                 reply=(
                     "Across the situations, I wonder if the difference is not complexity itself "
-                    "but whether you think more information can resolve the uncertainty. Does that fit?"
+                    "but whether you think more information can resolve the u"
+                    "ncertainty. Does that fit?"
                 ),
                 move_type="surface_hypothesis",
                 hypothesis_proposition=(

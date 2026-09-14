@@ -8,12 +8,12 @@ compared under docs/19_partner_future_concordance.md.
 Production astronomy is verified Swiss Ephemeris (.se1) and fails closed on
 Moshier fallback.
 """
+
 from __future__ import annotations
 
 import hashlib
 import json
-import math
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -55,8 +55,8 @@ PROGRESSED_PLANETS = {
     "Mars": swe.MARS,
 }
 
-START = datetime(2026, 1, 1, tzinfo=timezone.utc)
-END = datetime(2041, 1, 1, tzinfo=timezone.utc)
+START = datetime(2026, 1, 1, tzinfo=UTC)
+END = datetime(2041, 1, 1, tzinfo=UTC)
 
 
 def sha256(path: Path) -> str:
@@ -68,7 +68,7 @@ def sha256(path: Path) -> str:
 
 
 def jd(dt: datetime) -> float:
-    dt = dt.astimezone(timezone.utc)
+    dt = dt.astimezone(UTC)
     hour = dt.hour + dt.minute / 60 + dt.second / 3600 + dt.microsecond / 3.6e9
     return swe.julday(dt.year, dt.month, dt.day, hour, swe.GREG_CAL)
 
@@ -84,16 +84,14 @@ def dt_from_jd(x: float) -> datetime:
     if us >= 1_000_000:
         s += 1
         us -= 1_000_000
-    return datetime(y, m, d, h, mi, s, us, tzinfo=timezone.utc)
+    return datetime(y, m, d, h, mi, s, us, tzinfo=UTC)
 
 
 def calc(jd_ut: float, body: int) -> tuple[float, float]:
     xx, ret = swe.calc_ut(jd_ut, body, FLAGS)
     used = ret & EPH_MASK
     if used != swe.FLG_SWIEPH:
-        raise RuntimeError(
-            f"EPHEMERIS_FALLBACK body={body} jd={jd_ut} used={used} ret={ret}"
-        )
+        raise RuntimeError(f"EPHEMERIS_FALLBACK body={body} jd={jd_ut} used={used} ret={ret}")
     return xx[0] % 360.0, xx[3]
 
 
@@ -125,7 +123,7 @@ def root_bisect(fn, a: float, b: float, fa: float, fb: float) -> float:
         if abs(fm) < 1e-10:
             return m
         if fa * fm <= 0:
-            b, fb = m, fm
+            b, _ = m, fm
         else:
             a, fa = m, fm
     return (a + b) / 2
@@ -135,7 +133,7 @@ def natal_snapshot(dt: datetime, lat: float | None, lon: float | None) -> dict:
     x = jd(dt)
     planets = {name: calc(x, body)[0] for name, body in NATAL_PLANETS.items()}
     out: dict[str, object] = {
-        "utc": dt.astimezone(timezone.utc).isoformat(),
+        "utc": dt.astimezone(UTC).isoformat(),
         "planets": planets,
     }
     if lat is not None and lon is not None:
@@ -162,7 +160,13 @@ def transit_events(natal: dict, include_angles: bool) -> list[dict]:
     for mp_name, mp_id in TRANSIT_PLANETS.items():
         for target_name, target_lon in targets.items():
             for asp in ASPECTS:
-                def f(t: float) -> float:
+
+                def f(
+                    t: float,
+                    mp_id=mp_id,
+                    target_lon=target_lon,
+                    asp=asp,
+                ) -> float:
                     return aspect_residual(calc(t, mp_id)[0], target_lon, asp)
 
                 t0 = start_jd
@@ -178,15 +182,18 @@ def transit_events(natal: dict, include_angles: bool) -> list[dict]:
                             out[-1].get("moving") == mp_name
                             and out[-1].get("target") == target_name
                             and out[-1].get("aspect") == asp
-                            and abs((rdt - datetime.fromisoformat(out[-1]["utc"])).total_seconds()) < 36 * 3600
+                            and abs((rdt - datetime.fromisoformat(out[-1]["utc"])).total_seconds())
+                            < 36 * 3600
                         ):
-                            out.append({
-                                "utc": rdt.isoformat(),
-                                "moving": mp_name,
-                                "aspect": asp,
-                                "target": target_name,
-                                "natal_target_lon": target_lon,
-                            })
+                            out.append(
+                                {
+                                    "utc": rdt.isoformat(),
+                                    "moving": mp_name,
+                                    "aspect": asp,
+                                    "target": target_name,
+                                    "natal_target_lon": target_lon,
+                                }
+                            )
                     t0, f0 = t1, f1
     out.sort(key=lambda e: e["utc"])
     return out
@@ -218,7 +225,13 @@ def progression_events(birth_dt: datetime, natal: dict, include_angles: bool) ->
     for pp_name, pp_id in PROGRESSED_PLANETS.items():
         for target_name, target_lon in targets.items():
             for asp in ASPECTS:
-                def f(t: float) -> float:
+
+                def f(
+                    t: float,
+                    pp_id=pp_id,
+                    target_lon=target_lon,
+                    asp=asp,
+                ) -> float:
                     return aspect_residual(p_lon(t, pp_id), target_lon, asp)
 
                 t0, f0 = sj, f(sj)
@@ -232,15 +245,18 @@ def progression_events(birth_dt: datetime, natal: dict, include_angles: bool) ->
                             out[-1].get("moving") == f"p{pp_name}"
                             and out[-1].get("target") == target_name
                             and out[-1].get("aspect") == asp
-                            and abs((rdt - datetime.fromisoformat(out[-1]["utc"])).total_seconds()) < 15 * 86400
+                            and abs((rdt - datetime.fromisoformat(out[-1]["utc"])).total_seconds())
+                            < 15 * 86400
                         ):
-                            out.append({
-                                "utc": rdt.isoformat(),
-                                "moving": f"p{pp_name}",
-                                "aspect": asp,
-                                "target": target_name,
-                                "natal_target_lon": target_lon,
-                            })
+                            out.append(
+                                {
+                                    "utc": rdt.isoformat(),
+                                    "moving": f"p{pp_name}",
+                                    "aspect": asp,
+                                    "target": target_name,
+                                    "natal_target_lon": target_lon,
+                                }
+                            )
                     t0, f0 = t1, f1
     out.sort(key=lambda e: e["utc"])
     return out
@@ -251,14 +267,16 @@ def half_year_progressed_snapshots(birth_dt: datetime, natal: dict) -> list[dict
     rows = []
     for year in range(2026, 2041):
         for month in (1, 7):
-            d = datetime(year, month, 1, tzinfo=timezone.utc)
+            d = datetime(year, month, 1, tzinfo=UTC)
             pj = progressed_jd(nj, birth_dt, d)
-            rows.append({
-                "utc": d.isoformat(),
-                "progressed_planets": {
-                    n: calc(pj, b)[0] for n, b in PROGRESSED_PLANETS.items()
-                },
-            })
+            rows.append(
+                {
+                    "utc": d.isoformat(),
+                    "progressed_planets": {
+                        n: calc(pj, b)[0] for n, b in PROGRESSED_PLANETS.items()
+                    },
+                }
+            )
     return rows
 
 
@@ -272,7 +290,7 @@ def subject_record(
     natal = natal_snapshot(birth_dt, lat if exact_time else None, lon if exact_time else None)
     return {
         "label": label,
-        "birth_utc": birth_dt.astimezone(timezone.utc).isoformat(),
+        "birth_utc": birth_dt.astimezone(UTC).isoformat(),
         "exact_birth_time": exact_time,
         "natal": natal,
         "transit_events": transit_events(natal, include_angles=exact_time),
@@ -290,10 +308,10 @@ def main() -> None:
 
     # Fail-closed probes over natal and forecast span.
     for d in (
-        datetime(1985, 1, 29, 10, 25, tzinfo=timezone.utc),
-        datetime(1989, 6, 19, 12, tzinfo=timezone.utc),
+        datetime(1985, 1, 29, 10, 25, tzinfo=UTC),
+        datetime(1989, 6, 19, 12, tzinfo=UTC),
         START,
-        datetime(2033, 1, 1, tzinfo=timezone.utc),
+        datetime(2033, 1, 1, tzinfo=UTC),
         END - timedelta(days=1),
     ):
         for body in NATAL_PLANETS.values():
@@ -302,7 +320,7 @@ def main() -> None:
     # Known exact record.
     joel = subject_record(
         "A",
-        datetime(1985, 1, 29, 10, 25, tzinfo=timezone.utc),
+        datetime(1985, 1, 29, 10, 25, tzinfo=UTC),
         39.9526,
         -75.1652,
         True,
@@ -317,7 +335,7 @@ def main() -> None:
         "B_late": datetime(1989, 6, 19, 18, 0, tzinfo=douala),
     }
     bee = {
-        label: subject_record(label, local.astimezone(timezone.utc), None, None, False)
+        label: subject_record(label, local.astimezone(UTC), None, None, False)
         for label, local in bee_local_times.items()
     }
 
@@ -325,30 +343,53 @@ def main() -> None:
         "protocol": "partner-future-concordance-v1-exploratory",
         "status": "raw_independent_timeline_inputs_no_pair_scoring",
         "forecast_horizon": [START.isoformat(), END.isoformat()],
-        "known_prior_suspected_window": "2030-2032 was discussed before this pilot; do not treat rediscovery as blind confirmation",
+        "known_prior_suspected_window": (
+            "2030-2032 was discussed before this pilot; do not treat "
+            "rediscovery as blind confirmation"
+        ),
         "ephemeris": {
             "requested": "SWIEPH",
             "returned": "SWIEPH or run aborts",
             "sepl_18_sha256": sha256(EPHE / "sepl_18.se1"),
             "semo_18_sha256": sha256(EPHE / "semo_18.se1"),
         },
-        "progression_convention": "secondary progression: one ephemeris day per tropical year of life (365.2422 d)",
+        "progression_convention": (
+            "secondary progression: one ephemeris day per tropical year of life (365.2422 d)"
+        ),
         "aspects": list(ASPECTS),
         "person_A": joel,
         "person_B_time_states": bee,
         "limitations": [
-            "Bee birth time unknown: no natal houses/angles/progressed angles/astrocartography are treated as robust.",
-            "Three representative Bee times are for planetary robustness, not a completed exact-state time rectification.",
-            "This file contains raw timing events; life-state interpretation and pair comparison must be frozen separately.",
+            (
+                "Bee birth time unknown: no natal houses/angles/progresse"
+                "d angles/astrocartography are treated as robust."
+            ),
+            (
+                "Three representative Bee times are for planetary robustn"
+                "ess, not a completed exact-state time rectification."
+            ),
+            (
+                "This file contains raw timing events; life-state interpr"
+                "etation and pair comparison must be frozen separately."
+            ),
         ],
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print(f"wrote {OUT}")
     print(f"sha256={sha256(OUT)}")
-    print(f"A transit events={len(joel['transit_events'])} progressions={len(joel['progression_events'])}")
+    print(
+        f"A transit events={len(joel['transit_events'])} "
+        f"progressions={len(joel['progression_events'])}"
+    )
     for label, rec in bee.items():
-        print(label, "transits", len(rec["transit_events"]), "progressions", len(rec["progression_events"]))
+        print(
+            label,
+            "transits",
+            len(rec["transit_events"]),
+            "progressions",
+            len(rec["progression_events"]),
+        )
 
 
 if __name__ == "__main__":

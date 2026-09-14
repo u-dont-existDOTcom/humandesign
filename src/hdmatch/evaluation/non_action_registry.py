@@ -14,7 +14,12 @@ from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
-from hdmatch.experiments.canonical import canonical_json_bytes, load_json_bytes, sha256_json, write_new_bytes
+from hdmatch.experiments.canonical import (
+    canonical_json_bytes,
+    load_json_bytes,
+    sha256_json,
+    write_new_bytes,
+)
 
 from .neutral_measurement import OntologyReleaseArtifact
 from .reconciled_codebook_source import (
@@ -172,7 +177,9 @@ def build_structured_procedure_from_non_action_registry(
         if row.classification == "ambiguous"
     )
     if ambiguous:
-        raise ValueError(f"ambiguous non-action classifications block procedure freeze: {ambiguous}")
+        raise ValueError(
+            f"ambiguous non-action classifications block procedure freeze: {ambiguous}"
+        )
 
     non_action_by_observable: dict[str, list[str]] = {
         row.observable_id: [] for row in source.payload.observables

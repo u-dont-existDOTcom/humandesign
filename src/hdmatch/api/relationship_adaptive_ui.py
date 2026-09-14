@@ -1,71 +1,338 @@
 """Participant-facing HTML for the LLM-audited relationship survey."""
 
-HTML = r"""<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Relationship X-Ray</title>
-<style>
-body{font-family:system-ui,sans-serif;max-width:900px;margin:0 auto;padding:28px 20px;line-height:1.5;color:#181818}
-button,select,textarea{font:inherit}button{padding:10px 16px;margin:8px 8px 0 0;cursor:pointer}button:disabled{cursor:not-allowed;opacity:.55}
-textarea{width:100%;min-height:82px;padding:10px;box-sizing:border-box}.hidden{display:none}
-.card{border:1px solid #ddd;border-radius:12px;padding:20px;margin-top:18px}.field{border-top:1px solid #e7e7e7;padding:18px 0}.field:first-of-type{border-top:0}
-.field label{font-weight:650;display:block;margin-bottom:6px}.field select{padding:7px;min-width:205px}.hint{color:#666;font-size:.92rem;margin:4px 0 8px}
-.notice{background:#f6f6f6;border-left:3px solid #777;padding:10px;margin:10px 0}.clarify{background:#fff8e8;border-left:3px solid #d79d26;padding:10px;margin-top:8px}.answer{white-space:pre-wrap;background:#f6f6f6;padding:10px;border-radius:8px;margin:6px 0}
-.progress-shell{height:12px;background:#eee;border-radius:999px;overflow:hidden;margin:10px 0 5px}.progress-bar{height:100%;background:#222;width:0%;transition:width .2s}.progress-label{font-size:.88rem;color:#555}
-.quality{margin-top:7px;font-size:.86rem}.quality-track{height:7px;background:#eee;border-radius:999px;overflow:hidden}.quality-fill{height:100%;background:#555;width:0%;transition:width .15s}.quality-hint{color:#555;margin-top:3px}
-.review-field{margin:8px 0 14px}.receipt{font-family:ui-monospace,monospace;overflow-wrap:anywhere}.badge{display:inline-block;padding:2px 7px;border-radius:999px;background:#eee;font-size:.8rem;margin-left:6px}.source-label{font-weight:700}.source-answer{border-left:3px solid #bbb;padding-left:10px;margin:8px 0}.reason{margin:12px 0}.consent-line{display:block;margin:9px 0}
-</style></head>
-<body>
-<h1>Relationship X-Ray</h1>
-<p>Six finite sections map one relationship before any astrology or Human Design result is shown. Each distinction has its own field. After the core, the AI auditor may ask at most six targeted clarifications.</p>
-<div id="progressWrap" class="hidden"><div class="progress-shell"><div id="progressBar" class="progress-bar"></div></div><div id="progressLabel" class="progress-label"></div></div>
-<div id="start" class="card">
-<div id="llmStatus" class="notice">Checking AI auditor…</div>
-<label class="consent-line"><input id="storageConsent" type="checkbox"> I consent to storing these responses privately for this research session.</label>
-<label class="consent-line"><input id="llmConsent" type="checkbox"> I consent to these questionnaire answers being sent to OpenRouter and its selected model provider for answer-quality and clarification analysis. Birth/chart data are not sent to this auditor.</label>
-<button id="beginButton" onclick="begin()" disabled>Begin</button>
-</div>
-<div id="survey" class="card hidden"><h2 id="title"></h2><p id="intro"></p><div id="fields"></div><button onclick="submitCore()" id="saveButton">Save & continue</button><button onclick="cancelEdit()" id="cancelEditButton" class="hidden">Cancel edit</button><p><small>The AI clarity meter evaluates whether your words answer this exact field. It never sees an Astro/HD prediction and does not reward length.</small></p></div>
-<div id="clarification" class="card hidden"><h2>Targeted clarification</h2><div class="hint">This question is about:</div><div id="clarificationSourceLabel" class="source-label"></div><div class="hint">Your earlier answer:</div><div id="clarificationSourceAnswer" class="source-answer"></div><div class="reason"><strong>Why the AI is asking:</strong> <span id="clarificationReason"></span></div><p><strong>Please clarify:</strong> <span id="clarificationPrompt"></span></p><textarea id="clarificationAnswer" placeholder="Answer this specific clarification."></textarea><br><button onclick="submitClarification(false)">Save clarification</button><button onclick="submitClarification(true)">I genuinely don't know</button></div>
-<div id="review" class="card hidden"><h2>Review before freezing</h2><p>Explicit unknowns are valid. Editing a core section causes the LLM audit to be rerun.</p><div id="answers"></div><div id="clarificationReview"></div><button id="freezeButton">Freeze these answers</button></div>
-<div id="done" class="card hidden"><h2>Responses frozen</h2><p id="doneText">Your answers are sealed.</p><p class="receipt" id="digest"></p><div id="addendumBox" class="hidden"><div class="notice">This run was frozen before the LLM auditor reviewed it. The original receipt will remain unchanged.</div><label class="consent-line"><input id="addendumConsent" type="checkbox"> I consent to sending this frozen survey's questionnaire answers to OpenRouter/the selected model provider for a separate LLM audit addendum.</label><button id="addendumButton" onclick="startLLMAddendum()">Run LLM audit addendum</button></div></div>
-<script>
-let sessionId=localStorage.getItem('rr_session');
-let token=localStorage.getItem('rr_token');
-let current=null;
-let editing=false;
-let auditMode='core';
-let qualityTimers={};
-let lastQualityPayload={};
-let llmConfigured=false;
-const statuses=[['','Choose one…'],['clear','Clear enough'],['mixed','Mixed / both'],['context_dependent','Depends on context or time'],['unknown','I don\'t know'],['not_applicable','Not applicable']];
-function hideAll(){['start','survey','clarification','review','done'].forEach(id=>document.getElementById(id).classList.add('hidden'))}
-function setProgress(p){if(!p)return;document.getElementById('progressWrap').classList.remove('hidden');document.getElementById('progressBar').style.width=p.percent+'%';document.getElementById('progressLabel').textContent=p.label}
-function coreProgress(n){setProgress({percent:Math.round(85*n/6),label:(n<6?'Core section '+Math.min(n+1,6)+' of 6 · at most 6 AI clarifications afterward':'Core complete · AI reviewing answers…')})}
-async function checkLLM(){try{const r=await fetch('/api/llm-status');const d=await r.json();llmConfigured=!!d.configured;document.getElementById('llmStatus').textContent=llmConfigured?'AI auditor ready · '+d.provider+' · '+d.model:'AI auditor is not configured yet. New surveys are temporarily disabled.';document.getElementById('beginButton').disabled=!llmConfigured}catch(e){document.getElementById('llmStatus').textContent='Could not verify AI auditor status.'}}
-async function begin(){if(!document.getElementById('storageConsent').checked||!document.getElementById('llmConsent').checked)return alert('Both storage and LLM-processing consent are required.');const r=await fetch('/api/adaptive/sessions',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({consent_to_store_responses:true,consent_to_llm_processing:true})});const d=await r.json();if(!r.ok)return alert(d.detail||'Could not start');sessionId=d.session_id;token=d.resume_token;localStorage.setItem('rr_session',sessionId);localStorage.setItem('rr_token',token);setProgress(d.progress);showQuestion(d.next_question)}
-function showQuestion(q,existing=null){hideAll();document.getElementById('survey').classList.remove('hidden');current=q;document.getElementById('title').textContent=q.title||q.prompt;document.getElementById('intro').textContent=q.intro||'';document.getElementById('fields').innerHTML=q.fields.map(f=>fieldHtml(f,existing)).join('');document.getElementById('saveButton').textContent=editing?'Save changes':'Save & continue';document.getElementById('cancelEditButton').classList.toggle('hidden',!editing);q.fields.forEach(f=>toggleClarification(f.id))}
-function fieldHtml(f,existing){const old=existing&&existing.fields?existing.fields.find(x=>x.field_id===f.id):null;const st=old?old.status:'';const ans=old?old.answer:'';const cl=old?old.clarification:'';return '<div class="field"><label>'+esc(f.label)+'</label><div class="hint">'+esc(f.placeholder)+'</div><select id="status_'+f.id+'" onchange="toggleClarification(\''+f.id+'\');scheduleQuality(\''+f.id+'\')">'+statuses.map(x=>'<option value="'+x[0]+'" '+(x[0]===st?'selected':'')+'>'+esc(x[1])+'</option>').join('')+'</select><textarea id="answer_'+f.id+'" oninput="scheduleQuality(\''+f.id+'\')" placeholder="Your answer">'+esc(ans)+'</textarea><div id="clarify_'+f.id+'" class="clarify hidden"><div class="hint">'+esc(f.clarification_prompt)+'</div><textarea id="clarification_'+f.id+'" oninput="scheduleQuality(\''+f.id+'\')" placeholder="Clarify the difference or context">'+esc(cl)+'</textarea></div><div class="quality"><div class="quality-track"><div id="qualityFill_'+f.id+'" class="quality-fill"></div></div><div id="qualityText_'+f.id+'" class="quality-hint">AI review appears after you pause typing.</div></div></div>'}
-function toggleClarification(id){const st=document.getElementById('status_'+id).value;document.getElementById('clarify_'+id).classList.toggle('hidden',!(st==='mixed'||st==='context_dependent'))}
-function scheduleQuality(id){clearTimeout(qualityTimers[id]);qualityTimers[id]=setTimeout(()=>updateQuality(id),1200)}
-async function updateQuality(id){if(!(sessionId&&token))return;const st=document.getElementById('status_'+id).value;if(!st)return;const ans=document.getElementById('answer_'+id).value;const cl=document.getElementById('clarification_'+id)?document.getElementById('clarification_'+id).value:'';if(!ans.trim()&&!['unknown','not_applicable'].includes(st))return;const key=JSON.stringify([st,ans,cl]);if(lastQualityPayload[id]===key)return;lastQualityPayload[id]=key;const text=document.getElementById('qualityText_'+id);text.textContent='AI checking relevance and clarity…';try{const r=await fetch('/api/quality',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({session_id:sessionId,token,field_id:id,status:st,answer:ans,clarification:cl})});const d=await r.json();if(!r.ok){text.textContent='AI review unavailable right now.';return}document.getElementById('qualityFill_'+id).style.width=d.score+'%';text.innerHTML='<strong>AI clarity '+d.score+'/100</strong> · '+esc(d.feedback)}catch(e){text.textContent='AI review unavailable right now.'}}
-function collectFields(){return current.fields.map(f=>({field_id:f.id,status:document.getElementById('status_'+f.id).value,answer:document.getElementById('answer_'+f.id).value.trim(),clarification:document.getElementById('clarification_'+f.id)?document.getElementById('clarification_'+f.id).value.trim():''}))}
-async function submitCore(){const fields=collectFields();if(fields.some(x=>!x.status))return alert('Choose a status for every field.');for(const x of fields){if(['clear','mixed','context_dependent'].includes(x.status)&&!x.answer)return alert('Write an answer or mark that field unknown/not applicable.');if(['mixed','context_dependent'].includes(x.status)&&!x.clarification)return alert('Clarify every field marked mixed or context-dependent.')}const base='/api/sessions/'+sessionId+'/answers';const r=await fetch(editing?base+'/'+encodeURIComponent(current.id):base,{method:editing?'PUT':'POST',headers:{'content-type':'application/json'},body:JSON.stringify({token,question_id:current.id,field_answers:fields})});const d=await r.json();if(!r.ok)return alert(d.detail||'Could not save');if(editing){editing=false;return startAudit()}coreProgress(d.answered_count);if(d.next_question)showQuestion(d.next_question);else startAudit()}
-async function startAudit(){auditMode='core';coreProgress(6);const r=await fetch('/api/sessions/'+sessionId+'/semantic-audit',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({token})});const d=await r.json();if(!r.ok)return alert(d.detail||'Could not run LLM audit');setProgress(d.progress);if(d.next_clarification)showAuditQuestion(d.next_clarification);else loadReview(d)}
-function showAuditQuestion(q){hideAll();document.getElementById('clarification').classList.remove('hidden');current=q;document.getElementById('clarificationSourceLabel').textContent=q.source_label;document.getElementById('clarificationSourceAnswer').textContent=q.source_answer_excerpt||'(no narrative answer)';document.getElementById('clarificationReason').textContent=q.reason;document.getElementById('clarificationPrompt').textContent=q.prompt;document.getElementById('clarificationAnswer').value=''}
-async function submitClarification(unknown){const path=auditMode==='addendum'?'/api/sessions/'+sessionId+'/llm-addendum/answers':'/api/sessions/'+sessionId+'/semantic-audit/answers';const answer=document.getElementById('clarificationAnswer').value.trim();if(!unknown&&!answer)return alert('Write a clarification or choose I genuinely don\'t know.');const r=await fetch(path,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({token,clarification_id:current.id,status:unknown?'unknown':'answered',answer})});const d=await r.json();if(!r.ok)return alert(d.detail||'Could not save clarification');setProgress(d.progress);if(d.next_clarification)showAuditQuestion(d.next_clarification);else{if(auditMode==='addendum')loadAddendumReview(d);else loadReview(d)}}
-async function loadState(){const r=await fetch('/api/adaptive/sessions/'+sessionId+'?token='+encodeURIComponent(token));const d=await r.json();if(!r.ok)throw new Error(d.detail||'Could not load');return d}
-async function loadReview(auditState=null){const d=await loadState();if(!auditState){const r=await fetch('/api/sessions/'+sessionId+'/semantic-audit',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({token})});auditState=await r.json();if(!r.ok)return alert(auditState.detail||'Could not run LLM audit')}hideAll();document.getElementById('review').classList.remove('hidden');setProgress(auditState.progress);document.getElementById('answers').innerHTML=d.answers.map((a,i)=>reviewCore(a,i)).join('');document.getElementById('clarificationReview').innerHTML=(auditState.answers||[]).map((a,i)=>'<div class="card"><strong>LLM clarification '+(i+1)+'</strong><div class="answer">'+esc(a.answer||'(unknown)')+'</div></div>').join('');const b=document.getElementById('freezeButton');b.textContent='Freeze these answers';b.onclick=freezeCurrent}
-function reviewCore(a,i){if(!a.fields)return '<div class="card"><h3>'+(i+1)+'. '+esc(a.question_id)+'</h3><div class="answer">'+esc(a.answer||'')+'</div></div>';return '<div class="card"><h3>'+(i+1)+'. '+esc(a.question_id)+'</h3>'+a.fields.map(f=>'<div class="review-field"><strong>'+esc(f.field_id)+'</strong><span class="badge">'+esc(f.status)+'</span><div class="answer">'+esc(f.answer||'(no narrative answer)')+'</div>'+(f.clarification?'<div class="answer"><strong>Clarification:</strong> '+esc(f.clarification)+'</div>':'')+'</div>').join('')+'<button onclick="editCore(\''+esc(a.question_id)+'\')">Edit this section</button></div>'}
-async function editCore(qid){const d=await loadState();const existing=d.answers.find(a=>a.question_id===qid);const r=await fetch('/api/questions/'+encodeURIComponent(qid));const q=await r.json();editing=true;showQuestion(q,existing)}
-function cancelEdit(){editing=false;loadReview()}
-async function freezeCurrent(){const r=await fetch('/api/adaptive/sessions/'+sessionId+'/freeze',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({token})});const d=await r.json();if(!r.ok)return alert(d.detail||'Could not freeze');showDone(d.freeze_sha256,false,false)}
-function showDone(receipt,isAddendum,canAddendum){hideAll();document.getElementById('progressWrap').classList.add('hidden');document.getElementById('done').classList.remove('hidden');document.getElementById('doneText').textContent=isAddendum?'Your LLM audit addendum is frozen separately from the original response.':'Your answers are sealed.';document.getElementById('digest').textContent=(isAddendum?'LLM addendum freeze receipt: ':'Freeze receipt: ')+receipt;document.getElementById('addendumBox').classList.toggle('hidden',!canAddendum)}
-async function startLLMAddendum(){if(!document.getElementById('addendumConsent').checked)return alert('LLM-processing consent is required for the addendum.');auditMode='addendum';const b=document.getElementById('addendumButton');b.disabled=true;b.textContent='AI reviewing frozen answers…';const r=await fetch('/api/sessions/'+sessionId+'/llm-addendum',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({token,consent_to_llm_processing:true})});const d=await r.json();b.disabled=false;b.textContent='Run LLM audit addendum';if(!r.ok)return alert(d.detail||'Could not run LLM addendum');setProgress(d.progress);if(d.next_clarification)showAuditQuestion(d.next_clarification);else loadAddendumReview(d)}
-function loadAddendumReview(d){auditMode='addendum';hideAll();document.getElementById('review').classList.remove('hidden');setProgress(d.progress);document.getElementById('answers').innerHTML='<p>Your original frozen response remains unchanged.</p>';document.getElementById('clarificationReview').innerHTML=(d.answers||[]).map((a,i)=>'<div class="card"><strong>LLM addendum clarification '+(i+1)+'</strong><div class="answer">'+esc(a.answer||'(unknown)')+'</div></div>').join('');const b=document.getElementById('freezeButton');b.textContent='Freeze LLM audit addendum';b.onclick=freezeAddendum}
-async function freezeAddendum(){const r=await fetch('/api/sessions/'+sessionId+'/llm-addendum/freeze',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({token})});const d=await r.json();if(!r.ok)return alert(d.detail||'Could not freeze LLM addendum');showDone(d.freeze_sha256,true,false)}
-function esc(s){return String(s??'').replace(/[&<>'\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','\"':'&quot;'}[c]))}
-async function resume(){if(!(sessionId&&token))return;try{const d=await loadState();if(d.status==='frozen'){if(d.llm_addendum&&d.llm_addendum.status==='in_progress'){auditMode='addendum';setProgress(d.llm_addendum.progress);if(d.llm_addendum.next_clarification)showAuditQuestion(d.llm_addendum.next_clarification);else loadAddendumReview(d.llm_addendum);return}if(d.llm_addendum&&d.llm_addendum.status==='frozen'){showDone(d.llm_addendum.freeze_sha256,true,false);return}showDone(d.freeze_sha256,false,d.can_start_llm_addendum);return}coreProgress(d.answers.length);if(d.next_question)showQuestion(d.next_question);else if(d.semantic_audit&&d.semantic_audit.next_clarification){auditMode='core';setProgress(d.semantic_audit.progress);showAuditQuestion(d.semantic_audit.next_clarification)}else if(d.semantic_audit)loadReview(d.semantic_audit);else startAudit()}catch(e){}}
-checkLLM().then(()=>resume());
-</script></body></html>"""
+HTML = (
+    '<!doctype html>\n<html lang="en">\n<head>\n<meta charset="u'
+    'tf-8"><meta name="viewport" content="width=device-width,'
+    'initial-scale=1">\n<title>Relationship X-Ray</title>\n<sty'
+    "le>\nbody{font-family:system-ui,sans-serif;max-width:900p"
+    "x;margin:0 auto;padding:28px 20px;line-height:1.5;color:"
+    "#181818}\nbutton,select,textarea{font:inherit}button{padd"
+    "ing:10px 16px;margin:8px 8px 0 0;cursor:pointer}button:d"
+    "isabled{cursor:not-allowed;opacity:.55}\ntextarea{width:1"
+    "00%;min-height:82px;padding:10px;box-sizing:border-box}."
+    "hidden{display:none}\n.card{border:1px solid #ddd;border-"
+    "radius:12px;padding:20px;margin-top:18px}.field{border-t"
+    "op:1px solid #e7e7e7;padding:18px 0}.field:first-of-type"
+    "{border-top:0}\n.field label{font-weight:650;display:bloc"
+    "k;margin-bottom:6px}.field select{padding:7px;min-width:"
+    "205px}.hint{color:#666;font-size:.92rem;margin:4px 0 8px"
+    "}\n.notice{background:#f6f6f6;border-left:3px solid #777;"
+    "padding:10px;margin:10px 0}.clarify{background:#fff8e8;b"
+    "order-left:3px solid #d79d26;padding:10px;margin-top:8px"
+    "}.answer{white-space:pre-wrap;background:#f6f6f6;padding"
+    ":10px;border-radius:8px;margin:6px 0}\n.progress-shell{he"
+    "ight:12px;background:#eee;border-radius:999px;overflow:h"
+    "idden;margin:10px 0 5px}.progress-bar{height:100%;backgr"
+    "ound:#222;width:0%;transition:width .2s}.progress-label{"
+    "font-size:.88rem;color:#555}\n.quality{margin-top:7px;fon"
+    "t-size:.86rem}.quality-track{height:7px;background:#eee;"
+    "border-radius:999px;overflow:hidden}.quality-fill{height"
+    ":100%;background:#555;width:0%;transition:width .15s}.qu"
+    "ality-hint{color:#555;margin-top:3px}\n.review-field{marg"
+    "in:8px 0 14px}.receipt{font-family:ui-monospace,monospac"
+    "e;overflow-wrap:anywhere}.badge{display:inline-block;pad"
+    "ding:2px 7px;border-radius:999px;background:#eee;font-si"
+    "ze:.8rem;margin-left:6px}.source-label{font-weight:700}."
+    "source-answer{border-left:3px solid #bbb;padding-left:10"
+    "px;margin:8px 0}.reason{margin:12px 0}.consent-line{disp"
+    "lay:block;margin:9px 0}\n</style></head>\n<body>\n<h1>Relat"
+    "ionship X-Ray</h1>\n<p>Six finite sections map one relati"
+    "onship before any astrology or Human Design result is sh"
+    "own. Each distinction has its own field. After the core,"
+    " the AI auditor may ask at most six targeted clarificati"
+    'ons.</p>\n<div id="progressWrap" class="hidden"><div clas'
+    's="progress-shell"><div id="progressBar" class="progress'
+    '-bar"></div></div><div id="progressLabel" class="progres'
+    's-label"></div></div>\n<div id="start" class="card">\n<div'
+    ' id="llmStatus" class="notice">Checking AI auditor…</div'
+    '>\n<label class="consent-line"><input id="storageConsent"'
+    ' type="checkbox"> I consent to storing these responses p'
+    "rivately for this research session.</label>\n<label class"
+    '="consent-line"><input id="llmConsent" type="checkbox"> '
+    "I consent to these questionnaire answers being sent to O"
+    "penRouter and its selected model provider for answer-qua"
+    "lity and clarification analysis. Birth/chart data are no"
+    't sent to this auditor.</label>\n<button id="beginButton"'
+    ' onclick="begin()" disabled>Begin</button>\n</div>\n<div i'
+    'd="survey" class="card hidden"><h2 id="title"></h2><p id'
+    '="intro"></p><div id="fields"></div><button onclick="sub'
+    'mitCore()" id="saveButton">Save & continue</button><butt'
+    'on onclick="cancelEdit()" id="cancelEditButton" class="h'
+    'idden">Cancel edit</button><p><small>The AI clarity mete'
+    "r evaluates whether your words answer this exact field. "
+    "It never sees an Astro/HD prediction and does not reward"
+    ' length.</small></p></div>\n<div id="clarification" class'
+    '="card hidden"><h2>Targeted clarification</h2><div class'
+    '="hint">This question is about:</div><div id="clarificat'
+    'ionSourceLabel" class="source-label"></div><div class="h'
+    'int">Your earlier answer:</div><div id="clarificationSou'
+    'rceAnswer" class="source-answer"></div><div class="reaso'
+    'n"><strong>Why the AI is asking:</strong> <span id="clar'
+    'ificationReason"></span></div><p><strong>Please clarify:'
+    '</strong> <span id="clarificationPrompt"></span></p><tex'
+    'tarea id="clarificationAnswer" placeholder="Answer this '
+    'specific clarification."></textarea><br><button onclick='
+    '"submitClarification(false)">Save clarification</button>'
+    '<button onclick="submitClarification(true)">I genuinely '
+    'don\'t know</button></div>\n<div id="review" class="card h'
+    'idden"><h2>Review before freezing</h2><p>Explicit unknow'
+    "ns are valid. Editing a core section causes the LLM audi"
+    't to be rerun.</p><div id="answers"></div><div id="clari'
+    'ficationReview"></div><button id="freezeButton">Freeze t'
+    'hese answers</button></div>\n<div id="done" class="card h'
+    'idden"><h2>Responses frozen</h2><p id="doneText">Your an'
+    'swers are sealed.</p><p class="receipt" id="digest"></p>'
+    '<div id="addendumBox" class="hidden"><div class="notice"'
+    ">This run was frozen before the LLM auditor reviewed it."
+    " The original receipt will remain unchanged.</div><label"
+    ' class="consent-line"><input id="addendumConsent" type="'
+    "checkbox\"> I consent to sending this frozen survey's que"
+    "stionnaire answers to OpenRouter/the selected model prov"
+    "ider for a separate LLM audit addendum.</label><button i"
+    'd="addendumButton" onclick="startLLMAddendum()">Run LLM '
+    "audit addendum</button></div></div>\n<script>\nlet session"
+    "Id=localStorage.getItem('rr_session');\nlet token=localSt"
+    "orage.getItem('rr_token');\nlet current=null;\nlet editing"
+    "=false;\nlet auditMode='core';\nlet qualityTimers={};\nlet "
+    "lastQualityPayload={};\nlet llmConfigured=false;\nconst st"
+    "atuses=[['','Choose one…'],['clear','Clear enough'],['mi"
+    "xed','Mixed / both'],['context_dependent','Depends on co"
+    "ntext or time'],['unknown','I don\\'t know'],['not_applic"
+    "able','Not applicable']];\nfunction hideAll(){['start','s"
+    "urvey','clarification','review','done'].forEach(id=>docu"
+    "ment.getElementById(id).classList.add('hidden'))}\nfuncti"
+    "on setProgress(p){if(!p)return;document.getElementById('"
+    "progressWrap').classList.remove('hidden');document.getEl"
+    "ementById('progressBar').style.width=p.percent+'%';docum"
+    "ent.getElementById('progressLabel').textContent=p.label}"
+    "\nfunction coreProgress(n){setProgress({percent:Math.roun"
+    "d(85*n/6),label:(n<6?'Core section '+Math.min(n+1,6)+' o"
+    "f 6 · at most 6 AI clarifications afterward':'Core compl"
+    "ete · AI reviewing answers…')})}\nasync function checkLLM"
+    "(){try{const r=await fetch('/api/llm-status');const d=aw"
+    "ait r.json();llmConfigured=!!d.configured;document.getEl"
+    "ementById('llmStatus').textContent=llmConfigured?'AI aud"
+    "itor ready · '+d.provider+' · '+d.model:'AI auditor is n"
+    "ot configured yet. New surveys are temporarily disabled."
+    "';document.getElementById('beginButton').disabled=!llmCo"
+    "nfigured}catch(e){document.getElementById('llmStatus').t"
+    "extContent='Could not verify AI auditor status.'}}\nasync"
+    " function begin(){if(!document.getElementById('storageCo"
+    "nsent').checked||!document.getElementById('llmConsent')."
+    "checked)return alert('Both storage and LLM-processing co"
+    "nsent are required.');const r=await fetch('/api/adaptive"
+    "/sessions',{method:'POST',headers:{'content-type':'appli"
+    "cation/json'},body:JSON.stringify({consent_to_store_resp"
+    "onses:true,consent_to_llm_processing:true})});const d=aw"
+    "ait r.json();if(!r.ok)return alert(d.detail||'Could not "
+    "start');sessionId=d.session_id;token=d.resume_token;loca"
+    "lStorage.setItem('rr_session',sessionId);localStorage.se"
+    "tItem('rr_token',token);setProgress(d.progress);showQues"
+    "tion(d.next_question)}\nfunction showQuestion(q,existing="
+    "null){hideAll();document.getElementById('survey').classL"
+    "ist.remove('hidden');current=q;document.getElementById('"
+    "title').textContent=q.title||q.prompt;document.getElemen"
+    "tById('intro').textContent=q.intro||'';document.getEleme"
+    "ntById('fields').innerHTML=q.fields.map(f=>fieldHtml(f,e"
+    "xisting)).join('');document.getElementById('saveButton')"
+    ".textContent=editing?'Save changes':'Save & continue';do"
+    "cument.getElementById('cancelEditButton').classList.togg"
+    "le('hidden',!editing);q.fields.forEach(f=>toggleClarific"
+    "ation(f.id))}\nfunction fieldHtml(f,existing){const old=e"
+    "xisting&&existing.fields?existing.fields.find(x=>x.field"
+    "_id===f.id):null;const st=old?old.status:'';const ans=ol"
+    "d?old.answer:'';const cl=old?old.clarification:'';return"
+    " '<div class=\"field\"><label>'+esc(f.label)+'</label><div"
+    ' class="hint">\'+esc(f.placeholder)+\'</div><select id="st'
+    "atus_'+f.id+'\" onchange=\"toggleClarification(\\''+f.id+'\\"
+    "');scheduleQuality(\\''+f.id+'\\')\">'+statuses.map(x=>'<op"
+    "tion value=\"'+x[0]+'\" '+(x[0]===st?'selected':'')+'>'+es"
+    "c(x[1])+'</option>').join('')+'</select><textarea id=\"an"
+    "swer_'+f.id+'\" oninput=\"scheduleQuality(\\''+f.id+'\\')\" p"
+    "laceholder=\"Your answer\">'+esc(ans)+'</textarea><div id="
+    '"clarify_\'+f.id+\'" class="clarify hidden"><div class="hi'
+    "nt\">'+esc(f.clarification_prompt)+'</div><textarea id=\"c"
+    "larification_'+f.id+'\" oninput=\"scheduleQuality(\\''+f.id"
+    "+'\\')\" placeholder=\"Clarify the difference or context\">'"
+    '+esc(cl)+\'</textarea></div><div class="quality"><div cla'
+    'ss="quality-track"><div id="qualityFill_\'+f.id+\'" class='
+    '"quality-fill"></div></div><div id="qualityText_\'+f.id+\''
+    '" class="quality-hint">AI review appears after you pause'
+    " typing.</div></div></div>'}\nfunction toggleClarificatio"
+    "n(id){const st=document.getElementById('status_'+id).val"
+    "ue;document.getElementById('clarify_'+id).classList.togg"
+    "le('hidden',!(st==='mixed'||st==='context_dependent'))}\n"
+    "function scheduleQuality(id){clearTimeout(qualityTimers["
+    "id]);qualityTimers[id]=setTimeout(()=>updateQuality(id),"
+    "1200)}\nasync function updateQuality(id){if(!(sessionId&&"
+    "token))return;const st=document.getElementById('status_'"
+    "+id).value;if(!st)return;const ans=document.getElementBy"
+    "Id('answer_'+id).value;const cl=document.getElementById("
+    "'clarification_'+id)?document.getElementById('clarificat"
+    "ion_'+id).value:'';if(!ans.trim()&&!['unknown','not_appl"
+    "icable'].includes(st))return;const key=JSON.stringify([s"
+    "t,ans,cl]);if(lastQualityPayload[id]===key)return;lastQu"
+    "alityPayload[id]=key;const text=document.getElementById("
+    "'qualityText_'+id);text.textContent='AI checking relevan"
+    "ce and clarity…';try{const r=await fetch('/api/quality',"
+    "{method:'POST',headers:{'content-type':'application/json"
+    "'},body:JSON.stringify({session_id:sessionId,token,field"
+    "_id:id,status:st,answer:ans,clarification:cl})});const d"
+    "=await r.json();if(!r.ok){text.textContent='AI review un"
+    "available right now.';return}document.getElementById('qu"
+    "alityFill_'+id).style.width=d.score+'%';text.innerHTML='"
+    "<strong>AI clarity '+d.score+'/100</strong> · '+esc(d.fe"
+    "edback)}catch(e){text.textContent='AI review unavailable"
+    " right now.'}}\nfunction collectFields(){return current.f"
+    "ields.map(f=>({field_id:f.id,status:document.getElementB"
+    "yId('status_'+f.id).value,answer:document.getElementById"
+    "('answer_'+f.id).value.trim(),clarification:document.get"
+    "ElementById('clarification_'+f.id)?document.getElementBy"
+    "Id('clarification_'+f.id).value.trim():''}))}\nasync func"
+    "tion submitCore(){const fields=collectFields();if(fields"
+    ".some(x=>!x.status))return alert('Choose a status for ev"
+    "ery field.');for(const x of fields){if(['clear','mixed',"
+    "'context_dependent'].includes(x.status)&&!x.answer)retur"
+    "n alert('Write an answer or mark that field unknown/not "
+    "applicable.');if(['mixed','context_dependent'].includes("
+    "x.status)&&!x.clarification)return alert('Clarify every "
+    "field marked mixed or context-dependent.')}const base='/"
+    "api/sessions/'+sessionId+'/answers';const r=await fetch("
+    "editing?base+'/'+encodeURIComponent(current.id):base,{me"
+    "thod:editing?'PUT':'POST',headers:{'content-type':'appli"
+    "cation/json'},body:JSON.stringify({token,question_id:cur"
+    "rent.id,field_answers:fields})});const d=await r.json();"
+    "if(!r.ok)return alert(d.detail||'Could not save');if(edi"
+    "ting){editing=false;return startAudit()}coreProgress(d.a"
+    "nswered_count);if(d.next_question)showQuestion(d.next_qu"
+    "estion);else startAudit()}\nasync function startAudit(){a"
+    "uditMode='core';coreProgress(6);const r=await fetch('/ap"
+    "i/sessions/'+sessionId+'/semantic-audit',{method:'POST',"
+    "headers:{'content-type':'application/json'},body:JSON.st"
+    "ringify({token})});const d=await r.json();if(!r.ok)retur"
+    "n alert(d.detail||'Could not run LLM audit');setProgress"
+    "(d.progress);if(d.next_clarification)showAuditQuestion(d"
+    ".next_clarification);else loadReview(d)}\nfunction showAu"
+    "ditQuestion(q){hideAll();document.getElementById('clarif"
+    "ication').classList.remove('hidden');current=q;document."
+    "getElementById('clarificationSourceLabel').textContent=q"
+    ".source_label;document.getElementById('clarificationSour"
+    "ceAnswer').textContent=q.source_answer_excerpt||'(no nar"
+    "rative answer)';document.getElementById('clarificationRe"
+    "ason').textContent=q.reason;document.getElementById('cla"
+    "rificationPrompt').textContent=q.prompt;document.getElem"
+    "entById('clarificationAnswer').value=''}\nasync function "
+    "submitClarification(unknown){const path=auditMode==='add"
+    "endum'?'/api/sessions/'+sessionId+'/llm-addendum/answers"
+    "':'/api/sessions/'+sessionId+'/semantic-audit/answers';c"
+    "onst answer=document.getElementById('clarificationAnswer"
+    "').value.trim();if(!unknown&&!answer)return alert('Write"
+    " a clarification or choose I genuinely don\\'t know.');co"
+    "nst r=await fetch(path,{method:'POST',headers:{'content-"
+    "type':'application/json'},body:JSON.stringify({token,cla"
+    "rification_id:current.id,status:unknown?'unknown':'answe"
+    "red',answer})});const d=await r.json();if(!r.ok)return a"
+    "lert(d.detail||'Could not save clarification');setProgre"
+    "ss(d.progress);if(d.next_clarification)showAuditQuestion"
+    "(d.next_clarification);else{if(auditMode==='addendum')lo"
+    "adAddendumReview(d);else loadReview(d)}}\nasync function "
+    "loadState(){const r=await fetch('/api/adaptive/sessions/"
+    "'+sessionId+'?token='+encodeURIComponent(token));const d"
+    "=await r.json();if(!r.ok)throw new Error(d.detail||'Coul"
+    "d not load');return d}\nasync function loadReview(auditSt"
+    "ate=null){const d=await loadState();if(!auditState){cons"
+    "t r=await fetch('/api/sessions/'+sessionId+'/semantic-au"
+    "dit',{method:'POST',headers:{'content-type':'application"
+    "/json'},body:JSON.stringify({token})});auditState=await "
+    "r.json();if(!r.ok)return alert(auditState.detail||'Could"
+    " not run LLM audit')}hideAll();document.getElementById('"
+    "review').classList.remove('hidden');setProgress(auditSta"
+    "te.progress);document.getElementById('answers').innerHTM"
+    "L=d.answers.map((a,i)=>reviewCore(a,i)).join('');documen"
+    "t.getElementById('clarificationReview').innerHTML=(audit"
+    'State.answers||[]).map((a,i)=>\'<div class="card"><strong'
+    ">LLM clarification '+(i+1)+'</strong><div class=\"answer\""
+    ">'+esc(a.answer||'(unknown)')+'</div></div>').join('');c"
+    "onst b=document.getElementById('freezeButton');b.textCon"
+    "tent='Freeze these answers';b.onclick=freezeCurrent}\nfun"
+    "ction reviewCore(a,i){if(!a.fields)return '<div class=\"c"
+    "ard\"><h3>'+(i+1)+'. '+esc(a.question_id)+'</h3><div clas"
+    "s=\"answer\">'+esc(a.answer||'')+'</div></div>';return '<d"
+    "iv class=\"card\"><h3>'+(i+1)+'. '+esc(a.question_id)+'</h"
+    "3>'+a.fields.map(f=>'<div class=\"review-field\"><strong>'"
+    "+esc(f.field_id)+'</strong><span class=\"badge\">'+esc(f.s"
+    "tatus)+'</span><div class=\"answer\">'+esc(f.answer||'(no "
+    "narrative answer)')+'</div>'+(f.clarification?'<div clas"
+    's="answer"><strong>Clarification:</strong> \'+esc(f.clari'
+    "fication)+'</div>':'')+'</div>').join('')+'<button oncli"
+    "ck=\"editCore(\\''+esc(a.question_id)+'\\')\">Edit this sect"
+    "ion</button></div>'}\nasync function editCore(qid){const "
+    "d=await loadState();const existing=d.answers.find(a=>a.q"
+    "uestion_id===qid);const r=await fetch('/api/questions/'+"
+    "encodeURIComponent(qid));const q=await r.json();editing="
+    "true;showQuestion(q,existing)}\nfunction cancelEdit(){edi"
+    "ting=false;loadReview()}\nasync function freezeCurrent(){"
+    "const r=await fetch('/api/adaptive/sessions/'+sessionId+"
+    "'/freeze',{method:'POST',headers:{'content-type':'applic"
+    "ation/json'},body:JSON.stringify({token})});const d=awai"
+    "t r.json();if(!r.ok)return alert(d.detail||'Could not fr"
+    "eeze');showDone(d.freeze_sha256,false,false)}\nfunction s"
+    "howDone(receipt,isAddendum,canAddendum){hideAll();docume"
+    "nt.getElementById('progressWrap').classList.add('hidden'"
+    ");document.getElementById('done').classList.remove('hidd"
+    "en');document.getElementById('doneText').textContent=isA"
+    "ddendum?'Your LLM audit addendum is frozen separately fr"
+    "om the original response.':'Your answers are sealed.';do"
+    "cument.getElementById('digest').textContent=(isAddendum?"
+    "'LLM addendum freeze receipt: ':'Freeze receipt: ')+rece"
+    "ipt;document.getElementById('addendumBox').classList.tog"
+    "gle('hidden',!canAddendum)}\nasync function startLLMAdden"
+    "dum(){if(!document.getElementById('addendumConsent').che"
+    "cked)return alert('LLM-processing consent is required fo"
+    "r the addendum.');auditMode='addendum';const b=document."
+    "getElementById('addendumButton');b.disabled=true;b.textC"
+    "ontent='AI reviewing frozen answers…';const r=await fetc"
+    "h('/api/sessions/'+sessionId+'/llm-addendum',{method:'PO"
+    "ST',headers:{'content-type':'application/json'},body:JSO"
+    "N.stringify({token,consent_to_llm_processing:true})});co"
+    "nst d=await r.json();b.disabled=false;b.textContent='Run"
+    " LLM audit addendum';if(!r.ok)return alert(d.detail||'Co"
+    "uld not run LLM addendum');setProgress(d.progress);if(d."
+    "next_clarification)showAuditQuestion(d.next_clarificatio"
+    "n);else loadAddendumReview(d)}\nfunction loadAddendumRevi"
+    "ew(d){auditMode='addendum';hideAll();document.getElement"
+    "ById('review').classList.remove('hidden');setProgress(d."
+    "progress);document.getElementById('answers').innerHTML='"
+    "<p>Your original frozen response remains unchanged.</p>'"
+    ";document.getElementById('clarificationReview').innerHTM"
+    'L=(d.answers||[]).map((a,i)=>\'<div class="card"><strong>'
+    "LLM addendum clarification '+(i+1)+'</strong><div class="
+    "\"answer\">'+esc(a.answer||'(unknown)')+'</div></div>').jo"
+    "in('');const b=document.getElementById('freezeButton');b"
+    ".textContent='Freeze LLM audit addendum';b.onclick=freez"
+    "eAddendum}\nasync function freezeAddendum(){const r=await"
+    " fetch('/api/sessions/'+sessionId+'/llm-addendum/freeze'"
+    ",{method:'POST',headers:{'content-type':'application/jso"
+    "n'},body:JSON.stringify({token})});const d=await r.json("
+    ");if(!r.ok)return alert(d.detail||'Could not freeze LLM "
+    "addendum');showDone(d.freeze_sha256,true,false)}\nfunctio"
+    "n esc(s){return String(s??'').replace(/[&<>'\\\"]/g,c=>({'"
+    "&':'&amp;','<':'&lt;','>':'&gt;',\"'\":'&#39;','\\\"':'&quot"
+    ";'}[c]))}\nasync function resume(){if(!(sessionId&&token)"
+    ")return;try{const d=await loadState();if(d.status==='fro"
+    "zen'){if(d.llm_addendum&&d.llm_addendum.status==='in_pro"
+    "gress'){auditMode='addendum';setProgress(d.llm_addendum."
+    "progress);if(d.llm_addendum.next_clarification)showAudit"
+    "Question(d.llm_addendum.next_clarification);else loadAdd"
+    "endumReview(d.llm_addendum);return}if(d.llm_addendum&&d."
+    "llm_addendum.status==='frozen'){showDone(d.llm_addendum."
+    "freeze_sha256,true,false);return}showDone(d.freeze_sha25"
+    "6,false,d.can_start_llm_addendum);return}coreProgress(d."
+    "answers.length);if(d.next_question)showQuestion(d.next_q"
+    "uestion);else if(d.semantic_audit&&d.semantic_audit.next"
+    "_clarification){auditMode='core';setProgress(d.semantic_"
+    "audit.progress);showAuditQuestion(d.semantic_audit.next_"
+    "clarification)}else if(d.semantic_audit)loadReview(d.sem"
+    "antic_audit);else startAudit()}catch(e){}}\ncheckLLM().th"
+    "en(()=>resume());\n</script></body></html>"
+)

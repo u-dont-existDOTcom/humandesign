@@ -107,7 +107,9 @@ def _packet(kind: str, task, batch_index: int) -> BlindDevelopmentPacketArtifact
         ontology=stack.ontology,
         procedure=stack.procedure,
         coding_manual_sha256=stack.coding_manual_sha256,
-        coding_manual_text=(ROOT / "state/LIFE-PATTERNS-DEVELOPMENT-CODING-MANUAL-v2-2026-09-08.md").read_text(),
+        coding_manual_text=(
+            ROOT / "state/LIFE-PATTERNS-DEVELOPMENT-CODING-MANUAL-v2-2026-09-08.md"
+        ).read_text(),
         recurrence_policy_sha256=stack.recurrence_policy_sha256,
         recurrence_policy_text=(
             ROOT / "docs/research/LIFE_PATTERNS_RECURRENCE_EVIDENCE_POLICY_v2_2026-09-08.md"
@@ -151,15 +153,19 @@ def _blank_series_row(task: DevelopmentSeriesCodingTask) -> dict[str, object]:
     }
 
 
-def _write_handoff_zip(path: Path) -> tuple[DevelopmentEpisodeCodingTask, DevelopmentSeriesCodingTask]:
+def _write_handoff_zip(
+    path: Path,
+) -> tuple[DevelopmentEpisodeCodingTask, DevelopmentSeriesCodingTask]:
     episode_task, series_task = _tasks()
     episode_packet = _packet("episode", episode_task, 1)
     series_packet = _packet("series", series_task, 1)
     files: dict[str, bytes] = {
         "packets/episode/packet-001.json": canonical_json_bytes(episode_packet),
         "packets/series/packet-001.json": canonical_json_bytes(series_packet),
-        "episode_responses.blank.jsonl": canonical_json_bytes(_blank_episode_row(episode_task)) + b"\n",
-        "series_responses.blank.jsonl": canonical_json_bytes(_blank_series_row(series_task)) + b"\n",
+        "episode_responses.blank.jsonl": canonical_json_bytes(_blank_episode_row(episode_task))
+        + b"\n",
+        "series_responses.blank.jsonl": canonical_json_bytes(_blank_series_row(series_task))
+        + b"\n",
     }
     stack = _stack()
     receipt_payload = {

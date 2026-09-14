@@ -18,7 +18,6 @@ from hdmatch.evaluation.development_transfer_corpus import (
     DevelopmentSourceSegment,
 )
 
-
 NOW = datetime(2026, 9, 6, 20, 30, tzinfo=UTC)
 SEED = "a" * 64
 CORPUS_ID = "LPDC-1234567890ABCDEF1234"
@@ -115,11 +114,14 @@ def test_balanced_sample_is_deterministic_and_covers_each_observable() -> None:
     assert {unit.observable_id for unit in first.payload.representative_series_units} == set(
         OBSERVABLES
     )
-    assert development_calibration_integrity_errors(
-        first,
-        episode_tasks=_episode_tasks(),
-        series_tasks=_series_tasks(),
-    ) == ()
+    assert (
+        development_calibration_integrity_errors(
+            first,
+            episode_tasks=_episode_tasks(),
+            series_tasks=_series_tasks(),
+        )
+        == ()
+    )
 
 
 def test_sample_floor_fails_when_requested_size_is_too_small() -> None:

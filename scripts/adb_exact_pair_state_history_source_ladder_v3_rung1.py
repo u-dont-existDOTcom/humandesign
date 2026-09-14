@@ -6,6 +6,7 @@ Frozen spec:
 
 No astrology or Human Design features are calculated or inspected.
 """
+
 from __future__ import annotations
 
 import hashlib
@@ -28,10 +29,30 @@ UA = "humandesign-state-history-v3-rung1/1.0"
 
 STOP = {"relationship", "spouse", "lover", "with", "born", "family", "associates", "equivalent"}
 MONTHS = {
-    "january": 1, "february": 2, "march": 3, "april": 4, "may": 5, "june": 6,
-    "july": 7, "august": 8, "september": 9, "october": 10, "november": 11, "december": 12,
-    "jan": 1, "feb": 2, "mar": 3, "apr": 4, "jun": 6, "jul": 7, "aug": 8,
-    "sep": 9, "sept": 9, "oct": 10, "nov": 11, "dec": 12,
+    "january": 1,
+    "february": 2,
+    "march": 3,
+    "april": 4,
+    "may": 5,
+    "june": 6,
+    "july": 7,
+    "august": 8,
+    "september": 9,
+    "october": 10,
+    "november": 11,
+    "december": 12,
+    "jan": 1,
+    "feb": 2,
+    "mar": 3,
+    "apr": 4,
+    "jun": 6,
+    "jul": 7,
+    "aug": 8,
+    "sep": 9,
+    "sept": 9,
+    "oct": 10,
+    "nov": 11,
+    "dec": 12,
 }
 MONTH_WORD = "(?:" + "|".join(sorted(MONTHS, key=len, reverse=True)) + ")"
 
@@ -43,7 +64,10 @@ END_PATTERNS = [
     ("dissolution", re.compile(r"\bdissolv\w*\b", re.I)),
     ("estrangement", re.compile(r"\bestrang\w*\b", re.I)),
 ]
-REL_CUE = re.compile(r"\b(?:marri\w*|wife|wives|husband|spouse|lover|relationship|dating|dated|romance|couple|affair|partner)\b", re.I)
+REL_CUE = re.compile(
+    r"\b(?:marri\w*|wife|wives|husband|spouse|lover|relationship|dating|dated|romance|couple|affair|partner)\b",
+    re.I,
+)
 FORMATION_PATTERNS = [
     ("meet", re.compile(r"\bmet\b", re.I)),
     ("dating", re.compile(r"\bbegan\s+dating\b|\bstarted\s+dating\b", re.I)),
@@ -78,10 +102,17 @@ def api_json(params: dict) -> dict:
 
 def fetch_wikitext(title: str) -> str | None:
     try:
-        data = api_json({
-            "action": "query", "prop": "revisions", "rvprop": "content", "rvslots": "main",
-            "titles": title, "formatversion": 2, "format": "json",
-        })
+        data = api_json(
+            {
+                "action": "query",
+                "prop": "revisions",
+                "rvprop": "content",
+                "rvslots": "main",
+                "titles": title,
+                "formatversion": 2,
+                "format": "json",
+            }
+        )
     except Exception as exc:
         print("fetch failure", title, type(exc).__name__, flush=True)
         return None
@@ -89,7 +120,11 @@ def fetch_wikitext(title: str) -> str | None:
     if not pages or pages[0].get("missing") is not None or not pages[0].get("revisions"):
         return None
     rev = pages[0]["revisions"][0]
-    return (rev.get("slots", {}).get("main", {}) or {}).get("content") or rev.get("content") or rev.get("*")
+    return (
+        (rev.get("slots", {}).get("main", {}) or {}).get("content")
+        or rev.get("content")
+        or rev.get("*")
+    )
 
 
 def field(text: str, name: str) -> str | None:
@@ -108,9 +143,9 @@ def section(text: str, heading: str) -> str:
     m = re.search(rf"(?im)^==\s*{re.escape(heading)}\s*==\s*$", text or "")
     if not m:
         return ""
-    tail = text[m.end():]
+    tail = text[m.end() :]
     n = re.search(r"(?im)^==\s*[^=].*?\s*==\s*$", tail)
-    return tail[:n.start()] if n else tail
+    return tail[: n.start()] if n else tail
 
 
 def strip_templates(s: str) -> str:
@@ -156,9 +191,26 @@ def last_day(y: int, m: int) -> int:
 
 def date_candidates(sentence: str) -> list[dict]:
     specs = [
-        ("day", re.compile(rf"(?<!\w)(\d{{1,2}})\s+({MONTH_WORD})\s+(1[5-9]\d{{2}}|20\d{{2}})(?!\d)", re.I), "dmy"),
-        ("day", re.compile(rf"(?<!\w)({MONTH_WORD})\s+(\d{{1,2}})(?:st|nd|rd|th)?[,]?\s+(1[5-9]\d{{2}}|20\d{{2}})(?!\d)", re.I), "mdy"),
-        ("month", re.compile(rf"(?<!\w)({MONTH_WORD})\s+(1[5-9]\d{{2}}|20\d{{2}})(?!\d)", re.I), "my"),
+        (
+            "day",
+            re.compile(
+                rf"(?<!\w)(\d{{1,2}})\s+({MONTH_WORD})\s+(1[5-9]\d{{2}}|20\d{{2}})(?!\d)", re.I
+            ),
+            "dmy",
+        ),
+        (
+            "day",
+            re.compile(
+                rf"(?<!\w)({MONTH_WORD})\s+(\d{{1,2}})(?:st|nd|rd|th)?[,]?\s+(1[5-9]\d{{2}}|20\d{{2}})(?!\d)",
+                re.I,
+            ),
+            "mdy",
+        ),
+        (
+            "month",
+            re.compile(rf"(?<!\w)({MONTH_WORD})\s+(1[5-9]\d{{2}}|20\d{{2}})(?!\d)", re.I),
+            "my",
+        ),
         ("year", re.compile(r"(?<!\d)(1[5-9]\d{2}|20\d{2})(?!\d)"), "y"),
     ]
     occupied: list[tuple[int, int]] = []
@@ -178,11 +230,20 @@ def date_candidates(sentence: str) -> list[dict]:
                     mon, y = MONTHS[m.group(1).casefold()], int(m.group(2))
                     lo, hi = iso(y, mon, 1), iso(y, mon, last_day(y, mon))
                 else:
-                    y = int(m.group(1)); lo, hi = iso(y, 1, 1), iso(y, 12, 31)
+                    y = int(m.group(1))
+                    lo, hi = iso(y, 1, 1), iso(y, 12, 31)
             except (ValueError, KeyError):
                 continue
             occupied.append((m.start(), m.end()))
-            out.append({"span": [m.start(), m.end()], "text": m.group(0), "precision": precision, "interval_start": lo, "interval_end": hi})
+            out.append(
+                {
+                    "span": [m.start(), m.end()],
+                    "text": m.group(0),
+                    "precision": precision,
+                    "interval_start": lo,
+                    "interval_end": hi,
+                }
+            )
     return sorted(out, key=lambda x: x["span"][0])
 
 
@@ -211,7 +272,9 @@ def partner_match(sentence: str, other_name: str, other_title: str) -> bool:
     return bool(words & (name_tokens(other_name) | name_tokens(other_title)))
 
 
-def extract_sentence_evidence(source_id: int, source_title: str, text: str, other_id: int, other_name: str, other_title: str):
+def extract_sentence_evidence(
+    source_id: int, source_title: str, text: str, other_id: int, other_name: str, other_title: str
+):
     exits = []
     formations = []
     for sent in sentences(text):
@@ -227,52 +290,68 @@ def extract_sentence_evidence(source_id: int, source_title: str, text: str, othe
                     d = nearest_date((m.start(), m.end()), dates)
                     if not d:
                         continue
-                    exits.append({
+                    exits.append(
+                        {
+                            "source_adb_id": source_id,
+                            "source_title": source_title,
+                            "other_adb_id": other_id,
+                            "evidence_type": "adb_biography_same_sentence",
+                            "transition": "nonfatal_exit",
+                            "end_kind": end_kind,
+                            "matched_term": m.group(0),
+                            "precision": d["precision"],
+                            "interval_start": d["interval_start"],
+                            "interval_end": d["interval_end"],
+                            "date_text": d["text"],
+                            "sentence": sent,
+                        }
+                    )
+        for form_kind, rx in FORMATION_PATTERNS:
+            for m in rx.finditer(sent):
+                d = nearest_date((m.start(), m.end()), dates)
+                if not d:
+                    continue
+                formations.append(
+                    {
                         "source_adb_id": source_id,
                         "source_title": source_title,
                         "other_adb_id": other_id,
                         "evidence_type": "adb_biography_same_sentence",
-                        "transition": "nonfatal_exit",
-                        "end_kind": end_kind,
+                        "transition": "formation",
+                        "formation_kind": form_kind,
                         "matched_term": m.group(0),
                         "precision": d["precision"],
                         "interval_start": d["interval_start"],
                         "interval_end": d["interval_end"],
                         "date_text": d["text"],
                         "sentence": sent,
-                    })
-        for form_kind, rx in FORMATION_PATTERNS:
-            for m in rx.finditer(sent):
-                d = nearest_date((m.start(), m.end()), dates)
-                if not d:
-                    continue
-                formations.append({
-                    "source_adb_id": source_id,
-                    "source_title": source_title,
-                    "other_adb_id": other_id,
-                    "evidence_type": "adb_biography_same_sentence",
-                    "transition": "formation",
-                    "formation_kind": form_kind,
-                    "matched_term": m.group(0),
-                    "precision": d["precision"],
-                    "interval_start": d["interval_start"],
-                    "interval_end": d["interval_end"],
-                    "date_text": d["text"],
-                    "sentence": sent,
-                })
+                    }
+                )
+
     # Exact duplicates can arise from repeated regex paths; deduplicate deterministically.
     def dedupe(items, kind_key):
-        seen = set(); out = []
+        seen = set()
+        out = []
         for x in items:
-            key = (x[kind_key], x["interval_start"], x["interval_end"], x["source_adb_id"], x["sentence"])
+            key = (
+                x[kind_key],
+                x["interval_start"],
+                x["interval_end"],
+                x["source_adb_id"],
+                x["sentence"],
+            )
             if key not in seen:
-                seen.add(key); out.append(x)
+                seen.add(key)
+                out.append(x)
         return out
+
     return dedupe(exits, "end_kind"), dedupe(formations, "formation_kind")
 
 
 def overlap(a: dict, b: dict) -> bool:
-    return max(a["interval_start"], b["interval_start"]) <= min(a["interval_end"], b["interval_end"])
+    return max(a["interval_start"], b["interval_start"]) <= min(
+        a["interval_end"], b["interval_end"]
+    )
 
 
 def main() -> None:
@@ -305,21 +384,43 @@ def main() -> None:
 
     for p in v1["pairs"]:
         pk = p["pair_key"]
-        a = int(p["person_a"]["adb_id"]); b = int(p["person_b"]["adb_id"])
+        a = int(p["person_a"]["adb_id"])
+        b = int(p["person_b"]["adb_id"])
         ma, mb = people[a], people[b]
         exits = []
         forms = []
         if a in bios:
-            e, f = extract_sentence_evidence(a, ma["title"], bios[a], b, mb["name"], mb["title"]); exits += e; forms += f
+            e, f = extract_sentence_evidence(a, ma["title"], bios[a], b, mb["name"], mb["title"])
+            exits += e
+            forms += f
         if b in bios:
-            e, f = extract_sentence_evidence(b, mb["title"], bios[b], a, ma["name"], ma["title"]); exits += e; forms += f
+            e, f = extract_sentence_evidence(b, mb["title"], bios[b], a, ma["name"], ma["title"])
+            exits += e
+            forms += f
 
-        v1_exits = [x for x in p.get("merged_transitions", []) if x.get("transition") == "dissolution"]
-        v1_forms = [x for x in p.get("merged_transitions", []) if x.get("transition") == "formation"]
+        v1_exits = [
+            x for x in p.get("merged_transitions", []) if x.get("transition") == "dissolution"
+        ]
+        v1_forms = [
+            x for x in p.get("merged_transitions", []) if x.get("transition") == "formation"
+        ]
         v2p = v2_by_pair[pk]
         v2_exits = v2p.get("new_v2_nonfatal_exits", [])
-        baseline_exits = ([{"interval_start": x["interval_start"], "interval_end": x["interval_end"], "source": "v1"} for x in v1_exits] +
-                          [{"interval_start": x["interval_start"], "interval_end": x["interval_end"], "source": "v2"} for x in v2_exits])
+        baseline_exits = [
+            {
+                "interval_start": x["interval_start"],
+                "interval_end": x["interval_end"],
+                "source": "v1",
+            }
+            for x in v1_exits
+        ] + [
+            {
+                "interval_start": x["interval_start"],
+                "interval_end": x["interval_end"],
+                "source": "v2",
+            }
+            for x in v2_exits
+        ]
         had_baseline = bool(baseline_exits) or bool(p.get("reunion_sequence_count"))
 
         corroborating = []
@@ -327,7 +428,9 @@ def main() -> None:
         conflicts = []
         for x in exits:
             if any(overlap(x, y) for y in baseline_exits):
-                x = dict(x); x["status"] = "corroborates_higher_precedence_exit"; corroborating.append(x)
+                x = dict(x)
+                x["status"] = "corroborates_higher_precedence_exit"
+                corroborating.append(x)
             else:
                 new.append(x)
 
@@ -341,12 +444,15 @@ def main() -> None:
             for x in sorted(items, key=lambda z: (z["interval_start"], z["interval_end"])):
                 if any(overlap(x, g[0]) for g in groups):
                     for g in groups:
-                        if overlap(x, g[0]): g.append(x); break
+                        if overlap(x, g[0]):
+                            g.append(x)
+                            break
                 else:
                     groups.append([x])
             if len(groups) > 1:
                 for g in groups:
-                    for x in g: conflicted_ids.add(id(x))
+                    for x in g:
+                        conflicted_ids.add(id(x))
                 conflicts.append({"end_kind": kind, "nonoverlapping_groups": groups})
         usable_new = [x for x in new if id(x) not in conflicted_ids]
 
@@ -356,9 +462,31 @@ def main() -> None:
         if usable_new and not had_baseline:
             newly_endpoint_pairs += 1
 
-        all_exits = baseline_exits + [{"interval_start": x["interval_start"], "interval_end": x["interval_end"], "source": "v3_rung1_bio"} for x in usable_new]
-        all_forms = ([{"interval_start": x["interval_start"], "interval_end": x["interval_end"], "source": "v1", "kind": x.get("event_kind")} for x in v1_forms] +
-                     [{"interval_start": x["interval_start"], "interval_end": x["interval_end"], "source": "v3_rung1_bio", "kind": x.get("formation_kind")} for x in forms])
+        all_exits = baseline_exits + [
+            {
+                "interval_start": x["interval_start"],
+                "interval_end": x["interval_end"],
+                "source": "v3_rung1_bio",
+            }
+            for x in usable_new
+        ]
+        all_forms = [
+            {
+                "interval_start": x["interval_start"],
+                "interval_end": x["interval_end"],
+                "source": "v1",
+                "kind": x.get("event_kind"),
+            }
+            for x in v1_forms
+        ] + [
+            {
+                "interval_start": x["interval_start"],
+                "interval_end": x["interval_end"],
+                "source": "v3_rung1_bio",
+                "kind": x.get("formation_kind"),
+            }
+            for x in forms
+        ]
         reunions = []
         for ex in all_exits:
             for fm in all_forms:
@@ -372,16 +500,18 @@ def main() -> None:
         counts["usable_new_exit_evidence"] += len(usable_new)
         counts["corroborating_exit_evidence"] += len(corroborating)
         counts["conflict_groups"] += len(conflicts)
-        pair_results.append({
-            "pair_key": pk,
-            "had_v1_v2_endpoint": had_baseline,
-            "accepted_biography_exits": exits,
-            "usable_new_biography_exits": usable_new,
-            "corroborating_biography_exits": corroborating,
-            "accepted_biography_formations": forms,
-            "biography_conflicts": conflicts,
-            "inferred_reunion_sequences": reunions,
-        })
+        pair_results.append(
+            {
+                "pair_key": pk,
+                "had_v1_v2_endpoint": had_baseline,
+                "accepted_biography_exits": exits,
+                "usable_new_biography_exits": usable_new,
+                "corroborating_biography_exits": corroborating,
+                "accepted_biography_formations": forms,
+                "biography_conflicts": conflicts,
+                "inferred_reunion_sequences": reunions,
+            }
+        )
 
     out = {
         "status": "development_state_history_source_ladder_rung1",
@@ -408,7 +538,11 @@ def main() -> None:
         },
         "pairs": pair_results,
         "limitations": [
-            "ADB Biography prose is used only under the frozen same-sentence lexical rules; no cross-sentence pronoun resolution or manual interpretation is allowed.",
+            (
+                "ADB Biography prose is used only under the frozen same-s"
+                "entence lexical rules; no cross-sentence pronoun resolut"
+                "ion or manual interpretation is allowed."
+            ),
             "This remains ADB development data and is not independent validation.",
             "No astrology or Human Design features are calculated or inspected in Rung 1.",
         ],

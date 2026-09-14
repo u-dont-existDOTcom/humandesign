@@ -66,17 +66,140 @@ def patch_html_for_final_human_ui(html: str) -> str:
     html = _replace_function(
         html,
         "renderSources",
-        r'''function renderSources(u,r){const segments=u.task.exact_source_segments||[];const support=new Set(r.supporting_source_segment_ids||[]),counter=new Set(r.counterevidence_source_segment_ids||[]);const observed=r.state==="observed";const quoteName=i=>segments.length===1?"Exact quote":`Exact quote ${i+1}`;const quoteText=s=>s.exact_text||s.exact_participant_text||"";const cards=segments.map((s,i)=>`<article class="source"><div class="sourceid">${esc(quoteName(i))}</div><p>${esc(quoteText(s))}</p></article>`).join("");let provenance="";if(observed&&segments.length===1){const s=segments[0];provenance=`<div class="provenancenote"><input type="checkbox" hidden data-source="support" value="${esc(s.segment_id)}" checked>Because there is only one exact quote in this unit, it will be saved automatically as the source for your Yes answer. No extra citation decision is needed.</div>`}else if(observed&&segments.length>1){provenance=`<div class="provenancebox"><h3>Which quote(s) show the behavior you selected?</h3><p class="hint">This is only source bookkeeping. Select the exact quote(s) you actually relied on for your Yes answer.</p><div class="provenancelist">${segments.map((s,i)=>`<label><input type="checkbox" data-source="support" value="${esc(s.segment_id)}" ${support.has(s.segment_id)?"checked":""}> <span><span class="quotelabel">${esc(quoteName(i))}</span><span class="quotesnippet">${esc(quoteText(s))}</span></span></label>`).join("")}</div></div>`}if(observed&&segments.length){provenance+=`<details class="details provenancebox"><summary>Optional: does any quote contain an exception or conflicting detail?</summary><p class="hint">Use this only when some exact text genuinely limits, qualifies, or conflicts with the behavior you selected. Most units need nothing here.</p><div class="provenancelist">${segments.map((s,i)=>`<label><input type="checkbox" data-source="counter" value="${esc(s.segment_id)}" ${counter.has(s.segment_id)?"checked":""}> <span><span class="quotelabel">${esc(quoteName(i))}</span><span class="quotesnippet">${esc(quoteText(s))}</span></span></label>`).join("")}</div></details>`}$("sources").innerHTML=cards+provenance}''',
+        (
+            "function renderSources(u,r){const segments=u.task.exact_"
+            "source_segments||[];const support=new Set(r.supporting_s"
+            "ource_segment_ids||[]),counter=new Set(r.counterevidence"
+            '_source_segment_ids||[]);const observed=r.state==="obser'
+            'ved";const quoteName=i=>segments.length===1?"Exact quote'
+            '":`Exact quote ${i+1}`;const quoteText=s=>s.exact_text||'
+            's.exact_participant_text||"";const cards=segments.map((s'
+            ',i)=>`<article class="source"><div class="sourceid">${es'
+            "c(quoteName(i))}</div><p>${esc(quoteText(s))}</p></artic"
+            'le>`).join("");let provenance="";if(observed&&segments.l'
+            'ength===1){const s=segments[0];provenance=`<div class="p'
+            'rovenancenote"><input type="checkbox" hidden data-source'
+            '="support" value="${esc(s.segment_id)}" checked>Because '
+            "there is only one exact quote in this unit, it will be s"
+            "aved automatically as the source for your Yes answer. No"
+            " extra citation decision is needed.</div>`}else if(obser"
+            'ved&&segments.length>1){provenance=`<div class="provenan'
+            'cebox"><h3>Which quote(s) show the behavior you selected'
+            '?</h3><p class="hint">This is only source bookkeeping. S'
+            "elect the exact quote(s) you actually relied on for your"
+            ' Yes answer.</p><div class="provenancelist">${segments.m'
+            'ap((s,i)=>`<label><input type="checkbox" data-source="su'
+            'pport" value="${esc(s.segment_id)}" ${support.has(s.segm'
+            'ent_id)?"checked":""}> <span><span class="quotelabel">${'
+            'esc(quoteName(i))}</span><span class="quotesnippet">${es'
+            'c(quoteText(s))}</span></span></label>`).join("")}</div>'
+            "</div>`}if(observed&&segments.length){provenance+=`<deta"
+            'ils class="details provenancebox"><summary>Optional: doe'
+            "s any quote contain an exception or conflicting detail?<"
+            '/summary><p class="hint">Use this only when some exact t'
+            "ext genuinely limits, qualifies, or conflicts with the b"
+            "ehavior you selected. Most units need nothing here.</p><"
+            'div class="provenancelist">${segments.map((s,i)=>`<label'
+            '><input type="checkbox" data-source="counter" value="${e'
+            'sc(s.segment_id)}" ${counter.has(s.segment_id)?"checked"'
+            ':""}> <span><span class="quotelabel">${esc(quoteName(i))'
+            '}</span><span class="quotesnippet">${esc(quoteText(s))}<'
+            '/span></span></label>`).join("")}</div></details>`}$("so'
+            'urces").innerHTML=cards+provenance}'
+        ),
     )
     html = _replace_function(
         html,
         "episodeInfluence",
-        r'''function episodeInfluence(u,r){const rel=r.influence_relation||"none_reported";const inf=new Set(r.influence_source_segment_ids||[]);const segments=u.task.exact_source_segments||[];const quoteName=i=>segments.length===1?"Exact quote":`Exact quote ${i+1}`;const quoteText=s=>s.exact_text||s.exact_participant_text||"";return`<details class="section details"><summary>Optional: does the narrator explicitly say something influenced the behavior you selected?</summary><p class="hint">This is only about the behavior you coded above. Do not record a causal statement about some other action in the story.</p>${selectField("influenceRelation","Relation to the selected behavior",INFLUENCE,rel,false)}${rel!=="none_reported"?`<div class="field"><span class="labelish">Which exact quote states or establishes that relation?</span><div class="provenancelist">${segments.map((s,i)=>`<label><input type="checkbox" data-source="influence" value="${esc(s.segment_id)}" ${inf.has(s.segment_id)?"checked":""}> <span><span class="quotelabel">${esc(quoteName(i))}</span><span class="quotesnippet">${esc(quoteText(s))}</span></span></label>`).join("")}</div></div>`:""}</details>`}''',
+        (
+            "function episodeInfluence(u,r){const rel=r.influence_rel"
+            'ation||"none_reported";const inf=new Set(r.influence_sou'
+            "rce_segment_ids||[]);const segments=u.task.exact_source_"
+            'segments||[];const quoteName=i=>segments.length===1?"Exa'
+            'ct quote":`Exact quote ${i+1}`;const quoteText=s=>s.exac'
+            't_text||s.exact_participant_text||"";return`<details cla'
+            'ss="section details"><summary>Optional: does the narrato'
+            "r explicitly say something influenced the behavior you s"
+            'elected?</summary><p class="hint">This is only about the'
+            " behavior you coded above. Do not record a causal statem"
+            "ent about some other action in the story.</p>${selectFie"
+            'ld("influenceRelation","Relation to the selected behavio'
+            'r",INFLUENCE,rel,false)}${rel!=="none_reported"?`<div cl'
+            'ass="field"><span class="labelish">Which exact quote sta'
+            'tes or establishes that relation?</span><div class="prov'
+            'enancelist">${segments.map((s,i)=>`<label><input type="c'
+            'heckbox" data-source="influence" value="${esc(s.segment_'
+            'id)}" ${inf.has(s.segment_id)?"checked":""}> <span><span'
+            ' class="quotelabel">${esc(quoteName(i))}</span><span cla'
+            'ss="quotesnippet">${esc(quoteText(s))}</span></span></la'
+            'bel>`).join("")}</div></div>`:""}</details>`}'
+        ),
     )
     html = _replace_function(
         html,
         "renderObserved",
-        r'''function renderObserved(u,r){const host=$("observedFields");if(r.state!=="observed"){host.innerHTML='<div class="section"><p class="hint">No behavioral subcode is needed for this answer.</p></div>';return}const subMap=new Map((u.resolved?.subcodes||[]).map(s=>[s.subcode_id,s]));const selected=new Set(r.coded_values||[]);const values=u.obs.allowed_values||[];const relation=selected.size===1?"single":(r.value_relation||"");const relationHidden=selected.size<=1?" hidden":"";let html=`<div class="section"><h3>Which behavior does the exact source show?</h3><div class="values">${values.map(v=>{const s=subMap.get(v);const non=u.ext.non_action_values.includes(v);return`<label class="value"><input type="checkbox" data-value="${esc(v)}" ${selected.has(v)?"checked":""}><div><div><span class="wording">${esc(plainBehavior(s?.wording,v))}</span> <code>${esc(v)}</code></div></div>${non?'<span class="tag">requires extra evidence check</span>':""}</label>`}).join("")}</div><div class="relationrow${relationHidden}" id="relationRow"><span class="labelish">You selected more than one behavior. Did they happen in a known order?</span><select id="valueRelation"><option value="">Choose…</option><option value="single" hidden ${relation==="single"?"selected":""}>One behavior</option><option value="ordered_sequence" ${relation==="ordered_sequence"?"selected":""}>Yes — they happened in this order</option><option value="unordered_multiple" ${relation==="unordered_multiple"?"selected":""}>No / the order is not established</option></select></div><div class="ordered" id="orderedValues"></div></div>`;if(u.kind==="series")html+=seriesFields(r);else html+=episodeInfluence(u,r);html+=`<div class="section hidden" id="osField"><div class="field"><label for="osDescription">Describe the behavior that is not listed above</label><textarea id="osDescription">${esc(r.other_specified_description||"")}</textarea></div></div><div class="section hidden" id="nonActionField"><h3>Extra check required for a “did not act” code</h3><p class="hint">Only use a no-action value when all four questions below can be answered Yes from the supplied evidence. Otherwise choose a different behavior or Can't tell.</p><div class="gate">${["awareness","opportunity","feasibility","established_non_action"].map(k=>gateSelect(k,r.non_action_gate?.[k])).join("")}</div></div>`;host.innerHTML=html;host.querySelectorAll('[data-value]').forEach(x=>x.addEventListener("change",()=>{syncSpecial(u);const vals=selectedValues();const vr=$("valueRelation"),row=$("relationRow");if(vr&&row){if(vals.length===1){vr.value="single";row.classList.add("hidden")}else if(vals.length>1){if(vr.value==="single")vr.value="";row.classList.remove("hidden")}else{vr.value="";row.classList.add("hidden")}}renderOrdered()}));$("valueRelation")?.addEventListener("change",()=>renderOrdered());$("influenceRelation")?.addEventListener("change",()=>renderObserved(u,readForm(u)));if(r.value_relation==="ordered_sequence")orderOverrides.set(u.key,[...(r.coded_values||[])]);else orderOverrides.delete(u.key);syncSpecial(u);const initialVals=selectedValues(),vr=$("valueRelation"),row=$("relationRow");if(vr&&row){if(initialVals.length===1){vr.value="single";row.classList.add("hidden")}else if(initialVals.length>1){if(vr.value==="single")vr.value="";row.classList.remove("hidden")}else row.classList.add("hidden")}}''',
+        (
+            'function renderObserved(u,r){const host=$("observedField'
+            's");if(r.state!=="observed"){host.innerHTML=\'<div class='
+            '"section"><p class="hint">No behavioral subcode is neede'
+            "d for this answer.</p></div>';return}const subMap=new Ma"
+            "p((u.resolved?.subcodes||[]).map(s=>[s.subcode_id,s]));c"
+            "onst selected=new Set(r.coded_values||[]);const values=u"
+            ".obs.allowed_values||[];const relation=selected.size===1"
+            '?"single":(r.value_relation||"");const relationHidden=se'
+            'lected.size<=1?" hidden":"";let html=`<div class="sectio'
+            'n"><h3>Which behavior does the exact source show?</h3><d'
+            'iv class="values">${values.map(v=>{const s=subMap.get(v)'
+            ";const non=u.ext.non_action_values.includes(v);return`<l"
+            'abel class="value"><input type="checkbox" data-value="${'
+            'esc(v)}" ${selected.has(v)?"checked":""}><div><div><span'
+            ' class="wording">${esc(plainBehavior(s?.wording,v))}</sp'
+            "an> <code>${esc(v)}</code></div></div>${non?'<span class"
+            '="tag">requires extra evidence check</span>\':""}</label>'
+            '`}).join("")}</div><div class="relationrow${relationHidd'
+            'en}" id="relationRow"><span class="labelish">You selecte'
+            "d more than one behavior. Did they happen in a known ord"
+            'er?</span><select id="valueRelation"><option value="">Ch'
+            'oose…</option><option value="single" hidden ${relation=='
+            '="single"?"selected":""}>One behavior</option><option va'
+            'lue="ordered_sequence" ${relation==="ordered_sequence"?"'
+            'selected":""}>Yes — they happened in this order</option>'
+            '<option value="unordered_multiple" ${relation==="unorder'
+            'ed_multiple"?"selected":""}>No / the order is not establ'
+            'ished</option></select></div><div class="ordered" id="or'
+            'deredValues"></div></div>`;if(u.kind==="series")html+=se'
+            "riesFields(r);else html+=episodeInfluence(u,r);html+=`<d"
+            'iv class="section hidden" id="osField"><div class="field'
+            '"><label for="osDescription">Describe the behavior that '
+            'is not listed above</label><textarea id="osDescription">'
+            '${esc(r.other_specified_description||"")}</textarea></di'
+            'v></div><div class="section hidden" id="nonActionField">'
+            "<h3>Extra check required for a “did not act” code</h3><p"
+            ' class="hint">Only use a no-action value when all four q'
+            "uestions below can be answered Yes from the supplied evi"
+            "dence. Otherwise choose a different behavior or Can't te"
+            'll.</p><div class="gate">${["awareness","opportunity","f'
+            'easibility","established_non_action"].map(k=>gateSelect('
+            'k,r.non_action_gate?.[k])).join("")}</div></div>`;host.i'
+            "nnerHTML=html;host.querySelectorAll('[data-value]').forE"
+            'ach(x=>x.addEventListener("change",()=>{syncSpecial(u);c'
+            'onst vals=selectedValues();const vr=$("valueRelation"),r'
+            'ow=$("relationRow");if(vr&&row){if(vals.length===1){vr.v'
+            'alue="single";row.classList.add("hidden")}else if(vals.l'
+            'ength>1){if(vr.value==="single")vr.value="";row.classLis'
+            't.remove("hidden")}else{vr.value="";row.classList.add("h'
+            'idden")}}renderOrdered()}));$("valueRelation")?.addEvent'
+            'Listener("change",()=>renderOrdered());$("influenceRelat'
+            'ion")?.addEventListener("change",()=>renderObserved(u,re'
+            'adForm(u)));if(r.value_relation==="ordered_sequence")ord'
+            "erOverrides.set(u.key,[...(r.coded_values||[])]);else or"
+            "derOverrides.delete(u.key);syncSpecial(u);const initialV"
+            'als=selectedValues(),vr=$("valueRelation"),row=$("relati'
+            'onRow");if(vr&&row){if(initialVals.length===1){vr.value='
+            '"single";row.classList.add("hidden")}else if(initialVals'
+            '.length>1){if(vr.value==="single")vr.value="";row.classL'
+            'ist.remove("hidden")}else row.classList.add("hidden")}}'
+        ),
     )
 
     if _embedded_fragment(html) != embedded_before:
@@ -87,7 +210,7 @@ def patch_html_for_final_human_ui(html: str) -> str:
         raise ValueError("final UI patch exposes a source-segment identifier in static human UI")
     if 'option value="single" hidden' not in html:
         raise ValueError("final UI patch must preserve automatic single-value serialization")
-    if 'id="relationRow"' not in html or 'vals.length>1' not in html:
+    if 'id="relationRow"' not in html or "vals.length>1" not in html:
         raise ValueError("final UI patch is missing conditional multi-value relation behavior")
     return html
 

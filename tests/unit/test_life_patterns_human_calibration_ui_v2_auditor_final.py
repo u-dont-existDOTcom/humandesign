@@ -67,7 +67,7 @@ def test_single_behavior_relation_is_automatic_and_multiple_relation_is_conditio
     assert "Does the story say they happened in a particular order?" in observed
     assert "Yes — the story gives an order" in observed
     assert "Put the selected behaviors in the order they happened" in observed
-    assert 'selected.size>1' in observed
+    assert "selected.size>1" in observed
     assert 'vals.length===1?"single"' in read_form
     assert "If more than one behavior is selected, how do they relate?" not in observed
 
@@ -87,16 +87,16 @@ def test_optional_auxiliary_fields_are_not_human_tasks() -> None:
     assert "#advancedContext{display:none!important}" in patched
     assert "episodeInfluence(u,r)" not in observed
     assert "does any quote contain an exception" not in observed
-    assert 'base.counterevidence_source_segment_ids=[]' in read_form
+    assert "base.counterevidence_source_segment_ids=[]" in read_form
     assert 'base.influence_relation="none_reported"' in read_form
-    assert 'base.context_qualifiers=[]' in read_form
-    assert 'base.missingness_flags=[]' in read_form
+    assert "base.context_qualifiers=[]" in read_form
+    assert "base.missingness_flags=[]" in read_form
 
 
 def test_source_provenance_is_automatic_for_one_quote_and_readable_for_many() -> None:
     _, _, patched = _patched()
     sources = _function(patched, "renderSources")
-    assert 'segments.length===1' in sources
+    assert "segments.length===1" in sources
     assert 'class="machineonly"' in sources
     assert "Which quote(s) did you use for this Yes answer?" in sources
     assert "quotesnippet" in sources

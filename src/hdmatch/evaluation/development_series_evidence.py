@@ -144,16 +144,19 @@ class DevelopmentSeriesAnnotationResponse(DevelopmentSeriesModel):
     def state_contract_is_coherent(self) -> DevelopmentSeriesAnnotationResponse:
         if self.state == "observed":
             if not self.coded_values or self.value_relation is None:
-                raise ValueError("observed series evidence requires coded values and value relation")
+                raise ValueError(
+                    "observed series evidence requires coded values and value relation"
+                )
             if self.minimum_reported_occurrences is None:
                 raise ValueError("observed series evidence requires a reported recurrence floor")
             if not self.supporting_source_segment_ids:
                 raise ValueError("observed series evidence requires exact source-segment support")
             if self.value_relation == "single" and len(self.coded_values) != 1:
                 raise ValueError("single series value relation requires exactly one coded value")
-            if self.value_relation in {"ordered_sequence", "unordered_multiple"} and len(
-                self.coded_values
-            ) < 2:
+            if (
+                self.value_relation in {"ordered_sequence", "unordered_multiple"}
+                and len(self.coded_values) < 2
+            ):
                 raise ValueError("multi-value series relation requires at least two coded values")
         elif (
             self.coded_values
@@ -327,7 +330,8 @@ def development_series_response_errors(
         for value in response.coded_values:
             if not _value_allowed(value, definition):
                 errors.append(
-                    f"series annotation for {response.observable_id} contains value outside codebook"
+                    f"series annotation for {response.observable_id} contains "
+                    f"value outside codebook"
                 )
 
     extensions = {row.observable_id: row for row in procedure.payload.observable_extensions}

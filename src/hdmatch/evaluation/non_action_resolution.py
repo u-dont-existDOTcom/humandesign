@@ -67,9 +67,10 @@ class CompactNonActionClassification(NonActionResolutionModel):
             raise ValueError("compact ambiguous count does not match explicit IDs")
         if self.counts["total"] != self.source_subcode_count:
             raise ValueError("compact total count does not match source subcode count")
-        if sum(self.counts[key] for key in ("non_action", "not_non_action", "ambiguous")) != self.counts[
-            "total"
-        ]:
+        if (
+            sum(self.counts[key] for key in ("non_action", "not_non_action", "ambiguous"))
+            != self.counts["total"]
+        ):
             raise ValueError("compact category counts do not sum to total")
         return self
 
@@ -300,7 +301,10 @@ def ambiguity_resolution_errors(
 ) -> tuple[str, ...]:
     errors = list(compact_classification_errors(compact, source=source))
     digest = sha256_json(artifact.payload)
-    if artifact.resolution_sha256 != digest or artifact.resolution_id != f"LPAR-{digest[:20].upper()}":
+    if (
+        artifact.resolution_sha256 != digest
+        or artifact.resolution_id != f"LPAR-{digest[:20].upper()}"
+    ):
         errors.append("ambiguity-resolution artifact failed content-address verification")
     if (
         artifact.payload.reconciled_source_artifact_id != source.artifact_id
@@ -336,15 +340,19 @@ def ambiguity_resolution_errors(
     for decision in artifact.payload.decisions:
         if (decision.observable_id, decision.original_subcode_id) not in source_pairs:
             errors.append(
-                f"ambiguity resolution references unknown original: {decision.observable_id}/{decision.original_subcode_id}"
+                f"ambiguity resolution references unknown original: "
+                f"{decision.observable_id}/{decision.original_subcode_id}"
             )
         for replacement in decision.replacements:
             if replacement.subcode_id in replacement_ids:
-                errors.append(f"ambiguity resolution repeats replacement ID: {replacement.subcode_id}")
+                errors.append(
+                    f"ambiguity resolution repeats replacement ID: {replacement.subcode_id}"
+                )
             replacement_ids.add(replacement.subcode_id)
             if replacement.subcode_id in unaffected_ids:
                 errors.append(
-                    f"ambiguity resolution replacement collides with unaffected source ID: {replacement.subcode_id}"
+                    f"ambiguity resolution replacement collides with unaffected "
+                    f"source ID: {replacement.subcode_id}"
                 )
     return tuple(dict.fromkeys(errors))
 
@@ -391,7 +399,9 @@ def build_resolved_codebook_view_v2(
                         wording=subcode.description,
                         minimum_evidence=observable.minimum_evidence_requirements,
                         classification=(
-                            "non_action" if subcode.subcode_id in non_action_ids else "not_non_action"
+                            "non_action"
+                            if subcode.subcode_id in non_action_ids
+                            else "not_non_action"
                         ),
                         source_original_subcode_id=subcode.subcode_id,
                         resolution_applied=False,
@@ -449,7 +459,9 @@ def write_ambiguity_resolution_artifact(
     return write_new_bytes(path, canonical_json_bytes(artifact), mode=0o400)
 
 
-def write_resolved_codebook_view_v2(path: str | Path, artifact: ResolvedCodebookViewArtifactV2) -> Path:
+def write_resolved_codebook_view_v2(
+    path: str | Path, artifact: ResolvedCodebookViewArtifactV2
+) -> Path:
     digest = sha256_json(artifact.payload)
     if artifact.view_sha256 != digest or artifact.view_id != f"LPRV-{digest[:20].upper()}":
         raise ValueError("resolved codebook view failed content-address verification")

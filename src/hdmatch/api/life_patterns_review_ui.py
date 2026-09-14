@@ -5,7 +5,8 @@ from .life_patterns_coach_ui import COACH_SCRIPT
 from .life_patterns_freeze_ui import FREEZE_SCRIPT
 from .life_patterns_voice_ui import VOICE_SCRIPT
 
-REVIEW_SCRIPT = r'''<script>
+REVIEW_SCRIPT = (
+    r"""<script>
 (function(){
   for(const note of document.querySelectorAll('#intro .note')){if(note.textContent.includes('Voice is planned next.'))note.textContent='Voice input is available: record an answer, review and correct the transcript, then send it. Typed and voice answers can be mixed in the same interview.'}
   const reviewRoot=document.createElement('div');reviewRoot.id='episodeReviews';reviewRoot.className='card hidden';
@@ -59,4 +60,8 @@ REVIEW_SCRIPT = r'''<script>
   const chat=document.getElementById('chat');if(chat)observer.observe(chat,{childList:true,subtree:true});
   window.addEventListener('focus',refreshReviews);setTimeout(refreshReviews,300);
 })();
-</script>''' + VOICE_SCRIPT + COACH_SCRIPT + FREEZE_SCRIPT
+</script>"""
+    + VOICE_SCRIPT
+    + COACH_SCRIPT
+    + FREEZE_SCRIPT
+)

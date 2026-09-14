@@ -54,7 +54,10 @@ def test_plain_layer_removes_ambiguous_source_and_influence_copy() -> None:
     assert "Narrator influence / precedence" not in patched
     assert "Use this quote as evidence for the behavior I selected" in patched
     assert "This quote qualifies or goes against my selected behavior" in patched
-    assert "Optional: does the narrator explicitly say something influenced the behavior you selected?" in patched
+    assert (
+        "Optional: does the narrator explicitly say something influenced the behavior you selected?"
+        in patched
+    )
     assert "Do not record a causal statement about some other action in the story" in patched
 
 

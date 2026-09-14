@@ -1,8 +1,9 @@
 """Synthetic-only checks for the read-only intake audit; no participant data."""
+
 import copy
-from pathlib import Path
 import tempfile
 import unittest
+from pathlib import Path
 
 from audit_v8_pair import BASE_SCHEMA, REPAIR_SCHEMA, audit, load
 
@@ -11,31 +12,57 @@ def fixture():
     base = {
         "schema_version": BASE_SCHEMA,
         "record_status": "complete_after_pattern_review",
-        "pattern_claims": [{
-            "pattern_id": "PAT-TEST", "support_state": "multiple_episodes",
-            "supporting_episode_ids": ["EP-A", "EP-B"],
-            "supporting_series_report_ids": ["SER-A"], "counterexample_episode_ids": [],
-            "source_turn_ids": ["T1"]}],
+        "pattern_claims": [
+            {
+                "pattern_id": "PAT-TEST",
+                "support_state": "multiple_episodes",
+                "supporting_episode_ids": ["EP-A", "EP-B"],
+                "supporting_series_report_ids": ["SER-A"],
+                "counterexample_episode_ids": [],
+                "source_turn_ids": ["T1"],
+            }
+        ],
         "series_reports": [{"series_id": "SER-A", "source_turn_ids": ["T1"]}],
-        "episodes": [{"episode_id": key, "linked_pattern_ids": ["PAT-TEST"],
-                      "source_turn_ids": ["T1"]} for key in ("EP-A", "EP-B")],
-        "transcript_source_provenance": {"source_turn_index": {"T1": "SYNTHETIC"}}
+        "episodes": [
+            {"episode_id": key, "linked_pattern_ids": ["PAT-TEST"], "source_turn_ids": ["T1"]}
+            for key in ("EP-A", "EP-B")
+        ],
+        "transcript_source_provenance": {"source_turn_index": {"T1": "SYNTHETIC"}},
     }
     repair = {
-        "schema_version": REPAIR_SCHEMA, "original_schema_version": BASE_SCHEMA,
+        "schema_version": REPAIR_SCHEMA,
+        "original_schema_version": BASE_SCHEMA,
         "original_record_status": base["record_status"],
-        "question_log": [{"question_id": "Q1", "target_pattern_id": "PAT-TEST",
-                          "response_reference": "R1"}],
-        "repair_responses": [{"response_id": "R1", "exact_text": "SYNTHETIC"},
-                             {"response_id": "R2", "exact_text": "yes"}],
+        "question_log": [
+            {"question_id": "Q1", "target_pattern_id": "PAT-TEST", "response_reference": "R1"}
+        ],
+        "repair_responses": [
+            {"response_id": "R1", "exact_text": "SYNTHETIC"},
+            {"response_id": "R2", "exact_text": "yes"},
+        ],
         "recovered_transcript_turns": [{"recovered_turn_id": "RC1", "original_local_id": "T1"}],
-        "participant_confirmed_account_changes": [{"target_pattern_id": "PAT-TEST",
-            "review_reference": "REV1", "approval_reference": "R2"}],
-        "post_review_added_evidence": [{"added_evidence_id": "EV1", "target_pattern_id": "PAT-TEST",
-            "source_reference": "R1", "evidence_type": "concrete_episode"}],
-        "proposed_metadata_corrections": [], "outstanding_issues": [],
-        "review_record": {"review_id": "REV1", "participant_response_reference": "R2",
-                          "participant_response": "yes"}
+        "participant_confirmed_account_changes": [
+            {
+                "target_pattern_id": "PAT-TEST",
+                "review_reference": "REV1",
+                "approval_reference": "R2",
+            }
+        ],
+        "post_review_added_evidence": [
+            {
+                "added_evidence_id": "EV1",
+                "target_pattern_id": "PAT-TEST",
+                "source_reference": "R1",
+                "evidence_type": "concrete_episode",
+            }
+        ],
+        "proposed_metadata_corrections": [],
+        "outstanding_issues": [],
+        "review_record": {
+            "review_id": "REV1",
+            "participant_response_reference": "R2",
+            "participant_response": "yes",
+        },
     }
     return base, repair
 
@@ -79,8 +106,10 @@ class AuditTests(unittest.TestCase):
 
     def test_question_budget(self):
         base, repair = fixture()
-        repair["question_log"] = [{"question_id": f"Q{i}", "target_pattern_id": "PAT-TEST",
-                                  "response_reference": "R1"} for i in range(5)]
+        repair["question_log"] = [
+            {"question_id": f"Q{i}", "target_pattern_id": "PAT-TEST", "response_reference": "R1"}
+            for i in range(5)
+        ]
         self.assertFalse(audit(base, repair)["structural_check_passed"])
 
     def test_label_mismatch_is_flagged_not_rewritten(self):

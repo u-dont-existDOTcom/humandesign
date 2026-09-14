@@ -190,7 +190,10 @@ def detect_revision_signals(
                     signal_type="directional_asymmetry",
                     value=gap,
                     supporting_case_count=min(left.scored_records, right.scored_records),
-                    notes="Predictive performance differs materially by actor direction; pooled treatment may be hiding a failure.",
+                    notes=(
+                        "Predictive performance differs materially by actor direc"
+                        "tion; pooled treatment may be hiding a failure."
+                    ),
                 )
             )
 
@@ -234,7 +237,9 @@ def _summarize_group(
         hit_rate_scored=hit_rate,
         miss_rate_scored=miss_rate,
         mean_classifier_confidence=(sum(confidences) / len(confidences) if confidences else None),
-        mean_absolute_ordinal_error=(sum(ordinal_errors) / len(ordinal_errors) if ordinal_errors else None),
+        mean_absolute_ordinal_error=(
+            sum(ordinal_errors) / len(ordinal_errors) if ordinal_errors else None
+        ),
         context_counts=dict(sorted(contexts.items())),
         observability_limit_counts=dict(sorted(limits.items())),
         question_counts=dict(sorted(questions.items())),

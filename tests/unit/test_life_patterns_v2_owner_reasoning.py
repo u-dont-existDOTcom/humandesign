@@ -25,7 +25,9 @@ def test_unsupported_comparison_is_intercepted(monkeypatch) -> None:
             "acceptable": False,
             "issue_type": "unsupported_comparison",
             "repair_question": "When B is similar, does A still change the response?",
-            "internal_reason": "The record lists both factors but does not compare their importance.",
+            "internal_reason": (
+                "The record lists both factors but does not compare their importance."
+            ),
         }
 
     monkeypatch.setattr(PatternFirstOpenAIConversationModel, "_conversation_call_json", fake_call)
@@ -94,14 +96,18 @@ class RejectionReasoningModel:
 
     def plan_turn(self, **kwargs) -> ConversationMove:
         return ConversationMove(
-            reply="I may have ranked two factors the examples never compared. Can we test that directly?",
+            reply=(
+                "I may have ranked two factors the examples never compare"
+                "d. Can we test that directly?"
+            ),
             move_type="follow_up",
         )
 
 
 def test_rejected_synthesis_uses_model_led_diagnosis() -> None:
     session = ReasoningRefinablePatternSession(
-        session_id="OWNER-TEST", model=RejectionReasoningModel()  # type: ignore[arg-type]
+        session_id="OWNER-TEST",
+        model=RejectionReasoningModel(),  # type: ignore[arg-type]
     )
     session.core.active_proposal_id = "PROP-TEST"
 
@@ -136,7 +142,8 @@ class BoundaryAwareModel:
 def test_reply_does_not_open_synthesis_gate_when_boundary_is_not_semantically_resolved() -> None:
     model = BoundaryAwareModel()
     session = ReasoningRefinablePatternSession(
-        session_id="OWNER-TEST", model=model  # type: ignore[arg-type]
+        session_id="OWNER-TEST",
+        model=model,  # type: ignore[arg-type]
     )
     session.pattern_focus_established = True
     session.conversation.append(

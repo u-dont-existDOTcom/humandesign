@@ -284,8 +284,7 @@ def verify_human_handoff_for_first_pass_v2(
             != receipt_payload.get("calibration_manifest_id")
             or packet_payload.calibration_manifest_sha256
             != receipt_payload.get("calibration_manifest_sha256")
-            or packet_payload.coding_manual_sha256
-            != receipt_payload.get("coding_manual_sha256")
+            or packet_payload.coding_manual_sha256 != receipt_payload.get("coding_manual_sha256")
             or packet_payload.recurrence_policy_sha256
             != receipt_payload.get("recurrence_policy_sha256")
             or packet_payload.instruction_prompt_sha256
@@ -505,8 +504,7 @@ def freeze_human_first_pass_from_handoff_v2(
         if errors:
             raise ValueError(
                 "invalid human episode response "
-                f"{episode_response.task_id}/{episode_response.observable_id}: "
-                + "; ".join(errors)
+                f"{episode_response.task_id}/{episode_response.observable_id}: " + "; ".join(errors)
             )
 
     normalized_series = normalize_development_series_responses_v2_jsonl(raw_series_output)
@@ -535,8 +533,7 @@ def freeze_human_first_pass_from_handoff_v2(
         if errors:
             raise ValueError(
                 "invalid human series response "
-                f"{series_response.task_id}/{series_response.observable_id}: "
-                + "; ".join(errors)
+                f"{series_response.task_id}/{series_response.observable_id}: " + "; ".join(errors)
             )
 
     episode_artifact = _build_first_pass_artifact(
@@ -659,8 +656,6 @@ def human_first_pass_freeze_receipt_v2_integrity_errors(
     receipt: DevelopmentHumanFirstPassFreezeReceiptArtifactV2,
 ) -> tuple[str, ...]:
     digest = sha256_json(receipt.payload)
-    if receipt.receipt_sha256 != digest or receipt.receipt_id != (
-        f"LPHFR2-{digest[:20].upper()}"
-    ):
+    if receipt.receipt_sha256 != digest or receipt.receipt_id != (f"LPHFR2-{digest[:20].upper()}"):
         return ("human first-pass freeze receipt v2 failed content-address verification",)
     return ()

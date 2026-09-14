@@ -10,7 +10,6 @@ from hdmatch.evaluation.development_private_preparation import (
     private_preparation_safe_summary,
 )
 
-
 NOW = datetime(2026, 9, 6, 21, 30, tzinfo=UTC)
 
 

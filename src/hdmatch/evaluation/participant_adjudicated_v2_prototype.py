@@ -33,11 +33,14 @@ _CALLBACKS = TheoryBlindSemanticCallbacksV2(
         validator_sha256="f" * 64,
     ),
     asserts_real_world_nonoccurrence=lambda fact: fact.proposition.startswith("NONOCCURRENCE:"),
-    grounding_supports_current_proposition=lambda proposal, _link, facts: bool(facts)
-    and proposal.proposition in {
-        "I prepare before complex work.",
-        "I plan before complex work.",
-    },
+    grounding_supports_current_proposition=lambda proposal, _link, facts: (
+        bool(facts)
+        and proposal.proposition
+        in {
+            "I prepare before complex work.",
+            "I plan before complex work.",
+        }
+    ),
 )
 
 
@@ -126,13 +129,9 @@ class OwnerPrototypeSessionV2:
             }
         )
 
-    def propose_pattern(
-        self, wording: str = "I prepare before complex work."
-    ) -> PatternProposalV2:
+    def propose_pattern(self, wording: str = "I prepare before complex work.") -> PatternProposalV2:
         current = tuple(
-            row
-            for row in self.record.episode_facts
-            if row.fact_id not in self.unsupported_fact_ids
+            row for row in self.record.episode_facts if row.fact_id not in self.unsupported_fact_ids
         )
         if not current:
             raise ValueError("a usable accepted fact is required before proposing a pattern")
@@ -149,9 +148,7 @@ class OwnerPrototypeSessionV2:
             evidence_link_ids=(link_id,),
             grounding_evidence_link_ids=(link_id,),
             previous_proposal_id=(
-                f"PROPOSAL-{self._proposal_revision - 1}"
-                if self._proposal_revision
-                else None
+                f"PROPOSAL-{self._proposal_revision - 1}" if self._proposal_revision else None
             ),
         )
         link = PatternEvidenceLinkV2(
@@ -214,9 +211,7 @@ class OwnerPrototypeSessionV2:
         freeze = freeze_life_patterns_record_v2(self.record, callbacks=callbacks)
         projection = build_adapter_projection_v2(freeze, callbacks=callbacks)
         resolved = (
-            freeze.payload.resolved_patterns[-1]
-            if freeze.payload.resolved_patterns
-            else None
+            freeze.payload.resolved_patterns[-1] if freeze.payload.resolved_patterns else None
         )
         return {
             "status": resolved.status if resolved else "provisional",
@@ -274,9 +269,9 @@ def run_interactive_owner_demo(
     decision = input_fn("Pattern decision [accept/revise/reject/unresolved]: ").strip().lower()
     if decision == "revise":
         wording = input_fn("Participant-approved wording: ").strip()
-        grounding = input_fn(
-            "Does the episode evidence support this wording? [yes/no]: "
-        ).strip().lower()
+        grounding = (
+            input_fn("Does the episode evidence support this wording? [yes/no]: ").strip().lower()
+        )
         if grounding != "yes":
             raise ValueError("explicit development grounding confirmation is required")
         session.confirm_grounding(wording)

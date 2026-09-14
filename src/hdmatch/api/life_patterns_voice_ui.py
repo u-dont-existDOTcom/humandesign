@@ -1,7 +1,7 @@
 # ruff: noqa: E501
 """Push-to-talk browser controls for the Life Patterns conversational UI."""
 
-VOICE_SCRIPT = r'''<script>
+VOICE_SCRIPT = r"""<script>
 (function(){
   if(!navigator.mediaDevices||!window.MediaRecorder)return;
   const sendButton=document.getElementById('send');const messageBox=document.getElementById('message');if(!sendButton||!messageBox)return;
@@ -18,4 +18,4 @@ VOICE_SCRIPT = r'''<script>
   messageBox.addEventListener('input',()=>{if(!messageBox.value.trim())voicePending=false});
   const chat=document.getElementById('chat');if(chat){const observer=new MutationObserver(mutations=>{if(!readToggle.checked)return;for(const mutation of mutations){for(const node of mutation.addedNodes){if(node.nodeType===1&&node.classList?.contains('ai')){const text=node.lastElementChild?.textContent||'';speak(text)}}}});observer.observe(chat,{childList:true})}
 })();
-</script>'''
+</script>"""

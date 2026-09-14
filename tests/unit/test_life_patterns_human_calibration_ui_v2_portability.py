@@ -56,6 +56,6 @@ def test_fallback_preserves_native_webcrypto_preference_and_standard_sha256_iv()
     fallback = portable.PORTABLE_SHA256_JS
 
     assert "globalThis.crypto&&crypto.subtle" in fallback
-    assert "crypto.subtle.digest(\"SHA-256\",bytes)" in fallback
+    assert 'crypto.subtle.digest("SHA-256",bytes)' in fallback
     assert "1779033703,3144134277,1013904242,2773480762" in fallback
     assert "function sha256Fallback" in fallback

@@ -4,6 +4,7 @@
 Spec: reference/research/adb_exact_pair_state_history_recovery_freeze_v2.md
 No astrology/HD features are calculated or inspected.
 """
+
 from __future__ import annotations
 
 import hashlib
@@ -41,10 +42,17 @@ def api_json(params: dict) -> dict:
 
 def fetch_wikitext(title: str) -> str | None:
     try:
-        data = api_json({
-            "action": "query", "prop": "revisions", "rvprop": "content", "rvslots": "main",
-            "titles": title, "formatversion": 2, "format": "json",
-        })
+        data = api_json(
+            {
+                "action": "query",
+                "prop": "revisions",
+                "rvprop": "content",
+                "rvslots": "main",
+                "titles": title,
+                "formatversion": 2,
+                "format": "json",
+            }
+        )
     except Exception as exc:
         print("fetch failure", title, type(exc).__name__, flush=True)
         return None
@@ -52,7 +60,11 @@ def fetch_wikitext(title: str) -> str | None:
     if not pages or pages[0].get("missing") is not None or not pages[0].get("revisions"):
         return None
     rev = pages[0]["revisions"][0]
-    return (rev.get("slots", {}).get("main", {}) or {}).get("content") or rev.get("content") or rev.get("*")
+    return (
+        (rev.get("slots", {}).get("main", {}) or {}).get("content")
+        or rev.get("content")
+        or rev.get("*")
+    )
 
 
 def field(text: str, name: str) -> str | None:
@@ -72,9 +84,9 @@ def section(text: str, heading: str) -> str:
     m = re.search(rf"(?im)^==\s*{re.escape(heading)}\s*==\s*$", text or "")
     if not m:
         return ""
-    tail = text[m.end():]
+    tail = text[m.end() :]
     n = re.search(r"(?im)^==\s*[^=].*?\s*==\s*$", tail)
-    return tail[:n.start()] if n else tail
+    return tail[: n.start()] if n else tail
 
 
 def template_blocks(text: str, template_name: str) -> list[str]:
@@ -124,7 +136,8 @@ def parse_event_interval(sevdate: str | None, event_string: str | None = None):
         y, mo, d = map(int, m.groups())
         if y and mo and d:
             try:
-                z = iso(y, mo, d); return z, z, "day"
+                z = iso(y, mo, d)
+                return z, z, "day"
             except ValueError:
                 return None
         if y and mo:
@@ -139,7 +152,8 @@ def parse_event_interval(sevdate: str | None, event_string: str | None = None):
     if m:
         mo, d, y = map(int, m.groups())
         try:
-            z = iso(y, mo, d); return z, z, "day"
+            z = iso(y, mo, d)
+            return z, z, "day"
         except ValueError:
             return None
     m = re.fullmatch(r"(\d{1,2})/(\d{4})", s)
@@ -150,7 +164,8 @@ def parse_event_interval(sevdate: str | None, event_string: str | None = None):
         except ValueError:
             return None
     if re.fullmatch(r"\d{4}", s):
-        y = int(s); return iso(y, 1, 1), iso(y, 12, 31), "year"
+        y = int(s)
+        return iso(y, 1, 1), iso(y, 12, 31), "year"
     return None
 
 
@@ -162,14 +177,16 @@ def structured_event_intervals(wt: str) -> list[dict]:
         if not dt:
             continue
         lo, hi, precision = dt
-        out.append({
-            "interval_start": lo,
-            "interval_end": hi,
-            "precision": precision,
-            "code_id": f.get("CodeID"),
-            "sevcode": f.get("sevcode"),
-            "event_notes": f.get("EventNotes"),
-        })
+        out.append(
+            {
+                "interval_start": lo,
+                "interval_end": hi,
+                "precision": precision,
+                "code_id": f.get("CodeID"),
+                "sevcode": f.get("sevcode"),
+                "event_notes": f.get("EventNotes"),
+            }
+        )
     return out
 
 
@@ -208,9 +225,14 @@ def main() -> None:
     pair_results = []
 
     for p in pairs:
-        a = int(p["person_a"]["adb_id"]); b = int(p["person_b"]["adb_id"])
-        explicit_diss = [x for x in p.get("merged_transitions", []) if x.get("transition") == "dissolution"]
-        formations = [x for x in p.get("merged_transitions", []) if x.get("transition") == "formation"]
+        a = int(p["person_a"]["adb_id"])
+        b = int(p["person_b"]["adb_id"])
+        explicit_diss = [
+            x for x in p.get("merged_transitions", []) if x.get("transition") == "dissolution"
+        ]
+        formations = [
+            x for x in p.get("merged_transitions", []) if x.get("transition") == "formation"
+        ]
         inferred = []
         corroborating = []
         excluded = []
@@ -224,7 +246,14 @@ def main() -> None:
             lb = life.get(b, {}).get("latest_structured_event_start")
             rule_b = bool(la and lb and la > end_hi and lb > end_hi)
             if not (rule_a or rule_b):
-                excluded.append({"relationship_range": r, "reason": "neither_rule_A_nor_rule_B", "later_a": la, "later_b": lb})
+                excluded.append(
+                    {
+                        "relationship_range": r,
+                        "reason": "neither_rule_A_nor_rule_B",
+                        "later_a": la,
+                        "later_b": lb,
+                    }
+                )
                 continue
 
             item = {
@@ -238,11 +267,17 @@ def main() -> None:
                 "later_life_a": la,
                 "later_life_b": lb,
             }
-            if rule_a and rule_b: rule_counts["A_and_B"] += 1
-            elif rule_a: rule_counts["A_only"] += 1
-            else: rule_counts["B_only"] += 1
+            if rule_a and rule_b:
+                rule_counts["A_and_B"] += 1
+            elif rule_a:
+                rule_counts["A_only"] += 1
+            else:
+                rule_counts["B_only"] += 1
 
-            if any(max(d["interval_start"], end_lo) <= min(d["interval_end"], end_hi) for d in explicit_diss):
+            if any(
+                max(d["interval_start"], end_lo) <= min(d["interval_end"], end_hi)
+                for d in explicit_diss
+            ):
                 item["status"] = "corroborates_explicit_v1_dissolution"
                 corroborating.append(item)
                 continue
@@ -262,24 +297,53 @@ def main() -> None:
         if inferred and not had_v1_endpoint:
             new_endpoint_pairs += 1
 
-        exits = [{"interval_start": x["interval_start"], "interval_end": x["interval_end"], "source": "v1_explicit"} for x in explicit_diss]
-        exits += [{"interval_start": x["interval_start"], "interval_end": x["interval_end"], "source": "v2_range"} for x in inferred]
+        exits = [
+            {
+                "interval_start": x["interval_start"],
+                "interval_end": x["interval_end"],
+                "source": "v1_explicit",
+            }
+            for x in explicit_diss
+        ]
+        exits += [
+            {
+                "interval_start": x["interval_start"],
+                "interval_end": x["interval_end"],
+                "source": "v2_range",
+            }
+            for x in inferred
+        ]
         reunions = []
         for ex in exits:
             for f in formations:
                 if f["interval_start"] > ex["interval_end"]:
-                    reunions.append({"exit": ex, "later_formation": {k: f.get(k) for k in ("event_kind", "precision", "interval_start", "interval_end")}})
+                    reunions.append(
+                        {
+                            "exit": ex,
+                            "later_formation": {
+                                k: f.get(k)
+                                for k in (
+                                    "event_kind",
+                                    "precision",
+                                    "interval_start",
+                                    "interval_end",
+                                )
+                            },
+                        }
+                    )
         if reunions:
             reunion_pairs += 1
 
-        pair_results.append({
-            "pair_key": p["pair_key"],
-            "had_v1_explicit_endpoint": had_v1_endpoint,
-            "new_v2_nonfatal_exits": inferred,
-            "corroborating_range_exits": corroborating,
-            "excluded_range_exits": excluded,
-            "v2_reunion_sequences": reunions,
-        })
+        pair_results.append(
+            {
+                "pair_key": p["pair_key"],
+                "had_v1_explicit_endpoint": had_v1_endpoint,
+                "new_v2_nonfatal_exits": inferred,
+                "corroborating_range_exits": corroborating,
+                "excluded_range_exits": excluded,
+                "v2_reunion_sequences": reunions,
+            }
+        )
 
     out = {
         "status": "development_data_recovery_augmentation",
@@ -306,8 +370,15 @@ def main() -> None:
         "pairs": pair_results,
         "limitations": [
             "ADB development source only; not independent validation.",
-            "Rule B uses structured dated events only as conservative proof that both partners were alive after the relationship-range endpoint.",
-            "Range-derived exits remain full-year interval-censored and are not exact breakup dates.",
+            (
+                "Rule B uses structured dated events only as conservative"
+                " proof that both partners were alive after the relations"
+                "hip-range endpoint."
+            ),
+            (
+                "Range-derived exits remain full-year interval-censored a"
+                "nd are not exact breakup dates."
+            ),
             "No astrology or Human Design features are calculated or inspected in V2.",
         ],
     }

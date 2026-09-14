@@ -20,9 +20,7 @@ def _partner_a() -> PartnershipSnapshot:
         authority=Authority.SPLENIC,
         profile="2/4",
         definition=Definition.SPLIT,
-        cardinals=(
-            CardinalActivation(CelestialBody.SUN, "personality", 10, 2),
-        ),
+        cardinals=(CardinalActivation(CelestialBody.SUN, "personality", 10, 2),),
     )
 
 
@@ -36,9 +34,7 @@ def _partner_b(*, extra_gate_15: bool = False) -> PartnershipSnapshot:
         authority=Authority.SACRAL,
         profile="6/3",
         definition=Definition.SPLIT,
-        cardinals=(
-            CardinalActivation(CelestialBody.NORTH_NODE, "personality", 10, 2),
-        ),
+        cardinals=(CardinalActivation(CelestialBody.NORTH_NODE, "personality", 10, 2),),
     )
 
 

@@ -92,15 +92,19 @@ class BlindDevelopmentPacketPayloadV2(BlindDevelopmentPacketV2Model):
     def packet_contract_is_coherent(self) -> BlindDevelopmentPacketPayloadV2:
         if self.assigned_unit_count != sum(len(task.observable_ids) for task in self.tasks):
             raise ValueError("blind packet v2 assigned unit count disagrees with task observables")
-        expected_type = "DevelopmentEpisodeCodingTask" if self.evidence_kind == "episode" else (
-            "DevelopmentSeriesCodingTask"
+        expected_type = (
+            "DevelopmentEpisodeCodingTask"
+            if self.evidence_kind == "episode"
+            else ("DevelopmentSeriesCodingTask")
         )
         if any(type(task).__name__ != expected_type for task in self.tasks):
             raise ValueError(f"{self.evidence_kind} blind packet v2 contains wrong task kind")
         if self.coder_role == "human_calibration":
             if self.calibration_manifest_id is None or self.calibration_manifest_sha256 is None:
                 raise ValueError("human calibration packet v2 requires frozen calibration manifest")
-        elif self.calibration_manifest_id is not None or self.calibration_manifest_sha256 is not None:
+        elif (
+            self.calibration_manifest_id is not None or self.calibration_manifest_sha256 is not None
+        ):
             raise ValueError("automated blind packet v2 cannot carry human calibration identity")
         return self
 
@@ -128,9 +132,9 @@ class BlindDevelopmentPacketReceiptPayloadV2(BlindDevelopmentPacketV2Model):
     instruction_prompt_sha256: str = Field(pattern=r"^[0-9a-f]{64}$")
     coding_manual_sha256: str = Field(pattern=r"^[0-9a-f]{64}$")
     recurrence_policy_sha256: str = Field(pattern=r"^[0-9a-f]{64}$")
-    task_ids: tuple[
-        Annotated[str, Field(pattern=r"^LP(?:DT|ST)-[0-9A-F]{20}$")], ...
-    ] = Field(min_length=1, max_length=5)
+    task_ids: tuple[Annotated[str, Field(pattern=r"^LP(?:DT|ST)-[0-9A-F]{20}$")], ...] = Field(
+        min_length=1, max_length=5
+    )
     assigned_unit_count: int = Field(ge=1)
     calibration_manifest_id: str | None = None
     calibration_manifest_sha256: str | None = Field(default=None, pattern=r"^[0-9a-f]{64}$")
@@ -234,7 +238,9 @@ def build_blind_development_packets_v2(
     if not tasks:
         raise ValueError(f"no {coder_role} {evidence_kind} tasks are available for packet v2")
 
-    calibration_id = preparation.calibration.manifest_id if coder_role == "human_calibration" else None
+    calibration_id = (
+        preparation.calibration.manifest_id if coder_role == "human_calibration" else None
+    )
     calibration_sha = (
         preparation.calibration.manifest_sha256 if coder_role == "human_calibration" else None
     )

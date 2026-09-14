@@ -35,7 +35,9 @@ class VerifiedHumanHandoffV2:
 
 
 def _canonical_json_bytes(value: Any) -> bytes:
-    return json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode("utf-8")
+    return json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode(
+        "utf-8"
+    )
 
 
 def _sha256(data: bytes) -> str:
@@ -80,7 +82,10 @@ def verify_private_human_handoff_v2_zip(path: str | Path) -> VerifiedHumanHandof
     if payload.get("schema_version") != EXPECTED_RECEIPT_SCHEMA:
         raise ValueError("private human handoff uses the wrong receipt schema")
     digest = _sha256(_canonical_json_bytes(payload))
-    if receipt.get("receipt_sha256") != digest or receipt.get("receipt_id") != f"LPHB2-{digest[:20].upper()}":
+    if (
+        receipt.get("receipt_sha256") != digest
+        or receipt.get("receipt_id") != f"LPHB2-{digest[:20].upper()}"
+    ):
         raise ValueError("private human handoff v2 receipt failed content-address verification")
 
     declared = payload.get("files")
@@ -90,7 +95,10 @@ def verify_private_human_handoff_v2_zip(path: str | Path) -> VerifiedHumanHandof
     if set(files) != expected_names:
         missing = sorted(expected_names - set(files))
         extra = sorted(set(files) - expected_names)
-        raise ValueError(f"private human handoff v2 member set differs from receipt; missing={missing} extra={extra}")
+        raise ValueError(
+            f"private human handoff v2 member set differs from receipt; "
+            f"missing={missing} extra={extra}"
+        )
     for name, expected_hash in declared.items():
         if not isinstance(expected_hash, str) or _sha256(files[name]) != expected_hash:
             raise ValueError(f"private human handoff v2 member hash mismatch: {name}")
@@ -131,15 +139,23 @@ def verify_private_human_handoff_v2_zip(path: str | Path) -> VerifiedHumanHandof
 
     episode_schema = json.loads(files[EPISODE_SCHEMA])
     series_schema = json.loads(files[SERIES_SCHEMA])
-    if episode_schema.get("properties", {}).get("schema_version", {}).get("const") != EXPECTED_EPISODE_SCHEMA:
+    if (
+        episode_schema.get("properties", {}).get("schema_version", {}).get("const")
+        != EXPECTED_EPISODE_SCHEMA
+    ):
         raise ValueError("episode response schema file does not bind expected response version")
-    if series_schema.get("properties", {}).get("schema_version", {}).get("const") != EXPECTED_SERIES_SCHEMA:
+    if (
+        series_schema.get("properties", {}).get("schema_version", {}).get("const")
+        != EXPECTED_SERIES_SCHEMA
+    ):
         raise ValueError("series response schema file does not bind expected response version")
     attestation_blank = json.loads(files[ATTESTATION_BLANK])
     if attestation_blank.get("schema_version") != EXPECTED_ATTESTATION_BLANK_SCHEMA:
         raise ValueError("auditor attestation blank uses the wrong schema version")
 
-    packet_names = sorted(name for name in files if name.startswith("packets/") and name.endswith(".json"))
+    packet_names = sorted(
+        name for name in files if name.startswith("packets/") and name.endswith(".json")
+    )
     if len(packet_names) != payload.get("packet_count"):
         raise ValueError("private human handoff v2 packet count disagrees with receipt")
     packet_hashes: list[str] = []
@@ -152,7 +168,10 @@ def verify_private_human_handoff_v2_zip(path: str | Path) -> VerifiedHumanHandof
         if not isinstance(pp, dict):
             raise ValueError(f"{name} has invalid packet payload")
         packet_digest = _sha256(_canonical_json_bytes(pp))
-        if packet.get("packet_sha256") != packet_digest or packet.get("packet_id") != f"LPBP2-{packet_digest[:20].upper()}":
+        if (
+            packet.get("packet_sha256") != packet_digest
+            or packet.get("packet_id") != f"LPBP2-{packet_digest[:20].upper()}"
+        ):
             raise ValueError(f"{name} failed LPBP2 content-address verification")
         packet_hashes.append(packet_digest)
         if pp.get("coder_role") != "human_calibration":
@@ -167,7 +186,9 @@ def verify_private_human_handoff_v2_zip(path: str | Path) -> VerifiedHumanHandof
         ):
             if pp.get(field) is not False:
                 raise ValueError(f"{name} violates blind first-pass boundary: {field}")
-        if pp.get("package_id") != payload.get("package_id") or pp.get("package_sha256") != payload.get("package_sha256"):
+        if pp.get("package_id") != payload.get("package_id") or pp.get(
+            "package_sha256"
+        ) != payload.get("package_sha256"):
             raise ValueError(f"{name} does not bind handoff package")
         if pp.get("coding_manual_sha256") != payload.get("coding_manual_sha256"):
             raise ValueError(f"{name} does not bind handoff coding manual")
@@ -202,9 +223,16 @@ def verify_private_human_handoff_v2_zip(path: str | Path) -> VerifiedHumanHandof
 
     if set(packet_hashes) != set(payload.get("packet_sha256s", [])):
         raise ValueError("LPBP2 packet content addresses differ from handoff receipt")
-    actual_episode_units = {(row.get("task_id"), row.get("episode_id"), row.get("observable_id")) for row in episode_rows}
-    actual_series_units = {(row.get("task_id"), row.get("series_id"), row.get("observable_id")) for row in series_rows}
-    if actual_episode_units != expected_episode_units or len(actual_episode_units) != len(episode_rows):
+    actual_episode_units = {
+        (row.get("task_id"), row.get("episode_id"), row.get("observable_id"))
+        for row in episode_rows
+    }
+    actual_series_units = {
+        (row.get("task_id"), row.get("series_id"), row.get("observable_id")) for row in series_rows
+    }
+    if actual_episode_units != expected_episode_units or len(actual_episode_units) != len(
+        episode_rows
+    ):
         raise ValueError("episode blank responses do not exactly cover selected packet units")
     if actual_series_units != expected_series_units or len(actual_series_units) != len(series_rows):
         raise ValueError("series blank responses do not exactly cover selected packet units")
@@ -221,7 +249,9 @@ def verify_private_human_handoff_v2_zip(path: str | Path) -> VerifiedHumanHandof
     )
 
 
-TEMPLATE_B64_REL = Path(__file__).with_name("life_patterns_human_calibration_ui_v2_template.zlib.b64")
+TEMPLATE_B64_REL = Path(__file__).with_name(
+    "life_patterns_human_calibration_ui_v2_template.zlib.b64"
+)
 
 
 def _load_html_template() -> str:
@@ -239,7 +269,10 @@ def build_standalone_human_calibration_ui_v2(
     output = Path(output_html)
     if output.exists() and not overwrite:
         raise FileExistsError(f"output already exists: {output}")
-    embedded = {name: base64.b64encode(data).decode("ascii") for name, data in sorted(verified.files.items())}
+    embedded = {
+        name: base64.b64encode(data).decode("ascii")
+        for name, data in sorted(verified.files.items())
+    }
     outer = {
         "zip_sha256": verified.zip_sha256,
         "zip_bytes": verified.zip_bytes,
@@ -247,9 +280,11 @@ def build_standalone_human_calibration_ui_v2(
         "receipt_id": verified.receipt["receipt_id"],
         "receipt_sha256": verified.receipt["receipt_sha256"],
     }
-    html = _load_html_template().replace(
-        "__EMBEDDED__", json.dumps(embedded, sort_keys=True, separators=(",", ":"))
-    ).replace("__OUTER__", json.dumps(outer, sort_keys=True, separators=(",", ":")))
+    html = (
+        _load_html_template()
+        .replace("__EMBEDDED__", json.dumps(embedded, sort_keys=True, separators=(",", ":")))
+        .replace("__OUTER__", json.dumps(outer, sort_keys=True, separators=(",", ":")))
+    )
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(html, encoding="utf-8", newline="\n")
     return {

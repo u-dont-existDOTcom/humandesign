@@ -76,16 +76,13 @@ def audit_perfect_match_recoverability(
 
     structural = tuple(_require_structural(state) for state in states)
     base = _clean_observable_patterns(structural, model)
-    target_values = {
-        feature: _value_vector(structural, feature) for feature in TARGET_FEATURES
-    }
+    target_values = {feature: _value_vector(structural, feature) for feature in TARGET_FEATURES}
     baseline: tuple[Hashable, ...] = tuple(
         (base[index],) + tuple(target_values[feature][index] for feature in TARGET_FEATURES)
         for index in range(len(states))
     )
     vectors = {
-        feature: _tie_breaker_vector(structural, feature)
-        for feature in allowed_tie_breakers
+        feature: _tie_breaker_vector(structural, feature) for feature in allowed_tie_breakers
     }
 
     question_counts = [0] * len(states)
@@ -132,8 +129,7 @@ def _resolve_group(
     for order, feature in enumerate(remaining):
         counts = Counter(vectors[feature][index] for index in indices)
         entropy = -sum(
-            (count / len(indices)) * math.log2(count / len(indices))
-            for count in counts.values()
+            (count / len(indices)) * math.log2(count / len(indices)) for count in counts.values()
         )
         choices.append((entropy, -order, feature))
     if not choices:
@@ -149,9 +145,7 @@ def _resolve_group(
         question_counts[index] += 1
         children.setdefault(vectors[feature][index], []).append(index)
     for child in children.values():
-        _resolve_group(
-            tuple(child), next_remaining, vectors, question_counts, unresolved
-        )
+        _resolve_group(tuple(child), next_remaining, vectors, question_counts, unresolved)
 
 
 def _tie_breaker_vector(

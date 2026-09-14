@@ -147,9 +147,7 @@ def _multipart_body(
     pieces.extend(
         [
             f"--{boundary}\r\n".encode(),
-            (
-                f'Content-Disposition: form-data; name="file"; filename="{filename}"\r\n'
-            ).encode(),
+            (f'Content-Disposition: form-data; name="file"; filename="{filename}"\r\n').encode(),
             f"Content-Type: {media_type}\r\n\r\n".encode(),
             audio,
             b"\r\n",
@@ -200,7 +198,10 @@ def register_life_patterns_voice_routes(
         except RuntimeError as exc:
             raise HTTPException(
                 status_code=502,
-                detail="Voice transcription failed; no audio was stored. You can retry or type instead.",
+                detail=(
+                    "Voice transcription failed; no audio was stored. You can"
+                    " retry or type instead."
+                ),
             ) from exc
 
 

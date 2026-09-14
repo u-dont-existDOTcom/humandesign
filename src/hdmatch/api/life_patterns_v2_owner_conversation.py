@@ -128,7 +128,8 @@ class OpenAIConversationModel(OpenAIOwnerV2Model):
     ) -> dict[str, Any]:
         if not self.api_key:
             raise RuntimeError(
-                "The owner prototype needs HDMATCH_LLM_API_KEY or OPENAI_API_KEY in its runtime environment."
+                "The owner prototype needs HDMATCH_LLM_API_KEY or OPENAI_"
+                "API_KEY in its runtime environment."
             )
         body = {
             "model": self.model,
@@ -220,14 +221,24 @@ class OpenAIConversationModel(OpenAIOwnerV2Model):
         result = self._conversation_call_json(
             instructions=(
                 "You maintain a hidden, target-theory-blind evidence ledger for an interview. "
-                "Extract only literal or minimally normalized claims directly supported by the participant's latest message. "
-                "Do not infer personality, recurrence, hidden motives, external theories, classifications, or information not supplied by the participant, "
-                "or a preferred explanation. Do not turn silence or missingness into nonoccurrence. This bounded probe does not "
-                "admit genuine absence facts; omit those rather than misclassify them. A participant may report a general belief "
-                "or self-description; preserve that only as an attributed reported_appraisal_or_belief, not as independently "
-                "established recurrence. Return a correction only when the latest participant message explicitly makes an existing "
-                "operative fact materially wrong or too broad. Never silently rewrite a prior fact. Prefer fewer precise facts. "
-                "episode_summary is a short neutral label for the current concrete situation, not a personality summary."
+                "Extract only literal or minimally normalized claims dire"
+                "ctly supported by the participant's latest message. "
+                "Do not infer personality, recurrence, hidden motives, ex"
+                "ternal theories, classifications, or information not sup"
+                "plied by the participant, "
+                "or a preferred explanation. Do not turn silence or missi"
+                "ngness into nonoccurrence. This bounded probe does not "
+                "admit genuine absence facts; omit those rather than misc"
+                "lassify them. A participant may report a general belief "
+                "or self-description; preserve that only as an attributed"
+                " reported_appraisal_or_belief, not as independently "
+                "established recurrence. Return a correction only when th"
+                "e latest participant message explicitly makes an existin"
+                "g "
+                "operative fact materially wrong or too broad. Never sile"
+                "ntly rewrite a prior fact. Prefer fewer precise facts. "
+                "episode_summary is a short neutral label for the current"
+                " concrete situation, not a personality summary."
             ),
             payload={
                 "latest_participant_message": message,
@@ -294,24 +305,44 @@ class OpenAIConversationModel(OpenAIOwnerV2Model):
         }
         result = self._conversation_call_json(
             instructions=(
-                "You are conducting an unusually attentive, target-theory-blind Life Patterns interview. "
-                "The participant-facing objective is INFORMATION GAIN, not proving that you understood them. "
+                "You are conducting an unusually attentive, target-theory"
+                "-blind Life Patterns interview. "
+                "The participant-facing objective is INFORMATION GAIN, no"
+                "t proving that you understood them. "
                 "Return exactly one interviewer move. Ask at most one question. "
-                "\n\nNEVER paraphrase or summarize the participant's last answer merely to show comprehension. "
-                "A reflection is allowed only when a load-bearing ambiguity must be made explicit before the question. "
-                "Do not ask the participant to certify obvious facts. Do not expose the hidden evidence ledger or fact IDs. "
-                "\n\nChoose the next move that can most change the interpretation: mechanism, timing, realistic alternative, "
-                "context, exception, developmental change, or a contrast between situations. If the current episode is sufficiently "
-                "understood and there are not yet two distinct episodes, request a contrasting concrete episode rather than continuing "
-                "to mine trivial detail. After multiple episodes, ask a boundary/counterexample question before surfacing a broad "
+                "\n\nNEVER paraphrase or summarize the participant's last a"
+                "nswer merely to show comprehension. "
+                "A reflection is allowed only when a load-bearing ambigui"
+                "ty must be made explicit before the question. "
+                "Do not ask the participant to certify obvious facts. Do "
+                "not expose the hidden evidence ledger or fact IDs. "
+                "\n\nChoose the next move that can most change the interpre"
+                "tation: mechanism, timing, realistic alternative, "
+                "context, exception, developmental change, or a contrast "
+                "between situations. If the current episode is sufficient"
+                "ly "
+                "understood and there are not yet two distinct episodes, "
+                "request a contrasting concrete episode rather than conti"
+                "nuing "
+                "to mine trivial detail. After multiple episodes, ask a b"
+                "oundary/counterexample question before surfacing a broad"
+                " "
                 "cross-episode hypothesis. "
-                "\n\nUse surface_hypothesis only when boundary_answered=true and the cited hidden facts from at least two episodes "
-                "support a nontrivial synthesis that adds explanatory compression beyond any single fact or restatement. The synthesis "
-                "may identify a conditional, contrast, boundary, stable/context-dependent difference, or developmental change. "
-                "Do not manufacture a pattern when the evidence is ordinary, thin, or incoherent; keep asking discriminating questions "
+                "\n\nUse surface_hypothesis only when boundary_answered=tru"
+                "e and the cited hidden facts from at least two episodes "
+                "support a nontrivial synthesis that adds explanatory com"
+                "pression beyond any single fact or restatement. The synt"
+                "hesis "
+                "may identify a conditional, contrast, boundary, stable/c"
+                "ontext-dependent difference, or developmental change. "
+                "Do not manufacture a pattern when the evidence is ordina"
+                "ry, thin, or incoherent; keep asking discriminating ques"
+                "tions "
                 "or request another contrasting example. "
-                "\n\nWhen surfacing a hypothesis, phrase it tentatively and make the participant's authority obvious. No flattery, "
-                "diagnosis, destiny language, motivational coaching, external-theory concepts, or model-targeting hints."
+                "\n\nWhen surfacing a hypothesis, phrase it tentatively and"
+                " make the participant's authority obvious. No flattery, "
+                "diagnosis, destiny language, motivational coaching, exte"
+                "rnal-theory concepts, or model-targeting hints."
             ),
             payload={
                 "current_episode_id": current_episode_id,
@@ -494,14 +525,18 @@ class ConversationalOwnerSession:
             raise ValueError("conversation hypothesis cited unknown or superseded fact IDs")
         episode_ids = {fact_by_id[fact_id].episode_id for fact_id in evidence_ids}
         if len(episode_ids) < 2:
-            raise ValueError("conversation hypothesis must cite grounded facts from at least two episodes")
+            raise ValueError(
+                "conversation hypothesis must cite grounded facts from at least two episodes"
+            )
 
         proposition = (move.hypothesis_proposition or "").strip()
         if any(
             proposition.casefold() == fact_by_id[fact_id].proposition.strip().casefold()
             for fact_id in evidence_ids
         ):
-            raise ValueError("conversation hypothesis cannot be an exact restatement of one cited fact")
+            raise ValueError(
+                "conversation hypothesis cannot be an exact restatement of one cited fact"
+            )
 
         proposal_id = f"PROP-{uuid.uuid4().hex[:10].upper()}"
         grouped: dict[str, list[str]] = {}
@@ -577,26 +612,37 @@ class ConversationalOwnerSession:
         if move.move_type == "request_contrast" and self.current_episode_id is None:
             move = ConversationMove(
                 reply=(
-                    "Stay with this situation for one more step: what happened next that most affected what you did?"
+                    "Stay with this situation for one more step: what happene"
+                    "d next that most affected what you did?"
                 ),
                 move_type="follow_up",
             )
         elif move.move_type == "boundary_question" and len(self.core.record.episodes) < 2:
             move = ConversationMove(
                 reply=(
-                    "Give me a different real situation where you handled a similar kind of uncertainty differently."
+                    "Give me a different real situation where you handled a s"
+                    "imilar kind of uncertainty differently."
                 ),
                 move_type="request_contrast",
             )
         elif move.move_type == "surface_hypothesis":
             if not self.boundary_answered or len(self.core.record.episodes) < 2:
                 fallback_type: MoveType = (
-                    "boundary_question" if len(self.core.record.episodes) >= 2 else "request_contrast"
+                    "boundary_question"
+                    if len(self.core.record.episodes) >= 2
+                    else "request_contrast"
                 )
                 fallback_reply = (
-                    "Before I turn that into a pattern, what would be a real case where the apparent contrast does not hold?"
+                    (
+                        "Before I turn that into a pattern, what would be a real "
+                        "case where the apparent contrast does not hold?"
+                    )
                     if fallback_type == "boundary_question"
-                    else "I need a genuine contrast before that would mean anything. Tell me about another real situation where you handled it differently."
+                    else (
+                        "I need a genuine contrast before that would mean anythin"
+                        "g. Tell me about another real situation where you handle"
+                        "d it differently."
+                    )
                 )
                 move = ConversationMove(reply=fallback_reply, move_type=fallback_type)
             else:
@@ -605,7 +651,8 @@ class ConversationalOwnerSession:
                 except ValueError:
                     move = ConversationMove(
                         reply=(
-                            "I do not have enough clean cross-situation support for that synthesis yet. "
+                            "I do not have enough clean cross-situation support for t"
+                            "hat synthesis yet. "
                             "Tell me about a case that would be most likely to break the pattern."
                         ),
                         move_type="boundary_question",
@@ -667,8 +714,10 @@ class CreateConversationSessionResponse(_FrozenModel):
 
 
 OPENING = (
-    "Start with one specific situation from your life that feels representative, puzzling, or important. "
-    "Tell me what happened in your own words. I’ll ask only the next question that seems capable of changing "
+    "Start with one specific situation from your life that fe"
+    "els representative, puzzling, or important. "
+    "Tell me what happened in your own words. I’ll ask only t"
+    "he next question that seems capable of changing "
     "the picture, rather than making you approve a transcript of what you just said."
 )
 
@@ -704,9 +753,7 @@ def create_life_patterns_v2_owner_conversation_app(
         )
 
     @app.post("/api/owner-v2/conversation/sessions/{session_id}/turns")
-    def interview_turn(
-        session_id: str, request: ConversationTurnRequest
-    ) -> dict[str, Any]:
+    def interview_turn(session_id: str, request: ConversationTurnRequest) -> dict[str, Any]:
         try:
             return runtime.get(session_id).turn(request.message)
         except KeyError as exc:
@@ -715,9 +762,7 @@ def create_life_patterns_v2_owner_conversation_app(
             raise HTTPException(status_code=422, detail=str(exc)) from exc
 
     @app.post("/api/owner-v2/conversation/sessions/{session_id}/patterns/adjudicate")
-    def adjudicate_pattern(
-        session_id: str, request: PatternAdjudicationRequest
-    ) -> dict[str, Any]:
+    def adjudicate_pattern(session_id: str, request: PatternAdjudicationRequest) -> dict[str, Any]:
         try:
             return runtime.get(session_id).adjudicate(request)
         except KeyError as exc:

@@ -56,7 +56,10 @@ def test_relation_control_reacts_to_value_count_without_new_measurement_semantic
     _, _, patched = _patched()
 
     assert 'if(vals.length===1){vr.value="single";row.classList.add("hidden")}' in patched
-    assert 'else if(vals.length>1){if(vr.value==="single")vr.value="";row.classList.remove("hidden")}' in patched
+    assert (
+        'else if(vals.length>1){if(vr.value==="single")vr.value="";row.classList.remove("hidden")}'
+        in patched
+    )
     assert 'const rel=$("valueRelation")?.value||(vals.length===1?"single":null);' in patched
 
 
@@ -66,8 +69,8 @@ def test_source_segment_ids_remain_machine_values_but_are_not_human_labels() -> 
     assert 'value="${esc(s.segment_id)}"' in patched
     assert 'class="quotelabel"' in patched
     assert 'class="quotesnippet"' in patched
-    assert '<b>${esc(s.segment_id)}</b>' not in patched
-    assert '${esc(s.segment_id)}</label>' not in patched
+    assert "<b>${esc(s.segment_id)}</b>" not in patched
+    assert "${esc(s.segment_id)}</label>" not in patched
 
 
 def test_internal_behavior_codes_are_hidden_from_human_view() -> None:

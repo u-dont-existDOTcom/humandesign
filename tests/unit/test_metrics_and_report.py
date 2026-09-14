@@ -167,12 +167,8 @@ def test_robustness_aggregation_keeps_declared_levels_and_paired_changes() -> No
         true_candidate_id="A",
     )
     observations = [
-        RobustnessObservation(
-            perturbation="answer_flip_rate", level="baseline", metrics=baseline
-        ),
-        RobustnessObservation(
-            perturbation="answer_flip_rate", level="0.10", metrics=noisy
-        ),
+        RobustnessObservation(perturbation="answer_flip_rate", level="baseline", metrics=baseline),
+        RobustnessObservation(perturbation="answer_flip_rate", level="0.10", metrics=noisy),
     ]
     points = aggregate_robustness(observations)
     assert [point.level for point in points] == ["0.10", "baseline"]
@@ -230,14 +226,8 @@ def _predictions() -> dict[str, object]:
             },
             {
                 "case_id": "C2",
-                "ranked_dates": [
-                    {"local_date": "2000-01-01", "date_rank": 1, "date_score": 8.0}
-                ],
-                "zero_cluster": {
-                    "ranked_dates": [
-                        {"local_date": "2000-01-01", "date_score": 0.0}
-                    ]
-                },
+                "ranked_dates": [{"local_date": "2000-01-01", "date_rank": 1, "date_score": 8.0}],
+                "zero_cluster": {"ranked_dates": [{"local_date": "2000-01-01", "date_score": 0.0}]},
                 "random_restoration": [],
                 "active_restoration": [],
                 "leave_one_cluster_out": [],

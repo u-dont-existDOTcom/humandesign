@@ -101,7 +101,9 @@ class BlindDevelopmentPacketPayload(BlindPacketModel):
         if self.coder_role == "human_calibration":
             if self.calibration_manifest_id is None or self.calibration_manifest_sha256 is None:
                 raise ValueError("human calibration packet requires frozen calibration manifest")
-        elif self.calibration_manifest_id is not None or self.calibration_manifest_sha256 is not None:
+        elif (
+            self.calibration_manifest_id is not None or self.calibration_manifest_sha256 is not None
+        ):
             raise ValueError("automated blind packet cannot masquerade as calibration packet")
         return self
 
@@ -128,9 +130,9 @@ class BlindDevelopmentPacketReceiptPayload(BlindPacketModel):
     package_sha256: str = Field(pattern=r"^[0-9a-f]{64}$")
     instruction_prompt_sha256: str = Field(pattern=r"^[0-9a-f]{64}$")
     coding_manual_sha256: str = Field(pattern=r"^[0-9a-f]{64}$")
-    task_ids: tuple[
-        Annotated[str, Field(pattern=r"^LP(?:DT|ST)-[0-9A-F]{20}$")], ...
-    ] = Field(min_length=1, max_length=5)
+    task_ids: tuple[Annotated[str, Field(pattern=r"^LP(?:DT|ST)-[0-9A-F]{20}$")], ...] = Field(
+        min_length=1, max_length=5
+    )
     assigned_unit_count: int = Field(ge=1)
     calibration_manifest_id: str | None = None
     calibration_manifest_sha256: str | None = Field(default=None, pattern=r"^[0-9a-f]{64}$")
@@ -228,10 +230,14 @@ def build_blind_development_packets(
         evidence_kind=evidence_kind,
     )
     if not tasks:
-        raise ValueError(f"no {coder_role} {evidence_kind} tasks are available for packet rendering")
+        raise ValueError(
+            f"no {coder_role} {evidence_kind} tasks are available for packet rendering"
+        )
 
     packets: list[BlindDevelopmentPacketArtifact] = []
-    calibration_id = preparation.calibration.manifest_id if coder_role == "human_calibration" else None
+    calibration_id = (
+        preparation.calibration.manifest_id if coder_role == "human_calibration" else None
+    )
     calibration_sha = (
         preparation.calibration.manifest_sha256 if coder_role == "human_calibration" else None
     )

@@ -29,7 +29,6 @@ from hdmatch.evaluation.neutral_measurement import (
 )
 from hdmatch.experiments.canonical import sha256_json
 
-
 CONTENT_SHA = "a" * 64
 BASE_TIME = datetime(2026, 9, 3, 19, 0, tzinfo=UTC)
 
@@ -166,9 +165,7 @@ def test_ineligible_or_ambiguous_h1_result_cannot_become_authority() -> None:
     errors = h1_eligibility_errors(ineligible)
     assert "H1 adjudication did not return eligible" in errors
     with pytest.raises(ValueError, match="invalid H1 authority bundle"):
-        build_human_content_authority_bundle(
-            _bundle_payload(adjudication=ineligible)
-        )
+        build_human_content_authority_bundle(_bundle_payload(adjudication=ineligible))
 
 
 def test_authority_bundle_binds_exact_content_and_all_referenced_h1_receipts() -> None:
@@ -227,9 +224,7 @@ def test_authority_bundle_derives_existing_neutral_measurement_authority_receipt
     receipt = human_content_authority_receipt_from_bundle(bundle)
     assert receipt.content_sha256 == CONTENT_SHA
     assert receipt.human_authorship_receipt_sha256 == sha256_json(bundle.payload.authorship)
-    assert receipt.exposure_adjudication_receipt_sha256 == sha256_json(
-        bundle.payload.adjudications
-    )
+    assert receipt.exposure_adjudication_receipt_sha256 == sha256_json(bundle.payload.adjudications)
     assert receipt.content_review_receipt_sha256 == sha256_json(bundle.payload.content_review)
 
 

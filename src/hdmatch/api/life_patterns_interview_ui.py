@@ -1,7 +1,7 @@
 # ruff: noqa: E501
 """Participant-facing conversational UI for Discover Your Unique Life Patterns."""
 
-HTML = r'''<!doctype html>
+HTML = r"""<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -58,4 +58,4 @@ function renderMap(map){$('mapPanel').classList.remove('hidden');$('mapContent')
 $('exportButton').onclick=async()=>{if(!session)return;try{const payload=await api(`/api/life-patterns/interview/sessions/${encodeURIComponent(session.session_id)}/export?token=${encodeURIComponent(session.resume_token)}`);$('coachingContext').textContent=payload.coaching_markdown;$('exportPanel').classList.remove('hidden')}catch(e){setStatus('turnStatus',e.message,true)}};
 const restored=localStorage.getItem(storageKey);if(restored){try{session=JSON.parse(restored);loadCurrent()}catch{localStorage.removeItem(storageKey)}}
 </script>
-</main></body></html>'''
+</main></body></html>"""

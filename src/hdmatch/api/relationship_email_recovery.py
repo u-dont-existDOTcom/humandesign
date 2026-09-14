@@ -50,9 +50,7 @@ class EmailRecoverySettings:
     smtp_timeout_seconds: float = 20.0
 
     @classmethod
-    def from_env(
-        cls, values: Mapping[str, str] | None = None
-    ) -> EmailRecoverySettings | None:
+    def from_env(cls, values: Mapping[str, str] | None = None) -> EmailRecoverySettings | None:
         environment = os.environ if values is None else values
         password = environment.get("HDMATCH_SMTP_PASSWORD", "")
         if not password:
@@ -68,15 +66,17 @@ class EmailRecoverySettings:
             raise RuntimeError("HDMATCH_SMTP_PORT must be an integer") from exc
         if not 1 <= port <= 65535:
             raise RuntimeError("HDMATCH_SMTP_PORT must be between 1 and 65535")
-        username = environment.get(
-            "HDMATCH_SMTP_USERNAME", "joel@u-dont-exist.com"
-        ).strip()
+        username = environment.get("HDMATCH_SMTP_USERNAME", "joel@u-dont-exist.com").strip()
         from_address = environment.get("HDMATCH_SMTP_FROM", username).strip()
         host = environment.get("HDMATCH_SMTP_HOST", "smtp.porkbun.com").strip()
-        public_base_url = environment.get(
-            "HDMATCH_PUBLIC_BASE_URL",
-            "https://relationship-web-production.up.railway.app",
-        ).strip().rstrip("/")
+        public_base_url = (
+            environment.get(
+                "HDMATCH_PUBLIC_BASE_URL",
+                "https://relationship-web-production.up.railway.app",
+            )
+            .strip()
+            .rstrip("/")
+        )
         if not host or not username or not from_address or not public_base_url:
             raise RuntimeError("SMTP host, username, sender, and public base URL are required")
         return cls(
@@ -140,8 +140,7 @@ def send_recovery_email(
     """Send one recovery email over authenticated TLS without logging credentials."""
 
     magic_link = (
-        f"{settings.public_base_url}/#recovery="
-        f"{_recovery_fragment(session_id, magic_token)}"
+        f"{settings.public_base_url}/#recovery={_recovery_fragment(session_id, magic_token)}"
     )
     minutes = max(1, int(settings.credential_ttl.total_seconds() // 60))
     message = EmailMessage()
@@ -228,17 +227,13 @@ class EmailRecoveryService:
                 raise RuntimeError("OTP factory must return exactly six digits")
             previous = payload.get("email_recovery")
             previous_record = previous if isinstance(previous, dict) else {}
-            window_started, issue_count = self._next_issue_window(
-                previous_record, now, settings
-            )
+            window_started, issue_count = self._next_issue_window(previous_record, now, settings)
             issued_at = now.isoformat()
             payload["email_recovery"] = {
                 "schema_version": "relationship-email-recovery-v1",
                 "issued_at_utc": issued_at,
                 "expires_at_utc": (now + settings.credential_ttl).isoformat(),
-                "magic_token_sha256": _credential_sha256(
-                    session_id, "magic", magic_token
-                ),
+                "magic_token_sha256": _credential_sha256(session_id, "magic", magic_token),
                 "otp_sha256": _credential_sha256(session_id, "otp", otp),
                 "verification_attempts": 0,
                 "max_verification_attempts": settings.max_verification_attempts,
@@ -287,9 +282,7 @@ class EmailRecoveryService:
             for payload in self._store.private_records()
             if payload.get("study_schema_version") == "relationship-study-v1"
             and isinstance(payload.get("contact_email_lookup_sha256"), str)
-            and secrets.compare_digest(
-                str(payload["contact_email_lookup_sha256"]), email_sha256
-            )
+            and secrets.compare_digest(str(payload["contact_email_lookup_sha256"]), email_sha256)
         ]
         if not matches:
             return None
@@ -354,11 +347,7 @@ class EmailRecoveryService:
         record = cast(dict[str, Any], record_raw)
         now = self._normalized_now()
         expires_at = _parse_utc(record.get("expires_at_utc"))
-        if (
-            record.get("used_at_utc") is not None
-            or expires_at is None
-            or now >= expires_at
-        ):
+        if record.get("used_at_utc") is not None or expires_at is None or now >= expires_at:
             return None
         attempts_raw = record.get("verification_attempts", 0)
         maximum_raw = record.get("max_verification_attempts", 0)

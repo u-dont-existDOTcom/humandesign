@@ -68,9 +68,7 @@ def build_repository_resolved_development_stack_v2(
     manual_path = root / CODING_MANUAL_V2_REL
     recurrence_path = root / RECURRENCE_POLICY_V2_REL
     missing = [
-        str(path.relative_to(root))
-        for path in (manual_path, recurrence_path)
-        if not path.is_file()
+        str(path.relative_to(root)) for path in (manual_path, recurrence_path) if not path.is_file()
     ]
     if missing:
         raise ValueError("recurrence-corrected development stack is missing: " + ", ".join(missing))

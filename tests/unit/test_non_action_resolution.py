@@ -16,7 +16,9 @@ from hdmatch.evaluation.non_action_resolution import (
 )
 from hdmatch.evaluation.reconciled_codebook_source import parse_reconciled_codebook_file
 from hdmatch.evaluation.reconciled_ontology import build_development_ontology_from_resolved_view
-from hdmatch.evaluation.resolved_coding_procedure import build_structured_procedure_from_resolved_view
+from hdmatch.evaluation.resolved_coding_procedure import (
+    build_structured_procedure_from_resolved_view,
+)
 from hdmatch.experiments.canonical import sha256_json
 
 CODEBOOK_PATH = Path(
@@ -29,9 +31,7 @@ RESOLUTION_PATH = Path(
 RAW_RESOLUTION_PATH = Path(
     "state/LIFE-PATTERNS-NON-ACTION-AMBIGUITY-RESOLUTION-RAW-v1-2026-09-04.jsonl.txt"
 )
-PROMPT_PATH = Path(
-    "state/LIFE-PATTERNS-NON-ACTION-AMBIGUITY-RESOLUTION-PROMPT-v1-2026-09-04.txt"
-)
+PROMPT_PATH = Path("state/LIFE-PATTERNS-NON-ACTION-AMBIGUITY-RESOLUTION-PROMPT-v1-2026-09-04.txt")
 NOW = datetime(2026, 9, 4, 14, 48, tzinfo=UTC)
 
 
@@ -56,10 +56,14 @@ def _artifact():
         decisions=decisions,
         created_at_utc=NOW,
     )
-    return source, compact, build_ambiguity_resolution_artifact(
-        payload,
-        source=source,
-        compact=compact,
+    return (
+        source,
+        compact,
+        build_ambiguity_resolution_artifact(
+            payload,
+            source=source,
+            compact=compact,
+        ),
     )
 
 
@@ -141,8 +145,7 @@ def test_resolved_view_projects_exact_values_and_non_action_registry() -> None:
     assert "R16-d" not in definitions["NBM-R16"].allowed_values
     assert {"R16-d1", "R16-d2"}.issubset(definitions["NBM-R16"].allowed_values)
     assert any(
-        evidence.startswith("R07-a2:")
-        for evidence in definitions["NBM-R07"].evidence_requirements
+        evidence.startswith("R07-a2:") for evidence in definitions["NBM-R07"].evidence_requirements
     )
 
     procedure = build_structured_procedure_from_resolved_view(

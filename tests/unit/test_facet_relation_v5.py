@@ -1,6 +1,7 @@
 import pytest
 
 from hdmatch.evaluation.facet_relation_v5 import (
+    V5_CONTRACT_SCHEMA_VERSION,
     AbsenceConditionV5,
     ComponentAssertionV5,
     EventStageScope,
@@ -11,7 +12,6 @@ from hdmatch.evaluation.facet_relation_v5 import (
     ObservableResponseV5,
     SourceProvenanceV5,
     ValueAssertionV5,
-    V5_CONTRACT_SCHEMA_VERSION,
     observable_response_v5_errors,
 )
 
@@ -285,20 +285,26 @@ def valid_r14_pure_absence_response() -> ObservableResponseV5:
 
 def test_valid_hybrid_and_cross_facet_copresence_share_one_evidence_unit() -> None:
     response = valid_r05_response()
-    assert observable_response_v5_errors(
-        response,
-        contract=CONTRACT,
-        valid_source_record_ids={"SEG-1"},
-    ) == ()
+    assert (
+        observable_response_v5_errors(
+            response,
+            contract=CONTRACT,
+            valid_source_record_ids={"SEG-1"},
+        )
+        == ()
+    )
 
 
 def test_valid_pure_absence_value_uses_one_gated_absence_component() -> None:
     response = valid_r14_pure_absence_response()
-    assert observable_response_v5_errors(
-        response,
-        contract=CONTRACT,
-        valid_source_record_ids={"SEG-R14"},
-    ) == ()
+    assert (
+        observable_response_v5_errors(
+            response,
+            contract=CONTRACT,
+            valid_source_record_ids={"SEG-R14"},
+        )
+        == ()
+    )
 
 
 def test_pure_absence_value_cannot_bypass_component_gate() -> None:
@@ -358,9 +364,7 @@ def test_dangling_stage_reference_fails_closed() -> None:
 
 def test_component_cannot_move_to_different_evidence_unit_than_stage() -> None:
     response = valid_r05_response()
-    changed = response.component_assertions[0].model_copy(
-        update={"evidence_unit_id": "other-unit"}
-    )
+    changed = response.component_assertions[0].model_copy(update={"evidence_unit_id": "other-unit"})
     response = response.model_copy(
         update={"component_assertions": (changed, response.component_assertions[1])}
     )

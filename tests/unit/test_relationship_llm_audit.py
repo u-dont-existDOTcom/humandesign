@@ -34,7 +34,9 @@ def test_field_auditor_uses_structured_llm_output_and_chart_blind_prompt() -> No
         return _envelope(
             {
                 "score": 4,
-                "feedback": "This is fluent text but it does not answer the relationship timeline question.",
+                "feedback": (
+                    "This is fluent text but it does not answer the relationship timeline question."
+                ),
                 "needs_clarification": True,
                 "reason_code": "off_topic",
             }
@@ -157,7 +159,9 @@ def test_session_audit_preserves_specific_clarification() -> None:
                         "question_id": "Q",
                         "field_id": "eros",
                         "score": 45,
-                        "feedback": "Love is described, but romantic in-love state is not distinguished.",
+                        "feedback": (
+                            "Love is described, but romantic in-love state is not distinguished."
+                        ),
                         "needs_clarification": True,
                         "reason_code": "love_vs_eros",
                     }
@@ -166,8 +170,14 @@ def test_session_audit_preserves_specific_clarification() -> None:
                     {
                         "source_question_id": "Q",
                         "source_field_id": "eros",
-                        "reason": "The answer describes caring but does not establish romantic in-love experience.",
-                        "prompt": "Separately from caring about them, were you romantically in love with them?",
+                        "reason": (
+                            "The answer describes caring but does not establish roman"
+                            "tic in-love experience."
+                        ),
+                        "prompt": (
+                            "Separately from caring about them, were you romantically"
+                            " in love with them?"
+                        ),
                         "priority": 1,
                     }
                 ],

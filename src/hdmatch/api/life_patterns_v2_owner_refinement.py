@@ -44,24 +44,44 @@ def _refinement_html() -> str:
         '    <button id="rejectStop" class="subtle">Reject and stop this thread</button>',
     )
     html = html.replace(
-        '<p class="note">This is the one place where your explicit judgment matters. The hidden episode facts are not being shown for routine approval.</p>',
-        '<p class="note">Would you like to keep trying to pin this pattern down, or make a judgment now? Saying the synthesis does not fit keeps the underlying inquiry open; use Reject and stop only when you actually want to end this thread. The hidden episode facts are not being shown for routine approval.</p>',
+        (
+            '<p class="note">This is the one place where your explici'
+            "t judgment matters. The hidden episode facts are not bei"
+            "ng shown for routine approval.</p>"
+        ),
+        (
+            '<p class="note">Would you like to keep trying to pin thi'
+            "s pattern down, or make a judgment now? Saying the synth"
+            "esis does not fit keeps the underlying inquiry open; use"
+            " Reject and stop only when you actually want to end this"
+            " thread. The hidden episode facts are not being shown fo"
+            "r routine approval.</p>"
+        ),
     )
     html = html.replace(
         '  <div id="reviseBox" class="hidden">',
-        '  <p class="note">Leaving it unresolved is valid, but this thread will not contribute a settled person-level pattern to later analysis.</p>\n'
+        '  <p class="note">Leaving it unresolved is valid, but th'
+        "is thread will not contribute a settled person-level pat"
+        "tern to later analysis.</p>\n"
         '  <div id="reviseBox" class="hidden">',
     )
     html = html.replace(
-        'let sessionId=null;let groundingChoice=null;let completedResults=[];',
-        'let sessionId=null;let groundingChoice=null;let completedResults=[];let refiningPattern=false;',
+        "let sessionId=null;let groundingChoice=null;let completedResults=[];",
+        (
+            "let sessionId=null;let groundingChoice=null;let complete"
+            "dResults=[];let refiningPattern=false;"
+        ),
     )
     html = html.replace(
         "  sessionId=p.session_id;groundingChoice=null;\n",
         "  sessionId=p.session_id;groundingChoice=null;refiningPattern=false;\n",
     )
     html = html.replace(
-        "    if(p.pattern_active){\n      hide('composer');\n      show('patternPanel');\n      $('patternPanel').scrollIntoView({behavior:'smooth'});\n    }",
+        (
+            "    if(p.pattern_active){\n      hide('composer');\n      "
+            "show('patternPanel');\n      $('patternPanel').scrollInto"
+            "View({behavior:'smooth'});\n    }"
+        ),
         "    if(p.pattern_active){\n"
         "      show('patternPanel');\n"
         "      refiningPattern=Boolean(p.pattern_refining)||refiningPattern;\n"
@@ -74,9 +94,12 @@ def _refinement_html() -> str:
         "$('continuePattern').onclick=async()=>{\n"
         "  $('continuePattern').disabled=true;\n"
         "  try{\n"
-        "    const p=await api(`/api/owner-v2/conversation/sessions/${encodeURIComponent(sessionId)}/patterns/continue`,{method:'POST'});\n"
+        "    const p=await api(`/api/owner-v2/conversation/sessio"
+        "ns/${encodeURIComponent(sessionId)}/patterns/continue`,{"
+        "method:'POST'});\n"
         "    refiningPattern=true;show('composer');bubble('ai',p.reply);$('message').focus();\n"
-        "  }catch(e){$('patternStatus').textContent=e.message;$('patternStatus').className='error'}\n"
+        "  }catch(e){$('patternStatus').textContent=e.message;$('"
+        "patternStatus').className='error'}\n"
         "  finally{$('continuePattern').disabled=false}\n"
         "};\n"
         "$('unresolved').onclick=()=>decision('unresolved');",
@@ -86,9 +109,14 @@ def _refinement_html() -> str:
         "$('reject').onclick=async()=>{\n"
         "  $('reject').disabled=true;\n"
         "  try{\n"
-        "    const p=await api(`/api/owner-v2/conversation/sessions/${encodeURIComponent(sessionId)}/patterns/disagree`,{method:'POST'});\n"
-        "    refiningPattern=true;show('composer');bubble('user','No — that synthesis does not fit.');bubble('ai',p.reply);$('message').focus();\n"
-        "  }catch(e){$('patternStatus').textContent=e.message;$('patternStatus').className='error'}\n"
+        "    const p=await api(`/api/owner-v2/conversation/sessio"
+        "ns/${encodeURIComponent(sessionId)}/patterns/disagree`,{"
+        "method:'POST'});\n"
+        "    refiningPattern=true;show('composer');bubble('user',"
+        "'No — that synthesis does not fit.');bubble('ai',p.reply"
+        ");$('message').focus();\n"
+        "  }catch(e){$('patternStatus').textContent=e.message;$('"
+        "patternStatus').className='error'}\n"
         "  finally{$('reject').disabled=false}\n"
         "};\n"
         "$('rejectStop').onclick=()=>decision('reject');",
@@ -116,17 +144,27 @@ class RefinablePatternFirstConversationalOwnerSession(PatternFirstConversational
         )
         if move.move_type == "request_contrast" and self.current_episode_id is None:
             return ConversationMove(
-                reply="Stay with this situation for one more step: what happened next that most affected your interpretation?",
+                reply=(
+                    "Stay with this situation for one more step: what happene"
+                    "d next that most affected your interpretation?"
+                ),
                 move_type="follow_up",
             )
         if move.move_type == "boundary_question" and len(self.core.record.episodes) < 2:
             return ConversationMove(
-                reply="Give me a different real situation where the pattern looked different or broke down.",
+                reply=(
+                    "Give me a different real situation where the pattern loo"
+                    "ked different or broke down."
+                ),
                 move_type="request_contrast",
             )
         if move.move_type == "surface_hypothesis":
             return ConversationMove(
-                reply="What part of the current synthesis still feels least settled, and what real case would most help decide between the possibilities?",
+                reply=(
+                    "What part of the current synthesis still feels least set"
+                    "tled, and what real case would most help decide between "
+                    "the possibilities?"
+                ),
                 move_type="follow_up",
             )
         return move
@@ -264,7 +302,9 @@ def create_life_patterns_v2_owner_refinement_app(
 ) -> FastAPI:
     resolved_model = model or PatternFirstOpenAIConversationModel.from_env()
     runtime = RefinablePatternFirstConversationRuntime(model=resolved_model)
-    app = FastAPI(title="Life Patterns v2 refinable pattern-first owner conversation", version="0.5")
+    app = FastAPI(
+        title="Life Patterns v2 refinable pattern-first owner conversation", version="0.5"
+    )
 
     @app.get("/", response_class=HTMLResponse, include_in_schema=False)
     def landing() -> str:
@@ -324,9 +364,7 @@ def create_life_patterns_v2_owner_refinement_app(
             raise HTTPException(status_code=422, detail=str(exc)) from exc
 
     @app.post("/api/owner-v2/conversation/sessions/{session_id}/patterns/adjudicate")
-    def adjudicate_pattern(
-        session_id: str, request: PatternAdjudicationRequest
-    ) -> dict[str, Any]:
+    def adjudicate_pattern(session_id: str, request: PatternAdjudicationRequest) -> dict[str, Any]:
         try:
             return runtime.get(session_id).adjudicate(request)
         except KeyError as exc:

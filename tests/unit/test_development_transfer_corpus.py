@@ -13,7 +13,6 @@ from hdmatch.evaluation.development_transfer_corpus import (
     development_transfer_corpus_integrity_errors,
 )
 
-
 NOW = datetime(2026, 9, 6, 19, 30, tzinfo=UTC)
 
 
@@ -249,7 +248,9 @@ def test_keeps_original_and_post_review_concrete_episodes_distinct() -> None:
 def test_series_reports_are_preserved_separately_not_promoted_to_episodes() -> None:
     artifact = _build()
     assert [row.series_id for row in artifact.payload.series_reports] == ["SER-001", "ADD-EV-002"]
-    assert all(row.primary_episode_code_from_series_forbidden for row in artifact.payload.series_reports)
+    assert all(
+        row.primary_episode_code_from_series_forbidden for row in artifact.payload.series_reports
+    )
     assert artifact.payload.series_reports[0].source_completeness == "partial_exact_recovered_turns"
     assert artifact.payload.series_reports[0].exact_source_segments[0].exact_text == (
         "synthetic exact repeated-series text"
@@ -280,7 +281,9 @@ def test_episode_tasks_bind_exact_corpus_and_keep_source_warning() -> None:
     assert all(task.development_only and task.validation_use_forbidden for task in tasks)
     assert all(task.transfer_summary_is_not_primary_source for task in tasks)
     assert all(task.observable_ids == ("NBM-R01", "NBM-R02") for task in tasks)
-    assert tasks[0].exact_source_segments[0].exact_text == "synthetic exact participant fragment one"
+    assert (
+        tasks[0].exact_source_segments[0].exact_text == "synthetic exact participant fragment one"
+    )
 
 
 def test_task_manifest_counts_episode_observable_units_and_series_separately() -> None:

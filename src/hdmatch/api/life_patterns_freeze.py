@@ -151,8 +151,12 @@ def _build_candidate_source(payload: dict[str, Any]) -> dict[str, Any]:
         raise HTTPException(status_code=409, detail="build your current Life Patterns Map first")
     approved = _approved_episodes(payload)
     approved_ids_raw = [row.get("episode_id") for row in approved]
-    if not approved_ids_raw or not all(isinstance(value, str) and value for value in approved_ids_raw):
-        raise HTTPException(status_code=409, detail="approved episode identities are missing or invalid")
+    if not approved_ids_raw or not all(
+        isinstance(value, str) and value for value in approved_ids_raw
+    ):
+        raise HTTPException(
+            status_code=409, detail="approved episode identities are missing or invalid"
+        )
     approved_ids = cast(list[str], approved_ids_raw)
     if len(approved_ids) != len(set(approved_ids)):
         raise HTTPException(status_code=409, detail="approved episode identities are not unique")
@@ -166,15 +170,22 @@ def _build_candidate_source(payload: dict[str, Any]) -> dict[str, Any]:
     if mapped_ids != approved_ids:
         raise HTTPException(
             status_code=409,
-            detail="your Life Patterns Map is older than the approved evidence; rebuild it before review",
+            detail=(
+                "your Life Patterns Map is older than the approved eviden"
+                "ce; rebuild it before review"
+            ),
         )
     try:
         life_map = LifePatternsMap.model_validate(raw_map)
     except ValueError as exc:
-        raise HTTPException(status_code=409, detail="the current Life Patterns Map is invalid") from exc
+        raise HTTPException(
+            status_code=409, detail="the current Life Patterns Map is invalid"
+        ) from exc
     claim_ids = [pattern.pattern_id for pattern in life_map.patterns]
     if len(claim_ids) != len(set(claim_ids)):
-        raise HTTPException(status_code=409, detail="the current Life Patterns Map repeats a claim id")
+        raise HTTPException(
+            status_code=409, detail="the current Life Patterns Map repeats a claim id"
+        )
     referenced_episode_ids = {
         episode_id
         for pattern in life_map.patterns
@@ -189,7 +200,9 @@ def _build_candidate_source(payload: dict[str, Any]) -> dict[str, Any]:
     turns = _source_turns(payload, approved)
     source_turn_ids = [row.get("turn_id") for row in turns]
     if len(source_turn_ids) != len(set(source_turn_ids)):
-        raise HTTPException(status_code=409, detail="participant source-turn identities are not unique")
+        raise HTTPException(
+            status_code=409, detail="participant source-turn identities are not unique"
+        )
     if set(cast(list[str], source_turn_ids)) != _required_source_turn_ids(approved):
         raise HTTPException(
             status_code=409,
@@ -234,7 +247,10 @@ def _build_candidate_source(payload: dict[str, Any]) -> dict[str, Any]:
         "theory_blindness_boundary": {
             "interview_and_synthesis_receive_hidden_birth_or_chart_data": False,
             "interview_and_synthesis_receive_candidate_prediction_rank_or_model_fit": False,
-            "participant_source_text_remains_participant_authored_and_may_contain_unprompted_content": True,
+            (
+                "participant_source_text_remains_participant_authored_and"
+                "_may_contain_unprompted_content"
+            ): True,
         },
     }
 
@@ -247,7 +263,9 @@ def _candidate_id(source: dict[str, Any]) -> tuple[str, str]:
 def _candidates(payload: dict[str, Any]) -> list[dict[str, Any]]:
     value = payload.setdefault("behavioral_freeze_candidates", [])
     if not isinstance(value, list):
-        raise HTTPException(status_code=500, detail="stored behavioral freeze candidates are invalid")
+        raise HTTPException(
+            status_code=500, detail="stored behavioral freeze candidates are invalid"
+        )
     return cast(list[dict[str, Any]], value)
 
 
@@ -265,7 +283,10 @@ def _validate_candidate(candidate: dict[str, Any]) -> dict[str, Any]:
     digest = _sha256_json(source)
     expected_id = f"BFC-{digest[:20].upper()}"
     if candidate.get("candidate_sha256") != digest or candidate.get("candidate_id") != expected_id:
-        raise HTTPException(status_code=500, detail="stored behavioral freeze candidate failed integrity verification")
+        raise HTTPException(
+            status_code=500,
+            detail="stored behavioral freeze candidate failed integrity verification",
+        )
     return candidate
 
 
@@ -334,7 +355,9 @@ def _effective_claims(candidate: dict[str, Any]) -> tuple[list[dict[str, Any]], 
         elif action == "edit":
             revision = review.get("participant_revision")
             if not isinstance(revision, dict) or not isinstance(revision.get("summary"), str):
-                raise HTTPException(status_code=500, detail="stored participant claim revision is invalid")
+                raise HTTPException(
+                    status_code=500, detail="stored participant claim revision is invalid"
+                )
             final_claim = {
                 "claim_id": claim_id,
                 "title": revision.get("title") or original["title"],
@@ -408,7 +431,9 @@ def _load_immutable_freeze(
         raw = path.read_bytes()
         artifact_raw: Any = json.loads(raw.decode("utf-8"))
     except (OSError, UnicodeError, json.JSONDecodeError) as exc:
-        raise HTTPException(status_code=500, detail="behavioral freeze artifact is unreadable") from exc
+        raise HTTPException(
+            status_code=500, detail="behavioral freeze artifact is unreadable"
+        ) from exc
     if not isinstance(artifact_raw, dict):
         raise HTTPException(status_code=500, detail="behavioral freeze artifact is invalid")
     artifact = cast(dict[str, Any], artifact_raw)
@@ -425,7 +450,9 @@ def _load_immutable_freeze(
         or digest != actual_digest
         or payload.get("session_id") != session_id
     ):
-        raise HTTPException(status_code=500, detail="behavioral freeze artifact failed integrity verification")
+        raise HTTPException(
+            status_code=500, detail="behavioral freeze artifact failed integrity verification"
+        )
     if raw != _canonical_json(artifact) + b"\n":
         raise HTTPException(status_code=500, detail="behavioral freeze artifact is not canonical")
     return artifact
@@ -507,7 +534,9 @@ def register_life_patterns_freeze_routes(
         }
         events = candidate.setdefault("review_events", [])
         if not isinstance(events, list):
-            raise HTTPException(status_code=500, detail="stored behavioral review events are invalid")
+            raise HTTPException(
+                status_code=500, detail="stored behavioral review events are invalid"
+            )
         cast(list[dict[str, Any]], events).append(event)
         store.save(payload)
         return _public_candidate(candidate)
@@ -523,7 +552,9 @@ def register_life_patterns_freeze_routes(
         if not request.attest_profile_reviewed or not request.attest_snapshot_immutable:
             raise HTTPException(
                 status_code=400,
-                detail="explicit participant review and immutable-snapshot acknowledgment are required",
+                detail=(
+                    "explicit participant review and immutable-snapshot acknowledgment are required"
+                ),
             )
         payload = store.read(session_id, request.token)
         candidate = _find_candidate(payload, candidate_id)
@@ -625,7 +656,9 @@ def register_life_patterns_freeze_routes(
         candidate["finalized_freeze_receipt"] = receipt
         receipts = payload.setdefault("behavioral_freeze_receipts", [])
         if not isinstance(receipts, list):
-            raise HTTPException(status_code=500, detail="stored behavioral freeze receipts are invalid")
+            raise HTTPException(
+                status_code=500, detail="stored behavioral freeze receipts are invalid"
+            )
         cast(list[dict[str, Any]], receipts).append(receipt)
         store.save(payload)
         return {"freeze_receipt": receipt, "candidate": _public_candidate(candidate)}
@@ -635,7 +668,9 @@ def register_life_patterns_freeze_routes(
         payload = store.read(session_id, token)
         receipts_raw = payload.get("behavioral_freeze_receipts", [])
         if not isinstance(receipts_raw, list):
-            raise HTTPException(status_code=500, detail="stored behavioral freeze receipts are invalid")
+            raise HTTPException(
+                status_code=500, detail="stored behavioral freeze receipts are invalid"
+            )
         receipt = next(
             (
                 row

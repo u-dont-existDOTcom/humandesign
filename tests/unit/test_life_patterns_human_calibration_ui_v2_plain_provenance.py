@@ -39,7 +39,7 @@ def _patched_template() -> tuple[ModuleType, str, str]:
 def test_single_source_observed_unit_auto_binds_provenance_without_second_question() -> None:
     _, _, patched = _patched_template()
 
-    assert 'segments.length===1' in patched
+    assert "segments.length===1" in patched
     assert 'type="checkbox" hidden data-source="support"' in patched
     assert "No extra citation decision is needed" in patched
     assert "Use this quote as evidence for the behavior I selected" not in patched
@@ -60,8 +60,8 @@ def test_human_never_has_to_decode_source_segment_ids() -> None:
     assert 'const quoteName=i=>segments.length===1?"Exact quote":`Exact quote ${i+1}`' in patched
     assert 'const quoteText=s=>s.exact_text||s.exact_participant_text||""' in patched
     assert 'class="quotesnippet"' in patched
-    assert '<b>${esc(s.segment_id)}</b>' not in patched
-    assert '> ${esc(s.segment_id)}</label>' not in patched
+    assert "<b>${esc(s.segment_id)}</b>" not in patched
+    assert "> ${esc(s.segment_id)}</label>" not in patched
 
 
 def test_counterevidence_is_optional_secondary_exception_control() -> None:

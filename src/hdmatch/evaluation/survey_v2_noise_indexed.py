@@ -68,8 +68,7 @@ class IndexedSurveyScorer:
         """Return exact scaled-score counts and masks; mixed credit is scaled by two."""
         planes, maximum_score = self.score_planes(observations)
         masks = tuple(
-            _score_mask(planes, score, self.universe_mask)
-            for score in range(maximum_score + 1)
+            _score_mask(planes, score, self.universe_mask) for score in range(maximum_score + 1)
         )
         return tuple(mask.bit_count() for mask in masks), masks
 
@@ -125,8 +124,7 @@ class IndexedSurveyScorer:
         choices: list[tuple[float, int, int]] = []
         for feature in remaining:
             counts = tuple(
-                (leaders & partition).bit_count()
-                for partition in self.partitions[feature].values()
+                (leaders & partition).bit_count() for partition in self.partitions[feature].values()
             )
             entropy = -sum(
                 (count / leader_count) * math.log2(count / leader_count)
@@ -153,10 +151,7 @@ class IndexedSurveyScorer:
             return None
         index = int.from_bytes(
             hashlib.sha256(
-                (
-                    f"{scenario.seed}:{scenario.scenario_id}:"
-                    f"{true_index}:{feature}:label"
-                ).encode()
+                (f"{scenario.seed}:{scenario.scenario_id}:{true_index}:{feature}:label").encode()
             ).digest()[:8],
             "big",
         ) % len(alternatives)
@@ -222,11 +217,7 @@ def simulate_noise_case_indexed(
         best_rank=rank[0],
         worst_rank=rank[1],
         midrank=midrank,
-        percentile=(
-            1.0
-            if candidate_count == 1
-            else 1 - ((midrank - 1) / (candidate_count - 1))
-        ),
+        percentile=(1.0 if candidate_count == 1 else 1 - ((midrank - 1) / (candidate_count - 1))),
         top1_credit=_top_k_credit(rank, 1),
         top5_credit=_top_k_credit(rank, 5),
         top10_credit=_top_k_credit(rank, 10),

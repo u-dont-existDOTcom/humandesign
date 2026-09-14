@@ -31,13 +31,10 @@ class CachedUniverse:
     states: tuple[CandidateState, ...]
 
 
-def cache_path(
-    cache_dir: str | Path, request: MonthRequest, engine_fingerprint: str
-) -> Path:
+def cache_path(cache_dir: str | Path, request: MonthRequest, engine_fingerprint: str) -> Path:
     safe_zone = re.sub(r"[^A-Za-z0-9_.-]+", "_", request.timezone_name)
     return Path(cache_dir) / (
-        f"month-{request.year:04d}-{request.month:02d}-{safe_zone}-"
-        f"{engine_fingerprint[:16]}.json"
+        f"month-{request.year:04d}-{request.month:02d}-{safe_zone}-{engine_fingerprint[:16]}.json"
     )
 
 
@@ -46,9 +43,7 @@ def _cache_payload(
     engine_fingerprint: str,
     states: tuple[CandidateState, ...],
 ) -> dict[str, Any]:
-    start, end = local_month_utc_bounds(
-        request.year, request.month, request.timezone_name
-    )
+    start, end = local_month_utc_bounds(request.year, request.month, request.timezone_name)
     return {
         "schema_version": "candidate-universe-cache-v1",
         "year": request.year,
@@ -72,9 +67,7 @@ def _build_one(
     if destination.is_file():
         # Validation happens when the integration owner loads the result.
         return str(destination)
-    start, end = local_month_utc_bounds(
-        request.year, request.month, request.timezone_name
-    )
+    start, end = local_month_utc_bounds(request.year, request.month, request.timezone_name)
     states = engine.candidate_states(start, end, request.timezone_name)
     write_new_canonical_json(
         destination,
@@ -142,9 +135,7 @@ def load_cached_universe(
     states = tuple(CandidateState.model_validate(item) for item in stored_states)
     if raw.get("state_count") != len(states):
         raise ValueError("candidate-universe cache state count mismatch")
-    start, end = local_month_utc_bounds(
-        request.year, request.month, request.timezone_name
-    )
+    start, end = local_month_utc_bounds(request.year, request.month, request.timezone_name)
     if not states or states[0].start_utc != start or states[-1].end_utc != end:
         raise ValueError("candidate-universe cache does not cover the requested month")
     for previous, current in zip(states, states[1:], strict=False):

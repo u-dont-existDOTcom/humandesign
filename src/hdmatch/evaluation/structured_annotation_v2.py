@@ -98,7 +98,10 @@ class ObservableProcedureExtensionV2(StructuredAnnotationModel):
 
     @model_validator(mode="after")
     def special_values_do_not_conflict(self) -> ObservableProcedureExtensionV2:
-        if self.other_specified_value is not None and self.other_specified_value in self.non_action_values:
+        if (
+            self.other_specified_value is not None
+            and self.other_specified_value in self.non_action_values
+        ):
             raise ValueError("Other Specified value cannot also be registered as non-action")
         return self
 
@@ -210,18 +213,22 @@ class StructuredAnnotationResponseV2(StructuredAnnotationModel):
     def state_and_values_are_coherent(self) -> StructuredAnnotationResponseV2:
         if self.state == "observed":
             if not self.coded_values or self.value_relation is None:
-                raise ValueError("observed structured annotations require coded values and relation")
+                raise ValueError(
+                    "observed structured annotations require coded values and relation"
+                )
             if self.value_relation == "single" and len(self.coded_values) != 1:
                 raise ValueError("single value relation requires exactly one coded value")
-            if self.value_relation in {"ordered_sequence", "unordered_multiple"} and len(
-                self.coded_values
-            ) < 2:
+            if (
+                self.value_relation in {"ordered_sequence", "unordered_multiple"}
+                and len(self.coded_values) < 2
+            ):
                 raise ValueError("multi-value relation requires at least two coded values")
             if not self.supporting_source_turn_ids:
                 raise ValueError("observed structured annotations require supporting source turns")
         elif self.coded_values or self.value_relation is not None or self.asserts_non_action:
             raise ValueError(
-                "insufficient/not-applicable structured annotations cannot assert substantive values"
+                "insufficient/not-applicable structured annotations canno"
+                "t assert substantive values"
             )
 
         if self.state != "observed" and self.other_specified_description is not None:
@@ -244,7 +251,10 @@ def structured_procedure_errors(
 ) -> tuple[str, ...]:
     errors: list[str] = []
     digest = sha256_json(artifact.payload)
-    if artifact.procedure_sha256 != digest or artifact.procedure_id != f"LPSP-{digest[:20].upper()}":
+    if (
+        artifact.procedure_sha256 != digest
+        or artifact.procedure_id != f"LPSP-{digest[:20].upper()}"
+    ):
         errors.append("structured coding procedure failed content-address verification")
     if (
         artifact.payload.ontology_artifact_id != ontology.artifact_id
@@ -256,14 +266,18 @@ def structured_procedure_errors(
     extensions = {row.observable_id: row for row in artifact.payload.observable_extensions}
     unknown = sorted(set(extensions) - set(definitions))
     if unknown:
-        errors.append("structured coding procedure references unknown observables: " + ", ".join(unknown))
+        errors.append(
+            "structured coding procedure references unknown observables: " + ", ".join(unknown)
+        )
 
     for observable_id, extension in extensions.items():
         definition = definitions.get(observable_id)
         if definition is None:
             continue
         if extension.non_action_values and definition.value_type not in {"nominal", "ordinal"}:
-            errors.append(f"non-action registry for {observable_id} requires a categorical observable")
+            errors.append(
+                f"non-action registry for {observable_id} requires a categorical observable"
+            )
             continue
         unknown_values = sorted(set(extension.non_action_values) - set(definition.allowed_values))
         if unknown_values:
@@ -273,10 +287,13 @@ def structured_procedure_errors(
             )
         if extension.other_specified_value is not None:
             if definition.value_type not in {"nominal", "ordinal"}:
-                errors.append(f"Other Specified registry for {observable_id} requires categorical values")
+                errors.append(
+                    f"Other Specified registry for {observable_id} requires categorical values"
+                )
             elif extension.other_specified_value not in definition.allowed_values:
                 errors.append(
-                    f"Other Specified registry for {observable_id} contains value outside its codebook"
+                    f"Other Specified registry for {observable_id} contains "
+                    f"value outside its codebook"
                 )
     return tuple(dict.fromkeys(errors))
 
@@ -355,7 +372,8 @@ def structured_annotation_response_errors(
         for value in response.coded_values:
             if not _validate_scalar_value(value, definition):
                 errors.append(
-                    f"structured annotation for {response.observable_id} contains value outside codebook"
+                    f"structured annotation for {response.observable_id} "
+                    f"contains value outside codebook"
                 )
 
     extensions = {row.observable_id: row for row in procedure.payload.observable_extensions}
@@ -368,7 +386,9 @@ def structured_annotation_response_errors(
         )
     )
     if response.asserts_non_action != expected_non_action:
-        errors.append("structured annotation non-action flag disagrees with frozen procedure registry")
+        errors.append(
+            "structured annotation non-action flag disagrees with frozen procedure registry"
+        )
     if expected_non_action and (
         response.non_action_gate is None or not response.non_action_gate.all_established
     ):
@@ -382,12 +402,12 @@ def structured_annotation_response_errors(
     if expected_other_specified and not response.other_specified_description:
         errors.append("Other Specified value requires a concrete behavioral description")
     if not expected_other_specified and response.other_specified_description is not None:
-        errors.append("Other Specified description supplied without registered Other Specified value")
+        errors.append(
+            "Other Specified description supplied without registered Other Specified value"
+        )
 
     task_turn_ids = {
-        str(row["turn_id"])
-        for row in task.source_turns
-        if isinstance(row.get("turn_id"), str)
+        str(row["turn_id"]) for row in task.source_turns if isinstance(row.get("turn_id"), str)
     }
     cited = (
         set(response.supporting_source_turn_ids)

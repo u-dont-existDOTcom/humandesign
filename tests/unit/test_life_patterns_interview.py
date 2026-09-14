@@ -12,8 +12,14 @@ from fastapi import FastAPI
 from starlette.types import Message, Scope
 
 from hdmatch.api.life_patterns_app import LifePattern, LifePatternsFileStore, LifePatternsMap
-from hdmatch.api.life_patterns_interview_app import InterviewerResult, create_life_patterns_interview_app
-from hdmatch.api.life_patterns_recovery import LifePatternsRecoveryService, LifePatternsRecoverySettings
+from hdmatch.api.life_patterns_interview_app import (
+    InterviewerResult,
+    create_life_patterns_interview_app,
+)
+from hdmatch.api.life_patterns_recovery import (
+    LifePatternsRecoveryService,
+    LifePatternsRecoverySettings,
+)
 
 
 class FakeMapper:
@@ -65,7 +71,9 @@ class FakeInterviewer:
                 episode_ready=first,
                 episode_domain="decisions" if first else None,
                 episode_title="A consequential decision" if first else None,
-                episode_narrative="The participant described how one decision unfolded." if first else None,
+                episode_narrative="The participant described how one decision unfolded."
+                if first
+                else None,
                 episode_counterexample=None,
                 provisional_insight="The process may change by context." if episodes else None,
                 coverage_focus="counterexamples",
@@ -90,7 +98,9 @@ def _settings() -> LifePatternsRecoverySettings:
     )
 
 
-def _recovery(store: LifePatternsFileStore, deliveries: list[tuple[str, str]]) -> LifePatternsRecoveryService:
+def _recovery(
+    store: LifePatternsFileStore, deliveries: list[tuple[str, str]]
+) -> LifePatternsRecoveryService:
     def sender(settings: LifePatternsRecoverySettings, recipient: str, otp: str) -> None:
         assert settings.smtp_password == "secret"
         deliveries.append((recipient, otp))
@@ -215,14 +225,26 @@ def test_interviewer_is_model_blind_and_email_is_hash_only(tmp_path: Path) -> No
         app,
         "POST",
         f"/api/life-patterns/interview/sessions/{session_id}/turns",
-        body={"token": token, "message": "I compared two careers for weeks.", "input_modality": "typed"},
+        body={
+            "token": token,
+            "message": "I compared two careers for weeks.",
+            "input_modality": "typed",
+        },
     )
     assert status == 200
     assert payload["episode_saved"] is True
     assert payload["episode"]["review_status"] == "pending"
     assert payload["progress"]["episode_count"] == 0
     serialized = json.dumps(interviewer.calls[0]).casefold()
-    for forbidden in ("birth", "astrology", "human design", "candidate_state", "chart", "model_fit", "rank"):
+    for forbidden in (
+        "birth",
+        "astrology",
+        "human design",
+        "candidate_state",
+        "chart",
+        "model_fit",
+        "rank",
+    ):
         assert forbidden not in serialized
 
 
@@ -275,7 +297,11 @@ def test_participant_can_edit_or_reject_ai_episode_summary(tmp_path: Path) -> No
         app,
         "POST",
         f"/api/life-patterns/interview/sessions/{session_id}/turns",
-        body={"token": token, "message": "A story the AI may oversimplify.", "input_modality": "typed"},
+        body={
+            "token": token,
+            "message": "A story the AI may oversimplify.",
+            "input_modality": "typed",
+        },
     )
     assert status == 200
     episode_id = str(turn["episode"]["episode_id"])
@@ -356,10 +382,39 @@ def test_map_and_export_use_only_participant_approved_episodes(tmp_path: Path) -
         "created_at_utc": datetime.now(UTC).isoformat(),
     }
     payload["episodes"] = [
-        {**base, "episode_id": "EP-A", "domain": "decisions", "title": "Approved A", "narrative": "First approved episode.", "review_status": "approved"},
-        {**base, "episode_id": "EP-B", "domain": "relationships", "title": "Approved B", "narrative": "Second approved episode.", "review_status": "approved"},
-        {**base, "episode_id": "EP-P", "domain": "work_projects", "title": "Pending", "narrative": "Not yet accepted.", "review_status": "pending", "reviewed_at_utc": None},
-        {**base, "episode_id": "EP-R", "domain": "other", "title": "Rejected", "narrative": "Rejected evidence.", "review_status": "rejected"},
+        {
+            **base,
+            "episode_id": "EP-A",
+            "domain": "decisions",
+            "title": "Approved A",
+            "narrative": "First approved episode.",
+            "review_status": "approved",
+        },
+        {
+            **base,
+            "episode_id": "EP-B",
+            "domain": "relationships",
+            "title": "Approved B",
+            "narrative": "Second approved episode.",
+            "review_status": "approved",
+        },
+        {
+            **base,
+            "episode_id": "EP-P",
+            "domain": "work_projects",
+            "title": "Pending",
+            "narrative": "Not yet accepted.",
+            "review_status": "pending",
+            "reviewed_at_utc": None,
+        },
+        {
+            **base,
+            "episode_id": "EP-R",
+            "domain": "other",
+            "title": "Rejected",
+            "narrative": "Rejected evidence.",
+            "review_status": "rejected",
+        },
     ]
     store.save(payload)
 
@@ -438,16 +493,22 @@ def test_otp_recovery_hashes_code_and_rotates_token(tmp_path: Path) -> None:
     assert status == 200
     new_token = str(recovered["resume_token"])
     assert new_token == "r" * 43
-    assert _request(
-        app,
-        "GET",
-        f"/api/life-patterns/interview/sessions/{session_id}?token={old_token}",
-    )[0] == 403
-    assert _request(
-        app,
-        "GET",
-        f"/api/life-patterns/interview/sessions/{session_id}?token={new_token}",
-    )[0] == 200
+    assert (
+        _request(
+            app,
+            "GET",
+            f"/api/life-patterns/interview/sessions/{session_id}?token={old_token}",
+        )[0]
+        == 403
+    )
+    assert (
+        _request(
+            app,
+            "GET",
+            f"/api/life-patterns/interview/sessions/{session_id}?token={new_token}",
+        )[0]
+        == 200
+    )
 
 
 def test_inner_signal_export_is_consent_read_only_policy(tmp_path: Path) -> None:
@@ -463,8 +524,32 @@ def test_inner_signal_export_is_consent_read_only_policy(tmp_path: Path) -> None
     payload = store.read(session_id, token)
     now = datetime.now(UTC).isoformat()
     payload["episodes"] = [
-        {"episode_id": "EP-1", "domain": "decisions", "title": "One", "narrative": "First.", "counterexample": None, "input_modality": "typed", "source_turn_ids": [], "review_status": "approved", "participant_revision": False, "reviewed_at_utc": now, "created_at_utc": now},
-        {"episode_id": "EP-2", "domain": "relationships", "title": "Two", "narrative": "Second.", "counterexample": None, "input_modality": "typed", "source_turn_ids": [], "review_status": "approved", "participant_revision": False, "reviewed_at_utc": now, "created_at_utc": now},
+        {
+            "episode_id": "EP-1",
+            "domain": "decisions",
+            "title": "One",
+            "narrative": "First.",
+            "counterexample": None,
+            "input_modality": "typed",
+            "source_turn_ids": [],
+            "review_status": "approved",
+            "participant_revision": False,
+            "reviewed_at_utc": now,
+            "created_at_utc": now,
+        },
+        {
+            "episode_id": "EP-2",
+            "domain": "relationships",
+            "title": "Two",
+            "narrative": "Second.",
+            "counterexample": None,
+            "input_modality": "typed",
+            "source_turn_ids": [],
+            "review_status": "approved",
+            "participant_revision": False,
+            "reviewed_at_utc": now,
+            "created_at_utc": now,
+        },
     ]
     mapped, _ = mapper.build(cast(list[dict[str, Any]], payload["episodes"]))
     payload["life_patterns_map"] = mapped.model_dump(mode="json")

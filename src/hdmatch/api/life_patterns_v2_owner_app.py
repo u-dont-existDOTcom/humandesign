@@ -36,6 +36,7 @@ from hdmatch.evaluation.participant_adjudicated_v2 import (
     freeze_life_patterns_record_v2,
     validate_life_patterns_record_v2,
 )
+
 from .life_patterns_v2_owner_ui import HTML
 
 FactAssertionType = Literal[
@@ -127,7 +128,8 @@ class OpenAIOwnerV2Model:
     ) -> dict[str, Any]:
         if not self.api_key:
             raise RuntimeError(
-                "The owner prototype needs HDMATCH_LLM_API_KEY or OPENAI_API_KEY in its runtime environment."
+                "The owner prototype needs HDMATCH_LLM_API_KEY or OPENAI_"
+                "API_KEY in its runtime environment."
             )
         body = {
             "model": self.model,
@@ -196,10 +198,14 @@ class OpenAIOwnerV2Model:
         }
         result = self._call_json(
             instructions=(
-                "You are a target-theory-blind evidence extractor. Read one first-person episode and "
-                "extract only literal or minimally normalized facts directly supported by that episode. "
-                "Do not infer personality, recurrence, hidden motives, Human Design, astrology, or a person-level pattern. "
-                "Do not turn silence into absence. Prefer fewer precise facts. Use fact_id values F1, F2, ... ."
+                "You are a target-theory-blind evidence extractor. Read o"
+                "ne first-person episode and "
+                "extract only literal or minimally normalized facts direc"
+                "tly supported by that episode. "
+                "Do not infer personality, recurrence, hidden motives, Hu"
+                "man Design, astrology, or a person-level pattern. "
+                "Do not turn silence into absence. Prefer fewer precise f"
+                "acts. Use fact_id values F1, F2, ... ."
             ),
             payload={"episode_id": episode_id, "episode_text": episode_text},
             schema=schema,
@@ -220,11 +226,16 @@ class OpenAIOwnerV2Model:
         }
         result = self._call_json(
             instructions=(
-                "You are a target-theory-blind pattern-hypothesis generator. You receive only participant-reviewed "
-                "episode facts from multiple episodes. If a useful cross-episode hypothesis is supported, propose at most "
-                "one tentative person-level pattern as a question. Cite only the fact IDs that actually support it. "
-                "Do not call it true, do not infer from missingness, and do not use any birth/chart/model concepts. "
-                "If the evidence does not support a coherent cross-episode hypothesis, return has_candidate=false."
+                "You are a target-theory-blind pattern-hypothesis generat"
+                "or. You receive only participant-reviewed "
+                "episode facts from multiple episodes. If a useful cross-"
+                "episode hypothesis is supported, propose at most "
+                "one tentative person-level pattern as a question. Cite o"
+                "nly the fact IDs that actually support it. "
+                "Do not call it true, do not infer from missingness, and "
+                "do not use any birth/chart/model concepts. "
+                "If the evidence does not support a coherent cross-episod"
+                "e hypothesis, return has_candidate=false."
             ),
             payload={
                 "facts": [
@@ -424,7 +435,8 @@ class OwnerV2Session:
         episode_ids = {fact.episode_id for fact in facts}
         if len(episode_ids) < 2:
             raise ValueError(
-                "This development probe waits for two reviewed episodes before asking for a cross-episode pattern."
+                "This development probe waits for two reviewed episodes b"
+                "efore asking for a cross-episode pattern."
             )
         suggestion = self.model.propose_pattern(facts)
         if not suggestion.has_candidate:
@@ -434,7 +446,9 @@ class OwnerV2Session:
         if not set(evidence_ids).issubset(fact_by_id):
             raise ValueError("pattern proposer cited unknown or superseded fact IDs")
         if len({fact_by_id[fact_id].episode_id for fact_id in evidence_ids}) < 2:
-            raise ValueError("cross-episode candidate must cite reviewed facts from at least two episodes")
+            raise ValueError(
+                "cross-episode candidate must cite reviewed facts from at least two episodes"
+            )
 
         proposal_id = f"PROP-{uuid.uuid4().hex[:10].upper()}"
         links: list[PatternEvidenceLinkV2] = []
@@ -481,7 +495,9 @@ class OwnerV2Session:
         if self.active_proposal_id is None:
             raise ValueError("no active pattern proposal")
         proposal = next(
-            row for row in self.record.pattern_proposals if row.proposal_id == self.active_proposal_id
+            row
+            for row in self.record.pattern_proposals
+            if row.proposal_id == self.active_proposal_id
         )
         if request.decision != "revise":
             wording = proposal.proposition if request.decision == "accept" else None
@@ -499,7 +515,8 @@ class OwnerV2Session:
                     "wording": revised_wording,
                     "needs_more_evidence": True,
                     "message": (
-                        "That wording may still fit you, but these examples do not establish the added claim. "
+                        "That wording may still fit you, but these examples do no"
+                        "t establish the added claim. "
                         "Add another real episode if you want to test it."
                     ),
                 }
@@ -521,7 +538,9 @@ class OwnerV2Session:
         )
         revised_id = f"PROP-{uuid.uuid4().hex[:10].upper()}"
         old_links = [
-            link for link in self.record.pattern_evidence_links if link.proposal_id == proposal.proposal_id
+            link
+            for link in self.record.pattern_evidence_links
+            if link.proposal_id == proposal.proposal_id
         ]
         revised_links = tuple(
             link.model_copy(
@@ -727,9 +746,7 @@ def create_life_patterns_v2_owner_app(*, model: OwnerV2Model | None = None) -> F
         return suggestion.model_dump(mode="json")
 
     @app.post("/api/owner-v2/sessions/{session_id}/patterns/adjudicate")
-    def adjudicate_pattern(
-        session_id: str, request: PatternAdjudicationRequest
-    ) -> dict[str, Any]:
+    def adjudicate_pattern(session_id: str, request: PatternAdjudicationRequest) -> dict[str, Any]:
         try:
             return runtime.get(session_id).adjudicate_pattern(request)
         except KeyError as exc:

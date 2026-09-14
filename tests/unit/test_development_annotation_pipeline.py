@@ -34,7 +34,6 @@ from hdmatch.evaluation.structured_annotation_v2 import (
 )
 from hdmatch.experiments.canonical import canonical_json_bytes, sha256_json
 
-
 NOW = datetime(2026, 9, 6, 22, 30, tzinfo=UTC)
 PROMPT_SHA = "4" * 64
 NORMALIZER_SHA = "5" * 64

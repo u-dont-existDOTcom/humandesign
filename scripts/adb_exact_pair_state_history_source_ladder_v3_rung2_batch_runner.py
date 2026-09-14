@@ -7,16 +7,18 @@ adb_exact_pair_state_history_source_ladder_v3_rung2.py unchanged, but prefetches
 ADB pages and ADB-linked Wikipedia pages in small batched MediaWiki queries,
 then injects those caches into the frozen implementation.
 """
+
 from __future__ import annotations
 
 import json
 import time
-from pathlib import Path
 
 import adb_exact_pair_state_history_source_ladder_v3_rung2 as base
 
 
-def resolve_batch(titles: list[str], attempts: int = 4) -> dict[str, tuple[str | None, str | None, str | None]]:
+def resolve_batch(
+    titles: list[str], attempts: int = 4
+) -> dict[str, tuple[str | None, str | None, str | None]]:
     """Fetch a small set of exact ADB-linked enwiki titles with redirects.
 
     Returns a map keyed by base.norm(input title). Failures remain explicit
@@ -27,22 +29,26 @@ def resolve_batch(titles: list[str], attempts: int = 4) -> dict[str, tuple[str |
     for t in titles:
         k = base.norm(t)
         if k and k not in seen:
-            seen.add(k); unique.append(t)
+            seen.add(k)
+            unique.append(t)
     if not unique:
         return {}
 
     data = None
     for attempt in range(attempts):
-        data = base.api_json(base.ENWIKI_API, {
-            "action": "query",
-            "prop": "revisions|pageprops",
-            "rvprop": "content",
-            "rvslots": "main",
-            "titles": "|".join(unique),
-            "redirects": 1,
-            "formatversion": 2,
-            "format": "json",
-        })
+        data = base.api_json(
+            base.ENWIKI_API,
+            {
+                "action": "query",
+                "prop": "revisions|pageprops",
+                "rvprop": "content",
+                "rvslots": "main",
+                "titles": "|".join(unique),
+                "redirects": 1,
+                "formatversion": 2,
+                "format": "json",
+            },
+        )
         if data:
             break
         time.sleep(2.0 * (attempt + 1))
@@ -81,7 +87,11 @@ def resolve_batch(titles: list[str], attempts: int = 4) -> dict[str, tuple[str |
             out[base.norm(original)] = (None, None, None)
             continue
         rev = page["revisions"][0]
-        wt = (rev.get("slots", {}).get("main", {}) or {}).get("content") or rev.get("content") or rev.get("*")
+        wt = (
+            (rev.get("slots", {}).get("main", {}) or {}).get("content")
+            or rev.get("content")
+            or rev.get("*")
+        )
         qid = (page.get("pageprops") or {}).get("wikibase_item")
         out[base.norm(original)] = (page.get("title"), wt, qid)
     return out
@@ -114,11 +124,20 @@ def main() -> None:
     for t in linked:
         k = base.norm(t)
         if k not in seen:
-            seen.add(k); unique_linked.append(t)
+            seen.add(k)
+            unique_linked.append(t)
     batch_size = 8
     for i in range(0, len(unique_linked), batch_size):
-        batch = unique_linked[i:i + batch_size]
-        print(f"prefetch enwiki batch {i // batch_size + 1}/{(len(unique_linked) + batch_size - 1) // batch_size} n={len(batch)}", flush=True)
+        batch = unique_linked[i : i + batch_size]
+        print(
+            (
+                f"prefetch enwiki batch "
+                f"{i // batch_size + 1}/"
+                f"{(len(unique_linked) + batch_size - 1) // batch_size} "
+                f"n={len(batch)}"
+            ),
+            flush=True,
+        )
         wiki_cache.update(resolve_batch(batch))
         time.sleep(1.0)
 

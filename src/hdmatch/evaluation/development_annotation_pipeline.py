@@ -223,7 +223,9 @@ def build_validated_development_episode_pass(
         raise ValueError("development episode tasks do not bind one exact corpus")
     recomputed = normalize_development_episode_responses_jsonl(raw_output)
     if recomputed != normalized_output:
-        raise ValueError("episode normalized output is not deterministic normalization of raw output")
+        raise ValueError(
+            "episode normalized output is not deterministic normalization of raw output"
+        )
     corpus_sha256 = next(iter(corpus_hashes))
     _validate_receipt_binding(
         automated_pass,
@@ -258,7 +260,10 @@ def build_validated_development_episode_pass(
         )
         if errors:
             raise ValueError(
-                f"invalid development episode response {response.task_id}/{response.observable_id}: "
+                (
+                    f"invalid development episode response "
+                    f"{response.task_id}/{response.observable_id}: "
+                )
                 + "; ".join(errors)
             )
     payload = ValidatedDevelopmentAutomatedPassPayload(
@@ -300,7 +305,9 @@ def build_validated_development_series_pass(
         raise ValueError("development series tasks do not bind one exact corpus")
     recomputed = normalize_development_series_responses_jsonl(raw_output)
     if recomputed != normalized_output:
-        raise ValueError("series normalized output is not deterministic normalization of raw output")
+        raise ValueError(
+            "series normalized output is not deterministic normalization of raw output"
+        )
     corpus_sha256 = next(iter(corpus_hashes))
     _validate_receipt_binding(
         automated_pass,
@@ -493,13 +500,21 @@ def _responses_by_unit(
     if evidence_kind == "episode":
         rows: tuple[DevelopmentResponse, ...] = load_development_episode_responses_jsonl(data)
         output = {
-            (row.task_id, cast(DevelopmentEpisodeAnnotationResponse, row).episode_id, row.observable_id): row
+            (
+                row.task_id,
+                cast(DevelopmentEpisodeAnnotationResponse, row).episode_id,
+                row.observable_id,
+            ): row
             for row in rows
         }
     else:
         rows = load_development_series_responses_jsonl(data)
         output = {
-            (row.task_id, cast(DevelopmentSeriesAnnotationResponse, row).series_id, row.observable_id): row
+            (
+                row.task_id,
+                cast(DevelopmentSeriesAnnotationResponse, row).series_id,
+                row.observable_id,
+            ): row
             for row in rows
         }
     if len(output) != len(rows):
@@ -602,9 +617,7 @@ def build_development_consensus(
 
     payload = DevelopmentConsensusPayload(
         evidence_kind=evidence_kind,
-        validated_pass_artifact_sha256=tuple(
-            artifact.artifact_sha256 for artifact, _ in validated
-        ),
+        validated_pass_artifact_sha256=tuple(artifact.artifact_sha256 for artifact, _ in validated),
         pass_ids=tuple(artifact.payload.automated_pass.pass_id for artifact, _ in validated),
         corpus_sha256=first_pass.corpus_sha256,
         codebook_sha256=first_pass.codebook_sha256,

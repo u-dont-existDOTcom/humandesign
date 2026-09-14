@@ -166,7 +166,9 @@ def _ready_session(tmp_path: Path) -> tuple[LifePatternsFileStore, FastAPI, str,
             LifePattern(
                 pattern_id="P1",
                 title="Information gathering varies by context",
-                summary="The participant sometimes gathers information extensively before commitment.",
+                summary=(
+                    "The participant sometimes gathers information extensively before commitment."
+                ),
                 status="context_dependent",
                 confidence=0.82,
                 supporting_episode_ids=("EP-A",),
@@ -270,7 +272,10 @@ def test_candidate_is_current_neutral_and_idempotent(tmp_path: Path) -> None:
     source = cast(dict[str, Any], candidates[0]["source"])
     assert [row["episode_id"] for row in source["approved_episodes"]] == ["EP-A", "EP-B"]
     assert [row["turn_id"] for row in source["participant_source_turns"]] == ["TURN-A", "TURN-B"]
-    assert source["evidence_coverage"]["semantics"] == "descriptive_evidence_coverage_not_completion_denominator"
+    assert (
+        source["evidence_coverage"]["semantics"]
+        == "descriptive_evidence_coverage_not_completion_denominator"
+    )
     serialized = json.dumps(source, ensure_ascii=False)
     assert "Try career-style experiments in relationships" not in serialized
     assert "Run a low-stakes timing experiment" not in serialized
@@ -315,7 +320,9 @@ def test_review_events_are_append_only_and_edits_are_new_review_data(tmp_path: P
         "P1",
         action="edit",
         title="My corrected pattern",
-        summary="I gather information extensively when I have time, but urgency changes the process.",
+        summary=(
+            "I gather information extensively when I have time, but urgency changes the process."
+        ),
         status="mixed",
     )
     assert status == 200
@@ -370,7 +377,10 @@ def test_freeze_hash_is_reproducible_and_artifact_never_changes(tmp_path: Path) 
         candidate_id,
         "P2",
         action="edit",
-        summary="When a situation is truly urgent, I may move quickly even if I usually gather more information.",
+        summary=(
+            "When a situation is truly urgent, I may move quickly eve"
+            "n if I usually gather more information."
+        ),
         status="context_dependent",
     )
     assert status == 200
@@ -393,7 +403,12 @@ def test_freeze_hash_is_reproducible_and_artifact_never_changes(tmp_path: Path) 
     assert p2["final_participant_claim"]["status"] == "context_dependent"
     source = artifact["payload"]["behavioral_source"]
     assert [row["episode_id"] for row in source["approved_episodes"]] == ["EP-A", "EP-B"]
-    assert artifact["payload"]["future_model_binding"]["separate_model_analysis_authorization_required"] is True
+    assert (
+        artifact["payload"]["future_model_binding"][
+            "separate_model_analysis_authorization_required"
+        ]
+        is True
+    )
 
     status, response = _review(app, session_id, token, candidate_id, "P1", action="reject")
     assert status == 409
@@ -488,7 +503,10 @@ def test_finalization_rejects_candidate_after_live_evidence_changes(tmp_path: Pa
 
     status, response = _finalize(app, session_id, token, candidate_id)
     assert status == 409
-    assert "live evidence changed" in response["detail"] or "older than the approved evidence" in response["detail"]
+    assert (
+        "live evidence changed" in response["detail"]
+        or "older than the approved evidence" in response["detail"]
+    )
 
 
 def test_frozen_artifact_is_canonical_read_only_retrievable_and_tamper_evident(

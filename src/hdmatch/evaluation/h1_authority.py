@@ -16,7 +16,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Literal
 
-from pydantic import ConfigDict, BaseModel, Field, field_validator, model_validator
+from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 from hdmatch.experiments.canonical import (
     canonical_json_bytes,
@@ -30,9 +30,9 @@ from .neutral_measurement import HumanContentAuthorityReceipt
 _SHA256_PATTERN = r"^[0-9a-f]{64}$"
 _ID_SUFFIX = r"[A-Za-z0-9_-]{16,}"
 
-SURVEY_V2_H1_CONTRACT_VERSION: Literal[
+SURVEY_V2_H1_CONTRACT_VERSION: Literal["survey-v2-h1-exposure-adjudication-contract-v1.0.0"] = (
     "survey-v2-h1-exposure-adjudication-contract-v1.0.0"
-] = "survey-v2-h1-exposure-adjudication-contract-v1.0.0"
+)
 SURVEY_V2_H1_CONTRACT_SHA256: Literal[
     "b26e8ca398eb805125ed4ea475243e1d0cb5134bee4c509dd29223355ff1b070"
 ] = "b26e8ca398eb805125ed4ea475243e1d0cb5134bee4c509dd29223355ff1b070"
@@ -88,18 +88,18 @@ class AuthorityModel(BaseModel):
 class SurveyV2H1SpecificationBinding(AuthorityModel):
     """Exact lock to the frozen H1 specification reused by Life Patterns."""
 
-    contract_version: Literal[
-        "survey-v2-h1-exposure-adjudication-contract-v1.0.0"
-    ] = SURVEY_V2_H1_CONTRACT_VERSION
-    contract_sha256: Literal[
-        "b26e8ca398eb805125ed4ea475243e1d0cb5134bee4c509dd29223355ff1b070"
-    ] = SURVEY_V2_H1_CONTRACT_SHA256
+    contract_version: Literal["survey-v2-h1-exposure-adjudication-contract-v1.0.0"] = (
+        SURVEY_V2_H1_CONTRACT_VERSION
+    )
+    contract_sha256: Literal["b26e8ca398eb805125ed4ea475243e1d0cb5134bee4c509dd29223355ff1b070"] = (
+        SURVEY_V2_H1_CONTRACT_SHA256
+    )
     request_schema_sha256: Literal[
         "1c7f55040d473fd8f4b47107b0edd296a448d9a5121845e907c6fd5eaf412240"
     ] = SURVEY_V2_H1_REQUEST_SCHEMA_SHA256
-    prompt_sha256: Literal[
-        "236c3cfe5fbfc9ee3e03abfa49a3b7c5030276226a953778bb1dc0bef95f8100"
-    ] = SURVEY_V2_H1_PROMPT_SHA256
+    prompt_sha256: Literal["236c3cfe5fbfc9ee3e03abfa49a3b7c5030276226a953778bb1dc0bef95f8100"] = (
+        SURVEY_V2_H1_PROMPT_SHA256
+    )
     output_schema_sha256: Literal[
         "9ec56a40cac3c6d31650ae5983083e74985b9ccca56bf2b616cba5787fb9c46c"
     ] = SURVEY_V2_H1_OUTPUT_SCHEMA_SHA256
@@ -174,7 +174,9 @@ class ValidatedH1AdjudicationPayload(AuthorityModel):
         )
         if self.top_level_status == "forbidden_input":
             if any(value is not None for value in adjudication_fields) or self.missing_fact_codes:
-                raise ValueError("forbidden-input H1 receipts cannot contain an adjudication decision")
+                raise ValueError(
+                    "forbidden-input H1 receipts cannot contain an adjudication decision"
+                )
         elif any(value is None for value in adjudication_fields):
             raise ValueError("completed H1 receipts require a complete adjudication result")
         return self
@@ -253,7 +255,9 @@ class HumanContentReviewReceipt(AuthorityModel):
             raise ValueError("changed content requires a new content hash and new review receipt")
         if self.reviewer_influence == "content_influencing":
             if not self.content_influencing_reviewer_references:
-                raise ValueError("content-influencing reviewers require eligible H1 receipt references")
+                raise ValueError(
+                    "content-influencing reviewers require eligible H1 receipt references"
+                )
         elif self.content_influencing_reviewer_references:
             raise ValueError("method-only review cannot carry content-influencing H1 references")
         return self
@@ -332,9 +336,13 @@ def h1_eligibility_errors(artifact: ValidatedH1AdjudicationArtifact) -> tuple[st
             errors.append("shallow/incidental eligibility has an invalid relevant-window result")
     elif row.exposure_class == "substantial_semantic_or_technical":
         if row.semantic_overlap_assessment != "disjoint_technical_only":
-            errors.append("substantial exposure is eligible only under disjoint technical quarantine")
+            errors.append(
+                "substantial exposure is eligible only under disjoint technical quarantine"
+            )
         if row.relevant_window_assessment != "before_or_during_h1_authorship":
-            errors.append("eligible substantial exposure must use the frozen relevant-window branch")
+            errors.append(
+                "eligible substantial exposure must use the frozen relevant-window branch"
+            )
     else:
         errors.append("H1 exposure class is not eligible under the frozen contract")
     return tuple(dict.fromkeys(errors))
@@ -389,7 +397,9 @@ def authority_bundle_errors(payload: HumanContentAuthorityBundlePayload) -> tupl
         if ref != _reference_for(artifact):
             errors.append(f"authority bundle H1 reference {ref_id} does not match its receipt")
 
-    authorship_ids = {row.validation_receipt_id for row in payload.authorship.eligible_author_references}
+    authorship_ids = {
+        row.validation_receipt_id for row in payload.authorship.eligible_author_references
+    }
     if not authorship_ids:
         errors.append("authority bundle has no eligible construct author")
     if not authorship_ids.issubset(by_id):

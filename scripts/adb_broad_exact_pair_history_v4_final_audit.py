@@ -5,6 +5,7 @@ This script summarizes the completed H1-H4 history ladder and evaluates the
 already-frozen sample-size gates. It performs no astrology/HD feature
 calculation and fits no statistical model.
 """
+
 from __future__ import annotations
 
 import hashlib
@@ -62,7 +63,7 @@ def main() -> None:
     all_pairs_with_day_or_month_exit = 0
 
     for pk in sorted(u_by):
-        up = u_by[pk]
+        _ = u_by[pk]
         p12 = h12_by[pk]
         p4 = h4_by[pk]
         model_ok = bool(p4.get("model_eligible_birth_and_swieph_after_duplicate_guard"))
@@ -95,21 +96,25 @@ def main() -> None:
         starts = []
         for f in p12.get("H1_merged_transitions", []):
             if f.get("transition") == "formation":
-                starts.append({
-                    "source": "H1_adb_structured_event",
-                    "interval_start": f["interval_start"],
-                    "interval_end": f["interval_end"],
-                    "precision": f["precision"],
-                })
+                starts.append(
+                    {
+                        "source": "H1_adb_structured_event",
+                        "interval_start": f["interval_start"],
+                        "interval_end": f["interval_end"],
+                        "precision": f["precision"],
+                    }
+                )
                 formation_kind_counts[f.get("event_kind") or "unknown"] += 1
                 formation_precision_counts[f.get("precision") or "unknown"] += 1
         for r in p12.get("H1_relationship_ranges", []):
-            starts.append({
-                "source": "H1_adb_relationship_range_start",
-                "interval_start": r["interval_start"],
-                "interval_end": r.get("interval_start_latest") or r["interval_start"],
-                "precision": "year",
-            })
+            starts.append(
+                {
+                    "source": "H1_adb_relationship_range_start",
+                    "interval_start": r["interval_start"],
+                    "interval_end": r.get("interval_start_latest") or r["interval_start"],
+                    "precision": "year",
+                }
+            )
 
         if exits and any(s["interval_end"] < e["interval_start"] for e in exits for s in starts):
             all_pairs_with_endpoint_and_prior_state_entry += 1
@@ -123,7 +128,11 @@ def main() -> None:
             if model_ok:
                 reunion_pairs_model += 1
                 reunion_sequences_model += len(reunions)
-            if any((x.get("later_formation") or {}).get("source") == "H4_wikidata_explicit_repeated_start" for x in reunions):
+            if any(
+                (x.get("later_formation") or {}).get("source")
+                == "H4_wikidata_explicit_repeated_start"
+                for x in reunions
+            ):
                 repeated_start_reunion_pairs_all += 1
                 if model_ok:
                     repeated_start_reunion_pairs_model += 1
@@ -141,7 +150,9 @@ def main() -> None:
     h4_counts = h4.get("final_state_history_counts", {})
     if endpoint_pairs_all != int(h4_counts.get("all_exact_pairs_with_usable_nonfatal_exit", -1)):
         raise RuntimeError("final audit endpoint count disagrees with H4 artifact")
-    if endpoint_pairs_model != int(h4_counts.get("model_eligible_pairs_with_usable_nonfatal_exit", -1)):
+    if endpoint_pairs_model != int(
+        h4_counts.get("model_eligible_pairs_with_usable_nonfatal_exit", -1)
+    ):
         raise RuntimeError("final audit model-eligible endpoint count disagrees with H4 artifact")
 
     dissolution_gate_all = endpoint_pairs_all >= 50
@@ -150,16 +161,21 @@ def main() -> None:
     reunion_gate_model = reunion_pairs_model >= 30
 
     if dissolution_gate_all and dissolution_gate_model:
-        dissolution_next = "write_and_freeze_separate_dissolution_semimarkov_model_spec_do_not_fit_yet"
+        dissolution_next = (
+            "write_and_freeze_separate_dissolution_semimarkov_model_spec_do_not_fit_yet"
+        )
     elif dissolution_gate_all:
-        dissolution_next = "frozen_pair_count_gate_passes_but_preflight_eligible_count_is_below_50_write_spec_only_with_fit_blocker"
+        dissolution_next = (
+            "frozen_pair_count_gate_passes_but_preflight_eligible_cou"
+            "nt_is_below_50_write_spec_only_with_fit_blocker"
+        )
     else:
         dissolution_next = "do_not_write_or_fit_dissolution_model_spec_insufficient_pairs"
 
     reunion_next = (
         "write_and_freeze_separate_reunion_hazard_model_spec_do_not_fit_yet"
-        if reunion_gate_all and reunion_gate_model else
-        "do_not_write_or_fit_reunion_model_spec_insufficient_strict_reunion_pairs"
+        if reunion_gate_all and reunion_gate_model
+        else "do_not_write_or_fit_reunion_model_spec_insufficient_strict_reunion_pairs"
     )
 
     out = {
@@ -178,7 +194,9 @@ def main() -> None:
             "nonfatal_exit_transitions_by_source": dict(sorted(source_counts.items())),
             "nonfatal_exit_transitions_by_precision": dict(sorted(precision_counts.items())),
             "H1_formation_transitions_by_kind": dict(sorted(formation_kind_counts.items())),
-            "H1_formation_transitions_by_precision": dict(sorted(formation_precision_counts.items())),
+            "H1_formation_transitions_by_precision": dict(
+                sorted(formation_precision_counts.items())
+            ),
             "source_defined_conflicts": dict(sorted(conflict_counts.items())),
             "H1_counts": h12.get("H1_counts", {}),
             "H2_counts": h12.get("H2_counts", {}),
@@ -190,18 +208,32 @@ def main() -> None:
             "model_eligible_pairs_with_usable_nonfatal_exit": endpoint_pairs_model,
             "all_clean_nonfatal_exit_transitions": endpoint_transitions_all,
             "model_eligible_clean_nonfatal_exit_transitions": endpoint_transitions_model,
-            "all_endpoint_pairs_with_any_interval_censoring": interval_censored_endpoint_pairs_all,
-            "model_endpoint_pairs_with_any_interval_censoring": interval_censored_endpoint_pairs_model,
-            "all_endpoint_pairs_with_at_least_one_day_or_month_exit": all_pairs_with_day_or_month_exit,
-            "model_endpoint_pairs_with_at_least_one_day_or_month_exit": model_pairs_with_day_or_month_exit,
-            "all_endpoint_pairs_with_explicit_prior_H1_state_entry": all_pairs_with_endpoint_and_prior_state_entry,
-            "model_endpoint_pairs_with_explicit_prior_H1_state_entry": model_pairs_with_endpoint_and_prior_state_entry,
+            "all_endpoint_pairs_with_any_interval_censoring": (
+                interval_censored_endpoint_pairs_all
+            ),
+            "model_endpoint_pairs_with_any_interval_censoring": (
+                interval_censored_endpoint_pairs_model
+            ),
+            "all_endpoint_pairs_with_at_least_one_day_or_month_exit": (
+                all_pairs_with_day_or_month_exit
+            ),
+            "model_endpoint_pairs_with_at_least_one_day_or_month_exit": (
+                model_pairs_with_day_or_month_exit
+            ),
+            "all_endpoint_pairs_with_explicit_prior_H1_state_entry": (
+                all_pairs_with_endpoint_and_prior_state_entry
+            ),
+            "model_endpoint_pairs_with_explicit_prior_H1_state_entry": (
+                model_pairs_with_endpoint_and_prior_state_entry
+            ),
             "all_pairs_with_strict_reunion_sequence": reunion_pairs_all,
             "model_eligible_pairs_with_strict_reunion_sequence": reunion_pairs_model,
             "all_strict_reunion_sequences": reunion_sequences_all,
             "model_eligible_strict_reunion_sequences": reunion_sequences_model,
             "all_pairs_with_H4_repeated_start_supported_reunion": repeated_start_reunion_pairs_all,
-            "model_pairs_with_H4_repeated_start_supported_reunion": repeated_start_reunion_pairs_model,
+            "model_pairs_with_H4_repeated_start_supported_reunion": (
+                repeated_start_reunion_pairs_model
+            ),
         },
         "frozen_gate_decisions": {
             "dissolution_nonfatal_exit": {
@@ -225,16 +257,33 @@ def main() -> None:
             "H4_linked_wikidata_qids": h4.get("linked_wikidata_qids"),
             "H4_resolved_claim_entities": h4.get("resolved_claim_entities"),
             "H4_exact_pair_P26_P451_statements": h4.get("exact_pair_P26_P451_statements"),
-            "source_hierarchy_complete": bool((h4.get("frozen_gate_result") or {}).get("source_hierarchy_complete")),
+            "source_hierarchy_complete": bool(
+                (h4.get("frozen_gate_result") or {}).get("source_hierarchy_complete")
+            ),
         },
         "interpretation": [
-            "This audit concerns development-data availability, not astrological predictive performance.",
-            "Crossing a frozen sample-size gate authorizes only a separately frozen model specification; it does not authorize immediate fitting.",
-            "The reunion gate is evaluated independently and unlike transitions are not pooled merely to reach sample size.",
-            "Independent external couples remain required for confirmatory validation of any later development result.",
+            (
+                "This audit concerns development-data availability, not a"
+                "strological predictive performance."
+            ),
+            (
+                "Crossing a frozen sample-size gate authorizes only a sep"
+                "arately frozen model specification; it does not authoriz"
+                "e immediate fitting."
+            ),
+            (
+                "The reunion gate is evaluated independently and unlike t"
+                "ransitions are not pooled merely to reach sample size."
+            ),
+            (
+                "Independent external couples remain required for confirm"
+                "atory validation of any later development result."
+            ),
         ],
     }
-    OUT.write_text(json.dumps(out, indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8")
+    OUT.write_text(
+        json.dumps(out, indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
     print(json.dumps(out, indent=2, ensure_ascii=False), flush=True)
 
 

@@ -63,9 +63,13 @@ class RefinementScriptedModel:
     ) -> ConversationMove:
         move = self.moves.pop(0)
         if move == "follow_up":
-            return ConversationMove(reply="What else would distinguish those cases?", move_type="follow_up")
+            return ConversationMove(
+                reply="What else would distinguish those cases?", move_type="follow_up"
+            )
         if move == "request_contrast":
-            return ConversationMove(reply="Give me a contrasting real situation.", move_type="request_contrast")
+            return ConversationMove(
+                reply="Give me a contrasting real situation.", move_type="request_contrast"
+            )
         if move == "boundary_question":
             return ConversationMove(
                 reply="What would be a case where that contrast stops holding?",
