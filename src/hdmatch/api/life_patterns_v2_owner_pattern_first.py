@@ -15,7 +15,6 @@ from fastapi.responses import HTMLResponse
 
 from .life_patterns_v2_owner_app import PatternAdjudicationRequest
 from .life_patterns_v2_owner_conversation import (
-    ConversationMove,
     ConversationTurnRequest,
     CreateConversationSessionResponse,
     ConversationalOwnerSession,
