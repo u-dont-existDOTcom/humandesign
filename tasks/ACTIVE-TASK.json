@@ -20,6 +20,7 @@
   "patternFirstRuntimeRepairCI": "success",
   "conversationalDeploymentId": "842b13f2-66b2-435e-a918-dbc81cde00e7",
   "conversationalDeploymentStatus": "success",
+  "liveAuthenticatedTurnReplayedByChat": false,
   "semanticChangeRequired": false,
   "productStrategyReplacementRequired": false,
   "failedOwnerFacingMethod": "surfaced fact-by-fact paraphrase review and formal pattern adjudication",
@@ -35,7 +36,7 @@
   "recruitmentContactAuthorized": false,
   "spendingAuthorized": false,
   "completionCommand": "python -m pytest tests/unit/test_life_patterns_v2_owner_pattern_first.py tests/unit/test_life_patterns_v2_owner_conversation.py tests/unit/test_life_patterns_v2_owner_app.py tests/unit/test_participant_adjudicated_v2.py -q",
-  "nextAction": "OWNER CONVERSATIONAL INSIGHT JUDGMENT REQUIRED: start a fresh authenticated owner-only browser session at life-patterns-owner-production.up.railway.app and use the repaired pattern-first interview naturally. Judge whether it creates at least one useful distinction, context boundary, developmental change, counterexample, contrast, or synthesis that was not merely handed to it verbatim. If the experience remains primarily paraphrase plus confirmation, classify the interaction strategy as failed rather than polishing the UI.",
+  "nextAction": "OWNER CONVERSATIONAL INSIGHT JUDGMENT REQUIRED: start a fresh authenticated owner-only browser session at life-patterns-owner-production.up.railway.app and use the repaired pattern-first interview naturally. This is also the first live authenticated post-repair consumer-seam turn. Judge whether it creates at least one useful distinction, context boundary, developmental change, counterexample, contrast, or synthesis that was not merely handed to it verbatim. If the experience remains primarily paraphrase plus confirmation, classify the interaction strategy as failed rather than polishing the UI.",
   "ownerAuthority": "The owner rejected the surfaced coding/paraphrase workflow and correctly recalled the earlier pattern-first interactive interview design. Coding remains hidden evidence infrastructure, not the participant product. The runtime validation defect, partial-turn mutation risk, and episode-first opening have now been repaired without changing accepted v2 semantics. Owner product judgment resumes on a fresh browser session.",
   "preflightCommand": "python scripts/task_preflight.py",
   "suspendedTaskSources": [
