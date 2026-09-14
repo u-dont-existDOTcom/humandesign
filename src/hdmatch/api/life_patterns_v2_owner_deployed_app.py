@@ -7,7 +7,7 @@ import os
 import secrets
 from collections.abc import Awaitable, Callable
 
-from fastapi import Request, Response
+from fastapi import FastAPI, Request, Response
 from fastapi.responses import PlainTextResponse
 
 from .life_patterns_v2_owner_app import create_life_patterns_v2_owner_app
@@ -36,7 +36,7 @@ def _basic_authorized(
     )
 
 
-def create_secured_owner_app():  # type: ignore[no-untyped-def]
+def create_secured_owner_app() -> FastAPI:
     expected_username = os.environ.get("HDMATCH_OWNER_BASIC_USER", "owner")
     expected_password = os.environ.get("HDMATCH_OWNER_BASIC_PASSWORD", "").strip()
     if not expected_password:
