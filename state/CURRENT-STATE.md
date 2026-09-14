@@ -55,12 +55,14 @@ Deployment receipt: `state/LIFE-PATTERNS-v2-OWNER-REAL-DATA-BROWSER-RAILWAY-DEPL
 
 - Railway service: `life-patterns-owner`
 - Service domain: `life-patterns-owner-production.up.railway.app`
-- Deployment `b932cfb5-cf50-4778-b974-c5c783a83336`: **SUCCESS**
+- First authenticated-wrapper deployment `b932cfb5-cf50-4778-b974-c5c783a83336`: **SUCCESS**
 - `/healthz`: HTTP `200`
 - unauthenticated `/`: HTTP `401`
 - all owner-facing paths are protected by HTTP Basic authentication
 - model credential is supplied by a Railway reference to the existing configured service credential; no secret value is committed to Git
 - the existing `relationship-web` application source/start/domain/running deployment were not repurposed
+
+Subsequent state-only branch commits may trigger routine Railway redeploys but do not change the implemented browser semantics or authorization boundary.
 
 This one owner-only authenticated deployment is authorized and executed. It does **not** authorize external/public participant deployment or broader production rollout.
 
