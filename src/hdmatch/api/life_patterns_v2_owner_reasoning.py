@@ -1,8 +1,8 @@
 """Reasoning-guarded owner-only Life Patterns conversation.
 
-Adds an epistemic audit before a tentative synthesis reaches the participant and makes
-proposal disagreement trigger model-led diagnosis rather than asking the participant to
-restate an obvious unsupported leap. The accepted v2 evidence semantics remain unchanged.
+Adds semantic boundary resolution plus an epistemic audit before a tentative synthesis reaches
+the participant, and makes proposal disagreement trigger model-led diagnosis rather than asking
+the participant to restate an obvious unsupported leap. Accepted v2 evidence semantics remain unchanged.
 """
 
 from __future__ import annotations
@@ -32,7 +32,57 @@ from .life_patterns_v2_owner_refinement import (
 
 
 class ReasoningGuardedPatternFirstOpenAIConversationModel(PatternFirstOpenAIConversationModel):
-    """Require proposition-level support before exposing a synthesis."""
+    """Require semantic boundary resolution and proposition-level support before synthesis."""
+
+    def boundary_answer_resolved(
+        self,
+        *,
+        message: str,
+        recent_conversation: tuple[dict[str, str], ...],
+        operative_facts: tuple[Any, ...],
+    ) -> bool:
+        """Return true only when the participant actually answered the requested discriminator."""
+
+        schema = {
+            "type": "object",
+            "additionalProperties": False,
+            "required": ["resolved", "internal_reason"],
+            "properties": {
+                "resolved": {"type": "boolean"},
+                "internal_reason": {"type": "string", "minLength": 1, "maxLength": 700},
+            },
+        }
+        result = super()._conversation_call_json(
+            instructions=(
+                "Decide whether the participant's latest message actually resolves the immediately preceding "
+                "boundary/counterexample question in a target-theory-blind Life Patterns interview. `resolved=true` "
+                "requires discriminating evidence responsive to what was asked: for example a concrete exception, a "
+                "case that breaks or preserves the proposed contrast, or a direct comparison that distinguishes the "
+                "live possibilities. A reply is NOT resolved merely because it is relevant or informative. Return false "
+                "when it only introduces another possible factor, shifts to an adjacent variable, restates the pattern, "
+                "gives general uncertainty, or says no counterexample comes to mind without concrete discriminating "
+                "evidence. Do not interpret missing recall as real-world absence. Judge the relationship between the "
+                "question and answer, not whether the answer sounds plausible."
+            ),
+            payload={
+                "latest_participant_message": message,
+                "recent_conversation_before_latest_message": list(recent_conversation[-12:]),
+                "operative_facts": [
+                    {
+                        "fact_id": getattr(fact, "fact_id", None),
+                        "episode_id": getattr(fact, "episode_id", None),
+                        "assertion_type": getattr(fact, "assertion_type", None),
+                        "proposition": getattr(fact, "proposition", None),
+                    }
+                    for fact in operative_facts
+                ],
+            },
+            schema=schema,
+            effort="medium",
+            max_output_tokens=700,
+            schema_name="life_patterns_boundary_resolution_v1",
+        )
+        return bool(result.get("resolved"))
 
     def _conversation_call_json(
         self,
@@ -146,7 +196,36 @@ class ReasoningGuardedPatternFirstOpenAIConversationModel(PatternFirstOpenAIConv
 
 
 class ReasoningRefinablePatternSession(RefinablePatternFirstConversationalOwnerSession):
-    """Use the interviewer to diagnose a rejected synthesis before burdening the participant."""
+    """Apply semantic boundary resolution and model-led recovery from rejected syntheses."""
+
+    def turn(self, message: str) -> dict[str, Any]:
+        clean = message.strip()
+        if not clean:
+            raise ValueError("message is required")
+        if self.core.active_proposal_id is not None or not self.pending_boundary_question:
+            return super().turn(clean)
+
+        resolver = getattr(self.model, "boundary_answer_resolved", None)
+        if not callable(resolver):
+            return super().turn(clean)
+
+        snapshot = self._snapshot_state()
+        try:
+            resolved = bool(
+                resolver(
+                    message=clean,
+                    recent_conversation=tuple(self.conversation),
+                    operative_facts=self.core.operative_facts(),
+                )
+            )
+            # Prevent the legacy base controller from equating mere reply-arrival with resolution.
+            # The semantic result above now controls whether the synthesis gate can open.
+            self.pending_boundary_question = False
+            self.boundary_answered = resolved
+            return super().turn(clean)
+        except Exception:
+            self._restore_state(snapshot)
+            raise
 
     def disagree_with_pattern(self) -> dict[str, Any]:
         if self.core.active_proposal_id is None:
@@ -189,7 +268,7 @@ def create_life_patterns_v2_owner_reasoning_app(
 ) -> FastAPI:
     resolved_model = model or ReasoningGuardedPatternFirstOpenAIConversationModel.from_env()
     runtime = ReasoningRefinableRuntime(model=resolved_model)
-    app = FastAPI(title="Life Patterns v2 reasoning-guarded owner conversation", version="0.6")
+    app = FastAPI(title="Life Patterns v2 reasoning-guarded owner conversation", version="0.7")
 
     @app.get("/", response_class=HTMLResponse, include_in_schema=False)
     def landing() -> str:
@@ -205,6 +284,7 @@ def create_life_patterns_v2_owner_reasoning_app(
             "pattern_first": True,
             "unresolved_thread_continuation": True,
             "rejected_synthesis_continuation": True,
+            "semantic_boundary_resolution": True,
             "hypothesis_support_audit": True,
             "rejection_reasoning_recovery": True,
             "model_configured": bool(getattr(resolved_model, "configured", True)),
