@@ -6,6 +6,7 @@ are then used as evidence anchors while the v2 evidence ledger remains hidden.
 
 from __future__ import annotations
 
+import time
 import uuid
 from dataclasses import dataclass, field
 from typing import Any, Literal
@@ -24,6 +25,24 @@ from .life_patterns_v2_owner_conversation import (
 from .life_patterns_v2_owner_conversation_ui import HTML
 
 _NON_HYPOTHESIS_MOVES = frozenset({"follow_up", "request_contrast", "boundary_question"})
+_TRANSIENT_MODEL_ERROR_MARKERS = (
+    "HTTP 408:",
+    "HTTP 500:",
+    "HTTP 502:",
+    "HTTP 503:",
+    "HTTP 504:",
+    "HTTP 520:",
+    "HTTP 521:",
+    "HTTP 522:",
+    "HTTP 523:",
+    "HTTP 524:",
+    "model network error:",
+)
+_MODEL_PROVIDER_ATTEMPTS = 3
+
+
+class TemporaryModelProviderError(RuntimeError):
+    """Transient upstream failure after the bounded retry budget is exhausted."""
 
 
 def _normalize_conversation_move_payload(payload: dict[str, Any]) -> dict[str, Any]:
@@ -36,8 +55,13 @@ def _normalize_conversation_move_payload(payload: dict[str, Any]) -> dict[str, A
     return normalized
 
 
+def _is_transient_model_error(exc: RuntimeError) -> bool:
+    detail = str(exc)
+    return any(marker in detail for marker in _TRANSIENT_MODEL_ERROR_MARKERS)
+
+
 class PatternFirstOpenAIConversationModel(OpenAIConversationModel):
-    """Provider adapter with a narrow structured-output repair at the model boundary."""
+    """Provider adapter with narrow normalization and bounded transient retries."""
 
     def _conversation_call_json(
         self,
@@ -57,14 +81,30 @@ class PatternFirstOpenAIConversationModel(OpenAIConversationModel):
                 "or a genuinely discriminating contrast. For follow_up, request_contrast, and boundary_question, "
                 "return hypothesis_proposition=null and evidence_fact_ids=[]."
             )
-        result = super()._conversation_call_json(
-            instructions=instructions,
-            payload=payload,
-            schema=schema,
-            effort=effort,
-            max_output_tokens=max_output_tokens,
-            schema_name=schema_name,
-        )
+
+        result: dict[str, Any] | None = None
+        for attempt in range(_MODEL_PROVIDER_ATTEMPTS):
+            try:
+                result = super()._conversation_call_json(
+                    instructions=instructions,
+                    payload=payload,
+                    schema=schema,
+                    effort=effort,
+                    max_output_tokens=max_output_tokens,
+                    schema_name=schema_name,
+                )
+                break
+            except RuntimeError as exc:
+                if not _is_transient_model_error(exc):
+                    raise
+                if attempt + 1 >= _MODEL_PROVIDER_ATTEMPTS:
+                    raise TemporaryModelProviderError(
+                        "The model service is temporarily unavailable after automatic retries. "
+                        "Nothing from this turn was saved; please try Send again in a moment."
+                    ) from exc
+                time.sleep(0.35 * (2**attempt))
+
+        assert result is not None
         if schema_name == "life_patterns_conversation_move_v1":
             return _normalize_conversation_move_payload(result)
         return result
@@ -217,6 +257,8 @@ def create_life_patterns_v2_owner_pattern_first_app(
             return runtime.get(session_id).turn(request.message)
         except KeyError as exc:
             raise HTTPException(status_code=404, detail="owner session not found") from exc
+        except TemporaryModelProviderError as exc:
+            raise HTTPException(status_code=503, detail=str(exc)) from exc
         except (RuntimeError, ValueError) as exc:
             raise HTTPException(status_code=422, detail=str(exc)) from exc
 
