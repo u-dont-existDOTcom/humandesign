@@ -14,6 +14,8 @@ Exact verified code head:
 
 `67b038b27d62b941b6beb224c6e89efd0d165bb4`
 
+Canonical branch state after recording this repair continues on PR #24; `tasks/ACTIVE-TASK.json` is the authority for the current head/gate.
+
 New repair layer:
 
 `src/hdmatch/api/life_patterns_v2_owner_pattern_first.py`
