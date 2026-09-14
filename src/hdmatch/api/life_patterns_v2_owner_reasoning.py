@@ -1,22 +1,27 @@
-"""Reasoning-guarded owner-only Life Patterns conversation.
+"""Adaptive owner-only Life Patterns conversation.
 
-Adds semantic boundary resolution plus an epistemic audit before a tentative synthesis reaches
-the participant, and makes proposal disagreement trigger model-led diagnosis rather than asking
-the participant to restate an obvious unsupported leap. Accepted v2 evidence semantics remain \
-unchanged.
+This layer restores the earlier interview's information-gain / burden discipline while preserving
+Life Patterns v2's hidden evidence ledger and participant-authoritative pattern adjudication.
+There is no fixed episode quota and no mandatory counterexample gate before a tentative synthesis.
 """
 
 from __future__ import annotations
 
 import uuid
 from dataclasses import dataclass, field
-from typing import Any, Literal
+from typing import Any
 
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse
 
+from hdmatch.evaluation.participant_adjudicated_v2 import (
+    PatternEvidenceLinkV2,
+    PatternProposalV2,
+)
+
 from .life_patterns_v2_owner_app import PatternAdjudicationRequest
 from .life_patterns_v2_owner_conversation import (
+    ConversationMove,
     ConversationTurnRequest,
     CreateConversationSessionResponse,
     OwnerConversationModel,
@@ -32,232 +37,208 @@ from .life_patterns_v2_owner_refinement import (
 )
 
 
-class ReasoningGuardedPatternFirstOpenAIConversationModel(PatternFirstOpenAIConversationModel):
-    """Require semantic boundary resolution and proposition-level support before synthesis."""
+_ADAPTIVE_INTERVIEW_INSTRUCTIONS = (
+    "You are conducting an unusually attentive, target-theory-blind Life Patterns interview. "
+    "The objective is useful information per unit participant burden, not exhaustive interrogation, "
+    "not proving that you understood them, and not forcing every uncertainty to closure. Return exactly "
+    "one interviewer move and ask at most one question.\n\n"
+    "PATTERN-FIRST, EVIDENCE-ANCHORED: The participant may begin with a recurring/changing pattern in "
+    "their own words. Treat that report as conversational context. Concrete situations can clarify, "
+    "scope, challenge, or anchor it, but there is NO fixed episode quota. A counterexample or contrast is "
+    "useful only when it can genuinely change the interpretation; it is never a mandatory ritual before "
+    "a synthesis. A participant-reported series or recurring self-description is legitimate self-report. "
+    "Do not force another dated episode merely to obtain a stronger-looking evidence label.\n\n"
+    "FOLLOW-UP GATE: Before asking any follow-up, identify the exact missing or conflicting fact and how "
+    "different plausible answers would materially change the retained pattern's meaning, scope, context, "
+    "timing, exception structure, or uncertainty. If the answer would not materially change any of those, "
+    "DO NOT ask the question. Surface the narrow supported synthesis instead. Unknown, not remembered, "
+    "inapplicable, or declined may remain unresolved; do not reopen the same point without new participant "
+    "information. Do not hunt for contradiction or hypothetical edge cases.\n\n"
+    "LISTENING / REDUNDANCY: Never ask the participant to restate information already supplied. Never ask "
+    "them to distinguish internal states they could not reasonably observe merely because the distinction is "
+    "theoretically possible. If the participant says a question is obvious, redundant, confusing, or already "
+    "answered, inspect your own question first, recover the existing answer, and drop the distinction unless "
+    "it is genuinely material and answerable. Frustration with the interview is process feedback, not behavioral "
+    "evidence.\n\n"
+    "EVIDENCE DIRECTION: Additional factors are additive unless the participant supplied evidence comparing "
+    "their importance. Never infer more/less, mainly, primarily, or rather-than without a real comparison. Do "
+    "not transfer a factor from one context to another without support. Keep distinct reported outcomes distinct "
+    "unless the participant links them. Do not use a broad label that merely renames the phenomenon as if it "
+    "explained it. Missing recall is not evidence of absence.\n\n"
+    "STOPPING / ORDINARY PATTERNS: Do not manufacture depth. If the participant has described a straightforward "
+    "or ordinary recurring pattern and further questions have low expected information gain, surface that narrow "
+    "pattern rather than interrogating it until something more interesting appears. A simple supported pattern is "
+    "better than an elaborate speculative one. If a contextual modifier is supported, include it narrowly; if its "
+    "role remains uncertain, say so rather than drilling indefinitely.\n\n"
+    "SURFACING A HYPOTHESIS: Use surface_hypothesis when the available cited hidden facts support a useful "
+    "person-level formulation and another question is unlikely to materially improve it. One grounded episode may "
+    "be enough when the participant has also supplied a recurring self-description; multiple episodes can strengthen "
+    "or qualify a pattern but are not required. Do not promote a single occurrence into recurrence without participant "
+    "self-report. The hypothesis may be close to the participant's own recurring formulation when that is what the "
+    "evidence supports; explanatory novelty is NOT required. Phrase it tentatively and make participant authority "
+    "obvious. No flattery, diagnosis, destiny language, motivational coaching, external-theory concepts, or target hints.\n\n"
+    "AFTER REJECTION: If the participant rejects a synthesis, inspect the conversation for the likely unsupported "
+    "premise yourself. Correct or narrow your working interpretation and ask only the smallest genuinely decision-changing "
+    "question, if one remains. Do not default to asking the participant to explain an obvious mistake you can already see.\n\n"
+    "For follow_up, request_contrast, and boundary_question return hypothesis_proposition=null and evidence_fact_ids=[]."
+)
 
-    def boundary_answer_resolved(
+
+class AdaptivePatternFirstOpenAIConversationModel(PatternFirstOpenAIConversationModel):
+    """Planner that restores adaptive stopping instead of quota-driven interrogation."""
+
+    def plan_turn(
         self,
         *,
-        message: str,
-        recent_conversation: tuple[dict[str, str], ...],
+        current_episode_id: str | None,
+        episodes: tuple[Any, ...],
         operative_facts: tuple[Any, ...],
-    ) -> bool:
-        """Return true only when the participant actually answered the requested discriminator."""
-
+        recent_conversation: tuple[dict[str, str], ...],
+        boundary_answered: bool,
+    ) -> ConversationMove:
         schema = {
             "type": "object",
             "additionalProperties": False,
-            "required": ["resolved", "internal_reason"],
+            "required": [
+                "reply",
+                "move_type",
+                "hypothesis_proposition",
+                "evidence_fact_ids",
+            ],
             "properties": {
-                "resolved": {"type": "boolean"},
-                "internal_reason": {"type": "string", "minLength": 1, "maxLength": 700},
-            },
-        }
-        result = super()._conversation_call_json(
-            instructions=(
-                "Decide whether the participant's latest message actually"
-                " resolves the immediately preceding "
-                "boundary/counterexample question in a target-theory-blin"
-                "d Life Patterns interview. `resolved=true` "
-                "requires discriminating evidence responsive to what was "
-                "asked: for example a concrete exception, a "
-                "case that breaks or preserves the proposed contrast, or "
-                "a direct comparison that distinguishes the "
-                "live possibilities. A reply is NOT resolved merely becau"
-                "se it is relevant or informative. Return false "
-                "when it only introduces another possible factor, shifts "
-                "to an adjacent variable, restates the pattern, "
-                "gives general uncertainty, or says no counterexample com"
-                "es to mind without concrete discriminating "
-                "evidence. Do not interpret missing recall as real-world "
-                "absence. Judge the relationship between the "
-                "question and answer, not whether the answer sounds plausible."
-            ),
-            payload={
-                "latest_participant_message": message,
-                "recent_conversation_before_latest_message": list(recent_conversation[-12:]),
-                "operative_facts": [
-                    {
-                        "fact_id": getattr(fact, "fact_id", None),
-                        "episode_id": getattr(fact, "episode_id", None),
-                        "assertion_type": getattr(fact, "assertion_type", None),
-                        "proposition": getattr(fact, "proposition", None),
-                    }
-                    for fact in operative_facts
-                ],
-            },
-            schema=schema,
-            effort="medium",
-            max_output_tokens=700,
-            schema_name="life_patterns_boundary_resolution_v1",
-        )
-        return bool(result.get("resolved"))
-
-    def _conversation_call_json(
-        self,
-        *,
-        instructions: str,
-        payload: dict[str, Any],
-        schema: dict[str, Any],
-        effort: Literal["low", "medium"],
-        max_output_tokens: int,
-        schema_name: str,
-    ) -> dict[str, Any]:
-        if schema_name == "life_patterns_conversation_move_v1":
-            instructions += (
-                "\n\nEPISTEMIC DISCIPLINE FOR SYNTHESIS: Treat each partici"
-                "pant-supplied factor as additive "
-                "unless the evidence actually compares its importance wit"
-                "h another factor. Never infer that a subject, "
-                "cause, or context matters less/more, mainly, primarily, "
-                "or rather than another merely because the "
-                "participant introduced an additional factor. Do not tran"
-                "sfer a factor observed in one episode/context "
-                "to another episode/context without direct support. Keep "
-                "distinct reported outcomes distinct (for example "
-                "curiosity, meaning, attention, energy) unless the partic"
-                "ipant explicitly links them. Do not use an umbrella "
-                "label such as 'mental state' as explanatory compression "
-                "when it merely renames the thing being explained. "
-                "If a requested counterexample/boundary answer merely add"
-                "s another possible factor without actually resolving "
-                "the requested contrast, ask the discriminating follow-up"
-                " instead of treating the boundary as established. "
-                "If the latest participant message rejects a synthesis, f"
-                "irst inspect the synthesis against the existing "
-                "evidence and target the weakest unsupported leap with on"
-                "e specific question; do not default to asking the "
-                "participant to explain what was obvious from the transcr"
-                "ipt, and do not immediately surface another synthesis."
-            )
-
-        result = super()._conversation_call_json(
-            instructions=instructions,
-            payload=payload,
-            schema=schema,
-            effort=effort,
-            max_output_tokens=max_output_tokens,
-            schema_name=schema_name,
-        )
-        if schema_name != "life_patterns_conversation_move_v1":
-            return result
-        if result.get("move_type") != "surface_hypothesis":
-            return result
-
-        audit_schema = {
-            "type": "object",
-            "additionalProperties": False,
-            "required": ["acceptable", "issue_type", "repair_question", "internal_reason"],
-            "properties": {
-                "acceptable": {"type": "boolean"},
-                "issue_type": {
+                "reply": {"type": "string", "minLength": 1, "maxLength": 3000},
+                "move_type": {
                     "type": "string",
                     "enum": [
-                        "none",
-                        "unsupported_comparison",
-                        "unsupported_causal_weight",
-                        "cross_context_projection",
-                        "construct_conflation",
-                        "circular_abstraction",
-                        "boundary_not_resolved",
-                        "quantifier_strengthening",
-                        "other_unsupported_inference",
+                        "follow_up",
+                        "request_contrast",
+                        "boundary_question",
+                        "surface_hypothesis",
                     ],
                 },
-                "repair_question": {
+                "hypothesis_proposition": {
                     "anyOf": [
                         {"type": "string", "minLength": 1, "maxLength": 1200},
                         {"type": "null"},
                     ]
                 },
-                "internal_reason": {"type": "string", "minLength": 1, "maxLength": 700},
+                "evidence_fact_ids": {
+                    "type": "array",
+                    "maxItems": 12,
+                    "items": {"type": "string"},
+                },
             },
         }
-        audit = super()._conversation_call_json(
-            instructions=(
-                "Audit a tentative Life Patterns synthesis for epistemic "
-                "support before it is shown. Judge only what the "
-                "supplied episode facts and conversation establish, not w"
-                "hat sounds psychologically plausible. Fail the "
-                "candidate if any material clause: (1) ranks or displaces"
-                " factors without a direct comparison; (2) assigns "
-                "causal weight not established by the evidence; (3) proje"
-                "cts a factor from one context into another; (4) "
-                "merges distinct constructs without support; (5) uses a b"
-                "road abstraction that merely renames the outcome; "
-                "(6) treats a non-answer to a requested contrast/countere"
-                "xample as if that boundary were resolved; or (7) "
-                "strengthens frequency, scope, or certainty beyond the pa"
-                "rticipant's report. Multiple contributing factors "
-                "never imply that one matters less than another unless th"
-                "e participant supplied discriminating evidence. "
-                "If unacceptable, write one participant-facing repair_que"
-                "stion aimed at the exact unresolved distinction. "
-                "Do not ask 'what did I get wrong?' when the unsupported "
-                "leap is already visible from the supplied record. "
-                "The question must remain target-theory-blind and must no"
-                "t mention hidden facts or this audit."
-            ),
+        result = self._conversation_call_json(
+            instructions=_ADAPTIVE_INTERVIEW_INSTRUCTIONS,
             payload={
-                "candidate": result,
-                "episodes": payload.get("episodes", []),
-                "operative_facts": payload.get("operative_facts", []),
-                "recent_conversation": payload.get("recent_conversation", []),
-                "boundary_answered_flag": payload.get("boundary_answered"),
+                "current_episode_id": current_episode_id,
+                "episodes": [
+                    {
+                        "episode_id": episode.episode_id,
+                        "neutral_summary": episode.neutral_summary,
+                    }
+                    for episode in episodes
+                ],
+                "operative_facts": [
+                    {
+                        "fact_id": fact.fact_id,
+                        "episode_id": fact.episode_id,
+                        "assertion_type": fact.assertion_type,
+                        "proposition": fact.proposition,
+                    }
+                    for fact in operative_facts
+                ],
+                "recent_conversation": list(recent_conversation[-20:]),
+                "boundary_answered": boundary_answered,
+                "boundary_answered_is_advisory_not_a_gate": True,
             },
-            schema=audit_schema,
+            schema=schema,
             effort="medium",
-            max_output_tokens=1100,
-            schema_name="life_patterns_hypothesis_audit_v1",
+            max_output_tokens=1800,
+            schema_name="life_patterns_conversation_move_v1",
         )
-        if audit.get("acceptable"):
-            return result
+        return ConversationMove.model_validate(result)
 
-        repair_question = (audit.get("repair_question") or "").strip()
-        if not repair_question:
-            repair_question = (
-                "I may be combining factors the examples have not actually compared. "
-                "What real contrast would separate the leading possibilities?"
+
+class AdaptiveRefinablePatternSession(RefinablePatternFirstConversationalOwnerSession):
+    """Pattern-first session with no assistant-invented episode/counterexample completion quota."""
+
+    def _create_pattern(self, move: ConversationMove) -> None:
+        if self.core.active_proposal_id is not None:
+            raise ValueError("a pattern proposal is already awaiting participant judgment")
+
+        fact_by_id = self._operative_by_id()
+        evidence_ids = tuple(dict.fromkeys(move.evidence_fact_ids))
+        if not evidence_ids:
+            raise ValueError("conversation hypothesis requires grounded evidence")
+        if not set(evidence_ids).issubset(fact_by_id):
+            raise ValueError("conversation hypothesis cited unknown or superseded fact IDs")
+
+        proposition = (move.hypothesis_proposition or "").strip()
+        if not proposition:
+            raise ValueError("conversation hypothesis requires a proposition")
+
+        exact_matches = [
+            fact_by_id[fact_id]
+            for fact_id in evidence_ids
+            if proposition.casefold() == fact_by_id[fact_id].proposition.strip().casefold()
+        ]
+        if exact_matches and not any(
+            fact.assertion_type == "reported_appraisal_or_belief" for fact in exact_matches
+        ):
+            raise ValueError(
+                "an episode-only fact cannot be promoted unchanged into a person-level pattern"
             )
-        return {
-            "reply": repair_question,
-            "move_type": "follow_up",
-            "hypothesis_proposition": None,
-            "evidence_fact_ids": [],
-        }
 
-
-class ReasoningRefinablePatternSession(RefinablePatternFirstConversationalOwnerSession):
-    """Apply semantic boundary resolution and model-led recovery from rejected syntheses."""
-
-    def turn(self, message: str) -> dict[str, Any]:
-        clean = message.strip()
-        if not clean:
-            raise ValueError("message is required")
-        if self.core.active_proposal_id is not None or not self.pending_boundary_question:
-            return super().turn(clean)
-
-        resolver = getattr(self.model, "boundary_answer_resolved", None)
-        if not callable(resolver):
-            return super().turn(clean)
-
-        snapshot = self._snapshot_state()
-        try:
-            resolved = bool(
-                resolver(
-                    message=clean,
-                    recent_conversation=tuple(self.conversation),
-                    operative_facts=self.core.operative_facts(),
-                )
+        proposal_id = f"PROP-{uuid.uuid4().hex[:10].upper()}"
+        grouped: dict[str, list[str]] = {}
+        for fact_id in evidence_ids:
+            grouped.setdefault(fact_by_id[fact_id].episode_id, []).append(fact_id)
+        links = tuple(
+            PatternEvidenceLinkV2(
+                evidence_link_id=f"LINK-{uuid.uuid4().hex[:10].upper()}",
+                proposal_id=proposal_id,
+                episode_id=episode_id,
+                fact_ids=tuple(fact_ids),
+                role="preproposal_anchor",
+                acquisition_phase="pre_first_proposal",
             )
-            # Prevent the legacy base controller from equating mere reply-arrival with resolution.
-            # The semantic result above now controls whether the synthesis gate can open.
-            self.pending_boundary_question = False
-            self.boundary_answered = resolved
-            return super().turn(clean)
-        except Exception:
-            self._restore_state(snapshot)
-            raise
+            for episode_id, fact_ids in grouped.items()
+        )
+        proposal = PatternProposalV2(
+            proposal_id=proposal_id,
+            pattern_thread_id=f"THREAD-{uuid.uuid4().hex[:10].upper()}",
+            revision_index=0,
+            proposition=proposition,
+            question_text=move.reply,
+            evidence_link_ids=tuple(link.evidence_link_id for link in links),
+            grounding_evidence_link_ids=tuple(link.evidence_link_id for link in links),
+        )
+        self.core.record = self.core.record.model_copy(
+            update={
+                "pattern_proposals": self.core.record.pattern_proposals + (proposal,),
+                "pattern_evidence_links": self.core.record.pattern_evidence_links + links,
+            }
+        )
+        self.core.proposal_support[proposal_id] = frozenset(evidence_ids)
+        self.core.active_proposal_id = proposal_id
+
+    def _plan_refinement_move(self) -> ConversationMove:
+        move = self.model.plan_turn(
+            current_episode_id=self.current_episode_id,
+            episodes=self.core.record.episodes,
+            operative_facts=self.core.operative_facts(),
+            recent_conversation=tuple(self.conversation),
+            boundary_answered=self.boundary_answered,
+        )
+        if move.move_type == "request_contrast" and self.current_episode_id is None:
+            return ConversationMove(reply=move.reply, move_type="follow_up")
+        if move.move_type == "boundary_question" and not self.core.record.episodes:
+            return ConversationMove(reply=move.reply, move_type="follow_up")
+        if move.move_type == "surface_hypothesis":
+            return ConversationMove(reply=move.reply, move_type="follow_up")
+        return move
 
     def disagree_with_pattern(self) -> dict[str, Any]:
         if self.core.active_proposal_id is None:
@@ -276,19 +257,102 @@ class ReasoningRefinablePatternSession(RefinablePatternFirstConversationalOwnerS
             self._restore_state(snapshot)
             raise
 
+    def turn(self, message: str) -> dict[str, Any]:
+        clean = message.strip()
+        if not clean:
+            raise ValueError("message is required")
+        if self.core.active_proposal_id is not None:
+            return super().turn(clean)
+
+        snapshot = self._snapshot_state()
+        try:
+            if not self.pattern_focus_established and not self.conversation:
+                return self._start_from_pattern(clean)
+
+            if self.pending_boundary_question:
+                self.pending_boundary_question = False
+                self.boundary_answered = True
+
+            turn_id = f"TURN-{uuid.uuid4().hex[:10].upper()}"
+            self.conversation.append({"turn_id": turn_id, "role": "user", "text": clean})
+
+            start_new_episode = self.awaiting_new_episode or self.current_episode_id is None
+            extraction = self.model.extract_turn(
+                message=clean,
+                current_episode_id=self.current_episode_id,
+                operative_facts=self.core.operative_facts(),
+                recent_conversation=tuple(self.conversation),
+            )
+            self._apply_extraction(
+                extraction=extraction,
+                turn_id=turn_id,
+                message=clean,
+                start_new_episode=start_new_episode,
+            )
+
+            move = self.model.plan_turn(
+                current_episode_id=self.current_episode_id,
+                episodes=self.core.record.episodes,
+                operative_facts=self.core.operative_facts(),
+                recent_conversation=tuple(self.conversation),
+                boundary_answered=self.boundary_answered,
+            )
+
+            if move.move_type == "request_contrast" and self.current_episode_id is None:
+                move = ConversationMove(reply=move.reply, move_type="follow_up")
+            elif move.move_type == "boundary_question" and not self.core.record.episodes:
+                move = ConversationMove(reply=move.reply, move_type="follow_up")
+            elif move.move_type == "surface_hypothesis":
+                try:
+                    self._create_pattern(move)
+                except ValueError:
+                    move = ConversationMove(
+                        reply=(
+                            "I do not yet have grounded support for a person-level formulation. "
+                            "What single detail would most change the pattern you originally described?"
+                        ),
+                        move_type="follow_up",
+                    )
+
+            if move.move_type == "request_contrast":
+                self.awaiting_new_episode = True
+                self.current_episode_id = None
+            elif move.move_type == "boundary_question":
+                self.pending_boundary_question = True
+
+            self.conversation.append(
+                {
+                    "turn_id": f"TURN-{uuid.uuid4().hex[:10].upper()}",
+                    "role": "assistant",
+                    "text": move.reply,
+                }
+            )
+            return {
+                "reply": move.reply,
+                "move_type": move.move_type,
+                "pattern_active": self.core.active_proposal_id is not None,
+                "pattern_proposition": move.hypothesis_proposition
+                if move.move_type == "surface_hypothesis"
+                else None,
+                "episode_count": len(self.core.record.episodes),
+            }
+        except Exception:
+            self._restore_state(snapshot)
+            raise
+
 
 @dataclass
-class ReasoningRefinableRuntime:
+class AdaptiveRefinableRuntime:
     model: OwnerConversationModel
-    sessions: dict[str, ReasoningRefinablePatternSession] = field(default_factory=dict)
+    sessions: dict[str, AdaptiveRefinablePatternSession] = field(default_factory=dict)
 
-    def create_session(self) -> ReasoningRefinablePatternSession:
+    def create_session(self) -> AdaptiveRefinablePatternSession:
         session_id = f"OWNER-{uuid.uuid4().hex[:12].upper()}"
-        session = ReasoningRefinablePatternSession(session_id=session_id, model=self.model)
+        session = AdaptiveRefinablePatternSession(session_id=session_id, model=self.model)
         self.sessions[session_id] = session
         return session
 
-    def get(self, session_id: str) -> ReasoningRefinablePatternSession:
+    def get(self, session_id: str) -> AdaptiveRefinablePatternSession:
         session = self.sessions.get(session_id)
         if session is None:
             raise KeyError(session_id)
@@ -298,9 +362,11 @@ class ReasoningRefinableRuntime:
 def create_life_patterns_v2_owner_reasoning_app(
     *, model: OwnerConversationModel | None = None
 ) -> FastAPI:
-    resolved_model = model or ReasoningGuardedPatternFirstOpenAIConversationModel.from_env()
-    runtime = ReasoningRefinableRuntime(model=resolved_model)
-    app = FastAPI(title="Life Patterns v2 reasoning-guarded owner conversation", version="0.7")
+    """Compatibility entry point; now serves the simpler adaptive interviewer."""
+
+    resolved_model = model or AdaptivePatternFirstOpenAIConversationModel.from_env()
+    runtime = AdaptiveRefinableRuntime(model=resolved_model)
+    app = FastAPI(title="Life Patterns v2 adaptive owner conversation", version="0.8")
 
     @app.get("/", response_class=HTMLResponse, include_in_schema=False)
     def landing() -> str:
@@ -316,8 +382,10 @@ def create_life_patterns_v2_owner_reasoning_app(
             "pattern_first": True,
             "unresolved_thread_continuation": True,
             "rejected_synthesis_continuation": True,
-            "semantic_boundary_resolution": True,
-            "hypothesis_support_audit": True,
+            "adaptive_information_gain_gate": True,
+            "fixed_episode_quota": False,
+            "mandatory_counterexample_gate": False,
+            "hypothesis_support_audit": False,
             "rejection_reasoning_recovery": True,
             "model_configured": bool(getattr(resolved_model, "configured", True)),
         }
