@@ -1,8 +1,9 @@
-"""Owner-only unresolved-thread continuation for the Life Patterns pattern-first probe.
+"""Owner-only unresolved/rejected-synthesis continuation for the Life Patterns pattern-first probe.
 
 This product-layer overlay keeps an already surfaced pattern proposal open when the participant
-wants more questioning. Post-proposal material remains post-proposal evidence; the accepted v2
-semantic contract is unchanged and no replacement person-level proposal is inferred automatically.
+wants more questioning or says the current synthesis does not fit. Post-proposal material remains
+post-proposal evidence; the accepted v2 semantic contract is unchanged and no replacement
+person-level proposal is inferred automatically.
 """
 
 from __future__ import annotations
@@ -38,8 +39,13 @@ def _refinement_html() -> str:
         '    <button id="unresolved" class="subtle">Leave it unresolved for now</button>',
     )
     html = html.replace(
+        '<button id="reject" class="danger">No</button>',
+        '<button id="reject" class="danger">No — keep investigating</button>\n'
+        '    <button id="rejectStop" class="subtle">Reject and stop this thread</button>',
+    )
+    html = html.replace(
         '<p class="note">This is the one place where your explicit judgment matters. The hidden episode facts are not being shown for routine approval.</p>',
-        '<p class="note">Would you like to keep trying to pin this pattern down, or make a judgment now? The hidden episode facts are not being shown for routine approval.</p>',
+        '<p class="note">Would you like to keep trying to pin this pattern down, or make a judgment now? Saying the synthesis does not fit keeps the underlying inquiry open; use Reject and stop only when you actually want to end this thread. The hidden episode facts are not being shown for routine approval.</p>',
     )
     html = html.replace(
         '  <div id="reviseBox" class="hidden">',
@@ -74,6 +80,18 @@ def _refinement_html() -> str:
         "  finally{$('continuePattern').disabled=false}\n"
         "};\n"
         "$('unresolved').onclick=()=>decision('unresolved');",
+    )
+    html = html.replace(
+        "$('reject').onclick=()=>decision('reject');",
+        "$('reject').onclick=async()=>{\n"
+        "  $('reject').disabled=true;\n"
+        "  try{\n"
+        "    const p=await api(`/api/owner-v2/conversation/sessions/${encodeURIComponent(sessionId)}/patterns/disagree`,{method:'POST'});\n"
+        "    refiningPattern=true;show('composer');bubble('user','No — that synthesis does not fit.');bubble('ai',p.reply);$('message').focus();\n"
+        "  }catch(e){$('patternStatus').textContent=e.message;$('patternStatus').className='error'}\n"
+        "  finally{$('reject').disabled=false}\n"
+        "};\n"
+        "$('rejectStop').onclick=()=>decision('reject');",
     )
     html = html.replace(
         "function renderResult(p){\n  hide('patternPanel');",
@@ -145,6 +163,44 @@ class RefinablePatternFirstConversationalOwnerSession(PatternFirstConversational
             self._restore_state(snapshot)
             raise
 
+    def disagree_with_pattern(self) -> dict[str, Any]:
+        """Treat a failed synthesis as feedback, not as termination of the pattern inquiry."""
+
+        if self.core.active_proposal_id is None:
+            raise ValueError("no active pattern proposal to disagree with")
+        snapshot = self._snapshot_state()
+        try:
+            self.conversation.append(
+                {
+                    "turn_id": f"TURN-{uuid.uuid4().hex[:10].upper()}",
+                    "role": "user",
+                    "text": "No — that synthesis does not fit.",
+                }
+            )
+            reply = (
+                "Okay. I’ll keep the underlying pattern inquiry open rather than treating that "
+                "synthesis as the answer. What does that synthesis get wrong or miss?"
+            )
+            self.conversation.append(
+                {
+                    "turn_id": f"TURN-{uuid.uuid4().hex[:10].upper()}",
+                    "role": "assistant",
+                    "text": reply,
+                }
+            )
+            return {
+                "reply": reply,
+                "move_type": "follow_up",
+                "pattern_active": True,
+                "pattern_proposition": None,
+                "episode_count": len(self.core.record.episodes),
+                "pattern_refining": True,
+                "synthesis_disagreed": True,
+            }
+        except Exception:
+            self._restore_state(snapshot)
+            raise
+
     def _continue_active_pattern(self, clean: str) -> dict[str, Any]:
         if self.pending_boundary_question:
             self.pending_boundary_question = False
@@ -208,7 +264,7 @@ def create_life_patterns_v2_owner_refinement_app(
 ) -> FastAPI:
     resolved_model = model or PatternFirstOpenAIConversationModel.from_env()
     runtime = RefinablePatternFirstConversationRuntime(model=resolved_model)
-    app = FastAPI(title="Life Patterns v2 refinable pattern-first owner conversation", version="0.4")
+    app = FastAPI(title="Life Patterns v2 refinable pattern-first owner conversation", version="0.5")
 
     @app.get("/", response_class=HTMLResponse, include_in_schema=False)
     def landing() -> str:
@@ -223,6 +279,7 @@ def create_life_patterns_v2_owner_refinement_app(
             "hidden_evidence_ledger": True,
             "pattern_first": True,
             "unresolved_thread_continuation": True,
+            "rejected_synthesis_continuation": True,
             "model_configured": bool(getattr(resolved_model, "configured", True)),
         }
 
@@ -254,6 +311,15 @@ def create_life_patterns_v2_owner_refinement_app(
             raise HTTPException(status_code=404, detail="owner session not found") from exc
         except TemporaryModelProviderError as exc:
             raise HTTPException(status_code=503, detail=str(exc)) from exc
+        except (RuntimeError, ValueError) as exc:
+            raise HTTPException(status_code=422, detail=str(exc)) from exc
+
+    @app.post("/api/owner-v2/conversation/sessions/{session_id}/patterns/disagree")
+    def disagree_with_pattern(session_id: str) -> dict[str, Any]:
+        try:
+            return runtime.get(session_id).disagree_with_pattern()
+        except KeyError as exc:
+            raise HTTPException(status_code=404, detail="owner session not found") from exc
         except (RuntimeError, ValueError) as exc:
             raise HTTPException(status_code=422, detail=str(exc)) from exc
 
