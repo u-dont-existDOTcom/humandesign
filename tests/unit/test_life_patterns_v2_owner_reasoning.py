@@ -1,8 +1,10 @@
 from __future__ import annotations
 
+from hdmatch.api.life_patterns_v2_owner_conversation import ConversationMove
 from hdmatch.api.life_patterns_v2_owner_pattern_first import PatternFirstOpenAIConversationModel
 from hdmatch.api.life_patterns_v2_owner_reasoning import (
     ReasoningGuardedPatternFirstOpenAIConversationModel,
+    ReasoningRefinablePatternSession,
 )
 
 
@@ -85,3 +87,27 @@ def test_supported_synthesis_survives_audit(monkeypatch) -> None:
     )
 
     assert result == candidate
+
+
+class RejectionReasoningModel:
+    configured = True
+
+    def plan_turn(self, **kwargs) -> ConversationMove:
+        return ConversationMove(
+            reply="I may have ranked two factors the examples never compared. Can we test that directly?",
+            move_type="follow_up",
+        )
+
+
+def test_rejected_synthesis_uses_model_led_diagnosis() -> None:
+    session = ReasoningRefinablePatternSession(
+        session_id="OWNER-TEST", model=RejectionReasoningModel()  # type: ignore[arg-type]
+    )
+    session.core.active_proposal_id = "PROP-TEST"
+
+    result = session.disagree_with_pattern()
+
+    assert result["pattern_refining"] is True
+    assert result["move_type"] == "follow_up"
+    assert "ranked two factors" in result["reply"]
+    assert session.core.active_proposal_id == "PROP-TEST"
