@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import pytest
-from fastapi.testclient import TestClient
 
 from hdmatch.api.life_patterns_v2_owner_app import ExtractedEpisode, PatternSuggestion
 from hdmatch.api.life_patterns_v2_owner_conversation import (
@@ -16,7 +15,6 @@ from hdmatch.api.life_patterns_v2_owner_pattern_first import (
     PatternFirstOpenAIConversationModel,
     TemporaryModelProviderError,
     _normalize_conversation_move_payload,
-    create_life_patterns_v2_owner_pattern_first_app,
 )
 from hdmatch.evaluation.participant_adjudicated_v2 import EpisodeFactV2
 
@@ -77,21 +75,6 @@ class ScriptedModel:
                 move_type="request_contrast",
             )
         raise AssertionError(move)
-
-
-class TemporaryFailureModel(ScriptedModel):
-    def extract_turn(
-        self,
-        *,
-        message: str,
-        current_episode_id: str | None,
-        operative_facts: tuple[EpisodeFactV2, ...],
-        recent_conversation: tuple[dict[str, str], ...],
-    ) -> TurnExtraction:
-        raise TemporaryModelProviderError(
-            "The model service is temporarily unavailable after automatic retries. "
-            "Nothing from this turn was saved; please try Send again in a moment."
-        )
 
 
 def test_provider_overpopulation_is_normalized_before_strict_move_validation(monkeypatch) -> None:
@@ -156,26 +139,30 @@ def test_transient_provider_520_retries_then_succeeds(monkeypatch) -> None:
     assert move.reply == "What changed after that?"
 
 
-def test_exhausted_temporary_provider_error_returns_503() -> None:
-    client = TestClient(create_life_patterns_v2_owner_pattern_first_app(model=TemporaryFailureModel()))
-    created = client.post("/api/owner-v2/conversation/sessions")
-    assert created.status_code == 200
-    session_id = created.json()["session_id"]
+def test_transient_provider_exhaustion_becomes_retryable_error(monkeypatch) -> None:
+    calls = 0
 
-    first = client.post(
-        f"/api/owner-v2/conversation/sessions/{session_id}/turns",
-        json={"message": "People ask me questions but then do not actually want the answer."},
+    def failed_provider_call(self, **kwargs):
+        nonlocal calls
+        calls += 1
+        raise RuntimeError("Owner Life Patterns model HTTP 520: error code: 520")
+
+    monkeypatch.setattr(OpenAIConversationModel, "_conversation_call_json", failed_provider_call)
+    monkeypatch.setattr(
+        "hdmatch.api.life_patterns_v2_owner_pattern_first.time.sleep", lambda _seconds: None
     )
-    assert first.status_code == 200
+    model = PatternFirstOpenAIConversationModel(api_key="test")
 
-    second = client.post(
-        f"/api/owner-v2/conversation/sessions/{session_id}/turns",
-        json={"message": "A friend asked what I thought, then rejected the answer immediately."},
-    )
+    with pytest.raises(TemporaryModelProviderError, match="Nothing from this turn was saved"):
+        model.plan_turn(
+            current_episode_id=None,
+            episodes=(),
+            operative_facts=(),
+            recent_conversation=(),
+            boundary_answered=False,
+        )
 
-    assert second.status_code == 503
-    assert "temporarily unavailable" in second.json()["detail"]
-    assert "Nothing from this turn was saved" in second.json()["detail"]
+    assert calls == 3
 
 
 def test_normalizer_keeps_surface_hypothesis_strict() -> None:
