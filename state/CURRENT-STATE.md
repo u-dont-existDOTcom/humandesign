@@ -12,74 +12,67 @@ Bounded v2 core repair head: `75c2fa4366e2721dc257ec839532b10f54f1de20`.
 
 ## Product-layer history
 
-The first real-data owner browser exposed the internal evidence ledger as fact/paraphrase review. Direct owner testing established that this was low-value as a product experience: correct comprehension was being demonstrated rather than useful self-understanding being produced.
+The first real-data owner browser exposed the internal evidence ledger as fact/paraphrase review. Direct owner testing established that this was low-value as a product experience. That surfaced coding/paraphrase method is **FAILED / REPLACED**; the accepted v2 evidence semantics remain authoritative and internal.
 
-That surfaced coding/paraphrase method is **FAILED / REPLACED**. The accepted v2 evidence semantics remain authoritative and internal.
+The first hidden-ledger conversational probe then exposed a strict structured-output failure and an interaction regression back to arbitrary episode-first elicitation. Those were repaired by restoring the earlier pattern-first interaction strategy while keeping the v2 ledger hidden and making model-driven turns transactional.
 
-The subsequent hidden-ledger conversational probe correctly hid routine coding work, but owner testing exposed two additional defects before product-value judgment could proceed:
-
-1. the live model could return a non-hypothesis move carrying hypothesis-only fields, causing strict `ConversationMove` validation to fail;
-2. the opening had regressed from the earlier pattern-first interview design back to arbitrary episode-first elicitation.
-
-The old failed turn path could also mutate hidden session state before planner failure.
-
-Continuity finding: `state/LIFE-PATTERNS-INTERACTIVE-INTERVIEW-CONTINUITY-FINDING-2026-09-14.md`.
-
-## Current repaired architecture
-
-The current owner-facing method combines the earlier pattern-first interaction strategy with the accepted v2 hidden evidence substrate:
+The current owner-facing architecture is:
 
 `participant-reported pattern -> minimal concrete anchor(s) / contrasts / life-phase evidence -> hidden v2 evidence ledger -> discriminating follow-up / boundary check -> informative synthesis -> participant authority -> immutable freeze`
 
-The participant begins from a recurring, changing, context-dependent, or puzzling pattern in their own words. The initial general pattern statement is conversational context only; it does **not** fabricate an episode, fact, or provenance record. A later real situation can become the first episode anchor.
-
-Concrete situations are evidence anchors and falsification/contrast material, not the product objective. Historical v8 domains may remain optional coverage scaffolding; they are not restored as a closed taxonomy. The accepted v2 open-world architecture remains authoritative.
-
-Pattern-first runtime repair implementation receipt:
+Pattern-first repair receipt:
 
 `state/LIFE-PATTERNS-v2-PATTERN-FIRST-RUNTIME-REPAIR-IMPLEMENTATION-2026-09-14.md`
 
-Exact verified/deployed repair source head:
+## Provider 520 incident and repair
 
-`67b038b27d62b941b6beb224c6e89efd0d165bb4`
+The first natural model-backed anchor turn on the repaired app exposed a new, separate failure:
 
-Implementation:
+`Owner Life Patterns model HTTP 520: error code: 520`
 
-- `src/hdmatch/api/life_patterns_v2_owner_pattern_first.py`
-- hidden-ledger base: `src/hdmatch/api/life_patterns_v2_owner_conversation.py`
-- owner UI: `src/hdmatch/api/life_patterns_v2_owner_conversation_ui.py`
-- authenticated entrypoint: `src/hdmatch/api/life_patterns_v2_owner_deployed_app.py`
-- regressions: `tests/unit/test_life_patterns_v2_owner_pattern_first.py`
+Railway showed the initial pattern turn returning HTTP 200 and the first concrete-anchor turn returning application HTTP 422 after about 11 seconds. The inner exception was an upstream model HTTP 520 response. This was a provider transport/gateway failure, not the prior structured-output defect and not invalid participant input.
 
-The provider boundary normalizes hypothesis-only fields away from non-hypothesis moves before strict validation, while true `surface_hypothesis` moves remain strict. Model-driven turns are transactional: extraction/planning/validation/post-processing failure restores pre-turn conversation, hidden record, flags, and proposal state.
+The transactional session wrapper restored pre-turn state on the exception, so the failed turn was not admitted as hidden evidence.
+
+Provider repair receipt:
+
+`state/LIFE-PATTERNS-v2-PROVIDER-520-REPAIR-2026-09-14.md`
+
+Runtime repair head:
+
+`8d74d4b89bff1e78922af524dcb5b95f271d9b97`
+
+Regression-test head:
+
+`b52be2a67e458c5d1334d058d7b73e938c04d1ef`
+
+The owner-only service now uses a direct provider Responses path with the existing Railway credential reference rather than the inherited/custom endpoint. The runtime performs up to three bounded attempts for transient server/network failures (including HTTP 520–524). Exhaustion becomes a retryable `503 Service Unavailable` message stating that nothing from the failed turn was saved. Ordinary validation/auth/client failures are not retried.
 
 ## Verification and deployment
 
-GitHub Actions run `34854800932` on exact source head `67b038b27d62b941b6beb224c6e89efd0d165bb4`: **SUCCESS**.
+GitHub Actions run `34857710301` on regression head `b52be2a67e458c5d1334d058d7b73e938c04d1ef`: **SUCCESS**.
 
-- unit/integration tests: passed;
-- Ruff: passed;
-- strict mypy: passed.
+The final dependency-free regressions cover transient HTTP 520 retry-and-recovery and retry exhaustion, alongside the existing pattern-first, strict-hypothesis, and rollback tests.
 
 Owner-only Railway deployment:
 
 - domain: `life-patterns-owner-production.up.railway.app`
 - service: `life-patterns-owner`
-- deployment ID: `842b13f2-66b2-435e-a918-dbc81cde00e7`
-- source head: `67b038b27d62b941b6beb224c6e89efd0d165bb4`
+- deployment ID: `feba6ba2-9677-4f94-b0b8-1cf0e6d530fe`
+- runtime source head: `8d74d4b89bff1e78922af524dcb5b95f271d9b97`
 - status: **SUCCESS**
 - runtime: application startup complete;
 - Railway health request: `GET /healthz` -> HTTP `200`.
 
-Existing Basic authentication and runtime credential references remain unchanged. No new Railway service was created.
+No secret value is committed. No new Railway service was created.
 
 ## Current outcome / next gate
 
-Direct owner-facing information-gain evidence for the repaired pattern-first surface: **NOT YET MEASURED**.
+Direct owner-facing information-gain evidence after the provider repair is **NOT YET MEASURED**.
 
-Next gate: start a **fresh owner-only browser session** and judge the conversation naturally. Success requires useful information beyond paraphrase: a meaningful context distinction, life-phase change, counterexample, boundary, contrast, or synthesis that the participant did not simply state verbatim.
+The previous browser session belonged to the pre-redeploy process and should not be resumed. Next gate: start a **fresh authenticated owner-only browser session**, give a natural pattern plus concrete anchor, confirm the model-backed turn now succeeds, and continue judging the interview for actual information gain rather than paraphrase.
 
-If the repaired experience remains essentially an elaborate parrot, classify the interaction strategy as failed rather than cosmetically polishing it.
+If it still fails, preserve the new exact status/body and diagnose that failure rather than assuming recurrence of the 520 cause. If it runs but remains essentially an elaborate parrot, classify the interaction strategy as failed rather than cosmetically polishing it.
 
 Authorized: bounded owner-only testing of the deployed probe and owner-initiated runtime model use.
 
