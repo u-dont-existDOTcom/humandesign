@@ -42,43 +42,76 @@ Regression-test head:
 
 `b52be2a67e458c5d1334d058d7b73e938c04d1ef`
 
-The owner-only service now uses a direct provider Responses path with the existing Railway credential reference. It performs up to three bounded attempts for transient server/network failures and preserves transactional rollback.
+The owner-only service uses a direct provider Responses path with the existing Railway credential reference. It performs up to three bounded attempts for transient server/network failures and preserves transactional rollback.
 
 GitHub Actions run `34857710301` on regression head `b52be2a67e458c5d1334d058d7b73e938c04d1ef`: **SUCCESS**.
 
-Owner-only Railway deployment:
-
-- domain: `life-patterns-owner-production.up.railway.app`
-- service: `life-patterns-owner`
-- deployment ID: `feba6ba2-9677-4f94-b0b8-1cf0e6d530fe`
-- runtime source head: `8d74d4b89bff1e78922af524dcb5b95f271d9b97`
-- status: **SUCCESS**
-- Railway health request: `GET /healthz` -> HTTP `200`.
-
 ## Direct owner outcome evidence after repair
 
-The owner then ran a fresh live session after the provider repair.
+The owner then ran a fresh live session after the provider repair and completed the full bounded pattern-first thread through a nontrivial synthesis and explicit adjudication.
 
 Result:
 
-- the live model-backed turn succeeded;
-- direct owner judgment of that turn was positive: **good**.
+- the live model-backed interview succeeded;
+- the interviewer tested the initial generalization with contrast/counterexample material and narrowed the synthesis conditionally rather than merely parroting the owner;
+- direct owner judgment of the bounded strategy: **GOOD / PASS**.
 
-This is the first direct positive owner-facing evidence for the repaired pattern-first + hidden-ledger strategy. The previous `not yet measured` status is therefore superseded by **PRELIMINARY POSITIVE**.
+The repaired pattern-first + hidden-ledger strategy therefore has **PRELIMINARY POSITIVE** direct product evidence at the one-pattern level. This does not yet establish that repeated pattern threads remain useful or that a session-level summary deserves durable persistence.
 
-Receipt:
+Receipts:
 
-`state/LIFE-PATTERNS-v2-OWNER-PATTERN-FIRST-PRELIMINARY-POSITIVE-2026-09-14.md`
+- `state/LIFE-PATTERNS-v2-OWNER-PATTERN-FIRST-PRELIMINARY-POSITIVE-2026-09-14.md`
+- `state/LIFE-PATTERNS-v2-OWNER-PATTERN-FIRST-BOUNDED-SESSION-PASS-2026-09-14.md`
 
-One good turn does not establish that the complete interview strategy is successful. The remaining product question is whether the session continues to produce information gain—useful context/scope distinctions, developmental change, counterexamples, contrasts, or synthesis—without collapsing back into paraphrase or exposing evidence bookkeeping.
+## Multi-pattern continuation frontier
 
-## Current outcome / next gate
-
-The current bounded continuation task adds a coherent post-pattern frontier: explore another pattern, finish-for-now summary, and owner-triggered copy/export.
+The post-pattern dead end is repaired without changing accepted v2 semantics.
 
 Continuation implementation head: `da3c5f58101d8cc10421e480d44b5162bd12ec78`.
 
-If later turns remain good and produce genuine information gain, the interaction strategy can advance beyond this probe. If it degrades into paraphrase/confirmation, classify that failure rather than polishing around it.
+Owner-facing behavior now provides:
+
+- `Explore another pattern`;
+- `Finish for now`;
+- a fresh backend conversation session for each new pattern thread;
+- browser-page-local accumulation of completed pattern results and visible interview text;
+- a compact finish-for-now summary with no completeness claim;
+- owner-triggered client-side copy/export.
+
+The server still keeps narrative/session state in process memory. The continuation adds no Git persistence, Railway volume persistence, private transcript logging, or automatic supervisor transcript ingestion. Railway deploy/HTTP logs inspected for the active deployment contain startup/health/request metadata, not private request bodies.
+
+Verification:
+
+- focused task command covers `16` tests across `tests/unit/test_life_patterns_v2_owner_conversation.py` and `tests/unit/test_life_patterns_v2_owner_pattern_first.py`;
+- hosted GitHub Actions run `34864954177` on branch head `713582a7e3a1c9dd3f1bdd00c32e3075a3665feb`: **SUCCESS**;
+- the `verify` job passed unit/integration tests, Ruff, and strict mypy.
+
+Existing owner-only Railway service reused; no new service was created and access was not broadened.
+
+Current Railway deployment:
+
+- service: `life-patterns-owner`;
+- deployment ID: `4ed43b5a-7249-4cc3-ad2e-1e1401ea0788`;
+- runtime source head: `da3c5f58101d8cc10421e480d44b5162bd12ec78`;
+- status: **SUCCESS**;
+- Railway `/healthz` request: HTTP `200`;
+- owner-facing routes remain HTTP-Basic protected;
+- runtime model credentials remain Railway variable references rather than repository secrets.
+
+The later state-only commit `713582a7e3a1c9dd3f1bdd00c32e3075a3665feb` was correctly skipped by Railway because the service watch patterns do not include state/task files; deployed application bytes therefore remain the verified continuation code head above.
+
+## Current outcome / next gate
+
+Outcome advancement: **PRELIMINARY POSITIVE** at the bounded one-pattern strategy level.
+
+Strategy efficacy: **VIABLE, PENDING MULTI-PATTERN OWNER JUDGMENT**.
+
+Next gate: **OWNER REAL-DATA BROWSER JUDGMENT REQUIRED**. In the deployed owner-only service, complete at least another pattern thread and use `Finish for now`. The decision-changing questions are:
+
+1. Do repeated fresh pattern threads remain useful rather than becoming repetitive/paraphrastic?
+2. Is the session-level summary useful enough to justify durable persistence and development of a real Life Patterns Map?
+
+Owner-triggered copy/export is available if the owner chooses to share the browser-local session with the supervisor. Automatic transcript logging remains out of scope.
 
 Authorized: bounded owner-only testing of the deployed probe and owner-initiated runtime model use.
 
