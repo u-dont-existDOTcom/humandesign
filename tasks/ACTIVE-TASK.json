@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "life-patterns-v2-owner-multi-pattern-continuation",
-  "status": "implementation_in_progress",
+  "status": "owner_real_data_browser_judgment_required",
   "exclusive": true,
   "requiredBranch": "codex/discover-life-patterns-mvp",
   "pullRequest": 24,
@@ -16,6 +16,7 @@
   "patternFirstRuntimeRepairHead": "67b038b27d62b941b6beb224c6e89efd0d165bb4",
   "providerRuntimeRepairHead": "8d74d4b89bff1e78922af524dcb5b95f271d9b97",
   "providerRegressionHead": "b52be2a67e458c5d1334d058d7b73e938c04d1ef",
+  "multiPatternContinuationHead": "da3c5f58101d8cc10421e480d44b5162bd12ec78",
   "providerRepairCI": "success",
   "conversationalDeploymentId": "feba6ba2-9677-4f94-b0b8-1cf0e6d530fe",
   "boundedPatternFirstSessionJudgment": "pass",
@@ -34,7 +35,7 @@
   "recruitmentContactAuthorized": false,
   "spendingAuthorized": false,
   "completionCommand": "python -m pytest tests/unit/test_life_patterns_v2_owner_conversation.py tests/unit/test_life_patterns_v2_owner_pattern_first.py -q",
-  "nextAction": "IMPLEMENT MULTI-PATTERN OWNER CONTINUATION: remove the artificial terminal dead end after one pattern. Expose Explore another pattern, Finish for now, a compact browser-local session summary, and owner-triggered copy/export while keeping each new pattern on a fresh backend session and keeping private narrative out of Git/server logs. Verify focused/affected tests and the existing owner-only deployment.",
+  "nextAction": "OWNER REAL-DATA BROWSER JUDGMENT REQUIRED: use the deployed owner-only service to test repeated pattern threads, finish-for-now summary, and optional copy/export. Do not scale before judgment.",
   "ownerAuthority": "The owner completed the repaired pattern-first probe through a nontrivial synthesis and judged it good. The bounded interaction strategy therefore passes. The owner also reported that the page then had no next action and expected the supervising Chat to have more visibility into session state. Advance to a coherent multi-pattern frontier; preserve privacy by avoiding automatic private transcript logging or Git persistence.",
   "preflightCommand": "python scripts/task_preflight.py",
   "suspendedTaskSources": [
