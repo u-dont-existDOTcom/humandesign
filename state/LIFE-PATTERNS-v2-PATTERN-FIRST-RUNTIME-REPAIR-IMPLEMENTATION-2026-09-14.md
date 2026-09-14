@@ -84,6 +84,8 @@ Existing service only; no new service was created and access was not broadened.
 
 Authentication and existing runtime credential references were not changed.
 
+The live authenticated interview turn has **not** been replayed by Chat after deployment because doing so would require owner credentials. The exact prior failure shape is covered at the provider/validator seam by the new regression test, and Railway confirms the repaired source is running and healthy. Owner natural use is therefore still the next live consumer-seam/product check.
+
 ## Scientific / product boundary
 
 `semantic_change_required=false`.
