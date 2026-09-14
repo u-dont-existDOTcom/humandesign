@@ -1,5 +1,9 @@
 # AGENTS.md
 
+## Role scope for this file
+
+This root contains unblinded research context. Development, supervision, and mechanical execution may use it; it is not the input packet for a fresh Life Patterns semantic producer or reviewer. Those roles use the existing selective-reading Chat launches named by the active task. A fresh full-repository session is not automatically prediction-blind, and a later warning cannot undo result-bearing exposure. Preserve the complete engineering instructions below; do not impose the semantic worker's blind on ordinary development.
+
 ## Mission
 Build a reproducible, blinded Human Design research harness from the specifications in this repository.
 
@@ -14,7 +18,7 @@ A successful synthetic test does not validate Human Design in humans. A retrospe
 
 ## Universal development supervision activation
 
-Before substantive architecture, methodology, research-instrument, workflow, or product-design work, load the **current default-branch** guidance from `u-dont-existDOTcom/universal-dev-architecture`, beginning with `LESSON-INDEX.md`, and activate only the task-relevant current patterns. Record how that guidance entered the current reasoning path; `the rule exists in GitHub` is not activation evidence. Current owner instructions and this repository's current task/scientific authority outrank generic universal guidance on genuine conflict.
+Before substantive architecture, methodology, research-instrument, workflow, or product-design work, load the **current default-branch** guidance from `u-dont-existDOTcom/universal-dev-architecture`, beginning with its live root `AGENTS.md`, then `LESSON-INDEX.md`, and activate only the task-relevant current patterns. Record how that guidance entered the current reasoning path; `the rule exists in GitHub` is not activation evidence. Current owner instructions and this repository's current task/scientific authority outrank generic universal guidance on genuine conflict.
 
 At any consequential method commitment that materially changes product meaning, judgment authority, evidence semantics, participant/owner burden, a costly dependency, or long-lived architecture, apply the current UDA method-necessity / manufactured-prerequisite check before hardening the method. Keep the owner outcome, genuine constraint, and proposed method separate; identify who introduced the method, what specifically fails without it, the strongest materially simpler live alternative, and the evidence that rules that alternative out. `UNRESOLVED` permits a bounded reversible discriminating experiment, not architecture hardening. Routine reversible implementation choices do not trigger this gate. If a material assistant-inferred prerequisite survives until the owner has to discover it, treat that as a supervision escape and repair the existing assurance path rather than adding another meta-supervisor.
 
