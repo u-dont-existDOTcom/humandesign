@@ -2,7 +2,7 @@
 
 ## Life Patterns — 2026-09-14
 
-Active task: `life-patterns-v2-hidden-ledger-conversational-insight-probe` — OWNER CONVERSATIONAL INSIGHT JUDGMENT REQUIRED.
+Active task: `life-patterns-v2-hidden-ledger-conversational-insight-probe` — **OWNER CONVERSATIONAL INSIGHT JUDGMENT REQUIRED**.
 
 Frozen semantic candidate head: `10d57a19b96f38303b2a30abff4281d6abfff83b`.
 
@@ -10,93 +10,78 @@ Independent semantic review: **PASS** — zero blockers, `semantic_change_requir
 
 Bounded v2 core repair head: `75c2fa4366e2721dc257ec839532b10f54f1de20`.
 
-Real-data owner browser implementation head: `002d6264f05a7e380d4cac7e188f8c9455fbf971`.
+## Product-layer history
 
-## Owner real-data judgment: surfaced paraphrase strategy failed
+The first real-data owner browser exposed the internal evidence ledger as fact/paraphrase review. Direct owner testing established that this was low-value as a product experience: correct comprehension was being demonstrated rather than useful self-understanding being produced.
 
-Direct owner feedback on the first deployed real-data browser established that the surfaced fact-review workflow was low-value as a product experience. It mainly demonstrated that the model could understand/paraphrase what the owner said and then asked the owner to certify those paraphrases.
+That surfaced coding/paraphrase method is **FAILED / REPLACED**. The accepted v2 evidence semantics remain authoritative and internal.
 
-That is not the owner outcome for Discover Your Unique Life Patterns.
+The subsequent hidden-ledger conversational probe correctly hid routine coding work, but owner testing exposed two additional defects before product-value judgment could proceed:
 
-Owner-facing target: an unusually attentive, theory-blind conversation that produces useful distinctions, cross-context pattern hypotheses, counterexamples/boundaries, and evidence-backed self-understanding.
+1. the live model could return a non-hypothesis move carrying hypothesis-only fields, causing strict `ConversationMove` validation to fail;
+2. the opening had regressed from the earlier pattern-first interview design back to arbitrary episode-first elicitation.
 
-Prior surfaced fact-review strategy: **FAILED / REPLACEMENT_REQUIRED**.
+The old failed turn path could also mutate hidden session state before planner failure.
 
-Judgment record: `state/LIFE-PATTERNS-v2-OWNER-REAL-DATA-PRODUCT-JUDGMENT-2026-09-14.md`.
+Continuity finding: `state/LIFE-PATTERNS-INTERACTIVE-INTERVIEW-CONTINUITY-FINDING-2026-09-14.md`.
 
-Green tests, correct semantics, and successful deployment are supporting work; they do not establish owner-facing value.
+## Current repaired architecture
 
-## What remains valid
+The current owner-facing method combines the earlier pattern-first interaction strategy with the accepted v2 hidden evidence substrate:
 
-The accepted v2 semantic substrate remains authoritative and does not require revision:
+`participant-reported pattern -> minimal concrete anchor(s) / contrasts / life-phase evidence -> hidden v2 evidence ledger -> discriminating follow-up / boundary check -> informative synthesis -> participant authority -> immutable freeze`
 
-- target-theory blindness;
-- open-world episode facts;
-- append-only correction/provenance;
-- genuine-absence gating;
-- participant authority over person-level patterns;
-- preproposal/postproposal evidence separation;
-- no automatic person-level recurrence reconstruction from raw facts.
+The participant begins from a recurring, changing, context-dependent, or puzzling pattern in their own words. The initial general pattern statement is conversational context only; it does **not** fabricate an episode, fact, or provenance record. A later real situation can become the first episode anchor.
 
-The mistake was exposing the internal evidence ledger as the participant experience. Evidence hygiene remains internal.
+Concrete situations are evidence anchors and falsification/contrast material, not the product objective. Historical v8 domains may remain optional coverage scaffolding; they are not restored as a closed taxonomy. The accepted v2 open-world architecture remains authoritative.
 
-## Replacement implemented: hidden-ledger conversational insight probe
+Pattern-first runtime repair implementation receipt:
 
-Task: `tasks/LIFE-PATTERNS-v2-HIDDEN-LEDGER-CONVERSATIONAL-INSIGHT-PROBE-2026-09-14.md`.
+`state/LIFE-PATTERNS-v2-PATTERN-FIRST-RUNTIME-REPAIR-IMPLEMENTATION-2026-09-14.md`
 
-Implementation receipt: `state/LIFE-PATTERNS-v2-HIDDEN-LEDGER-CONVERSATIONAL-IMPLEMENTATION-2026-09-14.md`.
+Exact verified/deployed repair source head:
 
-Exact conversational source head: `a642a1f907b20dd3da6d8219430b9b12dd3d3301`.
-
-Hosted GitHub CI on that exact head: **SUCCESS** — unit/integration tests, Ruff, and mypy passed.
+`67b038b27d62b941b6beb224c6e89efd0d165bb4`
 
 Implementation:
 
-- `src/hdmatch/api/life_patterns_v2_owner_conversation.py`
-- `src/hdmatch/api/life_patterns_v2_owner_conversation_ui.py`
-- authenticated deployment entrypoint `src/hdmatch/api/life_patterns_v2_owner_deployed_app.py`
-- focused regression tests `tests/unit/test_life_patterns_v2_owner_conversation.py`
+- `src/hdmatch/api/life_patterns_v2_owner_pattern_first.py`
+- hidden-ledger base: `src/hdmatch/api/life_patterns_v2_owner_conversation.py`
+- owner UI: `src/hdmatch/api/life_patterns_v2_owner_conversation_ui.py`
+- authenticated entrypoint: `src/hdmatch/api/life_patterns_v2_owner_deployed_app.py`
+- regressions: `tests/unit/test_life_patterns_v2_owner_pattern_first.py`
 
-Owner-facing loop:
+The provider boundary normalizes hypothesis-only fields away from non-hypothesis moves before strict validation, while true `surface_hypothesis` moves remain strict. Model-driven turns are transactional: extraction/planning/validation/post-processing failure restores pre-turn conversation, hidden record, flags, and proposal state.
 
-`real episode -> one discriminating follow-up at a time -> deeper/contrasting detail -> tentative synthesis only when informative -> counterexample/boundary check -> natural participant correction -> compact pattern/limit judgment`
+## Verification and deployment
 
-Routine fact lists and keep/edit/reject controls are gone from the owner-facing flow. Literal/minimally normalized facts remain in the internal v2 ledger. Explicit participant judgment is reserved for the consequential person-level synthesis.
+GitHub Actions run `34854800932` on exact source head `67b038b27d62b941b6beb224c6e89efd0d165bb4`: **SUCCESS**.
 
-The conversational planner is instructed to optimize for information gain rather than proof of comprehension. It may request a contrasting situation instead of mining trivial detail, and a formal cross-episode hypothesis is withheld until a boundary/counterexample question has been answered. Any surfaced hypothesis must cite operative hidden facts from at least two episodes and cannot be an exact restatement of one cited fact.
+- unit/integration tests: passed;
+- Ruff: passed;
+- strict mypy: passed.
 
-Participant corrections to hidden facts remain append-only with lineage and provenance. Genuine absence is not silently inferred or admitted by this minimal extractor; the accepted four-gate route remains authoritative.
-
-The historical automatic `OpenAILifePatternsMapper` / `/map` person-level authority remains unused.
-
-Focused completion command:
-
-`python -m pytest tests/unit/test_life_patterns_v2_owner_conversation.py tests/unit/test_life_patterns_v2_owner_app.py tests/unit/test_participant_adjudicated_v2.py -q`
-
-## Owner-only deployment
-
-The replacement is deployed on the existing authenticated Railway surface; no new service was created.
+Owner-only Railway deployment:
 
 - domain: `life-patterns-owner-production.up.railway.app`
 - service: `life-patterns-owner`
-- conversational deployment ID: `aabaaaaf-5178-40a8-afe0-2150a6846f45`
-- source head: `a642a1f907b20dd3da6d8219430b9b12dd3d3301`
-- deployment status: **SUCCESS**
-- deploy log: application startup complete; `/healthz` returned HTTP `200`
-- owner-facing routes remain HTTP-Basic protected
-- runtime model credentials remain Railway references; no API secret is committed
+- deployment ID: `842b13f2-66b2-435e-a918-dbc81cde00e7`
+- source head: `67b038b27d62b941b6beb224c6e89efd0d165bb4`
+- status: **SUCCESS**
+- runtime: application startup complete;
+- Railway health request: `GET /healthz` -> HTTP `200`.
+
+Existing Basic authentication and runtime credential references remain unchanged. No new Railway service was created.
 
 ## Current outcome / next gate
 
-Replacement-strategy technical state: **IMPLEMENTED AND DEPLOYED**.
+Direct owner-facing information-gain evidence for the repaired pattern-first surface: **NOT YET MEASURED**.
 
-Direct owner-facing information-gain evidence for the replacement: **NOT YET MEASURED**.
+Next gate: start a **fresh owner-only browser session** and judge the conversation naturally. Success requires useful information beyond paraphrase: a meaningful context distinction, life-phase change, counterexample, boundary, contrast, or synthesis that the participant did not simply state verbatim.
 
-The next decision-changing evidence is owner use of the deployed conversational surface. Success requires at least one interaction that genuinely adds information beyond paraphrase: a useful new distinction, a cross-situation contrast, a boundary/counterexample that changes the hypothesis, or a compact synthesis that explains more than the participant's source sentences individually.
+If the repaired experience remains essentially an elaborate parrot, classify the interaction strategy as failed rather than cosmetically polishing it.
 
-If it remains essentially paraphrase plus confirmation, classify the replacement strategy as failed rather than cosmetically polishing it.
-
-Authorized: bounded owner-only testing of the deployed conversational probe and owner-initiated runtime model use.
+Authorized: bounded owner-only testing of the deployed probe and owner-initiated runtime model use.
 
 Still closed: external participant collection, automated participant coding, target-model activity, broader public participant deployment, recruitment/contact, merge/release, production auth/recovery/voice expansion, and unapproved spending.
 
