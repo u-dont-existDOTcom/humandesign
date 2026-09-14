@@ -2,7 +2,7 @@
 
 ## Life Patterns — 2026-09-14
 
-Active task: `life-patterns-v2-owner-real-data-browser-prototype` — OWNER REAL-DATA BROWSER JUDGMENT REQUIRED.
+Active task: `life-patterns-v2-hidden-ledger-conversational-insight-probe` — STRATEGY REPLACEMENT IMPLEMENTATION REQUIRED.
 
 Frozen semantic candidate head: `10d57a19b96f38303b2a30abff4281d6abfff83b`.
 
@@ -10,67 +10,65 @@ Independent semantic review: **PASS** — zero blockers, `semantic_change_requir
 
 Bounded v2 core repair head: `75c2fa4366e2721dc257ec839532b10f54f1de20`.
 
-Synthetic HTML owner probe head: `894fc8c237221b51106f81c0e7c276dd27a878fb`.
+Real-data owner browser implementation head: `002d6264f05a7e380d4cac7e188f8c9455fbf971`.
 
-Real-data owner browser implementation head: `002d6264f05a7e380d4cac7e188f8c9455fbf971`; hosted repository CI is green on that implementation head.
+Authenticated deployment-wrapper source head: `bca426b8ab873d02fe5038d271d13b1b814fc813`; hosted repository CI is green on that source head.
 
-Authenticated deployment wrapper final source head: `bca426b8ab873d02fe5038d271d13b1b814fc813`; hosted repository CI is green on that head.
+## Owner real-data judgment: current product strategy failed
 
-Core implementation disposition remains **PASS**. The accepted v2 semantics remain unchanged.
+Direct owner feedback on the deployed real-data browser established that the surfaced fact-review workflow is low-value as a product experience. It mainly demonstrates that the model can understand/paraphrase what the owner said and then asks the owner to certify those paraphrases.
 
-### What the owner judgment established
+That is not the owner outcome for Discover Your Unique Life Patterns.
 
-The direct HTML/card/chat surface is the correct interaction direction. The prior terminal/Work relay is not the owner-facing product surface. The owner also identified that two questions must stay separate in ordinary language:
+Owner-facing target: an unusually attentive, theory-blind conversation that produces useful distinctions, cross-context pattern hypotheses, counterexamples/boundaries, and evidence-backed self-understanding.
 
-1. whether a revised pattern feels true of the person;
-2. whether the particular examples on screen actually support that revised wording.
+Current direct outcome evidence: **UNMET**.
 
-A revision known from other situations must not be treated as established by the current examples.
+Surfaced fact-review strategy: **REPLACEMENT_REQUIRED**.
 
-### Active bounded experiment
+Judgment record: `state/LIFE-PATTERNS-v2-OWNER-REAL-DATA-PRODUCT-JUDGMENT-2026-09-14.md`.
 
-The current task is defined in `tasks/LIFE-PATTERNS-v2-OWNER-REAL-DATA-BROWSER-PROTOTYPE-2026-09-13.md`.
+Green tests, correct semantics, and successful deployment are supporting work; they do not establish owner-facing value.
 
-The owner-only browser app lives at:
+## What remains valid
 
-- `src/hdmatch/api/life_patterns_v2_owner_app.py`
-- `src/hdmatch/api/life_patterns_v2_owner_ui.py`
-- deployed access wrapper: `src/hdmatch/api/life_patterns_v2_owner_deployed_app.py`
+The accepted v2 semantic substrate remains authoritative and does not require revision:
 
-The app uses the owner's own real episodes. Runtime narratives stay in memory only. A target-theory-blind model extracts literal/minimally normalized facts. The owner reviews those facts. After two reviewed episodes in this bounded product probe, the model may propose at most one cross-episode pattern hypothesis backed by reviewed facts from at least two episodes. The owner alone accepts, revises, rejects, or leaves the pattern unresolved.
+- target-theory blindness;
+- open-world episode facts;
+- append-only correction/provenance;
+- genuine-absence gating;
+- participant authority over person-level patterns;
+- preproposal/postproposal evidence separation;
+- no automatic person-level recurrence reconstruction from raw facts.
 
-The two-reviewed-episode wait is a development-probe design choice, not a universal scientific sufficiency threshold.
+The mistake was exposing the internal evidence ledger as the participant experience. Evidence hygiene can remain internal.
 
-The browser app does not import or invoke the historical `OpenAILifePatternsMapper` or `/map` person-level generator. Accepted/rejected/unresolved results pass through the frozen v2 validation/freeze/projection path.
+## Replacement method
+
+Task: `tasks/LIFE-PATTERNS-v2-HIDDEN-LEDGER-CONVERSATIONAL-INSIGHT-PROBE-2026-09-14.md`.
+
+Replacement probe:
+
+`real episode -> one discriminating follow-up at a time -> deeper/contrasting detail -> tentative synthesis only when informative -> counterexample/boundary check -> natural participant correction -> compact pattern/limit summary`
+
+Routine fact lists and keep/edit/reject controls should disappear from the owner-facing flow. Literal/minimally normalized facts remain in the internal v2 ledger. Ask for explicit correction only when a load-bearing interpretation is uncertain or a synthesis is being adjudicated.
+
+The next probe must show information gain beyond paraphrase: a useful new distinction, a cross-episode contrast, a boundary/counterexample that changes the hypothesis, or a compact synthesis that explains more than the source sentences individually.
 
 Focused completion command:
 
-`python -m pytest tests/unit/test_life_patterns_v2_owner_app.py tests/unit/test_participant_adjudicated_v2.py -q`
+`python -m pytest tests/unit/test_life_patterns_v2_owner_conversation.py tests/unit/test_life_patterns_v2_owner_app.py tests/unit/test_participant_adjudicated_v2.py -q`
 
-### Owner-authorized Railway deployment
+## Deployment boundary
 
-The owner explicitly authorized this bounded owner-only deployment on 2026-09-14.
+Existing owner-only authenticated Railway surface remains available at `life-patterns-owner-production.up.railway.app`. Reuse it; do not create another service.
 
-Deployment receipt: `state/LIFE-PATTERNS-v2-OWNER-REAL-DATA-BROWSER-RAILWAY-DEPLOYMENT-2026-09-14.md`.
+Authorized: bounded owner-only redesign/implementation/testing on that surface and owner-initiated runtime model use.
 
-- Railway service: `life-patterns-owner`
-- Service domain: `life-patterns-owner-production.up.railway.app`
-- First authenticated-wrapper deployment `b932cfb5-cf50-4778-b974-c5c783a83336`: **SUCCESS**
-- `/healthz`: HTTP `200`
-- unauthenticated `/`: HTTP `401`
-- all owner-facing paths are protected by HTTP Basic authentication
-- model credential is supplied by a Railway reference to the existing configured service credential; no secret value is committed to Git
-- the existing `relationship-web` application source/start/domain/running deployment were not repurposed
+Still closed: external participant collection, automated participant coding, target-model activity, broader public participant deployment, recruitment/contact, merge/release, production auth/recovery/voice expansion, and unapproved spending.
 
-Subsequent state-only branch commits may trigger routine Railway redeploys but do not change the implemented browser semantics or authorization boundary.
-
-This one owner-only authenticated deployment is authorized and executed. It does **not** authorize external/public participant deployment or broader production rollout.
-
-### Current gate
-
-Use the authenticated owner browser app with **2–3 real episodes** and judge whether the interaction actually feels intelligent and natural. Do not scale the interview architecture before that owner judgment.
-
-Still closed: external participant collection, automated participant coding, target-model activity, external/public participant deployment, recruitment/contact, merge/release, and unapproved spending.
+Next gate after implementation: **OWNER CONVERSATIONAL INSIGHT JUDGMENT REQUIRED**.
 
 Current task lock: `tasks/ACTIVE-TASK.json`.
 
