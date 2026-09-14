@@ -298,9 +298,11 @@ class AdaptiveRefinablePatternSession(RefinablePatternFirstConversationalOwnerSe
                 boundary_answered=self.boundary_answered,
             )
 
-            if move.move_type == "request_contrast" and self.current_episode_id is None:
-                move = ConversationMove(reply=move.reply, move_type="follow_up")
-            elif move.move_type == "boundary_question" and not self.core.record.episodes:
+            if (
+                move.move_type == "request_contrast" and self.current_episode_id is None
+            ) or (
+                move.move_type == "boundary_question" and not self.core.record.episodes
+            ):
                 move = ConversationMove(reply=move.reply, move_type="follow_up")
             elif move.move_type == "surface_hypothesis":
                 try:
