@@ -10,7 +10,7 @@ V2 independent semantic review: **PASS**.
 - Synthetic HTML owner probe head: `894fc8c237221b51106f81c0e7c276dd27a878fb`
 - Real-data owner browser implementation head: `002d6264f05a7e380d4cac7e188f8c9455fbf971`
 - Authenticated deployment-wrapper source head: `bca426b8ab873d02fe5038d271d13b1b814fc813`
-- Hosted CI on final deployed source head: `success`
+- Hosted CI on authenticated deployment-wrapper source head: `success`
 - Active task: `life-patterns-v2-owner-real-data-browser-prototype` — OWNER REAL-DATA BROWSER JUDGMENT REQUIRED
 
 The synthetic HTML probe established that the direct browser/card/chat direction is preferable to a terminal or Work prompt relay. It also exposed a wording/semantic UX requirement: keep separate whether a revised pattern feels true and whether the currently displayed examples actually establish the added wording.
@@ -38,12 +38,14 @@ Deployment receipt: `state/LIFE-PATTERNS-v2-OWNER-REAL-DATA-BROWSER-RAILWAY-DEPL
 
 - Railway service: `life-patterns-owner`
 - Domain: `life-patterns-owner-production.up.railway.app`
-- Deployment ID: `b932cfb5-cf50-4778-b974-c5c783a83336`
+- First authenticated-wrapper deployment ID: `b932cfb5-cf50-4778-b974-c5c783a83336`
 - Deployment status: **SUCCESS**
 - Public healthcheck `/healthz`: HTTP `200`
 - Owner-facing `/` without credentials: HTTP `401`
 - Owner-facing paths are HTTP-Basic protected; password is not committed to Git
 - Model credential is supplied through Railway service-variable reference rather than copied into repository state
+
+Subsequent state-only branch commits may trigger routine Railway redeploys; they do not change the application implementation or owner-only authorization boundary.
 
 This authorization is limited to the owner-only authenticated development surface. External/public participant deployment remains closed.
 
