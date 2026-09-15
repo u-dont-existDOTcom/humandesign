@@ -97,15 +97,13 @@ Application behavior commit: `96c5ef374d92e0e44d4c6811961e7e9b1878a90a`.
 
 Regression/test commit: `17ef230d51c2298ac6ca0a69c5cc4c3922b4a46d`.
 
-Final typing-only application checkpoint: `b46d480acf2209b5416f6ef158fd64de32a5358a`.
+Final application/code checkpoint: `b46d480acf2209b5416f6ef158fd64de32a5358a`.
 
-GitHub Actions run `34915009454`: **SUCCESS**. The preceding behavior/test run established **736 passed / 7 skipped**, Ruff passed, and exposed only a static typing issue at the dynamic refinement-planner boundary; the final checkpoint repairs that type boundary and is fully green.
+GitHub Actions run `34915009454`: **SUCCESS**. The preceding behavior/test run established **736 passed / 7 skipped**, Ruff passed, and exposed only a static typing issue at the dynamic refinement-planner boundary; the final checkpoint repairs that type boundary and passes tests, Ruff, and strict mypy.
 
-Railway behavior deployment `6e7e663a-6524-4ee9-bc04-82254b267430` from application source `96c5ef374d92e0e44d4c6811961e7e9b1878a90a`: **SUCCESS**, application startup complete, `/healthz` HTTP `200`.
+Existing authenticated owner-only Railway service reused. Final deployment `f4a49e7d-b0b1-4929-a3ad-9bbb11092ef6` from source `b46d480acf2209b5416f6ef158fd64de32a5358a`: **SUCCESS**, application startup complete, `/healthz` HTTP `200`.
 
-The final typing-only deployment is operationally equivalent at the participant-facing behavior layer and is tracked separately by Railway.
-
-Health contract now declares:
+Health contract declares:
 
 - `observer_triangulation=true`;
 - `neutral_person_model_discriminators=true`;
