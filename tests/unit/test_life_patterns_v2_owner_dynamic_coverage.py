@@ -128,6 +128,18 @@ def test_dynamic_ui_uses_cross_thread_context_and_not_first_missing_category() -
     assert "adaptive coverage" not in DYNAMIC_RECOVERABILITY_HTML
 
 
+def test_dynamic_ui_has_persistent_progress_and_rough_remaining_estimate() -> None:
+    assert 'id="interviewProgress"' in DYNAMIC_RECOVERABILITY_HTML
+    assert 'id="progressBar"' in DYNAMIC_RECOVERABILITY_HTML
+    assert 'id="progressText"' in DYNAMIC_RECOVERABILITY_HTML
+    assert "function coverageMetrics()" in DYNAMIC_RECOVERABILITY_HTML
+    assert "function renderProgress()" in DYNAMIC_RECOVERABILITY_HTML
+    assert "roughly ${m.lowQ}–${m.highQ} questions left" in DYNAMIC_RECOVERABILITY_HTML
+    assert "Very rough time estimate" in DYNAMIC_RECOVERABILITY_HTML
+    assert "One answer can cover several areas" in DYNAMIC_RECOVERABILITY_HTML
+    assert "renderProgress();" in DYNAMIC_RECOVERABILITY_HTML
+
+
 def test_health_declares_dynamic_coverage_and_cross_thread_reuse() -> None:
     app = create_life_patterns_v2_owner_recoverability_app(
         model=DynamicPlannerModel()  # type: ignore[arg-type]
