@@ -481,7 +481,7 @@ class AdaptiveRefinablePatternSession(RefinablePatternFirstConversationalOwnerSe
                 ),
                 move_type="follow_up",
             )
-        return move
+        return ConversationMove.model_validate(move)
 
     def continue_pattern(self) -> dict[str, Any]:
         if self.core.active_proposal_id is None:
