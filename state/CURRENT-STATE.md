@@ -2,142 +2,126 @@
 
 ## Life Patterns — 2026-09-15
 
-Active task: `life-patterns-v2-owner-multi-pattern-continuation` — **OWNER REAL-DATA BROWSER JUDGMENT REQUIRED**.
+Active task: `life-patterns-v2-standardized-coverage-owner-retest` — **OWNER REAL-DATA BROWSER JUDGMENT REQUIRED**.
 
 PR #24 remains **draft / open / unmerged**.
 
 ## Accepted scientific substrate
 
-V2 independent semantic review remains **PASS** with zero blockers and `semantic_change_required=false`.
+The accepted v2 hidden evidence contract remains unchanged: open-world episode facts, participant-adjudicated person-level patterns, append-only correction/provenance, genuine-absence gating, immutable evidence timing, target-theory blindness, and the episode-fact/person-pattern firewall.
 
-The accepted hidden substrate is unchanged: open-world episode facts plus participant-adjudicated person-level patterns, append-only correction/provenance, genuine-absence gating, immutable evidence timing, target-theory blindness, and the episode-fact/person-pattern firewall.
+No private owner interview narrative is committed. Only abstract product findings and synthetic regressions are preserved.
 
-The participant-facing interview is deliberately simpler and more selective than the internal evidence machinery.
+## Product strategy status
 
-## Product evidence so far
+Direct owner testing has progressively replaced several failed participant-facing strategies: surfaced fact/paraphrase review, quota-driven multi-episode/counterexample interrogation, recurrence-as-sufficient-pattern logic, and synthesis/refinement paths that could overreach or repeat themselves.
 
-The surfaced fact-review/paraphrase workflow is **FAILED / REPLACED**.
+The current product principle is **target-aware instrument design / target-blind runtime execution**. Development may intentionally collect neutral behavioral dimensions useful for later astrology / Human Design analysis and InnerSignal, while the runtime interviewer receives no participant chart, expected answer direction, target-model mapping, candidate score, or hidden theory label.
 
-The hidden-ledger pattern-first replacement produced useful non-parroting information gain in one bounded owner session and was judged **GOOD / PASS / PRELIMINARY POSITIVE**. Multi-pattern continuation was added. Later owner testing exposed and repaired:
+The current interviewer retains:
 
-- uncertainty being terminalized;
-- `No` terminating the whole pattern inquiry;
-- unsupported comparative/cross-context synthesis;
-- severe over-interrogation caused by assistant-added multi-episode/counterexample/audit requirements;
-- recurrence being mistaken for person-specific signal;
-- most recently, `Keep trying to pin it down` repeating the existing synthesis and broad self-evaluations lacking self/observer triangulation.
+- person-specificity admission: generic high-base-rate regularities are not promoted to Life Patterns;
+- adaptive burden control: no arbitrary episode or counterexample quota;
+- familiar-observer / self and inner / outer triangulation when informative;
+- dedicated non-repetitive `Keep trying to pin it down` reasoning;
+- participant authority over person-level synthesis;
+- explicit preproposal versus postproposal evidence timing.
 
-No private owner interview narrative is committed. Only abstract product findings are preserved.
+Receipts:
 
-## Current product principle: target-aware instrument, target-blind runtime
+- `state/LIFE-PATTERNS-v2-OWNER-ADAPTIVE-STOPPING-REPAIR-2026-09-14.md`
+- `state/LIFE-PATTERNS-v2-OWNER-PERSON-SPECIFICITY-GATE-2026-09-15.md`
+- `state/LIFE-PATTERNS-v2-OWNER-OBSERVER-TRIANGULATION-AND-REFINEMENT-REPAIR-2026-09-15.md`
 
-The owner explicitly clarified that Life Patterns is intended to produce evidence useful for later astrology / Human Design analysis **and** for InnerSignal.
+## Owner methodological correction: optional probes are not enough
 
-The controlling distinction is now:
+The owner correctly identified that a loose menu of possible high-information questions is not, by itself, standardized scientific measurement. Participant-led conversation alone can leave important behavioral domains unobserved for reasons unrelated to the participant's actual traits.
 
-- **instrument design may be target-aware**: development may intentionally prioritize neutral behavioral dimensions because they are likely to discriminate person models useful downstream;
-- **runtime interviewing remains target-blind**: the interviewer does not receive the participant's chart, target-model mapping, expected answer direction, score, or hidden theory label, and participant-facing questions remain behavior-first.
+The deployed development candidate therefore adds a **versioned required-domain coverage checklist** while preserving adaptive conversational wording.
 
-Scientific blindness therefore prohibits chart-aware routing and target leakage. It does **not** require an instrument that is indifferent to which behavioral information is useful.
+The checklist standardizes:
 
-Repair receipt:
+1. required constructs/domains;
+2. coverage status semantics;
+3. evidence citation/provenance requirements;
+4. explicit missingness;
+5. when a domain still needs further measurement;
+6. canonical neutral screeners for under-covered domains;
+7. blueprint version/hash for later freezing.
 
-`state/LIFE-PATTERNS-v2-OWNER-OBSERVER-TRIANGULATION-AND-REFINEMENT-REPAIR-2026-09-15.md`
+It does **not** require every participant to receive identical follow-up sentences or repeat information already supplied. Natural participant-led evidence can satisfy a required domain.
 
-## Current participant-facing method
+Coverage statuses are `unassessed`, `partial`, `sufficient`, `unknown`, `inapplicable`, and `declined`. Only `sufficient`, `unknown`, `inapplicable`, and `declined` close a domain. Silence never becomes absence or a terminal missingness state. `partial`/`sufficient` coverage must cite valid operative hidden-ledger fact IDs.
 
-The live owner candidate now combines:
+Coverage assessment is interview-routing/process metadata, not a chart score or validation result.
 
-1. **person-specificity admission** — recurrence alone is not enough; clearly generic/high-base-rate regularities are redirected before evidence collection;
-2. **adaptive burden control** — another question is admitted only when plausible answers could materially change the person-level formulation;
-3. **neutral discriminating elicitation** — the interviewer selects the one unresolved dimension most likely to change the formulation rather than mechanically asking for another episode;
-4. **participant authority** — person-level synthesis remains tentative and adjudicated by the participant.
+Receipt:
 
-### Familiar-observer triangulation
+`state/LIFE-PATTERNS-v2-OWNER-STANDARDIZED-COVERAGE-BLUEPRINT-2026-09-15.md`
 
-For broad evaluative self-labels, an early high-value discriminator may be whether people who know the participant well tend to describe them similarly or differently, and whether outward presentation differs from inner experience.
+## Development coverage blueprint v1
 
-Evidence sources remain distinct:
+Version: `life-patterns-required-coverage-v1`.
 
-- participant self-description;
-- direct behavioral/event report;
-- participant-reported observer impression.
+Current top-level required domains:
 
-A familiar-observer report is useful evidence about externally visible reputation or self/observer convergence/divergence, but remains attributed secondhand evidence rather than verified objective truth.
+1. decision and choice process;
+2. energy, work, stopping, and recovery;
+3. attention, cognition, learning, and work style;
+4. emotional baseline and regulation;
+5. relationships, conflict, trust, and boundaries;
+6. social entry, recognition, groups, and roles;
+7. communication and influence;
+8. values, purpose, motivation, and salience;
+9. environment, body, comfort, and security;
+10. developmental continuity and change.
 
-### Neutral high-value discriminator menu
+The browser aggregates coverage across completed pattern threads. `Continue required coverage` opens the next still-`unassessed`/`partial` domain with a canonical neutral screener. `Finish for now` remains available and explicitly reports incomplete coverage instead of pretending completion.
 
-The model may select from these **only when the answer can materially change the formulation**; this is not a checklist or completion quota:
+Cross-cutting questions such as self-vs-observer, inner-vs-outer, automatic-vs-deliberate, baseline-vs-triggered, timing/threshold/duration/recovery, context stability, developmental change, and coexisting modes remain **adaptive discriminators inside the required checklist**, not separate mandatory questions for every domain.
 
-- self-view vs familiar observer-view;
-- inner experience vs outward presentation;
-- baseline vs triggered state and recovery;
-- automatic first response vs deliberate/learned management or compensation;
-- context/domain stability;
-- timing, threshold, intensity, duration, escalation, stopping, recovery;
-- developmental continuity/change and learned adaptation;
-- decision phenomenology and immediate vs delayed clarity;
-- social entry/role: self-initiation vs response/recognition, one-to-one vs group, role acceptance/resistance;
-- energy, sustainable engagement, overload, stopping, retreat/restoration;
-- capacity vs preferred use, especially communication/persuasion/leadership/care/confrontation;
-- relating, reciprocity, sensitivity, conflict, repair/withdrawal, trust and boundaries;
-- attention, cognition, focus, interruption, learning, novelty/continuity, persistence/stopping;
-- values, purpose and salience—what reliably mobilizes effort or is easy to ignore;
-- sensory/environmental conditions that materially change functioning;
-- coexisting modes that differ by context, role, intensity, or timescale rather than forcing one trait pole.
+### Domain partition is not yet a final validation freeze
 
-The same neutral person-model distinctions are useful to InnerSignal without requiring external-theory language in participant-facing interviewing.
+The existing behavior-first HD question bank was cross-checked after this correction. It confirms the need for required coverage and spans body/signal access, decision timing, social entry/recognition, energy/recovery, learning/expertise, resources/ambition/status, conflict/relationships, developmental chronology, emotional permeability/baseline, pressure, expression, environment/direction, fear, original contribution, persuasion, purpose, and related constructs.
 
-## `Keep trying to pin it down` repair
+Therefore the current 10-domain partition is a reversible development candidate. Before untouched validation, it must be explicitly crosswalked against the behavior-first question bank and later astrology/HD behavioral target surface. Broad buckets may need splitting—for example body-signal access/state-dependence versus environment, and resources/status/security versus sensory/physical conditions. Any validation run must freeze a declared coverage blueprint version/hash before collection.
 
-The previous path reused the ordinary synthesis planner. If that planner returned another `surface_hypothesis`, the refinement wrapper converted its move type to `follow_up` while preserving the same reply, which allowed the product to repeat the existing synthesis verbatim or nearly verbatim.
+## Password removal
 
-The live path now uses a dedicated refinement planner:
+At the owner's explicit request, the development surface is now **passwordless**.
 
-- `surface_hypothesis` is not allowed on the initial refinement call;
-- the prompt explicitly forbids repeating, restating, lightly rephrasing, or re-presenting the current synthesis;
-- the button action is recorded as a conversational user turn;
-- the model must ask at most one genuinely decision-changing new question or say no high-value unresolved discriminator remains;
-- a defensive fallback turns any attempted repeated synthesis into a new observer-triangulation question.
+`src/hdmatch/api/life_patterns_v2_owner_deployed_app.py` installs Basic Auth only when `HDMATCH_OWNER_BASIC_PASSWORD` is non-empty. Railway's Basic Auth username/password variables were set to empty strings and the redeployed service started successfully.
 
-Answers during refinement continue through the same dedicated reasoning path.
-
-Current limitation: post-proposal refinement evidence does **not yet automatically generate a revised formal proposal**. Participant manual revision/adjudication remains available. Any later automatic proposal revision must preserve post-proposal provenance rather than laundering later evidence into pre-proposal support.
+This intentionally broadens access to anyone who has or discovers the development URL and may expose runtime model usage/cost. It does **not** authorize external participant recruitment/collection, target-model scoring, publication, or representation as a validated public study.
 
 ## Verification / deployment
 
-Current application/code checkpoint: `b46d480acf2209b5416f6ef158fd64de32a5358a`.
+Passwordless wrapper head: `e6cb6e0f20c98ade58a283695508e4f0fc7f94fa`.
 
-Focused regression/test checkpoint: `17ef230d51c2298ac6ca0a69c5cc4c3922b4a46d`.
+Standardized coverage application head: `5b2b2a0526685155079dc7e280c9ac975490ef68`.
 
-GitHub Actions run `34915009454`: **SUCCESS**. The preceding behavior/test run established **736 passed / 7 skipped**, Ruff passed, with only a static typing issue at the dynamic refinement boundary; the final checkpoint passes tests, Ruff, and strict mypy.
+Coverage regression/test head: `c916051dd3d4c114e85aeeb304abb8a34e236b19`.
 
-Existing authenticated owner-only Railway service reused:
+GitHub Actions run `34920921980`: **SUCCESS** — unit/integration tests, Ruff, and strict mypy passed.
 
-- deployment: `f4a49e7d-b0b1-4929-a3ad-9bbb11092ef6`;
-- source: `b46d480acf2209b5416f6ef158fd64de32a5358a`;
-- status: **SUCCESS**;
-- application startup complete;
-- `/healthz` -> HTTP `200`;
-- health contract includes `person_specificity_gate=true`, `observer_triangulation=true`, `neutral_person_model_discriminators=true`, `refinement_repetition_guard=true`, `adaptive_information_gain_gate=true`, `fixed_episode_quota=false`, `mandatory_counterexample_gate=false`.
+Railway deployment `71bbefbe-06e0-432c-b904-c60904de4932`: **SUCCESS**. Application startup completed and `/healthz` returned HTTP `200`.
 
-No new service, broadened access, automatic transcript persistence, target scoring, chart-aware runtime routing, Railway volume, or request-body logging was introduced.
+The health contract now describes a development surface and declares standardized required coverage, blueprint version/hash, adaptive wording with fixed domains, person-specificity, observer triangulation, and target-theory blindness. The stale `owner_only=true` health claim is not used on the standardized app.
 
-## Next gate
+## Current gate
 
-Strategy efficacy: **TARGET-AWARE NEUTRAL INSTRUMENT / TARGET-BLIND RUNTIME CANDIDATE — OWNER RETEST REQUIRED**.
+Strategy: **SEMI-STRUCTURED STANDARDIZED COVERAGE + TARGET-AWARE DESIGN / TARGET-BLIND RUNTIME — OWNER RETEST REQUIRED**.
 
 Next owner evidence:
 
-1. Start with a broad self-description. When informative, the first clarification should prefer familiar-observer convergence/divergence or inner-vs-outer presentation rather than demanding an arbitrary episode.
-2. After a synthesis, click `Keep trying to pin it down`. The next interviewer turn must contain genuinely new inquiry, never the same synthesis again.
-3. Answer that question and judge whether the interviewer uses the new evidence without reopening settled material or marching through the discriminator menu.
-4. Test another high-value domain such as decision timing, relationships/conflict, attention/work, energy/recovery, or values/purpose.
-5. If within-pattern behavior is good, the next architecture decision is whether to add a **light adaptive cross-pattern coverage sweep** so important under-observed domains are not missed simply because the participant did not spontaneously volunteer them.
-6. `Finish for now` summary utility still requires direct owner judgment before durable persistence / a real Life Patterns Map is authorized.
+1. Refresh/reopen the browser and confirm there is no password prompt.
+2. Run a natural participant-led pattern and adjudicate it.
+3. Inspect the required-coverage count, then choose `Continue required coverage`.
+4. Confirm previously covered domains are skipped and the next genuinely under-covered domain receives a neutral screener.
+5. Confirm `unknown`, `inapplicable`, and `declined` terminate the domain rather than trigger repeated probing.
+6. Confirm `Finish for now` reports incomplete coverage rather than claiming completeness.
+7. Judge whether the current broad domain partition is useful enough for further development; before validation freeze, perform the explicit behavior-question-bank / astrology-HD coverage crosswalk and split materially overbroad domains.
 
-Authorized: bounded owner-only testing and owner-initiated runtime model use.
-
-Still closed: external participant collection, automated participant coding, target-model activity, broader public participant deployment, recruitment/contact, merge/release, production auth/recovery/voice expansion, and unapproved spending.
+Still unauthorized: external participant collection/recruitment, automated participant coding, target-model activity, merge/release, publication, production expansion, and unapproved spending.
 
 **There was never a completion policy.**
