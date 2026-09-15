@@ -1,0 +1,68 @@
+{
+  "schema": "life-patterns-astrohd-owner-recovery-crosswalk-v1",
+  "status": "development_owner_regression_gate_not_validation",
+  "purpose": "Preserve enough target-blind behavioral measurement capacity that a fresh Life Patterns owner interview can be evaluated after freeze against the historical AstroHD DOB/time recovery benchmark.",
+  "runtime_boundary": {
+    "interviewer_receives_this_crosswalk": false,
+    "interviewer_receives_chart": false,
+    "interviewer_receives_expected_answer_direction": false,
+    "interviewer_receives_candidate_scores": false,
+    "post_freeze_owner_evaluation_may_use_crosswalk": true
+  },
+  "historical_recovery_evidence": {
+    "exact_actual_artifact": "experiments/astrohd/exact_actual_v1_1_user_v3_6.json",
+    "hourly_scan_summary": "experiments/astrohd/scan_summary_v1_1_user_v3_6.md",
+    "minute_refinement_summary": "experiments/astrohd/minute_refinement_v1_1_user_v3_6.md",
+    "merged_model": "experiments/astrohd/merged_model_v1_1_user_v3_6.json",
+    "clean_holistic_information_audit": "reference/audits/V36_HOLISTIC_PROFILE_INFORMATION_AUDIT_2026_08_27.md",
+    "acceptance_rule": "A fresh new-instrument owner run is not accepted as recovery-capable unless post-freeze scoring reproduces or improves the historical recovery signature on the same declared search procedure. Instrument coverage alone cannot pass this gate."
+  },
+  "historical_merged_cluster_crosswalk": [
+    {"historical_cluster": "structure_discovery", "neutral_domain": "complex_structure"},
+    {"historical_cluster": "mystery_inquiry", "neutral_domain": "recurring_mystery"},
+    {"historical_cluster": "original_contribution", "neutral_domain": "original_contribution"},
+    {"historical_cluster": "insight_translation", "neutral_domain": "insight_translation"},
+    {"historical_cluster": "strategic_persuasion", "neutral_domain": "persuasion_strategy"},
+    {"historical_cluster": "recognition_selectivity", "neutral_domain": "recognition_entry"},
+    {"historical_cluster": "network_propagation", "neutral_domain": "network_pathways"},
+    {"historical_cluster": "projection_rescuer", "neutral_domain": "role_projection"},
+    {"historical_cluster": "episodic_intuition", "neutral_domain": "immediate_body_signal"},
+    {"historical_cluster": "autonomy_self_direction", "neutral_domain": "autonomy_direction"},
+    {"historical_cluster": "sanctuary_sensory_home", "neutral_domain": "sanctuary_sensory"},
+    {"historical_cluster": "romantic_longing_libido", "neutral_domain": "romantic_attachment"},
+    {"historical_cluster": "stable_but_permeable_emotions", "neutral_domain": "emotion_permeability"},
+    {"historical_cluster": "meaningful_work_not_constant", "neutral_domain": "work_energy_range"},
+    {"historical_cluster": "conditional_consequential_contribution", "neutral_domain": "consequential_effort"},
+    {"historical_cluster": "consequential_correction", "neutral_domain": "correction_threshold"},
+    {"historical_cluster": "privacy_retreat_spiritual", "neutral_domain": "retreat_privacy"},
+    {"historical_cluster": "durable_value_tension", "neutral_domain": "value_tension"},
+    {"historical_cluster": "resource_autonomy_not_status", "neutral_domain": "resource_motivation"}
+  ],
+  "clean_v36_information_crosswalk": [
+    {"observable": "ORGANIZED_DETAIL", "neutral_domain": "complex_structure"},
+    {"observable": "INSIGHT_TO_STRUCTURE", "neutral_domain": "insight_translation"},
+    {"observable": "PURPOSE_STRUGGLE", "neutral_domain": "consequential_effort"},
+    {"observable": "ORIGINAL_CONTRIBUTION", "neutral_domain": "original_contribution"},
+    {"observable": "ENTERPRISE_PERSUASION_PATTERN", "neutral_domain": "persuasion_strategy"},
+    {"observable": "CONSEQUENTIAL_CORRECTION", "neutral_domain": "correction_threshold"},
+    {"observable": "EXISTENTIAL_MYSTERY", "neutral_domain": "recurring_mystery"},
+    {"observable": "PROFILE_LINE6_PHASES", "neutral_domain": "developmental_phases"},
+    {"observable": "RHYTHM_ROUTINE", "neutral_domain": "rhythm_continuity"},
+    {"observable": "AUTHORITY_SOMATIC", "neutral_domain": "immediate_body_signal"},
+    {"observable": "VALUES_RESPONSIBILITY", "neutral_domain": "needs_responsibility"},
+    {"observable": "CONTINUITY_PRESERVATION", "neutral_domain": "rhythm_continuity"},
+    {"observable": "RETREAT_PRIVACY", "neutral_domain": "retreat_privacy"},
+    {"observable": "RESOURCE_SOVEREIGNTY", "neutral_domain": "resource_motivation"},
+    {"observable": "CONCENTRATED_FOCUS", "neutral_domain": "focus_repetition"},
+    {"observable": "PROFILE_LINE5_PROJECTION", "neutral_domain": "role_projection"},
+    {"observable": "NEEDS_SENSITIVITY", "neutral_domain": "needs_responsibility"},
+    {"observable": "PROFILE_24", "neutral_domain": "network_pathways"},
+    {"observable": "CONTRADICTION:MASTERY_REPETITION", "neutral_domain": "focus_repetition"}
+  ],
+  "non_claims": [
+    "This crosswalk does not prove that every historical cluster is individually necessary by leave-one-out ablation.",
+    "This crosswalk does not validate astrology or Human Design.",
+    "The owner case is development data and cannot be counted as untouched validation.",
+    "The two explicitly post-selection V3.6 carrier refinements are not required by this clean-capacity crosswalk."
+  ]
+}

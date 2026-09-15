@@ -320,7 +320,9 @@ def _full_cached_key(features: StructuralChartFeatures) -> Hashable:
 
 
 def _entropy(probabilities: Sequence[float]) -> float:
-    return -sum(probability * math.log2(probability) for probability in probabilities if probability)
+    return -sum(
+        probability * math.log2(probability) for probability in probabilities if probability
+    )
 
 
 def _candidate_weighted_tie_quantile(counts: Sequence[int], quantile: float) -> int:

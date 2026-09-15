@@ -69,9 +69,7 @@ def install_error_handlers(service: FastAPI) -> None:
         return JSONResponse(status_code=422, content=jsonable_error(response))
 
     @service.exception_handler(StarletteHTTPException)
-    async def http_error_handler(
-        _request: Request, exc: StarletteHTTPException
-    ) -> JSONResponse:
+    async def http_error_handler(_request: Request, exc: StarletteHTTPException) -> JSONResponse:
         response = ErrorResponse(
             error=ErrorDetail(
                 code="HTTP_ERROR",

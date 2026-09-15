@@ -1,0 +1,85 @@
+Life Patterns neutral codebook — non-action subcode classification prompt v1
+
+You are performing a narrow theory-neutral measurement-editing task.
+
+You will receive a frozen behavioral codebook containing primary observables and substantive subcodes. You do not know what external hypothesis, theory, model, typology, test, birth-based system, or prediction may eventually be compared with these behavioral measurements.
+
+Do not guess or ask what that external purpose is. Do not use astrology, personality typologies, diagnoses, spiritual/esoteric systems, or any other external theory.
+
+YOUR ONLY TASK
+
+Classify every listed substantive subcode exactly once according to whether assigning that subcode asserts substantive NON-ACTION that requires an Awareness–Opportunity–Feasibility–Established-Non-Action gate.
+
+Use exactly these three classifications:
+
+1. non_action
+2. not_non_action
+3. ambiguous
+
+OPERATIONAL DEFINITION OF non_action
+
+Classify a subcode as non_action when the truth of that subcode depends on establishing that a relevant action did not occur, did not begin, did not continue, was not requested, was not checked, was not completed, received no response, or otherwise remained absent during a meaningful opportunity/window.
+
+For such a value, coding it from mere silence/non-mention would be invalid. A coder would need to establish all four:
+
+- awareness of the relevant opportunity/demand/possible action;
+- a meaningful opportunity/window;
+- reasonable feasibility;
+- evidence that the action in fact did not occur during that window.
+
+OPERATIONAL DEFINITION OF not_non_action
+
+Classify a subcode as not_non_action when it describes affirmative reported behavior, an explicit action, an explicit communication, an explicit selection/decision, or another positively evidenced event whose coding does not depend on inferring absence during an opportunity window.
+
+An explicit action can include declining, refusing, exiting, postponing under an explicitly stated plan/condition, delegating, requesting, accepting, switching, stopping, or similar behavior when the subcode itself requires that affirmative behavior to be reported. Do not classify something as non_action merely because the action results in less participation or cessation.
+
+OPERATIONAL DEFINITION OF ambiguous
+
+Use ambiguous only when the frozen subcode wording itself can reasonably cover both:
+
+- an affirmative reported action/decision; and
+- absence/nonoccurrence that would require the four-part non-action gate,
+
+such that the codebook does not specify which evidentiary form is required.
+
+Do not force a binary classification merely to complete the task. Ambiguity is useful development evidence and will block procedure freeze until separately resolved under a theory-blind revision.
+
+IMPORTANT DISTINCTIONS
+
+- Explicitly declines/refuses/withdraws/exits: usually affirmative behavior, not automatically non_action.
+- Explicitly schedules or defers to a stated time/condition: affirmative decision behavior unless the subcode also permits mere failure to act.
+- “Does not respond,” “takes no action,” “does not request,” “does not check,” “does not complete,” or equivalent absence during a feasible window: non_action.
+- “Waits” can be affirmative behavior if the code requires an explicitly reported waiting decision/state; classify ambiguous if the wording also permits inferring waiting merely from no action.
+- Do not classify based on whether a behavior seems good/bad, avoidant, disciplined, impulsive, compliant, resistant, etc.
+
+INPUT RULES
+
+Use only the exact frozen codebook/source artifact supplied with this task.
+
+Do not rename, merge, split, revise, or reinterpret subcodes.
+
+Do not add a classification for OS / Other Specified. OS is handled separately by the coding procedure.
+
+OUTPUT COVERAGE
+
+You must output one decision for every substantive subcode in every primary observable NBM-R01 through NBM-R22, exactly once.
+
+Do not omit difficult cases.
+
+OUTPUT FORMAT
+
+Return ONLY newline-delimited JSON objects, one per substantive subcode, with exactly these fields:
+
+{"observable_id":"NBM-R01","subcode_id":"R01-a","classification":"not_non_action","rationale":"Concise evidence-rule rationale based only on the frozen subcode wording."}
+
+Allowed classification strings are exactly:
+
+- non_action
+- not_non_action
+- ambiguous
+
+The rationale must be concise and must explain only why the subcode does or does not require evidence of absence/nonoccurrence during an opportunity window.
+
+Do not use Markdown fences, headings, summaries, discussion, or text outside the JSONL objects.
+
+Before outputting, verify internally that every subcode supplied in NBM-R01 through NBM-R22 appears exactly once and that no invented subcode IDs are present.

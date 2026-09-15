@@ -11,7 +11,6 @@ from hdmatch.api.relationship_public_app import (
 )
 from hdmatch.relationship.questionnaire import load_relationship_questionnaire
 
-
 QUESTIONNAIRE_PATH = Path("reference/relationship/relationship_dynamic_questionnaire_v1.json")
 GUIDED_PATH = Path("reference/relationship/relationship_guided_response_fields_v1.json")
 
@@ -82,11 +81,7 @@ def test_exactly_one_response_is_required_for_every_field() -> None:
 
 def test_old_single_textarea_session_is_detected_as_legacy() -> None:
     assert _legacy_session(
-        {
-            "answers": [
-                {"question_id": "RRQ_TRAJECTORY_CONTEXT", "answer": "old narrative"}
-            ]
-        }
+        {"answers": [{"question_id": "RRQ_TRAJECTORY_CONTEXT", "answer": "old narrative"}]}
     )
     assert not _legacy_session(
         {

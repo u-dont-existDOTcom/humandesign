@@ -8,7 +8,6 @@ from hdmatch.relationship.questionnaire import (
     select_next_validation_question,
 )
 
-
 QUESTIONNAIRE_PATH = Path("reference/relationship/relationship_dynamic_questionnaire_v1.json")
 
 

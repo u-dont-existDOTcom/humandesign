@@ -20,9 +20,7 @@ MAPPING_PATH = Path(
         "reference/core/profile_v3_6_v43_mapping_frozen_2026_08_22.json",
     )
 )
-TARGET_PATH = Path(
-    os.environ.get("HD_TARGET", "reference/core/behavioral_target_combined_v3_6.md")
-)
+TARGET_PATH = Path(os.environ.get("HD_TARGET", "reference/core/behavioral_target_combined_v3_6.md"))
 
 
 def sha256_path(path: Path) -> str:
@@ -83,7 +81,7 @@ def core_fit(state: dict, model: dict) -> float:
     center_preds = core["diagnostic_centers"]
     per_center = 25.0 / len(center_preds)
     for name, defined in center_preds.items():
-        if ((name in state["centers"]) is bool(defined)):
+        if (name in state["centers"]) is bool(defined):
             earned += per_center
     earned += profile_core_points(state["pl"], state["dl"])
     return earned
@@ -95,7 +93,9 @@ def build_exact_states() -> list[dict]:
     for name, bid in base.BODY_IDS.items():
         st = time.time()
         raw[(name, "gate")] = base.generate(name, bid, "gate")
-        print("EVENTS", name, len(raw[(name, "gate")]), "sec", round(time.time() - st, 2), flush=True)
+        print(
+            "EVENTS", name, len(raw[(name, "gate")]), "sec", round(time.time() - st, 2), flush=True
+        )
     raw[("sun", "line")] = base.generate("sun", swe.SUN, "line")
     print("EVENTS sun_lines", len(raw[("sun", "line")]), flush=True)
 
@@ -199,7 +199,10 @@ def build_prevalence(states: list[dict], model: dict) -> tuple[dict, float]:
     for mapping in model["mappings"]:
         info[mapping["id"]] = duration_prevalence(states, mapping, min_parent_duration)
     for contradiction in model.get("contradictions", []):
-        temp = {"predicate": contradiction["predicate"], "parents": contradiction.get("parents", [])}
+        temp = {
+            "predicate": contradiction["predicate"],
+            "parents": contradiction.get("parents", []),
+        }
         info[contradiction["id"]] = duration_prevalence(states, temp, min_parent_duration)
     return info, min_parent_duration
 
@@ -241,7 +244,9 @@ def score_one(state: dict, model: dict, prevalence: dict, include_post_selection
     for cluster in cluster_max_conf:
         options = by_cluster.get(cluster, [])
         if options:
-            winner = max(options, key=lambda x: (x["evidence"], x["weighted_support"], x["mapping_id"]))
+            winner = max(
+                options, key=lambda x: (x["evidence"], x["weighted_support"], x["mapping_id"])
+            )
             evidence_by_cluster[cluster] = winner["evidence"]
             support_by_cluster[cluster] = winner["weighted_support"]
             winner_by_cluster[cluster] = winner["mapping_id"]
@@ -255,8 +260,14 @@ def score_one(state: dict, model: dict, prevalence: dict, include_post_selection
     grouped_contra: dict[str, list[tuple[float, str, float]]] = defaultdict(list)
     for contradiction in model.get("contradictions", []):
         if match_predicate(state, contradiction["predicate"]):
-            penalty = float(contradiction["confidence"]) * float(contradiction["severity"]) * float(model["constants"]["contradiction_cap_bits"])
-            grouped_contra[contradiction["cluster"]].append((penalty, contradiction["id"], float(contradiction["severity"])))
+            penalty = (
+                float(contradiction["confidence"])
+                * float(contradiction["severity"])
+                * float(model["constants"]["contradiction_cap_bits"])
+            )
+            grouped_contra[contradiction["cluster"]].append(
+                (penalty, contradiction["id"], float(contradiction["severity"]))
+            )
     for cluster, options in grouped_contra.items():
         penalty, cid, severity = max(options)
         contradiction_by_cluster[cluster] = penalty
@@ -361,23 +372,34 @@ def row_json(item: dict) -> dict:
     }
 
 
-def run_variant(states: list[dict], model: dict, prevalence: dict, include_post_selection: bool, label: str) -> list[dict]:
-    scored = [{"state": state, "score": score_one(state, model, prevalence, include_post_selection)} for state in states]
+def run_variant(
+    states: list[dict], model: dict, prevalence: dict, include_post_selection: bool, label: str
+) -> list[dict]:
+    scored = [
+        {"state": state, "score": score_one(state, model, prevalence, include_post_selection)}
+        for state in states
+    ]
     ranked = sort_and_rank(merge_scored(scored, model))
     print("VARIANT", label, "RAW", len(states), "MERGED", len(ranked), flush=True)
     print("TOP20", label, flush=True)
     for item in ranked[:20]:
         print(json.dumps(row_json(item), sort_keys=True), flush=True)
     target_jd = base.jd_from_dt(datetime(1985, 1, 29, 0, 22, 30, tzinfo=timezone.utc))
-    current = next(item for item in ranked if item["state"]["start"] <= target_jd < item["state"]["end"])
+    current = next(
+        item for item in ranked if item["state"]["start"] <= target_jd < item["state"]["end"]
+    )
     print("CURRENT_1985", label, json.dumps(row_json(current), sort_keys=True), flush=True)
     print(
         "CURRENT_1985_CONTRIB",
         label,
         json.dumps(
             {
-                "evidence_by_cluster": {k: round(v, 6) for k, v in current["score"]["evidence_by_cluster"].items() if v},
-                "contra_by_cluster": {k: round(v, 6) for k, v in current["score"]["contra_by_cluster"].items() if v},
+                "evidence_by_cluster": {
+                    k: round(v, 6) for k, v in current["score"]["evidence_by_cluster"].items() if v
+                },
+                "contra_by_cluster": {
+                    k: round(v, 6) for k, v in current["score"]["contra_by_cluster"].items() if v
+                },
                 "winner_by_cluster": current["score"]["winner_by_cluster"],
             },
             sort_keys=True,
@@ -416,7 +438,9 @@ def main() -> None:
         json.dumps(
             {
                 "median_state_hours": round(statistics.median(s["dur"] for s in states) * 24, 6),
-                "minimum_parent_state_equivalents": model["constants"]["minimum_parent_state_equivalents"],
+                "minimum_parent_state_equivalents": model["constants"][
+                    "minimum_parent_state_equivalents"
+                ],
                 "minimum_parent_duration_days": round(min_parent_duration, 6),
             },
             sort_keys=True,
@@ -431,7 +455,12 @@ def main() -> None:
                 {
                     "id": mid,
                     "p": round(p["prevalence"], 9),
-                    "bits": round(information_bits(p["prevalence"], model["constants"]["information_cap_bits"]), 6),
+                    "bits": round(
+                        information_bits(
+                            p["prevalence"], model["constants"]["information_cap_bits"]
+                        ),
+                        6,
+                    ),
                     "denominator_days": round(p["denominator_days"], 6),
                     "backoff_steps": p["backoff_steps"],
                     "parents_used": p["parents_used"],

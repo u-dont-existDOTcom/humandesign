@@ -78,16 +78,14 @@ def audit_structural_feature_capacity(
             "definition+channels",
             "bodygraph_combination",
             tuple(
-                (features.definition, tuple(sorted(features.channels)))
-                for features in structural
+                (features.definition, tuple(sorted(features.channels))) for features in structural
             ),
         ),
         (
             "active_gate_set:any_side",
             "activation_gate_set",
             tuple(
-                tuple(sorted(set(features.activation_gates.values())))
-                for features in structural
+                tuple(sorted(set(features.activation_gates.values()))) for features in structural
             ),
         ),
     ]

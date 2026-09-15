@@ -81,9 +81,7 @@ def test_full_cache_can_distinguish_states_current_model_cannot() -> None:
     )
 
 
-def _features(
-    *, definition: str, channels: tuple[str, ...], gate: int
-) -> StructuralChartFeatures:
+def _features(*, definition: str, channels: tuple[str, ...], gate: int) -> StructuralChartFeatures:
     return StructuralChartFeatures(
         type="Generator",
         strategy="Respond",

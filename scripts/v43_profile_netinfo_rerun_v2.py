@@ -79,7 +79,9 @@ def main() -> None:
         json.dumps(
             {
                 "median_state_hours": round(statistics.median(s["dur"] for s in states) * 24, 6),
-                "minimum_parent_state_equivalents": model["constants"]["minimum_parent_state_equivalents"],
+                "minimum_parent_state_equivalents": model["constants"][
+                    "minimum_parent_state_equivalents"
+                ],
                 "minimum_parent_duration_days": round(min_parent_duration, 6),
             },
             sort_keys=True,

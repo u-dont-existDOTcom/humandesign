@@ -61,7 +61,9 @@ def create_relationship_full_study_app_from_env() -> FastAPI:
             raise HTTPException(status_code=409, detail="pre-answer prediction freeze is missing")
         prediction = RelationshipPredictionFreeze.model_validate(prediction_raw)
         if not prediction.confirmatory_ready:
-            raise HTTPException(status_code=409, detail="pre-answer prediction freeze is incomplete")
+            raise HTTPException(
+                status_code=409, detail="pre-answer prediction freeze is incomplete"
+            )
         audit = payload.get("semantic_audit")
         if not isinstance(audit, dict):
             raise HTTPException(status_code=409, detail="LLM answer-quality audit is missing")
@@ -112,7 +114,9 @@ def create_relationship_full_study_app_from_env() -> FastAPI:
             raise HTTPException(status_code=409, detail="pre-answer prediction freeze is missing")
         prediction = RelationshipPredictionFreeze.model_validate(prediction_raw)
         if not prediction.confirmatory_ready:
-            raise HTTPException(status_code=409, detail="pre-answer prediction freeze is incomplete")
+            raise HTTPException(
+                status_code=409, detail="pre-answer prediction freeze is incomplete"
+            )
         if payload.get("revealed_at") is None:
             payload["revealed_at"] = datetime.now(UTC).isoformat()
             payload["reveal_prediction_freeze_sha256"] = prediction.freeze_sha256

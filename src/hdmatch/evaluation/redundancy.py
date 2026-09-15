@@ -42,8 +42,8 @@ def structural_information_bits(
     keys = sorted({key for row in candidate_latent_values for key in row})
     fingerprints = [tuple(row.get(key) for key in keys) for row in candidate_latent_values]
     counts = {fingerprint: fingerprints.count(fingerprint) for fingerprint in set(fingerprints)}
-    residual = (
-        sum(math.log2(counts[fingerprint]) for fingerprint in fingerprints) / len(fingerprints)
+    residual = sum(math.log2(counts[fingerprint]) for fingerprint in fingerprints) / len(
+        fingerprints
     )
     return math.log2(len(fingerprints)) - residual
 
@@ -66,8 +66,6 @@ def structural_information_bits_from_probes(
             construct = by_probe[probe_id]
             previous = latent.setdefault(construct, value)
             if previous != value:
-                raise ValueError(
-                    f"redundant probes disagree on structural value for {construct}"
-                )
+                raise ValueError(f"redundant probes disagree on structural value for {construct}")
         collapsed.append(latent)
     return structural_information_bits(collapsed)

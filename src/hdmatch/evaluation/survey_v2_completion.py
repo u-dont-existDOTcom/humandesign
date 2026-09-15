@@ -49,9 +49,7 @@ def audit_survey_v2_completion(
     structural = tuple(_require_structural(state) for state in states)
     durations = tuple((state.end_utc - state.start_utc).total_seconds() for state in states)
     base = _clean_observable_patterns(structural, model)
-    target_values = {
-        feature: _value_vector(structural, feature) for feature in TARGET_FEATURES
-    }
+    target_values = {feature: _value_vector(structural, feature) for feature in TARGET_FEATURES}
     survey_v2: tuple[Hashable, ...] = tuple(
         (base[index],) + tuple(target_values[feature][index] for feature in TARGET_FEATURES)
         for index in range(len(states))
@@ -68,7 +66,9 @@ def audit_survey_v2_completion(
     feature_vectors: dict[str, tuple[Hashable, ...]] = {
         "profile": tuple(features.profile for features in structural),
         "definition": tuple(features.definition for features in structural),
-        "defined_centers": tuple(tuple(sorted(features.defined_centers)) for features in structural),
+        "defined_centers": tuple(
+            tuple(sorted(features.defined_centers)) for features in structural
+        ),
         "type": tuple(features.type for features in structural),
         "authority": tuple(features.authority for features in structural),
     }
@@ -137,11 +137,7 @@ def _labels_for(fingerprints: Sequence[Hashable]) -> tuple[int, ...]:
 
 
 def _entropy_from_counts(counts: Iterable[int], total: int) -> float:
-    return -sum(
-        (count / total) * math.log2(count / total)
-        for count in counts
-        if count > 0
-    )
+    return -sum((count / total) * math.log2(count / total) for count in counts if count > 0)
 
 
 def _value_vector(

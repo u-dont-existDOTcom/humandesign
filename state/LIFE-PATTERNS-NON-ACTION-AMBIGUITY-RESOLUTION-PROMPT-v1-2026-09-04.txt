@@ -1,0 +1,103 @@
+Life Patterns neutral codebook — non-action ambiguity resolution prompt v1
+
+You are continuing a narrow theory-neutral behavioral measurement task in the same theory-blind setting.
+
+You previously classified substantive behavioral subcodes according to whether they assert non-action requiring an Awareness–Opportunity–Feasibility–Established-Non-Action gate. Eight source subcodes were correctly classified as ambiguous because their frozen wording can cover both affirmative behavior and absence/nonoccurrence.
+
+You still do not know, and must not guess or ask about, any external hypothesis, theory, model, typology, test, birth-based system, prediction, or later comparison purpose.
+
+YOUR ONLY TASK
+
+Resolve the eight measurement ambiguities below by making the smallest theory-neutral evidence-rule clarification needed to make each resulting subcode reliably classifiable as either:
+
+- non_action
+- not_non_action
+
+Do not optimize for correspondence with any external model. Decide only from behavioral observability, evidence requirements, coder reliability, non-action safeguards, and preservation of the behavioral distinctions already intended by the source wording.
+
+SOURCE AMBIGUITIES
+
+1. NBM-R07 / R07-a
+   Frozen wording: "explicitly proceeds with little/no preparation despite a feasible preparation opportunity"
+   Ambiguity found: "little" preparation is affirmative behavior, while "no" preparation is absence requiring the non-action gate.
+
+2. NBM-R11 / R11-I6
+   Frozen wording: "waits/pauses"
+   Ambiguity found: waiting/pausing can be explicitly reported affirmative behavior or inferred from no action.
+
+3. NBM-R15 / R15-h
+   Frozen wording: "leaves a known element open"
+   Ambiguity found: this can be an explicit decision/action or mere nonclosure.
+
+4. NBM-R16 / R16-d
+   Frozen wording: "signals indirectly/waits for offer"
+   Ambiguity found: indirect signaling is affirmative behavior while waiting for an offer can amount to nonrequest/non-action.
+
+5. NBM-R17 / R17-g
+   Frozen wording: "waits for another party to initiate despite a feasible coordination opportunity"
+   Ambiguity found: waiting can be explicitly reported/decided or inferred from non-initiation.
+
+6. NBM-R19 / R19-e
+   Frozen wording: "defers response"
+   Ambiguity found: deferral can be an affirmative decision/communication or mere delayed nonresponse.
+
+7. NBM-R20 / R20-g
+   Frozen wording: "postpones discussion"
+   Ambiguity found: postponement can be an affirmative decision/communication or merely no discussion until later.
+
+8. NBM-R21 / R21-i
+   Frozen wording: "delays repair and later acts"
+   Ambiguity found: delay can be an explicit postponement decision or merely a period of non-repair before later action.
+
+ALLOWED RESOLUTION TYPES
+
+For each original subcode choose exactly one:
+
+1. clarify_without_split
+   Use when the intended behavioral distinction can be made unambiguous by adding an explicit evidence requirement without materially changing the behavior being represented. Keep the original subcode ID.
+
+2. split
+   Use when the original wording genuinely combines two behaviorally distinct evidentiary forms that should remain distinguishable. Replace it with two or more non-overlapping subcodes. New IDs must preserve the original base and append a digit/letter without adding another hyphen, e.g. R07-a1, R07-a2 or R11-I6a, R11-I6b.
+
+3. exclude
+   Use only if the source distinction cannot be made sufficiently observable/reliable even after minimal clarification or splitting. Explain the measurement reason. Do not exclude merely to reduce workload.
+
+RULES FOR CLARIFICATION
+
+- Preserve the original behavioral meaning as much as possible.
+- Prefer requiring explicit reported decisions/actions when that distinguishes affirmative behavior from silence.
+- Do not turn mere chronology into an inferred motive or cause.
+- If a resulting value depends on establishing that some relevant action did not occur during an opportunity/window, classify it non_action and state that all four gate elements are required.
+- If a resulting value requires an affirmative reported action, decision, communication, or explicitly reported waiting/pausing behavior and does not depend on absence during a window, classify it not_non_action.
+- If splitting, replacements must be mutually distinguishable from the narrative evidence and together account for the source distinction you are preserving.
+- Do not modify any unlisted code.
+- Do not add personality, diagnostic, moral, motivational, or theoretical interpretations.
+
+OUTPUT FORMAT
+
+Return ONLY eight newline-delimited JSON objects, in the same order as the source ambiguities above. No Markdown fences, headings, summary, or prose outside the JSON objects.
+
+For clarify_without_split use exactly:
+
+{"observable_id":"NBM-R07","original_subcode_id":"R07-a","resolution":"clarify_without_split","replacements":[{"subcode_id":"R07-a","wording":"Exact proposed revised behavioral wording.","minimum_evidence":"Exact proposed evidence rule.","classification":"non_action"}],"reason":"Concise theory-neutral measurement reason."}
+
+For split use exactly:
+
+{"observable_id":"NBM-R07","original_subcode_id":"R07-a","resolution":"split","replacements":[{"subcode_id":"R07-a1","wording":"First exact revised behavioral wording.","minimum_evidence":"Evidence rule.","classification":"not_non_action"},{"subcode_id":"R07-a2","wording":"Second exact revised behavioral wording.","minimum_evidence":"Evidence rule including the four-part gate when required.","classification":"non_action"}],"reason":"Concise explanation of why the original wording genuinely combined distinct evidentiary forms."}
+
+For exclude use exactly:
+
+{"observable_id":"NBM-R07","original_subcode_id":"R07-a","resolution":"exclude","replacements":[],"reason":"Concise measurement-based reason the distinction cannot be made reliably."}
+
+Allowed classification strings inside replacements are exactly:
+
+- non_action
+- not_non_action
+
+Before outputting, verify internally that:
+
+- exactly the eight listed original subcodes are covered once each;
+- every non-excluded replacement has a unique valid subcode ID;
+- no replacement remains ambiguous about affirmative behavior versus absence/nonoccurrence;
+- no unlisted source code is revised;
+- no external theory or target-model consideration appears in the reasoning.

@@ -5,13 +5,13 @@ Frozen spec: reference/research/castille_static_synastry_freeze_v1.md
 The source rows are downloaded at runtime; only aggregate model results are
 committed. Astrology is never used to create splits or synthetic negatives.
 """
+
 from __future__ import annotations
 
 import csv
 import hashlib
 import io
 import json
-import math
 import random
 import statistics
 import urllib.request
@@ -53,8 +53,7 @@ BASE_NAMES = (
     "father_birth_year_scaled",
 )
 SYN_NAMES = tuple(
-    f"syn_{ma}_{fb}_a{int(asp)}"
-    for ma in BODY_NAMES for fb in BODY_NAMES for asp in ASPECTS
+    f"syn_{ma}_{fb}_a{int(asp)}" for ma in BODY_NAMES for fb in BODY_NAMES for asp in ASPECTS
 )
 ALL_NAMES = BASE_NAMES + SYN_NAMES
 
@@ -81,7 +80,9 @@ def sha256_file(path: Path) -> str:
 
 
 def canonical(m: tuple[int, int, int], f: tuple[int, int, int], w: tuple[int, int, int]) -> str:
-    def s(x): return f"{x[0]:04d}-{x[1]:02d}-{x[2]:02d}"
+    def s(x):
+        return f"{x[0]:04d}-{x[1]:02d}-{x[2]:02d}"
+
     return f"{s(m)}|{s(f)}|{s(w)}"
 
 
@@ -143,11 +144,14 @@ def download_records() -> tuple[list[Record], int, dict]:
         reader = csv.DictReader(text, delimiter=";")
         for row in reader:
             counts["source_rows"] += 1
-            m = parse_dob(row, "m"); f = parse_dob(row, "f"); w = parse_wedding(row)
+            m = parse_dob(row, "m")
+            f = parse_dob(row, "f")
+            w = parse_wedding(row)
             if m is None or f is None or w is None:
                 counts["missing_or_invalid_required_date"] += 1
                 continue
-            ma = age_years(m, w); fa = age_years(f, w)
+            ma = age_years(m, w)
+            fa = age_years(f, w)
             if not (14.0 <= ma <= 85.0 and 14.0 <= fa <= 85.0):
                 counts["implausible_parent_age"] += 1
                 continue
@@ -165,12 +169,16 @@ def download_records() -> tuple[list[Record], int, dict]:
 def cap_splits(records: list[Record]) -> dict[str, list[Record]]:
     out = {}
     for split, cap in CAPS.items():
-        rows = sorted((r for r in records if r.split == split), key=lambda r: (r.digest, r.canonical))
+        rows = sorted(
+            (r for r in records if r.split == split), key=lambda r: (r.digest, r.canonical)
+        )
         out[split] = rows[:cap]
     return out
 
 
-def make_matched_pairs(rows: list[Record]) -> tuple[list[tuple[Record, tuple[int, int, int]]], dict]:
+def make_matched_pairs(
+    rows: list[Record],
+) -> tuple[list[tuple[Record, tuple[int, int, int]]], dict]:
     strata: dict[tuple[int, int], list[Record]] = defaultdict(list)
     for r in rows:
         strata[(r.wedding[0], r.father[0])].append(r)
@@ -203,7 +211,9 @@ def jd_for_birth(dob: tuple[int, int, int], hour: float) -> float:
     return swe.julday(dob[0], dob[1], dob[2], hour, swe.GREG_CAL)
 
 
-def planet_positions(dates: set[tuple[int, int, int]], hour: float) -> dict[tuple[int, int, int], np.ndarray]:
+def planet_positions(
+    dates: set[tuple[int, int, int]], hour: float
+) -> dict[tuple[int, int, int], np.ndarray]:
     out: dict[tuple[int, int, int], np.ndarray] = {}
     for idx, dob in enumerate(sorted(dates), 1):
         jd = jd_for_birth(dob, hour)
@@ -212,7 +222,9 @@ def planet_positions(dates: set[tuple[int, int, int]], hour: float) -> dict[tupl
             xx, ret = swe.calc_ut(jd, body, FLAGS)
             used = ret & EPH_MASK
             if used != swe.FLG_SWIEPH:
-                raise RuntimeError(f"EPHEMERIS_FALLBACK dob={dob} body={body} used={used} ret={ret}")
+                raise RuntimeError(
+                    f"EPHEMERIS_FALLBACK dob={dob} body={body} used={used} ret={ret}"
+                )
             vals.append(float(xx[0] % 360.0))
         out[dob] = np.asarray(vals, dtype=np.float32)
         if idx % 5000 == 0:
@@ -220,15 +232,24 @@ def planet_positions(dates: set[tuple[int, int, int]], hour: float) -> dict[tupl
     return out
 
 
-def baseline_features(m: tuple[int,int,int], f: tuple[int,int,int], w: tuple[int,int,int]) -> np.ndarray:
-    ma = age_years(m, w); fa = age_years(f, w)
+def baseline_features(
+    m: tuple[int, int, int], f: tuple[int, int, int], w: tuple[int, int, int]
+) -> np.ndarray:
+    ma = age_years(m, w)
+    fa = age_years(f, w)
     signed = ma - fa
-    return np.asarray([
-        ma, fa, signed, abs(signed),
-        (w[0] - 1985.0) / 20.0,
-        (m[0] - 1965.0) / 20.0,
-        (f[0] - 1960.0) / 20.0,
-    ], dtype=np.float32)
+    return np.asarray(
+        [
+            ma,
+            fa,
+            signed,
+            abs(signed),
+            (w[0] - 1985.0) / 20.0,
+            (m[0] - 1965.0) / 20.0,
+            (f[0] - 1960.0) / 20.0,
+        ],
+        dtype=np.float32,
+    )
 
 
 def syn_features(pm: np.ndarray, pf: np.ndarray) -> np.ndarray:
@@ -247,8 +268,8 @@ def syn_features(pm: np.ndarray, pf: np.ndarray) -> np.ndarray:
 
 
 def build_binary_matrix(
-    pairs: list[tuple[Record, tuple[int,int,int]]],
-    positions: dict[tuple[int,int,int], np.ndarray],
+    pairs: list[tuple[Record, tuple[int, int, int]]],
+    positions: dict[tuple[int, int, int], np.ndarray],
     include_syn: bool,
 ) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     p = 7 + (180 if include_syn else 0)
@@ -261,9 +282,12 @@ def build_binary_matrix(
             X[row, :7] = baseline_features(r.mother, fdob, r.wedding)
             if include_syn:
                 X[row, 7:] = syn_features(positions[r.mother], positions[fdob])
-            y[row] = label; group[row] = i
+            y[row] = label
+            group[row] = i
         if (i + 1) % 25000 == 0:
-            print(f"built binary features {i+1}/{len(pairs)} include_syn={include_syn}", flush=True)
+            print(
+                f"built binary features {i + 1}/{len(pairs)} include_syn={include_syn}", flush=True
+            )
     return X, y, group
 
 
@@ -298,14 +322,16 @@ def binary_metrics(y: np.ndarray, decision: np.ndarray) -> dict[str, float]:
     prob = 1.0 / (1.0 + np.exp(-np.clip(decision.astype(np.float64), -50, 50)))
     return {
         "roc_auc": float(roc_auc_score(y, decision)),
-        "log_loss": float(log_loss(y, prob, labels=[0,1])),
+        "log_loss": float(log_loss(y, prob, labels=[0, 1])),
         "brier": float(brier_score_loss(y, prob)),
     }
 
 
 def fit_select(
-    Xd: np.ndarray, yd: np.ndarray,
-    Xv: np.ndarray, yv: np.ndarray,
+    Xd: np.ndarray,
+    yd: np.ndarray,
+    Xv: np.ndarray,
+    yv: np.ndarray,
     include_syn: bool,
 ) -> dict:
     mean, sd = scale_baseline_fit(Xd)
@@ -316,8 +342,17 @@ def fit_select(
         clf = new_sgd(alpha).fit(Zd, yd)
         decision = clf.decision_function(Zv)
         met = binary_metrics(yv, decision)
-        trials.append({"alpha": alpha, **met, "nonzero_coefficients": int(np.sum(np.abs(clf.coef_[0]) > 1e-10))})
-        print(f"validation include_syn={include_syn} alpha={alpha} auc={met['roc_auc']:.6f}", flush=True)
+        trials.append(
+            {
+                "alpha": alpha,
+                **met,
+                "nonzero_coefficients": int(np.sum(np.abs(clf.coef_[0]) > 1e-10)),
+            }
+        )
+        print(
+            f"validation include_syn={include_syn} alpha={alpha} auc={met['roc_auc']:.6f}",
+            flush=True,
+        )
     best_auc = max(t["roc_auc"] for t in trials)
     eligible = [t for t in trials if best_auc - t["roc_auc"] <= 1e-4]
     selected = max(eligible, key=lambda t: t["alpha"])
@@ -325,9 +360,12 @@ def fit_select(
 
 
 def refit_final(
-    Xd: np.ndarray, yd: np.ndarray,
-    Xv: np.ndarray, yv: np.ndarray,
-    Xf: np.ndarray, yf: np.ndarray,
+    Xd: np.ndarray,
+    yd: np.ndarray,
+    Xv: np.ndarray,
+    yv: np.ndarray,
+    Xf: np.ndarray,
+    yf: np.ndarray,
     alpha: float,
 ) -> tuple[dict, SGDClassifier, np.ndarray, np.ndarray, np.ndarray]:
     Xt = np.concatenate([Xd, Xv], axis=0)
@@ -340,7 +378,9 @@ def refit_final(
     met = binary_metrics(yf, decision)
     # Calibration intercept/slope on untouched final predictions. This is descriptive,
     # not used to alter predictions.
-    cal = LogisticRegression(penalty=None, solver="lbfgs", max_iter=2000).fit(decision.reshape(-1,1), yf)
+    cal = LogisticRegression(penalty=None, solver="lbfgs", max_iter=2000).fit(
+        decision.reshape(-1, 1), yf
+    )
     met["calibration_intercept"] = float(cal.intercept_[0])
     met["calibration_slope"] = float(cal.coef_[0][0])
     met["nonzero_coefficients"] = int(np.sum(np.abs(clf.coef_[0]) > 1e-10))
@@ -351,8 +391,8 @@ def score_rows(clf, mean, sd, X):
     return clf.decision_function(apply_baseline_scale(X, mean, sd))
 
 
-def full_final_strata(records: list[Record]) -> dict[tuple[int,int], list[Record]]:
-    strata: dict[tuple[int,int], list[Record]] = defaultdict(list)
+def full_final_strata(records: list[Record]) -> dict[tuple[int, int], list[Record]]:
+    strata: dict[tuple[int, int], list[Record]] = defaultdict(list)
     for r in records:
         if r.split == "final":
             strata[(r.wedding[0], r.father[0])].append(r)
@@ -361,8 +401,12 @@ def full_final_strata(records: list[Record]) -> dict[tuple[int,int], list[Record
     return strata
 
 
-def make_risk_tasks(records: list[Record]) -> tuple[list[tuple[Record, list[tuple[int,int,int]]]], dict]:
-    final_sorted = sorted((r for r in records if r.split == "final"), key=lambda r: (r.digest, r.canonical))
+def make_risk_tasks(
+    records: list[Record],
+) -> tuple[list[tuple[Record, list[tuple[int, int, int]]]], dict]:
+    final_sorted = sorted(
+        (r for r in records if r.split == "final"), key=lambda r: (r.digest, r.canonical)
+    )
     strata = full_final_strata(records)
     tasks = []
     drop = defaultdict(int)
@@ -373,13 +417,14 @@ def make_risk_tasks(records: list[Record]) -> tuple[list[tuple[Record, list[tupl
         if idx is None:
             drop["record_not_found_in_stratum"] += 1
             continue
-        decoys: list[tuple[int,int,int]] = []
+        decoys: list[tuple[int, int, int]] = []
         seen = {r.father}
         for step in range(1, len(vals) + 1):
             fd = vals[(idx + step) % len(vals)].father
             if fd in seen:
                 continue
-            seen.add(fd); decoys.append(fd)
+            seen.add(fd)
+            decoys.append(fd)
             if len(decoys) == RISK_DECOYS:
                 break
         if len(decoys) < RISK_DECOYS:
@@ -398,146 +443,226 @@ def risk_metrics_for_model(
     sd,
     batch_tasks=500,
 ) -> dict[str, float]:
-    ranks=[]; pcts=[]
+    ranks = []
+    pcts = []
     for start in range(0, len(tasks), batch_tasks):
-        batch=tasks[start:start+batch_tasks]
-        p=7+(180 if include_syn else 0)
-        X=np.empty((len(batch)*(RISK_DECOYS+1), p), dtype=np.float32)
-        for bi,(r,decoys) in enumerate(batch):
-            fathers=[r.father]+decoys
-            for j,fd in enumerate(fathers):
-                row=bi*(RISK_DECOYS+1)+j
-                X[row,:7]=baseline_features(r.mother,fd,r.wedding)
+        batch = tasks[start : start + batch_tasks]
+        p = 7 + (180 if include_syn else 0)
+        X = np.empty((len(batch) * (RISK_DECOYS + 1), p), dtype=np.float32)
+        for bi, (r, decoys) in enumerate(batch):
+            fathers = [r.father] + decoys
+            for j, fd in enumerate(fathers):
+                row = bi * (RISK_DECOYS + 1) + j
+                X[row, :7] = baseline_features(r.mother, fd, r.wedding)
                 if include_syn:
-                    X[row,7:]=syn_features(positions[r.mother],positions[fd])
-        scores=score_rows(clf,mean,sd,X).reshape(len(batch),RISK_DECOYS+1)
+                    X[row, 7:] = syn_features(positions[r.mother], positions[fd])
+        scores = score_rows(clf, mean, sd, X).reshape(len(batch), RISK_DECOYS + 1)
         for arr in scores:
-            true=float(arr[0]); ctl=arr[1:]
-            higher=int(np.sum(ctl>true+1e-12)); tied=int(np.sum(np.abs(ctl-true)<=1e-12))
-            rank=1.0+higher+0.5*tied
-            pct=100.0*(RISK_DECOYS-higher-0.5*tied)/RISK_DECOYS
-            ranks.append(rank); pcts.append(pct)
-        print(f"risk-set scored {min(start+batch_tasks,len(tasks))}/{len(tasks)} include_syn={include_syn}",flush=True)
+            true = float(arr[0])
+            ctl = arr[1:]
+            higher = int(np.sum(ctl > true + 1e-12))
+            tied = int(np.sum(np.abs(ctl - true) <= 1e-12))
+            rank = 1.0 + higher + 0.5 * tied
+            pct = 100.0 * (RISK_DECOYS - higher - 0.5 * tied) / RISK_DECOYS
+            ranks.append(rank)
+            pcts.append(pct)
+        print(
+            f"risk-set scored {min(start + batch_tasks, len(tasks))}/"
+            f"{len(tasks)} include_syn={include_syn}",
+            flush=True,
+        )
     return {
-        "tasks":len(ranks),
-        "mean_true_partner_percentile":float(np.mean(pcts)),
-        "median_true_partner_percentile":float(np.median(pcts)),
-        "top1_rate":float(np.mean([r<=1.0+1e-12 for r in ranks])),
-        "top5_rate":float(np.mean([r<=5.0+1e-12 for r in ranks])),
-        "mean_reciprocal_rank":float(np.mean([1.0/r for r in ranks])),
+        "tasks": len(ranks),
+        "mean_true_partner_percentile": float(np.mean(pcts)),
+        "median_true_partner_percentile": float(np.median(pcts)),
+        "top1_rate": float(np.mean([r <= 1.0 + 1e-12 for r in ranks])),
+        "top5_rate": float(np.mean([r <= 5.0 + 1e-12 for r in ranks])),
+        "mean_reciprocal_rank": float(np.mean([1.0 / r for r in ranks])),
     }
 
 
 def final_features_at_hour(pairs, hour, include_syn=True):
-    dates=set()
-    for r,sf in pairs:
-        dates.add(r.mother);dates.add(r.father);dates.add(sf)
-    pos=planet_positions(dates,hour)
-    X,y,_=build_binary_matrix(pairs,pos,include_syn)
-    return X,y,pos
+    dates = set()
+    for r, sf in pairs:
+        dates.add(r.mother)
+        dates.add(r.father)
+        dates.add(sf)
+    pos = planet_positions(dates, hour)
+    X, y, _ = build_binary_matrix(pairs, pos, include_syn)
+    return X, y, pos
 
 
 def permutation_diagnostic(y, decision, pair_count=20_000, n=200):
     # Binary rows are [real, synthetic] for every matched pair.
-    n_pairs=min(pair_count,len(y)//2)
-    scores=decision[:2*n_pairs].reshape(n_pairs,2)
-    rng=random.Random(SEED)
-    observed=float(roc_auc_score(np.tile([1,0],n_pairs),scores.reshape(-1)))
-    vals=[]
+    n_pairs = min(pair_count, len(y) // 2)
+    scores = decision[: 2 * n_pairs].reshape(n_pairs, 2)
+    rng = random.Random(SEED)
+    observed = float(roc_auc_score(np.tile([1, 0], n_pairs), scores.reshape(-1)))
+    vals = []
     for _ in range(n):
-        labels=np.empty((n_pairs,2),dtype=np.int8)
+        labels = np.empty((n_pairs, 2), dtype=np.int8)
         for i in range(n_pairs):
-            if rng.random()<0.5: labels[i]=[1,0]
-            else: labels[i]=[0,1]
-        vals.append(float(roc_auc_score(labels.reshape(-1),scores.reshape(-1))))
-    ge=sum(v>=observed-1e-12 for v in vals)
-    return {"pairs":n_pairs,"n":n,"observed_auc":observed,"null_mean_auc":statistics.fmean(vals),"null_sd_auc":statistics.stdev(vals),"null_ge_observed":ge,"empirical_p_ge_observed":(ge+1)/(n+1)}
+            if rng.random() < 0.5:
+                labels[i] = [1, 0]
+            else:
+                labels[i] = [0, 1]
+        vals.append(float(roc_auc_score(labels.reshape(-1), scores.reshape(-1))))
+    ge = sum(v >= observed - 1e-12 for v in vals)
+    return {
+        "pairs": n_pairs,
+        "n": n,
+        "observed_auc": observed,
+        "null_mean_auc": statistics.fmean(vals),
+        "null_sd_auc": statistics.stdev(vals),
+        "null_ge_observed": ge,
+        "empirical_p_ge_observed": (ge + 1) / (n + 1),
+    }
 
 
 def main():
-    for p in (EPHE/"sepl_18.se1",EPHE/"semo_18.se1"):
-        if not p.is_file():raise SystemExit("Missing Swiss file: "+str(p))
+    for p in (EPHE / "sepl_18.se1", EPHE / "semo_18.se1"):
+        if not p.is_file():
+            raise SystemExit("Missing Swiss file: " + str(p))
     swe.set_ephe_path(str(EPHE))
-    records,raw_bytes,audit=download_records()
-    splits=cap_splits(records)
-    matched={}; drop={}
-    for s,rows in splits.items():
-        matched[s],drop[s]=make_matched_pairs(rows)
-        print(f"{s}: capped_real={len(rows)} matched_real={len(matched[s])}",flush=True)
+    records, raw_bytes, audit = download_records()
+    splits = cap_splits(records)
+    matched = {}
+    drop = {}
+    for s, rows in splits.items():
+        matched[s], drop[s] = make_matched_pairs(rows)
+        print(f"{s}: capped_real={len(rows)} matched_real={len(matched[s])}", flush=True)
 
-    dates=set()
+    dates = set()
     for plist in matched.values():
-        for r,sf in plist:
-            dates.update((r.mother,r.father,sf))
+        for r, sf in plist:
+            dates.update((r.mother, r.father, sf))
     # Risk tasks may use father DOBs outside binary caps; add their dates before noon cache.
-    risk_tasks,risk_drop=make_risk_tasks(records)
-    for r,decs in risk_tasks:
-        dates.add(r.mother);dates.add(r.father);dates.update(decs)
-    noon=planet_positions(dates,12.0)
+    risk_tasks, risk_drop = make_risk_tasks(records)
+    for r, decs in risk_tasks:
+        dates.add(r.mother)
+        dates.add(r.father)
+        dates.update(decs)
+    noon = planet_positions(dates, 12.0)
 
-    Xd0,yd,_=build_binary_matrix(matched["discovery"],noon,False)
-    Xv0,yv,_=build_binary_matrix(matched["validation"],noon,False)
-    Xf0,yf,_=build_binary_matrix(matched["final"],noon,False)
-    Xds,yds,_=build_binary_matrix(matched["discovery"],noon,True)
-    Xvs,yvs,_=build_binary_matrix(matched["validation"],noon,True)
-    Xfs,yfs,_=build_binary_matrix(matched["final"],noon,True)
-    if not (np.array_equal(yd,yds) and np.array_equal(yv,yvs) and np.array_equal(yf,yfs)):
+    Xd0, yd, _ = build_binary_matrix(matched["discovery"], noon, False)
+    Xv0, yv, _ = build_binary_matrix(matched["validation"], noon, False)
+    Xf0, yf, _ = build_binary_matrix(matched["final"], noon, False)
+    Xds, yds, _ = build_binary_matrix(matched["discovery"], noon, True)
+    Xvs, yvs, _ = build_binary_matrix(matched["validation"], noon, True)
+    Xfs, yfs, _ = build_binary_matrix(matched["final"], noon, True)
+    if not (np.array_equal(yd, yds) and np.array_equal(yv, yvs) and np.array_equal(yf, yfs)):
         raise RuntimeError("label mismatch between baseline and synastry matrices")
 
-    sel0=fit_select(Xd0,yd,Xv0,yv,False)
-    sels=fit_select(Xds,yd,Xvs,yv,True)
-    met0,clf0,mean0,sd0,dec0=refit_final(Xd0,yd,Xv0,yv,Xf0,yf,sel0["selected_alpha"])
-    mets,clfs,means,sds,decs=refit_final(Xds,yd,Xvs,yv,Xfs,yf,sels["selected_alpha"])
+    sel0 = fit_select(Xd0, yd, Xv0, yv, False)
+    sels = fit_select(Xds, yd, Xvs, yv, True)
+    met0, clf0, mean0, sd0, dec0 = refit_final(Xd0, yd, Xv0, yv, Xf0, yf, sel0["selected_alpha"])
+    mets, clfs, means, sds, decs = refit_final(Xds, yd, Xvs, yv, Xfs, yf, sels["selected_alpha"])
 
-    risk0=risk_metrics_for_model(risk_tasks,noon,False,clf0,mean0,sd0)
-    risks=risk_metrics_for_model(risk_tasks,noon,True,clfs,means,sds)
-    delta_auc=mets["roc_auc"]-met0["roc_auc"]
-    delta_loss=mets["log_loss"]-met0["log_loss"]
-    promising=(mets["roc_auc"]>=0.52 and delta_auc>=0.01 and delta_loss<=-0.002 and risks["mean_true_partner_percentile"]>=55.0)
-    strong=(mets["roc_auc"]>=0.55 and delta_auc>=0.03 and risks["mean_true_partner_percentile"]>=60.0)
+    risk0 = risk_metrics_for_model(risk_tasks, noon, False, clf0, mean0, sd0)
+    risks = risk_metrics_for_model(risk_tasks, noon, True, clfs, means, sds)
+    delta_auc = mets["roc_auc"] - met0["roc_auc"]
+    delta_loss = mets["log_loss"] - met0["log_loss"]
+    promising = (
+        mets["roc_auc"] >= 0.52
+        and delta_auc >= 0.01
+        and delta_loss <= -0.002
+        and risks["mean_true_partner_percentile"] >= 55.0
+    )
+    strong = (
+        mets["roc_auc"] >= 0.55
+        and delta_auc >= 0.03
+        and risks["mean_true_partner_percentile"] >= 60.0
+    )
 
-    perm=permutation_diagnostic(yf,decs,20_000,200)
+    perm = permutation_diagnostic(yf, decs, 20_000, 200)
 
-    sensitivity={}
-    for label,hour in (("00UTC",0.0),("2359UTC",23.0+59.0/60.0)):
-        Xalt,yalt,posalt=final_features_at_hour(matched["final"],hour,True)
-        decalt=score_rows(clfs,means,sds,Xalt)
-        bmet=binary_metrics(yalt,decalt)
-        rmet=risk_metrics_for_model(risk_tasks,posalt,True,clfs,means,sds)
-        sensitivity[label]={"binary":bmet,"risk_set":rmet,"qualitative_promising_threshold_components":{"auc_ge_052":bmet["roc_auc"]>=0.52,"risk_percentile_ge_55":rmet["mean_true_partner_percentile"]>=55.0}}
+    sensitivity = {}
+    for label, hour in (("00UTC", 0.0), ("2359UTC", 23.0 + 59.0 / 60.0)):
+        Xalt, yalt, posalt = final_features_at_hour(matched["final"], hour, True)
+        decalt = score_rows(clfs, means, sds, Xalt)
+        bmet = binary_metrics(yalt, decalt)
+        rmet = risk_metrics_for_model(risk_tasks, posalt, True, clfs, means, sds)
+        sensitivity[label] = {
+            "binary": bmet,
+            "risk_set": rmet,
+            "qualitative_promising_threshold_components": {
+                "auc_ge_052": bmet["roc_auc"] >= 0.52,
+                "risk_percentile_ge_55": rmet["mean_true_partner_percentile"] >= 55.0,
+            },
+        }
 
-    promoted=None
+    promoted = None
     if promising:
-        coefs=clfs.coef_[0]
+        coefs = clfs.coef_[0]
         # Coefficient 0..6 are baseline; 7.. are frozen synastry features.
-        rows=[]
-        for name,val in zip(ALL_NAMES,coefs):
-            if name.startswith("syn_") and abs(float(val))>1e-10:
-                rows.append({"feature":name,"coefficient":float(val),"abs_coefficient":abs(float(val))})
-        rows.sort(key=lambda x:x["abs_coefficient"],reverse=True)
-        promoted=rows[:30]
+        rows = []
+        for name, val in zip(ALL_NAMES, coefs, strict=False):
+            if name.startswith("syn_") and abs(float(val)) > 1e-10:
+                rows.append(
+                    {"feature": name, "coefficient": float(val), "abs_coefficient": abs(float(val))}
+                )
+        rows.sort(key=lambda x: x["abs_coefficient"], reverse=True)
+        promoted = rows[:30]
 
-    result={
-        "status":"independent_large_n_final_test_complete",
-        "freeze_spec":str(FREEZE.relative_to(REPO)),"freeze_sha256":sha256_file(FREEZE),
-        "source":URL,"source_raw_bytes":raw_bytes,
-        "source_notice":["Didier Castille adaptation of INSEE files, not official INSEE files.","Source README states scientific validity depends on Castille's good faith.","Birth and wedding dates are untimed."],
-        "data_audit":audit,
-        "split_counts":{s:{"capped_real":len(splits[s]),"matched_real":len(matched[s]),"synthetic_drop":drop[s]} for s in ("discovery","validation","final")},
-        "risk_set":{"requested_tasks":RISK_TASKS,"usable_tasks":len(risk_tasks),"drop":risk_drop,"decoys_per_task":RISK_DECOYS},
-        "ephemeris":{"requested":"SWIEPH","returned":"SWIEPH or abort","sepl_18_sha256":sha256_file(EPHE/"sepl_18.se1"),"semo_18_sha256":sha256_file(EPHE/"semo_18.se1")},
-        "models":{
-            "M0C":{"selection":sel0,"final_binary":met0,"final_risk_set":risk0},
-            "MWSC":{"selection":sels,"final_binary":mets,"final_risk_set":risks,"delta_auc_vs_M0C":delta_auc,"delta_log_loss_vs_M0C":delta_loss,"promising_threshold_met":promising,"strong_threshold_met":strong},
+    result = {
+        "status": "independent_large_n_final_test_complete",
+        "freeze_spec": str(FREEZE.relative_to(REPO)),
+        "freeze_sha256": sha256_file(FREEZE),
+        "source": URL,
+        "source_raw_bytes": raw_bytes,
+        "source_notice": [
+            "Didier Castille adaptation of INSEE files, not official INSEE files.",
+            "Source README states scientific validity depends on Castille's good faith.",
+            "Birth and wedding dates are untimed.",
+        ],
+        "data_audit": audit,
+        "split_counts": {
+            s: {
+                "capped_real": len(splits[s]),
+                "matched_real": len(matched[s]),
+                "synthetic_drop": drop[s],
+            }
+            for s in ("discovery", "validation", "final")
         },
-        "permutation_diagnostic":perm,
-        "birth_time_sensitivity":sensitivity,
-        "promoted_synastry_features":promoted,
-        "interpretation_rule":"Promote a date-stable synastry formula only if the frozen promising threshold is met on untouched final data; otherwise preserve as a negative/small-effect result without coefficient tuning.",
+        "risk_set": {
+            "requested_tasks": RISK_TASKS,
+            "usable_tasks": len(risk_tasks),
+            "drop": risk_drop,
+            "decoys_per_task": RISK_DECOYS,
+        },
+        "ephemeris": {
+            "requested": "SWIEPH",
+            "returned": "SWIEPH or abort",
+            "sepl_18_sha256": sha256_file(EPHE / "sepl_18.se1"),
+            "semo_18_sha256": sha256_file(EPHE / "semo_18.se1"),
+        },
+        "models": {
+            "M0C": {"selection": sel0, "final_binary": met0, "final_risk_set": risk0},
+            "MWSC": {
+                "selection": sels,
+                "final_binary": mets,
+                "final_risk_set": risks,
+                "delta_auc_vs_M0C": delta_auc,
+                "delta_log_loss_vs_M0C": delta_loss,
+                "promising_threshold_met": promising,
+                "strong_threshold_met": strong,
+            },
+        },
+        "permutation_diagnostic": perm,
+        "birth_time_sensitivity": sensitivity,
+        "promoted_synastry_features": promoted,
+        "interpretation_rule": (
+            "Promote a date-stable synastry formula only if the froze"
+            "n promising threshold is met on untouched final data; ot"
+            "herwise preserve as a negative/small-effect result witho"
+            "ut coefficient tuning."
+        ),
     }
-    OUT.parent.mkdir(parents=True,exist_ok=True)
-    OUT.write_text(json.dumps(result,indent=2,sort_keys=True)+"\n",encoding="utf-8")
-    print(json.dumps(result,indent=2,sort_keys=True),flush=True)
-    print("wrote",OUT,"sha256",sha256_file(OUT),flush=True)
+    OUT.parent.mkdir(parents=True, exist_ok=True)
+    OUT.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    print(json.dumps(result, indent=2, sort_keys=True), flush=True)
+    print("wrote", OUT, "sha256", sha256_file(OUT), flush=True)
 
-if __name__=="__main__":main()
+
+if __name__ == "__main__":
+    main()

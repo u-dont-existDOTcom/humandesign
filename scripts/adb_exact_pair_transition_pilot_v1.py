@@ -5,6 +5,7 @@ Frozen spec: reference/research/adb_exact_pair_transition_pilot_freeze_v1.md
 Development/hypothesis generation only. Uses verified SWIEPH and the existing
 HD timing engine; no Joel/Bee data enter model fitting.
 """
+
 from __future__ import annotations
 
 import json
@@ -17,14 +18,13 @@ import xml.etree.ElementTree as ET
 from collections import Counter, defaultdict
 from pathlib import Path
 
+import adb_pair_timing_model_search_v1 as base
 import numpy as np
+import partner_hd_timing_pilot as hd
 import swisseph as swe
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import GroupKFold
 from sklearn.preprocessing import StandardScaler
-
-import adb_pair_timing_model_search_v1 as base
-import partner_hd_timing_pilot as hd
 
 REPO = Path(__file__).resolve().parents[1]
 OUT = REPO / "reference" / "research" / "adb_exact_pair_transition_pilot_results_v1.json"
@@ -57,6 +57,7 @@ MODELS = ("M0X", "M1X", "M3X", "M4X_HD", "M3X_HD")
 
 def sha256(path: Path) -> str:
     import hashlib
+
     h = hashlib.sha256()
     with path.open("rb") as f:
         for block in iter(lambda: f.read(1024 * 1024), b""):
@@ -71,7 +72,9 @@ def parse_coord(s: str | None, is_lat: bool) -> float | None:
     m = re.fullmatch(r"(\d{1,3})([nsew])(\d{1,2})", t)
     if not m:
         return None
-    deg = int(m.group(1)); hemi = m.group(2); minute = int(m.group(3))
+    deg = int(m.group(1))
+    hemi = m.group(2)
+    minute = int(m.group(3))
     limit = 90 if is_lat else 180
     if deg > limit or minute >= 60:
         return None
@@ -133,7 +136,9 @@ def midpoint(a: float, b: float) -> float:
     return base.midpoint(a, b)
 
 
-def western_features(ev: base.EventRecord, y: int, m: int, d: int, coords: dict[int, tuple[float, float]]) -> dict[str, float]:
+def western_features(
+    ev: base.EventRecord, y: int, m: int, d: int, coords: dict[int, tuple[float, float]]
+) -> dict[str, float]:
     cj = base.date_jd(y, m, d, 12.0)
     a_birth = ev.focal.exact_jd
     b_birth = ev.partner.exact_jd
@@ -180,8 +185,11 @@ def western_features(ev: base.EventRecord, y: int, m: int, d: int, coords: dict[
     return f
 
 
-def hd_features(ev: base.EventRecord, y: int, m: int, d: int, gate_cache: dict[int, set[int]]) -> dict[str, float]:
-    a_id = ev.focal.adb_id; b_id = ev.partner.adb_id
+def hd_features(
+    ev: base.EventRecord, y: int, m: int, d: int, gate_cache: dict[int, set[int]]
+) -> dict[str, float]:
+    a_id = ev.focal.adb_id
+    b_id = ev.partner.adb_id
     if a_id not in gate_cache:
         gate_cache[a_id] = hd.natal_gates(hd.dt_from_jd(ev.focal.exact_jd))
     if b_id not in gate_cache:
@@ -195,7 +203,9 @@ def hd_features(ev: base.EventRecord, y: int, m: int, d: int, gate_cache: dict[i
     }
 
 
-def build_exact_events() -> tuple[list[base.EventRecord], dict, dict[int, tuple[float, float]], int]:
+def build_exact_events() -> tuple[
+    list[base.EventRecord], dict, dict[int, tuple[float, float]], int
+]:
     persons, rels, events, _raw_bytes_base = base.download_parse()
     records, exclusions = base.build_events(persons, rels, events)
     exact = []
@@ -218,7 +228,9 @@ def build_exact_events() -> tuple[list[base.EventRecord], dict, dict[int, tuple[
     return exact, {**exclusions, **extra}, coords, raw_bytes
 
 
-def build_rows(events: list[base.EventRecord], coords: dict[int, tuple[float, float]]) -> tuple[list[dict], dict]:
+def build_rows(
+    events: list[base.EventRecord], coords: dict[int, tuple[float, float]]
+) -> tuple[list[dict], dict]:
     rows = []
     counts = Counter()
     gate_cache: dict[int, set[int]] = {}
@@ -232,7 +244,8 @@ def build_rows(events: list[base.EventRecord], coords: dict[int, tuple[float, fl
                 continue
             y, m, d, _adj = shifted
             cj = base.date_jd(y, m, d, 12.0)
-            a_birth = ev.focal.exact_jd; b_birth = ev.partner.exact_jd
+            a_birth = ev.focal.exact_jd
+            b_birth = ev.partner.exact_jd
             assert a_birth is not None and b_birth is not None
             age_a = (cj - a_birth) / base.TROPICAL_YEAR
             age_b = (cj - b_birth) / base.TROPICAL_YEAR
@@ -247,34 +260,40 @@ def build_rows(events: list[base.EventRecord], coords: dict[int, tuple[float, fl
         for y, m, d, actual in candidates:
             f = western_features(ev, y, m, d, coords)
             f.update(hd_features(ev, y, m, d, gate_cache))
-            rows.append({
-                "event_key": event_key,
-                "pair_key": ev.pair_key,
-                "actual": int(actual),
-                "features": f,
-            })
+            rows.append(
+                {
+                    "event_key": event_key,
+                    "pair_key": ev.pair_key,
+                    "actual": int(actual),
+                    "features": f,
+                }
+            )
     return rows, dict(counts)
 
 
 def names_for(model: str, all_names: list[str]) -> list[str]:
     names = []
     for n in all_names:
-        if n.startswith("m0_"):
-            names.append(n)
-        elif model != "M0X" and n.startswith("m1_"):
-            names.append(n)
-        elif model in {"M3X", "M3X_HD"} and n.startswith("m3_"):
-            names.append(n)
-        elif model in {"M4X_HD", "M3X_HD"} and n.startswith("hd_"):
+        if (
+            n.startswith("m0_")
+            or model != "M0X"
+            and n.startswith("m1_")
+            or model in {"M3X", "M3X_HD"}
+            and n.startswith("m3_")
+            or model in {"M4X_HD", "M3X_HD"}
+            and n.startswith("hd_")
+        ):
             names.append(n)
     return names
 
 
 def metrics(rows: list[dict], scores: np.ndarray) -> dict[str, float]:
     by_event: dict[str, list[tuple[float, int]]] = defaultdict(list)
-    for r, s in zip(rows, scores):
+    for r, s in zip(rows, scores, strict=False):
         by_event[r["event_key"]].append((float(s), int(r["actual"])))
-    ranks = []; pcts = []; losses = []
+    ranks = []
+    pcts = []
+    losses = []
     for vals in by_event.values():
         actual_score = next(s for s, y in vals if y == 1)
         controls = [s for s, y in vals if y == 0]
@@ -282,9 +301,12 @@ def metrics(rows: list[dict], scores: np.ndarray) -> dict[str, float]:
         tied = sum(abs(s - actual_score) <= 1e-12 for s in controls)
         avg_rank = 1.0 + higher + 0.5 * tied
         pct = 100.0 * (len(controls) - higher - 0.5 * tied) / len(controls)
-        ranks.append(avg_rank); pcts.append(pct)
+        ranks.append(avg_rank)
+        pcts.append(pct)
         arr = np.array([s for s, _ in vals], dtype=float)
-        arr -= arr.max(); probs = np.exp(arr); probs /= probs.sum()
+        arr -= arr.max()
+        probs = np.exp(arr)
+        probs /= probs.sum()
         idx = next(i for i, (_s, y) in enumerate(vals) if y == 1)
         losses.append(-math.log(max(float(probs[idx]), 1e-15)))
     return {
@@ -327,12 +349,14 @@ def evaluate(rows: list[dict], model: str) -> dict:
         oof[vi] = pred
         fold_pcts.append(metrics([rows[i] for i in vi], pred)["mean_true_date_percentile"])
     out = metrics(rows, oof)
-    out.update({
-        "model": model,
-        "feature_count": len(names),
-        "outer_folds": nfold,
-        "mean_true_date_percentile_by_fold": fold_pcts,
-    })
+    out.update(
+        {
+            "model": model,
+            "feature_count": len(names),
+            "outer_folds": nfold,
+            "mean_true_date_percentile_by_fold": fold_pcts,
+        }
+    )
     return out
 
 
@@ -394,7 +418,10 @@ def main() -> None:
         "permutation": None,
         "limitations": [
             "Fewer than the declared 50 exact high-quality pairs; no validation claim is allowed.",
-            "C-sample is reused after date-only development work, so this is not independent replication.",
+            (
+                "C-sample is reused after date-only development work, so "
+                "this is not independent replication."
+            ),
             "Formation events are likely dominated by marriage rather than first romantic contact.",
         ],
     }
@@ -414,17 +441,25 @@ def main() -> None:
             met["delta_vs_M1X"] = met["mean_true_date_percentile"] - m1
             met["positive_improvement_folds_vs_M1X"] = sum(
                 a > b + 1e-12
-                for a, b in zip(met["mean_true_date_percentile_by_fold"], result["models"]["M1X"]["mean_true_date_percentile_by_fold"])
+                for a, b in zip(
+                    met["mean_true_date_percentile_by_fold"],
+                    result["models"]["M1X"]["mean_true_date_percentile_by_fold"],
+                    strict=False,
+                )
             )
         result["comparison"] = {
             "M1X_minus_M0X": m1 - m0,
-            "best_pair_family": max(("M3X", "M4X_HD", "M3X_HD"), key=lambda k: result["models"][k]["delta_vs_M1X"]),
+            "best_pair_family": max(
+                ("M3X", "M4X_HD", "M3X_HD"), key=lambda k: result["models"][k]["delta_vs_M1X"]
+            ),
         }
         best = result["comparison"]["best_pair_family"]
         best_delta = result["models"][best]["delta_vs_M1X"]
         result["comparison"]["best_delta_vs_M1X"] = best_delta
         if best_delta >= 5.0:
-            result["permutation"] = permutation(rows, best, result["models"][best]["mean_true_date_percentile"], 200)
+            result["permutation"] = permutation(
+                rows, best, result["models"][best]["mean_true_date_percentile"], 200
+            )
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")

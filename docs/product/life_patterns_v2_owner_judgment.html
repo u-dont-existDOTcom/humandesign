@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Discover Your Unique Life Patterns — v2 owner prototype</title>
+<style>
+:root{--ink:#20242a;--muted:#667085;--line:#d0d5dd;--soft:#f7f8fa;--accent:#315c5f;--user:#eef6f6;--ai:#f7f3eb;--good:#176b44;--warn:#8a5a00;--bad:#a61b1b}
+*{box-sizing:border-box}body{margin:0;background:#fff;color:var(--ink);font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}main{width:min(54rem,calc(100% - 2rem));margin:2rem auto 5rem}h1{font-size:clamp(2rem,7vw,3.5rem);line-height:1.02;letter-spacing:-.04em;margin:.2rem 0 .7rem}h2{margin:.2rem 0 .6rem}.lede{font-size:1.1rem;color:var(--muted);max-width:46rem}.card{border:1px solid var(--line);border-radius:1rem;padding:1.1rem;margin:1rem 0;background:#fff}.soft{background:var(--soft)}button,textarea{font:inherit;border:1px solid #98a2b3;border-radius:.55rem;padding:.72rem .8rem}textarea{width:100%;min-height:7rem;resize:vertical;margin-top:.55rem}button{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:750;cursor:pointer}button.secondary{background:#fff;color:var(--accent)}button.subtle{background:#fff;color:var(--ink);border-color:var(--line)}button.danger{background:#fff;color:var(--bad);border-color:#e5a6a6}button:disabled{opacity:.55;cursor:not-allowed}.row{display:flex;gap:.65rem;flex-wrap:wrap;align-items:center}.hidden{display:none}.chat{display:grid;gap:.8rem;margin:1rem 0}.bubble{padding:.9rem 1rem;border-radius:.85rem;max-width:92%;white-space:pre-wrap}.bubble.user{background:var(--user);margin-left:auto}.bubble.ai{background:var(--ai)}.meta{font-size:.82rem;color:var(--muted);margin-bottom:.25rem}.pill{display:inline-block;font-size:.82rem;border:1px solid var(--line);border-radius:999px;padding:.25rem .6rem;color:var(--muted)}.note{font-size:.91rem;color:var(--muted)}.good{color:var(--good)}.warn{color:var(--warn)}.result{border-left:4px solid var(--accent);padding:.9rem 1rem;background:#f2f8f8;margin:1rem 0}.choice-label{font-size:.92rem;color:var(--muted);margin:.6rem 0 .4rem}.divider{border:0;border-top:1px solid var(--line);margin:1.2rem 0}.smallcaps{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:750}
+</style>
+</head>
+<body><main>
+<p class="pill">Owner-only development prototype · no chart/model data</p>
+<h1>Discover Your Unique Life Patterns</h1>
+<p class="lede">This restores the earlier conversational HTML surface while keeping the new v2 rule: an episode can suggest a possible pattern, but only you can decide whether that pattern actually describes you.</p>
+<div class="card soft">
+<strong>This is a toy episode for judging the interaction, not for learning anything about you.</strong>
+<p class="note">The real question here is whether the sequence feels natural: check what happened → consider a possible pattern → correct or reject it → keep only wording you actually endorse.</p>
+</div>
+
+<div id="stageEpisode" class="card">
+<div class="smallcaps">Example</div>
+<h2>A bounded planning episode</h2>
+<p>Imagine you described a situation where, before starting a complicated piece of work, you made a checklist.</p>
+<hr class="divider">
+<div class="smallcaps">What I think happened</div>
+<p id="factText"><strong>You made a checklist before complex work.</strong></p>
+<p class="choice-label">Is that a fair description of the example?</p>
+<div class="row">
+<button onclick="acceptFact()">Yes, that's accurate</button>
+<button class="secondary" onclick="showFactEdit()">Not quite — let me correct it</button>
+<button class="danger" onclick="rejectFact()">No, the example doesn't support that</button>
+</div>
+<div id="factEdit" class="hidden">
+<textarea id="factCorrection" placeholder="Rewrite only what actually happened in the example…"></textarea>
+<div class="row"><button onclick="saveFactCorrection()">Use this correction</button><button class="subtle" onclick="hideFactEdit()">Cancel</button></div>
+</div>
+</div>
+
+<div id="stagePattern" class="hidden">
+<div class="chat">
+<div class="bubble ai"><div class="meta">Interviewer</div><div id="candidateQuestion">That example makes me wonder about a broader pattern. When work is complex, do you generally tend to prepare or plan before you begin?</div></div>
+</div>
+<div class="card">
+<p class="choice-label">How well does that possible pattern fit?</p>
+<div class="row">
+<button onclick="patternDecision('accept')">Yes, that fits</button>
+<button class="secondary" onclick="showPatternEdit()">Close, but I'd say it differently</button>
+<button class="danger" onclick="patternDecision('reject')">No, that's not a pattern of mine</button>
+<button class="subtle" onclick="patternDecision('unresolved')">I'm not sure</button>
+</div>
+<div id="patternEdit" class="hidden">
+<textarea id="patternCorrection" placeholder="Write the version that actually fits you…"></textarea>
+<div class="row"><button onclick="savePatternRevision()">Try this wording</button><button class="subtle" onclick="hidePatternEdit()">Cancel</button></div>
+</div>
+</div>
+</div>
+
+<div id="stageRefine" class="hidden">
+<div class="chat">
+<div class="bubble ai"><div class="meta">Interviewer</div><div id="revisedQuestion"></div></div>
+</div>
+<div class="card soft">
+<p><strong>One check before keeping it:</strong> does this wording still stay within what the example actually supports, rather than adding something the example never showed?</p>
+<div class="row"><button onclick="confirmGrounding(true)">Yes</button><button class="secondary" onclick="confirmGrounding(false)">No / not sure</button></div>
+</div>
+<div id="finalDecision" class="card hidden">
+<p class="choice-label">And as a pattern of yours, what should we do with this wording?</p>
+<div class="row">
+<button onclick="finalPatternDecision('accept')">Keep it</button>
+<button class="danger" onclick="finalPatternDecision('reject')">Reject it</button>
+<button class="subtle" onclick="finalPatternDecision('unresolved')">Leave it unresolved</button>
+</div>
+</div>
+</div>
+
+<div id="stageResult" class="hidden result"></div>
+<div id="restartWrap" class="hidden row"><button class="secondary" onclick="restart()">Run the toy again</button></div>
+
+<script>
+let currentFact='You made a checklist before complex work.';
+let revisedPattern='';
+function show(id){document.getElementById(id).classList.remove('hidden')}
+function hide(id){document.getElementById(id).classList.add('hidden')}
+function scrollToId(id){document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'})}
+function acceptFact(){currentFact=document.getElementById('factText').innerText.trim();hide('stageEpisode');show('stagePattern');scrollToId('stagePattern')}
+function showFactEdit(){show('factEdit');document.getElementById('factCorrection').focus()}
+function hideFactEdit(){hide('factEdit')}
+function saveFactCorrection(){const v=document.getElementById('factCorrection').value.trim();if(!v)return;currentFact=v;document.getElementById('factText').innerHTML='<strong>'+escapeHtml(v)+'</strong><br><span class="note good">Your correction replaces the operative wording; the original would remain in audit history.</span>';hide('factEdit');setTimeout(acceptFact,250)}
+function rejectFact(){finish('no-pattern','No pattern was proposed because you said the example did not support the factual premise. That is the intended v2 behavior.')}
+function showPatternEdit(){show('patternEdit');document.getElementById('patternCorrection').focus()}
+function hidePatternEdit(){hide('patternEdit')}
+function savePatternRevision(){const v=document.getElementById('patternCorrection').value.trim();if(!v)return;revisedPattern=v;hide('stagePattern');document.getElementById('revisedQuestion').textContent='Let me try your wording back to you: “'+v+'”';show('stageRefine');scrollToId('stageRefine')}
+function patternDecision(decision){if(decision==='accept'){finish('accepted','Accepted pattern: “I tend to prepare or plan before complex work.”')}else if(decision==='reject'){finish('rejected','Rejected. The example remains as an episode fact, but no person-level pattern is kept.')}else{finish('unresolved','Left unresolved. The example remains, but the system does not force a person-level conclusion.') }}
+function confirmGrounding(ok){if(!ok){finish('unresolved','The revised wording was not kept because you were not confident the example actually supported it.')}else{show('finalDecision');scrollToId('finalDecision')}}
+function finalPatternDecision(decision){if(decision==='accept'){finish('accepted','Accepted pattern in your wording: “'+revisedPattern+'”')}else if(decision==='reject'){finish('rejected','Rejected. Your revised wording is not stored as an accepted person-level pattern.')}else{finish('unresolved','Left unresolved. Your revision is preserved as part of the discussion, not promoted to an accepted pattern.') }}
+function finish(status,message){hide('stageEpisode');hide('stagePattern');hide('stageRefine');const box=document.getElementById('stageResult');box.innerHTML='<div class="smallcaps">Result</div><h2>'+label(status)+'</h2><p>'+escapeHtml(message)+'</p><p class="note">For the real product, the research codes stay behind the scenes. The participant should experience a conversation, not an annotation console.</p>';show('stageResult');show('restartWrap');scrollToId('stageResult')}
+function label(status){return status==='accepted'?'Keep this pattern':status==='rejected'?'Do not keep this pattern':status==='unresolved'?'Leave this open':'No pattern proposed'}
+function restart(){location.reload()}
+function escapeHtml(s){return s.replace(/[&<>\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]))}
+</script>
+</main></body></html>

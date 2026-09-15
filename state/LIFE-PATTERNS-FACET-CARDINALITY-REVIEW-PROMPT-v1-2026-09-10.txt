@@ -1,0 +1,80 @@
+You are the independent target-theory-blind REVIEWER for the follow-up facet-cardinality contract repair in a DEVELOPMENT / DISCOVERY run.
+
+Use a fresh context distinct from the worker that authored the v4 contract candidate. Do not inspect Human Design, astrology, target mappings, chart/birth data, target-model outputs, participant-specific target results, model-fit results, or theory-exposed project commentary.
+
+AUTHORITATIVE CHAIN
+
+- frozen overlap/absence audit commit: 7ea0641e0913815306f8c182be5e7e8b18115fff
+- original repair candidate commit: 458bede3cf83b1947c332a408b47ec84236d69ed
+- second blind review commit: 4f51d075cb200e57820486e4f9686d81c7fc604f
+- follow-up v4 repair commit: use the GitHub-visible commit SHA returned by tasks/LIFE-PATTERNS-FACET-CARDINALITY-REPAIR-WORKER-2026-09-10.md
+
+Read the exact v4 contract and its disposition/summary from that committed repair. Do not review uncommitted drafts.
+
+REVIEW OBJECTIVE
+
+Determine whether v4 fixes the cardinality-scope defect without regressing any neutral semantic decision already accepted by the prior review.
+
+Mandatory checks:
+1. Re-review all 45 original OA blocking findings against the combined v2 codebook clarification + v4 contract, not only the seven previously partial findings.
+2. Separately re-review carried-forward `NR-001`.
+3. Confirm mutually exclusive alternatives remain exclusive at the correct event/stage/window scope.
+4. Confirm ordered same-facet changes across distinct events/stages/windows can be represented where the semantic overlay permits them.
+5. Confirm same-act double counting remains prohibited.
+6. Confirm co-present different facets are not falsely ordered.
+7. Confirm R05 remains resolved.
+8. Confirm absence/missingness semantics remain resolved and no missingness is converted into behavioral nonoccurrence.
+9. Scan the full v4 contract for new material defects, including cardinality, scope identity, ambiguous edge endpoints, impossible or contradictory invariants, or implementation-permitted silent information loss.
+10. If the v4 repair summary says `semantic_change_required=true`, implementation must remain blocked.
+
+REQUIRED OUTPUTS
+
+Create exactly:
+
+1. `state/LIFE-PATTERNS-FACET-CARDINALITY-REVIEW-RAW-v1-2026-09-10.jsonl`
+   - exactly 46 required rows: all 45 original OA blocker IDs once each plus `NR-001` once;
+   - optional genuinely new findings use `NR2-001`, `NR2-002`, ... only;
+   - fields for required rows: finding_id, observable_id, verdict (RESOLVED, PARTIAL, UNRESOLVED, REGRESSED), reason, candidate_reference, residual_issue, blocks_implementation;
+   - fields for new rows use verdict `NEW_CONFLICT` and the same remaining fields.
+
+2. `state/LIFE-PATTERNS-FACET-CARDINALITY-REVIEW-SUMMARY-v1-2026-09-10.json`
+   - fields: schema_version, original_oa_blockers_reviewed, carried_forward_nr_reviewed, resolved_count, partial_count, unresolved_count, regressed_count, new_material_findings_count, response_contract_blockers_resolved, r05_blockers_resolved, absence_semantics_resolved, semantic_change_required, safe_for_implementation, blocking_ids, notes.
+
+GATE
+
+`safe_for_implementation=true` only if:
+- all 45 OA blockers are RESOLVED;
+- NR-001 is RESOLVED;
+- no NR2 finding blocks implementation;
+- no previously resolved semantic blocker regressed;
+- all five original response-contract blockers remain resolved under v4;
+- R05 remains resolved;
+- absence/missingness semantics remain resolved;
+- semantic_change_required=false.
+
+MECHANICAL VERIFICATION
+
+Before commit:
+- JSON/JSONL parses;
+- exactly 45 OA rows and exactly one NR-001 row;
+- OA ID set exactly equals the original 45 blocking IDs with no duplicates;
+- any new findings use NR2-* and are genuinely material;
+- summary counts reconcile with raw;
+- no candidate/repair artifact was edited;
+- no target-model information was used.
+
+COMMIT / STOP
+
+Commit and push exactly the two review outputs. Do not implement codebook/contract/UI/package changes, run participant coding, automated annotation, human calibration, target scoring/reveal, merge/deploy, contact/recruit, or spend money.
+
+Return only:
+- GitHub-visible commit SHA;
+- SHA-256 and byte size of each review file;
+- OA row count;
+- NR-001 row count;
+- NR2 row count;
+- `safe_for_implementation`;
+- blocking IDs, if any;
+- `semantic_change_required`;
+- confirmation no candidate/repair artifact was edited;
+- confirmation no target-model information was used.

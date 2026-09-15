@@ -7,6 +7,7 @@ templates. This runner adapts parsing to the observed raw template structure
 without changing the frozen pair universe, allowed sections, transition labels,
 partner-attribution standard, date-precision rules, or stop/go threshold.
 """
+
 from __future__ import annotations
 
 import re
@@ -101,7 +102,9 @@ def event_partner_match(event_notes: str, other_name: str, other_title: str) -> 
     return bool(words & toks)
 
 
-def extract_events(source_id: int, source_title: str, wt: str, other_id: int, other_title: str, other_name: str) -> list[dict]:
+def extract_events(
+    source_id: int, source_title: str, wt: str, other_id: int, other_title: str, other_name: str
+) -> list[dict]:
     out = []
     sec = base.section(wt, "Events")
     for raw in template_blocks(sec, "ASTRODATABANK_evn"):
@@ -120,26 +123,30 @@ def extract_events(source_id: int, source_title: str, wt: str, other_id: int, ot
             continue
         lo, hi, precision = dt
         kind, transition = EVENT_CODES[code]
-        out.append({
-            "source_adb_id": source_id,
-            "source_title": source_title,
-            "other_adb_id": other_id,
-            "section": "Events",
-            "event_kind": kind,
-            "transition": transition,
-            "precision": precision,
-            "interval_start": lo,
-            "interval_end": hi,
-            "code_id": code,
-            "event_notes": notes,
-            "sevcode": f.get("sevcode"),
-            "sevdate": f.get("sevdate"),
-            "event_string": f.get("EventString"),
-        })
+        out.append(
+            {
+                "source_adb_id": source_id,
+                "source_title": source_title,
+                "other_adb_id": other_id,
+                "section": "Events",
+                "event_kind": kind,
+                "transition": transition,
+                "precision": precision,
+                "interval_start": lo,
+                "interval_end": hi,
+                "code_id": code,
+                "event_notes": notes,
+                "sevcode": f.get("sevcode"),
+                "sevdate": f.get("sevdate"),
+                "event_string": f.get("EventString"),
+            }
+        )
     return out
 
 
-def extract_ranges(source_id: int, source_title: str, wt: str, other_id: int, other_title: str, other_name: str) -> list[dict]:
+def extract_ranges(
+    source_id: int, source_title: str, wt: str, other_id: int, other_title: str, other_name: str
+) -> list[dict]:
     out = []
     sec = base.section(wt, "Relationships")
     for raw in template_blocks(sec, "ASTRODATABANK_rel"):
@@ -158,22 +165,24 @@ def extract_ranges(source_id: int, source_title: str, wt: str, other_id: int, ot
         y1, y2 = int(m.group(1)), int(m.group(2))
         if y2 < y1:
             continue
-        out.append({
-            "source_adb_id": source_id,
-            "source_title": source_title,
-            "other_adb_id": other_id,
-            "section": "Relationships",
-            "precision": "year_range",
-            "interval_start": base.iso(y1, 1, 1),
-            "interval_start_latest": base.iso(y1, 12, 31),
-            "interval_end_earliest": base.iso(y2, 1, 1),
-            "interval_end": base.iso(y2, 12, 31),
-            "code_id": code,
-            "related_datamain_id": linked_id,
-            "partner_name": f.get("PName"),
-            "partner_link": f.get("PName_link"),
-            "relationship_notes": notes,
-        })
+        out.append(
+            {
+                "source_adb_id": source_id,
+                "source_title": source_title,
+                "other_adb_id": other_id,
+                "section": "Relationships",
+                "precision": "year_range",
+                "interval_start": base.iso(y1, 1, 1),
+                "interval_start_latest": base.iso(y1, 12, 31),
+                "interval_end_earliest": base.iso(y2, 1, 1),
+                "interval_end": base.iso(y2, 12, 31),
+                "code_id": code,
+                "related_datamain_id": linked_id,
+                "partner_name": f.get("PName"),
+                "partner_link": f.get("PName_link"),
+                "relationship_notes": notes,
+            }
+        )
     return out
 
 

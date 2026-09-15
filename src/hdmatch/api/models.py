@@ -82,9 +82,7 @@ class ChartComponentMetadata(ApiModel):
     timezone_database_version: str
     ephemeris: EphemerisMetadataResponse | None = None
     cross_engine_status: Literal["unverified"] = "unverified"
-    advanced_substructure_status: Literal["unavailable_unvalidated"] = (
-        "unavailable_unvalidated"
-    )
+    advanced_substructure_status: Literal["unavailable_unvalidated"] = "unavailable_unvalidated"
 
 
 class SymbolicModelMetadata(ApiModel):
@@ -126,9 +124,7 @@ class ActivationResponse(ApiModel):
     color: None = None
     tone: None = None
     base: None = None
-    advanced_substructure_status: Literal["unavailable_unvalidated"] = (
-        "unavailable_unvalidated"
-    )
+    advanced_substructure_status: Literal["unavailable_unvalidated"] = "unavailable_unvalidated"
 
 
 class ChartRecord(ApiModel):
@@ -290,9 +286,7 @@ class NextQuestionRequest(ApiModel):
                 if not row or any(probability < 0.0 for probability in row.values()):
                     raise ValueError(f"question {question_id} has an invalid likelihood row")
                 if abs(sum(row.values()) - 1.0) > 1e-9:
-                    raise ValueError(
-                        f"question {question_id} likelihood rows must sum to one"
-                    )
+                    raise ValueError(f"question {question_id} likelihood rows must sum to one")
         if any(not 0.0 <= value <= 1.0 for value in self.expected_reliability.values()):
             raise ValueError("expected reliability must be within [0, 1]")
         if any(value < 0.0 for value in self.burden.values()):

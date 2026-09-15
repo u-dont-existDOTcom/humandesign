@@ -52,9 +52,7 @@ def engine_metadata(computation: ChartComputation) -> ChartEngineMetadataRespons
     )
 
 
-def _activation_records(
-    computation: ChartComputation, side: str
-) -> dict[str, ActivationResponse]:
+def _activation_records(computation: ChartComputation, side: str) -> dict[str, ActivationResponse]:
     records: dict[str, ActivationResponse] = {}
     for activation in computation.activations:
         if activation.side != side:

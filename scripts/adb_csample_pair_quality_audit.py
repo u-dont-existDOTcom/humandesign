@@ -6,13 +6,14 @@ uses only pair-specific relationship notes and person-level relationship
 categories whose catnotes explicitly name the linked partner. It writes only
 aggregate counts; no identities or raw research_data notes are committed.
 """
+
 from __future__ import annotations
 
 import json
 import re
 import urllib.request
 import xml.etree.ElementTree as ET
-from collections import Counter, defaultdict
+from collections import Counter
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
@@ -28,16 +29,16 @@ PARTNER_RE = re.compile(r"\bwith\s+(.+?)(?:,\s*born:|$)", re.I)
 # We use the IDs as data labels, but only when catnotes explicitly name the
 # linked partner. No unlabeled category is assigned to a pair by inference.
 QUALITY_CATEGORIES = {
-    183: ("positive_quality",),          # Marriage - Compatible
-    186: ("positive_quality",),          # Marriage - Very happy
+    183: ("positive_quality",),  # Marriage - Compatible
+    186: ("positive_quality",),  # Marriage - Very happy
     986: ("negative_burden", "bitter_divorce"),
     987: ("friendly_divorce",),
     193: ("long_duration",),
     194: ("short_duration",),
-    192: ("negative_burden",),          # chronic misery
-    973: ("negative_burden",),          # distant
+    192: ("negative_burden",),  # chronic misery
+    973: ("negative_burden",),  # distant
     185: ("negative_burden", "severe_negative_burden"),
-    972: ("negative_burden",),          # extramarital affairs
+    972: ("negative_burden",),  # extramarital affairs
     975: ("sexual_chemistry",),
 }
 
@@ -49,8 +50,12 @@ RELNOTE_PATTERNS = {
     "bitter_divorce": ("bitter",),
     "friendly_divorce": ("friendly",),
     "negative_burden": (
-        "bitter", "chronic misery", "distant", "domestic violence",
-        "extramarital affair", "extramarital affairs",
+        "bitter",
+        "chronic misery",
+        "distant",
+        "domestic violence",
+        "extramarital affair",
+        "extramarital affairs",
     ),
     "severe_negative_burden": ("domestic violence",),
     "sexual_chemistry": ("sexual chemistry",),
@@ -63,8 +68,14 @@ def norm(s: str | None) -> str:
 
 def name_tokens(name: str) -> set[str]:
     stop = {
-        "relationship", "spouse", "lover", "with", "born", "family",
-        "associates", "equivalent",
+        "relationship",
+        "spouse",
+        "lover",
+        "with",
+        "born",
+        "family",
+        "associates",
+        "equivalent",
     }
     return {t for t in norm(name).split() if len(t) >= 4 and t not in stop}
 
@@ -134,13 +145,15 @@ def main() -> None:
                     if rid not in ROMANTIC_REL_IDS:
                         continue
                     text = (rel.text or "").strip()
-                    rels.append({
-                        "rel_id": rid,
-                        "other": other,
-                        "text": text,
-                        "relnotes": rel.attrib.get("relnotes", ""),
-                        "stub": parse_partner_stub(text),
-                    })
+                    rels.append(
+                        {
+                            "rel_id": rid,
+                            "other": other,
+                            "text": text,
+                            "relnotes": rel.attrib.get("relnotes", ""),
+                            "stub": parse_partner_stub(text),
+                        }
+                    )
             cp = research.find("categories")
             if cp is not None:
                 for cat in cp.findall("category"):
@@ -150,10 +163,12 @@ def main() -> None:
                         continue
                     if cid in QUALITY_CATEGORIES:
                         observed_quality_cat_counts[cid] += 1
-                        cats.append({
-                            "cat_id": cid,
-                            "catnotes": cat.attrib.get("catnotes", ""),
-                        })
+                        cats.append(
+                            {
+                                "cat_id": cid,
+                                "catnotes": cat.attrib.get("catnotes", ""),
+                            }
+                        )
         entries[aid] = {
             "id": aid,
             "name": name,
@@ -197,14 +212,17 @@ def main() -> None:
                 both_high_rr_timed = False
                 partner_dob_known = bool(stub and stub["calendar"] == "gregorian")
 
-            rec = pairs.setdefault(key, {
-                "internal": internal,
-                "both_timed": both_timed,
-                "both_high_rr_timed": both_high_rr_timed,
-                "high_rr_timed_focal_with_partner_dob": False,
-                "labels": set(),
-                "sources": set(),
-            })
+            rec = pairs.setdefault(
+                key,
+                {
+                    "internal": internal,
+                    "both_timed": both_timed,
+                    "both_high_rr_timed": both_high_rr_timed,
+                    "high_rr_timed_focal_with_partner_dob": False,
+                    "labels": set(),
+                    "sources": set(),
+                },
+            )
             # A pair might first be created from one direction; update invariant
             # properties when the reciprocal internal edge arrives.
             rec["internal"] = rec["internal"] or internal
@@ -253,18 +271,16 @@ def main() -> None:
     positive = {k for k, r in usable.items() if "positive_quality" in r["labels"]}
     adverse = {k for k, r in usable.items() if "negative_burden" in r["labels"]}
     mixed = positive & adverse
-    exact_positive = {
-        k for k in positive if usable[k]["both_high_rr_timed"]
-    }
-    exact_adverse = {
-        k for k in adverse if usable[k]["both_high_rr_timed"]
-    }
+    exact_positive = {k for k in positive if usable[k]["both_high_rr_timed"]}
+    exact_adverse = {k for k in adverse if usable[k]["both_high_rr_timed"]}
     ext_positive = {
-        k for k in positive
+        k
+        for k in positive
         if (not usable[k]["internal"]) and usable[k]["high_rr_timed_focal_with_partner_dob"]
     }
     ext_adverse = {
-        k for k in adverse
+        k
+        for k in adverse
         if (not usable[k]["internal"]) and usable[k]["high_rr_timed_focal_with_partner_dob"]
     }
 
@@ -274,9 +290,16 @@ def main() -> None:
         "raw_bytes": len(raw),
         "entry_count": len(entries),
         "linkage_rules": {
-            "relationship_relnote": "pair-specific edge; only predeclared exact ADB quality vocabulary recognized",
-            "person_category": "accepted only when catnotes explicitly contain >=4-char token from linked partner name",
-            "forbidden_inference": "no unique-spouse or biography-based assignment of an unlabeled category to a pair",
+            "relationship_relnote": (
+                "pair-specific edge; only predeclared exact ADB quality vocabulary recognized"
+            ),
+            "person_category": (
+                "accepted only when catnotes explicitly contain >=4-char "
+                "token from linked partner name"
+            ),
+            "forbidden_inference": (
+                "no unique-spouse or biography-based assignment of an unlabeled category to a pair"
+            ),
         },
         "quality_category_ids": {str(k): list(v) for k, v in QUALITY_CATEGORIES.items()},
         "observed_quality_category_occurrences_person_level": {
@@ -286,17 +309,25 @@ def main() -> None:
             "directed_romantic": directed_romantic,
             "directed_with_nonempty_relnote": directed_with_nonempty_relnote,
             "directed_with_recognized_quality_relnote": directed_with_recognized_relnote,
-            "recognized_relnote_label_attributions": dict(sorted(relnote_label_attributions.items())),
+            "recognized_relnote_label_attributions": dict(
+                sorted(relnote_label_attributions.items())
+            ),
         },
         "strict_partner_named_categories": {
             "attribution_count": strict_category_attributions,
-            "by_category_id": {str(k): v for k, v in sorted(strict_category_attributions_by_id.items())},
+            "by_category_id": {
+                str(k): v for k, v in sorted(strict_category_attributions_by_id.items())
+            },
         },
         "pair_counts": {
             "all_unique_romantic_pairs_seen": len(pairs),
             "pairs_with_any_usable_quality_label": len(usable),
-            "exact_A_AA_both_timed_pairs_with_any_quality_label": count_pairs(lambda r: r["both_high_rr_timed"]),
-            "external_highRR_timed_focal_dateonly_partner_pairs_with_any_quality_label": count_pairs(
+            "exact_A_AA_both_timed_pairs_with_any_quality_label": count_pairs(
+                lambda r: r["both_high_rr_timed"]
+            ),
+            (
+                "external_highRR_timed_focal_dateonly_partner_pairs_with_any_quality_label"
+            ): count_pairs(
                 lambda r: (not r["internal"]) and r["high_rr_timed_focal_with_partner_dob"]
             ),
             "positive_quality_pairs": len(positive),
@@ -309,7 +340,9 @@ def main() -> None:
         },
         "pair_label_counts_all": dict(sorted(label_pair_counts.items())),
         "pair_label_counts_exact_A_AA": dict(sorted(exact_label_pair_counts.items())),
-        "pair_label_counts_external_dateonly": dict(sorted(external_dateonly_label_pair_counts.items())),
+        "pair_label_counts_external_dateonly": dict(
+            sorted(external_dateonly_label_pair_counts.items())
+        ),
         "model_readiness": {
             "exploratory_binary_quality_minimum_per_class": 25,
             "exact_binary_quality_ready": len(exact_positive) >= 25 and len(exact_adverse) >= 25,
@@ -317,10 +350,16 @@ def main() -> None:
             "note": "threshold is an engineering minimum, not a power calculation",
         },
         "limitations": [
-            "ADB editorial quality labels are observational and heterogeneous, not standardized partner self-report scales.",
+            (
+                "ADB editorial quality labels are observational and heter"
+                "ogeneous, not standardized partner self-report scales."
+            ),
             "Positive and negative dimensions are not forced into one compatibility scalar.",
             "A pair may legitimately carry both positive and adverse labels across time.",
-            "No raw research_data notes, identities, or relationship records are written to this result.",
+            (
+                "No raw research_data notes, identities, or relationship "
+                "records are written to this result."
+            ),
         ],
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)

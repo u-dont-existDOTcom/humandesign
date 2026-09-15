@@ -6,6 +6,7 @@ Specification: reference/research/partner_null_1000_freeze_v1.md
 This is development/exploratory research, not a soulmate probability. Production
 astronomy is verified SWIEPH and fails closed on Moshier fallback.
 """
+
 from __future__ import annotations
 
 import hashlib
@@ -13,13 +14,12 @@ import json
 import math
 import random
 import statistics
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
-
-import swisseph as swe
 
 import partner_future_pilot as west
 import partner_hd_timing_pilot as hd
+import swisseph as swe
 
 REPO = Path(__file__).resolve().parents[1]
 EPHE = REPO / "data" / "ephemeris"
@@ -64,7 +64,7 @@ def months() -> list[datetime]:
     out = []
     for y in range(2026, 2041):
         for m in range(1, 13):
-            out.append(datetime(y, m, 15, 12, 0, tzinfo=timezone.utc))
+            out.append(datetime(y, m, 15, 12, 0, tzinfo=UTC))
     return out
 
 
@@ -98,7 +98,9 @@ def progressed_positions(birth: datetime, ds: list[datetime]) -> list[dict[str, 
     for d in ds:
         age_years = (d - birth).total_seconds() / 86400.0 / TROPICAL_YEAR
         pj = nj + age_years
-        rows.append({name: west.calc(pj, body)[0] for name, body in west.PROGRESSED_PLANETS.items()})
+        rows.append(
+            {name: west.calc(pj, body)[0] for name, body in west.PROGRESSED_PLANETS.items()}
+        )
     return rows
 
 
@@ -136,7 +138,7 @@ def western_vector(
 
 
 def cosine(a: list[float], b: list[float]) -> float:
-    return sum(x * y for x, y in zip(a, b))
+    return sum(x * y for x, y in zip(a, b, strict=False))
 
 
 def precompute_hd_transits(ds: list[datetime]) -> list[set[int]]:
@@ -147,7 +149,9 @@ def precompute_hd_transits(ds: list[datetime]) -> list[set[int]]:
     return out
 
 
-def hd_metrics(a_gates: set[int], b_gates: set[int], transit_gates: list[set[int]]) -> dict[str, float]:
+def hd_metrics(
+    a_gates: set[int], b_gates: set[int], transit_gates: list[set[int]]
+) -> dict[str, float]:
     single = eight = both = 0
     static = a_gates | b_gates
     for tg in transit_gates:
@@ -199,13 +203,15 @@ def score_pool(
         pv = western_vector(dt, ds, transits_w)
         pg = hd.natal_gates(dt)
         null_w.append(cosine(focal_vec, pv))
-        null_h.append(hd_metrics(focal_gates, pg, transits_hd)["single_and_eight_plus_one_fraction"])
+        null_h.append(
+            hd_metrics(focal_gates, pg, transits_hd)["single_and_eight_plus_one_fraction"]
+        )
         if idx % 100 == 0:
             print(f"scored {idx}/{len(null_births)} null partners", flush=True)
 
     mw, sw = mean_sd(null_w)
     mh, sh = mean_sd(null_h)
-    null_joint = [z(w, mw, sw) + z(h, mh, sh) for w, h in zip(null_w, null_h)]
+    null_joint = [z(w, mw, sw) + z(h, mh, sh) for w, h in zip(null_w, null_h, strict=False)]
 
     real = {}
     for label, dt in real_partner_states.items():
@@ -255,10 +261,10 @@ def main() -> None:
 
     # Fail-closed probes.
     for d in (
-        datetime(1980, 1, 1, tzinfo=timezone.utc),
-        datetime(1989, 6, 19, 12, tzinfo=timezone.utc),
-        datetime(2033, 1, 1, tzinfo=timezone.utc),
-        datetime(2040, 12, 15, tzinfo=timezone.utc),
+        datetime(1980, 1, 1, tzinfo=UTC),
+        datetime(1989, 6, 19, 12, tzinfo=UTC),
+        datetime(2033, 1, 1, tzinfo=UTC),
+        datetime(2040, 12, 15, tzinfo=UTC),
     ):
         for body in west.NATAL_PLANETS.values():
             west.calc(west.jd(d), body)
@@ -268,22 +274,22 @@ def main() -> None:
     transits_hd = precompute_hd_transits(ds)
     rng = random.Random(SEED)
 
-    joel = datetime(1985, 1, 29, 10, 25, tzinfo=timezone.utc)
+    joel = datetime(1985, 1, 29, 10, 25, tzinfo=UTC)
     bee = {
-        "B_early": datetime(1989, 6, 19, 5, 0, tzinfo=timezone.utc),
-        "B_mid": datetime(1989, 6, 19, 12, 0, tzinfo=timezone.utc),
-        "B_late": datetime(1989, 6, 19, 17, 0, tzinfo=timezone.utc),
+        "B_early": datetime(1989, 6, 19, 5, 0, tzinfo=UTC),
+        "B_mid": datetime(1989, 6, 19, 12, 0, tzinfo=UTC),
+        "B_late": datetime(1989, 6, 19, 17, 0, tzinfo=UTC),
     }
 
     women = random_births(
-        datetime(1984, 6, 19, tzinfo=timezone.utc),
-        datetime(1994, 6, 19, tzinfo=timezone.utc),
+        datetime(1984, 6, 19, tzinfo=UTC),
+        datetime(1994, 6, 19, tzinfo=UTC),
         N,
         rng,
     )
     men = random_births(
-        datetime(1980, 1, 29, tzinfo=timezone.utc),
-        datetime(1990, 1, 29, tzinfo=timezone.utc),
+        datetime(1980, 1, 29, tzinfo=UTC),
+        datetime(1990, 1, 29, tzinfo=UTC),
         N,
         rng,
     )
@@ -317,19 +323,39 @@ def main() -> None:
         "joel_to_random_women": j_to_w,
         "bee_to_random_men": b_to_m,
         "limitations": [
-            "No houses, angles, progressed angles, or astrocartography are used in this null benchmark.",
-            "The Western score is raw activation-timing similarity, not a calibrated life-outcome likelihood.",
-            "The HD score is the predeclared joint single-definition + 8+1 fraction, not a validated compatibility probability.",
-            "Bee is reported for all three representative unknown-time states; no state is selected from fit.",
+            (
+                "No houses, angles, progressed angles, or astrocartograph"
+                "y are used in this null benchmark."
+            ),
+            (
+                "The Western score is raw activation-timing similarity, n"
+                "ot a calibrated life-outcome likelihood."
+            ),
+            (
+                "The HD score is the predeclared joint single-definition "
+                "+ 8+1 fraction, not a validated compatibility probabilit"
+                "y."
+            ),
+            (
+                "Bee is reported for all three representative unknown-tim"
+                "e states; no state is selected from fit."
+            ),
         ],
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(data, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print("wrote", OUT, "sha256", sha256(OUT), flush=True)
-    print(json.dumps({
-        "joel_to_women": j_to_w["real_states"],
-        "bee_to_men": {k: v["Joel"] for k, v in b_to_m.items()},
-    }, indent=2, sort_keys=True), flush=True)
+    print(
+        json.dumps(
+            {
+                "joel_to_women": j_to_w["real_states"],
+                "bee_to_men": {k: v["Joel"] for k, v in b_to_m.items()},
+            },
+            indent=2,
+            sort_keys=True,
+        ),
+        flush=True,
+    )
 
 
 if __name__ == "__main__":

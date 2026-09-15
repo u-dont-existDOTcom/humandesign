@@ -147,9 +147,7 @@ def simulate_noise_case(
     candidate_count = len(answer_rows)
     leader = leaders[0]
     differences = tuple(
-        feature
-        for feature in range(width)
-        if answer_rows[leader][feature] != true_answers[feature]
+        feature for feature in range(width) if answer_rows[leader][feature] != true_answers[feature]
     )
     return NoiseCaseResult(
         scenario_id=scenario.scenario_id,
@@ -206,9 +204,7 @@ def summarize_noise_cases(cases: Sequence[NoiseCaseResult]) -> NoiseScenarioSumm
             not case.true_candidate_survived for case in cases
         ),
         tie_frequency=statistics.fmean(case.true_score_tie_size > 1 for case in cases),
-        true_score_tie_size_p50=statistics.median(
-            case.true_score_tie_size for case in cases
-        ),
+        true_score_tie_size_p50=statistics.median(case.true_score_tie_size for case in cases),
         true_score_tie_size_p90=_numeric_percentile(
             tuple(float(case.true_score_tie_size) for case in cases), 0.90
         ),
@@ -217,9 +213,7 @@ def summarize_noise_cases(cases: Sequence[NoiseCaseResult]) -> NoiseScenarioSumm
             tuple(float(case.extra_tie_breakers) for case in cases), 0.90
         ),
         maximum_extra_tie_breakers=max(case.extra_tie_breakers for case in cases),
-        stopping_criterion_rate=statistics.fmean(
-            case.stopping_criterion_reached for case in cases
-        ),
+        stopping_criterion_rate=statistics.fmean(case.stopping_criterion_reached for case in cases),
     )
 
 
@@ -249,9 +243,7 @@ def _perturb(
 ) -> tuple[Hashable, ...] | None:
     if scenario.perturbation in {"ambiguous", "other", "uncertain"}:
         return None
-    alternatives = sorted(
-        {row[position] for row in rows if row[position] != truth}, key=repr
-    )
+    alternatives = sorted({row[position] for row in rows if row[position] != truth}, key=repr)
     if not alternatives:
         return None
     index = int.from_bytes(
@@ -295,8 +287,7 @@ def _select_by_entropy(
     for feature in remaining:
         counts = Counter(rows[index][feature] for index in leaders)
         entropy = -sum(
-            (count / len(leaders)) * math.log2(count / len(leaders))
-            for count in counts.values()
+            (count / len(leaders)) * math.log2(count / len(leaders)) for count in counts.values()
         )
         choices.append((entropy, -feature, feature))
     return max(choices)[2]

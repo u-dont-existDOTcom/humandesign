@@ -1,0 +1,32 @@
+{
+  "schema_version": "life-patterns-record-containment-repair-candidate-receipt-v1",
+  "repair_commit": "320cb577f4adfbcc644c986f7f532feef0fbe80b",
+  "repair_commit_message": "Repair Life Patterns record containment contract",
+  "branch": "codex/discover-life-patterns-mvp",
+  "preceding_v4_review_commit": "f5f02c976b11fbabc7c136f9c80fbd312600d91d",
+  "carried_blocker": "NR2-001",
+  "files": [
+    "state/LIFE-PATTERNS-FACET-RELATION-CONTRACT-v5-CANDIDATE-2026-09-10.json",
+    "state/LIFE-PATTERNS-RECORD-CONTAINMENT-REPAIR-DISPOSITION-v1-2026-09-10.jsonl",
+    "state/LIFE-PATTERNS-RECORD-CONTAINMENT-REPAIR-SUMMARY-v1-2026-09-10.json"
+  ],
+  "exact_files_committed_count": 3,
+  "disposition_rows": 1,
+  "disposition_ids": ["NR2-001"],
+  "addressed_count": 1,
+  "not_addressed_count": 0,
+  "semantic_change_required": false,
+  "substantive_codebook_edited": false,
+  "prior_candidate_or_review_artifact_edited": false,
+  "target_model_information_used": false,
+  "safe_for_blind_re_review": true,
+  "ci": {
+    "workflow_run": 34526916770,
+    "conclusion": "success"
+  },
+  "implementation_authorized": false,
+  "human_calibration_authorized": false,
+  "automated_life_patterns_coding_authorized": false,
+  "target_model_scoring_authorized": false,
+  "next_gate": "independent target-theory-blind v5 re-review of all 45 original OA blockers plus NR-001 and NR2-001, with new defects allowed only as NR3-*"
+}

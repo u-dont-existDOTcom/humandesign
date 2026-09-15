@@ -92,11 +92,7 @@ def test_v2_registry_has_single_construct_fields() -> None:
             encoding="utf-8"
         )
     )
-    fields = [
-        field
-        for question in payload["questions"].values()
-        for field in question["fields"]
-    ]
+    fields = [field for question in payload["questions"].values() for field in question["fields"]]
     ids = [field["id"] for field in fields]
     assert len(ids) == 42
     assert len(ids) == len(set(ids))

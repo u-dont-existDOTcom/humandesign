@@ -1,0 +1,65 @@
+{
+  "schema_version": "life-patterns-human-calibration-ui-direct-choice-verification-v1",
+  "status": "verified_for_owner_precollection_review",
+  "owner_observed_defect": "The UI asked whether there was enough information to code before showing the concrete behavior choices, so the auditor could not know what information sufficiency referred to.",
+  "correction": {
+    "human_primary_question": "Which behavior or behaviors does the exact source clearly show?",
+    "behavior_values_visible_before_state_derivation": true,
+    "observed_state_derived_from_one_or_more_selected_behaviors": true,
+    "not_applicable_human_label": "Doesn't apply to this story",
+    "insufficient_human_label": "Not enough information",
+    "generic_partial_state_added": false,
+    "partial_evidence_guidance": "If only some listed behaviors are clearly supported, select those. If the exact source is too incomplete or unclear to select a behavioral value reliably, use Not enough information."
+  },
+  "public_implementation": {
+    "builder": "scripts/build_life_patterns_human_calibration_ui_v2_direct_choice.py",
+    "tests": "tests/unit/test_life_patterns_human_calibration_ui_v2_direct_choice.py",
+    "implementation_head": "196b37e8369c9493380393b506eaa9f9d0bebedc",
+    "ci_run": 34398433777,
+    "ci_passed": true,
+    "pytest_passed": 645,
+    "pytest_skipped": 7,
+    "ruff_passed": true,
+    "mypy_passed": true,
+    "mypy_source_files": 172
+  },
+  "private_exact_artifact": {
+    "html_filename": "Life-Patterns-Human-Calibration-V2-DIRECT-CHOICE-2026-09-09.html",
+    "html_bytes": 3996334,
+    "html_sha256": "2fadb3c827379efc3ec0988be43ffff4f5e4708d91a7f7a9c48dc25a391ad4b5",
+    "kit_filename": "Life-Patterns-Independent-Auditor-Kit-V2-DIRECT-CHOICE-2026-09-09.zip",
+    "kit_bytes": 802612,
+    "kit_sha256": "2dfc836fa2d7757e904ed593efba51baba22fefd9a9bf3ccfb209b80ef44c5e4",
+    "kit_member_count": 2,
+    "contains_private_participant_text": true,
+    "committed_to_git": false
+  },
+  "private_chromium_smoke": {
+    "bundle_verified": true,
+    "direct_behavior_question_visible": true,
+    "meta_enough_information_question_absent": true,
+    "behavior_choices_visible": true,
+    "fallback_choices_visible": 2,
+    "selecting_behavior_clears_fallback": true,
+    "external_network_requests": 0,
+    "page_errors": 0,
+    "console_errors": 0
+  },
+  "measurement_preservation": {
+    "embedded_private_handoff_unchanged": true,
+    "selected_calibration_units_changed": false,
+    "episode_units": 44,
+    "series_units": 22,
+    "response_contract_changed": false,
+    "measurement_semantics_changed": false,
+    "target_model_information_used": false,
+    "automated_judgment_used": false,
+    "network_requests_required": false
+  },
+  "human_first_pass_received": false,
+  "automated_life_patterns_coding_run": false,
+  "target_model_scoring_run": false,
+  "development_only": true,
+  "validation_use_forbidden": true,
+  "receipt_contains_private_participant_text": false
+}

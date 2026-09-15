@@ -1,0 +1,38 @@
+{
+  "schema_version": "life-patterns-human-handoff-owner-reupload-reverification-v1",
+  "status": "owner_returned_transport_independently_reverified",
+  "verified_date": "2026-09-08",
+  "verification_method": "The owner uploaded the regenerated private human-calibration transport ZIP into the continuation chat. The archive was read directly, its outer identity was recomputed, all 15 members were enumerated, every frozen payload-file SHA-256 was checked against the committed human handoff receipt, the internal receipt payload hash was recomputed, and all eight packet payload hashes were checked against the receipt.",
+  "transport_zip": {
+    "sha256": "8ff24ea90e06b393f50761a3a2317f831d3bc0f6dda30e91c20965fa1c1f6d5a",
+    "bytes": 378206,
+    "member_count": 15,
+    "matches_committed_regeneration_receipt": true
+  },
+  "frozen_package": {
+    "id": "LPKG-18170B8D3EEC8423A523",
+    "sha256": "18170b8d3eec8423a523cc2151020a2e2dfead8abf3a9ea5b941fdc9194dd66f"
+  },
+  "frozen_calibration": {
+    "id": "LPCA-5B3E6CFCCE49807050DF",
+    "sha256": "5b3e6cfcce49807050df03f8ab27cbfbb610869dcb9cfa30064cd485d4646140"
+  },
+  "frozen_human_handoff_receipt": {
+    "id": "LPHB-4F01038BBB80BBFA520E",
+    "sha256": "4f01038bbb80bbfa520e96dcb41715bd25a9267edae98a82aa175877824cd580",
+    "payload_sha256_recomputed_and_matched": true
+  },
+  "episode_units": 44,
+  "series_units": 22,
+  "packet_count": 8,
+  "packet_payload_hashes_match_receipt": true,
+  "all_frozen_internal_payload_file_hashes_match": true,
+  "blank_forms_are_annotations": false,
+  "auditor_attestation_still_blank": true,
+  "human_first_pass_received": false,
+  "automated_coding_run": false,
+  "private_participant_text_committed": false,
+  "development_only": true,
+  "validation_use_forbidden": true,
+  "next_gate": "Obtain and freeze one independent blind human first pass plus the actual exposure/independence attestation before exposing any automated labels or beginning automated coding."
+}
