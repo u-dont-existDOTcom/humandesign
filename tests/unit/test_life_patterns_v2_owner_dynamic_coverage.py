@@ -124,7 +124,7 @@ def test_dynamic_ui_uses_cross_thread_context_and_not_first_missing_category() -
     assert "completed_results:completedResults.map" in DYNAMIC_RECOVERABILITY_HTML
     assert "startCoverageDomain(missing[0])" not in DYNAMIC_RECOVERABILITY_HTML
     assert "Still open: '+missing.map(d=>d.title)" not in DYNAMIC_RECOVERABILITY_HTML
-    assert "I’ll use what you’ve already said and only ask about remaining gaps." in DYNAMIC_RECOVERABILITY_HTML
+    assert "One answer can cover several areas" in DYNAMIC_RECOVERABILITY_HTML
     assert "adaptive coverage" not in DYNAMIC_RECOVERABILITY_HTML
 
 
