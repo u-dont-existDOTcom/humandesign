@@ -24,7 +24,6 @@ from .life_patterns_v2_owner_conversation import (
 )
 from .life_patterns_v2_owner_coverage import (
     COVERAGE_COMPLETE_STATUSES,
-    COVERAGE_HTML,
     COVERAGE_STATUSES,
     CoverageDomain,
     CoverageSessionRequest,
@@ -32,6 +31,7 @@ from .life_patterns_v2_owner_coverage import (
 )
 from .life_patterns_v2_owner_pattern_first import TemporaryModelProviderError
 from .life_patterns_v2_owner_reasoning import ADAPTIVE_OPENING, AdaptiveRefinablePatternSession
+from .life_patterns_v2_owner_recoverability_ui import RECOVERABILITY_HTML
 
 RECOVERABILITY_BLUEPRINT_VERSION = "life-patterns-recoverability-coverage-v2"
 _DOMAIN_BY_ID = {domain.domain_id: domain for domain in RECOVERABILITY_DOMAINS}
@@ -135,11 +135,15 @@ def _normalize_recoverability_coverage(
 ) -> dict[str, Any]:
     known_fact_ids = {fact.fact_id for fact in operative_facts}
     rows = raw.get("assessments", [])
-    by_id: dict[str, dict[str, Any]] = {
-        str(row["domain_id"]): row
-        for row in rows
-        if isinstance(row, dict) and row.get("domain_id") in _DOMAIN_BY_ID
-    } if isinstance(rows, list) else {}
+    by_id: dict[str, dict[str, Any]] = (
+        {
+            str(row["domain_id"]): row
+            for row in rows
+            if isinstance(row, dict) and row.get("domain_id") in _DOMAIN_BY_ID
+        }
+        if isinstance(rows, list)
+        else {}
+    )
 
     assessments: list[dict[str, Any]] = []
     for domain in RECOVERABILITY_DOMAINS:
@@ -238,11 +242,11 @@ def create_life_patterns_v2_owner_recoverability_app(
 ) -> FastAPI:
     resolved_model = model or RecoverabilityCoverageOpenAIModel.from_env()
     runtime = RecoverabilityCoverageRuntime(model=resolved_model)
-    app = FastAPI(title="Life Patterns recoverability development interview", version="1.2")
+    app = FastAPI(title="Life Patterns recoverability development interview", version="1.3")
 
     @app.get("/", response_class=HTMLResponse, include_in_schema=False)
     def landing() -> str:
-        return COVERAGE_HTML
+        return RECOVERABILITY_HTML
 
     @app.get("/healthz")
     def health() -> dict[str, Any]:
@@ -258,6 +262,7 @@ def create_life_patterns_v2_owner_recoverability_app(
             "refinement_repetition_guard": True,
             "standardized_required_coverage": True,
             "recoverability_preservation_candidate": True,
+            "client_side_measurement_freeze": True,
             "coverage_blueprint_version": RECOVERABILITY_BLUEPRINT_VERSION,
             "coverage_blueprint_sha256": RECOVERABILITY_BLUEPRINT_SHA256,
             "required_domain_count": len(RECOVERABILITY_DOMAINS),
