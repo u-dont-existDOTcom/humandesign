@@ -6,6 +6,8 @@ outside this runtime and may be applied only after a fresh owner measurement is 
 The scientific contract fixes *what must be covered*, not a rigid order of scripted
 questions. Participant-led material can satisfy several dimensions at once, and the
 remaining coverage sweep selects the next question dynamically from what is still open.
+Settled cross-thread context is also carried forward for planning so later threads do not
+ask the participant to repeat material already established elsewhere in the interview.
 """
 
 from __future__ import annotations
@@ -64,7 +66,7 @@ RECOVERABILITY_BLUEPRINT_SHA256 = hashlib.sha256(
 
 
 class DynamicCoverageRequest(BaseModel):
-    """Client-side aggregate needed only to choose the next non-redundant question."""
+    """Client-side aggregate used to preserve natural, non-redundant continuity."""
 
     aggregate_coverage: list[dict[str, Any]] = Field(default_factory=list, max_length=64)
     completed_results: list[dict[str, Any]] = Field(default_factory=list, max_length=64)
@@ -86,6 +88,49 @@ def _open_domains(rows: list[dict[str, Any]]) -> tuple[CoverageDomain, ...]:
         domain
         for domain in RECOVERABILITY_DOMAINS
         if statuses.get(domain.domain_id, "unassessed") not in COVERAGE_COMPLETE_STATUSES
+    )
+
+
+def _cross_thread_context_note(
+    *, aggregate_coverage: list[dict[str, Any]], completed_results: list[dict[str, Any]]
+) -> str | None:
+    """Create planning-only context; this note is never participant evidence."""
+
+    accepted = [
+        str(row.get("wording"))[:1200]
+        for row in completed_results[-64:]
+        if isinstance(row, dict)
+        and str(row.get("status", "")) == "accepted"
+        and row.get("wording")
+    ]
+    coverage_rows = []
+    for row in aggregate_coverage[-64:]:
+        if not isinstance(row, dict):
+            continue
+        domain_id = str(row.get("domain_id", ""))
+        status = str(row.get("status", "unassessed"))
+        if domain_id not in _DOMAIN_BY_ID or status == "unassessed":
+            continue
+        coverage_rows.append(
+            {
+                "title": _DOMAIN_BY_ID[domain_id].title,
+                "status": status,
+                "reason": str(row.get("reason", ""))[:500],
+            }
+        )
+    if not accepted and not coverage_rows:
+        return None
+    payload = {
+        "settled_participant_authoritative_patterns": accepted,
+        "measurement_planning_metadata": coverage_rows,
+    }
+    return (
+        "INTERNAL PRIOR CONTEXT — PLANNING ONLY, NOT PARTICIPANT EVIDENCE. "
+        "Use this only to avoid redundant questions and to connect naturally with information already established "
+        "elsewhere in the interview. Do not quote this note to the participant, do not extract hidden facts from it, "
+        "and do not treat coverage reasons as participant statements. Any new evidence in this thread must still come "
+        "from the participant's current messages.\n"
+        + json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
     )
 
 
@@ -139,8 +184,9 @@ class RecoverabilityCoverageOpenAIModel(StandardizedCoverageOpenAIModel):
                 "developmental change, and self-versus-observer distinctions when they materially affect meaning. Do "
                 "not require a fixed number of episodes. One participant answer can legitimately support several "
                 "dimensions at once; credit every dimension the cited evidence actually supports rather than waiting "
-                "for a category-specific question. For partial or sufficient, cite only supplied operative fact IDs "
-                "that actually support the status.\n\nREQUIRED DIMENSIONS:\n"
+                "for a category-specific question. INTERNAL PRIOR CONTEXT messages are planning metadata only and "
+                "cannot establish coverage by themselves. For partial or sufficient, cite only supplied operative fact "
+                "IDs that actually support the status.\n\nREQUIRED DIMENSIONS:\n"
                 + "\n".join(
                     f"- {domain.domain_id}: {domain.definition}" for domain in RECOVERABILITY_DOMAINS
                 )
@@ -317,6 +363,29 @@ class RecoverabilityCoverageRuntime:
         self.sessions[session_id] = session
         return session
 
+    def create_contextual_session(
+        self,
+        *,
+        aggregate_coverage: list[dict[str, Any]],
+        completed_results: list[dict[str, Any]],
+    ) -> RecoverabilityCoverageSession:
+        """Start another participant-led thread with planning-only prior context."""
+
+        session = self.create_session()
+        note = _cross_thread_context_note(
+            aggregate_coverage=aggregate_coverage,
+            completed_results=completed_results,
+        )
+        if note:
+            session.conversation.append(
+                {
+                    "turn_id": f"TURN-{uuid.uuid4().hex[:10].upper()}",
+                    "role": "assistant",
+                    "text": note,
+                }
+            )
+        return session
+
     def _create_seeded_coverage_session(
         self, *, domain: CoverageDomain, opening: str
     ) -> RecoverabilityCoverageSession:
@@ -386,7 +455,7 @@ def create_life_patterns_v2_owner_recoverability_app(
 ) -> FastAPI:
     resolved_model = model or RecoverabilityCoverageOpenAIModel.from_env()
     runtime = RecoverabilityCoverageRuntime(model=resolved_model)
-    app = FastAPI(title="Life Patterns recoverability development interview", version="1.4")
+    app = FastAPI(title="Life Patterns recoverability development interview", version="1.5")
     app.state.recoverability_runtime = runtime
 
     @app.get("/", response_class=HTMLResponse, include_in_schema=False)
@@ -410,6 +479,7 @@ def create_life_patterns_v2_owner_recoverability_app(
             "client_side_measurement_freeze": True,
             "dynamic_coverage_selection": True,
             "cross_thread_coverage_reuse": True,
+            "cross_thread_planning_context": True,
             "canonical_screeners_are_fallbacks_not_script": True,
             "coverage_blueprint_version": RECOVERABILITY_BLUEPRINT_VERSION,
             "coverage_blueprint_sha256": RECOVERABILITY_BLUEPRINT_SHA256,
@@ -433,6 +503,18 @@ def create_life_patterns_v2_owner_recoverability_app(
     @app.post("/api/owner-v2/conversation/sessions")
     def create_session() -> CreateConversationSessionResponse:
         session = runtime.create_session()
+        return CreateConversationSessionResponse(
+            session_id=session.session_id,
+            model_configured=bool(getattr(resolved_model, "configured", True)),
+            opening=ADAPTIVE_OPENING,
+        )
+
+    @app.post("/api/owner-v2/conversation/sessions/contextual")
+    def create_contextual_session(request: DynamicCoverageRequest) -> CreateConversationSessionResponse:
+        session = runtime.create_contextual_session(
+            aggregate_coverage=request.aggregate_coverage,
+            completed_results=request.completed_results,
+        )
         return CreateConversationSessionResponse(
             session_id=session.session_id,
             model_configured=bool(getattr(resolved_model, "configured", True)),
