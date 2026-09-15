@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from hdmatch.api.life_patterns_v2_owner_recoverability import RecoverabilityCoverageOpenAIModel
 from hdmatch.api.life_patterns_v2_owner_scope import (
+    CROSS_THREAD_CONTEXT_INSTRUCTIONS,
     GLOBAL_LABEL_SCOPE_INSTRUCTIONS,
     ScopeAwareRecoverabilityOpenAIModel,
     create_life_patterns_v2_owner_scope_app,
@@ -55,6 +56,8 @@ def test_global_label_scope_guard_reaches_normal_planner(monkeypatch) -> None:
     assert "work/rest or work-life balance" in instructions
     assert "practical versus spiritual priorities" in instructions
     assert "mostly one domain" in instructions
+    assert "CROSS-THREAD CONTEXT" in instructions
+    assert "NOT a participant utterance" in instructions
 
 
 def test_global_label_scope_guard_reaches_refinement_planner(monkeypatch) -> None:
@@ -85,6 +88,7 @@ def test_global_label_scope_guard_reaches_refinement_planner(monkeypatch) -> Non
     instructions = str(calls[0]["instructions"])
     assert "GLOBAL-LABEL SCOPE" in instructions
     assert "prioritize this scope question over another observer-view question" in instructions
+    assert "CROSS-THREAD CONTEXT" in instructions
 
 
 def test_global_label_scope_guard_reaches_initial_focus_triage(monkeypatch) -> None:
@@ -102,10 +106,14 @@ def test_global_label_scope_guard_reaches_initial_focus_triage(monkeypatch) -> N
     )
 
     assert decision == "continue"
-    assert "GLOBAL-LABEL SCOPE" in str(calls[0]["instructions"])
+    instructions = str(calls[0]["instructions"])
+    assert "GLOBAL-LABEL SCOPE" in instructions
+    assert "CROSS-THREAD CONTEXT" in instructions
 
 
-def test_scope_app_marks_guard_active() -> None:
+def test_scope_app_marks_guards_active() -> None:
     app = create_life_patterns_v2_owner_scope_app()
     assert app.state.global_label_scope_guard is True
+    assert app.state.cross_thread_planning_context is True
     assert GLOBAL_LABEL_SCOPE_INSTRUCTIONS.startswith("GLOBAL-LABEL SCOPE")
+    assert CROSS_THREAD_CONTEXT_INSTRUCTIONS.startswith("CROSS-THREAD CONTEXT")
