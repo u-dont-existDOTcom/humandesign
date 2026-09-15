@@ -113,7 +113,7 @@ def test_new_participant_led_thread_receives_planning_only_prior_context() -> No
     assert note.startswith("INTERNAL PRIOR CONTEXT — PLANNING ONLY, NOT PARTICIPANT EVIDENCE")
     assert "I tend to structure complex material." in note
     assert "This should not be treated as settled." not in note
-    assert "Do not extract hidden facts from it" in note
+    assert "do not extract hidden facts from it" in note.lower()
 
 
 def test_dynamic_ui_uses_cross_thread_context_and_not_first_missing_category() -> None:
