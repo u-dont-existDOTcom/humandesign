@@ -7,6 +7,7 @@ from hdmatch.api.life_patterns_v2_owner_conversation import (
 )
 from hdmatch.api.life_patterns_v2_owner_pattern_first import PatternFirstOpenAIConversationModel
 from hdmatch.api.life_patterns_v2_owner_reasoning import (
+    ADAPTIVE_HTML,
     AdaptivePatternFirstOpenAIConversationModel,
     AdaptiveRefinablePatternSession,
 )
@@ -44,6 +45,9 @@ def test_adaptive_planner_restores_followup_gate_without_second_audit(monkeypatc
     assert "Simple is fine; generic is not" in instructions
     assert "PERSON-SPECIFIC SIGNAL" in instructions
     assert "Explanatory novelty is NOT required" in instructions
+    assert "SELF-VIEW VS OBSERVER-VIEW" in instructions
+    assert "AUTOMATIC VS DELIBERATE" in instructions
+    assert "CAPACITY VS PREFERRED USE" in instructions
     assert result.move_type == "surface_hypothesis"
 
 
@@ -79,6 +83,47 @@ def test_specificity_gate_contract_redirects_clearly_generic_pattern(monkeypatch
     assert "getting hungry after not eating" in instructions
     assert "Do not infer that every common emotion or behavior is generic" in instructions
     assert "If uncertain, choose continue" in instructions
+    assert "broad evaluative self-label" in instructions
+    assert "people who know the participant well" in instructions
+
+
+def test_refinement_prompt_is_non_repetitive_target_blind_and_discriminating(monkeypatch) -> None:
+    calls: list[dict[str, object]] = []
+
+    def fake_call(self, **kwargs):
+        calls.append(kwargs)
+        return {
+            "reply": "Do people who know you well tend to describe you as steady too, or differently?",
+            "move_type": "follow_up",
+            "hypothesis_proposition": None,
+            "evidence_fact_ids": [],
+        }
+
+    monkeypatch.setattr(PatternFirstOpenAIConversationModel, "_conversation_call_json", fake_call)
+    model = AdaptivePatternFirstOpenAIConversationModel(api_key="test")
+
+    result = model.plan_refinement_turn(
+        current_proposition="I generally experience myself as steady across the day.",
+        refinement_mode="continue",
+        current_episode_id=None,
+        episodes=(),
+        operative_facts=(),
+        recent_conversation=(),
+    )
+
+    assert result.move_type == "follow_up"
+    assert "people who know" in result.reply
+    assert len(calls) == 1
+    assert calls[0]["schema_name"] == "life_patterns_refinement_move_v1"
+    instructions = str(calls[0]["instructions"])
+    assert "MUST NOT repeat" in instructions
+    assert "SELF-VIEW VS OBSERVER-VIEW" in instructions
+    assert "AUTOMATIC VS DELIBERATE" in instructions
+    assert "CAPACITY VS PREFERRED USE" in instructions
+    assert "people who know you well" in instructions
+    lowered = instructions.lower()
+    assert "astrology" not in lowered
+    assert "human design" not in lowered
 
 
 class GenericThenSpecificFocusModel:
@@ -259,6 +304,36 @@ def test_unknown_counterexample_does_not_force_more_interrogation() -> None:
     assert second["pattern_active"] is True
     assert second["move_type"] == "surface_hypothesis"
     assert session.core.active_proposal_id is not None
+
+
+class KeepTryingRefinementModel:
+    configured = True
+
+    def plan_refinement_turn(self, **kwargs) -> ConversationMove:
+        assert kwargs["refinement_mode"] == "continue"
+        return ConversationMove(
+            reply="Do people who know you well tend to describe you as steady too, or differently?",
+            move_type="follow_up",
+        )
+
+
+def test_keep_trying_asks_for_new_information_instead_of_repeating_synthesis() -> None:
+    session = AdaptiveRefinablePatternSession(
+        session_id="OWNER-TEST",
+        model=KeepTryingRefinementModel(),  # type: ignore[arg-type]
+    )
+    old = "A tentative pattern is that you generally experience yourself as steady across the day."
+    session.core.active_proposal_id = "PROP-TEST"
+    session.conversation.append({"turn_id": "TURN-OLD", "role": "assistant", "text": old})
+
+    result = session.continue_pattern()
+
+    assert result["move_type"] == "follow_up"
+    assert result["reply"] != old
+    assert "people who know" in result["reply"]
+    assert session.conversation[-2]["role"] == "user"
+    assert session.conversation[-2]["text"] == "Keep trying to pin it down."
+    assert "bubble('user','Keep trying to pin it down.')" in ADAPTIVE_HTML
 
 
 class RejectionReasoningModel:
