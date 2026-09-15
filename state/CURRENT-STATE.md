@@ -1,6 +1,6 @@
 # Current state
 
-## Life Patterns — 2026-09-14
+## Life Patterns — 2026-09-15
 
 Active task: `life-patterns-v2-owner-multi-pattern-continuation` — **OWNER REAL-DATA BROWSER JUDGMENT REQUIRED**.
 
@@ -18,100 +18,95 @@ The surfaced fact-review/paraphrase workflow is **FAILED / REPLACED**.
 
 The hidden-ledger pattern-first replacement completed a bounded real owner session successfully and was judged **GOOD / PASS / PRELIMINARY POSITIVE**. Multi-pattern continuation was added. Two later liveness defects were repaired: uncertainty after a synthesis no longer forces terminal unresolved, and `No` no longer terminates the entire inquiry unless the owner explicitly chooses `Reject and stop this thread`.
 
-A later reasoning repair addressed unsupported comparative/cross-context synthesis. Direct owner testing then exposed a more fundamental regression: the interviewer had become severely over-interrogative even on an intentionally ordinary recurring pattern, repeatedly seeking contrasts and distinctions after the useful pattern was already clear.
+A later reasoning repair addressed unsupported comparative/cross-context synthesis. Direct owner testing then exposed a more fundamental regression: the interviewer had become severely over-interrogative even after the useful formulation was already clear. Repository comparison showed that later mandatory episode/counterexample/audit scaffolding had overridden the historical adaptive burden rules, so that scaffold was removed and adaptive stopping was restored.
+
+The owner then identified an even more basic target error: **recurrence is not sufficient for a useful Life Pattern**. A high-base-rate human regularity can repeat perfectly while carrying almost no information about what is characteristic of this person.
 
 No private owner interview narrative is committed; only abstract product findings are preserved.
 
-## Current causal diagnosis: requirement accretion
-
-Repository comparison confirms the owner's judgment that the earlier interview conduct was better.
-
-The historical interviewer explicitly required adaptive burden control:
-
-- ask examples or clarification only when they add something important;
-- main questions, probes, and follow-ups are choices, not a mandatory loop;
-- before any follow-up, identify what different answers would materially change; if neither would change the retained interpretation, move on;
-- do not request restatement of information already supplied;
-- do not demand hypothetical edge cases;
-- unknown / declined may remain unresolved without reopening;
-- do not hunt for contradiction;
-- when a question is called obvious, redundant, confusing, or already answered, inspect the interviewer question first and drop it when not materially necessary.
-
-The later v2 product layer accidentally hardened assistant-inferred scaffolding that was **not required by the accepted v2 semantic contract**:
-
-1. pressure for at least two concrete episodes;
-2. a boundary/counterexample before synthesis;
-3. a hard `boundary_answered` prerequisite;
-4. a two-episode proposal-creation requirement;
-5. pressure for explanatory compression/novelty;
-6. a later semantic boundary classifier and second pre-surface audit that strengthened the same interrogative scaffold.
-
-The v2 record schema requires grounded evidence and participant adjudication, but not two episodes, a mandatory counterexample, or explanatory novelty. The historical Life Patterns continuity finding likewise says to request only enough evidence to anchor/challenge a claim and to ask for an exception/counterexample **without forcing one**.
-
-This is classified as **requirement accretion causing product regression**, not simply a low-intelligence model response.
-
-## Current participant-facing strategy: adaptive stopping restored
+## Current product criterion: person-specific signal
 
 Repair receipt:
 
-`state/LIFE-PATTERNS-v2-OWNER-ADAPTIVE-STOPPING-REPAIR-2026-09-14.md`
+`state/LIFE-PATTERNS-v2-OWNER-PERSON-SPECIFICITY-GATE-2026-09-15.md`
 
-The deployed owner interview now restores the earlier information-gain / burden rule while retaining the hidden v2 ledger and participant authority.
+The participant-facing product now distinguishes:
+
+- **recurrence** — whether something happens repeatedly; from
+- **person-specific information** — whether the formulation tells us something meaningfully characteristic of this participant rather than merely describing an obvious common human regularity.
+
+A pattern may be simple and may concern a common human dimension. It does **not** have to be rare, unusual, dramatic, or surprising. But a retained Life Pattern should contain individual-differentiating structure such as timing, threshold, intensity, sequence, context sensitivity, exception structure, developmental change, or another meaningful discriminator.
+
+Clearly high-base-rate physiological/situational regularities with no such modifier are low-signal and are redirected rather than elevated into person-level Life Patterns. If commonness/specificity is uncertain, the interviewer continues rather than filtering the candidate out.
+
+The hidden evidence substrate remains open-world: ordinary event facts may still be valid facts. This is a participant-facing admission/synthesis criterion for what is worth treating as a Life Pattern.
+
+## Current participant-facing strategy
+
+The deployed owner interview now combines **person-specificity admission** with the restored adaptive information-gain / burden rule.
 
 Current rules:
 
+- opening asks for something characteristic of the participant, not merely recurrent;
+- a first-turn target-theory-blind specificity gate runs **before episode evidence collection**;
+- clearly generic/high-base-rate candidates are redirected immediately and create no hidden episode/fact records;
+- the participant can add a characteristic qualifier or choose a different pattern;
+- common dimensions with person-specific timing/threshold/intensity/context/sequence/exceptions/developmental change remain eligible;
+- uncertain specificity is admitted rather than rejected;
 - **no fixed episode quota**;
 - **no mandatory counterexample/boundary gate**;
-- another question is admitted only when plausible answers can materially change the retained pattern's meaning, scope, context, timing, exceptions, or uncertainty;
-- when another answer would not materially change the pattern, surface the narrow supported synthesis;
-- simple/ordinary patterns are allowed to remain simple/ordinary; do not manufacture depth;
+- another question is admitted only when plausible answers can materially change the retained person-specific pattern's meaning, scope, context, timing, exceptions, uncertainty, or information value;
 - unknown, not remembered, inapplicable, or declined may remain unresolved without repeated drilling;
 - do not ask participants to distinguish internal states they could not reasonably observe;
 - do not restate or re-ask supplied information;
 - additive factors remain additive unless comparative evidence exists;
 - context-specific factors are not projected across contexts without support;
 - explanatory novelty is not required;
-- one grounded episode may be sufficient when paired with an explicit participant-reported recurring self-description;
+- **simple is fine; generic is not**;
+- one grounded episode may be sufficient when paired with an explicit participant-reported recurring, person-specific self-description;
 - one isolated occurrence still cannot be silently promoted to recurrence;
 - rejected-synthesis recovery remains model-led;
 - post-proposal evidence timing and all accepted v2 scientific/privacy invariants remain unchanged.
 
-The previous hidden second-pass hypothesis audit is disabled on the adaptive path because direct owner evidence showed that the stricter scaffold was increasing participant burden rather than improving the product outcome.
-
 ## Verification / deployment
 
-Adaptive implementation: `src/hdmatch/api/life_patterns_v2_owner_reasoning.py` (compatibility entry point retained; it now serves the adaptive interviewer).
+Specificity-aware adaptive implementation:
 
-Regression coverage verifies adaptive stopping, no mandatory episode/counterexample quota, one grounded episode + recurring self-report sufficiency, protection against single-event recurrence promotion, non-reopening after `I don't know`, and model-led rejection recovery.
+- `src/hdmatch/api/life_patterns_v2_owner_reasoning.py`
+- `tests/unit/test_life_patterns_v2_owner_reasoning.py`
 
-Exact verified application head: `26057ea84366bd56c59a0725fe7681c7544d3800`.
+Exact code/test head: `1ad5b09cf1ec872bcf7ec3c3dbd05136bca7fbf9`.
 
-GitHub Actions run `34910994811`: **SUCCESS** — unit/integration tests, Ruff, and strict mypy all passed. The immediately preceding run showed **732 passed / 7 skipped** and failed only on one Ruff style suggestion; the lint-only repair produced the fully green final run.
+GitHub Actions run `34912457794`: **SUCCESS** — tests, Ruff, and strict mypy all passed.
+
+Regression coverage now includes the exact conceptual correction: a clearly generic recurring physiological regularity is redirected before any episode/fact evidence is created, while a subsequent genuinely characteristic qualifier can become the active pattern focus. It also retains protection against silently promoting one isolated event into recurrence and against reopening unknown counterexamples indefinitely.
 
 Existing authenticated owner-only Railway service reused:
 
-- deployment: `f4a8e388-311f-4418-addf-f4291afc1836`;
-- source head: `26057ea84366bd56c59a0725fe7681c7544d3800`;
+- deployment: `bc741597-51c1-44ec-be21-17e5495b15af`;
+- application source head: `5dc35711105c88a681e843558448b2389c758276`;
 - status: **SUCCESS**;
 - application startup complete;
 - `/healthz` -> HTTP `200`;
-- health contract declares `adaptive_information_gain_gate=true`, `fixed_episode_quota=false`, `mandatory_counterexample_gate=false`, `hypothesis_support_audit=false`.
+- health contract includes `person_specificity_gate=true`, `adaptive_information_gain_gate=true`, `fixed_episode_quota=false`, `mandatory_counterexample_gate=false`, `hypothesis_support_audit=false`.
 
 No new service, broadened access, persistence layer, target-model activity, or private transcript logging was introduced.
 
 ## Current outcome / next gate
 
-Outcome advancement: **PRELIMINARY POSITIVE, WITH A REQUIREMENT-ACCRETION REGRESSION IDENTIFIED AND THE PRIOR ADAPTIVE INTERVIEW STRATEGY RESTORED AS THE CURRENT CANDIDATE**.
+Outcome advancement: **PRELIMINARY POSITIVE, WITH RECURRENCE-VS-SPECIFICITY TARGET ERROR REPAIRED IN THE CURRENT OWNER CANDIDATE**.
 
-Strategy efficacy: **ADAPTIVE RESTORATION VIABLE; OWNER RETEST REQUIRED**.
+Strategy efficacy: **ADAPTIVE + PERSON-SPECIFICITY CANDIDATE VIABLE; OWNER RETEST REQUIRED**.
 
 Next owner test:
 
-1. Use one intentionally ordinary/simple recurring pattern. The interviewer should stop when another question would not materially change the formulation instead of trying to discover hidden complexity.
-2. Use one genuinely nuanced/context-dependent pattern. It should still ask a discriminating question when different answers would materially change the synthesis.
-3. Confirm that `I don't know` and unobservable distinctions are not repeatedly reopened.
-4. If a synthesis is wrong, use `No — keep investigating` and judge whether it repairs intelligently without requiring obvious restatement.
-5. Use `Finish for now` and judge whether the session summary is useful enough to justify durable persistence / a real Life Patterns Map.
+1. Submit a deliberately generic/high-base-rate human regularity. The interviewer should immediately explain that it carries little person-specific information and redirect **before collecting episode evidence**.
+2. Then add a genuinely characteristic qualifier or choose a separate nuanced pattern. It should proceed normally.
+3. For a simple but person-specific pattern, it should not manufacture depth merely because the formulation is simple.
+4. For a nuanced/context-dependent pattern, it should still ask a discriminating question when different answers could materially change the formulation.
+5. Confirm that `I don't know` and unobservable distinctions are not repeatedly reopened.
+6. If a synthesis is wrong, use `No — keep investigating` and judge whether it repairs intelligently without requiring obvious restatement.
+7. Use `Finish for now` and judge whether the session summary is useful enough to justify durable persistence / a real Life Patterns Map.
 
 Owner-triggered copy/export remains available. Automatic transcript logging remains out of scope.
 
