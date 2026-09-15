@@ -20,7 +20,7 @@ Current strategy:
 
 Runtime elicitation receives no chart, birth target, expected answer direction, target mapping, candidate score/rank, or historical AstroHD crosswalk.
 
-The interviewer preserves person-specificity, adaptive burden, observer/self triangulation, non-repetitive refinement, participant authority, and evidence timing.
+The interviewer preserves person-specificity, adaptive burden, observer/self triangulation, non-repetitive refinement, participant authority, evidence timing, and a free-form conversational frontier whenever a synthesis remains unsettled.
 
 ## Owner recoverability criterion
 
@@ -110,19 +110,35 @@ Receipts:
 
 - `state/LIFE-PATTERNS-v2-OWNER-ASTROHD-RECOVERABILITY-GATE-2026-09-15.md`
 - `state/LIFE-PATTERNS-v2-OWNER-CLIENT-SIDE-MEASUREMENT-FREEZE-2026-09-15.md`
+- `state/LIFE-PATTERNS-v2-OWNER-SYNTHESIS-REVIEW-UX-REPAIR-2026-09-15.md`
+
+## Synthesis-review conversational frontier repair
+
+Direct owner testing exposed that the prior synthesis review collapsed `explain what is wrong/incomplete` and `author exact replacement wording` into the same UI path. Explanatory text could therefore be treated as a replacement proposition, while the ordinary chat box could disappear even though the inquiry was still nonfinal.
+
+The live candidate now:
+
+- keeps free-form chat available whenever a synthesis remains open;
+- treats buttons as shortcuts rather than exclusive response channels;
+- separates `Close — I’ll explain what needs changing` from `Edit exact wording myself`;
+- gives the exact-wording editor a Back action and labels it explicitly as the wording that would be recorded;
+- returns undiscussed-situation or uncertain grounding to free-form conversation instead of auto-finalizing unresolved;
+- clears stale revision controls when ordinary chat resumes.
+
+This changes participant-facing control flow only. The accepted v2 evidence contract and runtime blinding remain unchanged.
 
 ## Local pre-scoring freeze
 
-The live browser now has **Freeze/export measurement**. It creates a local JSON from the completed participant-adjudicated results and aggregate coverage, includes the per-pattern freeze hashes, computes a client-side SHA-256 `measurement_bundle_sha256`, and downloads the bundle without sending it to a target-aware endpoint or repository persistence.
+The live browser has **Freeze/export measurement**. It creates a local JSON from the completed participant-adjudicated results and aggregate coverage, includes the per-pattern freeze hashes, computes a client-side SHA-256 `measurement_bundle_sha256`, and downloads the bundle without sending it to a target-aware endpoint or repository persistence.
 
 The unchanged exported JSON is the handoff into the owner-only post-freeze recovery regression.
 
 ## Verification / deployment
 
-- current recoverability application head: `00e226c55f5edf915310b2c07bb66ffc24f3608d`;
-- current UI/regression test head: `1f9bba822322beadffffc82ef3920d729499e4b6`;
-- GitHub Actions run `34991996940`: **SUCCESS** — tests, Ruff, strict mypy;
-- Railway deployment `46f43555-7323-42ac-a802-08f5f7dfe448`: **SUCCESS** from exact application head `00e226c55f5edf915310b2c07bb66ffc24f3608d`;
+- current recoverability/synthesis-review application head: `d281ce7433c261585115c571384d099595b96cce`;
+- current synthesis-review regression test head: `a601b4c10261c6afefe51bb149809e4e16e930f7`;
+- GitHub Actions run `35019754274`: **SUCCESS** — tests, Ruff, strict mypy;
+- Railway deployment `eabec6ca-5622-4f91-a953-ece4f2bef088`: **SUCCESS** from exact application head `d281ce7433c261585115c571384d099595b96cce`;
 - application startup complete;
 - `/healthz`: HTTP **200**.
 
@@ -130,15 +146,19 @@ The development surface remains passwordless under prior explicit owner authorit
 
 ## Current gate
 
-The instrument has **not** yet passed the DOB/time criterion because no genuinely fresh v2 owner measurement has yet been frozen and rescored.
+The synthesis-review defect is repaired in the live candidate, but owner consumer-seam judgment and the DOB/time criterion remain open.
 
 Next:
 
-1. owner refreshes/reopens the live development interview and completes the v2 target-blind measurement flow;
-2. click **Freeze/export measurement** and preserve the downloaded JSON unchanged;
-3. apply the narrowly authorized owner-self historical recovery procedure only after that freeze;
-4. evaluate the result with the executable recovery gate;
-5. if recovery is worse than the historical benchmark, revise the instrument rather than weakening the criterion.
+1. owner refreshes/reopens and reproduces synthesis review;
+2. verify chat remains available alongside synthesis buttons;
+3. verify conversational feedback is distinct from exact-wording authoring and the latter has Back;
+4. verify undiscussed/uncertain revision grounding returns to chat;
+5. continue the fresh target-blind measurement if that seam passes;
+6. click **Freeze/export measurement** and preserve the downloaded JSON unchanged;
+7. apply the narrowly authorized owner-self historical recovery procedure only after that freeze;
+8. evaluate the result with the executable recovery gate;
+9. if recovery is worse than the historical benchmark, revise the instrument rather than weakening the criterion.
 
 General target-model activity remains closed. Still unauthorized: external participant collection/recruitment, automated participant coding, chart-aware questioning, external-participant target scoring, merge/release, publication, production expansion, and unapproved spending.
 
