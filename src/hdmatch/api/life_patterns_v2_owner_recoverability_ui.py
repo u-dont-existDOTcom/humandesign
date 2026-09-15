@@ -91,6 +91,15 @@ def _build_html() -> str:
         1,
     )
 
+    # A revision that depends on un-discussed situations is not a terminal state. The
+    # old UI immediately submitted it as unresolved. Keep the inquiry executable and
+    # invite the participant to describe the missing evidence in ordinary chat instead.
+    html = html.replace(
+        "if(groundingChoice==='examples')show('finalChoice');else submitRevision(null);",
+        "if(groundingChoice==='examples'){show('finalChoice')}else{hide('finalChoice');document.querySelectorAll('.grounding').forEach(b=>b.disabled=false);show('composer');$('patternStatus').className='note';$('patternStatus').textContent=groundingChoice==='other_situations'?'Tell me about the other situation or pattern in the chat box below so we can investigate it before recording the revision.':'If you are not sure, you can explain what is uncertain in the chat box below, or use Leave it unresolved for now.';$('message').focus()}",
+        1,
+    )
+
     # If the participant starts talking instead of using the exact-wording form, close
     # that form and return its controls to a clean state. The backend keeps the same
     # active proposal open and treats the typed message as refinement evidence.
