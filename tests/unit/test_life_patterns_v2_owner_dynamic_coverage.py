@@ -92,9 +92,34 @@ def test_runtime_skips_completed_dimension_and_seeds_natural_next_question() -> 
     assert session.pattern_focus_established is True
 
 
+def test_new_participant_led_thread_receives_planning_only_prior_context() -> None:
+    runtime = RecoverabilityCoverageRuntime(model=DynamicPlannerModel())  # type: ignore[arg-type]
+    session = runtime.create_contextual_session(
+        aggregate_coverage=[
+            {
+                "domain_id": RECOVERABILITY_DOMAINS[0].domain_id,
+                "status": "sufficient",
+                "reason": "The earlier thread already established this dimension.",
+            }
+        ],
+        completed_results=[
+            {"status": "accepted", "wording": "I tend to structure complex material."},
+            {"status": "rejected", "wording": "This should not be treated as settled."},
+        ],
+    )
+
+    assert len(session.conversation) == 1
+    note = session.conversation[0]["text"]
+    assert note.startswith("INTERNAL PRIOR CONTEXT — PLANNING ONLY, NOT PARTICIPANT EVIDENCE")
+    assert "I tend to structure complex material." in note
+    assert "This should not be treated as settled." not in note
+    assert "Do not extract hidden facts from it" in note
+
+
 def test_dynamic_ui_uses_cross_thread_context_and_not_first_missing_category() -> None:
     assert "Continue interview" in DYNAMIC_RECOVERABILITY_HTML
     assert "/api/owner-v2/conversation/coverage/next-session" in DYNAMIC_RECOVERABILITY_HTML
+    assert "/api/owner-v2/conversation/sessions/contextual" in DYNAMIC_RECOVERABILITY_HTML
     assert "aggregate_coverage:Object.values(coverageAggregate)" in DYNAMIC_RECOVERABILITY_HTML
     assert "completed_results:completedResults.map" in DYNAMIC_RECOVERABILITY_HTML
     assert "startCoverageDomain(missing[0])" not in DYNAMIC_RECOVERABILITY_HTML
@@ -112,4 +137,5 @@ def test_health_declares_dynamic_coverage_and_cross_thread_reuse() -> None:
 
     assert payload["dynamic_coverage_selection"] is True
     assert payload["cross_thread_coverage_reuse"] is True
+    assert payload["cross_thread_planning_context"] is True
     assert payload["canonical_screeners_are_fallbacks_not_script"] is True
