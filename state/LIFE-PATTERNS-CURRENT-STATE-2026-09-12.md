@@ -12,133 +12,81 @@ The accepted v2 hidden evidence contract remains unchanged: open-world episode f
 
 No private owner interview narrative is stored in repository state.
 
-## Current participant-facing architecture
+## Current architecture
 
-Current strategy:
+`participant-led characteristic patterns -> all-answer/all-dimension coverage assessment -> dynamic information-gain follow-up only for remaining gaps -> explicit missingness -> participant-adjudicated results -> local SHA-256 freeze/export -> owner-only post-freeze recovery regression`
 
-`participant-led characteristic patterns -> fixed neutral recoverability dimensions -> adaptive probing only where measurement remains open -> explicit missingness -> participant-adjudicated pattern results -> local SHA-256 freeze/export -> owner-only post-freeze recovery regression`
+The runtime receives no chart, birth target, expected answer direction, target mapping, candidate score/rank, or historical AstroHD crosswalk.
 
-Runtime elicitation receives no chart, birth target, expected answer direction, target mapping, candidate score/rank, or historical AstroHD crosswalk.
+Current participant-facing safeguards include person-specificity, adaptive burden, observer/self and inner/outer triangulation, global-label scope checking, non-repetitive refinement, free-form chat in nonfinal synthesis states, reversible exact-wording editing, and cross-thread reuse of settled information.
 
-The interviewer preserves person-specificity, adaptive burden, observer/self triangulation, non-repetitive refinement, participant authority, evidence timing, and a free-form conversational frontier whenever a synthesis remains unsettled.
+## Fixed measurement / dynamic interview
 
-## Owner recoverability criterion
+The active `life-patterns-recoverability-coverage-v2` blueprint contains **23 required neutral dimensions**. These are fixed scientific constructs, **not a fixed question order**.
 
-The owner explicitly requires the new instrument to retain enough behavioral information to reproduce the historical owner AstroHD DOB/time recovery; otherwise the instrument fails.
+Coverage statuses: `unassessed`, `partial`, `sufficient`, `unknown`, `inapplicable`, `declined`.
 
-Historical development benchmark:
+Current rules:
+
+- each completed participant-led thread is assessed against all dimensions;
+- one answer can satisfy multiple dimensions when supported;
+- completed dimensions are not re-asked;
+- partial dimensions receive only a question about the unresolved discriminator;
+- still-open dimensions are selected by expected information gain and conversational continuity, not registry order;
+- a single question may inform several open dimensions;
+- canonical screeners are fallback wording, not the normal script;
+- new participant-led threads receive settled prior context for planning so they do not repeat earlier questions;
+- internal cross-thread context is planning-only and cannot create participant evidence;
+- rejected/unresolved pattern wording is not treated as settled;
+- participant-facing progress does not expose an ordered category queue.
+
+The science is fixed at the **measurement layer**, not the sentence/order layer.
+
+Receipt: `state/LIFE-PATTERNS-v2-OWNER-DYNAMIC-COVERAGE-REPAIR-2026-09-15.md`.
+
+## Global-label scope
+
+A broad participant claim such as `balanced in general` cannot be silently narrowed to mood because emotional evidence happened to be collected first, nor generalized from mood to all of life. When broad claim scope remains unresolved, the interviewer asks one neutral cross-domain scope question unless the participant has already defined it.
+
+Receipt: `state/LIFE-PATTERNS-v2-OWNER-GLOBAL-LABEL-SCOPE-REPAIR-2026-09-15.md`.
+
+## Synthesis review
+
+A nonfinal synthesis always retains free-form chat. `Close — I’ll explain what needs changing` is conversational feedback; `Edit exact wording myself` is a separate reversible authoring path with Back. Explanatory feedback is not silently recorded as the final proposition.
+
+Receipt: `state/LIFE-PATTERNS-v2-OWNER-SYNTHESIS-REVIEW-UX-REPAIR-2026-09-15.md`.
+
+## Owner DOB/time recoverability criterion
+
+The new instrument fails if a fresh frozen interview no longer preserves enough behavioral information for the historical owner AstroHD procedure to reproduce the prior development result.
+
+Historical benchmark:
 
 - 876,601 hourly century candidates;
 - exact recorded moment merged hourly rank **#2**;
-- leading hourly state on the same recorded date;
-- recorded date is the **#1 distinct refined neighborhood**;
-- best refined minute is **11 minutes** from recorded time.
+- recorded date **#1 distinct refined neighborhood**;
+- best refined minute **11 minutes** from recorded time.
 
-Frozen baseline:
+Frozen baseline: `reference/research/life_patterns_astrohd_owner_recovery_baseline_v1.json`.
 
-`reference/research/life_patterns_astrohd_owner_recovery_baseline_v1.json`
+Executable gate: `src/hdmatch/evaluation/life_patterns_owner_recovery_gate.py`.
 
-Executable outcome gate:
+Coverage completion alone cannot pass. Development-only post-freeze crosswalk: `reference/research/life_patterns_astrohd_owner_recovery_crosswalk_v1.json`.
 
-`src/hdmatch/evaluation/life_patterns_owner_recovery_gate.py`
+## Pre-scoring freeze
 
-Coverage completion does not satisfy this gate. A fresh post-freeze run must use the same declared historical search procedure and meet or improve the historical date/time signature.
+**Freeze/export measurement** produces a local SHA-256-frozen JSON bundle from participant-adjudicated results and aggregate coverage. The bundle is not sent to target-aware scoring during elicitation. Only after freeze may the owner-self historical recovery regression run.
 
-This is an owner development regression criterion, not untouched validation of astrology or Human Design.
+## Mission Control correction capture
 
-## Superseded broad coverage partition
-
-The previous `life-patterns-required-coverage-v1` 10-domain candidate introduced useful standardized mechanics, but is too coarse for the recoverability criterion. A broad domain could close after one narrow facet while omitting historically score-bearing distinctions inside the same bucket.
-
-Its measurement mechanics remain useful: version/hash, explicit coverage states, evidence citation, missingness, adaptive canonical screeners, and `Continue required coverage`.
-
-## Active recoverability blueprint v2
-
-Version: `life-patterns-recoverability-coverage-v2`.
-
-Required neutral dimensions: **23**.
-
-1. complexity/detail/structure;
-2. insight translation;
-3. unresolved-question return;
-4. original contribution versus inherited method;
-5. persuasion capacity versus preferred use;
-6. entry/recognition/role acceptance;
-7. network opportunity pathways;
-8. role projection/misrecognition;
-9. immediate bodily/felt signals;
-10. autonomy/direction under external roles;
-11. home/sensory/sanctuary conditions;
-12. romantic/attachment dynamics;
-13. emotional baseline/permeability;
-14. work energy across intensity/duration;
-15. consequential effort/struggle/purpose;
-16. correction threshold;
-17. retreat/privacy/re-entry;
-18. competing-value tension;
-19. resources/status/security/sovereignty motive;
-20. developmental phases/learned change;
-21. rhythm/routine/continuity;
-22. concentrated focus/repetition/mastery;
-23. needs sensitivity/responsibility.
-
-Natural participant-led evidence may satisfy multiple dimensions. Fixed sentence wording and fixed episode counts are not required. Coverage statuses remain `unassessed`, `partial`, `sufficient`, `unknown`, `inapplicable`, and `declined`; silence is never absence.
-
-Runtime:
-
-- `src/hdmatch/api/life_patterns_recoverability_domains.py`
-- `src/hdmatch/api/life_patterns_v2_owner_recoverability.py`
-- `src/hdmatch/api/life_patterns_v2_owner_recoverability_ui.py`
-- `src/hdmatch/api/life_patterns_v2_owner_deployed_app.py`
-
-## AstroHD profile crosswalk
-
-Development-only, post-freeze crosswalk:
-
-`reference/research/life_patterns_astrohd_owner_recovery_crosswalk_v1.json`
-
-It covers:
-
-- all **19 score-bearing historical merged behavior clusters**;
-- all **19 clean V3.6 information-bearing observables**.
-
-Do not call those individually necessary. There is no leave-one-out recovery evidence proving individual necessity. The two explicitly post-selection V3.6 carrier refinements are excluded from survey requirements.
-
-The crosswalk is not imported into the participant runtime.
-
-Receipts:
-
-- `state/LIFE-PATTERNS-v2-OWNER-ASTROHD-RECOVERABILITY-GATE-2026-09-15.md`
-- `state/LIFE-PATTERNS-v2-OWNER-CLIENT-SIDE-MEASUREMENT-FREEZE-2026-09-15.md`
-- `state/LIFE-PATTERNS-v2-OWNER-SYNTHESIS-REVIEW-UX-REPAIR-2026-09-15.md`
-
-## Synthesis-review conversational frontier repair
-
-Direct owner testing exposed that the prior synthesis review collapsed `explain what is wrong/incomplete` and `author exact replacement wording` into the same UI path. Explanatory text could therefore be treated as a replacement proposition, while the ordinary chat box could disappear even though the inquiry was still nonfinal.
-
-The live candidate now:
-
-- keeps free-form chat available whenever a synthesis remains open;
-- treats buttons as shortcuts rather than exclusive response channels;
-- separates `Close — I’ll explain what needs changing` from `Edit exact wording myself`;
-- gives the exact-wording editor a Back action and labels it explicitly as the wording that would be recorded;
-- returns undiscussed-situation or uncertain grounding to free-form conversation instead of auto-finalizing unresolved;
-- clears stale revision controls when ordinary chat resumes.
-
-This changes participant-facing control flow only. The accepted v2 evidence contract and runtime blinding remain unchanged.
-
-## Local pre-scoring freeze
-
-The live browser has **Freeze/export measurement**. It creates a local JSON from the completed participant-adjudicated results and aggregate coverage, includes the per-pattern freeze hashes, computes a client-side SHA-256 `measurement_bundle_sha256`, and downloads the bundle without sending it to a target-aware endpoint or repository persistence.
-
-The unchanged exported JSON is the handoff into the owner-only post-freeze recovery regression.
+Owner-explicit logic corrections are durably captured on the UDA branch `feedback/mission-control-logic-corrections-20260915`, draft PR #127. Current truth: **`CAPTURED_BRANCH_ONLY`**. The dynamic-interview correction is `feedback/mission-control/SDF-20260915-LIFE-PATTERNS-DYNAMIC-COVERAGE-008.json`.
 
 ## Verification / deployment
 
-- current recoverability/synthesis-review application head: `d281ce7433c261585115c571384d099595b96cce`;
-- current synthesis-review regression test head: `a601b4c10261c6afefe51bb149809e4e16e930f7`;
-- GitHub Actions run `35019754274`: **SUCCESS** — tests, Ruff, strict mypy;
-- Railway deployment `eabec6ca-5622-4f91-a953-ece4f2bef088`: **SUCCESS** from exact application head `d281ce7433c261585115c571384d099595b96cce`;
+- dynamic application head: `f660eee7efe5830f2701ea0b433361ddc6cc1e69`;
+- regression-test head: `e4a2064a5c6dc1f984f4c70427ce2c72839d63f4`;
+- GitHub Actions run `35023996133`: **SUCCESS** — tests, Ruff, strict mypy;
+- Railway deployment `9dbd21d2-fe30-407d-90b6-917a7c77dd5a`: **SUCCESS** from exact application head `f660eee7efe5830f2701ea0b433361ddc6cc1e69`;
 - application startup complete;
 - `/healthz`: HTTP **200**.
 
@@ -146,19 +94,18 @@ The development surface remains passwordless under prior explicit owner authorit
 
 ## Current gate
 
-The synthesis-review defect is repaired in the live candidate, but owner consumer-seam judgment and the DOB/time criterion remain open.
+The dynamic interview repair is live and mechanically green. The remaining decision evidence is owner consumer-seam behavior followed by the fresh frozen DOB/time recovery test.
 
 Next:
 
-1. owner refreshes/reopens and reproduces synthesis review;
-2. verify chat remains available alongside synthesis buttons;
-3. verify conversational feedback is distinct from exact-wording authoring and the latter has Back;
-4. verify undiscussed/uncertain revision grounding returns to chat;
-5. continue the fresh target-blind measurement if that seam passes;
-6. click **Freeze/export measurement** and preserve the downloaded JSON unchanged;
-7. apply the narrowly authorized owner-self historical recovery procedure only after that freeze;
-8. evaluate the result with the executable recovery gate;
-9. if recovery is worse than the historical benchmark, revise the instrument rather than weakening the criterion.
+1. owner refreshes/reopens the live interview;
+2. confirm prior answers are reused naturally across later questions and new pattern threads;
+3. confirm completed dimensions are skipped and partial dimensions ask only what remains unresolved;
+4. confirm the experience does not reveal or feel like a registry-order category march;
+5. confirm global-label scope and synthesis-review repairs still behave correctly;
+6. finish/freeze the measurement;
+7. only after freeze, run the narrowly authorized owner-self historical recovery procedure;
+8. if recovery is worse than the benchmark, revise the instrument rather than weakening the criterion.
 
 General target-model activity remains closed. Still unauthorized: external participant collection/recruitment, automated participant coding, chart-aware questioning, external-participant target scoring, merge/release, publication, production expansion, and unapproved spending.
 
