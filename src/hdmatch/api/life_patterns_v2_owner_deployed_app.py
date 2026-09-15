@@ -1,4 +1,4 @@
-"""Deployment wrapper for the Life Patterns v2 development prototype.
+"""Deployment wrapper for the Life Patterns development prototype.
 
 HTTP Basic Auth is enabled only when ``HDMATCH_OWNER_BASIC_PASSWORD`` is non-empty.
 Leaving the password empty intentionally exposes the development surface without a login.
@@ -14,14 +14,14 @@ from collections.abc import Awaitable, Callable
 from fastapi import FastAPI, Request, Response
 from fastapi.responses import PlainTextResponse
 
-from .life_patterns_v2_owner_reasoning import create_life_patterns_v2_owner_reasoning_app
+from .life_patterns_v2_owner_coverage import create_life_patterns_v2_owner_coverage_app
 
 
 def _unauthorized() -> PlainTextResponse:
     return PlainTextResponse(
-        "Owner authentication required.",
+        "Development authentication required.",
         status_code=401,
-        headers={"WWW-Authenticate": 'Basic realm="Life Patterns Owner"'},
+        headers={"WWW-Authenticate": 'Basic realm="Life Patterns Development"'},
     )
 
 
@@ -45,7 +45,7 @@ def create_secured_owner_app() -> FastAPI:
     expected_password = os.environ.get("HDMATCH_OWNER_BASIC_PASSWORD", "").strip()
     auth_enabled = bool(expected_password)
 
-    app = create_life_patterns_v2_owner_reasoning_app()
+    app = create_life_patterns_v2_owner_coverage_app()
     app.state.owner_basic_auth_enabled = auth_enabled
 
     if not auth_enabled:
