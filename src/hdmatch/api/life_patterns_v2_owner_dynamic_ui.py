@@ -26,8 +26,8 @@ def _build_dynamic_html() -> str:
 
     old_fresh = """async function startFreshPattern(){
   const p=await api('/api/owner-v2/conversation/sessions',{method:'POST'});
-  sessionId=p.session_id;groundingChoice=null;
-  $('sessionState').textContent='Private conversational probe · new pattern thread';
+  sessionId=p.session_id;groundingChoice=null;refiningPattern=false;
+  $('sessionState').textContent='Development conversational probe · new pattern thread';
   hide('result');hide('continuation');hide('patternPanel');show('composer');
   $('message').value='';bubble('ai',p.opening);$('message').focus();
 }"""
