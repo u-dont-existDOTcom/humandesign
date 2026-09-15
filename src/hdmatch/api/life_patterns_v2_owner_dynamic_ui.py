@@ -24,6 +24,28 @@ def _build_dynamic_html() -> str:
         raise RuntimeError("dynamic coverage summary insertion point not found")
     html = html.replace(old_coverage_text, new_coverage_text, 1)
 
+    old_fresh = """async function startFreshPattern(){
+  const p=await api('/api/owner-v2/conversation/sessions',{method:'POST'});
+  sessionId=p.session_id;groundingChoice=null;
+  $('sessionState').textContent='Private conversational probe · new pattern thread';
+  hide('result');hide('continuation');hide('patternPanel');show('composer');
+  $('message').value='';bubble('ai',p.opening);$('message').focus();
+}"""
+    new_fresh = """async function startFreshPattern(){
+  const context={
+    aggregate_coverage:Object.values(coverageAggregate),
+    completed_results:completedResults.map(r=>({status:r.status,wording:r.wording||null}))
+  };
+  const p=await api('/api/owner-v2/conversation/sessions/contextual',{method:'POST',body:JSON.stringify(context)});
+  sessionId=p.session_id;groundingChoice=null;refiningPattern=false;
+  $('sessionState').textContent='Development conversational probe · new pattern thread';
+  hide('result');hide('continuation');hide('patternPanel');show('composer');
+  $('message').value='';$('message').placeholder='Answer in your own words…';bubble('ai',p.opening);$('message').focus();
+}"""
+    if old_fresh not in html:
+        raise RuntimeError("contextual fresh-pattern insertion point not found")
+    html = html.replace(old_fresh, new_fresh, 1)
+
     old_handler = (
         "$('continueCoverage').onclick=async()=>{const missing=incompleteCoverage();"
         "if(!missing.length){$('sessionSummary').textContent='Required coverage is complete.';"
