@@ -38,6 +38,13 @@ def test_exact_wording_revision_is_explicit_and_reversible() -> None:
     assert "$('backFromRevise').onclick" in RECOVERABILITY_HTML
 
 
+def test_unsupported_revision_grounding_returns_to_chat_instead_of_finalizing() -> None:
+    assert "if(groundingChoice==='examples'){show('finalChoice')}else{" in RECOVERABILITY_HTML
+    assert "Tell me about the other situation or pattern in the chat box below" in RECOVERABILITY_HTML
+    assert "If you are not sure, you can explain what is uncertain in the chat box below" in RECOVERABILITY_HTML
+    assert "if(groundingChoice==='examples')show('finalChoice');else submitRevision(null);" not in RECOVERABILITY_HTML
+
+
 def test_free_form_feedback_closes_stale_exact_wording_form() -> None:
     assert "hide('reviseBox');hide('finalChoice');groundingChoice=null" in RECOVERABILITY_HTML
     assert "document.querySelectorAll('.grounding').forEach(b=>b.disabled=false)" in RECOVERABILITY_HTML
