@@ -1,4 +1,8 @@
-"""HTTP-authenticated deployment wrapper for the owner-only Life Patterns v2 prototype."""
+"""Deployment wrapper for the Life Patterns v2 development prototype.
+
+HTTP Basic Auth is enabled only when ``HDMATCH_OWNER_BASIC_PASSWORD`` is non-empty.
+Leaving the password empty intentionally exposes the development surface without a login.
+"""
 
 from __future__ import annotations
 
@@ -37,12 +41,15 @@ def _basic_authorized(
 
 
 def create_secured_owner_app() -> FastAPI:
-    expected_username = os.environ.get("HDMATCH_OWNER_BASIC_USER", "owner")
+    expected_username = os.environ.get("HDMATCH_OWNER_BASIC_USER", "owner").strip() or "owner"
     expected_password = os.environ.get("HDMATCH_OWNER_BASIC_PASSWORD", "").strip()
-    if not expected_password:
-        raise RuntimeError("HDMATCH_OWNER_BASIC_PASSWORD is required for the deployed owner app")
+    auth_enabled = bool(expected_password)
 
     app = create_life_patterns_v2_owner_reasoning_app()
+    app.state.owner_basic_auth_enabled = auth_enabled
+
+    if not auth_enabled:
+        return app
 
     @app.middleware("http")
     async def require_owner_auth(
