@@ -16,7 +16,7 @@ No private owner interview narrative is stored in repository state.
 
 Current strategy:
 
-`participant-led characteristic patterns -> fixed neutral recoverability dimensions -> adaptive probing only where measurement remains open -> explicit missingness -> participant-adjudicated pattern results -> freeze -> owner-only post-freeze recovery regression`
+`participant-led characteristic patterns -> fixed neutral recoverability dimensions -> adaptive probing only where measurement remains open -> explicit missingness -> participant-adjudicated pattern results -> local SHA-256 freeze/export -> owner-only post-freeze recovery regression`
 
 Runtime elicitation receives no chart, birth target, expected answer direction, target mapping, candidate score/rank, or historical AstroHD crosswalk.
 
@@ -88,6 +88,7 @@ Runtime:
 
 - `src/hdmatch/api/life_patterns_recoverability_domains.py`
 - `src/hdmatch/api/life_patterns_v2_owner_recoverability.py`
+- `src/hdmatch/api/life_patterns_v2_owner_recoverability_ui.py`
 - `src/hdmatch/api/life_patterns_v2_owner_deployed_app.py`
 
 ## AstroHD profile crosswalk
@@ -105,15 +106,23 @@ Do not call those individually necessary. There is no leave-one-out recovery evi
 
 The crosswalk is not imported into the participant runtime.
 
-Receipt:
+Receipts:
 
-`state/LIFE-PATTERNS-v2-OWNER-ASTROHD-RECOVERABILITY-GATE-2026-09-15.md`
+- `state/LIFE-PATTERNS-v2-OWNER-ASTROHD-RECOVERABILITY-GATE-2026-09-15.md`
+- `state/LIFE-PATTERNS-v2-OWNER-CLIENT-SIDE-MEASUREMENT-FREEZE-2026-09-15.md`
+
+## Local pre-scoring freeze
+
+The live browser now has **Freeze/export measurement**. It creates a local JSON from the completed participant-adjudicated results and aggregate coverage, includes the per-pattern freeze hashes, computes a client-side SHA-256 `measurement_bundle_sha256`, and downloads the bundle without sending it to a target-aware endpoint or repository persistence.
+
+The unchanged exported JSON is the handoff into the owner-only post-freeze recovery regression.
 
 ## Verification / deployment
 
-- recoverability application head: `c17af071ffdd75a2969215c898ae856a1e7d67a1`;
-- GitHub Actions run `34991018614`: **SUCCESS** — tests, Ruff, strict mypy;
-- Railway deployment `ed7a1e30-6d23-4110-b8da-a97e2097430e`: **SUCCESS**;
+- current recoverability application head: `00e226c55f5edf915310b2c07bb66ffc24f3608d`;
+- current UI/regression test head: `1f9bba822322beadffffc82ef3920d729499e4b6`;
+- GitHub Actions run `34991996940`: **SUCCESS** — tests, Ruff, strict mypy;
+- Railway deployment `46f43555-7323-42ac-a802-08f5f7dfe448`: **SUCCESS** from exact application head `00e226c55f5edf915310b2c07bb66ffc24f3608d`;
 - application startup complete;
 - `/healthz`: HTTP **200**.
 
@@ -126,8 +135,8 @@ The instrument has **not** yet passed the DOB/time criterion because no genuinel
 Next:
 
 1. owner refreshes/reopens the live development interview and completes the v2 target-blind measurement flow;
-2. freeze the resulting measurement before any AstroHD mapping/scoring;
-3. apply the narrowly authorized owner-self historical recovery procedure only after freeze;
+2. click **Freeze/export measurement** and preserve the downloaded JSON unchanged;
+3. apply the narrowly authorized owner-self historical recovery procedure only after that freeze;
 4. evaluate the result with the executable recovery gate;
 5. if recovery is worse than the historical benchmark, revise the instrument rather than weakening the criterion.
 
