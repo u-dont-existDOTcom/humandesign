@@ -2,7 +2,9 @@
 
 V2 independent semantic review: **PASS**. Semantic change required: `false`.
 
-Active task: `life-patterns-v2-standardized-coverage-owner-retest` — **OWNER REAL-DATA BROWSER JUDGMENT REQUIRED**.
+Active task: `life-patterns-v2-astrohd-recoverability-owner-retest` — **OWNER FRESH TARGET-BLIND MEASUREMENT + POST-FREEZE RECOVERY REQUIRED**.
+
+PR #24 remains **draft / open / unmerged**.
 
 ## Scientific substrate
 
@@ -12,69 +14,123 @@ No private owner interview narrative is stored in repository state.
 
 ## Current participant-facing architecture
 
-Current strategy is **target-aware instrument design / target-blind runtime execution**.
+Current strategy:
 
-The interviewer keeps the repaired person-specificity, adaptive burden, observer/self triangulation, evidence-direction, and non-repetitive refinement behavior. Development may intentionally measure neutral behavioral dimensions useful to astrology / Human Design and InnerSignal, but runtime elicitation receives no participant chart, target mapping, expected answer direction, candidate score, or hidden theory label.
+`participant-led characteristic patterns -> fixed neutral recoverability dimensions -> adaptive probing only where measurement remains open -> explicit missingness -> participant-adjudicated pattern results -> freeze -> owner-only post-freeze recovery regression`
 
-The owner then corrected a methodological gap: optional high-information probes are not sufficient scientific standardization.
+Runtime elicitation receives no chart, birth target, expected answer direction, target mapping, candidate score/rank, or historical AstroHD crosswalk.
 
-## Standardized required coverage
+The interviewer preserves person-specificity, adaptive burden, observer/self triangulation, non-repetitive refinement, participant authority, and evidence timing.
 
-Receipt: `state/LIFE-PATTERNS-v2-OWNER-STANDARDIZED-COVERAGE-BLUEPRINT-2026-09-15.md`.
+## Owner recoverability criterion
 
-The development candidate is now a **semi-structured standardized interview**:
+The owner explicitly requires the new instrument to retain enough behavioral information to reproduce the historical owner AstroHD DOB/time recovery; otherwise the instrument fails.
 
-`participant-led salient patterns -> standardized required-domain coverage tracking -> adaptive neutral probing only where coverage remains open -> explicit missingness -> participant-adjudicated pattern results`
+Historical development benchmark:
 
-The checklist standardizes required constructs, evidence/provenance, coverage statuses, canonical screeners, missingness, and stopping. It does not require identical literal follow-up wording or redundant re-asking.
+- 876,601 hourly century candidates;
+- exact recorded moment merged hourly rank **#2**;
+- leading hourly state on the same recorded date;
+- recorded date is the **#1 distinct refined neighborhood**;
+- best refined minute is **11 minutes** from recorded time.
 
-Coverage states:
+Frozen baseline:
 
-- `unassessed`
-- `partial`
-- `sufficient`
-- `unknown`
-- `inapplicable`
-- `declined`
+`reference/research/life_patterns_astrohd_owner_recovery_baseline_v1.json`
 
-`unknown`, `inapplicable`, and `declined` are explicit terminal missingness states, not behavioral negatives. Silence never produces them. `partial`/`sufficient` require valid cited operative fact IDs.
+Executable outcome gate:
 
-Current development blueprint `life-patterns-required-coverage-v1` contains 10 broad required domains: decision process; energy/recovery; attention/cognition/work; emotional regulation; relationships/conflict/trust/boundaries; social entry/recognition/groups/roles; communication/influence; values/purpose/motivation; environment/body/comfort/security; developmental continuity/change.
+`src/hdmatch/evaluation/life_patterns_owner_recovery_gate.py`
 
-Natural participant-led material may satisfy domains. `Continue required coverage` opens the next still-`unassessed`/`partial` domain with its canonical neutral screener. `Finish for now` remains allowed and reports incomplete coverage rather than claiming scientific completeness.
+Coverage completion does not satisfy this gate. A fresh post-freeze run must use the same declared historical search procedure and meet or improve the historical date/time signature.
 
-Cross-cutting discriminators such as self-vs-observer, inner-vs-outer, baseline-vs-triggered, automatic-vs-deliberate, timing/threshold/duration/recovery, context stability, developmental change, and coexisting modes remain adaptive options **inside** the required-domain checklist.
+This is an owner development regression criterion, not untouched validation of astrology or Human Design.
 
-## Not yet a final validation taxonomy
+## Superseded broad coverage partition
 
-The existing behavior-first HD question bank was cross-checked. It supports standardized coverage and includes body/signal access, decision timing, social entry/recognition, energy/recovery, learning/expertise, systems, resources/ambition/status, conflict/relationships, developmental chronology, emotional permeability/baseline, pressure, expression, environment/direction, fear, original contribution, persuasion, purpose, and related constructs.
+The previous `life-patterns-required-coverage-v1` 10-domain candidate introduced useful standardized mechanics, but is too coarse for the recoverability criterion. A broad domain could close after one narrow facet while omitting historically score-bearing distinctions inside the same bucket.
 
-The current 10-domain partition is therefore a reversible development candidate, not a final untouched-validation freeze. Before validation, an explicit crosswalk must verify that the blueprint covers the behavior-first question bank and later astrology/HD behavioral target surface; broad domains may need splitting, particularly body-signal access/state-dependence versus environment and resources/status/security versus sensory/physical conditions. A validation run must freeze the chosen blueprint version/hash before collection.
+Its measurement mechanics remain useful: version/hash, explicit coverage states, evidence citation, missingness, adaptive canonical screeners, and `Continue required coverage`.
 
-## Passwordless development surface
+## Active recoverability blueprint v2
 
-At the owner's explicit request, HTTP Basic Auth has been removed from the live development surface. The wrapper installs Basic Auth only when the password variable is non-empty, and the Railway Basic Auth username/password values are blank.
+Version: `life-patterns-recoverability-coverage-v2`.
 
-This means anyone who has or discovers the URL can access the development app and potentially consume runtime model usage. It does **not** authorize external participant collection/recruitment, target scoring, publication, or representation as a validated study.
+Required neutral dimensions: **23**.
+
+1. complexity/detail/structure;
+2. insight translation;
+3. unresolved-question return;
+4. original contribution versus inherited method;
+5. persuasion capacity versus preferred use;
+6. entry/recognition/role acceptance;
+7. network opportunity pathways;
+8. role projection/misrecognition;
+9. immediate bodily/felt signals;
+10. autonomy/direction under external roles;
+11. home/sensory/sanctuary conditions;
+12. romantic/attachment dynamics;
+13. emotional baseline/permeability;
+14. work energy across intensity/duration;
+15. consequential effort/struggle/purpose;
+16. correction threshold;
+17. retreat/privacy/re-entry;
+18. competing-value tension;
+19. resources/status/security/sovereignty motive;
+20. developmental phases/learned change;
+21. rhythm/routine/continuity;
+22. concentrated focus/repetition/mastery;
+23. needs sensitivity/responsibility.
+
+Natural participant-led evidence may satisfy multiple dimensions. Fixed sentence wording and fixed episode counts are not required. Coverage statuses remain `unassessed`, `partial`, `sufficient`, `unknown`, `inapplicable`, and `declined`; silence is never absence.
+
+Runtime:
+
+- `src/hdmatch/api/life_patterns_recoverability_domains.py`
+- `src/hdmatch/api/life_patterns_v2_owner_recoverability.py`
+- `src/hdmatch/api/life_patterns_v2_owner_deployed_app.py`
+
+## AstroHD profile crosswalk
+
+Development-only, post-freeze crosswalk:
+
+`reference/research/life_patterns_astrohd_owner_recovery_crosswalk_v1.json`
+
+It covers:
+
+- all **19 score-bearing historical merged behavior clusters**;
+- all **19 clean V3.6 information-bearing observables**.
+
+Do not call those individually necessary. There is no leave-one-out recovery evidence proving individual necessity. The two explicitly post-selection V3.6 carrier refinements are excluded from survey requirements.
+
+The crosswalk is not imported into the participant runtime.
+
+Receipt:
+
+`state/LIFE-PATTERNS-v2-OWNER-ASTROHD-RECOVERABILITY-GATE-2026-09-15.md`
 
 ## Verification / deployment
 
-- passwordless wrapper head: `e6cb6e0f20c98ade58a283695508e4f0fc7f94fa`;
-- standardized coverage application head: `5b2b2a0526685155079dc7e280c9ac975490ef68`;
-- coverage test head: `c916051dd3d4c114e85aeeb304abb8a34e236b19`;
-- GitHub Actions run `34920921980`: **SUCCESS** — tests, Ruff, strict mypy;
-- Railway deployment `71bbefbe-06e0-432c-b904-c60904de4932`: **SUCCESS**;
-- application startup complete and `/healthz` HTTP `200`.
+- recoverability application head: `c17af071ffdd75a2969215c898ae856a1e7d67a1`;
+- GitHub Actions run `34991018614`: **SUCCESS** — tests, Ruff, strict mypy;
+- Railway deployment `ed7a1e30-6d23-4110-b8da-a97e2097430e`: **SUCCESS**;
+- application startup complete;
+- `/healthz`: HTTP **200**.
+
+The development surface remains passwordless under prior explicit owner authority. Passwordless development access does not authorize external participant recruitment/collection.
 
 ## Current gate
 
-1. Refresh/reopen and confirm the password prompt is gone.
-2. Complete a natural pattern thread and inspect required-domain coverage.
-3. Use `Continue required coverage`; verify it advances to a genuinely open domain rather than re-asking covered material.
-4. Verify `unknown` / `inapplicable` / `declined` close the domain without repeated interrogation.
-5. Verify `Finish for now` reports incomplete coverage when appropriate.
-6. Judge the 10-domain development partition in practice; before validation freeze, perform the explicit question-bank / astrology-HD coverage crosswalk and split materially overbroad domains.
+The instrument has **not** yet passed the DOB/time criterion because no genuinely fresh v2 owner measurement has yet been frozen and rescored.
 
-Still closed: external participant collection/recruitment, automated participant coding, target-model activity, merge/release, publication, production expansion, and unapproved spending.
+Next:
+
+1. owner refreshes/reopens the live development interview and completes the v2 target-blind measurement flow;
+2. freeze the resulting measurement before any AstroHD mapping/scoring;
+3. apply the narrowly authorized owner-self historical recovery procedure only after freeze;
+4. evaluate the result with the executable recovery gate;
+5. if recovery is worse than the historical benchmark, revise the instrument rather than weakening the criterion.
+
+General target-model activity remains closed. Still unauthorized: external participant collection/recruitment, automated participant coding, chart-aware questioning, external-participant target scoring, merge/release, publication, production expansion, and unapproved spending.
 
 **There was never a completion policy.**
