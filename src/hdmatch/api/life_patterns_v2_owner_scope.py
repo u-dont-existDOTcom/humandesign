@@ -37,9 +37,19 @@ GLOBAL_LABEL_SCOPE_INSTRUCTIONS = (
     "and not a requirement to run the full standardized coverage checklist before every synthesis."
 )
 
+CROSS_THREAD_CONTEXT_INSTRUCTIONS = (
+    "CROSS-THREAD CONTEXT: recent_conversation may contain an assistant message beginning 'INTERNAL PRIOR CONTEXT'. "
+    "That message is planning-only context summarizing previously participant-adjudicated patterns and neutral coverage "
+    "metadata. Use it to avoid asking the participant to repeat already settled information and to make transitions more "
+    "natural. It is NOT a participant utterance, NOT a source of episode facts, and NOT evidence that a new proposition is "
+    "true in the current thread. Never quote the internal note to the participant. Never extract hidden facts from it. "
+    "Coverage reasons inside it are model-generated planning metadata, not participant statements. New evidence still "
+    "must come from participant messages and the operative hidden ledger."
+)
+
 
 class ScopeAwareRecoverabilityOpenAIModel(RecoverabilityCoverageOpenAIModel):
-    """Recoverability model with an explicit guard against global-label scope collapse."""
+    """Recoverability model with scope and cross-thread continuity guards."""
 
     def _conversation_call_json(
         self,
@@ -57,6 +67,8 @@ class ScopeAwareRecoverabilityOpenAIModel(RecoverabilityCoverageOpenAIModel):
             "life_patterns_pattern_specificity_v1",
         }:
             instructions += "\n\n" + GLOBAL_LABEL_SCOPE_INSTRUCTIONS
+        if schema_name.startswith("life_patterns_"):
+            instructions += "\n\n" + CROSS_THREAD_CONTEXT_INSTRUCTIONS
         return super()._conversation_call_json(
             instructions=instructions,
             payload=payload,
@@ -73,4 +85,5 @@ def create_life_patterns_v2_owner_scope_app() -> FastAPI:
     model = ScopeAwareRecoverabilityOpenAIModel.from_env()
     app = create_life_patterns_v2_owner_recoverability_app(model=model)
     app.state.global_label_scope_guard = True
+    app.state.cross_thread_planning_context = True
     return app
