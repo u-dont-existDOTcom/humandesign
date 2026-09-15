@@ -3,6 +3,7 @@
 This layer restores the earlier interview's information-gain / burden discipline while preserving
 Life Patterns v2's hidden evidence ledger and participant-authoritative pattern adjudication.
 There is no fixed episode quota and no mandatory counterexample gate before a tentative synthesis.
+A candidate pattern must also carry person-specific information beyond an obvious human regularity.
 """
 
 from __future__ import annotations
@@ -27,7 +28,6 @@ from .life_patterns_v2_owner_conversation import (
     OwnerConversationModel,
 )
 from .life_patterns_v2_owner_pattern_first import (
-    OPENING,
     PatternFirstOpenAIConversationModel,
     TemporaryModelProviderError,
 )
@@ -37,23 +37,39 @@ from .life_patterns_v2_owner_refinement import (
 )
 
 
+ADAPTIVE_OPENING = (
+    "Start with a pattern you notice in your life that seems characteristic of you—something about "
+    "how you tend to respond, change, choose, relate, focus, feel, or move through situations. It does "
+    "not need to be rare or dramatic, but it should tell us more about you than an ordinary human "
+    "regularity. I’ll use concrete situations only when they add useful information."
+)
+
+
 _ADAPTIVE_INTERVIEW_INSTRUCTIONS = (
     "You are conducting an unusually attentive, target-theory-blind Life Patterns interview. "
-    "The objective is useful information per unit participant burden, not exhaustive interrogation, "
-    "not proving that you understood them, and not forcing every uncertainty to closure. Return exactly "
-    "one interviewer move and ask at most one question.\n\n"
+    "The objective is useful PERSON-SPECIFIC information per unit participant burden, not exhaustive "
+    "interrogation, not proving that you understood them, and not forcing every uncertainty to closure. "
+    "Return exactly one interviewer move and ask at most one question.\n\n"
+    "PERSON-SPECIFIC SIGNAL: Recurrence alone is not enough. A useful Life Pattern must carry information "
+    "about this participant beyond an obvious high-base-rate human regularity. Do not surface near-universal "
+    "physiological or situational responses as person-level patterns merely because they recur. A pattern can "
+    "still be simple and common in broad form when the participant supplies individual-specific timing, "
+    "threshold, intensity, sequence, context sensitivity, exception structure, developmental shift, or another "
+    "meaningful discriminator. Do NOT demand rarity or eccentricity. If commonness is genuinely uncertain, "
+    "continue rather than filtering the pattern out. Simple is fine; generic is not.\n\n"
     "PATTERN-FIRST, EVIDENCE-ANCHORED: The participant may begin with a recurring/changing pattern in "
-    "their own words. Treat that report as conversational context. Concrete situations can clarify, "
-    "scope, challenge, or anchor it, but there is NO fixed episode quota. A counterexample or contrast is "
-    "useful only when it can genuinely change the interpretation; it is never a mandatory ritual before "
-    "a synthesis. A participant-reported series or recurring self-description is legitimate self-report. "
-    "Do not force another dated episode merely to obtain a stronger-looking evidence label.\n\n"
+    "their own words. Treat that report as conversational context. Concrete situations can clarify, scope, "
+    "challenge, or anchor it, but there is NO fixed episode quota. A counterexample or contrast is useful only "
+    "when it can genuinely change the interpretation; it is never a mandatory ritual before a synthesis. A "
+    "participant-reported series or recurring self-description is legitimate self-report. Do not force another "
+    "dated episode merely to obtain a stronger-looking evidence label.\n\n"
     "FOLLOW-UP GATE: Before asking any follow-up, identify the exact missing or conflicting fact and how "
     "different plausible answers would materially change the retained pattern's meaning, scope, context, "
-    "timing, exception structure, or uncertainty. If the answer would not materially change any of those, "
-    "DO NOT ask the question. Surface the narrow supported synthesis instead. Unknown, not remembered, "
-    "inapplicable, or declined may remain unresolved; do not reopen the same point without new participant "
-    "information. Do not hunt for contradiction or hypothetical edge cases.\n\n"
+    "timing, exception structure, uncertainty, or person-specific information value. If the answer would not "
+    "materially change any of those, DO NOT ask the question. Surface the narrow supported synthesis when it is "
+    "person-specific; if the remaining formulation is generic, redirect to a more informative pattern instead. "
+    "Unknown, not remembered, inapplicable, or declined may remain unresolved; do not reopen the same point "
+    "without new participant information. Do not hunt for contradiction or hypothetical edge cases.\n\n"
     "LISTENING / REDUNDANCY: Never ask the participant to restate information already supplied. Never ask "
     "them to distinguish internal states they could not reasonably observe merely because the distinction is "
     "theoretically possible. If the participant says a question is obvious, redundant, confusing, or already "
@@ -65,18 +81,18 @@ _ADAPTIVE_INTERVIEW_INSTRUCTIONS = (
     "not transfer a factor from one context to another without support. Keep distinct reported outcomes distinct "
     "unless the participant links them. Do not use a broad label that merely renames the phenomenon as if it "
     "explained it. Missing recall is not evidence of absence.\n\n"
-    "STOPPING / ORDINARY PATTERNS: Do not manufacture depth. If the participant has described a straightforward "
-    "or ordinary recurring pattern and further questions have low expected information gain, surface that narrow "
-    "pattern rather than interrogating it until something more interesting appears. A simple supported pattern is "
-    "better than an elaborate speculative one. If a contextual modifier is supported, include it narrowly; if its "
-    "role remains uncertain, say so rather than drilling indefinitely.\n\n"
+    "STOPPING: Do not manufacture depth. If the participant has described a straightforward person-specific "
+    "pattern and further questions have low expected information gain, surface that narrow pattern. If the only "
+    "remaining formulation is a generic human regularity, do not preserve it just because it is true; redirect. "
+    "If a contextual modifier is supported, include it narrowly; if its role remains uncertain, say so rather "
+    "than drilling indefinitely.\n\n"
     "SURFACING A HYPOTHESIS: Use surface_hypothesis when the available cited hidden facts support a useful "
-    "person-level formulation and another question is unlikely to materially improve it. One grounded episode may "
-    "be enough when the participant has also supplied a recurring self-description; multiple episodes can strengthen "
-    "or qualify a pattern but are not required. Do not promote a single occurrence into recurrence without participant "
-    "self-report. The hypothesis may be close to the participant's own recurring formulation when that is what the "
-    "evidence supports; explanatory novelty is NOT required. Phrase it tentatively and make participant authority "
-    "obvious. No flattery, diagnosis, destiny language, motivational coaching, external-theory concepts, or target hints.\n\n"
+    "person-level formulation with person-specific signal and another question is unlikely to materially improve "
+    "it. One grounded episode may be enough when the participant has also supplied a recurring self-description; "
+    "multiple episodes can strengthen or qualify a pattern but are not required. Do not promote a single occurrence "
+    "into recurrence without participant self-report. Explanatory novelty is NOT required, but discriminative "
+    "person-specific content is. Phrase the hypothesis tentatively and make participant authority obvious. No "
+    "flattery, diagnosis, destiny language, motivational coaching, external-theory concepts, or target hints.\n\n"
     "AFTER REJECTION: If the participant rejects a synthesis, inspect the conversation for the likely unsupported "
     "premise yourself. Correct or narrow your working interpretation and ask only the smallest genuinely decision-changing "
     "question, if one remains. Do not default to asking the participant to explain an obvious mistake you can already see.\n\n"
@@ -85,7 +101,66 @@ _ADAPTIVE_INTERVIEW_INSTRUCTIONS = (
 
 
 class AdaptivePatternFirstOpenAIConversationModel(PatternFirstOpenAIConversationModel):
-    """Planner that restores adaptive stopping instead of quota-driven interrogation."""
+    """Planner with adaptive stopping and a conservative person-specificity gate."""
+
+    def assess_pattern_focus(
+        self,
+        *,
+        pattern_text: str,
+        recent_conversation: tuple[dict[str, str], ...],
+    ) -> tuple[str, str]:
+        """Triage clearly generic patterns before collecting episode evidence."""
+
+        schema = {
+            "type": "object",
+            "additionalProperties": False,
+            "required": ["decision", "reply", "internal_reason"],
+            "properties": {
+                "decision": {
+                    "type": "string",
+                    "enum": ["continue", "redirect_generic"],
+                },
+                "reply": {"type": "string", "minLength": 1, "maxLength": 1800},
+                "internal_reason": {"type": "string", "minLength": 1, "maxLength": 700},
+            },
+        }
+        result = self._conversation_call_json(
+            instructions=(
+                "Triage the participant's proposed Life Pattern for PERSON-SPECIFIC INFORMATION before "
+                "collecting episode evidence. This is not a truth check and not a demand for novelty. A statement "
+                "can be true and recurrent yet tell us almost nothing about this person because it is an obvious "
+                "high-base-rate human regularity. Use redirect_generic only when that is clear from ordinary general "
+                "knowledge and the statement contains no meaningful individual-specific modifier. Examples of clearly "
+                "low-signal forms include getting hungry after not eating, becoming tired after prolonged lack of sleep, "
+                "feeling pain when injured, or becoming thirsty after going without fluids. Do not infer that every "
+                "common emotion or behavior is generic: timing, threshold, intensity, context sensitivity, sequence, "
+                "exceptions, or developmental change can make a common dimension person-specific. If uncertain, choose "
+                "continue. For redirect_generic, briefly say that the statement by itself tells us little about what is "
+                "distinctive about the participant, then invite either one genuinely characteristic qualifier or a "
+                "different pattern. Do not interrogate the generic regularity for arbitrary edge cases. For continue, "
+                "ask for one concrete situation that best anchors the personally characteristic part. Keep the reply "
+                "target-theory-blind and do not mention scoring, astrology, charts, hidden models, or prevalence statistics."
+            ),
+            payload={
+                "proposed_pattern": pattern_text,
+                "recent_conversation": list(recent_conversation[-8:]),
+            },
+            schema=schema,
+            effort="medium",
+            max_output_tokens=900,
+            schema_name="life_patterns_pattern_specificity_v1",
+        )
+        decision = str(result.get("decision", "continue"))
+        if decision not in {"continue", "redirect_generic"}:
+            decision = "continue"
+        reply = str(result.get("reply", "")).strip()
+        if not reply:
+            reply = (
+                "Give me one concrete situation where the personally characteristic part of that pattern showed up."
+                if decision == "continue"
+                else "By itself that sounds like a common human regularity. What about it is especially characteristic of you, if anything?"
+            )
+        return decision, reply
 
     def plan_turn(
         self,
@@ -162,7 +237,42 @@ class AdaptivePatternFirstOpenAIConversationModel(PatternFirstOpenAIConversation
 
 
 class AdaptiveRefinablePatternSession(RefinablePatternFirstConversationalOwnerSession):
-    """Pattern-first session with no assistant-invented episode/counterexample completion quota."""
+    """Pattern-first session without quotas and with pre-evidence specificity triage."""
+
+    def _start_or_redirect_pattern(self, clean: str) -> dict[str, Any]:
+        assessor = getattr(self.model, "assess_pattern_focus", None)
+        if not callable(assessor):
+            return self._start_from_pattern(clean)
+
+        decision, reply = assessor(
+            pattern_text=clean,
+            recent_conversation=tuple(self.conversation),
+        )
+        self.conversation.append(
+            {
+                "turn_id": f"TURN-{uuid.uuid4().hex[:10].upper()}",
+                "role": "user",
+                "text": clean,
+            }
+        )
+        if decision == "continue":
+            self.pattern_focus_established = True
+        self.conversation.append(
+            {
+                "turn_id": f"TURN-{uuid.uuid4().hex[:10].upper()}",
+                "role": "assistant",
+                "text": reply,
+            }
+        )
+        return {
+            "reply": reply,
+            "move_type": "follow_up",
+            "pattern_active": False,
+            "pattern_proposition": None,
+            "episode_count": 0,
+            "pattern_focus_established": self.pattern_focus_established,
+            "generic_pattern_redirected": decision == "redirect_generic",
+        }
 
     def _create_pattern(self, move: ConversationMove) -> None:
         if self.core.active_proposal_id is not None:
@@ -266,8 +376,8 @@ class AdaptiveRefinablePatternSession(RefinablePatternFirstConversationalOwnerSe
 
         snapshot = self._snapshot_state()
         try:
-            if not self.pattern_focus_established and not self.conversation:
-                return self._start_from_pattern(clean)
+            if not self.pattern_focus_established:
+                return self._start_or_redirect_pattern(clean)
 
             if self.pending_boundary_question:
                 self.pending_boundary_question = False
@@ -364,11 +474,11 @@ class AdaptiveRefinableRuntime:
 def create_life_patterns_v2_owner_reasoning_app(
     *, model: OwnerConversationModel | None = None
 ) -> FastAPI:
-    """Compatibility entry point; now serves the simpler adaptive interviewer."""
+    """Compatibility entry point; now serves the adaptive specificity-aware interviewer."""
 
     resolved_model = model or AdaptivePatternFirstOpenAIConversationModel.from_env()
     runtime = AdaptiveRefinableRuntime(model=resolved_model)
-    app = FastAPI(title="Life Patterns v2 adaptive owner conversation", version="0.8")
+    app = FastAPI(title="Life Patterns v2 adaptive owner conversation", version="0.9")
 
     @app.get("/", response_class=HTMLResponse, include_in_schema=False)
     def landing() -> str:
@@ -382,6 +492,7 @@ def create_life_patterns_v2_owner_reasoning_app(
             "target_theory_blind": True,
             "hidden_evidence_ledger": True,
             "pattern_first": True,
+            "person_specificity_gate": True,
             "unresolved_thread_continuation": True,
             "rejected_synthesis_continuation": True,
             "adaptive_information_gain_gate": True,
@@ -398,7 +509,7 @@ def create_life_patterns_v2_owner_reasoning_app(
         return CreateConversationSessionResponse(
             session_id=session.session_id,
             model_configured=bool(getattr(resolved_model, "configured", True)),
-            opening=OPENING,
+            opening=ADAPTIVE_OPENING,
         )
 
     @app.post("/api/owner-v2/conversation/sessions/{session_id}/turns")
