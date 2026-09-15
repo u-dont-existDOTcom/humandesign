@@ -12,6 +12,18 @@ def _build_dynamic_html() -> str:
         "Continue interview",
         1,
     )
+    old_coverage_text = (
+        "function coverageText(){const missing=incompleteCoverage();const done=coverageBlueprint.length-missing.length;"
+        "return `Required coverage: ${done}/${coverageBlueprint.length} domains complete${missing.length?'. Still open: '+missing.map(d=>d.title).join(', '):'. Complete.'}`}"
+    )
+    new_coverage_text = (
+        "function coverageText(){const missing=incompleteCoverage();const done=coverageBlueprint.length-missing.length;"
+        "return missing.length?`Interview coverage: ${done}/${coverageBlueprint.length}. I’ll use what you’ve already said and only ask about remaining gaps.`:`Interview coverage: ${done}/${coverageBlueprint.length}. Complete.`}"
+    )
+    if old_coverage_text not in html:
+        raise RuntimeError("dynamic coverage summary insertion point not found")
+    html = html.replace(old_coverage_text, new_coverage_text, 1)
+
     old_handler = (
         "$('continueCoverage').onclick=async()=>{const missing=incompleteCoverage();"
         "if(!missing.length){$('sessionSummary').textContent='Required coverage is complete.';"
@@ -22,7 +34,7 @@ def _build_dynamic_html() -> str:
     new_handler = r"""
 $('continueCoverage').onclick=async()=>{
   const missing=incompleteCoverage();
-  if(!missing.length){$('sessionSummary').textContent='Required coverage is complete.';show('sessionSummary');return}
+  if(!missing.length){$('sessionSummary').textContent='Interview coverage is complete.';show('sessionSummary');return}
   try{
     const context={
       aggregate_coverage:Object.values(coverageAggregate),
@@ -33,7 +45,7 @@ $('continueCoverage').onclick=async()=>{
     hide('result');hide('continuation');hide('patternPanel');show('composer');
     $('message').value='';
     $('message').placeholder='Answer in your own words…';
-    $('sessionState').textContent='Development conversational probe · adaptive coverage';
+    $('sessionState').textContent='Development conversational probe · continuing interview';
     bubble('ai',p.opening);
     $('message').focus();
   }catch(e){$('sessionSummary').textContent=e.message;$('sessionSummary').className='error';show('sessionSummary')}
