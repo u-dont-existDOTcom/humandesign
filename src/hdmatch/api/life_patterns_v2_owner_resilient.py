@@ -289,9 +289,8 @@ class ResilientRecoverabilityCoverageSession(TransactionalRecoverabilityCoverage
             try:
                 report = self.coverage_report()
             except Exception:
-                # Progress is auxiliary. Never fail a successful interview turn because the
-                # coverage estimate could not be refreshed.
-                pass
+                # Progress is auxiliary. Keep the last good estimate if refresh fails.
+                report = self._last_progress_report
             if report is not None:
                 self._last_progress_report = report
                 self._last_progress_user_turn_count = count
