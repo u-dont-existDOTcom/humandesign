@@ -116,14 +116,10 @@ def test_accept_reuses_cached_progress_instead_of_another_coverage_call() -> Non
     assert session._draft_move is None
 
 
-def test_progress_and_working_indicators_live_at_document_end() -> None:
+def test_progress_and_working_indicators_are_moved_to_active_end_at_runtime() -> None:
     html = NATURAL_FLOW_RECOVERABILITY_HTML
-    progress = html.index('id="interviewProgress"')
-    working = html.index('id="operationStatus"')
-    composer = html.index('id="composer"')
-    continuation = html.index('id="continuation"')
-    main_end = html.index("</main>")
 
-    assert composer < continuation < working < progress < main_end
+    assert "__naturalMain.appendChild(op)" in html
+    assert "__naturalMain.appendChild(progress)" in html
     assert "move_type==='topic_complete'" in html
     assert "Thinking about that…" in html
