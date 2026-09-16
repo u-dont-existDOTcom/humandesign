@@ -22,6 +22,7 @@ from .life_patterns_v2_owner_app import PatternAdjudicationRequest
 from .life_patterns_v2_owner_conversation import ConversationMove
 from .life_patterns_v2_owner_liveness import create_life_patterns_v2_owner_liveness_app
 from .life_patterns_v2_owner_natural_flow_ui import NATURAL_FLOW_RECOVERABILITY_HTML
+from .life_patterns_v2_owner_pattern_first import TemporaryModelProviderError
 from .life_patterns_v2_owner_persistent import (
     PersistentRecoverabilityCoverageSession,
     RecoveryRestoreRequest,
@@ -135,10 +136,28 @@ class NaturalFlowRecoverabilitySession(PersistentRecoverabilityCoverageSession):
         if result.get("move_type") == "topic_complete":
             self._topic_complete_ready = True
             result["topic_complete"] = True
-            # Topic completion is itself a progress boundary. Refresh coverage now so the
-            # participant sees the just-completed measurement area credited immediately.
             return self._attach_periodic_progress(result, force=True)
         self._topic_complete_ready = False
+        return result
+
+    def mark_obvious_synthesis_complete(self) -> dict[str, Any]:
+        """Close a true-but-uninformative synthesis without creating a v2 person pattern."""
+
+        if self._draft_move is None:
+            raise ValueError("no active tentative synthesis to mark as obvious")
+        self._draft_move = None
+        self.core.active_proposal_id = None
+        self._topic_complete_ready = True
+        result: dict[str, Any] = {
+            "reply": "That area is covered; I won't record the obvious summary as a Life Pattern.",
+            "move_type": "topic_complete",
+            "topic_complete": True,
+            "pattern_active": False,
+            "pattern_proposition": None,
+            "episode_count": len(self.core.record.episodes),
+        }
+        if self._last_progress_report is not None:
+            result["coverage"] = self._last_progress_report
         return result
 
     def adjudicate(self, request: PatternAdjudicationRequest) -> dict[str, Any]:
@@ -151,8 +170,6 @@ class NaturalFlowRecoverabilitySession(PersistentRecoverabilityCoverageSession):
             self.core.active_proposal_id = None
             self._draft_move = None
             self._topic_complete_ready = False
-            # A surfaced synthesis already forced an in-thread coverage refresh. Reuse that
-            # measurement metadata instead of making Yes/Reject wait on a second LLM call.
             if self._last_progress_report is not None:
                 result["coverage"] = self._last_progress_report
             return result
@@ -200,8 +217,6 @@ def create_life_patterns_v2_owner_natural_flow_app() -> FastAPI:
     runtime.model = NaturalFlowRecoverabilityOpenAIModel.from_env()
     runtime.create_session = MethodType(_create_natural_session, runtime)
 
-    # Replace the root and restore constructors so restored sessions have the same behavior
-    # as newly-created sessions. Other inherited routes keep using the shared runtime object.
     app.router.routes[:] = [
         route
         for route in app.router.routes
@@ -245,7 +260,23 @@ def create_life_patterns_v2_owner_natural_flow_app() -> FastAPI:
             raise HTTPException(status_code=422, detail=str(exc)) from exc
         return session.recovery_status()
 
+    @app.post("/api/owner-v2/conversation/sessions/{session_id}/patterns/obvious")
+    def mark_obvious_synthesis(session_id: str) -> dict[str, Any]:
+        try:
+            session = runtime.get(session_id)
+        except KeyError as exc:
+            raise HTTPException(status_code=404, detail="development session not found") from exc
+        if not isinstance(session, NaturalFlowRecoverabilitySession):
+            raise HTTPException(status_code=409, detail="session does not support natural completion")
+        try:
+            return session.mark_obvious_synthesis_complete()
+        except TemporaryModelProviderError as exc:
+            raise HTTPException(status_code=503, detail=str(exc)) from exc
+        except (RuntimeError, ValueError) as exc:
+            raise HTTPException(status_code=422, detail=str(exc)) from exc
+
     app.state.natural_topic_completion = True
     app.state.pattern_adjudication_uses_cached_progress = True
     app.state.progress_and_liveness_at_active_end = True
+    app.state.obvious_synthesis_can_close_without_pattern = True
     return app
