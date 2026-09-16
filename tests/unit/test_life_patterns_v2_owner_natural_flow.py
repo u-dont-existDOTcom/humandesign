@@ -57,6 +57,18 @@ def _coverage() -> dict[str, Any]:
     }
 
 
+def _surface_session(session_id: str) -> NaturalFlowRecoverabilitySession:
+    session = NaturalFlowRecoverabilitySession(
+        session_id=session_id,
+        model=FakeNaturalModel(surface=True),  # type: ignore[arg-type]
+    )
+    session.pattern_focus_established = True
+    session.coverage_report = lambda: _coverage()  # type: ignore[method-assign]
+    surfaced = session.turn("Quiet helps me recover.")
+    assert surfaced["pattern_active"] is True
+    return session
+
+
 def test_topic_complete_ends_area_without_forcing_pattern() -> None:
     session = NaturalFlowRecoverabilitySession(
         session_id="OWNER-NATURAL-TOPIC",
@@ -116,6 +128,23 @@ def test_accept_reuses_cached_progress_instead_of_another_coverage_call() -> Non
     assert session._draft_move is None
 
 
+def test_true_but_obvious_synthesis_can_close_without_recording_pattern() -> None:
+    session = _surface_session("OWNER-NATURAL-OBVIOUS")
+    before_proposals = len(session.core.record.pattern_proposals)
+    before_adjudications = len(session.core.record.participant_adjudications)
+
+    result = session.mark_obvious_synthesis_complete()
+
+    assert result["move_type"] == "topic_complete"
+    assert result["topic_complete"] is True
+    assert result["pattern_active"] is False
+    assert session._draft_move is None
+    assert session._topic_complete_ready is True
+    assert len(session.core.record.pattern_proposals) == before_proposals == 0
+    assert len(session.core.record.participant_adjudications) == before_adjudications == 0
+    assert session.recovery_status()["workflow_phase"] == "topic_complete"
+
+
 def test_progress_and_working_indicators_are_moved_to_active_end_at_runtime() -> None:
     html = NATURAL_FLOW_RECOVERABILITY_HTML
 
@@ -123,3 +152,5 @@ def test_progress_and_working_indicators_are_moved_to_active_end_at_runtime() ->
     assert "__naturalMain.appendChild(progress)" in html
     assert "move_type==='topic_complete'" in html
     assert "Thinking about that…" in html
+    assert "True, but too obvious — just move on" in html
+    assert "/patterns/obvious" in html
