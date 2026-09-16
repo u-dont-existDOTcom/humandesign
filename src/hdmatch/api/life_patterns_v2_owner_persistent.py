@@ -1,10 +1,14 @@
-"""Browser-persistent recovery for the Life Patterns development interview.
+"""Browser-persistent audit/recovery checkpoints for the Life Patterns development interview.
 
 The live development service deliberately does not persist private interview narratives on
-Railway. Instead, this layer exposes a JSON recovery snapshot of the exact in-memory hidden
-ledger so the participant's browser can keep it locally after each successful turn. A later
-server process can restore that snapshot without re-running the interview or reconstructing
-facts from prose.
+Railway. Instead, this layer exposes a JSON snapshot of the exact in-memory *working* hidden
+ledger so the participant's browser can preserve it for audit and crash recovery after each
+successful turn. A later server process can restore that snapshot without re-running the
+interview or reconstructing facts from prose.
+
+Exact recovery means lossless state preservation, not scientific correctness. The snapshot is
+explicitly an unvalidated working/audit checkpoint and never becomes a canonical measurement or
+scientific freeze merely because it can be restored.
 
 A transcript-only import seam is also provided for older recovery files that predate exact
 hidden-ledger snapshots. Those imports restore conversational context only and are explicitly
@@ -54,7 +58,7 @@ def _canonical_sha(payload: dict[str, Any]) -> str:
 
 
 class PersistentRecoverabilityCoverageSession(ResilientRecoverabilityCoverageSession):
-    """Resilient session with exact JSON export/import of the hidden ledger."""
+    """Resilient session with exact JSON audit/recovery snapshots of the working ledger."""
 
     recovery_quality: str = "exact_hidden_ledger"
 
@@ -71,6 +75,9 @@ class PersistentRecoverabilityCoverageSession(ResilientRecoverabilityCoverageSes
             "schema": _RECOVERY_SCHEMA,
             "session_id": self.session_id,
             "recovery_quality": self.recovery_quality,
+            "snapshot_role": "unvalidated_working_audit_checkpoint",
+            "canonical_measurement": False,
+            "scientific_freeze": False,
             "conversation": [dict(row) for row in self.conversation],
             "current_episode_id": self.current_episode_id,
             "awaiting_new_episode": self.awaiting_new_episode,
@@ -160,7 +167,9 @@ class PersistentRecoverabilityCoverageSession(ResilientRecoverabilityCoverageSes
         self._last_progress_report = progress if isinstance(progress, dict) else None
         quality = str(snapshot.get("recovery_quality", "exact_hidden_ledger"))
         self.recovery_quality = (
-            quality if quality in {"exact_hidden_ledger", "visible_transcript_only"} else "exact_hidden_ledger"
+            quality
+            if quality in {"exact_hidden_ledger", "visible_transcript_only"}
+            else "exact_hidden_ledger"
         )
 
     def visible_recovery_seed(self, turns: list[dict[str, Any]]) -> None:
@@ -192,6 +201,7 @@ class PersistentRecoverabilityCoverageSession(ResilientRecoverabilityCoverageSes
 
     def recovery_status(self) -> dict[str, Any]:
         proposition = self._active_proposition() if self._draft_move is not None else None
+        exact = self.recovery_quality == "exact_hidden_ledger"
         return {
             "session_id": self.session_id,
             "recovery_quality": self.recovery_quality,
@@ -199,8 +209,11 @@ class PersistentRecoverabilityCoverageSession(ResilientRecoverabilityCoverageSes
             "pattern_active": self._draft_move is not None,
             "pattern_proposition": proposition,
             "coverage": self._last_progress_report,
-            "exact_hidden_ledger_restored": self.recovery_quality == "exact_hidden_ledger",
-            "scientific_freeze_eligible": self.recovery_quality == "exact_hidden_ledger",
+            "exact_hidden_ledger_restored": exact,
+            "resume_capable": exact,
+            "working_ledger_validation_status": "unvalidated",
+            "requires_audit_before_scientific_use": True,
+            "scientific_freeze_eligible": False,
         }
 
 
@@ -214,7 +227,7 @@ def _create_persistent_session(
 
 
 def create_life_patterns_v2_owner_persistent_app() -> FastAPI:
-    """Serve the owner interview with exact browser-local hidden-ledger recovery."""
+    """Serve the owner interview with browser-local working-ledger audit/recovery snapshots."""
 
     app = create_life_patterns_v2_owner_resilient_app()
     runtime = app.state.recoverability_runtime
@@ -241,7 +254,9 @@ def create_life_patterns_v2_owner_persistent_app() -> FastAPI:
     @app.post("/api/owner-v2/conversation/sessions/restore")
     def restore_recovery(request: RecoveryRestoreRequest) -> dict[str, Any]:
         raw_id = str(request.snapshot.get("session_id", "")).strip()
-        session_id = raw_id if raw_id.startswith("OWNER-") else f"OWNER-{uuid.uuid4().hex[:12].upper()}"
+        session_id = (
+            raw_id if raw_id.startswith("OWNER-") else f"OWNER-{uuid.uuid4().hex[:12].upper()}"
+        )
         session = PersistentRecoverabilityCoverageSession(session_id=session_id, model=runtime.model)
         try:
             session.restore_recovery_snapshot(request.snapshot)
@@ -261,6 +276,7 @@ def create_life_patterns_v2_owner_persistent_app() -> FastAPI:
         return session.recovery_status()
 
     app.state.exact_hidden_ledger_browser_recovery = True
+    app.state.working_ledger_snapshots_are_unvalidated = True
     app.state.recovery_import = True
     app.state.visible_transcript_import_is_non_scientific = True
     return app
