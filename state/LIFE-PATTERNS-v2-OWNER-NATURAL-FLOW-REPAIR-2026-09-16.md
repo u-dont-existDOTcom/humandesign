@@ -46,6 +46,14 @@ The target-blind interviewer may now close a local measurement area without crea
 
 A participant-adjudicated synthesis is now reserved for cases where the model identifies a genuinely useful person-specific integration such as a conditional, contrast, boundary, recurring sequence, or other compression that is materially more informative than the immediately preceding statements. Explanatory surprise is not required; obvious paraphrase is insufficient reason to spend participant adjudication burden.
 
+### Manual escape for a synthesis that slips through
+
+Model classification is not assumed perfect. When a surfaced synthesis is true but obviously just restates what the participant said, the synthesis-review panel now includes:
+
+**True, but too obvious — just move on**
+
+That action closes the local measurement area using the already-computed coverage evidence, clears the ephemeral draft, and creates **no** v2 pattern proposal or participant adjudication. This also provides a correct exit for exact recovery checkpoints created by an earlier app version that already contain an over-obvious draft synthesis.
+
 ### Fast participant adjudication
 
 When a real synthesis is surfaced, the in-thread coverage report is already cached. `Yes — keep that`, rejection, and the other terminal judgments now commit through the deterministic v2 adjudication core and reuse the cached coverage metadata. They do not launch a second LLM coverage pass.
@@ -63,19 +71,19 @@ Exact audit/recovery snapshots now preserve whether the current workflow ended i
 - `tests/unit/test_life_patterns_v2_owner_natural_flow.py`
 - deployment wrapper: `src/hdmatch/api/life_patterns_v2_owner_deployed_app.py`
 
-Application source deployed: `5405e4f5398d5fa5902474ddb3a3163d7807ae1e`.
+Application source deployed: `78f674c471557d9b9ba8b567b080a75d29c45301`.
 
-Regression checkpoint: `559113ee6184c21f9ed2abeb45dbf620317311d2`.
+Regression checkpoint: `130d790326f4f88b393b1942da13d532ce816fd8`.
 
 ## Verification
 
-GitHub Actions run `35154236382`: **SUCCESS**.
+GitHub Actions run `35154728412`: **SUCCESS**.
 
 - unit/integration tests: PASS
 - Ruff: PASS
 - strict mypy: PASS
 
-Railway deployment `1606fb4a-5812-4da2-976a-ff1d7a342f05`: **SUCCESS** from application source `5405e4f5398d5fa5902474ddb3a3163d7807ae1e`.
+Railway deployment `350a756e-523f-4515-a26c-065166b9666d`: **SUCCESS** from application source `78f674c471557d9b9ba8b567b080a75d29c45301`.
 
 Runtime evidence:
 
@@ -97,9 +105,10 @@ Truth state remains `CAPTURED_BRANCH_ONLY`.
 On refresh/recovery:
 
 1. `Continue interview` should keep the working/status/progress surfaces at the active end rather than jumping to the page top;
-2. a locally complete area whose only available synthesis is an obvious paraphrase should close as **area covered** rather than require synthesis approval;
-3. a genuinely useful synthesis should still surface normally;
-4. `Yes — keep that` / reject should return promptly and synthesis buttons must not remain frozen under `Working on it…`;
-5. progress and exact audit/recovery must remain intact.
+2. a locally complete area whose only available synthesis is an obvious paraphrase should normally close as **area covered** rather than require synthesis approval;
+3. if an obvious synthesis still slips through — including one restored from an older checkpoint — **True, but too obvious — just move on** should close the area without recording a Life Pattern;
+4. a genuinely useful synthesis should still surface normally;
+5. `Yes — keep that` / reject should return promptly and synthesis buttons must not remain frozen under `Working on it…`;
+6. progress and exact audit/recovery must remain intact.
 
 After these product seams pass, the next scientific boundary remains a fresh target-blind measurement freeze followed by the narrowly authorized owner DOB/time recovery regression against the frozen historical benchmark.
