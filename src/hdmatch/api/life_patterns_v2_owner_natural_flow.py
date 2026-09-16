@@ -1,10 +1,11 @@
 """Natural-flow Life Patterns interview for owner development testing.
 
-Two distinctions are enforced here:
+The participant should only be asked to adjudicate an interviewer inference. A person-specific
+pattern the participant has already stated in their own words can be recorded from that original
+source without repeating it back for confirmation. Generic/high-base-rate material still does not
+become a Life Pattern merely because it was stated directly.
 
-* completing a measurement area does not require manufacturing a participant-level synthesis;
-* participant judgment of an already-surfaced synthesis must not wait on another LLM coverage pass.
-
+Participant judgment of an actual interviewer inference must not wait on another LLM coverage pass.
 The runtime remains target-theory-blind. Recovery snapshots remain unvalidated audit checkpoints.
 """
 
@@ -18,11 +19,16 @@ from typing import Any, Literal
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse
 
+from hdmatch.evaluation.participant_adjudicated_v2 import (
+    ParticipantAdjudicationV2,
+    PatternEvidenceLinkV2,
+    PatternProposalV2,
+)
+
 from .life_patterns_v2_owner_app import PatternAdjudicationRequest
 from .life_patterns_v2_owner_conversation import ConversationMove
 from .life_patterns_v2_owner_liveness import create_life_patterns_v2_owner_liveness_app
 from .life_patterns_v2_owner_natural_flow_ui import NATURAL_FLOW_RECOVERABILITY_HTML
-from .life_patterns_v2_owner_pattern_first import TemporaryModelProviderError
 from .life_patterns_v2_owner_persistent import (
     PersistentRecoverabilityCoverageSession,
     RecoveryRestoreRequest,
@@ -38,17 +44,25 @@ from .life_patterns_v2_owner_recoverability import RecoverabilityCoverageRuntime
 
 
 _NATURAL_COMPLETION_INSTRUCTIONS = (
-    "MEASUREMENT COMPLETION IS NOT THE SAME AS AN INSIGHTFUL SYNTHESIS. The larger interview has a fixed "
-    "measurement surface, but not every adequately measured area should become a named Life Pattern. Use "
-    "topic_complete when the current material is specific enough that another question has low expected "
-    "information gain, but any proposed person-level synthesis would mainly repackage, paraphrase, or enumerate "
-    "what the participant just said. topic_complete is a successful local ending, not a failure: reply briefly that "
-    "this gives enough information for this area and that the interview can move on. Do not summarize all their "
-    "details again and do not ask a question. For topic_complete return hypothesis_proposition=null and "
-    "evidence_fact_ids=[]. Use surface_hypothesis only when the synthesis adds a genuinely useful person-specific "
-    "integration, conditional, contrast, boundary, recurring sequence, or other compression that is meaningfully "
-    "more informative than the participant's immediately preceding statements. A synthesis does not need to be "
-    "surprising, but participant approval should not be spent on a near-verbatim fact summary."
+    "DIRECT REPORT VERSUS INFERENCE: Whether a pattern feels obvious is irrelevant. A Life Pattern may be obvious to "
+    "the participant and still be highly person-specific. The important distinctions are (a) PERSON-SPECIFIC versus "
+    "generic/high-base-rate, and (b) DIRECTLY STATED BY THE PARTICIPANT versus INFERRED BY THE INTERVIEWER. Do not "
+    "discard a person-specific pattern merely because it is an obvious restatement of what the participant already "
+    "knows. If the participant has ALREADY explicitly stated the person-specific pattern and no new inferential relation "
+    "is being added, use surface_hypothesis but set hypothesis_proposition to an EXACT CONTIGUOUS VERBATIM substring "
+    "from one participant message that itself states the pattern. Cite only operative facts derived from that same "
+    "participant message, including at least one reported_appraisal_or_belief fact. In that direct-report case, do NOT "
+    "repeat the pattern in reply and do NOT ask whether it fits; reply briefly that this area gives enough information "
+    "to move on. The runtime will recognize the exact participant-authored wording and record it using the original "
+    "participant provenance without another approval step. If you add ANY synthesis, comparison, causal/conditional "
+    "relation, scope claim, compression, or other proposition the participant did not explicitly state, that is an "
+    "INTERVIEWER INFERENCE: use surface_hypothesis normally, phrase the inferred synthesis tentatively, and ask the "
+    "participant to judge it.\n\n"
+    "TOPIC COMPLETION: Use topic_complete only when the current measurement area has enough information and there is no "
+    "useful person-specific Life Pattern to record from it—for example the available material is generic to people in "
+    "general, merely contextual, or otherwise does not support a person-level pattern. topic_complete is a successful "
+    "local ending, not a failure. Do not use topic_complete merely because a valid person-specific pattern is obvious or "
+    "already known to the participant. For topic_complete return hypothesis_proposition=null and evidence_fact_ids=[]."
 )
 
 
@@ -61,7 +75,7 @@ class TopicCompleteMove:
 
 
 class NaturalFlowRecoverabilityOpenAIModel(ResilientRecoverabilityOpenAIModel):
-    """Allow the planner to finish a measured area without forcing a trivial synthesis."""
+    """Allow clean topic completion while distinguishing direct reports from inference."""
 
     def plan_turn(
         self,
@@ -96,6 +110,7 @@ class NaturalFlowRecoverabilityOpenAIModel(ResilientRecoverabilityOpenAIModel):
                         "episode_id": fact.episode_id,
                         "assertion_type": fact.assertion_type,
                         "proposition": fact.proposition,
+                        "source_provenance_ids": list(fact.source_provenance_ids),
                     }
                     for fact in operative_facts
                 ],
@@ -117,22 +132,158 @@ class NaturalFlowRecoverabilityOpenAIModel(ResilientRecoverabilityOpenAIModel):
 
 
 class NaturalFlowRecoverabilitySession(PersistentRecoverabilityCoverageSession):
-    """Persistent session with explicit topic completion and low-latency adjudication."""
+    """Persistent session with direct-report recording and inference-only confirmation."""
 
     def __post_init__(self) -> None:
         super().__post_init__()
         self._topic_complete_ready = False
+        self._auto_recorded_direct_result: dict[str, Any] | None = None
 
     def _snapshot_state(self) -> tuple[Any, ...]:
-        return (super()._snapshot_state(), self._topic_complete_ready)
+        return (
+            super()._snapshot_state(),
+            self._topic_complete_ready,
+            self._auto_recorded_direct_result,
+        )
 
     def _restore_state(self, snapshot: tuple[Any, ...]) -> None:
-        base, topic_complete_ready = snapshot
+        base, topic_complete_ready, auto_recorded = snapshot
         super()._restore_state(base)
         self._topic_complete_ready = bool(topic_complete_ready)
+        self._auto_recorded_direct_result = auto_recorded
+
+    def _direct_report_source(
+        self, move: ConversationMove
+    ) -> tuple[str, str, tuple[str, ...]] | None:
+        """Return exact participant wording/source/evidence only for a mechanically direct report.
+
+        This intentionally uses a strict test. If the model paraphrases, combines multiple user turns,
+        cites evidence from another source turn, or otherwise adds interpretation, the move remains an
+        ordinary tentative synthesis and requires participant judgment.
+        """
+
+        wording = (move.hypothesis_proposition or "").strip()
+        if not wording or not move.evidence_fact_ids:
+            return None
+
+        source_ids = {row.source_provenance_id for row in self.core.record.source_provenance}
+        matching_source: str | None = None
+        for row in reversed(self.conversation):
+            if row.get("role") != "user":
+                continue
+            text = str(row.get("text", ""))
+            if wording not in text:
+                continue
+            turn_id = str(row.get("turn_id", ""))
+            source_id = f"SRC-{turn_id}"
+            if source_id in source_ids:
+                matching_source = source_id
+                break
+        if matching_source is None:
+            return None
+
+        fact_by_id = self._operative_by_id()
+        evidence_ids = tuple(dict.fromkeys(move.evidence_fact_ids))
+        if not set(evidence_ids).issubset(fact_by_id):
+            return None
+        evidence = tuple(fact_by_id[fact_id] for fact_id in evidence_ids)
+        if any(matching_source not in fact.source_provenance_ids for fact in evidence):
+            return None
+        if not any(fact.assertion_type == "reported_appraisal_or_belief" for fact in evidence):
+            return None
+        return wording, matching_source, evidence_ids
+
+    def _record_direct_reported_pattern(
+        self,
+        *,
+        wording: str,
+        source_id: str,
+        evidence_ids: tuple[str, ...],
+    ) -> dict[str, Any]:
+        """Record a participant-authored person-level pattern without inventing a second approval."""
+
+        fact_by_id = self._operative_by_id()
+        proposal_id = f"PROP-{uuid.uuid4().hex[:10].upper()}"
+        grouped: dict[str, list[str]] = {}
+        for fact_id in evidence_ids:
+            grouped.setdefault(fact_by_id[fact_id].episode_id, []).append(fact_id)
+        links = tuple(
+            PatternEvidenceLinkV2(
+                evidence_link_id=f"LINK-{uuid.uuid4().hex[:10].upper()}",
+                proposal_id=proposal_id,
+                episode_id=episode_id,
+                fact_ids=tuple(fact_ids),
+                role="preproposal_anchor",
+                acquisition_phase="pre_first_proposal",
+            )
+            for episode_id, fact_ids in grouped.items()
+        )
+        proposal = PatternProposalV2(
+            proposal_id=proposal_id,
+            pattern_thread_id=f"THREAD-{uuid.uuid4().hex[:10].upper()}",
+            revision_index=0,
+            proposition=wording,
+            question_text="Participant directly stated this person-level pattern; no inferential confirmation was requested.",
+            evidence_link_ids=tuple(link.evidence_link_id for link in links),
+            grounding_evidence_link_ids=tuple(link.evidence_link_id for link in links),
+        )
+        adjudication = ParticipantAdjudicationV2(
+            adjudication_id=f"ADJ-{uuid.uuid4().hex[:10].upper()}",
+            proposal_id=proposal_id,
+            decision="accept",
+            participant_response_provenance_ids=(source_id,),
+            participant_approved_wording=wording,
+        )
+        self.core.record = self.core.record.model_copy(
+            update={
+                "pattern_proposals": self.core.record.pattern_proposals + (proposal,),
+                "pattern_evidence_links": self.core.record.pattern_evidence_links + links,
+                "participant_adjudications": self.core.record.participant_adjudications
+                + (adjudication,),
+            }
+        )
+        self.core.proposal_support[proposal_id] = frozenset(evidence_ids)
+        self.core.active_proposal_id = proposal_id
+        result = self.core._final_result()
+        self.core.active_proposal_id = None
+        result.update(
+            {
+                "direct_pattern_recorded": True,
+                "pattern_active": False,
+                "pattern_proposition": None,
+                "topic_complete": True,
+                "move_type": "direct_pattern",
+                "reply": "That gives me enough information for this area; we can move on.",
+            }
+        )
+        return result
+
+    def _create_pattern(self, move: ConversationMove) -> None:
+        direct = self._direct_report_source(move)
+        if direct is not None:
+            wording, source_id, evidence_ids = direct
+            self._auto_recorded_direct_result = self._record_direct_reported_pattern(
+                wording=wording,
+                source_id=source_id,
+                evidence_ids=evidence_ids,
+            )
+            self._topic_complete_ready = True
+            self._draft_move = None
+            return
+        self._auto_recorded_direct_result = None
+        super()._create_pattern(move)
 
     def turn(self, message: str) -> dict[str, Any]:
+        self._auto_recorded_direct_result = None
         result = super().turn(message)
+        if self._auto_recorded_direct_result is not None:
+            direct_result = dict(self._auto_recorded_direct_result)
+            # The base turn has already appended the planner reply to conversation. Replace
+            # the response metadata, not the source conversation, with the direct-record result.
+            direct_result["reply"] = result.get("reply") or direct_result["reply"]
+            direct_result["episode_count"] = len(self.core.record.episodes)
+            self._auto_recorded_direct_result = None
+            return self._attach_periodic_progress(direct_result, force=True)
         if result.get("move_type") == "topic_complete":
             self._topic_complete_ready = True
             result["topic_complete"] = True
@@ -140,28 +291,8 @@ class NaturalFlowRecoverabilitySession(PersistentRecoverabilityCoverageSession):
         self._topic_complete_ready = False
         return result
 
-    def mark_obvious_synthesis_complete(self) -> dict[str, Any]:
-        """Close a true-but-uninformative synthesis without creating a v2 person pattern."""
-
-        if self._draft_move is None:
-            raise ValueError("no active tentative synthesis to mark as obvious")
-        self._draft_move = None
-        self.core.active_proposal_id = None
-        self._topic_complete_ready = True
-        result: dict[str, Any] = {
-            "reply": "That area is covered; I won't record the obvious summary as a Life Pattern.",
-            "move_type": "topic_complete",
-            "topic_complete": True,
-            "pattern_active": False,
-            "pattern_proposition": None,
-            "episode_count": len(self.core.record.episodes),
-        }
-        if self._last_progress_report is not None:
-            result["coverage"] = self._last_progress_report
-        return result
-
     def adjudicate(self, request: PatternAdjudicationRequest) -> dict[str, Any]:
-        """Commit participant judgment without blocking on another coverage-model call."""
+        """Commit an actual inferred-synthesis judgment without another coverage-model call."""
 
         snapshot = self._snapshot_state()
         try:
@@ -187,10 +318,12 @@ class NaturalFlowRecoverabilitySession(PersistentRecoverabilityCoverageSession):
     def restore_recovery_snapshot(self, snapshot: dict[str, Any]) -> None:
         super().restore_recovery_snapshot(snapshot)
         self._topic_complete_ready = bool(snapshot.get("topic_complete_ready", False))
+        self._auto_recorded_direct_result = None
 
     def visible_recovery_seed(self, turns: list[dict[str, Any]]) -> None:
         super().visible_recovery_seed(turns)
         self._topic_complete_ready = False
+        self._auto_recorded_direct_result = None
 
     def recovery_status(self) -> dict[str, Any]:
         status = super().recovery_status()
@@ -260,23 +393,9 @@ def create_life_patterns_v2_owner_natural_flow_app() -> FastAPI:
             raise HTTPException(status_code=422, detail=str(exc)) from exc
         return session.recovery_status()
 
-    @app.post("/api/owner-v2/conversation/sessions/{session_id}/patterns/obvious")
-    def mark_obvious_synthesis(session_id: str) -> dict[str, Any]:
-        try:
-            session = runtime.get(session_id)
-        except KeyError as exc:
-            raise HTTPException(status_code=404, detail="development session not found") from exc
-        if not isinstance(session, NaturalFlowRecoverabilitySession):
-            raise HTTPException(status_code=409, detail="session does not support natural completion")
-        try:
-            return session.mark_obvious_synthesis_complete()
-        except TemporaryModelProviderError as exc:
-            raise HTTPException(status_code=503, detail=str(exc)) from exc
-        except (RuntimeError, ValueError) as exc:
-            raise HTTPException(status_code=422, detail=str(exc)) from exc
-
     app.state.natural_topic_completion = True
+    app.state.direct_participant_patterns_skip_redundant_confirmation = True
+    app.state.inferred_patterns_require_participant_judgment = True
     app.state.pattern_adjudication_uses_cached_progress = True
     app.state.progress_and_liveness_at_active_end = True
-    app.state.obvious_synthesis_can_close_without_pattern = True
     return app
