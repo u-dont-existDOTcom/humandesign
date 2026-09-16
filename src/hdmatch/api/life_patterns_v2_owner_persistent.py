@@ -1,13 +1,13 @@
 """Browser-persistent recovery for the Life Patterns development interview.
 
 The live development service deliberately does not persist private interview narratives on
-Railway.  Instead, this layer exposes a JSON recovery snapshot of the exact in-memory hidden
-ledger so the participant's browser can keep it locally after each successful turn.  A later
+Railway. Instead, this layer exposes a JSON recovery snapshot of the exact in-memory hidden
+ledger so the participant's browser can keep it locally after each successful turn. A later
 server process can restore that snapshot without re-running the interview or reconstructing
 facts from prose.
 
 A transcript-only import seam is also provided for older recovery files that predate exact
-hidden-ledger snapshots.  Those imports restore conversational context only and are explicitly
+hidden-ledger snapshots. Those imports restore conversational context only and are explicitly
 not eligible to masquerade as an exact scientific recovery.
 """
 
@@ -158,7 +158,10 @@ class PersistentRecoverabilityCoverageSession(ResilientRecoverabilityCoverageSes
         )
         progress = snapshot.get("last_progress_report")
         self._last_progress_report = progress if isinstance(progress, dict) else None
-        self.recovery_quality = "exact_hidden_ledger"
+        quality = str(snapshot.get("recovery_quality", "exact_hidden_ledger"))
+        self.recovery_quality = (
+            quality if quality in {"exact_hidden_ledger", "visible_transcript_only"} else "exact_hidden_ledger"
+        )
 
     def visible_recovery_seed(self, turns: list[dict[str, Any]]) -> None:
         """Restore old visible transcript context without pretending the old ledger exists."""
