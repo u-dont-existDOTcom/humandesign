@@ -57,15 +57,17 @@ def test_transcript_reconstruction_creates_explicitly_non_scientific_working_led
     assert session._draft_move is not None
 
 
-def test_import_resume_app_exposes_reconstruction_route() -> None:
+def test_import_resume_app_exposes_reconstruction_and_quality_preserving_restore_routes() -> None:
     app = create_life_patterns_v2_owner_import_resume_app()
-    paths = {getattr(route, "path", None) for route in app.router.routes}
+    paths = [getattr(route, "path", None) for route in app.router.routes]
     assert "/api/owner-v2/conversation/sessions/{session_id}/reconstruct-visible" in paths
+    assert paths.count("/api/owner-v2/conversation/sessions/restore") == 1
     assert app.state.transcript_only_import_has_explicit_continuation is True
     assert app.state.transcript_reconstruction_is_non_scientific is True
+    assert app.state.reconstructed_recovery_quality_survives_reload is True
 
 
-def test_import_ui_exposes_explicit_recovery_next_steps() -> None:
+def test_import_ui_exposes_explicit_recovery_next_steps_without_reprompting_reconstructed_state() -> None:
     html = IMPORT_RESUME_RECOVERABILITY_HTML
     assert "Recovered transcript" in html
     assert "Continue from this recovered interview" in html
@@ -74,3 +76,6 @@ def test_import_ui_exposes_explicit_recovery_next_steps() -> None:
     assert "showRecoveredTranscriptActions" in html
     assert "reconstructed development ledger" in html
     assert "cannot become the clean scientific freeze" in html
+    assert "p.recovery_quality==='visible_transcript_only'" in html
+    assert "p.recovery_quality!=='exact_hidden_ledger')showRecoveredTranscriptActions" not in html
+    assert "Recovered reconstructed development ledger · non-scientific" in html
