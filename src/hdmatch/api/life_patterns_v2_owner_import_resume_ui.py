@@ -38,7 +38,7 @@ def _build_import_resume_html() -> str:
     html = html.replace(old_scroll, new_scroll, 1)
 
     # The generic non-scientific guard remains true for both a bare transcript import and
-    # a reconstructed development ledger.  Only the bare transcript should show the
+    # a reconstructed development ledger. Only the bare transcript should show the
     # reconstruction choice again; reconstructed state is already actionable and resumable.
     old_quality = "window.__lifePatternsTranscriptOnlyRecovery=p.recovery_quality==='visible_transcript_only';"
     new_quality = "window.__lifePatternsTranscriptOnlyRecovery=p.recovery_quality!=='exact_hidden_ledger';"
@@ -46,9 +46,12 @@ def _build_import_resume_html() -> str:
         raise RuntimeError("recovery-quality UI insertion point not found")
     html = html.replace(old_quality, new_quality, 1)
 
+    # Exact recovery must restore the participant's *workflow phase*, not only data. A
+    # post-adjudication snapshot should reopen at Continue interview / Finish, while an
+    # active synthesis should reopen at its judgment controls.
     old_exact_pattern = "if(p.pattern_active){show('patternPanel');show('composer')}"
     new_exact_pattern = (
-        "if(p.pattern_active){show('patternPanel');show('composer')}\n"
+        "renderRecoveredWorkflow(p);\n"
         "  if(p.recovery_quality==='visible_transcript_only')showRecoveredTranscriptActions();else hide('recoveredTranscriptActions');"
     )
     if old_exact_pattern not in html:
@@ -85,6 +88,32 @@ def _build_import_resume_html() -> str:
     if startup not in html:
         raise RuntimeError("import-resume JS insertion point not found")
     action_js = r'''
+function recoveredDecisionTitle(decision){
+  if(decision==='accept'||decision==='revise')return 'Working pattern kept';
+  if(decision==='reject')return 'Pattern rejected';
+  return 'Pattern left open';
+}
+
+function renderRecoveredWorkflow(p){
+  hide('patternPanel');hide('result');hide('continuation');
+  if(p&&p.pattern_active){
+    show('composer');show('patternPanel');
+    return;
+  }
+  if(p&&p.workflow_phase==='post_adjudication'){
+    hide('composer');
+    const last=completedResults.length?completedResults[completedResults.length-1]:null;
+    const decision=p.latest_adjudication_decision||(last&&last.status==='accepted'?'accept':last&&last.status==='rejected'?'reject':'unresolved');
+    const wording=p.latest_adjudication_wording||(last&&last.wording)||null;
+    let body='<strong>'+escapeHtml(recoveredDecisionTitle(decision))+'</strong>';
+    if(wording)body+='<p><strong>'+escapeHtml(wording)+'</strong></p>';
+    body+='<p class="note">This settled state was restored from the saved interview checkpoint.</p>';
+    $('result').innerHTML=body;show('result');show('continuation');
+    return;
+  }
+  show('composer');
+}
+
 function showRecoveredTranscriptActions(){
   show('recoveredTranscriptActions');
   show('composer');
@@ -104,8 +133,7 @@ $('resumeRecoveredTranscript').onclick=async()=>{
     window.__lifePatternsTranscriptOnlyRecovery=true;
     if(p.coverage){mergeCoverage(p.coverage);renderCoverageStatus()}
     if(p.reply)bubble('ai',p.reply);
-    show('composer');
-    if(p.pattern_active)show('patternPanel');else hide('patternPanel');
+    renderRecoveredWorkflow(p);
     $('sessionState').textContent='Recovered transcript · reconstructed development ledger';
     $('sessionSummary').textContent='Continued from your recovered answers using a newly reconstructed working ledger. This is useful for development/audit continuity, but it is not the lost original ledger and cannot become the clean scientific freeze.';
     $('sessionSummary').className='note';show('sessionSummary');
