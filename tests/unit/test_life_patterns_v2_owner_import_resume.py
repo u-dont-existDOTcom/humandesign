@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from hdmatch.api.life_patterns_v2_owner_app import PatternAdjudicationRequest
 from hdmatch.api.life_patterns_v2_owner_conversation import ConversationMove
 from hdmatch.api.life_patterns_v2_owner_import_resume import (
     _rebuild_visible_transcript_working_ledger,
@@ -55,6 +56,24 @@ def test_transcript_reconstruction_creates_explicitly_non_scientific_working_led
     assert len(session.core.record.episodes) == 2
     assert len(session.core.record.episode_facts) == 2
     assert session._draft_move is not None
+    assert session.recovery_status()["workflow_phase"] == "synthesis_review"
+
+
+def test_recovery_status_preserves_post_adjudication_workflow_phase() -> None:
+    session = PersistentRecoverabilityCoverageSession(
+        session_id="OWNER-IMPORT-SETTLED",
+        model=MinimalModel(),  # type: ignore[arg-type]
+    )
+    session.visible_recovery_seed(_turns())
+    _rebuild_visible_transcript_working_ledger(session)
+
+    session.adjudicate(PatternAdjudicationRequest(decision="accept"))
+    status = session.recovery_status()
+
+    assert status["pattern_active"] is False
+    assert status["workflow_phase"] == "post_adjudication"
+    assert status["latest_adjudication_decision"] == "accept"
+    assert status["latest_adjudication_wording"]
 
 
 def test_import_resume_app_exposes_reconstruction_and_quality_preserving_restore_routes() -> None:
@@ -67,7 +86,7 @@ def test_import_resume_app_exposes_reconstruction_and_quality_preserving_restore
     assert app.state.reconstructed_recovery_quality_survives_reload is True
 
 
-def test_import_ui_exposes_explicit_recovery_next_steps_without_reprompting_reconstructed_state() -> None:
+def test_import_ui_restores_actionable_workflow_phase_instead_of_blank_composer() -> None:
     html = IMPORT_RESUME_RECOVERABILITY_HTML
     assert "Recovered transcript" in html
     assert "Continue from this recovered interview" in html
@@ -79,3 +98,7 @@ def test_import_ui_exposes_explicit_recovery_next_steps_without_reprompting_reco
     assert "p.recovery_quality==='visible_transcript_only'" in html
     assert "p.recovery_quality!=='exact_hidden_ledger')showRecoveredTranscriptActions" not in html
     assert "Recovered reconstructed development ledger · non-scientific" in html
+    assert "renderRecoveredWorkflow(p)" in html
+    assert "p&&p.workflow_phase==='post_adjudication'" in html
+    assert "show('result');show('continuation')" in html
+    assert "This settled state was restored from the saved interview checkpoint." in html
