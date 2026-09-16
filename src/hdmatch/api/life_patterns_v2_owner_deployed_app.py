@@ -14,7 +14,7 @@ from collections.abc import Awaitable, Callable
 from fastapi import FastAPI, Request, Response
 from fastapi.responses import PlainTextResponse
 
-from .life_patterns_v2_owner_persistent import create_life_patterns_v2_owner_persistent_app
+from .life_patterns_v2_owner_import_resume import create_life_patterns_v2_owner_import_resume_app
 
 
 def _unauthorized() -> PlainTextResponse:
@@ -45,7 +45,7 @@ def create_secured_owner_app() -> FastAPI:
     expected_password = os.environ.get("HDMATCH_OWNER_BASIC_PASSWORD", "").strip()
     auth_enabled = bool(expected_password)
 
-    app = create_life_patterns_v2_owner_persistent_app()
+    app = create_life_patterns_v2_owner_import_resume_app()
     app.state.owner_basic_auth_enabled = auth_enabled
 
     if not auth_enabled:
