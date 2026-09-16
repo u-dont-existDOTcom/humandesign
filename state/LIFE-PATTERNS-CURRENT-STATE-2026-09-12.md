@@ -29,9 +29,10 @@ Direct owner testing exposed three distinct product-state errors:
 Current repair:
 
 - existing progress and request-liveness nodes are moved to the active end of the page at runtime;
-- the target-blind planner now has an explicit `topic_complete` workflow outcome for **enough measurement information, but no worthwhile person-level synthesis**;
-- `topic_complete` creates no v2 person-level pattern and simply exposes the finite continuation frontier;
+- the target-blind planner has an explicit `topic_complete` workflow outcome for **enough measurement information, but no worthwhile person-level synthesis**;
+- `topic_complete` creates no v2 person-level pattern and exposes the finite continuation frontier;
 - `surface_hypothesis` is reserved for useful person-specific integration such as a conditional, contrast, boundary, recurring sequence, or other compression beyond obvious restatement;
+- if an obvious synthesis still slips through or is restored from an older exact checkpoint, **True, but too obvious — just move on** closes the area while creating no v2 proposal/adjudication;
 - participant adjudication of a real synthesis reuses the coverage report already computed when that synthesis surfaced and does not launch another LLM coverage assessment;
 - exact recovery preserves the `topic_complete` phase as well as synthesis/post-adjudication phases.
 
@@ -74,13 +75,13 @@ Coverage alone cannot pass the owner's hard development criterion. After a fresh
 
 ## Verification / deployment
 
-Natural-flow application source: `5405e4f5398d5fa5902474ddb3a3163d7807ae1e`.
+Natural-flow application source: `78f674c471557d9b9ba8b567b080a75d29c45301`.
 
-Regression checkpoint: `559113ee6184c21f9ed2abeb45dbf620317311d2`.
+Regression checkpoint: `130d790326f4f88b393b1942da13d532ce816fd8`.
 
-GitHub Actions run `35154236382`: **SUCCESS** — unit/integration tests PASS, Ruff PASS, strict mypy PASS.
+GitHub Actions run `35154728412`: **SUCCESS** — unit/integration tests PASS, Ruff PASS, strict mypy PASS.
 
-Railway deployment `1606fb4a-5812-4da2-976a-ff1d7a342f05`: **SUCCESS** from application source `5405e4f5398d5fa5902474ddb3a3163d7807ae1e`; application startup completed and `/healthz` returned HTTP **200 OK**.
+Railway deployment `350a756e-523f-4515-a26c-065166b9666d`: **SUCCESS** from application source `78f674c471557d9b9ba8b567b080a75d29c45301`; application startup completed and `/healthz` returned HTTP **200 OK**.
 
 The development surface remains passwordless under prior explicit owner authority. This does not authorize external participant collection/recruitment.
 
@@ -95,11 +96,12 @@ Newest privacy-bounded record: `feedback/mission-control/SDF-20260916-LIFE-PATTE
 Owner consumer-seam retest should now verify:
 
 1. `Continue interview` stays near the active end instead of bouncing to the page top;
-2. an adequately measured area whose only possible synthesis is an obvious paraphrase can close as **area covered** without synthesis adjudication;
-3. a genuinely integrative synthesis still surfaces normally;
-4. `Yes — keep that` / reject return promptly and buttons do not remain disabled under `Working on it…`;
-5. progress, exact audit/recovery, non-repetition, and workflow-phase restoration remain intact;
-6. after these product seams pass, run a fresh target-blind interview and freeze it before DOB/time scoring.
+2. an adequately measured area whose only possible synthesis is an obvious paraphrase normally closes as **area covered** without synthesis adjudication;
+3. if an obvious synthesis still appears, **True, but too obvious — just move on** closes it without recording a Life Pattern;
+4. a genuinely integrative synthesis still surfaces normally;
+5. `Yes — keep that` / reject return promptly and buttons do not remain disabled under `Working on it…`;
+6. progress, exact audit/recovery, non-repetition, and workflow-phase restoration remain intact;
+7. after these product seams pass, run a fresh target-blind interview and freeze it before DOB/time scoring.
 
 Still unauthorized: external participant collection/recruitment, automated participant coding, chart-aware questioning, external-participant target scoring, merge/release, publication/validation claims, production expansion, and unapproved spending.
 
