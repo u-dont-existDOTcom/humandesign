@@ -285,12 +285,13 @@ class ResilientRecoverabilityCoverageSession(TransactionalRecoverabilityCoverage
             count >= 3 and count - self._last_progress_user_turn_count >= 3
         )
         if should_refresh:
+            report: dict[str, Any] | None = self._last_progress_report
             try:
                 report = self.coverage_report()
             except Exception:
                 # Progress is auxiliary. Never fail a successful interview turn because the
                 # coverage estimate could not be refreshed.
-                report = self._last_progress_report
+                pass
             if report is not None:
                 self._last_progress_report = report
                 self._last_progress_user_turn_count = count
