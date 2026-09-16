@@ -1,4 +1,4 @@
-"""Participant-facing persistence, import, progress-label, and scrolling overlay."""
+"""Participant-facing audit/recovery, import, progress-label, and scrolling overlay."""
 
 from __future__ import annotations
 
@@ -38,18 +38,18 @@ body{min-height:100vh}
         1,
     )
 
-    # Replace the transcript-only recovery affordance with exact hidden-ledger backup +
-    # import. Old visible-transcript JSON is still accepted, but is clearly marked as a
-    # non-scientific continuity recovery because it never contained the old hidden ledger.
+    # Preserve the exact *working* ledger as a browser-local audit/recovery checkpoint.
+    # This is intentionally not called a valid/final ledger: exactness means the state
+    # can be audited and resumed without loss, not that its extraction or semantics are correct.
     old_button = (
         '<button id="downloadLocalRecovery" type="button" class="subtle" style="margin-top:.55rem">'
         'Download local recovery copy</button>'
     )
     new_buttons = (
         '<button id="downloadLocalRecovery" type="button" class="subtle" style="margin-top:.55rem">'
-        'Download recovery JSON</button>\n'
+        'Download audit/recovery snapshot</button>\n'
         '  <button id="importRecovery" type="button" class="subtle" style="margin-top:.55rem">'
-        'Import recovery JSON</button>\n'
+        'Import audit/recovery snapshot</button>\n'
         '  <input id="importRecoveryFile" type="file" accept="application/json,.json" class="hidden">'
     )
     if old_button not in html:
@@ -57,7 +57,7 @@ body{min-height:100vh}
     html = html.replace(old_button, new_buttons, 1)
     html = html.replace(
         " Browser-local transcript backup only; not the scientific freeze.",
-        " Exact hidden-ledger recovery is stored only in this browser and can be downloaded. This is recovery state, not the final scientific freeze.",
+        " The browser automatically checkpoints the current working hidden ledger so bugs can be audited and a crash does not erase evidence. A checkpoint may itself contain ledger mistakes; it is not accepted/canonical data and is not the scientific freeze.",
         1,
     )
 
@@ -74,8 +74,8 @@ body{min-height:100vh}
     )
 
     # A transcript-only legacy recovery must never be exported as the clean scientific
-    # freeze. Exact hidden-ledger recovery remains eligible to continue toward a later
-    # participant freeze.
+    # freeze. Exact hidden-ledger recovery is still only an unvalidated working checkpoint;
+    # scientific acceptance happens through the later participant/semantic freeze path.
     freeze_marker = "$('freezeMeasurement').onclick=async()=>{"
     freeze_guard = (
         "$('freezeMeasurement').onclick=async()=>{"
@@ -125,6 +125,9 @@ async function syncExactRecovery(){
       schema:'life-patterns-browser-recovery-v2',
       saved_at:new Date().toISOString(),
       recovery_only:true,
+      audit_checkpoint:true,
+      unvalidated_working_state:true,
+      canonical_measurement:false,
       not_scientific_freeze:true,
       server_snapshot:serverSnapshot,
       client_state:currentClientRecoveryState()
@@ -169,7 +172,7 @@ async function restoreExactBundle(bundle){
     method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({snapshot})
   });
   let p={};try{p=await r.json()}catch{}
-  if(!r.ok)throw new Error(p.detail||'Could not restore hidden-ledger recovery JSON.');
+  if(!r.ok)throw new Error(p.detail||'Could not restore hidden-ledger audit/recovery snapshot.');
   sessionId=p.session_id;
   resetVisibleInterview();
   restoreClientState(bundle&&bundle.server_snapshot?bundle:{client_state:{}});
@@ -177,8 +180,8 @@ async function restoreExactBundle(bundle){
   renderRecoveredConversation(p.conversation||snapshot.conversation||[]);
   if(p.coverage){mergeCoverage(p.coverage);renderCoverageStatus()}
   if(p.pattern_active){show('patternPanel');show('composer')}
-  $('sessionState').textContent=p.exact_hidden_ledger_restored?'Recovered exact hidden-ledger session':'Recovered transcript-only session';
-  $('sessionSummary').textContent=p.exact_hidden_ledger_restored?'Recovered the exact hidden ledger and conversation from this browser backup.':'Recovered visible transcript context only; the old hidden ledger was not present in this file.';
+  $('sessionState').textContent=p.exact_hidden_ledger_restored?'Recovered working ledger snapshot · unvalidated':'Recovered transcript-only session';
+  $('sessionSummary').textContent=p.exact_hidden_ledger_restored?'Recovered the exact working hidden ledger and conversation. This preserves the state for continuation/audit but does not certify that the ledger is correct.':'Recovered visible transcript context only; the old hidden ledger was not present in this file.';
   $('sessionSummary').className=p.exact_hidden_ledger_restored?'note':'error';show('sessionSummary');
   scheduleExactRecovery();scrollToNextAction();
   return p;
@@ -197,7 +200,7 @@ async function restoreVisibleBundle(payload){
   window.__lifePatternsTranscriptOnlyRecovery=true;
   renderRecoveredConversation(p.conversation||turns);
   $('sessionState').textContent='Recovered visible transcript · hidden ledger unavailable';
-  $('sessionSummary').textContent='Imported the saved visible transcript. Because that older file never contained the server hidden ledger, this is development continuity only; future sessions will save the exact ledger automatically.';
+  $('sessionSummary').textContent='Imported the saved visible transcript. Because that older file never contained the server hidden ledger, this is development continuity only; future sessions preserve the exact working ledger as an audit/recovery checkpoint.';
   $('sessionSummary').className='error';show('sessionSummary');
   scheduleExactRecovery();scrollToNextAction();
 }
@@ -210,19 +213,20 @@ async function importRecoveryPayload(payload){
   throw new Error('Unrecognized Life Patterns recovery JSON format.');
 }
 
-$('downloadLocalRecovery').textContent='Download recovery JSON';
+$('downloadLocalRecovery').textContent='Download audit/recovery snapshot';
 $('downloadLocalRecovery').onclick=async()=>{
   let bundle=await syncExactRecovery();
   if(!bundle){try{bundle=JSON.parse(localStorage.getItem(EXACT_RECOVERY_KEY)||'null')}catch(_e){bundle=null}}
-  if(!bundle){$('sessionSummary').textContent='No exact recovery state is available yet.';$('sessionSummary').className='error';show('sessionSummary');return}
+  if(!bundle){$('sessionSummary').textContent='No exact working-ledger audit snapshot is available yet.';$('sessionSummary').className='error';show('sessionSummary');return}
   const blob=new Blob([JSON.stringify(bundle,null,2)+'\n'],{type:'application/json'});
   const url=URL.createObjectURL(blob);const a=document.createElement('a');
-  a.href=url;a.download=`life-patterns-recovery-${String(sessionId||'session').slice(-12)}.json`;
+  a.href=url;a.download=`life-patterns-audit-recovery-${String(sessionId||'session').slice(-12)}.json`;
   document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
-  $('sessionSummary').textContent='Recovery JSON downloaded. It contains the current hidden ledger plus visible conversation so the session can be restored after a server restart.';
+  $('sessionSummary').textContent='Audit/recovery snapshot downloaded. It preserves the current working hidden ledger plus visible conversation for inspection or crash recovery; it does not certify the ledger as correct.';
   $('sessionSummary').className='note';show('sessionSummary');
 };
 
+$('importRecovery').textContent='Import audit/recovery snapshot';
 $('importRecovery').onclick=()=>$('importRecoveryFile').click();
 $('importRecoveryFile').onchange=async()=>{
   const file=$('importRecoveryFile').files&&$('importRecoveryFile').files[0];
