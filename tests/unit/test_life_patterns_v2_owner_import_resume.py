@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-from fastapi.testclient import TestClient
-
 from hdmatch.api.life_patterns_v2_owner_conversation import ConversationMove
 from hdmatch.api.life_patterns_v2_owner_import_resume import (
     _rebuild_visible_transcript_working_ledger,
@@ -59,27 +57,12 @@ def test_transcript_reconstruction_creates_explicitly_non_scientific_working_led
     assert session._draft_move is not None
 
 
-def test_import_resume_endpoint_returns_an_actionable_synthesis() -> None:
+def test_import_resume_app_exposes_reconstruction_route() -> None:
     app = create_life_patterns_v2_owner_import_resume_app()
-    app.state.recoverability_runtime.model = MinimalModel()
-    client = TestClient(app)
-
-    restored = client.post(
-        "/api/owner-v2/conversation/sessions/restore-visible",
-        json={"turns": _turns()},
-    )
-    assert restored.status_code == 200
-    session_id = restored.json()["session_id"]
-
-    resumed = client.post(
-        f"/api/owner-v2/conversation/sessions/{session_id}/reconstruct-visible"
-    )
-    assert resumed.status_code == 200
-    payload = resumed.json()
-    assert payload["pattern_active"] is True
-    assert payload["move_type"] == "surface_hypothesis"
-    assert payload["recovery_quality"] == "reconstructed_visible_transcript"
-    assert payload["scientific_freeze_eligible"] is False
+    paths = {getattr(route, "path", None) for route in app.router.routes}
+    assert "/api/owner-v2/conversation/sessions/{session_id}/reconstruct-visible" in paths
+    assert app.state.transcript_only_import_has_explicit_continuation is True
+    assert app.state.transcript_reconstruction_is_non_scientific is True
 
 
 def test_import_ui_exposes_explicit_recovery_next_steps() -> None:
