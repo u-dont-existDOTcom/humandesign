@@ -2,97 +2,83 @@
 
 ## Life Patterns — 2026-09-16
 
-Active task: `life-patterns-v2-astrohd-recoverability-owner-retest` — **OWNER NATURAL-FLOW RETEST, THEN FRESH TARGET-BLIND MEASUREMENT + POST-FREEZE RECOVERY REQUIRED**.
+Active task: `life-patterns-v2-astrohd-recoverability-owner-retest` — **OWNER DIRECT-REPORT VS INFERENCE RETEST, THEN FRESH TARGET-BLIND MEASUREMENT + POST-FREEZE RECOVERY REQUIRED**.
 
 PR #24 remains **draft / open / unmerged**.
 
 ## Accepted scientific substrate
 
-The accepted v2 hidden evidence contract remains unchanged: open-world episode facts, participant-adjudicated person-level patterns, append-only correction/provenance, genuine-absence gating, immutable evidence timing, target-theory blindness, and the episode-fact/person-pattern firewall.
+The accepted v2 hidden evidence contract remains unchanged: open-world episode facts, participant-authoritative person-level patterns, append-only correction/provenance, genuine-absence gating, immutable evidence timing, target-theory blindness, and the episode-fact/person-pattern firewall.
 
-No private owner interview narrative is committed. Repository state contains abstract product findings, neutral measurement definitions, mechanical regressions, and privacy-bounded owner-authorized logic-correction receipts only.
+No private owner interview narrative is committed. Private interview content remains browser-local unless the owner explicitly exports/uploads an audit/recovery checkpoint.
 
 ## Current participant-facing architecture
 
-**Target-aware instrument design / target-blind runtime / fixed 23-dimension recoverability surface / dynamic information-gain questioning / explicit local topic completion / selective person-level synthesis / in-thread progress at the active end / ephemeral working synthesis until participant judgment / low-latency deterministic adjudication using cached coverage / exact browser-local hidden-ledger audit/recovery / importable recovery snapshots / local pre-scoring freeze / owner-only post-freeze DOB-time recovery regression.**
+**Target-aware instrument design / target-blind runtime / fixed 23-dimension recoverability surface / dynamic information-gain questioning / explicit local topic completion / direct participant self-report distinguished from interviewer inference / in-thread progress and liveness at the active end / ephemeral inferred synthesis until participant judgment / low-latency deterministic adjudication using cached coverage / exact browser-local hidden-ledger audit/recovery / importable recovery snapshots / local pre-scoring freeze / owner-only post-freeze DOB-time recovery regression.**
 
-Current behavior includes:
+Current rules:
 
-- person-specificity: recurrence alone is not useful if it is merely a high-base-rate human regularity;
-- no arbitrary episode/counterexample quota;
-- observer/self, inner/outer, context, scope, developmental, timing, and other neutral discriminators only when decision-changing;
-- global-label scope preservation;
-- fixed scientific coverage with adaptive order and wording;
-- prior answers may satisfy multiple dimensions and should prevent duplicate later questions;
-- long-thread planning keeps the practical conversation in view and treats semantic rewording as repetition;
-- free-form chat in every nonfinal synthesis-review state;
-- `Continue interview` as the finite default after a settled pattern or completed measurement area;
-- progress during the active thread, expressed as approximate percent plus **measurement areas still open**, not a question count;
-- progress and request-liveness surfaces are kept at the active end of the page rather than forcing scroll trips to the top;
-- a measurement area may finish as **area covered** without manufacturing a participant-facing synthesis;
-- participant adjudication is reserved for syntheses that add useful person-specific integration rather than obvious paraphrase;
-- if an obvious synthesis still appears, **True, but too obvious — just move on** closes the measurement area without creating a v2 pattern or adjudication;
-- when a real synthesis is surfaced, participant judgment reuses the already-computed coverage report instead of blocking on another LLM coverage call;
-- working syntheses remain ephemeral until participant judgment;
-- exact hidden-ledger working state is automatically checkpointed browser-side and can be downloaded/imported for audit/recovery;
-- audit/recovery exactness is explicitly not scientific validity;
-- participant authority over durable person-level patterns.
+- simple is fine; generic/high-base-rate is not a useful Life Pattern;
+- fixed measurement coverage does not imply fixed question order;
+- prior natural answers may satisfy several dimensions and should prevent later duplicate questioning;
+- broad participant labels preserve their intended cross-domain scope;
+- no arbitrary episode or counterexample quota;
+- progress reports approximate percent plus **measurement areas still open**, not a fictitious question count;
+- progress and request-liveness stay near the active end of the page rather than causing scroll ping-pong;
+- exact browser snapshots preserve a potentially defective working ledger for audit/recovery but do not certify scientific validity;
+- `Continue interview` is the finite default after a settled pattern or completed area; no visible unlimited extra-pattern branch;
+- participant decisions do not wait on a redundant second LLM coverage pass.
 
 Runtime elicitation receives no participant chart, birth target, expected answer direction, target-model mapping, candidate score/rank, or historical AstroHD crosswalk.
 
-## Latest owner consumer-seam findings: natural flow
+## Latest owner correction: obviousness is not the decision variable
 
-Direct owner testing plus an exact private audit/recovery checkpoint exposed three remaining defects.
+The prior natural-flow candidate incorrectly introduced **True, but too obvious — just move on** and treated a near-verbatim person-specific synthesis as something that should not become a Life Pattern.
 
-### 1. Progress/liveness navigation
+The owner corrected the target variable:
 
-`Continue interview` could scroll to a status/progress card near the top and then fail to return to the live question. Even when the return scroll worked, the two-scroll round trip was unnecessary.
+1. **generic/high-base-rate vs person-specific** determines whether material is interesting enough to be a Life Pattern;
+2. **direct participant self-report vs interviewer inference** determines whether another confirmation step is necessary.
 
-**Repair:** the existing progress and request-liveness DOM nodes are moved to the active end of the interview at runtime. Status visibility no longer requires navigating away from the current interaction.
+A person-specific pattern may be completely obvious to the participant because they already know it and explicitly said it. That does **not** make it an uninteresting Life Pattern. Repeating the same proposition back merely to ask for approval is redundant.
 
-### 2. Measurement completion versus person-level synthesis
+### Current three-way behavior
 
-The latest private checkpoint showed an adequately measured sensory/recovery area whose tentative synthesis mostly reorganized the immediately preceding answer. The scientific measurement had useful information, but participant adjudication of an obvious restatement added little value.
+**Generic/high-base-rate material:** may satisfy measurement coverage but is not promoted to a Life Pattern.
 
-**Repair:** the target-blind planner now has an explicit `topic_complete` workflow outcome. It may use this when the local measurement need is adequately met and further questioning has low expected information gain, but a person-level synthesis would mainly paraphrase or enumerate what the participant just said.
+**Direct participant-authored person-specific pattern:** if the model can point to exact participant-authored wording and same-source operative facts, the runtime records the pattern using the original participant source as authority and advances without showing a redundant synthesis-confirmation screen. The internal v2 adjudication row remains because the accepted substrate requires participant-authoritative person-level patterns; the participant's original utterance is the adjudication evidence, not a fabricated second decision event.
 
-`topic_complete` does **not** alter the accepted v2 semantic contract and does not create a durable Life Pattern. It simply closes the local measurement area and exposes the finite continuation frontier.
+**Interviewer inference:** any added synthesis, comparison, scope claim, causal/conditional relation, compression, or other proposition not explicitly stated by the participant remains an ephemeral tentative synthesis and requires explicit participant judgment.
 
-A synthesis is reserved for a genuinely useful person-specific integration such as a conditional, contrast, boundary, recurring sequence, or other compression that is materially more informative than the immediately preceding statements. It need not be surprising; obvious paraphrase is insufficient reason to spend participant adjudication burden.
+The direct-report path fails closed: wording must be an exact contiguous substring of one participant message; cited facts must come from the same source turn; at least one cited fact must be an attributed reported self-appraisal/belief. If those conditions are not met, the pattern stays in the inference/judgment path.
 
-Because model classification can still be imperfect, the synthesis-review panel now also exposes **True, but too obvious — just move on**. That preserves coverage, clears the ephemeral draft, and records no pattern proposal/adjudication. It also gives older exact checkpoints with an already-created obvious draft a correct exit.
+The obsolete **True, but too obvious — just move on** control and `/patterns/obvious` endpoint are removed.
 
-### 3. Participant judgment waiting on redundant remote work
+Receipt: `state/LIFE-PATTERNS-v2-OWNER-DIRECT-REPORT-INFERENCE-REPAIR-2026-09-16.md`.
 
-The earlier acceptance path could disable all synthesis buttons and remain under `Working on it…` because accepting/rejecting a synthesis synchronously launched another LLM-backed coverage assessment, even though coverage had already been assessed when the synthesis was surfaced.
+## Natural topic completion still exists, but for a different reason
 
-**Repair:** synthesis adjudication now commits through the deterministic v2 core and reuses the cached in-thread coverage report. It does not launch a second coverage-model call merely to return the participant's decision.
-
-Receipt: `state/LIFE-PATTERNS-v2-OWNER-NATURAL-FLOW-REPAIR-2026-09-16.md`.
+`topic_complete` remains valid when a measurement area has enough information but **no useful person-specific Life Pattern exists to record**—for example, the available material is generic to people in general or merely contextual. It is no longer used simply because a valid pattern was obvious or already stated.
 
 ## Recovery architecture
 
-The browser preserves a checksum-bound snapshot of the exact current *working* hidden ledger for crash recovery/audit. A working snapshot may contain a defect; exact restoration proves state preservation, not correctness. It is not canonical measurement data and is not the scientific freeze.
+The browser preserves a checksum-bound snapshot of the exact current *working* hidden ledger for crash recovery/audit. Exact restoration proves state preservation, not correctness.
 
-Recovery preserves conversation/turn IDs, episode/boundary state, the full v2 record and fact lineage, proposal support, current ephemeral synthesis, progress metadata, and explicit workflow phase including `topic_complete`.
-
-Private narrative remains browser-local unless the participant explicitly downloads/uploads a checkpoint. It is not persisted to Git or a Railway volume.
-
-Older files that never contained the hidden ledger can restore visible conversation for development continuity but cannot become the clean scientific freeze.
+Recovery includes conversation/turn IDs, episode/boundary state, full v2 fact/provenance lineage, proposal support, current ephemeral synthesis, progress metadata, and workflow phase. Older transcript-only recovery files remain development continuity only and cannot become the clean scientific freeze.
 
 ## Verification / live deployment
 
-Natural-flow application source: `78f674c471557d9b9ba8b567b080a75d29c45301`.
+Direct-report/inference application source: `041d567d42bf5e344265289b89b3ca13b0471ad3`.
 
-Regression checkpoint: `130d790326f4f88b393b1942da13d532ce816fd8`.
+Regression checkpoint: `f8fa03c09d23621543faa13bdff693ea9150a305`.
 
-GitHub Actions run `35154728412`: **SUCCESS**.
+GitHub Actions run `35156655878`: **SUCCESS**.
 
 - unit/integration tests: PASS;
 - Ruff: PASS;
 - strict mypy: PASS.
 
-Railway deployment `350a756e-523f-4515-a26c-065166b9666d`: **SUCCESS** from application source `78f674c471557d9b9ba8b567b080a75d29c45301`.
+Railway deployment `43411eeb-782e-468e-9f2b-1c29c46a6fd6`: **SUCCESS** from the exact application source.
 
 Runtime evidence:
 
@@ -105,32 +91,28 @@ The development surface remains passwordless under prior explicit owner authorit
 
 Active blueprint: `life-patterns-recoverability-coverage-v2`, with 23 required neutral dimensions and explicit missingness states.
 
-A fresh completed interview still fails if it does not preserve enough behavioral information for the historical owner AstroHD recovery:
+Coverage completion alone cannot pass. A fresh target-blind interview must be frozen/exported locally before the narrowly authorized owner-self AstroHD recovery test, which still requires:
 
 - exact recorded moment hourly rank no worse than **#2**;
-- correct date remains the **#1 distinct refined neighborhood**;
-- refined peak remains within **11 minutes** of recorded time.
-
-Coverage completion alone cannot pass. The fresh interview must be frozen/exported locally before the narrowly authorized owner-self AstroHD recovery is run.
+- correct date as the **#1 distinct refined neighborhood**;
+- refined peak within **11 minutes** of recorded time.
 
 ## Mission Control correction capture
 
-Owner-explicit logic corrections remain durably captured on the UDA branch `feedback/mission-control-logic-corrections-20260915`, draft PR #127. Current truth remains **`CAPTURED_BRANCH_ONLY`**.
+Owner-explicit logic corrections remain durably captured on the UDA branch `feedback/mission-control-logic-corrections-20260915`, draft PR #127, truth state **`CAPTURED_BRANCH_ONLY`**.
 
-Latest privacy-bounded artifact: `feedback/mission-control/SDF-20260916-LIFE-PATTERNS-NATURAL-FLOW-017.json`.
+Latest privacy-bounded correction: `feedback/mission-control/SDF-20260916-LIFE-PATTERNS-DIRECT-REPORT-VS-INFERENCE-018.json`.
 
 ## Current gate
 
-Owner consumer-seam retest is next. Immediate checks:
+Owner consumer-seam retest is next:
 
-1. refresh/reopen the exact-backed development checkpoint;
-2. `Continue interview` should keep the active interaction/status/progress near the bottom rather than bounce to the page top;
-3. an adequately measured area whose only available synthesis would be an obvious paraphrase should normally close as **area covered**;
-4. if an obvious synthesis still slips through or is restored from an older checkpoint, **True, but too obvious — just move on** should close it without recording a Life Pattern;
-5. a genuinely integrative person-specific synthesis should still surface normally;
-6. `Yes — keep that` / reject should return promptly, and synthesis buttons must not remain disabled under `Working on it…`;
-7. progress, exact recovery, non-repetition, and workflow-phase restoration must remain intact;
-8. once the product seam passes, complete a fresh target-blind interview, Freeze/export measurement, then run the owner-self historical AstroHD recovery regression.
+1. direct person-specific self-report should be recorded without being repeated back for approval;
+2. generic/high-base-rate material should still not become a Life Pattern merely because it was directly stated;
+3. genuine interviewer inference should still surface for explicit judgment;
+4. the obsolete obviousness button should be absent;
+5. bottom-positioned progress/liveness, fast synthesis adjudication, non-repetition, exact recovery, and workflow-phase restoration must remain intact;
+6. once the product seam passes, complete a fresh target-blind interview, Freeze/export measurement, then run the owner-self historical AstroHD recovery regression.
 
 Still unauthorized: external participant collection/recruitment, automated participant coding, chart-aware elicitation, external-participant target scoring, merge/release, publication/validation claims, production expansion, and unapproved spending.
 
