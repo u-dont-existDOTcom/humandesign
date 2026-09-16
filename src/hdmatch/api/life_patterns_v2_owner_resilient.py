@@ -23,9 +23,8 @@ from typing import Any
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 
-from .life_patterns_recoverability_domains import RECOVERABILITY_DOMAINS
 from .life_patterns_v2_owner_app import PatternAdjudicationRequest
-from .life_patterns_v2_owner_conversation import ConversationMove, TurnExtraction
+from .life_patterns_v2_owner_conversation import ConversationMove
 from .life_patterns_v2_owner_reasoning import (
     AdaptiveRefinablePatternSession,
     _ADAPTIVE_INTERVIEW_INSTRUCTIONS,
