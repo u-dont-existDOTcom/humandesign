@@ -37,6 +37,9 @@ def _build_import_resume_html() -> str:
         raise RuntimeError("recovered-transcript scroll priority insertion point not found")
     html = html.replace(old_scroll, new_scroll, 1)
 
+    # The generic non-scientific guard remains true for both a bare transcript import and
+    # a reconstructed development ledger.  Only the bare transcript should show the
+    # reconstruction choice again; reconstructed state is already actionable and resumable.
     old_quality = "window.__lifePatternsTranscriptOnlyRecovery=p.recovery_quality==='visible_transcript_only';"
     new_quality = "window.__lifePatternsTranscriptOnlyRecovery=p.recovery_quality!=='exact_hidden_ledger';"
     if old_quality not in html:
@@ -46,11 +49,24 @@ def _build_import_resume_html() -> str:
     old_exact_pattern = "if(p.pattern_active){show('patternPanel');show('composer')}"
     new_exact_pattern = (
         "if(p.pattern_active){show('patternPanel');show('composer')}\n"
-        "  if(p.recovery_quality!=='exact_hidden_ledger')showRecoveredTranscriptActions();else hide('recoveredTranscriptActions');"
+        "  if(p.recovery_quality==='visible_transcript_only')showRecoveredTranscriptActions();else hide('recoveredTranscriptActions');"
     )
     if old_exact_pattern not in html:
         raise RuntimeError("exact restore action-state insertion point not found")
     html = html.replace(old_exact_pattern, new_exact_pattern, 1)
+
+    old_state_copy = (
+        "$('sessionState').textContent=p.exact_hidden_ledger_restored?'Recovered working ledger snapshot · unvalidated':'Recovered transcript-only session';\n"
+        "  $('sessionSummary').textContent=p.exact_hidden_ledger_restored?'Recovered the exact working hidden ledger and conversation. This preserves the state for continuation/audit but does not certify that the ledger is correct.':'Recovered visible transcript context only; the old hidden ledger was not present in this file.';"
+    )
+    new_state_copy = (
+        "const reconstructed=p.recovery_quality==='reconstructed_visible_transcript';\n"
+        "  $('sessionState').textContent=p.exact_hidden_ledger_restored?'Recovered working ledger snapshot · unvalidated':reconstructed?'Recovered reconstructed development ledger · non-scientific':'Recovered transcript-only session';\n"
+        "  $('sessionSummary').textContent=p.exact_hidden_ledger_restored?'Recovered the exact working hidden ledger and conversation. This preserves the state for continuation/audit but does not certify that the ledger is correct.':reconstructed?'Recovered the reconstructed development ledger made from the older visible transcript. It can resume development continuity, but it is not the lost original ledger and cannot become the clean scientific freeze.':'Recovered visible transcript context only; the old hidden ledger was not present in this file.';"
+    )
+    if old_state_copy not in html:
+        raise RuntimeError("recovery-state copy insertion point not found")
+    html = html.replace(old_state_copy, new_state_copy, 1)
 
     old_visible_state = (
         "renderRecoveredConversation(p.conversation||turns);\n"
