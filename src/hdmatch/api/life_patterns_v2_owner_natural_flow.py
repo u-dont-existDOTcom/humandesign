@@ -70,7 +70,7 @@ class NaturalFlowRecoverabilityOpenAIModel(ResilientRecoverabilityOpenAIModel):
         operative_facts: tuple[Any, ...],
         recent_conversation: tuple[dict[str, str], ...],
         boundary_answered: bool,
-    ) -> ConversationMove | TopicCompleteMove:
+    ) -> Any:
         schema = self._move_schema()
         move_enum = schema["properties"]["move_type"]["enum"]
         if "topic_complete" not in move_enum:
