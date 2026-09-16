@@ -2,7 +2,7 @@
 
 V2 independent semantic review remains **PASS**. Semantic change required: `false`.
 
-Active task: `life-patterns-v2-astrohd-recoverability-owner-retest` — **OWNER RECOVERY/PROGRESS/LIVENESS RETEST, THEN FRESH TARGET-BLIND MEASUREMENT + POST-FREEZE RECOVERY REQUIRED**.
+Active task: `life-patterns-v2-astrohd-recoverability-owner-retest` — **OWNER NATURAL-FLOW RETEST, THEN FRESH TARGET-BLIND MEASUREMENT + POST-FREEZE RECOVERY REQUIRED**.
 
 PR #24 remains **draft / open / unmerged**.
 
@@ -14,9 +14,28 @@ No private owner interview narrative is stored in Git. Only abstract product/log
 
 ## Current architecture
 
-`participant-led characteristic material -> dynamic target-blind interviewing against fixed 23-dimension recoverability surface -> periodic in-thread coverage estimate -> ephemeral working synthesis -> participant judgment -> v2 proposal/adjudication materialization -> exact browser-local working-ledger audit/recovery -> local SHA-256 measurement freeze -> owner-only post-freeze DOB/time recovery regression`
+`participant-led material -> dynamic target-blind interview against fixed 23-dimension recoverability surface -> periodic in-thread coverage -> either local topic completion or a useful person-specific synthesis -> participant judgment only for real syntheses -> exact browser-local working-ledger audit/recovery -> local SHA-256 measurement freeze -> owner-only post-freeze DOB/time recovery regression`
 
 The runtime receives no chart, birth target, expected answer direction, target mapping, candidate score/rank, or historical AstroHD crosswalk.
+
+## Natural-flow correction
+
+Direct owner testing exposed three distinct product-state errors:
+
+1. progress/liveness at the page top caused an unnecessary scroll-to-top / scroll-back-down round trip, and the return scroll could fail;
+2. a locally complete measurement area could trigger a tentative synthesis that mainly paraphrased the participant's latest answer;
+3. synthesis judgment could remain frozen under `Working on it…` because participant adjudication waited on a redundant second LLM coverage pass.
+
+Current repair:
+
+- existing progress and request-liveness nodes are moved to the active end of the page at runtime;
+- the target-blind planner now has an explicit `topic_complete` workflow outcome for **enough measurement information, but no worthwhile person-level synthesis**;
+- `topic_complete` creates no v2 person-level pattern and simply exposes the finite continuation frontier;
+- `surface_hypothesis` is reserved for useful person-specific integration such as a conditional, contrast, boundary, recurring sequence, or other compression beyond obvious restatement;
+- participant adjudication of a real synthesis reuses the coverage report already computed when that synthesis surfaced and does not launch another LLM coverage assessment;
+- exact recovery preserves the `topic_complete` phase as well as synthesis/post-adjudication phases.
+
+Receipt: `state/LIFE-PATTERNS-v2-OWNER-NATURAL-FLOW-REPAIR-2026-09-16.md`.
 
 ## Working-ledger recovery boundary
 
@@ -25,30 +44,6 @@ Browser recovery preserves the exact current *working* hidden ledger for crash r
 Participant controls include **Download audit/recovery snapshot** and **Import audit/recovery snapshot**. Older visible-transcript-only files can be used for development continuity; their hidden ledger was never saved, so any reconstructed ledger remains explicitly non-scientific.
 
 Private narrative is not persisted to Git or a Railway volume.
-
-## Latest consumer-seam repair: progress hydration + request liveness
-
-The owner supplied a private recovery checkpoint after accepting a reconstructed synthesis. That checkpoint showed materially incomplete scientific coverage, while the UI had remained at `Preparing…` and then claimed **Interview coverage is complete** after `Continue interview`.
-
-The generating condition was exact and mechanical: recovery restored coverage rows but bypassed the fresh-session bootstrap that loads the fixed 23-dimension coverage blueprint. With an empty blueprint, the progress renderer looked uninitialized and the missing-dimension predicate saw an empty universe as zero missing.
-
-This is repaired in:
-
-- `src/hdmatch/api/life_patterns_v2_owner_liveness_ui.py`;
-- `src/hdmatch/api/life_patterns_v2_owner_liveness.py`;
-- the deployment wrapper now serves the liveness-aware surface.
-
-Every restore/import path now loads the real coverage blueprint before restored progress or completion is evaluated. `Continue interview` also ensures the blueprint is present before testing whether anything remains open.
-
-Long-running user actions now expose a separate request-liveness surface with an indeterminate progress bar and explicit status. Current messages include:
-
-- **Rebuilding the recovered interview and preparing a synthesis…**;
-- **Saving that and updating interview progress…**;
-- **Choosing the next useful question…**.
-
-Scientific interview progress and request-liveness progress are separate concepts.
-
-Receipt: `state/LIFE-PATTERNS-v2-OWNER-RECOVERY-PROGRESS-LIVENESS-REPAIR-2026-09-16.md`.
 
 ## Existing participant-facing rules retained
 
@@ -60,10 +55,9 @@ Receipt: `state/LIFE-PATTERNS-v2-OWNER-RECOVERY-PROGRESS-LIVENESS-REPAIR-2026-09
 - self/observer, inner/outer, automatic/deliberate and other discriminators are used selectively;
 - free-form chat remains available in every nonfinal synthesis state;
 - `Keep investigating` is the single visible generic refinement action;
-- `Continue interview` is the finite default after a settled pattern;
+- `Continue interview` is the finite default after a settled pattern or locally completed measurement area;
 - `Explore another pattern` is not visible;
 - progress reports **measurement areas still open**, not remaining questions;
-- action-oriented scrolling keeps the next answer/judgment surface visible;
 - long-thread planning treats semantic rewording of already answered questions as repetition;
 - participant finalization remains transactional;
 - working syntheses remain ephemeral until participant judgment.
@@ -80,13 +74,13 @@ Coverage alone cannot pass the owner's hard development criterion. After a fresh
 
 ## Verification / deployment
 
-Exact liveness-aware application head: `625ec596fd4098096357f5cb3c7bee522ce4d5ea`.
+Natural-flow application source: `5405e4f5398d5fa5902474ddb3a3163d7807ae1e`.
 
-Regression checkpoint: `a71ab72d39dd46c0793ac5ec207640bf62186e21`.
+Regression checkpoint: `559113ee6184c21f9ed2abeb45dbf620317311d2`.
 
-GitHub Actions run `35115906379`: **SUCCESS** — unit/integration tests PASS, Ruff PASS, strict mypy PASS.
+GitHub Actions run `35154236382`: **SUCCESS** — unit/integration tests PASS, Ruff PASS, strict mypy PASS.
 
-Railway deployment `54e829be-6fe5-4570-9321-609468b414ff`: **SUCCESS** from the exact application head; application startup completed and `/healthz` returned HTTP **200 OK**.
+Railway deployment `1606fb4a-5812-4da2-976a-ff1d7a342f05`: **SUCCESS** from application source `5405e4f5398d5fa5902474ddb3a3163d7807ae1e`; application startup completed and `/healthz` returned HTTP **200 OK**.
 
 The development surface remains passwordless under prior explicit owner authority. This does not authorize external participant collection/recruitment.
 
@@ -94,17 +88,18 @@ The development surface remains passwordless under prior explicit owner authorit
 
 Owner-explicit reasoning/product-logic corrections remain durably captured on the UDA branch `feedback/mission-control-logic-corrections-20260915`, draft PR #127, truth state **`CAPTURED_BRANCH_ONLY`**.
 
-Newest privacy-bounded record: `feedback/mission-control/SDF-20260916-LIFE-PATTERNS-LIVENESS-AND-BLUEPRINT-HYDRATION-015.json`.
+Newest privacy-bounded record: `feedback/mission-control/SDF-20260916-LIFE-PATTERNS-NATURAL-FLOW-017.json`.
 
 ## Current gate
 
 Owner consumer-seam retest should now verify:
 
-1. recovered progress resolves from `Preparing…` to an actual approximate percentage/open-area count;
-2. reconstruction, acceptance, and continue-interview operations visibly show an in-flight working state;
-3. `Continue interview` advances into remaining dimensions rather than falsely reporting completion;
-4. long threads still avoid semantic duplicate questions and can end in an actual current synthesis;
-5. after these product seams pass, run a fresh target-blind interview and freeze it before DOB/time scoring.
+1. `Continue interview` stays near the active end instead of bouncing to the page top;
+2. an adequately measured area whose only possible synthesis is an obvious paraphrase can close as **area covered** without synthesis adjudication;
+3. a genuinely integrative synthesis still surfaces normally;
+4. `Yes — keep that` / reject return promptly and buttons do not remain disabled under `Working on it…`;
+5. progress, exact audit/recovery, non-repetition, and workflow-phase restoration remain intact;
+6. after these product seams pass, run a fresh target-blind interview and freeze it before DOB/time scoring.
 
 Still unauthorized: external participant collection/recruitment, automated participant coding, chart-aware questioning, external-participant target scoring, merge/release, publication/validation claims, production expansion, and unapproved spending.
 
