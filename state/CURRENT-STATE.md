@@ -31,6 +31,7 @@ Current behavior includes:
 - progress and request-liveness surfaces are kept at the active end of the page rather than forcing scroll trips to the top;
 - a measurement area may finish as **area covered** without manufacturing a participant-facing synthesis;
 - participant adjudication is reserved for syntheses that add useful person-specific integration rather than obvious paraphrase;
+- if an obvious synthesis still appears, **True, but too obvious — just move on** closes the measurement area without creating a v2 pattern or adjudication;
 - when a real synthesis is surfaced, participant judgment reuses the already-computed coverage report instead of blocking on another LLM coverage call;
 - working syntheses remain ephemeral until participant judgment;
 - exact hidden-ledger working state is automatically checkpointed browser-side and can be downloaded/imported for audit/recovery;
@@ -59,6 +60,8 @@ The latest private checkpoint showed an adequately measured sensory/recovery are
 
 A synthesis is reserved for a genuinely useful person-specific integration such as a conditional, contrast, boundary, recurring sequence, or other compression that is materially more informative than the immediately preceding statements. It need not be surprising; obvious paraphrase is insufficient reason to spend participant adjudication burden.
 
+Because model classification can still be imperfect, the synthesis-review panel now also exposes **True, but too obvious — just move on**. That preserves coverage, clears the ephemeral draft, and records no pattern proposal/adjudication. It also gives older exact checkpoints with an already-created obvious draft a correct exit.
+
 ### 3. Participant judgment waiting on redundant remote work
 
 The earlier acceptance path could disable all synthesis buttons and remain under `Working on it…` because accepting/rejecting a synthesis synchronously launched another LLM-backed coverage assessment, even though coverage had already been assessed when the synthesis was surfaced.
@@ -71,15 +74,7 @@ Receipt: `state/LIFE-PATTERNS-v2-OWNER-NATURAL-FLOW-REPAIR-2026-09-16.md`.
 
 The browser preserves a checksum-bound snapshot of the exact current *working* hidden ledger for crash recovery/audit. A working snapshot may contain a defect; exact restoration proves state preservation, not correctness. It is not canonical measurement data and is not the scientific freeze.
 
-Recovery preserves:
-
-- conversation and turn IDs;
-- current episode/boundary/pattern-focus state;
-- full v2 record including fact revision lineage and source-provenance hashes;
-- proposal support / active proposal state;
-- current ephemeral synthesis draft;
-- latest in-thread progress report;
-- the explicit workflow phase, including `topic_complete`.
+Recovery preserves conversation/turn IDs, episode/boundary state, the full v2 record and fact lineage, proposal support, current ephemeral synthesis, progress metadata, and explicit workflow phase including `topic_complete`.
 
 Private narrative remains browser-local unless the participant explicitly downloads/uploads a checkpoint. It is not persisted to Git or a Railway volume.
 
@@ -87,17 +82,17 @@ Older files that never contained the hidden ledger can restore visible conversat
 
 ## Verification / live deployment
 
-Natural-flow application source: `5405e4f5398d5fa5902474ddb3a3163d7807ae1e`.
+Natural-flow application source: `78f674c471557d9b9ba8b567b080a75d29c45301`.
 
-Regression checkpoint: `559113ee6184c21f9ed2abeb45dbf620317311d2`.
+Regression checkpoint: `130d790326f4f88b393b1942da13d532ce816fd8`.
 
-GitHub Actions run `35154236382`: **SUCCESS**.
+GitHub Actions run `35154728412`: **SUCCESS**.
 
 - unit/integration tests: PASS;
 - Ruff: PASS;
 - strict mypy: PASS.
 
-Railway deployment `1606fb4a-5812-4da2-976a-ff1d7a342f05`: **SUCCESS** from application source `5405e4f5398d5fa5902474ddb3a3163d7807ae1e`.
+Railway deployment `350a756e-523f-4515-a26c-065166b9666d`: **SUCCESS** from application source `78f674c471557d9b9ba8b567b080a75d29c45301`.
 
 Runtime evidence:
 
@@ -130,11 +125,12 @@ Owner consumer-seam retest is next. Immediate checks:
 
 1. refresh/reopen the exact-backed development checkpoint;
 2. `Continue interview` should keep the active interaction/status/progress near the bottom rather than bounce to the page top;
-3. an adequately measured area whose only available synthesis would be an obvious paraphrase should close as **area covered** and expose `Continue interview` rather than require synthesis approval;
-4. a genuinely integrative person-specific synthesis should still surface normally;
-5. `Yes — keep that` / reject should return promptly, and synthesis buttons must not remain disabled under `Working on it…`;
-6. progress, exact recovery, non-repetition, and workflow-phase restoration must remain intact;
-7. once the product seam passes, complete a fresh target-blind interview, Freeze/export measurement, then run the owner-self historical AstroHD recovery regression.
+3. an adequately measured area whose only available synthesis would be an obvious paraphrase should normally close as **area covered**;
+4. if an obvious synthesis still slips through or is restored from an older checkpoint, **True, but too obvious — just move on** should close it without recording a Life Pattern;
+5. a genuinely integrative person-specific synthesis should still surface normally;
+6. `Yes — keep that` / reject should return promptly, and synthesis buttons must not remain disabled under `Working on it…`;
+7. progress, exact recovery, non-repetition, and workflow-phase restoration must remain intact;
+8. once the product seam passes, complete a fresh target-blind interview, Freeze/export measurement, then run the owner-self historical AstroHD recovery regression.
 
 Still unauthorized: external participant collection/recruitment, automated participant coding, chart-aware elicitation, external-participant target scoring, merge/release, publication/validation claims, production expansion, and unapproved spending.
 
