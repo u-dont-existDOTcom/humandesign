@@ -65,6 +65,9 @@ def test_exact_hidden_ledger_recovery_round_trip_preserves_draft_and_fact_ids() 
     restored = _session()
     restored.restore_recovery_snapshot(snapshot)
 
+    assert snapshot["snapshot_role"] == "unvalidated_working_audit_checkpoint"
+    assert snapshot["canonical_measurement"] is False
+    assert snapshot["scientific_freeze"] is False
     assert restored.conversation == session.conversation
     assert restored.core.operative_facts()[0].fact_id == fact_id
     assert restored.core.operative_facts()[0].proposition == (
@@ -74,6 +77,11 @@ def test_exact_hidden_ledger_recovery_round_trip_preserves_draft_and_fact_ids() 
     assert restored._draft_move.evidence_fact_ids == (fact_id,)
     assert restored._last_progress_report == session._last_progress_report
     assert restored.recovery_quality == "exact_hidden_ledger"
+    status = restored.recovery_status()
+    assert status["resume_capable"] is True
+    assert status["working_ledger_validation_status"] == "unvalidated"
+    assert status["requires_audit_before_scientific_use"] is True
+    assert status["scientific_freeze_eligible"] is False
 
 
 def test_recovery_checksum_rejects_modified_hidden_state() -> None:
@@ -102,9 +110,13 @@ def test_visible_legacy_import_remains_explicitly_non_scientific() -> None:
     assert restored.conversation[-1]["text"] == "A recovered answer"
 
 
-def test_persistent_ui_has_exact_import_area_labels_and_action_scrolling() -> None:
+def test_persistent_ui_labels_checkpoint_as_audit_state_not_valid_measurement() -> None:
     html = PERSISTENT_RECOVERABILITY_HTML
-    assert "Import recovery JSON" in html
+    assert "Import audit/recovery snapshot" in html
+    assert "Download audit/recovery snapshot" in html
+    assert "unvalidated_working_state:true" in html
+    assert "canonical_measurement:false" in html
+    assert "does not certify the ledger as correct" in html
     assert "lifePatternsExactRecoveryV2" in html
     assert "/sessions/restore-visible" in html
     assert "/sessions/${encodeURIComponent(sessionId)}/recovery" in html
