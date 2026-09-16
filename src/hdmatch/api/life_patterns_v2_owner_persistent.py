@@ -168,7 +168,11 @@ class PersistentRecoverabilityCoverageSession(ResilientRecoverabilityCoverageSes
         quality = str(snapshot.get("recovery_quality", "exact_hidden_ledger"))
         self.recovery_quality = (
             quality
-            if quality in {"exact_hidden_ledger", "visible_transcript_only"}
+            if quality in {
+                "exact_hidden_ledger",
+                "visible_transcript_only",
+                "reconstructed_visible_transcript",
+            }
             else "exact_hidden_ledger"
         )
 
@@ -199,9 +203,29 @@ class PersistentRecoverabilityCoverageSession(ResilientRecoverabilityCoverageSes
         self._last_progress_user_turn_count = 0
         self.recovery_quality = "visible_transcript_only"
 
+    def _workflow_phase(self) -> str:
+        if self._draft_move is not None:
+            return "synthesis_review"
+        if self.core.record.participant_adjudications:
+            return "post_adjudication"
+        return "interview"
+
+    def _latest_adjudication_summary(self) -> tuple[str | None, str | None]:
+        if not self.core.record.participant_adjudications:
+            return None, None
+        adjudication = self.core.record.participant_adjudications[-1]
+        wording = adjudication.participant_approved_wording
+        if not wording:
+            for proposal in reversed(self.core.record.pattern_proposals):
+                if proposal.proposal_id == adjudication.proposal_id:
+                    wording = proposal.proposition
+                    break
+        return adjudication.decision, wording
+
     def recovery_status(self) -> dict[str, Any]:
         proposition = self._active_proposition() if self._draft_move is not None else None
         exact = self.recovery_quality == "exact_hidden_ledger"
+        decision, wording = self._latest_adjudication_summary()
         return {
             "session_id": self.session_id,
             "recovery_quality": self.recovery_quality,
@@ -209,6 +233,9 @@ class PersistentRecoverabilityCoverageSession(ResilientRecoverabilityCoverageSes
             "pattern_active": self._draft_move is not None,
             "pattern_proposition": proposition,
             "coverage": self._last_progress_report,
+            "workflow_phase": self._workflow_phase(),
+            "latest_adjudication_decision": decision,
+            "latest_adjudication_wording": wording,
             "exact_hidden_ledger_restored": exact,
             "resume_capable": exact,
             "working_ledger_validation_status": "unvalidated",
