@@ -2,7 +2,7 @@
 
 ## Life Patterns — 2026-09-16
 
-Active task: `life-patterns-v2-astrohd-recoverability-owner-retest` — **OWNER LONG-THREAD RESILIENCE RETEST, THEN FRESH TARGET-BLIND MEASUREMENT + POST-FREEZE RECOVERY REQUIRED**.
+Active task: `life-patterns-v2-astrohd-recoverability-owner-retest` — **OWNER PERSISTENT-RECOVERY + LONG-THREAD RETEST, THEN FRESH TARGET-BLIND MEASUREMENT + POST-FREEZE RECOVERY REQUIRED**.
 
 PR #24 remains **draft / open / unmerged**.
 
@@ -10,11 +10,11 @@ PR #24 remains **draft / open / unmerged**.
 
 The accepted v2 hidden evidence contract remains unchanged: open-world episode facts, participant-adjudicated person-level patterns, append-only correction/provenance, genuine-absence gating, immutable evidence timing, target-theory blindness, and the episode-fact/person-pattern firewall.
 
-No private owner interview narrative is committed. Repository state contains only abstract product findings, neutral measurement definitions, mechanical regressions, and privacy-bounded owner-authorized logic-correction receipts.
+No private owner interview narrative is committed. Repository state contains abstract product findings, neutral measurement definitions, mechanical regressions, and privacy-bounded owner-authorized logic-correction receipts only.
 
 ## Current participant-facing architecture
 
-**Target-aware instrument design / target-blind runtime / fixed 23-dimension recoverability surface / dynamic information-gain questioning / in-thread adaptive progress / ephemeral working synthesis until participant judgment / transactional finalization / browser-local recovery copy / local pre-scoring freeze / owner-only post-freeze DOB-time recovery regression.**
+**Target-aware instrument design / target-blind runtime / fixed 23-dimension recoverability surface / dynamic information-gain questioning / in-thread adaptive progress / ephemeral working synthesis until participant judgment / transactional finalization / exact browser-local hidden-ledger recovery / importable recovery JSON / local pre-scoring freeze / owner-only post-freeze DOB-time recovery regression.**
 
 Current behavior includes:
 
@@ -24,67 +24,76 @@ Current behavior includes:
 - global-label scope preservation;
 - fixed scientific coverage with adaptive order and wording;
 - prior answers may satisfy multiple dimensions and should prevent duplicate later questions;
+- long-thread planning keeps the practical conversation in view and treats semantic rewording as repetition;
 - free-form chat in every nonfinal synthesis-review state;
 - one visible generic continuation: **Keep investigating**;
 - `Continue interview` as the finite default after a settled pattern; no visible unlimited `Explore another pattern` branch;
-- a persistent approximate progress horizon;
+- progress during an active thread, expressed as approximate percent plus **measurement areas still open**, not a fictitious question count;
+- working syntheses remain ephemeral until participant judgment and refinement can end with an actual updated synthesis;
+- exact hidden-ledger recovery is automatically backed up browser-side and can be downloaded/imported;
+- page scrolling follows the next participant action and a vertical scrollbar is always available;
 - participant authority over durable person-level patterns.
 
 Runtime elicitation receives no participant chart, birth target, expected answer direction, target-model mapping, candidate score/rank, or historical AstroHD crosswalk.
 
-## Latest owner consumer-seam failure: long-thread resilience
+## Recovery architecture
 
-A long natural owner interview showed that earlier local repairs were not sufficient at the actual consumer seam.
+Receipt: `state/LIFE-PATTERNS-v2-OWNER-EXACT-RECOVERY-IMPORT-SCROLL-REPAIR-2026-09-16.md`.
 
-Observed failures:
+The prior browser recovery captured only visible transcript text. That was insufficient because the server hidden ledger still lived only in process memory.
 
-1. semantically equivalent questions were asked again later in the same thread;
-2. the progress display stayed at 0% throughout substantial interviewing;
-3. refinement eventually said no more useful questions remained but did not provide an updated final synthesis;
-4. accepting the displayed synthesis failed because it still grounded through a fact that had been corrected and superseded during refinement;
-5. because the server-side hidden ledger was in process memory, the owner reasonably feared the interview had been lost after the failure/redeploy cycle.
+The live recovery path now uses a checksum-bound `life-patterns-hidden-ledger-session-v2` server snapshot containing the exact resumable hidden state:
 
-### Generating conditions
+- complete conversation with turn IDs;
+- current episode/boundary/pattern-focus state;
+- full v2 record including fact revision lineage and source-provenance hashes;
+- proposal support / active proposal state;
+- current ephemeral synthesis draft;
+- latest in-thread progress report.
 
-- normal/refinement planners saw only short recent-conversation tails, so earlier answered questions could fall outside the model-visible planning window;
-- participant-facing coverage aggregation advanced only after final adjudication, not from evidence gathered during an active unsettled thread;
-- the refinement schema explicitly prohibited `surface_hypothesis`, so refinement had no lawful route to end with a revised synthesis;
-- tentative model syntheses were committed as v2 proposals before participant judgment, allowing later fact correction to strand a proposal on superseded evidence;
-- the browser had no participant-controlled local backup of visible turns.
+The browser automatically stores the latest exact snapshot in local storage. **Download recovery JSON** exports it together with client aggregate coverage/results. **Import recovery JSON** restores it after a server restart. On ordinary reload the browser attempts exact restore automatically before starting a new session.
+
+Private narrative is still not persisted to Git or a Railway volume. Recovery state remains in the participant browser unless the participant explicitly downloads the file.
+
+### Older recovery file boundary
+
+The previously reconstructed supervising-Chat JSON is `life-patterns-visible-recovery-v1`. It can now be imported so the visible conversation is available for development continuity, but the historical server fact IDs/provenance were never present in that file and cannot be recreated exactly. Such a session is marked `visible_transcript_only` and is blocked from being represented as the clean scientific measurement freeze.
+
+From the new deployment forward, downloaded `life-patterns-browser-recovery-v2` files contain the exact hidden-ledger snapshot needed for real session restoration.
+
+## Progress / scrolling corrections
+
+The progress card now reports the count of **open measurement areas**. These are not remaining questions: one natural answer may satisfy several areas and a partial area can require more than one turn. The rough time estimate remains explicitly approximate.
+
+The UI now forces a vertical scrollbar and scrolls toward the next actionable surface—answer composer, synthesis judgment, or continuation controls—rather than merely the newest chat bubble. The opening answer box should therefore be brought into view automatically.
+
+## Long-thread resilience
+
+The prior long-thread failures and their repairs remain active:
+
+- planner/refinement context is large enough to retain the practical thread;
+- answered semantic distinctions must not be re-asked under new wording;
+- one thread must not be expanded to exhaust every adjacent standardized dimension;
+- refinement may end with a current `surface_hypothesis` rather than only saying questioning is done;
+- tentative syntheses stay out of the durable v2 record until judgment;
+- coverage can update before adjudication;
+- participant finalization remains transactional.
 
 Receipt: `state/LIFE-PATTERNS-v2-OWNER-LONG-THREAD-RESILIENCE-REPAIR-2026-09-16.md`.
 
-## Current repair
-
-Implementation:
-
-- `src/hdmatch/api/life_patterns_v2_owner_resilient.py`;
-- `src/hdmatch/api/life_patterns_v2_owner_resilient_ui.py`;
-- `tests/unit/test_life_patterns_v2_owner_resilient.py`.
-
-Behavioral changes:
-
-1. normal/refinement planning sees up to 80 practical thread turns rather than the old short tail;
-2. planner instructions explicitly treat semantic rewording of an answered question as repetition and prohibit using one pattern thread to exhaust every adjacent measurement dimension;
-3. when refinement has no more useful discriminator, it may and should emit an actual updated `surface_hypothesis` using current operative facts;
-4. tentative model syntheses remain ephemeral until the participant judges them; the current draft is materialized into the accepted v2 record only immediately before adjudication, so later participant corrections cannot leave an old durable proposal grounded through superseded evidence;
-5. coverage is reassessed periodically during the active thread and returned to the browser so the approximate progress horizon can move before adjudication;
-6. progress refresh is auxiliary and cannot fail an otherwise successful interview turn;
-7. the browser keeps a bounded visible-turn recovery copy in local storage and exposes **Download local recovery copy**. It is recovery-only and explicitly not the scientific freeze.
-
-The old failed session's exact hidden ledger is not guaranteed recoverable after process restart. The owner supplied the visible conversation back to supervising Chat, so its visible content was privately recovered outside Git. That development recovery must not be represented as a fresh scientific measurement freeze.
-
 ## Verification / live deployment
 
-Exact resilient application head: `ebbee06d0e1349ac88df11b04b339bcbff7f931f`.
+Exact persistent-recovery application head: `389c6191989071c35253b24e36a43d28ba03d963`.
 
-GitHub Actions run `35048204507`: **SUCCESS**.
+Regression checkpoint head: `4ace5174ec9da2c8ce9c9786d3ac89df456cfe87`.
 
-- unit/integration tests: **775 passed, 7 expected skips**;
-- Ruff: **PASS**;
-- strict mypy: **PASS**.
+GitHub Actions run `35049331970`: **SUCCESS**.
 
-Railway deployment `756d6efa-8079-4332-89c3-7ce676e1c452`: **SUCCESS** from exact application head `ebbee06d0e1349ac88df11b04b339bcbff7f931f`.
+- unit/integration tests: PASS;
+- Ruff: PASS;
+- strict mypy: PASS.
+
+Railway deployment `cca4d5c8-fee7-4f30-a00a-34f4b4ba6299`: **SUCCESS** from exact application head `389c6191989071c35253b24e36a43d28ba03d963`.
 
 Runtime evidence:
 
@@ -107,20 +116,23 @@ Coverage completion alone cannot pass. The fresh interview must be frozen/export
 
 ## Mission Control correction capture
 
-Owner-explicit logic corrections are durably captured on the UDA branch `feedback/mission-control-logic-corrections-20260915`, draft PR #127. Current truth remains **`CAPTURED_BRANCH_ONLY`**.
+Owner-explicit logic corrections remain durably captured on the UDA branch `feedback/mission-control-logic-corrections-20260915`, draft PR #127. Current truth remains **`CAPTURED_BRANCH_ONLY`**.
 
-Latest privacy-bounded artifact: `feedback/mission-control/SDF-20260916-LIFE-PATTERNS-THREAD-LOSS-AND-STALE-SYNTHESIS-011.json`. Private interview narrative is intentionally omitted.
+Latest privacy-bounded artifact: `feedback/mission-control/SDF-20260916-LIFE-PATTERNS-RECOVERY-PROGRESS-SCROLL-012.json`.
 
 ## Current gate
 
-Owner consumer-seam retest is next. A useful retest must establish that:
+Owner consumer-seam retest is next. The immediate checks are:
 
-1. a long thread does not semantically re-ask already answered questions;
-2. the progress horizon changes during the thread rather than staying at 0% until adjudication;
-3. when the interviewer says the thread is sufficiently resolved, an actual updated synthesis is presented for judgment;
-4. later participant corrections do not make **Yes — keep that** fail with superseded-grounding errors;
-5. the browser-local recovery copy is available for future development-session recovery;
-6. after product behavior is acceptable, a fresh target-blind interview is completed and frozen before DOB/time scoring.
+1. refresh/reopen and confirm the opening answer box is automatically visible and the scrollbar is available;
+2. confirm progress says **measurement areas**, not questions;
+3. import the previously supplied visible-recovery JSON and confirm the transcript appears with a clear `visible transcript only / not scientific freeze` warning;
+4. in a fresh exact-backed session, answer several turns and refresh; confirm the same session/hidden ledger restores automatically rather than restarting;
+5. confirm long threads do not semantically re-ask settled distinctions;
+6. confirm progress moves during the thread;
+7. confirm refinement ends with an actual current synthesis;
+8. confirm **Yes — keep that** works after participant corrections;
+9. once product behavior passes, complete a fresh target-blind interview, Freeze/export measurement, then run the owner-self historical AstroHD recovery regression.
 
 Still unauthorized: external participant collection/recruitment, automated participant coding, chart-aware elicitation, external-participant target scoring, merge/release, publication/validation claims, production expansion, and unapproved spending.
 
