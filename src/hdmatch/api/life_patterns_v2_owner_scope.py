@@ -126,9 +126,7 @@ def create_life_patterns_v2_owner_scope_app() -> FastAPI:
     runtime = app.state.recoverability_runtime
     # Existing route closures retain this runtime object, so replacing only its session
     # factory upgrades ordinary, contextual, and dynamic-coverage sessions together.
-    runtime.create_session = MethodType(  # type: ignore[method-assign]
-        _create_transactional_session, runtime
-    )
+    runtime.create_session = MethodType(_create_transactional_session, runtime)
     app.state.global_label_scope_guard = True
     app.state.cross_thread_planning_context = True
     app.state.transactional_pattern_finalization = True
