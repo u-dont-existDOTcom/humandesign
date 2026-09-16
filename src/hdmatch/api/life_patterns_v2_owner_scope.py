@@ -3,17 +3,24 @@
 The participant-facing interviewer remains target-theory-blind. This overlay repairs a
 reasoning defect in which a broad self-description could be silently narrowed to the
 first well-evidenced subdomain (or silently generalized beyond it) without checking the
-participant's intended scope.
+participant's intended scope. It also keeps participant finalization transactional across
+the post-adjudication coverage pass so a failed response cannot leave a half-committed
+adjudication behind for the next click.
 """
 
 from __future__ import annotations
 
+from types import MethodType
 from typing import Any, Literal
+import uuid
 
 from fastapi import FastAPI
 
+from .life_patterns_v2_owner_app import PatternAdjudicationRequest
 from .life_patterns_v2_owner_recoverability import (
     RecoverabilityCoverageOpenAIModel,
+    RecoverabilityCoverageRuntime,
+    RecoverabilityCoverageSession,
     create_life_patterns_v2_owner_recoverability_app,
 )
 
@@ -79,11 +86,48 @@ class ScopeAwareRecoverabilityOpenAIModel(RecoverabilityCoverageOpenAIModel):
         )
 
 
+class TransactionalRecoverabilityCoverageSession(RecoverabilityCoverageSession):
+    """Roll back the whole finalization response if any post-decision step fails."""
+
+    def adjudicate(self, request: PatternAdjudicationRequest) -> dict[str, Any]:
+        snapshot = self._snapshot_state()
+        try:
+            result = super().adjudicate(request)
+            # A successfully returned decision is terminal for this proposal. Clearing the
+            # active pointer makes a repeated request fail cleanly instead of appending a
+            # second adjudication to the same proposal.
+            self.core.active_proposal_id = None
+            return result
+        except Exception:
+            # Coverage assessment happens after the core participant decision. Without
+            # this outer transaction, a coverage/model failure could leave the decision
+            # committed even though the browser saw an error and naturally retried it.
+            self._restore_state(snapshot)
+            raise
+
+
+def _create_transactional_session(
+    runtime: RecoverabilityCoverageRuntime,
+) -> TransactionalRecoverabilityCoverageSession:
+    session_id = f"OWNER-{uuid.uuid4().hex[:12].upper()}"
+    session = TransactionalRecoverabilityCoverageSession(
+        session_id=session_id,
+        model=runtime.model,
+    )
+    runtime.sessions[session_id] = session
+    return session
+
+
 def create_life_patterns_v2_owner_scope_app() -> FastAPI:
-    """Serve the recoverability interview with the global-label scope guard active."""
+    """Serve the recoverability interview with scope and transactional-finalization guards."""
 
     model = ScopeAwareRecoverabilityOpenAIModel.from_env()
     app = create_life_patterns_v2_owner_recoverability_app(model=model)
+    runtime = app.state.recoverability_runtime
+    # Existing route closures retain this runtime object, so replacing only its session
+    # factory upgrades ordinary, contextual, and dynamic-coverage sessions together.
+    setattr(runtime, "create_session", MethodType(_create_transactional_session, runtime))
     app.state.global_label_scope_guard = True
     app.state.cross_thread_planning_context = True
+    app.state.transactional_pattern_finalization = True
     return app
