@@ -80,6 +80,77 @@ function renderProgress(){
         raise RuntimeError("progress initialization insertion point not found")
     html = html.replace(old_blueprint_load, new_blueprint_load, 1)
 
+    # The participant should have one clear nonterminal action: ask the interviewer
+    # for more discriminating evidence. A separate "No — keep investigating" button
+    # created a distinction the product could not explain cleanly. If the participant
+    # knows what is wrong, the always-visible chat box remains the direct correction path.
+    old_continue = '<button id="continuePattern" class="secondary">Keep trying to pin it down</button>'
+    new_continue = '<button id="continuePattern" class="secondary">Keep investigating</button>'
+    if old_continue not in html:
+        raise RuntimeError("synthesis continue button insertion point not found")
+    html = html.replace(old_continue, new_continue, 1)
+
+    old_reject_continue = '<button id="reject" class="danger">No — keep investigating</button>'
+    hidden_reject_continue = (
+        '<button id="reject" class="danger hidden" aria-hidden="true" tabindex="-1">'
+        'No — keep investigating</button>'
+    )
+    if old_reject_continue not in html:
+        raise RuntimeError("redundant synthesis rejection button insertion point not found")
+    html = html.replace(old_reject_continue, hidden_reject_continue, 1)
+
+    html = html.replace(
+        "Would you like to keep trying to pin this pattern down, or make a judgment now? Saying the synthesis does not fit keeps the underlying inquiry open; use Reject and stop only when you actually want to end this thread.",
+        "If you are not ready to accept this synthesis, choose Keep investigating and I’ll ask one more useful question. If you already know what is wrong or missing, type it in the chat box below. Use Reject and stop only when you actually want to end this thread.",
+        1,
+    )
+    html = html.replace("bubble('user','Keep trying to pin it down.');", "bubble('user','Keep investigating.');", 1)
+
+    # Prevent accidental duplicate adjudication requests from repeated clicks while a
+    # participant decision is in flight. The server also rolls back failed finalization.
+    old_decision = """async function decision(decision){
+  try{
+    const p=await api(`/api/owner-v2/conversation/sessions/${encodeURIComponent(sessionId)}/patterns/adjudicate`,{method:'POST',body:JSON.stringify({decision})});
+    renderResult(p);
+  }catch(e){$('patternStatus').textContent=e.message;$('patternStatus').className='error'}
+}"""
+    new_decision = """async function decision(decision){
+  if(window.__patternDecisionPending)return;
+  window.__patternDecisionPending=true;
+  document.querySelectorAll('#patternPanel button').forEach(b=>b.disabled=true);
+  try{
+    const p=await api(`/api/owner-v2/conversation/sessions/${encodeURIComponent(sessionId)}/patterns/adjudicate`,{method:'POST',body:JSON.stringify({decision})});
+    renderResult(p);
+  }catch(e){$('patternStatus').textContent=e.message;$('patternStatus').className='error'}
+  finally{window.__patternDecisionPending=false;if(!$('patternPanel').classList.contains('hidden'))document.querySelectorAll('#patternPanel button').forEach(b=>b.disabled=false)}
+}"""
+    if old_decision not in html:
+        raise RuntimeError("pattern-decision guard insertion point not found")
+    html = html.replace(old_decision, new_decision, 1)
+
+    # Once one pattern is settled, the normal path is the finite adaptive interview.
+    # "Explore another pattern" invited indefinite participant-created branches and
+    # duplicated the purpose of the information-gain selector. Keep the DOM node hidden
+    # only so inherited event wiring remains harmless.
+    old_explore = '<button id="exploreAnother">Explore another pattern</button>'
+    hidden_explore = (
+        '<button id="exploreAnother" class="hidden" aria-hidden="true" tabindex="-1">'
+        'Explore another pattern</button>'
+    )
+    if old_explore not in html:
+        raise RuntimeError("explore-another button insertion point not found")
+    html = html.replace(old_explore, hidden_explore, 1)
+    html = html.replace(
+        "You can explore another pattern, continue the standardized coverage checklist, or finish with any remaining domains explicitly marked incomplete.",
+        "Continue the interview to cover the remaining gaps using what you have already told me, or finish for now. The interviewer will keep choosing the next useful question rather than opening an unlimited sequence of extra pattern threads.",
+        1,
+    )
+    html = html.replace(
+        '<button id="continueCoverage" class="secondary">Continue interview</button>',
+        '<button id="continueCoverage">Continue interview</button>',
+        1,
+    )
+
     old_fresh = """async function startFreshPattern(){
   const p=await api('/api/owner-v2/conversation/sessions',{method:'POST'});
   sessionId=p.session_id;groundingChoice=null;refiningPattern=false;
