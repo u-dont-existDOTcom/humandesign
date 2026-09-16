@@ -1,12 +1,12 @@
 """Actionable continuation for transcript-only Life Patterns recovery imports.
 
 Older recovery JSON can preserve the visible conversation without the original hidden ledger.
-Importing that transcript should not strand the participant at a generic text box.  This overlay
+Importing that transcript should not strand the participant at a generic text box. This overlay
 provides an explicit development-only reconstruction path: exact participant utterances are
 re-encoded conservatively as attributed self-report facts, then the target-blind interviewer
 chooses either a current tentative synthesis or one genuinely necessary next question.
 
-The reconstructed ledger is an audit/development convenience only.  It is not the original
+The reconstructed ledger is an audit/development convenience only. It is not the original
 hidden ledger, is not a canonical measurement, and remains ineligible for the scientific freeze.
 """
 
@@ -19,11 +19,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse
 
 from .life_patterns_v2_owner_app import OwnerV2Session
-from .life_patterns_v2_owner_conversation import (
-    ConversationMove,
-    HiddenFactCandidate,
-    TurnExtraction,
-)
+from .life_patterns_v2_owner_conversation import HiddenFactCandidate, TurnExtraction
 from .life_patterns_v2_owner_import_resume_ui import IMPORT_RESUME_RECOVERABILITY_HTML
 from .life_patterns_v2_owner_pattern_first import TemporaryModelProviderError
 from .life_patterns_v2_owner_persistent import (
@@ -45,11 +41,11 @@ def _rebuild_visible_transcript_working_ledger(
 ) -> dict[str, Any]:
     """Create an explicitly reconstructed, non-scientific working ledger and continue.
 
-    The original fact IDs/extraction decisions are unrecoverable.  Each recovered participant
+    The original fact IDs/extraction decisions are unrecoverable. Each recovered participant
     utterance therefore becomes one attributed self-report fact with its exact source text and a
-    fresh episode.  This maximizes auditability and avoids pretending to recreate the lost model
-    extraction.  The target-blind planner may then surface a working synthesis or ask one further
-    question.  The result remains recovery/development state only.
+    fresh episode. This maximizes auditability and avoids pretending to recreate the lost model
+    extraction. The target-blind planner may then surface a working synthesis or ask one further
+    question. The result remains recovery/development state only.
     """
 
     if session.recovery_quality not in {
