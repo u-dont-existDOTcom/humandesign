@@ -24,6 +24,7 @@ from .life_patterns_v2_owner_import_resume_ui import IMPORT_RESUME_RECOVERABILIT
 from .life_patterns_v2_owner_pattern_first import TemporaryModelProviderError
 from .life_patterns_v2_owner_persistent import (
     PersistentRecoverabilityCoverageSession,
+    RecoveryRestoreRequest,
     create_life_patterns_v2_owner_persistent_app,
 )
 
@@ -140,14 +141,40 @@ def create_life_patterns_v2_owner_import_resume_app() -> FastAPI:
     app = create_life_patterns_v2_owner_persistent_app()
     runtime = app.state.recoverability_runtime
 
-    # Replace only the root UI. Existing exact audit/recovery endpoints remain unchanged.
+    # Replace the root UI and inherited exact-restore endpoint so reconstructed recovery
+    # keeps its explicit non-scientific quality across a browser/server restart.
     app.router.routes[:] = [
-        route for route in app.router.routes if getattr(route, "path", None) != "/"
+        route
+        for route in app.router.routes
+        if getattr(route, "path", None)
+        not in {"/", "/api/owner-v2/conversation/sessions/restore"}
     ]
 
     @app.get("/", response_class=HTMLResponse, include_in_schema=False)
     def landing() -> str:
         return IMPORT_RESUME_RECOVERABILITY_HTML
+
+    @app.post("/api/owner-v2/conversation/sessions/restore")
+    def restore_recovery(request: RecoveryRestoreRequest) -> dict[str, Any]:
+        raw_id = str(request.snapshot.get("session_id", "")).strip()
+        session_id = (
+            raw_id if raw_id.startswith("OWNER-") else f"OWNER-{uuid.uuid4().hex[:12].upper()}"
+        )
+        session = PersistentRecoverabilityCoverageSession(session_id=session_id, model=runtime.model)
+        try:
+            session.restore_recovery_snapshot(request.snapshot)
+        except (TypeError, ValueError) as exc:
+            raise HTTPException(status_code=422, detail=str(exc)) from exc
+
+        original_quality = str(request.snapshot.get("recovery_quality", ""))
+        if original_quality == "reconstructed_visible_transcript":
+            session.recovery_quality = "reconstructed_visible_transcript"
+        runtime.sessions[session_id] = session
+        status = session.recovery_status()
+        if session.recovery_quality == "reconstructed_visible_transcript":
+            status["reconstructed_working_ledger_restored"] = True
+            status["resume_capable"] = True
+        return status
 
     @app.post(
         "/api/owner-v2/conversation/sessions/{session_id}/reconstruct-visible"
@@ -170,4 +197,5 @@ def create_life_patterns_v2_owner_import_resume_app() -> FastAPI:
 
     app.state.transcript_only_import_has_explicit_continuation = True
     app.state.transcript_reconstruction_is_non_scientific = True
+    app.state.reconstructed_recovery_quality_survives_reload = True
     return app
