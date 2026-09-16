@@ -2,7 +2,7 @@
 
 ## Life Patterns — 2026-09-16
 
-Active task: `life-patterns-v2-astrohd-recoverability-owner-retest` — **OWNER PERSISTENT-RECOVERY + LONG-THREAD RETEST, THEN FRESH TARGET-BLIND MEASUREMENT + POST-FREEZE RECOVERY REQUIRED**.
+Active task: `life-patterns-v2-astrohd-recoverability-owner-retest` — **OWNER RECOVERY/PROGRESS/LIVENESS RETEST, THEN FRESH TARGET-BLIND MEASUREMENT + POST-FREEZE RECOVERY REQUIRED**.
 
 PR #24 remains **draft / open / unmerged**.
 
@@ -14,7 +14,7 @@ No private owner interview narrative is committed. Repository state contains abs
 
 ## Current participant-facing architecture
 
-**Target-aware instrument design / target-blind runtime / fixed 23-dimension recoverability surface / dynamic information-gain questioning / in-thread adaptive progress / ephemeral working synthesis until participant judgment / transactional finalization / exact browser-local hidden-ledger recovery / importable recovery JSON / local pre-scoring freeze / owner-only post-freeze DOB-time recovery regression.**
+**Target-aware instrument design / target-blind runtime / fixed 23-dimension recoverability surface / dynamic information-gain questioning / in-thread adaptive progress / ephemeral working synthesis until participant judgment / transactional finalization / exact browser-local hidden-ledger audit/recovery / importable recovery snapshots / explicit long-operation liveness / local pre-scoring freeze / owner-only post-freeze DOB-time recovery regression.**
 
 Current behavior includes:
 
@@ -30,48 +30,90 @@ Current behavior includes:
 - `Continue interview` as the finite default after a settled pattern; no visible unlimited `Explore another pattern` branch;
 - progress during an active thread, expressed as approximate percent plus **measurement areas still open**, not a fictitious question count;
 - working syntheses remain ephemeral until participant judgment and refinement can end with an actual updated synthesis;
-- exact hidden-ledger recovery is automatically backed up browser-side and can be downloaded/imported;
+- exact hidden-ledger working state is automatically checkpointed browser-side and can be downloaded/imported for audit/recovery;
+- audit/recovery exactness is explicitly not scientific validity;
 - page scrolling follows the next participant action and a vertical scrollbar is always available;
+- long-running operations expose a visible **Working on it…** state;
 - participant authority over durable person-level patterns.
 
 Runtime elicitation receives no participant chart, birth target, expected answer direction, target-model mapping, candidate score/rank, or historical AstroHD crosswalk.
+
+## Latest owner consumer-seam failure: restored progress + request liveness
+
+Direct owner testing of the reconstructed-recovery path exposed a second-order recovery defect.
+
+Observed behavior:
+
+1. transcript reconstruction could take several seconds while the UI looked effectively idle;
+2. **Yes — keep that** could take several seconds without a clear in-flight message;
+3. the Interview progress card remained at `Preparing…` after recovery;
+4. after acceptance, `Continue interview` could incorrectly report that coverage was complete.
+
+The owner supplied a private audit/recovery snapshot. It showed that the interview was materially incomplete (only a small minority of the 23 required dimensions were complete), so the completion message was demonstrably a client-state bug rather than a valid scientific result. The private snapshot itself is not committed.
+
+### Generating condition
+
+The recovery path restored answer/coverage state but bypassed the normal fresh-session bootstrap that loads the fixed 23-dimension coverage blueprint. Thus the client had restored coverage rows but an empty reference universe:
+
+- the progress renderer interpreted the blueprint as not initialized and stayed at `Preparing…`;
+- `incompleteCoverage()` evaluated an empty blueprint as zero missing dimensions and could therefore emit a false completion claim.
+
+Separately, request liveness existed internally while several model-backed operations had no persistent user-visible in-flight surface. Disabled controls or delayed responses were not enough feedback.
+
+### Repair
+
+Receipt: `state/LIFE-PATTERNS-v2-OWNER-RECOVERY-PROGRESS-LIVENESS-REPAIR-2026-09-16.md`.
+
+Implementation:
+
+- `src/hdmatch/api/life_patterns_v2_owner_liveness_ui.py`;
+- `src/hdmatch/api/life_patterns_v2_owner_liveness.py`;
+- deployment wrapper now serves the liveness-aware app.
+
+Current behavior:
+
+- every exact or transcript-only recovery path loads the real coverage blueprint before restored progress is rendered;
+- `Continue interview` explicitly ensures the blueprint is loaded before it evaluates whether anything remains open;
+- a dedicated indeterminate request-liveness card appears during slow operations;
+- recovered-transcript reconstruction displays **Rebuilding the recovered interview and preparing a synthesis…**;
+- participant acceptance displays **Saving that and updating interview progress…**;
+- `Continue interview` displays **Choosing the next useful question…**;
+- recovery import / clean-start operations also expose an in-flight state.
+
+Scientific progress and request-liveness progress are intentionally separate concepts.
 
 ## Recovery architecture
 
 Receipt: `state/LIFE-PATTERNS-v2-OWNER-EXACT-RECOVERY-IMPORT-SCROLL-REPAIR-2026-09-16.md`.
 
-The prior browser recovery captured only visible transcript text. That was insufficient because the server hidden ledger still lived only in process memory.
+The browser preserves a checksum-bound snapshot of the exact current *working* hidden ledger for crash recovery/audit. A working snapshot may contain a defect; exact restoration proves state preservation, not correctness. It is not canonical measurement data and is not the scientific freeze.
 
-The live recovery path now uses a checksum-bound `life-patterns-hidden-ledger-session-v2` server snapshot containing the exact resumable hidden state:
+The working snapshot contains the resumable hidden state needed for audit:
 
-- complete conversation with turn IDs;
+- conversation with turn IDs;
 - current episode/boundary/pattern-focus state;
 - full v2 record including fact revision lineage and source-provenance hashes;
 - proposal support / active proposal state;
 - current ephemeral synthesis draft;
 - latest in-thread progress report.
 
-The browser automatically stores the latest exact snapshot in local storage. **Download recovery JSON** exports it together with client aggregate coverage/results. **Import recovery JSON** restores it after a server restart. On ordinary reload the browser attempts exact restore automatically before starting a new session.
+Private narrative remains browser-local unless the participant explicitly downloads/uploads a checkpoint. It is not persisted to Git or a Railway volume.
 
-Private narrative is still not persisted to Git or a Railway volume. Recovery state remains in the participant browser unless the participant explicitly downloads the file.
+### Older visible-transcript recovery boundary
 
-### Older recovery file boundary
-
-The previously reconstructed supervising-Chat JSON is `life-patterns-visible-recovery-v1`. It can now be imported so the visible conversation is available for development continuity, but the historical server fact IDs/provenance were never present in that file and cannot be recreated exactly. Such a session is marked `visible_transcript_only` and is blocked from being represented as the clean scientific measurement freeze.
-
-From the new deployment forward, downloaded `life-patterns-browser-recovery-v2` files contain the exact hidden-ledger snapshot needed for real session restoration.
+Older files that never contained the hidden ledger can restore their visible conversation for development continuity. The app can reconstruct a new explicitly non-scientific working ledger from exact participant utterances and then produce a current synthesis or needed follow-up, but that reconstructed ledger is not represented as the lost original ledger and cannot become the clean scientific freeze.
 
 ## Progress / scrolling corrections
 
-The progress card now reports the count of **open measurement areas**. These are not remaining questions: one natural answer may satisfy several areas and a partial area can require more than one turn. The rough time estimate remains explicitly approximate.
+The progress card reports **open measurement areas**, not a question count. One natural answer may cover several areas; a partial area may require additional turns. The time estimate is explicitly approximate.
 
-The UI now forces a vertical scrollbar and scrolls toward the next actionable surface—answer composer, synthesis judgment, or continuation controls—rather than merely the newest chat bubble. The opening answer box should therefore be brought into view automatically.
+The UI forces a vertical scrollbar and scrolls toward the next actionable surface—answer composer, synthesis judgment, recovery action, or continuation controls—rather than merely the newest chat bubble.
 
 ## Long-thread resilience
 
-The prior long-thread failures and their repairs remain active:
+Active safeguards remain:
 
-- planner/refinement context is large enough to retain the practical thread;
+- planner/refinement context retains the practical thread;
 - answered semantic distinctions must not be re-asked under new wording;
 - one thread must not be expanded to exhaust every adjacent standardized dimension;
 - refinement may end with a current `surface_hypothesis` rather than only saying questioning is done;
@@ -83,17 +125,17 @@ Receipt: `state/LIFE-PATTERNS-v2-OWNER-LONG-THREAD-RESILIENCE-REPAIR-2026-09-16.
 
 ## Verification / live deployment
 
-Exact persistent-recovery application head: `389c6191989071c35253b24e36a43d28ba03d963`.
+Exact liveness-aware application head: `625ec596fd4098096357f5cb3c7bee522ce4d5ea`.
 
-Regression checkpoint head: `4ace5174ec9da2c8ce9c9786d3ac89df456cfe87`.
+Regression checkpoint head: `a71ab72d39dd46c0793ac5ec207640bf62186e21`.
 
-GitHub Actions run `35049331970`: **SUCCESS**.
+GitHub Actions run `35115906379`: **SUCCESS**.
 
 - unit/integration tests: PASS;
 - Ruff: PASS;
 - strict mypy: PASS.
 
-Railway deployment `cca4d5c8-fee7-4f30-a00a-34f4b4ba6299`: **SUCCESS** from exact application head `389c6191989071c35253b24e36a43d28ba03d963`.
+Railway deployment `54e829be-6fe5-4570-9321-609468b414ff`: **SUCCESS** from exact application head `625ec596fd4098096357f5cb3c7bee522ce4d5ea`.
 
 Runtime evidence:
 
@@ -118,21 +160,18 @@ Coverage completion alone cannot pass. The fresh interview must be frozen/export
 
 Owner-explicit logic corrections remain durably captured on the UDA branch `feedback/mission-control-logic-corrections-20260915`, draft PR #127. Current truth remains **`CAPTURED_BRANCH_ONLY`**.
 
-Latest privacy-bounded artifact: `feedback/mission-control/SDF-20260916-LIFE-PATTERNS-RECOVERY-PROGRESS-SCROLL-012.json`.
+Latest privacy-bounded artifact: `feedback/mission-control/SDF-20260916-LIFE-PATTERNS-LIVENESS-AND-BLUEPRINT-HYDRATION-015.json`.
 
 ## Current gate
 
-Owner consumer-seam retest is next. The immediate checks are:
+Owner consumer-seam retest is next. Immediate checks:
 
-1. refresh/reopen and confirm the opening answer box is automatically visible and the scrollbar is available;
-2. confirm progress says **measurement areas**, not questions;
-3. import the previously supplied visible-recovery JSON and confirm the transcript appears with a clear `visible transcript only / not scientific freeze` warning;
-4. in a fresh exact-backed session, answer several turns and refresh; confirm the same session/hidden ledger restores automatically rather than restarting;
-5. confirm long threads do not semantically re-ask settled distinctions;
-6. confirm progress moves during the thread;
-7. confirm refinement ends with an actual current synthesis;
-8. confirm **Yes — keep that** works after participant corrections;
-9. once product behavior passes, complete a fresh target-blind interview, Freeze/export measurement, then run the owner-self historical AstroHD recovery regression.
+1. refresh/reopen the recovered development checkpoint;
+2. progress should resolve to a real approximate percentage/open-area count rather than remain at `Preparing…`;
+3. reconstruction, acceptance, and continue-interview operations should visibly show an in-flight working state;
+4. after accepting the recovered synthesis, `Continue interview` must advance into remaining measurement areas rather than falsely saying coverage is complete;
+5. confirm long threads still avoid semantic duplicate questions and can end in an actual current synthesis;
+6. once the product seam passes, complete a fresh target-blind interview, Freeze/export measurement, then run the owner-self historical AstroHD recovery regression.
 
 Still unauthorized: external participant collection/recruitment, automated participant coding, chart-aware elicitation, external-participant target scoring, merge/release, publication/validation claims, production expansion, and unapproved spending.
 
