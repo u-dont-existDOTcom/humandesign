@@ -135,7 +135,7 @@ def test_in_thread_admission_can_replace_and_expose_audit_reason(monkeypatch) ->
     assert model.pop_question_admission(result.reply) is None
 
 
-def test_continuous_ui_auto_advances_and_simplifies_synthesis_controls() -> None:
+def test_continuous_ui_auto_advances_and_uses_one_synthesis_text_channel() -> None:
     html = CONTINUOUS_FLOW_RECOVERABILITY_HTML
     assert "/advance" in html
     assert "await advanceInterview()" in html
@@ -144,7 +144,10 @@ def test_continuous_ui_auto_advances_and_simplifies_synthesis_controls() -> None
     assert "rememberQuestionAdmission" in html
     assert "Finish for now" in html
     assert "position='fixed'" in html
-    assert "Write exact wording to record" in html
     assert "explainRevision.classList.add('hidden')" in html
+    assert "exactWording.classList.add('hidden')" in html
+    assert "Exact wording: …" in html
+    assert "The always-visible textbox is the one synthesis-correction channel" in html
+    assert "state.completed_results" in html
+    assert "new Set(memory" in html
     assert "continueButton.classList.add('hidden')" in html
-    assert "The normal textbox already handles" in html
