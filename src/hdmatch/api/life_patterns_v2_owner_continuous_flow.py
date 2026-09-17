@@ -10,7 +10,7 @@ admission pass before any model-generated question is shown.
 from __future__ import annotations
 
 import uuid
-from typing import Any
+from typing import Any, cast
 
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse
@@ -360,7 +360,7 @@ def create_life_patterns_v2_owner_continuous_flow_app() -> FastAPI:
     @app.post("/api/owner-v2/conversation/sessions/{session_id}/turns")
     def interview_turn(session_id: str, request: ConversationTurnRequest) -> dict[str, Any]:
         try:
-            result = runtime.get(session_id).turn(request.message)
+            result = cast(dict[str, Any], runtime.get(session_id).turn(request.message))
         except KeyError as exc:
             raise HTTPException(status_code=404, detail="development session not found") from exc
         except TemporaryModelProviderError as exc:
