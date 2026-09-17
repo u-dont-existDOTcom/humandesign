@@ -11,6 +11,7 @@ from hdmatch.api.life_patterns_v2_owner_conversation import (
 from hdmatch.api.life_patterns_v2_owner_natural_flow import (
     NaturalFlowRecoverabilitySession,
     TopicCompleteMove,
+    _QUESTION_ADMISSION_INSTRUCTIONS,
 )
 from hdmatch.api.life_patterns_v2_owner_natural_flow_ui import NATURAL_FLOW_RECOVERABILITY_HTML
 
@@ -20,6 +21,7 @@ class FakeNaturalModel:
 
     def __init__(self, *, mode: Literal["topic", "direct", "inference"] = "topic") -> None:
         self.mode = mode
+        self.next_question_calls: list[dict[str, Any]] = []
 
     def extract_turn(self, **_kwargs: Any) -> TurnExtraction:
         return TurnExtraction(
@@ -54,6 +56,15 @@ class FakeNaturalModel:
             ),
             evidence_fact_ids=(fact.fact_id,),
         )
+
+    def plan_next_interview_question(self, **kwargs: Any) -> dict[str, str]:
+        self.next_question_calls.append(kwargs)
+        domain = kwargs["open_domains"][0]
+        return {
+            "primary_domain_id": domain.domain_id,
+            "opening": "What changes your response when the same demand comes from someone close versus a stranger?",
+            "internal_reason": "Contrast can materially distinguish the participant's boundary rule.",
+        }
 
 
 def _coverage() -> dict[str, Any]:
@@ -177,12 +188,53 @@ def test_direct_report_detection_fails_closed_if_wording_is_not_verbatim() -> No
     assert len(session.core.record.participant_adjudications) == 0
 
 
-def test_progress_and_working_indicators_are_moved_to_active_end_at_runtime() -> None:
+def test_next_question_reuses_same_session_and_full_prior_conversation() -> None:
+    model = FakeNaturalModel(mode="topic")
+    session = NaturalFlowRecoverabilitySession(
+        session_id="OWNER-NATURAL-CONTINUOUS",
+        model=model,  # type: ignore[arg-type]
+    )
+    session.conversation.extend(
+        [
+            {"turn_id": "TURN-OLD-A", "role": "assistant", "text": "How do you recover?"},
+            {"turn_id": "TURN-OLD-U", "role": "user", "text": "Quiet sleep helps me recover."},
+        ]
+    )
+
+    result = session.advance_interview(aggregate_coverage=[], completed_results=[])
+
+    assert result["coverage_complete"] is False
+    assert result["opening"].startswith("What changes your response")
+    assert session.session_id == "OWNER-NATURAL-CONTINUOUS"
+    assert session.awaiting_new_episode is True
+    assert session.current_episode_id is None
+    assert session.conversation[-1]["text"] == result["opening"]
+    assert model.next_question_calls
+    recent = model.next_question_calls[0]["recent_conversation"]
+    assert any(row["text"] == "Quiet sleep helps me recover." for row in recent)
+
+
+def test_question_admission_rule_rejects_repetition_and_generic_questions() -> None:
+    assert "semantically repeats" in _QUESTION_ADMISSION_INSTRUCTIONS
+    assert "generic/high-base-rate" in _QUESTION_ADMISSION_INSTRUCTIONS
+    assert "obvious socially or logically compelled answer" in _QUESTION_ADMISSION_INSTRUCTIONS
+    assert "'it depends'" in _QUESTION_ADMISSION_INSTRUCTIONS
+    assert "materially narrow" in _QUESTION_ADMISSION_INSTRUCTIONS
+
+
+def test_ui_auto_advances_and_simplifies_synthesis_controls() -> None:
     html = NATURAL_FLOW_RECOVERABILITY_HTML
 
     assert "__naturalMain.appendChild(op)" in html
     assert "__naturalMain.appendChild(progress)" in html
-    assert "move_type==='topic_complete'" in html
+    assert "progress.appendChild(row)" in html
+    assert "/next-question" in html
+    assert "setTimeout(()=>advanceInterview(),0)" in html
+    assert "continueCoverage').classList.add('hidden')" in html
+    assert "Close — I’ll explain what needs changing</button>" in html
+    assert 'id="revise" class="secondary hidden"' in html
+    assert 'id="editExactWording" class="secondary hidden"' in html
+    assert "If the inference is wrong or needs different wording" in html
     assert "direct_pattern_recorded" in html
     assert "Thinking about that…" in html
     assert "True, but too obvious" not in html
