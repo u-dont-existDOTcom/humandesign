@@ -58,6 +58,11 @@ jobs:
           npm --prefix tests/browser ci
       - name: Test actual browser workflow against synthetic loopback fixture
         run: |
+          # The runner-installed Chrome has the distribution sandbox profile.
+          # Do not disable Chrome sandboxing or change host AppArmor policy.
+          export BROWSER_PATH="$(command -v google-chrome || command -v google-chrome-stable)"
+          test -x "$BROWSER_PATH"
+          "$BROWSER_PATH" --version
           PYTHONPATH=src:tests/browser python -m uvicorn fixture_server:app --host 127.0.0.1 --port 18765 --log-level warning &
           fixture_pid=$!
           trap 'kill "$fixture_pid" 2>/dev/null || true' EXIT
