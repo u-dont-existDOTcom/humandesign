@@ -1,0 +1,66 @@
+{
+  "schema": "life-patterns-product-review-evidence-v1",
+  "date_utc": "2026-09-17",
+  "status": "review_complete_implementation_awaiting_owner_approval",
+  "reviewed_head": "fead8f59935e886c78fc31d15f243a32a9958b9c",
+  "deployed_application_head": "56796a842ef3bc453f12f65c138458656e441490",
+  "regression_head": "f861ac5d26f6e11aceb3c69804e416e15db612c9",
+  "hosted_ci": {"run_id": 35239835457, "conclusion": "success", "verified_live": true},
+  "deployment": {"id": "3588d15c-4865-4c0d-ba37-331d5ac84483", "status": "SUCCESS", "verified_live": true},
+  "source_compare": {"deployed_to_reviewed_runtime_source_changes": 0, "changed_categories": ["state", "task", "regression_test"]},
+  "live_http": {"landing_status": 200, "health_status": 200, "landing_bytes": 54245, "landing_sha256": "fd9641b6ef4b995bace2b75c272dd18285c11840eb074ea0396a3be679f719f0"},
+  "method": {
+    "browser": "isolated headless Brave via Puppeteer",
+    "inspection_passes": 2,
+    "actual_deployed_html_and_javascript": true,
+    "all_browser_api_requests_intercepted": true,
+    "synthetic_fixtures_only": true,
+    "real_participant_session_mutations": 0,
+    "live_model_calls": 0,
+    "app_code_changes": 0,
+    "deployments_requested": 0,
+    "full_test_suite_rerun": false,
+    "private_historical_excerpt_sets_reviewed": 2,
+    "private_narrative_committed": false
+  },
+  "browser_observations": [
+    {"id": "R03", "scenario": "next_question_failure_after_topic_complete", "mock": "advance returns HTTP 503", "observed": {"retry_visible": false, "error_visible": false, "composer_visible": false, "finish_visible": true}},
+    {"id": "R04a", "scenario": "pause_idle", "observed": {"status": "Interview paused", "pause_notice_visible": false, "composer_visible": true, "send_disabled": false}},
+    {"id": "R04b", "scenario": "submission_after_pause", "observed": {"turn_requests_after_pause": 1}},
+    {"id": "R04c", "scenario": "pause_during_delayed_advance", "observed": {"paused_flag": true, "status": "Development conversational probe", "composer_visible": true, "new_question_shown": true}},
+    {"id": "R01", "scenario": "restore_failure_then_automatic_save", "mock": "restore returns HTTP 503", "observed": {"fresh_session_started": true, "old_exact_checkpoint_replaced": true, "old_answer_present_in_exact_checkpoint": false}, "limit": "Does not assert every possible legacy backup is lost."},
+    {"id": "R02", "scenario": "render_post_adjudication_recovery", "fixture": "older accepted result, no active draft", "observed": {"composer_visible": false, "continue_visible": false, "advance_requests": 0, "old_result_visible": true}, "limit": "Receiving UI reproduced; erroneous phase derivation independently confirmed in source."},
+    {"id": "R05", "scenario": "failed_send", "mock": "turn returns HTTP 503", "observed": {"editable_draft": "", "answer_memory_contains_failed_submission": true, "visible_error": "Synthetic send failure"}},
+    {"id": "R06", "scenario": "two_send_calls_before_responses", "observed": {"turn_requests_before_either_completed": 2}, "limit": "Demonstrates missing client mutation guard, not actual production evidence corruption."},
+    {"id": "U02", "scenario": "reduced_motion_requested", "observed": {"document_scroll_behavior": "smooth"}},
+    {"id": "R07", "scenario": "zero_pattern_measurement_export", "fixture": "blueprint loaded, all areas marked sufficient synthetically, no completed patterns", "observed": {"blueprint_version": null, "blueprint_sha256": null, "episode_ledger_embedded": false, "keys": ["schema", "blueprint_version", "blueprint_sha256", "frozen_at", "completed_results", "aggregate_coverage", "measurement_bundle_sha256"]}}
+  ],
+  "responsive": {
+    "required_widths": [320, 375, 414, 768, 1024, 1440],
+    "checked_widths": [320, 375, 414, 768, 1024, 1440],
+    "initial_horizontal_overflow": false,
+    "initial_textarea_explicit_aria_label": null,
+    "initial_textarea_placeholder": "If the inference is wrong or needs different wording, say what you mean here…",
+    "zoom_percent": 100,
+    "text_scaling_checked": false,
+    "native_mobile_keyboard_checked": false,
+    "full_accessibility_conformance_claimed": false
+  },
+  "source_findings": [
+    {"id": "Q01", "status": "confirmed", "path": "src/hdmatch/api/life_patterns_v2_owner_continuous_flow.py", "finding": "Cross-area admission schema requires an opening and has no stop/no-useful-question outcome; in-thread gate does."},
+    {"id": "Q02", "status": "confirmed", "finding": "Planner/admission/refinement/fallback routes do not share a single relevant-history and final-question gate."},
+    {"id": "R02-source", "status": "confirmed", "path": "src/hdmatch/api/life_patterns_v2_owner_persistent.py", "lines": [206, 244], "finding": "Any historical participant adjudication implies post_adjudication when no draft is active, independently of later interview progress."},
+    {"id": "S01", "status": "source_level_risk", "path": "src/hdmatch/api/life_patterns_v2_owner_natural_flow.py", "finding": "Exact substring and same-source evidence checks do not themselves establish semantic endorsement, polarity, time, or retention of surrounding qualifications."},
+    {"id": "S02", "status": "historical_private_development_evidence", "finding": "Historical excerpts contain near-restatement promotion and an unsupported directional relation. Latest-deployment prevalence was not measured."},
+    {"id": "T01", "status": "confirmed", "path": "tests/unit/test_life_patterns_v2_owner_continuous_flow.py", "finding": "The affected UI test asserts HTML/string presence, not the reproduced browser phase/visibility behavior."}
+  ],
+  "perceptual_layers": [
+    {"layer": "L0", "status": "fail", "evidence": "Development and recovery material competes with the participant's current task."},
+    {"layer": "L1", "status": "fail", "evidence": "Initial response field instructs correction of a nonexistent inference."},
+    {"layer": "L2", "status": "fail", "evidence": "Pause and error/retry behavior is not predictable."},
+    {"layer": "L3", "status": "fail", "evidence": "Saved-state assurances can coexist with silent restore fallback/checkpoint overwrite."},
+    {"layer": "L4", "status": "fail", "evidence": "Restored and failed-advance states can lack a visible way to continue."}
+  ],
+  "limitations": ["No current-model quality-frequency estimate", "No live inference latency measurement", "No fresh independent blind semantic certification", "No full screen-reader/contrast/zoom certification", "No real-session security probing", "No production multi-tab race reproduction", "No claim all research invariants were certified"],
+  "authority": {"universal_main_head_observed": "ad76fcac1aed29658dbdab6575f91965573e6c51", "design_main_head_observed": "04d6b53796798cd3dc2de275219eeaace329ba59", "current_owner_boundary": "Review and plan only; approval required before implementation."}
+}
