@@ -2,7 +2,7 @@
 
 ## Life Patterns — 2026-09-17
 
-Active task: `life-patterns-v2-astrohd-recoverability-owner-retest` — **OWNER CONTINUOUS-FLOW / QUESTION-QUALITY RETEST, THEN FRESH TARGET-BLIND MEASUREMENT + POST-FREEZE RECOVERY REQUIRED**.
+Active task: `life-patterns-v2-astrohd-recoverability-owner-retest` — **OWNER CONTINUOUS-FLOW / QUESTION-QUALITY / SINGLE-FEEDBACK-CHANNEL RETEST, THEN FRESH TARGET-BLIND MEASUREMENT + POST-FREEZE RECOVERY REQUIRED**.
 
 PR #24 remains **draft / open / unmerged**.
 
@@ -14,7 +14,7 @@ No private owner interview narrative is committed. Private interview content rem
 
 ## Current participant-facing architecture
 
-**Fixed 23-dimension target-blind recoverability surface / one continuous adaptive interview / same-session hidden ledger across measurement areas / separate pre-send question admission / automatic cross-area continuation / persistent Finish-for-now escape / direct participant self-report distinguished from interviewer inference / progress and liveness at the active end / exact browser-local hidden-ledger audit/recovery / local pre-scoring freeze / owner-only post-freeze DOB-time recovery regression.**
+**Fixed 23-dimension target-blind recoverability surface / one continuous adaptive interview / same-session hidden ledger across measurement areas / separate pre-send question admission / automatic cross-area continuation / persistent Finish-for-now escape / direct participant self-report distinguished from interviewer inference / one free-form synthesis correction channel / progress and liveness at the active end / exact browser-local hidden-ledger audit/recovery / local pre-scoring freeze / owner-only post-freeze DOB-time recovery regression.**
 
 Current rules:
 
@@ -32,61 +32,69 @@ Current rules:
 
 Runtime elicitation receives no participant chart, birth target, expected answer direction, target-model mapping, candidate score/rank, or historical AstroHD crosswalk.
 
-## Latest owner correction: continuous flow and question admission
+## Latest owner evidence and correction
 
-An owner-supplied exact browser audit/recovery checkpoint was inspected privately. It showed a key architectural cause of repeated questions: the current server snapshot contained only the newest measurement-area conversation, while earlier interview knowledge survived mainly as compressed client-side pattern/coverage summaries. The private checkpoint itself is not committed.
+The owner supplied an exact browser audit/recovery checkpoint. It was inspected privately and is not committed. The checkpoint showed that the then-current server snapshot held only the newest measurement-area conversation while earlier knowledge survived mainly as accepted result wording and aggregate coverage metadata. This directly explained how a question could be substantively answered earlier and nevertheless be selected again after crossing a measurement-area boundary.
 
-The owner also identified that the ordinary `Continue interview` checkpoint was unnecessary, `Finish for now` should remain available instead, some questions still lacked obvious information value, and the explanatory synthesis-review button duplicated the free-form textbox.
+The owner also corrected three product-flow assumptions:
+
+1. an internal local-topic boundary should not require a participant `Continue interview` click when the next normal action is uniquely determined;
+2. generation-time instructions such as “ask only useful questions” are insufficient if a low-value question can still reach the participant; the candidate question itself needs an admission check;
+3. backend distinctions among explanatory correction and exact replacement wording do not justify multiple participant text-entry controls when one textbox can express both intents.
 
 Receipt: `state/LIFE-PATTERNS-v2-OWNER-CONTINUOUS-FLOW-QUESTION-ADMISSION-2026-09-17.md`.
 
-### Same-session continuation
+## Same-session continuation and recoverable answer memory
 
-Normal progression no longer creates a fresh server session at each measurement-area boundary. The same server session continues, so the conversation, hidden ledger, corrections, and operative facts accumulate through the interview.
+Normal cross-area continuation keeps the same server session, conversation, operative facts, corrections, and hidden ledger instead of creating a fresh coverage session.
 
-A bounded participant-answer memory is also preserved in browser audit/recovery state and supplied to cross-area planning alongside aggregate coverage, accepted patterns, current conversation, and operative facts.
+Browser audit/recovery state carries a bounded participant-answer memory plus a question-admission audit log. The continuation planner receives that memory together with current conversation, operative facts, accepted participant-authoritative patterns, aggregate coverage, and still-open neutral dimensions.
 
-### Explicit pre-send question-quality gate
+For older exact browser snapshots that predate explicit answer memory, recovery now seeds redundancy memory from accepted result wording plus any raw participant turns still present in the server snapshot. This cannot recreate old raw answers that were never persisted anywhere, but it uses every recoverable prior participant-authoritative statement to reduce duplicate questioning.
 
-The prior system had information-gain/redundancy language in the generator prompt, but no independent admission boundary. Every generated question now receives a separate pre-send check.
+## Question admission
 
-A question is admitted only if it names a genuinely missing discriminator, has materially different plausible answers that could change the retained person model or a still-open measurement distinction, is answerable from lived experience, is not semantically already answered, and is worth another participant turn.
+Normal follow-up questions pass a separate pre-send gate after generation. The gate may admit, replace, or stop the question.
 
-The admission pass may **admit**, **replace**, or **stop** an in-thread question. Cross-area questions get an additional final admission/replacement pass using the accumulated answer memory and measurement state. Generic, normative, ordinary-human-default, redundant, or questionnaire-for-its-own-sake prompts should therefore be replaced before they reach the participant.
+A displayed question must identify a genuinely missing discriminator, have materially different plausible answers capable of changing the retained person model or still-open measurement distinction, be answerable from lived experience, not be semantically already answered, and be worth another participant turn.
 
-### Continuous participant flow
+Cross-area questions receive a final admission/replacement pass using the broader answer memory and accumulated measurement state. Generic, ordinary-human-default, vague, redundant, normative, or questionnaire-for-its-own-sake candidates should be replaced before display.
 
-After local topic completion, automatic recording of a direct participant-authored pattern, or successful judgment of a genuine interviewer inference, the app automatically chooses the next admitted question. There is no routine `Continue interview` click. The old control is hidden and is exposed only as a retry if next-question selection actually fails.
+Admission rationale is stored only as audit/planning metadata in the browser recovery bundle; it is not participant evidence.
 
-`Finish for now` is now a persistent fixed on-screen control. Pausing saves the current browser audit/recovery state.
+## Continuous participant flow
 
-### Synthesis review controls
+After local topic completion, direct participant-authored pattern recording, or successful adjudication of a real interviewer inference, the app automatically selects the next admitted question. There is no routine `Continue interview` checkpoint. A Continue-style control appears only as a retry if next-question selection fails.
 
-The ordinary textbox is the sole channel for normal synthesis feedback: disagreement, explanation, correction, nuance, or missing context.
+`Finish for now` remains a persistent visible pause control throughout the interview and saves the current browser checkpoint.
 
-`Close — I’ll explain what needs changing` is hidden because it duplicated that textbox action.
+## Synthesis review
 
-`Write exact wording to record` remains because it has a different contract: the participant is supplying literal replacement wording to store unchanged rather than asking the interviewer to interpret conversational feedback.
+The always-visible textbox is now the **single participant text-entry channel** for an inferred synthesis. It can carry disagreement, explanation, correction, nuance, missing context, or participant-authored replacement wording.
 
-Accept / reject / keep-investigating / unresolved retain their distinct workflow meanings.
+Both `Close — I’ll explain what needs changing` and `Edit exact wording myself` are hidden. If literal wording is intended, the participant can state that intent in the same textbox rather than entering another edit mode.
+
+Buttons remain only for genuinely distinct state transitions such as accepting the inference, asking the interviewer to keep investigating, rejecting/stopping, or leaving it unresolved.
 
 ## Recovery boundary
 
-Exact browser recovery preserves the current working hidden ledger plus client-side answer memory, coverage aggregation, and workflow phase. A restored checkpoint remains unvalidated and cannot become the scientific freeze merely because it resumes exactly.
+Exact browser recovery preserves the current working hidden ledger plus client-side answer memory, coverage aggregation, question-admission audit metadata, and workflow phase. A restored checkpoint remains unvalidated and cannot become the scientific freeze merely because it resumes exactly.
 
-Older snapshots created before continuous-flow answer memory cannot reconstruct participant utterances that were never contained in those snapshots. The current architecture prevents that loss going forward by keeping one accumulating session and answer memory.
+Private narrative is not persisted to Git or a Railway volume.
 
-## Verification / deployment
+## Verification / live deployment
 
-Current continuous-flow application head: `1b4f32ba16693df2a645fecb64dc00b10989cd62`.
+Exact deployed application head: `56796a842ef3bc453f12f65c138458656e441490`.
 
-GitHub Actions run `35234856279`: **SUCCESS**.
+Regression checkpoint: `f861ac5d26f6e11aceb3c69804e416e15db612c9`.
 
-- full unit/integration tests: PASS;
+GitHub Actions run `35239835457`: **SUCCESS**.
+
+- unit/integration tests: PASS;
 - Ruff: PASS;
 - strict mypy: PASS.
 
-Railway deployment `2503e395-714d-487d-9d83-cf6e4b97aad6`: **SUCCESS** from the exact application head.
+Railway deployment `3588d15c-4865-4c0d-ba37-331d5ac84483`: **SUCCESS** from the exact application head.
 
 Runtime evidence: application startup complete; `GET /healthz` returned HTTP **200 OK**.
 
@@ -106,18 +114,23 @@ Coverage completion alone cannot pass. A fresh target-blind interview must be fr
 
 Owner-explicit logic corrections remain durably captured on the UDA branch `feedback/mission-control-logic-corrections-20260915`, draft PR #127, truth state **`CAPTURED_BRANCH_ONLY`**.
 
-Latest privacy-bounded correction: `feedback/mission-control/SDF-20260917-LIFE-PATTERNS-CONTINUATION-QUESTION-ADMISSION-019.json`.
+Current records for this correction chain:
+
+- `feedback/mission-control/SDF-20260917-LIFE-PATTERNS-CONTINUATION-QUESTION-ADMISSION-019.json`;
+- `feedback/mission-control/SDF-20260917-LIFE-PATTERNS-SINGLE-SYNTHESIS-TEXT-CHANNEL-020.json`.
+
+The second record corrects the first repair's remaining UI over-separation: a distinct backend intent does not automatically require a distinct participant control.
 
 ## Current gate
 
 Owner consumer-seam retest:
 
 1. refresh/recover the current development interview;
-2. ordinary completion should flow automatically into the next question without a Continue checkpoint;
+2. ordinary completion should flow automatically into the next admitted question without a Continue checkpoint;
 3. Finish for now should remain visible;
 4. previously answered material should not be asked again under new wording;
-5. candidate questions should be replaced/suppressed when they fail the explicit information-value/redundancy gate;
-6. normal synthesis feedback should use the textbox, while exact literal replacement remains a separate explicit action;
+5. low-value candidate questions should be replaced/suppressed by the pre-send admission gate;
+6. inferred-synthesis correction should use one textbox rather than multiple edit modes;
 7. progress, exact recovery, direct-report/inference handling, and fast adjudication must remain intact;
 8. once those product seams pass, complete a fresh target-blind interview, Freeze/export measurement, then run the owner-self historical AstroHD recovery regression.
 
