@@ -10,7 +10,7 @@ admission pass before any model-generated question is shown.
 from __future__ import annotations
 
 import uuid
-from typing import Any, Literal
+from typing import Any
 
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse
@@ -25,10 +25,7 @@ from .life_patterns_v2_owner_natural_flow import (
     create_life_patterns_v2_owner_natural_flow_app,
 )
 from .life_patterns_v2_owner_pattern_first import TemporaryModelProviderError
-from .life_patterns_v2_owner_recoverability import (
-    RECOVERABILITY_DOMAINS,
-    _open_domains,
-)
+from .life_patterns_v2_owner_recoverability import _open_domains
 
 _QUESTION_MOVES = frozenset({"follow_up", "request_contrast", "boundary_question"})
 
