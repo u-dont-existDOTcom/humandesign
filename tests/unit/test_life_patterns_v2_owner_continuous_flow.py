@@ -18,15 +18,21 @@ from hdmatch.api.life_patterns_v2_owner_recoverability import RECOVERABILITY_DOM
 class FakeAdvanceModel:
     configured = True
 
-    def plan_continuation_question(self, **kwargs: Any) -> dict[str, str]:
+    def plan_continuation_question(self, **kwargs: Any) -> dict[str, Any]:
         assert kwargs["answer_memory"] == ["I already answered the old topic."]
         assert kwargs["recent_conversation"][-1]["text"] == "Previous answer"
         return {
             "primary_domain_id": kwargs["open_domains"][0].domain_id,
             "opening": "What happens when a method works for others but not for you?",
-            "missing_discriminator": "adaptation threshold",
-            "decision_impact": "Different answers separate adoption from replacement.",
-            "redundancy_check": "The prior answer did not address this contrast.",
+            "question_admission": {
+                "stage": "cross_area_pre_send",
+                "decision": "replace",
+                "candidate_question": "Do you follow established methods?",
+                "final_question": "What happens when a method works for others but not for you?",
+                "missing_discriminator": "adaptation threshold",
+                "decision_impact": "Different answers separate adoption from replacement.",
+                "redundancy_check": "The prior answer did not address this contrast.",
+            },
         }
 
 
@@ -67,6 +73,7 @@ def test_advance_keeps_same_session_and_appends_one_admitted_question() -> None:
     assert result["session_id"] == "OWNER-CONTINUOUS"
     assert result["complete"] is False
     assert result["opening"] == "What happens when a method works for others but not for you?"
+    assert result["question_admission"]["missing_discriminator"] == "adaptation threshold"
     assert session.conversation[-1]["role"] == "assistant"
     assert session.conversation[-1]["text"] == result["opening"]
     assert session.current_episode_id is None
@@ -95,7 +102,7 @@ def test_advance_reports_complete_without_creating_a_new_session() -> None:
     }
 
 
-def test_in_thread_admission_can_replace_a_low_value_question(monkeypatch) -> None:
+def test_in_thread_admission_can_replace_and_expose_audit_reason(monkeypatch) -> None:
     model = ContinuousFlowRecoverabilityOpenAIModel(api_key="test")
 
     def fake_call(**kwargs: Any) -> dict[str, Any]:
@@ -120,6 +127,12 @@ def test_in_thread_admission_can_replace_a_low_value_question(monkeypatch) -> No
     )
     assert result.move_type == "follow_up"
     assert result.reply.startswith("What concrete sign")
+    admission = model.pop_question_admission(result.reply)
+    assert admission is not None
+    assert admission["decision"] == "replace"
+    assert admission["candidate_question"] == "Do you generally try to make good decisions?"
+    assert admission["missing_discriminator"] == "the participant's actual threshold cue"
+    assert model.pop_question_admission(result.reply) is None
 
 
 def test_continuous_ui_auto_advances_and_simplifies_synthesis_controls() -> None:
@@ -127,7 +140,10 @@ def test_continuous_ui_auto_advances_and_simplifies_synthesis_controls() -> None
     assert "/advance" in html
     assert "await advanceInterview()" in html
     assert "answer_memory" in html
+    assert "question_admission_log" in html
+    assert "rememberQuestionAdmission" in html
     assert "Finish for now" in html
+    assert "position='fixed'" in html
     assert "Write exact wording to record" in html
     assert "explainRevision.classList.add('hidden')" in html
     assert "continueButton.classList.add('hidden')" in html
