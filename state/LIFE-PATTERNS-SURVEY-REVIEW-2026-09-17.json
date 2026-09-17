@@ -1,40 +1,22 @@
 {
   "schema": "life-patterns-owner-review-checkpoint-v1",
   "date_utc": "2026-09-17",
-  "owner_outcome": "Review the survey app comprehensively and propose improvements for approval before implementation.",
+  "owner_outcome": "Implement all four phases of the approved survey improvement plan, then obtain a short owner product evaluation.",
   "review_status": "COMPLETE",
-  "implementation_status": "CANDIDATE_VERIFIED_PENDING_HOSTED_CI_AND_DEPLOYMENT",
+  "implementation_status": "DEPLOYED_HOSTED_CI_PASSED_OWNER_EVALUATION_OPEN",
   "approval_received": true,
+  "approval_source": "tasks/LIFE-PATTERNS-SURVEY-APPROVED-IMPLEMENTATION-2026-09-17.md",
   "report": "docs/reviews/LIFE-PATTERNS-SURVEY-PRO-REVIEW-2026-09-17.md",
   "evidence": "artifacts/life-patterns/survey-review-2026-09-17/evidence.json",
+  "implementation_receipt": "state/LIFE-PATTERNS-SURVEY-IMPLEMENTATION-2026-09-17.md",
   "reviewed_code_head": "fead8f59935e886c78fc31d15f243a32a9958b9c",
-  "deployed_application_head": "56796a842ef3bc453f12f65c138458656e441490",
-  "recommended_order": [
-    "A: reliable continuity and recovery",
-    "B: question quality and source fidelity",
-    "C: current-action UI, stable patterns, and exports",
-    "D: short owner evaluation and bounded closeout"
-  ],
-  "next_action": "Reconcile exact hosted CI and the existing prototype deployment, then conduct the short owner evaluation.",
-  "preserved_invariants": [
-    "participant authority",
-    "direct reports without redundant confirmation",
-    "new inferences require judgment",
-    "neutral required coverage",
-    "no arbitrary episode quotas",
-    "append-only corrections and evidence timing",
-    "target-theory blindness of elicitation",
-    "recovery checkpoint is not scientific freeze"
-  ],
-  "not_authorized_by_this_review": [
-    "application changes",
-    "deployment",
-    "merge",
-    "public recruitment",
-    "paid inference",
-    "provider or model changes",
-    "publishing private participant narratives"
-  ],
-  "review_changes_are_documentation_and_evidence_only": true,
-  "approval_source": "tasks/LIFE-PATTERNS-SURVEY-APPROVED-IMPLEMENTATION-2026-09-17.md"
+  "deployed_application_head": "aace9ac3a40f1a8dfd6244ab714a86563d0132c8",
+  "ci_head": "4e727ac7b33c83f99221751196d5dc0d90a0dbd5",
+  "ci_run": 35258133276,
+  "ci_conclusion": "success",
+  "recommended_order": ["A: reliable continuity and recovery", "B: question quality and source fidelity", "C: current-action UI, stable patterns, and exports", "D: short owner evaluation and bounded closeout"],
+  "next_action": "Short owner test of the updated existing prototype; do not ask for implementation approval again.",
+  "preserved_invariants": ["participant authority", "direct reports without redundant confirmation", "new inferences require judgment", "neutral required coverage", "no arbitrary episode quotas", "append-only corrections and evidence timing", "target-theory blindness of elicitation", "recovery checkpoint is not scientific acceptance"],
+  "not_authorized_by_current_approval": ["merge", "public release or recruitment", "new paid inference campaign", "provider or model changes", "publishing private participant narratives"],
+  "owner_product_evaluation": "NOT_YET_OBSERVED"
 }
