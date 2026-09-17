@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "life-patterns-v2-astrohd-recoverability-owner-retest",
-  "status": "approved_survey_implementation_deployed_hosted_ci_passed_owner_natural_use_evaluation_required",
+  "status": "owner_natural_use_failed_question_logic_and_repair_routing_diagnosed",
   "exclusive": true,
   "requiredBranch": "codex/discover-life-patterns-mvp",
   "pullRequest": 24,
@@ -30,7 +30,7 @@
   "surveyImplementationDeploymentStatus": "success",
   "surveyImplementationHealth": "200_ok",
   "surveyImplementationBuildVersion": "survey-flow-2026-09-17.1",
-  "surveyImplementationOwnerEvaluation": "not_yet_observed",
+  "surveyImplementationOwnerEvaluation": "FAIL",
   "coverageBlueprintVersion": "life-patterns-recoverability-coverage-v2",
   "requiredCoverageDimensionCount": 23,
   "sameSessionCrossAreaContinuation": true,
@@ -63,9 +63,9 @@
   "missionControlLogicCapturePullRequest": 127,
   "missionControlLatestArtifact": "feedback/mission-control/SDF-20260917-LIFE-PATTERNS-SINGLE-SYNTHESIS-TEXT-CHANNEL-020.json",
   "semanticChangeRequired": false,
-  "productStrategyReplacementRequired": false,
-  "currentProductGap": "The approved coordinated workflow, question-admission and interface changes are deployed and hosted CI passed, including 13 actual browser scenarios. Real owner evaluation of question usefulness and pattern fidelity remains open; deterministic controls do not establish model semantic quality. The historical post-freeze AstroHD recovery criterion remains a later distinct activity.",
-  "nextAction": "Short owner natural-use evaluation on the updated existing prototype. Refresh/recover, inspect Your patterns and pause/resume, then assess whether questions remember prior answers and add useful distinctions. Inspect admission and source context for any poor question. Do not claim semantic quality or scientific recovery from deterministic tests.",
+  "productStrategyReplacementRequired": true,
+  "currentProductGap": "Owner natural-use evaluation failed. The gate generated or admitted invalid contrasts and topic drift; clarification requests entered the ordinary evidence/planning path, and an already-used exact source statement reappeared as an inference with contradictory closure prose. Earlier transport tests remain historical supporting evidence, not semantic success.",
+  "nextAction": "Run a small reversible repair-first conversational-routing/formulation experiment against the observed failure and a few direct-report/inference controls. Preserve the owner-requested pre-send check, current UI/recovery and provider/model; do not add another evaluator or an arbitrary episode quota. Separate clarification from new behavioral evidence and prevent duplicate/unsupported synthesis and misleading sufficiency claims. Do not ask the owner to repeat the unchanged failed interview as verification.",
   "ownerAuthority": "The owner approved the complete survey improvement plan. Preserve a dynamic standardized interview that remembers prior answers, advances automatically, keeps an always-visible finish/pause escape, suppresses redundant or low-information questions before display, and uses one flexible correction textbox. Preserve enough behavioral information for the separate historical owner DOB/time recovery criterion. Owner-self post-freeze recovery is authorized; chart-aware elicitation, external participant scoring, recruitment, publication, merge/release, provider/model changes and broader target-model activity are not.",
   "developmentPrototypeDeploymentAuthorized": true,
   "developmentPrototypeDomain": "life-patterns-owner-production.up.railway.app",
@@ -94,6 +94,17 @@
     "automated participant coding",
     "external-participant target-model activity",
     "merge/release or publication",
-    "private transcript logging to Git or Railway logs"
-  ]
+    "private transcript logging to Git or Railway logs",
+    "treating the observed failed owner evaluation as not yet observed",
+    "more materially identical gate-prompt or UI-only patches without testing conversational repair",
+    "treating a request to explain a question as evidence of personality, sufficiency or consent to stop"
+  ],
+  "ownerQuestionLogicFailureReceipt": "state/LIFE-PATTERNS-OWNER-QUESTION-LOGIC-FAILURE-2026-09-17.md",
+  "ownerQuestionLogicFailureAudit": "artifacts/life-patterns/survey-implementation-2026-09-17/owner-question-logic-audit.json",
+  "assuranceLane": "iteration",
+  "outcomeAdvancement": "REGRESSING_OWNER_REPORTED",
+  "strategyReplacementScope": "question repair, active focus and candidate formulation; not the accepted v2 evidence contract or the entire product",
+  "capabilityFlagsAreImplementationPresenceNotSemanticSuccess": true,
+  "legacyAnswerMemoryRecoveryObservedEmpty": true,
+  "latestPassProductionCodeChanged": false
 }
