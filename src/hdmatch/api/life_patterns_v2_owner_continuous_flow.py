@@ -10,21 +10,18 @@ admission pass before any model-generated question is shown.
 from __future__ import annotations
 
 import uuid
-from typing import Any, cast
+from typing import Any, Literal, cast
 
-from fastapi import FastAPI, HTTPException
-from fastapi.responses import HTMLResponse
+from fastapi import FastAPI
 from pydantic import BaseModel, Field
 
-from .life_patterns_v2_owner_conversation import ConversationMove, ConversationTurnRequest
-from .life_patterns_v2_owner_continuous_flow_ui import CONTINUOUS_FLOW_RECOVERABILITY_HTML
+from .life_patterns_v2_owner_context import current_interview_context
+from .life_patterns_v2_owner_conversation import ConversationMove
 from .life_patterns_v2_owner_natural_flow import (
     NaturalFlowRecoverabilityOpenAIModel,
     NaturalFlowRecoverabilitySession,
     TopicCompleteMove,
-    create_life_patterns_v2_owner_natural_flow_app,
 )
-from .life_patterns_v2_owner_pattern_first import TemporaryModelProviderError
 from .life_patterns_v2_owner_recoverability import _open_domains
 
 _QUESTION_MOVES = frozenset({"follow_up", "request_contrast", "boundary_question"})
@@ -43,10 +40,108 @@ class ContinuousFlowRecoverabilityOpenAIModel(NaturalFlowRecoverabilityOpenAIMod
         super().__init__(*args, **kwargs)
         self._question_admission_by_reply: dict[str, list[dict[str, Any]]] = {}
 
+    def _conversation_call_json(
+        self,
+        *,
+        instructions: str,
+        payload: dict[str, Any],
+        schema: dict[str, Any],
+        effort: Literal["low", "medium"],
+        max_output_tokens: int,
+        schema_name: str,
+    ) -> dict[str, Any]:
+        context = current_interview_context()
+        if context is not None:
+            source_context = {
+                key: value for key, value in context.items() if key != "admission_sink"
+            }
+            payload = {
+                **payload,
+                "recent_conversation": context["conversation"],
+                "shared_evidence_context": source_context,
+            }
+        instructions += (
+            "\n\nSOURCE FIDELITY: Consult the shared source-bound interview context before asking or "
+            "formulating anything. Older relevant answers and later corrections matter, not just recent turns. "
+            "Do not convert needed duration/amount into benefit, correlation into cause, an example into a "
+            "universal claim, a quoted belief into endorsement, or a past/negated/qualified statement into a "
+            "present unqualified assertion. A familiar direct self-report can be useful without being surprising "
+            "or rare. Never assert population rarity without evidence. 'It depends' can identify the meaningful "
+            "condition; ask only for a condition or distinction not already known. Preserve broad intended scope. "
+            "Participant correction annotations dispute the linked historical pattern; do not present that "
+            "pattern as settled or silently erase the correction. Process feedback is not personality evidence. "
+            "A new inference must state the actual added relationship tentatively, not hide it in a recap. "
+            "When reviewing an existing inference, no worthwhile further question is a legitimate outcome; "
+            "do not invent a new synthesis merely to fill a section boundary."
+        )
+        return super()._conversation_call_json(
+            instructions=instructions,
+            payload=payload,
+            schema=schema,
+            effort=effort,
+            max_output_tokens=max_output_tokens,
+            schema_name=schema_name,
+        )
+
+    def review_pattern_candidate(
+        self, *, move: ConversationMove, evidence_context: dict[str, Any]
+    ) -> dict[str, Any]:
+        return self._conversation_call_json(
+            instructions=(
+                "Check the proposed person-level formulation against the EXACT participant sources and "
+                "operative evidence before recording or showing it. This is a fallible product-quality "
+                "review, not scientific validation. Return direct only for an endorsed, person-specific "
+                "self-report already explicitly stated, with its original scope, polarity, speaker, time, "
+                "uncertainty and conditions intact. A verbatim substring is NOT sufficient if its surrounding "
+                "text negates it, attributes it to somebody else, limits it or says it no longer applies. "
+                "Direct statements need not be surprising, rare, sophisticated, or discoveries. Return "
+                "inference only for a genuinely added, plausibly supported relationship that should be "
+                "judged by the participant; identify precisely what is added. Do not confuse the amount "
+                "of something needed with how beneficial it is. Return context_only for generic filler, "
+                "misquoted context, unsupported causal/directional/scope additions, or no person-level "
+                "claim. Context-only material can remain episode or measurement evidence. Do not demand "
+                "a quota of examples or invalidate useful conditional answers."
+            ),
+            payload={
+                "candidate": move.model_dump(mode="json"),
+                "source_context": {
+                    k: v for k, v in evidence_context.items() if k != "admission_sink"
+                },
+            },
+            schema={
+                "type": "object",
+                "additionalProperties": False,
+                "required": ["decision", "inference_added", "source_reason"],
+                "properties": {
+                    "decision": {"type": "string", "enum": ["direct", "inference", "context_only"]},
+                    "inference_added": {"type": "string", "maxLength": 800},
+                    "source_reason": {"type": "string", "minLength": 1, "maxLength": 1000},
+                },
+            },
+            effort="low",
+            max_output_tokens=900,
+            schema_name="life_patterns_formulation_fidelity_v1",
+        )
+
     def _remember_question_admission(self, reply: str, evidence: dict[str, Any]) -> None:
+        context = current_interview_context()
+        if context is not None:
+            # The evidence provider exposes an operation-local audit sink.
+            sink = context.get("admission_sink")
+            if isinstance(sink, list):
+                sink.append({"reply": reply, "evidence": evidence})
+                return
         self._question_admission_by_reply.setdefault(reply, []).append(evidence)
 
     def pop_question_admission(self, reply: str) -> dict[str, Any] | None:
+        context = current_interview_context()
+        if context is not None:
+            sink = context.get("admission_sink")
+            if isinstance(sink, list):
+                for index, item in enumerate(sink):
+                    if item["reply"] == reply:
+                        return cast(dict[str, Any], sink.pop(index)["evidence"])
+                return None
         rows = self._question_admission_by_reply.get(reply)
         if not rows:
             return None
@@ -134,7 +229,7 @@ class ContinuousFlowRecoverabilityOpenAIModel(NaturalFlowRecoverabilityOpenAIMod
             schema_name="life_patterns_question_admission_v1",
         )
         decision = str(result.get("decision", "stop"))
-        evidence = {
+        evidence: dict[str, Any] = {
             "stage": "in_thread_pre_send",
             "decision": decision,
             "candidate_question": candidate.reply,
@@ -153,9 +248,10 @@ class ContinuousFlowRecoverabilityOpenAIModel(NaturalFlowRecoverabilityOpenAIMod
                 evidence["final_question"] = reply
                 self._remember_question_admission(reply, evidence)
                 return ConversationMove(reply=reply, move_type=move_type)  # type: ignore[arg-type]
-        return TopicCompleteMove(
-            reply="That gives me enough useful information for this area; I’ll move on."
-        )
+        reply = "I do not see another useful question for this point right now."
+        evidence["final_question"] = None
+        self._remember_question_admission(reply, evidence)
+        return TopicCompleteMove(reply=reply)
 
     def plan_turn(
         self,
@@ -173,13 +269,9 @@ class ContinuousFlowRecoverabilityOpenAIModel(NaturalFlowRecoverabilityOpenAIMod
             recent_conversation=recent_conversation,
             boundary_answered=boundary_answered,
         )
-        if getattr(move, "move_type", None) not in _QUESTION_MOVES:
-            return move
-        return self._admit_in_thread_question(
-            candidate=move,
-            operative_facts=operative_facts,
-            recent_conversation=recent_conversation,
-        )
+        # WorkflowSession admits the final emitted question, after refinement and
+        # runtime fallback transformations. Do not gate a draft twice here.
+        return move
 
     def plan_continuation_question(
         self,
@@ -209,10 +301,19 @@ class ContinuousFlowRecoverabilityOpenAIModel(NaturalFlowRecoverabilityOpenAIMod
                 "decision_impact",
                 "redundancy_check",
                 "changed_candidate",
+                "no_useful_question",
             ],
             "properties": {
-                "primary_domain_id": {"type": "string", "enum": open_ids},
-                "opening": {"type": "string", "minLength": 1, "maxLength": 1800},
+                "primary_domain_id": {
+                    "anyOf": [{"type": "string", "enum": open_ids}, {"type": "null"}]
+                },
+                "opening": {
+                    "anyOf": [
+                        {"type": "string", "minLength": 1, "maxLength": 1800},
+                        {"type": "null"},
+                    ]
+                },
+                "no_useful_question": {"type": "boolean"},
                 "missing_discriminator": {"type": "string", "minLength": 1, "maxLength": 600},
                 "decision_impact": {"type": "string", "minLength": 1, "maxLength": 700},
                 "redundancy_check": {"type": "string", "minLength": 1, "maxLength": 700},
@@ -232,7 +333,7 @@ class ContinuousFlowRecoverabilityOpenAIModel(NaturalFlowRecoverabilityOpenAIMod
                 "contrast from another open dimension. For PARTIAL dimensions ask only the missing distinction, never "
                 "restart the topic. For UNASSESSED dimensions prefer high expected information gain and a natural bridge "
                 "from what is already known. Do not ask a question merely because a category remains open. Output exactly "
-                "one admitted question. The internal fields must state the missing discriminator, how materially different "
+                "one admitted question, OR return no_useful_question=true and opening/primary_domain_id=null when none is worth asking. An open category does not force a question and does not become complete when you stop. The internal fields must state the missing discriminator, how materially different "
                 "answers would change interpretation, and why the question is not already answered."
             ),
             payload={
@@ -269,10 +370,17 @@ class ContinuousFlowRecoverabilityOpenAIModel(NaturalFlowRecoverabilityOpenAIMod
             max_output_tokens=1100,
             schema_name="life_patterns_continuation_question_admission_v1",
         )
-        opening = str(result["opening"]).strip()
+        stopped = bool(result.get("no_useful_question"))
+        opening = None if stopped else str(result.get("opening") or "").strip()
+        if not stopped and not opening:
+            raise ValueError("admission returned neither a question nor an explicit stop")
         admission = {
             "stage": "cross_area_pre_send",
-            "decision": "replace" if bool(result["changed_candidate"]) else "admit",
+            "decision": "stop"
+            if stopped
+            else "replace"
+            if bool(result["changed_candidate"])
+            else "admit",
             "candidate_question": str(candidate.get("opening", "")),
             "final_question": opening,
             "missing_discriminator": str(result["missing_discriminator"]),
@@ -280,8 +388,9 @@ class ContinuousFlowRecoverabilityOpenAIModel(NaturalFlowRecoverabilityOpenAIMod
             "redundancy_check": str(result["redundancy_check"]),
         }
         return {
-            "primary_domain_id": str(result["primary_domain_id"]),
+            "primary_domain_id": None if stopped else str(result["primary_domain_id"]),
             "opening": opening,
+            "no_useful_question": stopped,
             "question_admission": admission,
         }
 
@@ -292,7 +401,10 @@ def _advance_existing_session(
     model: ContinuousFlowRecoverabilityOpenAIModel,
     request: ContinuousAdvanceRequest,
 ) -> dict[str, Any]:
-    if getattr(session, "_draft_move", None) is not None or session.core.active_proposal_id is not None:
+    if (
+        getattr(session, "_draft_move", None) is not None
+        or session.core.active_proposal_id is not None
+    ):
         raise ValueError("judge the current inferred synthesis before advancing")
 
     open_domains = _open_domains(request.aggregate_coverage)
@@ -340,61 +452,10 @@ def _advance_existing_session(
 
 
 def create_life_patterns_v2_owner_continuous_flow_app() -> FastAPI:
-    """Serve automatic continuation on one recoverable session with admitted questions only."""
+    """One workflow controller and one client for the existing scientific substrate."""
+    from .life_patterns_v2_owner_workflow_api import create_workflow_app
 
-    app = create_life_patterns_v2_owner_natural_flow_app()
-    runtime = app.state.recoverability_runtime
-    runtime.model = ContinuousFlowRecoverabilityOpenAIModel.from_env()
-
-    app.router.routes[:] = [
-        route
-        for route in app.router.routes
-        if getattr(route, "path", None)
-        not in {"/", "/api/owner-v2/conversation/sessions/{session_id}/turns"}
-    ]
-
-    @app.get("/", response_class=HTMLResponse, include_in_schema=False)
-    def landing() -> str:
-        return CONTINUOUS_FLOW_RECOVERABILITY_HTML
-
-    @app.post("/api/owner-v2/conversation/sessions/{session_id}/turns")
-    def interview_turn(session_id: str, request: ConversationTurnRequest) -> dict[str, Any]:
-        try:
-            result = cast(dict[str, Any], runtime.get(session_id).turn(request.message))
-        except KeyError as exc:
-            raise HTTPException(status_code=404, detail="development session not found") from exc
-        except TemporaryModelProviderError as exc:
-            raise HTTPException(status_code=503, detail=str(exc)) from exc
-        except (RuntimeError, ValueError) as exc:
-            raise HTTPException(status_code=422, detail=str(exc)) from exc
-        reply = str(result.get("reply", ""))
-        admission = runtime.model.pop_question_admission(reply)
-        if admission is not None:
-            result["question_admission"] = admission
-        return result
-
-    @app.post("/api/owner-v2/conversation/sessions/{session_id}/advance")
-    def advance_interview(session_id: str, request: ContinuousAdvanceRequest) -> dict[str, Any]:
-        try:
-            session = runtime.get(session_id)
-        except KeyError as exc:
-            raise HTTPException(status_code=404, detail="development session not found") from exc
-        if not isinstance(session, NaturalFlowRecoverabilitySession):
-            raise HTTPException(status_code=409, detail="session does not support continuous interview flow")
-        try:
-            return _advance_existing_session(session=session, model=runtime.model, request=request)
-        except TemporaryModelProviderError as exc:
-            raise HTTPException(status_code=503, detail=str(exc)) from exc
-        except (RuntimeError, ValueError) as exc:
-            raise HTTPException(status_code=422, detail=str(exc)) from exc
-
-    app.state.continuous_interview_flow = True
-    app.state.auto_continue_between_measurement_areas = True
-    app.state.finish_for_now_always_visible = True
-    app.state.pre_send_question_admission = True
-    app.state.same_session_cross_area_memory = True
-    app.state.question_admission_audit_in_recovery = True
-    return app
+    return create_workflow_app(model=ContinuousFlowRecoverabilityOpenAIModel.from_env())
 
 
 app = create_life_patterns_v2_owner_continuous_flow_app()

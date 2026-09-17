@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "life-patterns-v2-astrohd-recoverability-owner-retest",
-  "status": "owner_continuous_flow_question_quality_single_feedback_retest_then_fresh_measurement_and_postfreeze_recovery_required",
+  "status": "approved_survey_repair_candidate_verified_pending_hosted_ci_and_prototype_deployment",
   "exclusive": true,
   "requiredBranch": "codex/discover-life-patterns-mvp",
   "pullRequest": 24,
@@ -50,8 +50,8 @@
   "missionControlLatestArtifact": "feedback/mission-control/SDF-20260917-LIFE-PATTERNS-SINGLE-SYNTHESIS-TEXT-CHANNEL-020.json",
   "semanticChangeRequired": false,
   "productStrategyReplacementRequired": false,
-  "currentProductGap": "The owner directly observed cross-area semantic repetition, unnecessary Continue checkpoints, low-value questions, and duplicate synthesis text-entry controls. The live candidate keeps one accumulating session, stores bounded participant-answer memory and question-admission audit metadata in browser recovery, auto-advances through ordinary area boundaries, keeps Finish for now persistently visible, runs explicit pre-send usefulness/redundancy admission before questions are displayed, and now uses one free-form textbox for synthesis explanation/correction/replacement wording rather than separate edit modes. Older exact snapshots without answer_memory now seed redundancy memory from accepted participant-authoritative result wording plus any raw user turns still present; never-saved raw historical answers remain unrecoverable.",
-  "nextAction": "OWNER CONTINUOUS-FLOW CONSUMER-SEAM RETEST: refresh/recover the live interview. Verify no routine Continue checkpoint, persistent Finish for now, no semantic re-asking of prior answers, and sensible pre-send question selection. In inferred-synthesis review use the single textbox for correction, nuance, or replacement wording; the redundant edit buttons should be absent. Then complete a fresh target-blind interview, Freeze/export measurement, preserve the JSON unchanged, and only afterward run the owner-self historical AstroHD recovery regression.",
+  "currentProductGap": "The approved coordinated workflow, question-admission and interface candidate passes the local full and browser suites. Hosted CI/deployment reconciliation and natural owner evaluation remain open. The historical post-freeze AstroHD recovery criterion remains a later distinct activity.",
+  "nextAction": "Verify exact hosted CI and prototype deployment for the approved survey implementation. Then request a short owner natural-use evaluation; do not claim semantic quality or scientific recovery from deterministic tests.",
   "ownerAuthority": "The owner requires a dynamic standardized interview that remembers prior answers across the whole interview, automatically advances when there is only one normal next step, keeps an always-visible finish/pause escape, suppresses redundant or low-information questions before display, and avoids multiple text-entry controls for synthesis correction when one flexible textbox can express the intent. The owner also requires enough retained behavioral information to reproduce the historical owner DOB/time recovery. Owner-self post-freeze recovery is authorized; chart-aware elicitation, external participant target scoring, recruitment, publication, merge/release, and broader target-model activity are not.",
   "developmentPrototypeDeploymentAuthorized": true,
   "developmentPrototypeDomain": "life-patterns-owner-production.up.railway.app",
@@ -81,5 +81,7 @@
     "external-participant target-model activity",
     "merge/release or publication",
     "private transcript logging to Git or Railway logs"
-  ]
+  ],
+  "surveyImplementationApproval": "approve all \u2014 2026-09-17",
+  "surveyImplementationReceipt": "state/LIFE-PATTERNS-SURVEY-IMPLEMENTATION-2026-09-17.md"
 }

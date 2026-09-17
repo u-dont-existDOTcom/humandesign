@@ -49,9 +49,7 @@ def test_advance_keeps_same_session_and_appends_one_admitted_question() -> None:
         model=MinimalSessionModel(),  # type: ignore[arg-type]
     )
     session.pattern_focus_established = True
-    session.conversation.append(
-        {"turn_id": "TURN-OLD", "role": "user", "text": "Previous answer"}
-    )
+    session.conversation.append({"turn_id": "TURN-OLD", "role": "user", "text": "Previous answer"})
     request = ContinuousAdvanceRequest(
         aggregate_coverage=[
             {
@@ -135,19 +133,97 @@ def test_in_thread_admission_can_replace_and_expose_audit_reason(monkeypatch) ->
     assert model.pop_question_admission(result.reply) is None
 
 
-def test_continuous_ui_auto_advances_and_uses_one_synthesis_text_channel() -> None:
+def test_continuous_ui_uses_one_renderer_and_one_labeled_text_channel() -> None:
     html = CONTINUOUS_FLOW_RECOVERABILITY_HTML
-    assert "/advance" in html
-    assert "await advanceInterview()" in html
-    assert "answer_memory" in html
-    assert "question_admission_log" in html
-    assert "rememberQuestionAdmission" in html
+    assert 'for="message"' in html
+    assert html.count("<textarea") == 1
+    assert "function render()" in html
+    assert "async function perform(" in html
+    assert "/operations" in html
+    assert "pending_operation" in html
     assert "Finish for now" in html
-    assert "position='fixed'" in html
-    assert "explainRevision.classList.add('hidden')" in html
-    assert "exactWording.classList.add('hidden')" in html
-    assert "Exact wording: …" in html
-    assert "The always-visible textbox is the one synthesis-correction channel" in html
-    assert "state.completed_results" in html
-    assert "new Set(memory" in html
-    assert "continueButton.classList.add('hidden')" in html
+    assert "Resume interview" in html
+    assert "Your patterns" in html
+    assert "prefers-reduced-motion" in html
+    assert "function resumeOrStart" not in html
+    assert "editExactWording" not in html
+
+
+def test_cross_area_gate_can_stop_without_closing_unmeasured_domains(monkeypatch) -> None:
+    model = ContinuousFlowRecoverabilityOpenAIModel(api_key="test")
+    calls = []
+
+    def call(**kwargs: Any) -> dict[str, Any]:
+        calls.append(kwargs)
+        if kwargs["schema_name"] == "life_patterns_dynamic_coverage_next_v1":
+            return {
+                "primary_domain_id": "recurring_mystery",
+                "opening": "Already answered?",
+                "internal_reason": "draft",
+            }
+        assert "no_useful_question" in kwargs["schema"]["required"]
+        return {
+            "primary_domain_id": None,
+            "opening": None,
+            "no_useful_question": True,
+            "changed_candidate": True,
+            "missing_discriminator": "None worth asking now",
+            "decision_impact": "No meaningful change",
+            "redundancy_check": "Already answered",
+        }
+
+    monkeypatch.setattr(model, "_conversation_call_json", call)
+    result = model.plan_continuation_question(
+        open_domains=RECOVERABILITY_DOMAINS,
+        aggregate_coverage=[],
+        completed_results=[],
+        answer_memory=[],
+        recent_conversation=(),
+        operative_facts=(),
+    )
+    assert result["no_useful_question"] is True and result["opening"] is None
+    assert result["question_admission"]["decision"] == "stop"
+    assert len(calls) == 2
+
+
+def test_model_routes_receive_old_source_context_not_only_their_recent_tail(monkeypatch) -> None:
+    from hdmatch.api.life_patterns_v2_owner_context import interview_context
+    from hdmatch.api.life_patterns_v2_owner_natural_flow import NaturalFlowRecoverabilityOpenAIModel
+
+    captured = []
+
+    def capture(self, **kwargs: Any) -> dict[str, Any]:
+        captured.append(kwargs)
+        return {}
+
+    monkeypatch.setattr(NaturalFlowRecoverabilityOpenAIModel, "_conversation_call_json", capture)
+    model = ContinuousFlowRecoverabilityOpenAIModel(api_key="not-used")
+    history = [{"role": "user", "text": "An older condition that still matters."}] + [
+        {"role": "assistant", "text": f"Unrelated turn {i}"} for i in range(150)
+    ]
+    context = {
+        "conversation": history,
+        "participant_corrections": [{"text": "Only in unfamiliar groups."}],
+        "admission_sink": [],
+    }
+    with interview_context(lambda: context):
+        for schema_name in [
+            "life_patterns_hidden_ledger_turn_v1",
+            "life_patterns_refinement_move_v1",
+            "life_patterns_question_admission_v1",
+            "life_patterns_dynamic_coverage_next_v1",
+        ]:
+            model._conversation_call_json(
+                instructions="Test",
+                payload={"recent_conversation": history[-20:]},
+                schema={},
+                effort="low",
+                max_output_tokens=10,
+                schema_name=schema_name,
+            )
+    assert len(captured) == 4
+    for call in captured:
+        assert call["payload"]["recent_conversation"][0] == history[0]
+        assert call["payload"]["shared_evidence_context"]["participant_corrections"]
+        assert "admission_sink" not in call["payload"]["shared_evidence_context"]
+

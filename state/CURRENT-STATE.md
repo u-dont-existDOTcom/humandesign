@@ -1,143 +1,48 @@
-# Current state
+# Current state — Life Patterns — 2026-09-17
 
-## Life Patterns — 2026-09-17
+Active task: `life-patterns-v2-astrohd-recoverability-owner-retest`.
 
-Active task: `life-patterns-v2-astrohd-recoverability-owner-retest` — **OWNER CONTINUOUS-FLOW / QUESTION-QUALITY / SINGLE-FEEDBACK-CHANNEL RETEST, THEN FRESH TARGET-BLIND MEASUREMENT + POST-FREEZE RECOVERY REQUIRED**.
+The owner approved **all four phases** of the survey review. Approval source: `tasks/LIFE-PATTERNS-SURVEY-APPROVED-IMPLEMENTATION-2026-09-17.md`. The review's earlier waiting-for-approval state is superseded.
 
-PR #24 remains **draft / open / unmerged**.
+## Current boundary
 
-## Accepted scientific substrate
+Coordinated implementation candidate verified locally; hosted CI and the existing prototype deployment must be reconciled before a live-completion claim. The development pull request remains draft/open/unmerged. No merge, public release, recruitment, model/provider change, or paid evaluation campaign is authorized.
 
-The accepted v2 hidden evidence contract remains unchanged: open-world episode facts, participant-authoritative person-level patterns, append-only correction/provenance, genuine-absence gating, immutable evidence timing, target-theory blindness, and the episode-fact/person-pattern firewall.
+Implementation receipt: `state/LIFE-PATTERNS-SURVEY-IMPLEMENTATION-2026-09-17.md`.
+Browser evidence: `artifacts/life-patterns/survey-implementation-2026-09-17/browser-regressions.json`.
 
-No private owner interview narrative is committed. Private interview content remains browser-local unless the owner explicitly exports/uploads an audit/recovery checkpoint.
+## Product implementation
 
-## Current participant-facing architecture
+One explicit revision-bound workflow controls current phase, single-flight/idempotent operations, preserved pending submissions, atomic server snapshot/view responses, restore reconciliation and pause/resume. The deployed UI is one template and one renderer, not another layer over the old HTML patch chain. Old open tabs keep the raw recovery-read contract and receive an explicit refresh boundary for old mutation routes.
 
-**Fixed 23-dimension target-blind recoverability surface / one continuous adaptive interview / same-session hidden ledger across measurement areas / separate pre-send question admission / automatic cross-area continuation / persistent Finish-for-now escape / direct participant self-report distinguished from interviewer inference / one free-form synthesis correction channel / progress and liveness at the active end / exact browser-local hidden-ledger audit/recovery / local pre-scoring freeze / owner-only post-freeze DOB-time recovery regression.**
+All current question routes share source-bound conversation, operative evidence, pattern status and corrections. The final gate runs after runtime fallback/refinement, and cross-area admission can stop with incomplete coverage explicitly retained. A fallible formulation-fidelity review checks source context and the distinction between direct reports, plausible new inferences and unsupported/context-only material. These controls do not prove that all real model questions or syntheses are good.
 
-Current rules:
+The interface has one labeled response box, compact approximate coverage progress, no fabricated ETA, persistent Finish for now, explicit Resume, a stable patterns collection, source-context disclosure, append-only participant correction notes, visible retry/save status, separate summary/backup/research exports, reduced-motion handling and responsive layout. Corrections dispute the old interpretation; they do not manufacture another adjudication of an already accepted historical proposal.
 
-- simple is fine; generic/high-base-rate is not a useful Life Pattern;
-- a person-specific pattern already explicitly stated by the participant may be recorded from its original source without a redundant approval screen;
-- any interviewer-added synthesis/inference still requires participant judgment;
-- fixed scientific coverage does not imply fixed question order or category-by-category interviewing;
-- one natural answer may satisfy several measurement dimensions;
-- prior answers must suppress semantically duplicate later questions;
-- no arbitrary episode/counterexample quota;
-- broad participant labels preserve their intended cross-domain scope;
-- progress reports approximate percent plus measurement areas still open, not a question count;
-- browser audit/recovery snapshots preserve potentially defective working state for debugging; exactness does not imply scientific validity;
-- participant decisions do not wait on a redundant second LLM coverage call.
+## Preserved scientific boundary
 
-Runtime elicitation receives no participant chart, birth target, expected answer direction, target-model mapping, candidate score/rank, or historical AstroHD crosswalk.
+The accepted v2 hidden evidence contract is unchanged: open-world episode facts, participant authority, append-only evidence corrections/provenance, genuine-absence gating, immutable evidence timing, and the episode-fact/person-pattern firewall. No private narrative was committed. The runtime receives no birth target, chart, expected direction, target mapping, candidate score or rank. The 23-dimension neutral blueprint remains `life-patterns-recoverability-coverage-v2`.
 
-## Latest owner evidence and correction
+Direct participant statements may be recorded without redundant confirmation; added interviewer inferences need participant judgment. Familiar or conditional self-knowledge is not rejected merely for being obvious or dependent on context. No arbitrary episode/counterexample quota was added.
 
-The owner supplied an exact browser audit/recovery checkpoint. It was inspected privately and is not committed. The checkpoint showed that the then-current server snapshot held only the newest measurement-area conversation while earlier knowledge survived mainly as accepted result wording and aggregate coverage metadata. This directly explained how a question could be substantively answered earlier and nevertheless be selected again after crossing a measurement-area boundary.
+Working recovery is not scientific acceptance. Older transcript reconstruction remains explicitly non-scientific. The frozen development record now includes the evidence archive, blueprint/build identity, current statuses and unresolved corrections; hashing bytes does not validate their semantics. Historical accepted assertions remain in the archive, but disputed current items are unresolved in the current-result projection.
 
-The owner also corrected three product-flow assumptions:
+The owner-self historical recovery criterion remains a later post-freeze regression: exact recorded moment hourly rank no worse than #2; correct date #1 distinct refined neighborhood; refined peak within 11 minutes. This implementation does not claim that criterion is met on a new interview.
 
-1. an internal local-topic boundary should not require a participant `Continue interview` click when the next normal action is uniquely determined;
-2. generation-time instructions such as “ask only useful questions” are insufficient if a low-value question can still reach the participant; the candidate question itself needs an admission check;
-3. backend distinctions among explanatory correction and exact replacement wording do not justify multiple participant text-entry controls when one textbox can express both intents.
+## Verification and remaining work
 
-Receipt: `state/LIFE-PATTERNS-v2-OWNER-CONTINUOUS-FLOW-QUESTION-ADMISSION-2026-09-17.md`.
+Local complete suite: 815 passed, 7 environment/shallow-history skips, one Starlette/httpx deprecation warning. Ruff production/tests passed with the repository's existing E501/I001 exclusions. Strict mypy passed across 207 source files. Thirteen executable local browser cases passed with zero page errors and zero live model calls. Initial/confirmation layout checks covered 320, 375, 414, 768, 1024 and 1440 CSS pixels. Native mobile keyboards, complete zoom/contrast/screen-reader conformance and live model latency/quality were not certified.
 
-## Same-session continuation and recoverable answer memory
+The new hosted `survey-browser` job executes these consumer tests against a loopback-only synthetic fixture, in addition to the existing Python/lint/typecheck job. Current deployment configuration and passwordless owner-prototype authority are unchanged; do not create another service or restore Basic Auth without an owner decision.
 
-Normal cross-area continuation keeps the same server session, conversation, operative facts, corrections, and hidden ledger instead of creating a fresh coverage session.
+Next: verify the exact hosted runs and deployment, update this receipt with their identities, then a short owner retest of usefulness and correction burden. Do not ask for the already-given implementation approval again.
 
-Browser audit/recovery state carries a bounded participant-answer memory plus a question-admission audit log. The continuation planner receives that memory together with current conversation, operative facts, accepted participant-authoritative patterns, aggregate coverage, and still-open neutral dimensions.
+Historical overlay: `state/LIFE-PATTERNS-CURRENT-STATE-2026-09-12.md` is retained as history where newer state supersedes it. Existing Mission Control captures remain on their separate correction branch; this task did not modify them.
 
-For older exact browser snapshots that predate explicit answer memory, recovery now seeds redundancy memory from accepted result wording plus any raw participant turns still present in the server snapshot. This cannot recreate old raw answers that were never persisted anywhere, but it uses every recoverable prior participant-authoritative statement to reduce duplicate questioning.
-
-## Question admission
-
-Normal follow-up questions pass a separate pre-send gate after generation. The gate may admit, replace, or stop the question.
-
-A displayed question must identify a genuinely missing discriminator, have materially different plausible answers capable of changing the retained person model or still-open measurement distinction, be answerable from lived experience, not be semantically already answered, and be worth another participant turn.
-
-Cross-area questions receive a final admission/replacement pass using the broader answer memory and accumulated measurement state. Generic, ordinary-human-default, vague, redundant, normative, or questionnaire-for-its-own-sake candidates should be replaced before display.
-
-Admission rationale is stored only as audit/planning metadata in the browser recovery bundle; it is not participant evidence.
-
-## Continuous participant flow
-
-After local topic completion, direct participant-authored pattern recording, or successful adjudication of a real interviewer inference, the app automatically selects the next admitted question. There is no routine `Continue interview` checkpoint. A Continue-style control appears only as a retry if next-question selection fails.
-
-`Finish for now` remains a persistent visible pause control throughout the interview and saves the current browser checkpoint.
-
-## Synthesis review
-
-The always-visible textbox is now the **single participant text-entry channel** for an inferred synthesis. It can carry disagreement, explanation, correction, nuance, missing context, or participant-authored replacement wording.
-
-Both `Close — I’ll explain what needs changing` and `Edit exact wording myself` are hidden. If literal wording is intended, the participant can state that intent in the same textbox rather than entering another edit mode.
-
-Buttons remain only for genuinely distinct state transitions such as accepting the inference, asking the interviewer to keep investigating, rejecting/stopping, or leaving it unresolved.
-
-## Recovery boundary
-
-Exact browser recovery preserves the current working hidden ledger plus client-side answer memory, coverage aggregation, question-admission audit metadata, and workflow phase. A restored checkpoint remains unvalidated and cannot become the scientific freeze merely because it resumes exactly.
-
-Private narrative is not persisted to Git or a Railway volume.
-
-## Verification / live deployment
-
-Exact deployed application head: `56796a842ef3bc453f12f65c138458656e441490`.
-
-Regression checkpoint: `f861ac5d26f6e11aceb3c69804e416e15db612c9`.
-
-GitHub Actions run `35239835457`: **SUCCESS**.
-
-- unit/integration tests: PASS;
-- Ruff: PASS;
-- strict mypy: PASS.
-
-Railway deployment `3588d15c-4865-4c0d-ba37-331d5ac84483`: **SUCCESS** from the exact application head.
-
-Runtime evidence: application startup complete; `GET /healthz` returned HTTP **200 OK**.
-
-The development surface remains passwordless under prior explicit owner authority. This does not authorize external participant collection/recruitment.
-
-## Recoverability criterion
-
-Active blueprint: `life-patterns-recoverability-coverage-v2`, 23 required neutral dimensions with explicit missingness states.
-
-Coverage completion alone cannot pass. A fresh target-blind interview must be frozen/exported locally before the narrowly authorized owner-self historical AstroHD recovery regression, which still requires:
-
-- exact recorded moment hourly rank no worse than **#2**;
-- correct date as the **#1 distinct refined neighborhood**;
-- refined peak within **11 minutes** of recorded time.
-
-## Mission Control capture
-
-Owner-explicit logic corrections remain durably captured on the UDA branch `feedback/mission-control-logic-corrections-20260915`, draft PR #127, truth state **`CAPTURED_BRANCH_ONLY`**.
-
-Current records for this correction chain:
-
-- `feedback/mission-control/SDF-20260917-LIFE-PATTERNS-CONTINUATION-QUESTION-ADMISSION-019.json`;
-- `feedback/mission-control/SDF-20260917-LIFE-PATTERNS-SINGLE-SYNTHESIS-TEXT-CHANNEL-020.json`.
-
-The second record corrects the first repair's remaining UI over-separation: a distinct backend intent does not automatically require a distinct participant control.
-
-## Current gate
-
-Owner consumer-seam retest:
-
-1. refresh/recover the current development interview;
-2. ordinary completion should flow automatically into the next admitted question without a Continue checkpoint;
-3. Finish for now should remain visible;
-4. previously answered material should not be asked again under new wording;
-5. low-value candidate questions should be replaced/suppressed by the pre-send admission gate;
-6. inferred-synthesis correction should use one textbox rather than multiple edit modes;
-7. progress, exact recovery, direct-report/inference handling, and fast adjudication must remain intact;
-8. once those product seams pass, complete a fresh target-blind interview, Freeze/export measurement, then run the owner-self historical AstroHD recovery regression.
-
-Focused completion command:
+Legacy affected completion command (retained for task preflight):
 
 `python -m pytest tests/unit/test_life_patterns_v2_owner_continuous_flow.py tests/unit/test_life_patterns_v2_owner_natural_flow.py tests/unit/test_life_patterns_v2_owner_liveness.py tests/unit/test_life_patterns_v2_owner_import_resume.py tests/unit/test_life_patterns_v2_owner_persistent.py tests/unit/test_life_patterns_v2_owner_resilient.py tests/unit/test_life_patterns_v2_owner_finalization_flow.py tests/unit/test_life_patterns_v2_owner_dynamic_coverage.py tests/unit/test_life_patterns_v2_owner_scope.py tests/unit/test_life_patterns_v2_owner_recoverability.py tests/unit/test_life_patterns_v2_owner_recoverability_ui.py tests/unit/test_life_patterns_owner_recovery_gate.py -q`
 
-Still unauthorized: external participant collection/recruitment, automated participant coding, chart-aware elicitation, external-participant target scoring, merge/release, publication/validation claims, production expansion, and unapproved spending.
+Additional focused tests: `tests/unit/test_life_patterns_v2_owner_workflow.py`, `tests/unit/test_life_patterns_v2_owner_workflow_api.py`. Browser setup/command: `tests/browser/README.md`.
 
-**There was never a completion policy.**
+Owner correction preserved: **There was never a completion policy.** See `state/OWNER-CORRECTION-2026-09-02.md`. Do not invent a scientific-completeness blocker from task bookkeeping.
