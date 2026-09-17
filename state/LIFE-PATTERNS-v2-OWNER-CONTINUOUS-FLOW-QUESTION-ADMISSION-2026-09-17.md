@@ -7,9 +7,9 @@ Direct owner testing identified four coupled participant-facing failures:
 1. the next measurement-area question could ask something already answered earlier in the interview;
 2. a routine `Continue interview` checkpoint required a click even though continuation was the only normal nonterminal action;
 3. some questions remained low-value despite existing information-gain language in the interviewer prompt;
-4. `Close — I’ll explain what needs changing` duplicated the always-available free-form textbox during synthesis review, while exact literal replacement wording is a genuinely different intent.
+4. synthesis review exposed multiple text-entry controls even though the always-available textbox could already carry explanation, correction, nuance, or replacement wording.
 
-The owner supplied an exact browser audit/recovery checkpoint. It was inspected privately and is not committed. It showed the current server snapshot carrying only the current measurement-area conversation while earlier interview information lived mainly in client-side completed-result and aggregate-coverage summaries. That architecture could lose exact conversational memory across area boundaries even though compressed coverage metadata survived.
+The owner supplied an exact browser audit/recovery checkpoint. It was inspected privately and is not committed. It showed the current server snapshot carrying only the newest measurement-area conversation while earlier interview information lived mainly in client-side completed-result and aggregate-coverage summaries. That architecture could lose exact conversational memory across area boundaries even though compressed coverage metadata survived.
 
 ## Generating conditions
 
@@ -27,13 +27,13 @@ The interviewer already had prompt instructions to ask only decision-changing, n
 
 ### Duplicate synthesis-feedback controls
 
-The free-form textbox already accepted ordinary explanation, correction, nuance, and disagreement. `Close — I’ll explain what needs changing` merely focused that same textbox, so it duplicated the existing semantic action. Exact participant-authored replacement wording remains distinct because it requests literal storage rather than conversational interpretation.
+The free-form textbox already accepted ordinary explanation, correction, nuance, disagreement, and participant-authored wording. The first repair correctly hid `Close — I’ll explain what needs changing`, but initially retained a separate exact-wording button because literal storage was a different backend intent. The owner correctly identified that this still leaked an internal intent taxonomy into the UI: a single flexible text field can express both ordinary correction and a literal replacement request.
 
 ## Repair
 
 ### One continuous recoverable session
 
-Normal cross-area continuation now advances the same server session. The hidden ledger and conversation therefore continue accumulating instead of resetting at every measurement-area boundary.
+Normal cross-area continuation advances the same server session. The hidden ledger and conversation therefore continue accumulating instead of resetting at every measurement-area boundary.
 
 Browser audit/recovery state also carries a bounded participant-answer memory. The continuation planner receives:
 
@@ -46,6 +46,8 @@ Browser audit/recovery state also carries a bounded participant-answer memory. T
 
 This memory is for redundancy suppression and planning; evidence admission remains governed by the existing hidden-ledger/source-provenance rules.
 
+For older exact browser snapshots that predate explicit `answer_memory`, recovery now seeds the redundancy memory from accepted participant-authoritative result wording plus any raw participant turns that remain in the server snapshot. This cannot recreate raw answers that the older architecture never saved anywhere, but it preserves all recoverable prior content for repeat suppression.
+
 ### Automatic continuation
 
 After:
@@ -56,11 +58,11 @@ After:
 
 the app automatically chooses the next admitted question. The ordinary `Continue interview` button is hidden. It appears only as an explicit retry frontier if next-question selection fails.
 
-`Finish for now` is moved to a persistent fixed on-screen control and remains available throughout the interview. Pausing saves the current browser audit/recovery checkpoint.
+`Finish for now` is a persistent fixed on-screen control throughout the interview. Pausing saves the current browser audit/recovery checkpoint.
 
 ### Explicit pre-send question admission
 
-Questions now pass a separate model call before display.
+Questions pass a separate model call before display.
 
 For in-thread follow-ups the admission pass may:
 
@@ -78,14 +80,22 @@ Admission requires all of the following:
 
 Cross-area continuation receives an additional final admission/replacement pass using the prior answer memory, coverage state, accepted patterns, current conversation, and operative facts. It must reject or replace vague, generic, normative, ordinary-human-default, redundant, or questionnaire-for-its-own-sake questions.
 
+The admission rationale is saved in the browser audit/recovery bundle as planning/audit metadata so a future uploaded snapshot can show why a questionable question passed the gate. It is not participant evidence.
+
 ### Synthesis review simplification
 
-The explanatory-revision button is hidden. Synthesis review now has two semantically distinct input channels:
+There is now **one participant text-entry channel** during inferred-synthesis review: the ordinary always-visible textbox.
 
-- **ordinary free-form textbox** — feedback, disagreement, corrections, nuance, missing context, or explanation;
-- **Write exact wording to record** — only when the participant wants literal replacement wording stored unchanged rather than interpreted conversationally.
+It handles:
 
-The existing accept/reject/investigate/unresolved controls retain their separate workflow meanings.
+- disagreement;
+- explanation of what is wrong or missing;
+- nuance or context;
+- corrected/replacement wording.
+
+Both `Close — I’ll explain what needs changing` and `Edit exact wording myself` are hidden. If the participant specifically wants literal wording rather than conversational interpretation, the UI asks them to state that intent in the same textbox (for example `Exact wording: …`) rather than exposing another editor mode.
+
+The remaining buttons are kept only when they perform genuinely different workflow transitions: accept the inference, keep investigating with another useful question, reject/stop, or leave unresolved.
 
 ## Implementation
 
@@ -94,17 +104,19 @@ The existing accept/reject/investigate/unresolved controls retain their separate
 - `src/hdmatch/api/life_patterns_v2_owner_deployed_app.py`
 - `tests/unit/test_life_patterns_v2_owner_continuous_flow.py`
 
-Application head: `1b4f32ba16693df2a645fecb64dc00b10989cd62`.
+Exact deployed application head: `56796a842ef3bc453f12f65c138458656e441490`.
+
+Regression checkpoint: `f861ac5d26f6e11aceb3c69804e416e15db612c9`.
 
 ## Verification
 
-GitHub Actions run `35234856279`: **SUCCESS**.
+GitHub Actions run `35239835457`: **SUCCESS**.
 
-- full unit/integration suite: PASS;
+- unit/integration tests: PASS;
 - Ruff: PASS;
 - strict mypy: PASS.
 
-Railway deployment `2503e395-714d-487d-9d83-cf6e4b97aad6`: **SUCCESS** from application head `1b4f32ba16693df2a645fecb64dc00b10989cd62`.
+Railway deployment `3588d15c-4865-4c0d-ba37-331d5ac84483`: **SUCCESS** from application head `56796a842ef3bc453f12f65c138458656e441490`.
 
 Runtime evidence:
 
@@ -113,11 +125,11 @@ Runtime evidence:
 
 ## Mission Control
 
-The corresponding privacy-bounded owner logic correction is durably captured on the existing universal-architecture correction branch:
+The original continuous-flow/question-admission correction remains durably captured as logic record 019. The follow-up correction—backend intent distinctions do not require separate participant text-entry controls—is captured separately as:
 
-`feedback/mission-control/SDF-20260917-LIFE-PATTERNS-CONTINUATION-QUESTION-ADMISSION-019.json`
+`feedback/mission-control/SDF-20260917-LIFE-PATTERNS-SINGLE-SYNTHESIS-TEXT-CHANNEL-020.json`
 
-Truth remains `CAPTURED_BRANCH_ONLY`.
+Both remain `CAPTURED_BRANCH_ONLY` on the existing Mission Control draft branch.
 
 ## Next consumer-seam check
 
@@ -127,7 +139,7 @@ On refresh/recovery:
 2. `Finish for now` should remain visibly available;
 3. the next question should not semantically repeat earlier answers;
 4. low-value candidate questions should be replaced or suppressed before display;
-5. synthesis feedback should use the textbox, with only the separate literal exact-wording override remaining;
+5. inferred-synthesis feedback should expose one textbox rather than multiple edit modes;
 6. exact audit/recovery, progress, target-theory blindness, direct-report/inference handling, and fast adjudication must remain intact.
 
 The subsequent scientific gate remains a fresh target-blind completed measurement freeze followed by the narrowly authorized owner-self DOB/time recovery regression against the frozen historical benchmark.
