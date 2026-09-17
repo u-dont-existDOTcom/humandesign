@@ -19,6 +19,7 @@ def _build_continuous_flow_html() -> str:
 
     js = r'''
 window.__lifePatternsAnswerMemory=Array.isArray(window.__lifePatternsAnswerMemory)?window.__lifePatternsAnswerMemory:[];
+window.__lifePatternsQuestionAdmissionLog=Array.isArray(window.__lifePatternsQuestionAdmissionLog)?window.__lifePatternsQuestionAdmissionLog:[];
 window.__lifePatternsPaused=false;
 let __continuousAdvancing=false;
 
@@ -29,11 +30,25 @@ function rememberParticipantAnswer(text){
   if(mem.length>400)mem.splice(0,mem.length-400);
 }
 
-// Persist cross-area participant answer memory in the same browser audit/recovery bundle.
+function rememberQuestionAdmission(path,p){
+  if(!p||!p.question_admission)return;
+  const rows=window.__lifePatternsQuestionAdmissionLog;
+  rows.push({
+    recorded_at:new Date().toISOString(),
+    path:String(path||''),
+    question:String(p.opening||p.reply||p.question_admission.final_question||''),
+    admission:p.question_admission
+  });
+  if(rows.length>400)rows.splice(0,rows.length-400);
+}
+
+// Persist cross-area participant answer memory and the internal question-admission trace in the
+// same browser audit/recovery bundle. Admission traces are audit metadata, not scientific evidence.
 const __continuousClientState=currentClientRecoveryState;
 currentClientRecoveryState=function(){
   const state=__continuousClientState();
   state.answer_memory=[...(window.__lifePatternsAnswerMemory||[])];
+  state.question_admission_log=[...(window.__lifePatternsQuestionAdmissionLog||[])];
   return state;
 };
 const __continuousRestoreClientState=restoreClientState;
@@ -45,6 +60,16 @@ restoreClientState=function(bundle){
     memory=bundle.server_snapshot.conversation.filter(r=>r&&r.role==='user'&&r.text).map(r=>String(r.text));
   }
   window.__lifePatternsAnswerMemory=memory.slice(-400);
+  window.__lifePatternsQuestionAdmissionLog=Array.isArray(state.question_admission_log)?state.question_admission_log.slice(-400):[];
+};
+
+// Capture the internal admission rationale returned with a displayed question so an uploaded
+// audit/recovery snapshot can later explain why a questionable prompt passed the gate.
+const __continuousApi=api;
+api=async function(path,options={}){
+  const p=await __continuousApi(path,options);
+  rememberQuestionAdmission(path,p);
+  return p;
 };
 
 // The normal textbox already handles "what fits / what does not / what is missing". The old
