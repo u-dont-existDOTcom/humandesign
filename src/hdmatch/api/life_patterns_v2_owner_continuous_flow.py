@@ -2,7 +2,7 @@
 
 The fixed recoverability surface remains target-theory-blind and standardized, but the
 participant should experience one continuous interview rather than a sequence of category
-checkpoints.  This layer keeps the current server session alive across measurement areas,
+checkpoints. This layer keeps the current server session alive across measurement areas,
 feeds prior participant answers into continuation planning, and runs a separate low-cost
 admission pass before any model-generated question is shown.
 """
@@ -16,7 +16,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel, Field
 
-from .life_patterns_v2_owner_conversation import ConversationMove
+from .life_patterns_v2_owner_conversation import ConversationMove, ConversationTurnRequest
 from .life_patterns_v2_owner_continuous_flow_ui import CONTINUOUS_FLOW_RECOVERABILITY_HTML
 from .life_patterns_v2_owner_natural_flow import (
     NaturalFlowRecoverabilityOpenAIModel,
@@ -38,6 +38,22 @@ class ContinuousAdvanceRequest(BaseModel):
 
 class ContinuousFlowRecoverabilityOpenAIModel(NaturalFlowRecoverabilityOpenAIModel):
     """Natural-flow planner with an explicit pre-send usefulness/redundancy check."""
+
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
+        super().__init__(*args, **kwargs)
+        self._question_admission_by_reply: dict[str, list[dict[str, Any]]] = {}
+
+    def _remember_question_admission(self, reply: str, evidence: dict[str, Any]) -> None:
+        self._question_admission_by_reply.setdefault(reply, []).append(evidence)
+
+    def pop_question_admission(self, reply: str) -> dict[str, Any] | None:
+        rows = self._question_admission_by_reply.get(reply)
+        if not rows:
+            return None
+        evidence = rows.pop(0)
+        if not rows:
+            self._question_admission_by_reply.pop(reply, None)
+        return evidence
 
     def _admit_in_thread_question(
         self,
@@ -118,12 +134,24 @@ class ContinuousFlowRecoverabilityOpenAIModel(NaturalFlowRecoverabilityOpenAIMod
             schema_name="life_patterns_question_admission_v1",
         )
         decision = str(result.get("decision", "stop"))
+        evidence = {
+            "stage": "in_thread_pre_send",
+            "decision": decision,
+            "candidate_question": candidate.reply,
+            "missing_discriminator": str(result.get("missing_discriminator", "")),
+            "decision_impact": str(result.get("decision_impact", "")),
+            "redundancy_check": str(result.get("redundancy_check", "")),
+        }
         if decision == "admit":
+            evidence["final_question"] = candidate.reply
+            self._remember_question_admission(candidate.reply, evidence)
             return candidate
         if decision == "replace":
             reply = str(result.get("reply") or "").strip()
             move_type = str(result.get("move_type") or "")
             if reply and move_type in _QUESTION_MOVES:
+                evidence["final_question"] = reply
+                self._remember_question_admission(reply, evidence)
                 return ConversationMove(reply=reply, move_type=move_type)  # type: ignore[arg-type]
         return TopicCompleteMove(
             reply="That gives me enough useful information for this area; I’ll move on."
@@ -162,7 +190,7 @@ class ContinuousFlowRecoverabilityOpenAIModel(NaturalFlowRecoverabilityOpenAIMod
         answer_memory: list[str],
         recent_conversation: tuple[dict[str, str], ...],
         operative_facts: tuple[Any, ...],
-    ) -> dict[str, str]:
+    ) -> dict[str, Any]:
         """Generate, then independently admit/replace, the next cross-area question."""
 
         candidate = super().plan_next_coverage_question(
@@ -241,12 +269,20 @@ class ContinuousFlowRecoverabilityOpenAIModel(NaturalFlowRecoverabilityOpenAIMod
             max_output_tokens=1100,
             schema_name="life_patterns_continuation_question_admission_v1",
         )
-        return {
-            "primary_domain_id": str(result["primary_domain_id"]),
-            "opening": str(result["opening"]).strip(),
+        opening = str(result["opening"]).strip()
+        admission = {
+            "stage": "cross_area_pre_send",
+            "decision": "replace" if bool(result["changed_candidate"]) else "admit",
+            "candidate_question": str(candidate.get("opening", "")),
+            "final_question": opening,
             "missing_discriminator": str(result["missing_discriminator"]),
             "decision_impact": str(result["decision_impact"]),
             "redundancy_check": str(result["redundancy_check"]),
+        }
+        return {
+            "primary_domain_id": str(result["primary_domain_id"]),
+            "opening": opening,
+            "question_admission": admission,
         }
 
 
@@ -276,7 +312,7 @@ def _advance_existing_session(
         recent_conversation=tuple(session.conversation),
         operative_facts=session.core.operative_facts(),
     )
-    opening = plan["opening"].strip()
+    opening = str(plan["opening"]).strip()
     if not opening:
         raise ValueError("next-question admission returned no question")
 
@@ -298,12 +334,8 @@ def _advance_existing_session(
         "session_id": session.session_id,
         "complete": False,
         "opening": opening,
-        "primary_domain_id": plan["primary_domain_id"],
-        "question_admission": {
-            "missing_discriminator": plan["missing_discriminator"],
-            "decision_impact": plan["decision_impact"],
-            "redundancy_check": plan["redundancy_check"],
-        },
+        "primary_domain_id": str(plan["primary_domain_id"]),
+        "question_admission": plan["question_admission"],
     }
 
 
@@ -315,12 +347,31 @@ def create_life_patterns_v2_owner_continuous_flow_app() -> FastAPI:
     runtime.model = ContinuousFlowRecoverabilityOpenAIModel.from_env()
 
     app.router.routes[:] = [
-        route for route in app.router.routes if getattr(route, "path", None) != "/"
+        route
+        for route in app.router.routes
+        if getattr(route, "path", None)
+        not in {"/", "/api/owner-v2/conversation/sessions/{session_id}/turns"}
     ]
 
     @app.get("/", response_class=HTMLResponse, include_in_schema=False)
     def landing() -> str:
         return CONTINUOUS_FLOW_RECOVERABILITY_HTML
+
+    @app.post("/api/owner-v2/conversation/sessions/{session_id}/turns")
+    def interview_turn(session_id: str, request: ConversationTurnRequest) -> dict[str, Any]:
+        try:
+            result = runtime.get(session_id).turn(request.message)
+        except KeyError as exc:
+            raise HTTPException(status_code=404, detail="development session not found") from exc
+        except TemporaryModelProviderError as exc:
+            raise HTTPException(status_code=503, detail=str(exc)) from exc
+        except (RuntimeError, ValueError) as exc:
+            raise HTTPException(status_code=422, detail=str(exc)) from exc
+        reply = str(result.get("reply", ""))
+        admission = runtime.model.pop_question_admission(reply)
+        if admission is not None:
+            result["question_admission"] = admission
+        return result
 
     @app.post("/api/owner-v2/conversation/sessions/{session_id}/advance")
     def advance_interview(session_id: str, request: ContinuousAdvanceRequest) -> dict[str, Any]:
@@ -342,6 +393,7 @@ def create_life_patterns_v2_owner_continuous_flow_app() -> FastAPI:
     app.state.finish_for_now_always_visible = True
     app.state.pre_send_question_admission = True
     app.state.same_session_cross_area_memory = True
+    app.state.question_admission_audit_in_recovery = True
     return app
 
 
