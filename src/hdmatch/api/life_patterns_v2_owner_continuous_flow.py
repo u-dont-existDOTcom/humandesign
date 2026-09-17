@@ -331,7 +331,7 @@ def create_life_patterns_v2_owner_continuous_flow_app() -> FastAPI:
         if not isinstance(session, NaturalFlowRecoverabilitySession):
             raise HTTPException(status_code=409, detail="session does not support continuous interview flow")
         try:
-            return _advance_existing_session(session=session, model=runtime.model, request=request)  # type: ignore[arg-type]
+            return _advance_existing_session(session=session, model=runtime.model, request=request)
         except TemporaryModelProviderError as exc:
             raise HTTPException(status_code=503, detail=str(exc)) from exc
         except (RuntimeError, ValueError) as exc:
