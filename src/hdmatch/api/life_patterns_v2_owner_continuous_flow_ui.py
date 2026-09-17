@@ -1,8 +1,8 @@
 """Owner-facing continuous-flow UX for the Life Patterns development interview.
 
 Normal progress no longer pauses at a Continue interview checkpoint. Finish for now remains
-available at all times. Synthesis review exposes ordinary free-form feedback plus a distinct
-literal-wording override, without a redundant button that merely focuses the text box.
+available at all times. Synthesis review uses one free-form textbox for disagreement, nuance,
+correction, or participant-authored replacement wording rather than exposing duplicate edit modes.
 """
 
 from __future__ import annotations
@@ -26,7 +26,7 @@ let __continuousAdvancing=false;
 function rememberParticipantAnswer(text){
   const clean=String(text||'').trim();if(!clean)return;
   const mem=window.__lifePatternsAnswerMemory;
-  if(!mem.length||mem[mem.length-1]!==clean)mem.push(clean);
+  if(!mem.includes(clean))mem.push(clean);
   if(mem.length>400)mem.splice(0,mem.length-400);
 }
 
@@ -56,10 +56,21 @@ restoreClientState=function(bundle){
   __continuousRestoreClientState(bundle);
   const state=(bundle&&bundle.client_state)||{};
   let memory=Array.isArray(state.answer_memory)?state.answer_memory.filter(x=>typeof x==='string'&&x.trim()):[];
-  if(!memory.length&&bundle&&bundle.server_snapshot&&Array.isArray(bundle.server_snapshot.conversation)){
-    memory=bundle.server_snapshot.conversation.filter(r=>r&&r.role==='user'&&r.text).map(r=>String(r.text));
+
+  // Older exact snapshots predate answer_memory. They cannot recreate participant turns that were
+  // never saved, but accepted wording is participant-authoritative and is useful for suppressing
+  // repeats. Combine it with any raw user turns that the server snapshot still contains.
+  if(!memory.length&&Array.isArray(state.completed_results)){
+    for(const row of state.completed_results){
+      if(row&&row.status==='accepted'&&row.wording)memory.push(String(row.wording));
+    }
   }
-  window.__lifePatternsAnswerMemory=memory.slice(-400);
+  if(bundle&&bundle.server_snapshot&&Array.isArray(bundle.server_snapshot.conversation)){
+    for(const row of bundle.server_snapshot.conversation){
+      if(row&&row.role==='user'&&row.text)memory.push(String(row.text));
+    }
+  }
+  window.__lifePatternsAnswerMemory=[...new Set(memory.map(x=>String(x).trim()).filter(Boolean))].slice(-400);
   window.__lifePatternsQuestionAdmissionLog=Array.isArray(state.question_admission_log)?state.question_admission_log.slice(-400):[];
 };
 
@@ -72,15 +83,16 @@ api=async function(path,options={}){
   return p;
 };
 
-// The normal textbox already handles "what fits / what does not / what is missing". The old
-// explanatory-revision button duplicated that interaction. Keep only the genuinely different
-// escape hatch: exact literal wording that must be recorded unchanged.
+// The always-visible textbox is the one synthesis-correction channel. It can carry an explanation,
+// nuance, disagreement, or participant-authored replacement wording. The two old edit buttons both
+// opened a way to type text, so exposing them created a distinction the participant did not need.
 const explainRevision=$('revise');
 if(explainRevision){explainRevision.classList.add('hidden');explainRevision.setAttribute('aria-hidden','true');explainRevision.tabIndex=-1}
 const exactWording=$('editExactWording');
-if(exactWording)exactWording.textContent='Write exact wording to record';
+if(exactWording){exactWording.classList.add('hidden');exactWording.setAttribute('aria-hidden','true');exactWording.tabIndex=-1}
 const synthesisNote=document.querySelector('#patternPanel .note');
-if(synthesisNote)synthesisNote.textContent+=' Use the text box below for ordinary feedback, corrections, or nuance. Use “Write exact wording to record” only when you want literal replacement wording saved unchanged rather than interpreted conversationally.';
+if(synthesisNote)synthesisNote.textContent+=' If the inference is wrong, incomplete, or you want different wording, just type what you mean in the text box below. If you want literal wording, say “Exact wording: …”. Use Keep investigating only when you want another question instead of supplying the correction yourself.';
+if($('message'))$('message').placeholder='If the inference is wrong or needs different wording, say what you mean here…';
 
 // There is no routine Continue checkpoint. Finish for now is the standing opt-out and stays
 // fixed on-screen while the interview is active. The hidden Continue button remains only as an
