@@ -57,15 +57,17 @@ if(exactWording)exactWording.textContent='Write exact wording to record';
 const synthesisNote=document.querySelector('#patternPanel .note');
 if(synthesisNote)synthesisNote.textContent+=' Use the text box below for ordinary feedback, corrections, or nuance. Use “Write exact wording to record” only when you want literal replacement wording saved unchanged rather than interpreted conversationally.';
 
-// There is no routine Continue checkpoint. Finish for now is the standing opt-out, visible at
-// every stage. The hidden Continue button remains only as an exceptional retry frontier if a
-// next-question request fails.
+// There is no routine Continue checkpoint. Finish for now is the standing opt-out and stays
+// fixed on-screen while the interview is active. The hidden Continue button remains only as an
+// exceptional retry frontier if a next-question request fails.
 const continueButton=$('continueCoverage');
 if(continueButton){continueButton.classList.add('hidden');continueButton.setAttribute('aria-hidden','true');continueButton.tabIndex=-1}
 const finishButton=$('finishForNow');
 if(finishButton&&__naturalMain){
-  const finishWrap=document.createElement('div');finishWrap.id='persistentFinish';finishWrap.className='row';finishWrap.style.margin='1rem 0';
-  finishWrap.appendChild(finishButton);__naturalMain.appendChild(finishWrap);
+  const finishWrap=document.createElement('div');finishWrap.id='persistentFinish';finishWrap.className='row';
+  finishWrap.style.position='fixed';finishWrap.style.right='1rem';finishWrap.style.top='.75rem';finishWrap.style.zIndex='60';finishWrap.style.justifyContent='flex-end';
+  finishButton.className='secondary';finishButton.style.boxShadow='0 1px 5px rgba(0,0,0,.12)';
+  finishWrap.appendChild(finishButton);document.body.appendChild(finishWrap);
   finishButton.onclick=async()=>{
     window.__lifePatternsPaused=true;
     try{await syncExactRecovery()}catch(_e){}
