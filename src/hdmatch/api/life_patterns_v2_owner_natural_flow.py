@@ -5,7 +5,11 @@ pattern the participant has already stated in their own words can be recorded fr
 source without repeating it back for confirmation. Generic/high-base-rate material still does not
 become a Life Pattern merely because it was stated directly.
 
-Participant judgment of an actual interviewer inference must not wait on another LLM coverage pass.
+The interview is continuous rather than a chain of disconnected coverage sessions: after one
+local area closes, the same hidden-ledger session chooses the next admitted question while keeping
+the earlier conversation and facts available for redundancy checks. Participant judgment of an
+actual interviewer inference must not wait on another LLM coverage pass.
+
 The runtime remains target-theory-blind. Recovery snapshots remain unvalidated audit checkpoints.
 """
 
@@ -40,7 +44,11 @@ from .life_patterns_v2_owner_resilient import (
     ResilientRecoverabilityOpenAIModel,
     _THREAD_DISCIPLINE,
 )
-from .life_patterns_v2_owner_recoverability import RecoverabilityCoverageRuntime
+from .life_patterns_v2_owner_recoverability import (
+    DynamicCoverageRequest,
+    RecoverabilityCoverageRuntime,
+    _open_domains,
+)
 
 
 _NATURAL_COMPLETION_INSTRUCTIONS = (
@@ -58,11 +66,31 @@ _NATURAL_COMPLETION_INSTRUCTIONS = (
     "relation, scope claim, compression, or other proposition the participant did not explicitly state, that is an "
     "INTERVIEWER INFERENCE: use surface_hypothesis normally, phrase the inferred synthesis tentatively, and ask the "
     "participant to judge it.\n\n"
+    "QUESTION VALUE: Do not ask a follow-up merely because a dimension has more conceivable detail. Before choosing a "
+    "question, require a concrete person-specific distinction that the answer could change. Reject semantic repeats of "
+    "what the participant already answered, generic questions whose likely answer is ordinary human behavior, and "
+    "questions whose predictable answer is only 'it depends' unless the question asks WHAT the variation depends on in "
+    "a way that can distinguish this participant. Prefer boundaries, contrasts, frequencies with an opportunity frame, "
+    "state-dependent differences, or other answers that can materially narrow the person model. If no such question "
+    "remains in the current local topic, close the topic rather than interrogating for completeness.\n\n"
     "TOPIC COMPLETION: Use topic_complete only when the current measurement area has enough information and there is no "
     "useful person-specific Life Pattern to record from it—for example the available material is generic to people in "
     "general, merely contextual, or otherwise does not support a person-level pattern. topic_complete is a successful "
     "local ending, not a failure. Do not use topic_complete merely because a valid person-specific pattern is obvious or "
     "already known to the participant. For topic_complete return hypothesis_proposition=null and evidence_fact_ids=[]."
+)
+
+_QUESTION_ADMISSION_INSTRUCTIONS = (
+    "Act as a strict admission check for ONE proposed interview question. The interview must cover a fixed neutral "
+    "measurement surface, but participant burden matters and category completion is not a reason to ask a low-value "
+    "question. A question is admissible only when its answer can materially narrow, distinguish, or correct the current "
+    "person-specific picture. Reject or rewrite a question when it: semantically repeats something already answered; "
+    "asks about a generic/high-base-rate human regularity; has an obvious socially or logically compelled answer; is so "
+    "broad that 'it depends' is the predictable response without identifying the relevant dependency; or collects detail "
+    "that would not change interpretation or coverage. Prefer a concise boundary, contrast, condition, frequency-with-"
+    "opportunity, or state-dependent discriminator. Use prior conversation as evidence of what has ALREADY been asked. "
+    "Coverage reasons and prior summaries are planning metadata, not participant quotes. Never mention the checklist, "
+    "coverage, astrology, Human Design, targets, scores, or this review step to the participant."
 )
 
 
@@ -75,7 +103,60 @@ class TopicCompleteMove:
 
 
 class NaturalFlowRecoverabilityOpenAIModel(ResilientRecoverabilityOpenAIModel):
-    """Allow clean topic completion while distinguishing direct reports from inference."""
+    """Allow clean topic completion, direct-report capture, and question-value admission."""
+
+    def _review_follow_up_question(
+        self,
+        *,
+        move: ConversationMove,
+        operative_facts: tuple[Any, ...],
+        recent_conversation: tuple[dict[str, str], ...],
+    ) -> ConversationMove | TopicCompleteMove:
+        schema = {
+            "type": "object",
+            "additionalProperties": False,
+            "required": ["action", "question", "internal_reason"],
+            "properties": {
+                "action": {"type": "string", "enum": ["ask", "topic_complete"]},
+                "question": {"type": "string", "maxLength": 1800},
+                "internal_reason": {"type": "string", "minLength": 1, "maxLength": 900},
+            },
+        }
+        review = self._conversation_call_json(
+            instructions=(
+                _QUESTION_ADMISSION_INSTRUCTIONS
+                + "\n\nThis is a follow-up inside the CURRENT local topic. If the proposed question is weak but a "
+                "different concise question in this same topic would materially change the picture, return action=ask "
+                "with the improved question. If no useful same-topic question remains, return action=topic_complete "
+                "rather than opening a new category here."
+            ),
+            payload={
+                "candidate_question": move.reply,
+                "recent_conversation": list(recent_conversation[-120:]),
+                "operative_facts": [
+                    {
+                        "fact_id": fact.fact_id,
+                        "assertion_type": fact.assertion_type,
+                        "proposition": fact.proposition,
+                    }
+                    for fact in operative_facts
+                ],
+            },
+            schema=schema,
+            effort="low",
+            max_output_tokens=900,
+            schema_name="life_patterns_follow_up_question_admission_v1",
+        )
+        if str(review.get("action", "")) == "topic_complete":
+            return TopicCompleteMove(
+                reply="That gives me enough information for this area; we can move on."
+            )
+        question = str(review.get("question", "")).strip()
+        if not question:
+            return TopicCompleteMove(
+                reply="That gives me enough information for this area; we can move on."
+            )
+        return ConversationMove(reply=question, move_type=move.move_type)
 
     def plan_turn(
         self,
@@ -114,7 +195,7 @@ class NaturalFlowRecoverabilityOpenAIModel(ResilientRecoverabilityOpenAIModel):
                     }
                     for fact in operative_facts
                 ],
-                "recent_conversation": list(recent_conversation[-80:]),
+                "recent_conversation": list(recent_conversation[-120:]),
                 "boundary_answered": boundary_answered,
                 "boundary_answered_is_advisory_not_a_gate": True,
             },
@@ -128,7 +209,99 @@ class NaturalFlowRecoverabilityOpenAIModel(ResilientRecoverabilityOpenAIModel):
                 "That gives me enough information for this area; we can move on."
             )
             return TopicCompleteMove(reply=reply)
-        return ConversationMove.model_validate(result)
+        move = ConversationMove.model_validate(result)
+        if move.move_type in {"follow_up", "request_contrast", "boundary_question"}:
+            return self._review_follow_up_question(
+                move=move,
+                operative_facts=operative_facts,
+                recent_conversation=recent_conversation,
+            )
+        return move
+
+    def plan_next_interview_question(
+        self,
+        *,
+        open_domains: tuple[Any, ...],
+        aggregate_coverage: list[dict[str, Any]],
+        completed_results: list[dict[str, Any]],
+        recent_conversation: tuple[dict[str, str], ...],
+        operative_facts: tuple[Any, ...],
+    ) -> dict[str, str]:
+        """Generate then independently admit/rewrite the next cross-topic question."""
+
+        candidate = super().plan_next_coverage_question(
+            open_domains=open_domains,
+            aggregate_coverage=aggregate_coverage,
+            completed_results=completed_results,
+        )
+        open_ids = [str(domain.domain_id) for domain in open_domains]
+        schema = {
+            "type": "object",
+            "additionalProperties": False,
+            "required": ["primary_domain_id", "opening", "internal_reason"],
+            "properties": {
+                "primary_domain_id": {"type": "string", "enum": open_ids},
+                "opening": {"type": "string", "minLength": 1, "maxLength": 1800},
+                "internal_reason": {"type": "string", "minLength": 1, "maxLength": 900},
+            },
+        }
+        compact_coverage = [
+            {
+                "domain_id": str(row.get("domain_id", "")),
+                "status": str(row.get("status", "unassessed")),
+                "reason": str(row.get("reason", ""))[:700],
+            }
+            for row in aggregate_coverage[-64:]
+            if isinstance(row, dict)
+        ]
+        compact_results = [
+            {
+                "status": str(row.get("status", "")),
+                "wording": str(row.get("wording", ""))[:1200],
+            }
+            for row in completed_results[-64:]
+            if isinstance(row, dict) and row.get("wording")
+        ]
+        review = self._conversation_call_json(
+            instructions=(
+                _QUESTION_ADMISSION_INSTRUCTIONS
+                + "\n\nThis is the transition to the NEXT still-open measurement area. Review the candidate against "
+                "the full available interview context. If it repeats an earlier answer or is low-information, replace "
+                "it with the best concise question from ANY still-open dimension. Return the admitted final question, "
+                "not commentary. The question must be useful even if the participant never sees the internal dimension "
+                "label."
+            ),
+            payload={
+                "candidate": candidate,
+                "open_domains": [
+                    {
+                        "domain_id": str(domain.domain_id),
+                        "definition": str(domain.definition),
+                    }
+                    for domain in open_domains
+                ],
+                "aggregate_coverage": compact_coverage,
+                "completed_results": compact_results,
+                "recent_conversation": list(recent_conversation[-160:]),
+                "operative_facts": [
+                    {
+                        "fact_id": fact.fact_id,
+                        "assertion_type": fact.assertion_type,
+                        "proposition": fact.proposition,
+                    }
+                    for fact in operative_facts
+                ],
+            },
+            schema=schema,
+            effort="low",
+            max_output_tokens=1000,
+            schema_name="life_patterns_next_question_admission_v1",
+        )
+        return {
+            "primary_domain_id": str(review["primary_domain_id"]),
+            "opening": str(review["opening"]).strip(),
+            "internal_reason": str(review["internal_reason"]),
+        }
 
 
 class NaturalFlowRecoverabilitySession(PersistentRecoverabilityCoverageSession):
@@ -155,12 +328,7 @@ class NaturalFlowRecoverabilitySession(PersistentRecoverabilityCoverageSession):
     def _direct_report_source(
         self, move: ConversationMove
     ) -> tuple[str, str, tuple[str, ...]] | None:
-        """Return exact participant wording/source/evidence only for a mechanically direct report.
-
-        This intentionally uses a strict test. If the model paraphrases, combines multiple user turns,
-        cites evidence from another source turn, or otherwise adds interpretation, the move remains an
-        ordinary tentative synthesis and requires participant judgment.
-        """
+        """Return exact participant wording/source/evidence only for a mechanically direct report."""
 
         wording = (move.hypothesis_proposition or "").strip()
         if not wording or not move.evidence_fact_ids:
@@ -223,7 +391,10 @@ class NaturalFlowRecoverabilitySession(PersistentRecoverabilityCoverageSession):
             pattern_thread_id=f"THREAD-{uuid.uuid4().hex[:10].upper()}",
             revision_index=0,
             proposition=wording,
-            question_text="Participant directly stated this person-level pattern; no inferential confirmation was requested.",
+            question_text=(
+                "Participant directly stated this person-level pattern; no inferential confirmation "
+                "was requested."
+            ),
             evidence_link_ids=tuple(link.evidence_link_id for link in links),
             grounding_evidence_link_ids=tuple(link.evidence_link_id for link in links),
         )
@@ -278,8 +449,6 @@ class NaturalFlowRecoverabilitySession(PersistentRecoverabilityCoverageSession):
         result = super().turn(message)
         if self._auto_recorded_direct_result is not None:
             direct_result = dict(self._auto_recorded_direct_result)
-            # The base turn has already appended the planner reply to conversation. Replace
-            # the response metadata, not the source conversation, with the direct-record result.
             direct_result["reply"] = result.get("reply") or direct_result["reply"]
             direct_result["episode_count"] = len(self.core.record.episodes)
             self._auto_recorded_direct_result = None
@@ -290,6 +459,71 @@ class NaturalFlowRecoverabilitySession(PersistentRecoverabilityCoverageSession):
             return self._attach_periodic_progress(result, force=True)
         self._topic_complete_ready = False
         return result
+
+    def advance_interview(
+        self,
+        *,
+        aggregate_coverage: list[dict[str, Any]],
+        completed_results: list[dict[str, Any]],
+    ) -> dict[str, Any]:
+        """Choose the next admitted question in the same session and ledger."""
+
+        if self._draft_move is not None:
+            raise ValueError("resolve the current interviewer inference before advancing")
+        open_domains = _open_domains(aggregate_coverage)
+        if not open_domains:
+            return {
+                "coverage_complete": True,
+                "pattern_active": False,
+                "episode_count": len(self.core.record.episodes),
+            }
+
+        planner = getattr(self.model, "plan_next_interview_question", None)
+        if callable(planner):
+            plan = planner(
+                open_domains=open_domains,
+                aggregate_coverage=aggregate_coverage,
+                completed_results=completed_results,
+                recent_conversation=tuple(self.conversation),
+                operative_facts=self.core.operative_facts(),
+            )
+        else:
+            fallback = getattr(self.model, "plan_next_coverage_question", None)
+            if not callable(fallback):
+                raise RuntimeError("interview model cannot select the next question")
+            plan = fallback(
+                open_domains=open_domains,
+                aggregate_coverage=aggregate_coverage,
+                completed_results=completed_results,
+            )
+
+        opening = str(plan.get("opening", "")).strip()
+        if not opening:
+            raise RuntimeError("interview planner returned no next question")
+        primary_domain_id = str(plan.get("primary_domain_id", ""))
+        if primary_domain_id not in {domain.domain_id for domain in open_domains}:
+            raise RuntimeError("interview planner selected a closed or unknown measurement area")
+
+        self.current_episode_id = None
+        self.awaiting_new_episode = True
+        self.pending_boundary_question = False
+        self.boundary_answered = False
+        self.pattern_focus_established = True
+        self._topic_complete_ready = False
+        self.conversation.append(
+            {
+                "turn_id": f"TURN-{uuid.uuid4().hex[:10].upper()}",
+                "role": "assistant",
+                "text": opening,
+            }
+        )
+        return {
+            "coverage_complete": False,
+            "opening": opening,
+            "primary_domain_id": primary_domain_id,
+            "pattern_active": False,
+            "episode_count": len(self.core.record.episodes),
+        }
 
     def adjudicate(self, request: PatternAdjudicationRequest) -> dict[str, Any]:
         """Commit an actual inferred-synthesis judgment without another coverage-model call."""
@@ -343,7 +577,7 @@ def _create_natural_session(
 
 
 def create_life_patterns_v2_owner_natural_flow_app() -> FastAPI:
-    """Serve the natural-flow owner interview while retaining current recovery/liveness seams."""
+    """Serve the owner interview with continuous session context and natural flow."""
 
     app = create_life_patterns_v2_owner_liveness_app()
     runtime = app.state.recoverability_runtime
@@ -393,9 +627,31 @@ def create_life_patterns_v2_owner_natural_flow_app() -> FastAPI:
             raise HTTPException(status_code=422, detail=str(exc)) from exc
         return session.recovery_status()
 
+    @app.post("/api/owner-v2/conversation/sessions/{session_id}/next-question")
+    def next_question(session_id: str, request: DynamicCoverageRequest) -> dict[str, Any]:
+        try:
+            session = runtime.get(session_id)
+        except KeyError as exc:
+            raise HTTPException(status_code=404, detail="development session not found") from exc
+        if not isinstance(session, NaturalFlowRecoverabilitySession):
+            raise HTTPException(status_code=409, detail="session does not support continuous interview flow")
+        try:
+            return session.advance_interview(
+                aggregate_coverage=request.aggregate_coverage,
+                completed_results=request.completed_results,
+            )
+        except Exception as exc:
+            if exc.__class__.__name__ == "TemporaryModelProviderError":
+                raise HTTPException(status_code=503, detail=str(exc)) from exc
+            if isinstance(exc, (RuntimeError, ValueError)):
+                raise HTTPException(status_code=422, detail=str(exc)) from exc
+            raise
+
     app.state.natural_topic_completion = True
     app.state.direct_participant_patterns_skip_redundant_confirmation = True
     app.state.inferred_patterns_require_participant_judgment = True
     app.state.pattern_adjudication_uses_cached_progress = True
     app.state.progress_and_liveness_at_active_end = True
+    app.state.continuous_single_session_interview = True
+    app.state.question_value_admission = True
     return app
