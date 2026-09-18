@@ -8,6 +8,7 @@ adjudication through the frozen v2 core.
 from __future__ import annotations
 
 import json
+import re
 import time
 import uuid
 from dataclasses import dataclass, field
@@ -40,6 +41,62 @@ from .life_patterns_v2_owner_app import (
 from .life_patterns_v2_owner_conversation_ui import HTML
 
 MoveType = Literal["follow_up", "request_contrast", "boundary_question", "surface_hypothesis"]
+
+
+
+_PROVIDER_SAFE_TOKEN = re.compile(r"^[A-Za-z0-9_.:-]{1,96}$")
+
+
+class ModelProviderError(RuntimeError):
+    """Privacy-safe provider boundary failure with retry metadata only."""
+
+    def __init__(
+        self,
+        *,
+        http_status: int | None,
+        error_type: str = "",
+        error_code: str = "",
+        retry_after_seconds: float | None = None,
+        retryable: bool,
+    ) -> None:
+        self.http_status = http_status
+        self.error_type = error_type if _PROVIDER_SAFE_TOKEN.fullmatch(error_type) else ""
+        self.error_code = error_code if _PROVIDER_SAFE_TOKEN.fullmatch(error_code) else ""
+        self.retry_after_seconds = retry_after_seconds
+        self.retryable = retryable
+        label = f"HTTP {http_status}" if http_status is not None else "network error"
+        code = self.error_code or self.error_type
+        super().__init__(f"Owner Life Patterns model {label}" + (f": {code}" if code else ""))
+
+
+def _provider_http_error(exc: HTTPError) -> ModelProviderError:
+    """Convert a provider HTTP failure into allowlisted metadata; discard raw body text."""
+
+    raw = exc.read().decode(errors="replace")[:4000]
+    error_type = ""
+    error_code = ""
+    try:
+        payload = json.loads(raw)
+        error = payload.get("error") if isinstance(payload, dict) else None
+        if isinstance(error, dict):
+            error_type = str(error.get("type") or "")
+            error_code = str(error.get("code") or "")
+    except (json.JSONDecodeError, TypeError, ValueError):
+        pass
+    retry_after = None
+    try:
+        value = exc.headers.get("Retry-After") if exc.headers else None
+        if value is not None:
+            retry_after = max(0.0, min(float(value), 30.0))
+    except (TypeError, ValueError):
+        retry_after = None
+    status = int(exc.code)
+    transient_status = status in {408, 409, 429, 500, 502, 503, 504, 520, 521, 522, 523, 524}
+    quota_exhausted = error_code == "insufficient_quota" or error_type == "insufficient_quota"
+    return ModelProviderError(
+        http_status=status, error_type=error_type, error_code=error_code,
+        retry_after_seconds=retry_after, retryable=transient_status and not quota_exhausted,
+    )
 
 
 class _FrozenModel(BaseModel):
@@ -165,10 +222,11 @@ class OpenAIConversationModel(OpenAIOwnerV2Model):
             with urlopen(request, timeout=self.timeout_seconds) as response:  # noqa: S310
                 raw = cast(bytes, response.read())
         except HTTPError as exc:
-            detail = exc.read().decode(errors="replace")[:1000]
-            raise RuntimeError(f"Owner Life Patterns model HTTP {exc.code}: {detail}") from exc
+            raise _provider_http_error(exc) from exc
         except URLError as exc:
-            raise RuntimeError(f"Owner Life Patterns model network error: {exc.reason}") from exc
+            raise ModelProviderError(
+                http_status=None, error_type="network_error", retryable=True
+            ) from exc
         response_body = json.loads(raw)
         self._observe_model_response(schema_name, settings, response_body, time.monotonic() - started)
         if response_body.get("status") in {"incomplete", "failed", "cancelled"}:
