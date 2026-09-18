@@ -1,35 +1,31 @@
 # Current state — Life Patterns — 2026-09-18
 
-The latest owner natural-use attempt exposed an immediate runtime failure while submitting a new ordinary answer: Input routing cited an unknown historical source. That failure is repaired and deployed. Controlling receipt: state/LIFE-PATTERNS-INPUT-ROUTING-REPAIR-20260918.md.
+The latest owner natural-use attempt failed immediately again. This second failure is not the prior unknown-historical-source bug. A fresh synthetic session failed the same way, proving the problem is global to the configured model-provider boundary rather than specific to the owner's recovered interview.
 
-Application head: 2549e5d15fc8fef4f9f67c4b7014e04709cc76f9. Railway deployment ed917580-1574-4cc5-8dc2-03504aa3cb44, build survey-sol-xhigh-2026-09-18.4, health HTTP 200. Hosted CI run 35396017161: SUCCESS. All model stages remain GPT-5.6 Sol/xhigh with no fallback.
+Privacy-safe provider diagnostics now identify the exact response: HTTP 429, error type insufficient_quota, error code credit_balance_exhausted, retryable=false. Model API credit is therefore the current external blocker.
 
-## Failure and repair
+Application code head: 9558017606d408beead3ddfa59b25fa828b3862f. Railway deployment 8ac6820b-8090-4b4c-b167-ba8db5b6c473, build survey-sol-xhigh-2026-09-18.6, health HTTP 200. Hosted CI run 35404982329: SUCCESS. GPT-5.6 Sol/xhigh remains the only configured semantic model and there is no weaker fallback.
 
-The semantic input router may optionally identify earlier participant turns that were only interview-process feedback so they can be excluded from current behavioral evidence. The runtime previously treated any router-supplied historical turn ID that did not resolve to an actual prior participant turn as a fatal validation error. That advisory hygiene field therefore had authority to abort a valid current answer.
+## Independent repairs completed before stopping
 
-The repair keeps the evidence boundary strict while removing that brittle coupling:
+The provider boundary now classifies failures without logging provider body text. Retryable 429/rate-limit, network, and transient 5xx failures receive bounded automatic retries. insufficient_quota / credit_balance_exhausted is deliberately not retried because repeated calls cannot restore account credit.
 
-- current evidence excerpts still must be exact substrings of the participant's current message;
-- recognized historical process IDs still quarantine only real prior participant turns;
-- unknown or assistant-role historical IDs are ignored for quarantine rather than allowed to remove evidence or abort the current answer;
-- the audit record preserves only a count of ignored unknown hints, not fabricated IDs;
-- answer processing, extraction, question selection, revision binding, rollback, pause and recovery semantics are otherwise unchanged.
+The UI now receives an actionable error: the model API credit balance is exhausted, the participant response is preserved, and API credit must be added before retrying. The actual browser suite verifies that this message is visible and that the draft remains intact.
 
-The available uploaded recovery backup predates the failed submission. Its stored historical process IDs resolve to earlier participant turns. Therefore it does not contain the newly failed router payload and cannot establish why the model emitted an unrecognized ID. The screenshot plus exact exception path establishes the runtime failure boundary; the model-side cause remains unobserved.
+The model-planning context was also compacted. Legacy recovered patterns no longer resend their full embedded 23-domain coverage reports to every semantic call. Their wording/status remains available, while historical coverage planning is already carried separately. Current source-backed items retain exact source text for fidelity. The participant-facing pattern view and research archive remain unchanged. This removes a major avoidable token/cost multiplier without changing Sol/xhigh, participant authority, or evidence semantics.
 
-## Verification
+## Evidence and limits
 
-Focused dialogue regression and adjacent workflow tests passed. The actual browser consumer seam now includes a route response with a deliberately nonexistent historical process-turn ID: the current answer is retained and processed, no error is shown, the unknown hint is not added to process_turn_ids, and the runtime records one ignored hint. The complete synthetic browser suite passed 20 scenarios with zero page errors.
+A fresh synthetic live session on the hardened deployment still returns 503 in under one second, now with the correct safe detail that the API credit balance is exhausted. This establishes the external account boundary. It does not establish the cost or semantic quality of a successful post-compaction turn because the provider will not execute one until credit exists.
 
-Ruff passed with the repository's CI rule ignoring E501 and I001, and strict mypy passed across 208 source files. Hosted CI passed on the exact integrated code head. One earlier browser attempt in this repair used a port already occupied by an unrelated fixture and was invalidated; it was rerun on an isolated ephemeral loopback port and passed. No owner session or private transcript was replayed into the service, and no new model call was required for this deterministic runtime repair.
+Focused and affected tests passed; the browser consumer suite passed 21 scenarios with zero page errors; Ruff under the repository CI rule and strict mypy passed; hosted CI passed. Test-efficiency telemetry recorded 14.32 seconds of tests over 857.87 seconds of task wall time with no forced redundant-green reruns.
 
 ## Next action and authority
 
-The root owner outcome remains OPEN. The immediate runtime failure is fixed, but this is not evidence that the interview's general semantic quality now passes. The meaningful next observation is the owner's natural use of the changed candidate.
+The owner outcome remains OPEN but execution is BLOCKED_EXTERNAL at model inference. The only same-provider path is to replenish the configured API credit balance. Spending is not authorized in the task and the connected tooling cannot add payment credit on the owner's behalf. A provider switch would also be a material provider/cost boundary and is not inferred from the existing Sol/xhigh authorization.
 
-The failed browser operation was revision-bound and left the participant draft visible. After refresh, Retry saved operation should resubmit the preserved answer under the repaired runtime; no prior answers need to be re-entered. If a new failure appears, continue the authorized repair automatically in the same turn.
+After credit is added, refresh the existing browser tab and use Retry saved operation. The failed answer is preserved; do not re-enter earlier answers. Natural-use quality evaluation resumes from that changed candidate.
 
-Preserve participant authority, original source wording, the accepted v2 evidence core, target-blind elicitation, Sol/xhigh, and the separate later owner post-freeze recovery criterion. No external recruitment, chart-aware questioning, scientific-validation claim, protected-main merge or public release was performed. The HumanDesign development pull request remains draft/open/unmerged.
+No external recruitment, chart-aware questioning, scientific-validation claim, HumanDesign merge, or public release occurred. The development pull request remains draft/open/unmerged.
 
-There was never a completion policy. Preserve state/OWNER-CORRECTION-2026-09-02.md.
+**There was never a completion policy.** Preserve state/OWNER-CORRECTION-2026-09-02.md.
