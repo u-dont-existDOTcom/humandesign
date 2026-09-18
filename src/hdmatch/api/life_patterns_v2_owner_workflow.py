@@ -197,13 +197,29 @@ class WorkflowSession(NaturalFlowRecoverabilitySession):
             withdraw_pending_inference=False, historical_process_turn_ids=[])
         route.check_source(message)
         known_user_ids = {r["turn_id"] for r in self.conversation if r["role"] == "user"}
-        if not set(route.historical_process_turn_ids) <= known_user_ids:
-            raise ValueError("Input routing cited an unknown historical source")
-        self.process_turn_ids.update(route.historical_process_turn_ids)
+        routed_historical_ids = list(dict.fromkeys(route.historical_process_turn_ids))
+        recognized_historical_ids = [
+            turn_id for turn_id in routed_historical_ids if turn_id in known_user_ids
+        ]
+        ignored_historical_ids = [
+            turn_id for turn_id in routed_historical_ids if turn_id not in known_user_ids
+        ]
+        # Historical-process IDs are advisory quarantine hints. An unknown ID cannot
+        # safely remove evidence, but it also must not abort the participant's current
+        # answer. Keep only IDs that resolve to an actual prior participant turn.
+        route = route.model_copy(
+            update={"historical_process_turn_ids": recognized_historical_ids}
+        )
+        route_audit = route.model_dump(mode="json")
+        if ignored_historical_ids:
+            route_audit["ignored_unknown_historical_process_turn_count"] = len(
+                ignored_historical_ids
+            )
+        self.process_turn_ids.update(recognized_historical_ids)
         if route.kind in {"repair", "skip", "pause"}:
             turn_id = f"TURN-{uuid.uuid4().hex[:10].upper()}"
             self.conversation.append({"turn_id": turn_id, "role": "user", "text": message})
-            self.input_routes.append({"turn_id": turn_id, **route.model_dump(mode="json")})
+            self.input_routes.append({"turn_id": turn_id, **route_audit})
             self.process_turn_ids.add(turn_id)
             if route.kind == "pause":
                 self.resume_phase, self.phase = self.phase, "paused"
@@ -230,11 +246,11 @@ class WorkflowSession(NaturalFlowRecoverabilitySession):
         if not self.pattern_focus_established:
             result = self._start_or_redirect_pattern(message)
             user = next(r for r in reversed(self.conversation) if r["role"] == "user")
-            self.input_routes.append({"turn_id": user["turn_id"], **route.model_dump(mode="json")})
+            self.input_routes.append({"turn_id": user["turn_id"], **route_audit})
             return result
         turn_id = f"TURN-{uuid.uuid4().hex[:10].upper()}"
         self.conversation.append({"turn_id": turn_id, "role": "user", "text": message})
-        self.input_routes.append({"turn_id": turn_id, **route.model_dump(mode="json")})
+        self.input_routes.append({"turn_id": turn_id, **route_audit})
         if self.pending_boundary_question:
             self.boundary_answered = True
             self.pending_boundary_question = False
