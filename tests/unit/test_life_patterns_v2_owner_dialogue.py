@@ -53,6 +53,31 @@ def test_repair_has_no_extraction_or_coverage_or_synthesis(message: str) -> None
     assert restored._participant_user_turn_count() == 0
 
 
+def test_unknown_historical_process_reference_is_ignored_without_blocking_answer() -> None:
+    model = RoutedModel()
+    message = "I usually change the timing when the day changes."
+    model.routing = route(
+        "answer",
+        [message],
+        historical=["TURN-KNOWN-OLD", "TURN-UNKNOWN-ROUTER-HALLUCINATION"],
+    )
+    s = session(model)
+    s.conversation.append(
+        {"turn_id": "TURN-KNOWN-OLD", "role": "user", "text": "That earlier question was unclear."}
+    )
+
+    result = s.execute(op(s, "answer", {"message": message}))
+
+    assert result["view"]["phase"] == "awaiting_answer"
+    assert model.extraction_messages == [message]
+    assert len(s.core.record.episode_facts) == 1
+    assert "TURN-KNOWN-OLD" in s.process_turn_ids
+    assert "TURN-UNKNOWN-ROUTER-HALLUCINATION" not in s.process_turn_ids
+    audit = s.input_routes[-1]
+    assert audit["historical_process_turn_ids"] == ["TURN-KNOWN-OLD"]
+    assert audit["ignored_unknown_historical_process_turn_count"] == 1
+
+
 def test_mixed_input_preserves_real_evidence_and_original_full_source() -> None:
     model = RoutedModel()
     message = "Your contrast is wrong. I usually wait a day before responding."
