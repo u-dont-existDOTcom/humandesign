@@ -189,6 +189,9 @@ def test_legacy_knowledge_is_planning_only_not_fabricated_coverage() -> None:
         {"domain_id": "complex_structure", "status": "sufficient", "reason": "Old unavailable evidence"}]}}]
     ctx = s.evidence_context()
     assert ctx["legacy_coverage_planning_only"][0]["source_available"] is False
+    assert ctx["patterns"][0]["wording"] == "An older pattern"
+    assert "coverage" not in ctx["patterns"][0]
+    assert "coverage" in s.view()["patterns"][0]
     assert not s.coverage_aggregate and not s.core.record.episode_facts
 
 
