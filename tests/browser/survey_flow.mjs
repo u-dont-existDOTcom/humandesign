@@ -167,6 +167,13 @@ try{
    assert.equal(await page.evaluate(()=>lifePatternsClient.state.view.conversation.filter(r=>r.role==='user').length),before);
    assert((await page.evaluate(()=>lifePatternsClient.state.view.conversation.at(-1).text)).endsWith('?'));
  });
+ await test('unknown-historical-routing-reference-does-not-break-current-answer',async()=>{
+   await fresh();await send('Answer with a stale routing reference.');
+   const current=await state();assert.equal(current.error,'');assert.equal(current.pending,null);assert.equal(current.phase,'awaiting_answer');
+   const routed=await page.evaluate(()=>lifePatternsClient.state.snapshot.workflow.input_routes.at(-1));
+   assert.deepEqual(routed.historical_process_turn_ids,[]);assert.equal(routed.ignored_unknown_historical_process_turn_count,1);
+   assert.equal(await page.evaluate(()=>lifePatternsClient.state.snapshot.record.episode_facts.length),1);
+ });
  await test('responsive-and-reduced-motion',async()=>{
    await fresh();await page.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);
    for(const width of [320,375,414,768,1024,1440]){await page.setViewport({width,height:900});
