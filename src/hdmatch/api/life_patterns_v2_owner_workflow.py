@@ -91,7 +91,7 @@ class WorkflowSession(NaturalFlowRecoverabilitySession):
             "operative_facts": [
                 fact.model_dump(mode="json") for fact in self._planning_facts()
             ],
-            "patterns": self.patterns(),
+            "patterns": self._planning_patterns(),
             "participant_corrections": deepcopy(self.pattern_notes),
             "legacy_answer_memory_planning_only": list(self.legacy_answer_memory),
             "coverage_planning_only": list(self.coverage_aggregate.values()),
@@ -377,6 +377,35 @@ class WorkflowSession(NaturalFlowRecoverabilitySession):
                         ],
                     }
                 )
+        return rows
+
+    def _planning_patterns(self) -> list[dict[str, Any]]:
+        """Compact pattern memory for model planning without duplicating legacy coverage."""
+
+        rows: list[dict[str, Any]] = []
+        for row in self.patterns():
+            compact = {
+                key: deepcopy(row[key])
+                for key in (
+                    "proposal_id",
+                    "thread_id",
+                    "summary_id",
+                    "status",
+                    "wording",
+                    "origin",
+                    "scope_note",
+                    "exception_note",
+                    "participant_adjudicated",
+                    "corrections",
+                )
+                if key in row
+            }
+            # Current source-backed items keep exact source text for fidelity checks.
+            # Legacy recovery has no source archive in this session; its historical
+            # coverage is already represented separately by legacy_coverage_planning_only.
+            if row.get("origin") != "legacy_recovery":
+                compact["sources"] = deepcopy(row.get("sources", []))
+            rows.append(compact)
         return rows
 
     def view(self) -> dict[str, Any]:
