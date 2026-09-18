@@ -1,0 +1,55 @@
+name: Exact direct-source survey correction transfer
+on:
+  push:
+    branches: [chat/survey-sol-xhigh-20260918-0033]
+    paths: [.github/workflows/survey-direct-source-transfer-20260918.yml]
+permissions:
+  contents: read
+concurrency:
+  group: exact-direct-source-survey-transfer-20260918
+  cancel-in-progress: false
+jobs:
+  transfer:
+    if: github.repository == 'u-dont-existDOTcom/humandesign' && github.ref == 'refs/heads/chat/survey-sol-xhigh-20260918-0033'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+        with:
+          fetch-depth: 0
+      - name: Apply exact reviewed patch without executing application code
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TRIGGER_SHA: ${{ github.sha }}
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import base64, hashlib, json, lzma, os, pathlib, subprocess
+          parts = []
+          for sha in ['e500b5ee60ce2f86e43604504e6574a4c4d9957d', 'b488bb55457daf2bd2424bc382c0ebc182e76556']:
+              record = json.loads(subprocess.check_output(['gh', 'api', 'repos/u-dont-existDOTcom/humandesign/git/blobs/' + sha]))
+              data = base64.b64decode(record['content'])
+              assert hashlib.sha1(b'blob ' + str(len(data)).encode() + b'\0' + data).hexdigest() == sha
+              parts.append(data)
+          compressed = b''.join(parts)
+          assert hashlib.sha256(compressed).hexdigest() == 'e24b52b18855f2f9c0d0ee0c66300ed741f56e5780ff6ae634a606ceab70255a'
+          data = lzma.decompress(compressed)
+          assert hashlib.sha256(data).hexdigest() == 'd964a538f454b79fc0f922c27ae884556cdc188ca5e9c1cfcca3349ad4d19c21'
+          patch = pathlib.Path(os.environ['RUNNER_TEMP']) / 'direct-source.patch'
+          patch.write_bytes(data)
+          subprocess.run(['git', 'checkout', '--detach', '812c6369f73120104600c3aed0ac73603bdcf060'], check=True)
+          subprocess.run(['git', 'apply', '--index', str(patch)], check=True)
+          tree = subprocess.check_output(['git', 'write-tree'], text=True).strip()
+          assert tree == '5f9b75195342bf6f8fc3533d3f98efbfddc96761'
+          branch = 'refs/heads/chat/survey-sol-xhigh-20260918-0033'
+          remote = subprocess.check_output(['git', 'ls-remote', 'origin', branch], text=True).split()[0]
+          assert remote == os.environ['TRIGGER_SHA'], 'Writer advanced; reconcile instead of overwriting.'
+          env = dict(os.environ, GIT_AUTHOR_NAME='ChatGPT', GIT_AUTHOR_EMAIL='chatgpt@users.noreply.github.com', GIT_COMMITTER_NAME='ChatGPT', GIT_COMMITTER_EMAIL='chatgpt@users.noreply.github.com')
+          message = 'Use Sol xhigh for source classification and preserve direct-report authority\n\nFix the actual-model-discovered extractor-label veto without relaxing source provenance. Temporary transfer workflow removed.\n'
+          new = subprocess.check_output(['git', 'commit-tree', tree, '-p', os.environ['TRIGGER_SHA']], input=message, text=True, env=env).strip()
+          subprocess.run(['git', 'push', 'origin', new + ':' + branch], check=True)
+          print('PUBLISHED_COMMIT', new)
+          print('VERIFIED_TREE', tree)
+          PY
