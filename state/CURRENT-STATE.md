@@ -2,36 +2,39 @@
 
 Active task: `life-patterns-v2-astrohd-recoverability-owner-retest`.
 
-## Current boundary
+## Current boundary: owner retest FAILED
 
-The owner-selected **Sol xhigh** repair-first survey is implemented and deployed to the existing owner-development service. All model work, including extraction, now uses Sol xhigh; no Astra or weaker fallback. Final hosted CI and bounded real-model checks passed. This completes the implementation/delivery scope, not the owner's general semantic-quality judgment or later scientific recovery validation.
+The owner tested the Sol xhigh candidate and supplied a new browser checkpoint. It presented a summary of their own answers as a new connection requiring approval, despite its formulation review returning direct with no added inference. After the owner objected, it withdrew the draft but left `awaiting_answer` with no question or pending operation. This supersedes the earlier owner-verdict-not-yet-observed state.
 
-Controlling delivery: `state/LIFE-PATTERNS-SOL-XHIGH-REPAIR-20260918.md`.
-Application: `78543a9f876b1105c4d62757b8b5f5119cc7b5e5`.
-Hosted CI: `35295117795` and `35295114783`, SUCCESS.
-Railway deployment: `bbd8db1a-a898-42ca-9694-646b781871e3`, build `survey-sol-xhigh-2026-09-18.2`, health 200.
-Evidence: `artifacts/life-patterns/sol-xhigh-repair-20260918/`.
+Controlling diagnosis: `state/LIFE-PATTERNS-OWNER-PARAPHRASE-STALL-20260918.md`.
 
-## What changed and what was learned
-
-Input intent is interpreted before extraction. Clarification/challenges repair the current question without becoming behavioral evidence or completion. Mixed messages preserve exact relevant source spans and full original text. Final question checks address premises, scope and real distinctions; exact/semantic recycling is suppressed without banning genuinely new relationships over shared sources. Old pending drafts are rechecked before approval. Current focus, process exclusions and model request/response metadata survive recovery.
-
-A real initial test exposed a direct-source veto tied to an extractor-specific evidence label. Sol had recognized the source as direct, but the backend demanded confirmation. The final repair removes that label dependency while retaining exact-source, same-turn and semantic-endorsement checks; extraction also moves to Sol xhigh. Rechecking the unchanged synthetic server backup then recorded the direct statement without an extra Yes, and repeating it did not create another pattern.
-
-Four initial model-bearing turns and three corrected model-bearing operations produced 19 total model calls; six final calls all requested/returned Sol with xhigh requested. The synthetic interview was paused afterward. No owner session or private transcript was used for those calls. This is a bounded positive development signal, not an independent general-quality estimate. Xhigh latency remains noticeable: next-area selection took about a minute in the final sample.
-
-## Preserved boundaries
-
-The v2 evidence contract, 23 neutral areas, participant authority, source timing, absence rules and episode/pattern separation remain. Direct self-reports do not need redundant approval; genuinely added interpretations do. Historical process facts may be quarantined for current interviewing, not silently erased. Legacy summaries are planning context, not recovered source evidence. No fixed episode/counterexample quota was added. No chart target or score enters elicitation. Recovery is not scientific freeze/validation.
-
-The existing passwordless prototype, one textbox, automatic continuation, Your patterns and pause/resume remain. No new service, public recruitment, model tournament or protected-main merge. The draft development PR remains open/unmerged. The writer lease is complete and integrated; future writers must acquire their own isolated scope.
+Two generating defects are identified from the checkpoint and current source: (1) exact single-source quote validation failure falls through into an inferred draft even when semantic review says direct; (2) all repair-only replies share an answer-waiting exit, including resolved withdrawals that require the interviewer to select the next action. The original participant evidence remains; no source record was changed in this diagnostic pass.
 
 ## Next action
 
-Owner refreshes the existing tab and continues the saved checkpoint. The previous owner evaluation FAILED; this new candidate has bounded positive model evidence but no owner natural-use verdict yet. Diagnose any new failure from exact source/route/model evidence; do not treat tests, extra reviewers or more local wording patches as proof of general intelligence. No repeat approval for the completed model selection and fixes.
+Repair the semantic-decision-to-runtime-action boundary, not merely its wording. Keep original source/provenance intact, do not label no-added-inference summaries as discoveries, and require a genuine inference before asking for judgment. Distinguish a repair that leaves an actual question to answer from a resolved objection that needs the next interviewer move. Test the composed operation/browser path with a synthetic multi-turn paraphrase and withdrawal, including pause and genuine-clarification negative cases.
 
-Historical diagnosis: `state/LIFE-PATTERNS-OWNER-QUESTION-LOGIC-FAILURE-2026-09-17.md`.
-Authority and follow-up: `tasks/SURVEY-SOL-XHIGH-REPAIR-20260918.md`.
+The parent owner outcome remains OPEN. This turn completed a causal diagnosis, not an implementation or deployment. Do not ask the owner to repeat the unchanged failing interview or treat another model upgrade as the next fix. No new approval, reviewer, quota, broad benchmark, or scientific completion gate is required.
+
+## Preserved implementation and historical evidence
+
+Prior implementation receipt: `state/LIFE-PATTERNS-SOL-XHIGH-REPAIR-20260918.md`.
+Application: `78543a9f876b1105c4d62757b8b5f5119cc7b5e5`.
+Hosted CI: `35295117795` and `35295114783`, SUCCESS in the preceding pass.
+Railway deployment: `bbd8db1a-a898-42ca-9694-646b781871e3`, build `survey-sol-xhigh-2026-09-18.2`, prior verified health 200.
+Evidence: `artifacts/life-patterns/sol-xhigh-repair-20260918/`.
+No deployment or provider call was made for the current diagnosis. The upload's internal checksum verifies; it records Sol/xhigh and semantic policy 3 but does not independently identify its producing application commit.
+
+All model work remains configured for Sol xhigh without Astra or weaker fallback. The previous actual-model test detected and fixed an extractor-label veto, but that fix did not resolve the separate paraphrase fallthrough now observed. Earlier 19-call synthetic evidence and green hosted/browser tests remain valid within their tested scope, not as general question-quality proof.
+
+## Preserved boundaries
+
+The v2 evidence contract, 23 neutral areas, participant authority, source timing, absence rules and episode/pattern separation remain. Direct self-reports do not need redundant approval; genuinely added interpretations do. Historical process facts may be quarantined for current interviewing, not silently erased. Legacy summaries are planning context, not recovered source evidence. No fixed episode/counterexample quota. No chart target or score enters elicitation. Recovery is not scientific freeze/validation.
+
+The existing passwordless prototype, one textbox, intended automatic continuation, Your patterns and pause/resume remain. No new service, public recruitment, model tournament or protected-main merge is authorized. The development PR remains draft/open/unmerged. This diagnostic writer's scope is complete; a subsequent implementation writer must acquire its own isolated scope.
+
+Earlier diagnosis: `state/LIFE-PATTERNS-OWNER-QUESTION-LOGIC-FAILURE-2026-09-17.md`.
+Continuing owner authority: `tasks/SURVEY-SOL-XHIGH-REPAIR-20260918.md`.
 The separately authorized owner post-freeze historical recovery regression remains later work.
 
 **There was never a completion policy.** See `state/OWNER-CORRECTION-2026-09-02.md`.
