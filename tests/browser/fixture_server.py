@@ -25,6 +25,11 @@ class SyntheticModel:
             return {"kind": "repair", "evidence_quotes": [], "repair_reply": "I have withdrawn the misleading draft.",
                     "withdraw_pending_inference": True, "historical_process_turn_ids": [],
                     "repair_frontier": {"next_action": "continue_interview", "question": ""}}
+        if message == "Answer with a stale routing reference.":
+            return {"kind": "answer", "evidence_quotes": [message], "repair_reply": "",
+                    "withdraw_pending_inference": False,
+                    "historical_process_turn_ids": ["TURN-NOT-IN-THIS-SESSION"],
+                    "repair_frontier": None}
         repair = message == "Please clarify your question."
         return {"kind": "repair" if repair else "answer",
                 "evidence_quotes": [] if repair else [message],
