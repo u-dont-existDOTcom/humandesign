@@ -25,6 +25,7 @@ try{
      if(fault==='restore'&&path.endsWith('/restore'))return req.respond({status:503,contentType:'application/json',body:'{"detail":"Synthetic restoration failure"}'});
      if(fault==='advance'&&data.kind==='advance'){fault=null;return req.respond({status:503,contentType:'application/json',body:'{"detail":"Synthetic next-question failure"}'});}
      if(fault==='answer'&&data.kind==='answer'){fault=null;return req.respond({status:503,contentType:'application/json',body:'{"detail":"Synthetic answer failure"}'});}
+     if(fault==='credit'&&data.kind==='answer'){fault=null;return req.respond({status:503,contentType:'application/json',body:'{"detail":"The model API credit balance is exhausted. Your response is preserved; add API credit before retrying this saved operation."}'});}
      if(fault==='lost-response'&&data.kind==='answer'){
        fault=null;await fetch(req.url(),{method:'POST',headers:{'content-type':'application/json'},body:req.postData()});
        return req.respond({status:503,contentType:'application/json',body:'{"detail":"Synthetic lost response after commit"}'});
@@ -59,6 +60,12 @@ try{
    assert.equal(await page.evaluate(()=>lifePatternsClient.state.view.conversation.filter(r=>r.role==='user').length),0);
    await page.click('#retryAction');await settle();assert.equal((await state()).draft,'');
    assert.equal(await page.evaluate(()=>lifePatternsClient.state.view.conversation.filter(r=>r.role==='user').length),1);
+ });
+ await test('credit-exhaustion-is-actionable-and-preserves-draft',async()=>{
+   await fresh();fault='credit';await send('A response while provider credit is exhausted.');
+   assert.equal((await state()).draft,'A response while provider credit is exhausted.');
+   assert((await page.$eval('#errorArea',e=>e.textContent)).includes('credit balance is exhausted'));
+   assert.equal(await visible('retryAction'),true);
  });
  await test('lost-response-reconciles-without-repeating-answer',async()=>{
    await fresh();fault='lost-response';await send('A response whose acknowledgement is lost.');
