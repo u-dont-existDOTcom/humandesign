@@ -3,6 +3,7 @@ from __future__ import annotations
 from fastapi.testclient import TestClient
 from test_life_patterns_v2_owner_workflow import Model, op, session
 
+from hdmatch.api.life_patterns_v2_owner_conversation import ModelProviderError
 from hdmatch.api.life_patterns_v2_owner_persistent import _canonical_sha
 from hdmatch.api.life_patterns_v2_owner_workflow_api import create_workflow_app, measurement_package
 
@@ -105,3 +106,31 @@ def test_recovered_summary_correction_is_also_unresolved_in_current_export() -> 
     )
     assert s.view()["patterns"][0]["status"] == "disputed"
     assert measurement_package(s)["completed_results"][0]["status"] == "unresolved"
+
+
+def test_credit_balance_exhaustion_is_actionable_and_preserves_revision() -> None:
+    class CreditExhaustedModel(Model):
+        def route_participant_turn(self, **kwargs):
+            raise ModelProviderError(
+                http_status=429,
+                error_type="insufficient_quota",
+                error_code="credit_balance_exhausted",
+                retryable=False,
+            )
+
+    c = TestClient(create_workflow_app(model=CreditExhaustedModel()))
+    created = c.post("/api/owner-v2/conversation/sessions").json()
+    sid = created["session_id"]
+    result = c.post(
+        f"/api/owner-v2/conversation/sessions/{sid}/operations",
+        json={
+            "operation_id": "credit-exhausted",
+            "expected_revision": 0,
+            "kind": "answer",
+            "payload": {"message": "A synthetic answer."},
+        },
+    )
+    assert result.status_code == 503
+    assert "credit balance is exhausted" in result.json()["detail"]
+    assert "add API credit before retrying" in result.json()["detail"]
+    assert c.app.state.recoverability_runtime.sessions[sid].revision == 0
