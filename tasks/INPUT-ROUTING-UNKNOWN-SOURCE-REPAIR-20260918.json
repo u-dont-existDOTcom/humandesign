@@ -1,9 +1,12 @@
 {
   "schema_version": 1,
-  "status": "active",
-  "exclusive_writer": true,
+  "status": "completed_and_integrated",
+  "exclusive_writer": false,
   "owned_branch": "chat/input-routing-unknown-source-repair-20260918",
   "integration_branch": "codex/discover-life-patterns-mvp",
   "integration_base_sha": "2debd2dd4a5b3dfcea627ad359e6a680ccd96373",
-  "scope": "Repair the owner-observed fatal routing error when the semantic router cites an unknown historical process turn. Preserve source integrity by ignoring only unknown quarantine hints, then test the real browser consumer seam and deploy the reversible owner-development candidate."
+  "scope": "Repair the owner-observed fatal routing error when the semantic router cites an unknown historical process turn. Preserve source integrity by ignoring only unknown quarantine hints, then test the real browser consumer seam and deploy the reversible owner-development candidate.",
+  "application_head": "2549e5d15fc8fef4f9f67c4b7014e04709cc76f9",
+  "ci_run": 35396017161,
+  "deployment_id": "ed917580-1574-4cc5-8dc2-03504aa3cb44"
 }
