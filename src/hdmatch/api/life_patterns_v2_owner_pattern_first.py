@@ -6,6 +6,7 @@ are then used as evidence anchors while the v2 evidence ledger remains hidden.
 
 from __future__ import annotations
 
+import logging
 import time
 import uuid
 from dataclasses import dataclass, field
@@ -19,6 +20,7 @@ from .life_patterns_v2_owner_conversation import (
     ConversationalOwnerSession,
     ConversationTurnRequest,
     CreateConversationSessionResponse,
+    ModelProviderError,
     OpenAIConversationModel,
     OwnerConversationModel,
 )
@@ -38,7 +40,9 @@ _TRANSIENT_MODEL_ERROR_MARKERS = (
     "HTTP 524:",
     "model network error:",
 )
-_MODEL_PROVIDER_ATTEMPTS = 3
+_MODEL_PROVIDER_ATTEMPTS = 4
+_PROVIDER_RETRY_DELAYS = (1.0, 4.0, 10.0)
+_PROVIDER_LOG = logging.getLogger("hdmatch.life_patterns.provider")
 
 
 class TemporaryModelProviderError(RuntimeError):
@@ -56,8 +60,28 @@ def _normalize_conversation_move_payload(payload: dict[str, Any]) -> dict[str, A
 
 
 def _is_transient_model_error(exc: RuntimeError) -> bool:
+    if isinstance(exc, ModelProviderError):
+        return exc.retryable
     detail = str(exc)
+    if "HTTP 429:" in detail and "insufficient_quota" not in detail:
+        return True
     return any(marker in detail for marker in _TRANSIENT_MODEL_ERROR_MARKERS)
+
+
+def _provider_retry_delay(exc: RuntimeError, attempt: int) -> float:
+    default = _PROVIDER_RETRY_DELAYS[min(attempt, len(_PROVIDER_RETRY_DELAYS) - 1)]
+    if isinstance(exc, ModelProviderError) and exc.retry_after_seconds is not None:
+        return max(default, exc.retry_after_seconds)
+    return default
+
+
+def _log_provider_failure(exc: RuntimeError, *, schema_name: str, attempt: int) -> None:
+    if isinstance(exc, ModelProviderError):
+        _PROVIDER_LOG.warning(
+            "life_patterns_provider_failure schema=%s attempt=%s http_status=%s error_type=%s error_code=%s retryable=%s retry_after=%s",
+            schema_name, attempt, exc.http_status, exc.error_type or "-", exc.error_code or "-",
+            exc.retryable, exc.retry_after_seconds,
+        )
 
 
 class PatternFirstOpenAIConversationModel(OpenAIConversationModel):
@@ -98,6 +122,7 @@ class PatternFirstOpenAIConversationModel(OpenAIConversationModel):
                 )
                 break
             except RuntimeError as exc:
+                _log_provider_failure(exc, schema_name=schema_name, attempt=attempt + 1)
                 if not _is_transient_model_error(exc):
                     raise
                 if attempt + 1 >= _MODEL_PROVIDER_ATTEMPTS:
@@ -105,7 +130,7 @@ class PatternFirstOpenAIConversationModel(OpenAIConversationModel):
                         "The model service is temporarily unavailable after automatic retries. "
                         "Nothing from this turn was saved; please try Send again in a moment."
                     ) from exc
-                time.sleep(0.35 * (2**attempt))
+                time.sleep(_provider_retry_delay(exc, attempt))
 
         assert result is not None
         if schema_name == "life_patterns_conversation_move_v1":
