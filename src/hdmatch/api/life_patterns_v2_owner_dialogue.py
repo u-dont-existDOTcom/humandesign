@@ -39,7 +39,7 @@ interview, or topic-mixing corrections that supply no new life information. 'Wha
 'fix that question' and 'what does that mean?' are NOT behavioral answers or requests to stop.
 Return mixed when actual new life information accompanies process feedback. Preserve ONLY complete
 contiguous verbatim evidence spans with their negation, attribution and qualifications; never paraphrase.
-Answer their objection first in repair_reply. A substantive correction to a proposed pattern belongs in
+Answer their objection first in repair_reply. For mixed input keep that acknowledgement brief and about the process request, without reciting the behavioral evidence again. A substantive correction to a proposed pattern belongs in
 answer/mixed, not discarded as process feedback. Return pause only for an explicit request to pause/end
 the interview and skip only for an explicit request to change topic. Uncertainty is not consent to stop.
 For repair, repair_reply is the FULL next response: address the exact question or distinction they

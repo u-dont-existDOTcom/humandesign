@@ -3,7 +3,7 @@
 The fixed recoverability surface remains target-theory-blind and standardized, but the
 participant should experience one continuous interview rather than a sequence of category
 checkpoints. This layer keeps the current server session alive across measurement areas,
-feeds prior participant answers into continuation planning, and runs a separate low-cost
+feeds prior participant answers into continuation planning, and runs a separate source-aware
 admission pass before any model-generated question is shown.
 """
 
@@ -54,14 +54,13 @@ class ContinuousFlowRecoverabilityOpenAIModel(NaturalFlowRecoverabilityOpenAIMod
 
     def model_profile(self) -> dict[str, Any]:
         return {"interviewer_model": self.model, "interviewer_reasoning": "xhigh",
-                "extraction_model": "gpt-5.6-luna", "extraction_reasoning": "low",
+                "extraction_model": self.model, "extraction_reasoning": "xhigh",
                 "semantic_max_output_tokens": 25000, "automatic_model_fallback": False}
 
     def _request_settings(self, schema_name: str, effort: str, maximum: int) -> dict[str, Any]:
-        extraction = schema_name == "life_patterns_hidden_ledger_turn_v1"
-        return {"model": "gpt-5.6-luna" if extraction else self.model,
-                "reasoning": {"effort": "low" if extraction else "xhigh"},
-                "max_output_tokens": max(maximum, 2500 if extraction else 25000)}
+        # Source classification also decides meaning; it is not a mechanical task.
+        return {"model": self.model, "reasoning": {"effort": "xhigh"},
+                "max_output_tokens": max(maximum, 25000)}
 
     def _observe_model_response(self, schema_name: str, settings: dict[str, Any],
                                 response: dict[str, Any], elapsed: float) -> None:
@@ -111,7 +110,7 @@ class ContinuousFlowRecoverabilityOpenAIModel(NaturalFlowRecoverabilityOpenAIMod
             payload = {**payload,
                        "recent_conversation": context.get("evidence_conversation", context["conversation"]),
                        "shared_evidence_context": {"operative_facts": context.get("operative_facts", [])}}
-            instructions += " Extract ONLY the latest approved evidence excerpts; do not extract process feedback from the surrounding conversation."
+            instructions += " Extract ONLY the latest approved evidence excerpts; do not extract process feedback from the surrounding conversation. Habitual or conditional self-descriptions are attributed reported_appraisal_or_belief facts, not independently established recurring positive_occurrence events. Use positive_occurrence for the supplied concrete occurrence, and preserve this distinction within mixed concrete/general messages."
         if schema_name in {"life_patterns_conversation_move_v1", "life_patterns_refinement_move_v1"}:
             instructions = INTERVIEW_POLICY
         elif schema_name != "life_patterns_hidden_ledger_turn_v1":

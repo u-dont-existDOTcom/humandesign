@@ -4,7 +4,7 @@ Status: CANDIDATE VERIFIED LOCALLY; hosted/deployed/model-response checks pendin
 
 ## Implemented
 
-Semantic calls now request the owner-selected `gpt-5.6-sol` with `reasoning.effort=xhigh`. Literal source extraction alone remains `gpt-5.6-luna`/low. This selection is immutable per request, not a shared model-object mutation. There is no fallback to Astra or a weaker semantic model. A 25,000-token total semantic output ceiling leaves room for reasoning; incomplete provider output is not silently admitted. Actual returned model/usage/latency metadata is allowlisted into private recovery, without raw reasoning or credentials. Health reports the effective profile.
+Semantic calls now request the owner-selected `gpt-5.6-sol` with `reasoning.effort=xhigh`. Literal source extraction also requests `gpt-5.6-sol`/xhigh; the initial Luna split was retired after a real-model test exposed a semantic classification dependency. This selection is immutable per request, not a shared model-object mutation. There is no fallback to Astra or a weaker semantic model. A 25,000-token total semantic output ceiling leaves room for reasoning; incomplete provider output is not silently admitted. Actual returned model/usage/latency metadata is allowlisted into private recovery, without raw reasoning or credentials. Health reports the effective profile.
 
 Input is routed before extraction. Pure interviewer clarification/challenges produce an explanation, retraction or same-topic repair, without extracting personality facts, marking evidence sufficient, generating a synthesis or implicitly ending the area. Mixed feedback preserves exact full-context source spans and the original utterance. Explicit pause and skip are distinct. Source selection and routing survive recovery.
 
@@ -29,3 +29,9 @@ Official OpenAI Sol/Responses documentation was read for exact model/effort supp
 ## Remaining checks and limits
 
 Reconcile hosted CI on the delivered code. Verify the actual deployed build/profile and bounded Sol response traces. Real-model sampled behavior does not guarantee universal competence or replace owner acceptance. No new research validity claim, external collection, authentication redesign, protected-main merge, or Astra comparison is part of this task.
+
+## Actual model check and bounded correction
+
+The first deployed candidate returned real Sol xhigh responses on four synthetic normal interview turns. It distinguished group unfamiliarity from unclear expectations, handled a clarification without adding facts or completing the topic, and separated process feedback from qualified behavioral evidence. However, it redundantly requested judgment of wording that Sol had correctly classified as direct. The cause was a legacy requirement that a cited fact have the particular `reported_appraisal_or_belief` label; the extractor had used `positive_occurrence`.
+
+The follow-up removes that redundant label veto without relaxing source matching or semantic endorsement. All extraction is also moved to Sol xhigh, because occurrence-versus-self-report classification is semantic rather than mechanical. A clearer extraction policy distinguishes concrete events from general attributed reports. Archived old facts remain unchanged. Pending drafts from the earlier semantic policy are rechecked before approval. Fifty-seven affected tests plus lint and strict typing pass for the follow-up. Exact hosted/deployment and real-model recheck are still pending.

@@ -377,15 +377,27 @@ class WorkflowSession(NaturalFlowRecoverabilitySession):
     def _direct_report_source(
         self, move: ConversationMove
     ) -> tuple[str, str, tuple[str, ...]] | None:
+        # Directness is original-source authorship plus semantic endorsement, not
+        # whichever assertion label an extractor happened to choose.
         if not getattr(self, "_direct_context_safe", True):
             return None
-        direct = super()._direct_report_source(move)
-        if direct:
-            wording, source_id, _ = direct
-            admitted = next((r for r in self.input_routes if "SRC-" + r["turn_id"] == source_id), None)
+        wording = (move.hypothesis_proposition or "").strip()
+        ids = tuple(dict.fromkeys(move.evidence_fact_ids))
+        facts = {f.fact_id: f for f in self._planning_facts()}
+        if not wording or not ids or not set(ids) <= facts.keys():
+            return None
+        source_ids = {r.source_provenance_id for r in self.core.record.source_provenance}
+        for row in reversed(self.conversation):
+            source_id = "SRC-" + row["turn_id"]
+            if row["role"] != "user" or wording not in row["text"] or source_id not in source_ids:
+                continue
+            if not all(source_id in facts[fid].source_provenance_ids for fid in ids):
+                continue
+            admitted = next((r for r in self.input_routes if r["turn_id"] == row["turn_id"]), None)
             if admitted and not any(wording in quote for quote in admitted["evidence_quotes"]):
-                return None
-        return direct
+                continue
+            return wording, source_id, ids
+        return None
 
     def _admit_final_question(self, result: dict[str, Any]) -> dict[str, Any]:
         gate = getattr(self.model, "_admit_in_thread_question", None)
@@ -644,7 +656,7 @@ class WorkflowSession(NaturalFlowRecoverabilitySession):
             "pattern_notes": deepcopy(self.pattern_notes),
             "direct_proposal_ids": list(self.direct_proposal_ids),
             "inference_note": self.inference_note,
-            "semantic_policy_version": 2,
+            "semantic_policy_version": 3,
             "active_domain_id": self.active_domain_id,
             "repair_pending": self.repair_pending,
             "draft_needs_review": self.draft_needs_review,
@@ -686,7 +698,7 @@ class WorkflowSession(NaturalFlowRecoverabilitySession):
             self.retired_drafts = deepcopy(workflow.get("retired_drafts", []))
             self.model_calls = deepcopy(workflow.get("model_calls", []))
             self.draft_needs_review = bool(self._draft_move) and (
-                workflow.get("semantic_policy_version", 1) < 2 or bool(workflow.get("draft_needs_review")))
+                workflow.get("semantic_policy_version", 1) < 3 or bool(workflow.get("draft_needs_review")))
             if not self.active_domain_id:
                 for receipt in reversed(list(self._receipts.values())):
                     domain = receipt.get("result", {}).get("primary_domain_id")

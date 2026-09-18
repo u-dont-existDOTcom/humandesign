@@ -188,7 +188,7 @@ def test_inference_reply_does_not_announce_completion() -> None:
 
 
 @pytest.mark.parametrize("schema,expected,effort", [
-    ("life_patterns_hidden_ledger_turn_v1", "gpt-5.6-luna", "low"),
+    ("life_patterns_hidden_ledger_turn_v1", "gpt-5.6-sol", "xhigh"),
     ("life_patterns_participant_input_v1", "gpt-5.6-sol", "xhigh"),
     ("life_patterns_conversation_move_v1", "gpt-5.6-sol", "xhigh"),
     ("life_patterns_refinement_move_v1", "gpt-5.6-sol", "xhigh"),
@@ -264,3 +264,29 @@ def test_explicit_pause_is_not_confused_with_clarification() -> None:
     assert s.phase == "paused" and not s.core.record.episode_facts
     s.execute(op(s, "resume", identity="resume"))
     assert s.phase == "awaiting_answer"
+
+
+def test_direct_source_does_not_depend_on_extractor_assertion_label() -> None:
+    from hdmatch.api.life_patterns_v2_owner_conversation import TurnExtraction, HiddenFactCandidate
+    class LabelModel(RoutedModel):
+        direct = True
+        def extract_turn(self, **kwargs: Any) -> TurnExtraction:
+            return TurnExtraction(episode_summary="A synthetic report", facts=(HiddenFactCandidate(
+                assertion_type="positive_occurrence", proposition=kwargs["message"]),), corrections=())
+        def review_pattern_candidate(self, **kwargs: Any) -> dict[str, Any]:
+            return {"decision": "direct", "inference_added": "", "inference_quote": ""}
+    s = session(LabelModel())
+    result = s.execute(op(s, "answer", {"message": "I prepare less when I know the task well."}))
+    assert result["direct_pattern_recorded"] and not s._draft_move
+    assert len(s.core.record.participant_adjudications) == 1
+    assert s.view()["patterns"][0]["origin"] == "direct_report"
+
+
+def test_direct_label_independence_does_not_accept_other_turn_evidence() -> None:
+    s = session()
+    s.execute(op(s, "answer", {"message": "An earlier different source."}))
+    ids = tuple(f.fact_id for f in s.core.operative_facts())
+    s.execute(op(s, "answer", {"message": "I prepare less when I know the task well."}, "second"))
+    move = ConversationMove(reply="Saved", move_type="surface_hypothesis",
+                            hypothesis_proposition="I prepare less when I know the task well.", evidence_fact_ids=ids)
+    assert s._direct_report_source(move) is None
