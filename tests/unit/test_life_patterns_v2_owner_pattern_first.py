@@ -6,6 +6,7 @@ from hdmatch.api.life_patterns_v2_owner_app import ExtractedEpisode, PatternSugg
 from hdmatch.api.life_patterns_v2_owner_conversation import (
     ConversationMove,
     HiddenFactCandidate,
+    ModelProviderError,
     OpenAIConversationModel,
     TurnExtraction,
 )
@@ -162,7 +163,60 @@ def test_transient_provider_exhaustion_becomes_retryable_error(monkeypatch) -> N
             boundary_answered=False,
         )
 
-    assert calls == 3
+    assert calls == 4
+
+
+def test_rate_limit_error_retries_automatically(monkeypatch) -> None:
+    calls = 0
+    raw = {
+        "reply": "What changed after that?",
+        "move_type": "follow_up",
+        "hypothesis_proposition": None,
+        "evidence_fact_ids": [],
+    }
+
+    def rate_limited_then_ok(self, **kwargs):
+        nonlocal calls
+        calls += 1
+        if calls == 1:
+            raise ModelProviderError(
+                http_status=429, error_type="rate_limit_error",
+                error_code="rate_limit_exceeded", retry_after_seconds=0.0, retryable=True
+            )
+        return raw
+
+    monkeypatch.setattr(OpenAIConversationModel, "_conversation_call_json", rate_limited_then_ok)
+    monkeypatch.setattr(
+        "hdmatch.api.life_patterns_v2_owner_pattern_first.time.sleep", lambda _seconds: None
+    )
+    model = PatternFirstOpenAIConversationModel(api_key="test")
+    move = model.plan_turn(
+        current_episode_id=None, episodes=(), operative_facts=(),
+        recent_conversation=(), boundary_answered=False,
+    )
+    assert calls == 2
+    assert move.reply == "What changed after that?"
+
+
+def test_nonretryable_quota_error_fails_without_retry(monkeypatch) -> None:
+    calls = 0
+
+    def quota_error(self, **kwargs):
+        nonlocal calls
+        calls += 1
+        raise ModelProviderError(
+            http_status=429, error_type="insufficient_quota",
+            error_code="insufficient_quota", retryable=False
+        )
+
+    monkeypatch.setattr(OpenAIConversationModel, "_conversation_call_json", quota_error)
+    model = PatternFirstOpenAIConversationModel(api_key="test")
+    with pytest.raises(ModelProviderError, match="insufficient_quota"):
+        model.plan_turn(
+            current_episode_id=None, episodes=(), operative_facts=(),
+            recent_conversation=(), boundary_answered=False,
+        )
+    assert calls == 1
 
 
 def test_normalizer_keeps_surface_hypothesis_strict() -> None:
