@@ -27,7 +27,7 @@ from .life_patterns_v2_owner_recoverability import (
 )
 from .life_patterns_v2_owner_workflow import InterviewOperation, WorkflowConflict, WorkflowSession
 
-BUILD_VERSION = "survey-sol-xhigh-2026-09-18.4"
+BUILD_VERSION = "survey-sol-xhigh-2026-09-18.5"
 
 
 class RestoreRequest(BaseModel):
