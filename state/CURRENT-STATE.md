@@ -1,23 +1,35 @@
 # Current state — Life Patterns — 2026-09-18
 
-The owner requested continuation-rule hardening and execution of the diagnosed paraphrase/empty-repair fixes. Both are delivered. Controlling receipt: `state/LIFE-PATTERNS-CONTINUATION-REPAIR-20260918.md`.
+The latest owner natural-use attempt exposed an immediate runtime failure while submitting a new ordinary answer: Input routing cited an unknown historical source. That failure is repaired and deployed. Controlling receipt: state/LIFE-PATTERNS-INPUT-ROUTING-REPAIR-20260918.md.
 
-Application head: `f99702eb19007bb2bc53f73f9f83c1d38394fdfe`. Existing Railway deployment `fcad1769-e826-473c-aafc-59fc64496ed0`, build `survey-sol-xhigh-2026-09-18.3`, HTTP 200 and exact page readback. Hosted survey CI `35388291761` and `35388287881` passed. Evidence: `artifacts/life-patterns/continuation-repair-20260918/`.
+Application head: 2549e5d15fc8fef4f9f67c4b7014e04709cc76f9. Railway deployment ed917580-1574-4cc5-8dc2-03504aa3cb44, build survey-sol-xhigh-2026-09-18.4, health HTTP 200. Hosted CI run 35396017161: SUCCESS. All model stages remain GPT-5.6 Sol/xhigh with no fallback.
 
-Direct multi-source paraphrases now become explicitly model-authored source summaries, not inferred drafts or fabricated participant adjudications. Exact direct reports and genuinely added inferences keep their distinct authority. Resolved objections select current-focus continuation; waiting requires an actual question or live judgment. Legacy ambiguous repair checkpoints are assessed once on recovery; paused state and source history survive. Sol xhigh remains the sole model configuration.
+## Failure and repair
 
-UDA continuation hardening is merged into main at `4c0058fab4cc91d06ef09733455bdd5ae7e70f41`: a self-authored scope cannot terminate an OPEN parent task; final delivery requires executing the next authorized step or proving a genuine stopping boundary. This is instruction-contract hardening, not a claimed universal agent runtime guarantee.
+The semantic input router may optionally identify earlier participant turns that were only interview-process feedback so they can be excluded from current behavioral evidence. The runtime previously treated any router-supplied historical turn ID that did not resolve to an actual prior participant turn as a fatal validation error. That advisory hygiene field therefore had authority to abort a valid current answer.
 
-857 local tests passed, 7 environment/history skips; 65 affected tests, 19 actual browser scenarios, lint and strict typing passed. Five real synthetic model calls confirmed the strict repair schema and genuine-clarification behavior; no owner session or uploaded backup was used in live calls. No claim of exhaustive semantic correctness.
+The repair keeps the evidence boundary strict while removing that brittle coupling:
+
+- current evidence excerpts still must be exact substrings of the participant's current message;
+- recognized historical process IDs still quarantine only real prior participant turns;
+- unknown or assistant-role historical IDs are ignored for quarantine rather than allowed to remove evidence or abort the current answer;
+- the audit record preserves only a count of ignored unknown hints, not fabricated IDs;
+- answer processing, extraction, question selection, revision binding, rollback, pause and recovery semantics are otherwise unchanged.
+
+The available uploaded recovery backup predates the failed submission. Its stored historical process IDs resolve to earlier participant turns. Therefore it does not contain the newly failed router payload and cannot establish why the model emitted an unrecognized ID. The screenshot plus exact exception path establishes the runtime failure boundary; the model-side cause remains unobserved.
+
+## Verification
+
+Focused dialogue regression and adjacent workflow tests passed. The actual browser consumer seam now includes a route response with a deliberately nonexistent historical process-turn ID: the current answer is retained and processed, no error is shown, the unknown hint is not added to process_turn_ids, and the runtime records one ignored hint. The complete synthetic browser suite passed 20 scenarios with zero page errors.
+
+Ruff passed with the repository's CI rule ignoring E501 and I001, and strict mypy passed across 208 source files. Hosted CI passed on the exact integrated code head. One earlier browser attempt in this repair used a port already occupied by an unrelated fixture and was invalidated; it was rerun on an isolated ephemeral loopback port and passed. No owner session or private transcript was replayed into the service, and no new model call was required for this deterministic runtime repair.
 
 ## Next action and authority
 
-The original owner outcome remains OPEN until natural use demonstrates useful interviewing. The earlier failed owner tests remain failures; the new repair has bounded verification, not a new owner pass. Refreshing the saved browser interview is now a meaningful changed-candidate evaluation. After new feedback, continue the safe authorized repair in the same turn; do not stop at an assistant-created diagnosis-only scope. No new implementation approval is required.
+The root owner outcome remains OPEN. The immediate runtime failure is fixed, but this is not evidence that the interview's general semantic quality now passes. The meaningful next observation is the owner's natural use of the changed candidate.
 
-Preserve original source wording, participant authority, the accepted v2 evidence core, target-blind elicitation, and the separate later owner post-freeze recovery criterion. No external recruitment, chart-aware questioning, scientific validation claim, protected-main merge or public release was performed. HumanDesign's development PR remains draft/open/unmerged.
+The failed browser operation was revision-bound and left the participant draft visible. After refresh, Retry saved operation should resubmit the preserved answer under the repaired runtime; no prior answers need to be re-entered. If a new failure appears, continue the authorized repair automatically in the same turn.
 
-**There was never a completion policy.** Preserve `state/OWNER-CORRECTION-2026-09-02.md`.
+Preserve participant authority, original source wording, the accepted v2 evidence core, target-blind elicitation, Sol/xhigh, and the separate later owner post-freeze recovery criterion. No external recruitment, chart-aware questioning, scientific-validation claim, protected-main merge or public release was performed. The HumanDesign development pull request remains draft/open/unmerged.
 
-Legacy affected checkpoint command, retained for repository preflight:
-
-`python -m pytest tests/unit/test_life_patterns_v2_owner_continuous_flow.py tests/unit/test_life_patterns_v2_owner_natural_flow.py tests/unit/test_life_patterns_v2_owner_liveness.py tests/unit/test_life_patterns_v2_owner_import_resume.py tests/unit/test_life_patterns_v2_owner_persistent.py tests/unit/test_life_patterns_v2_owner_resilient.py tests/unit/test_life_patterns_v2_owner_finalization_flow.py tests/unit/test_life_patterns_v2_owner_dynamic_coverage.py tests/unit/test_life_patterns_v2_owner_scope.py tests/unit/test_life_patterns_v2_owner_recoverability.py tests/unit/test_life_patterns_v2_owner_recoverability_ui.py tests/unit/test_life_patterns_owner_recovery_gate.py -q`
+There was never a completion policy. Preserve state/OWNER-CORRECTION-2026-09-02.md.
