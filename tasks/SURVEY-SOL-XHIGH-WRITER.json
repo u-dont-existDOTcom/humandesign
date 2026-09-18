@@ -1,9 +1,11 @@
 {
   "schema_version": 1,
-  "status": "active",
-  "exclusive_writer": true,
+  "status": "completed_and_integrated",
+  "exclusive_writer": false,
   "owned_branch": "chat/survey-sol-xhigh-20260918-0033",
   "integration_branch": "codex/discover-life-patterns-mvp",
   "integration_base_sha": "d07e4d83ff24785c8cad698063f30a43d082d90a",
-  "scope": "Sol xhigh, repair-first routing, source isolation and synthesis novelty"
+  "scope": "Sol xhigh, repair-first routing, source isolation and synthesis novelty",
+  "integrated_application_head": "78543a9f876b1105c4d62757b8b5f5119cc7b5e5",
+  "next_writer_must_acquire_new_scope": true
 }
