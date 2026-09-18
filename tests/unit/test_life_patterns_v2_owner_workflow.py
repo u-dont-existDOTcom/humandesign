@@ -170,7 +170,7 @@ def test_stale_revision_cannot_apply_an_answer() -> None:
         )
 
 
-def test_final_gate_also_catches_runtime_fallback_questions() -> None:
+def test_unsupported_candidate_does_not_create_fallback_interrogation() -> None:
     from hdmatch.api.life_patterns_v2_owner_natural_flow import TopicCompleteMove
 
     class FallbackModel(Model):
@@ -192,8 +192,8 @@ def test_final_gate_also_catches_runtime_fallback_questions() -> None:
     model = FallbackModel()
     s = session(model)
     result = s.execute(op(s, "answer", {"message": "A complete synthetic answer."}))
-    assert model.gate_calls == 1
-    assert result["no_useful_question"] is True
+    assert model.gate_calls == 0
+    assert result["formulation_suppressed"] == "unsupported_source"
     assert s.phase == "advancing"
     assert not s.core.record.participant_adjudications
 

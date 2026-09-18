@@ -17,6 +17,14 @@ from hdmatch.api.life_patterns_v2_owner_workflow_api import create_workflow_app
 class SyntheticModel:
     configured = True
 
+    def route_participant_turn(self, **kwargs: Any) -> dict[str, Any]:
+        message = kwargs["message"]
+        repair = message == "Please clarify your question."
+        return {"kind": "repair" if repair else "answer",
+                "evidence_quotes": [] if repair else [message],
+                "repair_reply": "My alternatives can coexist; that contrast was not justified." if repair else "",
+                "withdraw_pending_inference": False, "historical_process_turn_ids": []}
+
     def extract_turn(self, **kwargs: Any) -> TurnExtraction:
         return TurnExtraction(
             episode_summary="Synthetic browser fixture",

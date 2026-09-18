@@ -27,7 +27,7 @@ from .life_patterns_v2_owner_recoverability import (
 )
 from .life_patterns_v2_owner_workflow import InterviewOperation, WorkflowConflict, WorkflowSession
 
-BUILD_VERSION = "survey-flow-2026-09-17.1"
+BUILD_VERSION = "survey-sol-xhigh-2026-09-18.1"
 
 
 class RestoreRequest(BaseModel):
@@ -105,6 +105,8 @@ def measurement_package(session: WorkflowSession) -> dict[str, Any]:
         "aggregate_coverage": view["aggregate_coverage"],
         "evidence_archive": committed["snapshot"],
         "pending_inference": view["pattern_proposition"],
+        "model_profile": view.get("model_profile", {}),
+        "process_turn_exclusions": committed["snapshot"]["workflow"].get("process_turn_ids", []),
         "unresolved_corrections": [p for p in view["patterns"] if p["corrections"]],
         "measurement_scope": "development-only; incomplete and disputed material remains explicit",
         "scientifically_validated": False,
@@ -139,6 +141,7 @@ def create_workflow_app(*, model: Any) -> FastAPI:
             "target_theory_blind": True,
             "hidden_evidence_ledger": True,
             "model_configured": bool(model.configured),
+            "model_profile": getattr(model, "model_profile", lambda: {})(),
             "build_version": BUILD_VERSION,
             "build_commit": os.environ.get("RAILWAY_GIT_COMMIT_SHA"),
             "coverage_blueprint_version": RECOVERABILITY_BLUEPRINT_VERSION,

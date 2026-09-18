@@ -8,6 +8,7 @@ adjudication through the frozen v2 core.
 from __future__ import annotations
 
 import json
+import time
 import uuid
 from dataclasses import dataclass, field
 from typing import Any, Literal, Protocol, cast
@@ -116,6 +117,13 @@ class OpenAIConversationModel(OpenAIOwnerV2Model):
             timeout_seconds=base.timeout_seconds,
         )
 
+    def _request_settings(self, schema_name: str, effort: str, maximum: int) -> dict[str, Any]:
+        return {"model": self.model, "reasoning": {"effort": effort}, "max_output_tokens": maximum}
+
+    def _observe_model_response(self, schema_name: str, settings: dict[str, Any],
+                                response: dict[str, Any], elapsed: float) -> None:
+        """Subclasses may retain allowlisted transport metadata, never private reasoning."""
+
     def _conversation_call_json(
         self,
         *,
@@ -131,13 +139,12 @@ class OpenAIConversationModel(OpenAIOwnerV2Model):
                 "The owner prototype needs HDMATCH_LLM_API_KEY or OPENAI_"
                 "API_KEY in its runtime environment."
             )
+        settings = self._request_settings(schema_name, effort, max_output_tokens)
         body = {
-            "model": self.model,
+            **settings,
             "instructions": instructions,
             "input": [{"role": "user", "content": json.dumps(payload, ensure_ascii=False)}],
             "store": False,
-            "reasoning": {"effort": effort},
-            "max_output_tokens": max_output_tokens,
             "text": {
                 "format": {
                     "type": "json_schema",
@@ -153,6 +160,7 @@ class OpenAIConversationModel(OpenAIOwnerV2Model):
             headers={"Authorization": f"Bearer {self.api_key}", "Content-Type": "application/json"},
             method="POST",
         )
+        started = time.monotonic()
         try:
             with urlopen(request, timeout=self.timeout_seconds) as response:  # noqa: S310
                 raw = cast(bytes, response.read())
@@ -161,6 +169,10 @@ class OpenAIConversationModel(OpenAIOwnerV2Model):
             raise RuntimeError(f"Owner Life Patterns model HTTP {exc.code}: {detail}") from exc
         except URLError as exc:
             raise RuntimeError(f"Owner Life Patterns model network error: {exc.reason}") from exc
+        response_body = json.loads(raw)
+        self._observe_model_response(schema_name, settings, response_body, time.monotonic() - started)
+        if response_body.get("status") in {"incomplete", "failed", "cancelled"}:
+            raise RuntimeError("Model response did not complete; no partial output was admitted")
         return _parse_response_json(raw)
 
     def extract_turn(

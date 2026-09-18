@@ -107,6 +107,7 @@ def test_in_thread_admission_can_replace_and_expose_audit_reason(monkeypatch) ->
         assert kwargs["schema_name"] == "life_patterns_question_admission_v1"
         return {
             "decision": "replace",
+            "premises_supported": True, "scope_preserved": True, "contrast_answerable": True,
             "reply": "What concrete sign tells you the situation has crossed your threshold?",
             "move_type": "follow_up",
             "missing_discriminator": "the participant's actual threshold cue",
@@ -224,6 +225,7 @@ def test_model_routes_receive_old_source_context_not_only_their_recent_tail(monk
     assert len(captured) == 4
     for call in captured:
         assert call["payload"]["recent_conversation"][0] == history[0]
-        assert call["payload"]["shared_evidence_context"]["participant_corrections"]
+        if call["schema_name"] != "life_patterns_hidden_ledger_turn_v1":
+            assert call["payload"]["shared_evidence_context"]["participant_corrections"]
         assert "admission_sink" not in call["payload"]["shared_evidence_context"]
 

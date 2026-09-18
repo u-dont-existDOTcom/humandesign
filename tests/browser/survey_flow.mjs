@@ -112,6 +112,24 @@ try{
    const data=await(await fetch(base+'/api/owner-v2/conversation/sessions/'+sid+'/measurement')).json();
    assert(data.blueprint_version&&data.blueprint_sha256);assert(data.evidence_archive.record);assert.equal(data.completed_results.length,0);
  });
+ await test('clarification-repairs-without-behavioral-evidence-or-completion',async()=>{
+   await fresh();await send('A synthetic ordinary answer.');
+   const before=await page.evaluate(()=>({facts:lifePatternsClient.state.snapshot.record.episode_facts.length,
+     patterns:lifePatternsClient.state.view.patterns.length,coverage:JSON.stringify(lifePatternsClient.state.view.aggregate_coverage)}));
+   await send('Please clarify your question.');
+   const after=await page.evaluate(()=>({facts:lifePatternsClient.state.snapshot.record.episode_facts.length,
+     patterns:lifePatternsClient.state.view.patterns.length,coverage:JSON.stringify(lifePatternsClient.state.view.aggregate_coverage)}));
+   assert.deepEqual(after,before);assert.equal((await state()).phase,'awaiting_answer');
+   assert((await page.$eval('#conversation',e=>e.textContent)).includes('can coexist'));
+   await page.reload();await settle();assert.equal(await page.evaluate(()=>lifePatternsClient.state.view.repair_pending),true);
+ });
+ await test('repeated-direct-pattern-is-not-another-synthesis',async()=>{
+   await fresh();await send('A direct pattern: I think alone before group decisions.');
+   const before=await page.evaluate(()=>lifePatternsClient.state.view.patterns.length);
+   await send('A direct pattern: I think alone before group decisions.');
+   assert.equal(await page.evaluate(()=>lifePatternsClient.state.view.patterns.length),before);
+   assert.equal(await visible('patternPanel'),false);
+ });
  await test('responsive-and-reduced-motion',async()=>{
    await fresh();await page.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);
    for(const width of [320,375,414,768,1024,1440]){await page.setViewport({width,height:900});

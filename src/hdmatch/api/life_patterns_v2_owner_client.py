@@ -78,7 +78,7 @@ function render(){
   $('boundedTitle').textContent=phase==='complete'?'The planned areas are addressed':'A useful place to stop';
   $('boundedText').textContent=phase==='complete'?'You can review and export the record. Addressed areas include anything explicitly unknown, declined, or inapplicable; this is not a validity score.':'No worthwhile next question was identified. The remaining areas stay open; nothing has been marked complete just to end the interview.';
   visibility('tryAnother',phase==='bounded');
-  visibility('patternPanel',interactive&&!paused&&phase==='synthesis_review'&&!S.correction);
+  visibility('patternPanel',interactive&&!paused&&phase==='synthesis_review'&&!S.correction&&!S.view?.draft_needs_review);
   $('formulation').textContent=S.view?.pattern_proposition||'';
   $('inferenceNote').textContent=S.view?.inference_note?`What is being inferred: ${S.view.inference_note}`:'';
   visibility('composer',interactive&&(!!S.correction||(!paused&&['awaiting_answer','synthesis_review','bounded'].includes(phase)))&&S.view?.recovery_quality!=='visible_transcript_only');
@@ -131,7 +131,7 @@ $('closePatterns').onclick=()=>$('patternsDialog').close();
 $('message').addEventListener('input',()=>{S.draft=$('message').value;if(S.correction)S.correctionDrafts[S.correction]=S.draft;persist();$('send').disabled=S.busy||!!S.pending||!S.draft.trim();renderSave()});
 $('message').addEventListener('keydown',e=>{if(e.key==='Enter'&&(e.ctrlKey||e.metaKey)){e.preventDefault();send()}});
 $('cancelCorrection').onclick=()=>{if(S.correction)S.correctionDrafts[S.correction]=S.draft;S.correction=null;S.draft=S.answerDraft;S.answerDraft='';persist();render()};
-async function http(path,{method='GET',body,timeout=150000}={}){
+async function http(path,{method='GET',body,timeout=240000}={}){
   const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),timeout);
   try{const r=await fetch(path,{method,body:body===undefined?undefined:JSON.stringify(body),headers:{'content-type':'application/json','x-life-patterns-client':'workflow-v1'},cache:'no-store',signal:controller.signal});
     let p={};try{p=await r.json()}catch{}
@@ -173,6 +173,7 @@ async function transmit(){
 async function nextStep(){
   if(S.busy||S.pending||S.loading||S.restoreError||S.otherTab||!S.view)return;
   if(S.paused){if(S.view.phase!=='paused')await perform('pause');return;}
+  if(S.view.draft_needs_review){await perform('review_draft');return;}
   if(S.view.phase==='advancing')await perform('advance');
 }
 async function send(){
