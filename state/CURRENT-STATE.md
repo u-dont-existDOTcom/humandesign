@@ -1,43 +1,22 @@
 # Current state — Life Patterns — 2026-09-18
 
-Active task: `life-patterns-v2-astrohd-recoverability-owner-retest`.
+The owner requested continuation-rule hardening and execution of the diagnosed paraphrase/empty-repair fixes. Both are delivered. Controlling receipt: `state/LIFE-PATTERNS-CONTINUATION-REPAIR-20260918.md`.
 
-## Current boundary: owner retest FAILED
+Application head: `f99702eb19007bb2bc53f73f9f83c1d38394fdfe`. Existing Railway deployment `fcad1769-e826-473c-aafc-59fc64496ed0`, build `survey-sol-xhigh-2026-09-18.3`, HTTP 200 and exact page readback. Hosted survey CI `35388291761` and `35388287881` passed. Evidence: `artifacts/life-patterns/continuation-repair-20260918/`.
 
-The owner tested the Sol xhigh candidate and supplied a new browser checkpoint. It presented a summary of their own answers as a new connection requiring approval, despite its formulation review returning direct with no added inference. After the owner objected, it withdrew the draft but left `awaiting_answer` with no question or pending operation. This supersedes the earlier owner-verdict-not-yet-observed state.
+Direct multi-source paraphrases now become explicitly model-authored source summaries, not inferred drafts or fabricated participant adjudications. Exact direct reports and genuinely added inferences keep their distinct authority. Resolved objections select current-focus continuation; waiting requires an actual question or live judgment. Legacy ambiguous repair checkpoints are assessed once on recovery; paused state and source history survive. Sol xhigh remains the sole model configuration.
 
-Controlling diagnosis: `state/LIFE-PATTERNS-OWNER-PARAPHRASE-STALL-20260918.md`.
+UDA continuation hardening is merged into main at `4c0058fab4cc91d06ef09733455bdd5ae7e70f41`: a self-authored scope cannot terminate an OPEN parent task; final delivery requires executing the next authorized step or proving a genuine stopping boundary. This is instruction-contract hardening, not a claimed universal agent runtime guarantee.
 
-Two generating defects are identified from the checkpoint and current source: (1) exact single-source quote validation failure falls through into an inferred draft even when semantic review says direct; (2) all repair-only replies share an answer-waiting exit, including resolved withdrawals that require the interviewer to select the next action. The original participant evidence remains; no source record was changed in this diagnostic pass.
+857 local tests passed, 7 environment/history skips; 65 affected tests, 19 actual browser scenarios, lint and strict typing passed. Five real synthetic model calls confirmed the strict repair schema and genuine-clarification behavior; no owner session or uploaded backup was used in live calls. No claim of exhaustive semantic correctness.
 
-## Next action
+## Next action and authority
 
-Repair the semantic-decision-to-runtime-action boundary, not merely its wording. Keep original source/provenance intact, do not label no-added-inference summaries as discoveries, and require a genuine inference before asking for judgment. Distinguish a repair that leaves an actual question to answer from a resolved objection that needs the next interviewer move. Test the composed operation/browser path with a synthetic multi-turn paraphrase and withdrawal, including pause and genuine-clarification negative cases.
+The original owner outcome remains OPEN until natural use demonstrates useful interviewing. The earlier failed owner tests remain failures; the new repair has bounded verification, not a new owner pass. Refreshing the saved browser interview is now a meaningful changed-candidate evaluation. After new feedback, continue the safe authorized repair in the same turn; do not stop at an assistant-created diagnosis-only scope. No new implementation approval is required.
 
-The parent owner outcome remains OPEN. This turn completed a causal diagnosis, not an implementation or deployment. Do not ask the owner to repeat the unchanged failing interview or treat another model upgrade as the next fix. No new approval, reviewer, quota, broad benchmark, or scientific completion gate is required.
+Preserve original source wording, participant authority, the accepted v2 evidence core, target-blind elicitation, and the separate later owner post-freeze recovery criterion. No external recruitment, chart-aware questioning, scientific validation claim, protected-main merge or public release was performed. HumanDesign's development PR remains draft/open/unmerged.
 
-## Preserved implementation and historical evidence
-
-Prior implementation receipt: `state/LIFE-PATTERNS-SOL-XHIGH-REPAIR-20260918.md`.
-Application: `78543a9f876b1105c4d62757b8b5f5119cc7b5e5`.
-Hosted CI: `35295117795` and `35295114783`, SUCCESS in the preceding pass.
-Railway deployment: `bbd8db1a-a898-42ca-9694-646b781871e3`, build `survey-sol-xhigh-2026-09-18.2`, prior verified health 200.
-Evidence: `artifacts/life-patterns/sol-xhigh-repair-20260918/`.
-No deployment or provider call was made for the current diagnosis. The upload's internal checksum verifies; it records Sol/xhigh and semantic policy 3 but does not independently identify its producing application commit.
-
-All model work remains configured for Sol xhigh without Astra or weaker fallback. The previous actual-model test detected and fixed an extractor-label veto, but that fix did not resolve the separate paraphrase fallthrough now observed. Earlier 19-call synthetic evidence and green hosted/browser tests remain valid within their tested scope, not as general question-quality proof.
-
-## Preserved boundaries
-
-The v2 evidence contract, 23 neutral areas, participant authority, source timing, absence rules and episode/pattern separation remain. Direct self-reports do not need redundant approval; genuinely added interpretations do. Historical process facts may be quarantined for current interviewing, not silently erased. Legacy summaries are planning context, not recovered source evidence. No fixed episode/counterexample quota. No chart target or score enters elicitation. Recovery is not scientific freeze/validation.
-
-The existing passwordless prototype, one textbox, intended automatic continuation, Your patterns and pause/resume remain. No new service, public recruitment, model tournament or protected-main merge is authorized. The development PR remains draft/open/unmerged. This diagnostic writer's scope is complete; a subsequent implementation writer must acquire its own isolated scope.
-
-Earlier diagnosis: `state/LIFE-PATTERNS-OWNER-QUESTION-LOGIC-FAILURE-2026-09-17.md`.
-Continuing owner authority: `tasks/SURVEY-SOL-XHIGH-REPAIR-20260918.md`.
-The separately authorized owner post-freeze historical recovery regression remains later work.
-
-**There was never a completion policy.** See `state/OWNER-CORRECTION-2026-09-02.md`.
+**There was never a completion policy.** Preserve `state/OWNER-CORRECTION-2026-09-02.md`.
 
 Legacy affected checkpoint command, retained for repository preflight:
 

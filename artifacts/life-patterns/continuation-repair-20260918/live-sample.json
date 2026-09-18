@@ -1,0 +1,151 @@
+{
+  "schema": "survey-continuation-live-sample-v1",
+  "checked_at": "2026-09-18T19:54:04.802745+00:00",
+  "application_head": "f99702eb19007bb2bc53f73f9f83c1d38394fdfe",
+  "health": {
+    "status": "ok",
+    "development_surface": true,
+    "target_theory_blind": true,
+    "hidden_evidence_ledger": true,
+    "model_configured": true,
+    "model_profile": {
+      "interviewer_model": "gpt-5.6-sol",
+      "interviewer_reasoning": "xhigh",
+      "extraction_model": "gpt-5.6-sol",
+      "extraction_reasoning": "xhigh",
+      "semantic_max_output_tokens": 25000,
+      "automatic_model_fallback": false
+    },
+    "build_version": "survey-sol-xhigh-2026-09-18.3",
+    "build_commit": "f99702eb19007bb2bc53f73f9f83c1d38394fdfe",
+    "coverage_blueprint_version": "life-patterns-recoverability-coverage-v2",
+    "coverage_blueprint_sha256": "78ada435d4d3bb48d11f550c4a9f741066871e0f0c280c8ef73de407eb70641f",
+    "required_domain_count": 23,
+    "explicit_workflow_phase": true,
+    "revision_bound_operations": true,
+    "fixed_episode_quota": false,
+    "mandatory_counterexample_gate": false
+  },
+  "owner_sessions_accessed": 0,
+  "imported_snapshots": 0,
+  "sample_kind": "synthetic development; not general accuracy evidence",
+  "operations": [
+    {
+      "kind": "answer",
+      "duration_seconds": 18.88,
+      "phase": "awaiting_answer",
+      "reply": "When you make that rough schedule, what kinds of things do you decide in advance?",
+      "repair_frontier": null,
+      "new_fact_count": 0,
+      "pattern_active": false,
+      "new_model_calls": [
+        {
+          "schema": "life_patterns_participant_input_v1",
+          "requested_model": "gpt-5.6-sol",
+          "returned_model": "gpt-5.6-sol",
+          "reasoning_effort": "xhigh",
+          "status": "completed",
+          "duration_seconds": 3.062,
+          "input_tokens": 1611,
+          "output_tokens": 66,
+          "reasoning_tokens": 0
+        },
+        {
+          "schema": "life_patterns_pattern_specificity_v1",
+          "requested_model": "gpt-5.6-sol",
+          "returned_model": "gpt-5.6-sol",
+          "reasoning_effort": "xhigh",
+          "status": "completed",
+          "duration_seconds": 6.197,
+          "input_tokens": 1533,
+          "output_tokens": 261,
+          "reasoning_tokens": 176
+        },
+        {
+          "schema": "life_patterns_question_admission_v1",
+          "requested_model": "gpt-5.6-sol",
+          "returned_model": "gpt-5.6-sol",
+          "reasoning_effort": "xhigh",
+          "status": "completed",
+          "duration_seconds": 9.578,
+          "input_tokens": 1339,
+          "output_tokens": 370,
+          "reasoning_tokens": 223
+        }
+      ],
+      "route_kind": "answer",
+      "synthetic_input": "I write a rough schedule before an unfamiliar project, but I do familiar tasks without writing a plan."
+    },
+    {
+      "kind": "answer",
+      "duration_seconds": 8.6,
+      "phase": "awaiting_answer",
+      "reply": "I was asking about the distinction between the parts of an unfamiliar project you settle before starting and the parts you leave to decide while working. I was not asking you to choose between two motives or styles.\n\nWhat does your rough schedule usually specify?",
+      "repair_frontier": {
+        "next_action": "await_answer",
+        "question": "What does your rough schedule usually specify?"
+      },
+      "new_fact_count": 0,
+      "pattern_active": false,
+      "new_model_calls": [
+        {
+          "schema": "life_patterns_participant_input_v1",
+          "requested_model": "gpt-5.6-sol",
+          "returned_model": "gpt-5.6-sol",
+          "reasoning_effort": "xhigh",
+          "status": "completed",
+          "duration_seconds": 8.56,
+          "input_tokens": 1695,
+          "output_tokens": 359,
+          "reasoning_tokens": 256
+        }
+      ],
+      "route_kind": "repair",
+      "synthetic_input": "I don't understand your last question. Please explain what distinction you are asking about."
+    },
+    {
+      "kind": "answer",
+      "duration_seconds": 8.08,
+      "phase": "awaiting_answer",
+      "reply": "Understood\u2014the clarification resolved the issue.\n\nWhat does your rough schedule usually specify?",
+      "repair_frontier": {
+        "next_action": "await_answer",
+        "question": "What does your rough schedule usually specify?"
+      },
+      "new_fact_count": 0,
+      "pattern_active": false,
+      "new_model_calls": [
+        {
+          "schema": "life_patterns_participant_input_v1",
+          "requested_model": "gpt-5.6-sol",
+          "returned_model": "gpt-5.6-sol",
+          "reasoning_effort": "xhigh",
+          "status": "completed",
+          "duration_seconds": 8.039,
+          "input_tokens": 1838,
+          "output_tokens": 363,
+          "reasoning_tokens": 282
+        }
+      ],
+      "route_kind": "repair",
+      "synthetic_input": "That explanation resolves my objection; I have no new information about myself to add in this message. Please continue the interview."
+    },
+    {
+      "kind": "pause",
+      "duration_seconds": 0.04,
+      "phase": "paused",
+      "reply": null,
+      "repair_frontier": {
+        "next_action": "await_answer",
+        "question": "What does your rough schedule usually specify?"
+      },
+      "new_fact_count": 0,
+      "pattern_active": false,
+      "new_model_calls": []
+    }
+  ],
+  "status": "completed_sample",
+  "finished_at": "2026-09-18T19:54:40.448115+00:00",
+  "synthetic_session_paused": true,
+  "interpretation": "The live sample verified the new strict repair schema, a genuine clarified question, no process-derived behavioral facts, and explicit pause. A request to continue after explanation retained the still-unanswered original question; it was not a withdrawal-with-no-question case. That latter path and legacy automatic recovery passed the composed browser tests. No general accuracy estimate."
+}
