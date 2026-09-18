@@ -27,7 +27,7 @@ from .life_patterns_v2_owner_recoverability import (
 )
 from .life_patterns_v2_owner_workflow import InterviewOperation, WorkflowConflict, WorkflowSession
 
-BUILD_VERSION = "survey-sol-xhigh-2026-09-18.2"
+BUILD_VERSION = "survey-sol-xhigh-2026-09-18.3"
 
 
 class RestoreRequest(BaseModel):
@@ -100,8 +100,9 @@ def measurement_package(session: WorkflowSession) -> dict[str, Any]:
                 "proposal_id": p["proposal_id"],
                 "corrections": p["corrections"],
             }
-            for p in view["patterns"]
+            for p in view["patterns"] if p["origin"] != "source_summary"
         ],
+        "reported_summaries": [p for p in view["patterns"] if p["origin"] == "source_summary"],
         "aggregate_coverage": view["aggregate_coverage"],
         "evidence_archive": committed["snapshot"],
         "pending_inference": view["pattern_proposition"],

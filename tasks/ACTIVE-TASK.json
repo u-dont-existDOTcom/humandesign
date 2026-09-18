@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "taskId": "life-patterns-v2-astrohd-recoverability-owner-retest",
-  "status": "owner_retest_failed_direct_paraphrase_fallthrough_and_repair_continuation_stall_diagnosed",
+  "status": "paraphrase_frontier_candidate_verified_local_awaiting_hosted_and_deployment",
   "exclusive": true,
-  "requiredBranch": "codex/discover-life-patterns-mvp",
+  "requiredBranch": "chat/repair-paraphrase-frontier-20260918-1931",
   "pullRequest": 24,
   "currentStateOverlay": "state/CURRENT-STATE.md",
   "continuousFlowRepairReceiptPath": "state/LIFE-PATTERNS-v2-OWNER-CONTINUOUS-FLOW-QUESTION-ADMISSION-2026-09-17.md",
@@ -20,7 +20,7 @@
   "continuousFlowDeploymentSourceHead": "56796a842ef3bc453f12f65c138458656e441490",
   "continuousFlowDeploymentStatus": "success",
   "continuousFlowHealth": "200_ok",
-  "surveyImplementationApproval": "approve all — 2026-09-17",
+  "surveyImplementationApproval": "approve all \u2014 2026-09-17",
   "surveyImplementationReceipt": "state/LIFE-PATTERNS-SOL-XHIGH-REPAIR-20260918.md",
   "surveyImplementationCodeHead": "78543a9f876b1105c4d62757b8b5f5119cc7b5e5",
   "surveyImplementationCIHead": "78543a9f876b1105c4d62757b8b5f5119cc7b5e5",
@@ -65,7 +65,7 @@
   "semanticChangeRequired": false,
   "productStrategyReplacementRequired": true,
   "currentProductGap": "Owner retest failed: a formulation reviewed as direct still falls through into inference approval when exact single-source quoting fails; resolved withdrawal then leaves awaiting_answer without a question or pending operation. Original source facts remain. Diagnosis is recorded; no current runtime repair is implemented.",
-  "nextAction": "Repair semantic-decision-to-runtime-action handling using the source-bound diagnosis and a synthetic composed regression. Distinguish no-added-inference summaries from new interpretations, and resolved repairs from genuine pending questions. Preserve provenance, model selection, pause and recovery. Do not ask for another unchanged owner retest or add a broader assurance campaign.",
+  "nextAction": "Observe hosted tests on exact candidate, integrate the isolated patch, deploy existing owner surface, and verify recovery/frontier behavior before final delivery.",
   "ownerAuthority": "The owner approved the complete survey improvement plan. Preserve a dynamic standardized interview that remembers prior answers, advances automatically, keeps an always-visible finish/pause escape, suppresses redundant or low-information questions before display, and uses one flexible correction textbox. Preserve enough behavioral information for the separate historical owner DOB/time recovery criterion. Owner-self post-freeze recovery is authorized; chart-aware elicitation, external participant scoring, recruitment, publication, merge/release, provider/model changes and broader target-model activity are not. Owner subsequently explicitly authorized Sol xhigh and all question-logic/repair/source-isolation/anti-recycling fixes; the earlier model-change prohibition is superseded for this task.",
   "developmentPrototypeDeploymentAuthorized": true,
   "developmentPrototypeDomain": "life-patterns-owner-production.up.railway.app",
@@ -114,7 +114,7 @@
   "authorizedSemanticModel": "gpt-5.6-sol",
   "authorizedSemanticReasoning": "xhigh",
   "boundedSyntheticModelVerificationAuthorized": true,
-  "writeBranch": "chat/owner-paraphrase-stall-audit-20260918-1813",
+  "writeBranch": "chat/repair-paraphrase-frontier-20260918-1931",
   "solXhighAllModelCalls": true,
   "solXhighRepairReceipt": "state/LIFE-PATTERNS-SOL-XHIGH-REPAIR-20260918.md",
   "strategyEfficacy": "REPLACEMENT_REQUIRED",
@@ -122,5 +122,5 @@
   "priorOwnerOutcomeAdvancement": "REGRESSING_OWNER_REPORTED",
   "boundedSpendingAuthority": "Explicit owner-selected Sol xhigh runtime and the completed bounded synthetic verification; no unbounded evaluation campaign.",
   "ownerParaphraseStallDiagnosis": "state/LIFE-PATTERNS-OWNER-PARAPHRASE-STALL-20260918.md",
-  "latestPassScope": "checkpoint_and_source_diagnosis_only_no_runtime_mutation_or_model_call"
+  "latestPassScope": "implementation_and_existing_development_deployment"
 }

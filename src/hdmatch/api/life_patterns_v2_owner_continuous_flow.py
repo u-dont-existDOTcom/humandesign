@@ -16,7 +16,7 @@ from typing import Any, Literal, cast
 from fastapi import FastAPI
 from pydantic import BaseModel, Field
 
-from .life_patterns_v2_owner_dialogue import ParticipantInput, ROUTING_POLICY, QUESTION_POLICY, INTERVIEW_POLICY
+from .life_patterns_v2_owner_dialogue import ParticipantInput, RepairFrontier, ROUTING_POLICY, QUESTION_POLICY, INTERVIEW_POLICY
 from .life_patterns_v2_owner_context import current_interview_context
 from .life_patterns_v2_owner_conversation import ConversationMove
 from .life_patterns_v2_owner_natural_flow import (
@@ -77,14 +77,37 @@ class ContinuousFlowRecoverabilityOpenAIModel(NaturalFlowRecoverabilityOpenAIMod
                          "reasoning_tokens": (usage.get("output_tokens_details") or {}).get("reasoning_tokens")})
 
     def route_participant_turn(self, *, message: str, evidence_context: dict[str, Any]) -> ParticipantInput:
+        schema = ParticipantInput.model_json_schema()
+        # Pydantic keeps a default for old persisted routes; live strict output requires every field.
+        schema["required"] = list(schema["properties"])
+        schema["properties"]["repair_frontier"].pop("default", None)
         result = self._conversation_call_json(
             instructions=ROUTING_POLICY,
             payload={"latest_participant_message": message},
-            schema=ParticipantInput.model_json_schema(), effort="medium", max_output_tokens=1800,
+            schema=schema, effort="medium", max_output_tokens=1800,
             schema_name="life_patterns_participant_input_v1")
         route = ParticipantInput.model_validate(result)
         route.check_source(message)
         return route
+
+    def recover_repair_frontier(self, *, evidence_context: dict[str, Any]) -> RepairFrontier:
+        """One-time migration of legacy repair state; no new evidence or fake user turn."""
+        last: dict[str, str] = next((r for r in reversed(evidence_context["conversation"]) if r["role"] == "assistant"), {})
+        raw = self._conversation_call_json(
+            instructions=("Recover the next action after the LAST ALREADY-SENT assistant repair. "
+                          "Use await_answer only if that reply or its clarified still-live request actually "
+                          "leaves a concrete participant question unanswered; copy that question exactly "
+                          "from the conversation into question. Use await_judgment only for a still-live "
+                          "pending inference. A resolved acknowledgement or withdrawn draft with no question "
+                          "requires continue_interview and question=empty. Do not invent a question, "
+                          "interpret feedback as personality evidence, mark coverage complete, or end the interview."),
+            payload={"last_assistant_reply": last.get("text", "")},
+            schema=RepairFrontier.model_json_schema(), effort="medium", max_output_tokens=1200,
+            schema_name="life_patterns_legacy_repair_frontier_v1")
+        frontier = RepairFrontier.model_validate(raw)
+        if frontier.question and not any(frontier.question in r["text"] for r in evidence_context["conversation"] if r["role"] == "assistant"):
+            raise ValueError("Legacy repair recovery invented a source question")
+        return frontier
 
     def _conversation_call_json(
         self,

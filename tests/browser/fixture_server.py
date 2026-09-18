@@ -11,6 +11,8 @@ from hdmatch.api.life_patterns_v2_owner_conversation import (
     TurnExtraction,
 )
 from hdmatch.api.life_patterns_v2_owner_natural_flow import TopicCompleteMove
+from hdmatch.api.life_patterns_v2_owner_context import current_interview_context
+from hdmatch.api.life_patterns_v2_owner_persistent import _canonical_sha
 from hdmatch.api.life_patterns_v2_owner_workflow_api import create_workflow_app
 
 
@@ -19,11 +21,16 @@ class SyntheticModel:
 
     def route_participant_turn(self, **kwargs: Any) -> dict[str, Any]:
         message = kwargs["message"]
+        if message == "That is not a new connection.":
+            return {"kind": "repair", "evidence_quotes": [], "repair_reply": "I have withdrawn the misleading draft.",
+                    "withdraw_pending_inference": True, "historical_process_turn_ids": [],
+                    "repair_frontier": {"next_action": "continue_interview", "question": ""}}
         repair = message == "Please clarify your question."
         return {"kind": "repair" if repair else "answer",
                 "evidence_quotes": [] if repair else [message],
                 "repair_reply": "My alternatives can coexist; that contrast was not justified." if repair else "",
-                "withdraw_pending_inference": False, "historical_process_turn_ids": []}
+                "withdraw_pending_inference": False, "historical_process_turn_ids": [],
+                "repair_frontier": {"next_action": "await_answer", "question": "What happened next in that same situation?"} if repair else None}
 
     def extract_turn(self, **kwargs: Any) -> TurnExtraction:
         return TurnExtraction(
@@ -40,6 +47,10 @@ class SyntheticModel:
         text = next(
             r["text"] for r in reversed(kwargs["recent_conversation"]) if r["role"] == "user"
         )
+        if "summary second" in text and not any(p.get("origin") == "source_summary" for p in (current_interview_context() or {}).get("patterns", [])):
+            return ConversationMove(reply="A connection?", move_type="surface_hypothesis",
+                hypothesis_proposition="The participant walks on weekdays and cycles on weekends.",
+                evidence_fact_ids=tuple(f.fact_id for f in kwargs["operative_facts"]))
         if "end this area" in text or "no useful" in text:
             return TopicCompleteMove(reply="Moving to the next useful distinction.")
         if "direct pattern" in text:
@@ -59,6 +70,15 @@ class SyntheticModel:
         return ConversationMove(
             reply="What tells you that a different response is needed?", move_type="follow_up"
         )
+
+    def review_pattern_candidate(self, **kwargs: Any) -> dict[str, Any]:
+        wording = kwargs["move"].hypothesis_proposition or ""
+        return ({"decision": "inference", "inference_added": "Context may account for the difference.",
+                 "inference_quote": "depend on context"} if "may depend on context" in wording
+                else {"decision": "direct", "inference_added": "", "inference_quote": ""})
+
+    def recover_repair_frontier(self, **kwargs: Any) -> dict[str, str]:
+        return {"next_action": "continue_interview", "question": ""}
 
     def plan_refinement_turn(self, **kwargs: Any) -> ConversationMove:
         return ConversationMove(reply="Which condition is still unclear?", move_type="follow_up")
@@ -91,3 +111,19 @@ runtime.create_session = MethodType(create_ready, runtime)
 def drop(session_id: str) -> dict[str, bool]:
     runtime.sessions.pop(session_id, None)
     return {"dropped": True}
+
+
+@app.post("/__test/legacy-repair/{session_id}")
+def legacy_repair(session_id: str) -> dict[str, Any]:
+    """Only synthetic loopback tests use this old-state migration fixture."""
+    session = runtime.get(session_id)
+    session._append_reply("The old draft has been withdrawn.", "conversation_repair")
+    session.repair_pending = True
+    snapshot = session.recovery_snapshot()
+    snapshot["workflow"]["semantic_policy_version"] = 3
+    snapshot["workflow"].pop("repair_frontier", None)
+    snapshot["workflow"].pop("repair_needs_review", None)
+    snapshot.pop("recovery_sha256")
+    snapshot["recovery_sha256"] = _canonical_sha(snapshot)
+    runtime.sessions.pop(session_id)
+    return snapshot

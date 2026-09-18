@@ -112,7 +112,7 @@ function renderPatterns(){
   if(!rows.length)appendText(list,'p','No patterns recorded yet. You do not need to manufacture one to make progress.');
   for(const row of rows){
     const el=appendText(list,'article','','pattern');
-    const label=row.origin==='direct_report'?'Directly stated by you':row.origin==='legacy_recovery'?'Recovered from an older interview':'Interviewer connection';
+    const label=row.origin==='direct_report'?'Directly stated by you':row.origin==='legacy_recovery'?'Recovered from an older interview':row.origin==='source_summary'?'Summary of your reports — not a new inference':'Interviewer connection';
     appendText(el,'div',`${label} · ${row.status}`,'meta');appendText(el,'p',row.wording);
     if(row.scope_note)appendText(el,'p',row.scope_note,'note');
     if(row.exception_note)appendText(el,'p',row.exception_note,'note');
@@ -165,7 +165,7 @@ async function transmit(){
     const p=await http(`/api/owner-v2/conversation/sessions/${encodeURIComponent(session_id)}/operations`,{method:'POST',body:operation});
     if(epoch!==S.epoch||S.view?.session_id!==session_id)return;
     accept(p);completePending();
-    S.notice=p.direct_pattern_recorded?'Saved to your patterns from your own words.':p.correction_saved?'Your correction is saved; the earlier interpretation is now marked disputed.':p.status==='accepted'?'Connection saved to your patterns.':p.no_useful_question?'No extra question has been added just to fill a gap.':'';
+    S.notice=p.direct_pattern_recorded?'Saved to your patterns from your own words.':p.reported_summary_recorded?'Summary saved with its original sources.':p.correction_saved?'Your correction is saved; the earlier interpretation is now marked disputed.':p.status==='accepted'?'Connection saved to your patterns.':p.no_useful_question?'No extra question has been added just to fill a gap.':'';
     persist();
   }catch(e){if(epoch===S.epoch){S.error=e.message;persist();}}
   finally{if(epoch===S.epoch){S.busy=false;render();await nextStep();}}
@@ -173,6 +173,7 @@ async function transmit(){
 async function nextStep(){
   if(S.busy||S.pending||S.loading||S.restoreError||S.otherTab||!S.view)return;
   if(S.paused){if(S.view.phase!=='paused')await perform('pause');return;}
+  if(S.view.repair_needs_review){await perform('review_repair');return;}
   if(S.view.draft_needs_review){await perform('review_draft');return;}
   if(S.view.phase==='advancing')await perform('advance');
 }

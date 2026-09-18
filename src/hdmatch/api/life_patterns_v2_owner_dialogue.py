@@ -6,11 +6,26 @@ from typing import Literal
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 
+class RepairFrontier(BaseModel):
+    """An explanation is not itself an unanswered participant question."""
+
+    model_config = ConfigDict(extra="forbid")
+    next_action: Literal["await_answer", "await_judgment", "continue_interview"]
+    question: str = Field(max_length=2400)
+
+    @model_validator(mode="after")
+    def coherent(self) -> RepairFrontier:
+        if (self.next_action == "await_answer") != bool(self.question.strip()):
+            raise ValueError("Waiting for an answer requires one explicit question; other actions do not")
+        return self
+
+
 class ParticipantInput(BaseModel):
     model_config = ConfigDict(extra="forbid")
     kind: Literal["answer", "repair", "mixed", "skip", "pause"]
     evidence_quotes: list[str] = Field(max_length=12)
     repair_reply: str = Field(max_length=2400)
+    repair_frontier: RepairFrontier | None = None
     withdraw_pending_inference: bool
     historical_process_turn_ids: list[str] = Field(max_length=40)
 
@@ -22,6 +37,10 @@ class ParticipantInput(BaseModel):
             raise ValueError("An answer must preserve a source span")
         if self.kind in {"repair", "mixed"} and not self.repair_reply.strip():
             raise ValueError("An interview objection must be addressed")
+        if self.kind == "repair" and self.repair_frontier is None:
+            raise ValueError("A repair must name the next conversational action")
+        if self.kind != "repair" and self.repair_frontier is not None:
+            raise ValueError("Only a pure repair uses the repair frontier")
         return self
 
     def check_source(self, message: str) -> None:
@@ -42,9 +61,13 @@ contiguous verbatim evidence spans with their negation, attribution and qualific
 Answer their objection first in repair_reply. For mixed input keep that acknowledgement brief and about the process request, without reciting the behavioral evidence again. A substantive correction to a proposed pattern belongs in
 answer/mixed, not discarded as process feedback. Return pause only for an explicit request to pause/end
 the interview and skip only for an explicit request to change topic. Uncertainty is not consent to stop.
-For repair, repair_reply is the FULL next response: address the exact question or distinction they
-challenged, explain it only if coherent, otherwise plainly withdraw the unsupported premise. You may
-ask one clear repaired question on that same topic when useful; a short explanation alone is also fine.
+For repair, repair_reply addresses the exact question or distinction they challenged: explain it only
+if coherent, otherwise plainly withdraw the unsupported premise. Put any clear same-topic question in
+repair_frontier.question, not in the explanation. Set repair_frontier.next_action to await_answer only
+when that question needs an answer; await_judgment only when a valid existing inference remains for their
+judgment; otherwise continue_interview with question="". A resolved withdrawal is not a reason to wait
+for an absent answer. Continuing selects the next useful move on the current focus before changing area.
+For non-repair inputs repair_frontier is null. Do not end the interview merely because a repair is resolved.
 Do not defend invented alternatives, switch topics, ask them to repair your logic, draw a new personality
 inference, re-present a known pattern, or announce enough information/completion. Distinguish means from
 ends, willingness from opportunity, and actions from simultaneous feelings. Do not transfer a condition
@@ -83,7 +106,9 @@ or one example into a universal rule. No diagnoses, flattery, theoretical target
 Use surface_hypothesis for a useful person-specific statement not already recorded. If it is directly
 stated, hypothesis_proposition must be a COMPLETE supported contiguous verbatim source excerpt and cited
 facts must originate in that same turn. Reply 'I have saved that from your own words.', not a completion
-claim. A genuinely new inferred relationship requires a tentative formulation and participant judgment.
+claim. A faithful paraphrase or assembly of multiple stated claims is still a report, NOT an inference.
+The runtime stores it as a source-linked summary without requesting approval; do not invent a new relation
+to qualify it for review. A genuinely new inferred relationship requires a tentative formulation and participant judgment.
 Check earlier patterns before proposing one. Repeating or rephrasing a settled statement is not discovery.
 Shared evidence can support a genuinely different inference; do not confuse shared sources with identical
 meaning. After a correction, use the actual corrected scope rather than the rejected premise.

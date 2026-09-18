@@ -13,7 +13,10 @@ from hdmatch.api.life_patterns_v2_owner_natural_flow import TopicCompleteMove
 
 def route(kind: str, quotes: list[str], reply: str = "", withdraw: bool = False, historical: list[str] | None = None) -> dict[str, Any]:
     return {"kind": kind, "evidence_quotes": quotes, "repair_reply": reply,
-            "withdraw_pending_inference": withdraw, "historical_process_turn_ids": historical or []}
+            "withdraw_pending_inference": withdraw, "historical_process_turn_ids": historical or [],
+            "repair_frontier": {"next_action": "continue_interview" if withdraw else "await_answer",
+                                "question": "" if withdraw else "What happened next in that same situation?"}
+            if kind == "repair" else None}
 
 
 class RoutedModel(Model):
@@ -125,7 +128,8 @@ def test_repair_can_retire_unjudged_duplicate_without_rewriting_accepted_record(
     before = s.core.record.model_dump(mode="json")
     model.routing = route("repair", [], "That was not a new interpretation; I have withdrawn it.", True)
     result = s.execute(op(s, "answer", {"message": "You already said that."}))
-    assert result["view"]["phase"] == "awaiting_answer"
+    assert result["view"]["phase"] == "advancing"
+    assert s.continue_current_focus
     assert len(s.retired_drafts) == 1 and not s.retired_drafts[0]["adjudicated"]
     assert s.core.record.model_dump(mode="json") == before
 

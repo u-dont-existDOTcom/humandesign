@@ -130,6 +130,43 @@ try{
    assert.equal(await page.evaluate(()=>lifePatternsClient.state.view.patterns.length),before);
    assert.equal(await visible('patternPanel'),false);
  });
+ await test('multi-turn-paraphrase-recorded-without-inference-approval',async()=>{
+   await fresh();await send('summary first: I walk on weekdays.');await send('summary second: I cycle on weekends.');
+   assert.equal((await state()).phase,'awaiting_answer');assert.equal(await visible('patternPanel'),false);
+   const data=await page.evaluate(()=>({summaries:lifePatternsClient.state.snapshot.workflow.reported_summaries,
+     adjudications:lifePatternsClient.state.snapshot.record.participant_adjudications,
+     last:lifePatternsClient.state.view.conversation.at(-1).text}));
+   assert.equal(data.summaries.length,1);assert.equal(data.adjudications.length,0);assert(data.last.endsWith('?'));
+   await page.click('#viewPatterns');assert((await page.$eval('#patternsList',e=>e.textContent)).includes('not a new inference'));
+   await page.click('#closePatterns');
+ });
+ await test('resolved-withdrawal-automatically-selects-next-current-focus-question',async()=>{
+   await fresh();await send('Please explore an inference.');
+   const before=await page.evaluate(()=>lifePatternsClient.state.snapshot.record.episode_facts.length);
+   await send('That is not a new connection.');
+   assert.equal((await state()).phase,'awaiting_answer');assert.equal(await visible('patternPanel'),false);
+   assert.equal(await page.evaluate(()=>lifePatternsClient.state.snapshot.record.episode_facts.length),before);
+   assert((await page.evaluate(()=>lifePatternsClient.state.view.conversation.at(-1).text)).endsWith('?'));
+   assert.equal(await page.evaluate(()=>lifePatternsClient.state.view.repair_pending),false);
+ });
+ await test('resolved-repair-next-question-failure-remains-visible-and-retryable',async()=>{
+   await fresh();await send('Please explore an inference.');fault='advance';await send('That is not a new connection.');
+   assert.equal((await state()).pending.kind,'advance');assert.equal(await visible('retryAction'),true);
+   await page.click('#retryAction');await settle();assert.equal((await state()).phase,'awaiting_answer');
+   assert.equal(await page.evaluate(()=>lifePatternsClient.state.view.conversation.filter(r=>r.text==='That is not a new connection.').length),1);
+ });
+ await test('legacy-stalled-repair-recovers-automatically-without-new-user-message',async()=>{
+   await fresh();await send('An existing synthetic answer.');
+   const before=await page.evaluate(()=>lifePatternsClient.state.view.conversation.filter(r=>r.role==='user').length);
+   const sid=await page.evaluate(()=>lifePatternsClient.state.view.session_id);
+   const snapshot=await(await fetch(base+'/__test/legacy-repair/'+sid,{method:'POST'})).json();
+   await page.evaluate(snapshot=>{const key='lifePatternsExactRecoveryV2';const b=JSON.parse(localStorage.getItem(key));
+     b.server_snapshot=snapshot;localStorage.setItem(key,JSON.stringify(b));},snapshot);
+   await page.reload();await settle();assert.equal((await state()).phase,'awaiting_answer');
+   assert.equal(await page.evaluate(()=>lifePatternsClient.state.view.repair_needs_review),false);
+   assert.equal(await page.evaluate(()=>lifePatternsClient.state.view.conversation.filter(r=>r.role==='user').length),before);
+   assert((await page.evaluate(()=>lifePatternsClient.state.view.conversation.at(-1).text)).endsWith('?'));
+ });
  await test('responsive-and-reduced-motion',async()=>{
    await fresh();await page.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);
    for(const width of [320,375,414,768,1024,1440]){await page.setViewport({width,height:900});

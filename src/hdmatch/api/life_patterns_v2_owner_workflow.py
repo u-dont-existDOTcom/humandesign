@@ -16,14 +16,14 @@ from pydantic import BaseModel, ConfigDict, Field
 from .life_patterns_v2_owner_app import PatternAdjudicationRequest
 from .life_patterns_v2_owner_context import interview_context
 from .life_patterns_v2_owner_conversation import ConversationMove
-from .life_patterns_v2_owner_dialogue import ParticipantInput
+from .life_patterns_v2_owner_dialogue import ParticipantInput, RepairFrontier
 from .life_patterns_v2_owner_natural_flow import NaturalFlowRecoverabilitySession
 from .life_patterns_v2_owner_persistent import _canonical_sha
 from .life_patterns_v2_owner_recoverability import _open_domains, _normalize_recoverability_coverage
 
 Phase = Literal["awaiting_answer", "synthesis_review", "advancing", "paused", "bounded", "complete"]
 Kind = Literal[
-    "answer", "advance", "adjudicate", "investigate", "pause", "resume", "annotate", "reconstruct", "review_draft"
+    "answer", "advance", "adjudicate", "investigate", "pause", "resume", "annotate", "reconstruct", "review_draft", "review_repair"
 ]
 PHASES = {"awaiting_answer", "synthesis_review", "advancing", "paused", "bounded", "complete"}
 QUESTION_MOVES = {"follow_up", "request_contrast", "boundary_question"}
@@ -67,6 +67,11 @@ class WorkflowSession(NaturalFlowRecoverabilitySession):
         self._suppressed_formulation: str | None = None
         self.draft_needs_review = False
         self._reviewing_emission = False
+        self.reported_summaries: list[dict[str, Any]] = []
+        self._reported_summary_recorded = False
+        self.continue_current_focus = False
+        self.repair_frontier: dict[str, Any] | None = None
+        self.repair_needs_review = False
 
     def evidence_context(self) -> dict[str, Any]:
         # The practical interview's whole source archive, not a different latest-N
@@ -76,6 +81,8 @@ class WorkflowSession(NaturalFlowRecoverabilitySession):
             "model_call_sink": self.model_calls,
             "active_domain_id": self.active_domain_id,
             "workflow_phase": self.phase,
+            "continue_current_focus": self.continue_current_focus,
+            "repair_frontier": deepcopy(self.repair_frontier),
             "repair_pending": self.repair_pending,
             "pending_inference": self._active_proposition() if self._draft_move else None,
             "evidence_conversation": self._evidence_conversation(),
@@ -157,6 +164,7 @@ class WorkflowSession(NaturalFlowRecoverabilitySession):
         if move.move_type == "surface_hypothesis":
             self._suppressed_formulation = None
             self._auto_recorded_direct_result = None
+            self._reported_summary_recorded = False
             self._create_pattern(move)
             if self._suppressed_formulation:
                 reason = self._suppressed_formulation
@@ -166,6 +174,9 @@ class WorkflowSession(NaturalFlowRecoverabilitySession):
                     "follow_up" if self._draft_move else "topic_complete",
                     formulation_suppressed=reason, topic_complete=self._draft_move is None,
                     skip_question_admission=True)
+            if self._reported_summary_recorded:
+                return self._append_reply("Saved a summary of what you reported.", "reported_summary",
+                                          reported_summary_recorded=True)
             if self._auto_recorded_direct_result is not None:
                 result = dict(self._auto_recorded_direct_result)
                 self._auto_recorded_direct_result = None
@@ -204,11 +215,16 @@ class WorkflowSession(NaturalFlowRecoverabilitySession):
                 return self._append_reply("We can leave this topic open and move on.", "conversation_control", process_only=True)
             if route.withdraw_pending_inference:
                 self._retire_draft("withdrawn_during_conversation_repair")
-            self.repair_pending = True
-            self.phase = "synthesis_review" if self._draft_move else "awaiting_answer"
-            return self._append_reply(route.repair_reply, "conversation_repair", process_only=True)
+            assert route.repair_frontier is not None
+            self._set_repair_frontier(route.repair_frontier)
+            reply = route.repair_reply
+            if route.repair_frontier.question:
+                reply += "\n\n" + route.repair_frontier.question
+            return self._append_reply(reply, "conversation_repair", process_only=True)
 
         self.repair_pending = route.kind == "mixed"
+        self.repair_frontier = None
+        self.continue_current_focus = False
         if route.withdraw_pending_inference:
             self._retire_draft("participant_corrected_unsupported_draft")
         if not self.pattern_focus_established:
@@ -227,14 +243,7 @@ class WorkflowSession(NaturalFlowRecoverabilitySession):
             operative_facts=self._planning_facts(), recent_conversation=tuple(self._evidence_conversation()))
         self._apply_extraction(extraction=extraction, turn_id=turn_id, message=message,
                                start_new_episode=self.awaiting_new_episode or self.current_episode_id is None)
-        kwargs: dict[str, Any] = {"current_episode_id": self.current_episode_id, "episodes": self.core.record.episodes,
-                  "operative_facts": self._planning_facts(), "recent_conversation": tuple(self.conversation)}
-        refiner = getattr(self.model, "plan_refinement_turn", None)
-        if self._draft_move and callable(refiner):
-            move = refiner(current_proposition=self._active_proposition(),
-                                                    refinement_mode="answer", **kwargs)
-        else:
-            move = self.model.plan_turn(boundary_answered=self.boundary_answered, **kwargs)
+        move = self._plan_current_focus()
         # A draft grounded in superseded or quarantined facts cannot remain operative.
         if self._draft_move and not set(self._draft_move.evidence_fact_ids) <= {f.fact_id for f in self._planning_facts()}:
             self._retire_draft("source_corrected_or_quarantined")
@@ -242,6 +251,46 @@ class WorkflowSession(NaturalFlowRecoverabilitySession):
         if route.kind == "mixed":
             result["repair_acknowledgement"] = route.repair_reply
         return result
+
+    def _set_repair_frontier(self, frontier: RepairFrontier) -> None:
+        if frontier.next_action == "await_judgment" and self._draft_move is None:
+            raise ValueError("Cannot await judgment of an absent inference")
+        self.repair_frontier = frontier.model_dump(mode="json")
+        self.repair_needs_review = False
+        self.repair_pending = frontier.next_action != "continue_interview"
+        self.continue_current_focus = frontier.next_action == "continue_interview"
+        self.phase = ("advancing" if self.continue_current_focus else
+                      "synthesis_review" if self._draft_move else "awaiting_answer")
+
+    def _plan_current_focus(self) -> Any:
+        kwargs: dict[str, Any] = {"current_episode_id": self.current_episode_id,
+                                 "episodes": self.core.record.episodes,
+                                 "operative_facts": self._planning_facts(),
+                                 "recent_conversation": tuple(self.conversation)}
+        refiner = getattr(self.model, "plan_refinement_turn", None)
+        if self._draft_move and callable(refiner):
+            return refiner(current_proposition=self._active_proposition(), refinement_mode="answer", **kwargs)
+        return self.model.plan_turn(boundary_answered=self.boundary_answered, **kwargs)
+
+    def _save_report_summary(self, move: ConversationMove) -> None:
+        facts = {f.fact_id: f for f in self._planning_facts()}
+        source_ids = sorted({sid for fid in move.evidence_fact_ids
+                             for sid in (*facts[fid].source_provenance_ids,
+                                         *facts[fid].participant_correction_provenance_ids)})
+        sources = {"SRC-" + row["turn_id"]: row["text"] for row in self.conversation if row["role"] == "user"}
+        if not source_ids or not all(sid in sources for sid in source_ids):
+            self._suppressed_formulation = "summary_source_unavailable"
+            return
+        wording = str(move.hypothesis_proposition)
+        self.reported_summaries.append({
+            "summary_id": "SUMMARY-" + uuid.uuid4().hex,
+            "wording": wording, "evidence_fact_ids": list(move.evidence_fact_ids),
+            "source_provenance_ids": source_ids, "recorded_revision": self.revision + 1,
+            "authorship": "model_summary_of_participant_reports", "participant_adjudicated": False})
+        if self._draft_move and self._draft_move.hypothesis_proposition == wording:
+            self._retire_draft("reclassified_as_source_summary_without_adjudication")
+        self._reported_summary_recorded = True
+        self.continue_current_focus = self._draft_move is None
 
     def patterns(self) -> list[dict[str, Any]]:
         proposals = {p.proposal_id: p for p in self.core.record.pattern_proposals}
@@ -287,6 +336,14 @@ class WorkflowSession(NaturalFlowRecoverabilitySession):
                     "corrections": deepcopy(notes),
                 }
             )
+        for summary in self.reported_summaries:
+            notes = [n for n in self.pattern_notes if n["proposal_id"] == summary["summary_id"]]
+            rows.append({"proposal_id": summary["summary_id"], "summary_id": summary["summary_id"],
+                         "wording": summary["wording"], "origin": "source_summary",
+                         "status": "disputed" if notes else "reported", "participant_adjudicated": False,
+                         "sources": [{"source_id": sid, "text": sources.get(sid.removeprefix("SRC-"), "Source unavailable.")}
+                                     for sid in summary["source_provenance_ids"]],
+                         "corrections": deepcopy(notes)})
         known = {r["wording"] for r in rows}
         for i, row in enumerate(self.legacy_patterns):
             if row.get("wording") and row["wording"] not in known:
@@ -323,6 +380,9 @@ class WorkflowSession(NaturalFlowRecoverabilitySession):
             "active_domain_id": self.active_domain_id,
             "repair_pending": self.repair_pending,
             "draft_needs_review": self.draft_needs_review,
+            "repair_needs_review": self.repair_needs_review,
+            "continue_current_focus": self.continue_current_focus,
+            "repair_frontier": deepcopy(self.repair_frontier),
             "model_profile": getattr(self.model, "model_profile", lambda: {})(),
         }
 
@@ -369,6 +429,12 @@ class WorkflowSession(NaturalFlowRecoverabilitySession):
                     return
             self.inference_note = str(review.get("inference_added", ""))
             self._direct_context_safe = review.get("decision") == "direct"
+            if self._direct_context_safe and self._direct_report_source(move) is None:
+                self._save_report_summary(move)
+                self.draft_needs_review = False
+                return
+            if review.get("decision") not in {"direct", "inference"}:
+                raise ValueError("The formulation review did not return a supported decision")
         else:
             self._direct_context_safe = True
         super()._create_pattern(move)
@@ -437,6 +503,13 @@ class WorkflowSession(NaturalFlowRecoverabilitySession):
         return result
 
     def _advance(self) -> dict[str, Any]:
+        if self.continue_current_focus:
+            self.continue_current_focus = False
+            self.repair_pending = False
+            self.repair_frontier = None
+            result = self._admit_final_question(self._emit_move(self._plan_current_focus()))
+            self._set_result_phase(result)
+            return {**result, "complete": False}
         domains = _open_domains(list(self.coverage_aggregate.values()))
         if not domains:
             self.phase = "complete"
@@ -509,6 +582,19 @@ class WorkflowSession(NaturalFlowRecoverabilitySession):
             return {"correction_saved": True}
         if self.phase == "paused":
             raise WorkflowConflict("Resume the interview before submitting another response.")
+        if self.repair_needs_review and kind in {"answer", "advance", "adjudicate", "investigate"}:
+            raise WorkflowConflict("The saved repair frontier must be recovered first.")
+        if kind == "review_repair":
+            if not self.repair_needs_review:
+                return {"repair_checked": True}
+            recover = getattr(self.model, "recover_repair_frontier", None)
+            if not callable(recover):
+                raise ValueError("The interviewer cannot recover the legacy repair frontier")
+            frontier = RepairFrontier.model_validate(recover(evidence_context=self.evidence_context()))
+            self._set_repair_frontier(frontier)
+            if frontier.question and (not self.conversation or frontier.question not in self.conversation[-1]["text"]):
+                return self._append_reply(frontier.question, "conversation_repair", process_only=True, repair_checked=True)
+            return {"repair_checked": True}
         if self.draft_needs_review and kind in {"adjudicate", "investigate"}:
             raise WorkflowConflict("The restored draft must be checked before judgment. Refresh to continue safely.")
         if kind == "review_draft":
@@ -518,6 +604,7 @@ class WorkflowSession(NaturalFlowRecoverabilitySession):
             old = self._draft_move
             self._suppressed_formulation = None
             self._auto_recorded_direct_result = None
+            self._reported_summary_recorded = False
             self._create_pattern(old)
             if self._suppressed_formulation:
                 reason = self._suppressed_formulation
@@ -579,16 +666,15 @@ class WorkflowSession(NaturalFlowRecoverabilitySession):
         # Pure feedback never reaches this coverage path.
         result = self._attach_periodic_progress(result, force=bool(result.get("direct_pattern_recorded") or result.get("pattern_active")))
         self._merge_progress(result)
-        self.phase = (
-            "synthesis_review"
-            if self._draft_move is not None
-            else "advancing"
-            if result.get("direct_pattern_recorded")
-            or result.get("topic_complete")
-            or result.get("move_type") == "topic_complete"
-            else "awaiting_answer"
-        )
+        self._set_result_phase(result)
         return result
+
+    def _set_result_phase(self, result: dict[str, Any]) -> None:
+        self.phase = (
+            "synthesis_review" if self._draft_move is not None else
+            "advancing" if result.get("direct_pattern_recorded") or result.get("reported_summary_recorded")
+            or result.get("topic_complete") or result.get("move_type") == "topic_complete"
+            else "awaiting_answer")
 
     def execute(self, request: InterviewOperation) -> dict[str, Any]:
         if not self._operation_lock.acquire(blocking=False):
@@ -656,10 +742,14 @@ class WorkflowSession(NaturalFlowRecoverabilitySession):
             "pattern_notes": deepcopy(self.pattern_notes),
             "direct_proposal_ids": list(self.direct_proposal_ids),
             "inference_note": self.inference_note,
-            "semantic_policy_version": 3,
+            "semantic_policy_version": 4,
+            "reported_summaries": deepcopy(self.reported_summaries),
             "active_domain_id": self.active_domain_id,
             "repair_pending": self.repair_pending,
             "draft_needs_review": self.draft_needs_review,
+            "repair_needs_review": self.repair_needs_review,
+            "continue_current_focus": self.continue_current_focus,
+            "repair_frontier": deepcopy(self.repair_frontier),
             "input_routes": deepcopy(self.input_routes),
             "process_turn_ids": sorted(self.process_turn_ids),
             "formulation_reviews": deepcopy(self.formulation_reviews),
@@ -697,8 +787,15 @@ class WorkflowSession(NaturalFlowRecoverabilitySession):
             self.formulation_reviews = deepcopy(workflow.get("formulation_reviews", []))
             self.retired_drafts = deepcopy(workflow.get("retired_drafts", []))
             self.model_calls = deepcopy(workflow.get("model_calls", []))
+            self.reported_summaries = deepcopy(workflow.get("reported_summaries", []))
+            self.continue_current_focus = bool(workflow.get("continue_current_focus", False))
+            self.repair_frontier = deepcopy(workflow.get("repair_frontier"))
+            self.repair_needs_review = bool(workflow.get("repair_needs_review", False)) or (
+                workflow.get("semantic_policy_version", 1) < 4 and self.repair_pending
+                and (self.resume_phase if self.phase == "paused" else self.phase)
+                in {"awaiting_answer", "synthesis_review"})
             self.draft_needs_review = bool(self._draft_move) and (
-                workflow.get("semantic_policy_version", 1) < 3 or bool(workflow.get("draft_needs_review")))
+                workflow.get("semantic_policy_version", 1) < 4 or bool(workflow.get("draft_needs_review")))
             if not self.active_domain_id:
                 for receipt in reversed(list(self._receipts.values())):
                     domain = receipt.get("result", {}).get("primary_domain_id")
