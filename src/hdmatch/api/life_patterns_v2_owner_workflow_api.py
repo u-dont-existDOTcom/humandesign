@@ -16,7 +16,7 @@ from pydantic import BaseModel, Field
 from .life_patterns_recoverability_domains import RECOVERABILITY_DOMAINS
 from .life_patterns_v2_owner_app import PatternAdjudicationRequest
 from .life_patterns_v2_owner_continuous_flow_ui import CONTINUOUS_FLOW_RECOVERABILITY_HTML
-from .life_patterns_v2_owner_conversation import ConversationTurnRequest
+from .life_patterns_v2_owner_conversation import ConversationTurnRequest, ModelProviderError
 from .life_patterns_v2_owner_coverage import COVERAGE_COMPLETE_STATUSES, COVERAGE_STATUSES
 from .life_patterns_v2_owner_persistent import _canonical_sha
 from .life_patterns_v2_owner_reasoning import ADAPTIVE_OPENING
@@ -27,7 +27,7 @@ from .life_patterns_v2_owner_recoverability import (
 )
 from .life_patterns_v2_owner_workflow import InterviewOperation, WorkflowConflict, WorkflowSession
 
-BUILD_VERSION = "survey-sol-xhigh-2026-09-18.5"
+BUILD_VERSION = "survey-sol-xhigh-2026-09-18.6"
 
 
 class RestoreRequest(BaseModel):
@@ -224,6 +224,19 @@ def create_workflow_app(*, model: Any) -> FastAPI:
             raise HTTPException(409, str(exc)) from exc
         except ValueError as exc:
             raise HTTPException(422, str(exc)) from exc
+        except ModelProviderError as exc:
+            # Expose only allowlisted provider classification, never provider body text.
+            if exc.error_code == "credit_balance_exhausted" or exc.error_type == "insufficient_quota":
+                detail = (
+                    "The model API credit balance is exhausted. Your response is preserved; "
+                    "add API credit before retrying this saved operation."
+                )
+            else:
+                detail = (
+                    "The model provider rejected this request. Your response is preserved; "
+                    "check provider access/configuration before retrying."
+                )
+            raise HTTPException(503, detail) from exc
         except (RuntimeError, TimeoutError, OSError) as exc:
             # Provider response bodies can contain sensitive text; never expose them.
             raise HTTPException(
