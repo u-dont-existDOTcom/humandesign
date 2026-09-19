@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "status": "active",
+  "exclusive_writer": true,
+  "owned_branch": "chat/scenario-readiness-audit-20260919",
+  "integration_branch": "chat/scenario-second-pass-private-capture-20260919",
+  "integration_base_sha": "81b20fee050d1400d39c9f099093e9829e1d51dd",
+  "task_id": "scenario-readiness-audit-20260919",
+  "owner_direction": "Audit and improve until the assistant judges the design worth the owner's time; do not restart the pilot while known material design defects remain.",
+  "scope": "Review all 75 inherited nodes, the 73 information-planning identifiers, actual proposed dialogue branches, and source/context discipline. Deliver a revised text-only design and explicit readiness judgment.",
+  "assurance_lane": "iteration",
+  "parent_outcome": "OPEN",
+  "pilot_paused": true,
+  "runtime_changes_authorized": false,
+  "vm_wake_authorized": false,
+  "private_transcript_to_git_authorized": false,
+  "guidance_activation": "Live default-branch Universal root/config/index/docs and task-relevant operation, activation, strategy, follow-up, isolation and iteration guidance read; live Design skill/core loaded.",
+  "no_new_mandatory_requirements": "No fixed interview length, compulsory recent memory, external reviewer, paid model campaign or automatic chart-recovery claim. Additional probes remain conditional.",
+  "stop_boundary": "Deliver repaired design and evidence-bound own judgment; preserve the owner pause and the separate live-runtime and chart-recovery boundaries."
+}
