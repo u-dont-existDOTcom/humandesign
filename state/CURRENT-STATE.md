@@ -53,3 +53,13 @@ A tested lifecycle helper is now installed on the owner laptop: `life-patterns-o
 
 The owner outcome remains OPEN at product quality rather than provider availability. Next action: resume natural-use interviewing and evaluate actual question quality, recovery behavior, latency, and usefulness. Do not harden this transport further unless natural use demonstrates that it is worth retaining. Exact operational evidence and the non-secret bridge source are preserved under `tasks/life-patterns-subscription-bridge-20260919/`.
 
+## 2026-09-19 owner reverted Life Patterns to direct OpenAI API
+
+The owner found the Cloud-Agent/Codex subscription bridge too slow and explicitly requested a return to direct API inference.
+
+Railway runtime configuration was restored to `HDMATCH_LLM_API_URL=https://api.openai.com/v1/responses`. Deployment `ed975981-30bf-44bc-804b-19b287baa57c` completed successfully. The Cloud Agent remains sleeping and the local ON/OFF launchers/helpers were removed so the obsolete bridge is not accidentally awakened.
+
+A fresh synthetic end-to-end owner-session probe against the restored API route created a session successfully but the semantic operation returned HTTP 503. Railway logs bind the upstream failure to HTTP 429, `insufficient_quota`, `credit_balance_exhausted`, retryable=false. The direct API transport is therefore restored exactly as requested, but model inference remains externally blocked until the OpenAI API balance/key project is funded.
+
+The subscription bridge is superseded as the live route. Its branch artifacts remain historical/recovery evidence only.
+
