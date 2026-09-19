@@ -56,10 +56,23 @@ This is product-development evidence only. It is not scientific-validation evide
 
 - Owner-only development use. Do not open this path to external participants.
 - The Cloud Agent must remain awake; Railway bills Cloud Agent compute while it is awake.
-- Sleeping the agent stops the bridge process. Files persist, but the bridge must be restarted after wake unless a later explicit lifecycle mechanism is added.
+- Sleeping the agent stops the bridge process. Files persist. The installed lifecycle helper wakes the agent and restarts the bridge before use.
 - Prompt payloads now traverse the Cloud Agent/Codex path rather than the prior direct OpenAI API path. Do not treat this as a reviewed production privacy architecture.
 - The bridge is intentionally serialized to one inference at a time.
 - No public release, recruitment, scientific claim, or merge to the main research line is authorized by this workaround.
+
+## Installed lifecycle helper
+
+The owner laptop now has a tested command at `~/.local/bin/life-patterns-agent` plus convenience wrappers `life-patterns-on` and `life-patterns-off`.
+
+- `life-patterns-on` wakes the Cloud Agent, waits for `running`, starts the bridge if needed, verifies its public health endpoint, and opens the Life Patterns web app.
+- `life-patterns-on --no-open` performs the same wake/start check without opening a browser.
+- `life-patterns-off` sleeps the Cloud Agent and waits until it no longer reports `running`, stopping Cloud Agent compute billing.
+- `life-patterns-agent status` reports the Cloud Agent state and only probes bridge health when the VM is running.
+
+Two Zorin application-menu launchers were also installed locally: **Life Patterns ON** and **Life Patterns OFF**. The source for the lifecycle helper is preserved next to this integration record as `life-patterns-agent`; the desktop files themselves contain no secrets and remain local-only convenience UI.
+
+The lifecycle was verified end-to-end: running -> sleep -> sleeping, then sleeping -> wake -> bridge restart -> public health ready -> direct authenticated schema inference HTTP 200, then sleep again. The final observed state after verification was `Cloud Agent: sleeping` and `Bridge: stopped`.
 
 ## Rollback
 
