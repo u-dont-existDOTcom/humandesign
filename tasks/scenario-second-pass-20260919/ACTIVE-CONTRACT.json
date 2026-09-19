@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "task_id": "scenario-second-pass-20260919",
+  "status": "active",
+  "exclusive_writer": true,
+  "owned_branch": "chat/scenario-second-pass-private-capture-20260919",
+  "integration_branch": "chat/scenario-evidence-pilot-20260919-1855",
+  "integration_base_sha": "1278520fa6fe334845ffd8c22d625d3c924d33d2",
+  "owner_direction": "Pause the pilot, perform another review, clarify the reason behind a bare action response, and preserve Chat answers independently of Railway.",
+  "parent_outcome": "OPEN: useful scenario-first elicitation and faithful reusable behavioral records; full AstroHD recovery remains separately unproven.",
+  "scope": "Full review of all 55 current question nodes and 73 planning facets; revise wording, semantic admission and conditional routing; prepare and verify private local answer capture. No app implementation, inference-VM use, deployment, participant recruitment, or chart scoring.",
+  "assurance_lane": "iteration",
+  "guidance_activation": {
+    "route": "Live default-branch UDA root, config, indexes, operating-system continuation, task-time activation, iteration, parallel-write isolation and test-efficiency rules read this turn; live Design OS skill loaded.",
+    "uda_root_blob": "35d45aa211b62f8ab5b7865be3804b36602e3bb4",
+    "design_skill_blob": "95847ecfb78a5fe642d9a0d3b2c9e95b8858cd3d"
+  },
+  "active_obligations": [
+    {"rule":"owner_pause", "required":"Do not resume the pilot or treat the conditional yes example as an actual participant answer.", "failure":"A real-answer record or new live pilot question is created from the design example.", "repair":"Keep it as design feedback only.", "enforcement":"semantic"},
+    {"rule":"reason_without_suggestion", "required":"Ask an open reason probe when an action is given without a useful reason; reuse reasons already supplied; do not inject guilt, duty, enjoyment or a wish to go.", "failure":"Action or prompted options become attributed motives.", "repair":"Use an open probe and retain only reported meaning.", "enforcement":"semantic"},
+    {"rule":"full_bank_review", "required":"Review every current node and each planning facet; narrow compound claims and identify missing elicitation routes.", "failure":"Label coverage or a partial sample is reported as full semantic verification.", "repair":"Publish exact scope and residual gaps.", "enforcement":"semantic and structural"},
+    {"rule":"private_persistence", "required":"Preserve exact Chat question/answer text, context, revisions and evidence mode in an owner-private archive outside Git and Railway; verify writes before claiming saved.", "failure":"Private participant text or content-derived hashes enter the public repository, or a save is claimed without readback.", "repair":"Keep raw material private and report a failed write honestly.", "enforcement":"mechanical"},
+    {"rule":"truthful_evidence", "required":"Disclose same-context review, no new human validation and no deployed-runtime test; preserve historical fixtures rather than rewrite them to pass.", "failure":"New coverage percentages or independence are claimed from authored labels.", "repair":"Narrow claims to actual reviewed evidence.", "enforcement":"semantic"}
+  ],
+  "plan": ["Verify frozen inputs", "Audit and revise all question/target routes", "Exercise representative failure cases", "Create and verify private capture", "Persist public design artifacts and deliver files"],
+  "stop_boundary": "Deliver the revised review and verified capture arrangement; pilot remains paused by owner, with zero actual pilot answers so far."
+}
