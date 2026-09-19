@@ -49,5 +49,7 @@ Railway deployment `e2afc5c3-574f-4715-9eb0-52cf24e775de` completed successfully
 
 The workaround is owner-only and experimental. The Cloud Agent must stay awake for the bridge to run; sleeping stops the process while retaining its files. Do not open this transport to external participants or treat it as reviewed production privacy/inference architecture. Rollback is to restore `HDMATCH_LLM_API_URL=https://api.openai.com/v1/responses` and redeploy; the existing API credential was not replaced.
 
+A tested lifecycle helper is now installed on the owner laptop: `life-patterns-on` wakes the Cloud Agent, starts and health-checks the bridge, and opens the web app; `life-patterns-off` sleeps the agent and stops Cloud Agent compute billing. Zorin application-menu launchers named **Life Patterns ON** and **Life Patterns OFF** are also installed. A full sleep -> wake -> bridge restart -> authenticated schema inference -> sleep cycle passed. Final observed state after verification: Cloud Agent sleeping, bridge stopped.
+
 The owner outcome remains OPEN at product quality rather than provider availability. Next action: resume natural-use interviewing and evaluate actual question quality, recovery behavior, latency, and usefulness. Do not harden this transport further unless natural use demonstrates that it is worth retaining. Exact operational evidence and the non-secret bridge source are preserved under `tasks/life-patterns-subscription-bridge-20260919/`.
 
