@@ -1,14 +1,16 @@
 {
   "schemaVersion": 1,
-  "taskId": "scenario-evidence-pilot-20260919",
-  "status": "ready_to_deliver_first_owner_pilot_question",
-  "requiredBranch": "chat/scenario-evidence-pilot-20260919-1855",
+  "taskId": "scenario-second-pass-20260919",
+  "status": "review_complete_pilot_paused_by_owner",
+  "requiredBranch": "chat/scenario-second-pass-private-capture-20260919",
   "exclusive": true,
-  "currentStateOverlay": "tasks/scenario-evidence-pilot-20260919/CURRENT-STATE.json",
+  "currentStateOverlay": "tasks/scenario-second-pass-20260919/ACTIVE-CONTRACT.json",
   "ownerOutcome": "OPEN",
   "assuranceLane": "iteration",
   "implementationAuthorized": false,
   "vmWakeAuthorized": false,
   "privateParticipantTranscriptToGitAuthorized": false,
-  "nextAction": "Deliver PILOT.md opening, then continue from the actual owner answer, one response task per turn."
+  "questionBank": "tasks/scenario-second-pass-20260919/interviewer-bank-v4.json",
+  "privateCaptureProtocol": "tasks/scenario-second-pass-20260919/PRIVATE-CAPTURE-PROTOCOL.md",
+  "nextAction": "Pilot remains paused. When owner resumes, recover private records through the owner-device connection and save actual replies with exact question/version, source mode and corrections. Do not treat the conditional yes as an answer."
 }

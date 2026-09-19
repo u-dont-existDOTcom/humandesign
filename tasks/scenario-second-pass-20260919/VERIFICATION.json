@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "task_id": "scenario-second-pass-20260919",
+  "recorded_at": "2026-09-19T19:49:22.931039+00:00",
+  "source_head": "1278520fa6fe334845ffd8c22d625d3c924d33d2",
+  "owned_branch": "chat/scenario-second-pass-private-capture-20260919",
+  "review_scope": {
+    "incoming_question_nodes": 55,
+    "inherited_planning_facets": 73,
+    "wording_rewrites": 15,
+    "optional_probes_added": 20,
+    "available_bank_nodes": 75,
+    "fixed_survey_length": false,
+    "old_person_facet_cells_fully_rescored": false,
+    "independent_semantic_review": false
+  },
+  "verification": {
+    "command": "python3 tasks/scenario-second-pass-20260919/review_checks.py",
+    "final_test_methods_passed": 11,
+    "final_failures": 0,
+    "final_errors": 0,
+    "typed_fixtures_are_not_nlp_validation": true,
+    "semantic_case_review_count": 24,
+    "final_test_runtime_seconds": 0.286,
+    "initial_test_failures": [
+      "Punctuation fixture counted a quoted question in scene dialogue as a second respondent task. Fixture repaired to exclude embedded dialogue.",
+      "Private-store tests correctly refused the temporary location because its ancestor carried a Git marker. Disposable fixtures were moved outside Git; the protection was retained."
+    ],
+    "observer_task_id": "scenario-second-pass-20260919",
+    "observer_scope_runs": 3,
+    "observer_observed_test_seconds": 1.42,
+    "observer_wall_seconds_at_summary": 367.78,
+    "forced_redundant_green_seconds": 0.0,
+    "observer_covers_remote_verification_window_not_entire_chat": true
+  },
+  "private_capture": {
+    "owner_device_archive_created": true,
+    "events_saved": 3,
+    "actual_participant_answers": 0,
+    "exact_event_readback_verified": true,
+    "private_export_readback_verified": true,
+    "event_file_mode": "0600",
+    "directory_mode": "0700",
+    "current_conditional_yes_is_design_feedback": true,
+    "no_private_content_or_derived_hashes_in_public_repository": true,
+    "background_monitoring": false,
+    "railway_synchronization": false,
+    "railway_import_compatibility_tested": false
+  },
+  "scope": {
+    "pilot_paused": true,
+    "application_code_changed": false,
+    "inference_vm_contacted": false,
+    "inference_calls": 0,
+    "deployment": false,
+    "chart_scoring": false,
+    "recruitment": false
+  },
+  "pre_delivery_admission": {
+    "owner_pause": "PASS: no new pilot question or fabricated participant answer",
+    "open_reason": "PASS: missing reason uses What would make you say yes; already-given motives suppress repeat",
+    "full_bank": "PASS: 55 explicit audit rows and 73 planned-facet entries; no claim of full empirical coverage",
+    "private_capture": "PASS: three owner-local immutable records and export read back; zero actual answers",
+    "evidence_limits": "PASS: same-context review and typed-state test limitations retained"
+  },
+  "completion": "Requested second review and private capture setup completed; product and AstroHD recovery remain open. Pilot remains paused."
+}

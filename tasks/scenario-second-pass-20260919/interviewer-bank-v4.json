@@ -1,0 +1,871 @@
+{
+  "version": "scenario-bank-v4-20260919",
+  "status": "design candidate; pilot paused; not app implementation",
+  "source_pilot_commit": "1278520fa6fe334845ffd8c22d625d3c924d33d2",
+  "intro": "Imagine each situation on an ordinary day. Answer with what you would usually do or feel, not what you think you ought to do. Say what changes your answer when it matters; a real example is welcome but not required.",
+  "routing_policy": [
+    "Read the whole actual answer before selecting anything. Preserve spontaneously supplied reasons, feelings and conditions.",
+    "A bare action may warrant one open reason probe; do not presume wanting, guilt, duty, caring or avoidance.",
+    "Use a reaction-dependent follow-up only after a matching reaction is reported. A no-reaction report is not an unknown reaction.",
+    "An explicitly named hypothetical variant may stipulate a new premise, but never convert it into biography or observed change.",
+    "A declined, inapplicable or paused topic cannot be reopened just because a planning facet remains empty.",
+    "Repair a confusing or under-specified question before interpreting its answer. Do not code process feedback as a trait.",
+    "Retain within-person variation and mixed motives; do not seek a single correct personality answer.",
+    "A supported-part record is not a whole compound facet. These 73 locators are planning aids, not a response quota.",
+    "Pause stays paused until the owner elects to resume; save received records privately before claiming they are saved."
+  ],
+  "question_count": 75,
+  "core_candidate_count": 55,
+  "optional_probe_count": 20,
+  "new_wording_human_tested": false,
+  "independent_semantic_review": false,
+  "questions": [
+    {
+      "id": "A0",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "You have an hour free and are about to read a book you've been enjoying. A close friend messages: “I'm bored—want to hang out?” They just feel like company; nothing urgent has happened. What would you probably reply?",
+      "kind": "scene",
+      "planning_targets": [],
+      "admission": "The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
+      "interpretation_limit": "Action is not motive, responsibility or durable value tension. Use WHY only when reason is missing; keep all motives the respondent supplies."
+    },
+    {
+      "id": "G23",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "You arrive while a few people are getting ready for a shared meal. Nothing has been assigned to you yet. What tends to catch your attention in a situation like this?",
+      "kind": "scene",
+      "planning_targets": [
+        "D23.noticing"
+      ],
+      "admission": "The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
+      "interpretation_limit": "What attracts attention does not measure speed of noticing or establish willingness to help. Preserve only noticed features."
+    },
+    {
+      "id": "G19",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "You have promised to help with a shared project, but continuing would take the personal time you had counted on. There is room to renegotiate. How would you usually work towards a decision?",
+      "kind": "scene",
+      "planning_targets": [
+        "D18.competing_values"
+      ],
+      "admission": "The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
+      "interpretation_limit": "The stimulus supplies a conflict, not evidence of a chronic inner conflict. A decision procedure does not establish whether the tension ends."
+    },
+    {
+      "id": "F0",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "You're deciding where to meet with three friends. Two suggest a place you find too noisy, and you would prefer somewhere quieter. Nothing has been booked. What would you probably say?",
+      "kind": "scene",
+      "planning_targets": [
+        "D05.audience_adaptation"
+      ],
+      "admission": "The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
+      "interpretation_limit": "Noise aversion is stipulated, not discovered. A reply describes communication here, not persuasion skill or general preference."
+    },
+    {
+      "id": "G05",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "You think a group trip would work better if everyone left an hour earlier, but the others would rather keep the original time. When you make a case like this, how does it usually go?",
+      "kind": "scene",
+      "planning_targets": [
+        "D05.capacity"
+      ],
+      "admission": "The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
+      "interpretation_limit": "An unspecified practical change leaves audience and stakes open. Self-rated effectiveness remains self-report, not observed ability."
+    },
+    {
+      "id": "M11",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "You offer to organise a shared meal if someone else buys the ingredients. They are interested but unsure about the arrangement. How would you explain your proposal?",
+      "kind": "scene",
+      "planning_targets": [
+        "X08.offer_and_leverage"
+      ],
+      "admission": "The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
+      "interpretation_limit": "An unspecified useful offer asks the respondent to invent the core situation. Demonstrating a sales pitch does not establish enjoyment of persuading."
+    },
+    {
+      "id": "G06",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "You have joined a new group. People are discussing what to do next, but nobody has asked you to lead or contribute yet. What would you usually do?",
+      "kind": "scene",
+      "planning_targets": [
+        "D06.entry_signal"
+      ],
+      "admission": "The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
+      "interpretation_limit": "Entry behavior in a new group does not establish general leadership or cross-context consistency. The requested role is a later variant."
+    },
+    {
+      "id": "R02",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "The group now asks you to coordinate the next piece of work. What kind of role would you actually be willing to take?",
+      "kind": "matched_variant",
+      "planning_targets": [
+        "D06.role_leadership",
+        "D06.context_difference"
+      ],
+      "admission": "Introduce the changed premise as a hypothetical variant, not as something the person did. Do not repeat an already supplied comparison.",
+      "interpretation_limit": "Invitation changes one important condition. Treat as a named imagined contrast, not proof the respondent actually received recognition."
+    },
+    {
+      "id": "G07",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "Imagine starting a worthwhile new activity with someone you did not know well before. In your own life, how do connections like that usually begin?",
+      "kind": "scene",
+      "planning_targets": [
+        "D07.usual_source"
+      ],
+      "admission": "The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
+      "interpretation_limit": "A future opportunity is not an observed pathway. Ask habitual source with a scene cue and ask deliberate outreach only if still missing."
+    },
+    {
+      "id": "G08",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "You offer to help with one clearly defined task, but people begin treating you as though you can take care of the whole situation. How familiar is that experience in your own life?",
+      "kind": "scene",
+      "planning_targets": [
+        "D08.experience_of_projection"
+      ],
+      "admission": "The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
+      "interpretation_limit": "Familiarity can support a reported recurrence or lack of experience, not proof of a projection field or actual skill."
+    },
+    {
+      "id": "R03",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "In the situation where people expect more help than you offered, what would you usually say once the mismatch became clear?",
+      "kind": "context_optional",
+      "planning_targets": [
+        "D08.mismatch_response"
+      ],
+      "admission": "Use an experienced mismatch if reported; otherwise explicitly ask only as a knowingly imagined variant. Do not relabel it as familiar.",
+      "interpretation_limit": "A hypothetical response to unfamiliar expectations is allowed only as imagined behavior; never count it as an experienced mismatch."
+    },
+    {
+      "id": "M07",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "Choose a familiar activity that you do reasonably well. How did you come to be good at it?",
+      "kind": "scene",
+      "planning_targets": [
+        "X05.ease_and_learning"
+      ],
+      "admission": "The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
+      "interpretation_limit": "A learned skill is not automatically natural talent. Retain ease, instruction and practice separately when reported."
+    },
+    {
+      "id": "M08",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "What, if anything, do other people tend to ask you to do because of that ability?",
+      "kind": "conditional_followup",
+      "planning_targets": [
+        "X05.external_recognition"
+      ],
+      "admission": "A specific ability has been named by the respondent.",
+      "interpretation_limit": "Needs a participant-named ability. Nobody asking is valid; recognition and competence are not interchangeable."
+    },
+    {
+      "id": "G01",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "You are helping arrange a weekend trip. Several people have sent overlapping messages about travel, costs, and timing, and some details disagree. How would you start making sense of it?",
+      "kind": "scene",
+      "planning_targets": [
+        "D01.approach"
+      ],
+      "admission": "The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
+      "interpretation_limit": "Organizing messages is not automatically checking their accuracy. Probe verification only when needed and not already explained."
+    },
+    {
+      "id": "G02",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "You have worked out why a familiar practical problem keeps happening. Someone else is running into the same problem. What would you usually do next?",
+      "kind": "scene",
+      "planning_targets": [
+        "D02.output_form",
+        "D02.audience_use"
+      ],
+      "admission": "The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
+      "interpretation_limit": "What would you give them presupposes sharing and a deliverable. Permit no intervention, private insight, speech, example, or a reusable artifact."
+    },
+    {
+      "id": "G03",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "A question that matters to you is still unresolved when you have to put it aside and get on with ordinary life. What usually happens to your attention afterwards?",
+      "kind": "scene",
+      "planning_targets": [
+        "D03.return_pattern"
+      ],
+      "admission": "The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
+      "interpretation_limit": "A thought returning under a specified important problem is not population rarity, existential drive or exact frequency."
+    },
+    {
+      "id": "R01",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "Return to the important question you had to put aside. What would usually let you stop returning to it?",
+      "kind": "conditional_followup",
+      "planning_targets": [
+        "D03.closure_condition"
+      ],
+      "admission": "G03 or another cited answer reports recurring attention to the same question.",
+      "interpretation_limit": "Only ask what ends recurrence after recurring attention is reported. Putting a thought down successfully needs no closure interrogation."
+    },
+    {
+      "id": "G04",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "You are learning a useful task from an established guide. Most of it works, but one step repeatedly causes trouble in your situation. What would you do with the method?",
+      "kind": "scene",
+      "planning_targets": [
+        "D04.use_existing"
+      ],
+      "admission": "The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
+      "interpretation_limit": "Fixing a repeatedly failing instruction is not evidence of an independent drive to invent. Include a working-method contrast only when useful."
+    },
+    {
+      "id": "D0",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "A few weeks ago you started learning some phrases in another language for fun. You still like the idea of being able to speak it, but today's practice feels repetitive. You have twenty minutes free. What would you probably do with that time?",
+      "kind": "scene",
+      "planning_targets": [],
+      "admission": "The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
+      "interpretation_limit": "Choosing practice today does not establish intrinsic enjoyment of repetition. Keep motivation and persistence separate."
+    },
+    {
+      "id": "G22",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "You are absorbed in an activity you chose. Someone interrupts briefly, then leaves you free to continue. What usually happens to your concentration?",
+      "kind": "scene",
+      "planning_targets": [
+        "D22.focus_depth_interruptions"
+      ],
+      "admission": "The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
+      "interpretation_limit": "The stimulus already says absorbed. Resumption after interruption does not establish usual depth, duration or stationary-focus preference."
+    },
+    {
+      "id": "E0",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "A nearby group is offering a free cooking class, one evening a week for a month. You like the sound of it, and the time would work for you, but you haven't tried a class with this group before. You need to sign up by tomorrow. What would you probably do next?",
+      "kind": "scene",
+      "planning_targets": [],
+      "admission": "The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
+      "interpretation_limit": "Checking facts or deciding tomorrow is not itself a report of changing clarity. Allow immediate clarity and stable uncertainty."
+    },
+    {
+      "id": "G09",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "You are considering a new commitment and have just heard the proposal, before you have worked through its advantages and drawbacks. What, if anything, would you usually notice in your body first?",
+      "kind": "scene",
+      "planning_targets": [
+        "D09.presence_form"
+      ],
+      "admission": "The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
+      "interpretation_limit": "Any bodily sensation may be nondiagnostic. None is a valid answer; bodily language is an explicit topic, not proof of an HD authority."
+    },
+    {
+      "id": "R04",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "How useful is that reaction when you are deciding whether a choice suits you?",
+      "kind": "conditional_followup",
+      "planning_targets": [
+        "D09.repeatability_trust"
+      ],
+      "admission": "A bodily/felt reaction is reported; its usefulness is not already described.",
+      "interpretation_limit": "Usefulness, across-occasion dependability and conditions of override are distinct. Do not credit all from one generic statement."
+    },
+    {
+      "id": "M10",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "What usually happens to that reaction as you keep considering the choice?",
+      "kind": "conditional_followup",
+      "planning_targets": [
+        "X07.fleeting_or_repeating"
+      ],
+      "admission": "A bodily/felt reaction is reported; its within-choice time course is missing.",
+      "interpretation_limit": "Needs a reported bodily reaction in the same frame. Its within-choice time course is distinct from cross-choice repeatability."
+    },
+    {
+      "id": "M05",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "You are checking the arrangements for a kind of journey you know well. What, if anything, would alert you that something was not right?",
+      "kind": "scene",
+      "planning_targets": [
+        "X04.cue_form"
+      ],
+      "admission": "The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
+      "interpretation_limit": "The old scene asserted early detection before reasoning. New scene permits no cue and cues noticed during deliberate checking."
+    },
+    {
+      "id": "M06",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "In an unfamiliar situation of the same kind, how much would you rely on that cue?",
+      "kind": "conditional_followup",
+      "planning_targets": [
+        "X04.context_and_limits"
+      ],
+      "admission": "A cue is reported in M05; distinguish familiar experience from an unfamiliar prediction.",
+      "interpretation_limit": "Only reuse a cue actually described. Familiar versus unfamiliar is a hypothetical boundary probe, not measured calibration."
+    },
+    {
+      "id": "G10",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "You join a group that does worthwhile work, but it expects everyone to follow a set way of working that differs from yours. How would you usually respond?",
+      "kind": "scene",
+      "planning_targets": [
+        "D10.stable_direction",
+        "D10.external_adaptation"
+      ],
+      "admission": "The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
+      "interpretation_limit": "Least willing to give up demands an invariant and a morally admirable boundary. Permit flexible direction and ask what changes separately."
+    },
+    {
+      "id": "G20",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "Your basic needs are covered, and you have some extra money available. What would you most want that extra money to do for you?",
+      "kind": "scene",
+      "planning_targets": [
+        "D19.resources_purpose"
+      ],
+      "admission": "The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
+      "interpretation_limit": "Spending priorities alone do not establish status or ownership motives. Do not infer anti-status from silence about status."
+    },
+    {
+      "id": "M03",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "You freely agreed to deliver something useful, but the remaining work is dull and nobody is watching. What would usually keep you following through, if anything?",
+      "kind": "scene",
+      "planning_targets": [
+        "X03.follow_through"
+      ],
+      "admission": "The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
+      "interpretation_limit": "A self-predicted response to a promise is not observed reliable will. Not finishing and renegotiation remain valid."
+    },
+    {
+      "id": "M04",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "For this version, suppose you still intend to deliver what you promised, but tiredness is making the work unreliable. What would you probably do?",
+      "kind": "matched_variant",
+      "planning_targets": [
+        "X03.will_vs_available_energy"
+      ],
+      "admission": "Introduce the changed premise as a hypothetical variant, not as something the person did. Do not repeat an already supplied comparison.",
+      "interpretation_limit": "Continuing intention is a stipulated variant, not an inference from M03. Keep wanting to finish separate from physical capacity."
+    },
+    {
+      "id": "C0",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "You were looking forward to meeting a friend this afternoon. Shortly before you would leave, they cancel because they have a mild cold. You haven't spent money or rearranged other commitments. What is your first reaction?",
+      "kind": "scene",
+      "planning_targets": [
+        "D21.novelty_disruption"
+      ],
+      "admission": "The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
+      "interpretation_limit": "Disappointment about losing company need not be dislike of novelty. Keep cancellation response narrow; do not generalize to all change."
+    },
+    {
+      "id": "G21",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "You have an ordinary day with no fixed appointments and can choose its shape yourself. How would you usually arrange it?",
+      "kind": "scene",
+      "planning_targets": [
+        "D21.ordinary_rhythm"
+      ],
+      "admission": "The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
+      "interpretation_limit": "A day the person controls does not describe an imposed work schedule. Both flexible and structured arrangements can be intentional."
+    },
+    {
+      "id": "M09",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "You have used an arrangement for years. A newer alternative is available, but the old one still does some things well. What would determine whether you preserved or replaced it?",
+      "kind": "scene",
+      "planning_targets": [
+        "X06.preserved_value",
+        "X06.change_condition"
+      ],
+      "admission": "The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
+      "interpretation_limit": "Familiarity, retained value, sunk cost and replacement costs are possible distinct reasons; do not supply them as an answer list."
+    },
+    {
+      "id": "G11",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "You will be using an unfamiliar room for work or a quiet activity for a week. What would you pay attention to before settling in?",
+      "kind": "scene",
+      "planning_targets": [
+        "D11.conditions"
+      ],
+      "admission": "The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
+      "interpretation_limit": "The room lacks details and the old prompt forces a defect and a modification. First ask what they attend to; obtain function separately."
+    },
+    {
+      "id": "G12",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "You meet someone a few times in an ordinary setting. There is no pressure to date them. What, if anything, usually starts romantic attraction for you?",
+      "kind": "context_optional",
+      "planning_targets": [
+        "D12.attraction"
+      ],
+      "admission": "A romantic/partner context is applicable, or the respondent explicitly chooses a past or imagined version; preserve that frame. A friend substitution is a different context.",
+      "interpretation_limit": "Allow no attraction, no opportunity, privacy or imagined-only response. Do not silently infer orientation, a partner or general absence of intimacy."
+    },
+    {
+      "id": "G13",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "Consider a romantic connection that is welcome to you, now or in an earlier period of your life. As you keep seeing each other, what usually makes the closeness deepen?",
+      "kind": "context_optional",
+      "planning_targets": [
+        "D12.deepening"
+      ],
+      "admission": "A romantic/partner context is applicable, or the respondent explicitly chooses a past or imagined version; preserve that frame. A friend substitution is a different context.",
+      "interpretation_limit": "Depth of closeness is not automatically physical affection or sexual desire. Keep current, historical and imagined relationship frames separate."
+    },
+    {
+      "id": "R05",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "In a romantic relationship you want, a partner begins asking for more frequent contact than before. What would make that welcome or unwelcome for you?",
+      "kind": "context_optional",
+      "planning_targets": [
+        "D12.weakening_boundaries"
+      ],
+      "admission": "A romantic/partner context is applicable, or the respondent explicitly chooses a past or imagined version; preserve that frame. A friend substitution is a different context.",
+      "interpretation_limit": "More contact is a contrast, not proof of dependence. Use the same chosen relationship frame; absence of current romance is not a defect."
+    },
+    {
+      "id": "G14",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "You have some ordinary time on your own, with no recent argument or exciting news. What would your emotional background usually be like?",
+      "kind": "scene",
+      "planning_targets": [
+        "D13.solo_baseline"
+      ],
+      "admission": "The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
+      "interpretation_limit": "No recent major event does not mean the person is calm. Do not infer their solo baseline from the settled premise in B0."
+    },
+    {
+      "id": "B0",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "You're having a quiet evening at home and feel fairly settled. Your partner has been worrying for several days about going to a gathering where they won't know many people. Tonight they bring it up again, without asking you to do anything. What, if anything, happens to your own mood?",
+      "kind": "context_optional",
+      "planning_targets": [
+        "D13.others_effect"
+      ],
+      "admission": "A romantic/partner context is applicable, or the respondent explicitly chooses a past or imagined version; preserve that frame. A friend substitution is a different context.",
+      "interpretation_limit": "Settled starting mood and partner worry are stimuli. Their effect, if any, is reportable; no contagion mechanism is established."
+    },
+    {
+      "id": "R06",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "During a disagreement, someone close to you says that you do not care about them. What, if anything, would usually happen to your mood during that conversation?",
+      "kind": "scene",
+      "planning_targets": [
+        "D13.conflict_effect"
+      ],
+      "admission": "The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
+      "interpretation_limit": "The old prompt asked only after conflict but claimed both during-conflict effect and recovery. Ask the current effect, then aftermath only if missing."
+    },
+    {
+      "id": "M01",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "You are handling a manageable task when someone nearby starts urging you to hurry, although the actual deadline has not changed. What would usually happen inside you?",
+      "kind": "scene",
+      "planning_targets": [
+        "X02.under_pressure"
+      ],
+      "admission": "The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
+      "interpretation_limit": "External urgency is stated. An internal reaction is optional; no reaction is not hidden pressure needing to be uncovered."
+    },
+    {
+      "id": "M02",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "That person leaves and the pressure to hurry stops; the task and deadline stay the same. What would usually change for you?",
+      "kind": "conditional_followup",
+      "planning_targets": [
+        "X02.after_pressure_removed"
+      ],
+      "admission": "An internal response to external pressure is reported and aftermath remains unknown.",
+      "interpretation_limit": "Removal of external pressure can be imagined, but an absent internal response needs no presumed recovery question."
+    },
+    {
+      "id": "G15",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "You spend an ordinary working day on something you personally find worthwhile, at a manageable pace. What would your energy usually be like afterwards?",
+      "kind": "scene",
+      "planning_targets": [
+        "D14.ordinary_engagement"
+      ],
+      "admission": "The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
+      "interpretation_limit": "After-work energy under a manageable workload is not infinite stamina. Allow part-day or nonemployment equivalents with adaptation recorded."
+    },
+    {
+      "id": "R07",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "Keep the same worthwhile work, but imagine two unusually intense days followed by a real chance to rest. What would your energy usually be like at the end of the burst?",
+      "kind": "matched_variant",
+      "planning_targets": [
+        "D14.burst"
+      ],
+      "admission": "Introduce the changed premise as a hypothetical variant, not as something the person did. Do not repeat an already supplied comparison.",
+      "interpretation_limit": "Change intensity and duration explicitly; do not turn the chance to rest into evidence that recovery actually happened."
+    },
+    {
+      "id": "R08",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "Now the same worthwhile work stays too heavy for several weeks, without enough recovery. How would that usually affect you?",
+      "kind": "matched_variant",
+      "planning_targets": [
+        "D14.prolonged_overload"
+      ],
+      "admission": "Introduce the changed premise as a hypothetical variant, not as something the person did. Do not repeat an already supplied comparison.",
+      "interpretation_limit": "Too much work without recovery bakes in overload. Record the response but do not label an ordinary depletion response distinctive."
+    },
+    {
+      "id": "R09",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "During work like this, what would tell you that you need a break?",
+      "kind": "scene",
+      "planning_targets": [
+        "D14.stopping_recovery"
+      ],
+      "admission": "The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
+      "interpretation_limit": "Continuing is no longer useful can refer to project value rather than a stopping signal. Stopping signals and recovery need distinct support."
+    },
+    {
+      "id": "G16",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "A local group asks you to spend several weekends restoring a neglected shared space. The work will be slow and receive little recognition. What would determine whether it was worth the effort to you?",
+      "kind": "scene",
+      "planning_targets": [
+        "D15.mobilizer"
+      ],
+      "admission": "The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
+      "interpretation_limit": "An unspecified difficult project lacks stakes. Supply an ordinary shared-space task; do not assume the respondent values it or accepts it."
+    },
+    {
+      "id": "R10",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "For this version, suppose you chose to join the project and have put a month into it, but progress is poor. What would make you stop investing in it?",
+      "kind": "matched_variant",
+      "planning_targets": [
+        "D15.continue_disengage"
+      ],
+      "admission": "Introduce the changed premise as a hypothetical variant, not as something the person did. Do not repeat an already supplied comparison.",
+      "interpretation_limit": "Prior investment is a named counterfactual, not a fabricated past event. Refusing the initial project does not prove inconsistency."
+    },
+    {
+      "id": "G18",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "A demanding day with people has ended, and nobody needs anything further from you tonight. What would you usually want to do next?",
+      "kind": "scene",
+      "planning_targets": [
+        "D17.withdrawal_need_activity"
+      ],
+      "admission": "The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
+      "interpretation_limit": "A next activity does not by itself reveal how much retreat is needed. No withdrawal and more social contact are valid responses."
+    },
+    {
+      "id": "R11",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "After the kind of time away you described, what, if anything, usually signals that you are ready to engage with people again?",
+      "kind": "conditional_followup",
+      "planning_targets": [
+        "D17.reentry"
+      ],
+      "admission": "A need for time away or a return after withdrawal is actually reported.",
+      "interpretation_limit": "Requires downtime or withdrawal reported in this frame. Do not manufacture a re-entry problem where none was described."
+    },
+    {
+      "id": "G24",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "Return to the invitation from a friend while you wanted time for yourself. In an earlier period you remember reasonably well, what would your usual response have been?",
+      "kind": "context_optional",
+      "planning_targets": [
+        "D20.continuity"
+      ],
+      "admission": "A current response is known and an earlier-life comparison is useful and welcome. Earlier recall is optional and need not be exact age five.",
+      "interpretation_limit": "One earlier-versus-now comparison cannot establish a whole developmental phase map. No change and uncertain recall are valid."
+    },
+    {
+      "id": "R12",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "What do you think contributed to that change?",
+      "kind": "conditional_followup",
+      "planning_targets": [
+        "D20.learned_management"
+      ],
+      "admission": "A current-versus-earlier change is reported. Do not presume learning or improvement.",
+      "interpretation_limit": "The old wording presupposes learning and improvement. Ask what contributed only after a change is described, including deterioration or constraints."
+    },
+    {
+      "id": "G17",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "During a group plan, someone gives information you believe is wrong. Correcting it might interrupt the conversation. What would you usually do?",
+      "kind": "scene",
+      "planning_targets": [
+        "D16.challenge_threshold"
+      ],
+      "admission": "The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
+      "interpretation_limit": "Correcting one error does not establish the threshold or cost conditions. Probe the missing reason without defining the error as dangerous."
+    },
+    {
+      "id": "G25",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "A close friend has twice broken an agreement that mattered to you, and each time explained it only afterwards. What difference, if any, would that usually make to your trust?",
+      "kind": "scene",
+      "planning_targets": [
+        "X01.trust_change"
+      ],
+      "admission": "The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
+      "interpretation_limit": "Trust can remain stable, become conditional or decrease. The scenario is not an actual betrayal or a relationship diagnosis."
+    },
+    {
+      "id": "R13",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "What, if anything, could change how much you rely on that friend afterwards?",
+      "kind": "conditional_followup",
+      "planning_targets": [
+        "X01.repair_access"
+      ],
+      "admission": "Changed reliance or trust is reported and the person has not already closed the topic.",
+      "interpretation_limit": "Before relying again assumes lost trust and a wish to restore it. Permit no repair, limited access and no change without pushing reconciliation."
+    },
+    {
+      "id": "WHY",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "What would make you say yes?",
+      "kind": "optional_probe",
+      "parent": "A0",
+      "planning_targets": [
+        "D23.responsibility",
+        "D23.withholding",
+        "D18.competing_values"
+      ],
+      "admission": "A concrete action is supplied without the reason and the reason would change the description. Adapt yes to the action stated; no motive menu.",
+      "interpretation_limit": "One optional question at a time; an answer supports only the parts it actually states. Parent association is a suggested location, not permission to repeat answered information."
+    },
+    {
+      "id": "AFTER-CHOICE",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "Once you have made that decision, what, if anything, still pulls you in the other direction?",
+      "kind": "optional_probe",
+      "parent": "G19",
+      "planning_targets": [
+        "D18.resolution_durability"
+      ],
+      "admission": "Both competing concerns were reported; their persistence after the choice is missing.",
+      "interpretation_limit": "One optional question at a time; an answer supports only the parts it actually states. Parent association is a suggested location, not permission to repeat answered information."
+    },
+    {
+      "id": "PREFER-INFLUENCE",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "When you do not need their agreement, how much do you want to spend time persuading them?",
+      "kind": "optional_probe",
+      "parent": "G05",
+      "planning_targets": [
+        "D05.preferred_use",
+        "X08.preferred_use"
+      ],
+      "admission": "Capacity or a pitch was discussed, but desire to use it remains unknown; no assumed dislike of persuasion.",
+      "interpretation_limit": "One optional question at a time; an answer supports only the parts it actually states. Parent association is a suggested location, not permission to repeat answered information."
+    },
+    {
+      "id": "OUTREACH",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "When no new connection comes your way, what would you usually do?",
+      "kind": "optional_probe",
+      "parent": "G07",
+      "planning_targets": [
+        "D07.deliberate_pathways"
+      ],
+      "admission": "Habitual opportunity sources are known but deliberate creation of opportunities is not.",
+      "interpretation_limit": "One optional question at a time; an answer supports only the parts it actually states. Parent association is a suggested location, not permission to repeat answered information."
+    },
+    {
+      "id": "VERIFY",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "How would you decide which of the conflicting details to rely on?",
+      "kind": "optional_probe",
+      "parent": "G01",
+      "planning_targets": [
+        "D01.checking_detail"
+      ],
+      "admission": "The respondent described organising information without already resolving its accuracy.",
+      "interpretation_limit": "One optional question at a time; an answer supports only the parts it actually states. Parent association is a suggested location, not permission to repeat answered information."
+    },
+    {
+      "id": "WORKING-METHOD",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "In this version, the guide works adequately for your task. What would you usually do with the method then?",
+      "kind": "optional_probe",
+      "parent": "G04",
+      "planning_targets": [
+        "D04.change_threshold"
+      ],
+      "admission": "An ordinary-method contrast is useful; mark it as a changed scene rather than a new experience.",
+      "interpretation_limit": "One optional question at a time; an answer supports only the parts it actually states. Parent association is a suggested location, not permission to repeat answered information."
+    },
+    {
+      "id": "PRACTICE-REASON",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "What would make that practice worth doing for you?",
+      "kind": "optional_probe",
+      "parent": "D0",
+      "planning_targets": [
+        "D22.repetition_value"
+      ],
+      "admission": "The respondent would practise but has not said what makes it rewarding or worthwhile. For not practising, use WHY adapted to that action.",
+      "interpretation_limit": "One optional question at a time; an answer supports only the parts it actually states. Parent association is a suggested location, not permission to repeat answered information."
+    },
+    {
+      "id": "FOCUS-DEPTH",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "With that activity and no interruption, what is it usually like when your attention is fully engaged?",
+      "kind": "optional_probe",
+      "parent": "G22",
+      "planning_targets": [
+        "D22.focus_depth_interruptions"
+      ],
+      "admission": "Resumption is known but depth or duration is not; do not demand a number or infer immobility.",
+      "interpretation_limit": "One optional question at a time; an answer supports only the parts it actually states. Parent association is a suggested location, not permission to repeat answered information."
+    },
+    {
+      "id": "CHOICE-TIME",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "As you keep considering that choice, what, if anything, usually changes in how clear it feels?",
+      "kind": "optional_probe",
+      "parent": "E0",
+      "planning_targets": [
+        "D09.clarity_over_time"
+      ],
+      "admission": "A decision procedure is known but its time course is missing. No change and remaining unsure are allowed.",
+      "interpretation_limit": "One optional question at a time; an answer supports only the parts it actually states. Parent association is a suggested location, not permission to repeat answered information."
+    },
+    {
+      "id": "SIGNAL-DEPENDABILITY",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "Across similar choices, how consistent is that reaction as a guide for you?",
+      "kind": "optional_probe",
+      "parent": "R04",
+      "planning_targets": [
+        "D09.repeatability_trust"
+      ],
+      "admission": "A reaction exists; across-occasion consistency is missing. Self-rated usefulness is not proven accuracy.",
+      "interpretation_limit": "One optional question at a time; an answer supports only the parts it actually states. Parent association is a suggested location, not permission to repeat answered information."
+    },
+    {
+      "id": "SIGNAL-NOT-FOLLOWED",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "What, if anything, would make you set that reaction aside?",
+      "kind": "optional_probe",
+      "parent": "R04",
+      "planning_targets": [
+        "D09.override_state"
+      ],
+      "admission": "A reaction exists and override conditions are not already reported. Never imply it should be obeyed.",
+      "interpretation_limit": "One optional question at a time; an answer supports only the parts it actually states. Parent association is a suggested location, not permission to repeat answered information."
+    },
+    {
+      "id": "ADAPTATION",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "What about their way of working would you be willing to take on?",
+      "kind": "optional_probe",
+      "parent": "G10",
+      "planning_targets": [
+        "D10.external_adaptation"
+      ],
+      "admission": "A limit was described but adaptation was not; none is allowed. Ask the complementary boundary only if missing, not to manufacture resistance.",
+      "interpretation_limit": "One optional question at a time; an answer supports only the parts it actually states. Parent association is a suggested location, not permission to repeat answered information."
+    },
+    {
+      "id": "ROOM-EFFECT",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "What difference would that make to how you function there?",
+      "kind": "optional_probe",
+      "parent": "G11",
+      "planning_targets": [
+        "D11.functional_effect"
+      ],
+      "admission": "The respondent named an environmental condition or change; its effect is missing.",
+      "interpretation_limit": "One optional question at a time; an answer supports only the parts it actually states. Parent association is a suggested location, not permission to repeat answered information."
+    },
+    {
+      "id": "PHYSICAL-CLOSENESS",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "In that relationship, what place, if any, would physical affection have for you?",
+      "kind": "optional_probe",
+      "parent": "G13",
+      "planning_targets": [
+        "D12.sensuality"
+      ],
+      "admission": "The chosen romantic context is applicable or knowingly imagined and the person is comfortable with the topic. No touch or no wish for physical intimacy is valid; touch and sexual desire remain separate.",
+      "interpretation_limit": "One optional question at a time; an answer supports only the parts it actually states. Parent association is a suggested location, not permission to repeat answered information."
+    },
+    {
+      "id": "MOOD-AFTER",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "Once that conversation is over, what usually happens to the feeling you described?",
+      "kind": "optional_probe",
+      "parent": "R06",
+      "planning_targets": [
+        "D13.recovery"
+      ],
+      "admission": "A mood reaction was reported; aftermath is missing. Do not assume that it fades or that distance causes the change.",
+      "interpretation_limit": "One optional question at a time; an answer supports only the parts it actually states. Parent association is a suggested location, not permission to repeat answered information."
+    },
+    {
+      "id": "WORK-RECOVERY",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "After you stop, what usually helps your energy return?",
+      "kind": "optional_probe",
+      "parent": "R09",
+      "planning_targets": [
+        "D14.stopping_recovery"
+      ],
+      "admission": "Energy depletion was reported and recovery is unanswered. No reliable recovery is valid; a rational stopping decision is not itself depletion.",
+      "interpretation_limit": "One optional question at a time; an answer supports only the parts it actually states. Parent association is a suggested location, not permission to repeat answered information."
+    },
+    {
+      "id": "STATUS",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "Suppose the practical benefits of what you do stay the same, but other people begin seeing it as more impressive. What difference, if any, would that make to you?",
+      "kind": "optional_probe",
+      "parent": "G20",
+      "planning_targets": [
+        "D19.status_ownership"
+      ],
+      "admission": "Status value remains unknown; do not infer motive from whether money was spent on tools.",
+      "interpretation_limit": "One optional question at a time; an answer supports only the parts it actually states. Parent association is a suggested location, not permission to repeat answered information."
+    },
+    {
+      "id": "OWNERSHIP",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "You could have a useful tool available whenever you need it without owning it. What, if anything, would make owning it matter to you?",
+      "kind": "optional_probe",
+      "parent": "G20",
+      "planning_targets": [
+        "D19.status_ownership"
+      ],
+      "admission": "Ownership motivation remains unknown; record practical concerns rather than treating them as status motives.",
+      "interpretation_limit": "One optional question at a time; an answer supports only the parts it actually states. Parent association is a suggested location, not permission to repeat answered information."
+    },
+    {
+      "id": "LIFE-PHASE",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "Thinking about this same kind of situation, was there a period when your usual response changed noticeably?",
+      "kind": "optional_probe",
+      "parent": "G24",
+      "planning_targets": [
+        "D20.phases"
+      ],
+      "admission": "Earlier-versus-current continuity was discussed, but timing of a reported change is unclear. No change and approximate life periods are valid; do not request birth dates.",
+      "interpretation_limit": "One optional question at a time; an answer supports only the parts it actually states. Parent association is a suggested location, not permission to repeat answered information."
+    },
+    {
+      "id": "CORRECTION-REASON",
+      "revision": "scenario-bank-v4-20260919",
+      "question": "What would matter most in deciding whether to point it out?",
+      "kind": "optional_probe",
+      "parent": "G17",
+      "planning_targets": [
+        "D16.context_cost",
+        "D16.challenge_threshold"
+      ],
+      "admission": "Action alone was given and its threshold is unclear. Do not specify harm, politeness or perfectionism for the person.",
+      "interpretation_limit": "One optional question at a time; an answer supports only the parts it actually states. Parent association is a suggested location, not permission to repeat answered information."
+    }
+  ]
+}

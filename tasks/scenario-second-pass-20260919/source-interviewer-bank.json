@@ -1,0 +1,527 @@
+{
+  "status": "proposed text-only owner pilot v3; not production or accepted evidence-schema change",
+  "source_bank_sha256": "805d028b73c0989c5596c203f1f60f16cde1b2ef656cb80db48c5adc46e620b4",
+  "intro": "Imagine each situation on an ordinary day. Answer with what you would usually do or feel, not what you think you ought to do. Say what changes your answer when it matters; a real example is welcome but not required.",
+  "routing": "This is an available bank, not a mandatory ordered 55-question script. Read actual answers; reuse already supplied material and apply antecedent/applicability checks before any follow-up. Missing information stays missing. Change topics when a probe is not useful. Finish/pause remains available.",
+  "neutral_targets_are_not_evidence": true,
+  "answers_or_scoring_key_included": false,
+  "old_answer_fixtures_do_not_validate_changed_wording": true,
+  "questions": [
+    {
+      "id": "A0",
+      "question": "You have an hour free and are about to read a book you've been enjoying. A close friend messages: “I'm bored—want to hang out?” They just feel like company; nothing urgent has happened. What would you probably reply?",
+      "neutral_information_targets": [
+        "D23.responsibility",
+        "D23.withholding",
+        "D18.competing_values",
+        "D18.resolution_durability"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": "The reply can show an action, negotiation, enjoyment, guilt, or a stated obligation. Neither accepting nor declining alone establishes felt responsibility. Do not credit durable value tension unless the answer describes it."
+    },
+    {
+      "id": "G23",
+      "question": "You arrive while a few people are getting ready for a shared meal. Nothing has been assigned to you yet. What tends to catch your attention in a situation like this?",
+      "neutral_information_targets": [
+        "D23.noticing"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "G19",
+      "question": "You have promised to help with a shared project, but continuing would take the personal time you had counted on. There is room to renegotiate. How would you usually work towards a decision?",
+      "neutral_information_targets": [
+        "D18.competing_values",
+        "D18.resolution_durability"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "F0",
+      "question": "You're deciding where to meet with three friends. Two suggest a place you find too noisy, and you would prefer somewhere quieter. Nothing has been booked. What would you probably say?",
+      "neutral_information_targets": [
+        "D05.preferred_use",
+        "D05.audience_adaptation"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "G05",
+      "question": "You need a group to support a practical change that they initially dislike. In situations like this, how effective are you usually at bringing people around?",
+      "neutral_information_targets": [
+        "D05.capacity"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "M11",
+      "question": "You have something useful to offer, and another person would need to contribute time or resources for it to happen. How would you explain the exchange to them?",
+      "neutral_information_targets": [
+        "X08.offer_and_leverage",
+        "X08.preferred_use"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "G06",
+      "question": "You have joined a new group. People are discussing what to do next, but nobody has asked you to lead or contribute yet. What would you usually do?",
+      "neutral_information_targets": [
+        "D06.entry_signal",
+        "D06.role_leadership",
+        "D06.context_difference"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "R02",
+      "question": "The group now asks you to coordinate the next piece of work. What kind of role would you actually be willing to take?",
+      "neutral_information_targets": [
+        "D06.role_leadership",
+        "D06.context_difference"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "G07",
+      "question": "A new opportunity to do something worthwhile is about to reach you. Judging from how opportunities usually arise in your life, what route is it most likely to take?",
+      "neutral_information_targets": [
+        "D07.usual_source",
+        "D07.deliberate_pathways"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "G08",
+      "question": "You offer to help with one clearly defined task, but people begin treating you as though you can take care of the whole situation. How familiar is that experience in your own life?",
+      "neutral_information_targets": [
+        "D08.experience_of_projection"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "R03",
+      "question": "In the situation where people expect more help than you offered, what would you usually say once the mismatch became clear?",
+      "neutral_information_targets": [
+        "D08.mismatch_response"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "M07",
+      "question": "Choose a familiar activity that you do reasonably well. How did you come to be good at it?",
+      "neutral_information_targets": [
+        "X05.ease_and_learning"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "M08",
+      "question": "What, if anything, do other people tend to ask you to do because of that ability?",
+      "neutral_information_targets": [
+        "X05.external_recognition"
+      ],
+      "changed_from_v2": true,
+      "interviewer_note": "Allow nobody asking or noticing. The previous activity must be participant-named; no natural-talent conclusion from the prompt alone."
+    },
+    {
+      "id": "G01",
+      "question": "You are helping arrange a weekend trip. Several people have sent overlapping messages about travel, costs, and timing, and some details disagree. How would you start making sense of it?",
+      "neutral_information_targets": [
+        "D01.approach",
+        "D01.checking_detail"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "G02",
+      "question": "You have worked out why a familiar practical problem keeps happening. Someone else is running into the same problem. What would you give them to help them understand it?",
+      "neutral_information_targets": [
+        "D02.output_form",
+        "D02.audience_use"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "G03",
+      "question": "A question that matters to you is still unresolved when you have to put it aside and get on with ordinary life. What usually happens to your attention afterwards?",
+      "neutral_information_targets": [
+        "D03.return_pattern"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "R01",
+      "question": "Return to the important question you had to put aside. What would usually let you stop returning to it?",
+      "neutral_information_targets": [
+        "D03.closure_condition"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": "Only ask about closure if the answer to G03 actually reports recurring attention. No return is not an invitation to demand a closure mechanism."
+    },
+    {
+      "id": "G04",
+      "question": "You are learning a useful task from an established guide. Most of it works, but one step repeatedly causes trouble in your situation. What would you do with the method?",
+      "neutral_information_targets": [
+        "D04.use_existing",
+        "D04.change_threshold"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "D0",
+      "question": "A few weeks ago you started learning some phrases in another language for fun. You still like the idea of being able to speak it, but today's practice feels repetitive. You have twenty minutes free. What would you probably do with that time?",
+      "neutral_information_targets": [
+        "D22.repetition_value"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "G22",
+      "question": "You are absorbed in an activity you chose. Someone interrupts briefly, then leaves you free to continue. What usually happens to your concentration?",
+      "neutral_information_targets": [
+        "D22.focus_depth_interruptions"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": "Interruption/resumption, preferred conditions, and depth or duration are separable. Do not credit the entire compound facet from just one part."
+    },
+    {
+      "id": "E0",
+      "question": "A nearby group is offering a free cooking class, one evening a week for a month. You like the sound of it, and the time would work for you, but you haven't tried a class with this group before. You need to sign up by tomorrow. What would you probably do next?",
+      "neutral_information_targets": [
+        "D09.clarity_over_time"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": "A proposed next action can be useful but does not necessarily describe how clarity changes. Preserve that gap rather than filling it from the question label."
+    },
+    {
+      "id": "G09",
+      "question": "You are considering a new commitment and have just heard the proposal, before you have worked through its advantages and drawbacks. What, if anything, would you usually notice in your body first?",
+      "neutral_information_targets": [
+        "D09.presence_form"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "R04",
+      "question": "How useful is that reaction when you are deciding whether a choice suits you?",
+      "neutral_information_targets": [
+        "D09.repeatability_trust",
+        "D09.override_state"
+      ],
+      "changed_from_v2": true,
+      "interviewer_note": "Ask only after a bodily/felt reaction is reported and its usefulness is not already explained. Use the participant's term; do not call ordinary tension a reliable decision signal."
+    },
+    {
+      "id": "M10",
+      "question": "What usually happens to that reaction as you keep considering the choice?",
+      "neutral_information_targets": [
+        "X07.fleeting_or_repeating"
+      ],
+      "changed_from_v2": true,
+      "interviewer_note": "Ask only when a reaction is reported and its time course is still unknown. Explicitly no reaction means skip this follow-up, not infer a fleeting signal."
+    },
+    {
+      "id": "M05",
+      "question": "You are dealing with a situation in an area you know well, and something seems wrong before you have worked out why. What kind of cue would you usually notice?",
+      "neutral_information_targets": [
+        "X04.cue_form"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "M06",
+      "question": "In an unfamiliar situation of the same kind, how much would you rely on that cue?",
+      "neutral_information_targets": [
+        "X04.context_and_limits"
+      ],
+      "changed_from_v2": true,
+      "interviewer_note": "Keep the kind of situation and cue fixed. Do not simultaneously substitute unfamiliar people for familiar practical work and attribute the difference to familiarity alone."
+    },
+    {
+      "id": "G10",
+      "question": "A role that offers you useful opportunities also expects you to operate differently from your usual way. What part of your own direction would you be least willing to give up?",
+      "neutral_information_targets": [
+        "D10.stable_direction"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "G20",
+      "question": "Your basic needs are covered, and you have some extra money available. What would you most want that extra money to do for you?",
+      "neutral_information_targets": [
+        "D19.resources_purpose",
+        "D19.status_ownership"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "M03",
+      "question": "You freely agreed to deliver something useful, but the remaining work is dull and nobody is watching. What would usually keep you following through, if anything?",
+      "neutral_information_targets": [
+        "X03.follow_through"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "M04",
+      "question": "You still want to keep that promise, but fatigue is making the work unreliable. What would you usually do?",
+      "neutral_information_targets": [
+        "X03.will_vs_available_energy"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "C0",
+      "question": "You were looking forward to meeting a friend this afternoon. Shortly before you would leave, they cancel because they have a mild cold. You haven't spent money or rearranged other commitments. What is your first reaction?",
+      "neutral_information_targets": [
+        "D21.novelty_disruption"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "G21",
+      "question": "You have an ordinary day with no fixed appointments and can choose its shape yourself. How would you usually arrange it?",
+      "neutral_information_targets": [
+        "D21.ordinary_rhythm"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "M09",
+      "question": "You have used an arrangement for years. A newer alternative is available, but the old one still does some things well. What would determine whether you preserved or replaced it?",
+      "neutral_information_targets": [
+        "X06.preserved_value",
+        "X06.change_condition"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "G11",
+      "question": "You will be using an unfamiliar room for ordinary work or quiet activity for a week. You can change one thing about the setup. What would you change first?",
+      "neutral_information_targets": [
+        "D11.conditions",
+        "D11.functional_effect"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "G12",
+      "question": "You meet someone a few times in an ordinary setting. There is no pressure to date them. What, if anything, usually starts romantic attraction for you?",
+      "neutral_information_targets": [
+        "D12.attraction"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "G13",
+      "question": "Consider a romantic connection that is welcome to you, now or in an earlier period of your life. As you keep seeing each other, what usually makes the closeness deepen?",
+      "neutral_information_targets": [
+        "D12.deepening"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "R05",
+      "question": "In a romantic relationship you want, a partner begins asking for more frequent contact than before. What would make that welcome or unwelcome for you?",
+      "neutral_information_targets": [
+        "D12.weakening_boundaries"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "G14",
+      "question": "You have some ordinary time on your own, with no recent argument or exciting news. What would your emotional background usually be like?",
+      "neutral_information_targets": [
+        "D13.solo_baseline"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "B0",
+      "question": "You're having a quiet evening at home and feel fairly settled. Your partner has been worrying for several days about going to a gathering where they won't know many people. Tonight they bring it up again, without asking you to do anything. What, if anything, happens to your own mood?",
+      "neutral_information_targets": [
+        "D13.others_effect"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "R06",
+      "question": "During a disagreement, someone close to you accuses you of not caring. After the conversation ends, what would usually happen to your mood?",
+      "neutral_information_targets": [
+        "D13.conflict_effect",
+        "D13.recovery"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "M01",
+      "question": "You are handling a manageable task when someone nearby starts urging you to hurry, although the actual deadline has not changed. What would usually happen inside you?",
+      "neutral_information_targets": [
+        "X02.under_pressure"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "M02",
+      "question": "That person leaves and the pressure to hurry stops; the task and deadline stay the same. What would usually change for you?",
+      "neutral_information_targets": [
+        "X02.after_pressure_removed"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "G15",
+      "question": "You spend an ordinary working day on something you personally find worthwhile, at a manageable pace. What would your energy usually be like afterwards?",
+      "neutral_information_targets": [
+        "D14.ordinary_engagement"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "R07",
+      "question": "Keep the same worthwhile work, but imagine two unusually intense days followed by a real chance to rest. What would your energy usually be like at the end of the burst?",
+      "neutral_information_targets": [
+        "D14.burst"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "R08",
+      "question": "Now the same worthwhile work stays too heavy for several weeks, without enough recovery. How would that usually affect you?",
+      "neutral_information_targets": [
+        "D14.prolonged_overload"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "R09",
+      "question": "During a run of work like this, what would tell you that continuing was no longer useful?",
+      "neutral_information_targets": [
+        "D14.stopping_recovery"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "G16",
+      "question": "A project you could take on will be difficult and receive little recognition. What would make it worth serious effort to you?",
+      "neutral_information_targets": [
+        "D15.mobilizer"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "R10",
+      "question": "You have already put a month into the difficult project, but progress is poor. What would make you stop investing in it?",
+      "neutral_information_targets": [
+        "D15.continue_disengage"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "G18",
+      "question": "A demanding day with people has ended, and nobody needs anything further from you tonight. What would you usually want to do next?",
+      "neutral_information_targets": [
+        "D17.withdrawal_need_activity"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "R11",
+      "question": "After the kind of downtime you described, what would usually make you ready to engage with people again?",
+      "neutral_information_targets": [
+        "D17.reentry"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": "Use the actual kind of downtime described. If no withdrawal or re-entry is needed in that setting, do not impose it."
+    },
+    {
+      "id": "G24",
+      "question": "Return to the invitation from a friend while you wanted time for yourself. In an earlier period you remember reasonably well, what would your usual response have been?",
+      "neutral_information_targets": [
+        "D20.continuity",
+        "D20.phases",
+        "D20.learned_management"
+      ],
+      "changed_from_v2": true,
+      "interviewer_note": "A retrospective usual-response report, not an instruction to invent an age-five memory. Same response, uncertainty, or no recollection are valid. Do not presuppose developmental change."
+    },
+    {
+      "id": "R12",
+      "question": "What have you learned that helps you handle the earlier-life response differently now?",
+      "neutral_information_targets": [
+        "D20.learned_management"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "G17",
+      "question": "During a group plan, someone gives information you believe is wrong. Correcting it might interrupt the conversation. What would you usually do?",
+      "neutral_information_targets": [
+        "D16.challenge_threshold",
+        "D16.context_cost"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "G25",
+      "question": "A close friend has twice broken an agreement that mattered to you, and each time explained it only afterwards. What difference, if any, would that usually make to your trust?",
+      "neutral_information_targets": [
+        "X01.trust_change"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    },
+    {
+      "id": "R13",
+      "question": "What would you need from that friend before relying on them again?",
+      "neutral_information_targets": [
+        "X01.repair_access"
+      ],
+      "changed_from_v2": false,
+      "interviewer_note": ""
+    }
+  ]
+}

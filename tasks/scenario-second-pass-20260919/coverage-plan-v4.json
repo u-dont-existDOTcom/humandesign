@@ -1,0 +1,900 @@
+{
+  "scope": "all 73 inherited planning facets; no claim all required information is elicited",
+  "facets": [
+    {
+      "facet_id": "D01.approach",
+      "domain": "Complexity, detail, and structure",
+      "parts_to_keep_distinct": [
+        "approach"
+      ],
+      "candidate_routes": [
+        "G01"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D01.checking_detail",
+      "domain": "Complexity, detail, and structure",
+      "parts_to_keep_distinct": [
+        "checking detail"
+      ],
+      "candidate_routes": [
+        "VERIFY"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D02.output_form",
+      "domain": "Insight and translation",
+      "parts_to_keep_distinct": [
+        "output form"
+      ],
+      "candidate_routes": [
+        "G02"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D02.audience_use",
+      "domain": "Insight and translation",
+      "parts_to_keep_distinct": [
+        "audience use"
+      ],
+      "candidate_routes": [
+        "G02"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D03.return_pattern",
+      "domain": "Unresolved questions and return",
+      "parts_to_keep_distinct": [
+        "return pattern"
+      ],
+      "candidate_routes": [
+        "G03"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D03.closure_condition",
+      "domain": "Unresolved questions and return",
+      "parts_to_keep_distinct": [
+        "closure condition"
+      ],
+      "candidate_routes": [
+        "R01"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D04.use_existing",
+      "domain": "Original contribution versus inherited method",
+      "parts_to_keep_distinct": [
+        "use existing"
+      ],
+      "candidate_routes": [
+        "G04"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D04.change_threshold",
+      "domain": "Original contribution versus inherited method",
+      "parts_to_keep_distinct": [
+        "change threshold"
+      ],
+      "candidate_routes": [
+        "WORKING-METHOD"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D05.capacity",
+      "domain": "Persuasion capacity and preferred use",
+      "parts_to_keep_distinct": [
+        "capacity"
+      ],
+      "candidate_routes": [
+        "G05"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D05.preferred_use",
+      "domain": "Persuasion capacity and preferred use",
+      "parts_to_keep_distinct": [
+        "preferred use"
+      ],
+      "candidate_routes": [
+        "PREFER-INFLUENCE"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D05.audience_adaptation",
+      "domain": "Persuasion capacity and preferred use",
+      "parts_to_keep_distinct": [
+        "audience adaptation"
+      ],
+      "candidate_routes": [
+        "F0"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D06.entry_signal",
+      "domain": "Entry, recognition, and role acceptance",
+      "parts_to_keep_distinct": [
+        "entry signal"
+      ],
+      "candidate_routes": [
+        "G06"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D06.role_leadership",
+      "domain": "Entry, recognition, and role acceptance",
+      "parts_to_keep_distinct": [
+        "role leadership"
+      ],
+      "candidate_routes": [
+        "R02"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D06.context_difference",
+      "domain": "Entry, recognition, and role acceptance",
+      "parts_to_keep_distinct": [
+        "context difference"
+      ],
+      "candidate_routes": [
+        "R02"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D07.usual_source",
+      "domain": "Networks and opportunity pathways",
+      "parts_to_keep_distinct": [
+        "usual source"
+      ],
+      "candidate_routes": [
+        "G07"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D07.deliberate_pathways",
+      "domain": "Networks and opportunity pathways",
+      "parts_to_keep_distinct": [
+        "deliberate pathways"
+      ],
+      "candidate_routes": [
+        "OUTREACH"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D08.experience_of_projection",
+      "domain": "Role projection and misrecognition",
+      "parts_to_keep_distinct": [
+        "experience of projection"
+      ],
+      "candidate_routes": [
+        "G08"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D08.mismatch_response",
+      "domain": "Role projection and misrecognition",
+      "parts_to_keep_distinct": [
+        "mismatch response"
+      ],
+      "candidate_routes": [
+        "R03"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D09.presence_form",
+      "domain": "Immediate bodily or felt signals",
+      "parts_to_keep_distinct": [
+        "presence form"
+      ],
+      "candidate_routes": [
+        "G09"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D09.repeatability_trust",
+      "domain": "Immediate bodily or felt signals",
+      "parts_to_keep_distinct": [
+        "across-occasion consistency",
+        "self-reported usefulness or trust"
+      ],
+      "candidate_routes": [
+        "R04",
+        "SIGNAL-DEPENDABILITY"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D09.override_state",
+      "domain": "Immediate bodily or felt signals",
+      "parts_to_keep_distinct": [
+        "conditions of override",
+        "state dependence if reported"
+      ],
+      "candidate_routes": [
+        "SIGNAL-NOT-FOLLOWED"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D09.clarity_over_time",
+      "domain": "Immediate bodily or felt signals",
+      "parts_to_keep_distinct": [
+        "clarity over time"
+      ],
+      "candidate_routes": [
+        "CHOICE-TIME"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D10.stable_direction",
+      "domain": "Autonomy, direction, and external roles",
+      "parts_to_keep_distinct": [
+        "stable direction"
+      ],
+      "candidate_routes": [
+        "G10"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D10.external_adaptation",
+      "domain": "Autonomy, direction, and external roles",
+      "parts_to_keep_distinct": [
+        "external adaptation"
+      ],
+      "candidate_routes": [
+        "G10",
+        "ADAPTATION"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D11.conditions",
+      "domain": "Home, sensory baseline, and sanctuary",
+      "parts_to_keep_distinct": [
+        "conditions"
+      ],
+      "candidate_routes": [
+        "G11"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D11.functional_effect",
+      "domain": "Home, sensory baseline, and sanctuary",
+      "parts_to_keep_distinct": [
+        "functional effect"
+      ],
+      "candidate_routes": [
+        "ROOM-EFFECT"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D12.attraction",
+      "domain": "Romantic and attachment dynamics",
+      "parts_to_keep_distinct": [
+        "attraction"
+      ],
+      "candidate_routes": [
+        "G12"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D12.deepening",
+      "domain": "Romantic and attachment dynamics",
+      "parts_to_keep_distinct": [
+        "deepening"
+      ],
+      "candidate_routes": [
+        "G13"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D12.weakening_boundaries",
+      "domain": "Romantic and attachment dynamics",
+      "parts_to_keep_distinct": [
+        "weakening boundaries"
+      ],
+      "candidate_routes": [
+        "R05"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D12.sensuality",
+      "domain": "Romantic and attachment dynamics",
+      "parts_to_keep_distinct": [
+        "physical affection preference",
+        "sexual desire only if explicitly reported; do not substitute affection"
+      ],
+      "candidate_routes": [
+        "PHYSICAL-CLOSENESS"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D13.solo_baseline",
+      "domain": "Emotional baseline and permeability",
+      "parts_to_keep_distinct": [
+        "solo baseline"
+      ],
+      "candidate_routes": [
+        "G14"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D13.others_effect",
+      "domain": "Emotional baseline and permeability",
+      "parts_to_keep_distinct": [
+        "others effect"
+      ],
+      "candidate_routes": [
+        "B0"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D13.conflict_effect",
+      "domain": "Emotional baseline and permeability",
+      "parts_to_keep_distinct": [
+        "conflict effect"
+      ],
+      "candidate_routes": [
+        "R06"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D13.recovery",
+      "domain": "Emotional baseline and permeability",
+      "parts_to_keep_distinct": [
+        "aftermath of a reported emotional change",
+        "time course or recovery condition if known"
+      ],
+      "candidate_routes": [
+        "MOOD-AFTER"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D14.ordinary_engagement",
+      "domain": "Work energy across intensity and duration",
+      "parts_to_keep_distinct": [
+        "ordinary engagement"
+      ],
+      "candidate_routes": [
+        "G15"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D14.burst",
+      "domain": "Work energy across intensity and duration",
+      "parts_to_keep_distinct": [
+        "burst"
+      ],
+      "candidate_routes": [
+        "R07"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D14.prolonged_overload",
+      "domain": "Work energy across intensity and duration",
+      "parts_to_keep_distinct": [
+        "prolonged overload"
+      ],
+      "candidate_routes": [
+        "R08"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D14.stopping_recovery",
+      "domain": "Work energy across intensity and duration",
+      "parts_to_keep_distinct": [
+        "stopping cues",
+        "restoration after depletion"
+      ],
+      "candidate_routes": [
+        "R09",
+        "WORK-RECOVERY"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D15.mobilizer",
+      "domain": "Consequential effort, struggle, and purpose",
+      "parts_to_keep_distinct": [
+        "mobilizer"
+      ],
+      "candidate_routes": [
+        "G16"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D15.continue_disengage",
+      "domain": "Consequential effort, struggle, and purpose",
+      "parts_to_keep_distinct": [
+        "continue disengage"
+      ],
+      "candidate_routes": [
+        "R10"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D16.challenge_threshold",
+      "domain": "Correction threshold",
+      "parts_to_keep_distinct": [
+        "challenge threshold"
+      ],
+      "candidate_routes": [
+        "G17",
+        "CORRECTION-REASON"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D16.context_cost",
+      "domain": "Correction threshold",
+      "parts_to_keep_distinct": [
+        "context cost"
+      ],
+      "candidate_routes": [
+        "CORRECTION-REASON"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D17.withdrawal_need_activity",
+      "domain": "Retreat, privacy, and re-entry",
+      "parts_to_keep_distinct": [
+        "withdrawal need activity"
+      ],
+      "candidate_routes": [
+        "G18"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D17.reentry",
+      "domain": "Retreat, privacy, and re-entry",
+      "parts_to_keep_distinct": [
+        "reentry"
+      ],
+      "candidate_routes": [
+        "R11"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D18.competing_values",
+      "domain": "Value tension and competing priorities",
+      "parts_to_keep_distinct": [
+        "competing values"
+      ],
+      "candidate_routes": [
+        "G19",
+        "WHY"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D18.resolution_durability",
+      "domain": "Value tension and competing priorities",
+      "parts_to_keep_distinct": [
+        "resolution durability"
+      ],
+      "candidate_routes": [
+        "AFTER-CHOICE"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D19.resources_purpose",
+      "domain": "Resources, status, security, and sovereignty",
+      "parts_to_keep_distinct": [
+        "resources purpose"
+      ],
+      "candidate_routes": [
+        "G20"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D19.status_ownership",
+      "domain": "Resources, status, security, and sovereignty",
+      "parts_to_keep_distinct": [
+        "social status or recognition motive",
+        "ownership or control motive"
+      ],
+      "candidate_routes": [
+        "STATUS",
+        "OWNERSHIP"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D20.continuity",
+      "domain": "Developmental phases and learned change",
+      "parts_to_keep_distinct": [
+        "continuity"
+      ],
+      "candidate_routes": [
+        "G24"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D20.phases",
+      "domain": "Developmental phases and learned change",
+      "parts_to_keep_distinct": [
+        "reported change or explicit continuity",
+        "time frame at the precision actually known"
+      ],
+      "candidate_routes": [
+        "LIFE-PHASE"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D20.learned_management",
+      "domain": "Developmental phases and learned change",
+      "parts_to_keep_distinct": [
+        "learned management"
+      ],
+      "candidate_routes": [
+        "R12"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D21.ordinary_rhythm",
+      "domain": "Rhythm, routine, and continuity",
+      "parts_to_keep_distinct": [
+        "ordinary rhythm"
+      ],
+      "candidate_routes": [
+        "G21"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D21.novelty_disruption",
+      "domain": "Rhythm, routine, and continuity",
+      "parts_to_keep_distinct": [
+        "novelty disruption"
+      ],
+      "candidate_routes": [
+        "C0"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D22.focus_depth_interruptions",
+      "domain": "Concentrated focus and repetition",
+      "parts_to_keep_distinct": [
+        "depth or duration of engagement",
+        "effect of interruption and resumption"
+      ],
+      "candidate_routes": [
+        "G22",
+        "FOCUS-DEPTH"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D22.repetition_value",
+      "domain": "Concentrated focus and repetition",
+      "parts_to_keep_distinct": [
+        "repetition value"
+      ],
+      "candidate_routes": [
+        "PRACTICE-REASON"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D23.noticing",
+      "domain": "Sensitivity to needs and responsibility",
+      "parts_to_keep_distinct": [
+        "noticing"
+      ],
+      "candidate_routes": [
+        "G23"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D23.responsibility",
+      "domain": "Sensitivity to needs and responsibility",
+      "parts_to_keep_distinct": [
+        "whether an obligation is felt",
+        "what creates or limits that obligation"
+      ],
+      "candidate_routes": [
+        "WHY"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "D23.withholding",
+      "domain": "Sensitivity to needs and responsibility",
+      "parts_to_keep_distinct": [
+        "choice not to intervene or a stated limit",
+        "conditions attached to that choice"
+      ],
+      "candidate_routes": [
+        "WHY"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "X01.trust_change",
+      "domain": "Broader neutral check: trust, repair, and access boundaries",
+      "parts_to_keep_distinct": [
+        "trust change"
+      ],
+      "candidate_routes": [
+        "G25"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "X01.repair_access",
+      "domain": "Broader neutral check: trust, repair, and access boundaries",
+      "parts_to_keep_distinct": [
+        "repair access"
+      ],
+      "candidate_routes": [
+        "R13"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "X02.under_pressure",
+      "domain": "External pressure and urgency",
+      "parts_to_keep_distinct": [
+        "under pressure"
+      ],
+      "candidate_routes": [
+        "M01"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "X02.after_pressure_removed",
+      "domain": "External pressure and urgency",
+      "parts_to_keep_distinct": [
+        "after pressure removed"
+      ],
+      "candidate_routes": [
+        "M02"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "X03.follow_through",
+      "domain": "Chosen promises and sustained will",
+      "parts_to_keep_distinct": [
+        "follow through"
+      ],
+      "candidate_routes": [
+        "M03"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "X03.will_vs_available_energy",
+      "domain": "Chosen promises and sustained will",
+      "parts_to_keep_distinct": [
+        "will vs available energy"
+      ],
+      "candidate_routes": [
+        "M04"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "X04.cue_form",
+      "domain": "Familiar risk and trust recognition",
+      "parts_to_keep_distinct": [
+        "cue form"
+      ],
+      "candidate_routes": [
+        "M05"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "X04.context_and_limits",
+      "domain": "Familiar risk and trust recognition",
+      "parts_to_keep_distinct": [
+        "context and limits"
+      ],
+      "candidate_routes": [
+        "M06"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "X05.ease_and_learning",
+      "domain": "Natural ease, practice, and recognition",
+      "parts_to_keep_distinct": [
+        "initial ease if known",
+        "practice or instruction reported"
+      ],
+      "candidate_routes": [
+        "M07"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "X05.external_recognition",
+      "domain": "Natural ease, practice, and recognition",
+      "parts_to_keep_distinct": [
+        "external recognition"
+      ],
+      "candidate_routes": [
+        "M08"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "X06.preserved_value",
+      "domain": "Preserving durable value versus routine",
+      "parts_to_keep_distinct": [
+        "preserved value"
+      ],
+      "candidate_routes": [
+        "M09"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "X06.change_condition",
+      "domain": "Preserving durable value versus routine",
+      "parts_to_keep_distinct": [
+        "change condition"
+      ],
+      "candidate_routes": [
+        "M09"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "X07.fleeting_or_repeating",
+      "domain": "Time course of early bodily signals",
+      "parts_to_keep_distinct": [
+        "fleeting or repeating"
+      ],
+      "candidate_routes": [
+        "M10"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "X08.offer_and_leverage",
+      "domain": "Value exchange and audience leverage",
+      "parts_to_keep_distinct": [
+        "how value is presented",
+        "adaptation to the other person if reported"
+      ],
+      "candidate_routes": [
+        "M11"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    },
+    {
+      "facet_id": "X08.preferred_use",
+      "domain": "Value exchange and audience leverage",
+      "parts_to_keep_distinct": [
+        "preferred use"
+      ],
+      "candidate_routes": [
+        "PREFER-INFLUENCE"
+      ],
+      "status": "planned_not_empirically_verified",
+      "claim_rule": "Credit only a source-linked statement at its actual scope; missing parts remain missing. The question, premise, target and prior fixture labels are not evidence."
+    }
+  ]
+}

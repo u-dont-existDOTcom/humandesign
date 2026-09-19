@@ -1,0 +1,406 @@
+{
+  "schema": "scenario-coverage-design-rubric-v2",
+  "status": "assistant-authored decomposition of existing requirements, frozen for this design exercise; not a validated scale or runtime contract",
+  "sources": {
+    "recoverability": {
+      "repo": "u-dont-existDOTcom/humandesign",
+      "ref": "7837d7379b4349c120296d25d0c226373d217b72",
+      "path": "src/hdmatch/api/life_patterns_recoverability_domains.py",
+      "blob": "e943caa59a9e1ad98786a2e7590b19583e401121"
+    },
+    "neutral": {
+      "repo": "u-dont-existDOTcom/humandesign",
+      "ref": "7837d7379b4349c120296d25d0c226373d217b72",
+      "path": "src/hdmatch/api/life_patterns_v2_owner_coverage.py",
+      "blob": "9ada4f4e2e7569e6113159953c7564b2d34c2b41"
+    },
+    "crosswalk": {
+      "repo": "u-dont-existDOTcom/humandesign",
+      "ref": "7837d7379b4349c120296d25d0c226373d217b72",
+      "path": "reference/research/life_patterns_astrohd_owner_recovery_crosswalk_v1.json",
+      "blob": "1fc7485938d48943dbf9a63ab02416e5db895b1b"
+    },
+    "mapping_audit": {
+      "repo": "u-dont-existDOTcom/humandesign",
+      "ref": "7837d7379b4349c120296d25d0c226373d217b72",
+      "path": "docs/17_v3_6_profile_mapping_coverage_audit.md",
+      "blob": "455ddd9d772556c4c1086f78b92f798db321d2a3"
+    }
+  },
+  "domains": [
+    {
+      "id": "D01",
+      "canonical_id": "complex_structure",
+      "title": "Complexity, detail, and structure",
+      "source": "recoverability",
+      "facets": [
+        "D01.approach",
+        "D01.checking_detail"
+      ]
+    },
+    {
+      "id": "D02",
+      "canonical_id": "insight_translation",
+      "title": "Insight and translation",
+      "source": "recoverability",
+      "facets": [
+        "D02.output_form",
+        "D02.audience_use"
+      ]
+    },
+    {
+      "id": "D03",
+      "canonical_id": "recurring_mystery",
+      "title": "Unresolved questions and return",
+      "source": "recoverability",
+      "facets": [
+        "D03.return_pattern",
+        "D03.closure_condition"
+      ]
+    },
+    {
+      "id": "D04",
+      "canonical_id": "original_contribution",
+      "title": "Original contribution versus inherited method",
+      "source": "recoverability",
+      "facets": [
+        "D04.use_existing",
+        "D04.change_threshold"
+      ]
+    },
+    {
+      "id": "D05",
+      "canonical_id": "persuasion_strategy",
+      "title": "Persuasion capacity and preferred use",
+      "source": "recoverability",
+      "facets": [
+        "D05.capacity",
+        "D05.preferred_use",
+        "D05.audience_adaptation"
+      ]
+    },
+    {
+      "id": "D06",
+      "canonical_id": "recognition_entry",
+      "title": "Entry, recognition, and role acceptance",
+      "source": "recoverability",
+      "facets": [
+        "D06.entry_signal",
+        "D06.role_leadership",
+        "D06.context_difference"
+      ]
+    },
+    {
+      "id": "D07",
+      "canonical_id": "network_pathways",
+      "title": "Networks and opportunity pathways",
+      "source": "recoverability",
+      "facets": [
+        "D07.usual_source",
+        "D07.deliberate_pathways"
+      ]
+    },
+    {
+      "id": "D08",
+      "canonical_id": "role_projection",
+      "title": "Role projection and misrecognition",
+      "source": "recoverability",
+      "facets": [
+        "D08.experience_of_projection",
+        "D08.mismatch_response"
+      ]
+    },
+    {
+      "id": "D09",
+      "canonical_id": "immediate_body_signal",
+      "title": "Immediate bodily or felt signals",
+      "source": "recoverability",
+      "facets": [
+        "D09.presence_form",
+        "D09.repeatability_trust",
+        "D09.override_state",
+        "D09.clarity_over_time"
+      ]
+    },
+    {
+      "id": "D10",
+      "canonical_id": "autonomy_direction",
+      "title": "Autonomy, direction, and external roles",
+      "source": "recoverability",
+      "facets": [
+        "D10.stable_direction",
+        "D10.external_adaptation"
+      ]
+    },
+    {
+      "id": "D11",
+      "canonical_id": "sanctuary_sensory",
+      "title": "Home, sensory baseline, and sanctuary",
+      "source": "recoverability",
+      "facets": [
+        "D11.conditions",
+        "D11.functional_effect"
+      ]
+    },
+    {
+      "id": "D12",
+      "canonical_id": "romantic_attachment",
+      "title": "Romantic and attachment dynamics",
+      "source": "recoverability",
+      "facets": [
+        "D12.attraction",
+        "D12.deepening",
+        "D12.weakening_boundaries",
+        "D12.sensuality"
+      ]
+    },
+    {
+      "id": "D13",
+      "canonical_id": "emotion_permeability",
+      "title": "Emotional baseline and permeability",
+      "source": "recoverability",
+      "facets": [
+        "D13.solo_baseline",
+        "D13.others_effect",
+        "D13.conflict_effect",
+        "D13.recovery"
+      ]
+    },
+    {
+      "id": "D14",
+      "canonical_id": "work_energy_range",
+      "title": "Work energy across intensity and duration",
+      "source": "recoverability",
+      "facets": [
+        "D14.ordinary_engagement",
+        "D14.burst",
+        "D14.prolonged_overload",
+        "D14.stopping_recovery"
+      ]
+    },
+    {
+      "id": "D15",
+      "canonical_id": "consequential_effort",
+      "title": "Consequential effort, struggle, and purpose",
+      "source": "recoverability",
+      "facets": [
+        "D15.mobilizer",
+        "D15.continue_disengage"
+      ]
+    },
+    {
+      "id": "D16",
+      "canonical_id": "correction_threshold",
+      "title": "Correction threshold",
+      "source": "recoverability",
+      "facets": [
+        "D16.challenge_threshold",
+        "D16.context_cost"
+      ]
+    },
+    {
+      "id": "D17",
+      "canonical_id": "retreat_privacy",
+      "title": "Retreat, privacy, and re-entry",
+      "source": "recoverability",
+      "facets": [
+        "D17.withdrawal_need_activity",
+        "D17.reentry"
+      ]
+    },
+    {
+      "id": "D18",
+      "canonical_id": "value_tension",
+      "title": "Value tension and competing priorities",
+      "source": "recoverability",
+      "facets": [
+        "D18.competing_values",
+        "D18.resolution_durability"
+      ]
+    },
+    {
+      "id": "D19",
+      "canonical_id": "resource_motivation",
+      "title": "Resources, status, security, and sovereignty",
+      "source": "recoverability",
+      "facets": [
+        "D19.resources_purpose",
+        "D19.status_ownership"
+      ]
+    },
+    {
+      "id": "D20",
+      "canonical_id": "developmental_phases",
+      "title": "Developmental phases and learned change",
+      "source": "recoverability",
+      "facets": [
+        "D20.continuity",
+        "D20.phases",
+        "D20.learned_management"
+      ]
+    },
+    {
+      "id": "D21",
+      "canonical_id": "rhythm_continuity",
+      "title": "Rhythm, routine, and continuity",
+      "source": "recoverability",
+      "facets": [
+        "D21.ordinary_rhythm",
+        "D21.novelty_disruption"
+      ]
+    },
+    {
+      "id": "D22",
+      "canonical_id": "focus_repetition",
+      "title": "Concentrated focus and repetition",
+      "source": "recoverability",
+      "facets": [
+        "D22.focus_depth_interruptions",
+        "D22.repetition_value"
+      ]
+    },
+    {
+      "id": "D23",
+      "canonical_id": "needs_responsibility",
+      "title": "Sensitivity to needs and responsibility",
+      "source": "recoverability",
+      "facets": [
+        "D23.noticing",
+        "D23.responsibility",
+        "D23.withholding"
+      ]
+    },
+    {
+      "id": "X01",
+      "canonical_id": "trust_repair",
+      "title": "Broader neutral check: trust, repair, and access boundaries",
+      "source": "neutral",
+      "facets": [
+        "X01.trust_change",
+        "X01.repair_access"
+      ]
+    },
+    {
+      "id": "X02",
+      "canonical_id": "external_urgency",
+      "title": "External pressure and urgency",
+      "source": "mapping_audit",
+      "facets": [
+        "X02.under_pressure",
+        "X02.after_pressure_removed"
+      ]
+    },
+    {
+      "id": "X03",
+      "canonical_id": "chosen_promise",
+      "title": "Chosen promises and sustained will",
+      "source": "mapping_audit",
+      "facets": [
+        "X03.follow_through",
+        "X03.will_vs_available_energy"
+      ]
+    },
+    {
+      "id": "X04",
+      "canonical_id": "familiar_risk_cues",
+      "title": "Familiar risk and trust recognition",
+      "source": "mapping_audit",
+      "facets": [
+        "X04.cue_form",
+        "X04.context_and_limits"
+      ]
+    },
+    {
+      "id": "X05",
+      "canonical_id": "natural_ability",
+      "title": "Natural ease, practice, and recognition",
+      "source": "mapping_audit",
+      "facets": [
+        "X05.ease_and_learning",
+        "X05.external_recognition"
+      ]
+    },
+    {
+      "id": "X06",
+      "canonical_id": "durable_value",
+      "title": "Preserving durable value versus routine",
+      "source": "mapping_audit",
+      "facets": [
+        "X06.preserved_value",
+        "X06.change_condition"
+      ]
+    },
+    {
+      "id": "X07",
+      "canonical_id": "signal_timecourse",
+      "title": "Time course of early bodily signals",
+      "source": "mapping_audit",
+      "facets": [
+        "X07.fleeting_or_repeating"
+      ]
+    },
+    {
+      "id": "X08",
+      "canonical_id": "value_exchange",
+      "title": "Value exchange and audience leverage",
+      "source": "mapping_audit",
+      "facets": [
+        "X08.offer_and_leverage",
+        "X08.preferred_use"
+      ]
+    }
+  ],
+  "secondary_checks": {
+    "decision_process": [
+      "D09"
+    ],
+    "energy_recovery": [
+      "D14",
+      "D17"
+    ],
+    "attention_cognition_work": [
+      "D01",
+      "D02",
+      "D04",
+      "D21",
+      "D22"
+    ],
+    "emotion_regulation": [
+      "D13"
+    ],
+    "relationships_conflict_boundaries": [
+      "D12",
+      "D13",
+      "D23",
+      "X01"
+    ],
+    "social_entry_roles": [
+      "D06",
+      "D07",
+      "D08"
+    ],
+    "communication_influence": [
+      "D02",
+      "D05"
+    ],
+    "values_purpose": [
+      "D15",
+      "D16",
+      "D18",
+      "D19"
+    ],
+    "environment_body_security": [
+      "D09",
+      "D11",
+      "D19"
+    ],
+    "developmental_change": [
+      "D20"
+    ]
+  },
+  "sufficiency": "Every named facet needs explicit respondent-answer support at the level of usual self-description, including the relevant context/condition. A question being asked, a supplied stimulus premise, a hidden dossier fact, or a moral norm is not support. An explicit usual absence can be described; unknown, inapplicable, declined, and unasked stay separate from sufficient.",
+  "evidence_limit": "Usual hypothetical self-description is not a real episode or an independently observed capacity, causal mechanism, frequency, or chart feature. No dossier fact is admissible as extracted-answer evidence.",
+  "scope_limit": "The 23-domain registry is a development coverage blueprint assembled for a historical owner regression, not a complete universal AstroHD chart-observable specification. The broader ten-domain blueprint is cross-checked without pretending it supplies a complete inverse chart model.",
+  "supersedes_for_this_design_pass": "requirements.json; original bytes retained",
+  "amendment_reason": "Broader scored constructs in docs/17_v3_6_profile_mapping_coverage_audit.md are not fully represented by the historical 23-domain checklist."
+}
