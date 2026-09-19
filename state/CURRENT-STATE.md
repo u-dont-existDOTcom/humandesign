@@ -29,3 +29,11 @@ After credit is added, refresh the existing browser tab and use Retry saved oper
 No external recruitment, chart-aware questioning, scientific-validation claim, HumanDesign merge, or public release occurred. The development pull request remains draft/open/unmerged.
 
 **There was never a completion policy.** Preserve state/OWNER-CORRECTION-2026-09-02.md.
+## 2026-09-19 owner credit-replenishment recheck
+
+The owner reported that API credit was added. The supervisor immediately re-ran a fresh synthetic owner-session turn, then repeated the check after several minutes. Both calls still returned the hardened provider detail: HTTP 429 / insufficient_quota / credit_balance_exhausted in under two seconds.
+
+Railway read-only diagnostics confirm the running service selects HDMATCH_LLM_API_KEY, calls api.openai.com, and HDMATCH_LLM_API_KEY resolves to the same key value as OPENAI_API_KEY. The application is therefore not accidentally using a different Railway key variable from the one already configured as OPENAI_API_KEY.
+
+OpenAI's current billing guidance states that a purchased prepaid balance can take a few minutes to appear and that any negative balance accumulated after prior credit exhaustion is deducted from the next purchase. Because repeated checks after that propagation window still report credit_balance_exhausted, the remaining action is account-side: verify the positive prepaid balance actually appears for the organization/project associated with this API key and was not fully consumed by a prior negative balance. No additional same-provider runtime repair can create provider credit.
+
