@@ -1,12 +1,24 @@
 {
   "schema_version": 1,
-  "status": "active",
-  "exclusive_writer": true,
+  "status": "completed_design_handoff",
+  "exclusive_writer": false,
   "owned_branch": "chat/scenario-first-survey-design-20260919",
   "integration_branch": "codex/discover-life-patterns-mvp",
   "integration_base_sha": "7837d7379b4349c120296d25d0c226373d217b72",
   "scope": "Brainstorm a scenario-first Life Patterns interview and deliver a fresh-conversation handoff. Documentation only; no runtime, deployment, inference, scoring, or VM wake.",
   "owner_outcome": "Explore whether representative example scenarios with one response task at a time are easier than abstract pattern questions; address age/life stage; prepare a usable handoff for a new conversation.",
+  "root_product_outcome": "OPEN",
+  "this_turn_outcome": "Design brainstorm and handoff prepared; superiority and validity unmeasured.",
+  "proposal_status": "NOT_YET_APPROVED_FOR_IMPLEMENTATION",
   "implementation_authorized_by_this_turn": false,
-  "vm_wake_authorized": false
+  "vm_wake_authorized": false,
+  "runtime_changes": 0,
+  "live_inference_calls": 0,
+  "next_actor": "Fresh design conversation with owner",
+  "next_action": "Read START-NEXT-CHAT.md and develop/refine a small scenario set in Chat. Preserve explicit design-only and sleeping-state boundaries.",
+  "stop_admission": "Current owner requested brainstorming then handoff to a new conversation, not implementation. No independent executable runtime repair is part of this design-only deliverable.",
+  "entrypoint": "tasks/scenario-first-survey-design-20260919/START-NEXT-CHAT.md",
+  "handoff": "tasks/scenario-first-survey-design-20260919/HANDOFF.md",
+  "research": "tasks/scenario-first-survey-design-20260919/RESEARCH.md",
+  "owner_source": "tasks/scenario-first-survey-design-20260919/OWNER-CONCEPTION.md"
 }
