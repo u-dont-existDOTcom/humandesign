@@ -1,0 +1,34 @@
+{
+  "task_id": "scenario-readiness-audit-20260919",
+  "status": "review_complete_ready_for_saved_chat_pilot_pilot_paused",
+  "source_head": "81b20fee050d1400d39c9f099093e9829e1d51dd",
+  "owner_outcome": "OPEN: a coherent, faithfully interpreted scenario interview that the assistant actually judges worth an owner pilot; scientific chart recovery remains separate.",
+  "scope": "Audit and improve design and manual dialogue handling; keep owner pilot paused; no application, inference, VM, deployment, recruitment, real chart use.",
+  "assurance_lane": "iteration",
+  "active_contract": [
+    "Review every inherited node and every information requirement, including contextual dependencies and compound parts.",
+    "Test the actual proposed questions and follow-up wording against terse, nuanced, ambiguous, unavailable and corrected responses; no label-count substitute.",
+    "Preserve scenario-first, one response task, optional recollection, no target-chart cues, whole-answer reuse and privacy.",
+    "Revise until no known material design defect remains; deliver a clear judgment bound to evidence and do not confuse this with runtime/human validation.",
+    "Keep archive and source fixes append-only; save design artifacts in humandesign and raw owner text only privately."
+  ],
+  "guidance_activation": {
+    "uda_root_blob": "35d45aa211b62f8ab5b7865be3804b36602e3bb4",
+    "route": "Live default-branch GitHub root/config/index/docs; task-specific operating-system, activation, strategy and isolation reads; live Design skill."
+  },
+  "stop_boundary": "Deliver reviewed candidate and a readiness verdict; no request for the owner to test known unresolved design errors; current pilot pause remains in force.",
+  "owner_direction": "Complete another audit/repair iteration and give a genuine positive readiness judgment only when the design merits the owner’s time. Keep the current pilot paused.",
+  "owned_branch": "chat/scenario-readiness-audit-20260919",
+  "expected_write_head": "90f1b5a4c57ef6d7e159b3493dc91e0130c2c1e2",
+  "new_mandatory_requirements": [],
+  "remaining_separate_boundaries": [
+    "Actual human use",
+    "Deployed-model behavior",
+    "Evidence import into app",
+    "AstroHD decoding and empirical validity"
+  ],
+  "readiness_judgment": "READY_FOR_SAVED_CHAT_PILOT",
+  "known_material_design_defects_remaining": 0,
+  "verification": "VERIFICATION.json",
+  "next_action": "Owner may resume the saved Chat pilot; do not restart automatically or change the app."
+}

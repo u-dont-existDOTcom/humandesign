@@ -1,16 +1,17 @@
 {
   "schemaVersion": 1,
-  "taskId": "scenario-second-pass-20260919",
-  "status": "review_complete_pilot_paused_by_owner",
-  "requiredBranch": "chat/scenario-second-pass-private-capture-20260919",
+  "taskId": "scenario-readiness-audit-20260919",
+  "status": "design_ready_pilot_paused_by_owner",
+  "requiredBranch": "chat/scenario-readiness-audit-20260919",
   "exclusive": true,
-  "currentStateOverlay": "tasks/scenario-second-pass-20260919/ACTIVE-CONTRACT.json",
+  "currentStateOverlay": "tasks/scenario-readiness-audit-20260919/ACTIVE-CONTRACT.json",
   "ownerOutcome": "OPEN",
   "assuranceLane": "iteration",
   "implementationAuthorized": false,
   "vmWakeAuthorized": false,
   "privateParticipantTranscriptToGitAuthorized": false,
-  "questionBank": "tasks/scenario-second-pass-20260919/interviewer-bank-v4.json",
-  "privateCaptureProtocol": "tasks/scenario-second-pass-20260919/PRIVATE-CAPTURE-PROTOCOL.md",
-  "nextAction": "Pilot remains paused. When owner resumes, recover private records through the owner-device connection and save actual replies with exact question/version, source mode and corrections. Do not treat the conditional yes as an answer."
+  "questionBank": "tasks/scenario-readiness-audit-20260919/interviewer-bank-v5.json",
+  "interviewProtocol": "tasks/scenario-readiness-audit-20260919/INTERVIEW-PROTOCOL.md",
+  "verification": "tasks/scenario-readiness-audit-20260919/VERIFICATION.json",
+  "nextAction": "Keep pilot paused until owner resumes. Use reviewed v5.1 protocol and save actual replies privately with exact question/version; no automatic app or VM action."
 }

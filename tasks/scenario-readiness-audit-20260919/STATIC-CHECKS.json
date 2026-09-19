@@ -1,0 +1,85 @@
+{
+  "verification_class": "static artifact and explicitly authored-case consistency; not NLP or human validity",
+  "checks": [
+    {
+      "check": "Exact frozen source bank",
+      "passed": true
+    },
+    {
+      "check": "79 unique candidate entries; 75 inherited entries preserved",
+      "passed": true
+    },
+    {
+      "check": "Every final entry has a specific review row",
+      "passed": true
+    },
+    {
+      "check": "No stale single-parent field beside explicit context references",
+      "passed": true
+    },
+    {
+      "check": "Every context reference exists",
+      "passed": true
+    },
+    {
+      "check": "Every family contains each entry exactly once",
+      "passed": true
+    },
+    {
+      "check": "All 73 source identifiers reviewed with a narrow reading and prohibited extension",
+      "passed": true
+    },
+    {
+      "check": "Evidence-guide routes exist and actually target the identifier",
+      "passed": true
+    },
+    {
+      "check": "Question presentation never gives automatic evidence credit",
+      "passed": true
+    },
+    {
+      "check": "Invitation contrast asks the same response task",
+      "passed": true
+    },
+    {
+      "check": "Cancellation is not the novelty route",
+      "passed": true
+    },
+    {
+      "check": "Promise question allows not continuing",
+      "passed": true
+    },
+    {
+      "check": "32 complete authored dialogue review records",
+      "passed": true
+    },
+    {
+      "check": "Dialogue source and destination IDs exist",
+      "passed": true
+    },
+    {
+      "check": "All nonliteral delivered question wording is explicitly recorded",
+      "passed": true
+    },
+    {
+      "check": "Nonadjacent feeling reference is in actual delivered wording",
+      "passed": true
+    },
+    {
+      "check": "Pause-plus-answer case has no next question",
+      "passed": true
+    },
+    {
+      "check": "No-signal and no-skill examples do not launch dependent probes",
+      "passed": true
+    },
+    {
+      "check": "All included Python files parse without executing models",
+      "passed": true
+    }
+  ],
+  "passed": 19,
+  "failed": 0,
+  "elapsed_seconds": 0.10374174499884248,
+  "runtime_model_calls": 0
+}

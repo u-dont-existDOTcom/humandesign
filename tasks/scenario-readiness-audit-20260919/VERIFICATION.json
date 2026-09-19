@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "task_id": "scenario-readiness-audit-20260919",
+  "recorded_at": "2026-09-19T20:22:07.535404+00:00",
+  "source_head": "81b20fee050d1400d39c9f099093e9829e1d51dd",
+  "owned_branch": "chat/scenario-readiness-audit-20260919",
+  "candidate_version": "scenario-bank-v5.1-20260919",
+  "readiness_judgment": "READY_FOR_SAVED_CHAT_PILOT",
+  "judgment_scope": "Own semantic design judgment on the revised bank, interpretation guide and concrete dialogue continuations; not independent evaluation, human validation or deployed-runtime certification.",
+  "review": {
+    "inherited_nodes": 75,
+    "inherited_wordings_revised": 30,
+    "new_optional_nodes": 4,
+    "available_nodes": 79,
+    "mandatory_question_count": null,
+    "information_interpretations_reviewed": 73,
+    "authored_dialogue_challenges_reviewed": 32,
+    "confirmation_findings_repaired": 4,
+    "known_material_design_defects_remaining": 0,
+    "old_fictional_person_facet_cells_rescored": false
+  },
+  "static_verification": {
+    "command": "python3 check_design.py",
+    "checks_passed": 19,
+    "failed": 0,
+    "elapsed_seconds": 0.10374174499884248,
+    "receipt": "STATIC-CHECKS.json",
+    "semantic_validation": false,
+    "model_calls": 0
+  },
+  "observer": {
+    "canonical_script_sha256": "b3afec50c3d31eef344be623520a4117a3e46fad33b7000cea1895fd1928c723",
+    "focused_runs": 1,
+    "observed_test_seconds": 0.45,
+    "measurement_window_seconds": 1.87,
+    "measurement_scope": "Final static-verification window only, not entire Chat audit",
+    "forced_redundant_green_seconds": 0
+  },
+  "delivery_verification": {
+    "compressed_transfer_sha256": "d5a4d98c9feb8386ec10c3533e7c7bd62e6f287990b44bd4af225ee8b76aa57d",
+    "compressed_transfer_bytes": 28608,
+    "all_15_reconstructed_artifact_hashes_match_local": true
+  },
+  "private_capture": {
+    "owner_device_save_readback_verified": true,
+    "portable_export_readback_verified": true,
+    "events": 4,
+    "actual_pilot_answers": 0,
+    "current_request_saved_as": "design_feedback",
+    "private_content_or_derived_hashes_published": false,
+    "background_monitoring": false,
+    "railway_sync": false
+  },
+  "scope": {
+    "pilot_paused": true,
+    "application_changed": false,
+    "vm_contacted": false,
+    "inference_calls": 0,
+    "deployment": false,
+    "chart_scoring": false,
+    "recruitment": false
+  },
+  "pre_delivery_admission": {
+    "whole_bank_and_information_guide": "PASS: every entry and inherited information identifier has an explicit reviewed record",
+    "actual_dialogue": "PASS: literal questions and next utterances reviewed; no automatic coverage credit",
+    "preservation": "PASS: historical evidence unchanged; mixed messages, corrections, missingness and pause retained",
+    "continuation": "PASS: known material defects repaired; owner pause and separate implementation boundary respected",
+    "privacy": "PASS: feedback saved and verified privately; no participant answer invented"
+  },
+  "completion": "Requested audit and repair complete at the design-readiness boundary. Parent product and AstroHD recovery outcomes remain open."
+}

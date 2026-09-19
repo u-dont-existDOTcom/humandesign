@@ -1,0 +1,40 @@
+{
+  "baseline": "81b20fee050d1400d39c9f099093e9829e1d51dd / scenario-bank-v4-20260919",
+  "first_repair_candidate_sha256": "97b8d3d64db1669b3b37d4046e934fa6fb75780bdc9714d41233c6858ff43e7d",
+  "steps": [
+    {
+      "step": "whole_bank_and_evidence_review",
+      "scope": "75 inherited nodes and 73 scoped information identifiers",
+      "changes": "30 wording changes, 4 optional missing-context routes, explicit protocol and node-specific interpretation review."
+    },
+    {
+      "step": "adversarial_dialogue_confirmation",
+      "scope": "32 authored response branches inspected in the same Chat context",
+      "findings": [
+        {
+          "id": "CF1",
+          "finding": "Legacy parent fields remained beside the new context_sources field, so a consumer could still follow the old single-parent association.",
+          "repair": "Remove the stale parent field; declare explicit alternative antecedents and actual-answer binding; only the entry contrast demands two answer records."
+        },
+        {
+          "id": "CF2",
+          "finding": "The delayed-mood test needed the exact argument reference in the delivered question, not only in commentary.",
+          "repair": "Put the adapted question in the dialogue artifact itself and require stored literal rendered wording, source answer and scene before asking."
+        },
+        {
+          "id": "CF3",
+          "finding": "The rich bodily-reaction answer already resolved duration and exhaustion but did not resolve usefulness outside exhaustion.",
+          "repair": "Ask only about usefulness outside the reported condition when that distinction remains important; do not repeat a generic whole-facet question."
+        },
+        {
+          "id": "CF4",
+          "finding": "The revised opportunity question had lost its concrete scene cue.",
+          "repair": "Restore an activity/collaboration scene while preserving habitual-report status, without compulsory recent-event recall."
+        }
+      ]
+    }
+  ],
+  "independent_review": false,
+  "human_data_used": false,
+  "runtime_invocations": 0
+}
