@@ -186,9 +186,7 @@ def within_chart_aspects(
     aspects: list[MajorAspect] = []
     for index, body_a in enumerate(bodies):
         for body_b in bodies[index + 1 :]:
-            match = classify_major_aspect(
-                longitudes[body_a], longitudes[body_b], max_orb=max_orb
-            )
+            match = classify_major_aspect(longitudes[body_a], longitudes[body_b], max_orb=max_orb)
             if match is not None:
                 aspect, orb = match
                 aspects.append(MajorAspect(body_a, body_b, aspect, orb))
@@ -202,9 +200,7 @@ def classify_major_aspect(
     max_orb: float = DEFAULT_ASPECT_ORB,
 ) -> tuple[str, float] | None:
     separation = angular_separation(longitude_a, longitude_b)
-    candidates = [
-        (name, abs(separation - angle)) for name, angle in MAJOR_ASPECT_ANGLES.items()
-    ]
+    candidates = [(name, abs(separation - angle)) for name, angle in MAJOR_ASPECT_ANGLES.items()]
     name, orb = min(candidates, key=lambda item: item[1])
     if orb > max_orb:
         return None

@@ -69,7 +69,9 @@ def main() -> None:
             f"{freeze.candidate_universe_state_count}"
         )
     if not (
-        freeze.candidate_universe_utc_start <= birth_utc < freeze.candidate_universe_utc_end_exclusive
+        freeze.candidate_universe_utc_start
+        <= birth_utc
+        < freeze.candidate_universe_utc_end_exclusive
     ):
         raise RuntimeError("synthetic birth is outside frozen century universe")
     if len(freeze.candidate_universe_sha256) != 64:
@@ -79,10 +81,7 @@ def main() -> None:
     if loaded_states is None:
         raise RuntimeError("century universe was not cached after successful freeze")
     model_visible_signature_count = len(
-        {
-            backend.model.scoring_signature(state.chart_features)
-            for state in loaded_states
-        }
+        {backend.model.scoring_signature(state.chart_features) for state in loaded_states}
     )
 
     diagnostics = backend.discrimination(freeze=freeze, responses=())

@@ -1,0 +1,48 @@
+{
+  "schema_version": "life-patterns-neutral-measurement-repair-review-receipt-v1",
+  "review_commit": "4f51d075cb200e57820486e4f9686d81c7fc604f",
+  "candidate_commit_reviewed": "458bede3cf83b1947c332a408b47ec84236d69ed",
+  "frozen_overlap_audit_commit": "7ea0641e0913815306f8c182be5e7e8b18115fff",
+  "review_raw": {
+    "path": "state/LIFE-PATTERNS-NEUTRAL-MEASUREMENT-REPAIR-REVIEW-RAW-v1-2026-09-10.jsonl",
+    "reported_sha256": "0678acb8a4b24f0d8305cb8d5ed0dbf6022a07e74f6a94c674b406d2f1630b11",
+    "reported_bytes": 24400,
+    "oa_rows": 45,
+    "nr_rows": 1
+  },
+  "review_summary": {
+    "path": "state/LIFE-PATTERNS-NEUTRAL-MEASUREMENT-REPAIR-REVIEW-SUMMARY-v1-2026-09-10.json",
+    "reported_sha256": "bfde3a4906d3aa1f2260e492c33794d50230f2769f4630db60935b68a5318aa4",
+    "reported_bytes": 693,
+    "resolved_count": 38,
+    "partial_count": 7,
+    "unresolved_count": 0,
+    "new_material_findings_count": 1,
+    "response_contract_blockers_resolved": false,
+    "r05_blockers_resolved": true,
+    "absence_semantics_resolved": true,
+    "safe_for_implementation": false
+  },
+  "blocking_ids": [
+    "OA-007",
+    "OA-011",
+    "OA-076",
+    "OA-084",
+    "OA-085",
+    "OA-114",
+    "OA-121",
+    "NR-001"
+  ],
+  "review_conclusion": "The substantive codebook clarification, including R05 and absence/missingness semantics, passed this review. Implementation remains blocked because facet cardinality is defined at whole-response scope while the accepted semantic overlay permits ordered same-facet state changes across distinct events, stages, or windows. A new target-theory-blind contract-only repair is required before another independent blind review.",
+  "candidate_edited_reported": false,
+  "target_model_information_used_reported": false,
+  "github_commit_delta_verified": "review commit adds only the raw and summary review artifacts",
+  "review_ci_run": 34509829399,
+  "review_ci_conclusion": "success",
+  "development_only": true,
+  "validation_use_forbidden": true,
+  "implementation_authorized": false,
+  "human_calibration_authorized": false,
+  "automated_life_patterns_coding_authorized": false,
+  "target_model_scoring_authorized": false
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": "life-patterns-recurrence-evidence-source-shape-v1",
+  "source_scope": "exact recovered private v8/v8.1 development transfer, aggregate counts only",
+  "source_record_sha256_exact_file": "3c37c0c76174c7ba698966155f991f0303cd4f0833d39ff475dfb0e1c5348637",
+  "supplement_sha256_exact_file": "93f838bb61e6a910ba0dbeb96a66b56c72986350dda5386243b098a738b818e7",
+  "series_reports_total": 13,
+  "series_reports_with_recurrence_language_field_populated": 13,
+  "series_reports_with_explicit_exception_or_limit_field_populated": 10,
+  "series_reports_with_rough_opportunity_count_field_populated": 2,
+  "exact_source_series_eligible_under_existing_privacy_rule": 5,
+  "interpretation": {
+    "direct_recurrence_and_exception_structure_already_exists_in_transfer": true,
+    "numeric_opportunity_counts_are_sparse": true,
+    "minimum_numeric_occurrence_requirement_would_discard_non_numeric_recurrence_information": true,
+    "summary_fields_remain_secondary_to_exact_source_text": true
+  },
+  "contains_private_participant_text": false,
+  "development_only": true,
+  "validation_use_forbidden": true,
+  "target_model_information_used": false
+}

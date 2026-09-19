@@ -9,6 +9,5 @@ second cache semantics to accidentally invoke.
 
 from build_century_candidate_cache_fast import main
 
-
 if __name__ == "__main__":
     main()

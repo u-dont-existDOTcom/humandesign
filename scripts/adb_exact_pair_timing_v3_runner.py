@@ -4,10 +4,11 @@
 Adds the preflight exclusion required by the frozen inclusion rule and memoizes
 repeated astronomical calculations. No feature/model rule is changed.
 """
+
 from __future__ import annotations
 
 from collections import Counter
-from functools import lru_cache
+from functools import cache
 
 import adb_exact_pair_timing_v3 as v3
 
@@ -22,29 +23,36 @@ _orig_calc = v3.calc
 _orig_hd_natal_gates = v3.hd.natal_gates
 _orig_transit_gate_state = v3.hd.transit_gate_state
 
-@lru_cache(maxsize=None)
+
+@cache
 def natal_cached(jd):
     return _orig_natal(jd)
 
-@lru_cache(maxsize=None)
+
+@cache
 def houses_cached(jd, lat, lon):
     return _orig_houses(jd, lat, lon)
 
-@lru_cache(maxsize=None)
+
+@cache
 def progressed_cached(birth_jd, event_jd):
     return _orig_progressed(birth_jd, event_jd)
 
-@lru_cache(maxsize=None)
+
+@cache
 def calc_cached(jd, body):
     return _orig_calc(jd, body)
 
-@lru_cache(maxsize=None)
+
+@cache
 def hd_natal_cached(jd):
     return _orig_hd_natal_gates(v3.hd.dt_from_jd(jd))
 
-@lru_cache(maxsize=None)
+
+@cache
 def hd_transit_cached(jd):
     return _orig_transit_gate_state(v3.hd.dt_from_jd(jd))
+
 
 v3.natal = natal_cached
 v3.houses = houses_cached
@@ -68,6 +76,7 @@ def hd_features_cached(a, b, event_jd):
         "hd_9plus0": float(n == 9),
         "hd_channel_count": float(ch),
     }
+
 
 v3.hd_features = hd_features_cached
 
@@ -100,7 +109,7 @@ def make_events_prefilter(entries, recovered):
     return kept
 
 
-@lru_cache(maxsize=None)
+@cache
 def candidate_supported(jd) -> bool:
     try:
         for body in v3.TRANSIT_IDS.values():
@@ -141,12 +150,14 @@ def build_rows_prefilter(events, transition):
             continue
         ek = f"{ev.pair_key}|{ev.event_id}|{ev.year:04d}-{ev.month:02d}-{ev.day:02d}"
         for y, m, d, actual in candidates:
-            rows.append({
-                "event_key": ek,
-                "pair_key": ev.pair_key,
-                "actual": actual,
-                "features": v3.raw_features(ev, v3.date_jd(y, m, d)),
-            })
+            rows.append(
+                {
+                    "event_key": ek,
+                    "pair_key": ev.pair_key,
+                    "actual": actual,
+                    "features": v3.raw_features(ev, v3.date_jd(y, m, d)),
+                }
+            )
     counts.update(EXCLUSIONS)
     return rows, dict(counts)
 

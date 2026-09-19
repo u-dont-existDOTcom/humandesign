@@ -164,9 +164,7 @@ def test_verification_attempt_limit_locks_both_recovery_credentials(tmp_path: Pa
 
 def test_environment_defaults_require_only_the_railway_password_secret() -> None:
     assert EmailRecoverySettings.from_env({}) is None
-    settings = EmailRecoverySettings.from_env(
-        {"HDMATCH_SMTP_PASSWORD": "not-committed"}
-    )
+    settings = EmailRecoverySettings.from_env({"HDMATCH_SMTP_PASSWORD": "not-committed"})
     assert settings is not None
     assert settings.smtp_host == "smtp.porkbun.com"
     assert settings.smtp_port == 587
@@ -174,6 +172,4 @@ def test_environment_defaults_require_only_the_railway_password_secret() -> None
     assert settings.smtp_username == "joel@u-dont-exist.com"
     assert settings.from_address == "joel@u-dont-exist.com"
     assert settings.smtp_password == "not-committed"
-    assert settings.public_base_url == (
-        "https://relationship-web-production.up.railway.app"
-    )
+    assert settings.public_base_url == ("https://relationship-web-production.up.railway.app")

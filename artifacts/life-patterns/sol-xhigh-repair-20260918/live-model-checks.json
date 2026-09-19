@@ -1,0 +1,82 @@
+{
+  "schema": "life-patterns-sol-xhigh-bounded-evidence-v1",
+  "date_utc": "2026-09-18",
+  "source_kind": "synthetic normal live interview, not owner narrative",
+  "owner_sessions_accessed": 0,
+  "fabricated_snapshots_imported": 0,
+  "recovery_used_unaltered_server_issued_synthetic_snapshot": true,
+  "initial_candidate_commit": "812c6369f73120104600c3aed0ac73603bdcf060",
+  "corrected_candidate_commit": "78543a9f876b1105c4d62757b8b5f5119cc7b5e5",
+  "total_model_calls": 19,
+  "initial_model_calls": 13,
+  "final_model_calls": 6,
+  "initial_failure": "Sol classified exact wording as direct, but the legacy extractor-label veto forced redundant confirmation. Corrected before final delivery.",
+  "final_model_check": "All observed final candidate calls requested and returned gpt-5.6-sol with requested effort xhigh.",
+  "checks": [
+    {
+      "stage": "initial_candidate", "case": 1,
+      "participant_text": "For unfamiliar team discussions I write notes before speaking, but among close friends I usually respond spontaneously.",
+      "reply": "Can you walk me through a recent unfamiliar-team discussion—from when you began writing notes to what you eventually said or did?",
+      "phase": "awaiting_answer", "route_kind": "answer", "fact_count": 0, "pattern_count": 0, "model_call_count": 3, "requested_returned_models_match": true
+    },
+    {
+      "stage": "initial_candidate", "case": 2,
+      "participant_text": "At a planning call for a volunteer project, I wrote three points before joining because I did not know how much detail the group expected. I then asked one question and shared the points after hearing the others. With close friends I rarely prepare.",
+      "reply": "When the group is unfamiliar but the expected level of detail is already clear, what do you usually do before speaking?",
+      "phase": "awaiting_answer", "route_kind": "answer", "fact_count": 3, "pattern_count": 0, "model_call_count": 4, "requested_returned_models_match": true
+    },
+    {
+      "stage": "initial_candidate", "case": 3,
+      "participant_text": "I don't understand your last question. Explain exactly what you are trying to distinguish, without changing the topic.",
+      "reply": "I’m distinguishing two conditions that were both present in your example: the team was unfamiliar, and you did not know how much detail they expected. I’m trying to learn whether your note-writing varies with unfamiliarity itself or with unclear expectations. More plainly: when a team is unfamiliar but you already know the expected level of detail, do you still usually write notes before speaking, or do you usually speak without preparing notes? “It depends” is also a valid answer.",
+      "phase": "awaiting_answer", "route_kind": "repair", "fact_count": 3, "pattern_count": 0, "model_call_count": 1, "requested_returned_models_match": true
+    },
+    {
+      "stage": "initial_candidate", "case": 4,
+      "participant_text": "Don't turn that into a general label about me. I still write notes with an unfamiliar team even when the expected detail is clear, but I prepare less when I know the task well.",
+      "reply": "The evidence supports only a context-specific distinction, not a general label about you. With an unfamiliar team, you still write notes even when the expected detail is clear, while knowing the task well reduces how much you prepare.\n\nDoes this possible connection fit your experience?",
+      "phase": "synthesis_review", "route_kind": "mixed", "fact_count": 5, "pattern_count": 0, "model_call_count": 5, "requested_returned_models_match": true
+    },
+    {
+      "stage": "corrected_candidate", "operation": "review_draft", "reply": null,
+      "phase": "advancing", "pattern_count": 1, "pending_inference": false, "duration_seconds": 6.02,
+      "new_model_calls": [
+        {"schema": "life_patterns_formulation_fidelity_v2", "requested_model": "gpt-5.6-sol", "returned_model": "gpt-5.6-sol", "reasoning_effort": "xhigh", "status": "completed", "duration_seconds": 5.965, "input_tokens": 4083, "output_tokens": 285, "reasoning_tokens": 189}
+      ]
+    },
+    {
+      "stage": "corrected_candidate", "operation": "advance",
+      "reply": "How did you first become involved in that volunteer project—did you seek it out, did someone approach you, or did it come through another route?",
+      "phase": "awaiting_answer", "pattern_count": 1, "pending_inference": false, "duration_seconds": 59.93,
+      "new_model_calls": [
+        {"schema": "life_patterns_dynamic_coverage_next_v1", "requested_model": "gpt-5.6-sol", "returned_model": "gpt-5.6-sol", "reasoning_effort": "xhigh", "status": "completed", "duration_seconds": 47.899, "input_tokens": 5820, "output_tokens": 2347, "reasoning_tokens": 2266},
+        {"schema": "life_patterns_continuation_question_admission_v1", "requested_model": "gpt-5.6-sol", "returned_model": "gpt-5.6-sol", "reasoning_effort": "xhigh", "status": "completed", "duration_seconds": 11.937, "input_tokens": 7203, "output_tokens": 689, "reasoning_tokens": 516}
+      ]
+    },
+    {
+      "stage": "corrected_candidate", "operation": "answer", "reply": "We can leave this point here for now.",
+      "phase": "advancing", "pattern_count": 1, "pending_inference": false, "duration_seconds": 21.72,
+      "new_model_calls": [
+        {"schema": "life_patterns_participant_input_v1", "requested_model": "gpt-5.6-sol", "returned_model": "gpt-5.6-sol", "reasoning_effort": "xhigh", "status": "completed", "duration_seconds": 5.663, "input_tokens": 4478, "output_tokens": 250, "reasoning_tokens": 172},
+        {"schema": "life_patterns_hidden_ledger_turn_v1", "requested_model": "gpt-5.6-sol", "returned_model": "gpt-5.6-sol", "reasoning_effort": "xhigh", "status": "completed", "duration_seconds": 4.434, "input_tokens": 2713, "output_tokens": 283, "reasoning_tokens": 179},
+        {"schema": "life_patterns_conversation_move_v1", "requested_model": "gpt-5.6-sol", "returned_model": "gpt-5.6-sol", "reasoning_effort": "xhigh", "status": "completed", "duration_seconds": 11.521, "input_tokens": 5872, "output_tokens": 562, "reasoning_tokens": 516}
+      ]
+    },
+    {"stage": "corrected_candidate", "operation": "pause", "reply": null, "phase": "paused", "pattern_count": 1, "pending_inference": false, "duration_seconds": 0.05, "new_model_calls": []}
+  ],
+  "final_assertions": {
+    "direct_report_without_extra_yes": true,
+    "clarification_keeps_same_topic_and_adds_no_facts": true,
+    "mixed_feedback_does_not_become_behavioral_fact": true,
+    "duplicate_source_does_not_create_new_pattern": true,
+    "all_final_extraction_labels_for_repeated_self_report": "reported_appraisal_or_belief",
+    "synthetic_interview_paused": true
+  },
+  "limits": [
+    "Small non-blind development sample; no general accuracy estimate.",
+    "No live replay of the owner private interview or artificial counterfactual snapshot.",
+    "Provider-returned model and requested reasoning effort verified; not an attestation of internal computation.",
+    "Question logic and semantic duplicate review remain fallible.",
+    "No new scientific validity or owner acceptance claim."
+  ]
+}

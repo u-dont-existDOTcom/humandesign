@@ -1,0 +1,101 @@
+You are the target-theory-blind neutral measurement CONTRACT REPAIRER for a DEVELOPMENT / DISCOVERY run.
+
+Your job is narrow: repair the residual representation-contract defect found by the completed second independent blind review. Do not redesign the substantive neutral codebook and do not implement software/UI/package changes.
+
+AUTHORITATIVE INPUTS
+
+1. Frozen overlap/absence audit commit:
+   7ea0641e0913815306f8c182be5e7e8b18115fff
+2. First blind repair candidate commit:
+   458bede3cf83b1947c332a408b47ec84236d69ed
+3. Second blind review commit:
+   4f51d075cb200e57820486e4f9686d81c7fc604f
+4. Candidate artifacts at (2):
+   - state/LIFE-PATTERNS-NEUTRAL-CODEBOOK-CLARIFICATION-v2-CANDIDATE-2026-09-10.md
+   - state/LIFE-PATTERNS-FACET-RELATION-CONTRACT-v3-CANDIDATE-2026-09-10.json
+   - state/LIFE-PATTERNS-OVERLAP-AUDIT-BLOCKER-RESOLUTION-v1-2026-09-10.jsonl
+5. Review artifacts at (3):
+   - state/LIFE-PATTERNS-NEUTRAL-MEASUREMENT-REPAIR-REVIEW-RAW-v1-2026-09-10.jsonl
+   - state/LIFE-PATTERNS-NEUTRAL-MEASUREMENT-REPAIR-REVIEW-SUMMARY-v1-2026-09-10.json
+
+BLINDING
+
+Do not inspect Human Design, astrology, target mappings, chart/birth data, target-model outputs, participant-specific target results, model-fit results, or theory-exposed project commentary. Work only from the neutral audit/candidate/review materials above and neutral methodological inputs they explicitly depend on.
+
+CONTROLLING REVIEW RESULT
+
+The second blind review independently found:
+- 45 original OA blockers reviewed;
+- 38 RESOLVED;
+- 7 PARTIAL;
+- 0 UNRESOLVED;
+- 1 new material blocker (NR-001);
+- R05 blockers resolved;
+- absence/missingness semantics resolved;
+- safe_for_implementation=false.
+
+The only blocking IDs are:
+OA-007, OA-011, OA-076, OA-084, OA-085, OA-114, OA-121, NR-001.
+
+The common residual issue is representation scope: the v3 contract applies facet cardinality to the whole response, including zero_or_one facets, while the accepted semantic overlay permits distinct ordered same-facet assertions across different events/stages/windows. The review specifically identifies R02 search disposition, R03 temporal disposition, R15 endpoint extent/timing, R16 offer response/use, R20 interaction disposition, and R21 contact disposition; NR-001 also requires a global check of any similarly affected R10 and R12 trajectories.
+
+TASK
+
+Produce the smallest contract-only revision that faithfully represents the already accepted semantics.
+
+Requirements:
+1. Do NOT edit any existing candidate or review artifact.
+2. Preserve all substantive codebook semantics that the review marked RESOLVED, including all R05 and absence/missingness decisions.
+3. Do not create a new behavioral distinction merely to solve a schema problem.
+4. Define cardinality at the correct semantic scope so that:
+   - mutually exclusive alternatives remain exclusive within the appropriate event/stage/window;
+   - distinct later stages/windows can retain ordered same-facet assertions when the semantic overlay permits them;
+   - same-act double counting remains prohibited;
+   - temporal order is represented only when supported;
+   - co-present different facets are not falsely ordered.
+5. Audit every observable facet profile in the v3 contract for the same scope defect, not only the named blockers. Correct all instances necessary to prevent NR-001 from recurring.
+6. Preserve stable assertion IDs and semantic value IDs unless the representation model strictly requires an additive structural field. Do not silently rename substantive values.
+7. If a substantive codebook semantic change is actually required, STOP instead of making it. Record semantic_change_required=true in the summary and explain why; do not edit the v2 codebook clarification in this run.
+
+REQUIRED OUTPUTS
+
+Create exactly these three new artifacts:
+
+1. state/LIFE-PATTERNS-FACET-RELATION-CONTRACT-v4-CANDIDATE-2026-09-10.json
+   - complete superseding candidate contract, not a patch;
+   - identify v3 as its predecessor;
+   - bind candidate commit 458bede3cf83b1947c332a408b47ec84236d69ed and review commit 4f51d075cb200e57820486e4f9686d81c7fc604f;
+   - make cardinality scope explicit and mechanically unambiguous.
+
+2. state/LIFE-PATTERNS-FACET-CARDINALITY-REPAIR-DISPOSITION-v1-2026-09-10.jsonl
+   - exactly 8 rows, one each for OA-007, OA-011, OA-076, OA-084, OA-085, OA-114, OA-121, NR-001;
+   - no duplicates and no other IDs;
+   - each row fields: finding_id, observable_id, status (ADDRESSED or NOT_ADDRESSED), repair_reference, explanation, regression_risk_checked.
+
+3. state/LIFE-PATTERNS-FACET-CARDINALITY-REPAIR-SUMMARY-v1-2026-09-10.json
+   - required fields: schema_version, predecessor_contract, new_contract, required_blocker_count, addressed_count, not_addressed_count, semantic_change_required, substantive_codebook_edited, candidate_or_review_artifact_edited, target_model_information_used, safe_for_blind_re_review, notes.
+   - safe_for_blind_re_review may be true when the artifacts are complete enough for independent review; it does NOT authorize implementation.
+
+MECHANICAL CHECKS BEFORE COMMIT
+
+- all three outputs parse where applicable;
+- disposition has exactly 8 rows and exactly the eight required IDs once each;
+- no existing candidate/review file changed;
+- v4 is internally self-consistent about event/stage/window identifiers, facet membership, per-scope cardinality, and temporal edges;
+- search the complete v4 contract for any remaining whole-response cardinality wording that would contradict allowed later same-facet stages;
+- no target-model information appears in the outputs.
+
+COMMIT / STOP
+
+Commit and push the three new artifacts to codex/discover-life-patterns-mvp. Do not implement software, schemas, UI, package generation, participant coding, automated annotation, human calibration, target scoring/reveal, merge/deploy, recruitment/contact, or spending.
+
+Return only:
+- GitHub-visible commit SHA;
+- SHA-256 and byte size of each of the three output files;
+- disposition row count;
+- addressed/not-addressed counts;
+- semantic_change_required;
+- safe_for_blind_re_review;
+- confirmation no existing candidate/review artifact was edited;
+- confirmation no substantive codebook was edited;
+- confirmation no target-model information was used.

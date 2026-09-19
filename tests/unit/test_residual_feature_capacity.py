@@ -92,9 +92,7 @@ def _state(
             channels=("1-8",),
             activation_gates={"personality:sun": sun_gate},
         ),
-        local_date_overlaps=(
-            LocalDateOverlap(date=date(2000, 1, 1), seconds=3600.0),
-        ),
+        local_date_overlaps=(LocalDateOverlap(date=date(2000, 1, 1), seconds=3600.0),),
     )
 
 

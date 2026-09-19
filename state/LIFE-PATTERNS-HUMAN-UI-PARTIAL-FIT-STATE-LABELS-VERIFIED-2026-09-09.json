@@ -1,0 +1,39 @@
+{
+  "schema_version": "life-patterns-human-ui-partial-fit-state-labels-verification-v1",
+  "status": "verified_before_human_collection",
+  "owner_observation": "The prior Yes/No/Can't-tell presentation looked like a fit scale and therefore appeared to omit a natural Partially option.",
+  "resolution": "Do not add an undefined fourth partial state. Present the frozen states by their actual measurement meaning: Enough information to code=observed; Doesn't apply=not_applicable; Not enough information=insufficient. Explicitly instruct that a partial fit with insufficient evidence belongs under Not enough information, while multiple clearly supported behaviors are coded under observed.",
+  "method_clarification": "state/LIFE-PATTERNS-HUMAN-UI-PARTIAL-FIT-CLARIFICATION-2026-09-09.md",
+  "builder": "scripts/build_life_patterns_human_calibration_ui_v2_auditor_state_labels.py",
+  "tests": "tests/unit/test_life_patterns_human_calibration_ui_v2_auditor_state_labels.py",
+  "implementation_head": "86c9b102c563fb4e8406683dfe4b46dfe9b21278",
+  "ci_run": 34393178733,
+  "ci_passed": true,
+  "unit_and_integration_tests_passed": true,
+  "ruff_passed": true,
+  "mypy_passed": true,
+  "private_html": {
+    "filename": "Life-Patterns-Human-Calibration-V2-AUDITOR-STATE-CLARIFIED-2026-09-09.html",
+    "bytes": 3995519,
+    "sha256": "4f51a75611094e60ab65d058d89155bb0b5e8f782c9491dd994e3962761466f5",
+    "committed_to_git": false,
+    "contains_private_participant_text": true
+  },
+  "private_auditor_kit": {
+    "filename": "Life-Patterns-Independent-Auditor-Kit-V2-STATE-CLARIFIED-2026-09-09.zip",
+    "bytes": 802601,
+    "sha256": "a4184891c2b9a128c6cbaf6703fa0c316ed44e68436a0e756f3daf51cd5ae359",
+    "member_count": 2,
+    "committed_to_git": false
+  },
+  "response_contract_changed": false,
+  "selected_calibration_units_changed": false,
+  "embedded_private_handoff_changed": false,
+  "target_model_information_used": false,
+  "automated_judgment_used": false,
+  "human_first_pass_received": false,
+  "automated_coding_run": false,
+  "target_model_scoring_run": false,
+  "development_only": true,
+  "validation_use_forbidden": true
+}

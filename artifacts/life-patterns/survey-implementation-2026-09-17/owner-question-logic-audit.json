@@ -1,0 +1,54 @@
+{
+  "schema": "life-patterns-owner-question-logic-audit-v1",
+  "reviewed_repository_head": "b15240527b6fc46bc52367118b455bf9d4626aa3",
+  "source": "private owner-supplied recovery checkpoint; not committed",
+  "source_producing_commit_independently_bound": false,
+  "snapshot_checksum_matches": true,
+  "owner_evaluation": "FAIL",
+  "owner_outcome": "OPEN",
+  "outcome_advancement": "REGRESSING_OWNER_REPORTED",
+  "controlled_pre_post_comparison": false,
+  "assurance_lane": "iteration",
+  "strategy_replacement_scope": "question repair, active focus and formulation; preserve transport and accepted scientific substrate",
+  "checks": {
+    "conversation_turns": 16,
+    "participant_turns": 7,
+    "post_example_process_feedback_turns": 5,
+    "question_admissions": {
+      "replace": 4,
+      "admit": 2
+    },
+    "final_phase": "synthesis_review",
+    "global_completion_recorded": false,
+    "candidate_equals_earlier_participant_message": true,
+    "candidate_reuses_exact_previously_accepted_evidence_set": true,
+    "candidate_meets_base_verbatim_source_checks": true,
+    "feedback_derived_facts": 4,
+    "clearly_instrument_only_facts_at_least": 3,
+    "coverage": {
+      "sufficient": 1,
+      "partial": 2,
+      "unassessed": 20
+    },
+    "legacy_summaries": 9,
+    "explicit_legacy_answer_memory_entries": 0,
+    "historically_sufficient_domains_now_unassessed": 9
+  },
+  "findings": [
+    "nested goal/method treated as competing motives",
+    "feasibility/disposition confound",
+    "clarification replaced by topic drift and scope transfer",
+    "duplicate source surfaced as inference",
+    "closure prose conflicts with active review",
+    "interview feedback enters event ledger",
+    "legacy planning/evidence conflation"
+  ],
+  "verification": "Read-only JSON checks and exact current GitHub source inspection.",
+  "production_code_changed": false,
+  "deployment_changed": false,
+  "live_model_calls": 0,
+  "runtime_replay_performed": false,
+  "raw_private_source_published": false,
+  "next_candidate": "Small repair-first routing/formulation experiment; no new judge, model change, infrastructure or quota.",
+  "report": "state/LIFE-PATTERNS-OWNER-QUESTION-LOGIC-FAILURE-2026-09-17.md"
+}

@@ -44,9 +44,7 @@ Swiss Ephemeris can change the requested ephemeris internally when data are unav
 ```python
 used_ephemeris = retflags & swe.FLG_EPHMASK
 if used_ephemeris != swe.FLG_SWIEPH:
-    raise EphemerisFallbackError(
-        f"requested SWIEPH but calculation returned flags={retflags}"
-    )
+    raise EphemerisFallbackError(f"requested SWIEPH but calculation returned flags={retflags}")
 ```
 
 Implement this check in the engine wrapper, not only in a CLI probe.

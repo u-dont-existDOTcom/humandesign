@@ -80,9 +80,7 @@ class PhenotypeProviderReceipt(PhenotypeModel):
 
 
 class RelationshipPhenotypeFreeze(PhenotypeModel):
-    schema_version: Literal["relationship-phenotype-freeze-v1"] = (
-        "relationship-phenotype-freeze-v1"
-    )
+    schema_version: Literal["relationship-phenotype-freeze-v1"] = "relationship-phenotype-freeze-v1"
     session_id: str = Field(min_length=1)
     created_at_utc: datetime
     response_record_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")

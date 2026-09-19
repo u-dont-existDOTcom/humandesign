@@ -74,7 +74,10 @@ class RelationshipBirthInput(StudyModel):
                 raise ValueError("unknown birth time cannot have a numeric uncertainty window")
         elif self.time_source is BirthTimeSource.UNKNOWN:
             raise ValueError("time_source='unknown' requires local_time to be omitted")
-        if self.uncertainty_minutes is not None and self.time_source is not BirthTimeSource.ESTIMATED:
+        if (
+            self.uncertainty_minutes is not None
+            and self.time_source is not BirthTimeSource.ESTIMATED
+        ):
             raise ValueError("uncertainty_minutes is only valid for estimated birth times")
         if (self.latitude is None) != (self.longitude is None):
             raise ValueError("latitude and longitude must be supplied together")
@@ -98,7 +101,13 @@ class RelationshipStudyIntake(StudyModel):
             return None
         normalized = normalize_email(value)
         local, sep, domain = normalized.rpartition("@")
-        if not sep or not local or "." not in domain or domain.startswith(".") or domain.endswith("."):
+        if (
+            not sep
+            or not local
+            or "." not in domain
+            or domain.startswith(".")
+            or domain.endswith(".")
+        ):
             raise ValueError("contact_email must look like a valid email address")
         return normalized
 
@@ -180,9 +189,7 @@ class RelationshipStudyPreflight(StudyModel):
 
     session_id: str
     contact_email_on_file: bool
-    email_verification_status: Literal[
-        "not_configured", "unverified", "pending", "verified"
-    ]
+    email_verification_status: Literal["not_configured", "unverified", "pending", "verified"]
     birth_intake_complete: bool
     prediction_freeze_present: bool
     prediction_freeze_sha256: str | None = Field(default=None, pattern=r"^[a-f0-9]{64}$")

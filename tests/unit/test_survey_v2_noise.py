@@ -30,17 +30,13 @@ def test_other_abstains_and_mixed_is_partial_not_forced_choice() -> None:
         rows,
         base_feature_count=1,
         true_index=0,
-        scenario=NoiseScenario(
-            scenario_id="other", perturbation="other", fraction=1
-        ),
+        scenario=NoiseScenario(scenario_id="other", perturbation="other", fraction=1),
     )
     mixed = simulate_noise_case(
         rows,
         base_feature_count=1,
         true_index=0,
-        scenario=NoiseScenario(
-            scenario_id="mixed", perturbation="mixed", fraction=1
-        ),
+        scenario=NoiseScenario(scenario_id="mixed", perturbation="mixed", fraction=1),
     )
     assert other.extra_tie_breakers == 1
     assert mixed.perturbed_answer_count == 1

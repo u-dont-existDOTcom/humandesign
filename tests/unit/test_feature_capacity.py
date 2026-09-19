@@ -47,7 +47,10 @@ def test_feature_capacity_ranks_increment_beyond_coarse_structure() -> None:
     )
     assert by_id["definition"].combined_unique_fingerprints == 2
     assert by_id["activation_vector:all"].combined_unique_fingerprints == 3
-    assert report.ranked_features[0].incremental_duration_weighted_bits >= report.ranked_features[-1].incremental_duration_weighted_bits
+    assert (
+        report.ranked_features[0].incremental_duration_weighted_bits
+        >= report.ranked_features[-1].incremental_duration_weighted_bits
+    )
 
 
 def test_feature_capacity_does_not_label_structural_capacity_behavioral_validity() -> None:
@@ -101,9 +104,7 @@ def _state(
             channels=channels,
             activation_gates=activations,
         ),
-        local_date_overlaps=(
-            LocalDateOverlap(date=date(2000, 1, 1), seconds=3600.0),
-        ),
+        local_date_overlaps=(LocalDateOverlap(date=date(2000, 1, 1), seconds=3600.0),),
     )
 
 

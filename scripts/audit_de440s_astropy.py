@@ -88,9 +88,7 @@ def main() -> None:
             ecliptic = gcrs.transform_to(ecliptic_frame)
             jpl_lon = float(ecliptic.lon.to_value(u.deg) % 360.0)
             error = _angular_error_arcsec(swiss_lon, jpl_lon)
-            constellation = str(
-                get_constellation(gcrs, short_name=True, constellation_list="iau")
-            )
+            constellation = str(get_constellation(gcrs, short_name=True, constellation_list="iau"))
             maxima[body.value] = max(maxima.get(body.value, 0.0), error)
             rows.append(
                 {

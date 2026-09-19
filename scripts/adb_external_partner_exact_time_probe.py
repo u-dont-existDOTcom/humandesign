@@ -4,9 +4,14 @@ back to public ADB wiki pages with exact timed natal records.
 
 Development/data-recovery audit only. Raw public pages/XML are not committed.
 """
+
 from __future__ import annotations
 
-import json, re, urllib.parse, urllib.request, xml.etree.ElementTree as ET
+import json
+import re
+import urllib.parse
+import urllib.request
+import xml.etree.ElementTree as ET
 from collections import Counter
 from pathlib import Path
 
@@ -49,22 +54,32 @@ def api_json(api: str, params: dict) -> dict | None:
 
 def search_titles(name: str) -> tuple[str | None, list[str]]:
     for api in API_CANDIDATES:
-        data = api_json(api, {
-            "action": "query", "list": "search", "srsearch": name,
-            "srlimit": 5, "format": "json"
-        })
+        data = api_json(
+            api,
+            {"action": "query", "list": "search", "srsearch": name, "srlimit": 5, "format": "json"},
+        )
         if not data:
             continue
-        hits = [x.get("title", "") for x in data.get("query", {}).get("search", []) if x.get("title")]
+        hits = [
+            x.get("title", "") for x in data.get("query", {}).get("search", []) if x.get("title")
+        ]
         return api, hits
     return None, []
 
 
 def fetch_wikitext(api: str, title: str) -> str | None:
-    data = api_json(api, {
-        "action": "query", "prop": "revisions", "rvprop": "content",
-        "rvslots": "main", "titles": title, "formatversion": 2, "format": "json"
-    })
+    data = api_json(
+        api,
+        {
+            "action": "query",
+            "prop": "revisions",
+            "rvprop": "content",
+            "rvslots": "main",
+            "titles": title,
+            "formatversion": 2,
+            "format": "json",
+        },
+    )
     if not data:
         return None
     pages = data.get("query", {}).get("pages", [])
@@ -84,6 +99,7 @@ def parse_dma(text: str) -> dict:
     def field(name: str):
         m = re.search(rf"\|{re.escape(name)}\s*=\s*([^\n\r|}}]+)", text or "", re.I)
         return m.group(1).strip() if m else None
+
     return {
         "DatamainID": field("DatamainID"),
         "sbdate": field("sbdate"),
@@ -101,9 +117,11 @@ def main():
     external = {}
     for e in root.findall("adb_entry"):
         research = e.find("research_data")
-        if research is None: continue
+        if research is None:
+            continue
         rel_parent = research.find("relationships")
-        if rel_parent is None: continue
+        if rel_parent is None:
+            continue
         for rel in rel_parent.findall("relationship"):
             try:
                 rid = int(rel.attrib.get("rel_id", "0"))
@@ -129,7 +147,8 @@ def main():
         if api:
             for title in titles:
                 wt = fetch_wikitext(api, title)
-                if not wt: continue
+                if not wt:
+                    continue
                 dma = parse_dma(wt)
                 if dma.get("DatamainID") and str(rec["adb_id"]) == str(dma["DatamainID"]):
                     best = {"title": title, **dma, "id_match": True}
@@ -146,7 +165,11 @@ def main():
         elif not best.get("id_match"):
             st = "search_hit_wrong_id"
         else:
-            unknown = bool(best.get("t_unknown")) and str(best.get("t_unknown")).strip() not in {"", "0", "None"}
+            unknown = bool(best.get("t_unknown")) and str(best.get("t_unknown")).strip() not in {
+                "",
+                "0",
+                "None",
+            }
             timed = bool(best.get("sbtime")) and not unknown
             if timed:
                 st = "resolved_exact_time"
@@ -173,15 +196,26 @@ def main():
         "exact_time_recovery_fraction": exact / n if n else 0,
         "high_rr_exact_time_recovery_fraction": high_rr_exact / n if n else 0,
         "projection_if_representative": {
-            "exact_times_among_all_external_targets": round(len(external) * exact / n, 1) if n else 0,
-            "high_rr_exact_times_among_all_external_targets": round(len(external) * high_rr_exact / n, 1) if n else 0,
+            "exact_times_among_all_external_targets": round(len(external) * exact / n, 1)
+            if n
+            else 0,
+            "high_rr_exact_times_among_all_external_targets": round(
+                len(external) * high_rr_exact / n, 1
+            )
+            if n
+            else 0,
         },
         "records": rows,
-        "note": "Projection is only an engineering estimate; full recovery must enumerate all targets and verify DatamainID matches."
+        "note": (
+            "Projection is only an engineering estimate; full recover"
+            "y must enumerate all targets and verify DatamainID match"
+            "es."
+        ),
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    print(json.dumps({k:v for k,v in summary.items() if k != "records"}, indent=2), flush=True)
+    print(json.dumps({k: v for k, v in summary.items() if k != "records"}, indent=2), flush=True)
+
 
 if __name__ == "__main__":
     main()

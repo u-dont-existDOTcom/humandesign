@@ -1,0 +1,102 @@
+{
+  "schema_version": "life-patterns-human-calibration-ui-human-first-verification-v1",
+  "status": "verified_for_independent_human_first_pass",
+  "owner_detected_defects_corrected_before_collection": [
+    "backwards_order_question_before_order_was_shown",
+    "ordered_sequence_display_used_internal_behavior_codes",
+    "optional_auxiliary_fields_created_unnecessary_human_burden",
+    "single_source_provenance_was_redundantly_reasked",
+    "generic_influence_metadata_was_presented_without_calibration necessity",
+    "validation_errors_exposed_machine_schema_language",
+    "opaque_source_and_behavior_ids_leaked_into_human_controls"
+  ],
+  "controlling_policy": "docs/research/LIFE_PATTERNS_HUMAN_CALIBRATION_MINIMAL_BURDEN_POLICY_2026-09-09.md",
+  "correction_record": "state/LIFE-PATTERNS-HUMAN-UI-HUMAN-FIRST-CORRECTION-2026-09-09.md",
+  "public_builder": "scripts/build_life_patterns_human_calibration_ui_v2_auditor_final.py",
+  "public_tests": "tests/unit/test_life_patterns_human_calibration_ui_v2_auditor_final.py",
+  "implementation_test_head": "3447565cb56d5a6cd39d1a44877b3ca2604fdd1c",
+  "implementation_ci": {
+    "run_id": 34384054801,
+    "conclusion": "success",
+    "pytest_passed": 635,
+    "pytest_skipped": 7,
+    "ruff": "passed",
+    "mypy": "passed_172_source_files"
+  },
+  "current_public_state_head_at_verification": "46bb7010cb487d31435702ef4031ac3124d440d5",
+  "current_public_state_ci": {
+    "run_id": 34384155046,
+    "conclusion": "success"
+  },
+  "private_handoff": {
+    "receipt_id": "LPHB2-F34245FAE32B513DDCFE",
+    "receipt_sha256": "f34245fae32b513ddcfe22b7d21081997e8c28e18fccd25b962c30af2fe0a78f",
+    "episode_units": 44,
+    "series_units": 22,
+    "selected_units_changed": false,
+    "embedded_handoff_fragment_changed": false
+  },
+  "private_auditor_html": {
+    "filename": "Life-Patterns-Human-Calibration-V2-AUDITOR-2026-09-09.html",
+    "bytes": 3995302,
+    "sha256": "7866b98b9aab72a329825675bb037e951354c9093a35b0f218d335ef7a0a8b3e",
+    "contains_private_participant_evidence": true,
+    "committed_to_git": false
+  },
+  "private_auditor_kit": {
+    "filename": "Life-Patterns-Independent-Auditor-Kit-V2-AUDITOR-2026-09-09.zip",
+    "bytes": 802576,
+    "sha256": "8e97c264045867b69db6a29af21cde8b2f3d5e3587a852b802504a38a0de1673",
+    "member_count": 2,
+    "members": [
+      "Life-Patterns-Human-Calibration-V2-AUDITOR.html",
+      "START-HERE.md"
+    ]
+  },
+  "exact_private_browser_smoke": {
+    "verified_banner": "LPHB2-F34245FAE32B513DDCFE / 44 episode + 22 repeated-series / LPKG2-F93D8245B78CD9FDCF5D",
+    "total_units": 66,
+    "network_requests": 0,
+    "page_errors": 0,
+    "console_errors": 0,
+    "single_behavior_relation_control_absent": true,
+    "multiple_behavior_order_question_precedes_order_entry": true,
+    "ordered_behavior_labels_plain_language": true,
+    "ordered_behavior_labels_example": [
+      "The narrator requests before attempting independently",
+      "The narrator requests after one or more solo attempts"
+    ],
+    "single_source_provenance_automatic": true,
+    "multiple_source_choices_show_quote_text": true,
+    "generic_influence_control_absent": true,
+    "generic_counterevidence_control_absent": true,
+    "advanced_optional_context_controls_absent": true,
+    "non_action_error_human_readable": true,
+    "schema_jargon_in_tested_human_error": false
+  },
+  "human_flow": {
+    "single_behavior_relation_automatic": true,
+    "multi_behavior_relation_conditional": true,
+    "ordered_sequence_only_after_order_is_asserted": true,
+    "internal_source_ids_human_visible": false,
+    "internal_behavior_codes_human_visible": false,
+    "optional_auxiliary_human_fields_shown": false,
+    "conditional_other_specified_description": true,
+    "conditional_non_action_gate": true,
+    "required_series_recurrence_fields": true,
+    "humanized_validation_errors": true
+  },
+  "response_contract_changed": false,
+  "measurement_semantics_changed": false,
+  "recurrence_semantics_changed": false,
+  "target_model_information_used": false,
+  "automated_judgment_used": false,
+  "network_required": false,
+  "human_first_pass_received": false,
+  "automated_life_patterns_coding_run": false,
+  "target_model_scoring_run": false,
+  "development_only": true,
+  "validation_use_forbidden": true,
+  "supersedes_all_prior_auditor_ui_kits_for_new_collection": true,
+  "public_receipt_contains_private_participant_text": false
+}

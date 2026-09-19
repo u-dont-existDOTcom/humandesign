@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "life-patterns-v2-owner-global-label-scope-repair-2026-09-15",
+  "status": "implemented_pending_owner_consumer_seam_retest",
+  "failureClass": "scope_collapse_from_evidence_availability",
+  "ownerCorrection": "A global self-description must not be silently narrowed to the first subdomain investigated; for 'balanced in general', ask whether the balance is mainly emotional or also extends across other materially different life domains.",
+  "runtimeModule": "src/hdmatch/api/life_patterns_v2_owner_scope.py",
+  "deploymentWrapper": "src/hdmatch/api/life_patterns_v2_owner_deployed_app.py",
+  "regressionTest": "tests/unit/test_life_patterns_v2_owner_scope.py",
+  "semanticsChanged": false,
+  "targetTheoryBlind": true,
+  "fixedEpisodeQuotaAdded": false,
+  "newMandatoryInterviewChecklistAdded": false,
+  "nextEvidence": "Owner consumer-seam retest of a broad self-label with evidence initially limited to one subdomain."
+}

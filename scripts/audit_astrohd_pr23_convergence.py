@@ -759,13 +759,27 @@ def _load_module(path: Path, name: str) -> ModuleType:
 
 
 def _historical_write_result(repository_root: Path, script_name: str) -> JsonObject:
-    script_path = repository_root / "scripts" / script_name
-    module = _load_module(script_path, f"convergence_{script_path.stem}")
-    expected_exception = module.HistoricalAuditSourceMismatch
     with tempfile.TemporaryDirectory() as temporary:
-        output = Path(temporary) / "must-not-exist.json"
+        # This receipt describes AUDITED_HEAD. A later checkout can introduce
+        # additional source mismatches and must not rewrite the frozen diagnostic.
+        snapshot = Path(temporary) / "audited-tree"
+        script_relative = Path("scripts") / script_name
+        for name in _git_paths(repository_root, AUDITED_HEAD):
+            relative = Path(name)
+            if not (
+                name.startswith(("src/hdmatch/", "mappings/", "reference/audits/"))
+                or relative == script_relative
+            ):
+                continue
+            destination = snapshot / relative
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            destination.write_bytes(_git_blob(repository_root, AUDITED_HEAD, relative))
+        script_path = snapshot / script_relative
+        module = _load_module(script_path, f"convergence_{script_path.stem}")
+        expected_exception = module.HistoricalAuditSourceMismatch
+        output = snapshot / "must-not-exist.json"
         try:
-            module.write_audit(repository_root, output=output)
+            module.write_audit(snapshot, output=output)
         except expected_exception as exc:
             return {
                 "exception_class": type(exc).__name__,

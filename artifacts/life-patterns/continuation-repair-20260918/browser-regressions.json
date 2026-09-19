@@ -1,0 +1,122 @@
+{
+  "schema": "life-patterns-browser-regressions-v1",
+  "live_model_calls": 0,
+  "tests": [
+    {
+      "name": "initial-one-labeled-response",
+      "status": "pass"
+    },
+    {
+      "name": "restore-failure-preserves-original-checkpoint",
+      "status": "pass"
+    },
+    {
+      "name": "next-question-failure-exposes-retry",
+      "status": "pass"
+    },
+    {
+      "name": "failed-answer-retains-editable-draft-and-once-only-retry",
+      "status": "pass"
+    },
+    {
+      "name": "lost-response-reconciles-without-repeating-answer",
+      "status": "pass"
+    },
+    {
+      "name": "double-send-is-single-flight",
+      "status": "pass"
+    },
+    {
+      "name": "pause-late-response-reload-resume",
+      "status": "pass"
+    },
+    {
+      "name": "old-acceptance-cannot-replace-new-awaiting-question-on-restore",
+      "status": "pass"
+    },
+    {
+      "name": "patterns-remain-visible-and-correction-is-append-only",
+      "status": "pass"
+    },
+    {
+      "name": "inference-judgment-is-distinct-and-auto-continues",
+      "status": "pass"
+    },
+    {
+      "name": "no-worthwhile-question-does-not-fake-coverage",
+      "status": "pass"
+    },
+    {
+      "name": "zero-pattern-freeze-has-source-and-blueprint",
+      "status": "pass"
+    },
+    {
+      "name": "clarification-repairs-without-behavioral-evidence-or-completion",
+      "status": "pass"
+    },
+    {
+      "name": "repeated-direct-pattern-is-not-another-synthesis",
+      "status": "pass"
+    },
+    {
+      "name": "multi-turn-paraphrase-recorded-without-inference-approval",
+      "status": "pass"
+    },
+    {
+      "name": "resolved-withdrawal-automatically-selects-next-current-focus-question",
+      "status": "pass"
+    },
+    {
+      "name": "resolved-repair-next-question-failure-remains-visible-and-retryable",
+      "status": "pass"
+    },
+    {
+      "name": "legacy-stalled-repair-recovers-automatically-without-new-user-message",
+      "status": "pass"
+    },
+    {
+      "name": "responsive-and-reduced-motion",
+      "status": "pass"
+    }
+  ],
+  "widths": [
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "scrollBehavior": "auto",
+      "label": 1
+    },
+    {
+      "width": 375,
+      "scrollWidth": 375,
+      "scrollBehavior": "auto",
+      "label": 1
+    },
+    {
+      "width": 414,
+      "scrollWidth": 414,
+      "scrollBehavior": "auto",
+      "label": 1
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "scrollBehavior": "auto",
+      "label": 1
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1024,
+      "scrollBehavior": "auto",
+      "label": 1
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "scrollBehavior": "auto",
+      "label": 1
+    }
+  ],
+  "page_errors": [],
+  "status": "pass"
+}

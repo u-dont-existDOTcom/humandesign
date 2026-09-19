@@ -1,0 +1,140 @@
+Life Patterns neutral measurement — fresh blind review of overlap/facet repair v1
+
+You are a second independent theory-neutral reviewer. You do NOT know what external hypothesis, model, typology, birth-derived system, prediction, or score may eventually be compared with this behavioral measurement.
+
+Do not guess or ask about that external purpose. Do not use Human Design, astrology, personality typologies, diagnoses, spiritual/esoteric systems, target mappings, birth/chart data, target-model outputs, participant-specific model results, or model-fit results.
+
+PURPOSE
+
+A first target-theory-blind worker audited the neutral codebook for overlap/facet/absence problems. A separate fresh blind repair worker then proposed a versioned clarification and relation contract. Your task is to determine whether that repair actually resolves the frozen audit without introducing new material codability defects.
+
+AUTHORITATIVE INPUTS
+
+Read only:
+
+1. `state/LIFE-PATTERNS-NEUTRAL-CODEBOOK-THEORY-BLIND-RECONCILED-CANDIDATE-v1-2026-09-03.md`
+2. `state/LIFE-PATTERNS-NON-ACTION-CLASSIFICATION-COMPACT-v1-2026-09-04.json`
+3. `state/LIFE-PATTERNS-NON-ACTION-AMBIGUITY-RESOLUTION-NORMALIZED-v1-2026-09-04.jsonl`
+4. `state/LIFE-PATTERNS-SUBCODE-OVERLAP-ABSENCE-AUDIT-RAW-v1-2026-09-10.jsonl`
+5. `state/LIFE-PATTERNS-SUBCODE-OVERLAP-ABSENCE-AUDIT-SUMMARY-v1-2026-09-10.json`
+6. `state/LIFE-PATTERNS-NEUTRAL-CODEBOOK-CLARIFICATION-v2-CANDIDATE-2026-09-10.md`
+7. `state/LIFE-PATTERNS-FACET-RELATION-CONTRACT-v3-CANDIDATE-2026-09-10.json`
+8. `state/LIFE-PATTERNS-OVERLAP-AUDIT-BLOCKER-RESOLUTION-v1-2026-09-10.jsonl`
+9. `docs/research/LIFE_PATTERNS_RECURRENCE_EVIDENCE_POLICY_v2_2026-09-08.md` only where recurrence/evidence-independence is relevant
+10. existing neutral response-contract definitions in `src/hdmatch/evaluation/structured_annotation_v2.py`, `src/hdmatch/evaluation/development_episode_evidence.py`, and `src/hdmatch/evaluation/development_series_evidence_v2.py` for comparison only.
+
+Do not inspect the exposed project review or any target-theory file.
+
+REVIEW QUESTIONS
+
+A. BLOCKER CLOSURE
+
+For each of the 45 blocking OA findings from the frozen audit summary, judge whether the candidate repair:
+
+- fully resolves it;
+- partially resolves it;
+- leaves it unresolved;
+- creates a new conflict.
+
+Do not accept a matrix assertion merely because it says `ready_for_blind_review=true`; verify it against the actual candidate rules.
+
+B. FACET AND RELATION ADEQUACY
+
+Verify that the proposed contract can faithfully represent:
+
+- multiple co-present facets;
+- multiple values on one behavioral event without falsely creating multiple events;
+- an ordered sequence where order is established;
+- unordered/co-present facet attributes alongside an ordered sequence;
+- event/stage identity where needed;
+- source provenance for each assertion/event;
+- mutually exclusive choices at the correct facet/event/window scope;
+- nested/specific/composite precedence without arbitrary double coding.
+
+Specially test OA-029, OA-034, OA-085, OA-114, and OA-121.
+
+C. ABSENCE SEMANTICS
+
+Verify that:
+
+- `not reported`, `unknown`, and transcript silence do not become behavioral absence;
+- every retained absence-dependent value names an exact absent proposition;
+- the awareness/opportunity/feasibility/established-non-action gate is attached only to that proposition;
+- affirmative behavior in a hybrid code is not mislabeled as non-action;
+- the repair does not infer intent or hidden process from missing text.
+
+D. R05
+
+Explicitly verify whether the repair resolves all R05 blockers:
+
+OA-017, OA-019, OA-020, OA-021, OA-022, OA-026, OA-027, OA-029.
+
+Check especially:
+
+- option-set versus resolution facets;
+- O2 default acceptance versus no alternative search;
+- O2/R1/R4 specificity;
+- removal or repair of `without reported comparison` as behavioral evidence;
+- comparison/constraint/rule precedence;
+- O6 versus R9;
+- cross-facet co-presence plus ordered resolution;
+- same-act double-count protection.
+
+E. NEW DEFECT SCAN
+
+Review all changed/clarified rules for new:
+
+- gaps where no legitimate behavior can be represented;
+- new overlaps/nesting;
+- accidental exclusivity;
+- false sequence requirements;
+- impossible evidence burdens;
+- vague degree thresholds;
+- missingness/absence conflation;
+- same-act double counting;
+- theory-like latent trait language.
+
+Do not demand stylistic perfection. Flag only material codability/measurement defects.
+
+REQUIRED OUTPUTS
+
+Create exactly two artifacts.
+
+ARTIFACT 1 — REVIEW FINDINGS JSONL
+
+Path:
+
+`state/LIFE-PATTERNS-NEUTRAL-MEASUREMENT-REPAIR-REVIEW-RAW-v1-2026-09-10.jsonl`
+
+For every original blocker, emit exactly one row with these fields:
+
+{"finding_id":"OA-007","observable_id":"NBM-R02","verdict":"RESOLVED|PARTIAL|UNRESOLVED|NEW_CONFLICT","reason":"Concise rule-based reason grounded in the candidate repair","candidate_reference":"Exact section/path reference","residual_issue":"none or concise remaining defect","blocks_implementation":true|false}
+
+Then, only if you identify a new material defect not adequately represented by an original blocker, append rows with IDs `NR-001`, `NR-002`, ... using the same fields except `finding_id` uses the NR identity. Do not invent new findings for mere wording/style preferences.
+
+ARTIFACT 2 — REVIEW SUMMARY JSON
+
+Path:
+
+`state/LIFE-PATTERNS-NEUTRAL-MEASUREMENT-REPAIR-REVIEW-SUMMARY-v1-2026-09-10.json`
+
+Exactly:
+
+{"schema_version":"life-patterns-neutral-measurement-repair-review-v1","original_blockers_reviewed":45,"resolved_count":<int>,"partial_count":<int>,"unresolved_count":<int>,"new_conflict_count":<int>,"new_material_findings_count":<int>,"response_contract_blockers_resolved":true|false,"r05_blockers_resolved":true|false,"absence_semantics_resolved":true|false,"safe_for_implementation":true|false,"blocking_ids":["OA-...","NR-..."],"notes":"Concise theory-neutral conclusion."}
+
+PASS STANDARD
+
+`safe_for_implementation=true` only if:
+
+- all 45 original blockers are RESOLVED;
+- no new material finding blocks implementation;
+- all five response-contract limitations are resolved;
+- all R05 blockers are resolved;
+- absence/missingness semantics are adequately bounded;
+- no target-theory information was used.
+
+A repair can be safe for implementation while still having nonblocking presentation work remaining. Do not require unnecessary redesign.
+
+STOP BOUNDARY
+
+Do not edit the candidate repair artifacts. Do not implement software. Do not modify the UI/package/handoff. Do not code participant evidence. Do not run automated annotation, human calibration, target scoring/reveal, merge/deploy, recruitment/contact, or spending. Commit only the two review artifacts and stop.

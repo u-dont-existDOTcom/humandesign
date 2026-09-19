@@ -4,8 +4,10 @@
 Spec: reference/research/adb_pair_timing_model_search_freeze_v1.md
 Development/model-selection only. Uses verified SWIEPH and aborts on fallback.
 """
+
 from __future__ import annotations
 
+import contextlib
 import hashlib
 import json
 import math
@@ -209,10 +211,8 @@ def download_parse() -> tuple[dict[int, Person], dict[int, list[dict]], dict[int
         bt = pub.find("./bdata/sbtime")
         exact_jd = None
         if bt is not None and bt.attrib.get("jd_ut") and (bt.text or "").strip():
-            try:
+            with contextlib.suppress(ValueError):
                 exact_jd = float(bt.attrib["jd_ut"])
-            except ValueError:
-                pass
         persons[aid] = Person(aid, name, rr, exact_jd, birth_tuple)
         research = e.find("research_data")
         if research is None:
@@ -221,12 +221,20 @@ def download_parse() -> tuple[dict[int, Person], dict[int, list[dict]], dict[int
         if rp is not None:
             for rel in rp.findall("relationship"):
                 try:
-                    rid = int(rel.attrib.get("rel_id", "0")); other = int(rel.attrib.get("rel_adb_id", "0"))
+                    rid = int(rel.attrib.get("rel_id", "0"))
+                    other = int(rel.attrib.get("rel_adb_id", "0"))
                 except ValueError:
                     continue
                 if rid in ROMANTIC_REL_IDS:
                     text = (rel.text or "").strip()
-                    rels[aid].append({"rel_id": rid, "other": other, "text": text, "stub": parse_partner_stub(text)})
+                    rels[aid].append(
+                        {
+                            "rel_id": rid,
+                            "other": other,
+                            "text": text,
+                            "stub": parse_partner_stub(text),
+                        }
+                    )
         ep = research.find("events")
         if ep is not None:
             for ev in ep.findall("event"):
@@ -239,15 +247,19 @@ def download_parse() -> tuple[dict[int, Person], dict[int, list[dict]], dict[int
                 dv = date_from_attrs(ev.find("./event_data/sbdate"))
                 if not dv:
                     continue
-                events[aid].append({
-                    "event_id": eid,
-                    "notes": ev.attrib.get("evnotes", ""),
-                    "date": dv,
-                })
+                events[aid].append(
+                    {
+                        "event_id": eid,
+                        "notes": ev.attrib.get("evnotes", ""),
+                        "date": dv,
+                    }
+                )
     return persons, rels, events, len(raw)
 
 
-def build_events(persons: dict[int, Person], rels: dict[int, list[dict]], events: dict[int, list[dict]]) -> tuple[list[EventRecord], dict]:
+def build_events(
+    persons: dict[int, Person], rels: dict[int, list[dict]], events: dict[int, list[dict]]
+) -> tuple[list[EventRecord], dict]:
     records: list[EventRecord] = []
     excluded = Counter()
     seen = set()
@@ -269,7 +281,13 @@ def build_events(persons: dict[int, Person], rels: dict[int, list[dict]], events
                 except Exception:
                     excluded["partner_dob_invalid"] += 1
                     continue
-                partner = Person(other, stub["name"], "date-only", None, (stub["year"], stub["month"], stub["day"]))
+                partner = Person(
+                    other,
+                    stub["name"],
+                    "date-only",
+                    None,
+                    (stub["year"], stub["month"], stub["day"]),
+                )
                 ptok = stub["tokens"]
             if not partner.birth_date:
                 continue
@@ -281,9 +299,11 @@ def build_events(persons: dict[int, Person], rels: dict[int, list[dict]], events
                     excluded["event_julian"] += 1
                     continue
                 if dv["day"]:
-                    eday = int(dv["day"]); precision = "day"
+                    eday = int(dv["day"])
+                    precision = "day"
                 else:
-                    eday = 15; precision = "month"
+                    eday = 15
+                    precision = "month"
                 try:
                     date(dv["year"], dv["month"], eday)
                 except Exception:
@@ -301,15 +321,20 @@ def build_events(persons: dict[int, Person], rels: dict[int, list[dict]], events
                     excluded["mirrored_duplicate"] += 1
                     continue
                 seen.add(dedup)
-                records.append(EventRecord(
-                    pair_key=pk,
-                    focal=person,
-                    partner=partner,
-                    event_id=ev["event_id"],
-                    event_name=EVENTS[ev["event_id"]],
-                    transition="formation" if ev["event_id"] in FORMATION else "dissolution",
-                    year=dv["year"], month=dv["month"], day=eday, precision=precision,
-                ))
+                records.append(
+                    EventRecord(
+                        pair_key=pk,
+                        focal=person,
+                        partner=partner,
+                        event_id=ev["event_id"],
+                        event_name=EVENTS[ev["event_id"]],
+                        transition="formation" if ev["event_id"] in FORMATION else "dissolution",
+                        year=dv["year"],
+                        month=dv["month"],
+                        day=eday,
+                        precision=precision,
+                    )
+                )
     return records, dict(excluded)
 
 
@@ -321,7 +346,8 @@ def safe_shift(y: int, m: int, d: int, dy: int) -> tuple[int, int, int, bool] | 
         date(yy, m, dd)
     except ValueError:
         if m == 2 and d == 29:
-            dd = 28; adjusted = True
+            dd = 28
+            adjusted = True
         else:
             return None
     return yy, m, dd, adjusted
@@ -337,8 +363,13 @@ def progressed_positions(birth_jd: float, candidate_jd: float) -> dict[str, floa
     return {n: calc(pj, b)[0] for n, b in PROG_BODIES.items()}
 
 
-def activation_by_mover(movers: dict[str, float], targets: dict[str, float], sigma: float) -> dict[str, float]:
-    return {f"{mn}": max(kernel(mlon, tlon, sigma) for tlon in targets.values()) for mn, mlon in movers.items()}
+def activation_by_mover(
+    movers: dict[str, float], targets: dict[str, float], sigma: float
+) -> dict[str, float]:
+    return {
+        f"{mn}": max(kernel(mlon, tlon, sigma) for tlon in targets.values())
+        for mn, mlon in movers.items()
+    }
 
 
 def feature_dict(ev: EventRecord, cy: int, cm: int, cd: int) -> dict[str, float]:
@@ -346,20 +377,24 @@ def feature_dict(ev: EventRecord, cy: int, cm: int, cd: int) -> dict[str, float]
     a_birth = ev.focal.exact_jd
     b_birth = ev.partner.parity_birth_jd()
     assert a_birth is not None and b_birth is not None
-    na = natal_positions(a_birth); nb = natal_positions(b_birth)
-    pa = progressed_positions(a_birth, cj); pb = progressed_positions(b_birth, cj)
+    na = natal_positions(a_birth)
+    nb = natal_positions(b_birth)
+    pa = progressed_positions(a_birth, cj)
+    pb = progressed_positions(b_birth, cj)
     tr = {n: calc(cj, b)[0] for n, b in TRANSIT_BODIES.items()}
     f: dict[str, float] = {}
 
     age_a = (cj - a_birth) / TROPICAL_YEAR
     age_b = (cj - b_birth) / TROPICAL_YEAR
-    f.update({
-        "m0_age_a": age_a,
-        "m0_age_b": age_b,
-        "m0_abs_age_diff": abs(age_a - age_b),
-        "m0_year_scaled": (cy - 1950.0) / 50.0,
-        "m0_transition_dissolution": 1.0 if ev.transition == "dissolution" else 0.0,
-    })
+    f.update(
+        {
+            "m0_age_a": age_a,
+            "m0_age_b": age_b,
+            "m0_abs_age_diff": abs(age_a - age_b),
+            "m0_year_scaled": (cy - 1950.0) / 50.0,
+            "m0_transition_dissolution": 1.0 if ev.transition == "dissolution" else 0.0,
+        }
+    )
     for eid in sorted(EVENTS):
         f[f"m0_event_{eid}"] = 1.0 if ev.event_id == eid else 0.0
 
@@ -389,17 +424,19 @@ def feature_dict(ev: EventRecord, cy: int, cm: int, cd: int) -> dict[str, float]
 def build_rows(events: list[EventRecord]) -> tuple[list[dict], dict]:
     rows = []
     counts = Counter()
-    for ei, ev in enumerate(events):
+    for _ei, ev in enumerate(events):
         candidates = [(ev.year, ev.month, ev.day, True, False)]
         for dy in SHIFT_YEARS:
             s = safe_shift(ev.year, ev.month, ev.day, dy)
             if not s:
                 continue
             y, m, d, adj = s
-            a_jd = ev.focal.exact_jd; b_jd = ev.partner.parity_birth_jd()
+            a_jd = ev.focal.exact_jd
+            b_jd = ev.partner.parity_birth_jd()
             assert a_jd is not None and b_jd is not None
             cj = date_jd(y, m, d, 12.0)
-            aa = (cj - a_jd) / TROPICAL_YEAR; ab = (cj - b_jd) / TROPICAL_YEAR
+            aa = (cj - a_jd) / TROPICAL_YEAR
+            ab = (cj - b_jd) / TROPICAL_YEAR
             if not (16 <= aa <= 85 and 16 <= ab <= 85):
                 counts["control_age_excluded"] += 1
                 continue
@@ -409,16 +446,18 @@ def build_rows(events: list[EventRecord]) -> tuple[list[dict], dict]:
             continue
         event_key = f"{ev.pair_key}|{ev.event_id}|{ev.year:04d}-{ev.month:02d}-{ev.day:02d}"
         for y, m, d, actual, adjusted in candidates:
-            rows.append({
-                "event_key": event_key,
-                "pair_key": ev.pair_key,
-                "transition": ev.transition,
-                "event_name": ev.event_name,
-                "actual": int(actual),
-                "candidate_date": f"{y:04d}-{m:02d}-{d:02d}",
-                "leap_adjusted": adjusted,
-                "features": feature_dict(ev, y, m, d),
-            })
+            rows.append(
+                {
+                    "event_key": event_key,
+                    "pair_key": ev.pair_key,
+                    "transition": ev.transition,
+                    "event_name": ev.event_name,
+                    "actual": int(actual),
+                    "candidate_date": f"{y:04d}-{m:02d}-{d:02d}",
+                    "leap_adjusted": adjusted,
+                    "features": feature_dict(ev, y, m, d),
+                }
+            )
     return rows, dict(counts)
 
 
@@ -426,32 +465,41 @@ def feature_names_for(model: str, all_names: list[str]) -> list[str]:
     keep = []
     for n in all_names:
         if n.startswith("m0_"):
-            keep.append(n); continue
+            keep.append(n)
+            continue
         if model in {"M1", "M3A", "M3B", "M3C", "M3ALL"} and n.startswith("m1_"):
-            keep.append(n); continue
+            keep.append(n)
+            continue
         if model in {"M3A", "M3ALL"} and n.startswith("m3a_"):
-            keep.append(n); continue
+            keep.append(n)
+            continue
         if model in {"M3B", "M3ALL"} and n.startswith("m3b_"):
-            keep.append(n); continue
+            keep.append(n)
+            continue
         if model in {"M3C", "M3ALL"} and n.startswith("m3c_"):
-            keep.append(n); continue
+            keep.append(n)
+            continue
     return keep
 
 
 def metrics_from_scores(rows: list[dict], scores: np.ndarray) -> dict[str, float]:
     by_event: dict[str, list[tuple[float, int]]] = defaultdict(list)
-    for r, s in zip(rows, scores):
+    for r, s in zip(rows, scores, strict=False):
         by_event[r["event_key"]].append((float(s), r["actual"]))
-    ranks = []; percentiles = []; losses = []
+    ranks = []
+    percentiles = []
+    losses = []
     for vals in by_event.values():
         vals = sorted(vals, key=lambda x: x[0], reverse=True)
         rank = next(i + 1 for i, (_, y) in enumerate(vals) if y == 1)
         n = len(vals)
         pct = 100.0 if n == 1 else 100.0 * (n - rank) / (n - 1)
-        ranks.append(rank); percentiles.append(pct)
+        ranks.append(rank)
+        percentiles.append(pct)
         arr = np.array([x[0] for x in vals], dtype=float)
         arr -= arr.max()
-        probs = np.exp(arr); probs /= probs.sum()
+        probs = np.exp(arr)
+        probs /= probs.sum()
         idx = next(i for i, (_, y) in enumerate(vals) if y == 1)
         losses.append(-math.log(max(float(probs[idx]), 1e-15)))
     return {
@@ -478,12 +526,20 @@ def choose_c(train_rows: list[dict], names: list[str]) -> float:
     for c in C_GRID:
         pcts = []
         for ti, vi in gkf.split(X, y, groups):
-            sc = StandardScaler().fit(X[ti]); xt = sc.transform(X[ti]); xv = sc.transform(X[vi])
-            clf = LogisticRegression(C=c, class_weight="balanced", max_iter=4000, solver="liblinear").fit(xt, y[ti])
+            sc = StandardScaler().fit(X[ti])
+            xt = sc.transform(X[ti])
+            xv = sc.transform(X[vi])
+            clf = LogisticRegression(
+                C=c, class_weight="balanced", max_iter=4000, solver="liblinear"
+            ).fit(xt, y[ti])
             met = metrics_from_scores([train_rows[i] for i in vi], clf.decision_function(xv))
             pcts.append(met["mean_true_date_percentile"])
         score = float(np.mean(pcts))
-        if best is None or score > best[0] + 1e-12 or (abs(score - best[0]) < 1e-12 and c < best[1]):
+        if (
+            best is None
+            or score > best[0] + 1e-12
+            or (abs(score - best[0]) < 1e-12 and c < best[1])
+        ):
             best = (score, c)
     return float(best[1])
 
@@ -503,52 +559,76 @@ def evaluate_model(rows: list[dict], model: str) -> tuple[dict, list[float]]:
     cs = []
     for ti, vi in gkf.split(X, y, groups):
         tr = [rows[i] for i in ti]
-        c = choose_c(tr, names); cs.append(c)
-        sc = StandardScaler().fit(X[ti]); xt = sc.transform(X[ti]); xv = sc.transform(X[vi])
-        clf = LogisticRegression(C=c, class_weight="balanced", max_iter=4000, solver="liblinear").fit(xt, y[ti])
+        c = choose_c(tr, names)
+        cs.append(c)
+        sc = StandardScaler().fit(X[ti])
+        xt = sc.transform(X[ti])
+        xv = sc.transform(X[vi])
+        clf = LogisticRegression(
+            C=c, class_weight="balanced", max_iter=4000, solver="liblinear"
+        ).fit(xt, y[ti])
         out_scores[vi] = clf.decision_function(xv)
     met = metrics_from_scores(rows, out_scores)
-    met.update({"model": model, "feature_count": len(names), "outer_folds": nsplit, "selected_C_by_fold": cs})
+    met.update(
+        {
+            "model": model,
+            "feature_count": len(names),
+            "outer_folds": nsplit,
+            "selected_C_by_fold": cs,
+        }
+    )
     return met, out_scores.tolist()
 
 
 def evaluate_subset(rows: list[dict], subset: str) -> dict:
     rr = rows if subset == "pooled" else [r for r in rows if r["transition"] == subset]
-    events = len({r["event_key"] for r in rr}); pairs = len({r["pair_key"] for r in rr})
+    events = len({r["event_key"] for r in rr})
+    pairs = len({r["pair_key"] for r in rr})
     if events < 20 or pairs < 10:
         return {"status": "insufficient", "events": events, "pairs": pairs}
     result = {"status": "ok", "events": events, "pairs": pairs, "models": {}}
     for m in ("M0", "M1", "M3A", "M3B", "M3C", "M3ALL"):
-        met, _ = evaluate_model(rr, m); result["models"][m] = met
+        met, _ = evaluate_model(rr, m)
+        result["models"][m] = met
     return result
 
 
 def full_fit_top_coefficients(rows: list[dict], model: str) -> dict:
-    all_names = sorted(rows[0]["features"]); names = feature_names_for(model, all_names)
+    all_names = sorted(rows[0]["features"])
+    names = feature_names_for(model, all_names)
     c = choose_c(rows, names)
     X = np.array([[r["features"].get(n, 0.0) for n in names] for r in rows], float)
     y = np.array([r["actual"] for r in rows])
-    sc = StandardScaler().fit(X); xs = sc.transform(X)
-    clf = LogisticRegression(C=c, class_weight="balanced", max_iter=4000, solver="liblinear").fit(xs, y)
-    co = sorted(zip(names, clf.coef_[0]), key=lambda x: abs(x[1]), reverse=True)
-    return {"C": c, "top_coefficients": [{"feature": n, "coef_standardized": float(v)} for n, v in co[:15]]}
+    sc = StandardScaler().fit(X)
+    xs = sc.transform(X)
+    clf = LogisticRegression(C=c, class_weight="balanced", max_iter=4000, solver="liblinear").fit(
+        xs, y
+    )
+    co = sorted(zip(names, clf.coef_[0], strict=False), key=lambda x: abs(x[1]), reverse=True)
+    return {
+        "C": c,
+        "top_coefficients": [{"feature": n, "coef_standardized": float(v)} for n, v in co[:15]],
+    }
 
 
 def permutation_best(rows: list[dict], model: str, observed_pct: float, nperm: int = 100) -> dict:
     rng = random.Random(RNG_SEED)
     event_to_idx: dict[str, list[int]] = defaultdict(list)
-    for i, r in enumerate(rows): event_to_idx[r["event_key"]].append(i)
+    for i, r in enumerate(rows):
+        event_to_idx[r["event_key"]].append(i)
     null = []
-    # Fixed feature matrix; only within-event label identity changes. Re-run the same grouped CV/tuning.
+    # Fixed feature matrix; only within-event label identity changes. Re-run the same grouped
+    # CV/tuning.
     for p in range(nperm):
         rr = [dict(r) for r in rows]
         for idxs in event_to_idx.values():
             chosen = rng.choice(idxs)
-            for i in idxs: rr[i]["actual"] = int(i == chosen)
+            for i in idxs:
+                rr[i]["actual"] = int(i == chosen)
         met, _ = evaluate_model(rr, model)
         null.append(met["mean_true_date_percentile"])
         if (p + 1) % 10 == 0:
-            print(f"permutation {p+1}/{nperm}", flush=True)
+            print(f"permutation {p + 1}/{nperm}", flush=True)
     exceed = sum(x >= observed_pct - 1e-12 for x in null)
     return {
         "n": nperm,
@@ -561,11 +641,13 @@ def permutation_best(rows: list[dict], model: str, observed_pct: float, nperm: i
 
 def main() -> None:
     for p in (EPHE / "sepl_18.se1", EPHE / "semo_18.se1"):
-        if not p.is_file(): raise SystemExit("Missing Swiss ephemeris file: " + str(p))
+        if not p.is_file():
+            raise SystemExit("Missing Swiss ephemeris file: " + str(p))
     swe.set_ephe_path(str(EPHE))
     # Fail-closed probes.
     for j in (date_jd(1800, 1, 2), date_jd(1950, 1, 1), date_jd(2026, 1, 1), date_jd(2398, 1, 1)):
-        for b in list(NATAL_BODIES.values()) + list(TRANSIT_BODIES.values()): calc(j, b)
+        for b in list(NATAL_BODIES.values()) + list(TRANSIT_BODIES.values()):
+            calc(j, b)
 
     persons, rels, events, raw_bytes = download_parse()
     evs, excluded = build_events(persons, rels, events)
@@ -586,7 +668,8 @@ def main() -> None:
 
     results = {s: evaluate_subset(rows, s) for s in ("pooled", "formation", "dissolution")}
     pooled = results["pooled"]
-    permutation = None; best_family = None
+    permutation = None
+    best_family = None
     top_coeff = {}
     if pooled.get("status") == "ok":
         models = pooled["models"]
@@ -595,7 +678,8 @@ def main() -> None:
         best_family = max(pair_models, key=lambda m: models[m]["mean_true_date_percentile"] - m1)
         observed = models[best_family]["mean_true_date_percentile"]
         permutation = permutation_best(rows, best_family, observed, 100)
-        for m in ("M1", best_family): top_coeff[m] = full_fit_top_coefficients(rows, m)
+        for m in ("M1", best_family):
+            top_coeff[m] = full_fit_top_coefficients(rows, m)
 
     data = {
         "status": "development_model_selection",
@@ -604,7 +688,8 @@ def main() -> None:
         "source": URL,
         "source_raw_bytes": raw_bytes,
         "ephemeris": {
-            "requested": "SWIEPH", "returned": "SWIEPH or abort",
+            "requested": "SWIEPH",
+            "returned": "SWIEPH or abort",
             "sepl_18_sha256": sha256(EPHE / "sepl_18.se1"),
             "semo_18_sha256": sha256(EPHE / "semo_18.se1"),
         },
@@ -613,17 +698,45 @@ def main() -> None:
         "best_pair_dynamic_family_by_pooled_mean_percentile_improvement": best_family,
         "permutation_diagnostic_for_selected_family": permutation,
         "development_refit_coefficients": top_coeff,
-        "decision_rule": "promising only if pair family improves mean true-date percentile over M1 by >=5 points and does not materially worsen softmax log loss",
+        "decision_rule": (
+            "promising only if pair family improves mean true-date pe"
+            "rcentile over M1 by >=5 points and does not materially w"
+            "orsen softmax log loss"
+        ),
         "limitations": [
-            "Partner birth time is unknown for most external linked partners; Moon/houses/angles/HD are excluded.",
-            "This is event-date case-crossover model selection, not the full semi-Markov transition-hazard test.",
-            "The same C-sample is used to choose the candidate family, so permutation p-values are development diagnostics only.",
-            "Any selected family requires independent validation before being used as an empirical relationship predictor.",
+            (
+                "Partner birth time is unknown for most external linked p"
+                "artners; Moon/houses/angles/HD are excluded."
+            ),
+            (
+                "This is event-date case-crossover model selection, not t"
+                "he full semi-Markov transition-hazard test."
+            ),
+            (
+                "The same C-sample is used to choose the candidate family"
+                ", so permutation p-values are development diagnostics on"
+                "ly."
+            ),
+            (
+                "Any selected family requires independent validation befo"
+                "re being used as an empirical relationship predictor."
+            ),
         ],
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(data, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    print(json.dumps({"dataset": dataset, "results": results, "best": best_family, "permutation": permutation}, indent=2), flush=True)
+    print(
+        json.dumps(
+            {
+                "dataset": dataset,
+                "results": results,
+                "best": best_family,
+                "permutation": permutation,
+            },
+            indent=2,
+        ),
+        flush=True,
+    )
     print("wrote", OUT, "sha256", sha256(OUT), flush=True)
 
 

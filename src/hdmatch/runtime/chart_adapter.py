@@ -82,13 +82,16 @@ class ExactChartAdapter:
             computation = calculate_chart(self.provider, interval.representative_utc)
             chart = _to_chart_features(computation)
             stable_hash = interval.feature_sha256
-            state_id = "STATE-" + sha256_json(
-                {
-                    "start_utc": interval.start_utc.isoformat(),
-                    "end_utc": interval.end_utc.isoformat(),
-                    "stable_feature_sha256": stable_hash,
-                }
-            )[:24].upper()
+            state_id = (
+                "STATE-"
+                + sha256_json(
+                    {
+                        "start_utc": interval.start_utc.isoformat(),
+                        "end_utc": interval.end_utc.isoformat(),
+                        "stable_feature_sha256": stable_hash,
+                    }
+                )[:24].upper()
+            )
             result.append(
                 CandidateState(
                     state_id=state_id,
@@ -142,14 +145,8 @@ def _to_chart_features(computation: ChartComputation) -> ChartFeatures:
             "mandala_constants_sha256": computation.metadata.mandala_constants_sha256,
             "bodygraph_constants_sha256": computation.metadata.bodygraph_constants_sha256,
             "design_target_arc_degrees": computation.metadata.design_target_arc_degrees,
-            "design_time_tolerance_seconds": (
-                computation.metadata.design_time_tolerance_seconds
-            ),
-            "design_arc_tolerance_degrees": (
-                computation.metadata.design_arc_tolerance_degrees
-            ),
-            "advanced_substructure_status": (
-                computation.metadata.advanced_substructure_status
-            ),
+            "design_time_tolerance_seconds": (computation.metadata.design_time_tolerance_seconds),
+            "design_arc_tolerance_degrees": (computation.metadata.design_arc_tolerance_degrees),
+            "advanced_substructure_status": (computation.metadata.advanced_substructure_status),
         },
     )

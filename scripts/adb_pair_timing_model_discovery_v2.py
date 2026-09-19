@@ -5,6 +5,7 @@ Frozen spec: reference/research/adb_pair_timing_model_discovery_freeze_v2.md
 Development/model-discovery only. Uses verified SWIEPH via the V1 helpers and
 fails closed on ephemeris fallback.
 """
+
 from __future__ import annotations
 
 import json
@@ -14,12 +15,11 @@ import statistics
 from collections import Counter, defaultdict
 from pathlib import Path
 
+import adb_pair_timing_model_search_v1 as base
 import numpy as np
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import GroupKFold
 from sklearn.preprocessing import StandardScaler
-
-import adb_pair_timing_model_search_v1 as base
 
 REPO = Path(__file__).resolve().parents[1]
 FREEZE = REPO / "reference" / "research" / "adb_pair_timing_model_discovery_freeze_v2.md"
@@ -120,36 +120,40 @@ def build_rows(events: list[base.EventRecord]) -> tuple[list[dict], dict]:
             continue
         event_key = f"{ev.pair_key}|{ev.event_id}|{ev.year:04d}-{ev.month:02d}-{ev.day:02d}"
         for y, m, d, actual, adjusted in candidates:
-            rows.append({
-                "event_key": event_key,
-                "pair_key": ev.pair_key,
-                "actual": int(actual),
-                "candidate_date": f"{y:04d}-{m:02d}-{d:02d}",
-                "leap_adjusted": adjusted,
-                "features": raw_features(ev, y, m, d),
-            })
+            rows.append(
+                {
+                    "event_key": event_key,
+                    "pair_key": ev.pair_key,
+                    "actual": int(actual),
+                    "candidate_date": f"{y:04d}-{m:02d}-{d:02d}",
+                    "leap_adjusted": adjusted,
+                    "features": raw_features(ev, y, m, d),
+                }
+            )
     return rows, dict(counts)
 
 
 def feature_names(model: str, all_names: list[str]) -> list[str]:
     out = []
     for n in all_names:
-        if n.startswith("m0_"):
-            out.append(n)
-        elif model != "M0HR" and n.startswith("m1_"):
-            out.append(n)
-        elif model in {"XPROGHR", "ALLHR"} and n.startswith("xp_"):
-            out.append(n)
-        elif model in {"NCOMPHR", "ALLHR"} and n.startswith("nc_"):
-            out.append(n)
-        elif model in {"PCOMPHR", "ALLHR"} and n.startswith("pc_"):
+        if (
+            n.startswith("m0_")
+            or model != "M0HR"
+            and n.startswith("m1_")
+            or model in {"XPROGHR", "ALLHR"}
+            and n.startswith("xp_")
+            or model in {"NCOMPHR", "ALLHR"}
+            and n.startswith("nc_")
+            or model in {"PCOMPHR", "ALLHR"}
+            and n.startswith("pc_")
+        ):
             out.append(n)
     return out
 
 
 def metric_scores(rows: list[dict], scores: np.ndarray) -> dict[str, float]:
     by_event: dict[str, list[tuple[float, int]]] = defaultdict(list)
-    for row, score in zip(rows, scores):
+    for row, score in zip(rows, scores, strict=False):
         by_event[row["event_key"]].append((float(score), int(row["actual"])))
     ranks: list[int] = []
     pct: list[float] = []
@@ -162,7 +166,8 @@ def metric_scores(rows: list[dict], scores: np.ndarray) -> dict[str, float]:
         pct.append(100.0 if n == 1 else 100.0 * (n - rank) / (n - 1))
         arr = np.array([s for s, _ in vals], dtype=float)
         arr -= arr.max()
-        probs = np.exp(arr); probs /= probs.sum()
+        probs = np.exp(arr)
+        probs /= probs.sum()
         idx = next(i for i, (_, y) in enumerate(vals) if y == 1)
         losses.append(-math.log(max(float(probs[idx]), 1e-15)))
     return {
@@ -208,7 +213,11 @@ def choose_c(train_rows: list[dict], names: list[str]) -> float:
             met = metric_scores([train_rows[i] for i in vi], pred)
             fold_scores.append(met["mean_true_date_percentile"])
         score = statistics.fmean(fold_scores)
-        if best is None or score > best[0] + 1e-12 or (abs(score - best[0]) < 1e-12 and c < best[1]):
+        if (
+            best is None
+            or score > best[0] + 1e-12
+            or (abs(score - best[0]) < 1e-12 and c < best[1])
+        ):
             best = (score, c)
     assert best is not None
     return best[1]
@@ -223,18 +232,24 @@ def stability_summary(fold_coefs: list[dict[str, float]], top_n: int = 30) -> li
     rows = []
     total_folds = len(fold_coefs)
     for name, vals in agg.items():
-        pos = sum(v > 0 for v in vals); neg = sum(v < 0 for v in vals)
-        rows.append({
-            "feature": name,
-            "selected_folds": len(vals),
-            "total_folds": total_folds,
-            "positive_folds": pos,
-            "negative_folds": neg,
-            "sign_consistent": pos == 0 or neg == 0,
-            "mean_coef_when_selected": statistics.fmean(vals),
-            "mean_abs_coef_when_selected": statistics.fmean(abs(v) for v in vals),
-        })
-    rows.sort(key=lambda r: (r["selected_folds"], r["sign_consistent"], r["mean_abs_coef_when_selected"]), reverse=True)
+        pos = sum(v > 0 for v in vals)
+        neg = sum(v < 0 for v in vals)
+        rows.append(
+            {
+                "feature": name,
+                "selected_folds": len(vals),
+                "total_folds": total_folds,
+                "positive_folds": pos,
+                "negative_folds": neg,
+                "sign_consistent": pos == 0 or neg == 0,
+                "mean_coef_when_selected": statistics.fmean(vals),
+                "mean_abs_coef_when_selected": statistics.fmean(abs(v) for v in vals),
+            }
+        )
+    rows.sort(
+        key=lambda r: (r["selected_folds"], r["sign_consistent"], r["mean_abs_coef_when_selected"]),
+        reverse=True,
+    )
     return rows[:top_n]
 
 
@@ -260,17 +275,21 @@ def evaluate(rows: list[dict], model: str, fixed_c: float | None = None) -> tupl
         clf, pred = fit_l1(X[ti], y[ti], X[vi], float(c))
         oof[vi] = pred
         fold_metrics.append(metric_scores([rows[i] for i in vi], pred)["mean_true_date_percentile"])
-        fold_coefs.append({n: float(v) for n, v in zip(names, clf.coef_[0]) if abs(v) > 1e-10})
+        fold_coefs.append(
+            {n: float(v) for n, v in zip(names, clf.coef_[0], strict=False) if abs(v) > 1e-10}
+        )
     met = metric_scores(rows, oof)
-    met.update({
-        "model": model,
-        "feature_count": len(names),
-        "outer_folds": nsplit,
-        "selected_C_by_fold": selected_cs,
-        "mean_true_date_percentile_by_fold": fold_metrics,
-        "nonzero_feature_count_by_fold": [len(x) for x in fold_coefs],
-        "stable_selected_features": stability_summary(fold_coefs),
-    })
+    met.update(
+        {
+            "model": model,
+            "feature_count": len(names),
+            "outer_folds": nsplit,
+            "selected_C_by_fold": selected_cs,
+            "mean_true_date_percentile_by_fold": fold_metrics,
+            "nonzero_feature_count_by_fold": [len(x) for x in fold_coefs],
+            "stable_selected_features": stability_summary(fold_coefs),
+        }
+    )
     return met, oof
 
 
@@ -296,7 +315,7 @@ def permutation_diagnostic(rows: list[dict], model: str, observed: dict, n: int 
         met, _ = evaluate(perm_rows, model, fixed_c=fixed_c)
         null.append(met["mean_true_date_percentile"])
         if (p + 1) % 10 == 0:
-            print(f"permutation {p+1}/{n}", flush=True)
+            print(f"permutation {p + 1}/{n}", flush=True)
     obs = observed["mean_true_date_percentile"]
     ge = sum(x >= obs - 1e-12 for x in null)
     return {
@@ -316,7 +335,12 @@ def main() -> None:
         if not p.is_file():
             raise SystemExit("Missing Swiss ephemeris file: " + str(p))
     base.swe.set_ephe_path(str(base.EPHE))
-    for j in (base.date_jd(1800, 1, 2), base.date_jd(1950, 1, 1), base.date_jd(2026, 1, 1), base.date_jd(2398, 1, 1)):
+    for j in (
+        base.date_jd(1800, 1, 2),
+        base.date_jd(1950, 1, 1),
+        base.date_jd(2026, 1, 1),
+        base.date_jd(2398, 1, 1),
+    ):
         for body in list(base.NATAL_BODIES.values()) + list(base.TRANSIT_BODIES.values()):
             base.calc(j, body)
 
@@ -346,11 +370,25 @@ def main() -> None:
 
     m1 = results["M1HR"]
     pair_models = ("XPROGHR", "NCOMPHR", "PCOMPHR", "ALLHR")
-    best = max(pair_models, key=lambda m: results[m]["mean_true_date_percentile"] - m1["mean_true_date_percentile"])
+    best = max(
+        pair_models,
+        key=lambda m: results[m]["mean_true_date_percentile"] - m1["mean_true_date_percentile"],
+    )
     for m in pair_models:
-        results[m]["delta_mean_percentile_vs_M1HR"] = results[m]["mean_true_date_percentile"] - m1["mean_true_date_percentile"]
-        results[m]["delta_softmax_loss_vs_M1HR"] = results[m]["softmax_log_loss"] - m1["softmax_log_loss"]
-        fold_deltas = [a - b for a, b in zip(results[m]["mean_true_date_percentile_by_fold"], m1["mean_true_date_percentile_by_fold"])]
+        results[m]["delta_mean_percentile_vs_M1HR"] = (
+            results[m]["mean_true_date_percentile"] - m1["mean_true_date_percentile"]
+        )
+        results[m]["delta_softmax_loss_vs_M1HR"] = (
+            results[m]["softmax_log_loss"] - m1["softmax_log_loss"]
+        )
+        fold_deltas = [
+            a - b
+            for a, b in zip(
+                results[m]["mean_true_date_percentile_by_fold"],
+                m1["mean_true_date_percentile_by_fold"],
+                strict=False,
+            )
+        ]
         results[m]["fold_percentile_deltas_vs_M1HR"] = fold_deltas
         results[m]["positive_improvement_folds"] = sum(x > 0 for x in fold_deltas)
         results[m]["clears_frozen_promising_threshold"] = (
@@ -376,29 +414,47 @@ def main() -> None:
         "results": results,
         "best_pair_family_by_mean_percentile_improvement": best,
         "permutation_diagnostic": perm,
-        "any_pair_family_clears_frozen_threshold": any(results[m]["clears_frozen_promising_threshold"] for m in pair_models),
-        "interpretation_rule": "If no pair family clears threshold, conclude this C-sample/date-only design has not found a useful pair-dynamic timing model; do not tune on coefficients.",
+        "any_pair_family_clears_frozen_threshold": any(
+            results[m]["clears_frozen_promising_threshold"] for m in pair_models
+        ),
+        "interpretation_rule": (
+            "If no pair family clears threshold, conclude this C-samp"
+            "le/date-only design has not found a useful pair-dynamic "
+            "timing model; do not tune on coefficients."
+        ),
         "limitations": [
             "Openly developmental model discovery; not independent validation.",
             "Most linked partners are date-only, so Moon/houses/angles/HD are absent.",
             "Formation events are dominated by marriage events.",
-            "True event date is compared with same month/day at +/-1..10 years, not with a full semi-Markov risk process.",
+            (
+                "True event date is compared with same month/day at +/-1."
+                ".10 years, not with a full semi-Markov risk process."
+            ),
         ],
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(data, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    print(json.dumps({
-        "dataset": dataset,
-        "summary": {m: {
-            "pct": results[m]["mean_true_date_percentile"],
-            "loss": results[m]["softmax_log_loss"],
-            "delta_pct": results[m].get("delta_mean_percentile_vs_M1HR"),
-            "delta_loss": results[m].get("delta_softmax_loss_vs_M1HR"),
-            "clears": results[m].get("clears_frozen_promising_threshold"),
-        } for m in MODELS},
-        "best": best,
-        "permutation": perm,
-    }, indent=2), flush=True)
+    print(
+        json.dumps(
+            {
+                "dataset": dataset,
+                "summary": {
+                    m: {
+                        "pct": results[m]["mean_true_date_percentile"],
+                        "loss": results[m]["softmax_log_loss"],
+                        "delta_pct": results[m].get("delta_mean_percentile_vs_M1HR"),
+                        "delta_loss": results[m].get("delta_softmax_loss_vs_M1HR"),
+                        "clears": results[m].get("clears_frozen_promising_threshold"),
+                    }
+                    for m in MODELS
+                },
+                "best": best,
+                "permutation": perm,
+            },
+            indent=2,
+        ),
+        flush=True,
+    )
     print("wrote", OUT, "sha256", base.sha256(OUT), flush=True)
 
 

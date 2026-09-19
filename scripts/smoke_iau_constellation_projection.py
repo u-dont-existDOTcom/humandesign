@@ -71,9 +71,7 @@ def main() -> None:
         ),
     )
     provider = SwissAstronomyReferenceProvider(engine=swe, provenance=provenance)
-    resolver = AstropyIauConstellationResolver(
-        expected_astropy_version=args.astropy_version
-    )
+    resolver = AstropyIauConstellationResolver(expected_astropy_version=args.astropy_version)
 
     rows: list[dict[str, object]] = []
     for moment, expected_name, expected_abbreviation in SAMPLES:

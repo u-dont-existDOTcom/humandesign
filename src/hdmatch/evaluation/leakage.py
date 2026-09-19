@@ -125,6 +125,7 @@ def scan_blind_payload(payload: Any, *, scanned_file: str | None = None) -> Leak
     """Scan field names and all user-visible text while allowing declared month/year inputs."""
 
     findings: list[LeakageFinding] = []
+
     def walk(value: Any, path: str) -> None:
         if isinstance(value, dict):
             known_date_record = value.get("candidate_universe") == "known_date"
@@ -200,9 +201,7 @@ def scan_blind_file(path: str | Path) -> LeakageReport:
     return scan_blind_payload(payload, scanned_file=source.name)
 
 
-def scan_prediction_payload(
-    payload: Any, *, scanned_file: str | None = None
-) -> LeakageReport:
+def scan_prediction_payload(payload: Any, *, scanned_file: str | None = None) -> LeakageReport:
     """Scan blind decoder output without flagging its public candidate date/time values."""
 
     findings: list[LeakageFinding] = []

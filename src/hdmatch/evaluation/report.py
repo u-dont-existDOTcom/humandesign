@@ -58,9 +58,7 @@ class EvaluationReport(BaseModel):
     tie_policy: Literal["fractional-credit-random-within-tie"] = (
         "fractional-credit-random-within-tie"
     )
-    score_semantics: Literal["rubric-bits-not-probabilities"] = (
-        "rubric-bits-not-probabilities"
-    )
+    score_semantics: Literal["rubric-bits-not-probabilities"] = "rubric-bits-not-probabilities"
     claim_boundary: Literal["synthetic-engineering-validation-only"] = (
         "synthetic-engineering-validation-only"
     )
@@ -199,9 +197,7 @@ def evaluate_frozen_payloads(
             true_date=true_date,
         )
         if metrics is None:
-            failures.append(
-                classify_oracle_failure(case_id=case_id, true_candidate_present=False)
-            )
+            failures.append(classify_oracle_failure(case_id=case_id, true_candidate_present=False))
         else:
             case_metrics.append(metrics)
         if metrics is not None and metrics.best_rank != 1:
@@ -247,17 +243,11 @@ def evaluate_frozen_payloads(
                     curves.append(
                         CurveObservation(
                             case_id=case_id,
-                            method=cast(
-                                Literal["random", "active", "leave_one_out"], method
-                            ),
+                            method=cast(Literal["random", "active", "leave_one_out"], method),
                             cluster_count=point["cluster_count"],
-                            midrank=(
-                                stage_metrics.midrank if stage_metrics is not None else None
-                            ),
+                            midrank=(stage_metrics.midrank if stage_metrics is not None else None),
                             candidate_count=stage_count,
-                            tie_size=(
-                                stage_metrics.tie_size if stage_metrics is not None else 1
-                            ),
+                            tie_size=(stage_metrics.tie_size if stage_metrics is not None else 1),
                         )
                     )
                 except (KeyError, TypeError, ValueError) as exc:

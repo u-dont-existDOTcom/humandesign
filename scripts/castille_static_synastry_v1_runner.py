@@ -7,6 +7,7 @@ the 20k final risk sets. This adapter records those already-frozen risk tasks
 and includes their DOBs in the 00:00/23:59 position cache. No split, negative,
 feature, model, hyperparameter, threshold, or primary result rule is changed.
 """
+
 from __future__ import annotations
 
 import castille_static_synastry_v1 as v1

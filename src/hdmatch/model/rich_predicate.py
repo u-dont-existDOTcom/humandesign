@@ -64,9 +64,7 @@ class ActivationGatePredicate(_FrozenModel):
 
     @field_validator("bodies")
     @classmethod
-    def canonical_bodies(
-        cls, bodies: tuple[ActivationBody, ...]
-    ) -> tuple[ActivationBody, ...]:
+    def canonical_bodies(cls, bodies: tuple[ActivationBody, ...]) -> tuple[ActivationBody, ...]:
         return tuple(sorted(set(bodies)))
 
     def matches(self, chart: Mapping[str, Any] | object) -> bool:
@@ -95,8 +93,7 @@ class ActivationGatePredicate(_FrozenModel):
         bodies = ",".join(self.bodies) if self.bodies else "*"
         gates = ",".join(str(gate) for gate in self.gates)
         return (
-            f"activation_gate:{self.operator.value}:side={self.side}:"
-            f"bodies={bodies}:gates={gates}"
+            f"activation_gate:{self.operator.value}:side={self.side}:bodies={bodies}:gates={gates}"
         )
 
 
@@ -197,9 +194,7 @@ def _normalize_token(value: Any) -> str:
     return re.sub(r"[^a-z0-9]+", "_", str(value).casefold()).strip("_")
 
 
-def _match_set(
-    operator: SetPredicateOperator, expected: set[Any], present: set[Any]
-) -> bool:
+def _match_set(operator: SetPredicateOperator, expected: set[Any], present: set[Any]) -> bool:
     if operator is SetPredicateOperator.CONTAINS_ANY:
         return bool(expected & present)
     if operator is SetPredicateOperator.CONTAINS_ALL:

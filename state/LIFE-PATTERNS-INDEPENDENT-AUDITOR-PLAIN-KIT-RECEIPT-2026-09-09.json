@@ -1,0 +1,42 @@
+{
+  "schema_version": "life-patterns-independent-auditor-plain-kit-receipt-v1",
+  "created_date": "2026-09-09",
+  "status": "current_private_delivery_kit",
+  "private_kit": {
+    "filename": "Life-Patterns-Independent-Auditor-Kit-V2-PLAIN-2026-09-09.zip",
+    "sha256": "1375a70fa6387e71f2402888d6b17e298c234f11b5c127da49d7f3cb969c6b49",
+    "bytes": 803546,
+    "member_count": 2,
+    "committed_to_git": false
+  },
+  "members": {
+    "Life-Patterns-Human-Calibration-V2-PLAIN.html": {
+      "sha256": "5d064760d05c1ba7e04bef5eb4469f258eb448b15e4870fbd065a62a7c9384bb",
+      "bytes": 3995747,
+      "embeds_private_participant_evidence": true
+    },
+    "START-HERE.md": {
+      "sha256": "9513a85804592736f153cd235bbabf6891687c973ac740b42dc4eaeb8b335ab7",
+      "bytes": 3025,
+      "contains_private_participant_evidence": false,
+      "repository_source": "docs/research/LIFE_PATTERNS_INDEPENDENT_AUDITOR_START_HERE_PLAIN_2026-09-09.md"
+    }
+  },
+  "bound_handoff_receipt_id": "LPHB2-F34245FAE32B513DDCFE",
+  "bound_handoff_receipt_sha256": "f34245fae32b513ddcfe22b7d21081997e8c28e18fccd25b962c30af2fe0a78f",
+  "selected_episode_units": 44,
+  "selected_series_units": 22,
+  "selection_changed": false,
+  "response_contract_changed": false,
+  "measurement_semantics_changed": false,
+  "human_first_pass_received": false,
+  "automated_coding_run": false,
+  "target_model_scoring_run": false,
+  "public_receipt_contains_private_participant_text": false,
+  "supersedes_for_new_human_collection": [
+    "state/LIFE-PATTERNS-INDEPENDENT-AUDITOR-KIT-RECEIPT-2026-09-09.json",
+    "state/LIFE-PATTERNS-INDEPENDENT-AUDITOR-DELIVERY-KIT-RECEIPT-2026-09-09.json"
+  ],
+  "development_only": true,
+  "validation_use_forbidden": true
+}

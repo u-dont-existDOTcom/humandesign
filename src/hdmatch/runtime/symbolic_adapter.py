@@ -67,9 +67,7 @@ class FrozenSymbolicModel:
         question_clusters: dict[str, set[str]] = {}
         for mapping in self.library.frozen_mappings:
             for question_id in mapping.question_ids:
-                question_clusters.setdefault(question_id, set()).add(
-                    mapping.dependency_cluster
-                )
+                question_clusters.setdefault(question_id, set()).add(mapping.dependency_cluster)
         for question_id, cluster_set in sorted(question_clusters.items()):
             answer = canonical.get(question_id, "unknown")
             clusters = sorted(cluster_set)

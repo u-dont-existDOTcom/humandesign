@@ -1,0 +1,7 @@
+{
+  "name": "life-patterns-browser-regressions",
+  "private": true,
+  "type": "module",
+  "scripts": {"test": "node survey_flow.mjs"},
+  "devDependencies": {"puppeteer": "25.11.0"}
+}

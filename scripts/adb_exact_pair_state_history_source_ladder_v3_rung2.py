@@ -8,6 +8,7 @@ Frozen specs:
 Rung-1 additions are quarantined per its engineering audit. Sufficiency accounting
 starts from the clean V2 baseline of 23 endpoint-bearing pairs.
 """
+
 from __future__ import annotations
 
 import hashlib
@@ -21,9 +22,18 @@ from datetime import date
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
-LADDER_FREEZE = REPO / "reference" / "research" / "adb_exact_pair_state_history_source_ladder_freeze_v3.md"
-PARSER_FREEZE = REPO / "reference" / "research" / "adb_exact_pair_state_history_source_ladder_v3_rung2_parser_freeze.md"
-RUNG1_AUDIT = REPO / "reference" / "research" / "adb_exact_pair_state_history_source_ladder_v3_rung1_audit.md"
+LADDER_FREEZE = (
+    REPO / "reference" / "research" / "adb_exact_pair_state_history_source_ladder_freeze_v3.md"
+)
+PARSER_FREEZE = (
+    REPO
+    / "reference"
+    / "research"
+    / "adb_exact_pair_state_history_source_ladder_v3_rung2_parser_freeze.md"
+)
+RUNG1_AUDIT = (
+    REPO / "reference" / "research" / "adb_exact_pair_state_history_source_ladder_v3_rung1_audit.md"
+)
 V1 = REPO / "reference" / "research" / "adb_exact_pair_state_history_recovery_v1.json"
 V2 = REPO / "reference" / "research" / "adb_exact_pair_state_history_recovery_v2.json"
 RUNG1 = REPO / "reference" / "research" / "adb_exact_pair_state_history_source_ladder_v3_rung1.json"
@@ -34,16 +44,41 @@ UA = "humandesign-state-history-v3-rung2/1.0"
 
 STOP = {"relationship", "spouse", "lover", "with", "born", "family", "associates", "equivalent"}
 MONTHS = {
-    "january": 1, "february": 2, "march": 3, "april": 4, "may": 5, "june": 6,
-    "july": 7, "august": 8, "september": 9, "october": 10, "november": 11, "december": 12,
-    "jan": 1, "feb": 2, "mar": 3, "apr": 4, "jun": 6, "jul": 7, "aug": 8,
-    "sep": 9, "sept": 9, "oct": 10, "nov": 11, "dec": 12,
+    "january": 1,
+    "february": 2,
+    "march": 3,
+    "april": 4,
+    "may": 5,
+    "june": 6,
+    "july": 7,
+    "august": 8,
+    "september": 9,
+    "october": 10,
+    "november": 11,
+    "december": 12,
+    "jan": 1,
+    "feb": 2,
+    "mar": 3,
+    "apr": 4,
+    "jun": 6,
+    "jul": 7,
+    "aug": 8,
+    "sep": 9,
+    "sept": 9,
+    "oct": 10,
+    "nov": 11,
+    "dec": 12,
 }
 MONTH_WORD = "(?:" + "|".join(sorted(MONTHS, key=len, reverse=True)) + ")"
 WIKILINK_RE = re.compile(r"\[\[([^\]|#]+)(?:#[^\]|]*)?(?:\|([^\]]+))?\]\]")
 ADB_WIKI_RE = re.compile(r"\[\[\s*wikipedia\s*:\s*([^\]|#]+)(?:#[^\]|]*)?(?:\|[^\]]*)?\]\]", re.I)
-END_RE = re.compile(r"\b(?:divorc\w*|separat\w*|annul\w*|split\w*|breakup|broke\s+up|broken\s+up|dissolv\w*|estrang\w*)\b", re.I)
-REASON_ONLY_RE = re.compile(r"^(?:div|divorc\w*|sep|separat\w*|annul\w*|split\w*|breakup|dissolv\w*|estrang\w*)$", re.I)
+END_RE = re.compile(
+    r"\b(?:divorc\w*|separat\w*|annul\w*|split\w*|breakup|broke\s+up|broken\s+up|dissolv\w*|estrang\w*)\b",
+    re.I,
+)
+REASON_ONLY_RE = re.compile(
+    r"^(?:div|divorc\w*|sep|separat\w*|annul\w*|split\w*|breakup|dissolv\w*|estrang\w*)$", re.I
+)
 
 
 def sha256(path: Path) -> str:
@@ -55,7 +90,9 @@ def sha256(path: Path) -> str:
 
 
 def norm(s: str | None) -> str:
-    return re.sub(r"[^a-z0-9]+", " ", urllib.parse.unquote((s or "")).replace("_", " ").casefold()).strip()
+    return re.sub(
+        r"[^a-z0-9]+", " ", urllib.parse.unquote(s or "").replace("_", " ").casefold()
+    ).strip()
 
 
 def name_tokens(s: str | None) -> set[str]:
@@ -74,17 +111,29 @@ def api_json(base: str, params: dict) -> dict | None:
 
 
 def fetch_adb(title: str) -> str | None:
-    data = api_json(ADB_API, {
-        "action": "query", "prop": "revisions", "rvprop": "content", "rvslots": "main",
-        "titles": title, "formatversion": 2, "format": "json",
-    })
+    data = api_json(
+        ADB_API,
+        {
+            "action": "query",
+            "prop": "revisions",
+            "rvprop": "content",
+            "rvslots": "main",
+            "titles": title,
+            "formatversion": 2,
+            "format": "json",
+        },
+    )
     if not data:
         return None
     pages = data.get("query", {}).get("pages", [])
     if not pages or pages[0].get("missing") is not None or not pages[0].get("revisions"):
         return None
     rev = pages[0]["revisions"][0]
-    return (rev.get("slots", {}).get("main", {}) or {}).get("content") or rev.get("content") or rev.get("*")
+    return (
+        (rev.get("slots", {}).get("main", {}) or {}).get("content")
+        or rev.get("content")
+        or rev.get("*")
+    )
 
 
 def adb_id(text: str) -> int | None:
@@ -98,10 +147,19 @@ def adb_wikipedia_title(text: str) -> str | None:
 
 
 def fetch_enwiki(title: str) -> tuple[str | None, str | None, str | None]:
-    data = api_json(ENWIKI_API, {
-        "action": "query", "prop": "revisions|pageprops", "rvprop": "content", "rvslots": "main",
-        "titles": title, "redirects": 1, "formatversion": 2, "format": "json",
-    })
+    data = api_json(
+        ENWIKI_API,
+        {
+            "action": "query",
+            "prop": "revisions|pageprops",
+            "rvprop": "content",
+            "rvslots": "main",
+            "titles": title,
+            "redirects": 1,
+            "formatversion": 2,
+            "format": "json",
+        },
+    )
     if not data:
         return None, None, None
     pages = data.get("query", {}).get("pages", [])
@@ -109,7 +167,11 @@ def fetch_enwiki(title: str) -> tuple[str | None, str | None, str | None]:
         return None, None, None
     page = pages[0]
     rev = page["revisions"][0]
-    wt = (rev.get("slots", {}).get("main", {}) or {}).get("content") or rev.get("content") or rev.get("*")
+    wt = (
+        (rev.get("slots", {}).get("main", {}) or {}).get("content")
+        or rev.get("content")
+        or rev.get("*")
+    )
     qid = (page.get("pageprops") or {}).get("wikibase_item")
     return page.get("title"), wt, qid
 
@@ -119,9 +181,12 @@ def balanced_block(text: str, start: int) -> str | None:
     depth = 0
     while i < len(text) - 1:
         if text.startswith("{{", i):
-            depth += 1; i += 2; continue
+            depth += 1
+            i += 2
+            continue
         if text.startswith("}}", i):
-            depth -= 1; i += 2
+            depth -= 1
+            i += 2
             if depth == 0:
                 return text[start:i]
             continue
@@ -178,13 +243,33 @@ def split_template_params(template: str) -> list[str]:
     square = 0
     i = 0
     while i < len(s):
-        if s.startswith("{{", i): curly += 1; buf.append("{{"); i += 2; continue
-        if s.startswith("}}", i): curly = max(0, curly - 1); buf.append("}}"); i += 2; continue
-        if s.startswith("[[", i): square += 1; buf.append("[["); i += 2; continue
-        if s.startswith("]]", i): square = max(0, square - 1); buf.append("]]"); i += 2; continue
+        if s.startswith("{{", i):
+            curly += 1
+            buf.append("{{")
+            i += 2
+            continue
+        if s.startswith("}}", i):
+            curly = max(0, curly - 1)
+            buf.append("}}")
+            i += 2
+            continue
+        if s.startswith("[[", i):
+            square += 1
+            buf.append("[[")
+            i += 2
+            continue
+        if s.startswith("]]", i):
+            square = max(0, square - 1)
+            buf.append("]]")
+            i += 2
+            continue
         if s[i] == "|" and curly == 0 and square == 0:
-            parts.append("".join(buf).strip()); buf = []; i += 1; continue
-        buf.append(s[i]); i += 1
+            parts.append("".join(buf).strip())
+            buf = []
+            i += 1
+            continue
+        buf.append(s[i])
+        i += 1
     parts.append("".join(buf).strip())
     return parts
 
@@ -199,7 +284,10 @@ def plain(s: str) -> str:
 
 
 def linked_targets(s: str) -> list[str]:
-    return [urllib.parse.unquote(m.group(1)).replace("_", " ").strip() for m in WIKILINK_RE.finditer(s or "")]
+    return [
+        urllib.parse.unquote(m.group(1)).replace("_", " ").strip()
+        for m in WIKILINK_RE.finditer(s or "")
+    ]
 
 
 def partner_match(entry: str, other_wiki_title: str | None, other_adb_name: str) -> bool:
@@ -230,40 +318,68 @@ def date_candidates(s: str) -> list[dict]:
         if any(not (span[1] <= a or span[0] >= b) for a, b in occupied):
             return
         try:
-            if precision == "day": lo = hi = iso(y, mo, d)
-            elif precision == "month": lo, hi = iso(y, mo, 1), iso(y, mo, last_day(y, mo))
-            else: lo, hi = iso(y, 1, 1), iso(y, 12, 31)
+            if precision == "day":
+                lo = hi = iso(y, mo, d)
+            elif precision == "month":
+                lo, hi = iso(y, mo, 1), iso(y, mo, last_day(y, mo))
+            else:
+                lo, hi = iso(y, 1, 1), iso(y, 12, 31)
         except ValueError:
             return
         occupied.append(span)
-        out.append({"span": span, "text": m.group(0), "precision": precision, "interval_start": lo, "interval_end": hi})
+        out.append(
+            {
+                "span": span,
+                "text": m.group(0),
+                "precision": precision,
+                "interval_start": lo,
+                "interval_end": hi,
+            }
+        )
 
     # Standard Wikipedia date/start-date templates.
-    rx_tpl = re.compile(r"\{\{\s*(?:start\s*date|date|dts)\s*\|\s*(1[7-9]\d{2}|20\d{2})(?:\s*\|\s*(\d{1,2}))?(?:\s*\|\s*(\d{1,2}))?[^{}]*\}\}", re.I)
+    rx_tpl = re.compile(
+        r"\{\{\s*(?:start\s*date|date|dts)\s*\|\s*(1[7-9]\d{2}|20\d{2})(?:\s*\|\s*(\d{1,2}))?(?:\s*\|\s*(\d{1,2}))?[^{}]*\}\}",
+        re.I,
+    )
     for m in rx_tpl.finditer(text):
-        y = int(m.group(1)); mo = int(m.group(2)) if m.group(2) else None; d = int(m.group(3)) if m.group(3) else None
+        y = int(m.group(1))
+        mo = int(m.group(2)) if m.group(2) else None
+        d = int(m.group(3)) if m.group(3) else None
         add(m, "day" if d and mo else "month" if mo else "year", y, mo, d)
 
-    rx_dmy = re.compile(rf"(?<!\w)(\d{{1,2}})\s+({MONTH_WORD})\s+(1[7-9]\d{{2}}|20\d{{2}})(?!\d)", re.I)
-    for m in rx_dmy.finditer(text): add(m, "day", int(m.group(3)), MONTHS[m.group(2).casefold()], int(m.group(1)))
-    rx_mdy = re.compile(rf"(?<!\w)({MONTH_WORD})\s+(\d{{1,2}})(?:st|nd|rd|th)?[,]?\s+(1[7-9]\d{{2}}|20\d{{2}})(?!\d)", re.I)
-    for m in rx_mdy.finditer(text): add(m, "day", int(m.group(3)), MONTHS[m.group(1).casefold()], int(m.group(2)))
+    rx_dmy = re.compile(
+        rf"(?<!\w)(\d{{1,2}})\s+({MONTH_WORD})\s+(1[7-9]\d{{2}}|20\d{{2}})(?!\d)", re.I
+    )
+    for m in rx_dmy.finditer(text):
+        add(m, "day", int(m.group(3)), MONTHS[m.group(2).casefold()], int(m.group(1)))
+    rx_mdy = re.compile(
+        rf"(?<!\w)({MONTH_WORD})\s+(\d{{1,2}})(?:st|nd|rd|th)?[,]?\s+(1[7-9]\d{{2}}|20\d{{2}})(?!\d)",
+        re.I,
+    )
+    for m in rx_mdy.finditer(text):
+        add(m, "day", int(m.group(3)), MONTHS[m.group(1).casefold()], int(m.group(2)))
     rx_my = re.compile(rf"(?<!\w)({MONTH_WORD})\s+(1[7-9]\d{{2}}|20\d{{2}})(?!\d)", re.I)
-    for m in rx_my.finditer(text): add(m, "month", int(m.group(2)), MONTHS[m.group(1).casefold()])
+    for m in rx_my.finditer(text):
+        add(m, "month", int(m.group(2)), MONTHS[m.group(1).casefold()])
     rx_y = re.compile(r"(?<!\d)(1[7-9]\d{2}|20\d{2})(?!\d)")
-    for m in rx_y.finditer(text): add(m, "year", int(m.group(1)))
+    for m in rx_y.finditer(text):
+        add(m, "year", int(m.group(1)))
     return sorted(out, key=lambda x: x["span"][0])
 
 
 def span_distance(a: tuple[int, int], b: tuple[int, int]) -> int:
-    if a[1] < b[0]: return b[0] - a[1]
-    if b[1] < a[0]: return a[0] - b[1]
+    if a[1] < b[0]:
+        return b[0] - a[1]
+    if b[1] < a[0]:
+        return a[0] - b[1]
     return 0
 
 
 def nearest_date(text: str, term: re.Match) -> dict | None:
     dates = date_candidates(text)
-    if not dates: return None
+    if not dates:
+        return None
     scored = [(span_distance((term.start(), term.end()), tuple(d["span"])), d) for d in dates]
     best = min(x[0] for x in scored)
     tied = [d for dist, d in scored if dist == best]
@@ -288,7 +404,11 @@ def parse_template_endpoint(template: str, other_wiki: str | None, other_name: s
         else:
             positional.append(p.strip())
     # End reason may be compact in end=div, which plain END_RE does not catch.
-    compact_reason = any(REASON_ONLY_RE.fullmatch(plain(v)) for k, v in named.items() if k in {"end", "reason", "status"})
+    compact_reason = any(
+        REASON_ONLY_RE.fullmatch(plain(v))
+        for k, v in named.items()
+        if k in {"end", "reason", "status"}
+    )
     if not end_match and not compact_reason:
         return None
 
@@ -299,14 +419,17 @@ def parse_template_endpoint(template: str, other_wiki: str | None, other_name: s
         if key in named:
             ds = date_candidates(named[key])
             if len(ds) == 1:
-                end_date = ds[0]; end_source = key; break
+                end_date = ds[0]
+                end_source = key
+                break
             if len(ds) > 1:
                 # Ambiguous named end field: fail closed.
                 return None
     if end_date is None and "end" in named and not REASON_ONLY_RE.fullmatch(plain(named["end"])):
         ds = date_candidates(named["end"])
         if len(ds) == 1:
-            end_date = ds[0]; end_source = "end"
+            end_date = ds[0]
+            end_source = "end"
         elif len(ds) > 1:
             return None
 
@@ -327,7 +450,10 @@ def parse_template_endpoint(template: str, other_wiki: str | None, other_name: s
 
     # Explicitly identify start where possible and reject same start/end.
     start_date = positional_dates[0][1] if len(positional_dates) >= 2 else None
-    if start_date and (start_date["interval_start"], start_date["interval_end"]) == (end_date["interval_start"], end_date["interval_end"]):
+    if start_date and (start_date["interval_start"], start_date["interval_end"]) == (
+        end_date["interval_start"],
+        end_date["interval_end"],
+    ):
         return None
 
     return {
@@ -379,7 +505,9 @@ def parse_plain_endpoint(fragment: str, other_wiki: str | None, other_name: str)
 
 
 def overlap(a: dict, b: dict) -> bool:
-    return max(a["interval_start"], b["interval_start"]) <= min(a["interval_end"], b["interval_end"])
+    return max(a["interval_start"], b["interval_start"]) <= min(
+        a["interval_end"], b["interval_end"]
+    )
 
 
 def main() -> None:
@@ -401,29 +529,55 @@ def main() -> None:
     for i, (pid, meta) in enumerate(sorted(people.items()), 1):
         wt = fetch_adb(meta["adb_title"])
         if not wt or adb_id(wt) != pid:
-            failures.append({"adb_id": pid, "stage": "adb_identity_or_fetch", "title": meta["adb_title"]})
+            failures.append(
+                {"adb_id": pid, "stage": "adb_identity_or_fetch", "title": meta["adb_title"]}
+            )
             print(f"wiki {i}/{len(people)} adb:{pid} ADB_FAIL", flush=True)
             continue
         linked = adb_wikipedia_title(wt)
         if not linked:
-            wiki[pid] = {**meta, "adb_linked_wikipedia_title": None, "canonical_wikipedia_title": None, "wikidata_qid": None, "infobox_fields": {}}
+            wiki[pid] = {
+                **meta,
+                "adb_linked_wikipedia_title": None,
+                "canonical_wikipedia_title": None,
+                "wikidata_qid": None,
+                "infobox_fields": {},
+            }
             link_counts["no_adb_wikipedia_link"] += 1
             print(f"wiki {i}/{len(people)} adb:{pid} no_link", flush=True)
             continue
         canonical, enwt, qid = fetch_enwiki(linked)
         if not canonical or not enwt:
             failures.append({"adb_id": pid, "stage": "wikipedia_fetch", "adb_linked_title": linked})
-            wiki[pid] = {**meta, "adb_linked_wikipedia_title": linked, "canonical_wikipedia_title": None, "wikidata_qid": None, "infobox_fields": {}}
+            wiki[pid] = {
+                **meta,
+                "adb_linked_wikipedia_title": linked,
+                "canonical_wikipedia_title": None,
+                "wikidata_qid": None,
+                "infobox_fields": {},
+            }
             link_counts["linked_but_unresolved"] += 1
             print(f"wiki {i}/{len(people)} adb:{pid} {linked} -> FAIL", flush=True)
             continue
         ib = first_infobox(enwt)
         fields = top_fields(ib) if ib else {}
-        rel_fields = {k: v for k, v in fields.items() if k in {"spouse", "spouses", "partner", "partners"}}
-        wiki[pid] = {**meta, "adb_linked_wikipedia_title": linked, "canonical_wikipedia_title": canonical, "wikidata_qid": qid, "infobox_fields": rel_fields}
+        rel_fields = {
+            k: v for k, v in fields.items() if k in {"spouse", "spouses", "partner", "partners"}
+        }
+        wiki[pid] = {
+            **meta,
+            "adb_linked_wikipedia_title": linked,
+            "canonical_wikipedia_title": canonical,
+            "wikidata_qid": qid,
+            "infobox_fields": rel_fields,
+        }
         link_counts["resolved_wikipedia"] += 1
-        if rel_fields: link_counts["with_relationship_infobox_field"] += 1
-        print(f"wiki {i}/{len(people)} adb:{pid} {linked} -> {canonical} fields={list(rel_fields)}", flush=True)
+        if rel_fields:
+            link_counts["with_relationship_infobox_field"] += 1
+        print(
+            f"wiki {i}/{len(people)} adb:{pid} {linked} -> {canonical} fields={list(rel_fields)}",
+            flush=True,
+        )
 
     counts = Counter()
     pair_results = []
@@ -433,12 +587,28 @@ def main() -> None:
 
     for p in v1["pairs"]:
         pk = p["pair_key"]
-        a = int(p["person_a"]["adb_id"]); b = int(p["person_b"]["adb_id"])
+        a = int(p["person_a"]["adb_id"])
+        b = int(p["person_b"]["adb_id"])
         v2p = v2_by_pair[pk]
-        v1_exits = [x for x in p.get("merged_transitions", []) if x.get("transition") == "dissolution"]
+        v1_exits = [
+            x for x in p.get("merged_transitions", []) if x.get("transition") == "dissolution"
+        ]
         v2_exits = v2p.get("new_v2_nonfatal_exits", [])
-        baseline = ([{"interval_start": x["interval_start"], "interval_end": x["interval_end"], "source": "v1"} for x in v1_exits] +
-                    [{"interval_start": x["interval_start"], "interval_end": x["interval_end"], "source": "v2"} for x in v2_exits])
+        baseline = [
+            {
+                "interval_start": x["interval_start"],
+                "interval_end": x["interval_end"],
+                "source": "v1",
+            }
+            for x in v1_exits
+        ] + [
+            {
+                "interval_start": x["interval_start"],
+                "interval_end": x["interval_end"],
+                "source": "v2",
+            }
+            for x in v2_exits
+        ]
         had_baseline = bool(baseline) or bool(p.get("reunion_sequence_count"))
 
         evidence = []
@@ -452,54 +622,99 @@ def main() -> None:
                 for t in templates:
                     ev = parse_template_endpoint(t, other_title, other_name)
                     if ev:
-                        ev.update({"source_adb_id": src, "source_wikipedia_title": sw.get("canonical_wikipedia_title"), "other_adb_id": other, "infobox_field": field_name})
+                        ev.update(
+                            {
+                                "source_adb_id": src,
+                                "source_wikipedia_title": sw.get("canonical_wikipedia_title"),
+                                "other_adb_id": other,
+                                "infobox_field": field_name,
+                            }
+                        )
                         evidence.append(ev)
                 for frag in plain_fragments(field_value, templates):
                     ev = parse_plain_endpoint(frag, other_title, other_name)
                     if ev:
-                        ev.update({"source_adb_id": src, "source_wikipedia_title": sw.get("canonical_wikipedia_title"), "other_adb_id": other, "infobox_field": field_name})
+                        ev.update(
+                            {
+                                "source_adb_id": src,
+                                "source_wikipedia_title": sw.get("canonical_wikipedia_title"),
+                                "other_adb_id": other,
+                                "infobox_field": field_name,
+                            }
+                        )
                         evidence.append(ev)
 
         # Deduplicate identical source transition records.
         dedup = []
         seen = set()
         for x in evidence:
-            key = (x["source_adb_id"], x["other_adb_id"], x["interval_start"], x["interval_end"], x["evidence_type"], x.get("template") or x.get("fragment"))
+            key = (
+                x["source_adb_id"],
+                x["other_adb_id"],
+                x["interval_start"],
+                x["interval_end"],
+                x["evidence_type"],
+                x.get("template") or x.get("fragment"),
+            )
             if key not in seen:
-                seen.add(key); dedup.append(x)
+                seen.add(key)
+                dedup.append(x)
         evidence = dedup
 
         corroborating = []
         new = []
         for x in evidence:
             if any(overlap(x, y) for y in baseline):
-                y = dict(x); y["status"] = "corroborates_v1_v2"; corroborating.append(y)
+                y = dict(x)
+                y["status"] = "corroborates_v1_v2"
+                corroborating.append(y)
             else:
-                y = dict(x); y["status"] = "new_rung2_endpoint"; new.append(y)
+                y = dict(x)
+                y["status"] = "new_rung2_endpoint"
+                new.append(y)
 
         has_endpoint = had_baseline or bool(new)
-        if has_endpoint: total_endpoint_pairs += 1
-        if new and not had_baseline: newly_endpoint_pairs += 1
+        if has_endpoint:
+            total_endpoint_pairs += 1
+        if new and not had_baseline:
+            newly_endpoint_pairs += 1
 
         # Report whether a quarantined Rung-1 endpoint overlaps cleaner Rung-2 evidence.
         r1 = rung1_by_pair.get(pk) or {}
         r1_new = r1.get("usable_new_biography_exits", [])
         r1_corroborated = [x for x in r1_new if any(overlap(x, w) for w in evidence)]
-        if r1_corroborated: rung1_corrob_pairs += 1
+        if r1_corroborated:
+            rung1_corrob_pairs += 1
 
         counts["accepted_wikipedia_exit_evidence"] += len(evidence)
         counts["corroborating_v1_v2_evidence"] += len(corroborating)
         counts["new_wikipedia_exit_evidence"] += len(new)
-        pair_results.append({
-            "pair_key": pk,
-            "had_clean_v1_v2_endpoint": had_baseline,
-            "wikipedia_identity_a": {k: wiki.get(a, {}).get(k) for k in ("adb_linked_wikipedia_title", "canonical_wikipedia_title", "wikidata_qid")},
-            "wikipedia_identity_b": {k: wiki.get(b, {}).get(k) for k in ("adb_linked_wikipedia_title", "canonical_wikipedia_title", "wikidata_qid")},
-            "accepted_wikipedia_exits": evidence,
-            "corroborating_v1_v2_exits": corroborating,
-            "new_rung2_exits": new,
-            "quarantined_rung1_exits_independently_corroborated": r1_corroborated,
-        })
+        pair_results.append(
+            {
+                "pair_key": pk,
+                "had_clean_v1_v2_endpoint": had_baseline,
+                "wikipedia_identity_a": {
+                    k: wiki.get(a, {}).get(k)
+                    for k in (
+                        "adb_linked_wikipedia_title",
+                        "canonical_wikipedia_title",
+                        "wikidata_qid",
+                    )
+                },
+                "wikipedia_identity_b": {
+                    k: wiki.get(b, {}).get(k)
+                    for k in (
+                        "adb_linked_wikipedia_title",
+                        "canonical_wikipedia_title",
+                        "wikidata_qid",
+                    )
+                },
+                "accepted_wikipedia_exits": evidence,
+                "corroborating_v1_v2_exits": corroborating,
+                "new_rung2_exits": new,
+                "quarantined_rung1_exits_independently_corroborated": r1_corroborated,
+            }
+        )
 
     out = {
         "status": "development_state_history_source_ladder_rung2",
@@ -529,15 +744,26 @@ def main() -> None:
         },
         "pairs": pair_results,
         "limitations": [
-            "Only ADB-linked English Wikipedia identities are used; no Wikipedia name search is performed.",
+            (
+                "Only ADB-linked English Wikipedia identities are used; n"
+                "o Wikipedia name search is performed."
+            ),
             "Only lead infobox spouse/partner fields are parsed; article prose is excluded.",
             "Bare end years without an explicit nonfatal ending marker do not count.",
-            "Quarantined Rung-1 Biography additions do not independently contribute to the threshold count.",
+            (
+                "Quarantined Rung-1 Biography additions do not independen"
+                "tly contribute to the threshold count."
+            ),
             "No astrology or Human Design features are calculated or inspected.",
         ],
     }
-    OUT.write_text(json.dumps(out, indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8")
-    print(json.dumps({k: v for k, v in out.items() if k != "pairs"}, indent=2, ensure_ascii=False), flush=True)
+    OUT.write_text(
+        json.dumps(out, indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
+    print(
+        json.dumps({k: v for k, v in out.items() if k != "pairs"}, indent=2, ensure_ascii=False),
+        flush=True,
+    )
 
 
 if __name__ == "__main__":

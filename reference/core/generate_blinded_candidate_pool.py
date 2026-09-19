@@ -19,13 +19,13 @@ import random
 import secrets
 import sys
 import uuid
-from dataclasses import dataclass, asdict
-from datetime import datetime, timedelta, timezone
+from collections.abc import Iterable
+from dataclasses import asdict, dataclass
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
-from typing import Iterable
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError, available_timezones
 
-UTC = timezone.utc
+UTC = UTC
 
 
 @dataclass(frozen=True)
@@ -96,7 +96,9 @@ def valid_local_resolutions(local_naive: datetime, zone: ZoneInfo) -> list[tuple
     return valid
 
 
-def resolve_true_local(local_naive: datetime, zone_name: str, fold: int | None) -> tuple[int, datetime]:
+def resolve_true_local(
+    local_naive: datetime, zone_name: str, fold: int | None
+) -> tuple[int, datetime]:
     try:
         zone = ZoneInfo(zone_name)
     except ZoneInfoNotFoundError as exc:
@@ -150,7 +152,10 @@ def candidate_from_utc(candidate_id: str, utc_dt: datetime, zone_name: str) -> C
         local_date=local.date().isoformat(),
         local_time=local.time().replace(microsecond=0).isoformat(),
         timezone=zone_name,
-        utc_timestamp=utc_dt.astimezone(UTC).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
+        utc_timestamp=utc_dt.astimezone(UTC)
+        .replace(microsecond=0)
+        .isoformat()
+        .replace("+00:00", "Z"),
         utc_offset=format_offset(local.utcoffset()),
         fold=int(local.fold),
     )
@@ -188,23 +193,44 @@ def sha256_file(path: Path) -> str:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--true-local", required=True, type=parse_naive_local,
-                        help="True local civil timestamp, e.g. 1994-01-28T14:37:00")
-    parser.add_argument("--true-zone", required=True,
-                        help="IANA timezone, e.g. Europe/Istanbul")
-    parser.add_argument("--true-fold", type=int, choices=(0, 1), default=None,
-                        help="Choose fold for an ambiguous fall-back local time")
-    parser.add_argument("--count", type=int, default=1000,
-                        help="Total candidates including the true tuple (default: 1000)")
-    parser.add_argument("--start", type=parse_aware_utc,
-                        default=parse_aware_utc("1926-08-21T00:00:00Z"))
-    parser.add_argument("--end", type=parse_aware_utc,
-                        default=parse_aware_utc("2026-08-21T00:00:00Z"))
-    parser.add_argument("--seed", type=int, default=None,
-                        help="Reproducible PRNG seed; omitted uses a cryptographic random seed")
+    parser.add_argument(
+        "--true-local",
+        required=True,
+        type=parse_naive_local,
+        help="True local civil timestamp, e.g. 1994-01-28T14:37:00",
+    )
+    parser.add_argument("--true-zone", required=True, help="IANA timezone, e.g. Europe/Istanbul")
+    parser.add_argument(
+        "--true-fold",
+        type=int,
+        choices=(0, 1),
+        default=None,
+        help="Choose fold for an ambiguous fall-back local time",
+    )
+    parser.add_argument(
+        "--count",
+        type=int,
+        default=1000,
+        help="Total candidates including the true tuple (default: 1000)",
+    )
+    parser.add_argument(
+        "--start", type=parse_aware_utc, default=parse_aware_utc("1926-08-21T00:00:00Z")
+    )
+    parser.add_argument(
+        "--end", type=parse_aware_utc, default=parse_aware_utc("2026-08-21T00:00:00Z")
+    )
+    parser.add_argument(
+        "--seed",
+        type=int,
+        default=None,
+        help="Reproducible PRNG seed; omitted uses a cryptographic random seed",
+    )
     parser.add_argument("--output-dir", type=Path, default=Path("blind_pool"))
-    parser.add_argument("--same-zone-decoys", action="store_true",
-                        help="Use the true timezone for all decoys; useful for time-only rectification")
+    parser.add_argument(
+        "--same-zone-decoys",
+        action="store_true",
+        help="Use the true timezone for all decoys; useful for time-only rectification",
+    )
     args = parser.parse_args(argv)
 
     if args.count < 2:
@@ -247,7 +273,9 @@ def main(argv: list[str] | None = None) -> int:
             continue
         used_utc.add(utc_dt)
         zone_name = rng.choice(zones)
-        candidates.append(candidate_from_utc(candidate_id(rng, namespace, index), utc_dt, zone_name))
+        candidates.append(
+            candidate_from_utc(candidate_id(rng, namespace, index), utc_dt, zone_name)
+        )
         index += 1
 
     rng.shuffle(candidates)
@@ -266,7 +294,10 @@ def main(argv: list[str] | None = None) -> int:
         "sampling": "uniform_utc_seconds",
         "same_zone_decoys": bool(args.same_zone_decoys),
         "candidate_pool_sha256": blind_hash,
-        "instructions": "Upload only candidate_pool_blind.csv. Keep answer_key.json sealed until ranking is frozen."
+        "instructions": (
+            "Upload only candidate_pool_blind.csv. Keep answer_key.js"
+            "on sealed until ranking is frozen."
+        ),
     }
     manifest_path.write_text(json.dumps(public_manifest, indent=2) + "\n", encoding="utf-8")
 
@@ -275,7 +306,7 @@ def main(argv: list[str] | None = None) -> int:
         "seed": str(seed),
         "true_candidate_id": true_id,
         "true_tuple": asdict(true_candidate),
-        "answer_key_commitment_sha256": ""
+        "answer_key_commitment_sha256": "",
     }
     # Commit to the answer-key contents without the commitment field itself.
     canonical = json.dumps(answer_key, sort_keys=True, separators=(",", ":")).encode("utf-8")
@@ -295,4 +326,4 @@ if __name__ == "__main__":
         raise SystemExit(main())
     except KeyboardInterrupt:
         print("Interrupted", file=sys.stderr)
-        raise SystemExit(130)
+        raise SystemExit(130) from None

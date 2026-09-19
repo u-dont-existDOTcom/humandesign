@@ -1,0 +1,15 @@
+# Continuation and survey frontier repair
+
+Owner outcome: OPEN. The owner requested automatic in-scope continuation, stronger UDA stop admission, and completion of the already-authorized survey fixes. The prior diagnosis-only writer lease was assistant-created; it did not cancel implementation authority.
+
+1. Harden the existing UDA continuation rule at scope-authoring and final-answer boundaries, preserve explicit diagnostic-only tasks and genuine authority/access/spend/owner-evaluation stops, and test normative coverage. Complete normal reviewed UDA publication, not an unrelated MC runtime change.
+2. Dispatch formulation decisions explicitly: exact direct quotes retain their existing source-authority route; nonverbatim direct summaries are model-authored summaries of stated information, linked to actual sources, never inferred drafts or fabricated participant adjudications. Keep research core unchanged.
+3. Give repair replies an explicit next-action contract. Waiting for an answer requires a stated question; waiting for judgment requires a live inference; a resolved acknowledgement continues current-focus planning automatically. Persist and migrate legacy ambiguous repair states before automatic work, respecting pause and pending operations.
+4. Run focused/affected tests and the actual browser composition. Preserve original owner upload; public fixtures are synthetic. Keep Sol xhigh unchanged. Verify exact hosted CI and existing Railway deployment; bounded synthetic runtime checks only where decision-relevant.
+5. Save all project work and cross-repository hardening provenance in humandesign. No stop at a report or self-authored subtask boundary while a safe authorized action remains.
+
+Active contract: UDA root/OS continuation (execute until actual boundary); source versus interpretation (no paraphrase-as-adjudication); executable frontier (no answer without question); isolation/recovery (no owner data or secret publication, no shared mutable writers); iteration assurance (no model tournament, no unchanged green suites); destination truth (live claims need exact readback, artifact delivery and final timestamp).
+
+Activation: live UDA AGENTS fetched via connected GitHub; UDA main 59a5799f3c964f39d326b1f922fc5863fbe8d806 and design main 04d6b53796798cd3dc2de275219eeaace329ba59 loaded through their current routing. Project profile is stale about visibility; actual GitHub repository is public. No PRODUCT/DESIGN/surface document exists; preserve implemented identity. Design operation harden: remove confusing inference presentation and empty waiting state, retain controls/layout, verify affected states in browser.
+
+Method: adapt the existing operation/checkpoint and formulation-review dispatch, not a new ontology or reviewer layer. Additional prerequisites: none. UDA policy publication is independent of the survey repair; a blocker in one does not stop the other. Final stop admission must record remaining gap, safe next action, its actor, and evidence for any genuine boundary.

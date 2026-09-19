@@ -19,7 +19,9 @@ def test_openai_auditor_uses_responses_structured_outputs() -> None:
         output = json.dumps(
             {
                 "score": 3,
-                "feedback": "This is random/off-topic and does not provide a relationship timeline.",
+                "feedback": (
+                    "This is random/off-topic and does not provide a relationship timeline."
+                ),
                 "needs_clarification": True,
                 "reason_code": "off_topic",
             }

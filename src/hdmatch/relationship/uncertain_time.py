@@ -99,9 +99,7 @@ def summarize_uncertain_partner_time(
     center_configuration_values = {item.analysis.center_configuration for item in merged}
     definition_values = {item.analysis.composite_definition for item in merged}
     partner_types = {
-        item.analysis.partner_b_type
-        for item in merged
-        if item.analysis.partner_b_type is not None
+        item.analysis.partner_b_type for item in merged if item.analysis.partner_b_type is not None
     }
 
     return UncertainPartnerTimeSummary(

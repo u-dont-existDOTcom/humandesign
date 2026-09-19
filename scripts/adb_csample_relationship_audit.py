@@ -7,6 +7,7 @@ audit summary. The raw XML is not committed.
 
 This is a data-sufficiency audit, not an astrology model fit.
 """
+
 from __future__ import annotations
 
 import json
@@ -116,7 +117,9 @@ def main() -> None:
             except Exception:
                 birth_date = None
         sbtime = bdata.find("sbtime") if bdata is not None else None
-        timed = bool(sbtime is not None and (sbtime.text or "").strip() and sbtime.attrib.get("jd_ut"))
+        timed = bool(
+            sbtime is not None and (sbtime.text or "").strip() and sbtime.attrib.get("jd_ut")
+        )
         jd_ut = float(sbtime.attrib["jd_ut"]) if timed else None
         rr_counts[rr] += 1
         gender_counts[gender] += 1
@@ -134,13 +137,15 @@ def main() -> None:
                     except ValueError:
                         continue
                     text = (rel.text or "").strip()
-                    rels.append({
-                        "rel_id": rel_id,
-                        "other": other,
-                        "text": text,
-                        "notes": rel.attrib.get("relnotes", ""),
-                        "partner_stub": parse_partner_stub(text),
-                    })
+                    rels.append(
+                        {
+                            "rel_id": rel_id,
+                            "other": other,
+                            "text": text,
+                            "notes": rel.attrib.get("relnotes", ""),
+                            "partner_stub": parse_partner_stub(text),
+                        }
+                    )
             ev_parent = research.find("events")
             if ev_parent is not None:
                 for ev in ev_parent.findall("event"):
@@ -149,12 +154,14 @@ def main() -> None:
                     except ValueError:
                         continue
                     event_counts[evn_id] += 1
-                    events.append({
-                        "evn_id": evn_id,
-                        "sevcode": ev.attrib.get("sevcode", ""),
-                        "notes": ev.attrib.get("evnotes", ""),
-                        **event_date(ev),
-                    })
+                    events.append(
+                        {
+                            "evn_id": evn_id,
+                            "sevcode": ev.attrib.get("sevcode", ""),
+                            "notes": ev.attrib.get("evnotes", ""),
+                            **event_date(ev),
+                        }
+                    )
 
         entries[adb_id] = {
             "id": adb_id,
@@ -198,16 +205,18 @@ def main() -> None:
                 if ev["evn_id"] not in REL_EVENT_IDS:
                     continue
                 if strict_event_matches_tokens(ev, stub["tokens"]):
-                    external_strict_linked_event_rows.append({
-                        "source_id": a,
-                        "partner_id": b,
-                        "event": REL_EVENT_IDS[ev["evn_id"]],
-                        "event_id": ev["evn_id"],
-                        "year": ev["year"],
-                        "month": ev["month"],
-                        "day": ev["day"],
-                        "focal_high_rr_timed": rec["rr"] in HIGH_RR and rec["timed"],
-                    })
+                    external_strict_linked_event_rows.append(
+                        {
+                            "source_id": a,
+                            "partner_id": b,
+                            "event": REL_EVENT_IDS[ev["evn_id"]],
+                            "event_id": ev["evn_id"],
+                            "year": ev["year"],
+                            "month": ev["month"],
+                            "day": ev["day"],
+                            "focal_high_rr_timed": rec["rr"] in HIGH_RR and rec["timed"],
+                        }
+                    )
                     linked_here = True
             if linked_here:
                 external_strict_pairs.add((a, b))
@@ -220,7 +229,9 @@ def main() -> None:
         linked = []
         for source, target in ((ra, rb), (rb, ra)):
             for ev in source["events"]:
-                if ev["evn_id"] in REL_EVENT_IDS and strict_event_matches_tokens(ev, target["tokens"]):
+                if ev["evn_id"] in REL_EVENT_IDS and strict_event_matches_tokens(
+                    ev, target["tokens"]
+                ):
                     row = {
                         "source_id": source["id"],
                         "partner_id": target["id"],
@@ -233,15 +244,20 @@ def main() -> None:
                     strict_linked_events.append(row)
                     linked.append(row)
                     strict_pairs.add((a, b))
-        romantic_pair_records.append({
-            "a": a,
-            "b": b,
-            "rel_types": sorted(ROMANTIC_REL_IDS[x] for x in reltypes),
-            "both_high_rr": ra["rr"] in HIGH_RR and rb["rr"] in HIGH_RR,
-            "both_timed": ra["timed"] and rb["timed"],
-            "both_high_rr_timed": ra["rr"] in HIGH_RR and rb["rr"] in HIGH_RR and ra["timed"] and rb["timed"],
-            "strict_linked_event_count": len(linked),
-        })
+        romantic_pair_records.append(
+            {
+                "a": a,
+                "b": b,
+                "rel_types": sorted(ROMANTIC_REL_IDS[x] for x in reltypes),
+                "both_high_rr": ra["rr"] in HIGH_RR and rb["rr"] in HIGH_RR,
+                "both_timed": ra["timed"] and rb["timed"],
+                "both_high_rr_timed": ra["rr"] in HIGH_RR
+                and rb["rr"] in HIGH_RR
+                and ra["timed"]
+                and rb["timed"],
+                "strict_linked_event_count": len(linked),
+            }
+        )
 
     pair_counts = {
         "internal_unique_romantic_pairs": len(pair_rel_types),
@@ -250,25 +266,46 @@ def main() -> None:
         "internal_both_high_rr_timed": sum(p["both_high_rr_timed"] for p in romantic_pair_records),
         "internal_with_strict_linked_transition_event": len(strict_pairs),
         "internal_high_rr_timed_with_strict_linked_transition_event": sum(
-            p["both_high_rr_timed"] and p["strict_linked_event_count"] > 0 for p in romantic_pair_records
+            p["both_high_rr_timed"] and p["strict_linked_event_count"] > 0
+            for p in romantic_pair_records
         ),
         "external_romantic_links": external_romantic,
         "external_romantic_links_with_parseable_partner_dob": external_parseable_dob,
-        "external_high_rr_timed_focal_links_with_parseable_partner_dob": external_high_rr_timed_focal_parseable_dob,
-        "external_pairs_with_strict_linked_transition_event_and_partner_dob": len(external_strict_pairs),
-        "external_high_rr_timed_focal_pairs_with_strict_linked_transition_event_and_partner_dob": len({
-            (r["source_id"], r["partner_id"]) for r in external_strict_linked_event_rows if r["focal_high_rr_timed"]
-        }),
+        "external_high_rr_timed_focal_links_with_parseable_partner_dob": (
+            external_high_rr_timed_focal_parseable_dob
+        ),
+        "external_pairs_with_strict_linked_transition_event_and_partner_dob": len(
+            external_strict_pairs
+        ),
+        (
+            "external_high_rr_timed_focal_pairs_with_strict_linked_transition_event_and_partner_dob"
+        ): len(
+            {
+                (r["source_id"], r["partner_id"])
+                for r in external_strict_linked_event_rows
+                if r["focal_high_rr_timed"]
+            }
+        ),
     }
 
     all_strict_events = strict_linked_events + external_strict_linked_event_rows
     event_precision = Counter()
     for row in all_strict_events:
-        precision = "day" if row["day"] else "month" if row["month"] else "year" if row["year"] else "unknown"
+        precision = (
+            "day"
+            if row["day"]
+            else "month"
+            if row["month"]
+            else "year"
+            if row["year"]
+            else "unknown"
+        )
         event_precision[precision] += 1
 
     exact_pair_count = pair_counts["internal_high_rr_timed_with_strict_linked_transition_event"]
-    date_only_pair_count = pair_counts["external_high_rr_timed_focal_pairs_with_strict_linked_transition_event_and_partner_dob"]
+    date_only_pair_count = pair_counts[
+        "external_high_rr_timed_focal_pairs_with_strict_linked_transition_event_and_partner_dob"
+    ]
 
     summary = {
         "source": URL,
@@ -285,7 +322,11 @@ def main() -> None:
             REL_EVENT_IDS[k]: event_counts.get(k, 0) for k in sorted(REL_EVENT_IDS)
         },
         "strict_partner_linkage": {
-            "rule": "relationship event evnotes/sevcode must contain >=4-char token from linked/relationship-text partner name; no unique-partner inference",
+            "rule": (
+                "relationship event evnotes/sevcode must contain >=4-char"
+                " token from linked/relationship-text partner name; no un"
+                "ique-partner inference"
+            ),
             "strict_linked_event_count_internal_plus_external": len(all_strict_events),
             "date_precision": dict(event_precision),
             "event_type_counts": dict(Counter(x["event"] for x in all_strict_events)),
@@ -298,10 +339,25 @@ def main() -> None:
             "date_only_development_model_sufficient_if_50": date_only_pair_count >= 50,
         },
         "notes": [
-            "C-sample contains only names beginning with C, so many relationship targets are outside the sample.",
-            "For external linked partners, V2 parses only partner birth DATE from the relationship text; no time is invented.",
-            "External partner date-only records can support Sun/Venus/Mars/Jupiter/Saturn pair features but not reliable Moon/angles/houses.",
-            "This audit intentionally uses strict partner-name matching for dated relationship events and does not infer partner identity merely because only one romantic link exists.",
+            (
+                "C-sample contains only names beginning with C, so many r"
+                "elationship targets are outside the sample."
+            ),
+            (
+                "For external linked partners, V2 parses only partner bir"
+                "th DATE from the relationship text; no time is invented."
+            ),
+            (
+                "External partner date-only records can support Sun/Venus"
+                "/Mars/Jupiter/Saturn pair features but not reliable Moon"
+                "/angles/houses."
+            ),
+            (
+                "This audit intentionally uses strict partner-name matchi"
+                "ng for dated relationship events and does not infer part"
+                "ner identity merely because only one romantic link exist"
+                "s."
+            ),
         ],
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)

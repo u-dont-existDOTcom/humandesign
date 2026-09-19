@@ -61,12 +61,15 @@ def test_aes_gcm_round_trip_authenticates_metadata_and_external_key(tmp_path: Pa
         metadata=_metadata(),
         decoder_root=project,
     )
-    assert decrypt_answer_key_json(
-        encrypted,
-        key_path=key_path,
-        decoder_root=project,
-        expected_metadata=_metadata(),
-    ) == _answer_key()
+    assert (
+        decrypt_answer_key_json(
+            encrypted,
+            key_path=key_path,
+            decoder_root=project,
+            expected_metadata=_metadata(),
+        )
+        == _answer_key()
+    )
 
     envelope = json.loads(encrypted.read_bytes())
     envelope["authenticated_metadata"]["experiment_id"] = "OTHER"

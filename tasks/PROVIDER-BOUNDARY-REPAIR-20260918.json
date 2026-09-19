@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "status": "completed_and_integrated_external_credit_blocker",
+  "owned_branch": "chat/provider-boundary-repair-20260918-2301",
+  "integration_branch": "codex/discover-life-patterns-mvp",
+  "integration_base_sha": "f184b13e373140a3b8df303de3f10ddcd2695e5e",
+  "owner_outcome": "The survey should accept ordinary answers reliably instead of surfacing immediate provider-boundary failures.",
+  "evidence": "A fresh synthetic session on the live deployed build also returned HTTP 503 in about 1.3 seconds, proving the current failure is not specific to the owner's recovered session.",
+  "strategy": "Add privacy-safe provider failure classification plus bounded retry for genuinely transient provider/network failures, deploy, then use one synthetic call to discriminate transient/rate-limit/configuration failure.",
+  "application_head": "9558017606d408beead3ddfa59b25fa828b3862f",
+  "ci_run": 35404982329,
+  "deployment_id": "8ac6820b-8090-4b4c-b167-ba8db5b6c473",
+  "observed_provider_failure": {
+    "http_status": 429,
+    "error_type": "insufficient_quota",
+    "error_code": "credit_balance_exhausted",
+    "retryable": false
+  }
+}
