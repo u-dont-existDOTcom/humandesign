@@ -97,3 +97,12 @@ The authorized lifecycle helper was used to wake `codex-human-46r` and restart/h
 A fresh end-to-end synthetic owner-session turn was run from the connected VM CLI against the public Life Patterns app. Result: HTTP 200 in 27.01 seconds, session revision advanced, phase remained `awaiting_answer`, and the app returned an admitted follow-up question. The synthetic session was then paused successfully. No owner interview turn was replayed or modified by this verification.
 
 Operational lesson for this temporary workaround: a sleeping Cloud Agent makes the public bridge unavailable and the app's bounded provider retry path can surface this as 502/503 processing failure. Keep the Cloud Agent awake while using Life Patterns; use the existing OFF control afterward to stop Cloud Agent compute billing.
+
+## 2026-09-19 superseded by direct API rollback
+
+The owner rejected this transport for ordinary use because its latency was too high.
+
+Live `life-patterns-owner` configuration has been restored to the direct OpenAI Responses endpoint. The subscription bridge is no longer the active route, the Cloud Agent is sleeping, and the local wake/sleep launchers were removed. Keep this packet only as historical/recovery evidence.
+
+A fresh post-rollback synthetic operation confirmed that the application is reaching the direct API path, but OpenAI still returns HTTP 429 `insufficient_quota` / `credit_balance_exhausted`. That is an API-account funding condition, not a bridge failure.
+
