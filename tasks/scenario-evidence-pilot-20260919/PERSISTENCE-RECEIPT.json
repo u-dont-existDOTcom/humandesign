@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "artifact_commit": "ef1f5155e8d767251f6fafbe9df3267a5d5f6a9d",
+  "owned_branch": "chat/scenario-evidence-pilot-20260919-1855",
+  "base_commit": "899726ba760e017de54ab5894743ad3a0ebd6848",
+  "branch_readback": "matches artifact_commit",
+  "scope_check": "Eight changed paths: two branch-local state pointers and six new task files; no application paths changed.",
+  "exact_blob_checks": {
+    "README.md": "2f19a86d108bf8209be51718455b76292a1a2851",
+    "PILOT.md": "1e0cdc70d41c1ddce4cf1f7f270b4bef8c9dec2b",
+    "CURRENT-STATE.json": "e0f30affbae0b4b91aa513269a55250d53f3bb8b",
+    "RESTORE-ADDENDUM.py": "7b28356bbf1d13a38aa38a7c61f6a66d380f0abd",
+    "archive/part-01.bin": "bb262d55aae7ffa6fc244c76c16b0158b9e0f14f",
+    "archive/part-02.bin": "26355e0f9362cbf75788097ad1cfe2f1e0d67ae4"
+  },
+  "restore_checks": "Ten files restored with exact local equality; identical rerun succeeds; differing existing file is refused.",
+  "pre_delivery_contract": {
+    "scenario_first_preserved": true,
+    "unknown_is_not_positive_evidence": true,
+    "absence_followups_suppressed_in_typed_fixtures": true,
+    "same_context_review_disclosed": true,
+    "chart_recovery_claimed": false,
+    "runtime_or_vm_contacted": false,
+    "owner_answer_invented": false
+  },
+  "next_action": "Deliver the pilot's actual opening question in this Chat and continue from the owner's reply.",
+  "parent_outcome": "OPEN"
+}
