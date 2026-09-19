@@ -1,0 +1,147 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+AGENT_NAME="${LIFE_PATTERNS_AGENT_NAME:-codex-human-46r}"
+APP_URL="${LIFE_PATTERNS_APP_URL:-https://life-patterns-owner-production.up.railway.app}"
+BRIDGE_HEALTH="${LIFE_PATTERNS_BRIDGE_HEALTH:-https://app-1431333f8ab4f077.up.railway.app/healthz}"
+REMOTE_ROOT="/app/hd-agent-bridge"
+
+if command -v railway >/dev/null 2>&1; then
+  RAILWAY_BIN="${RAILWAY_BIN:-$(command -v railway)}"
+elif [[ -x "$HOME/.local/bin/railway" ]]; then
+  RAILWAY_BIN="${RAILWAY_BIN:-$HOME/.local/bin/railway}"
+else
+  echo "Railway CLI is not installed or not on PATH." >&2
+  exit 1
+fi
+
+notify() {
+  local message="$1"
+  if command -v notify-send >/dev/null 2>&1; then
+    notify-send "Life Patterns" "$message" >/dev/null 2>&1 || true
+  fi
+}
+
+agent_status() {
+  "$RAILWAY_BIN" ca list --json | python3 -c '
+import json, sys
+name=sys.argv[1]
+rows=json.load(sys.stdin)
+for row in rows:
+    if row.get("name")==name:
+        print(row.get("status","unknown"))
+        break
+else:
+    print("missing")
+' "$AGENT_NAME"
+}
+
+wait_running() {
+  local status
+  for _ in $(seq 1 40); do
+    status="$(agent_status 2>/dev/null || true)"
+    [[ "$status" == "running" ]] && return 0
+    sleep 2
+  done
+  echo "Cloud Agent did not reach running state." >&2
+  return 1
+}
+
+start_remote_bridge() {
+  "$RAILWAY_BIN" ca ssh "$AGENT_NAME" -- bash -lc '
+    set -euo pipefail
+    root=/app/hd-agent-bridge
+    if curl -fsS http://127.0.0.1:8080/healthz >/dev/null 2>&1; then
+      exit 0
+    fi
+    test -s "$root/bridge.py"
+    test -s "$root/token"
+    test -s "$root/codex-home/auth.json"
+    if ss -ltn 2>/dev/null | grep -q ":8080 "; then
+      echo "Port 8080 is occupied by another process; refusing to replace it." >&2
+      exit 4
+    fi
+    nohup env PORT=8080 HD_BRIDGE_CODEX_TIMEOUT=165       python3 "$root/bridge.py" >"$root/bridge.log" 2>&1 </dev/null &
+    echo $! >"$root/bridge.pid"
+    for _ in $(seq 1 20); do
+      curl -fsS http://127.0.0.1:8080/healthz >/dev/null 2>&1 && exit 0
+      sleep 1
+    done
+    tail -30 "$root/bridge.log" >&2 || true
+    exit 5
+  '
+}
+
+wait_public_bridge() {
+  for _ in $(seq 1 30); do
+    curl -fsS --max-time 5 "$BRIDGE_HEALTH" >/dev/null 2>&1 && return 0
+    sleep 1
+  done
+  echo "Bridge started remotely but its public health endpoint is not ready." >&2
+  return 1
+}
+
+turn_on() {
+  echo "Waking Life Patterns Cloud Agent..."
+  "$RAILWAY_BIN" ca wake "$AGENT_NAME" >/dev/null
+  wait_running
+  echo "Starting subscription bridge..."
+  start_remote_bridge
+  wait_public_bridge
+  echo "Life Patterns is ON."
+  notify "ON — ChatGPT subscription bridge is ready."
+  if [[ "${1:-}" != "--no-open" ]]; then
+    xdg-open "$APP_URL" >/dev/null 2>&1 || true
+  fi
+}
+
+turn_off() {
+  local status
+  status="$(agent_status 2>/dev/null || true)"
+  if [[ "$status" == "sleeping" || "$status" == "sleep" ]]; then
+    echo "Life Patterns is already OFF."
+    notify "Already OFF."
+    return 0
+  fi
+  echo "Sleeping Life Patterns Cloud Agent..."
+  "$RAILWAY_BIN" ca sleep "$AGENT_NAME" >/dev/null
+  for _ in $(seq 1 30); do
+    status="$(agent_status 2>/dev/null || true)"
+    if [[ "$status" != "running" ]]; then
+      echo "Life Patterns is OFF."
+      notify "OFF — Cloud Agent compute billing stopped."
+      return 0
+    fi
+    sleep 1
+  done
+  echo "Sleep command was sent, but the agent still reports running." >&2
+  return 1
+}
+
+show_status() {
+  local status bridge="stopped"
+  status="$(agent_status 2>/dev/null || true)"
+  if [[ "$status" == "running" ]]; then
+    bridge="down"
+    if curl -fsS --max-time 5 "$BRIDGE_HEALTH" >/dev/null 2>&1; then
+      bridge="ready"
+    fi
+  fi
+  printf 'Cloud Agent: %s\nBridge: %s\n' "$status" "$bridge"
+}
+
+case "${1:-status}" in
+  on)
+    turn_on "${2:-}"
+    ;;
+  off)
+    turn_off
+    ;;
+  status)
+    show_status
+    ;;
+  *)
+    echo "Usage: life-patterns-agent {on [--no-open]|off|status}" >&2
+    exit 2
+    ;;
+esac
