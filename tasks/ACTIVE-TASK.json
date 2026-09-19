@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "life-patterns-v2-astrohd-recoverability-owner-retest",
-  "status": "provider_credit_exhausted_candidate_hardened_owner_action_required",
+  "status": "provider_credit_still_exhausted_after_owner_replenishment_attempt",
   "exclusive": true,
   "requiredBranch": "codex/discover-life-patterns-mvp",
   "pullRequest": 24,
@@ -30,7 +30,7 @@
   "surveyImplementationDeploymentStatus": "success",
   "surveyImplementationHealth": "200_ok",
   "surveyImplementationBuildVersion": "survey-sol-xhigh-2026-09-18.6",
-  "surveyImplementationOwnerEvaluation": "BLOCKED_external_provider_credit_balance_exhausted_after_immediate_owner_failure",
+  "surveyImplementationOwnerEvaluation": "BLOCKED_external_provider_still_reports_credit_balance_exhausted_after_owner_replenishment_attempt",
   "coverageBlueprintVersion": "life-patterns-recoverability-coverage-v2",
   "requiredCoverageDimensionCount": 23,
   "sameSessionCrossAreaContinuation": true,
@@ -64,8 +64,8 @@
   "missionControlLatestArtifact": "feedback/mission-control/SDF-20260917-LIFE-PATTERNS-SINGLE-SYNTHESIS-TEXT-CHANNEL-020.json",
   "semanticChangeRequired": false,
   "productStrategyReplacementRequired": false,
-  "currentProductGap": "The runtime now classifies and surfaces provider credit exhaustion, retries only genuinely transient provider failures, and sends compact legacy planning context. Natural-use semantic quality cannot be re-evaluated until API credit is available.",
-  "nextAction": "Owner replenishes the configured model API credit balance (or explicitly authorizes a provider change). Then refresh and retry the preserved saved operation; no earlier answers need re-entry.",
+  "currentProductGap": "Owner reported adding API credit, but repeated live synthetic checks several minutes later still return HTTP 429 insufficient_quota / credit_balance_exhausted from api.openai.com using HDMATCH_LLM_API_KEY (the same resolved key as OPENAI_API_KEY). Natural-use semantic quality remains blocked.",
+  "nextAction": "Owner verifies the prepaid balance actually appears for the OpenAI organization/project that issued the Railway key and that any negative prior balance did not consume the purchase. Once the provider stops returning credit_balance_exhausted, retry the preserved saved operation; no earlier answers need re-entry.",
   "ownerAuthority": "The owner approved the complete survey improvement plan. Preserve a dynamic standardized interview that remembers prior answers, advances automatically, keeps an always-visible finish/pause escape, suppresses redundant or low-information questions before display, and uses one flexible correction textbox. Preserve enough behavioral information for the separate historical owner DOB/time recovery criterion. Owner-self post-freeze recovery is authorized; chart-aware elicitation, external participant scoring, recruitment, publication, merge/release, provider/model changes and broader target-model activity are not. Owner subsequently explicitly authorized Sol xhigh and all question-logic/repair/source-isolation/anti-recycling fixes; the earlier model-change prohibition is superseded for this task.",
   "developmentPrototypeDeploymentAuthorized": true,
   "developmentPrototypeDomain": "life-patterns-owner-production.up.railway.app",
@@ -130,5 +130,10 @@
   "inputRoutingUnknownHistoricalSourceRepairReceipt": "state/LIFE-PATTERNS-INPUT-ROUTING-REPAIR-20260918.md",
   "providerBoundaryReceipt": "state/LIFE-PATTERNS-PROVIDER-CREDIT-BOUNDARY-20260918.md",
   "providerCreditStatus": "credit_balance_exhausted",
-  "providerCreditOwnerActionRequired": true
+  "providerCreditOwnerActionRequired": true,
+  "providerCreditOwnerReportedReplenished": true,
+  "providerCreditRecheckStatus": "still_credit_balance_exhausted",
+  "providerKeySource": "HDMATCH_LLM_API_KEY",
+  "providerEndpointHost": "api.openai.com",
+  "providerOpenAIKeyEquality": "HDMATCH_LLM_API_KEY_equals_OPENAI_API_KEY"
 }
