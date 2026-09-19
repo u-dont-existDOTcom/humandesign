@@ -87,3 +87,13 @@ and redeploy `life-patterns-owner`. The existing API credential was not replaced
 ## Next product action
 
 Resume the owner's natural-use Life Patterns interview and evaluate actual question quality, recovery behavior, latency, and usefulness. Do not spend more time hardening this transport unless natural use establishes that the workaround is worth retaining.
+
+## 2026-09-19 VM-CLI wake/retest
+
+When the owner resumed this flow, the app initially returned repeated 502-derived retry failures. The public bridge health check timed out, and the installed lifecycle helper reported `Cloud Agent: sleeping` / `Bridge: stopped`. This was an operational sleep-state condition, not a return of the prior OpenAI API-credit blocker.
+
+The authorized lifecycle helper was used to wake `codex-human-46r` and restart/health-check the bridge. It then reported `Cloud Agent: running` / `Bridge: ready`.
+
+A fresh end-to-end synthetic owner-session turn was run from the connected VM CLI against the public Life Patterns app. Result: HTTP 200 in 27.01 seconds, session revision advanced, phase remained `awaiting_answer`, and the app returned an admitted follow-up question. The synthetic session was then paused successfully. No owner interview turn was replayed or modified by this verification.
+
+Operational lesson for this temporary workaround: a sleeping Cloud Agent makes the public bridge unavailable and the app's bounded provider retry path can surface this as 502/503 processing failure. Keep the Cloud Agent awake while using Life Patterns; use the existing OFF control afterward to stop Cloud Agent compute billing.
