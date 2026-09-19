@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "task_id": "scenario-coverage-simulation-20260919",
+  "status": "active",
+  "owned_branch": "chat/scenario-coverage-ten-personas-20260919-1724",
+  "exclusive_writer": true,
+  "integration_branch": "chat/scenario-cards-refinement-20260919-1640",
+  "integration_base_sha": "15feb28575a2bb025a559d5661682e0f8e2d4cbf",
+  "development_head_read": "7837d7379b4349c120296d25d0c226373d217b72",
+  "owner_request_verbatim": "yes i like these example scenarios much better than \"think of a recent time when..\" because a recent event is less likely to represent a pattern than a hyopthetical scenario in which you're told to try to act as you usually would\n\nalthoough i was a bit confused about whether you've already checked to see how this would match onto the categories of info we need, seems maybe you didn't do that work yet. so do that work then run 10 example surveys with fictional people yourself to see if you get info sufficient to represent their full astroHD profile, and if not keep iterating the survey until you do",
+  "owner_outcome": "OPEN: scenario-first questions must cover the information needed by the AstroHD profile brief, demonstrated through ten fictional surveys and repair of observed elicitation gaps.",
+  "current_authority": "Category/source inspection, fictional text interviews authored in Chat, design iteration, local non-runtime audit scripts, and repository persistence. No implementation, deployment, inference-VM wake, paid model campaign, real-participant collection, or real-person chart scoring is inferred.",
+  "guidance_activation": {
+    "status": "ACTIVE",
+    "route": "Per-turn owner instruction; fresh connected-GitHub default-branch UDA AGENTS.md, config, lesson index, docs routing, and task-triggered operating-system, activation, iteration, research, parallel-writer, and design guidance read.",
+    "uda_root_blob": "35d45aa211b62f8ab5b7865be3804b36602e3bb4",
+    "design_skill_blob": "95847ecfb78a5fe642d9a0d3b2c9e95b8858cd3d"
+  },
+  "assurance_lane": "iteration",
+  "source_requirements": [
+    "src/hdmatch/api/life_patterns_recoverability_domains.py: 23 named behavioral domains",
+    "src/hdmatch/api/life_patterns_v2_owner_coverage.py: broader ten-domain neutral interview blueprint",
+    "reference/research/life_patterns_astrohd_owner_recovery_crosswalk_v1.json: historical benchmark correspondence and explicit rule that coverage does not establish recoverability"
+  ],
+  "active_lessons": [
+    {"rule":"owner_preference", "required":"Usual response under a concrete scenario is the primary elicitation task; do not reinstate compulsory recent-event retrieval.", "failure":"Recent recall becomes the default or mandatory validation of every answer.", "repair":"Restore scenario-first usual-response framing; retain volunteered real examples without demanding them.", "enforcement":"semantic"},
+    {"rule":"category_fidelity", "required":"Audit every named required domain and its distinct information needs; cross-check broader neutral domains. Do not equate topic mention, unknown, inapplicability, or declined with positive sufficiency.", "failure":"Full-profile claims rest only on item counts or the historical owner-shaped crosswalk.", "repair":"Expose the unmet facet or model-scope gap and add a non-leading scenario or an explicit unresolved boundary.", "enforcement":"semantic plus mechanical trace checks"},
+    {"rule":"simulation_truthfulness", "required":"Freeze fictional character briefs before walkthroughs; save actual authored Q/A sequences and answer-linked assessments. Label author/interviewer/respondent/assessor as the same Chat context, not independent agents or live app runs.", "failure":"Simulation, scorer independence, runtime quality, or human validity is claimed without execution evidence.", "repair":"Narrow claims and rerun or preserve the exact missing test.", "enforcement":"mechanical plus semantic"},
+    {"rule":"source_separation", "required":"Fictional stimulus premises do not become respondent characteristics. Hypothetical usual-response reports do not become real episodes. Separate personal prediction, generic moral statements, historical reports, uncertainty, and process feedback.", "failure":"Premises, norms, or process complaints are credited as behavioral traits; hidden dossier facts appear in extracted profile without answer support.", "repair":"Remove unsupported claims and obtain one targeted non-leading answer where possible.", "enforcement":"semantic plus answer-source checks"},
+    {"rule":"one_response_task", "required":"Each visible question asks for one response task. Skip already-supplied information and preserve condition-dependent responses, pause, privacy, and missingness.", "failure":"Bundled multi-demand questions, repeated probes, forced dichotomies, or invented certainty.", "repair":"Split only the still-needed distinction, replace the scene, or preserve the missing state.", "enforcement":"semantic"},
+    {"rule":"scope_and_delivery", "required":"Keep the VM untouched, production code unchanged, writes isolated, files directly delivered, and task outcome separate from chart validation.", "failure":"Unauthorized runtime or parent-branch mutation; path-only delivery; coverage described as exact chart recovery.", "repair":"Restore the boundary, finish independent design work, and give actual artifacts with honest scope.", "enforcement":"tool-trace and mechanical"}
+  ],
+  "plan": [
+    "Map prior six scenes to canonical information requirements and freeze the simulation rubric",
+    "Freeze ten varied fictional respondent briefs with no birth data or chart labels",
+    "Conduct and preserve baseline authored Q/A walkthroughs",
+    "Expand and repair the survey against observed gaps; continue each fictional survey",
+    "Audit answer-sourced profile coverage, broader-domain gaps, and negative controls",
+    "Persist and directly deliver the revised bank, transcripts, mappings, results, and remaining limitations"
+  ],
+  "completion_boundary": "Ten completed fictional design walkthroughs with all repairable information gaps addressed, transparent residual missingness and model-scope limits, and usable persisted artifacts. Not deployment or human/astronomical validity."
+}
