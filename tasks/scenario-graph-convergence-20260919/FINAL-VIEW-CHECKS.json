@@ -1,0 +1,23 @@
+{
+  "kind": "offline graph presentation, not survey runtime",
+  "load_method": "exact artifact HTML via set_content; browser file-URL navigation is administrator-blocked",
+  "checks": {
+    "svg_graphs": true,
+    "question_entries": true,
+    "families": true,
+    "search_found_M02": true,
+    "hash_navigation_expanded_question": true,
+    "no_mobile_page_overflow": true,
+    "unique_dom_ids": true,
+    "no_page_errors": true,
+    "no_network_requests": true
+  },
+  "passed": 9,
+  "failed": 0,
+  "page_errors": [],
+  "elapsed_seconds": 0.988,
+  "browser": "/usr/bin/chromium",
+  "model_calls": 0,
+  "html_sha256": "217002dfd86f938262f99a4ea5bc021edfbe7bc1de067df0018175feaa7e5689",
+  "purpose": "Confirm the exact final HTML after the text-only interpretation clarification; no design change."
+}
