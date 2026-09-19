@@ -1,58 +1,30 @@
 {
   "schema_version": 1,
-  "status": "active",
+  "status": "complete",
+  "completion_scope": "Documentation drafting only; product completion, implementation approval, and owner validation are not claimed.",
   "exclusive_writer": true,
   "owned_branch": "chat/scenario-cards-refinement-20260919-1640",
   "integration_branch": "chat/scenario-first-survey-design-20260919",
   "integration_base_sha": "57bbb86bb41cc292749970efcd95fba561627d70",
   "task_id": "scenario-cards-refinement-20260919",
-  "scope": "Documentation-only refinement of six proposed scenario cards, answer-sensitive branching, and a directly delivered review artifact. No implementation approval is inferred.",
-  "owner_source": "Current user instruction plus tasks/scenario-first-survey-design-20260919/OWNER-CONCEPTION.md and START-NEXT-CHAT.md",
-  "owner_outcome": "OPEN: easier, useful scenario-first elicitation remains to be demonstrated; this authorized pass develops candidates for discussion.",
+  "owner_outcome": "OPEN",
   "assurance_lane": "iteration",
-  "guidance_activation": "ACTIVE: live default-branch Universal AGENTS.md and task-relevant patterns fetched in this turn; live Design OS skill and shape guidance read.",
-  "plan": [
-    "Reconcile supplied packet with live design, development, and bridge heads without probing runtime",
-    "Draft six varied single-response scenarios and a worked fictional branch",
-    "Check source attribution, leading assumptions, redundant probes, age leakage, and scope",
-    "Save documentation on this isolated branch and deliver the usable artifact directly"
-  ],
-  "active_contract": [
-    {
-      "rule": "Design-only owner authority",
-      "required": "Leave inference VM untouched; no runtime, deployment, target mapping, recruitment, or Work dispatch",
-      "failure": "Any such operation or claim of implementation approval",
-      "repair": "Remove the unauthorized action or claim and retain only design documentation",
-      "enforcement": "semantic and tool-trace"
-    },
-    {
-      "rule": "One response task and participant authority",
-      "required": "Free-text answers; retain supplied conditions; skip answered probes; permit uncertainty, correction, inapplicability, pause, and no synthesis",
-      "failure": "Compound demands, forced dichotomies, compulsory memory or synthesis, or process feedback coded as personality",
-      "repair": "Rewrite or discard the affected card or branch",
-      "enforcement": "semantic"
-    },
-    {
-      "rule": "Evidence source separation",
-      "required": "Keep scene premises, predictions, habitual reports, remembered events, childhood reports, norms, and question feedback distinct",
-      "failure": "Fictional premises or model-authored example replies become participant facts; paraphrase becomes discovery",
-      "repair": "Restore source and uncertainty labels; remove unsupported inference",
-      "enforcement": "semantic"
-    },
-    {
-      "rule": "Proportional evidence",
-      "required": "Reuse the same-day research ledger; label new wording and routing as proposed and untested",
-      "failure": "Usability, scientific validity, population coverage, or causal success claimed from authored examples",
-      "repair": "Narrow the claim to candidate design and identify the missing owner observation",
-      "enforcement": "semantic and owner-evaluated"
-    },
-    {
-      "rule": "Isolated durable delivery",
-      "required": "Write only this owned branch; verify resulting files; provide direct local artifacts",
-      "failure": "Integration/runtime mutation, unexplained branch advance, or path-only delivery",
-      "repair": "Reconcile before further writes; materialize and verify the actual artifact",
-      "enforcement": "mechanical"
-    }
-  ],
-  "stop_boundary": "After the changed design artifact is delivered, owner feedback on answerability is needed; implementation remains explicitly unauthorized. This is not product completion."
+  "initial_active_contract_commit": "709b2079174b86cbd138b2f893a34feab794efb0",
+  "active_contract_application": "tasks/scenario-cards-refinement-20260919/DESIGN-RECORD.md",
+  "candidate_path": "tasks/scenario-cards-refinement-20260919/SCENARIO-CANDIDATES.md",
+  "candidate_commit": "a0ae5b77f46bf7d92490f309974f4781d44d2a2c",
+  "candidate_sha256": "842e9dcc1198b14104c0739526c44c623725c11b595292ee2027f0159ff04edd",
+  "candidate_blob_verified_against_local": "282140da97b49db1b48efa65a236fb05449c5fc5",
+  "design_record_blob_verified_against_local": "580fed3a8e01ff9be027e4439cda125c0d0d94f2",
+  "comparison_verified": "The candidate commit adds only SCENARIO-CANDIDATES.md and DESIGN-RECORD.md beneath this task directory.",
+  "implementation_authorized": false,
+  "runtime_actions_performed": false,
+  "vm_contacted": false,
+  "work_dispatched": false,
+  "target_mapping_opened": false,
+  "owner_walkthrough_performed": false,
+  "outcome_advancement": "UNMEASURED",
+  "strategy_efficacy": "UNCERTAIN",
+  "next_owner_observation": "Answerability of the changed scenes and usefulness of an actual follow-up, through discussion or an explicitly elected text-only walkthrough.",
+  "stop_boundary": "Deliver the verified candidate directly. Continue design after owner feedback; do not wake inference or implement without later explicit authority."
 }
