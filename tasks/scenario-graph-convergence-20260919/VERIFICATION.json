@@ -1,0 +1,67 @@
+{
+  "task_id": "scenario-graph-convergence-20260919",
+  "source_head": "55b894227022df3aee8ffd96a95e10f2a02ffe6c",
+  "owned_branch": "chat/scenario-graph-convergence-20260919",
+  "candidate": "scenario-bank-v6.0-20260919",
+  "judgment": "CONVERGED_GOOD_FOR_SAVED_CHAT_PILOT",
+  "judgment_scope": "Own design judgment, not human or runtime certification",
+  "review_counts": {
+    "questions": 79,
+    "information_guides": 73,
+    "families": 28,
+    "nodes": 152,
+    "edges": 136
+  },
+  "initial_repairs": {
+    "question_wording": 2,
+    "new_questions": 0,
+    "missing_context_links": 1,
+    "self_contained_metadata_values": 40,
+    "illustration": 1,
+    "interpretation_narrowing": 1
+  },
+  "audit_model_repairs": [
+    "same-message contrast branches",
+    "explicit life-stage contrasts",
+    "inherited source-topic closures and independent-topic preservation"
+  ],
+  "last_complete_pass_changes": 0,
+  "focused_test_methods_passed": 22,
+  "focused_test_failures": 0,
+  "final_test_runtime_seconds": 0.038,
+  "test_evidence_class": "Explicit reviewed-state model; no natural-language classification",
+  "test_graph_sha256": "dba32d4f822157f3b4f0626b4c2992e198230eb91ed0e3130b1ff51557b5096f",
+  "graph_model_sha256": "eaeba1d49b7749b3548d38d2ce9a3a08ce3d8dca9d422a18fa6278a2d343761c",
+  "graph_mutants_rejected": 4,
+  "presentation_checks_passed": 9,
+  "presentation_checks_failed": 0,
+  "presentation_method": "Exact HTML loaded with headless Chromium set_content; file navigation policy left unchanged",
+  "html_sha256": "217002dfd86f938262f99a4ea5bc021edfbe7bc1de067df0018175feaa7e5689",
+  "observer": {
+    "canonical_script_sha256": "b3afec50c3d31eef344be623520a4117a3e46fad33b7000cea1895fd1928c723",
+    "focused_runs": 2,
+    "observed_test_seconds": 0.37,
+    "observation_window_seconds": 1131.81,
+    "forced_redundant_green_seconds": 0
+  },
+  "private_preservation": {
+    "events": 5,
+    "actual_pilot_answers": 0,
+    "latest_design_feedback_saved": true,
+    "readback_verified": true,
+    "raw_content_in_public_packet": false,
+    "background_monitoring": false,
+    "railway_sync": false
+  },
+  "boundaries": {
+    "pilot_paused": true,
+    "runtime_changes": false,
+    "vm_contacted": false,
+    "inference_calls": 0,
+    "deployment": false,
+    "recruitment": false,
+    "chart_scoring": false
+  },
+  "owner_audit_request": "SATISFIED_AT_DESIGN_CONVERGENCE",
+  "parent_product_outcome": "OPEN"
+}

@@ -1,0 +1,4134 @@
+{
+  "schema": "scenario-review-graph-v1",
+  "candidate_version": "scenario-bank-v6.0-20260919",
+  "not_a_deployed_controller": true,
+  "edge_semantics": {
+    "context_candidate": "Possible source of the scene. Alternatives, not mandatory question order. A cited equivalent answer can also bind it.",
+    "advisory_context": "Related topic only; not a requirement to ask or answer the source question.",
+    "may_inform": "Opportunity to obtain information. Neither stimulus nor arrow is evidence."
+  },
+  "families": [
+    {
+      "id": "friend_company",
+      "title": "A friend asks for company",
+      "question_ids": [
+        "A0",
+        "WHY"
+      ]
+    },
+    {
+      "id": "shared_meal_needs",
+      "title": "Noticing needs and helping",
+      "question_ids": [
+        "G23",
+        "CARE-RESPONSIBILITY",
+        "CARE-LIMIT"
+      ]
+    },
+    {
+      "id": "competing_commitments",
+      "title": "Competing commitments",
+      "question_ids": [
+        "G19",
+        "AFTER-CHOICE"
+      ]
+    },
+    {
+      "id": "persuasion",
+      "title": "Explaining and persuading",
+      "question_ids": [
+        "F0",
+        "G05",
+        "PREFER-INFLUENCE"
+      ]
+    },
+    {
+      "id": "value_exchange",
+      "title": "Making a practical arrangement",
+      "question_ids": [
+        "M11"
+      ]
+    },
+    {
+      "id": "group_entry",
+      "title": "Joining a group role",
+      "question_ids": [
+        "G06",
+        "R02"
+      ]
+    },
+    {
+      "id": "connections",
+      "title": "How connections begin",
+      "question_ids": [
+        "G07",
+        "OUTREACH"
+      ]
+    },
+    {
+      "id": "excess_expectations",
+      "title": "Other people expect too much",
+      "question_ids": [
+        "G08",
+        "R03"
+      ]
+    },
+    {
+      "id": "ability",
+      "title": "Ability and learning",
+      "question_ids": [
+        "M07",
+        "M08"
+      ]
+    },
+    {
+      "id": "understanding",
+      "title": "Making sense of information",
+      "question_ids": [
+        "G01",
+        "VERIFY",
+        "G02",
+        "G03",
+        "R01"
+      ]
+    },
+    {
+      "id": "method",
+      "title": "Following or changing a method",
+      "question_ids": [
+        "G04",
+        "WORKING-METHOD"
+      ]
+    },
+    {
+      "id": "practice_focus",
+      "title": "Practice and concentration",
+      "question_ids": [
+        "D0",
+        "PRACTICE-REASON",
+        "G22",
+        "FOCUS-DEPTH"
+      ]
+    },
+    {
+      "id": "choice",
+      "title": "Making a choice",
+      "question_ids": [
+        "E0",
+        "CHOICE-TIME",
+        "G09",
+        "R04",
+        "M10",
+        "SIGNAL-DEPENDABILITY",
+        "SIGNAL-NOT-FOLLOWED"
+      ]
+    },
+    {
+      "id": "risk_cues",
+      "title": "Noticing a possible problem",
+      "question_ids": [
+        "M05",
+        "M06"
+      ]
+    },
+    {
+      "id": "external_role",
+      "title": "Adapting to a group",
+      "question_ids": [
+        "G10",
+        "ADAPTATION"
+      ]
+    },
+    {
+      "id": "resources",
+      "title": "Money, recognition and ownership",
+      "question_ids": [
+        "G20",
+        "STATUS",
+        "OWNERSHIP"
+      ]
+    },
+    {
+      "id": "promise",
+      "title": "Following through on a promise",
+      "question_ids": [
+        "M03",
+        "M04"
+      ]
+    },
+    {
+      "id": "rhythm_change",
+      "title": "Routine and change",
+      "question_ids": [
+        "C0",
+        "G21",
+        "ROUTINE-CHANGE",
+        "M09"
+      ]
+    },
+    {
+      "id": "surroundings",
+      "title": "Room and surroundings",
+      "question_ids": [
+        "G11",
+        "ROOM-EFFECT"
+      ]
+    },
+    {
+      "id": "romance",
+      "title": "Romantic connection",
+      "question_ids": [
+        "G12",
+        "G13",
+        "R05",
+        "ROMANCE-FADE",
+        "PHYSICAL-CLOSENESS"
+      ]
+    },
+    {
+      "id": "emotion",
+      "title": "Mood alone and with others",
+      "question_ids": [
+        "G14",
+        "B0",
+        "R06",
+        "MOOD-AFTER"
+      ]
+    },
+    {
+      "id": "urgency",
+      "title": "External pressure to hurry",
+      "question_ids": [
+        "M01",
+        "M02"
+      ]
+    },
+    {
+      "id": "work_energy",
+      "title": "Workload and energy",
+      "question_ids": [
+        "G15",
+        "R07",
+        "R08",
+        "R09",
+        "WORK-RECOVERY"
+      ]
+    },
+    {
+      "id": "purpose",
+      "title": "Effort worth making",
+      "question_ids": [
+        "G16",
+        "R10"
+      ]
+    },
+    {
+      "id": "retreat",
+      "title": "Time away and re-entry",
+      "question_ids": [
+        "G18",
+        "R11"
+      ]
+    },
+    {
+      "id": "development",
+      "title": "Earlier and current responses",
+      "question_ids": [
+        "G24",
+        "LIFE-PHASE",
+        "R12"
+      ]
+    },
+    {
+      "id": "correction",
+      "title": "Pointing out a mistake",
+      "question_ids": [
+        "G17",
+        "CORRECTION-REASON"
+      ]
+    },
+    {
+      "id": "trust",
+      "title": "Trust and reliability",
+      "question_ids": [
+        "G25",
+        "R13"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "q:A0",
+      "kind": "question",
+      "label": "A0",
+      "family": "friend_company"
+    },
+    {
+      "id": "q:G23",
+      "kind": "question",
+      "label": "G23",
+      "family": "shared_meal_needs"
+    },
+    {
+      "id": "q:G19",
+      "kind": "question",
+      "label": "G19",
+      "family": "competing_commitments"
+    },
+    {
+      "id": "q:F0",
+      "kind": "question",
+      "label": "F0",
+      "family": "persuasion"
+    },
+    {
+      "id": "q:G05",
+      "kind": "question",
+      "label": "G05",
+      "family": "persuasion"
+    },
+    {
+      "id": "q:M11",
+      "kind": "question",
+      "label": "M11",
+      "family": "value_exchange"
+    },
+    {
+      "id": "q:G06",
+      "kind": "question",
+      "label": "G06",
+      "family": "group_entry"
+    },
+    {
+      "id": "q:R02",
+      "kind": "question",
+      "label": "R02",
+      "family": "group_entry"
+    },
+    {
+      "id": "q:G07",
+      "kind": "question",
+      "label": "G07",
+      "family": "connections"
+    },
+    {
+      "id": "q:G08",
+      "kind": "question",
+      "label": "G08",
+      "family": "excess_expectations"
+    },
+    {
+      "id": "q:R03",
+      "kind": "question",
+      "label": "R03",
+      "family": "excess_expectations"
+    },
+    {
+      "id": "q:M07",
+      "kind": "question",
+      "label": "M07",
+      "family": "ability"
+    },
+    {
+      "id": "q:M08",
+      "kind": "question",
+      "label": "M08",
+      "family": "ability"
+    },
+    {
+      "id": "q:G01",
+      "kind": "question",
+      "label": "G01",
+      "family": "understanding"
+    },
+    {
+      "id": "q:G02",
+      "kind": "question",
+      "label": "G02",
+      "family": "understanding"
+    },
+    {
+      "id": "q:G03",
+      "kind": "question",
+      "label": "G03",
+      "family": "understanding"
+    },
+    {
+      "id": "q:R01",
+      "kind": "question",
+      "label": "R01",
+      "family": "understanding"
+    },
+    {
+      "id": "q:G04",
+      "kind": "question",
+      "label": "G04",
+      "family": "method"
+    },
+    {
+      "id": "q:D0",
+      "kind": "question",
+      "label": "D0",
+      "family": "practice_focus"
+    },
+    {
+      "id": "q:G22",
+      "kind": "question",
+      "label": "G22",
+      "family": "practice_focus"
+    },
+    {
+      "id": "q:E0",
+      "kind": "question",
+      "label": "E0",
+      "family": "choice"
+    },
+    {
+      "id": "q:G09",
+      "kind": "question",
+      "label": "G09",
+      "family": "choice"
+    },
+    {
+      "id": "q:R04",
+      "kind": "question",
+      "label": "R04",
+      "family": "choice"
+    },
+    {
+      "id": "q:M10",
+      "kind": "question",
+      "label": "M10",
+      "family": "choice"
+    },
+    {
+      "id": "q:M05",
+      "kind": "question",
+      "label": "M05",
+      "family": "risk_cues"
+    },
+    {
+      "id": "q:M06",
+      "kind": "question",
+      "label": "M06",
+      "family": "risk_cues"
+    },
+    {
+      "id": "q:G10",
+      "kind": "question",
+      "label": "G10",
+      "family": "external_role"
+    },
+    {
+      "id": "q:G20",
+      "kind": "question",
+      "label": "G20",
+      "family": "resources"
+    },
+    {
+      "id": "q:M03",
+      "kind": "question",
+      "label": "M03",
+      "family": "promise"
+    },
+    {
+      "id": "q:M04",
+      "kind": "question",
+      "label": "M04",
+      "family": "promise"
+    },
+    {
+      "id": "q:C0",
+      "kind": "question",
+      "label": "C0",
+      "family": "rhythm_change"
+    },
+    {
+      "id": "q:G21",
+      "kind": "question",
+      "label": "G21",
+      "family": "rhythm_change"
+    },
+    {
+      "id": "q:M09",
+      "kind": "question",
+      "label": "M09",
+      "family": "rhythm_change"
+    },
+    {
+      "id": "q:G11",
+      "kind": "question",
+      "label": "G11",
+      "family": "surroundings"
+    },
+    {
+      "id": "q:G12",
+      "kind": "question",
+      "label": "G12",
+      "family": "romance"
+    },
+    {
+      "id": "q:G13",
+      "kind": "question",
+      "label": "G13",
+      "family": "romance"
+    },
+    {
+      "id": "q:R05",
+      "kind": "question",
+      "label": "R05",
+      "family": "romance"
+    },
+    {
+      "id": "q:G14",
+      "kind": "question",
+      "label": "G14",
+      "family": "emotion"
+    },
+    {
+      "id": "q:B0",
+      "kind": "question",
+      "label": "B0",
+      "family": "emotion"
+    },
+    {
+      "id": "q:R06",
+      "kind": "question",
+      "label": "R06",
+      "family": "emotion"
+    },
+    {
+      "id": "q:M01",
+      "kind": "question",
+      "label": "M01",
+      "family": "urgency"
+    },
+    {
+      "id": "q:M02",
+      "kind": "question",
+      "label": "M02",
+      "family": "urgency"
+    },
+    {
+      "id": "q:G15",
+      "kind": "question",
+      "label": "G15",
+      "family": "work_energy"
+    },
+    {
+      "id": "q:R07",
+      "kind": "question",
+      "label": "R07",
+      "family": "work_energy"
+    },
+    {
+      "id": "q:R08",
+      "kind": "question",
+      "label": "R08",
+      "family": "work_energy"
+    },
+    {
+      "id": "q:R09",
+      "kind": "question",
+      "label": "R09",
+      "family": "work_energy"
+    },
+    {
+      "id": "q:G16",
+      "kind": "question",
+      "label": "G16",
+      "family": "purpose"
+    },
+    {
+      "id": "q:R10",
+      "kind": "question",
+      "label": "R10",
+      "family": "purpose"
+    },
+    {
+      "id": "q:G18",
+      "kind": "question",
+      "label": "G18",
+      "family": "retreat"
+    },
+    {
+      "id": "q:R11",
+      "kind": "question",
+      "label": "R11",
+      "family": "retreat"
+    },
+    {
+      "id": "q:G24",
+      "kind": "question",
+      "label": "G24",
+      "family": "development"
+    },
+    {
+      "id": "q:R12",
+      "kind": "question",
+      "label": "R12",
+      "family": "development"
+    },
+    {
+      "id": "q:G17",
+      "kind": "question",
+      "label": "G17",
+      "family": "correction"
+    },
+    {
+      "id": "q:G25",
+      "kind": "question",
+      "label": "G25",
+      "family": "trust"
+    },
+    {
+      "id": "q:R13",
+      "kind": "question",
+      "label": "R13",
+      "family": "trust"
+    },
+    {
+      "id": "q:WHY",
+      "kind": "question",
+      "label": "WHY",
+      "family": "friend_company"
+    },
+    {
+      "id": "q:AFTER-CHOICE",
+      "kind": "question",
+      "label": "AFTER-CHOICE",
+      "family": "competing_commitments"
+    },
+    {
+      "id": "q:PREFER-INFLUENCE",
+      "kind": "question",
+      "label": "PREFER-INFLUENCE",
+      "family": "persuasion"
+    },
+    {
+      "id": "q:OUTREACH",
+      "kind": "question",
+      "label": "OUTREACH",
+      "family": "connections"
+    },
+    {
+      "id": "q:VERIFY",
+      "kind": "question",
+      "label": "VERIFY",
+      "family": "understanding"
+    },
+    {
+      "id": "q:WORKING-METHOD",
+      "kind": "question",
+      "label": "WORKING-METHOD",
+      "family": "method"
+    },
+    {
+      "id": "q:PRACTICE-REASON",
+      "kind": "question",
+      "label": "PRACTICE-REASON",
+      "family": "practice_focus"
+    },
+    {
+      "id": "q:FOCUS-DEPTH",
+      "kind": "question",
+      "label": "FOCUS-DEPTH",
+      "family": "practice_focus"
+    },
+    {
+      "id": "q:CHOICE-TIME",
+      "kind": "question",
+      "label": "CHOICE-TIME",
+      "family": "choice"
+    },
+    {
+      "id": "q:SIGNAL-DEPENDABILITY",
+      "kind": "question",
+      "label": "SIGNAL-DEPENDABILITY",
+      "family": "choice"
+    },
+    {
+      "id": "q:SIGNAL-NOT-FOLLOWED",
+      "kind": "question",
+      "label": "SIGNAL-NOT-FOLLOWED",
+      "family": "choice"
+    },
+    {
+      "id": "q:ADAPTATION",
+      "kind": "question",
+      "label": "ADAPTATION",
+      "family": "external_role"
+    },
+    {
+      "id": "q:ROOM-EFFECT",
+      "kind": "question",
+      "label": "ROOM-EFFECT",
+      "family": "surroundings"
+    },
+    {
+      "id": "q:PHYSICAL-CLOSENESS",
+      "kind": "question",
+      "label": "PHYSICAL-CLOSENESS",
+      "family": "romance"
+    },
+    {
+      "id": "q:MOOD-AFTER",
+      "kind": "question",
+      "label": "MOOD-AFTER",
+      "family": "emotion"
+    },
+    {
+      "id": "q:WORK-RECOVERY",
+      "kind": "question",
+      "label": "WORK-RECOVERY",
+      "family": "work_energy"
+    },
+    {
+      "id": "q:STATUS",
+      "kind": "question",
+      "label": "STATUS",
+      "family": "resources"
+    },
+    {
+      "id": "q:OWNERSHIP",
+      "kind": "question",
+      "label": "OWNERSHIP",
+      "family": "resources"
+    },
+    {
+      "id": "q:LIFE-PHASE",
+      "kind": "question",
+      "label": "LIFE-PHASE",
+      "family": "development"
+    },
+    {
+      "id": "q:CORRECTION-REASON",
+      "kind": "question",
+      "label": "CORRECTION-REASON",
+      "family": "correction"
+    },
+    {
+      "id": "q:CARE-RESPONSIBILITY",
+      "kind": "question",
+      "label": "CARE-RESPONSIBILITY",
+      "family": "shared_meal_needs"
+    },
+    {
+      "id": "q:CARE-LIMIT",
+      "kind": "question",
+      "label": "CARE-LIMIT",
+      "family": "shared_meal_needs"
+    },
+    {
+      "id": "q:ROUTINE-CHANGE",
+      "kind": "question",
+      "label": "ROUTINE-CHANGE",
+      "family": "rhythm_change"
+    },
+    {
+      "id": "q:ROMANCE-FADE",
+      "kind": "question",
+      "label": "ROMANCE-FADE",
+      "family": "romance"
+    },
+    {
+      "id": "f:D01.approach",
+      "kind": "information",
+      "label": "D01.approach"
+    },
+    {
+      "id": "f:D01.checking_detail",
+      "kind": "information",
+      "label": "D01.checking_detail"
+    },
+    {
+      "id": "f:D02.output_form",
+      "kind": "information",
+      "label": "D02.output_form"
+    },
+    {
+      "id": "f:D02.audience_use",
+      "kind": "information",
+      "label": "D02.audience_use"
+    },
+    {
+      "id": "f:D03.return_pattern",
+      "kind": "information",
+      "label": "D03.return_pattern"
+    },
+    {
+      "id": "f:D03.closure_condition",
+      "kind": "information",
+      "label": "D03.closure_condition"
+    },
+    {
+      "id": "f:D04.use_existing",
+      "kind": "information",
+      "label": "D04.use_existing"
+    },
+    {
+      "id": "f:D04.change_threshold",
+      "kind": "information",
+      "label": "D04.change_threshold"
+    },
+    {
+      "id": "f:D05.capacity",
+      "kind": "information",
+      "label": "D05.capacity"
+    },
+    {
+      "id": "f:D05.preferred_use",
+      "kind": "information",
+      "label": "D05.preferred_use"
+    },
+    {
+      "id": "f:D05.audience_adaptation",
+      "kind": "information",
+      "label": "D05.audience_adaptation"
+    },
+    {
+      "id": "f:D06.entry_signal",
+      "kind": "information",
+      "label": "D06.entry_signal"
+    },
+    {
+      "id": "f:D06.role_leadership",
+      "kind": "information",
+      "label": "D06.role_leadership"
+    },
+    {
+      "id": "f:D06.context_difference",
+      "kind": "information",
+      "label": "D06.context_difference"
+    },
+    {
+      "id": "f:D07.usual_source",
+      "kind": "information",
+      "label": "D07.usual_source"
+    },
+    {
+      "id": "f:D07.deliberate_pathways",
+      "kind": "information",
+      "label": "D07.deliberate_pathways"
+    },
+    {
+      "id": "f:D08.experience_of_projection",
+      "kind": "information",
+      "label": "D08.experience_of_projection"
+    },
+    {
+      "id": "f:D08.mismatch_response",
+      "kind": "information",
+      "label": "D08.mismatch_response"
+    },
+    {
+      "id": "f:D09.presence_form",
+      "kind": "information",
+      "label": "D09.presence_form"
+    },
+    {
+      "id": "f:D09.repeatability_trust",
+      "kind": "information",
+      "label": "D09.repeatability_trust"
+    },
+    {
+      "id": "f:D09.override_state",
+      "kind": "information",
+      "label": "D09.override_state"
+    },
+    {
+      "id": "f:D09.clarity_over_time",
+      "kind": "information",
+      "label": "D09.clarity_over_time"
+    },
+    {
+      "id": "f:D10.stable_direction",
+      "kind": "information",
+      "label": "D10.stable_direction"
+    },
+    {
+      "id": "f:D10.external_adaptation",
+      "kind": "information",
+      "label": "D10.external_adaptation"
+    },
+    {
+      "id": "f:D11.conditions",
+      "kind": "information",
+      "label": "D11.conditions"
+    },
+    {
+      "id": "f:D11.functional_effect",
+      "kind": "information",
+      "label": "D11.functional_effect"
+    },
+    {
+      "id": "f:D12.attraction",
+      "kind": "information",
+      "label": "D12.attraction"
+    },
+    {
+      "id": "f:D12.deepening",
+      "kind": "information",
+      "label": "D12.deepening"
+    },
+    {
+      "id": "f:D12.weakening_boundaries",
+      "kind": "information",
+      "label": "D12.weakening_boundaries"
+    },
+    {
+      "id": "f:D12.sensuality",
+      "kind": "information",
+      "label": "D12.sensuality"
+    },
+    {
+      "id": "f:D13.solo_baseline",
+      "kind": "information",
+      "label": "D13.solo_baseline"
+    },
+    {
+      "id": "f:D13.others_effect",
+      "kind": "information",
+      "label": "D13.others_effect"
+    },
+    {
+      "id": "f:D13.conflict_effect",
+      "kind": "information",
+      "label": "D13.conflict_effect"
+    },
+    {
+      "id": "f:D13.recovery",
+      "kind": "information",
+      "label": "D13.recovery"
+    },
+    {
+      "id": "f:D14.ordinary_engagement",
+      "kind": "information",
+      "label": "D14.ordinary_engagement"
+    },
+    {
+      "id": "f:D14.burst",
+      "kind": "information",
+      "label": "D14.burst"
+    },
+    {
+      "id": "f:D14.prolonged_overload",
+      "kind": "information",
+      "label": "D14.prolonged_overload"
+    },
+    {
+      "id": "f:D14.stopping_recovery",
+      "kind": "information",
+      "label": "D14.stopping_recovery"
+    },
+    {
+      "id": "f:D15.mobilizer",
+      "kind": "information",
+      "label": "D15.mobilizer"
+    },
+    {
+      "id": "f:D15.continue_disengage",
+      "kind": "information",
+      "label": "D15.continue_disengage"
+    },
+    {
+      "id": "f:D16.challenge_threshold",
+      "kind": "information",
+      "label": "D16.challenge_threshold"
+    },
+    {
+      "id": "f:D16.context_cost",
+      "kind": "information",
+      "label": "D16.context_cost"
+    },
+    {
+      "id": "f:D17.withdrawal_need_activity",
+      "kind": "information",
+      "label": "D17.withdrawal_need_activity"
+    },
+    {
+      "id": "f:D17.reentry",
+      "kind": "information",
+      "label": "D17.reentry"
+    },
+    {
+      "id": "f:D18.competing_values",
+      "kind": "information",
+      "label": "D18.competing_values"
+    },
+    {
+      "id": "f:D18.resolution_durability",
+      "kind": "information",
+      "label": "D18.resolution_durability"
+    },
+    {
+      "id": "f:D19.resources_purpose",
+      "kind": "information",
+      "label": "D19.resources_purpose"
+    },
+    {
+      "id": "f:D19.status_ownership",
+      "kind": "information",
+      "label": "D19.status_ownership"
+    },
+    {
+      "id": "f:D20.continuity",
+      "kind": "information",
+      "label": "D20.continuity"
+    },
+    {
+      "id": "f:D20.phases",
+      "kind": "information",
+      "label": "D20.phases"
+    },
+    {
+      "id": "f:D20.learned_management",
+      "kind": "information",
+      "label": "D20.learned_management"
+    },
+    {
+      "id": "f:D21.ordinary_rhythm",
+      "kind": "information",
+      "label": "D21.ordinary_rhythm"
+    },
+    {
+      "id": "f:D21.novelty_disruption",
+      "kind": "information",
+      "label": "D21.novelty_disruption"
+    },
+    {
+      "id": "f:D22.focus_depth_interruptions",
+      "kind": "information",
+      "label": "D22.focus_depth_interruptions"
+    },
+    {
+      "id": "f:D22.repetition_value",
+      "kind": "information",
+      "label": "D22.repetition_value"
+    },
+    {
+      "id": "f:D23.noticing",
+      "kind": "information",
+      "label": "D23.noticing"
+    },
+    {
+      "id": "f:D23.responsibility",
+      "kind": "information",
+      "label": "D23.responsibility"
+    },
+    {
+      "id": "f:D23.withholding",
+      "kind": "information",
+      "label": "D23.withholding"
+    },
+    {
+      "id": "f:X01.trust_change",
+      "kind": "information",
+      "label": "X01.trust_change"
+    },
+    {
+      "id": "f:X01.repair_access",
+      "kind": "information",
+      "label": "X01.repair_access"
+    },
+    {
+      "id": "f:X02.under_pressure",
+      "kind": "information",
+      "label": "X02.under_pressure"
+    },
+    {
+      "id": "f:X02.after_pressure_removed",
+      "kind": "information",
+      "label": "X02.after_pressure_removed"
+    },
+    {
+      "id": "f:X03.follow_through",
+      "kind": "information",
+      "label": "X03.follow_through"
+    },
+    {
+      "id": "f:X03.will_vs_available_energy",
+      "kind": "information",
+      "label": "X03.will_vs_available_energy"
+    },
+    {
+      "id": "f:X04.cue_form",
+      "kind": "information",
+      "label": "X04.cue_form"
+    },
+    {
+      "id": "f:X04.context_and_limits",
+      "kind": "information",
+      "label": "X04.context_and_limits"
+    },
+    {
+      "id": "f:X05.ease_and_learning",
+      "kind": "information",
+      "label": "X05.ease_and_learning"
+    },
+    {
+      "id": "f:X05.external_recognition",
+      "kind": "information",
+      "label": "X05.external_recognition"
+    },
+    {
+      "id": "f:X06.preserved_value",
+      "kind": "information",
+      "label": "X06.preserved_value"
+    },
+    {
+      "id": "f:X06.change_condition",
+      "kind": "information",
+      "label": "X06.change_condition"
+    },
+    {
+      "id": "f:X07.fleeting_or_repeating",
+      "kind": "information",
+      "label": "X07.fleeting_or_repeating"
+    },
+    {
+      "id": "f:X08.offer_and_leverage",
+      "kind": "information",
+      "label": "X08.offer_and_leverage"
+    },
+    {
+      "id": "f:X08.preferred_use",
+      "kind": "information",
+      "label": "X08.preferred_use"
+    }
+  ],
+  "edges": [
+    {
+      "from": "q:G23",
+      "to": "f:D23.noticing",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G19",
+      "to": "f:D18.competing_values",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:F0",
+      "to": "f:D05.audience_adaptation",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G05",
+      "to": "f:D05.capacity",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:M11",
+      "to": "f:X08.offer_and_leverage",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G06",
+      "to": "f:D06.entry_signal",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G06",
+      "to": "q:R02",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:R02",
+      "to": "f:D06.role_leadership",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:R02",
+      "to": "f:D06.context_difference",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G07",
+      "to": "f:D07.usual_source",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G08",
+      "to": "f:D08.experience_of_projection",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G08",
+      "to": "q:R03",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:R03",
+      "to": "f:D08.mismatch_response",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:M07",
+      "to": "f:X05.ease_and_learning",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:M07",
+      "to": "q:M08",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:M08",
+      "to": "f:X05.external_recognition",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G01",
+      "to": "f:D01.approach",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G02",
+      "to": "f:D02.output_form",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G02",
+      "to": "f:D02.audience_use",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G03",
+      "to": "f:D03.return_pattern",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G03",
+      "to": "q:R01",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:R01",
+      "to": "f:D03.closure_condition",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G04",
+      "to": "f:D04.use_existing",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G22",
+      "to": "f:D22.focus_depth_interruptions",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:E0",
+      "to": "q:G09",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:G09",
+      "to": "f:D09.presence_form",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G09",
+      "to": "q:R04",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:R04",
+      "to": "f:D09.repeatability_trust",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G09",
+      "to": "q:M10",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:M10",
+      "to": "f:X07.fleeting_or_repeating",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:M05",
+      "to": "f:X04.cue_form",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:M05",
+      "to": "q:M06",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:M06",
+      "to": "f:X04.context_and_limits",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G10",
+      "to": "f:D10.stable_direction",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G10",
+      "to": "f:D10.external_adaptation",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G20",
+      "to": "f:D19.resources_purpose",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:M03",
+      "to": "f:X03.follow_through",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:M03",
+      "to": "q:M04",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:M04",
+      "to": "f:X03.will_vs_available_energy",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G21",
+      "to": "f:D21.ordinary_rhythm",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:M09",
+      "to": "f:X06.preserved_value",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:M09",
+      "to": "f:X06.change_condition",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G11",
+      "to": "f:D11.conditions",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G12",
+      "to": "f:D12.attraction",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G13",
+      "to": "f:D12.deepening",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:R05",
+      "to": "f:D12.weakening_boundaries",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G14",
+      "to": "f:D13.solo_baseline",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:B0",
+      "to": "f:D13.others_effect",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:R06",
+      "to": "f:D13.conflict_effect",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:M01",
+      "to": "f:X02.under_pressure",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:M01",
+      "to": "q:M02",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:M02",
+      "to": "f:X02.after_pressure_removed",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G15",
+      "to": "f:D14.ordinary_engagement",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G15",
+      "to": "q:R07",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:R07",
+      "to": "f:D14.burst",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G15",
+      "to": "q:R08",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:R08",
+      "to": "f:D14.prolonged_overload",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G15",
+      "to": "q:R09",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:R07",
+      "to": "q:R09",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:R08",
+      "to": "q:R09",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:R09",
+      "to": "f:D14.stopping_recovery",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G16",
+      "to": "f:D15.mobilizer",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G16",
+      "to": "q:R10",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:R10",
+      "to": "f:D15.continue_disengage",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G18",
+      "to": "f:D17.withdrawal_need_activity",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G18",
+      "to": "q:R11",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:R11",
+      "to": "f:D17.reentry",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:A0",
+      "to": "q:G24",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:G24",
+      "to": "f:D20.continuity",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G24",
+      "to": "q:R12",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:LIFE-PHASE",
+      "to": "q:R12",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:R12",
+      "to": "f:D20.learned_management",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G17",
+      "to": "f:D16.challenge_threshold",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G25",
+      "to": "f:X01.trust_change",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G25",
+      "to": "q:R13",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:R13",
+      "to": "f:X01.repair_access",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:A0",
+      "to": "q:WHY",
+      "kind": "advisory_context",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:G23",
+      "to": "q:WHY",
+      "kind": "advisory_context",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:G19",
+      "to": "q:WHY",
+      "kind": "advisory_context",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:M03",
+      "to": "q:WHY",
+      "kind": "advisory_context",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:D0",
+      "to": "q:WHY",
+      "kind": "advisory_context",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:G19",
+      "to": "q:AFTER-CHOICE",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:AFTER-CHOICE",
+      "to": "f:D18.resolution_durability",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:F0",
+      "to": "q:PREFER-INFLUENCE",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:G05",
+      "to": "q:PREFER-INFLUENCE",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:M11",
+      "to": "q:PREFER-INFLUENCE",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:PREFER-INFLUENCE",
+      "to": "f:D05.preferred_use",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:PREFER-INFLUENCE",
+      "to": "f:X08.preferred_use",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G07",
+      "to": "q:OUTREACH",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:OUTREACH",
+      "to": "f:D07.deliberate_pathways",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G01",
+      "to": "q:VERIFY",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:VERIFY",
+      "to": "f:D01.checking_detail",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G04",
+      "to": "q:WORKING-METHOD",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:WORKING-METHOD",
+      "to": "f:D04.change_threshold",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:D0",
+      "to": "q:PRACTICE-REASON",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:PRACTICE-REASON",
+      "to": "f:D22.repetition_value",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G22",
+      "to": "q:FOCUS-DEPTH",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:FOCUS-DEPTH",
+      "to": "f:D22.focus_depth_interruptions",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:E0",
+      "to": "q:CHOICE-TIME",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:CHOICE-TIME",
+      "to": "f:D09.clarity_over_time",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G09",
+      "to": "q:SIGNAL-DEPENDABILITY",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:SIGNAL-DEPENDABILITY",
+      "to": "f:D09.repeatability_trust",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G09",
+      "to": "q:SIGNAL-NOT-FOLLOWED",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:SIGNAL-NOT-FOLLOWED",
+      "to": "f:D09.override_state",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G10",
+      "to": "q:ADAPTATION",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:ADAPTATION",
+      "to": "f:D10.external_adaptation",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G11",
+      "to": "q:ROOM-EFFECT",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:ROOM-EFFECT",
+      "to": "f:D11.functional_effect",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G13",
+      "to": "q:PHYSICAL-CLOSENESS",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:PHYSICAL-CLOSENESS",
+      "to": "f:D12.sensuality",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:B0",
+      "to": "q:MOOD-AFTER",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:R06",
+      "to": "q:MOOD-AFTER",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:MOOD-AFTER",
+      "to": "f:D13.recovery",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G15",
+      "to": "q:WORK-RECOVERY",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:R07",
+      "to": "q:WORK-RECOVERY",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:R08",
+      "to": "q:WORK-RECOVERY",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:WORK-RECOVERY",
+      "to": "f:D14.stopping_recovery",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G20",
+      "to": "q:STATUS",
+      "kind": "advisory_context",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:STATUS",
+      "to": "f:D19.status_ownership",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G20",
+      "to": "q:OWNERSHIP",
+      "kind": "advisory_context",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:OWNERSHIP",
+      "to": "f:D19.status_ownership",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G24",
+      "to": "q:LIFE-PHASE",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:LIFE-PHASE",
+      "to": "f:D20.phases",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G17",
+      "to": "q:CORRECTION-REASON",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:CORRECTION-REASON",
+      "to": "f:D16.context_cost",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:CORRECTION-REASON",
+      "to": "f:D16.challenge_threshold",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:A0",
+      "to": "q:CARE-RESPONSIBILITY",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:G23",
+      "to": "q:CARE-RESPONSIBILITY",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:CARE-RESPONSIBILITY",
+      "to": "f:D23.responsibility",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G23",
+      "to": "q:CARE-LIMIT",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:CARE-RESPONSIBILITY",
+      "to": "q:CARE-LIMIT",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:CARE-LIMIT",
+      "to": "f:D23.withholding",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G21",
+      "to": "q:ROUTINE-CHANGE",
+      "kind": "advisory_context",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:ROUTINE-CHANGE",
+      "to": "f:D21.novelty_disruption",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    },
+    {
+      "from": "q:G13",
+      "to": "q:ROMANCE-FADE",
+      "kind": "context_candidate",
+      "requires_all": false,
+      "label": "context only; admission still required"
+    },
+    {
+      "from": "q:ROMANCE-FADE",
+      "to": "f:D12.weakening_boundaries",
+      "kind": "may_inform",
+      "evidence_credit": false,
+      "label": "may inform; answer meaning required"
+    }
+  ],
+  "routing_contracts": [
+    {
+      "id": "A0",
+      "family": "friend_company",
+      "context_mode": "self_contained",
+      "context_candidates": [],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "friend_company",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "G23",
+      "family": "shared_meal_needs",
+      "context_mode": "self_contained",
+      "context_candidates": [],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "shared_meal_needs",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D23.noticing"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "G19",
+      "family": "competing_commitments",
+      "context_mode": "self_contained",
+      "context_candidates": [],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "competing_commitments",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D18.competing_values"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "F0",
+      "family": "persuasion",
+      "context_mode": "self_contained",
+      "context_candidates": [],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "persuasion",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D05.audience_adaptation"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "G05",
+      "family": "persuasion",
+      "context_mode": "self_contained",
+      "context_candidates": [],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "persuasion",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D05.capacity"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "M11",
+      "family": "value_exchange",
+      "context_mode": "self_contained",
+      "context_candidates": [],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "value_exchange",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "X08.offer_and_leverage"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "G06",
+      "family": "group_entry",
+      "context_mode": "self_contained",
+      "context_candidates": [],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "group_entry",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D06.entry_signal"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "R02",
+      "family": "group_entry",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "G06"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "group_entry",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D06.role_leadership",
+        "D06.context_difference"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "G07",
+      "family": "connections",
+      "context_mode": "self_contained",
+      "context_candidates": [],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "connections",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D07.usual_source"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "G08",
+      "family": "excess_expectations",
+      "context_mode": "self_contained",
+      "context_candidates": [],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "excess_expectations",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D08.experience_of_projection"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "R03",
+      "family": "excess_expectations",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "G08"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "excess_expectations",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D08.mismatch_response"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "M07",
+      "family": "ability",
+      "context_mode": "self_contained",
+      "context_candidates": [],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "ability",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "X05.ease_and_learning"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "M08",
+      "family": "ability",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "M07"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [
+        "named_ability",
+        "external_requests_missing"
+      ],
+      "predicate_name": "ability",
+      "default_topic": "ability",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "X05.external_recognition"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "G01",
+      "family": "understanding",
+      "context_mode": "self_contained",
+      "context_candidates": [],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "understanding",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D01.approach"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "G02",
+      "family": "understanding",
+      "context_mode": "self_contained",
+      "context_candidates": [],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "understanding",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D02.output_form",
+        "D02.audience_use"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "G03",
+      "family": "understanding",
+      "context_mode": "self_contained",
+      "context_candidates": [],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "understanding",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D03.return_pattern"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "R01",
+      "family": "understanding",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "G03"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [
+        "recurring_attention",
+        "closure_missing"
+      ],
+      "predicate_name": "recurrence",
+      "default_topic": "understanding",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D03.closure_condition"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "G04",
+      "family": "method",
+      "context_mode": "self_contained",
+      "context_candidates": [],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "method",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D04.use_existing"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "D0",
+      "family": "practice_focus",
+      "context_mode": "self_contained",
+      "context_candidates": [],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "practice_focus",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "G22",
+      "family": "practice_focus",
+      "context_mode": "self_contained",
+      "context_candidates": [],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "practice_focus",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D22.focus_depth_interruptions"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "E0",
+      "family": "choice",
+      "context_mode": "self_contained",
+      "context_candidates": [],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "choice",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "G09",
+      "family": "choice",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "E0"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "choice",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D09.presence_form"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "R04",
+      "family": "choice",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "G09"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [
+        "bodily_reaction_reported",
+        "usefulness_missing"
+      ],
+      "predicate_name": "body_usefulness",
+      "default_topic": "choice",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D09.repeatability_trust"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "M10",
+      "family": "choice",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "G09"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [
+        "bodily_reaction_reported",
+        "within_choice_time_missing"
+      ],
+      "predicate_name": "body_time",
+      "default_topic": "choice",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "X07.fleeting_or_repeating"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "M05",
+      "family": "risk_cues",
+      "context_mode": "self_contained",
+      "context_candidates": [],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "risk_cues",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "X04.cue_form"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "M06",
+      "family": "risk_cues",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "M05"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [
+        "named_risk_cue",
+        "unfamiliar_reliance_missing"
+      ],
+      "predicate_name": "risk_cue",
+      "default_topic": "risk_cues",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "X04.context_and_limits"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "G10",
+      "family": "external_role",
+      "context_mode": "self_contained",
+      "context_candidates": [],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "external_role",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D10.stable_direction",
+        "D10.external_adaptation"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "G20",
+      "family": "resources",
+      "context_mode": "self_contained",
+      "context_candidates": [],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "resources",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D19.resources_purpose"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "M03",
+      "family": "promise",
+      "context_mode": "self_contained",
+      "context_candidates": [],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "promise",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "X03.follow_through"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "M04",
+      "family": "promise",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "M03"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "promise",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "X03.will_vs_available_energy"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "C0",
+      "family": "rhythm_change",
+      "context_mode": "self_contained",
+      "context_candidates": [],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "rhythm_change",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "G21",
+      "family": "rhythm_change",
+      "context_mode": "self_contained",
+      "context_candidates": [],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "rhythm_change",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D21.ordinary_rhythm"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "M09",
+      "family": "rhythm_change",
+      "context_mode": "self_contained",
+      "context_candidates": [],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "rhythm_change",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "X06.preserved_value",
+        "X06.change_condition"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "G11",
+      "family": "surroundings",
+      "context_mode": "self_contained",
+      "context_candidates": [],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "surroundings",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D11.conditions"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "G12",
+      "family": "romance",
+      "context_mode": "self_contained",
+      "context_candidates": [],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "romance",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D12.attraction"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "G13",
+      "family": "romance",
+      "context_mode": "self_contained",
+      "context_candidates": [],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "romance",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D12.deepening"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "R05",
+      "family": "romance",
+      "context_mode": "self_contained",
+      "context_candidates": [],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "romance",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D12.weakening_boundaries"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "G14",
+      "family": "emotion",
+      "context_mode": "self_contained",
+      "context_candidates": [],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "emotion",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D13.solo_baseline"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "B0",
+      "family": "emotion",
+      "context_mode": "self_contained",
+      "context_candidates": [],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "romance",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D13.others_effect"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "R06",
+      "family": "emotion",
+      "context_mode": "self_contained",
+      "context_candidates": [],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "emotion",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D13.conflict_effect"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "M01",
+      "family": "urgency",
+      "context_mode": "self_contained",
+      "context_candidates": [],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "urgency",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "X02.under_pressure"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "M02",
+      "family": "urgency",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "M01"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [
+        "pressure_response_reported",
+        "aftermath_missing"
+      ],
+      "predicate_name": "urgency_after",
+      "default_topic": "urgency",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "X02.after_pressure_removed"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "G15",
+      "family": "work_energy",
+      "context_mode": "self_contained",
+      "context_candidates": [],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "work_energy",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D14.ordinary_engagement"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "R07",
+      "family": "work_energy",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "G15"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "work_energy",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D14.burst"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "R08",
+      "family": "work_energy",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "G15"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "work_energy",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D14.prolonged_overload"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "R09",
+      "family": "work_energy",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "G15",
+        "R07",
+        "R08"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "work_energy",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D14.stopping_recovery"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "G16",
+      "family": "purpose",
+      "context_mode": "self_contained",
+      "context_candidates": [],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "purpose",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D15.mobilizer"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "R10",
+      "family": "purpose",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "G16"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "purpose",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D15.continue_disengage"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "G18",
+      "family": "retreat",
+      "context_mode": "self_contained",
+      "context_candidates": [],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "retreat",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D17.withdrawal_need_activity"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "R11",
+      "family": "retreat",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "G18"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [
+        "time_away_reported",
+        "reentry_missing"
+      ],
+      "predicate_name": "reentry",
+      "default_topic": "retreat",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D17.reentry"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "G24",
+      "family": "development",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "A0"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [
+        "current_response_known",
+        "earlier_comparison_welcome"
+      ],
+      "predicate_name": "earlier_comparison",
+      "default_topic": "development",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D20.continuity"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "R12",
+      "family": "development",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "G24",
+        "LIFE-PHASE"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [
+        "change_reported",
+        "contributors_missing"
+      ],
+      "predicate_name": "change_cause",
+      "default_topic": "development",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D20.learned_management"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "G17",
+      "family": "correction",
+      "context_mode": "self_contained",
+      "context_candidates": [],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "correction",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D16.challenge_threshold"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "G25",
+      "family": "trust",
+      "context_mode": "self_contained",
+      "context_candidates": [],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "trust",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "X01.trust_change"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "R13",
+      "family": "trust",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "G25"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [
+        "trust_or_reliance_changed",
+        "repair_scope_open"
+      ],
+      "predicate_name": "trust_after",
+      "default_topic": "trust",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "X01.repair_access"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "WHY",
+      "family": "friend_company",
+      "context_mode": "semantic_action",
+      "context_candidates": [
+        "A0",
+        "G23",
+        "G19",
+        "M03",
+        "D0"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [
+        "reported_action",
+        "reason_missing"
+      ],
+      "predicate_name": "action_reason",
+      "default_topic": "friend_company",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "AFTER-CHOICE",
+      "family": "competing_commitments",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "G19"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [
+        "both_concerns_reported",
+        "aftermath_missing"
+      ],
+      "predicate_name": "competing_concerns",
+      "default_topic": "competing_commitments",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D18.resolution_durability"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "PREFER-INFLUENCE",
+      "family": "persuasion",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "F0",
+        "G05",
+        "M11"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [
+        "influence_context",
+        "inclination_missing"
+      ],
+      "predicate_name": "inclination",
+      "default_topic": "persuasion",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D05.preferred_use",
+        "X08.preferred_use"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "OUTREACH",
+      "family": "connections",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "G07"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [
+        "connection_wanted",
+        "deliberate_pathway_missing"
+      ],
+      "predicate_name": "wanted_opportunity",
+      "default_topic": "connections",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D07.deliberate_pathways"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "VERIFY",
+      "family": "understanding",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "G01"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [
+        "organization_reported",
+        "accuracy_missing"
+      ],
+      "predicate_name": "accuracy",
+      "default_topic": "understanding",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D01.checking_detail"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "WORKING-METHOD",
+      "family": "method",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "G04"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "method",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D04.change_threshold"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "PRACTICE-REASON",
+      "family": "practice_focus",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "D0"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [
+        "would_practise",
+        "practice_value_missing"
+      ],
+      "predicate_name": "practice",
+      "default_topic": "practice_focus",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D22.repetition_value"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "FOCUS-DEPTH",
+      "family": "practice_focus",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "G22"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [
+        "interruption_response_known",
+        "uninterrupted_focus_missing"
+      ],
+      "predicate_name": "uninterrupted_focus",
+      "default_topic": "practice_focus",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D22.focus_depth_interruptions"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "CHOICE-TIME",
+      "family": "choice",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "E0"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [
+        "choice_still_considered",
+        "clarity_time_missing"
+      ],
+      "predicate_name": "clarity",
+      "default_topic": "choice",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D09.clarity_over_time"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "SIGNAL-DEPENDABILITY",
+      "family": "choice",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "G09"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [
+        "bodily_reaction_reported",
+        "across_choice_occurrence_missing"
+      ],
+      "predicate_name": "body_occurrence",
+      "default_topic": "choice",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D09.repeatability_trust"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "SIGNAL-NOT-FOLLOWED",
+      "family": "choice",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "G09"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [
+        "bodily_reaction_reported",
+        "override_missing"
+      ],
+      "predicate_name": "body_override",
+      "default_topic": "choice",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D09.override_state"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "ADAPTATION",
+      "family": "external_role",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "G10"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [
+        "limit_reported",
+        "adaptation_missing"
+      ],
+      "predicate_name": "adaptation",
+      "default_topic": "external_role",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D10.external_adaptation"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "ROOM-EFFECT",
+      "family": "surroundings",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "G11"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [
+        "named_condition",
+        "effect_missing"
+      ],
+      "predicate_name": "environment",
+      "default_topic": "surroundings",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D11.functional_effect"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "PHYSICAL-CLOSENESS",
+      "family": "romance",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "G13"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "romance",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D12.sensuality"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "MOOD-AFTER",
+      "family": "emotion",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "B0",
+        "R06"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [
+        "mood_reaction_reported",
+        "aftermath_missing"
+      ],
+      "predicate_name": "affect_after",
+      "default_topic": "emotion",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D13.recovery"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "WORK-RECOVERY",
+      "family": "work_energy",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "G15",
+        "R07",
+        "R08"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [
+        "depletion_reported",
+        "recovery_missing"
+      ],
+      "predicate_name": "energy_after",
+      "default_topic": "work_energy",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D14.stopping_recovery"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "STATUS",
+      "family": "resources",
+      "context_mode": "self_contained",
+      "context_candidates": [
+        "G20"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "resources",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D19.status_ownership"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "OWNERSHIP",
+      "family": "resources",
+      "context_mode": "self_contained",
+      "context_candidates": [
+        "G20"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "resources",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D19.status_ownership"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "LIFE-PHASE",
+      "family": "development",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "G24"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [
+        "change_reported",
+        "timing_missing"
+      ],
+      "predicate_name": "change_timing",
+      "default_topic": "development",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D20.phases"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "CORRECTION-REASON",
+      "family": "correction",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "G17"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [
+        "reported_action",
+        "correction_reason_missing"
+      ],
+      "predicate_name": "correction_reason",
+      "default_topic": "correction",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D16.context_cost",
+        "D16.challenge_threshold"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "CARE-RESPONSIBILITY",
+      "family": "shared_meal_needs",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "A0",
+        "G23"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [
+        "specific_need_or_help",
+        "responsibility_missing"
+      ],
+      "predicate_name": "help_responsibility",
+      "default_topic": "shared_meal_needs",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D23.responsibility"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "CARE-LIMIT",
+      "family": "shared_meal_needs",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "G23",
+        "CARE-RESPONSIBILITY"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [
+        "specified_help",
+        "help_limit_missing"
+      ],
+      "predicate_name": "help_limit",
+      "default_topic": "shared_meal_needs",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D23.withholding"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "ROUTINE-CHANGE",
+      "family": "rhythm_change",
+      "context_mode": "self_contained",
+      "context_candidates": [
+        "G21"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "rhythm_change",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D21.novelty_disruption"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    },
+    {
+      "id": "ROMANCE-FADE",
+      "family": "romance",
+      "context_mode": "one_matching_context",
+      "context_candidates": [
+        "G13"
+      ],
+      "all_context_candidates_required": false,
+      "accept_equivalent_cited_context": true,
+      "required_annotations": [],
+      "predicate_name": "scene_context",
+      "default_topic": "romance",
+      "scope_rule": "Use the exact chosen scene, role, time perspective and current unsuperseded answer; labels alone never supply context.",
+      "possible_targets": [
+        "D12.weakening_boundaries"
+      ],
+      "targets_are_evidence": false,
+      "nonadjacent_rendering": "Name the concrete earlier scene and the reported subject in the delivered question.",
+      "global_rules": [
+        "not_paused",
+        "not_declined",
+        "applicable_or_elected_imagination",
+        "useful_unanswered_distinction",
+        "no_repeated_unresolved_probe"
+      ]
+    }
+  ],
+  "comparison_rule": "A comparative interpretation needs both explicitly bound reported branches, possibly in one reply. A declared earlier-life comparison can change time frame. One branch supports only its own condition; no causal inference is implied.",
+  "coverage_rule": "No automatic scoring. Preserve individual subclaims; a compound information label cannot hide a missing part.",
+  "equivalent_source_rule": "Alternatives are examples, not a closed whitelist. Reviewer/interviewer must bind an actual matching unsuperseded source; no simulated personal antecedents.",
+  "inherited_scope_rule": "Dependent questions inherit the actual source answer topic and its closures. A generic catalog family never reopens a declined context; an explicitly elected alternative scene has its own recorded scope."
+}

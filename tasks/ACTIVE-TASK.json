@@ -1,17 +1,18 @@
 {
   "schemaVersion": 1,
-  "taskId": "scenario-readiness-audit-20260919",
-  "status": "design_ready_pilot_paused_by_owner",
-  "requiredBranch": "chat/scenario-readiness-audit-20260919",
+  "taskId": "scenario-graph-convergence-20260919",
+  "status": "converged_pilot_paused",
+  "requiredBranch": "chat/scenario-graph-convergence-20260919",
   "exclusive": true,
-  "currentStateOverlay": "tasks/scenario-readiness-audit-20260919/ACTIVE-CONTRACT.json",
+  "currentStateOverlay": "tasks/scenario-graph-convergence-20260919/ACTIVE-CONTRACT.json",
   "ownerOutcome": "OPEN",
   "assuranceLane": "iteration",
   "implementationAuthorized": false,
   "vmWakeAuthorized": false,
   "privateParticipantTranscriptToGitAuthorized": false,
-  "questionBank": "tasks/scenario-readiness-audit-20260919/interviewer-bank-v5.json",
+  "questionBank": "tasks/scenario-graph-convergence-20260919/interviewer-bank-v6.json",
   "interviewProtocol": "tasks/scenario-readiness-audit-20260919/INTERVIEW-PROTOCOL.md",
   "verification": "tasks/scenario-readiness-audit-20260919/VERIFICATION.json",
-  "nextAction": "Keep pilot paused until owner resumes. Use reviewed v5.1 protocol and save actual replies privately with exact question/version; no automatic app or VM action."
+  "nextAction": "Await explicit owner resumption of the saved Chat pilot; do not resume, deploy or wake inference automatically.",
+  "graph": "tasks/scenario-graph-convergence-20260919/GRAPH-EXPLORER.html"
 }

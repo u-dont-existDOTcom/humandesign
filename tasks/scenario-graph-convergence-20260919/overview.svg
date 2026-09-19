@@ -1,0 +1,192 @@
+<svg role="img" aria-label="Text-only interview flow and preservation boundaries" width="759pt" height="761pt"
+ viewBox="0.00 0.00 758.80 760.80" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Text_only_interview_flow_and_preservation_boundaries_graph0" class="graph" transform="scale(1 1) rotate(0) translate(14.4 746.4)">
+<title>G</title>
+<!-- read -->
+<g id="Text_only_interview_flow_and_preservation_boundaries_node1" class="node">
+<title>read</title>
+<path fill="none" stroke="black" d="M653.5,-732C653.5,-732 530.5,-732 530.5,-732 524.5,-732 518.5,-726 518.5,-720 518.5,-720 518.5,-708 518.5,-708 518.5,-702 524.5,-696 530.5,-696 530.5,-696 653.5,-696 653.5,-696 659.5,-696 665.5,-702 665.5,-708 665.5,-708 665.5,-720 665.5,-720 665.5,-726 659.5,-732 653.5,-732"/>
+<text text-anchor="middle" x="592" y="-710.6" font-family="Arial" font-size="13.00">Read the whole reply</text>
+</g>
+<!-- save -->
+<g id="Text_only_interview_flow_and_preservation_boundaries_node2" class="node">
+<title>save</title>
+<path fill="none" stroke="black" d="M591,-663C591,-663 431,-663 431,-663 425,-663 419,-657 419,-651 419,-651 419,-635 419,-635 419,-629 425,-623 431,-623 431,-623 591,-623 591,-623 597,-623 603,-629 603,-635 603,-635 603,-651 603,-651 603,-657 597,-663 591,-663"/>
+<text text-anchor="middle" x="511" y="-646.6" font-family="Arial" font-size="13.00">Preserve privately; verify or</text>
+<text text-anchor="middle" x="511" y="-632.6" font-family="Arial" font-size="13.00">report a save failure</text>
+</g>
+<!-- read&#45;&gt;save -->
+<g id="Text_only_interview_flow_and_preservation_boundaries_edge1" class="edge">
+<title>read&#45;&gt;save</title>
+<path fill="none" stroke="black" d="M571.98,-695.94C562.64,-687.99 551.34,-678.37 541.02,-669.57"/>
+<polygon fill="black" stroke="black" points="543.24,-666.87 533.36,-663.05 538.7,-672.2 543.24,-666.87"/>
+</g>
+<!-- stop -->
+<g id="Text_only_interview_flow_and_preservation_boundaries_node3" class="node">
+<title>stop</title>
+<polygon fill="none" stroke="black" points="351,-580 231,-554 351,-528 471,-554 351,-580"/>
+<text text-anchor="middle" x="351" y="-550.6" font-family="Arial" font-size="13.00">Stop requested?</text>
+</g>
+<!-- save&#45;&gt;stop -->
+<g id="Text_only_interview_flow_and_preservation_boundaries_edge2" class="edge">
+<title>save&#45;&gt;stop</title>
+<path fill="none" stroke="black" d="M475.89,-622.91C451.45,-609.62 418.75,-591.84 392.94,-577.8"/>
+<polygon fill="black" stroke="black" points="394.58,-574.71 384.12,-573.01 391.23,-580.86 394.58,-574.71"/>
+<text text-anchor="middle" x="517" y="-599" font-family="Arial" font-size="10.00">no saved claim without readback</text>
+</g>
+<!-- paused -->
+<g id="Text_only_interview_flow_and_preservation_boundaries_node4" class="node">
+<title>paused</title>
+<path fill="none" stroke="black" d="M154,-40C154,-40 12,-40 12,-40 6,-40 0,-34 0,-28 0,-28 0,-12 0,-12 0,-6 6,0 12,0 12,0 154,0 154,0 160,0 166,-6 166,-12 166,-12 166,-28 166,-28 166,-34 160,-40 154,-40"/>
+<text text-anchor="middle" x="83" y="-23.6" font-family="Arial" font-size="13.00">Remain paused; no next</text>
+<text text-anchor="middle" x="83" y="-9.6" font-family="Arial" font-size="13.00">question</text>
+</g>
+<!-- stop&#45;&gt;paused -->
+<g id="Text_only_interview_flow_and_preservation_boundaries_edge3" class="edge">
+<title>stop&#45;&gt;paused</title>
+<path fill="none" stroke="black" d="M272.79,-544.93C187.2,-533.87 62,-510.15 62,-466 62,-466 62,-466 62,-102 62,-84.41 66.7,-65.35 71.65,-50.13"/>
+<polygon fill="black" stroke="black" points="75.09,-50.87 75.06,-40.28 68.48,-48.58 75.09,-50.87"/>
+<text text-anchor="middle" x="70" y="-296.5" font-family="Arial" font-size="10.00">yes</text>
+</g>
+<!-- separate -->
+<g id="Text_only_interview_flow_and_preservation_boundaries_node5" class="node">
+<title>separate</title>
+<path fill="none" stroke="black" d="M433.5,-485C433.5,-485 268.5,-485 268.5,-485 262.5,-485 256.5,-479 256.5,-473 256.5,-473 256.5,-457 256.5,-457 256.5,-451 262.5,-445 268.5,-445 268.5,-445 433.5,-445 433.5,-445 439.5,-445 445.5,-451 445.5,-457 445.5,-457 445.5,-473 445.5,-473 445.5,-479 439.5,-485 433.5,-485"/>
+<text text-anchor="middle" x="351" y="-468.6" font-family="Arial" font-size="13.00">Separate answer, correction</text>
+<text text-anchor="middle" x="351" y="-454.6" font-family="Arial" font-size="13.00">and process feedback</text>
+</g>
+<!-- stop&#45;&gt;separate -->
+<g id="Text_only_interview_flow_and_preservation_boundaries_edge4" class="edge">
+<title>stop&#45;&gt;separate</title>
+<path fill="none" stroke="black" d="M351,-527.84C351,-517.6 351,-505.7 351,-495.09"/>
+<polygon fill="black" stroke="black" points="354.5,-495.03 351,-485.03 347.5,-495.03 354.5,-495.03"/>
+<text text-anchor="middle" x="356.5" y="-504" font-family="Arial" font-size="10.00">no</text>
+</g>
+<!-- repair -->
+<g id="Text_only_interview_flow_and_preservation_boundaries_node6" class="node">
+<title>repair</title>
+<path fill="none" stroke="black" d="M606.5,-402C606.5,-402 431.5,-402 431.5,-402 425.5,-402 419.5,-396 419.5,-390 419.5,-390 419.5,-374 419.5,-374 419.5,-368 425.5,-362 431.5,-362 431.5,-362 606.5,-362 606.5,-362 612.5,-362 618.5,-368 618.5,-374 618.5,-374 618.5,-390 618.5,-390 618.5,-396 612.5,-402 606.5,-402"/>
+<text text-anchor="middle" x="519" y="-385.6" font-family="Arial" font-size="13.00">Resolve process confusion;</text>
+<text text-anchor="middle" x="519" y="-371.6" font-family="Arial" font-size="13.00">re&#45;evaluate corrected sources</text>
+</g>
+<!-- separate&#45;&gt;repair -->
+<g id="Text_only_interview_flow_and_preservation_boundaries_edge5" class="edge">
+<title>separate&#45;&gt;repair</title>
+<path fill="none" stroke="black" d="M390.81,-444.8C414.67,-433.3 445.16,-418.6 470.42,-406.42"/>
+<polygon fill="black" stroke="black" points="471.98,-409.55 479.47,-402.06 468.94,-403.25 471.98,-409.55"/>
+<text text-anchor="middle" x="474" y="-421" font-family="Arial" font-size="10.00">when needed</text>
+</g>
+<!-- choose -->
+<g id="Text_only_interview_flow_and_preservation_boundaries_node7" class="node">
+<title>choose</title>
+<path fill="none" stroke="black" d="M533,-319C533,-319 347,-319 347,-319 341,-319 335,-313 335,-307 335,-307 335,-291 335,-291 335,-285 341,-279 347,-279 347,-279 533,-279 533,-279 539,-279 545,-285 545,-291 545,-291 545,-307 545,-307 545,-313 539,-319 533,-319"/>
+<text text-anchor="middle" x="440" y="-302.6" font-family="Arial" font-size="13.00">Choose one useful unanswered</text>
+<text text-anchor="middle" x="440" y="-288.6" font-family="Arial" font-size="13.00">distinction</text>
+</g>
+<!-- separate&#45;&gt;choose -->
+<g id="Text_only_interview_flow_and_preservation_boundaries_edge7" class="edge">
+<title>separate&#45;&gt;choose</title>
+<path fill="none" stroke="black" d="M349.36,-444.65C348.42,-423.11 349.62,-387.91 364,-362 372.07,-347.47 385.03,-335 397.99,-325.14"/>
+<polygon fill="black" stroke="black" points="400.38,-327.73 406.45,-319.04 396.29,-322.05 400.38,-327.73"/>
+<text text-anchor="middle" x="385.5" y="-379.5" font-family="Arial" font-size="10.00">otherwise</text>
+</g>
+<!-- meaning -->
+<g id="Text_only_interview_flow_and_preservation_boundaries_node11" class="node">
+<title>meaning</title>
+<path fill="none" stroke="black" d="M288.5,-402C288.5,-402 115.5,-402 115.5,-402 109.5,-402 103.5,-396 103.5,-390 103.5,-390 103.5,-374 103.5,-374 103.5,-368 109.5,-362 115.5,-362 115.5,-362 288.5,-362 288.5,-362 294.5,-362 300.5,-368 300.5,-374 300.5,-374 300.5,-390 300.5,-390 300.5,-396 294.5,-402 288.5,-402"/>
+<text text-anchor="middle" x="202" y="-385.6" font-family="Arial" font-size="13.00">Retain only source&#45;supported</text>
+<text text-anchor="middle" x="202" y="-371.6" font-family="Arial" font-size="13.00">meaning</text>
+</g>
+<!-- separate&#45;&gt;meaning -->
+<g id="Text_only_interview_flow_and_preservation_boundaries_edge14" class="edge">
+<title>separate&#45;&gt;meaning</title>
+<path fill="none" stroke="black" stroke-dasharray="1,5" d="M296.42,-444.93C285.11,-440.26 273.46,-434.88 263,-429 252.45,-423.07 241.67,-415.52 232.16,-408.26"/>
+<polygon fill="black" stroke="black" points="234.21,-405.41 224.17,-402 229.89,-410.92 234.21,-405.41"/>
+<text text-anchor="middle" x="297.5" y="-421" font-family="Arial" font-size="10.00">answer clauses</text>
+</g>
+<!-- repair&#45;&gt;choose -->
+<g id="Text_only_interview_flow_and_preservation_boundaries_edge6" class="edge">
+<title>repair&#45;&gt;choose</title>
+<path fill="none" stroke="black" d="M500.28,-361.8C489.95,-351.21 476.97,-337.9 465.7,-326.35"/>
+<polygon fill="black" stroke="black" points="468.08,-323.77 458.59,-319.06 463.06,-328.66 468.08,-323.77"/>
+</g>
+<!-- gate -->
+<g id="Text_only_interview_flow_and_preservation_boundaries_node8" class="node">
+<title>gate</title>
+<polygon fill="none" stroke="black" points="445,-246 271,-206 445,-166 619,-206 445,-246"/>
+<text text-anchor="middle" x="445" y="-209.6" font-family="Arial" font-size="13.00">Context and prerequisites</text>
+<text text-anchor="middle" x="445" y="-195.6" font-family="Arial" font-size="13.00">established?</text>
+</g>
+<!-- choose&#45;&gt;gate -->
+<g id="Text_only_interview_flow_and_preservation_boundaries_edge8" class="edge">
+<title>choose&#45;&gt;gate</title>
+<path fill="none" stroke="black" d="M441.06,-278.7C441.43,-271.95 441.87,-264.03 442.31,-255.97"/>
+<polygon fill="black" stroke="black" points="445.82,-255.93 442.87,-245.76 438.83,-255.55 445.82,-255.93"/>
+</g>
+<!-- other -->
+<g id="Text_only_interview_flow_and_preservation_boundaries_node9" class="node">
+<title>other</title>
+<path fill="none" stroke="black" d="M245.5,-123C245.5,-123 112.5,-123 112.5,-123 106.5,-123 100.5,-117 100.5,-111 100.5,-111 100.5,-95 100.5,-95 100.5,-89 106.5,-83 112.5,-83 112.5,-83 245.5,-83 245.5,-83 251.5,-83 257.5,-89 257.5,-95 257.5,-95 257.5,-111 257.5,-111 257.5,-117 251.5,-123 245.5,-123"/>
+<text text-anchor="middle" x="179" y="-106.6" font-family="Arial" font-size="13.00">Skip this route; choose</text>
+<text text-anchor="middle" x="179" y="-92.6" font-family="Arial" font-size="13.00">another or pause</text>
+</g>
+<!-- gate&#45;&gt;other -->
+<g id="Text_only_interview_flow_and_preservation_boundaries_edge9" class="edge">
+<title>gate&#45;&gt;other</title>
+<path fill="none" stroke="black" d="M380.95,-180.68C337.73,-164.27 281.1,-142.77 238.8,-126.71"/>
+<polygon fill="black" stroke="black" points="239.79,-123.34 229.19,-123.06 237.3,-129.88 239.79,-123.34"/>
+<text text-anchor="middle" x="302.5" y="-142" font-family="Arial" font-size="10.00">no</text>
+</g>
+<!-- ask -->
+<g id="Text_only_interview_flow_and_preservation_boundaries_node10" class="node">
+<title>ask</title>
+<path fill="none" stroke="black" d="M663.5,-123C663.5,-123 528.5,-123 528.5,-123 522.5,-123 516.5,-117 516.5,-111 516.5,-111 516.5,-95 516.5,-95 516.5,-89 522.5,-83 528.5,-83 528.5,-83 663.5,-83 663.5,-83 669.5,-83 675.5,-89 675.5,-95 675.5,-95 675.5,-111 675.5,-111 675.5,-117 669.5,-123 663.5,-123"/>
+<text text-anchor="middle" x="596" y="-106.6" font-family="Arial" font-size="13.00">Ask one contextualized</text>
+<text text-anchor="middle" x="596" y="-92.6" font-family="Arial" font-size="13.00">question</text>
+</g>
+<!-- gate&#45;&gt;ask -->
+<g id="Text_only_interview_flow_and_preservation_boundaries_edge10" class="edge">
+<title>gate&#45;&gt;ask</title>
+<path fill="none" stroke="black" d="M488.68,-175.79C510.88,-160.94 537.57,-143.08 558.78,-128.89"/>
+<polygon fill="black" stroke="black" points="560.85,-131.72 567.21,-123.26 556.95,-125.91 560.85,-131.72"/>
+<text text-anchor="middle" x="550" y="-142" font-family="Arial" font-size="10.00">yes</text>
+</g>
+<!-- other&#45;&gt;paused -->
+<g id="Text_only_interview_flow_and_preservation_boundaries_edge12" class="edge">
+<title>other&#45;&gt;paused</title>
+<path fill="none" stroke="black" d="M156.25,-82.8C143.46,-72.01 127.32,-58.39 113.45,-46.69"/>
+<polygon fill="black" stroke="black" points="115.49,-43.83 105.59,-40.06 110.97,-49.18 115.49,-43.83"/>
+<text text-anchor="middle" x="186.5" y="-59" font-family="Arial" font-size="10.00">nothing useful remains</text>
+</g>
+<!-- other&#45;&gt;choose -->
+<g id="Text_only_interview_flow_and_preservation_boundaries_edge11" class="edge">
+<title>other&#45;&gt;choose</title>
+<path fill="none" stroke="black" d="M170.6,-123.06C158.87,-152.93 142.08,-210.96 171,-246 176.23,-252.34 254.26,-267 324.94,-279.14"/>
+<polygon fill="black" stroke="black" points="324.41,-282.6 334.85,-280.84 325.59,-275.7 324.41,-282.6"/>
+<text text-anchor="middle" x="214.5" y="-203.5" font-family="Arial" font-size="10.00">another useful route</text>
+</g>
+<!-- ask&#45;&gt;read -->
+<g id="Text_only_interview_flow_and_preservation_boundaries_edge13" class="edge">
+<title>ask&#45;&gt;read</title>
+<path fill="none" stroke="black" d="M616.31,-123.2C634.06,-142.14 657,-172.84 657,-205 657,-644 657,-644 657,-644 657,-662.43 644.56,-677.95 630.56,-689.57"/>
+<polygon fill="black" stroke="black" points="628.03,-687.09 622.22,-695.95 632.28,-692.65 628.03,-687.09"/>
+<text text-anchor="middle" x="693.5" y="-421" font-family="Arial" font-size="10.00">next actual reply</text>
+</g>
+<!-- information -->
+<g id="Text_only_interview_flow_and_preservation_boundaries_node12" class="node">
+<title>information</title>
+<polygon fill="none" stroke="black" points="298.5,-319 103.5,-319 103.5,-279 304.5,-279 304.5,-313 298.5,-319"/>
+<polyline fill="none" stroke="black" points="298.5,-319 298.5,-313 "/>
+<polyline fill="none" stroke="black" points="304.5,-313 298.5,-313 "/>
+<text text-anchor="middle" x="204" y="-302.6" font-family="Arial" font-size="13.00">Partial, unknown and declined</text>
+<text text-anchor="middle" x="204" y="-288.6" font-family="Arial" font-size="13.00">stay distinct</text>
+</g>
+<!-- meaning&#45;&gt;information -->
+<g id="Text_only_interview_flow_and_preservation_boundaries_edge15" class="edge">
+<title>meaning&#45;&gt;information</title>
+<path fill="none" stroke="black" stroke-dasharray="1,5" d="M202.47,-361.8C202.71,-352.12 203.01,-340.16 203.28,-329.36"/>
+<polygon fill="black" stroke="black" points="206.78,-329.14 203.53,-319.06 199.78,-328.97 206.78,-329.14"/>
+<text text-anchor="middle" x="267.5" y="-338" font-family="Arial" font-size="10.00">not a completed&#45;profile score</text>
+</g>
+</g>
+</svg>

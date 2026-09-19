@@ -1,0 +1,323 @@
+{
+  "source_version": "scenario-bank-v5.1-20260919",
+  "candidate_version": "scenario-bank-v6.0-20260919",
+  "question_edits": [
+    {
+      "id": "G04",
+      "field": "question",
+      "before": "You are following a guide to set up something you want to use. Most of it works, but the same step keeps failing. What would you usually do next?",
+      "after": "You are following instructions to set up a shared calendar on your phone. Most steps work, but the step for inviting another person keeps failing. What would you usually do next?",
+      "finding": "F01"
+    },
+    {
+      "id": "R08",
+      "field": "question",
+      "before": "Now the same worthwhile work stays too heavy for several weeks, without enough recovery. How would that usually affect you?",
+      "after": "Return to the worthwhile work at a manageable pace. In this version, the workload stays too heavy for several weeks, without enough recovery. What would your energy usually be like at the end of that period?",
+      "finding": "F02"
+    }
+  ],
+  "context_repairs": [
+    {
+      "id": "M02",
+      "field": "context_sources",
+      "before": [],
+      "after": [
+        "M01"
+      ],
+      "finding": "F03"
+    },
+    {
+      "id": "A0",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "B0",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "C0",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "D0",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "E0",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "F0",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "G01",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "G02",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "G03",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "G04",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "G05",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "G06",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "G07",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "G08",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "G10",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "G11",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "G12",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "G13",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "G14",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "G15",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "G16",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "G17",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "G18",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "G19",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "G20",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "G21",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "G22",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "G23",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "G25",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "M01",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "M03",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "M05",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "M07",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "M09",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "M11",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "OWNERSHIP",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "R05",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "R06",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "ROUTINE-CHANGE",
+      "field": "context_requirement",
+      "before": null,
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    },
+    {
+      "id": "STATUS",
+      "field": "context_requirement",
+      "before": "one actual matching antecedent; a claimed comparison requires both scoped answers",
+      "after": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
+      "finding": "F04"
+    }
+  ],
+  "illustration_edits": [
+    "D05.audience_adaptation"
+  ],
+  "source_transcripts_changed": false,
+  "additional_interpretation_changes": [
+    {
+      "facet_id": "D13.others_effect",
+      "before": "Distinguishes concern from anticipated change in own mood.",
+      "after": "Reports becoming concerned while expecting to remain calm; any broader change of mood is not fully specified.",
+      "reason": "Calmness must not erase reported concern."
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+[
+  {
+    "id": "T01",
+    "question_id": "A0",
+    "question": "You have an hour free and are about to read a book you've been enjoying. A close friend messages: “I'm bored—want to hang out?” They just feel like company; nothing urgent has happened. What would you probably reply?",
+    "fictional_reply": "Yes, I'd go.",
+    "next_utterance": "What would make you say yes?",
+    "retained_reading": "Going is the anticipated action; the reason is still unknown.",
+    "reject": "Do not infer guilt or generosity from agreement.",
+    "case_note": "",
+    "review_class": "authored same-context semantic design review; not independent data or NLP execution"
+  },
+  {
+    "id": "T02",
+    "question_id": "A0",
+    "question": "You have an hour free and are about to read a book you've been enjoying. A close friend messages: “I'm bored—want to hang out?” They just feel like company; nothing urgent has happened. What would you probably reply?",
+    "fictional_reply": "Yes, because I enjoy seeing them. Let's stop here.",
+    "next_utterance": null,
+    "retained_reading": "Save both the action and the stated enjoyment, and honor the stop.",
+    "reject": "No next question, even a relevant one, after an explicit stop.",
+    "case_note": "",
+    "review_class": "authored same-context semantic design review; not independent data or NLP execution"
+  },
+  {
+    "id": "T03",
+    "question_id": "A0",
+    "question": "You have an hour free and are about to read a book you've been enjoying. A close friend messages: “I'm bored—want to hang out?” They just feel like company; nothing urgent has happened. What would you probably reply?",
+    "fictional_reply": "I'd suggest tomorrow. Today I want to finish the book.",
+    "next_utterance": null,
+    "retained_reading": "Negotiation and its reason are already supplied. Choose another useful scene only if continuing is welcome.",
+    "reject": "Do not apply the yes template or ask the reason again.",
+    "case_note": "",
+    "review_class": "authored same-context semantic design review; not independent data or NLP execution"
+  },
+  {
+    "id": "T04",
+    "question_id": "G06",
+    "question": "You have joined a group organising a shared meal. People are deciding how to divide the work, and nobody has asked you to take a role. What would you usually do?",
+    "fictional_reply": "I'd chop vegetables. If someone asked me to coordinate, I'd do that instead.",
+    "next_utterance": null,
+    "retained_reading": "One message supplies both action branches with invitation as the named condition.",
+    "reject": "Do not require a second turn or ask R02 just to obtain another record.",
+    "case_note": "",
+    "review_class": "authored same-context semantic design review; not independent data or NLP execution"
+  },
+  {
+    "id": "T05",
+    "question_id": "G24",
+    "question": "Return to the friend-and-book scene. At an earlier stage of your life that you remember reasonably well, what would your usual reply have been?",
+    "fictional_reply": "When I was younger I'd go immediately; these days I'd suggest later.",
+    "next_utterance": "What do you think contributed to that change?",
+    "retained_reading": "A current-versus-earlier contrast is explicit. The contributor probe is optional if still useful and welcome.",
+    "reject": "Do not reject a declared time-perspective change as accidental context drift.",
+    "case_note": "",
+    "review_class": "authored same-context semantic design review; not independent data or NLP execution"
+  },
+  {
+    "id": "T06",
+    "question_id": "G09",
+    "question": "Return to the cooking-class offer. Before you have weighed it up, what, if anything, would you usually notice in your body?",
+    "fictional_reply": "Actually, that tightness was about being late, not whether the class suited me.",
+    "next_utterance": null,
+    "retained_reading": "Append the correction; withdraw any previous interpretation as a choice-suitability signal.",
+    "reject": "R04 and M10 must not continue from the superseded signal interpretation. Generic choice questions remain separate.",
+    "case_note": "",
+    "review_class": "authored same-context semantic design review; not independent data or NLP execution"
+  },
+  {
+    "id": "T07",
+    "question_id": "G09",
+    "question": "Return to the cooking-class offer. Before you have weighed it up, what, if anything, would you usually notice in your body?",
+    "fictional_reply": "I don't notice anything in my body. I might still be unsure tomorrow.",
+    "next_utterance": null,
+    "retained_reading": "Record no noticed sensation and continuing uncertainty; the temporal-clarity point is already answered.",
+    "reject": "No sensation-specific probes, and no duplicate CHOICE-TIME question.",
+    "case_note": "",
+    "review_class": "authored same-context semantic design review; not independent data or NLP execution"
+  },
+  {
+    "id": "T08",
+    "question_id": "G09",
+    "question": "Return to the cooking-class offer. Before you have weighed it up, what, if anything, would you usually notice in your body?",
+    "fictional_reply": "It is brief and happens on similar choices. I haven't said whether it helps me decide.",
+    "next_utterance": "How useful is that reaction when you are deciding whether a choice suits you?",
+    "retained_reading": "Duration and occurrence have been supplied, but perceived usefulness is still missing.",
+    "reject": "Do not ask M10 or SIGNAL-DEPENDABILITY again.",
+    "case_note": "",
+    "review_class": "authored same-context semantic design review; not independent data or NLP execution"
+  },
+  {
+    "id": "T09",
+    "question_id": "B0",
+    "question": "You're having a quiet evening at home and feel fairly settled. Your partner has been worrying for several days about going to a gathering where they won't know many people. Tonight they bring it up again, without asking you to do anything. What, if anything, happens to your own mood?",
+    "fictional_reply": "I'd be concerned for them but stay calm myself.",
+    "next_utterance": "Once that conversation is over, what usually happens to that concern?",
+    "retained_reading": "Concern and calmness coexist; the aftermath question names the specific reported concern.",
+    "reject": "Do not erase concern by coding completely unchanged emotion, or call it emotional contagion.",
+    "case_note": "",
+    "review_class": "authored same-context semantic design review; not independent data or NLP execution"
+  },
+  {
+    "id": "T10",
+    "question_id": "B0",
+    "question": "You're having a quiet evening at home and feel fairly settled. Your partner has been worrying for several days about going to a gathering where they won't know many people. Tonight they bring it up again, without asking you to do anything. What, if anything, happens to your own mood?",
+    "fictional_reply": "I'd get tense, but I don't want to discuss this relationship further.",
+    "next_utterance": null,
+    "retained_reading": "Preserve the reported tension; close this relationship topic.",
+    "reject": "Neither generic MOOD-AFTER nor WHY may bypass the source-topic refusal.",
+    "case_note": "",
+    "review_class": "authored same-context semantic design review; not independent data or NLP execution"
+  },
+  {
+    "id": "T11",
+    "question_id": "M01",
+    "question": "You are handling a manageable task when someone nearby starts urging you to hurry, although the actual deadline has not changed. What would usually happen inside you?",
+    "fictional_reply": "I'd feel hurried even though the deadline was unchanged.",
+    "next_utterance": "Returning to the task where someone was urging you to hurry: that person leaves and the pressure stops, while the task and deadline stay the same. What would usually change for you?",
+    "retained_reading": "After an intervening money discussion, name the original pressure scene in the actual utterance.",
+    "reject": "Do not let the bare phrase that person refer to the last unrelated topic.",
+    "case_note": "T11 explicitly assumes a topic change after the displayed reply.",
+    "review_class": "authored same-context semantic design review; not independent data or NLP execution"
+  },
+  {
+    "id": "T12",
+    "question_id": "R08",
+    "question": "Return to the worthwhile work at a manageable pace. In this version, the workload stays too heavy for several weeks, without enough recovery. What would your energy usually be like at the end of that period?",
+    "fictional_reply": "After weeks of that I'd feel depleted and need several quiet days to recover.",
+    "next_utterance": null,
+    "retained_reading": "Retain depletion plus the stated recovery pattern under prolonged overload.",
+    "reject": "No claim about manageable workload, and no redundant WORK-RECOVERY probe.",
+    "case_note": "",
+    "review_class": "authored same-context semantic design review; not independent data or NLP execution"
+  },
+  {
+    "id": "T13",
+    "question_id": "M07",
+    "question": "Choose a familiar activity that you do reasonably well. How did you come to be good at it?",
+    "fictional_reply": "I can't think of an ability to discuss.",
+    "next_utterance": null,
+    "retained_reading": "Leave this information unknown and move on if another topic is useful.",
+    "reject": "Do not ask M08 about an ability the person never named.",
+    "case_note": "",
+    "review_class": "authored same-context semantic design review; not independent data or NLP execution"
+  },
+  {
+    "id": "T14",
+    "question_id": "G20",
+    "question": "Your basic needs are covered, and you have some extra money available. What would you most want that extra money to do for you?",
+    "fictional_reply": "I'd use the extra money to work less, not to buy impressive things.",
+    "next_utterance": null,
+    "retained_reading": "Retain the resource purpose and the volunteered rejection of that spending motive, each at its scope.",
+    "reject": "Do not infer all status/ownership motives or automatically ask every remaining money prompt.",
+    "case_note": "",
+    "review_class": "authored same-context semantic design review; not independent data or NLP execution"
+  },
+  {
+    "id": "T15",
+    "question_id": "G25",
+    "question": "A close friend has twice agreed to help you with a practical task, then not turned up and explained only afterwards. What difference, if any, would that usually make to your trust?",
+    "fictional_reply": "I'd rely on them less for tasks, but still trust them with private things. No need to explore repair.",
+    "next_utterance": null,
+    "retained_reading": "Save the task-specific trust distinction and honor the narrower repair refusal.",
+    "reject": "R13 must not reopen the closed repair topic; this is not a global stop.",
+    "case_note": "",
+    "review_class": "authored same-context semantic design review; not independent data or NLP execution"
+  },
+  {
+    "id": "T16",
+    "question_id": "G23",
+    "question": "You arrive while a few people are getting ready for a shared meal. Nothing has been assigned to you yet. What tends to catch your attention in a situation like this?",
+    "fictional_reply": "I'd notice the food. Your question doesn't tell me anyone needs help.",
+    "next_utterance": null,
+    "retained_reading": "Retain the noticing response and process feedback separately.",
+    "reject": "No need or responsibility is established, so CARE-RESPONSIBILITY is not admitted.",
+    "case_note": "",
+    "review_class": "authored same-context semantic design review; not independent data or NLP execution"
+  }
+]

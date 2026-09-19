@@ -1,6 +1,6 @@
 {
   "task_id": "scenario-graph-convergence-20260919",
-  "status": "active",
+  "status": "converged_pilot_paused",
   "owned_branch": "chat/scenario-graph-convergence-20260919",
   "exclusive_writer": true,
   "integration_branch": "chat/scenario-readiness-audit-20260919",
@@ -30,5 +30,9 @@
   },
   "research_disposition": "Reuse the existing same-day cognitive-interviewing scan and the established graph/index technique; no new psychometric method or scientific-validation claim.",
   "new_mandatory_requirements": [],
-  "stop_boundary": "Deliver a genuinely converged text-only candidate and graph, or an explicit surviving substantive defect. The owner pilot stays paused regardless of audit outcome."
+  "stop_boundary": "Deliver a genuinely converged text-only candidate and graph, or an explicit surviving substantive defect. The owner pilot stays paused regardless of audit outcome.",
+  "final_sweep": "FINAL-SWEEP.json",
+  "verification": "VERIFICATION.json",
+  "final_substantive_changes": 0,
+  "next_action": "Await explicit owner resumption of the saved Chat pilot; do not resume, deploy or wake inference automatically."
 }

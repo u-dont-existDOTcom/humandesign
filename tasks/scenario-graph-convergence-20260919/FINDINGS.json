@@ -1,0 +1,77 @@
+{
+  "pass": "A - full bank and graph audit",
+  "source_version": "scenario-bank-v5.1-20260919",
+  "findings": [
+    {
+      "id": "F01",
+      "severity": "minor",
+      "object": "G04",
+      "before": "Setting up something left the concrete task unspecified.",
+      "repair": "Use a shared calendar and the failed invitation step; preserve the same one-action task.",
+      "classification": "question_wording"
+    },
+    {
+      "id": "F02",
+      "severity": "material",
+      "object": "R08",
+      "before": "The end-of-burst question asked about energy; prolonged overload asked the broader how it affects you and began Now.",
+      "repair": "Explicitly reset from the manageable baseline and ask energy at the endpoint. Multiple workload conditions remain bundled; no one-factor causal claim.",
+      "classification": "question_wording"
+    },
+    {
+      "id": "F03",
+      "severity": "material_for_graph_recovery",
+      "object": "M02",
+      "before": "Conditional pressure-aftermath prompt has an empty context_sources list although That person refers to M01.",
+      "repair": "Add M01 as the context candidate, with reported-pressure-response admission unchanged.",
+      "classification": "context_link"
+    },
+    {
+      "id": "F04",
+      "severity": "material_for_graph_recovery",
+      "object": "context_requirement defaults",
+      "before": "The same one actual matching antecedent text was attached even to self-contained starting scenes. A literal prerequisite interpretation leaves starting scenes with no source.",
+      "repair": "Normalize self-contained entries; keep topic associations advisory. No added screening questions or fixed order.",
+      "classification": "context_metadata"
+    },
+    {
+      "id": "F05",
+      "severity": "minor",
+      "object": "D05.audience_adaptation illustration",
+      "before": "An example linked to the noise/meeting scene discussed traffic and waiting instead.",
+      "repair": "Replace only the interpretation illustration with a scene-aligned example. Preserve the frozen old example and every original interview.",
+      "classification": "illustration"
+    }
+  ],
+  "closed_by_candidate": "scenario-bank-v6.0-20260919",
+  "graph_model_confirmation_findings": [
+    {
+      "id": "F06",
+      "origin": "new audit model, not inherited survey wording",
+      "finding": "Distinct answer-event requirement would reject a single reply that supplies both conditional branches.",
+      "repair": "Require two distinct explicitly bound conditions, not two messages.",
+      "validation": "test_one_message_can_supply_both_contrast_branches"
+    },
+    {
+      "id": "F07",
+      "origin": "new audit model, not inherited survey wording",
+      "finding": "Unconditional same-time-frame requirement would reject the intended optional earlier-life comparison.",
+      "repair": "Permit only explicitly declared changed fields; reject accidental scope mixing.",
+      "validation": "test_explicit_earlier_life_contrast_is_allowed"
+    },
+    {
+      "id": "F08",
+      "class": "interpretation_narrowing",
+      "finding": "Remaining calm does not imply no emotional change when the same answer says concern arises.",
+      "repair": "Retain both concern and calmness without crediting a completely unchanged mood.",
+      "status": "resolved"
+    },
+    {
+      "id": "F09",
+      "class": "audit_model_privacy_scope",
+      "finding": "A generic follow-up can inherit a declined romantic context while its catalog topic is emotion or a generic reason.",
+      "repair": "Bind topic scope to the actual source answer and reject closed inherited scopes, not only the question family.",
+      "status": "resolved"
+    }
+  ]
+}
