@@ -37,3 +37,17 @@ Railway read-only diagnostics confirm the running service selects HDMATCH_LLM_AP
 
 OpenAI's current billing guidance states that a purchased prepaid balance can take a few minutes to appear and that any negative balance accumulated after prior credit exhaustion is deducted from the next purchase. Because repeated checks after that propagation window still report credit_balance_exhausted, the remaining action is account-side: verify the positive prepaid balance actually appears for the organization/project associated with this API key and was not fully consumed by a prior negative balance. No additional same-provider runtime repair can create provider credit.
 
+## 2026-09-19 temporary ChatGPT-subscription bridge — live owner-only workaround
+
+The earlier direct OpenAI API credit blocker remains historically accurate, but it is no longer the immediate owner-development blocker. The owner explicitly authorized a temporary subscription-backed workaround.
+
+A Railway Cloud Agent now hosts an authenticated OpenAI-compatible bridge on its port 8080. The deployed `life-patterns-owner` service points `HDMATCH_LLM_API_URL` at that bridge. The bridge invokes Codex with an isolated `CODEX_HOME` carrying ChatGPT authentication, removes the Railway-managed agent-provider variables and `OPENAI_API_KEY` from the inference child environment, loads no MCP/user rules, uses read-only/ephemeral execution, enforces the caller-supplied JSON Schema mechanically, and selects `gpt-5.6-sol` with the caller-requested reasoning effort.
+
+A discriminating Cloud Agent smoke showed direct Codex provider `openai`, model `gpt-5.6-sol`, ChatGPT authentication, and successful schema output. Exact subscription billing metadata is not exposed, so this is authentication evidence rather than an independent billing attestation.
+
+Railway deployment `e2afc5c3-574f-4715-9eb0-52cf24e775de` completed successfully with the bridge URL. A fresh end-to-end owner-session answer operation returned HTTP 200, advanced the session revision from 0 to 1, and returned to `awaiting_answer`. The bridge completed the real xhigh semantic calls; the application logs contained no provider 429, `insufficient_quota`, or `credit_balance_exhausted` for that operation.
+
+The workaround is owner-only and experimental. The Cloud Agent must stay awake for the bridge to run; sleeping stops the process while retaining its files. Do not open this transport to external participants or treat it as reviewed production privacy/inference architecture. Rollback is to restore `HDMATCH_LLM_API_URL=https://api.openai.com/v1/responses` and redeploy; the existing API credential was not replaced.
+
+The owner outcome remains OPEN at product quality rather than provider availability. Next action: resume natural-use interviewing and evaluate actual question quality, recovery behavior, latency, and usefulness. Do not harden this transport further unless natural use demonstrates that it is worth retaining. Exact operational evidence and the non-secret bridge source are preserved under `tasks/life-patterns-subscription-bridge-20260919/`.
+
