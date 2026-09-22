@@ -194,13 +194,13 @@
     {
       "id": "F0",
       "revision": "scenario-bank-v7.0-20260922",
-      "question": "You're deciding where to meet with three friends. Two suggest a place you find too noisy, and you would prefer somewhere quieter. Nothing has been booked. What would you probably say?",
+      "question": "The same noisy meeting place is suggested in two otherwise identical situations, and nothing has been booked. In one, you are deciding with three close friends; in the other, with three new coworkers you barely know. You would prefer somewhere quieter in both. What, if anything, would you say differently between the two groups?",
       "kind": "scene",
       "planning_targets": [
         "D05.audience_adaptation"
       ],
-      "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
-      "interpretation_limit": "Retain a concrete utterance task. Noise preference is stipulated. Audience adaptation requires the answer to describe it; a polite reply alone does not establish strategic adaptation.",
+      "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: A matched audience comparison is useful and unanswered; the respondent can knowingly imagine both groups. Keep the preference and practical stakes constant while changing only audience familiarity.",
+      "interpretation_limit": "Credit only an answer-originated difference or stated lack of difference in how the same preference is framed to the two specified audiences. Do not infer persuasive success, manipulation, social skill, or adaptation outside this comparison.",
       "family": "persuasion",
       "context_sources": [],
       "context_requirement": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
@@ -226,13 +226,13 @@
     {
       "id": "M11",
       "revision": "scenario-bank-v7.0-20260922",
-      "question": "You offer to organise and cook a shared meal, which will take several hours of your time. You can afford the ingredients, but you think a fair split would be for the other person to buy them while you do the organising and cooking. They are interested but unsure about that arrangement. How would you explain it?",
+      "question": "You offer to organise and cook a shared meal, which will take several hours, and ask the other person to buy the ingredients. They say, “I'd like to do the meal, but paying for all the ingredients feels like too much for me.” What would you say next?",
       "kind": "scene",
       "planning_targets": [
         "X08.offer_and_leverage"
       ],
-      "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
-      "interpretation_limit": "The fairness rationale is supplied by the scene, not discovered about the respondent. Retain how they present the exchange or respond to uncertainty. Asking what the other person is unsure about is valid. Do not score sales ability or manipulation.",
+      "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: A concrete value-exchange response remains useful and unanswered; the respondent can knowingly imagine the stated proposal and the other person's concrete cost objection.",
+      "interpretation_limit": "The proposal, cooking time, and listener objection are stimulus premises, not respondent evidence. Credit only the respondent's answer-originated way of responding: for example clarifying, reframing contributions, asking about budget, renegotiating, changing the split, or withdrawing the proposal. Do not score sales ability, manipulation, fairness ideology, or likely success.",
       "family": "value_exchange",
       "context_sources": [],
       "context_requirement": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
@@ -330,13 +330,13 @@
     {
       "id": "M07",
       "revision": "scenario-bank-v7.0-20260922",
-      "question": "Choose a familiar activity that you do reasonably well. How did you come to be good at it?",
+      "question": "Choose a familiar activity that you do reasonably well. Looking back, what parts, if any, came fairly easily from the start, and what parts did you have to learn or practise?",
       "kind": "habitual_or_developmental_recollection",
       "planning_targets": [
         "X05.ease_and_learning"
       ],
       "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
-      "interpretation_limit": "Retain optional activity-based self-history. Explicitly mark it a recollection task; no need for one recent episode. Accept no identified skill and do not impose talent.",
+      "interpretation_limit": "Treat this as one acquisition-history contrast. Preserve easy-from-start, learned-through-practice, mixed, or cannot-separate answers. Do not infer innate talent independently of the respondent's recollection.",
       "family": "ability",
       "context_sources": [],
       "context_requirement": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
@@ -844,13 +844,13 @@
     {
       "id": "G15",
       "revision": "scenario-bank-v7.0-20260922",
-      "question": "You spend an ordinary working day on something you personally find worthwhile, at a manageable pace. What would your energy usually be like afterwards?",
+      "question": "Imagine an ordinary day where you do about six hours of mentally demanding computer work that you find worthwhile. You are indoors at a comfortable temperature, slept normally, eat normally, and take short ordinary breaks. What would your energy usually be like at the end of the day?",
       "kind": "scene",
       "planning_targets": [
         "D14.ordinary_engagement"
       ],
       "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
-      "interpretation_limit": "Retain manageable meaningful work. Meaningfulness is the premise; do not count it as a discovered life purpose.",
+      "interpretation_limit": "This is the ordinary baseline for the same mentally demanding computer-work modality used by R07 and R08. Meaningfulness and the stated room/sleep/food/break conditions are premises; do not count them as discovered traits or a maximum capacity.",
       "family": "work_energy",
       "context_sources": [],
       "context_requirement": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
@@ -860,13 +860,13 @@
     {
       "id": "R07",
       "revision": "scenario-bank-v7.0-20260922",
-      "question": "Imagine two days in a row where you do about ten hours each day of mentally demanding computer work that you find worthwhile. You are indoors at a comfortable temperature, sleep and eat normally between the days, and take short ordinary breaks. At the end of the second day, before a longer rest, what would your energy usually be like?",
+      "question": "Keep that same mentally demanding computer work, room conditions, food, sleep, and short-break pattern. For two days in a row, you work about ten hours each day instead of six. At the end of the second day, before a longer rest, what would your energy usually be like?",
       "kind": "matched_variant",
       "planning_targets": [
         "D14.burst"
       ],
       "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: Introduce the changed premise as a hypothetical variant, not as something the person did. Do not repeat an already supplied comparison.",
-      "interpretation_limit": "This is a prediction about one specified workload, not maximum capacity. Do not generalize to outdoor heat, physical labor, illness, sleep loss, or all work. The endpoint is before longer recovery.",
+      "interpretation_limit": "Compare with G15 using the same work modality and ordinary conditions; the changed workload is the longer ten-hour schedule repeated for two days. This is not maximum capacity and does not establish recovery after the offered longer rest.",
       "family": "work_energy",
       "context_sources": [
         "G15"
@@ -881,13 +881,13 @@
     {
       "id": "R08",
       "revision": "scenario-bank-v7.0-20260922",
-      "question": "Now imagine the same kind of mentally demanding computer work for four weeks: about ten hours a day, six days a week, indoors at a comfortable temperature. You sleep and eat normally, but you do not get a longer recovery period during those four weeks. What would your energy usually be like by the end of the fourth week?",
+      "question": "Keep that same mentally demanding computer work and the same ordinary room, food, sleep, and short-break conditions. For four weeks, you work about ten hours a day, six days a week, without any longer recovery period during those four weeks. What would your energy usually be like by the end of the fourth week?",
       "kind": "matched_variant",
       "planning_targets": [
         "D14.prolonged_overload"
       ],
       "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: Introduce the changed premise as a hypothetical variant, not as something the person did. Do not repeat an already supplied comparison.",
-      "interpretation_limit": "This is a prediction about the specified prolonged workload. Do not treat ordinary tiredness or resilience here as a global work-capacity trait or maximum sustainable workload.",
+      "interpretation_limit": "Compare with G15 using the same work modality and ordinary conditions; duration and sustained workload are the intended changes. Do not infer a universal work limit or response under different task, sleep, illness, heat, or physical-load conditions.",
       "family": "work_energy",
       "context_sources": [
         "G15"
@@ -1040,13 +1040,13 @@
     {
       "id": "G17",
       "revision": "scenario-bank-v7.0-20260922",
-      "question": "While planning a shared meal, someone gives a time that you believe is wrong. Nothing has been booked yet. What would you usually do?",
+      "question": "While planning a shared meal, you are fairly sure of two corrections. In one case, someone tells the group the meal starts at 7:00 instead of 7:30, so several people could arrive half an hour early. In the other, they say the dessert is chocolate when you are fairly sure it is vanilla, and nobody's choice or dietary needs depend on it. What, if anything, would you do differently between the two mistakes?",
       "kind": "scene",
       "planning_targets": [
         "D16.challenge_threshold"
       ],
-      "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
-      "interpretation_limit": "Specify an incorrect time in meal planning. Its consequences may need clarification; a correction is not automatically perfectionism.",
+      "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: A matched correction-threshold comparison remains useful and unanswered; the respondent can knowingly imagine being similarly confident in both corrections while consequence changes.",
+      "interpretation_limit": "Credit only the respondent's difference or stated lack of difference between the consequential timing error and the harmless detail. This supports a scoped correction/challenge threshold, not perfectionism, conflict style, or a universal rule.",
       "family": "correction",
       "context_sources": [],
       "context_requirement": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
@@ -1056,13 +1056,13 @@
     {
       "id": "G25",
       "revision": "scenario-bank-v7.0-20260922",
-      "question": "A close friend has twice agreed to help you with a practical task, then not turned up and explained only afterwards. What difference, if any, would that usually make to your trust?",
+      "question": "A close friend has twice agreed to help you with a practical task, then not turned up. Each time they later say they forgot and did not message beforehand. What difference, if any, would that usually make to your trust?",
       "kind": "scene",
       "planning_targets": [
         "X01.trust_change"
       ],
       "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
-      "interpretation_limit": "Specify the kind of broken agreement. Distinguish reliability on that task from global distrust, affection and safety judgments.",
+      "interpretation_limit": "The missed commitments and stated forgetting/no-message explanation are premises. Distinguish practical reliability on this kind of commitment from global distrust, affection, safety, or character judgments.",
       "family": "trust",
       "context_sources": [],
       "context_requirement": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
@@ -1462,14 +1462,14 @@
     {
       "id": "CORRECTION-REASON",
       "revision": "scenario-bank-v7.0-20260922",
-      "question": "What would matter most in deciding whether to point it out?",
+      "question": "What matters most in why you would handle those two mistakes the same way or differently?",
       "kind": "optional_probe",
       "planning_targets": [
         "D16.context_cost",
         "D16.challenge_threshold"
       ],
-      "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: Action alone was given and its threshold is unclear. Do not specify harm, politeness or perfectionism for the person.",
-      "interpretation_limit": "Retain threshold probe only when the action does not already explain stakes, relationship, confidence or cost.",
+      "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: G17 supplied the comparative action but the respondent's reason, confidence sensitivity, social cost, or consequence rule remains unclear. Suppress if the G17 answer already explains the distinction.",
+      "interpretation_limit": "Use only to clarify the respondent's own threshold/context-cost rule after the matched G17 comparison. Do not insert harm, politeness, confidence, or perfectionism if the respondent does not name them.",
       "family": "correction",
       "context_sources": [
         "G17"
@@ -1494,7 +1494,8 @@
       "context_binding_rule": "Bind to the indicated scene and actual answer, not the last utterance by position.",
       "automatic_evidence_credit": false,
       "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: A particular need or helping choice has been named, and personal responsibility is still unclear. Enjoying company alone is not a reason to search for guilt.",
-      "interpretation_limit": "A particular need or helping choice has been named, and personal responsibility is still unclear. Enjoying company alone is not a reason to search for guilt. The answer supports only what it says; the prompt never fills a response field."
+      "interpretation_limit": "A particular need or helping choice has been named, and personal responsibility is still unclear. Enjoying company alone is not a reason to search for guilt. The answer supports only what it says; the prompt never fills a response field.",
+      "context_requirement": "one actual matching antecedent; a claimed comparison requires both scoped answers"
     },
     {
       "id": "CARE-LIMIT",
@@ -1512,7 +1513,8 @@
       "context_binding_rule": "Bind to the indicated scene and actual answer, not the last utterance by position.",
       "automatic_evidence_credit": false,
       "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: A particular form of help is under discussion; the limit has not been supplied. No answer is required if the topic is closed.",
-      "interpretation_limit": "A particular form of help is under discussion; the limit has not been supplied. No answer is required if the topic is closed. The answer supports only what it says; the prompt never fills a response field."
+      "interpretation_limit": "A particular form of help is under discussion; the limit has not been supplied. No answer is required if the topic is closed. The answer supports only what it says; the prompt never fills a response field.",
+      "context_requirement": "one actual matching antecedent; a claimed comparison requires both scoped answers"
     },
     {
       "id": "ROUTINE-CHANGE",
@@ -1550,7 +1552,8 @@
       "interpretation_limit": "Retain only genuinely additional weakening dimensions. Mirrored opposites of earlier positive conditions are not independent evidence.",
       "live_pilot_guards": [
         "redundancy"
-      ]
+      ],
+      "context_requirement": "one actual matching antecedent; a claimed comparison requires both scoped answers"
     }
   ],
   "routing_guards": {

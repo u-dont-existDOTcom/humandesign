@@ -1,9 +1,9 @@
 # Current state — scenario survey v7 blind-review repair
 
-The v7 live-pilot redesign candidate received a genuinely blinded fresh-context Stage-1 semantic review. The reviewed candidate was **NOT_READY_FOR_FRESH_PILOT** with two semantic blockers: the bodily-signal admission gate wrongly required stability before measuring stability/time course, and M06 changed the familiar-route interpretation task into an assumed-concern/action task.
+The original v7 redesign failed a first genuinely blinded semantic review with two blockers; those were repaired. A second fresh blind rereview of repaired commit `4d4eddc4975bf2a4a146648ae547beb6986741b9` found four further semantic blockers: F0 lacked a real audience comparison; M11 could credit a stimulus-supplied rationale; G15/R07/R08 changed work modality inside a supposed matched series; and G17 omitted the consequence needed to interpret correction threshold.
 
-Both blockers are repaired on `chat/scenario-survey-v7-review-repair-20260922`. Deterministic verification now passes 447 / 447 checks, including direct regression checks for the two findings.
+All four are now repaired on `chat/scenario-survey-v7-review-repair-20260922`. Low-risk nonblocking cleanup was also applied to M07, G25, and three missing context-requirement fields. Deterministic verification passes 459 / 459 checks.
 
-Read `tasks/ACTIVE-TASK.json`, then `tasks/scenario-survey-v7-review-repair-20260922/ACTIVE-CONTRACT.json`, `BLIND-STAGE1-REVIEW-20260922.md`, and `STAGE1-RECONCILIATION.md`.
+Read `tasks/ACTIVE-TASK.json`, then `tasks/scenario-survey-v7-review-repair-20260922/ACTIVE-CONTRACT.json`, `BLIND-REREVIEW-4D4EDDC-20260922.md`, and `BLIND-REREVIEW-RECONCILIATION-20260922.md`.
 
-Current boundary: repaired candidate awaiting a second mechanically blinded Stage-1 semantic review. No deployment, inference wake, recruitment, chart scoring, or private-answer publication is authorized.
+Current boundary: commit the repaired bytes and run another mechanically blinded fresh-context semantic review. No deployment, inference wake, recruitment, chart scoring, or private-answer publication is authorized.

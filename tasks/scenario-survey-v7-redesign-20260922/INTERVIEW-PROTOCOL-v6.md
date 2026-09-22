@@ -39,9 +39,13 @@ Do not use vague determinants such as “poor progress,” “intense work,” �
 
 Do not hide the respondent’s motive inside the premise. If a proposal could reasonably arise from different motives that would change the answer, state one motive explicitly or use separate matched variants.
 
+Do not credit a rationale, value, comparison, or leverage point merely because the stimulus supplied it. When the construct is how a respondent frames or negotiates something, credit only answer-originated selection, wording, concession, objection handling, or trade-off.
+
 Do not ask respondents to name virtues of an unspecified incumbent system. Either supply a concrete old/new trade-off or use a real familiar system they identify.
 
 For workload questions, specify enough of task type, duration, breaks, sleep/recovery, and environmental load to avoid making heat, illness, physical exertion, or time-on-task silent confounds.
+
+For a matched variant, hold every material non-target determinant constant across the compared scenes. If intensity or duration is the intended change, keep task modality, environment, sleep/food assumptions, and other answer-determining conditions fixed unless another change is explicitly part of the construct.
 
 ## Construct boundaries
 
@@ -62,6 +66,8 @@ For recognition/status, ask whether genuine admiration is intrinsically rewardin
 Prefer a different everyday setting after one useful distinction is resolved. Do not exhaust a family because neighboring routes exist.
 
 Follow-ups must earn their turn by changing the possible description. Empty planning targets, symmetrical opposites, and curiosity are not enough.
+
+A route that claims audience adaptation or another context difference must itself elicit a comparison across at least two matched contexts, unless a prior answer already supplies both sides. One audience or one context cannot receive comparison credit from an imagined contrast that was never answered.
 
 When the respondent delegates resolution to another person or source, preserve that as their resolution strategy. Do not force them to personally verify what they explicitly said they would send back for group/source agreement.
 

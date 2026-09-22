@@ -101,9 +101,9 @@
   },
   {
     "facet_id": "D05.audience_adaptation",
-    "fictional_answer": "With these friends I'd mention not being able to hear each other; with my family I'd emphasise having time to talk.",
-    "narrow_supported_reading": "Reports differing framing by audience.",
-    "unsupported_extension": "That the framing works or is manipulative.",
+    "fictional_answer": "With close friends I'd say directly that the place is too noisy for me; with new coworkers I'd explain the hearing problem and suggest a quieter nearby option.",
+    "narrow_supported_reading": "Reports how the same preference is framed similarly or differently across two specified audiences.",
+    "unsupported_extension": "Persuasive success, manipulation, global social skill, or adaptation outside the matched audience comparison.",
     "question_routes": [
       "F0"
     ],
@@ -346,9 +346,9 @@
   },
   {
     "facet_id": "D14.ordinary_engagement",
-    "fictional_answer": "A manageable day doing something worthwhile usually leaves me pleasantly tired.",
-    "narrow_supported_reading": "Reports energy after that workload.",
-    "unsupported_extension": "A sustainable maximum or a specific chart center.",
+    "fictional_answer": "After the specified six-hour mentally demanding computer-work day I'd usually still have decent energy.",
+    "narrow_supported_reading": "Reports energy after the specified ordinary baseline workload used for the matched work-energy series.",
+    "unsupported_extension": "A sustainable maximum, response to other work modalities, or a specific chart center.",
     "question_routes": [
       "G15"
     ],
@@ -356,9 +356,9 @@
   },
   {
     "facet_id": "D14.burst",
-    "fictional_answer": "After the specified two ten-hour computer-work days I would still have decent energy, though I might be tired.",
-    "narrow_supported_reading": "Anticipates the pre-rest endpoint of the specified two-day workload.",
-    "unsupported_extension": "Maximum capacity, outdoor/physical-work response, or recovery after rest.",
+    "fictional_answer": "After two days of the same computer work at ten hours per day I'd be noticeably more tired than after the six-hour baseline.",
+    "narrow_supported_reading": "Reports the pre-rest endpoint when hours are increased for two days while work modality and ordinary conditions stay matched.",
+    "unsupported_extension": "Maximum capacity, other work modalities, or recovery after the longer rest.",
     "question_routes": [
       "R07"
     ],
@@ -366,9 +366,9 @@
   },
   {
     "facet_id": "D14.prolonged_overload",
-    "fictional_answer": "By the end of the specified four-week schedule I would expect to be more depleted.",
-    "narrow_supported_reading": "Reports anticipated energy under the specified prolonged workload.",
-    "unsupported_extension": "A universal work limit or response under different sleep, illness, heat, or task conditions.",
+    "fictional_answer": "By the end of four weeks of the same computer work at ten hours a day, six days a week, I'd expect much lower energy.",
+    "narrow_supported_reading": "Reports anticipated energy under the prolonged version of the same matched work modality and ordinary conditions.",
+    "unsupported_extension": "A universal work limit or response under different work, sleep, illness, heat, or physical-load conditions.",
     "question_routes": [
       "R08"
     ],
@@ -407,9 +407,9 @@
   },
   {
     "facet_id": "D16.challenge_threshold",
-    "fictional_answer": "I'd correct the time if it would affect when people arrive.",
-    "narrow_supported_reading": "Reports a consequence-dependent correction threshold.",
-    "unsupported_extension": "General perfectionism.",
+    "fictional_answer": "I'd correct the wrong start time because it affects when people arrive, but I probably would not interrupt over the harmless dessert detail.",
+    "narrow_supported_reading": "Reports a consequence-dependent correction threshold in a matched high- versus low-consequence comparison.",
+    "unsupported_extension": "General perfectionism, conflict preference, or a universal willingness to challenge people.",
     "question_routes": [
       "G17",
       "CORRECTION-REASON"
@@ -591,9 +591,9 @@
   },
   {
     "facet_id": "X01.trust_change",
-    "fictional_answer": "I'd trust that friend less to turn up, but might still trust them with a confidence.",
-    "narrow_supported_reading": "Separates task reliability from another kind of trust.",
-    "unsupported_extension": "Global distrust or a judgment of the absent friend's character.",
+    "fictional_answer": "After they forgot twice without messaging, I'd stop relying on them for time-sensitive help but might still trust them in other ways.",
+    "narrow_supported_reading": "Reports a trust/reliability change after the specified repeated forgetting-and-no-message pattern.",
+    "unsupported_extension": "Global distrust or a judgment of the friend's overall character.",
     "question_routes": [
       "G25"
     ],
@@ -671,9 +671,9 @@
   },
   {
     "facet_id": "X05.ease_and_learning",
-    "fictional_answer": "Reading a map came fairly easily, but giving directions took practice.",
-    "narrow_supported_reading": "Reports relative ease and learning separately.",
-    "unsupported_extension": "An innate talent established independently of recollection.",
+    "fictional_answer": "Reading the map felt easy fairly quickly, but explaining routes clearly took practice.",
+    "narrow_supported_reading": "Reports relative ease and learned/practised components within one familiar ability.",
+    "unsupported_extension": "An independently established innate talent or objective skill level.",
     "question_routes": [
       "M07"
     ],
@@ -721,9 +721,9 @@
   },
   {
     "facet_id": "X08.offer_and_leverage",
-    "fictional_answer": "I would say that I am contributing several hours of organising and cooking, so I think them buying the ingredients is a fair split.",
-    "narrow_supported_reading": "Reports how the respondent explains a concretely motivated exchange.",
-    "unsupported_extension": "Business skill, manipulation, successful persuasion, or a general fairness ideology.",
+    "fictional_answer": "I'd ask what amount feels manageable, explain what I am contributing through organising and cooking, and see whether a different split works for both of us.",
+    "narrow_supported_reading": "Reports the respondent's own response to a concrete objection within a proposed value exchange.",
+    "unsupported_extension": "The stimulus-supplied proposal or cooking time as respondent evidence; business skill, manipulation, general fairness ideology, or successful persuasion.",
     "question_routes": [
       "M11"
     ],

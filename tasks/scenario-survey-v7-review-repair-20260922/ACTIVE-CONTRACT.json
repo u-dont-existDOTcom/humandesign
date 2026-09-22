@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "scenario-survey-v7-review-repair-20260922",
-  "status": "stage1_blockers_repaired_blind_rereview_pending",
+  "status": "second_blind_blockers_repaired_rereview_pending",
   "requiredBranch": "chat/scenario-survey-v7-review-repair-20260922",
   "exclusive": true,
   "ownerOutcome": "OPEN",
@@ -16,6 +16,8 @@
   "questionBank": "tasks/scenario-survey-v7-redesign-20260922/interviewer-bank-v7.json",
   "interviewProtocol": "tasks/scenario-survey-v7-redesign-20260922/INTERVIEW-PROTOCOL-v6.md",
   "verification": "tasks/scenario-survey-v7-redesign-20260922/VERIFICATION.json",
-  "nextAction": "Freeze repaired candidate bytes, then run a new blind Stage-1 semantic review from a minimal workspace. If green, reconcile and advance to fresh-pilot-ready; otherwise repair only confirmed blockers and repeat.",
-  "runtimeBoundary": "No deployment, inference wake, recruitment, chart scoring, or private-answer publication is authorized."
+  "nextAction": "Commit the four confirmed blocker repairs, then run another fresh mechanically blinded Stage-1 review on the exact commit. Advance only if that review returns READY_FOR_FRESH_PILOT.",
+  "runtimeBoundary": "No deployment, inference wake, recruitment, chart scoring, or private-answer publication is authorized.",
+  "secondBlindReview": "tasks/scenario-survey-v7-review-repair-20260922/BLIND-REREVIEW-4D4EDDC-20260922.md",
+  "secondReconciliation": "tasks/scenario-survey-v7-review-repair-20260922/BLIND-REREVIEW-RECONCILIATION-20260922.md"
 }

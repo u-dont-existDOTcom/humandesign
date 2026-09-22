@@ -50,13 +50,13 @@ for bad in ['progress is poor','two unusually intense days','workload stays too 
 by={q['id']:q for q in questions}
 expect={
 'G23':['friends or acquaintances','particular job'],
-'M11':['can afford the ingredients','fair split'],
+'M11':['paying for all the ingredients feels like too much','What would you say next?'],
 'WORKING-METHOD':['six awkward steps'],
 'D0':['one short phrase','ten-second phrase','no test or deadline'],
 'M05':['route you know well','normally never uses'],
 'M06':['do not know well','do not know the normal route'],
 'M09':['simple, familiar, works offline','shared reminders','more complex'],
-'R07':['ten hours each day','comfortable temperature','sleep and eat normally'],
+'R07':['same mentally demanding computer work','ten hours each day instead of six','before a longer rest'],
 'R08':['four weeks','ten hours a day','six days a week'],
 'R10':['internal disagreements','attempts to sort out the disagreements'],
 'STATUS':['genuinely admire','rewarding to you in itself'],
@@ -69,6 +69,17 @@ for i,needles in expect.items():
 check('M06_guard', 'direct constraints' in by['M06']['admission'] and 'direct hazards' in by['M06']['admission'])
 check('M06_same_interpretation_task', 'What would you make of that?' in by['M06']['question'] and 'concern' not in by['M06']['question'].lower(), by['M06']['question'])
 check('M06_no_assumed_reduced_reliance', 'Do not assume concern or reduced reliance' in by['M06']['interpretation_limit'], by['M06']['interpretation_limit'])
+
+check('F0_matched_audiences', 'close friends' in by['F0']['question'] and 'new coworkers' in by['F0']['question'] and 'differently' in by['F0']['question'], by['F0']['question'])
+check('M11_concrete_objection', 'paying for all the ingredients feels like too much' in by['M11']['question'] and 'fair split' not in by['M11']['question'], by['M11']['question'])
+check('G15_fixed_modality', 'six hours of mentally demanding computer work' in by['G15']['question'], by['G15']['question'])
+check('R07_same_modality', 'Keep that same mentally demanding computer work' in by['R07']['question'] and 'ten hours each day instead of six' in by['R07']['question'], by['R07']['question'])
+check('R08_same_modality', 'Keep that same mentally demanding computer work' in by['R08']['question'] and 'four weeks' in by['R08']['question'], by['R08']['question'])
+check('G17_matched_consequence', '7:00 instead of 7:30' in by['G17']['question'] and 'dessert is chocolate' in by['G17']['question'] and 'differently' in by['G17']['question'], by['G17']['question'])
+check('M07_ease_learning_contrast', 'came fairly easily' in by['M07']['question'] and 'learn or practise' in by['M07']['question'], by['M07']['question'])
+check('G25_reason_supplied', 'they forgot and did not message beforehand' in by['G25']['question'], by['G25']['question'])
+check('explicit_context_requirements', all(by[i].get('context_requirement') for i in ['CARE-RESPONSIBILITY','CARE-LIMIT','ROMANCE-FADE']))
+
 check('VERIFY_guard', 'group/source' in by['VERIFY']['admission'] and 'would not decide themselves' in by['VERIFY']['admission'])
 check('ROMANCE_guard', 'ordinary inverse' in by['ROMANCE-FADE']['admission'])
 
@@ -79,7 +90,7 @@ if explore:
     check('exploratory_unmapped', ex.get('mapping_status')=='unmapped_neutral_candidate')
     check('exploratory_no_credit', ex.get('automatic_evidence_credit') is False)
 
-for phrase in ['ask only the missing piece','premise sufficiency','Inverse wording is not independent corroboration','Stop when no remaining route is both admissible','A brief, fleeting, or inconsistent reaction is still an eligible antecedent']:
+for phrase in ['ask only the missing piece','premise sufficiency','Inverse wording is not independent corroboration','Stop when no remaining route is both admissible','A brief, fleeting, or inconsistent reaction is still an eligible antecedent','Do not credit a rationale, value, comparison, or leverage point merely because the stimulus supplied it','For a matched variant, hold every material non-target determinant constant','must itself elicit a comparison across at least two matched contexts']:
     check('protocol:'+phrase, phrase.lower() in protocol.lower())
 
 ev=json.loads((HERE/'EVIDENCE-GUIDE-v7.json').read_text())

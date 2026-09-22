@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "scenario-survey-v7-review-repair-20260922",
-  "status": "stage1_blockers_repaired_blind_rereview_pending",
+  "status": "second_blind_blockers_repaired_rereview_pending",
   "requiredBranch": "chat/scenario-survey-v7-review-repair-20260922",
   "exclusive": true,
   "currentStateOverlay": "tasks/scenario-survey-v7-review-repair-20260922/ACTIVE-CONTRACT.json",
@@ -13,6 +13,6 @@
   "questionBank": "tasks/scenario-survey-v7-redesign-20260922/interviewer-bank-v7.json",
   "interviewProtocol": "tasks/scenario-survey-v7-redesign-20260922/INTERVIEW-PROTOCOL-v6.md",
   "verification": "tasks/scenario-survey-v7-redesign-20260922/VERIFICATION.json",
-  "nextAction": "Run a fresh mechanically blinded Stage-1 rereview of the repaired v7 candidate. Do not expose prior review findings or reconciliation before findings freeze.",
+  "nextAction": "Freeze the newly repaired candidate bytes and run another fresh mechanically blinded semantic review. Do not expose prior findings, reconciliation, rationale, audits, or private participant material before findings freeze.",
   "runtimeBoundary": "Do not deploy, wake inference, recruit, score charts, or copy private participant answers into Git."
 }
