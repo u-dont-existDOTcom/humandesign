@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "taskId": "scenario-survey-v7-review-repair-20260922",
+  "status": "stage1_blockers_repaired_blind_rereview_pending",
+  "requiredBranch": "chat/scenario-survey-v7-review-repair-20260922",
+  "exclusive": true,
+  "ownerOutcome": "OPEN",
+  "assuranceLane": "iteration",
+  "implementationAuthorized": false,
+  "vmWakeAuthorized": false,
+  "privateParticipantTranscriptToGitAuthorized": false,
+  "reviewedCandidate": "57cc884f11a6b8203b8860c77e84f01de250a193",
+  "stage1Review": "tasks/scenario-survey-v7-review-repair-20260922/BLIND-STAGE1-REVIEW-20260922.md",
+  "reconciliation": "tasks/scenario-survey-v7-review-repair-20260922/STAGE1-RECONCILIATION.md",
+  "blindReviewPrompt": "tasks/scenario-survey-v7-review-repair-20260922/BLIND-STAGE1-REVIEW-PROMPT.md",
+  "questionBank": "tasks/scenario-survey-v7-redesign-20260922/interviewer-bank-v7.json",
+  "interviewProtocol": "tasks/scenario-survey-v7-redesign-20260922/INTERVIEW-PROTOCOL-v6.md",
+  "verification": "tasks/scenario-survey-v7-redesign-20260922/VERIFICATION.json",
+  "nextAction": "Freeze repaired candidate bytes, then run a new blind Stage-1 semantic review from a minimal workspace. If green, reconcile and advance to fresh-pilot-ready; otherwise repair only confirmed blockers and repeat.",
+  "runtimeBoundary": "No deployment, inference wake, recruitment, chart scoring, or private-answer publication is authorized."
+}

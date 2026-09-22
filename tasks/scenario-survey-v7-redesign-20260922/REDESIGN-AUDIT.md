@@ -2,13 +2,13 @@
 
 ## Result
 
-**PASS as the next text-only redesign candidate.** No current blocker was found in the live-pilot failure classes audited here.
+**HISTORICAL SAME-CONTEXT PASS ONLY.** This audit did not establish fresh-pilot readiness. A later mechanically blinded Stage-1 review of commit `57cc884f11a6b8203b8860c77e84f01de250a193` found two semantic blockers, both now repaired on the review-repair branch and awaiting blind rereview.
 
 This is a same-context design audit, not independent human validation or AstroHD validity evidence.
 
 ## Mechanical checks
 
-- 442 / 442 deterministic bank/protocol/evidence-route checks passed after one audit-found A0 punctuation repair.
+- 447 / 447 deterministic bank/protocol/evidence-route checks now pass after the blind-review blocker repairs; five added checks bind directly to those repairs.
 - 78 canonical question nodes; IDs unique; family membership is one-to-one.
 - All context-source references resolve.
 - All planning-target identifiers resolve to the source-requirements contract.
@@ -54,11 +54,11 @@ Broad words such as “manageable” or “reasonably well” remain only where 
 
 ## Remaining assurance debt
 
-- No independent fresh-context semantic review has yet been run on v7.
+- A genuinely blinded fresh-context Stage-1 review has run on the original v7 candidate and returned `NOT_READY_FOR_FRESH_PILOT`; its two blockers are repaired but the repaired bytes still require a new blind rereview.
 - No new multi-respondent human pilot has been run on v7.
 - No app/runtime interviewer implements v7 yet.
 - No psychometric reliability, validity, completion-time, or target-theory recovery claim is made.
 
 ## Recommended next step
 
-Use v7 as the next text-only candidate for an independent review or a fresh respondent pilot. Do not resume the completed owner pilot merely to test unanswered fields; that would confound redesign validation with repeated exposure.
+Run a new mechanically blinded Stage-1 semantic review on the repaired candidate bytes. Advance to a fresh respondent pilot only if that rereview is ready. Do not resume the completed owner pilot merely to test unanswered fields; that would confound redesign validation with repeated exposure.

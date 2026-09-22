@@ -67,6 +67,8 @@ for i,needles in expect.items():
         check(f"repair_text:{i}:{n}", n in by[i]['question'], by[i]['question'])
 
 check('M06_guard', 'direct constraints' in by['M06']['admission'] and 'direct hazards' in by['M06']['admission'])
+check('M06_same_interpretation_task', 'What would you make of that?' in by['M06']['question'] and 'concern' not in by['M06']['question'].lower(), by['M06']['question'])
+check('M06_no_assumed_reduced_reliance', 'Do not assume concern or reduced reliance' in by['M06']['interpretation_limit'], by['M06']['interpretation_limit'])
 check('VERIFY_guard', 'group/source' in by['VERIFY']['admission'] and 'would not decide themselves' in by['VERIFY']['admission'])
 check('ROMANCE_guard', 'ordinary inverse' in by['ROMANCE-FADE']['admission'])
 
@@ -77,7 +79,7 @@ if explore:
     check('exploratory_unmapped', ex.get('mapping_status')=='unmapped_neutral_candidate')
     check('exploratory_no_credit', ex.get('automatic_evidence_credit') is False)
 
-for phrase in ['ask only the missing piece','premise sufficiency','Inverse wording is not independent corroboration','Stop when no remaining route is both admissible']:
+for phrase in ['ask only the missing piece','premise sufficiency','Inverse wording is not independent corroboration','Stop when no remaining route is both admissible','A brief, fleeting, or inconsistent reaction is still an eligible antecedent']:
     check('protocol:'+phrase, phrase.lower() in protocol.lower())
 
 ev=json.loads((HERE/'EVIDENCE-GUIDE-v7.json').read_text())
@@ -87,6 +89,9 @@ check('evidence_matches_requirements', ev_facets==facet_ids)
 for x in ev:
     check(f"evidence_routes:{x['facet_id']}", bool(x.get('question_routes')) and all(r in idset for r in x.get('question_routes',[])), str(x.get('question_routes')))
 check('no_evidence_route_to_retired_C0', all('C0' not in x.get('question_routes',[]) for x in ev))
+x04=[x for x in ev if x['facet_id']=='X04.context_and_limits'][0]
+check('X04_paired_interpretation', 'When paired with M05' in x04['narrow_supported_reading'], x04['narrow_supported_reading'])
+check('X04_no_unearned_reduced_reliance', 'Reduced reliance' in x04['unsupported_extension'], x04['unsupported_extension'])
 
 print(json.dumps({'ok':not errors,'errors':errors,'checks':len(checks),'passed':sum(1 for _,ok,_ in checks if ok)},indent=2))
 if errors:

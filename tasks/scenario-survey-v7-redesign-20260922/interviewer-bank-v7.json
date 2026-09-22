@@ -570,13 +570,13 @@
     {
       "id": "M06",
       "revision": "scenario-bank-v7.0-20260922",
-      "question": "Now imagine you are travelling somewhere you do not know well and the driver makes a turn that surprises you, but you do not know the normal route. What would you do with that concern?",
+      "question": "Now imagine you are travelling somewhere you do not know well and the driver makes a turn you did not expect, but you do not know the normal route. What would you make of that?",
       "kind": "conditional_followup",
       "planning_targets": [
         "X04.context_and_limits"
       ],
-      "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: M05 produced a familiarity-based interpretation whose transfer limit remains useful and unanswered. Do not use direct constraints (price, availability) or direct hazards as the antecedent.",
-      "interpretation_limit": "This tests how reduced familiarity changes reliance on a concern. Treat checking, asking, waiting, ignoring, or remaining uncertain as admissible. It is an anticipated unfamiliar-context response, not observed accuracy.",
+      "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: M05 produced a familiarity-based interpretation whose transfer limit remains useful and unanswered. Ask the same interpretation task with route familiarity removed. Do not use direct constraints or direct hazards as the antecedent.",
+      "interpretation_limit": "This tests how the meaning assigned to a route deviation changes when route familiarity is absent. Checking, uncertainty, benign interpretation, or suspicion are all admissible. Do not assume concern or reduced reliance; any familiarity contrast requires the paired M05 and M06 answers.",
       "family": "risk_cues",
       "context_sources": [
         "M05"

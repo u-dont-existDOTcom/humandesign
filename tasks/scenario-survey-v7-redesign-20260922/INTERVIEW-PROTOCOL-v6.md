@@ -53,7 +53,7 @@ Inverse wording is not independent corroboration. If an earlier answer says grea
 
 For risk cues, classify the antecedent before transfer probing: direct constraints (unavailable, unaffordable, prohibited), direct hazards, and familiarity-dependent pattern deviations are different evidence. M06 is for the third class only.
 
-For bodily-signal routes, a specific bodily/felt reaction must actually be reported. No stable signal means no R04, M10, SIGNAL-DEPENDABILITY, or SIGNAL-NOT-FOLLOWED chain.
+For bodily-signal routes, a specific bodily/felt reaction must actually be reported. If no bodily/felt reaction is reported, suppress R04, M10, SIGNAL-DEPENDABILITY, and SIGNAL-NOT-FOLLOWED. A brief, fleeting, or inconsistent reaction is still an eligible antecedent: the downstream routes are what distinguish duration, cross-choice consistency, perceived usefulness, and override conditions.
 
 For recognition/status, ask whether genuine admiration is intrinsically rewarding; do not define away all valued consequences and then treat “no difference” as meaningful.
 
