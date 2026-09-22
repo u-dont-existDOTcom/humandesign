@@ -78,6 +78,13 @@ check('R08_same_modality', 'Keep that same mentally demanding computer work' in 
 check('G17_matched_consequence', '7:00 instead of 7:30' in by['G17']['question'] and 'dessert is chocolate' in by['G17']['question'] and 'differently' in by['G17']['question'], by['G17']['question'])
 check('M07_ease_learning_contrast', 'came fairly easily' in by['M07']['question'] and 'learn or practise' in by['M07']['question'], by['M07']['question'])
 check('G25_reason_supplied', 'they forgot and did not message beforehand' in by['G25']['question'], by['G25']['question'])
+
+check('M03_bounded_feasible_task', all(x in by['M03']['question'] for x in ['thirty minutes','an hour','normally rested','nothing else urgent']), by['M03']['question'])
+check('M04_energy_only_variant', 'same thirty-minute meal preparation' in by['M04']['question'] and 'unusually tired' in by['M04']['question'], by['M04']['question'])
+check('G20_normalized_amount', 'one month of your ordinary living costs' in by['G20']['question'], by['G20']['question'])
+check('PHYSICAL_partial_scope', by['PHYSICAL-CLOSENESS'].get('target_scope')=={'D12.sensuality':'physical_affection_only'}, str(by['PHYSICAL-CLOSENESS'].get('target_scope')))
+check('PREFER_target_by_antecedent', by['PREFER-INFLUENCE'].get('target_by_antecedent')=={'F0':'D05.preferred_use','G05':'D05.preferred_use','M11':'X08.preferred_use'}, str(by['PREFER-INFLUENCE'].get('target_by_antecedent')))
+
 check('explicit_context_requirements', all(by[i].get('context_requirement') for i in ['CARE-RESPONSIBILITY','CARE-LIMIT','ROMANCE-FADE']))
 
 check('VERIFY_guard', 'group/source' in by['VERIFY']['admission'] and 'would not decide themselves' in by['VERIFY']['admission'])
@@ -90,7 +97,7 @@ if explore:
     check('exploratory_unmapped', ex.get('mapping_status')=='unmapped_neutral_candidate')
     check('exploratory_no_credit', ex.get('automatic_evidence_credit') is False)
 
-for phrase in ['ask only the missing piece','premise sufficiency','Inverse wording is not independent corroboration','Stop when no remaining route is both admissible','A brief, fleeting, or inconsistent reaction is still an eligible antecedent','Do not credit a rationale, value, comparison, or leverage point merely because the stimulus supplied it','For a matched variant, hold every material non-target determinant constant','must itself elicit a comparison across at least two matched contexts']:
+for phrase in ['ask only the missing piece','premise sufficiency','Inverse wording is not independent corroboration','Stop when no remaining route is both admissible','A brief, fleeting, or inconsistent reaction is still an eligible antecedent','Do not credit a rationale, value, comparison, or leverage point merely because the stimulus supplied it','For a matched variant, hold every material non-target determinant constant','must itself elicit a comparison across at least two matched contexts','For promise/follow-through scenes, specify a bounded feasible remaining task','For resource-purpose scenes, normalize the amount','record the antecedent-to-target mapping explicitly','mark that partial scope in route metadata']:
     check('protocol:'+phrase, phrase.lower() in protocol.lower())
 
 ev=json.loads((HERE/'EVIDENCE-GUIDE-v7.json').read_text())
@@ -103,6 +110,17 @@ check('no_evidence_route_to_retired_C0', all('C0' not in x.get('question_routes'
 x04=[x for x in ev if x['facet_id']=='X04.context_and_limits'][0]
 check('X04_paired_interpretation', 'When paired with M05' in x04['narrow_supported_reading'], x04['narrow_supported_reading'])
 check('X04_no_unearned_reduced_reliance', 'Reduced reliance' in x04['unsupported_extension'], x04['unsupported_extension'])
+
+x03=[x for x in ev if x['facet_id']=='X03.follow_through'][0]
+check('X03_bounded_followthrough_guide', 'bounded, feasible promise' in x03['narrow_supported_reading'], x03['narrow_supported_reading'])
+d19=[x for x in ev if x['facet_id']=='D19.resources_purpose'][0]
+check('D19_normalized_amount_guide', 'one month of ordinary living costs' in d19['narrow_supported_reading'], d19['narrow_supported_reading'])
+d12=[x for x in ev if x['facet_id']=='D12.sensuality'][0]
+check('D12_partial_affection_guide', 'partial coverage limited to physical-affection' in d12['narrow_supported_reading'], d12['narrow_supported_reading'])
+d05p=[x for x in ev if x['facet_id']=='D05.preferred_use'][0]
+x08p=[x for x in ev if x['facet_id']=='X08.preferred_use'][0]
+check('PREFER_context_scoped_guides', 'F0/G05' in d05p['narrow_supported_reading'] and 'M11' in x08p['narrow_supported_reading'])
+
 
 print(json.dumps({'ok':not errors,'errors':errors,'checks':len(checks),'passed':sum(1 for _,ok,_ in checks if ok)},indent=2))
 if errors:

@@ -8,7 +8,7 @@ This is a same-context design audit, not independent human validation or AstroHD
 
 ## Mechanical checks
 
-- 459 / 459 deterministic bank/protocol/evidence-route checks now pass after two rounds of blind-review semantic repairs; direct regression assertions cover every confirmed blocker.
+- 472 / 472 deterministic bank/protocol/evidence-route checks now pass after three rounds of blind-review semantic repairs; direct regression assertions cover every confirmed blocker plus the explicit target-scope constraints.
 - 78 canonical question nodes; IDs unique; family membership is one-to-one.
 - All context-source references resolve.
 - All planning-target identifiers resolve to the source-requirements contract.
@@ -54,7 +54,7 @@ Broad words such as “manageable” or “reasonably well” remain only where 
 
 ## Remaining assurance debt
 
-- Two mechanically blinded fresh-context reviews have run. Each returned `NOT_READY_FOR_FRESH_PILOT` on the then-current candidate; all confirmed blockers from both rounds are repaired, and the newest repaired bytes still require another blind rereview.
+- Three mechanically blinded fresh-context reviews have run. Each returned `NOT_READY_FOR_FRESH_PILOT` on the then-current candidate; all confirmed blockers from all three rounds are repaired, and the newest repaired bytes still require another blind rereview.
 - No new multi-respondent human pilot has been run on v7.
 - No app/runtime interviewer implements v7 yet.
 - No psychometric reliability, validity, completion-time, or target-theory recovery claim is made.

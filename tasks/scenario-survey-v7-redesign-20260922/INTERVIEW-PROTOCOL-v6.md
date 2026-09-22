@@ -47,6 +47,10 @@ For workload questions, specify enough of task type, duration, breaks, sleep/rec
 
 For a matched variant, hold every material non-target determinant constant across the compared scenes. If intensity or duration is the intended change, keep task modality, environment, sleep/food assumptions, and other answer-determining conditions fixed unless another change is explicitly part of the construct.
 
+For promise/follow-through scenes, specify a bounded feasible remaining task, enough available time, ordinary baseline energy, and any competing obligation when those factors would otherwise determine the answer. Do not interpret an unspecified burden as will or commitment.
+
+For resource-purpose scenes, normalize the amount when the set of realistic uses depends materially on scale. A vague “extra money” amount cannot support comparison of motives across respondents.
+
 ## Construct boundaries
 
 Ordinary behavior is not automatically trait evidence. Leaving a fully adequate method alone, practising something boring only when strongly motivated, or avoiding an unaffordable ticket should not be promoted into novelty, discipline, or intuition constructs.
@@ -82,6 +86,8 @@ An outreach follow-up requires an actually wanted connection or opportunity. Abs
 Keep hypothetical premises, usual-response self-report, retrospective recollection, actual events, normative views, and process feedback distinct.
 
 Credit only what the answer supports in that exact context. Do not turn one response into a global trait, mechanism, diagnosis, skill score, moral judgment, or population rarity claim.
+
+When one route can feed different facets depending on its antecedent, record the antecedent-to-target mapping explicitly and credit only the context-matched facet. When a route intentionally covers only a narrow slice of a broader facet, mark that partial scope in route metadata and preserve the same boundary in the evidence guide.
 
 Self-rated usefulness is not objective accuracy. A predicted unfamiliar response is not observed performance. Physical affection is not automatically sexual desire.
 

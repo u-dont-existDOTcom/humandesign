@@ -609,13 +609,13 @@
     {
       "id": "G20",
       "revision": "scenario-bank-v7.0-20260922",
-      "question": "Your basic needs are covered, and you have some extra money available. What would you most want that extra money to do for you?",
+      "question": "Your basic needs are covered, and you unexpectedly receive extra money equal to about one month of your ordinary living costs, with no debt, tax, or repayment obligation attached. What would you most want that money to do for you?",
       "kind": "scene",
       "planning_targets": [
         "D19.resources_purpose"
       ],
-      "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
-      "interpretation_limit": "Retain conditional spare-money motive. It does not establish actual wealth or life circumstances; spending choice may have several motives.",
+      "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: The respondent can knowingly imagine the normalized one-month-living-cost amount; resource purpose remains useful and unanswered.",
+      "interpretation_limit": "The relative amount and absence of repayment obligations are premises. Credit the respondent's intended function for this specified amount only; do not infer actual wealth, financial security, or a complete resource motive.",
       "family": "resources",
       "context_sources": [],
       "context_requirement": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
@@ -625,13 +625,13 @@
     {
       "id": "M03",
       "revision": "scenario-bank-v7.0-20260922",
-      "question": "You agreed to prepare something for a shared meal. Finishing it is dull, and nobody is checking on you. What would you usually do?",
+      "question": "You agreed to slice vegetables and make one simple dressing for a shared meal. The remaining work will take about thirty minutes; you have an hour before you need to leave, you feel normally rested, and nothing else urgent needs your attention. The work is dull and nobody is checking on you. What would you usually do?",
       "kind": "scene",
       "planning_targets": [
         "X03.follow_through"
       ],
-      "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: The scene fits or the respondent knowingly chooses to imagine it; target information remains useful and unanswered.",
-      "interpretation_limit": "Ask what happens rather than what keeps following-through. The old task presupposed continuing; leaving, renegotiating and finishing now fit equally.",
+      "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: The respondent can knowingly imagine the bounded, feasible promised task; follow-through remains useful and unanswered.",
+      "interpretation_limit": "The thirty-minute workload, available hour, ordinary energy, and absence of competing urgency are premises. Credit only the respondent's action and any answer-originated reason or condition. Do not infer unlimited willpower, capacity, or follow-through under heavier or competing demands.",
       "family": "promise",
       "context_sources": [],
       "context_requirement": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
@@ -641,13 +641,13 @@
     {
       "id": "M04",
       "revision": "scenario-bank-v7.0-20260922",
-      "question": "Return to that meal preparation. In this version, you still intend to finish, but tiredness is making you make mistakes. What would you usually do?",
+      "question": "Return to that same thirty-minute meal preparation, with the same available hour and no competing obligation. In this version you still intend to finish, but you are unusually tired and start making mistakes. What would you usually do?",
       "kind": "matched_variant",
       "planning_targets": [
         "X03.will_vs_available_energy"
       ],
-      "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: Introduce the changed premise as a hypothetical variant, not as something the person did. Do not repeat an already supplied comparison.",
-      "interpretation_limit": "Bind to meal preparation; explicitly stipulate continued intention only in the variant. Do not back-fill commitment strength into M03.",
+      "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: M03 supplied the bounded baseline task; introduce unusual tiredness as the changed premise while holding task, time available, and competing obligations constant.",
+      "interpretation_limit": "Use the same bounded meal-preparation task as M03 and vary available energy only. Continued intention is stipulated in the variant and must not be back-filled into M03. Stopping, pausing, renegotiating, asking for help, or continuing are all admissible.",
       "family": "promise",
       "context_sources": [
         "M03"
@@ -1134,8 +1134,8 @@
         "D05.preferred_use",
         "X08.preferred_use"
       ],
-      "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: Capacity or a pitch was discussed, but desire to use it remains unknown; no assumed dislike of persuasion. Desire is asked under the original stakes, not after removing any need to persuade.",
-      "interpretation_limit": "Remove the condition that agreement is unnecessary, which made low motivation unsurprising. Ask inclination in the same persuasion context whose capacity was discussed.",
+      "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: A specific F0, G05, or M11 antecedent is bound; desire to use persuasion/negotiation in that exact context remains unknown. Credit D05.preferred_use only after F0/G05 and X08.preferred_use only after M11.",
+      "interpretation_limit": "Ask inclination under the exact bound antecedent's stakes. Do not transfer a persuasion-context answer into value exchange or a value-exchange answer into general persuasion preference.",
       "family": "persuasion",
       "context_sources": [
         "F0",
@@ -1144,7 +1144,12 @@
       ],
       "context_requirement": "one actual matching antecedent; a claimed comparison requires both scoped answers",
       "context_binding_rule": "Bind to one exact presented scenario and its actual answer. Re-name the scene or repeat its conditions when nonadjacent. IDs alone are not semantic evidence.",
-      "automatic_evidence_credit": false
+      "automatic_evidence_credit": false,
+      "target_by_antecedent": {
+        "F0": "D05.preferred_use",
+        "G05": "D05.preferred_use",
+        "M11": "X08.preferred_use"
+      }
     },
     {
       "id": "OUTREACH",
@@ -1354,14 +1359,17 @@
         "D12.sensuality"
       ],
       "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: The chosen romantic context is applicable or knowingly imagined and the person is comfortable with the topic. No touch or no wish for physical intimacy is valid; touch and sexual desire remain separate.",
-      "interpretation_limit": "Optional, chosen romantic context only. Physical affection must not substitute for desire, sensuality as a whole or someone else’s behavior.",
+      "interpretation_limit": "Optional, chosen romantic context only. This route provides partial D12.sensuality coverage limited to physical affection. It must not substitute for sexual desire, libido, sensuality as a whole, or another person's behavior.",
       "family": "romance",
       "context_sources": [
         "G13"
       ],
       "context_requirement": "one actual matching antecedent; a claimed comparison requires both scoped answers",
       "context_binding_rule": "Bind to one exact presented scenario and its actual answer. Re-name the scene or repeat its conditions when nonadjacent. IDs alone are not semantic evidence.",
-      "automatic_evidence_credit": false
+      "automatic_evidence_credit": false,
+      "target_scope": {
+        "D12.sensuality": "physical_affection_only"
+      }
     },
     {
       "id": "MOOD-AFTER",

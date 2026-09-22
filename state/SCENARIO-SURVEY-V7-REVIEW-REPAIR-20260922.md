@@ -22,3 +22,14 @@ A fresh mechanically firewalled GPT-5.6 Sol xhigh rereview of commit `4d4eddc497
 - G17 now directly compares high- and low-consequence corrections under similar confidence.
 
 Verification now passes 459 / 459 deterministic checks. Another blind rereview of the exact repaired commit is required before fresh-pilot readiness.
+
+## Third blind rereview
+
+A third mechanically firewalled GPT-5.6 Sol xhigh review of commit `dd1d3e78e62cafa28a50f47df168a3ee49287079` returned `NOT_READY_FOR_FRESH_PILOT` with two premise-sufficiency blockers:
+
+- M03 did not bound the remaining promised task, feasibility, ordinary energy, or competing obligations;
+- G20 did not normalize the size of the hypothetical extra-money amount.
+
+Both are repaired. PHYSICAL-CLOSENESS partial coverage and PREFER-INFLUENCE antecedent-to-target scoping are now explicit in machine-readable metadata. Verification passes 472 / 472 checks.
+
+Another blind review of the exact repaired commit is required before fresh-pilot readiness.

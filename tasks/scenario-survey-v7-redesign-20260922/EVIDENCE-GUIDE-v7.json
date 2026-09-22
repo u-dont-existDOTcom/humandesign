@@ -92,8 +92,8 @@
   {
     "facet_id": "D05.preferred_use",
     "fictional_answer": "Even when I could make the case, I usually prefer not to spend time persuading.",
-    "narrow_supported_reading": "Distinguishes reported inclination from reported ability.",
-    "unsupported_extension": "Inability to persuade or aversion when the stakes differ.",
+    "narrow_supported_reading": "Reports inclination to persuade in the exact F0/G05 persuasion context bound to PREFER-INFLUENCE.",
+    "unsupported_extension": "Inability to persuade, aversion under different stakes, or preference inferred from an M11 value-exchange answer.",
     "question_routes": [
       "PREFER-INFLUENCE"
     ],
@@ -296,8 +296,8 @@
   {
     "facet_id": "D12.sensuality",
     "fictional_answer": "I like affectionate touch, but I have not said anything about sexual desire.",
-    "narrow_supported_reading": "Supports physical-affection preference only.",
-    "unsupported_extension": "Sexual desire, libido or a complete sensuality description.",
+    "narrow_supported_reading": "Provides partial coverage limited to physical-affection preference in the chosen romantic context.",
+    "unsupported_extension": "Sexual desire, libido, sensuality as a whole, or another person's behavior.",
     "question_routes": [
       "PHYSICAL-CLOSENESS"
     ],
@@ -468,9 +468,9 @@
   },
   {
     "facet_id": "D19.resources_purpose",
-    "fictional_answer": "I'd use extra money to reduce how much I need to work.",
-    "narrow_supported_reading": "States the intended function of hypothetical spare money.",
-    "unsupported_extension": "Actual financial security or complete motivation for resources.",
+    "fictional_answer": "With an extra amount equal to about one month of my living costs, I'd use it to reduce how much I need to work for a while.",
+    "narrow_supported_reading": "States the intended function of a normalized extra-money amount equal to about one month of ordinary living costs.",
+    "unsupported_extension": "Actual financial security, response to much smaller/larger sums, or complete motivation for resources.",
     "question_routes": [
       "G20"
     ],
@@ -631,9 +631,9 @@
   },
   {
     "facet_id": "X03.follow_through",
-    "fictional_answer": "I'd finish because I had agreed, unless I needed to renegotiate what was realistic.",
-    "narrow_supported_reading": "Reports action, stated motive and condition.",
-    "unsupported_extension": "Unlimited willpower or physical capacity.",
+    "fictional_answer": "With thirty minutes of meal prep left and an hour available, I'd finish it because I agreed to do it.",
+    "narrow_supported_reading": "Reports anticipated follow-through on the specified bounded, feasible promise under ordinary energy and no competing urgency.",
+    "unsupported_extension": "Unlimited willpower, follow-through under heavier burdens, or physical capacity.",
     "question_routes": [
       "M03"
     ],
@@ -641,9 +641,9 @@
   },
   {
     "facet_id": "X03.will_vs_available_energy",
-    "fictional_answer": "I would still intend to finish but pause and tell them if tiredness made it unreliable.",
-    "narrow_supported_reading": "Separates intention from execution when tired.",
-    "unsupported_extension": "That the person always keeps promises or lacks commitment when resting.",
+    "fictional_answer": "I would still intend to finish, but if unusual tiredness made me keep making mistakes I'd pause and tell them.",
+    "narrow_supported_reading": "Separates continued intention from execution when available energy is lowered while task/time/competing obligations stay matched.",
+    "unsupported_extension": "That the person always keeps promises, or that resting means reduced commitment.",
     "question_routes": [
       "M04"
     ],
@@ -732,8 +732,8 @@
   {
     "facet_id": "X08.preferred_use",
     "fictional_answer": "I enjoy negotiating an arrangement when both of us gain something.",
-    "narrow_supported_reading": "Reports an inclination in value exchange.",
-    "unsupported_extension": "Unlimited appetite for selling or the same inclination in every disagreement.",
+    "narrow_supported_reading": "Reports inclination to negotiate/persuade in the exact M11 value-exchange context bound to PREFER-INFLUENCE.",
+    "unsupported_extension": "Unlimited appetite for selling, general persuasion preference, or credit from F0/G05 contexts.",
     "question_routes": [
       "PREFER-INFLUENCE"
     ],
