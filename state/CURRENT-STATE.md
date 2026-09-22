@@ -1,5 +1,7 @@
-# Current state — scenario graph convergence
+# Current state — scenario survey v7 redesign
 
-The text-only design has converged: the final full audit required zero further substantive changes. Read tasks/ACTIVE-TASK.json and tasks/scenario-graph-convergence-20260919/REPORT.md, then INTERVIEW-PROTOCOL.md and GRAPH-EXPLORER.html.
+The owner live pilot is complete and remains private. The next text-only survey candidate is v7, redesigned from the live failures rather than resumed for more coverage.
 
-The pilot stays paused. Private per-turn capture remains outside Git and Railway, with zero actual pilot answers. This branch changes design artifacts and branch-local state only. It does not authorize app changes, VM contact or wake, inference, deployment, recruitment or chart scoring. Full AstroHD recovery remains separately open.
+Read `tasks/ACTIVE-TASK.json`, then `state/SCENARIO-SURVEY-V7-REDESIGN-20260922.md` and the task artifacts under `tasks/scenario-survey-v7-redesign-20260922/`.
+
+Current boundary: redesign candidate ready for fresh-context semantic review. No deployment, inference wake, recruitment, chart scoring, or private-answer publication is authorized.

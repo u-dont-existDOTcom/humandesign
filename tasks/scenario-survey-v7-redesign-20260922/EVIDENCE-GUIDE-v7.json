@@ -1,0 +1,742 @@
+[
+  {
+    "facet_id": "D01.approach",
+    "fictional_answer": "I would put the messages into a list by travel, money and times.",
+    "narrow_supported_reading": "Describes organizing these messages by topic.",
+    "unsupported_extension": "A stable preference for formal classification across all complex subjects.",
+    "question_routes": [
+      "G01"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D01.checking_detail",
+    "fictional_answer": "I'd check the time with the person who made the booking.",
+    "narrow_supported_reading": "Describes a verification source.",
+    "unsupported_extension": "That the source is actually correct or all details are verified.",
+    "question_routes": [
+      "VERIFY"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D02.output_form",
+    "fictional_answer": "I'd draw a simple timeline to explain why the plans differ.",
+    "narrow_supported_reading": "Names a form of explanation.",
+    "unsupported_extension": "Habitually turning every insight into a reusable system.",
+    "question_routes": [
+      "G02"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D02.audience_use",
+    "fictional_answer": "I would show them the two dates that conflict rather than give all my notes.",
+    "narrow_supported_reading": "Describes selecting material for this listener.",
+    "unsupported_extension": "Persuasion success or a general teaching ability.",
+    "question_routes": [
+      "G02"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D03.return_pattern",
+    "fictional_answer": "I tend to return to it when I get a spare moment, not while I'm occupied.",
+    "narrow_supported_reading": "Reports a conditional return of attention.",
+    "unsupported_extension": "A specific metaphysical interest or obsessive mechanism.",
+    "question_routes": [
+      "G03"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D03.closure_condition",
+    "fictional_answer": "A plausible explanation that fits the messages would usually be enough.",
+    "narrow_supported_reading": "Names a reported closure criterion.",
+    "unsupported_extension": "Closure was reached or the explanation was true.",
+    "question_routes": [
+      "R01"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D04.use_existing",
+    "fictional_answer": "I'd ask whether I had misunderstood that step before changing the guide.",
+    "narrow_supported_reading": "Reports an initial relation to the existing method.",
+    "unsupported_extension": "A preference never to invent anything.",
+    "question_routes": [
+      "G04"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D04.change_threshold",
+    "fictional_answer": "The recurring invite step is awkward enough that I would look for a simpler way to do it.",
+    "narrow_supported_reading": "Describes a threshold for changing a working method because of recurring friction.",
+    "unsupported_extension": "A universal originality trait.",
+    "question_routes": [
+      "WORKING-METHOD"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D05.capacity",
+    "fictional_answer": "I can usually get people to consider it, but not necessarily agree.",
+    "narrow_supported_reading": "Reports a limited self-rated effect of persuasion.",
+    "unsupported_extension": "Observed persuasive competence or success with any audience.",
+    "question_routes": [
+      "G05"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D05.preferred_use",
+    "fictional_answer": "Even when I could make the case, I usually prefer not to spend time persuading.",
+    "narrow_supported_reading": "Distinguishes reported inclination from reported ability.",
+    "unsupported_extension": "Inability to persuade or aversion when the stakes differ.",
+    "question_routes": [
+      "PREFER-INFLUENCE"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D05.audience_adaptation",
+    "fictional_answer": "With these friends I'd mention not being able to hear each other; with my family I'd emphasise having time to talk.",
+    "narrow_supported_reading": "Reports differing framing by audience.",
+    "unsupported_extension": "That the framing works or is manipulative.",
+    "question_routes": [
+      "F0"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction",
+    "revision_note": "F05: newly authored illustration aligned with F0 noise/meeting scene; historical evidence and transcripts remain unchanged."
+  },
+  {
+    "facet_id": "D06.entry_signal",
+    "fictional_answer": "I'd offer to chop vegetables without waiting to be asked.",
+    "narrow_supported_reading": "Anticipates initiating a bounded role in this group.",
+    "unsupported_extension": "Leadership in every context.",
+    "question_routes": [
+      "G06"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D06.role_leadership",
+    "fictional_answer": "I'd accept coordinating the food but not the whole event.",
+    "narrow_supported_reading": "Reports the role scope the person would accept.",
+    "unsupported_extension": "A general need for recognition.",
+    "question_routes": [
+      "R02"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D06.context_difference",
+    "fictional_answer": "Unasked, I would do a small task; if asked to coordinate, I would take that on.",
+    "narrow_supported_reading": "Supplies both branches of one invitation contrast.",
+    "unsupported_extension": "A causal explanation of why invitation matters or a universal rule.",
+    "question_routes": [
+      "R02"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D07.usual_source",
+    "fictional_answer": "Usually a friend introduces us; a few connections came through public notices.",
+    "narrow_supported_reading": "Reports a usual source mix.",
+    "unsupported_extension": "Numerical opportunity frequency or dependence on a network in all settings.",
+    "question_routes": [
+      "G07"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D07.deliberate_pathways",
+    "fictional_answer": "If I wanted collaborators and none appeared, I'd put out a notice.",
+    "narrow_supported_reading": "States an anticipated deliberate pathway under a wish to connect.",
+    "unsupported_extension": "Actually using that method or needing more contacts now.",
+    "question_routes": [
+      "OUTREACH"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D08.experience_of_projection",
+    "fictional_answer": "That happens in groups I already know, but not often with strangers.",
+    "narrow_supported_reading": "Reports context-limited familiarity with excess expectations.",
+    "unsupported_extension": "An objective projection field or true ability to solve everything.",
+    "question_routes": [
+      "G08"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D08.mismatch_response",
+    "fictional_answer": "I'd say which task I offered and ask them to find someone for the rest.",
+    "narrow_supported_reading": "Anticipates a boundary-setting response.",
+    "unsupported_extension": "A history of doing so when the scene was said to be unfamiliar.",
+    "question_routes": [
+      "R03"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D09.presence_form",
+    "fictional_answer": "I sometimes notice a tight chest before I have reasons for my reaction.",
+    "narrow_supported_reading": "Reports an early bodily sensation and its timing.",
+    "unsupported_extension": "That the sensation is a trustworthy decision signal.",
+    "question_routes": [
+      "G09"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D09.repeatability_trust",
+    "fictional_answer": "It occurs on most similar choices, but I don't find it very useful.",
+    "narrow_supported_reading": "Separately reports occurrence consistency and low perceived usefulness.",
+    "unsupported_extension": "Objective accuracy or repeated signals within one choice.",
+    "question_routes": [
+      "R04",
+      "SIGNAL-DEPENDABILITY"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D09.override_state",
+    "fictional_answer": "When I'm exhausted, I would check my reasons instead of relying on the sensation.",
+    "narrow_supported_reading": "Reports a state-dependent override rule.",
+    "unsupported_extension": "That overriding or following it is safer.",
+    "question_routes": [
+      "SIGNAL-NOT-FOLLOWED"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D09.clarity_over_time",
+    "fictional_answer": "After a night I often feel less torn; sometimes the deadline arrives and I am still unsure.",
+    "narrow_supported_reading": "Reports a conditional time course of felt clarity.",
+    "unsupported_extension": "That sleeping always improves a decision or all delay is emotional processing.",
+    "question_routes": [
+      "CHOICE-TIME"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D10.stable_direction",
+    "fictional_answer": "I'd try their schedule, but keep my own priorities about what work to do.",
+    "narrow_supported_reading": "Reports accommodation and a retained priority in this role.",
+    "unsupported_extension": "A fixed identity across life or all institutions.",
+    "question_routes": [
+      "G10"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D10.external_adaptation",
+    "fictional_answer": "I could change my starting time if the shared work needed it.",
+    "narrow_supported_reading": "States one acceptable adaptation.",
+    "unsupported_extension": "That every external demand is accepted.",
+    "question_routes": [
+      "G10",
+      "ADAPTATION"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D11.conditions",
+    "fictional_answer": "I would notice whether conversations carry through the room.",
+    "narrow_supported_reading": "Names a sensory feature attended to.",
+    "unsupported_extension": "Impairment or need for silence without a reported effect.",
+    "question_routes": [
+      "G11"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D11.functional_effect",
+    "fictional_answer": "Hearing conversations makes it harder for me to follow what I read.",
+    "narrow_supported_reading": "Reports a specific functional effect.",
+    "unsupported_extension": "A diagnosis or the actual acoustic properties of the fictional room.",
+    "question_routes": [
+      "ROOM-EFFECT"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D12.attraction",
+    "fictional_answer": "I often first feel interested when conversation is playful and easy.",
+    "narrow_supported_reading": "Reports an attributed attraction cue.",
+    "unsupported_extension": "Attraction to every playful person or another person's motives.",
+    "question_routes": [
+      "G12"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D12.deepening",
+    "fictional_answer": "I tend to feel closer when we can disagree without dismissing each other.",
+    "narrow_supported_reading": "Reports a condition for closeness.",
+    "unsupported_extension": "That all their relationships deepen or are safe.",
+    "question_routes": [
+      "G13"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D12.weakening_boundaries",
+    "fictional_answer": "More contact can be welcome, but repeatedly ignoring what I ask for makes me less close.",
+    "narrow_supported_reading": "Distinguishes contact frequency from a reported weakening condition.",
+    "unsupported_extension": "General avoidance of intimacy.",
+    "question_routes": [
+      "R05",
+      "ROMANCE-FADE"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D12.sensuality",
+    "fictional_answer": "I like affectionate touch, but I have not said anything about sexual desire.",
+    "narrow_supported_reading": "Supports physical-affection preference only.",
+    "unsupported_extension": "Sexual desire, libido or a complete sensuality description.",
+    "question_routes": [
+      "PHYSICAL-CLOSENESS"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D13.solo_baseline",
+    "fictional_answer": "On my own I usually feel fairly level, although I can still be sad.",
+    "narrow_supported_reading": "Reports a qualified alone-time baseline.",
+    "unsupported_extension": "That mood never varies independently of other people.",
+    "question_routes": [
+      "G14"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D13.others_effect",
+    "fictional_answer": "I'd become concerned for them but probably stay calm myself.",
+    "narrow_supported_reading": "Reports becoming concerned while expecting to remain calm; any broader change of mood is not fully specified.",
+    "unsupported_extension": "Emotional contagion or lack of empathy.",
+    "question_routes": [
+      "B0"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction",
+    "revision_note": "Calmness is compatible with concern; do not code absence of all emotional change."
+  },
+  {
+    "facet_id": "D13.conflict_effect",
+    "fictional_answer": "Being accused like that usually makes me tense and irritated.",
+    "narrow_supported_reading": "Reports affect in the accusation context.",
+    "unsupported_extension": "General emotional volatility or a conflict strategy.",
+    "question_routes": [
+      "R06"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D13.recovery",
+    "fictional_answer": "The tension often stays for a while after we separate, then fades when I stop replaying it.",
+    "narrow_supported_reading": "Reports an aftermath and attributed condition.",
+    "unsupported_extension": "Distance as a proven cause or an exact recovery interval.",
+    "question_routes": [
+      "MOOD-AFTER"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D14.ordinary_engagement",
+    "fictional_answer": "A manageable day doing something worthwhile usually leaves me pleasantly tired.",
+    "narrow_supported_reading": "Reports energy after that workload.",
+    "unsupported_extension": "A sustainable maximum or a specific chart center.",
+    "question_routes": [
+      "G15"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D14.burst",
+    "fictional_answer": "After the specified two ten-hour computer-work days I would still have decent energy, though I might be tired.",
+    "narrow_supported_reading": "Anticipates the pre-rest endpoint of the specified two-day workload.",
+    "unsupported_extension": "Maximum capacity, outdoor/physical-work response, or recovery after rest.",
+    "question_routes": [
+      "R07"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D14.prolonged_overload",
+    "fictional_answer": "By the end of the specified four-week schedule I would expect to be more depleted.",
+    "narrow_supported_reading": "Reports anticipated energy under the specified prolonged workload.",
+    "unsupported_extension": "A universal work limit or response under different sleep, illness, heat, or task conditions.",
+    "question_routes": [
+      "R08"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D14.stopping_recovery",
+    "fictional_answer": "I stop when I reread the same line; after a break my concentration often returns.",
+    "narrow_supported_reading": "Separately reports a stopping cue and a recovery pattern.",
+    "unsupported_extension": "That every break restores energy or concentration equals all physical energy.",
+    "question_routes": [
+      "R09",
+      "WORK-RECOVERY"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D15.mobilizer",
+    "fictional_answer": "I'd help restore it if people really used it; little recognition would not put me off.",
+    "narrow_supported_reading": "Reports what would make this project worth effort.",
+    "unsupported_extension": "A universal selfless purpose or actual participation.",
+    "question_routes": [
+      "G16"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D15.continue_disengage",
+    "fictional_answer": "I would first try to help resolve the persistent group disagreements; if that still went nowhere, I would leave.",
+    "narrow_supported_reading": "Supplies a conditional repair-then-disengage response to persistent organizational blockage.",
+    "unsupported_extension": "Persistence or conflict tolerance in every domain.",
+    "question_routes": [
+      "R10"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D16.challenge_threshold",
+    "fictional_answer": "I'd correct the time if it would affect when people arrive.",
+    "narrow_supported_reading": "Reports a consequence-dependent correction threshold.",
+    "unsupported_extension": "General perfectionism.",
+    "question_routes": [
+      "G17",
+      "CORRECTION-REASON"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D16.context_cost",
+    "fictional_answer": "If I wasn't sure, I'd check privately before interrupting the group.",
+    "narrow_supported_reading": "Reports uncertainty and social-cost conditions.",
+    "unsupported_extension": "Fear of authority or unwillingness to correct consequential errors.",
+    "question_routes": [
+      "CORRECTION-REASON"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D17.withdrawal_need_activity",
+    "fictional_answer": "After a demanding social day I usually want an hour without conversation, doing something simple.",
+    "narrow_supported_reading": "Reports a desired withdrawal context and activity.",
+    "unsupported_extension": "A general dislike of people or a need for complete isolation.",
+    "question_routes": [
+      "G18"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D17.reentry",
+    "fictional_answer": "I usually want to see people again once conversation stops feeling effortful.",
+    "narrow_supported_reading": "Reports a re-entry cue.",
+    "unsupported_extension": "A fixed duration or guaranteed restoration.",
+    "question_routes": [
+      "R11"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D18.competing_values",
+    "fictional_answer": "I would be pulled between keeping the promise and keeping time for myself.",
+    "narrow_supported_reading": "Reports both concerns as personally salient in this scene.",
+    "unsupported_extension": "A lifelong conflict merely because the scene contains a trade-off.",
+    "question_routes": [
+      "G19"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D18.resolution_durability",
+    "fictional_answer": "After renegotiating I usually feel settled rather than continuing to worry.",
+    "narrow_supported_reading": "Reports lack of lingering conflict after this decision.",
+    "unsupported_extension": "That every value conflict is easy to resolve.",
+    "question_routes": [
+      "AFTER-CHOICE"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D19.resources_purpose",
+    "fictional_answer": "I'd use extra money to reduce how much I need to work.",
+    "narrow_supported_reading": "States the intended function of hypothetical spare money.",
+    "unsupported_extension": "Actual financial security or complete motivation for resources.",
+    "question_routes": [
+      "G20"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D19.status_ownership",
+    "fictional_answer": "Genuine admiration feels good to me even when it creates no new opportunity; owning a tool matters for separate practical or social reasons.",
+    "narrow_supported_reading": "Separates intrinsic recognition value from ownership/control motives.",
+    "unsupported_extension": "Ambition, insecurity, narcissism, dominance, or a single motive shared by recognition and ownership.",
+    "question_routes": [
+      "STATUS",
+      "OWNERSHIP"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D20.continuity",
+    "fictional_answer": "Earlier I would have gone at once; now I would suggest another time.",
+    "narrow_supported_reading": "Reports a retrospective/current contrast in the same scene.",
+    "unsupported_extension": "An actual age-five memory or the cause of the difference.",
+    "question_routes": [
+      "G24"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D20.phases",
+    "fictional_answer": "That changed during a period when I took on more responsibilities.",
+    "narrow_supported_reading": "Names an approximate life phase of reported change.",
+    "unsupported_extension": "Birth year, a universal age stage or a chart-profile line.",
+    "question_routes": [
+      "LIFE-PHASE"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D20.learned_management",
+    "fictional_answer": "I learned to offer a different time instead of agreeing automatically.",
+    "narrow_supported_reading": "Attributes part of a change to learned management.",
+    "unsupported_extension": "An objectively established causal explanation or original unconditioned self.",
+    "question_routes": [
+      "R12"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D21.ordinary_rhythm",
+    "fictional_answer": "On a free day I usually choose a few things to do but leave the timing flexible.",
+    "narrow_supported_reading": "Reports preferred structure under free scheduling.",
+    "unsupported_extension": "Actual daily freedom or long-term routine adherence.",
+    "question_routes": [
+      "G21"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D21.novelty_disruption",
+    "fictional_answer": "I'd choose the new place when I had energy for exploring, otherwise the familiar one.",
+    "narrow_supported_reading": "Reports a context-sensitive novelty choice.",
+    "unsupported_extension": "That disappointment after a cancellation was resistance to change.",
+    "question_routes": [
+      "ROUTINE-CHANGE"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D22.focus_depth_interruptions",
+    "fictional_answer": "When interested I can stay with reading for a long stretch, but an interruption takes time to recover from.",
+    "narrow_supported_reading": "Separately reports depth/duration and interruption effect.",
+    "unsupported_extension": "Immobility, exceptional concentration or a specific attention condition.",
+    "question_routes": [
+      "G22",
+      "FOCUS-DEPTH"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D22.repetition_value",
+    "fictional_answer": "I keep repeating the phrase because I enjoy hearing the small improvements, not only because I want to know the language.",
+    "narrow_supported_reading": "Reports intrinsic value of repetition in this specific pronunciation practice.",
+    "unsupported_extension": "A general preference for repetition, discipline, or mastery in every activity.",
+    "question_routes": [
+      "D0",
+      "PRACTICE-REASON"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D23.noticing",
+    "fictional_answer": "I usually notice when one person is trying to do several jobs alone.",
+    "narrow_supported_reading": "Reports a kind of noticed need.",
+    "unsupported_extension": "Speed of noticing, all unnoticed needs, or obligation to intervene.",
+    "question_routes": [
+      "G23"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D23.responsibility",
+    "fictional_answer": "I'd feel responsible for the part I agreed to do, not for everyone's mood.",
+    "narrow_supported_reading": "States the reported scope of obligation.",
+    "unsupported_extension": "That accepting an invitation from enjoyment implies duty.",
+    "question_routes": [
+      "CARE-RESPONSIBILITY"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "D23.withholding",
+    "fictional_answer": "If someone had already offered suitable help, I would leave it to them.",
+    "narrow_supported_reading": "States a condition for not intervening.",
+    "unsupported_extension": "Indifference or an absence of caring.",
+    "question_routes": [
+      "CARE-LIMIT"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "X01.trust_change",
+    "fictional_answer": "I'd trust that friend less to turn up, but might still trust them with a confidence.",
+    "narrow_supported_reading": "Separates task reliability from another kind of trust.",
+    "unsupported_extension": "Global distrust or a judgment of the absent friend's character.",
+    "question_routes": [
+      "G25"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "X01.repair_access",
+    "fictional_answer": "I might rely on them for small things first, but would not make an important plan depend on them.",
+    "narrow_supported_reading": "Describes contemplated access and repair limits.",
+    "unsupported_extension": "A wish to fully reconcile or an obligation to restore trust.",
+    "question_routes": [
+      "R13"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "X02.under_pressure",
+    "fictional_answer": "I might feel hurried even though I knew the deadline hadn't changed.",
+    "narrow_supported_reading": "Reports internal urgency under external pressure.",
+    "unsupported_extension": "Actually moving faster or chronic urgency.",
+    "question_routes": [
+      "M01"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "X02.after_pressure_removed",
+    "fictional_answer": "Once they left, I'd usually settle back into my original pace.",
+    "narrow_supported_reading": "Anticipates an aftermath in the same task.",
+    "unsupported_extension": "A causal mechanism or an observed change in this fictional event.",
+    "question_routes": [
+      "M02"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "X03.follow_through",
+    "fictional_answer": "I'd finish because I had agreed, unless I needed to renegotiate what was realistic.",
+    "narrow_supported_reading": "Reports action, stated motive and condition.",
+    "unsupported_extension": "Unlimited willpower or physical capacity.",
+    "question_routes": [
+      "M03"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "X03.will_vs_available_energy",
+    "fictional_answer": "I would still intend to finish but pause and tell them if tiredness made it unreliable.",
+    "narrow_supported_reading": "Separates intention from execution when tired.",
+    "unsupported_extension": "That the person always keeps promises or lacks commitment when resting.",
+    "question_routes": [
+      "M04"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "X04.cue_form",
+    "fictional_answer": "On a route I know, a turn the driver normally never takes would make me wonder what changed.",
+    "narrow_supported_reading": "Reports a familiarity-dependent deviation cue.",
+    "unsupported_extension": "A pre-rational warning, danger, or accurate detection of a problem.",
+    "question_routes": [
+      "M05"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "X04.context_and_limits",
+    "fictional_answer": "On an unfamiliar route I would treat a surprising turn as a reason to check, not as evidence that the driver was wrong.",
+    "narrow_supported_reading": "Reports reduced reliance when the familiarity that gave the cue meaning is absent.",
+    "unsupported_extension": "Actual performance in unfamiliar settings.",
+    "question_routes": [
+      "M06"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "X05.ease_and_learning",
+    "fictional_answer": "Reading a map came fairly easily, but giving directions took practice.",
+    "narrow_supported_reading": "Reports relative ease and learning separately.",
+    "unsupported_extension": "An innate talent established independently of recollection.",
+    "question_routes": [
+      "M07"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "X05.external_recognition",
+    "fictional_answer": "People sometimes ask me to work out the route.",
+    "narrow_supported_reading": "Reports requests from other people.",
+    "unsupported_extension": "Objective expertise or a need to wait for recognition.",
+    "question_routes": [
+      "M08"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "X06.preserved_value",
+    "fictional_answer": "I might keep the old planning app because its simplicity and offline use matter more to me than shared reminders.",
+    "narrow_supported_reading": "Names a concrete incumbent value worth preserving in the specified trade-off.",
+    "unsupported_extension": "Resistance to novelty in general.",
+    "question_routes": [
+      "M09"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "X06.change_condition",
+    "fictional_answer": "I would switch if shared reminders solved a real problem and the migration/complexity cost felt worth it.",
+    "narrow_supported_reading": "Names a concrete condition under which the specified trade-off favors change.",
+    "unsupported_extension": "Actual switching behavior or disregard for tradition.",
+    "question_routes": [
+      "M09"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "X07.fleeting_or_repeating",
+    "fictional_answer": "The tight feeling is brief; it does not keep repeating while I think.",
+    "narrow_supported_reading": "Reports within-choice time course.",
+    "unsupported_extension": "Cross-choice consistency or reliable guidance.",
+    "question_routes": [
+      "M10"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "X08.offer_and_leverage",
+    "fictional_answer": "I would say that I am contributing several hours of organising and cooking, so I think them buying the ingredients is a fair split.",
+    "narrow_supported_reading": "Reports how the respondent explains a concretely motivated exchange.",
+    "unsupported_extension": "Business skill, manipulation, successful persuasion, or a general fairness ideology.",
+    "question_routes": [
+      "M11"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  },
+  {
+    "facet_id": "X08.preferred_use",
+    "fictional_answer": "I enjoy negotiating an arrangement when both of us gain something.",
+    "narrow_supported_reading": "Reports an inclination in value exchange.",
+    "unsupported_extension": "Unlimited appetite for selling or the same inclination in every disagreement.",
+    "question_routes": [
+      "PREFER-INFLUENCE"
+    ],
+    "review_type": "same-context semantic judgment; not automated extraction"
+  }
+]
