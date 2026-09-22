@@ -2,7 +2,7 @@
 
 ## Result
 
-**HISTORICAL SAME-CONTEXT PASS ONLY.** This audit did not establish fresh-pilot readiness. A later mechanically blinded Stage-1 review of commit `57cc884f11a6b8203b8860c77e84f01de250a193` found two semantic blockers, both now repaired on the review-repair branch and awaiting blind rereview.
+**CURRENT ASSURANCE: READY_FOR_FRESH_PILOT.** A sixth mechanically firewalled fresh-context semantic review of reviewed survey commit `1d79a4d6f620f59699ff9a0c21e6441d7cd8017f` found zero blockers and `semantic_change_required=false`. Earlier same-context and failed blind reviews remain historical evidence of defects that were repaired.
 
 This is a same-context design audit, not independent human validation or AstroHD validity evidence.
 
@@ -54,11 +54,11 @@ Broad words such as “manageable” or “reasonably well” remain only where 
 
 ## Remaining assurance debt
 
-- Five mechanically blinded fresh-context reviews have run. Each returned `NOT_READY_FOR_FRESH_PILOT` on the then-current candidate; all confirmed blockers from all five rounds are repaired, and the newest repaired bytes still require another blind rereview.
+- Six mechanically blinded fresh-context review rounds have run. The first five returned `NOT_READY_FOR_FRESH_PILOT` and drove repairs; the sixth returned `READY_FOR_FRESH_PILOT` with zero blockers and `semantic_change_required=false`.
 - No new multi-respondent human pilot has been run on v7.
 - No app/runtime interviewer implements v7 yet.
 - No psychometric reliability, validity, completion-time, or target-theory recovery claim is made.
 
 ## Recommended next step
 
-Run a new mechanically blinded Stage-1 semantic review on the repaired candidate bytes. Advance to a fresh respondent pilot only if that rereview is ready. Do not resume the completed owner pilot merely to test unanswered fields; that would confound redesign validation with repeated exposure.
+Run one fresh respondent pilot using the reviewed survey bytes and the saved fresh-pilot launch packet. Do not resume the completed owner pilot merely to test unanswered fields; that would confound validation with repeated exposure.

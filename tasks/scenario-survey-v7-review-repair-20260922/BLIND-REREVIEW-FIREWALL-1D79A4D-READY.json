@@ -1,0 +1,30 @@
+{
+  "schema": "scenario-survey-blind-review-firewall-v1",
+  "reviewed_candidate_commit": "1d79a4d6f620f59699ff9a0c21e6441d7cd8017f",
+  "review_model": "gpt-5.6-sol",
+  "reasoning_effort": "xhigh",
+  "verdict": "READY_FOR_FRESH_PILOT",
+  "semantic_change_required": false,
+  "canonical_route_count": 79,
+  "source_facet_count": 73,
+  "route_facet_pair_count": 81,
+  "disclosed_files": [
+    "tasks/ACTIVE-TASK.json",
+    "tasks/scenario-graph-convergence-20260919/source/source-requirements-v2.json",
+    "tasks/scenario-survey-v7-redesign-20260922/interviewer-bank-v7.json",
+    "tasks/scenario-survey-v7-redesign-20260922/INTERVIEW-PROTOCOL-v6.md",
+    "tasks/scenario-survey-v7-redesign-20260922/EVIDENCE-GUIDE-v7.json"
+  ],
+  "withheld_classes": [
+    "private participant material",
+    "birth/chart data, mappings, fit scores, predictions",
+    "all prior review findings and reconciliations",
+    "producer rationale, repair history, audits and verification verdicts"
+  ],
+  "artifact_sha256": {
+    "tasks/scenario-survey-v7-redesign-20260922/EVIDENCE-GUIDE-v7.json": "f87916dfdf6c6616e7787057b870fbda60858a42747763bb9a044d225cd4729c",
+    "tasks/scenario-survey-v7-redesign-20260922/INTERVIEW-PROTOCOL-v6.md": "b5b148303e6db77af5c5ab137d208bdd3d8b4f785142fe479d51cb7ee9c26248",
+    "tasks/scenario-survey-v7-redesign-20260922/interviewer-bank-v7.json": "b853e91bad73328f87cf1e11e584261f1a41c1ef0c926afe4d3c0bd3c3fedf0e",
+    "tasks/scenario-graph-convergence-20260919/source/source-requirements-v2.json": "ed12dd2d9ba7bb4c204730c591fd1542ef9fa9434559756a3ffcf4f4efb479a5"
+  }
+}
