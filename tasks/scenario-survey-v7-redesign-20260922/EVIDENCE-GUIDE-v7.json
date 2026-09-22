@@ -366,9 +366,9 @@
   },
   {
     "facet_id": "D14.prolonged_overload",
-    "fictional_answer": "By the end of four weeks of the same computer work at ten hours a day, six days a week, I'd expect much lower energy.",
-    "narrow_supported_reading": "Reports anticipated energy under the prolonged version of the same matched work modality and ordinary conditions.",
-    "unsupported_extension": "A universal work limit or response under different work, sleep, illness, heat, or physical-load conditions.",
+    "fictional_answer": "After four weeks of the same computer work at eight and a half hours a day, six days a week, with one full day off each week, I'd still have fairly good energy.",
+    "narrow_supported_reading": "Reports anticipated energy at the end of the fourth week's sixth workday under the specified sustained schedule with an explicit weekly full day off.",
+    "unsupported_extension": "A universal work limit, inevitable fatigue, or response under different work, sleep, illness, heat, physical-load, or recovery conditions.",
     "question_routes": [
       "R08"
     ],
@@ -478,9 +478,9 @@
   },
   {
     "facet_id": "D19.status_ownership",
-    "fictional_answer": "Genuine admiration feels good to me even when it creates no new opportunity; owning a tool matters for separate practical or social reasons.",
-    "narrow_supported_reading": "Separates intrinsic recognition value from ownership/control motives.",
-    "unsupported_extension": "Ambition, insecurity, narcissism, dominance, or a single motive shared by recognition and ownership.",
+    "fictional_answer": "Genuine admiration feels good to me; with an otherwise equivalent reliably available private laptop, owning it might matter for permanence or control rather than access.",
+    "narrow_supported_reading": "Separates intrinsic recognition value from answer-originated ownership motives in a concrete access-equivalent laptop scenario.",
+    "unsupported_extension": "Ambition, insecurity, narcissism, dominance, or ownership value caused by availability, privacy, software access, or cost differences that the scene explicitly removes.",
     "question_routes": [
       "STATUS",
       "OWNERSHIP"
@@ -641,9 +641,9 @@
   },
   {
     "facet_id": "X03.will_vs_available_energy",
-    "fictional_answer": "I would still intend to finish, but if unusual tiredness made me keep making mistakes I'd pause and tell them.",
-    "narrow_supported_reading": "Separates continued intention from execution when available energy is lowered while task/time/competing obligations stay matched.",
-    "unsupported_extension": "That the person always keeps promises, or that resting means reduced commitment.",
+    "fictional_answer": "When I'm unusually tired and making mistakes, I still want to keep the promise, but I may decide not to finish it right then.",
+    "narrow_supported_reading": "Reports whether lower available energy changes the respondent's intention to finish the same bounded promise.",
+    "unsupported_extension": "Execution, actual follow-through, physical capacity, or continued intention supplied by the prompt.",
     "question_routes": [
       "M04"
     ],
@@ -652,8 +652,8 @@
   {
     "facet_id": "X04.cue_form",
     "fictional_answer": "On a route I know, a turn the driver normally never takes would make me wonder what changed.",
-    "narrow_supported_reading": "Reports a familiarity-dependent deviation cue.",
-    "unsupported_extension": "A pre-rational warning, danger, or accurate detection of a problem.",
+    "narrow_supported_reading": "Reports what meaning the respondent assigns to a presented familiarity-dependent route deviation.",
+    "unsupported_extension": "That the respondent independently detected a cue before it was presented, or that the deviation signals danger, intuition, or actual error.",
     "question_routes": [
       "M05"
     ],

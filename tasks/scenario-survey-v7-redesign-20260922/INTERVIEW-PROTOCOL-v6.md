@@ -41,9 +41,13 @@ Do not hide the respondent’s motive inside the premise. If a proposal could re
 
 Do not credit a rationale, value, comparison, or leverage point merely because the stimulus supplied it. When the construct is how a respondent frames or negotiates something, credit only answer-originated selection, wording, concession, objection handling, or trade-off.
 
+Do not stipulate the very intention, preference, trust, value, or other respondent state that a route is meant to measure. A premise may hold external conditions constant, but the target internal state must remain answer-originated.
+
 Do not ask respondents to name virtues of an unspecified incumbent system. Either supply a concrete old/new trade-off or use a real familiar system they identify.
 
 For workload questions, specify enough of task type, duration, breaks, sleep/recovery, and environmental load to avoid making heat, illness, physical exertion, or time-on-task silent confounds.
+
+For multi-day or multi-week workload routes, state what happens on nonwork days and whether any longer recovery period occurs. Do not leave weekly rest/recovery to respondent invention, and avoid workloads whose ordinary answer is so forced that the route loses discrimination.
 
 For a matched variant, hold every material non-target determinant constant across the compared scenes. If intensity or duration is the intended change, keep task modality, environment, sleep/food assumptions, and other answer-determining conditions fixed unless another change is explicitly part of the construct.
 
@@ -98,5 +102,7 @@ Developmental reports can include approximate life periods if volunteered, but d
 Stop when no remaining route is both admissible and expected to add a useful nonredundant distinction. Do not continue to fill coverage.
 
 A natural stop means the current behavior-only interview is saturated under this bank; it does not mean the person is fully described, AstroHD is recovered, or the survey is validated.
+
+Exploratory questions stay outside canonical routing and evidence credit unless a separate mapping review explicitly authorizes them. They must not reopen a naturally stopped canonical interview merely to create coverage.
 
 On resumption, recover the exact private transcript and last state. Do not ask successful questions again unless a correction or genuinely new contrast requires it.

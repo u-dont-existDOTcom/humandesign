@@ -57,7 +57,7 @@ expect={
 'M06':['do not know well','do not know the normal route'],
 'M09':['simple, familiar, works offline','shared reminders','more complex'],
 'R07':['same mentally demanding computer work','ten hours each day instead of six','before a longer rest'],
-'R08':['four weeks','ten hours a day','six days a week'],
+'R08':['four weeks','eight and a half hours a day','six days a week','one full day with no work obligations'],
 'R10':['internal disagreements','attempts to sort out the disagreements'],
 'STATUS':['genuinely admire','rewarding to you in itself'],
 'ROMANCE-FADE':['Apart from losing the things you already said help closeness']
@@ -82,6 +82,12 @@ check('G25_reason_supplied', 'they forgot and did not message beforehand' in by[
 check('M03_bounded_feasible_task', all(x in by['M03']['question'] for x in ['thirty minutes','an hour','normally rested','nothing else urgent']), by['M03']['question'])
 check('M04_energy_only_variant', 'same thirty-minute meal preparation' in by['M04']['question'] and 'unusually tired' in by['M04']['question'], by['M04']['question'])
 check('G20_normalized_amount', 'one month of your ordinary living costs' in by['G20']['question'], by['G20']['question'])
+
+check('M04_no_stipulated_intention', 'still intend to finish' not in by['M04']['question'].lower() and 'what, if anything, would that tiredness change about your intention' in by['M04']['question'].lower(), by['M04']['question'])
+check('R08_explicit_recovery', all(x in by['R08']['question'] for x in ['eight and a half hours a day','one full day with no work obligations','no additional vacation or recovery period']), by['R08']['question'])
+check('OWNERSHIP_concrete_access_equivalent', all(x in by['OWNERSHIP']['question'] for x in ['laptop owned by someone you trust','reliably available','files stay private','costs you nothing']), by['OWNERSHIP']['question'])
+check('exploratory_separate_block', all('separately labeled exploratory block' in q['admission'] for q in bank.get('exploratory_questions',[])))
+
 check('PHYSICAL_partial_scope', by['PHYSICAL-CLOSENESS'].get('target_scope')=={'D12.sensuality':'physical_affection_only'}, str(by['PHYSICAL-CLOSENESS'].get('target_scope')))
 check('PREFER_target_by_antecedent', by['PREFER-INFLUENCE'].get('target_by_antecedent')=={'F0':'D05.preferred_use','G05':'D05.preferred_use','M11':'X08.preferred_use'}, str(by['PREFER-INFLUENCE'].get('target_by_antecedent')))
 
@@ -97,7 +103,7 @@ if explore:
     check('exploratory_unmapped', ex.get('mapping_status')=='unmapped_neutral_candidate')
     check('exploratory_no_credit', ex.get('automatic_evidence_credit') is False)
 
-for phrase in ['ask only the missing piece','premise sufficiency','Inverse wording is not independent corroboration','Stop when no remaining route is both admissible','A brief, fleeting, or inconsistent reaction is still an eligible antecedent','Do not credit a rationale, value, comparison, or leverage point merely because the stimulus supplied it','For a matched variant, hold every material non-target determinant constant','must itself elicit a comparison across at least two matched contexts','For promise/follow-through scenes, specify a bounded feasible remaining task','For resource-purpose scenes, normalize the amount','record the antecedent-to-target mapping explicitly','mark that partial scope in route metadata']:
+for phrase in ['ask only the missing piece','premise sufficiency','Inverse wording is not independent corroboration','Stop when no remaining route is both admissible','A brief, fleeting, or inconsistent reaction is still an eligible antecedent','Do not credit a rationale, value, comparison, or leverage point merely because the stimulus supplied it','Do not stipulate the very intention, preference, trust, value, or other respondent state that a route is meant to measure','For a matched variant, hold every material non-target determinant constant','must itself elicit a comparison across at least two matched contexts','For promise/follow-through scenes, specify a bounded feasible remaining task','For resource-purpose scenes, normalize the amount','For multi-day or multi-week workload routes, state what happens on nonwork days','record the antecedent-to-target mapping explicitly','mark that partial scope in route metadata','Exploratory questions stay outside canonical routing and evidence credit']:
     check('protocol:'+phrase, phrase.lower() in protocol.lower())
 
 ev=json.loads((HERE/'EVIDENCE-GUIDE-v7.json').read_text())
@@ -115,6 +121,14 @@ x03=[x for x in ev if x['facet_id']=='X03.follow_through'][0]
 check('X03_bounded_followthrough_guide', 'bounded, feasible promise' in x03['narrow_supported_reading'], x03['narrow_supported_reading'])
 d19=[x for x in ev if x['facet_id']=='D19.resources_purpose'][0]
 check('D19_normalized_amount_guide', 'one month of ordinary living costs' in d19['narrow_supported_reading'], d19['narrow_supported_reading'])
+
+x03e=[x for x in ev if x['facet_id']=='X03.will_vs_available_energy'][0]
+check('X03_answer_originated_intention', 'answer-originated' not in x03e['narrow_supported_reading'] or 'Reports whether lower available energy changes the respondent' in x03e['narrow_supported_reading'], x03e['narrow_supported_reading'])
+d14p=[x for x in ev if x['facet_id']=='D14.prolonged_overload'][0]
+check('D14_explicit_weekly_day_off', 'explicit weekly full day off' in d14p['narrow_supported_reading'], d14p['narrow_supported_reading'])
+x04c=[x for x in ev if x['facet_id']=='X04.cue_form'][0]
+check('X04_presented_deviation_semantics', 'presented familiarity-dependent route deviation' in x04c['narrow_supported_reading'], x04c['narrow_supported_reading'])
+
 d12=[x for x in ev if x['facet_id']=='D12.sensuality'][0]
 check('D12_partial_affection_guide', 'partial coverage limited to physical-affection' in d12['narrow_supported_reading'], d12['narrow_supported_reading'])
 d05p=[x for x in ev if x['facet_id']=='D05.preferred_use'][0]

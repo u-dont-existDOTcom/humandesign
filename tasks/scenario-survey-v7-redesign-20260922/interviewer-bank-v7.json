@@ -641,13 +641,13 @@
     {
       "id": "M04",
       "revision": "scenario-bank-v7.0-20260922",
-      "question": "Return to that same thirty-minute meal preparation, with the same available hour and no competing obligation. In this version you still intend to finish, but you are unusually tired and start making mistakes. What would you usually do?",
+      "question": "Return to that same thirty-minute meal preparation, with the same available hour and no competing obligation. In this version you are unusually tired and start making mistakes. What, if anything, would that tiredness change about your intention to finish what you agreed to do?",
       "kind": "matched_variant",
       "planning_targets": [
         "X03.will_vs_available_energy"
       ],
-      "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: M03 supplied the bounded baseline task; introduce unusual tiredness as the changed premise while holding task, time available, and competing obligations constant.",
-      "interpretation_limit": "Use the same bounded meal-preparation task as M03 and vary available energy only. Continued intention is stipulated in the variant and must not be back-filled into M03. Stopping, pausing, renegotiating, asking for help, or continuing are all admissible.",
+      "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: M03 supplied the bounded baseline task; introduce unusual tiredness as the changed premise while holding task, time available, and competing obligations constant. The respondent's intention under low energy remains useful and unanswered.",
+      "interpretation_limit": "Use the same bounded meal-preparation task as M03 and vary available energy only. Credit only the respondent's answer-originated change or non-change in intention. Do not infer execution, capacity, or actual follow-through unless separately reported.",
       "family": "promise",
       "context_sources": [
         "M03"
@@ -881,13 +881,13 @@
     {
       "id": "R08",
       "revision": "scenario-bank-v7.0-20260922",
-      "question": "Keep that same mentally demanding computer work and the same ordinary room, food, sleep, and short-break conditions. For four weeks, you work about ten hours a day, six days a week, without any longer recovery period during those four weeks. What would your energy usually be like by the end of the fourth week?",
+      "question": "Keep that same mentally demanding computer work and the same ordinary room, food, sleep, and short-break conditions. For four weeks, you work about eight and a half hours a day, six days a week. Each week includes one full day with no work obligations, which you can use normally for rest or ordinary personal activities, and there is no additional vacation or recovery period. At the end of the sixth workday of the fourth week, what would your energy usually be like?",
       "kind": "matched_variant",
       "planning_targets": [
         "D14.prolonged_overload"
       ],
-      "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: Introduce the changed premise as a hypothetical variant, not as something the person did. Do not repeat an already supplied comparison.",
-      "interpretation_limit": "Compare with G15 using the same work modality and ordinary conditions; duration and sustained workload are the intended changes. Do not infer a universal work limit or response under different task, sleep, illness, heat, or physical-load conditions.",
+      "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: G15 established the matched six-hour baseline; prolonged-load response remains useful and unanswered. Keep task modality, room, food, sleep, short-break pattern, and the explicit weekly full day off constant while increasing sustained weekly workload.",
+      "interpretation_limit": "Compare with G15 using the same work modality and ordinary conditions. The sustained schedule is eight and a half hours per workday for six days each week, with one explicit full day off and no extra recovery period. This is a moderate prolonged-load probe intended to permit materially different energy trajectories; do not infer a universal work limit or response under different conditions.",
       "family": "work_energy",
       "context_sources": [
         "G15"
@@ -1434,13 +1434,13 @@
     {
       "id": "OWNERSHIP",
       "revision": "scenario-bank-v7.0-20260922",
-      "question": "Suppose a tool you find useful is reliably available whenever you need it, but it belongs to someone else. What, if anything, would make owning it yourself matter?",
+      "question": "Suppose you regularly use a laptop owned by someone you trust. It is reliably available whenever you need it, you can install the software you need, your files stay private, and using it costs you nothing. What, if anything, would make owning an otherwise equivalent laptop yourself matter?",
       "kind": "optional_probe",
       "planning_targets": [
         "D19.status_ownership"
       ],
-      "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: Ownership motivation remains unknown; record practical concerns rather than treating them as status motives.",
-      "interpretation_limit": "State reliable access so availability is not the main missing premise. Control, legal restrictions or security concerns are still valid assumptions to record, not personality labels.",
+      "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: Ownership motivation remains useful and unanswered; use the concrete laptop scenario so availability, software access, privacy, and cost are not hidden determinants.",
+      "interpretation_limit": "The laptop's reliable access, software permission, privacy, and zero-use-cost are premises. Credit only answer-originated ownership motives such as control, identity, security, convenience, status, permanence, or no added value. Do not treat the premise itself as a status motive.",
       "family": "resources",
       "context_sources": [
         "G20"
@@ -1586,7 +1586,7 @@
       "mapping_status": "unmapped_neutral_candidate",
       "planning_targets": [],
       "automatic_evidence_credit": false,
-      "admission": "Ask only in a separately labeled exploratory block; never use it to fill a canonical AstroHD facet until mapping review authorizes one.",
+      "admission": "Ask only in a separately labeled exploratory block after canonical interviewing is complete or naturally stopped. Never use it to fill a canonical AstroHD facet, planning target, stopping decision, or evidence credit until a separate mapping review authorizes one.",
       "interpretation_limit": "Retain only the rule for resolving this specific cross-person sensory disagreement. Do not infer objective mold, superior perception, gullibility, health anxiety, or population rarity."
     }
   ]
