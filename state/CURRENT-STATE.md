@@ -1,13 +1,13 @@
 # Current state — scenario survey v7 blind-review repair
 
-Four mechanically blinded semantic review rounds have now found and driven repairs.
+Five mechanically blinded semantic review rounds have found and driven repairs.
 
-The latest reviewed candidate, `73c52eef27b8a1af4bc17b0ea33563cdf137592a`, was **NOT_READY_FOR_FRESH_PILOT** because M04 stipulated continued intention while claiming evidence about will versus available energy, and R08 left weekly recovery ambiguous while using a near-forced extreme workload.
+The latest reviewed candidate, `dcede6bd5c7644cdbf7c689bc7bbc72ee7b9d8e6`, was **NOT_READY_FOR_FRESH_PILOT** with one blocker: M06 removed route familiarity but introduced an undefined “unexpected turn,” allowing a respondent to invent a replacement cue.
 
-Both blockers are repaired. M04 now asks only the answer-originated change/non-change in intention under unusual tiredness. R08 now uses a less extreme four-week schedule with an explicit weekly full day off and no additional recovery period. Nonblocking semantic cleanup was also applied to M05 cue wording, a concrete access-equivalent OWNERSHIP scenario, and exploratory-item protocol isolation.
+The reconciled repair asks directly for the respondent's familiarity threshold instead. Three nonblocking improvements were also incorporated: F0 now varies familiarity within the same relationship type, M11 specifies a two-person friend meal, and the overloaded PREFER-INFLUENCE route is split into PREFER-PERSUADE and PREFER-EXCHANGE.
 
-The repaired candidate passes 483 / 483 deterministic checks.
+The bank now has **79 canonical routes**, still covers all **73 source facets**, has **81/81 exact route–facet mappings**, and passes **490 / 490** deterministic checks. The exploratory sensory-conflict item remains separate and unmapped.
 
-Read `tasks/ACTIVE-TASK.json`, then `tasks/scenario-survey-v7-review-repair-20260922/ACTIVE-CONTRACT.json`, `BLIND-REREVIEW-73C52EE-20260922.md`, and `BLIND-REREVIEW-73C52EE-RECONCILIATION.md`.
+Read `tasks/ACTIVE-TASK.json`, then `tasks/scenario-survey-v7-review-repair-20260922/ACTIVE-CONTRACT.json`, `BLIND-REREVIEW-DCEDE6B-20260922.md`, and `BLIND-REREVIEW-DCEDE6B-RECONCILIATION.md`.
 
-Current boundary: commit the repaired bytes and run another mechanically blinded fresh-context semantic review. No deployment, inference wake, recruitment, chart scoring, or private-answer publication is authorized.
+Current boundary: commit the reconciled bytes and run another mechanically blinded fresh-context semantic review. No deployment, inference wake, recruitment, chart scoring, or private-answer publication is authorized.

@@ -92,18 +92,18 @@
   {
     "facet_id": "D05.preferred_use",
     "fictional_answer": "Even when I could make the case, I usually prefer not to spend time persuading.",
-    "narrow_supported_reading": "Reports inclination to persuade in the exact F0/G05 persuasion context bound to PREFER-INFLUENCE.",
-    "unsupported_extension": "Inability to persuade, aversion under different stakes, or preference inferred from an M11 value-exchange answer.",
+    "narrow_supported_reading": "Reports inclination to keep persuading in the exact F0/G05 persuasion context.",
+    "unsupported_extension": "Persuasive ability or success, value-exchange preference, or inclination under different stakes.",
     "question_routes": [
-      "PREFER-INFLUENCE"
+      "PREFER-PERSUADE"
     ],
     "review_type": "same-context semantic judgment; not automated extraction"
   },
   {
     "facet_id": "D05.audience_adaptation",
-    "fictional_answer": "With close friends I'd say directly that the place is too noisy for me; with new coworkers I'd explain the hearing problem and suggest a quieter nearby option.",
-    "narrow_supported_reading": "Reports how the same preference is framed similarly or differently across two specified audiences.",
-    "unsupported_extension": "Persuasive success, manipulation, global social skill, or adaptation outside the matched audience comparison.",
+    "fictional_answer": "With friends I've known for years I'd be very direct; with newer friends I'd explain the noise issue a bit more before suggesting somewhere quieter.",
+    "narrow_supported_reading": "Reports how the same preference is framed similarly or differently across long-known versus newly-known friends.",
+    "unsupported_extension": "Persuasive success, manipulation, global social skill, or adaptation across different relationship/institutional roles.",
     "question_routes": [
       "F0"
     ],
@@ -661,9 +661,9 @@
   },
   {
     "facet_id": "X04.context_and_limits",
-    "fictional_answer": "On an unfamiliar route, a surprising turn would not tell me much because I do not know what is normal there.",
-    "narrow_supported_reading": "When paired with M05, describes how the meaning assigned to a route-deviation cue changes when route familiarity is absent.",
-    "unsupported_extension": "Reduced reliance, concern, danger, or actual performance unless the paired answers explicitly support those claims.",
+    "fictional_answer": "I'd need to know the route well enough to recognize its normal pattern before a different turn would mean much to me.",
+    "narrow_supported_reading": "Reports the respondent's self-described familiarity boundary for when a route-pattern deviation carries meaning.",
+    "unsupported_extension": "Danger, concern, actual unfamiliar-route behavior, accuracy, or transfer from maps, directions, geography, or another cue.",
     "question_routes": [
       "M06"
     ],
@@ -721,8 +721,8 @@
   },
   {
     "facet_id": "X08.offer_and_leverage",
-    "fictional_answer": "I'd ask what amount feels manageable, explain what I am contributing through organising and cooking, and see whether a different split works for both of us.",
-    "narrow_supported_reading": "Reports the respondent's own response to a concrete objection within a proposed value exchange.",
+    "fictional_answer": "I'd ask what amount feels manageable for my friend, explain what I am contributing through organising and cooking, and see whether a different split works for both of us.",
+    "narrow_supported_reading": "Reports the respondent's own response to a concrete cost objection in the specified two-person friend meal exchange.",
     "unsupported_extension": "The stimulus-supplied proposal or cooking time as respondent evidence; business skill, manipulation, general fairness ideology, or successful persuasion.",
     "question_routes": [
       "M11"
@@ -732,10 +732,10 @@
   {
     "facet_id": "X08.preferred_use",
     "fictional_answer": "I enjoy negotiating an arrangement when both of us gain something.",
-    "narrow_supported_reading": "Reports inclination to negotiate/persuade in the exact M11 value-exchange context bound to PREFER-INFLUENCE.",
-    "unsupported_extension": "Unlimited appetite for selling, general persuasion preference, or credit from F0/G05 contexts.",
+    "narrow_supported_reading": "Reports inclination to keep negotiating in the exact M11 value-exchange context.",
+    "unsupported_extension": "General persuasion preference, selling appetite, successful negotiation, or preference in unrelated disagreements.",
     "question_routes": [
-      "PREFER-INFLUENCE"
+      "PREFER-EXCHANGE"
     ],
     "review_type": "same-context semantic judgment; not automated extraction"
   }

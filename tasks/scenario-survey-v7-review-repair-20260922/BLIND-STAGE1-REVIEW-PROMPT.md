@@ -17,7 +17,7 @@ Do NOT open `REDESIGN-RATIONALE.md`, `REDESIGN-AUDIT.md`, `VERIFICATION.json`, `
 
 Goal: judge whether the literal v7 bank/protocol/evidence guide is semantically ready to expose to a fresh respondent. Do not judge whether AstroHD is true.
 
-Audit all 78 canonical routes, not a sample. For every route check: premise sufficiency; one response task; construct discrimination/information gain; hidden assumptions; redundancy/mirror risk that can be inferred from the bank itself; antecedent admission; context binding; scoped interpretation; compatibility with the source-requirements facet; and whether the protocol can suppress the route when its prerequisites are absent.
+Audit every canonical route declared by interviewer-bank-v7.json node_count (currently 79), not a sample. For every route check: premise sufficiency; one response task; construct discrimination/information gain; hidden assumptions; redundancy/mirror risk that can be inferred from the bank itself; antecedent admission; context binding; scoped interpretation; compatibility with the source-requirements facet; and whether the protocol can suppress the route when its prerequisites are absent.
 
 Also inspect the exploratory question only to confirm it is structurally isolated from canonical evidence credit; do not infer a mapping for it.
 

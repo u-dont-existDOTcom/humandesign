@@ -17,7 +17,7 @@ This is a behavior-only survey redesign. It does not use chart/birth cues, does 
 
 ## Canonical bank changes
 
-v7 has 78 canonical nodes, down from 79. `C0` was retired because it had no planning target and the live pilot showed no reason to ask it merely as an extra scene.
+v7 has 79 canonical nodes, down from 79. `C0` was retired because it had no planning target and the live pilot showed no reason to ask it merely as an extra scene.
 
 Known live-failure repairs are incorporated directly into the candidate:
 

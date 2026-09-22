@@ -54,7 +54,7 @@ expect={
 'WORKING-METHOD':['six awkward steps'],
 'D0':['one short phrase','ten-second phrase','no test or deadline'],
 'M05':['route you know well','normally never uses'],
-'M06':['do not know well','do not know the normal route'],
+'M06':['what would you need to already know about a route','turn away from its usual path would carry any meaning'],
 'M09':['simple, familiar, works offline','shared reminders','more complex'],
 'R07':['same mentally demanding computer work','ten hours each day instead of six','before a longer rest'],
 'R08':['four weeks','eight and a half hours a day','six days a week','one full day with no work obligations'],
@@ -66,11 +66,12 @@ for i,needles in expect.items():
     for n in needles:
         check(f"repair_text:{i}:{n}", n in by[i]['question'], by[i]['question'])
 
-check('M06_guard', 'direct constraints' in by['M06']['admission'] and 'direct hazards' in by['M06']['admission'])
-check('M06_same_interpretation_task', 'What would you make of that?' in by['M06']['question'] and 'concern' not in by['M06']['question'].lower(), by['M06']['question'])
-check('M06_no_assumed_reduced_reliance', 'Do not assume concern or reduced reliance' in by['M06']['interpretation_limit'], by['M06']['interpretation_limit'])
+check('M06_guard', all(x in by['M06']['admission'] for x in ['familiarity boundary','Do not introduce a second cue','map','directions','hazard']), by['M06']['admission'])
+check('M06_direct_familiarity_boundary', all(x in by['M06']['question'] for x in ['what would you need to already know about a route','before a turn away from its usual path would carry any meaning']), by['M06']['question'])
+check('M06_no_unexplained_expectation', 'did not expect' not in by['M06']['question'].lower() and 'surpris' not in by['M06']['question'].lower(), by['M06']['question'])
+check('M06_no_replacement_cue', all(x in by['M06']['interpretation_limit'] for x in ['familiarity threshold','Do not infer danger','actual unfamiliar-route behavior','knowledge of the route']), by['M06']['interpretation_limit'])
 
-check('F0_matched_audiences', 'close friends' in by['F0']['question'] and 'new coworkers' in by['F0']['question'] and 'differently' in by['F0']['question'], by['F0']['question'])
+check('F0_matched_audiences', all(x in by['F0']['question'] for x in ['friends you have known for years','friends you have known for only a few weeks','differently']), by['F0']['question'])
 check('M11_concrete_objection', 'paying for all the ingredients feels like too much' in by['M11']['question'] and 'fair split' not in by['M11']['question'], by['M11']['question'])
 check('G15_fixed_modality', 'six hours of mentally demanding computer work' in by['G15']['question'], by['G15']['question'])
 check('R07_same_modality', 'Keep that same mentally demanding computer work' in by['R07']['question'] and 'ten hours each day instead of six' in by['R07']['question'], by['R07']['question'])
@@ -89,7 +90,8 @@ check('OWNERSHIP_concrete_access_equivalent', all(x in by['OWNERSHIP']['question
 check('exploratory_separate_block', all('separately labeled exploratory block' in q['admission'] for q in bank.get('exploratory_questions',[])))
 
 check('PHYSICAL_partial_scope', by['PHYSICAL-CLOSENESS'].get('target_scope')=={'D12.sensuality':'physical_affection_only'}, str(by['PHYSICAL-CLOSENESS'].get('target_scope')))
-check('PREFER_target_by_antecedent', by['PREFER-INFLUENCE'].get('target_by_antecedent')=={'F0':'D05.preferred_use','G05':'D05.preferred_use','M11':'X08.preferred_use'}, str(by['PREFER-INFLUENCE'].get('target_by_antecedent')))
+check('PREFER_split_routes', 'PREFER-INFLUENCE' not in by and by['PREFER-PERSUADE']['planning_targets']==['D05.preferred_use'] and by['PREFER-EXCHANGE']['planning_targets']==['X08.preferred_use'])
+check('PREFER_split_contexts', by['PREFER-PERSUADE']['context_sources']==['F0','G05'] and by['PREFER-EXCHANGE']['context_sources']==['M11'])
 
 check('explicit_context_requirements', all(by[i].get('context_requirement') for i in ['CARE-RESPONSIBILITY','CARE-LIMIT','ROMANCE-FADE']))
 
@@ -103,7 +105,7 @@ if explore:
     check('exploratory_unmapped', ex.get('mapping_status')=='unmapped_neutral_candidate')
     check('exploratory_no_credit', ex.get('automatic_evidence_credit') is False)
 
-for phrase in ['ask only the missing piece','premise sufficiency','Inverse wording is not independent corroboration','Stop when no remaining route is both admissible','A brief, fleeting, or inconsistent reaction is still an eligible antecedent','Do not credit a rationale, value, comparison, or leverage point merely because the stimulus supplied it','Do not stipulate the very intention, preference, trust, value, or other respondent state that a route is meant to measure','For a matched variant, hold every material non-target determinant constant','must itself elicit a comparison across at least two matched contexts','For promise/follow-through scenes, specify a bounded feasible remaining task','For resource-purpose scenes, normalize the amount','For multi-day or multi-week workload routes, state what happens on nonwork days','record the antecedent-to-target mapping explicitly','mark that partial scope in route metadata','Exploratory questions stay outside canonical routing and evidence credit']:
+for phrase in ['ask only the missing piece','premise sufficiency','Inverse wording is not independent corroboration','Stop when no remaining route is both admissible','A brief, fleeting, or inconsistent reaction is still an eligible antecedent','Do not credit a rationale, value, comparison, or leverage point merely because the stimulus supplied it','Do not stipulate the very intention, preference, trust, value, or other respondent state that a route is meant to measure','For a matched variant, hold every material non-target determinant constant','must itself elicit a comparison across at least two matched contexts','For promise/follow-through scenes, specify a bounded feasible remaining task','For resource-purpose scenes, normalize the amount','For multi-day or multi-week workload routes, state what happens on nonwork days','record the antecedent-to-target mapping explicitly','mark that partial scope in route metadata','Exploratory questions stay outside canonical routing and evidence credit','When a matched or transfer probe removes the information source that made an earlier cue meaningful']:
     check('protocol:'+phrase, phrase.lower() in protocol.lower())
 
 ev=json.loads((HERE/'EVIDENCE-GUIDE-v7.json').read_text())
@@ -114,8 +116,9 @@ for x in ev:
     check(f"evidence_routes:{x['facet_id']}", bool(x.get('question_routes')) and all(r in idset for r in x.get('question_routes',[])), str(x.get('question_routes')))
 check('no_evidence_route_to_retired_C0', all('C0' not in x.get('question_routes',[]) for x in ev))
 x04=[x for x in ev if x['facet_id']=='X04.context_and_limits'][0]
-check('X04_paired_interpretation', 'When paired with M05' in x04['narrow_supported_reading'], x04['narrow_supported_reading'])
-check('X04_no_unearned_reduced_reliance', 'Reduced reliance' in x04['unsupported_extension'], x04['unsupported_extension'])
+check('X04_boundary_interpretation', 'self-described familiarity boundary' in x04['narrow_supported_reading'], x04['narrow_supported_reading'])
+check('X04_clean_boundary_guide', 'route-pattern deviation carries meaning' in x04['narrow_supported_reading'], x04['narrow_supported_reading'])
+check('X04_no_unearned_transfer', all(x in x04['unsupported_extension'].lower() for x in ['danger','actual unfamiliar-route behavior','maps','directions','geography']), x04['unsupported_extension'])
 
 x03=[x for x in ev if x['facet_id']=='X03.follow_through'][0]
 check('X03_bounded_followthrough_guide', 'bounded, feasible promise' in x03['narrow_supported_reading'], x03['narrow_supported_reading'])
@@ -133,7 +136,7 @@ d12=[x for x in ev if x['facet_id']=='D12.sensuality'][0]
 check('D12_partial_affection_guide', 'partial coverage limited to physical-affection' in d12['narrow_supported_reading'], d12['narrow_supported_reading'])
 d05p=[x for x in ev if x['facet_id']=='D05.preferred_use'][0]
 x08p=[x for x in ev if x['facet_id']=='X08.preferred_use'][0]
-check('PREFER_context_scoped_guides', 'F0/G05' in d05p['narrow_supported_reading'] and 'M11' in x08p['narrow_supported_reading'])
+check('PREFER_context_scoped_guides', d05p['question_routes']==['PREFER-PERSUADE'] and x08p['question_routes']==['PREFER-EXCHANGE'] and 'F0/G05' in d05p['narrow_supported_reading'] and 'M11' in x08p['narrow_supported_reading'])
 
 
 print(json.dumps({'ok':not errors,'errors':errors,'checks':len(checks),'passed':sum(1 for _,ok,_ in checks if ok)},indent=2))

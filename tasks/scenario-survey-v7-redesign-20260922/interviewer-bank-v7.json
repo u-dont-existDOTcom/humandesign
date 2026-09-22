@@ -2,7 +2,7 @@
   "version": "scenario-bank-v7.0-20260922",
   "status": "Live-pilot redesign candidate; text-only; no application implementation or validity claim",
   "intro": "Imagine yourself as you usually are in situations like these. Tell me what you would probably do, feel, or notice rather than the ideal answer. Conditions that change your answer are useful data. You do not need to invent missing facts: if a premise is too vague, say what is missing. You can change a scene that does not fit, skip a question, or stop. A remembered example is welcome, not required.",
-  "node_count": 78,
+  "node_count": 79,
   "required_question_count": null,
   "families": {
     "friend_company": [
@@ -21,10 +21,11 @@
     "persuasion": [
       "F0",
       "G05",
-      "PREFER-INFLUENCE"
+      "PREFER-PERSUADE"
     ],
     "value_exchange": [
-      "M11"
+      "M11",
+      "PREFER-EXCHANGE"
     ],
     "group_entry": [
       "G06",
@@ -194,13 +195,13 @@
     {
       "id": "F0",
       "revision": "scenario-bank-v7.0-20260922",
-      "question": "The same noisy meeting place is suggested in two otherwise identical situations, and nothing has been booked. In one, you are deciding with three close friends; in the other, with three new coworkers you barely know. You would prefer somewhere quieter in both. What, if anything, would you say differently between the two groups?",
+      "question": "The same noisy meeting place is suggested in two otherwise identical situations, and nothing has been booked. In one, you are deciding with three friends you have known for years; in the other, with three friends you have known for only a few weeks. You would prefer somewhere quieter in both. What, if anything, would you say differently between the two groups?",
       "kind": "scene",
       "planning_targets": [
         "D05.audience_adaptation"
       ],
-      "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: A matched audience comparison is useful and unanswered; the respondent can knowingly imagine both groups. Keep the preference and practical stakes constant while changing only audience familiarity.",
-      "interpretation_limit": "Credit only an answer-originated difference or stated lack of difference in how the same preference is framed to the two specified audiences. Do not infer persuasive success, manipulation, social skill, or adaptation outside this comparison.",
+      "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: A matched audience-familiarity comparison is useful and unanswered; the respondent can knowingly imagine both groups. Keep relationship type, group size, preference, and practical stakes constant while changing familiarity duration.",
+      "interpretation_limit": "Credit only an answer-originated difference or stated lack of difference in how the same preference is framed to long-known versus newly-known friends. Do not infer persuasive success, manipulation, global social skill, or adaptation outside this familiarity comparison.",
       "family": "persuasion",
       "context_sources": [],
       "context_requirement": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
@@ -226,13 +227,13 @@
     {
       "id": "M11",
       "revision": "scenario-bank-v7.0-20260922",
-      "question": "You offer to organise and cook a shared meal, which will take several hours, and ask the other person to buy the ingredients. They say, “I'd like to do the meal, but paying for all the ingredients feels like too much for me.” What would you say next?",
+      "question": "You and a friend are planning a meal for just the two of you. You offer to organise and cook it, which will take several hours, and ask your friend to buy the ingredients. They say, “I'd like to do the meal, but paying for all the ingredients feels like too much for me.” What would you say next?",
       "kind": "scene",
       "planning_targets": [
         "X08.offer_and_leverage"
       ],
-      "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: A concrete value-exchange response remains useful and unanswered; the respondent can knowingly imagine the stated proposal and the other person's concrete cost objection.",
-      "interpretation_limit": "The proposal, cooking time, and listener objection are stimulus premises, not respondent evidence. Credit only the respondent's answer-originated way of responding: for example clarifying, reframing contributions, asking about budget, renegotiating, changing the split, or withdrawing the proposal. Do not score sales ability, manipulation, fairness ideology, or likely success.",
+      "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: A concrete value-exchange response remains useful and unanswered; the respondent can knowingly imagine the two-person friend meal, stated proposal, and concrete cost objection.",
+      "interpretation_limit": "The friendship, two-person meal, proposal, cooking time, and listener objection are stimulus premises, not respondent evidence. Credit only the respondent's answer-originated response: clarifying, reframing contributions, asking about budget, renegotiating, changing the split, or withdrawing the proposal. Do not score sales ability, manipulation, fairness ideology, or likely success.",
       "family": "value_exchange",
       "context_sources": [],
       "context_requirement": "Self-contained starting scene or report cue; no prior participant answer is required. Apply usefulness, applicability, privacy and pause rules. Any topic-related context links are advisory, not prerequisites.",
@@ -570,13 +571,13 @@
     {
       "id": "M06",
       "revision": "scenario-bank-v7.0-20260922",
-      "question": "Now imagine you are travelling somewhere you do not know well and the driver makes a turn you did not expect, but you do not know the normal route. What would you make of that?",
+      "question": "Thinking about the familiar-route turn you just considered: what would you need to already know about a route before a turn away from its usual path would carry any meaning for you?",
       "kind": "conditional_followup",
       "planning_targets": [
         "X04.context_and_limits"
       ],
-      "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: M05 produced a familiarity-based interpretation whose transfer limit remains useful and unanswered. Ask the same interpretation task with route familiarity removed. Do not use direct constraints or direct hazards as the antecedent.",
-      "interpretation_limit": "This tests how the meaning assigned to a route deviation changes when route familiarity is absent. Checking, uncertainty, benign interpretation, or suspicion are all admissible. Do not assume concern or reduced reliance; any familiarity contrast requires the paired M05 and M06 answers.",
+      "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: M05 produced an answer about the meaning of a familiar-route deviation; the familiarity boundary for that meaning remains useful and unanswered. Do not introduce a second cue, surprise source, map, directions, or hazard.",
+      "interpretation_limit": "Credit only the respondent's answer-originated familiarity threshold or conditions under which a route deviation would or would not carry meaning. Do not infer danger, concern, actual unfamiliar-route behavior, accuracy, or transfer from any cue other than knowledge of the route's usual pattern.",
       "family": "risk_cues",
       "context_sources": [
         "M05"
@@ -1126,30 +1127,41 @@
       "automatic_evidence_credit": false
     },
     {
-      "id": "PREFER-INFLUENCE",
+      "id": "PREFER-PERSUADE",
       "revision": "scenario-bank-v7.0-20260922",
-      "question": "In the kind of discussion you just described, how much do you usually want to try to persuade the other person?",
+      "question": "In the persuasion discussion you just described, how much do you usually want to keep trying to persuade the other person?",
       "kind": "optional_probe",
       "planning_targets": [
-        "D05.preferred_use",
-        "X08.preferred_use"
+        "D05.preferred_use"
       ],
-      "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: A specific F0, G05, or M11 antecedent is bound; desire to use persuasion/negotiation in that exact context remains unknown. Credit D05.preferred_use only after F0/G05 and X08.preferred_use only after M11.",
-      "interpretation_limit": "Ask inclination under the exact bound antecedent's stakes. Do not transfer a persuasion-context answer into value exchange or a value-exchange answer into general persuasion preference.",
+      "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: A specific F0 or G05 persuasion antecedent is bound; desire to use persuasion in that exact context remains useful and unanswered.",
+      "interpretation_limit": "Credit only inclination to keep persuading under the exact bound F0/G05 stakes. Do not infer persuasive ability, success, value-exchange preference, or preference under different stakes.",
       "family": "persuasion",
       "context_sources": [
         "F0",
-        "G05",
+        "G05"
+      ],
+      "context_requirement": "one actual matching antecedent; bind the rendered wording to that antecedent",
+      "context_binding_rule": "Bind to one exact F0 or G05 answer and re-name the specific persuasion discussion when nonadjacent.",
+      "automatic_evidence_credit": false
+    },
+    {
+      "id": "PREFER-EXCHANGE",
+      "revision": "scenario-bank-v7.0-20260922",
+      "question": "In that meal-cost discussion, how much do you usually want to keep negotiating toward an arrangement you and your friend can both accept?",
+      "kind": "optional_probe",
+      "planning_targets": [
+        "X08.preferred_use"
+      ],
+      "admission": "INTERVIEW-PROTOCOL-v6.md global admission AND: M11 is bound; desire to continue negotiating in that exact value-exchange context remains useful and unanswered.",
+      "interpretation_limit": "Credit only inclination to keep negotiating in the bound M11 exchange. Do not infer general persuasion preference, selling appetite, success, or preference in unrelated disagreements.",
+      "family": "value_exchange",
+      "context_sources": [
         "M11"
       ],
-      "context_requirement": "one actual matching antecedent; a claimed comparison requires both scoped answers",
-      "context_binding_rule": "Bind to one exact presented scenario and its actual answer. Re-name the scene or repeat its conditions when nonadjacent. IDs alone are not semantic evidence.",
-      "automatic_evidence_credit": false,
-      "target_by_antecedent": {
-        "F0": "D05.preferred_use",
-        "G05": "D05.preferred_use",
-        "M11": "X08.preferred_use"
-      }
+      "context_requirement": "one actual matching antecedent; M11 must be the bound source",
+      "context_binding_rule": "Bind to the exact M11 meal-cost exchange and re-name it when nonadjacent.",
+      "automatic_evidence_credit": false
     },
     {
       "id": "OUTREACH",

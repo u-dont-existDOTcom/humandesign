@@ -44,3 +44,13 @@ A fourth mechanically firewalled GPT-5.6 Sol xhigh review of commit `73c52eef27b
 Both are repaired. M04 now measures answer-originated intention change under tiredness, and R08 now uses a moderate sustained schedule with one explicit full day off each week. Verification passes 483 / 483 checks.
 
 Another blind review of the exact repaired commit is required before fresh-pilot readiness.
+
+## Fifth blind rereview
+
+A fifth mechanically firewalled GPT-5.6 Sol xhigh review of commit `dcede6bd5c7644cdbf7c689bc7bbc72ee7b9d8e6` returned `NOT_READY_FOR_FRESH_PILOT` with one blocker: M06 removed route familiarity but retained an unexplained “unexpected turn.”
+
+The reconciled repair asks the respondent directly for the familiarity threshold at which a route deviation would carry meaning, without introducing a replacement cue. F0 was tightened to compare long-known versus newly-known friends, M11 now specifies a two-person friend meal, and the overloaded preference probe was split into separate persuasion and value-exchange routes.
+
+The candidate now has 79 canonical routes, 73 source facets, 81 exact route–facet pairs, and 490 / 490 passing deterministic checks.
+
+Another blind review of the exact reconciled commit is required before fresh-pilot readiness.

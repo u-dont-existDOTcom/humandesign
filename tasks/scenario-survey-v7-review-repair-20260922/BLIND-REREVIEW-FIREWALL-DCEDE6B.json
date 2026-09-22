@@ -1,0 +1,27 @@
+{
+  "schema": "scenario-survey-blind-review-firewall-v1",
+  "reviewed_candidate_commit": "dcede6bd5c7644cdbf7c689bc7bbc72ee7b9d8e6",
+  "review_model": "gpt-5.6-sol",
+  "reasoning_effort": "xhigh",
+  "verdict": "NOT_READY_FOR_FRESH_PILOT",
+  "semantic_change_required": true,
+  "disclosed_files": [
+    "tasks/ACTIVE-TASK.json",
+    "tasks/scenario-graph-convergence-20260919/source/source-requirements-v2.json",
+    "tasks/scenario-survey-v7-redesign-20260922/interviewer-bank-v7.json",
+    "tasks/scenario-survey-v7-redesign-20260922/INTERVIEW-PROTOCOL-v6.md",
+    "tasks/scenario-survey-v7-redesign-20260922/EVIDENCE-GUIDE-v7.json"
+  ],
+  "withheld_classes": [
+    "private participant material",
+    "birth/chart data, mappings, fit scores, predictions",
+    "all prior review findings and reconciliations",
+    "producer rationale, repair history, audits and verification verdicts"
+  ],
+  "artifact_sha256": {
+    "tasks/scenario-graph-convergence-20260919/source/source-requirements-v2.json": "ed12dd2d9ba7bb4c204730c591fd1542ef9fa9434559756a3ffcf4f4efb479a5",
+    "tasks/scenario-survey-v7-redesign-20260922/interviewer-bank-v7.json": "603ac20bb054f67779dd753b70a07ea4f9810f009e9751ef892df877655154b6",
+    "tasks/scenario-survey-v7-redesign-20260922/INTERVIEW-PROTOCOL-v6.md": "b4cc152132d2b2e16670740335668d9284a61152f374b10bbcc6ea46d1296b70",
+    "tasks/scenario-survey-v7-redesign-20260922/EVIDENCE-GUIDE-v7.json": "4268c786188017cc4579c245d9e8ad76849dc193de7b9ef85cfc0281190be755"
+  }
+}
