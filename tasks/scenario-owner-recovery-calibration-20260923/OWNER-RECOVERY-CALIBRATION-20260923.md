@@ -41,13 +41,18 @@ Before opening the historical AstroHD crosswalk, a fresh gap-planning context ma
 
 If additional answers are collected, append them privately, create a new immutable measurement freeze/version, and repeat Stage A. Do not silently mutate v1.
 
-## Stage C — post-freeze historical mapping
+## Stage C — post-freeze dual-family mapping
 
-Only after the final neutral profile is frozen may a separate target-aware process receive the historical owner crosswalk. It maps supported neutral evidence into the historical score-bearing behavioral constructs without viewing the true birth tuple or previous candidate rankings.
+Only after the final neutral profile is frozen may a separate target-aware process receive the historical owner crosswalk. From the **same frozen neutral measurement**, derive two separate score-input profiles:
 
-Mappings/confidences/scoring inputs are frozen and hashed before search/reveal.
+1. the historical V1.1 merged HD + Western cluster inputs;
+2. the clean V4.3/NetInformation behavioral observables, excluding the candidate-exposed carrier refinements from the primary comparison.
 
-## Stage D — recovery test
+The existing crosswalk covers 19 neutral domains for the V1.1 merged family and 16 for the clean V4.3 information family; all of those domains are present in the current 31-domain neutral survey contract. No additional survey domain is therefore required merely to support both scorer families.
+
+Freeze and hash both translated profiles before opening either birth-search result. Do not tune one translated profile after seeing the other scorer's result.
+
+## Stage D — dual recovery test
 
 Primary legacy regression gate is the pre-existing `astrohd-v1.1-v3.6-century-hourly-plus-leading-minute-refinement` owner benchmark:
 
@@ -68,7 +73,7 @@ A separate current V4.3-style diagnostic may also be run, but its status must be
 - the freeze preserves those historical before/after results and their contamination status; it does **not** make V4.3 the final model or prohibit improvement;
 - any mapping/weight change learned from this owner case must be a new explicit post-ranking model version/revision. The owner may be used as development data for that revision, but the same owner result cannot then be claimed as independent confirmation of it.
 
-After the v7-calibrated neutral profile is frozen, V4.3 diagnostics may be rerun if the implementation is available. A miss by the cleaner pre-selection variant alone is not evidence that the survey failed, because that variant already had a known owner rank-2 model miss before this survey calibration.
+After the v7-calibrated neutral profile and both translated score-input profiles are frozen, run both scorer families separately. V1.1 uses its historical merged search procedure; the primary V4.3 comparison uses the clean candidate-unexposed NetInformation variant over its declared exact-state universe. Report the birth neighborhoods recovered by each. The candidate-exposed carrier variant may be reported only as a separately labeled descriptive diagnostic. A clean V4.3 miss alone is not evidence that the survey failed, because that scorer already had a known owner miss before this survey calibration; disagreement between the two frozen scorers is a model/scoring diagnostic.
 
 ## Decision rule
 
