@@ -65,7 +65,8 @@ No birth-recovery result has been claimed from the incomplete profile.
 - `D0` / `D22.repetition_value`: **sufficient** for this specific pronunciation practice; repetition is valued while it is producing improvement and helping avoid habituating an inferior pronunciation.
 - `G20` / `D19.resources_purpose`: **sufficient** for the normalized one-month extra-money amount; multiple intended functions are preserved without a fabricated rank order.
 - `G01` / `D01.approach`: **closed unassessed**; the participant would seek explanation from another person or AI, which is useful behavior but does not establish personally organizing the messages by topic.
-- private working measurement: **75 answers**.
-- next target-blind material route: narrow `G03` follow-up / `D03.return_pattern`.
+- `G03` / `D03.return_pattern`: **sufficient** after the narrow follow-up established that the unresolved question returns after full refocus.
+- private working measurement: **76 answers**.
+- next target-blind material route: narrow `G21` follow-up / `D21.ordinary_rhythm`.
 
 Raw responses and participant-specific coding remain outside Git.
