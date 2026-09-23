@@ -34,3 +34,14 @@ The **survey-instantiated clean V4.3 / NetInformation** run is complete and froz
 The **historical V1.1 merged HD + Western** side remains **TECHNICALLY UNRESOLVED** under its predeclared reproduction gate. The one-off scanner and normative Western feature-predicate semantics could not be recovered from Git, old workspaces/sessions, workflow history, conversation retrieval, or Library search. The surviving model/output artifacts recover the evidence algebra and 25% HD/Western merge, but do not uniquely determine the century-wide Western predicates/orb/angle rules. An approximate reconstruction is therefore not permitted to score the frozen new V1.1 translation. See `tasks/scenario-owner-recovery-calibration-20260923/V11-RECONSTRUCTION-BOUNDARY-20260923.md`.
 
 Current calibration outcome: **V4.3 diagnostic completed; V1.1 primary legacy gate technically unresolved, not failed and not passed.** No further participant questions are justified by this pass.
+
+
+## Opus 5.5 remap diagnostic — 2026-09-23
+
+A post-result development remap was run with exact `claude-opus-5-5` at max effort from an isolated packet containing the frozen neutral profile and the same 19 clean V4.3 observable semantics, while withholding the prior GPT translation, birth/chart information, and all candidate/rank results. Its scorer-input profile was frozen before rerun at SHA-256 `f93c331c748f6faaa7c252b2b12cad517cff088bf87c4dd64f11e2f3e78b669b`.
+
+Opus instantiated 27 candidate-unexposed mappings versus GPT v1's 19. The best recorded-local-date interval improved from rank **#872 to #204**, but the rank-1 interval remained 2013-01-28/29. Crucially, the 2013 winner and best 1985-date interval each gained exactly `+1.097241` NetInformation bits, leaving their gap unchanged at `1.664636` bits. The exact recorded-moment interval worsened from #1562 to #1943. Result SHA-256: `4b081b8e57deaa9d02fb6ac1c558b4d8e5bc64d7329d99b9e0daadc2255c88f1`.
+
+Interpretation: GPT v1 translation was materially conservative, but remapping quality alone does not explain the persistent 2013-vs-1985 mismatch inside the frozen 19-observable V4.3 architecture. See `tasks/scenario-owner-recovery-calibration-20260923/OPUS55-V43-REMAP-V2-RESULT-20260923.md`.
+
+A direct Codex CLI smoke test of `gpt-5.6-pro` failed with provider HTTP 400: that model is not supported through Codex when authenticated with a ChatGPT account. Do not substitute a Sol model and call it a Pro pass.

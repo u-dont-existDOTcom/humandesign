@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "scenario-owner-recovery-calibration-20260923",
-  "status": "post_result_opus55_v43_remap_v2_translation_frozen_search_pending",
+  "status": "opus55_v43_remap_v2_completed_pro_cli_unavailable",
   "requiredBranch": "chat/scenario-owner-recovery-calibration-20260923",
   "exclusive": true,
   "ownerOutcome": "Verify that the completed/repaired scenario survey can preserve enough behavior-only information to instantiate both the historical V1.1 merged HD+Western owner-recovery inputs and the clean V4.3/NetInformation behavioral inputs, then run each scoring family separately over its declared search procedure and compare which birth neighborhoods each recovers without target leakage.",
@@ -11,7 +11,7 @@
   "measurementFreezeSha256": "6f49806cc086ba41d23d31882b6ccc218cef78f94d7599830f5a9a2b994737ba",
   "measurementAnswerCount": 79,
   "method": "tasks/scenario-owner-recovery-calibration-20260923/OWNER-RECOVERY-CALIBRATION-20260923.md",
-  "nextAction": "Run the committed clean survey-instantiated V4.3 scorer once using the frozen Opus 5.5 scorer-input profile SHA f93c331c... Do not alter any Opus judgment after candidate ranking is generated. Compare v2 to the already-frozen GPT v1 result as post-result development evidence.",
+  "nextAction": "Preserve the Opus-v2 result without retuning. A genuine GPT-5.6 Pro CLI pass was attempted but the Codex provider returned a hard 400 that gpt-5.6-pro is unsupported with ChatGPT-account auth. If a fresh Pro-model UI/other authorized surface is available, use it only as another result-blind remap diagnostic; do not rerun the century scorer unless its frozen map materially differs from Opus/GPT v1.",
   "runtimeBoundary": "Raw answers and participant-specific coding remain private. Birth/chart/model/rank information must not be supplied to neutral follow-up selection/coding. Do not score the incomplete v1 profile and call a miss or hit a survey result.",
   "neutralCoderAOutputSha256": "538402a5d5f64ad4b75f08ba86943aab9d99d3011e14b040547032783966aa35",
   "neutralCoderBOutputSha256": "84be173203360e9d2370612ec492ae6dcec2bedd05540ced6f72ce7d4eec3e5c",
@@ -74,7 +74,7 @@
     "v43ResultReceipt": "tasks/scenario-owner-recovery-calibration-20260923/V43-SURVEY-CROSSWALK-RESULT-20260923.md",
     "v11ReconstructionReceipt": "tasks/scenario-owner-recovery-calibration-20260923/V11-RECONSTRUCTION-BOUNDARY-20260923.md",
     "opus55V43RemapV2": {
-      "status": "OPUS_TRANSLATION_FROZEN_BEFORE_V2_SEARCH",
+      "status": "COMPLETED",
       "classification": "POST_RESULT_DEVELOPMENT_EXPERIMENT",
       "model": "claude-opus-5-5",
       "priorTranslationWithheld": true,
@@ -117,17 +117,33 @@
         "RESOURCE_SOVEREIGNTY"
       ],
       "priorV43V1ResultStillFrozen": true,
-      "v2SearchOpened": false
+      "v2SearchOpened": false,
+      "scorerResultSha256": "4b081b8e57deaa9d02fb6ac1c558b4d8e5bc64d7329d99b9e0daadc2255c88f1",
+      "topIntervalStartUtc": "2013-01-28T07:59:21.282340Z",
+      "topIntervalEndUtc": "2013-01-29T03:11:29.192601Z",
+      "topRank": 1,
+      "topNetInformation": 5.280159,
+      "bestRecordedLocalDateRank": 204,
+      "bestRecordedLocalDateNetInformation": 3.615523,
+      "recordedMomentIntervalRank": 1943,
+      "recordedMomentNetInformation": 2.834018,
+      "v1BestDateRank": 872,
+      "v1RecordedMomentRank": 1562,
+      "v1WinnerGapBits": 1.664636,
+      "v2WinnerGapBits": 1.664636,
+      "bestDateAndWinnerEqualNetGainBits": 1.097241,
+      "noRetuneAfterReveal": true,
+      "resultReceipt": "tasks/scenario-owner-recovery-calibration-20260923/OPUS55-V43-REMAP-V2-RESULT-20260923.md"
     }
   },
   "dualScorerObjectiveRecord": "tasks/scenario-owner-recovery-calibration-20260923/DUAL-SCORER-CALIBRATION-OBJECTIVE-20260923.md",
   "stopAdmission": {
-    "parentOutcome": "OPEN_POST_RESULT_DEVELOPMENT_EXPERIMENT",
-    "remainingGap": "The Opus 5.5 remap has completed and its 19-row scorer input is frozen before candidate search. The authorized v2 V4.3 rerun remains executable.",
-    "nextAction": "Assistant runs the single frozen Opus-v2 V4.3 search and records the comparison without retuning.",
+    "parentOutcome": "PARTIALLY_SATISFIED_WITH_OPTIONAL_PRO_CHECK",
+    "remainingGap": "Opus 5.5 max completed and showed mapping quality matters for rank density but does not reduce the 2013-vs-best-1985 NetInformation gap. A separate GPT Pro remap is optional corroboration, not required to establish this result.",
+    "nextAction": "Assistant may use a genuinely available result-blind GPT Pro surface if accessible without fabricating model identity; otherwise stop at the evidenced model-access boundary.",
     "responsibleActor": "assistant",
-    "currentAuthority": "owner-requested Opus 5.5 remapping experiment; prior calibration and v2 translation are immutable for this run",
-    "executableBoundary": "No owner-only input required; rerun is executable."
+    "currentAuthority": "owner-requested bounded high-end remapping experiment; frozen v1/v2 results non-overwritable",
+    "executableBoundary": "Codex CLI explicitly rejects gpt-5.6-pro with ChatGPT-account authentication; do not substitute Sol and label it Pro."
   },
   "privateWorkingAnswerCount": 79,
   "currentFollowupState": "natural_stop_measurement_v2_frozen",
