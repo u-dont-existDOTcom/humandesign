@@ -45,6 +45,8 @@ Do not open the participant to target-aware adaptive questioning. Additional que
 
 The first target-blind repaired route selected for remeasurement is v7 `F0`, a matched audience-familiarity comparison. Its exact question was privately frozen before response. `F0` is a replacement measurement for a material repaired gap, not a generic decision to keep interviewing because some domain remains partial. Do not require exhaustive 73-facet completion; stop when remaining neutral gaps cannot materially change the declared recovery test.
 
+The first F0 response is now privately preserved in the working measurement (69 answers total). A fresh target-blind incremental coder did **not** force-fit that response to the intended F0 facet and found one narrow missing piece remains. The raw response, participant-specific finding, and coding output remain outside Git.
+
 After sufficient additional neutral measurements are collected:
 1. create a new immutable private measurement freeze;
 2. rerun independent neutral coding;
