@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "scenario-owner-recovery-calibration-20260923",
-  "status": "target_blind_neutral_calibration_in_progress",
+  "status": "target_blind_calibration_followups_in_progress",
   "requiredBranch": "chat/scenario-owner-recovery-calibration-20260923",
   "exclusive": true,
   "ownerOutcome": "Verify that the completed scenario-survey measurement can recover the owner birth target under the pre-existing development regression without target leakage.",
@@ -11,6 +11,17 @@
   "measurementFreezeSha256": "7a6398de3c591e7dd8cc907b90c7312171452e6c13624a96e3f01826d6944863",
   "measurementAnswerCount": 68,
   "method": "tasks/scenario-owner-recovery-calibration-20260923/OWNER-RECOVERY-CALIBRATION-20260923.md",
-  "nextAction": "Finish two independent target-blind neutral coding passes, adjudicate material disagreements, and decide target-blind whether additional repaired v7 questions are required before opening the historical AstroHD crosswalk.",
-  "runtimeBoundary": "Raw answers and participant-specific coding remain private. Do not expose birth/chart/candidate rankings to neutral coders or gap planners. Do not tune the same frozen test after reveal and relabel it independent."
+  "nextAction": "Collect the privately pre-frozen target-blind F0 v7 follow-up answer, then continue only with repaired neutral questions that add material information. After follow-ups, freeze measurement v2 and recode before any target-aware birth scoring.",
+  "runtimeBoundary": "Raw answers and participant-specific coding remain private. Birth/chart/model/rank information must not be supplied to neutral follow-up selection/coding. Do not score the incomplete v1 profile and call a miss or hit a survey result.",
+  "neutralCoderAOutputSha256": "538402a5d5f64ad4b75f08ba86943aab9d99d3011e14b040547032783966aa35",
+  "neutralCoderBOutputSha256": "84be173203360e9d2370612ec492ae6dcec2bedd05540ced6f72ce7d4eec3e5c",
+  "neutralCalibrationAggregate": {
+    "fullyCoveredDomains": 9,
+    "partiallyCoveredDomains": 19,
+    "uncoveredDomains": 3,
+    "domainCount": 31,
+    "facetStatusDisagreements": 13
+  },
+  "checkpoint": "tasks/scenario-owner-recovery-calibration-20260923/NEUTRAL-CALIBRATION-CHECKPOINT-20260923.md",
+  "currentFollowupRoute": "F0"
 }
