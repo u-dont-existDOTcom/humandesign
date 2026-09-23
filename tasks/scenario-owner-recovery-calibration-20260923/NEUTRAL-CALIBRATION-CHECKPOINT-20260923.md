@@ -104,3 +104,16 @@ Frozen final neutral profile:
 No participant-specific findings or raw answers are stored in Git. This closes Stage B and admits the post-freeze target-aware dual-translation stage.
 
 The question-admission repair is also strengthened to seven checks: context binding, premise sufficiency, discrimination, nonredundancy, construct alignment, single response task, and expected information gain. Focused verifier: **497 / 497 PASS**.
+
+## Post-freeze scorer translations
+
+Both scorer-input translations were derived from the same frozen target-blind neutral profile and frozen before either new candidate ranking was opened.
+
+- final neutral profile SHA-256: `7dc6333e42510c0fad145c2a90a6385051b20637b82da30281f6bc80361320a7`;
+- V1.1 merged translation SHA-256: `4211b1ee3941b1dabf5aba3677386cda1a68837a11ebbaa6ac618040f9ac5aa2` (19 rows);
+- clean V4.3/NetInformation translation SHA-256: `310a0aea90400d1adf97b935ac370e58fb4c5f99ca5f4df56a8a8072fe42b0f3` (19 rows);
+- translated profile contents remain private/outside Git; only hashes/counts/method are public.
+
+The survey-instantiated V4.3 adapter excludes non-crosswalk historical behavioral clusters and post-selection carriers, treats historical CoreFit as constant/unavailable, and does not let historical core-field changes split score-identical intervals for the duration tie-break.
+
+The original V1.1 one-off scanner has not been recovered from Git history, old local workspaces/sessions, dangling objects, or its August 24 workflow history. Any reconstruction must reproduce the frozen historical result before it may score the new translation.
