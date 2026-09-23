@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "scenario-owner-recovery-calibration-20260923",
-  "status": "dual_scorer_calibration_partial_complete_v43_completed_v11_technically_unresolved",
+  "status": "post_result_opus55_v43_remap_v2_method_frozen",
   "requiredBranch": "chat/scenario-owner-recovery-calibration-20260923",
   "exclusive": true,
   "ownerOutcome": "Verify that the completed/repaired scenario survey can preserve enough behavior-only information to instantiate both the historical V1.1 merged HD+Western owner-recovery inputs and the clean V4.3/NetInformation behavioral inputs, then run each scoring family separately over its declared search procedure and compare which birth neighborhoods each recovers without target leakage.",
@@ -11,7 +11,7 @@
   "measurementFreezeSha256": "6f49806cc086ba41d23d31882b6ccc218cef78f94d7599830f5a9a2b994737ba",
   "measurementAnswerCount": 79,
   "method": "tasks/scenario-owner-recovery-calibration-20260923/OWNER-RECOVERY-CALIBRATION-20260923.md",
-  "nextAction": "Preserve the completed survey-instantiated clean V4.3 result without retuning. The historical V1.1 side remains technically unresolved because exact scanner reproduction cannot be established from surviving feature-predicate semantics. Resume V1.1 scoring only if those predicates/implementation are recovered or a reconstruction independently reproduces the frozen historical benchmark; otherwise no further owner action is required for this pass.",
+  "nextAction": "Run the fresh Claude Opus 5.5 independent V4.3 remap from the isolated private packet. Freeze/hash its 19-row translation before any v2 candidate ranking. Then rerun the already-committed clean survey V4.3 adapter without retuning and compare v1 vs v2 as post-result development evidence.",
   "runtimeBoundary": "Raw answers and participant-specific coding remain private. Birth/chart/model/rank information must not be supplied to neutral follow-up selection/coding. Do not score the incomplete v1 profile and call a miss or hit a survey result.",
   "neutralCoderAOutputSha256": "538402a5d5f64ad4b75f08ba86943aab9d99d3011e14b040547032783966aa35",
   "neutralCoderBOutputSha256": "84be173203360e9d2370612ec492ae6dcec2bedd05540ced6f72ce7d4eec3e5c",
@@ -72,16 +72,27 @@
     "v11NewTranslationScored": false,
     "v11Reason": "Exact historical scorer implementation and normative Western feature predicates were not recovered; surviving score algebra is insufficient to uniquely reproduce century-wide ranking. Predeclared reproduction gate forbids approximation.",
     "v43ResultReceipt": "tasks/scenario-owner-recovery-calibration-20260923/V43-SURVEY-CROSSWALK-RESULT-20260923.md",
-    "v11ReconstructionReceipt": "tasks/scenario-owner-recovery-calibration-20260923/V11-RECONSTRUCTION-BOUNDARY-20260923.md"
+    "v11ReconstructionReceipt": "tasks/scenario-owner-recovery-calibration-20260923/V11-RECONSTRUCTION-BOUNDARY-20260923.md",
+    "opus55V43RemapV2": {
+      "status": "METHOD_FROZEN_BEFORE_OPUS_OUTPUT",
+      "classification": "POST_RESULT_DEVELOPMENT_EXPERIMENT",
+      "model": "claude-opus-5-5",
+      "priorTranslationWithheld": true,
+      "birthChartRankResultsWithheld": true,
+      "observableCount": 19,
+      "privatePacketSha256": "84078b3bd9afc3170b71d34e6ded8fe1743f7646c50755e7befd8abf14947c0c",
+      "method": "tasks/scenario-owner-recovery-calibration-20260923/OPUS55-V43-REMAP-V2-METHOD-20260923.md",
+      "purpose": "Test whether v1 target-aware translation/crosswalk anchoring materially discarded behavior-only information."
+    }
   },
   "dualScorerObjectiveRecord": "tasks/scenario-owner-recovery-calibration-20260923/DUAL-SCORER-CALIBRATION-OBJECTIVE-20260923.md",
   "stopAdmission": {
-    "parentOutcome": "PARTIALLY_SATISFIED_WITH_EVIDENCED_TECHNICAL_BOUNDARY",
-    "remainingGap": "Clean V4.3 has a valid frozen new-survey result. V1.1 cannot be validly scored until the historical implementation/predicate semantics are recovered or an exact independent reproduction succeeds.",
-    "nextAction": "No safe scoring action remains for V1.1 without violating the predeclared reproduction gate. Preserve current receipts and resume only if new implementation evidence becomes available.",
-    "responsibleActor": "assistant if new historical implementation evidence becomes available; no owner response is currently required",
-    "currentAuthority": "dual-family owner recovery calibration authorized; no post-result retuning or approximate legacy pass permitted",
-    "executableBoundary": "The missing V1.1 feature-predicate semantics are not uniquely recoverable from surviving artifacts; further scoring would require inventing or fitting an unverified historical implementation."
+    "parentOutcome": "OPEN_POST_RESULT_DEVELOPMENT_EXPERIMENT",
+    "remainingGap": "Owner requested a stronger independent remapper to diagnose whether translation quality materially caused the poor clean V4.3 recovery.",
+    "nextAction": "Assistant runs Opus 5.5 blind-to-results remap, freezes it, reruns V4.3 once, and compares without retuning.",
+    "responsibleActor": "assistant",
+    "currentAuthority": "owner-requested bounded Claude Opus 5.5 remapping experiment; prior calibration remains frozen and non-overwritable",
+    "executableBoundary": "No owner-only input required; stop after the frozen v2 rerun/comparison or a concrete model/access/spend boundary."
   },
   "privateWorkingAnswerCount": 79,
   "currentFollowupState": "natural_stop_measurement_v2_frozen",
