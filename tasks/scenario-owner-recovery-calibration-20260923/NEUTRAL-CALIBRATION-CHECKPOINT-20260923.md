@@ -66,7 +66,8 @@ No birth-recovery result has been claimed from the incomplete profile.
 - `G20` / `D19.resources_purpose`: **sufficient** for the normalized one-month extra-money amount; multiple intended functions are preserved without a fabricated rank order.
 - `G01` / `D01.approach`: **closed unassessed**; the participant would seek explanation from another person or AI, which is useful behavior but does not establish personally organizing the messages by topic.
 - `G03` / `D03.return_pattern`: **sufficient** after the narrow follow-up established that the unresolved question returns after full refocus.
-- private working measurement: **76 answers**.
-- next target-blind material route: narrow `G21` follow-up / `D21.ordinary_rhythm`.
+- `G21` / `D21.ordinary_rhythm`: **sufficient** after the narrow follow-up established flexible state/need-dependent timing on a free day.
+- private working measurement: **77 answers**.
+- next target-blind material route: narrow `G02` follow-up / `D02.audience_use`.
 
 Raw responses and participant-specific coding remain outside Git.
