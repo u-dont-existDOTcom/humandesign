@@ -32,11 +32,12 @@ The final wording must independently pass all of these checks:
 - **construct discrimination:** at least two materially different plausible answers must exist that would change the scoped description;
 - **nonredundancy:** the answer is not already present or recoverable from prior words;
 - **construct alignment:** the wording actually isolates the intended neutral distinction rather than a broader decision;
-- **single response task:** the rendered question still asks one answerable thing.
+- **single response task:** the rendered question still asks one answerable thing;
+- **expected information gain:** given the existing answer history, the plausible responses are likely to resolve or materially change the scoped description rather than merely restate an obvious feasibility condition, add a weak preference, or make the description slightly nicer.
 
 If any check fails, **do not show the proposed question**. Repair it once using only neutral context; if the repair still does not pass, suppress the route and preserve the facet as partial/unknown/unassessed as appropriate. A missing planning target is not permission to weaken this gate.
 
-Concrete regression: after a respondent has conditionally accepted a fixed group schedule when feasible, do not ask whether “anything else” would affect whether they join the group. Joining can depend on many unspecified factors and the ordinary answer is nearly forced. If a retained work priority remains materially useful, restate the fixed-schedule scene and ask about one specific work-priority contrast; otherwise leave the facet partial and move on.
+Concrete regression: after a respondent has conditionally accepted a fixed group schedule when feasible, do not ask whether “anything else” would affect whether they join the group. Joining can depend on many unspecified factors and the ordinary answer is nearly forced. Even a cleaner question about whether some scheduling choice “would be nice” should be suppressed when the likely result is only a mild preference layered onto an already-known feasibility boundary. If a retained work priority remains materially useful, ask only when plausible answers would materially alter the scoped description; otherwise leave the facet partial and move on.
 
 ## Handling partial, conditional, and critical answers
 

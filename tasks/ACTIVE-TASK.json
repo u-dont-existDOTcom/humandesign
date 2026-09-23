@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
   "taskId": "scenario-owner-recovery-calibration-20260923",
-  "status": "target_blind_calibration_followups_in_progress",
+  "status": "target_aware_dual_translation_in_progress",
   "requiredBranch": "chat/scenario-owner-recovery-calibration-20260923",
   "exclusive": true,
   "ownerOutcome": "Verify that the completed/repaired scenario survey can preserve enough behavior-only information to instantiate both the historical V1.1 merged HD+Western owner-recovery inputs and the clean V4.3/NetInformation behavioral inputs, then run each scoring family separately over its declared search procedure and compare which birth neighborhoods each recovers without target leakage.",
   "assuranceLane": "development_owner_regression",
   "implementationAuthorized": true,
   "privateParticipantTranscriptToGitAuthorized": false,
-  "measurementFreezeSha256": "7a6398de3c591e7dd8cc907b90c7312171452e6c13624a96e3f01826d6944863",
-  "measurementAnswerCount": 68,
+  "measurementFreezeSha256": "6f49806cc086ba41d23d31882b6ccc218cef78f94d7599830f5a9a2b994737ba",
+  "measurementAnswerCount": 79,
   "method": "tasks/scenario-owner-recovery-calibration-20260923/OWNER-RECOVERY-CALIBRATION-20260923.md",
-  "nextAction": "Collect the independently final-admitted repaired G10 question for D10.stable_direction. Do not use the invalid broad join-decision wording. Before every later question, treat planner output as proposal-only and run final admission on the exact rendered wording; suppress any question that fails. Then continue only through materially justified neutral follow-ups, freeze measurement v2, recode/adjudicate, translate the same frozen profile into both scorer families, and run the two birth-recovery searches separately.",
+  "nextAction": "Derive and freeze separate V1.1 merged HD+Western and clean V4.3/NetInformation input profiles from the same frozen target-blind neutral profile before running either birth search. Then reproduce the historical V1.1 benchmark before scoring the new V1.1 translation, run the clean V4.3 search independently, and compare the two recovered neighborhoods without retuning.",
   "runtimeBoundary": "Raw answers and participant-specific coding remain private. Birth/chart/model/rank information must not be supplied to neutral follow-up selection/coding. Do not score the incomplete v1 profile and call a miss or hit a survey result.",
   "neutralCoderAOutputSha256": "538402a5d5f64ad4b75f08ba86943aab9d99d3011e14b040547032783966aa35",
   "neutralCoderBOutputSha256": "84be173203360e9d2370612ec492ae6dcec2bedd05540ced6f72ce7d4eec3e5c",
@@ -23,7 +23,7 @@
     "facetStatusDisagreements": 13
   },
   "checkpoint": "tasks/scenario-owner-recovery-calibration-20260923/NEUTRAL-CALIBRATION-CHECKPOINT-20260923.md",
-  "currentFollowupRoute": "G10",
+  "currentFollowupRoute": null,
   "surveyCompletionSemantics": "The 68-answer pilot was completed, but it is not yet a complete v7-calibrated measurement because v7 replaced several pilot questions that were design-invalidated or construct-mismatched. Follow-ups are targeted replacement measurements, not an exhaustive-completeness requirement.",
   "astroHDV43Status": {
     "cleanCandidateUnexposedWinnerYear": 2013,
@@ -40,7 +40,7 @@
   },
   "astroHDV43Clarification": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V43-FREEZE-CLARIFICATION-20260923.md",
   "dualScorerCalibration": {
-    "status": "OWNER_REQUIRED",
+    "status": "TRANSLATION_PENDING_FROM_FROZEN_NEUTRAL_PROFILE",
     "v11MergedCrosswalkDomainCount": 19,
     "v43CleanNetInformationCrosswalkDomainCount": 16,
     "allCrosswalkDomainsPresentInNeutral31DomainContract": true,
@@ -53,14 +53,14 @@
   "dualScorerObjectiveRecord": "tasks/scenario-owner-recovery-calibration-20260923/DUAL-SCORER-CALIBRATION-OBJECTIVE-20260923.md",
   "stopAdmission": {
     "parentOutcome": "OPEN",
-    "remainingGap": "The prior G10 follow-up was invalidated before answer. A repaired G10 question has passed the new final rendered-question admission gate and still requires the owner behavioral response.",
-    "nextAction": "Owner answers the repaired G10 work-time-autonomy question; assistant preserves/codes it and continues automatically through only materially justified, final-admitted neutral follow-ups, then freezes and dual-scores the profile.",
-    "responsibleActor": "owner for the repaired G10 personal response; assistant for preservation, coding, final-admission checking of subsequent questions, gap selection, freeze, translation, and scoring",
-    "currentAuthority": "dual-family owner recovery calibration authorized; raw participant answers and participant-specific coding remain private/outside Git",
-    "executableBoundary": "The next missing datum is participant-specific behavior; the assistant cannot fabricate it."
+    "remainingGap": "The 79-answer v2 measurement and final target-blind neutral profile are frozen. No further interview question earns a turn. The remaining owner outcome is target-aware dual translation plus independent V1.1 and clean V4.3 recovery scoring.",
+    "nextAction": "Assistant derives and hashes both scorer-specific translations before opening either birth-search result, then executes the scorer-specific recovery procedures and compares them.",
+    "responsibleActor": "assistant",
+    "currentAuthority": "dual-family owner recovery calibration authorized; neutral questioning naturally stopped; target-aware post-freeze mapping and scoring now authorized by the existing calibration method",
+    "executableBoundary": "No owner-only input remains at this stage; continue autonomously."
   },
-  "privateWorkingAnswerCount": 78,
-  "currentFollowupState": "repaired_presented_pending_answer",
+  "privateWorkingAnswerCount": 79,
+  "currentFollowupState": "natural_stop_measurement_v2_frozen",
   "completedCalibrationFollowups": {
     "F0": {
       "facet": "D05.audience_adaptation",
@@ -115,6 +115,12 @@
       "status": "sufficient",
       "method": "fresh target-theory-blind recoding of listener-contingent information selection",
       "privacy": "raw answer and participant-specific coding remain outside Git"
+    },
+    "G10": {
+      "facet": "D10.stable_direction",
+      "status": "partial_closed",
+      "method": "final-admitted repaired wording; fresh target-blind coding retained only a mild scheduling-choice preference and preserved the already-known feasibility boundary",
+      "privacy": "raw answer and participant-specific coding remain outside Git"
     }
   },
   "jevShadowNonProductionRuntime": {
@@ -129,12 +135,44 @@
     "receipt": "tasks/scenario-owner-recovery-calibration-20260923/NONPROD-JEV-SHADOW-RUNTIME-RECEIPT-20260923.md"
   },
   "questionAdmissionRepair": {
-    "status": "ACTIVE",
+    "status": "ACTIVE_VERIFIED_7_CHECK_GATE",
     "trigger": "Owner identified the planner-selected G10 follow-up as ambiguous and nearly tautological.",
     "causalMechanism": "Planner selection was treated as admission; no post-planner gate rechecked the exact rendered wording against context binding, premise sufficiency, discrimination, nonredundancy, construct alignment, and single-task requirements.",
     "invalidatedQuestionCount": 3,
     "currentRepairedQuestion": "For that group whose work interests you, suppose its fixed hours fit your availability and you agree to follow them. How important, if at all, would it still be to you to have a say in choosing your working times for that group?",
-    "finalAdmission": "PASS all six checks in fresh target-blind audit",
-    "receipt": "tasks/scenario-owner-recovery-calibration-20260923/G10-FOLLOWUP-ADMISSION-REPAIR-20260923.md"
+    "finalAdmission": "Planner output is proposal-only; exact rendered wording must pass context binding, premise sufficiency, construct discrimination, nonredundancy, construct alignment, single-response-task, and expected-information-gain checks.",
+    "receipt": "tasks/scenario-owner-recovery-calibration-20260923/G10-FOLLOWUP-ADMISSION-REPAIR-20260923.md",
+    "expectedInformationGainAdded": true,
+    "verification": "verify_v7.py 497/497 PASS",
+    "naturalStopAfterG10": true
+  },
+  "priorMeasurementFreezeV1": {
+    "sha256": "7a6398de3c591e7dd8cc907b90c7312171452e6c13624a96e3f01826d6944863",
+    "participantAnswerCount": 68,
+    "status": "superseded_for_calibration_by_frozen_v2_but_preserved"
+  },
+  "finalNeutralProfile": {
+    "status": "FROZEN_TARGET_BLIND",
+    "measurementFreezeSha256": "6f49806cc086ba41d23d31882b6ccc218cef78f94d7599830f5a9a2b994737ba",
+    "minimalMeasurementSha256": "411c9f8e24017fe412986f9ffeb35e396afc9b1213d86b38860329bb4a39d06b",
+    "profileSha256": "7dc6333e42510c0fad145c2a90a6385051b20637b82da30281f6bc80361320a7",
+    "coderASha256": "c3927ef06198a7208c2cdad7961b6c4690c0c6003d322a24dea18fb4dc158294",
+    "coderBSha256": "b02d36c0c123558cbf26b912c2f0b41ccb43a52f97a38ff8c2ed954d2a3517e0",
+    "adjudicationSha256": "cd8d69b43a0b6be0e208ada7304046ed596eec6a74af61700655a24b4560644d",
+    "facetStatusCounts": {
+      "sufficient": 45,
+      "partial": 12,
+      "unknown": 5,
+      "inapplicable": 8,
+      "unassessed": 3
+    },
+    "domainStatusCounts": {
+      "full": 14,
+      "partial": 12,
+      "uncovered": 5
+    },
+    "facetStatusDisagreementsAdjudicated": 14,
+    "domainStatusDisagreementsAdjudicated": 6,
+    "privacy": "participant-specific profile remains outside Git; only hashes and aggregates are public"
   }
 }

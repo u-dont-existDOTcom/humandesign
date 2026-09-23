@@ -46,3 +46,9 @@ Admitted wording:
 > For that group whose work interests you, suppose its fixed hours fit your availability and you agree to follow them. How important, if at all, would it still be to you to have a say in choosing your working times for that group?
 
 The owner’s process objection is not counted as a survey answer. The private measurement remains at 78 answers until the repaired question is answered or skipped.
+
+## Second-stage finding: low-yield despite formal admission
+
+The final-admitted G10 repair was answerable and construct-aligned, but the actual answer exposed a remaining process weakness: it yielded only a mild preference (having a say would be nice) plus the already-known availability/feasibility condition, which the owner explicitly identified as obvious. Fresh target-blind coding therefore kept `D10.stable_direction` **partial** and required no further G10 probe.
+
+The final-admission contract was strengthened with a seventh check: **expected information gain**. A question now earns a turn only when plausible answers are likely to resolve or materially change the scoped description. Questions expected mainly to restate an obvious condition, add a weak preference, or make the description slightly nicer must be suppressed even if they pass the other six checks.

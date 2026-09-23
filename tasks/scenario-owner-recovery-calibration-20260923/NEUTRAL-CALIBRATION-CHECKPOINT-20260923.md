@@ -80,3 +80,27 @@ The first planner-generated G10 follow-up was **not asked for evidence credit** 
 The generating condition was repaired: planner output is now proposal-only, and the exact rendered question must pass context binding, premise sufficiency, discrimination, nonredundancy, construct alignment, and single-task admission before it may be shown. `verify_v7.py` now mechanically checks that this contract remains present.
 
 Two attempted repairs were also rejected by the new gate. The third wording passed all six checks and is the only active G10 prompt. Private measurement remains **78 answers** because owner process feedback is not participant evidence for the invalid question.
+
+## Final v2 natural stop and neutral-profile freeze
+
+Target-blind questioning stopped naturally after the repaired G10 answer. G10 remained **partial**, and a fresh stop planner found no remaining neutral route with enough expected information gain to justify another owner turn.
+
+Private immutable measurement v2:
+- participant answers: **79**
+- measurement freeze SHA-256: `6f49806cc086ba41d23d31882b6ccc218cef78f94d7599830f5a9a2b994737ba`
+- minimal target-blind packet SHA-256: `411c9f8e24017fe412986f9ffeb35e396afc9b1213d86b38860329bb4a39d06b`
+
+Fresh full-profile neutral coding on that exact packet:
+- coder A SHA-256: `c3927ef06198a7208c2cdad7961b6c4690c0c6003d322a24dea18fb4dc158294`
+- coder B SHA-256: `b02d36c0c123558cbf26b912c2f0b41ccb43a52f97a38ff8c2ed954d2a3517e0`
+- stable disagreements: **14 / 73 facet statuses**, **6 / 31 domain statuses**
+- fresh target-blind adjudication SHA-256: `cd8d69b43a0b6be0e208ada7304046ed596eec6a74af61700655a24b4560644d`
+
+Frozen final neutral profile:
+- SHA-256: `7dc6333e42510c0fad145c2a90a6385051b20637b82da30281f6bc80361320a7`
+- facets: **45 sufficient / 12 partial / 5 unknown / 8 inapplicable / 3 unassessed**
+- domains: **14 full / 12 partial / 5 uncovered**
+
+No participant-specific findings or raw answers are stored in Git. This closes Stage B and admits the post-freeze target-aware dual-translation stage.
+
+The question-admission repair is also strengthened to seven checks: context binding, premise sufficiency, discrimination, nonredundancy, construct alignment, single response task, and expected information gain. Focused verifier: **497 / 497 PASS**.
