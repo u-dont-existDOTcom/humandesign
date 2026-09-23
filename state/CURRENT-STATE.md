@@ -6,7 +6,7 @@ Both neutral coders agree on the domain-level calibration state: **9 / 31 fully 
 
 Therefore the completed owner pilot is **not yet a fully calibrated v7 profile**, largely because several questions that failed during the live pilot were subsequently replaced in v7 and their old answers cannot be credited to the repaired constructs.
 
-A target-blind follow-up lane is active. The first repaired route, v7 `F0`, was privately selected and frozen before response. This is not an arbitrary extension of a finished survey: the 68-answer pilot was complete as the earlier pilot, but several pilot questions were later invalidated/replaced, so the resulting record is not yet complete as a **v7-calibrated measurement**. `F0` is the first repaired replacement measurement for one such material gap. Its first follow-up response has now been preserved privately as answer 69. Fresh target-blind incremental coding found that the intended F0 facet remains unresolved, so only the smallest missing-piece clarification is pending. Birth/chart/model/candidate-ranking information was not supplied to that coding context.
+A target-blind follow-up lane is active. The 68-answer pilot was complete as the earlier pilot, but several pilot questions were later invalidated/replaced, so the resulting record is not yet complete as a **v7-calibrated measurement**. Repaired route `F0` has now been completed with two private replacement/follow-up answers (working measurement: 70 answers total). Fresh target-blind recoding marks `D05.audience_adaptation` **sufficient** and closes F0 without force-fitting broader persuasion claims. The next fresh target-blind material-gap selection is v7 `G17` for `D16.challenge_threshold`. Birth/chart/model/candidate-ranking information was not supplied to either coding or gap selection.
 
 Follow-ups are not required to fill every neutral facet. Ask only repaired questions whose answer can materially change the owner recoverability regression; stop when remaining gaps are non-material.
 
@@ -16,4 +16,6 @@ Owner has now made the recovery objective explicitly **dual-family**: once the r
 
 Read `tasks/ACTIVE-TASK.json`, `tasks/scenario-owner-recovery-calibration-20260923/OWNER-RECOVERY-CALIBRATION-20260923.md`, and `tasks/scenario-owner-recovery-calibration-20260923/NEUTRAL-CALIBRATION-CHECKPOINT-20260923.md`.
 
-Next: collect only material repaired neutral follow-ups, freeze a new private measurement version, recode/adjudicate, and only then run the post-freeze birth-recovery test.
+Next: collect the privately preselected G17 response, continue only through additional materially justified repaired neutral gaps, then freeze measurement v2, recode/adjudicate, translate the same frozen profile into both scorer families, and run the two birth-recovery searches separately.
+
+Non-production Mission Control Jev shadow has also been activated at the owner's request using the existing private OpenRouter credential. The live runtime is healthy; Jev observations are `OK` and explicitly `authoritative=false`; event-chain and submission-authority ledger checks remain valid; the durable `/data` volume and a stopped rollback container are preserved. See the runtime receipt in the active task directory.

@@ -11,7 +11,7 @@
   "measurementFreezeSha256": "7a6398de3c591e7dd8cc907b90c7312171452e6c13624a96e3f01826d6944863",
   "measurementAnswerCount": 68,
   "method": "tasks/scenario-owner-recovery-calibration-20260923/OWNER-RECOVERY-CALIBRATION-20260923.md",
-  "nextAction": "Collect only the narrow missing piece for F0 identified by fresh target-blind incremental coding. Preserve the existing F0 response as separate conditional evidence rather than force-fitting it. Then continue target-blind follow-up selection only if another repaired question can materially affect either scorer-family translation; otherwise freeze measurement v2 and recode.",
+  "nextAction": "Collect the privately preselected target-blind G17 replacement-measurement answer for D16.challenge_threshold. Then continue only if another repaired neutral question can materially affect either the V1.1 merged or clean V4.3/NetInformation translated profile; otherwise freeze measurement v2 and recode.",
   "runtimeBoundary": "Raw answers and participant-specific coding remain private. Birth/chart/model/rank information must not be supplied to neutral follow-up selection/coding. Do not score the incomplete v1 profile and call a miss or hit a survey result.",
   "neutralCoderAOutputSha256": "538402a5d5f64ad4b75f08ba86943aab9d99d3011e14b040547032783966aa35",
   "neutralCoderBOutputSha256": "84be173203360e9d2370612ec492ae6dcec2bedd05540ced6f72ce7d4eec3e5c",
@@ -23,7 +23,7 @@
     "facetStatusDisagreements": 13
   },
   "checkpoint": "tasks/scenario-owner-recovery-calibration-20260923/NEUTRAL-CALIBRATION-CHECKPOINT-20260923.md",
-  "currentFollowupRoute": "F0",
+  "currentFollowupRoute": "G17",
   "surveyCompletionSemantics": "The 68-answer pilot was completed, but it is not yet a complete v7-calibrated measurement because v7 replaced several pilot questions that were design-invalidated or construct-mismatched. Follow-ups are targeted replacement measurements, not an exhaustive-completeness requirement.",
   "astroHDV43Status": {
     "cleanCandidateUnexposedWinnerYear": 2013,
@@ -53,12 +53,31 @@
   "dualScorerObjectiveRecord": "tasks/scenario-owner-recovery-calibration-20260923/DUAL-SCORER-CALIBRATION-OBJECTIVE-20260923.md",
   "stopAdmission": {
     "parentOutcome": "OPEN",
-    "remainingGap": "F0 has one unresolved neutral missing piece after its first replacement response; the dual-family neutral profile is not yet ready to freeze.",
-    "nextAction": "Owner answers the narrow F0 communication-comparison clarification; assistant then continues the already-authorized target-blind calibration automatically.",
-    "responsibleActor": "owner for the personal clarification response; assistant for preservation, coding, subsequent gap selection, freeze, translation, and scoring",
+    "remainingGap": "F0 is closed sufficient. The next material target-blind repaired gap is G17 / D16.challenge_threshold, which requires the owner's behavioral response before neutral calibration can continue.",
+    "nextAction": "Owner answers G17; assistant preserves/codes it and continues automatically through only materially justified neutral follow-ups, then freezes and dual-scores the profile.",
+    "responsibleActor": "owner for the G17 personal scenario response; assistant for all subsequent preservation, coding, gap selection, freeze, translation, and scoring within existing authority",
     "currentAuthority": "dual-family owner recovery calibration authorized; raw participant answers and participant-specific coding remain private/outside Git",
-    "executableBoundary": "The requested distinction is participant-specific behavior and cannot be supplied by the assistant without fabricating evidence."
+    "executableBoundary": "The next missing datum is participant-specific behavior and cannot be supplied by the assistant without fabricating evidence."
   },
-  "privateWorkingAnswerCount": 69,
-  "currentFollowupState": "f0_narrow_missing_piece_pending_answer"
+  "privateWorkingAnswerCount": 70,
+  "currentFollowupState": "presented_pending_answer",
+  "completedCalibrationFollowups": {
+    "F0": {
+      "facet": "D05.audience_adaptation",
+      "status": "sufficient",
+      "method": "fresh target-theory-blind incremental coding after one narrow missing-piece clarification",
+      "privacy": "raw answers and participant-specific coding remain outside Git"
+    }
+  },
+  "jevShadowNonProductionRuntime": {
+    "status": "ACTIVE_VERIFIED",
+    "ownerRequired": true,
+    "enabled": "MISSION_CONTROL_JEV_SHADOW_ENABLED=1",
+    "model": "typesafe/jev-1.13",
+    "timeoutMs": 1500,
+    "credential": "existing owner OpenRouter credential supplied privately; value not stored in Git",
+    "authoritative": false,
+    "verification": "real shadow observations status OK; runtime liveness/readiness healthy; event chain and submission-authority ledger valid; durable /data preserved; rollback container preserved",
+    "receipt": "tasks/scenario-owner-recovery-calibration-20260923/NONPROD-JEV-SHADOW-RUNTIME-RECEIPT-20260923.md"
+  }
 }
