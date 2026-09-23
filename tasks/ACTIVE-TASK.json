@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "scenario-owner-recovery-calibration-20260923",
-  "status": "opus55_v43_remap_v2_completed_pro_cli_unavailable",
+  "status": "v43_scoring_architecture_diagnosis_in_progress",
   "requiredBranch": "chat/scenario-owner-recovery-calibration-20260923",
   "exclusive": true,
   "ownerOutcome": "Verify that the completed/repaired scenario survey can preserve enough behavior-only information to instantiate both the historical V1.1 merged HD+Western owner-recovery inputs and the clean V4.3/NetInformation behavioral inputs, then run each scoring family separately over its declared search procedure and compare which birth neighborhoods each recovers without target leakage.",
@@ -11,7 +11,7 @@
   "measurementFreezeSha256": "6f49806cc086ba41d23d31882b6ccc218cef78f94d7599830f5a9a2b994737ba",
   "measurementAnswerCount": 79,
   "method": "tasks/scenario-owner-recovery-calibration-20260923/OWNER-RECOVERY-CALIBRATION-20260923.md",
-  "nextAction": "Preserve the Opus-v2 result without retuning. A genuine GPT-5.6 Pro CLI pass was attempted but the Codex provider returned a hard 400 that gpt-5.6-pro is unsupported with ChatGPT-account auth. If a fresh Pro-model UI/other authorized surface is available, use it only as another result-blind remap diagnostic; do not rerun the century scorer unless its frozen map materially differs from Opus/GPT v1.",
+  "nextAction": "Diagnose V4.3 scoring architecture using the frozen Opus survey evidence. Preserve the pre-prior-work conception, run observable-normalized and pathway-rarity discriminating tests, then scan established statistical/information methods before selecting any replacement architecture. Do not retune the frozen v1/v2 results.",
   "runtimeBoundary": "Raw answers and participant-specific coding remain private. Birth/chart/model/rank information must not be supplied to neutral follow-up selection/coding. Do not score the incomplete v1 profile and call a miss or hit a survey result.",
   "neutralCoderAOutputSha256": "538402a5d5f64ad4b75f08ba86943aab9d99d3011e14b040547032783966aa35",
   "neutralCoderBOutputSha256": "84be173203360e9d2370612ec492ae6dcec2bedd05540ced6f72ce7d4eec3e5c",
@@ -134,16 +134,24 @@
       "bestDateAndWinnerEqualNetGainBits": 1.097241,
       "noRetuneAfterReveal": true,
       "resultReceipt": "tasks/scenario-owner-recovery-calibration-20260923/OPUS55-V43-REMAP-V2-RESULT-20260923.md"
+    },
+    "scoringArchitectureReview": {
+      "status": "INTERNAL_CONCEPTION_FROZEN_BEFORE_PRIOR_WORK_SCAN",
+      "trigger": "Owner requested examination of scoring architecture after Opus remapping changed rank density but left the 2013-vs-1985 score gap unchanged.",
+      "keyInternalFinding": "2013 and best 1985-date interval have identical supported participant-observable fingerprint; entire 1.664636-bit gap is pathway-level channel-vs-gate bonus across three observables.",
+      "independentConception": "tasks/scenario-owner-recovery-calibration-20260923/V43-SCORING-ARCHITECTURE-INDEPENDENT-CONCEPTION-20260923.md",
+      "researchBeforeReinvention": "required",
+      "assuranceLane": "decision"
     }
   },
   "dualScorerObjectiveRecord": "tasks/scenario-owner-recovery-calibration-20260923/DUAL-SCORER-CALIBRATION-OBJECTIVE-20260923.md",
   "stopAdmission": {
-    "parentOutcome": "PARTIALLY_SATISFIED_WITH_OPTIONAL_PRO_CHECK",
-    "remainingGap": "Opus 5.5 max completed and showed mapping quality matters for rank density but does not reduce the 2013-vs-best-1985 NetInformation gap. A separate GPT Pro remap is optional corroboration, not required to establish this result.",
-    "nextAction": "Assistant may use a genuinely available result-blind GPT Pro surface if accessible without fabricating model identity; otherwise stop at the evidenced model-access boundary.",
+    "parentOutcome": "OPEN_SCORING_ARCHITECTURE_REVIEW",
+    "remainingGap": "Need determine whether V4.3 pathway-rarity scoring is appropriate for behavior-only recovery and identify the strongest existing/internal alternative.",
+    "nextAction": "Assistant runs the cheap observable-normalization experiment and bounded prior-work scan, then records the architecture recommendation and any minimal comparison implementation.",
     "responsibleActor": "assistant",
-    "currentAuthority": "owner-requested bounded high-end remapping experiment; frozen v1/v2 results non-overwritable",
-    "executableBoundary": "Codex CLI explicitly rejects gpt-5.6-pro with ChatGPT-account authentication; do not substitute Sol and label it Pro."
+    "currentAuthority": "owner explicitly requested scoring-architecture review; frozen calibration results remain immutable evidence",
+    "executableBoundary": "No owner input required at this stage."
   },
   "privateWorkingAnswerCount": 79,
   "currentFollowupState": "natural_stop_measurement_v2_frozen",
