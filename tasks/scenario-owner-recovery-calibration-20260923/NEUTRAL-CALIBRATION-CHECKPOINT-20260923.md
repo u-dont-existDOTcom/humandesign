@@ -72,3 +72,11 @@ No birth-recovery result has been claimed from the incomplete profile.
 - next target-blind material route: narrow `G10` follow-up / `D10.stable_direction`.
 
 Raw responses and participant-specific coding remain outside Git.
+
+## G10 final-admission process repair
+
+The first planner-generated G10 follow-up was **not asked for evidence credit** and is invalidated. Owner feedback exposed that it did not re-establish the nonadjacent group scene and asked a nearly universal broad join-decision question. Fresh target-blind audit confirmed failures in context binding, premise sufficiency, and discrimination.
+
+The generating condition was repaired: planner output is now proposal-only, and the exact rendered question must pass context binding, premise sufficiency, discrimination, nonredundancy, construct alignment, and single-task admission before it may be shown. `verify_v7.py` now mechanically checks that this contract remains present.
+
+Two attempted repairs were also rejected by the new gate. The third wording passed all six checks and is the only active G10 prompt. Private measurement remains **78 answers** because owner process feedback is not participant evidence for the invalid question.

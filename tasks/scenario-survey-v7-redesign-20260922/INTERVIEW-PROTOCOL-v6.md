@@ -21,6 +21,23 @@ No chart, birth data, expected answer, fit score, or target-theory prediction ma
 9. If the reply already supplies part of the target, acknowledge it and ask only the missing piece. Do not replay the whole scene unless the referent is otherwise ambiguous.
 10. Ask one response task. Do not bundle action, motive, mood, body state, history, and justification into one turn.
 
+### Final rendered-question admission
+
+A route selector, planner, coder, or other model output is a **proposal, not admission**. Before any proposed question is shown to the respondent, re-run the admission checks on the exact user-facing wording that will be rendered. This applies especially to generated narrow follow-ups that are not verbatim bank questions.
+
+The final wording must independently pass all of these checks:
+
+- **context binding:** if the antecedent is nonadjacent, re-name the scene or repeat the material conditions in the question itself;
+- **premise sufficiency:** do not make the respondent invent other material determinants of a broad choice;
+- **construct discrimination:** at least two materially different plausible answers must exist that would change the scoped description;
+- **nonredundancy:** the answer is not already present or recoverable from prior words;
+- **construct alignment:** the wording actually isolates the intended neutral distinction rather than a broader decision;
+- **single response task:** the rendered question still asks one answerable thing.
+
+If any check fails, **do not show the proposed question**. Repair it once using only neutral context; if the repair still does not pass, suppress the route and preserve the facet as partial/unknown/unassessed as appropriate. A missing planning target is not permission to weaken this gate.
+
+Concrete regression: after a respondent has conditionally accepted a fixed group schedule when feasible, do not ask whether “anything else” would affect whether they join the group. Joining can depend on many unspecified factors and the ordinary answer is nearly forced. If a retained work priority remains materially useful, restate the fixed-schedule scene and ask about one specific work-priority contrast; otherwise leave the facet partial and move on.
+
 ## Handling partial, conditional, and critical answers
 
 A respondent saying “it depends” is not a failed answer. Preserve the named conditions. Ask a narrower contrast only when it can change the description and the needed conditions can be specified without inventing biography.

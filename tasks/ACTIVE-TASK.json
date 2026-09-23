@@ -11,7 +11,7 @@
   "measurementFreezeSha256": "7a6398de3c591e7dd8cc907b90c7312171452e6c13624a96e3f01826d6944863",
   "measurementAnswerCount": 68,
   "method": "tasks/scenario-owner-recovery-calibration-20260923/OWNER-RECOVERY-CALIBRATION-20260923.md",
-  "nextAction": "Collect the privately preselected target-blind G10 narrow follow-up answer for D10.stable_direction. Then continue only if another repaired neutral question can materially improve the neutral profile; otherwise freeze measurement v2, recode/adjudicate, translate the same frozen profile into both scorer families, and run the two birth-recovery searches separately.",
+  "nextAction": "Collect the independently final-admitted repaired G10 question for D10.stable_direction. Do not use the invalid broad join-decision wording. Before every later question, treat planner output as proposal-only and run final admission on the exact rendered wording; suppress any question that fails. Then continue only through materially justified neutral follow-ups, freeze measurement v2, recode/adjudicate, translate the same frozen profile into both scorer families, and run the two birth-recovery searches separately.",
   "runtimeBoundary": "Raw answers and participant-specific coding remain private. Birth/chart/model/rank information must not be supplied to neutral follow-up selection/coding. Do not score the incomplete v1 profile and call a miss or hit a survey result.",
   "neutralCoderAOutputSha256": "538402a5d5f64ad4b75f08ba86943aab9d99d3011e14b040547032783966aa35",
   "neutralCoderBOutputSha256": "84be173203360e9d2370612ec492ae6dcec2bedd05540ced6f72ce7d4eec3e5c",
@@ -53,14 +53,14 @@
   "dualScorerObjectiveRecord": "tasks/scenario-owner-recovery-calibration-20260923/DUAL-SCORER-CALIBRATION-OBJECTIVE-20260923.md",
   "stopAdmission": {
     "parentOutcome": "OPEN",
-    "remainingGap": "G02 is closed sufficient. The next material target-blind repaired gap is G10 / D10.stable_direction, which requires the owner behavioral response.",
-    "nextAction": "Owner answers the G10 work-direction follow-up; assistant preserves/codes it and continues automatically through only materially justified neutral follow-ups, then freezes and dual-scores the profile.",
-    "responsibleActor": "owner for the G10 personal scenario response; assistant for all subsequent preservation, coding, gap selection, freeze, translation, and scoring within existing authority",
+    "remainingGap": "The prior G10 follow-up was invalidated before answer. A repaired G10 question has passed the new final rendered-question admission gate and still requires the owner behavioral response.",
+    "nextAction": "Owner answers the repaired G10 work-time-autonomy question; assistant preserves/codes it and continues automatically through only materially justified, final-admitted neutral follow-ups, then freezes and dual-scores the profile.",
+    "responsibleActor": "owner for the repaired G10 personal response; assistant for preservation, coding, final-admission checking of subsequent questions, gap selection, freeze, translation, and scoring",
     "currentAuthority": "dual-family owner recovery calibration authorized; raw participant answers and participant-specific coding remain private/outside Git",
-    "executableBoundary": "The next missing datum is participant-specific behavior and cannot be supplied by the assistant without fabricating evidence."
+    "executableBoundary": "The next missing datum is participant-specific behavior; the assistant cannot fabricate it."
   },
   "privateWorkingAnswerCount": 78,
-  "currentFollowupState": "presented_pending_answer",
+  "currentFollowupState": "repaired_presented_pending_answer",
   "completedCalibrationFollowups": {
     "F0": {
       "facet": "D05.audience_adaptation",
@@ -127,5 +127,14 @@
     "authoritative": false,
     "verification": "real shadow observations status OK; runtime liveness/readiness healthy; event chain and submission-authority ledger valid; durable /data preserved; rollback container preserved",
     "receipt": "tasks/scenario-owner-recovery-calibration-20260923/NONPROD-JEV-SHADOW-RUNTIME-RECEIPT-20260923.md"
+  },
+  "questionAdmissionRepair": {
+    "status": "ACTIVE",
+    "trigger": "Owner identified the planner-selected G10 follow-up as ambiguous and nearly tautological.",
+    "causalMechanism": "Planner selection was treated as admission; no post-planner gate rechecked the exact rendered wording against context binding, premise sufficiency, discrimination, nonredundancy, construct alignment, and single-task requirements.",
+    "invalidatedQuestionCount": 3,
+    "currentRepairedQuestion": "For that group whose work interests you, suppose its fixed hours fit your availability and you agree to follow them. How important, if at all, would it still be to you to have a say in choosing your working times for that group?",
+    "finalAdmission": "PASS all six checks in fresh target-blind audit",
+    "receipt": "tasks/scenario-owner-recovery-calibration-20260923/G10-FOLLOWUP-ADMISSION-REPAIR-20260923.md"
   }
 }
