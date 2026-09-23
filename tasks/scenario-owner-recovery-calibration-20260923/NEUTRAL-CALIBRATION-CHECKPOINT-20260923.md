@@ -67,7 +67,8 @@ No birth-recovery result has been claimed from the incomplete profile.
 - `G01` / `D01.approach`: **closed unassessed**; the participant would seek explanation from another person or AI, which is useful behavior but does not establish personally organizing the messages by topic.
 - `G03` / `D03.return_pattern`: **sufficient** after the narrow follow-up established that the unresolved question returns after full refocus.
 - `G21` / `D21.ordinary_rhythm`: **sufficient** after the narrow follow-up established flexible state/need-dependent timing on a free day.
-- private working measurement: **77 answers**.
-- next target-blind material route: narrow `G02` follow-up / `D02.audience_use`.
+- `G02` / `D02.audience_use`: **sufficient** after the narrow follow-up established listener-contingent information selection.
+- private working measurement: **78 answers**.
+- next target-blind material route: narrow `G10` follow-up / `D10.stable_direction`.
 
 Raw responses and participant-specific coding remain outside Git.
