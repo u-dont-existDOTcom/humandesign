@@ -58,7 +58,16 @@ Primary legacy regression gate is the pre-existing `astrohd-v1.1-v3.6-century-ho
 
 The historical one-off V1.1 scan implementation is not present in Git. Therefore any reconstructed legacy scorer must first reproduce the historical frozen result from the frozen historical model before it is permitted to score the new profile. If exact reproduction cannot be established, the legacy gate remains technically unresolved rather than being approximated into a pass.
 
-A separate current V4.3-style diagnostic may also be run, but it must remain distinct from the historical owner gate. Existing repository evidence already shows that the clean V4.3 V3.6 audit ranked a 2013 state first and the 1985 state second; post-selection carrier refinements were required to move 1985 to rank one. Do not conflate that descriptive result with independent recovery.
+The legacy recoverability gate is primary for **survey adequacy** because it is the pre-existing owner benchmark that previously recovered the birth target. Using a scorer already known to miss the owner at rank 1 as the sole survey gate would confound a measurement failure with a model failure.
+
+A separate current V4.3-style diagnostic may also be run, but its status must be preserved exactly:
+
+- cleaner candidate-unexposed V4.3-style variant: 2013 is rank 1 and the actual 1985 state is rank 2;
+- best-current descriptive variant including the two candidate-exposed Moon/Mars carrier refinements: the actual 1985 state is rank 1;
+- the freeze preserves those historical before/after results and their contamination status; it does **not** make V4.3 the final model or prohibit improvement;
+- any mapping/weight change learned from this owner case must be a new explicit post-ranking model version/revision. The owner may be used as development data for that revision, but the same owner result cannot then be claimed as independent confirmation of it.
+
+After the v7-calibrated neutral profile is frozen, V4.3 diagnostics may be rerun if the implementation is available. A miss by the cleaner pre-selection variant alone is not evidence that the survey failed, because that variant already had a known owner rank-2 model miss before this survey calibration.
 
 ## Decision rule
 

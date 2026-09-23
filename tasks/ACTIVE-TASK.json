@@ -11,7 +11,7 @@
   "measurementFreezeSha256": "7a6398de3c591e7dd8cc907b90c7312171452e6c13624a96e3f01826d6944863",
   "measurementAnswerCount": 68,
   "method": "tasks/scenario-owner-recovery-calibration-20260923/OWNER-RECOVERY-CALIBRATION-20260923.md",
-  "nextAction": "Collect the privately pre-frozen target-blind F0 v7 follow-up answer, then continue only with repaired neutral questions that add material information. After follow-ups, freeze measurement v2 and recode before any target-aware birth scoring.",
+  "nextAction": "Collect the privately pre-frozen target-blind F0 v7 replacement-measurement answer, then continue only with repaired neutral questions whose answers can materially change the declared recoverability regression. Stop when remaining gaps are non-material. After follow-ups, freeze measurement v2 and recode before any target-aware birth scoring.",
   "runtimeBoundary": "Raw answers and participant-specific coding remain private. Birth/chart/model/rank information must not be supplied to neutral follow-up selection/coding. Do not score the incomplete v1 profile and call a miss or hit a survey result.",
   "neutralCoderAOutputSha256": "538402a5d5f64ad4b75f08ba86943aab9d99d3011e14b040547032783966aa35",
   "neutralCoderBOutputSha256": "84be173203360e9d2370612ec492ae6dcec2bedd05540ced6f72ce7d4eec3e5c",
@@ -23,5 +23,15 @@
     "facetStatusDisagreements": 13
   },
   "checkpoint": "tasks/scenario-owner-recovery-calibration-20260923/NEUTRAL-CALIBRATION-CHECKPOINT-20260923.md",
-  "currentFollowupRoute": "F0"
+  "currentFollowupRoute": "F0",
+  "surveyCompletionSemantics": "The 68-answer pilot was completed, but it is not yet a complete v7-calibrated measurement because v7 replaced several pilot questions that were design-invalidated or construct-mismatched. Follow-ups are targeted replacement measurements, not an exhaustive-completeness requirement.",
+  "astroHDV43Status": {
+    "cleanCandidateUnexposedOwnerRank": 2,
+    "cleanCandidateUnexposedWinnerYear": 2013,
+    "bestCurrentDescriptiveOwnerRank": 1,
+    "bestCurrentDescriptiveUsesCandidateExposedCarrierRefinements": true,
+    "freezeMeaning": "Preserve the historical before/after audit and contamination status; do not prohibit future model improvement.",
+    "futureRepairRule": "Owner-informed AstroHD changes must be a new explicit post-ranking version/revision; the owner case is development data for that revision, not independent validation."
+  },
+  "astroHDV43Clarification": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V43-FREEZE-CLARIFICATION-20260923.md"
 }

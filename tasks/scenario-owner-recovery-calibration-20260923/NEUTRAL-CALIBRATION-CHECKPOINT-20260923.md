@@ -37,15 +37,13 @@ The coders differ on 13 / 73 facet statuses but agree on the domain-level calibr
 
 ## Decision
 
-The completed owner pilot is **not yet a fully calibrated v7 neutral profile**.
-
-This is expected because the owner pilot itself exposed several v6 questions as invalid, underspecified, tautological, or construct-mismatched; v7 subsequently replaced those routes. The old answers cannot simply be credited to the repaired constructs.
+The completed owner pilot is **not yet a fully calibrated v7 neutral profile**. This does not mean the earlier pilot was unfinished. It means the pilot was completed, then its own evidence exposed several v6 questions as invalid, underspecified, tautological, or construct-mismatched; v7 subsequently replaced those routes. The old answers cannot simply be credited to the repaired constructs.
 
 Do not open the participant to target-aware adaptive questioning. Additional questions must be selected from neutral evidence gaps only, with no birth/chart/model/rank information supplied to the selection context.
 
 ## Follow-up lane
 
-The first target-blind repaired route selected for remeasurement is v7 `F0`, a matched audience-familiarity comparison. Its exact question was privately frozen before response.
+The first target-blind repaired route selected for remeasurement is v7 `F0`, a matched audience-familiarity comparison. Its exact question was privately frozen before response. `F0` is a replacement measurement for a material repaired gap, not a generic decision to keep interviewing because some domain remains partial. Do not require exhaustive 73-facet completion; stop when remaining neutral gaps cannot materially change the declared recovery test.
 
 After sufficient additional neutral measurements are collected:
 1. create a new immutable private measurement freeze;
