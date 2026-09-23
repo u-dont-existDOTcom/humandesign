@@ -58,12 +58,13 @@ Primary legacy regression gate is the pre-existing `astrohd-v1.1-v3.6-century-ho
 
 The historical one-off V1.1 scan implementation is not present in Git. Therefore any reconstructed legacy scorer must first reproduce the historical frozen result from the frozen historical model before it is permitted to score the new profile. If exact reproduction cannot be established, the legacy gate remains technically unresolved rather than being approximated into a pass.
 
-The legacy recoverability gate is primary for **survey adequacy** because it is the pre-existing owner benchmark that previously recovered the birth target. Using a scorer already known to miss the owner at rank 1 as the sole survey gate would confound a measurement failure with a model failure.
+The legacy recoverability gate is primary for **survey adequacy** because it is the pre-existing owner benchmark that localized the known birth target tightly using the merged HD + Western scorer: correct date/top refined neighborhood, exact recorded moment rank <= 2 in the hourly universe, and local refined peak within 11 minutes. This benchmark and the later V4.3 audit are not the same scoring system. Using a V4.3 variant already known not to recover the exact owner moment as the sole survey gate would confound a measurement failure with a model failure.
 
 A separate current V4.3-style diagnostic may also be run, but its status must be preserved exactly:
 
-- cleaner candidate-unexposed V4.3-style variant: 2013 is rank 1 and the actual 1985 state is rank 2;
-- best-current descriptive variant including the two candidate-exposed Moon/Mars carrier refinements: the actual 1985 state is rank 1;
+- cleaner candidate-unexposed V4.3-style variant: a 2013 interval is rank 1 and a correct-date 1985 interval is rank 2;
+- best-current descriptive variant including the two candidate-exposed Moon/Mars carrier refinements: a correct-date 1985 interval is rank 1;
+- the V4.3 rank-1 1985 interval does not contain the exact recorded birth moment, so it must not be described as better exact-time recovery than the older merged V1.1 benchmark;
 - the freeze preserves those historical before/after results and their contamination status; it does **not** make V4.3 the final model or prohibit improvement;
 - any mapping/weight change learned from this owner case must be a new explicit post-ranking model version/revision. The owner may be used as development data for that revision, but the same owner result cannot then be claimed as independent confirmation of it.
 

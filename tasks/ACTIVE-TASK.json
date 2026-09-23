@@ -26,12 +26,17 @@
   "currentFollowupRoute": "F0",
   "surveyCompletionSemantics": "The 68-answer pilot was completed, but it is not yet a complete v7-calibrated measurement because v7 replaced several pilot questions that were design-invalidated or construct-mismatched. Follow-ups are targeted replacement measurements, not an exhaustive-completeness requirement.",
   "astroHDV43Status": {
-    "cleanCandidateUnexposedOwnerRank": 2,
     "cleanCandidateUnexposedWinnerYear": 2013,
-    "bestCurrentDescriptiveOwnerRank": 1,
     "bestCurrentDescriptiveUsesCandidateExposedCarrierRefinements": true,
     "freezeMeaning": "Preserve the historical before/after audit and contamination status; do not prohibit future model improvement.",
-    "futureRepairRule": "Owner-informed AstroHD changes must be a new explicit post-ranking version/revision; the owner case is development data for that revision, not independent validation."
+    "futureRepairRule": "Owner-informed AstroHD changes must be a new explicit post-ranking version/revision; the owner case is development data for that revision, not independent validation.",
+    "legacyV11MergedHDWesternExactRecordedHourlyRank": 2,
+    "legacyV11CorrectDateTopRefinedNeighborhood": true,
+    "legacyV11RefinedPeakOffsetMinutes": 11,
+    "cleanCandidateUnexposedCorrectDate1985IntervalRank": 2,
+    "bestCurrentDescriptiveCorrectDate1985IntervalRank": 1,
+    "v43DescriptiveRank1ContainsExactRecordedMoment": false,
+    "comparisonWarning": "V1.1 merged HD+Western and V4.3 HD/NetInformation-style are different scorers; V4.3 rank 1 is not better exact-time recovery."
   },
   "astroHDV43Clarification": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V43-FREEZE-CLARIFICATION-20260923.md"
 }
