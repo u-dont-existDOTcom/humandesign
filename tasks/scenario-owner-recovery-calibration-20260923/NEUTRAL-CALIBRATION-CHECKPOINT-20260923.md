@@ -56,3 +56,12 @@ After sufficient additional neutral measurements are collected:
 4. only then apply the historical post-freeze owner-recovery crosswalk and birth search.
 
 No birth-recovery result has been claimed from the incomplete profile.
+
+## Incremental repaired-route progress
+
+- `F0` / `D05.audience_adaptation`: **sufficient** after one narrow missing-piece clarification.
+- `G17` / `D16.challenge_threshold`: **sufficient** from the matched consequence comparison; the optional reason probe is suppressed because the answer already supplied the reason.
+- private working measurement: **71 answers**.
+- next target-blind material route: `WORKING-METHOD` / `D04.change_threshold`.
+
+Raw responses and participant-specific coding remain outside Git.
