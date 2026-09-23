@@ -64,7 +64,8 @@ No birth-recovery result has been claimed from the incomplete profile.
 - `WORKING-METHOD` / `D04.change_threshold`: **sufficient** from the recurring-friction scenario; the feasibility condition is preserved.
 - `D0` / `D22.repetition_value`: **sufficient** for this specific pronunciation practice; repetition is valued while it is producing improvement and helping avoid habituating an inferior pronunciation.
 - `G20` / `D19.resources_purpose`: **sufficient** for the normalized one-month extra-money amount; multiple intended functions are preserved without a fabricated rank order.
-- private working measurement: **74 answers**.
-- next target-blind material route: narrow `G01` follow-up / `D01.approach`.
+- `G01` / `D01.approach`: **closed unassessed**; the participant would seek explanation from another person or AI, which is useful behavior but does not establish personally organizing the messages by topic.
+- private working measurement: **75 answers**.
+- next target-blind material route: narrow `G03` follow-up / `D03.return_pattern`.
 
 Raw responses and participant-specific coding remain outside Git.
