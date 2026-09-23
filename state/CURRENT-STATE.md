@@ -23,3 +23,14 @@ Both post-freeze scorer-specific translations are now privately frozen **before 
 Next: run the clean V4.3 survey-instantiated search now. Continue bounded V1.1 reconstruction only if it can be validated by exact reproduction of the frozen historical benchmark; otherwise report that legacy side technically unresolved rather than fabricating a result.
 
 Non-production Mission Control Jev shadow has also been activated at the owner's request using the existing private OpenRouter credential. The live runtime is healthy; Jev observations are `OK` and explicitly `authoritative=false`; event-chain and submission-authority ledger checks remain valid; the durable `/data` volume and a stopped rollback container are preserved. See the runtime receipt in the active task directory.
+
+
+## Owner scenario recovery calibration result — 2026-09-23
+
+The 79-answer target-blind measurement is frozen, independently recoded/adjudicated, and translated into both scorer-family input profiles before either new ranking was opened.
+
+The **survey-instantiated clean V4.3 / NetInformation** run is complete and frozen. Result SHA-256: `077a5ad94e9647855ac7c3f68b1ed706a9b6febbbc5a5d322c36a68dd7d806a3`. Rank 1 remains the 2013-01-28/29 interval (`NetInformation=4.182918`). The best interval intersecting the recorded Philadelphia local birth date ranks **#872**; the interval containing the exact recorded `1985-01-29T10:25Z` moment ranks **#1562**. The frozen translation will not be retuned after reveal. See `tasks/scenario-owner-recovery-calibration-20260923/V43-SURVEY-CROSSWALK-RESULT-20260923.md`.
+
+The **historical V1.1 merged HD + Western** side remains **TECHNICALLY UNRESOLVED** under its predeclared reproduction gate. The one-off scanner and normative Western feature-predicate semantics could not be recovered from Git, old workspaces/sessions, workflow history, conversation retrieval, or Library search. The surviving model/output artifacts recover the evidence algebra and 25% HD/Western merge, but do not uniquely determine the century-wide Western predicates/orb/angle rules. An approximate reconstruction is therefore not permitted to score the frozen new V1.1 translation. See `tasks/scenario-owner-recovery-calibration-20260923/V11-RECONSTRUCTION-BOUNDARY-20260923.md`.
+
+Current calibration outcome: **V4.3 diagnostic completed; V1.1 primary legacy gate technically unresolved, not failed and not passed.** No further participant questions are justified by this pass.

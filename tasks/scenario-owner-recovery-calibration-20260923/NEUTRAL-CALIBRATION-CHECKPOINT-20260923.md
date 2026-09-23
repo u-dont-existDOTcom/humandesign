@@ -117,3 +117,9 @@ Both scorer-input translations were derived from the same frozen target-blind ne
 The survey-instantiated V4.3 adapter excludes non-crosswalk historical behavioral clusters and post-selection carriers, treats historical CoreFit as constant/unavailable, and does not let historical core-field changes split score-identical intervals for the duration tie-break.
 
 The original V1.1 one-off scanner has not been recovered from Git history, old local workspaces/sessions, dangling objects, or its August 24 workflow history. Any reconstruction must reproduce the frozen historical result before it may score the new translation.
+
+## Scorer execution result
+
+- survey-instantiated clean V4.3 result: **COMPLETED**; result SHA-256 `077a5ad94e9647855ac7c3f68b1ed706a9b6febbbc5a5d322c36a68dd7d806a3`; 2013 interval rank 1; best recorded-local-date interval rank 872; exact recorded-moment interval rank 1562; no post-result retuning permitted.
+- historical V1.1 merged scorer: **TECHNICALLY UNRESOLVED**; exact old implementation/predicate semantics not recoverable; new frozen V1.1 translation remains unscored because the historical-reproduction gate was not satisfied.
+- no additional participant questions are admitted from these results.
