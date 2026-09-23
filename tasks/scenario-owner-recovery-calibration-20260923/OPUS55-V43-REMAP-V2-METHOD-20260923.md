@@ -40,3 +40,17 @@ The same already-committed survey-instantiated clean V4.3 adapter/scorer is then
 The only decision this experiment is intended to change is whether the poor v1 V4.3 recovery is plausibly attributable in material part to the first translation/crosswalk mapping rather than to the frozen neutral survey evidence itself.
 
 Private remap packet SHA-256: `84078b3bd9afc3170b71d34e6ded8fe1743f7646c50755e7befd8abf14947c0c`.
+
+## Frozen Opus output
+
+The max-effort CLI attempt remained server-side without returning and was terminated as a transport/queue stall; the same frozen packet was then run with Claude Opus 5.5 at `xhigh` effort without changing the method or evidence.
+
+The completed xhigh run used canonical model `claude-opus-5-5`, no web search, and returned all 19 rows with zero validation errors.
+
+- private Opus translation SHA-256: `4be1dfccc5647d2ddc0b0dcac3c87b03eb2406b6ffa9d3f2f3315d3606908b37`;
+- private packet SHA-256: `84078b3bd9afc3170b71d34e6ded8fe1743f7646c50755e7befd8abf14947c0c`;
+- Claude run receipt SHA-256: `10bdc60ff7d8e5d1cff908136f882dfad378548f494159beaa15fc52172ed714`;
+- candidate ranking opened before this freeze: **false**;
+- differences from frozen GPT v1 translation: **9 / 19 observables**.
+
+Confidence distribution: 5 at `0.00`, 5 at `0.25`, 6 at `0.50`, 3 at `0.75`, none at `1.00`.
