@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "scenario-owner-recovery-calibration-20260923",
-  "status": "opus55_v43_remap_v2_translation_frozen_search_pending",
+  "status": "opus55_v43_remap_v2_normalized_input_frozen_search_pending",
   "requiredBranch": "chat/scenario-owner-recovery-calibration-20260923",
   "exclusive": true,
   "ownerOutcome": "Verify that the completed/repaired scenario survey can preserve enough behavior-only information to instantiate both the historical V1.1 merged HD+Western owner-recovery inputs and the clean V4.3/NetInformation behavioral inputs, then run each scoring family separately over its declared search procedure and compare which birth neighborhoods each recovers without target leakage.",
@@ -11,7 +11,7 @@
   "measurementFreezeSha256": "6f49806cc086ba41d23d31882b6ccc218cef78f94d7599830f5a9a2b994737ba",
   "measurementAnswerCount": 79,
   "method": "tasks/scenario-owner-recovery-calibration-20260923/OWNER-RECOVERY-CALIBRATION-20260923.md",
-  "nextAction": "Run the already-committed survey-instantiated clean V4.3 scorer exactly once using frozen Opus 5.5 translation SHA 4be1dfccc5647d2ddc0b0dcac3c87b03eb2406b6ffa9d3f2f3315d3606908b37. Do not alter translation/scorer after opening the result; compare v2 against frozen v1 only as post-result development evidence.",
+  "nextAction": "Run the unchanged survey-instantiated clean V4.3 scorer exactly once using normalized Opus scorer-input SHA 5efd15353aff39eaa3d68e89635de91112b526082296b298fc176ece9df8b3a1. The normalization changed no row content. Do not alter translation/scorer after opening the result.",
   "runtimeBoundary": "Raw answers and participant-specific coding remain private. Birth/chart/model/rank information must not be supplied to neutral follow-up selection/coding. Do not score the incomplete v1 profile and call a miss or hit a survey result.",
   "neutralCoderAOutputSha256": "538402a5d5f64ad4b75f08ba86943aab9d99d3011e14b040547032783966aa35",
   "neutralCoderBOutputSha256": "84be173203360e9d2370612ec492ae6dcec2bedd05540ced6f72ce7d4eec3e5c",
@@ -89,7 +89,10 @@
       "rowCount": 19,
       "differenceCountVsV1": 9,
       "candidateRankingOpenedBeforeFreeze": false,
-      "validationErrors": []
+      "validationErrors": [],
+      "normalizedScorerInputSha256": "5efd15353aff39eaa3d68e89635de91112b526082296b298fc176ece9df8b3a1",
+      "firstScorerAttempt": "SCHEMA_KEY_MISMATCH_BEFORE_RANKING",
+      "candidateRankingOpenedBeforeNormalizedFreeze": false
     }
   },
   "dualScorerObjectiveRecord": "tasks/scenario-owner-recovery-calibration-20260923/DUAL-SCORER-CALIBRATION-OBJECTIVE-20260923.md",

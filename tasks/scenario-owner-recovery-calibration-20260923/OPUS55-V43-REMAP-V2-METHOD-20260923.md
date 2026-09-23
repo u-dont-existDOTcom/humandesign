@@ -54,3 +54,14 @@ The completed xhigh run used canonical model `claude-opus-5-5`, no web search, a
 - differences from frozen GPT v1 translation: **9 / 19 observables**.
 
 Confidence distribution: 5 at `0.00`, 5 at `0.25`, 6 at `0.50`, 3 at `0.75`, none at `1.00`.
+
+## Scorer-input schema normalization
+
+The first v2 scorer invocation exited before ranking because the Opus artifact uses the key `translations` while the existing scorer adapter expects `rows`. No candidate score/rank was generated.
+
+A private schema-only normalization was frozen before retry:
+
+- original Opus translation SHA-256: `4be1dfccc5647d2ddc0b0dcac3c87b03eb2406b6ffa9d3f2f3315d3606908b37`;
+- normalized scorer-input SHA-256: `5efd15353aff39eaa3d68e89635de91112b526082296b298fc176ece9df8b3a1`;
+- transformation: rename/wrap `translations` as `rows`; all 19 row contents unchanged;
+- candidate ranking opened before normalized-input freeze: **false**.
