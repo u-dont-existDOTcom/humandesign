@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "scenario-owner-recovery-calibration-20260923",
-  "status": "owner_training_v8_categorical_existing_evidence_classification_pending",
+  "status": "owner_training_v8_categorical_stage_a_pending",
   "requiredBranch": "chat/scenario-owner-recovery-calibration-20260923",
   "exclusive": true,
   "ownerOutcome": "Develop the scenario-first survey/recovery method on the owner case until the known recorded 1985-01-29 10:25 UTC Philadelphia birth neighborhood is distinguished from the persistent 2013 competitor and nearby same-date alternatives using owner-reported behavior. Target-aware owner training is allowed; preserve all such changes as development/training evidence and reserve independent validation for fresh participants.",
@@ -11,7 +11,7 @@
   "measurementFreezeSha256": "6f49806cc086ba41d23d31882b6ccc218cef78f94d7599830f5a9a2b994737ba",
   "measurementAnswerCount": 79,
   "method": "tasks/scenario-owner-recovery-calibration-20260923/OWNER-RECOVERY-CALIBRATION-20260923.md",
-  "nextAction": "Build a private candidate-blind Survey-v2 categorical/adaptive classification packet from the existing owner transcript using the already-frozen complete Profile/Gate vocabularies and field-specific minimum-evidence rules. Do not expose birth/chart/rank/target direction to classification and do not ask another owner question unless existing evidence is exhausted and the frozen anonymous adaptive selector later identifies a decision-relevant missing field.",
+  "nextAction": "Run Stage A of the frozen existing-evidence categorical bridge: route only the original 79-answer target-blind transcript into frozen Moon/Mercury/Venus/Profile evidence categories in a fresh candidate-blind context that cannot see archetype vocabularies, birth/chart/candidate/rank/target information. Preserve raw/routed evidence privately. Then run Stage B only on routed jobs.",
   "runtimeBoundary": "Raw answers and participant-specific coding remain private. Birth/chart/model/rank information must not be supplied to neutral follow-up selection/coding. Do not score the incomplete v1 profile and call a miss or hit a survey result.",
   "neutralCoderAOutputSha256": "538402a5d5f64ad4b75f08ba86943aab9d99d3011e14b040547032783966aa35",
   "neutralCoderBOutputSha256": "84be173203360e9d2370612ec492ae6dcec2bedd05540ced6f72ce7d4eec3e5c",
@@ -383,5 +383,24 @@
     "classificationBoundary": "candidate-blind; no birth, chart, predicted labels, scores, ranks, target direction, or prior winner identity",
     "ownerBurdenRule": "reuse existing transcript first; no new owner question currently admitted",
     "developmentClassification": "target-aware owner project development; categorical classification itself remains candidate-blind"
+  },
+  "ownerTrainingV8CategoricalBridge": {
+    "status": "METHOD_FROZEN_STAGE_A_PENDING",
+    "method": "tasks/scenario-owner-recovery-calibration-20260923/OWNER-TRAINING-V8-CATEGORICAL-EXISTING-EVIDENCE-METHOD-20260924.md",
+    "sourceMeasurementAnswerCount": 79,
+    "targetAwareV8AnswersExcluded": true,
+    "initialFields": [
+      "personality:moon",
+      "design:moon",
+      "personality:mercury",
+      "design:mercury",
+      "personality:venus",
+      "design:venus",
+      "profile"
+    ],
+    "stageA": "evidence routing only; archetype vocabulary forbidden",
+    "stageB": "fresh candidate-blind classification with complete frozen vocabulary",
+    "stageC": "full-universe rescore then anonymous adaptive selection if still needed",
+    "ownerQuestionCurrentlyAdmitted": false
   }
 }
