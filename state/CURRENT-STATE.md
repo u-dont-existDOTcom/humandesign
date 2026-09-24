@@ -168,3 +168,22 @@ The strong Western-only owner result is **not scientific validation**. V1.2 froz
 Current interpretation: strong reproducible **training/development-case fit**, but feature-to-behavior mappings, salience/directness weights, aggregation rule and information cap remain heuristic rather than empirically calibrated. Scientific predictive validity is **UNESTABLISHED** until the now-frozen V1.2 model is tested unchanged on fresh/held-out participants against preregistered simpler/equal-weight baselines.
 
 See `tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V12-SCIENTIFIC-VALIDITY-CLARIFICATION-20260924.md`.
+
+## AstroHD V1.3 / V1.3b — tradition-grounded follow-up — 2026-09-24
+
+Owner explicitly requested replacing V1.2's inherited project-authored salience/directness weights with externally grounded traditional astrology systems, including a direct test of the opposite aggregation assumption: convergent testimonies may stack rather than collapse.
+
+V1.3 froze three aggregation families before any owner score:
+- domain-collapse / non-stacking;
+- cross-tradition convergence stacking;
+- raw independent-testimony stacking.
+
+The source-to-domain map was produced by two isolated source-only Claude Opus 5.5/high mappers with no birth/chart/candidate/rank/owner-answer information; only their intersection was admitted. The frozen V1.3 direct regression then **FAILED** in all clean aggregation families and both behavioral-weight variants. Cross-tradition and raw stacking did not rescue the recorded target; a same-date alternative benefited more from stacking. No century rank was admitted and no post-result rule retuning is allowed. See `tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V13-TRADITION-DIRECT-RESULT-20260924.md`.
+
+A materially different causal revision, **V1.3b source-native strength**, was frozen before any V1.3b owner score:
+- William Lilly core fortitude/debility point scoring using source-native historical values;
+- Parashari Jyotish Shadbala via PyJHora `strength.shad_bala` at frozen commit `48e57d29b47a3143519910a24866758116467485`, private development oracle only;
+- no cross-tradition numeric blend; each tradition must independently pass the predeclared direct regression before any century-scale ranking is admitted.
+
+Execution is currently **BLOCKED_EXTERNAL** because the already-authorized remote development computer became unavailable before V1.3b scoring. No V1.3b owner score has been opened. Resume the exact frozen V1.3b experiment automatically when the private runtime/ephemeris machine is reachable; do not alter rules around the outage and do not ask new owner questions.
+
