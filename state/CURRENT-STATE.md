@@ -232,3 +232,19 @@ This is a scientifically useful split result. It demonstrates that one externall
 
 See `tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V13B-SOURCE-NATIVE-DIRECT-RESULT-20260924.md`.
 
+## AstroHD V1.3b — owner-requested Lilly-only century scan complete — 2026-09-24
+
+After the V1.3b direct split result (Lilly PASS, Parashari FAIL), the owner explicitly requested a Lilly-only century scan with full awareness that Lilly was selected post hoc. A new descriptive scan was frozen before the century result and did not change the source-native Lilly rules.
+
+The exact century runner evaluated 876,601 hourly candidates from 1926-08-24 10:42 UTC through 2026-08-24 10:42 UTC using exact Swiss Ephemeris positions/speeds and exact Regiomontanus houses at the fixed Philadelphia recovery location. The exact recorded 1985-01-29 10:25 UTC moment was scored exactly rather than snapped to the hourly grid. Vector scoring was regression-checked against the frozen scalar Lilly scorer before result reveal.
+
+Private result SHA-256: 84444d7cadf51918e179bc2a6ef1c631f9c6342bdfafc167d5e480a785572886.
+
+Across the four pre-existing Lilly specifications, exact-target ranks were #110,841–#112,502; #104,177–#105,175; #90,576–#93,661; and #81,269–#82,434. The corresponding 2013 ranks were #137,966–#139,827; #146,326–#147,671; #136,895–#141,136; and #154,863–#156,866.
+
+Thus the exact target remains better than the persistent 2013 comparator in every Lilly specification, but 9.2708%–12.6443% of the full hourly century universe scores strictly above the exact target. This is not near-top global recovery and is much weaker globally than V1.2’s #3–#4 owner-development result.
+
+The highest-scoring hourly candidates cluster mainly around August 1981–1982. On Philadelphia-local date 1985-01-29, the best hourly candidate is 1985-01-29 10:42 UTC in all four specifications. Minute refinement was explicitly outside the scan freeze and was not run.
+
+Interpretation: the direct Lilly separation from 2013 is real under unchanged source-native rules, but the century scan shows poor global specificity. The owner-requested Lilly century scan is complete. Any minute refinement or traditional-rule expansion is a new post-result experiment.
+
