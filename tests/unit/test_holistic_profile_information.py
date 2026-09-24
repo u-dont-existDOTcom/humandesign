@@ -47,6 +47,31 @@ def test_legacy_predicates_match_structural_cache_features() -> None:
     )
 
 
+def test_legacy_predicates_match_cache_normalized_structural_values() -> None:
+    features = StructuralChartFeatures(
+        type="projector",
+        strategy="wait_for_invitation",
+        authority="splenic",
+        profile="2/5",
+        definition="split_definition",
+        defined_centers=("spleen", "heart_ego", "g"),
+        channels=("1-8", "23-43", "24-61"),
+        activation_gates={"personality:moon": 24, "design:mars": 61},
+    )
+    assert predicate_matches(features, {"feature": "type", "equals": "Projector"})
+    assert predicate_matches(features, {"feature": "authority", "equals": "Splenic"})
+    assert predicate_matches(
+        features, {"feature": "center", "name": "Spleen", "defined": True}
+    )
+    assert predicate_matches(
+        features, {"feature": "center", "name": "Heart", "defined": True}
+    )
+    assert predicate_matches(features, {"feature": "center", "name": "G", "defined": True})
+    assert predicate_matches(
+        features, {"feature": "center", "name": "Root", "defined": False}
+    )
+
+
 def test_observable_id_collapses_mechanical_alternatives_but_not_profile_behaviors() -> None:
     channel = {
         "id": "CH_1_8_ORIGINAL",

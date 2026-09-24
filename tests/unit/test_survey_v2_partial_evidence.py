@@ -8,6 +8,7 @@ from hdmatch.evaluation.survey_v2_partial_evidence import (
     candidate_field_value,
     compile_partial_evidence,
     score_candidate,
+    score_candidate_scaled,
 )
 from hdmatch.schemas import StructuralChartFeatures
 
@@ -100,6 +101,9 @@ def test_profile_cluster_macro_average_preserves_mixed_partial_credit() -> None:
     )
     target = score_candidate(_features("2/5"), compiled)
     competitor = score_candidate(_features("2/4"), compiled)
+    assert compiled.score_scale == 80
+    assert score_candidate_scaled(_features("2/5"), compiled) == 39
+    assert score_candidate_scaled(_features("2/4"), compiled) == 13
     assert target == Fraction(39, 80)
     assert competitor == Fraction(13, 80)
     assert target - competitor == Fraction(13, 40)

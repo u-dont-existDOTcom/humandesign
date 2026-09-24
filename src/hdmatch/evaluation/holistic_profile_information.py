@@ -20,6 +20,7 @@ from __future__ import annotations
 import copy
 import json
 import math
+import re
 from collections import Counter, defaultdict
 from collections.abc import Hashable, Iterable, Mapping, Sequence
 from datetime import UTC, datetime
@@ -139,11 +140,15 @@ def predicate_matches(features: StructuralChartFeatures, predicate: Mapping[str,
 
     feature = str(predicate["feature"])
     if feature == "type":
-        return features.type == str(predicate["equals"])
+        return _canonical_symbol(features.type) == _canonical_symbol(str(predicate["equals"]))
     if feature == "authority":
-        return features.authority == str(predicate["equals"])
+        return _canonical_symbol(features.authority) == _canonical_symbol(
+            str(predicate["equals"])
+        )
     if feature == "center":
-        present = str(predicate["name"]) in set(features.defined_centers)
+        present = _canonical_center(str(predicate["name"])) in {
+            _canonical_center(center) for center in features.defined_centers
+        }
         return present is bool(predicate["defined"])
     if feature == "profile":
         return features.profile == str(predicate["equals"])
@@ -344,6 +349,15 @@ def _entropy_from_weights(weights: Iterable[int | float]) -> float:
     if total <= 0.0:
         raise ValueError("entropy weights require positive total")
     return -sum((weight / total) * math.log2(weight / total) for weight in values if weight > 0.0)
+
+
+def _canonical_symbol(value: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "_", value.casefold()).strip("_")
+
+
+def _canonical_center(value: str) -> str:
+    normalized = _canonical_symbol(value)
+    return {"heart": "heart_ego", "ego": "heart_ego"}.get(normalized, normalized)
 
 
 def _canonical_channel(value: str) -> str:

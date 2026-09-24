@@ -11,6 +11,7 @@ from collections import defaultdict
 from collections.abc import Hashable, Mapping
 from dataclasses import dataclass
 from fractions import Fraction
+from math import lcm
 from typing import Any
 
 from hdmatch.evaluation.holistic_profile_information import predicate_matches
@@ -37,6 +38,8 @@ class CompiledField:
 @dataclass(frozen=True)
 class CompiledPartialEvidence:
     fields: tuple[CompiledField, ...]
+    score_scale: int
+    scaled_score_maps: tuple[Mapping[Hashable, int], ...]
 
 
 
@@ -97,23 +100,69 @@ def compile_partial_evidence(
         )
     if not fields:
         raise ValueError("partial evidence requires at least one observation")
-    return CompiledPartialEvidence(fields=tuple(fields))
+
+    cluster_sizes: dict[str, int] = defaultdict(int)
+    for field in fields:
+        cluster_sizes[field.cluster_id] += 1
+
+    fraction_score_maps: list[dict[Hashable, Fraction]] = []
+    denominators = [1]
+    for field in fields:
+        label_universe = {label for probe in field.probes for label in probe.labels}
+        field_scores: dict[Hashable, Fraction] = {}
+        for label in label_universe:
+            probe_total = sum(
+                (
+                    probe.reliability / len(probe.labels)
+                    for probe in field.probes
+                    if label in probe.labels
+                ),
+                Fraction(),
+            )
+            weighted = (
+                probe_total
+                / len(field.probes)
+                / cluster_sizes[field.cluster_id]
+            )
+            if weighted:
+                field_scores[label] = weighted
+                denominators.append(weighted.denominator)
+        fraction_score_maps.append(field_scores)
+
+    score_scale = lcm(*denominators)
+    scaled_score_maps = tuple(
+        {
+            label: int(score * score_scale)
+            for label, score in score_map.items()
+        }
+        for score_map in fraction_score_maps
+    )
+    return CompiledPartialEvidence(
+        fields=tuple(fields),
+        score_scale=score_scale,
+        scaled_score_maps=scaled_score_maps,
+    )
+
+
+def score_candidate_scaled(
+    features: StructuralChartFeatures,
+    compiled: CompiledPartialEvidence,
+) -> int:
+    return sum(
+        score_map.get(candidate_field_value(features, field), 0)
+        for field, score_map in zip(
+            compiled.fields, compiled.scaled_score_maps, strict=True
+        )
+    )
 
 
 def score_candidate(
     features: StructuralChartFeatures,
     compiled: CompiledPartialEvidence,
 ) -> Fraction:
-    cluster_scores: dict[str, list[Fraction]] = defaultdict(list)
-    for field in compiled.fields:
-        value = candidate_field_value(features, field)
-        probe_scores = tuple(_probe_score(value, probe) for probe in field.probes)
-        cluster_scores[field.cluster_id].append(
-            sum(probe_scores, Fraction()) / len(probe_scores)
-        )
-    return sum(
-        (sum(scores, Fraction()) / len(scores) for scores in cluster_scores.values()),
-        Fraction(),
+    return Fraction(
+        score_candidate_scaled(features, compiled),
+        compiled.score_scale,
     )
 
 
