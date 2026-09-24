@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "scenario-owner-recovery-calibration-20260923",
-  "status": "astrohd_v13_tradition_grounded_multiverse_active",
+  "status": "astrohd_v13b_source_native_blocked_remote_device_offline",
   "requiredBranch": "chat/scenario-owner-recovery-calibration-20260923",
   "exclusive": true,
   "ownerOutcome": "Develop the scenario-first survey/recovery method on the owner case until the known recorded 1985-01-29 10:25 UTC Philadelphia birth neighborhood is distinguished from the persistent 2013 competitor and nearby same-date alternatives using owner-reported behavior. Target-aware owner training is allowed; preserve all such changes as development/training evidence and reserve independent validation for fresh participants.",
@@ -11,7 +11,7 @@
   "measurementFreezeSha256": "6f49806cc086ba41d23d31882b6ccc218cef78f94d7599830f5a9a2b994737ba",
   "measurementAnswerCount": 79,
   "method": "tasks/scenario-owner-recovery-calibration-20260923/OWNER-RECOVERY-CALIBRATION-20260923.md",
-  "nextAction": "Freeze the V1.3 source-grounded tradition registry and three aggregation arms before any V1.3 owner score: domain-collapse, cross-tradition convergence stacking, and raw independent-testimony stacking. Build source-to-domain mappings target-blind from external tradition sources, then run the known owner direct regression before any full-century V1.3 ranking.",
+  "nextAction": "When the already-authorized remote development machine is reachable, complete the frozen V1.3b source-native experiment without changing its rules: (1) implement Lilly core fortitude from the frozen historical point table including sign/exaltation/triplicity/term/face/peregrine plus frozen accidental factors; (2) invoke PyJHora commit 48e57d29b47a3143519910a24866758116467485 strength.shad_bala privately for the Parashari arm; (3) map only the already-frozen target-blind significators; (4) run the predeclared target/2013/same-date direct regression before any century scan; (5) do not retune after reveal.",
   "runtimeBoundary": "Raw answers and participant-specific coding remain private. Birth/chart/model/rank information must not be supplied to neutral follow-up selection/coding. Do not score the incomplete v1 profile and call a miss or hit a survey result.",
   "neutralCoderAOutputSha256": "538402a5d5f64ad4b75f08ba86943aab9d99d3011e14b040547032783966aa35",
   "neutralCoderBOutputSha256": "84be173203360e9d2370612ec492ae6dcec2bedd05540ced6f72ce7d4eec3e5c",
@@ -182,11 +182,11 @@
   "dualScorerObjectiveRecord": "tasks/scenario-owner-recovery-calibration-20260923/DUAL-SCORER-CALIBRATION-OBJECTIVE-20260923.md",
   "stopAdmission": {
     "parentOutcome": "OPEN_OWNER_REQUIRED_V13_FOLLOWUP",
-    "remainingGap": "V1.2 fits the owner strongly but inherits post-selected V1.1 feature mappings/weights. The owner explicitly requested a stronger source-grounded foundation and requested testing both non-stacking and stacking of convergent testimonies.",
-    "nextAction": "Assistant freezes source-grounded V1.3 model specifications and aggregation arms, then executes the direct owner development regression.",
-    "responsibleActor": "assistant",
-    "currentAuthority": "Owner explicitly authorized the V1.3 tradition-grounded experiment and stacking sensitivity arm. V1.2 remains preserved as a satisfied prior development result.",
-    "executableBoundary": "Safe authorized work remains; no owner input is required."
+    "remainingGap": "V1.3 equal-testimony source-grounded scoring failed. V1.3b source-native scoring is frozen but has not been executed because the authorized remote development machine became unavailable.",
+    "nextAction": "Resume the exact frozen V1.3b execution automatically when the remote machine is reachable; do not change scoring rules or ask new owner questions.",
+    "responsibleActor": "assistant once remote device access returns; owner only if reconnection requires a human gesture",
+    "currentAuthority": "Owner explicitly authorized tradition-grounded scoring and convergence/stacking sensitivity. Source-native V1.3b is a materially different frozen follow-up, not a retune of the failed V1.3.",
+    "executableBoundary": "BLOCKED_EXTERNAL: remote development device is offline, preventing access to private owner data/runtime and local ephemeris execution."
   },
   "privateWorkingAnswerCount": 84,
   "currentFollowupState": "owner_development_target_met_v12_western_only",
@@ -490,7 +490,7 @@
     "completionBoundary": "Compare pre-frozen tradition-grounded aggregation arms on the known owner development failure without retuning after result reveal. Preserve V1.2 result independently."
   },
   "astroHDV13": {
-    "status": "SOURCE_REGISTRY_AND_AGGREGATION_FREEZE_IN_PROGRESS",
+    "status": "V13_EQUAL_TESTIMONY_DEV_FAIL_V13B_SOURCE_NATIVE_FROZEN_BLOCKED_REMOTE_DEVICE_OFFLINE",
     "classification": "owner-requested post-result development experiment; not validation",
     "conception": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V13-TRADITION-GROUNDED-MULTIVERSE-CONCEPTION-20260924.md",
     "priorWorkScan": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V13-TRADITION-GROUNDED-PRIOR-WORK-SCAN-20260924.md",
@@ -506,6 +506,13 @@
     ],
     "noOwnerTunedWeights": true,
     "directRegressionBeforeCentury": true,
-    "noRetuneAfterReveal": true
+    "noRetuneAfterReveal": true,
+    "directResult": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V13-TRADITION-DIRECT-RESULT-20260924.md",
+    "sourceNativeFreeze": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V13B-SOURCE-NATIVE-STRENGTH-FREEZE-20260924.json",
+    "v13EqualTestimonyDisposition": "DEV_FAIL",
+    "v13bCausalRevision": "Use each tradition's own published/native numerical strength machinery instead of the project's +/-1 testimony grammar.",
+    "v13bLilly": "William Lilly core fortitude points frozen pre-score.",
+    "v13bParashari": "PyJHora strength.shad_bala at frozen commit, private oracle only.",
+    "blocker": "Authorized remote development device offline during execution; no owner score opened for V1.3b."
   }
 }
