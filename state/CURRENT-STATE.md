@@ -76,3 +76,11 @@ The owner answered the first frozen v8 question. The literal answer, participant
 Applying the pre-answer Q1 rules did not satisfy the sequential stop condition. The next predeclared profile-family discriminator remains decision-relevant, so its exact wording and response coding were frozen before presentation in `tasks/scenario-owner-recovery-calibration-20260923/OWNER-TRAINING-V8-Q2-FREEZE-20260924.md`.
 
 Current state: **awaiting the owner's Q2 answer**. After that answer, preserve it privately, recompute both owner-training recovery comparisons, and proceed to the organized-detail candidate only if the frozen queue/stop rule still requires it.
+
+## Owner-trained scenario v8 — Q2 privately evaluated; final queued Q3 frozen — 2026-09-24
+
+The owner answered the second frozen v8 question. The literal answer, participant-specific code, and detailed score remain in private runtime storage only. The public repository records only hashes and process state.
+
+Applying the pre-answer Q2 rules did not satisfy the date-recovery stop condition. The final predeclared owner-training question, `V8.ORGANIZED_DETAIL.LEARNING_STRUCTURE`, remains decision-relevant for target-vs-2013 date recovery and has been frozen before presentation in `tasks/scenario-owner-recovery-calibration-20260923/OWNER-TRAINING-V8-Q3-FREEZE-20260924.md`.
+
+Q3 does not address same-date time recovery. After Q3, the current three-question queue is exhausted: preserve the answer privately, recompute the final owner-training comparisons, classify outcome advancement/strategy efficacy, and do not add another target-shaped owner question in this round.
