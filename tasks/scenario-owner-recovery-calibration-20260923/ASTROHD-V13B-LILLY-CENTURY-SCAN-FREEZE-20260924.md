@@ -77,3 +77,18 @@ Do not run minute refinement as part of this century scan unless separately requ
 This scan is explicitly **post-selection/descriptive** because Lilly was selected for century ranking only after the owner learned that Lilly passed while Parashari failed.
 
 A strong century rank would show that the frozen Lilly source-native model generalizes the direct owner fit across a broad time universe under unchanged rules. It would **not** establish independent validation, cross-tradition convergence, or scientific validity of astrology.
+
+## Implementation binding frozen before result reveal
+
+Exact implementation commit: `45a53a4`.
+
+- vector Lilly century module SHA-256: `612ef74cccdbb4673b92abc6dce16fb3e5f97b8cf1284e6a79c58ff612a12203`
+- century runner SHA-256: `cb0e25a359bdcdbb9458b92082b258f05c3f114693283a94eeb9408e063cde50`
+- focused equivalence test SHA-256: `ecf680a88954f520d1cf30857f296f258944ae190a18f248002770e8075044b5`
+- focused tests: **2 passed**
+- focused Ruff: **PASS**
+
+The century runner uses exact Swiss Ephemeris planet positions **and speeds** at every hourly candidate, plus exact Regiomontanus cusps at every hourly candidate. It does not interpolate positions or infer retrograde status from finite differences.
+
+The vectorized scoring path was mechanically checked against the original scalar frozen Lilly source-native scorer before any century result was opened.
+
