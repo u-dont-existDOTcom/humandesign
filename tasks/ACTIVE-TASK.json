@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "scenario-owner-recovery-calibration-20260923",
-  "status": "astrohd_v12_western_direct_pass_century_rank_pending",
+  "status": "owner_development_target_met_v12_western_only",
   "requiredBranch": "chat/scenario-owner-recovery-calibration-20260923",
   "exclusive": true,
   "ownerOutcome": "Develop the scenario-first survey/recovery method on the owner case until the known recorded 1985-01-29 10:25 UTC Philadelphia birth neighborhood is distinguished from the persistent 2013 competitor and nearby same-date alternatives using owner-reported behavior. Target-aware owner training is allowed; preserve all such changes as development/training evidence and reserve independent validation for fresh participants.",
@@ -11,7 +11,7 @@
   "measurementFreezeSha256": "6f49806cc086ba41d23d31882b6ccc218cef78f94d7599830f5a9a2b994737ba",
   "measurementAnswerCount": 79,
   "method": "tasks/scenario-owner-recovery-calibration-20260923/OWNER-RECOVERY-CALIBRATION-20260923.md",
-  "nextAction": "Run the frozen transparent AstroHD V1.2 Western-only 876,601-hour century rank using the already-computed century feature prevalences and exact Swiss-file predicates. Report exact target rank, persistent-2013 rank, best recorded-date hour, and global top neighborhood. Do not build the merged layer or retune predicates until the Western-only century result is known.",
+  "nextAction": "No further action is required for the current owner-development outcome. Fresh/held-out participant validation is a separate future objective; the merged HD+Western layer is optional and not unfinished owner work.",
   "runtimeBoundary": "Raw answers and participant-specific coding remain private. Birth/chart/model/rank information must not be supplied to neutral follow-up selection/coding. Do not score the incomplete v1 profile and call a miss or hit a survey result.",
   "neutralCoderAOutputSha256": "538402a5d5f64ad4b75f08ba86943aab9d99d3011e14b040547032783966aa35",
   "neutralCoderBOutputSha256": "84be173203360e9d2370612ec492ae6dcec2bedd05540ced6f72ce7d4eec3e5c",
@@ -181,15 +181,15 @@
   },
   "dualScorerObjectiveRecord": "tasks/scenario-owner-recovery-calibration-20260923/DUAL-SCORER-CALIBRATION-OBJECTIVE-20260923.md",
   "stopAdmission": {
-    "parentOutcome": "OPEN_OWNER_TRAINING",
-    "remainingGap": "Transparent Western-only V1.2 passed the direct owner development regression, but global century rank and exact neighborhood recovery under the frozen V1.2 rules are not yet measured.",
-    "nextAction": "Assistant runs the admitted frozen Western-only century ranking. The merged HD+Western layer remains blocked until that result is known.",
-    "responsibleActor": "assistant",
-    "currentAuthority": "owner authorized target-aware development; V1.2 predicates/scoring were frozen before owner V1.2 scores; owner case remains development evidence only",
-    "executableBoundary": "Safe authorized century-ranking work remains; no owner input is required."
+    "parentOutcome": "SATISFIED_OWNER_DEVELOPMENT",
+    "remainingGap": "NONE at the current authorized owner-development boundary. Generalization to new people remains unvalidated and is a separate future objective.",
+    "nextAction": "NONE_REQUIRED",
+    "responsibleActor": "none",
+    "currentAuthority": "Current owner-development objective is satisfied. Do not add the merged HD+Western layer or new owner questions without a new decision-relevant objective.",
+    "executableBoundary": "Stop admitted: frozen Western-only V1.2 distinguishes the recorded 1985-01-29 10:25 UTC Philadelphia neighborhood from the persistent 2013 comparator and nearby same-date alternatives."
   },
   "privateWorkingAnswerCount": 84,
-  "currentFollowupState": "natural_stop_measurement_v2_frozen",
+  "currentFollowupState": "owner_development_target_met_v12_western_only",
   "completedCalibrationFollowups": {
     "F0": {
       "facet": "D05.audience_adaptation",
@@ -446,7 +446,7 @@
     "scoreAdmissible": false
   },
   "astroHDV12Western": {
-    "status": "DIRECT_REGRESSION_DEV_PASS_CENTURY_RANK_PENDING",
+    "status": "CENTURY_AND_REFINEMENT_DEV_PASS_OWNER_TARGET_MET",
     "classification": "post-result owner development; not validation",
     "independentConception": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V12-TRANSPARENT-MERGED-INDEPENDENT-CONCEPTION-20260924.md",
     "priorWorkScan": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V12-TRANSPARENT-MERGED-PRIOR-WORK-SCAN-20260924.md",
@@ -461,6 +461,26 @@
     "directRegressionStatus": "DEV_PASS_NONVALIDATING",
     "centuryRankAdmitted": true,
     "mergedLayerAdmitted": false,
-    "noRetuneAfterReveal": true
+    "noRetuneAfterReveal": true,
+    "privateCenturyRankSha256": "bf2afae1cbaf96ab9610da910464bcc5651fbb8d5392da5e41fffd1de2ed7ef5",
+    "exactTargetHourlyRank": [
+      3,
+      4
+    ],
+    "persistent2013Rank": [
+      644661,
+      644833
+    ],
+    "privateMinuteRefinementSha256": "627a1d64451d237680179d75080a4c88a3e7fd0d336ca49f37e08fa37f5138a8",
+    "localTargetPlateauStartUtc": "1985-01-29T10:25:00Z",
+    "localTargetPlateauEndUtc": "1985-01-29T10:47:00Z",
+    "localTargetPlateauIsBestOnPhiladelphiaLocalDate": true,
+    "localBestPlateauOffsetFromRecordedMinutes": 0,
+    "globalUniqueRecovery": false,
+    "higherGlobalRefinedNeighborhoodsPresent": true,
+    "ownerDevelopmentOutcomeMet": true,
+    "mergedLayerRequired": false,
+    "validationStatus": "NOT_VALIDATION",
+    "centuryResultReceipt": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V12-WESTERN-CENTURY-RESULT-20260924.md"
   }
 }

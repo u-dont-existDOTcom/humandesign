@@ -143,3 +143,20 @@ Disposition: **DEV_PASS_NONVALIDATING**. This is the first current replacement s
 The Western-only century ranking is now admitted and is the current next action. Do not build the merged HD+Western layer or retune Western predicates until the frozen Western-only century result is known.
 
 See `tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V12-WESTERN-DIRECT-REGRESSION-RESULT-20260924.md`.
+
+
+## AstroHD V1.2 transparent Western-only — owner development target met — 2026-09-24
+
+The transparent Western-only V1.2 strategy has completed the frozen century ranking and minute refinement. The owner-development result is now **SATISFIED / DEV_PASS_NONVALIDATING**.
+
+Across the frozen 876,601-hour century universe, the exact recorded 1985-01-29 10:25 UTC moment ranks **#3–#4** with Western score **26.4757284838**. The persistent 2013 comparator ranks **#644,661–#644,833** with score **3.0139164145**.
+
+The pre-frozen top-hour minute refinement evaluated 13,026 minute states. On the Philadelphia-local date of 1985-01-29, the highest-scoring plateau begins **exactly at the recorded 10:25 UTC minute** and continues through **10:47 UTC**. The recorded moment is locally optimal with 0-minute offset from the start of the best local plateau.
+
+The result is not globally unique: higher refined neighborhoods remain in 1983, 1997, and two 1986 windows. This limitation is retained explicitly. The result is post-selection owner development, not independent validation.
+
+This is the first current replacement strategy to meet the stated owner-development target: distinguish the recorded 1985-01-29 10:25 UTC Philadelphia neighborhood from the persistent 2013 competitor and nearby same-date alternatives.
+
+The simpler Western-only V1.2 route is accepted at this development boundary. The merged HD+Western layer is **not required** and must not be added merely to improve the known-case rank. Fresh/held-out participants are the next scientific boundary if generalization is pursued.
+
+See tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V12-WESTERN-CENTURY-RESULT-20260924.md.
