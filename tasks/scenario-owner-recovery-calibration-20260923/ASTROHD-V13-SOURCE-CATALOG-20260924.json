@@ -1,0 +1,289 @@
+{
+  "schema": "astrohd-v1.3-source-catalog-v1",
+  "status": "FROZEN_INPUT_FOR_TARGET_BLIND_DOMAIN_MAPPING",
+  "owner_target_or_birth_information_present": false,
+  "principles": [
+    "Only source-grounded traditional significations and strength/placement rules may be mapped to behavioral domains.",
+    "No V1.1/V1.2 owner-specific feature weights or owner-case ranks are supplied.",
+    "If a behavioral domain lacks a clear source-supported traditional analogue, abstain rather than invent one."
+  ],
+  "sources": [
+    {
+      "id": "valens_planets",
+      "tradition": "hellenistic_western",
+      "url": "https://www.skyscript.co.uk/pdf/pubs/texts/valens/riley/docs/Vettius_Valens_Riley.pdf",
+      "summary": [
+        "Mercury: education, letters, disputation, reasoning, interpretation, accounts, communication, discoveries, forethought and intelligence, oratory, philosophy, systematic work.",
+        "Jupiter: political ties, friendships, justice, offices, rank, authority, beneficence, fellowship, relief from troubles, freedom.",
+        "Mars: action and effort, conflict, force, quarrels, difficult embassies, craftwork.",
+        "Venus: desire and love, friendship, companionship, agreements, pleasure, arts, beauty, marriage.",
+        "Saturn: necessity, isolation/solitariness, obstacles, secrets, griefs, confinement.",
+        "Valens states that appropriately/favorably situated benefics, and even malefics in appropriate places and their own sect, can manifest their proper effects."
+      ]
+    },
+    {
+      "id": "valens_sect",
+      "tradition": "hellenistic_western",
+      "url": "https://www.skyscript.co.uk/pdf/pubs/texts/valens/riley/docs/Vettius_Valens_Riley.pdf",
+      "summary": [
+        "Solar/day sect includes Sun, Jupiter and Saturn; lunar/night sect includes Moon, Venus and Mars.",
+        "Sect appropriateness is treated as a condition affecting whether a planet's proper effects operate constructively."
+      ]
+    },
+    {
+      "id": "lilly_planets",
+      "tradition": "lilly_traditional_western",
+      "url": "https://www.skyscript.co.uk/mercury_att.html",
+      "summary": [
+        "Mercury is associated with speech, memory, reasoning, learning, oratory and practical intelligence.",
+        "Jupiter with justice, counsel, religion, scholarship and public responsibility.",
+        "Sun with honour, authority and public office.",
+        "Venus with love, pleasure, art and sociability.",
+        "Mars with action, conflict, technical/craft activity and force.",
+        "Saturn with solitude, restraint, difficulty and endurance.",
+        "Moon with movement, messaging, care/nurture and the common people."
+      ]
+    },
+    {
+      "id": "lilly_houses",
+      "tradition": "lilly_traditional_western",
+      "url": "https://www.skyscript.co.uk/lilly_houses.html",
+      "summary": [
+        "1st: life/self/body.",
+        "2nd: wealth/resources.",
+        "3rd: siblings, neighbours, short travel, letters/messages.",
+        "4th: home/land/family roots/endings.",
+        "5th: children, pleasure, play.",
+        "6th: illness, service, labour/workers.",
+        "7th: marriage/partners, open conflict/opponents.",
+        "8th: death/inheritance/fear/anguish.",
+        "9th: religion, learning, books, dreams/visions, long journeys.",
+        "10th: profession, office, honour, authority.",
+        "11th: friends, hope, trust, allies/councillors.",
+        "12th: sorrow, confinement, hidden enemies, self-undoing."
+      ]
+    },
+    {
+      "id": "lilly_strength",
+      "tradition": "lilly_traditional_western",
+      "url": "https://www.skyscript.co.uk/dig5.html",
+      "summary": [
+        "Lilly publishes an explicit strength/debility point table including essential dignity, house placement, motion, speed, solar phase and other conditions.",
+        "This project may use the published point table only as a source-native sensitivity arm; it must not alter Lilly's point values."
+      ]
+    },
+    {
+      "id": "phaladeepika_strength",
+      "tradition": "parashari_jyotish",
+      "url": "https://www.wisdomlib.org/hinduism/book/phaladeepika-by-mantreswara-text-and-translation/d/doc1621576.html",
+      "summary": [
+        "Phaladeepika gives explicit positional/planetary strength rules including exaltation, own/friendly signs, kendra/other bhava placement, directional strength, waxing/waning Moon, retrograde strength and other conditions.",
+        "A planet's strength can be assessed from multiple traditional testimonies rather than a project-authored salience coefficient."
+      ]
+    },
+    {
+      "id": "phaladeepika_bhavas",
+      "tradition": "parashari_jyotish",
+      "url": "https://www.wisdomlib.org/hinduism/book/phaladeepika-by-mantreswara-text-and-translation/d/doc1621588.html",
+      "summary": [
+        "Bhava judgement combines the bhava itself, its lord and its karaka/significator.",
+        "The text treats strength of the bhava, its lord and karaka as relevant to whether the bhava produces its effects.",
+        "Examples identify the 4th with mother/home, 5th with children, 7th with spouse, 10th with profession/activity, and 2nd with wealth/speech."
+      ]
+    },
+    {
+      "id": "bphs_structure",
+      "tradition": "parashari_jyotish",
+      "url": "https://www.wisdomlib.org/shop/books/jyotisha/brihat-parashara-hora-shastra",
+      "summary": [
+        "Brihat Parashara Hora Shastra has dedicated chapters for planetary characters, zodiacal signs, house effects, bhava lords, planetary aspects, strength evaluation and planetary karakatwas.",
+        "Planetary aspects include special aspect rules for Saturn, Mars and Jupiter."
+      ]
+    },
+    {
+      "id": "hellenistic_planetary_joys",
+      "tradition": "hellenistic_western",
+      "url": "https://www.hellenisticastrology.com/the-planetary-joys.pdf",
+      "summary": [
+        "Traditional planetary joys: Mercury 1st, Moon 3rd, Venus 5th, Mars 6th, Sun 9th, Jupiter 11th, Saturn 12th.",
+        "Joy is treated as a traditional positive testimony distinct from essential dignity."
+      ]
+    },
+    {
+      "id": "lilly_regiomontanus",
+      "tradition": "lilly_traditional_western",
+      "url": "https://www.astro.com/astrowiki/en/Regiomontanus_House_System",
+      "summary": [
+        "William Lilly used the Regiomontanus house system; V1.3 Lilly specifications therefore use Regiomontanus cusps."
+      ]
+    },
+    {
+      "id": "lahiri_ayanamsha",
+      "tradition": "parashari_jyotish",
+      "url": "https://www.astro.com/swisseph/swisseph.htm",
+      "summary": [
+        "Lahiri ayanamsha was introduced by the Indian Calendar Reform Committee and became a standard basis for Indian sidereal ephemerides/calendars; V1.3 freezes Swiss Ephemeris Lahiri for its Parashari arm."
+      ]
+    }
+  ],
+  "allowed_predicate_families": {
+    "hellenistic_western": [
+      "planet_in_whole_sign_house",
+      "planet_in_domicile",
+      "planet_in_exaltation",
+      "planet_in_triplicity",
+      "planet_in_sect",
+      "planet_in_joy_house",
+      "sign_based_ptolemaic_aspect_between_planets",
+      "house_lord_in_whole_sign_house",
+      "house_lord_dignified"
+    ],
+    "lilly_traditional_western": [
+      "planet_in_quadrant_house",
+      "planet_in_domicile",
+      "planet_in_exaltation",
+      "planet_in_triplicity",
+      "planet_in_term",
+      "planet_in_face",
+      "planet_in_detriment",
+      "planet_in_fall",
+      "planet_retrograde",
+      "planet_direct",
+      "planet_angular_succedent_cadent",
+      "planet_major_aspect_between_planets",
+      "house_lord_in_house",
+      "house_lord_dignified",
+      "lilly_source_native_fortitude_score"
+    ],
+    "parashari_jyotish": [
+      "planet_in_sidereal_whole_sign_house",
+      "planet_in_exaltation",
+      "planet_in_own_sign",
+      "planet_in_debilitation",
+      "planet_retrograde",
+      "planet_in_kendra",
+      "planet_in_trikona",
+      "planet_in_upachaya",
+      "planet_in_dusthana",
+      "graha_drishti",
+      "house_lord_in_sidereal_house",
+      "house_lord_strength_testimonies"
+    ]
+  },
+  "domain_ontology": [
+    {
+      "id": "complex_structure",
+      "definition": "tendency to organize, parse or make sense of complex or conflicting structure/detail"
+    },
+    {
+      "id": "recurring_mystery",
+      "definition": "persistent return to unresolved, hidden, existential or difficult questions"
+    },
+    {
+      "id": "original_contribution",
+      "definition": "creating or originating one's own methods, ideas or contributions rather than only following inherited ones"
+    },
+    {
+      "id": "insight_translation",
+      "definition": "expressing, explaining or translating understanding so other people can use it"
+    },
+    {
+      "id": "persuasion_strategy",
+      "definition": "trying to influence, argue, negotiate or persuade in a context-sensitive way"
+    },
+    {
+      "id": "recognition_entry",
+      "definition": "entry into roles/opportunities through recognition, invitation, appointment or acknowledged competence"
+    },
+    {
+      "id": "network_pathways",
+      "definition": "opportunities and work emerging through friends, allies, communities or social connections"
+    },
+    {
+      "id": "role_projection",
+      "definition": "other people placing expectations, dependency, leadership or rescue roles onto the person"
+    },
+    {
+      "id": "immediate_body_signal",
+      "definition": "rapid embodied, intuitive or pre-deliberative signals used in decisions"
+    },
+    {
+      "id": "autonomy_direction",
+      "definition": "self-direction, personal agency and preference for choosing one's own direction"
+    },
+    {
+      "id": "sanctuary_sensory",
+      "definition": "importance of home, physical comfort, environmental conditions or a restorative private base"
+    },
+    {
+      "id": "romantic_attachment",
+      "definition": "romantic attraction, affection, sensuality, sexuality and pair-bonding"
+    },
+    {
+      "id": "emotion_permeability",
+      "definition": "emotional responsiveness, receptivity or susceptibility to other people's emotional states"
+    },
+    {
+      "id": "work_energy_range",
+      "definition": "capacity and limits for sustained work, labour or productive effort"
+    },
+    {
+      "id": "consequential_effort",
+      "definition": "mobilizing effort for work or causes judged meaningful or consequential"
+    },
+    {
+      "id": "correction_threshold",
+      "definition": "noticing and correcting errors, problems or disorder when they matter enough"
+    },
+    {
+      "id": "retreat_privacy",
+      "definition": "withdrawal, privacy, solitude, spiritual retreat or removal from ordinary social activity"
+    },
+    {
+      "id": "value_tension",
+      "definition": "durable moral/value conflicts, competing obligations or tensions between principles"
+    },
+    {
+      "id": "resource_motivation",
+      "definition": "motives around money, property, resources, security, autonomy or status"
+    }
+  ],
+  "implementation_freezes": {
+    "hellenistic_house_system": "whole_sign_from_tropical_ascendant",
+    "lilly_house_system": "Regiomontanus",
+    "parashari_zodiac": "sidereal_Lahiri",
+    "parashari_house_system": "whole_sign_from_sidereal_ascendant",
+    "traditional_sign_rulers": {
+      "aries": "mars",
+      "taurus": "venus",
+      "gemini": "mercury",
+      "cancer": "moon",
+      "leo": "sun",
+      "virgo": "mercury",
+      "libra": "venus",
+      "scorpio": "mars",
+      "sagittarius": "jupiter",
+      "capricorn": "saturn",
+      "aquarius": "saturn",
+      "pisces": "jupiter"
+    },
+    "exaltation_signs": {
+      "sun": "aries",
+      "moon": "taurus",
+      "mercury": "virgo",
+      "venus": "pisces",
+      "mars": "capricorn",
+      "jupiter": "cancer",
+      "saturn": "libra"
+    },
+    "hellenistic_joy_houses": {
+      "sun": 9,
+      "moon": 3,
+      "mercury": 1,
+      "venus": 5,
+      "mars": 6,
+      "jupiter": 11,
+      "saturn": 12
+    }
+  }
+}

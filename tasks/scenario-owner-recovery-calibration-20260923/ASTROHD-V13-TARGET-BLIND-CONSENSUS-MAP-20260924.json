@@ -1,0 +1,690 @@
+{
+  "schema": "astrohd-v1.3-target-blind-consensus-domain-significator-map-v1",
+  "method": "intersection of two fresh source-only isolated Claude Opus 5.5/high mappings; no birth/chart/candidate/rank/owner answers supplied",
+  "mapper_a_sha256": "003885b808fd960908b142d147791b46906d9df0ca9371459ebd725982bc80e1",
+  "mapper_b_sha256": "164021b826eb3a522260351987d6451edc6cd52a9731003508b996b3880f3725",
+  "domains": [
+    {
+      "domain_id": "complex_structure",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [
+            {
+              "id": "mercury",
+              "source_ids": [
+                "valens_planets"
+              ],
+              "rationale": "Valens gives Mercury reasoning, interpretation, accounts and systematic work, which covers parsing and organizing detail."
+            }
+          ],
+          "houses": [],
+          "consensus_abstain": false
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [
+            {
+              "id": "mercury",
+              "source_ids": [
+                "lilly_planets"
+              ],
+              "rationale": "Lilly gives Mercury reasoning, learning and practical intelligence, which covers making sense of detail."
+            }
+          ],
+          "houses": [],
+          "consensus_abstain": false
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true
+        }
+      ]
+    },
+    {
+      "domain_id": "recurring_mystery",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true
+        }
+      ]
+    },
+    {
+      "domain_id": "original_contribution",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [
+            {
+              "id": "mercury",
+              "source_ids": [
+                "valens_planets"
+              ],
+              "rationale": "Valens explicitly lists 'discoveries' under Mercury, which matches originating new ideas or methods."
+            }
+          ],
+          "houses": [],
+          "consensus_abstain": false
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true
+        }
+      ]
+    },
+    {
+      "domain_id": "insight_translation",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [
+            {
+              "id": "mercury",
+              "source_ids": [
+                "valens_planets"
+              ],
+              "rationale": "Valens gives Mercury education, interpretation, communication and oratory, which covers explaining understanding to others."
+            }
+          ],
+          "houses": [],
+          "consensus_abstain": false
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [
+            {
+              "id": "mercury",
+              "source_ids": [
+                "lilly_planets"
+              ],
+              "rationale": "Lilly gives Mercury speech, oratory and learning, which covers communicating understanding."
+            }
+          ],
+          "houses": [
+            {
+              "id": 3,
+              "source_ids": [
+                "lilly_houses"
+              ],
+              "rationale": "The 3rd signifies letters and messages, which carry communicated content."
+            }
+          ],
+          "consensus_abstain": false
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [],
+          "houses": [
+            {
+              "id": 2,
+              "source_ids": [
+                "phaladeepika_bhavas"
+              ],
+              "rationale": "Phaladeepika identifies the 2nd with speech, the vehicle of expression."
+            }
+          ],
+          "consensus_abstain": false
+        }
+      ]
+    },
+    {
+      "domain_id": "persuasion_strategy",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [
+            {
+              "id": "mercury",
+              "source_ids": [
+                "valens_planets"
+              ],
+              "rationale": "Valens gives Mercury disputation and oratory, which covers argument and persuasion."
+            }
+          ],
+          "houses": [],
+          "consensus_abstain": false
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [
+            {
+              "id": "mercury",
+              "source_ids": [
+                "lilly_planets"
+              ],
+              "rationale": "Lilly gives Mercury oratory and reasoning, which covers persuasive speech."
+            }
+          ],
+          "houses": [],
+          "consensus_abstain": false
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true
+        }
+      ]
+    },
+    {
+      "domain_id": "recognition_entry",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [
+            {
+              "id": "jupiter",
+              "source_ids": [
+                "valens_planets"
+              ],
+              "rationale": "Valens gives Jupiter offices, rank and authority, which covers appointment to roles."
+            }
+          ],
+          "houses": [],
+          "consensus_abstain": false
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [
+            {
+              "id": "sun",
+              "source_ids": [
+                "lilly_planets"
+              ],
+              "rationale": "Lilly gives the Sun honour, authority and public office."
+            },
+            {
+              "id": "jupiter",
+              "source_ids": [
+                "lilly_planets"
+              ],
+              "rationale": "Lilly gives Jupiter public responsibility."
+            }
+          ],
+          "houses": [
+            {
+              "id": 10,
+              "source_ids": [
+                "lilly_houses"
+              ],
+              "rationale": "The 10th signifies office, honour and authority."
+            }
+          ],
+          "consensus_abstain": false
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true
+        }
+      ]
+    },
+    {
+      "domain_id": "network_pathways",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [
+            {
+              "id": "jupiter",
+              "source_ids": [
+                "valens_planets"
+              ],
+              "rationale": "Valens gives Jupiter political ties, friendships and fellowship, which covers opportunity through connections."
+            },
+            {
+              "id": "venus",
+              "source_ids": [
+                "valens_planets"
+              ],
+              "rationale": "Valens gives Venus friendship and companionship."
+            }
+          ],
+          "houses": [],
+          "consensus_abstain": false
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [],
+          "houses": [
+            {
+              "id": 11,
+              "source_ids": [
+                "lilly_houses"
+              ],
+              "rationale": "The 11th signifies friends, allies and councillors."
+            }
+          ],
+          "consensus_abstain": false
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true
+        }
+      ]
+    },
+    {
+      "domain_id": "role_projection",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true
+        }
+      ]
+    },
+    {
+      "domain_id": "immediate_body_signal",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true
+        }
+      ]
+    },
+    {
+      "domain_id": "autonomy_direction",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true
+        }
+      ]
+    },
+    {
+      "domain_id": "sanctuary_sensory",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [],
+          "houses": [
+            {
+              "id": 4,
+              "source_ids": [
+                "lilly_houses"
+              ],
+              "rationale": "The 4th signifies home and land."
+            }
+          ],
+          "consensus_abstain": false
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [],
+          "houses": [
+            {
+              "id": 4,
+              "source_ids": [
+                "phaladeepika_bhavas"
+              ],
+              "rationale": "Phaladeepika identifies the 4th with home."
+            }
+          ],
+          "consensus_abstain": false
+        }
+      ]
+    },
+    {
+      "domain_id": "romantic_attachment",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [
+            {
+              "id": "venus",
+              "source_ids": [
+                "valens_planets"
+              ],
+              "rationale": "Valens gives Venus desire, love, pleasure and marriage."
+            }
+          ],
+          "houses": [],
+          "consensus_abstain": false
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [
+            {
+              "id": "venus",
+              "source_ids": [
+                "lilly_planets"
+              ],
+              "rationale": "Lilly gives Venus love and pleasure."
+            }
+          ],
+          "houses": [
+            {
+              "id": 7,
+              "source_ids": [
+                "lilly_houses"
+              ],
+              "rationale": "The 7th signifies marriage and partners."
+            }
+          ],
+          "consensus_abstain": false
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [],
+          "houses": [
+            {
+              "id": 7,
+              "source_ids": [
+                "phaladeepika_bhavas"
+              ],
+              "rationale": "Phaladeepika identifies the 7th with the spouse."
+            }
+          ],
+          "consensus_abstain": false
+        }
+      ]
+    },
+    {
+      "domain_id": "emotion_permeability",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true
+        }
+      ]
+    },
+    {
+      "domain_id": "work_energy_range",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [
+            {
+              "id": "mars",
+              "source_ids": [
+                "valens_planets"
+              ],
+              "rationale": "Valens gives Mars action and effort."
+            }
+          ],
+          "houses": [],
+          "consensus_abstain": false
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [
+            {
+              "id": "mars",
+              "source_ids": [
+                "lilly_planets"
+              ],
+              "rationale": "Lilly gives Mars action."
+            },
+            {
+              "id": "saturn",
+              "source_ids": [
+                "lilly_planets"
+              ],
+              "rationale": "Lilly gives Saturn endurance, which bears on sustained effort."
+            }
+          ],
+          "houses": [
+            {
+              "id": 6,
+              "source_ids": [
+                "lilly_houses"
+              ],
+              "rationale": "The 6th signifies labour and workers."
+            }
+          ],
+          "consensus_abstain": false
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true
+        }
+      ]
+    },
+    {
+      "domain_id": "consequential_effort",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true
+        }
+      ]
+    },
+    {
+      "domain_id": "correction_threshold",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true
+        }
+      ]
+    },
+    {
+      "domain_id": "retreat_privacy",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [
+            {
+              "id": "saturn",
+              "source_ids": [
+                "valens_planets"
+              ],
+              "rationale": "Valens gives Saturn isolation, solitariness and confinement."
+            }
+          ],
+          "houses": [],
+          "consensus_abstain": false
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [
+            {
+              "id": "saturn",
+              "source_ids": [
+                "lilly_planets"
+              ],
+              "rationale": "Lilly gives Saturn solitude and restraint."
+            }
+          ],
+          "houses": [
+            {
+              "id": 12,
+              "source_ids": [
+                "lilly_houses"
+              ],
+              "rationale": "The 12th signifies confinement, meaning removal from ordinary social activity."
+            }
+          ],
+          "consensus_abstain": false
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true
+        }
+      ]
+    },
+    {
+      "domain_id": "value_tension",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true
+        }
+      ]
+    },
+    {
+      "domain_id": "resource_motivation",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [],
+          "houses": [
+            {
+              "id": 2,
+              "source_ids": [
+                "lilly_houses"
+              ],
+              "rationale": "The 2nd signifies wealth and resources."
+            }
+          ],
+          "consensus_abstain": false
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [],
+          "houses": [
+            {
+              "id": 2,
+              "source_ids": [
+                "phaladeepika_bhavas"
+              ],
+              "rationale": "Phaladeepika identifies the 2nd with wealth."
+            }
+          ],
+          "consensus_abstain": false
+        }
+      ]
+    }
+  ]
+}

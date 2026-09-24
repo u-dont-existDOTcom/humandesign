@@ -1,0 +1,168 @@
+{
+  "schema": "astrohd-v1.3-tradition-grounded-scoring-freeze-v1",
+  "status": "FROZEN_BEFORE_ANY_V1_3_OWNER_SCORE",
+  "classification": "owner-requested post-result development experiment; not validation",
+  "source_catalog_sha256": "7aa04ca8e504d35274e2e2270f1b08e64adafd817f2e0e3fa083465bb7a20c65",
+  "target_blind_consensus_map_sha256": "d0639d4eebeb297847dcf3fe3dbbe724a0f3c19a526ce58c72da54cff8aa96d2",
+  "semantic_mapper_a_sha256": "003885b808fd960908b142d147791b46906d9df0ca9371459ebd725982bc80e1",
+  "semantic_mapper_b_sha256": "164021b826eb3a522260351987d6451edc6cd52a9731003508b996b3880f3725",
+  "semantic_mapping_rule": "Only A∩B significator associations are eligible. No one-mapper-only association is scored.",
+  "traditions": {
+    "hellenistic_western": {
+      "zodiac": "tropical",
+      "houses": "whole sign from tropical Ascendant",
+      "planets": [
+        "sun",
+        "moon",
+        "mercury",
+        "venus",
+        "mars",
+        "jupiter",
+        "saturn"
+      ],
+      "positive_planet_testimonies": [
+        "domicile",
+        "exaltation",
+        "planetary_joy_house",
+        "own_sect_for_sun_moon_venus_mars_jupiter_saturn"
+      ],
+      "negative_planet_testimonies": [],
+      "mapped_house_rule": "When a mapped house exists, its traditional ruler is evaluated with the same positive planet testimonies; a mapped significator planet occupying that mapped house adds one positive testimony.",
+      "mercury_sect_rule": "No sect testimony for Mercury in the core V1.3 specifications."
+    },
+    "lilly_traditional_western": {
+      "zodiac": "tropical",
+      "houses": "Regiomontanus",
+      "planets": [
+        "sun",
+        "moon",
+        "mercury",
+        "venus",
+        "mars",
+        "jupiter",
+        "saturn"
+      ],
+      "positive_planet_testimonies": [
+        "domicile",
+        "exaltation",
+        "direct_motion",
+        "positive_Lilly_house_placement"
+      ],
+      "negative_planet_testimonies": [
+        "detriment",
+        "fall",
+        "retrograde_motion",
+        "negative_Lilly_house_placement"
+      ],
+      "house_placement_rule": {
+        "positive_houses": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          9,
+          10,
+          11
+        ],
+        "negative_houses": [
+          6,
+          8,
+          12
+        ],
+        "note": "Signs only; Lilly's published numerical house-point magnitudes are not used in the core no-project-weight arms."
+      },
+      "mapped_house_rule": "The sign ruler of the mapped Regiomontanus house cusp is evaluated with the same signed testimonies; a mapped significator planet occupying the mapped house adds +1."
+    },
+    "parashari_jyotish": {
+      "zodiac": "sidereal Lahiri via Swiss Ephemeris",
+      "houses": "whole sign from sidereal Lahiri Ascendant",
+      "planets": [
+        "sun",
+        "moon",
+        "mercury",
+        "venus",
+        "mars",
+        "jupiter",
+        "saturn"
+      ],
+      "positive_planet_testimonies": [
+        "own_sign",
+        "exaltation",
+        "retrograde_for_mercury_venus_mars_jupiter_saturn",
+        "kendra_house"
+      ],
+      "negative_planet_testimonies": [
+        "debilitation"
+      ],
+      "kendra_houses": [
+        1,
+        4,
+        7,
+        10
+      ],
+      "mapped_house_rule": "The traditional ruler of the mapped sidereal whole-sign house is evaluated with the same signed testimonies. If a mapped significator planet exists and occupies the mapped house, add +1."
+    }
+  },
+  "testimony_combination": {
+    "per_tradition_domain_raw": "Signed sum of all eligible +1/-1 source-grounded testimonies for all consensus mapped planets and mapped-house lords. No salience/directness coefficient and no prevalence/rarity weight.",
+    "per_tradition_domain_sign": "sign(per_tradition_domain_raw), yielding -1, 0, or +1.",
+    "aggregation_arms": [
+      {
+        "id": "domain_collapse_nonstack",
+        "rule": "For each behavioral domain, sum tradition-domain signs then take sign once. The domain contributes at most -1/0/+1 globally."
+      },
+      {
+        "id": "cross_tradition_convergence_stack",
+        "rule": "For each behavioral domain, sum one -1/0/+1 sign from each tradition. Independent traditions can therefore stack, but verbosity within a tradition cannot."
+      },
+      {
+        "id": "raw_independent_testimony_stack",
+        "rule": "Sum all signed source-grounded testimony hits across all traditions and domains. This intentionally tests the owner's hypothesis that multiple independent astrological testimonies may accumulate."
+      }
+    ],
+    "fragility_rule": "If only raw_independent_testimony_stack passes while domain_collapse_nonstack and cross_tradition_convergence_stack both fail, classify the owner fit as RAW_STACKING_FRAGILE rather than clean convergence."
+  },
+  "behavioral_evidence_modes": [
+    {
+      "id": "equal_supported",
+      "rule": "Every frozen neutral behavioral domain with relation=supported and behavioral_confidence>0 has weight 1.0. Not-established/unknown domains abstain."
+    },
+    {
+      "id": "frozen_confidence_sensitivity",
+      "rule": "Use the already-frozen behavioral confidence for each supported domain. This is sensitivity only, not the primary no-arbitrary-weight result."
+    }
+  ],
+  "specification_grid": "3 aggregation arms × 2 behavioral evidence modes = 6 predeclared core specifications. Report all six; do not select the best after reveal.",
+  "no_weights": [
+    "No V1.1/V1.2 salience weights",
+    "No V1.1/V1.2 directness weights",
+    "No structural prevalence/rarity bits",
+    "No learned owner-case coefficients",
+    "No cross-tradition fitted weights"
+  ],
+  "direct_regression": {
+    "target": "1985-01-29T10:25:00Z",
+    "persistent_competitor": "2013-01-28T08:30:00Z",
+    "same_date_alternatives": [
+      "1985-01-29T00:08:59.783936Z",
+      "1985-01-29T00:21:35.544935Z",
+      "1985-01-29T04:16:12.622170Z",
+      "1985-01-29T11:08:11.120061Z",
+      "1985-01-29T11:25:24.314698Z",
+      "1985-01-29T17:02:18.285443Z",
+      "1985-01-29T22:40:39.868829Z",
+      "1985-01-29T23:39:15.079937Z"
+    ],
+    "per_spec_pass": "Target score strictly exceeds the 2013 comparator and is >= every same-date alternative score.",
+    "robust_pass": "At least one of the two non-raw arms (domain_collapse_nonstack or cross_tradition_convergence_stack) passes under equal_supported. Raw-only success is insufficient.",
+    "century_rank_admission": "Only after direct regression results are opened and robust_pass=true. No century ranking for a failed core specification family."
+  },
+  "negative_control": {
+    "status": "PREDECLARED",
+    "rule": "After direct regression, but before interpreting a favorable V1.3 result as robust, permute eligible consensus domain↔significator bundles within each tradition while preserving the number of mapped domains and each bundle's testimony count; compute how often a permuted mapping achieves at least the target-vs-2013 and same-date separation of the observed mapping.",
+    "purpose": "Estimate how easily the scoring architecture can manufacture owner recovery merely from mapping flexibility. This is a development overfit diagnostic, not a p-value for astrology."
+  },
+  "no_retune_after_reveal": true
+}
