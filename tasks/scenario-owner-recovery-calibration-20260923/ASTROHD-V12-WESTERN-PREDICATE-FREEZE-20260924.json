@@ -1,0 +1,329 @@
+{
+  "schema": "astrohd-v1.2-western-predicate-registry-v1",
+  "status": "FROZEN_BEFORE_OWNER_V12_SCORING",
+  "classification": "post-result development; not historical V1.1 reconstruction; not validation",
+  "astronomy": {
+    "zodiac": "tropical",
+    "ephemeris": "Swiss Ephemeris / project production ephemeris",
+    "house_system": "Placidus",
+    "house_code": "P",
+    "location_rule": "fixed known recovery location for all candidates",
+    "owner_development_location": {
+      "latitude": 39.9526,
+      "longitude": -75.1652
+    },
+    "longitude_interval": "[0,360)"
+  },
+  "aspects": {
+    "allowed": {
+      "conjunction": 0,
+      "sextile": 60,
+      "square": 90,
+      "trine": 120,
+      "opposition": 180
+    },
+    "max_orb_degrees": 3,
+    "boundary": "inclusive",
+    "applying_separating_ignored": true,
+    "source_baseline": "src/hdmatch/relationship/western.py"
+  },
+  "signs": {
+    "aries": [
+      0,
+      30
+    ],
+    "taurus": [
+      30,
+      60
+    ],
+    "gemini": [
+      60,
+      90
+    ],
+    "cancer": [
+      90,
+      120
+    ],
+    "leo": [
+      120,
+      150
+    ],
+    "virgo": [
+      150,
+      180
+    ],
+    "libra": [
+      180,
+      210
+    ],
+    "scorpio": [
+      210,
+      240
+    ],
+    "sagittarius": [
+      240,
+      270
+    ],
+    "capricorn": [
+      270,
+      300
+    ],
+    "aquarius": [
+      300,
+      330
+    ],
+    "pisces": [
+      330,
+      360
+    ],
+    "interval_rule": "lower inclusive, upper exclusive"
+  },
+  "predicate_types": {
+    "pair_any_major": "true iff named planetary pair is within <=3.0 degrees of one of the five allowed major aspect angles",
+    "pair_hard": "true iff named planetary pair is within <=3.0 degrees of conjunction, square, or opposition",
+    "sign": "true iff tropical ecliptic longitude lies in the named 30-degree sign interval",
+    "asc_sign": "true iff tropical Ascendant lies in the named sign interval",
+    "house": "true iff named planet is assigned to the named Placidus house",
+    "angular_house": "true iff named planet is in Placidus house 1, 4, 7, or 10",
+    "mc_conjunction": "true iff planet-to-MC circular separation is <=3.0 degrees",
+    "all_of": "true iff every listed component predicate is true"
+  },
+  "features": {
+    "mercury_saturn": {
+      "type": "pair_any_major",
+      "bodies": [
+        "mercury",
+        "saturn"
+      ]
+    },
+    "mercury_capricorn": {
+      "type": "sign",
+      "body": "mercury",
+      "sign": "capricorn"
+    },
+    "mercury_pluto": {
+      "type": "pair_any_major",
+      "bodies": [
+        "mercury",
+        "pluto"
+      ]
+    },
+    "mercury_jupiter": {
+      "type": "pair_any_major",
+      "bodies": [
+        "mercury",
+        "jupiter"
+      ]
+    },
+    "neptune_house12": {
+      "type": "house",
+      "body": "neptune",
+      "house": 12
+    },
+    "mercury_uranus": {
+      "type": "pair_any_major",
+      "bodies": [
+        "mercury",
+        "uranus"
+      ]
+    },
+    "sun_uranus": {
+      "type": "pair_any_major",
+      "bodies": [
+        "sun",
+        "uranus"
+      ]
+    },
+    "sun_aquarius": {
+      "type": "sign",
+      "body": "sun",
+      "sign": "aquarius"
+    },
+    "mercury_venus": {
+      "type": "pair_any_major",
+      "bodies": [
+        "mercury",
+        "venus"
+      ]
+    },
+    "mercury_house1": {
+      "type": "house",
+      "body": "mercury",
+      "house": 1
+    },
+    "mercury_mars": {
+      "type": "pair_any_major",
+      "bodies": [
+        "mercury",
+        "mars"
+      ]
+    },
+    "asc_capricorn": {
+      "type": "asc_sign",
+      "sign": "capricorn"
+    },
+    "saturn_angular": {
+      "type": "angular_house",
+      "body": "saturn"
+    },
+    "jupiter_house11": {
+      "type": "house",
+      "body": "jupiter",
+      "house": 11
+    },
+    "venus_house11": {
+      "type": "house",
+      "body": "venus",
+      "house": 11
+    },
+    "uranus_house11": {
+      "type": "house",
+      "body": "uranus",
+      "house": 11
+    },
+    "saturn_house11": {
+      "type": "house",
+      "body": "saturn",
+      "house": 11
+    },
+    "neptune_house7": {
+      "type": "house",
+      "body": "neptune",
+      "house": 7
+    },
+    "sun_neptune": {
+      "type": "pair_any_major",
+      "bodies": [
+        "sun",
+        "neptune"
+      ]
+    },
+    "moon_neptune": {
+      "type": "pair_any_major",
+      "bodies": [
+        "moon",
+        "neptune"
+      ]
+    },
+    "neptune_angular": {
+      "type": "angular_house",
+      "body": "neptune"
+    },
+    "sun_house1": {
+      "type": "house",
+      "body": "sun",
+      "house": 1
+    },
+    "moon_house4": {
+      "type": "house",
+      "body": "moon",
+      "house": 4
+    },
+    "moon_taurus": {
+      "type": "sign",
+      "body": "moon",
+      "sign": "taurus"
+    },
+    "venus_house4": {
+      "type": "house",
+      "body": "venus",
+      "house": 4
+    },
+    "venus_mars": {
+      "type": "pair_any_major",
+      "bodies": [
+        "venus",
+        "mars"
+      ]
+    },
+    "venus_neptune": {
+      "type": "pair_any_major",
+      "bodies": [
+        "venus",
+        "neptune"
+      ]
+    },
+    "venus_pisces": {
+      "type": "sign",
+      "body": "venus",
+      "sign": "pisces"
+    },
+    "mars_pisces": {
+      "type": "sign",
+      "body": "mars",
+      "sign": "pisces"
+    },
+    "moon_taurus_and_neptune12": {
+      "type": "all_of",
+      "predicates": [
+        "moon_taurus",
+        "neptune_house12"
+      ]
+    },
+    "mars_saturn": {
+      "type": "pair_any_major",
+      "bodies": [
+        "mars",
+        "saturn"
+      ]
+    },
+    "pluto_mc": {
+      "type": "mc_conjunction",
+      "body": "pluto"
+    },
+    "sun_pluto": {
+      "type": "pair_any_major",
+      "bodies": [
+        "sun",
+        "pluto"
+      ]
+    },
+    "pluto_house10": {
+      "type": "house",
+      "body": "pluto",
+      "house": 10
+    },
+    "moon_house12": {
+      "type": "house",
+      "body": "moon",
+      "house": 12
+    },
+    "sun_house12": {
+      "type": "house",
+      "body": "sun",
+      "house": 12
+    },
+    "sun_moon_hard": {
+      "type": "pair_hard",
+      "bodies": [
+        "sun",
+        "moon"
+      ]
+    },
+    "venus_house2": {
+      "type": "house",
+      "body": "venus",
+      "house": 2
+    },
+    "jupiter_house2": {
+      "type": "house",
+      "body": "jupiter",
+      "house": 2
+    }
+  },
+  "scoring_freeze": {
+    "behavioral_confidence_source": "private frozen v11-translated-behavioral-input-v1.json",
+    "cluster_feature_weights_source": "experiments/astrohd/merged_model_v1_1_user_v3_6.json",
+    "feature_prevalence": "empirical over declared century hourly universe under this exact registry",
+    "feature_information_bits": "min(6, -log2(prevalence))",
+    "feature_evidence": "behavioral_confidence * salience * directness * feature_information_bits",
+    "cluster_score": "maximum matched feature_evidence within Western feature list; alternative pathways are not summed",
+    "western_total": "sum cluster scores",
+    "direct_regression_before_century_rank": true
+  },
+  "non_goals": [
+    "Do not claim these predicates reproduce historical V1.1.",
+    "Do not retune orb, house system, feature definitions, or location after opening owner V1.2 scores.",
+    "Do not add owner questions in this scoring experiment."
+  ]
+}
