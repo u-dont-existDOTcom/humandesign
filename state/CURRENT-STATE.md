@@ -68,3 +68,11 @@ The first admitted construct is `V8.PROFILE24.OPPORTUNITY_ROUTE`: whether adult 
 The exact Q1 wording, pre-answer coding, dependency-family handling, queued next constructs, and stop rule are frozen in `tasks/scenario-owner-recovery-calibration-20260923/OWNER-TRAINING-V8-Q1-FREEZE-20260924.md`. Raw answers and participant-specific coding remain outside Git.
 
 The current task state is now **awaiting the owner's Q1 answer**. After that answer, preserve it privately, apply only the frozen Q1 code, recompute target-vs-2013 and target-vs-same-date-1985 observable-level separation, and ask another question only if the frozen sequential rule still requires one.
+
+## Owner-trained scenario v8 — Q1 privately evaluated; Q2 frozen — 2026-09-24
+
+The owner answered the first frozen v8 question. The literal answer, participant-specific code, and detailed score remain in private runtime storage only. The public repository records only the private artifact hash and process state.
+
+Applying the pre-answer Q1 rules did not satisfy the sequential stop condition. The next predeclared profile-family discriminator remains decision-relevant, so its exact wording and response coding were frozen before presentation in `tasks/scenario-owner-recovery-calibration-20260923/OWNER-TRAINING-V8-Q2-FREEZE-20260924.md`.
+
+Current state: **awaiting the owner's Q2 answer**. After that answer, preserve it privately, recompute both owner-training recovery comparisons, and proceed to the organized-detail candidate only if the frozen queue/stop rule still requires it.
