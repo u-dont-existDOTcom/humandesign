@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "scenario-owner-recovery-calibration-20260923",
-  "status": "owner_training_v8_q3_frozen_awaiting_owner_answer",
+  "status": "owner_training_v8_round1_exhausted_full_universe_rescore_running",
   "requiredBranch": "chat/scenario-owner-recovery-calibration-20260923",
   "exclusive": true,
   "ownerOutcome": "Develop the scenario-first survey/recovery method on the owner case until the known recorded 1985-01-29 10:25 UTC Philadelphia birth neighborhood is distinguished from the persistent 2013 competitor and nearby same-date alternatives using owner-reported behavior. Target-aware owner training is allowed; preserve all such changes as development/training evidence and reserve independent validation for fresh participants.",
@@ -11,7 +11,7 @@
   "measurementFreezeSha256": "6f49806cc086ba41d23d31882b6ccc218cef78f94d7599830f5a9a2b994737ba",
   "measurementAnswerCount": 79,
   "method": "tasks/scenario-owner-recovery-calibration-20260923/OWNER-RECOVERY-CALIBRATION-20260923.md",
-  "nextAction": "Ask the exact frozen Q3 from OWNER-TRAINING-V8-Q3-FREEZE-20260924.md. After the owner answers, preserve the literal answer and participant-specific coding privately, recompute the final three-question owner-training date/time comparisons, classify outcome advancement and strategy efficacy, and do not ask another target-shaped owner question in this round.",
+  "nextAction": "Complete the generic full-universe Survey-v2 partial-evidence rescore on the verified century cache, including the predeclared Root-sensitivity variant if needed. Do not ask another target-shaped owner question in this round. Then classify date/time owner-outcome advancement and either retain the full-universe observable strategy or replace it.",
   "runtimeBoundary": "Raw answers and participant-specific coding remain private. Birth/chart/model/rank information must not be supplied to neutral follow-up selection/coding. Do not score the incomplete v1 profile and call a miss or hit a survey result.",
   "neutralCoderAOutputSha256": "538402a5d5f64ad4b75f08ba86943aab9d99d3011e14b040547032783966aa35",
   "neutralCoderBOutputSha256": "84be173203360e9d2370612ec492ae6dcec2bedd05540ced6f72ce7d4eec3e5c",
@@ -23,11 +23,7 @@
     "facetStatusDisagreements": 13
   },
   "checkpoint": "tasks/scenario-owner-recovery-calibration-20260923/NEUTRAL-CALIBRATION-CHECKPOINT-20260923.md",
-  "currentFollowupRoute": {
-    "routeId": "V8.ORGANIZED_DETAIL.LEARNING_STRUCTURE",
-    "status": "awaiting_owner_answer",
-    "publicFreeze": "tasks/scenario-owner-recovery-calibration-20260923/OWNER-TRAINING-V8-Q3-FREEZE-20260924.md"
-  },
+  "currentFollowupRoute": null,
   "surveyCompletionSemantics": "The 68-answer pilot was completed, but it is not yet a complete v7-calibrated measurement because v7 replaced several pilot questions that were design-invalidated or construct-mismatched. Follow-ups are targeted replacement measurements, not an exhaustive-completeness requirement.",
   "astroHDV43Status": {
     "cleanCandidateUnexposedWinnerYear": 2013,
@@ -186,13 +182,13 @@
   "dualScorerObjectiveRecord": "tasks/scenario-owner-recovery-calibration-20260923/DUAL-SCORER-CALIBRATION-OBJECTIVE-20260923.md",
   "stopAdmission": {
     "parentOutcome": "OPEN_OWNER_TRAINING",
-    "remainingGap": "Current scenario survey does not distinguish the known owner target from 2013 at the participant-observable level and does not yet recover the exact 1985 time neighborhood.",
-    "nextAction": "Assistant runs Claude target-aware survey design, then asks/records only admitted owner-training questions and iteratively evaluates separation.",
-    "responsibleActor": "assistant until a participant-specific answer is required; owner at each presented training question",
-    "currentAuthority": "owner explicitly authorized target-aware development on their own case; such evidence must remain labeled training/post-selection and cannot be reused as independent owner validation",
-    "executableBoundary": "No owner input required until Claude produces the first admitted question."
+    "remainingGap": "The three-question target-aware pairwise probe is exhausted without robust date or exact-time recovery.",
+    "nextAction": "Assistant completes the full-universe observable-level rescore and evaluates the materially different strategy.",
+    "responsibleActor": "assistant",
+    "currentAuthority": "implementation authorized; raw participant answers/coding remain private; target-aware owner training remains development evidence only",
+    "executableBoundary": "No owner input is currently required; another target-shaped owner question is explicitly disallowed for this round."
   },
-  "privateWorkingAnswerCount": 81,
+  "privateWorkingAnswerCount": 82,
   "currentFollowupState": "natural_stop_measurement_v2_frozen",
   "completedCalibrationFollowups": {
     "F0": {
@@ -333,9 +329,20 @@
     "publicResult": "The predeclared Q3 date-recovery route remains decision-relevant; participant-specific code and margins are not stored in public Git."
   },
   "ownerTrainingV8Q3": {
-    "status": "FROZEN_AWAITING_OWNER_ANSWER",
+    "status": "ANSWERED_AND_PRIVATELY_EVALUATED",
     "construct": "V8.ORGANIZED_DETAIL.LEARNING_STRUCTURE",
-    "publicFreeze": "tasks/scenario-owner-recovery-calibration-20260923/OWNER-TRAINING-V8-Q3-FREEZE-20260924.md",
-    "queuePosition": "final"
+    "privateAnswerRecordSha256": "0bd080cd46c615f317f36f436ee3e19ffd8c79323e49e160afbb4a1aa7e160fb",
+    "privateScoreCheckpointSha256": "d76b0ac5c549410aee0ebae54bd8ff575f3616b80cb5e9008f558a5ea0eafe44",
+    "detailedCodingAndScore": "private",
+    "publicResult": "The final predeclared question was answered; the three-question pairwise strategy did not robustly separate either owner target and is exhausted."
+  },
+  "ownerTrainingV8Round1": {
+    "status": "EXHAUSTED_AMBIGUOUS",
+    "questionCount": 3,
+    "askMoreTargetShapedQuestions": false,
+    "ownerOutcomeMet": false,
+    "replacementStrategy": "generic full-universe Survey-v2 partial-evidence scoring with dependency-family normalization and no hidden structural rarity bonuses",
+    "privateMainEvidenceSha256": "8b54cfc3343ec5e0b3ee60566c651c0352d9a8a7b82978a97d2b269001e3cd92",
+    "privateRootSensitivityEvidenceSha256": "5d6400103b16052205438fea01cde347da604de6daaf48f8c10c514e011bc48c"
   }
 }

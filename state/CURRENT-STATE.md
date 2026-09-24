@@ -84,3 +84,9 @@ The owner answered the second frozen v8 question. The literal answer, participan
 Applying the pre-answer Q2 rules did not satisfy the date-recovery stop condition. The final predeclared owner-training question, `V8.ORGANIZED_DETAIL.LEARNING_STRUCTURE`, remains decision-relevant for target-vs-2013 date recovery and has been frozen before presentation in `tasks/scenario-owner-recovery-calibration-20260923/OWNER-TRAINING-V8-Q3-FREEZE-20260924.md`.
 
 Q3 does not address same-date time recovery. After Q3, the current three-question queue is exhausted: preserve the answer privately, recompute the final owner-training comparisons, classify outcome advancement/strategy efficacy, and do not add another target-shaped owner question in this round.
+
+## Owner-trained scenario v8 — three-question round exhausted; full-universe strategy activated — 2026-09-24
+
+The owner answered the final predeclared Q3. The literal answer and all participant-specific coding/scores remain private. Under the pre-answer rules, the three-question pairwise owner-training round does not robustly distinguish either the recorded date from the persistent 2013 competitor or the recorded time neighborhood from same-date 1985 alternatives. The queue is therefore **EXHAUSTED / AMBIGUOUS** and no further target-shaped owner question is admitted in this round.
+
+A materially different replacement strategy is active: score the verified full century candidate universe using only explicit participant-observable partial evidence, exact Survey-v2 dependency-family macro-averaging, symmetric/mixed evidence, and no Channel-vs-Gate rarity bonus. Generic scorer code and focused tests are being added on the active branch; private owner evidence remains outside Git. The next boundary is the full-universe result and strategy-efficacy classification, with no owner input currently required.
