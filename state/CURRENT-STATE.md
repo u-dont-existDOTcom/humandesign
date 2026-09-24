@@ -116,3 +116,15 @@ The frozen leader-only adaptive selector is also exhausted for question admissio
 Replacement is a bounded, target-blind capacity-ordered experiment using the already-frozen century capacity audit rather than target fit. The strongest initial categorical feature is `personality:moon` at **2.1419424742 incremental uniform bits**. Existing private evidence remains short of that field's full minimum-evidence gate, so the exact missing childhood-driver question has been frozen before the answer in `tasks/scenario-owner-recovery-calibration-20260923/OWNER-TRAINING-V8-PERSONALITY-MOON-CHILDHOOD-FREEZE-20260924.md`.
 
 Current boundary: **awaiting one owner childhood-driver answer**. Afterward, run only the sealed candidate-blind field classifier and the known development regression first. A new full-century rescore is admitted only if that direct regression improves.
+
+## Owner-trained scenario v8 — Personality-Moon completion failed direct regression; second capacity field frozen — 2026-09-24
+
+The `before age 13` boundary came from the pre-existing frozen Survey-v2 pre-adolescence evidence contract; it was not selected from the owner case. The owner's private answer exposed a within-childhood phase transition, so the evidence was preserved as phase-changing narrative rather than flattened into one homogeneous childhood state.
+
+The first GPT-5.6 Sol classifier execution was invalidated because account-level global instructions caused forbidden retrieval/tool use. A clean isolated Claude Opus 5.5/high classifier with zero tools then completed under the frozen Survey-v2 system prompt and full vocabulary. Its output passed mechanical identity/custody validation. Participant text and categorical label remain private.
+
+Direct development regression: the new field did not change the recorded-target vs persistent-2013 pairwise score gap in either scoring variant, and same-date recovery regressed from **#1–#4** to **#2–#5**. A full-century rescore was therefore not admitted. The repair candidate is **DEV_FAIL / REPLACEMENT_REQUIRED**. See `tasks/scenario-owner-recovery-calibration-20260923/OWNER-TRAINING-V8-PERSONALITY-MOON-RESULT-20260924.md`.
+
+The global-capacity-ordered question experiment is now bounded to one final field. The next pre-existing target-blind capacity feature is `design:moon` (**0.5479747137424518 incremental uniform bits**). Existing private evidence is missing only its non-driver contrast, so one exact question has been frozen before the answer in `tasks/scenario-owner-recovery-calibration-20260923/OWNER-TRAINING-V8-DESIGN-MOON-CONTRAST-FREEZE-20260924.md`.
+
+Current boundary: **awaiting the owner's Design-Moon non-driver contrast answer**. If this second field does not improve the direct development regression, stop the global-capacity owner-question strategy rather than continuing down the field list.
