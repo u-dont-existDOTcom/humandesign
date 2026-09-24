@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
   "taskId": "scenario-owner-recovery-calibration-20260923",
-  "status": "owner_development_target_met_v12_western_only",
+  "status": "astrohd_v13_tradition_grounded_multiverse_active",
   "requiredBranch": "chat/scenario-owner-recovery-calibration-20260923",
   "exclusive": true,
   "ownerOutcome": "Develop the scenario-first survey/recovery method on the owner case until the known recorded 1985-01-29 10:25 UTC Philadelphia birth neighborhood is distinguished from the persistent 2013 competitor and nearby same-date alternatives using owner-reported behavior. Target-aware owner training is allowed; preserve all such changes as development/training evidence and reserve independent validation for fresh participants.",
-  "assuranceLane": "development_owner_regression",
+  "assuranceLane": "decision",
   "implementationAuthorized": true,
   "privateParticipantTranscriptToGitAuthorized": false,
   "measurementFreezeSha256": "6f49806cc086ba41d23d31882b6ccc218cef78f94d7599830f5a9a2b994737ba",
   "measurementAnswerCount": 79,
   "method": "tasks/scenario-owner-recovery-calibration-20260923/OWNER-RECOVERY-CALIBRATION-20260923.md",
-  "nextAction": "No further action is required for the current owner-development outcome. Fresh/held-out participant validation is a separate future objective; the merged HD+Western layer is optional and not unfinished owner work.",
+  "nextAction": "Freeze the V1.3 source-grounded tradition registry and three aggregation arms before any V1.3 owner score: domain-collapse, cross-tradition convergence stacking, and raw independent-testimony stacking. Build source-to-domain mappings target-blind from external tradition sources, then run the known owner direct regression before any full-century V1.3 ranking.",
   "runtimeBoundary": "Raw answers and participant-specific coding remain private. Birth/chart/model/rank information must not be supplied to neutral follow-up selection/coding. Do not score the incomplete v1 profile and call a miss or hit a survey result.",
   "neutralCoderAOutputSha256": "538402a5d5f64ad4b75f08ba86943aab9d99d3011e14b040547032783966aa35",
   "neutralCoderBOutputSha256": "84be173203360e9d2370612ec492ae6dcec2bedd05540ced6f72ce7d4eec3e5c",
@@ -181,12 +181,12 @@
   },
   "dualScorerObjectiveRecord": "tasks/scenario-owner-recovery-calibration-20260923/DUAL-SCORER-CALIBRATION-OBJECTIVE-20260923.md",
   "stopAdmission": {
-    "parentOutcome": "SATISFIED_OWNER_DEVELOPMENT",
-    "remainingGap": "NONE at the current authorized owner-development boundary. Generalization to new people remains unvalidated and is a separate future objective.",
-    "nextAction": "NONE_REQUIRED",
-    "responsibleActor": "none",
-    "currentAuthority": "Current owner-development objective is satisfied. Do not add the merged HD+Western layer or new owner questions without a new decision-relevant objective.",
-    "executableBoundary": "Stop admitted: frozen Western-only V1.2 distinguishes the recorded 1985-01-29 10:25 UTC Philadelphia neighborhood from the persistent 2013 comparator and nearby same-date alternatives."
+    "parentOutcome": "OPEN_OWNER_REQUIRED_V13_FOLLOWUP",
+    "remainingGap": "V1.2 fits the owner strongly but inherits post-selected V1.1 feature mappings/weights. The owner explicitly requested a stronger source-grounded foundation and requested testing both non-stacking and stacking of convergent testimonies.",
+    "nextAction": "Assistant freezes source-grounded V1.3 model specifications and aggregation arms, then executes the direct owner development regression.",
+    "responsibleActor": "assistant",
+    "currentAuthority": "Owner explicitly authorized the V1.3 tradition-grounded experiment and stacking sensitivity arm. V1.2 remains preserved as a satisfied prior development result.",
+    "executableBoundary": "Safe authorized work remains; no owner input is required."
   },
   "privateWorkingAnswerCount": 84,
   "currentFollowupState": "owner_development_target_met_v12_western_only",
@@ -482,5 +482,30 @@
     "mergedLayerRequired": false,
     "validationStatus": "NOT_VALIDATION",
     "centuryResultReceipt": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V12-WESTERN-CENTURY-RESULT-20260924.md"
+  },
+  "followupOwnerOutcome": {
+    "parentOutcomeStatus": "SATISFIED_OWNER_DEVELOPMENT_V12",
+    "objective": "Replace V1.2's inherited hand-authored salience/directness weighting with a source-grounded astrology multiverse and test both non-stacking and convergence/stacking interpretations on the owner development case.",
+    "relation": "OWNER_REQUIRED_FOLLOWUP_EXPERIMENT",
+    "completionBoundary": "Compare pre-frozen tradition-grounded aggregation arms on the known owner development failure without retuning after result reveal. Preserve V1.2 result independently."
+  },
+  "astroHDV13": {
+    "status": "SOURCE_REGISTRY_AND_AGGREGATION_FREEZE_IN_PROGRESS",
+    "classification": "owner-requested post-result development experiment; not validation",
+    "conception": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V13-TRADITION-GROUNDED-MULTIVERSE-CONCEPTION-20260924.md",
+    "priorWorkScan": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V13-TRADITION-GROUNDED-PRIOR-WORK-SCAN-20260924.md",
+    "aggregationArms": [
+      "domain_collapse_nonstack",
+      "cross_tradition_convergence_stack",
+      "raw_independent_testimony_stack"
+    ],
+    "sourceFamilies": [
+      "hellenistic_western",
+      "lilly_traditional_western",
+      "parashari_jyotish"
+    ],
+    "noOwnerTunedWeights": true,
+    "directRegressionBeforeCentury": true,
+    "noRetuneAfterReveal": true
   }
 }
