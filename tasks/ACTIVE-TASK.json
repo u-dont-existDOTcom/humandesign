@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "scenario-owner-recovery-calibration-20260923",
-  "status": "owner_training_v8_round1_exhausted_full_universe_rescore_running",
+  "status": "owner_training_v8_categorical_existing_evidence_classification_pending",
   "requiredBranch": "chat/scenario-owner-recovery-calibration-20260923",
   "exclusive": true,
   "ownerOutcome": "Develop the scenario-first survey/recovery method on the owner case until the known recorded 1985-01-29 10:25 UTC Philadelphia birth neighborhood is distinguished from the persistent 2013 competitor and nearby same-date alternatives using owner-reported behavior. Target-aware owner training is allowed; preserve all such changes as development/training evidence and reserve independent validation for fresh participants.",
@@ -11,7 +11,7 @@
   "measurementFreezeSha256": "6f49806cc086ba41d23d31882b6ccc218cef78f94d7599830f5a9a2b994737ba",
   "measurementAnswerCount": 79,
   "method": "tasks/scenario-owner-recovery-calibration-20260923/OWNER-RECOVERY-CALIBRATION-20260923.md",
-  "nextAction": "Complete the generic full-universe Survey-v2 partial-evidence rescore on the verified century cache, including the predeclared Root-sensitivity variant if needed. Do not ask another target-shaped owner question in this round. Then classify date/time owner-outcome advancement and either retain the full-universe observable strategy or replace it.",
+  "nextAction": "Build a private candidate-blind Survey-v2 categorical/adaptive classification packet from the existing owner transcript using the already-frozen complete Profile/Gate vocabularies and field-specific minimum-evidence rules. Do not expose birth/chart/rank/target direction to classification and do not ask another owner question unless existing evidence is exhausted and the frozen anonymous adaptive selector later identifies a decision-relevant missing field.",
   "runtimeBoundary": "Raw answers and participant-specific coding remain private. Birth/chart/model/rank information must not be supplied to neutral follow-up selection/coding. Do not score the incomplete v1 profile and call a miss or hit a survey result.",
   "neutralCoderAOutputSha256": "538402a5d5f64ad4b75f08ba86943aab9d99d3011e14b040547032783966aa35",
   "neutralCoderBOutputSha256": "84be173203360e9d2370612ec492ae6dcec2bedd05540ced6f72ce7d4eec3e5c",
@@ -182,11 +182,11 @@
   "dualScorerObjectiveRecord": "tasks/scenario-owner-recovery-calibration-20260923/DUAL-SCORER-CALIBRATION-OBJECTIVE-20260923.md",
   "stopAdmission": {
     "parentOutcome": "OPEN_OWNER_TRAINING",
-    "remainingGap": "The three-question target-aware pairwise probe is exhausted without robust date or exact-time recovery.",
-    "nextAction": "Assistant completes the full-universe observable-level rescore and evaluates the materially different strategy.",
+    "remainingGap": "The corrected full-universe baseline-observable scorer does not robustly recover the recorded 1985 date and leaves the recorded time top-tied across four same-date intervals.",
+    "nextAction": "Assistant exhausts existing private transcript against the frozen candidate-blind Survey-v2 categorical/adaptive classifier before considering any new participant question.",
     "responsibleActor": "assistant",
-    "currentAuthority": "implementation authorized; raw participant answers/coding remain private; target-aware owner training remains development evidence only",
-    "executableBoundary": "No owner input is currently required; another target-shaped owner question is explicitly disallowed for this round."
+    "currentAuthority": "owner authorized target-aware development; raw participant data/coding remain private and development evidence cannot become independent owner validation",
+    "executableBoundary": "Safe authorized existing-evidence classification work remains; no owner input required now."
   },
   "privateWorkingAnswerCount": 82,
   "currentFollowupState": "natural_stop_measurement_v2_frozen",
@@ -344,5 +344,44 @@
     "replacementStrategy": "generic full-universe Survey-v2 partial-evidence scoring with dependency-family normalization and no hidden structural rarity bonuses",
     "privateMainEvidenceSha256": "8b54cfc3343ec5e0b3ee60566c651c0352d9a8a7b82978a97d2b269001e3cd92",
     "privateRootSensitivityEvidenceSha256": "5d6400103b16052205438fea01cde347da604de6daaf48f8c10c514e011bc48c"
+  },
+  "ownerTrainingV8FullUniverse": {
+    "status": "COMPLETED_OWNER_OUTCOME_UNMET",
+    "strategyState": "EXHAUSTED_BASELINE_PARTIAL_EVIDENCE",
+    "candidateCount": 288938,
+    "privateResultSha256": "aef3bd7a062bb5bf31e162083ffba7895163ec65527669f19476fc68bff3311e",
+    "privateSameDateSliceSha256": "cddef4cb174bc1c4af3c13f5f34cfd7efb2123890697bf37a7ca5fb0e4932001",
+    "privateCandidateDecompositionSha256": "cbd731cd14a1540bb73a6e68f41fb8cd0144c701123c7aaccec2616adf46953a",
+    "mainTargetRank": [
+      19890,
+      24623
+    ],
+    "main2013Rank": [
+      29338,
+      34259
+    ],
+    "rootSensitivityTargetRank": [
+      43132,
+      50489
+    ],
+    "rootSensitivity2013Rank": [
+      22871,
+      26801
+    ],
+    "sameDateTargetRank": [
+      1,
+      4
+    ],
+    "sameDateStableIntervalCount": 9,
+    "dateDisposition": "AMBIGUOUS",
+    "timeDisposition": "AMBIGUOUS",
+    "publicReceipt": "tasks/scenario-owner-recovery-calibration-20260923/OWNER-TRAINING-V8-FULL-UNIVERSE-RESULT-20260924.md"
+  },
+  "ownerTrainingV8ReplacementStrategy": {
+    "status": "ACTIVE_EXISTING_EVIDENCE_FIRST",
+    "strategy": "frozen Survey-v2 categorical/adaptive classification across complete Profile/Gate vocabularies",
+    "classificationBoundary": "candidate-blind; no birth, chart, predicted labels, scores, ranks, target direction, or prior winner identity",
+    "ownerBurdenRule": "reuse existing transcript first; no new owner question currently admitted",
+    "developmentClassification": "target-aware owner project development; categorical classification itself remains candidate-blind"
   }
 }

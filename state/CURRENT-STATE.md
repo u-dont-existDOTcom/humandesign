@@ -90,3 +90,17 @@ Q3 does not address same-date time recovery. After Q3, the current three-questio
 The owner answered the final predeclared Q3. The literal answer and all participant-specific coding/scores remain private. Under the pre-answer rules, the three-question pairwise owner-training round does not robustly distinguish either the recorded date from the persistent 2013 competitor or the recorded time neighborhood from same-date 1985 alternatives. The queue is therefore **EXHAUSTED / AMBIGUOUS** and no further target-shaped owner question is admitted in this round.
 
 A materially different replacement strategy is active: score the verified full century candidate universe using only explicit participant-observable partial evidence, exact Survey-v2 dependency-family macro-averaging, symmetric/mixed evidence, and no Channel-vs-Gate rarity bonus. Generic scorer code and focused tests are being added on the active branch; private owner evidence remains outside Git. The next boundary is the full-universe result and strategy-efficacy classification, with no owner input currently required.
+
+## Owner-trained scenario v8 — corrected full-universe result; categorical strategy activated — 2026-09-24
+
+The corrected generic Survey-v2 partial-evidence scorer has completed against all **288,938** verified century-cache states. The prior attempted result was invalidated because display-form predicates did not match cache-normalized structural symbols; that causal defect is fixed and regression-tested in commit `db046ba`.
+
+The corrected main observable variant places the recorded `1985-01-29T10:25Z` interval at rank **#19,890–#24,623**, ahead of the persistent 2013 comparator at **#29,338–#34,259** but far from the global winner. The predeclared Root-sensitivity variant reverses the pairwise relation: recorded target **#43,132–#50,489**, 2013 comparator **#22,871–#26,801**. Date recovery is therefore **AMBIGUOUS / OWNER OUTCOME UNMET**.
+
+Within the nine cached stable intervals overlapping `1985-01-29 UTC`, the recorded interval is tied **#1–#4** under both variants. Same-date time recovery is therefore **AMBIGUOUS / OWNER OUTCOME UNMET**.
+
+The baseline partial-evidence full-universe strategy is now **EXHAUSTED**. A private decomposition shows that removing hidden structural rarity was necessary but insufficient: ordinary measured baseline observables still favor other candidate states. Do not repair this by dropping mismatches, restoring structural rarity, or tuning weights around the known target.
+
+Replacement strategy: reuse the already-frozen Survey-v2 categorical/adaptive layer. Exhaust the existing private transcript candidate-blind against the complete frozen Profile/Gate vocabularies and field-specific evidence gates before asking anything else. Classification must not receive birth/chart/predicted-label/rank/target information. Missing evidence abstains. No new owner question is currently admitted.
+
+See `tasks/scenario-owner-recovery-calibration-20260923/OWNER-TRAINING-V8-FULL-UNIVERSE-RESULT-20260924.md`.
