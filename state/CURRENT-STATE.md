@@ -208,3 +208,27 @@ Independent preparation completed in Git:
 
 No V1.3b owner score has been opened. All registered Remote Desktop Commander devices are currently offline, so private owner artifacts/local ephemeris execution cannot proceed. Current state is **BLOCKED_EXTERNAL after independent preparation**, not method failure. Resume focused verification and the exact frozen direct regression automatically when the authorized remote machine reconnects; do not retune around the outage.
 
+## AstroHD V1.3b — source-native direct result complete — 2026-09-24
+
+The authorized remote machine returned and the frozen V1.3b source-native experiment completed without changing its predeclared rules.
+
+Focused verification after reconnect:
+- V1.3b focused tests: **4 passed**;
+- focused Ruff check on the V1.3b module/scripts/tests: **PASS**.
+
+PyJHora Shadbala executed privately at exact frozen commit `48e57d29b47a3143519910a24866758116467485`; private oracle SHA-256:
+`b352e27f41dadf235ca3e74b57afa68283c4fa3dc69bb85b00c3f3c39e950141`.
+
+Private direct-result SHA-256:
+`8c38e28289f50fac314e9de03f3f232c344ded9ec7ce283bb5083f41928d40f8`.
+
+Result:
+- **William Lilly source-native core fortitude: PASS.** The domain-mean/non-stacking arm strictly places the recorded target above both persistent 2013 and every predeclared same-date alternative under equal-domain and frozen-confidence weighting. Equal-domain scores: target **61.0**, 2013 **56.0**, strongest same-date **55.3333333333**. Frozen-confidence scores: target **36.125**, 2013 **31.625**, strongest same-date **33.25**.
+- **Parashari Jyotish Shadbala: FAIL.** All four frozen Parashari specifications fail because other candidates, especially the same-date midpoint `1985-01-29T04:16:12.622170Z`, score above the recorded target.
+- predeclared cross-tradition convergence: **FAIL**;
+- century-scale V1.3b ranking: **NOT ADMITTED**.
+
+This is a scientifically useful split result. It demonstrates that one externally sourced historical numerical system can recover the direct owner target without project-invented astrology salience/directness coefficients, but independent traditional systems do not converge on the target in this experiment. Do not drop Parashari or promote Lilly to a confirmatory century scan after seeing this split. A Lilly-only century scan would be explicitly post-selection/descriptive and is a new objective, not unfinished V1.3b work.
+
+See `tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V13B-SOURCE-NATIVE-DIRECT-RESULT-20260924.md`.
+
