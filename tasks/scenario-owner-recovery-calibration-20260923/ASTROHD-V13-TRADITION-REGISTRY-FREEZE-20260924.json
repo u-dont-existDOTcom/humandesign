@@ -1,0 +1,293 @@
+{
+  "schema": "astrohd-v1.3-source-grounded-tradition-registry-v1",
+  "status": "FROZEN_BEFORE_OWNER_V13_SCORING",
+  "classification": "owner-requested post-result development; not validation",
+  "source_catalog_sha256": "9d41637dbe6b9e3d3ad2c67426f8900cde6bd73daaeee4ee0175c34eada25376",
+  "target_blind_consensus_map_sha256": "9c03688d06a778f3cf9f590abaf315eb12b0f44b3fa00080d85605f38cb15c0b",
+  "behavioral_input_sha256": "dbb92b270c2720cabed823e61ddc735dced579628c33f12df540e38b172d147d",
+  "mapping_rule": "Only planet/house mappings independently returned by both sealed target-blind mappers are eligible. One-mapper-only mappings remain recorded disagreement and are not scored.",
+  "astronomy": {
+    "ephemeris": "Swiss Ephemeris local files; FLG_SWIEPH; hard fail on Moshier fallback",
+    "location": {
+      "latitude": 39.9526,
+      "longitude": -75.1652,
+      "role": "fixed known recovery location for every candidate"
+    },
+    "tropical_sign_boundaries": "12 equal 30-degree signs from 0 Aries",
+    "traditional_rulers": {
+      "aries": "mars",
+      "taurus": "venus",
+      "gemini": "mercury",
+      "cancer": "moon",
+      "leo": "sun",
+      "virgo": "mercury",
+      "libra": "venus",
+      "scorpio": "mars",
+      "sagittarius": "jupiter",
+      "capricorn": "saturn",
+      "aquarius": "saturn",
+      "pisces": "jupiter"
+    },
+    "domiciles": {
+      "sun": [
+        "leo"
+      ],
+      "moon": [
+        "cancer"
+      ],
+      "mercury": [
+        "gemini",
+        "virgo"
+      ],
+      "venus": [
+        "taurus",
+        "libra"
+      ],
+      "mars": [
+        "aries",
+        "scorpio"
+      ],
+      "jupiter": [
+        "sagittarius",
+        "pisces"
+      ],
+      "saturn": [
+        "capricorn",
+        "aquarius"
+      ]
+    },
+    "exaltations": {
+      "sun": "aries",
+      "moon": "taurus",
+      "mercury": "virgo",
+      "venus": "pisces",
+      "mars": "capricorn",
+      "jupiter": "cancer",
+      "saturn": "libra"
+    },
+    "falls": {
+      "sun": "libra",
+      "moon": "scorpio",
+      "mercury": "pisces",
+      "venus": "virgo",
+      "mars": "cancer",
+      "jupiter": "capricorn",
+      "saturn": "aries"
+    },
+    "detriments": {
+      "sun": [
+        "aquarius"
+      ],
+      "moon": [
+        "capricorn"
+      ],
+      "mercury": [
+        "sagittarius",
+        "pisces"
+      ],
+      "venus": [
+        "aries",
+        "scorpio"
+      ],
+      "mars": [
+        "taurus",
+        "libra"
+      ],
+      "jupiter": [
+        "gemini",
+        "virgo"
+      ],
+      "saturn": [
+        "cancer",
+        "leo"
+      ]
+    }
+  },
+  "traditions": {
+    "hellenistic_western": {
+      "zodiac": "tropical",
+      "houses": "whole_sign_from_tropical_ascendant",
+      "sect_day_rule": "Sun in actual above-horizon Placidus houses 7-12 at fixed location",
+      "sect_planets": {
+        "day": [
+          "sun",
+          "jupiter",
+          "saturn"
+        ],
+        "night": [
+          "moon",
+          "venus",
+          "mars"
+        ]
+      },
+      "mercury_sect": "abstain; Mercury's variable sect condition is not operationalized in this bounded registry",
+      "joy_houses": {
+        "mercury": 1,
+        "moon": 3,
+        "venus": 5,
+        "mars": 6,
+        "sun": 9,
+        "jupiter": 11,
+        "saturn": 12
+      },
+      "positive_atomic_conditions": [
+        "domicile",
+        "exaltation",
+        "in_sect",
+        "planetary_joy_house"
+      ],
+      "negative_atomic_conditions": [],
+      "house_mapping_rule": "No Hellenistic house mapping is scored unless it exists in the frozen consensus map; if one exists, use its whole-sign traditional lord and the same eligible lord conditions.",
+      "omitted_source_backed_choices": [
+        "triplicity rulers",
+        "sign-based aspects",
+        "house-lord aspects"
+      ],
+      "omission_reason": "Keep the first V1.3 specification mechanically explicit and small; omitted choices are not selected or rejected by owner fit."
+    },
+    "lilly_traditional_western": {
+      "zodiac": "tropical",
+      "houses": "Placidus",
+      "positive_atomic_conditions": [
+        "domicile",
+        "exaltation",
+        "direct_nonluminary",
+        "angular_house"
+      ],
+      "negative_atomic_conditions": [
+        "detriment",
+        "fall",
+        "retrograde_nonluminary",
+        "cadent_house"
+      ],
+      "angular_houses": [
+        1,
+        4,
+        7,
+        10
+      ],
+      "cadent_houses": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "succedent_houses": [
+        2,
+        5,
+        8,
+        11
+      ],
+      "succedent_treatment": "neutral in the primary V1.3 equal-testimony registry",
+      "house_mapping_rule": "For a mapped house, use the traditional ruler of the tropical sign on that Placidus cusp; emit the same positive/negative lord-strength conditions.",
+      "omitted_source_backed_choices": [
+        "triplicity",
+        "term",
+        "face",
+        "speed",
+        "combustion",
+        "source-native Lilly fortitude point total"
+      ],
+      "omission_reason": "Those require additional historically variant tables or numerical source-native weights; they remain possible separate specifications but are not silently mixed into this first no-custom-weight registry."
+    },
+    "parashari_jyotish": {
+      "zodiac": "sidereal",
+      "ayanamsha": {
+        "name": "Lahiri",
+        "swisseph_constant": "SIDM_LAHIRI",
+        "role": "predeclared established sidereal reference; not selected by owner fit"
+      },
+      "houses": "sidereal_whole_sign_from_sidereal_ascendant",
+      "positive_atomic_conditions": [
+        "exaltation",
+        "own_sign",
+        "retrograde_nonluminary",
+        "kendra_house",
+        "trikona_house",
+        "upachaya_house"
+      ],
+      "negative_atomic_conditions": [
+        "debilitation",
+        "dusthana_house"
+      ],
+      "kendra_houses": [
+        1,
+        4,
+        7,
+        10
+      ],
+      "trikona_houses": [
+        1,
+        5,
+        9
+      ],
+      "upachaya_houses": [
+        3,
+        6,
+        10,
+        11
+      ],
+      "dusthana_houses": [
+        6,
+        8,
+        12
+      ],
+      "house_mapping_rule": "For a mapped sidereal whole-sign house, use its traditional sign lord and emit the same positive/negative lord-strength conditions.",
+      "special_graha_aspects": "omitted from this first bounded registry",
+      "omission_reason": "The semantic consensus map identifies significators/houses, not aspect-specific domain relations; adding aspect choices before owner scoring would create another specification dimension."
+    }
+  },
+  "atomic_testimony": {
+    "planet_mapping": "For every frozen domain/tradition planet mapping, each satisfied eligible positive strength condition emits one +1 atomic testimony and each satisfied eligible negative condition emits one -1 atomic testimony.",
+    "house_mapping": "For every frozen domain/tradition house mapping, identify the house lord under that tradition and emit one +/-1 atomic testimony per satisfied eligible lord-strength condition.",
+    "no_condition": "A mapped significator with no eligible strength/debility condition emits no testimony.",
+    "duplicates": "The same planet may legitimately create separate atomic testimonies through distinct mapped significator roles/conditions only in the raw-stacking arm. Collapse arms remove this multiplicity.",
+    "counterevidence": "Positive and negative testimonies are symmetric in sign; no post-result exception is allowed."
+  },
+  "behavior": {
+    "confidence_source": "frozen private v11-translated behavioral input",
+    "supported_relation": "behavioral_confidence is multiplied by the chart testimony state",
+    "not_established_relation": "abstain with zero contribution",
+    "no_astrology_salience_weights": true
+  },
+  "aggregation_arms": {
+    "domain_collapse_nonstack": {
+      "role": "PRIMARY",
+      "rule": "For each behavioral domain across all traditions, +1 if at least one positive atomic testimony and no negative atomic testimony; -1 if at least one negative and no positive; 0 for mixed or none. Multiply by behavioral confidence. Sum domains.",
+      "max_stack_per_domain": 1
+    },
+    "cross_tradition_convergence_stack": {
+      "role": "SENSITIVITY",
+      "rule": "Apply the same conflict-preserving collapse separately inside each tradition/domain, then sum the up-to-one +/- vote from each tradition times behavioral confidence.",
+      "max_stack_per_domain": 3
+    },
+    "raw_independent_testimony_stack": {
+      "role": "SENSITIVITY",
+      "rule": "Sum every distinct +/- atomic testimony across all frozen mapped significators and traditions, each multiplied by behavioral confidence. Do not add project-authored salience/directness coefficients.",
+      "max_stack_per_domain": "unbounded by collapse; bounded only by the frozen registry's atomic conditions"
+    }
+  },
+  "direct_regression": {
+    "queries": {
+      "target": "1985-01-29T10:25:00Z",
+      "persistent_2013": "2013-01-28T08:30:00Z",
+      "same_date_alternatives": [
+        "1985-01-29T00:08:59.783936Z",
+        "1985-01-29T00:21:35.544935Z",
+        "1985-01-29T04:16:12.622170Z",
+        "1985-01-29T11:08:11.120061Z",
+        "1985-01-29T11:25:24.314698Z",
+        "1985-01-29T17:02:18.285443Z",
+        "1985-01-29T22:40:39.868829Z",
+        "1985-01-29T23:39:15.079937Z"
+      ]
+    },
+    "per_arm_pass": "Target score must be strictly greater than persistent_2013 and no same-date alternative may score strictly greater than target. Same-date ties are screening-pass ties, not final unique-time recovery.",
+    "overall_dev_pass": "Primary domain_collapse_nonstack must pass AND at least one stacking sensitivity arm must pass.",
+    "all_three_pass_label": "ROBUST_ACROSS_AGGREGATION_ARMS",
+    "primary_only_pass_label": "AGGREGATION_FRAGILE_NO_CENTURY_RANK",
+    "stacking_only_pass_label": "STACKING_DEPENDENT_NO_CENTURY_RANK",
+    "none_pass_label": "DEV_FAIL",
+    "century_rank_admission": "Only overall_dev_pass admits broader V1.3 century ranking. No arm may be retuned after result reveal."
+  }
+}

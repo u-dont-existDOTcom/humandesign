@@ -1,6 +1,6 @@
 {
   "schema": "astrohd-v1.3-source-catalog-v1",
-  "status": "FROZEN_INPUT_FOR_TARGET_BLIND_DOMAIN_MAPPING",
+  "status": "FROZEN_BEFORE_OWNER_V13_SCORING",
   "owner_target_or_birth_information_present": false,
   "principles": [
     "Only source-grounded traditional significations and strength/placement rules may be mapped to behavioral domains.",
@@ -33,15 +33,25 @@
     {
       "id": "lilly_planets",
       "tradition": "lilly_traditional_western",
-      "url": "https://www.skyscript.co.uk/mercury_att.html",
+      "url": "https://www.skyscript.co.uk/ca_downloads.html",
       "summary": [
-        "Mercury is associated with speech, memory, reasoning, learning, oratory and practical intelligence.",
-        "Jupiter with justice, counsel, religion, scholarship and public responsibility.",
-        "Sun with honour, authority and public office.",
-        "Venus with love, pleasure, art and sociability.",
-        "Mars with action, conflict, technical/craft activity and force.",
-        "Saturn with solitude, restraint, difficulty and endurance.",
-        "Moon with movement, messaging, care/nurture and the common people."
+        "Skyscript's Christian Astrology resources separately reproduce/adapt Lilly's planetary signification sections for Saturn, Jupiter, Mars, Sun, Venus, Mercury and Moon.",
+        "Mercury is associated with speech, reasoning, learning, oratory and practical intelligence.",
+        "Jupiter is associated with religion, counsel, learning/wisdom, justice and public responsibility.",
+        "The Sun is associated with honour, authority and public office.",
+        "Venus is associated with love, pleasure, sociability, beauty/art and relationship.",
+        "Mars is associated with action, conflict, force and craft/technical activity.",
+        "Saturn is associated with solitude/restraint, difficulty, endurance and affliction.",
+        "The Moon is associated with the common people, travel/movement, messengers and nursing/care roles."
+      ],
+      "supporting_urls": [
+        "https://www.skyscript.co.uk/saturn_att.html",
+        "https://www.skyscript.co.uk/jupiter_att.html",
+        "https://www.skyscript.co.uk/marsatt.html",
+        "https://www.skyscript.co.uk/sun_att.html",
+        "https://www.skyscript.co.uk/venus_att.html",
+        "https://www.skyscript.co.uk/mercury_att.html",
+        "https://www.skyscript.co.uk/moonatt.html"
       ]
     },
     {
@@ -70,6 +80,19 @@
       "summary": [
         "Lilly publishes an explicit strength/debility point table including essential dignity, house placement, motion, speed, solar phase and other conditions.",
         "This project may use the published point table only as a source-native sensitivity arm; it must not alter Lilly's point values."
+      ]
+    },
+    {
+      "id": "parashara_planets",
+      "tradition": "parashari_jyotish",
+      "url": "https://parashara.net/index.php?page=chapter3",
+      "supporting_urls": [
+        "https://www.wisdomlib.org/hinduism/book/phaladeepika-by-mantreswara-text-and-translation/d/doc1621574.html"
+      ],
+      "summary": [
+        "BPHS chapter 3 identifies the Moon with mind, Mars with dynamic energy/activity, Mercury with language and intellect, Jupiter with knowledge, Venus with reproductive/desire significations, and Saturn with grief/suffering.",
+        "Phaladeepika chapter 2 independently gives Mercury speech/intellectual associations, Jupiter knowledge/teaching/wisdom/religious associations, Venus marriage/pleasure/poetry/charming-speech associations, Mars strength/daring/energy/conflict associations, and Saturn adversity/labour/constancy/confinement associations.",
+        "These are source-defined significations only; the project must not infer modern psychological meanings beyond the stated semantic overlap."
       ]
     },
     {
@@ -285,5 +308,9 @@
       "jupiter": 11,
       "saturn": 12
     }
-  }
+  },
+  "external_verification_note": "Source summaries checked against the linked historical-text reproductions/translation pages before target-blind mapping; no owner birth/chart/rank information was used.",
+  "target_blind_mapping_prompt_sha256": "d30195e9ca9c1814be441e9a8f9797c4086fdb642a28568985b2c4a55714d598",
+  "target_blind_mapper_a_run_sha256": "2634f03243a765aa76c0d414377b928b5b3696cf031a6f55d0d6843ee550aa5d",
+  "target_blind_mapper_b_run_sha256": "24c9dab82b1c55168716ba45f6eb32b3639d9cfaf3b77d17c84e2e54ab09ad9b"
 }
