@@ -45,3 +45,16 @@ Opus instantiated 27 candidate-unexposed mappings versus GPT v1's 19. The best r
 Interpretation: GPT v1 translation was materially conservative, but remapping quality alone does not explain the persistent 2013-vs-1985 mismatch inside the frozen 19-observable V4.3 architecture. See `tasks/scenario-owner-recovery-calibration-20260923/OPUS55-V43-REMAP-V2-RESULT-20260923.md`.
 
 A direct Codex CLI smoke test of `gpt-5.6-pro` failed with provider HTTP 400: that model is not supported through Codex when authenticated with a ChatGPT account. Do not substitute a Sol model and call it a Pro pass.
+
+
+## V4.3 scoring architecture diagnosis — 2026-09-23
+
+The post-result scoring-architecture review is **decision-sufficient**. Using the verified 288,938-state century cache and the frozen Opus-v2 survey evidence, the 2013 rank-1 interval and the best 1985-date interval have the same 14 supported participant-observable fingerprint. They are members of the same 46-state observable tie group.
+
+The entire `1.6646366`-bit V4.3 advantage for 2013 is produced by stronger/rarer hidden structural pathways for three already-matched observables: Channel 18-58 vs Gate 58 (`+0.559619`), Channel 28-38 vs Gate 28 (`+0.777665`), and Channel 13-33 vs Gate 33 (`+0.327353`). Thus the scorer separates candidates using mechanism identity that the participant measurement did not contain.
+
+Across all 19 clean V3.6 observables, 2013 and best-1985 differ only on `ORGANIZED_DETAIL` and `RHYTHM_ROUTINE`; both were unestablished by the frozen scenario measurement. Within the 46-state tie group those observables are highly discriminating post-result diagnostics, but using them now to repair the owner case would be candidate-exposed development evidence.
+
+Secondary architecture findings: V4.3 uses marginal structural rarity rather than empirical behavioral likelihood; missing positive support is usually neutral rather than symmetric negative/mixed evidence; conditional prevalence is computed under mapping parent conditions but those parents are not enforced by `score_one()` (6 of the Opus-v2 top 20 intervals are not Projector/Splenic despite many mapping prevalence parents being Projector+Splenic); and profile observables are modeled differently by the holistic audit versus the scorer dependency cluster.
+
+Decision: preserve V4.3 as a historical descriptive scorer. For scenario-v7 behavior-only recovery, the next architecture should adapt the repository's existing Survey-v2 observable normalization, positive/negative/mixed/abstain semantics, dependency-family normalization and adaptive information-gain questioning. Structural Channel/Gate alternatives should explain one candidate observable, not earn different evidence weights unless separately measured behavior distinguishes them. Empirical response likelihoods/dependency models should replace heuristic rarity weighting only after independent blinded participant data exists. See `tasks/scenario-owner-recovery-calibration-20260923/V43-SCORING-ARCHITECTURE-DIAGNOSIS-20260923.md` and the prior-work ledger beside it.
