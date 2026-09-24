@@ -1,0 +1,118 @@
+{
+  "schema": "astrohd-v1.3b-source-native-strength-freeze-v1",
+  "status": "FROZEN_BEFORE_ANY_V13B_OWNER_SCORE",
+  "classification": "owner-requested post-result development experiment; not validation",
+  "motivating_failure": {
+    "prior_strategy": "V1.3 equal-testimony tradition-grounded multiverse",
+    "prior_result": "DEV_FAIL",
+    "receipt": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V13-TRADITION-DIRECT-RESULT-20260924.md",
+    "causal_revision": "The prior arm translated source traditions into a project-authored +/-1 testimony grammar. V1.3b instead preserves each tradition's own numerical strength machinery and treats traditions as separate models."
+  },
+  "target_blind_mapping": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V13-TARGET-BLIND-CONSENSUS-MAP-20260924.json",
+  "behavioral_input_sha256": "dbb92b270c2720cabed823e61ddc735dced579628c33f12df540e38b172d147d",
+  "source_native_models": {
+    "lilly_core_fortitude": {
+      "tradition": "William Lilly / traditional Western",
+      "source_urls": [
+        "https://www.skyscript.co.uk/dig5.html",
+        "https://www.skyscript.co.uk/CA/CA_DH.pdf",
+        "https://public.websites.umich.edu/~pfa/dreamhouse/attic/dignities.html"
+      ],
+      "zodiac": "tropical",
+      "houses": "Regiomontanus",
+      "included_source_native_points": {
+        "essential": {
+          "own_sign": 5,
+          "exaltation": 4,
+          "own_triplicity": 3,
+          "own_term": 2,
+          "own_face": 1,
+          "detriment": -5,
+          "fall": -4,
+          "peregrine": -5
+        },
+        "accidental": {
+          "house_10_or_1": 5,
+          "house_7_4_or_11": 4,
+          "house_2_or_5": 3,
+          "house_9": 2,
+          "house_3": 1,
+          "house_12": -5,
+          "house_8_or_6": -2,
+          "direct_nonluminary": 4,
+          "retrograde_nonluminary": -5
+        }
+      },
+      "omitted_before_scoring": [
+        "mutual reception",
+        "swift/slow motion",
+        "oriental/occidental condition",
+        "Moon waxing/waning",
+        "combustion/under-beams/cazimi",
+        "partile benefic/malefic aspects",
+        "node conjunctions",
+        "fixed-star conjunctions",
+        "besiegement"
+      ],
+      "omission_reason": "Keep the first source-native numerical pass mechanically bounded to factors that can be implemented unambiguously from the cited table without adding another interpretive/oracle dependency. Omissions are frozen before owner scoring and may not be selectively restored after reveal.",
+      "triplicity": "Ptolemy/Lilly day/night triplicity rulers as published in the essential-dignity table.",
+      "terms": "Ptolemy/Lilly terms as published in the essential-dignity table.",
+      "faces": "Ptolemy/Lilly faces/decan rulers as published in the essential-dignity table."
+    },
+    "parashari_shadbala": {
+      "tradition": "Parashari Jyotish",
+      "source_urls": [
+        "https://www.wisdomlib.org/shop/books/jyotisha/brihat-parashara-hora-shastra/doc234203.html",
+        "https://github.com/naturalstupid/PyJHora"
+      ],
+      "engine": "PyJHora strength.shad_bala",
+      "engine_commit": "48e57d29b47a3143519910a24866758116467485",
+      "engine_license": "AGPL-3.0-or-later",
+      "engine_role": "private development oracle only; no PyJHora code is copied into the project",
+      "ayanamsha": "Lahiri",
+      "shadbala_value": "PyJHora normalized sb_strength output = Shadbala rupas / tradition-specific required factor for each of Sun through Saturn.",
+      "validation_note": "PyJHora documents tests against V.P. Jain and B.V. Raman examples, while also noting some disagreement with Jagannatha Hora. Treat this as practitioner/reference implementation evidence, not scientific validation."
+    }
+  },
+  "domain_to_significator_rule": {
+    "source": "frozen V1.3 target-blind consensus map",
+    "lilly": "Use only Lilly-tradition planet and house mappings. A mapped house contributes its candidate-specific traditional lord from the Regiomontanus cusp sign.",
+    "parashari": "Use only Parashari-tradition planet and house mappings. A mapped sidereal whole-sign house contributes its candidate-specific classical sign lord.",
+    "deduplication": "Within one tradition/domain/candidate, the same planet counts once even if reached through multiple mapped roles."
+  },
+  "within_tradition_aggregation": {
+    "domain_mean_nonstack": "For each behavioral domain, average the native strength values of its unique mapped significators; then sum domain scores.",
+    "significator_stack": "For each behavioral domain, sum the native strength values of its unique mapped significators; then sum domain scores.",
+    "behavioral_weight_variants": {
+      "equal_domain": "Every supported mapped behavioral domain weight = 1.",
+      "frozen_measurement_confidence": "Use the already-frozen target-blind behavioral confidence for that domain."
+    },
+    "no_cross_tradition_numeric_blend": true
+  },
+  "convergence_rule": {
+    "per_spec_direct_pass": "Target must strictly beat persistent 2013 and no predeclared same-date alternative may strictly beat target.",
+    "tradition_pass": "A tradition passes only if at least one of domain_mean_nonstack or significator_stack passes under BOTH behavioral-weight variants.",
+    "convergence_pass": "Both Lilly and Parashari traditions pass independently.",
+    "century_rank_admission": "Only convergence_pass admits any V1.3b century-scale ranking. One-tradition-only success remains a diagnostic."
+  },
+  "direct_queries": {
+    "target": "1985-01-29T10:25:00Z",
+    "persistent_competitor": "2013-01-28T08:30:00Z",
+    "same_date_alternative_midpoints": [
+      "1985-01-29T00:08:59.783936Z",
+      "1985-01-29T00:21:35.544935Z",
+      "1985-01-29T04:16:12.622170Z",
+      "1985-01-29T11:08:11.120061Z",
+      "1985-01-29T11:25:24.314698Z",
+      "1985-01-29T17:02:18.285443Z",
+      "1985-01-29T22:40:39.868829Z",
+      "1985-01-29T23:39:15.079937Z"
+    ]
+  },
+  "no_retune_after_reveal": true,
+  "no_claims": [
+    "This is still owner-case development/post-selection evidence.",
+    "Historical/practitioner source-native weights are externally grounded but not empirically calibrated probabilities.",
+    "A pass would not validate astrology; a fail would reject this frozen source-native candidate on the owner development case."
+  ]
+}
