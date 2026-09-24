@@ -128,3 +128,18 @@ Direct development regression: the new field did not change the recorded-target 
 The global-capacity-ordered question experiment is now bounded to one final field. The next pre-existing target-blind capacity feature is `design:moon` (**0.5479747137424518 incremental uniform bits**). Existing private evidence is missing only its non-driver contrast, so one exact question has been frozen before the answer in `tasks/scenario-owner-recovery-calibration-20260923/OWNER-TRAINING-V8-DESIGN-MOON-CONTRAST-FREEZE-20260924.md`.
 
 Current boundary: **awaiting the owner's Design-Moon non-driver contrast answer**. If this second field does not improve the direct development regression, stop the global-capacity owner-question strategy rather than continuing down the field list.
+
+
+## AstroHD V1.2 transparent Western-only — direct development regression passed — 2026-09-24
+
+The behavior-only owner-training path is now stopped as **EXHAUSTED** after the second/final global-capacity-ordered categorical field failed score admission. No further owner question is admitted under that strategy.
+
+A materially different replacement strategy was frozen before owner V1.2 scoring: a transparent Western-only scorer using explicit, machine-testable predicates, Swiss Ephemeris local files, Placidus houses, the preserved V1.1 cluster weights/evidence algebra, and the current frozen behavioral translation. The old V1.1 owner fit was not used to tune the new predicates.
+
+The V1.2 Western direct-regression gate was frozen before score reveal. On the full 876,601-hour prevalence universe, the exact recorded moment scored **26.4757284838**, the persistent 2013 comparator scored **3.0139164145**, and the strongest of eight predeclared same-date alternatives scored **21.6527218247**. Both frozen direct-regression conditions therefore PASS.
+
+Disposition: **DEV_PASS_NONVALIDATING**. This is the first current replacement strategy in the sequence to advance the direct owner outcome, but it remains post-result development evidence.
+
+The Western-only century ranking is now admitted and is the current next action. Do not build the merged HD+Western layer or retune Western predicates until the frozen Western-only century result is known.
+
+See `tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V12-WESTERN-DIRECT-REGRESSION-RESULT-20260924.md`.
