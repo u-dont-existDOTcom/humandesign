@@ -104,3 +104,15 @@ The baseline partial-evidence full-universe strategy is now **EXHAUSTED**. A pri
 Replacement strategy: reuse the already-frozen Survey-v2 categorical/adaptive layer. Exhaust the existing private transcript candidate-blind against the complete frozen Profile/Gate vocabularies and field-specific evidence gates before asking anything else. Classification must not receive birth/chart/predicted-label/rank/target information. Missing evidence abstains. No new owner question is currently admitted.
 
 See `tasks/scenario-owner-recovery-calibration-20260923/OWNER-TRAINING-V8-FULL-UNIVERSE-RESULT-20260924.md`.
+
+## Owner-trained scenario v8 — existing-evidence categorical cycle failed; capacity-ordered probe frozen — 2026-09-24
+
+The frozen existing-evidence categorical bridge completed using only the original 79-answer target-blind snapshot. Stage A candidate-blind routing and Stage B full-vocabulary classification both passed their mechanical custody/identity checks. Only **1 / 7** initial categorical jobs was score-admissible at the frozen confidence/minimum-evidence gate; participant-specific categorical output remains private.
+
+Appending that one admitted categorical classification did **not** advance recovery. In the main observable variant, the recorded target moved from rank **#19,890–#24,623** to **#20,549–#25,236**; in the Root-sensitivity variant it moved from **#43,132–#50,489** to **#44,021–#51,271**. The same-date 1985 result remained tied **#1–#4**. The existing-transcript categorical-mining cycle is therefore **REPLACEMENT_REQUIRED**. See `tasks/scenario-owner-recovery-calibration-20260923/OWNER-TRAINING-V8-CATEGORICAL-EXISTING-EVIDENCE-RESULT-20260924.md`.
+
+The frozen leader-only adaptive selector is also exhausted for question admission: its two current anonymous top-tied states have identical values on all 15 remaining adaptive fields, giving **0.0 bits** maximum entropy. No further owner question is allowed under that selector.
+
+Replacement is a bounded, target-blind capacity-ordered experiment using the already-frozen century capacity audit rather than target fit. The strongest initial categorical feature is `personality:moon` at **2.1419424742 incremental uniform bits**. Existing private evidence remains short of that field's full minimum-evidence gate, so the exact missing childhood-driver question has been frozen before the answer in `tasks/scenario-owner-recovery-calibration-20260923/OWNER-TRAINING-V8-PERSONALITY-MOON-CHILDHOOD-FREEZE-20260924.md`.
+
+Current boundary: **awaiting one owner childhood-driver answer**. Afterward, run only the sealed candidate-blind field classifier and the known development regression first. A new full-century rescore is admitted only if that direct regression improves.
