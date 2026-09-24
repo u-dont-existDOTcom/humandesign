@@ -118,7 +118,8 @@
     "definition": "positive_count - negative_count over the frozen testimony rules for that tradition/domain",
     "positive": "net > 0",
     "mixed_or_neutral": "net == 0",
-    "negative": "net < 0"
+    "negative": "net < 0",
+    "deduplication": "An identical physical condition for the same planet (for example Venus in domicile) counts once within a tradition-domain even if that planet is reached both as a mapped significator and as a mapped-house lord. Distinct conditions and distinct traditions remain separate testimonies."
   },
   "aggregation_arms": {
     "domain_collapse_nonstack": {
