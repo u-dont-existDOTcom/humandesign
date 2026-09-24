@@ -197,7 +197,10 @@ def validate_shadbala_strengths(strengths: Mapping[str, float]) -> dict[str, flo
     missing = set(PLANETS) - set(strengths)
     extra = set(strengths) - set(PLANETS)
     if missing or extra:
-        raise ValueError(f"Shadbala planet keys mismatch: missing={sorted(missing)} extra={sorted(extra)}")
+        raise ValueError(
+            "Shadbala planet keys mismatch: "
+            f"missing={sorted(missing)} extra={sorted(extra)}"
+        )
     result: dict[str, float] = {}
     for planet in PLANETS:
         value = float(strengths[planet])
@@ -284,7 +287,9 @@ def _score_native_domains(
                 "domain_id": domain_id,
                 "behavior_weight": weight,
                 "significators": list(significators),
-                "significator_strengths": {planet: strength_details[planet] for planet in significators},
+                "significator_strengths": {
+                    planet: strength_details[planet] for planet in significators
+                },
                 "raw_domain_score": raw,
                 "contribution": contribution,
             }
