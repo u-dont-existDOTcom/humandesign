@@ -160,3 +160,11 @@ This is the first current replacement strategy to meet the stated owner-developm
 The simpler Western-only V1.2 route is accepted at this development boundary. The merged HD+Western layer is **not required** and must not be added merely to improve the known-case rank. Fresh/held-out participants are the next scientific boundary if generalization is pursued.
 
 See tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V12-WESTERN-CENTURY-RESULT-20260924.md.
+
+## AstroHD V1.2 — scientific-validity clarification — 2026-09-24
+
+The strong Western-only owner result is **not scientific validation**. V1.2 froze its transparent Western predicates, astronomy rules, scoring implementation and owner regression gate before the V1.2 score reveal, so it is not a post-score retune. However, it deliberately reuses the historical V1.1 behavioral-cluster structure and Western feature salience/directness weights. V1.1 is explicitly post-selection descriptive/user-specific, so the owner case is not independent of the mapping/weight family.
+
+Current interpretation: strong reproducible **training/development-case fit**, but feature-to-behavior mappings, salience/directness weights, aggregation rule and information cap remain heuristic rather than empirically calibrated. Scientific predictive validity is **UNESTABLISHED** until the now-frozen V1.2 model is tested unchanged on fresh/held-out participants against preregistered simpler/equal-weight baselines.
+
+See `tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V12-SCIENTIFIC-VALIDITY-CLARIFICATION-20260924.md`.
