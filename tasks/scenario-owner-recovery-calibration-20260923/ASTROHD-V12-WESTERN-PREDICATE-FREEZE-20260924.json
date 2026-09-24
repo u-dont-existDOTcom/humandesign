@@ -1,10 +1,10 @@
 {
   "schema": "astrohd-v1.2-western-predicate-registry-v1",
-  "status": "FROZEN_BEFORE_OWNER_V12_SCORING",
+  "status": "FROZEN_BEFORE_OWNER_V12_SCORING_V2_SWIEPH",
   "classification": "post-result development; not historical V1.1 reconstruction; not validation",
   "astronomy": {
     "zodiac": "tropical",
-    "ephemeris": "Swiss Ephemeris / project production ephemeris",
+    "ephemeris": "Swiss Ephemeris file-backed SWIEPH",
     "house_system": "Placidus",
     "house_code": "P",
     "location_rule": "fixed known recovery location for all candidates",
@@ -12,7 +12,10 @@
       "latitude": 39.9526,
       "longitude": -75.1652
     },
-    "longitude_interval": "[0,360)"
+    "longitude_interval": "[0,360)",
+    "ephemeris_cache": "data/ephemeris/astrohd_generic_v2_swieph",
+    "ephemeris_flags": 258,
+    "ephemeris_boundary": "Global feature prevalence uses the frozen v2 SWIEPH cache; direct query timestamps are recalculated with SWIEPH from the same ephemeris files."
   },
   "aspects": {
     "allowed": {
@@ -324,6 +327,7 @@
   "non_goals": [
     "Do not claim these predicates reproduce historical V1.1.",
     "Do not retune orb, house system, feature definitions, or location after opening owner V1.2 scores.",
-    "Do not add owner questions in this scoring experiment."
+    "Do not add owner questions in this scoring experiment.",
+    "Do not substitute the older Moshier cache for V1.2 after this freeze."
   ]
 }
