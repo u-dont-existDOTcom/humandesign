@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "scenario-owner-recovery-calibration-20260923",
-  "status": "owner_training_v8_personality_moon_childhood_frozen_awaiting_owner_answer",
+  "status": "owner_training_v8_design_moon_contrast_frozen_awaiting_owner_answer",
   "requiredBranch": "chat/scenario-owner-recovery-calibration-20260923",
   "exclusive": true,
   "ownerOutcome": "Develop the scenario-first survey/recovery method on the owner case until the known recorded 1985-01-29 10:25 UTC Philadelphia birth neighborhood is distinguished from the persistent 2013 competitor and nearby same-date alternatives using owner-reported behavior. Target-aware owner training is allowed; preserve all such changes as development/training evidence and reserve independent validation for fresh participants.",
@@ -11,7 +11,7 @@
   "measurementFreezeSha256": "6f49806cc086ba41d23d31882b6ccc218cef78f94d7599830f5a9a2b994737ba",
   "measurementAnswerCount": 79,
   "method": "tasks/scenario-owner-recovery-calibration-20260923/OWNER-RECOVERY-CALIBRATION-20260923.md",
-  "nextAction": "Ask the exact frozen Personality-Moon childhood-driver question from OWNER-TRAINING-V8-PERSONALITY-MOON-CHILDHOOD-FREEZE-20260924.md. After the owner answers, preserve it privately, run only the fresh candidate-blind field classifier with the already-routed private current/contrast units, and test the known development failure before any new full-century rescore.",
+  "nextAction": "Ask the exact frozen Design-Moon non-driver contrast question. After the owner answers, preserve it privately, run a fresh candidate-blind design:moon classifier using only the existing private childhood/current units plus the new contrast, then run the direct owner development regression before any full-century rescore. If this second global-capacity-ordered field does not improve the direct regression, exhaust this question strategy.",
   "runtimeBoundary": "Raw answers and participant-specific coding remain private. Birth/chart/model/rank information must not be supplied to neutral follow-up selection/coding. Do not score the incomplete v1 profile and call a miss or hit a survey result.",
   "neutralCoderAOutputSha256": "538402a5d5f64ad4b75f08ba86943aab9d99d3011e14b040547032783966aa35",
   "neutralCoderBOutputSha256": "84be173203360e9d2370612ec492ae6dcec2bedd05540ced6f72ce7d4eec3e5c",
@@ -24,9 +24,9 @@
   },
   "checkpoint": "tasks/scenario-owner-recovery-calibration-20260923/NEUTRAL-CALIBRATION-CHECKPOINT-20260923.md",
   "currentFollowupRoute": {
-    "routeId": "V8.PERSONALITY_MOON.CHILDHOOD_DRIVER",
+    "routeId": "V8.DESIGN_MOON.NON_DRIVER_CONTRAST",
     "status": "awaiting_owner_answer",
-    "publicFreeze": "tasks/scenario-owner-recovery-calibration-20260923/OWNER-TRAINING-V8-PERSONALITY-MOON-CHILDHOOD-FREEZE-20260924.md"
+    "publicFreeze": "tasks/scenario-owner-recovery-calibration-20260923/OWNER-TRAINING-V8-DESIGN-MOON-CONTRAST-FREEZE-20260924.md"
   },
   "surveyCompletionSemantics": "The 68-answer pilot was completed, but it is not yet a complete v7-calibrated measurement because v7 replaced several pilot questions that were design-invalidated or construct-mismatched. Follow-ups are targeted replacement measurements, not an exhaustive-completeness requirement.",
   "astroHDV43Status": {
@@ -186,13 +186,13 @@
   "dualScorerObjectiveRecord": "tasks/scenario-owner-recovery-calibration-20260923/DUAL-SCORER-CALIBRATION-OBJECTIVE-20260923.md",
   "stopAdmission": {
     "parentOutcome": "OPEN_OWNER_TRAINING",
-    "remainingGap": "Neither corrected baseline-observable scoring nor the existing-transcript categorical cycle robustly recovers the recorded date/time; the frozen leader-only adaptive selector has zero information gain across all remaining fields.",
-    "nextAction": "Owner supplies the one frozen childhood-driver answer for the globally highest-capacity initial categorical field; assistant then runs the sealed candidate-blind classifier and direct development regression.",
+    "remainingGap": "Personality-Moon completion failed the direct development regression: pairwise date separation did not change and same-date time recovery regressed from #1–#4 to #2–#5.",
+    "nextAction": "Owner supplies the one frozen Design-Moon non-driver contrast answer for the second and final global-capacity-ordered field; assistant then runs candidate-blind classification and direct development regression.",
     "responsibleActor": "owner for the single presented answer, then assistant",
-    "currentAuthority": "owner authorized target-aware development; question selection and classification remain candidate-blind and raw participant data/coding remain private",
-    "executableBoundary": "Independent preparation is complete. The next required observation is the owner's answer to the frozen question."
+    "currentAuthority": "owner authorized target-aware development; question selection remains target-blind by frozen global capacity and participant evidence/coding remain private",
+    "executableBoundary": "Independent preparation is complete. The next required observation is the owner's answer to the frozen Design-Moon contrast question."
   },
-  "privateWorkingAnswerCount": 82,
+  "privateWorkingAnswerCount": 83,
   "currentFollowupState": "natural_stop_measurement_v2_frozen",
   "completedCalibrationFollowups": {
     "F0": {
@@ -382,15 +382,17 @@
     "publicReceipt": "tasks/scenario-owner-recovery-calibration-20260923/OWNER-TRAINING-V8-FULL-UNIVERSE-RESULT-20260924.md"
   },
   "ownerTrainingV8ReplacementStrategy": {
-    "status": "BOUNDED_EXPERIMENT_AWAITING_OWNER_INPUT",
-    "strategy": "global-capacity-ordered completion of a missing evidence category for the strongest frozen initial categorical feature",
+    "status": "SECOND_FINAL_BOUNDED_FIELD_AWAITING_OWNER_INPUT",
+    "strategy": "global-capacity-ordered completion of one missing evidence category for design:moon",
     "selectionSource": "state/SURVEY-V2-CAPACITY-AUDIT.json",
-    "selectedField": "personality:moon",
-    "selectedFieldIncrementalUniformBits": 2.141942474192593,
-    "publicQuestionFreeze": "tasks/scenario-owner-recovery-calibration-20260923/OWNER-TRAINING-V8-PERSONALITY-MOON-CHILDHOOD-FREEZE-20260924.md",
+    "selectedField": "design:moon",
+    "selectedFieldIncrementalUniformBits": 0.5479747137424518,
+    "publicQuestionFreeze": "tasks/scenario-owner-recovery-calibration-20260923/OWNER-TRAINING-V8-DESIGN-MOON-CONTRAST-FREEZE-20260924.md",
     "developmentRegressionBeforeFullUniverse": true,
-    "ownerBurdenRule": "ask only the one missing childhood-driver unit; do not re-ask existing current/contrast evidence",
-    "developmentClassification": "owner-training/post-selection; question selection target-blind by frozen global capacity"
+    "cycleLimit": 2,
+    "completedFieldCycles": 1,
+    "failureRule": "If this second field does not improve the direct development regression, exhaust the global-capacity-ordered owner-question strategy.",
+    "developmentClassification": "owner-training/post-selection; field selection target-blind by frozen global capacity"
   },
   "ownerTrainingV8CategoricalBridge": {
     "status": "COMPLETED_NEGATIVE_REPLACED",
@@ -416,5 +418,26 @@
     "maximumEntropyBits": 0,
     "ownerQuestionAdmitted": false,
     "finding": "LEADER_ONLY_SELECTOR_ZERO_INFORMATION_COLLISION"
+  },
+  "ownerTrainingV8PersonalityMoon": {
+    "status": "DEV_FAIL_CLOSED",
+    "publicResult": "tasks/scenario-owner-recovery-calibration-20260923/OWNER-TRAINING-V8-PERSONALITY-MOON-RESULT-20260924.md",
+    "privateAnswerSha256": "pending_separate_answer_file_hash",
+    "classifierModel": "claude-opus-5-5",
+    "classifierEffort": "high",
+    "privateClassifierRunSha256": "31eb70ac691d84783502184a8e371cbd4960f64b8bd1401100fe019e460d004d",
+    "privateClassifierOutputSha256": "66e2eb27362c4561c7701177603f9f9565f7e22642c853d024b9e9448c9ebada",
+    "privateRegressionSha256": "34beb609b755aa57d61cd824017c52c49600f2a54ead199490cbe5cb129c4a6b",
+    "pairwiseDateGapChanged": false,
+    "sameDateBefore": [
+      1,
+      4
+    ],
+    "sameDateAfter": [
+      2,
+      5
+    ],
+    "fullCenturyRescoreAdmitted": false,
+    "ageBoundaryFinding": "The frozen before-13 category is a generic pre-adolescence bucket; within-childhood phase transitions must be preserved rather than flattened."
   }
 }
