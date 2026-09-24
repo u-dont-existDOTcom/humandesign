@@ -187,3 +187,24 @@ A materially different causal revision, **V1.3b source-native strength**, was fr
 
 Execution is currently **BLOCKED_EXTERNAL** because the already-authorized remote development computer became unavailable before V1.3b scoring. No V1.3b owner score has been opened. Resume the exact frozen V1.3b experiment automatically when the private runtime/ephemeris machine is reachable; do not alter rules around the outage and do not ask new owner questions.
 
+## AstroHD V1.3b — source-native implementation prepared; execution blocked — 2026-09-24
+
+After the frozen equal-testimony V1.3 direct regression failed, the owner-authorized materially different V1.3b hypothesis was preserved: score each tradition with its own native numerical strength machinery rather than the project's +/-1 testimony abstraction.
+
+V1.3b was frozen before any V1.3b owner score:
+- Lilly core fortitude/debility points;
+- Parashari Shadbala through PyJHora `strength.shad_bala` at exact commit `48e57d29b47a3143519910a24866758116467485`;
+- target-blind V1.3 source-to-domain consensus map unchanged;
+- domain-mean and significator-stack variants;
+- equal-domain and frozen-confidence behavioral weighting;
+- no cross-tradition numeric blend;
+- both Lilly and Parashari must independently pass the direct target-vs-2013/same-date gate before a century scan is admitted.
+
+Independent preparation completed in Git:
+- `src/hdmatch/evaluation/astrohd_v13b_native.py` — Lilly source-native core and Parashari Shadbala-domain adapter;
+- `tests/unit/test_astrohd_v13b_native.py` — focused deterministic tests, currently **unexecuted** because the remote development machine is offline;
+- `scripts/collect_astrohd_v13b_pyjhora.py` — exact-commit external PyJHora oracle adapter;
+- `scripts/score_astrohd_v13b_native_direct.py` — frozen direct-regression runner.
+
+No V1.3b owner score has been opened. All registered Remote Desktop Commander devices are currently offline, so private owner artifacts/local ephemeris execution cannot proceed. Current state is **BLOCKED_EXTERNAL after independent preparation**, not method failure. Resume focused verification and the exact frozen direct regression automatically when the authorized remote machine reconnects; do not retune around the outage.
+
