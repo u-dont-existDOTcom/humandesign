@@ -83,11 +83,23 @@ DETRIMENTS = {
 }
 DIURNAL = {"sun", "jupiter", "saturn"}
 NOCTURNAL = {"moon", "venus", "mars"}
-LILLY_POSITIVE_HOUSES = {1, 2, 3, 4, 5, 7, 9, 10, 11}
-LILLY_NEGATIVE_HOUSES = {6, 8, 12}
+ANGULAR_HOUSES = {1, 4, 7, 10}
+CADENT_HOUSES = {3, 6, 9, 12}
 KENDRA = {1, 4, 7, 10}
 TRIKONA = {1, 5, 9}
+UPACHAYA = {3, 6, 10, 11}
+DUSTHANA = {6, 8, 12}
 RETRO_STRENGTH_PLANETS = {"mercury", "venus", "mars", "jupiter", "saturn"}
+NONLUMINARIES = {"mercury", "venus", "mars", "jupiter", "saturn"}
+PLANETARY_JOYS = {
+    "mercury": 1,
+    "moon": 3,
+    "venus": 5,
+    "mars": 6,
+    "sun": 9,
+    "jupiter": 11,
+    "saturn": 12,
+}
 
 
 @dataclass(frozen=True, slots=True)
@@ -213,10 +225,8 @@ def _hellenistic_planet_testimonies(snapshot: TraditionSnapshot, planet: str) ->
         _add_once(out, f"{planet}:domicile", 1)
     if EXALTATIONS[planet] == sign:
         _add_once(out, f"{planet}:exaltation", 1)
-    if FALLS[planet] == sign:
-        _add_once(out, f"{planet}:fall", -1)
-    if house in KENDRA:
-        _add_once(out, f"{planet}:whole_sign_angular", 1)
+    if house == PLANETARY_JOYS[planet]:
+        _add_once(out, f"{planet}:joy_house", 1)
     if planet in DIURNAL and snapshot.day_chart:
         _add_once(out, f"{planet}:sect", 1)
     if planet in NOCTURNAL and not snapshot.day_chart:
@@ -237,14 +247,15 @@ def _lilly_planet_testimonies(snapshot: TraditionSnapshot, planet: str) -> dict[
         _add_once(out, f"{planet}:detriment", -1)
     if FALLS[planet] == sign:
         _add_once(out, f"{planet}:fall", -1)
-    if speed >= 0.0:
-        _add_once(out, f"{planet}:direct", 1)
-    else:
-        _add_once(out, f"{planet}:retrograde", -1)
-    if house in LILLY_POSITIVE_HOUSES:
-        _add_once(out, f"{planet}:house_fortitude", 1)
-    elif house in LILLY_NEGATIVE_HOUSES:
-        _add_once(out, f"{planet}:house_debility", -1)
+    if planet in NONLUMINARIES:
+        if speed >= 0.0:
+            _add_once(out, f"{planet}:direct", 1)
+        else:
+            _add_once(out, f"{planet}:retrograde", -1)
+    if house in ANGULAR_HOUSES:
+        _add_once(out, f"{planet}:angular_house", 1)
+    elif house in CADENT_HOUSES:
+        _add_once(out, f"{planet}:cadent_house", -1)
     return out
 
 
@@ -263,6 +274,10 @@ def _parashari_planet_testimonies(snapshot: TraditionSnapshot, planet: str) -> d
         _add_once(out, f"{planet}:kendra", 1)
     if house in TRIKONA:
         _add_once(out, f"{planet}:trikona", 1)
+    if house in UPACHAYA:
+        _add_once(out, f"{planet}:upachaya", 1)
+    if house in DUSTHANA:
+        _add_once(out, f"{planet}:dusthana", -1)
     if planet in RETRO_STRENGTH_PLANETS and speed < 0.0:
         _add_once(out, f"{planet}:retrograde_strength", 1)
     return out
@@ -347,7 +362,15 @@ def score_snapshot(
                 houses=houses,
             )
             raw = sum(testimonies.values())
-            sign = 1 if raw > 0 else -1 if raw < 0 else 0
+            has_positive = any(value > 0 for value in testimonies.values())
+            has_negative = any(value < 0 for value in testimonies.values())
+            sign = (
+                1
+                if has_positive and not has_negative
+                else -1
+                if has_negative and not has_positive
+                else 0
+            )
             raw_total += raw
             tradition_sign_sum += sign
             traditions.append(
@@ -359,7 +382,20 @@ def score_snapshot(
                     "mapped": True,
                 }
             )
-        collapse = 1 if raw_total > 0 else -1 if raw_total < 0 else 0
+        all_testimonies = [
+            value
+            for row in traditions
+            for value in row["testimonies"].values()
+        ]
+        has_positive = any(value > 0 for value in all_testimonies)
+        has_negative = any(value < 0 for value in all_testimonies)
+        collapse = (
+            1
+            if has_positive and not has_negative
+            else -1
+            if has_negative and not has_positive
+            else 0
+        )
         votes = {
             "domain_collapse_nonstack": collapse,
             "cross_tradition_convergence_stack": tradition_sign_sum,

@@ -92,14 +92,14 @@ def test_hellenistic_and_lilly_mercury():
     h = tradition_domain_testimonies(
         snap(), tradition="hellenistic_western", planets=["mercury"], houses=[]
     )
-    assert h == {"mercury:domicile": 1, "mercury:whole_sign_angular": 1}
+    assert h == {"mercury:domicile": 1, "mercury:joy_house": 1}
     lilly = tradition_domain_testimonies(
         snap(), tradition="lilly_traditional_western", planets=["mercury"], houses=[]
     )
     assert lilly == {
         "mercury:own_sign": 1,
         "mercury:direct": 1,
-        "mercury:house_fortitude": 1,
+        "mercury:angular_house": 1,
     }
 
 
@@ -136,6 +136,35 @@ def test_three_aggregation_arms():
         "cross_tradition_convergence_stack": 2.0,
         "raw_independent_testimony_stack": 5.0,
     }
+
+
+def test_mixed_positive_negative_collapses_to_zero() -> None:
+    mixed = {
+        "domains": [
+            {
+                "domain_id": "emotion_permeability",
+                "traditions": [
+                    {
+                        "tradition": "lilly_traditional_western",
+                        "planets": [{"id": "moon"}],
+                        "houses": [],
+                    }
+                ],
+            }
+        ]
+    }
+    scores = score_snapshot(
+        snap(),
+        consensus_map=mixed,
+        behavior_weights={"emotion_permeability": 1.0},
+    )
+    assert scores["domains"][0]["traditions"][0]["testimonies"] == {
+        "moon:exaltation": 1,
+        "moon:cadent_house": -1,
+    }
+    assert scores["totals"]["domain_collapse_nonstack"] == 0.0
+    assert scores["totals"]["cross_tradition_convergence_stack"] == 0.0
+    assert scores["totals"]["raw_independent_testimony_stack"] == 0.0
 
 
 def test_behavior_weight_variants():

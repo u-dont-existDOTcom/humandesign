@@ -63,69 +63,49 @@
   "testimony_rules": {
     "hellenistic_western": {
       "positive": [
-        "mapped planet in own domicile",
-        "mapped planet in exaltation",
-        "mapped planet belongs to the chart's day/night sect (Sun/Jupiter/Saturn by day; Moon/Venus/Mars by night; Mercury gives no sect testimony)",
-        "mapped planet in whole-sign angular house 1,4,7,10",
-        "for a mapped house: its classical lord in own domicile",
-        "for a mapped house: its classical lord in exaltation",
-        "for a mapped house: its classical lord in whole-sign angular house 1,4,7,10"
+        "domicile",
+        "exaltation",
+        "in_sect",
+        "planetary_joy_house"
       ],
-      "negative": [
-        "mapped planet in fall",
-        "for a mapped house: its classical lord in fall"
-      ],
-      "excluded": "No project-authored salience coefficient, no V1.1/V1.2 feature list, no outer planets, no structural rarity weighting."
+      "negative": [],
+      "house_mapping": "For a mapped house, score the traditional whole-sign house lord under the same eligible atomic conditions."
     },
     "lilly_traditional_western": {
       "positive": [
-        "mapped planet in own sign",
-        "mapped planet in exaltation",
-        "mapped planet direct in motion",
-        "mapped planet located in Lilly-positive houses: 10/1, 7/4/11, 2/5, 9, or 3",
-        "for a mapped house: its cusp-sign classical lord in own sign",
-        "for a mapped house: its cusp-sign classical lord in exaltation",
-        "for a mapped house: its cusp-sign classical lord direct in motion",
-        "for a mapped house: its cusp-sign classical lord located in a Lilly-positive house"
+        "domicile",
+        "exaltation",
+        "direct_nonluminary",
+        "angular_house"
       ],
       "negative": [
-        "mapped planet in detriment (sign opposite either domicile)",
-        "mapped planet in fall",
-        "mapped planet retrograde",
-        "mapped planet located in Lilly-negative houses 12,8,6",
-        "for a mapped house: its lord in detriment",
-        "for a mapped house: its lord in fall",
-        "for a mapped house: its lord retrograde",
-        "for a mapped house: its lord in Lilly-negative houses 12,8,6"
+        "detriment",
+        "fall",
+        "retrograde_nonluminary",
+        "cadent_house"
       ],
-      "note": "Each listed condition is one testimony in the raw-stack arm. Lilly's published numeric fortitude/debility table is retained for a separate source-native sensitivity arm later; its point magnitudes are not silently imported into the primary V1.3 arms."
+      "house_mapping": "For a mapped house, use the traditional ruler of the tropical sign on the Placidus cusp and the same eligible lord conditions.",
+      "succedent_treatment": "neutral"
     },
     "parashari_jyotish": {
       "positive": [
-        "mapped sidereal planet in own sign",
-        "mapped sidereal planet in exaltation",
-        "mapped sidereal planet in a kendra house 1,4,7,10",
-        "mapped sidereal planet in a trikona house 1,5,9",
-        "mapped sidereal planet retrograde when it is Mercury/Venus/Mars/Jupiter/Saturn",
-        "for a mapped sidereal whole-sign house: its classical lord in own sign",
-        "for a mapped house: its lord in exaltation",
-        "for a mapped house: its lord in a kendra house 1,4,7,10",
-        "for a mapped house: its lord in a trikona house 1,5,9",
-        "for a mapped house: its lord retrograde when it is Mercury/Venus/Mars/Jupiter/Saturn"
+        "own_sign",
+        "exaltation",
+        "retrograde_nonluminary",
+        "kendra_house",
+        "trikona_house",
+        "upachaya_house"
       ],
       "negative": [
-        "mapped sidereal planet in debilitation/fall sign",
-        "for a mapped house: its lord in debilitation/fall sign"
+        "debilitation",
+        "dusthana_house"
       ],
-      "note": "Use only planet/house mappings admitted by the final target-blind consensus map; no unsupported modern karaka mapping is added."
+      "house_mapping": "For a mapped sidereal whole-sign house, use its traditional sign lord and the same eligible lord conditions."
     }
   },
   "per_tradition_domain_state": {
-    "definition": "positive_count - negative_count over the frozen testimony rules for that tradition/domain",
-    "positive": "net > 0",
-    "mixed_or_neutral": "net == 0",
-    "negative": "net < 0",
-    "deduplication": "An identical physical condition for the same planet (for example Venus in domicile) counts once within a tradition-domain even if that planet is reached both as a mapped significator and as a mapped-house lord. Distinct conditions and distinct traditions remain separate testimonies."
+    "definition": "Conflict-preserving collapse: +1 when one or more positive atomic testimonies and no negatives; -1 when one or more negatives and no positives; 0 for mixed or no testimony.",
+    "deduplication": "An identical physical condition for the same planet counts once within a tradition-domain even if reached through multiple mapped roles. Distinct physical conditions and distinct traditions remain separate testimonies."
   },
   "aggregation_arms": {
     "domain_collapse_nonstack": {
@@ -200,5 +180,22 @@
     "interpretation": "Development overfit/flexibility diagnostic only; not a formal p-value for astrology."
   },
   "source_catalog_sha256": "9d41637dbe6b9e3d3ad2c67426f8900cde6bd73daaeee4ee0175c34eada25376",
-  "target_blind_consensus_map_sha256": "9c03688d06a778f3cf9f590abaf315eb12b0f44b3fa00080d85605f38cb15c0b"
+  "target_blind_consensus_map_sha256": "9c03688d06a778f3cf9f590abaf315eb12b0f44b3fa00080d85605f38cb15c0b",
+  "semantic_mapper_provenance": {
+    "mapper_a_output_sha256": "b88c01b3f347c15ceab7a4cfd85d187ab51a6cd3252b117cf632515c81bc11ee",
+    "mapper_b_output_sha256": "0e1cc54f2ce2c61ce4196fc4ceb4a56d3a9282fd9ea21d57fde4b3baea46b24e",
+    "model": "claude-opus-5-5",
+    "effort": "high",
+    "isolated_zero_tool_runs": true
+  },
+  "tradition_registry": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V13-TRADITION-REGISTRY-FREEZE-20260924.json",
+  "tradition_registry_sha256": "b65595930561aa22c04d0ddf3311e56f8cf84db106c2164fb27b0497949a4ee4",
+  "testimony_semantics_authority": "The tradition registry is normative for eligible atomic testimony conditions. This scoring freeze is normative for behavioral-weight variants, aggregation arms, direct-regression admission, and the negative control.",
+  "implementation_binding": {
+    "module_sha256": "983fe40a3ccb89690528ed918eb33bf62a4837ee6b4b81b9e24814de00aca1ae",
+    "direct_scorer_sha256": "921e370d77eb9bbafd12515376a8461bc9b90f2b4ee54a261cd560c6d3613f2a",
+    "focused_test_file_sha256": "e54766223169a6403093663804ad4dc03be3951ad68692d838e76c3c45fe1f90",
+    "focused_tests": "6 passed",
+    "ruff": "PASS"
+  }
 }
