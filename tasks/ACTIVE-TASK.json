@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "scenario-owner-recovery-calibration-20260923",
-  "status": "astrohd_v13b_source_native_prepared_blocked_remote_device_offline",
+  "status": "astrohd_v13b_source_native_direct_complete_convergence_fail",
   "requiredBranch": "chat/scenario-owner-recovery-calibration-20260923",
   "exclusive": true,
   "ownerOutcome": "Develop the scenario-first survey/recovery method on the owner case until the known recorded 1985-01-29 10:25 UTC Philadelphia birth neighborhood is distinguished from the persistent 2013 competitor and nearby same-date alternatives using owner-reported behavior. Target-aware owner training is allowed; preserve all such changes as development/training evidence and reserve independent validation for fresh participants.",
@@ -11,7 +11,7 @@
   "measurementFreezeSha256": "6f49806cc086ba41d23d31882b6ccc218cef78f94d7599830f5a9a2b994737ba",
   "measurementAnswerCount": 79,
   "method": "tasks/scenario-owner-recovery-calibration-20260923/OWNER-RECOVERY-CALIBRATION-20260923.md",
-  "nextAction": "When the authorized remote machine reconnects: fetch the live branch; run focused Ruff/pytest for astrohd_v13b_native.py and its tests; complete or resume a shallow checkout of PyJHora at exact commit 48e57d29b47a3143519910a24866758116467485; run collect_astrohd_v13b_pyjhora.py against the frozen V1.3b direct queries; then run score_astrohd_v13b_native_direct.py. Apply the predeclared convergence gate before any century ranking. Do not alter source-native weights or mappings after result reveal.",
+  "nextAction": "No century-scale V1.3b rank is admitted under the frozen convergence rule. Preserve Lilly PASS and Parashari FAIL without retuning. A Lilly-only century scan would be a new explicitly post-selection descriptive objective and is not required to complete V1.3b.",
   "runtimeBoundary": "Raw answers and participant-specific coding remain private. Birth/chart/model/rank information must not be supplied to neutral follow-up selection/coding. Do not score the incomplete v1 profile and call a miss or hit a survey result.",
   "neutralCoderAOutputSha256": "538402a5d5f64ad4b75f08ba86943aab9d99d3011e14b040547032783966aa35",
   "neutralCoderBOutputSha256": "84be173203360e9d2370612ec492ae6dcec2bedd05540ced6f72ce7d4eec3e5c",
@@ -181,12 +181,12 @@
   },
   "dualScorerObjectiveRecord": "tasks/scenario-owner-recovery-calibration-20260923/DUAL-SCORER-CALIBRATION-OBJECTIVE-20260923.md",
   "stopAdmission": {
-    "parentOutcome": "OPEN_OWNER_REQUIRED_V13_FOLLOWUP",
-    "remainingGap": "The source-native V1.3b implementation is prepared but cannot be tested or scored while the authorized private runtime computer is offline. No V1.3b owner result exists yet.",
-    "nextAction": "Resume deterministic focused verification and the frozen V1.3b direct regression immediately when remote access returns.",
-    "responsibleActor": "assistant once remote access returns; owner only if reconnection itself requires a human action",
-    "currentAuthority": "V1.3b is already authorized and frozen. V1.2 remains a preserved prior development result; V1.3 equal-testimony remains failed.",
-    "executableBoundary": "BLOCKED_EXTERNAL after all independent preparation: remote private runtime unavailable."
+    "parentOutcome": "SATISFIED_V13B_DIRECT_EXPERIMENT_COMPLETED_WITH_NEGATIVE_CONVERGENCE_RESULT",
+    "remainingGap": "NONE for the owner-authorized V1.3b direct experiment. The source-native traditions do not converge: Lilly passes the direct recovery test and Parashari Shadbala fails it.",
+    "nextAction": "NONE_REQUIRED under V1.3b. Preserve the split result. A Lilly-only century scan would be a new post-selection descriptive objective rather than completion of the frozen V1.3b experiment.",
+    "responsibleActor": "none",
+    "currentAuthority": "V1.3b direct experiment completed under frozen rules; no century rank is admitted because convergence failed.",
+    "executableBoundary": "Stop admitted at the predeclared direct-regression boundary."
   },
   "privateWorkingAnswerCount": 84,
   "currentFollowupState": "owner_development_target_met_v12_western_only",
@@ -490,7 +490,7 @@
     "completionBoundary": "Compare pre-frozen tradition-grounded aggregation arms on the known owner development failure without retuning after result reveal. Preserve V1.2 result independently."
   },
   "astroHDV13": {
-    "status": "V13_DEV_FAIL_V13B_PREPARED_BLOCKED_REMOTE_OFFLINE",
+    "status": "V13_DEV_FAIL_V13B_DIRECT_COMPLETE_CONVERGENCE_FAIL",
     "classification": "owner-requested post-result development experiment; not validation",
     "conception": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V13-TRADITION-GROUNDED-MULTIVERSE-CONCEPTION-20260924.md",
     "priorWorkScan": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V13-TRADITION-GROUNDED-PRIOR-WORK-SCAN-20260924.md",
@@ -521,6 +521,20 @@
       "tests": "tests/unit/test_astrohd_v13b_native.py",
       "implementationState": "PREPARED_UNVERIFIED_REMOTE_OFFLINE",
       "ownerScoreOpened": false
-    }
+    },
+    "v13bResult": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V13B-SOURCE-NATIVE-DIRECT-RESULT-20260924.md",
+    "v13bPrivateOracleSha256": "b352e27f41dadf235ca3e74b57afa68283c4fa3dc69bb85b00c3f3c39e950141",
+    "v13bPrivateDirectResultSha256": "8c38e28289f50fac314e9de03f3f232c344ded9ec7ce283bb5083f41928d40f8",
+    "v13bLillyTraditionPass": true,
+    "v13bParashariTraditionPass": false,
+    "v13bConvergencePass": false,
+    "v13bCenturyRankAdmitted": false,
+    "v13bLillyDomainMeanEqualTarget": 61,
+    "v13bLillyDomainMeanEqualPersistent2013": 56,
+    "v13bLillyDomainMeanEqualStrongestSameDate": 55.333333333333336,
+    "v13bLillyDomainMeanConfidenceTarget": 36.125,
+    "v13bLillyDomainMeanConfidencePersistent2013": 31.625,
+    "v13bLillyDomainMeanConfidenceStrongestSameDate": 33.25,
+    "v13bParashariStrongestSameDateUtc": "1985-01-29T04:16:12.622170Z"
   }
 }
