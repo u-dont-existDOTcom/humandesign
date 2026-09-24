@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "taskId": "scenario-owner-recovery-calibration-20260923",
-  "status": "astrohd_v13_tradition_grounded_multiverse_active",
-  "requiredBranch": "chat/scenario-owner-recovery-calibration-20260923",
+  "status": "astrohd_v13_tradition_direct_regression_frozen_pending",
+  "requiredBranch": "chat/v13-tradition-multiverse-20260924",
   "exclusive": true,
   "ownerOutcome": "Develop the scenario-first survey/recovery method on the owner case until the known recorded 1985-01-29 10:25 UTC Philadelphia birth neighborhood is distinguished from the persistent 2013 competitor and nearby same-date alternatives using owner-reported behavior. Target-aware owner training is allowed; preserve all such changes as development/training evidence and reserve independent validation for fresh participants.",
   "assuranceLane": "decision",
@@ -11,7 +11,7 @@
   "measurementFreezeSha256": "6f49806cc086ba41d23d31882b6ccc218cef78f94d7599830f5a9a2b994737ba",
   "measurementAnswerCount": 79,
   "method": "tasks/scenario-owner-recovery-calibration-20260923/OWNER-RECOVERY-CALIBRATION-20260923.md",
-  "nextAction": "Freeze the V1.3 source-grounded tradition registry and three aggregation arms before any V1.3 owner score: domain-collapse, cross-tradition convergence stacking, and raw independent-testimony stacking. Build source-to-domain mappings target-blind from external tradition sources, then run the known owner direct regression before any full-century V1.3 ranking.",
+  "nextAction": "Run focused V1.3 tests and an unrelated-date consumer smoke in the isolated worktree. If green, run the already-frozen direct regression on the target, persistent 2013 comparator, and eight same-date alternatives. Do not alter source mappings, testimony rules, aggregation arms, behavioral weights, direct queries, or permutation-control rules after opening the V1.3 owner result.",
   "runtimeBoundary": "Raw answers and participant-specific coding remain private. Birth/chart/model/rank information must not be supplied to neutral follow-up selection/coding. Do not score the incomplete v1 profile and call a miss or hit a survey result.",
   "neutralCoderAOutputSha256": "538402a5d5f64ad4b75f08ba86943aab9d99d3011e14b040547032783966aa35",
   "neutralCoderBOutputSha256": "84be173203360e9d2370612ec492ae6dcec2bedd05540ced6f72ce7d4eec3e5c",
@@ -182,10 +182,10 @@
   "dualScorerObjectiveRecord": "tasks/scenario-owner-recovery-calibration-20260923/DUAL-SCORER-CALIBRATION-OBJECTIVE-20260923.md",
   "stopAdmission": {
     "parentOutcome": "OPEN_OWNER_REQUIRED_V13_FOLLOWUP",
-    "remainingGap": "V1.2 fits the owner strongly but inherits post-selected V1.1 feature mappings/weights. The owner explicitly requested a stronger source-grounded foundation and requested testing both non-stacking and stacking of convergent testimonies.",
-    "nextAction": "Assistant freezes source-grounded V1.3 model specifications and aggregation arms, then executes the direct owner development regression.",
+    "remainingGap": "The V1.3 tradition-grounded source map, testimony rules, three stacking/non-stacking arms, two behavioral-weight variants and 10,000-map permutation control are frozen before owner scoring. The direct owner development regression has not yet been run.",
+    "nextAction": "Assistant verifies the isolated implementation and runs the frozen V1.3 direct regression.",
     "responsibleActor": "assistant",
-    "currentAuthority": "Owner explicitly authorized the V1.3 tradition-grounded experiment and stacking sensitivity arm. V1.2 remains preserved as a satisfied prior development result.",
+    "currentAuthority": "Owner explicitly authorized tradition-grounded V1.3 and requested both non-stacking and stacking/convergence variants. The owner case remains development data.",
     "executableBoundary": "Safe authorized work remains; no owner input is required."
   },
   "privateWorkingAnswerCount": 84,
@@ -490,7 +490,7 @@
     "completionBoundary": "Compare pre-frozen tradition-grounded aggregation arms on the known owner development failure without retuning after result reveal. Preserve V1.2 result independently."
   },
   "astroHDV13": {
-    "status": "SOURCE_REGISTRY_AND_AGGREGATION_FREEZE_IN_PROGRESS",
+    "status": "FROZEN_IMPLEMENTED_DIRECT_REGRESSION_PENDING",
     "classification": "owner-requested post-result development experiment; not validation",
     "conception": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V13-TRADITION-GROUNDED-MULTIVERSE-CONCEPTION-20260924.md",
     "priorWorkScan": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V13-TRADITION-GROUNDED-PRIOR-WORK-SCAN-20260924.md",
@@ -506,6 +506,9 @@
     ],
     "noOwnerTunedWeights": true,
     "directRegressionBeforeCentury": true,
-    "noRetuneAfterReveal": true
+    "noRetuneAfterReveal": true,
+    "isolatedBranch": "chat/v13-tradition-multiverse-20260924",
+    "ownerScoreOpened": false,
+    "freezeHead": "ad862643b6107a6bec3b60a5c954eebdd06a1459"
   }
 }
