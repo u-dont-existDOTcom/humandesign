@@ -102,16 +102,22 @@
     },
     "parashari_jyotish": {
       "positive": [
-        "mapped sidereal whole-sign house lord in own sign",
-        "mapped house lord in exaltation",
-        "mapped house lord in a kendra house 1,4,7,10",
-        "mapped house lord in a trikona house 1,5,9",
-        "mapped house lord retrograde when it is Mercury/Venus/Mars/Jupiter/Saturn"
+        "mapped sidereal planet in own sign",
+        "mapped sidereal planet in exaltation",
+        "mapped sidereal planet in a kendra house 1,4,7,10",
+        "mapped sidereal planet in a trikona house 1,5,9",
+        "mapped sidereal planet retrograde when it is Mercury/Venus/Mars/Jupiter/Saturn",
+        "for a mapped sidereal whole-sign house: its classical lord in own sign",
+        "for a mapped house: its lord in exaltation",
+        "for a mapped house: its lord in a kendra house 1,4,7,10",
+        "for a mapped house: its lord in a trikona house 1,5,9",
+        "for a mapped house: its lord retrograde when it is Mercury/Venus/Mars/Jupiter/Saturn"
       ],
       "negative": [
-        "mapped house lord in debilitation/fall sign"
+        "mapped sidereal planet in debilitation/fall sign",
+        "for a mapped house: its lord in debilitation/fall sign"
       ],
-      "note": "Only house mappings admitted by the target-blind consensus map are used in this first arm; no unsupported modern karaka mapping is added."
+      "note": "Use only planet/house mappings admitted by the final target-blind consensus map; no unsupported modern karaka mapping is added."
     }
   },
   "per_tradition_domain_state": {
@@ -192,5 +198,7 @@
     "permutation_unit": "Within each tradition independently, permute the complete nonempty source-grounded domain-significator bundle across the 19 frozen behavioral domain IDs; preserve each tradition's number of mapped bundles and each bundle's planet/house content.",
     "evaluation": "Use the same six scoring specifications and the same direct query set. Count a permutation as matching/exceeding observed separation for a specification only if it passes that specification's frozen direct-regression criterion and its target-minus-strongest-competitor margin is >= the observed margin.",
     "interpretation": "Development overfit/flexibility diagnostic only; not a formal p-value for astrology."
-  }
+  },
+  "source_catalog_sha256": "9d41637dbe6b9e3d3ad2c67426f8900cde6bd73daaeee4ee0175c34eada25376",
+  "target_blind_consensus_map_sha256": "9c03688d06a778f3cf9f590abaf315eb12b0f44b3fa00080d85605f38cb15c0b"
 }
