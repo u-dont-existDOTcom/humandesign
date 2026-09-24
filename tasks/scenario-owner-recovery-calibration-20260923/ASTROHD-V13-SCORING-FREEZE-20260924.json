@@ -184,5 +184,13 @@
     "This does not scientifically validate any astrological tradition.",
     "The owner remains development/post-selection data.",
     "Source-native traditional rules are provenance-backed, not empirically calibrated probabilities."
-  ]
+  ],
+  "negative_control": {
+    "status": "FROZEN_BEFORE_ANY_V1_3_OWNER_SCORE",
+    "permutations": 10000,
+    "random_seed": 130924,
+    "permutation_unit": "Within each tradition independently, permute the complete nonempty source-grounded domain-significator bundle across the 19 frozen behavioral domain IDs; preserve each tradition's number of mapped bundles and each bundle's planet/house content.",
+    "evaluation": "Use the same six scoring specifications and the same direct query set. Count a permutation as matching/exceeding observed separation for a specification only if it passes that specification's frozen direct-regression criterion and its target-minus-strongest-competitor margin is >= the observed margin.",
+    "interpretation": "Development overfit/flexibility diagnostic only; not a formal p-value for astrology."
+  }
 }
