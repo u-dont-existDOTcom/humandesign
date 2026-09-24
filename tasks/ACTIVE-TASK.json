@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "scenario-owner-recovery-calibration-20260923",
-  "status": "astrohd_v13b_source_native_direct_complete_convergence_fail",
+  "status": "astrohd_v13b_lilly_century_scan_active_post_selection_descriptive",
   "requiredBranch": "chat/scenario-owner-recovery-calibration-20260923",
   "exclusive": true,
   "ownerOutcome": "Develop the scenario-first survey/recovery method on the owner case until the known recorded 1985-01-29 10:25 UTC Philadelphia birth neighborhood is distinguished from the persistent 2013 competitor and nearby same-date alternatives using owner-reported behavior. Target-aware owner training is allowed; preserve all such changes as development/training evidence and reserve independent validation for fresh participants.",
@@ -11,7 +11,7 @@
   "measurementFreezeSha256": "6f49806cc086ba41d23d31882b6ccc218cef78f94d7599830f5a9a2b994737ba",
   "measurementAnswerCount": 79,
   "method": "tasks/scenario-owner-recovery-calibration-20260923/OWNER-RECOVERY-CALIBRATION-20260923.md",
-  "nextAction": "No century-scale V1.3b rank is admitted under the frozen convergence rule. Preserve Lilly PASS and Parashari FAIL without retuning. A Lilly-only century scan would be a new explicitly post-selection descriptive objective and is not required to complete V1.3b.",
+  "nextAction": "Run the owner-requested Lilly-only century scan exactly as frozen in ASTROHD-V13B-LILLY-CENTURY-SCAN-FREEZE-20260924.md. Report all four pre-existing Lilly specifications across the same 876,601-hour universe; do not retune and do not run minute refinement unless separately requested after the hourly result.",
   "runtimeBoundary": "Raw answers and participant-specific coding remain private. Birth/chart/model/rank information must not be supplied to neutral follow-up selection/coding. Do not score the incomplete v1 profile and call a miss or hit a survey result.",
   "neutralCoderAOutputSha256": "538402a5d5f64ad4b75f08ba86943aab9d99d3011e14b040547032783966aa35",
   "neutralCoderBOutputSha256": "84be173203360e9d2370612ec492ae6dcec2bedd05540ced6f72ce7d4eec3e5c",
@@ -181,12 +181,12 @@
   },
   "dualScorerObjectiveRecord": "tasks/scenario-owner-recovery-calibration-20260923/DUAL-SCORER-CALIBRATION-OBJECTIVE-20260923.md",
   "stopAdmission": {
-    "parentOutcome": "SATISFIED_V13B_DIRECT_EXPERIMENT_COMPLETED_WITH_NEGATIVE_CONVERGENCE_RESULT",
-    "remainingGap": "NONE for the owner-authorized V1.3b direct experiment. The source-native traditions do not converge: Lilly passes the direct recovery test and Parashari Shadbala fails it.",
-    "nextAction": "NONE_REQUIRED under V1.3b. Preserve the split result. A Lilly-only century scan would be a new post-selection descriptive objective rather than completion of the frozen V1.3b experiment.",
-    "responsibleActor": "none",
-    "currentAuthority": "V1.3b direct experiment completed under frozen rules; no century rank is admitted because convergence failed.",
-    "executableBoundary": "Stop admitted at the predeclared direct-regression boundary."
+    "parentOutcome": "OPEN_OWNER_REQUESTED_LILLY_CENTURY_SCAN",
+    "remainingGap": "The owner explicitly requested the descriptive century-scale Lilly scan after seeing the V1.3b split result. The scan has been frozen but not yet executed.",
+    "nextAction": "Assistant runs the frozen four-specification Lilly century scan and records the result.",
+    "responsibleActor": "assistant",
+    "currentAuthority": "Owner explicitly authorized Lilly-only century ranking with full awareness that Lilly was selected after the direct result.",
+    "executableBoundary": "Safe authorized execution remains; no owner input is required."
   },
   "privateWorkingAnswerCount": 84,
   "currentFollowupState": "owner_development_target_met_v12_western_only",
@@ -490,7 +490,7 @@
     "completionBoundary": "Compare pre-frozen tradition-grounded aggregation arms on the known owner development failure without retuning after result reveal. Preserve V1.2 result independently."
   },
   "astroHDV13": {
-    "status": "V13_DEV_FAIL_V13B_DIRECT_COMPLETE_CONVERGENCE_FAIL",
+    "status": "V13B_LILLY_CENTURY_SCAN_ACTIVE_POST_SELECTION_DESCRIPTIVE",
     "classification": "owner-requested post-result development experiment; not validation",
     "conception": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V13-TRADITION-GROUNDED-MULTIVERSE-CONCEPTION-20260924.md",
     "priorWorkScan": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V13-TRADITION-GROUNDED-PRIOR-WORK-SCAN-20260924.md",
@@ -535,6 +535,10 @@
     "v13bLillyDomainMeanConfidenceTarget": 36.125,
     "v13bLillyDomainMeanConfidencePersistent2013": 31.625,
     "v13bLillyDomainMeanConfidenceStrongestSameDate": 33.25,
-    "v13bParashariStrongestSameDateUtc": "1985-01-29T04:16:12.622170Z"
+    "v13bParashariStrongestSameDateUtc": "1985-01-29T04:16:12.622170Z",
+    "lillyCenturyFreeze": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V13B-LILLY-CENTURY-SCAN-FREEZE-20260924.md",
+    "lillyCenturyClassification": "owner-requested post-selection descriptive experiment; not validation",
+    "lillyCenturyUniverseCount": 876601,
+    "lillyCenturyMinuteRefinementAdmitted": false
   }
 }
