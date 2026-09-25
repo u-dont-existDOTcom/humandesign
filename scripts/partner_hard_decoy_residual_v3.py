@@ -6,21 +6,20 @@ Specification: reference/research/partner_hard_decoy_residual_freeze_v3.md
 Development/exploratory only. Verified SWIEPH; any Moshier fallback aborts.
 This predicts pair-transition activation, not relationship quality.
 """
+
 from __future__ import annotations
 
 import hashlib
 import json
-import math
 import random
 import statistics
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
-import swisseph as swe
-
-import partner_multidomain_1000_v2 as v2
 import partner_future_pilot as west
 import partner_hd_timing_pilot as hd
+import partner_multidomain_1000_v2 as v2
+import swisseph as swe
 
 REPO = Path(__file__).resolve().parents[1]
 EPHE = REPO / "data" / "ephemeris"
@@ -213,7 +212,7 @@ def score_against_hard_decoys(
     real = pair_scores(focal_data, real_partner_data, transits_hd)
     null_w: list[float] = []
     null_h: list[float] = []
-    for idx, (match_score, birth) in enumerate(hard_rows, 1):
+    for idx, (_match_score, birth) in enumerate(hard_rows, 1):
         key = birth.isoformat()
         pdata = cache.get(key)
         if pdata is None:
@@ -227,7 +226,9 @@ def score_against_hard_decoys(
 
     mw, sw = mean_sd(null_w)
     mh, sh = mean_sd(null_h)
-    null_joint = [statistics.fmean((z(w, mw, sw), z(h, mh, sh))) for w, h in zip(null_w, null_h)]
+    null_joint = [
+        statistics.fmean((z(w, mw, sw), z(h, mh, sh))) for w, h in zip(null_w, null_h, strict=False)
+    ]
 
     rw = float(real["western"]["score"])
     rh = float(real["hd"]["score"])
@@ -269,10 +270,10 @@ def main() -> None:
 
     # Fail-closed probes.
     for d in (
-        datetime(1980, 1, 1, tzinfo=timezone.utc),
-        datetime(1989, 6, 19, 12, tzinfo=timezone.utc),
-        datetime(2033, 1, 1, tzinfo=timezone.utc),
-        datetime(2040, 12, 15, tzinfo=timezone.utc),
+        datetime(1980, 1, 1, tzinfo=UTC),
+        datetime(1989, 6, 19, 12, tzinfo=UTC),
+        datetime(2033, 1, 1, tzinfo=UTC),
+        datetime(2040, 12, 15, tzinfo=UTC),
     ):
         for body in west.NATAL_PLANETS.values():
             west.calc(west.jd(d), body)
@@ -281,25 +282,25 @@ def main() -> None:
     transits_hd = v2.precompute_hd_transits()
     rng = random.Random(SEED)
 
-    joel_birth = datetime(1985, 1, 29, 10, 25, tzinfo=timezone.utc)
+    joel_birth = datetime(1985, 1, 29, 10, 25, tzinfo=UTC)
     bee_births = {
-        "B_early": datetime(1989, 6, 19, 5, 0, tzinfo=timezone.utc),
-        "B_mid": datetime(1989, 6, 19, 12, 0, tzinfo=timezone.utc),
-        "B_late": datetime(1989, 6, 19, 17, 0, tzinfo=timezone.utc),
+        "B_early": datetime(1989, 6, 19, 5, 0, tzinfo=UTC),
+        "B_mid": datetime(1989, 6, 19, 12, 0, tzinfo=UTC),
+        "B_late": datetime(1989, 6, 19, 17, 0, tzinfo=UTC),
     }
 
     joel_states = v2.individual_states(joel_birth, transits)
     bee_states = {k: v2.individual_states(dt, transits) for k, dt in bee_births.items()}
 
     women_pool = random_births(
-        datetime(1984, 6, 19, tzinfo=timezone.utc),
-        datetime(1994, 6, 19, tzinfo=timezone.utc),
+        datetime(1984, 6, 19, tzinfo=UTC),
+        datetime(1994, 6, 19, tzinfo=UTC),
         POOL_N,
         rng,
     )
     men_pool = random_births(
-        datetime(1980, 1, 29, tzinfo=timezone.utc),
-        datetime(1990, 1, 29, tzinfo=timezone.utc),
+        datetime(1980, 1, 29, tzinfo=UTC),
+        datetime(1990, 1, 29, tzinfo=UTC),
         POOL_N,
         rng,
     )
@@ -359,17 +360,30 @@ def main() -> None:
             "Bee exact birth time remains unknown; all three representative states are reported.",
             "Static synastry is excluded from the primary score.",
             "The previously noticed 2030 window is not a blind timing discovery.",
-            "The benchmark estimates symbolic pair-transition activation only; it says nothing about relationship quality.",
-            "Hard decoys are synthetic age-matched birth moments, not documented real-world acquaintances/exposure sets.",
+            (
+                "The benchmark estimates symbolic pair-transition activat"
+                "ion only; it says nothing about relationship quality."
+            ),
+            (
+                "Hard decoys are synthetic age-matched birth moments, not"
+                " documented real-world acquaintances/exposure sets."
+            ),
         ],
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(data, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print("wrote", OUT, "sha256", sha256(OUT), flush=True)
-    print(json.dumps({
-        "A_to_B": {k: v["real"] for k, v in a_to_b.items()},
-        "B_to_A": {k: v["real"] for k, v in b_to_a.items()},
-    }, indent=2, sort_keys=True), flush=True)
+    print(
+        json.dumps(
+            {
+                "A_to_B": {k: v["real"] for k, v in a_to_b.items()},
+                "B_to_A": {k: v["real"] for k, v in b_to_a.items()},
+            },
+            indent=2,
+            sort_keys=True,
+        ),
+        flush=True,
+    )
 
 
 if __name__ == "__main__":

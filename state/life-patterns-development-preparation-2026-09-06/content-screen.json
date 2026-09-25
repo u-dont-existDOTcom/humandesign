@@ -1,0 +1,25 @@
+{
+  "schema_version": "life-patterns-preparation-content-screen-v1",
+  "package_id": "LPKG-18170B8D3EEC8423A523",
+  "packet_unit_totals": {
+    "automated_episode": 374,
+    "automated_series": 110,
+    "human_calibration_episode": 44,
+    "human_calibration_series": 22
+  },
+  "public_identifier_grammar_check": "pass",
+  "recovered_original_turn_duplicate_keys": 0,
+  "recovered_original_turn_conflicts": 0,
+  "screen_patterns": {
+    "target_theory": "(?i)human\\s+design|astrohd|astrorrf|astrolog\\w*|zodiac\\w*|splenic|spl[e\u00e9]nique|rave\\s+chart|bodygraph|type\\s+projector|type\\s+projecteur",
+    "explicit_birth": "(?i)date\\s+of\\s+birth|birth\\s*(?:date|time)|date\\s+de\\s+naissance|heure\\s+de\\s+naissance|n[e\u00e9]\\s+le\\s+\\d|\\bDOB\\b",
+    "date_like": "\\b(?:19|20)\\d{2}[-/]\\d{1,2}[-/]\\d{1,2}\\b|\\b\\d{1,2}[-/]\\d{1,2}[-/](?:19|20)\\d{2}\\b"
+  },
+  "flagged_fields": [],
+  "limitations": [
+    "Bounded lexical screen, not proof of semantic theory blindness or deidentification.",
+    "Age/life-phase context remains private; this corpus is development-only."
+  ],
+  "automated_labels_generated": false,
+  "human_labels_generated": false
+}

@@ -9,6 +9,7 @@ an exact HD natal gate set under the pinned SWIEPH files *before* pair/risk-set
 construction. No scoring feature, decoy matching rule, model, threshold, or
 hyperparameter is changed.
 """
+
 from __future__ import annotations
 
 from collections import Counter
@@ -33,8 +34,7 @@ def swieph_eligible(person: dict) -> bool:
 
 def build_tasks_swieph_only(people, neighbors, pair_types):
     initially_high = {
-        pid: p for pid, p in people.items()
-        if p["rr"] in v1.HIGH_RR and p["jd"] is not None
+        pid: p for pid, p in people.items() if p["rr"] in v1.HIGH_RR and p["jd"] is not None
     }
     high = {pid: p for pid, p in initially_high.items() if swieph_eligible(p)}
     dropped = Counter()
@@ -47,7 +47,9 @@ def build_tasks_swieph_only(people, neighbors, pair_types):
             positive_before_coverage += 1
         if a in high and b in high:
             positive_pairs.append((a, b))
-    dropped["positive_pairs_lost_to_SWIEPH_coverage"] = positive_before_coverage - len(positive_pairs)
+    dropped["positive_pairs_lost_to_SWIEPH_coverage"] = positive_before_coverage - len(
+        positive_pairs
+    )
 
     tasks = []
     for a, b in positive_pairs:
@@ -66,15 +68,19 @@ def build_tasks_swieph_only(people, neighbors, pair_types):
             if len(pool) < v1.N_DECOYS:
                 dropped["fewer_than_50_same_gender_decoys"] += 1
                 continue
-            decoys = pool[:v1.N_DECOYS]
-            tasks.append({
-                "task_key": f"{focal_id}->{true_id}",
-                "group_key": f"{min(a,b)}:{max(a,b)}",
-                "focal": focal,
-                "true": true,
-                "decoys": decoys,
-                "max_decoy_birth_jd_distance_days": max(abs(p["jd"] - true["jd"]) for p in decoys),
-            })
+            decoys = pool[: v1.N_DECOYS]
+            tasks.append(
+                {
+                    "task_key": f"{focal_id}->{true_id}",
+                    "group_key": f"{min(a, b)}:{max(a, b)}",
+                    "focal": focal,
+                    "true": true,
+                    "decoys": decoys,
+                    "max_decoy_birth_jd_distance_days": max(
+                        abs(p["jd"] - true["jd"]) for p in decoys
+                    ),
+                }
+            )
     return high, positive_pairs, tasks, dict(dropped)
 
 

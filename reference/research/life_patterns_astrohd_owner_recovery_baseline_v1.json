@@ -1,0 +1,40 @@
+{
+  "schema": "life-patterns-astrohd-owner-recovery-baseline-v1",
+  "status": "development_owner_regression_baseline_not_validation",
+  "search_procedure_id": "astrohd-v1.1-v3.6-century-hourly-plus-leading-minute-refinement",
+  "historical_signature": {
+    "exact_recorded_rank_hourly": 2,
+    "correct_date_top_distinct_refined_neighborhood": true,
+    "refined_peak_offset_minutes": 11.0
+  },
+  "acceptance": {
+    "require_same_search_procedure": true,
+    "require_correct_date_top_distinct_refined_neighborhood": true,
+    "maximum_exact_recorded_rank_hourly": 2,
+    "maximum_absolute_refined_peak_offset_minutes": 11.0,
+    "coverage_only_can_pass": false
+  },
+  "source_artifacts": [
+    {
+      "path": "experiments/astrohd/exact_actual_v1_1_user_v3_6.json",
+      "blob_sha": "95a555d95d7d42cb10146d22f18b50d22a39127c"
+    },
+    {
+      "path": "experiments/astrohd/scan_summary_v1_1_user_v3_6.md",
+      "blob_sha": "3e2ab06ce4640c59330ae8e2190b861723314320"
+    },
+    {
+      "path": "experiments/astrohd/minute_refinement_v1_1_user_v3_6.md",
+      "blob_sha": "673799a27ec3cd129bdbbb3cc4e181dbfa6f29f5"
+    },
+    {
+      "path": "experiments/astrohd/merged_model_v1_1_user_v3_6.json",
+      "blob_sha": "391a02c65a562e1578d404fe1bb4f294bede277d"
+    }
+  ],
+  "notes": [
+    "The raw birth date/time is intentionally not duplicated in this baseline; the historical source artifacts remain canonical.",
+    "This is a regression criterion for the owner development case, not evidence of predictive validity in untouched humans.",
+    "A fresh Life Patterns interview must be frozen before the historical AstroHD crosswalk or scorer is applied."
+  ]
+}

@@ -27,7 +27,6 @@ import os
 from datetime import UTC, datetime
 from pathlib import Path
 from types import ModuleType
-from typing import Any
 
 import swisseph as swe
 
@@ -128,13 +127,16 @@ def _incremental_structure(acts: dict[str, dict[str, list[int]]]) -> StructuralC
 
 
 def _state_id(start: datetime, end: datetime, feature_hash: str) -> str:
-    return "STATE-" + sha256_json(
-        {
-            "start_utc": start.isoformat(),
-            "end_utc": end.isoformat(),
-            "structural_feature_sha256": feature_hash,
-        }
-    )[:24].upper()
+    return (
+        "STATE-"
+        + sha256_json(
+            {
+                "start_utc": start.isoformat(),
+                "end_utc": end.isoformat(),
+                "structural_feature_sha256": feature_hash,
+            }
+        )[:24].upper()
+    )
 
 
 def _event_groups(
@@ -218,9 +220,8 @@ def _build_states(
         features = _incremental_structure(acts)
         feature_hash = structural_features_sha256(features)
 
-        should_verify = (
-            verify_every > 0
-            and (index == 0 or index == len(bounds) - 2 or index % verify_every == 0)
+        should_verify = verify_every > 0 and (
+            index == 0 or index == len(bounds) - 2 or index % verify_every == 0
         )
         if should_verify:
             representative = start + (end - start) / 2
@@ -259,7 +260,9 @@ def _build_states(
             previous = merged.pop()
             merged.append(
                 GlobalCandidateState(
-                    state_id=_state_id(previous.start_utc, state.end_utc, state.chart_features_hash),
+                    state_id=_state_id(
+                        previous.start_utc, state.end_utc, state.chart_features_hash
+                    ),
                     start_utc=previous.start_utc,
                     end_utc=state.end_utc,
                     chart_features_hash=state.chart_features_hash,

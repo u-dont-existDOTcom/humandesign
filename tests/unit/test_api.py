@@ -108,9 +108,7 @@ def request_json(
     asyncio.run(app(scope, receive, send))
     start = next(message for message in sent if message["type"] == "http.response.start")
     response_body = b"".join(
-        message.get("body", b"")
-        for message in sent
-        if message["type"] == "http.response.body"
+        message.get("body", b"") for message in sent if message["type"] == "http.response.body"
     )
     response_headers = {
         key.decode("latin-1"): value.decode("latin-1") for key, value in start["headers"]
@@ -230,9 +228,7 @@ def test_symbolic_scoring_exposes_unresolved_questions_without_inventing_support
     assert response.json["score"]["unresolved_question_ids"] == ["UNMAPPED"]
 
 
-def _candidate_state(
-    state_id: str, local_date: date, score_hash: str = "a" * 64
-) -> CandidateState:
+def _candidate_state(state_id: str, local_date: date, score_hash: str = "a" * 64) -> CandidateState:
     start = datetime.combine(local_date, datetime.min.time(), tzinfo=UTC)
     chart = ChartFeatures(
         personality_utc=start,

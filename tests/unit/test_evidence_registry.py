@@ -5,9 +5,7 @@ from hdmatch.model.rich_predicate import ActivationGatePredicate, ChannelPredica
 
 
 def test_seed_evidence_registry_is_typed_and_hashable() -> None:
-    registry = load_evidence_registry(
-        Path("reference/core/mapping_v2_candidate_claims.json")
-    )
+    registry = load_evidence_registry(Path("reference/core/mapping_v2_candidate_claims.json"))
 
     assert len(registry.candidates) == 4
     assert len(registry.sha256) == 64

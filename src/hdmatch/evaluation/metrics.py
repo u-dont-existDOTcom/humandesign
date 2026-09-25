@@ -159,9 +159,7 @@ def aggregate_rank_metrics(
     if total < len(cases):
         raise ValueError("total_case_count cannot be smaller than evaluated cases")
     if total == 0:
-        return AggregateRankMetrics(
-            case_count=0, evaluated_case_count=0, unevaluable_case_count=0
-        )
+        return AggregateRankMetrics(case_count=0, evaluated_case_count=0, unevaluable_case_count=0)
     denominator = float(total)
     if not cases:
         return AggregateRankMetrics(

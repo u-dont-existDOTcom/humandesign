@@ -276,7 +276,9 @@ def _build_llm_audit(
     if not fields:
         raise HTTPException(
             status_code=409,
-            detail="this frozen session predates structured fields and cannot use this addendum path",
+            detail=(
+                "this frozen session predates structured fields and cannot use this addendum path"
+            ),
         )
     try:
         result = auditor.audit_session(
@@ -419,7 +421,9 @@ def create_relationship_adaptive_app_from_env() -> FastAPI:
         if not auditor.available:
             raise HTTPException(
                 status_code=503,
-                detail="The LLM auditor is not configured yet; the survey is temporarily unavailable.",
+                detail=(
+                    "The LLM auditor is not configured yet; the survey is temporarily unavailable."
+                ),
             )
         payload, token = store.create()
         payload["format_version"] = "guided-fields-v2"
@@ -493,7 +497,9 @@ def create_relationship_adaptive_app_from_env() -> FastAPI:
         except LLMAuditUnavailableError as exc:
             raise HTTPException(status_code=503, detail=str(exc)) from exc
         except LLMAuditProviderError as exc:
-            raise HTTPException(status_code=502, detail="AI quality review is unavailable.") from exc
+            raise HTTPException(
+                status_code=502, detail="AI quality review is unavailable."
+            ) from exc
         return {
             **result.quality.model_dump(),
             "provider": result.receipt.provider,
@@ -540,7 +546,9 @@ def create_relationship_adaptive_app_from_env() -> FastAPI:
         if expected is None:
             raise HTTPException(status_code=409, detail="no clarification is pending")
         if request.clarification_id != expected.id:
-            raise HTTPException(status_code=409, detail="answer does not match pending clarification")
+            raise HTTPException(
+                status_code=409, detail="answer does not match pending clarification"
+            )
         answer = request.answer.strip()
         if request.status == "answered" and not answer:
             raise HTTPException(status_code=422, detail="write a clarification or mark it unknown")
@@ -623,7 +631,9 @@ def create_relationship_adaptive_app_from_env() -> FastAPI:
         if expected is None:
             raise HTTPException(status_code=409, detail="no LLM clarification is pending")
         if request.clarification_id != expected.id:
-            raise HTTPException(status_code=409, detail="answer does not match pending clarification")
+            raise HTTPException(
+                status_code=409, detail="answer does not match pending clarification"
+            )
         answer = request.answer.strip()
         if request.status == "answered" and not answer:
             raise HTTPException(status_code=422, detail="write a clarification or mark it unknown")

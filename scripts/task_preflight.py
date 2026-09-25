@@ -35,18 +35,29 @@ def main() -> int:
         )
         errors += 1
     state = state_path.read_text(encoding="utf-8") if state_path.exists() else ""
-    if task.get("taskId") not in state:
-        finding("CURRENT_STATE_TASK_MISMATCH", str(task.get("taskId")))
+    task_id = task.get("taskId")
+    if not isinstance(task_id, str) or not task_id.strip():
+        finding("ACTIVE_TASK_ID_MISSING", "taskId must be a non-empty string")
         errors += 1
-    if task.get("completionCommand") not in state:
-        finding("CURRENT_STATE_ACCEPTANCE_MISSING", str(task.get("completionCommand")))
+    elif task_id not in state:
+        finding("CURRENT_STATE_TASK_MISMATCH", task_id)
+        errors += 1
+    completion_command = task.get("completionCommand")
+    if not isinstance(completion_command, str) or not completion_command.strip():
+        finding(
+            "ACTIVE_TASK_COMPLETION_COMMAND_MISSING",
+            "completionCommand must be a non-empty string",
+        )
+        errors += 1
+    elif completion_command not in state:
+        finding("CURRENT_STATE_ACCEPTANCE_MISSING", completion_command)
         errors += 1
     if not task.get("suspendedTaskSources"):
         finding("SUSPENDED_TASK_SOURCES_MISSING", "expected at least one source")
         errors += 1
     if errors:
         return 1
-    print(f"PREFLIGHT_OK: task={task['taskId']} branch={branch}")
+    print(f"PREFLIGHT_OK: task={task_id} branch={branch}")
     return 0
 
 

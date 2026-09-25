@@ -1,0 +1,55 @@
+{
+  "schema": "survey-continuation-delivery-v1",
+  "checked_at": "2026-09-18T19:56:12.485842+00:00",
+  "application_head": "f99702eb19007bb2bc53f73f9f83c1d38394fdfe",
+  "build_version": "survey-sol-xhigh-2026-09-18.3",
+  "deployment_id": "fcad1769-e826-473c-aafc-59fc64496ed0",
+  "deployment_status": "SUCCESS",
+  "health_status": 200,
+  "page_matches_verified_source": true,
+  "page_sha256": "ee6d02baea866270d196032784cc37a2b7ca8c079c12c6f8a60e644452ebe2d8",
+  "model_profile": {
+    "interviewer_model": "gpt-5.6-sol",
+    "interviewer_reasoning": "xhigh",
+    "extraction_model": "gpt-5.6-sol",
+    "extraction_reasoning": "xhigh",
+    "semantic_max_output_tokens": 25000,
+    "automatic_model_fallback": false
+  },
+  "ci_runs": [
+    35388291761,
+    35388287881
+  ],
+  "ci_status": "success",
+  "local_tests": {
+    "passed": 857,
+    "skipped": 7,
+    "skip_scope": "shallow history and absent Swiss ephemeris files"
+  },
+  "affected_tests_passed": 65,
+  "browser_scenarios_passed": 19,
+  "browser_page_errors": 0,
+  "mypy_source_files": 208,
+  "ruff": "pass",
+  "uda": {
+    "merged_pr": 154,
+    "main_commit": "4c0058fab4cc91d06ef09733455bdd5ae7e70f41",
+    "reviewed_head": "eea86b00bf689be9e2e12ca1f84468ec94f93943",
+    "ci_run": 35388260990,
+    "codeql_run": 35388257925,
+    "status": "merged_checks_passed",
+    "local_tests_passed": 344,
+    "audit_errors": 0,
+    "audit_warnings": 1,
+    "native_instruction_chain_within_32kib": true
+  },
+  "live_sample": {
+    "model_calls": 5,
+    "owner_sessions_accessed": 0,
+    "imported_snapshots": 0,
+    "synthetic_session_paused": true,
+    "scope": "strict schema and genuine clarification; withdrawal and legacy recovery are browser-composition evidence"
+  },
+  "owner_outcome": "OPEN_PENDING_NATURAL_USE",
+  "publication_scope": "existing owner development surface only; no HumanDesign merge/release"
+}

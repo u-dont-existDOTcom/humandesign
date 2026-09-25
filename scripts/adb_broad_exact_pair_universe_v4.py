@@ -8,6 +8,7 @@ This script uses relationship-link structure and birth-data quality only. It doe
 not inspect relationship outcomes and does not calculate pair astrology/HD
 features. Swiss ephemeris is used only for the frozen model-eligibility preflight.
 """
+
 from __future__ import annotations
 
 import hashlib
@@ -20,9 +21,8 @@ import xml.etree.ElementTree as ET
 from collections import Counter, defaultdict
 from pathlib import Path
 
-import swisseph as swe
-
 import adb_exact_pair_timing_v3 as v3
+import swisseph as swe
 
 REPO = Path(__file__).resolve().parents[1]
 FREEZE = REPO / "reference" / "research" / "adb_broad_exact_pair_universe_freeze_v4.md"
@@ -58,7 +58,7 @@ def get_bytes(url: str, timeout: int = 120, tries: int = 4) -> bytes:
         except Exception as exc:
             last = exc
             if i + 1 < tries:
-                time.sleep(0.7 * (2 ** i))
+                time.sleep(0.7 * (2**i))
     raise RuntimeError(f"fetch failed after {tries} attempts: {url}: {last}")
 
 
@@ -74,9 +74,23 @@ def field(text: str | None, name: str) -> str | None:
 
 def parse_dma(text: str | None) -> dict:
     names = [
-        "DatamainID", "sbdate", "sbtime", "t_unknown", "sroddenrating", "swikiname",
-        "Place", "BirthCountry", "slati", "slong", "TmZnAbbr", "stmerid", "ctimetype",
-        "stimetype", "ccalendar", "ctzauto", "jd_ut",
+        "DatamainID",
+        "sbdate",
+        "sbtime",
+        "t_unknown",
+        "sroddenrating",
+        "swikiname",
+        "Place",
+        "BirthCountry",
+        "slati",
+        "slong",
+        "TmZnAbbr",
+        "stmerid",
+        "ctimetype",
+        "stimetype",
+        "ccalendar",
+        "ctzauto",
+        "jd_ut",
     ]
     return {n: field(text, n) for n in names}
 
@@ -93,11 +107,19 @@ def fetch_wikitext_batch(titles: list[str]) -> list[tuple[str, str]]:
     """Fetch raw ADB pages in small batches. Returned pages need not preserve input title."""
     out: list[tuple[str, str]] = []
     for i in range(0, len(titles), 10):
-        batch = titles[i:i + 10]
-        data = api_json({
-            "action": "query", "prop": "revisions", "rvprop": "content", "rvslots": "main",
-            "titles": "|".join(batch), "redirects": 1, "formatversion": 2, "format": "json",
-        })
+        batch = titles[i : i + 10]
+        data = api_json(
+            {
+                "action": "query",
+                "prop": "revisions",
+                "rvprop": "content",
+                "rvslots": "main",
+                "titles": "|".join(batch),
+                "redirects": 1,
+                "formatversion": 2,
+                "format": "json",
+            }
+        )
         for page in data.get("query", {}).get("pages", []):
             if page.get("missing") is not None:
                 continue
@@ -105,7 +127,11 @@ def fetch_wikitext_batch(titles: list[str]) -> list[tuple[str, str]]:
             if not revs:
                 continue
             rev = revs[0]
-            wt = (rev.get("slots", {}).get("main", {}) or {}).get("content") or rev.get("content") or rev.get("*")
+            wt = (
+                (rev.get("slots", {}).get("main", {}) or {}).get("content")
+                or rev.get("content")
+                or rev.get("*")
+            )
             if wt:
                 out.append((page.get("title") or "", wt))
     return out
@@ -119,7 +145,9 @@ def search_titles(name: str) -> list[str]:
             variants.append(f"{b} {a}")
     out: list[str] = []
     for q in variants:
-        data = api_json({"action": "query", "list": "search", "srsearch": q, "srlimit": 10, "format": "json"})
+        data = api_json(
+            {"action": "query", "list": "search", "srsearch": q, "srlimit": 10, "format": "json"}
+        )
         for hit in data.get("query", {}).get("search", []):
             t = hit.get("title")
             if t and t not in out:
@@ -148,8 +176,14 @@ def parse_csample(xml_bytes: bytes):
         rr = (pub.findtext("roddenrating") or "").strip()
         bdata = pub.find("bdata")
         rec = {
-            "adb_id": aid, "name": name, "rr": rr, "jd_ut": None,
-            "birth_date": None, "birth_clock": None, "lat": None, "lon": None,
+            "adb_id": aid,
+            "name": name,
+            "rr": rr,
+            "jd_ut": None,
+            "birth_date": None,
+            "birth_clock": None,
+            "lat": None,
+            "lon": None,
             "rels": [],
         }
         if bdata is not None:
@@ -158,7 +192,9 @@ def parse_csample(xml_bytes: bytes):
             pl = bdata.find("place")
             if sd is not None:
                 try:
-                    y = int(sd.attrib["iyear"]); m = int(sd.attrib["imonth"]); d = int(sd.attrib["iday"])
+                    y = int(sd.attrib["iyear"])
+                    m = int(sd.attrib["imonth"])
+                    d = int(sd.attrib["iday"])
                     rec["birth_date"] = f"{y:04d}-{m:02d}-{d:02d}"
                 except Exception:
                     pass
@@ -181,22 +217,31 @@ def parse_csample(xml_bytes: bytes):
             if rp is not None:
                 for r in rp.findall("relationship"):
                     try:
-                        rid = int(r.attrib.get("rel_id", "0")); other = int(r.attrib.get("rel_adb_id", "0"))
+                        rid = int(r.attrib.get("rel_id", "0"))
+                        other = int(r.attrib.get("rel_adb_id", "0"))
                     except ValueError:
                         continue
-                    rec["rels"].append({"rel_id": rid, "other_adb_id": other, "text": (r.text or "").strip()})
+                    rec["rels"].append(
+                        {"rel_id": rid, "other_adb_id": other, "text": (r.text or "").strip()}
+                    )
         entries[aid] = rec
     return entries
 
 
-def external_person(adb_id: int, display_name: str, title: str, wt: str) -> tuple[dict | None, str | None]:
+def external_person(
+    adb_id: int, display_name: str, title: str, wt: str
+) -> tuple[dict | None, str | None]:
     dma = parse_dma(wt)
     if str(dma.get("DatamainID") or "") != str(adb_id):
         return None, "datamain_id_mismatch"
     rr = (dma.get("sroddenrating") or "").strip()
     if rr not in HIGH_RR:
         return None, "rodden_not_A_AA"
-    unknown = bool(dma.get("t_unknown")) and str(dma.get("t_unknown")).strip() not in {"", "0", "None"}
+    unknown = bool(dma.get("t_unknown")) and str(dma.get("t_unknown")).strip() not in {
+        "",
+        "0",
+        "None",
+    }
     if unknown or not (dma.get("sbtime") or "").strip():
         return None, "time_unknown"
     try:
@@ -227,9 +272,15 @@ def external_person(adb_id: int, display_name: str, title: str, wt: str) -> tupl
 
 def internal_person(r: dict) -> dict:
     return {
-        "adb_id": r["adb_id"], "name": r["name"], "public_title": r["name"],
-        "rr": r["rr"], "jd_ut": r["jd_ut"], "birth_date": r["birth_date"],
-        "birth_clock": r["birth_clock"], "lat": r["lat"], "lon": r["lon"],
+        "adb_id": r["adb_id"],
+        "name": r["name"],
+        "public_title": r["name"],
+        "rr": r["rr"],
+        "jd_ut": r["jd_ut"],
+        "birth_date": r["birth_date"],
+        "birth_clock": r["birth_clock"],
+        "lat": r["lat"],
+        "lon": r["lon"],
         "source": "c_sample",
     }
 
@@ -294,23 +345,32 @@ def main():
             if bid == aid:
                 self_links += 1
                 continue
-            directed.append({
-                "focal_adb_id": aid, "other_adb_id": bid,
-                "rel_id": rel["rel_id"], "rel_type": ROMANTIC[rel["rel_id"]],
-                "text": rel["text"],
-            })
+            directed.append(
+                {
+                    "focal_adb_id": aid,
+                    "other_adb_id": bid,
+                    "rel_id": rel["rel_id"],
+                    "rel_type": ROMANTIC[rel["rel_id"]],
+                    "text": rel["text"],
+                }
+            )
             if bid in internal_ids:
                 pk = pair_key(aid, bid)
                 internal_candidate_pairs.add(pk)
                 if is_exact_high_rr(entries[bid]):
                     internal_final_pairs.add(pk)
             else:
-                t = external_targets.setdefault(bid, {
-                    "adb_id": bid,
-                    "display_name": partner_display_name(rel["text"]),
-                    "seed_links": [],
-                })
-                t["seed_links"].append({"focal_adb_id": aid, "rel_id": rel["rel_id"], "text": rel["text"]})
+                t = external_targets.setdefault(
+                    bid,
+                    {
+                        "adb_id": bid,
+                        "display_name": partner_display_name(rel["text"]),
+                        "seed_links": [],
+                    },
+                )
+                t["seed_links"].append(
+                    {"focal_adb_id": aid, "rel_id": rel["rel_id"], "text": rel["text"]}
+                )
 
     # Resolve all external targets independently of outcome availability.
     resolved_pages: dict[int, tuple[str, str]] = {}
@@ -351,11 +411,20 @@ def main():
         person, reason = external_person(eid, target["display_name"], title, wt)
         if person is None:
             external_status[reason or "ineligible"] += 1
-            external_audit.append({**target, "status": "resolved_ineligible", "public_title": title, "reason": reason})
+            external_audit.append(
+                {**target, "status": "resolved_ineligible", "public_title": title, "reason": reason}
+            )
             continue
         external_status["exact_time_A_AA_recovered"] += 1
         external_people[eid] = person
-        external_audit.append({**target, "status": "exact_time_A_AA_recovered", "public_title": title, "person": person})
+        external_audit.append(
+            {
+                **target,
+                "status": "exact_time_A_AA_recovered",
+                "public_title": title,
+                "person": person,
+            }
+        )
 
     people = {aid: internal_person(entries[aid]) for aid in focal_ids}
     people.update(external_people)
@@ -386,21 +455,23 @@ def main():
         model_eligible = sw_ok and not dup
         if model_eligible:
             sw_pair_count += 1
-        pair_rows.append({
-            "pair_key": pk,
-            "person_a": a,
-            "person_b": b,
-            "relation_records": pair_relations[pk],
-            "relation_codes": sorted({x["rel_id"] for x in pair_relations[pk]}),
-            "possible_same_person_duplicate": dup,
-            "swieph_natal_design_preflight": {
-                "person_a_ok": sw_support[ids[0]][0],
-                "person_b_ok": sw_support[ids[1]][0],
-                "person_a_error": sw_support[ids[0]][1],
-                "person_b_error": sw_support[ids[1]][1],
-            },
-            "model_eligible_birth_and_swieph": model_eligible,
-        })
+        pair_rows.append(
+            {
+                "pair_key": pk,
+                "person_a": a,
+                "person_b": b,
+                "relation_records": pair_relations[pk],
+                "relation_codes": sorted({x["rel_id"] for x in pair_relations[pk]}),
+                "possible_same_person_duplicate": dup,
+                "swieph_natal_design_preflight": {
+                    "person_a_ok": sw_support[ids[0]][0],
+                    "person_b_ok": sw_support[ids[1]][0],
+                    "person_a_error": sw_support[ids[0]][1],
+                    "person_b_error": sw_support[ids[1]][1],
+                },
+                "model_eligible_birth_and_swieph": model_eligible,
+            }
+        )
 
     counts = {
         "c_sample_entries": len(entries),
@@ -416,7 +487,10 @@ def main():
         "final_unique_birth_data_qualified_exact_time_pairs": len(pair_rows),
         "possible_same_person_duplicate_exclusions": dup_count,
         "pairs_surviving_swieph_natal_design_preflight": sw_pair_count,
-        "unique_people_in_final_pairs": len({p["person_a"]["adb_id"] for p in pair_rows} | {p["person_b"]["adb_id"] for p in pair_rows}),
+        "unique_people_in_final_pairs": len(
+            {p["person_a"]["adb_id"] for p in pair_rows}
+            | {p["person_b"]["adb_id"] for p in pair_rows}
+        ),
     }
 
     out = {
@@ -436,20 +510,45 @@ def main():
         "external_targets": external_audit,
         "pairs": pair_rows,
         "history_recovery_complete": False,
-        "history_recovery_next": "Apply frozen V4 H1-H4 source hierarchy to this outcome-independent pair universe before any model specification.",
+        "history_recovery_next": (
+            "Apply frozen V4 H1-H4 source hierarchy to this outcome-i"
+            "ndependent pair universe before any model specification."
+        ),
         "limitations": [
             "Astro-Databank development source; not independent validation.",
-            "Pair membership uses relationship-link structure and birth-data quality only; no relationship outcome is required.",
-            "Possible same-person duplicates are currently detected from name+birth-date+UTC+coordinates; linked Wikipedia/Wikidata identity can add a later duplicate safeguard during H3 without changing pair discovery.",
-            "No relationship history evidence or pair astrology/HD feature is inspected in this universe-construction audit.",
+            (
+                "Pair membership uses relationship-link structure and bir"
+                "th-data quality only; no relationship outcome is require"
+                "d."
+            ),
+            (
+                "Possible same-person duplicates are currently detected f"
+                "rom name+birth-date+UTC+coordinates; linked Wikipedia/Wi"
+                "kidata identity can add a later duplicate safeguard duri"
+                "ng H3 without changing pair discovery."
+            ),
+            (
+                "No relationship history evidence or pair astrology/HD fe"
+                "ature is inspected in this universe-construction audit."
+            ),
         ],
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(json.dumps(out, indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8")
-    print(json.dumps({
-        "status": out["status"], "counts": counts,
-        "external_resolution_status_counts": out["external_resolution_status_counts"],
-    }, indent=2, ensure_ascii=False), flush=True)
+    OUT.write_text(
+        json.dumps(out, indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
+    print(
+        json.dumps(
+            {
+                "status": out["status"],
+                "counts": counts,
+                "external_resolution_status_counts": out["external_resolution_status_counts"],
+            },
+            indent=2,
+            ensure_ascii=False,
+        ),
+        flush=True,
+    )
 
 
 if __name__ == "__main__":

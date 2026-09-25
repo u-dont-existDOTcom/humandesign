@@ -7,6 +7,7 @@ Frozen spec:
 This script performs data recovery only. It does not calculate or inspect
 astrology/HD features for any recovered transition.
 """
+
 from __future__ import annotations
 
 import hashlib
@@ -14,7 +15,7 @@ import html
 import json
 import re
 import urllib.parse
-from collections import Counter, defaultdict
+from collections import Counter
 from datetime import date
 from pathlib import Path
 
@@ -30,10 +31,30 @@ UA = "humandesign-state-history-recovery/1.0"
 HIGH_RR = {"AA", "A"}
 STOP = {"relationship", "spouse", "lover", "with", "born", "family", "associates", "equivalent"}
 MONTHS = {
-    "january": 1, "february": 2, "march": 3, "april": 4, "may": 5, "june": 6,
-    "july": 7, "august": 8, "september": 9, "october": 10, "november": 11, "december": 12,
-    "jan": 1, "feb": 2, "mar": 3, "apr": 4, "jun": 6, "jul": 7, "aug": 8,
-    "sep": 9, "sept": 9, "oct": 10, "nov": 11, "dec": 12,
+    "january": 1,
+    "february": 2,
+    "march": 3,
+    "april": 4,
+    "may": 5,
+    "june": 6,
+    "july": 7,
+    "august": 8,
+    "september": 9,
+    "october": 10,
+    "november": 11,
+    "december": 12,
+    "jan": 1,
+    "feb": 2,
+    "mar": 3,
+    "apr": 4,
+    "jun": 6,
+    "jul": 7,
+    "aug": 8,
+    "sep": 9,
+    "sept": 9,
+    "oct": 10,
+    "nov": 11,
+    "dec": 12,
 }
 EVENT_LABELS = (
     ("meet", re.compile(r"\bmeet(?:\s+a)?\s+significant\s+person\b", re.I), "formation"),
@@ -71,15 +92,27 @@ def api_json(params: dict) -> dict | None:
     try:
         return json.loads(v3.get(url, timeout=10).decode("utf-8", errors="replace"))
     except Exception as exc:
-        print("api failure", params.get("titles") or params.get("srsearch"), type(exc).__name__, flush=True)
+        print(
+            "api failure",
+            params.get("titles") or params.get("srsearch"),
+            type(exc).__name__,
+            flush=True,
+        )
         return None
 
 
 def fetch_wikitext(title: str) -> str | None:
-    data = api_json({
-        "action": "query", "prop": "revisions", "rvprop": "content", "rvslots": "main",
-        "titles": title, "formatversion": 2, "format": "json",
-    })
+    data = api_json(
+        {
+            "action": "query",
+            "prop": "revisions",
+            "rvprop": "content",
+            "rvslots": "main",
+            "titles": title,
+            "formatversion": 2,
+            "format": "json",
+        }
+    )
     if not data:
         return None
     pages = data.get("query", {}).get("pages", [])
@@ -101,7 +134,9 @@ def search_titles(name: str) -> list[str]:
             variants.append(f"{b} {a}")
     out: list[str] = []
     for q in variants:
-        data = api_json({"action": "query", "list": "search", "srsearch": q, "srlimit": 10, "format": "json"})
+        data = api_json(
+            {"action": "query", "list": "search", "srsearch": q, "srlimit": 10, "format": "json"}
+        )
         if not data:
             continue
         for hit in data.get("query", {}).get("search", []):
@@ -124,7 +159,9 @@ def exact_id(text: str | None) -> int | None:
         return None
 
 
-def resolve_person(adb_id: int, display_name: str, known_title: str | None) -> tuple[str | None, str | None, str | None]:
+def resolve_person(
+    adb_id: int, display_name: str, known_title: str | None
+) -> tuple[str | None, str | None, str | None]:
     tried: list[str] = []
     for title in (known_title, display_name):
         if not title or title in tried:
@@ -147,9 +184,9 @@ def section(text: str, heading: str) -> str:
     m = re.search(rf"(?im)^==\s*{re.escape(heading)}\s*==\s*$", text or "")
     if not m:
         return ""
-    tail = text[m.end():]
+    tail = text[m.end() :]
     n = re.search(r"(?im)^==\s*[^=].*?\s*==\s*$", tail)
-    return tail[:n.start()] if n else tail
+    return tail[: n.start()] if n else tail
 
 
 def bullets(sec: str) -> list[str]:
@@ -205,7 +242,9 @@ def parse_date_interval(after_label: str) -> tuple[str, str, str] | None:
     # Day Month Year.
     md = re.search(r"(?<!\d)(\d{1,2})\s+([A-Za-z]+)\s+(1[5-9]\d{2}|20\d{2})(?!\d)", s)
     if md:
-        d = int(md.group(1)); m = MONTHS.get(md.group(2).casefold()); y = int(md.group(3))
+        d = int(md.group(1))
+        m = MONTHS.get(md.group(2).casefold())
+        y = int(md.group(3))
         if m:
             try:
                 z = iso(y, m, d)
@@ -215,7 +254,8 @@ def parse_date_interval(after_label: str) -> tuple[str, str, str] | None:
     # Month Year.
     mm = re.search(r"\b([A-Za-z]+)\s+(1[5-9]\d{2}|20\d{2})\b", s)
     if mm:
-        m = MONTHS.get(mm.group(1).casefold()); y = int(mm.group(2))
+        m = MONTHS.get(mm.group(1).casefold())
+        y = int(mm.group(2))
         if m:
             return iso(y, m, 1), iso(y, m, last_day(y, m)), "month"
     # Year only.
@@ -226,7 +266,9 @@ def parse_date_interval(after_label: str) -> tuple[str, str, str] | None:
     return None
 
 
-def extract_events(source_id: int, source_title: str, wt: str, other_id: int, other_title: str, other_name: str) -> list[dict]:
+def extract_events(
+    source_id: int, source_title: str, wt: str, other_id: int, other_title: str, other_name: str
+) -> list[dict]:
     out = []
     for raw in bullets(section(wt, "Events")):
         p = plain(raw)
@@ -238,32 +280,43 @@ def extract_events(source_id: int, source_title: str, wt: str, other_id: int, ot
                 continue
             if not partner_attributed(raw, other_title, other_name):
                 break
-            dt = parse_date_interval(p[m.end():])
+            dt = parse_date_interval(p[m.end() :])
             if not dt:
                 break
             lo, hi, precision = dt
-            out.append({
-                "source_adb_id": source_id,
-                "source_title": source_title,
-                "other_adb_id": other_id,
-                "section": "Events",
-                "event_kind": kind,
-                "transition": transition,
-                "precision": precision,
-                "interval_start": lo,
-                "interval_end": hi,
-                "raw": raw,
-            })
+            out.append(
+                {
+                    "source_adb_id": source_id,
+                    "source_title": source_title,
+                    "other_adb_id": other_id,
+                    "section": "Events",
+                    "event_kind": kind,
+                    "transition": transition,
+                    "precision": precision,
+                    "interval_start": lo,
+                    "interval_end": hi,
+                    "raw": raw,
+                }
+            )
             break
     return out
 
 
-def extract_ranges(source_id: int, source_title: str, wt: str, other_id: int, other_title: str, other_name: str) -> list[dict]:
+def extract_ranges(
+    source_id: int, source_title: str, wt: str, other_id: int, other_title: str, other_name: str
+) -> list[dict]:
     out = []
     for raw in bullets(section(wt, "Relationships")):
         p = plain(raw)
         low = p.casefold()
-        if not any(x in low for x in ("spouse relationship", "lover relationship", "spousal equivalent relationship")):
+        if not any(
+            x in low
+            for x in (
+                "spouse relationship",
+                "lover relationship",
+                "spousal equivalent relationship",
+            )
+        ):
             continue
         if not partner_attributed(raw, other_title, other_name):
             continue
@@ -274,30 +327,37 @@ def extract_ranges(source_id: int, source_title: str, wt: str, other_id: int, ot
             y1, y2 = int(m.group(1)), int(m.group(2))
             if y2 < y1:
                 continue
-            out.append({
-                "source_adb_id": source_id,
-                "source_title": source_title,
-                "other_adb_id": other_id,
-                "section": "Relationships",
-                "precision": "year_range",
-                "interval_start": iso(y1, 1, 1),
-                "interval_start_latest": iso(y1, 12, 31),
-                "interval_end_earliest": iso(y2, 1, 1),
-                "interval_end": iso(y2, 12, 31),
-                "raw": raw,
-            })
+            out.append(
+                {
+                    "source_adb_id": source_id,
+                    "source_title": source_title,
+                    "other_adb_id": other_id,
+                    "section": "Relationships",
+                    "precision": "year_range",
+                    "interval_start": iso(y1, 1, 1),
+                    "interval_start_latest": iso(y1, 12, 31),
+                    "interval_end_earliest": iso(y2, 1, 1),
+                    "interval_end": iso(y2, 12, 31),
+                    "raw": raw,
+                }
+            )
             break
     return out
 
 
 def overlap(a: dict, b: dict) -> bool:
-    return max(a["interval_start"], b["interval_start"]) <= min(a["interval_end"], b["interval_end"])
+    return max(a["interval_start"], b["interval_start"]) <= min(
+        a["interval_end"], b["interval_end"]
+    )
 
 
 def merge_event_evidence(items: list[dict]) -> tuple[list[dict], int]:
     groups: list[dict] = []
     conflicts = 0
-    for ev in sorted(items, key=lambda x: (x["event_kind"], x["interval_start"], x["interval_end"], x["source_adb_id"])):
+    for ev in sorted(
+        items,
+        key=lambda x: (x["event_kind"], x["interval_start"], x["interval_end"], x["source_adb_id"]),
+    ):
         candidates = [g for g in groups if g["event_kind"] == ev["event_kind"] and overlap(g, ev)]
         if candidates:
             g = candidates[0]
@@ -307,21 +367,26 @@ def merge_event_evidence(items: list[dict]) -> tuple[list[dict], int]:
             # The merged interval is at least as precise as every contributing interval.
             if g["interval_start"] == g["interval_end"]:
                 g["precision"] = "day"
-            elif len(g["interval_start"][:7]) == len(g["interval_end"][:7]) and g["interval_start"][:7] == g["interval_end"][:7]:
+            elif (
+                len(g["interval_start"][:7]) == len(g["interval_end"][:7])
+                and g["interval_start"][:7] == g["interval_end"][:7]
+            ):
                 g["precision"] = "month"
         else:
             # Non-overlapping same-kind reports are retained; count a conflict only if
             # a prior same-kind item exists.
             if any(g["event_kind"] == ev["event_kind"] for g in groups):
                 conflicts += 1
-            groups.append({
-                "event_kind": ev["event_kind"],
-                "transition": ev["transition"],
-                "precision": ev["precision"],
-                "interval_start": ev["interval_start"],
-                "interval_end": ev["interval_end"],
-                "evidence": [ev],
-            })
+            groups.append(
+                {
+                    "event_kind": ev["event_kind"],
+                    "transition": ev["transition"],
+                    "precision": ev["precision"],
+                    "interval_start": ev["interval_start"],
+                    "interval_end": ev["interval_end"],
+                    "evidence": [ev],
+                }
+            )
     groups.sort(key=lambda x: (x["interval_start"], x["interval_end"], x["event_kind"]))
     return groups, conflicts
 
@@ -351,23 +416,29 @@ def derive_history(events: list[dict], ranges: list[dict]) -> tuple[list[dict], 
             has_diss = True
             diss_precisions.append(ev["precision"])
             last_diss_end = max(last_diss_end or ev["interval_end"], ev["interval_end"])
-        timeline.append({
-            "derived_transition": derived,
-            "event_kind": ev["event_kind"],
-            "precision": ev["precision"],
-            "interval_start": ev["interval_start"],
-            "interval_end": ev["interval_end"],
-        })
+        timeline.append(
+            {
+                "derived_transition": derived,
+                "event_kind": ev["event_kind"],
+                "precision": ev["precision"],
+                "interval_start": ev["interval_start"],
+                "interval_end": ev["interval_end"],
+            }
+        )
     for r in ranges:
-        timeline.append({
-            "derived_transition": "coarse_active_interval",
-            "precision": "year_range",
-            "interval_start": r["interval_start"],
-            "interval_start_latest": r["interval_start_latest"],
-            "interval_end_earliest": r["interval_end_earliest"],
-            "interval_end": r["interval_end"],
-        })
-    timeline.sort(key=lambda x: (x["interval_start"], x.get("interval_end", ""), x["derived_transition"]))
+        timeline.append(
+            {
+                "derived_transition": "coarse_active_interval",
+                "precision": "year_range",
+                "interval_start": r["interval_start"],
+                "interval_start_latest": r["interval_start_latest"],
+                "interval_end_earliest": r["interval_end_earliest"],
+                "interval_end": r["interval_end"],
+            }
+        )
+    timeline.sort(
+        key=lambda x: (x["interval_start"], x.get("interval_end", ""), x["derived_transition"])
+    )
 
     month_or_better_form = any(precision_rank(p) >= 2 for p in form_precisions)
     month_or_better_diss = any(precision_rank(p) >= 2 for p in diss_precisions)
@@ -440,7 +511,7 @@ def main() -> None:
     endpoint_pairs = 0
 
     for a, b in pairs:
-        pk = f"adb:{min(a,b)}|adb:{max(a,b)}"
+        pk = f"adb:{min(a, b)}|adb:{max(a, b)}"
         raw_events: list[dict] = []
         raw_ranges: list[dict] = []
         for src, other in ((a, b), (b, a)):
@@ -448,8 +519,12 @@ def main() -> None:
                 continue
             s = resolved[src]
             o = resolved[other]
-            raw_events.extend(extract_events(src, s["title"], s["wikitext"], other, o["title"], o["name"]))
-            raw_ranges.extend(extract_ranges(src, s["title"], s["wikitext"], other, o["title"], o["name"]))
+            raw_events.extend(
+                extract_events(src, s["title"], s["wikitext"], other, o["title"], o["name"])
+            )
+            raw_ranges.extend(
+                extract_ranges(src, s["title"], s["wikitext"], other, o["title"], o["name"])
+            )
 
         merged, conflicts = merge_event_evidence(raw_events)
         conflict_total += conflicts
@@ -466,24 +541,37 @@ def main() -> None:
             precision_counts[x["precision"]] += 1
             event_kind_counts[x["event_kind"]] += 1
 
-        pair_rows.append({
-            "pair_key": pk,
-            "person_a": {"adb_id": a, "name": display_name(a, entries, recovery_rows), "wiki_title": resolved.get(a, {}).get("title")},
-            "person_b": {"adb_id": b, "name": display_name(b, entries, recovery_rows), "wiki_title": resolved.get(b, {}).get("title")},
-            "history_tier": tier,
-            "evidence_conflicts": conflicts,
-            "reunion_sequence_count": reunion_count,
-            "event_evidence": raw_events,
-            "merged_transitions": merged,
-            "relationship_ranges": raw_ranges,
-            "derived_timeline": timeline,
-        })
+        pair_rows.append(
+            {
+                "pair_key": pk,
+                "person_a": {
+                    "adb_id": a,
+                    "name": display_name(a, entries, recovery_rows),
+                    "wiki_title": resolved.get(a, {}).get("title"),
+                },
+                "person_b": {
+                    "adb_id": b,
+                    "name": display_name(b, entries, recovery_rows),
+                    "wiki_title": resolved.get(b, {}).get("title"),
+                },
+                "history_tier": tier,
+                "evidence_conflicts": conflicts,
+                "reunion_sequence_count": reunion_count,
+                "event_evidence": raw_events,
+                "merged_transitions": merged,
+                "relationship_ranges": raw_ranges,
+                "derived_timeline": timeline,
+            }
+        )
 
     out = {
         "status": "development_data_recovery_audit",
         "freeze_spec": str(FREEZE.relative_to(REPO)),
         "freeze_sha256": sha256(FREEZE),
-        "source": "public Astro-Databank C-sample plus public ADB wiki structured Relationships/Events sections",
+        "source": (
+            "public Astro-Databank C-sample plus public ADB wiki stru"
+            "ctured Relationships/Events sections"
+        ),
         "pair_universe": {
             "eligible_exact_v3_pairs": len(pairs),
             "eligible_v3_events_used_to_reconstruct_universe": len(eligible_events),
@@ -495,7 +583,10 @@ def main() -> None:
             "methods": dict(resolution_counts),
         },
         "history_counts": {
-            "pair_tiers": {k.replace("tier_", ""): global_counts[k] for k in ("tier_T0", "tier_T1", "tier_T2", "tier_T3")},
+            "pair_tiers": {
+                k.replace("tier_", ""): global_counts[k]
+                for k in ("tier_T0", "tier_T1", "tier_T2", "tier_T3")
+            },
             "accepted_event_evidence": global_counts["accepted_event_evidence"],
             "merged_event_transitions": global_counts["merged_event_transitions"],
             "accepted_relationship_ranges": global_counts["accepted_relationship_ranges"],
@@ -514,7 +605,11 @@ def main() -> None:
         "limitations": [
             "ADB development source; not independent validation.",
             "Biography prose is excluded by the frozen V1 extraction rule.",
-            "Year-range relationship notes are interval-censored coarse active intervals and are not silently converted to exact transition dates.",
+            (
+                "Year-range relationship notes are interval-censored coar"
+                "se active intervals and are not silently converted to ex"
+                "act transition dates."
+            ),
             "No astrology or Human Design feature is inspected or fit in this recovery audit.",
         ],
     }

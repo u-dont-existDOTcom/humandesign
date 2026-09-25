@@ -1,0 +1,35 @@
+{
+  "checked_at": "2026-09-18T01:27:13.909061+00:00",
+  "health": {
+    "status": "ok",
+    "development_surface": true,
+    "target_theory_blind": true,
+    "hidden_evidence_ledger": true,
+    "model_configured": true,
+    "model_profile": {
+      "interviewer_model": "gpt-5.6-sol",
+      "interviewer_reasoning": "xhigh",
+      "extraction_model": "gpt-5.6-sol",
+      "extraction_reasoning": "xhigh",
+      "semantic_max_output_tokens": 25000,
+      "automatic_model_fallback": false
+    },
+    "build_version": "survey-sol-xhigh-2026-09-18.2",
+    "build_commit": "78543a9f876b1105c4d62757b8b5f5119cc7b5e5",
+    "coverage_blueprint_version": "life-patterns-recoverability-coverage-v2",
+    "coverage_blueprint_sha256": "78ada435d4d3bb48d11f550c4a9f741066871e0f0c280c8ef73de407eb70641f",
+    "required_domain_count": 23,
+    "explicit_workflow_phase": true,
+    "revision_bound_operations": true,
+    "fixed_episode_quota": false,
+    "mandatory_counterexample_gate": false
+  },
+  "landing_http": 200,
+  "landing_bytes": 30713,
+  "landing_sha256": "33dde8dc8c3b808d0715bc1a958d3aacfdaa4674587a67848a8fe43dfd3f5a82",
+  "ci": [
+    {"id": 35295117795, "event": "pull_request", "conclusion": "success", "head_sha": "78543a9f876b1105c4d62757b8b5f5119cc7b5e5"},
+    {"id": 35295114783, "event": "push", "conclusion": "success", "head_sha": "78543a9f876b1105c4d62757b8b5f5119cc7b5e5"}
+  ],
+  "deployment_id": "bbd8db1a-a898-42ca-9694-646b781871e3"
+}

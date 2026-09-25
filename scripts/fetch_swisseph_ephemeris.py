@@ -15,10 +15,7 @@ from pathlib import Path
 
 UPSTREAM_COMMIT = "3fd0f956d73898b91cc4f67cf18b21af656d1342"
 FILES = ("sepl_18.se1", "semo_18.se1")
-BASE_URL = (
-    "https://raw.githubusercontent.com/aloistr/swisseph/"
-    f"{UPSTREAM_COMMIT}/ephe"
-)
+BASE_URL = f"https://raw.githubusercontent.com/aloistr/swisseph/{UPSTREAM_COMMIT}/ephe"
 
 
 def sha256(path: Path) -> str:

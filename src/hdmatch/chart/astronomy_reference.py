@@ -97,19 +97,15 @@ class ProjectionSpec(AstronomyModel):
 
 
 class IauConstellationProjection(AstronomyModel):
-    schema_version: Literal["iau-constellation-projection-v1"] = (
-        "iau-constellation-projection-v1"
-    )
+    schema_version: Literal["iau-constellation-projection-v1"] = "iau-constellation-projection-v1"
     name: str = Field(min_length=1)
     abbreviation: str = Field(min_length=2, max_length=4)
     resolver: str = Field(min_length=1)
     resolver_version: str = Field(min_length=1)
-    input_frame: Literal["geocentric_true_ecliptic_of_date"] = (
-        "geocentric_true_ecliptic_of_date"
-    )
-    boundary_reference: Literal[
+    input_frame: Literal["geocentric_true_ecliptic_of_date"] = "geocentric_true_ecliptic_of_date"
+    boundary_reference: Literal["IAU-88-Delporte-B1875-Roman1987"] = (
         "IAU-88-Delporte-B1875-Roman1987"
-    ] = "IAU-88-Delporte-B1875-Roman1987"
+    )
 
 
 class IauConstellationResolver(Protocol):

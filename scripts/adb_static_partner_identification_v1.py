@@ -4,8 +4,10 @@
 Frozen spec: reference/research/adb_static_partner_identification_freeze_v1.md
 Development/model discovery only. Verified SWIEPH; no Joel/Bee data are used.
 """
+
 from __future__ import annotations
 
+import contextlib
 import json
 import math
 import random
@@ -16,14 +18,13 @@ import xml.etree.ElementTree as ET
 from collections import Counter, defaultdict
 from pathlib import Path
 
+import adb_pair_timing_model_search_v1 as base
 import numpy as np
+import partner_hd_timing_pilot as hd
 import swisseph as swe
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import GroupKFold
 from sklearn.preprocessing import StandardScaler
-
-import adb_pair_timing_model_search_v1 as base
-import partner_hd_timing_pilot as hd
 
 REPO = Path(__file__).resolve().parents[1]
 EPHE = REPO / "data" / "ephemeris"
@@ -52,6 +53,7 @@ MODELS = ("M0S", "MWS", "MHDS", "MCOMB")
 
 def sha256(path: Path) -> str:
     import hashlib
+
     h = hashlib.sha256()
     with path.open("rb") as f:
         for block in iter(lambda: f.read(1024 * 1024), b""):
@@ -65,7 +67,9 @@ def parse_coord(s: str | None, is_lat: bool) -> float | None:
     m = re.fullmatch(r"(\d{1,3})([nsew])(\d{1,2})", s.strip().lower())
     if not m:
         return None
-    deg = int(m.group(1)); hemi = m.group(2); minute = int(m.group(3))
+    deg = int(m.group(1))
+    hemi = m.group(2)
+    minute = int(m.group(3))
     if deg > (90 if is_lat else 180) or minute >= 60:
         return None
     v = deg + minute / 60.0
@@ -92,16 +96,12 @@ def download_people():
         bd = pub.find("./bdata/sbdate")
         exact_jd = None
         if bt is not None and bt.attrib.get("jd_ut") and (bt.text or "").strip():
-            try:
+            with contextlib.suppress(ValueError):
                 exact_jd = float(bt.attrib["jd_ut"])
-            except ValueError:
-                pass
         birth_year = None
         if bd is not None:
-            try:
+            with contextlib.suppress(ValueError):
                 birth_year = int(bd.attrib.get("iyear", "0")) or None
-            except ValueError:
-                pass
         place = pub.find("./bdata/place")
         coord = None
         if place is not None:
@@ -110,8 +110,12 @@ def download_people():
             if lat is not None and lon is not None:
                 coord = (lat, lon)
         people[aid] = {
-            "id": aid, "rr": rr, "gender": gender, "jd": exact_jd,
-            "birth_year": birth_year, "coord": coord,
+            "id": aid,
+            "rr": rr,
+            "gender": gender,
+            "jd": exact_jd,
+            "birth_year": birth_year,
+            "coord": coord,
         }
         research = e.find("research_data")
         if research is not None:
@@ -142,7 +146,8 @@ def natal_west(person: dict, cache: dict[int, dict[str, float | None]]) -> dict[
     jd = person["jd"]
     assert jd is not None
     out: dict[str, float | None] = {n: base.calc(jd, body)[0] for n, body in BODY_IDS.items()}
-    out["ASC"] = None; out["MC"] = None
+    out["ASC"] = None
+    out["MC"] = None
     if person["coord"] is not None:
         lat, lon = person["coord"]
         try:
@@ -168,7 +173,8 @@ def hd_mechanics(a_g: set[int], b_g: set[int]) -> dict[str, float]:
     for x, y in hd.CHANNELS:
         aset = int(x in a_g) + int(y in a_g)
         bset = int(x in b_g) + int(y in b_g)
-        a_full = aset == 2; b_full = bset == 2
+        a_full = aset == 2
+        b_full = bset == 2
         if a_full and b_full:
             comp += 1
         elif a_full and bset == 0:
@@ -211,16 +217,21 @@ def feature_row(focal: dict, cand: dict, west_cache, gate_cache) -> dict[str, fl
         "m0_focal_year": ((focal["birth_year"] or 1950) - 1950.0) / 50.0,
         "m0_candidate_year": ((cand["birth_year"] or 1950) - 1950.0) / 50.0,
     }
-    wa = natal_west(focal, west_cache); wb = natal_west(cand, west_cache)
+    wa = natal_west(focal, west_cache)
+    wb = natal_west(cand, west_cache)
     f["w_focal_angles_available"] = 1.0 if wa["ASC"] is not None and wa["MC"] is not None else 0.0
-    f["w_candidate_angles_available"] = 1.0 if wb["ASC"] is not None and wb["MC"] is not None else 0.0
+    f["w_candidate_angles_available"] = (
+        1.0 if wb["ASC"] is not None and wb["MC"] is not None else 0.0
+    )
     for an in BODY_NAMES:
         av = wa[an]
         for bn in BODY_NAMES:
             bv = wb[bn]
             for asp in ASPECTS:
                 key = f"w_{an}_{bn}_a{asp}"
-                f[key] = 0.0 if av is None or bv is None else aspect_kernel(float(av), float(bv), asp)
+                f[key] = (
+                    0.0 if av is None or bv is None else aspect_kernel(float(av), float(bv), asp)
+                )
     f.update(hd_mechanics(natal_gates(focal, gate_cache), natal_gates(cand, gate_cache)))
     return f
 
@@ -235,7 +246,8 @@ def build_tasks(people, neighbors, pair_types):
     dropped = Counter()
     for a, b in positive_pairs:
         for focal_id, true_id in ((a, b), (b, a)):
-            focal = high[focal_id]; true = high[true_id]
+            focal = high[focal_id]
+            true = high[true_id]
             gender = true["gender"]
             pool = []
             for pid, p in high.items():
@@ -249,29 +261,36 @@ def build_tasks(people, neighbors, pair_types):
                 dropped["fewer_than_50_same_gender_decoys"] += 1
                 continue
             decoys = pool[:N_DECOYS]
-            tasks.append({
-                "task_key": f"{focal_id}->{true_id}",
-                "group_key": f"{min(a,b)}:{max(a,b)}",
-                "focal": focal,
-                "true": true,
-                "decoys": decoys,
-                "max_decoy_birth_jd_distance_days": max(abs(p["jd"] - true["jd"]) for p in decoys),
-            })
+            tasks.append(
+                {
+                    "task_key": f"{focal_id}->{true_id}",
+                    "group_key": f"{min(a, b)}:{max(a, b)}",
+                    "focal": focal,
+                    "true": true,
+                    "decoys": decoys,
+                    "max_decoy_birth_jd_distance_days": max(
+                        abs(p["jd"] - true["jd"]) for p in decoys
+                    ),
+                }
+            )
     return high, positive_pairs, tasks, dict(dropped)
 
 
 def build_rows(tasks):
-    west_cache = {}; gate_cache = {}
+    west_cache = {}
+    gate_cache = {}
     rows = []
     for idx, task in enumerate(tasks, 1):
         candidates = [task["true"]] + task["decoys"]
         for cand in candidates:
-            rows.append({
-                "task_key": task["task_key"],
-                "group_key": task["group_key"],
-                "actual": int(cand["id"] == task["true"]["id"]),
-                "features": feature_row(task["focal"], cand, west_cache, gate_cache),
-            })
+            rows.append(
+                {
+                    "task_key": task["task_key"],
+                    "group_key": task["group_key"],
+                    "actual": int(cand["id"] == task["true"]["id"]),
+                    "features": feature_row(task["focal"], cand, west_cache, gate_cache),
+                }
+            )
         if idx % 10 == 0:
             print(f"built features for {idx}/{len(tasks)} directed tasks", flush=True)
     return rows, len(west_cache), len(gate_cache)
@@ -280,20 +299,24 @@ def build_rows(tasks):
 def feature_names(model: str, all_names: list[str]) -> list[str]:
     out = []
     for n in all_names:
-        if n.startswith("m0_"):
-            out.append(n)
-        elif model in {"MWS", "MCOMB"} and n.startswith("w_"):
-            out.append(n)
-        elif model in {"MHDS", "MCOMB"} and n.startswith("hd_"):
+        if (
+            n.startswith("m0_")
+            or model in {"MWS", "MCOMB"}
+            and n.startswith("w_")
+            or model in {"MHDS", "MCOMB"}
+            and n.startswith("hd_")
+        ):
             out.append(n)
     return out
 
 
 def neutral_metrics(rows, scores) -> dict[str, float]:
     by_task: dict[str, list[tuple[float, int]]] = defaultdict(list)
-    for r, s in zip(rows, scores):
+    for r, s in zip(rows, scores, strict=False):
         by_task[r["task_key"]].append((float(s), int(r["actual"])))
-    ranks = []; pcts = []; losses = []
+    ranks = []
+    pcts = []
+    losses = []
     for vals in by_task.values():
         actual_score = next(s for s, y in vals if y == 1)
         controls = [s for s, y in vals if y == 0]
@@ -301,9 +324,12 @@ def neutral_metrics(rows, scores) -> dict[str, float]:
         tied = sum(abs(s - actual_score) <= 1e-12 for s in controls)
         rank = 1.0 + higher + 0.5 * tied
         pct = 100.0 * (len(controls) - higher - 0.5 * tied) / len(controls)
-        ranks.append(rank); pcts.append(pct)
+        ranks.append(rank)
+        pcts.append(pct)
         arr = np.array([s for s, _ in vals], dtype=float)
-        arr -= arr.max(); probs = np.exp(arr); probs /= probs.sum()
+        arr -= arr.max()
+        probs = np.exp(arr)
+        probs /= probs.sum()
         idx = next(i for i, (_s, y) in enumerate(vals) if y == 1)
         losses.append(-math.log(max(float(probs[idx]), 1e-15)))
     return {
@@ -321,8 +347,12 @@ def fit_model(Xt, yt, Xv, model, c):
     scaler = StandardScaler().fit(Xt)
     penalty = "l1" if model in {"MWS", "MCOMB"} else "l2"
     clf = LogisticRegression(
-        C=c, penalty=penalty, solver="liblinear", class_weight="balanced",
-        max_iter=5000, random_state=RNG_SEED % (2**32),
+        C=c,
+        penalty=penalty,
+        solver="liblinear",
+        class_weight="balanced",
+        max_iter=5000,
+        random_state=RNG_SEED % (2**32),
     ).fit(scaler.transform(Xt), yt)
     return clf, clf.decision_function(scaler.transform(Xv))
 
@@ -339,9 +369,11 @@ def choose_c(train_rows, names, model):
         vals = []
         for ti, vi in gkf.split(X, y, groups):
             _clf, pred = fit_model(X[ti], y[ti], X[vi], model, c)
-            vals.append(neutral_metrics([train_rows[i] for i in vi], pred)["mean_true_partner_percentile"])
+            vals.append(
+                neutral_metrics([train_rows[i] for i in vi], pred)["mean_true_partner_percentile"]
+            )
         mean = statistics.fmean(vals)
-        if best is None or mean > best[0] + 1e-12 or (abs(mean-best[0]) <= 1e-12 and c < best[1]):
+        if best is None or mean > best[0] + 1e-12 or (abs(mean - best[0]) <= 1e-12 and c < best[1]):
             best = (mean, c)
     return best[1]
 
@@ -354,7 +386,9 @@ def evaluate(rows, model, fixed_c=None):
     y = np.array([r["actual"] for r in rows], dtype=int)
     gkf = GroupKFold(n_splits=5)
     oof = np.full(len(rows), np.nan)
-    cs = []; folds = []; nonzero = []
+    cs = []
+    folds = []
+    nonzero = []
     for ti, vi in gkf.split(X, y, groups):
         tr = [rows[i] for i in ti]
         c = fixed_c if fixed_c is not None else choose_c(tr, names, model)
@@ -364,16 +398,22 @@ def evaluate(rows, model, fixed_c=None):
         folds.append(neutral_metrics([rows[i] for i in vi], pred)["mean_true_partner_percentile"])
         nonzero.append(int(np.sum(np.abs(clf.coef_[0]) > 1e-10)))
     met = neutral_metrics(rows, oof)
-    met.update({
-        "model": model, "feature_count": len(names), "outer_folds": 5,
-        "selected_C_by_fold": cs, "mean_true_partner_percentile_by_fold": folds,
-        "nonzero_feature_count_by_fold": nonzero,
-    })
+    met.update(
+        {
+            "model": model,
+            "feature_count": len(names),
+            "outer_folds": 5,
+            "selected_C_by_fold": cs,
+            "mean_true_partner_percentile_by_fold": folds,
+            "nonzero_feature_count_by_fold": nonzero,
+        }
+    )
     return met
 
 
 def modal_c(cs):
-    c = Counter(cs); mx = max(c.values())
+    c = Counter(cs)
+    mx = max(c.values())
     return min(k for k, v in c.items() if v == mx)
 
 
@@ -381,39 +421,56 @@ def permutation(rows, model, observed, cs, n=200):
     rng = random.Random(RNG_SEED)
     fixed_c = modal_c(cs)
     by_task: dict[str, list[int]] = defaultdict(list)
-    for i, r in enumerate(rows): by_task[r["task_key"]].append(i)
+    for i, r in enumerate(rows):
+        by_task[r["task_key"]].append(i)
     vals = []
     for p in range(n):
         perm = [dict(r) for r in rows]
         for idxs in by_task.values():
             chosen = rng.choice(idxs)
-            for i in idxs: perm[i]["actual"] = int(i == chosen)
+            for i in idxs:
+                perm[i]["actual"] = int(i == chosen)
         vals.append(evaluate(perm, model, fixed_c=fixed_c)["mean_true_partner_percentile"])
-        if (p+1) % 20 == 0: print(f"permutation {p+1}/{n}", flush=True)
+        if (p + 1) % 20 == 0:
+            print(f"permutation {p + 1}/{n}", flush=True)
     ge = sum(v >= observed - 1e-12 for v in vals)
     return {
-        "n": n, "fixed_C": fixed_c, "observed": observed,
-        "null_mean": statistics.fmean(vals), "null_sd": statistics.stdev(vals),
-        "null_ge_observed": ge, "empirical_p_ge_observed": (ge+1)/(n+1),
+        "n": n,
+        "fixed_C": fixed_c,
+        "observed": observed,
+        "null_mean": statistics.fmean(vals),
+        "null_sd": statistics.stdev(vals),
+        "null_ge_observed": ge,
+        "empirical_p_ge_observed": (ge + 1) / (n + 1),
     }
 
 
 def main():
-    for p in (EPHE/"sepl_18.se1", EPHE/"semo_18.se1"):
-        if not p.is_file(): raise SystemExit("Missing Swiss ephemeris file: "+str(p))
+    for p in (EPHE / "sepl_18.se1", EPHE / "semo_18.se1"):
+        if not p.is_file():
+            raise SystemExit("Missing Swiss ephemeris file: " + str(p))
     swe.set_ephe_path(str(EPHE))
     people, neighbors, pair_types, raw_bytes = download_people()
     high, positive_pairs, tasks, dropped = build_tasks(people, neighbors, pair_types)
     if len(positive_pairs) < 25 or len(tasks) < 50:
-        raise RuntimeError(f"Unexpectedly too few exact positive pairs/tasks: {len(positive_pairs)} / {len(tasks)}")
+        raise RuntimeError(
+            f"Unexpectedly too few exact positive pairs/tasks: {len(positive_pairs)} / {len(tasks)}"
+        )
     rows, west_cached, gate_cached = build_rows(tasks)
     results = {m: evaluate(rows, m) for m in MODELS}
     m0 = results["M0S"]
     candidates = ("MWS", "MHDS", "MCOMB")
     for m in candidates:
-        results[m]["delta_vs_M0S"] = results[m]["mean_true_partner_percentile"] - m0["mean_true_partner_percentile"]
+        results[m]["delta_vs_M0S"] = (
+            results[m]["mean_true_partner_percentile"] - m0["mean_true_partner_percentile"]
+        )
         results[m]["positive_improvement_folds_vs_M0S"] = sum(
-            a > b + 1e-12 for a,b in zip(results[m]["mean_true_partner_percentile_by_fold"], m0["mean_true_partner_percentile_by_fold"])
+            a > b + 1e-12
+            for a, b in zip(
+                results[m]["mean_true_partner_percentile_by_fold"],
+                m0["mean_true_partner_percentile_by_fold"],
+                strict=False,
+            )
         )
         results[m]["clears_promising_threshold"] = (
             results[m]["mean_true_partner_percentile"] >= 60.0
@@ -422,12 +479,20 @@ def main():
             and results[m]["softmax_log_loss"] <= m0["softmax_log_loss"] + 0.05
         )
     best = max(candidates, key=lambda m: results[m]["delta_vs_M0S"])
-    perm = permutation(rows, best, results[best]["mean_true_partner_percentile"], results[best]["selected_C_by_fold"], 200)
+    perm = permutation(
+        rows,
+        best,
+        results[best]["mean_true_partner_percentile"],
+        results[best]["selected_C_by_fold"],
+        200,
+    )
     max_decoy = [t["max_decoy_birth_jd_distance_days"] for t in tasks]
     out = {
         "status": "development_model_discovery",
-        "freeze_spec": str(FREEZE.relative_to(REPO)), "freeze_sha256": sha256(FREEZE),
-        "source": URL, "source_raw_bytes": raw_bytes,
+        "freeze_spec": str(FREEZE.relative_to(REPO)),
+        "freeze_sha256": sha256(FREEZE),
+        "source": URL,
+        "source_raw_bytes": raw_bytes,
         "dataset": {
             "high_quality_exact_people": len(high),
             "positive_unordered_pairs": len(positive_pairs),
@@ -442,17 +507,25 @@ def main():
         },
         "results": results,
         "best_pair_family": best,
-        "any_pair_family_clears_frozen_threshold": any(results[m]["clears_promising_threshold"] for m in candidates),
+        "any_pair_family_clears_frozen_threshold": any(
+            results[m]["clears_promising_threshold"] for m in candidates
+        ),
         "permutation_diagnostic_for_selected_family": perm,
         "limitations": [
             "Development on the public C-sample; independent validation is still required.",
-            "Hard decoys match recorded gender and birth generation, but not real-world exposure/social network.",
-            "Recorded romantic linkage establishes partnership, not relationship quality or mutual benefit.",
+            (
+                "Hard decoys match recorded gender and birth generation, "
+                "but not real-world exposure/social network."
+            ),
+            (
+                "Recorded romantic linkage establishes partnership, not r"
+                "elationship quality or mutual benefit."
+            ),
             "The C-sample is a non-random public-figure-heavy subset of Astro-Databank.",
         ],
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(json.dumps(out, indent=2, sort_keys=True)+"\n", encoding="utf-8")
+    OUT.write_text(json.dumps(out, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print(json.dumps(out, indent=2, sort_keys=True), flush=True)
     print("wrote", OUT, "sha256", sha256(OUT), flush=True)
 

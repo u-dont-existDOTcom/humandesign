@@ -1,0 +1,46 @@
+{
+  "schema_version": "life-patterns-neutral-measurement-repair-candidate-receipt-v1",
+  "candidate_commit": "458bede3cf83b1947c332a408b47ec84236d69ed",
+  "candidate_commit_message": "Add neutral measurement repair candidates",
+  "frozen_audit_commit": "7ea0641e0913815306f8c182be5e7e8b18115fff",
+  "frozen_audit_raw_sha256": "37642f31135f3d446488a3a0a6736468b30b6114d5a292bcaf01096d65fb16e6",
+  "frozen_audit_summary_sha256": "7184f89a9d6c8fa0560e0ceba07287f101f559ddcf872b3db62e39de34cb7b47",
+  "candidate_artifacts": {
+    "state/LIFE-PATTERNS-NEUTRAL-CODEBOOK-CLARIFICATION-v2-CANDIDATE-2026-09-10.md": {
+      "sha256": "f179c04ff0940c701414abb10d48f8dafe574f3d1ff0727597802ffbf7bee8a0",
+      "bytes": 29122
+    },
+    "state/LIFE-PATTERNS-FACET-RELATION-CONTRACT-v3-CANDIDATE-2026-09-10.json": {
+      "sha256": "513716ddd39a89a10287f546d4fe647da9823079ebc01e4cb322fd7ec5ae98ee",
+      "bytes": 26037
+    },
+    "state/LIFE-PATTERNS-OVERLAP-AUDIT-BLOCKER-RESOLUTION-v1-2026-09-10.jsonl": {
+      "sha256": "4ec4b0d963932b5f1bff910e2464ef9754e7fee8dbbe5db601c681c124416309",
+      "bytes": 25324,
+      "rows": 45
+    }
+  },
+  "all_45_blockers_present_exactly_once_reported": true,
+  "software_implementation_performed": false,
+  "ui_or_package_implementation_performed": false,
+  "target_model_information_used_reported": false,
+  "review_status": "awaiting_second_independent_target_theory_blind_review",
+  "safe_for_implementation": null,
+  "ci": {
+    "workflow_run": 34506025354,
+    "first_attempt": "failed_unrelated_node_subprocess_timeout_in_test_natal_pilot_app",
+    "first_attempt_life_patterns_repair_test_failure": false,
+    "rerun_requested": true,
+    "rerun_verify_job_id": 102970354108,
+    "rerun_status": "completed",
+    "rerun_conclusion": "success",
+    "unit_and_integration_tests": "success",
+    "ruff": "success",
+    "mypy": "success"
+  },
+  "development_only": true,
+  "validation_use_forbidden": true,
+  "human_calibration_authorized": false,
+  "automated_life_patterns_coding_authorized": false,
+  "target_model_scoring_authorized": false
+}

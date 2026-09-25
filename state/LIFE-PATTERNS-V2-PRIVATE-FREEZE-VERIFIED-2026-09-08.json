@@ -1,0 +1,94 @@
+{
+  "schema_version": "life-patterns-recurrence-v2-private-freeze-verification-v1",
+  "status": "private_v2_handoff_frozen_and_owner_reuploaded_verified",
+  "verified_date": "2026-09-08",
+  "verification_method": "owner reuploaded the private recurrence-corrected human-calibration v2 ZIP in the continuation chat; the outer transport identity, all 15 archive members, the public-safe LPHB2 receipt content address, every receipt-declared member hash, all eight LPBP2 packet content addresses and package/policy/manual/prompt bindings, and exact 44+22 blank selected-unit coverage were independently reverified before UI work",
+  "source_recovery_archive": {
+    "sha256": "7b6e2d4e901093cfd0bf54b6ab8eab66d0cdc28e2feaba720672a38452d8a450",
+    "v8_bytes": 54488,
+    "v8_sha256": "3c37c0c76174c7ba698966155f991f0303cd4f0833d39ff475dfb0e1c5348637",
+    "v8_1_bytes": 25844,
+    "v8_1_sha256": "93f838bb61e6a910ba0dbeb96a66b56c72986350dda5386243b098a738b818e7"
+  },
+  "pinned_v2_implementation": {
+    "head": "7b689f3adb49da599abb40ec2bff27ad97d3887f",
+    "ci_run": 34271174611,
+    "ci_conclusion": "success"
+  },
+  "v2_freeze_created_at_utc": "2026-09-08T22:40:13.901890Z",
+  "corpus": {
+    "id": "LPDC-F2BBDA6F39040BF41D96",
+    "sha256": "f2bbda6f39040bf41d9612fec322497c8e3fb30d49df913d0c06f0cd26f19172",
+    "historical_task_universe_reused": true
+  },
+  "calibration": {
+    "id": "LPCA-5B3E6CFCCE49807050DF",
+    "sha256": "5b3e6cfcce49807050df03f8ab27cbfbb610869dcb9cfa30064cd485d4646140",
+    "episode_units": 44,
+    "series_units": 22,
+    "selection_reused_without_resampling": true,
+    "resampled_after_method_revision": false
+  },
+  "measurement_stack_v2": {
+    "reconciled_source_artifact_id": "LPCB-2630F8F74C84477FEA25",
+    "reconciled_source_sha256": "2630f8f74c84477fea2596bebb7d00d9c43b1689d0dcb4beace8b2eb3324d05a",
+    "ambiguity_resolution_id": "LPAR-43C85F226FB6F61EF84D",
+    "ambiguity_resolution_sha256": "43c85f226fb6f61ef84dcba77cb7d590866cfb7b00954c9bb49e0a7a6b386521",
+    "resolved_view_id": "LPRV-DD825D23FA7E5FBF6903",
+    "resolved_view_sha256": "dd825d23fa7e5fbf6903d70de92722bea4d004e549fc9fd64e40f3a08282d3bf",
+    "ontology_artifact_id": "LPO-60247EA2271736C8ABF3",
+    "ontology_sha256": "60247ea2271736c8abf32e18d2caad3420ece37e476e34d0068c25fbceec9bd3",
+    "ontology_version": "v3.0.0",
+    "procedure_id": "LPSP-400F443BB55F6AB63082",
+    "procedure_sha256": "400f443bb55f6ab63082066acf1b701979d53afc7a063ed72a0c798ebfddd941",
+    "coding_manual_sha256": "ac222cb31c6dcfdd446783e3ac6fbdbc3e9ffdc89fdb7fcf6d1d8a75f91de2d8",
+    "recurrence_policy_sha256": "aeb1d46374fa17f404fffaef848fd5ba512c6dc9e704600c6c690034d1f03fc0",
+    "human_prompt_sha256": "2972129d549821f5fe3c03d468d7274e1c9645b65387d13da44f9d7283728a49",
+    "episode_response_schema_version": "life-patterns-development-episode-annotation-response-v1",
+    "series_response_schema_version": "life-patterns-development-series-annotation-response-v2",
+    "confirming_episodes_are_not_frequency_counts": true,
+    "target_model_information_available": false
+  },
+  "package": {
+    "id": "LPKG2-F93D8245B78CD9FDCF5D",
+    "sha256": "f93d8245b78cd9fdcf5dd96f1cc321171f628015ca155b8fae0df4fcb826313a"
+  },
+  "human_handoff": {
+    "receipt_id": "LPHB2-F34245FAE32B513DDCFE",
+    "receipt_sha256": "f34245fae32b513ddcfe22b7d21081997e8c28e18fccd25b962c30af2fe0a78f",
+    "packet_count": 8,
+    "packet_sha256s": [
+      "7166d378bf1cdc606bda29aa5a2e4c51f998dc7eaa1e2fa7f0c8b96ace236b76",
+      "6230f1e530665fa765424bdb7538dd57a4d396fd952de266f4f30d9aafb4d795",
+      "4765638f8ebf458cd5548eaf13fa425b357bd77484d368ceb043d014c256b5bf",
+      "3346ac6bfd75a0ffb22be204647959790ca4bd909357b80337a25c268e47cf15",
+      "cb4eae53e0f9fc3dfcf8554cfe157ce1f4451d7b48576b821e7746fd73f71e12",
+      "fd48507cba9dab4d478384400823cb1e4eebaa77ecc224db838ae19505573816",
+      "95cb74a8f8f10e0d2331522bcbc043da77e3487e40462a32cdf8d61ca0e850cb",
+      "595021e3776bbb4c6e6e22de6fcb22efab4249ffd0ba81cab11c071a4d8727f8"
+    ],
+    "member_count": 15,
+    "all_receipt_declared_member_hashes_verified": true,
+    "all_packet_content_addresses_verified": true,
+    "selected_unit_coverage_verified": true,
+    "blank_response_templates_are_annotations": false,
+    "readiness_at_export": "awaiting_human_ui",
+    "human_blinding_attested": false,
+    "auditor_identity_verified": false
+  },
+  "owner_reuploaded_private_transport_zip": {
+    "filename": "Life-Patterns-Recurrence-Corrected-Human-Calibration-V2-PRIVATE-2026-09-08.zip",
+    "sha256": "f038237a6a1ce776bb28846b76ff49339e7a9e7f28d33c5d1ad877e0d916d837",
+    "bytes": 422297,
+    "member_count": 15
+  },
+  "contains_private_participant_text": false,
+  "private_handoff_bytes_committed": false,
+  "human_first_pass_received": false,
+  "automated_coding_run": false,
+  "automated_consensus_exists": false,
+  "target_model_scoring_run": false,
+  "development_only": true,
+  "validation_use_forbidden": true,
+  "next_gate": "Implement and verify the theory-neutral local/offline human calibration UI against this exact LPHB2 handoff. Only then may an independent blind human first pass be collected and frozen; automated coding remains blocked until that human pass is frozen."
+}
