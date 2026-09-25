@@ -36,8 +36,8 @@ paths:
       operationId: getParticipantProgress
       summary: Get participant-safe progress
       description: >-
-        Safe before reveal. Returns coverage and general candidate discrimination,
-        never the true birth-state/date rank.
+        Safe before reveal. Returns mapped-question evidence quality and general
+        candidate discrimination, never the true birth-state/date rank.
       parameters:
         - $ref: '#/components/parameters/SessionId'
       responses:
@@ -87,15 +87,14 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                additionalProperties: true
+                $ref: '#/components/schemas/PublicEvidenceRecord'
   /v1/participant-sessions/{session_id}/lock:
     post:
       operationId: lockParticipantConfirmatoryEvidence
       summary: Lock pre-reveal confirmatory evidence
       description: >-
-        Freezes the active pre-reveal trait/behavior response set and computes the
-        confirmatory rank without exposing that rank yet.
+        A configured owner-pilot route may reject lock while a frozen mapped question
+        lacks adequate, consistency-checked evidence.
       parameters:
         - $ref: '#/components/parameters/SessionId'
       responses:
@@ -104,16 +103,13 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                additionalProperties: true
+                $ref: '#/components/schemas/PublicConfirmatoryLock'
   /v1/participant-sessions/{session_id}/reveal:
     post:
       operationId: revealParticipantResult
       summary: Reveal frozen predictions and confirmatory rank
       description: >-
-        Available only after confirmatory lock. Returns the true birth state,
-        confirmatory birth-state/date ranking, and dimension-level comparison to
-        the predictions frozen before answers.
+        Available only after a confirmatory lock.
       parameters:
         - $ref: '#/components/parameters/SessionId'
       responses:
@@ -238,9 +234,6 @@ components:
         question_id:
           type: [string, 'null']
           default: null
-        cluster_id:
-          type: [string, 'null']
-          default: null
         answer:
           type: [string, 'null']
           default: null
@@ -281,9 +274,61 @@ components:
         counterexample_text:
           type: [string, 'null']
           default: null
+        minimum_evidence_passed:
+          type: boolean
+          default: false
+          description: >-
+            True only when the selected question's minimum-evidence requirement
+            has actually been met.
+        consistency_status:
+          type: string
+          enum: [not_checked, consistent, reconciled, unresolved]
+          default: not_checked
+        quality_rationale:
+          type: [string, 'null']
+          default: null
+          description: >-
+            Evidence-specific reason for passing the minimum and consistency gates.
+            Required by the server for adequate trait/behavior evidence.
         supersedes_evidence_id:
           type: [string, 'null']
           default: null
+    PublicEvidenceRecord:
+      type: object
+      additionalProperties: false
+      required: [schema_version, evidence_id, session_id, phase, created_at_utc, evidence]
+      properties:
+        schema_version: {type: string, const: participant-public-evidence-v1}
+        evidence_id: {type: string}
+        session_id: {type: string}
+        phase:
+          type: string
+          enum: [confirmatory_blind, posthoc_exploratory]
+        created_at_utc: {type: string, format: date-time}
+        evidence:
+          $ref: '#/components/schemas/EvidenceInput'
+    PublicConfirmatoryLock:
+      type: object
+      additionalProperties: false
+      required:
+        - schema_version
+        - session_id
+        - locked_at_utc
+        - evidence_count
+        - scoring_response_count
+        - scoring_responses_sha256
+        - excluded_non_natal_evidence_count
+      properties:
+        schema_version: {type: string, const: participant-public-confirmatory-lock-v1}
+        session_id: {type: string}
+        locked_at_utc: {type: string, format: date-time}
+        evidence_count: {type: integer, minimum: 0}
+        scoring_response_count: {type: integer, minimum: 0}
+        scoring_responses_sha256: {type: string, pattern: '^[a-f0-9]{64}$'}
+        excluded_non_natal_evidence_count: {type: integer, minimum: 0}
+        evidence_quality_contract_version: {type: [string, 'null']}
+        adequately_assessed_mapped_question_count: {type: [integer, 'null'], minimum: 0}
+        mapped_scoreable_question_count: {type: [integer, 'null'], minimum: 0}
     PublicProgress:
       type: object
       additionalProperties: false
@@ -293,8 +338,11 @@ components:
         - confirmatory_observation_count
         - scoreable_observation_count
         - non_natal_observation_count
-        - scoreable_question_count
-        - scoreable_coverage
+        - mapped_scoreable_question_count
+        - mapped_scoreable_coverage
+        - adequately_assessed_mapped_question_count
+        - unassessed_mapped_question_count
+        - mapped_question_quality_gate_passed
         - true_birth_rank_concealed
       properties:
         session_id: {type: string}
@@ -309,8 +357,22 @@ components:
         confirmatory_observation_count: {type: integer, minimum: 0}
         scoreable_observation_count: {type: integer, minimum: 0}
         non_natal_observation_count: {type: integer, minimum: 0}
-        scoreable_question_count: {type: integer, minimum: 0}
-        scoreable_coverage: {type: number, minimum: 0, maximum: 1}
+        mapped_scoreable_question_count:
+          type: integer
+          minimum: 0
+          description: Count of frozen mapped questions in the active runtime.
+        mapped_scoreable_coverage:
+          type: number
+          minimum: 0
+          maximum: 1
+          description: Coverage of frozen mapped questions by scoreable evidence.
+        adequately_assessed_mapped_question_count: {type: integer, minimum: 0}
+        unassessed_mapped_question_count: {type: integer, minimum: 0}
+        mapped_question_quality_gate_passed:
+          type: boolean
+          description: >-
+            True only when each frozen mapped question has adequate,
+            consistency-checked evidence. This is not evidence of model validity.
         candidate_state_count:
           type: [integer, 'null']
         top_state_tie_count:

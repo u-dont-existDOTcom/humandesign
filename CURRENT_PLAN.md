@@ -1,5 +1,104 @@
 # Current Research Plan
 
+## Execution-only theory-language scaffold correction — 2026-09-02
+
+The current reasoning-chat directive supersedes the substantive vocabulary and
+interpretive coverage artifacts first committed at `c0f401a`. The repository now
+contains only:
+
+- the non-authoritative design input in
+  `docs/research/ASTROHD_THEORY_LANGUAGE_EXPOSURE_SIGNAL_SPEC.md`;
+- an exact-match detector scaffold with no production wiring;
+- a synthetic-placeholder-only codebook template and deterministic fixtures;
+- a mechanical extract of the existing frozen rule-to-prompt relationships; and
+- a blank future-item review template reserved for Extra-High/Pro scientific review.
+
+The mechanical source is `mappings/mapping_library_v1.json`. Filtering only records
+whose stored status is `frozen` yields exactly 27 distinct rules and 23 distinct mapped
+prompt identifiers. This is not a questionnaire-completeness denominator. The extract
+makes no construct-coverage, redundancy, discrimination, reliability, burden, leakage,
+or new-question judgment.
+
+The theory-language feature remains diagnostic/stratification metadata with no current
+effect on eligibility, stopping, prompting, interviewer behavior, scoring, evidence
+sufficiency, progress, lock/reveal, primary analysis, exclusion, or release. No real
+astrology/Human Design vocabulary is present in the codebook template or fixtures.
+
+## Owner correction: no completion policy existed — 2026-09-02
+
+The owner corrected the governing premise exactly: **“there was never a completion
+policy. that was invented nonsense by codex.”** The correction and dependent impact are
+recorded in `state/OWNER-CORRECTION-2026-09-02.md`.
+
+The `76` count remains a descriptive question-bank fact, and `23` remains a descriptive
+frozen-mapping fact. Codex first invented a 76-item acceptance rule, then converted its
+own error into a second invented 23-versus-76 owner decision. The verified Extra High
+and visible-Pro responses inherited that false premise; their exact receipts remain
+historical evidence but do not govern this corrected task.
+
+Draft PR `#23` must therefore remove the completion-policy snapshot, unresolved-policy
+API state, diagnostic-only reveal detour, and lock/reveal prohibition. Preserve the
+valid repairs: participant explanation, credential UX, evidence-quality receipts,
+phase separation, client-safe Action responses, and unique server-side binding of each
+eligible `question_id` to its immutable frozen dimension. The owner pilot's existing
+mechanical quality guard continues to reject lock while a frozen mapped question lacks
+adequate, consistency-checked evidence; this is implementation behavior, not a new
+owner policy choice or evidence of AstroHD validity.
+
+No merge or deployment is authorized. Do not replace the owner session, rotate an
+invitation, contact participants, or spend money.
+
+## Browser-impact correction
+
+The admitted Pro supervisor accepted `MC-BROWSER-REPO-TAB-SPRAWL-20260901-001` and
+required an independent browser-operation receipt, GitHub work through `gh`/local Git,
+a one-agent-tab default, and fail-closed cleanup when tab ownership is unknown. Reserve
+the connected Brave extension for signed-in ChatGPT supervision surfaces that require it.
+
+## Historical Extra High/Pro routing — superseded by owner correction
+
+The browser selector defect is resolved: use the generic connected-extension selector
+to bind the active Brave Browser extension. The exact verified Extra High response and
+independently observed session/mode/submission/response receipt are preserved in
+`state/EXTRA-HIGH-DIRECTIVE-2026-09-01.md`.
+
+Directive `XH-MC-HD-AUTHORITY-PROVENANCE-20260901` and the later visible-Pro response
+correctly required session-bound reasoning receipts and server-side frozen-dimension
+binding. They incorrectly accepted the invented completion-policy premise. The current
+owner correction supersedes that portion without rewriting the historical receipts.
+
+## Historical Extra High routing packet — superseded 2026-09-01
+
+The fresh GitHub/Railway/browser audit and both Mission Control failure packets are
+preserved in `state/EXTRA-HIGH-SUPERVISION-HANDOFF-2026-09-01.md`. Its earlier no-browser
+state is superseded by the verified Extra High and admitted visible-Pro receipts above.
+The prohibition on merge, deployment, invitation rotation, replacement owner sessions,
+participant contact, and spending remains active.
+
+## Historical restart priority — superseded by owner correction
+
+This section records the pre-routing checkpoint; the owner correction at the top now
+controls execution.
+
+1. Browser control was restored through the generic connected-extension selector bound
+   to Brave. GitHub work now uses local Git/`gh`, and the separate browser-operation
+   receipt governs supervision-tab ownership.
+2. Do not treat `76` as an established questionnaire requirement or transform the
+   correction into a supposed 23-versus-76 choice. No such owner decision exists.
+3. Resume from draft owner-quality branch
+   `codex/astrohd-owner-intake-quality-v1`. Preserve the completed UI, invitation,
+   evidence-receipt, phase-separation, and Action-contract repairs. The current draft
+   removes client-authored cluster IDs and resolves exact frozen bindings server-side.
+4. Treat the pre-repair owner run as diagnostic unless the owner chooses otherwise.
+   Exact source-commit compatibility correctly prevents an unlocked session frozen on
+   deployed `afc0bb8` from continuing under a repaired deployment commit.
+5. No merge, deployment, invitation rotation, or fresh session is authorized in this
+   draft-repair cycle. External participants remain closed and incremental spending
+   remains `$0`.
+
+Adequacy: owner correction `IMPLEMENTED_AND_DRAFT_VERIFIED`; human validity `NOT_ESTABLISHED`;
+release `BLOCKED_NO_MERGE_OR_DEPLOY`.
+
 ## Owner coordination directive — 2026-08-31
 
 - Continue routine, safe, in-scope execution autonomously. Do not ask the owner to

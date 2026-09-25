@@ -1,0 +1,401 @@
+{
+  "schema_version": "astrohd-frozen-rule-prompt-mapping-extract-v1",
+  "source": {
+    "path": "mappings/mapping_library_v1.json",
+    "sha256": "3424672432f7f071ec90ef9ddce52a67ff6794911e92b1a1e04f079262ea6200",
+    "status_filter": "frozen"
+  },
+  "distinct_rule_count": 27,
+  "distinct_mapped_prompt_count": 23,
+  "rules": [
+    {
+      "rule_identifier": "MAP-AUTH-EMOTIONAL-D01",
+      "mapped_prompt_count": 1,
+      "mapped_prompt_identifiers": [
+        "D01"
+      ]
+    },
+    {
+      "rule_identifier": "MAP-AUTH-EMOTIONAL-D03",
+      "mapped_prompt_count": 1,
+      "mapped_prompt_identifiers": [
+        "D03"
+      ]
+    },
+    {
+      "rule_identifier": "MAP-AUTH-SACRAL-D01",
+      "mapped_prompt_count": 1,
+      "mapped_prompt_identifiers": [
+        "D01"
+      ]
+    },
+    {
+      "rule_identifier": "MAP-AUTH-SPLENIC-D01",
+      "mapped_prompt_count": 1,
+      "mapped_prompt_identifiers": [
+        "D01"
+      ]
+    },
+    {
+      "rule_identifier": "MAP-AUTH-SPLENIC-D02",
+      "mapped_prompt_count": 1,
+      "mapped_prompt_identifiers": [
+        "D02"
+      ]
+    },
+    {
+      "rule_identifier": "MAP-CENTER-EGO-UNDEFINED-C03",
+      "mapped_prompt_count": 1,
+      "mapped_prompt_identifiers": [
+        "C03"
+      ]
+    },
+    {
+      "rule_identifier": "MAP-CENTER-G-DEFINED-D07",
+      "mapped_prompt_count": 1,
+      "mapped_prompt_identifiers": [
+        "D07"
+      ]
+    },
+    {
+      "rule_identifier": "MAP-CENTER-G-UNDEFINED-C09",
+      "mapped_prompt_count": 1,
+      "mapped_prompt_identifiers": [
+        "C09"
+      ]
+    },
+    {
+      "rule_identifier": "MAP-CENTER-G-UNDEFINED-D07",
+      "mapped_prompt_count": 1,
+      "mapped_prompt_identifiers": [
+        "D07"
+      ]
+    },
+    {
+      "rule_identifier": "MAP-CENTER-ROOT-UNDEFINED-C07",
+      "mapped_prompt_count": 1,
+      "mapped_prompt_identifiers": [
+        "C07"
+      ]
+    },
+    {
+      "rule_identifier": "MAP-CENTER-SACRAL-DEFINED-C08",
+      "mapped_prompt_count": 1,
+      "mapped_prompt_identifiers": [
+        "C08"
+      ]
+    },
+    {
+      "rule_identifier": "MAP-CENTER-SACRAL-UNDEFINED-C08",
+      "mapped_prompt_count": 1,
+      "mapped_prompt_identifiers": [
+        "C08"
+      ]
+    },
+    {
+      "rule_identifier": "MAP-CENTER-SOLARPLEXUS-DEFINED-C02",
+      "mapped_prompt_count": 1,
+      "mapped_prompt_identifiers": [
+        "C02"
+      ]
+    },
+    {
+      "rule_identifier": "MAP-CENTER-SOLARPLEXUS-UNDEFINED-C01",
+      "mapped_prompt_count": 1,
+      "mapped_prompt_identifiers": [
+        "C01"
+      ]
+    },
+    {
+      "rule_identifier": "MAP-PROFILE-LINE1-P01",
+      "mapped_prompt_count": 1,
+      "mapped_prompt_identifiers": [
+        "P01"
+      ]
+    },
+    {
+      "rule_identifier": "MAP-PROFILE-LINE2-P02",
+      "mapped_prompt_count": 1,
+      "mapped_prompt_identifiers": [
+        "P02"
+      ]
+    },
+    {
+      "rule_identifier": "MAP-PROFILE-LINE2-P09",
+      "mapped_prompt_count": 1,
+      "mapped_prompt_identifiers": [
+        "P09"
+      ]
+    },
+    {
+      "rule_identifier": "MAP-PROFILE-LINE3-P03",
+      "mapped_prompt_count": 1,
+      "mapped_prompt_identifiers": [
+        "P03"
+      ]
+    },
+    {
+      "rule_identifier": "MAP-PROFILE-LINE3-P11",
+      "mapped_prompt_count": 1,
+      "mapped_prompt_identifiers": [
+        "P11"
+      ]
+    },
+    {
+      "rule_identifier": "MAP-PROFILE-LINE4-P10",
+      "mapped_prompt_count": 1,
+      "mapped_prompt_identifiers": [
+        "P10"
+      ]
+    },
+    {
+      "rule_identifier": "MAP-PROFILE-LINE5-P05",
+      "mapped_prompt_count": 1,
+      "mapped_prompt_identifiers": [
+        "P05"
+      ]
+    },
+    {
+      "rule_identifier": "MAP-PROFILE-LINE6-P07",
+      "mapped_prompt_count": 1,
+      "mapped_prompt_identifiers": [
+        "P07"
+      ]
+    },
+    {
+      "rule_identifier": "MAP-PROFILE-LINE6-P12",
+      "mapped_prompt_count": 1,
+      "mapped_prompt_identifiers": [
+        "P12"
+      ]
+    },
+    {
+      "rule_identifier": "MAP-TYPE-GENERATOR-S02",
+      "mapped_prompt_count": 1,
+      "mapped_prompt_identifiers": [
+        "S02"
+      ]
+    },
+    {
+      "rule_identifier": "MAP-TYPE-GENERATOR-S05",
+      "mapped_prompt_count": 1,
+      "mapped_prompt_identifiers": [
+        "S05"
+      ]
+    },
+    {
+      "rule_identifier": "MAP-TYPE-PROJECTOR-S03",
+      "mapped_prompt_count": 1,
+      "mapped_prompt_identifiers": [
+        "S03"
+      ]
+    },
+    {
+      "rule_identifier": "MAP-TYPE-PROJECTOR-S04",
+      "mapped_prompt_count": 1,
+      "mapped_prompt_identifiers": [
+        "S04"
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "prompt_identifier": "C01",
+      "mapped_rule_count": 1,
+      "mapped_rule_identifiers": [
+        "MAP-CENTER-SOLARPLEXUS-UNDEFINED-C01"
+      ]
+    },
+    {
+      "prompt_identifier": "C02",
+      "mapped_rule_count": 1,
+      "mapped_rule_identifiers": [
+        "MAP-CENTER-SOLARPLEXUS-DEFINED-C02"
+      ]
+    },
+    {
+      "prompt_identifier": "C03",
+      "mapped_rule_count": 1,
+      "mapped_rule_identifiers": [
+        "MAP-CENTER-EGO-UNDEFINED-C03"
+      ]
+    },
+    {
+      "prompt_identifier": "C07",
+      "mapped_rule_count": 1,
+      "mapped_rule_identifiers": [
+        "MAP-CENTER-ROOT-UNDEFINED-C07"
+      ]
+    },
+    {
+      "prompt_identifier": "C08",
+      "mapped_rule_count": 2,
+      "mapped_rule_identifiers": [
+        "MAP-CENTER-SACRAL-DEFINED-C08",
+        "MAP-CENTER-SACRAL-UNDEFINED-C08"
+      ]
+    },
+    {
+      "prompt_identifier": "C09",
+      "mapped_rule_count": 1,
+      "mapped_rule_identifiers": [
+        "MAP-CENTER-G-UNDEFINED-C09"
+      ]
+    },
+    {
+      "prompt_identifier": "D01",
+      "mapped_rule_count": 3,
+      "mapped_rule_identifiers": [
+        "MAP-AUTH-EMOTIONAL-D01",
+        "MAP-AUTH-SACRAL-D01",
+        "MAP-AUTH-SPLENIC-D01"
+      ]
+    },
+    {
+      "prompt_identifier": "D02",
+      "mapped_rule_count": 1,
+      "mapped_rule_identifiers": [
+        "MAP-AUTH-SPLENIC-D02"
+      ]
+    },
+    {
+      "prompt_identifier": "D03",
+      "mapped_rule_count": 1,
+      "mapped_rule_identifiers": [
+        "MAP-AUTH-EMOTIONAL-D03"
+      ]
+    },
+    {
+      "prompt_identifier": "D07",
+      "mapped_rule_count": 2,
+      "mapped_rule_identifiers": [
+        "MAP-CENTER-G-DEFINED-D07",
+        "MAP-CENTER-G-UNDEFINED-D07"
+      ]
+    },
+    {
+      "prompt_identifier": "P01",
+      "mapped_rule_count": 1,
+      "mapped_rule_identifiers": [
+        "MAP-PROFILE-LINE1-P01"
+      ]
+    },
+    {
+      "prompt_identifier": "P02",
+      "mapped_rule_count": 1,
+      "mapped_rule_identifiers": [
+        "MAP-PROFILE-LINE2-P02"
+      ]
+    },
+    {
+      "prompt_identifier": "P03",
+      "mapped_rule_count": 1,
+      "mapped_rule_identifiers": [
+        "MAP-PROFILE-LINE3-P03"
+      ]
+    },
+    {
+      "prompt_identifier": "P05",
+      "mapped_rule_count": 1,
+      "mapped_rule_identifiers": [
+        "MAP-PROFILE-LINE5-P05"
+      ]
+    },
+    {
+      "prompt_identifier": "P07",
+      "mapped_rule_count": 1,
+      "mapped_rule_identifiers": [
+        "MAP-PROFILE-LINE6-P07"
+      ]
+    },
+    {
+      "prompt_identifier": "P09",
+      "mapped_rule_count": 1,
+      "mapped_rule_identifiers": [
+        "MAP-PROFILE-LINE2-P09"
+      ]
+    },
+    {
+      "prompt_identifier": "P10",
+      "mapped_rule_count": 1,
+      "mapped_rule_identifiers": [
+        "MAP-PROFILE-LINE4-P10"
+      ]
+    },
+    {
+      "prompt_identifier": "P11",
+      "mapped_rule_count": 1,
+      "mapped_rule_identifiers": [
+        "MAP-PROFILE-LINE3-P11"
+      ]
+    },
+    {
+      "prompt_identifier": "P12",
+      "mapped_rule_count": 1,
+      "mapped_rule_identifiers": [
+        "MAP-PROFILE-LINE6-P12"
+      ]
+    },
+    {
+      "prompt_identifier": "S02",
+      "mapped_rule_count": 1,
+      "mapped_rule_identifiers": [
+        "MAP-TYPE-GENERATOR-S02"
+      ]
+    },
+    {
+      "prompt_identifier": "S03",
+      "mapped_rule_count": 1,
+      "mapped_rule_identifiers": [
+        "MAP-TYPE-PROJECTOR-S03"
+      ]
+    },
+    {
+      "prompt_identifier": "S04",
+      "mapped_rule_count": 1,
+      "mapped_rule_identifiers": [
+        "MAP-TYPE-PROJECTOR-S04"
+      ]
+    },
+    {
+      "prompt_identifier": "S05",
+      "mapped_rule_count": 1,
+      "mapped_rule_identifiers": [
+        "MAP-TYPE-GENERATOR-S05"
+      ]
+    }
+  ],
+  "prompts_shared_by_multiple_rules": [
+    {
+      "prompt_identifier": "C08",
+      "mapped_rule_count": 2,
+      "mapped_rule_identifiers": [
+        "MAP-CENTER-SACRAL-DEFINED-C08",
+        "MAP-CENTER-SACRAL-UNDEFINED-C08"
+      ]
+    },
+    {
+      "prompt_identifier": "D01",
+      "mapped_rule_count": 3,
+      "mapped_rule_identifiers": [
+        "MAP-AUTH-EMOTIONAL-D01",
+        "MAP-AUTH-SACRAL-D01",
+        "MAP-AUTH-SPLENIC-D01"
+      ]
+    },
+    {
+      "prompt_identifier": "D07",
+      "mapped_rule_count": 2,
+      "mapped_rule_identifiers": [
+        "MAP-CENTER-G-DEFINED-D07",
+        "MAP-CENTER-G-UNDEFINED-D07"
+      ]
+    }
+  ],
+  "rules_mapped_to_multiple_prompts": [],
+  "acceptance": {
+    "expected_distinct_rule_count": 27,
+    "expected_distinct_mapped_prompt_count": 23,
+    "counts_match": true
+  }
+}

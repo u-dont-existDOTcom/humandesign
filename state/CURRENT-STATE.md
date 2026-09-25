@@ -1,5 +1,172 @@
 # Current state
 
+## Execution-only theory-language scaffold — 2026-09-02
+
+- A clean ChatGPT Chat session on the signed-in `u-dont-exist.com` Pro account was
+  visibly set to Extra High before submission and after the completed response.
+  Canonical session `6a9847f8-3a44-83ea-9b41-181a240b2c26`; prompt SHA-256
+  `b4cb82060df56901cc52e1cc3490887b2a3adc45c710861601931fd37832a9e7`; response
+  SHA-256 `ba0080b9a4f46fab4b69da3b451e4846342f87332563925df43886136d07665a`.
+  Full observed-surface receipt:
+  `state/EXTRA-HIGH-CONTAMINATION-COVERAGE-REVIEW-2026-09-02.md`.
+- The later execution-only directive supersedes the first `c0f401a` implementation's
+  real vocabulary and interpretive coverage analysis. Those artifacts are removed from
+  the current tree rather than treated as scientific authority.
+- The current scaffold uses only synthetic placeholder terms, exact normalized phrase
+  matching, explicit language metadata, and optional authorized stance/provenance
+  annotations. Stance defaults to `stance_unknown`; no automatic semantic stance,
+  translation, fuzzy, embedding, LLM, or chart-fit path exists.
+- The exact frozen mapping source is `mappings/mapping_library_v1.json`. A mechanical
+  status=`frozen` extract returns exactly 27 distinct rules and 23 distinct mapped
+  prompt identifiers. It makes no completeness, coverage, redundancy, quality, burden,
+  leakage, or new-question judgment.
+- The scaffold changes no participant runtime, questionnaire, eligibility, stopping,
+  prompting, evidence sufficiency, scoring, progress, lock/reveal, primary analysis,
+  exclusion, or release behavior.
+- No merge, deployment, invitation/session replacement, participant contact, or
+  spending is authorized.
+
+## Owner correction supersedes invented completion-policy premise — 2026-09-02
+
+- Exact owner correction: **“there was never a completion policy. that was invented
+  nonsense by codex.”** Durable correction and dependency audit:
+  `state/OWNER-CORRECTION-2026-09-02.md`.
+- Codex first inferred 76 non-validation records as an acceptance rule, then falsely
+  reframed the correction as an unresolved owner choice among 23, 76, or another
+  denominator. That second premise was also invented.
+- The Extra High and visible-Pro receipts below are preserved as historical routing
+  evidence. Their server-side binding and reasoning-surface provenance requirements
+  remain useful; their completion-policy conclusions are superseded.
+- Active repair removes completion-policy storage/API state and restores ordinary
+  lock/reveal. The owner pilot retains its existing mechanical quality guard over the
+  frozen mapped questions, plus the repaired evidence-quality receipts and unique
+  server-side dimension binding.
+- Human Design PR `#23` and Mission Control PR `#52` remain drafts. No merge,
+  deployment, session replacement, invitation rotation, participant contact, or
+  spending is authorized.
+
+## Historical visible-Pro directive — superseded in part 2026-09-02
+
+- The first clean meta-review attempt used Extra High on a Pro account and is therefore
+  non-authoritative for the required visible-Pro lane. Its self-rejection and hashes are
+  recorded in `state/PRO-MODE-ROUTING-ATTEMPT-2026-09-01.md` under incident
+  `MC-PRO-MODE-RECEIPT-MISMATCH-20260901-001`.
+- The same single ChatGPT tab was corrected from reasoning power 4 of 5 (Extra High) to
+  5 of 5 (Pro). Session `6a974b8a-31dc-83ea-90b5-f653b825a631` has verified signed-in
+  account, Chat surface, visible Pro pre-mode, staged-payload, same-session completed
+  response, response hash, and visible Pro post-mode receipts.
+- The admitted state is `PRO_META_REVIEW_ADMITTED_REVISE`. Complete response and
+  observed-UI receipt: `state/PRO-META-REVIEW-2026-09-01.md`. This is not a
+  cryptographic platform attestation.
+- Bounded draft directive
+  `PRO-HD-PR23-SERVER-BINDING-UNRESOLVED-COMPLETION-20260901` v1.0.0 correctly supports
+  server-resolved frozen question bindings but is non-authoritative on its invented
+  completion-policy premise after the owner's correction.
+
+## Browser-control incident routed to Pro — 2026-09-01
+
+- Incident `MC-BROWSER-REPO-TAB-SPRAWL-20260901-001`: six unnecessary GitHub tabs were
+  opened in the owner's active Brave session while assembling supervision evidence,
+  despite authenticated `gh` and a local checkout being available.
+- The tabs are closed or stale, supervision chats remain intact, and repository work now
+  uses `gh`/local Git. The evidence-bounded cause and candidate prevention control are in
+  `state/BROWSER-CONTROL-INCIDENT-2026-09-01.md`.
+- The admitted Pro meta-review accepted the incident and required an independent
+  browser-operation receipt, local Git/`gh` as the GitHub default, a one-agent-tab
+  limit absent a recorded exception, and fail-closed cleanup for unknown tab ownership.
+
+## Historical pre-correction draft checkpoints — 2026-09-02
+
+- Human Design draft PR `#23` is open, draft, and clean at exact head
+  `bf8fa12bb133faa042e20a7408a0990aadf72eb6`. Both GitHub `verify` checks passed.
+- Mission Control draft PR `#52` is open, draft, and clean at exact head
+  `abd27cfc47a16a5e92bfed86b5ef8e16f6daaf8d`. Its deterministic repository audit
+  passed. The branch retains the exact `6ec73802cf9439be7160f9ac2eea58c7bb95e683`
+  checkpoint as its reviewed base and records incident
+  `MC-BROWSER-REPO-TAB-SPRAWL-20260901-001` plus the authority-laundering repair.
+- Final Mission Control verification: 340 tests passed; the provenance validator passed
+  20 checks and executed 68 scenarios (25 claim, 31 reasoning, 12 browser); exact
+  Human Design evidence extraction passed; the deterministic audit reported no
+  findings; and a fresh independent read-only review returned `BLOCKERS: NONE`.
+- No browser tab was opened or closed during repository work after the incident. No
+  merge, deployment, invitation/session replacement, participant contact, or spending
+  occurred. The later owner correction establishes that the supposed completion-policy
+  decision never existed.
+
+## Verified Extra High directive / Pro queue — 2026-09-01
+
+- Browser recovery succeeded through the generic connected-extension selector, which
+  bound the active Brave Browser extension. The earlier default-selector conclusion that
+  no browser was available is superseded.
+- A clean signed-in ChatGPT Chat conversation was visibly set to Extra High and used for
+  the two exact Mission Control packets plus the Human Design/Railway receipt. Session:
+  `6a973fd5-9228-83e9-abad-b5f0a5510de2`; input payload SHA-256
+  `a65c4bcceeabf88b56ed3413c4183ed77f228cd8e5765a36c0ccec80a34b8309`; response
+  payload SHA-256 `e8772e5509415121933277881125378ba8a080dbb76bde29778235819e7d5607`.
+  Pre/post visible mode, submission, completed-response, and same-session receipts pass.
+- Complete response and independent receipt:
+  `state/EXTRA-HIGH-DIRECTIVE-2026-09-01.md`.
+- Directive `XH-MC-HD-AUTHORITY-PROVENANCE-20260901` v1.0.0 verdict is `REVISE`:
+  preserve the candidate claim-authority core but add authority ceilings, explicit
+  fact-to-criterion promotion, subject-bound provenance, bounded independent
+  reproduction, and semantic-reclassification failures; add session-bound reasoning
+  surface/account/mode/submission/response receipts.
+- Human Design directive portion retained after correction: remove `cluster_id` from
+  client input and derive it only from the unique frozen server-side prediction
+  dimension; reject missing, ambiguous, or injected bindings. The later instruction to
+  invent an absent policy state and block lock/reveal is superseded.
+- The required shared-Pro lane subsequently completed with visible Pro pre/post-mode,
+  same-session submission, and completed-response receipts. The admitted `REVISE`
+  response is preserved in `state/PRO-META-REVIEW-2026-09-01.md`; this older queue state
+  is superseded.
+
+## Historical supervision-routing checkpoint — superseded 2026-09-01
+
+- Fresh GitHub and Railway state, exact canonical pointers to both Mission Control failure
+  packets, and the verified-Extra-High routing prompt are preserved in
+  `state/EXTRA-HIGH-SUPERVISION-HANDOFF-2026-09-01.md`.
+- At that checkpoint, Human Design PR `#23` was at `69c2d57` and Mission Control PR
+  `#52` was at `6ec7380`. The no-browser and no-verdict state recorded there is
+  superseded by the verified Extra High and admitted visible-Pro receipts above.
+- Fresh Railway readback shows production `relationship-web` healthy on deployment
+  `907ed82b-ac87-4d45-9530-178921aab7e9`, exact `main` commit `afc0bb8`; PR `#23` is not
+  deployed. No mutation, secret/value access, participant-data access, spending, or
+  contact occurred.
+- Browser supervision routing is complete; GitHub work now uses local Git/`gh`.
+
+## Active owner-test defect repair — 2026-09-01
+
+- Owner evidence: the natal intro did not explain the combined AstroHD research
+  motivation; the GPT advanced after domain-limited, incomplete, and deliberately
+  random answers; the server allowed premature lock; credential/time/access controls
+  were unexplained.
+- Working branch: `codex/astrohd-owner-intake-quality-v1`, based on deployed main
+  `afc0bb82de0e481ae5a5d3453e0bcaf82b2a0286` (merged PR `#21`).
+- Implementation boundary: improve participant explanation and credentials UX; expose
+  frozen minimum-evidence requirements; require per-observation evidence-quality and
+  consistency receipts; keep legacy evidence readable but unscoreable; resolve unique
+  frozen dimensions server-side; and retain the owner pilot's mapped-question quality
+  gate before ordinary lock/reveal. Do not force tokens or infer a 76-item rule.
+- Magic-link boundary: the natal pilot intentionally keeps credentials out of URLs;
+  this is distinct from relationship-email recovery. The UI now provides one-click
+  copy of both credentials and explains the separation. Session authorization is now
+  independent of the active one-use invitation, with legacy receipt migration, so a
+  later test-code rotation cannot strand the current session.
+- The 81-item bank contains five validation-phase items; production has 27 frozen rules
+  spanning 23 unique question IDs. These are artifact facts, not rival policy options.
+  The owner never created the later supposed selection problem.
+- The admitted Pro directive resolves the Action defect by forbidding client-authored
+  cluster/binding fields and requiring exact server-side resolution from the immutable
+  prediction freeze. The browser was recovered through the generic connected-extension
+  selector bound to Brave; GitHub access stays on `gh`/local Git.
+- Current repaired-draft verification: 302 tests passed, one skipped because official
+  Swiss files are unavailable; strict mypy passed for 120 source files; touched Ruff,
+  both participant JavaScript syntax checks, OpenAPI parse/spec validation, and
+  `git diff --check` passed. Whole-repository Ruff retains unrelated baseline failures.
+- Adequacy: owner correction `IMPLEMENTED_AND_DRAFT_VERIFIED`; scientific
+  `HUMAN_VALIDITY_NOT_ESTABLISHED`; release
+  `BLOCKED_NO_MERGE_OR_DEPLOY`. Friends/public recruitment remains closed.
+
 ## Active task override — Issue #18 owner-only release smoke
 
 - As of: `2026-08-31`.
@@ -28,8 +195,9 @@
   `PENDING_OWNER_SESSION`, scientific validity `NOT_ESTABLISHED`, release
   `OPEN_OWNER_ONLY`.
 - Owner correction: natal AstroHD is now the first product/scientific test; AstroRRF
-  relationship work remains secondary because it depends on two natal layers. There
-  is no minimum-response gate before frozen predictions may be revealed.
+  relationship work remains secondary because it depends on two natal layers. The
+  earlier absence of a minimum-response gate is superseded by the 2026-09-01 active
+  evidence-quality repair above.
 - Current continuation: draft PR `#21`, branch `codex/issue18-release-receipt`, contains
   the relationship `[object Object]` formatter fix and the unmerged AstroHD-first owner
   pilot described in `docs/36_astrohd_owner_pilot.md`.

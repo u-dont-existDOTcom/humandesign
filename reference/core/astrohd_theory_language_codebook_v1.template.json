@@ -1,0 +1,44 @@
+{
+  "schema_version": "astrohd-theory-language-codebook-template-v1",
+  "status": "draft_synthetic_template_non_authority",
+  "version": "SYNTHETIC-TEMPLATE-V1",
+  "freeze_identifier": "SYNTHETIC-FREEZE-EXAMPLE-V1",
+  "entries": [
+    {
+      "entry_id": "SYNTHETIC_THEORYTERM_ALPHA",
+      "exact_phrase": "THEORYTERM_ALPHA",
+      "language_code": "x-synthetic",
+      "lexical_specificity": "theory_specific",
+      "rationale_or_provenance_note": "Synthetic exact-token example only.",
+      "version": "SYNTHETIC-TEMPLATE-V1",
+      "freeze_identifier": "SYNTHETIC-FREEZE-EXAMPLE-V1"
+    },
+    {
+      "entry_id": "SYNTHETIC_THEORY_PHRASE_BETA",
+      "exact_phrase": "THEORY PHRASE BETA",
+      "language_code": "x-synthetic",
+      "lexical_specificity": "theory_specific",
+      "rationale_or_provenance_note": "Synthetic exact-phrase example only.",
+      "version": "SYNTHETIC-TEMPLATE-V1",
+      "freeze_identifier": "SYNTHETIC-FREEZE-EXAMPLE-V1"
+    },
+    {
+      "entry_id": "SYNTHETIC_CONTEXTTERM_DELTA",
+      "exact_phrase": "CONTEXTTERM_DELTA",
+      "language_code": "x-synthetic",
+      "lexical_specificity": "context_dependent",
+      "rationale_or_provenance_note": null,
+      "version": "SYNTHETIC-TEMPLATE-V1",
+      "freeze_identifier": "SYNTHETIC-FREEZE-EXAMPLE-V1"
+    },
+    {
+      "entry_id": "SYNTHETIC_COMMONWORD_GAMMA",
+      "exact_phrase": "COMMONWORD_GAMMA",
+      "language_code": "x-synthetic",
+      "lexical_specificity": "ordinary_language_excluded",
+      "rationale_or_provenance_note": "Synthetic ordinary-language exclusion example only.",
+      "version": "SYNTHETIC-TEMPLATE-V1",
+      "freeze_identifier": "SYNTHETIC-FREEZE-EXAMPLE-V1"
+    }
+  ]
+}

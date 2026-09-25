@@ -1,0 +1,1563 @@
+{
+  "audited_head": "b5fd8b6a8c3e59374c1ac33bd518ed59bd81cdd5",
+  "base_commit": "afc0bb82de0e481ae5a5d3453e0bcaf82b2a0286",
+  "coordination_document_headings": [
+    {
+      "first_h1": "Current Research Plan",
+      "h2_headings": [
+        "Execution-only theory-language scaffold correction — 2026-09-02",
+        "Owner correction: no completion policy existed — 2026-09-02",
+        "Browser-impact correction",
+        "Historical Extra High/Pro routing — superseded by owner correction",
+        "Historical Extra High routing packet — superseded 2026-09-01",
+        "Historical restart priority — superseded by owner correction",
+        "Owner coordination directive — 2026-08-31",
+        "Active Issue #18 execution state — 2026-08-31",
+        "Core hypothesis",
+        "Current implementation priority",
+        "Immediate proof-of-concept ladder",
+        "Exact-state search rule",
+        "Precomputed universe rule",
+        "Adaptive questionnaire",
+        "Synthetic validation first",
+        "Human model development",
+        "Three decoder tracks",
+        "Responder heterogeneity",
+        "Trauma/body-access rule",
+        "Controls",
+        "Primary human success metrics",
+        "Authority practical-use warning"
+      ],
+      "path": "CURRENT_PLAN.md",
+      "sha256": "5cfafaad71da007baf93fc6a12fc6471b4898c19d1ad262089cc7745adf46c17"
+    },
+    {
+      "first_h1": "AstroHD-first owner pilot",
+      "h2_headings": [
+        "Why this is the first test",
+        "Participant path",
+        "Interview evidence-quality gate",
+        "What is and is not scored",
+        "Learning behavior",
+        "Runtime and integrity boundary",
+        "Verification receipt"
+      ],
+      "path": "docs/36_astrohd_owner_pilot.md",
+      "sha256": "cc21d9fa1066d4ffc159f474681bff7fc3e997d0022058da218299d9ea311134"
+    },
+    {
+      "first_h1": "Current state",
+      "h2_headings": [
+        "Execution-only theory-language scaffold — 2026-09-02",
+        "Owner correction supersedes invented completion-policy premise — 2026-09-02",
+        "Historical visible-Pro directive — superseded in part 2026-09-02",
+        "Browser-control incident routed to Pro — 2026-09-01",
+        "Historical pre-correction draft checkpoints — 2026-09-02",
+        "Verified Extra High directive / Pro queue — 2026-09-01",
+        "Historical supervision-routing checkpoint — superseded 2026-09-01",
+        "Active owner-test defect repair — 2026-09-01",
+        "Active task override — Issue #18 owner-only release smoke"
+      ],
+      "path": "state/CURRENT-STATE.md",
+      "sha256": "ff2757c4142e64904a5e1cd207026af0cdbda096b30007a921c3c01b8dc5ba59"
+    },
+    {
+      "first_h1": "Owner correction: Codex invented a completion policy",
+      "h2_headings": [
+        "Exact owner source",
+        "Corrected provenance",
+        "Required dependency repair",
+        "Authority and boundaries"
+      ],
+      "path": "state/OWNER-CORRECTION-2026-09-02.md",
+      "sha256": "d20c5d64eb5dbed85bf8272e35619e17e145dc6fd98888cf6ff5aaf2b13a21d4"
+    }
+  ],
+  "core_fit_usage_inventory": {
+    "key_context_occurrence_count": 0,
+    "key_context_occurrences": [],
+    "occurrence_count": 10,
+    "occurrences": [
+      {
+        "column": 5,
+        "enclosing_function_or_class": "SymbolicScore",
+        "inside_max_or_min_key": false,
+        "inside_rank_equality_key": false,
+        "inside_sort_key": false,
+        "line": 43,
+        "matched_text": "core_fit",
+        "minimal_source_excerpt": "core_fit: float = Field(ge=0.0, le=100.0)",
+        "path": "src/hdmatch/model/symbolic_score.py"
+      },
+      {
+        "column": 5,
+        "enclosing_function_or_class": "score_symbolic",
+        "inside_max_or_min_key": false,
+        "inside_rank_equality_key": false,
+        "inside_sort_key": false,
+        "line": 171,
+        "matched_text": "core_fit",
+        "minimal_source_excerpt": "core_fit = _core_fit(core_support, library)",
+        "path": "src/hdmatch/model/symbolic_score.py"
+      },
+      {
+        "column": 17,
+        "enclosing_function_or_class": "score_symbolic",
+        "inside_max_or_min_key": false,
+        "inside_rank_equality_key": false,
+        "inside_sort_key": false,
+        "line": 171,
+        "matched_text": "core_fit",
+        "minimal_source_excerpt": "core_fit = _core_fit(core_support, library)",
+        "path": "src/hdmatch/model/symbolic_score.py"
+      },
+      {
+        "column": 9,
+        "enclosing_function_or_class": "score_symbolic",
+        "inside_max_or_min_key": false,
+        "inside_rank_equality_key": false,
+        "inside_sort_key": false,
+        "line": 177,
+        "matched_text": "core_fit",
+        "minimal_source_excerpt": "core_fit=core_fit,",
+        "path": "src/hdmatch/model/symbolic_score.py"
+      },
+      {
+        "column": 18,
+        "enclosing_function_or_class": "score_symbolic",
+        "inside_max_or_min_key": false,
+        "inside_rank_equality_key": false,
+        "inside_sort_key": false,
+        "line": 177,
+        "matched_text": "core_fit",
+        "minimal_source_excerpt": "core_fit=core_fit,",
+        "path": "src/hdmatch/model/symbolic_score.py"
+      },
+      {
+        "column": 6,
+        "enclosing_function_or_class": "_core_fit",
+        "inside_max_or_min_key": false,
+        "inside_rank_equality_key": false,
+        "inside_sort_key": false,
+        "line": 199,
+        "matched_text": "core_fit",
+        "minimal_source_excerpt": "def _core_fit(",
+        "path": "src/hdmatch/model/symbolic_score.py"
+      },
+      {
+        "column": 21,
+        "enclosing_function_or_class": "AstroHDParticipantBackend._score_states",
+        "inside_max_or_min_key": false,
+        "inside_rank_equality_key": false,
+        "inside_sort_key": false,
+        "line": 441,
+        "matched_text": "core_fit",
+        "minimal_source_excerpt": "core_fit=0.0,",
+        "path": "src/hdmatch/participant/backend.py"
+      },
+      {
+        "column": 13,
+        "enclosing_function_or_class": "FrozenSymbolicModel.score",
+        "inside_max_or_min_key": false,
+        "inside_rank_equality_key": false,
+        "inside_sort_key": false,
+        "line": 113,
+        "matched_text": "core_fit",
+        "minimal_source_excerpt": "core_fit=score.core_fit,",
+        "path": "src/hdmatch/runtime/symbolic_adapter.py"
+      },
+      {
+        "column": 27,
+        "enclosing_function_or_class": "FrozenSymbolicModel.score",
+        "inside_max_or_min_key": false,
+        "inside_rank_equality_key": false,
+        "inside_sort_key": false,
+        "line": 113,
+        "matched_text": ".core_fit",
+        "minimal_source_excerpt": "core_fit=score.core_fit,",
+        "path": "src/hdmatch/runtime/symbolic_adapter.py"
+      },
+      {
+        "column": 5,
+        "enclosing_function_or_class": "ScoredState",
+        "inside_max_or_min_key": false,
+        "inside_rank_equality_key": false,
+        "inside_sort_key": false,
+        "line": 138,
+        "matched_text": "core_fit",
+        "minimal_source_excerpt": "core_fit: float = Field(ge=0.0, le=100.0)",
+        "path": "src/hdmatch/schemas/core.py"
+      }
+    ],
+    "scanned_file_count": 120
+  },
+  "freeze_runtime_binding": {
+    "bound_fields": [
+      {
+        "active_runtime_expression": "self.code_commit",
+        "field": "source commit",
+        "frozen_expression": "freeze.code_commit"
+      },
+      {
+        "active_runtime_expression": "self.chart_engine.fingerprint",
+        "field": "chart engine",
+        "frozen_expression": "freeze.engine_fingerprint"
+      },
+      {
+        "active_runtime_expression": "self.model.library.model_version",
+        "field": "model version",
+        "frozen_expression": "freeze.model_version"
+      },
+      {
+        "active_runtime_expression": "self.model.model_sha256",
+        "field": "model bytes",
+        "frozen_expression": "freeze.model_sha256"
+      },
+      {
+        "active_runtime_expression": "self.model.mapping_sha256",
+        "field": "mapping bytes",
+        "frozen_expression": "freeze.mapping_sha256"
+      },
+      {
+        "active_runtime_expression": "self.question_bank.version",
+        "field": "question bank version",
+        "frozen_expression": "freeze.question_bank_version"
+      },
+      {
+        "active_runtime_expression": "self.model.question_bank_sha256",
+        "field": "question bank bytes",
+        "frozen_expression": "freeze.question_bank_sha256"
+      }
+    ],
+    "method_sha256": "a361d05c39624ca703fd562f301a87d8245773082044a6b26f35af066d52416c",
+    "path": "src/hdmatch/participant/backend.py",
+    "source_commit_binding": {
+      "active_runtime_expression": "self.code_commit",
+      "frozen_expression": "freeze.code_commit",
+      "present": true
+    }
+  },
+  "future_core_authorization_invariant": {
+    "path": "reference/research/astrohd_future_core_coverage_candidate_matrix_v1.json",
+    "row_count": 7,
+    "rows": [
+      {
+        "authorization_fields": {
+          "mapping_authorized": false,
+          "owner_policy": false,
+          "question_change_authorized": false,
+          "runtime_authorized": false
+        },
+        "target_id": "type_strategy.manifestor"
+      },
+      {
+        "authorization_fields": {
+          "mapping_authorized": false,
+          "owner_policy": false,
+          "question_change_authorized": false,
+          "runtime_authorized": false
+        },
+        "target_id": "type_strategy.reflector"
+      },
+      {
+        "authorization_fields": {
+          "mapping_authorized": false,
+          "owner_policy": false,
+          "question_change_authorized": false,
+          "runtime_authorized": false
+        },
+        "target_id": "authority.self_projected"
+      },
+      {
+        "authorization_fields": {
+          "mapping_authorized": false,
+          "owner_policy": false,
+          "question_change_authorized": false,
+          "runtime_authorized": false
+        },
+        "target_id": "authority.mental_environmental"
+      },
+      {
+        "authorization_fields": {
+          "mapping_authorized": false,
+          "owner_policy": false,
+          "question_change_authorized": false,
+          "runtime_authorized": false
+        },
+        "target_id": "authority.ego_manifested"
+      },
+      {
+        "authorization_fields": {
+          "mapping_authorized": false,
+          "owner_policy": false,
+          "question_change_authorized": false,
+          "runtime_authorized": false
+        },
+        "target_id": "authority.ego_projected"
+      },
+      {
+        "authorization_fields": {
+          "mapping_authorized": false,
+          "owner_policy": false,
+          "question_change_authorized": false,
+          "runtime_authorized": false
+        },
+        "target_id": "authority.lunar"
+      }
+    ],
+    "sha256": "1352b7222c0ddb69334f617c4f5cd0ec5ff51a3d741bc32e545f7d1d1049631f",
+    "target_ids": [
+      "authority.ego_manifested",
+      "authority.ego_projected",
+      "authority.lunar",
+      "authority.mental_environmental",
+      "authority.self_projected",
+      "type_strategy.manifestor",
+      "type_strategy.reflector"
+    ]
+  },
+  "historical_audit_invariants": {
+    "artifacts": [
+      {
+        "expected_sha256": "a113fb53de13f38d5053955975912a1fb194f527c57f610c82d0efc38bc32a70",
+        "path": "reference/audits/astrohd_cross_class_core_fit_v1.json",
+        "sha256": "a113fb53de13f38d5053955975912a1fb194f527c57f610c82d0efc38bc32a70"
+      },
+      {
+        "expected_sha256": "c9fb9ee6060c4bbb346c7ac6981a543d3d602a60bb1da83e245cea638a680103",
+        "path": "reference/audits/astrohd_rank_tiebreak_downstream_v1.json",
+        "sha256": "c9fb9ee6060c4bbb346c7ac6981a543d3d602a60bb1da83e245cea638a680103"
+      }
+    ],
+    "generator_results_against_current_source": [
+      {
+        "exception_class": "HistoricalAuditSourceMismatch",
+        "message": "historical audit describes pre-patch source and must not be regenerated against changed production semantics: src/hdmatch/participant/backend.py expected 80ad02402ec0ea3a094bcd2977e9843c68d296b198bcfc7e836ef71043313198 observed 8ceb0b18bcf6d9ddb0573b433c1d88802f5890e3ae4a8d9da53a778da673169f",
+        "output_created": false,
+        "script": "scripts/audit_astrohd_cross_class_core_fit.py"
+      },
+      {
+        "exception_class": "HistoricalAuditSourceMismatch",
+        "message": "historical audit describes pre-patch source and must not be regenerated against changed production semantics: src/hdmatch/participant/backend.py expected 80ad02402ec0ea3a094bcd2977e9843c68d296b198bcfc7e836ef71043313198 observed 8ceb0b18bcf6d9ddb0573b433c1d88802f5890e3ae4a8d9da53a778da673169f; src/hdmatch/participant/models.py expected a330d9c119b2ad3e5235601c4e87813be8a3ac1f87568a4b579be419181d661e observed d981b4c7f45bd61df0cd7b266a7b46583914a46a39b2153c35ad4fdef8d17dc0; src/hdmatch/participant/service.py expected cbec5178028ef6677628ad6d4b9765d02e2a3e615859edf0b9818e1cff05f621 observed b9c72a0075a7d64472c08e3a66602262582d69c262a61548bbd2c5318aed5d60; src/hdmatch/search/date_aggregator.py expected d358c0914f84d341b69ced1771c5d26a9818837ed24ae45c9808920e08c8a3ce observed 32a328413fcc4b90535e19c4ceda8aedfb2869e9f24db50e325e6c6322892b01",
+        "output_created": false,
+        "script": "scripts/audit_astrohd_rank_tiebreak_downstream.py"
+      }
+    ],
+    "prior_convergence_audit": {
+      "expected_sha256": "952565c9da16d683711f2bdae1fc8cae974f9c17ce98166a2de00b54d6856e73",
+      "path": "reference/audits/astrohd_pr23_convergence_v1.json",
+      "sha256": "952565c9da16d683711f2bdae1fc8cae974f9c17ce98166a2de00b54d6856e73"
+    }
+  },
+  "lock_receipt_contract": {
+    "active_openapi_superseded_literal_counts": {
+      "adequately_assessed_question_count": 0,
+      "complete_profile_required": 0,
+      "required_question_count": 0
+    },
+    "confirmatory_lock_field_names": [
+      "schema_version",
+      "session_id",
+      "locked_at_utc",
+      "evidence_ids",
+      "scoring_responses",
+      "scoring_responses_sha256",
+      "excluded_non_natal_evidence_count",
+      "evidence_quality_contract_version",
+      "adequately_assessed_mapped_question_count",
+      "mapped_scoreable_question_count",
+      "mapped_question_quality_gate_enforced"
+    ],
+    "current_internal_lock_fields": [
+      "adequately_assessed_mapped_question_count",
+      "mapped_scoreable_question_count",
+      "mapped_question_quality_gate_enforced"
+    ],
+    "current_public_lock_fields": [
+      "adequately_assessed_mapped_question_count",
+      "mapped_scoreable_question_count"
+    ],
+    "custom_gpt_openapi_schemas": [
+      {
+        "path": "reference/custom_gpt/participant_action_openapi_v1.yaml",
+        "public_confirmatory_lock_property_names": [
+          "schema_version",
+          "session_id",
+          "locked_at_utc",
+          "evidence_count",
+          "scoring_response_count",
+          "scoring_responses_sha256",
+          "excluded_non_natal_evidence_count",
+          "evidence_quality_contract_version",
+          "adequately_assessed_mapped_question_count",
+          "mapped_scoreable_question_count"
+        ],
+        "sha256": "a33b9168284f51b77ae897c39c2955a87ac5cc36456e134b428e75fa899081f5"
+      },
+      {
+        "path": "reference/custom_gpt/participant_interviewer_action_openapi_v1.yaml",
+        "public_confirmatory_lock_property_names": [
+          "schema_version",
+          "session_id",
+          "locked_at_utc",
+          "evidence_count",
+          "scoring_response_count",
+          "scoring_responses_sha256",
+          "excluded_non_natal_evidence_count",
+          "evidence_quality_contract_version",
+          "adequately_assessed_mapped_question_count",
+          "mapped_scoreable_question_count"
+        ],
+        "sha256": "0ff872fa5fcbd9b6f7a1b29f69f2fbc4821948d10e00b7cd3ba513e0621d2963"
+      }
+    ],
+    "lock_confirmatory_constructor_keywords": [
+      "session_id",
+      "locked_at_utc",
+      "evidence_ids",
+      "scoring_responses",
+      "scoring_responses_sha256",
+      "excluded_non_natal_evidence_count",
+      "evidence_quality_contract_version",
+      "adequately_assessed_mapped_question_count",
+      "mapped_scoreable_question_count",
+      "mapped_question_quality_gate_enforced"
+    ],
+    "public_confirmatory_lock_field_names": [
+      "schema_version",
+      "session_id",
+      "locked_at_utc",
+      "evidence_count",
+      "scoring_response_count",
+      "scoring_responses_sha256",
+      "excluded_non_natal_evidence_count",
+      "evidence_quality_contract_version",
+      "adequately_assessed_mapped_question_count",
+      "mapped_scoreable_question_count"
+    ],
+    "runtime_superseded_literal_counts": {
+      "adequately_assessed_question_count": 0,
+      "complete_profile_required": 0,
+      "required_question_count": 0
+    },
+    "superseded_lock_fields": [
+      "adequately_assessed_question_count",
+      "required_question_count",
+      "complete_profile_required"
+    ]
+  },
+  "mapping_question_bank_invariants": {
+    "descriptive_only_not_a_completeness_denominator": true,
+    "distinct_frozen_mapped_prompt_count": 23,
+    "distinct_frozen_mapped_prompt_ids": [
+      "C01",
+      "C02",
+      "C03",
+      "C07",
+      "C08",
+      "C09",
+      "D01",
+      "D02",
+      "D03",
+      "D07",
+      "P01",
+      "P02",
+      "P03",
+      "P05",
+      "P07",
+      "P09",
+      "P10",
+      "P11",
+      "P12",
+      "S02",
+      "S03",
+      "S04",
+      "S05"
+    ],
+    "distinct_frozen_rule_count": 27,
+    "distinct_frozen_rule_ids": [
+      "MAP-AUTH-EMOTIONAL-D01",
+      "MAP-AUTH-EMOTIONAL-D03",
+      "MAP-AUTH-SACRAL-D01",
+      "MAP-AUTH-SPLENIC-D01",
+      "MAP-AUTH-SPLENIC-D02",
+      "MAP-CENTER-EGO-UNDEFINED-C03",
+      "MAP-CENTER-G-DEFINED-D07",
+      "MAP-CENTER-G-UNDEFINED-C09",
+      "MAP-CENTER-G-UNDEFINED-D07",
+      "MAP-CENTER-ROOT-UNDEFINED-C07",
+      "MAP-CENTER-SACRAL-DEFINED-C08",
+      "MAP-CENTER-SACRAL-UNDEFINED-C08",
+      "MAP-CENTER-SOLARPLEXUS-DEFINED-C02",
+      "MAP-CENTER-SOLARPLEXUS-UNDEFINED-C01",
+      "MAP-PROFILE-LINE1-P01",
+      "MAP-PROFILE-LINE2-P02",
+      "MAP-PROFILE-LINE2-P09",
+      "MAP-PROFILE-LINE3-P03",
+      "MAP-PROFILE-LINE3-P11",
+      "MAP-PROFILE-LINE4-P10",
+      "MAP-PROFILE-LINE5-P05",
+      "MAP-PROFILE-LINE6-P07",
+      "MAP-PROFILE-LINE6-P12",
+      "MAP-TYPE-GENERATOR-S02",
+      "MAP-TYPE-GENERATOR-S05",
+      "MAP-TYPE-PROJECTOR-S03",
+      "MAP-TYPE-PROJECTOR-S04"
+    ],
+    "mapping_library": {
+      "expected_sha256": "3424672432f7f071ec90ef9ddce52a67ff6794911e92b1a1e04f079262ea6200",
+      "path": "mappings/mapping_library_v1.json",
+      "sha256": "3424672432f7f071ec90ef9ddce52a67ff6794911e92b1a1e04f079262ea6200",
+      "stored_frozen_mapping_count": 27
+    },
+    "question_bank": {
+      "expected_sha256": "31f813efc3da7263569ef010a8336b1b1b0c44801b7aa0f91e33b3fa4587d820",
+      "path": "reference/core/question_bank_v1.json",
+      "sha256": "31f813efc3da7263569ef010a8336b1b1b0c44801b7aa0f91e33b3fa4587d820"
+    }
+  },
+  "owner_correction_remnant_scan": {
+    "active_surfaces": {
+      "occurrence_count": 7,
+      "occurrences": [
+        {
+          "column": 25,
+          "line": 27,
+          "matched_term": "completion policy",
+          "minimal_excerpt": "## Owner correction: no completion policy existed — 2026-09-02",
+          "path": "CURRENT_PLAN.md"
+        },
+        {
+          "column": 45,
+          "line": 34,
+          "matched_term": "76-item acceptance",
+          "minimal_excerpt": "frozen-mapping fact. Codex first invented a 76-item acceptance rule, then converted its",
+          "path": "CURRENT_PLAN.md"
+        },
+        {
+          "column": 34,
+          "line": 35,
+          "matched_term": "23-versus-76",
+          "minimal_excerpt": "own error into a second invented 23-versus-76 owner decision. The verified Extra High",
+          "path": "CURRENT_PLAN.md"
+        },
+        {
+          "column": 42,
+          "line": 39,
+          "matched_term": "completion-policy",
+          "minimal_excerpt": "Draft PR `#23` must therefore remove the completion-policy snapshot, unresolved-policy",
+          "path": "CURRENT_PLAN.md"
+        },
+        {
+          "column": 49,
+          "line": 67,
+          "matched_term": "completion-policy",
+          "minimal_excerpt": "binding. They incorrectly accepted the invented completion-policy premise. The current",
+          "path": "CURRENT_PLAN.md"
+        },
+        {
+          "column": 31,
+          "line": 87,
+          "matched_term": "23-versus-76",
+          "minimal_excerpt": "correction into a supposed 23-versus-76 choice. No such owner decision exists.",
+          "path": "CURRENT_PLAN.md"
+        },
+        {
+          "column": 61,
+          "line": 108,
+          "matched_term": "23-versus-76",
+          "minimal_excerpt": "policy. Codex invented the 76-item rule and then invented a 23-versus-76 policy choice",
+          "path": "docs/36_astrohd_owner_pilot.md"
+        }
+      ],
+      "scanned_file_count": 130,
+      "scanned_paths": [
+        "CURRENT_PLAN.md",
+        "docs/36_astrohd_owner_pilot.md",
+        "reference/custom_gpt/authority_and_transit_guardrails.md",
+        "reference/custom_gpt/custom_gpt_instructions_under_8000.md",
+        "reference/custom_gpt/daily_hd_transit_task_prompts_v2.md",
+        "reference/custom_gpt/participant_action_openapi_v1.yaml",
+        "reference/custom_gpt/participant_interviewer_action_openapi_v1.yaml",
+        "reference/custom_gpt/participant_interviewer_instructions_under_8000_v1.md",
+        "reference/custom_gpt/participant_interviewer_instructions_v1.md",
+        "reference/custom_gpt/scientific_intake.html",
+        "src/hdmatch/__init__.py",
+        "src/hdmatch/api/__init__.py",
+        "src/hdmatch/api/app.py",
+        "src/hdmatch/api/errors.py",
+        "src/hdmatch/api/models.py",
+        "src/hdmatch/api/natal_pilot_app.py",
+        "src/hdmatch/api/natal_pilot_ui.py",
+        "src/hdmatch/api/participant.py",
+        "src/hdmatch/api/participant_app.py",
+        "src/hdmatch/api/relationship_adaptive_app.py",
+        "src/hdmatch/api/relationship_adaptive_ui.py",
+        "src/hdmatch/api/relationship_email_recovery.py",
+        "src/hdmatch/api/relationship_full_study_app.py",
+        "src/hdmatch/api/relationship_launch_app.py",
+        "src/hdmatch/api/relationship_launch_ui.py",
+        "src/hdmatch/api/relationship_openai_app.py",
+        "src/hdmatch/api/relationship_openai_ui.py",
+        "src/hdmatch/api/relationship_public_app.py",
+        "src/hdmatch/api/relationship_study_app.py",
+        "src/hdmatch/api/relationship_study_ui.py",
+        "src/hdmatch/api/relationship_study_ui_enhanced.py",
+        "src/hdmatch/api/serialization.py",
+        "src/hdmatch/api/unresolved.py",
+        "src/hdmatch/chart/__init__.py",
+        "src/hdmatch/chart/astronomy_reference.py",
+        "src/hdmatch/chart/bodygraph.py",
+        "src/hdmatch/chart/boundaries.py",
+        "src/hdmatch/chart/calculator.py",
+        "src/hdmatch/chart/design_moment.py",
+        "src/hdmatch/chart/ephemeris.py",
+        "src/hdmatch/chart/ephemeris_audit.py",
+        "src/hdmatch/chart/jpl_ephemeris.py",
+        "src/hdmatch/chart/progressions.py",
+        "src/hdmatch/chart/rave_mandala.py",
+        "src/hdmatch/chart/timezone.py",
+        "src/hdmatch/chart/validation.py",
+        "src/hdmatch/cli.py",
+        "src/hdmatch/config.py",
+        "src/hdmatch/evaluation/__init__.py",
+        "src/hdmatch/evaluation/ablation.py",
+        "src/hdmatch/evaluation/classifier_reliability.py",
+        "src/hdmatch/evaluation/discrimination.py",
+        "src/hdmatch/evaluation/failures.py",
+        "src/hdmatch/evaluation/feature_capacity.py",
+        "src/hdmatch/evaluation/holistic_profile_information.py",
+        "src/hdmatch/evaluation/leakage.py",
+        "src/hdmatch/evaluation/metrics.py",
+        "src/hdmatch/evaluation/permutation.py",
+        "src/hdmatch/evaluation/redundancy.py",
+        "src/hdmatch/evaluation/report.py",
+        "src/hdmatch/evaluation/residual_feature_capacity.py",
+        "src/hdmatch/evaluation/robustness.py",
+        "src/hdmatch/evaluation/survey_v2_capacity.py",
+        "src/hdmatch/evaluation/survey_v2_completion.py",
+        "src/hdmatch/evaluation/survey_v2_noise.py",
+        "src/hdmatch/evaluation/survey_v2_noise_indexed.py",
+        "src/hdmatch/evaluation/survey_v2_recoverability.py",
+        "src/hdmatch/evaluation/theory_language_exposure.py",
+        "src/hdmatch/experiments/__init__.py",
+        "src/hdmatch/experiments/canonical.py",
+        "src/hdmatch/experiments/freeze.py",
+        "src/hdmatch/experiments/manifest.py",
+        "src/hdmatch/experiments/reveal.py",
+        "src/hdmatch/human/__init__.py",
+        "src/hdmatch/human/baselines.py",
+        "src/hdmatch/human/dataset.py",
+        "src/hdmatch/human/empirical.py",
+        "src/hdmatch/human/splits.py",
+        "src/hdmatch/model/__init__.py",
+        "src/hdmatch/model/compiler.py",
+        "src/hdmatch/model/dependencies.py",
+        "src/hdmatch/model/evidence_registry.py",
+        "src/hdmatch/model/mapping_library.py",
+        "src/hdmatch/model/observations.py",
+        "src/hdmatch/model/reliability.py",
+        "src/hdmatch/model/rich_mapping_library.py",
+        "src/hdmatch/model/rich_predicate.py",
+        "src/hdmatch/model/symbolic_score.py",
+        "src/hdmatch/participant/__init__.py",
+        "src/hdmatch/participant/backend.py",
+        "src/hdmatch/participant/century_backend.py",
+        "src/hdmatch/participant/models.py",
+        "src/hdmatch/participant/service.py",
+        "src/hdmatch/participant/store.py",
+        "src/hdmatch/questionnaire/__init__.py",
+        "src/hdmatch/questionnaire/bank.py",
+        "src/hdmatch/questionnaire/response.py",
+        "src/hdmatch/relationship/__init__.py",
+        "src/hdmatch/relationship/analysis.py",
+        "src/hdmatch/relationship/answer_audit.py",
+        "src/hdmatch/relationship/astro_rrf.py",
+        "src/hdmatch/relationship/learning.py",
+        "src/hdmatch/relationship/llm_audit.py",
+        "src/hdmatch/relationship/phenotype.py",
+        "src/hdmatch/relationship/phenotype_classifier.py",
+        "src/hdmatch/relationship/place_resolution.py",
+        "src/hdmatch/relationship/questionnaire.py",
+        "src/hdmatch/relationship/reveal.py",
+        "src/hdmatch/relationship/study.py",
+        "src/hdmatch/relationship/study_prediction.py",
+        "src/hdmatch/relationship/uncertain_time.py",
+        "src/hdmatch/relationship/western.py",
+        "src/hdmatch/runtime/__init__.py",
+        "src/hdmatch/runtime/century_cache.py",
+        "src/hdmatch/runtime/chart_adapter.py",
+        "src/hdmatch/runtime/recovery.py",
+        "src/hdmatch/runtime/symbolic_adapter.py",
+        "src/hdmatch/runtime/universe_cache.py",
+        "src/hdmatch/schemas/__init__.py",
+        "src/hdmatch/schemas/core.py",
+        "src/hdmatch/search/__init__.py",
+        "src/hdmatch/search/adaptive.py",
+        "src/hdmatch/search/candidate_universe.py",
+        "src/hdmatch/search/date_aggregator.py",
+        "src/hdmatch/synthetic/__init__.py",
+        "src/hdmatch/synthetic/generator.py",
+        "src/hdmatch/synthetic/noise.py",
+        "src/hdmatch/synthetic/sealing.py",
+        "src/hdmatch/util/__init__.py",
+        "src/hdmatch/util/canonical.py"
+      ]
+    },
+    "case_handling": "case_insensitive_literal_matching",
+    "search_terms": [
+      "completion_policy",
+      "completion policy",
+      "completion-policy",
+      "completionPolicy",
+      "required_question_count",
+      "target_question_count",
+      "questionnaire_complete",
+      "questionnaire_incomplete",
+      "23-versus-76",
+      "23 vs 76",
+      "76-item acceptance",
+      "76 item acceptance"
+    ],
+    "state_surfaces": {
+      "classification": "historical_or_state_records_not_runtime_scan",
+      "occurrence_count": 37,
+      "occurrences": [
+        {
+          "column": 2,
+          "line": 64,
+          "matched_term": "required_question_count",
+          "minimal_excerpt": "`required_question_count` token in two Custom GPT OpenAPI files and current",
+          "path": "state/ASTROHD-PR23-CONVERGENCE-AUDIT-EXECUTION-RECEIPT-2026-09-02.md"
+        },
+        {
+          "column": 2,
+          "line": 69,
+          "matched_term": "required_question_count",
+          "minimal_excerpt": "`required_question_count`:",
+          "path": "state/ASTROHD-PR23-CONVERGENCE-AUDIT-EXECUTION-RECEIPT-2026-09-02.md"
+        },
+        {
+          "column": 50,
+          "line": 206,
+          "matched_term": "required_question_count",
+          "minimal_excerpt": "zero-runtime-symbol assertion observing five `required_question_count` AST",
+          "path": "state/ASTROHD-PR23-CONVERGENCE-AUDIT-EXECUTION-RECEIPT-2026-09-02.md"
+        },
+        {
+          "column": 41,
+          "line": 29,
+          "matched_term": "completion-policy",
+          "minimal_excerpt": "## Owner correction supersedes invented completion-policy premise — 2026-09-02",
+          "path": "state/CURRENT-STATE.md"
+        },
+        {
+          "column": 48,
+          "line": 31,
+          "matched_term": "completion policy",
+          "minimal_excerpt": "- Exact owner correction: **“there was never a completion policy. that was invented",
+          "path": "state/CURRENT-STATE.md"
+        },
+        {
+          "column": 24,
+          "line": 39,
+          "matched_term": "completion-policy",
+          "minimal_excerpt": "remain useful; their completion-policy conclusions are superseded.",
+          "path": "state/CURRENT-STATE.md"
+        },
+        {
+          "column": 25,
+          "line": 40,
+          "matched_term": "completion-policy",
+          "minimal_excerpt": "- Active repair removes completion-policy storage/API state and restores ordinary",
+          "path": "state/CURRENT-STATE.md"
+        },
+        {
+          "column": 3,
+          "line": 64,
+          "matched_term": "completion-policy",
+          "minimal_excerpt": "completion-policy premise after the owner's correction.",
+          "path": "state/CURRENT-STATE.md"
+        },
+        {
+          "column": 70,
+          "line": 93,
+          "matched_term": "completion-policy",
+          "minimal_excerpt": "occurred. The later owner correction establishes that the supposed completion-policy",
+          "path": "state/CURRENT-STATE.md"
+        },
+        {
+          "column": 46,
+          "line": 39,
+          "matched_term": "completion policy",
+          "minimal_excerpt": "The packet explicitly prohibited inventing a completion policy, item count, threshold,",
+          "path": "state/EXTRA-HIGH-CONTAMINATION-COVERAGE-REVIEW-2026-09-02.md"
+        },
+        {
+          "column": 22,
+          "line": 113,
+          "matched_term": "23-versus-76",
+          "minimal_excerpt": "For the Human Design 23-versus-76 completeness decision in this task:",
+          "path": "state/EXTRA-HIGH-DIRECTIVE-2026-09-01.md"
+        },
+        {
+          "column": 1,
+          "line": 407,
+          "matched_term": "completionPolicy",
+          "minimal_excerpt": "completionPolicyStatus = UNRESOLVED_OWNER_AUTHORITY",
+          "path": "state/EXTRA-HIGH-DIRECTIVE-2026-09-01.md"
+        },
+        {
+          "column": 5,
+          "line": 499,
+          "matched_term": "23-versus-76",
+          "minimal_excerpt": "A04\t23-versus-76 completeness criterion is unresolved\tCurrent owner/request boundary + packets\tCONTROLLING\tNo denominator selection",
+          "path": "state/EXTRA-HIGH-DIRECTIVE-2026-09-01.md"
+        },
+        {
+          "column": 1,
+          "line": 688,
+          "matched_term": "23-versus-76",
+          "minimal_excerpt": "23-versus-76 still explicitly unresolved unless a subsequent owner decision changed it;",
+          "path": "state/EXTRA-HIGH-DIRECTIVE-2026-09-01.md"
+        },
+        {
+          "column": 1,
+          "line": 750,
+          "matched_term": "23-versus-76",
+          "minimal_excerpt": "23-versus-76 remains unresolved.",
+          "path": "state/EXTRA-HIGH-DIRECTIVE-2026-09-01.md"
+        },
+        {
+          "column": 47,
+          "line": 165,
+          "matched_term": "23-versus-76",
+          "minimal_excerpt": "4. which work, if any, may proceed before the 23-versus-76 completeness criterion is",
+          "path": "state/EXTRA-HIGH-SUPERVISION-HANDOFF-2026-09-01.md"
+        },
+        {
+          "column": 38,
+          "line": 1,
+          "matched_term": "completion policy",
+          "minimal_excerpt": "# Owner correction: Codex invented a completion policy",
+          "path": "state/OWNER-CORRECTION-2026-09-02.md"
+        },
+        {
+          "column": 51,
+          "line": 7,
+          "matched_term": "completion policy",
+          "minimal_excerpt": "> NO we already went over that. there was never a completion policy. that was ivnented nonsense by codex",
+          "path": "state/OWNER-CORRECTION-2026-09-02.md"
+        },
+        {
+          "column": 3,
+          "line": 18,
+          "matched_term": "completion policy",
+          "minimal_excerpt": "completion policy or ask Codex to choose among 23, 76, or another denominator.",
+          "path": "state/OWNER-CORRECTION-2026-09-02.md"
+        },
+        {
+          "column": 65,
+          "line": 20,
+          "matched_term": "23-versus-76",
+          "minimal_excerpt": "correction of that error into a second invented claim: that a 23-versus-76 policy",
+          "path": "state/OWNER-CORRECTION-2026-09-02.md"
+        },
+        {
+          "column": 24,
+          "line": 30,
+          "matched_term": "completion-policy",
+          "minimal_excerpt": "1. remove the invented completion-policy model, storage artifact, progress fields,",
+          "path": "state/OWNER-CORRECTION-2026-09-02.md"
+        },
+        {
+          "column": 30,
+          "line": 42,
+          "matched_term": "76-item acceptance",
+          "minimal_excerpt": "1. artifact fact -> invented 76-item acceptance rule; and",
+          "path": "state/OWNER-CORRECTION-2026-09-02.md"
+        },
+        {
+          "column": 20,
+          "line": 873,
+          "matched_term": "completion-policy",
+          "minimal_excerpt": "Add a server-owned completion-policy snapshot:",
+          "path": "state/PRO-META-REVIEW-2026-09-01.md"
+        },
+        {
+          "column": 33,
+          "line": 877,
+          "matched_term": "completion-policy",
+          "minimal_excerpt": "\"schemaVersion\": \"participant-completion-policy-v1\",",
+          "path": "state/PRO-META-REVIEW-2026-09-01.md"
+        },
+        {
+          "column": 1,
+          "line": 900,
+          "matched_term": "completion_policy",
+          "minimal_excerpt": "completion_policy_status",
+          "path": "state/PRO-META-REVIEW-2026-09-01.md"
+        },
+        {
+          "column": 1,
+          "line": 901,
+          "matched_term": "completion_policy",
+          "minimal_excerpt": "completion_policy_id",
+          "path": "state/PRO-META-REVIEW-2026-09-01.md"
+        },
+        {
+          "column": 12,
+          "line": 902,
+          "matched_term": "required_question_count",
+          "minimal_excerpt": "completion_required_question_count",
+          "path": "state/PRO-META-REVIEW-2026-09-01.md"
+        },
+        {
+          "column": 1,
+          "line": 908,
+          "matched_term": "completion_policy",
+          "minimal_excerpt": "completion_policy_status = UNRESOLVED_OWNER_AUTHORITY",
+          "path": "state/PRO-META-REVIEW-2026-09-01.md"
+        },
+        {
+          "column": 1,
+          "line": 909,
+          "matched_term": "completion_policy",
+          "minimal_excerpt": "completion_policy_id = null",
+          "path": "state/PRO-META-REVIEW-2026-09-01.md"
+        },
+        {
+          "column": 12,
+          "line": 910,
+          "matched_term": "required_question_count",
+          "minimal_excerpt": "completion_required_question_count = null",
+          "path": "state/PRO-META-REVIEW-2026-09-01.md"
+        },
+        {
+          "column": 148,
+          "line": 926,
+          "matched_term": "completion policy",
+          "minimal_excerpt": "Remove the require_complete_profile boolean as a policy selector for the repaired protocol. A route-level boolean must not manufacture the missing completion policy.",
+          "path": "state/PRO-META-REVIEW-2026-09-01.md"
+        },
+        {
+          "column": 19,
+          "line": 930,
+          "matched_term": "completionPolicy",
+          "minimal_excerpt": "load server-owned CompletionPolicySnapshot",
+          "path": "state/PRO-META-REVIEW-2026-09-01.md"
+        },
+        {
+          "column": 57,
+          "line": 941,
+          "matched_term": "completion-policy",
+          "minimal_excerpt": "Reveal must require a valid lock bound to an authorized completion-policy digest. It must not infer policy from mapped dimensions.",
+          "path": "state/PRO-META-REVIEW-2026-09-01.md"
+        },
+        {
+          "column": 22,
+          "line": 971,
+          "matched_term": "completion_policy",
+          "minimal_excerpt": "test_lock_fails_when_completion_policy_is_unresolved",
+          "path": "state/PRO-META-REVIEW-2026-09-01.md"
+        },
+        {
+          "column": 38,
+          "line": 972,
+          "matched_term": "completion_policy",
+          "minimal_excerpt": "test_reveal_cannot_bypass_unresolved_completion_policy",
+          "path": "state/PRO-META-REVIEW-2026-09-01.md"
+        },
+        {
+          "column": 34,
+          "line": 973,
+          "matched_term": "completion_policy",
+          "minimal_excerpt": "test_route_boolean_cannot_select_completion_policy",
+          "path": "state/PRO-META-REVIEW-2026-09-01.md"
+        },
+        {
+          "column": 1,
+          "line": 1064,
+          "matched_term": "23-versus-76",
+          "minimal_excerpt": "23-versus-76 remains explicitly unresolved",
+          "path": "state/PRO-META-REVIEW-2026-09-01.md"
+        }
+      ],
+      "scanned_file_count": 90,
+      "scanned_paths": [
+        "state/ASTROHD-CORE-COVERAGE-PREP-EXECUTION-RECEIPT-2026-09-02.md",
+        "state/ASTROHD-CROSS-CLASS-CORE-FIT-AUDIT-EXECUTION-RECEIPT-2026-09-02.md",
+        "state/ASTROHD-PR23-CONVERGENCE-AUDIT-EXECUTION-RECEIPT-2026-09-02.md",
+        "state/ASTROHD-RANK-SEMANTICS-CORRECTION-EXECUTION-RECEIPT-2026-09-02.md",
+        "state/ASTROHD-RANK-TIEBREAK-DOWNSTREAM-AUDIT-EXECUTION-RECEIPT-2026-09-02.md",
+        "state/ASTROHD-SCORING-STRUCTURE-AUDIT-EXECUTION-RECEIPT-2026-09-02.md",
+        "state/ASTROHD-THEORY-LANGUAGE-EXECUTION-RECEIPT-2026-09-02.md",
+        "state/BROWSER-CONTROL-INCIDENT-2026-09-01.md",
+        "state/CENTURY-DISCRIMINATION-AUDIT-TRIGGER.md",
+        "state/CENTURY-DISCRIMINATION-AUDIT.json",
+        "state/CURRENT-STATE.md",
+        "state/EXTRA-HIGH-ASTROHD-CORE-COVERAGE-DISPOSITION-2026-09-02.md",
+        "state/EXTRA-HIGH-ASTROHD-CORE-FIT-RANK-DISPOSITION-2026-09-02.md",
+        "state/EXTRA-HIGH-ASTROHD-RANK-SEMANTICS-CORRECTION-2026-09-02.md",
+        "state/EXTRA-HIGH-CONTAMINATION-COVERAGE-REVIEW-2026-09-02.md",
+        "state/EXTRA-HIGH-DIRECTIVE-2026-09-01.md",
+        "state/EXTRA-HIGH-SUPERVISION-HANDOFF-2026-09-01.md",
+        "state/ISSUE18-OWNER-TEST-RELEASE-RECEIPT-v1.0.0.md",
+        "state/OWNER-CORRECTION-2026-09-02.md",
+        "state/PRO-META-REVIEW-2026-09-01.md",
+        "state/PRO-MODE-ROUTING-ATTEMPT-2026-09-01.md",
+        "state/STRUCTURAL-FEATURE-CAPACITY-AUDIT.json",
+        "state/STRUCTURAL-FEATURE-CAPACITY-TRIGGER.md",
+        "state/SURVEY-V2-CAPACITY-AUDIT.json",
+        "state/SURVEY-V2-COMPLETION-AUDIT.json",
+        "state/SURVEY-V2-H1-EXPOSURE-ADJUDICATION-FREEZE-MANIFEST-v1.0.0.json",
+        "state/SURVEY-V2-HUMAN-MEASUREMENT-FREEZE-MANIFEST-v1.0.0.json",
+        "state/SURVEY-V2-NAMED-PRO-REVIEW-v1.0.0.md",
+        "state/SURVEY-V2-NOISE-AUDIT.json",
+        "state/SURVEY-V2-NOISE-SCORER-EQUIVALENCE.json",
+        "state/SURVEY-V2-POST-PRO-EXTRA-HIGH-DISPOSITION-v1.0.0.md",
+        "state/SURVEY-V2-RECOVERABILITY-AUDIT.json",
+        "state/V36-HOLISTIC-PROFILE-INFORMATION-AUDIT.json",
+        "state/V36-RESIDUAL-FEATURE-CAPACITY-AUDIT.json",
+        "state/transit_blind/2026-08-22T2140Z.sha256",
+        "state/transit_blind/2026-08-22T2230Z.json",
+        "state/transit_blind/2026-08-23T0028Z.sha256",
+        "state/transit_blind/2026-08-23T0329Z.sha256",
+        "state/transit_blind/2026-08-23T0425Z.sha256",
+        "state/transit_blind/2026-08-23T0542Z.txt",
+        "state/transit_blind/2026-08-23T07-22Z.json",
+        "state/transit_blind/2026-08-23T083728Z.sha256",
+        "state/transit_blind/2026-08-23T0933Z.json",
+        "state/transit_blind/2026-08-23T10-29Z.sha256.json",
+        "state/transit_blind/2026-08-23T12-22Z.sha256.json",
+        "state/transit_blind/2026-08-23T1326Z.sha256",
+        "state/transit_blind/2026-08-23T1440Z.v2.sha256",
+        "state/transit_blind/2026-08-23T1536Z.v2.sha256",
+        "state/transit_blind/2026-08-23T1632Z.v2.sha256",
+        "state/transit_blind/2026-08-23T1728Z.v2.sha256",
+        "state/transit_blind/2026-08-23T1824Z.v2.sha256",
+        "state/transit_blind/2026-08-23T1939Z.v2.sha256",
+        "state/transit_blind/2026-08-23T2016Z.v2.sha256",
+        "state/transit_blind/2026-08-23T2129Z.v2.sha256",
+        "state/transit_blind/2026-08-23T2227Z.v2.sha256",
+        "state/transit_blind/2026-08-23T2335Z.v2.sha256",
+        "state/transit_blind/2026-08-24T0037Z.v2.sha256",
+        "state/transit_blind/2026-08-24T0142Z.v2.sha256",
+        "state/transit_blind/2026-08-24T0224Z.v2.sha256",
+        "state/transit_blind/2026-08-24T0326Z.v2.sha256",
+        "state/transit_blind/2026-08-24T0431Z.v2.sha256",
+        "state/transit_blind/2026-08-24T0518Z.v2.sha256",
+        "state/transit_blind/2026-08-24T0643Z.v2.sha256",
+        "state/transit_blind/2026-08-24T0729Z.v2.sha256",
+        "state/transit_blind/2026-08-24T0823Z.v2.sha256",
+        "state/transit_blind/2026-08-24T0928Z.v2.sha256",
+        "state/transit_blind/2026-08-24T1036Z.v2.sha256",
+        "state/transit_blind/2026-08-24T1132Z.v2.sha256",
+        "state/transit_blind/2026-08-24T1325Z.v2.sha256",
+        "state/transit_blind/2026-08-24T1343Z.v2.sha256",
+        "state/transit_blind/2026-08-24T1430Z.v2.sha256",
+        "state/transit_blind/2026-08-24T1536Z.v2.sha256",
+        "state/transit_blind/2026-08-24T1632Z.v2.sha256",
+        "state/transit_blind/2026-08-24T1744Z.v2.sha256",
+        "state/transit_blind/2026-08-24T1941Z.v2.sha256",
+        "state/transit_blind/2026-08-24T2017Z.v2.sha256",
+        "state/transit_blind/2026-08-24T2132Z.v2.sha256",
+        "state/transit_blind/2026-08-24T2228Z.v2.sha256",
+        "state/transit_blind/2026-08-24T2334Z.v2.sha256",
+        "state/transit_blind/2026-08-25T0232Z.v2.sha256",
+        "state/transit_blind/2026-08-25T0343Z.v2.sha256",
+        "state/transit_blind/2026-08-25T0425Z.v2.sha256",
+        "state/transit_blind/2026-08-25T0521Z.v2.sha256",
+        "state/transit_blind/2026-08-25T0637Z.v2.sha256",
+        "state/transit_blind/2026-08-25T0725Z.v2.sha256",
+        "state/transit_blind/2026-08-25T0940Z.v2.sha256",
+        "state/transit_blind/2026-08-25T1023Z.v2.txt",
+        "state/transit_blind/2026-08-25T1119Z.v2.sha256",
+        "state/transit_blind/2026-08-25T1232Z.v2.sha256",
+        "state/transit_blind/2026-08-25T1331Z.v2.sha256"
+      ]
+    }
+  },
+  "pr_delta_inventory": {
+    "category_counts": {
+      "docs": 3,
+      "reference": 14,
+      "repository_root_or_other": 1,
+      "scripts": 7,
+      "src": 9,
+      "state": 18,
+      "tests": 11
+    },
+    "changed_file_count": 63,
+    "files": [
+      {
+        "category": "repository_root_or_other",
+        "path": "CURRENT_PLAN.md",
+        "sha256": "5cfafaad71da007baf93fc6a12fc6471b4898c19d1ad262089cc7745adf46c17",
+        "status": "M"
+      },
+      {
+        "category": "docs",
+        "path": "docs/36_astrohd_owner_pilot.md",
+        "sha256": "cc21d9fa1066d4ffc159f474681bff7fc3e997d0022058da218299d9ea311134",
+        "status": "M"
+      },
+      {
+        "category": "docs",
+        "path": "docs/research/ASTROHD_FUTURE_ITEM_REVIEW_TEMPLATE.md",
+        "sha256": "26864702c4ade351396665eece898d4f3cb70ad4ec854d22f0f11d2da63a76c1",
+        "status": "A"
+      },
+      {
+        "category": "docs",
+        "path": "docs/research/ASTROHD_THEORY_LANGUAGE_EXPOSURE_SIGNAL_SPEC.md",
+        "sha256": "377a7013f3bd5b77af2cde0f668f220c48ae16fe3e185cf90f8897dc68904c6d",
+        "status": "A"
+      },
+      {
+        "category": "reference",
+        "path": "reference/audits/astrohd_core_categorical_coverage_v1.json",
+        "sha256": "445d5b45609934aca1f7d4081919bce9cb2f0ac1d8e0aebbdf1952c690c9e66f",
+        "status": "A"
+      },
+      {
+        "category": "reference",
+        "path": "reference/audits/astrohd_cross_class_core_fit_v1.json",
+        "sha256": "a113fb53de13f38d5053955975912a1fb194f527c57f610c82d0efc38bc32a70",
+        "status": "A"
+      },
+      {
+        "category": "reference",
+        "path": "reference/audits/astrohd_frozen_rule_prompt_mapping_v1.json",
+        "sha256": "a6735f6b7820ebafdcfd0d406f6b3796222f7c3762f9ba8a182b66158e216799",
+        "status": "A"
+      },
+      {
+        "category": "reference",
+        "path": "reference/audits/astrohd_frozen_scoring_structure_v1.json",
+        "sha256": "28df376c5731905beea6c71104d21523e4a562ca8d36d7d7d47a16e358c2b50c",
+        "status": "A"
+      },
+      {
+        "category": "reference",
+        "path": "reference/audits/astrohd_pr23_convergence_v1.json",
+        "sha256": "952565c9da16d683711f2bdae1fc8cae974f9c17ce98166a2de00b54d6856e73",
+        "status": "A"
+      },
+      {
+        "category": "reference",
+        "path": "reference/audits/astrohd_question_mapping_status_v1.json",
+        "sha256": "912e3a11eb03144e523228aa8053514e3315a3d09f0e3381ebd889cdc44faed5",
+        "status": "A"
+      },
+      {
+        "category": "reference",
+        "path": "reference/audits/astrohd_rank_tiebreak_downstream_v1.json",
+        "sha256": "c9fb9ee6060c4bbb346c7ac6981a543d3d602a60bb1da83e245cea638a680103",
+        "status": "A"
+      },
+      {
+        "category": "reference",
+        "path": "reference/core/astrohd_theory_language_codebook_v1.template.json",
+        "sha256": "9abed436c80b7a8940742ec9a09fac6e815640d93214794140ae85c573f4b31a",
+        "status": "A"
+      },
+      {
+        "category": "reference",
+        "path": "reference/core/astrohd_theory_language_exposure_synthetic_fixtures_v1.json",
+        "sha256": "416a8ec6d5dfab5b11a76f847eb6c99f2d61b069569f9770641123de2e84d702",
+        "status": "A"
+      },
+      {
+        "category": "reference",
+        "path": "reference/custom_gpt/participant_action_openapi_v1.yaml",
+        "sha256": "a33b9168284f51b77ae897c39c2955a87ac5cc36456e134b428e75fa899081f5",
+        "status": "M"
+      },
+      {
+        "category": "reference",
+        "path": "reference/custom_gpt/participant_interviewer_action_openapi_v1.yaml",
+        "sha256": "0ff872fa5fcbd9b6f7a1b29f69f2fbc4821948d10e00b7cd3ba513e0621d2963",
+        "status": "M"
+      },
+      {
+        "category": "reference",
+        "path": "reference/custom_gpt/participant_interviewer_instructions_under_8000_v1.md",
+        "sha256": "da25e7b73107f6c0fa680efbc5a3770800ae1159040fe398ba61e27d19708735",
+        "status": "M"
+      },
+      {
+        "category": "reference",
+        "path": "reference/custom_gpt/participant_interviewer_instructions_v1.md",
+        "sha256": "13ba5a0814b1065c13f9bd1e12330580e3d975f8b15b3d50aadcf72a19ffa978",
+        "status": "M"
+      },
+      {
+        "category": "reference",
+        "path": "reference/research/astrohd_future_core_coverage_candidate_matrix_v1.json",
+        "sha256": "1352b7222c0ddb69334f617c4f5cd0ec5ff51a3d741bc32e545f7d1d1049631f",
+        "status": "A"
+      },
+      {
+        "category": "scripts",
+        "path": "scripts/audit_astrohd_cross_class_core_fit.py",
+        "sha256": "007960b9b824e8224e618734887f0b2d48a950d485b370b673e4ac223179ec9a",
+        "status": "A"
+      },
+      {
+        "category": "scripts",
+        "path": "scripts/audit_astrohd_pr23_convergence.py",
+        "sha256": "73fdfad1792438905bf90f2b54330f8f16b743c2ef21cb91d1cb3bef3669b763",
+        "status": "A"
+      },
+      {
+        "category": "scripts",
+        "path": "scripts/audit_astrohd_rank_tiebreak_downstream.py",
+        "sha256": "059501f10f2ce461b097fffcfd9b31a4d24075baa5e0c2cf4ff7026eedd4488a",
+        "status": "A"
+      },
+      {
+        "category": "scripts",
+        "path": "scripts/audit_astrohd_theory_language_exposure.py",
+        "sha256": "30bf4ea12289952058f8e29c2261bf60ac189e858fae359f2747427049c2a4e2",
+        "status": "A"
+      },
+      {
+        "category": "scripts",
+        "path": "scripts/extract_astrohd_core_categorical_coverage.py",
+        "sha256": "4ac68e61265bdaeab7271460d1b503f6ee18339057baa0b8f51129c63f0e64ea",
+        "status": "A"
+      },
+      {
+        "category": "scripts",
+        "path": "scripts/extract_astrohd_frozen_rule_prompt_mapping.py",
+        "sha256": "72e2d0e7a9bceea8a122feefe521820b0eedcbbbbf903cda1220f06a4277d7bf",
+        "status": "A"
+      },
+      {
+        "category": "scripts",
+        "path": "scripts/extract_astrohd_frozen_scoring_structure.py",
+        "sha256": "70fb13cac146781b6cfab15e1991bda6802fbff80c686f864e253a15058d2503",
+        "status": "A"
+      },
+      {
+        "category": "src",
+        "path": "src/hdmatch/api/natal_pilot_app.py",
+        "sha256": "461b936254fabcd1c9a90717fc6155e2aef970a49f564dd1331ca47182ad70d8",
+        "status": "M"
+      },
+      {
+        "category": "src",
+        "path": "src/hdmatch/api/natal_pilot_ui.py",
+        "sha256": "a2cfbc931e279ed0dacd5b9242f3d67b21deef8e8d79bc089302d85aaabb02b0",
+        "status": "M"
+      },
+      {
+        "category": "src",
+        "path": "src/hdmatch/api/participant.py",
+        "sha256": "7418453a7139dc43c4990cae4bca667f9dec2343a96116cf7918003a596e66df",
+        "status": "M"
+      },
+      {
+        "category": "src",
+        "path": "src/hdmatch/evaluation/theory_language_exposure.py",
+        "sha256": "8c0fd852005c0176c40c839a8ff82e7dbb432439fe59d6d027d1da785898e8d3",
+        "status": "A"
+      },
+      {
+        "category": "src",
+        "path": "src/hdmatch/participant/backend.py",
+        "sha256": "8ceb0b18bcf6d9ddb0573b433c1d88802f5890e3ae4a8d9da53a778da673169f",
+        "status": "M"
+      },
+      {
+        "category": "src",
+        "path": "src/hdmatch/participant/models.py",
+        "sha256": "d981b4c7f45bd61df0cd7b266a7b46583914a46a39b2153c35ad4fdef8d17dc0",
+        "status": "M"
+      },
+      {
+        "category": "src",
+        "path": "src/hdmatch/participant/service.py",
+        "sha256": "b9c72a0075a7d64472c08e3a66602262582d69c262a61548bbd2c5318aed5d60",
+        "status": "M"
+      },
+      {
+        "category": "src",
+        "path": "src/hdmatch/participant/store.py",
+        "sha256": "52d3b0afe6eef5259a2455450f51003c50c0648e9ef0c37dac540adc915f5949",
+        "status": "M"
+      },
+      {
+        "category": "src",
+        "path": "src/hdmatch/search/date_aggregator.py",
+        "sha256": "32a328413fcc4b90535e19c4ceda8aedfb2869e9f24db50e325e6c6322892b01",
+        "status": "M"
+      },
+      {
+        "category": "state",
+        "path": "state/ASTROHD-CORE-COVERAGE-PREP-EXECUTION-RECEIPT-2026-09-02.md",
+        "sha256": "93fec879e7891f8e7e997ad83604ad8cff4b6ad5789d9c31537f9387da04261d",
+        "status": "A"
+      },
+      {
+        "category": "state",
+        "path": "state/ASTROHD-CROSS-CLASS-CORE-FIT-AUDIT-EXECUTION-RECEIPT-2026-09-02.md",
+        "sha256": "78c9f9daf2d7d13671d131ae6d72ef55fd483adda03a64a28c312768a1f59793",
+        "status": "A"
+      },
+      {
+        "category": "state",
+        "path": "state/ASTROHD-PR23-CONVERGENCE-AUDIT-EXECUTION-RECEIPT-2026-09-02.md",
+        "sha256": "2e04e1ec0775677bcd97879712543c7b029f867d2f3a495fca8e411c6779c482",
+        "status": "A"
+      },
+      {
+        "category": "state",
+        "path": "state/ASTROHD-RANK-SEMANTICS-CORRECTION-EXECUTION-RECEIPT-2026-09-02.md",
+        "sha256": "13e1e57ef5bc430bacbe0838f9571b8447914fa26df4454b0f3fdbf3ef6d8a1c",
+        "status": "A"
+      },
+      {
+        "category": "state",
+        "path": "state/ASTROHD-RANK-TIEBREAK-DOWNSTREAM-AUDIT-EXECUTION-RECEIPT-2026-09-02.md",
+        "sha256": "e483a1b6f244bf5f755150d36d2df406b9e571240aadfdac05481db7f5a41169",
+        "status": "A"
+      },
+      {
+        "category": "state",
+        "path": "state/ASTROHD-SCORING-STRUCTURE-AUDIT-EXECUTION-RECEIPT-2026-09-02.md",
+        "sha256": "d62ee63f3b05384e1a7b7498586acd0378e825666ad642487034ccda30e62bc7",
+        "status": "A"
+      },
+      {
+        "category": "state",
+        "path": "state/ASTROHD-THEORY-LANGUAGE-EXECUTION-RECEIPT-2026-09-02.md",
+        "sha256": "33c257d608e7728f08add906b7536abe048e546c339c6e34b7642a233a1ca370",
+        "status": "A"
+      },
+      {
+        "category": "state",
+        "path": "state/BROWSER-CONTROL-INCIDENT-2026-09-01.md",
+        "sha256": "34955da0fdeb13d6115e1e5a43630fea6902b9a006f801932436bc372113bf4e",
+        "status": "A"
+      },
+      {
+        "category": "state",
+        "path": "state/CURRENT-STATE.md",
+        "sha256": "ff2757c4142e64904a5e1cd207026af0cdbda096b30007a921c3c01b8dc5ba59",
+        "status": "M"
+      },
+      {
+        "category": "state",
+        "path": "state/EXTRA-HIGH-ASTROHD-CORE-COVERAGE-DISPOSITION-2026-09-02.md",
+        "sha256": "7e1d56e887705a0423d548f8a18c802e76618d967838bb97f7607f815ae7112a",
+        "status": "A"
+      },
+      {
+        "category": "state",
+        "path": "state/EXTRA-HIGH-ASTROHD-CORE-FIT-RANK-DISPOSITION-2026-09-02.md",
+        "sha256": "dfad4f259216f144d0f11e22ebadc7f7789fd4c4d6e7eb0bb5ba1539e6b6a9d3",
+        "status": "A"
+      },
+      {
+        "category": "state",
+        "path": "state/EXTRA-HIGH-ASTROHD-RANK-SEMANTICS-CORRECTION-2026-09-02.md",
+        "sha256": "b842eabcf73f21076817379bbb281db6d02fa21d8c1340942a3d5b0a8016bec3",
+        "status": "A"
+      },
+      {
+        "category": "state",
+        "path": "state/EXTRA-HIGH-CONTAMINATION-COVERAGE-REVIEW-2026-09-02.md",
+        "sha256": "7007c5d9fb862e982da9605fc22a490c3d69d781137f94814ee9a7d19b72f946",
+        "status": "A"
+      },
+      {
+        "category": "state",
+        "path": "state/EXTRA-HIGH-DIRECTIVE-2026-09-01.md",
+        "sha256": "12437bf647fe5600f73810765022da33ed06c078048bc21e21c300c33bc4cb1a",
+        "status": "A"
+      },
+      {
+        "category": "state",
+        "path": "state/EXTRA-HIGH-SUPERVISION-HANDOFF-2026-09-01.md",
+        "sha256": "621a0165f1cea9c1c149b9ce8e7923bcf329f7e556b692e25fee131190494da4",
+        "status": "A"
+      },
+      {
+        "category": "state",
+        "path": "state/OWNER-CORRECTION-2026-09-02.md",
+        "sha256": "d20c5d64eb5dbed85bf8272e35619e17e145dc6fd98888cf6ff5aaf2b13a21d4",
+        "status": "A"
+      },
+      {
+        "category": "state",
+        "path": "state/PRO-META-REVIEW-2026-09-01.md",
+        "sha256": "c10d68a4b28112f1cf17c2b4cd830ebac98823bf7e8ed2842d645c2461ff9139",
+        "status": "A"
+      },
+      {
+        "category": "state",
+        "path": "state/PRO-MODE-ROUTING-ATTEMPT-2026-09-01.md",
+        "sha256": "b45c2dfc7914c341637f2e933d40ff991c11d3a79be748ad059f873ce441a641",
+        "status": "A"
+      },
+      {
+        "category": "tests",
+        "path": "tests/unit/test_astrohd_core_categorical_coverage.py",
+        "sha256": "6d9a14433ca47f0065d7401b0106b931b41796df95d4d380ef1b91f6f8331dc6",
+        "status": "A"
+      },
+      {
+        "category": "tests",
+        "path": "tests/unit/test_astrohd_cross_class_core_fit_audit.py",
+        "sha256": "ef7ef7c4446ad9503f7a8f373093f53a3d660519ec3806eebdfa0fcd0606a176",
+        "status": "A"
+      },
+      {
+        "category": "tests",
+        "path": "tests/unit/test_astrohd_frozen_mapping_extract.py",
+        "sha256": "905a0b6481289bec6dfdebb07e44effe4090c62156d0dc2ee0dde7c29c4fc0be",
+        "status": "A"
+      },
+      {
+        "category": "tests",
+        "path": "tests/unit/test_astrohd_frozen_scoring_structure.py",
+        "sha256": "64a1f7df6ca84090b23a279a59237b95849ff6cf16a5cb9e749193e23e5d8f7a",
+        "status": "A"
+      },
+      {
+        "category": "tests",
+        "path": "tests/unit/test_astrohd_pr23_convergence.py",
+        "sha256": "f78aedcc46a098ebc30692645abe53354fe1a923e8ca2eba27d3653a2ed5d875",
+        "status": "A"
+      },
+      {
+        "category": "tests",
+        "path": "tests/unit/test_astrohd_rank_tiebreak_downstream_audit.py",
+        "sha256": "9ee75d56c74571888e15648d2e5b9e8c66cf90d7b26828a4408c3f47bd2c109a",
+        "status": "A"
+      },
+      {
+        "category": "tests",
+        "path": "tests/unit/test_date_aggregator.py",
+        "sha256": "03a235c5d2ad66a0181d5cc176495c302b6c6bd5d8aef885838fe21a6c9881f3",
+        "status": "M"
+      },
+      {
+        "category": "tests",
+        "path": "tests/unit/test_natal_pilot_app.py",
+        "sha256": "ae0f4c330719fbf5721ba4931ec93ff57ebdebab30cbd278a3bed76b3bb40203",
+        "status": "M"
+      },
+      {
+        "category": "tests",
+        "path": "tests/unit/test_participant_ranking_semantics.py",
+        "sha256": "9d4021871d67ea502654963921bd2aaf1c584e0abbb801c7ed17953353ba9752",
+        "status": "M"
+      },
+      {
+        "category": "tests",
+        "path": "tests/unit/test_participant_session.py",
+        "sha256": "c03aae63f17d82b8c5b38b47b2b242b945f1a093db1f181ccd62201fdaa82c15",
+        "status": "M"
+      },
+      {
+        "category": "tests",
+        "path": "tests/unit/test_theory_language_exposure.py",
+        "sha256": "fdacd9a2c67d4f8872eede570bd4751c9a32e1a604ce16be43563b40294a5c72",
+        "status": "A"
+      }
+    ],
+    "range": "afc0bb82de0e481ae5a5d3453e0bcaf82b2a0286...b5fd8b6a8c3e59374c1ac33bd518ed59bd81cdd5"
+  },
+  "rank_semantics": {
+    "date_aggregator": {
+      "audited_head_file_sha256": "32a328413fcc4b90535e19c4ceda8aedfb2869e9f24db50e325e6c6322892b01",
+      "best_state_key_expressions": [
+        "item.net_rubric_bits",
+        "-item.meaningful_contradictions",
+        "item.detailed_support",
+        "item.state_id"
+      ],
+      "core_fit_in_best_state_key": false,
+      "date_score_and_midrank_source_unchanged_except_directed_core_fit_removal": true,
+      "diff_from_rank_correction_start": [
+        "--- f5a967c2efbb0f73a7a56c42a06fe4d7fb7e2b59:src/hdmatch/search/date_aggregator.py",
+        "+++ b5fd8b6a8c3e59374c1ac33bd518ed59bd81cdd5:src/hdmatch/search/date_aggregator.py",
+        "@@ -72,7 +72,6 @@",
+        "                 item.net_rubric_bits,",
+        "                 -item.meaningful_contradictions,",
+        "                 item.detailed_support,",
+        "-                item.core_fit,",
+        "                 item.state_id,",
+        "             ),",
+        "         )"
+      ],
+      "path": "src/hdmatch/search/date_aggregator.py",
+      "rank_correction_start_file_sha256": "d358c0914f84d341b69ced1771c5d26a9818837ed24ae45c9808920e08c8a3ce"
+    },
+    "participant_backend": {
+      "audited_head_file_sha256": "8ceb0b18bcf6d9ddb0573b433c1d88802f5890e3ae4a8d9da53a778da673169f",
+      "core_fit_in_evidence_tie_key": false,
+      "core_fit_in_rank_ordering_key": false,
+      "evidence_tie_key_expressions": [
+        "round(score.net_rubric_bits, 12)",
+        "score.meaningful_contradictions",
+        "round(score.detailed_support, 12)"
+      ],
+      "path": "src/hdmatch/participant/backend.py",
+      "rank_ordering_key_expressions": [
+        "-scores[state.state_id].net_rubric_bits",
+        "scores[state.state_id].meaningful_contradictions",
+        "-scores[state.state_id].detailed_support",
+        "-(state.end_utc - state.start_utc).total_seconds()",
+        "state.start_utc"
+      ],
+      "top_net_margin": {
+        "audited_head_sha256": "d3b1ff9e93ab8a10ffc35424e25c1a8243420c29de5b1ddb48041c8568a0b172",
+        "rank_correction_start_sha256": "d3b1ff9e93ab8a10ffc35424e25c1a8243420c29de5b1ddb48041c8568a0b172",
+        "source_excerpt": "def _top_net_margin(ranked: Sequence[_RankedState]) -> float:\n        if len(ranked) < 2:\n            return 0.0\n        top = ranked[0].score.net_rubric_bits\n        for item in ranked[1:]:\n            if not math.isclose(\n                item.score.net_rubric_bits,\n                top,\n                rel_tol=1e-12,\n                abs_tol=1e-12,\n            ):\n                return top - item.score.net_rubric_bits\n        return 0.0",
+        "unchanged_from_rank_correction_start": true
+      }
+    },
+    "rank_correction_start": "f5a967c2efbb0f73a7a56c42a06fe4d7fb7e2b59"
+  },
+  "runtime_symbol_scan": {
+    "expected_production_runtime_occurrence_count": 0,
+    "identifier_fragments": [
+      "completion_policy",
+      "completion_requirement",
+      "required_question",
+      "questionnaire_complete",
+      "unresolved_policy"
+    ],
+    "occurrence_count": 0,
+    "occurrences": [],
+    "scanned_file_count": 120
+  },
+  "schema_version": "astrohd-pr23-convergence-v2",
+  "status": "mechanical_final_pr_convergence_audit_no_runtime_effect",
+  "theory_language_runtime_isolation": {
+    "call_site_count_outside_defining_module": 0,
+    "call_sites_outside_defining_module": [],
+    "defining_module": "src/hdmatch/evaluation/theory_language_exposure.py",
+    "importer_count_outside_defining_module": 0,
+    "imports_outside_defining_module": [],
+    "public_symbols": [
+      "FrozenModel",
+      "LanguageAssessability",
+      "LexicalSpecificity",
+      "OccurrenceProvenance",
+      "ParticipantStance",
+      "TheoryLanguageCodebook",
+      "TheoryLanguageEntry",
+      "TheoryLanguageExposureAssessment",
+      "TheoryLanguageOccurrence",
+      "TranscriptTurn",
+      "assess_theory_language_exposure",
+      "load_theory_language_codebook",
+      "normalize_for_exact_matching"
+    ]
+  }
+}

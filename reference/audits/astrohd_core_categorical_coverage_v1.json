@@ -1,0 +1,385 @@
+{
+  "authority_coverage": [
+    {
+      "dependency_clusters": [
+        "AUTHORITY_DECISION"
+      ],
+      "engine_authority_value": "emotional_solar_plexus",
+      "has_frozen_authority_path": true,
+      "matching_rule_count": 2,
+      "matching_rule_ids": [
+        "MAP-AUTH-EMOTIONAL-D01",
+        "MAP-AUTH-EMOTIONAL-D03"
+      ],
+      "observation_ids": [
+        "OBS-AUTH-EMOTIONAL-WAIT"
+      ],
+      "prompt_ids": [
+        "D01",
+        "D03"
+      ]
+    },
+    {
+      "dependency_clusters": [
+        "AUTHORITY_DECISION"
+      ],
+      "engine_authority_value": "sacral",
+      "has_frozen_authority_path": true,
+      "matching_rule_count": 1,
+      "matching_rule_ids": [
+        "MAP-AUTH-SACRAL-D01"
+      ],
+      "observation_ids": [
+        "OBS-AUTH-SACRAL-RESPONSE"
+      ],
+      "prompt_ids": [
+        "D01"
+      ]
+    },
+    {
+      "dependency_clusters": [
+        "AUTHORITY_DECISION"
+      ],
+      "engine_authority_value": "splenic",
+      "has_frozen_authority_path": true,
+      "matching_rule_count": 2,
+      "matching_rule_ids": [
+        "MAP-AUTH-SPLENIC-D01",
+        "MAP-AUTH-SPLENIC-D02"
+      ],
+      "observation_ids": [
+        "OBS-AUTH-SPLENIC-IMMEDIATE"
+      ],
+      "prompt_ids": [
+        "D01",
+        "D02"
+      ]
+    },
+    {
+      "dependency_clusters": [],
+      "engine_authority_value": "ego_manifested",
+      "has_frozen_authority_path": false,
+      "matching_rule_count": 0,
+      "matching_rule_ids": [],
+      "observation_ids": [],
+      "prompt_ids": []
+    },
+    {
+      "dependency_clusters": [],
+      "engine_authority_value": "ego_projected",
+      "has_frozen_authority_path": false,
+      "matching_rule_count": 0,
+      "matching_rule_ids": [],
+      "observation_ids": [],
+      "prompt_ids": []
+    },
+    {
+      "dependency_clusters": [],
+      "engine_authority_value": "self_projected",
+      "has_frozen_authority_path": false,
+      "matching_rule_count": 0,
+      "matching_rule_ids": [],
+      "observation_ids": [],
+      "prompt_ids": []
+    },
+    {
+      "dependency_clusters": [],
+      "engine_authority_value": "mental_environmental",
+      "has_frozen_authority_path": false,
+      "matching_rule_count": 0,
+      "matching_rule_ids": [],
+      "observation_ids": [],
+      "prompt_ids": []
+    },
+    {
+      "dependency_clusters": [],
+      "engine_authority_value": "lunar",
+      "has_frozen_authority_path": false,
+      "matching_rule_count": 0,
+      "matching_rule_ids": [],
+      "observation_ids": [],
+      "prompt_ids": []
+    }
+  ],
+  "d01_declared_token_disposition": {
+    "declared_tokens_with_neither_frozen_support_nor_contradiction": [
+      "clarity_from_being_in_the_right_place_or_with_the_right_listener",
+      "hearing_your_own_words_reveal_the_answer",
+      "no_stable_pattern"
+    ],
+    "question_id": "D01",
+    "tokens": [
+      {
+        "answer_token": "a_gut_like_yes_no_energy",
+        "contradiction_rule_ids": [
+          "MAP-AUTH-EMOTIONAL-D01"
+        ],
+        "support_rule_ids": [
+          "MAP-AUTH-SACRAL-D01"
+        ],
+        "used_by_any_frozen_contradiction_rule": true,
+        "used_by_any_frozen_support_rule": true
+      },
+      {
+        "answer_token": "an_immediate_quiet_sense",
+        "contradiction_rule_ids": [
+          "MAP-AUTH-EMOTIONAL-D01"
+        ],
+        "support_rule_ids": [
+          "MAP-AUTH-SPLENIC-D01"
+        ],
+        "used_by_any_frozen_contradiction_rule": true,
+        "used_by_any_frozen_support_rule": true
+      },
+      {
+        "answer_token": "clarity_from_being_in_the_right_place_or_with_the_right_listener",
+        "contradiction_rule_ids": [],
+        "support_rule_ids": [],
+        "used_by_any_frozen_contradiction_rule": false,
+        "used_by_any_frozen_support_rule": false
+      },
+      {
+        "answer_token": "clarity_that_changes_over_hours_or_days",
+        "contradiction_rule_ids": [
+          "MAP-AUTH-SACRAL-D01",
+          "MAP-AUTH-SPLENIC-D01"
+        ],
+        "support_rule_ids": [
+          "MAP-AUTH-EMOTIONAL-D01"
+        ],
+        "used_by_any_frozen_contradiction_rule": true,
+        "used_by_any_frozen_support_rule": true
+      },
+      {
+        "answer_token": "hearing_your_own_words_reveal_the_answer",
+        "contradiction_rule_ids": [],
+        "support_rule_ids": [],
+        "used_by_any_frozen_contradiction_rule": false,
+        "used_by_any_frozen_support_rule": false
+      },
+      {
+        "answer_token": "no_stable_pattern",
+        "contradiction_rule_ids": [],
+        "support_rule_ids": [],
+        "used_by_any_frozen_contradiction_rule": false,
+        "used_by_any_frozen_support_rule": false
+      }
+    ]
+  },
+  "dependency_summary": {
+    "dependency_cluster_count": 7,
+    "distinct_frozen_mapped_prompt_count": 23,
+    "distinct_frozen_rule_count": 27,
+    "interpretation": "descriptive_only_not_independent_sample_counts",
+    "observation_group_count": 20
+  },
+  "profile_line_coverage": [
+    {
+      "dependency_clusters": [
+        "PROFILE_ARCHITECTURE"
+      ],
+      "has_frozen_profile_path": true,
+      "matching_rule_count": 1,
+      "matching_rule_ids": [
+        "MAP-PROFILE-LINE1-P01"
+      ],
+      "observation_ids": [
+        "OBS-PROFILE-LINE1-FOUNDATION"
+      ],
+      "profile_line": 1,
+      "prompt_ids": [
+        "P01"
+      ]
+    },
+    {
+      "dependency_clusters": [
+        "PROFILE_ARCHITECTURE"
+      ],
+      "has_frozen_profile_path": true,
+      "matching_rule_count": 2,
+      "matching_rule_ids": [
+        "MAP-PROFILE-LINE2-P02",
+        "MAP-PROFILE-LINE2-P09"
+      ],
+      "observation_ids": [
+        "OBS-PROFILE-LINE2-NATURAL"
+      ],
+      "profile_line": 2,
+      "prompt_ids": [
+        "P02",
+        "P09"
+      ]
+    },
+    {
+      "dependency_clusters": [
+        "PROFILE_ARCHITECTURE"
+      ],
+      "has_frozen_profile_path": true,
+      "matching_rule_count": 2,
+      "matching_rule_ids": [
+        "MAP-PROFILE-LINE3-P03",
+        "MAP-PROFILE-LINE3-P11"
+      ],
+      "observation_ids": [
+        "OBS-PROFILE-LINE3-TRIAL-ERROR"
+      ],
+      "profile_line": 3,
+      "prompt_ids": [
+        "P03",
+        "P11"
+      ]
+    },
+    {
+      "dependency_clusters": [
+        "PROFILE_ARCHITECTURE"
+      ],
+      "has_frozen_profile_path": true,
+      "matching_rule_count": 1,
+      "matching_rule_ids": [
+        "MAP-PROFILE-LINE4-P10"
+      ],
+      "observation_ids": [
+        "OBS-PROFILE-LINE4-NETWORK"
+      ],
+      "profile_line": 4,
+      "prompt_ids": [
+        "P10"
+      ]
+    },
+    {
+      "dependency_clusters": [
+        "PROFILE_ARCHITECTURE"
+      ],
+      "has_frozen_profile_path": true,
+      "matching_rule_count": 1,
+      "matching_rule_ids": [
+        "MAP-PROFILE-LINE5-P05"
+      ],
+      "observation_ids": [
+        "OBS-PROFILE-LINE5-PROJECTION"
+      ],
+      "profile_line": 5,
+      "prompt_ids": [
+        "P05"
+      ]
+    },
+    {
+      "dependency_clusters": [
+        "PROFILE_ARCHITECTURE"
+      ],
+      "has_frozen_profile_path": true,
+      "matching_rule_count": 2,
+      "matching_rule_ids": [
+        "MAP-PROFILE-LINE6-P07",
+        "MAP-PROFILE-LINE6-P12"
+      ],
+      "observation_ids": [
+        "OBS-PROFILE-LINE6-DEVELOPMENT"
+      ],
+      "profile_line": 6,
+      "prompt_ids": [
+        "P07",
+        "P12"
+      ]
+    }
+  ],
+  "schema_version": "astrohd-core-categorical-coverage-v1",
+  "source": {
+    "bodygraph": {
+      "path": "src/hdmatch/chart/bodygraph.py",
+      "sha256": "5bda8c935e7d58521929acb8f8528e87b958a7b92fc171bc11ac3ff8372b960b"
+    },
+    "mapping_library": {
+      "path": "mappings/mapping_library_v1.json",
+      "sha256": "3424672432f7f071ec90ef9ddce52a67ff6794911e92b1a1e04f079262ea6200"
+    },
+    "question_bank": {
+      "path": "reference/core/question_bank_v1.json",
+      "sha256": "31f813efc3da7263569ef010a8336b1b1b0c44801b7aa0f91e33b3fa4587d820"
+    },
+    "scoring_structure_audit": {
+      "path": "reference/audits/astrohd_frozen_scoring_structure_v1.json",
+      "sha256": "28df376c5731905beea6c71104d21523e4a562ca8d36d7d7d47a16e358c2b50c"
+    }
+  },
+  "status": "mechanical_audit_descriptive_only_no_runtime_effect",
+  "type_coverage": [
+    {
+      "dependency_clusters": [],
+      "engine_type_value": "manifestor",
+      "has_frozen_type_strategy_path": false,
+      "matching_rule_count": 0,
+      "matching_rule_ids": [],
+      "observation_ids": [],
+      "prompt_ids": []
+    },
+    {
+      "dependency_clusters": [
+        "TYPE_STRATEGY_ARCHITECTURE"
+      ],
+      "engine_type_value": "generator",
+      "has_frozen_type_strategy_path": true,
+      "matching_rule_count": 2,
+      "matching_rule_ids": [
+        "MAP-TYPE-GENERATOR-S02",
+        "MAP-TYPE-GENERATOR-S05"
+      ],
+      "observation_ids": [
+        "OBS-TYPE-GENERATOR-RESPONSE",
+        "OBS-TYPE-GENERATOR-SACRAL-ENERGY"
+      ],
+      "prompt_ids": [
+        "S02",
+        "S05"
+      ]
+    },
+    {
+      "dependency_clusters": [
+        "TYPE_STRATEGY_ARCHITECTURE"
+      ],
+      "engine_type_value": "manifesting_generator",
+      "has_frozen_type_strategy_path": true,
+      "matching_rule_count": 2,
+      "matching_rule_ids": [
+        "MAP-TYPE-GENERATOR-S02",
+        "MAP-TYPE-GENERATOR-S05"
+      ],
+      "observation_ids": [
+        "OBS-TYPE-GENERATOR-RESPONSE",
+        "OBS-TYPE-GENERATOR-SACRAL-ENERGY"
+      ],
+      "prompt_ids": [
+        "S02",
+        "S05"
+      ]
+    },
+    {
+      "dependency_clusters": [
+        "TYPE_STRATEGY_ARCHITECTURE"
+      ],
+      "engine_type_value": "projector",
+      "has_frozen_type_strategy_path": true,
+      "matching_rule_count": 2,
+      "matching_rule_ids": [
+        "MAP-TYPE-PROJECTOR-S03",
+        "MAP-TYPE-PROJECTOR-S04"
+      ],
+      "observation_ids": [
+        "OBS-TYPE-PROJECTOR-RECOGNITION"
+      ],
+      "prompt_ids": [
+        "S03",
+        "S04"
+      ]
+    },
+    {
+      "dependency_clusters": [],
+      "engine_type_value": "reflector",
+      "has_frozen_type_strategy_path": false,
+      "matching_rule_count": 0,
+      "matching_rule_ids": [],
+      "observation_ids": [],
+      "prompt_ids": []
+    }
+  ]
+}

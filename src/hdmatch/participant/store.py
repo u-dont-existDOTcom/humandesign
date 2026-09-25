@@ -31,7 +31,6 @@ from .models import (
     SessionRecord,
 )
 
-
 _SESSION_RE = re.compile(r"^HD-[A-F0-9]{32}$")
 T = TypeVar("T", bound=BaseModel)
 
@@ -102,7 +101,13 @@ class ParticipantSessionStore:
         return freeze
 
     def append_evidence(self, record: EvidenceRecord) -> None:
-        self.load_session(record.session_id)
+        session = self.load_session(record.session_id)
+        if record.evidence.frozen_dimension_binding is not None:
+            self._validate_evidence_binding(
+                record,
+                session,
+                self.load_freeze(record.session_id),
+            )
         directory = self._directory(record.session_id)
         event_path = directory / "evidence.events.jsonl"
         lock_path = directory / ".evidence.lock"
@@ -135,10 +140,11 @@ class ParticipantSessionStore:
                 fcntl.flock(lock_handle.fileno(), fcntl.LOCK_UN)
 
     def load_evidence(self, session_id: str) -> tuple[EvidenceRecord, ...]:
-        self.load_session(session_id)
+        session = self.load_session(session_id)
         path = self._directory(session_id) / "evidence.events.jsonl"
         envelopes = self._read_event_envelopes(path)
         records: list[EvidenceRecord] = []
+        freeze: PredictionFreeze | None = None
         for envelope in envelopes:
             try:
                 record = EvidenceRecord.model_validate(envelope["payload"])
@@ -146,8 +152,38 @@ class ParticipantSessionStore:
                 raise SessionStorageError("invalid evidence event payload") from exc
             if record.session_id != session_id:
                 raise SessionStorageError("evidence event belongs to a different session")
+            if record.evidence.frozen_dimension_binding is not None:
+                if freeze is None:
+                    freeze = self.load_freeze(session_id)
+                self._validate_evidence_binding(record, session, freeze)
             records.append(record)
         return tuple(records)
+
+    @staticmethod
+    def _validate_evidence_binding(
+        record: EvidenceRecord,
+        session: SessionRecord,
+        freeze: PredictionFreeze,
+    ) -> None:
+        binding = record.evidence.frozen_dimension_binding
+        if binding is None:
+            return
+        if (
+            binding.freeze_ref.session_id != session.session_id
+            or binding.freeze_ref.freeze_sha256 != session.prediction_freeze_sha256
+        ):
+            raise SessionStorageError("evidence binding does not match the session freeze identity")
+        try:
+            dimension = freeze.dimensions[binding.dimension_index]
+        except IndexError as exc:
+            raise SessionStorageError(
+                "evidence binding dimension index is outside the freeze"
+            ) from exc
+        if (
+            dimension.question_id != binding.question_id
+            or dimension.cluster_id != binding.resolved_cluster_id
+        ):
+            raise SessionStorageError("evidence binding does not match its frozen dimension")
 
     def _read_event_envelopes(self, path: Path) -> list[dict[str, Any]]:
         if not path.exists():

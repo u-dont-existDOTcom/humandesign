@@ -1,7 +1,8 @@
 # AstroHD-first owner pilot
 
-Status: implemented and locally verified on `codex/issue18-release-receipt`; not yet
-merged or deployed.
+Status: owner-only pilot merged and deployed from main `afc0bb8`; the 2026-09-01
+evidence-quality/participant-explanation repair is in progress on
+`codex/astrohd-owner-intake-quality-v1`.
 
 ## Why this is the first test
 
@@ -12,6 +13,29 @@ it is not being discarded or delayed until an arbitrary sample count.
 
 The owner pilot uses an exact recorded birth time. It is not the separate unknown-time
 rectification workflow described in the research handoff.
+
+The 2026-09-02 terminology proposal is specified separately as a chart-blind,
+non-blocking theory-language exposure diagnostic. Its repository implementation is an
+isolated exact-match scaffold using synthetic placeholders only. It cannot call a
+participant contaminated, receive chart/prediction/result inputs, or change eligibility,
+interview flow, evidence sufficiency, scoring, exclusion, lock/reveal, or primary
+analysis. It is not integrated into the owner-pilot runtime; see
+`research/ASTROHD_THEORY_LANGUAGE_EXPOSURE_SIGNAL_SPEC.md`.
+
+The frozen mapping mechanically contains 27 rules across 23 unique question IDs. Those
+counts are descriptive mapping facts, not a questionnaire-completeness denominator,
+participant requirement, or authorization to add questions. The mechanical extract is
+`../reference/audits/astrohd_frozen_rule_prompt_mapping_v1.json`.
+
+The participant page now states the research motivation plainly. This is the
+project's first real blinded test of astrology, Human Design, and their proposed
+combined use. It arose from Joel's chance one-person finding that the systems appeared
+surprisingly informative together only after mismatches were interrogated rather than
+explained away. That observation motivates a test; it is not itself validation. The
+page also explains why the simpler personality metrics used by the astrology/HD tests
+this project compares against are inadequate for the detailed claims under study and
+why participants must not rush their answers. A required in-page acknowledgment makes
+the time/detail expectation explicit before session creation.
 
 ## Participant path
 
@@ -25,8 +49,9 @@ rectification workflow described in the research handoff.
    session token. The token is shown once and only its SHA-256 digest is stored.
    Both values are required for every interview action; a session ID alone grants
    no access.
-5. The interviewer appends evidence, locks the confirmatory evidence, and only then
-   calls reveal.
+5. The interviewer appends evidence. The owner-pilot lock rejects incomplete,
+   inconsistent, or unresolved frozen mapped questions through the existing
+   evidence-quality gate; after a successful lock, ordinary reveal is available.
 6. The interviewer-facing reveal returns birth-redacted prediction comparisons,
    the true state/date rank in the declared candidate set, and a public-safe receipt
    identifying the exact model, mapping, question bank, chart engine, candidate
@@ -38,6 +63,59 @@ The required OpenAI consent names the actual boundary: questionnaire answers and
 the birth-redacted comparison may be processed by OpenAI; exact birth data and the
 raw chart are not included in the interviewer Action responses.
 
+The two credentials can be copied together with one click. The page explains their
+roles: the ID selects the sealed session and the token proves private access. There is
+no credential-bearing magic link because URLs leak into history, logs, screenshots,
+and forwarded messages. The ChatGPT interviewer link itself contains no credential.
+This is separate from the relationship study's email magic-link recovery flow.
+
+The owner invitation code is also explained in place: it exists only because this is
+an owner-restricted pilot, authorizes one session, and is not a participant identity.
+Ongoing session authorization is now stored separately by opaque session ID, so
+rotating the one-use invitation for a new test cannot strand an existing session.
+Already-deployed invitation receipts migrate to that layout after successful session
+authorization without ever storing the raw token.
+The daylight-saving `fold` control is hidden unless the submitted local time actually
+occurred twice; if needed, the page explains earlier versus later occurrence in plain
+language.
+
+## Interview evidence-quality gate
+
+The first deployed interviewer could advance after fluent but incomplete or random
+text, and the server could lock after one scoreable observation. That is not adequate
+for the stated study.
+
+The repaired contract now:
+
+- returns each selected question's frozen `minimum_evidence` requirement;
+- treats a broad claim as domain-specific until cross-domain examples support a broader
+  conclusion (the chess example is the explicit regression case);
+- requires the interviewer to check new claims against earlier claims and reconcile
+  apparent contradictions by context or life-stage change;
+- does not count random, joke-like, off-topic, incoherent, or refused clarification as
+  adequate evidence;
+- requires each trait/behavior observation to carry a minimum-evidence decision,
+  consistency status, and evidence-specific quality rationale;
+- keeps legacy/unreceipted observations readable but never silently migrates them into
+  the repaired scoring protocol;
+- removes client-authored cluster IDs and binds an eligible `question_id` only to its
+  unique server-owned dimension in the immutable session freeze; and
+- rejects owner-pilot lock while any frozen mapped question lacks an adequate,
+  consistency-checked evidence receipt. An adequately assessed `answer: null` remains
+  unscored and never forces a token.
+
+The 2026-09-02 owner correction is explicit: there was never a separate completion
+policy. Codex invented the 76-item rule and then invented a 23-versus-76 policy choice
+while trying to correct it. See `../state/OWNER-CORRECTION-2026-09-02.md`. The mapped
+question gate above is the existing mechanical response-quality safeguard for this
+owner pilot, not a newly selected scientific policy and not evidence of model validity.
+
+Joel may invite only people he reasonably expects to take a long, candid interview
+seriously. That screen should be based on willingness and data quality, not on expected
+AstroHD agreement, astrology/HD belief, or a desired result. Invitation judgment cannot
+prove truthfulness, so the in-session evidence-quality and coherence checks remain
+important even though they cannot prove participant truthfulness or model validity.
+
 The deployable Custom GPT instruction block is
 `reference/custom_gpt/participant_interviewer_instructions_under_8000_v1.md`; the
 interview-only Action schema is
@@ -45,10 +123,11 @@ interview-only Action schema is
 
 ## What is and is not scored
 
-The current natal participant runtime has a complete executable symbolic scoring and
-reveal path. It can classify each frozen mapped dimension as supported, partially
-supported, contradicted, or insufficiently evidenced and rank the true birth
-state/date against the declared known-month universe.
+The natal participant runtime has an executable symbolic scoring path and read
+compatibility for historical reveal artifacts. After confirmatory evidence is locked,
+it can classify each frozen mapped dimension as supported, partially supported,
+contradicted, or insufficiently evidenced and rank the true birth state/date against
+the declared known-month universe.
 
 That does **not** mean the scientific scoring/model-development job is finished. The
 active model is the limited frozen `V4/V3.2-symbolic-v1` mapping, not the intended
