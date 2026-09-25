@@ -1,7 +1,7 @@
 """Direct endpoint tests for the experimental answer-conditioned decoder."""
+
 from __future__ import annotations
 
-import copy
 import json
 import os
 from datetime import UTC, datetime
@@ -12,12 +12,24 @@ from fastapi import FastAPI
 from fastapi.testclient import TestClient
 
 from hdmatch.api.birth_test_api import (
-    SourceAnswer, install_birth_test, interpret_answers, question_bank, utc_from_local,
+    SourceAnswer,
+    install_birth_test,
+    interpret_answers,
+    question_bank,
+    utc_from_local,
 )
 from hdmatch.evaluation.astrohd_v15_decoder import (
-    MODEL_PATH, answer_signs, candidate_minutes, check_instant, content_hash,
-    load_model, mask_at, normalize_profile, panel_masks, rank_against, run_panel,
-    score_mask, validate_location,
+    MODEL_PATH,
+    answer_signs,
+    candidate_minutes,
+    content_hash,
+    load_model,
+    mask_at,
+    normalize_profile,
+    rank_against,
+    run_panel,
+    score_mask,
+    validate_location,
 )
 
 
@@ -44,7 +56,10 @@ def test_explicit_relevant_answer_change_flips_comparison_without_refitting():
     changed = {**original, "insight_translation": "contradicted"}
     assert score_mask(1, answer_signs(original)) > score_mask(0, answer_signs(original))
     assert score_mask(1, answer_signs(changed)) < score_mask(0, answer_signs(changed))
-    assert load_model()[0]["selected_rule_ids"] == json.loads(MODEL_PATH.read_text())["selected_rule_ids"]
+    assert (
+        load_model()[0]["selected_rule_ids"]
+        == json.loads(MODEL_PATH.read_text())["selected_rule_ids"]
+    )
 
 
 def test_unknown_is_neither_support_nor_contradiction():
@@ -113,7 +128,9 @@ def test_selected_scenarios_are_the_existing_bank_with_context():
 
 
 def test_local_time_conversion_and_dst_are_not_guessed():
-    assert utc_from_local("1985-01-29T05:25:00", "America/New_York") == datetime(1985, 1, 29, 10, 25, tzinfo=UTC)
+    assert utc_from_local("1985-01-29T05:25:00", "America/New_York") == datetime(
+        1985, 1, 29, 10, 25, tzinfo=UTC
+    )
     with pytest.raises(ValueError, match="ambiguous"):
         utc_from_local("2024-11-03T01:30:00", "America/New_York")
     with pytest.raises(ValueError, match="did not exist"):
@@ -133,32 +150,67 @@ class NeutralInterpreter:
 
     def _conversation_call_json(self, **kwargs):
         self.payload = kwargs["payload"]
-        return {"interpretations": [{"domain_id": d["id"], "state": "supported" if d["id"] == "insight_translation" else "unknown",
-            "summary": "Only the reported explanation is established.",
-            "evidence": [{"question_id": "G02", "quote": "an invented sentence" if self.forged else "I explain the discrepancy."}] if d["id"] == "insight_translation" else []}
-            for d in load_model()[2]["domains"]]}
+        return {
+            "interpretations": [
+                {
+                    "domain_id": d["id"],
+                    "state": "supported" if d["id"] == "insight_translation" else "unknown",
+                    "summary": "Only the reported explanation is established.",
+                    "evidence": [
+                        {
+                            "question_id": "G02",
+                            "quote": "an invented sentence"
+                            if self.forged
+                            else "I explain the discrepancy.",
+                        }
+                    ]
+                    if d["id"] == "insight_translation"
+                    else [],
+                }
+                for d in load_model()[2]["domains"]
+            ]
+        }
 
 
 def test_interpreter_uses_actual_quote_and_receives_no_birth_or_chart():
     model = NeutralInterpreter()
-    result = interpret_answers([SourceAnswer(question_id="G02", text="I explain the discrepancy.")], model)
+    result = interpret_answers(
+        [SourceAnswer(question_id="G02", text="I explain the discrepancy.")], model
+    )
     assert result["review_required"]
-    assert result["chart_or_birth_supplied_to_interpreter"] is False
+    assert result["structured_birth_or_chart_fields_supplied"] is False
     assert set(model.payload) == {"definitions", "responses"}
     assert result["interpretations"][0]["evidence"][0]["quote"] == "I explain the discrepancy."
 
 
 def test_forged_interpreter_evidence_is_rejected():
     with pytest.raises(ValueError, match="source verification"):
-        interpret_answers([SourceAnswer(question_id="G02", text="I explain the discrepancy.")], NeutralInterpreter(True))
+        interpret_answers(
+            [SourceAnswer(question_id="G02", text="I explain the discrepancy.")],
+            NeutralInterpreter(True),
+        )
 
 
 def test_import_preserves_existing_text_without_requiring_new_scenarios():
     class UnknownInterpreter:
         def _conversation_call_json(self, **kwargs):
             assert kwargs["payload"]["responses"][0]["answer"] == "Existing private interview text."
-            return {"interpretations": [{"domain_id": d["id"], "state": "unknown", "summary": "Insufficient", "evidence": []} for d in load_model()[2]["domains"]]}
-    out = interpret_answers([SourceAnswer(question_id="imported", text="Existing private interview text.")], UnknownInterpreter())
+            return {
+                "interpretations": [
+                    {
+                        "domain_id": d["id"],
+                        "state": "unknown",
+                        "summary": "Insufficient",
+                        "evidence": [],
+                    }
+                    for d in load_model()[2]["domains"]
+                ]
+            }
+
+    out = interpret_answers(
+        [SourceAnswer(question_id="imported", text="Existing private interview text.")],
+        UnknownInterpreter(),
+    )
     assert len(out["interpretations"]) == 5
 
 
@@ -174,13 +226,21 @@ def test_direct_original_scores_and_tied_minutes(ephe):
 def test_real_candidate_scores_respond_to_answers_not_target_optimization(ephe):
     p = profile()
     base = run_panel(p, latitude=39.9526, longitude=-75.1652, count=99, ephemeris_root=ephe)
-    changed = run_panel({**p, "romantic_attachment": "contradicted", "persuasion_strategy": "contradicted"}, latitude=39.9526, longitude=-75.1652, count=99, ephemeris_root=ephe)
+    changed = run_panel(
+        {**p, "romantic_attachment": "contradicted", "persuasion_strategy": "contradicted"},
+        latitude=39.9526,
+        longitude=-75.1652,
+        count=99,
+        ephemeris_root=ephe,
+    )
     assert base["model_id"] == changed["model_id"]
     assert base["panel_sha256"] == changed["panel_sha256"]
     assert base["profile_sha256"] != changed["profile_sha256"]
     assert base["top_candidates"] != changed["top_candidates"]
     with pytest.raises(ValueError, match="No scored evidence"):
-        run_panel(profile("unknown"), latitude=39.9526, longitude=-75.1652, count=99, ephemeris_root=ephe)
+        run_panel(
+            profile("unknown"), latitude=39.9526, longitude=-75.1652, count=99, ephemeris_root=ephe
+        )
 
 
 def test_http_consumer_profile_change_and_frozen_reveal(ephe):
@@ -189,20 +249,59 @@ def test_http_consumer_profile_change_and_frozen_reveal(ephe):
     client = TestClient(app)
     assert client.get("/birth-test").status_code == 200
     assert len(client.get("/birth-test/api/contract").json()["questions"]) == 9
-    body = {"consent": True, "reviewed": True, "profile": profile(), "source_answers_sha256": "a" * 64,
-            "latitude": 39.9526, "longitude": -75.1652, "decoy_count": 99}
+    body = {
+        "consent": True,
+        "reviewed": True,
+        "profile": profile(),
+        "source_answers_sha256": "a" * 64,
+        "latitude": 39.9526,
+        "longitude": -75.1652,
+        "decoy_count": 99,
+    }
     assert client.post("/birth-test/api/run", json={**body, "reviewed": False}).status_code == 400
-    assert client.post("/birth-test/api/run", json={**body, "birth_date": "1985-01-29"}).status_code == 422
+    assert (
+        client.post("/birth-test/api/run", json={**body, "birth_date": "1985-01-29"}).status_code
+        == 422
+    )
     first = client.post("/birth-test/api/run", json=body)
     assert first.status_code == 200, first.text
     first = first.json()
-    changed = client.post("/birth-test/api/run", json={**body, "profile": profile("contradicted")}).json()
+    changed = client.post(
+        "/birth-test/api/run", json={**body, "profile": profile("contradicted")}
+    ).json()
     assert changed["model_id"] == first["model_id"]
     assert changed["profile_sha256"] != first["profile_sha256"]
-    checked = client.post("/birth-test/api/check", json={"run_id": first["run_id"], "birth_local": "1985-01-29T05:25:00", "timezone": "America/New_York", "time_source": "record"})
+    checked = client.post(
+        "/birth-test/api/check",
+        json={
+            "run_id": first["run_id"],
+            "birth_local": "1985-01-29T05:25:00",
+            "timezone": "America/New_York",
+            "time_source": "record",
+        },
+    )
     assert checked.status_code == 200, checked.text
     assert checked.json()["score"] == 6
     assert checked.json()["profile_sha256"] == first["profile_sha256"]
     assert checked.json()["result_class"] == "FIRST_REVEAL_FROZEN_MODEL_TEST"
     assert client.delete("/birth-test/api/run/" + first["run_id"]).status_code == 200
-    assert client.post("/birth-test/api/check", json={"run_id": first["run_id"], "birth_local": "1985-01-29T05:25:00", "timezone": "America/New_York"}).status_code == 404
+    assert (
+        client.post(
+            "/birth-test/api/check",
+            json={
+                "run_id": first["run_id"],
+                "birth_local": "1985-01-29T05:25:00",
+                "timezone": "America/New_York",
+            },
+        ).status_code
+        == 404
+    )
+
+
+def test_obvious_birth_key_in_import_is_not_sent_to_interpreter():
+    model = NeutralInterpreter()
+    with pytest.raises(ValueError, match="birth/chart"):
+        interpret_answers(
+            [SourceAnswer(question_id="imported", text="I was born 1985-01-29.")], model
+        )
+    assert model.payload is None
