@@ -5,9 +5,9 @@
   "exclusive": true,
   "implementationAuthorized": true,
   "assuranceLane": "iteration",
-  "status": "exact_century_running_answer_responsive_decoder_gap_confirmed",
+  "status": "exact_century_complete_survey_decoder_remains_unfinished",
   "ownerOutcome": "Combine established astrology rulebook clauses into one model fitted to the owner case, with no arbitrary fitted numerical astrology weights, and run progressively larger candidate-date/time searches. Report the actual recovered date and honest time resolution.",
-  "currentOwnerRequestStatus": "EXPLANATION_AND_EXACT_SCAN_IN_PROGRESS",
+  "currentOwnerRequestStatus": "ANSWER_LINK_EXPLAINED_AND_FIXED_MODEL_FULL_CENTURY_EXECUTED",
   "longRangeResearchStatus": "OPEN_NOT_INDEPENDENTLY_VALIDATED",
   "privateParticipantTranscriptToGitAuthorized": false,
   "ownerMethodContract": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-OWNER-METHOD-CONTRACT-20260924.json",
@@ -58,12 +58,14 @@
     "newAstronomicalRunPerformed": false,
     "newRuleCombinationsTried": false
   },
-  "nextAction": "Finish and verify the already-running exact minute-grid maximum search, then report scores versus ranks and the unfinished answer-responsive decoding layer. Do not modify rules or responses in this scan.",
+  "nextAction": "Deliver the completed unchanged-model century result and explain the unfinished answer-conditioned scoring layer. Subsequent decoder work must connect a meaningful survey change to full-universe scoring under fixed mappings, not refit against the known target or reuse only current maxima.",
   "supersession": "The old whole-tradition-independent-success requirement and the no-new-owner-development interpretation of historical freezes are not active requirements. Historical results remain preserved in Git history.",
   "stopAdmission": {
-    "currentRequestedOperations": "OPEN_EXACT_SCAN_RUNNING",
+    "currentRequestedOperations": "COMPLETED_EXPLANATION_AND_EXACT_MINUTE_GRID_SCAN",
+    "remainingExecutionGapForThisScan": "NONE",
     "broaderOwnerOutcome": "OPEN_ANSWER_RESPONSIVE_DECODER_UNFINISHED",
-    "noProxyCompletion": "A successful fixed-signature scan does not finish survey-to-birth-date inference."
+    "noProxyCompletion": "The fixed-signature scan is not completion of survey-to-birth-date inference.",
+    "currentScopeBoundary": "No new rule combinations, mappings, answer edits or model-fitting changes were requested for this scan."
   },
   "surveyDecoder": {
     "status": "UNFINISHED",
@@ -73,11 +75,34 @@
     "requirement": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-SURVEY-DECODER-GAP-20260925.md"
   },
   "currentExactScan": {
-    "status": "RUNNING",
+    "status": "COMPLETE_VERIFIED",
     "rulesChanged": false,
     "answersChanged": false,
     "projectInterpolationUsed": false,
     "gridMinutes": 52596001,
-    "plan": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-FULL-CENTURY-PLAN-20260925.md"
+    "plan": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-FULL-CENTURY-PLAN-20260925.md",
+    "completedChunks": 263,
+    "checkedMinutes": 52596001,
+    "maximumCount": 9,
+    "maximumDates": [
+      "1985-01-29"
+    ],
+    "minuteSamples": [
+      "10:18",
+      "10:19",
+      "10:20",
+      "10:21",
+      "10:22",
+      "10:23",
+      "10:24",
+      "10:25",
+      "10:26"
+    ],
+    "targetJointRank": 1,
+    "processExitCode": 0,
+    "ephemerisFallbacks": 0,
+    "continuousTimeExhaustiveness": false,
+    "receipt": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-EXACT-CENTURY-RECEIPT-20260925.md",
+    "result": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-EXACT-CENTURY-RESULT-20260925.json"
   }
 }

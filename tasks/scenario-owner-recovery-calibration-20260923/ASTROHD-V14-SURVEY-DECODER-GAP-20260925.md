@@ -27,3 +27,7 @@ Not every wording change should alter rankings. Equivalent responses may retain 
 A real survey edit changes the neutral response profile; the unchanged model receives that profile; and a controlled case with different predicted traits changes the relative scores as specified. Equivalent-answer and irrelevant-answer controls remain invariant. Unknown/contradictory evidence semantics are explicit. Identical chart-feature vectors remain tied. The known correct birth date is not consulted to calculate inference scores or choose a new rule subset after the edit.
 
 The fixed six-rule exact-century scan is independently authorized now and does not claim to finish this connection. No actual survey answers, mappings, or rule combinations are changed in that scan.
+
+## Whole-universe reranking, not winner-list reuse
+
+The current exact scan uses a bound specific to the all-six-positive signature: one failed clause means a candidate cannot attain six. It records the maximum-score candidates, not every candidate's complete feature vector or lower score. A later answer-responsive decoder must reconsider the declared candidate universe under the revised evidence, or prove that any retained pruning remains valid for that evidence. Rescoring only today's winning minutes would not implement general survey-based reranking. This is a required input-to-output dependency, not a prohibition on the currently authorized fixed-signature audit.

@@ -1,0 +1,66 @@
+{
+  "classification": "single-owner target-aware development signature, not human validation",
+  "continuous_time_exhaustiveness_proved": false,
+  "ephemeris_fallbacks": 0,
+  "exact_grid_count": 52596001,
+  "freeze_sha256": "b6764e28ed926aacff47d9e7900c1a42291f376f3141caf48c31663837abf887",
+  "higher_than_target": 0,
+  "interpolation_used": false,
+  "maximum_count": 9,
+  "maximum_dates": [
+    "1985-01-29"
+  ],
+  "maximum_instants": [
+    "1985-01-29T10:18:00+00:00",
+    "1985-01-29T10:19:00+00:00",
+    "1985-01-29T10:20:00+00:00",
+    "1985-01-29T10:21:00+00:00",
+    "1985-01-29T10:22:00+00:00",
+    "1985-01-29T10:23:00+00:00",
+    "1985-01-29T10:24:00+00:00",
+    "1985-01-29T10:25:00+00:00",
+    "1985-01-29T10:26:00+00:00"
+  ],
+  "maximum_score": 6,
+  "model_refitted": false,
+  "raw_and_deduplicated_identical": true,
+  "runtime_survey_decoder_complete": false,
+  "seconds": 1922.3432158250362,
+  "status": "COMPLETE",
+  "target_rank_best": 1,
+  "target_rank_worst": 9,
+  "unique_offsets_verified": true,
+  "start_utc": "1926-08-24T10:42:00+00:00",
+  "end_utc": "2026-08-24T10:42:00+00:00",
+  "cadence_seconds": 60,
+  "model_sha256": "4bd0b02cc099142f932cc608e821d5db6539e1ec88a67c1d4f93f638d4cc0e83",
+  "verification": {
+    "checked_at_utc": "2026-09-25T03:00:21.521307+00:00",
+    "chunk_count": 263,
+    "exact_partition_verified": true,
+    "checked_minutes": 52596001,
+    "model_and_run_source_hashes_unchanged": true,
+    "native_python_parity_cases": 1989,
+    "process_exit_code": 0,
+    "cold_direct_scores": [
+      6,
+      1,
+      5,
+      6,
+      6,
+      5
+    ],
+    "aggregate_rejection_and_maximum_counts": [
+      43863794,
+      8172234,
+      547429,
+      11912,
+      615,
+      8,
+      9
+    ],
+    "private_result_sha256": "57d110a55f3db9a6e458d5b1578291a59f55d5587dc4dc5b7fe31d1fd31ff45a",
+    "private_direct_sha256": "59fd8cd0a851787de00feb038a2be8b916361e36f6c92a7ef534a791a23a5a54"
+  },
+  "score_not_rank_note": "6 and 1 are clause points; target is jointly rank 1 across nine winning minute samples."
+}
