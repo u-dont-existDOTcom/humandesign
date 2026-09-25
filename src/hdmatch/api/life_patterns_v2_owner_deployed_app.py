@@ -14,6 +14,7 @@ from collections.abc import Awaitable, Callable
 from fastapi import FastAPI, Request, Response
 from fastapi.responses import PlainTextResponse
 
+from .birth_test_api import install_birth_test
 from .life_patterns_v2_owner_continuous_flow import (
     create_life_patterns_v2_owner_continuous_flow_app,
 )
@@ -48,6 +49,7 @@ def create_secured_owner_app() -> FastAPI:
     auth_enabled = bool(expected_password)
 
     app = create_life_patterns_v2_owner_continuous_flow_app()
+    install_birth_test(app)
     app.state.owner_basic_auth_enabled = auth_enabled
 
     if not auth_enabled:
