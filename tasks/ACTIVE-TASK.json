@@ -1,108 +1,48 @@
 {
   "schemaVersion": 1,
   "taskId": "scenario-owner-recovery-calibration-20260923",
-  "requiredBranch": "chat/v14-full-century-answer-link-20260925",
+  "requiredBranch": "chat/v15-survey-decoder-20260925",
   "exclusive": true,
   "implementationAuthorized": true,
-  "assuranceLane": "iteration",
-  "status": "exact_century_complete_survey_decoder_remains_unfinished",
-  "ownerOutcome": "Combine established astrology rulebook clauses into one model fitted to the owner case, with no arbitrary fitted numerical astrology weights, and run progressively larger candidate-date/time searches. Report the actual recovered date and honest time resolution.",
-  "currentOwnerRequestStatus": "ANSWER_LINK_EXPLAINED_AND_FIXED_MODEL_FULL_CENTURY_EXECUTED",
-  "longRangeResearchStatus": "OPEN_NOT_INDEPENDENTLY_VALIDATED",
+  "assuranceLane": "iteration_with_targeted_deployment_checks",
+  "status": "v15_answer_conditioned_pilot_verified_deployment_in_progress",
+  "ownerOutcome": "Complete a usable test of the source-grounded fixed-rule model on another consenting person's answers, without target-aware refitting during inference. Explain its advantages and limitations relative to the previous fitted model.",
+  "currentOwnerRequestStatus": "OPEN_UNTIL_DEPLOYED_TEST_VERIFIED",
   "privateParticipantTranscriptToGitAuthorized": false,
-  "ownerMethodContract": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-OWNER-METHOD-CONTRACT-20260924.json",
-  "currentModel": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-SIX-RULE-MODEL-20260925.json",
-  "currentReceipt": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-STAGED-RESULT-20260925.md",
-  "latestDiagnostic": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-FIXED-COMBO-ANSWER-SENSITIVITY-20260925.md",
-  "historicalPreV14StateCommit": "529f64ae606e3c7deb1d3c700e92376545fae1ce",
-  "udaRepair": {
-    "pullRequest": 253,
-    "mergeCommit": "91e4be060ca99151264f1f90ad4f9c19aaf05bcb",
-    "status": "MERGED_DEFAULT_BRANCH_AND_HOSTED_CHECKS_PASS",
-    "scope": "operational owner-method admission and closure; not a universal runtime guarantee"
-  },
-  "latestResult": {
-    "selectedRules": 6,
-    "selectedBooks": 2,
-    "weights": "one equal vote per selected clause",
-    "candidatePanelSizes": [
-      100,
-      1000,
-      10000,
-      100000
-    ],
-    "screenedCenturyMinutePositions": 52596001,
-    "fourRuleTiedDates": 49,
-    "sixRuleTiedDates": [
-      "1985-01-29"
-    ],
-    "minuteGridPlateauUtc": [
-      "1985-01-29T10:18:00Z",
-      "1985-01-29T10:26:00Z"
-    ],
-    "continuousPlateauApproxUtc": [
-      "1985-01-29T10:17:52Z",
-      "1985-01-29T10:26:12Z"
-    ],
-    "exactRecordedMinuteUniquelyIdentified": false,
-    "formalGlobalScreenErrorBoundProved": false,
-    "independentHumanValidation": false
-  },
-  "answerSensitivityDiagnostic": {
-    "scope": "Explain answer changes under the fixed six-rule combination before further combinations or century execution",
-    "conclusion": "No answer-change set can distinguish identical six-feature vectors. Recorded date is already first among discovered maximum-score dates; recorded minute is jointly first.",
-    "runtimeAnswersAreScoringInputs": false,
-    "answersRole": "Prior development-stage rule eligibility, followed by target-aware subset selection",
-    "modelChanged": false,
-    "privateAnswersChanged": false,
-    "newAstronomicalRunPerformed": false,
-    "newRuleCombinationsTried": false
-  },
-  "nextAction": "Deliver the completed unchanged-model century result and explain the unfinished answer-conditioned scoring layer. Subsequent decoder work must connect a meaningful survey change to full-universe scoring under fixed mappings, not refit against the known target or reuse only current maxima.",
-  "supersession": "The old whole-tradition-independent-success requirement and the no-new-owner-development interpretation of historical freezes are not active requirements. Historical results remain preserved in Git history.",
-  "stopAdmission": {
-    "currentRequestedOperations": "COMPLETED_EXPLANATION_AND_EXACT_MINUTE_GRID_SCAN",
-    "remainingExecutionGapForThisScan": "NONE",
-    "broaderOwnerOutcome": "OPEN_ANSWER_RESPONSIVE_DECODER_UNFINISHED",
-    "noProxyCompletion": "The fixed-signature scan is not completion of survey-to-birth-date inference.",
-    "currentScopeBoundary": "No new rule combinations, mappings, answer edits or model-fitting changes were requested for this scan."
-  },
+  "currentMethod": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V15-ANSWER-CONDITIONED-TEST-CONTRACT-20260925.md",
+  "currentBridge": "reference/research/astrohd_v15_behavioral_bridge.json",
+  "unchangedAstronomicalModel": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-SIX-RULE-MODEL-20260925.json",
+  "historicalV14StateCommit": "fbfa7ac",
+  "historicalCenturyscan": "Complete fixed-signature minute-grid audit; only the original recorded date reaches six, with nine neighboring minute ties. This remains known-case development evidence, not a new-person result.",
   "surveyDecoder": {
-    "status": "UNFINISHED",
-    "currentReplayAcceptsSurveyAnswers": false,
-    "currentAnswerRole": "development-stage source-rule eligibility before target-aware subset selection",
-    "requiredBehavior": "A meaningful recoded response change changes candidate scores through a fixed answer-conditioned model, not by secretly refitting to the known birth target",
-    "requirement": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-SURVEY-DECODER-GAP-20260925.md"
+    "status": "IMPLEMENTED_AND_ENDPOINT_TESTED",
+    "inputPath": "Original scenario answers or imported interview -> optional source-quoted neutral interpretation -> participant-confirmed profile -> fixed six-condition score -> candidate ranking -> separately revealed actual birth instant comparison",
+    "focusedOriginalScenarioCount": 9,
+    "activeNeutralDomains": 5,
+    "primaryDecoys": 999,
+    "secondaryNestedDecoys": [99, 9999],
+    "targetAwareRefittingAtInference": false,
+    "answersAndOldResultsPreserved": true,
+    "newPersonPredictionStatus": "UNKNOWN_NO_NEW_PARTICIPANT_DATA",
+    "limits": "Explicit modern behavioral hypotheses, not six historical personality predictions; raw votes share domains; sampled panels are not exhaustive century scans; identical features remain ties."
   },
-  "currentExactScan": {
-    "status": "COMPLETE_VERIFIED",
-    "rulesChanged": false,
-    "answersChanged": false,
-    "projectInterpolationUsed": false,
-    "gridMinutes": 52596001,
-    "plan": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-FULL-CENTURY-PLAN-20260925.md",
-    "completedChunks": 263,
-    "checkedMinutes": 52596001,
-    "maximumCount": 9,
-    "maximumDates": [
-      "1985-01-29"
-    ],
-    "minuteSamples": [
-      "10:18",
-      "10:19",
-      "10:20",
-      "10:21",
-      "10:22",
-      "10:23",
-      "10:24",
-      "10:25",
-      "10:26"
-    ],
-    "targetJointRank": 1,
-    "processExitCode": 0,
-    "ephemerisFallbacks": 0,
-    "continuousTimeExhaustiveness": false,
-    "receipt": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-EXACT-CENTURY-RECEIPT-20260925.md",
-    "result": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-EXACT-CENTURY-RESULT-20260925.json"
-  }
+  "deployment": {
+    "sourceBranch": "codex/discover-life-patterns-mvp",
+    "integrationBranch": "release/v15-life-patterns-additive-20260925",
+    "pullRequest": 30,
+    "mergeCommit": "3e82806d8877510ecc081ece69b9de1f74f4c76f",
+    "deploymentId": "2d60d3dd-2634-427c-a48f-62a36ee27350",
+    "url": "https://life-patterns-owner-production.up.railway.app/birth-test",
+    "status": "BUILDING_LAST_OBSERVED",
+    "isolation": "Only required source/resource/test files were promoted from exact production base. Existing entrypoint, authentication, provider settings, and unrelated staged Railway changes are preserved."
+  },
+  "verification": {
+    "releaseAffectedTestsPassed": 28,
+    "strictTypecheckSourceFiles": 215,
+    "browserFlow": "PASS_ON_EXACT_ADDITIVE_RELEASE_TREE",
+    "sourceQuotes": "Exact-substring checks; obvious birth-key marker rejection; participant review still required",
+    "globalLint": "721 pre-existing baseline diagnostics remain; changed active files pass; frozen legacy source has narrow documented static compatibility exceptions. No globally green lint claim."
+  },
+  "nextAction": "Verify the actual deployed version, root and new route, live browser flow, optional configured-model interpretation and place lookup; then deliver the usable URL and retain an honest first new-person result. Do not stop at the code-only receipt or retune on their result.",
+  "stopAdmission": {"currentRequestedOperations": "OPEN_LIVE_VERIFICATION_PENDING", "broaderResearch": "OPEN_NOT_INDEPENDENTLY_VALIDATED"}
 }
