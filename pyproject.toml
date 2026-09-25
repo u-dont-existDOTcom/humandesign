@@ -83,8 +83,27 @@ select = ["E", "F", "I", "UP", "B", "SIM"]
 # The v5 response graph is generated directly from a reviewed semantic contract. Keep
 # the implementation text stable while allowing equivalent typing modernization forms.
 "src/hdmatch/evaluation/facet_relation_v5.py" = ["UP035", "UP037"]
+# V1.4 is a hash-checked scientific artifact replayed unchanged by V1.5.
+# Do not rewrite its imports/line wrapping and invalidate the frozen experiment.
+"src/hdmatch/evaluation/astrohd_v14_rules.py" = ["E501", "I001", "F401"]
 
 [tool.mypy]
 python_version = "3.11"
 strict = true
 packages = ["hdmatch"]
+
+# The installed Swiss extension does not distribute typing metadata.
+[[tool.mypy.overrides]]
+module = "swisseph"
+ignore_missing_imports = true
+
+# Retained frozen scorers use heterogeneous dictionaries and branch-local variable
+# reuse. These exact diagnostics are static-inference limitations of the saved
+# artifacts; new V1.5 code remains strict and original-value replay tests are required.
+[[tool.mypy.overrides]]
+module = "hdmatch.evaluation.astrohd_v13_traditions"
+disable_error_code = ["attr-defined"]
+
+[[tool.mypy.overrides]]
+module = "hdmatch.evaluation.astrohd_v14_rules"
+disable_error_code = ["assignment", "index", "comparison-overlap"]
