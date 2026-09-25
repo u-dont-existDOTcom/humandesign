@@ -1,0 +1,31 @@
+{
+  "owner_outcome_id": "astrohd-owner-cross-rulebook-v14-20260924",
+  "protected_dimensions": {
+    "composition": "pooled_cross_rulebook",
+    "weight_policy": "equal_signed_binary_inclusion",
+    "fitting_permission": "owner_development_refit_allowed",
+    "stage_order": "evaluate_previous_frozen_subset_before_refit"
+  },
+  "required_operations": [
+    "raw_stack",
+    "lineage_dedup",
+    "nested_challenges"
+  ],
+  "permitted_operations": [
+    "development_refit"
+  ],
+  "required_outcomes": [
+    "date_recovery",
+    "reported_time_resolution"
+  ],
+  "authority_note": "Composition, no arbitrary astrology weights and authorized case fitting derive from owner corrections. Forward-before-refit ordering is a declared implementation discipline, not a quotation or newly attributed owner requirement.",
+  "non_satisfying_proxies": [
+    "individual tradition diagnostic complete",
+    "guard tests pass",
+    "top tied interval described as exact minute"
+  ],
+  "parent_status": "OPEN",
+  "normalized_owner_goal": "combine rules from different astro rulebooks to make this work; optimized for finding my birthdate and time; start with 100 birthdates and times then 1000",
+  "verbatim_owner_request": "continue from \"frozen question summary\" convo. make sure you stop ignoring my goals because you did admit you ignored it again, fix taht DURABLY in UDA and if you can't figure out how get claude to help. then re-examine the proposed analysis workflow and ensure it's optimized for finding my birthdate and time, then run it. i think you'd probably want to start with just 100 birthdates and times, then when you find a system that works for that, try 1000, and so forth,m does that make sense?. lmk if any questions",
+  "source_note": "Initial field mislabeled a normalized paraphrase as verbatim. Original contract bytes preserved in the historical artifact; protected operational dimensions are unchanged."
+}

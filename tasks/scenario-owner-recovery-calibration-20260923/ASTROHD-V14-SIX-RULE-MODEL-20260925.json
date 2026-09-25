@@ -1,0 +1,28 @@
+{
+  "schema": "astrohd-v14-owner-development-model-v1",
+  "version": "1.4d",
+  "classification": "target-aware single-owner development; not independent validation",
+  "rule_module": "src/hdmatch/evaluation/astrohd_v14_rules.py",
+  "rule_module_sha256": "0a7f3662891475c7b61efcd130c468f8e9c48b4d61e3c2072d4d0c054e9d87cc",
+  "selected_rule_ids": [
+    "lilly/lord:3/house_1_10",
+    "lilly/planet:saturn/benefic_trine",
+    "lilly/planet:venus/house_2_5",
+    "phaladeepika/planet:venus/directional",
+    "lilly/lord:10/benefic_conjunction",
+    "lilly/lord:7/house_4_7_11"
+  ],
+  "weight_per_selected_rule": 1,
+  "raw_and_declared_lineage_deduplicated_models_identical": true,
+  "selected_source_count": 2,
+  "maximum_score": 6,
+  "target_utc": "1985-01-29T10:25:00Z",
+  "reported_time_resolution": "approximately 10:17:52 to 10:26:12 UTC; not uniquely 10:25",
+  "survivor_result_sha256": "aeb9bffc5e6a40884aa4bb2b4080ebf8b2c9771188dbbb7a2501d9428d20da8b",
+  "direct_verification_sha256": "250f79ed74089e0db8ff466238db2674c9acbaa42f5c125efd1e1816f18dd7cc",
+  "global_search_limit": "numerically screened minute grid; formal global interpolation-error bound not proved",
+  "source_semantics_limit": "historical strength clauses plus separately attributed modern target-blind behavioral bridge",
+  "receipt": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-STAGED-RESULT-20260925.md",
+  "source_map_path": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V13-TARGET-BLIND-CONSENSUS-MAP-20260924.json",
+  "source_map_sha256": "9c03688d06a778f3cf9f590abaf315eb12b0f44b3fa00080d85605f38cb15c0b"
+}
