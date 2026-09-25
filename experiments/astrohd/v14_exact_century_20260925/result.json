@@ -1,0 +1,73 @@
+{
+  "completed_utc": "2026-09-25T02:09:32.513039+00:00",
+  "dates_utc": [
+    "1985-01-29"
+  ],
+  "elapsed_this_invocation_seconds": 132.206,
+  "evaluated_minutes": 52596001,
+  "first_failure_counts_then_matches": [
+    48234188,
+    3801840,
+    547429,
+    11912,
+    615,
+    8,
+    9
+  ],
+  "freeze": {
+    "cadence_seconds": 60,
+    "chunk_size": 250000,
+    "count": 52596001,
+    "end": "2026-08-24T10:42:00+00:00",
+    "engine_version": "2.10.03",
+    "ephemeris_sha256": {
+      "semo_18.se1": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7",
+      "sepl_18.se1": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66"
+    },
+    "max_score": 6,
+    "model_sha256": "4bd0b02cc099142f932cc608e821d5db6539e1ec88a67c1d4f93f638d4cc0e83",
+    "numerical_screening": false,
+    "proof": "Every UTC minute evaluated; first false necessary Boolean clause safely excludes score six.",
+    "rule_refitting": false,
+    "runner_sha256": "c65bba5a2e92974af475b4eacc2dcd17830f19bb4ab00a73247f28df8cd24595",
+    "schema": "v14d-exact-minute-grid-audit-v1",
+    "start": "1926-08-24T10:42:00+00:00"
+  },
+  "hit_indices": [
+    30733896,
+    30733897,
+    30733898,
+    30733899,
+    30733900,
+    30733901,
+    30733902,
+    30733903,
+    30733904
+  ],
+  "hit_utc": [
+    "1985-01-29T10:18:00+00:00",
+    "1985-01-29T10:19:00+00:00",
+    "1985-01-29T10:20:00+00:00",
+    "1985-01-29T10:21:00+00:00",
+    "1985-01-29T10:22:00+00:00",
+    "1985-01-29T10:23:00+00:00",
+    "1985-01-29T10:24:00+00:00",
+    "1985-01-29T10:25:00+00:00",
+    "1985-01-29T10:26:00+00:00"
+  ],
+  "limits": "Exact over the specified minute grid using the frozen numerical engine; not continuous-time or new-person validation.",
+  "matching_minutes": 9,
+  "maximum_score": 6,
+  "parity": {
+    "compared": 1211,
+    "disagreements": 0,
+    "maximum_score_cases": 12,
+    "method": "original full snapshot and six-rule evaluator"
+  },
+  "recorded_target_rank": {
+    "best": 1,
+    "higher_candidates": 0,
+    "worst": 9
+  },
+  "status": "COMPLETED_EXACT_MINUTE_GRID"
+}
