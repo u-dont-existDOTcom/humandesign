@@ -5,14 +5,15 @@
   "exclusive": true,
   "implementationAuthorized": true,
   "assuranceLane": "iteration",
-  "status": "v14_staged_run_completed_six_rule_owner_fit_not_validation",
+  "status": "v14_fixed_combo_answer_sensitivity_diagnostic_complete_no_model_change",
   "ownerOutcome": "Combine established astrology rulebook clauses into one model fitted to the owner case, with no arbitrary fitted numerical astrology weights, and run progressively larger candidate-date/time searches. Report the actual recovered date and honest time resolution.",
-  "currentOwnerRequestStatus": "EXECUTED_AT_STATED_DEVELOPMENT_BOUNDARY",
+  "currentOwnerRequestStatus": "FIXED_COMBO_ANSWER_SENSITIVITY_DIAGNOSTIC_COMPLETE",
   "longRangeResearchStatus": "OPEN_NOT_INDEPENDENTLY_VALIDATED",
   "privateParticipantTranscriptToGitAuthorized": false,
   "ownerMethodContract": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-OWNER-METHOD-CONTRACT-20260924.json",
   "currentModel": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-SIX-RULE-MODEL-20260925.json",
   "currentReceipt": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-STAGED-RESULT-20260925.md",
+  "latestDiagnostic": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-FIXED-COMBO-ANSWER-SENSITIVITY-20260925.md",
   "historicalPreV14StateCommit": "529f64ae606e3c7deb1d3c700e92376545fae1ce",
   "udaRepair": {
     "pullRequest": 253,
@@ -34,11 +35,22 @@
     "formalGlobalScreenErrorBoundProved": false,
     "independentHumanValidation": false
   },
-  "nextAction": "Preserve and report the completed staged development result. Do not rerun completed scans unchanged. Finer time discrimination needs a new rule-library revision because all current features are identical across the surviving minute samples; do not create an arbitrary proximity tie-break.",
+  "answerSensitivityDiagnostic": {
+    "scope": "Explain answer changes under the fixed six-rule combination before further combinations or century execution",
+    "conclusion": "No answer-change set can distinguish identical six-feature vectors. Recorded date is already first among discovered maximum-score dates; recorded minute is jointly first.",
+    "runtimeAnswersAreScoringInputs": false,
+    "answersRole": "Prior development-stage rule eligibility, followed by target-aware subset selection",
+    "modelChanged": false,
+    "privateAnswersChanged": false,
+    "newAstronomicalRunPerformed": false,
+    "newRuleCombinationsTried": false
+  },
+  "nextAction": "Deliver the fixed-combination answer-sensitivity explanation first, as requested. Preserve the current six-rule model and all answer records. A later exact-century check is distinct from this diagnostic; finer time discrimination would require features not identical across the remaining times, not more emphatic answers or an arbitrary proximity tie-break.",
   "supersession": "The old whole-tradition-independent-success requirement and the no-new-owner-development interpretation of historical freezes are not active requirements. Historical results remain preserved in Git history.",
   "stopAdmission": {
-    "currentRequestedOperations": "COMPLETED",
-    "remainingExecutionGapForThisRun": "NONE",
+    "currentRequestedOperations": "FIXED_COMBO_DIAGNOSTIC_COMPLETED",
+    "remainingExecutionGapForThisDiagnostic": "NONE",
+    "ownerOrderingRestriction": "Explain which answers could change the fixed-combination rank before any further combination search or full-century follow-up; no retuning was performed in this diagnostic.",
     "broaderResearchGaps": ["exact-minute discrimination", "new-person generalization", "formal exhaustive continuous-time uniqueness"],
     "claimBoundary": "One surviving date and an unresolved interval in the screened century development search, not scientific validation.",
     "backgroundWorkerClaim": "NONE"
