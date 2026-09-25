@@ -25,4 +25,5 @@ def test_enabled_auth_protects_old_and_new_routes(monkeypatch):
     for path in ("/", "/birth-test", "/birth-test/api/contract"):
         assert client.get(path).status_code == 401
     header = "Basic " + base64.b64encode(b"synthetic-user:synthetic-test-password").decode()
-    assert client.get("/birth-test/api/contract", headers={"Authorization": header}).status_code == 200
+    response = client.get("/birth-test/api/contract", headers={"Authorization": header})
+    assert response.status_code == 200
