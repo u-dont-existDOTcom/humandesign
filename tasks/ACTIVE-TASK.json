@@ -5,18 +5,19 @@
   "exclusive": true,
   "implementationAuthorized": true,
   "assuranceLane": "iteration_with_targeted_deployment_checks",
-  "status": "v15_answer_conditioned_pilot_verified_deployment_in_progress",
+  "status": "core_new_person_test_live_optional_interpreter_credit_blocked",
   "ownerOutcome": "Complete a usable test of the source-grounded fixed-rule model on another consenting person's answers, without target-aware refitting during inference. Explain its advantages and limitations relative to the previous fitted model.",
-  "currentOwnerRequestStatus": "OPEN_UNTIL_DEPLOYED_TEST_VERIFIED",
+  "currentOwnerRequestStatus": "CORE_USABLE_TEST_DELIVERED_OPTIONAL_AUTOMATION_BLOCKED",
   "privateParticipantTranscriptToGitAuthorized": false,
   "currentMethod": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V15-ANSWER-CONDITIONED-TEST-CONTRACT-20260925.md",
   "currentBridge": "reference/research/astrohd_v15_behavioral_bridge.json",
+  "currentReceipt": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V15-LIVE-PILOT-RECEIPT-20260925.md",
   "unchangedAstronomicalModel": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-SIX-RULE-MODEL-20260925.json",
   "historicalV14StateCommit": "fbfa7ac",
-  "historicalCenturyscan": "Complete fixed-signature minute-grid audit; only the original recorded date reaches six, with nine neighboring minute ties. This remains known-case development evidence, not a new-person result.",
+  "historicalCenturyScan": "Complete fixed-signature minute-grid audit; only the original recorded date reaches six, with nine neighboring minute ties. This remains known-case development evidence, not a new-person result.",
   "surveyDecoder": {
-    "status": "IMPLEMENTED_AND_ENDPOINT_TESTED",
-    "inputPath": "Original scenario answers or imported interview -> optional source-quoted neutral interpretation -> participant-confirmed profile -> fixed six-condition score -> candidate ranking -> separately revealed actual birth instant comparison",
+    "status": "PARTICIPANT_REVIEWED_PATH_LIVE_AND_VERIFIED",
+    "inputPath": "Original scenarios or imported interview -> participant-confirmed neutral profile -> fixed six-condition score -> candidate ranking -> separately revealed actual birth instant comparison",
     "focusedOriginalScenarioCount": 9,
     "activeNeutralDomains": 5,
     "primaryDecoys": 999,
@@ -33,16 +34,32 @@
     "mergeCommit": "3e82806d8877510ecc081ece69b9de1f74f4c76f",
     "deploymentId": "2d60d3dd-2634-427c-a48f-62a36ee27350",
     "url": "https://life-patterns-owner-production.up.railway.app/birth-test",
-    "status": "BUILDING_LAST_OBSERVED",
-    "isolation": "Only required source/resource/test files were promoted from exact production base. Existing entrypoint, authentication, provider settings, and unrelated staged Railway changes are preserved."
+    "status": "SUCCESS_AND_LIVE_BROWSER_PASS",
+    "rootHealthAndPlaceLookup": "HTTP 200",
+    "isolation": "Required files promoted from exact production base; existing entrypoint, authentication, provider settings, and unrelated staged Railway changes preserved."
+  },
+  "optionalInterpreter": {
+    "status": "PROVIDER_CREDIT_BLOCKED",
+    "observedError": "Owner Life Patterns model HTTP 429: credit_balance_exhausted",
+    "liveSuccessfulInterpretationVerified": false,
+    "deterministicInterfaceAndSourceQuoteTests": "PASS",
+    "ownerControlledBoundary": "Funding or selecting a different authorized provider/account; no credit purchase or provider switch made",
+    "availableNow": "Manual participant review of the five neutral interpretations",
+    "afterGateClears": "Verify one real live synthetic interpretation before claiming automatic free-text coding works"
   },
   "verification": {
     "releaseAffectedTestsPassed": 28,
     "strictTypecheckSourceFiles": 215,
-    "browserFlow": "PASS_ON_EXACT_ADDITIVE_RELEASE_TREE",
-    "sourceQuotes": "Exact-substring checks; obvious birth-key marker rejection; participant review still required",
-    "globalLint": "721 pre-existing baseline diagnostics remain; changed active files pass; frozen legacy source has narrow documented static compatibility exceptions. No globally green lint claim."
+    "browserFlow": "PASS_LOCAL_EXACT_RELEASE_AND_LIVE",
+    "globalLint": "721 pre-existing baseline diagnostics remain; changed active files pass; frozen legacy source has narrow documented compatibility exceptions. No globally green lint claim."
   },
-  "nextAction": "Verify the actual deployed version, root and new route, live browser flow, optional configured-model interpretation and place lookup; then deliver the usable URL and retain an honest first new-person result. Do not stop at the code-only receipt or retune on their result.",
-  "stopAdmission": {"currentRequestedOperations": "OPEN_LIVE_VERIFICATION_PENDING", "broaderResearch": "OPEN_NOT_INDEPENDENTLY_VALIDATED"}
+  "nextAction": "Collect a consenting new person's first frozen result through the live manual-review test. Preserve misses and ties. Optional automatic interpretation requires a real owner-controlled credit/provider gate and subsequent live verification. Do not rerun the completed century scan or refit on the new person's outcome and call it validation.",
+  "stopAdmission": {
+    "coreRequestedUsableTest": "LIVE_VERIFIED",
+    "optionalAutomation": "BLOCKED_BY_OBSERVED_PROVIDER_CREDIT_BALANCE",
+    "independentPreparation": "COMPLETED",
+    "nextResearchInput": "NEW_PARTICIPANT_RESPONSES_AND_DOCUMENTED_BIRTH_WITH_CONSENT",
+    "broaderResearch": "OPEN_NOT_INDEPENDENTLY_VALIDATED",
+    "backgroundResearchClaim": "NONE"
+  }
 }
