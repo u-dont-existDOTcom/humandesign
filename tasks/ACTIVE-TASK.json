@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "taskId": "scenario-owner-recovery-calibration-20260923",
-  "requiredBranch": "chat/v14-cross-rulebook-20260924",
+  "requiredBranch": "chat/v14-full-century-answer-link-20260925",
   "exclusive": true,
   "implementationAuthorized": true,
   "assuranceLane": "iteration",
-  "status": "v14_fixed_combo_answer_sensitivity_diagnostic_complete_no_model_change",
+  "status": "exact_century_running_answer_responsive_decoder_gap_confirmed",
   "ownerOutcome": "Combine established astrology rulebook clauses into one model fitted to the owner case, with no arbitrary fitted numerical astrology weights, and run progressively larger candidate-date/time searches. Report the actual recovered date and honest time resolution.",
-  "currentOwnerRequestStatus": "FIXED_COMBO_ANSWER_SENSITIVITY_DIAGNOSTIC_COMPLETE",
+  "currentOwnerRequestStatus": "EXPLANATION_AND_EXACT_SCAN_IN_PROGRESS",
   "longRangeResearchStatus": "OPEN_NOT_INDEPENDENTLY_VALIDATED",
   "privateParticipantTranscriptToGitAuthorized": false,
   "ownerMethodContract": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-OWNER-METHOD-CONTRACT-20260924.json",
@@ -25,12 +25,25 @@
     "selectedRules": 6,
     "selectedBooks": 2,
     "weights": "one equal vote per selected clause",
-    "candidatePanelSizes": [100, 1000, 10000, 100000],
+    "candidatePanelSizes": [
+      100,
+      1000,
+      10000,
+      100000
+    ],
     "screenedCenturyMinutePositions": 52596001,
     "fourRuleTiedDates": 49,
-    "sixRuleTiedDates": ["1985-01-29"],
-    "minuteGridPlateauUtc": ["1985-01-29T10:18:00Z", "1985-01-29T10:26:00Z"],
-    "continuousPlateauApproxUtc": ["1985-01-29T10:17:52Z", "1985-01-29T10:26:12Z"],
+    "sixRuleTiedDates": [
+      "1985-01-29"
+    ],
+    "minuteGridPlateauUtc": [
+      "1985-01-29T10:18:00Z",
+      "1985-01-29T10:26:00Z"
+    ],
+    "continuousPlateauApproxUtc": [
+      "1985-01-29T10:17:52Z",
+      "1985-01-29T10:26:12Z"
+    ],
     "exactRecordedMinuteUniquelyIdentified": false,
     "formalGlobalScreenErrorBoundProved": false,
     "independentHumanValidation": false
@@ -45,14 +58,26 @@
     "newAstronomicalRunPerformed": false,
     "newRuleCombinationsTried": false
   },
-  "nextAction": "Deliver the fixed-combination answer-sensitivity explanation first, as requested. Preserve the current six-rule model and all answer records. A later exact-century check is distinct from this diagnostic; finer time discrimination would require features not identical across the remaining times, not more emphatic answers or an arbitrary proximity tie-break.",
+  "nextAction": "Finish and verify the already-running exact minute-grid maximum search, then report scores versus ranks and the unfinished answer-responsive decoding layer. Do not modify rules or responses in this scan.",
   "supersession": "The old whole-tradition-independent-success requirement and the no-new-owner-development interpretation of historical freezes are not active requirements. Historical results remain preserved in Git history.",
   "stopAdmission": {
-    "currentRequestedOperations": "FIXED_COMBO_DIAGNOSTIC_COMPLETED",
-    "remainingExecutionGapForThisDiagnostic": "NONE",
-    "ownerOrderingRestriction": "Explain which answers could change the fixed-combination rank before any further combination search or full-century follow-up; no retuning was performed in this diagnostic.",
-    "broaderResearchGaps": ["exact-minute discrimination", "new-person generalization", "formal exhaustive continuous-time uniqueness"],
-    "claimBoundary": "One surviving date and an unresolved interval in the screened century development search, not scientific validation.",
-    "backgroundWorkerClaim": "NONE"
+    "currentRequestedOperations": "OPEN_EXACT_SCAN_RUNNING",
+    "broaderOwnerOutcome": "OPEN_ANSWER_RESPONSIVE_DECODER_UNFINISHED",
+    "noProxyCompletion": "A successful fixed-signature scan does not finish survey-to-birth-date inference."
+  },
+  "surveyDecoder": {
+    "status": "UNFINISHED",
+    "currentReplayAcceptsSurveyAnswers": false,
+    "currentAnswerRole": "development-stage source-rule eligibility before target-aware subset selection",
+    "requiredBehavior": "A meaningful recoded response change changes candidate scores through a fixed answer-conditioned model, not by secretly refitting to the known birth target",
+    "requirement": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-SURVEY-DECODER-GAP-20260925.md"
+  },
+  "currentExactScan": {
+    "status": "RUNNING",
+    "rulesChanged": false,
+    "answersChanged": false,
+    "projectInterpolationUsed": false,
+    "gridMinutes": 52596001,
+    "plan": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-FULL-CENTURY-PLAN-20260925.md"
   }
 }

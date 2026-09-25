@@ -27,3 +27,10 @@ The requested repair, workflow review and staged execution are complete at this 
 UDA PR #253 is merged to its default branch at `91e4be060ca99151264f1f90ad4f9c19aaf05bcb`. The repair binds the owner's permitted method to actual launch configuration and protects parent completion. It has behavioral regressions rather than only prose-token tests; the final UDA suite passed 446 tests and hosted checks passed. The current research launcher binds the comparator; this is not a universal runtime guarantee for every future assistant.
 
 Private answers, coding, source-filtered inventories and matrices remain outside Git. The result receipt preserves their execution artifact hashes. The affected V1.4 suite passed 12 tests. No background research worker is being claimed.
+
+
+## Current continuation — exact-century audit and missing answer dependency
+
+Branch: `chat/v14-full-century-answer-link-20260925`. The owner now asks whether a changed survey answer changes rankings, and authorizes the full-century follow-up. The V1.4 fixed-signature scorer does not consume revised answers; the answer-responsive decoder is UNFINISHED. Read `ASTROHD-V14-SURVEY-DECODER-GAP-20260925.md` in the current task directory. Do not close that parent outcome with a fixed-signature scan.
+
+A new exact one-minute-grid maximum search is RUNNING with the same six rules, unchanged model hash, unchanged survey, and no project-side interpolation. The native accelerator matched the original Python implementation on all six rule bits in 1,989 reference cases, including prior maxima and second-level boundary probes. The run enumerates every integer minute offset; one directly failed condition suffices to exclude a maximum. Each completed chunk has explicit coverage and rejection accounting. Do not start another writer for the same run or claim completion from partial progress. Private execution artifacts remain outside Git.
