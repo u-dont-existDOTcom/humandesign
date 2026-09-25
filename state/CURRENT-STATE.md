@@ -1,29 +1,37 @@
-# Current state — cross-rulebook owner development, V1.4d
+# Current state — exact V1.4d century audit; answer-conditioned decoder open
 
-Updated 2026-09-25. Branch: `chat/v14-cross-rulebook-20260924`.
+Updated 2026-09-25. Branch: `chat/v14-answer-link-century-20260925`.
 
-Read `tasks/ACTIVE-TASK.json`, then `tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-STAGED-RESULT-20260925.md` and its six-rule model manifest. The pre-V1.4 history is preserved at commit `529f64ae606e3c7deb1d3c700e92376545fae1ce`; its historical stop labels and whole-tradition-success gate are not current authority.
+Read `tasks/ACTIVE-TASK.json`, then:
+- `tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-EXACT-CENTURY-RESULT-20260925.md`
+- `tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-SURVEY-DECODER-GAP-20260925.md`
 
-## Owner goal
+## Owner outcome
 
-Develop one combined model using rules from established astrology books, fit it to the known owner case without arbitrary fitted numerical astrology weights, test raw and lineage-deduplicated stacking, and run 100 / 1,000 / larger candidate timestamp panels. Do not substitute independent success of every whole tradition. Owner development fitting is authorized; do not mislabel it as validation.
+Continue developing survey-based birth-date/time recovery from one combination of established astrology rules, allowing explicit target-aware owner development without arbitrary fitted numerical astrology weights. Do not replace a pooled model with a requirement that every tradition succeeds alone. A fitted signature is not automatically a finished survey decoder.
 
-## Completed execution and direct outcome
+## Current request completed
 
-The staged mixed-book run reached 100, 1,000, 10,000 and 100,000 timestamps. Earlier frozen subsets were evaluated before explicit refits. Four-rule models fit the small panels, but the century screen exposed 632 maximum-score minute instants across 49 UTC dates. Those failures were not accepted as unique date recovery.
+The owner asked whether survey-answer edits currently change the saved six-rule score, what remains unfinished, and then requested the full century scan. The missing answer dependency was inspected and documented. The unchanged-model exact century audit is complete; no rule combinations, behavioral meanings, weights or answers were changed.
 
-An integer search added two existing source-grounded equal-vote clauses to the retained four-rule model. Both raw and declared lineage-deduplicated arms now select the same six rules, with five from Lilly and one from Phaladeepika. All discovered off-date maxima are eliminated. Only 1985-01-29 remains, with matching minute-grid samples from 10:18 through 10:26 UTC, including recorded 10:25. The cold exact score plateau is approximately 10:17:52–10:26:12 UTC.
+Every minute from 1926-08-24 10:42 UTC through 2026-08-24 10:42 UTC was checked directly: **52,596,001 instants**, across **211 contiguous chunks**, with zero gaps and overlaps. No interpolation-based screening was used. All maxima were replayed through the original full scorer.
 
-The exact recorded instant scores 6; the persistent 2013 comparator scores 1. All 390 current library features are identical across the nine surviving minute samples. No alternative subset of this unchanged library can uniquely pick 10:25 from those samples.
+Only **1985-01-29** contains a maximum. Its nine tied minute samples are **10:18 through 10:26 UTC**. The recorded **10:25 scores 6 and is tied for first**; zero candidates score higher. The 2013 comparator's **score is 1**, not rank 1. The six rules remain five Lilly clauses and one Phaladeepika clause, each with one equal vote.
 
-## Limits that must survive summaries
+Canonical result: `experiments/astrohd/v14_exact_century_20260925/result.json`, SHA-256 `4cba5a3107f7b7afb0fd289774e67ac8e2410aa04465b431c98992f5b3f87b84`. Published bytes were read back and matched the execution result. Original-scorer parity: 1,211 cases, zero disagreements. Focused/affected tests: 18 passed.
 
-The century computation used conservative numerical screening and exact survivor recomputation. Its formal global interpolation-error bound is unproved. Do not claim mathematically certified exhaustive continuous-time uniqueness. This is a known-case development fit, not independent human validation. The six-rule count is not proved globally minimal; only the two additions to the retained four are minimal under the declared constraint.
+## Unfinished functionality — do not omit
 
-The requested repair, workflow review and staged execution are complete at this development boundary. The long-range research project remains open. Do not rerun completed scans or fabricate an exact-minute answer. New-person validation and finer-time rule expansion are distinct later research revisions, not evidence already obtained.
+The saved V1.4d scorer **does not read current survey answers**. Answers were used for development-time rule eligibility before target-aware subset selection. The saved artifact subsequently scores candidate charts against the six fixed conditions.
 
-## Durable goal-protection repair
+Therefore editing a survey answer does not automatically rerank this model. A fixed model can have changing inputs, but this artifact froze a personalized rule list rather than implementing `score(answers, chart)`. The missing path is changed answer -> neutral recoding -> updated behavioral profile -> explicit fixed answer-to-rule comparison -> candidate scores -> reranking. Survey UI/update integration is also not completed for this path.
 
-UDA PR #253 is merged to its default branch at `91e4be060ca99151264f1f90ad4f9c19aaf05bcb`. The repair binds the owner's permitted method to actual launch configuration and protects parent completion. It has behavioral regressions rather than only prose-token tests; the final UDA suite passed 446 tests and hosted checks passed. The current research launcher binds the comparator; this is not a universal runtime guarantee for every future assistant.
+Do not conceal this gap by quietly rerunning target-aware selection against the known birth date after each answer edit. Separately versioned target-aware training remains authorized. Unknown is not an automatic contradiction. Semantically unchanged or irrelevant answer edits need not move scores, and score changes need not always move ranks. Identical feature vectors remain tied.
 
-Private answers, coding, source-filtered inventories and matrices remain outside Git. The result receipt preserves their execution artifact hashes. The affected V1.4 suite passed 12 tests. No background research worker is being claimed.
+## Preserved limits and history
+
+The new calculation removes the old interpolation-screening uncertainty for the specified minute grid. It does not enumerate every second or prove continuous-time uniqueness. The earlier local plateau estimate, approximately 10:17:52–10:26:12 UTC, remains separate evidence. The old full-library identity finding explains why the neighboring minute tie cannot be broken by reselecting the unchanged 390-feature library.
+
+This is a fitted owner-development result, not independent human validation. The parent questionnaire-decoder outcome remains **OPEN**. The requested explanation and exact-century audit are **COMPLETED**. No research worker is left running or background delivery promised.
+
+UDA goal-protection repair remains merged via PR #253 at `91e4be060ca99151264f1f90ad4f9c19aaf05bcb`. Historical staged results and fixed-combination diagnostics remain in the task directory and Git history. Private answer transcripts and coding remain outside Git and were not sent to the century runtime.
