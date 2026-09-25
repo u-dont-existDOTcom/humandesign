@@ -1,0 +1,1038 @@
+{
+  "schema": "astrohd-v1.3-target-blind-consensus-domain-significator-map-v2",
+  "method": "strict intersection of two fresh source-only isolated Claude Opus 5.5/high mappings after source-provenance enrichment; no birth/chart/candidate/rank/owner answers supplied",
+  "mapper_a_sha256": "b88c01b3f347c15ceab7a4cfd85d187ab51a6cd3252b117cf632515c81bc11ee",
+  "mapper_b_sha256": "0e1cc54f2ce2c61ce4196fc4ceb4a56d3a9282fd9ea21d57fde4b3baea46b24e",
+  "domains": [
+    {
+      "domain_id": "complex_structure",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [
+            {
+              "id": "mercury",
+              "source_ids": [
+                "valens_planets"
+              ],
+              "rationale_a": "Valens gives Mercury reasoning, interpretation, accounts and systematic work, which directly overlap organizing and parsing complex detail.",
+              "rationale_b": "Valens gives Mercury reasoning, interpretation, accounts and systematic work, which match parsing and organizing complex detail."
+            }
+          ],
+          "houses": [],
+          "consensus_abstain": false,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [
+            {
+              "id": "mercury",
+              "source_ids": [
+                "lilly_planets"
+              ],
+              "rationale_a": "Lilly associates Mercury with reasoning and practical intelligence, which overlap with making sense of complex structure.",
+              "rationale_b": "Lilly gives Mercury reasoning and practical intelligence, which match making sense of complex structure."
+            }
+          ],
+          "houses": [],
+          "consensus_abstain": false,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [
+            {
+              "id": "mercury",
+              "source_ids": [
+                "parashara_planets"
+              ],
+              "rationale_a": "BPHS and Phaladeepika give Mercury intellect, which overlaps with parsing and organizing detail.",
+              "rationale_b": "BPHS and Phaladeepika give Mercury intellect, which matches intellectual parsing of structure."
+            }
+          ],
+          "houses": [],
+          "consensus_abstain": false,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        }
+      ]
+    },
+    {
+      "domain_id": "recurring_mystery",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [
+            "mercury"
+          ],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        }
+      ]
+    },
+    {
+      "domain_id": "original_contribution",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [
+            {
+              "id": "mercury",
+              "source_ids": [
+                "valens_planets"
+              ],
+              "rationale_a": "Valens lists 'discoveries' under Mercury, which overlaps with originating new ideas or methods.",
+              "rationale_b": "Valens lists discoveries under Mercury, which matches originating one's own ideas or methods."
+            }
+          ],
+          "houses": [],
+          "consensus_abstain": false,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        }
+      ]
+    },
+    {
+      "domain_id": "insight_translation",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [
+            {
+              "id": "mercury",
+              "source_ids": [
+                "valens_planets"
+              ],
+              "rationale_a": "Valens gives Mercury education, interpretation, communication and oratory, which directly overlap explaining understanding to others.",
+              "rationale_b": "Valens gives Mercury interpretation, communication, education, letters and oratory. These directly match explaining understanding to others."
+            }
+          ],
+          "houses": [],
+          "consensus_abstain": false,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [
+            {
+              "id": "mercury",
+              "source_ids": [
+                "lilly_planets"
+              ],
+              "rationale_a": "Lilly associates Mercury with speech, oratory and learning, which overlap with expressing understanding.",
+              "rationale_b": "Lilly gives Mercury speech, oratory and learning, which match expressing understanding to others."
+            }
+          ],
+          "houses": [
+            {
+              "id": 3,
+              "source_ids": [
+                "lilly_houses"
+              ],
+              "rationale_a": "Lilly assigns letters and messages to the 3rd house, which covers communicating content to others.",
+              "rationale_b": "Lilly's 3rd house covers letters and messages, which are channels for communicating understanding."
+            }
+          ],
+          "consensus_abstain": false,
+          "mapper_a_only_planets": [
+            "jupiter"
+          ],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [
+            {
+              "id": "jupiter",
+              "source_ids": [
+                "parashara_planets"
+              ],
+              "rationale_a": "Phaladeepika gives Jupiter teaching, which directly means explaining understanding so others can use it.",
+              "rationale_b": "Phaladeepika gives Jupiter teaching, which is conveying knowledge so others can use it."
+            },
+            {
+              "id": "mercury",
+              "source_ids": [
+                "parashara_planets"
+              ],
+              "rationale_a": "Mercury is given language, speech and intellect, which overlap with expressing understanding.",
+              "rationale_b": "BPHS gives Mercury language and Phaladeepika gives it speech, which match expression and explanation."
+            }
+          ],
+          "houses": [
+            {
+              "id": 2,
+              "source_ids": [
+                "phaladeepika_bhavas"
+              ],
+              "rationale_a": "Phaladeepika identifies the 2nd bhava with speech, the medium of expression.",
+              "rationale_b": "Phaladeepika identifies the 2nd bhava with speech, the medium of expression."
+            }
+          ],
+          "consensus_abstain": false,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        }
+      ]
+    },
+    {
+      "domain_id": "persuasion_strategy",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [
+            {
+              "id": "mercury",
+              "source_ids": [
+                "valens_planets"
+              ],
+              "rationale_a": "Valens gives Mercury disputation and oratory, which directly overlap arguing and persuading.",
+              "rationale_b": "Valens gives Mercury disputation and oratory, which match arguing and persuading."
+            }
+          ],
+          "houses": [],
+          "consensus_abstain": false,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [
+            {
+              "id": "mercury",
+              "source_ids": [
+                "lilly_planets"
+              ],
+              "rationale_a": "Lilly associates Mercury with speech and oratory, the traditional instruments of persuasion.",
+              "rationale_b": "Lilly gives Mercury speech and oratory, which match persuasion through argument."
+            }
+          ],
+          "houses": [],
+          "consensus_abstain": false,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [
+            {
+              "id": "mercury",
+              "source_ids": [
+                "parashara_planets"
+              ],
+              "rationale_a": "Mercury is given speech and intellect, which overlap with argument and persuasion.",
+              "rationale_b": "Both sources give Mercury speech and language, the instruments of argument."
+            },
+            {
+              "id": "venus",
+              "source_ids": [
+                "parashara_planets"
+              ],
+              "rationale_a": "Phaladeepika gives Venus 'charming speech', which is speech that influences others.",
+              "rationale_b": "Phaladeepika gives Venus charming speech, which is influence through agreeable speech."
+            }
+          ],
+          "houses": [],
+          "consensus_abstain": false,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        }
+      ]
+    },
+    {
+      "domain_id": "recognition_entry",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [
+            {
+              "id": "jupiter",
+              "source_ids": [
+                "valens_planets"
+              ],
+              "rationale_a": "Valens gives Jupiter offices, rank and authority, which overlap with appointment into acknowledged roles.",
+              "rationale_b": "Valens gives Jupiter offices, rank and authority, which match entry into roles by appointment or recognized standing."
+            }
+          ],
+          "houses": [],
+          "consensus_abstain": false,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [
+            {
+              "id": "sun",
+              "source_ids": [
+                "lilly_planets"
+              ],
+              "rationale_a": "Lilly associates the Sun with honour, authority and public office, which overlap with recognition and appointment.",
+              "rationale_b": "Lilly gives the Sun honour, authority and public office, which match recognition and appointment to roles."
+            }
+          ],
+          "houses": [
+            {
+              "id": 10,
+              "source_ids": [
+                "lilly_houses"
+              ],
+              "rationale_a": "Lilly assigns profession, office, honour and authority to the 10th, which overlap with recognized or appointed roles.",
+              "rationale_b": "Lilly's 10th house covers profession, office, honour and authority, which match acknowledged entry into roles."
+            }
+          ],
+          "consensus_abstain": false,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        }
+      ]
+    },
+    {
+      "domain_id": "network_pathways",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [
+            {
+              "id": "jupiter",
+              "source_ids": [
+                "valens_planets"
+              ],
+              "rationale_a": "Valens gives Jupiter political ties, friendships and fellowship, which overlap with opportunity through allies and communities.",
+              "rationale_b": "Valens gives Jupiter political ties, friendships and fellowship, which match opportunities arising through allies and social connections."
+            }
+          ],
+          "houses": [],
+          "consensus_abstain": false,
+          "mapper_a_only_planets": [
+            "venus"
+          ],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [],
+          "houses": [
+            {
+              "id": 11,
+              "source_ids": [
+                "lilly_houses"
+              ],
+              "rationale_a": "Lilly assigns friends, trust and allies/councillors to the 11th, which directly overlap with pathways through allies.",
+              "rationale_b": "Lilly's 11th house covers friends, trust and allies/councillors, which directly match social-connection pathways."
+            }
+          ],
+          "consensus_abstain": false,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        }
+      ]
+    },
+    {
+      "domain_id": "role_projection",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        }
+      ]
+    },
+    {
+      "domain_id": "immediate_body_signal",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        }
+      ]
+    },
+    {
+      "domain_id": "autonomy_direction",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        }
+      ]
+    },
+    {
+      "domain_id": "sanctuary_sensory",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [],
+          "houses": [
+            {
+              "id": 4,
+              "source_ids": [
+                "lilly_houses"
+              ],
+              "rationale_a": "Lilly assigns home, land and family roots to the 4th, which directly overlap with a private base.",
+              "rationale_b": "Lilly's 4th house covers home, land and family roots, which match a private home base."
+            }
+          ],
+          "consensus_abstain": false,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [],
+          "houses": [
+            {
+              "id": 4,
+              "source_ids": [
+                "phaladeepika_bhavas"
+              ],
+              "rationale_a": "Phaladeepika identifies the 4th bhava with home.",
+              "rationale_b": "Phaladeepika identifies the 4th bhava with home."
+            }
+          ],
+          "consensus_abstain": false,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        }
+      ]
+    },
+    {
+      "domain_id": "romantic_attachment",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [
+            {
+              "id": "venus",
+              "source_ids": [
+                "valens_planets"
+              ],
+              "rationale_a": "Valens gives Venus desire, love, pleasure and marriage, which directly overlap with romantic attachment.",
+              "rationale_b": "Valens gives Venus desire and love, pleasure and marriage, which directly match romantic and sensual attachment."
+            }
+          ],
+          "houses": [],
+          "consensus_abstain": false,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [
+            {
+              "id": "venus",
+              "source_ids": [
+                "lilly_planets"
+              ],
+              "rationale_a": "Lilly associates Venus with love, pleasure and relationship.",
+              "rationale_b": "Lilly gives Venus love, pleasure and relationship."
+            }
+          ],
+          "houses": [
+            {
+              "id": 7,
+              "source_ids": [
+                "lilly_houses"
+              ],
+              "rationale_a": "Lilly assigns marriage and partners to the 7th, which corresponds to pair-bonding.",
+              "rationale_b": "Lilly's 7th house covers marriage and partners, which is pair-bonding."
+            }
+          ],
+          "consensus_abstain": false,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [
+            {
+              "id": "venus",
+              "source_ids": [
+                "parashara_planets"
+              ],
+              "rationale_a": "BPHS gives Venus desire and reproductive significations, and Phaladeepika adds marriage and pleasure.",
+              "rationale_b": "BPHS gives Venus reproductive/desire significations and Phaladeepika gives it marriage and pleasure."
+            }
+          ],
+          "houses": [
+            {
+              "id": 7,
+              "source_ids": [
+                "phaladeepika_bhavas"
+              ],
+              "rationale_a": "Phaladeepika identifies the 7th bhava with the spouse.",
+              "rationale_b": "Phaladeepika identifies the 7th bhava with the spouse."
+            }
+          ],
+          "consensus_abstain": false,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        }
+      ]
+    },
+    {
+      "domain_id": "emotion_permeability",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        }
+      ]
+    },
+    {
+      "domain_id": "work_energy_range",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [
+            {
+              "id": "mars",
+              "source_ids": [
+                "valens_planets"
+              ],
+              "rationale_a": "Valens gives Mars action and effort, which overlap with capacity for productive exertion.",
+              "rationale_b": "Valens gives Mars action and effort, which match the capacity for productive effort."
+            }
+          ],
+          "houses": [],
+          "consensus_abstain": false,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [
+            {
+              "id": "mars",
+              "source_ids": [
+                "lilly_planets"
+              ],
+              "rationale_a": "Lilly associates Mars with action and force, which overlap with work effort.",
+              "rationale_b": "Lilly gives Mars action, which matches expended effort."
+            },
+            {
+              "id": "saturn",
+              "source_ids": [
+                "lilly_planets"
+              ],
+              "rationale_a": "Lilly associates Saturn with endurance, which overlaps with sustained effort.",
+              "rationale_b": "Lilly gives Saturn endurance, which matches sustained capacity and its limits."
+            }
+          ],
+          "houses": [
+            {
+              "id": 6,
+              "source_ids": [
+                "lilly_houses"
+              ],
+              "rationale_a": "Lilly assigns service and labour/workers to the 6th, which directly overlap with labour.",
+              "rationale_b": "Lilly's 6th house covers service and labour/workers."
+            }
+          ],
+          "consensus_abstain": false,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [
+            {
+              "id": "mars",
+              "source_ids": [
+                "parashara_planets"
+              ],
+              "rationale_a": "BPHS gives Mars dynamic energy and activity, and Phaladeepika adds strength and energy.",
+              "rationale_b": "BPHS gives Mars dynamic energy/activity and Phaladeepika gives it strength and energy."
+            },
+            {
+              "id": "saturn",
+              "source_ids": [
+                "parashara_planets"
+              ],
+              "rationale_a": "Phaladeepika gives Saturn labour and constancy, which directly overlap with sustained work.",
+              "rationale_b": "Phaladeepika gives Saturn labour and constancy, which is sustained work."
+            }
+          ],
+          "houses": [],
+          "consensus_abstain": false,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        }
+      ]
+    },
+    {
+      "domain_id": "consequential_effort",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        }
+      ]
+    },
+    {
+      "domain_id": "correction_threshold",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        }
+      ]
+    },
+    {
+      "domain_id": "retreat_privacy",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [
+            {
+              "id": "saturn",
+              "source_ids": [
+                "valens_planets"
+              ],
+              "rationale_a": "Valens gives Saturn isolation/solitariness and confinement, which directly overlap with withdrawal and solitude.",
+              "rationale_b": "Valens gives Saturn isolation/solitariness and confinement, which directly match withdrawal and solitude."
+            }
+          ],
+          "houses": [],
+          "consensus_abstain": false,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [
+            {
+              "id": "saturn",
+              "source_ids": [
+                "lilly_planets"
+              ],
+              "rationale_a": "Lilly associates Saturn with solitude and restraint.",
+              "rationale_b": "Lilly gives Saturn solitude and restraint."
+            }
+          ],
+          "houses": [
+            {
+              "id": 12,
+              "source_ids": [
+                "lilly_houses"
+              ],
+              "rationale_a": "Lilly assigns confinement to the 12th, which overlaps with removal from ordinary social activity. The source frames it as imposed rather than chosen.",
+              "rationale_b": "Lilly's 12th house covers confinement, which is removal from ordinary social activity."
+            }
+          ],
+          "consensus_abstain": false,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [
+            {
+              "id": "saturn",
+              "source_ids": [
+                "parashara_planets"
+              ],
+              "rationale_a": "Phaladeepika gives Saturn confinement, which overlaps with removal from ordinary social activity.",
+              "rationale_b": "Phaladeepika gives Saturn confinement, which is removal from ordinary activity."
+            }
+          ],
+          "houses": [],
+          "consensus_abstain": false,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        }
+      ]
+    },
+    {
+      "domain_id": "value_tension",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        }
+      ]
+    },
+    {
+      "domain_id": "resource_motivation",
+      "traditions": [
+        {
+          "tradition": "hellenistic_western",
+          "planets": [],
+          "houses": [],
+          "consensus_abstain": true,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [
+            "jupiter"
+          ],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        },
+        {
+          "tradition": "lilly_traditional_western",
+          "planets": [],
+          "houses": [
+            {
+              "id": 2,
+              "source_ids": [
+                "lilly_houses"
+              ],
+              "rationale_a": "Lilly assigns wealth and resources to the 2nd.",
+              "rationale_b": "Lilly's 2nd house covers wealth and resources."
+            },
+            {
+              "id": 4,
+              "source_ids": [
+                "lilly_houses"
+              ],
+              "rationale_a": "Lilly assigns land to the 4th, which overlaps with property.",
+              "rationale_b": "Lilly's 4th house covers land, which is property."
+            }
+          ],
+          "consensus_abstain": false,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [
+            "sun"
+          ],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": [
+            10
+          ]
+        },
+        {
+          "tradition": "parashari_jyotish",
+          "planets": [],
+          "houses": [
+            {
+              "id": 2,
+              "source_ids": [
+                "phaladeepika_bhavas"
+              ],
+              "rationale_a": "Phaladeepika identifies the 2nd bhava with wealth.",
+              "rationale_b": "Phaladeepika identifies the 2nd bhava with wealth."
+            }
+          ],
+          "consensus_abstain": false,
+          "mapper_a_only_planets": [],
+          "mapper_b_only_planets": [],
+          "mapper_a_only_houses": [],
+          "mapper_b_only_houses": []
+        }
+      ]
+    }
+  ],
+  "disagreement_summary": {
+    "common_planet_mappings": 26,
+    "common_house_mappings": 13,
+    "one_mapper_only_planet_mappings": 5,
+    "one_mapper_only_house_mappings": 1
+  },
+  "status": "FROZEN_BEFORE_OWNER_V13_SCORING"
+}
