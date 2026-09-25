@@ -36,7 +36,7 @@ try {
   assert.deepEqual(first.answer_signs, [1, 1, 1, 1, 1, 1]);
   // Birth date and time-zone controls appear only after the profile is frozen.
   await page.locator('#timezone').fill('America/New_York');
-  await page.locator('#birth-local').fill('1985-01-29T05:25:00');
+  await page.locator('#birth-local').fill('1985-01-29T05:25');
   await page.locator('#time-source').selectOption('record');
   await page.locator('#check').click();
   await page.waitForFunction(() => document.getElementById('checked-result').innerText.includes('Your score is 6'), null, { timeout: 60000 });
