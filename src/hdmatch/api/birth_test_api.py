@@ -95,14 +95,26 @@ def interpret_answers(answers: list[SourceAnswer], model: Any = None) -> dict[st
     if any(key not in by_id and key != "imported" for key in lookup):
         raise ValueError("Unknown questionnaire source ID")
     domains = load_model()[2]["domains"]
-    schema = {"type": "object", "additionalProperties": False, "required": ["interpretations"],
-              "properties": {"interpretations": {"type": "array", "minItems": len(domains), "maxItems": len(domains),
-              "items": {"type": "object", "additionalProperties": False,
-              "required": ["domain_id", "state", "summary", "evidence"],
-              "properties": {"domain_id": {"type": "string", "enum": [d["id"] for d in domains]},
-                "state": {"type": "string", "enum": sorted(STATES)}, "summary": {"type": "string"},
-                "evidence": {"type": "array", "items": {"type": "object", "additionalProperties": False,
-                "required": ["question_id", "quote"], "properties": {"question_id": {"type": "string"}, "quote": {"type": "string"}}}}}}}}
+    evidence_schema = {
+        "type": "object", "additionalProperties": False,
+        "required": ["question_id", "quote"],
+        "properties": {"question_id": {"type": "string"}, "quote": {"type": "string"}},
+    }
+    item_schema = {
+        "type": "object", "additionalProperties": False,
+        "required": ["domain_id", "state", "summary", "evidence"],
+        "properties": {
+            "domain_id": {"type": "string", "enum": [d["id"] for d in domains]},
+            "state": {"type": "string", "enum": sorted(STATES)},
+            "summary": {"type": "string"},
+            "evidence": {"type": "array", "items": evidence_schema},
+        },
+    }
+    schema = {
+        "type": "object", "additionalProperties": False, "required": ["interpretations"],
+        "properties": {"interpretations": {"type": "array", "minItems": len(domains),
+                                             "maxItems": len(domains), "items": item_schema}},
+    }
     if model is None:
         from .life_patterns_v2_owner_continuous_flow import ContinuousFlowRecoverabilityOpenAIModel
         model = ContinuousFlowRecoverabilityOpenAIModel.from_env()

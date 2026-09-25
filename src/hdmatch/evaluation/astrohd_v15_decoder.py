@@ -9,6 +9,7 @@ from __future__ import annotations
 import hashlib
 import json
 import random
+import os
 import threading
 from collections import Counter
 from datetime import UTC, datetime, timedelta
@@ -19,7 +20,9 @@ from typing import Any, Mapping, Sequence
 from hdmatch.evaluation.astrohd_v13_traditions import build_snapshot
 from hdmatch.evaluation.astrohd_v14_rules import feature_row, registry
 
-ROOT = Path(__file__).resolve().parents[3]
+ROOT = Path(os.environ.get("HDMATCH_REPO_ROOT", "/app"))
+if not (ROOT / "reference/research").is_dir():
+    ROOT = Path(__file__).resolve().parents[3]
 TASK = ROOT / "tasks/scenario-owner-recovery-calibration-20260923"
 MODEL_PATH = TASK / "ASTROHD-V14-SIX-RULE-MODEL-20260925.json"
 BRIDGE_PATH = ROOT / "reference/research/astrohd_v15_behavioral_bridge.json"
@@ -62,7 +65,7 @@ def normalize_profile(profile: Mapping[str, str]) -> dict[str, str]:
     bridge = load_model()[2]
     expected = {d["id"] for d in bridge["domains"]}
     if set(profile) != expected:
-        raise ValueError("Profile must contain exactly the six declared neutral domains")
+        raise ValueError("Profile must contain exactly the declared neutral domains")
     result = {key: str(profile[key]) for key in sorted(expected)}
     if any(value not in STATES for value in result.values()):
         raise ValueError("Unknown profile state")
