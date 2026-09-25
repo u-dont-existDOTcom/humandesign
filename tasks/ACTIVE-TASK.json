@@ -1,19 +1,22 @@
 {
   "schemaVersion": 1,
   "taskId": "scenario-owner-recovery-calibration-20260923",
-  "requiredBranch": "chat/v14-cross-rulebook-20260924",
+  "requiredBranch": "chat/v14-answer-link-century-20260925",
+  "previousBranch": "chat/v14-cross-rulebook-20260924",
   "exclusive": true,
   "implementationAuthorized": true,
   "assuranceLane": "iteration",
-  "status": "v14_fixed_combo_answer_sensitivity_diagnostic_complete_no_model_change",
-  "ownerOutcome": "Combine established astrology rulebook clauses into one model fitted to the owner case, with no arbitrary fitted numerical astrology weights, and run progressively larger candidate-date/time searches. Report the actual recovered date and honest time resolution.",
-  "currentOwnerRequestStatus": "FIXED_COMBO_ANSWER_SENSITIVITY_DIAGNOSTIC_COMPLETE",
-  "longRangeResearchStatus": "OPEN_NOT_INDEPENDENTLY_VALIDATED",
+  "status": "v14_exact_century_audit_running_decoder_gap_explicit",
+  "ownerOutcome": "Develop survey-based birth-date/time recovery using one combination of established astrology rules without arbitrary fitted numerical astrology weights. Preserve target-aware owner development and distinguish a fitted signature from an answer-conditioned decoder.",
+  "currentOwnerRequest": "Clarify whether survey-answer edits change the current ranking and what remains unfinished, then run the full century check.",
+  "currentOwnerRequestStatus": "EXPLANATION_RECORDED_EXACT_CENTURY_IN_PROGRESS",
+  "longRangeResearchStatus": "OPEN_ANSWER_CONDITIONED_DECODER_NOT_IMPLEMENTED",
   "privateParticipantTranscriptToGitAuthorized": false,
+  "activeContract": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-EXACT-CENTURY-ACTIVE-CONTRACT-20260925.md",
   "ownerMethodContract": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-OWNER-METHOD-CONTRACT-20260924.json",
   "currentModel": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-SIX-RULE-MODEL-20260925.json",
   "currentReceipt": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-STAGED-RESULT-20260925.md",
-  "latestDiagnostic": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-FIXED-COMBO-ANSWER-SENSITIVITY-20260925.md",
+  "decoderGap": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-SURVEY-DECODER-GAP-20260925.md",
   "historicalPreV14StateCommit": "529f64ae606e3c7deb1d3c700e92376545fae1ce",
   "udaRepair": {
     "pullRequest": 253,
@@ -21,38 +24,42 @@
     "status": "MERGED_DEFAULT_BRANCH_AND_HOSTED_CHECKS_PASS",
     "scope": "operational owner-method admission and closure; not a universal runtime guarantee"
   },
-  "latestResult": {
+  "historicalScreenedResult": {
     "selectedRules": 6,
     "selectedBooks": 2,
-    "weights": "one equal vote per selected clause",
-    "candidatePanelSizes": [100, 1000, 10000, 100000],
     "screenedCenturyMinutePositions": 52596001,
-    "fourRuleTiedDates": 49,
     "sixRuleTiedDates": ["1985-01-29"],
     "minuteGridPlateauUtc": ["1985-01-29T10:18:00Z", "1985-01-29T10:26:00Z"],
     "continuousPlateauApproxUtc": ["1985-01-29T10:17:52Z", "1985-01-29T10:26:12Z"],
-    "exactRecordedMinuteUniquelyIdentified": false,
-    "formalGlobalScreenErrorBoundProved": false,
-    "independentHumanValidation": false
+    "formalGlobalScreenErrorBoundProved": false
   },
-  "answerSensitivityDiagnostic": {
-    "scope": "Explain answer changes under the fixed six-rule combination before further combinations or century execution",
-    "conclusion": "No answer-change set can distinguish identical six-feature vectors. Recorded date is already first among discovered maximum-score dates; recorded minute is jointly first.",
-    "runtimeAnswersAreScoringInputs": false,
-    "answersRole": "Prior development-stage rule eligibility, followed by target-aware subset selection",
-    "modelChanged": false,
-    "privateAnswersChanged": false,
-    "newAstronomicalRunPerformed": false,
-    "newRuleCombinationsTried": false
+  "answerConditionedDecoder": {
+    "status": "NOT_IMPLEMENTED_IN_V14D",
+    "currentSurveyAnswerReadBySavedScorer": false,
+    "currentAnswersRole": "Development-time eligibility before target-aware rule selection",
+    "missingPath": "Updated answer -> neutral recoding -> updated behavioral profile -> fixed answer-to-rule comparison -> scores -> reranking",
+    "routineInferenceMayUseRecordedTargetToRefit": false,
+    "separatelyVersionedTargetAwareDevelopmentAllowed": true,
+    "unknownMayBecomeContradictionAutomatically": false,
+    "completionMustNotBeInferredFromCenturySignatureSuccess": true
   },
-  "nextAction": "Deliver the fixed-combination answer-sensitivity explanation first, as requested. Preserve the current six-rule model and all answer records. A later exact-century check is distinct from this diagnostic; finer time discrimination would require features not identical across the remaining times, not more emphatic answers or an arbitrary proximity tie-break.",
-  "supersession": "The old whole-tradition-independent-success requirement and the no-new-owner-development interpretation of historical freezes are not active requirements. Historical results remain preserved in Git history.",
+  "exactCenturyAudit": {
+    "status": "RUNNING",
+    "runner": "scripts/scan_astrohd_v14_exact_century.py",
+    "startUtc": "1926-08-24T10:42:00Z",
+    "endUtc": "2026-08-24T10:42:00Z",
+    "minuteCount": 52596001,
+    "interpolationScreening": false,
+    "ruleRefitting": false,
+    "oldModelAndAnswersChanged": false,
+    "executionObservation": "Existing run verified active through durable progress and process state after connector session handle was lost; no duplicate runner started."
+  },
+  "nextAction": "Reconcile the existing exact century runner to completion, verify contiguous minute coverage and persist its result. Explain the decoder gap without claiming to have implemented it. No new rule combinations are authorized by this audit.",
+  "supersession": "The current owner has authorized the exact-century follow-up. The previous diagnostic-only ordering restriction is fulfilled, while the unchanged-rule restriction remains active for this audit.",
   "stopAdmission": {
-    "currentRequestedOperations": "FIXED_COMBO_DIAGNOSTIC_COMPLETED",
-    "remainingExecutionGapForThisDiagnostic": "NONE",
-    "ownerOrderingRestriction": "Explain which answers could change the fixed-combination rank before any further combination search or full-century follow-up; no retuning was performed in this diagnostic.",
-    "broaderResearchGaps": ["exact-minute discrimination", "new-person generalization", "formal exhaustive continuous-time uniqueness"],
-    "claimBoundary": "One surviving date and an unresolved interval in the screened century development search, not scientific validation.",
-    "backgroundWorkerClaim": "NONE"
+    "currentRequestedOperations": "IN_PROGRESS",
+    "parentOutcome": "OPEN",
+    "unmetBroaderOutcome": "Answer-conditioned survey decoding is not implemented by the static six-rule replay.",
+    "backgroundDeliveryPromise": "NONE"
   }
 }
