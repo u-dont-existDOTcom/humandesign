@@ -91,19 +91,3 @@ select = ["E", "F", "I", "UP", "B", "SIM"]
 python_version = "3.11"
 strict = true
 packages = ["hdmatch"]
-
-# The installed Swiss extension does not distribute typing metadata.
-[[tool.mypy.overrides]]
-module = "swisseph"
-ignore_missing_imports = true
-
-# Retained frozen scorers use heterogeneous dictionaries and branch-local variable
-# reuse. These exact diagnostics are static-inference limitations of the saved
-# artifacts; new V1.5 code remains strict and original-value replay tests are required.
-[[tool.mypy.overrides]]
-module = "hdmatch.evaluation.astrohd_v13_traditions"
-disable_error_code = ["attr-defined"]
-
-[[tool.mypy.overrides]]
-module = "hdmatch.evaluation.astrohd_v14_rules"
-disable_error_code = ["assignment", "index", "comparison-overlap"]
