@@ -1,0 +1,29 @@
+{
+  "version": "astrohd-v15-bridge-1.0",
+  "status": "FROZEN_BEFORE_NEW_PARTICIPANT_DATA",
+  "claim": "Modern operational hypotheses joining historical strength clauses to neutral self-reports; not six verbatim historical personality predictions.",
+  "question_bank": "tasks/scenario-survey-v7-redesign-20260922/interviewer-bank-v7.json",
+  "focused_question_ids": ["G02", "F0", "G05", "G06", "R02", "G12", "G13", "R05", "G18"],
+  "question_policy": "Reuse original wording and context. Show required antecedents, allow skipping, correction and free text. No answer becomes evidence automatically. Participant-confirmed interpretation is required. Other existing survey answers can be imported.",
+  "domains": [
+    {"id": "insight_translation", "label": "Sharing understanding", "affirmative": "I commonly explain what I have understood so another person can use it.", "negative": "I generally keep that understanding to myself rather than explain or translate it for others.", "limit": "Do not infer teaching ability, successful communication, or a reusable method from one offer to help. Conditional habitual self-reports retain their conditions.", "question_ids": ["G02"]},
+    {"id": "retreat_privacy", "label": "Solitude and privacy", "affirmative": "I regularly seek time alone, privacy, or a deliberate break from ordinary social activity.", "negative": "I generally do not seek solitude or privacy and normally prefer continuing company instead.", "limit": "Imposed isolation, a single tired day, and choosing spiritual retreat are not interchangeable. Omitted information is unknown.", "question_ids": ["G18"]},
+    {"id": "romantic_attachment", "label": "Romantic connection", "affirmative": "Romantic attraction or wanting romantic pair-bonding is a recurring part of my experience.", "negative": "I normally do not experience romantic attraction or desire romantic pair-bonding.", "limit": "Single relationship difficulty, privacy, no dating experience, friendship, and sexual desire do not determine this code. No sexual-orientation label is inferred.", "question_ids": ["G12", "G13", "R05"]},
+    {"id": "persuasion_strategy", "label": "Influencing a shared plan", "affirmative": "I regularly try to influence plans through discussion, argument, or adapting how I explain something.", "negative": "I normally avoid trying to persuade and do not generally engage in influencing plans that way.", "limit": "Capacity, preference, frequency, audience adaptation, and success are different. Code only the stated tendency; do not credit success from effort or infer inability from preference.", "question_ids": ["F0", "G05"]},
+    {"id": "recognition_entry", "label": "Entering a role", "affirmative": "I commonly enter roles because others recognize what I can contribute and invite or appoint me.", "negative": "I commonly enter roles through my own initiation rather than others inviting or appointing me.", "limit": "One imagined shared-meal response may be insufficient. Mixed routes remain mixed. Do not infer occupational success, status, or leadership capacity.", "question_ids": ["G06", "R02"]}
+  ],
+  "unscored_inherited_domain": {"id": "work_energy_range", "reason": "The inherited range/capacity label has no single affirmative behavioral pole. It is not silently signed or counted as 'everyone has work limits'. The retained Saturn hypothesis uses the inherited solitude/privacy bridge only."},
+  "rules": [
+    {"rule_id": "lilly/lord:3/house_1_10", "domain_ids": ["insight_translation"], "hypothesis": "Present clause supports the affirmative sharing-understanding pole."},
+    {"rule_id": "lilly/planet:saturn/benefic_trine", "domain_ids": ["retreat_privacy"], "hypothesis": "Present clause supports the affirmative solitude/privacy pole."},
+    {"rule_id": "lilly/planet:venus/house_2_5", "domain_ids": ["romantic_attachment"], "hypothesis": "Present clause supports the affirmative romantic-connection pole."},
+    {"rule_id": "phaladeepika/planet:venus/directional", "domain_ids": ["persuasion_strategy", "romantic_attachment"], "hypothesis": "Present clause supports at least one of the two inherited alternatives; explicit contradiction requires both to be contradicted."},
+    {"rule_id": "lilly/lord:10/benefic_conjunction", "domain_ids": ["recognition_entry"], "hypothesis": "Present clause supports the affirmative invitation/appointment pole."},
+    {"rule_id": "lilly/lord:7/house_4_7_11", "domain_ids": ["romantic_attachment"], "hypothesis": "Present clause supports the affirmative romantic-connection pole."}
+  ],
+  "scoring": {"present_clause_with_supported_pole": 1, "present_clause_with_explicitly_contradicted_pole": -1, "absent_clause": 0, "mixed_unknown_not_applicable": 0, "fitted_coefficients": false, "repeated_construct_warning": "Romantic connection can affect three clause votes. Raw testimony stacking is the primary owner-requested arm; those votes are not statistically independent."},
+  "primary_test": "999 seeded century-random decoys, then compare the separately revealed actual instant. No target-aware optimization or date-proximity tie-break.",
+  "secondary_panels": [99, 9999],
+  "controls": ["all-positive signature baseline", "unchanged-code edit", "irrelevant-answer edit", "unknown abstention", "explicit contradictory answer", "equal-feature tie preservation"],
+  "source_notes": ["Lilly Christian Astrology p.115 strength/house/aspect table", "Phaladeepika IV.2 Venus/Moon fourth-house directional strength", "Inherited source-only V1.3 significator map; the present signed behavioral bridge is versioned separately"]
+}
