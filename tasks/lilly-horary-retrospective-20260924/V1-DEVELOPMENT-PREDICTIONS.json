@@ -1,0 +1,342 @@
+{
+  "classification": "post-v0 development repair; source-frozen before v1 scoring",
+  "freeze_sha256": "256a65eb8893e0862138514656d0dc72e3efe9ccd8d244725bad061bb10ee294",
+  "inputs_sha256": "2e1d66912805cc8c8f2736d52cdb0d618ac804144769678b18f0151e540c07d5",
+  "kernel_sha256": "6e1b277c5f07135a84950604b83e56b736be696a7f3560bcddb1d4aeb944fca1",
+  "moira_version": "6.2.0",
+  "predictions": [
+    {
+      "affirmative_clauses": {
+        "L10_IN_1_BENEFIC_JOIN": false,
+        "L10_IN_1_FASTER": false,
+        "PERFECTION": false,
+        "RECEPTION": false
+      },
+      "benefic_relations": {
+        "Jupiter": {
+          "aspect": "square",
+          "distance_deg": 7.170490138773289,
+          "motion": "separating",
+          "within_moiety": true
+        },
+        "Venus": {
+          "aspect": "sextile",
+          "distance_deg": 20.29543428530394,
+          "motion": "separating",
+          "within_moiety": false
+        }
+      },
+      "case_id": "sky_3413",
+      "indeterminate_kinds": [],
+      "kernel_sha256": "6e1b277c5f07135a84950604b83e56b736be696a7f3560bcddb1d4aeb944fca1",
+      "l1": "Venus",
+      "l10": "Moon",
+      "l10_house": 7,
+      "l10_receives_l1_by": [],
+      "l10_receives_moon_by": [],
+      "l10_speed": 14.713283823681422,
+      "l1_speed": 1.2289835413525907,
+      "outcome_exposed_before_prediction": false,
+      "perfection_state": "composed",
+      "prediction": "NO",
+      "present_kinds": []
+    },
+    {
+      "affirmative_clauses": {
+        "L10_IN_1_BENEFIC_JOIN": false,
+        "L10_IN_1_FASTER": false,
+        "PERFECTION": false,
+        "RECEPTION": true
+      },
+      "benefic_relations": {
+        "Jupiter": {
+          "aspect": "conjunction",
+          "distance_deg": 0.27231291749529873,
+          "motion": "separating",
+          "within_moiety": true
+        },
+        "Venus": {
+          "same_body": true
+        }
+      },
+      "case_id": "sky_3134",
+      "indeterminate_kinds": [],
+      "kernel_sha256": "6e1b277c5f07135a84950604b83e56b736be696a7f3560bcddb1d4aeb944fca1",
+      "l1": "Sun",
+      "l10": "Venus",
+      "l10_house": 5,
+      "l10_receives_l1_by": [
+        "term"
+      ],
+      "l10_receives_moon_by": [],
+      "l10_speed": 1.231678857436691,
+      "l1_speed": 1.0152828647278511,
+      "outcome_exposed_before_prediction": true,
+      "perfection_state": "composed",
+      "prediction": "YES",
+      "present_kinds": []
+    },
+    {
+      "affirmative_clauses": {
+        "L10_IN_1_BENEFIC_JOIN": false,
+        "L10_IN_1_FASTER": false,
+        "PERFECTION": false,
+        "RECEPTION": true
+      },
+      "benefic_relations": {
+        "Jupiter": {
+          "aspect": "trine",
+          "distance_deg": 13.920981327967752,
+          "motion": "separating",
+          "within_moiety": false
+        },
+        "Venus": {
+          "aspect": "conjunction",
+          "distance_deg": 19.58592093782977,
+          "motion": "separating",
+          "within_moiety": false
+        }
+      },
+      "case_id": "sky_994",
+      "indeterminate_kinds": [],
+      "kernel_sha256": "6e1b277c5f07135a84950604b83e56b736be696a7f3560bcddb1d4aeb944fca1",
+      "l1": "Mars",
+      "l10": "Sun",
+      "l10_house": 8,
+      "l10_receives_l1_by": [
+        "exaltation",
+        "triplicity"
+      ],
+      "l10_receives_moon_by": [],
+      "l10_speed": 0.955383864209125,
+      "l1_speed": 0.6938782968575197,
+      "outcome_exposed_before_prediction": true,
+      "perfection_state": "composed",
+      "prediction": "YES",
+      "present_kinds": []
+    },
+    {
+      "affirmative_clauses": {
+        "L10_IN_1_BENEFIC_JOIN": false,
+        "L10_IN_1_FASTER": false,
+        "PERFECTION": false,
+        "RECEPTION": true
+      },
+      "benefic_relations": {
+        "Jupiter": {
+          "aspect": "square",
+          "distance_deg": 3.440963373752197,
+          "motion": "applying",
+          "within_moiety": true
+        },
+        "Venus": {
+          "same_body": true
+        }
+      },
+      "case_id": "sky_505",
+      "indeterminate_kinds": [],
+      "kernel_sha256": "6e1b277c5f07135a84950604b83e56b736be696a7f3560bcddb1d4aeb944fca1",
+      "l1": "Jupiter",
+      "l10": "Venus",
+      "l10_house": 6,
+      "l10_receives_l1_by": [
+        "triplicity",
+        "term",
+        "face"
+      ],
+      "l10_receives_moon_by": [],
+      "l10_speed": 0.31863001660781265,
+      "l1_speed": 0.1575271584215443,
+      "outcome_exposed_before_prediction": false,
+      "perfection_state": "composed",
+      "prediction": "YES",
+      "present_kinds": []
+    },
+    {
+      "affirmative_clauses": {
+        "L10_IN_1_BENEFIC_JOIN": false,
+        "L10_IN_1_FASTER": false,
+        "PERFECTION": false,
+        "RECEPTION": true
+      },
+      "benefic_relations": {
+        "Jupiter": {
+          "aspect": "opposition",
+          "distance_deg": 15.314506913591117,
+          "motion": "applying",
+          "within_moiety": false
+        },
+        "Venus": {
+          "same_body": true
+        }
+      },
+      "case_id": "sky_2477",
+      "indeterminate_kinds": [],
+      "kernel_sha256": "6e1b277c5f07135a84950604b83e56b736be696a7f3560bcddb1d4aeb944fca1",
+      "l1": "Sun",
+      "l10": "Venus",
+      "l10_house": 10,
+      "l10_receives_l1_by": [
+        "face"
+      ],
+      "l10_receives_moon_by": [],
+      "l10_speed": 1.1654013887891779,
+      "l1_speed": 0.9793755071143551,
+      "outcome_exposed_before_prediction": false,
+      "perfection_state": "composed",
+      "prediction": "YES",
+      "present_kinds": []
+    },
+    {
+      "affirmative_clauses": {
+        "L10_IN_1_BENEFIC_JOIN": false,
+        "L10_IN_1_FASTER": false,
+        "PERFECTION": false,
+        "RECEPTION": true
+      },
+      "benefic_relations": {
+        "Jupiter": {
+          "same_body": true
+        },
+        "Venus": {
+          "aspect": "square",
+          "distance_deg": 11.957477944485333,
+          "motion": "separating",
+          "within_moiety": false
+        }
+      },
+      "case_id": "sky_11724",
+      "indeterminate_kinds": [],
+      "kernel_sha256": "6e1b277c5f07135a84950604b83e56b736be696a7f3560bcddb1d4aeb944fca1",
+      "l1": "Jupiter",
+      "l10": "Jupiter",
+      "l10_house": 1,
+      "l10_receives_l1_by": [
+        "triplicity"
+      ],
+      "l10_receives_moon_by": [
+        "face"
+      ],
+      "l10_speed": -0.020531196781803374,
+      "l1_speed": -0.020531196781803374,
+      "outcome_exposed_before_prediction": false,
+      "perfection_state": "not_evaluable",
+      "prediction": "YES",
+      "present_kinds": []
+    },
+    {
+      "affirmative_clauses": {
+        "L10_IN_1_BENEFIC_JOIN": false,
+        "L10_IN_1_FASTER": true,
+        "PERFECTION": false,
+        "RECEPTION": false
+      },
+      "benefic_relations": {
+        "Jupiter": {
+          "aspect": "opposition",
+          "distance_deg": 24.974673346386055,
+          "motion": "applying",
+          "within_moiety": false
+        },
+        "Venus": {
+          "aspect": "trine",
+          "distance_deg": 26.986287421889415,
+          "motion": "applying",
+          "within_moiety": false
+        }
+      },
+      "case_id": "sky_12467",
+      "indeterminate_kinds": [],
+      "kernel_sha256": "6e1b277c5f07135a84950604b83e56b736be696a7f3560bcddb1d4aeb944fca1",
+      "l1": "Venus",
+      "l10": "Moon",
+      "l10_house": 1,
+      "l10_receives_l1_by": [],
+      "l10_receives_moon_by": [],
+      "l10_speed": 11.95652930647384,
+      "l1_speed": 1.2364506355311278,
+      "outcome_exposed_before_prediction": true,
+      "perfection_state": "composed",
+      "prediction": "YES",
+      "present_kinds": []
+    },
+    {
+      "affirmative_clauses": {
+        "L10_IN_1_BENEFIC_JOIN": false,
+        "L10_IN_1_FASTER": false,
+        "PERFECTION": false,
+        "RECEPTION": false
+      },
+      "benefic_relations": {
+        "Jupiter": {
+          "aspect": "sextile",
+          "distance_deg": 3.62413604836712,
+          "motion": "separating",
+          "within_moiety": true
+        },
+        "Venus": {
+          "aspect": "trine",
+          "distance_deg": 5.6458128545909005,
+          "motion": "separating",
+          "within_moiety": true
+        }
+      },
+      "case_id": "sky_104262",
+      "indeterminate_kinds": [],
+      "kernel_sha256": "6e1b277c5f07135a84950604b83e56b736be696a7f3560bcddb1d4aeb944fca1",
+      "l1": "Venus",
+      "l10": "Saturn",
+      "l10_house": 8,
+      "l10_receives_l1_by": [],
+      "l10_receives_moon_by": [],
+      "l10_speed": 0.03725941417087597,
+      "l1_speed": 1.2182196645369459,
+      "outcome_exposed_before_prediction": true,
+      "perfection_state": "composed",
+      "prediction": "NO",
+      "present_kinds": []
+    },
+    {
+      "affirmative_clauses": {
+        "L10_IN_1_BENEFIC_JOIN": false,
+        "L10_IN_1_FASTER": false,
+        "PERFECTION": false,
+        "RECEPTION": true
+      },
+      "benefic_relations": {
+        "Jupiter": {
+          "aspect": "trine",
+          "distance_deg": 16.06521312035312,
+          "motion": "separating",
+          "within_moiety": false
+        },
+        "Venus": {
+          "same_body": true
+        }
+      },
+      "case_id": "sky_813",
+      "indeterminate_kinds": [
+        "direct_perfection"
+      ],
+      "kernel_sha256": "6e1b277c5f07135a84950604b83e56b736be696a7f3560bcddb1d4aeb944fca1",
+      "l1": "Sun",
+      "l10": "Venus",
+      "l10_house": 7,
+      "l10_receives_l1_by": [
+        "exaltation",
+        "triplicity",
+        "term"
+      ],
+      "l10_receives_moon_by": [
+        "triplicity"
+      ],
+      "l10_speed": 1.2490046743778294,
+      "l1_speed": 1.003330795867896,
+      "outcome_exposed_before_prediction": false,
+      "perfection_state": "composed",
+      "prediction": "YES",
+      "present_kinds": []
+    }
+  ],
+  "schema": "lilly-horary-job-ch82-v1"
+}
