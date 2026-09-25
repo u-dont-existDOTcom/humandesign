@@ -1,0 +1,52 @@
+{
+  "schema": "lilly-horary-retrospective-corpus-v0",
+  "status": "FROZEN_BEFORE_PREDICTIONS_AND_OUTCOME_RETRIEVAL",
+  "source_archive": "Skyscript Astrology Forum answer-indexed horary threads",
+  "cases": [
+    {
+      "case_id": "skyscript-3413-job-permanent",
+      "source_url": "https://mail.skyscript.co.uk/forums/viewtopic.php?t=3413",
+      "source_title": "Any hope for this job horary?",
+      "question_text": "Will I get this job as a permanent position?",
+      "topic_house": 10,
+      "source_local_datetime": "2008-05-31T16:17:58",
+      "source_place": "Washington, DC, USA",
+      "source_timezone": "America/New_York",
+      "normalized_utc": "2008-05-31T20:17:58Z",
+      "latitude_deg": 38.9072,
+      "longitude_deg": -77.0369,
+      "coordinate_policy": "standard city-center coordinate",
+      "input_note": "Opening post gives May 31 2008, 4:17:58 pm, Washington DC."
+    },
+    {
+      "case_id": "skyscript-692-job-temporary",
+      "source_url": "https://mail.skyscript.co.uk/forums/viewtopic.php?t=692",
+      "source_title": "small Job",
+      "question_text": "Will I get this temporary position?",
+      "topic_house": 10,
+      "source_local_datetime": "2004-12-03T11:00:00",
+      "source_place": "Los Angeles, CA, USA",
+      "source_timezone": "America/Los_Angeles",
+      "normalized_utc": "2004-12-03T19:00:00Z",
+      "latitude_deg": 34.0522,
+      "longitude_deg": -118.2437,
+      "coordinate_policy": "standard city-center coordinate",
+      "input_note": "Opening post says 11:00 am PDT Los Angeles CA 3 December 2004. December civil time is PST; normalization freeze says place/date/local clock controls inconsistent abbreviation."
+    },
+    {
+      "case_id": "skyscript-4211-lost-glasses",
+      "source_url": "https://mail.skyscript.co.uk/forums/viewtopic.php?t=4211",
+      "source_title": "My lost specs",
+      "question_text": "Will I recover my lost glasses?",
+      "topic_house": 2,
+      "source_local_datetime": "2009-02-22T20:16:00",
+      "source_place": "Edinburgh, Scotland, UK",
+      "source_timezone": "Europe/London",
+      "normalized_utc": "2009-02-22T20:16:00Z",
+      "latitude_deg": 55.9533,
+      "longitude_deg": -3.1883,
+      "coordinate_policy": "standard city-center coordinate",
+      "input_note": "Opening post gives 22 Feb 2009 at 20.16 Edinburgh and explicitly evaluates testimonies for finding/recovery of the glasses."
+    }
+  ]
+}

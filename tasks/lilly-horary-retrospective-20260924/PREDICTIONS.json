@@ -1,0 +1,920 @@
+{
+  "classification": "frozen-before-outcome-reveal exploratory retrospective pilot",
+  "inputs_sha256": "2e1d66912805cc8c8f2736d52cdb0d618ac804144769678b18f0151e540c07d5",
+  "kernel_sha256": "6e1b277c5f07135a84950604b83e56b736be696a7f3560bcddb1d4aeb944fca1",
+  "method_freeze_sha256": "6dcd3c904a818e29af42b92dcd9e9beebb2da60c0f09fb42afac0393963fb3b8",
+  "moira_version": "6.2.0",
+  "predictions": [
+    {
+      "case_id": "sky_3413",
+      "considerations": [
+        {
+          "rule": "ascendant_below_three_degrees",
+          "state": "satisfied"
+        },
+        {
+          "rule": "ascendant_at_or_above_twenty_seven_degrees",
+          "state": "satisfied"
+        },
+        {
+          "rule": "moon_in_via_combusta",
+          "state": "satisfied"
+        },
+        {
+          "rule": "saturn_in_first_house",
+          "state": "satisfied"
+        },
+        {
+          "rule": "saturn_in_seventh_house",
+          "state": "satisfied"
+        },
+        {
+          "rule": "first_house_ruler_combust",
+          "state": "caution"
+        }
+      ],
+      "hour_agreement": "does_not_agree",
+      "house_system": "Regiomontanus",
+      "indeterminate_kinds": [],
+      "kernel_sha256": "6e1b277c5f07135a84950604b83e56b736be696a7f3560bcddb1d4aeb944fca1",
+      "moira_profile": "lilly_1647_perfection_v1",
+      "outcome_exposed_before_prediction": false,
+      "perfection_reason": null,
+      "perfection_span_days": 31.0,
+      "perfection_state": "composed",
+      "prediction": "NO",
+      "present_kinds": [],
+      "principal_querent": "Venus",
+      "principal_quesited": "Moon",
+      "question_utc": "2008-05-31T20:17:58+00:00",
+      "same_body_principals": false,
+      "topic_house": 10,
+      "witnesses": [
+        {
+          "actors": [
+            "Venus",
+            "Moon"
+          ],
+          "event_ids": [
+            "aspect:Moon:Venus:60:2454625.65842348"
+          ],
+          "kind": "direct_perfection",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Venus",
+            "Moon"
+          ],
+          "event_ids": [],
+          "kind": "translation_of_light",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Venus",
+            "Moon"
+          ],
+          "event_ids": [],
+          "kind": "collection_of_light",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Venus",
+            "Moon"
+          ],
+          "event_ids": [],
+          "kind": "prohibition",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Venus",
+            "Moon"
+          ],
+          "event_ids": [],
+          "kind": "refranation",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Venus",
+            "Moon"
+          ],
+          "event_ids": [],
+          "kind": "frustration",
+          "reception_bases": [],
+          "state": "absent"
+        }
+      ]
+    },
+    {
+      "case_id": "sky_3134",
+      "considerations": [
+        {
+          "rule": "ascendant_below_three_degrees",
+          "state": "satisfied"
+        },
+        {
+          "rule": "ascendant_at_or_above_twenty_seven_degrees",
+          "state": "satisfied"
+        },
+        {
+          "rule": "moon_in_via_combusta",
+          "state": "satisfied"
+        },
+        {
+          "rule": "saturn_in_first_house",
+          "state": "caution"
+        },
+        {
+          "rule": "saturn_in_seventh_house",
+          "state": "satisfied"
+        },
+        {
+          "rule": "first_house_ruler_combust",
+          "state": "not_applicable"
+        }
+      ],
+      "hour_agreement": "agrees",
+      "house_system": "Regiomontanus",
+      "indeterminate_kinds": [],
+      "kernel_sha256": "6e1b277c5f07135a84950604b83e56b736be696a7f3560bcddb1d4aeb944fca1",
+      "moira_profile": "lilly_1647_perfection_v1",
+      "outcome_exposed_before_prediction": true,
+      "perfection_reason": null,
+      "perfection_span_days": 31.0,
+      "perfection_state": "composed",
+      "prediction": "NO",
+      "present_kinds": [],
+      "principal_querent": "Sun",
+      "principal_quesited": "Venus",
+      "question_utc": "2008-02-01T17:58:00+00:00",
+      "same_body_principals": false,
+      "topic_house": 10,
+      "witnesses": [
+        {
+          "actors": [
+            "Sun",
+            "Venus"
+          ],
+          "event_ids": [],
+          "kind": "direct_perfection",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Sun",
+            "Venus"
+          ],
+          "event_ids": [],
+          "kind": "translation_of_light",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Sun",
+            "Venus"
+          ],
+          "event_ids": [],
+          "kind": "collection_of_light",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Sun",
+            "Venus"
+          ],
+          "event_ids": [],
+          "kind": "prohibition",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Sun",
+            "Venus"
+          ],
+          "event_ids": [],
+          "kind": "refranation",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Sun",
+            "Venus"
+          ],
+          "event_ids": [],
+          "kind": "frustration",
+          "reception_bases": [],
+          "state": "absent"
+        }
+      ]
+    },
+    {
+      "case_id": "sky_994",
+      "considerations": [
+        {
+          "rule": "ascendant_below_three_degrees",
+          "state": "satisfied"
+        },
+        {
+          "rule": "ascendant_at_or_above_twenty_seven_degrees",
+          "state": "satisfied"
+        },
+        {
+          "rule": "moon_in_via_combusta",
+          "state": "satisfied"
+        },
+        {
+          "rule": "saturn_in_first_house",
+          "state": "satisfied"
+        },
+        {
+          "rule": "saturn_in_seventh_house",
+          "state": "satisfied"
+        },
+        {
+          "rule": "first_house_ruler_combust",
+          "state": "satisfied"
+        }
+      ],
+      "hour_agreement": "does_not_agree",
+      "house_system": "Regiomontanus",
+      "indeterminate_kinds": [],
+      "kernel_sha256": "6e1b277c5f07135a84950604b83e56b736be696a7f3560bcddb1d4aeb944fca1",
+      "moira_profile": "lilly_1647_perfection_v1",
+      "outcome_exposed_before_prediction": true,
+      "perfection_reason": null,
+      "perfection_span_days": 31.0,
+      "perfection_state": "composed",
+      "prediction": "NO",
+      "present_kinds": [],
+      "principal_querent": "Mars",
+      "principal_quesited": "Sun",
+      "question_utc": "2005-06-13T21:50:00+00:00",
+      "same_body_principals": false,
+      "topic_house": 10,
+      "witnesses": [
+        {
+          "actors": [
+            "Mars",
+            "Sun"
+          ],
+          "event_ids": [],
+          "kind": "direct_perfection",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Mars",
+            "Sun"
+          ],
+          "event_ids": [],
+          "kind": "translation_of_light",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Mars",
+            "Sun"
+          ],
+          "event_ids": [],
+          "kind": "collection_of_light",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Mars",
+            "Sun"
+          ],
+          "event_ids": [],
+          "kind": "prohibition",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Mars",
+            "Sun"
+          ],
+          "event_ids": [],
+          "kind": "refranation",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Mars",
+            "Sun"
+          ],
+          "event_ids": [],
+          "kind": "frustration",
+          "reception_bases": [],
+          "state": "absent"
+        }
+      ]
+    },
+    {
+      "case_id": "sky_505",
+      "considerations": [
+        {
+          "rule": "ascendant_below_three_degrees",
+          "state": "satisfied"
+        },
+        {
+          "rule": "ascendant_at_or_above_twenty_seven_degrees",
+          "state": "satisfied"
+        },
+        {
+          "rule": "moon_in_via_combusta",
+          "state": "satisfied"
+        },
+        {
+          "rule": "saturn_in_first_house",
+          "state": "satisfied"
+        },
+        {
+          "rule": "saturn_in_seventh_house",
+          "state": "caution"
+        },
+        {
+          "rule": "first_house_ruler_combust",
+          "state": "satisfied"
+        }
+      ],
+      "hour_agreement": "does_not_agree",
+      "house_system": "Regiomontanus",
+      "indeterminate_kinds": [],
+      "kernel_sha256": "6e1b277c5f07135a84950604b83e56b736be696a7f3560bcddb1d4aeb944fca1",
+      "moira_profile": "lilly_1647_perfection_v1",
+      "outcome_exposed_before_prediction": false,
+      "perfection_reason": null,
+      "perfection_span_days": 31.0,
+      "perfection_state": "composed",
+      "prediction": "NO",
+      "present_kinds": [],
+      "principal_querent": "Jupiter",
+      "principal_quesited": "Venus",
+      "question_utc": "2004-07-09T01:33:00+00:00",
+      "same_body_principals": false,
+      "topic_house": 10,
+      "witnesses": [
+        {
+          "actors": [
+            "Jupiter",
+            "Venus"
+          ],
+          "event_ids": [],
+          "kind": "direct_perfection",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Jupiter",
+            "Venus"
+          ],
+          "event_ids": [],
+          "kind": "translation_of_light",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Jupiter",
+            "Venus"
+          ],
+          "event_ids": [],
+          "kind": "collection_of_light",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Jupiter",
+            "Venus"
+          ],
+          "event_ids": [],
+          "kind": "prohibition",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Jupiter",
+            "Venus"
+          ],
+          "event_ids": [],
+          "kind": "refranation",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Jupiter",
+            "Venus"
+          ],
+          "event_ids": [],
+          "kind": "frustration",
+          "reception_bases": [],
+          "state": "absent"
+        }
+      ]
+    },
+    {
+      "case_id": "sky_2477",
+      "considerations": [
+        {
+          "rule": "ascendant_below_three_degrees",
+          "state": "satisfied"
+        },
+        {
+          "rule": "ascendant_at_or_above_twenty_seven_degrees",
+          "state": "satisfied"
+        },
+        {
+          "rule": "moon_in_via_combusta",
+          "state": "satisfied"
+        },
+        {
+          "rule": "saturn_in_first_house",
+          "state": "caution"
+        },
+        {
+          "rule": "saturn_in_seventh_house",
+          "state": "satisfied"
+        },
+        {
+          "rule": "first_house_ruler_combust",
+          "state": "not_applicable"
+        }
+      ],
+      "hour_agreement": "agrees",
+      "house_system": "Regiomontanus",
+      "indeterminate_kinds": [],
+      "kernel_sha256": "6e1b277c5f07135a84950604b83e56b736be696a7f3560bcddb1d4aeb944fca1",
+      "moira_profile": "lilly_1647_perfection_v1",
+      "outcome_exposed_before_prediction": false,
+      "perfection_reason": null,
+      "perfection_span_days": 31.0,
+      "perfection_state": "composed",
+      "prediction": "NO",
+      "present_kinds": [],
+      "principal_querent": "Sun",
+      "principal_quesited": "Venus",
+      "question_utc": "2007-04-15T18:53:00+00:00",
+      "same_body_principals": false,
+      "topic_house": 10,
+      "witnesses": [
+        {
+          "actors": [
+            "Sun",
+            "Venus"
+          ],
+          "event_ids": [],
+          "kind": "direct_perfection",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Sun",
+            "Venus"
+          ],
+          "event_ids": [],
+          "kind": "translation_of_light",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Sun",
+            "Venus"
+          ],
+          "event_ids": [],
+          "kind": "collection_of_light",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Sun",
+            "Venus"
+          ],
+          "event_ids": [],
+          "kind": "prohibition",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Sun",
+            "Venus"
+          ],
+          "event_ids": [],
+          "kind": "refranation",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Sun",
+            "Venus"
+          ],
+          "event_ids": [],
+          "kind": "frustration",
+          "reception_bases": [],
+          "state": "absent"
+        }
+      ]
+    },
+    {
+      "case_id": "sky_11724",
+      "considerations": [
+        {
+          "rule": "ascendant_below_three_degrees",
+          "state": "satisfied"
+        },
+        {
+          "rule": "ascendant_at_or_above_twenty_seven_degrees",
+          "state": "satisfied"
+        },
+        {
+          "rule": "moon_in_via_combusta",
+          "state": "caution"
+        },
+        {
+          "rule": "saturn_in_first_house",
+          "state": "satisfied"
+        },
+        {
+          "rule": "saturn_in_seventh_house",
+          "state": "satisfied"
+        },
+        {
+          "rule": "first_house_ruler_combust",
+          "state": "satisfied"
+        }
+      ],
+      "hour_agreement": "does_not_agree",
+      "house_system": "Regiomontanus",
+      "indeterminate_kinds": [],
+      "kernel_sha256": "6e1b277c5f07135a84950604b83e56b736be696a7f3560bcddb1d4aeb944fca1",
+      "moira_profile": "lilly_1647_perfection_v1",
+      "outcome_exposed_before_prediction": false,
+      "perfection_reason": "principal_significators_are_same_body",
+      "perfection_span_days": 31.0,
+      "perfection_state": "not_evaluable",
+      "prediction": "DEFER",
+      "present_kinds": [],
+      "principal_querent": "Jupiter",
+      "principal_quesited": "Jupiter",
+      "question_utc": "2022-08-04T01:44:00+00:00",
+      "same_body_principals": true,
+      "topic_house": 10,
+      "witnesses": []
+    },
+    {
+      "case_id": "sky_12467",
+      "considerations": [
+        {
+          "rule": "ascendant_below_three_degrees",
+          "state": "caution"
+        },
+        {
+          "rule": "ascendant_at_or_above_twenty_seven_degrees",
+          "state": "satisfied"
+        },
+        {
+          "rule": "moon_in_via_combusta",
+          "state": "caution"
+        },
+        {
+          "rule": "saturn_in_first_house",
+          "state": "satisfied"
+        },
+        {
+          "rule": "saturn_in_seventh_house",
+          "state": "satisfied"
+        },
+        {
+          "rule": "first_house_ruler_combust",
+          "state": "satisfied"
+        }
+      ],
+      "hour_agreement": "agrees",
+      "house_system": "Regiomontanus",
+      "indeterminate_kinds": [],
+      "kernel_sha256": "6e1b277c5f07135a84950604b83e56b736be696a7f3560bcddb1d4aeb944fca1",
+      "moira_profile": "lilly_1647_perfection_v1",
+      "outcome_exposed_before_prediction": true,
+      "perfection_reason": null,
+      "perfection_span_days": 31.0,
+      "perfection_state": "composed",
+      "prediction": "NO",
+      "present_kinds": [],
+      "principal_querent": "Venus",
+      "principal_quesited": "Moon",
+      "question_utc": "2024-03-26T15:32:00+00:00",
+      "same_body_principals": false,
+      "topic_house": 10,
+      "witnesses": [
+        {
+          "actors": [
+            "Venus",
+            "Moon"
+          ],
+          "event_ids": [
+            "aspect:Moon:Venus:120:2460417.83561853"
+          ],
+          "kind": "direct_perfection",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Venus",
+            "Moon"
+          ],
+          "event_ids": [],
+          "kind": "translation_of_light",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Venus",
+            "Moon"
+          ],
+          "event_ids": [],
+          "kind": "collection_of_light",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Venus",
+            "Moon"
+          ],
+          "event_ids": [],
+          "kind": "prohibition",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Venus",
+            "Moon"
+          ],
+          "event_ids": [],
+          "kind": "refranation",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Venus",
+            "Moon"
+          ],
+          "event_ids": [],
+          "kind": "frustration",
+          "reception_bases": [],
+          "state": "absent"
+        }
+      ]
+    },
+    {
+      "case_id": "sky_104262",
+      "considerations": [
+        {
+          "rule": "ascendant_below_three_degrees",
+          "state": "satisfied"
+        },
+        {
+          "rule": "ascendant_at_or_above_twenty_seven_degrees",
+          "state": "satisfied"
+        },
+        {
+          "rule": "moon_in_via_combusta",
+          "state": "satisfied"
+        },
+        {
+          "rule": "saturn_in_first_house",
+          "state": "satisfied"
+        },
+        {
+          "rule": "saturn_in_seventh_house",
+          "state": "satisfied"
+        },
+        {
+          "rule": "first_house_ruler_combust",
+          "state": "satisfied"
+        }
+      ],
+      "hour_agreement": "does_not_agree",
+      "house_system": "Regiomontanus",
+      "indeterminate_kinds": [],
+      "kernel_sha256": "6e1b277c5f07135a84950604b83e56b736be696a7f3560bcddb1d4aeb944fca1",
+      "moira_profile": "lilly_1647_perfection_v1",
+      "outcome_exposed_before_prediction": true,
+      "perfection_reason": null,
+      "perfection_span_days": 31.0,
+      "perfection_state": "composed",
+      "prediction": "NO",
+      "present_kinds": [],
+      "principal_querent": "Venus",
+      "principal_quesited": "Saturn",
+      "question_utc": "2017-09-17T19:27:00+00:00",
+      "same_body_principals": false,
+      "topic_house": 10,
+      "witnesses": [
+        {
+          "actors": [
+            "Venus",
+            "Saturn"
+          ],
+          "event_ids": [],
+          "kind": "direct_perfection",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Venus",
+            "Saturn"
+          ],
+          "event_ids": [],
+          "kind": "translation_of_light",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Venus",
+            "Saturn"
+          ],
+          "event_ids": [],
+          "kind": "collection_of_light",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Venus",
+            "Saturn"
+          ],
+          "event_ids": [],
+          "kind": "prohibition",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Venus",
+            "Saturn"
+          ],
+          "event_ids": [],
+          "kind": "refranation",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Venus",
+            "Saturn"
+          ],
+          "event_ids": [],
+          "kind": "frustration",
+          "reception_bases": [],
+          "state": "absent"
+        }
+      ]
+    },
+    {
+      "case_id": "sky_813",
+      "considerations": [
+        {
+          "rule": "ascendant_below_three_degrees",
+          "state": "satisfied"
+        },
+        {
+          "rule": "ascendant_at_or_above_twenty_seven_degrees",
+          "state": "satisfied"
+        },
+        {
+          "rule": "moon_in_via_combusta",
+          "state": "caution"
+        },
+        {
+          "rule": "saturn_in_first_house",
+          "state": "satisfied"
+        },
+        {
+          "rule": "saturn_in_seventh_house",
+          "state": "satisfied"
+        },
+        {
+          "rule": "first_house_ruler_combust",
+          "state": "not_applicable"
+        }
+      ],
+      "hour_agreement": "does_not_agree",
+      "house_system": "Regiomontanus",
+      "indeterminate_kinds": [
+        "direct_perfection"
+      ],
+      "kernel_sha256": "6e1b277c5f07135a84950604b83e56b736be696a7f3560bcddb1d4aeb944fca1",
+      "moira_profile": "lilly_1647_perfection_v1",
+      "outcome_exposed_before_prediction": false,
+      "perfection_reason": null,
+      "perfection_span_days": 31.0,
+      "perfection_state": "composed",
+      "prediction": "DEFER",
+      "present_kinds": [],
+      "principal_querent": "Sun",
+      "principal_quesited": "Venus",
+      "question_utc": "2005-03-01T15:15:00+00:00",
+      "same_body_principals": false,
+      "topic_house": 10,
+      "witnesses": [
+        {
+          "actors": [
+            "Sun",
+            "Venus"
+          ],
+          "event_ids": [
+            "aspect:Sun:Venus:0:2453460.64561464"
+          ],
+          "kind": "direct_perfection",
+          "reception_bases": [],
+          "state": "indeterminate"
+        },
+        {
+          "actors": [
+            "Sun",
+            "Venus"
+          ],
+          "event_ids": [],
+          "kind": "translation_of_light",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Sun",
+            "Venus"
+          ],
+          "event_ids": [],
+          "kind": "collection_of_light",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Sun",
+            "Venus"
+          ],
+          "event_ids": [],
+          "kind": "prohibition",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Sun",
+            "Venus"
+          ],
+          "event_ids": [],
+          "kind": "refranation",
+          "reception_bases": [],
+          "state": "absent"
+        },
+        {
+          "actors": [
+            "Sun",
+            "Venus"
+          ],
+          "event_ids": [],
+          "kind": "frustration",
+          "reception_bases": [],
+          "state": "absent"
+        }
+      ]
+    }
+  ],
+  "schema": "lilly-horary-retrospective-predictions-v0"
+}
