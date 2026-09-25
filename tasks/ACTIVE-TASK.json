@@ -5,19 +5,20 @@
   "exclusive": true,
   "implementationAuthorized": true,
   "assuranceLane": "iteration_with_targeted_deployment_checks",
-  "status": "core_new_person_test_live_optional_interpreter_credit_blocked",
-  "ownerOutcome": "Complete a usable test of the source-grounded fixed-rule model on another consenting person's answers, without target-aware refitting during inference. Explain its advantages and limitations relative to the previous fitted model.",
-  "currentOwnerRequestStatus": "CORE_USABLE_TEST_DELIVERED_OPTIONAL_AUTOMATION_BLOCKED",
+  "status": "pilot_operational_general_survey_recovery_capacity_unmet",
+  "ownerOutcome": "Develop source-grounded survey-to-birth-date/time recovery, preserve the measured behavioral information needed for that goal, and complete a usable unchanged-model test on another consenting person without target-aware refitting during inference. Explain advantages and limitations relative to the previous fitted model.",
+  "currentOwnerRequestStatus": "SURVEY_COMPRESSION_CAPACITY_DIAGNOSTIC_COMPLETE_GENERAL_DECODER_OPEN",
   "privateParticipantTranscriptToGitAuthorized": false,
   "currentMethod": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V15-ANSWER-CONDITIONED-TEST-CONTRACT-20260925.md",
   "currentBridge": "reference/research/astrohd_v15_behavioral_bridge.json",
   "currentReceipt": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V15-LIVE-PILOT-RECEIPT-20260925.md",
+  "latestCapacityAudit": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V15-SURVEY-CAPACITY-AUDIT-20260925.md",
   "unchangedAstronomicalModel": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-SIX-RULE-MODEL-20260925.json",
   "historicalV14StateCommit": "fbfa7ac",
   "historicalCenturyScan": "Complete fixed-signature minute-grid audit; only the original recorded date reaches six, with nine neighboring minute ties. This remains known-case development evidence, not a new-person result.",
   "surveyDecoder": {
-    "status": "PARTICIPANT_REVIEWED_PATH_LIVE_AND_VERIFIED",
-    "inputPath": "Original scenarios or imported interview -> participant-confirmed neutral profile -> fixed six-condition score -> candidate ranking -> separately revealed actual birth instant comparison",
+    "status": "PARTICIPANT_REVIEWED_PILOT_PATH_LIVE_GENERAL_CAPACITY_NOT_ESTABLISHED",
+    "inputPath": "Original scenarios or imported interview -> participant-confirmed five-domain profile -> fixed six-condition score -> candidate ranking -> separately revealed actual birth instant comparison",
     "focusedOriginalScenarioCount": 9,
     "activeNeutralDomains": 5,
     "primaryDecoys": 999,
@@ -25,7 +26,20 @@
     "targetAwareRefittingAtInference": false,
     "answersAndOldResultsPreserved": true,
     "newPersonPredictionStatus": "UNKNOWN_NO_NEW_PARTICIPANT_DATA",
-    "limits": "Explicit modern behavioral hypotheses, not six historical personality predictions; raw votes share domains; sampled panels are not exhaustive century scans; identical features remain ties."
+    "limits": "Explicit modern behavioral hypotheses, not six historical personality predictions; raw votes share domains; sampled panels are not exhaustive century scans; identical features remain ties. The five-domain compression is not an established replacement for the full survey."
+  },
+  "capacityDiagnostic": {
+    "status": "READ_ONLY_ALGEBRAIC_ENUMERATION_COMPLETE",
+    "nominalProfilesEnumerated": 3125,
+    "effectiveTernaryProfileUpperBound": 243,
+    "distinctSixRuleScoringVectors": 162,
+    "nonAbstainingScoringVectors": 161,
+    "maximumLogicalChartFeaturePatterns": 64,
+    "method": "Enumeration of transcribed freshly retrieved answer_signs and score_mask logic; not a full deployed application or astronomy run",
+    "scope": "Hold birthplace, candidate universe and model fixed. Counts are algebraic capacities, not measured birth-related information or accuracy. A rare cell can still isolate one fitted case.",
+    "causalCorrection": "Sparse known-target rule selection did not justify reducing a general survey decoder to only the topics covered by the selected six clauses. Input-update tests establish technical function, not preserved measurement or recovery capacity.",
+    "preservation": "Retain full survey, historical rule fit, and narrow pilot. No deployment, model, participant-answer or source-rule change was made by this audit.",
+    "prohibitedProxy": "Do not claim that collecting or importing the full survey uses its information while runtime scoring still discards all distinctions beyond these five labels."
   },
   "deployment": {
     "sourceBranch": "codex/discover-life-patterns-mvp",
@@ -34,31 +48,32 @@
     "mergeCommit": "3e82806d8877510ecc081ece69b9de1f74f4c76f",
     "deploymentId": "2d60d3dd-2634-427c-a48f-62a36ee27350",
     "url": "https://life-patterns-owner-production.up.railway.app/birth-test",
-    "status": "SUCCESS_AND_LIVE_BROWSER_PASS",
-    "rootHealthAndPlaceLookup": "HTTP 200",
+    "status": "LAST_VERIFIED_SUCCESS_AND_LIVE_BROWSER_PASS_NOT_REFRESHED_BY_CAPACITY_AUDIT",
+    "rootHealthAndPlaceLookup": "HTTP 200 at recorded verification",
     "isolation": "Required files promoted from exact production base; existing entrypoint, authentication, provider settings, and unrelated staged Railway changes preserved."
   },
   "optionalInterpreter": {
-    "status": "PROVIDER_CREDIT_BLOCKED",
+    "status": "PROVIDER_CREDIT_BLOCKED_AT_LAST_VERIFICATION",
     "observedError": "Owner Life Patterns model HTTP 429: credit_balance_exhausted",
     "liveSuccessfulInterpretationVerified": false,
     "deterministicInterfaceAndSourceQuoteTests": "PASS",
     "ownerControlledBoundary": "Funding or selecting a different authorized provider/account; no credit purchase or provider switch made",
-    "availableNow": "Manual participant review of the five neutral interpretations",
+    "availableNow": "Manual participant review of the five neutral interpretations, as a narrow pilot only",
     "afterGateClears": "Verify one real live synthetic interpretation before claiming automatic free-text coding works"
   },
   "verification": {
     "releaseAffectedTestsPassed": 28,
     "strictTypecheckSourceFiles": 215,
-    "browserFlow": "PASS_LOCAL_EXACT_RELEASE_AND_LIVE",
-    "globalLint": "721 pre-existing baseline diagnostics remain; changed active files pass; frozen legacy source has narrow documented compatibility exceptions. No globally green lint claim."
+    "browserFlow": "PASS_LOCAL_EXACT_RELEASE_AND_LIVE at recorded verification",
+    "globalLint": "721 pre-existing baseline diagnostics remain; changed active files pass; frozen legacy source has narrow documented compatibility exceptions. No globally green lint claim.",
+    "capacityWarning": "These engineering checks do not establish that the shortened survey preserves sufficient information for general date/time recovery."
   },
-  "nextAction": "Collect a consenting new person's first frozen result through the live manual-review test. Preserve misses and ties. Optional automatic interpretation requires a real owner-controlled credit/provider gate and subsequent live verification. Do not rerun the completed century scan or refit on the new person's outcome and call it validation.",
+  "nextAction": "Preserve the full neutral survey and its meaningful distinctions. Treat the five-domain/six-condition pilot as a limited association test or control, not completion of general recovery. Before replacing the full measurement with a short form, test actual representational collisions and recovery loss. Fuller inference must use additional source-grounded behavioral/chart distinctions, not merely ask more questions then collapse them to the same five labels. Do not discard the six-rule fit, require whole-tradition independent success, or prohibit declared development fitting.",
   "stopAdmission": {
-    "coreRequestedUsableTest": "LIVE_VERIFIED",
-    "optionalAutomation": "BLOCKED_BY_OBSERVED_PROVIDER_CREDIT_BALANCE",
-    "independentPreparation": "COMPLETED",
-    "nextResearchInput": "NEW_PARTICIPANT_RESPONSES_AND_DOCUMENTED_BIRTH_WITH_CONSENT",
+    "currentCapacityQuestion": "DIAGNOSTIC_EXECUTED_AND_CONCLUSIONS_PERSISTED",
+    "corePilotOperation": "HISTORICALLY_LIVE_VERIFIED",
+    "generalSurveyRecovery": "OPEN_CAPACITY_AND_INFORMATION_PRESERVATION_UNMET",
+    "optionalAutomation": "LAST_OBSERVED_PROVIDER_CREDIT_BLOCK",
     "broaderResearch": "OPEN_NOT_INDEPENDENTLY_VALIDATED",
     "backgroundResearchClaim": "NONE"
   }
