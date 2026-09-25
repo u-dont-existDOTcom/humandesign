@@ -6,16 +6,16 @@
   "exclusive": true,
   "implementationAuthorized": true,
   "assuranceLane": "iteration",
-  "status": "v14_exact_century_audit_running_decoder_gap_explicit",
+  "status": "v14_exact_century_complete_answer_decoder_still_open",
   "ownerOutcome": "Develop survey-based birth-date/time recovery using one combination of established astrology rules without arbitrary fitted numerical astrology weights. Preserve target-aware owner development and distinguish a fitted signature from an answer-conditioned decoder.",
   "currentOwnerRequest": "Clarify whether survey-answer edits change the current ranking and what remains unfinished, then run the full century check.",
-  "currentOwnerRequestStatus": "EXPLANATION_RECORDED_EXACT_CENTURY_IN_PROGRESS",
+  "currentOwnerRequestStatus": "EXPLANATION_AND_EXACT_CENTURY_AUDIT_COMPLETED",
   "longRangeResearchStatus": "OPEN_ANSWER_CONDITIONED_DECODER_NOT_IMPLEMENTED",
   "privateParticipantTranscriptToGitAuthorized": false,
   "activeContract": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-EXACT-CENTURY-ACTIVE-CONTRACT-20260925.md",
   "ownerMethodContract": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-OWNER-METHOD-CONTRACT-20260924.json",
   "currentModel": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-SIX-RULE-MODEL-20260925.json",
-  "currentReceipt": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-STAGED-RESULT-20260925.md",
+  "currentReceipt": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-EXACT-CENTURY-RESULT-20260925.md",
   "decoderGap": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-SURVEY-DECODER-GAP-20260925.md",
   "historicalPreV14StateCommit": "529f64ae606e3c7deb1d3c700e92376545fae1ce",
   "udaRepair": {
@@ -25,13 +25,12 @@
     "scope": "operational owner-method admission and closure; not a universal runtime guarantee"
   },
   "historicalScreenedResult": {
-    "selectedRules": 6,
-    "selectedBooks": 2,
+    "receipt": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-STAGED-RESULT-20260925.md",
     "screenedCenturyMinutePositions": 52596001,
     "sixRuleTiedDates": ["1985-01-29"],
-    "minuteGridPlateauUtc": ["1985-01-29T10:18:00Z", "1985-01-29T10:26:00Z"],
     "continuousPlateauApproxUtc": ["1985-01-29T10:17:52Z", "1985-01-29T10:26:12Z"],
-    "formalGlobalScreenErrorBoundProved": false
+    "formalGlobalScreenErrorBoundProved": false,
+    "currentStatus": "Historical; minute-grid coverage superseded by completed direct exact audit"
   },
   "answerConditionedDecoder": {
     "status": "NOT_IMPLEMENTED_IN_V14D",
@@ -44,22 +43,42 @@
     "completionMustNotBeInferredFromCenturySignatureSuccess": true
   },
   "exactCenturyAudit": {
-    "status": "RUNNING",
+    "status": "COMPLETED_EXACT_MINUTE_GRID",
     "runner": "scripts/scan_astrohd_v14_exact_century.py",
+    "result": "experiments/astrohd/v14_exact_century_20260925/result.json",
+    "coverageAudit": "experiments/astrohd/v14_exact_century_20260925/coverage-audit.json",
+    "resultSha256": "4cba5a3107f7b7afb0fd289774e67ac8e2410aa04465b431c98992f5b3f87b84",
     "startUtc": "1926-08-24T10:42:00Z",
     "endUtc": "2026-08-24T10:42:00Z",
     "minuteCount": 52596001,
+    "contiguousChunks": 211,
+    "coverageGaps": 0,
+    "coverageOverlaps": 0,
     "interpolationScreening": false,
     "ruleRefitting": false,
     "oldModelAndAnswersChanged": false,
-    "executionObservation": "Existing run verified active through durable progress and process state after connector session handle was lost; no duplicate runner started."
+    "maximumScore": 6,
+    "maximumScoreDatesUtc": ["1985-01-29"],
+    "maximumScoreMinuteRangeUtc": ["1985-01-29T10:18:00Z", "1985-01-29T10:26:00Z"],
+    "tiedMinutes": 9,
+    "recordedTargetRankBest": 1,
+    "recordedTargetRankWorst": 9,
+    "higherScoringCandidates": 0,
+    "persistent2013ScoreNotRank": 1,
+    "originalScorerParityCases": 1211,
+    "originalScorerParityDisagreements": 0,
+    "focusedAffectedTestsPassed": 18,
+    "publishedResultExactHashReadback": true,
+    "runningWorker": false
   },
-  "nextAction": "Reconcile the existing exact century runner to completion, verify contiguous minute coverage and persist its result. Explain the decoder gap without claiming to have implemented it. No new rule combinations are authorized by this audit.",
-  "supersession": "The current owner has authorized the exact-century follow-up. The previous diagnostic-only ordering restriction is fulfilled, while the unchanged-rule restriction remains active for this audit.",
+  "nextAction": "The requested explanation and unchanged-model exact century audit are complete. The next implementation gap is an explicit answer-conditioned scorer and survey-update connection; keep that work separate from the preserved V1.4d signature and do not claim it already works or silently refit toward the target on each answer edit.",
+  "supersession": "The current owner authorized the exact-century follow-up after the diagnostic. That follow-up is now complete. The unchanged-rule and no-answer-edit constraints were preserved throughout it.",
   "stopAdmission": {
-    "currentRequestedOperations": "IN_PROGRESS",
+    "currentRequestedOperations": "COMPLETED",
+    "remainingGapForThisExplanationAndAudit": "NONE",
     "parentOutcome": "OPEN",
     "unmetBroaderOutcome": "Answer-conditioned survey decoding is not implemented by the static six-rule replay.",
+    "additionalLimits": ["Exact-minute tie remains", "The global audit is minute-grid, not every continuous instant", "No independent-person validation"],
     "backgroundDeliveryPromise": "NONE"
   }
 }
