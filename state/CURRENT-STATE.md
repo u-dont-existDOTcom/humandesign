@@ -1,41 +1,33 @@
-# Current state — cross-rulebook owner development, V1.4d
+# Current state — V1.5 new-person test is live
 
-Updated 2026-09-25. Branch: `chat/v14-cross-rulebook-20260924`.
+Updated 2026-09-25. Research branch: `chat/v15-survey-decoder-20260925`.
 
-Read `tasks/ACTIVE-TASK.json`, then `tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-STAGED-RESULT-20260925.md` and its six-rule model manifest. The pre-V1.4 history is preserved at commit `529f64ae606e3c7deb1d3c700e92376545fae1ce`; its historical stop labels and whole-tradition-success gate are not current authority.
+Read `tasks/ACTIVE-TASK.json`, then `tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V15-LIVE-PILOT-RECEIPT-20260925.md`. The method contract and `reference/research/astrohd_v15_behavioral_bridge.json` define the separately versioned answer-conditioned hypotheses. Earlier V1.4 state and scan receipts remain in Git history at `fbfa7ac` and in the task directory.
 
-## Owner goal
+## Owner outcome and current surface
 
-Develop one combined model using rules from established astrology books, fit it to the known owner case without arbitrary fitted numerical astrology weights, test raw and lineage-deduplicated stacking, and run 100 / 1,000 / larger candidate timestamp panels. Do not substitute independent success of every whole tradition. Owner development fitting is authorized; do not mislabel it as validation.
+The owner requested a usable fixed-rule test for another person, not another known-target signature scan. The participant-reviewed route is live at https://life-patterns-owner-production.up.railway.app/birth-test. It reuses nine existing scenario prompts, accepts an existing interview import, and permits manual review of five explicit behavioral interpretations before scoring. Current reviewed answers change scores under unchanged astronomical conditions. Actual birth data are used only after profile/panel freeze to evaluate rank, not to select rules.
 
-## Completed execution and direct outcome
+Primary comparison: 999 predetermined century-random decoys plus the separately checked actual instant. Secondary 99/9999 panels are nested. These are candidate-panel tests, not a new participant's exhaustive century search. Earlier outputs and inputs remain in export history, edits invalidate old displayed rankings, and post-ranking revisions are exploratory.
 
-The staged mixed-book run reached 100, 1,000, 10,000 and 100,000 timestamps. Earlier frozen subsets were evaluated before explicit refits. Four-rule models fit the small panels, but the century screen exposed 632 maximum-score minute instants across 49 UTC dates. Those failures were not accepted as unique date recovery.
+## Preserved source and scientific boundaries
 
-An integer search added two existing source-grounded equal-vote clauses to the retained four-rule model. Both raw and declared lineage-deduplicated arms now select the same six rules, with five from Lilly and one from Phaladeepika. All discovered off-date maxima are eliminated. Only 1985-01-29 remains, with matching minute-grid samples from 10:18 through 10:26 UTC, including recorded 10:25. The cold exact score plateau is approximately 10:17:52–10:26:12 UTC.
+The six V1.4d astronomical clauses and their hashes are unchanged: five use criteria published in Lilly and one in Phaladeepika. Do not say Lilly invented every criterion or supplied five modern personality questions. The six were selected using the owner's known case; selection can overfit despite equal weights. V1.5's explicit behavioral comparison is a modern hypothesis, not verbatim historical authority. Unknown/mixed evidence abstains; absence of an astronomical clause does not prove absence of a trait. Broad work-energy range remains unscored rather than receiving an invented pole. Romantic connection affects several votes, which are not statistically independent.
 
-The exact recorded instant scores 6; the persistent 2013 comparator scores 1. All 390 current library features are identical across the nine surviving minute samples. No alternative subset of this unchanged library can uniquely pick 10:25 from those samples.
+The all-positive historical-signature baseline is displayed separately. Identical coded profiles can yield identical rankings; do not claim fine individual specificity that the five-domain representation does not provide. No new person's predictive success or independent validity has been established.
 
-## Limits that must survive summaries
+The original owner's exact century scan remains complete: 52,596,001 minute positions; only 1985-01-29 has maxima, with nine tied minute samples 10:18–10:26 UTC. It is known-case development evidence, not proof that the new questionnaire predicts an unseen person.
 
-The century computation used conservative numerical screening and exact survivor recomputation. Its formal global interpolation-error bound is unproved. Do not claim mathematically certified exhaustive continuous-time uniqueness. This is a known-case development fit, not independent human validation. The six-rule count is not proved globally minimal; only the two additions to the retained four are minimal under the declared constraint.
+## Deployment and verification
 
-The requested repair, workflow review and staged execution are complete at this development boundary. The long-range research project remains open. Do not rerun completed scans or fabricate an exact-minute answer. New-person validation and finer-time rule expansion are distinct later research revisions, not evidence already obtained.
+PR30 merged a narrowly curated additive release onto the exact existing production branch `codex/discover-life-patterns-mvp`, commit `3e82806d8877510ecc081ece69b9de1f74f4c76f`. Railway deployment `2d60d3dd-2634-427c-a48f-62a36ee27350` is SUCCESS. Existing entrypoint, original interview, authentication, provider settings and unrelated staged environment changes were preserved.
 
-## Durable goal-protection repair
+28 exact-release affected tests and the live browser workflow passed; strict typing passed across 215 source files. Global lint is not claimed green: 721 existing baseline diagnostics remain, and hash-frozen legacy files have narrowly documented static exceptions. Live browser verification demonstrated score 6→4 after a reviewed answer change under the same model, preserved history and stale-result rejection; the rank remained first in that particular fixture. A separate candidate test showed profile changes can change candidate ordering.
 
-UDA PR #253 is merged to its default branch at `91e4be060ca99151264f1f90ad4f9c19aaf05bcb`. The repair binds the owner's permitted method to actual launch configuration and protects parent completion. It has behavioral regressions rather than only prose-token tests; the final UDA suite passed 446 tests and hosted checks passed. The current research launcher binds the comparator; this is not a universal runtime guarantee for every future assistant.
+## Optional automatic interpretation remains credit-blocked
 
-Private answers, coding, source-filtered inventories and matrices remain outside Git. The result receipt preserves their execution artifact hashes. The affected V1.4 suite passed 12 tests. No background research worker is being claimed.
+The implemented optional interpreter reached the configured provider with synthetic text and returned `HTTP 429: credit_balance_exhausted` (endpoint HTTP422). No successful live automatic interpretation is claimed. No funds, account settings or provider/model were changed. Manual participant review is usable now without model credits. Funding or an explicitly authorized provider change is owner-controlled; successful live interpretation must be verified after that gate clears.
 
+## Next input and stop boundary
 
-## Current continuation — exact-century audit and missing answer dependency
-
-Branch: `chat/v14-full-century-answer-link-20260925`. The owner now asks whether a changed survey answer changes rankings, and authorizes the full-century follow-up. The V1.4 fixed-signature scorer does not consume revised answers; the answer-responsive decoder is UNFINISHED. Read `ASTROHD-V14-SURVEY-DECODER-GAP-20260925.md` in the current task directory. Do not close that parent outcome with a fixed-signature scan.
-
-The exact one-minute-grid maximum search is COMPLETE with the same six rules, unchanged model hash, unchanged survey, and no project-side interpolation. The native accelerator matched the original Python implementation on all six rule bits in 1,989 reference cases, including prior maxima and second-level boundary probes. The run enumerates every integer minute offset; one directly failed condition suffices to exclude a maximum. Each completed chunk has explicit coverage and rejection accounting. Do not start another writer for the same run or claim completion from partial progress. Private execution artifacts remain outside Git.
-
-
-## Final exact-century verification — 2026-09-25
-
-All 52,596,001 minute positions and 263 chunks were verified, with zero gaps/duplicates or ephemeris fallbacks and no project-side interpolation. The only maximum-scoring date is 1985-01-29; nine minute samples 10:18–10:26 UTC tie at six points. Original-scorer readback confirms recorded 10:25 scores six and the 2013 comparator one. Model and executed-source hashes are unchanged. Read `ASTROHD-V14-EXACT-CENTURY-RECEIPT-20260925.md` and the adjacent result JSON in the task directory. The current explanation/scan request is complete; the parent answer-responsive decoder remains UNFINISHED. No background job is being claimed.
+Core usable test: LIVE_VERIFIED. Optional automatic interpretation: CREDIT_BLOCKED. Scientific generalization: UNKNOWN. The next research input is a consenting new participant's first frozen result. Keep misses and ties; no automatic known-target refitting and no repetition of the completed century scan. No background research worker is claimed.
