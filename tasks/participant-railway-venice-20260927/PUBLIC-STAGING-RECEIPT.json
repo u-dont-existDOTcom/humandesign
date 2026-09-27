@@ -1,0 +1,15 @@
+{
+  "health": {
+    "status": "ok",
+    "version": "railway-participant-v2.1-20260927",
+    "provider": "venice",
+    "provider_configured": false,
+    "participant_enabled": false,
+    "persistence": "encrypted_sqlite",
+    "instrument_version": "59a1f4a6be8fd047034a3d29fd979558890e06398a05b206181c3be66670ecfa"
+  },
+  "root_http": 200,
+  "invalid_resume_http": 401,
+  "disabled_inference_http": 503,
+  "real_venice_call_made": false
+}

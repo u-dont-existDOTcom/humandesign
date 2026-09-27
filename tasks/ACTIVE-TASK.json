@@ -3,12 +3,12 @@
   "taskId": "participant-railway-venice-20260927",
   "requiredBranch": "chat/participant-railway-venice-20260927-2234",
   "implementationAuthorized": true,
-  "assuranceLane": "release-for-disabled-staging",
-  "status": "implemented_tested_provider_activation_blocked",
+  "assuranceLane": "disabled-staging-verified; participant-activation-not-cleared",
+  "status": "disabled_staging_deployed_and_persistence_verified_live_cutover_pending",
   "ownerOutcome": "Switch participant collection to separate Railway service using Venice, full reviewed V2 survey, durable state and server-side exports. Preserve owner app and historical research.",
   "parentTaskRef": "chat/full-survey-participant-package-20260927@c3ac3d0834f9b2d276aa3e02fa90a94a5927ad76",
   "currentMethod": "apps/life-patterns-participant/README.md",
-  "currentReceipt": "tasks/participant-railway-venice-20260927/PLAN.md",
+  "currentReceipt": "tasks/participant-railway-venice-20260927/DEPLOYMENT-RECEIPT.json",
   "deployment": {
     "project_id": "97658d58-84ab-40c8-ab1d-1be06600c4b5",
     "environment_id": "b9916074-da51-46a1-8d7d-fd618b3c3d2a",
@@ -24,7 +24,17 @@
     "automatic_fallback": false
   },
   "blocker": "Authenticated Venice smoke invocation was blocked by platform tool security. No equivalent retry, token injection or provider bypass performed. Live activation remains false.",
-  "remaining": "Independent public-code review, deploy disabled staging and verify persistence; then authorized Venice access/real synthetic verification before participant cutover.",
+  "remaining": "Permission-approved authenticated Venice verification and resolution of the unavailable final independent review before participant activation. No old participant record has been migrated to the service.",
   "privateDataPublished": false,
-  "updatedAt": "2026-09-27T22:59:03.466924+00:00"
+  "updatedAt": "2026-09-27T23:47:37.167621+00:00",
+  "currentHandoff": "tasks/participant-railway-venice-20260927/ACTIVATION-HANDOFF.md",
+  "reviewDisposition": "tasks/participant-railway-venice-20260927/REVIEW-DISPOSITION.json",
+  "executionBoundary": {
+    "platform_gateway_call": "blocked_before_execution; cause_not_returned",
+    "retry_permission_state": "no new tool approval observed",
+    "review_reconciliation": "timed_out_no_verdict",
+    "participant_live_enabled": false,
+    "venice_token_injected": false,
+    "background_worker_running": false
+  }
 }

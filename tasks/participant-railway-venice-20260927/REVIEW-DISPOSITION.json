@@ -1,0 +1,40 @@
+{
+  "recorded_at": "2026-09-27T23:47:37.167621+00:00",
+  "scope": "Public participant code only; no private answers, birth values or credentials supplied",
+  "reviewer_model": "claude-opus-5-5",
+  "effort": "max",
+  "first_review": {
+    "verdict": "FINDS_ERROR",
+    "disabled_staging": "accepted",
+    "source": "CLAUDE-STATIC-REVIEW.md"
+  },
+  "repairs": {
+    "D1": "Separated privacy hold from stop, removed quarantined sources from future semantic payloads, replaced unsupported blinding assertions with null and explicit detection scope; deterministic hold regression passes.",
+    "D2": "An uploaded raw-transcript declaration is unverified, not verified-original provenance; regression passes.",
+    "D3": "Pause/resume and corrections preserve review-only mode after a summary was seen; regression passes.",
+    "D4": "Participant corrections retain inherited source wording status and are labelled participant_correction; regression passes.",
+    "D5": "Writes, active-tab reads and exports bind the expected session id to the capability cookie; cross-tab mismatch regression passes.",
+    "D6": "Unexpected model failures save a failed-attempt receipt and release the state lease; HTTP stream exceptions mapped; lease renewed before each subsequent model call.",
+    "D7": "Researcher token removed from URL after load and retained only in tab session storage; browser reload tested. Fragment resume links remain private bearer capabilities.",
+    "D8": "Explicit public-origin comparison added; actual Railway HTTPS POST rejected invalid token with 401, not spurious Origin 403.",
+    "D9": "Call-limit state is resource_limited and export remains partial with infrastructure reason; no false completion or participant-stop classification."
+  },
+  "verification": {
+    "app_regressions": {
+      "passed": 31,
+      "failed": 0,
+      "provider": "synthetic fake"
+    },
+    "mobile_browser": "passed including final download and reload",
+    "actual_Railway_redeploy": "same synthetic session and exact saved answer survived"
+  },
+  "reconciliation": {
+    "status": "NO_COMPLETED_VERDICT",
+    "first_attempt": "Interrupted by host restart",
+    "retry": "Timed out with exit 124 after 900.56 seconds; no stdout or stderr result",
+    "additional_retry_started": false
+  },
+  "conclusion": "Disabled staging verified. Repairs have deterministic evidence but no final independent reconciliation verdict. Do not describe this as full Claude approval or live Venice verification.",
+  "live_participant_cutover": "NOT_DONE",
+  "gateway_authentication_test": "BLOCKED_BEFORE_EXECUTION; not a Venice response"
+}

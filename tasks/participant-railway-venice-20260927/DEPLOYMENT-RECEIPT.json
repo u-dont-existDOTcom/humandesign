@@ -1,0 +1,42 @@
+{
+  "recorded_at": "2026-09-27T23:26:55.727731+00:00",
+  "repository": "u-dont-existDOTcom/humandesign",
+  "branch": "chat/participant-railway-venice-20260927-2234",
+  "deployed_code_commit": "f35a94f3e4feaf0dfa562f97516ed2c42a51fd82",
+  "project_id": "97658d58-84ab-40c8-ab1d-1be06600c4b5",
+  "environment_id": "b9916074-da51-46a1-8d7d-fd618b3c3d2a",
+  "service_id": "30746eb8-07c9-42e7-8825-152124b9337d",
+  "service_name": "life-patterns-participant",
+  "domain": "life-patterns-participant-production.up.railway.app",
+  "initial_successful_deployment": "a4116395-2bdc-4e62-8595-c21a496553c6",
+  "verified_redeployment": "a6687324-6d9f-44af-94e9-1c5ecf27ea80",
+  "deployment_status": "SUCCESS",
+  "volume_id": "928957b0-0128-4900-86f2-205d3b7f69d7",
+  "volume_path": "/data",
+  "reported_volume_size_MB": 5000,
+  "live_enabled": false,
+  "gateway_token_injected": false,
+  "tests": {
+    "app_tests_passed": 31,
+    "test_model": "deterministic_synthetic_fake",
+    "headless_browser_smoke": "passed_after_reboot",
+    "real_venice_inference": "NOT_EXECUTED_TOOL_SECURITY_DENIAL",
+    "actual_railway_redeploy_persistence": "PASS_exact_synthetic_answer_and_session_retained"
+  },
+  "owner_service": {
+    "id": "df2bf91c-7515-4c2e-860f-43c61286a7ab",
+    "deployment_unchanged": "2d60d3dd-2634-427c-a48f-62a36ee27350"
+  },
+  "unrelated_staged_changes": {
+    "patch_id": "eb307c2d-d9b6-4b9c-99ea-de169fdea57c",
+    "count": 3,
+    "status": "STAGED_UNACCEPTED"
+  },
+  "private_participant_imports_to_live_service": 0,
+  "synthetic_draft_sessions_created_for_persistence_test": 1,
+  "final_cutover_status": "BLOCKED_NOT_OPEN_TO_PARTICIPANTS",
+  "reboot_recovery": "Interrupted reviewer resumed; corrupt local Git objects recovered from exact pushed remote source; no real participant source lost.",
+  "last_checked_at": "2026-09-27T23:47:37.167621+00:00",
+  "review_disposition": "REVIEW-DISPOSITION.json",
+  "reconciliation_verdict": null
+}

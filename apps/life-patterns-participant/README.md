@@ -42,3 +42,12 @@ From repository root with this app's requirements plus pytest/httpx installed:
 `PYTHONPATH=apps/life-patterns-participant python -m pytest apps/life-patterns-participant/tests -q`
 
 The suite uses a deterministic fake model and tests real HTTP handlers, encrypted persistence, exact imports, source checks, access isolation, retries/cancellation and final exports. A separate headless browser smoke covers consent through final download and resume. These do not establish scientific validity, live Venice compatibility, or perfect detection of volunteered birth details. Birth detection is conservative; source exposure must stay explicit.
+
+
+### Reproduce the UI test
+
+Install Playwright and the test dependencies in a development environment. Use a locally available Chromium-compatible browser without accessing personal profiles:
+
+`python apps/life-patterns-participant/scripts/browser_smoke.py --browser /path/to/chromium --output /tmp/participant-ui-smoke`
+
+The script launches an isolated local server and synthetic model, creates ephemeral test credentials and a temporary database, then checks mobile consent, questions, answers, review, JSON download, resume and researcher access. The output contains synthetic evidence only. It does not call Venice or certify production model access.
