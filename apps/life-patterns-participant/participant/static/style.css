@@ -1,0 +1,21 @@
+:root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#172c3b;background:#f5f3ef;font-size:17px;line-height:1.6}
+*{box-sizing:border-box}main{max-width:800px;margin:0 auto;padding:36px 24px 60px}
+header{padding:20px 0 24px;border-bottom:1px solid #d5d9d8;margin-bottom:24px}
+h1{font-family:Georgia,serif;font-size:44px;line-height:1.1;margin:8px 0}
+h2{font-size:23px;line-height:1.4;font-weight:600;margin-top:0;white-space:pre-wrap}
+p{margin:.75em 0}.sub{color:#576c75}.eyebrow{font-size:11px;letter-spacing:.2em;font-weight:700;color:#526b74}
+section{background:#fff;border:1px solid #dbe1df;border-radius:12px;padding:24px;margin:18px 0}
+#workspace{padding:0;background:transparent;border:0}
+#status{min-height:40px;padding:10px 15px;background:#e7efec;border-radius:8px;font-size:14px;white-space:pre-wrap}
+textarea,input,select{font:inherit;width:100%;border:1px solid #a8b8bc;border-radius:7px;padding:11px;background:#fff;color:inherit}
+textarea{resize:vertical;min-height:95px}label{display:block;font-size:14px;font-weight:600;margin:12px 0 5px}
+button,.button{font:inherit;font-size:15px;border:1px solid #254e58;background:#254e58;color:#fff;border-radius:7px;padding:10px 16px;cursor:pointer;text-decoration:none;display:inline-block;margin:10px 7px 0 0;line-height:1.4}
+.secondary{background:transparent;color:#254e58;border-color:#a8b8bc}button:disabled{opacity:.5;cursor:wait}
+button:focus-visible,a:focus-visible,textarea:focus-visible{outline:3px solid #a67839;outline-offset:2px}
+.buttons,nav{display:flex;gap:8px;flex-wrap:wrap}nav .button,nav button{font-size:13px}
+details{margin:18px 0;padding:14px;background:#f8f9f7;border-radius:8px}summary{cursor:pointer;font-size:14px;font-weight:600}
+.history-turn{border-bottom:1px solid #dbe1df;padding:12px 0}.history-turn p{white-space:pre-wrap}.history-turn small{color:#627780}
+.answer-text{border-left:3px solid #b8cbc4;padding-left:14px}.evidence{border-left:3px solid #94b2a7;padding:10px 15px;margin:12px 0;white-space:pre-wrap}
+.evidence small{display:block;font-size:12px;color:#546770}.footnote,footer p{font-size:12px;color:#627780}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #d5d9d8}#question{font-size:21px}#review-panel{font-size:15px}[hidden]{display:none!important}
+@media(max-width:560px){main{padding:12px 14px 35px}h1{font-size:36px}section{padding:18px}button,.button{width:100%;text-align:center}.buttons,nav{gap:0}textarea{font-size:16px}}

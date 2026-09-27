@@ -1,13 +1,9 @@
-# Current state — Claude-reviewed Full Life Patterns participant V2
+# Current state — Railway participant migration using Venice
 
-Updated 2026-09-27. Child branch: `chat/full-survey-participant-package-20260927`, based on the JSON-handoff repair parent.
+Read `tasks/ACTIVE-TASK.json` and `apps/life-patterns-participant/README.md`.
 
-The owner requested an independent Claude review of the corrected participant survey/recovery package before further use. Claude Opus 5.5 at max effort reviewed only the public generic V2 method/package. No private participant answers, birth data, charts, targets or ranks were supplied.
+Current owner explicitly authorized the separate Railway participant service and Venice API path. The full reviewed V2 bank/protocol/evidence guide remain unchanged. The app implements encrypted durable SQLite, individual resume capabilities, exact source import, consent, two-stage semantic planning/admission, revision/idempotency guards and server-side V2 exports. No scoring/chart code is loaded by the app.
 
-First review verdict: `PASS_WITH_FIXES`. The substantive issues were repaired: full imported JSON preservation, edited-question provenance safeguards, durable route IDs/antecedents, exploratory restriction, literal JSON schema, serialize-once handoff, route-card navigation, participant stop/pause behavior, and private-path recovery constraints. Reconciliation verdict: `PASS_WITH_MINOR_FIXES`, no blocker. Its remaining text/mechanical fixes were also applied.
+The original owner service and the pre-existing three staged environment changes are untouched. A new service with its own volume is created. A real authenticated Venice smoke request was rejected by the tool security boundary; the request was not executed, and no alternate authenticated inference route was substituted. Model activation is disabled and no Venice gateway token was injected into this new service. Mock/local test success must not be reported as live provider success or completed participant cutover.
 
-Final verification after all fixes: 15/15 V2 focused tests, 8/8 prior recovery tests, 497/497 original survey checks, clean diff check, and zero participant-name hits in the public worktree. The generic self-contained file contains the controller, generated route card and exact original authority. The private no-old-chat recovery packet is generated outside Git from the preserved participant record and excludes birth data/chart/ranks.
-
-Participant distribution supports new interviews, same-chat upgrades, completed-old-survey no-op unless specifically requested, lost-chat recovery from a record, and lost-chat/no-record restart without invented reconstruction. ChatGPT creates the research JSON/file; account-data Export is not used.
-
-No chart computation, rank search, shared two-person fit, production deployment or integration merge is claimed here. The next empirical observation is participant/runtime behavior with the final approximately 197 KB packet; this is not a scientific-validity claim or an artificial pre-send gate.
+All private source records remain outside public Git. No existing participant record has yet been moved into the new service. Runtime storage/access secrets are kept privately, not in source. Continue independent safe implementation/deployment verification, preserving the authenticated-inference boundary.

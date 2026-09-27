@@ -1,107 +1,30 @@
 {
   "schemaVersion": 1,
-  "taskId": "full-survey-participant-v2-20260927",
-  "requiredBranch": "chat/full-survey-participant-package-20260927",
-  "exclusive": true,
+  "taskId": "participant-railway-venice-20260927",
+  "requiredBranch": "chat/participant-railway-venice-20260927-2234",
   "implementationAuthorized": true,
-  "assuranceLane": "iteration",
-  "status": "participant_v2_claude_reviewed_final_candidate_ready",
-  "ownerOutcome": "Develop source-grounded survey-to-birth-date/time recovery, preserve the measured behavioral information needed for that goal, and complete a usable unchanged-model test on another consenting person without target-aware refitting during inference. Explain advantages and limitations relative to the previous fitted model.",
-  "currentOwnerRequestStatus": "GENERIC_V2_AND_FIRST_EXTERNAL_RECOVERY_PACKAGE_READY_AFTER_CROSS_FAMILY_REVIEW",
-  "privateParticipantTranscriptToGitAuthorized": false,
-  "currentMethod": "tasks/full-survey-participant-v2-20260927/INTERVIEW-CONTROLLER-v2.md",
-  "currentBridge": "reference/research/astrohd_v15_behavioral_bridge.json",
-  "currentReceipt": "tasks/full-survey-participant-v2-20260927/README.md",
-  "latestCapacityAudit": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V15-SURVEY-CAPACITY-AUDIT-20260925.md",
-  "unchangedAstronomicalModel": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-SIX-RULE-MODEL-20260925.json",
-  "historicalV14StateCommit": "fbfa7ac",
-  "historicalCenturyScan": "Complete fixed-signature minute-grid audit; only the original recorded date reaches six, with nine neighboring minute ties. This remains known-case development evidence, not a new-person result.",
-  "surveyDecoder": {
-    "status": "PARTICIPANT_REVIEWED_PILOT_PATH_LIVE_GENERAL_CAPACITY_NOT_ESTABLISHED",
-    "inputPath": "Original scenarios or imported interview -> participant-confirmed five-domain profile -> fixed six-condition score -> candidate ranking -> separately revealed actual birth instant comparison",
-    "focusedOriginalScenarioCount": 9,
-    "activeNeutralDomains": 5,
-    "primaryDecoys": 999,
-    "secondaryNestedDecoys": [
-      99,
-      9999
-    ],
-    "targetAwareRefittingAtInference": false,
-    "answersAndOldResultsPreserved": true,
-    "newPersonPredictionStatus": "UNKNOWN_NO_NEW_PARTICIPANT_DATA",
-    "limits": "Explicit modern behavioral hypotheses, not six historical personality predictions; raw votes share domains; sampled panels are not exhaustive century scans; identical features remain ties. The five-domain compression is not an established replacement for the full survey."
-  },
-  "capacityDiagnostic": {
-    "status": "READ_ONLY_ALGEBRAIC_ENUMERATION_COMPLETE",
-    "nominalProfilesEnumerated": 3125,
-    "effectiveTernaryProfileUpperBound": 243,
-    "distinctSixRuleScoringVectors": 162,
-    "nonAbstainingScoringVectors": 161,
-    "maximumLogicalChartFeaturePatterns": 64,
-    "method": "Enumeration of transcribed freshly retrieved answer_signs and score_mask logic; not a full deployed application or astronomy run",
-    "scope": "Hold birthplace, candidate universe and model fixed. Counts are algebraic capacities, not measured birth-related information or accuracy. A rare cell can still isolate one fitted case.",
-    "causalCorrection": "Sparse known-target rule selection did not justify reducing a general survey decoder to only the topics covered by the selected six clauses. Input-update tests establish technical function, not preserved measurement or recovery capacity.",
-    "preservation": "Retain full survey, historical rule fit, and narrow pilot. No deployment, model, participant-answer or source-rule change was made by this audit.",
-    "prohibitedProxy": "Do not claim that collecting or importing the full survey uses its information while runtime scoring still discards all distinctions beyond these five labels."
-  },
+  "assuranceLane": "release-for-disabled-staging",
+  "status": "implemented_tested_provider_activation_blocked",
+  "ownerOutcome": "Switch participant collection to separate Railway service using Venice, full reviewed V2 survey, durable state and server-side exports. Preserve owner app and historical research.",
+  "parentTaskRef": "chat/full-survey-participant-package-20260927@c3ac3d0834f9b2d276aa3e02fa90a94a5927ad76",
+  "currentMethod": "apps/life-patterns-participant/README.md",
+  "currentReceipt": "tasks/participant-railway-venice-20260927/PLAN.md",
   "deployment": {
-    "sourceBranch": "codex/discover-life-patterns-mvp",
-    "integrationBranch": "release/v15-life-patterns-additive-20260925",
-    "pullRequest": 30,
-    "mergeCommit": "3e82806d8877510ecc081ece69b9de1f74f4c76f",
-    "deploymentId": "2d60d3dd-2634-427c-a48f-62a36ee27350",
-    "url": "https://life-patterns-owner-production.up.railway.app/birth-test",
-    "status": "LAST_VERIFIED_SUCCESS_AND_LIVE_BROWSER_PASS_NOT_REFRESHED_BY_CAPACITY_AUDIT",
-    "rootHealthAndPlaceLookup": "HTTP 200 at recorded verification",
-    "isolation": "Required files promoted from exact production base; existing entrypoint, authentication, provider settings, and unrelated staged Railway changes preserved."
+    "project_id": "97658d58-84ab-40c8-ab1d-1be06600c4b5",
+    "environment_id": "b9916074-da51-46a1-8d7d-fd618b3c3d2a",
+    "service_id": "30746eb8-07c9-42e7-8825-152124b9337d",
+    "volume_id": "928957b0-0128-4900-86f2-205d3b7f69d7",
+    "live_enabled": false,
+    "venice_token_injected": false
   },
-  "optionalInterpreter": {
-    "status": "PROVIDER_CREDIT_BLOCKED_AT_LAST_VERIFICATION",
-    "observedError": "Owner Life Patterns model HTTP 429: credit_balance_exhausted",
-    "liveSuccessfulInterpretationVerified": false,
-    "deterministicInterfaceAndSourceQuoteTests": "PASS",
-    "ownerControlledBoundary": "Funding or selecting a different authorized provider/account; no credit purchase or provider switch made",
-    "availableNow": "Manual participant review of the five neutral interpretations, as a narrow pilot only",
-    "afterGateClears": "Verify one real live synthetic interpretation before claiming automatic free-text coding works"
+  "model": {
+    "provider": "venice",
+    "model": "openai-gpt-56-sol",
+    "reasoning_effort": "xhigh",
+    "automatic_fallback": false
   },
-  "verification": {
-    "v2FocusedTests": "15/15 PASS",
-    "priorRecoveryTests": "8/8 PASS",
-    "originalSurveyChecks": "497/497 PASS",
-    "privacyNameScan": "0 hits in public worktree",
-    "liveParticipantRuntimeBehavior": "not yet directly observed on final V2; participant use is the next empirical observation"
-  },
-  "nextAction": "Use the final self-contained V2 participant package. The first external participant uses the privately generated no-old-chat packet; previously contacted participants upload generic V2 in their existing chats without restart. After a reviewed frozen JSON is returned, resume explicitly scoped shared-model development.",
-  "stopAdmission": {
-    "parentOutcome": "OPEN_SHARED_FULL_SURVEY_MODEL",
-    "currentOperation": "CLAUDE_REVIEWED_V2_DISTRIBUTION_AND_PRIVATE_RECOVERY_PACKAGE_COMPLETE",
-    "remainingGap": "Participant-dependent continuation/review and returned frozen JSON; shared-model fitting remains later work",
-    "nextActor": "Participant plus birth-free interview context",
-    "notPerformed": [
-      "chart computation",
-      "candidate ranking",
-      "two-person fitting",
-      "production deployment",
-      "integration merge"
-    ],
-    "backgroundExecutionClaim": "NONE"
-  },
-  "parentTaskRef": "chat/v15-survey-decoder-20260925@04ff086e2cae0becb62e891ffad57e0821444599",
-  "updatedAt": "2026-09-27T22:14:16.741672+00:00",
-  "participantDistribution": {
-    "genericPacket": "tasks/full-survey-participant-v2-20260927/Full-Life-Patterns-Survey-v2-2026-09-27.md",
-    "startHere": "tasks/full-survey-participant-v2-20260927/START-HERE-FOR-PARTICIPANTS.txt",
-    "oldChatUpgrade": "tasks/full-survey-participant-v2-20260927/UPGRADE-OLD-CHAT-MESSAGE.txt",
-    "selfContained": true,
-    "externalGitHubRequiredInParticipantChat": false,
-    "participantManualJsonConstructionRequired": false
-  },
-  "claudeReview": {
-    "model": "claude-opus-5-5",
-    "effort": "max",
-    "firstVerdict": "PASS_WITH_FIXES",
-    "reconciliationVerdict": "PASS_WITH_MINOR_FIXES",
-    "remainingBlockingIssuesAfterFinalFixes": 0,
-    "privateParticipantDataProvidedToReviewer": false
-  }
+  "blocker": "Authenticated Venice smoke invocation was blocked by platform tool security. No equivalent retry, token injection or provider bypass performed. Live activation remains false.",
+  "remaining": "Independent public-code review, deploy disabled staging and verify persistence; then authorized Venice access/real synthetic verification before participant cutover.",
+  "privateDataPublished": false,
+  "updatedAt": "2026-09-27T22:59:03.466924+00:00"
 }
