@@ -14,7 +14,15 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.responses import FileResponse, JSONResponse, Response
 from pydantic import BaseModel, ConfigDict, Field
 
-from .domain import VERSION, export_record, import_record, load_instrument, new_state, utc
+from .domain import (
+    VERSION,
+    export_record,
+    import_record,
+    load_instrument,
+    new_state,
+    strict_json,
+    utc,
+)
 from .engine import Engine, ProviderError, Venice
 from .store import Conflict, Missing, Store, canonical
 
@@ -99,6 +107,12 @@ class Import(Body):
         "edited_response_record", "raw_transcript", "prior_json", "answer_only_notes"
     ] = "edited_response_record"
     record: dict | None = None
+    record_text: str | None = Field(default=None, max_length=1_500_000)
+
+    def parsed_record(self):
+        if self.record is not None and self.record_text is not None:
+            raise ValueError("Provide one source record representation, not two.")
+        return strict_json(self.record_text) if self.record_text is not None else self.record
 
 
 class BodyLimit:
@@ -154,7 +168,21 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
 
     def token(request):
         value = request.cookies.get("lp_session", "")
-        store.read(value)
+        current = store.read(value)
+        header_id = request.headers.get("x-life-patterns-session")
+        query_id = request.query_params.get("session_id")
+        if header_id and query_id and header_id != query_id:
+            raise Conflict("Conflicting session identifiers.")
+        expected = header_id or query_id
+        if request.method not in {"GET", "HEAD"} or request.url.path == "/api/export":
+            if not expected:
+                raise Conflict(
+                    "A session-bound request is required. Reload your private resume link."
+                )
+        if expected and expected != current["session_id"]:
+            raise Conflict(
+                "Another session is open in this browser. Reload this tab's private resume link."
+            )
         return value
 
     def admin(request):
@@ -169,7 +197,9 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
             "revision": state["revision"],
             "phase": state["phase"],
             "error": state["error"],
-            "question": state["pending_question"],
+            "question": {k: state["pending_question"].get(k) for k in ("text", "question_id")}
+            if state["pending_question"]
+            else None,
             "review": state["review"],
             "turns": [
                 {
@@ -346,13 +376,12 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
     @app.post("/api/import")
     def participant_import(request: Request, body: Import):
         value = token(request)
-        if body.record is None:
+        record = body.parsed_record()
+        if record is None:
             raise ValueError("Select a source record.")
 
         def apply(s):
-            import_record(
-                s, body.record, body.source_type, store.instrument(s["instrument_version"])
-            )
+            import_record(s, record, body.source_type, store.instrument(s["instrument_version"]))
 
         return public(store.change(value, apply))
 
@@ -365,8 +394,9 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
     def invitation(request: Request, body: Import):
         admin(request)
         state = new_state(version, settings.model, settings.effort)
-        if body.record is not None:
-            import_record(state, body.record, body.source_type, instrument)
+        record = body.parsed_record()
+        if record is not None:
+            import_record(state, record, body.source_type, instrument)
         value, state = store.create(state, settings.maximum_sessions)
         return {
             "session_id": state["session_id"],

@@ -146,12 +146,14 @@ def join(setup):
     config, fake, app, client = setup
     r = client.post("/api/join", json={"token": config.join_token})
     assert r.status_code == 200
+    client.headers["X-Life-Patterns-Session"] = r.json()["session_id"]
     return r.json()
 
 
 def command(client, state, action, text="", target=None, op=None):
     return client.post(
         "/api/operations",
+        headers={"X-Life-Patterns-Session": state["session_id"]},
         json={
             "revision": state["revision"],
             "operation_id": op or secrets.token_hex(10),
@@ -332,6 +334,7 @@ def test_admin_invitation_preloads_without_consent_or_inference(setup):
     assert r.status_code == 200 and r.json()["turn_count"] == 1
     value = r.json()["resume_path"].split("=", 1)[1]
     resumed = c.post("/api/resume", json={"token": value}).json()
+    c.headers["X-Life-Patterns-Session"] = resumed["session_id"]
     assert resumed["phase"] == "consent" and resumed["turns"][0]["answer_text"] == "old"
     assert c.get("/api/admin/exports/" + resumed["session_id"], headers=headers).status_code == 403
     assert fake.count == 0
@@ -585,3 +588,172 @@ def test_provider_stream_is_parsed_and_wrong_model_rejected():
     provider.opener = Opener("unexpected-model")
     with pytest.raises(ProviderError):
         provider.call("test", {}, Admission, "openai-gpt-56-sol", "xhigh")
+
+
+def test_declared_raw_import_is_not_verified_provenance(setup):
+    _, _, app, c = setup
+    join(setup)
+    r = c.post(
+        "/api/import",
+        json={
+            "record": {
+                "turns": [{"question_text": "An old question", "answer_text": "An old answer"}]
+            },
+            "source_type": "raw_transcript",
+        },
+    )
+    assert r.status_code == 200
+    state = app.state.store.read(c.cookies.get("lp_session"))
+    assert state["source_records"][0]["original_wording_verified"] is None
+    assert state["turns"][0]["question_wording_status"] != "verified_original"
+
+
+def test_duplicate_import_keys_rejected_and_empty_import_cannot_repeat(setup):
+    _, _, _, c = setup
+    join(setup)
+    r = c.post(
+        "/api/import",
+        json={"record_text": '{"turns":[{"answer_text":"first","answer_text":"second"}]}'},
+    )
+    assert r.status_code == 422
+    assert c.post("/api/import", json={"record": {"turns": []}}).status_code == 200
+    assert c.post("/api/import", json={"record": {"turns": []}}).status_code == 409
+
+
+def test_old_tab_cannot_write_or_read_different_session(setup):
+    _, fake, _, c = setup
+    a = join(setup)
+    b = join(setup)
+    assert command(c, a, "decline").status_code == 409
+    assert command(c, a, "stop").status_code == 409
+    headers = {"X-Life-Patterns-Session": a["session_id"]}
+    assert c.post("/api/import", headers=headers, json={"record": {"turns": []}}).status_code == 409
+    assert c.post("/api/next", headers=headers, json={}).status_code == 409
+    assert c.get("/api/session", headers=headers).status_code == 409
+    assert c.get("/api/export?session_id=" + a["session_id"]).status_code == 409
+    assert c.get("/api/session").json()["session_id"] == b["session_id"]
+    assert fake.count == 0
+
+
+def test_review_pause_and_correction_do_not_reopen_questioning(setup):
+    _, fake, app, c = setup
+    s = begin(setup)
+    s = command(c, s, "answer", "I check the options.").json()
+    fake.review = True
+    s = c.post("/api/next", json={}).json()
+    s = command(c, s, "review_seen").json()
+    s = command(c, s, "pause").json()
+    s = command(c, s, "resume").json()
+    assert s["phase"] == "review"
+    source = s["turns"][0]["turn_id"]
+    s = command(c, s, "correct", "Only when time permits.", target=source).json()
+    fake.review = False
+    current = app.state.store.read(c.cookies.get("lp_session"))
+    assert current["review_only"] is True
+    assert c.post("/api/next", json={}).json()["phase"] == "review"
+
+
+def test_imported_correction_preserves_source_wording_status(setup):
+    _, _, app, c = setup
+    s = join(setup)
+    s = c.post(
+        "/api/import",
+        json={
+            "record": {
+                "turns": [{"question_text": "Edited question", "answer_text": "Earlier answer"}]
+            }
+        },
+    ).json()
+    s = command(c, s, "consent").json()
+    s = command(c, s, "correct", "A clarified answer.", target=s["turns"][0]["turn_id"]).json()
+    record = app.state.store.read(c.cookies.get("lp_session"))
+    assert record["turns"][-1]["route_type"] == "participant_correction"
+    assert (
+        record["turns"][-1]["question_wording_status"]
+        == record["turns"][0]["question_wording_status"]
+    )
+    assert record["turns"][-1]["id_basis"] == record["turns"][0]["id_basis"]
+
+
+def test_hold_is_distinct_from_stop_and_excludes_target_source(setup):
+    from participant.domain import ControlQuote, semantic_turns
+
+    _, fake, app, c = setup
+    s = begin(setup)
+    s = command(c, s, "answer", "SYNTHETIC_TARGET_DETAIL").json()
+    original = fake.call
+
+    def held(system, payload, schema, model, effort):
+        if schema is Admission:
+            return Admission(
+                approved=True,
+                errors=[],
+                context_supported=True,
+                no_redundant_question=True,
+                no_unsupported_extension=True,
+                control_is_participant_request=False,
+                target_information_detected=True,
+            ), {"stage": "Admission"}
+        plan, meta = original(system, payload, schema, model, effort)
+        plan.action = "hold"
+        plan.question = None
+        plan.evidence = []
+        plan.control_quote = ControlQuote(
+            turn_id=payload["pending_turn_ids"][0], quote="SYNTHETIC_TARGET_DETAIL"
+        )
+        return plan, meta
+
+    fake.call = held
+    s = c.post("/api/next", json={}).json()
+    assert s["phase"] == "paused"
+    record = app.state.store.read(c.cookies.get("lp_session"))
+    assert record["contamination_notes"]
+    assert "SYNTHETIC_TARGET_DETAIL" not in json.dumps(semantic_turns(record))
+    assert "SYNTHETIC_TARGET_DETAIL" not in c.get("/api/export").text
+    assert record["quarantined_turns"][0].get("text") is None
+    assert (
+        c.get("/api/export").json()["blinding"]["birth_or_chart_data_used_by_interviewer"] is None
+    )
+    s = command(c, s, "resume").json()
+    assert s["phase"] == "awaiting_answer"
+
+
+def test_unexpected_provider_failure_releases_lease_and_counts_attempt(setup):
+    _, fake, app, c = setup
+    s = join(setup)
+    command(c, s, "consent")
+
+    def fail(*args, **kwargs):
+        raise AttributeError("PRIVATE_FAILURE_BODY")
+
+    fake.call = fail
+    s = c.post("/api/next", json={}).json()
+    assert s["phase"] == "error" and "PRIVATE_FAILURE_BODY" not in json.dumps(s)
+    record = app.state.store.read(c.cookies.get("lp_session"))
+    assert record["lease"] is None and record["calls"][-1]["stage"] == "failed_attempt"
+
+
+def test_call_limit_stays_partial_without_false_participant_stop(setup):
+    _, fake, app, c = setup
+    s = join(setup)
+    command(c, s, "consent")
+    app.state.engine.maximum_calls = 1
+    s = c.post("/api/next", json={}).json()
+    assert s["phase"] == "resource_limited"
+    result = c.get("/api/export").json()
+    assert result["interview_status"] == "partial"
+    assert result["stop_reason"] == "infrastructure_model_call_limit"
+    assert fake.count == 0
+
+
+def test_public_question_does_not_expose_internal_interpretation(setup):
+    s = begin(setup)
+    assert set(s["question"]) == {"text", "question_id"}
+
+
+def test_controller_modification_rejected(tmp_path):
+    for name in ("INTERVIEW-PROTOCOL-v6.md", "interviewer-bank-v7.json", "EVIDENCE-GUIDE-v7.json"):
+        (tmp_path / name).write_bytes((SURVEY / name).read_bytes())
+    (tmp_path / CONTROLLER.name).write_text("Changed controller")
+    with pytest.raises(RuntimeError):
+        load_instrument(tmp_path)

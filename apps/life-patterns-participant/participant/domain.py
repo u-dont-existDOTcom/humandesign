@@ -52,7 +52,14 @@ def load_instrument(root: Path) -> dict:
         if actual != expected:
             raise RuntimeError("Survey source hash mismatch: " + name)
         result[name] = raw.decode()
-    result["controller"] = (root / "INTERVIEW-CONTROLLER-v2.md").read_text()
+    controller = (root / "INTERVIEW-CONTROLLER-v2.md").read_bytes()
+    controller_sha = hashlib.sha1(
+        b"blob " + str(len(controller)).encode() + b"\0" + controller
+    ).hexdigest()
+    if controller_sha != "7b34c2b8711cbc5cfc1a2e7341f44366c1f0af4f":
+        raise RuntimeError("Survey controller hash mismatch")
+    result["controller"] = controller.decode()
+    result["controller_blob_sha"] = controller_sha
     return result
 
 
@@ -106,7 +113,7 @@ def new_state(instrument_version: str, model: str, effort: str) -> dict:
 
 
 def import_record(state: dict, record: dict, source_type: str, instrument: dict) -> None:
-    if state["phase"] != "consent" or state["turns"]:
+    if state["phase"] != "consent" or state["turns"] or state["source_records"]:
         raise Conflict("Import is available only before this interview begins.")
     turns = record.get("turns")
     if not isinstance(turns, list) or len(turns) > 1000:
@@ -117,6 +124,10 @@ def import_record(state: dict, record: dict, source_type: str, instrument: dict)
         "birth_time",
         "birthplace",
         "date_of_birth",
+        "dob",
+        "birth_location",
+        "birth_chart",
+        "human_design_type",
         "natal_chart",
         "chart",
         "rankings",
@@ -140,7 +151,7 @@ def import_record(state: dict, record: dict, source_type: str, instrument: dict)
             "source_id": "import-1",
             "source_type": source_type,
             "received_at": utc(),
-            "original_wording_verified": source_type == "raw_transcript",
+            "original_wording_verified": None,
             "historical_blinding": "unknown",
             "record_as_received": copy.deepcopy(record),
         }
@@ -170,7 +181,7 @@ def import_record(state: dict, record: dict, source_type: str, instrument: dict)
                 "canonical_question_id": old_id if recorded else None,
                 "id_basis": "recorded" if recorded else "unknown",
                 "route_type": "imported_unknown_route",
-                "question_wording_status": "verified_original"
+                "question_wording_status": "declared_original_unverified"
                 if source_type == "raw_transcript"
                 else "received_edited_or_unverified",
                 "antecedent_turn_ids": [],
@@ -194,6 +205,10 @@ class StrictModel(BaseModel):
 class Quote(StrictModel):
     turn_id: str
     quote: str = Field(min_length=1)
+
+
+class ControlQuote(Quote):
+    source_field: Literal["answer_text", "question_text"] = "answer_text"
 
 
 class Evidence(StrictModel):
@@ -238,7 +253,7 @@ class Plan(StrictModel):
     dispositions: list[Disposition]
     evidence: list[Evidence]
     question: Question | None
-    control_quote: Quote | None
+    control_quote: ControlQuote | None
     reason: str
 
 
@@ -249,6 +264,7 @@ class Admission(StrictModel):
     no_redundant_question: bool
     no_unsupported_extension: bool
     control_is_participant_request: bool
+    target_information_detected: bool = False
 
 
 def semantic_turns(state: dict) -> list[dict]:
@@ -267,6 +283,7 @@ def semantic_turns(state: dict) -> list[dict]:
             )
         }
         for t in state["turns"]
+        if not t.get("quarantined")
     ]
 
 
@@ -313,9 +330,19 @@ def validate_plan(plan: Plan, state: dict, instrument: dict, pending: list[str])
         if (
             q is None
             or q.turn_id not in pending
-            or q.quote not in (turns[q.turn_id].get("answer_text") or "")
+            or q.quote
+            not in (turns[q.turn_id].get(getattr(q, "source_field", "answer_text")) or "")
+            or (
+                plan.action != "hold" and getattr(q, "source_field", "answer_text") != "answer_text"
+            )
         ):
-            raise ValueError("A control action needs an exact current participant-request quote.")
+            raise ValueError(
+                "A control action needs an exact current source quote in its permitted field."
+            )
+    if plan.action == "hold" and plan.evidence:
+        raise ValueError("A target-information hold must not emit behavioral evidence.")
+    if any(turns[q.turn_id].get("quarantined") for e in plan.evidence for q in e.source_quotes):
+        raise ValueError("Quarantined sources cannot support evidence.")
     if plan.action == "ask":
         q = plan.question
         if q is None or q.route_id not in routes:
@@ -356,6 +383,7 @@ def export_record(state: dict, instrument: dict, final: bool = False) -> dict:
         "survey_authority": {
             "engine_version": VERSION,
             "instrument_version": state["instrument_version"],
+            "controller_blob_sha": instrument.get("controller_blob_sha"),
             "protocol_blob_sha": SOURCES["INTERVIEW-PROTOCOL-v6.md"],
             "bank_blob_sha": SOURCES["interviewer-bank-v7.json"],
             "evidence_guide_blob_sha": SOURCES["EVIDENCE-GUIDE-v7.json"],
@@ -367,9 +395,13 @@ def export_record(state: dict, instrument: dict, final: bool = False) -> dict:
         },
         "blinding": {
             "birth_or_chart_data_requested_by_interviewer": False,
-            "birth_or_chart_data_used_by_interviewer": False,
+            "birth_or_chart_data_used_by_interviewer": None,
             "target_predictions_used": False,
             "contamination_notes": copy.deepcopy(state["contamination_notes"]),
+            "target_check_result": "exposure_detected"
+            if state["contamination_notes"]
+            else "not_detected_by_conservative_check",
+            "target_use_policy": "prohibited; absence and non-use are not independently certified",
         },
         "interview_status": "complete"
         if state["phase"] == "complete"
@@ -393,10 +425,8 @@ def export_record(state: dict, instrument: dict, final: bool = False) -> dict:
         "freeze": {
             "record_state": "final" if final else "checkpoint",
             "versioned_at": utc(),
-            "frozen_before_birth_or_chart_reveal": None
-            if state["source_records"] or state["contamination_notes"]
-            else True,
-            "birth_or_chart_data_in_this_export": False,
+            "frozen_before_birth_or_chart_reveal": None,
+            "birth_or_chart_data_in_this_export": None,
             "do_not_recode_after_target_reveal_without_versioning": True,
         },
         "handoff_method": "json_file",
@@ -407,6 +437,8 @@ def export_record(state: dict, instrument: dict, final: bool = False) -> dict:
             "automatic_fallback": False,
         },
         "model_call_telemetry": copy.deepcopy(state["calls"]),
+        "model_call_telemetry_scope": "Recorded completions/attempts at export time; an in-flight call may finish after a stopped record was frozen.",
+        "turn_dispositions": copy.deepcopy(state["dispositions"]),
         "scientifically_validated": False,
         "review_status": "reviewed_for_development_fitting"
         if reviewed

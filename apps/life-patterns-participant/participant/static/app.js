@@ -4,7 +4,7 @@ let state=null, busy=false, writing=false, pendingWrite=null, timer=null;
 const show=(id,yes)=>{el(id).hidden=!yes;};
 const status=text=>{el("status").textContent=text;};
 async function api(path,body){
-  const response=await fetch(path,{method:body===undefined?"GET":"POST",credentials:"same-origin",headers:body===undefined?{}:{"Content-Type":"application/json"},body:body===undefined?undefined:JSON.stringify(body)});
+  const response=await fetch(path,{method:body===undefined?"GET":"POST",credentials:"same-origin",headers:{...(body===undefined?{}:{"Content-Type":"application/json"}),...(state?{"X-Life-Patterns-Session":state.session_id}:{})},body:body===undefined?undefined:JSON.stringify(body)});
   const value=await response.json();
   if(!response.ok){const error=new Error(value.detail||"Request failed.");error.status=response.status;throw error;}
   return value;
@@ -12,7 +12,7 @@ async function api(path,body){
 function node(tag,text,className){const n=document.createElement(tag);n.textContent=text;if(className)n.className=className;return n;}
 function render(next){
   if(state&&state.session_id===next.session_id&&next.revision<state.revision)return;
-  state=next;const p=state.phase;show("entry",false);show("consent",p==="consent");show("workspace",!["consent","declined"].includes(p));
+  state=next;document.querySelectorAll('a[href^="/api/export"]').forEach(a=>{a.href=`/api/export?session_id=${encodeURIComponent(state.session_id)}`;});const p=state.phase;show("entry",false);show("consent",p==="consent");show("workspace",!["consent","declined"].includes(p));
   for(const [id,phases] of Object.entries({"question-panel":["awaiting_answer"],"review-panel":["review"],done:["complete","stopped"],"retry-panel":["error"],paused:["paused"]}))show(id,phases.includes(p));
   show("controls",!["complete","stopped","declined"].includes(p));show("correction-panel",["awaiting_answer","review","ready","error","paused"].includes(p)&&state.turns.length>0);
   el("import-notice").textContent=state.turns.length?`${state.turns.length} previous responses are already included. You do not need the old chat.`:"";
@@ -24,6 +24,7 @@ function render(next){
   el("error-detail").textContent=state.error||"The last operation did not finish. Retry without retyping saved answers.";
   el("done-text").textContent=p==="complete"?"You confirmed this version. Its final file will not change.":"You stopped the interview. Completed answers are saved; unfinished parts remain explicit.";
   status(state.error||(p==="planning"?`Preparing the next step. ${state.turns.length} responses saved.`:p==="consent"&&!state.ready?"The study is not open yet: Venice activation is pending.":p==="declined"?"The interview has stopped. No research export was created.":`${state.turns.length} responses saved · ${p.replaceAll("_"," ")}`));
+  show("limited",p==="resource_limited");
   if(p==="review"&&!state.review.summary_shown&&!writing)markReviewSeen();
 }
 async function refresh(){try{render(await api("/api/session"));}catch(error){status(error.message);}}
@@ -51,7 +52,7 @@ el("confirm").onclick=()=>command("confirm");
 el("correct-review").onclick=async()=>{if(await command("review_correction",el("review-text").value))el("review-text").value="";};
 el("save-correction").onclick=async()=>{if(await command("correct",el("correction-text").value,el("correction-target").value))el("correction-text").value="";};
 el("copy-link").onclick=async()=>{if(!location.hash.startsWith("#resume=")){status("Use the private resume link originally sent to you.");return;}try{await navigator.clipboard.writeText(location.href);status("Private resume link copied. Keep it private.");}catch{status("Copy the full address from your browser's address bar. Keep it private.");}};
-el("import-button").onclick=async()=>{try{const file=el("import-file").files[0];if(!file)throw new Error("Choose a JSON record first.");if(file.size>1500000)throw new Error("This record is too large; ask Joel to import it.");render(await api("/api/import",{source_type:el("source-type").value,record:JSON.parse(await file.text())}));}catch(error){status(error.message);}};
+el("import-button").onclick=async()=>{try{const file=el("import-file").files[0];if(!file)throw new Error("Choose a JSON record first.");if(file.size>1500000)throw new Error("This record is too large; ask Joel to import it.");render(await api("/api/import",{source_type:el("source-type").value,record_text:await file.text()}));}catch(error){status(error.message);}};
 async function start(){
   const hash=new URLSearchParams(location.hash.slice(1));
   try{if(hash.has("join")){const data=await api("/api/join",{token:hash.get("join")});history.replaceState(null,"",`/#resume=${data.resume_token}`);render(data);}else if(hash.has("resume")){render(await api("/api/resume",{token:hash.get("resume")}));}else{render(await api("/api/session"));}schedule();}

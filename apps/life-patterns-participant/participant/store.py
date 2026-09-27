@@ -1,4 +1,4 @@
-"""Encrypted durable state; random bearer capabilities never enter database or URLs."""
+"""Encrypted durable state; raw capabilities are not stored in the database."""
 
 from __future__ import annotations
 
