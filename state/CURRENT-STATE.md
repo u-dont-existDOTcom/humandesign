@@ -1,13 +1,13 @@
-# Current state — full-survey import recovery candidate
+# Current state — Claude-reviewed Full Life Patterns participant V2
 
-Updated 2026-09-27. Child branch: `chat/full-survey-mapping-audit-20260927`, based on `chat/v15-survey-decoder-20260925` at `04ff086e2cae0becb62e891ffad57e0821444599`. Integration and production branches are not modified.
+Updated 2026-09-27. Child branch: `chat/full-survey-participant-package-20260927`, based on the JSON-handoff repair parent.
 
-Read `tasks/ACTIVE-TASK.json` and `tasks/full-survey-import-repair-20260927/README.md`, the import protocol and review disposition. The current owner supplied an additional edited response record and requested evidence/mapping audit before shared fitting, with survey repair if needed.
+The owner requested an independent Claude review of the corrected participant survey/recovery package before further use. Claude Opus 5.5 at max effort reviewed only the public generic V2 method/package. No private participant answers, birth data, charts, targets or ranks were supplied.
 
-A provisional source audit preserved the received evidence and identified scope/provenance gaps without treating format mismatch as semantic failure. A self-contained continuation candidate preserves the entire original bank and evidence guide. A public-only other-family method review found safeguards to improve; accepted/narrowed changes are documented. No private-case independent review is claimed.
+First review verdict: `PASS_WITH_FIXES`. The substantive issues were repaired: full imported JSON preservation, edited-question provenance safeguards, durable route IDs/antecedents, exploratory restriction, literal JSON schema, serialize-once handoff, route-card navigation, participant stop/pause behavior, and private-path recovery constraints. Reconciliation verdict: `PASS_WITH_MINOR_FIXES`, no blocker. Its remaining text/mechanical fixes were also applied.
 
-Private source and evaluation data are separate in the owner's local private humandesign storage, outside Git. The case packet is placed in the OS-designated Downloads folder and has no birth data, chart, rank or case-coding notes. Detailed private audit artifacts are delivered separately. Do not copy them into this public branch.
+Final verification after all fixes: 15/15 V2 focused tests, 8/8 prior recovery tests, 497/497 original survey checks, clean diff check, and zero participant-name hits in the public worktree. The generic self-contained file contains the controller, generated route card and exact original authority. The private no-old-chat recovery packet is generated outside Git from the preserved participant record and excludes birth data/chart/ranks.
 
-The full-survey shared-model goal remains open. Participant-dependent clarification and record review are distinct from the still-needed general behavioral-to-chart decoder work. Unknown/unused facets are not negative traits, and missing chart interpretations are not questionnaire defects. No all-question quota, new tradition-by-tradition gate or six-rule ceiling is introduced. Partial exploratory analysis remains possible when explicitly labeled and its actual prerequisites are met.
+Participant distribution supports new interviews, same-chat upgrades, completed-old-survey no-op unless specifically requested, lost-chat recovery from a record, and lost-chat/no-record restart without invented reconstruction. ChatGPT creates the research JSON/file; account-data Export is not used.
 
-The historical astronomical model, source-only bridge, short pilot and original three survey authority files are unchanged. No chart, score, fit, deployment, integration merge or background job is claimed by this task. Reuse the owner's existing private record rather than restarting it.
+No chart computation, rank search, shared two-person fit, production deployment or integration merge is claimed here. The next empirical observation is participant/runtime behavior with the final approximately 197 KB packet; this is not a scientific-validity claim or an artificial pre-send gate.

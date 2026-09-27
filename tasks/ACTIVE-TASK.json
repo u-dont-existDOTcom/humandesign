@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
-  "taskId": "full-survey-import-repair-20260927",
-  "requiredBranch": "chat/full-survey-mapping-audit-20260927",
+  "taskId": "full-survey-participant-v2-20260927",
+  "requiredBranch": "chat/full-survey-participant-package-20260927",
   "exclusive": true,
   "implementationAuthorized": true,
   "assuranceLane": "iteration",
-  "status": "source_audit_complete_reversible_continuation_candidate_delivered",
+  "status": "participant_v2_claude_reviewed_final_candidate_ready",
   "ownerOutcome": "Develop source-grounded survey-to-birth-date/time recovery, preserve the measured behavioral information needed for that goal, and complete a usable unchanged-model test on another consenting person without target-aware refitting during inference. Explain advantages and limitations relative to the previous fitted model.",
-  "currentOwnerRequestStatus": "AUDITED_IMPORT_AND_IMPLEMENTED_RECOVERY_CANDIDATE_NOT_SHARED_FIT",
+  "currentOwnerRequestStatus": "GENERIC_V2_AND_FIRST_EXTERNAL_RECOVERY_PACKAGE_READY_AFTER_CROSS_FAMILY_REVIEW",
   "privateParticipantTranscriptToGitAuthorized": false,
-  "currentMethod": "tasks/full-survey-import-repair-20260927/IMPORT-AND-RESUME-PROTOCOL-v1.md",
+  "currentMethod": "tasks/full-survey-participant-v2-20260927/INTERVIEW-CONTROLLER-v2.md",
   "currentBridge": "reference/research/astrohd_v15_behavioral_bridge.json",
-  "currentReceipt": "tasks/full-survey-import-repair-20260927/README.md",
+  "currentReceipt": "tasks/full-survey-participant-v2-20260927/README.md",
   "latestCapacityAudit": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V15-SURVEY-CAPACITY-AUDIT-20260925.md",
   "unchangedAstronomicalModel": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-SIX-RULE-MODEL-20260925.json",
   "historicalV14StateCommit": "fbfa7ac",
@@ -65,27 +65,43 @@
     "afterGateClears": "Verify one real live synthetic interpretation before claiming automatic free-text coding works"
   },
   "verification": {
-    "releaseAffectedTestsPassed": 28,
-    "strictTypecheckSourceFiles": 215,
-    "browserFlow": "PASS_LOCAL_EXACT_RELEASE_AND_LIVE at recorded verification",
-    "globalLint": "721 pre-existing baseline diagnostics remain; changed active files pass; frozen legacy source has narrow documented compatibility exceptions. No globally green lint claim.",
-    "capacityWarning": "These engineering checks do not establish that the shortened survey preserves sufficient information for general date/time recovery."
+    "v2FocusedTests": "15/15 PASS",
+    "priorRecoveryTests": "8/8 PASS",
+    "originalSurveyChecks": "497/497 PASS",
+    "privacyNameScan": "0 hits in public worktree",
+    "liveParticipantRuntimeBehavior": "not yet directly observed on final V2; participant use is the next empirical observation"
   },
-  "nextAction": "Fresh birth-free continuation admits usable evidence, resolves only material unanswered distinctions and records permission/review. Preserve unmapped evidence. Then run an explicitly scoped baseline/shared-model development, not a separate personal signature or five-label full-survey substitute.",
+  "nextAction": "Use the final self-contained V2 participant package. The first external participant uses the privately generated no-old-chat packet; previously contacted participants upload generic V2 in their existing chats without restart. After a reviewed frozen JSON is returned, resume explicitly scoped shared-model development.",
   "stopAdmission": {
     "parentOutcome": "OPEN_SHARED_FULL_SURVEY_MODEL",
-    "currentOperation": "PUBLIC_RECOVERY_CANDIDATE_AND_PRIVATE_DELIVERY_COMPLETE",
-    "remainingGap": "Final neutral admission, any genuinely new participant answers and permission/review; separate shared behavioral-to-chart bridge work remains",
-    "nextActor": "Birth-free interview reviewer/participant for measurement-dependent input; later shared-model developer",
-    "noArtificialBlocker": "No all-question quota, exact-wording gate for all evidence, validation-only veto or independent whole-tradition-success gate",
+    "currentOperation": "CLAUDE_REVIEWED_V2_DISTRIBUTION_AND_PRIVATE_RECOVERY_PACKAGE_COMPLETE",
+    "remainingGap": "Participant-dependent continuation/review and returned frozen JSON; shared-model fitting remains later work",
+    "nextActor": "Participant plus birth-free interview context",
     "notPerformed": [
       "chart computation",
       "candidate ranking",
       "two-person fitting",
-      "production deployment"
+      "production deployment",
+      "integration merge"
     ],
     "backgroundExecutionClaim": "NONE"
   },
   "parentTaskRef": "chat/v15-survey-decoder-20260925@04ff086e2cae0becb62e891ffad57e0821444599",
-  "updatedAt": "2026-09-27T20:45:43.202342+00:00"
+  "updatedAt": "2026-09-27T22:14:16.741672+00:00",
+  "participantDistribution": {
+    "genericPacket": "tasks/full-survey-participant-v2-20260927/Full-Life-Patterns-Survey-v2-2026-09-27.md",
+    "startHere": "tasks/full-survey-participant-v2-20260927/START-HERE-FOR-PARTICIPANTS.txt",
+    "oldChatUpgrade": "tasks/full-survey-participant-v2-20260927/UPGRADE-OLD-CHAT-MESSAGE.txt",
+    "selfContained": true,
+    "externalGitHubRequiredInParticipantChat": false,
+    "participantManualJsonConstructionRequired": false
+  },
+  "claudeReview": {
+    "model": "claude-opus-5-5",
+    "effort": "max",
+    "firstVerdict": "PASS_WITH_FIXES",
+    "reconciliationVerdict": "PASS_WITH_MINOR_FIXES",
+    "remainingBlockingIssuesAfterFinalFixes": 0,
+    "privateParticipantDataProvidedToReviewer": false
+  }
 }
