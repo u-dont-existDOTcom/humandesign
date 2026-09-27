@@ -208,6 +208,7 @@ class ParticipantV2Tests(unittest.TestCase):
         expected = {
             "CLAUDE-OPUS-5-5-MAX-RECONCILIATION-20260927.md",
             "CLAUDE-OPUS-5-5-MAX-REVIEW-20260927.md",
+            "FINAL-REVIEW-DISPOSITION-20260927.md",
             "Full-Life-Patterns-Survey-v2-2026-09-27.md",
             "INTERVIEW-CONTROLLER-v2.md",
             "README.md",
