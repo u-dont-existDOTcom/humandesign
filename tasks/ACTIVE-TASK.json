@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
-  "taskId": "scenario-owner-recovery-calibration-20260923",
-  "requiredBranch": "chat/v15-survey-decoder-20260925",
+  "taskId": "full-survey-import-repair-20260927",
+  "requiredBranch": "chat/full-survey-mapping-audit-20260927",
   "exclusive": true,
   "implementationAuthorized": true,
-  "assuranceLane": "iteration_with_targeted_deployment_checks",
-  "status": "pilot_operational_general_survey_recovery_capacity_unmet",
+  "assuranceLane": "iteration",
+  "status": "source_audit_complete_reversible_continuation_candidate_delivered",
   "ownerOutcome": "Develop source-grounded survey-to-birth-date/time recovery, preserve the measured behavioral information needed for that goal, and complete a usable unchanged-model test on another consenting person without target-aware refitting during inference. Explain advantages and limitations relative to the previous fitted model.",
-  "currentOwnerRequestStatus": "SURVEY_COMPRESSION_CAPACITY_DIAGNOSTIC_COMPLETE_GENERAL_DECODER_OPEN",
+  "currentOwnerRequestStatus": "AUDITED_IMPORT_AND_IMPLEMENTED_RECOVERY_CANDIDATE_NOT_SHARED_FIT",
   "privateParticipantTranscriptToGitAuthorized": false,
-  "currentMethod": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V15-ANSWER-CONDITIONED-TEST-CONTRACT-20260925.md",
+  "currentMethod": "tasks/full-survey-import-repair-20260927/IMPORT-AND-RESUME-PROTOCOL-v1.md",
   "currentBridge": "reference/research/astrohd_v15_behavioral_bridge.json",
-  "currentReceipt": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V15-LIVE-PILOT-RECEIPT-20260925.md",
+  "currentReceipt": "tasks/full-survey-import-repair-20260927/README.md",
   "latestCapacityAudit": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V15-SURVEY-CAPACITY-AUDIT-20260925.md",
   "unchangedAstronomicalModel": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-SIX-RULE-MODEL-20260925.json",
   "historicalV14StateCommit": "fbfa7ac",
@@ -22,7 +22,10 @@
     "focusedOriginalScenarioCount": 9,
     "activeNeutralDomains": 5,
     "primaryDecoys": 999,
-    "secondaryNestedDecoys": [99, 9999],
+    "secondaryNestedDecoys": [
+      99,
+      9999
+    ],
     "targetAwareRefittingAtInference": false,
     "answersAndOldResultsPreserved": true,
     "newPersonPredictionStatus": "UNKNOWN_NO_NEW_PARTICIPANT_DATA",
@@ -68,13 +71,21 @@
     "globalLint": "721 pre-existing baseline diagnostics remain; changed active files pass; frozen legacy source has narrow documented compatibility exceptions. No globally green lint claim.",
     "capacityWarning": "These engineering checks do not establish that the shortened survey preserves sufficient information for general date/time recovery."
   },
-  "nextAction": "Preserve the full neutral survey and its meaningful distinctions. Treat the five-domain/six-condition pilot as a limited association test or control, not completion of general recovery. Before replacing the full measurement with a short form, test actual representational collisions and recovery loss. Fuller inference must use additional source-grounded behavioral/chart distinctions, not merely ask more questions then collapse them to the same five labels. Do not discard the six-rule fit, require whole-tradition independent success, or prohibit declared development fitting.",
+  "nextAction": "Fresh birth-free continuation admits usable evidence, resolves only material unanswered distinctions and records permission/review. Preserve unmapped evidence. Then run an explicitly scoped baseline/shared-model development, not a separate personal signature or five-label full-survey substitute.",
   "stopAdmission": {
-    "currentCapacityQuestion": "DIAGNOSTIC_EXECUTED_AND_CONCLUSIONS_PERSISTED",
-    "corePilotOperation": "HISTORICALLY_LIVE_VERIFIED",
-    "generalSurveyRecovery": "OPEN_CAPACITY_AND_INFORMATION_PRESERVATION_UNMET",
-    "optionalAutomation": "LAST_OBSERVED_PROVIDER_CREDIT_BLOCK",
-    "broaderResearch": "OPEN_NOT_INDEPENDENTLY_VALIDATED",
-    "backgroundResearchClaim": "NONE"
-  }
+    "parentOutcome": "OPEN_SHARED_FULL_SURVEY_MODEL",
+    "currentOperation": "PUBLIC_RECOVERY_CANDIDATE_AND_PRIVATE_DELIVERY_COMPLETE",
+    "remainingGap": "Final neutral admission, any genuinely new participant answers and permission/review; separate shared behavioral-to-chart bridge work remains",
+    "nextActor": "Birth-free interview reviewer/participant for measurement-dependent input; later shared-model developer",
+    "noArtificialBlocker": "No all-question quota, exact-wording gate for all evidence, validation-only veto or independent whole-tradition-success gate",
+    "notPerformed": [
+      "chart computation",
+      "candidate ranking",
+      "two-person fitting",
+      "production deployment"
+    ],
+    "backgroundExecutionClaim": "NONE"
+  },
+  "parentTaskRef": "chat/v15-survey-decoder-20260925@04ff086e2cae0becb62e891ffad57e0821444599",
+  "updatedAt": "2026-09-27T20:45:43.202342+00:00"
 }

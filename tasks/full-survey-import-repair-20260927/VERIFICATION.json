@@ -1,0 +1,26 @@
+{
+  "verified_at_utc": "2026-09-27T20:47:22.280507+00:00",
+  "assurance_lane": "iteration",
+  "source_preservation_and_packaging_tests": {
+    "passed": 8,
+    "failed": 0,
+    "command": "python3 -m unittest discover -s tests -p test_full_survey_resume_packet.py -v",
+    "scope_limit": "Packaging, source identity and inclusion checks, not a behavioral interpreter compliance test or scientific validation"
+  },
+  "complete_original_authorities": {
+    "bank_routes": 79,
+    "neutral_facets": 73,
+    "three_git_blob_hashes_verified": true,
+    "exact_original_contents_embedded": true
+  },
+  "historical_model_source_bridge_and_scorer_changed": false,
+  "cross_family_review": {
+    "scope": "public recovery policy only",
+    "model_reported": "claude-opus-5-5",
+    "findings_disposition": "REVIEW-DISPOSITION.md",
+    "private_case_review": false
+  },
+  "deployment_or_integration_merge_performed": false,
+  "private_artifacts_in_public_commit": false,
+  "first_unvalidated_live_boundary": "Participant/interviewer use of the revised continuation protocol"
+}
