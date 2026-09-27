@@ -1,12 +1,12 @@
 # Full Life Patterns survey — shareable ChatGPT launch
 
-Version: 2026-09-25
+Version: 2026-09-27 — export-handoff UX repair; interview content unchanged
 
 ## Purpose
 
 Use an ordinary ChatGPT conversation to conduct the same **full scenario-based Life Patterns interview protocol** used in the Human Design research project, while keeping the interview blind to birth/chart information.
 
-For one or a few participants, Railway is not required for collection. ChatGPT can ask the full interview, preserve exact answers, and return one frozen JSON export. Railway is useful later for persistence, automation, access control, and larger-scale standardized collection.
+For one or a few participants, Railway is not required for collection. ChatGPT can ask the full interview, preserve exact answers, and create the frozen JSON handoff itself. The participant is **not** expected to know JSON, manually format data, or use ChatGPT's account-data export. Railway is useful later for persistence, automation, access control, and larger-scale standardized collection.
 
 The participant should receive this entire file in a new ChatGPT conversation.
 
@@ -103,9 +103,15 @@ Ask only whether any summary item is inaccurate or missing a material condition.
 
 Then state that the behavioral record is being **frozen before any birth-data reveal**.
 
-## Final JSON export
+## Final JSON handoff — the participant does not perform an "export"
 
-Output exactly one JSON object in one fenced `json` block.
+ChatGPT, not the participant, creates the final JSON. Do **not** tell the participant to use ChatGPT Settings → Export Data or to manually convert the conversation into JSON.
+
+Output exactly one JSON object in one fenced `json` block. Treat that object as the frozen behavioral record.
+
+If the current ChatGPT surface can create a file, also create a downloadable file named `life-patterns-participant-export.json` containing **exactly the same frozen JSON object**. The file is a convenience copy, not a second version. Do not silently regenerate, summarize, normalize, or recode the data while making the file.
+
+If file creation is unavailable, the fenced JSON block is sufficient; do not present that as a failure.
 
 Required top-level fields:
 
@@ -187,10 +193,17 @@ Allowed coverage statuses:
 
 If the interview ends early, still export all completed turns with the appropriate status.
 
-## After export
+## Participant handoff instructions
 
-End the behavioral interview after the JSON is frozen.
+End the behavioral interview after the JSON is frozen. Then give the participant these practical instructions in ordinary language:
 
-Tell the participant only to copy the complete JSON to Joel. Do not score the interview, guess a birth date/time, or revise the frozen JSON based on later target information.
+1. **If a `.json` file is attached:** download or share that file with Joel. Nothing else needs to be exported.
+2. **If there is no file:** use the copy control on the JSON code block and send/paste the complete copied JSON to Joel.
+3. **If copying the large block is awkward:** tell ChatGPT, “Please make the frozen JSON above into a downloadable `.json` file without changing any content.” If the current chat cannot create a file, fall back to copying the complete JSON block.
+4. **Do not use ChatGPT's account-data export feature.** That exports account/chat data and is unrelated to this research handoff.
+
+Explicitly say: **“You do not need to know JSON or export the chat. I created the research record for you; you only need to send the attached `.json` file or copy the complete JSON block to Joel.”**
+
+Do not ask the participant to manually reformat, clean, retype, or reconstruct the data. Do not score the interview, guess a birth date/time, or revise the frozen JSON based on later target information.
 
 The research team will handle any later comparison separately.
