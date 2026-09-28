@@ -1,0 +1,42 @@
+{
+  "schema_version": "empirical-astrology-literature-decision-v1",
+  "frozen_version_identifier": "literature_model_v1.0.0-wave3-20260928",
+  "decision_status": "frozen_development_architecture_not_empirically_validated",
+  "base_commit": "7e18f6b84fb923d7d99ba85a3f9ed23cfdc78013",
+  "decision_inputs": ["reference/empirical_astrology/pro_reasoning_packet_wave3.json", "notes/empirical_astrology/master/PRO_HANDOFF_WAVE3.md", "notes/empirical_astrology/master/evidence_map.md", "data/empirical_astrology/master/candidate_feature_registry.jsonl", "data/empirical_astrology/master/negative_constraint_registry.jsonl", "notes/empirical_astrology/master/literature_derived_algorithm_spec.md"],
+  "primary_question": "Within the same hospital, do people born closer in time have more similar measured personality than locally comparable people born farther apart?",
+  "included_feature_families": [{"family": "theory_neutral_within_site_birth_time_distance", "definition": "Elapsed minutes between recorded births in the same site; outcome is prespecified validated personality-profile distance. Include site, date/cohort, local clock time and recruitment controls, with cluster-aware person/site/date inference.", "role": "sole primary birth-derived hypothesis", "astrology_weight": 0}],
+  "excluded_feature_families": [
+    {"id": "CF-003", "reason": "Adjusted planetary dominance has no audited scoring dictionary, biography coding or independent-cohort lineage; semantic leakage remains possible."},
+    {"id": "CF-004", "reason": "Southern-hemisphere inversion is abstract-only and cannot separate hemisphere, latitude, culture, sampling and coding; no transform is implemented."},
+    {"id": "CF-005", "reason": "Violence aspects are abstract-only, multiply tested, stigmatizing and prohibited for person-level inference."},
+    {"id": "CF-008", "reason": "Clinical reader judgments have no deterministic rule, reader/subset confounding and low shared-chart reliability; prohibited for person-level inference."},
+    {"family": "generic_sun_sign_relationship_harmonic_whole_chart_or_hard_soft_personality", "reason": "Large nulls, flexible definitions or invalid outcome attribution; no main-effect columns or narrative tie breakers."}
+  ],
+  "exploratory_only_feature_families": [
+    {"id": "CF-001", "domain": "public_prominence_only", "definition": "D1 OR D9 AtmaKaraka-PutraKaraka kendra under Lahiri and mean nodes; D1-only and D9-only are correlated ablations, not corroborations; exact degree ties unresolved/excluded.", "reason": "One selected 84-person cohort; 60/84 versus 3025/5460 permuted is not independent replication; follower regressions reuse the same people and are secondary. Broad Vedic aggregate null is context, not an exact-rule refutation."},
+    {"id": "CF-002", "domain": "only the original outcome after full-text recovery", "reason": "Applying allowance of 1 or 2 degrees is abstract-only; two variants are a corrected exploratory family, not a fitted orb or confirmed personality moderator."},
+    {"id": "CF-006", "domain": "profession_eminence_only", "reason": "Sector geometry, eligibility and controls are disputed; no sector/planet/profession pair chosen by existing sample performance. Reanalyses count as the same data."},
+    {"id": "CF-007", "domain": "personality_only", "reason": "Generic aspect tests are null and no auditable trait mapping is sufficiently supported. Secondary interaction template is reserved but no instantiated mapping enters v1."}
+  ],
+  "exact_moderator_interaction_terms": {
+    "v1_executable_terms": [],
+    "conditional_secondary_template_only": ["frozen_mapped_aspect_indicator × continuous_distance_to_exactness", "frozen_mapped_aspect_indicator × applying_status", "frozen_mapped_aspect_indicator × minimum_distance_to_ASC_MC_DSC_IC"],
+    "conditions": "Requires a separately versioned, outcome-blind manifest with exact body pair, angle, trait, frame, orb, birth-time precision, direction and calculation code before outcomes. No generic aspect main effect, three-way interaction, selected threshold, or flexible 1/2-degree choice in v1. All three terms share one secondary multiplicity family.",
+    "angularity_status": "secondary_only_preregistered_when_mapping_is_instantiated"
+  },
+  "weighting_policy": {"effect_size_derived_weights": false, "equal_initialized_astrology_weights": false, "v1_astrology_weights": {}, "development_learning": "None in v1; any future coefficients start at zero and use shrinkage and nested development-only selection, then freeze in a new version before an untouched cohort.", "primary_time_distance_coefficient": "Estimated in development only, direction fixed to greater similarity at smaller intervals; no coefficient transferred from historical reports."},
+  "dependency_and_corroboration": {"unit": "independent people/cohorts rather than papers, feature rows, p-values or overlapping pairs", "cap": "One evidence unit per unique cohort across reanalyses, republished articles, subgroup models and alternative outcomes; unknown lineage earns no additional corroboration.", "specific": "Startup's four analyses are one N=911 cohort; Oshop follower models are one N=84 cohort; Gauquelin/CSICOP/CFEPP publication and reanalysis chains each count by actual nonoverlapping civil records; claimed abstract replications do not count until identities and methods are audited.", "pair_dependence": "Cluster or graph-aware inference prevents repeated use of one participant from inflating sample size."},
+  "negative_constraints": {"binding_exclusions": ["NC-001", "NC-002", "NC-003", "NC-004", "NC-005", "NC-012", "NC-014"], "binding_study_design_and_accounting": ["NC-006", "NC-007", "NC-008", "NC-009", "NC-010", "NC-011", "NC-013", "NC-015"]},
+  "unresolved_conflicts": [
+    {"id": "CF-001", "resolution": "Reconstruct exact rule and tie behavior from original, audit selection and independently replicate on a prespecified prominence frame; no personality transport."},
+    {"id": "CF-002", "resolution": "Obtain original four applications, aspect/outcome definitions, control and multiplicity details, and verify independent results; broader Startup null does not directly test asymmetry."},
+    {"id": "CF-003", "resolution": "Recover full scoring and semantic pipeline, blind biography coding and complete dataset lineage; repeat end-to-end permutation and independent replication including random-keyword control."},
+    {"id": "CF-004", "resolution": "Recover original transform and coded traits, then predefine hemisphere-by-transform analysis with latitude/culture-matched cohorts; Lu Sun-sign null is contextual rather than an exact inversion test."},
+    {"id": "CF-005", "resolution": "Obtain full text, deduplicate case records, audit eight-test correction, orbs, birth precision and control births; still excluded from person-level use."},
+    {"id": "CF-006", "resolution": "Choose a named original sector/profession protocol without looking at its favorable subsets; audit admission and civil records; replicate with independent matched records. Historic conflicting selection explanations remain unresolved."},
+    {"id": "CF-007", "resolution": "Supply an independently justified exact aspect-to-trait manifest before any participant outcome is opened, then preregister continuous-orb and angularity secondary interactions; do not pool vocational or medical reports into personality evidence."},
+    {"id": "CF-008", "resolution": "Reader-balanced shared-chart replication, reliable judgments and deterministic rule would be needed even for methodological research; clinical deployment remains excluded."}
+  ],
+  "validation_boundary": "All literature, past cases and owner-known outcomes are development evidence only. No owner-specific fit. Historical nulls must be reported. Untouched prospective replication is mandatory."
+}
