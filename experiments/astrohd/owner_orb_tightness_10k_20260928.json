@@ -1,0 +1,264 @@
+{
+  "comparisons": {
+    "angularity": {
+      "angular_n_le_3_ge_owner": {
+        "count": 5031,
+        "fraction": 0.5031,
+        "wilson95": [
+          0.4933010596663228,
+          0.5128965595437791
+        ]
+      },
+      "minimum_angle_le_owner": {
+        "count": 4864,
+        "fraction": 0.4864,
+        "wilson95": [
+          0.476610907924867,
+          0.49619953683081536
+        ]
+      },
+      "pluto_mc_le_10_36_optimum": {
+        "count": 0,
+        "fraction": 0.0,
+        "wilson95": [
+          0.0,
+          0.00038399837067659573
+        ]
+      },
+      "pluto_mc_le_owner": {
+        "count": 162,
+        "fraction": 0.0162,
+        "wilson95": [
+          0.01390494978185447,
+          0.0188666070416122
+        ]
+      }
+    },
+    "combined": {
+      "all_three_tight_counts_ge_owner": {
+        "count": 148,
+        "fraction": 0.0148,
+        "wilson95": [
+          0.01261275780745284,
+          0.01735987421145173
+        ]
+      },
+      "tight_counts_and_pluto_mc_at_least_as_close": {
+        "count": 1,
+        "fraction": 0.0001,
+        "wilson95": [
+          1.765267360112231e-05,
+          0.0005662688974013381
+        ]
+      }
+    },
+    "tight_counts": {
+      "excess_exactness_ge_owner": {
+        "count": 230,
+        "fraction": 0.023,
+        "wilson95": [
+          0.02023997548271378,
+          0.02612635896291169
+        ]
+      },
+      "n_le_0_5_ge_owner": {
+        "count": 2515,
+        "fraction": 0.2515,
+        "wilson95": [
+          0.24309272196880402,
+          0.2600981252214222
+        ]
+      },
+      "n_le_1_ge_owner": {
+        "count": 1368,
+        "fraction": 0.1368,
+        "wilson95": [
+          0.1302041737958663,
+          0.1436747626205932
+        ]
+      },
+      "n_le_2_ge_owner": {
+        "count": 247,
+        "fraction": 0.0247,
+        "wilson95": [
+          0.021835581918077444,
+          0.027929446933087725
+        ]
+      },
+      "n_le_3_ge_owner": {
+        "count": 386,
+        "fraction": 0.0386,
+        "wilson95": [
+          0.03499807820817167,
+          0.042556275488288685
+        ]
+      }
+    }
+  },
+  "method": {
+    "bodies": [
+      "Sun",
+      "Moon",
+      "Mercury",
+      "Venus",
+      "Mars",
+      "Jupiter",
+      "Saturn",
+      "Uranus",
+      "Neptune",
+      "Pluto"
+    ],
+    "end_utc": "2026-08-24T10:42:00+00:00",
+    "ephemeris": "Swiss Ephemeris files; FLG_SWIEPH|FLG_SPEED",
+    "location_for_angles": {
+      "label": "Philadelphia, PA",
+      "latitude": 39.9526,
+      "longitude": -75.1652
+    },
+    "major_aspects_degrees": [
+      0.0,
+      60.0,
+      90.0,
+      120.0,
+      180.0
+    ],
+    "note": "Counts use each of the 45 planet pairs once and the nearest of 0/60/90/120/180. Angular distances use ASC/MC/DSC/IC.",
+    "sample_n": 10000,
+    "sampling": "uniform random UTC instants over century interval",
+    "seed": 20260928,
+    "start_utc": "1926-08-24T10:42:00+00:00"
+  },
+  "owner_10_25": {
+    "angular_n_le_1": 0,
+    "angular_n_le_3": 1,
+    "angular_n_le_5": 1,
+    "asc": 277.9489002776866,
+    "excess_exactness_3deg": 18.90984766020199,
+    "mc": 211.86852465210126,
+    "minimum_angular_distance": 2.862720672529406,
+    "minimum_major_orb": 0.20970773098167683,
+    "n_le_0_5": 2,
+    "n_le_1": 4,
+    "n_le_2": 9,
+    "n_le_3": 11,
+    "pluto": 214.73124532463066,
+    "pluto_mc_distance": 2.862720672529406
+  },
+  "owner_local_optimum_10_36": {
+    "angular_n_le_1": 1,
+    "angular_n_le_3": 1,
+    "angular_n_le_5": 1,
+    "asc": 280.6781062458404,
+    "excess_exactness_3deg": 18.964088462576,
+    "mc": 214.73070421889196,
+    "minimum_angular_distance": 0.0005759194810934787,
+    "minimum_major_orb": 0.20439753951234252,
+    "n_le_0_5": 2,
+    "n_le_1": 4,
+    "n_le_2": 9,
+    "n_le_3": 11,
+    "pluto": 214.73128013837305,
+    "pluto_mc_distance": 0.0005759194810934787
+  },
+  "sample_summary": {
+    "angular_n_le_1": {
+      "max": 4.0,
+      "mean": 0.2246,
+      "median": 0.0,
+      "min": 0.0,
+      "p90": 1.0,
+      "p95": 1.0,
+      "p99": 2.0
+    },
+    "angular_n_le_3": {
+      "max": 5.0,
+      "mean": 0.6702,
+      "median": 1.0,
+      "min": 0.0,
+      "p90": 2.0,
+      "p95": 2.0,
+      "p99": 3.0
+    },
+    "angular_n_le_5": {
+      "max": 7.0,
+      "mean": 1.1162,
+      "median": 1.0,
+      "min": 0.0,
+      "p90": 2.0,
+      "p95": 3.0,
+      "p99": 4.0
+    },
+    "excess_exactness_3deg": {
+      "max": 38.687470845035705,
+      "mean": 9.089741201520198,
+      "median": 8.509744573046405,
+      "min": 0.0,
+      "p90": 14.467695170740686,
+      "p95": 16.53887325806724,
+      "p99": 21.381219886053135
+    },
+    "minimum_angular_distance": {
+      "max": 29.003724173472875,
+      "mean": 4.06343354564401,
+      "median": 2.9774127858671307,
+      "min": 0.00023371536266836301,
+      "p90": 9.30719007460108,
+      "p95": 11.67778246102186,
+      "p99": 16.69257450932511
+    },
+    "minimum_major_orb": {
+      "max": 3.2932201896775837,
+      "mean": 0.4609661298854118,
+      "median": 0.3364404764935074,
+      "min": 7.973607739586441e-05,
+      "p90": 1.0323745170985177,
+      "p95": 1.3080944621648685,
+      "p99": 1.8931114609824091
+    },
+    "n_le_0_5": {
+      "max": 8.0,
+      "mean": 1.0068,
+      "median": 1.0,
+      "min": 0.0,
+      "p90": 2.0,
+      "p95": 3.0,
+      "p99": 4.0
+    },
+    "n_le_1": {
+      "max": 14.0,
+      "mean": 2.0293,
+      "median": 2.0,
+      "min": 0.0,
+      "p90": 4.0,
+      "p95": 5.0,
+      "p99": 6.0
+    },
+    "n_le_2": {
+      "max": 18.0,
+      "mean": 4.0494,
+      "median": 4.0,
+      "min": 0.0,
+      "p90": 7.0,
+      "p95": 8.0,
+      "p99": 10.0
+    },
+    "n_le_3": {
+      "max": 18.0,
+      "mean": 6.0407,
+      "median": 6.0,
+      "min": 0.0,
+      "p90": 9.0,
+      "p95": 10.0,
+      "p99": 13.0
+    },
+    "pluto_mc_distance": {
+      "max": 179.99806261434293,
+      "mean": 89.47071146669775,
+      "median": 89.43796869545335,
+      "min": 0.04837853554215599,
+      "p90": 161.27924175903732,
+      "p95": 170.27191495859313,
+      "p99": 178.08334806932976
+    }
+  }
+}
