@@ -1,0 +1,166 @@
+{
+  "schema_version": "empirical-astrology-wave4-implementation-closure-v1",
+  "closure_date": "2026-09-28",
+  "authority": {
+    "wave4_pro_gate_version": "empirical-astrology-wave4-pro-gate-v1-20260928",
+    "wave4_pro_gate_remote_commit": "0f4a1305a26be95cecd473e493a93d640854ac23",
+    "reviewed_execution_commit": "e79eff0fd4eedbfbce3b00696aeb42138687eddb",
+    "repaired_implementation_remote_commit": "35eb068dd55e5cd3e67910192327765b48bc1dbd",
+    "repaired_implementation_tree": "60ffe26538f9c912e9f7698afe09a4eb43259571",
+    "scientific_model_version": "literature_model_v1.0.0-wave3b-reaffirmed-20260928",
+    "prospective_protocol_version": "same-hospital-personality-protocol-v1b-20260928"
+  },
+  "scientific_disposition_copied_from_pro_gate": {
+    "science_revised": false,
+    "tn001_primary": true,
+    "executable_astrology_features": [],
+    "aspect_to_trait_mappings": [],
+    "astrology_weights": {},
+    "human_evidence_update": "NONE_NO_ELIGIBLE_HUMAN_DATA",
+    "implementation_acceptance_before_this_closure": "WITHHELD",
+    "prospective_launch_authorized": false
+  },
+  "finding_closures": [
+    {
+      "id": "W4-F01",
+      "status": "MECHANICALLY_CLOSED",
+      "disposition": "Hospital gates retain exactly 100 pairs and at least 20 informative dates; both 20 percent exposure fractions are enforced only on the complete 20-hospital cohort. A failed selected cohort is not reselected.",
+      "tests": [
+        "test_exposure_support_is_cohort_scoped_with_complementary_hospitals",
+        "test_integrated_design_enforces_global_retention_allocation_and_isolation"
+      ]
+    },
+    {
+      "id": "W4-F02",
+      "status": "MECHANICALLY_CLOSED",
+      "disposition": "File SHA256 values remain 64 hex; repository commits require 40 lowercase hex, resolve as commit objects, and satisfy reviewed-evidence ancestry. The strict freeze boundary recomputes every declared artifact hash.",
+      "tests": [
+        "test_freeze_manifest_resolves_real_git_checkpoints_and_ancestry",
+        "test_bound_freeze_manifest_hashes_every_declared_artifact"
+      ]
+    },
+    {
+      "id": "W4-F03",
+      "status": "MECHANICALLY_CLOSED",
+      "disposition": "The exact independently approved Wave 4 gate bytes are pinned. Its reviewed decision, registry, and model hashes must match in full. Runtime nuisance order, category dictionaries, scoring key, rank tolerance, seeds, thresholds, counts, null draws, authorization boundaries, and empty astrology surfaces are checked.",
+      "tests": [
+        "test_contract_rejects_any_reviewed_model_drift",
+        "test_contract_rejects_scoring_key_and_column_order_drift",
+        "test_contract_rejects_gate_rewrite_even_if_scientific_files_stay_fixed"
+      ]
+    },
+    {
+      "id": "W4-F04",
+      "status": "MECHANICALLY_CLOSED",
+      "disposition": "The integrated design path requires verified inputs, rejects duplicate identities and hospital/network contradictions, performs global relationship-component retention, chooses one hospital per network, determines eligible networks, freezes seeded A/B allocation, applies cohort support, enforces A/B disjointness, rejects development person/component overlap, and retains exclusions plus disclosed site/network overlap.",
+      "tests": [
+        "test_integrated_design_enforces_global_retention_allocation_and_isolation",
+        "test_integrated_design_rejects_duplicate_participant_identity"
+      ]
+    },
+    {
+      "id": "W4-F05",
+      "status": "MECHANICALLY_CLOSED",
+      "disposition": "Strict input envelopes separately validate source bytes, documented resolution, completed age, language, singleton status, prior knowledge, IANA civil-time/DST conversion, UTC/local agreement, and the whole uncertainty interval. Strict response envelopes enforce the fixed 30-day window, selected identities, one complete immutable submission, package identity, withdrawal, complete IPIP-50 coding, raw/coded hashes, and pair attrition without replacement.",
+      "tests": [
+        "test_verified_birth_input_rejects_each_frozen_exclusion",
+        "test_verified_birth_input_rejects_civil_time_and_age_conflicts",
+        "test_response_collection_enforces_window_package_first_complete_and_attrition",
+        "test_pair_outcome_ledger_keeps_missing_pair_without_repairing"
+      ]
+    },
+    {
+      "id": "W4-F06",
+      "status": "MECHANICALLY_CLOSED",
+      "disposition": "Full and restricted WLS use rank-audited QR solves. CR1 covariance uses triangular influence solves rather than normal-equation inversion. Numerically unresolved designs fail closed.",
+      "adversarial_fixture": {
+        "epsilon": 1e-07,
+        "beta": 0.02997909266852679,
+        "standard_error": 0.00015184308799598154,
+        "weighted_residual_sum_squares": 1.6995689562703043e-18,
+        "explicit_fixed_effect_qr_beta": 0.029979092700973976,
+        "explicit_fixed_effect_qr_standard_error": 0.00015184308964167844,
+        "beta_absolute_delta": 3.244718729811247e-11,
+        "standard_error_absolute_delta": 1.6456968979835368e-12,
+        "interpretation": "Synthetic numerical parity only; not a TN-001 effect or power estimate."
+      },
+      "tests": [
+        "test_near_collinear_fit_matches_explicit_fixed_effect_qr"
+      ]
+    },
+    {
+      "id": "W4-F07",
+      "status": "MECHANICALLY_CLOSED",
+      "disposition": "Both gap-bound fits, all 20 leave-one-network-out fits, and all 21 diagnostics return complete ordered ledgers containing either a fit or an explicit failure. A failed bootstrap draw invalidates the run with its index; it is never dropped or redrawn.",
+      "tests": [
+        "test_gap_sensitivity_ledger_attempts_upper_after_lower_failure",
+        "test_leave_one_network_out_retains_all_attempts_after_failure",
+        "test_diagnostic_ledger_retains_all_twenty_one_attempts"
+      ]
+    }
+  ],
+  "verification": {
+    "focused_empirical_tests": {
+      "passed": 69,
+      "failed": 0
+    },
+    "full_repository_tests": {
+      "passed": 330,
+      "skipped": 3,
+      "failed": 0,
+      "skip_reason": "Official Swiss Ephemeris smoke-test files are not installed."
+    },
+    "ruff": "PASS",
+    "mypy_empirical_package": "PASS",
+    "numerical_runtime": {
+      "python": "3.12.14",
+      "numpy": "2.5.3",
+      "scipy": "1.18.1",
+      "blas": "OpenBLAS 0.3.34.106.0",
+      "blas_threads": 1,
+      "float_dtype": "float64",
+      "thread_environment": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    }
+  },
+  "repaired_artifact_sha256": {
+    "src/hdmatch/empirical_astrology/analysis.py": "d28dccd281de06ea34ffe59b09b408d3fd5c1b73530ab9ca984e2985057397cf",
+    "src/hdmatch/empirical_astrology/contract.py": "eebfb589d3b004e3267af6acfb4a3d2891dc58342c9e42aae076195ebd11df18",
+    "src/hdmatch/empirical_astrology/pairing.py": "6d82c10381d8860e97257d206a7740228b9289f4445e6a1312e542f3f95edb06",
+    "src/hdmatch/empirical_astrology/protocol.py": "a3db727a7ffee571ed2c5289ec30d3e10c9fff2b6dddadd8232ae246a936390f",
+    "src/hdmatch/empirical_astrology/provenance.py": "c309e531effb15b8abe218c5f3ea4205bafd54a6ca60468d32f2a21f4d8d8ee2",
+    "src/hdmatch/empirical_astrology/runtime.py": "98013e389ce0eb155522b6c9c06c4d4cbc46e25b0f23af3c604204dc809c0e49",
+    "experiments/empirical_astrology/wave4/run_wave4.py": "fadda6cef7979c8c829878e6c0312a313617d24ab510336fd59fd15afd809b18"
+  },
+  "original_wave4_artifacts_preserved": {
+    "data/empirical_astrology/master_v2/wave4_results.jsonl": "3e91f16171e7925770c18f3edc87a3536e8b08eeb11bae6bd4cf980cc0880409",
+    "experiments/empirical_astrology/wave4/input_manifest.json": "79d14781465946339c37a36ce5771cbbb3b8da382a90cbe3a0c9f8d04622767b",
+    "experiments/empirical_astrology/wave4/engineering_fixture_summary.json": "c0bb97bc27f85c39c61c40c21ba772c37d413c3b4c124125b81af7e881a37549",
+    "notes/empirical_astrology/master_v2/PRO_HANDOFF_WAVE4.md": "8e30c07585e307a32f6772fce65893acf6a1d8b3c22a38735daad34ddf39e236"
+  },
+  "data_access": {
+    "eligible_human_development_rows_used": 0,
+    "owner_known_outcomes_accessed": false,
+    "untouched_prospective_outcomes_accessed": false,
+    "external_contact_or_data_transfer_performed": false
+  },
+  "remaining_prelaunch_blockers": [
+    "No legally and ethically usable hash-bound non-owner development reference with 20 networks and 100 complete pairs per network exists in the repository.",
+    "The eight human development baselines, empirical robustness checks, negative controls, and 21-test Holm family remain NOT_EVALUATED.",
+    "No actual outcome-blind A/B site designs or operational permissions/freeze package exist.",
+    "No 20-network by 100-pair development residual template exists, so the exact 5000-run design-specific null/power calibration remains NOT_EVALUATED.",
+    "The integrated residual-transfer simulator and final two-cohort confirmation gate remain required before an operational launch proposal; their absence cannot be filled with synthetic effects.",
+    "The Correlation access-gap register still contains 25 high-value inaccessible articles; this does not change the present empty-feature decision but limits broader evidence claims."
+  ],
+  "authorization_boundary": {
+    "prospective_launch_authorized": false,
+    "prospective_recruitment_or_scored_outcome_collection_authorized": false,
+    "owner_known_fitting_authorized": false,
+    "feature_mapping_weight_or_protocol_revision_authorized": false,
+    "production_or_person_level_use_authorized": false,
+    "next_action": "Outcome-blind acquisition and feasibility preparation under ordinary data-access authority, followed by the frozen development programme and a new explicit Pro launch gate if every prerequisite is met."
+  }
+}
