@@ -81,3 +81,25 @@ For W04–W10:
 6. build the study-family/dataset reuse map;
 7. generate the A/B/C/D original-full-text acquisition queue;
 8. produce Wave 1 synthesis and then Wave 2 source-family assignments.
+
+
+## API fallback when shell `git push` lacks credentials
+
+If a worker reports `could not read Username for 'https://github.com'`, do not rerun extraction and do not modify the local committed files.
+
+Use the connected GitHub connector/API instead of shell Git:
+
+1. Read the exact local contents of the two worker-specific files from the scratch worktree.
+2. Create the worker's remote target branch from current `main`.
+3. Create those two files on that branch using their exact local contents.
+4. Fetch both remote files back and verify their contents match the local files byte-for-byte (or at minimum by SHA-256 computed locally and from fetched remote text).
+5. Report the remote branch and resulting GitHub commit SHA.
+6. Do not touch any shared/master files and do not push to `main`.
+
+For W10 specifically:
+- local data: `data/empirical_astrology/wave1/worker_10_studies.jsonl`
+- local report: `notes/empirical_astrology/wave1/worker_10_report.md`
+- remote branch: `worker/w10-empirical-astrology-wave1`
+- verified local HEAD before publication: `08d25a1a963a2c46746f87411a6eaade7dbd6b9e`
+
+The exact local commit SHA will not be preserved when publishing through the GitHub contents API; content equality is the requirement. Record both the original local commit and the new remote commit in the worker's final message.
