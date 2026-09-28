@@ -1,0 +1,40 @@
+{
+  "schema_version": "empirical-astrology-wave4-input-manifest-v1",
+  "model_version": "literature_model_v1.0.0-wave3b-reaffirmed-20260928",
+  "inventory_date": "2026-09-28",
+  "inventory_method": "Tracked filename and schema-purpose inventory only; excluded outcome files were not opened.",
+  "selected_human_development_files": [],
+  "eligible_human_dataset_ids": [],
+  "owner_known_outcomes_accessed": false,
+  "untouched_prospective_outcomes_accessed": false,
+  "excluded_categories": [
+    {
+      "category": "empirical_astrology_literature_records",
+      "tracked_file_count": 26,
+      "reason": "Aggregate literature records, registries, manifests, and extractions contain no paired IPIP responses or frozen participant covariates."
+    },
+    {
+      "category": "astro_databank_relationship_or_event_cases",
+      "tracked_file_count": 28,
+      "reason": "Wrong outcome and design; no same-hospital IPIP sampling frame or frozen obstetric covariates."
+    },
+    {
+      "category": "development_case_files",
+      "tracked_file_count": 14,
+      "reason": "Outside the frozen v1b design; files may contain previously inspected or owner-linked outcomes and were not opened."
+    },
+    {
+      "category": "synthetic_human_design_fixture",
+      "tracked_file_count": 1,
+      "reason": "Synthetic Human Design measurement data are not human IPIP same-hospital development outcomes."
+    },
+    {
+      "category": "owner_or_person_named_paths",
+      "tracked_file_count": 13,
+      "reason": "Denylisted from this evaluation; filenames were counted and contents were not opened."
+    }
+  ],
+  "eligibility_conclusion": "No tracked eligible raw non-owner development dataset contains complete IPIP-50 responses, same-hospital pairing fields, independent network IDs, birth-time uncertainty, and all frozen covariates.",
+  "required_status_for_human_comparisons": "NOT_EVALUATED",
+  "prospective_launch_blocked": true
+}
