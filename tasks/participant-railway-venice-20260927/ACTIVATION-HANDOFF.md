@@ -31,3 +31,14 @@ Keep the encryption key and admin/invitation capabilities in authorized private 
 ## Closeout of the interrupted review
 
 The first public-code review is saved in `CLAUDE-STATIC-REVIEW.md`. Its concrete repairs and supporting tests are recorded in `REVIEW-DISPOSITION.json`. No final reconciliation verdict was returned: the original attempt was interrupted by the host restart and its retry timed out at 900.56 seconds. No reviewer is running in the background. Do not call this final independent approval.
+
+
+## Owner-run Venice activation helper
+
+The authenticated Venice request is blocked only in the assistant tool surface, not by an observed Venice response. The owner-side continuation is:
+
+`bash apps/life-patterns-participant/scripts/activate_venice.sh --activate`
+
+The helper reads the existing Railway gateway credential without printing it, performs a real GPT-5.6 Sol/XHigh Venice smoke, injects that same credential into the participant service, redeploys only that service, then runs a real synthetic participant flow through Railway and verifies the frozen JSON. If anything after mutation fails, it restores the previous participant live flag and previous gateway credential and redeploys.
+
+On success it writes private admin/join links and the synthetic smoke receipt under `~/.local/share/humandesign/private/participant-railway-20260927/`. The synthetic session must never enter research analysis.
