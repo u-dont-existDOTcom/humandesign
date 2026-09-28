@@ -32,7 +32,7 @@ PART_SERVICE = "life-patterns-participant"
 PART_ENV = "production"
 GATEWAY_ORIGIN = "https://venice-model-gateway-production.up.railway.app"
 DEFAULT_PARTICIPANT_ORIGIN = "https://life-patterns-participant-production.up.railway.app"
-EXPECTED_BUILD = "f35a94f3e4feaf0dfa562f97516ed2c42a51fd82"
+EXPECTED_BUILD = "4105789f29d8278677686f73df0bece7c603a882"
 EXPECTED_VERSION = "railway-participant-v2.1-20260927"
 PRIVATE_DIR = Path.home() / ".local/share/humandesign/private/participant-railway-20260927"
 
@@ -107,6 +107,8 @@ def variable_map(railway: str, project: str, service: str, environment: str) -> 
 
 
 def set_variable(railway: str, name: str, value: str) -> None:
+    if value == "":
+        raise ActivationError(f"Refusing to encode empty Railway variable {name!r} as stdin.")
     run_railway(
         railway,
         [
@@ -123,6 +125,27 @@ def set_variable(railway: str, name: str, value: str) -> None:
             name,
         ],
         stdin=value,
+    )
+
+
+def delete_variable(railway: str, name: str) -> None:
+    current = variable_map(railway, PART_PROJECT, PART_SERVICE, PART_ENV)
+    if name not in current:
+        return
+    run_railway(
+        railway,
+        [
+            "variable",
+            "delete",
+            name,
+            "--project",
+            PART_PROJECT,
+            "--service",
+            PART_SERVICE,
+            "--environment",
+            PART_ENV,
+            "--json",
+        ],
     )
 
 
@@ -301,10 +324,10 @@ def app_smoke(origin: str, join_token: str) -> dict:
     operation("consent")
     state = request("/api/next", {}, session)
     if state.get("phase") != "awaiting_answer":
-        raise ActivationError("First real model step did not produce a participant question.")
+        raise ActivationError("Canonical opening did not produce a participant question.")
     question = (state.get("question") or {}).get("text") or ""
-    if "[route:" not in question:
-        raise ActivationError("First real model question lost its canonical route provenance.")
+    if "[route: A0]" not in question:
+        raise ActivationError("Canonical opening is not the frozen bank's A0 self-contained route.")
 
     synthetic_answer = (
         "I would first organize the concrete information I have, notice what conflicts, "
@@ -343,9 +366,9 @@ def app_smoke(origin: str, join_token: str) -> dict:
         if row.get("provider") == "venice"
         and row.get("returned_model") in {"openai-gpt-56-sol", "gpt-5.6-sol"}
     ]
-    if len(real_calls) < 4:
+    if len(real_calls) < 2:
         raise ActivationError(
-            f"Expected at least four real Venice planning/admission calls; got {len(real_calls)}."
+            f"Expected at least two real Venice planning/admission calls after the first answer; got {len(real_calls)}."
         )
     if any(row.get("reasoning_effort") != "xhigh" for row in real_calls):
         raise ActivationError("A real participant model call did not use XHigh.")
@@ -459,7 +482,10 @@ def main() -> int:
             )
             try:
                 set_variable(railway, "PARTICIPANT_LIVE_ENABLED", previous_live)
-                set_variable(railway, "UDA_MODEL_GATEWAY_TOKEN", previous_token)
+                if previous_token:
+                    set_variable(railway, "UDA_MODEL_GATEWAY_TOKEN", previous_token)
+                else:
+                    delete_variable(railway, "UDA_MODEL_GATEWAY_TOKEN")
                 rollback_id = redeploy(railway)
                 wait_deployment(railway, rollback_id)
                 print("Previous activation state restored.", file=sys.stderr)
