@@ -4,7 +4,7 @@
   "requiredBranch": "chat/participant-railway-venice-20260927-2234",
   "implementationAuthorized": true,
   "assuranceLane": "disabled-staging-verified; participant-activation-not-cleared",
-  "status": "real_venice_gateway_verified_first_app_smoke_failed_repaired_rerun_required",
+  "status": "railway_participant_live_venice_verified_hale_invitation_pending_local_private_action",
   "ownerOutcome": "Switch participant collection to separate Railway service using Venice, full reviewed V2 survey, durable state and server-side exports. Preserve owner app and historical research.",
   "parentTaskRef": "chat/full-survey-participant-package-20260927@c3ac3d0834f9b2d276aa3e02fa90a94a5927ad76",
   "currentMethod": "apps/life-patterns-participant/README.md",
@@ -14,10 +14,10 @@
     "environment_id": "b9916074-da51-46a1-8d7d-fd618b3c3d2a",
     "service_id": "30746eb8-07c9-42e7-8825-152124b9337d",
     "volume_id": "928957b0-0128-4900-86f2-205d3b7f69d7",
-    "live_enabled": false,
-    "venice_token_injected": false,
+    "live_enabled": true,
+    "venice_token_injected": true,
     "deployed_app_commit": "4105789f29d8278677686f73df0bece7c603a882",
-    "deployment_id": "a3c900d3-0d67-478f-a36d-36f086346297"
+    "deployment_id": "cd3a1cdf-4528-434c-90f5-0cb88e610d6b"
   },
   "model": {
     "provider": "venice",
@@ -25,10 +25,10 @@
     "reasoning_effort": "xhigh",
     "automatic_fallback": false
   },
-  "blocker": "No credential/provider blocker remains. First real app smoke exposed an empty-record planning defect; repaired app is deployed disabled. Owner must rerun the repaired activation helper because authenticated inference cannot be initiated from the assistant tool surface.",
-  "remaining": "Owner reruns repaired activation helper. Success requires deterministic A0 opening, exact synthetic answer persistence, real Venice Plan+Admission after that answer, frozen export, and automatic link/receipt generation.",
+  "blocker": "None for Railway/Venice. Creating a participant-specific private invitation requires the local admin credential and is intentionally outside the assistant tool credential boundary.",
+  "remaining": "Create Hale private invitation from her 96-turn edited record, deliver it, then wait for her consent/continuation. No survey redesign is currently indicated by infrastructure.",
   "privateDataPublished": false,
-  "updatedAt": "2026-09-28T01:25:10.588761+00:00",
+  "updatedAt": "2026-09-28T02:04:42.861447+00:00",
   "currentHandoff": "tasks/participant-railway-venice-20260927/ACTIVATION-HANDOFF.md",
   "reviewDisposition": "tasks/participant-railway-venice-20260927/REVIEW-DISPOSITION.json",
   "executionBoundary": {
@@ -41,10 +41,15 @@
   },
   "realVeniceEvidence": {
     "gateway_smoke": "PASS",
+    "participant_pipeline_smoke": "PASS",
+    "provider": "venice",
     "model": "openai-gpt-56-sol",
     "effort": "xhigh",
-    "first_app_smoke": "FAILED_BEFORE_FIRST_QUESTION",
-    "failure_receipt": "tasks/participant-railway-venice-20260927/FIRST-REAL-VENICE-ACTIVATION-20260928.json"
+    "real_model_calls": 2,
+    "exact_answer_persisted": true,
+    "final_export_frozen": true,
+    "deployment_id": "cd3a1cdf-4528-434c-90f5-0cb88e610d6b",
+    "receipt": "tasks/participant-railway-venice-20260927/SUCCESSFUL-VENICE-ACTIVATION-20260928.json"
   },
   "manualActivation": "bash apps/life-patterns-participant/scripts/activate_venice.sh --activate",
   "manualActivationScriptCommit": "81a055577a1c39eecce0d353b95e24d2cca2ad1a"

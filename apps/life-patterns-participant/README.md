@@ -60,3 +60,7 @@ The first owner-run activation established that the existing gateway credential 
 The empty-record boundary now uses the frozen bank's first self-contained route (A0) deterministically. This is not a shorter questionnaire and does not constrain later routing: once the first answer exists, the normal Venice planner plus independent semantic admission operate against the full prior record, bank, protocol and evidence guide.
 
 The activation helper also restores an originally absent participant gateway credential by deleting the variable rather than attempting to set an empty Railway stdin value. The service stays disabled unless the complete real synthetic smoke passes.
+
+## Create a private continuation invitation
+
+For an existing participant record, use `scripts/create_invitation.py`. It reads the participant-admin credential from a file, rejects birth/chart/ranking fields before upload, preserves the prior JSON record as the declared source type, and writes the private resume link to a mode-0600 output file without printing the link or credential. Inference still begins only after the participant consents in the app.

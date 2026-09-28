@@ -1,0 +1,23 @@
+{
+  "ok": true,
+  "synthetic_only": true,
+  "do_not_use_as_participant_data": true,
+  "created_at": "2026-09-28T01:49:05.929548+00:00",
+  "provider": "venice",
+  "requested_model": "openai-gpt-56-sol",
+  "reasoning_effort": "xhigh",
+  "real_model_calls": 2,
+  "returned_models": [
+    "openai-gpt-56-sol"
+  ],
+  "exact_answer_persisted": true,
+  "final_export_frozen": true,
+  "deployment_id": "cd3a1cdf-4528-434c-90f5-0cb88e610d6b",
+  "gateway_smoke": {
+    "model": "openai-gpt-56-sol",
+    "reasoning_effort": "xhigh"
+  },
+  "verified_by_supervisor_at": "2026-09-28T02:04:42.861447+00:00",
+  "participant_data_used": false,
+  "cutover_status": "VENICE_PIPELINE_VERIFIED_SERVICE_LIVE"
+}
