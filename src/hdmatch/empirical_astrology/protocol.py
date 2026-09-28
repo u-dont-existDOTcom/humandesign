@@ -2,13 +2,17 @@
 
 from __future__ import annotations
 
+import hashlib
 import math
 import re
+import subprocess
 from collections.abc import Iterable, Mapping, Sequence
 from dataclasses import dataclass
 from datetime import datetime
+from pathlib import Path
 
 SHA256_PATTERN = re.compile(r"[0-9a-f]{64}")
+GIT_COMMIT_PATTERN = re.compile(r"[0-9a-f]{40}")
 
 FREEZE_MANIFEST_REQUIRED_FIELDS = frozenset(
     {
@@ -50,7 +54,11 @@ class FreezeManifestError(ValueError):
     """Raised when a pre-outcome freeze manifest is incomplete or malformed."""
 
 
-def validate_freeze_manifest(manifest: Mapping[str, object]) -> None:
+def validate_freeze_manifest(
+    manifest: Mapping[str, object],
+    *,
+    repository_root: Path | str | None = None,
+) -> None:
     """Validate required operational placeholders before any launch-capable state.
 
     Passing this structural validator does not authorize recruitment or collection.
@@ -71,8 +79,8 @@ def validate_freeze_manifest(manifest: Mapping[str, object]) -> None:
         "software_commit",
     ):
         value = manifest[field]
-        if not isinstance(value, str) or SHA256_PATTERN.fullmatch(value) is None:
-            raise FreezeManifestError(f"{field} must be a lowercase hexadecimal commit SHA")
+        if not isinstance(value, str) or GIT_COMMIT_PATTERN.fullmatch(value) is None:
+            raise FreezeManifestError(f"{field} must be a 40-character lowercase Git commit ID")
     for field in (
         "protocol_version",
         "ethics_consent_data_access_basis",
@@ -102,6 +110,78 @@ def validate_freeze_manifest(manifest: Mapping[str, object]) -> None:
         )
     if (closing - opening).total_seconds() != 30 * 86400:
         raise FreezeManifestError("the response window must be exactly 30*86400 seconds")
+    if repository_root is not None:
+        _verify_git_checkpoints(manifest, Path(repository_root).resolve())
+
+
+def _verify_git_checkpoints(manifest: Mapping[str, object], repository_root: Path) -> None:
+    """Resolve both commit IDs and require evidence ancestry of the software state."""
+
+    for field in ("reviewed_evidence_commit", "software_commit"):
+        commit = str(manifest[field])
+        completed = subprocess.run(
+            ["git", "cat-file", "-e", f"{commit}^{{commit}}"],
+            cwd=repository_root,
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+        if completed.returncode != 0:
+            raise FreezeManifestError(f"{field} does not resolve to a commit in this repository")
+    ancestry = subprocess.run(
+        [
+            "git",
+            "merge-base",
+            "--is-ancestor",
+            str(manifest["reviewed_evidence_commit"]),
+            str(manifest["software_commit"]),
+        ],
+        cwd=repository_root,
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    if ancestry.returncode != 0:
+        raise FreezeManifestError("reviewed_evidence_commit must be an ancestor of software_commit")
+
+
+def validate_bound_freeze_manifest(
+    manifest: Mapping[str, object],
+    *,
+    repository_root: Path | str,
+    artifact_paths: Mapping[str, Path | str],
+    expected_protocol_version: str,
+) -> None:
+    """Validate a byte-bound operational freeze, not only its field shapes.
+
+    Every SHA256 field must be backed by an explicit repository-local artifact.
+    This function deliberately cannot turn a manifest into launch authorization;
+    it only closes the identity and ancestry portion of the frozen boundary.
+    """
+
+    root = Path(repository_root).resolve()
+    validate_freeze_manifest(manifest, repository_root=root)
+    if manifest["protocol_version"] != expected_protocol_version:
+        raise FreezeManifestError("protocol_version does not match the frozen contract")
+    supplied = set(artifact_paths)
+    if supplied != set(HASH_FIELDS):
+        missing = sorted(set(HASH_FIELDS) - supplied)
+        extra = sorted(supplied - set(HASH_FIELDS))
+        raise FreezeManifestError(
+            f"artifact bindings differ from SHA256 fields; missing={missing}, extra={extra}"
+        )
+    for field in sorted(HASH_FIELDS):
+        candidate = Path(artifact_paths[field])
+        path = candidate if candidate.is_absolute() else root / candidate
+        resolved = path.resolve()
+        if not resolved.is_relative_to(root):
+            raise FreezeManifestError(f"{field} artifact must stay inside the repository")
+        try:
+            actual = hashlib.sha256(resolved.read_bytes()).hexdigest()
+        except OSError as exc:
+            raise FreezeManifestError(f"cannot read artifact bound to {field}: {exc}") from exc
+        if actual != manifest[field]:
+            raise FreezeManifestError(f"{field} does not match its bound artifact bytes")
 
 
 @dataclass(frozen=True, slots=True)

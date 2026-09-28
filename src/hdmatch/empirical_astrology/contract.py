@@ -14,8 +14,15 @@ FEATURE_REGISTRY_RELATIVE_PATH = Path(
     "reference/empirical_astrology/literature_feature_registry_v1.json"
 )
 MODEL_RELATIVE_PATH = Path("reference/empirical_astrology/literature_model_v1.json")
+WAVE4_GATE_RELATIVE_PATH = Path(
+    "reference/empirical_astrology/literature_model_v1b_wave4_gate.json"
+)
 
 EXPECTED_VERDICT = "REAFFIRM_WAVE3_AUTHORIZE_EXACT_IMPLEMENTATION_AND_DEVELOPMENT_ONLY"
+EXPECTED_WAVE4_GATE_VERDICT = (
+    "REAFFIRM_V1B_ACCEPT_NO_DATA_REPORT_HOLD_IMPLEMENTATION_ACCEPTANCE_AND_LAUNCH"
+)
+EXPECTED_WAVE4_GATE_SHA256 = "773273817152e89e1ba0fa2a79f3fbf99e6395e501c4ca82a494847b5256152b"
 EXPECTED_PRIMARY_FEATURE = "TN-001"
 
 
@@ -71,9 +78,11 @@ class FrozenLiteratureContract:
 
     repository_root: Path
     decision: dict[str, Any]
+    wave4_gate: dict[str, Any]
     feature_registry: dict[str, Any]
     model: dict[str, Any]
     decision_sha256: str
+    wave4_gate_sha256: str
     feature_registry_sha256: str
     model_sha256: str
 
@@ -101,6 +110,82 @@ def _require_empty_astrology_surface(name: str, value: dict[str, Any]) -> None:
         raise ContractError(f"{name}.astrology_coefficient_vector_length must be zero")
 
 
+def _verify_runtime_constants(model: dict[str, Any]) -> None:
+    """Bind executable constants to the byte-pinned scientific model."""
+
+    from .analysis import RANK_TOLERANCE
+    from .features import (
+        DELIVERY_MODE_CATEGORIES,
+        NUISANCE_COLUMN_NAMES,
+        RECORD_PRECISION_CATEGORIES,
+        RECRUITMENT_SOURCE_CATEGORIES,
+        SEX_AT_BIRTH_CATEGORIES,
+    )
+    from .outcome import SCALE_ORDER, SCORING_KEY
+
+    primary = model.get("primary_model")
+    eligibility = model.get("eligibility")
+    outcome = model.get("outcome")
+    randomness = model.get("randomness_and_determinism")
+    cohort = model.get("cohort_size_and_stopping")
+    primary_null = model.get("primary_null")
+    if not all(
+        isinstance(value, dict)
+        for value in (primary, eligibility, outcome, randomness, cohort, primary_null)
+    ):
+        raise ContractError("one or more frozen scientific sections are missing")
+    assert isinstance(primary, dict)
+    assert isinstance(eligibility, dict)
+    assert isinstance(outcome, dict)
+    assert isinstance(randomness, dict)
+    assert isinstance(cohort, dict)
+    assert isinstance(primary_null, dict)
+    if primary.get("nuisance_columns_in_order") != list(NUISANCE_COLUMN_NAMES):
+        raise ContractError("runtime nuisance columns differ from the frozen order")
+    if RANK_TOLERANCE != 1e-10:
+        raise ContractError("runtime rank tolerance differs from the frozen value")
+    if primary.get("minimum_effect_beta") != 0.005:
+        raise ContractError("minimum effect differs from the frozen value")
+    if randomness.get("base_seed") != 20260928:
+        raise ContractError("runtime base seed differs from the frozen value")
+    if primary_null.get("draws") != 99999:
+        raise ContractError("primary bootstrap draw count differs from the frozen value")
+    if cohort.get("independent_networks_per_cohort") != 20:
+        raise ContractError("network count differs from the frozen value")
+    if cohort.get("selected_disjoint_pairs_per_hospital") != 100:
+        raise ContractError("pair count differs from the frozen value")
+    support = cohort.get("exposure_support_per_cohort")
+    if not isinstance(support, dict) or support != {
+        "minimum_fraction_gap_at_most_15_minutes": 0.2,
+        "minimum_fraction_gap_at_least_60_minutes": 0.2,
+    }:
+        raise ContractError("cohort exposure support differs from the frozen values")
+
+    category_dictionary = eligibility.get("category_dictionary")
+    if not isinstance(category_dictionary, dict):
+        raise ContractError("frozen category dictionary is missing")
+    expected_categories = {
+        "sex_at_birth_category": SEX_AT_BIRTH_CATEGORIES,
+        "delivery_mode_category": DELIVERY_MODE_CATEGORIES,
+        "recruitment_source_category": RECRUITMENT_SOURCE_CATEGORIES,
+        "record_precision_category": RECORD_PRECISION_CATEGORIES,
+    }
+    for field, expected in expected_categories.items():
+        entry = category_dictionary.get(field)
+        if not isinstance(entry, dict) or set(entry.get("allowed", ())) != set(expected):
+            raise ContractError(f"runtime {field} dictionary differs from the frozen values")
+
+    scoring = outcome.get("scoring_key")
+    if not isinstance(scoring, dict) or tuple(scoring) != SCALE_ORDER:
+        raise ContractError("runtime scoring scale order differs from the frozen value")
+    normalized_runtime = {
+        scale: {direction: list(items) for direction, items in SCORING_KEY[scale].items()}
+        for scale in SCALE_ORDER
+    }
+    if scoring != normalized_runtime:
+        raise ContractError("runtime IPIP-50 scoring key differs from the frozen value")
+
+
 def load_frozen_contract(
     repository_root: Path | str | None = None,
 ) -> FrozenLiteratureContract:
@@ -115,12 +200,41 @@ def load_frozen_contract(
     decision_path = root / DECISION_RELATIVE_PATH
     feature_path = root / FEATURE_REGISTRY_RELATIVE_PATH
     model_path = root / MODEL_RELATIVE_PATH
+    gate_path = root / WAVE4_GATE_RELATIVE_PATH
     decision = _load_json(decision_path)
+    gate = _load_json(gate_path)
     registry = _load_json(feature_path)
     model = _load_json(model_path)
     decision_sha = sha256_file(decision_path)
+    gate_sha = sha256_file(gate_path)
     feature_sha = sha256_file(feature_path)
     model_sha = sha256_file(model_path)
+
+    if gate_sha != EXPECTED_WAVE4_GATE_SHA256:
+        raise ContractError("Wave 4 Pro gate bytes differ from the independently approved gate")
+    if gate.get("verdict") != EXPECTED_WAVE4_GATE_VERDICT:
+        raise ContractError("Wave 4 Pro gate verdict changed")
+    if gate.get("scientific_model_revised") is not False:
+        raise ContractError("Wave 4 gate cannot revise the frozen scientific model")
+    if gate.get("scientific_protocol_revised") is not False:
+        raise ContractError("Wave 4 gate cannot revise the frozen protocol")
+    gate_authorization = gate.get("work_authorization")
+    if not isinstance(gate_authorization, dict):
+        raise ContractError("Wave 4 gate authorization is missing")
+    if (
+        gate_authorization.get("mechanical_repairs_and_frozen_protocol_completion_authorized")
+        is not True
+    ):
+        raise ContractError("Wave 4 gate does not authorize the mechanical implementation")
+    for blocked_field in (
+        "owner_known_outcome_inspection_or_fitting_authorized",
+        "untouched_A_B_outcome_access_for_development_authorized",
+        "prospective_recruitment_or_outcome_collection_authorized",
+        "production_or_person_level_use_authorized",
+        "feature_mapping_weight_or_protocol_redesign_authorized",
+    ):
+        if gate_authorization.get(blocked_field) is not False:
+            raise ContractError(f"Wave 4 gate boundary changed: {blocked_field}")
 
     if decision.get("verdict") != EXPECTED_VERDICT:
         raise ContractError("the Pro verdict does not authorize this implementation")
@@ -135,6 +249,21 @@ def load_frozen_contract(
         raise ContractError("prospective collection boundary changed")
     if authorization.get("production_or_person_level_use_authorized") is not False:
         raise ContractError("production/person-level boundary changed")
+
+    reviewed_hashes = gate.get("reviewed_artifact_sha256")
+    if not isinstance(reviewed_hashes, dict):
+        raise ContractError("Wave 4 gate reviewed-artifact hashes are missing")
+    for relative, actual in (
+        (DECISION_RELATIVE_PATH, decision_sha),
+        (FEATURE_REGISTRY_RELATIVE_PATH, feature_sha),
+        (MODEL_RELATIVE_PATH, model_sha),
+    ):
+        if reviewed_hashes.get(relative.as_posix()) != actual:
+            raise ContractError(f"{relative} differs from the Wave 4 Pro-reviewed bytes")
+    if gate.get("model_version") != decision.get("frozen_version_identifier"):
+        raise ContractError("Wave 4 gate and frozen decision model versions differ")
+    if gate.get("prospective_protocol_version") != decision.get("prospective_protocol_version"):
+        raise ContractError("Wave 4 gate and frozen decision protocol versions differ")
 
     source_decision = model.get("source_decision")
     if not isinstance(source_decision, dict) or source_decision.get("sha256") != decision_sha:
@@ -180,12 +309,16 @@ def load_frozen_contract(
     if authorization.get("required_evidence_ancestor") != review_base:
         raise ContractError("authorization evidence ancestor differs from the review base")
 
+    _verify_runtime_constants(model)
+
     return FrozenLiteratureContract(
         repository_root=root,
         decision=decision,
+        wave4_gate=gate,
         feature_registry=registry,
         model=model,
         decision_sha256=decision_sha,
+        wave4_gate_sha256=gate_sha,
         feature_registry_sha256=feature_sha,
         model_sha256=model_sha,
     )
