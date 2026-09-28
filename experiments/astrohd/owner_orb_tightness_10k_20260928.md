@@ -4,7 +4,7 @@ Date: 2026-09-28
 
 ## Question
 
-How unusual is the recorded owner chart (1985-01-29 05:25 EST Philadelphia / 10:25 UTC) in its density of tight major aspects and its angularity, relative to ordinary birth moments in the same 100-year search universe?
+How unusual is the recorded owner chart (1985-01-29 05:25 EST Philadelphia / 10:25 UTC) in its density of tight major aspects and angularity, and how does that relate to the **current V1.4d six-rule method**?
 
 ## Method
 
@@ -28,9 +28,7 @@ At 10:25 UTC:
 - Pluto-MC distance: 2.86272°
 - nearest planet-angle distance: 2.86272° (Pluto-MC)
 
-At the V3.6 local score optimum, 10:36 UTC:
-- the planetary tightness counts are unchanged;
-- Pluto-MC distance is 0.0005759° (about 2.1 arcseconds).
+The sample median has 2 aspects within 1°, 4 within 2°, and 6 within 3°. The owner has 4, 9, and 11 respectively.
 
 ## Empirical prevalence in 10,000 sampled charts
 
@@ -43,40 +41,60 @@ At the V3.6 local score optimum, 10:36 UTC:
 | all three count thresholds (1°/2°/3°) | 148 | 1.48% |
 | Pluto-MC <=2.86272° | 162 | 1.62% |
 | all three tight-count thresholds AND Pluto-MC <= owner | 1 | 0.01% |
-| Pluto-MC <= 10:36 optimum (0.0005759°) | 0 | 0%; Wilson 95% upper bound 0.0384% |
 
-The sample median has 2 aspects within 1°, 4 within 2°, and 6 within 3°. The owner has 4, 9, and 11 respectively.
+The 0.01% combined figure is **post-hoc descriptive**, not a valid p-value: the conjunction of criteria was chosen after inspecting the owner chart.
 
-## Interpretation
+## Relation to the CURRENT six-rule method
 
-The owner chart is not unusual merely because *some* planet is angular: 48.64% of sampled charts had a planet at least as close to any of the four angles as the owner's 2.86° nearest-angle distance.
+The current project authority is V1.4d, not the older V3.6 merged model. V1.4d's exact minute-grid search evaluates 52,596,001 minutes across the century and leaves nine maximum-score minutes, all on 1985-01-29 from 10:18 through 10:26 UTC. The cold continuous plateau is approximately 10:17:52–10:26:12 UTC. It does **not** select the older V3.6 10:36 local optimum.
 
-What is unusual is the conjunction of two specific geometric facts:
-1. a dense set of tight major planetary aspects (roughly upper 1.5–4% depending on the frozen metric); and
-2. Pluto specifically lying within 2.86° of the MC at the recorded time (1.62% in this sample).
+Orb tightness is directly relevant to **two of the six current rules** because the Lilly implementation defines the selected benefic aspect conditions as partile, operationalized with a <=1° orb:
 
-Only 1 of 10,000 sampled moments met both the three tight-count thresholds and a Pluto-MC distance at least as small as the recorded chart. This 0.01% figure is **post-hoc descriptive**, not a valid p-value: these criteria were selected after inspecting the owner chart and after knowing that the V3.6 model contains a Pluto-MC feature.
+1. `lilly/planet:saturn/benefic_trine` — at the owner moment, Saturn trines Venus by about **0.66°**, so this rule is active.
+2. `lilly/lord:10/benefic_conjunction` — the Regiomontanus 10th cusp is in Scorpio, making Mars the traditional 10th lord; Mars is conjunct Venus by about **0.45°**, so this rule is active.
 
-The 10:36 local optimum is mechanically informative but not independent evidence. The V3.6 score rewards Pluto-MC, so optimizing birth time can naturally drive the score toward the minute when the MC reaches Pluto.
+The other four selected rules are house/directional-strength conditions rather than generic aspect-orb rules:
+- `lilly/lord:3/house_1_10`
+- `lilly/planet:venus/house_2_5`
+- `phaladeepika/planet:venus/directional`
+- `lilly/lord:7/house_4_7_11`
+
+Therefore the owner's dense tight-aspect geometry is not merely visually interesting: **two of the six Boolean votes in the current fitted model depend on sub-1° aspect geometry.** However, the model was target-aware fitted to this known owner case, so this cannot be treated as independent evidence that tight aspects predict personality.
+
+Pluto-MC angularity is **not one of the six V1.4d rules**. The earlier observation that the legacy V3.6 score peaked near 10:36 when Pluto reached the MC remains a valid explanation of that older model's score surface, but it should not be used to explain the current six-rule recovery.
 
 ## Recoverability heterogeneity implication
 
-Yes, the geometry makes heterogeneous recoverability plausible under a symbolic reverse-matching model.
+The geometry makes heterogeneous recoverability plausible under a symbolic reverse-matching model.
 
-Some birth moments have:
-- rare combinations of multiple scored planetary features, which can narrow the date;
-- rapidly moving angle contacts, which can make the score surface sharp in time;
-- feature combinations that are highly discriminative under the frozen rubric.
+Some birth moments can have:
+- rare combinations of multiple scored features, narrowing the date;
+- partile aspect conditions that turn on only in relatively narrow date windows;
+- house/angle boundaries that create narrow time intervals;
+- feature combinations with high information content under the frozen rubric.
 
 Other birth moments can have common feature combinations and broad score plateaus, producing many ties or near-ties.
 
-But geometric rarity is not enough. A rare chart becomes behaviorally recoverable only if the behavioral measurements reliably correspond to the rare chart features. Therefore the hypothesis must be tested prospectively across people.
+But geometric rarity is not enough. A rare chart becomes behaviorally recoverable only if the behavioral measurements reliably correspond to the rare chart features. The current six-rule result is a known-case development fit and does not establish how often this will happen in new people.
 
-The correct validation outcome is a per-person recoverability distribution, not only an overall hit rate. Predeclare chart-only candidate moderators (tight-aspect density, angular exactness, model information content, score-margin sharpness) and test whether they predict concealed-date rank on untouched participants. Do not define "high-signal people" after seeing who was successfully recovered.
+The correct next validation is a **per-person recoverability distribution**. Before revealing outcomes, compute chart-only candidate moderators such as:
+- number/density of partile aspects used by the frozen rule library;
+- rarity of the person's full rule signature in the century universe;
+- size/duration of the maximum-score plateau;
+- number of tied dates/minutes;
+- score margin to the nearest competing dates.
 
-This is consistent with the project's existing responder-heterogeneity and Survey-v2 recoverability safeguards in docs/14_responder_heterogeneity.md and docs/23_survey_v2_recoverability.md.
+Then test prospectively whether those frozen moderators predict concealed-date recovery on untouched participants. Do not define "easy people" as the people who happened to recover successfully.
+
+This is consistent with the project's existing responder-heterogeneity and Survey-v2 recoverability safeguards in `docs/14_responder_heterogeneity.md` and `docs/23_survey_v2_recoverability.md`.
+
+## Legacy V3.6 diagnostic retained separately
+
+For historical comparison only: at the older V3.6 local score optimum (10:36 UTC), Pluto-MC is almost exact (~0.000576°). Zero of the 10,000 random charts had Pluto-MC that close (Wilson 95% upper bound ~0.0384%). This is not part of the current six-rule model and was selected by an older score that explicitly rewarded Pluto-MC.
 
 ## Files
 
-- Script: scripts/benchmark_owner_orb_tightness_10k.py
-- Full machine-readable result: experiments/astrohd/owner_orb_tightness_10k_20260928.json
+- Script: `scripts/benchmark_owner_orb_tightness_10k.py`
+- Full machine-readable result: `experiments/astrohd/owner_orb_tightness_10k_20260928.json`
+- Current six-rule authority: `tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-SIX-RULE-MODEL-20260925.json`
+- Exact century result: `experiments/astrohd/v14_exact_century_20260925/result.json`
