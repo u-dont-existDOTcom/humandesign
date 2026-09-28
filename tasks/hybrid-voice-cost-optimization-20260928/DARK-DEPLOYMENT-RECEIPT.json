@@ -1,0 +1,56 @@
+{
+  "schema": "life-patterns-dark-deployment-receipt-v1",
+  "recorded_at": "2026-09-28T21:41:52.833332+00:00",
+  "repository": "u-dont-existDOTcom/humandesign",
+  "branch": "chat/hybrid-voice-cost-optimization-20260928",
+  "candidate_commit": "8978e543b492c4497d501c4f4d2d2c296f7a312f",
+  "railway": {
+    "project_id": "97658d58-84ab-40c8-ab1d-1be06600c4b5",
+    "environment_id": "b9916074-da51-46a1-8d7d-fd618b3c3d2a",
+    "service_id": "30746eb8-07c9-42e7-8825-152124b9337d",
+    "service_name": "life-patterns-participant",
+    "deployment_id": "2fb89371-12bf-43cf-969f-ae0ee1b9dc06",
+    "deployment_status": "SUCCESS",
+    "domain": "life-patterns-participant-production.up.railway.app",
+    "volume": {
+      "id": "928957b0-0128-4900-86f2-205d3b7f69d7",
+      "path": "/data",
+      "size_mb": 5000
+    }
+  },
+  "health": {
+    "status": "ok",
+    "version": "railway-participant-v2.2-cost-hybrid-20260928",
+    "participant_enabled": false,
+    "provider": "venice",
+    "provider_configured": false,
+    "persistence": "encrypted_sqlite",
+    "instrument_version": "a54c578c2fe3eb68bd96fe6cb07956cc0ccb02903e38a7a34c3f0a6643ba274e"
+  },
+  "runtime_guards": {
+    "PARTICIPANT_LIVE_ENABLED": "0",
+    "PARTICIPANT_MAX_MODEL_CALLS": "12",
+    "PARTICIPANT_BUILD_COMMIT": "8978e543b492c4497d501c4f4d2d2c296f7a312f",
+    "participant_gateway_token_present": false
+  },
+  "paid_inference_used_for_deploy": false,
+  "openrouter_used": false,
+  "live_participant_inference_exercised": false,
+  "original_owner_service": {
+    "service_id": "df2bf91c-7515-4c2e-860f-43c61286a7ab",
+    "latest_deployment_id": "2d60d3dd-2634-427c-a48f-62a36ee27350",
+    "latest_deployment_status": "SUCCESS",
+    "changed_by_this_task": false
+  },
+  "assurance": {
+    "dark_preview_only": true,
+    "not_release_certified": true,
+    "reviewer_explicit_dark_deploy_blocker": false,
+    "release_debt_receipt": "tasks/hybrid-voice-cost-optimization-20260928/VERIFICATION.json",
+    "live_enable_requires": "Resolve Venice API credit/access and remaining repository release debt, then explicitly authorize paid/live inference and update the exact-build activation helper."
+  },
+  "rollback": {
+    "railway_deployment_can_rollback": true,
+    "previous_deployment_id": "de69bb8f-4c6f-4ffd-95ff-6bb99588166f"
+  }
+}

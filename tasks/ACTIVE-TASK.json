@@ -4,7 +4,7 @@
   "requiredBranch": "chat/hybrid-voice-cost-optimization-20260928",
   "implementationAuthorized": true,
   "assuranceLane": "iteration dark preview behind hard disabled inference; live enable remains release",
-  "status": "dark_deploy_candidate_verified_with_baseline_release_debt",
+  "status": "dark_preview_deployed_voice_bundle_ready",
   "ownerOutcome": "Use voice-first ChatGPT when it improves answer richness; keep Railway for durable provenance and only useful clarifications; reduce API cost enough for the Venice daily allowance; use subscription Codex for development probes rather than paid API.",
   "parentTaskRef": "chat/participant-railway-venice-20260927-2234@dabcb1a6b60e7fd85d5765a780f2c9f933ff61b5",
   "currentMethod": "tasks/hybrid-voice-cost-optimization-20260928/VOICE-FIRST-HYBRID-PILOT.md",
@@ -14,15 +14,22 @@
     "tasks/hybrid-voice-cost-optimization-20260928/MODE-COMPARISON.md",
     "tasks/hybrid-voice-cost-optimization-20260928/VERIFICATION.json",
     "tasks/hybrid-voice-cost-optimization-20260928/CROSS-FAMILY-REVIEW.md",
-    "tasks/hybrid-voice-cost-optimization-20260928/REVIEW-DISPOSITION.md"
+    "tasks/hybrid-voice-cost-optimization-20260928/REVIEW-DISPOSITION.md",
+    "tasks/hybrid-voice-cost-optimization-20260928/DARK-DEPLOYMENT-RECEIPT.json"
   ],
   "production": {
     "service": "life-patterns-participant",
     "existingProvider": "venice",
     "currentExternalBlocker": "provider_http_402 / insufficient available API credit on prior live runtime",
     "participantLiveEnabledObserved": false,
-    "optimizationDeployed": false,
-    "paidInferenceUsedForThisOptimization": false
+    "optimizationDeployed": true,
+    "paidInferenceUsedForThisOptimization": false,
+    "deployedCommit": "8978e543b492c4497d501c4f4d2d2c296f7a312f",
+    "deploymentId": "2fb89371-12bf-43cf-969f-ae0ee1b9dc06",
+    "gatewayTokenPresent": false,
+    "maxModelCalls": 12,
+    "healthVersion": "railway-participant-v2.2-cost-hybrid-20260928",
+    "providerConfiguredObserved": false
   },
   "candidate": {
     "voiceFirstLongInterview": true,
@@ -63,18 +70,22 @@
     "crossFamilyReview": "Initial FINDS_ERROR and one reconciliation FINDS_ERROR; all concrete remaining findings subsequently repaired/tested; reviewer explicitly cleared dark deploy",
     "privateDataPublished": false
   },
-  "nextAction": "Commit/push candidate, deploy only life-patterns-participant as a dark preview with PARTICIPANT_LIVE_ENABLED=0, no participant gateway token and PARTICIPANT_MAX_MODEL_CALLS=12. Do not enable live inference until Venice credit/access and release debt are separately resolved.",
+  "nextAction": "Deliver voice-GPT setup bundle for owner configuration. Keep Railway inference disabled. Use new development records to compare voice-first source richness and Railway clarification burden; do not spend Venice credit unless owner explicitly reauthorizes live inference.",
   "stopAdmission": {
-    "parentOutcome": "OPEN_OPTIMIZATION_AND_HYBRID_COLLECTION",
-    "currentOperation": "DARK_DEPLOY_READY",
-    "nextActor": "supervisor deploys disabled preview; owner later evaluates voice-first collection and authorizes any paid/live inference",
+    "parentOutcome": "OPEN_HYBRID_COLLECTION_EXPERIMENT",
+    "currentOperation": "DARK_RAILWAY_PREVIEW_DEPLOYED_AND_VERIFIED",
+    "remainingGap": "Owner-side Custom GPT configuration/participant collection; live Railway inference remains intentionally disabled and spending-gated.",
+    "nextActor": "owner for Custom GPT UI setup and participant use; supervisor for later analysis/import",
+    "authority": "No paid/live inference authorization is active.",
+    "blockerEvidence": "Venice previously returned provider_http_402; participant service is intentionally dark with no gateway credential.",
     "notPerformed": [
-      "no Venice paid test",
+      "no Venice paid inference",
       "no OpenRouter spend",
-      "no live inference enable",
+      "no live participant inference",
       "no merge to main",
       "no legacy GPT rewrite"
     ]
   },
-  "updatedAt": "2026-09-28T21:34:52.410837+00:00"
+  "updatedAt": "2026-09-28T21:41:52.833332+00:00",
+  "remaining": "Dark Railway preview complete. Owner can configure/share voice-first ChatGPT collector and collect development records. Before live Railway inference, resolve Venice API credit/access and recorded release debt, update activation helper to the exact reviewed v2.2 build, and explicitly authorize paid/live inference."
 }
