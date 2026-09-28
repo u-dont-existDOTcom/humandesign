@@ -1,0 +1,32 @@
+{
+  "schema": "life-patterns-voice-gpt-bundle-v1",
+  "version": "2026-09-28",
+  "instructions": {
+    "path": "reference/custom_gpt/life_patterns_voice_interviewer_v2.md",
+    "sha256": "986dd486aac41e33546cf8d5c731fc3483ee8c42a29ecf2288239b8d8626ffc9",
+    "characters": 7557,
+    "strict_linebreak_count": 7691
+  },
+  "knowledge_files": [
+    {
+      "path": "tasks/scenario-survey-v7-redesign-20260922/INTERVIEW-PROTOCOL-v6.md",
+      "sha256": "6e51434465450966230596534a1631d0072d4cb15b1460e3a5cd1d67f53d7f53"
+    },
+    {
+      "path": "tasks/scenario-survey-v7-redesign-20260922/interviewer-bank-v7.json",
+      "sha256": "f7edc34b8f4cf478ddb39f4886e39b6e5c1a54e21c7f1e3a9ec95419af2780a6"
+    },
+    {
+      "path": "tasks/scenario-survey-v7-redesign-20260922/EVIDENCE-GUIDE-v7.json",
+      "sha256": "f87916dfdf6c6616e7787057b870fbda60858a42747763bb9a044d225cd4729c"
+    }
+  ],
+  "birth_or_chart_material_in_bundle": false,
+  "runtime_actions_required": false,
+  "intended_collection_modes": [
+    "chatgpt_voice",
+    "chatgpt_text",
+    "mixed"
+  ],
+  "handoff": "Frozen JSON may be imported into Railway for source-preserving clarification only."
+}

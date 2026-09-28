@@ -147,7 +147,23 @@ class Store:
             rows = db.execute("SELECT payload FROM sessions ORDER BY created DESC").fetchall()
         return [
             {k: state[k] for k in ("session_id", "phase", "created_at", "revision")}
-            | {"turn_count": len(state["turns"]), "error_code": state.get("error")}
+            | {
+                "turn_count": len(state["turns"]),
+                "error_code": state.get("error"),
+                "collection_mode": state.get("collection_mode", "unknown"),
+                "model_calls": sum(
+                    1 for call in state.get("calls", []) if call.get("provider") == "venice"
+                ),
+                "prompt_tokens": sum(
+                    int(call.get("prompt_tokens") or 0) for call in state.get("calls", [])
+                ),
+                "completion_tokens": sum(
+                    int(call.get("completion_tokens") or 0) for call in state.get("calls", [])
+                ),
+                "request_chars": sum(
+                    int(call.get("request_chars") or 0) for call in state.get("calls", [])
+                ),
+            }
             for row in rows
             for state in [self.decode(row[0])]
         ]

@@ -65,6 +65,7 @@ with tempfile.TemporaryDirectory() as folder:
             page.on("pageerror", lambda e: errors.append(str(e)))
             page.goto(f"http://127.0.0.1:{port}/#join={config.join_token}")
             page.locator("#agree").wait_for(state="visible")
+            assert page.locator("#retrospective-ok").is_checked() is False
             page.locator("#agree").click()
             page.locator("#question-panel").wait_for(state="visible", timeout=15000)
             assert "[route: A0]" in page.locator("#question").inner_text()
@@ -74,7 +75,7 @@ with tempfile.TemporaryDirectory() as folder:
             page.locator("#status").filter(has_text="semantic pass").wait_for(
                 state="visible", timeout=10000
             )
-            page.locator("#question").filter(has_text="[route: G02]").wait_for(
+            page.locator("#question").filter(has_text="[route: G23]").wait_for(
                 state="visible", timeout=15000
             )
             fake.review = True
@@ -90,6 +91,7 @@ with tempfile.TemporaryDirectory() as folder:
             data = json.loads((r / "browser-synthetic-export.json").read_text())
             assert len(data["turns"]) == 2 and data["interview_status"] == "complete"
             assert data["participant_review"]["confirmed"] is True
+            assert data["collection_preferences"]["retrospective_questions_welcome"] is False
             assert data["turns"][0]["answer_text"] == "I sort messages by travel, cost and time."
             page.reload()
             page.locator("#done").wait_for(state="visible", timeout=10000)

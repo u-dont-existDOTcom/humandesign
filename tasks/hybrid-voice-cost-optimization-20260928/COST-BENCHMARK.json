@@ -1,0 +1,45 @@
+{
+  "schema": "life-patterns-inference-context-benchmark-v3",
+  "measured_on": "one private 96-turn development record; participant text and identity not emitted",
+  "old_planner_request_chars": 175183,
+  "optimized_bulk": {
+    "planner_chars": 99309,
+    "review_chars": 33959,
+    "pair_chars": 133268,
+    "conservative_pair_tokens_at_4_chars": 33317,
+    "candidate_routes": 78,
+    "serialized_context_chars": 91350
+  },
+  "optimized_clarification": {
+    "planner_chars": 23994,
+    "review_chars": 6001,
+    "pair_chars": 29995,
+    "conservative_pair_tokens_at_4_chars": 7499,
+    "candidate_routes": 12,
+    "serialized_context_chars": 16035
+  },
+  "planner_request_reduction_percent": 43.3,
+  "session_planning_proxy": {
+    "assumption": "one bulk Plan+Admission plus at most three ordinary Plan+Admission pairs before the 4-call final-review reserve; no repair calls",
+    "conservative_input_equivalent_tokens_at_4_chars": 55814,
+    "excludes": "actual completion/reasoning tokens and repair-call variation; provider telemetry is authoritative"
+  },
+  "runtime_guards": {
+    "routine_context_chars_max": 35000,
+    "bulk_or_review_context_chars_max": 110000,
+    "model_calls_per_session_default_max": 12,
+    "pre_review_model_calls_max": 8,
+    "final_review_model_calls_reserved": 4,
+    "provider_max_completion_tokens": "unchanged prior setting 25000 pending exact Venice/XHigh validation"
+  },
+  "retrospective_default": "optional-retrospective routes excluded unless explicitly welcomed",
+  "integrity_repairs": [
+    "reviewer source comes from authoritative server record",
+    "bidirectional correction chains and correction-facet guide expansion",
+    "bulk addressed-route metadata independently admitted with route definitions",
+    "failed provider Plan/Admission attempts count toward the model-call ceiling",
+    "metadata and quarantined turns excluded from export coverage",
+    "mixed import/new-turn sequencing"
+  ],
+  "caveat": "Character/token conversion is a conservative planning proxy. Production telemetry remains authoritative for actual token usage and cost."
+}

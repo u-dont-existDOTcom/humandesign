@@ -4,7 +4,9 @@ Separate from the historical owner and chart/scoring apps. The full reviewed V2 
 
 ## Status
 
-Implemented and tested with synthetic model responses. Venice is the only inference provider. The current deployment configuration is deliberately disabled (`PARTICIPANT_LIVE_ENABLED=0`) and contains no gateway token: a real authenticated Venice smoke request was denied by the interactive tool security boundary. Do not treat mocked tests or a green health endpoint as live inference evidence. Do not route around that denial. Participant cutover remains incomplete until the authorized connectivity/activation boundary is cleared and a real synthetic interview succeeds.
+The service has previously completed a real Railway -> Venice synthetic pipeline, but the live provider later returned HTTP 402 after available API credit was exhausted. Current deployment/runtime status is tracked in `tasks/ACTIVE-TASK.json`; do not infer it from this README.
+
+The current source candidate is the cost-optimized hybrid architecture: voice/text ChatGPT can collect the long source interview, while Railway preserves provenance and asks only useful clarifications. Venice remains the production inference provider for Railway; subscription-authenticated Codex is development-only. No paid Venice call is required to verify this candidate's prompt/schema behavior.
 
 ## Data and identity
 
@@ -77,3 +79,35 @@ The status card shows total and stage elapsed time, server acknowledgement age, 
 A provider 402 is a `provider_blocked` state. Raw answers remain saved; model retries do not resume automatically. Existing `error` records carrying `provider_http_402` migrate when read. After resolving Venice API credit, use the existing authenticated researcher page's “Allow retry after fixing Venice API credit” action. It does not purchase credit, rotate a credential, certify the balance, or execute inference itself.
 
 Run the synthetic UI check with `python apps/life-patterns-participant/scripts/browser_heartbeat_smoke.py --browser /path/to/chromium --output /tmp/heartbeat-proof`. No provider credentials or real participant data are used.
+
+## Voice-first hybrid collection and inference budget
+
+The preferred development path is now **voice-first ChatGPT collection -> frozen JSON -> Railway clarification only when useful**. Railway remains available for fully typed collection, but the research system does not assume that an hour of typing is measurement-equivalent to a natural spoken interview.
+
+The voice collector bundle is under `reference/custom_gpt/`:
+
+- `life_patterns_voice_interviewer_v2.md` — must-follow behavior/accuracy instructions;
+- `life_patterns_voice_gpt_manifest_v2.json` — hashes and size receipt;
+- `LIFE-PATTERNS-VOICE-GPT-SETUP.md` — setup and participant workflow.
+
+The collector uses the same frozen v7 protocol/bank/evidence guide as Knowledge. It includes the core attribution/quotation/absence/correction checks adapted from PR #42 without merging that older AstroHD owner-pilot PR. Voice/text mode is recorded explicitly and survives Railway import.
+
+### Cost architecture
+
+The server still keeps the complete raw source and full frozen instrument locally, but routine semantic calls no longer resend them. The planner receives exact pending/current source plus only required antecedent/recent turns, the compact accepted evidence ledger, at most 12 deterministically eligible routes, and evidence-guide entries relevant to the pending answer.
+
+The independent admission call receives only proposal-relevant source, the selected route's full admission/interpretation constraints, the used evidence-guide entries and any evidence being amended. A bulk ChatGPT import is the exception: the complete source is reviewed once so the next clarification is not already answered somewhere in the transcript.
+
+Hard runtime guards prevent silent prompt growth: 35,000 serialized context characters for routine calls and 110,000 for a bulk import. Default model-call ceiling is 12 actual semantic model calls per session, with two Plan+Admission pairs reserved so a later review correction can still use the one permitted repair. Output-token ceilings remain at the previously exercised provider setting until exact Venice/XHigh truncation behavior can be tested without consuming scarce development credit. These are spend guards, not survey-completeness rules.
+
+Production telemetry records prompt/completion tokens plus request/context characters. `scripts/analyze_collection_modes.py` compares voice/text modes descriptively and can add cost estimates when explicit current per-million token rates are supplied.
+
+### Development inference
+
+Do not consume Venice credit for ordinary semantic development probes. `scripts/codex_dev_probe.py` runs the planner or admission prompt through the subscription-authenticated Codex CLI and validates the returned JSON locally. It is a development harness only; it is not a participant/public inference backend.
+
+Railway Cloud Agents can host Codex with available Codex credentials, so the same dev harness may be run there when that agent is reachable. Railway Agent itself is separately token-metered and is not treated as free inference. A Cloud Agent VM also has VM cost while awake; sleep it when not in use.
+
+### Mode comparison
+
+`scripts/analyze_collection_modes.py` reports answer-length distribution, conditions/corrections, neutral-evidence/facet yield, Railway clarification burden and model usage by explicit collection mode. These are product/measurement diagnostics, not evidence that voice and typed modes are psychometrically equivalent.

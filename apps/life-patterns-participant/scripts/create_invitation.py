@@ -29,6 +29,7 @@ FORBIDDEN_KEYS = {
     "human_design_type",
 }
 SOURCE_TYPES = {"edited_response_record", "raw_transcript", "prior_json", "answer_only_notes"}
+SOURCE_MODES = {"railway_text", "chatgpt_voice", "chatgpt_text", "mixed", "unknown"}
 
 
 def reject_target_fields(value, path="root"):
@@ -50,6 +51,7 @@ def main() -> int:
     parser.add_argument(
         "--source-type", default="edited_response_record", choices=sorted(SOURCE_TYPES)
     )
+    parser.add_argument("--source-mode", default="unknown", choices=sorted(SOURCE_MODES))
     parser.add_argument(
         "--origin", default="https://life-patterns-participant-production.up.railway.app"
     )
@@ -63,6 +65,9 @@ def main() -> int:
     if not isinstance(turns, list):
         raise SystemExit("Record must contain a turns list.")
     reject_target_fields(record)
+    source_mode = args.source_mode
+    if source_mode == "unknown" and record.get("collection_mode") in SOURCE_MODES:
+        source_mode = str(record["collection_mode"])
     if args.validate_only:
         print(f"VALID: {len(turns)} turns, no forbidden birth/chart/ranking keys detected.")
         return 0
@@ -71,7 +76,11 @@ def main() -> int:
     if len(token) < 32:
         raise SystemExit("Admin token file is missing or invalid.")
     origin = args.origin.rstrip("/")
-    payload = {"source_type": args.source_type, "record": record}
+    payload = {
+        "source_type": args.source_type,
+        "source_mode": source_mode,
+        "record": record,
+    }
     request = urllib.request.Request(
         origin + "/api/admin/invitations",
         data=json.dumps(payload).encode(),
@@ -101,6 +110,7 @@ def main() -> int:
         "consent_required": invitation["consent_required"],
         "resume_link": link,
         "source_type": args.source_type,
+        "source_mode": source_mode,
     }
     output.write_text(json.dumps(result, indent=2) + "\n")
     os.chmod(output, 0o600)

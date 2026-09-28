@@ -46,6 +46,8 @@ function render(next){
   for(const [id,phases] of Object.entries({"question-panel":["awaiting_answer"],"review-panel":["review"],done:["complete","stopped"],"retry-panel":["error"],paused:["paused"]}))show(id,phases.includes(p));
   show("controls",!["complete","stopped","declined"].includes(p));show("correction-panel",["awaiting_answer","review","ready","error","paused"].includes(p)&&state.turns.length>0);
   el("import-notice").textContent=state.turns.length?`${state.turns.length} previous responses are already included. You do not need the old chat.`:"";
+  if(p==="consent")el("retrospective-ok").checked=state.collection_preferences?.retrospective_questions_welcome===true;
+  if(!["consent","declined"].includes(p))el("retrospective-workspace").checked=state.collection_preferences?.retrospective_questions_welcome===true;
   el("agree").disabled=!state.ready;el("question").textContent=state.question?.text||"";el("turn-count").textContent=`(${state.turns.length})`;
   const history=el("history-items");history.replaceChildren();const selection=el("correction-target");const selected=selection.value;selection.replaceChildren();
   state.turns.forEach((t,i)=>{const item=node("div","","history-turn");item.append(node("small",`${i+1} · ${t.turn_id}`),node("p",t.question_text||"No original question recorded."),node("p",t.answer_text??"No answer recorded.","answer-text"));history.append(item);const option=node("option",`${i+1}. ${(t.question_text||t.answer_text||"Response").slice(0,80)}`);option.value=t.turn_id;selection.append(option);});
@@ -58,7 +60,7 @@ function render(next){
   el("error-detail").textContent=state.error||"The last operation did not finish. Retry without retyping saved answers.";
   el("done-text").textContent=p==="complete"?"You confirmed this version. Its final file will not change.":"You stopped the interview. Completed answers are saved; unfinished parts remain explicit.";
   status(state.error||(p==="planning"?(state.processing?.message||`Preparing the next step. ${state.turns.length} responses saved.`):p==="consent"&&!state.ready?"The study is not open yet: Venice activation is pending.":p==="declined"?"The interview has stopped. No research export was created.":`${state.turns.length} responses saved · ${p.replaceAll("_"," ")}`));
-  show("limited",p==="resource_limited");
+  show("limited",p==="resource_limited");if(p==="resource_limited"){const oversized=state.error==="model_context_budget_exceeded";el("limited-title").textContent=oversized?"Saved · This record needs researcher-side compaction":"Saved · Study processing limit reached";el("limited-detail").textContent=oversized?"Your answers are safe. This record is larger than the automatic model-context cost guard, so the researcher must prepare a compact continuation before more AI processing. Do not repeat your answers.":"Your record is still partial, not a completed survey or participant stop. The researcher can adjust the study processing allowance; you do not need to repeat your answers.";}
   if(p==="review"&&!state.review.summary_shown&&!writing)markReviewSeen();
 }
 async function refresh(){try{render(await api("/api/session"));}catch(error){status(error.message);}finally{schedule();}}
@@ -74,17 +76,18 @@ async function pump(){
   busy=true;status("Your answers are saved. Starting the next processing step…");
   try{render(await api("/api/next",{}));}catch(error){if(error.status!==409)status(error.message);await refresh();}finally{busy=false;schedule();}
 }
-async function command(action,text="",target=null){
+async function command(action,text="",target=null,retrospectiveQuestionsWelcome=null){
   if(writing||!state)return false;writing=true;
-  const same=pendingWrite&&pendingWrite.action===action&&pendingWrite.text===text&&pendingWrite.target===target;
-  const payload=same?pendingWrite:{revision:state.revision,operation_id:crypto.randomUUID(),action,text,target};pendingWrite=payload;
+  const same=pendingWrite&&pendingWrite.action===action&&pendingWrite.text===text&&pendingWrite.target===target&&pendingWrite.retrospective_questions_welcome===retrospectiveQuestionsWelcome;
+  const payload=same?pendingWrite:{revision:state.revision,operation_id:crypto.randomUUID(),action,text,target,retrospective_questions_welcome:retrospectiveQuestionsWelcome};pendingWrite=payload;
   try{render(await api("/api/operations",payload));pendingWrite=null;return true;}
   catch(error){if(error.status===409){pendingWrite=null;await refresh();}status(error.message+" Your unsent text remains below.");return false;}
   finally{writing=false;schedule();}
 }
 async function markReviewSeen(){await command("review_seen");}
 el("check-status").onclick=refresh;
-el("agree").onclick=()=>command("consent");el("decline").onclick=()=>command("decline");
+el("agree").onclick=()=>command("consent","",null,el("retrospective-ok").checked);el("decline").onclick=()=>command("decline");
+el("retrospective-workspace").onchange=()=>command("set_retrospective_preference","",null,el("retrospective-workspace").checked);
 el("pause").onclick=()=>command("pause");el("stop").onclick=()=>command("stop");el("resume").onclick=()=>command("resume");
 el("send").onclick=async()=>{const text=el("answer").value;if(await command("answer",text)&&!state.error)el("answer").value="";};
 el("skip").onclick=()=>command("skip");el("retry").onclick=()=>pumpRetry();

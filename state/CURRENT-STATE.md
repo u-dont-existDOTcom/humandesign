@@ -1,13 +1,61 @@
-# Current state — participant heartbeat and payment-required hotfix
+# Current state — voice-first collection / compact Railway clarification
 
-Read `tasks/ACTIVE-TASK.json` and `tasks/participant-heartbeat-402-20260928/CHANGE-NOTE.md`.
+Updated 2026-09-28. Branch: `chat/hybrid-voice-cost-optimization-20260928`, based on the current participant-service line at `dabcb1a6b60e7fd85d5765a780f2c9f933ff61b5`.
 
-The owner requested visible liveness/progress after a long wait ended in `provider_http_402`. The actual gateway trace confirms three lengthy successful HTTP responses followed by a fast 402. The failed call's original body and live balance are unavailable. Venice documents 402 as insufficient API credit; no purchase or alternate provider is authorized by this report.
+## Owner outcome
 
-The isolated hotfix adds elapsed/stage clocks, server polling freshness, guarded worker heartbeat and optional model-stream metadata; it does not invent a completion percentage. A 402 becomes a terminal provider-blocked session with clear participant messaging, no automatic retry and source-preserving migration of prior errors. The researcher can acknowledge a resolved API-credit issue and permit a future retry through the authenticated admin page.
+The long Life Patterns interview should not require an hour of typing when voice produces richer answers. The development direction is now **voice-first ChatGPT collection -> frozen behavioral JSON -> Railway durable provenance and only genuinely useful clarifications**. Railway text remains available as a comparison mode; no claim of voice/text psychometric equivalence is made.
 
-The full affected service tests and headless mobile heartbeat/offline/402/recovery scenario passed. No live inference request was initiated. Survey authorities, model/effort and raw participant sources are unchanged. Deploy this tested candidate only to the participant service; preserve the original owner app and unrelated staged Railway changes.
+API inference must fit the owner's limited Venice allowance. OpenRouter is not used. Development semantic probes use the owner's subscription-authenticated Codex CLI where available rather than Venice API credit.
 
-## Deployed checkpoint
+## Cost diagnosis and repair
 
-The heartbeat/payment fix is live in `d977d44b96e6e9360b4ae254207705040a7766dd` (deployment `64523599-bbfd-44c0-aeb8-925baadf6c08`). Health and exact public assets were verified. The external API-credit problem is not repaired and no live inference retry was made. Refreshing the private participant page loads the new UI; after checking/resolving Venice API credit, the owner may acknowledge that in the researcher page to release the payment-blocked session. Do not claim the billing problem resolved from a green health check.
+The prior Railway planner repeatedly sent the full protocol/controller, all 79 routes, all 73 evidence facets and accumulated transcript, followed by a second large independent-admission request. One private 96-turn development record measured ~175k characters for the old planner request alone; participant text/identity were not published.
+
+The candidate keeps full raw source and frozen authority server-side but compacts model context:
+
+- one complete-source bulk review after import;
+- later calls receive exact current/pending source plus necessary antecedents/recent turns;
+- accepted evidence is a compact ledger;
+- at most 12 deterministic eligible routes are supplied for ordinary clarification;
+- evidence guidance is scoped to relevant routes/facets;
+- the independent reviewer receives only proposal-relevant source, the selected route's route-specific rules and cited evidence guidance;
+- routine context fails closed above 35k serialized characters, bulk above 110k;
+- output-token ceiling remains at the previously exercised provider setting; proposed low caps are deferred until exact Venice/XHigh truncation behavior can be tested without consuming scarce development credit;
+- default model-call ceiling: 12 actual semantic calls/session, with only 8 available before final review so both final-review Plan+Admission attempts remain reserved;
+- optional-retrospective routes are excluded unless the participant explicitly welcomed earlier-life comparisons.
+
+The latest aggregate planning proxy on the private 96-turn development record is in `tasks/hybrid-voice-cost-optimization-20260928/COST-BENCHMARK.json`. It reports ~33.3k token-equivalent for the one-time bulk Plan+Admission pair, ~7.5k per later clarification pair, and ~55.8k input-equivalent for one bulk pair plus three clarification pairs before the four-call final-review reserve. These are planning proxies, not provider-billed totals; actual completion/reasoning tokens remain provider-dependent.
+
+## Voice-first collector
+
+The development Custom GPT bundle is under `reference/custom_gpt/`:
+
+- `life_patterns_voice_interviewer_v2.md`
+- `life_patterns_voice_gpt_manifest_v2.json`
+- `LIFE-PATTERNS-VOICE-GPT-SETUP.md`
+
+It uses the frozen v7 protocol/bank/evidence guide as Knowledge and keeps must-follow collection/accuracy rules in Instructions. The instruction block is 7,691 characters on the repository's conservative count.
+
+The collector records collection mode and retrospective-question preference as nonbehavioral metadata. It treats the visible transcript—not inaccessible original audio—as the source record, labels model-exported transcript fidelity, exports collector evidence as unverified, preserves exact quotations, scopes absence claims to checked source, rechecks corrections, and does not infer motive/backstory/history. Railway preserves that source but does not admit GPT-authored evidence without its own independent admission. These are the core PR #42 claim-integrity protections adapted to the new collector. The older deployable interviewer remains unchanged because it is already at 7,933 strict characters.
+
+`apps/life-patterns-participant/scripts/analyze_collection_modes.py` provides a descriptive whole-pipeline CSV/JSON comparison of answer richness, conditions/corrections, collector-unverified versus Railway-admitted evidence, clarification burden and model/token usage. It explicitly does not establish voice/text equivalence or attribute a pipeline difference to voice alone.
+
+## Development inference
+
+`apps/life-patterns-participant/scripts/codex_dev_probe.py` runs planner/admission prompts through subscription-authenticated Codex CLI and validates the JSON locally. The final reconciled GPT-5.6 Sol XHigh synthetic probe selected fresh route G23 and independent admission approved first-pass. No paid API was used.
+
+The existing Railway Cloud Agent `codex-human-46r` is preserved and sleeping. Codex is installed there, but its saved refresh token was revoked; a cloud semantic probe was not run. Re-authentication is a dev-harness matter, not a production blocker.
+
+## Verification
+
+Final candidate evidence: focused reconciliation 73/73 PASS; complete participant-service suite 79/79 PASS; mobile browser smoke PASS with no JavaScript errors; repository-wide pytest 940 passed / 6 skipped; V7 authority verifier 497/497 PASS. The task app lint passes. Global Ruff, mypy and task-acceptance remain baseline-broken outside this task: 895 Ruff diagnostics across 56 unchanged files, mypy Python-3.11 target versus locked NumPy-2.5.2 3.12-only stub syntax, and missing parent oracle artifacts/worktree-local `.venv`. See `VERIFICATION.json`.
+
+Claude Opus 5.5 max returned FINDS_ERROR on the initial architecture check and again on the single reconciliation. The second review explicitly found no blocker to a dark deployment with inference disabled; every concrete remaining live-inference defect it identified was subsequently repaired and regression-tested. No third reviewer round is claimed.
+
+## Production boundary
+
+The existing Railway participant service has not yet been changed by this branch. Its provider previously returned HTTP 402 after available Venice API credit was exhausted; live inference remains disabled. The next boundary is a dark/reversible preview only: deploy this participant service with `PARTICIPANT_LIVE_ENABLED=0`, remove its participant gateway credential, and set `PARTICIPANT_MAX_MODEL_CALLS=12`. The old activation helper intentionally remains incompatible with this reviewed build so it cannot silently re-enable inference. Do not touch the historical owner service, accept unrelated Railway staged changes, buy credit, switch provider, or route public participants through Codex CLI.
+
+
+Historical owner-method correction remains in force: **there was never a completion policy** requiring predetermined question coverage. Natural stop is based on whether another route is both admissible and useful; the bank remains a menu, not a quota.

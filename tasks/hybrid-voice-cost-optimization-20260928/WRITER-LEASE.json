@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "status": "active",
+  "exclusive_writer": true,
+  "owned_branch": "chat/hybrid-voice-cost-optimization-20260928",
+  "integration_branch": "chat/participant-railway-venice-20260927-2234",
+  "integration_base_sha": "dabcb1a6b60e7fd85d5765a780f2c9f933ff61b5",
+  "scope": "Reduce participant inference token cost; add voice-first ChatGPT/structured-Railway hybrid measurement path; port claim-accuracy checks without changing astrology scoring."
+}

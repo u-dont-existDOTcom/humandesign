@@ -1,0 +1,92 @@
+{
+  "schema": "life-patterns-codex-development-probe-v2",
+  "synthetic_only": true,
+  "participant_data_used": false,
+  "paid_api": false,
+  "production_backend": false,
+  "route": "subscription-authenticated local Codex CLI",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "xhigh",
+  "checks": [
+    {
+      "stage": "planner_initial",
+      "context_chars": 12360,
+      "prompt_chars": 19492,
+      "result": "proposed G24"
+    },
+    {
+      "stage": "admission_initial",
+      "context_chars": 3860,
+      "prompt_chars": 6768,
+      "result": "rejected because retrospective welcome was not established"
+    },
+    {
+      "stage": "planner_repair",
+      "context_chars": 14630,
+      "prompt_chars": 21762,
+      "result": "selected route-tied WHY context repair"
+    },
+    {
+      "stage": "admission_repair",
+      "context_chars": 3712,
+      "prompt_chars": 6620,
+      "result": "approved"
+    }
+  ],
+  "meaning": "Compact prompts preserve independent semantic admission without paid API. The exact post-reconciliation synthetic path selected G23 and passed admission first-pass.",
+  "railway_cloud_agent": {
+    "agent": "codex-human-46r",
+    "status_after_check": "sleeping",
+    "codex_cli_present": "codex-cli 0.155.0",
+    "semantic_probe": "NOT_RUN",
+    "reason": "Codex credential refresh failed because the Cloud Agent refresh token was revoked; reauthentication is required before this development route can be used.",
+    "billing_action": "Agent returned to sleep immediately after the failed probe."
+  },
+  "public_inference_policy": "Codex CLI remains development-only; public participant inference is not routed through a subscription-authenticated coding CLI.",
+  "final_default_route_probe": {
+    "retrospective_questions_welcome": false,
+    "candidate_routes_excluded": [
+      "G24 optional_retrospective"
+    ],
+    "planner": {
+      "context_chars": 12355,
+      "prompt_chars": 19487,
+      "action": "ask",
+      "route_id": "G19"
+    },
+    "admission": {
+      "context_chars": 4358,
+      "prompt_chars": 7266,
+      "approved": true,
+      "errors": []
+    },
+    "repair_call_required": false,
+    "paid_api": false
+  },
+  "final_reconciled_probe": {
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "xhigh",
+    "retrospective_questions_welcome": false,
+    "planner": {
+      "context_chars": 15101,
+      "prompt_chars": 23335,
+      "action": "ask",
+      "route_id": "G23",
+      "evidence_items": 1,
+      "addressed_routes": 0
+    },
+    "admission": {
+      "context_chars": 4118,
+      "prompt_chars": 7333,
+      "approved": true,
+      "errors": [],
+      "context_supported": true,
+      "no_redundant_question": true,
+      "no_unsupported_extension": true,
+      "addressed_routes_supported": false
+    },
+    "repair_call_required": false,
+    "paid_api": false,
+    "production_backend": false
+  }
+}

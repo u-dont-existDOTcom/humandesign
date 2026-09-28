@@ -14,7 +14,8 @@ from pydantic import BaseModel, ConfigDict, Field
 
 from .store import Conflict, canonical
 
-VERSION = "railway-participant-v2.1-20260927"
+VERSION = "railway-participant-v2.2-cost-hybrid-20260928"
+COLLECTION_MODES = {"railway_text", "chatgpt_voice", "chatgpt_text", "mixed", "unknown"}
 SOURCES = {
     "INTERVIEW-PROTOCOL-v6.md": "5dc95763f65441d67c87b21116e00d7f2df04223",
     "interviewer-bank-v7.json": "cf6c60ec7206e07ee62b6148549e6d755bef8ac1",
@@ -96,7 +97,10 @@ def new_state(instrument_version: str, model: str, effort: str) -> dict:
         "consent": None,
         "turns": [],
         "source_records": [],
+        "collection_mode": "railway_text",
+        "collection_preferences": {"retrospective_questions_welcome": None},
         "evidence": [],
+        "addressed_routes": {},
         "dispositions": {},
         "pending_question": None,
         "processing": None,
@@ -114,9 +118,19 @@ def new_state(instrument_version: str, model: str, effort: str) -> dict:
     }
 
 
-def import_record(state: dict, record: dict, source_type: str, instrument: dict) -> None:
+def import_record(
+    state: dict,
+    record: dict,
+    source_type: str,
+    instrument: dict,
+    source_mode: str = "unknown",
+) -> None:
     if state["phase"] != "consent" or state["turns"] or state["source_records"]:
         raise Conflict("Import is available only before this interview begins.")
+    if source_mode == "unknown" and record.get("collection_mode") in COLLECTION_MODES:
+        source_mode = str(record["collection_mode"])
+    if source_mode not in COLLECTION_MODES:
+        raise ValueError("Unknown collection mode.")
     turns = record.get("turns")
     if not isinstance(turns, list) or len(turns) > 1000:
         raise ValueError("An import needs a turns list with at most 1000 entries.")
@@ -147,20 +161,57 @@ def import_record(state: dict, record: dict, source_type: str, instrument: dict)
                 walk(value)
 
     walk(record)
-    known = {q["id"] for q in bank(instrument)["questions"]}
+    questions = bank(instrument)["questions"]
+    known = {q["id"] for q in questions}
+    exact_question_ids = {
+        str(q["question"]).strip(): q["id"] for q in questions if isinstance(q.get("question"), str)
+    }
     state["source_records"].append(
         {
             "source_id": "import-1",
             "source_type": source_type,
+            "source_mode": source_mode,
             "received_at": utc(),
             "original_wording_verified": None,
             "historical_blinding": "unknown",
+            "source_fidelity": record.get("source_fidelity"),
+            "upstream_evidence_authority": record.get("evidence_authority"),
+            "upstream_evidence_admitted": False,
             "record_as_received": copy.deepcopy(record),
         }
     )
+    state["collection_mode"] = source_mode
+    retrospective = record.get("retrospective_questions_welcome")
+    if not isinstance(retrospective, bool) and isinstance(
+        record.get("collection_preferences"), dict
+    ):
+        retrospective = record["collection_preferences"].get("retrospective_questions_welcome")
+    if isinstance(retrospective, bool):
+        state.setdefault("collection_preferences", {})["retrospective_questions_welcome"] = (
+            retrospective
+        )
+
+    upstream_turn_ids: dict[str, str] = {}
+    for n, raw in enumerate(turns, 1):
+        if not isinstance(raw, dict):
+            continue
+        upstream_id = raw.get("turn_id")
+        if upstream_id is None:
+            continue
+        key = str(upstream_id)
+        if key in upstream_turn_ids:
+            raise ValueError("Imported turn identifiers must be unique.")
+        upstream_turn_ids[key] = f"import-{n:04d}"
+
     for n, raw in enumerate(turns, 1):
         if not isinstance(raw, dict):
             raise ValueError("Every turn must be an object.")
+        if source_mode in {"chatgpt_voice", "chatgpt_text", "mixed"} and (
+            "question_text" not in raw or "answer_text" not in raw
+        ):
+            raise ValueError(
+                "ChatGPT collection turns must explicitly contain question_text and answer_text."
+            )
         q = raw.get("question_text")
         a = raw.get("answer_text")
         if q is not None and not isinstance(q, str):
@@ -173,20 +224,44 @@ def import_record(state: dict, record: dict, source_type: str, instrument: dict)
             )
         old_id = raw.get("canonical_question_id", raw.get("question_id"))
         recorded = old_id in known
+        exact_id = exact_question_ids.get((q or "").strip()) if not recorded else None
+        resolved_id = old_id if recorded else exact_id
+        turn_role = raw.get("turn_role", "behavioral")
+        if turn_role not in {"behavioral", "collection_metadata"}:
+            turn_role = "behavioral"
+        turn_id = f"import-{n:04d}"
+        raw_correction_of = raw.get("correction_of")
+        correction_of = None
+        if raw_correction_of is not None:
+            correction_of = upstream_turn_ids.get(str(raw_correction_of))
+            if correction_of is None:
+                raise ValueError("Imported correction references an unknown source turn.")
+        mapped_antecedents = [
+            upstream_turn_ids[str(value)]
+            for value in raw.get("antecedent_turn_ids", [])
+            if str(value) in upstream_turn_ids
+        ]
         state["turns"].append(
             {
-                "turn_id": f"import-{n:04d}",
+                "turn_id": turn_id,
                 "sequence": n,
                 "turn_source": "import-1",
                 "question_text": q,
                 "answer_text": a,
-                "canonical_question_id": old_id if recorded else None,
-                "id_basis": "recorded" if recorded else "unknown",
+                "canonical_question_id": resolved_id,
+                "id_basis": (
+                    "recorded"
+                    if recorded
+                    else "exact_canonical_question_text"
+                    if exact_id
+                    else "unknown"
+                ),
+                "turn_role": turn_role,
                 "route_type": "imported_unknown_route",
                 "question_wording_status": "declared_original_unverified"
                 if source_type == "raw_transcript"
                 else "received_edited_or_unverified",
-                "antecedent_turn_ids": [],
+                "antecedent_turn_ids": mapped_antecedents,
                 "conditions": copy.deepcopy(raw.get("conditions", [])),
                 "corrections": copy.deepcopy(raw.get("corrections", []))
                 if isinstance(raw.get("corrections", []), list)
@@ -195,9 +270,17 @@ def import_record(state: dict, record: dict, source_type: str, instrument: dict)
                 "answer_status": "unassessed",
                 "recorded_at": raw.get("recorded_at"),
                 "original_record": copy.deepcopy(raw),
-                "correction_of": None,
+                "correction_of": correction_of,
             }
         )
+        if turn_role == "collection_metadata":
+            state["dispositions"][turn_id] = {
+                "turn_id": turn_id,
+                "status": "process_only",
+                "conditions": [],
+                "process_feedback_quotes": [],
+                "reason": "Collection metadata is preserved but excluded from behavioral evidence.",
+            }
 
 
 class StrictModel(BaseModel):
@@ -250,12 +333,18 @@ class Question(StrictModel):
     why_useful: str
 
 
+class AddressedRoute(StrictModel):
+    route_id: str
+    source_turn_ids: list[str] = Field(min_length=1)
+
+
 class Plan(StrictModel):
     action: Literal["ask", "process", "review", "pause", "stop", "hold"]
     dispositions: list[Disposition]
     evidence: list[Evidence]
     question: Question | None
     control_quote: ControlQuote | None
+    addressed_routes: list[AddressedRoute] = Field(default_factory=list)
     source_review_complete: bool = False
     reason: str
 
@@ -269,6 +358,7 @@ class Admission(StrictModel):
     control_is_participant_request: bool
     target_information_detected: bool = False
     bulk_source_review_supported: bool = False
+    addressed_routes_supported: bool = False
 
 
 def semantic_turns(state: dict) -> list[dict]:
@@ -287,7 +377,7 @@ def semantic_turns(state: dict) -> list[dict]:
             )
         }
         for t in state["turns"]
-        if not t.get("quarantined")
+        if not t.get("quarantined") and t.get("turn_role", "behavioral") == "behavioral"
     ]
 
 
@@ -303,14 +393,32 @@ def validate_plan(plan: Plan, state: dict, instrument: dict, pending: list[str])
     bulk_import_review = bool(pending) and all(
         str(turns[i].get("turn_source", "")).startswith("import-") for i in pending
     )
+    if plan.addressed_routes:
+        if not bulk_import_review:
+            raise ValueError(
+                "Cross-route addressed metadata is only admitted during complete import review."
+            )
+        seen_addressed: set[str] = set()
+        for addressed in plan.addressed_routes:
+            if addressed.route_id not in routes:
+                raise ValueError("Unknown addressed route.")
+            if addressed.route_id in seen_addressed:
+                raise ValueError("Addressed route identifiers must be unique.")
+            seen_addressed.add(addressed.route_id)
+            if any(turn_id not in pending for turn_id in addressed.source_turn_ids):
+                raise ValueError(
+                    "Addressed-route support must come from pending imported source turns."
+                )
+            if not any(
+                (turns[turn_id].get("answer_text") or "").strip()
+                for turn_id in addressed.source_turn_ids
+            ):
+                raise ValueError("Addressed route needs at least one answered source turn.")
+
     if plan.source_review_complete:
         if not bulk_import_review:
             raise ValueError(
                 "Bulk source-review completion is only valid for imported source turns."
-            )
-        if plan.action == "process":
-            raise ValueError(
-                "A complete imported-source review must reach a question, review, or control action."
             )
     elif sorted(disposition_ids) != sorted(pending):
         raise ValueError("Each pending non-bulk source turn needs exactly one disposition.")
@@ -395,7 +503,12 @@ def validate_plan(plan: Plan, state: dict, instrument: dict, pending: list[str])
 def export_record(state: dict, instrument: dict, final: bool = False) -> dict:
     routes = bank(instrument)["questions"]
     answered = {
-        t.get("canonical_question_id") for t in state["turns"] if t.get("answer_text") is not None
+        t.get("canonical_question_id")
+        for t in state["turns"]
+        if t.get("canonical_question_id")
+        and t.get("answer_text") is not None
+        and not t.get("quarantined")
+        and t.get("turn_role", "behavioral") == "behavioral"
     }
     reviewed = bool(state["review"].get("confirmed"))
     return {
@@ -410,6 +523,8 @@ def export_record(state: dict, instrument: dict, final: bool = False) -> dict:
             "evidence_guide_blob_sha": SOURCES["EVIDENCE-GUIDE-v7.json"],
         },
         "source_records": copy.deepcopy(state["source_records"]),
+        "collection_mode": state.get("collection_mode", "unknown"),
+        "collection_preferences": copy.deepcopy(state.get("collection_preferences", {})),
         "consent": {
             "research_use_consented": state["consent"] is True,
             "recorded_at": state.get("consented_at"),
@@ -432,6 +547,8 @@ def export_record(state: dict, instrument: dict, final: bool = False) -> dict:
         "stop_reason": state["stop_reason"],
         "turns": copy.deepcopy(state["turns"]),
         "neutral_evidence": copy.deepcopy(state["evidence"]),
+        "evidence_authority": "railway_independent_semantic_admission",
+        "addressed_routes": copy.deepcopy(state.get("addressed_routes", {})),
         "coverage": [
             {
                 "question_id": q["id"],

@@ -1,62 +1,80 @@
 {
   "schemaVersion": 1,
-  "taskId": "participant-heartbeat-402-20260928",
-  "requiredBranch": "chat/participant-heartbeat-402-20260928-0406",
+  "taskId": "hybrid-voice-cost-optimization-20260928",
+  "requiredBranch": "chat/hybrid-voice-cost-optimization-20260928",
   "implementationAuthorized": true,
-  "assuranceLane": "live participant hotfix: direct endpoint evidence + affected tests + reversible deploy",
-  "status": "heartbeat_payment_handling_deployed_external_billing_action_required",
-  "ownerOutcome": "Switch participant collection to separate Railway service using Venice, full reviewed V2 survey, durable state and server-side exports. Preserve owner app and historical research.",
-  "parentTaskRef": "chat/full-survey-participant-package-20260927@c3ac3d0834f9b2d276aa3e02fa90a94a5927ad76",
-  "currentMethod": "tasks/participant-heartbeat-402-20260928/CHANGE-NOTE.md",
-  "currentReceipt": "tasks/participant-heartbeat-402-20260928/VERIFICATION.json",
-  "deployment": {
-    "project_id": "97658d58-84ab-40c8-ab1d-1be06600c4b5",
-    "environment_id": "b9916074-da51-46a1-8d7d-fd618b3c3d2a",
-    "service_id": "30746eb8-07c9-42e7-8825-152124b9337d",
-    "volume_id": "928957b0-0128-4900-86f2-205d3b7f69d7",
-    "live_enabled": true,
-    "venice_token_injected": true,
-    "deployed_app_commit": "d977d44b96e6e9360b4ae254207705040a7766dd",
-    "deployment_id": "64523599-bbfd-44c0-aeb8-925baadf6c08"
+  "assuranceLane": "iteration dark preview behind hard disabled inference; live enable remains release",
+  "status": "dark_deploy_candidate_verified_with_baseline_release_debt",
+  "ownerOutcome": "Use voice-first ChatGPT when it improves answer richness; keep Railway for durable provenance and only useful clarifications; reduce API cost enough for the Venice daily allowance; use subscription Codex for development probes rather than paid API.",
+  "parentTaskRef": "chat/participant-railway-venice-20260927-2234@dabcb1a6b60e7fd85d5765a780f2c9f933ff61b5",
+  "currentMethod": "tasks/hybrid-voice-cost-optimization-20260928/VOICE-FIRST-HYBRID-PILOT.md",
+  "receipts": [
+    "tasks/hybrid-voice-cost-optimization-20260928/COST-BENCHMARK.json",
+    "tasks/hybrid-voice-cost-optimization-20260928/CODEX-DEV-PROBE.json",
+    "tasks/hybrid-voice-cost-optimization-20260928/MODE-COMPARISON.md",
+    "tasks/hybrid-voice-cost-optimization-20260928/VERIFICATION.json",
+    "tasks/hybrid-voice-cost-optimization-20260928/CROSS-FAMILY-REVIEW.md",
+    "tasks/hybrid-voice-cost-optimization-20260928/REVIEW-DISPOSITION.md"
+  ],
+  "production": {
+    "service": "life-patterns-participant",
+    "existingProvider": "venice",
+    "currentExternalBlocker": "provider_http_402 / insufficient available API credit on prior live runtime",
+    "participantLiveEnabledObserved": false,
+    "optimizationDeployed": false,
+    "paidInferenceUsedForThisOptimization": false
   },
-  "model": {
-    "provider": "venice",
-    "model": "openai-gpt-56-sol",
-    "reasoning_effort": "xhigh",
-    "automatic_fallback": false
+  "candidate": {
+    "voiceFirstLongInterview": true,
+    "railwayClarificationBackend": true,
+    "routineRouteShortlistMax": 12,
+    "routineContextCharsMax": 35000,
+    "bulkContextCharsMax": 110000,
+    "modelCallsPerSessionDefaultMax": 12,
+    "optionalRetrospectiveRequiresExplicitWelcome": true,
+    "collectionModePreserved": true,
+    "pr42CoreAccuracyRulesPorted": true,
+    "legacyOwnerPilotInstructionsModified": false,
+    "providerCompletionLimit": "unchanged prior 25000 setting; low caps deferred pending exact Venice/XHigh validation",
+    "preReviewModelCallsMax": 8,
+    "reviewCorrectionModelCallsReserved": 4
   },
-  "blocker": "External API payment-required response. No code, timer or automatic retry can establish adequate balance. No spending authorized.",
-  "remaining": "Owner checks/resolves Venice API credit, then acknowledges billing repair in the existing researcher page to allow the affected session to retry. Refresh the participant page to load the new heartbeat and payment message.",
-  "privateDataPublished": false,
-  "updatedAt": "2026-09-28T04:18:02.003643+00:00",
-  "currentHandoff": "tasks/participant-heartbeat-402-20260928/CHANGE-NOTE.md",
-  "reviewDisposition": "tasks/participant-railway-venice-20260927/REVIEW-DISPOSITION.json",
-  "executionBoundary": {
-    "participant_live_enabled": true,
-    "venice_token_injected": true,
-    "reviewer": "timed_out_no_verdict_after_15m_plus",
-    "background_reviewer_running": false,
-    "unrelated_railway_staged_changes": "not accepted"
+  "costEvidence": {
+    "oldPlannerRequestChars": 175183,
+    "bulkPairProxyTokens": 33317,
+    "routinePairProxyTokens": 7499,
+    "fullSessionInputEquivalentProxyTokens": 55814,
+    "caveat": "Character/token proxies exclude actual completion/reasoning tokens; provider telemetry is authoritative."
   },
-  "realVeniceEvidence": {
-    "gateway_smoke": "PASS",
-    "participant_pipeline_smoke": "PASS",
-    "provider": "venice",
-    "model": "openai-gpt-56-sol",
-    "effort": "xhigh",
-    "real_model_calls": 2,
-    "exact_answer_persisted": true,
-    "final_export_frozen": true,
-    "deployment_id": "cd3a1cdf-4528-434c-90f5-0cb88e610d6b",
-    "receipt": "tasks/participant-railway-venice-20260927/SUCCESSFUL-VENICE-ACTIVATION-20260928.json"
+  "developmentInference": {
+    "localCodex": "PASS final reconciled GPT-5.6 Sol XHigh Plan G23 + Admission approved, no paid API",
+    "railwayCloudCodex": "Codex present but saved refresh token revoked; agent returned to sleep",
+    "productionCodexBackend": false
   },
-  "manualActivation": "bash apps/life-patterns-participant/scripts/activate_venice.sh --activate",
-  "manualActivationScriptCommit": "81a055577a1c39eecce0d353b95e24d2cca2ad1a",
+  "verification": {
+    "focusedReconciliation": "73/73 PASS",
+    "fullParticipantService": "79/79 PASS",
+    "browserSmoke": "PASS synthetic mock only, no JS errors",
+    "repositoryPytest": "940 passed, 6 skipped",
+    "v7Authority": "497/497 PASS",
+    "globalRuff": "BASELINE_FAIL 895 diagnostics/56 unchanged files; task app lint PASS",
+    "mypy": "BASELINE_FAIL Python-3.11 target vs locked NumPy-2.5.2 3.12-only stub syntax",
+    "taskAcceptance": "BASELINE_INCOMPLETE missing parent oracle artifacts/worktree .venv",
+    "crossFamilyReview": "Initial FINDS_ERROR and one reconciliation FINDS_ERROR; all concrete remaining findings subsequently repaired/tested; reviewer explicitly cleared dark deploy",
+    "privateDataPublished": false
+  },
+  "nextAction": "Commit/push candidate, deploy only life-patterns-participant as a dark preview with PARTICIPANT_LIVE_ENABLED=0, no participant gateway token and PARTICIPANT_MAX_MODEL_CALLS=12. Do not enable live inference until Venice credit/access and release debt are separately resolved.",
   "stopAdmission": {
-    "parentOutcome": "OPEN_PENDING_EXTERNAL_API_CREDIT",
-    "currentOperation": "HEARTBEAT_AND_TERMINAL_402_FIX_DEPLOYED",
-    "nextActor": "Owner for API credit/billing decision; researcher-page acknowledgement then permits normal session continuation.",
-    "performed": "Live deployment plus exact asset/health readback; 41 service tests and synthetic browser offline/payment/recovery check.",
-    "not_performed": "No paid model retry, credit purchase, key change or private source upload."
-  }
+    "parentOutcome": "OPEN_OPTIMIZATION_AND_HYBRID_COLLECTION",
+    "currentOperation": "DARK_DEPLOY_READY",
+    "nextActor": "supervisor deploys disabled preview; owner later evaluates voice-first collection and authorizes any paid/live inference",
+    "notPerformed": [
+      "no Venice paid test",
+      "no OpenRouter spend",
+      "no live inference enable",
+      "no merge to main",
+      "no legacy GPT rewrite"
+    ]
+  },
+  "updatedAt": "2026-09-28T21:34:52.410837+00:00"
 }

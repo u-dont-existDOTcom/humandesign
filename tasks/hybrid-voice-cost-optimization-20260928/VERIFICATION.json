@@ -1,0 +1,74 @@
+{
+  "schema": "life-patterns-hybrid-cost-verification-v1",
+  "recorded_at": "2026-09-28T21:34:52.410837+00:00",
+  "branch": "chat/hybrid-voice-cost-optimization-20260928",
+  "paid_inference_used": false,
+  "openrouter_used": false,
+  "private_participant_text_published": false,
+  "candidate_checks": {
+    "focused_reconciliation": "73 passed, 0 failed",
+    "full_participant_service": "79 passed, 0 failed",
+    "mobile_browser_smoke": {
+      "status": "PASS",
+      "provider": "synthetic_mock_only",
+      "javascript_errors": 0,
+      "horizontal_overflow": false,
+      "live_venice_test": false
+    },
+    "v7_authority_verify": "497/497 PASS",
+    "targeted_app_lint": "PASS (Ruff F/E9/I across apps/life-patterns-participant)",
+    "git_diff_check": "PASS"
+  },
+  "repository_release_checkpoint": {
+    "pytest": "940 passed, 6 skipped",
+    "ruff": {
+      "status": "BASELINE_FAIL",
+      "diagnostics": 895,
+      "files": 56,
+      "changed_failure_files_in_this_task": 0,
+      "note": "Global lint debt is present on the parent commit; task app lint passes."
+    },
+    "mypy": {
+      "status": "BASELINE_ENV_CONFIG_FAIL",
+      "note": "Repo targets Python 3.11 in mypy while locked NumPy 2.5.2 stubs use Python-3.12 type syntax. pyproject.toml, mypy.ini and requirements-dev.lock are unchanged by this task."
+    },
+    "task_acceptance": {
+      "status": "BASELINE_INCOMPLETE",
+      "missing_parent_artifacts": [
+        "reports/known_month_oracle_1000/report.json",
+        "reports/known_month_oracle_1000/failure_report.json",
+        "reports/known_month_oracle_1000/leakage_audit.json",
+        "reports/known_month_oracle_1000/freeze_record.json",
+        "reports/known_month_oracle_1000/evaluation.json"
+      ],
+      "worktree_project_venv_missing": true
+    }
+  },
+  "cross_family": {
+    "model": "claude-opus-5-5",
+    "initial_verdict": "FINDS_ERROR",
+    "single_reconciliation_verdict": "FINDS_ERROR",
+    "dark_deploy_blocker_from_reviewer": false,
+    "subsequent_disposition": "All concrete remaining live-inference findings were repaired and regression-tested; no third review round was requested.",
+    "receipt": "tasks/hybrid-voice-cost-optimization-20260928/CROSS-FAMILY-REVIEW.md",
+    "disposition": "tasks/hybrid-voice-cost-optimization-20260928/REVIEW-DISPOSITION.md"
+  },
+  "development_semantic_probe": {
+    "provider": "subscription-authenticated local Codex CLI",
+    "model": "gpt-5.6-sol",
+    "effort": "xhigh",
+    "paid_api": false,
+    "planner_route": "G23",
+    "admission_approved": true,
+    "repair_call_required": false
+  },
+  "cost_benchmark": "tasks/hybrid-voice-cost-optimization-20260928/COST-BENCHMARK.json",
+  "dark_deploy_policy": {
+    "participant_live_enabled": false,
+    "participant_gateway_token_present": false,
+    "max_semantic_model_calls": 12,
+    "pre_review_semantic_calls_max": 8,
+    "review_semantic_calls_reserved": 4,
+    "not_release_certified": true
+  }
+}

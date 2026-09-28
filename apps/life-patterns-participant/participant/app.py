@@ -41,7 +41,7 @@ class Settings:
     effort: str = "xhigh"
     secure_cookies: bool = True
     maximum_sessions: int = 50
-    maximum_calls: int = 400
+    maximum_calls: int = 12
     live_enabled: bool = False
     public_origin: str = ""
 
@@ -70,6 +70,8 @@ class Settings:
             effort=os.environ.get("PARTICIPANT_REASONING", "xhigh"),
             live_enabled=os.environ.get("PARTICIPANT_LIVE_ENABLED") == "1",
             public_origin=os.environ.get("PARTICIPANT_PUBLIC_ORIGIN", "").rstrip("/"),
+            maximum_sessions=int(os.environ.get("PARTICIPANT_MAX_SESSIONS", "50")),
+            maximum_calls=int(os.environ.get("PARTICIPANT_MAX_MODEL_CALLS", "12")),
         )
 
 
@@ -96,15 +98,20 @@ class Operation(Body):
         "correct",
         "review_correction",
         "review_seen",
+        "set_retrospective_preference",
     ]
     text: str = Field(default="", max_length=20000)
     target: str | None = Field(default=None, max_length=100)
+    retrospective_questions_welcome: bool | None = None
 
 
 class Import(Body):
     source_type: Literal[
         "edited_response_record", "raw_transcript", "prior_json", "answer_only_notes"
     ] = "edited_response_record"
+    source_mode: Literal["railway_text", "chatgpt_voice", "chatgpt_text", "mixed", "unknown"] = (
+        "unknown"
+    )
     record: dict | None = None
     record_text: str | None = Field(default=None, max_length=1_500_000)
 
@@ -218,6 +225,7 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
             if state["pending_question"]
             else None,
             "review": state["review"],
+            "collection_preferences": state.get("collection_preferences", {}),
             "processing": state.get("processing") if state["phase"] == "planning" else None,
             "turns": [
                 {
@@ -365,7 +373,13 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
             return public(store.change(value, mark))
         return public(
             engine.command(
-                value, body.revision, body.operation_id, body.action, body.text, body.target
+                value,
+                body.revision,
+                body.operation_id,
+                body.action,
+                body.text,
+                body.target,
+                body.retrospective_questions_welcome,
             )
         )
 
@@ -400,7 +414,13 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
             raise ValueError("Select a source record.")
 
         def apply(s):
-            import_record(s, record, body.source_type, store.instrument(s["instrument_version"]))
+            import_record(
+                s,
+                record,
+                body.source_type,
+                store.instrument(s["instrument_version"]),
+                body.source_mode,
+            )
 
         return public(store.change(value, apply))
 
@@ -415,7 +435,7 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
         state = new_state(version, settings.model, settings.effort)
         record = body.parsed_record()
         if record is not None:
-            import_record(state, record, body.source_type, instrument)
+            import_record(state, record, body.source_type, instrument, body.source_mode)
         value, state = store.create(state, settings.maximum_sessions)
         return {
             "session_id": state["session_id"],
@@ -453,4 +473,7 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
 
 
 def factory():
-    return create_app(Settings.from_env())
+    app = create_app(Settings.from_env())
+    if not isinstance(app.state.engine.provider, Venice):
+        raise RuntimeError("Production participant inference must use the Venice provider.")
+    return app

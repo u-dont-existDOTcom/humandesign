@@ -13,17 +13,20 @@ from cryptography.fernet import Fernet
 from fastapi.testclient import TestClient
 from participant.app import Settings, create_app
 from participant.domain import (
+    AddressedRoute,
     Admission,
     Plan,
     Question,
     Quote,
     bank,
+    export_record,
+    import_record,
     load_instrument,
     new_state,
     strict_json,
     validate_plan,
 )
-from participant.engine import ProviderError, Venice
+from participant.engine import Engine, ProviderError, Venice
 from participant.store import Store
 
 ROOT = Path(__file__).resolve().parents[3]
@@ -71,11 +74,17 @@ class Fake:
                 no_unsupported_extension=True,
                 control_is_participant_request=False,
                 bulk_source_review_supported=bool(payload.get("import_bulk_review")),
+                addressed_routes_supported=bool(payload.get("import_bulk_review")),
             ), {"stage": "Admission"}
         pending = payload["pending_turn_ids"]
         turns = {t["turn_id"]: t for t in payload["turns"]}
         bulk = bool(payload.get("import_bulk_review"))
         evidence_pending = pending[:1] if bulk else pending
+        guide_facet = (
+            payload["candidate_evidence_guide"][0]["facet_id"]
+            if payload["candidate_evidence_guide"]
+            else None
+        )
         evidence = [
             {
                 "evidence_id": f"e-{i}",
@@ -85,7 +94,7 @@ class Fake:
                 "conditions": [],
                 "time_frame": "current self-report",
                 "relationship_context": "scenario",
-                "candidate_facet_ids": ["D01.approach"],
+                "candidate_facet_ids": [guide_facet] if guide_facet else [],
                 "supported_scope": "This answer only.",
                 "unsupported_extensions": ["No global ability claim."],
             }
@@ -93,12 +102,13 @@ class Fake:
             if turns[i]["answer_text"]
         ]
         q = next(
-            q
-            for q in payload["canonical_routes"]
-            if q["id"] == ("A0" if bulk else "G02" if payload["turns"] else "G01")
+            (route for route in payload["candidate_routes"] if not route.get("repair_only")),
+            payload["candidate_routes"][0],
         )
         review = self.review or payload["review_only"]
-        process = payload["additional_pending_batches"] and not bulk
+        process = (payload["additional_pending_batches"] and not bulk) or (
+            bulk and bool(payload.get("deferred_non_import_turn_ids"))
+        )
         data = {
             "action": "process" if process else "review" if review else "ask",
             "dispositions": []
@@ -120,7 +130,12 @@ class Fake:
                 "route_id": q["id"],
                 "route_type": "canonical",
                 "text": q["question"],
-                "antecedent_turn_ids": [],
+                "antecedent_turn_ids": [
+                    turn["turn_id"]
+                    for turn in payload["turns"]
+                    if turn.get("canonical_question_id") in set(q.get("context_sources") or [])
+                    and turn.get("answer_text") is not None
+                ][:1],
                 "equivalent_context": False,
                 "missing_distinction": "Synthetic fixture distinction.",
                 "why_useful": "Synthetic fixture.",
@@ -871,3 +886,358 @@ def test_legacy_import_admission_error_auto_recovers_only_once(setup):
     app.state.store.change(token, old_error)
     second = c.get("/api/session").json()
     assert second["phase"] == "error"
+
+
+def test_consent_records_optional_retrospective_preference(setup):
+    _, fake, app, c = setup
+    state = join(setup)
+    response = c.post(
+        "/api/operations",
+        headers={"X-Life-Patterns-Session": state["session_id"]},
+        json={
+            "revision": state["revision"],
+            "operation_id": secrets.token_hex(10),
+            "action": "consent",
+            "text": "",
+            "target": None,
+            "retrospective_questions_welcome": True,
+        },
+    )
+    assert response.status_code == 200
+    public = response.json()
+    assert public["collection_preferences"]["retrospective_questions_welcome"] is True
+    internal = app.state.store.read(c.cookies.get("lp_session"))
+    assert internal["collection_preferences"]["retrospective_questions_welcome"] is True
+    assert fake.count == 0
+
+
+def test_admin_overview_exposes_per_session_model_usage(setup):
+    _, _, app, c = setup
+    join(setup)
+    token = c.cookies.get("lp_session")
+
+    def add_calls(state):
+        state["calls"] = [
+            {
+                "provider": "venice",
+                "prompt_tokens": 100,
+                "completion_tokens": 20,
+                "request_chars": 400,
+            },
+            {
+                "provider": "venice",
+                "prompt_tokens": 200,
+                "completion_tokens": 30,
+                "request_chars": 600,
+            },
+            {"provider": "deterministic", "stage": "canonical_opening"},
+        ]
+
+    app.state.store.change(token, add_calls)
+    row = app.state.store.overview()[0]
+    assert row["model_calls"] == 2
+    assert row["prompt_tokens"] == 300
+    assert row["completion_tokens"] == 50
+    assert row["request_chars"] == 1000
+
+
+def test_model_call_limit_counts_semantic_calls_not_deterministic_bookkeeping():
+    calls = [
+        {"provider": "deterministic", "stage": "canonical_opening"},
+        {"provider": "venice", "stage": "Plan"},
+        {"provider": "venice", "stage": "Admission"},
+        {"provider": "venice", "stage": "failed_attempt"},
+    ]
+    assert Engine._model_call_count(calls) == 2
+
+
+def test_mixed_import_and_new_turn_finishes_import_before_new_turn(setup):
+    _, fake, app, c = setup
+    state = join(setup)
+    record = {
+        "turns": [
+            {"question_text": f"Edited question {i}", "answer_text": f"Old answer {i}"}
+            for i in range(3)
+        ]
+    }
+    state = c.post(
+        "/api/import",
+        json={"record": record, "source_type": "edited_response_record"},
+    ).json()
+    state = command(c, state, "consent").json()
+    token = c.cookies.get("lp_session")
+
+    def add_new_turn(current):
+        current["turns"].append(
+            {
+                "turn_id": "newer-turn",
+                "sequence": 4,
+                "turn_source": "railway_participant",
+                "canonical_question_id": "G23",
+                "question_wording_status": "rendered_v2",
+                "question_text": "Newer question",
+                "answer_text": "Newer answer",
+                "correction_of": None,
+            }
+        )
+
+    app.state.store.change(token, add_new_turn)
+    started = c.post("/api/next", json={}).json()
+    if started["phase"] == "planning":
+        started = wait_phase(c, {"ready", "error"}, timeout=3)
+    assert started["phase"] == "ready"
+    internal = app.state.store.read(token)
+    assert all(f"import-{i:04d}" in internal["dispositions"] for i in range(1, 4))
+    assert "newer-turn" not in internal["dispositions"]
+
+    second = c.post("/api/next", json={}).json()
+    if second["phase"] == "planning":
+        second = wait_phase(c, {"awaiting_answer", "review", "error"}, timeout=3)
+    assert second["phase"] == "awaiting_answer"
+    assert "newer-turn" in app.state.store.read(token)["dispositions"]
+    assert fake.count == 4
+
+
+def test_retrospective_preference_can_be_withdrawn_without_model_call(setup):
+    _, fake, app, c = setup
+    state = join(setup)
+    state = c.post(
+        "/api/operations",
+        headers={"X-Life-Patterns-Session": state["session_id"]},
+        json={
+            "revision": state["revision"],
+            "operation_id": secrets.token_hex(10),
+            "action": "consent",
+            "text": "",
+            "target": None,
+            "retrospective_questions_welcome": True,
+        },
+    ).json()
+    token = c.cookies.get("lp_session")
+
+    def queue_retrospective(current):
+        route = next(q for q in bank(authority())["questions"] if q["id"] == "G24")
+        current["pending_question"] = {
+            "route_id": "G24",
+            "route_type": "canonical",
+            "text": route["question"],
+            "antecedent_turn_ids": [],
+        }
+        current["phase"] = "awaiting_answer"
+
+    internal = app.state.store.change(token, queue_retrospective)
+    response = c.post(
+        "/api/operations",
+        headers={"X-Life-Patterns-Session": internal["session_id"]},
+        json={
+            "revision": internal["revision"],
+            "operation_id": secrets.token_hex(10),
+            "action": "set_retrospective_preference",
+            "text": "",
+            "target": None,
+            "retrospective_questions_welcome": False,
+        },
+    )
+    assert response.status_code == 200
+    internal = app.state.store.read(token)
+    assert internal["collection_preferences"]["retrospective_questions_welcome"] is False
+    assert internal["pending_question"] is None
+    assert internal["phase"] == "ready"
+    assert fake.count == 0
+
+
+def test_bulk_addressed_routes_are_persisted_only_after_admission(setup):
+    _, _, app, c = setup
+
+    class AddressingFake(Fake):
+        def call(self, system, payload, schema, model, effort):
+            result, telemetry = super().call(system, payload, schema, model, effort)
+            if schema is Plan and payload.get("import_bulk_review"):
+                result.addressed_routes = [
+                    AddressedRoute(
+                        route_id="G19",
+                        source_turn_ids=[payload["pending_turn_ids"][0]],
+                    )
+                ]
+            return result, telemetry
+
+    fake = AddressingFake()
+    app.state.engine.provider = fake
+    state = join((setup[0], fake, app, c))
+    state = c.post(
+        "/api/import",
+        json={
+            "record": {
+                "turns": [
+                    {"question_text": "Old question", "answer_text": "Old answer"},
+                    {"question_text": "Other question", "answer_text": "Other answer"},
+                ]
+            },
+            "source_type": "edited_response_record",
+        },
+    ).json()
+    state = command(c, state, "consent").json()
+    state = c.post("/api/next", json={}).json()
+    if state["phase"] == "planning":
+        state = wait_phase(c, {"awaiting_answer", "review", "error"}, timeout=3)
+    assert state["phase"] == "awaiting_answer"
+    internal = app.state.store.read(c.cookies.get("lp_session"))
+    assert internal["addressed_routes"]["G19"] == ["import-0001"]
+
+
+def test_oversized_import_hits_cost_guard_before_model_call(setup):
+    _, fake, _, c = setup
+    state = join(setup)
+    state = c.post(
+        "/api/import",
+        json={
+            "record": {
+                "turns": [
+                    {
+                        "question_text": "Synthetic long-source question",
+                        "answer_text": "word " * 26000,
+                    }
+                ]
+            },
+            "source_type": "edited_response_record",
+        },
+    ).json()
+    state = command(c, state, "consent").json()
+    state = c.post("/api/next", json={}).json()
+    if state["phase"] == "planning":
+        state = wait_phase(c, {"resource_limited", "error"}, timeout=3)
+    assert state["phase"] == "resource_limited"
+    assert state["error"] == "model_context_budget_exceeded"
+    assert fake.count == 0
+
+
+def test_bulk_with_no_addressed_routes_does_not_require_address_support_flag(setup):
+    _, _, app, c = setup
+
+    class EmptyAddressFake(Fake):
+        def call(self, system, payload, schema, model, effort):
+            result, telemetry = super().call(system, payload, schema, model, effort)
+            if schema is Admission and payload.get("import_bulk_review"):
+                result = result.model_copy(update={"addressed_routes_supported": False})
+            return result, telemetry
+
+    fake = EmptyAddressFake()
+    app.state.engine.provider = fake
+    state = join((setup[0], fake, app, c))
+    state = c.post(
+        "/api/import",
+        json={
+            "record": {"turns": [{"question_text": "Old question", "answer_text": "Old answer"}]},
+            "source_type": "edited_response_record",
+        },
+    ).json()
+    state = command(c, state, "consent").json()
+    state = c.post("/api/next", json={}).json()
+    if state["phase"] == "planning":
+        state = wait_phase(c, {"awaiting_answer", "review", "error"}, timeout=3)
+    assert state["phase"] == "awaiting_answer"
+    assert fake.count == 2
+
+
+def test_failed_admission_provider_attempt_is_counted_and_not_repaired_as_plan_error(setup):
+    _, _, app, c = setup
+
+    class AdmissionValueErrorFake(Fake):
+        def call(self, system, payload, schema, model, effort):
+            if schema is Admission:
+                self.count += 1
+                raise ValueError("synthetic malformed provider output")
+            return super().call(system, payload, schema, model, effort)
+
+    fake = AdmissionValueErrorFake()
+    app.state.engine.provider = fake
+    state = begin((setup[0], fake, app, c))
+    state = command(c, state, "answer", "I would probably keep the hour for myself.").json()
+    state = c.post("/api/next", json={}).json()
+    if state["phase"] == "planning":
+        state = wait_phase(c, {"error", "resource_limited"}, timeout=3)
+    assert state["phase"] == "error"
+    assert state["error"] == "provider_invalid_structured_output"
+    internal = app.state.store.read(c.cookies.get("lp_session"))
+    assert Engine._model_call_count(internal["calls"]) == 2
+    assert fake.count == 2
+    failed_admission = [
+        call
+        for call in internal["calls"]
+        if call.get("stage") == "Admission" and call.get("failed")
+    ]
+    assert len(failed_admission) == 1
+    assert failed_admission[0]["billed_attempt_possible"] is True
+
+
+def test_export_coverage_excludes_metadata_and_quarantined_turns():
+    instrument = authority()
+    state = new_state("instrument-test", "m", "x")
+    state.update(session_id="coverage", revision=0, consent=True, phase="ready")
+    state["turns"] = [
+        {
+            "turn_id": "behavior",
+            "canonical_question_id": "A0",
+            "answer_text": "Behavior answer",
+            "turn_role": "behavioral",
+        },
+        {
+            "turn_id": "metadata",
+            "canonical_question_id": "G23",
+            "answer_text": "Mostly voice",
+            "turn_role": "collection_metadata",
+        },
+        {
+            "turn_id": "quarantined",
+            "canonical_question_id": "G19",
+            "answer_text": "Excluded",
+            "turn_role": "behavioral",
+            "quarantined": True,
+        },
+    ]
+    exported = export_record(state, instrument)
+    coverage = {row["question_id"]: row["status"] for row in exported["coverage"]}
+    assert coverage["A0"] == "partial"
+    assert coverage["G23"] == "unassessed"
+    assert coverage["G19"] == "unassessed"
+
+
+def test_chatgpt_import_requires_explicit_turn_keys_and_remaps_correction_links():
+    instrument = authority()
+    state = new_state("instrument-test", "m", "x")
+    import_record(
+        state,
+        {
+            "collection_mode": "chatgpt_voice",
+            "turns": [
+                {
+                    "turn_id": "voice-1",
+                    "question_text": "First question",
+                    "answer_text": "First answer",
+                },
+                {
+                    "turn_id": "voice-2",
+                    "question_text": "Review correction",
+                    "answer_text": "Actually, only sometimes.",
+                    "correction_of": "voice-1",
+                },
+            ],
+        },
+        "prior_json",
+        instrument,
+        "unknown",
+    )
+    assert state["turns"][1]["correction_of"] == "import-0001"
+
+    bad = new_state("instrument-test", "m", "x")
+    with pytest.raises(ValueError, match="question_text and answer_text"):
+        import_record(
+            bad,
+            {
+                "collection_mode": "chatgpt_voice",
+                "turns": [{"turn_id": "bad", "answer_text": "Missing question key"}],
+            },
+            "prior_json",
+            instrument,
+            "unknown",
+        )
