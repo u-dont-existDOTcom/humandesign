@@ -1,0 +1,373 @@
+{
+  "sample_n": 1000000,
+  "seed": 20260928,
+  "sampling": "uniform with replacement over exact century minute grid",
+  "total_minute_universe": 52596001,
+  "workers": 8,
+  "elapsed_seconds": 28.733379834971856,
+  "charts_per_second": 34802.72789847312,
+  "distinct_signatures": 59,
+  "signature_counts": [
+    440121,
+    105789,
+    10095,
+    2532,
+    105416,
+    15015,
+    2425,
+    458,
+    46325,
+    5284,
+    1155,
+    100,
+    7312,
+    871,
+    170,
+    9,
+    6809,
+    1519,
+    114,
+    31,
+    1564,
+    158,
+    14,
+    2,
+    869,
+    95,
+    12,
+    0,
+    115,
+    17,
+    0,
+    0,
+    158173,
+    29450,
+    3643,
+    568,
+    26578,
+    2746,
+    493,
+    39,
+    16453,
+    1574,
+    356,
+    60,
+    1982,
+    180,
+    53,
+    2,
+    2105,
+    402,
+    31,
+    20,
+    336,
+    33,
+    12,
+    1,
+    268,
+    17,
+    1,
+    0,
+    25,
+    1,
+    2,
+    0
+  ],
+  "nonzero_signatures": [
+    {
+      "signature": 0,
+      "count": 440121,
+      "fraction": 0.440121
+    },
+    {
+      "signature": 1,
+      "count": 105789,
+      "fraction": 0.105789
+    },
+    {
+      "signature": 2,
+      "count": 10095,
+      "fraction": 0.010095
+    },
+    {
+      "signature": 3,
+      "count": 2532,
+      "fraction": 0.002532
+    },
+    {
+      "signature": 4,
+      "count": 105416,
+      "fraction": 0.105416
+    },
+    {
+      "signature": 5,
+      "count": 15015,
+      "fraction": 0.015015
+    },
+    {
+      "signature": 6,
+      "count": 2425,
+      "fraction": 0.002425
+    },
+    {
+      "signature": 7,
+      "count": 458,
+      "fraction": 0.000458
+    },
+    {
+      "signature": 8,
+      "count": 46325,
+      "fraction": 0.046325
+    },
+    {
+      "signature": 9,
+      "count": 5284,
+      "fraction": 0.005284
+    },
+    {
+      "signature": 10,
+      "count": 1155,
+      "fraction": 0.001155
+    },
+    {
+      "signature": 11,
+      "count": 100,
+      "fraction": 0.0001
+    },
+    {
+      "signature": 12,
+      "count": 7312,
+      "fraction": 0.007312
+    },
+    {
+      "signature": 13,
+      "count": 871,
+      "fraction": 0.000871
+    },
+    {
+      "signature": 14,
+      "count": 170,
+      "fraction": 0.00017
+    },
+    {
+      "signature": 15,
+      "count": 9,
+      "fraction": 9e-06
+    },
+    {
+      "signature": 16,
+      "count": 6809,
+      "fraction": 0.006809
+    },
+    {
+      "signature": 17,
+      "count": 1519,
+      "fraction": 0.001519
+    },
+    {
+      "signature": 18,
+      "count": 114,
+      "fraction": 0.000114
+    },
+    {
+      "signature": 19,
+      "count": 31,
+      "fraction": 3.1e-05
+    },
+    {
+      "signature": 20,
+      "count": 1564,
+      "fraction": 0.001564
+    },
+    {
+      "signature": 21,
+      "count": 158,
+      "fraction": 0.000158
+    },
+    {
+      "signature": 22,
+      "count": 14,
+      "fraction": 1.4e-05
+    },
+    {
+      "signature": 23,
+      "count": 2,
+      "fraction": 2e-06
+    },
+    {
+      "signature": 24,
+      "count": 869,
+      "fraction": 0.000869
+    },
+    {
+      "signature": 25,
+      "count": 95,
+      "fraction": 9.5e-05
+    },
+    {
+      "signature": 26,
+      "count": 12,
+      "fraction": 1.2e-05
+    },
+    {
+      "signature": 28,
+      "count": 115,
+      "fraction": 0.000115
+    },
+    {
+      "signature": 29,
+      "count": 17,
+      "fraction": 1.7e-05
+    },
+    {
+      "signature": 32,
+      "count": 158173,
+      "fraction": 0.158173
+    },
+    {
+      "signature": 33,
+      "count": 29450,
+      "fraction": 0.02945
+    },
+    {
+      "signature": 34,
+      "count": 3643,
+      "fraction": 0.003643
+    },
+    {
+      "signature": 35,
+      "count": 568,
+      "fraction": 0.000568
+    },
+    {
+      "signature": 36,
+      "count": 26578,
+      "fraction": 0.026578
+    },
+    {
+      "signature": 37,
+      "count": 2746,
+      "fraction": 0.002746
+    },
+    {
+      "signature": 38,
+      "count": 493,
+      "fraction": 0.000493
+    },
+    {
+      "signature": 39,
+      "count": 39,
+      "fraction": 3.9e-05
+    },
+    {
+      "signature": 40,
+      "count": 16453,
+      "fraction": 0.016453
+    },
+    {
+      "signature": 41,
+      "count": 1574,
+      "fraction": 0.001574
+    },
+    {
+      "signature": 42,
+      "count": 356,
+      "fraction": 0.000356
+    },
+    {
+      "signature": 43,
+      "count": 60,
+      "fraction": 6e-05
+    },
+    {
+      "signature": 44,
+      "count": 1982,
+      "fraction": 0.001982
+    },
+    {
+      "signature": 45,
+      "count": 180,
+      "fraction": 0.00018
+    },
+    {
+      "signature": 46,
+      "count": 53,
+      "fraction": 5.3e-05
+    },
+    {
+      "signature": 47,
+      "count": 2,
+      "fraction": 2e-06
+    },
+    {
+      "signature": 48,
+      "count": 2105,
+      "fraction": 0.002105
+    },
+    {
+      "signature": 49,
+      "count": 402,
+      "fraction": 0.000402
+    },
+    {
+      "signature": 50,
+      "count": 31,
+      "fraction": 3.1e-05
+    },
+    {
+      "signature": 51,
+      "count": 20,
+      "fraction": 2e-05
+    },
+    {
+      "signature": 52,
+      "count": 336,
+      "fraction": 0.000336
+    },
+    {
+      "signature": 53,
+      "count": 33,
+      "fraction": 3.3e-05
+    },
+    {
+      "signature": 54,
+      "count": 12,
+      "fraction": 1.2e-05
+    },
+    {
+      "signature": 55,
+      "count": 1,
+      "fraction": 1e-06
+    },
+    {
+      "signature": 56,
+      "count": 268,
+      "fraction": 0.000268
+    },
+    {
+      "signature": 57,
+      "count": 17,
+      "fraction": 1.7e-05
+    },
+    {
+      "signature": 58,
+      "count": 1,
+      "fraction": 1e-06
+    },
+    {
+      "signature": 60,
+      "count": 25,
+      "fraction": 2.5e-05
+    },
+    {
+      "signature": 61,
+      "count": 1,
+      "fraction": 1e-06
+    },
+    {
+      "signature": 62,
+      "count": 2,
+      "fraction": 2e-06
+    }
+  ]
+}
