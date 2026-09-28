@@ -4,7 +4,7 @@
   "requiredBranch": "chat/participant-railway-venice-20260927-2234",
   "implementationAuthorized": true,
   "assuranceLane": "live participant hotfix: direct endpoint evidence + affected tests + reversible deploy",
-  "status": "import_latency_repair_verified_ready_to_deploy",
+  "status": "import_latency_hotfix_deployed_existing_session_ready_to_resume",
   "ownerOutcome": "Switch participant collection to separate Railway service using Venice, full reviewed V2 survey, durable state and server-side exports. Preserve owner app and historical research.",
   "parentTaskRef": "chat/full-survey-participant-package-20260927@c3ac3d0834f9b2d276aa3e02fa90a94a5927ad76",
   "currentMethod": "apps/life-patterns-participant/README.md",
@@ -16,8 +16,8 @@
     "volume_id": "928957b0-0128-4900-86f2-205d3b7f69d7",
     "live_enabled": true,
     "venice_token_injected": true,
-    "deployed_app_commit": "4105789f29d8278677686f73df0bece7c603a882",
-    "deployment_id": "cd3a1cdf-4528-434c-90f5-0cb88e610d6b"
+    "deployed_app_commit": "55bb92896b58de1c83dca3e97675b0214d328e4f",
+    "deployment_id": "a1195246-b188-4168-96c0-7839b2c00858"
   },
   "model": {
     "provider": "venice",
@@ -25,10 +25,10 @@
     "reasoning_effort": "xhigh",
     "automatic_fallback": false
   },
-  "blocker": "None for implementation. Independent cross-family review timed out without a verdict; direct production evidence and deterministic/browser regressions establish the latency mechanism and reversible repair.",
-  "remaining": "Deploy the import-latency repair to life-patterns-participant, verify live health and short /api/next launch behavior, then have the already-open private session refresh/resume without re-importing its 96 answers.",
+  "blocker": "None. Existing private imported session should recover on next GET /api/session; participant only needs to refresh the same private tab.",
+  "remaining": "Participant refreshes the existing private tab. Observe one detached bulk imported-source Plan+Admission pass, then continue only with useful unresolved questions.",
   "privateDataPublished": false,
-  "updatedAt": "2026-09-28T03:09:14.390556+00:00",
+  "updatedAt": "2026-09-28T03:12:11.420617+00:00",
   "currentHandoff": "tasks/participant-railway-venice-20260927/ACTIVATION-HANDOFF.md",
   "reviewDisposition": "tasks/participant-railway-venice-20260927/REVIEW-DISPOSITION.json",
   "executionBoundary": {
