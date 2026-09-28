@@ -23,6 +23,7 @@ from hdmatch.empirical_astrology import (
     build_pair_features,
     deterministic_pair_id,
     deterministic_random_feature,
+    require_deterministic_numerical_runtime,
     require_exact_diagnostic_family,
     score_ipip50,
     verify_required_git_ancestor,
@@ -215,6 +216,7 @@ def synthetic_analysis_rows(model: LiteratureModelV1) -> list[AnalysisRow]:
 
 
 def main() -> None:
+    numerical_runtime = require_deterministic_numerical_runtime()
     manifest_path = ROOT / INPUT_MANIFEST
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     if manifest["selected_human_development_files"] != []:
@@ -453,8 +455,8 @@ def main() -> None:
 
     synthetic = synthetic_analysis_rows(model)
     fit = fit_primary_association(synthetic, required_networks=20)
-    lower, upper = fit_gap_bound_sensitivities(synthetic, required_networks=20)
-    loo = leave_one_network_out(synthetic)
+    lower, upper = fit_gap_bound_sensitivities(synthetic, required_networks=20).require_all()
+    loo = leave_one_network_out(synthetic).require_all()
     bootstrap_a = restricted_wild_cluster_bootstrap(
         synthetic,
         draws=99,
@@ -550,6 +552,7 @@ def main() -> None:
         "owner_outcomes_accessed": False,
         "untouched_prospective_outcomes_accessed": False,
         "prospective_launch_blocked": True,
+        "numerical_runtime": numerical_runtime,
         "interpretation": (
             "Engineering fixtures validate deterministic code paths only; they are not "
             "empirical evidence, power evidence, or prospective validation."

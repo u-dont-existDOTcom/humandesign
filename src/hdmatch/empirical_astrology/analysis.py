@@ -9,8 +9,9 @@ from __future__ import annotations
 
 import math
 from collections import Counter
-from collections.abc import Sequence
+from collections.abc import Callable, Sequence
 from dataclasses import dataclass, replace
+from functools import partial
 
 import numpy as np
 from scipy.stats import t as student_t  # type: ignore[import-untyped]
@@ -51,6 +52,37 @@ class PrimaryFit:
     retained_nuisance_columns: tuple[str, ...]
     weighted_residual_sum_squares: float
     x_variant: str
+
+
+@dataclass(frozen=True, slots=True)
+class FitAttempt:
+    """One prespecified fit or its explicit fail-closed reason."""
+
+    label: str
+    fit: PrimaryFit | None
+    error: str | None
+
+    @property
+    def succeeded(self) -> bool:
+        return self.fit is not None and self.error is None
+
+
+@dataclass(frozen=True, slots=True)
+class FitLedger:
+    """Complete ordered ledger; failures never remove later attempts."""
+
+    attempts: tuple[FitAttempt, ...]
+
+    @property
+    def all_succeeded(self) -> bool:
+        return bool(self.attempts) and all(attempt.succeeded for attempt in self.attempts)
+
+    def require_all(self) -> tuple[PrimaryFit, ...]:
+        failures = [attempt for attempt in self.attempts if not attempt.succeeded]
+        if failures:
+            detail = "; ".join(f"{item.label}: {item.error}" for item in failures)
+            raise NotEstimable(f"prespecified fit family is incomplete: {detail}")
+        return tuple(attempt.fit for attempt in self.attempts if attempt.fit is not None)
 
 
 @dataclass(frozen=True, slots=True)
@@ -224,33 +256,70 @@ def _prepare(
     )
 
 
+def _stable_weighted_solve(
+    design: np.ndarray,
+    y: np.ndarray,
+    weights: np.ndarray,
+    *,
+    context: str,
+) -> tuple[np.ndarray, np.ndarray]:
+    """Solve WLS by QR and return coefficients plus its triangular factor."""
+
+    sqrt_weights = np.sqrt(weights)
+    weighted_design = design * sqrt_weights[:, None]
+    weighted_y = y * sqrt_weights
+    try:
+        singular_values = np.linalg.svd(weighted_design, compute_uv=False)
+        if (
+            len(singular_values) != design.shape[1]
+            or singular_values[0] <= 0.0
+            or singular_values[-1] / singular_values[0] <= RANK_TOLERANCE
+        ):
+            raise NotEstimable(f"{context} matrix is numerically unresolved")
+        q_matrix, r_matrix = np.linalg.qr(weighted_design, mode="reduced")
+        coefficients = np.linalg.solve(r_matrix, q_matrix.T @ weighted_y)
+    except np.linalg.LinAlgError as exc:
+        raise NotEstimable(f"{context} matrix is numerically unresolved") from exc
+    weighted_residuals = weighted_y - weighted_design @ coefficients
+    score_norm = float(np.linalg.norm(weighted_design.T @ weighted_residuals))
+    score_scale = float(
+        np.linalg.norm(weighted_design) * np.linalg.norm(weighted_y) + np.finfo(np.float64).tiny
+    )
+    if score_norm / score_scale > 1e-10:
+        raise NotEstimable(f"{context} QR solution failed its numerical optimality check")
+    if not np.all(np.isfinite(coefficients)) or not np.all(np.isfinite(r_matrix)):
+        raise NotEstimable(f"{context} solution is nonfinite")
+    return coefficients, r_matrix
+
+
 def _fit_prepared(prepared: _PreparedDesign, y: np.ndarray, *, x_variant: str) -> PrimaryFit:
     y_centered = _within_center(y, prepared.groups, prepared.weights)
     design = prepared.design
-    sqrt_weights = np.sqrt(prepared.weights)
-    weighted_design = design * sqrt_weights[:, None]
-    weighted_y = y_centered * sqrt_weights
-    gram = weighted_design.T @ weighted_design
-    try:
-        gram_inverse = np.linalg.inv(gram)
-        coefficients = gram_inverse @ (weighted_design.T @ weighted_y)
-    except np.linalg.LinAlgError as exc:
-        raise NotEstimable("weighted model matrix is numerically singular") from exc
+    coefficients, r_matrix = _stable_weighted_solve(
+        design,
+        y_centered,
+        prepared.weights,
+        context="weighted full model",
+    )
     residuals = y_centered - design @ coefficients
     if not np.all(np.isfinite(coefficients)) or not np.all(np.isfinite(residuals)):
         raise NotEstimable("model fit is nonfinite")
 
-    meat = np.zeros_like(gram)
+    covariance_core = np.zeros((design.shape[1], design.shape[1]), dtype=np.float64)
     unique_networks = sorted(set(prepared.networks.tolist()))
     for network in unique_networks:
         selected = prepared.networks == network
         score = design[selected, :].T @ (prepared.weights[selected] * residuals[selected])
-        meat += np.outer(score, score)
+        try:
+            influence = np.linalg.solve(r_matrix, np.linalg.solve(r_matrix.T, score))
+        except np.linalg.LinAlgError as exc:
+            raise NotEstimable("cluster covariance is numerically unresolved") from exc
+        covariance_core += np.outer(influence, influence)
     n = len(prepared.rows)
     g = len(unique_networks)
     k = prepared.parameter_count
     cr1 = g / (g - 1) * (n - 1) / (n - k)
-    covariance = cr1 * gram_inverse @ meat @ gram_inverse
+    covariance = cr1 * covariance_core
     variance = float(covariance[-1, -1])
     if not math.isfinite(variance) or variance <= 0.0:
         raise NotEstimable("TN-001 cluster-robust variance is nonpositive or nonfinite")
@@ -277,7 +346,9 @@ def _fit_prepared(prepared: _PreparedDesign, y: np.ndarray, *, x_variant: str) -
         retained_nuisance_columns=tuple(
             NUISANCE_COLUMN_NAMES[index] for index in prepared.retained_indices
         ),
-        weighted_residual_sum_squares=float(np.sum(prepared.weights * residuals**2)),
+        weighted_residual_sum_squares=float(
+            np.dot(np.sqrt(prepared.weights) * residuals, np.sqrt(prepared.weights) * residuals)
+        ),
         x_variant=x_variant,
     )
 
@@ -300,15 +371,12 @@ def _restricted_fit(prepared: _PreparedDesign) -> tuple[np.ndarray, np.ndarray]:
         residual_centered = prepared.y_centered.copy()
         fitted_centered = np.zeros_like(prepared.y_centered)
     else:
-        sqrt_weights = np.sqrt(prepared.weights)
-        weighted = nuisance * sqrt_weights[:, None]
-        try:
-            coefficients = np.linalg.solve(
-                weighted.T @ weighted,
-                weighted.T @ (prepared.y_centered * sqrt_weights),
-            )
-        except np.linalg.LinAlgError as exc:
-            raise NotEstimable("restricted model matrix is singular") from exc
+        coefficients, _ = _stable_weighted_solve(
+            nuisance,
+            prepared.y_centered,
+            prepared.weights,
+            context="restricted model",
+        )
         fitted_centered = nuisance @ coefficients
         residual_centered = prepared.y_centered - fitted_centered
     fitted = np.empty_like(prepared.y)
@@ -340,14 +408,19 @@ def restricted_wild_cluster_bootstrap(
     rng = np.random.Generator(np.random.PCG64(seed))
     networks = sorted(set(prepared.networks.tolist()))
     exceedances = 0
-    for _ in range(draws):
+    for draw_index in range(draws):
         signs = {network: (-1.0 if int(rng.integers(0, 2)) == 0 else 1.0) for network in networks}
         pseudo = (
             restricted_fitted
             + np.asarray([signs[network] for network in prepared.networks], dtype=np.float64)
             * restricted_residuals
         )
-        fit = _fit_prepared(prepared, pseudo, x_variant="center")
+        try:
+            fit = _fit_prepared(prepared, pseudo, x_variant="center")
+        except NotEstimable as exc:
+            raise NotEstimable(
+                f"restricted bootstrap draw {draw_index} failed; run is invalid: {exc}"
+            ) from exc
         if fit.t_statistic >= observed.t_statistic:
             exceedances += 1
     return WildBootstrapResult(
@@ -359,24 +432,40 @@ def restricted_wild_cluster_bootstrap(
     )
 
 
+def _attempt(label: str, operation: Callable[[], PrimaryFit]) -> FitAttempt:
+    try:
+        return FitAttempt(label=label, fit=operation(), error=None)
+    except NotEstimable as exc:
+        return FitAttempt(label=label, fit=None, error=str(exc))
+
+
 def fit_gap_bound_sensitivities(
     rows: Sequence[AnalysisRow],
     *,
     required_networks: int | None = 20,
-) -> tuple[PrimaryFit, PrimaryFit]:
-    """Fit lower and upper uncertainty bounds on the original frozen pairs."""
+) -> FitLedger:
+    """Attempt both fixed uncertainty bounds and retain every result/failure."""
 
-    lower = fit_primary_association(
-        rows,
-        x_variant="lower",
-        required_networks=required_networks,
+    return FitLedger(
+        attempts=(
+            _attempt(
+                "lower",
+                lambda: fit_primary_association(
+                    rows,
+                    x_variant="lower",
+                    required_networks=required_networks,
+                ),
+            ),
+            _attempt(
+                "upper",
+                lambda: fit_primary_association(
+                    rows,
+                    x_variant="upper",
+                    required_networks=required_networks,
+                ),
+            ),
+        )
     )
-    upper = fit_primary_association(
-        rows,
-        x_variant="upper",
-        required_networks=required_networks,
-    )
-    return lower, upper
 
 
 def fit_random_feature_diagnostic(
@@ -431,17 +520,67 @@ def fit_maternal_age_negative_control(
     return _fit_prepared(prepared, prepared.y, x_variant=label)
 
 
+def fit_diagnostic_family(
+    rows: Sequence[AnalysisRow],
+    *,
+    protocol_version: str,
+    base_seed: int,
+    required_networks: int | None = 20,
+) -> FitLedger:
+    """Attempt all twenty random features and the maternal-age control."""
+
+    attempts = [
+        _attempt(
+            f"random_feature_{index}",
+            partial(
+                fit_random_feature_diagnostic,
+                rows,
+                index,
+                protocol_version=protocol_version,
+                base_seed=base_seed,
+                required_networks=required_networks,
+            ),
+        )
+        for index in range(1, 21)
+    ]
+    attempts.append(
+        _attempt(
+            "maternal_age_negative_control",
+            partial(
+                fit_maternal_age_negative_control,
+                rows,
+                required_networks=required_networks,
+            ),
+        )
+    )
+    return FitLedger(attempts=tuple(attempts))
+
+
 def leave_one_network_out(
     rows: Sequence[AnalysisRow],
-) -> tuple[PrimaryFit, ...]:
-    """Return every fixed leave-one-network-out fit; never select a favorable subset."""
+) -> FitLedger:
+    """Attempt every fixed leave-one-network-out fit and retain all failures."""
 
     networks = sorted({row.pair.network_id for row in rows})
     if len(networks) != 20:
         raise NotEstimable("the frozen LOO family requires exactly 20 source networks")
-    results: list[PrimaryFit] = []
+    attempts: list[FitAttempt] = []
     for omitted in networks:
         subset = [row for row in rows if row.pair.network_id != omitted]
-        fit = fit_primary_association(subset, required_networks=19)
-        results.append(replace(fit, x_variant=f"center_leave_out_{omitted}"))
-    return tuple(results)
+        attempts.append(
+            _attempt(
+                f"center_leave_out_{omitted}",
+                partial(_fit_leave_one_network_out, subset, omitted),
+            )
+        )
+    return FitLedger(attempts=tuple(attempts))
+
+
+def _fit_leave_one_network_out(
+    subset: Sequence[AnalysisRow],
+    omitted: str,
+) -> PrimaryFit:
+    return replace(
+        fit_primary_association(subset, required_networks=19),
+        x_variant=f"center_leave_out_{omitted}",
+    )

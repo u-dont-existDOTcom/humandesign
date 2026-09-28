@@ -1,6 +1,9 @@
 from __future__ import annotations
 
+import hashlib
+import subprocess
 from datetime import UTC, datetime, timedelta
+from pathlib import Path
 
 import pytest
 
@@ -10,9 +13,13 @@ from hdmatch.empirical_astrology import (
     ensure_disjoint_cohorts,
     holm_family,
     require_exact_diagnostic_family,
+    validate_bound_freeze_manifest,
     validate_freeze_manifest,
 )
-from hdmatch.empirical_astrology.protocol import FREEZE_MANIFEST_REQUIRED_FIELDS
+from hdmatch.empirical_astrology.protocol import FREEZE_MANIFEST_REQUIRED_FIELDS, HASH_FIELDS
+
+REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
+REVIEWED_EVIDENCE = "e7f82ab4a1b08705bf4429958a0d577b2758c407"
 
 
 def _manifest() -> dict[str, object]:
@@ -21,8 +28,8 @@ def _manifest() -> dict[str, object]:
         field: "0" * 64 if field.endswith("sha256") else "frozen"
         for field in FREEZE_MANIFEST_REQUIRED_FIELDS
     }
-    manifest["reviewed_evidence_commit"] = "1" * 64
-    manifest["software_commit"] = "2" * 64
+    manifest["reviewed_evidence_commit"] = "1" * 40
+    manifest["software_commit"] = "2" * 40
     manifest["freeze_timestamp_utc"] = (opening - timedelta(days=1)).isoformat()
     manifest["cohort_opening_utc"] = opening.isoformat()
     manifest["cohort_closing_utc"] = (opening + timedelta(days=30)).isoformat()
@@ -41,6 +48,72 @@ def test_freeze_manifest_requires_every_field_and_exact_window() -> None:
     ).isoformat()
     with pytest.raises(FreezeManifestError, match="30"):
         validate_freeze_manifest(wrong_window)
+
+
+def test_freeze_manifest_resolves_real_git_checkpoints_and_ancestry() -> None:
+    manifest = _manifest()
+    manifest["reviewed_evidence_commit"] = REVIEWED_EVIDENCE
+    manifest["software_commit"] = subprocess.run(
+        ["git", "rev-parse", "HEAD"],
+        cwd=REPOSITORY_ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout.strip()
+    validate_freeze_manifest(manifest, repository_root=REPOSITORY_ROOT)
+
+    malformed = dict(manifest)
+    malformed["software_commit"] = "a" * 64
+    with pytest.raises(FreezeManifestError, match="40-character"):
+        validate_freeze_manifest(malformed, repository_root=REPOSITORY_ROOT)
+
+    missing = dict(manifest)
+    missing["software_commit"] = "0" * 40
+    with pytest.raises(FreezeManifestError, match="does not resolve"):
+        validate_freeze_manifest(missing, repository_root=REPOSITORY_ROOT)
+
+
+def test_bound_freeze_manifest_hashes_every_declared_artifact(tmp_path: Path) -> None:
+    subprocess.run(["git", "init", "-q"], cwd=tmp_path, check=True)
+    subprocess.run(
+        ["git", "config", "user.email", "fixture@example.invalid"], cwd=tmp_path, check=True
+    )
+    subprocess.run(["git", "config", "user.name", "Fixture"], cwd=tmp_path, check=True)
+    seed = tmp_path / "seed.txt"
+    seed.write_text("seed\n")
+    subprocess.run(["git", "add", "seed.txt"], cwd=tmp_path, check=True)
+    subprocess.run(["git", "commit", "-qm", "fixture"], cwd=tmp_path, check=True)
+    head = subprocess.run(
+        ["git", "rev-parse", "HEAD"],
+        cwd=tmp_path,
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout.strip()
+    manifest = _manifest()
+    manifest["reviewed_evidence_commit"] = head
+    manifest["software_commit"] = head
+    bindings: dict[str, Path] = {}
+    for index, field in enumerate(sorted(HASH_FIELDS)):
+        path = tmp_path / "artifacts" / f"{index}.bin"
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(field.encode())
+        bindings[field] = path.relative_to(tmp_path)
+        manifest[field] = hashlib.sha256(path.read_bytes()).hexdigest()
+    validate_bound_freeze_manifest(
+        manifest,
+        repository_root=tmp_path,
+        artifact_paths=bindings,
+        expected_protocol_version="frozen",
+    )
+    (tmp_path / bindings["pair_registry_sha256"]).write_bytes(b"changed")
+    with pytest.raises(FreezeManifestError, match="pair_registry_sha256"):
+        validate_bound_freeze_manifest(
+            manifest,
+            repository_root=tmp_path,
+            artifact_paths=bindings,
+            expected_protocol_version="frozen",
+        )
 
 
 def test_cross_cohort_overlap_fails_for_each_entity_type() -> None:

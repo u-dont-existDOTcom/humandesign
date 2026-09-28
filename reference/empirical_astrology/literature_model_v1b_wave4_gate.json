@@ -1,0 +1,216 @@
+{
+  "schema_version": "empirical-astrology-pro-gate-v1",
+  "gate_version": "empirical-astrology-wave4-pro-gate-v1-20260928",
+  "decision_date": "2026-09-28",
+  "decision_document": "notes/empirical_astrology/master_v2/PRO_DECISION_WAVE4.md",
+  "verdict": "REAFFIRM_V1B_ACCEPT_NO_DATA_REPORT_HOLD_IMPLEMENTATION_ACCEPTANCE_AND_LAUNCH",
+  "model_version": "literature_model_v1.0.0-wave3b-reaffirmed-20260928",
+  "prospective_protocol_version": "same-hospital-personality-protocol-v1b-20260928",
+  "scientific_model_revised": false,
+  "scientific_protocol_revised": false,
+  "new_gate_record_not_new_model": true,
+  "checkpoints": {
+    "wave3_historical": "ccdeaa9d563e243bfce2349b10d6c932e7f3bc57",
+    "corrected_wave3b_evidence": "e7f82ab4a1b08705bf4429958a0d577b2758c407",
+    "published_wave3b_decision_and_gate_parent": "e1c61d441bf8516c88d866a59d871cd8ee72f009",
+    "implementation": "2d49b20b0721b2f567bfa5cdf1399b5f6cccab5f",
+    "runner": "c4959b12c8bc27158c37ae14862d10d471b53619",
+    "reviewed_execution": "e79eff0fd4eedbfbce3b00696aeb42138687eddb"
+  },
+  "reviewed_artifact_sha256": {
+    "notes/empirical_astrology/master_v2/PRO_DECISION_WAVE3B.md": "f1da21a3b925c822bab09a67520df18d7b529a52807dfb0b4a26408ddc1148ec",
+    "reference/empirical_astrology/literature_model_v1b_decision.json": "682086cd41051f7731d197128e2abe42fc4dfac42ef5ae707f1ba604fad51e5b",
+    "reference/empirical_astrology/literature_feature_registry_v1.json": "be72e72dc2ece88f8c2fb4d0ac874746964944cfa1e4220c80a488f3f06af280",
+    "reference/empirical_astrology/literature_model_v1.json": "b75099e3dc62e464df39e8150fe18238a76121648ab0ba8f8059e6996f7c2382",
+    "docs/empirical_astrology/01_literature_model_v1.md": "ba16f12d2fe2822f09fd2ff8053086ec6715549f383496161a07ef384b48626c",
+    "notes/empirical_astrology/master_v2/PRO_HANDOFF_WAVE4.md": "8e30c07585e307a32f6772fce65893acf6a1d8b3c22a38735daad34ddf39e236",
+    "notes/empirical_astrology/master_v2/WAVE4_DEVELOPMENT_RESULTS.md": "940d9fa5bd44264a1353a173ee5512a386a387f937f38b4bdd03ca7000f25861",
+    "data/empirical_astrology/master_v2/wave4_results.jsonl": "3e91f16171e7925770c18f3edc87a3536e8b08eeb11bae6bd4cf980cc0880409",
+    "experiments/empirical_astrology/wave4/input_manifest.json": "79d14781465946339c37a36ce5771cbbb3b8da382a90cbe3a0c9f8d04622767b",
+    "experiments/empirical_astrology/wave4/engineering_fixture_summary.json": "c0bb97bc27f85c39c61c40c21ba772c37d413c3b4c124125b81af7e881a37549",
+    "experiments/empirical_astrology/wave4/run_wave4.py": "dd3ce257f80b993e272465b6a66b1160ffba2d932269135cbf46b61a51af962e",
+    "src/hdmatch/empirical_astrology/analysis.py": "1230efdbddbb302731bde3c6ad3d0ad9a2bbcfcead95cbf5b2d6882a5f9dd692",
+    "src/hdmatch/empirical_astrology/contract.py": "e60a9ebe75f47a4bb9ed0c6fe28c1cc835151405103181a5d6c518b01e0346aa",
+    "src/hdmatch/empirical_astrology/features.py": "4693a8b9d6436b829eec97d4ceb3b3585c686a45e67007bf6538d195d243d00e",
+    "src/hdmatch/empirical_astrology/model.py": "53a2536638213b04742eed89542dd4a5f1f68ea40323e0cfd4261779a5d9891f",
+    "src/hdmatch/empirical_astrology/outcome.py": "02ae7ba43600fea4a2f8faa4af6cfd7b1e7fe9136cad545c0eca069282ae17b6",
+    "src/hdmatch/empirical_astrology/pairing.py": "a01cc0f2d821c220c8ead18e49b7745b7fddb5ebead9108646284dd41b555988",
+    "src/hdmatch/empirical_astrology/protocol.py": "4f1efbceddd21319fcbad89e7bfa494f8a2cb8b3ce16979be9b10deb3e81e78a"
+  },
+  "evidence_disposition": {
+    "eligible_human_people": 0,
+    "eligible_human_pairs": 0,
+    "eligible_human_hospitals": 0,
+    "eligible_independent_networks": 0,
+    "empirical_test_count": 0,
+    "result_rows": 36,
+    "not_evaluated_rows": 20,
+    "not_applicable_no_included_feature_rows": 9,
+    "engineering_pass_rows": 7,
+    "human_effect_estimate": null,
+    "human_confidence_interval": null,
+    "human_p_value": null,
+    "human_power_estimate": null,
+    "human_validation_claim": false,
+    "interpretation": "Missing eligible raw data are not a null, failure, effect estimate or replication result. Engineering passes concern their exercised code paths only."
+  },
+  "handoff_question_dispositions": {
+    "Q1_implementation_fidelity": "Core committed architecture and scientific JSON copies match, but exact complete fail-closed implementation acceptance is withheld for W4-F01 through W4-F07 and missing integrated coverage.",
+    "Q2_scientific_and_versioning": "Science unchanged. Record this versioned gate/status decision; do not revise the v1b scientific model or protocol.",
+    "Q3_return_to_pro_prerequisites": "Verified mechanical closure, eligible non-owner development reference and fixed development report, both outcome-blind actual cohort designs, exact design-specific residual-transfer power/null calibration, verified operational permissions and complete freeze package; separate explicit Pro launch decision remains required.",
+    "Q4_next_action": "Outcome-blind acquisition/feasibility and protocol/implementation operations, not feature or weight revision."
+  },
+  "scientific_invariants": {
+    "primary_feature_id": "TN-001",
+    "primary_surface": "Theory-neutral same-hospital and same-local-date elapsed recorded UTC birth-time distance with frozen controls and IPIP-50 distance.",
+    "full_equals_theory_neutral": true,
+    "executable_astrology_features": [],
+    "aspect_to_trait_mappings": [],
+    "executable_moderator_interactions": [],
+    "astrology_weights": {},
+    "astrology_coefficient_vector_length": 0,
+    "aspect_orb_tightness_applying_angularity": "Secondary inactive templates; activation requires a new outcome-blind exact mapping and Pro decision, then held-out replication.",
+    "both_untouched_cohorts_must_pass": true,
+    "pooling_or_secondary_rescue_allowed": false,
+    "individual_prediction_or_celestial_causation_claim": false,
+    "report_all_failures": true
+  },
+  "implementation_findings": [
+    {
+      "id": "W4-F01",
+      "status": "OPEN",
+      "category": "overrestrictive_contract_mismatch",
+      "location": "src/hdmatch/empirical_astrology/pairing.py:218-228",
+      "finding": "Exposure thresholds applied per hospital instead of per cohort.",
+      "closure": "Cohort aggregate support validator, hospital counts/date gates preserved, complementary-hospital test, no reselection."
+    },
+    {
+      "id": "W4-F02",
+      "status": "OPEN",
+      "category": "fail_closed_operational_defect",
+      "location": "src/hdmatch/empirical_astrology/protocol.py:69-75",
+      "finding": "64-hex SHA256 syntax incorrectly required for the repository's 40-hex Git commit IDs.",
+      "closure": "Separate object IDs and file hashes; verify actual objects/ancestry and test real checkpoint references."
+    },
+    {
+      "id": "W4-F03",
+      "status": "OPEN",
+      "category": "fail_open_scientific_drift_detection",
+      "location": "src/hdmatch/empirical_astrology/contract.py:139-181",
+      "finding": "Scientific settings and derived authorization can drift without rejection; the base seed is consumed by model hashing.",
+      "closure": "Bind every scientific/authorization section and runtime constant to the immutable approved decision; comprehensive mutation tests, not merely refreshed hashes."
+    },
+    {
+      "id": "W4-F04",
+      "status": "OPEN",
+      "category": "missing_mandatory_global_selection_boundary",
+      "location": "src/hdmatch/empirical_astrology/pairing.py:24-50,196-204",
+      "finding": "Related people may enter different pairs because global component retention and cohort isolation are disconnected helpers.",
+      "closure": "Mandatory roster eligibility/retention/allocation/selection integration with identity consistency, lineage and development/A/B isolation tests."
+    },
+    {
+      "id": "W4-F05",
+      "status": "OPEN",
+      "category": "missing_input_and_response_provenance_boundary",
+      "location": "src/hdmatch/empirical_astrology/features.py:146-196; model.py:47-52; protocol.py:53-105",
+      "finding": "Low-level records, bare response maps and structural manifests cannot establish full eligibility, verified civil-time resolution, response validity or freeze identity.",
+      "closure": "Strict verified metadata boundary and negative fixtures for every frozen eligibility, timing, precision, knowledge, response, attrition and artifact-identity rule."
+    },
+    {
+      "id": "W4-F06",
+      "status": "OPEN",
+      "category": "numerically_unresolved_finite_fit_accepted",
+      "location": "src/hdmatch/empirical_astrology/analysis.py:233-253,306-313",
+      "finding": "Normal-equation inversion returns materially unstable finite inference on accepted near-collinear synthetic designs.",
+      "closure": "Stable same-estimand full/restricted numerical implementation, independent full-fixed-effect parity and near-collinear/nonzero-control tests; preserve ordered rank tolerance 1e-10 and fail unresolved cases."
+    },
+    {
+      "id": "W4-F07",
+      "status": "OPEN",
+      "category": "incomplete_failure_reporting",
+      "location": "src/hdmatch/empirical_astrology/analysis.py:369-379,439-447",
+      "finding": "First sensitivity failure prevents later fixed fits and a complete ledger.",
+      "closure": "Attempt/report all fixed fits and all diagnostics with explicit failures; failures block confirmation and cannot reduce the family or be redrawn."
+    }
+  ],
+  "missing_integrated_coverage": [
+    "Strict eligible-human development ingestion and complete fixed baseline/reporting pipeline",
+    "Mandatory eligibility through global retention, allocation, pairing and cohort aggregate support",
+    "Verified artifact-bound two-cohort freeze, access separation and response validity",
+    "Exact development-residual power and null-calibration simulation",
+    "Complete diagnostic/sensitivity/failure ledger and final per-cohort/two-cohort success gate",
+    "Enforced and recorded float64/single-thread numerical settings, NumPy/BLAS/dependency versions, seeds and ordering"
+  ],
+  "mechanical_verification": {
+    "focused_tests_passed": 39,
+    "python": "3.12.14",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "pytest": "8.4.2",
+    "existing_tests_are_not_complete_acceptance": true,
+    "independent_well_conditioned_fixed_effect_parity": "Passed numerical comparison with unequal cluster sizes and nonzero controls.",
+    "adversarial_near_collinearity": "Exposed W4-F06; rounded synthetic counterexample values are in the decision document.",
+    "human_data_used": false
+  },
+  "prelaunch_requirements": {
+    "detailed_authoritative_checklist": "notes/empirical_astrology/master_v2/PRO_DECISION_WAVE4.md#prerequisites-for-an-operational-launch-proposal-to-return-to-pro",
+    "close_all_implementation_findings_and_integrated_gates": true,
+    "development_reference": {
+      "required": true,
+      "non_owner": true,
+      "same_frozen_instrument_eligibility_pairing_covariates": true,
+      "independent_networks": 20,
+      "complete_disjoint_pairs_per_network": 100,
+      "hash_bound_before_association_analysis": true,
+      "synthetic_or_literature_substitute_allowed": false
+    },
+    "target_cohorts": {
+      "labels": ["A", "B"],
+      "independent_networks_each": 20,
+      "hospitals_per_network": 1,
+      "selected_pairs_per_hospital": 100,
+      "selected_people_each": 4000,
+      "minimum_final_informative_dates_per_hospital": 20,
+      "exposure_support_scope": "each cohort",
+      "minimum_fraction_gap_at_most_15_minutes": 0.2,
+      "minimum_fraction_gap_at_least_60_minutes": 0.2,
+      "both_designs_outcome_blind_and_frozen_before_collection_and_either_reveal": true,
+      "no_people_or_relationship_components_across_development_A_B": true,
+      "A_B_hospitals_and_healthcare_recruitment_networks_disjoint": true,
+      "development_to_A_B_site_network_overlap": "Disclose explicitly for Pro review; do not assume independent transfer.",
+      "no_reselection_replacement_repairing_or_optional_stopping": true
+    },
+    "power_null_calibration": {
+      "status": "NOT_EVALUATED",
+      "actual_target_designs": ["A", "B"],
+      "beta_values": [0, 0.01],
+      "runs_per_target_per_beta": 5000,
+      "bootstrap_draws_per_simulation": 999,
+      "primary_test_bootstrap_draws": 99999,
+      "minimum_power_full_event_each_target": 0.8,
+      "maximum_null_rejection_wilson_95_upper_each_target": 0.04,
+      "null_rejection_event": "restricted wild-bootstrap one-sided p<=0.025",
+      "exact_seed_draw_residual_transfer_rules": "Unchanged Wave 3B decision power_simulation section; no residual clipping/rescaling/subset tuning.",
+      "failed_simulation_blocks_launch": true,
+      "conditional_simulation_not_population_power_proof": true
+    },
+    "verified_permissions_custody_instrument_freeze_software_timing_required": true,
+    "separate_explicit_pro_launch_decision_required": true
+  },
+  "work_authorization": {
+    "mechanical_gate_integration_authorized": true,
+    "mechanical_repairs_and_frozen_protocol_completion_authorized": true,
+    "synthetic_adversarial_parity_and_integration_tests_authorized": true,
+    "outcome_blind_acquisition_feasibility_and_protocol_preparation_authorized": true,
+    "existing_authorized_eligible_non_owner_fixed_development_evaluation": "Permitted only after the relevant corrections are verified and the data/provenance boundary is satisfied; no feature or weight fitting.",
+    "external_contact_data_transfer_or_access_rights_granted": false,
+    "owner_known_outcome_inspection_or_fitting_authorized": false,
+    "untouched_A_B_outcome_access_for_development_authorized": false,
+    "prospective_recruitment_or_outcome_collection_authorized": false,
+    "production_or_person_level_use_authorized": false,
+    "feature_mapping_weight_or_protocol_redesign_authorized": false,
+    "rewrite_original_wave4_outputs_authorized": false,
+    "next_gate": "Mechanical closure/data-feasibility report; operational launch proposal only with the complete prerequisites, or a pre-outcome infeasibility/redesign proposal for Pro."
+  },
+  "validation_boundary": "Keep v1b and all empty astrology surfaces frozen. No owner-known fitting. New exact mappings require Pro and pre-outcome freeze. Development/synthetic evidence is not validation. Both untouched disjoint cohorts must independently pass; preserve every negative, opposite, unavailable, nonestimable and protocol-failure result."
+}
