@@ -2,6 +2,8 @@
 
 Date checked: 2026-09-27
 
+> **Current-method correction (2026-09-28):** The V3.6 material below is retained as a legacy diagnostic, not the current reverse-matching method. The current authority is V1.4d's six-rule model. Its century search leaves 1985-01-29 10:18–10:26 UTC (continuous plateau about 10:17:52–10:26:12), not the legacy V3.6 10:36 optimum. Two of the six current rules directly use Lilly partile (<=1°) aspects: Saturn benefic trine, activated here by Saturn–Venus (~0.66°), and 10th-lord benefic conjunction, activated by Mars–Venus (~0.45°). Pluto–MC is not one of the six current rules. See `experiments/astrohd/owner_orb_tightness_10k_20260928.md`.
+
 ## Inputs and calculation provenance
 
 Recorded moment already present in the repository:
