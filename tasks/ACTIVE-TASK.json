@@ -4,7 +4,7 @@
   "requiredBranch": "chat/participant-heartbeat-402-20260928-0406",
   "implementationAuthorized": true,
   "assuranceLane": "live participant hotfix: direct endpoint evidence + affected tests + reversible deploy",
-  "status": "heartbeat_payment_hotfix_verified_pending_deploy",
+  "status": "heartbeat_payment_handling_deployed_external_billing_action_required",
   "ownerOutcome": "Switch participant collection to separate Railway service using Venice, full reviewed V2 survey, durable state and server-side exports. Preserve owner app and historical research.",
   "parentTaskRef": "chat/full-survey-participant-package-20260927@c3ac3d0834f9b2d276aa3e02fa90a94a5927ad76",
   "currentMethod": "tasks/participant-heartbeat-402-20260928/CHANGE-NOTE.md",
@@ -16,8 +16,8 @@
     "volume_id": "928957b0-0128-4900-86f2-205d3b7f69d7",
     "live_enabled": true,
     "venice_token_injected": true,
-    "deployed_app_commit": "55bb92896b58de1c83dca3e97675b0214d328e4f",
-    "deployment_id": "a1195246-b188-4168-96c0-7839b2c00858"
+    "deployed_app_commit": "d977d44b96e6e9360b4ae254207705040a7766dd",
+    "deployment_id": "64523599-bbfd-44c0-aeb8-925baadf6c08"
   },
   "model": {
     "provider": "venice",
@@ -25,11 +25,11 @@
     "reasoning_effort": "xhigh",
     "automatic_fallback": false
   },
-  "blocker": "Provider 402: exact API balance is not available from the retained trace. Code does not fix account credit.",
-  "remaining": "Deploy changed participant service. Owner must resolve provider API-credit issue; no automatic billing retry or purchase.",
+  "blocker": "External API payment-required response. No code, timer or automatic retry can establish adequate balance. No spending authorized.",
+  "remaining": "Owner checks/resolves Venice API credit, then acknowledges billing repair in the existing researcher page to allow the affected session to retry. Refresh the participant page to load the new heartbeat and payment message.",
   "privateDataPublished": false,
-  "updatedAt": "2026-09-28T04:16:10.277615+00:00",
-  "currentHandoff": "tasks/participant-railway-venice-20260927/ACTIVATION-HANDOFF.md",
+  "updatedAt": "2026-09-28T04:18:02.003643+00:00",
+  "currentHandoff": "tasks/participant-heartbeat-402-20260928/CHANGE-NOTE.md",
   "reviewDisposition": "tasks/participant-railway-venice-20260927/REVIEW-DISPOSITION.json",
   "executionBoundary": {
     "participant_live_enabled": true,
@@ -51,5 +51,12 @@
     "receipt": "tasks/participant-railway-venice-20260927/SUCCESSFUL-VENICE-ACTIVATION-20260928.json"
   },
   "manualActivation": "bash apps/life-patterns-participant/scripts/activate_venice.sh --activate",
-  "manualActivationScriptCommit": "81a055577a1c39eecce0d353b95e24d2cca2ad1a"
+  "manualActivationScriptCommit": "81a055577a1c39eecce0d353b95e24d2cca2ad1a",
+  "stopAdmission": {
+    "parentOutcome": "OPEN_PENDING_EXTERNAL_API_CREDIT",
+    "currentOperation": "HEARTBEAT_AND_TERMINAL_402_FIX_DEPLOYED",
+    "nextActor": "Owner for API credit/billing decision; researcher-page acknowledgement then permits normal session continuation.",
+    "performed": "Live deployment plus exact asset/health readback; 41 service tests and synthetic browser offline/payment/recovery check.",
+    "not_performed": "No paid model retry, credit purchase, key change or private source upload."
+  }
 }

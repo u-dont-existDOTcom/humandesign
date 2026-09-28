@@ -1,6 +1,6 @@
 {
   "at": "2026-09-28T04:16:10.277615+00:00",
-  "status": "ready_for_service_deployment",
+  "status": "deployed",
   "base_commit": "266d87b15eb93ce43e2e8798bea25ef49d33c91d",
   "observed_gateway_sequence": [
     {
@@ -62,5 +62,13 @@
     "new live inference retry",
     "private source upload"
   ],
-  "remaining": "Deploy/verify changed surface, then owner resolves Venice API billing before allowing the blocked session to retry."
+  "remaining": "Deploy/verify changed surface, then owner resolves Venice API billing before allowing the blocked session to retry.",
+  "deployment_receipt": "DEPLOYMENT.json",
+  "test_efficiency": {
+    "elapsed_seconds_at_summary": 626.72,
+    "observed_test_seconds": 53.27,
+    "share_percent": 8.5,
+    "test_runs": 4,
+    "forced_redundant_green_seconds": 0
+  }
 }

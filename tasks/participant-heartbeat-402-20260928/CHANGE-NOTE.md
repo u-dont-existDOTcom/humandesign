@@ -9,3 +9,7 @@ A 402 now pauses the affected interview with a plain-language credit message, pr
 The researcher page offers “Allow retry after fixing Venice API credit” for a payment-blocked record. Its confirmation acknowledges that the organizer has addressed billing; the app does not independently certify the balance or buy credit. The action clears the block only for that session and does not itself call the model. Participants are not asked to change keys, pay, reconstruct responses, or restart their survey.
 
 Verification: 41 affected-service tests passed. A real headless mobile browser with a deliberately delayed synthetic model verified changing elapsed time, live/stale heartbeat, connection recovery, the 402 message, no automatic retry, and researcher-approved same-session continuation. Stream metadata tests verify no model/participant text is included. The app still uses Venice and the previously pinned model/effort. No live paid model retry or account purchase occurred in this repair.
+
+## Deployment
+
+Deployed successfully to the participant service. Live health is OK and the public HTML, JavaScript and CSS match the tested commit byte-for-byte. The heartbeat/error-handling repair is live; this does not resolve the external API-credit issue. No credit was purchased, no model was changed, and no new paid inference was attempted. The owner service and unrelated staged changes were untouched.

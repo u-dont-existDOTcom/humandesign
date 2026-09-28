@@ -1,0 +1,27 @@
+{
+  "at": "2026-09-28T04:18:02.003643+00:00",
+  "status": "SUCCESS",
+  "deployment_id": "64523599-bbfd-44c0-aeb8-925baadf6c08",
+  "code_commit": "d977d44b96e6e9360b4ae254207705040a7766dd",
+  "health": {
+    "status": "ok",
+    "version": "railway-participant-v2.1-20260927",
+    "provider": "venice",
+    "provider_configured": true,
+    "participant_enabled": true,
+    "persistence": "encrypted_sqlite",
+    "instrument_version": "59a1f4a6be8fd047034a3d29fd979558890e06398a05b206181c3be66670ecfa"
+  },
+  "asset_sha256_verified": {
+    "app.js": "67285657569dd297c2b2c838f55a62ccdd465a58cc26fd9bbca2ebcf443874b9",
+    "admin.js": "e1aa75ccce29cd6c7736cb8512431b82de0a8e4c4817cf3580f15df5946fad96",
+    "style.css": "261eb5f8122e004db94594e52da37c4e35f4379f821b6f1d541687b19c738e5a",
+    "index.html": "bb45a55906a554eef8ef400971dc6a6690065453604196610e5c66bc95d4203b"
+  },
+  "paid_inference_retried": false,
+  "billing_repaired": false,
+  "credit_purchased": false,
+  "participant_data_moved": false,
+  "owner_service_unchanged": true,
+  "unrelated_staged_changes": "untouched"
+}

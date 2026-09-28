@@ -7,3 +7,7 @@ The owner requested visible liveness/progress after a long wait ended in `provid
 The isolated hotfix adds elapsed/stage clocks, server polling freshness, guarded worker heartbeat and optional model-stream metadata; it does not invent a completion percentage. A 402 becomes a terminal provider-blocked session with clear participant messaging, no automatic retry and source-preserving migration of prior errors. The researcher can acknowledge a resolved API-credit issue and permit a future retry through the authenticated admin page.
 
 The full affected service tests and headless mobile heartbeat/offline/402/recovery scenario passed. No live inference request was initiated. Survey authorities, model/effort and raw participant sources are unchanged. Deploy this tested candidate only to the participant service; preserve the original owner app and unrelated staged Railway changes.
+
+## Deployed checkpoint
+
+The heartbeat/payment fix is live in `d977d44b96e6e9360b4ae254207705040a7766dd` (deployment `64523599-bbfd-44c0-aeb8-925baadf6c08`). Health and exact public assets were verified. The external API-credit problem is not repaired and no live inference retry was made. Refreshing the private participant page loads the new UI; after checking/resolving Venice API credit, the owner may acknowledge that in the researcher page to release the payment-blocked session. Do not claim the billing problem resolved from a green health check.
