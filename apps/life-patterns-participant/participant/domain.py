@@ -99,6 +99,7 @@ def new_state(instrument_version: str, model: str, effort: str) -> dict:
         "evidence": [],
         "dispositions": {},
         "pending_question": None,
+        "processing": None,
         "review": {"summary_shown": False, "confirmed": False, "confirmation_text": None},
         "operations": {},
         "lease": None,
@@ -107,6 +108,7 @@ def new_state(instrument_version: str, model: str, effort: str) -> dict:
         "stop_reason": None,
         "final_export": None,
         "generation": 0,
+        "recovery_markers": {},
         "contamination_notes": [],
         "quarantined_turns": [],
     }
@@ -254,6 +256,7 @@ class Plan(StrictModel):
     evidence: list[Evidence]
     question: Question | None
     control_quote: ControlQuote | None
+    source_review_complete: bool = False
     reason: str
 
 
@@ -265,6 +268,7 @@ class Admission(StrictModel):
     no_unsupported_extension: bool
     control_is_participant_request: bool
     target_information_detected: bool = False
+    bulk_source_review_supported: bool = False
 
 
 def semantic_turns(state: dict) -> list[dict]:
@@ -291,8 +295,25 @@ def validate_plan(plan: Plan, state: dict, instrument: dict, pending: list[str])
     turns = {t["turn_id"]: t for t in state["turns"]}
     routes = {q["id"]: q for q in bank(instrument)["questions"]}
     facets = {g["facet_id"] for g in guide(instrument)}
-    if sorted(x.turn_id for x in plan.dispositions) != sorted(pending):
-        raise ValueError("Each pending source turn needs exactly one disposition.")
+    disposition_ids = [x.turn_id for x in plan.dispositions]
+    if len(disposition_ids) != len(set(disposition_ids)) or any(
+        i not in pending for i in disposition_ids
+    ):
+        raise ValueError("Disposition identifiers must be unique pending source turns.")
+    bulk_import_review = bool(pending) and all(
+        str(turns[i].get("turn_source", "")).startswith("import-") for i in pending
+    )
+    if plan.source_review_complete:
+        if not bulk_import_review:
+            raise ValueError(
+                "Bulk source-review completion is only valid for imported source turns."
+            )
+        if plan.action == "process":
+            raise ValueError(
+                "A complete imported-source review must reach a question, review, or control action."
+            )
+    elif sorted(disposition_ids) != sorted(pending):
+        raise ValueError("Each pending non-bulk source turn needs exactly one disposition.")
     for d in plan.dispositions:
         for quote in d.process_feedback_quotes:
             if not quote or quote not in (turns[d.turn_id].get("answer_text") or ""):

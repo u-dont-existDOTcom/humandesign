@@ -23,16 +23,21 @@ function render(next){
   const review=el("review-items");review.replaceChildren();state.evidence.forEach(e=>{const item=node("div",e.observation,"evidence");item.append(node("small",`${e.time_frame} · ${e.relationship_context}\n${e.conditions.join("; ")}\n${e.review_status}`));e.source_quotes.forEach(q=>item.append(node("small",`${q.turn_id}: “${q.quote}”`)));review.append(item);});
   el("error-detail").textContent=state.error||"The last operation did not finish. Retry without retyping saved answers.";
   el("done-text").textContent=p==="complete"?"You confirmed this version. Its final file will not change.":"You stopped the interview. Completed answers are saved; unfinished parts remain explicit.";
-  status(state.error||(p==="planning"?`Preparing the next step. ${state.turns.length} responses saved.`:p==="consent"&&!state.ready?"The study is not open yet: Venice activation is pending.":p==="declined"?"The interview has stopped. No research export was created.":`${state.turns.length} responses saved · ${p.replaceAll("_"," ")}`));
+  status(state.error||(p==="planning"?(state.processing?.message||`Preparing the next step. ${state.turns.length} responses saved.`):p==="consent"&&!state.ready?"The study is not open yet: Venice activation is pending.":p==="declined"?"The interview has stopped. No research export was created.":`${state.turns.length} responses saved · ${p.replaceAll("_"," ")}`));
   show("limited",p==="resource_limited");
   if(p==="review"&&!state.review.summary_shown&&!writing)markReviewSeen();
 }
-async function refresh(){try{render(await api("/api/session"));}catch(error){status(error.message);}}
-function schedule(){clearTimeout(timer);if(state&&["ready","planning"].includes(state.phase))timer=setTimeout(pump,1500);}
+async function refresh(){try{render(await api("/api/session"));}catch(error){status(error.message);}finally{schedule();}}
+function schedule(){
+  clearTimeout(timer);
+  if(!state)return;
+  if(state.phase==="ready")timer=setTimeout(pump,500);
+  else if(state.phase==="planning")timer=setTimeout(refresh,3000);
+}
 async function pump(){
-  if(busy||!state||!["ready","planning"].includes(state.phase))return;
-  busy=true;status("Your answers are saved. Preparing the next step…");const poll=setInterval(refresh,4000);
-  try{render(await api("/api/next",{}));}catch(error){if(error.status!==409)status(error.message);await refresh();}finally{clearInterval(poll);busy=false;schedule();}
+  if(busy||!state||state.phase!=="ready")return;
+  busy=true;status("Your answers are saved. Starting the next processing step…");
+  try{render(await api("/api/next",{}));}catch(error){if(error.status!==409)status(error.message);await refresh();}finally{busy=false;schedule();}
 }
 async function command(action,text="",target=null){
   if(writing||!state)return false;writing=true;

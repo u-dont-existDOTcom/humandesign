@@ -3,12 +3,12 @@
   "taskId": "participant-railway-venice-20260927",
   "requiredBranch": "chat/participant-railway-venice-20260927-2234",
   "implementationAuthorized": true,
-  "assuranceLane": "disabled-staging-verified; participant-activation-not-cleared",
-  "status": "railway_participant_live_venice_verified_hale_invitation_pending_local_private_action",
+  "assuranceLane": "live participant hotfix: direct endpoint evidence + affected tests + reversible deploy",
+  "status": "import_latency_repair_verified_ready_to_deploy",
   "ownerOutcome": "Switch participant collection to separate Railway service using Venice, full reviewed V2 survey, durable state and server-side exports. Preserve owner app and historical research.",
   "parentTaskRef": "chat/full-survey-participant-package-20260927@c3ac3d0834f9b2d276aa3e02fa90a94a5927ad76",
   "currentMethod": "apps/life-patterns-participant/README.md",
-  "currentReceipt": "tasks/participant-railway-venice-20260927/DEPLOYMENT-RECEIPT.json",
+  "currentReceipt": "tasks/participant-railway-venice-20260927/IMPORT-LATENCY-REPAIR-20260928.json",
   "deployment": {
     "project_id": "97658d58-84ab-40c8-ab1d-1be06600c4b5",
     "environment_id": "b9916074-da51-46a1-8d7d-fd618b3c3d2a",
@@ -25,19 +25,18 @@
     "reasoning_effort": "xhigh",
     "automatic_fallback": false
   },
-  "blocker": "None for Railway/Venice. Creating a participant-specific private invitation requires the local admin credential and is intentionally outside the assistant tool credential boundary.",
-  "remaining": "Create Hale private invitation from her 96-turn edited record, deliver it, then wait for her consent/continuation. No survey redesign is currently indicated by infrastructure.",
+  "blocker": "None for implementation. Independent cross-family review timed out without a verdict; direct production evidence and deterministic/browser regressions establish the latency mechanism and reversible repair.",
+  "remaining": "Deploy the import-latency repair to life-patterns-participant, verify live health and short /api/next launch behavior, then have the already-open private session refresh/resume without re-importing its 96 answers.",
   "privateDataPublished": false,
-  "updatedAt": "2026-09-28T02:04:42.861447+00:00",
+  "updatedAt": "2026-09-28T03:09:14.390556+00:00",
   "currentHandoff": "tasks/participant-railway-venice-20260927/ACTIVATION-HANDOFF.md",
   "reviewDisposition": "tasks/participant-railway-venice-20260927/REVIEW-DISPOSITION.json",
   "executionBoundary": {
-    "platform_gateway_call": "blocked_before_execution; cause_not_returned",
-    "retry_permission_state": "no new tool approval observed",
-    "review_reconciliation": "timed_out_no_verdict",
-    "participant_live_enabled": false,
-    "venice_token_injected": false,
-    "background_worker_running": false
+    "participant_live_enabled": true,
+    "venice_token_injected": true,
+    "reviewer": "timed_out_no_verdict_after_15m_plus",
+    "background_reviewer_running": false,
+    "unrelated_railway_staged_changes": "not accepted"
   },
   "realVeniceEvidence": {
     "gateway_smoke": "PASS",

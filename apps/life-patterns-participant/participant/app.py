@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import asyncio
 import os
 import secrets
 from dataclasses import dataclass
@@ -201,6 +200,7 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
             if state["pending_question"]
             else None,
             "review": state["review"],
+            "processing": state.get("processing"),
             "turns": [
                 {
                     k: t.get(k)
@@ -325,7 +325,8 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
 
     @app.get("/api/session")
     def session(request: Request):
-        return public(store.read(token(request)))
+        value = token(request)
+        return public(engine.recover_interrupted(value))
 
     @app.post("/api/operations")
     def operation(request: Request, body: Operation):
@@ -351,9 +352,9 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
         )
 
     @app.post("/api/next")
-    async def next_question(request: Request):
+    def next_question(request: Request):
         ready()
-        return public(await asyncio.to_thread(engine.advance, token(request)))
+        return public(engine.launch_advance(token(request)))
 
     def download_response(state):
         if state["consent"] is not True:

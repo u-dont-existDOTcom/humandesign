@@ -1,0 +1,39 @@
+{
+  "recorded_at": "2026-09-28T03:09:14.390556+00:00",
+  "observed_failure": {
+    "imported_turns": 96,
+    "old_batch_size": 12,
+    "first_next_http_ms": 162174,
+    "second_next_http_ms": 203057,
+    "second_http_status": 499,
+    "second_proxy_error": "client closed request before server response"
+  },
+  "supported_cause": "Imported backlog was processed in sequential 12-turn semantic batches while each pass resent the complete imported record and survey authority, and /api/next held the browser request open until model work completed.",
+  "repair": {
+    "bulk_import": "All currently pending imported turns are reviewed in one Plan plus one independent Admission pass.",
+    "semantics": "Only material evidence is emitted; non-emitted imported turns remain exact source and are marked unassessed, not semantically coded or scored.",
+    "http": "Long semantic work detaches from /api/next; browser polls /api/session and receives explicit progress.",
+    "recovery": "Old-process planning leases recover to ready; the legacy admission error from this incident is retried at most once."
+  },
+  "verification": {
+    "app_tests": {
+      "passed": 35,
+      "failed": 0
+    },
+    "survey_verifier": {
+      "passed": 497,
+      "checks": 497
+    },
+    "v2_source_preservation": {
+      "passed": 15,
+      "failed": 0
+    },
+    "resume_source_preservation": {
+      "passed": 8,
+      "failed": 0
+    },
+    "slow_model_mobile_browser": "PASS",
+    "lint": "PASS",
+    "reviewer": "Claude Opus 5.5 max public-code review timed out with no verdict after more than 15 minutes; no second reviewer was started."
+  }
+}

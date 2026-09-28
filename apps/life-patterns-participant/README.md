@@ -64,3 +64,7 @@ The activation helper also restores an originally absent participant gateway cre
 ## Create a private continuation invitation
 
 For an existing participant record, use `scripts/create_invitation.py`. It reads the participant-admin credential from a file, rejects birth/chart/ranking fields before upload, preserves the prior JSON record as the declared source type, and writes the private resume link to a mode-0600 output file without printing the link or credential. Inference still begins only after the participant consents in the app.
+
+## Imported-record latency behavior
+
+Imported prior records are reviewed for routing in one complete-source semantic pass plus independent admission, rather than in sequential 12-turn model batches. This is not bulk scoring: exact imported turns remain source records, only material evidence is emitted, and other turns remain explicitly unassessed. New participant answers continue through ordinary source-bound admission. Long model work is detached from the HTTP request; the browser polls saved processing state and can recover after container replacement without losing answers.

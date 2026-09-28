@@ -26,6 +26,13 @@ sys.path.insert(0, str(app_root / "tests"))
 from participant.app import Settings, create_app
 from test_participant import Fake, authority
 
+
+class SlowFake(Fake):
+    def call(self, system, payload, schema, model, effort):
+        time.sleep(1.2)
+        return super().call(system, payload, schema, model, effort)
+
+
 with tempfile.TemporaryDirectory() as folder:
     config = Settings(
         database=pathlib.Path(folder) / "study.db",
@@ -36,7 +43,7 @@ with tempfile.TemporaryDirectory() as folder:
         secure_cookies=False,
         live_enabled=True,
     )
-    fake = Fake()
+    fake = SlowFake()
     app = create_app(config, provider=fake, instrument=authority())
     sock = socket.socket()
     sock.bind(("127.0.0.1", 0))
@@ -60,10 +67,13 @@ with tempfile.TemporaryDirectory() as folder:
             page.locator("#agree").wait_for(state="visible")
             page.locator("#agree").click()
             page.locator("#question-panel").wait_for(state="visible", timeout=15000)
-            assert "[route: G01]" in page.locator("#question").inner_text()
+            assert "[route: A0]" in page.locator("#question").inner_text()
             page.screenshot(path=str(r / "browser-first-question.png"), full_page=True)
             page.locator("#answer").fill("I sort messages by travel, cost and time.")
             page.locator("#send").click()
+            page.locator("#status").filter(has_text="semantic pass").wait_for(
+                state="visible", timeout=10000
+            )
             page.locator("#question").filter(has_text="[route: G02]").wait_for(
                 state="visible", timeout=15000
             )

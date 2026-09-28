@@ -5,6 +5,7 @@ import json
 import secrets
 import tempfile
 import threading
+import time
 from pathlib import Path
 
 import pytest
@@ -69,9 +70,12 @@ class Fake:
                 no_redundant_question=True,
                 no_unsupported_extension=True,
                 control_is_participant_request=False,
+                bulk_source_review_supported=bool(payload.get("import_bulk_review")),
             ), {"stage": "Admission"}
         pending = payload["pending_turn_ids"]
         turns = {t["turn_id"]: t for t in payload["turns"]}
+        bulk = bool(payload.get("import_bulk_review"))
+        evidence_pending = pending[:1] if bulk else pending
         evidence = [
             {
                 "evidence_id": f"e-{i}",
@@ -85,19 +89,21 @@ class Fake:
                 "supported_scope": "This answer only.",
                 "unsupported_extensions": ["No global ability claim."],
             }
-            for i in pending
+            for i in evidence_pending
             if turns[i]["answer_text"]
         ]
         q = next(
             q
             for q in payload["canonical_routes"]
-            if q["id"] == ("G02" if payload["turns"] else "G01")
+            if q["id"] == ("A0" if bulk else "G02" if payload["turns"] else "G01")
         )
         review = self.review or payload["review_only"]
-        process = payload["additional_pending_batches"]
+        process = payload["additional_pending_batches"] and not bulk
         data = {
             "action": "process" if process else "review" if review else "ask",
-            "dispositions": [
+            "dispositions": []
+            if bulk
+            else [
                 {
                     "turn_id": i,
                     "status": "answered",
@@ -120,6 +126,7 @@ class Fake:
                 "why_useful": "Synthetic fixture.",
             },
             "control_quote": None,
+            "source_review_complete": bulk,
             "reason": "Synthetic test only.",
         }
         return Plan.model_validate(data), {"stage": "Plan"}
@@ -164,11 +171,23 @@ def command(client, state, action, text="", target=None, op=None):
     )
 
 
+def wait_phase(client, phases, timeout=3.0):
+    deadline = time.monotonic() + timeout
+    while time.monotonic() < deadline:
+        state = client.get("/api/session").json()
+        if state["phase"] in phases:
+            return state
+        time.sleep(0.02)
+    raise AssertionError(f"Session did not reach {phases}; last state: {state}")
+
+
 def begin(setup):
     _, fake, _, client = setup
     s = join(setup)
     s = command(client, s, "consent").json()
     s = client.post("/api/next", json={}).json()
+    if s["phase"] == "planning":
+        s = wait_phase(client, {"awaiting_answer"})
     assert s["phase"] == "awaiting_answer"
     assert "[route: A0]" in s["question"]["text"]
     assert fake.count == 0
@@ -760,3 +779,95 @@ def test_controller_modification_rejected(tmp_path):
     (tmp_path / CONTROLLER.name).write_text("Changed controller")
     with pytest.raises(RuntimeError):
         load_instrument(tmp_path)
+
+
+def test_imported_96_turns_bulk_review_in_one_semantic_pair(setup):
+    _, fake, app, c = setup
+    state = join(setup)
+    record = {
+        "turns": [
+            {"question_text": f"Edited question {i}?", "answer_text": f"Existing answer {i}."}
+            for i in range(96)
+        ]
+    }
+    response = c.post(
+        "/api/import",
+        json={"record": record, "source_type": "edited_response_record"},
+    )
+    assert response.status_code == 200
+    state = command(c, response.json(), "consent").json()
+    started = time.monotonic()
+    state = c.post("/api/next", json={}).json()
+    assert time.monotonic() - started < 1.5
+    if state["phase"] == "planning":
+        state = wait_phase(c, {"awaiting_answer", "review", "error"}, timeout=3)
+    assert state["phase"] == "awaiting_answer"
+    assert fake.count == 2
+    internal = app.state.store.read(c.cookies.get("lp_session"))
+    assert len(internal["dispositions"]) == 96
+    assert len(internal["evidence"]) == 1
+    assert all(t.get("bulk_source_reviewed_at") for t in internal["turns"])
+    assert internal["processing"] is None
+
+
+def test_long_model_step_detaches_from_http_request_and_reports_progress(setup):
+    _, fake, _, c = setup
+    state = begin(setup)
+    state = command(c, state, "answer", "I would probably keep the hour for myself.").json()
+    fake.called = threading.Event()
+    fake.block = threading.Event()
+    started = time.monotonic()
+    state = c.post("/api/next", json={}).json()
+    elapsed = time.monotonic() - started
+    assert elapsed < 1.5
+    assert state["phase"] == "planning"
+    assert fake.called.wait(1)
+    polled = c.get("/api/session").json()
+    assert polled["phase"] == "planning"
+    assert polled["processing"]["stage"] in {"queued", "planner", "admission"}
+    fake.block.set()
+    final = wait_phase(c, {"awaiting_answer", "review", "error"}, timeout=3)
+    assert final["phase"] == "awaiting_answer"
+
+
+def test_interrupted_planning_from_old_process_recovers_on_poll(setup):
+    _, _, app, c = setup
+    state = join(setup)
+    state = command(c, state, "consent").json()
+    token = c.cookies.get("lp_session")
+
+    def stale(s):
+        s["phase"] = "planning"
+        s["lease"] = {"id": "old", "boot": "previous-process", "expires": time.time() + 999}
+        s["processing"] = {"stage": "planner", "message": "Old work"}
+
+    app.state.store.change(token, stale)
+    recovered = c.get("/api/session").json()
+    assert recovered["phase"] == "ready"
+    assert recovered["processing"] is None
+    internal = app.state.store.read(token)
+    assert internal["lease"] is None
+
+
+def test_legacy_import_admission_error_auto_recovers_only_once(setup):
+    _, _, app, c = setup
+    join(setup)
+    response = c.post(
+        "/api/import",
+        json={"record": {"turns": [{"answer_text": "Existing imported answer."}]}},
+    )
+    command(c, response.json(), "consent")
+    token = c.cookies.get("lp_session")
+
+    def old_error(s):
+        s["phase"] = "error"
+        s["error"] = "question_or_evidence_admission_not_resolved"
+        s["lease"] = None
+
+    app.state.store.change(token, old_error)
+    recovered = c.get("/api/session").json()
+    assert recovered["phase"] == "ready"
+    assert "bulk-import-latency-v1" in app.state.store.read(token)["recovery_markers"]
+    app.state.store.change(token, old_error)
+    second = c.get("/api/session").json()
+    assert second["phase"] == "error"
