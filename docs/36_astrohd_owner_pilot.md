@@ -137,3 +137,24 @@ Adequacy is deliberately split:
   incomplete.
 - **Release adequacy:** closed for friends and not yet deployed; bounded owner-only
   release awaits a clean second exact-diff review plus the operational gates above.
+
+## Interviewer accuracy checks
+
+Both interviewer instruction files end with an accuracy section. The interviewer
+states what the participant said or did only from the participant's own words, and
+rechecks those words when writing each reply or evidence record. It puts only exact
+words in quotation marks and says "you never mentioned X" only after checking the
+whole conversation. When the participant corrects a reflection or disputes a result,
+it goes back to their words or the returned Action data instead of conceding or
+defending by default. After reveal, it states AstroHD predictions only from the
+returned results, corrects its own contradictions openly, and labels estimates.
+
+`tests/unit/test_custom_gpt_accuracy_checks.py` pins these phrases and the size
+budget. The deployable block must stay within the Custom GPT builder's
+8,000-character instruction limit. The test applies two conservative counts: UTF-16
+characters with every line break counted twice, and UTF-8 bytes. Both must be 8,000
+or less.
+
+The runtime `interviewer_instructions_sha256` receipt hashes this repository file.
+Once this change is deployed, that receipt will not match the instructions the live
+interviewer runs until the updated block is pasted into the GPT builder.
