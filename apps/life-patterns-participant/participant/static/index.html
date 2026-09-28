@@ -2,6 +2,19 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Life Patterns · Research interview</title><link rel="stylesheet" href="/assets/style.css"><script src="/assets/app.js" defer></script></head>
 <body><main><header><span class="eyebrow">BEHAVIORAL RESEARCH</span><h1>Life Patterns</h1><p class="sub">An interview about how you respond to everyday situations.</p></header>
 <div id="status" role="status" aria-live="polite">Opening your saved interview…</div>
+<section id="processing-panel" hidden aria-label="Processing status">
+ <h2 id="processing-title">Preparing the next step</h2>
+ <ol class="processing-stages" aria-label="Processing stages, not percent complete">
+  <li id="step-planner">Read answers</li><li id="step-admission">Check interpretation</li><li id="step-ready">Ready</li>
+ </ol>
+ <progress id="processing-meter" aria-label="Model work is in progress; percentage unavailable"></progress>
+ <p id="elapsed-time" class="elapsed"></p>
+ <p id="heartbeat-line"><span id="heartbeat-dot" aria-hidden="true"></span><span id="heartbeat-text"></span></p>
+ <p id="worker-status" class="progress-detail"></p><p id="model-status" class="progress-detail"></p>
+ <p id="processing-note" class="progress-detail"></p>
+ <button id="check-status" class="secondary" type="button">Check saved status</button>
+</section>
+<section id="provider-blocked" hidden role="alert"><h2 id="provider-title"></h2><p id="provider-detail"></p><p>Your private link and saved answers still work. There is nothing to re-enter.</p></section>
 <section id="entry" hidden><h2>Your private study link</h2><p>Open the invitation or resume link Joel sent you. Your link is private: anyone with it can access your interview.</p></section>
 <section id="consent" hidden><h2>Before we begin</h2><p>This is an experimental behavioral-pattern research interview, not medical or psychological diagnosis. Your answers are saved on this research app and may be shared with Joel for research. The interviewer uses Venice to process your answers. The research team may later compare your frozen record with birth information you choose to supply separately.</p><p>Please do not put your birth date, birth time, birthplace or chart details here. You may skip, correct, pause or stop. Conditions and uncertainty are useful answers.</p><p id="import-notice"></p>
 <details><summary>Already have an interview record?</summary><p>Import a prior JSON record before starting. Your usable old answers will be retained, not repeated.</p><label>Source type <select id="source-type"><option value="edited_response_record">Edited response record</option><option value="prior_json">Prior JSON export</option><option value="raw_transcript">Original transcript</option><option value="answer_only_notes">Answer-only notes</option></select></label><input type="file" id="import-file" accept=".json,application/json"><button id="import-button" class="secondary">Import existing record</button></details>

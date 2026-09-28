@@ -22,7 +22,7 @@ from .domain import (
     strict_json,
     utc,
 )
-from .engine import Engine, ProviderError, Venice
+from .engine import PAYMENT_ERROR, Engine, ProviderError, Venice
 from .store import Conflict, Missing, Store, canonical
 
 STATIC = Path(__file__).parent / "static"
@@ -114,6 +114,10 @@ class Import(Body):
         return strict_json(self.record_text) if self.record_text is not None else self.record
 
 
+class ProviderRecovery(Body):
+    billing_issue_resolved: Literal[True]
+
+
 class BodyLimit:
     def __init__(self, app, limit=2_000_000):
         self.app, self.limit = app, limit
@@ -195,12 +199,26 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
             "session_id": state["session_id"],
             "revision": state["revision"],
             "phase": state["phase"],
-            "error": state["error"],
+            "server_time": utc(),
+            "error_code": state.get("error"),
+            "error": "The AI service needs API credit. Your saved answers are safe; the study organizer must resolve this before retrying."
+            if state.get("error") == PAYMENT_ERROR
+            else state["error"],
+            "provider_issue": {
+                "code": "payment_required",
+                "http_status": 402,
+                "title": "Interview paused — AI service needs credit",
+                "detail": "Venice returned a payment-required response. This is a study service issue, not a problem with your answers. Please return after the organizer checks the API balance. Retrying now will not help.",
+                "automatic_retry": False,
+                "requires_organizer": True,
+            }
+            if state.get("error") == PAYMENT_ERROR
+            else None,
             "question": {k: state["pending_question"].get(k) for k in ("text", "question_id")}
             if state["pending_question"]
             else None,
             "review": state["review"],
-            "processing": state.get("processing"),
+            "processing": state.get("processing") if state["phase"] == "planning" else None,
             "turns": [
                 {
                     k: t.get(k)
@@ -405,6 +423,26 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
             "turn_count": len(state["turns"]),
             "consent_required": True,
         }
+
+    @app.post("/api/admin/sessions/{session_id}/resume-provider")
+    def resume_provider(request: Request, session_id: str, body: ProviderRecovery):
+        admin(request)
+
+        def unblock(state):
+            if state.get("error") != PAYMENT_ERROR or state["phase"] not in {
+                "error",
+                "provider_blocked",
+            }:
+                raise Conflict("This session is not blocked by the provider payment response.")
+            state.setdefault("provider_recovery", []).append(
+                {"at": utc(), "action": "organizer_acknowledged_billing_repair"}
+            )
+            state["phase"], state["error"], state["stop_reason"] = "ready", None, None
+            state["processing"], state["lease"] = None, None
+            state["generation"] += 1
+
+        changed = store.admin_change(session_id, unblock)
+        return {"session_id": session_id, "phase": changed["phase"], "inference_started": False}
 
     @app.get("/api/admin/exports/{session_id}")
     def researcher_export(request: Request, session_id: str):

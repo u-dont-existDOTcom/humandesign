@@ -9,7 +9,7 @@ import threading
 import time
 import urllib.error
 import urllib.request
-from typing import Any
+from typing import Any, Callable
 from urllib.parse import urlparse
 
 from .domain import (
@@ -25,6 +25,8 @@ from .domain import (
     validate_plan,
 )
 from .store import Conflict, Store, canonical, digest
+
+PAYMENT_ERROR = "provider_http_402"
 
 
 class ProviderError(RuntimeError):
@@ -53,7 +55,16 @@ class Venice:
         self.configured = bool(token)
         self.opener = urllib.request.build_opener(NoRedirect)
 
-    def call(self, system: str, payload: dict, schema, model: str, effort: str) -> tuple[Any, dict]:
+    def call(
+        self,
+        system: str,
+        payload: dict,
+        schema,
+        model: str,
+        effort: str,
+        *,
+        on_activity: Callable[[dict], None] | None = None,
+    ) -> tuple[Any, dict]:
         if not self.configured:
             raise ProviderError("venice_access_not_configured")
         body = {
@@ -88,8 +99,23 @@ class Venice:
         start = time.monotonic()
         usage, returned, finish, content = {}, None, None, []
         size = 0
+        events = 0
+        last_emit = 0.0
+
+        def activity(force=False):
+            nonlocal last_emit
+            now = time.monotonic()
+            if on_activity and (force or now - last_emit >= 3):
+                last_emit = now
+                # Only numeric liveness metadata, never model/participant/reasoning text.
+                try:
+                    on_activity({"model_activity_at": utc(), "stream_events_received": events})
+                except Exception:
+                    pass  # optional UI telemetry must not corrupt a paid provider response
+
         try:
             with self.opener.open(request, timeout=self.timeout) as response:
+                activity(force=True)
                 if "text/event-stream" not in response.headers.get("content-type", ""):
                     raw = json.loads(response.read(8_000_000))
                     returned, usage = raw.get("model"), raw.get("usage") or {}
@@ -101,6 +127,9 @@ class Venice:
                         if time.monotonic() - start > 600:
                             raise ProviderError("provider_total_deadline")
                         size += len(line)
+                        if line.strip():
+                            events += 1
+                            activity()
                         if size > 8_000_000:
                             raise ProviderError("provider_response_too_large")
                         if not line.startswith(b"data:"):
@@ -122,6 +151,7 @@ class Venice:
             raise ProviderError(f"provider_http_{exc.code}") from None
         except (urllib.error.URLError, TimeoutError, OSError, http.client.HTTPException):
             raise ProviderError("provider_connection_or_timeout") from None
+        activity(force=True)
         if finish != "stop":
             raise ProviderError("provider_incomplete_output")
         aliases = {model}
@@ -215,6 +245,11 @@ class Engine:
         now = time.time()
 
         def repair(state):
+            if state.get("phase") == "error" and state.get("error") == PAYMENT_ERROR:
+                state["phase"] = "provider_blocked"
+                state["processing"] = None
+                state["lease"] = None
+                state["stop_reason"] = "provider_payment_required"
             lease = state.get("lease")
             interrupted = state.get("phase") == "planning" and (
                 not lease or lease.get("boot") != self.boot or float(lease.get("expires", 0)) <= now
@@ -249,6 +284,8 @@ class Engine:
 
     def launch_advance(self, token: str) -> dict:
         current = self.recover_interrupted(token)
+        if current.get("error") == PAYMENT_ERROR or current["phase"] == "provider_blocked":
+            return current
         if current["phase"] == "planning":
             return current
         if current["phase"] not in {"ready", "error"}:
@@ -337,6 +374,8 @@ class Engine:
                     )
                     if s["review"].get("shown_at"):
                         s["review_only"] = True
+                    if s.get("error") == PAYMENT_ERROR:
+                        s["phase"] = "provider_blocked"
                 elif action == "confirm":
                     if s["phase"] != "review" or not s["review"].get("summary_shown"):
                         raise Conflict("Show the final review before confirming it.")
@@ -477,6 +516,13 @@ class Engine:
         run_id = secrets.token_hex(16)
 
         def claim(s):
+            if (
+                s.get("error") == PAYMENT_ERROR
+                and s["phase"] in {"error", "ready", "provider_blocked"}
+            ) or s["phase"] == "provider_blocked":
+                s["phase"], s["processing"], s["lease"] = "provider_blocked", None, None
+                s["stop_reason"] = "provider_payment_required"
+                return
             if s["phase"] in {
                 "consent",
                 "paused",
@@ -507,11 +553,14 @@ class Engine:
                 "stage": "queued",
                 "message": "Preparing the next survey step.",
                 "started_at": utc(),
+                "stage_started_at": utc(),
+                "worker_heartbeat_at": utc(),
+                "attempt": 1,
             }
             s["phase"], s["error"] = "planning", None
 
         state = self.store.change(token, claim)
-        if state["phase"] == "resource_limited":
+        if state["phase"] in {"resource_limited", "provider_blocked"}:
             return state
         instrument = self.store.instrument(state["instrument_version"])
         pending_all = [
@@ -588,7 +637,7 @@ class Engine:
         plan = None
         error = None
 
-        def progress(stage: str, message: str) -> None:
+        def progress(stage: str, message: str, attempt: int) -> None:
             def update(current):
                 lease = current.get("lease")
                 if (
@@ -596,7 +645,14 @@ class Engine:
                     and lease.get("id") == run_id
                     and current.get("generation") == state["generation"]
                 ):
+                    prior = current.get("processing") or {}
                     current["processing"] = {
+                        "started_at": prior.get("started_at", state["processing"]["started_at"]),
+                        "stage_started_at": utc(),
+                        "worker_heartbeat_at": utc(),
+                        "attempt": attempt,
+                        "model_activity_at": None,
+                        "stream_events_received": 0,
                         "stage": stage,
                         "message": message,
                         "pending_source_turns": len(pending),
@@ -605,6 +661,51 @@ class Engine:
                     }
 
             self.store.change(token, update)
+
+        def update_liveness(metadata: dict | None = None):
+            active = False
+
+            def update(current):
+                nonlocal active
+                lease = current.get("lease")
+                if (
+                    current.get("phase") == "planning"
+                    and lease
+                    and lease.get("id") == run_id
+                    and current.get("generation") == state["generation"]
+                ):
+                    active = True
+                    current.setdefault("processing", {})["worker_heartbeat_at"] = utc()
+                    if metadata:
+                        current["processing"].update(metadata)
+
+            self.store.change(token, update)
+            return active
+
+        heartbeat_stop = threading.Event()
+
+        def heartbeat():
+            while not heartbeat_stop.wait(5):
+                try:
+                    if not update_liveness():
+                        return
+                except Exception:
+                    return  # a stale heartbeat is shown as stale, never fabricated
+
+        heartbeat_thread = threading.Thread(target=heartbeat, daemon=True, name="survey-heartbeat")
+        heartbeat_thread.start()
+
+        def invoke(system, payload, schema):
+            if isinstance(self.provider, Venice):
+                return self.provider.call(
+                    system,
+                    payload,
+                    schema,
+                    state["model"],
+                    state["effort"],
+                    on_activity=update_liveness,
+                )
+            return self.provider.call(system, payload, schema, state["model"], state["effort"])
 
         def renew():
             def update(current):
@@ -628,14 +729,9 @@ class Engine:
                     f"Reviewing all {len(pending)} imported responses (semantic pass 1 of 2)."
                     if bulk_import_review
                     else "Interpreting the latest response (semantic pass 1 of 2).",
+                    attempt + 1,
                 )
-                candidate, call = self.provider.call(
-                    PLANNER + "\n" + rules + "\n" + controller,
-                    context,
-                    Plan,
-                    state["model"],
-                    state["effort"],
-                )
+                candidate, call = invoke(PLANNER + "\n" + rules + "\n" + controller, context, Plan)
                 telemetry.append(call)
                 try:
                     validate_plan(candidate, state, instrument, pending)
@@ -664,13 +760,12 @@ class Engine:
                     progress(
                         "admission",
                         "Checking the proposed evidence and next question (semantic pass 2 of 2).",
+                        attempt + 1,
                     )
-                    admission, call = self.provider.call(
+                    admission, call = invoke(
                         REVIEWER + "\n" + rules,
                         dict(context, proposed_plan=candidate.model_dump()),
                         Admission,
-                        state["model"],
-                        state["effort"],
                     )
                     telemetry.append(call)
                     if not all(
@@ -713,6 +808,10 @@ class Engine:
                 {"provider": "venice", "stage": "failed_attempt", "error_code": error, "at": utc()}
             )
 
+        finally:
+            heartbeat_stop.set()
+            heartbeat_thread.join(timeout=1)
+
         def finish(s):
             s["calls"].extend(telemetry)
             if (
@@ -725,9 +824,15 @@ class Engine:
             s["processing"] = None
             if error or plan is None:
                 s["phase"], s["error"] = (
-                    ("resource_limited" if error == "study_model_call_limit_reached" else "error"),
+                    "provider_blocked"
+                    if error == PAYMENT_ERROR
+                    else "resource_limited"
+                    if error == "study_model_call_limit_reached"
+                    else "error",
                     error or "question_preparation_failed",
                 )
+                if error == PAYMENT_ERROR:
+                    s["stop_reason"] = "provider_payment_required"
                 if s["phase"] == "resource_limited":
                     s["stop_reason"] = "infrastructure_model_call_limit"
                 return

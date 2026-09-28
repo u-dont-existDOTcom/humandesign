@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "taskId": "participant-railway-venice-20260927",
-  "requiredBranch": "chat/participant-railway-venice-20260927-2234",
+  "taskId": "participant-heartbeat-402-20260928",
+  "requiredBranch": "chat/participant-heartbeat-402-20260928-0406",
   "implementationAuthorized": true,
   "assuranceLane": "live participant hotfix: direct endpoint evidence + affected tests + reversible deploy",
-  "status": "import_latency_hotfix_deployed_existing_session_ready_to_resume",
+  "status": "heartbeat_payment_hotfix_verified_pending_deploy",
   "ownerOutcome": "Switch participant collection to separate Railway service using Venice, full reviewed V2 survey, durable state and server-side exports. Preserve owner app and historical research.",
   "parentTaskRef": "chat/full-survey-participant-package-20260927@c3ac3d0834f9b2d276aa3e02fa90a94a5927ad76",
-  "currentMethod": "apps/life-patterns-participant/README.md",
-  "currentReceipt": "tasks/participant-railway-venice-20260927/IMPORT-LATENCY-REPAIR-20260928.json",
+  "currentMethod": "tasks/participant-heartbeat-402-20260928/CHANGE-NOTE.md",
+  "currentReceipt": "tasks/participant-heartbeat-402-20260928/VERIFICATION.json",
   "deployment": {
     "project_id": "97658d58-84ab-40c8-ab1d-1be06600c4b5",
     "environment_id": "b9916074-da51-46a1-8d7d-fd618b3c3d2a",
@@ -25,10 +25,10 @@
     "reasoning_effort": "xhigh",
     "automatic_fallback": false
   },
-  "blocker": "None. Existing private imported session should recover on next GET /api/session; participant only needs to refresh the same private tab.",
-  "remaining": "Participant refreshes the existing private tab. Observe one detached bulk imported-source Plan+Admission pass, then continue only with useful unresolved questions.",
+  "blocker": "Provider 402: exact API balance is not available from the retained trace. Code does not fix account credit.",
+  "remaining": "Deploy changed participant service. Owner must resolve provider API-credit issue; no automatic billing retry or purchase.",
   "privateDataPublished": false,
-  "updatedAt": "2026-09-28T03:12:11.420617+00:00",
+  "updatedAt": "2026-09-28T04:16:10.277615+00:00",
   "currentHandoff": "tasks/participant-railway-venice-20260927/ACTIVATION-HANDOFF.md",
   "reviewDisposition": "tasks/participant-railway-venice-20260927/REVIEW-DISPOSITION.json",
   "executionBoundary": {

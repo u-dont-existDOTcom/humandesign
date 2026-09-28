@@ -113,10 +113,18 @@ class Store:
         return self.decode(row[0])
 
     def change(self, token: str, operation: Callable[[dict], None]) -> dict:
+        return self._change("token_hash", digest(token), operation)
+
+    def admin_change(self, session_id: str, operation: Callable[[dict], None]) -> dict:
+        return self._change("id", session_id, operation)
+
+    def _change(self, column: str, value: str, operation: Callable[[dict], None]) -> dict:
+        if column not in {"id", "token_hash"}:
+            raise ValueError("Unsupported lookup")
         with self.connection() as db:
             db.execute("BEGIN IMMEDIATE")
             row = db.execute(
-                "SELECT revision,payload FROM sessions WHERE token_hash=?", (digest(token),)
+                f"SELECT revision,payload FROM sessions WHERE {column}=?", (value,)
             ).fetchone()
             if not row:
                 raise Missing("Session access required.")
@@ -128,8 +136,8 @@ class Store:
                 return state
             state["revision"] = row[0] + 1
             db.execute(
-                "UPDATE sessions SET revision=?,payload=? WHERE token_hash=?",
-                (state["revision"], self.encode(state), digest(token)),
+                f"UPDATE sessions SET revision=?,payload=? WHERE {column}=?",
+                (state["revision"], self.encode(state), value),
             )
             db.commit()
         return state
@@ -139,7 +147,7 @@ class Store:
             rows = db.execute("SELECT payload FROM sessions ORDER BY created DESC").fetchall()
         return [
             {k: state[k] for k in ("session_id", "phase", "created_at", "revision")}
-            | {"turn_count": len(state["turns"])}
+            | {"turn_count": len(state["turns"]), "error_code": state.get("error")}
             for row in rows
             for state in [self.decode(row[0])]
         ]

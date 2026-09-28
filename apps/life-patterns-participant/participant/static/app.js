@@ -1,18 +1,48 @@
 "use strict";
 const el=id=>document.getElementById(id);
 let state=null, busy=false, writing=false, pendingWrite=null, timer=null;
+let lastSnapshotAt=null, serverAtSnapshot=null;
 const show=(id,yes)=>{el(id).hidden=!yes;};
 const status=text=>{el("status").textContent=text;};
 async function api(path,body){
-  const response=await fetch(path,{method:body===undefined?"GET":"POST",credentials:"same-origin",headers:{...(body===undefined?{}:{"Content-Type":"application/json"}),...(state?{"X-Life-Patterns-Session":state.session_id}:{})},body:body===undefined?undefined:JSON.stringify(body)});
-  const value=await response.json();
-  if(!response.ok){const error=new Error(value.detail||"Request failed.");error.status=response.status;throw error;}
-  return value;
+  const controller=new AbortController();const timeout=setTimeout(()=>controller.abort(),15000);
+  try{
+    const response=await fetch(path,{method:body===undefined?"GET":"POST",credentials:"same-origin",cache:"no-store",signal:controller.signal,headers:{...(body===undefined?{}:{"Content-Type":"application/json"}),...(state?{"X-Life-Patterns-Session":state.session_id}:{})},body:body===undefined?undefined:JSON.stringify(body)});
+    let value;try{value=await response.json();}catch{throw new Error("The server response could not be read. Check the saved status; do not re-enter a saved answer.");}
+    if(!response.ok){const error=new Error(value.detail||"Request failed.");error.status=response.status;throw error;}
+    return value;
+  }catch(error){if(error.name==="AbortError")throw new Error("No server reply within 15 seconds. Connection may be interrupted; your last saved record is not being reset.");throw error;}
+  finally{clearTimeout(timeout);}
 }
+
+function duration(seconds){const n=Math.max(0,Math.floor(seconds));return `${Math.floor(n/60)}m ${String(n%60).padStart(2,"0")}s`;}
+function updateProcessing(){
+  const planning=state?.phase==="planning";show("processing-panel",planning);
+  if(!planning)return;
+  const now=performance.now();const age=lastSnapshotAt===null?Infinity:(now-lastSnapshotAt)/1000;
+  const serverNow=Number.isFinite(serverAtSnapshot)?serverAtSnapshot+(now-lastSnapshotAt):null;
+  const p=state.processing||{};
+  const since=value=>serverNow!==null&&Number.isFinite(Date.parse(value))?Math.max(0,(serverNow-Date.parse(value))/1000):null;
+  const total=since(p.started_at),stageTime=since(p.stage_started_at),workerAge=since(p.worker_heartbeat_at),modelAge=since(p.model_activity_at);
+  const serverFresh=age<12;const workerFresh=workerAge!==null&&workerAge<20;
+  el("processing-title").textContent=p.message||"Preparing the next step";
+  el("elapsed-time").textContent=`Elapsed: ${total===null?"awaiting timing data":duration(total)}${stageTime===null?"":` · This stage: ${duration(stageTime)}`}`;
+  el("heartbeat-text").textContent=serverFresh?`Server connected · last reply ${Math.floor(age)}s ago`:`Connection delayed · last server reply ${Number.isFinite(age)?duration(age):"not received"}`;
+  el("heartbeat-dot").className=serverFresh&&workerFresh?"live":"stale";
+  el("worker-status").textContent=!serverFresh?"Worker status cannot be confirmed while the connection is delayed.":workerAge===null?"Waiting for a worker heartbeat.":workerFresh?`Worker heartbeat ${Math.floor(workerAge)}s ago · waiting for or processing the AI response`:`Worker heartbeat is stale (${duration(workerAge)}). This is not confirmation that the AI is still progressing.`;
+  el("model-status").textContent=modelAge===null?"No AI response data received for this stage yet.":`Last AI response data ${duration(modelAge)} ago · ${p.stream_events_received||0} stream events received (not a completion percentage).`;
+  el("processing-meter").hidden=!(serverFresh&&workerFresh);
+  const stage=p.stage;for(const id of ["step-planner","step-admission","step-ready"]){el(id).removeAttribute("aria-current");el(id).classList.remove("completed");}
+  if(stage==="planner")el("step-planner").setAttribute("aria-current","step");
+  if(stage==="admission"){el("step-planner").classList.add("completed");el("step-admission").setAttribute("aria-current","step");}
+  el("processing-note").textContent=(p.attempt>1?`Revision pass ${p.attempt}: checking a revised plan. `:"")+"Stages are not a percentage or an estimate of time remaining. You can close this tab and return with your private link.";
+}
+setInterval(updateProcessing,1000);
+
 function node(tag,text,className){const n=document.createElement(tag);n.textContent=text;if(className)n.className=className;return n;}
 function render(next){
   if(state&&state.session_id===next.session_id&&next.revision<state.revision)return;
-  state=next;document.querySelectorAll('a[href^="/api/export"]').forEach(a=>{a.href=`/api/export?session_id=${encodeURIComponent(state.session_id)}`;});const p=state.phase;show("entry",false);show("consent",p==="consent");show("workspace",!["consent","declined"].includes(p));
+  state=next;lastSnapshotAt=performance.now();serverAtSnapshot=Date.parse(next.server_time);document.querySelectorAll('a[href^="/api/export"]').forEach(a=>{a.href=`/api/export?session_id=${encodeURIComponent(state.session_id)}`;});const p=state.phase;show("entry",false);show("consent",p==="consent");show("workspace",!["consent","declined"].includes(p));
   for(const [id,phases] of Object.entries({"question-panel":["awaiting_answer"],"review-panel":["review"],done:["complete","stopped"],"retry-panel":["error"],paused:["paused"]}))show(id,phases.includes(p));
   show("controls",!["complete","stopped","declined"].includes(p));show("correction-panel",["awaiting_answer","review","ready","error","paused"].includes(p)&&state.turns.length>0);
   el("import-notice").textContent=state.turns.length?`${state.turns.length} previous responses are already included. You do not need the old chat.`:"";
@@ -21,6 +51,10 @@ function render(next){
   state.turns.forEach((t,i)=>{const item=node("div","","history-turn");item.append(node("small",`${i+1} · ${t.turn_id}`),node("p",t.question_text||"No original question recorded."),node("p",t.answer_text??"No answer recorded.","answer-text"));history.append(item);const option=node("option",`${i+1}. ${(t.question_text||t.answer_text||"Response").slice(0,80)}`);option.value=t.turn_id;selection.append(option);});
   if(selected)selection.value=selected;
   const review=el("review-items");review.replaceChildren();state.evidence.forEach(e=>{const item=node("div",e.observation,"evidence");item.append(node("small",`${e.time_frame} · ${e.relationship_context}\n${e.conditions.join("; ")}\n${e.review_status}`));e.source_quotes.forEach(q=>item.append(node("small",`${q.turn_id}: “${q.quote}”`)));review.append(item);});
+  const payment=!["complete","stopped","declined"].includes(p)&&(state.provider_issue?.code==="payment_required"||state.error_code==="provider_http_402"||state.error==="provider_http_402");
+  show("provider-blocked",payment);if(payment){show("pause",false);el("provider-title").textContent=state.provider_issue?.title||"Interview paused — AI service needs credit";el("provider-detail").textContent=state.provider_issue?.detail||"The AI provider returned a payment-required response. Your saved answers are safe. The organizer needs to check the API balance before this session can continue.";show("retry-panel",false);}
+  if(!payment)show("pause",true);
+  updateProcessing();
   el("error-detail").textContent=state.error||"The last operation did not finish. Retry without retyping saved answers.";
   el("done-text").textContent=p==="complete"?"You confirmed this version. Its final file will not change.":"You stopped the interview. Completed answers are saved; unfinished parts remain explicit.";
   status(state.error||(p==="planning"?(state.processing?.message||`Preparing the next step. ${state.turns.length} responses saved.`):p==="consent"&&!state.ready?"The study is not open yet: Venice activation is pending.":p==="declined"?"The interview has stopped. No research export was created.":`${state.turns.length} responses saved · ${p.replaceAll("_"," ")}`));
@@ -33,6 +67,7 @@ function schedule(){
   if(!state)return;
   if(state.phase==="ready")timer=setTimeout(pump,500);
   else if(state.phase==="planning")timer=setTimeout(refresh,3000);
+  else if(state.phase==="provider_blocked")timer=setTimeout(refresh,15000);
 }
 async function pump(){
   if(busy||!state||state.phase!=="ready")return;
@@ -48,6 +83,7 @@ async function command(action,text="",target=null){
   finally{writing=false;schedule();}
 }
 async function markReviewSeen(){await command("review_seen");}
+el("check-status").onclick=refresh;
 el("agree").onclick=()=>command("consent");el("decline").onclick=()=>command("decline");
 el("pause").onclick=()=>command("pause");el("stop").onclick=()=>command("stop");el("resume").onclick=()=>command("resume");
 el("send").onclick=async()=>{const text=el("answer").value;if(await command("answer",text)&&!state.error)el("answer").value="";};

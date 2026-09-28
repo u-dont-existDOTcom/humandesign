@@ -68,3 +68,12 @@ For an existing participant record, use `scripts/create_invitation.py`. It reads
 ## Imported-record latency behavior
 
 Imported prior records are reviewed for routing in one complete-source semantic pass plus independent admission, rather than in sequential 12-turn model batches. This is not bulk scoring: exact imported turns remain source records, only material evidence is emitted, and other turns remain explicitly unassessed. New participant answers continue through ordinary source-bound admission. Long model work is detached from the HTTP request; the browser polls saved processing state and can recover after container replacement without losing answers.
+
+
+## Processing visibility and payment-required responses
+
+The status card shows total and stage elapsed time, server acknowledgement age, a five-second guarded worker heartbeat, and the age/count of received model stream events. These are different signals: a live server or worker is not proof of token progress. The meter is indeterminate and stops when status becomes stale or terminal. The browser uses bounded status requests and does not hold a multi-minute model request open.
+
+A provider 402 is a `provider_blocked` state. Raw answers remain saved; model retries do not resume automatically. Existing `error` records carrying `provider_http_402` migrate when read. After resolving Venice API credit, use the existing authenticated researcher page's “Allow retry after fixing Venice API credit” action. It does not purchase credit, rotate a credential, certify the balance, or execute inference itself.
+
+Run the synthetic UI check with `python apps/life-patterns-participant/scripts/browser_heartbeat_smoke.py --browser /path/to/chromium --output /tmp/heartbeat-proof`. No provider credentials or real participant data are used.

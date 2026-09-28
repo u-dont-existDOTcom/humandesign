@@ -1,13 +1,9 @@
-# Current state — imported-record latency hotfix deployed
+# Current state — participant heartbeat and payment-required hotfix
 
-The Railway participant service is live through Venice (GPT-5.6 Sol / XHigh). The imported-record latency incident is repaired in deployed commit `55bb92896b58de1c83dca3e97675b0214d328e4f`, Railway deployment `a1195246-b188-4168-96c0-7839b2c00858` (SUCCESS).
+Read `tasks/ACTIVE-TASK.json` and `tasks/participant-heartbeat-402-20260928/CHANGE-NOTE.md`.
 
-Production evidence for the failure was direct: one old `/api/next` request took 162.174 seconds; the next was client-closed with HTTP 499 after 203.057 seconds. The old engine processed imported turns in 12-turn semantic batches while resending the complete imported record and survey authority each pass, and held each `/api/next` request open for the model result.
+The owner requested visible liveness/progress after a long wait ended in `provider_http_402`. The actual gateway trace confirms three lengthy successful HTTP responses followed by a fast 402. The failed call's original body and live balance are unavailable. Venice documents 402 as insufficient API credit; no purchase or alternate provider is authorized by this report.
 
-The deployed repair reviews all currently pending imported source turns in one semantic Plan + one independent Admission pass. All exact imported source turns remain stored. Only material evidence is emitted; omitted imported turns are explicitly left `unassessed`, not treated as negative, coded, scored, or validated. New participant answers continue through the ordinary one-turn source-bound path.
+The isolated hotfix adds elapsed/stage clocks, server polling freshness, guarded worker heartbeat and optional model-stream metadata; it does not invent a completion percentage. A 402 becomes a terminal provider-blocked session with clear participant messaging, no automatic retry and source-preserving migration of prior errors. The researcher can acknowledge a resolved API-credit issue and permit a future retry through the authenticated admin page.
 
-Long semantic work now detaches from `/api/next`. The participant browser polls `/api/session` and shows whether it is on the planner or admission pass. A planning lease from a previous process is recovered on poll; the specific legacy admission error from this incident is automatically retried at most once. The existing private session remains on the persistent volume and requires no re-import or restart.
-
-Verification before deployment: 35 participant HTTP/store/engine regressions passed, including a synthetic 96-turn import in one semantic pair, detached slow processing and restart recovery. The survey verifier passed 497/497. V2 source preservation passed 15/15 and import/resume preservation 8/8. A deliberately slow mobile browser regression passed and showed semantic-pass progress. Ruff checks passed. One Claude Opus 5.5 max public-code review was attempted but timed out after more than 15 minutes without a verdict; no second reviewer was started.
-
-Post-deploy health is OK with `participant_enabled=true` and `provider_configured=true`. The owner service and unrelated Railway staged changes remain outside this task. The next action is simply to refresh the same private participant tab; no new invitation or survey repeat is needed.
+The full affected service tests and headless mobile heartbeat/offline/402/recovery scenario passed. No live inference request was initiated. Survey authorities, model/effort and raw participant sources are unchanged. Deploy this tested candidate only to the participant service; preserve the original owner app and unrelated staged Railway changes.

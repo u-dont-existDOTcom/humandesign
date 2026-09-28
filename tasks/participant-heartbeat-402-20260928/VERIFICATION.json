@@ -1,0 +1,66 @@
+{
+  "at": "2026-09-28T04:16:10.277615+00:00",
+  "status": "ready_for_service_deployment",
+  "base_commit": "266d87b15eb93ce43e2e8798bea25ef49d33c91d",
+  "observed_gateway_sequence": [
+    {
+      "status": 200,
+      "duration_ms": 178946
+    },
+    {
+      "status": 200,
+      "duration_ms": 31904
+    },
+    {
+      "status": 200,
+      "duration_ms": 136016
+    },
+    {
+      "status": 402,
+      "duration_ms": 96
+    }
+  ],
+  "diagnosis": "Long preceding requests, followed by a fast payment-required refusal. Original error body/balance unavailable. Venice documentation identifies 402 as insufficient API credit.",
+  "docs": "https://docs.venice.ai/api-reference/endpoint/chat/completions",
+  "official_error_reference": "https://raw.githubusercontent.com/veniceai/skills/main/skills/venice-errors/SKILL.md",
+  "implemented": [
+    "one-second elapsed UI",
+    "stable total/stage timers",
+    "three-second server polling with stale detection",
+    "five-second guarded worker heartbeat",
+    "optional stream metadata without text",
+    "indeterminate progress and revision-stage labels",
+    "terminal provider_blocked state for 402",
+    "legacy-error migration without model call",
+    "authenticated organizer acknowledgement to allow a future retry"
+  ],
+  "verification": {
+    "affected_app_tests": 41,
+    "passed": 41,
+    "browser_smoke": {
+      "ok": true,
+      "provider": "synthetic_fake_only",
+      "paid_inference": false,
+      "elapsed_advances": true,
+      "percentage_not_fabricated": true,
+      "server_staleness_detected": true,
+      "worker_heartbeat_visible": true,
+      "payment_stops_progress": true,
+      "no_automatic_payment_retry": true,
+      "admin_recovery_and_same_session_resume": true,
+      "javascript_errors": []
+    },
+    "lint": "PASS",
+    "javascript_syntax": "PASS",
+    "private_term_scan": "PASS"
+  },
+  "semantics": "Raw answers, survey authorities, source mapping, model and effort unchanged.",
+  "not_performed": [
+    "credit purchase",
+    "account balance read",
+    "model change",
+    "new live inference retry",
+    "private source upload"
+  ],
+  "remaining": "Deploy/verify changed surface, then owner resolves Venice API billing before allowing the blocked session to retry."
+}
