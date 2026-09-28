@@ -72,6 +72,14 @@ This matters because the V3.6 merged Western mapping explicitly uses many of the
 
 At the recorded moment, the saved run reports Western rank #4 and merged AstroHD rank #2 against 876,601 hourly century candidates. The nearest hourly candidate, 10:42 UTC, ranked #1; minute refinement placed the local optimum at 10:36 UTC, 11 minutes after the recorded time.
 
+### Why the minute optimum is especially interesting
+
+A direct angle calculation at 10:36 UTC puts the MC at approximately **4°44' Scorpio**. Pluto is approximately **4°43' Scorpio**. In other words, the model's +11-minute local optimum occurs almost exactly when **Pluto is conjunct the Midheaven to essentially zero orb** (about 0.01° in the independent calculation).
+
+That is highly relevant mechanically because `pluto_mc` is explicitly a full-weight Western feature in the V3.6 mapping for the conditional/consequential-contribution cluster. It provides a concrete explanation for at least part of why the score continues rising for several minutes after the recorded 10:25 UTC time and peaks near 10:36 UTC.
+
+This should not be treated as independent evidence: the model rewards `pluto_mc` by construction. But it is useful for understanding the score surface and for designing the future orb/angularity ablation.
+
 Therefore the chart's dense tight-aspect structure and Pluto/Neptune angularity plausibly explain **why the frozen symbolic scoring model finds this date/time highly distinctive under its own rules**. They do not constitute independent validation, because those same feature families are part of the scoring model.
 
 The repository correctly labels the V3.6 run **post-selection descriptive, not blind validation**. The mappings were frozen before the century scan, but the broader model-development process had prior access to owner information. A new held-out participant / preregistered time-twin analysis is required for independent evidence.
