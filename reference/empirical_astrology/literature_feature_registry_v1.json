@@ -1,0 +1,142 @@
+{
+  "schema_version": "empirical-astrology-literature-feature-registry-v1b",
+  "registry_version": "literature_model_v1.0.0-wave3b-reaffirmed-20260928",
+  "generated_on": "2026-09-28",
+  "source_decision": {
+    "path": "reference/empirical_astrology/literature_model_v1b_decision.json",
+    "sha256": "682086cd41051f7731d197128e2abe42fc4dfac42ef5ae707f1ba604fad51e5b",
+    "review_base_commit": "e7f82ab4a1b08705bf4429958a0d577b2758c407",
+    "verdict": "REAFFIRM_WAVE3_AUTHORIZE_EXACT_IMPLEMENTATION_AND_DEVELOPMENT_ONLY"
+  },
+  "primary_features": [
+    {
+      "feature_id": "TN-001",
+      "family": "theory_neutral_within_site_birth_time_distance",
+      "role": "sole_primary_birth_derived_hypothesis",
+      "definition": "Absolute recorded UTC gap / 60, in hours; continuous linear, eligible range [0,3]. No bins, spline, logarithm, threshold search or zodiac variables.",
+      "direction": "beta_greater_than_zero",
+      "eligible_range_hours": [
+        0.0,
+        3.0
+      ],
+      "unit": "elapsed_utc_hours",
+      "astrology_feature": false,
+      "astrology_weight": 0,
+      "outcome": "D_ij = sqrt(sum_k((scale_ik-scale_jk)/4)^2 / 5), with k in the fixed five-scale order above. Range [0,1], higher means more different. Equal scale weights; no profile correlation, sign coding or outcome-selected trait.",
+      "nuisance_columns_in_order": [
+        "mean(sin(theta_i),sin(theta_j))",
+        "mean(cos(theta_i),cos(theta_j))",
+        "mean(sin(2*theta_i),sin(2*theta_j))",
+        "mean(cos(2*theta_i),cos(2*theta_j))",
+        "abs(sin(theta_i)-sin(theta_j))",
+        "abs(cos(theta_i)-cos(theta_j))",
+        "abs(sin(2*theta_i)-sin(2*theta_j))",
+        "abs(cos(2*theta_i)-cos(2*theta_j))",
+        "mean(maternal_age_years_i,maternal_age_years_j)",
+        "abs(maternal_age_years_i-maternal_age_years_j)",
+        "mean(gestational_weeks_i,gestational_weeks_j)",
+        "abs(gestational_weeks_i-gestational_weeks_j)",
+        "mean(birthweight_grams_i,birthweight_grams_j)/1000",
+        "abs(birthweight_grams_i-birthweight_grams_j)/1000"
+      ],
+      "fixed_effects": [
+        "hospital_id",
+        "birth_local_date"
+      ],
+      "matching_stratum": [
+        "hospital_id",
+        "birth_local_date",
+        "sex_at_birth_category",
+        "delivery_mode_category",
+        "recruitment_source_category",
+        "record_precision_category"
+      ]
+    }
+  ],
+  "executable_astrology_features": [],
+  "aspect_to_trait_mappings": [],
+  "executable_moderator_interactions": [],
+  "astrology_weights": {},
+  "astrology_coefficient_vector_length": 0,
+  "inactive_secondary_templates": [
+    "frozen_mapped_aspect_indicator × continuous_distance_to_exactness",
+    "frozen_mapped_aspect_indicator × applying_status",
+    "frozen_mapped_aspect_indicator × minimum_distance_to_ASC_MC_DSC_IC"
+  ],
+  "secondary_activation_requires_new_pro_decision": true,
+  "candidate_status": [
+    {
+      "candidate_id": "CF-001",
+      "classification": "exploratory_only",
+      "domain": "public_prominence_only",
+      "executable_in_personality_model": false,
+      "new_evidence_clears_prior_gate": false,
+      "implementation_rule": "Retain the original D1-or-D9 rule only as a separately commissioned prominence hypothesis. No personality transport; no added weight."
+    },
+    {
+      "candidate_id": "CF-002",
+      "classification": "exploratory_only",
+      "domain": "original outcome only after full-text audit",
+      "executable_in_personality_model": false,
+      "new_evidence_clears_prior_gate": false,
+      "implementation_rule": "No 1-degree or 2-degree allowance is executable."
+    },
+    {
+      "candidate_id": "CF-003",
+      "classification": "excluded",
+      "domain": "semantic chart/biography matching",
+      "executable_in_personality_model": false,
+      "new_evidence_clears_prior_gate": false,
+      "implementation_rule": "No scoring dictionary or adjusted 2023 mapping enters the model. The null critique removes reliance on published nominal significance, but does not prove every possible matching effect is absent."
+    },
+    {
+      "candidate_id": "CF-004",
+      "classification": "excluded",
+      "domain": "hemisphere semantic matching",
+      "executable_in_personality_model": false,
+      "new_evidence_clears_prior_gate": false,
+      "implementation_rule": "No inversion, inferred transform or prospective module."
+    },
+    {
+      "candidate_id": "CF-005",
+      "classification": "excluded",
+      "domain": "high-stakes aggregate methodological audit only",
+      "executable_in_personality_model": false,
+      "new_evidence_clears_prior_gate": false,
+      "implementation_rule": "No clinical, violence, suicide, mortality or person-level inference."
+    },
+    {
+      "candidate_id": "CF-006",
+      "classification": "exploratory_only",
+      "domain": "profession/eminence only",
+      "executable_in_personality_model": false,
+      "new_evidence_clears_prior_gate": false,
+      "implementation_rule": "No sector geometry, occupation/planet combination or eminence threshold selected for performance."
+    },
+    {
+      "candidate_id": "CF-007",
+      "classification": "exploratory_only",
+      "domain": "inactive secondary personality template",
+      "executable_in_personality_model": false,
+      "new_evidence_clears_prior_gate": false,
+      "implementation_rule": "Freeze an empty aspect-to-trait mapping list. Tightness/applying/angularity remain secondary-only templates requiring a new Pro version."
+    },
+    {
+      "candidate_id": "CF-008",
+      "classification": "excluded",
+      "domain": "high-stakes clinical classification",
+      "executable_in_personality_model": false,
+      "new_evidence_clears_prior_gate": false,
+      "implementation_rule": "No reader-derived clinical column or person-level output."
+    }
+  ],
+  "binding_invariants": [
+    "TN-001 is the only executable birth-derived feature.",
+    "Full v1b and the theory-neutral model are identical.",
+    "The astrology feature, mapping, interaction, and coefficient collections remain empty.",
+    "CF-001 through CF-008 cannot become personality-model columns or fallback narratives.",
+    "No historical effect size becomes a model weight.",
+    "Owner-known outcomes and untouched prospective outcomes remain inaccessible.",
+    "Missing data or unavailable comparisons are reported as NOT_EVALUATED or NOT_ESTIMABLE."
+  ]
+}

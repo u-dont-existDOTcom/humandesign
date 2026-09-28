@@ -1,0 +1,411 @@
+{
+  "schema_version": "empirical-astrology-literature-model-v1b",
+  "model_version": "literature_model_v1.0.0-wave3b-reaffirmed-20260928",
+  "prospective_protocol_version": "same-hospital-personality-protocol-v1b-20260928",
+  "status": "implemented_development_only_not_empirically_validated",
+  "generated_on": "2026-09-28",
+  "source_decision": {
+    "path": "reference/empirical_astrology/literature_model_v1b_decision.json",
+    "sha256": "682086cd41051f7731d197128e2abe42fc4dfac42ef5ae707f1ba604fad51e5b",
+    "review_base_commit": "e7f82ab4a1b08705bf4429958a0d577b2758c407",
+    "verdict": "REAFFIRM_WAVE3_AUTHORIZE_EXACT_IMPLEMENTATION_AND_DEVELOPMENT_ONLY"
+  },
+  "feature_registry": {
+    "path": "reference/empirical_astrology/literature_feature_registry_v1.json",
+    "sha256": "be72e72dc2ece88f8c2fb4d0ac874746964944cfa1e4220c80a488f3f06af280"
+  },
+  "primary_question": "Within the same hospital, do people born closer in time have more similar measured personality than locally comparable people born farther apart?",
+  "primary_feature_id": "TN-001",
+  "primary_model": {
+    "feature_id": "TN-001",
+    "x": "Absolute recorded UTC gap / 60, in hours; continuous linear, eligible range [0,3]. No bins, spline, logarithm, threshold search or zodiac variables.",
+    "estimand": "Equal-network weighted partial slope beta of normalized personality distance D on elapsed birth hours within the same hospital and local calendar date, conditional on the fixed nuisance columns. Direction beta>0.",
+    "equation": "D_ij = alpha_(hospital,local_birth_date) + beta*x_ij + sum_l gamma_l*C_lij + error_ij.",
+    "nuisance_columns_in_order": [
+      "mean(sin(theta_i),sin(theta_j))",
+      "mean(cos(theta_i),cos(theta_j))",
+      "mean(sin(2*theta_i),sin(2*theta_j))",
+      "mean(cos(2*theta_i),cos(2*theta_j))",
+      "abs(sin(theta_i)-sin(theta_j))",
+      "abs(cos(theta_i)-cos(theta_j))",
+      "abs(sin(2*theta_i)-sin(2*theta_j))",
+      "abs(cos(2*theta_i)-cos(2*theta_j))",
+      "mean(maternal_age_years_i,maternal_age_years_j)",
+      "abs(maternal_age_years_i-maternal_age_years_j)",
+      "mean(gestational_weeks_i,gestational_weeks_j)",
+      "abs(gestational_weeks_i-gestational_weeks_j)",
+      "mean(birthweight_grams_i,birthweight_grams_j)/1000",
+      "abs(birthweight_grams_i-birthweight_grams_j)/1000"
+    ],
+    "definitions": "theta=2*pi*birth_local_clock_minutes/1440. Hospital-date fixed effects absorb site, date, season and birth cohort exactly within analysed pairs. Matching additionally fixes sex, delivery mode, recruitment and precision categories. Responses are collected in one frozen 30-calendar-day window per cohort; age eligibility is assessed at its opening. Do not include pair age differences derived from the same birth timestamps: with a common assessment instant they duplicate elapsed birth time.",
+    "estimator": "Weighted least squares without sign constraint for inference. Absorb hospital-date fixed effects by weighted within-group centering D, x and C. In listed order retain nonzero linearly independent nuisance columns using relative residual-norm tolerance 1e-10 against their original norm; this rule uses design only. Append x last; if x is zero/collinear, residual degrees of freedom <=0 or any matrix is numerically unresolved, emit NOT_ESTIMABLE. Estimate no alternate model as a replacement.",
+    "degrees_of_freedom": "k = number of hospital-date fixed effects + retained nuisance columns + 1; N = number of complete pairs; G = independent networks. Require N>k and G=20 for the full primary cohort. Each sensitivity uses its actual N,k,G and t df=G-1; require G>=2 and N>k. Leave-one-network-out fits have G=19 and are exempt from the full-cohort G=20 rule.",
+    "conventional_null": "Identical model with beta fixed to zero. Both full and restricted inferential fits are estimated within each cohort solely to test this fixed estimand. Report fitted residual sums of squares as in-sample descriptive quantities; never label them held-out predictive loss.",
+    "minimum_effect_beta": 0.005,
+    "minimum_effect_units": "Normalized five-scale RMS distance per elapsed birth hour; a prospective design choice, not a literature estimate or clinical threshold.",
+    "confidence_interval": "Network-cluster sandwich CR1 covariance using the full weighted design and residuals: multiply by G/(G-1)*(N-1)/(N-k). Report two-sided 95% beta CI using Student t quantile with G-1 degrees of freedom, plus beta, SE, N, G and df. All fixed effects count in k even when absorbed.",
+    "coefficient_use": "Neither beta nor nuisance coefficients become a participant-level predictor or an astrology weight. This is an untouched test of a frozen association specification."
+  },
+  "pair_construction": {
+    "matching_stratum": [
+      "hospital_id",
+      "birth_local_date",
+      "sex_at_birth_category",
+      "delivery_mode_category",
+      "recruitment_source_category",
+      "record_precision_category"
+    ],
+    "eligibility": "For every unordered pair in a matching stratum require the maximum possible UTC birth gap over both uncertainty intervals <=180 minutes, absolute maternal-age difference <=5 years and absolute gestational-age difference <=1 week. Exclude any known family/household/relationship link.",
+    "algorithm": "Use stable pre-outcome pseudonymous UTF-8 IDs. For each stratum enumerate all eligible edges. Sort ascending by SHA256(protocol_version + NUL + seed_decimal + NUL + smaller_participant_id + NUL + larger_participant_id), breaking an impossible hash tie by the ordered IDs. Greedily accept an edge only if neither person has already been used in that cohort. Retain only hospital-date groups with at least two accepted edges. Within each hospital order retained edges by the same hash and take the first 100. Verify the date and exposure-support gates; fail rather than reselect. Freeze all pairs and exclusions before answers. Final singleton hospital-date groups are retained in the selected 100 but contribute no within-date information; the minimum 20 birth dates means 20 final groups with at least two selected pairs each. Failure of this final informative-date count is NOT_LAUNCHABLE, not permission to reselect.",
+    "pair_weight": "1/n_s for each complete pair in hospital/network s; total weight is one per network. Each person contributes to exactly one pair. No artificial expansion of n by overlapping pairs.",
+    "uncertainty": "If recorded UTC centers differ by delta minutes and documented symmetric half-widths are u_i,u_j, lower_gap=max(0,delta-u_i-u_j), upper_gap=delta+u_i+u_j. Primary x=delta/60, lower/upper sensitivity x=lower_gap/60 and upper_gap/60. Eligibility uses upper_gap<=180 and requires each uncertainty interval wholly within the recorded local calendar date after verified timezone/DST conversion. Preserve the original pairs; never choose the stronger bound.",
+    "pair_registry_hash_required": true
+  },
+  "eligibility": {
+    "age_years_inclusive": [
+      18,
+      65
+    ],
+    "language": "English; use the original instrument wording. Translations require a new measurement/protocol version.",
+    "birth_source": "Hospital/civil contemporaneous record with exact local date, hospital identity, recorded time, known timezone/DST resolution, and a documented uncertainty interval of half-width at most 1 minute. Rectified, remembered-only, date-only, unresolved civil-time and unknown-uncertainty records are ineligible for primary analysis.",
+    "singletons_and_networks": "Exclude multiple-birth records from primary analysis. Retain at most one person per known biological family, household or close relationship component across all phases, selected by smallest seeded participant hash before outcomes; record uncertain links. A component may never cross development/A/B.",
+    "prior_knowledge": "Before the questionnaire, record prior natal-chart readings, knowledge of own sign-trait descriptions, HD chart exposure, astrology belief (integer 0-4), ability to name own Sun sign, and recruitment source. Primary requires no prior natal reading, no own-sign trait knowledge and no HD interpretation exposure. Sign-name knowledge and belief are reported as fixed descriptive strata; no favorable subgroup replaces the primary.",
+    "required_covariates": [
+      "hospital_id",
+      "independent_healthcare_or_recruitment_network_id",
+      "birth_local_date",
+      "birth_utc_timestamp",
+      "birth_local_clock_minutes",
+      "birth_time_uncertainty_minutes",
+      "record_precision_category",
+      "sex_at_birth_category",
+      "delivery_mode_category",
+      "maternal_age_at_birth_years",
+      "gestational_age_at_birth_weeks",
+      "birthweight_grams",
+      "recruitment_source_category",
+      "family_household_relationship_component_id"
+    ],
+    "missing_covariates": "Exclude before pair selection if required birth/covariate/knowledge fields are missing. No outcome-informed imputation, exclusions or replacement. Preserve excluded counts and reasons.",
+    "age_reference": "Completed age in calendar years at the cohort-specific preregistered questionnaire opening UTC instant; age 18 through 65 inclusive. The opening instant is fixed before any invitation/response.",
+    "post_collection_required_metadata": [
+      "questionnaire_timestamp",
+      "raw_response_hash",
+      "coded_response_hash",
+      "response_complete_status",
+      "withdrawal_status"
+    ],
+    "missing_response_metadata": "Missing or internally inconsistent questionnaire timestamp/response provenance makes that response unusable, exactly like an incomplete questionnaire. This cannot trigger re-pairing.",
+    "category_dictionary": {
+      "sex_at_birth_category": {
+        "allowed": [
+          "female",
+          "male",
+          "intersex"
+        ],
+        "rule": "Use the contemporaneous medical-record classification. Unknown or uninterpretable categories are ineligible; do not infer from name or identity."
+      },
+      "delivery_mode_category": {
+        "allowed": [
+          "spontaneous_vaginal",
+          "induced_vaginal",
+          "assisted_vaginal",
+          "planned_cesarean",
+          "unplanned_cesarean"
+        ],
+        "rule": "Cesarean takes priority, classified by documented planned/unplanned status. Otherwise any instrument-assisted vaginal delivery is assisted_vaginal; otherwise documented induction is induced_vaginal; otherwise spontaneous_vaginal. Unknown status is ineligible."
+      },
+      "recruitment_source_category": {
+        "allowed": [
+          "hospital_registry_invitation"
+        ],
+        "rule": "Primary invitations originate from the frozen hospital/civil-record frame only. Volunteer advertisements, astrology/HD communities, snowball and referral recruitment are ineligible."
+      },
+      "record_precision_category": {
+        "allowed": [
+          "recorded_to_second",
+          "recorded_to_minute"
+        ],
+        "rule": "recorded_to_second requires documented resolution <=1 second; recorded_to_minute requires >1 and <=60 seconds. Coarser/unknown resolution is ineligible. Resolution is distinct from accuracy; documented uncertainty half-width <=1 minute is still required."
+      }
+    }
+  },
+  "outcome": {
+    "instrument": "50-item IPIP Big-Five factor-marker sample; not IPIP-NEO and not a diagnostic instrument.",
+    "source_urls": [
+      "https://ipip.ori.org/new_ipip-50-item-scale.htm",
+      "https://ipip.ori.org/newScoringInstructions.htm"
+    ],
+    "source_checked_on": "2026-09-28",
+    "item_numbers": "Official sample order 1 through 50; archive exact public-domain item text, instructions and page hashes before implementation is used with respondents. Item wording/order/response mapping changes require a new protocol.",
+    "response_values": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "response_anchors": [
+      "Very Inaccurate",
+      "Moderately Inaccurate",
+      "Neither Accurate Nor Inaccurate",
+      "Moderately Accurate",
+      "Very Accurate"
+    ],
+    "scoring_key": {
+      "extraversion": {
+        "positive": [
+          1,
+          11,
+          21,
+          31,
+          41
+        ],
+        "negative": [
+          6,
+          16,
+          26,
+          36,
+          46
+        ]
+      },
+      "agreeableness": {
+        "positive": [
+          7,
+          17,
+          27,
+          37,
+          42,
+          47
+        ],
+        "negative": [
+          2,
+          12,
+          22,
+          32
+        ]
+      },
+      "conscientiousness": {
+        "positive": [
+          3,
+          13,
+          23,
+          33,
+          43,
+          48
+        ],
+        "negative": [
+          8,
+          18,
+          28,
+          38
+        ]
+      },
+      "emotional_stability": {
+        "positive": [
+          9,
+          19
+        ],
+        "negative": [
+          4,
+          14,
+          24,
+          29,
+          34,
+          39,
+          44,
+          49
+        ]
+      },
+      "intellect_imagination": {
+        "positive": [
+          5,
+          15,
+          25,
+          35,
+          40,
+          45,
+          50
+        ],
+        "negative": [
+          10,
+          20,
+          30
+        ]
+      }
+    },
+    "scoring": "For each scale, average its ten item scores, using r for positive-keyed and 6-r for negative-keyed items. Require all 50 valid answers for primary scoring; no prorating, adaptive questions, imputation or validation standardization.",
+    "primary_pair_distance": "D_ij = sqrt(sum_k((scale_ik-scale_jk)/4)^2 / 5), with k in the fixed five-scale order above. Range [0,1], higher means more different. Equal scale weights; no profile correlation, sign coding or outcome-selected trait.",
+    "missing_responses": "A pair with either incomplete/withdrawn response is missing; do not replace or re-pair it. Report full cohort response and pair attrition. Any missing selected pair prevents the strict complete-cohort success label; analyze available pairs descriptively with the same model and show attrition sensitivity.",
+    "concealment": "Do not show astrology/HD labels, pairing assignments, gap category, prediction direction or chart interpretations before both response freezes. Keep outcome files inaccessible to pairing/model personnel until freeze.",
+    "collection_window": "Every response must be submitted in the fixed interval [cohort_opening_UTC, cohort_opening_UTC + 30*86400 seconds). Archive opening/closing instants before invitation. One response per person; first complete immutable submission is used. No re-administration after feedback; absent/out-of-window/provenance-invalid responses are missing."
+  },
+  "primary_null": {
+    "method": "Restricted wild cluster bootstrap-t at the independent healthcare/recruitment-network level; no global birthday shuffle and no independent-pair binomial assumption.",
+    "algorithm": "Fit the conventional null. For each draw multiply all restricted residuals in each network by one independent Rademacher sign and add them to the restricted fitted distances. Keep every timestamp, pair, covariate and weight fixed. Refit the identical full model and recompute its CR1 t statistic for beta=0. For t_observed=beta/SE, p=(1+number of t_bootstrap >= t_observed)/(B+1). Do not clip pseudo-outcomes. A nonfinite original or bootstrap fit makes the run NOT_ESTIMABLE; do not drop failed draws.",
+    "draws": 99999,
+    "alternative": "beta > 0",
+    "alpha_one_sided": 0.025,
+    "assumptions": "Independent networks and a valid clustered linear working model; wild bootstrap is an approximation, not exact randomization of observational birth times. Shared network/site/date conditions are retained. Neither this null nor covariate adjustment identifies a celestial cause."
+  },
+  "randomness_and_determinism": {
+    "base_seed": 20260928,
+    "bootstrap_seed_A": 20260929,
+    "bootstrap_seed_B": 20260930,
+    "power_seed": 20260931,
+    "null_calibration_seed": 20260932,
+    "generator": "NumPy Generator(PCG64(seed)); archive NumPy and BLAS versions. Sort all IDs lexicographically before draws; retain float64 calculation and deterministic single-thread linear algebra. Record seeds, software commit, settings and output hashes.",
+    "hash_encoding": "UTF-8, NUL separators, lowercase hexadecimal SHA256. Seed_decimal is the ASCII base-10 integer. No interpreter-randomized hash().",
+    "identifier_definitions": {
+      "protocol_version": "Literal value of top-level prospective_protocol_version.",
+      "seed_decimal": "ASCII base-10 representation of base_seed, without sign or leading zeroes.",
+      "id_normalization": "IDs must already be nonempty UTF-8 ASCII strings consisting only of [A-Za-z0-9_-]; reject any NUL, whitespace or invalid ID. Do not case-fold. Lexicographic comparisons use unsigned UTF-8 bytes.",
+      "entity_hash": "For entity type participant, hospital or network: SHA256(protocol_version + NUL + seed_decimal + NUL + entity_type + NUL + entity_id). Family retention uses participant hashes; within-network hospital retention uses hospital hashes; allocation uses network hashes. Break equal hashes by entity_id bytes.",
+      "pair_id": "Lowercase hexadecimal SHA256 of the pair-construction input (protocol_version + NUL + seed_decimal + NUL + smaller_participant_id + NUL + larger_participant_id). This is also the edge-priority hash.",
+      "diagnostic_j": "ASCII base-10 j in 1..20, without leading zeroes. In the diagnostic formula base_seed means seed_decimal.",
+      "rademacher": "For each network in sorted ID order call Generator.integers(0,2); map 0 to -1 and 1 to +1. Draw-by-draw stream order is replicate then sorted network."
+    }
+  },
+  "baselines_ablations_and_diagnostics": {
+    "required_development_baselines": [
+      "intercept-only",
+      "date-only: local calendar-date fixed effects",
+      "time-only: intercept plus the eight listed clock columns",
+      "location/site-only: hospital fixed effects",
+      "season/cohort: intercept, birth year, sin/cos annual phase from birth day-of-year with year length 365 or 366",
+      "full conventional null",
+      "time-distance-only: intercept plus x",
+      "full conventional plus x"
+    ],
+    "unavailable_baseline_rule": "Where a baseline is rank-deficient or data do not contain its variation, record NOT_ESTIMABLE with design reason. Do not substitute a favorable baseline. Development fits and any cross-validation are explicitly development only.",
+    "astrology_ablations": "Full v1b and theory-neutral model are identical. Removing aspect/orb/angularity/dominance etc is NOT_APPLICABLE_NO_INCLUDED_FEATURE, never zero effect, a failed ablation or independent evidence.",
+    "required_prospective_sensitivities": [
+      "All 20 leave-one-network-out fits with identical nuisance construction; report every estimate and interval.",
+      "Lower and upper birth-gap bounds, keeping original pairs and model fixed.",
+      "Strict minute precision subset with documented half-width <=0.5 minute; descriptive if its prespecified design is not estimable.",
+      "Report fixed belief levels 0-4 and sign-name knowledge strata descriptively, without significance-based selection."
+    ],
+    "diagnostic_family": "The following 21 diagnostics share Holm two-sided alpha .05: twenty random-feature replacements of x plus one maternal-age negative control. They cannot create primary success.",
+    "random_feature_controls": "For each j=1..20 and pair ID, replace x by 3*(int(SHA256(protocol_version + NUL + base_seed + NUL + j + NUL + pair_id),16)+0.5)/2^256. Keep D, nuisance terms, weights and fixed effects unchanged; use CR1 two-sided t p-values with G-1 df. These synthetic columns audit the analysis pipeline; they are not biological negatives.",
+    "maternal_age_negative_control": "Use abs(maternal_age_i-maternal_age_j) in years as outcome, remove both maternal-age nuisance columns, and retain all other columns and x. Report beta and two-sided CR1 t p-value. It tests a pre-existing characteristic that may reveal birth-scheduling/recruitment structure; a null does not prove exchangeability.",
+    "diagnostic_failure": "Any Holm-significant diagnostic, failed blinding/provenance check, nonfinite model or detected cross-cohort/person/network overlap blocks the clean confirmation label. Publish the result as a diagnostic/protocol failure. Do not repair it using A/B; any revised analysis is exploratory and requires a new Pro version and fresh confirmation.",
+    "gate_bearing_sensitivities": [
+      "All 20 leave-one-network-out fits",
+      "Lower birth-gap-bound fit",
+      "Upper birth-gap-bound fit"
+    ],
+    "report_only_sensitivities": [
+      "Strict half-width <=0.5 minute subset",
+      "Belief levels 0-4",
+      "Sign-name knowledge strata"
+    ]
+  },
+  "multiplicity": {
+    "primary": "One endpoint, metric, linear exposure and direction. Each cohort must independently pass the whole primary gate; no pooling of A/B, secondary findings or baselines can rescue either. The two-cohort conjunction does not create two alternative opportunities for success.",
+    "secondary_astrology": "Zero tests in this version. Any future instantiated secondary family requires a new Pro decision and outcome-blind manifest, with all mappings and three moderator templates in one Holm family.",
+    "sensitivity": "All fixed sensitivity estimates are reported. No best window, trait, site subset, instrument, sign, uncertainty handling or covariate set may replace the primary."
+  },
+  "success_failure_rules": {
+    "cohort_statistical_pass": "All selected 2000 pairs/4000 people and 20 independent networks complete; all freeze, eligibility, precision, support, rank, blinding and diagnostic gates pass; beta two-sided 95% lower CI >0.005; restricted wild-bootstrap one-sided p<=0.025; all 20 leave-one-network-out fits estimable with beta>0; both interval-bound fits estimable with beta>0. Unestimable report-only sensitivities are disclosed and cannot rescue or invalidate this statistical gate by themselves.",
+    "project_success": "Cohort A and untouched disjoint cohort B each independently meet cohort_statistical_pass using the same frozen protocol. Only then report replicated theory-neutral association under this protocol. No astrology validity or person-level accuracy claim follows.",
+    "no_meaningful_effect": "If either cohort has upper 95% beta CI <0.005, report that cohort as excluding the prespecified minimum effect under the working model. Do not generalize to all possible astrology or all smaller effects.",
+    "opposite_direction": "If beta<0 report the opposite estimate and interval. If upper 95% CI<0 call it evidence of the opposite association under this protocol, not a repaired favorable hypothesis.",
+    "inconclusive": "If valid data do not meet the success gate and do not exclude the minimum, report inconclusive/insufficient precision. p>.025 alone is not proof of no effect.",
+    "replication_failure": "A passes and B fails any primary criterion: not replicated. B passes while A fails: not replicated. Pooled significance or a favorable stratum cannot reverse this.",
+    "not_evaluated": "No eligible/raw outcome data, absent covariates, uninstantiated feature or unavailable lineage: label the exact comparison NOT_EVALUATED or NOT_APPLICABLE. Do not invent a null result.",
+    "post_failure": "Report and retain all failures; keep astrology coefficient vector empty. No orb, mapping, control, outcome or model modification on A/B. Any new version requires Pro adjudication and new untouched people/cohorts."
+  },
+  "cohort_size_and_stopping": {
+    "independent_networks_per_cohort": 20,
+    "hospitals_per_network": 1,
+    "selected_disjoint_pairs_per_hospital": 100,
+    "selected_people_per_cohort": 4000,
+    "minimum_distinct_birth_dates_per_hospital": 20,
+    "exposure_support_per_cohort": {
+      "minimum_fraction_gap_at_most_15_minutes": 0.2,
+      "minimum_fraction_gap_at_least_60_minutes": 0.2
+    },
+    "allocation": "Before outcomes, freeze the candidate hospital/network roster. For multiple hospitals in a network retain the smallest seeded hospital hash. Order eligible networks by seeded network hash; allocate the first 40 alternately to A then B. Insufficient feasible networks/pairs/date or exposure support means NOT_LAUNCHABLE; do not broaden windows or choose a favorable set.",
+    "stopping": "Select exactly 100 pairs per hospital as specified below, then collect one response per selected person by a preregistered operational closing date. No interim scored analyses, optional stopping, replacement, re-pairing or sample-size increase. An underfilled or incomplete cohort is reported as underpowered/incomplete and cannot meet the confirmatory success gate.",
+    "power": "The fixed counts are a design floor, not a claim of adequate power. Before A/B responses, run the deterministic development-residual simulation specified in power_simulation below for each frozen cohort design. Require estimated power >=0.80 at beta=0.010 against minimum 0.005, and require the 95% Wilson upper confidence bound for the null p<=.025 rejection fraction <=.04. Failure/missing suitable development data blocks launch; a scientific redesign needs a new Pro version."
+  },
+  "power_simulation": {
+    "purpose": "Conditional design/engineering check under an explicit residual-transfer model, not proof of actual population power, independence or absent confounding.",
+    "development_reference": "Use one declared, hashed non-owner development dataset with the same instrument, eligibility, pairing and covariates. Select exactly 20 independent networks and 100 complete disjoint pairs each using the same entity/pair hash rules, before calculating its outcome associations. If no such dataset exists, NOT_EVALUATED and prospective launch remains blocked.",
+    "residual_template": "Fit the conventional null on the development reference, calculate raw residual D-fitted_null for each of its 2000 pairs, and retain 20 vectors of length 100. Sort source networks by ID and rows inside each by pair_id. Do not studentize, clip, rescale, select or tune the templates.",
+    "target_design": "Use each actual frozen A/B 20-network, 100-pair design with all covariates known before responses. Sort networks by ID and their rows by pair_id. Outcome-independent eligibility and design-rank gates must already pass.",
+    "generation": "For each simulation and target network in sorted order, first draw a source-network index with Generator.integers(0,20), then draw Generator.permutation(100), then draw one Rademacher sign as defined above. Assign the signed permuted source residual vector to that target network. Set pseudo-D = beta_sim*x + assigned_residual. Set the conventional mean to zero: adding any fixed linear combination of the declared null-design columns leaves the full/restricted slope/bootstrap test invariant. Do not clip pseudo-D.",
+    "runs_per_target_design_per_beta": 5000,
+    "beta_values": [
+      0,
+      0.01
+    ],
+    "seed_schedule": "For A use null_calibration_seed at beta=0 and power_seed at beta=.01; for B add 1000000 to the corresponding seed. Use a fresh PCG64 generator per target/beta. Process simulation index 0..4999 sequentially. Each simulated bootstrap uses independent PCG64 seed=2000000000 + 10000000*cohort_index + 100000*beta_index + simulation_index, with cohort_index A=0/B=1 and beta_index 0 for null/1 for .01.",
+    "bootstrap_draws_per_simulation": 999,
+    "power_success_event": "The full simulated beta lower 95% CR1 CI exceeds .005 AND its restricted wild-bootstrap p<=.025 AND all 20 LOO betas and both uncertainty-bound betas are estimable and positive AND none of the 21 diagnostics is Holm significant. Structural provenance/completeness gates are fixed and assumed satisfied by the target design; actual attrition is not simulated and may prevent real confirmation.",
+    "null_calibration_event": "At beta_sim=0, record the restricted wild-bootstrap one-sided p<=.025 indicator separately from the stricter power event. Compute its two-sided 95% Wilson binomial upper bound using z=1.959963984540054. A failed/nonfinite simulation counts as a failure of calibration and blocks launch; do not discard or redraw it.",
+    "reporting": "Report every target/beta result, Monte Carlo standard error, rejection count, Wilson bound, power fraction and residual-transfer assumption. No sample-size adjustment, alternative transfer model or positive-development subset selection is permitted in this version."
+  },
+  "pre_outcome_freeze_manifest_required": [
+    "This decision SHA256 and original/corrected evidence commit references",
+    "Scientific protocol version and software commit",
+    "Operational ethics/consent/data-access basis and exact recruitment closing dates",
+    "Candidate and selected hospital/network lists and lineage/exclusion logs",
+    "All pseudonymous participant, family/household/network and A/B allocation records",
+    "Raw birth inputs, provenance/timezone resolution/uncertainty and covariate hashes",
+    "Pair enumeration/selection/weights/exposure-support manifest and hash",
+    "Exact archived IPIP item text, instructions, keys, response mapping and questionnaire hash",
+    "Outcomes inaccessible statement and responsible blind custodian",
+    "All model columns, projection/collinearity rules, endpoint, minimum effect, null generator and multiplicity settings",
+    "Power/null-calibration report and seeds",
+    "All software/dependency versions, deterministic numerical settings and random seeds",
+    "Freeze timestamp preceding collection of scored A/B responses; both cohorts frozen before either reveal",
+    "Separate raw/coded response hashes and reveal timestamps after collection"
+  ],
+  "operational_fields_are_not_design_discretion": "Site identities, closing dates, permissions, file hashes and software versions must be filled and checked before launch. They may not alter scientific constants, eligibility, sample size, matching, endpoint, model, null, multiplicity or success rules. A scientific change requires a new Pro version. This gate authorizes implementation/testing of the specification only, not recruitment or collection.",
+  "executable_astrology_features": [],
+  "aspect_to_trait_mappings": [],
+  "executable_moderator_interactions": [],
+  "astrology_weights": {},
+  "astrology_coefficient_vector_length": 0,
+  "work_authorization": {
+    "implementation_authorized": true,
+    "development_evaluation_authorized": true,
+    "prospective_recruitment_or_outcome_collection_authorized": false,
+    "production_or_person_level_use_authorized": false,
+    "feature_or_model_redesign_authorized": false,
+    "required_evidence_ancestor": "e7f82ab4a1b08705bf4429958a0d577b2758c407",
+    "preconditions": [
+      "Both Pro decision artifacts committed and present.",
+      "Corrected evidence commit e7f82ab4a1b08705bf4429958a0d577b2758c407 or a descendant with the recorded corrected bytes is present.",
+      "Use this machine-readable decision as the contract; earlier draft specification/registry statuses do not activate features.",
+      "Keep owner-known outcomes, secret keys and untouched A/B outcomes inaccessible to this Work implementation/development task."
+    ],
+    "permitted_outputs": [
+      "reference/empirical_astrology/literature_feature_registry_v1.json",
+      "reference/empirical_astrology/literature_model_v1.json",
+      "docs/empirical_astrology/01_literature_model_v1.md",
+      "src/hdmatch/empirical_astrology/",
+      "tests/empirical_astrology/",
+      "experiments/empirical_astrology/wave4/",
+      "data/empirical_astrology/master_v2/wave4_results.jsonl",
+      "notes/empirical_astrology/master_v2/WAVE4_DEVELOPMENT_RESULTS.md",
+      "notes/empirical_astrology/master_v2/PRO_HANDOFF_WAVE4.md"
+    ],
+    "permitted_actions": [
+      "Implement the sole theory-neutral feature, fixed controls, empty astrology mappings, prospective specification, hashes, validation/fail-closed gates, deterministic null controls and reporting.",
+      "Run engineering/synthetic calibration and mechanical DEVELOPMENT evaluations on eligible, documented non-owner development data only. Synthetic outcomes test code/calibration and never supply empirical validity.",
+      "Run the listed baselines and sensitivities where raw eligible data actually permit them, without replacing missing data with literature summary p-values.",
+      "Prepare the Wave 4 handoff showing robustness, ablations, null calibration, leakage, cohort/network accounting, multiplicity, effect sizes/uncertainty and every unavailable or failed comparison."
+    ],
+    "blocked_actions": [
+      "Implementing any CF-001 through CF-008 as a personality-model column or fallback narrative.",
+      "Choosing an aspect/body/trait map, orb, house system, sign or coefficient from historical or owner-specific fit.",
+      "Treating missing/non-applicable comparisons as empirical nulls or validation.",
+      "Opening owner-known cases or untouched prospective outcomes under this authorization.",
+      "Changing the frozen model after Wave 4 results or running prospective recruitment/validation before a separate authorized operational launch."
+    ],
+    "next_gate": "After implementation and Wave 4 development results, send PRO_HANDOFF_WAVE4.md to Pro. Work may not decide a revised scientific model. If raw data are unavailable, complete the implementation/engineering checks and an explicit NOT_EVALUATED handoff; no empirical success claim."
+  },
+  "validation_boundary": "Historical literature, inspected cases and development cohorts cannot validate a model selected from them. Owner-known outcomes are outside this authorized task. No current or future participant may be used to repair the version on which they were tested. New hypotheses require a new Pro decision and new untouched cohorts."
+}
