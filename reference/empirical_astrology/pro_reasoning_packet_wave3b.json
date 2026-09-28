@@ -31,15 +31,15 @@
   },
   "v2_counts": {
     "baseline_sources": 913,
-    "v2_sources": 918,
+    "v2_sources": 919,
     "baseline_datasets": 965,
-    "v2_datasets": 965,
+    "v2_datasets": 966,
     "baseline_manifest_records": 577,
-    "v2_manifest_records": 582,
+    "v2_manifest_records": 583,
     "baseline_extractions": 49,
     "v2_extractions": 62,
     "new_extractions": 13,
-    "new_article_records": 5,
+    "new_article_records": 6,
     "newly_read_empirical_source_records": 13,
     "correlation_gap_high_value_records": 25
   },
@@ -86,7 +86,7 @@
       "sha256": "90f0ff2c1381281c583656d5ead7d3e699d89db5457e83cf0728ab0f05696783"
     },
     {
-      "source_document_id": "SRC-D082EE7B136973",
+      "source_document_id": "SRC-V2-3AF43F314196",
       "citation": "Kyösti Tarvainen; Vincent Godbout. 2020. Evaluating the effect of the rounding errors in the Gauquelin data. Correlation 32(2), 69–74",
       "manifest_status": "full_text_retrieved_and_read",
       "access_url": "https://www.astrologicalassociation.com/wp-content/uploads/2021/05/c20203202-1.pdf",
@@ -338,7 +338,7 @@
       },
       "pre_pro_registry_development_note_retained_for_history": "no production weight; only a preregistered programme-level replication with independent records",
       "newly_recovered_source_document_ids": [
-        "SRC-D082EE7B136973",
+        "SRC-V2-3AF43F314196",
         "SRC-POST-DOUGLAS2021"
       ],
       "new_evidence_note": "A minute-jitter sensitivity analysis and a tiny historical Saturn/SIDS reanalysis were recovered; both are reanalysis/context rather than a clean prospective independent replication.",
@@ -451,15 +451,15 @@
     "statement": "No owner-known outcomes were inspected or used in retrieval, extraction, mapping, thresholds, or this handoff."
   },
   "artifact_sha256": {
-    "data/empirical_astrology/fulltexts_v2/fulltext_manifest.jsonl": "d04e9bdf172898fd879856002e6ec3e8d8673aba344e2469f3cf2899620adb3c",
-    "data/empirical_astrology/fulltexts_v2/primary_feature_extractions.jsonl": "45121badfc806668625f5d344eda0609968c0cbfff762cfd6bf0355427bb8962",
-    "data/empirical_astrology/master_v2/source_registry.jsonl": "17fcf5b92538281e63f7c69995385431a64c324f48805146067161084b1941df",
-    "data/empirical_astrology/master_v2/dataset_registry.jsonl": "769107d4068593423988fcefaca7b255678f0fa525f5bd52249d64e95939c8a8",
-    "data/empirical_astrology/master_v2/candidate_feature_registry.jsonl": "c50fd5f0bc7634fb6cff53250af6ededb6c00f3640183a4b1ee0459853caff33",
-    "data/empirical_astrology/master_v2/negative_constraint_registry.jsonl": "5312718068e8be0b73ee5a8b17e48c8182c821950872254f594aa94440641072",
+    "data/empirical_astrology/fulltexts_v2/fulltext_manifest.jsonl": "909527f3acda2f33b9b60d63bf9bf2c388518b0c23a142beb32d0d1113d237bc",
+    "data/empirical_astrology/fulltexts_v2/primary_feature_extractions.jsonl": "15c524c2f6e732a66d67b3bc485299926e82dd3cffd4ddd624b20453614ac53d",
+    "data/empirical_astrology/master_v2/source_registry.jsonl": "769bff3dd6033c3cb9c1e0229e3f9b1aa44996888538cddb5ee0d45fda8b8d48",
+    "data/empirical_astrology/master_v2/dataset_registry.jsonl": "334e1ba5a44659543839a52066cb695c09261c03a0e40591de97e5560ac9481b",
+    "data/empirical_astrology/master_v2/candidate_feature_registry.jsonl": "c29a95c6e57e93e8d5fdbabb4c802f490b99fb778ecf053201dbd10e7d2ec01a",
+    "data/empirical_astrology/master_v2/negative_constraint_registry.jsonl": "f28892ff3f4dad2ef0efe8322e2673b815a971ae4df4addcc9f6f77457fe4d42",
     "notes/empirical_astrology/master_v2/evidence_map.md": "15ac9569209dde156a3658719077a6e33b9e3247c694034fc040deda3be2bdf3",
-    "notes/empirical_astrology/master_v2/FULLTEXT_EXPANSION_REPORT.md": "f5ba7b76042761d30cb6d1c53b8943f9170828367550fe71a1c320dabd2b2948",
-    "notes/empirical_astrology/master_v2/PRO_HANDOFF_WAVE3B.md": "4f619a0628c32827b01da112ccf01854230c0058ae7d61abe24a17ec9f3f6262",
+    "notes/empirical_astrology/master_v2/FULLTEXT_EXPANSION_REPORT.md": "3e9739d0ea1e7b0191c3459ba5f4a679c85134937a24a4638c6fa08c09461b21",
+    "notes/empirical_astrology/master_v2/PRO_HANDOFF_WAVE3B.md": "6d47dd19159b0eafa648cc6478c00207018e2ef6b5d2ff00b8ad3c56ccdd9462",
     "notes/empirical_astrology/fulltexts/CORRELATION_ACCESS_GAP.md": "2b15212e027e6c7e735bf4298a9d3942965b8caf20f6b0543ad3357debe953e6"
   }
 }

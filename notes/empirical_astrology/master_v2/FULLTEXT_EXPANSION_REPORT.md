@@ -6,7 +6,7 @@ Frozen base: `ccdeaa9d563e243bfce2349b10d6c932e7f3bc57`
 
 ## Result
 
-The decision-focused lawful retrieval pass added **13 deeply read empirical source records/analyses** and **13 primary-feature extraction rows**. It raised the extraction registry from 49 to 62 rows. Five article-level records absent from the prior source registry were added; all 913 historical source rows and all 965 historical dataset rows remain represented in v2.
+The decision-focused lawful retrieval pass added **13 deeply read empirical source records/analyses** and **13 primary-feature extraction rows**. It raised the extraction registry from 49 to 62 rows. 6 article-level records absent from the prior source registry were added; all 913 historical source rows and all 965 historical dataset rows remain represented in v2.
 
 This is a targeted information-gain expansion, not a count-maximizing attempt to retrieve every missing A-priority item.
 
@@ -45,9 +45,11 @@ Two full contextual/method articles in *Correlation* 33(2) were also read and re
 
 | Existing ID | Prior registry problem | Full-text correction |
 |---|---|---|
-| `SRC-D082EE7B136973` | Conflated with “Mars effect as aspect effect” | Printed article is “Evaluating the effect of the rounding errors in the Gauquelin data,” 32(2), 69–74 |
+| `SRC-D082EE7B136973` / `SRC-V2-3AF43F314196` | Wave 1 conflated a Mars-aspect manuscript with the rounding article | Historical ID restored to its Wave 1 identity; printed rounding article receives the new v2 ID `SRC-V2-3AF43F314196` |
 | `SRC-POST-WESTRAN2021` | Wrong issue/title shorthand | “Astrology using Progressed Synastry in 1,300 Public Cases: A Validation Study,” 33(2), 13–33 |
 | `SRC-POST-DOUGLAS2021` | Mark Douglas, 34(1) | Graham Douglas, 33(2), 87–94 |
+| `SRC-POST-TARVAINEN2021` | 34(2) and shorthand title | Publisher index: “Confirmation of Ptolemy’s 5-degree rule,” 34(1), 9–16; full text still missing |
+| `SRC-POST-GODBOUTBRUN2026` | André Brun, 2026, 38(2) | Publisher index: Hubert Brun, 2024, 37(1), from p. 73; full text still missing |
 | `DS-6AE0258C18B1` | N=113 | Printed article and table use N=114 |
 
 ## Remaining decision-relevant gaps

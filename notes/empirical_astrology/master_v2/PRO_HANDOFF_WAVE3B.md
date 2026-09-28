@@ -14,7 +14,7 @@ The Work pass retrieved, read and normalized new originals. It did not decide wh
 
 - Primary extractions: 49 → 62 (13 new rows).
 - Deeply read empirical source records/analyses added: 13.
-- New article-level source records: 5.
+- New article-level source records: 6.
 - High-value paid-archive gap: 25 unique article records, itemized separately.
 - Historical v1 registries were copied forward without destructive editing.
 
