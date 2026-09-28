@@ -1,0 +1,48 @@
+{
+  "schema": "target-independent-chart-uniqueness-v1",
+  "version": "1.0.0",
+  "frozen_utc": "2026-09-28T03:44:00Z",
+  "purpose": "Measure chart-geometry rarity without personality data and without owner-fitted rule selection.",
+  "universe": {
+    "start_utc": "1926-08-24T10:42:00Z",
+    "end_utc": "2026-08-24T10:42:00Z",
+    "cadence_seconds": 60
+  },
+  "bodies": ["Sun","Moon","Mercury","Venus","Mars","Jupiter","Saturn","Uranus","Neptune","Pluto"],
+  "feature_definition": {
+    "planet_pair_count": 45,
+    "planet_pair_feature": "absolute orb in degrees to nearest of 0,60,90,120,180 for every unordered planet pair",
+    "angle_feature_count": 10,
+    "angle_feature": "minimum absolute angular distance in degrees from each planet to ASC,MC,DSC,IC",
+    "total_features": 55,
+    "houses": "none",
+    "sign_categories": "none",
+    "owner_selected_rules": "none"
+  },
+  "reference": {
+    "sampling": "uniform distinct UTC minute-grid moments without replacement",
+    "baseline_n": 100000,
+    "calibration_n": 50000,
+    "seed": 20260928,
+    "location_policy": "condition angular reference on the participant birth latitude/longitude; planetary features are location-independent"
+  },
+  "primary_score": {
+    "name": "rank_gaussian_shrunk_mahalanobis",
+    "marginal_transform": "baseline empirical CDF to standard-normal quantile, clipped to [0.5/B,1-0.5/B]",
+    "covariance": "sample covariance of transformed baseline features",
+    "shrinkage": "C_shrunk = 0.9*C + 0.1*I",
+    "distance": "D2 = z' inverse(C_shrunk) z",
+    "rarity_percentile": "(1 + number of calibration D2 values <= query D2)/(calibration_n + 1)",
+    "tail_probability": "(1 + number of calibration D2 values >= query D2)/(calibration_n + 1)"
+  },
+  "secondary_scores": [
+    "mean marginal two-sided surprisal across all 55 features, calibrated on the same calibration sample",
+    "planetary-only primary score using the 45 pair features",
+    "angle-only primary score using the 10 angle features"
+  ],
+  "anti_tuning": [
+    "No personality, biography, astrology-belief, or owner six-rule score enters the metric.",
+    "All 45 planet pairs and all 10 planet-to-angle distances are included; no pair is selected for a person.",
+    "The score definition is frozen before computing the owner's v1 score."
+  ]
+}
