@@ -1,0 +1,58 @@
+{
+  "recorded_at": "2026-09-28T01:25:10.588761+00:00",
+  "synthetic_only": true,
+  "owner_executed": true,
+  "direct_gateway_smoke": {
+    "status": "PASS",
+    "provider": "venice",
+    "returned_model": "openai-gpt-56-sol",
+    "reasoning_effort": "xhigh"
+  },
+  "participant_activation_attempt": {
+    "enabled_deployment": "0f72f0d3-c3ff-4024-b77b-ee665a7015fc",
+    "status": "FAILED_BEFORE_FIRST_QUESTION",
+    "synthetic_session_id": "0aee7823075a8d03aad794e216361961",
+    "real_model_telemetry": [
+      {
+        "stage": "Plan",
+        "provider": "venice",
+        "returned_model": "openai-gpt-56-sol",
+        "reasoning_effort": "xhigh",
+        "prompt_tokens": 28755,
+        "completion_tokens": 1401,
+        "duration_seconds": 17.469
+      },
+      {
+        "stage": "Plan",
+        "provider": "venice",
+        "returned_model": "openai-gpt-56-sol",
+        "reasoning_effort": "xhigh",
+        "prompt_tokens": 28839,
+        "completion_tokens": 650,
+        "duration_seconds": 10.146
+      },
+      {
+        "stage": "failed_attempt",
+        "provider": "venice",
+        "error_code": "question_or_evidence_admission_not_resolved"
+      }
+    ],
+    "semantic_admission_calls": 0,
+    "participant_turns": 0
+  },
+  "supported_cause": "With zero participant turns, both model-proposed opening plans failed the deterministic plan gate before semantic admission. The frozen bank itself already supplies an admissible self-contained first route, so model selection at the empty-record boundary was unnecessary.",
+  "repair": {
+    "app_commit": "4105789f29d8278677686f73df0bece7c603a882",
+    "behavior": "Use frozen bank route A0 deterministically only when there are no participant turns/source records/evidence; Venice remains adaptive after the first behavioral answer.",
+    "app_deployment": "a3c900d3-0d67-478f-a36d-36f086346297",
+    "app_deployment_status": "SUCCESS",
+    "activation_script_commit": "81a055577a1c39eecce0d353b95e24d2cca2ad1a",
+    "rollback_fix": "Delete an originally absent UDA_MODEL_GATEWAY_TOKEN instead of attempting an empty stdin variable value."
+  },
+  "current_runtime": {
+    "participant_live_enabled": false,
+    "participant_gateway_token_present": false,
+    "provider_configured": false
+  },
+  "next_step": "Owner reruns the repaired activation helper. A successful run must produce canonical A0, preserve the synthetic answer exactly, then record at least one real Venice Plan + one real Admission call before freezing the synthetic export."
+}

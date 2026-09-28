@@ -51,3 +51,12 @@ Install Playwright and the test dependencies in a development environment. Use a
 `python apps/life-patterns-participant/scripts/browser_smoke.py --browser /path/to/chromium --output /tmp/participant-ui-smoke`
 
 The script launches an isolated local server and synthetic model, creates ephemeral test credentials and a temporary database, then checks mobile consent, questions, answers, review, JSON download, resume and researcher access. The output contains synthetic evidence only. It does not call Venice or certify production model access.
+
+
+## First real Venice smoke and opening repair
+
+The first owner-run activation established that the existing gateway credential and Venice route work: openai-gpt-56-sol returned successfully at XHigh. The app-level smoke failed earlier, before any participant answer, because two model-proposed opening plans were rejected by the deterministic survey gate. No semantic-admission call occurred.
+
+The empty-record boundary now uses the frozen bank's first self-contained route (A0) deterministically. This is not a shorter questionnaire and does not constrain later routing: once the first answer exists, the normal Venice planner plus independent semantic admission operate against the full prior record, bank, protocol and evidence guide.
+
+The activation helper also restores an originally absent participant gateway credential by deleting the variable rather than attempting to set an empty Railway stdin value. The service stays disabled unless the complete real synthetic smoke passes.
