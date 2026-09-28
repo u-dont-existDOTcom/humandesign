@@ -1,5 +1,7 @@
 # Correlation access gap
 
+> **Resolved later on 2026-09-28 for the 25 listed records.** The original gap is preserved as a historical snapshot. The owner-supplied authenticated issue PDFs plus Ruis's complete lawful author copy were inspected; exact PDFs, corrected citations, failures, hashes and remaining *methodological* gaps are in `CORRELATION_ARCHIVE_AUDIT_20260928.md`. No additional issue needs downloading for this list. No subscription PDF was committed to git.
+
 Date checked: 2026-09-28
 
 ## Scope

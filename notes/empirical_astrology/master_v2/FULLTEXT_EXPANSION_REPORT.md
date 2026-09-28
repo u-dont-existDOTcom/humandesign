@@ -1,5 +1,7 @@
 # Full-text expansion report
 
+> Historical pre-subscription checkpoint. For the subsequent paid-archive retrieval and superseding current evidence status, see `notes/empirical_astrology/fulltexts/CORRELATION_ARCHIVE_AUDIT_20260928.md` and `notes/empirical_astrology/master_v2/PRO_HANDOFF_POST_CORRELATION_ARCHIVE.md`. The “remaining gaps” below were resolved after this checkpoint.
+
 Date: 2026-09-28
 Branch: `worker/empirical-astrology-fulltext-wave4-execution`
 Frozen base: `ccdeaa9d563e243bfce2349b10d6c932e7f3bc57`
