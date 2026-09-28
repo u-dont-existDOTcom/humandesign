@@ -44,6 +44,8 @@ The sample median has 2 aspects within 1°, 4 within 2°, and 6 within 3°. The 
 
 The 0.01% combined figure is **post-hoc descriptive**, not a valid p-value: the conjunction of criteria was chosen after inspecting the owner chart.
 
+A supplementary same-seed pass checked the two specific sub-1° geometries that activate the current six-rule model at the owner moment. Venus–Mars conjunction within 1° occurred in 108/10,000 charts (1.08%); Saturn–Venus trine within 1° occurred in 103/10,000 (1.03%); **none of the 10,000 had both simultaneously** (0/10,000; Wilson 95% upper bound ~0.0384%). This pairwise combination was inspected after the owner rules were known, so again it is descriptive rather than an independent significance test.
+
 ## Relation to the CURRENT six-rule method
 
 The current project authority is V1.4d, not the older V3.6 merged model. V1.4d's exact minute-grid search evaluates 52,596,001 minutes across the century and leaves nine maximum-score minutes, all on 1985-01-29 from 10:18 through 10:26 UTC. The cold continuous plateau is approximately 10:17:52–10:26:12 UTC. It does **not** select the older V3.6 10:36 local optimum.
