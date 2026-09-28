@@ -160,13 +160,13 @@ class BirthRecord:
     relationship_component_id: str
 
     def __post_init__(self) -> None:
-        for field, value in (
+        for identifier_field, identifier_value in (
             ("participant_id", self.participant_id),
             ("hospital_id", self.hospital_id),
             ("network_id", self.network_id),
             ("relationship_component_id", self.relationship_component_id),
         ):
-            validate_identifier(value, field=field)
+            validate_identifier(identifier_value, field=identifier_field)
         if self.birth_utc_timestamp.tzinfo is None or self.birth_utc_timestamp.utcoffset() is None:
             raise ValueError("birth_utc_timestamp must be timezone-aware")
         if self.record_precision_category not in RECORD_PRECISION_CATEGORIES:
@@ -188,13 +188,13 @@ class BirthRecord:
             raise ValueError("birth_time_uncertainty_minutes must be in [0,1]")
         if clock - uncertainty < 0.0 or clock + uncertainty >= 1440.0:
             raise ValueError("birth uncertainty interval must remain inside the local date")
-        for field, value in (
+        for numeric_field, numeric_value in (
             ("maternal_age_at_birth_years", self.maternal_age_at_birth_years),
             ("gestational_age_at_birth_weeks", self.gestational_age_at_birth_weeks),
             ("birthweight_grams", self.birthweight_grams),
         ):
-            if _finite(value, field=field) <= 0.0:
-                raise ValueError(f"{field} must be positive")
+            if _finite(numeric_value, field=numeric_field) <= 0.0:
+                raise ValueError(f"{numeric_field} must be positive")
 
     @property
     def utc(self) -> datetime:
@@ -289,9 +289,10 @@ def build_pair_features(
     errors = pair_eligibility_errors(left, right)
     if errors:
         raise PairEligibilityError(", ".join(errors))
-    participant_ids = tuple(
-        sorted((left.participant_id, right.participant_id), key=lambda item: item.encode())
-    )
+    if left.participant_id.encode() < right.participant_id.encode():
+        participant_ids = (left.participant_id, right.participant_id)
+    else:
+        participant_ids = (right.participant_id, left.participant_id)
     bounds = birth_gap_bounds(left, right)
     clock_left = _clock_terms(left.birth_local_clock_minutes)
     clock_right = _clock_terms(right.birth_local_clock_minutes)

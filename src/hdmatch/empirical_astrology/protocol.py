@@ -90,7 +90,8 @@ def validate_freeze_manifest(manifest: Mapping[str, object]) -> None:
             parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
         except ValueError as exc:
             raise FreezeManifestError(f"{field} is not valid ISO-8601") from exc
-        if parsed.utcoffset() is None or parsed.utcoffset().total_seconds() != 0.0:
+        offset = parsed.utcoffset()
+        if offset is None or offset.total_seconds() != 0.0:
             raise FreezeManifestError(f"{field} must resolve to UTC")
     opening = datetime.fromisoformat(str(manifest["cohort_opening_utc"]).replace("Z", "+00:00"))
     closing = datetime.fromisoformat(str(manifest["cohort_closing_utc"]).replace("Z", "+00:00"))

@@ -13,7 +13,7 @@ from collections.abc import Sequence
 from dataclasses import dataclass, replace
 
 import numpy as np
-from scipy.stats import t as student_t
+from scipy.stats import t as student_t  # type: ignore[import-untyped]
 
 from .features import NUISANCE_COLUMN_NAMES, PairFeatures, deterministic_random_feature
 
@@ -92,7 +92,7 @@ def _within_center(
     groups: np.ndarray,
     weights: np.ndarray,
 ) -> np.ndarray:
-    centered = values.astype(np.float64, copy=True)
+    centered: np.ndarray = values.astype(np.float64, copy=True)
     for group in sorted(set(groups.tolist())):
         selected = groups == group
         group_weights = weights[selected]
@@ -158,10 +158,12 @@ def _prepare(
     )
     if len(y_source) != len(frozen) or len(x_source) != len(frozen):
         raise ValueError("custom outcome and exposure arrays must match the pair count")
-    y = np.asarray(y_source, dtype=np.float64)
-    all_nuisance = np.asarray([row.pair.nuisance_values for row in frozen], dtype=np.float64)
+    y: np.ndarray = np.asarray(y_source, dtype=np.float64)
+    all_nuisance: np.ndarray = np.asarray(
+        [row.pair.nuisance_values for row in frozen], dtype=np.float64
+    )
     nuisance = all_nuisance[:, nuisance_indices]
-    x = np.asarray(x_source, dtype=np.float64)
+    x: np.ndarray = np.asarray(x_source, dtype=np.float64)
     if (
         not np.all(np.isfinite(y))
         or not np.all(np.isfinite(nuisance))
@@ -174,7 +176,9 @@ def _prepare(
         dtype=object,
     )
     network_counts = Counter(networks.tolist())
-    weights = np.asarray([1.0 / network_counts[value] for value in networks], dtype=np.float64)
+    weights: np.ndarray = np.asarray(
+        [1.0 / network_counts[value] for value in networks], dtype=np.float64
+    )
     n_networks = len(network_counts)
     if required_networks is not None and n_networks != required_networks:
         raise NotEstimable(

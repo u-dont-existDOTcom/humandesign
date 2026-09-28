@@ -5,6 +5,7 @@ from __future__ import annotations
 from collections import Counter, defaultdict
 from collections.abc import Iterable, Sequence
 from dataclasses import dataclass
+from datetime import date
 
 from .features import (
     BirthRecord,
@@ -201,7 +202,7 @@ def select_hospital_pairs(
         protocol_version=protocol_version,
         base_seed=base_seed,
     )
-    by_date: dict[object, list[PairFeatures]] = defaultdict(list)
+    by_date: dict[date, list[PairFeatures]] = defaultdict(list)
     for pair in accepted:
         by_date[pair.local_birth_date].append(pair)
     retained = [
