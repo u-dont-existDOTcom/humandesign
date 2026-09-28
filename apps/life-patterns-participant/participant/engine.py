@@ -433,6 +433,48 @@ class Engine:
             for t in state["turns"]
             if t["turn_id"] not in state["dispositions"] and not t.get("quarantined")
         ]
+
+        # With no behavioral evidence yet there is nothing for a semantic planner to adapt to.
+        # Use the frozen bank's first self-contained route as the canonical opening, then let
+        # Venice adapt only after the participant has actually supplied evidence.
+        if not state["turns"] and not state["source_records"] and not state["evidence"]:
+            first = bank(instrument)["questions"][0]
+            if not first["context_requirement"].startswith("Self-contained"):
+                raise RuntimeError(
+                    "Frozen survey bank no longer begins with a self-contained route."
+                )
+
+            def open_first(current):
+                if (
+                    not current["lease"]
+                    or current["lease"]["id"] != run_id
+                    or current["generation"] != state["generation"]
+                ):
+                    return
+                current["lease"] = None
+                current["pending_question"] = {
+                    "route_id": first["id"],
+                    "route_type": "canonical",
+                    "text": first["question"] + f"\n[route: {first['id']}]",
+                    "antecedent_turn_ids": [],
+                    "equivalent_context": False,
+                    "missing_distinction": "Initial self-contained behavioral scene.",
+                    "why_useful": "No behavioral response has yet been collected.",
+                    "question_id": secrets.token_hex(12),
+                    "admitted_at": utc(),
+                }
+                current["calls"].append(
+                    {
+                        "provider": "deterministic",
+                        "stage": "canonical_opening",
+                        "route_id": first["id"],
+                        "at": utc(),
+                    }
+                )
+                current["phase"] = "awaiting_answer"
+
+            return self.store.change(token, open_first)
+
         pending = pending_all[:12]  # transport batch, not a survey/coverage quota
         rules = instrument["INTERVIEW-PROTOCOL-v6.md"]
         controller = instrument["controller"].split("## Final JSON contract", 1)[0]

@@ -170,7 +170,8 @@ def begin(setup):
     s = command(client, s, "consent").json()
     s = client.post("/api/next", json={}).json()
     assert s["phase"] == "awaiting_answer"
-    assert fake.count == 2
+    assert "[route: A0]" in s["question"]["text"]
+    assert fake.count == 0
     return s
 
 
@@ -720,8 +721,10 @@ def test_hold_is_distinct_from_stop_and_excludes_target_source(setup):
 
 def test_unexpected_provider_failure_releases_lease_and_counts_attempt(setup):
     _, fake, app, c = setup
-    s = join(setup)
-    command(c, s, "consent")
+    s = begin(setup)
+    s = command(
+        c, s, "answer", "I would usually keep my reading time unless something changed."
+    ).json()
 
     def fail(*args, **kwargs):
         raise AttributeError("PRIVATE_FAILURE_BODY")
@@ -735,8 +738,8 @@ def test_unexpected_provider_failure_releases_lease_and_counts_attempt(setup):
 
 def test_call_limit_stays_partial_without_false_participant_stop(setup):
     _, fake, app, c = setup
-    s = join(setup)
-    command(c, s, "consent")
+    s = begin(setup)
+    s = command(c, s, "answer", "I would probably keep the hour for myself.").json()
     app.state.engine.maximum_calls = 1
     s = c.post("/api/next", json={}).json()
     assert s["phase"] == "resource_limited"
