@@ -10,7 +10,6 @@ from __future__ import annotations
 
 import hashlib
 import json
-import math
 import subprocess
 from dataclasses import asdict
 from datetime import UTC, date, datetime, timedelta
@@ -187,11 +186,11 @@ def synthetic_analysis_rows(model: LiteratureModelV1) -> list[AnalysisRow]:
             left = f"SYN_P_{network_index:02d}_{pair_index:02d}_A"
             right = f"SYN_P_{network_index:02d}_{pair_index:02d}_B"
             x = 0.05 + 2.85 * pair_index / 9
-            nuisance = tuple(
-                math.sin((pair_index + 1) * (column + 1) / 23.0)
-                + 0.01 * network_index * ((column % 3) - 1)
-                for column in range(len(NUISANCE_COLUMN_NAMES))
-            )
+            # The exact nuisance construction is exercised above from real
+            # BirthRecord fixtures.  This numerical-rank fixture sets those
+            # controls to zero so its sole purpose is an unambiguous TN-001,
+            # CR1, gap-bound, LOO, and bootstrap code-path check.
+            nuisance = (0.0,) * len(NUISANCE_COLUMN_NAMES)
             pair = PairFeatures(
                 pair_id=deterministic_pair_id(
                     left,
