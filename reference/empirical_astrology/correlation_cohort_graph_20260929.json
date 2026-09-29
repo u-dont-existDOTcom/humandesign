@@ -1,0 +1,232 @@
+{
+  "schema_version": 1,
+  "status": "PARTIAL_PARTICIPANT_COHORT_GRAPH_NOT_COMPLETE_DEDUPLICATION",
+  "edges": [
+    {
+      "from": "Gauquelin_profession_program",
+      "to": "Ertel1988",
+      "relation": "partial_reuse",
+      "count": null,
+      "count_unit": "persons unless explicit otherwise",
+      "basis": "source audit/reported lineage; exact roster witness supplied below for new cross-study finding"
+    },
+    {
+      "from": "Gauquelin_profession_program",
+      "to": "Ertel1995",
+      "relation": "partial_reuse_multiple_planet_rows",
+      "count": null,
+      "count_unit": "persons unless explicit otherwise",
+      "basis": "source audit/reported lineage; exact roster witness supplied below for new cross-study finding"
+    },
+    {
+      "from": "Gauquelin_profession_program",
+      "to": "Dean1997-Addey",
+      "relation": "biographical_reanalysis",
+      "count": null,
+      "count_unit": "persons unless explicit otherwise",
+      "basis": "source audit/reported lineage; exact roster witness supplied below for new cross-study finding"
+    },
+    {
+      "from": "Gauquelin_profession_program",
+      "to": "Tarvainen2017",
+      "relation": "partial_reuse",
+      "count": null,
+      "count_unit": "persons unless explicit otherwise",
+      "basis": "source audit/reported lineage; exact roster witness supplied below for new cross-study finding"
+    },
+    {
+      "from": "Tarvainen2017",
+      "to": "Tarvainen2018-rulers",
+      "relation": "partial_overlap",
+      "count": null,
+      "count_unit": "persons unless explicit otherwise",
+      "basis": "source audit/reported lineage; exact roster witness supplied below for new cross-study finding"
+    },
+    {
+      "from": "Tarvainen2018-rulers",
+      "to": "Tarvainen2021",
+      "relation": "exact_same_cohort",
+      "count": 20394,
+      "count_unit": "persons unless explicit otherwise",
+      "basis": "source audit/reported lineage; exact roster witness supplied below for new cross-study finding"
+    },
+    {
+      "from": "Gauquelin_families",
+      "to": "Tarvainen2014",
+      "relation": "family_reuse",
+      "count": null,
+      "count_unit": "persons unless explicit otherwise",
+      "basis": "source audit/reported lineage; exact roster witness supplied below for new cross-study finding"
+    },
+    {
+      "from": "Gauquelin_families",
+      "to": "Tarvainen2016",
+      "relation": "family_reuse",
+      "count": null,
+      "count_unit": "persons unless explicit otherwise",
+      "basis": "source audit/reported lineage; exact roster witness supplied below for new cross-study finding"
+    },
+    {
+      "from": "Tarvainen2014",
+      "to": "Tarvainen2022",
+      "relation": "paired_male_female_views_reanalysis",
+      "count": null,
+      "count_unit": "persons unless explicit otherwise",
+      "basis": "source audit/reported lineage; exact roster witness supplied below for new cross-study finding"
+    },
+    {
+      "from": "Tarvainen2013",
+      "to": "Tarvainen2022",
+      "relation": "exact_parent_reanalysis",
+      "count": 2759,
+      "count_unit": "persons unless explicit otherwise",
+      "basis": "source audit/reported lineage; exact roster witness supplied below for new cross-study finding"
+    },
+    {
+      "from": "Tarvainen2015",
+      "to": "Tarvainen2022",
+      "relation": "exact_parent_reanalysis",
+      "count": 6285,
+      "count_unit": "persons unless explicit otherwise",
+      "basis": "source audit/reported lineage; exact roster witness supplied below for new cross-study finding"
+    },
+    {
+      "from": "Gauquelin_families",
+      "to": "Brady2002_comparison",
+      "relation": "subset_reanalysis",
+      "count": null,
+      "count_unit": "persons unless explicit otherwise",
+      "basis": "source audit/reported lineage; exact roster witness supplied below for new cross-study finding"
+    },
+    {
+      "from": "Dean1985_parent1198",
+      "to": "Dean1985-I",
+      "relation": "selected_subsets",
+      "count": null,
+      "count_unit": "persons unless explicit otherwise",
+      "basis": "source audit/reported lineage; exact roster witness supplied below for new cross-study finding"
+    },
+    {
+      "from": "Dean1985_parent1198",
+      "to": "Dean1985-II",
+      "relation": "selected_subset",
+      "count": 160,
+      "count_unit": "persons unless explicit otherwise",
+      "basis": "source audit/reported lineage; exact roster witness supplied below for new cross-study finding"
+    },
+    {
+      "from": "Ruis2008",
+      "to": "Ruis2012",
+      "relation": "exact_same_people",
+      "count": 293,
+      "count_unit": "persons unless explicit otherwise",
+      "basis": "source audit/reported lineage; exact roster witness supplied below for new cross-study finding"
+    },
+    {
+      "from": "Press_original",
+      "to": "Currey2021",
+      "relation": "exact_same_cases_controls",
+      "count": 622,
+      "count_unit": "persons unless explicit otherwise",
+      "basis": "source audit/reported lineage; exact roster witness supplied below for new cross-study finding"
+    },
+    {
+      "from": "Godbout2020_73",
+      "to": "GodboutCoron2023_training189",
+      "relation": "subset_reuse",
+      "count": 73,
+      "count_unit": "persons unless explicit otherwise",
+      "basis": "source audit/reported lineage; exact roster witness supplied below for new cross-study finding"
+    },
+    {
+      "from": "GodboutCoron2023_training189",
+      "to": "GodboutCoron2023_test61",
+      "relation": "reported_person_disjoint_fixed_model_inherited",
+      "count": 0,
+      "count_unit": "persons unless explicit otherwise",
+      "basis": "source audit/reported lineage; exact roster witness supplied below for new cross-study finding",
+      "count_semantics": "Source-reported zero overlap with training189; full independent roster intersection not rerun."
+    },
+    {
+      "from": "GodboutCoron2023_training189",
+      "to": "Godbout2024_250",
+      "relation": "subset_reuse",
+      "count": 189,
+      "count_unit": "persons unless explicit otherwise",
+      "basis": "source audit/reported lineage; exact roster witness supplied below for new cross-study finding"
+    },
+    {
+      "from": "GodboutCoron2023_test61",
+      "to": "Godbout2024_250",
+      "relation": "subset_reuse",
+      "count": 61,
+      "count_unit": "persons unless explicit otherwise",
+      "basis": "source audit/reported lineage; exact roster witness supplied below for new cross-study finding"
+    },
+    {
+      "from": "Godbout2020_73",
+      "to": "GodboutBrun2026_north73",
+      "relation": "same_people_new_word_profiles",
+      "count": 73,
+      "count_unit": "persons unless explicit otherwise",
+      "basis": "source audit/reported lineage; exact roster witness supplied below for new cross-study finding"
+    },
+    {
+      "from": "GodboutCoron2023_test61",
+      "to": "GodboutBrun2026_south68",
+      "relation": "verified_person_overlap_lower_bound",
+      "count": 2,
+      "count_unit": "persons unless explicit otherwise",
+      "basis": "source audit/reported lineage; exact roster witness supplied below for new cross-study finding",
+      "count_is_lower_bound": true
+    },
+    {
+      "from": "Daigno620",
+      "to": "Daigno751",
+      "relation": "reported_removed_cross_set_duplicates",
+      "count": 2,
+      "count_unit": "persons unless explicit otherwise",
+      "basis": "source audit/reported lineage; exact roster witness supplied below for new cross-study finding",
+      "count_semantics": "Two duplicate people reportedly removed during cross-set deduplication; not two retained overlaps."
+    }
+  ],
+  "direct_person_witnesses": [
+    {
+      "public_person": "Salvador Allende",
+      "nodes": [
+        "GodboutCoron2023_test61",
+        "GodboutBrun2026_south68"
+      ],
+      "source_locations": [
+        "Correlation36(1),2023,p50,Table1/PDFp51",
+        "Correlation38(1),2026,p42,Figure2/PDFp43"
+      ],
+      "verification": "2023 rendered roster and2026 text roster personally inspected in this review"
+    },
+    {
+      "public_person": "Claudio Arrau",
+      "nodes": [
+        "GodboutCoron2023_test61",
+        "GodboutBrun2026_south68"
+      ],
+      "source_locations": [
+        "Correlation36(1),2023,p50,Table1/PDFp51",
+        "Correlation38(1),2026,p42,Figure2/PDFp43"
+      ],
+      "verification": "2023 rendered roster and2026 text roster personally inspected in this review"
+    }
+  ],
+  "unresolved_intersections": [
+    "Full189/61/141 Godbout stable-person-ID intersection graph, including south68 against training189.",
+    "Ruis cases versus Daigno/Wikidata and historical Gauquelin criminal cohorts.",
+    "Exact profession-program intersections across every extraction, including repeated planet-specific observations.",
+    "Family/relationship/healthcare-network edges not recoverable from article-level totals."
+  ],
+  "counting_rules": [
+    "A reported same-source reanalysis contributes zero new people; unknown intersections are not zero.",
+    "Two removed duplicate records do not mean two retained shared people.",
+    "The two direct roster witnesses establish a lower bound of2 reused south68 people, not an audited complete count.",
+    "Person independence, analyst independence, software independence and independent measurement are separate axes.",
+    "Do not derive total independent people by summing sample_n or source/dataset registry rows."
+  ]
+}

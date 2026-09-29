@@ -1,0 +1,230 @@
+{
+  "schema_version": "empirical-astrology-post-correlation-pro-gate-v1",
+  "gate_version": "empirical-astrology-post-correlation-pro-gate-v1-20260929",
+  "decision_date": "2026-09-29",
+  "review_base_commit": "9566ceb1d3578b6a181568e23422f7c913ad351c",
+  "status": "FINAL_REAFFIRMED",
+  "verdict": "REAFFIRM_V1B_SCIENCE_CORRECT_EVIDENCE_RATIONALES_NO_FEATURE_ACTIVATION",
+  "scientific_model_version": "literature_model_v1.0.0-wave3b-reaffirmed-20260928",
+  "prospective_protocol_version": "same-hospital-personality-protocol-v1b-20260928",
+  "scientific_model_revised": false,
+  "prospective_protocol_revised": false,
+  "evidence_reasoning_and_provenance_revised": true,
+  "authority": "Append-only Pro archive adjudication. On source identity, access, overlap and candidate evidence rationale, this gate supersedes conflicting historical prose/registry labels. All unchanged scientific constants and permissions remain governed by immutable v1b and the Wave4 gate.",
+  "scope": {
+    "owner_known_outcomes_inspected": false,
+    "participant_outcomes_collected": false,
+    "human_empirical_analysis_run": false,
+    "paid_pdfs_committed": false,
+    "complete_reextraction_of_every_original_cell_claimed": false
+  },
+  "evidence_coverage": {
+    "requested_articles": 25,
+    "additional_articles": 2,
+    "article_entries": 27,
+    "new_extraction_rows": 28,
+    "total_extraction_rows": 90,
+    "distinct_pdf_files_hash_verified": 25,
+    "original_source_inspection": "All27 packet entries reviewed;25issue/authorcopyhashes verified; decisiveCF003methods/9cells/roster andCF004methods/arithmetic/orientation/roster reread. Older full-text audit remains source for most historical detail.",
+    "complete_participant_intersection_graph": false
+  },
+  "protected_sha256": {
+    "reference/empirical_astrology/literature_model_v1b_decision.json": "682086cd41051f7731d197128e2abe42fc4dfac42ef5ae707f1ba604fad51e5b",
+    "reference/empirical_astrology/literature_model_v1.json": "b75099e3dc62e464df39e8150fe18238a76121648ab0ba8f8059e6996f7c2382",
+    "reference/empirical_astrology/literature_feature_registry_v1.json": "be72e72dc2ece88f8c2fb4d0ac874746964944cfa1e4220c80a488f3f06af280",
+    "reference/empirical_astrology/literature_model_v1b_wave4_gate.json": "773273817152e89e1ba0fa2a79f3fbf99e6395e501c4ca82a494847b5256152b",
+    "notes/empirical_astrology/master_v2/PRO_DECISION_WAVE4.md": "816a1e7be7e0aa42d0151420a8de69561bafbf2d3383f268aaeae7e84cef6832",
+    "reference/empirical_astrology/pro_reasoning_packet_post_correlation_archive.json": "03853bc5ec4cab30f3cc411de74062e1283608b39782b7cabb38748e500dc295",
+    "notes/empirical_astrology/fulltexts/CORRELATION_ARCHIVE_AUDIT_20260928.md": "29e343a43b83d9bb1804ede591f0e22c1bac8e9de21c48fb32f1bff701e2ebbc"
+  },
+  "invariants": {
+    "sole_primary": "TN-001 theory-neutral conditional birth-gap/personality association",
+    "executable_astrology_features": [],
+    "aspect_to_trait_mappings": [],
+    "executable_moderator_interactions": [],
+    "astrology_weights": {},
+    "astrology_coefficient_vector_length": 0,
+    "full_v1b_equals_theory_neutral_model": true,
+    "orb_tightness_applying_angularity": "secondary inactive templates only"
+  },
+  "candidate_adjudications": [
+    {
+      "id": "CF-001",
+      "classification": "exploratory_only",
+      "domain": "public_prominence_only",
+      "extraction_ids": [],
+      "classification_changed": false,
+      "rationale": "No direct exact karaka-kendra replication in this archive batch. No personality transport or added weight."
+    },
+    {
+      "id": "CF-002",
+      "classification": "exploratory_only",
+      "domain": "original_outcomes_only",
+      "extraction_ids": [
+        "PFE-ARCH-12",
+        "PFE-ARCH-13",
+        "PFE-ARCH-14",
+        "PFE-ARCH-21"
+      ],
+      "classification_changed": false,
+      "rationale": "Full text is available. Four reused applications do not establish a single general tightness/applying rule: paired spouses, noon dates in two cohorts, outcome-inspected thresholds, inconsistent tightness and female direction reversal. No executable one- or two-degree allowance."
+    },
+    {
+      "id": "CF-003",
+      "classification": "excluded",
+      "domain": "personality_model; source-reproduction research retained",
+      "extraction_ids": [
+        "PFE-ARCH-22",
+        "PFE-ARCH-23",
+        "PFE-ARCH-26"
+      ],
+      "classification_changed": false,
+      "rationale": "Credit the 61-person new-person test and conditional small p-values; eight of nine survive Holm. The biographical target is chart-conditioned, and shuffling finished target labels does not preserve that shared-chart dependence. Biography specificity under a frozen correct pipeline null and independently measured traits remain unestablished. Same software and training optimization alone are not disqualifications. The 2024 N250 is reuse."
+    },
+    {
+      "id": "CF-004",
+      "classification": "excluded",
+      "domain": "hemisphere_semantic_matching",
+      "extraction_ids": [
+        "PFE-ARCH-24",
+        "PFE-ARCH-27"
+      ],
+      "classification_changed": false,
+      "rationale": "Direct original is Correlation38(1),2026,39-56, not the 2024 book-sales paper. Reported 48/68 versus26/73 contrast remains unreconstructed from individual scores; rendered tables contain subtraction and orientation contradictions. Names/GPT knowledge, lexical normalization and unmatched geography require controls. North73 reused; at least Allende and Arrau in south68 also occur in the 2023 N61 sample. Do not claim the aggregate is false or the68 are all new."
+    },
+    {
+      "id": "CF-005",
+      "classification": "excluded",
+      "domain": "aggregate_methodological_audit_only; no_high_stakes_person_use",
+      "extraction_ids": [
+        "PFE-ARCH-10",
+        "PFE-ARCH-11",
+        "PFE-ARCH-19",
+        "PFE-ARCH-25",
+        "PFE-ARCH-25B"
+      ],
+      "classification_changed": false,
+      "rationale": "Retain the two-source Mercury-Mars conjunction finding and corrected within-paper threshold, alongside temporal-third and other-aspect failures. Event denominators, within-person dependence, case ascertainment, date-only precision and unmatched calendar-day controls prevent person-level inference. Neither full-text recovery nor an aggregate replication can lift the categorical high-stakes exclusion."
+    },
+    {
+      "id": "CF-006",
+      "classification": "exploratory_only",
+      "domain": "profession_eminence_only",
+      "extraction_ids": [
+        "PFE-ARCH-02",
+        "PFE-ARCH-04",
+        "PFE-ARCH-06",
+        "PFE-ARCH-08",
+        "PFE-ARCH-09",
+        "PFE-ARCH-16",
+        "PFE-ARCH-17",
+        "PFE-ARCH-20"
+      ],
+      "classification_changed": false,
+      "rationale": "Separate sectors from aspects. Reused Gauquelin cohorts, precision-direction failure, trait-expectancy artefact and unsuccessful family comparison do not provide a new exact independently replicated sector rule. Positive pooled ruler summaries remain recorded, not transported to personality."
+    },
+    {
+      "id": "CF-007",
+      "classification": "exploratory_only",
+      "domain": "inactive_secondary_personality_template",
+      "extraction_ids": [
+        "PFE-ARCH-01",
+        "PFE-ARCH-03",
+        "PFE-ARCH-04",
+        "PFE-ARCH-05",
+        "PFE-ARCH-07",
+        "PFE-ARCH-09",
+        "PFE-ARCH-12",
+        "PFE-ARCH-14",
+        "PFE-ARCH-15",
+        "PFE-ARCH-20",
+        "PFE-ARCH-21"
+      ],
+      "classification_changed": false,
+      "rationale": "No exact trait-by-aspect/orb/angularity mapping earns activation. Negative tests constrain their tested definitions, not all possible astrology. Keep all secondary templates inactive and do not use them to rescue TN001."
+    },
+    {
+      "id": "CF-008",
+      "classification": "excluded",
+      "domain": "clinical_reader_person_inference",
+      "extraction_ids": [],
+      "classification_changed": false,
+      "rationale": "No directly responsive new original in the25. Previous exact-mapping and independent-validation limitations remain; high-stakes exclusions unchanged."
+    }
+  ],
+  "evidence_overrides": [
+    {
+      "id": "PC-001",
+      "supersedes": "v1b REG-001 CF004 identity and associated abstract-only statements",
+      "correction": "Direct inversion source: Godbout/Brun, Correlation38(1),issue2026,pp39-56; publisher abstract says2025. Godbout/Brun37(1),2024,pp73-84 is an unrelated ecological book-sales comparator, not the inversion test."
+    },
+    {
+      "id": "PC-002",
+      "supersedes": "historical abstract-only access rationales for CF002/003/004/005",
+      "correction": "Complete sources are recovered. Access is not the remaining reason for nonactivation; use the candidate-specific reproducibility, construct and inference reasons in this gate."
+    },
+    {
+      "id": "PC-003",
+      "supersedes": "any reading of CF003 as either no new people or nine-test multiplicity alone explaining its signal",
+      "correction": "The source reports61 new people relative to189training. Eight of nine published p-values survive Holm, conditional on valid p-values. Target construction uses the same chart, so full target regeneration under biography reassignment is essential."
+    },
+    {
+      "id": "PC-004",
+      "supersedes": "PFE-ARCH-24/packet wording granting all68southern people new-sample credit",
+      "correction": "At least Salvador Allende and Claudio Arrau are in both the2023 N61 Table1,p50 and the2026 south68 Figure2,p42. Broader participant overlaps remain unaudited; do not treat unverified absence as disjointness."
+    },
+    {
+      "id": "PC-005",
+      "supersedes": "any conflation of the2023 and2026 biography pipelines",
+      "correction": "CF003 uses published biography extraction/cleaning and chart-conditioned dominance targets. CF004 uses named-person GPT noun profiles and a different normalization. GPT narrative illustration in2023 is not evidence that GPT generated its primary target labels."
+    },
+    {
+      "id": "PC-006",
+      "supersedes": "overbroad requirement to rerun unchanged stochastic GPT generation for every label permutation or redo training selection in every fixed-model validation draw",
+      "correction": "Rerun all stages affected by the randomized assignment. Freeze unaffected independently constructed profiles and fixed validation coefficients. Development whole-search calibration reruns selection; frozen-model validation preserves it. Separate identity/world-knowledge controls are still needed."
+    }
+  ],
+  "primary_time_twin_adjudication": "No new real near-time/personality evidence. Tarvainen2018 supplies a synthetic method counterexample, not a reanalysis of Dean outcomes. TN001 remains an unvalidated observational association protocol, not a test of all astrology or an individual prediction system.",
+  "multiplicity_adjudication": "No common pooled p-value or literal multiplication by all historical papers. Count the actual selection paths and endpoint families. Conditional9-endpointHolm does not erase CF003. Rerun model selection for development whole-search nulls; do not redo frozen training search during genuinely untouched validation.",
+  "null_adjudication": "ForCF003, preserve each chart, reassign appropriately matched biography profiles and regenerate its ten chart-conditioned target portraits/rankings before comparison to the frozen predictor. Finished-target shuffling alone is inadequate to test chart-biography specificity. ForCF004, reproduce individual scores and orientation first, then use assignment-respecting profile/null controls, not assumed50/50 symmetry. Freeze unaffected independent stochastic outputs; regenerate affected stages and test identity/world-knowledge separately.",
+  "prospective_specification": {
+    "status": "V1B_REAFFIRMED_NOT_LAUNCH_AUTHORIZED",
+    "exact_specification_path": "reference/empirical_astrology/literature_model_v1b_decision.json",
+    "exact_specification_key": "prospective_validation_specification",
+    "exact_specification_file_sha256": "682086cd41051f7731d197128e2abe42fc4dfac42ef5ae707f1ba604fad51e5b",
+    "additional_specification_path": "notes/empirical_astrology/master_v2/CORRELATION_REPRODUCTION_SPEC_20260929.md",
+    "additional_specification_scope": "Requirements for existing-source replay and future proposal only; not a launched or complete participant protocol.",
+    "new_outcome_independent_astrology_mapping_frozen": false,
+    "A_and_B_both_required": true,
+    "no_secondary_rescue": true
+  },
+  "authorization": {
+    "archive_reproduction_and_method_audit": true,
+    "existing_wave4_mechanical_repair_authority_preserved": true,
+    "implementation_acceptance_granted": false,
+    "launch_hold_preserved": true,
+    "recruitment_authorized": false,
+    "scored_outcome_collection_authorized": false,
+    "owner_specific_fitting_authorized": false,
+    "astrology_feature_activation_authorized": false,
+    "clinical_forensic_person_level_use_authorized": false,
+    "external_author_contact_or_new_purchase_authorized_here": false
+  },
+  "next_scientific_boundary": "Source-replay artifacts and corrected end-to-end controls, especiallyCF003chart-conditionedtargets andCF004all141scores. Future independent measured-trait testing requires an exact new pre-outcome proposal if astrology features are to be added. ExistingTN001implementation/feasibility work remains separate.",
+  "cross_family_review": {
+    "status": "COMPLETED_AGREES_WITH_RECORDED_REVIEWER_CORRECTIONS",
+    "requested_model": "claude-opus-5-5",
+    "actual_model": "claude-opus-5-5",
+    "requested_effort": "max",
+    "route": "authenticated Claude Code claude.ai Max subscription; firstParty; API-key environment unset; tools disabled",
+    "stages": 2,
+    "blind_packet_sha256": "cba56fad16af90d5b857dbe403149b12c51d8896237966a8dd5d8e10f665472f",
+    "blind_response_sha256": "d0e6e37c9813ac5d9365c2cf724660d1eb6e26d517635644ef766e846a8425d4",
+    "reconciliation_packet_sha256": "7efbee2188497b9dbe639997050cc9a5bfb5862424a0bfb6fb867e9b03be6255",
+    "reconciliation_response_sha256": "54fa53ccf94783c9711dc3f97c455706e9389c7e2c876bed96bf306eda9dbd52",
+    "reconciliation_verdict": "AGREES; no remaining load-bearing error in the no-change disposition",
+    "receipt_path": "notes/empirical_astrology/master_v2/CORRELATION_CROSS_FAMILY_REVIEW_20260929.md",
+    "independence_limit": "Fresh model-family interpretation of supplied evidence, not independent source re-extraction or participant replication. Second fresh context received selected first-pass claims and exact prior specification excerpts, not the full first-pass answer.",
+    "reviewer_aside_not_adopted": "The CR1 covariance factor can affect the CI-based primary gate even when a common scale cancels bootstrap-t comparisons. No frozen covariance rule was changed."
+  }
+}

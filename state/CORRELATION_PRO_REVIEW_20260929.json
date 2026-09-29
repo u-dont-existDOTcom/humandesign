@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "status": "active",
+  "exclusive_writer": true,
+  "owned_branch": "pro/correlation-archive-review-20260929",
+  "integration_branch": "worker/empirical-astrology-fulltext-wave4-execution",
+  "integration_base_sha": "9566ceb1d3578b6a181568e23422f7c913ad351c",
+  "scope": "Pro adjudication of the 25-article Correlation archive handoff plus two adjacent sources; append-only decision and audit artifacts; no source/model/outcome changes",
+  "owner_request": "Follow attached Pro handoff after authenticated Correlation retrieval",
+  "root_outcome": "Scientific archive adjudication complete; publication/readback pending. Broader replication and existing implementation/launch holds remain open.",
+  "constraints": [
+    "Preserve historical scientific decisions and protocol bytes",
+    "No owner-known or untouched participant outcomes",
+    "No paid PDFs or extracted full text committed",
+    "Distinguish source audit, arithmetic, inference, and replication",
+    "No feature activation without an explicit justified scientific version"
+  ],
+  "active_lessons": [
+    "Current UDA bootstrap and task-time activation",
+    "Independent cross-family semantic check after cheap numerical/source checks",
+    "Isolated branch and verified remote publication",
+    "Direct usable artifact delivery",
+    "Execute safe authorized next actions; stop only at evidenced boundary"
+  ],
+  "plan": [
+    "Verify packet, counts, provenance and all 27 article entries",
+    "Inspect decisive original tables and recompute source-level arithmetic",
+    "Cross-family blind adjudication and one reconciliation if needed",
+    "Publish append-only gate, numeric receipt, cohort graph and source-reproduction requirements",
+    "Validate exact diff, protected hashes and remote readback; deliver artifacts"
+  ],
+  "uda_commit": "e1ba407cacebe516455fae278d7d748682b47df0",
+  "publication_transport": "Existing authenticated local gh/git if available; connected GitHub API fallback already discovered",
+  "current_phase": "final_review_complete_ready_for_publication",
+  "cross_family_verdict": "AGREES after one reconciliation; reviewer errors and non-adopted aside recorded"
+}

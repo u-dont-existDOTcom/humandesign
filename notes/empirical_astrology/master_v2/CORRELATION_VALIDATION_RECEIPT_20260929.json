@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "review_base_commit": "9566ceb1d3578b6a181568e23422f7c913ad351c",
+  "validation_location": "Owner isolated worktree, original archive and immutable repository files; arithmetic replay also matched in the conversation container.",
+  "checks": [
+    {
+      "check": "protected_file_unchanged",
+      "path": "reference/empirical_astrology/literature_model_v1b_decision.json",
+      "sha256": "682086cd41051f7731d197128e2abe42fc4dfac42ef5ae707f1ba604fad51e5b",
+      "pass": true
+    },
+    {
+      "check": "protected_file_unchanged",
+      "path": "reference/empirical_astrology/literature_model_v1.json",
+      "sha256": "b75099e3dc62e464df39e8150fe18238a76121648ab0ba8f8059e6996f7c2382",
+      "pass": true
+    },
+    {
+      "check": "protected_file_unchanged",
+      "path": "reference/empirical_astrology/literature_feature_registry_v1.json",
+      "sha256": "be72e72dc2ece88f8c2fb4d0ac874746964944cfa1e4220c80a488f3f06af280",
+      "pass": true
+    },
+    {
+      "check": "protected_file_unchanged",
+      "path": "reference/empirical_astrology/literature_model_v1b_wave4_gate.json",
+      "sha256": "773273817152e89e1ba0fa2a79f3fbf99e6395e501c4ca82a494847b5256152b",
+      "pass": true
+    },
+    {
+      "check": "protected_file_unchanged",
+      "path": "notes/empirical_astrology/master_v2/PRO_DECISION_WAVE4.md",
+      "sha256": "816a1e7be7e0aa42d0151420a8de69561bafbf2d3383f268aaeae7e84cef6832",
+      "pass": true
+    },
+    {
+      "check": "protected_file_unchanged",
+      "path": "reference/empirical_astrology/pro_reasoning_packet_post_correlation_archive.json",
+      "sha256": "03853bc5ec4cab30f3cc411de74062e1283608b39782b7cabb38748e500dc295",
+      "pass": true
+    },
+    {
+      "check": "protected_file_unchanged",
+      "path": "notes/empirical_astrology/fulltexts/CORRELATION_ARCHIVE_AUDIT_20260928.md",
+      "sha256": "29e343a43b83d9bb1804ede591f0e22c1bac8e9de21c48fb32f1bff701e2ebbc",
+      "pass": true
+    },
+    {
+      "check": "all_27_article_dispositions_and_28_appended_rows_accounted",
+      "pass": true
+    },
+    {
+      "check": "all_25_archive_pdf_hashes_match_packet",
+      "pass": true
+    },
+    {
+      "check": "arithmetic_replay_exact_json_bytes_match",
+      "pass": true
+    },
+    {
+      "check": "eight_candidates_no_features_no_coefficients_no_moderators",
+      "pass": true
+    },
+    {
+      "check": "existing_singleton_relationship_clock_delivery_and_cluster_rules_verified",
+      "pass": true
+    },
+    {
+      "check": "two_stage_cross_family_review_completed_and_reconciled",
+      "pass": true
+    }
+  ],
+  "archive_hash_receipt_sha256": "e7afcb9fe7a6cfa0d81807f143cddc4c4a35490cdd2bfcea9cd750ec6519b89b",
+  "rule_resolution_sha256": "d73b49dbc885ebfedc874f0bc25addb677851e3a5bf461e0f0bf7a3ee12b2975",
+  "limits": [
+    "Artifact/source identity checks are not human predictive validation.",
+    "No source-semantic software replay or participant-outcome reanalysis performed.",
+    "Complete historical participant intersections remain unavailable.",
+    "Pre-existing Wave4 implementation findings remain open."
+  ],
+  "publication_status": "This receipt certifies completed pre-publication checks only; subsequent remote commit/readback is recorded in CORRELATION_PUBLICATION_RECEIPT_20260929.json and the delivered publication receipt."
+}

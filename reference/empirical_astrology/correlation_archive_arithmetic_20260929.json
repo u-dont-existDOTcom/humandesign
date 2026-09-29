@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "scope": "Conditional arithmetic and a logical counterexample; not human validation.",
+  "cf003": {
+    "source": "Godbout and Coron, Correlation 36(1), 2023, pp.51-52, Tables 2-4",
+    "source_issue_sha256": "a4c0da056639aa0833dd96229a4efc3817395729b26c361875f24322f5092f44",
+    "cells": [
+      {
+        "rank_max": 1,
+        "tries": 1,
+        "n": 61,
+        "successes": 13,
+        "rounded_p0": 0.107,
+        "expected_from_rounded_p0": 6.527,
+        "published_p": 0.00372,
+        "published_p_holm": 0.018600000000000002,
+        "exact_binomial_sensitivity_p": 0.01136267027679893,
+        "exact_binomial_sensitivity_holm": 0.03873006495875944
+      },
+      {
+        "rank_max": 1,
+        "tries": 2,
+        "n": 61,
+        "successes": 24,
+        "rounded_p0": 0.206,
+        "expected_from_rounded_p0": 12.565999999999999,
+        "published_p": 0.000152,
+        "published_p_holm": 0.001216,
+        "exact_binomial_sensitivity_p": 0.0006328695806023742,
+        "exact_binomial_sensitivity_holm": 0.005062956644818994
+      },
+      {
+        "rank_max": 1,
+        "tries": 3,
+        "n": 61,
+        "successes": 29,
+        "rounded_p0": 0.311,
+        "expected_from_rounded_p0": 18.971,
+        "published_p": 0.00274,
+        "published_p_holm": 0.01644,
+        "exact_binomial_sensitivity_p": 0.005229919078106697,
+        "exact_binomial_sensitivity_holm": 0.03137951446864018
+      },
+      {
+        "rank_max": 2,
+        "tries": 1,
+        "n": 61,
+        "successes": 23,
+        "rounded_p0": 0.214,
+        "expected_from_rounded_p0": 13.054,
+        "published_p": 0.000961,
+        "published_p_holm": 0.006727,
+        "exact_binomial_sensitivity_p": 0.0027015806673897766,
+        "exact_binomial_sensitivity_holm": 0.018911064671728435
+      },
+      {
+        "rank_max": 2,
+        "tries": 2,
+        "n": 61,
+        "successes": 39,
+        "rounded_p0": 0.39,
+        "expected_from_rounded_p0": 23.79,
+        "published_p": 3.17e-05,
+        "published_p_holm": 0.0002853,
+        "exact_binomial_sensitivity_p": 7.151255769563594e-05,
+        "exact_binomial_sensitivity_holm": 0.0006436130192607235
+      },
+      {
+        "rank_max": 2,
+        "tries": 3,
+        "n": 61,
+        "successes": 43,
+        "rounded_p0": 0.546,
+        "expected_from_rounded_p0": 33.306000000000004,
+        "published_p": 0.00624,
+        "published_p_holm": 0.01872,
+        "exact_binomial_sensitivity_p": 0.008213595172372547,
+        "exact_binomial_sensitivity_holm": 0.03873006495875944
+      },
+      {
+        "rank_max": 3,
+        "tries": 1,
+        "n": 61,
+        "successes": 29,
+        "rounded_p0": 0.319,
+        "expected_from_rounded_p0": 19.459,
+        "published_p": 0.00432,
+        "published_p_holm": 0.018600000000000002,
+        "exact_binomial_sensitivity_p": 0.007746012991751888,
+        "exact_binomial_sensitivity_holm": 0.03873006495875944
+      },
+      {
+        "rank_max": 3,
+        "tries": 2,
+        "n": 61,
+        "successes": 42,
+        "rounded_p0": 0.548,
+        "expected_from_rounded_p0": 33.428000000000004,
+        "published_p": 0.0135,
+        "published_p_holm": 0.027,
+        "exact_binomial_sensitivity_p": 0.017829418516494274,
+        "exact_binomial_sensitivity_holm": 0.03873006495875944
+      },
+      {
+        "rank_max": 3,
+        "tries": 3,
+        "n": 61,
+        "successes": 47,
+        "rounded_p0": 0.718,
+        "expected_from_rounded_p0": 43.798,
+        "published_p": 0.182,
+        "published_p_holm": 0.182,
+        "exact_binomial_sensitivity_p": 0.22366312007330577,
+        "exact_binomial_sensitivity_holm": 0.22366312007330577
+      }
+    ],
+    "published_holm_below_0_05": 8,
+    "published_bonferroni_below_0_05": 6,
+    "sensitivity_holm_below_0_05": 8,
+    "limitations": [
+      "Holm requires valid individual p-values. This calculation does not establish them.",
+      "The exact-binomial sensitivity treats rounded training-derived p0 values as known constants.",
+      "No joint person-level null distribution, target-pipeline replay or new data are available here.",
+      "Nine endpoint definitions on one sample are not nine replications."
+    ]
+  },
+  "cf004": {
+    "source": "Godbout and Brun, Correlation 38(1), 2026, pp.47-50",
+    "source_issue_sha256": "e3ad72ee69c213ebe79739c025c91357fd7c112eefc8468bbdb43911ee9e8e73",
+    "printed_subtraction_checks": [
+      {
+        "person_as_published": "Allende",
+        "printed_page": 47,
+        "noninverted": "0.9989",
+        "inverted": "0.9425",
+        "printed_difference": "0.0456",
+        "arithmetic_difference": "-0.0564",
+        "matches_printed": false
+      },
+      {
+        "person_as_published": "Anitta",
+        "printed_page": 47,
+        "noninverted": "0.3616",
+        "inverted": "0.9617",
+        "printed_difference": "0.0201",
+        "arithmetic_difference": "0.6001",
+        "matches_printed": false
+      },
+      {
+        "person_as_published": "Musk",
+        "printed_page": 50,
+        "noninverted": "0.3170",
+        "inverted": "0.3329",
+        "printed_difference": "0.1108",
+        "arithmetic_difference": "0.0159",
+        "matches_printed": false
+      }
+    ],
+    "reported_counts_only": {
+      "south_inversion_wins": 48,
+      "south_n": 68,
+      "north_inversion_wins": 26,
+      "north_n": 73,
+      "south_fraction": 0.7058823529411765,
+      "north_fraction": 0.3561643835616438,
+      "difference": 0.3497179693795327,
+      "pooled_two_proportions_z": 4.155182751897065,
+      "one_sided_normal_p": 1.625138225187943e-05,
+      "cohen_h": 0.7161841046765995,
+      "south_exact_binomial_p_given_half": 0.00045719536064377914,
+      "north_noninversion_exact_binomial_p_given_half": 0.009308875716597319
+    },
+    "orientation_defect": "Printed p.49 Figure 6 calls the June-28 Sun Capricorn non-inverted and Cancer inverted; p.50 prose calls Capricorn inverted.",
+    "limitations": [
+      "Reported 48/68 and 26/73 counts have NOT been reconstructed from all141 individual score pairs.",
+      "Arithmetic agreement at aggregate level cannot verify the labels or the scoring software.",
+      "Two chart versions do not establish a 50/50 no-association baseline.",
+      "No corrected headline count is inferred from the erroneous examples."
+    ]
+  },
+  "synthetic_target_coupling_counterexample": {
+    "n_synthetic_indices": 100,
+    "human_people": 0,
+    "observed_agreement": 1.0,
+    "mean_agreement_after_final_target_label_shuffle": 0.1,
+    "agreement_after_biography_swap_and_target_regeneration": 1.0,
+    "biography_information_used": 0,
+    "meaning": "Possible failure of output-only shuffling when both prediction and target depend on the same chart; not a claim that the published system equals this construction."
+  }
+}
