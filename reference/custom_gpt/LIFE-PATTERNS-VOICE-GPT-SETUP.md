@@ -30,7 +30,7 @@ The deployable instruction block is below 8,000 characters on the repository's c
 3. Do not provide birth date/time/place or chart information.
 4. The interviewer asks only useful nonredundant behavioral questions. The bank is not a quota.
 5. At natural completion, review the behavior-only summary and correct material errors/conditions.
-6. Freeze the main `life-patterns-participant-export.json` first. If the CF-003 development module is enabled, the GPT then asks its three chart-blind secondary questions before any chart reveal and freezes them separately as `life-patterns-cf003-secondary-v0.json`; they never alter the primary record or score.
+6. Freeze the main `life-patterns-participant-export.json` first. If the CF-003 development module is enabled, ask its three secondary questions before any chart reveal and freeze them separately as `life-patterns-cf003-secondary-v0.json`. Follow the module's secondary-record linkage and post-freeze metadata rules exactly; none of it alters the primary record or score.
 7. Transcript fidelity is model-exported/unverified unless the participant reviewed it, and collector evidence is unverified. The research coordinator may import the primary record into Railway; Railway preserves the source but does not treat GPT-authored evidence as admitted.
 
 ## Measurement decision

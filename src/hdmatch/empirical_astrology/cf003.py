@@ -15,9 +15,10 @@ Scientific status:
 from __future__ import annotations
 
 import math
+from collections.abc import Mapping
 from dataclasses import dataclass
 from types import MappingProxyType
-from typing import Final, Mapping
+from typing import Final
 
 CF003_CANDIDATE_BODIES: Final[tuple[str, ...]] = (
     "sun",
@@ -88,15 +89,15 @@ def score_cf003_planet(body: str, flags: CF003FactorFlags) -> CF003PlanetScore:
         raise ValueError(f"body must be one of {CF003_CANDIDATE_BODIES!r}")
 
     contributions: list[tuple[str, float]] = []
-    total = 0.0
+    total_tenths = 0
     for feature_name, weight in CF003_PUBLISHED_WEIGHTS.items():
         if getattr(flags, feature_name):
             contributions.append((feature_name, weight))
-            total += weight
+            total_tenths += int(round(weight * 10))
 
     return CF003PlanetScore(
         body=normalized,
-        total=total,
+        total=total_tenths / 10.0,
         contributions=tuple(contributions),
     )
 
@@ -106,7 +107,7 @@ def rank_cf003_planet_scores(
 ) -> tuple[tuple[str, ...], ...]:
     """Rank all ten candidate bodies while preserving unresolved ties."""
 
-    normalized: dict[str, float] = {}
+    normalized: dict[str, int] = {}
     for body, value in scores.items():
         key = body.strip().lower()
         if key in normalized:
@@ -116,7 +117,11 @@ def rank_cf003_planet_scores(
         number = float(value)
         if not math.isfinite(number):
             raise ValueError(f"score for {body} must be finite")
-        normalized[key] = number
+        scaled = number * 10.0
+        nearest = round(scaled)
+        if not math.isclose(scaled, nearest, abs_tol=1e-7):
+            raise ValueError(f"score for {body} must resolve to the published 0.1-point grid")
+        normalized[key] = int(nearest)
 
     if set(normalized) != set(CF003_CANDIDATE_BODIES):
         missing = sorted(set(CF003_CANDIDATE_BODIES) - set(normalized))
@@ -130,7 +135,7 @@ def rank_cf003_planet_scores(
         key=lambda item: (-item[1], CF003_CANDIDATE_BODIES.index(item[0])),
     )
     groups: list[tuple[str, ...]] = []
-    current_value: float | None = None
+    current_value: int | None = None
     current_group: list[str] = []
 
     for body, value in ordered:

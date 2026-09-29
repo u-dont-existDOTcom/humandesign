@@ -5,7 +5,7 @@ Status: owner-authorized DEVELOPMENT/SECONDARY module; not a primary-endpoint ch
 
 ## Decision
 
-Add a separate chart-blind CF-003 behavioral-dominance target now.
+Add a separate independent CF-003 behavioral-dominance target now, as a development-only combined hypothesis.
 
 This supersedes only the earlier recommendation in CF003_SURVEY_IMPLICATIONS_20260929.md that no CF-003-specific module should yet be added. That earlier note remains historical evidence of the pre-authorization state. It is **not** superseded on the following points:
 
@@ -23,11 +23,12 @@ The published seven-factor **weighted score surface** is implemented once the se
 
 The stronger new experiment is:
 
-1. calculate and freeze CF-003 predictor scores/ranks from birth/chart data only;
-2. independently freeze a ten-construct behavioral target using chart-blind participant source;
-3. only then apply the evaluator-only construct-to-planet map and compare rankings.
+1. calculate and freeze CF-003 predictor scores/ranks from the predeclared chart-factor extraction convention;
+2. commit that predictor file's SHA-256 before behavioral classification;
+3. independently freeze a ten-construct behavioral target from sanitized participant source;
+4. only then open the committed predictor and apply the evaluator-only construct-to-planet map.
 
-The behavioral classifier never receives planet names, chart data, predictor values, or the hidden map. Run it in a fresh tool-free context with no repository, web, Memory, connected apps, or other files available; the frozen classifier packet is its only input.
+The behavioral classifier receives only its neutral contract and sanitized behavioral source in a fresh tool-free context. Its packet contains no framework-identifying schema labels, map, predictor, external participant profile, repository, web, Memory, connected apps, or other files. The exact historical Mastro factor extraction remains unresolved and is explicitly preserved as such in the predictor artifact.
 
 ## Existing measurement coverage
 
@@ -43,23 +44,21 @@ The pre-existing chart-blind survey measurement contract already contains behavi
 - mystery/imagination/opacity;
 - long-duration transformation/deepening.
 
-The new secondary contract preserves those role texts as lineage on the evaluator side. The missing construct is central identity/purpose/self-expression.
+The evaluator map preserves those role texts as lineage, but the classifier definitions were narrowed after cross-family methodology review to reduce overlap (for example drive versus assertion, values/boundaries versus growth, communication activity versus thought content). The missing tenth category is represented only by a development self-expression/purpose proxy whose definition does not bake in centrality.
 
-No existing primary scoring contract is edited to add it.
+These meanings are mainly project/Human-Design-derived development meanings. They are **not** claimed to reconstruct the authors' unavailable historical CF-003 biographical target semantics. No existing primary scoring contract is edited.
 
 ## Small secondary module
 
-The module adds three concealed-direction questions after the main behavioral record is frozen and before birth/chart reveal:
+The module adds three concealed-direction questions after the main behavioral record is frozen and before chart reveal:
 
-1. an identity/purpose/self-expression question;
-2. a cross-pattern centrality question;
+1. a broad continuity/change question;
+2. a cross-pattern centrality question that explicitly allows important patterns not yet discussed;
 3. a peripheral/situational contrast question.
 
-Most evidence should still come from the already-collected autobiographical record. The three questions are not ten planet-by-planet probes and do not expose hidden categories.
+They are deliberately generic rather than direct prompts for one hidden construct. They remain only a development coverage probe, not a guarantee of complete ten-construct measurement. If any construct is insufficient, the target is incomplete; do not improvise a construct-specific follow-up after seeing missingness or predictor information. A balanced follow-up battery must be separately specified and frozen before prospective use.
 
-The three-question supplement is only a sufficient module when the existing source already provides usable chart-blind coverage for the nine inherited behavioral domains. The new identity question is a coverage repair, not evidence that identity is more dominant. If another construct lacks source, do not score it low merely because it was not asked often enough.
-
-For existing development participants, first classify the existing frozen source. If one or more constructs are insufficient, that target is incomplete unless separately frozen follow-up source is available. Do not impute a missing construct from the chart prediction.
+The secondary record must carry the exact primary-record SHA-256 before packet assembly. Chart-familiarity and ChatGPT-Memory metadata are collected only after the behavioral answers are frozen, as collection metadata that never reaches the classifier.
 
 ## Frozen behavioral scale
 
@@ -72,7 +71,7 @@ Every neutral construct uses the same 0–4 ordinal dominance rubric:
 - 3 = recurring across contexts/stages and behaviorally important;
 - 4 = repeatedly organizing/central across contexts/stages with consequential source support.
 
-Absence of mention cannot produce 0. Exact source quotations are required. Conditions and counterevidence remain attached. Question count, verbosity and model confidence do not add points. Equal scores remain ties.
+Absence of mention cannot produce 0. Exact source quotations are required and must contain at least four words; ratings 3-4 require at least two distinct support quotations, while rating 0 requires explicit counterevidence. Reused support quotes are reported rather than multiplied into extra weight. Conditions and counterevidence remain attached. Question count, verbosity and model confidence do not add points. Equal scores remain ties.
 
 This is deliberately coarse to avoid false precision. Calibration or a different continuous score would require a new development version and untouched prospective participants after freeze.
 
@@ -88,20 +87,22 @@ If the predictor ties, every top-tied planet is retained and their behavioral mi
 
 Secondary endpoints:
 
-- tie-aware Spearman rho across all ten scores/ranks;
-- inclusive top-3 overlap count;
-- inclusive top-3 Jaccard overlap.
+- tie-aware Spearman rho across all ten ranks; undefined per-person rho remains null rather than imputed;
+- fractional top-3 overlap;
+- fractional top-3 Jaccard.
+
+A tied group crossing the top-3 boundary shares the remaining membership slots fractionally, so the top-3 endpoint always contains exactly three units of membership.
 
 ## Null
 
-Use a **global label permutation**:
+Use **complete behavioral-profile reassignment within preregistered birth-cohort strata**:
 
-- apply the same permutation of the ten evaluator labels to every participant's behavioral profile;
-- preserve each participant's behavioral score vector;
-- preserve construct-specific marginal distributions across the cohort;
-- recompute the complete group statistic.
+- keep every chart/predictor fixed;
+- keep the evaluator construct-to-planet map fixed;
+- reassign each participant's complete frozen behavioral profile to another participant within the same preregistered birth-cohort stratum;
+- recompute the cohort primary statistic.
 
-This is preferable to independently shuffling finished labels within each participant because the ten behavioral constructs can have different base-rate/measurement distributions.
+Cross-family review found that the earlier global construct-label permutation changes the semantic map rather than participant pairing. Simulation under independent chart/behavior generation showed false-positive rates as high as 0.133 at nominal 0.05 in tested unequal-marginal scenarios; whole-profile reassignment stayed near nominal. The old label permutation remains diagnostic only. See `tasks/cf003-secondary-module-20260929/NULL-CALIBRATION-20260929.md`.
 
 The historical CF-003 target-shuffle null is not reused.
 
@@ -117,15 +118,14 @@ Any apparent CF-003 relationship in those same records is exploratory because th
 
 Before opening new target responses, freeze:
 
-- classifier-facing neutral construct contract;
-- classifier prompt/model/version;
-- evaluator-only construct-to-planet map;
-- secondary question wording;
+- classifier-facing neutral construct contract and exact classifier model/version;
+- evaluator-only construct-to-planet map after the literature-derived mapping decision;
+- balanced source-coverage/follow-up rule and secondary question wording;
 - quote/source validation rules;
-- score/rank/tie rules;
+- score/rank/tie rules and undefined-Spearman handling;
 - primary and secondary endpoints;
-- permutation algorithm, count and seed;
-- CF-003 predictor implementation/spec;
+- birth-cohort strata plus permutation algorithm, count and seed;
+- CF-003 predictor factor-extraction convention/spec and committed predictor-file hash;
 - software commit and hashes.
 
 No post-hoc repair on those participants.
@@ -141,6 +141,7 @@ No post-hoc repair on those participants.
 - src/hdmatch/empirical_astrology/cf003.py
 - src/hdmatch/empirical_astrology/cf003_target.py
 - scripts/build_cf003_behavioral_packet_v0.py
+- scripts/freeze_cf003_predictor_scores_v0.py
 - scripts/freeze_cf003_behavioral_target_v0.py
 - scripts/compare_cf003_frozen_target_v0.py
 

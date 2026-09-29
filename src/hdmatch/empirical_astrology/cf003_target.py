@@ -17,9 +17,9 @@ from __future__ import annotations
 
 import math
 import random
+from collections.abc import Iterable, Mapping, Sequence
 from dataclasses import dataclass
 from statistics import fmean
-from typing import Iterable, Mapping, Sequence
 
 from .cf003 import CF003_CANDIDATE_BODIES
 
@@ -92,10 +92,10 @@ class CF003BehavioralComparison:
     predictor_top_set: tuple[str, ...]
     primary_top_set_mean_behavioral_midrank: float
     spearman_rho: float | None
-    predictor_top3_inclusive: tuple[str, ...]
-    behavioral_top3_inclusive: tuple[str, ...]
-    top3_overlap_count: int
-    top3_jaccard: float
+    predictor_top3_fractional_membership: Mapping[str, float]
+    behavioral_top3_fractional_membership: Mapping[str, float]
+    top3_fractional_overlap: float
+    top3_fractional_jaccard: float
 
 
 @dataclass(frozen=True, slots=True)
@@ -103,6 +103,7 @@ class CF003CohortPair:
     participant_id: str
     predictor_scores: Mapping[str, float]
     behavioral_scores: Mapping[str, float]
+    permutation_stratum: str = "all"
 
 
 @dataclass(frozen=True, slots=True)
@@ -171,24 +172,48 @@ def midranks_descending(
     return out
 
 
-def inclusive_top_k(
+def fractional_top_k_membership(
     scores: Mapping[str, float],
     k: int,
     *,
     label_order: Sequence[str] = CF003_CANDIDATE_BODIES,
-) -> tuple[str, ...]:
+) -> dict[str, float]:
+    """Allocate exactly k top slots while sharing a tied boundary fractionally."""
+
     if not 1 <= k <= len(label_order):
         raise ValueError("k must be within the label universe")
     normalized = _finite_complete_scores(scores, labels=label_order)
-    ordered_values = sorted(normalized.values(), reverse=True)
-    threshold = ordered_values[k - 1]
-    order = {label: index for index, label in enumerate(label_order)}
-    return tuple(
-        sorted(
-            (label for label, score in normalized.items() if score >= threshold),
-            key=order.__getitem__,
-        )
-    )
+    groups = rank_score_groups(normalized, label_order=label_order)
+    membership = {label: 0.0 for label in label_order}
+    remaining = float(k)
+    for group in groups:
+        if remaining <= 0:
+            break
+        share = min(1.0, remaining / len(group))
+        for label in group:
+            membership[label] = share
+        remaining -= share * len(group)
+    if not math.isclose(sum(membership.values()), float(k), abs_tol=1e-12):
+        raise AssertionError("fractional top-k membership must sum to k")
+    return membership
+
+
+def predictor_scores_to_tenths(
+    scores: Mapping[str, float],
+) -> dict[str, int]:
+    """Quantize the published one-decimal CF-003 score surface before ranking."""
+
+    normalized = _finite_complete_scores(scores, labels=CF003_CANDIDATE_BODIES)
+    out: dict[str, int] = {}
+    for label, value in normalized.items():
+        scaled = value * 10.0
+        nearest = round(scaled)
+        if not math.isclose(scaled, nearest, abs_tol=1e-7):
+            raise ValueError(
+                f"predictor score for {label} does not lie on the published 0.1-point grid"
+            )
+        out[label] = int(nearest)
+    return out
 
 
 def _pearson(xs: Sequence[float], ys: Sequence[float]) -> float | None:
@@ -208,7 +233,7 @@ def compare_cf003_rankings(
     predictor_scores: Mapping[str, float],
     behavioral_scores: Mapping[str, float],
 ) -> CF003BehavioralComparison:
-    predictor = _finite_complete_scores(predictor_scores, labels=CF003_CANDIDATE_BODIES)
+    predictor = predictor_scores_to_tenths(predictor_scores)
     behavioral = _finite_complete_scores(behavioral_scores, labels=CF003_CANDIDATE_BODIES)
     predictor_groups = rank_score_groups(predictor)
     behavioral_groups = rank_score_groups(behavioral)
@@ -222,10 +247,12 @@ def compare_cf003_rankings(
         [predictor_midranks[label] for label in ordered],
         [behavior_midranks[label] for label in ordered],
     )
-    predictor_top3 = inclusive_top_k(predictor, 3)
-    behavioral_top3 = inclusive_top_k(behavioral, 3)
-    intersection = set(predictor_top3) & set(behavioral_top3)
-    union = set(predictor_top3) | set(behavioral_top3)
+    predictor_top3 = fractional_top_k_membership(predictor, 3)
+    behavioral_top3 = fractional_top_k_membership(behavioral, 3)
+    overlap = sum(
+        predictor_top3[label] * behavioral_top3[label] for label in CF003_CANDIDATE_BODIES
+    )
+    jaccard = overlap / (6.0 - overlap)
 
     return CF003BehavioralComparison(
         predictor_rank_groups=predictor_groups,
@@ -233,11 +260,38 @@ def compare_cf003_rankings(
         predictor_top_set=top_set,
         primary_top_set_mean_behavioral_midrank=primary,
         spearman_rho=rho,
-        predictor_top3_inclusive=predictor_top3,
-        behavioral_top3_inclusive=behavioral_top3,
-        top3_overlap_count=len(intersection),
-        top3_jaccard=len(intersection) / len(union),
+        predictor_top3_fractional_membership=predictor_top3,
+        behavioral_top3_fractional_membership=behavioral_top3,
+        top3_fractional_overlap=overlap,
+        top3_fractional_jaccard=jaccard,
     )
+
+
+def _parse_evidence_quotes(
+    raw: Mapping[str, object],
+    field: str,
+    *,
+    construct_id: str,
+    answer_text_by_turn_id: Mapping[str, str],
+) -> tuple[EvidenceQuote, ...]:
+    value = raw.get(field, [])
+    if not isinstance(value, list):
+        raise ValueError(f"{field} must be a list")
+    out: list[EvidenceQuote] = []
+    for quote_item in value:
+        if not isinstance(quote_item, Mapping):
+            raise ValueError(f"{field} items must be objects")
+        turn_id = str(quote_item.get("turn_id", ""))
+        quote = str(quote_item.get("quote", ""))
+        source = answer_text_by_turn_id.get(turn_id)
+        if source is None:
+            raise ValueError(f"quote references unknown turn: {turn_id}")
+        if not quote or quote not in source:
+            raise ValueError(f"quote for {construct_id} is not an exact answer substring")
+        if len(quote.split()) < 4:
+            raise ValueError(f"quote for {construct_id} must contain at least four words")
+        out.append(EvidenceQuote(turn_id=turn_id, quote=quote))
+    return tuple(out)
 
 
 def validate_behavioral_classifier_result(
@@ -263,28 +317,9 @@ def validate_behavioral_classifier_result(
             raise ValueError(f"duplicate construct score: {construct_id}")
         seen.add(construct_id)
 
-        def quotes(field: str) -> tuple[EvidenceQuote, ...]:
-            value = raw.get(field, [])
-            if not isinstance(value, list):
-                raise ValueError(f"{field} must be a list")
-            out: list[EvidenceQuote] = []
-            for quote_item in value:
-                if not isinstance(quote_item, Mapping):
-                    raise ValueError(f"{field} items must be objects")
-                turn_id = str(quote_item.get("turn_id", ""))
-                quote = str(quote_item.get("quote", ""))
-                source = answer_text_by_turn_id.get(turn_id)
-                if source is None:
-                    raise ValueError(f"quote references unknown turn: {turn_id}")
-                if not quote or quote not in source:
-                    raise ValueError(f"quote for {construct_id} is not an exact answer substring")
-                out.append(EvidenceQuote(turn_id=turn_id, quote=quote))
-            return tuple(out)
-
         rating = raw.get("dominance_rating")
-        if rating is not None:
-            if isinstance(rating, bool) or not isinstance(rating, int):
-                raise ValueError("dominance_rating must be integer or null")
+        if rating is not None and (isinstance(rating, bool) or not isinstance(rating, int)):
+            raise ValueError("dominance_rating must be integer or null")
 
         conditions_raw = raw.get("conditions", [])
         if not isinstance(conditions_raw, list) or any(
@@ -292,30 +327,71 @@ def validate_behavioral_classifier_result(
         ):
             raise ValueError("conditions must be a list of strings")
 
+        evidence_sufficient = raw.get("evidence_sufficient")
+        if not isinstance(evidence_sufficient, bool):
+            raise ValueError("evidence_sufficient must be a boolean")
+
         score = BehavioralConstructScore(
             construct_id=construct_id,
             dominance_rating=rating,
-            evidence_sufficient=bool(raw.get("evidence_sufficient")),
-            support_quotes=quotes("support_quotes"),
-            counterevidence_quotes=quotes("counterevidence_quotes"),
+            evidence_sufficient=evidence_sufficient,
+            support_quotes=_parse_evidence_quotes(
+                raw,
+                "support_quotes",
+                construct_id=construct_id,
+                answer_text_by_turn_id=answer_text_by_turn_id,
+            ),
+            counterevidence_quotes=_parse_evidence_quotes(
+                raw,
+                "counterevidence_quotes",
+                construct_id=construct_id,
+                answer_text_by_turn_id=answer_text_by_turn_id,
+            ),
             conditions=tuple(conditions_raw),
             time_frame=str(raw.get("time_frame", "unknown")),
             confidence=str(raw.get("confidence", "low")),
             reason=str(raw.get("reason", "")),
         )
-        if score.dominance_rating is not None and score.dominance_rating > 0:
-            if not score.support_quotes:
-                raise ValueError(f"positive rating for {construct_id} needs exact support source")
-        if score.dominance_rating == 0 and not (
-            score.counterevidence_quotes or score.support_quotes
+        if (
+            score.dominance_rating is not None
+            and score.dominance_rating > 0
+            and not score.support_quotes
         ):
-            raise ValueError(f"zero rating for {construct_id} needs explicit source, not absence")
+            raise ValueError(f"positive rating for {construct_id} needs exact support source")
+        if score.dominance_rating is not None and score.dominance_rating >= 3:
+            distinct_support = {
+                (quote.turn_id, quote.quote.strip()) for quote in score.support_quotes
+            }
+            if len(distinct_support) < 2:
+                raise ValueError(
+                    f"rating >=3 for {construct_id} needs at least two distinct support quotes"
+                )
+        if score.dominance_rating == 0 and not score.counterevidence_quotes:
+            raise ValueError(
+                f"zero rating for {construct_id} needs explicit counterevidence source"
+            )
         parsed.append(score)
 
     if seen != set(CF003_CONSTRUCT_IDS):
         raise ValueError("construct score IDs do not match the frozen ten-construct universe")
     order = {value: index for index, value in enumerate(CF003_CONSTRUCT_IDS)}
     return tuple(sorted(parsed, key=lambda score: order[score.construct_id]))
+
+
+def support_quote_reuse(
+    scores: Sequence[BehavioralConstructScore],
+) -> dict[str, tuple[str, ...]]:
+    """Report exact support quotes reused across more than one construct."""
+
+    usage: dict[tuple[str, str], list[str]] = {}
+    for score in scores:
+        for quote in score.support_quotes:
+            usage.setdefault((quote.turn_id, quote.quote), []).append(score.construct_id)
+    return {
+        f"{turn_id}:{quote}": tuple(construct_ids)
+        for (turn_id, quote), construct_ids in usage.items()
+        if len(set(construct_ids)) > 1
+    }
 
 
 def construct_scores_to_planets(
@@ -342,11 +418,95 @@ def cohort_primary_statistic(pairs: Sequence[CF003CohortPair]) -> float:
     )
 
 
+def apply_profile_reassignment(
+    pairs: Sequence[CF003CohortPair],
+    assignment: Sequence[int],
+) -> tuple[CF003CohortPair, ...]:
+    """Keep each chart fixed and reassign complete behavioral profiles within strata."""
+
+    if len(assignment) != len(pairs) or set(assignment) != set(range(len(pairs))):
+        raise ValueError("assignment must be a permutation of participant indices")
+    out: list[CF003CohortPair] = []
+    for target_index, source_index in enumerate(assignment):
+        target = pairs[target_index]
+        source = pairs[source_index]
+        if target.permutation_stratum != source.permutation_stratum:
+            raise ValueError("profile reassignment crossed a declared permutation stratum")
+        out.append(
+            CF003CohortPair(
+                participant_id=target.participant_id,
+                predictor_scores=target.predictor_scores,
+                behavioral_scores=source.behavioral_scores,
+                permutation_stratum=target.permutation_stratum,
+            )
+        )
+    return tuple(out)
+
+
+def permutation_test_from_profile_reassignments(
+    pairs: Sequence[CF003CohortPair],
+    reassignments: Iterable[Sequence[int]],
+) -> CF003PermutationResult:
+    """One-sided chart→behavior null; lower mean predicted-top behavioral rank is better."""
+
+    observed = cohort_primary_statistic(pairs)
+    total = 0
+    equal_or_better = 0
+    for assignment in reassignments:
+        total += 1
+        statistic = cohort_primary_statistic(apply_profile_reassignment(pairs, assignment))
+        if statistic <= observed + 1e-12:
+            equal_or_better += 1
+    if total == 0:
+        raise ValueError("at least one profile reassignment is required")
+    return CF003PermutationResult(
+        observed_mean_top_set_midrank=observed,
+        permutation_count=total,
+        equal_or_better_count=equal_or_better,
+        p_value=(equal_or_better + 1) / (total + 1),
+    )
+
+
+def sample_profile_reassignments(
+    pairs: Sequence[CF003CohortPair],
+    count: int,
+    *,
+    seed: int,
+) -> tuple[tuple[int, ...], ...]:
+    """Sample unique complete-profile permutations within predeclared strata."""
+
+    if not pairs:
+        raise ValueError("at least one participant pair is required")
+    if count < 1:
+        raise ValueError("count must be positive")
+    strata: dict[str, list[int]] = {}
+    for index, pair in enumerate(pairs):
+        stratum = pair.permutation_stratum.strip()
+        if not stratum:
+            raise ValueError("permutation_stratum must be non-empty")
+        strata.setdefault(stratum, []).append(index)
+    maximum = math.prod(math.factorial(len(indices)) for indices in strata.values())
+    if count > maximum:
+        raise ValueError(f"count cannot exceed the {maximum} unique within-stratum reassignments")
+
+    rng = random.Random(seed)
+    seen: set[tuple[int, ...]] = set()
+    while len(seen) < count:
+        assignment = list(range(len(pairs)))
+        for indices in strata.values():
+            sources = list(indices)
+            rng.shuffle(sources)
+            for target_index, source_index in zip(indices, sources, strict=True):
+                assignment[target_index] = source_index
+        seen.add(tuple(assignment))
+    return tuple(sorted(seen))
+
+
 def apply_global_label_permutation(
     behavioral_scores: Mapping[str, float],
     permutation: Sequence[str],
 ) -> dict[str, float]:
-    """Apply one shared label permutation to a complete behavioral profile."""
+    """Diagnostic only: randomize the map, not the chart→behavior null."""
 
     if len(permutation) != len(CF003_CANDIDATE_BODIES) or set(permutation) != set(
         CF003_CANDIDATE_BODIES
@@ -363,7 +523,7 @@ def permutation_test_from_global_label_maps(
     pairs: Sequence[CF003CohortPair],
     permutations: Iterable[Sequence[str]],
 ) -> CF003PermutationResult:
-    """One-sided null: lower mean predicted-top behavioral rank is better."""
+    """Diagnostic map-randomization test; not the inferential chart→behavior null."""
 
     observed = cohort_primary_statistic(pairs)
     total = 0
@@ -381,7 +541,7 @@ def permutation_test_from_global_label_maps(
             for pair in pairs
         ]
         statistic = cohort_primary_statistic(permuted_pairs)
-        if statistic <= observed:
+        if statistic <= observed + 1e-12:
             equal_or_better += 1
     if total == 0:
         raise ValueError("at least one permutation is required")

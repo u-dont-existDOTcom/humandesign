@@ -124,7 +124,7 @@ Then create one behavioral record with schema
 
 Do not silently normalize, shorten or reconstruct answers while exporting.
 
-If the CF-003 secondary module is attached for this development study, freeze the main record first; then ask its three questions before chart reveal and freeze them as a separate `life-patterns-cf003-secondary-v0.json`. Never merge them into the primary record.
+If CF-003 is attached, freeze the main record first, then ask its three questions before chart reveal and freeze separate `life-patterns-cf003-secondary-v0.json`. Follow its `secondary_record_requirements` and `post_freeze_metadata`; never merge behavioral records.
 
 If this ChatGPT surface can create files, create
 `life-patterns-participant-export.json` from that exact frozen object and verify that

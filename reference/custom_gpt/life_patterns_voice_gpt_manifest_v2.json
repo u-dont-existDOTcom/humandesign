@@ -3,9 +3,9 @@
   "version": "2026-09-29",
   "instructions": {
     "path": "reference/custom_gpt/life_patterns_voice_interviewer_v2.md",
-    "sha256": "926b62850e4d9ac15b7e154eaee57ecf8f926f9d1760f796c9a961da5e5acea3",
-    "characters": 7821,
-    "strict_linebreak_count": 7957
+    "sha256": "168635eab8f0777b72cdc5f9dc314f4880be43897b42b159b6c5d19b91da13e7",
+    "characters": 7824,
+    "strict_linebreak_count": 7960
   },
   "knowledge_files": [
     {
@@ -22,7 +22,7 @@
     },
     {
       "path": "reference/empirical_astrology/cf003_secondary_question_module_v0.json",
-      "sha256": "f02f95c14d70fe270e15e667ab4f4ebab915eacb9925591786a552129ebc65af"
+      "sha256": "ed8fdde6b1e01866a61e18e0259e3b80ad868e3bb5dd37754e987ef30cf5ddf1"
     }
   ],
   "birth_or_chart_material_in_bundle": false,
@@ -39,7 +39,9 @@
       "knowledge_path": "reference/empirical_astrology/cf003_secondary_question_module_v0.json",
       "activation": "after primary behavioral record freeze and before any chart reveal",
       "output": "separate life-patterns-cf003-secondary-v0.json",
-      "changes_primary_score": false
+      "changes_primary_score": false,
+      "record_linkage": "secondary must carry exact primary_record_sha256 before packet assembly",
+      "post_freeze_metadata": "collection_metadata only; never classifier evidence"
     }
   }
 }

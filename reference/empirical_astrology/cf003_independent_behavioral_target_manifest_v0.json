@@ -10,37 +10,40 @@
     "behavioral_classifier_receives_planet_mapping": false,
     "behavioral_classifier_receives_birth_or_chart_data": false,
     "behavioral_classifier_receives_cf003_predictor": false,
+    "predictor_sha256_committed_before_behavioral_classification": true,
     "predictor_opened_only_after_behavioral_target_freeze": true
   },
   "files": {
     "predictor_spec": {
       "path": "reference/empirical_astrology/cf003_published_predictor_spec_v0.json",
-      "sha256": "27c93394314f2ec735794bf10bc3a70cbfe884345a7e5c748c7dfb3768edb1d9"
+      "sha256": "c39993d1473a964c40679b2f47ec4b11aff0584e2caf3eea0a1d10afe16473c7"
     },
     "classifier_contract": {
       "path": "reference/empirical_astrology/cf003_behavioral_classifier_contract_v0.json",
-      "sha256": "8b294977939c64a8b7c59ebc0c2f09c410d1e74a724d33befbaca646a9adcd75"
+      "sha256": "757a636ad3e94ec861e67a419843ed167164dcf15cf556a74a62a7ce5d36ebc1"
     },
     "classifier_prompt": {
       "path": "reference/empirical_astrology/cf003_behavioral_classifier_prompt_v0.md",
-      "sha256": "33f5998fe1257ab31c4107d74c7383de04d3f3a3f6543a3e0b02470441404ef4"
+      "sha256": "ca9044f2586af48b39e27b33ac0eafb75747006d72a940dd94a1d304a35e683a"
     },
     "planet_map": {
       "path": "reference/empirical_astrology/cf003_behavioral_planet_map_v0.json",
-      "sha256": "a849880af50768a399f673371795c9033609dc649a8cf91103779d5ac010f963"
+      "sha256": "4310bd0723ee8abf625a49f5b03f0717f869590c55245c01506b7120992c1ca7"
     },
     "question_module": {
       "path": "reference/empirical_astrology/cf003_secondary_question_module_v0.json",
-      "sha256": "f02f95c14d70fe270e15e667ab4f4ebab915eacb9925591786a552129ebc65af"
+      "sha256": "ed8fdde6b1e01866a61e18e0259e3b80ad868e3bb5dd37754e987ef30cf5ddf1"
     }
   },
   "behavioral_target": {
     "construct_count": 10,
     "rating_scale": "integer 0..4 or null insufficient",
     "ties": "preserved; no tie-breaker",
-    "source_quotes": "exact contiguous participant answer text only",
-    "participant_visible_hidden_labels": true,
-    "secondary_question_count": 3
+    "source_quotes": "exact contiguous participant answer text only; minimum four words; ratings 3-4 require two distinct support quotes; rating 0 requires explicit counterevidence",
+    "participant_visible_hidden_labels": false,
+    "secondary_question_count": 3,
+    "question_module_scope": "development coverage probe; it does not guarantee complete ten-construct coverage",
+    "classifier_quote_reuse": "reported in frozen target; never creates extra score weight"
   },
   "primary_endpoint": {
     "name": "predicted_top_set_mean_behavioral_midrank",
@@ -48,20 +51,23 @@
     "direction": "lower_is_better"
   },
   "secondary_endpoints": [
-    "tie-aware Spearman correlation between the two complete 10-body rank vectors",
-    "inclusive top-3 overlap count",
-    "inclusive top-3 Jaccard overlap"
+    "tie-aware Spearman correlation between the two complete 10-body rank vectors; undefined per-person rho remains null and cohort reports must state the number defined",
+    "fractional top-3 overlap using exactly three membership slots with tied boundary groups sharing the remaining slot mass",
+    "fractional top-3 Jaccard derived from the fractional overlap"
   ],
   "null": {
-    "type": "global_construct_label_permutation",
-    "rule": "Apply the same permutation of the ten evaluator labels to every participant behavioral profile; preserve each participant profile and construct marginals; recompute the complete target statistic.",
+    "type": "complete_behavioral_profile_reassignment_within_preregistered_birth_cohort_strata",
+    "rule": "Keep every chart/predictor and the evaluator map fixed; reassign whole frozen behavioral profiles among participants only within the same preregistered birth-cohort stratum; recompute the complete cohort primary statistic.",
+    "why": "This preserves construct marginals and planet-to-construct meaning while breaking participant chart-to-behavior pairing. Global construct-label permutation is diagnostic-only because unequal predictor and construct base rates can miscalibrate it.",
     "historical_cf003_target_shuffle_reused": false,
+    "birth_cohort_strata": "exact boundaries unresolved in development and must be preregistered before prospective target responses",
     "recommended_monte_carlo_permutations": 100000,
-    "seed_must_be_frozen_before_target_reveal": true
+    "seed_and_count_must_be_frozen_before_target_reveal": true,
+    "calibration_requirement": "Before prospective activation, simulate independent chart and behavioral profiles with unequal marginals and verify nominal type-I error for the implemented reassignment null."
   },
   "development_policy": {
     "existing_participants": "exploratory_only",
-    "prospective_activation": "freeze this manifest, classifier prompt/contract, mapping, questions, software commit, tie rules, permutation seed/count and chart predictor before opening new target responses",
+    "prospective_activation": "freeze this manifest, classifier prompt/contract/model/version, mapping, questions, balanced coverage rule, software commit, tie rules, birth-cohort strata, permutation seed/count, predictor factor-extraction convention, and predictor file hash before opening new target responses",
     "held_out_replication_required": true
   },
   "chart_predictor_status": {
@@ -71,14 +77,16 @@
     "prospective_requirement": "obtain exact historical conventions or freeze/label a transparent new CF-003 factor reimplementation before opening target responses"
   },
   "implementation_files": {
-    "src/hdmatch/empirical_astrology/cf003.py": "c8ef78ff5aed29fbac8b10903cf54f2a5d8ee70b3dd26f471b968ae90d9959aa",
-    "src/hdmatch/empirical_astrology/cf003_target.py": "6c74996af605330db85ee5d67d9062444085ad587801a830662147baaa6f1a9e",
-    "scripts/build_cf003_behavioral_packet_v0.py": "a466c5957f46d6e9f1dcc642a8076e8b232a07f46ad2461fe6e6d12d0452a9b0",
-    "scripts/freeze_cf003_behavioral_target_v0.py": "731efae81b6ea72fa5cb0f9fe7e61699bd9ab6b4063b4ed153acdcd7c4a5ea5f",
-    "scripts/compare_cf003_frozen_target_v0.py": "0991ff45c86e3e84c538fafc306949c7ee10714d9cd569b76d2b5dee5e936cac"
+    "src/hdmatch/empirical_astrology/cf003.py": "ddb449a63377bb152308bae07f9155454e60c11fdcc43fb09bdfc9b9681afa38",
+    "src/hdmatch/empirical_astrology/cf003_target.py": "a3a881884149f8d064128d4a061d342ee53f2d9efdc56401613c5c2754fc5574",
+    "scripts/build_cf003_behavioral_packet_v0.py": "9437aeafe920e2bb7139557fcf6c7d244caaded769117495b62da8f8f5ec8176",
+    "scripts/freeze_cf003_predictor_scores_v0.py": "4f33351d2241b74e431d388c6e6ee1bdadf650d11252f9a49b732e0badd77afa",
+    "scripts/freeze_cf003_behavioral_target_v0.py": "3e25d5d2076020cda2d94d9933ea78287a45da3a73260d0a56d12d8fce84f9c8",
+    "scripts/compare_cf003_frozen_target_v0.py": "c65ad9c733baef296a9ccf8a65fd01108efe1d617359c13858377ebb50f60d29"
   },
+  "behavioral_meaning_scope": "development combined hypothesis: published CF-003 astronomical predictor crossed with mainly Human-Design-derived behavioral role meanings plus one self-expression/purpose proxy; not a reconstruction of the authors' unavailable historical target semantics",
   "classifier_model_status": "development model/version not prospectively frozen yet",
-  "source_coverage_rule": "Three-question supplement assumes usable source for the nine inherited domains; any remaining insufficient construct makes the ten-way target incomplete until separately frozen follow-up source is collected.",
+  "source_coverage_rule": "The three-question supplement is only a development coverage probe. Any remaining insufficient construct makes the ten-way target incomplete; no improvised construct-specific follow-up is allowed. A balanced follow-up battery must be separately specified and frozen before prospective use.",
   "classifier_isolation": {
     "fresh_context_required": true,
     "tools_web_repository_memory_connected_apps": "prohibited",

@@ -59,6 +59,18 @@ def test_cf003_ranking_preserves_ties_instead_of_inventing_tiebreaker() -> None:
     assert ranked[0] == ("venus", "mars")
 
 
+def test_cf003_ranking_quantizes_published_tenths_before_tie_comparison() -> None:
+    scores = {body: 0.0 for body in CF003_CANDIDATE_BODIES}
+    scores["venus"] = 18.200000000000003
+    scores["mars"] = 18.2
+    ranked = rank_cf003_planet_scores(scores)
+    assert ranked[0] == ("venus", "mars")
+
+    scores["mars"] = 18.25
+    with pytest.raises(ValueError, match="0.1-point grid"):
+        rank_cf003_planet_scores(scores)
+
+
 def test_cf003_ranking_requires_exact_ten_body_surface() -> None:
     with pytest.raises(ValueError, match="all ten"):
         rank_cf003_planet_scores({"mars": 1.0})

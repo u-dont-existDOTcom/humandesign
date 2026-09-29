@@ -20,19 +20,39 @@ DEFAULT_CONTRACT = Path(
 )
 DEFAULT_PROMPT = Path("reference/empirical_astrology/cf003_behavioral_classifier_prompt_v0.md")
 
+SIGN_NAMES = (
+    "aries|taurus|gemini|cancer|leo|virgo|libra|scorpio|sagittarius|capricorn|aquarius|pisces"
+)
+PLANET_NAMES = "mercury|venus|mars|jupiter|saturn|uranus|neptune|pluto"
+
 LEAKAGE_PATTERNS: tuple[re.Pattern[str], ...] = tuple(
     re.compile(pattern, re.IGNORECASE)
     for pattern in (
-        r"\bbirth\s+chart\b",
-        r"\bnatal\s+chart\b",
+        r"\bastrolog(?:y|er|ical)\b",
+        r"\bhoroscope\b",
+        r"\bzodiac\b",
+        r"\b(?:birth|natal)\s+chart\b",
+        r"\bmy\s+chart\b",
         r"\bascendant\b",
-        r"\brising\s+sign\b",
-        r"\bsun\s+sign\b",
-        r"\bmoon\s+sign\b",
+        r"\brising(?:\s+sign)?\b",
+        r"\b(?:sun|moon)\s+sign\b",
+        rf"\b(?:{SIGN_NAMES})\s+(?:rising|sun|moon)\b",
+        rf"\btypical\s+(?:{SIGN_NAMES})\b",
+        rf"\b(?:sun|moon|{PLANET_NAMES})\s+(?:is\s+)?in\s+(?:{SIGN_NAMES})\b",
+        r"\bsaturn\s+return\b",
+        rf"\b(?:{PLANET_NAMES})\b",
         r"\bhuman\s+design\b",
+        r"\b(?:projector|manifestor|manifesting\s+generator|generator|reflector)\b",
+        r"\b\d\s*/\s*\d\s+profile\b",
         r"\bCF-?003\b",
         r"\bdominant\s+planet\b",
     )
+)
+
+FORBIDDEN_RECORD_KEY = re.compile(
+    r"(?:^|_)(?:birth(?:_?date|_?time|_?place)?|chart|planet|predictor|"
+    r"astrolog(?:y|ical)|zodiac|human_?design)(?:_|$)",
+    re.IGNORECASE,
 )
 
 
@@ -56,50 +76,84 @@ def sha256_bytes(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
+def _reject_forbidden_record_keys(value: Any, *, path: str = "record") -> None:
+    if isinstance(value, dict):
+        for key, child in value.items():
+            key_text = str(key)
+            if FORBIDDEN_RECORD_KEY.search(key_text):
+                raise ValueError(f"source contains forbidden profile field at {path}.{key_text}")
+            _reject_forbidden_record_keys(child, path=f"{path}.{key_text}")
+    elif isinstance(value, list):
+        for index, child in enumerate(value):
+            _reject_forbidden_record_keys(child, path=f"{path}[{index}]")
+
+
+def _scan_classifier_strings(value: Any, *, path: str) -> None:
+    if isinstance(value, str):
+        for pattern in LEAKAGE_PATTERNS:
+            if pattern.search(value):
+                raise ValueError(
+                    "possible external-profile leakage requiring chart-blind redaction "
+                    f"at {path}: pattern {pattern.pattern!r}"
+                )
+    elif isinstance(value, dict):
+        for key, child in value.items():
+            _scan_classifier_strings(child, path=f"{path}.{key}")
+    elif isinstance(value, list):
+        for index, child in enumerate(value):
+            _scan_classifier_strings(child, path=f"{path}[{index}]")
+
+
+def _check_record_exposure(record: dict[str, Any], *, source_label: str) -> None:
+    blinding = record.get("blinding")
+    if not isinstance(blinding, dict):
+        return
+    notes = blinding.get("contamination_notes")
+    if notes not in (None, "", [], {}):
+        raise ValueError(f"{source_label} has non-empty contamination_notes")
+    result = blinding.get("target_check_result")
+    if isinstance(result, str) and result.strip().lower() not in {
+        "",
+        "pass",
+        "clean",
+        "no_exposure",
+        "not_exposed",
+    }:
+        raise ValueError(f"{source_label} has non-clean target_check_result: {result!r}")
+
+
 def source_turns(record: dict[str, Any], *, source_label: str) -> list[dict[str, Any]]:
     raw_turns = record.get("turns")
     if not isinstance(raw_turns, list):
         raise ValueError(f"{source_label} must contain a turns list")
 
     out: list[dict[str, Any]] = []
-    seen: set[str] = set()
     for index, raw in enumerate(raw_turns, 1):
         if not isinstance(raw, dict):
+            raise ValueError(f"{source_label} turn {index} must be an object")
+        if "turn_role" not in raw:
+            raise ValueError(f"{source_label} turn {index} is missing explicit turn_role")
+        if raw.get("turn_role") != "behavioral" or raw.get("quarantined"):
             continue
-        if raw.get("turn_role", "behavioral") != "behavioral" or raw.get("quarantined"):
-            continue
+
         question = raw.get("question_text")
         answer = raw.get("answer_text")
         if not isinstance(question, str) or not isinstance(answer, str):
-            continue
-        turn_id = str(raw.get("turn_id") or f"{source_label}-{index:04d}")
-        if turn_id in seen:
-            raise ValueError(f"duplicate turn_id across behavioral source: {turn_id}")
-        seen.add(turn_id)
-
-        for pattern in LEAKAGE_PATTERNS:
-            if pattern.search(question) or pattern.search(answer):
-                raise ValueError(
-                    f"possible chart/target leakage in {turn_id}: pattern {pattern.pattern!r}"
-                )
+            raise ValueError(
+                f"{source_label} behavioral turn {index} needs string question_text and answer_text"
+            )
 
         card: dict[str, Any] = {
-            "turn_id": turn_id,
+            "turn_id": f"{source_label}-{len(out) + 1:04d}",
             "question_text": question,
             "answer_text": answer,
         }
-        for key in (
-            "canonical_question_id",
-            "question_wording_status",
-            "correction_of",
-            "conditions",
-            "corrections",
-            "process_feedback",
-            "is_review_correction",
-        ):
+        for key in ("conditions", "corrections", "process_feedback"):
             value = raw.get(key)
             if value not in (None, [], {}, "", False):
                 card[key] = value
+
+        _scan_classifier_strings(card, path=f"{source_label}.turns[{index - 1}]")
         out.append(card)
     return out
 
@@ -116,24 +170,29 @@ def build_packet(
     contract = load_json(contract_path)
     prompt_text = prompt_path.read_text()
 
+    _reject_forbidden_record_keys(source, path="primary")
+    _check_record_exposure(source, source_label="primary")
     turns = source_turns(source, source_label="primary")
+    primary_hash = sha256_bytes(source_bytes)
+
     secondary_hash = None
     if secondary_path is not None:
         secondary_bytes = secondary_path.read_bytes()
         secondary = load_json(secondary_path)
-        secondary_turns = source_turns(secondary, source_label="secondary")
-        existing = {turn["turn_id"] for turn in turns}
-        if existing.intersection(turn["turn_id"] for turn in secondary_turns):
-            raise ValueError("primary and secondary source turn IDs must be disjoint")
-        turns.extend(secondary_turns)
+        _reject_forbidden_record_keys(secondary, path="secondary")
+        _check_record_exposure(secondary, source_label="secondary")
+        if secondary.get("primary_record_sha256") != primary_hash:
+            raise ValueError("secondary source must carry the exact primary_record_sha256 linkage")
+        turns.extend(source_turns(secondary, source_label="secondary"))
         secondary_hash = sha256_bytes(secondary_bytes)
 
     if not turns:
         raise ValueError("no usable behavioral source turns")
 
-    # Defense in depth: classifier-facing contract must not contain planet labels.
+    classifier_material = {"contract": contract, "prompt": prompt_text}
+    _scan_classifier_strings(classifier_material, path="classifier_material")
     contract_text = (json.dumps(contract, ensure_ascii=False) + "\n" + prompt_text).lower()
-    planet_names = {
+    hidden_label_names = {
         "sun",
         "moon",
         "mercury",
@@ -146,43 +205,46 @@ def build_packet(
         "pluto",
     }
     leaked_names = sorted(
-        name for name in planet_names if re.search(rf"\b{re.escape(name)}\b", contract_text)
+        name for name in hidden_label_names if re.search(rf"\b{re.escape(name)}\b", contract_text)
     )
     if leaked_names:
-        raise ValueError("classifier contract leaks evaluator labels: " + ", ".join(leaked_names))
+        raise ValueError(
+            "classifier material leaks hidden evaluator labels: " + ", ".join(leaked_names)
+        )
+
+    memory_status = source.get("chatgpt_memory_enabled", source.get("memory_enabled", "unknown"))
+    if not isinstance(memory_status, bool):
+        memory_status = "unknown"
 
     return {
-        "schema_version": "cf003-behavioral-classifier-packet-v0",
-        "scientific_status": "development_secondary_chart_blind",
+        "schema_version": "independent-behavioral-classifier-packet-v0",
+        "scientific_status": "development_secondary_independent_behavioral",
         "instructions": [
             "Use only this packet in a fresh tool-free context.",
             "Do not use repository access, web, Memory, connected apps, or other files.",
-            "Do not retrieve or infer birth/chart/astrology information.",
+            "Use no information about the participant beyond the supplied behavioral source.",
             "Apply the neutral ten-construct contract exactly.",
             "Source quote fields must be exact contiguous substrings of answer_text.",
             "Return null rather than force a rating when evidence is insufficient.",
-            "Do not infer construct-to-astrology mappings.",
+            "Do not infer or reconstruct any hidden framework behind the construct IDs.",
         ],
         "classifier_prompt": prompt_text,
         "contract": contract,
         "source": {
-            "primary_sha256": sha256_bytes(source_bytes),
+            "primary_sha256": primary_hash,
             "secondary_sha256": secondary_hash,
             "contract_sha256": sha256_bytes(contract_path.read_bytes()),
             "prompt_sha256": sha256_bytes(prompt_path.read_bytes()),
             "turn_count": len(turns),
             "source_fidelity": source.get("source_fidelity", "unknown"),
             "collection_mode": source.get("collection_mode", "unknown"),
+            "chatgpt_memory_enabled": memory_status,
         },
         "turns": turns,
-        "forbidden_context": [
-            "birth data",
-            "chart data",
-            "astrology or Human Design labels",
-            "CF-003 predictor scores or ranks",
-            "construct-to-planet mapping",
-            "prior chart interpretation or expected target",
-        ],
+        "outside_context_rule": (
+            "Any information not contained in the supplied behavioral source and contract "
+            "is prohibited."
+        ),
     }
 
 
