@@ -1,0 +1,215 @@
+{
+  "schema_version": "empirical-astrology-source-replay-pro-gate-v1",
+  "gate_version": "empirical-astrology-source-replay-pro-gate-v1-20260929",
+  "decision_date": "2026-09-29",
+  "status": "FINAL_REAFFIRMED",
+  "verdict": "REAFFIRM_V1B_NO_ACTIVATION_UPDATE_REPRODUCIBILITY_AND_REUSE_WORDING",
+  "review_base_commit": "5cc1e5a9028358868570bffc963b95db1833fe37",
+  "prior_science_commit": "ede8f5a102127d4dfe215868ab1fafe9fff4afe1",
+  "dedicated_pro_branch": "pro/correlation-source-replay-adjudication-20260929",
+  "decision_path": "notes/empirical_astrology/master_v2/PRO_DECISION_CORRELATION_SOURCE_REPLAY_20260929.md",
+  "decision_sha256": "3bf75922576940bec063cda495176af6262d1eb7d0a6a3500ff451f1ebfa7504",
+  "authority_scope": "Append-only source-replay delta adjudication. Supersedes conflicting current evidence-completeness, reproducibility and overlap wording only. No prior artifact, scientific constant or implementation/launch decision is rewritten.",
+  "scientific_model_version": "literature_model_v1.0.0-wave3b-reaffirmed-20260928",
+  "prospective_protocol_version": "same-hospital-personality-protocol-v1b-20260928",
+  "scientific_model_revised": false,
+  "prospective_protocol_revised": false,
+  "candidate_classifications_changed": false,
+  "evidence_reasoning_and_provenance_revised": true,
+  "invariants": {
+    "sole_primary": "TN-001 theory-neutral conditional birth-gap/personality association",
+    "executable_astrology_features": [],
+    "aspect_to_trait_mappings": [],
+    "executable_moderator_interactions": [],
+    "astrology_weights": {},
+    "astrology_coefficient_vector_length": 0,
+    "full_v1b_equals_theory_neutral_model": true,
+    "orb_tightness_applying_angularity": "secondary inactive templates only"
+  },
+  "input_sha256": {
+    "notes/empirical_astrology/master_v2/CF003_SOURCE_REPLAY_20260929.md": "8bd68ccd58b31d7cbed577eb207686b583287b43df6d2390a91365179a4f6e13",
+    "notes/empirical_astrology/master_v2/CF004_SOURCE_REPLAY_20260929.md": "610a39fb1f5d2e744b29005e5e94ad610eddbfe23c229f62215d100e2d010eba",
+    "notes/empirical_astrology/master_v2/CF005_SOURCE_TABLE_REPLAY_20260929.md": "78cf64ef336a35804ab0c2b0319fd097c546d2cb20fb7ff1fd026d95acf30854",
+    "notes/empirical_astrology/master_v2/PRO_HANDOFF_CORRELATION_SOURCE_REPLAY_20260929.md": "703fcb047b637993fc3b5306d3e5cf23280a9fe2527aa12424ba2a640eccc9b3",
+    "reference/empirical_astrology/cf003_source_replay_20260929.json": "7f574b4dd04265af269fbed4bc7ab0723fa0ca3b017df172c8803ca97cd21fb0",
+    "reference/empirical_astrology/cf005_source_replay_20260929.json": "c2129523ed9ba6bc1c07ccf9b03a8d348bef8715b5251a5e33fd5704c67f4685",
+    "reference/empirical_astrology/correlation_overlap_source_replay_20260929.json": "1610c4b4aaa4f38502011bf6dab43da66fe836778eb82b652ff105aa18bbea11",
+    "scripts/empirical_astrology/reproduce_cf003_20260929.py": "42bcd00e8b93c120838be46d014e44a773da82ce133025feb404f57e64bb1834",
+    "scripts/empirical_astrology/reproduce_cf004_20260929.py": "873c40b4eb54a1272a5dd23b8c9495557484564b9a616398cc22591a32a3a9f1",
+    "scripts/empirical_astrology/reproduce_cf005_tables_20260929.py": "99ac90fd0b08d9a9ea2ad3245df9a18b7a57938c71b5c886a6c16f7ce6e01a67"
+  },
+  "protected_prior_sha256": {
+    "reference/empirical_astrology/literature_model_v1b_decision.json": "682086cd41051f7731d197128e2abe42fc4dfac42ef5ae707f1ba604fad51e5b",
+    "reference/empirical_astrology/literature_model_v1.json": "b75099e3dc62e464df39e8150fe18238a76121648ab0ba8f8059e6996f7c2382",
+    "reference/empirical_astrology/literature_feature_registry_v1.json": "be72e72dc2ece88f8c2fb4d0ac874746964944cfa1e4220c80a488f3f06af280",
+    "reference/empirical_astrology/literature_model_v1b_wave4_gate.json": "773273817152e89e1ba0fa2a79f3fbf99e6395e501c4ca82a494847b5256152b",
+    "notes/empirical_astrology/master_v2/PRO_DECISION_WAVE4.md": "816a1e7be7e0aa42d0151420a8de69561bafbf2d3383f268aaeae7e84cef6832",
+    "reference/empirical_astrology/pro_reasoning_packet_post_correlation_archive.json": "03853bc5ec4cab30f3cc411de74062e1283608b39782b7cabb38748e500dc295",
+    "notes/empirical_astrology/fulltexts/CORRELATION_ARCHIVE_AUDIT_20260928.md": "29e343a43b83d9bb1804ede591f0e22c1bac8e9de21c48fb32f1bff701e2ebbc",
+    "notes/empirical_astrology/master_v2/PRO_DECISION_POST_CORRELATION_20260929.md": "d7e037b8d7454ad47ac27b3a2dfb6d7ce15144b81f02d0e3b945251d3781dd1e",
+    "reference/empirical_astrology/literature_model_v1b_post_correlation_gate.json": "8c37ac5abdb53667be1bd0d27b515448ad29a1464252ce103d4dde4136f1778e",
+    "notes/empirical_astrology/master_v2/CORRELATION_REPRODUCTION_SPEC_20260929.md": "5932b6b6dc1e54d26f109787d79b72fe3e0556ca4f5756c8677f7525ec1007b2",
+    "reference/empirical_astrology/correlation_cohort_graph_20260929.json": "ca803badc2e7dd2f1d0318ce07ba94fb9e68f553100cbc70c4f6bf1d59da41da"
+  },
+  "review_scope": {
+    "all_ten_replay_files_read": true,
+    "replay_scripts_executed": false,
+    "literature_review_rerun": false,
+    "new_original_source_visual_reinspection": false,
+    "owner_known_outcomes_used": false,
+    "prospective_outcomes_used": false,
+    "new_human_empirical_analysis": false,
+    "assignment_respecting_null_executed": false,
+    "new_cohorts_from_replay": 0,
+    "paid_pdfs_or_biographies_committed": false
+  },
+  "candidate_updates": [
+    {
+      "id": "CF-003",
+      "classification": "excluded",
+      "classification_changed": false,
+      "arithmetic": "Nine N61 and three N189 printed cells reproduce within declared rounded-input tolerances. Eight of nine published replication p-values survive Holm conditional on those p-values; not recomputed in this Pro review.",
+      "source_reconstruction": "NOT_REPRODUCED_MISSING_SOURCE_INPUTS",
+      "assignment_respecting_null": "NOT_EXECUTED_MISSING_SOURCE_INPUTS",
+      "evidence_delta": "More explicit conditional arithmetic scope; no new biography-specific effect replication.",
+      "independence": "N61 versus N189 person disjointness is source-reported. Later reuse does not retroactively disprove it. Common tools alone are not disqualifying."
+    },
+    {
+      "id": "CF-004",
+      "classification": "excluded",
+      "classification_changed": false,
+      "arithmetic": "The asserted 48/68 versus 26/73 contrast is conditionally arithmetically reproducible, not reconstructed from 141 scores.",
+      "printed_score_pairs": 3,
+      "unprinted_score_pairs": 138,
+      "printed_difference_disagreements": 3,
+      "printed_direction_disagreements": 1,
+      "source_reconstruction": "NOT_REPRODUCED_UNRESOLVED_SOURCE_DISCREPANCIES_AND_MISSING_INPUTS",
+      "assignment_respecting_null": "NOT_EXECUTED_MISSING_SOURCE_INPUTS",
+      "evidence_delta": "Documentary reasons for maintaining exclusion strengthened; independent-external-replication claim weakened. No quantified negative association, corrected aggregate, effective sample size or leave-six-out estimate.",
+      "additional_discrepancies": "Orientation across pages and authority 7.9/7.0; inconsistent displayed ratio is a display issue, not independent evidence against the asserted counts.",
+      "latitude_failures_retained": 2
+    },
+    {
+      "id": "CF-005",
+      "classification": "excluded",
+      "classification_changed": false,
+      "domain": "Aggregate methodological audit only; no personality, clinical, forensic or individual-risk use.",
+      "replayed_scope": "16 full-cohort aspect/event rows, two pooled full-cohort comparisons and six pooled temporal comparisons.",
+      "reported_not_reproduced": "C.3/D.3 individual Mercury-conjunction-by-period p-values: counts not transcribed into the executable replay.",
+      "source_reconstruction": "NOT_REPRODUCED_MISSING_PERSON_VECTORS_AND_CONTROL_PROVENANCE",
+      "cluster_aware_inference": "NOT_ESTIMATED",
+      "evidence_delta": "Conditional arithmetic documented; no matched-person inference or new replication; failed subsets remain visible."
+    }
+  ],
+  "cohort_update": {
+    "southern_prior_overlap_lower_bound": 6,
+    "southern_training_witnesses": 4,
+    "southern_replication_witnesses": 2,
+    "witnesses": [
+      {
+        "printed_name": "Allende, Salvador",
+        "prior_subcohort": "test_61",
+        "test_61_table_1": true
+      },
+      {
+        "printed_name": "Arrau, Claudio",
+        "prior_subcohort": "test_61",
+        "test_61_table_1": true
+      },
+      {
+        "printed_name": "Barre, Raymond",
+        "prior_subcohort": "training_189",
+        "test_61_table_1": false
+      },
+      {
+        "printed_name": "Guevara, Che",
+        "prior_subcohort": "training_189",
+        "test_61_table_1": false
+      },
+      {
+        "printed_name": "Hollander, Xaviera",
+        "prior_subcohort": "training_189",
+        "test_61_table_1": false
+      },
+      {
+        "printed_name": "Jouret, Luc",
+        "prior_subcohort": "training_189",
+        "test_61_table_1": false
+      }
+    ],
+    "northern_reuse_count": 73,
+    "northern_evidence_class": "Documentary source-reported whole-cohort reuse; not independently completed stable-ID linkage.",
+    "remaining_62_southern_proven_new": false,
+    "full_alias_id_audit_complete": false,
+    "four_training_assignment_basis": "Six are exact visual name matches on the published figures; IDs, pseudonym aliases, biographical source versions, and any additional matches beyond exact printed strings have not been audited. The four training assignments follow the stated disjoint 189-plus-61 composition of the 2024 appendix and absence from the published A-surname test-61 roster. Do not treat CF-004 as independent of these participants.",
+    "no_imputed_overlap_effect": true
+  },
+  "wording_overrides": [
+    {
+      "id": "SR-001",
+      "scope": "Bare reproduced/replicated claims",
+      "current": "Qualify conditional arithmetic versus source measurement, null calibration and independent human replication."
+    },
+    {
+      "id": "SR-002",
+      "scope": "Prior two-person southern lower bound",
+      "current": "At least six exact-name witnesses: four documentarily assigned to training189, two replication61. Earlier graph preserved."
+    },
+    {
+      "id": "SR-003",
+      "scope": "Printed-name availability",
+      "current": "North73 roster is printed. Pooled250 minus printed61 permits documentary training-name reconstruction, conditional on source composition. Missing stable-ID lineage and complete exports are not missing printed names."
+    },
+    {
+      "id": "SR-004",
+      "scope": "All CF005 temporal cells reproduced",
+      "current": "Only six pooled temporal calculations replayed; individual conjunction-by-period p-values retained as reported."
+    },
+    {
+      "id": "SR-005",
+      "scope": "Ratio display discrepancy",
+      "current": "Does not independently contradict the aggregate-count ratio; full score/classification discrepancies remain unresolved."
+    }
+  ],
+  "reopening_requirements": {
+    "normative_prior_path": "notes/empirical_astrology/master_v2/CORRELATION_REPRODUCTION_SPEC_20260929.md",
+    "normative_prior_sha256": "5932b6b6dc1e54d26f109787d79b72fe3e0556ca4f5756c8677f7525ec1007b2",
+    "detailed_sufficient_materials_path": "notes/empirical_astrology/master_v2/PRO_DECISION_CORRELATION_SOURCE_REPLAY_20260929.md",
+    "detailed_sections": "4: Common intake, CF003 complete package, CF004 complete package, Reopening is not activation",
+    "requirements_weakened": false,
+    "source_materials_alone_authorize_activation": false,
+    "intake": "Hash exact lawful original inputs; separate corrections with reasons and affected outputs; record contemporaneous freeze history; no retrospective preregistration by new hashes.",
+    "cf003": "All linked189/61/250 inputs, exact dated biographies and cleaning rules, ten full chart-conditioned word-score/denominator portraits per person, target ranks/ties, fixed predictor vectors and nine success vectors, original30k-shuffle inputs/procedure and pre61 freeze history; clarify22 acquaintances. Scalars alone cannot score wrong biographies.",
+    "cf004": "All141 linked birth/selection/latitude records, both chart versions/settings, original full French profiles and generation/selection provenance, full word-score vectors/denominators, all paired scores/wins/ties and correction provenance for all documented discrepancies and failed latitude analyses. All141 win labels alone are insufficient.",
+    "null": "Freeze defensible assignment strata/covariates, dependence, endpoint family, ties, sparse-stratum rules, seeds/draws and failure handling before new null/assignment-dependent repair. Keep charts and fixed predictors, reassign complete comparable biographies, recompute all affected stages. No finished-target shuffle or assumed50/50 substitute.",
+    "separate_development_search": "42-to18-to7 and Solver logs needed for a whole-search development null; no refitting inside genuinely frozen61-person testing.",
+    "separate_identity_control": "Masked independent biographies or independently measured traits; profile permutation alone cannot exclude name/world-knowledge leakage. Unaffected independently frozen profiles need not be regenerated each draw.",
+    "activation": "Accepted source reproduction and interpretable source-specific reanalysis are not new untouched validation. Preserve independent measurement, exact pre-outcome mapping/protocol and untouched held-out replication requirements."
+  },
+  "authorization": {
+    "existing_authority_preserved": true,
+    "implementation_acceptance_granted": false,
+    "launch_hold_preserved": true,
+    "recruitment_authorized": false,
+    "outcome_collection_authorized": false,
+    "owner_specific_fitting_authorized": false,
+    "astrology_activation_authorized": false,
+    "clinical_forensic_person_use_authorized": false,
+    "new_contact_or_spending_authorized": false
+  },
+  "cross_family_review": {
+    "status": "COMPLETED_INDEPENDENT_NO_CHANGE_DISPOSITION_RECONCILED",
+    "actual_model": "claude-opus-5-5",
+    "requested_effort": "max",
+    "route": "Existing Claude Code first-party subscription; tools disabled; no API-key fallback",
+    "independent_passes": 1,
+    "producer_draft_withheld": true,
+    "packet_path": "notes/empirical_astrology/master_v2/CORRELATION_SOURCE_REPLAY_REVIEW_PACKET_20260929.md",
+    "packet_sha256": "e114a83b0fd257f79020ad9688608d1d72c8ddc3dbb446a3c92b2336fd3527d5",
+    "raw_response_sha256": "945f51d44e44e50daef868481581ec6f82b3171ce3d037832cacc2619d8699dc",
+    "response_text_sha256": "cf441e92b01030b72bcf798fe14be6cb72c1fb425a48586fab253bb5058b3e8e",
+    "receipt_path": "notes/empirical_astrology/master_v2/CORRELATION_SOURCE_REPLAY_CROSS_FAMILY_20260929.md",
+    "receipt_sha256": "c653acfefc791f42a12bef47f45a08dac9067124ea1b84ba001105ca7beccf4c",
+    "limitations": "Independent interpretation of supplied evidence, not independent original-source inspection or arithmetic/person-level replay. Reviewer suggestions are reconciled, not automatically authoritative."
+  }
+}
