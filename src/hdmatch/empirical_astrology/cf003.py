@@ -1,1 +1,146 @@
-"""Dormant development-only helpers for CF-003 adjusted planetary dominance.\n\nThis module reconstructs only the seven published predictor contributions that\ncan be stated exactly from the source articles. It does not reproduce the\nchart-conditioned biographical target pipeline, does not implement the original\nMastro corpus, and is not part of LiteratureModelV1.\n\nScientific status:\n- development/source-replay utility only;\n- no production or prospective coefficient;\n- no claim that the published null is valid;\n- no activation without a new Pro decision.\n"""\n\nfrom __future__ import annotations\n\nimport math\nfrom dataclasses import dataclass\nfrom types import MappingProxyType\nfrom typing import Final, Mapping\n\nCF003_CANDIDATE_BODIES: Final[tuple[str, ...]] = (\n    "sun",\n    "moon",\n    "mercury",\n    "venus",\n    "mars",\n    "jupiter",\n    "saturn",\n    "uranus",\n    "neptune",\n    "pluto",\n)\n\nCF003_PUBLISHED_WEIGHTS: Final[Mapping[str, float]] = MappingProxyType(\n    {\n        "major_aspect_to_moon": 8.3,\n        "five_or_more_major_aspects": 8.2,\n        "modern_ascendant_ruler": 7.6,\n        "placidus_house_12": 5.3,\n        "modern_descendant_ruler": 5.2,\n        "major_aspect_to_ascendant": 4.7,\n        "within_5deg_placidus_house_9_center": 1.9,\n    }\n)\n\n\n@dataclass(frozen=True, slots=True)\nclass CF003FactorFlags:\n    """Published binary predictor flags for one candidate planet."""\n\n    major_aspect_to_moon: bool\n    five_or_more_major_aspects: bool\n    modern_ascendant_ruler: bool\n    placidus_house_12: bool\n    modern_descendant_ruler: bool\n    major_aspect_to_ascendant: bool\n    within_5deg_placidus_house_9_center: bool\n\n    def __post_init__(self) -> None:\n        for field_name, value in (\n            ("major_aspect_to_moon", self.major_aspect_to_moon),\n            ("five_or_more_major_aspects", self.five_or_more_major_aspects),\n            ("modern_ascendant_ruler", self.modern_ascendant_ruler),\n            ("placidus_house_12", self.placidus_house_12),\n            ("modern_descendant_ruler", self.modern_descendant_ruler),\n            ("major_aspect_to_ascendant", self.major_aspect_to_ascendant),\n            ("within_5deg_placidus_house_9_center", self.within_5deg_placidus_house_9_center),\n        ):\n            if not isinstance(value, bool):\n                raise TypeError(f"{field_name} must be bool")\n\n\n@dataclass(frozen=True, slots=True)\nclass CF003PlanetScore:\n    """Raw published-weight score for one candidate planet."""\n\n    body: str\n    total: float\n    contributions: tuple[tuple[str, float], ...]\n\n\ndef score_cf003_planet(body: str, flags: CF003FactorFlags) -> CF003PlanetScore:\n    """Return the raw seven-factor score without imposing a tie rule."""\n\n    normalized = body.strip().lower()\n    if normalized not in CF003_CANDIDATE_BODIES:\n        raise ValueError(f"body must be one of {CF003_CANDIDATE_BODIES!r}")\n\n    contributions: list[tuple[str, float]] = []\n    total = 0.0\n    for feature_name, weight in CF003_PUBLISHED_WEIGHTS.items():\n        if getattr(flags, feature_name):\n            contributions.append((feature_name, weight))\n            total += weight\n\n    return CF003PlanetScore(\n        body=normalized,\n        total=total,\n        contributions=tuple(contributions),\n    )\n\n\ndef rank_cf003_planet_scores(\n    scores: Mapping[str, float],\n) -> tuple[tuple[str, ...], ...]:\n    """Rank all ten candidate bodies while preserving unresolved ties."""\n\n    normalized: dict[str, float] = {}\n    for body, value in scores.items():\n        key = body.strip().lower()\n        if key in normalized:\n            raise ValueError(f"duplicate candidate body after normalization: {key}")\n        if key not in CF003_CANDIDATE_BODIES:\n            raise ValueError(f"unexpected candidate body: {body}")\n        number = float(value)\n        if not math.isfinite(number):\n            raise ValueError(f"score for {body} must be finite")\n        normalized[key] = number\n\n    if set(normalized) != set(CF003_CANDIDATE_BODIES):\n        missing = sorted(set(CF003_CANDIDATE_BODIES) - set(normalized))\n        extra = sorted(set(normalized) - set(CF003_CANDIDATE_BODIES))\n        raise ValueError(\n            f"scores must contain all ten candidate bodies; missing={missing}, extra={extra}"\n        )\n\n    ordered = sorted(\n        normalized.items(),\n        key=lambda item: (-item[1], CF003_CANDIDATE_BODIES.index(item[0])),\n    )\n    groups: list[tuple[str, ...]] = []\n    current_value: float | None = None\n    current_group: list[str] = []\n\n    for body, value in ordered:\n        if current_value is None or value == current_value:\n            current_group.append(body)\n            current_value = value\n            continue\n        groups.append(tuple(current_group))\n        current_group = [body]\n        current_value = value\n\n    groups.append(tuple(current_group))\n    return tuple(groups)\n
+"""Dormant development-only helpers for CF-003 adjusted planetary dominance.
+
+This module reconstructs only the seven published predictor contributions that
+can be stated exactly from the source articles. It does not reproduce the
+chart-conditioned biographical target pipeline, does not implement the original
+Mastro corpus, and is not part of LiteratureModelV1.
+
+Scientific status:
+- development/source-replay utility only;
+- no production or prospective coefficient;
+- no claim that the published null is valid;
+- no activation without a new Pro decision.
+"""
+
+from __future__ import annotations
+
+import math
+from dataclasses import dataclass
+from types import MappingProxyType
+from typing import Final, Mapping
+
+CF003_CANDIDATE_BODIES: Final[tuple[str, ...]] = (
+    "sun",
+    "moon",
+    "mercury",
+    "venus",
+    "mars",
+    "jupiter",
+    "saturn",
+    "uranus",
+    "neptune",
+    "pluto",
+)
+
+CF003_PUBLISHED_WEIGHTS: Final[Mapping[str, float]] = MappingProxyType(
+    {
+        "major_aspect_to_moon": 8.3,
+        "five_or_more_major_aspects": 8.2,
+        "modern_ascendant_ruler": 7.6,
+        "placidus_house_12": 5.3,
+        "modern_descendant_ruler": 5.2,
+        "major_aspect_to_ascendant": 4.7,
+        "within_5deg_placidus_house_9_center": 1.9,
+    }
+)
+
+
+@dataclass(frozen=True, slots=True)
+class CF003FactorFlags:
+    """Published binary predictor flags for one candidate planet."""
+
+    major_aspect_to_moon: bool
+    five_or_more_major_aspects: bool
+    modern_ascendant_ruler: bool
+    placidus_house_12: bool
+    modern_descendant_ruler: bool
+    major_aspect_to_ascendant: bool
+    within_5deg_placidus_house_9_center: bool
+
+    def __post_init__(self) -> None:
+        for field_name, value in (
+            ("major_aspect_to_moon", self.major_aspect_to_moon),
+            ("five_or_more_major_aspects", self.five_or_more_major_aspects),
+            ("modern_ascendant_ruler", self.modern_ascendant_ruler),
+            ("placidus_house_12", self.placidus_house_12),
+            ("modern_descendant_ruler", self.modern_descendant_ruler),
+            ("major_aspect_to_ascendant", self.major_aspect_to_ascendant),
+            ("within_5deg_placidus_house_9_center", self.within_5deg_placidus_house_9_center),
+        ):
+            if not isinstance(value, bool):
+                raise TypeError(f"{field_name} must be bool")
+
+
+@dataclass(frozen=True, slots=True)
+class CF003PlanetScore:
+    """Raw published-weight score for one candidate planet."""
+
+    body: str
+    total: float
+    contributions: tuple[tuple[str, float], ...]
+
+
+def score_cf003_planet(body: str, flags: CF003FactorFlags) -> CF003PlanetScore:
+    """Return the raw seven-factor score without imposing a tie rule."""
+
+    normalized = body.strip().lower()
+    if normalized not in CF003_CANDIDATE_BODIES:
+        raise ValueError(f"body must be one of {CF003_CANDIDATE_BODIES!r}")
+
+    contributions: list[tuple[str, float]] = []
+    total = 0.0
+    for feature_name, weight in CF003_PUBLISHED_WEIGHTS.items():
+        if getattr(flags, feature_name):
+            contributions.append((feature_name, weight))
+            total += weight
+
+    return CF003PlanetScore(
+        body=normalized,
+        total=total,
+        contributions=tuple(contributions),
+    )
+
+
+def rank_cf003_planet_scores(
+    scores: Mapping[str, float],
+) -> tuple[tuple[str, ...], ...]:
+    """Rank all ten candidate bodies while preserving unresolved ties."""
+
+    normalized: dict[str, float] = {}
+    for body, value in scores.items():
+        key = body.strip().lower()
+        if key in normalized:
+            raise ValueError(f"duplicate candidate body after normalization: {key}")
+        if key not in CF003_CANDIDATE_BODIES:
+            raise ValueError(f"unexpected candidate body: {body}")
+        number = float(value)
+        if not math.isfinite(number):
+            raise ValueError(f"score for {body} must be finite")
+        normalized[key] = number
+
+    if set(normalized) != set(CF003_CANDIDATE_BODIES):
+        missing = sorted(set(CF003_CANDIDATE_BODIES) - set(normalized))
+        extra = sorted(set(normalized) - set(CF003_CANDIDATE_BODIES))
+        raise ValueError(
+            f"scores must contain all ten candidate bodies; missing={missing}, extra={extra}"
+        )
+
+    ordered = sorted(
+        normalized.items(),
+        key=lambda item: (-item[1], CF003_CANDIDATE_BODIES.index(item[0])),
+    )
+    groups: list[tuple[str, ...]] = []
+    current_value: float | None = None
+    current_group: list[str] = []
+
+    for body, value in ordered:
+        if current_value is None or value == current_value:
+            current_group.append(body)
+            current_value = value
+            continue
+        groups.append(tuple(current_group))
+        current_group = [body]
+        current_value = value
+
+    groups.append(tuple(current_group))
+    return tuple(groups)
