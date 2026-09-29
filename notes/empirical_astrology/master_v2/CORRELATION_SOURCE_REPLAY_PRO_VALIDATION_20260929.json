@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "status": "LOCAL_ARTIFACT_CHECKS_PASS_PUBLICATION_PENDING",
+  "checked_at_utc": "2026-09-29T03:08:19.486082+00:00",
+  "review_base_commit": "5cc1e5a9028358868570bffc963b95db1833fe37",
+  "branch": "pro/correlation-source-replay-adjudication-20260929",
+  "checks": [
+    {
+      "check": "source_scope",
+      "status": "PASS",
+      "evidence": "All ten replay files read; scripts not executed; no new literature or original-PDF reread."
+    },
+    {
+      "check": "protected_inputs",
+      "status": "PASS",
+      "evidence": "All ten replay hashes and eleven prior hashes match; no existing tracked file modified."
+    },
+    {
+      "check": "decision_identity",
+      "status": "PASS",
+      "evidence": "Frozen v1b model/protocol identifiers and empty astrology invariants retained."
+    },
+    {
+      "check": "candidate_scope",
+      "status": "PASS",
+      "evidence": "CF003/004/005 exclusions unchanged; no feature/weight/moderator activation."
+    },
+    {
+      "check": "cohort_scope",
+      "status": "PASS",
+      "evidence": "Six documentary lower-bound witnesses, four training/two test; remaining62 not proved new."
+    },
+    {
+      "check": "source_requirements",
+      "status": "PASS",
+      "evidence": "Both complete package tables preserve original specification; off-diagonal scoring, freeze and independent measurement requirements retained."
+    },
+    {
+      "check": "failure_reporting",
+      "status": "PASS",
+      "evidence": "CF003 ninth endpoint, CF004 contradictions/latitude failures, CF005 actual failures and reported-only temporal cells retained."
+    },
+    {
+      "check": "cross_family",
+      "status": "PASS",
+      "evidence": "Other-family independent no-change disposition, source-bound findings reconciled; no model votes counted as human evidence."
+    },
+    {
+      "check": "artifact_links",
+      "status": "PASS",
+      "evidence": "Report, gate and review receipt hashes agree; referenced prior files exist."
+    },
+    {
+      "check": "no_runtime_change",
+      "status": "PASS",
+      "evidence": "Markdown/JSON evidence additions only; no production code, runtime scientific test or inference altered."
+    }
+  ],
+  "new_artifact_sha256": {
+    "notes/empirical_astrology/master_v2/PRO_DECISION_CORRELATION_SOURCE_REPLAY_20260929.md": "3bf75922576940bec063cda495176af6262d1eb7d0a6a3500ff451f1ebfa7504",
+    "reference/empirical_astrology/literature_model_v1b_source_replay_gate_20260929.json": "8eaa5e4757e5ea6846844b2a55f9d1e1ea8838861ddce688c001c0673aa40da0",
+    "notes/empirical_astrology/master_v2/CORRELATION_SOURCE_REPLAY_CROSS_FAMILY_20260929.md": "c653acfefc791f42a12bef47f45a08dac9067124ea1b84ba001105ca7beccf4c",
+    "notes/empirical_astrology/master_v2/CORRELATION_SOURCE_REPLAY_REVIEW_PACKET_20260929.md": "e114a83b0fd257f79020ad9688608d1d72c8ddc3dbb446a3c92b2336fd3527d5",
+    "state/CORRELATION_SOURCE_REPLAY_PRO_REVIEW_20260929.json": "75bca9187bb3d3a13866d5c36031a074ab002387a654582a35849550a788a503"
+  },
+  "input_sha256": {
+    "notes/empirical_astrology/master_v2/CF003_SOURCE_REPLAY_20260929.md": "8bd68ccd58b31d7cbed577eb207686b583287b43df6d2390a91365179a4f6e13",
+    "notes/empirical_astrology/master_v2/CF004_SOURCE_REPLAY_20260929.md": "610a39fb1f5d2e744b29005e5e94ad610eddbfe23c229f62215d100e2d010eba",
+    "notes/empirical_astrology/master_v2/CF005_SOURCE_TABLE_REPLAY_20260929.md": "78cf64ef336a35804ab0c2b0319fd097c546d2cb20fb7ff1fd026d95acf30854",
+    "notes/empirical_astrology/master_v2/PRO_HANDOFF_CORRELATION_SOURCE_REPLAY_20260929.md": "703fcb047b637993fc3b5306d3e5cf23280a9fe2527aa12424ba2a640eccc9b3",
+    "reference/empirical_astrology/cf003_source_replay_20260929.json": "7f574b4dd04265af269fbed4bc7ab0723fa0ca3b017df172c8803ca97cd21fb0",
+    "reference/empirical_astrology/cf005_source_replay_20260929.json": "c2129523ed9ba6bc1c07ccf9b03a8d348bef8715b5251a5e33fd5704c67f4685",
+    "reference/empirical_astrology/correlation_overlap_source_replay_20260929.json": "1610c4b4aaa4f38502011bf6dab43da66fe836778eb82b652ff105aa18bbea11",
+    "scripts/empirical_astrology/reproduce_cf003_20260929.py": "42bcd00e8b93c120838be46d014e44a773da82ce133025feb404f57e64bb1834",
+    "scripts/empirical_astrology/reproduce_cf004_20260929.py": "873c40b4eb54a1272a5dd23b8c9495557484564b9a616398cc22591a32a3a9f1",
+    "scripts/empirical_astrology/reproduce_cf005_tables_20260929.py": "99ac90fd0b08d9a9ea2ad3245df9a18b7a57938c71b5c886a6c16f7ce6e01a67"
+  },
+  "protected_prior_sha256": {
+    "reference/empirical_astrology/literature_model_v1b_decision.json": "682086cd41051f7731d197128e2abe42fc4dfac42ef5ae707f1ba604fad51e5b",
+    "reference/empirical_astrology/literature_model_v1.json": "b75099e3dc62e464df39e8150fe18238a76121648ab0ba8f8059e6996f7c2382",
+    "reference/empirical_astrology/literature_feature_registry_v1.json": "be72e72dc2ece88f8c2fb4d0ac874746964944cfa1e4220c80a488f3f06af280",
+    "reference/empirical_astrology/literature_model_v1b_wave4_gate.json": "773273817152e89e1ba0fa2a79f3fbf99e6395e501c4ca82a494847b5256152b",
+    "notes/empirical_astrology/master_v2/PRO_DECISION_WAVE4.md": "816a1e7be7e0aa42d0151420a8de69561bafbf2d3383f268aaeae7e84cef6832",
+    "reference/empirical_astrology/pro_reasoning_packet_post_correlation_archive.json": "03853bc5ec4cab30f3cc411de74062e1283608b39782b7cabb38748e500dc295",
+    "notes/empirical_astrology/fulltexts/CORRELATION_ARCHIVE_AUDIT_20260928.md": "29e343a43b83d9bb1804ede591f0e22c1bac8e9de21c48fb32f1bff701e2ebbc",
+    "notes/empirical_astrology/master_v2/PRO_DECISION_POST_CORRELATION_20260929.md": "d7e037b8d7454ad47ac27b3a2dfb6d7ce15144b81f02d0e3b945251d3781dd1e",
+    "reference/empirical_astrology/literature_model_v1b_post_correlation_gate.json": "8c37ac5abdb53667be1bd0d27b515448ad29a1464252ce103d4dde4136f1778e",
+    "notes/empirical_astrology/master_v2/CORRELATION_REPRODUCTION_SPEC_20260929.md": "5932b6b6dc1e54d26f109787d79b72fe3e0556ca4f5756c8677f7525ec1007b2",
+    "reference/empirical_astrology/correlation_cohort_graph_20260929.json": "ca803badc2e7dd2f1d0318ce07ba94fb9e68f553100cbc70c4f6bf1d59da41da"
+  },
+  "not_run": [
+    "Literature review",
+    "Mechanical arithmetic scripts",
+    "Source-dependent nulls",
+    "Participant outcome analysis",
+    "Unchanged model unit/E2E suites; no runtime changes in this documentation-only delta"
+  ],
+  "scope_limit": "These checks validate the new decision artifacts and preservation boundary, not source measurements, statistical assumptions, empirical validity or launch readiness."
+}
