@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "scope": "Append-only documentary CF-003/CF-004 exact-name overlap; no model decision and no edit to frozen Pro cohort graph.",
+  "source_documents": {
+    "test_61": {
+      "citation": "Godbout and Coron, Correlation 36(1), 2023, Table 1, printed p.50, PDF p.51",
+      "sha256": "a4c0da056639aa0833dd96229a4efc3817395729b26c361875f24322f5092f44"
+    },
+    "pooled_250": {
+      "citation": "Godbout, Correlation 36(2), 2024, Appendix Figure 5, printed p.46, PDF p.47; 189 training plus disjoint 61 replication as stated in source articles",
+      "sha256": "d50048c5a6f34c06ef6eaa0cc77439243c55137c514149d8f09b304d5862195d"
+    },
+    "southern_68": {
+      "citation": "Godbout and Brun, Correlation 38(1), 2026, Figure 2, printed p.42, PDF p.43",
+      "sha256": "e3ad72ee69c213ebe79739c025c91357fd7c112eefc8468bbdb43911ee9e8e73"
+    }
+  },
+  "confirmed_exact_printed_name_intersections_southern_68_with_prior_250": [
+    {"printed_name": "Allende, Salvador", "prior_subcohort": "test_61", "test_61_table_1": true},
+    {"printed_name": "Arrau, Claudio", "prior_subcohort": "test_61", "test_61_table_1": true},
+    {"printed_name": "Barre, Raymond", "prior_subcohort": "training_189", "test_61_table_1": false},
+    {"printed_name": "Guevara, Che", "prior_subcohort": "training_189", "test_61_table_1": false},
+    {"printed_name": "Hollander, Xaviera", "prior_subcohort": "training_189", "test_61_table_1": false},
+    {"printed_name": "Jouret, Luc", "prior_subcohort": "training_189", "test_61_table_1": false}
+  ],
+  "verified_lower_bound": {
+    "southern_68_overlapping_prior_250": 6,
+    "southern_68_overlapping_test_61": 2,
+    "southern_68_overlapping_training_189": 4,
+    "northern_73_overlapping_training_189": "73 reported by paper via reuse of same Le Monde portraits; complete person-level roster linkage not independently verified here"
+  },
+  "qualification": "Six are exact visual name matches on the published figures; IDs, pseudonym aliases, biographical source versions, and any additional matches beyond exact printed strings have not been audited. The four training assignments follow the stated disjoint 189-plus-61 composition of the 2024 appendix and absence from the published A-surname test-61 roster. Do not treat CF-004 as independent of these participants."
+}

@@ -1,0 +1,304 @@
+{
+  "schema_version": 1,
+  "source": "Daigno 2026, Correlation 38(2), 13–28; Tables 3–6, C.2 and D.2",
+  "source_complete_issue_sha256": "5d6a87dc0e5aff058d007a66b2104035a27b639a566fa078ab1e0539d7af1024",
+  "scope": "Conditional arithmetic checks of source-published counts, not a corrected person-level inference",
+  "authors_threshold": 0.00625,
+  "french_individual_aspects": [
+    {
+      "aspect": "MO 0 MA",
+      "observed_events": 7,
+      "observed_event_opportunities": 60,
+      "control_events": 450,
+      "control_event_opportunities": 4148,
+      "conditional_control_fraction": 0.10848601735776278,
+      "conditional_exact_binomial_p": 0.47948605988074733,
+      "printed_p": 0.47948,
+      "below_authors_eight_test_threshold": false
+    },
+    {
+      "aspect": "MO 180 MA",
+      "observed_events": 12,
+      "observed_event_opportunities": 66,
+      "control_events": 443,
+      "control_event_opportunities": 4107,
+      "conditional_control_fraction": 0.10786462137813489,
+      "conditional_exact_binomial_p": 0.04845444368836925,
+      "printed_p": 0.04845,
+      "below_authors_eight_test_threshold": false
+    },
+    {
+      "aspect": "ME 0 MA",
+      "observed_events": 21,
+      "observed_event_opportunities": 105,
+      "control_events": 772,
+      "control_event_opportunities": 7472,
+      "conditional_control_fraction": 0.10331905781584583,
+      "conditional_exact_binomial_p": 0.0023130411338341183,
+      "printed_p": 0.00231,
+      "below_authors_eight_test_threshold": true
+    },
+    {
+      "aspect": "ME 180 MA",
+      "observed_events": 0,
+      "observed_event_opportunities": 40,
+      "control_events": 138,
+      "control_event_opportunities": 2694,
+      "conditional_control_fraction": 0.051224944320712694,
+      "conditional_exact_binomial_p": 1.0000000000000009,
+      "printed_p": 1.0,
+      "below_authors_eight_test_threshold": false
+    },
+    {
+      "aspect": "VE 0 MA",
+      "observed_events": 7,
+      "observed_event_opportunities": 82,
+      "control_events": 614,
+      "control_event_opportunities": 6195,
+      "conditional_control_fraction": 0.09911218724778047,
+      "conditional_exact_binomial_p": 0.7150774936378826,
+      "printed_p": 0.71507,
+      "below_authors_eight_test_threshold": false
+    },
+    {
+      "aspect": "VE 180 MA",
+      "observed_events": 6,
+      "observed_event_opportunities": 35,
+      "control_events": 235,
+      "control_event_opportunities": 2853,
+      "conditional_control_fraction": 0.08236943568173852,
+      "conditional_exact_binomial_p": 0.06409545730970838,
+      "printed_p": 0.06409,
+      "below_authors_eight_test_threshold": false
+    },
+    {
+      "aspect": "SO 0 MA",
+      "observed_events": 15,
+      "observed_event_opportunities": 97,
+      "control_events": 747,
+      "control_event_opportunities": 7269,
+      "conditional_control_fraction": 0.10276516714816343,
+      "conditional_exact_binomial_p": 0.07067790647663924,
+      "printed_p": 0.07067,
+      "below_authors_eight_test_threshold": false
+    },
+    {
+      "aspect": "SO 180 MA",
+      "observed_events": 5,
+      "observed_event_opportunities": 32,
+      "control_events": 156,
+      "control_event_opportunities": 2687,
+      "conditional_control_fraction": 0.05805731298846297,
+      "conditional_exact_binomial_p": 0.03581194785553347,
+      "printed_p": 0.03581,
+      "below_authors_eight_test_threshold": false
+    }
+  ],
+  "serial_individual_aspects": [
+    {
+      "aspect": "MO 0 MA",
+      "observed_events": 8,
+      "observed_event_opportunities": 85,
+      "control_events": 776,
+      "control_event_opportunities": 7124,
+      "conditional_control_fraction": 0.10892756878158338,
+      "conditional_exact_binomial_p": 0.7199515850986613,
+      "printed_p": 0.71996,
+      "below_authors_eight_test_threshold": false
+    },
+    {
+      "aspect": "MO 180 MA",
+      "observed_events": 12,
+      "observed_event_opportunities": 60,
+      "control_events": 749,
+      "control_event_opportunities": 7014,
+      "conditional_control_fraction": 0.10678642714570859,
+      "conditional_exact_binomial_p": 0.023344157829279837,
+      "printed_p": 0.02334,
+      "below_authors_eight_test_threshold": false
+    },
+    {
+      "aspect": "ME 0 MA",
+      "observed_events": 27,
+      "observed_event_opportunities": 122,
+      "control_events": 1329,
+      "control_event_opportunities": 12891,
+      "conditional_control_fraction": 0.1030951826855946,
+      "conditional_exact_binomial_p": 0.00010458110683270197,
+      "printed_p": 0.0001,
+      "below_authors_eight_test_threshold": true
+    },
+    {
+      "aspect": "ME 180 MA",
+      "observed_events": 5,
+      "observed_event_opportunities": 41,
+      "control_events": 255,
+      "control_event_opportunities": 4569,
+      "conditional_control_fraction": 0.05581089954038083,
+      "conditional_exact_binomial_p": 0.07663638020914906,
+      "printed_p": 0.07664,
+      "below_authors_eight_test_threshold": false
+    },
+    {
+      "aspect": "VE 0 MA",
+      "observed_events": 21,
+      "observed_event_opportunities": 99,
+      "control_events": 1221,
+      "control_event_opportunities": 10844,
+      "conditional_control_fraction": 0.11259682773884176,
+      "conditional_exact_binomial_p": 0.0030856460834464733,
+      "printed_p": 0.00309,
+      "below_authors_eight_test_threshold": true
+    },
+    {
+      "aspect": "VE 180 MA",
+      "observed_events": 2,
+      "observed_event_opportunities": 47,
+      "control_events": 351,
+      "control_event_opportunities": 4869,
+      "conditional_control_fraction": 0.07208872458410351,
+      "conditional_exact_binomial_p": 0.8618386991785659,
+      "printed_p": 0.86183,
+      "below_authors_eight_test_threshold": false
+    },
+    {
+      "aspect": "SO 0 MA",
+      "observed_events": 21,
+      "observed_event_opportunities": 129,
+      "control_events": 1291,
+      "control_event_opportunities": 12524,
+      "conditional_control_fraction": 0.10308208240178857,
+      "conditional_exact_binomial_p": 0.02362043113716227,
+      "printed_p": 0.02362,
+      "below_authors_eight_test_threshold": false
+    },
+    {
+      "aspect": "SO 180 MA",
+      "observed_events": 5,
+      "observed_event_opportunities": 47,
+      "control_events": 269,
+      "control_event_opportunities": 4661,
+      "conditional_control_fraction": 0.05771293713795323,
+      "conditional_exact_binomial_p": 0.13311923618754926,
+      "printed_p": 0.13312,
+      "below_authors_eight_test_threshold": false
+    }
+  ],
+  "combined_event_tables": [
+    {
+      "cohort_and_period": "french_all",
+      "observed_events": 73,
+      "observed_event_opportunities": 517,
+      "control_events": 3555,
+      "control_event_opportunities": 37425,
+      "conditional_two_proportions_z": 3.548508571822337,
+      "conditional_one_sided_p": 0.00019370969411456349,
+      "conditional_cohen_h": 0.1438339154112278,
+      "printed_z": 3.5485,
+      "printed_p": 0.000194
+    },
+    {
+      "cohort_and_period": "serial_all",
+      "observed_events": 101,
+      "observed_event_opportunities": 630,
+      "control_events": 6241,
+      "control_event_opportunities": 64496,
+      "conditional_two_proportions_z": 5.354252254204798,
+      "conditional_one_sided_p": 4.295546993619743e-08,
+      "conditional_cohen_h": 0.1912580475368736,
+      "printed_z": 5.3543,
+      "printed_p": 4.3e-08
+    },
+    {
+      "cohort_and_period": "french_1819_1874",
+      "observed_events": 25,
+      "observed_event_opportunities": 154,
+      "control_events": 3089,
+      "control_event_opportunities": 31652,
+      "conditional_two_proportions_z": 2.697010337418913,
+      "conditional_one_sided_p": 0.0034982549175274886,
+      "conditional_cohen_h": 0.19395863351072762,
+      "printed_z": 2.697,
+      "printed_p": 0.0035
+    },
+    {
+      "cohort_and_period": "french_1875_1893",
+      "observed_events": 25,
+      "observed_event_opportunities": 166,
+      "control_events": 2894,
+      "control_event_opportunities": 31077,
+      "conditional_two_proportions_z": 2.5378379782587115,
+      "conditional_one_sided_p": 0.005576980476841525,
+      "conditional_cohen_h": 0.17686852651643792,
+      "printed_z": 2.5378,
+      "printed_p": 0.0056
+    },
+    {
+      "cohort_and_period": "french_1894_1930",
+      "observed_events": 23,
+      "observed_event_opportunities": 197,
+      "control_events": 3034,
+      "control_event_opportunities": 30506,
+      "conditional_two_proportions_z": 0.8081342282319188,
+      "conditional_one_sided_p": 0.20950665768562937,
+      "conditional_cohen_h": 0.055741574083987944,
+      "printed_z": 0.8081,
+      "printed_p": 0.21
+    },
+    {
+      "cohort_and_period": "serial_1803_1945",
+      "observed_events": 32,
+      "observed_event_opportunities": 203,
+      "control_events": 2753,
+      "control_event_opportunities": 29526,
+      "conditional_two_proportions_z": 3.1380012674942286,
+      "conditional_one_sided_p": 0.0008505207069803543,
+      "conditional_cohen_h": 0.19594828282630994,
+      "printed_z": 3.138,
+      "printed_p": 0.000851
+    },
+    {
+      "cohort_and_period": "serial_1946_1962",
+      "observed_events": 29,
+      "observed_event_opportunities": 215,
+      "control_events": 2968,
+      "control_event_opportunities": 32206,
+      "conditional_two_proportions_z": 2.155801634238338,
+      "conditional_one_sided_p": 0.015549578913564309,
+      "conditional_cohen_h": 0.13525265203901138,
+      "printed_z": 2.1558,
+      "printed_p": 0.0155
+    },
+    {
+      "cohort_and_period": "serial_1963_1995",
+      "observed_events": 40,
+      "observed_event_opportunities": 212,
+      "control_events": 3274,
+      "control_event_opportunities": 30495,
+      "conditional_two_proportions_z": 3.8026669032703433,
+      "conditional_one_sided_p": 7.157338256367924e-05,
+      "conditional_cohen_h": 0.23102833252430777,
+      "printed_z": 3.8027,
+      "printed_p": 7.16e-05
+    }
+  ],
+  "reported_temporal_mercury_conjunction_p_without_extractable_cell_counts": {
+    "french": [
+      0.00062,
+      0.15124,
+      0.44856
+    ],
+    "serial": [
+      0.05906,
+      0.76209,
+      0.01503
+    ]
+  },
+  "limitations": [
+    "Aspect events and opportunities can share people; the table denominators are not independent persons.",
+    "Calendar-day ephemerides and shuffled component controls do not constitute matched-person controls.",
+    "The per-person event vectors, source-year rosters and control-generator software are absent from the issue; no cluster-adjusted uncertainty or fresh null is estimated.",
+    "The C.3/D.3 temporal Mercury-conjunction p-values lack text-extractable per-cell counts, so they remain reported rather than reproduced here.",
+    "A time-varying Wikidata query is not the same as the author's frozen 2026 person roster."
+  ]
+}

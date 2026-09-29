@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "scope": "Independent arithmetic replay of printed aggregates only; no targets, per-person vectors, or assignment-respecting null.",
+  "source_sha256": {
+    "training_2023_35_2": "780b8422d77059892b57c395d9cf3c2b40f828706b0c2ed51a7bcabb0b03aac6",
+    "replication_2023_36_1": "a4c0da056639aa0833dd96229a4efc3817395729b26c361875f24322f5092f44"
+  },
+  "training_table_10": [
+    {
+      "n": 189,
+      "rank_max": 3,
+      "tries": 1,
+      "successes_printed": 92,
+      "printed_p0_rounded": 0.319,
+      "expected_from_rounded_p0": 60.291,
+      "printed_z": 4.96,
+      "z_from_rounded_p0": 4.948605,
+      "printed_one_sided_p": 3.56e-07,
+      "one_sided_normal_p_from_rounded_p0": 3.7373726418176907e-07,
+      "effect_size_from_rounded_p0": 0.359958
+    },
+    {
+      "n": 189,
+      "rank_max": 3,
+      "tries": 2,
+      "successes_printed": 135,
+      "printed_p0_rounded": 0.548,
+      "expected_from_rounded_p0": 103.572,
+      "printed_z": 4.6,
+      "z_from_rounded_p0": 4.593316,
+      "printed_one_sided_p": 2.08e-06,
+      "one_sided_normal_p_from_rounded_p0": 2.1812860170328494e-06,
+      "effect_size_from_rounded_p0": 0.334115
+    },
+    {
+      "n": 189,
+      "rank_max": 3,
+      "tries": 3,
+      "successes_printed": 158,
+      "printed_p0_rounded": 0.718,
+      "expected_from_rounded_p0": 135.702,
+      "printed_z": 3.6,
+      "z_from_rounded_p0": 3.604527,
+      "printed_one_sided_p": 0.000161,
+      "one_sided_normal_p_from_rounded_p0": 0.00015636122060695576,
+      "effect_size_from_rounded_p0": 0.262191
+    }
+  ],
+  "replication_tables_2_to_4": [
+    {
+      "n": 61,
+      "rank_max": 1,
+      "tries": 1,
+      "successes_printed": 13,
+      "printed_p0_rounded": 0.107,
+      "expected_from_rounded_p0": 6.527,
+      "printed_z": 2.68,
+      "z_from_rounded_p0": 2.681162,
+      "printed_one_sided_p": 0.00372,
+      "one_sided_normal_p_from_rounded_p0": 0.0036683483856356563,
+      "effect_size_from_rounded_p0": 0.343288
+    },
+    {
+      "n": 61,
+      "rank_max": 1,
+      "tries": 2,
+      "successes_printed": 24,
+      "printed_p0_rounded": 0.206,
+      "expected_from_rounded_p0": 12.566,
+      "printed_z": 3.61,
+      "z_from_rounded_p0": 3.61984,
+      "printed_one_sided_p": 0.000152,
+      "one_sided_normal_p_from_rounded_p0": 0.00014739245667524714,
+      "effect_size_from_rounded_p0": 0.463473
+    },
+    {
+      "n": 61,
+      "rank_max": 1,
+      "tries": 3,
+      "successes_printed": 29,
+      "printed_p0_rounded": 0.311,
+      "expected_from_rounded_p0": 18.971,
+      "printed_z": 2.78,
+      "z_from_rounded_p0": 2.773977,
+      "printed_one_sided_p": 0.00274,
+      "one_sided_normal_p_from_rounded_p0": 0.0027687768010998164,
+      "effect_size_from_rounded_p0": 0.355171
+    },
+    {
+      "n": 61,
+      "rank_max": 2,
+      "tries": 1,
+      "successes_printed": 23,
+      "printed_p0_rounded": 0.214,
+      "expected_from_rounded_p0": 13.054,
+      "printed_z": 3.1,
+      "z_from_rounded_p0": 3.105027,
+      "printed_one_sided_p": 0.000961,
+      "one_sided_normal_p_from_rounded_p0": 0.0009513083554363018,
+      "effect_size_from_rounded_p0": 0.397558
+    },
+    {
+      "n": 61,
+      "rank_max": 2,
+      "tries": 2,
+      "successes_printed": 39,
+      "printed_p0_rounded": 0.39,
+      "expected_from_rounded_p0": 23.79,
+      "printed_z": 4.0,
+      "z_from_rounded_p0": 3.992704,
+      "printed_one_sided_p": 3.17e-05,
+      "one_sided_normal_p_from_rounded_p0": 3.266209576165318e-05,
+      "effect_size_from_rounded_p0": 0.511213
+    },
+    {
+      "n": 61,
+      "rank_max": 2,
+      "tries": 3,
+      "successes_printed": 43,
+      "printed_p0_rounded": 0.546,
+      "expected_from_rounded_p0": 33.306,
+      "printed_z": 2.5,
+      "z_from_rounded_p0": 2.492952,
+      "printed_one_sided_p": 0.00624,
+      "one_sided_normal_p_from_rounded_p0": 0.00633430535983575,
+      "effect_size_from_rounded_p0": 0.31919
+    },
+    {
+      "n": 61,
+      "rank_max": 3,
+      "tries": 1,
+      "successes_printed": 29,
+      "printed_p0_rounded": 0.319,
+      "expected_from_rounded_p0": 19.459,
+      "printed_z": 2.63,
+      "z_from_rounded_p0": 2.620958,
+      "printed_one_sided_p": 0.00432,
+      "one_sided_normal_p_from_rounded_p0": 0.004384151683450064,
+      "effect_size_from_rounded_p0": 0.335579
+    },
+    {
+      "n": 61,
+      "rank_max": 3,
+      "tries": 2,
+      "successes_printed": 42,
+      "printed_p0_rounded": 0.548,
+      "expected_from_rounded_p0": 33.428,
+      "printed_z": 2.21,
+      "z_from_rounded_p0": 2.20525,
+      "printed_one_sided_p": 0.0135,
+      "one_sided_normal_p_from_rounded_p0": 0.013718292861591245,
+      "effect_size_from_rounded_p0": 0.282353
+    },
+    {
+      "n": 61,
+      "rank_max": 3,
+      "tries": 3,
+      "successes_printed": 47,
+      "printed_p0_rounded": 0.718,
+      "expected_from_rounded_p0": 43.798,
+      "printed_z": 0.91,
+      "z_from_rounded_p0": 0.911108,
+      "printed_one_sided_p": 0.182,
+      "one_sided_normal_p_from_rounded_p0": 0.18111936084337585,
+      "effect_size_from_rounded_p0": 0.116655
+    }
+  ],
+  "reported_text_table_disagreements": [
+    {
+      "source": "35(2) p.25 prose versus Table 10 p.24",
+      "prose": "Third training condition: 158 successes, expected 151.6.",
+      "table": "158 successes, expected 135.8.",
+      "expected_from_printed_rounded_p0": 135.702
+    },
+    {
+      "source": "36(1) p.53 prose versus Table 4 p.52",
+      "prose": "Third replication condition: 43.8 successes, expected 33.3.",
+      "table": "47 successes, expected 43.8.",
+      "expected_from_printed_rounded_p0": 43.798
+    }
+  ]
+}
