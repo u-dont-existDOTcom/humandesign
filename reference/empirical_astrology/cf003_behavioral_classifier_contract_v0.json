@@ -1,0 +1,93 @@
+{
+  "schema_version": "cf003-behavioral-classifier-contract-v0",
+  "status": "development_secondary_candidate_not_prospective_frozen",
+  "purpose": "Chart-blind comparative behavioral-dominance target over ten neutral constructs. This file is safe for the behavioral classifier; it contains no construct-to-astrology mapping.",
+  "input_rules": [
+    "Use only the supplied frozen behavioral source turns and separate secondary-module turns.",
+    "Run the behavioral classifier in a fresh tool-free context with no repository, web, Memory, connected apps, birth/chart files, predictor files, or evaluator mapping available; only the frozen classifier packet may be read.",
+    "Do not use birth date, birth time, birthplace, chart data, astrology labels, predictions, prior chart interpretations, or external knowledge about the participant.",
+    "Do not infer motive, backstory, history, or recurrence not supported by the source.",
+    "Exact quote fields must be contiguous substrings of the cited participant answer.",
+    "Question wording and interviewer/model summaries are not participant evidence.",
+    "Do not reward verbosity, number of questions asked, number of paraphrases, or model confidence.",
+    "Rate every construct on the same rubric. If source is insufficient, return null rather than forcing a score.",
+    "Conditions, exceptions, temporal change, relationship context, and counterevidence constrain the rating.",
+    "The task is comparative behavioral centrality/dominance, not whether a construct is admirable, healthy, intense, or unusual."
+  ],
+  "constructs": [
+    {
+      "construct_id": "T01",
+      "label": "values_standards_boundaries",
+      "definition": "Values, ethics, standards, boundaries, ideals, integrity, fairness, or what is treated as worth protecting."
+    },
+    {
+      "construct_id": "T02",
+      "label": "transformation_deep_restructuring",
+      "definition": "Long-duration transformation, intensity, truth-seeking, renewal, deep restructuring, or themes that deepen through major experience."
+    },
+    {
+      "construct_id": "T03",
+      "label": "recurring_motivational_drive",
+      "definition": "Recurring inner drive, pressure, pull, or motivational pattern that repeatedly gets action moving."
+    },
+    {
+      "construct_id": "T04",
+      "label": "discipline_limits_accountability",
+      "definition": "Recurring discipline, limitation, accountability, consequence, demanding lessons, or competence developed through sustained constraint."
+    },
+    {
+      "construct_id": "T05",
+      "label": "central_identity_purpose_expression",
+      "definition": "Ways of being, purpose, identity, or self-expression that remain central to who the person is across roles or environments."
+    },
+    {
+      "construct_id": "T06",
+      "label": "originality_departure_from_convention",
+      "definition": "Recurring originality, unconventionality, deviation from convention, mutation, or preference for doing things differently."
+    },
+    {
+      "construct_id": "T07",
+      "label": "repeated_communication_thinking_theme",
+      "definition": "Subjects, messages, ideas, explanations, questions, arguments, teaching themes, or thought-patterns repeatedly expressed across contexts."
+    },
+    {
+      "construct_id": "T08",
+      "label": "growth_opportunity_guiding_principles",
+      "definition": "Recurring growth, opportunity, protection, guiding principles, or personal rules associated with sustainable expansion or learning."
+    },
+    {
+      "construct_id": "T09",
+      "label": "action_assertion_development",
+      "definition": "Recurring action, assertion, initiative, challenge-response, or a theme that develops and matures through repeated experience."
+    },
+    {
+      "construct_id": "T10",
+      "label": "imagination_ambiguity_spirituality_opacity",
+      "definition": "Recurring imagination, ambiguity, mystery, spirituality, obscurity, or domains the person experiences as difficult to see clearly."
+    }
+  ],
+  "rating_rubric": {
+    "null": "Source cannot support a defensible rating for this construct.",
+    "0": "Usable source directly indicates the construct is not recurrent or central for this person; absence of mention alone cannot earn 0.",
+    "1": "At most isolated, situational, weak, or explicitly peripheral evidence.",
+    "2": "Recurring evidence exists, but it is narrow, mixed, context-bound, secondary, or substantially limited by counterevidence.",
+    "3": "Recurring evidence appears across multiple contexts or life stages and is behaviorally important, with bounded exceptions.",
+    "4": "Source supports a repeatedly organizing or central pattern across contexts or life stages, with consequential or strongly prioritizing evidence and no equally strong evidence reducing it to a situational pattern."
+  },
+  "output_contract": {
+    "construct_scores": "Exactly one item for each construct_id.",
+    "item_fields": {
+      "construct_id": "one frozen construct_id",
+      "dominance_rating": "integer 0..4 or null",
+      "evidence_sufficient": "boolean; false iff dominance_rating is null",
+      "support_quotes": "0..3 objects with turn_id and exact participant quote",
+      "counterevidence_quotes": "0..3 objects with turn_id and exact participant quote",
+      "conditions": "participant-supported scope/condition strings; no invented conditions",
+      "time_frame": "participant-supported time scope or unknown",
+      "confidence": "low|medium|high; quality-control metadata only and never used in ranking",
+      "reason": "brief source-bounded explanation without construct-to-astrology interpretation"
+    },
+    "ties": "Equal dominance_rating values remain tied. Never invent a tie-breaker.",
+    "incomplete": "If any construct has null, the ten-way primary behavioral ranking is incomplete."
+  }
+}

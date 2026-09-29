@@ -1,0 +1,30 @@
+{
+  "schema_version": "cf003-secondary-question-module-v0",
+  "status": "development_secondary_candidate_not_primary",
+  "activation": "Only after the main behavioral record is frozen and before any birth/chart/predictor reveal. Store as a separate secondary-module record; never alter the primary score.",
+  "participant_blinding": [
+    "Do not show construct labels, astrology terms, body names, predictions, or chart information.",
+    "Do not state that the questions are designed to rank hidden constructs.",
+    "Preserve exact participant wording, conditions, uncertainty, and corrections."
+  ],
+  "questions": [
+    {
+      "question_id": "CF003-ID-01",
+      "purpose": "Add direct source for the otherwise underrepresented central identity/purpose/self-expression construct.",
+      "question": "Across childhood, adolescence, and adult life, what ways of being, purposes, or forms of self-expression have felt most central to who you are even when your role or environment changes? Give at least one earlier example and one current example, and mention anything others associate with you that does not actually feel central."
+    },
+    {
+      "question_id": "CF003-CENTRAL-01",
+      "purpose": "Add chart-blind comparative centrality evidence across already-described recurring patterns.",
+      "question": "Looking across the recurring patterns you have described in this interview, which two or three seem to organize the most important choices, priorities, or ways you repeatedly act across different settings? Give concrete examples rather than category labels."
+    },
+    {
+      "question_id": "CF003-PERIPH-01",
+      "purpose": "Add negative/contrast evidence so real-but-peripheral themes do not become dominant merely because they were discussed.",
+      "question": "Which recurring patterns you have mentioned are real but feel secondary, situational, or much less central to your life? Give an example of where one matters and an example of where it does not."
+    }
+  ],
+  "completion": "Freeze exact question/answer turns and any corrections. Do not calculate or reveal the chart-side predictor in the participant context.",
+  "eligibility_rule": "The three-question supplement is intended for records that already contain usable chart-blind source for the nine inherited behavioral domains. If one or more inherited constructs remain insufficient, do not convert missingness to a low score. The ten-way target remains incomplete unless a separately frozen balanced follow-up obtains source for those constructs.",
+  "coverage_warning": "The identity question gives the missing tenth construct direct elicitation; it is not evidence that this construct is more dominant than the others. The common rating rubric and classifier prompt prohibit rewarding question count or targeted elicitation."
+}

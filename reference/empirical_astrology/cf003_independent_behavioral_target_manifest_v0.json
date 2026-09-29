@@ -1,0 +1,88 @@
+{
+  "schema_version": "cf003-independent-behavioral-target-manifest-v0",
+  "status": "development_secondary_active_not_prospective_frozen",
+  "candidate_id": "CF-003",
+  "owner_authorized_at": "2026-09-29",
+  "separation": {
+    "primary_tn001_changed": false,
+    "main_life_patterns_score_changed": false,
+    "literature_model_v1_changed": false,
+    "behavioral_classifier_receives_planet_mapping": false,
+    "behavioral_classifier_receives_birth_or_chart_data": false,
+    "behavioral_classifier_receives_cf003_predictor": false,
+    "predictor_opened_only_after_behavioral_target_freeze": true
+  },
+  "files": {
+    "predictor_spec": {
+      "path": "reference/empirical_astrology/cf003_published_predictor_spec_v0.json",
+      "sha256": "27c93394314f2ec735794bf10bc3a70cbfe884345a7e5c748c7dfb3768edb1d9"
+    },
+    "classifier_contract": {
+      "path": "reference/empirical_astrology/cf003_behavioral_classifier_contract_v0.json",
+      "sha256": "8b294977939c64a8b7c59ebc0c2f09c410d1e74a724d33befbaca646a9adcd75"
+    },
+    "classifier_prompt": {
+      "path": "reference/empirical_astrology/cf003_behavioral_classifier_prompt_v0.md",
+      "sha256": "33f5998fe1257ab31c4107d74c7383de04d3f3a3f6543a3e0b02470441404ef4"
+    },
+    "planet_map": {
+      "path": "reference/empirical_astrology/cf003_behavioral_planet_map_v0.json",
+      "sha256": "a849880af50768a399f673371795c9033609dc649a8cf91103779d5ac010f963"
+    },
+    "question_module": {
+      "path": "reference/empirical_astrology/cf003_secondary_question_module_v0.json",
+      "sha256": "f02f95c14d70fe270e15e667ab4f4ebab915eacb9925591786a552129ebc65af"
+    }
+  },
+  "behavioral_target": {
+    "construct_count": 10,
+    "rating_scale": "integer 0..4 or null insufficient",
+    "ties": "preserved; no tie-breaker",
+    "source_quotes": "exact contiguous participant answer text only",
+    "participant_visible_hidden_labels": true,
+    "secondary_question_count": 3
+  },
+  "primary_endpoint": {
+    "name": "predicted_top_set_mean_behavioral_midrank",
+    "definition": "Mean tie-aware behavioral midrank of every body tied for the highest CF-003 predictor score. With a unique predictor top, this is that predicted body's behavioral rank.",
+    "direction": "lower_is_better"
+  },
+  "secondary_endpoints": [
+    "tie-aware Spearman correlation between the two complete 10-body rank vectors",
+    "inclusive top-3 overlap count",
+    "inclusive top-3 Jaccard overlap"
+  ],
+  "null": {
+    "type": "global_construct_label_permutation",
+    "rule": "Apply the same permutation of the ten evaluator labels to every participant behavioral profile; preserve each participant profile and construct marginals; recompute the complete target statistic.",
+    "historical_cf003_target_shuffle_reused": false,
+    "recommended_monte_carlo_permutations": 100000,
+    "seed_must_be_frozen_before_target_reveal": true
+  },
+  "development_policy": {
+    "existing_participants": "exploratory_only",
+    "prospective_activation": "freeze this manifest, classifier prompt/contract, mapping, questions, software commit, tie rules, permutation seed/count and chart predictor before opening new target responses",
+    "held_out_replication_required": true
+  },
+  "chart_predictor_status": {
+    "published_weighted_score_surface_implemented": true,
+    "input_required": "seven precomputed binary factor flags for each of ten candidate bodies",
+    "exact_historical_mastro_factor_extraction_reproduced": false,
+    "prospective_requirement": "obtain exact historical conventions or freeze/label a transparent new CF-003 factor reimplementation before opening target responses"
+  },
+  "implementation_files": {
+    "src/hdmatch/empirical_astrology/cf003.py": "c8ef78ff5aed29fbac8b10903cf54f2a5d8ee70b3dd26f471b968ae90d9959aa",
+    "src/hdmatch/empirical_astrology/cf003_target.py": "6c74996af605330db85ee5d67d9062444085ad587801a830662147baaa6f1a9e",
+    "scripts/build_cf003_behavioral_packet_v0.py": "a466c5957f46d6e9f1dcc642a8076e8b232a07f46ad2461fe6e6d12d0452a9b0",
+    "scripts/freeze_cf003_behavioral_target_v0.py": "731efae81b6ea72fa5cb0f9fe7e61699bd9ab6b4063b4ed153acdcd7c4a5ea5f",
+    "scripts/compare_cf003_frozen_target_v0.py": "0991ff45c86e3e84c538fafc306949c7ee10714d9cd569b76d2b5dee5e936cac"
+  },
+  "classifier_model_status": "development model/version not prospectively frozen yet",
+  "source_coverage_rule": "Three-question supplement assumes usable source for the nine inherited domains; any remaining insufficient construct makes the ten-way target incomplete until separately frozen follow-up source is collected.",
+  "classifier_isolation": {
+    "fresh_context_required": true,
+    "tools_web_repository_memory_connected_apps": "prohibited",
+    "allowed_input": "frozen classifier packet only",
+    "mapping_and_predictor_access_before_target_freeze": false
+  }
+}

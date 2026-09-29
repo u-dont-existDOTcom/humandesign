@@ -1,11 +1,11 @@
 {
   "schema": "life-patterns-voice-gpt-bundle-v1",
-  "version": "2026-09-28",
+  "version": "2026-09-29",
   "instructions": {
     "path": "reference/custom_gpt/life_patterns_voice_interviewer_v2.md",
-    "sha256": "986dd486aac41e33546cf8d5c731fc3483ee8c42a29ecf2288239b8d8626ffc9",
-    "characters": 7557,
-    "strict_linebreak_count": 7691
+    "sha256": "926b62850e4d9ac15b7e154eaee57ecf8f926f9d1760f796c9a961da5e5acea3",
+    "characters": 7821,
+    "strict_linebreak_count": 7957
   },
   "knowledge_files": [
     {
@@ -19,6 +19,10 @@
     {
       "path": "tasks/scenario-survey-v7-redesign-20260922/EVIDENCE-GUIDE-v7.json",
       "sha256": "f87916dfdf6c6616e7787057b870fbda60858a42747763bb9a044d225cd4729c"
+    },
+    {
+      "path": "reference/empirical_astrology/cf003_secondary_question_module_v0.json",
+      "sha256": "f02f95c14d70fe270e15e667ab4f4ebab915eacb9925591786a552129ebc65af"
     }
   ],
   "birth_or_chart_material_in_bundle": false,
@@ -28,5 +32,14 @@
     "chatgpt_text",
     "mixed"
   ],
-  "handoff": "Frozen JSON may be imported into Railway for source-preserving clarification only."
+  "handoff": "Frozen JSON may be imported into Railway for source-preserving clarification only.",
+  "secondary_modules": {
+    "cf003": {
+      "status": "development_secondary_only",
+      "knowledge_path": "reference/empirical_astrology/cf003_secondary_question_module_v0.json",
+      "activation": "after primary behavioral record freeze and before any chart reveal",
+      "output": "separate life-patterns-cf003-secondary-v0.json",
+      "changes_primary_score": false
+    }
+  }
 }

@@ -1,91 +1,50 @@
 {
   "schemaVersion": 1,
-  "taskId": "hybrid-voice-cost-optimization-20260928",
-  "requiredBranch": "chat/hybrid-voice-cost-optimization-20260928",
+  "taskId": "cf003-secondary-module-20260929",
+  "requiredBranch": "chat/cf003-secondary-module-20260929",
   "implementationAuthorized": true,
-  "assuranceLane": "iteration dark preview behind hard disabled inference; live enable remains release",
-  "status": "dark_preview_deployed_voice_bundle_ready",
-  "ownerOutcome": "Use voice-first ChatGPT when it improves answer richness; keep Railway for durable provenance and only useful clarifications; reduce API cost enough for the Venice daily allowance; use subscription Codex for development probes rather than paid API.",
-  "parentTaskRef": "chat/participant-railway-venice-20260927-2234@dabcb1a6b60e7fd85d5765a780f2c9f933ff61b5",
-  "currentMethod": "tasks/hybrid-voice-cost-optimization-20260928/VOICE-FIRST-HYBRID-PILOT.md",
-  "receipts": [
-    "tasks/hybrid-voice-cost-optimization-20260928/COST-BENCHMARK.json",
-    "tasks/hybrid-voice-cost-optimization-20260928/CODEX-DEV-PROBE.json",
-    "tasks/hybrid-voice-cost-optimization-20260928/MODE-COMPARISON.md",
-    "tasks/hybrid-voice-cost-optimization-20260928/VERIFICATION.json",
-    "tasks/hybrid-voice-cost-optimization-20260928/CROSS-FAMILY-REVIEW.md",
-    "tasks/hybrid-voice-cost-optimization-20260928/REVIEW-DISPOSITION.md",
-    "tasks/hybrid-voice-cost-optimization-20260928/DARK-DEPLOYMENT-RECEIPT.json"
+  "assuranceLane": "decision/iteration secondary research module",
+  "status": "development_secondary_candidate_complete_cross_family_unavailable",
+  "ownerOutcome": "Add a separate chart-blind CF-003 planetary-dominance behavioral target module now, reusing existing survey material plus a small Sun/centrality module, without changing the main frozen score.",
+  "parentTaskRef": "chat/hybrid-voice-cost-optimization-20260928@ad2930a93184d4bd32fb4e14efccc779764b6176",
+  "predictorSource": "CF-003 published seven-factor weighted score scaffold imported from 9461567f26029fcb4580d83c602908217cbfc1d8; exact historical Mastro factor extraction from raw birth data is not reproduced.",
+  "outputs": [
+    "reference/empirical_astrology/cf003_behavioral_classifier_contract_v0.json",
+    "reference/empirical_astrology/cf003_behavioral_classifier_prompt_v0.md",
+    "reference/empirical_astrology/cf003_behavioral_planet_map_v0.json",
+    "reference/empirical_astrology/cf003_secondary_question_module_v0.json",
+    "reference/empirical_astrology/cf003_independent_behavioral_target_manifest_v0.json",
+    "src/hdmatch/empirical_astrology/cf003_target.py",
+    "scripts/build_cf003_behavioral_packet_v0.py",
+    "scripts/freeze_cf003_behavioral_target_v0.py",
+    "scripts/compare_cf003_frozen_target_v0.py",
+    "notes/empirical_astrology/master_v2/CF003_SECONDARY_MODULE_DECISION_20260929.md"
   ],
-  "production": {
-    "service": "life-patterns-participant",
-    "existingProvider": "venice",
-    "currentExternalBlocker": "provider_http_402 / insufficient available API credit on prior live runtime",
-    "participantLiveEnabledObserved": false,
-    "optimizationDeployed": true,
-    "paidInferenceUsedForThisOptimization": false,
-    "deployedCommit": "8978e543b492c4497d501c4f4d2d2c296f7a312f",
-    "deploymentId": "2fb89371-12bf-43cf-969f-ae0ee1b9dc06",
-    "gatewayTokenPresent": false,
-    "maxModelCalls": 12,
-    "healthVersion": "railway-participant-v2.2-cost-hybrid-20260928",
-    "providerConfiguredObserved": false
-  },
-  "candidate": {
-    "voiceFirstLongInterview": true,
-    "railwayClarificationBackend": true,
-    "routineRouteShortlistMax": 12,
-    "routineContextCharsMax": 35000,
-    "bulkContextCharsMax": 110000,
-    "modelCallsPerSessionDefaultMax": 12,
-    "optionalRetrospectiveRequiresExplicitWelcome": true,
-    "collectionModePreserved": true,
-    "pr42CoreAccuracyRulesPorted": true,
-    "legacyOwnerPilotInstructionsModified": false,
-    "providerCompletionLimit": "unchanged prior 25000 setting; low caps deferred pending exact Venice/XHigh validation",
-    "preReviewModelCallsMax": 8,
-    "reviewCorrectionModelCallsReserved": 4
-  },
-  "costEvidence": {
-    "oldPlannerRequestChars": 175183,
-    "bulkPairProxyTokens": 33317,
-    "routinePairProxyTokens": 7499,
-    "fullSessionInputEquivalentProxyTokens": 55814,
-    "caveat": "Character/token proxies exclude actual completion/reasoning tokens; provider telemetry is authoritative."
-  },
-  "developmentInference": {
-    "localCodex": "PASS final reconciled GPT-5.6 Sol XHigh Plan G23 + Admission approved, no paid API",
-    "railwayCloudCodex": "Codex present but saved refresh token revoked; agent returned to sleep",
-    "productionCodexBackend": false
-  },
-  "verification": {
-    "focusedReconciliation": "73/73 PASS",
-    "fullParticipantService": "79/79 PASS",
-    "browserSmoke": "PASS synthetic mock only, no JS errors",
-    "repositoryPytest": "940 passed, 6 skipped",
-    "v7Authority": "497/497 PASS",
-    "globalRuff": "BASELINE_FAIL 895 diagnostics/56 unchanged files; task app lint PASS",
-    "mypy": "BASELINE_FAIL Python-3.11 target vs locked NumPy-2.5.2 3.12-only stub syntax",
-    "taskAcceptance": "BASELINE_INCOMPLETE missing parent oracle artifacts/worktree .venv",
-    "crossFamilyReview": "Initial FINDS_ERROR and one reconciliation FINDS_ERROR; all concrete remaining findings subsequently repaired/tested; reviewer explicitly cleared dark deploy",
-    "privateDataPublished": false
-  },
-  "nextAction": "Deliver voice-GPT setup bundle for owner configuration. Keep Railway inference disabled. Use new development records to compare voice-first source richness and Railway clarification burden; do not spend Venice credit unless owner explicitly reauthorizes live inference.",
+  "constraints": [
+    "TN-001 and main Life Patterns score unchanged",
+    "behavioral classifier sees no birth/chart/predictor/planet labels or evaluator mapping",
+    "planet mapping applied only after behavioral target freeze",
+    "existing development participants remain exploratory",
+    "no paid inference and no Railway deployment",
+    "prospective target remains unfrozen until cross-family methodology check returns or owner waives it",
+    "prospective chart-side predictor also requires exact historical factor conventions or a separately frozen transparent reimplementation"
+  ],
+  "verification": "tasks/cf003-secondary-module-20260929/VERIFICATION.json",
+  "crossFamilyCheck": "UNAVAILABLE after >15 min; no substitute. See CROSS-FAMILY-CHECK.md.",
+  "nextAction": "Commit/push the development-secondary candidate. Continue broad empirical-astrology literature work independently. Before any new prospective CF-003 target cohort, obtain the cross-family methodology verdict (or explicit owner waiver) and freeze/label the exact chart-side factor extraction convention.",
   "stopAdmission": {
-    "parentOutcome": "OPEN_HYBRID_COLLECTION_EXPERIMENT",
-    "currentOperation": "DARK_RAILWAY_PREVIEW_DEPLOYED_AND_VERIFIED",
-    "remainingGap": "Owner-side Custom GPT configuration/participant collection; live Railway inference remains intentionally disabled and spending-gated.",
-    "nextActor": "owner for Custom GPT UI setup and participant use; supervisor for later analysis/import",
-    "authority": "No paid/live inference authorization is active.",
-    "blockerEvidence": "Venice previously returned provider_http_402; participant service is intentionally dark with no gateway credential.",
+    "parentOutcome": "CF003_DEVELOPMENT_SECONDARY_MODULE_ADDED",
+    "currentOperation": "IMPLEMENTATION_COMPLETE_NOT_PROSPECTIVELY_FROZEN",
+    "nextActor": "empirical-astrology research coordinator / later cross-family reviewer",
+    "authority": "Development use on existing records is authorized. Prospective activation is not yet authorized as scientifically frozen.",
+    "blockerEvidence": "Cross-family reviewer returned no result after >15 minutes; exact historical Mastro factor extraction is unresolved.",
     "notPerformed": [
-      "no Venice paid inference",
-      "no OpenRouter spend",
-      "no live participant inference",
-      "no merge to main",
-      "no legacy GPT rewrite"
+      "no prospective target activation",
+      "no paid Venice/OpenRouter inference",
+      "no Railway deployment",
+      "no main-score change",
+      "no merge to main"
     ]
   },
-  "updatedAt": "2026-09-28T21:41:52.833332+00:00",
-  "remaining": "Dark Railway preview complete. Owner can configure/share voice-first ChatGPT collector and collect development records. Before live Railway inference, resolve Venice API credit/access and recorded release debt, update activation helper to the exact reviewed v2.2 build, and explicitly authorize paid/live inference."
+  "updatedAt": "2026-09-29T19:09:00+00:00"
 }

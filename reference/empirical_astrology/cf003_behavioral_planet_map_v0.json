@@ -1,0 +1,91 @@
+{
+  "schema_version": "cf003-behavioral-construct-to-planet-map-v0",
+  "status": "evaluator_only_never_send_to_behavioral_classifier",
+  "candidate_id": "CF-003",
+  "secrecy_rule": "This mapping and the published CF-003 predictor scores are withheld from the behavioral classifier until its ten-construct score record is frozen.",
+  "mapping": [
+    {
+      "construct_id": "T01",
+      "planet": "venus",
+      "existing_chart_blind_role_text": "Values, ethics, boundaries, ideals, integrity, or what is worth protecting.",
+      "existing_role_key": "venus",
+      "target_contract_definition": "Values, ethics, standards, boundaries, ideals, integrity, fairness, or what is treated as worth protecting.",
+      "development_extension_note": null
+    },
+    {
+      "construct_id": "T02",
+      "planet": "pluto",
+      "existing_chart_blind_role_text": "Long-duration transformation, truth-seeking, renewal, or a theme that deepens through major experience.",
+      "existing_role_key": "pluto",
+      "target_contract_definition": "Long-duration transformation, intensity, truth-seeking, renewal, deep restructuring, or themes that deepen through major experience.",
+      "development_extension_note": "Development wording explicitly includes intensity/deep restructuring alongside the existing transformation/deepening role."
+    },
+    {
+      "construct_id": "T03",
+      "planet": "moon",
+      "existing_chart_blind_role_text": "Recurring drive or pressure that gets action moving.",
+      "existing_role_key": "moon",
+      "target_contract_definition": "Recurring inner drive, pressure, pull, or motivational pattern that repeatedly gets action moving.",
+      "development_extension_note": null
+    },
+    {
+      "construct_id": "T04",
+      "planet": "saturn",
+      "existing_chart_blind_role_text": "Recurring discipline, accountability, consequence, or demanding lesson that matures into competence.",
+      "existing_role_key": "saturn",
+      "target_contract_definition": "Recurring discipline, limitation, accountability, consequence, demanding lessons, or competence developed through sustained constraint.",
+      "development_extension_note": null
+    },
+    {
+      "construct_id": "T05",
+      "planet": "sun",
+      "existing_chart_blind_role_text": null,
+      "existing_role_key": null,
+      "new_construct": "Central identity, purpose, and self-expression across roles/environments.",
+      "target_contract_definition": "Ways of being, purpose, identity, or self-expression that remain central to who the person is across roles or environments.",
+      "development_extension_note": "New owner-authorized construct: central identity/purpose/self-expression."
+    },
+    {
+      "construct_id": "T06",
+      "planet": "uranus",
+      "existing_chart_blind_role_text": "Recurring unconventional originality, mutation, or departure from convention.",
+      "existing_role_key": "uranus",
+      "target_contract_definition": "Recurring originality, unconventionality, deviation from convention, mutation, or preference for doing things differently.",
+      "development_extension_note": null
+    },
+    {
+      "construct_id": "T07",
+      "planet": "mercury",
+      "existing_chart_blind_role_text": "Subjects or messages repeatedly expressed in speech, writing, teaching, explanation, advice, or argument.",
+      "existing_role_key": "mercury",
+      "target_contract_definition": "Subjects, messages, ideas, explanations, questions, arguments, teaching themes, or thought-patterns repeatedly expressed across contexts.",
+      "development_extension_note": "Development wording explicitly includes repeated thinking themes alongside the existing communication/message role."
+    },
+    {
+      "construct_id": "T08",
+      "planet": "jupiter",
+      "existing_chart_blind_role_text": "A recurring principle, opportunity pattern, protection, or personal rule associated with sustainable growth.",
+      "existing_role_key": "jupiter",
+      "target_contract_definition": "Recurring growth, opportunity, protection, guiding principles, or personal rules associated with sustainable expansion or learning.",
+      "development_extension_note": null
+    },
+    {
+      "construct_id": "T09",
+      "planet": "mars",
+      "existing_chart_blind_role_text": "A theme that begins immaturely or awkwardly and develops through repeated experience and maturation.",
+      "existing_role_key": "mars",
+      "target_contract_definition": "Recurring action, assertion, initiative, challenge-response, or a theme that develops and matures through repeated experience.",
+      "development_extension_note": "Development wording explicitly adds action/assertion/initiative to the existing maturation-through-experience role."
+    },
+    {
+      "construct_id": "T10",
+      "planet": "neptune",
+      "existing_chart_blind_role_text": "Recurring mystery, imagination, spirituality, obscurity, or a domain difficult for the person to see clearly.",
+      "existing_role_key": "neptune",
+      "target_contract_definition": "Recurring imagination, ambiguity, mystery, spirituality, obscurity, or domains the person experiences as difficult to see clearly.",
+      "development_extension_note": "Development wording renders the existing mystery/imagination/spirituality/opacity role in neutral dominance language."
+    }
+  ],
+  "lineage_source": "reference/core/survey_v2_human_measurement_scoring_contract_v1_0_0.json#/domain_measurement/domain_roles",
+  "sun_addition_source": "Owner-authorized CF-003 secondary-module decision, 2026-09-29: central identity/purpose/self-expression."
+}

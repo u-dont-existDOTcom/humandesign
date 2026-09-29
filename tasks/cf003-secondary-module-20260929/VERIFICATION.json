@@ -1,0 +1,47 @@
+{
+  "schema": "cf003-secondary-module-verification-v0",
+  "recorded_at": "2026-09-29T19:09:00+00:00",
+  "branch": "chat/cf003-secondary-module-20260929",
+  "predictor_scaffold": {
+    "imported_from": "9461567f26029fcb4580d83c602908217cbfc1d8",
+    "published_weighted_score_surface": true,
+    "exact_historical_mastro_factor_extraction_reproduced": false
+  },
+  "checks": {
+    "final_affected": "49 passed",
+    "empirical_astrology": "32 passed after final manifest refresh",
+    "target_code_lint": "Ruff F/E9/I PASS",
+    "diff_check": "PASS",
+    "private_96_turn_packet": {
+      "status": "PASS",
+      "public_participant_text_emitted": false,
+      "evaluator_mapping_present": false,
+      "location": "private local storage only",
+      "record_description": "one private multi-turn development record; details withheld from public Git"
+    }
+  },
+  "test_efficiency": {
+    "elapsed_wall_seconds": 1840.03,
+    "observed_test_seconds": 4.79,
+    "test_share_percent": 0.26,
+    "forced_redundant_green_seconds": 0,
+    "affected_runs": 4,
+    "focused_runs": 4
+  },
+  "scientific_boundaries": {
+    "main_tn001_changed": false,
+    "main_life_patterns_score_changed": false,
+    "literature_model_v1_changed": false,
+    "existing_participants": "exploratory only",
+    "prospective_target_frozen": false,
+    "paid_inference_used": false,
+    "railway_deployed_or_changed": false
+  },
+  "cross_family": {
+    "requested": "Claude Opus 5.5 max via Claude Code subscription",
+    "result": "UNAVAILABLE \u2014 no verdict after >15 minutes and no output",
+    "same_family_substitution": false,
+    "consequence": "Development-secondary candidate may be committed; prospective freeze remains held pending usable cross-family methodology check or explicit owner waiver.",
+    "receipt": "tasks/cf003-secondary-module-20260929/CROSS-FAMILY-CHECK.md"
+  }
+}
