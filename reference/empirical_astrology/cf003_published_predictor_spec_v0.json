@@ -1,0 +1,49 @@
+{
+  "schema_version": "cf003-published-predictor-spec-v0",
+  "status": "development_only_dormant_not_activated",
+  "candidate_id": "CF-003",
+  "title": "Adjusted planetary dominance published seven-factor predictor surface",
+  "source_family": [
+    "Godbout & Coron, Correlation 35(2), 2023, pp.11-29",
+    "Godbout & Coron, Correlation 36(1), 2023, pp.49-60",
+    "Godbout, Correlation 36(2), 2024, pp.33-48"
+  ],
+  "candidate_bodies": [
+    "sun",
+    "moon",
+    "mercury",
+    "venus",
+    "mars",
+    "jupiter",
+    "saturn",
+    "uranus",
+    "neptune",
+    "pluto"
+  ],
+  "published_weights": {
+    "major_aspect_to_moon": 8.3,
+    "five_or_more_major_aspects": 8.2,
+    "modern_ascendant_ruler": 7.6,
+    "placidus_house_12": 5.3,
+    "modern_descendant_ruler": 5.2,
+    "major_aspect_to_ascendant": 4.7,
+    "within_5deg_placidus_house_9_center": 1.9
+  },
+  "unresolved_source_requirements": [
+    "exact historical Mastro build/corpus/settings",
+    "complete chart-conditioned target word-score vectors and denominators",
+    "historical biography texts and cleaning/thesaurus rules",
+    "target ranks and tie handling",
+    "per-person seven-factor predictor values and nine endpoint success vectors",
+    "original 30000-shuffle inputs/algorithm/unrounded null probabilities",
+    "contemporaneous evidence of what was frozen before the N=61 replication"
+  ],
+  "scientific_constraints": [
+    "not imported by LiteratureModelV1",
+    "no production or prospective coefficient",
+    "no inferred tie-breaking",
+    "no claim that published aggregate p-values are calibrated",
+    "activation requires a new Pro decision and held-out validation"
+  ],
+  "pro_checkpoint": "ddf7e69ece28d4704e2f6411762d44340c0d6fa3"
+}\n
