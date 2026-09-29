@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "status": "active",
+  "status": "complete",
   "exclusive_writer": true,
   "owned_branch": "pro/correlation-source-replay-adjudication-20260929",
   "integration_branch": "worker/empirical-astrology-fulltext-wave4-execution",
   "integration_base_sha": "5cc1e5a9028358868570bffc963b95db1833fe37",
   "prior_science_commit": "ede8f5a102127d4dfe215868ab1fafe9fff4afe1",
   "owner_outcome": "Adjudicate only the new source-replay evidence; specify sufficient unpublished materials under the frozen reproduction requirements; publish an append-only Pro decision and report its commit.",
-  "root_outcome_status": "OPEN",
+  "root_outcome_status": "SATISFIED_AT_VERIFIED_ADJUDICATION_PUBLICATION_BOUNDARY",
   "uda_live_commit": "e1ba407cacebe516455fae278d7d748682b47df0",
   "assurance_scope": "Scientific delta decision and branch publication; no model implementation or launch acceptance.",
   "active_contract": [
@@ -65,9 +65,43 @@
     "new spending",
     "main or integration branch mutation"
   ],
-  "current_phase": "local_adjudication_complete_ready_to_publish",
+  "current_phase": "published_and_verified_owner_delivery",
   "guidance_activation": "ACTIVE: branch-local contract refreshed after context recovery; source scope unchanged.",
-  "publication_state": "LOCAL_COMPLETE_REMOTE_UNPUBLISHED",
+  "publication_state": "INTEGRATION_READY",
   "scientific_review_complete": true,
-  "remaining_owner_gap": "Publish and verify this dedicated Pro branch, then deliver report and full commit."
+  "remaining_owner_gap": "Direct delivery of the report and companion package in this response.",
+  "verified_science_commit": "b4b11778b5009e8ef8296c9e36ce261c16eccdbc",
+  "stop_admission": "Current user requested a delta adjudication and dedicated Pro commit; both completed and remotely verified. No new source-data acquisition/contact, arithmetic or model changes authorized by this request.",
+  "application_gate": [
+    {
+      "rule": "Owner delta-only task",
+      "status": "PASS",
+      "evidence": "Published decision, validation receipt and exact remote readback; final delivery/timestamp checked at response boundary."
+    },
+    {
+      "rule": "Evidence class and scope",
+      "status": "PASS",
+      "evidence": "Published decision, validation receipt and exact remote readback; final delivery/timestamp checked at response boundary."
+    },
+    {
+      "rule": "Cohort provenance",
+      "status": "PASS",
+      "evidence": "Published decision, validation receipt and exact remote readback; final delivery/timestamp checked at response boundary."
+    },
+    {
+      "rule": "Frozen source-reproduction requirements",
+      "status": "PASS",
+      "evidence": "Published decision, validation receipt and exact remote readback; final delivery/timestamp checked at response boundary."
+    },
+    {
+      "rule": "Immutable science and branch isolation",
+      "status": "PASS",
+      "evidence": "Published decision, validation receipt and exact remote readback; final delivery/timestamp checked at response boundary."
+    },
+    {
+      "rule": "Publication and delivery",
+      "status": "PASS",
+      "evidence": "Published decision, validation receipt and exact remote readback; final delivery/timestamp checked at response boundary."
+    }
+  ]
 }

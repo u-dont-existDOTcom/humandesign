@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "status": "SCIENCE_COMMIT_PUBLISHED_AND_REMOTE_READBACK_VERIFIED",
+  "checked_at_utc": "2026-09-29T03:09:41.125887+00:00",
+  "repository": "u-dont-existDOTcom/humandesign",
+  "branch": "pro/correlation-source-replay-adjudication-20260929",
+  "review_base_commit": "5cc1e5a9028358868570bffc963b95db1833fe37",
+  "verified_science_commit": "b4b11778b5009e8ef8296c9e36ce261c16eccdbc",
+  "remote_ref_at_verification": "b4b11778b5009e8ef8296c9e36ce261c16eccdbc",
+  "remote_files": [
+    {
+      "path": "notes/empirical_astrology/master_v2/CORRELATION_SOURCE_REPLAY_CROSS_FAMILY_20260929.md",
+      "sha256": "c653acfefc791f42a12bef47f45a08dac9067124ea1b84ba001105ca7beccf4c",
+      "git_blob": "9ec9a5b7f82273cd2c445232dc3c4f8c45d188a0",
+      "remote_readback_exact": true
+    },
+    {
+      "path": "notes/empirical_astrology/master_v2/CORRELATION_SOURCE_REPLAY_PRO_VALIDATION_20260929.json",
+      "sha256": "7049eb5aed067d5dbcd4d939914ee18882be91bdb92ddd9e708ed8763aa9c69b",
+      "git_blob": "440c3ec4ba0fc257380cb9e92253774e5d1d6f87",
+      "remote_readback_exact": true
+    },
+    {
+      "path": "notes/empirical_astrology/master_v2/CORRELATION_SOURCE_REPLAY_REVIEW_PACKET_20260929.md",
+      "sha256": "e114a83b0fd257f79020ad9688608d1d72c8ddc3dbb446a3c92b2336fd3527d5",
+      "git_blob": "d9d72ac795a747a8b077958a067eec6f9086e39b",
+      "remote_readback_exact": true
+    },
+    {
+      "path": "notes/empirical_astrology/master_v2/PRO_DECISION_CORRELATION_SOURCE_REPLAY_20260929.md",
+      "sha256": "3bf75922576940bec063cda495176af6262d1eb7d0a6a3500ff451f1ebfa7504",
+      "git_blob": "bc94c1554fc84e98dd0bcbd0040aa7c41870bdb5",
+      "remote_readback_exact": true
+    },
+    {
+      "path": "reference/empirical_astrology/literature_model_v1b_source_replay_gate_20260929.json",
+      "sha256": "8eaa5e4757e5ea6846844b2a55f9d1e1ea8838861ddce688c001c0673aa40da0",
+      "git_blob": "909f2baddefa8bee32f4b62920ead7ef98b20e64",
+      "remote_readback_exact": true
+    },
+    {
+      "path": "state/CORRELATION_SOURCE_REPLAY_PRO_REVIEW_20260929.json",
+      "sha256": "75bca9187bb3d3a13866d5c36031a074ab002387a654582a35849550a788a503",
+      "git_blob": "ca2063ddb80bb198cfe854c1a91b1b855e3f4c07",
+      "remote_readback_exact": true
+    }
+  ],
+  "independent_connector_readback": "Decision fetched at exact science commit through connected GitHub fetch_file.",
+  "scope": "Six append-only Pro additions; all ten replay and eleven protected prior files unchanged. No main/evidence branch mutation.",
+  "broader_status": "No feature activation; original source-level reproduction and null remain unavailable, not negative findings. Existing implementation/launch holds remain.",
+  "delivery_pending": "Science publication verified; owner report and companion package are next."
+}
