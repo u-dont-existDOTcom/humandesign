@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "status": "SCIENCE_COMMIT_PUBLISHED_AND_VERIFIED",
+  "repository": "u-dont-existDOTcom/humandesign",
+  "branch": "pro/correlation-archive-review-20260929",
+  "review_base_commit": "9566ceb1d3578b6a181568e23422f7c913ad351c",
+  "verified_science_commit": "ede8f5a102127d4dfe215868ab1fafe9fff4afe1",
+  "verified_remote_ref": "ede8f5a102127d4dfe215868ab1fafe9fff4afe1",
+  "scope": "11 additions only; seven protected historical files unchanged. No PDFs, raw issue text, participant outcomes or fitted model changes.",
+  "remote_tree_records": [
+    {
+      "path": "notes/empirical_astrology/master_v2/CORRELATION_CROSS_FAMILY_REVIEW_20260929.md",
+      "git_blob": "c7df2f35edeb5069535bd61cd85d7c02d4bc7b37",
+      "sha256": "5495d2d9df81a647b28a82d06f79300fb9b14f9e97906b53798e835295c8d24c",
+      "remote_tree_match": true
+    },
+    {
+      "path": "notes/empirical_astrology/master_v2/CORRELATION_REPRODUCTION_SPEC_20260929.md",
+      "git_blob": "3e7bb3a009d24dd10d67147f71c4104107c22866",
+      "sha256": "5932b6b6dc1e54d26f109787d79b72fe3e0556ca4f5756c8677f7525ec1007b2",
+      "remote_tree_match": true
+    },
+    {
+      "path": "notes/empirical_astrology/master_v2/CORRELATION_REVIEW_BUILD_MANIFEST_20260929.json",
+      "git_blob": "a2ddd183aab6c35296c02c6fb4943c580e237789",
+      "sha256": "aa4885c6641174b4237779a576d529be898b2bffb5e6dce0964bda0de73c91cf",
+      "remote_tree_match": true
+    },
+    {
+      "path": "notes/empirical_astrology/master_v2/CORRELATION_VALIDATION_RECEIPT_20260929.json",
+      "git_blob": "90fb3783f49e4607aea4fde87ca9d1c9d2db1d3f",
+      "sha256": "62ab1530dc781ff3b6961b733258db9d4ede009ee750596c16d2a71843a45ac9",
+      "remote_tree_match": true
+    },
+    {
+      "path": "notes/empirical_astrology/master_v2/PRO_DECISION_POST_CORRELATION_20260929.md",
+      "git_blob": "89c8730fe13af9c143de6a70faf80269c9ee1b87",
+      "sha256": "d7e037b8d7454ad47ac27b3a2dfb6d7ce15144b81f02d0e3b945251d3781dd1e",
+      "remote_tree_match": true
+    },
+    {
+      "path": "reference/empirical_astrology/correlation_archive_arithmetic_20260929.json",
+      "git_blob": "69849380e03ab2eaaa168f33a981d01b166118a7",
+      "sha256": "a29b43a850fc91a0c07c6db9bf23ac7b77e3242f03a7850efd902318b01a5418",
+      "remote_tree_match": true
+    },
+    {
+      "path": "reference/empirical_astrology/correlation_article_dispositions_20260929.json",
+      "git_blob": "dea4fb3ef537fc6e539a1bb103b6ed67d0fc6493",
+      "sha256": "2f2ede738f72633d6caca62f808be4941deb6c9375221f5075c1e78830e2d03e",
+      "remote_tree_match": true
+    },
+    {
+      "path": "reference/empirical_astrology/correlation_cohort_graph_20260929.json",
+      "git_blob": "4a27bfef4261569a42869c3b88ce45ac2278314c",
+      "sha256": "ca803badc2e7dd2f1d0318ce07ba94fb9e68f553100cbc70c4f6bf1d59da41da",
+      "remote_tree_match": true
+    },
+    {
+      "path": "reference/empirical_astrology/literature_model_v1b_post_correlation_gate.json",
+      "git_blob": "4faf8cb2cdaa5314f67de7d807e71b398e14b790",
+      "sha256": "8c37ac5abdb53667be1bd0d27b515448ad29a1464252ce103d4dde4136f1778e",
+      "remote_tree_match": true
+    },
+    {
+      "path": "scripts/correlation_archive_arithmetic_20260929.py",
+      "git_blob": "35a94823e4491f13afe212b7baf105829b362b09",
+      "sha256": "8cee9c16b493869e61bdace963d3d088cc6df2f40a472b7c7ad31cb03d6d6975",
+      "remote_tree_match": true
+    },
+    {
+      "path": "state/CORRELATION_PRO_REVIEW_20260929.json",
+      "git_blob": "ed256de85651e4146fe65e297d4216d22883a6b9",
+      "sha256": "4c19b51e12ef978eb2c3adf23797c4b49349426ed8765cc1dba27814cd705a69",
+      "remote_tree_match": true
+    }
+  ],
+  "contents_api_readback_exact": [
+    "reference/empirical_astrology/literature_model_v1b_post_correlation_gate.json",
+    "notes/empirical_astrology/master_v2/PRO_DECISION_POST_CORRELATION_20260929.md"
+  ],
+  "connected_GitHub_readback": "Pro decision fetched successfully at exact science commit through connected GitHub fetch_file.",
+  "integration": "Published on isolated Pro branch; neither main nor the evidence branch was modified.",
+  "broader_research_status": "Unresolved source replay/participant intersections and pre-existing Wave4 implementation/launch holds remain."
+}

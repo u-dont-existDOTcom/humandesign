@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "status": "active",
-  "exclusive_writer": true,
+  "status": "completed",
+  "exclusive_writer": false,
   "owned_branch": "pro/correlation-archive-review-20260929",
   "integration_branch": "worker/empirical-astrology-fulltext-wave4-execution",
   "integration_base_sha": "9566ceb1d3578b6a181568e23422f7c913ad351c",
   "scope": "Pro adjudication of the 25-article Correlation archive handoff plus two adjacent sources; append-only decision and audit artifacts; no source/model/outcome changes",
   "owner_request": "Follow attached Pro handoff after authenticated Correlation retrieval",
-  "root_outcome": "Scientific archive adjudication complete; publication/readback pending. Broader replication and existing implementation/launch holds remain open.",
+  "root_outcome": "Archive scientific-adjudication work package completed and remotely verified. Broader scientific replication and pre-existing implementation/launch holds remain open.",
   "constraints": [
     "Preserve historical scientific decisions and protocol bytes",
     "No owner-known or untouched participant outcomes",
@@ -31,6 +31,7 @@
   ],
   "uda_commit": "e1ba407cacebe516455fae278d7d748682b47df0",
   "publication_transport": "Existing authenticated local gh/git if available; connected GitHub API fallback already discovered",
-  "current_phase": "final_review_complete_ready_for_publication",
-  "cross_family_verdict": "AGREES after one reconciliation; reviewer errors and non-adopted aside recorded"
+  "current_phase": "published_and_verified",
+  "cross_family_verdict": "AGREES after one reconciliation; reviewer errors and non-adopted aside recorded",
+  "verified_science_commit": "ede8f5a102127d4dfe215868ab1fafe9fff4afe1"
 }
