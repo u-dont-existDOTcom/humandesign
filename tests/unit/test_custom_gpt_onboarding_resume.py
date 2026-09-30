@@ -20,6 +20,8 @@ def test_builder_config_has_user_facing_start_paths() -> None:
     assert "Continue my existing interview from the answers I’m attaching." in text
     assert "A Custom GPT cannot send a message before the user sends or taps something." in text
     assert "research-use consent" in text
+    assert "Enable **Code Interpreter & Data Analysis**" in text
+    assert "does not transmit participant records to Joel automatically" in text
 
 
 def test_instructions_orient_then_resume_without_restart() -> None:
@@ -30,19 +32,45 @@ def test_instructions_orient_then_resume_without_restart() -> None:
     assert "consent to research use" in normalized
     assert "without another “ready” step" in normalized
     assert "do not restart or re-ask resolved questions" in normalized
-    assert "word-for-word as imported source material" in normalized
+    assert "RECOVERY-GUIDE-v2.md" in normalized
     assert "ask only useful unresolved distinctions" in normalized
+    assert "deliver **both frozen records**" in text
+    assert "life-patterns-participant-export.json" in text
+    assert "life-patterns-cf003-secondary-v0.json" in text
+
+
+def test_recovery_guide_keeps_hale_derived_safeguards() -> None:
+    text = (CUSTOM / "RECOVERY-GUIDE-v2.md").read_text(encoding="utf-8")
+    required = (
+        "word-for-word from the received record",
+        "question wording is the exact original prompt",
+        "cannot by itself prove the participant saw that condition",
+        "A missing hedge, exception, correction, or condition is not evidence",
+        "Editor-written headings, summaries, labels, or third-person paraphrases",
+        "cannot retroactively verify original question wording",
+        "Do not require reconfirmation of every old answer",
+        "Missing metadata stays unknown",
+    )
+    for phrase in required:
+        assert phrase in text
 
 
 def test_manifest_pins_builder_config_and_instruction_budget() -> None:
     manifest = json.loads((CUSTOM / "life_patterns_voice_gpt_manifest_v2.json").read_text())
     cfg = ROOT / manifest["builder_config"]["path"]
     instructions = ROOT / manifest["instructions"]["path"]
+    recovery = next(
+        item
+        for item in manifest["knowledge_files"]
+        if item["path"].endswith("RECOVERY-GUIDE-v2.md")
+    )
+    recovery_path = ROOT / recovery["path"]
     assert hashlib.sha256(cfg.read_bytes()).hexdigest() == manifest["builder_config"]["sha256"]
     assert (
         hashlib.sha256(instructions.read_bytes()).hexdigest()
         == manifest["instructions"]["sha256"]
     )
+    assert hashlib.sha256(recovery_path.read_bytes()).hexdigest() == recovery["sha256"]
     text = instructions.read_text(encoding="utf-8")
     assert manifest["instructions"]["characters"] == len(text)
     assert manifest["instructions"]["strict_linebreak_count"] == len(text) + text.count("\n")
@@ -64,3 +92,5 @@ def test_release_zip_contains_builder_config_and_resume_instructions() -> None:
         assert "Start my Life Patterns interview." in config
         assert "Continue my existing interview" in config
         assert "do not restart or re-ask resolved questions" in instructions
+        assert any(name.endswith("/knowledge/RECOVERY-GUIDE-v2.md") for name in names)
+        assert "deliver **both frozen records**" in archive.read(instructions_name).decode()

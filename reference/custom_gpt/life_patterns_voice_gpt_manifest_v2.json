@@ -1,15 +1,15 @@
 {
   "schema": "life-patterns-voice-gpt-bundle-v1",
-  "version": "2026-09-30.2",
+  "version": "2026-09-30.3",
   "builder_config": {
     "path": "reference/custom_gpt/GPT-BUILDER-CONFIG.md",
-    "sha256": "a04fcfc1cadd2a78813ba789a37c6816384a6f54fb69e0e793defb2c0ca60a58"
+    "sha256": "d7df3e4c12f67a375e96ce508891e6b06e5de0a55c8b99c54c3e51b00a8db5f5"
   },
   "instructions": {
     "path": "reference/custom_gpt/life_patterns_voice_interviewer_v2.md",
-    "sha256": "d4a47df9180b7f85ed856d7ef12c9b9b3c6f9323fbf9c1da6cb2b3a5e5e2ced0",
-    "characters": 7778,
-    "strict_linebreak_count": 7911
+    "sha256": "cb9dda1c50062bf3edcfa06c7bd2a0df538aee2e3ab21c17de4e316c426c868e",
+    "characters": 7503,
+    "strict_linebreak_count": 7636
   },
   "knowledge_files": [
     {
@@ -23,6 +23,10 @@
     {
       "path": "tasks/scenario-survey-v7-redesign-20260922/EVIDENCE-GUIDE-v7.json",
       "sha256": "f87916dfdf6c6616e7787057b870fbda60858a42747763bb9a044d225cd4729c"
+    },
+    {
+      "path": "reference/custom_gpt/RECOVERY-GUIDE-v2.md",
+      "sha256": "63801c668f337ec842a83071f6db7c6ed421ea2626088582b3490d9fc68d7ddd"
     },
     {
       "path": "reference/empirical_astrology/cf003_secondary_question_module_v0.json",

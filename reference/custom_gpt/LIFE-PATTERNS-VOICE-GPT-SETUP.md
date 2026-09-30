@@ -1,6 +1,6 @@
 # Life Patterns voice-first ChatGPT collector
 
-Version: 2026-09-30.2. Development collection surface.
+Version: 2026-09-30.3. Development collection surface.
 
 ## Purpose
 
@@ -12,12 +12,14 @@ This is a collection-mode experiment. A voice record is not assumed equivalent t
 
 Create/share a GPT using exactly:
 
-- Builder fields: `GPT-BUILDER-CONFIG.md` (name, description, conversation starters)
+- Builder fields: `GPT-BUILDER-CONFIG.md` (name, description, conversation starters, capability setting)
+- Enable **Code Interpreter & Data Analysis** so downloadable JSON files can be generated when supported.
 - Instructions: `life_patterns_voice_interviewer_v2.md`
 - Knowledge:
   - `tasks/scenario-survey-v7-redesign-20260922/INTERVIEW-PROTOCOL-v6.md`
   - `tasks/scenario-survey-v7-redesign-20260922/interviewer-bank-v7.json`
   - `tasks/scenario-survey-v7-redesign-20260922/EVIDENCE-GUIDE-v7.json`
+  - `reference/custom_gpt/RECOVERY-GUIDE-v2.md`
   - `reference/empirical_astrology/cf003_secondary_question_module_v0.json` (development-secondary only)
 
 Do **not** attach birth data, chart output, scores, candidate ranks, or participant-specific prior interpretation. The manifest `life_patterns_voice_gpt_manifest_v2.json` pins the source hashes and instruction size. The CF-003 secondary module is **required in this bundle**; “development-secondary” describes its scientific status, not optional activation.
@@ -28,11 +30,12 @@ The deployable instruction block is below 8,000 characters on the repository's c
 
 1. Open the shared GPT in a normal persistent chat. A GPT cannot speak first: tap a conversation starter or send a first message.
 2. For a new interview, tap **Start my Life Patterns interview.** The GPT gives the consent/privacy/mode framing and begins after the participant answers those setup questions.
-3. For an existing interview, attach the prior response record and tap **Continue my existing interview from the answers I’m attaching.** The GPT preserves received participant Q&A, does not restart, and asks only useful unresolved distinctions.
+3. For an existing interview, attach the prior response record and tap **Continue my existing interview from the answers I’m attaching.** The GPT follows `RECOVERY-GUIDE-v2.md`, preserves the received source/provenance correctly, does not restart, and asks only useful unresolved distinctions.
 4. Do not provide birth date/time/place or chart information.
 5. At natural completion, review the behavior-only summary and correct material errors/conditions.
 6. Freeze the main `life-patterns-participant-export.json` first. Then ask all three CF-003 secondary questions before any chart reveal and freeze them separately as `life-patterns-cf003-secondary-v0.json`. None of it alters the primary record or score.
-7. New visible-chat turns are model-exported/unverified unless reviewed. Imported records retain their declared source fidelity rather than being mislabeled as verbatim chat. The research coordinator may later use Railway for source-preserving clarification.
+7. At completion, give the participant **both** JSON records as downloadable files when supported; otherwise give both complete labeled JSON objects. They send both to Joel. This bundle has no submission Action, so it does **not** transmit records to Joel automatically.
+8. New visible-chat turns are model-exported/unverified unless reviewed. Imported records retain their declared source fidelity rather than being mislabeled as verbatim chat. The research coordinator may later use Railway for source-preserving clarification.
 
 ## Measurement decision
 
