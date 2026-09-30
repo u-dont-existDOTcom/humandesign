@@ -19,7 +19,7 @@ Create/share a GPT using exactly:
   - `tasks/scenario-survey-v7-redesign-20260922/EVIDENCE-GUIDE-v7.json`
   - `reference/empirical_astrology/cf003_secondary_question_module_v0.json` (development-secondary only)
 
-Do **not** attach birth data, chart output, scores, candidate ranks, or participant-specific prior interpretation. The manifest `life_patterns_voice_gpt_manifest_v2.json` pins the source hashes and instruction size.
+Do **not** attach birth data, chart output, scores, candidate ranks, or participant-specific prior interpretation. The manifest `life_patterns_voice_gpt_manifest_v2.json` pins the source hashes and instruction size. The CF-003 secondary module is **required in this bundle**; “development-secondary” describes its scientific status, not optional activation.
 
 The deployable instruction block is below 8,000 characters on the repository's conservative line-break count. The bank/guide are reference material, while the must-follow collection/accuracy rules stay in Instructions.
 
@@ -30,7 +30,7 @@ The deployable instruction block is below 8,000 characters on the repository's c
 3. Do not provide birth date/time/place or chart information.
 4. The interviewer asks only useful nonredundant behavioral questions. The bank is not a quota.
 5. At natural completion, review the behavior-only summary and correct material errors/conditions.
-6. Freeze the main `life-patterns-participant-export.json` first. If the CF-003 development module is enabled, ask its three secondary questions before any chart reveal and freeze them separately as `life-patterns-cf003-secondary-v0.json`. Follow the module's secondary-record linkage and post-freeze metadata rules exactly; none of it alters the primary record or score.
+6. Freeze the main `life-patterns-participant-export.json` first. Then ask all three CF-003 secondary questions before any chart reveal and freeze them separately as `life-patterns-cf003-secondary-v0.json`. Follow the module's secondary-record linkage and post-freeze metadata rules exactly; none of it alters the primary record or score.
 7. Transcript fidelity is model-exported/unverified unless the participant reviewed it, and collector evidence is unverified. The research coordinator may import the primary record into Railway; Railway preserves the source but does not treat GPT-authored evidence as admitted.
 
 ## Measurement decision
