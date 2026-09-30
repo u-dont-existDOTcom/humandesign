@@ -1,11 +1,15 @@
 {
   "schema": "life-patterns-voice-gpt-bundle-v1",
-  "version": "2026-09-30",
+  "version": "2026-09-30.2",
+  "builder_config": {
+    "path": "reference/custom_gpt/GPT-BUILDER-CONFIG.md",
+    "sha256": "a04fcfc1cadd2a78813ba789a37c6816384a6f54fb69e0e793defb2c0ca60a58"
+  },
   "instructions": {
     "path": "reference/custom_gpt/life_patterns_voice_interviewer_v2.md",
-    "sha256": "fd4bd2e990afdc842f6e1b9511850d0cf60509f484e966899be94cee68a3ccc8",
-    "characters": 7806,
-    "strict_linebreak_count": 7942
+    "sha256": "d4a47df9180b7f85ed856d7ef12c9b9b3c6f9323fbf9c1da6cb2b3a5e5e2ced0",
+    "characters": 7778,
+    "strict_linebreak_count": 7911
   },
   "knowledge_files": [
     {

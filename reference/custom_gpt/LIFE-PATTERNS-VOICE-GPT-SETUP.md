@@ -1,6 +1,6 @@
 # Life Patterns voice-first ChatGPT collector
 
-Version: 2026-09-28. Development collection surface.
+Version: 2026-09-30.2. Development collection surface.
 
 ## Purpose
 
@@ -12,6 +12,7 @@ This is a collection-mode experiment. A voice record is not assumed equivalent t
 
 Create/share a GPT using exactly:
 
+- Builder fields: `GPT-BUILDER-CONFIG.md` (name, description, conversation starters)
 - Instructions: `life_patterns_voice_interviewer_v2.md`
 - Knowledge:
   - `tasks/scenario-survey-v7-redesign-20260922/INTERVIEW-PROTOCOL-v6.md`
@@ -25,13 +26,13 @@ The deployable instruction block is below 8,000 characters on the repository's c
 
 ## Participant workflow
 
-1. Open the shared GPT in a normal persistent chat.
-2. Use voice, text, or both. Long spoken answers are welcome. The interviewer records whether optional earlier-life comparisons are welcome and confirms the actual voice/text/mixed mode at the end.
-3. Do not provide birth date/time/place or chart information.
-4. The interviewer asks only useful nonredundant behavioral questions. The bank is not a quota.
+1. Open the shared GPT in a normal persistent chat. A GPT cannot speak first: tap a conversation starter or send a first message.
+2. For a new interview, tap **Start my Life Patterns interview.** The GPT gives the consent/privacy/mode framing and begins after the participant answers those setup questions.
+3. For an existing interview, attach the prior response record and tap **Continue my existing interview from the answers I’m attaching.** The GPT preserves received participant Q&A, does not restart, and asks only useful unresolved distinctions.
+4. Do not provide birth date/time/place or chart information.
 5. At natural completion, review the behavior-only summary and correct material errors/conditions.
-6. Freeze the main `life-patterns-participant-export.json` first. Then ask all three CF-003 secondary questions before any chart reveal and freeze them separately as `life-patterns-cf003-secondary-v0.json`. Follow the module's secondary-record linkage and post-freeze metadata rules exactly; none of it alters the primary record or score.
-7. Transcript fidelity is model-exported/unverified unless the participant reviewed it, and collector evidence is unverified. The research coordinator may import the primary record into Railway; Railway preserves the source but does not treat GPT-authored evidence as admitted.
+6. Freeze the main `life-patterns-participant-export.json` first. Then ask all three CF-003 secondary questions before any chart reveal and freeze them separately as `life-patterns-cf003-secondary-v0.json`. None of it alters the primary record or score.
+7. New visible-chat turns are model-exported/unverified unless reviewed. Imported records retain their declared source fidelity rather than being mislabeled as verbatim chat. The research coordinator may later use Railway for source-preserving clarification.
 
 ## Measurement decision
 

@@ -1,6 +1,15 @@
 # Life Patterns Voice GPT — latest bundle
 
-Built from `chat/hybrid-voice-cost-optimization-20260928` after PRs #47, #48, #45, and #49.
+Built from the current `chat/hybrid-voice-cost-optimization-20260928` parent through PR #51, with the 2026-09-30.2 onboarding/resume revision.
+
+## Configure the GPT builder
+
+Open `GPT-BUILDER-CONFIG.md` and copy its exact:
+- Name
+- Description
+- Conversation starters
+
+A Custom GPT cannot send the first message on its own. Participants start by tapping a conversation starter or sending a message. The Instructions then make the GPT give the consent/privacy/mode orientation and begin.
 
 ## Put in GPT Instructions
 
@@ -16,6 +25,14 @@ Upload all four files in `knowledge/`:
 4. `cf003_secondary_question_module_v0.json`
 
 The fourth file is the new research-derived CF-003 secondary question module.
+
+## Starting or resuming
+
+For a new participant, tap **Start my Life Patterns interview.**
+
+For somebody with an existing interview, attach their prior response record and tap **Continue my existing interview from the answers I’m attaching.** The GPT must preserve received participant Q&A, avoid restarting or repeating resolved questions, and ask only useful unresolved distinctions.
+
+On ChatGPT web, an existing old interview chat can alternatively bring in this GPT with `@`; the next message goes to the GPT while retaining that conversation's context.
 
 ## CF-003 timing
 
