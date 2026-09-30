@@ -17,6 +17,12 @@ A private voice-or-text research interview about how you actually respond across
 3. Continue this interview without repeating questions I’ve already answered.
 4. I want to do the interview mainly by voice.
 
+## Capabilities
+
+Enable **Code Interpreter & Data Analysis**. OpenAI's current troubleshooting guidance says this should be enabled when a custom GPT needs to generate downloadable files. This lets the interview finish with downloadable JSON files when the runtime supports file generation.
+
+No external Action is required for this bundle; it does not transmit participant records to Joel automatically.
+
 ## Expected opening behavior
 
 A Custom GPT cannot send a message before the user sends or taps something. When the participant taps a starter or sends any first message, the GPT Instructions require it to immediately:

@@ -1,6 +1,6 @@
 # Life Patterns Voice GPT — latest bundle
 
-Built from the current `chat/hybrid-voice-cost-optimization-20260928` parent through PR #51, with the 2026-09-30.2 onboarding/resume revision.
+Built from the current `chat/hybrid-voice-cost-optimization-20260928` parent through PR #52, with the 2026-09-30.3 recovery/export revision.
 
 ## Configure the GPT builder
 
@@ -8,6 +8,8 @@ Open `GPT-BUILDER-CONFIG.md` and copy its exact:
 - Name
 - Description
 - Conversation starters
+
+Also enable **Code Interpreter & Data Analysis** in the GPT's Capabilities so it can create downloadable JSON files when supported.
 
 A Custom GPT cannot send the first message on its own. Participants start by tapping a conversation starter or sending a message. The Instructions then make the GPT give the consent/privacy/mode orientation and begin.
 
@@ -18,13 +20,14 @@ Copy the entire contents of:
 
 ## Upload as GPT Knowledge
 
-Upload all four files in `knowledge/`:
+Upload all five files in `knowledge/`:
 1. `INTERVIEW-PROTOCOL-v6.md`
 2. `interviewer-bank-v7.json`
 3. `EVIDENCE-GUIDE-v7.json`
-4. `cf003_secondary_question_module_v0.json`
+4. `RECOVERY-GUIDE-v2.md`
+5. `cf003_secondary_question_module_v0.json`
 
-The fourth file is the new research-derived CF-003 secondary question module.
+The recovery guide carries the detailed Hâle-derived recovery/provenance safeguards. The fifth file is the research-derived CF-003 secondary question module.
 
 ## Starting or resuming
 
@@ -39,7 +42,7 @@ On ChatGPT web, an existing old interview chat can alternatively bring in this G
 The main Life Patterns record is completed and frozen first.
 Then ask all three CF-003 questions before any chart/predictor reveal.
 Freeze those answers separately as `life-patterns-cf003-secondary-v0.json`.
-Do not merge them into the primary record or primary score.
+Do not merge them into the primary record or primary score. At the end, the participant should receive **both** JSON records/files and send both to Joel. The current bundle does not automatically submit them to Joel.
 
 ## Important status
 

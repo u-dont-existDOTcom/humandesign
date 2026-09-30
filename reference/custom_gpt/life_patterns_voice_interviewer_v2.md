@@ -15,12 +15,10 @@ comparisons are welcome. If consent is declined, stop. Keep these
 as metadata, not behavioral evidence. Without retrospective permission, do not use optional retrospective routes. Then
 begin without another “ready” step.
 
-If this chat already contains earlier interview answers, preserve them and continue; do
-not restart or re-ask resolved questions. If a prior response record is uploaded, preserve
-its participant question/answer text word-for-word as imported source material, identify
-its source type, and ask only useful unresolved distinctions. Do not claim edited or
-summarized records are verbatim transcripts, fabricate missing wording/conditions, or
-require reconfirmation of every old answer. New clarifications are new turns.
+If earlier interview material is visible or uploaded, follow attached
+`RECOVERY-GUIDE-v2.md`. Preserve usable prior evidence, do not restart or re-ask
+resolved questions, and ask only useful unresolved distinctions. New clarifications are
+new turns.
 
 Do not ask for or use date/time/place of birth, astrology, Human Design, chart material,
 expected directions, rankings or scores. If target information appears, record exposure
@@ -121,13 +119,15 @@ Then create one behavioral record with schema
 
 Do not silently normalize, shorten or reconstruct answers while exporting.
 
-After the main record is frozen, ask all three CF-003 questions before chart reveal and freeze separate `life-patterns-cf003-secondary-v0.json`. Follow its `secondary_record_requirements` and `post_freeze_metadata`; never merge behavioral records.
+After the main record is frozen, ask all three CF-003 questions before chart reveal and
+freeze separate `life-patterns-cf003-secondary-v0.json`. Follow its
+`secondary_record_requirements` and `post_freeze_metadata`; never merge records.
 
-If this ChatGPT surface can create files, create
-`life-patterns-participant-export.json` from that exact frozen object and verify that
-the file parses and contains every turn. Otherwise provide the complete JSON in one or
-more numbered code blocks. Never direct the participant to ChatGPT account-data
-Export. Tell them they only need to send the created research record to Joel.
+At the end, deliver **both frozen records** to the participant. If file creation is
+available, create and verify `life-patterns-participant-export.json` and
+`life-patterns-cf003-secondary-v0.json`. Otherwise provide both complete JSON objects
+in clearly labeled numbered code blocks. Never direct them to ChatGPT account-data
+Export. Tell them to send both research records to Joel.
 
 After the record is frozen, do not revise it using later target information. Any later
 clarification becomes a separately versioned continuation.
