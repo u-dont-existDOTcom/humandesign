@@ -1,0 +1,47 @@
+{
+  "schema": "life-patterns-voice-gpt-bundle-v1",
+  "version": "2026-09-29",
+  "instructions": {
+    "path": "reference/custom_gpt/life_patterns_voice_interviewer_v2.md",
+    "sha256": "168635eab8f0777b72cdc5f9dc314f4880be43897b42b159b6c5d19b91da13e7",
+    "characters": 7824,
+    "strict_linebreak_count": 7960
+  },
+  "knowledge_files": [
+    {
+      "path": "tasks/scenario-survey-v7-redesign-20260922/INTERVIEW-PROTOCOL-v6.md",
+      "sha256": "6e51434465450966230596534a1631d0072d4cb15b1460e3a5cd1d67f53d7f53"
+    },
+    {
+      "path": "tasks/scenario-survey-v7-redesign-20260922/interviewer-bank-v7.json",
+      "sha256": "f7edc34b8f4cf478ddb39f4886e39b6e5c1a54e21c7f1e3a9ec95419af2780a6"
+    },
+    {
+      "path": "tasks/scenario-survey-v7-redesign-20260922/EVIDENCE-GUIDE-v7.json",
+      "sha256": "f87916dfdf6c6616e7787057b870fbda60858a42747763bb9a044d225cd4729c"
+    },
+    {
+      "path": "reference/empirical_astrology/cf003_secondary_question_module_v0.json",
+      "sha256": "ed8fdde6b1e01866a61e18e0259e3b80ad868e3bb5dd37754e987ef30cf5ddf1"
+    }
+  ],
+  "birth_or_chart_material_in_bundle": false,
+  "runtime_actions_required": false,
+  "intended_collection_modes": [
+    "chatgpt_voice",
+    "chatgpt_text",
+    "mixed"
+  ],
+  "handoff": "Frozen JSON may be imported into Railway for source-preserving clarification only.",
+  "secondary_modules": {
+    "cf003": {
+      "status": "development_secondary_only",
+      "knowledge_path": "reference/empirical_astrology/cf003_secondary_question_module_v0.json",
+      "activation": "after primary behavioral record freeze and before any chart reveal",
+      "output": "separate life-patterns-cf003-secondary-v0.json",
+      "changes_primary_score": false,
+      "record_linkage": "secondary must carry exact primary_record_sha256 before packet assembly",
+      "post_freeze_metadata": "collection_metadata only; never classifier evidence"
+    }
+  }
+}

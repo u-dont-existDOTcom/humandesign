@@ -1,0 +1,43 @@
+{
+  "schema_version": "cf003-secondary-question-module-v0",
+  "status": "development_secondary_candidate_not_primary",
+  "activation": "Only after the main behavioral record is frozen and before any birth/chart/predictor reveal. Store as a separate secondary-module record; never alter the primary score.",
+  "participant_blinding": [
+    "Do not show construct labels, astrology terms, body names, predictions, or chart information.",
+    "Do not state that the questions are designed to rank hidden constructs.",
+    "Preserve exact participant wording, conditions, uncertainty, and corrections."
+  ],
+  "questions": [
+    {
+      "question_id": "CF003-ID-01",
+      "purpose": "Add neutral autobiographical continuity evidence without naming or paraphrasing any one hidden construct.",
+      "question": "Across your life, what patterns in how you act or what you care about have stayed most consistent, if any? Give at least one earlier example and one current example. Also mention something that changed substantially so we do not mistake general importance for continuity."
+    },
+    {
+      "question_id": "CF003-CENTRAL-01",
+      "purpose": "Add chart-blind comparative centrality evidence across already-described recurring patterns.",
+      "question": "Across your life, including important patterns we may not have discussed yet, which two or three recurring patterns most shape your important choices, priorities, or ways you act across different settings? Give concrete examples rather than category labels."
+    },
+    {
+      "question_id": "CF003-PERIPH-01",
+      "purpose": "Add negative/contrast evidence so real-but-peripheral themes do not become dominant merely because they were discussed.",
+      "question": "Which recurring patterns you have mentioned are real but feel secondary, situational, or much less central to your life? Give an example of where one matters and an example of where it does not."
+    }
+  ],
+  "secondary_record_requirements": {
+    "primary_record_sha256": "Before packet assembly, the secondary record must carry the exact SHA-256 of the frozen primary record. The research coordinator may append this provenance field after both behavioral files are frozen; doing so must not alter any behavioral turn.",
+    "turn_role": "Every behavioral answer turn must explicitly use turn_role=behavioral. Post-freeze metadata must use turn_role=collection_metadata and is never classifier input."
+  },
+  "completion": "Freeze exact question/answer turns and any corrections. Do not calculate or reveal the predictor in the participant context.",
+  "eligibility_rule": "The three-question supplement is a development coverage probe, not a guarantee of complete ten-construct evidence. If any construct remains insufficient, do not convert missingness to a low score and do not target it with an improvised follow-up. The ten-way target remains incomplete until a balanced follow-up battery is separately specified and frozen.",
+  "coverage_warning": "No question is intended as privileged evidence for one construct. Measure per-construct missingness, rating spread, and quote reuse on development records before any prospective freeze.",
+  "post_freeze_metadata": {
+    "timing": "Collect only after the behavioral answers are frozen; never send these metadata to the behavioral classifier and never reopen the frozen target because of them.",
+    "fields": [
+      "whether the participant knew their rising sign before the interview",
+      "whether the participant had previously received a natal-chart reading",
+      "whether ChatGPT Memory was enabled during the interview"
+    ],
+    "prospective_analysis_note": "Before prospective activation, preregister how prior chart familiarity is excluded or stratified rather than deciding after outcomes are seen."
+  }
+}
