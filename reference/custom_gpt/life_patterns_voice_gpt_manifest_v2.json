@@ -1,15 +1,15 @@
 {
   "schema": "life-patterns-voice-gpt-bundle-v1",
-  "version": "2026-09-30.3",
+  "version": "2026-09-30.4",
   "builder_config": {
     "path": "reference/custom_gpt/GPT-BUILDER-CONFIG.md",
-    "sha256": "d7df3e4c12f67a375e96ce508891e6b06e5de0a55c8b99c54c3e51b00a8db5f5"
+    "sha256": "5853bd6e659f444735d671e6cf0b1692705685d7755241b30ff51f8bf3415d54"
   },
   "instructions": {
     "path": "reference/custom_gpt/life_patterns_voice_interviewer_v2.md",
-    "sha256": "cb9dda1c50062bf3edcfa06c7bd2a0df538aee2e3ab21c17de4e316c426c868e",
-    "characters": 7503,
-    "strict_linebreak_count": 7636
+    "sha256": "19b2f83b94912dde9b6d0d8a82a2f2d5925ffc9b42b39af7b8982fbfdfcf4a9c",
+    "characters": 7826,
+    "strict_linebreak_count": 7962
   },
   "knowledge_files": [
     {
@@ -34,13 +34,13 @@
     }
   ],
   "birth_or_chart_material_in_bundle": false,
-  "runtime_actions_required": false,
+  "runtime_actions_required": true,
   "intended_collection_modes": [
     "chatgpt_voice",
     "chatgpt_text",
     "mixed"
   ],
-  "handoff": "Frozen JSON may be imported into Railway for source-preserving clarification only.",
+  "handoff": "Submit both frozen records through the authenticated GPT Action; JSON files remain the fallback/local backup.",
   "secondary_modules": {
     "cf003": {
       "status": "development_secondary_only",
@@ -52,5 +52,13 @@
       "record_linkage": "secondary must carry exact primary_record_sha256 before packet assembly",
       "post_freeze_metadata": "collection_metadata only; never classifier evidence"
     }
+  },
+  "action_schema": {
+    "path": "apps/life-patterns-participant/participant/static/action-openapi.yaml",
+    "sha256": "4e24eb514d766d6e0a0a10bb8379bcd0f41b87ad2e6d949f6cd7edb25ee1f4fd",
+    "schema_url": "https://life-patterns-participant-production.up.railway.app/action-openapi.yaml",
+    "authentication": "api_key_bearer",
+    "privacy_policy_url": "https://life-patterns-participant-production.up.railway.app/privacy",
+    "operation_id": "submitLifePatternsRecords"
   }
 }

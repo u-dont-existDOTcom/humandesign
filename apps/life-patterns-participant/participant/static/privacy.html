@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Life Patterns research submission privacy</title></head>
+<body>
+<main>
+<h1>Life Patterns research submission privacy</h1>
+<p>This endpoint receives completed Life Patterns research records only after the participant has consented to research use.</p>
+<h2>What is sent</h2>
+<p>The submission contains the frozen primary behavioral interview record and the separate CF-003 secondary record. The study instructions prohibit birth data, chart data, predictions, rankings, and scores from being sent through this endpoint.</p>
+<h2>Purpose</h2>
+<p>The records are delivered to Joel's private research store so the participant does not need to manually send JSON files after completing the interview.</p>
+<h2>Storage and access</h2>
+<p>Records are encrypted before storage on the study service's persistent database. Researcher downloads require separate researcher authentication. The submission endpoint does not run model inference.</p>
+<h2>Processors</h2>
+<p>The request is transmitted from ChatGPT's GPT Action to the study service hosted on Railway. Those providers may process network and service metadata under their own terms and privacy policies.</p>
+<h2>Participant control</h2>
+<p>Participants may decline research consent or stop before submission. ChatGPT may also show an approval prompt before the external Action runs. Questions about a submitted record should be directed to Joel through the same channel that supplied the study invitation.</p>
+<p>Effective: 2026-09-30.</p>
+</main>
+</body>
+</html>

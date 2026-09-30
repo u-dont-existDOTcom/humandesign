@@ -1,0 +1,104 @@
+openapi: 3.1.0
+info:
+  title: Life Patterns Research Submission
+  version: 1.0.0
+  description: >-
+    Submit the two frozen, chart-blind Life Patterns research records to the
+    researcher's encrypted study store after the participant has consented.
+servers:
+  - url: https://life-patterns-participant-production.up.railway.app
+paths:
+  /api/gpt/submissions:
+    post:
+      operationId: submitLifePatternsRecords
+      summary: Send the completed research records to Joel
+      description: >-
+        Call exactly once after the primary Life Patterns record and the separate
+        CF-003 record are both frozen and before any birth/chart reveal. Send only
+        those two frozen records. Do not add birth data, chart data, scores,
+        rankings, or predictions. This is an external write and the platform may
+        ask the participant to approve it.
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Submission'
+      responses:
+        '200':
+          description: Encrypted-store receipt.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Receipt'
+        '401':
+          description: Submission API key missing or invalid.
+        '422':
+          description: Records failed consent, freeze, blinding, linkage, or CF-003 checks.
+        '503':
+          description: Submission endpoint is not configured.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+  schemas:
+    Submission:
+      type: object
+      additionalProperties: false
+      required:
+        - research_use_consented
+        - primary_record
+        - cf003_record
+      properties:
+        research_use_consented:
+          type: boolean
+          const: true
+          description: Must reflect the participant's recorded research-use consent.
+        primary_record:
+          type: object
+          minProperties: 1
+          additionalProperties: true
+          description: Exact frozen life-patterns-full-survey-participant-export-v2 object.
+        cf003_record:
+          type: object
+          minProperties: 1
+          additionalProperties: true
+          description: Exact frozen CF-003 secondary record containing all three required questions.
+    Receipt:
+      type: object
+      additionalProperties: false
+      required:
+        - schema
+        - submission_id
+        - received_at_utc
+        - duplicate
+        - primary_record_sha256
+        - cf003_record_sha256
+        - stored_encrypted
+        - inference_started
+      properties:
+        schema:
+          type: string
+          const: life-patterns-gpt-submission-receipt-v1
+        submission_id:
+          type: string
+        received_at_utc:
+          type: string
+          format: date-time
+        duplicate:
+          type: boolean
+        primary_record_sha256:
+          type: string
+          pattern: '^[a-f0-9]{64}$'
+        cf003_record_sha256:
+          type: string
+          pattern: '^[a-f0-9]{64}$'
+        stored_encrypted:
+          type: boolean
+          const: true
+        inference_started:
+          type: boolean
+          const: false

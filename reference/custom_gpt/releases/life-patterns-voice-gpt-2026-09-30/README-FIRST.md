@@ -1,6 +1,6 @@
 # Life Patterns Voice GPT — latest bundle
 
-Built from the current `chat/hybrid-voice-cost-optimization-20260928` parent through PR #52, with the 2026-09-30.3 recovery/export revision.
+Built from the current `chat/hybrid-voice-cost-optimization-20260928` parent, with the 2026-09-30.4 authenticated auto-submission revision.
 
 ## Configure the GPT builder
 
@@ -9,7 +9,7 @@ Open `GPT-BUILDER-CONFIG.md` and copy its exact:
 - Description
 - Conversation starters
 
-Also enable **Code Interpreter & Data Analysis** in the GPT's Capabilities so it can create downloadable JSON files when supported.
+Enable **Code Interpreter & Data Analysis** for downloadable backup files. Then create the Action exactly as specified in `GPT-BUILDER-CONFIG.md`; its schema URL and privacy-policy URL are public, but the Bearer API key is supplied separately and is never stored in this ZIP.
 
 A Custom GPT cannot send the first message on its own. Participants start by tapping a conversation starter or sending a message. The Instructions then make the GPT give the consent/privacy/mode orientation and begin.
 
@@ -42,7 +42,7 @@ On ChatGPT web, an existing old interview chat can alternatively bring in this G
 The main Life Patterns record is completed and frozen first.
 Then ask all three CF-003 questions before any chart/predictor reveal.
 Freeze those answers separately as `life-patterns-cf003-secondary-v0.json`.
-Do not merge them into the primary record or primary score. At the end, the participant should receive **both** JSON records/files and send both to Joel. The current bundle does not automatically submit them to Joel.
+Do not merge them into the primary record or primary score. At the end, the GPT sends both frozen records through the authenticated `submitLifePatternsRecords` Action. On success it shows a submission receipt ID; if the Action is unavailable or fails, it falls back to both JSON files/objects for manual delivery.
 
 ## Important status
 

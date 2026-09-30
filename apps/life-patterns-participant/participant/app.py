@@ -23,7 +23,7 @@ from .domain import (
     utc,
 )
 from .engine import PAYMENT_ERROR, Engine, ProviderError, Venice
-from .store import Conflict, Missing, Store, canonical
+from .store import Conflict, Missing, Store, canonical, digest
 
 STATIC = Path(__file__).parent / "static"
 
@@ -35,6 +35,7 @@ class Settings:
     admin_token: str
     join_token: str
     authority: Path
+    submission_token: str = ""
     gateway_url: str = "https://venice-model-gateway-production.up.railway.app/v1"
     gateway_token: str = ""
     model: str = "openai-gpt-56-sol"
@@ -61,6 +62,7 @@ class Settings:
             admin_token=os.environ[required[1]],
             join_token=os.environ[required[2]],
             authority=Path(os.environ.get("SURVEY_AUTHORITY_DIR", "/app/authority")),
+            submission_token=os.environ.get("PARTICIPANT_GPT_SUBMISSION_TOKEN", ""),
             gateway_url=os.environ.get(
                 "UDA_MODEL_GATEWAY_URL", "https://venice-model-gateway-production.up.railway.app"
             ).rstrip("/")
@@ -123,6 +125,12 @@ class Import(Body):
 
 class ProviderRecovery(Body):
     billing_issue_resolved: Literal[True]
+
+
+class GptSubmission(Body):
+    research_use_consented: Literal[True]
+    primary_record: dict
+    cf003_record: dict
 
 
 class BodyLimit:
@@ -201,6 +209,72 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
         if not secrets.compare_digest(value, settings.admin_token):
             raise HTTPException(401, "Researcher access required.")
 
+    def gpt_submitter(request):
+        if not settings.submission_token:
+            raise HTTPException(503, "GPT submission is not configured.")
+        header = request.headers.get("authorization", "")
+        value = header[7:] if header.startswith("Bearer ") else ""
+        if not secrets.compare_digest(value, settings.submission_token):
+            raise HTTPException(401, "GPT submission access required.")
+
+    def reject_target_fields(record):
+        forbidden = {
+            "birth_date",
+            "birth_time",
+            "birthplace",
+            "date_of_birth",
+            "dob",
+            "birth_location",
+            "birth_chart",
+            "human_design_type",
+            "natal_chart",
+            "chart",
+            "rankings",
+            "target_predictions",
+        }
+
+        def walk(value):
+            if isinstance(value, dict):
+                if forbidden.intersection(str(key).lower() for key in value):
+                    raise ValueError("Remove birth/chart/ranking fields before submission.")
+                for child in value.values():
+                    walk(child)
+            elif isinstance(value, list):
+                for child in value:
+                    walk(child)
+
+        walk(record)
+
+    def validate_gpt_submission(body):
+        primary = body.primary_record
+        secondary = body.cf003_record
+        if primary.get("schema") != "life-patterns-full-survey-participant-export-v2":
+            raise ValueError("Primary record schema is not the current Life Patterns export.")
+        if (primary.get("consent") or {}).get("research_use_consented") is not True:
+            raise ValueError("Research-use consent must be frozen in the primary record.")
+        freeze = primary.get("freeze") or {}
+        if freeze.get("frozen_before_birth_or_chart_reveal") is not True:
+            raise ValueError("Primary record must be frozen before any birth/chart reveal.")
+        if not isinstance(primary.get("turns"), list) or not isinstance(secondary.get("turns"), list):
+            raise ValueError("Both submitted records need a turns list.")
+        required = {"CF003-ID-01", "CF003-CENTRAL-01", "CF003-PERIPH-01"}
+        present = {
+            turn.get("question_id") or turn.get("canonical_question_id")
+            for turn in secondary["turns"]
+            if isinstance(turn, dict) and turn.get("turn_role", "behavioral") == "behavioral"
+        }
+        if not required.issubset(present):
+            raise ValueError("CF-003 record must contain all three required behavioral questions.")
+        reject_target_fields(primary)
+        reject_target_fields(secondary)
+        primary_sha256 = digest(canonical(primary))
+        declared = secondary.get("primary_record_sha256")
+        if declared not in {None, primary_sha256}:
+            raise ValueError("CF-003 primary_record_sha256 does not match the submitted primary record.")
+        linked_secondary = dict(secondary)
+        linked_secondary["primary_record_sha256"] = primary_sha256
+        return primary, linked_secondary, primary_sha256
+
     def public(state):
         return {
             "session_id": state["session_id"],
@@ -265,6 +339,7 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
         origin = request.headers.get("origin")
         if (
             request.method not in {"GET", "HEAD"}
+            and request.url.path != "/api/gpt/submissions"
             and origin
             and origin.rstrip("/") != (settings.public_origin or str(request.base_url).rstrip("/"))
         ):
@@ -317,6 +392,7 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
             "provider": "venice",
             "provider_configured": provider.configured,
             "participant_enabled": settings.live_enabled,
+            "gpt_submission_enabled": bool(settings.submission_token),
             "persistence": "encrypted_sqlite",
             "instrument_version": version,
         }
@@ -328,6 +404,14 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
     @app.get("/admin")
     def admin_home():
         return FileResponse(STATIC / "admin.html")
+
+    @app.get("/privacy")
+    def privacy():
+        return FileResponse(STATIC / "privacy.html")
+
+    @app.get("/action-openapi.yaml")
+    def action_openapi():
+        return FileResponse(STATIC / "action-openapi.yaml", media_type="application/yaml")
 
     @app.get("/assets/{name}")
     def assets(name: str):
@@ -424,10 +508,66 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
 
         return public(store.change(value, apply))
 
+    @app.post("/api/gpt/submissions")
+    def gpt_submission(request: Request, body: GptSubmission):
+        gpt_submitter(request)
+        primary, secondary, primary_sha256 = validate_gpt_submission(body)
+        cf003_sha256 = digest(canonical(secondary))
+        submission_sha256 = digest(
+            canonical({"primary_record": primary, "cf003_record": secondary})
+        )
+        payload = {
+            "schema": "life-patterns-gpt-submission-v1",
+            "received_at_utc": utc(),
+            "submission_sha256": submission_sha256,
+            "primary_record_sha256": primary_sha256,
+            "cf003_record_sha256": cf003_sha256,
+            "primary_record": primary,
+            "cf003_record": secondary,
+        }
+        submission_id, stored, duplicate = store.create_gpt_submission(
+            payload, submission_sha256
+        )
+        return {
+            "schema": "life-patterns-gpt-submission-receipt-v1",
+            "submission_id": submission_id,
+            "received_at_utc": stored["received_at_utc"],
+            "duplicate": duplicate,
+            "primary_record_sha256": stored["primary_record_sha256"],
+            "cf003_record_sha256": stored["cf003_record_sha256"],
+            "stored_encrypted": True,
+            "inference_started": False,
+        }
+
     @app.get("/api/admin/sessions")
     def sessions(request: Request):
         admin(request)
         return {"sessions": store.overview()}
+
+    @app.get("/api/admin/gpt-submissions")
+    def gpt_submissions(request: Request):
+        admin(request)
+        return {"submissions": store.gpt_submission_overview()}
+
+    @app.get("/api/admin/gpt-submissions/{submission_id}/primary")
+    def gpt_submission_primary(request: Request, submission_id: str):
+        admin(request)
+        payload = store.gpt_submission_read(submission_id)
+        return Response(
+            canonical(payload["primary_record"]),
+            media_type="application/json",
+            headers={"Content-Disposition": 'attachment; filename="life-patterns-participant-export.json"'},
+        )
+
+    @app.get("/api/admin/gpt-submissions/{submission_id}/cf003")
+    def gpt_submission_cf003(request: Request, submission_id: str):
+        admin(request)
+        payload = store.gpt_submission_read(submission_id)
+        return Response(
+            canonical(payload["cf003_record"]),
+            media_type="application/json",
+            headers={"Content-Disposition": 'attachment; filename="life-patterns-cf003-secondary-v0.json"'},
+        )
 
     @app.post("/api/admin/invitations")
     def invitation(request: Request, body: Import):

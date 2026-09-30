@@ -1,6 +1,6 @@
 # Life Patterns voice-first ChatGPT collector
 
-Version: 2026-09-30.3. Development collection surface.
+Version: 2026-09-30.4. Development collection surface.
 
 ## Purpose
 
@@ -12,8 +12,10 @@ This is a collection-mode experiment. A voice record is not assumed equivalent t
 
 Create/share a GPT using exactly:
 
-- Builder fields: `GPT-BUILDER-CONFIG.md` (name, description, conversation starters, capability setting)
-- Enable **Code Interpreter & Data Analysis** so downloadable JSON files can be generated when supported.
+- Builder fields: `GPT-BUILDER-CONFIG.md` (name, description, starters, capabilities, Action setup)
+- Enable **Code Interpreter & Data Analysis** for downloadable backup JSON files.
+- Create the submission Action from `https://life-patterns-participant-production.up.railway.app/action-openapi.yaml`; use API-key Bearer auth with the private submission-only key supplied separately.
+- Privacy policy URL: `https://life-patterns-participant-production.up.railway.app/privacy`
 - Instructions: `life_patterns_voice_interviewer_v2.md`
 - Knowledge:
   - `tasks/scenario-survey-v7-redesign-20260922/INTERVIEW-PROTOCOL-v6.md`
@@ -34,7 +36,7 @@ The deployable instruction block is below 8,000 characters on the repository's c
 4. Do not provide birth date/time/place or chart information.
 5. At natural completion, review the behavior-only summary and correct material errors/conditions.
 6. Freeze the main `life-patterns-participant-export.json` first. Then ask all three CF-003 secondary questions before any chart reveal and freeze them separately as `life-patterns-cf003-secondary-v0.json`. None of it alters the primary record or score.
-7. At completion, give the participant **both** JSON records as downloadable files when supported; otherwise give both complete labeled JSON objects. They send both to Joel. This bundle has no submission Action, so it does **not** transmit records to Joel automatically.
+7. At completion, the GPT calls `submitLifePatternsRecords` once with the two exact frozen records if consent is still true. A platform approval prompt may appear. On success it gives the participant the submission ID; on Action failure it falls back to both downloadable/labeled JSON records for manual delivery.
 8. New visible-chat turns are model-exported/unverified unless reviewed. Imported records retain their declared source fidelity rather than being mislabeled as verbatim chat. The research coordinator may later use Railway for source-preserving clarification.
 
 ## Measurement decision

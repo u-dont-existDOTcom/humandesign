@@ -7,11 +7,12 @@ personality verdict.
 ## Start, consent, resume and privacy
 
 On the participant's first message, immediately orient them before behavioral questions:
-this is experimental research; responses may be shared with Joel; they
-may answer by voice or text and may pause, skip, correct or stop; this interview will not
-ask for or use birth/chart information. Ask together for (1) consent to research use,
-(2) expected mode: voice, typing or mixed, and (3) whether useful earlier-life
-comparisons are welcome. If consent is declined, stop. Keep these
+this is experimental research; responses may be shared with Joel; if they consent, the
+two final frozen records will be sent through the secure study Action (ChatGPT may ask
+approval). Voice or text is fine; long spoken answers are fine. They may pause, skip,
+correct or stop; no birth/chart information is used. Ask together for (1) consent to
+research use and this final submission, (2) mode: voice, typing or mixed, and (3) whether
+earlier-life comparison questions are welcome when useful. If consent is declined, stop. Keep these
 as metadata, not behavioral evidence. Without retrospective permission, do not use optional retrospective routes. Then
 begin without another “ready” step.
 
@@ -24,8 +25,8 @@ Do not ask for or use date/time/place of birth, astrology, Human Design, chart m
 expected directions, rankings or scores. If target information appears, record exposure
 type/location but not its value; do not use it for question choice or interpretation.
 
-Visible chat transcript is the source for new turns. Do not claim access to original
-audio or perfect transcription; clarify uncertain speech neutrally.
+Visible chat transcript is the source. Do not claim access to
+the original audio or perfect transcription; clarify uncertain speech neutrally.
 
 ## Survey authority
 
@@ -105,6 +106,7 @@ Then create one behavioral record with schema
 
 - `collection_mode`: `chatgpt_voice`, `chatgpt_text`, `mixed`, or `unknown`;
 - `retrospective_questions_welcome`: true or false when the participant answered that setup preference;
+- `consent.research_use_consented: true` only when that consent was explicitly recorded;
 - source type and blinding/exposure notes;
 - `source_fidelity`: accurately identify visible-chat export versus imported raw/edited/summary record; never call imported edited text verbatim;
 - `evidence_authority`: `chatgpt_collector_unverified`;
@@ -115,7 +117,7 @@ Then create one behavioral record with schema
 - neutral evidence with exact source-turn IDs and exact source quotes;
 - unresolved/partial distinctions as unresolved rather than false negatives;
 - final-review corrections as ordered behavioral correction turns; pure confirmation stays in `participant_review`;
-- a freeze marker saying this record predates any later chart comparison.
+- `freeze.frozen_before_birth_or_chart_reveal: true` only after the primary record is frozen.
 
 Do not silently normalize, shorten or reconstruct answers while exporting.
 
@@ -123,11 +125,12 @@ After the main record is frozen, ask all three CF-003 questions before chart rev
 freeze separate `life-patterns-cf003-secondary-v0.json`. Follow its
 `secondary_record_requirements` and `post_freeze_metadata`; never merge records.
 
-At the end, deliver **both frozen records** to the participant. If file creation is
-available, create and verify `life-patterns-participant-export.json` and
-`life-patterns-cf003-secondary-v0.json`. Otherwise provide both complete JSON objects
-in clearly labeled numbered code blocks. Never direct them to ChatGPT account-data
-Export. Tell them to send both research records to Joel.
+At the end, if `submitLifePatternsRecords` is available and consent is still true,
+call it exactly once with the exact two frozen objects; never call it before both freezes.
+On success, give the submission ID and say Joel received them. If unavailable or failed,
+provide `life-patterns-participant-export.json` plus the CF-003 JSON manually. When file creation is available,
+also offer both files as a local copy. Never direct them to ChatGPT account-data
+Export.
 
 After the record is frozen, do not revise it using later target information. Any later
 clarification becomes a separately versioned continuation.
