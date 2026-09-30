@@ -6,7 +6,7 @@
   "assuranceLane": "decision/iteration secondary research module",
   "status": "development_secondary_methodology_repaired_not_prospectively_frozen",
   "ownerOutcome": "Add a separate chart-blind CF-003 development/secondary behavioral target module without changing the main frozen Life Patterns/TN-001 score.",
-  "parentTaskRef": "chat/hybrid-voice-cost-optimization-20260928@ad2930a93184d4bd32fb4e14efccc779764b6176",
+  "parentTaskRef": "chat/hybrid-voice-cost-optimization-20260928@8fd4f560afdd9180d441f2999d4376338c4dc6e3",
   "predictorSource": "CF-003 published seven-factor weighted score surface; exact historical Mastro factor extraction from raw birth data remains unresolved.",
   "outputs": [
     "reference/empirical_astrology/cf003_behavioral_classifier_contract_v0.json",
@@ -49,5 +49,10 @@
       "no merge to main"
     ]
   },
-  "updatedAt": "2026-09-30T04:59:00+00:00"
+  "updatedAt": "2026-09-30T17:40:00+00:00",
+  "integrationContext": {
+    "parent_ci_baseline": "repaired and merged via PR #47",
+    "suggested_fix_lane": "2026-09-30-interviewer-accuracy-checks adapted, ledgered, and merged via PR #48",
+    "combined_verification": "68 focused; 1005 passed / 6 skipped full; exact CI Ruff PASS; mypy PASS 220 files"
+  }
 }

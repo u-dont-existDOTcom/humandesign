@@ -82,19 +82,22 @@ Held-out replication remains required.
 
 ## Verification
 
-The repaired branch records:
-- focused CF-003: 46 passed;
-- affected CF-003 + voice: 63 passed;
-- full repository: 986 passed / 6 skipped (Swiss Ephemeris production files absent for the skipped cases);
-- changed-Python Ruff: PASS;
-- targeted mypy: PASS;
-- manifest/hash checks: PASS;
+The integrated CF-003 branch, rebased onto the repaired voice parent and its processed suggested-fix lane, now passes:
+- combined CF-003 + interviewer-accuracy + voice focused checks: 68 passed;
+- full repository: 1005 passed / 6 skipped (only absent production Swiss Ephemeris files);
+- exact hosted-CI Ruff command: PASS;
+- mypy: PASS across 220 source files;
+- git diff check: PASS;
+- CF-003 manifest/hash checks: PASS through focused/combined tests;
+- Life Patterns voice instructions: 7960 / 8000 strict count;
+- participant interviewer instructions: 7768 / 8000 strict count;
+- legacy reverse matcher: 8000 / 8000 strict count;
 - no paid API inference;
 - no Railway deployment/change.
 
-A fresh focused rerun on 2026-09-30 again passed 46/46.
+The earlier parent-branch Ruff/mypy baseline debt is resolved: the CI-baseline repair merged through PR #47, and the owner-requested interviewer-accuracy suggestion from the new UDA suggested-fix lane was adapted, recorded in docs/suggested-fixes-ledger.md, and merged through PR #48. The remaining failure of the generic scripts/task_acceptance.py is an unrelated legacy task binding: it still expects the old known_month_oracle_1000 artifacts and a worktree-local virtual environment, so it is not used as evidence that this CF-003 development module is incomplete.
 
-The repository-wide declared Ruff, mypy, and generic task-acceptance gates still have pre-existing baseline debt: Ruff reports older unrelated style debt, mypy stops in the installed NumPy stub before project checking under the repository configuration, and generic task acceptance expects legacy known-month oracle artifacts plus a worktree-local venv. The changed CF-003 Python surface passes Ruff and the two CF-003 source modules pass targeted mypy. This development branch is therefore verified for its task scope but is not being called repository-wide release-certified.
+This remains a DEVELOPMENT/SECONDARY scientific module, not a prospective freeze.
 
 ## Previous Railway state
 

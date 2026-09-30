@@ -1,6 +1,6 @@
 {
   "schema": "cf003-secondary-module-verification-v1",
-  "recorded_at": "2026-09-30T05:07:00+00:00",
+  "recorded_at": "2026-09-30T17:40:00+00:00",
   "branch": "chat/cf003-secondary-module-20260929",
   "predictor_scaffold": {
     "published_weighted_score_surface": true,
@@ -22,13 +22,19 @@
   "checks": {
     "focused_cf003": "46 passed",
     "affected_cf003_plus_voice": "63 passed",
-    "full_repository": "986 passed / 6 skipped",
-    "full_skip_reason": "existing Swiss Ephemeris production files absent",
+    "full_repository": "1005 passed / 6 skipped",
+    "full_skip_reason": "production Swiss Ephemeris files absent",
     "ruff_changed_python": "PASS",
     "targeted_mypy_two_source_modules": "PASS",
     "git_diff_check": "PASS",
     "voice_instruction_strict_count": "7960 / 8000",
-    "manifest_hashes": "PASS through affected tests"
+    "manifest_hashes": "PASS through focused/combined tests",
+    "combined_cf003_accuracy_voice": "68 passed",
+    "exact_ci_ruff": "PASS",
+    "mypy_all_source_modules": "PASS / 220 source files",
+    "life_patterns_voice_instruction_strict_count": "7960 / 8000",
+    "participant_interviewer_instruction_strict_count": "7768 / 8000",
+    "legacy_reverse_matcher_strict_count": "8000 / 8000"
   },
   "test_efficiency": {
     "elapsed_wall_seconds": 1779.25,
@@ -72,14 +78,14 @@
   },
   "continuation_verification_20260930": {
     "recovery_state_synced": true,
-    "focused_cf003_rerun": "46 passed",
-    "full_repository_rerun": "986 passed / 6 skipped",
+    "combined_cf003_accuracy_voice": "68 passed",
+    "full_repository_rerun": "1005 passed / 6 skipped",
     "skip_reason": "production Swiss Ephemeris files absent",
-    "ruff_changed_cf003_python": "PASS",
-    "mypy_cf003_source_modules": "PASS",
-    "global_declared_ruff": "BASELINE_FAIL: 895 errors in older unrelated repository files",
-    "global_declared_mypy": "ENVIRONMENT_BASELINE_FAIL: installed NumPy stub parsed under incompatible configured language level before project checking",
-    "generic_task_acceptance": "BASELINE_FAIL: legacy known-month oracle artifacts missing and worktree-local venv expected",
+    "global_declared_ruff": "PASS: exact CI command ruff check src tests --ignore E501,I001",
+    "global_declared_mypy": "PASS: 220 source files",
+    "generic_task_acceptance": "BASELINE_FAIL: legacy known-month oracle artifacts missing and worktree-local venv expected; unrelated to current CF-003 task",
+    "parent_ci_baseline_repair": "merged via PR #47",
+    "suggested_fix_lane": "2026-09-30-interviewer-accuracy-checks adapted and merged via PR #48; ledger recorded",
     "git_diff_check": "PASS"
   }
 }
