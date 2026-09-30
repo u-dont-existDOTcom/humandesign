@@ -8,11 +8,11 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
-from owner_method_admission import admit
-from run_astrohd_v14_staged import default_config, operation_projection, sparse_fit, ranking
-from run_astrohd_v14_mixed import fit_mixed
-from screen_astrohd_v14_century import interpolate, house_possible
-from hdmatch.evaluation.astrohd_v14_rules import conditions, deduplicate
+from owner_method_admission import admit  # noqa: E402
+from run_astrohd_v14_staged import default_config, operation_projection, sparse_fit, ranking  # noqa: E402
+from run_astrohd_v14_mixed import fit_mixed  # noqa: E402
+from screen_astrohd_v14_century import interpolate, house_possible  # noqa: E402
+from hdmatch.evaluation.astrohd_v14_rules import conditions, deduplicate  # noqa: E402
 
 
 def test_combination_succeeds_without_either_book_succeeding_alone():
