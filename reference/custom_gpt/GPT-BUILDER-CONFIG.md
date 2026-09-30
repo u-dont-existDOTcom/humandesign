@@ -19,9 +19,17 @@ A private voice-or-text research interview about how you actually respond across
 
 ## Capabilities
 
-Enable **Code Interpreter & Data Analysis**. OpenAI's current troubleshooting guidance says this should be enabled when a custom GPT needs to generate downloadable files. This lets the interview finish with downloadable JSON files when the runtime supports file generation.
+Enable **Code Interpreter & Data Analysis** for downloadable backup JSON files.
 
-No external Action is required for this bundle; it does not transmit participant records to Joel automatically.
+## Action
+
+Create one Action:
+- Schema URL: `https://life-patterns-participant-production.up.railway.app/action-openapi.yaml`
+- Authentication: **API key → Bearer**
+- API key: use the private submission-only key supplied separately; never use the researcher/admin token.
+- Privacy policy: `https://life-patterns-participant-production.up.railway.app/privacy`
+
+The Action sends the two frozen research records to Joel's encrypted study store after recorded consent. It does not run model inference. ChatGPT may require the participant to approve this external write. Current OpenAI product behavior does not support Actions in Pro mode, so select an action-capable non-Pro model for this GPT.
 
 ## Expected opening behavior
 

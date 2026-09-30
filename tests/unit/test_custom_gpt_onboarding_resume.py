@@ -21,7 +21,10 @@ def test_builder_config_has_user_facing_start_paths() -> None:
     assert "A Custom GPT cannot send a message before the user sends or taps something." in text
     assert "research-use consent" in text
     assert "Enable **Code Interpreter & Data Analysis**" in text
-    assert "does not transmit participant records to Joel automatically" in text
+    assert "Authentication: **API key → Bearer**" in text
+    assert "action-openapi.yaml" in text
+    assert "/privacy" in text
+    assert "action-capable non-Pro model" in text
 
 
 def test_instructions_orient_then_resume_without_restart() -> None:
@@ -34,7 +37,9 @@ def test_instructions_orient_then_resume_without_restart() -> None:
     assert "do not restart or re-ask resolved questions" in normalized
     assert "RECOVERY-GUIDE-v2.md" in normalized
     assert "ask only useful unresolved distinctions" in normalized
-    assert "deliver **both frozen records**" in text
+    assert "submitLifePatternsRecords" in text
+    assert "call it exactly once" in text
+    assert "submission ID" in text
     assert "life-patterns-participant-export.json" in text
     assert "life-patterns-cf003-secondary-v0.json" in text
 
@@ -65,6 +70,13 @@ def test_manifest_pins_builder_config_and_instruction_budget() -> None:
         if item["path"].endswith("RECOVERY-GUIDE-v2.md")
     )
     recovery_path = ROOT / recovery["path"]
+    action = ROOT / manifest["action_schema"]["path"]
+    assert manifest["runtime_actions_required"] is True
+    assert manifest["action_schema"]["operation_id"] == "submitLifePatternsRecords"
+    assert manifest["action_schema"]["authentication"] == "api_key_bearer"
+    assert manifest["action_schema"]["schema_url"].endswith("/action-openapi.yaml")
+    assert manifest["action_schema"]["privacy_policy_url"].endswith("/privacy")
+    assert hashlib.sha256(action.read_bytes()).hexdigest() == manifest["action_schema"]["sha256"]
     assert hashlib.sha256(cfg.read_bytes()).hexdigest() == manifest["builder_config"]["sha256"]
     assert (
         hashlib.sha256(instructions.read_bytes()).hexdigest()
@@ -93,4 +105,5 @@ def test_release_zip_contains_builder_config_and_resume_instructions() -> None:
         assert "Continue my existing interview" in config
         assert "do not restart or re-ask resolved questions" in instructions
         assert any(name.endswith("/knowledge/RECOVERY-GUIDE-v2.md") for name in names)
-        assert "deliver **both frozen records**" in archive.read(instructions_name).decode()
+        assert any(name.endswith("/ACTION-life-patterns-submission-openapi.yaml") for name in names)
+        assert "submitLifePatternsRecords" in archive.read(instructions_name).decode()

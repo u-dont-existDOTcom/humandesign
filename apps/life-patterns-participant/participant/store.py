@@ -48,6 +48,12 @@ class Store:
                 CREATE TABLE IF NOT EXISTS instruments (
                     version TEXT PRIMARY KEY, payload BLOB NOT NULL
                 );
+                CREATE TABLE IF NOT EXISTS gpt_submissions (
+                    id TEXT PRIMARY KEY,
+                    content_sha256 TEXT UNIQUE NOT NULL,
+                    created REAL NOT NULL,
+                    payload BLOB NOT NULL
+                );
             """)
         os.chmod(path, 0o600)
 
@@ -173,4 +179,57 @@ class Store:
             row = db.execute("SELECT payload FROM sessions WHERE id=?", (session_id,)).fetchone()
         if not row:
             raise Missing("Unknown session.")
+        return self.decode(row[0])
+
+    def create_gpt_submission(
+        self, payload: dict, content_sha256: str | None = None
+    ) -> tuple[str, dict, bool]:
+        content_sha256 = content_sha256 or digest(canonical(payload))
+        with self.connection() as db:
+            db.execute("BEGIN IMMEDIATE")
+            row = db.execute(
+                "SELECT id,payload FROM gpt_submissions WHERE content_sha256=?",
+                (content_sha256,),
+            ).fetchone()
+            if row:
+                db.commit()
+                return row[0], self.decode(row[1]), True
+            submission_id = "GPT-" + secrets.token_hex(16)
+            db.execute(
+                "INSERT INTO gpt_submissions VALUES (?,?,?,?)",
+                (submission_id, content_sha256, time.time(), self.encode(payload)),
+            )
+            db.commit()
+        return submission_id, payload, False
+
+    def gpt_submission_overview(self) -> list[dict]:
+        with self.connection() as db:
+            rows = db.execute(
+                "SELECT id,created,payload FROM gpt_submissions ORDER BY created DESC"
+            ).fetchall()
+        result = []
+        for submission_id, created, raw in rows:
+            payload = self.decode(raw)
+            primary = payload.get("primary_record") or {}
+            secondary = payload.get("cf003_record") or {}
+            result.append(
+                {
+                    "submission_id": submission_id,
+                    "received_at_utc": payload.get("received_at_utc"),
+                    "created_unix": created,
+                    "collection_mode": primary.get("collection_mode", "unknown"),
+                    "primary_turn_count": len(primary.get("turns") or []),
+                    "cf003_turn_count": len(secondary.get("turns") or []),
+                    "primary_record_sha256": payload.get("primary_record_sha256"),
+                }
+            )
+        return result
+
+    def gpt_submission_read(self, submission_id: str) -> dict:
+        with self.connection() as db:
+            row = db.execute(
+                "SELECT payload FROM gpt_submissions WHERE id=?", (submission_id,)
+            ).fetchone()
+        if not row:
+            raise Missing("Unknown GPT submission.")
         return self.decode(row[0])
