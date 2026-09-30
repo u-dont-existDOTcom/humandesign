@@ -20,13 +20,13 @@ The fourth file is the new research-derived CF-003 secondary question module.
 ## CF-003 timing
 
 The main Life Patterns record is completed and frozen first.
-Only then, if the CF-003 development module is enabled, ask its three questions before any chart/predictor reveal.
+Then ask all three CF-003 questions before any chart/predictor reveal.
 Freeze those answers separately as `life-patterns-cf003-secondary-v0.json`.
 Do not merge them into the primary record or primary score.
 
 ## Important status
 
-CF-003 is DEVELOPMENT/SECONDARY, not a prospectively frozen primary endpoint.
+CF-003 is **required in this bundle**. DEVELOPMENT/SECONDARY describes its scientific status; it does not mean the questions are optional. It is not a prospectively frozen primary endpoint.
 The three questions cover:
 - lifetime continuity/change;
 - which recurring patterns are most central across settings;

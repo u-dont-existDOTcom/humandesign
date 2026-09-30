@@ -1,11 +1,11 @@
 {
   "schema": "life-patterns-voice-gpt-bundle-v1",
-  "version": "2026-09-29",
+  "version": "2026-09-30",
   "instructions": {
     "path": "reference/custom_gpt/life_patterns_voice_interviewer_v2.md",
-    "sha256": "168635eab8f0777b72cdc5f9dc314f4880be43897b42b159b6c5d19b91da13e7",
-    "characters": 7824,
-    "strict_linebreak_count": 7960
+    "sha256": "fd4bd2e990afdc842f6e1b9511850d0cf60509f484e966899be94cee68a3ccc8",
+    "characters": 7806,
+    "strict_linebreak_count": 7942
   },
   "knowledge_files": [
     {
@@ -37,7 +37,8 @@
     "cf003": {
       "status": "development_secondary_only",
       "knowledge_path": "reference/empirical_astrology/cf003_secondary_question_module_v0.json",
-      "activation": "after primary behavioral record freeze and before any chart reveal",
+      "required_in_this_bundle": true,
+      "activation": "required after primary behavioral record freeze and before any chart reveal",
       "output": "separate life-patterns-cf003-secondary-v0.json",
       "changes_primary_score": false,
       "record_linkage": "secondary must carry exact primary_record_sha256 before packet assembly",
