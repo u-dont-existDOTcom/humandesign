@@ -216,3 +216,21 @@ Adequacy is deliberately split:
   incomplete.
 - **Release adequacy:** closed for friends and not yet deployed; bounded owner-only
   release awaits a clean second exact-diff review plus the operational gates above.
+
+
+## Interviewer accuracy checks
+
+The participant interviewer instruction blocks include claim-integrity checks for
+participant-facing replies and evidence records. Claims about what a participant said,
+did, felt, wanted, or repeatedly did must be supported by their words; quotation marks
+are reserved for exact participant wording; absence claims require checking the whole
+conversation; corrections return to source wording; disputed result claims are
+rechecked against the Action response; and post-reveal AstroHD claims come only from
+returned results. Conflicts with earlier replies are corrected openly and estimates are
+labeled.
+
+The deployable short block remains under the 8,000-character builder limit and is
+pinned by `tests/unit/test_custom_gpt_accuracy_checks.py`. Its repository file hash is
+the `interviewer_instructions_sha256` receipt. After this repository change is merged,
+the private Custom GPT must be updated with the same block before that receipt can
+truthfully describe what the GPT runs.
