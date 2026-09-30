@@ -1,6 +1,6 @@
 # Current state — voice-first collection / compact Railway clarification
 
-Updated 2026-09-30. Branch: `chat/hybrid-voice-cost-optimization-20260928`. CF-003 development-secondary work and the suggested-fix accuracy lane are now integrated on this branch.
+Updated 2026-09-30. Branch: `chat/hybrid-voice-cost-optimization-20260928`. CF-003 development-secondary work, the suggested-fix accuracy lane, and authenticated Custom-GPT auto-submission are integrated on this branch.
 
 ## Owner outcome
 
@@ -35,7 +35,7 @@ The development Custom GPT bundle is under `reference/custom_gpt/`:
 - `life_patterns_voice_gpt_manifest_v2.json`
 - `LIFE-PATTERNS-VOICE-GPT-SETUP.md`
 
-It uses the frozen v7 protocol/bank/evidence guide as Knowledge and keeps must-follow collection/accuracy rules in Instructions. The Life Patterns voice instruction block is 7,960 / 8,000 on the conservative strict count.
+It uses the frozen v7 protocol/bank/evidence guide as Knowledge and keeps must-follow collection/accuracy rules in Instructions. The Life Patterns voice instruction block is 7,962 / 8,000 on the conservative strict count. The v2026-09-30.4 bundle includes one authenticated `submitLifePatternsRecords` GPT Action. After recorded research consent, primary pre-reveal freeze, and the separate three-question CF-003 freeze, it sends both records to the existing encrypted Railway store; JSON files remain fallback/local copies.
 
 The collector records collection mode and retrospective-question preference as nonbehavioral metadata. It treats the visible transcript—not inaccessible original audio—as the source record, labels model-exported transcript fidelity, exports collector evidence as unverified, preserves exact quotations, scopes absence claims to checked source, rechecks corrections, and does not infer motive/backstory/history. Railway preserves that source but does not admit GPT-authored evidence without its own independent admission. The owner-requested UDA suggested-fix item `2026-09-30-interviewer-accuracy-checks` was processed as an adaptation in PR #48 and recorded in `docs/suggested-fixes-ledger.md`; the deployable participant interviewer is now 7,768 / 8,000 strict and the legacy reverse matcher is exactly 8,000 / 8,000.
 
@@ -49,7 +49,7 @@ The existing Railway Cloud Agent `codex-human-46r` is preserved and sleeping. Co
 
 ## Verification
 
-Integrated evidence: focused voice reconciliation 73/73 PASS; participant-service suite 79/79 PASS; mobile browser smoke PASS; V7 authority verifier 497/497 PASS; CF-003 + interviewer-accuracy + voice focused integration 68/68 PASS; repository-wide pytest 1005 passed / 6 skipped. Exact CI Ruff passes and mypy passes across 220 source files after the parent baseline repair in PR #47. The generic `scripts/task_acceptance.py` remains bound to an older known-month-oracle task and still expects its missing artifacts/worktree-local `.venv`; it is not the acceptance authority for this parent task. See the task verification receipts.
+Integrated evidence: focused voice reconciliation 73/73 PASS; participant-service suite 79/79 PASS; mobile browser smoke PASS; V7 authority verifier 497/497 PASS; CF-003 + interviewer-accuracy + voice focused integration 68/68 PASS; repository-wide pytest 1013 passed / 6 skipped. The auto-submission affected set is 130/130 PASS and its focused endpoint suite is 7/7 PASS. Exact CI Ruff passes and mypy passes across 220 source files after the parent baseline repair in PR #47. The generic `scripts/task_acceptance.py` remains bound to an older known-month-oracle task and still expects its missing artifacts/worktree-local `.venv`; it is not the acceptance authority for this parent task. See the task verification receipts.
 
 Claude Opus 5.5 max returned FINDS_ERROR on the initial architecture check and again on the single reconciliation. The second review explicitly found no blocker to a dark deployment with inference disabled; every concrete remaining live-inference defect it identified was subsequently repaired and regression-tested. No third reviewer round is claimed.
 
@@ -61,7 +61,7 @@ CF-003 remains **DEVELOPMENT/SECONDARY only**. Existing participants are explora
 
 ## Production boundary
 
-Dark preview deployed and verified on Railway from commit `8978e543b492c4497d501c4f4d2d2c296f7a312f` as deployment `2fb89371-12bf-43cf-969f-ae0ee1b9dc06`. Health reports `railway-participant-v2.2-cost-hybrid-20260928`, `participant_enabled=false`, `provider_configured=false`, and encrypted SQLite persistence on the existing `/data` volume. `PARTICIPANT_MAX_MODEL_CALLS=12`; the participant gateway credential is absent. No paid inference or participant inference was run. The original `life-patterns-owner` service remains on deployment `2d60d3dd-2634-427c-a48f-62a36ee27350`.
+The participant service is deployed from merged commit `79e633ec113599362570ad757b81557f6b64294c` as deployment `5b4b9467-4d99-44f2-b094-69f2a1ffc4d4`. Health reports `railway-participant-v2.2-cost-hybrid-20260928`, `participant_enabled=false`, `provider_configured=false`, `gpt_submission_enabled=true`, and encrypted SQLite persistence on the existing `/data` volume. The submission route uses a separate Bearer credential, is idempotent, rejects structured birth/chart/ranking fields, requires recorded consent + primary pre-reveal freeze + all three CF-003 questions, and never invokes model inference. `PARTICIPANT_MAX_MODEL_CALLS=12`; the participant gateway credential is absent. No paid inference or participant inference was run. The original `life-patterns-owner` service remains on deployment `2d60d3dd-2634-427c-a48f-62a36ee27350`.
 
 This is not a release-certified live inference deployment. Venice previously returned HTTP 402. Repository-wide Ruff and mypy are now green after PR #47; the generic task-acceptance script still carries unrelated legacy known-month-oracle binding debt. Keep Railway inference disabled. Before any live enable: resolve Venice API credit/access, update the activation helper for the exact reviewed v2.2 build, and obtain explicit paid/live inference authorization. Do not route public participants through Codex CLI.
 
