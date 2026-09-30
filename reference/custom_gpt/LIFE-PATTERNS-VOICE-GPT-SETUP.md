@@ -17,6 +17,7 @@ Create/share a GPT using exactly:
   - `tasks/scenario-survey-v7-redesign-20260922/INTERVIEW-PROTOCOL-v6.md`
   - `tasks/scenario-survey-v7-redesign-20260922/interviewer-bank-v7.json`
   - `tasks/scenario-survey-v7-redesign-20260922/EVIDENCE-GUIDE-v7.json`
+  - `reference/empirical_astrology/cf003_secondary_question_module_v0.json` (development-secondary only)
 
 Do **not** attach birth data, chart output, scores, candidate ranks, or participant-specific prior interpretation. The manifest `life_patterns_voice_gpt_manifest_v2.json` pins the source hashes and instruction size.
 
@@ -29,8 +30,8 @@ The deployable instruction block is below 8,000 characters on the repository's c
 3. Do not provide birth date/time/place or chart information.
 4. The interviewer asks only useful nonredundant behavioral questions. The bank is not a quota.
 5. At natural completion, review the behavior-only summary and correct material errors/conditions.
-6. Ask for the frozen `life-patterns-participant-export.json` if the GPT has not already created it. Its transcript fidelity is explicitly model-exported/unverified unless the participant reviewed it, and its evidence is collector-unverified.
-7. The research coordinator may import that frozen record into Railway. Railway preserves the upstream record but does not treat GPT-authored evidence as admitted; it should ask only unresolved clarifications and must not make the participant repeat usable voice answers.
+6. Freeze the main `life-patterns-participant-export.json` first. If the CF-003 development module is enabled, ask its three secondary questions before any chart reveal and freeze them separately as `life-patterns-cf003-secondary-v0.json`. Follow the module's secondary-record linkage and post-freeze metadata rules exactly; none of it alters the primary record or score.
+7. Transcript fidelity is model-exported/unverified unless the participant reviewed it, and collector evidence is unverified. The research coordinator may import the primary record into Railway; Railway preserves the source but does not treat GPT-authored evidence as admitted.
 
 ## Measurement decision
 

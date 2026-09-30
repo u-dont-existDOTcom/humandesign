@@ -1,0 +1,93 @@
+{
+  "schema_version": "independent-behavioral-dominance-contract-v0",
+  "status": "development_secondary_candidate_not_prospective_frozen",
+  "purpose": "Independent comparative behavioral-dominance target over ten neutral constructs. The coder receives only behavioral source and this contract.",
+  "input_rules": [
+    "Use only the supplied frozen behavioral source turns and separate secondary-module turns.",
+    "Run the behavioral classifier in a fresh tool-free context with no repository, web, Memory, connected apps, or other participant files available; only the frozen classifier packet may be read.",
+    "Do not use any profile, typology, prediction, biographical metadata, or external knowledge about the participant unless it appears as behavioral evidence in the supplied source.",
+    "Do not infer motive, backstory, history, or recurrence not supported by the source.",
+    "Exact quote fields must be contiguous substrings of the cited participant answer.",
+    "Question wording and interviewer/model summaries are not participant evidence.",
+    "Do not reward verbosity, number of questions asked, number of paraphrases, or model confidence.",
+    "Rate every construct on the same rubric. If source is insufficient, return null rather than forcing a score.",
+    "Conditions, exceptions, temporal change, relationship context, and counterevidence constrain the rating.",
+    "The task is comparative behavioral centrality/dominance, not whether a construct is admirable, healthy, intense, or unusual."
+  ],
+  "constructs": [
+    {
+      "construct_id": "T01",
+      "label": "values_standards_boundaries",
+      "definition": "Explicit standards about what is acceptable, unacceptable, fair, right, wrong, or worth protecting, including boundaries the person repeatedly enforces. General principles about learning or growth do not count unless they function as standards or boundaries."
+    },
+    {
+      "construct_id": "T02",
+      "label": "transformation_deep_restructuring",
+      "definition": "Long-duration deep change or restructuring after major experience: repeated shedding, rebuilding, truth-seeking, renewal, or sustained transformation. Ordinary skill improvement or routine maturation does not count."
+    },
+    {
+      "construct_id": "T03",
+      "label": "recurring_motivational_drive",
+      "definition": "A recurring internal pressure, need, pull, or motivational drive that initiates action. Score the source of recurring motivation here, not the person's style of asserting or confronting."
+    },
+    {
+      "construct_id": "T04",
+      "label": "discipline_limits_accountability",
+      "definition": "Recurring duty, discipline, limitation, accountability, consequence, or sustained constraint that the person repeatedly has to manage. Do not score ordinary developmental change here."
+    },
+    {
+      "construct_id": "T05",
+      "label": "self_expression_visibility_purpose",
+      "definition": "Recurring self-expression, purposeful direction, or concern with showing a recognizable sense of self or being seen for what one expresses. Centrality is scored only by the common rubric, not built into this construct definition."
+    },
+    {
+      "construct_id": "T06",
+      "label": "originality_departure_from_convention",
+      "definition": "Recurring originality, experimentation, nonconformity, disruption of convention, or preference for finding a different way rather than following the established one."
+    },
+    {
+      "construct_id": "T07",
+      "label": "communication_explanation_teaching_activity",
+      "definition": "Recurring activity of communicating, explaining, teaching, questioning, advising, writing, debating, or translating ideas for others. A topic merely recurring in thought does not count unless communication itself is part of the pattern."
+    },
+    {
+      "construct_id": "T08",
+      "label": "growth_opportunity_guiding_principles",
+      "definition": "Recurring expansion through learning, opportunity, exploration, mentoring, or broadening scope, including guiding principles specifically used to support growth. Ethical boundaries and prohibitions belong elsewhere."
+    },
+    {
+      "construct_id": "T09",
+      "label": "action_assertion_initiative",
+      "definition": "Recurring direct action, assertion, initiative, confrontation, competitive effort, or willingness to push into a challenge. Internal motivation alone does not count unless it appears as enacted assertion or initiative."
+    },
+    {
+      "construct_id": "T10",
+      "label": "imagination_ambiguity_spirituality_opacity",
+      "definition": "Recurring imagination, symbolic or spiritual orientation, attraction to mystery, porous ambiguity, idealization, or persistent difficulty distinguishing what is clear from what is elusive. Ordinary uncertainty, hedging, or saying 'it depends' does not count."
+    }
+  ],
+  "rating_rubric": {
+    "null": "Source cannot support a defensible rating for this construct.",
+    "0": "Usable source directly indicates the construct is not recurrent or central for this person; absence of mention alone cannot earn 0.",
+    "1": "At most isolated, situational, weak, or explicitly peripheral evidence.",
+    "2": "Recurring evidence exists, but it is narrow, mixed, context-bound, secondary, or substantially limited by counterevidence.",
+    "3": "Recurring evidence appears across multiple contexts or life stages and is behaviorally important, with bounded exceptions.",
+    "4": "Source supports a repeatedly organizing or central pattern across contexts or life stages, with consequential or strongly prioritizing evidence and no equally strong evidence reducing it to a situational pattern."
+  },
+  "output_contract": {
+    "construct_scores": "Exactly one item for each construct_id.",
+    "item_fields": {
+      "construct_id": "one frozen construct_id",
+      "dominance_rating": "integer 0..4 or null",
+      "evidence_sufficient": "boolean; false iff dominance_rating is null",
+      "support_quotes": "0..3 objects with turn_id and exact participant quote; every quote must contain at least four words and ratings 3..4 require at least two distinct support quotes",
+      "counterevidence_quotes": "0..3 objects with turn_id and exact participant quote; rating 0 requires explicit counterevidence rather than mere absence",
+      "conditions": "participant-supported scope/condition strings; no invented conditions",
+      "time_frame": "participant-supported time scope or unknown",
+      "confidence": "low|medium|high; quality-control metadata only and never used in ranking",
+      "reason": "brief source-bounded explanation without inferring any hidden framework"
+    },
+    "ties": "Equal dominance_rating values remain tied. Never invent a tie-breaker.",
+    "incomplete": "If any construct has null, the ten-way primary behavioral ranking is incomplete."
+  }
+}

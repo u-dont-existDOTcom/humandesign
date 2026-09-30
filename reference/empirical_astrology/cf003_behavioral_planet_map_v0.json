@@ -1,0 +1,93 @@
+{
+  "schema_version": "cf003-behavioral-construct-to-planet-map-v0",
+  "status": "evaluator_only_never_send_to_behavioral_classifier",
+  "candidate_id": "CF-003",
+  "hypothesis_scope": "development_combined_hypothesis: published CF-003 astronomical predictor crossed with independently scored behavioral meanings derived mainly from this project's pre-existing Human Design role domains; this is not a reconstruction of the authors' unavailable historical biographical target semantics.",
+  "meaning_source_status": "Nine meanings retain explicit Human Design role lineage; the added self-expression/purpose construct is a development proxy. Literature review may replace this mapping only in a new version before prospective freeze.",
+  "secrecy_rule": "This mapping and the published CF-003 predictor scores are withheld from the behavioral classifier until its ten-construct score record is frozen.",
+  "mapping": [
+    {
+      "construct_id": "T01",
+      "planet": "venus",
+      "existing_chart_blind_role_text": "Values, ethics, boundaries, ideals, integrity, or what is worth protecting.",
+      "existing_role_key": "venus",
+      "target_contract_definition": "Explicit standards about what is acceptable, unacceptable, fair, right, wrong, or worth protecting, including boundaries the person repeatedly enforces. General principles about learning or growth do not count unless they function as standards or boundaries.",
+      "development_extension_note": null
+    },
+    {
+      "construct_id": "T02",
+      "planet": "pluto",
+      "existing_chart_blind_role_text": "Long-duration transformation, truth-seeking, renewal, or a theme that deepens through major experience.",
+      "existing_role_key": "pluto",
+      "target_contract_definition": "Long-duration deep change or restructuring after major experience: repeated shedding, rebuilding, truth-seeking, renewal, or sustained transformation. Ordinary skill improvement or routine maturation does not count.",
+      "development_extension_note": "Development wording explicitly includes intensity/deep restructuring alongside the existing transformation/deepening role."
+    },
+    {
+      "construct_id": "T03",
+      "planet": "moon",
+      "existing_chart_blind_role_text": "Recurring drive or pressure that gets action moving.",
+      "existing_role_key": "moon",
+      "target_contract_definition": "A recurring internal pressure, need, pull, or motivational drive that initiates action. Score the source of recurring motivation here, not the person's style of asserting or confronting.",
+      "development_extension_note": null
+    },
+    {
+      "construct_id": "T04",
+      "planet": "saturn",
+      "existing_chart_blind_role_text": "Recurring discipline, accountability, consequence, or demanding lesson that matures into competence.",
+      "existing_role_key": "saturn",
+      "target_contract_definition": "Recurring duty, discipline, limitation, accountability, consequence, or sustained constraint that the person repeatedly has to manage. Do not score ordinary developmental change here.",
+      "development_extension_note": null
+    },
+    {
+      "construct_id": "T05",
+      "planet": "sun",
+      "existing_chart_blind_role_text": null,
+      "existing_role_key": null,
+      "new_construct": "Self-expression, purposeful direction, and being seen for what one expresses.",
+      "target_contract_definition": "Recurring self-expression, purposeful direction, or concern with showing a recognizable sense of self or being seen for what one expresses. Centrality is scored only by the common rubric, not built into this construct definition.",
+      "development_extension_note": "Development proxy for the missing Sun-side target; its centrality is measured only through the common dominance rubric."
+    },
+    {
+      "construct_id": "T06",
+      "planet": "uranus",
+      "existing_chart_blind_role_text": "Recurring unconventional originality, mutation, or departure from convention.",
+      "existing_role_key": "uranus",
+      "target_contract_definition": "Recurring originality, experimentation, nonconformity, disruption of convention, or preference for finding a different way rather than following the established one.",
+      "development_extension_note": null
+    },
+    {
+      "construct_id": "T07",
+      "planet": "mercury",
+      "existing_chart_blind_role_text": "Subjects or messages repeatedly expressed in speech, writing, teaching, explanation, advice, or argument.",
+      "existing_role_key": "mercury",
+      "target_contract_definition": "Recurring activity of communicating, explaining, teaching, questioning, advising, writing, debating, or translating ideas for others. A topic merely recurring in thought does not count unless communication itself is part of the pattern.",
+      "development_extension_note": "Narrowed to communication/explanation/teaching activity so recurring thought content alone cannot inflate the construct."
+    },
+    {
+      "construct_id": "T08",
+      "planet": "jupiter",
+      "existing_chart_blind_role_text": "A recurring principle, opportunity pattern, protection, or personal rule associated with sustainable growth.",
+      "existing_role_key": "jupiter",
+      "target_contract_definition": "Recurring expansion through learning, opportunity, exploration, mentoring, or broadening scope, including guiding principles specifically used to support growth. Ethical boundaries and prohibitions belong elsewhere.",
+      "development_extension_note": null
+    },
+    {
+      "construct_id": "T09",
+      "planet": "mars",
+      "existing_chart_blind_role_text": "A theme that begins immaturely or awkwardly and develops through repeated experience and maturation.",
+      "existing_role_key": "mars",
+      "target_contract_definition": "Recurring direct action, assertion, initiative, confrontation, competitive effort, or willingness to push into a challenge. Internal motivation alone does not count unless it appears as enacted assertion or initiative.",
+      "development_extension_note": "Development proxy emphasizes enacted assertion/initiative; the inherited maturation language remains lineage only and is not part of the classifier construct."
+    },
+    {
+      "construct_id": "T10",
+      "planet": "neptune",
+      "existing_chart_blind_role_text": "Recurring mystery, imagination, spirituality, obscurity, or a domain difficult for the person to see clearly.",
+      "existing_role_key": "neptune",
+      "target_contract_definition": "Recurring imagination, symbolic or spiritual orientation, attraction to mystery, porous ambiguity, idealization, or persistent difficulty distinguishing what is clear from what is elusive. Ordinary uncertainty, hedging, or saying 'it depends' does not count.",
+      "development_extension_note": "Development wording keeps imagination/mystery/opacity while explicitly excluding ordinary hedging or generic uncertainty."
+    }
+  ],
+  "lineage_source": "reference/core/survey_v2_human_measurement_scoring_contract_v1_0_0.json#/domain_measurement/domain_roles",
+  "sun_addition_source": "Owner-authorized CF-003 development extension, 2026-09-29; methodology review narrowed it to self-expression/purpose without defining centrality into the construct."
+}
