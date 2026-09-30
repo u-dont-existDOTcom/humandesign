@@ -1,106 +1,69 @@
-# Current state — CF-003 independent behavioral dominance secondary module
+# Current state — voice-first collection / compact Railway clarification
 
-Updated 2026-09-30. Branch: `chat/cf003-secondary-module-20260929`.
+Updated 2026-09-30. Branch: `chat/hybrid-voice-cost-optimization-20260928`. CF-003 development-secondary work and the suggested-fix accuracy lane are now integrated on this branch.
 
 ## Owner outcome
 
-A separate CF-003 DEVELOPMENT/SECONDARY module is implemented without changing TN-001, LiteratureModelV1, the main Life Patterns score, or the dark Railway participant deployment.
+The long Life Patterns interview should not require an hour of typing when voice produces richer answers. The development direction is now **voice-first ChatGPT collection -> frozen behavioral JSON -> Railway durable provenance and only genuinely useful clarifications**. Railway text remains available as a comparison mode; no claim of voice/text psychometric equivalence is made.
 
-The experiment keeps the published CF-003 seven-factor planetary-dominance score surface on the chart side and replaces the historical chart-conditioned biographical target with an independently frozen chart-blind behavioral target.
+API inference must fit the owner's limited Venice allowance. OpenRouter is not used. Development semantic probes use the owner's subscription-authenticated Codex CLI where available rather than Venice API credit.
 
-## Predictor status
+## Cost diagnosis and repair
 
-The source-replayed CF-003 scaffold preserves the published seven weights once seven binary factor flags are supplied for each of the ten candidate bodies. A dedicated `cf003-predictor-scores-v0` artifact now freezes those scores and its SHA-256 before behavioral classification.
+The prior Railway planner repeatedly sent the full protocol/controller, all 79 routes, all 73 evidence facets and accumulated transcript, followed by a second large independent-admission request. One private 96-turn development record measured ~175k characters for the old planner request alone; participant text/identity were not published.
 
-Important limitation: exact historical Mastro extraction of the seven factor flags from raw birth data is still unresolved. Prospective use therefore requires either the missing historical conventions or a separately frozen, transparently labeled new extraction convention.
+The candidate keeps full raw source and frozen authority server-side but compacts model context:
 
-Predictor ranking is quantized to the published 0.1-point grid before tie handling so mathematically equal published scores are not split by floating-point summation order.
+- one complete-source bulk review after import;
+- later calls receive exact current/pending source plus necessary antecedents/recent turns;
+- accepted evidence is a compact ledger;
+- at most 12 deterministic eligible routes are supplied for ordinary clarification;
+- evidence guidance is scoped to relevant routes/facets;
+- the independent reviewer receives only proposal-relevant source, the selected route's route-specific rules and cited evidence guidance;
+- routine context fails closed above 35k serialized characters, bulk above 110k;
+- output-token ceiling remains at the previously exercised provider setting; proposed low caps are deferred until exact Venice/XHigh truncation behavior can be tested without consuming scarce development credit;
+- default model-call ceiling: 12 actual semantic calls/session, with only 8 available before final review so both final-review Plan+Admission attempts remain reserved;
+- optional-retrospective routes are excluded unless the participant explicitly welcomed earlier-life comparisons.
 
-## Independent behavioral target
+The latest aggregate planning proxy on the private 96-turn development record is in `tasks/hybrid-voice-cost-optimization-20260928/COST-BENCHMARK.json`. It reports ~33.3k token-equivalent for the one-time bulk Plan+Admission pair, ~7.5k per later clarification pair, and ~55.8k input-equivalent for one bulk pair plus three clarification pairs before the four-call final-review reserve. These are planning proxies, not provider-billed totals; actual completion/reasoning tokens remain provider-dependent.
 
-The classifier sees only ten neutral construct IDs/definitions plus sanitized behavioral source. It never receives planet names, birth/chart data, predictor values/ranks, prior chart interpretation, evaluator mapping, astrology/Human Design labels, repository access, web, Memory, connected apps, or other participant context.
+## Voice-first collector
 
-Nine constructs preserve explicit lineage to existing chart-blind Human Design survey roles and the tenth is a development self-expression/purpose proxy. This is therefore a **combined development hypothesis**, not a reconstruction of the authors' unavailable historical CF-003 target semantics. The literature review may replace the mapping only in a new version before prospective freeze.
+The development Custom GPT bundle is under `reference/custom_gpt/`:
 
-All constructs use the same source-bounded 0–4 dominance rubric with null for insufficient evidence. Exact quotes must be at least four words; ratings 3–4 require at least two distinct support quotes; rating 0 requires explicit counterevidence; quote reuse across constructs is reported; conditions and counterevidence remain attached; ties remain ties.
+- `life_patterns_voice_interviewer_v2.md`
+- `life_patterns_voice_gpt_manifest_v2.json`
+- `LIFE-PATTERNS-VOICE-GPT-SETUP.md`
 
-## Secondary survey module
+It uses the frozen v7 protocol/bank/evidence guide as Knowledge and keeps must-follow collection/accuracy rules in Instructions. The Life Patterns voice instruction block is 7,960 / 8,000 on the conservative strict count.
 
-After the main behavioral record is frozen, but before any chart/predictor reveal, the development module may ask three concealed-direction coverage probes:
+The collector records collection mode and retrospective-question preference as nonbehavioral metadata. It treats the visible transcript—not inaccessible original audio—as the source record, labels model-exported transcript fidelity, exports collector evidence as unverified, preserves exact quotations, scopes absence claims to checked source, rechecks corrections, and does not infer motive/backstory/history. Railway preserves that source but does not admit GPT-authored evidence without its own independent admission. The owner-requested UDA suggested-fix item `2026-09-30-interviewer-accuracy-checks` was processed as an adaptation in PR #48 and recorded in `docs/suggested-fixes-ledger.md`; the deployable participant interviewer is now 7,768 / 8,000 strict and the legacy reverse matcher is exactly 8,000 / 8,000.
 
-1. broad continuity/change across life;
-2. recurring patterns that most shape choices, priorities, or action across settings;
-3. recurring patterns that are real but peripheral or situational.
+`apps/life-patterns-participant/scripts/analyze_collection_modes.py` provides a descriptive whole-pipeline CSV/JSON comparison of answer richness, conditions/corrections, collector-unverified versus Railway-admitted evidence, clarification burden and model/token usage. It explicitly does not establish voice/text equivalence or attribute a pipeline difference to voice alone.
 
-These are not a complete ten-construct battery. A secondary record must be cryptographically linked to the exact primary record. Missing construct evidence stays missing; no improvised construct-targeted follow-up is allowed until a balanced follow-up battery is separately specified and frozen.
+## Development inference
 
-Post-freeze metadata may record prior chart familiarity and whether ChatGPT Memory was enabled, but that metadata never enters the classifier.
+`apps/life-patterns-participant/scripts/codex_dev_probe.py` runs planner/admission prompts through subscription-authenticated Codex CLI and validates the JSON locally. The final reconciled GPT-5.6 Sol XHigh synthetic probe selected fresh route G23 and independent admission approved first-pass. No paid API was used.
 
-## Blind workflow and provenance
-
-1. Freeze the chart-side predictor artifact and its SHA-256 under an explicit factor-extraction convention.
-2. Build a classifier packet from frozen behavioral source only. The builder fails closed on profile/chart/predictor fields, scans classifier-facing strings for external-profile leakage, requires explicit behavioral turn roles, honors exposure flags, and requires exact primary/secondary linkage.
-3. Run the classifier in a fresh tool-free context using only that packet.
-4. Validate source evidence and freeze the behavioral target while recording classifier model/version, raw classifier-output hash, manifest/mapping hashes, and the preclassification predictor commitment hash.
-5. Compare only against the exact committed `cf003-predictor-scores-v0` artifact.
-
-## Endpoints and null
-
-Primary per person: mean behavioral midrank of every body tied for the highest CF-003 predictor score. With a unique predictor top, this is simply that predicted body's behavioral rank.
-
-Secondary:
-- tie-aware Spearman correlation across all ten ranks;
-- fractional top-3 overlap;
-- fractional top-3 Jaccard, with tied boundary labels sharing the remaining slot mass rather than expanding the top-3 set.
-
-Inferential group null: keep each chart predictor and the evaluator mapping fixed, then reassign complete frozen behavioral profiles among participants **within preregistered birth-cohort strata**. Freeze strata, Monte Carlo seed, and permutation count before prospective target collection.
-
-The old global construct-label permutation is diagnostic only. Opus's calibration simulation showed it can be materially miscalibrated under unequal predictor/behavioral marginals; it must not be used for CF-003 inferential p-values.
-
-## Cross-family methodology review
-
-Claude Opus 5.5 max via Claude Code completed the methodology review in session `a6e2eee0-204b-407a-a751-8b03dee3db73` with verdict **FINDS_ERROR**.
-
-The reviewer was initially still `busy/working` after the earlier wrapper wait; liveness/log inspection showed active analysis, so it was left running. It later completed and identified seven defect families covering the null, leakage/provenance, construct/elicitation balance, quote validation, freeze ordering/provenance, tie/float behavior, and the scope of the behavioral meanings.
-
-Those defect families are repaired and regression-tested. The reviewer probes are preserved under `tasks/cf003-secondary-module-20260929/reviewer-artifacts/`; null calibration is recorded in `NULL-CALIBRATION-20260929.md`.
-
-## Development versus prospective status
-
-Existing participant records may be used only for exploratory target diagnostics such as construct missingness, rating spread, quote reuse, ties, classifier behavior, and clarification burden. Any CF-003 association on those same records is exploratory.
-
-The module is **not prospectively frozen**. Before a new prospective CF-003 target cohort, resolve and freeze:
-- chart-factor extraction convention;
-- classifier model/version;
-- balanced source-coverage/follow-up rule;
-- literature-derived evaluator mapping decision;
-- birth-cohort permutation strata;
-- permutation seed/count;
-- final software commit/hashes.
-
-Held-out replication remains required.
+The existing Railway Cloud Agent `codex-human-46r` is preserved and sleeping. Codex is installed there, but its saved refresh token was revoked; a cloud semantic probe was not run. Re-authentication is a dev-harness matter, not a production blocker.
 
 ## Verification
 
-The integrated CF-003 branch, rebased onto the repaired voice parent and its processed suggested-fix lane, now passes:
-- combined CF-003 + interviewer-accuracy + voice focused checks: 68 passed;
-- full repository: 1005 passed / 6 skipped (only absent production Swiss Ephemeris files);
-- exact hosted-CI Ruff command: PASS;
-- mypy: PASS across 220 source files;
-- git diff check: PASS;
-- CF-003 manifest/hash checks: PASS through focused/combined tests;
-- Life Patterns voice instructions: 7960 / 8000 strict count;
-- participant interviewer instructions: 7768 / 8000 strict count;
-- legacy reverse matcher: 8000 / 8000 strict count;
-- no paid API inference;
-- no Railway deployment/change.
+Integrated evidence: focused voice reconciliation 73/73 PASS; participant-service suite 79/79 PASS; mobile browser smoke PASS; V7 authority verifier 497/497 PASS; CF-003 + interviewer-accuracy + voice focused integration 68/68 PASS; repository-wide pytest 1005 passed / 6 skipped. Exact CI Ruff passes and mypy passes across 220 source files after the parent baseline repair in PR #47. The generic `scripts/task_acceptance.py` remains bound to an older known-month-oracle task and still expects its missing artifacts/worktree-local `.venv`; it is not the acceptance authority for this parent task. See the task verification receipts.
 
-The earlier parent-branch Ruff/mypy baseline debt is resolved: the CI-baseline repair merged through PR #47, and the owner-requested interviewer-accuracy suggestion from the new UDA suggested-fix lane was adapted, recorded in docs/suggested-fixes-ledger.md, and merged through PR #48. The remaining failure of the generic scripts/task_acceptance.py is an unrelated legacy task binding: it still expects the old known_month_oracle_1000 artifacts and a worktree-local virtual environment, so it is not used as evidence that this CF-003 development module is incomplete.
+Claude Opus 5.5 max returned FINDS_ERROR on the initial architecture check and again on the single reconciliation. The second review explicitly found no blocker to a dark deployment with inference disabled; every concrete remaining live-inference defect it identified was subsequently repaired and regression-tested. No third reviewer round is claimed.
 
-This remains a DEVELOPMENT/SECONDARY scientific module, not a prospective freeze.
+## Integrated CF-003 development module
 
-## Previous Railway state
+CF-003 methodology repair merged through PR #45 after Opus 5.5 max returned `FINDS_ERROR` on the first implementation. The corrected inferential null reassigns complete frozen behavioral profiles within preregistered birth-cohort strata; the old global construct-label permutation is diagnostic only. Blinding/provenance, quote validation, predictor commitment, tie handling, and the neutral question module were also hardened.
 
-The parent voice/Railway work remains unchanged: the optimized Railway participant service is a dark preview with inference disabled and no participant gateway credential. This CF-003 task did not deploy or activate it.
+CF-003 remains **DEVELOPMENT/SECONDARY only**. Existing participants are exploratory. No prospective target cohort is authorized until the chart-factor extraction convention, classifier model/version, balanced source-coverage/follow-up rule, literature-derived evaluator mapping decision, cohort strata, permutation seed/count, and final software/hash freeze are resolved. Its task-local recovery state is `tasks/cf003-secondary-module-20260929/CURRENT-STATE.md`.
 
-Historical owner-method correction remains in force: there was never a completion policy requiring predetermined question coverage. The survey bank remains a menu, not a quota.
+## Production boundary
+
+Dark preview deployed and verified on Railway from commit `8978e543b492c4497d501c4f4d2d2c296f7a312f` as deployment `2fb89371-12bf-43cf-969f-ae0ee1b9dc06`. Health reports `railway-participant-v2.2-cost-hybrid-20260928`, `participant_enabled=false`, `provider_configured=false`, and encrypted SQLite persistence on the existing `/data` volume. `PARTICIPANT_MAX_MODEL_CALLS=12`; the participant gateway credential is absent. No paid inference or participant inference was run. The original `life-patterns-owner` service remains on deployment `2d60d3dd-2634-427c-a48f-62a36ee27350`.
+
+This is not a release-certified live inference deployment. Venice previously returned HTTP 402. Repository-wide Ruff and mypy are now green after PR #47; the generic task-acceptance script still carries unrelated legacy known-month-oracle binding debt. Keep Railway inference disabled. Before any live enable: resolve Venice API credit/access, update the activation helper for the exact reviewed v2.2 build, and obtain explicit paid/live inference authorization. Do not route public participants through Codex CLI.
+
+
+Historical owner-method correction remains in force: **there was never a completion policy** requiring predetermined question coverage. Natural stop is based on whether another route is both admissible and useful; the bank remains a menu, not a quota.
