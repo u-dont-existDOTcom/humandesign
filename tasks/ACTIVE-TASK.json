@@ -4,10 +4,10 @@
   "requiredBranch": "chat/cf003-secondary-module-20260929",
   "implementationAuthorized": true,
   "assuranceLane": "decision/iteration secondary research module",
-  "status": "development_secondary_candidate_complete_cross_family_unavailable",
-  "ownerOutcome": "Add a separate chart-blind CF-003 planetary-dominance behavioral target module now, reusing existing survey material plus a small Sun/centrality module, without changing the main frozen score.",
+  "status": "development_secondary_methodology_repaired_not_prospectively_frozen",
+  "ownerOutcome": "Add a separate chart-blind CF-003 development/secondary behavioral target module without changing the main frozen Life Patterns/TN-001 score.",
   "parentTaskRef": "chat/hybrid-voice-cost-optimization-20260928@ad2930a93184d4bd32fb4e14efccc779764b6176",
-  "predictorSource": "CF-003 published seven-factor weighted score scaffold imported from 9461567f26029fcb4580d83c602908217cbfc1d8; exact historical Mastro factor extraction from raw birth data is not reproduced.",
+  "predictorSource": "CF-003 published seven-factor weighted score surface; exact historical Mastro factor extraction from raw birth data remains unresolved.",
   "outputs": [
     "reference/empirical_astrology/cf003_behavioral_classifier_contract_v0.json",
     "reference/empirical_astrology/cf003_behavioral_classifier_prompt_v0.md",
@@ -16,28 +16,31 @@
     "reference/empirical_astrology/cf003_independent_behavioral_target_manifest_v0.json",
     "src/hdmatch/empirical_astrology/cf003_target.py",
     "scripts/build_cf003_behavioral_packet_v0.py",
+    "scripts/freeze_cf003_predictor_scores_v0.py",
     "scripts/freeze_cf003_behavioral_target_v0.py",
     "scripts/compare_cf003_frozen_target_v0.py",
     "notes/empirical_astrology/master_v2/CF003_SECONDARY_MODULE_DECISION_20260929.md"
   ],
   "constraints": [
     "TN-001 and main Life Patterns score unchanged",
-    "behavioral classifier sees no birth/chart/predictor/planet labels or evaluator mapping",
-    "planet mapping applied only after behavioral target freeze",
+    "behavioral classifier sees no birth/chart/predictor/planet labels, evaluator mapping, or hidden framework context",
+    "predictor artifact is cryptographically committed before behavioral classification and never shown to the classifier",
     "existing development participants remain exploratory",
+    "inferential null reassigns complete behavioral profiles within preregistered birth-cohort strata",
+    "global construct-label permutation is diagnostic only",
+    "behavioral mapping is a combined development hypothesis, not reconstruction of the authors' unavailable historical target",
     "no paid inference and no Railway deployment",
-    "prospective target remains unfrozen until cross-family methodology check returns or owner waives it",
-    "prospective chart-side predictor also requires exact historical factor conventions or a separately frozen transparent reimplementation"
+    "prospective activation remains held until the remaining freeze items are resolved"
   ],
   "verification": "tasks/cf003-secondary-module-20260929/VERIFICATION.json",
-  "crossFamilyCheck": "UNAVAILABLE after >15 min; no substitute. See CROSS-FAMILY-CHECK.md.",
-  "nextAction": "Commit/push the development-secondary candidate. Continue broad empirical-astrology literature work independently. Before any new prospective CF-003 target cohort, obtain the cross-family methodology verdict (or explicit owner waiver) and freeze/label the exact chart-side factor extraction convention.",
+  "crossFamilyCheck": "Claude Opus 5.5 max FINDS_ERROR; seven defect families repaired. See CROSS-FAMILY-CHECK.md.",
+  "nextAction": "Use existing records only for exploratory target diagnostics while the empirical-astrology literature work continues. Before any prospective CF-003 cohort, resolve and freeze the chart-factor extraction convention, classifier model/version, balanced source-coverage rule, literature-derived evaluator mapping, birth-cohort strata, permutation seed/count, and final software hashes.",
   "stopAdmission": {
-    "parentOutcome": "CF003_DEVELOPMENT_SECONDARY_MODULE_ADDED",
-    "currentOperation": "IMPLEMENTATION_COMPLETE_NOT_PROSPECTIVELY_FROZEN",
-    "nextActor": "empirical-astrology research coordinator / later cross-family reviewer",
-    "authority": "Development use on existing records is authorized. Prospective activation is not yet authorized as scientifically frozen.",
-    "blockerEvidence": "Cross-family reviewer returned no result after >15 minutes; exact historical Mastro factor extraction is unresolved.",
+    "parentOutcome": "CF003_DEVELOPMENT_SECONDARY_MODULE_REPAIRED",
+    "currentOperation": "IMPLEMENTATION_REPAIRED_NOT_PROSPECTIVELY_FROZEN",
+    "nextActor": "empirical-astrology research coordinator",
+    "authority": "Exploratory development use on existing records is authorized. Prospective scientific freeze is not yet authorized.",
+    "blockerEvidence": "Remaining prospective freeze items are unresolved; exact historical Mastro factor extraction is still unavailable.",
     "notPerformed": [
       "no prospective target activation",
       "no paid Venice/OpenRouter inference",
@@ -46,5 +49,5 @@
       "no merge to main"
     ]
   },
-  "updatedAt": "2026-09-29T19:09:00+00:00"
+  "updatedAt": "2026-09-30T04:59:00+00:00"
 }
