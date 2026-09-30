@@ -83,6 +83,9 @@ select = ["E", "F", "I", "UP", "B", "SIM"]
 # The v5 response graph is generated directly from a reviewed semantic contract. Keep
 # the implementation text stable while allowing equivalent typing modernization forms.
 "src/hdmatch/evaluation/facet_relation_v5.py" = ["UP035", "UP037"]
+# This astronomy rule module is hash-frozen by the v15 decoder contract. Preserve
+# its bytes; the unused legacy PLANETS import is lint-only and cannot be removed.
+"src/hdmatch/evaluation/astrohd_v14_rules.py" = ["F401"]
 
 [tool.mypy]
 python_version = "3.11"

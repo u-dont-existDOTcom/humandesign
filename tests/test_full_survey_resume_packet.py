@@ -18,7 +18,8 @@ class PacketTests(unittest.TestCase):
         packet=mod.build_packet(ROOT)
         for rel,_ in mod.SOURCES:
             original=(ROOT/rel).read_text()
-            begin=f"<!-- BEGIN {rel} -->\n";end=f"<!-- END {rel} -->"
+            begin=f"<!-- BEGIN {rel} -->\n"
+            end=f"<!-- END {rel} -->"
             self.assertEqual(packet.count(begin),1)
             embedded=packet.split(begin,1)[1].split(end,1)[0]
             self.assertEqual(embedded,original)
@@ -33,11 +34,16 @@ class PacketTests(unittest.TestCase):
     def test_hash_drift_rejected(self):
         with tempfile.TemporaryDirectory() as td:
             root=Path(td)
-            p=root/mod.TASK/'IMPORT-AND-RESUME-PROTOCOL-v1.md';p.parent.mkdir(parents=True);p.write_text('test')
+            p=root/mod.TASK/'IMPORT-AND-RESUME-PROTOCOL-v1.md'
+            p.parent.mkdir(parents=True)
+            p.write_text('test')
             for rel,_ in mod.SOURCES:
-                p=root/rel;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes((ROOT/rel).read_bytes())
+                p=root/rel
+                p.parent.mkdir(parents=True,exist_ok=True)
+                p.write_bytes((ROOT/rel).read_bytes())
             (root/mod.SOURCES[0][0]).write_text('changed authority')
-            with self.assertRaises(ValueError): mod.build_packet(root)
+            with self.assertRaises(ValueError):
+                mod.build_packet(root)
     def test_no_empty_or_duplicate_original_ids(self):
         b=json.loads((ROOT/mod.SURVEY/'interviewer-bank-v7.json').read_text())
         self.assertTrue(all(q['id'] and q['question'] for q in b['questions']))
@@ -52,4 +58,5 @@ class PacketTests(unittest.TestCase):
         self.assertIn('Exact wording is not a validity requirement',p)
         self.assertIn('Partial inputs can support',p)
 
-if __name__=='__main__': unittest.main()
+if __name__=='__main__':
+    unittest.main()
