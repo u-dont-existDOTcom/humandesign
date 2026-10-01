@@ -1,6 +1,6 @@
 # Life Patterns Voice GPT — latest bundle
 
-Built from the current `chat/hybrid-voice-cost-optimization-20260928` parent, with the 2026-10-01.1 Action-schema compatibility fix.
+Built from the current `chat/hybrid-voice-cost-optimization-20260928` parent, with the 2026-10-01.2 privacy-safe resume revision.
 
 ## Configure the GPT builder
 
@@ -33,9 +33,11 @@ The recovery guide carries the detailed Hâle-derived recovery/provenance safegu
 
 For a new participant, tap **Start my Life Patterns interview.**
 
-For somebody with an existing interview, attach their prior response record and tap **Continue my existing interview from the answers I’m attaching.** The GPT must preserve received participant Q&A, avoid restarting or repeating resolved questions, and ask only useful unresolved distinctions.
+For an existing interview, prefer **same-chat automatic resume** on ChatGPT web: reopen the old interview, type `@`, select **Life Patterns Interview**, then say **Continue my interview**. The conversation context stays available to the GPT.
 
-On ChatGPT web, an existing old interview chat can alternatively bring in this GPT with `@`; the next message goes to the GPT while retaining that conversation's context.
+Alternatively, in a new GPT chat explicitly attach/add the prior response record and use the continue starter. The GPT must preserve usable Q&A, avoid repeating resolved questions, and ask only useful unresolved distinctions.
+
+**Privacy boundary:** a generic “continue my interview” request must never trigger Library, Memory, prior-chat, connected-app, other-user-file, or GPT-Knowledge search for participant answers. If the current chat has neither visible interview material nor an explicit attachment, the GPT must say so and give the two safe resume paths above.
 
 ## CF-003 timing
 

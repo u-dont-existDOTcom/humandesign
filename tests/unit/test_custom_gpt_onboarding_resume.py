@@ -17,7 +17,8 @@ def test_builder_config_has_user_facing_start_paths() -> None:
     text = (CUSTOM / "GPT-BUILDER-CONFIG.md").read_text(encoding="utf-8")
     assert "Life Patterns Interview" in text
     assert "Start my Life Patterns interview." in text
-    assert "Continue my existing interview from the answers I’m attaching." in text
+    assert "Continue my interview from this chat or a record I attach." in text
+    assert "Continue this interview from what’s visible in this chat." in text
     assert "A Custom GPT cannot send a message before the user sends or taps something." in text
     assert "research-use consent" in text
     assert "Enable **Code Interpreter & Data Analysis**" in text
@@ -25,18 +26,21 @@ def test_builder_config_has_user_facing_start_paths() -> None:
     assert "action-openapi.yaml" in text
     assert "/privacy" in text
     assert "action-capable non-Pro model" in text
+    assert "Same-chat automatic resume (web)" in text
+    assert "must not search Library, Memory, chat history, connected apps" in text
 
 
 def test_instructions_orient_then_resume_without_restart() -> None:
     text = (CUSTOM / "life_patterns_voice_interviewer_v2.md").read_text(encoding="utf-8")
     normalized = " ".join(text.split())
-    assert "immediately orient them before behavioral questions" in normalized
+    assert "On the first message, orient them before behavioral questions" in normalized
     assert "responses may be shared with Joel" in normalized
     assert "consent to research use" in normalized
     assert "without another “ready” step" in normalized
-    assert "do not restart or re-ask resolved questions" in normalized
+    assert "Resume only from interview material visible in this chat" in normalized
     assert "RECOVERY-GUIDE-v2.md" in normalized
-    assert "ask only useful unresolved distinctions" in normalized
+    assert "Never discover participant answers through Library, Memory, prior chats" in normalized
+    assert "do not claim one" in normalized
     assert "submitLifePatternsRecords" in text
     assert "call it exactly once" in text
     assert "submission ID" in text
@@ -55,6 +59,9 @@ def test_recovery_guide_keeps_hale_derived_safeguards() -> None:
         "cannot retroactively verify original question wording",
         "Do not require reconfirmation of every old answer",
         "Missing metadata stays unknown",
+        "Never search, retrieve, or infer participant answers from Library, Memory",
+        "generic request such as “continue my interview” is not authorization",
+        "Never claim that an interview or attachment was found",
     )
     for phrase in required:
         assert phrase in text
@@ -102,8 +109,12 @@ def test_release_zip_contains_builder_config_and_resume_instructions() -> None:
         config = archive.read(config_name).decode()
         instructions = " ".join(archive.read(instructions_name).decode().split())
         assert "Start my Life Patterns interview." in config
-        assert "Continue my existing interview" in config
-        assert "do not restart or re-ask resolved questions" in instructions
+        assert "Continue my interview from this chat or a record I attach." in config
+        assert "Continue this interview from what’s visible in this chat." in config
+        assert (
+            "Never discover participant answers through Library, Memory, prior chats"
+            in instructions
+        )
         assert any(name.endswith("/knowledge/RECOVERY-GUIDE-v2.md") for name in names)
         assert any(name.endswith("/ACTION-life-patterns-submission-openapi.yaml") for name in names)
         assert "submitLifePatternsRecords" in archive.read(instructions_name).decode()
