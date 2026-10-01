@@ -1,6 +1,15 @@
 # Life Patterns recovery guide v2
 
-Use this whenever the participant has earlier interview answers, either visible in the current chat or supplied as a prior record. These are provenance/admission rules, not personality evidence.
+Use this only when earlier interview answers are already visible in the current chat or a prior record was explicitly attached/added to this chat. These are provenance/admission rules, not personality evidence.
+
+## Resume-source boundary
+
+- Allowed participant sources are only: (a) interview material visible in this current conversation, including when the GPT is brought into the old interview with `@`; or (b) a file the participant explicitly attached/added to this conversation.
+- Never search, retrieve, or infer participant answers from Library, Memory, previous conversations, connected apps, other users' files, GPT Knowledge, or Action history.
+- A generic request such as “continue my interview” is not authorization to search account-level sources.
+- If no allowed source is present, say that the prior interview is not available in this chat. On ChatGPT web, instruct the participant to reopen the old interview, type `@`, select Life Patterns Interview, and continue there; alternatively they may attach/add the record here.
+- If more than one plausible participant record is explicitly present in this chat, identify them by filename/source and ask which one to use before importing any answers.
+- Never claim that an interview or attachment was found unless it is actually visible/attached in this conversation.
 
 ## Existing interview visible in this chat
 

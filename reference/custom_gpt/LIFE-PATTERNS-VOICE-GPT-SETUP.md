@@ -1,6 +1,6 @@
 # Life Patterns voice-first ChatGPT collector
 
-Version: 2026-10-01.1. Development collection surface.
+Version: 2026-10-01.2. Development collection surface.
 
 ## Purpose
 
@@ -32,7 +32,7 @@ The deployable instruction block is below 8,000 characters on the repository's c
 
 1. Open the shared GPT in a normal persistent chat. A GPT cannot speak first: tap a conversation starter or send a first message.
 2. For a new interview, tap **Start my Life Patterns interview.** The GPT gives the consent/privacy/mode framing and begins after the participant answers those setup questions.
-3. For an existing interview, attach the prior response record and tap **Continue my existing interview from the answers I’m attaching.** The GPT follows `RECOVERY-GUIDE-v2.md`, preserves the received source/provenance correctly, does not restart, and asks only useful unresolved distinctions.
+3. For an existing interview, use one of two safe paths. On ChatGPT web, reopen the old interview, type `@`, select **Life Patterns Interview**, and say **Continue my interview**; the GPT can use that conversation's existing context. Or, in a new GPT chat, explicitly attach/add the prior response record and use the continue starter. It must never search Library, Memory, prior chats, connected apps, or other users' files for participant answers.
 4. Do not provide birth date/time/place or chart information.
 5. At natural completion, review the behavior-only summary and correct material errors/conditions.
 6. Freeze the main `life-patterns-participant-export.json` first. Then ask all three CF-003 secondary questions before any chart reveal and freeze them separately as `life-patterns-cf003-secondary-v0.json`. None of it alters the primary record or score.
