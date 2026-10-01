@@ -63,3 +63,11 @@ The score measures timing density under this development model, not probability 
 
 ## Evaluation boundary
 Historical periods already revealed by the owner are development cases only. Future ranking begins after 2026-10-01 and must not be reweighted after inspecting the resulting peaks.
+
+
+## Pre-scan operational clarification
+Added before computing any future rankings:
+- ASC and DSC are treated as one relationship axis so the same geometry cannot double-count as, for example, conjunction DSC plus opposition ASC.
+- For a contact spanning a calendar month, its exact/minimum-orb date determines the annual-profection modifier for that contact.
+- Monthly base score is the sum of individually modified contact weights; the multi-family cluster bonus is applied once to the monthly total.
+- A repeated pass by the same timing body/method to the same natal target/aspect within one calendar month counts once, using that month's closest pass.
