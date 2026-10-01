@@ -71,3 +71,6 @@ Added before computing any future rankings:
 - For a contact spanning a calendar month, its exact/minimum-orb date determines the annual-profection modifier for that contact.
 - Monthly base score is the sum of individually modified contact weights; the multi-family cluster bonus is applied once to the monthly total.
 - A repeated pass by the same timing body/method to the same natal target/aspect within one calendar month counts once, using that month's closest pass.
+
+## Structural dependency correction
+Before interpreting the future ranking, solar-arc Sun was removed from scoring because solar-arc Sun is mathematically identical to the secondary-progressed Sun used to define the solar arc. Counting both would duplicate one signal. No other weight, orb, target, or future period was changed.
