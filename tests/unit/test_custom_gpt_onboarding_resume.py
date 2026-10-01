@@ -100,6 +100,7 @@ def test_manifest_pins_builder_config_and_instruction_budget() -> None:
         "startLifePatternsReview",
         "getLifePatternsReview",
         "submitLifePatternsClarification",
+        "controlLifePatternsReview",
         "submitLifePatternsRecords",
     ]
     assert manifest["action_schema"]["authentication"] == "api_key_bearer"

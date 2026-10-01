@@ -1,268 +1,597 @@
-openapi: 3.1.0
-info:
-  title: Life Patterns Research Review and Submission
-  version: 1.1.0
-  description: >-
-    Queue independent review of a chart-blind Life Patterns interview, retrieve
-    clarifications, and submit the final frozen primary plus CF-003 records.
-servers:
-  - url: https://life-patterns-participant-production.up.railway.app
-paths:
-  /api/gpt/reviews:
-    post:
-      operationId: startLifePatternsReview
-      summary: Start independent review before freezing the primary record
-      description: >-
-        Send the candidate primary record after the interview seems saturated but
-        before final review, freeze, or CF-003. This queues independent review and
-        returns a review ID immediately; do not wait for model processing.
-      security:
-        - bearerAuth: []
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ReviewStart'
-      responses:
-        '200':
-          description: Review queue receipt or existing matching review.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ReviewStatus'
-        '422':
-          description: Candidate failed consent, schema, blinding, or pre-freeze checks.
-  /api/gpt/reviews/{review_id}:
-    get:
-      operationId: getLifePatternsReview
-      summary: Check independent review status
-      description: >-
-        Check a previously queued review. If clarification is returned, ask that
-        exact question. If ready, proceed to participant review and final freeze.
-        If queued or processing, the participant can return later.
-      security:
-        - bearerAuth: []
-      parameters:
-        - name: review_id
-          in: path
-          required: true
-          schema:
-            type: string
-            pattern: '^R-[a-f0-9]{32}$'
-      responses:
-        '200':
-          description: Current review state.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ReviewStatus'
-  /api/gpt/reviews/{review_id}/clarifications:
-    post:
-      operationId: submitLifePatternsClarification
-      summary: Send one clarification answer back for review
-      description: >-
-        After asking the exact admitted clarification from the review status, send
-        only the participant's answer. Railway requeues review and returns quickly;
-        check the same review ID later for another clarification or ready state.
-      security:
-        - bearerAuth: []
-      parameters:
-        - name: review_id
-          in: path
-          required: true
-          schema:
-            type: string
-            pattern: '^R-[a-f0-9]{32}$'
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ClarificationAnswer'
-      responses:
-        '200':
-          description: Requeued review status.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ReviewStatus'
-        '409':
-          description: Review is not currently waiting for a clarification answer.
-  /api/gpt/submissions:
-    post:
-      operationId: submitLifePatternsRecords
-      summary: Send independently reviewed final records to Joel
-      description: >-
-        Call only after the review is ready, participant review is complete, the
-        primary is frozen, and all three CF-003 questions are frozen separately.
-        Include the ready review ID and both exact frozen records.
-      security:
-        - bearerAuth: []
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Submission'
-      responses:
-        '200':
-          description: Encrypted-store receipt.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Receipt'
-        '409':
-          description: Independent review state does not permit final submission.
-        '422':
-          description: Records failed review, consent, freeze, blinding, linkage, or CF-003 checks.
-components:
-  securitySchemes:
-    bearerAuth:
-      type: http
-      scheme: bearer
-  schemas:
-    ReviewStart:
-      type: object
-      additionalProperties: false
-      required:
-        - research_use_consented
-        - candidate_record
-      properties:
-        research_use_consented:
-          type: boolean
-          const: true
-        candidate_record:
-          type: object
-          minProperties: 1
-          additionalProperties: true
-          description: Unfrozen life-patterns-full-survey-participant-export-v2 candidate.
-    ClarificationAnswer:
-      type: object
-      additionalProperties: false
-      required:
-        - answer_text
-      properties:
-        answer_text:
-          type: string
-          minLength: 1
-          maxLength: 20000
-    Clarification:
-      type: object
-      additionalProperties: false
-      required:
-        - route_id
-        - route_type
-        - question_text
-        - antecedent_turn_ids
-      properties:
-        route_id:
-          type: string
-        route_type:
-          type: string
-          enum: [canonical, context_repair, missing_piece_followup]
-        question_text:
-          type: string
-        antecedent_turn_ids:
-          type: array
-          items:
-            type: string
-    ReviewStatus:
-      type: object
-      additionalProperties: false
-      required:
-        - schema
-        - review_id
-        - status
-        - round
-        - duplicate
-      properties:
-        schema:
-          type: string
-          const: life-patterns-gpt-review-status-v1
-        review_id:
-          type: string
-          pattern: '^R-[a-f0-9]{32}$'
-        status:
-          type: string
-          enum: [queued, processing, clarification_needed, ready, error]
-        round:
-          type: integer
-          minimum: 0
-        duplicate:
-          type: boolean
-        clarification:
-          oneOf:
-            - $ref: '#/components/schemas/Clarification'
-            - type: 'null'
-        error:
-          oneOf:
-            - type: string
-            - type: 'null'
-    Submission:
-      type: object
-      additionalProperties: false
-      required:
-        - research_use_consented
-        - review_id
-        - primary_record
-        - cf003_record
-      properties:
-        research_use_consented:
-          type: boolean
-          const: true
-        review_id:
-          type: string
-          pattern: '^R-[a-f0-9]{32}$'
-        primary_record:
-          type: object
-          minProperties: 1
-          additionalProperties: true
-          description: Exact final frozen life-patterns-full-survey-participant-export-v2 object.
-        cf003_record:
-          type: object
-          minProperties: 1
-          additionalProperties: true
-          description: Exact frozen CF-003 secondary record containing all three required questions.
-    Receipt:
-      type: object
-      additionalProperties: false
-      required:
-        - schema
-        - submission_id
-        - received_at_utc
-        - duplicate
-        - review_id
-        - primary_record_sha256
-        - cf003_record_sha256
-        - stored_encrypted
-        - independent_review_completed
-        - inference_started
-      properties:
-        schema:
-          type: string
-          const: life-patterns-gpt-submission-receipt-v1
-        submission_id:
-          type: string
-        received_at_utc:
-          type: string
-          format: date-time
-        duplicate:
-          type: boolean
-        review_id:
-          type: string
-        primary_record_sha256:
-          type: string
-          pattern: '^[a-f0-9]{64}$'
-        cf003_record_sha256:
-          type: string
-          pattern: '^[a-f0-9]{64}$'
-        stored_encrypted:
-          type: boolean
-          const: true
-        independent_review_completed:
-          type: boolean
-          const: true
-        inference_started:
-          type: boolean
-          const: false
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Life Patterns Independent Review Pilot",
+    "version": "1.2.0",
+    "description": "Asynchronous independent review and exact-source submission for the development pilot."
+  },
+  "servers": [
+    {
+      "url": "https://life-patterns-participant-production.up.railway.app"
+    }
+  ],
+  "paths": {
+    "/api/gpt/reviews": {
+      "post": {
+        "operationId": "startLifePatternsReview",
+        "summary": "Queue independent review before primary freeze",
+        "description": "Send the exact unfrozen candidate after interview saturation, before final review or CF-003. Preserve the returned private review ID. Queuing returns immediately; the review continues outside this Action.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Saved result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReviewStatus"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Access credentials are missing or invalid."
+          },
+          "409": {
+            "description": "The request is stale or conflicts with saved state."
+          },
+          "422": {
+            "description": "Invalid data; saved source remains unchanged."
+          }
+        },
+        "x-openai-isConsequential": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReviewStart"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/gpt/reviews/{review_id}": {
+      "get": {
+        "operationId": "getLifePatternsReview",
+        "summary": "Check saved review status",
+        "description": "Check only a private review ID from this conversation. Ask any returned clarification exactly. When ready, use the independently admitted review_summary. Pending work requires returning later; do not poll repeatedly.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Saved result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReviewStatus"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Access credentials are missing or invalid."
+          },
+          "409": {
+            "description": "The request is stale or conflicts with saved state."
+          },
+          "422": {
+            "description": "Invalid data; saved source remains unchanged."
+          }
+        },
+        "parameters": [
+          {
+            "name": "review_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^R-[a-f0-9]{32}$"
+            }
+          }
+        ]
+      }
+    },
+    "/api/gpt/reviews/{review_id}/clarifications": {
+      "post": {
+        "operationId": "submitLifePatternsClarification",
+        "summary": "Save an exact clarification answer or explicit skip",
+        "description": "Send the answer with the exact clarification_id issued by the review. Reuse operation_id and body for a retry. Set skipped only for an explicit participant skip. This saves the response and queues the next check.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Saved result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReviewStatus"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Access credentials are missing or invalid."
+          },
+          "409": {
+            "description": "The request is stale or conflicts with saved state."
+          },
+          "422": {
+            "description": "Invalid data; saved source remains unchanged."
+          }
+        },
+        "x-openai-isConsequential": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClarificationAnswer"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "review_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^R-[a-f0-9]{32}$"
+            }
+          }
+        ]
+      }
+    },
+    "/api/gpt/reviews/{review_id}/control": {
+      "post": {
+        "operationId": "controlLifePatternsReview",
+        "summary": "Pause, resume, stop, or retry a saved review",
+        "description": "Honor pause, stop or withdrawal. Withdrawal clears an unsubmitted review. Resume only when requested. Retry only after resolving a recoverable worker error; a resource limit is not a completed interview.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Saved result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReviewStatus"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Access credentials are missing or invalid."
+          },
+          "409": {
+            "description": "The request is stale or conflicts with saved state."
+          },
+          "422": {
+            "description": "Invalid data; saved source remains unchanged."
+          }
+        },
+        "x-openai-isConsequential": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReviewControl"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "review_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^R-[a-f0-9]{32}$"
+            }
+          }
+        ]
+      }
+    },
+    "/api/gpt/reviewed-submissions": {
+      "post": {
+        "operationId": "submitLifePatternsRecords",
+        "summary": "Submit independently reviewed frozen records",
+        "description": "After ready, participant review and primary freeze, ask the three CF-003 questions and freeze them separately. Submit the ready review ID and both exact records. A successful receipt confirms storage, not scientific validity.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Saved result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Receipt"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Access credentials are missing or invalid."
+          },
+          "409": {
+            "description": "The request is stale or conflicts with saved state."
+          },
+          "422": {
+            "description": "Invalid data; saved source remains unchanged."
+          }
+        },
+        "x-openai-isConsequential": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Submission"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {
+      "ReviewStart": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "research_use_consented": {
+            "type": "boolean",
+            "const": true
+          },
+          "request_id": {
+            "type": "string",
+            "minLength": 16,
+            "maxLength": 80,
+            "pattern": "^[a-zA-Z0-9_-]+$",
+            "description": "Random per-operation identifier. Reuse the exact identifier and body when retrying."
+          },
+          "candidate_record": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Exact unfrozen primary source record with explicit consent and all source turns; no CF-003 answers."
+          }
+        },
+        "required": [
+          "research_use_consented",
+          "request_id",
+          "candidate_record"
+        ]
+      },
+      "ClarificationAnswer": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "clarification_id": {
+            "type": "string",
+            "pattern": "^Q-[a-f0-9]{32}$"
+          },
+          "operation_id": {
+            "type": "string",
+            "minLength": 16,
+            "maxLength": 80,
+            "pattern": "^[a-zA-Z0-9_-]+$",
+            "description": "Random per-operation identifier. Reuse the exact identifier and body when retrying."
+          },
+          "answer_text": {
+            "type": "string",
+            "maxLength": 20000
+          },
+          "skipped": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "clarification_id",
+          "operation_id",
+          "answer_text"
+        ]
+      },
+      "ReviewControl": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "pause",
+              "resume",
+              "stop",
+              "retry",
+              "withdraw"
+            ]
+          },
+          "operation_id": {
+            "type": "string",
+            "minLength": 16,
+            "maxLength": 80,
+            "pattern": "^[a-zA-Z0-9_-]+$",
+            "description": "Random per-operation identifier. Reuse the exact identifier and body when retrying."
+          }
+        },
+        "required": [
+          "action",
+          "operation_id"
+        ]
+      },
+      "Clarification": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "clarification_id": {
+            "type": "string",
+            "pattern": "^Q-[a-f0-9]{32}$"
+          },
+          "route_id": {
+            "type": "string"
+          },
+          "route_type": {
+            "type": "string",
+            "enum": [
+              "canonical",
+              "context_repair",
+              "missing_piece_followup"
+            ]
+          },
+          "question_text": {
+            "type": "string"
+          },
+          "antecedent_turn_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "clarification_id",
+          "route_id",
+          "route_type",
+          "question_text",
+          "antecedent_turn_ids"
+        ]
+      },
+      "ReviewStatus": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "schema": {
+            "type": "string",
+            "const": "life-patterns-gpt-review-status-v1"
+          },
+          "review_id": {
+            "type": "string",
+            "pattern": "^R-[a-f0-9]{32}$"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "queued",
+              "processing",
+              "clarification_needed",
+              "ready",
+              "error",
+              "paused",
+              "stopped",
+              "resource_limited",
+              "withdrawn"
+            ]
+          },
+          "round": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "duplicate": {
+            "type": "boolean"
+          },
+          "clarification": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Clarification"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "review_summary": {
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "evidence_id": {
+                      "type": "string"
+                    },
+                    "observation": {
+                      "type": "string"
+                    },
+                    "conditions": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "time_frame": {
+                      "type": "string"
+                    },
+                    "relationship_context": {
+                      "type": "string"
+                    },
+                    "source_quotes": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "turn_id": {
+                            "type": "string"
+                          },
+                          "quote": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "turn_id",
+                          "quote"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "evidence_id",
+                    "observation",
+                    "conditions",
+                    "time_frame",
+                    "relationship_context",
+                    "source_quotes"
+                  ]
+                }
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "source_review_status": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema",
+          "review_id",
+          "status",
+          "round",
+          "duplicate",
+          "clarification",
+          "error",
+          "review_summary",
+          "source_review_status"
+        ]
+      },
+      "Submission": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "research_use_consented": {
+            "type": "boolean",
+            "const": true
+          },
+          "review_id": {
+            "type": "string",
+            "pattern": "^R-[a-f0-9]{32}$"
+          },
+          "primary_record": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Exact frozen primary source, plus participant_review.summary_shown=true and confirmed=true."
+          },
+          "cf003_record": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Separate frozen three-question CF-003 record linked to this exact primary."
+          }
+        },
+        "required": [
+          "research_use_consented",
+          "review_id",
+          "primary_record",
+          "cf003_record"
+        ]
+      },
+      "Receipt": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "schema": {
+            "type": "string",
+            "const": "life-patterns-gpt-submission-receipt-v1"
+          },
+          "submission_id": {
+            "type": "string"
+          },
+          "received_at_utc": {
+            "type": "string"
+          },
+          "duplicate": {
+            "type": "boolean"
+          },
+          "review_id": {
+            "type": "string",
+            "pattern": "^R-[a-f0-9]{32}$"
+          },
+          "primary_record_sha256": {
+            "type": "string"
+          },
+          "cf003_record_sha256": {
+            "type": "string"
+          },
+          "stored_encrypted": {
+            "type": "boolean"
+          },
+          "independent_review_completed": {
+            "type": "boolean"
+          },
+          "inference_started": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "schema",
+          "submission_id",
+          "received_at_utc",
+          "duplicate",
+          "review_id",
+          "primary_record_sha256",
+          "cf003_record_sha256",
+          "stored_encrypted",
+          "independent_review_completed",
+          "inference_started"
+        ]
+      }
+    }
+  }
+}

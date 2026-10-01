@@ -75,14 +75,14 @@ def test_voice_interviewer_fits_builder_budget_and_has_accuracy_guards():
         "long spoken answers are fine",
         "Do not claim access to\nthe original audio or perfect transcription",
         "bank is a menu, not a quota",
-        "Put only their exact transcript words in quotation marks",
-        "Say they never mentioned something only after checking the complete conversation",
-        "neither defend your prior\n  reading nor adopt a new claim they did not say",
-        "ChatGPT account-data\nExport",
+        "Quote only their exact contiguous words",
+        "Absence claims require checking the complete available conversation",
+        "neither defend your prior reading nor adopt an unstated claim",
+        "ChatGPT account-data Export",
         "collection_mode",
     )
     for phrase in required:
-        assert phrase in text
+        assert " ".join(phrase.split()) in " ".join(text.split())
 
 
 @pytest.mark.parametrize(

@@ -1,0 +1,27 @@
+{
+  "schema": "gpt-review-loop-verification-v1",
+  "status": "candidate_verified_before_deployment",
+  "assurance": "bounded private development/pilot; not scientific validation",
+  "tests": {
+    "affected_participant_and_gpt": "129 passed",
+    "repository_pytest": "1013 passed, 6 skipped",
+    "skip_reason": "production Swiss Ephemeris files unavailable",
+    "hosted_ruff": "PASS",
+    "mypy": "PASS: 220 source files",
+    "broad_declared_ruff": "BASELINE_FAIL: 883 diagnostics outside this task scope",
+    "legacy_task_acceptance": "BASELINE_FAIL: missing known_month_oracle_1000 reports"
+  },
+  "cross_family": {
+    "model": "Claude Opus 5.5 max",
+    "initial": "FINDS_ERROR",
+    "reconciliation": "AGREES for bounded pilot",
+    "remaining_nonblocking_findings": "R1-R3 fixed with regression tests; no third review"
+  },
+  "semantic_probe": "SYNTHETIC-ISOLATED-CLI-PROBE.json",
+  "participant_data_used": false,
+  "paid_api_used": false,
+  "gpt_builder_updated": false,
+  "railway_review_loop_live": false,
+  "local_worker_installed": false,
+  "zip_sha256": "dc93fb003cafe8bee4887ede806793026919623f79bbae2253f38ed1cdebf30e"
+}

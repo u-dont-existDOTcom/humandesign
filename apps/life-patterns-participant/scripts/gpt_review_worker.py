@@ -15,6 +15,10 @@ import argparse
 import json
 import os
 import secrets
+import signal
+import threading
+import fcntl
+from contextlib import contextmanager
 import shutil
 import subprocess
 import tempfile
@@ -25,10 +29,9 @@ from pathlib import Path
 from typing import Any
 
 from cryptography.fernet import Fernet
-from pydantic import ValidationError
 
-from participant.domain import Admission, Plan, import_record, load_instrument, new_state, utc
-from participant.engine import Engine, PLANNER, REVIEWER
+from participant.domain import import_record, load_instrument, new_state, utc
+from participant.engine import Engine
 from participant.store import Store, canonical
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
@@ -51,27 +54,36 @@ def authority_copy(destination: Path) -> Path:
     return destination
 
 
+class TransportError(RuntimeError):
+    def __init__(self, status: int):
+        self.status = status
+        super().__init__(f"review_transport_http_{status}")
+
+
+class NoRedirect(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        raise TransportError(code)
+
+
 def http_json(
-    method: str,
-    url: str,
-    token: str,
-    body: dict | None = None,
-    *,
-    timeout: float = 30.0,
+    method: str, url: str, token: str, body: dict | None = None, *, timeout: float = 30.0
 ) -> tuple[int, Any | None]:
     data = canonical(body).encode() if body is not None else None
-    headers = {"Authorization": "Bearer " + token}
-    if body is not None:
-        headers["Content-Type"] = "application/json"
-    request = urllib.request.Request(url, data=data, method=method, headers=headers)
+    request = urllib.request.Request(
+        url,
+        data=data,
+        method=method,
+        headers={"Authorization": "Bearer " + token, "Content-Type": "application/json"},
+    )
     try:
-        with urllib.request.urlopen(request, timeout=timeout) as response:
-            raw = response.read()
+        with urllib.request.build_opener(NoRedirect).open(request, timeout=timeout) as response:
+            raw = response.read(2_000_001)
+            if len(raw) > 2_000_000:
+                raise RuntimeError("review_response_too_large")
             return response.status, json.loads(raw) if raw else None
     except urllib.error.HTTPError as exc:
-        raw = exc.read()
-        detail = raw.decode(errors="replace") if raw else ""
-        raise RuntimeError(f"HTTP {exc.code}: {detail}") from None
+        # Never echo response bodies: they could contain participant text.
+        raise TransportError(exc.code) from None
 
 
 class CodexCliProvider:
@@ -79,11 +91,165 @@ class CodexCliProvider:
 
     configured = True
 
-    def __init__(self, timeout_seconds: int = 1800) -> None:
+    def __init__(self, timeout_seconds: int = 1800, stop_event=None) -> None:
         self.timeout_seconds = timeout_seconds
+        self.stop_event = stop_event or threading.Event()
         self.codex = shutil.which("codex")
         if not self.codex:
-            raise RuntimeError("Codex CLI is not installed.")
+            raise RuntimeError("codex_cli_not_installed")
+        # Normal sign-in is held by the CLI control plane. API-key fallback is
+        # forbidden; the inference agent gets no tools and a minimal read boundary.
+        env = self.clean_environment()
+        status = subprocess.run(
+            [self.codex, "login", "status"],
+            capture_output=True,
+            text=True,
+            cwd=Path.home(),
+            env=env,
+            timeout=20,
+        )
+        if status.returncode or "Logged in using ChatGPT" not in status.stdout + status.stderr:
+            raise RuntimeError("codex_chatgpt_sign_in_required")
+
+    @staticmethod
+    def clean_environment() -> dict:
+        allowed = {"HOME", "USER", "LOGNAME", "PATH", "LANG", "LC_ALL", "LC_CTYPE", "CODEX_HOME"}
+        return {key: value for key, value in os.environ.items() if key in allowed}
+
+    @staticmethod
+    def inference_options(binary_override: str | None = None) -> list[str]:
+        binary = binary_override or str(Path(shutil.which("codex") or "/usr/bin/codex").resolve())
+        filesystem = {":minimal": "read", ":workspace_roots": "write", binary: "read"}
+        options = [
+            'forced_login_method="chatgpt"',
+            'web_search="disabled"',
+            "project_doc_max_bytes=0",
+            'approval_policy="never"',
+            'default_permissions="study_review"',
+            "permissions.study_review.filesystem={"
+            + ", ".join(json.dumps(k) + "=" + json.dumps(v) for k, v in filesystem.items())
+            + "}",
+            "permissions.study_review.network.enabled=false",
+            "apps._default.enabled=false",
+            'history.persistence="none"',
+            "analytics.enabled=false",
+        ]
+        options += [
+            "features." + name + "=false"
+            for name in (
+                "shell_tool",
+                "unified_exec",
+                "code_mode_host",
+                "code_mode",
+                "apps",
+                "plugins",
+                "browser_use",
+                "browser_use_external",
+                "computer_use",
+                "multi_agent",
+                "image_generation",
+                "view_image",
+                "in_app_browser",
+                "in_app_chat",
+                "in_app_local_automation",
+                "memories",
+                "shell_snapshot",
+                "realtime_conversation",
+            )
+        ]
+        return [piece for option in options for piece in ("-c", option)]
+
+    @contextmanager
+    def isolated_cli(self, workspace: Path):
+        """Expose only this task and minimal sign-in runtime, never host home.
+
+        The control process needs its normal ChatGPT sign-in. The separately
+        sandboxed model tools cannot read /auth; they are disabled as well.
+        """
+        bwrap = shutil.which("bwrap")
+        if not bwrap:
+            raise RuntimeError("external_filesystem_sandbox_required")
+        auth_path = Path(os.environ.get("CODEX_HOME", str(Path.home() / ".codex"))) / "auth.json"
+        original_auth = auth_path.read_bytes()
+        auth = json.loads(original_auth)
+        if auth.get("auth_mode") != "chatgpt" or auth.get("OPENAI_API_KEY"):
+            raise RuntimeError("codex_chatgpt_authentication_required")
+        with tempfile.TemporaryDirectory(prefix="life-patterns-signin-runtime-") as folder:
+            auth_dir = Path(folder)
+            isolated_auth = auth_dir / "auth.json"
+            isolated_auth.write_bytes(original_auth)
+            os.chmod(isolated_auth, 0o600)
+            binary = str(Path(self.codex).resolve())
+            args = [
+                bwrap,
+                "--die-with-parent",
+                "--unshare-all",
+                "--share-net",
+                "--ro-bind",
+                "/usr",
+                "/usr",
+                "--symlink",
+                "usr/lib",
+                "/lib",
+                "--symlink",
+                "usr/lib64",
+                "/lib64",
+                "--symlink",
+                "usr/bin",
+                "/bin",
+                "--proc",
+                "/proc",
+                "--dev",
+                "/dev",
+                "--tmpfs",
+                "/tmp",
+                "--dir",
+                "/empty-home",
+                "--ro-bind",
+                binary,
+                "/codex",
+                "--bind",
+                str(workspace),
+                "/work",
+                "--bind",
+                str(auth_dir),
+                "/auth",
+            ]
+            for name in ("/etc/resolv.conf", "/etc/hosts", "/etc/nsswitch.conf", "/etc/ssl/certs"):
+                if Path(name).exists():
+                    args += ["--ro-bind", name, name]
+            args += [
+                "--setenv",
+                "HOME",
+                "/empty-home",
+                "--setenv",
+                "CODEX_HOME",
+                "/auth",
+                "--setenv",
+                "PATH",
+                "/usr/bin:/bin",
+                "--chdir",
+                "/work",
+                "/codex",
+            ]
+            try:
+                yield args
+            finally:
+                # Merge only a CLI-generated normal auth refresh, and never
+                # overwrite an independently changed owner sign-in.
+                if isolated_auth.exists():
+                    updated = isolated_auth.read_bytes()
+                    if updated != original_auth and auth_path.read_bytes() == original_auth:
+                        value = json.loads(updated)
+                        if value.get("auth_mode") == "chatgpt" and not value.get("OPENAI_API_KEY"):
+                            fd, name = tempfile.mkstemp(
+                                prefix=".study-auth-refresh-", dir=auth_path.parent
+                            )
+                            with os.fdopen(fd, "wb") as target:
+                                target.write(updated)
+                                target.flush()
+                                os.fsync(target.fileno())
+                            os.replace(name, auth_path)
 
     @staticmethod
     def _prompt(system: str, payload: dict, schema) -> str:
@@ -108,58 +274,103 @@ class CodexCliProvider:
     ):
         start = time.monotonic()
         prompt = self._prompt(system, payload, schema)
+        cli_model = {"openai-gpt-56-sol": "gpt-5.6-sol"}.get(model, model)
+        usage = {}
         with tempfile.TemporaryDirectory(prefix="life-patterns-review-codex-") as folder:
             temp = Path(folder)
             result_path = temp / "result.json"
-            process = subprocess.run(
-                [
-                    self.codex,
-                    "exec",
-                    "--ephemeral",
-                    "--skip-git-repo-check",
-                    "--ignore-user-config",
-                    "--ignore-rules",
-                    "--sandbox",
-                    "read-only",
-                    "--model",
-                    model,
-                    "-c",
-                    f'model_reasoning_effort="{effort}"',
-                    "--output-last-message",
-                    str(result_path),
-                    "-",
-                ],
-                input=prompt,
-                text=True,
-                stdout=subprocess.DEVNULL,
-                stderr=subprocess.PIPE,
-                cwd=temp,
-                timeout=self.timeout_seconds,
-            )
-            if process.returncode:
-                lines = (process.stderr or "").strip().splitlines()
-                raise RuntimeError(
-                    "Codex review failed: "
-                    + (lines[-1] if lines else f"exit {process.returncode}")
+            schema_path = temp / "schema.json"
+            schema_path.write_text(canonical(schema.model_json_schema()))
+            args = [
+                "exec",
+                "--ephemeral",
+                "--skip-git-repo-check",
+                "--ignore-user-config",
+                "--ignore-rules",
+                "--model",
+                cli_model,
+                "-c",
+                f'model_reasoning_effort="{effort}"',
+                *self.inference_options("/codex"),
+                "--json",
+                "--output-last-message",
+                "/work/result.json",
+                "-",
+            ]
+            # JSON output is spooled privately, never printed or committed. The
+            # process cannot block on full pipe buffers while a long stage runs.
+            with (
+                self.isolated_cli(temp) as launcher,
+                (temp / "events.jsonl").open("w+") as events,
+                (temp / "stderr").open("w+") as errors,
+            ):
+                process = subprocess.Popen(
+                    launcher + args,
+                    stdin=subprocess.PIPE,
+                    stdout=events,
+                    stderr=errors,
+                    cwd=temp,
+                    env=self.clean_environment(),
+                    text=True,
+                    start_new_session=True,
                 )
+                try:
+                    process.stdin.write(prompt)
+                    process.stdin.close()
+                    while process.poll() is None:
+                        if self.stop_event.wait(1):
+                            raise RuntimeError("review_worker_claim_lost_or_canceled")
+                        if time.monotonic() - start > self.timeout_seconds:
+                            raise RuntimeError("codex_stage_resource_timeout")
+                    if process.returncode:
+                        raise RuntimeError("codex_stage_failed_check_local_sign_in_or_allowance")
+                finally:
+                    if process.poll() is None:
+                        os.killpg(process.pid, signal.SIGTERM)
+                        try:
+                            process.wait(timeout=5)
+                        except subprocess.TimeoutExpired:
+                            os.killpg(process.pid, signal.SIGKILL)
+                            process.wait()
+                events.seek(0)
+                for line in events:
+                    try:
+                        event = json.loads(line)
+                    except ValueError:
+                        continue
+                    item = event.get("item") or {}
+                    if item.get("type") in {
+                        "command_execution",
+                        "mcp_tool_call",
+                        "web_search",
+                        "file_change",
+                        "computer_use",
+                        "image_generation",
+                    }:
+                        raise RuntimeError("semantic_review_attempted_external_tool")
+                    if event.get("type") == "turn.completed":
+                        usage = event.get("usage") or {}
             try:
                 parsed = schema.model_validate(json.loads(result_path.read_text()))
-            except (json.JSONDecodeError, ValidationError) as exc:
-                raise RuntimeError(f"Codex returned invalid structured output: {exc}") from None
-        telemetry = {
+            except (ValueError, OSError):
+                raise RuntimeError("codex_invalid_structured_output") from None
+        return parsed, {
             "provider": "codex_cli_chatgpt",
             "requested_model": model,
-            "returned_model": model,
+            "cli_model": cli_model,
+            "returned_model": None,
+            "model_identity_evidence": "requested_cli_configuration_only",
             "reasoning_effort": effort,
             "duration_seconds": round(time.monotonic() - start, 3),
-            "prompt_tokens": None,
-            "completion_tokens": None,
+            "prompt_tokens": usage.get("input_tokens"),
+            "completion_tokens": usage.get("output_tokens"),
             "stage": schema.__name__,
             "at": utc(),
             "paid_api": False,
             "production_backend": False,
+            "outside_task_tools_enabled": False,
+            "external_filesystem_isolation": "bubblewrap_task_and_minimal_auth_runtime",
         }
-        return parsed, telemetry
 
 
 def clean_question_text(text: str, route_id: str) -> str:
@@ -198,10 +409,15 @@ def prepare_state(job: dict, instrument: dict, instrument_version: str) -> tuple
         return state, None
 
     state = json.loads(canonical(prior))
-    state["instrument_version"] = instrument_version
+    if state.get("instrument_version") != instrument_version:
+        raise RuntimeError("prior_worker_instrument_version_mismatch")
     processed = int(state.get("gpt_review_answers_processed") or 0)
+    if len(history) == processed:
+        if state.get("phase") == "paused":
+            state["phase"] = "awaiting_answer" if state.get("pending_question") else "ready"
+        return state, None
     if len(history) != processed + 1:
-        raise RuntimeError("Review history does not match the saved worker state.")
+        raise RuntimeError("review_history_state_mismatch")
     pending_answer = history[-1]["answer_text"]
     state["gpt_review_answers_processed"] = len(history)
     return state, pending_answer
@@ -213,17 +429,24 @@ def run_review(
     with tempfile.TemporaryDirectory(prefix="life-patterns-review-state-") as folder:
         temp = Path(folder)
         authority_root = authority_dir or authority_copy(temp / "authority")
-        instrument = load_instrument(authority_root)
+        instrument = job.get("instrument") or load_instrument(authority_root)
         store = Store(temp / "review.sqlite3", Fernet.generate_key().decode())
         instrument_version = store.pin_instrument(instrument)
+        if job.get("instrument_version") not in {None, instrument_version}:
+            raise RuntimeError("review_instrument_hash_mismatch")
         state, pending_answer = prepare_state(job, instrument, instrument_version)
         token, current = store.create(state, 2)
         provider = provider or CodexCliProvider()
         engine = Engine(store, provider, maximum_calls=12)
 
-        if pending_answer is not None:
+        has_new_answer = bool(job.get("worker_state")) and len(
+            job.get("clarification_history", [])
+        ) > int((job.get("worker_state") or {}).get("gpt_review_answers_processed", 0))
+        if has_new_answer:
             if current["phase"] != "awaiting_answer" or not current.get("pending_question"):
-                raise RuntimeError("Saved review state is not waiting for the queued clarification.")
+                raise RuntimeError(
+                    "Saved review state is not waiting for the queued clarification."
+                )
             expected = clean_question_text(
                 current["pending_question"]["text"],
                 current["pending_question"]["route_id"],
@@ -235,8 +458,10 @@ def run_review(
                 token,
                 current["revision"],
                 "review-answer-" + secrets.token_hex(8),
-                "answer",
-                pending_answer,
+                "skip"
+                if job["clarification_history"][-1].get("answer_status") == "skipped"
+                else "answer",
+                pending_answer or "",
             )
 
         before_calls = len(current.get("calls", []))
@@ -249,6 +474,7 @@ def run_review(
             "route": "subscription-authenticated local Codex CLI",
             "model": job["model"],
             "effort": job["effort"],
+            "instrument_version": instrument_version,
             "paid_api": False,
             "production_backend": False,
             "round": job.get("round", 0),
@@ -258,6 +484,11 @@ def run_review(
                     "provider": call.get("provider"),
                     "duration_seconds": call.get("duration_seconds"),
                     "reasoning_effort": call.get("reasoning_effort"),
+                    "requested_model": call.get("requested_model"),
+                    "cli_model": call.get("cli_model"),
+                    "returned_model": call.get("returned_model"),
+                    "prompt_tokens": call.get("prompt_tokens"),
+                    "completion_tokens": call.get("completion_tokens"),
                 }
                 for call in after_calls
                 if call.get("stage") in {"Plan", "Admission"}
@@ -279,54 +510,159 @@ def run_review(
         if current["phase"] == "review":
             return "ready", receipt, worker_state, None
         error = current.get("error") or current.get("stop_reason") or current["phase"]
-        raise RuntimeError(f"Independent review ended in {current['phase']}: {error}")
+        receipt["error_code"] = str(error)
+        state_name = (
+            current["phase"]
+            if current["phase"] in {"paused", "stopped", "resource_limited"}
+            else "error"
+        )
+        return state_name, receipt, worker_state, None
+
+
+class EncryptedOutbox:
+    def __init__(self, folder: Path):
+        self.folder = folder
+        folder.mkdir(parents=True, exist_ok=True, mode=0o700)
+        os.chmod(folder, 0o700)
+        key = folder / "data.key"
+        if not key.exists():
+            fd = os.open(key, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
+            with os.fdopen(fd, "wb") as target:
+                target.write(Fernet.generate_key())
+        self.fernet = Fernet(key.read_bytes())
+        self.path = folder / "pending.enc"
+
+    def save(self, payload: dict) -> None:
+        temporary = self.folder / "pending.new"
+        with temporary.open("wb") as target:
+            target.write(self.fernet.encrypt(canonical(payload).encode()))
+            target.flush()
+            os.fsync(target.fileno())
+        os.chmod(temporary, 0o600)
+        temporary.replace(self.path)
+
+    def read(self):
+        return (
+            json.loads(self.fernet.decrypt(self.path.read_bytes())) if self.path.exists() else None
+        )
+
+    def clear(self):
+        self.path.unlink(missing_ok=True)
 
 
 def process_one(
-    base_url: str, worker_token: str, authority_dir: Path | None = None
+    base_url: str,
+    worker_token: str,
+    authority_dir: Path | None = None,
+    outbox: EncryptedOutbox | None = None,
 ) -> bool:
-    status, job = http_json(
-        "GET",
-        base_url.rstrip("/") + "/api/review-worker/jobs/next",
-        worker_token,
-    )
+    outbox = outbox or EncryptedOutbox(Path.home() / ".local/state/life-patterns-review-worker")
+    saved = outbox.read()
+    if saved:
+        try:
+            http_json(
+                "POST",
+                base_url + f"/api/review-worker/jobs/{saved['review_id']}/result",
+                worker_token,
+                saved["body"],
+            )
+        except TransportError as exc:
+            if not 400 <= exc.status < 500 or exc.status in {401, 408, 429}:
+                raise
+            if exc.status != 409:
+                # Mark a rejected result as an error under the SAME claim instead
+                # of repeatedly re-running inference after lease expiry.
+                failed = dict(saved["body"])
+                failed.update(
+                    status="error",
+                    worker_state=None,
+                    clarification=None,
+                    error="worker_result_rejected_by_server",
+                    receipt={
+                        "instrument_version": failed["receipt"].get("instrument_version"),
+                        "paid_api": False,
+                        "error_code": "worker_result_rejected_by_server",
+                    },
+                )
+                http_json(
+                    "POST",
+                    base_url + f"/api/review-worker/jobs/{saved['review_id']}/result",
+                    worker_token,
+                    failed,
+                )
+            # Canceled/stale claims discard local source-bearing results, including
+            # withdrawal; do not retain an orphaned participant-data archive.
+            outbox.clear()
+            return True
+        outbox.clear()
+        return True
+    status, job = http_json("GET", base_url + "/api/review-worker/jobs/next", worker_token)
     if status == 204 or job is None:
         return False
-    review_id = job["review_id"]
+    stop = threading.Event()
+    done = threading.Event()
+    last_lease = time.monotonic()
+
+    def heartbeat():
+        nonlocal last_lease
+        while not done.wait(20):
+            try:
+                http_json(
+                    "POST",
+                    base_url + f"/api/review-worker/jobs/{job['review_id']}/heartbeat",
+                    worker_token,
+                    {"claim_id": job["claim_id"]},
+                )
+                last_lease = time.monotonic()
+            except TransportError as exc:
+                if exc.status in {401, 409}:
+                    stop.set()
+                    return
+            except Exception:
+                pass
+            if time.monotonic() - last_lease > 150:
+                stop.set()
+                return
+
+    thread = threading.Thread(target=heartbeat, daemon=True)
+    thread.start()
     try:
         result_status, receipt, worker_state, clarification = run_review(
-            job, authority_dir=authority_dir
+            job, provider=CodexCliProvider(stop_event=stop), authority_dir=authority_dir
         )
-        body = {
-            "candidate_sha256": job["candidate_sha256"],
-            "status": result_status,
-            "worker_state": worker_state,
-            "receipt": receipt,
-            "clarification": clarification,
-            "error": None,
+        error = receipt.get("error_code")
+    except Exception:
+        result_status, worker_state, clarification = "error", job.get("worker_state"), None
+        error = "local_review_worker_failed_check_sign_in_allowance_or_runtime"
+        receipt = {
+            "route": "local_codex_pilot",
+            "paid_api": False,
+            "production_backend": False,
+            "round": job.get("round", 0),
+            "finished_at": utc(),
+            "error_code": error,
+            "instrument_version": job.get("instrument_version"),
         }
-    except Exception as exc:
-        body = {
-            "candidate_sha256": job["candidate_sha256"],
-            "status": "error",
-            "worker_state": job.get("worker_state"),
-            "receipt": {
-                "route": "subscription-authenticated local Codex CLI",
-                "paid_api": False,
-                "production_backend": False,
-                "round": job.get("round", 0),
-                "finished_at": utc(),
+    finally:
+        done.set()
+        thread.join(timeout=35)
+    if stop.is_set():
+        return True
+    outbox.save(
+        {
+            "review_id": job["review_id"],
+            "body": {
+                "claim_id": job["claim_id"],
+                "candidate_sha256": job["candidate_sha256"],
+                "status": result_status,
+                "worker_state": worker_state,
+                "receipt": receipt,
+                "clarification": clarification,
+                "error": error,
             },
-            "clarification": None,
-            "error": str(exc)[:1000],
         }
-    http_json(
-        "POST",
-        base_url.rstrip("/") + f"/api/review-worker/jobs/{review_id}/result",
-        worker_token,
-        body,
     )
-    return True
+    return process_one(base_url, worker_token, authority_dir, outbox)
 
 
 def main() -> int:
@@ -334,19 +670,40 @@ def main() -> int:
     parser.add_argument("--base-url", required=True)
     parser.add_argument("--token-file", type=Path, required=True)
     parser.add_argument("--authority-dir", type=Path)
+    parser.add_argument(
+        "--state-dir", type=Path, default=Path.home() / ".local/state/life-patterns-review-worker"
+    )
     parser.add_argument("--once", action="store_true")
     parser.add_argument("--poll-seconds", type=float, default=10.0)
     args = parser.parse_args()
+    if args.base_url != "https://life-patterns-participant-production.up.railway.app":
+        raise SystemExit("The pilot worker is bound to the existing study service.")
+    if args.token_file.stat().st_mode & 0o077:
+        raise SystemExit("Review-worker token file must be private (mode 600).")
     worker_token = args.token_file.read_text().strip()
     if len(worker_token) < 32:
-        raise SystemExit("Review-worker token file is missing or invalid.")
-
-    while True:
-        worked = process_one(args.base_url, worker_token, args.authority_dir)
-        if args.once:
-            return 0
-        if not worked:
-            time.sleep(max(2.0, args.poll_seconds))
+        raise SystemExit("Review-worker token file is invalid.")
+    CodexCliProvider()  # Fail before claiming any job when normal ChatGPT sign-in is unavailable.
+    outbox = EncryptedOutbox(args.state_dir)
+    with (outbox.folder / "worker.lock").open("w") as lock:
+        try:
+            fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError:
+            raise SystemExit("A local review worker is already running.") from None
+        while True:
+            try:
+                worked = process_one(args.base_url, worker_token, args.authority_dir, outbox)
+            except Exception as exc:
+                print(
+                    "Review transport unavailable; encrypted pending data retained. "
+                    + type(exc).__name__,
+                    flush=True,
+                )
+                worked = False
+            if args.once:
+                return 0
+            if not worked:
+                time.sleep(max(5.0, args.poll_seconds))
 
 
 if __name__ == "__main__":

@@ -14,9 +14,7 @@ from participant.domain import bank
 from test_participant import Fake, authority
 
 ROOT = Path(__file__).resolve().parents[3]
-WORKER_PATH = (
-    ROOT / "apps/life-patterns-participant/scripts/gpt_review_worker.py"
-)
+WORKER_PATH = ROOT / "apps/life-patterns-participant/scripts/gpt_review_worker.py"
 
 
 def load_worker_module():
@@ -72,7 +70,7 @@ def records():
                 "correction_of": None,
             }
         ],
-        "participant_review": {"summary_shown": False},
+        "participant_review": {"summary_shown": True, "confirmed": True},
         "freeze": {
             "record_state": "final",
             "frozen_before_birth_or_chart_reveal": True,
@@ -121,7 +119,7 @@ def auth(token):
     return {"Authorization": f"Bearer {token}"}
 
 
-def start_review(client, token, candidate, *, origin=None):
+def start_review(client, token, candidate, *, origin=None, request_id=None):
     headers = auth(token)
     if origin:
         headers["Origin"] = origin
@@ -131,6 +129,7 @@ def start_review(client, token, candidate, *, origin=None):
         json={
             "research_use_consented": True,
             "candidate_record": candidate,
+            "request_id": request_id or secrets.token_hex(16),
         },
     )
 
@@ -155,10 +154,14 @@ def worker_result(
         headers=auth(worker_token),
         json={
             "candidate_sha256": candidate_sha256,
+            "claim_id": client.app.state.store.gpt_review_read(review_id)["claim_id"],
             "status": status,
             "worker_state": worker_state,
             "receipt": {
                 "route": "test-worker",
+                "instrument_version": client.app.state.store.gpt_review_read(review_id)[
+                    "instrument_version"
+                ],
                 "paid_api": False,
                 "production_backend": False,
             },
@@ -200,7 +203,7 @@ def submit(client, token, review_id, primary, secondary, *, origin=None):
     if origin:
         headers["Origin"] = origin
     return client.post(
-        "/api/gpt/submissions",
+        "/api/gpt/reviewed-submissions",
         headers=headers,
         json={
             "research_use_consented": True,
@@ -304,7 +307,11 @@ def test_clarification_round_trip_and_final_turn_binding(tmp_path):
     answer = client.post(
         f"/api/gpt/reviews/{review_id}/clarifications",
         headers=auth(settings.submission_token),
-        json={"answer_text": "I usually pause and compare the options."},
+        json={
+            "answer_text": "I usually pause and compare the options.",
+            "clarification_id": status["clarification"]["clarification_id"],
+            "operation_id": secrets.token_hex(16),
+        },
     )
     assert answer.status_code == 200
     assert answer.json()["status"] == "queued"
@@ -506,10 +513,7 @@ def test_researcher_can_list_and_download_reviewed_submission(tmp_path):
         headers=headers,
     )
     assert secondary_download.status_code == 200
-    assert (
-        secondary_download.json()["primary_record_sha256"]
-        == receipt["primary_record_sha256"]
-    )
+    assert secondary_download.json()["primary_record_sha256"] == receipt["primary_record_sha256"]
 
 
 def test_submission_and_review_can_be_disabled_independently(tmp_path):
@@ -558,9 +562,7 @@ def test_local_worker_reuses_existing_engine_with_fake_model():
     ]
     second_fake = Fake()
     second_fake.review = True
-    status, _, next_state, clarification2 = worker.run_review(
-        continued, provider=second_fake
-    )
+    status, _, next_state, clarification2 = worker.run_review(continued, provider=second_fake)
     assert status == "ready"
     assert clarification2 is None
     assert next_state["phase"] == "review"
@@ -569,46 +571,21 @@ def test_local_worker_reuses_existing_engine_with_fake_model():
 
 def test_action_schema_privacy_and_description_limits(tmp_path):
     settings, _, _, client = setup_submission(tmp_path)
-    schema = client.get("/action-openapi.yaml")
-    assert schema.status_code == 200
-    for operation in (
+    response = client.get("/action-openapi.yaml")
+    assert response.status_code == 200
+    schema = response.json()
+    operations = [op for verbs in schema["paths"].values() for op in verbs.values()]
+    assert {op["operationId"] for op in operations} == {
         "startLifePatternsReview",
         "getLifePatternsReview",
         "submitLifePatternsClarification",
+        "controlLifePatternsReview",
         "submitLifePatternsRecords",
-    ):
-        assert f"operationId: {operation}" in schema.text
+    }
+    assert "/api/gpt/reviewed-submissions" in schema["paths"]
+    assert all(len(op["description"]) <= 300 and len(op["summary"]) <= 300 for op in operations)
+    assert "claim_id" not in json.dumps(schema)
+    assert "review_worker_token" not in json.dumps(schema)
     privacy = client.get("/privacy")
     assert privacy.status_code == 200
     assert "researcher's ChatGPT-authenticated Codex CLI" in privacy.text
-
-    lines = schema.text.splitlines()
-    descriptions = []
-    i = 0
-    while i < len(lines):
-        line = lines[i]
-        stripped = line.lstrip()
-        if not stripped.startswith("description:"):
-            i += 1
-            continue
-        indent = len(line) - len(stripped)
-        value = stripped.split(":", 1)[1].strip()
-        if value in {">-", ">", "|-", "|"}:
-            parts = []
-            i += 1
-            while i < len(lines):
-                child = lines[i]
-                child_stripped = child.lstrip()
-                child_indent = len(child) - len(child_stripped)
-                if child_stripped and child_indent <= indent:
-                    break
-                if child_stripped:
-                    parts.append(child_stripped)
-                i += 1
-            descriptions.append(" ".join(parts))
-            continue
-        descriptions.append(value.strip("'\""))
-        i += 1
-
-    assert descriptions
-    assert max(len(value) for value in descriptions) <= 300

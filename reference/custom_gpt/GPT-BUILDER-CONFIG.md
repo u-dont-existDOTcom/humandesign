@@ -46,3 +46,5 @@ For a participant with an existing interview, there are three safe resume paths:
 - **New-chat attachment:** explicitly attach/add the participant's interview record, then use starter 3.
 
 A generic continue request must not search Library, Memory, chat history, connected apps, or other account-level sources.
+
+Schema 1.2 adds review start, status, clarification, pause/stop/withdraw controls and strict reviewed submission. Import the existing schema URL again; JSON OpenAPI is valid at that YAML endpoint. The same Bearer key remains valid. Treat review IDs as private.

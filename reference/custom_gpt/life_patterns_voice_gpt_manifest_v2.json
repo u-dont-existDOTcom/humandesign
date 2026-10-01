@@ -1,15 +1,15 @@
 {
   "schema": "life-patterns-voice-gpt-bundle-v1",
-  "version": "2026-10-01.4",
+  "version": "2026-10-01.4-review-pilot",
   "builder_config": {
     "path": "reference/custom_gpt/GPT-BUILDER-CONFIG.md",
-    "sha256": "f8109d0d327db8f70d5fe8d4eee5b86bc4309da22b42846e0f1db52a296a21ea"
+    "sha256": "b6cd8f772d787fc1825ace2b12713ae60268854edba5ef572167fadff804ea46"
   },
   "instructions": {
     "path": "reference/custom_gpt/life_patterns_voice_interviewer_v2.md",
-    "sha256": "e803513cfdcda535072f4b189324e327ac02f66d51201cb085704472e08eff01",
-    "characters": 7311,
-    "strict_linebreak_count": 7429
+    "sha256": "ff4748723329b88777cbac366993901295c666fa64a1b3009dd04f701708a6f0",
+    "characters": 7811,
+    "strict_linebreak_count": 7926
   },
   "knowledge_files": [
     {
@@ -40,7 +40,7 @@
     "chatgpt_text",
     "mixed"
   ],
-  "handoff": "Queue independent review before primary freeze; after ready review freeze primary, collect CF-003, then submit both frozen records with the ready review ID.",
+  "handoff": "Queue candidate before freeze; retrieve independent review/clarifications; participant review; primary freeze; separate CF-003; strict reviewed submission.",
   "secondary_modules": {
     "cf003": {
       "status": "development_secondary_only",
@@ -55,7 +55,7 @@
   },
   "action_schema": {
     "path": "apps/life-patterns-participant/participant/static/action-openapi.yaml",
-    "sha256": "c16a3986ec84f98c4787ef23c22ab5235a13c0e6b86093fdfe299fbe01b66c56",
+    "sha256": "706ef9136e9e1ca3df335c59fa5e574e9bc599e1b5c627d5320e1d768b4b2f44",
     "schema_url": "https://life-patterns-participant-production.up.railway.app/action-openapi.yaml",
     "authentication": "api_key_bearer",
     "privacy_policy_url": "https://life-patterns-participant-production.up.railway.app/privacy",
@@ -64,6 +64,7 @@
       "startLifePatternsReview",
       "getLifePatternsReview",
       "submitLifePatternsClarification",
+      "controlLifePatternsReview",
       "submitLifePatternsRecords"
     ]
   },

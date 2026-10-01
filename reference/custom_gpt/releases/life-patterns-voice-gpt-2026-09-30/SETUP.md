@@ -1,6 +1,6 @@
 # Life Patterns voice-first ChatGPT collector
 
-Version: 2026-10-01.4. Development collection surface.
+Version: 2026-10-01.4-review-pilot. Development collection surface.
 
 ## Purpose
 

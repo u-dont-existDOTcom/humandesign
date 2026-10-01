@@ -1,0 +1,13 @@
+# Independent review disposition — asynchronous pilot
+
+Claude Opus 5.5 max through subscription-authenticated Claude Code, neutral workspace, safe mode, no tools, no participant data: initial FINDS_ERROR; one reconciliation AGREES for bounded pilot deployment. Raw findings retained in OPUS-REVIEW.md and OPUS-RECONCILIATION.md. No third review claimed.
+
+The initial ten findings were repaired with OS-level task isolation plus no model tools; forced ChatGPT sign-in/no API fallback; honest requested-versus-observed model telemetry; claim IDs/heartbeats; question-bound idempotent answers; pause/skip/stop/withdraw; exact neutral instrument pinning; final source matching; one immutable submission per review; independent receipts/evidence preservation; strong separate keys.
+
+Reconciliation residuals are repaired and tested: R1 preserves the last good worker state on errors, including rejection-delivery repair, so pending history is not lost. R2 instructions preserve skipped questions with null answers. R3 treats permanent 4xx result rejection as a small same-claim error rather than indefinitely blocking the outbox. Mismatch errors identify index/field without source content. Instrument/call-count checks remain active.
+
+Source inspection settles the two omitted-code questions: domain.semantic_turns exports only exact question/answer text, route/antecedent/correction provenance, not GPT-authored conditions or neutral_evidence; the existing Engine receives full import in one bulk review with independent admission, not sequential twelve-turn batches. Engine._model_call_count counts saved non-deterministic Plan/Admission calls including Codex. The 12-call resource limit is an explicit infrastructure stop, never scientific completion. The worker's two advance slots cover one bulk review and any deferred non-import step; it cannot silently mark residual ready work complete.
+
+Actual isolated synthetic CLI probe passed: requested gpt-5.6-sol XHigh via known service alias, planner/admission returned valid accepted output. Returned model identity is not independently attested; receipts say null rather than echoing the request. This is synthetic development evidence, not scientific validation, not proof of Free/Paid GPT equivalence, and not a live private GPT end-to-end claim.
+
+Hard-crash recovery is at-least-once computation: a stage interrupted before its result reaches the encrypted outbox may need rerunning. Saved answers, result delivery, and finalization have idempotent transactional guards. No exactly-once billing claim is made. Withdraw clears active unsubmitted study payload; it is not a forensic secure-erasure promise for backups or provider logs.

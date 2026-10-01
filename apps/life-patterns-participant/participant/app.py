@@ -21,6 +21,7 @@ from .domain import (
     load_instrument,
     new_state,
     strict_json,
+    target_exposure,
     utc,
 )
 from .engine import PAYMENT_ERROR, Engine, ProviderError, Venice
@@ -132,11 +133,24 @@ class ProviderRecovery(Body):
 
 class GptReviewStart(Body):
     research_use_consented: Literal[True]
+    request_id: str = Field(min_length=16, max_length=80, pattern=r"^[a-zA-Z0-9_-]+$")
     candidate_record: dict
 
 
 class GptReviewAnswer(Body):
-    answer_text: str = Field(min_length=1, max_length=20000)
+    answer_text: str = Field(default="", max_length=20000)
+    clarification_id: str = Field(pattern=r"^Q-[a-f0-9]{32}$")
+    operation_id: str = Field(min_length=16, max_length=80, pattern=r"^[a-zA-Z0-9_-]+$")
+    skipped: bool = False
+
+
+class GptReviewControl(Body):
+    action: Literal["pause", "resume", "stop", "withdraw", "retry"]
+    operation_id: str = Field(min_length=16, max_length=80, pattern=r"^[a-zA-Z0-9_-]+$")
+
+
+class WorkerHeartbeat(Body):
+    claim_id: str = Field(pattern=r"^L-[a-f0-9]{32}$")
 
 
 class WorkerClarification(Body):
@@ -147,8 +161,11 @@ class WorkerClarification(Body):
 
 
 class WorkerReviewResult(Body):
+    claim_id: str = Field(pattern=r"^L-[a-f0-9]{32}$")
     candidate_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
-    status: Literal["clarification_needed", "ready", "error"]
+    status: Literal[
+        "clarification_needed", "ready", "error", "paused", "stopped", "resource_limited"
+    ]
     worker_state: dict | None = None
     receipt: dict
     clarification: WorkerClarification | None = None
@@ -157,9 +174,13 @@ class WorkerReviewResult(Body):
 
 class GptSubmission(Body):
     research_use_consented: Literal[True]
-    review_id: str = Field(pattern=r"^R-[a-f0-9]{32}$")
+    review_id: str | None = Field(default=None, pattern=r"^R-[a-f0-9]{32}$")
     primary_record: dict
     cf003_record: dict
+
+
+class GptReviewedSubmission(GptSubmission):
+    review_id: str = Field(pattern=r"^R-[a-f0-9]{32}$")
 
 
 class BodyLimit:
@@ -198,6 +219,11 @@ class BodyLimit:
 def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
     if min(len(settings.admin_token), len(settings.join_token)) < 32:
         raise RuntimeError("Strong participant access secrets are required.")
+    if any(
+        token and len(token) < 32
+        for token in (settings.submission_token, settings.review_worker_token)
+    ):
+        raise RuntimeError("Strong submission and review-worker keys are required.")
     store = Store(settings.database, settings.encryption_key)
     instrument = instrument or load_instrument(settings.authority)
     version = store.pin_instrument(instrument)
@@ -221,11 +247,10 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
         if header_id and query_id and header_id != query_id:
             raise Conflict("Conflicting session identifiers.")
         expected = header_id or query_id
-        if request.method not in {"GET", "HEAD"} or request.url.path == "/api/export":
-            if not expected:
-                raise Conflict(
-                    "A session-bound request is required. Reload your private resume link."
-                )
+        if (
+            request.method not in {"GET", "HEAD"} or request.url.path == "/api/export"
+        ) and not expected:
+            raise Conflict("A session-bound request is required. Reload your private resume link.")
         if expected and expected != current["session_id"]:
             raise Conflict(
                 "Another session is open in this browser. Reload this tab's private resume link."
@@ -311,9 +336,7 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
         return {
             "turns": record.get("turns"),
             "collection_mode": record.get("collection_mode"),
-            "retrospective_questions_welcome": record.get(
-                "retrospective_questions_welcome"
-            ),
+            "retrospective_questions_welcome": record.get("retrospective_questions_welcome"),
             "collection_preferences": record.get("collection_preferences"),
             "source_type": record.get("source_type"),
             "source_fidelity": record.get("source_fidelity"),
@@ -323,12 +346,30 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
     def validate_review_candidate(record):
         if record.get("schema") != "life-patterns-full-survey-participant-export-v2":
             raise ValueError("Review candidate schema is not the current Life Patterns export.")
-        if (record.get("consent") or {}).get("research_use_consented") is not True:
+        if (
+            not isinstance(record.get("consent"), dict)
+            or record["consent"].get("research_use_consented") is not True
+        ):
             raise ValueError("Research-use consent must be recorded before independent review.")
         freeze = record.get("freeze") or {}
+        if not isinstance(freeze, dict):
+            raise ValueError("Candidate freeze metadata must be an object.")
         if freeze.get("frozen_before_birth_or_chart_reveal") is True:
             raise ValueError("Independent review must happen before the primary record is frozen.")
-        if not behavioral_content(record):
+        turns = record.get("turns")
+        if not isinstance(turns, list) or len(turns) > 1000:
+            raise ValueError("A candidate needs at most 1000 source turns.")
+        for turn in turns:
+            if not isinstance(turn, dict):
+                raise ValueError("Every source turn must be an object.")
+            for name in ("question_text", "answer_text"):
+                if turn.get(name) is not None and not isinstance(turn[name], str):
+                    raise ValueError("Source questions and answers must be text or null.")
+            if target_exposure(
+                (turn.get("question_text") or "") + "\n" + (turn.get("answer_text") or "")
+            ):
+                raise ValueError("Remove volunteered birth/chart information before review.")
+        if not any((row.get("answer_text") or "").strip() for row in behavioral_content(record)):
             raise ValueError("Independent review needs at least one behavioral answer.")
         reject_target_fields(record)
 
@@ -343,7 +384,29 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
             "clarification": clarification
             if payload.get("status") == "clarification_needed"
             else None,
-            "error": payload.get("error") if payload.get("status") == "error" else None,
+            "error": payload.get("error")
+            if payload.get("status") in {"error", "resource_limited"}
+            else None,
+            "review_summary": [
+                {
+                    key: entry.get(key)
+                    for key in (
+                        "evidence_id",
+                        "observation",
+                        "conditions",
+                        "time_frame",
+                        "relationship_context",
+                        "source_quotes",
+                    )
+                }
+                for entry in (payload.get("worker_state") or {}).get("evidence", [])
+                if entry.get("review_status") == "independent_semantic_admission_passed"
+            ]
+            if payload.get("status") == "ready"
+            else None,
+            "source_review_status": "independent_semantic_admission"
+            if payload.get("status") == "ready"
+            else "pending",
         }
 
     def expected_review_behavioral(payload):
@@ -372,15 +435,34 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
         freeze = primary.get("freeze") or {}
         if freeze.get("frozen_before_birth_or_chart_reveal") is not True:
             raise ValueError("Primary record must be frozen before any birth/chart reveal.")
-        if not isinstance(primary.get("turns"), list) or not isinstance(secondary.get("turns"), list):
+        if not isinstance(primary.get("turns"), list) or not isinstance(
+            secondary.get("turns"), list
+        ):
             raise ValueError("Both submitted records need a turns list.")
-        review = store.gpt_review_read(body.review_id)
-        if review.get("status") != "ready":
-            raise ValueError("The independent Railway review is not ready.")
-        if behavioral_content(primary) != expected_review_behavioral(review):
-            raise ValueError(
-                "Final primary behavioral turns do not match the independently reviewed record."
-            )
+        if body.review_id is not None:
+            review = store.gpt_review_read(body.review_id)
+            if review.get("status") != "ready":
+                raise ValueError("The independent Railway review is not ready.")
+            actual_turns = behavioral_content(primary)
+            expected_turns = expected_review_behavioral(review)
+            if len(actual_turns) != len(expected_turns):
+                raise ValueError(
+                    "Final primary turn count does not match the independently reviewed record."
+                )
+            for index, (actual, expected) in enumerate(zip(actual_turns, expected_turns, strict=True), 1):
+                changed = [key for key in expected if actual.get(key) != expected.get(key)]
+                if changed:
+                    raise ValueError(
+                        "Final primary does not match the independently reviewed record at behavioral turn "
+                        + str(index)
+                        + ": "
+                        + ", ".join(changed)
+                    )
+            checked = primary.get("participant_review") or {}
+            if checked.get("summary_shown") is not True or checked.get("confirmed") is not True:
+                raise ValueError(
+                    "Show the independent neutral review and record participant confirmation before freeze."
+                )
         required = {"CF003-ID-01", "CF003-CENTRAL-01", "CF003-PERIPH-01"}
         present = {
             turn.get("question_id") or turn.get("canonical_question_id")
@@ -394,7 +476,9 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
         primary_sha256 = digest(canonical(primary))
         declared = secondary.get("primary_record_sha256")
         if declared not in {None, primary_sha256}:
-            raise ValueError("CF-003 primary_record_sha256 does not match the submitted primary record.")
+            raise ValueError(
+                "CF-003 primary_record_sha256 does not match the submitted primary record."
+            )
         linked_secondary = dict(secondary)
         linked_secondary["primary_record_sha256"] = primary_sha256
         return primary, linked_secondary, primary_sha256
@@ -642,9 +726,15 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
         gpt_submitter(request)
         candidate = body.candidate_record
         validate_review_candidate(candidate)
-        candidate_sha256 = digest(canonical(review_material(candidate)))
+        candidate_sha256 = digest(canonical(candidate))
         review_id, payload, duplicate = store.create_gpt_review(
-            candidate, candidate_sha256
+            candidate,
+            candidate_sha256,
+            request_id=body.request_id,
+            instrument_version=version,
+            model=settings.model,
+            effort=settings.effort,
+            maximum_jobs=settings.maximum_sessions,
         )
         view = dict(payload)
         view["duplicate"] = duplicate
@@ -658,7 +748,24 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
     @app.post("/api/gpt/reviews/{review_id}/clarifications")
     def gpt_review_answer(request: Request, review_id: str, body: GptReviewAnswer):
         gpt_submitter(request)
-        return review_public(store.add_gpt_review_answer(review_id, body.answer_text))
+        if not body.skipped and not body.answer_text.strip():
+            raise ValueError("An answer is required unless the participant explicitly skips.")
+        if target_exposure(body.answer_text):
+            raise ValueError("Omit birth/chart information from this clarification.")
+        return review_public(
+            store.add_gpt_review_answer(
+                review_id,
+                body.answer_text,
+                clarification_id=body.clarification_id,
+                operation_id=body.operation_id,
+                skipped=body.skipped,
+            )
+        )
+
+    @app.post("/api/gpt/reviews/{review_id}/control")
+    def gpt_review_control(request: Request, review_id: str, body: GptReviewControl):
+        gpt_submitter(request)
+        return review_public(store.control_gpt_review(review_id, body.action, body.operation_id))
 
     @app.get("/api/review-worker/jobs/next")
     def review_worker_next(request: Request):
@@ -674,20 +781,31 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
             "worker_state": payload.get("worker_state"),
             "clarification_history": payload.get("clarification_history", []),
             "round": payload.get("round", 0),
-            "model": settings.model,
-            "effort": settings.effort,
+            "model": payload.get("model", settings.model),
+            "effort": payload.get("effort", settings.effort),
+            "claim_id": payload["claim_id"],
+            "instrument_version": payload.get("instrument_version", version),
+            "instrument": store.instrument(payload.get("instrument_version", version)),
         }
 
-    @app.post("/api/review-worker/jobs/{review_id}/result")
-    def review_worker_result(
-        request: Request, review_id: str, body: WorkerReviewResult
-    ):
+    @app.post("/api/review-worker/jobs/{review_id}/heartbeat")
+    def review_worker_heartbeat(request: Request, review_id: str, body: WorkerHeartbeat):
         review_worker(request)
+        return store.renew_gpt_review(review_id, body.claim_id)
+
+    @app.post("/api/review-worker/jobs/{review_id}/result")
+    def review_worker_result(request: Request, review_id: str, body: WorkerReviewResult):
+        review_worker(request)
+        queued = store.gpt_review_read(review_id)
+        if body.receipt.get("instrument_version") != queued.get("instrument_version", version):
+            raise ValueError("The worker reviewed a different instrument version.")
         clarification = body.clarification.model_dump() if body.clarification else None
         if body.status == "clarification_needed":
             if clarification is None:
                 raise ValueError("Clarification-needed results require one question.")
-            routes = {row["id"]: row for row in bank(instrument)["questions"]}
+            queued = store.gpt_review_read(review_id)
+            pinned_instrument = store.instrument(queued.get("instrument_version", version))
+            routes = {row["id"]: row for row in bank(pinned_instrument)["questions"]}
             route = routes.get(clarification["route_id"])
             if route is None:
                 raise ValueError("Worker returned an unknown survey route.")
@@ -698,12 +816,19 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
                 raise ValueError("Canonical worker question does not match the frozen bank.")
         elif clarification is not None:
             raise ValueError("Only clarification-needed results may include a question.")
-        if body.status == "ready" and body.worker_state is None:
-            raise ValueError("Ready results require the independently reviewed worker state.")
+        if body.status == "ready" and (
+            not body.worker_state or body.worker_state.get("phase") != "review"
+        ):
+            raise ValueError("Ready results require a worker state at independent neutral review.")
+        if body.status == "clarification_needed" and (
+            not body.worker_state or body.worker_state.get("phase") != "awaiting_answer"
+        ):
+            raise ValueError("Clarification results require the saved awaiting-answer state.")
         payload = store.complete_gpt_review(
             review_id,
             body.candidate_sha256,
             body.status,
+            claim_id=body.claim_id,
             worker_state=body.worker_state,
             receipt=body.receipt,
             clarification=clarification,
@@ -729,15 +854,24 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
             "schema": "life-patterns-gpt-submission-v1",
             "received_at_utc": utc(),
             "review_id": body.review_id,
+            "independent_review": {
+                "receipts": store.gpt_review_read(body.review_id).get("worker_receipts", []),
+                "worker_state_sha256": digest(
+                    canonical(store.gpt_review_read(body.review_id).get("worker_state"))
+                ),
+                "evidence": (store.gpt_review_read(body.review_id).get("worker_state") or {}).get(
+                    "evidence", []
+                ),
+            }
+            if body.review_id
+            else None,
             "submission_sha256": submission_sha256,
             "primary_record_sha256": primary_sha256,
             "cf003_record_sha256": cf003_sha256,
             "primary_record": primary,
             "cf003_record": secondary,
         }
-        submission_id, stored, duplicate = store.create_gpt_submission(
-            payload, submission_sha256
-        )
+        submission_id, stored, duplicate = store.create_gpt_submission(payload, submission_sha256)
         return {
             "schema": "life-patterns-gpt-submission-receipt-v1",
             "submission_id": submission_id,
@@ -747,9 +881,15 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
             "primary_record_sha256": stored["primary_record_sha256"],
             "cf003_record_sha256": stored["cf003_record_sha256"],
             "stored_encrypted": True,
-            "independent_review_completed": True,
+            "independent_review_completed": body.review_id is not None,
             "inference_started": False,
         }
+
+    @app.post("/api/gpt/reviewed-submissions")
+    def gpt_reviewed_submission(request: Request, body: GptReviewedSubmission):
+        # New GPT schema uses this strict endpoint. The original storage-only
+        # endpoint remains compatible and labels its receipts as unreviewed.
+        return gpt_submission(request, body)
 
     @app.get("/api/admin/sessions")
     def sessions(request: Request):
@@ -768,7 +908,9 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
         return Response(
             canonical(payload["primary_record"]),
             media_type="application/json",
-            headers={"Content-Disposition": 'attachment; filename="life-patterns-participant-export.json"'},
+            headers={
+                "Content-Disposition": 'attachment; filename="life-patterns-participant-export.json"'
+            },
         )
 
     @app.get("/api/admin/gpt-submissions/{submission_id}/cf003")
@@ -778,7 +920,9 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
         return Response(
             canonical(payload["cf003_record"]),
             media_type="application/json",
-            headers={"Content-Disposition": 'attachment; filename="life-patterns-cf003-secondary-v0.json"'},
+            headers={
+                "Content-Disposition": 'attachment; filename="life-patterns-cf003-secondary-v0.json"'
+            },
         )
 
     @app.post("/api/admin/invitations")
