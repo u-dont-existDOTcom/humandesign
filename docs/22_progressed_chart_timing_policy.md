@@ -120,3 +120,17 @@ Do not collapse different longitudinal endpoints into one score. At minimum dist
 - exact birth timing.
 
 Each endpoint requires its own frozen target set, timing families, orbs, dependencies and scoring rule. Performance on one endpoint cannot rescue failure on another.
+
+
+## False-positive control
+
+All progressed-chart timing work also follows `docs/23_longitudinal_event_discrimination_policy.md`.
+
+A progressed or solar-arc contact is not useful evidence merely because it coincides with a known event. The same frozen score must be evaluated across verified non-event windows, and model changes must improve event-versus-non-event discrimination.
+
+Required consequences:
+- report false peaks as explicitly as hits;
+- preserve verified negative windows;
+- reject a candidate model when a motivating false period still outranks the relevant true event;
+- use UNKNOWN rather than NEGATIVE when historical recall is insufficient;
+- for sparse events, evaluate precision/recall, false alarms per time unit, and event rank rather than ordinary accuracy alone.
