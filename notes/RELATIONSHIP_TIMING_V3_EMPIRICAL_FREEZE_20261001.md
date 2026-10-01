@@ -80,22 +80,22 @@ The empirical feature vector is:
 - standardize features from development data;
 - logistic regression used only as a discriminant, not as a calibrated probability;
 - L2 regularization;
-- C = 0.3;
+- C = 1.0;
 - class_weight = balanced;
 - liblinear solver.
 
-C=0.3 was selected on development-only leave-one-event-era-out comparison, balancing the weakest held-out event rank and average precision.
+C=1.0 was selected on development-only blocked leave-one-event-era-out comparison after dependency correction. It tied the best worst-case held-out event rank (~90.5th percentile) and gave the best mean event-era average precision among the tied candidates.
 
 ## Development cross-check
 
 Five-year-ish event-era holdouts:
 
-- 2005 era: best held-out positive month outranked ~89.3% of background months in its test era; 6 background months scored higher.
+- 2005 era: best held-out positive month outranked ~92.9% of background months in its test era; 4 background months scored higher.
 - 2013 era: held-out event outranked 100% of background months in its test era.
 - 2018 era: held-out event outranked 100% of background months in its test era.
 - 2026 era: held-out event outranked ~90.5% of background months in its test era; 4 background months scored higher.
 
-Mean event-era average precision was ~0.49 versus a much lower event prevalence baseline.
+Mean event-era average precision was ~0.48 versus a much lower event prevalence baseline.
 
 Interpretation: V3 is materially more discriminative than raw hit-counting, but **not clean enough to claim that every major relationship event will be uniquely identifiable**.
 
@@ -125,3 +125,20 @@ For the retrospective astrology reminder:
 V3 supersedes V2 for future relationship-peak monitoring only after the V3 future scan artifact is written from this exact frozen specification.
 
 V2 remains preserved as historical provenance.
+
+
+## Pre-scan dependency correction
+
+Before the empirical future scan, the implementation check found that `state_count` could accidentally count the solar-arc family twice when both `sa_personal_any` and `sa_any_axis` were true.
+
+Correct rule:
+```
+state_count =
+    profection_active
+    + progression_family_active
+    + solar_arc_family_active
+```
+
+Each timing family contributes at most one unit. Solar-arc subfeatures remain available for defining whether that family is active but cannot increase the family count beyond one.
+
+The blocked development comparison was rerun after this correction. No future empirical scores had been generated yet. The corrected comparison selected C=1.0 as stated above.
