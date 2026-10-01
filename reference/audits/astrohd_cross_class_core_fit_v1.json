@@ -1,0 +1,706 @@
+{
+  "controlled_scorer_cases": {
+    "A1": {
+      "chart": {
+        "authority": "Emotional",
+        "defined_centers": [
+          "Solar Plexus"
+        ],
+        "profile": "1/4",
+        "strategy": "Wait for the Invitation",
+        "type": "Projector"
+      },
+      "core_fit_block_arithmetic": {
+        "available_weight_total": 45.0,
+        "blocks": [
+          {
+            "available_weight": 30.0,
+            "block_name": "authority",
+            "confidence_total": 1.0,
+            "dependency_cluster_ids": [
+              "AUTHORITY_DECISION"
+            ],
+            "earned_weight": 30.0,
+            "fraction": 1.0,
+            "structural_class": "authority",
+            "support_times_confidence_total": 1.0
+          },
+          {
+            "available_weight": 15.0,
+            "block_name": "profile",
+            "confidence_total": 1.0,
+            "dependency_cluster_ids": [
+              "PROFILE_ARCHITECTURE"
+            ],
+            "earned_weight": 0.0,
+            "fraction": 0.0,
+            "structural_class": "profile",
+            "support_times_confidence_total": 0.0
+          }
+        ],
+        "core_fit": 66.66666666666667,
+        "earned_weight_total": 30.0
+      },
+      "global_dependency_collapse": {
+        "collapsed_contribution_count": 1,
+        "dependency_cluster_id": "AUTHORITY_DECISION",
+        "raw_contribution_count": 1,
+        "raw_mapping_ids": [
+          "MAP-AUTH-EMOTIONAL-D03"
+        ],
+        "resulting_evidence_rubric_bits": 1.0,
+        "winning_evidence_rubric_bits": 1.0,
+        "winning_mapping_id": "MAP-AUTH-EMOTIONAL-D03",
+        "winning_support": 1.0
+      },
+      "responses": [
+        {
+          "answer_token": "fluctuate_with_emotional_highs_and_lows",
+          "behavioral_confidence": 1.0,
+          "measurement_reliability": 1.0,
+          "question_id": "D03"
+        },
+        {
+          "answer_token": "never",
+          "behavioral_confidence": 1.0,
+          "measurement_reliability": 1.0,
+          "question_id": "P01"
+        }
+      ],
+      "score": {
+        "contradiction_rubric_bits": 0.0,
+        "core_fit": 66.66666666666667,
+        "detailed_support": 50.0,
+        "evidence_rubric_bits": 1.0,
+        "meaningful_contradictions": 0,
+        "net_rubric_bits": 1.0,
+        "scored_clusters": [
+          {
+            "anchor_id": "authority:equals_any:emotional,emotionalsolarplexus,solarplexus",
+            "cluster_id": "AUTHORITY_DECISION",
+            "contradiction_rubric_bits": 0.0,
+            "contradiction_severity": 0.0,
+            "effective_confidence": 1.0,
+            "evidence_rubric_bits": 1.0,
+            "mapping_id": "MAP-AUTH-EMOTIONAL-D03",
+            "support": 1.0
+          },
+          {
+            "anchor_id": "profile:profile_has_line:1",
+            "cluster_id": "PROFILE_ARCHITECTURE",
+            "contradiction_rubric_bits": 0.0,
+            "contradiction_severity": 0.0,
+            "effective_confidence": 1.0,
+            "evidence_rubric_bits": 0.0,
+            "mapping_id": "MAP-PROFILE-LINE1-P01",
+            "support": 0.0
+          }
+        ],
+        "unresolved_question_ids": []
+      }
+    },
+    "A2": {
+      "chart": {
+        "authority": "Emotional",
+        "defined_centers": [
+          "Solar Plexus"
+        ],
+        "profile": "1/4",
+        "strategy": "Wait for the Invitation",
+        "type": "Projector"
+      },
+      "core_fit_block_arithmetic": {
+        "available_weight_total": 70.0,
+        "blocks": [
+          {
+            "available_weight": 30.0,
+            "block_name": "authority",
+            "confidence_total": 1.0,
+            "dependency_cluster_ids": [
+              "AUTHORITY_DECISION"
+            ],
+            "earned_weight": 30.0,
+            "fraction": 1.0,
+            "structural_class": "authority",
+            "support_times_confidence_total": 1.0
+          },
+          {
+            "available_weight": 25.0,
+            "block_name": "diagnostic_centers",
+            "confidence_total": 1.0,
+            "dependency_cluster_ids": [
+              "AUTHORITY_DECISION"
+            ],
+            "earned_weight": 25.0,
+            "fraction": 1.0,
+            "structural_class": "diagnostic_center",
+            "support_times_confidence_total": 1.0
+          },
+          {
+            "available_weight": 15.0,
+            "block_name": "profile",
+            "confidence_total": 1.0,
+            "dependency_cluster_ids": [
+              "PROFILE_ARCHITECTURE"
+            ],
+            "earned_weight": 0.0,
+            "fraction": 0.0,
+            "structural_class": "profile",
+            "support_times_confidence_total": 0.0
+          }
+        ],
+        "core_fit": 78.57142857142857,
+        "earned_weight_total": 55.0
+      },
+      "global_dependency_collapse": {
+        "collapsed_contribution_count": 1,
+        "dependency_cluster_id": "AUTHORITY_DECISION",
+        "raw_contribution_count": 2,
+        "raw_mapping_ids": [
+          "MAP-AUTH-EMOTIONAL-D03",
+          "MAP-CENTER-SOLARPLEXUS-DEFINED-C02"
+        ],
+        "resulting_evidence_rubric_bits": 1.0,
+        "winning_evidence_rubric_bits": 1.0,
+        "winning_mapping_id": "MAP-AUTH-EMOTIONAL-D03",
+        "winning_support": 1.0
+      },
+      "responses": [
+        {
+          "answer_token": "fluctuate_with_emotional_highs_and_lows",
+          "behavioral_confidence": 1.0,
+          "measurement_reliability": 1.0,
+          "question_id": "D03"
+        },
+        {
+          "answer_token": "never",
+          "behavioral_confidence": 1.0,
+          "measurement_reliability": 1.0,
+          "question_id": "P01"
+        },
+        {
+          "answer_token": "wave_like",
+          "behavioral_confidence": 1.0,
+          "measurement_reliability": 1.0,
+          "question_id": "C02"
+        }
+      ],
+      "score": {
+        "contradiction_rubric_bits": 0.0,
+        "core_fit": 78.57142857142857,
+        "detailed_support": 50.0,
+        "evidence_rubric_bits": 1.0,
+        "meaningful_contradictions": 0,
+        "net_rubric_bits": 1.0,
+        "scored_clusters": [
+          {
+            "anchor_id": "authority:equals_any:emotional,emotionalsolarplexus,solarplexus",
+            "cluster_id": "AUTHORITY_DECISION",
+            "contradiction_rubric_bits": 0.0,
+            "contradiction_severity": 0.0,
+            "effective_confidence": 1.0,
+            "evidence_rubric_bits": 1.0,
+            "mapping_id": "MAP-AUTH-EMOTIONAL-D03",
+            "support": 1.0
+          },
+          {
+            "anchor_id": "profile:profile_has_line:1",
+            "cluster_id": "PROFILE_ARCHITECTURE",
+            "contradiction_rubric_bits": 0.0,
+            "contradiction_severity": 0.0,
+            "effective_confidence": 1.0,
+            "evidence_rubric_bits": 0.0,
+            "mapping_id": "MAP-PROFILE-LINE1-P01",
+            "support": 0.0
+          }
+        ],
+        "unresolved_question_ids": []
+      }
+    },
+    "B1": {
+      "chart": {
+        "authority": "Sacral",
+        "defined_centers": [
+          "Sacral"
+        ],
+        "profile": "1/4",
+        "strategy": "Wait to Respond",
+        "type": "Generator"
+      },
+      "core_fit_block_arithmetic": {
+        "available_weight_total": 45.0,
+        "blocks": [
+          {
+            "available_weight": 30.0,
+            "block_name": "type_strategy",
+            "confidence_total": 1.0,
+            "dependency_cluster_ids": [
+              "TYPE_STRATEGY_ARCHITECTURE"
+            ],
+            "earned_weight": 30.0,
+            "fraction": 1.0,
+            "structural_class": "type_strategy",
+            "support_times_confidence_total": 1.0
+          },
+          {
+            "available_weight": 15.0,
+            "block_name": "profile",
+            "confidence_total": 1.0,
+            "dependency_cluster_ids": [
+              "PROFILE_ARCHITECTURE"
+            ],
+            "earned_weight": 0.0,
+            "fraction": 0.0,
+            "structural_class": "profile",
+            "support_times_confidence_total": 0.0
+          }
+        ],
+        "core_fit": 66.66666666666667,
+        "earned_weight_total": 30.0
+      },
+      "global_dependency_collapse": {
+        "collapsed_contribution_count": 1,
+        "dependency_cluster_id": "TYPE_STRATEGY_ARCHITECTURE",
+        "raw_contribution_count": 1,
+        "raw_mapping_ids": [
+          "MAP-TYPE-GENERATOR-S02"
+        ],
+        "resulting_evidence_rubric_bits": 1.0,
+        "winning_evidence_rubric_bits": 1.0,
+        "winning_mapping_id": "MAP-TYPE-GENERATOR-S02",
+        "winning_support": 1.0
+      },
+      "responses": [
+        {
+          "answer_token": "very_often",
+          "behavioral_confidence": 1.0,
+          "measurement_reliability": 1.0,
+          "question_id": "S02"
+        },
+        {
+          "answer_token": "never",
+          "behavioral_confidence": 1.0,
+          "measurement_reliability": 1.0,
+          "question_id": "P01"
+        }
+      ],
+      "score": {
+        "contradiction_rubric_bits": 0.0,
+        "core_fit": 66.66666666666667,
+        "detailed_support": 50.0,
+        "evidence_rubric_bits": 1.0,
+        "meaningful_contradictions": 0,
+        "net_rubric_bits": 1.0,
+        "scored_clusters": [
+          {
+            "anchor_id": "profile:profile_has_line:1",
+            "cluster_id": "PROFILE_ARCHITECTURE",
+            "contradiction_rubric_bits": 0.0,
+            "contradiction_severity": 0.0,
+            "effective_confidence": 1.0,
+            "evidence_rubric_bits": 0.0,
+            "mapping_id": "MAP-PROFILE-LINE1-P01",
+            "support": 0.0
+          },
+          {
+            "anchor_id": "type:equals_any:generator,manifestinggenerator",
+            "cluster_id": "TYPE_STRATEGY_ARCHITECTURE",
+            "contradiction_rubric_bits": 0.0,
+            "contradiction_severity": 0.0,
+            "effective_confidence": 1.0,
+            "evidence_rubric_bits": 1.0,
+            "mapping_id": "MAP-TYPE-GENERATOR-S02",
+            "support": 1.0
+          }
+        ],
+        "unresolved_question_ids": []
+      }
+    },
+    "B2": {
+      "chart": {
+        "authority": "Sacral",
+        "defined_centers": [
+          "Sacral"
+        ],
+        "profile": "1/4",
+        "strategy": "Wait to Respond",
+        "type": "Generator"
+      },
+      "core_fit_block_arithmetic": {
+        "available_weight_total": 70.0,
+        "blocks": [
+          {
+            "available_weight": 30.0,
+            "block_name": "type_strategy",
+            "confidence_total": 1.0,
+            "dependency_cluster_ids": [
+              "TYPE_STRATEGY_ARCHITECTURE"
+            ],
+            "earned_weight": 30.0,
+            "fraction": 1.0,
+            "structural_class": "type_strategy",
+            "support_times_confidence_total": 1.0
+          },
+          {
+            "available_weight": 25.0,
+            "block_name": "diagnostic_centers",
+            "confidence_total": 1.0,
+            "dependency_cluster_ids": [
+              "TYPE_STRATEGY_ARCHITECTURE"
+            ],
+            "earned_weight": 25.0,
+            "fraction": 1.0,
+            "structural_class": "diagnostic_center",
+            "support_times_confidence_total": 1.0
+          },
+          {
+            "available_weight": 15.0,
+            "block_name": "profile",
+            "confidence_total": 1.0,
+            "dependency_cluster_ids": [
+              "PROFILE_ARCHITECTURE"
+            ],
+            "earned_weight": 0.0,
+            "fraction": 0.0,
+            "structural_class": "profile",
+            "support_times_confidence_total": 0.0
+          }
+        ],
+        "core_fit": 78.57142857142857,
+        "earned_weight_total": 55.0
+      },
+      "global_dependency_collapse": {
+        "collapsed_contribution_count": 1,
+        "dependency_cluster_id": "TYPE_STRATEGY_ARCHITECTURE",
+        "raw_contribution_count": 3,
+        "raw_mapping_ids": [
+          "MAP-CENTER-SACRAL-DEFINED-C08",
+          "MAP-CENTER-SACRAL-UNDEFINED-C08",
+          "MAP-TYPE-GENERATOR-S02"
+        ],
+        "resulting_evidence_rubric_bits": 1.0,
+        "winning_evidence_rubric_bits": 1.0,
+        "winning_mapping_id": "MAP-TYPE-GENERATOR-S02",
+        "winning_support": 1.0
+      },
+      "responses": [
+        {
+          "answer_token": "very_often",
+          "behavioral_confidence": 1.0,
+          "measurement_reliability": 1.0,
+          "question_id": "S02"
+        },
+        {
+          "answer_token": "never",
+          "behavioral_confidence": 1.0,
+          "measurement_reliability": 1.0,
+          "question_id": "P01"
+        },
+        {
+          "answer_token": "physical_energy_renew_through_doing_the_right_work",
+          "behavioral_confidence": 1.0,
+          "measurement_reliability": 1.0,
+          "question_id": "C08"
+        }
+      ],
+      "score": {
+        "contradiction_rubric_bits": 0.0,
+        "core_fit": 78.57142857142857,
+        "detailed_support": 50.0,
+        "evidence_rubric_bits": 1.0,
+        "meaningful_contradictions": 0,
+        "net_rubric_bits": 1.0,
+        "scored_clusters": [
+          {
+            "anchor_id": "profile:profile_has_line:1",
+            "cluster_id": "PROFILE_ARCHITECTURE",
+            "contradiction_rubric_bits": 0.0,
+            "contradiction_severity": 0.0,
+            "effective_confidence": 1.0,
+            "evidence_rubric_bits": 0.0,
+            "mapping_id": "MAP-PROFILE-LINE1-P01",
+            "support": 0.0
+          },
+          {
+            "anchor_id": "type:equals_any:generator,manifestinggenerator",
+            "cluster_id": "TYPE_STRATEGY_ARCHITECTURE",
+            "contradiction_rubric_bits": 0.0,
+            "contradiction_severity": 0.0,
+            "effective_confidence": 1.0,
+            "evidence_rubric_bits": 1.0,
+            "mapping_id": "MAP-TYPE-GENERATOR-S02",
+            "support": 1.0
+          }
+        ],
+        "unresolved_question_ids": []
+      }
+    }
+  },
+  "cross_class_dependency_cluster_ids": [
+    "AUTHORITY_DECISION",
+    "TYPE_STRATEGY_ARCHITECTURE"
+  ],
+  "dependency_clusters": [
+    {
+      "cluster_id": "AUTHORITY_DECISION",
+      "mapping_ids": [
+        "MAP-AUTH-EMOTIONAL-D01",
+        "MAP-AUTH-EMOTIONAL-D03",
+        "MAP-AUTH-SACRAL-D01",
+        "MAP-AUTH-SPLENIC-D01",
+        "MAP-AUTH-SPLENIC-D02",
+        "MAP-CENTER-SOLARPLEXUS-DEFINED-C02"
+      ],
+      "observation_ids": [
+        "OBS-AUTH-EMOTIONAL-WAIT",
+        "OBS-AUTH-SACRAL-RESPONSE",
+        "OBS-AUTH-SPLENIC-IMMEDIATE",
+        "OBS-CENTER-EMOTIONAL-WAVE"
+      ],
+      "question_ids": [
+        "C02",
+        "D01",
+        "D02",
+        "D03"
+      ],
+      "structural_class_count": 2,
+      "structural_classes": [
+        "authority",
+        "diagnostic_center"
+      ]
+    },
+    {
+      "cluster_id": "CENTER_EGO_STATE",
+      "mapping_ids": [
+        "MAP-CENTER-EGO-UNDEFINED-C03"
+      ],
+      "observation_ids": [
+        "OBS-CENTER-EGO-PROVING"
+      ],
+      "question_ids": [
+        "C03"
+      ],
+      "structural_class_count": 1,
+      "structural_classes": [
+        "diagnostic_center"
+      ]
+    },
+    {
+      "cluster_id": "CENTER_G_STATE",
+      "mapping_ids": [
+        "MAP-CENTER-G-DEFINED-D07",
+        "MAP-CENTER-G-UNDEFINED-C09",
+        "MAP-CENTER-G-UNDEFINED-D07"
+      ],
+      "observation_ids": [
+        "OBS-CENTER-G-ENVIRONMENTAL-DIRECTION",
+        "OBS-CENTER-G-STABLE-DIRECTION"
+      ],
+      "question_ids": [
+        "C09",
+        "D07"
+      ],
+      "structural_class_count": 1,
+      "structural_classes": [
+        "diagnostic_center"
+      ]
+    },
+    {
+      "cluster_id": "CENTER_ROOT_STATE",
+      "mapping_ids": [
+        "MAP-CENTER-ROOT-UNDEFINED-C07"
+      ],
+      "observation_ids": [
+        "OBS-CENTER-ROOT-PRESSURE-CLEARING"
+      ],
+      "question_ids": [
+        "C07"
+      ],
+      "structural_class_count": 1,
+      "structural_classes": [
+        "diagnostic_center"
+      ]
+    },
+    {
+      "cluster_id": "CENTER_SOLAR_PLEXUS_STATE",
+      "mapping_ids": [
+        "MAP-CENTER-SOLARPLEXUS-UNDEFINED-C01"
+      ],
+      "observation_ids": [
+        "OBS-CENTER-EMOTIONAL-AMPLIFICATION"
+      ],
+      "question_ids": [
+        "C01"
+      ],
+      "structural_class_count": 1,
+      "structural_classes": [
+        "diagnostic_center"
+      ]
+    },
+    {
+      "cluster_id": "PROFILE_ARCHITECTURE",
+      "mapping_ids": [
+        "MAP-PROFILE-LINE1-P01",
+        "MAP-PROFILE-LINE2-P02",
+        "MAP-PROFILE-LINE2-P09",
+        "MAP-PROFILE-LINE3-P03",
+        "MAP-PROFILE-LINE3-P11",
+        "MAP-PROFILE-LINE4-P10",
+        "MAP-PROFILE-LINE5-P05",
+        "MAP-PROFILE-LINE6-P07",
+        "MAP-PROFILE-LINE6-P12"
+      ],
+      "observation_ids": [
+        "OBS-PROFILE-LINE1-FOUNDATION",
+        "OBS-PROFILE-LINE2-NATURAL",
+        "OBS-PROFILE-LINE3-TRIAL-ERROR",
+        "OBS-PROFILE-LINE4-NETWORK",
+        "OBS-PROFILE-LINE5-PROJECTION",
+        "OBS-PROFILE-LINE6-DEVELOPMENT"
+      ],
+      "question_ids": [
+        "P01",
+        "P02",
+        "P03",
+        "P05",
+        "P07",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "structural_class_count": 1,
+      "structural_classes": [
+        "profile"
+      ]
+    },
+    {
+      "cluster_id": "TYPE_STRATEGY_ARCHITECTURE",
+      "mapping_ids": [
+        "MAP-CENTER-SACRAL-DEFINED-C08",
+        "MAP-CENTER-SACRAL-UNDEFINED-C08",
+        "MAP-TYPE-GENERATOR-S02",
+        "MAP-TYPE-GENERATOR-S05",
+        "MAP-TYPE-PROJECTOR-S03",
+        "MAP-TYPE-PROJECTOR-S04"
+      ],
+      "observation_ids": [
+        "OBS-CENTER-NONSACRAL-DEPLETION",
+        "OBS-CENTER-SACRAL-ENERGY",
+        "OBS-TYPE-GENERATOR-RESPONSE",
+        "OBS-TYPE-GENERATOR-SACRAL-ENERGY",
+        "OBS-TYPE-PROJECTOR-RECOGNITION"
+      ],
+      "question_ids": [
+        "C08",
+        "S02",
+        "S03",
+        "S04",
+        "S05"
+      ],
+      "structural_class_count": 2,
+      "structural_classes": [
+        "diagnostic_center",
+        "type_strategy"
+      ]
+    }
+  ],
+  "directed_mapping_facts": [
+    {
+      "dependency_cluster": "AUTHORITY_DECISION",
+      "mapping_id": "MAP-AUTH-EMOTIONAL-D03",
+      "question_ids": [
+        "D03"
+      ],
+      "structural_class": "authority"
+    },
+    {
+      "dependency_cluster": "TYPE_STRATEGY_ARCHITECTURE",
+      "mapping_id": "MAP-CENTER-SACRAL-DEFINED-C08",
+      "question_ids": [
+        "C08"
+      ],
+      "structural_class": "diagnostic_center"
+    },
+    {
+      "dependency_cluster": "AUTHORITY_DECISION",
+      "mapping_id": "MAP-CENTER-SOLARPLEXUS-DEFINED-C02",
+      "question_ids": [
+        "C02"
+      ],
+      "structural_class": "diagnostic_center"
+    },
+    {
+      "dependency_cluster": "TYPE_STRATEGY_ARCHITECTURE",
+      "mapping_id": "MAP-TYPE-GENERATOR-S02",
+      "question_ids": [
+        "S02"
+      ],
+      "structural_class": "type_strategy"
+    }
+  ],
+  "ranking_case": {
+    "better_scientific_rank_state_id": "HIGH",
+    "held_equal_fields": [
+      "net_rubric_bits",
+      "evidence_rubric_bits",
+      "contradiction_rubric_bits",
+      "meaningful_contradictions",
+      "detailed_support"
+    ],
+    "only_differing_score_field": "core_fit",
+    "ordered_state_ids": [
+      "HIGH",
+      "LOW"
+    ],
+    "scientific_rank_by_state_id": {
+      "HIGH": 1.0,
+      "LOW": 2.0
+    },
+    "scores": {
+      "HIGH": {
+        "contradiction_rubric_bits": 0.0,
+        "core_fit": 78.57142857142857,
+        "detailed_support": 50.0,
+        "evidence_rubric_bits": 1.0,
+        "meaningful_contradictions": 0,
+        "net_rubric_bits": 1.0,
+        "state_id": "HIGH"
+      },
+      "LOW": {
+        "contradiction_rubric_bits": 0.0,
+        "core_fit": 66.66666666666667,
+        "detailed_support": 50.0,
+        "evidence_rubric_bits": 1.0,
+        "meaningful_contradictions": 0,
+        "net_rubric_bits": 1.0,
+        "state_id": "LOW"
+      }
+    }
+  },
+  "schema_version": "astrohd-cross-class-core-fit-audit-v1",
+  "source": {
+    "dependency_control": {
+      "path": "src/hdmatch/model/dependencies.py",
+      "sha256": "a49672a0edbca3ecbd121d563f7f7758b521a3cdf317c058b42ad9f137504a7d"
+    },
+    "mapping_library": {
+      "path": "mappings/mapping_library_v1.json",
+      "sha256": "3424672432f7f071ec90ef9ddce52a67ff6794911e92b1a1e04f079262ea6200"
+    },
+    "participant_ranking": {
+      "path": "src/hdmatch/participant/backend.py",
+      "sha256": "80ad02402ec0ea3a094bcd2977e9843c68d296b198bcfc7e836ef71043313198"
+    },
+    "symbolic_scorer": {
+      "path": "src/hdmatch/model/symbolic_score.py",
+      "sha256": "fd1f216c2579aab0ba9aef74249fa5804cb7433b7eb13f452dfe1381b09f0aaa"
+    }
+  },
+  "source_behavior": {
+    "core_fit_support_basis": "mapping_directness_when_mapping_support_is_nonzero",
+    "ordinary_evidence_support_basis": "structural_salience_times_mapping_directness"
+  },
+  "status": "mechanical_diagnostic_only_no_runtime_effect",
+  "synthetic_prevalence_for_every_frozen_anchor": 0.5
+}

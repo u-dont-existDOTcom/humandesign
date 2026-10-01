@@ -26,15 +26,15 @@ from hdmatch.participant import ParticipantSessionService, ParticipantSessionSto
 from hdmatch.participant.century_backend import CenturyCapableParticipantBackend
 from hdmatch.participant.models import (
     BirthIntake,
-    ConfirmatoryLock,
     EvidenceInput,
-    EvidenceRecord,
     ExploratoryRankingReport,
     FinalParticipantReport,
     NextInterviewQuestion,
     ParticipantModel,
     ParticipantModelReceipt,
     PredictionComparison,
+    PublicConfirmatoryLock,
+    PublicEvidenceRecord,
     PublicProgress,
     RankingSnapshot,
     RankScope,
@@ -48,6 +48,7 @@ from hdmatch.relationship.place_resolution import search_birthplaces
 T = TypeVar("T")
 _SHA256_RE = re.compile(r"^[a-f0-9]{64}$")
 _SOURCE_COMMIT_RE = re.compile(r"^[a-f0-9]{40,64}$")
+_SESSION_ID_RE = re.compile(r"^HD-[A-F0-9]{32}$")
 
 
 class NatalPilotSessionCreated(SessionRecord):
@@ -89,7 +90,7 @@ class InterviewerFinalReport(ParticipantModel):
     mode: SessionMode
     confirmatory: InterviewerRevealReport
     exploratory: ExploratoryRankingReport
-    retained_secondary_evidence: tuple[EvidenceRecord, ...]
+    retained_secondary_evidence: tuple[PublicEvidenceRecord, ...]
     research_layers: tuple[ResearchLayer, ...]
 
 
@@ -185,9 +186,12 @@ class SingleUsePilotInvite:
                 receipt["session_id"] = session_id
             session_token = getattr(result, "session_token", None)
             if isinstance(session_token, str) and session_token:
-                receipt["session_token_sha256"] = hashlib.sha256(
-                    session_token.encode()
-                ).hexdigest()
+                receipt["session_token_sha256"] = hashlib.sha256(session_token.encode()).hexdigest()
+            if isinstance(session_id, str) and isinstance(session_token, str) and session_token:
+                self._write_session_access(
+                    session_id,
+                    hashlib.sha256(session_token.encode()).hexdigest(),
+                )
             temporary = claim_path.with_suffix(".tmp")
             temporary.write_text(
                 json.dumps(receipt, sort_keys=True) + "\n",
@@ -204,18 +208,69 @@ class SingleUsePilotInvite:
     def authorize_session(self, session_id: str, supplied_token: str | None) -> None:
         """Require the separate session bearer secret without storing it in plaintext."""
 
-        claim_path = self.root / f"{self.expected_sha256}.json"
-        try:
-            receipt = json.loads(claim_path.read_text(encoding="utf-8"))
-            expected_token_sha256 = receipt["session_token_sha256"]
-            expected_session_id = receipt["session_id"]
-        except (OSError, KeyError, TypeError, ValueError) as exc:
-            raise HTTPException(status_code=403, detail="invalid session access") from exc
+        if not _SESSION_ID_RE.fullmatch(session_id):
+            raise HTTPException(status_code=403, detail="invalid session access")
+        expected_token_sha256 = self._session_token_sha256(session_id)
         observed = hashlib.sha256((supplied_token or "").encode()).hexdigest()
-        if expected_session_id != session_id or not secrets.compare_digest(
-            str(expected_token_sha256), observed
+        if expected_token_sha256 is None or not secrets.compare_digest(
+            expected_token_sha256,
+            observed,
         ):
             raise HTTPException(status_code=403, detail="invalid session access")
+
+    def _session_token_sha256(self, session_id: str) -> str | None:
+        access_path = self.root / "session-access" / f"{session_id}.json"
+        try:
+            receipt = json.loads(access_path.read_text(encoding="utf-8"))
+            if (
+                isinstance(receipt, dict)
+                and receipt.get("session_id") == session_id
+                and _SHA256_RE.fullmatch(str(receipt.get("session_token_sha256", "")))
+            ):
+                return str(receipt["session_token_sha256"])
+        except (OSError, TypeError, ValueError):
+            pass
+
+        # Compatibility for the already-deployed one-receipt owner session. A later
+        # invite rotation must not strand that session merely because its invitation
+        # hash is no longer the process's active creation gate.
+        try:
+            claim_paths = tuple(self.root.glob("*.json"))
+        except OSError:
+            return None
+        for claim_path in claim_paths:
+            try:
+                receipt = json.loads(claim_path.read_text(encoding="utf-8"))
+                if not isinstance(receipt, dict):
+                    continue
+                token_sha256 = str(receipt.get("session_token_sha256", ""))
+            except (OSError, TypeError, ValueError):
+                continue
+            if receipt.get("session_id") != session_id or not _SHA256_RE.fullmatch(token_sha256):
+                continue
+            self._write_session_access(session_id, token_sha256)
+            return token_sha256
+        return None
+
+    def _write_session_access(self, session_id: str, token_sha256: str) -> None:
+        access_root = self.root / "session-access"
+        access_root.mkdir(parents=True, exist_ok=True, mode=0o700)
+        os.chmod(access_root, 0o700)
+        target = access_root / f"{session_id}.json"
+        temporary = access_root / f".{session_id}.{secrets.token_hex(8)}.tmp"
+        temporary.write_text(
+            json.dumps(
+                {
+                    "session_id": session_id,
+                    "session_token_sha256": token_sha256,
+                },
+                sort_keys=True,
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+        os.chmod(temporary, 0o600)
+        temporary.replace(target)
 
 
 def create_natal_pilot_app(
@@ -240,6 +295,7 @@ def create_natal_pilot_app(
         include_session_creation=False,
         include_result_routes=False,
         authorize_session=invite.authorize_session,
+        require_mapped_question_quality=True,
     )
 
     @app.get("/", response_class=HTMLResponse, include_in_schema=False)
@@ -341,29 +397,34 @@ def create_natal_pilot_app(
 
     @app.post(
         "/v1/interviewer/evidence",
-        response_model=EvidenceRecord,
+        response_model=PublicEvidenceRecord,
         responses=ERROR_RESPONSES,
         operation_id="appendParticipantEvidence",
     )
     async def evidence_for_interviewer(
         request: InterviewerEvidenceAccess,
-    ) -> EvidenceRecord:
+    ) -> PublicEvidenceRecord:
         invite.authorize_session(request.session_id, request.session_token)
-        return _execute(
-            lambda: sessions.append_evidence(request.session_id, request.evidence)
-        )
+        record = _execute(lambda: sessions.append_evidence(request.session_id, request.evidence))
+        return record.public_view()
 
     @app.post(
         "/v1/interviewer/lock",
-        response_model=ConfirmatoryLock,
+        response_model=PublicConfirmatoryLock,
         responses=ERROR_RESPONSES,
         operation_id="lockParticipantConfirmatoryEvidence",
     )
     async def lock_for_interviewer(
         request: InterviewerSessionAccess,
-    ) -> ConfirmatoryLock:
+    ) -> PublicConfirmatoryLock:
         invite.authorize_session(request.session_id, request.session_token)
-        return _execute(lambda: sessions.lock_confirmatory(request.session_id))
+        lock = _execute(
+            lambda: sessions.lock_confirmatory(
+                request.session_id,
+                require_mapped_question_quality=True,
+            )
+        )
+        return lock.public_view()
 
     @app.post(
         "/v1/interviewer/reveal",
@@ -478,7 +539,9 @@ def _interviewer_final(
         mode=report.mode,
         confirmatory=_interviewer_reveal(report.confirmatory, config),
         exploratory=report.exploratory,
-        retained_secondary_evidence=report.retained_secondary_evidence,
+        retained_secondary_evidence=tuple(
+            record.public_view() for record in report.retained_secondary_evidence
+        ),
         research_layers=report.research_layers,
     )
 
@@ -504,9 +567,7 @@ def create_natal_pilot_app_from_env() -> FastAPI:
     century_manifest_sha256 = _required_env("HDMATCH_CENTURY_MANIFEST_SHA256")
     century_canonical_rows_sha256 = _required_env("HDMATCH_CENTURY_CANONICAL_ROWS_SHA256")
     code_commit = (
-        os.environ.get("RAILWAY_GIT_COMMIT_SHA")
-        or os.environ.get("HDMATCH_CODE_COMMIT")
-        or ""
+        os.environ.get("RAILWAY_GIT_COMMIT_SHA") or os.environ.get("HDMATCH_CODE_COMMIT") or ""
     ).strip()
     if not _SOURCE_COMMIT_RE.fullmatch(code_commit):
         raise RuntimeError("an exact deployed source commit is required for the natal pilot")
@@ -559,8 +620,7 @@ def create_natal_pilot_app_from_env() -> FastAPI:
                 "interviewer_model_receipt": interviewer_model_receipt or "not_configured",
                 "interviewer_instructions_sha256": hashlib.sha256(
                     (
-                        repo_root
-                        / "reference/custom_gpt/"
+                        repo_root / "reference/custom_gpt/"
                         "participant_interviewer_instructions_under_8000_v1.md"
                     ).read_bytes()
                 ).hexdigest(),
