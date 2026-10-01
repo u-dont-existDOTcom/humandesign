@@ -27,8 +27,8 @@
     "participantLiveEnabledObserved": false,
     "optimizationDeployed": true,
     "paidInferenceUsedForThisOptimization": false,
-    "deployedCommit": "79e633ec113599362570ad757b81557f6b64294c",
-    "deploymentId": "5b4b9467-4d99-44f2-b094-69f2a1ffc4d4",
+    "deployedCommit": "17aa2e0b75eab7c9a412732e5fab5ee1a0e1568f",
+    "deploymentId": "b6e315b8-e609-4c2d-bd4f-66103ad3e06d",
     "gptSubmissionEnabledObserved": true,
     "gptSubmissionEncryptedStore": true,
     "gptSubmissionInferenceStarted": false,
@@ -79,7 +79,8 @@
     "repositoryPytest": "1013 passed, 6 skipped",
     "gptSubmissionFocused": "7/7 PASS",
     "gptAutoSubmitAffected": "130/130 PASS",
-    "gptSubmissionHostedCI": "PR #54 verify PASS; survey-browser PASS",
+    "gptSubmissionHostedCI": "PR #54 auto-submission PASS; PR #56 Action-description compatibility verify + survey-browser PASS",
+    "gptActionDescriptionLimit": "PASS: all Action schema descriptions <=300; live submitLifePatternsRecords description=247",
     "gptSubmissionLiveHealth": "PASS: gpt_submission_enabled=true; participant_enabled=false; provider_configured=false",
     "gptSubmissionPublicSchemaPrivacy": "PASS: /action-openapi.yaml and /privacy HTTP 200",
     "gptSubmissionAuthBoundary": "PASS: valid-shaped wrong Bearer returns HTTP 401",
@@ -108,6 +109,6 @@
       "no merge to main"
     ]
   },
-  "updatedAt": "2026-09-30T21:38:50+00:00",
+  "updatedAt": "2026-10-01T00:24:59+00:00",
   "remaining": "GPT auto-submission backend is live and encrypted; owner still must add the Action/key to the Custom GPT UI. Railway model inference remains intentionally disabled. CF-003 remains DEVELOPMENT/SECONDARY and prospectively unfrozen pending its recorded freeze items."
 }
