@@ -1,15 +1,15 @@
 {
   "schema": "life-patterns-voice-gpt-bundle-v1",
-  "version": "2026-10-01.3",
+  "version": "2026-10-01.4",
   "builder_config": {
     "path": "reference/custom_gpt/GPT-BUILDER-CONFIG.md",
-    "sha256": "ce6de04b78680fe0c09f08e6f456ee89c58a696afdff011ea3177f9de25929b3"
+    "sha256": "f8109d0d327db8f70d5fe8d4eee5b86bc4309da22b42846e0f1db52a296a21ea"
   },
   "instructions": {
     "path": "reference/custom_gpt/life_patterns_voice_interviewer_v2.md",
-    "sha256": "abc4e9b57858c6ddd5dcc9734ab3a74865b7588ec6bafa00beccf204ee5f817c",
-    "characters": 7805,
-    "strict_linebreak_count": 7939
+    "sha256": "e803513cfdcda535072f4b189324e327ac02f66d51201cb085704472e08eff01",
+    "characters": 7311,
+    "strict_linebreak_count": 7429
   },
   "knowledge_files": [
     {
@@ -40,7 +40,7 @@
     "chatgpt_text",
     "mixed"
   ],
-  "handoff": "Submit both frozen records through the authenticated GPT Action; JSON files remain the fallback/local backup.",
+  "handoff": "Queue independent review before primary freeze; after ready review freeze primary, collect CF-003, then submit both frozen records with the ready review ID.",
   "secondary_modules": {
     "cf003": {
       "status": "development_secondary_only",
@@ -55,10 +55,23 @@
   },
   "action_schema": {
     "path": "apps/life-patterns-participant/participant/static/action-openapi.yaml",
-    "sha256": "f9296caa34c2e0f7dcf96830f50a2f545f0343301f90d97294cdc5971fa2f3f2",
+    "sha256": "c16a3986ec84f98c4787ef23c22ab5235a13c0e6b86093fdfe299fbe01b66c56",
     "schema_url": "https://life-patterns-participant-production.up.railway.app/action-openapi.yaml",
     "authentication": "api_key_bearer",
     "privacy_policy_url": "https://life-patterns-participant-production.up.railway.app/privacy",
-    "operation_id": "submitLifePatternsRecords"
+    "operation_id": "submitLifePatternsRecords",
+    "operation_ids": [
+      "startLifePatternsReview",
+      "getLifePatternsReview",
+      "submitLifePatternsClarification",
+      "submitLifePatternsRecords"
+    ]
+  },
+  "review_loop": {
+    "mode": "asynchronous_railway_queue_local_codex_development_worker",
+    "primary_freeze_requires_ready_review": true,
+    "cf003_after_reviewed_primary_freeze": true,
+    "final_submission_binds_reviewed_behavioral_turns": true,
+    "paid_api_required_for_pilot_worker": false
   }
 }

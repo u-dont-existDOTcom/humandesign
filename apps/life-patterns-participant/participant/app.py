@@ -15,6 +15,7 @@ from pydantic import BaseModel, ConfigDict, Field
 
 from .domain import (
     VERSION,
+    bank,
     export_record,
     import_record,
     load_instrument,
@@ -36,6 +37,7 @@ class Settings:
     join_token: str
     authority: Path
     submission_token: str = ""
+    review_worker_token: str = ""
     gateway_url: str = "https://venice-model-gateway-production.up.railway.app/v1"
     gateway_token: str = ""
     model: str = "openai-gpt-56-sol"
@@ -63,6 +65,7 @@ class Settings:
             join_token=os.environ[required[2]],
             authority=Path(os.environ.get("SURVEY_AUTHORITY_DIR", "/app/authority")),
             submission_token=os.environ.get("PARTICIPANT_GPT_SUBMISSION_TOKEN", ""),
+            review_worker_token=os.environ.get("PARTICIPANT_REVIEW_WORKER_TOKEN", ""),
             gateway_url=os.environ.get(
                 "UDA_MODEL_GATEWAY_URL", "https://venice-model-gateway-production.up.railway.app"
             ).rstrip("/")
@@ -127,8 +130,34 @@ class ProviderRecovery(Body):
     billing_issue_resolved: Literal[True]
 
 
+class GptReviewStart(Body):
+    research_use_consented: Literal[True]
+    candidate_record: dict
+
+
+class GptReviewAnswer(Body):
+    answer_text: str = Field(min_length=1, max_length=20000)
+
+
+class WorkerClarification(Body):
+    route_id: str = Field(min_length=1, max_length=100)
+    route_type: Literal["canonical", "context_repair", "missing_piece_followup"]
+    question_text: str = Field(min_length=1, max_length=3000)
+    antecedent_turn_ids: list[str] = Field(default_factory=list, max_length=100)
+
+
+class WorkerReviewResult(Body):
+    candidate_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
+    status: Literal["clarification_needed", "ready", "error"]
+    worker_state: dict | None = None
+    receipt: dict
+    clarification: WorkerClarification | None = None
+    error: str | None = Field(default=None, max_length=1000)
+
+
 class GptSubmission(Body):
     research_use_consented: Literal[True]
+    review_id: str = Field(pattern=r"^R-[a-f0-9]{32}$")
     primary_record: dict
     cf003_record: dict
 
@@ -217,6 +246,14 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
         if not secrets.compare_digest(value, settings.submission_token):
             raise HTTPException(401, "GPT submission access required.")
 
+    def review_worker(request):
+        if not settings.review_worker_token:
+            raise HTTPException(503, "GPT review worker is not configured.")
+        header = request.headers.get("authorization", "")
+        value = header[7:] if header.startswith("Bearer ") else ""
+        if not secrets.compare_digest(value, settings.review_worker_token):
+            raise HTTPException(401, "GPT review worker access required.")
+
     def reject_target_fields(record):
         forbidden = {
             "birth_date",
@@ -245,6 +282,86 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
 
         walk(record)
 
+    def behavioral_content(record):
+        turns = record.get("turns")
+        if not isinstance(turns, list):
+            raise ValueError("A Life Patterns record needs a turns list.")
+        result = []
+        for turn in turns:
+            if not isinstance(turn, dict):
+                raise ValueError("Every Life Patterns turn must be an object.")
+            if turn.get("turn_role", "behavioral") != "behavioral":
+                continue
+            result.append(
+                {
+                    "question_text": turn.get("question_text"),
+                    "answer_text": turn.get("answer_text"),
+                    "canonical_question_id": turn.get(
+                        "canonical_question_id", turn.get("question_id")
+                    ),
+                    "correction_of": turn.get("correction_of"),
+                    "conditions": turn.get("conditions") or [],
+                    "corrections": turn.get("corrections") or [],
+                    "process_feedback": turn.get("process_feedback") or [],
+                }
+            )
+        return result
+
+    def review_material(record):
+        return {
+            "turns": record.get("turns"),
+            "collection_mode": record.get("collection_mode"),
+            "retrospective_questions_welcome": record.get(
+                "retrospective_questions_welcome"
+            ),
+            "collection_preferences": record.get("collection_preferences"),
+            "source_type": record.get("source_type"),
+            "source_fidelity": record.get("source_fidelity"),
+            "evidence_authority": record.get("evidence_authority"),
+        }
+
+    def validate_review_candidate(record):
+        if record.get("schema") != "life-patterns-full-survey-participant-export-v2":
+            raise ValueError("Review candidate schema is not the current Life Patterns export.")
+        if (record.get("consent") or {}).get("research_use_consented") is not True:
+            raise ValueError("Research-use consent must be recorded before independent review.")
+        freeze = record.get("freeze") or {}
+        if freeze.get("frozen_before_birth_or_chart_reveal") is True:
+            raise ValueError("Independent review must happen before the primary record is frozen.")
+        if not behavioral_content(record):
+            raise ValueError("Independent review needs at least one behavioral answer.")
+        reject_target_fields(record)
+
+    def review_public(payload):
+        clarification = payload.get("pending_clarification")
+        return {
+            "schema": "life-patterns-gpt-review-status-v1",
+            "review_id": payload["review_id"],
+            "status": payload["status"],
+            "round": payload.get("round", 0),
+            "duplicate": bool(payload.get("duplicate", False)),
+            "clarification": clarification
+            if payload.get("status") == "clarification_needed"
+            else None,
+            "error": payload.get("error") if payload.get("status") == "error" else None,
+        }
+
+    def expected_review_behavioral(payload):
+        expected = behavioral_content(payload["candidate_record"])
+        for item in payload.get("clarification_history", []):
+            expected.append(
+                {
+                    "question_text": item.get("question_text"),
+                    "answer_text": item.get("answer_text"),
+                    "canonical_question_id": item.get("route_id"),
+                    "correction_of": None,
+                    "conditions": [],
+                    "corrections": [],
+                    "process_feedback": [],
+                }
+            )
+        return expected
+
     def validate_gpt_submission(body):
         primary = body.primary_record
         secondary = body.cf003_record
@@ -257,6 +374,13 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
             raise ValueError("Primary record must be frozen before any birth/chart reveal.")
         if not isinstance(primary.get("turns"), list) or not isinstance(secondary.get("turns"), list):
             raise ValueError("Both submitted records need a turns list.")
+        review = store.gpt_review_read(body.review_id)
+        if review.get("status") != "ready":
+            raise ValueError("The independent Railway review is not ready.")
+        if behavioral_content(primary) != expected_review_behavioral(review):
+            raise ValueError(
+                "Final primary behavioral turns do not match the independently reviewed record."
+            )
         required = {"CF003-ID-01", "CF003-CENTRAL-01", "CF003-PERIPH-01"}
         present = {
             turn.get("question_id") or turn.get("canonical_question_id")
@@ -339,7 +463,8 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
         origin = request.headers.get("origin")
         if (
             request.method not in {"GET", "HEAD"}
-            and request.url.path != "/api/gpt/submissions"
+            and not request.url.path.startswith("/api/gpt/")
+            and not request.url.path.startswith("/api/review-worker/")
             and origin
             and origin.rstrip("/") != (settings.public_origin or str(request.base_url).rstrip("/"))
         ):
@@ -393,6 +518,10 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
             "provider_configured": provider.configured,
             "participant_enabled": settings.live_enabled,
             "gpt_submission_enabled": bool(settings.submission_token),
+            "gpt_review_queue_enabled": bool(
+                settings.submission_token and settings.review_worker_token
+            ),
+            "review_worker_configured": bool(settings.review_worker_token),
             "persistence": "encrypted_sqlite",
             "instrument_version": version,
         }
@@ -508,17 +637,98 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
 
         return public(store.change(value, apply))
 
+    @app.post("/api/gpt/reviews")
+    def gpt_review_start(request: Request, body: GptReviewStart):
+        gpt_submitter(request)
+        candidate = body.candidate_record
+        validate_review_candidate(candidate)
+        candidate_sha256 = digest(canonical(review_material(candidate)))
+        review_id, payload, duplicate = store.create_gpt_review(
+            candidate, candidate_sha256
+        )
+        view = dict(payload)
+        view["duplicate"] = duplicate
+        return review_public(view)
+
+    @app.get("/api/gpt/reviews/{review_id}")
+    def gpt_review_status(request: Request, review_id: str):
+        gpt_submitter(request)
+        return review_public(store.gpt_review_read(review_id))
+
+    @app.post("/api/gpt/reviews/{review_id}/clarifications")
+    def gpt_review_answer(request: Request, review_id: str, body: GptReviewAnswer):
+        gpt_submitter(request)
+        return review_public(store.add_gpt_review_answer(review_id, body.answer_text))
+
+    @app.get("/api/review-worker/jobs/next")
+    def review_worker_next(request: Request):
+        review_worker(request)
+        payload = store.claim_gpt_review()
+        if payload is None:
+            return Response(status_code=204)
+        return {
+            "schema": "life-patterns-review-worker-job-v1",
+            "review_id": payload["review_id"],
+            "candidate_sha256": payload["candidate_sha256"],
+            "candidate_record": payload["candidate_record"],
+            "worker_state": payload.get("worker_state"),
+            "clarification_history": payload.get("clarification_history", []),
+            "round": payload.get("round", 0),
+            "model": settings.model,
+            "effort": settings.effort,
+        }
+
+    @app.post("/api/review-worker/jobs/{review_id}/result")
+    def review_worker_result(
+        request: Request, review_id: str, body: WorkerReviewResult
+    ):
+        review_worker(request)
+        clarification = body.clarification.model_dump() if body.clarification else None
+        if body.status == "clarification_needed":
+            if clarification is None:
+                raise ValueError("Clarification-needed results require one question.")
+            routes = {row["id"]: row for row in bank(instrument)["questions"]}
+            route = routes.get(clarification["route_id"])
+            if route is None:
+                raise ValueError("Worker returned an unknown survey route.")
+            if (
+                clarification["route_type"] == "canonical"
+                and clarification["question_text"] != route["question"]
+            ):
+                raise ValueError("Canonical worker question does not match the frozen bank.")
+        elif clarification is not None:
+            raise ValueError("Only clarification-needed results may include a question.")
+        if body.status == "ready" and body.worker_state is None:
+            raise ValueError("Ready results require the independently reviewed worker state.")
+        payload = store.complete_gpt_review(
+            review_id,
+            body.candidate_sha256,
+            body.status,
+            worker_state=body.worker_state,
+            receipt=body.receipt,
+            clarification=clarification,
+            error=body.error,
+        )
+        return {"review_id": review_id, "status": payload["status"]}
+
     @app.post("/api/gpt/submissions")
     def gpt_submission(request: Request, body: GptSubmission):
         gpt_submitter(request)
         primary, secondary, primary_sha256 = validate_gpt_submission(body)
         cf003_sha256 = digest(canonical(secondary))
         submission_sha256 = digest(
-            canonical({"primary_record": primary, "cf003_record": secondary})
+            canonical(
+                {
+                    "review_id": body.review_id,
+                    "primary_record": primary,
+                    "cf003_record": secondary,
+                }
+            )
         )
         payload = {
             "schema": "life-patterns-gpt-submission-v1",
             "received_at_utc": utc(),
+            "review_id": body.review_id,
             "submission_sha256": submission_sha256,
             "primary_record_sha256": primary_sha256,
             "cf003_record_sha256": cf003_sha256,
@@ -533,9 +743,11 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
             "submission_id": submission_id,
             "received_at_utc": stored["received_at_utc"],
             "duplicate": duplicate,
+            "review_id": stored["review_id"],
             "primary_record_sha256": stored["primary_record_sha256"],
             "cf003_record_sha256": stored["cf003_record_sha256"],
             "stored_encrypted": True,
+            "independent_review_completed": True,
             "inference_started": False,
         }
 

@@ -8,14 +8,14 @@ Life Patterns Interview
 
 ## Description
 
-A private voice-or-text research interview about how you actually respond across situations. You can pause, skip, correct, or resume from an existing interview record. The interview does not ask for or use birth/chart information.
+A private voice-or-text research interview with an independent quality-review step before the final record is frozen. You can pause, skip, correct, or resume. The interview does not ask for or use birth/chart information.
 
 ## Conversation starters
 
 1. Start my Life Patterns interview.
 2. Find my Life Patterns record in my Library and continue.
 3. Continue my interview from this chat or a record I attach.
-4. I want to do the interview mainly by voice.
+4. Check my independent Life Patterns review.
 
 ## Capabilities
 
@@ -29,16 +29,16 @@ Create one Action:
 - API key: use the private submission-only key supplied separately; never use the researcher/admin token.
 - Privacy policy: `https://life-patterns-participant-production.up.railway.app/privacy`
 
-The Action sends the two frozen research records to Joel's encrypted study store after recorded consent. It does not run model inference. ChatGPT may require the participant to approve this external write. Current OpenAI product behavior does not support Actions in Pro mode, so select an action-capable non-Pro model for this GPT.
+The Action first queues the unfrozen, chart-blind primary record for independent study review, lets the GPT check status and submit any admitted clarification answer, and later sends the reviewed frozen primary plus CF-003 records to Joel's encrypted study store. During this development pilot the queued review may be processed through Joel's ChatGPT-authenticated Codex CLI. ChatGPT may require approval for external writes. Use an action-capable non-Pro model.
 
 ## Expected opening behavior
 
 A Custom GPT cannot send a message before the user sends or taps something. When the participant taps a starter or sends any first message, the GPT Instructions require it to immediately:
-- explain the research purpose and that responses may be shared with Joel;
+- explain the research purpose, that responses may be shared with Joel, and that the chart-blind interview will receive an independent study-AI review before final freeze;
 - say voice or text is fine and the participant may pause, skip, correct, or stop;
 - say birth/chart information will not be requested or used;
-- request research-use consent, expected voice/text/mixed mode, and permission for useful earlier-life comparison questions;
-- then begin the interview without requiring another “ready” message.
+- request research-use consent covering independent review/final submission, expected voice/text/mixed mode, and permission for useful earlier-life comparison questions;
+- then begin without requiring another “ready” message.
 
 For a participant with an existing interview, there are three safe resume paths:
 - **Library fallback:** use starter 2. This explicitly authorizes a narrow Library search for canonical Life Patterns export/recovery schemas only. One exact candidate may be imported automatically; multiple candidates require participant selection. Never use a merely similar behavioral/interview file.

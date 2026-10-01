@@ -54,6 +54,17 @@ class Store:
                     created REAL NOT NULL,
                     payload BLOB NOT NULL
                 );
+                CREATE TABLE IF NOT EXISTS gpt_review_jobs (
+                    id TEXT PRIMARY KEY,
+                    candidate_sha256 TEXT UNIQUE NOT NULL,
+                    status TEXT NOT NULL,
+                    created REAL NOT NULL,
+                    updated REAL NOT NULL,
+                    lease_until REAL,
+                    payload BLOB NOT NULL
+                );
+                CREATE INDEX IF NOT EXISTS idx_gpt_review_status
+                    ON gpt_review_jobs(status, created);
             """)
         os.chmod(path, 0o600)
 
@@ -233,3 +244,186 @@ class Store:
         if not row:
             raise Missing("Unknown GPT submission.")
         return self.decode(row[0])
+
+
+    def create_gpt_review(
+        self, candidate_record: dict, candidate_sha256: str
+    ) -> tuple[str, dict, bool]:
+        now = time.time()
+        with self.connection() as db:
+            db.execute("BEGIN IMMEDIATE")
+            row = db.execute(
+                "SELECT id,payload FROM gpt_review_jobs WHERE candidate_sha256=?",
+                (candidate_sha256,),
+            ).fetchone()
+            if row:
+                payload = self.decode(row[1])
+                if payload.get("status") == "error":
+                    payload["status"] = "queued"
+                    payload["error"] = None
+                    payload["updated_at_unix"] = now
+                    db.execute(
+                        "UPDATE gpt_review_jobs SET status='queued',updated=?,lease_until=NULL,payload=? "
+                        "WHERE id=?",
+                        (now, self.encode(payload), row[0]),
+                    )
+                db.commit()
+                return row[0], payload, True
+            review_id = "R-" + secrets.token_hex(16)
+            payload = {
+                "schema": "life-patterns-gpt-review-job-v1",
+                "review_id": review_id,
+                "candidate_sha256": candidate_sha256,
+                "candidate_record": candidate_record,
+                "status": "queued",
+                "created_at_unix": now,
+                "updated_at_unix": now,
+                "round": 0,
+                "clarification_history": [],
+                "worker_state": None,
+                "worker_receipts": [],
+                "error": None,
+            }
+            db.execute(
+                "INSERT INTO gpt_review_jobs VALUES (?,?,?,?,?,?,?)",
+                (
+                    review_id,
+                    candidate_sha256,
+                    "queued",
+                    now,
+                    now,
+                    None,
+                    self.encode(payload),
+                ),
+            )
+            db.commit()
+        return review_id, payload, False
+
+    def gpt_review_read(self, review_id: str) -> dict:
+        with self.connection() as db:
+            row = db.execute(
+                "SELECT payload FROM gpt_review_jobs WHERE id=?", (review_id,)
+            ).fetchone()
+        if not row:
+            raise Missing("Unknown GPT review.")
+        return self.decode(row[0])
+
+    def claim_gpt_review(self, lease_seconds: int = 1800) -> dict | None:
+        now = time.time()
+        with self.connection() as db:
+            db.execute("BEGIN IMMEDIATE")
+            stale = db.execute(
+                "SELECT id,payload FROM gpt_review_jobs "
+                "WHERE status='processing' AND lease_until IS NOT NULL AND lease_until<?",
+                (now,),
+            ).fetchall()
+            for review_id, raw in stale:
+                payload = self.decode(raw)
+                payload["status"] = "queued"
+                payload["updated_at_unix"] = now
+                payload["worker_recovered_stale_lease"] = True
+                db.execute(
+                    "UPDATE gpt_review_jobs SET status='queued',updated=?,lease_until=NULL,payload=? "
+                    "WHERE id=?",
+                    (now, self.encode(payload), review_id),
+                )
+            row = db.execute(
+                "SELECT id,payload FROM gpt_review_jobs "
+                "WHERE status='queued' ORDER BY created LIMIT 1"
+            ).fetchone()
+            if not row:
+                db.commit()
+                return None
+            review_id, raw = row
+            payload = self.decode(raw)
+            payload["status"] = "processing"
+            payload["round"] = int(payload.get("round") or 0) + 1
+            payload["updated_at_unix"] = now
+            lease_until = now + lease_seconds
+            db.execute(
+                "UPDATE gpt_review_jobs SET status='processing',updated=?,lease_until=?,payload=? "
+                "WHERE id=?",
+                (now, lease_until, self.encode(payload), review_id),
+            )
+            db.commit()
+        return payload
+
+    def complete_gpt_review(
+        self,
+        review_id: str,
+        candidate_sha256: str,
+        status: str,
+        *,
+        worker_state: dict | None,
+        receipt: dict,
+        clarification: dict | None = None,
+        error: str | None = None,
+    ) -> dict:
+        if status not in {"clarification_needed", "ready", "error"}:
+            raise ValueError("Unknown GPT review result status.")
+        now = time.time()
+        with self.connection() as db:
+            db.execute("BEGIN IMMEDIATE")
+            row = db.execute(
+                "SELECT status,payload FROM gpt_review_jobs WHERE id=?", (review_id,)
+            ).fetchone()
+            if not row:
+                raise Missing("Unknown GPT review.")
+            if row[0] != "processing":
+                raise Conflict("This GPT review is not currently claimed by a worker.")
+            payload = self.decode(row[1])
+            if payload.get("candidate_sha256") != candidate_sha256:
+                raise Conflict("The worker result does not match the queued candidate.")
+            payload["status"] = status
+            payload["updated_at_unix"] = now
+            payload["worker_state"] = worker_state
+            payload.setdefault("worker_receipts", []).append(receipt)
+            payload["error"] = error
+            if status == "clarification_needed":
+                if not clarification:
+                    raise ValueError("A clarification result needs one admitted question.")
+                payload["pending_clarification"] = clarification
+            else:
+                payload["pending_clarification"] = None
+            db.execute(
+                "UPDATE gpt_review_jobs SET status=?,updated=?,lease_until=NULL,payload=? WHERE id=?",
+                (status, now, self.encode(payload), review_id),
+            )
+            db.commit()
+        return payload
+
+    def add_gpt_review_answer(self, review_id: str, answer_text: str) -> dict:
+        now = time.time()
+        with self.connection() as db:
+            db.execute("BEGIN IMMEDIATE")
+            row = db.execute(
+                "SELECT status,payload FROM gpt_review_jobs WHERE id=?", (review_id,)
+            ).fetchone()
+            if not row:
+                raise Missing("Unknown GPT review.")
+            if row[0] != "clarification_needed":
+                raise Conflict("This review is not waiting for a clarification answer.")
+            payload = self.decode(row[1])
+            clarification = payload.get("pending_clarification")
+            if not isinstance(clarification, dict):
+                raise Conflict("The saved clarification question is unavailable.")
+            payload.setdefault("clarification_history", []).append(
+                {
+                    "route_id": clarification.get("route_id"),
+                    "question_text": clarification.get("question_text"),
+                    "antecedent_turn_ids": clarification.get("antecedent_turn_ids") or [],
+                    "answer_text": answer_text,
+                    "answered_at_unix": now,
+                }
+            )
+            payload["pending_clarification"] = None
+            payload["status"] = "queued"
+            payload["updated_at_unix"] = now
+            payload["error"] = None
+            db.execute(
+                "UPDATE gpt_review_jobs SET status='queued',updated=?,lease_until=NULL,payload=? "
+                "WHERE id=?",
+                (now, self.encode(payload), review_id),
+            )
+            db.commit()
+        return payload

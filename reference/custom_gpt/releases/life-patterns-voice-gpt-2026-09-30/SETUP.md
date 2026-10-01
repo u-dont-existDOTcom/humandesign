@@ -1,6 +1,6 @@
 # Life Patterns voice-first ChatGPT collector
 
-Version: 2026-10-01.3. Development collection surface.
+Version: 2026-10-01.4. Development collection surface.
 
 ## Purpose
 
@@ -34,10 +34,12 @@ The deployable instruction block is below 8,000 characters on the repository's c
 2. For a new interview, tap **Start my Life Patterns interview.** The GPT gives the consent/privacy/mode framing and begins after the participant answers those setup questions.
 3. For an existing interview, use one of three safe paths: (a) tap **Find my Life Patterns record in my Library and continue** to explicitly authorize a narrow Library search for canonical Life Patterns schemas only; (b) on ChatGPT web reopen the old interview, type `@`, select **Life Patterns Interview**, and say **Continue my interview**; or (c) explicitly attach/add the prior response record in a new GPT chat. A generic continue request must not search Library, Memory, prior chats, connected apps, or other account-level sources.
 4. Do not provide birth date/time/place or chart information.
-5. At natural completion, review the behavior-only summary and correct material errors/conditions.
-6. Freeze the main `life-patterns-participant-export.json` first. Then ask all three CF-003 secondary questions before any chart reveal and freeze them separately as `life-patterns-cf003-secondary-v0.json`. None of it alters the primary record or score.
-7. At completion, the GPT calls `submitLifePatternsRecords` once with the two exact frozen records if consent is still true. A platform approval prompt may appear. On success it gives the participant the submission ID; on Action failure it falls back to both downloadable/labeled JSON records for manual delivery.
-8. New visible-chat turns are model-exported/unverified unless reviewed. Imported records retain their declared source fidelity rather than being mislabeled as verbatim chat. The research coordinator may later use Railway for source-preserving clarification.
+5. When the interview appears naturally saturated, **do not freeze yet**. Build the unfrozen v2 candidate and call `startLifePatternsReview`. The Action returns a review ID immediately; the participant may leave and later tap **Check my independent Life Patterns review.**
+6. `queued`/`processing`: wait and check later. `clarification_needed`: ask the returned question exactly, preserve its route ID, send the exact answer with `submitLifePatternsClarification`, then check later. `ready`: proceed to the neutral participant review. `error`: preserve the candidate and report the error without freezing.
+7. After Railway is ready, show the neutral review. A material participant correction creates a new turn and requires a **new independent review** before freeze. With no material correction, freeze `life-patterns-participant-export.json`.
+8. Then ask all three CF-003 secondary questions and freeze `life-patterns-cf003-secondary-v0.json` separately. None of it alters the primary record or score.
+9. Call `submitLifePatternsRecords` once with the ready review ID plus both exact frozen records. On success show the submission ID; on Action failure fall back to both JSON records for manual delivery.
+10. New visible-chat turns are model-exported/unverified until Railway review/admission. Imported records retain their declared source fidelity.
 
 ## Measurement decision
 

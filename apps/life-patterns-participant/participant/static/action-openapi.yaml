@@ -1,22 +1,102 @@
 openapi: 3.1.0
 info:
-  title: Life Patterns Research Submission
-  version: 1.0.1
+  title: Life Patterns Research Review and Submission
+  version: 1.1.0
   description: >-
-    Submit the two frozen, chart-blind Life Patterns research records to the
-    researcher's encrypted study store after the participant has consented.
+    Queue independent review of a chart-blind Life Patterns interview, retrieve
+    clarifications, and submit the final frozen primary plus CF-003 records.
 servers:
   - url: https://life-patterns-participant-production.up.railway.app
 paths:
+  /api/gpt/reviews:
+    post:
+      operationId: startLifePatternsReview
+      summary: Start independent review before freezing the primary record
+      description: >-
+        Send the candidate primary record after the interview seems saturated but
+        before final review, freeze, or CF-003. This queues independent review and
+        returns a review ID immediately; do not wait for model processing.
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReviewStart'
+      responses:
+        '200':
+          description: Review queue receipt or existing matching review.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReviewStatus'
+        '422':
+          description: Candidate failed consent, schema, blinding, or pre-freeze checks.
+  /api/gpt/reviews/{review_id}:
+    get:
+      operationId: getLifePatternsReview
+      summary: Check independent review status
+      description: >-
+        Check a previously queued review. If clarification is returned, ask that
+        exact question. If ready, proceed to participant review and final freeze.
+        If queued or processing, the participant can return later.
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: review_id
+          in: path
+          required: true
+          schema:
+            type: string
+            pattern: '^R-[a-f0-9]{32}$'
+      responses:
+        '200':
+          description: Current review state.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReviewStatus'
+  /api/gpt/reviews/{review_id}/clarifications:
+    post:
+      operationId: submitLifePatternsClarification
+      summary: Send one clarification answer back for review
+      description: >-
+        After asking the exact admitted clarification from the review status, send
+        only the participant's answer. Railway requeues review and returns quickly;
+        check the same review ID later for another clarification or ready state.
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: review_id
+          in: path
+          required: true
+          schema:
+            type: string
+            pattern: '^R-[a-f0-9]{32}$'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClarificationAnswer'
+      responses:
+        '200':
+          description: Requeued review status.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReviewStatus'
+        '409':
+          description: Review is not currently waiting for a clarification answer.
   /api/gpt/submissions:
     post:
       operationId: submitLifePatternsRecords
-      summary: Send the completed research records to Joel
+      summary: Send independently reviewed final records to Joel
       description: >-
-        Submit once after both records are frozen and before any birth/chart reveal.
-        Send only the frozen primary and CF-003 records; omit birth/chart data, scores,
-        rankings, and predictions. ChatGPT may ask the participant to approve this
-        external write.
+        Call only after the review is ready, participant review is complete, the
+        primary is frozen, and all three CF-003 questions are frozen separately.
+        Include the ready review ID and both exact frozen records.
       security:
         - bearerAuth: []
       requestBody:
@@ -32,35 +112,113 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Receipt'
-        '401':
-          description: Submission API key missing or invalid.
+        '409':
+          description: Independent review state does not permit final submission.
         '422':
-          description: Records failed consent, freeze, blinding, linkage, or CF-003 checks.
-        '503':
-          description: Submission endpoint is not configured.
+          description: Records failed review, consent, freeze, blinding, linkage, or CF-003 checks.
 components:
   securitySchemes:
     bearerAuth:
       type: http
       scheme: bearer
   schemas:
+    ReviewStart:
+      type: object
+      additionalProperties: false
+      required:
+        - research_use_consented
+        - candidate_record
+      properties:
+        research_use_consented:
+          type: boolean
+          const: true
+        candidate_record:
+          type: object
+          minProperties: 1
+          additionalProperties: true
+          description: Unfrozen life-patterns-full-survey-participant-export-v2 candidate.
+    ClarificationAnswer:
+      type: object
+      additionalProperties: false
+      required:
+        - answer_text
+      properties:
+        answer_text:
+          type: string
+          minLength: 1
+          maxLength: 20000
+    Clarification:
+      type: object
+      additionalProperties: false
+      required:
+        - route_id
+        - route_type
+        - question_text
+        - antecedent_turn_ids
+      properties:
+        route_id:
+          type: string
+        route_type:
+          type: string
+          enum: [canonical, context_repair, missing_piece_followup]
+        question_text:
+          type: string
+        antecedent_turn_ids:
+          type: array
+          items:
+            type: string
+    ReviewStatus:
+      type: object
+      additionalProperties: false
+      required:
+        - schema
+        - review_id
+        - status
+        - round
+        - duplicate
+      properties:
+        schema:
+          type: string
+          const: life-patterns-gpt-review-status-v1
+        review_id:
+          type: string
+          pattern: '^R-[a-f0-9]{32}$'
+        status:
+          type: string
+          enum: [queued, processing, clarification_needed, ready, error]
+        round:
+          type: integer
+          minimum: 0
+        duplicate:
+          type: boolean
+        clarification:
+          oneOf:
+            - $ref: '#/components/schemas/Clarification'
+            - type: 'null'
+        error:
+          oneOf:
+            - type: string
+            - type: 'null'
     Submission:
       type: object
       additionalProperties: false
       required:
         - research_use_consented
+        - review_id
         - primary_record
         - cf003_record
       properties:
         research_use_consented:
           type: boolean
           const: true
-          description: Must reflect the participant's recorded research-use consent.
+        review_id:
+          type: string
+          pattern: '^R-[a-f0-9]{32}$'
         primary_record:
           type: object
           minProperties: 1
           additionalProperties: true
-          description: Exact frozen life-patterns-full-survey-participant-export-v2 object.
+          description: Exact final frozen life-patterns-full-survey-participant-export-v2 object.
         cf003_record:
           type: object
           minProperties: 1
@@ -74,9 +232,11 @@ components:
         - submission_id
         - received_at_utc
         - duplicate
+        - review_id
         - primary_record_sha256
         - cf003_record_sha256
         - stored_encrypted
+        - independent_review_completed
         - inference_started
       properties:
         schema:
@@ -89,6 +249,8 @@ components:
           format: date-time
         duplicate:
           type: boolean
+        review_id:
+          type: string
         primary_record_sha256:
           type: string
           pattern: '^[a-f0-9]{64}$'
@@ -96,6 +258,9 @@ components:
           type: string
           pattern: '^[a-f0-9]{64}$'
         stored_encrypted:
+          type: boolean
+          const: true
+        independent_review_completed:
           type: boolean
           const: true
         inference_started:
