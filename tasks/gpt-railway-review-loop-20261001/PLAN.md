@@ -19,3 +19,7 @@ Only a development/pilot loop is authorized. No purchase, no Venice/OpenRouter c
 
 ## Progress
 Recovered partial candidate. Remaining: robustness repairs, tested CLI worker startup, publication/deployment, latest bundle. Local state and observed tests do not establish live end-to-end success.
+
+## Completion checkpoint
+
+Recovered and hardened candidate published, deployed to the existing service, worker installed as a scoped user service, and live synthetic queue/CLI/clarification/withdrawal cycle passed. Exact final-submission lifecycle is tested with the real HTTP/store/engine path and a synthetic provider. The actual private Custom GPT update and owner interview test remain; no claim is made they ran automatically. No paid API calls, no main merge, no scientific gate change.

@@ -1,6 +1,6 @@
 {
   "schema": "gpt-review-loop-verification-v1",
-  "status": "candidate_verified_before_deployment",
+  "status": "deployed_pilot_ready_for_owner_gpt_update_and_test",
   "assurance": "bounded private development/pilot; not scientific validation",
   "tests": {
     "affected_participant_and_gpt": "129 passed",
@@ -21,7 +21,32 @@
   "participant_data_used": false,
   "paid_api_used": false,
   "gpt_builder_updated": false,
-  "railway_review_loop_live": false,
-  "local_worker_installed": false,
-  "zip_sha256": "dc93fb003cafe8bee4887ede806793026919623f79bbae2253f38ed1cdebf30e"
+  "railway_review_loop_live": true,
+  "local_worker_installed": true,
+  "zip_sha256": "dc93fb003cafe8bee4887ede806793026919623f79bbae2253f38ed1cdebf30e",
+  "live_smoke": "LIVE-SYNTHETIC-SMOKE.json",
+  "deployment_code_commit": "eb2d1d128ea700cee8503e738e9bc61aa213707a",
+  "railway_deployment_id": "b7017195-14c1-4497-8443-1134fffee0d5",
+  "hosted_checks": {
+    "commit": "eb2d1d128ea700cee8503e738e9bc61aa213707a",
+    "verify": "success",
+    "survey-browser": "success"
+  },
+  "local_worker": {
+    "unit": "life-patterns-review-worker.service",
+    "active": true,
+    "restarts_observed": 0,
+    "runs_during_user_session": true,
+    "requires_host_online": true,
+    "authentication": "normal ChatGPT subscription sign-in",
+    "paid_api_fallback": false
+  },
+  "owner_update": {
+    "instructions": true,
+    "action_schema_reimport": true,
+    "conversation_starters": true,
+    "knowledge_files_changed": false,
+    "existing_submission_key_changes": false,
+    "private_gpt_builder_tested": false
+  }
 }
