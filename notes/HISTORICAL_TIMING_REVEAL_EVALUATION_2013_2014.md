@@ -75,3 +75,18 @@ These are post-hoc observations and must not be counted as predictive hits.
    This is a post-reveal hypothesis and requires independent testing.
 
 5. Preserve the original misses. Do not relabel the 2012 danger candidate or 2011 child-birth candidate as successes.
+
+
+## Hard-negative status added after owner correction
+
+Under `docs/23_longitudinal_event_discrimination_policy.md`:
+
+- **2012 relationship danger = HARD NEGATIVE.** Owner reports no dangerous relationship existed before the 2013 relationship with Ann. The frozen danger model's 2012 primary peak is therefore a decisive false positive, not an acceptable precursor.
+- **January 2011 son's birth = HARD NEGATIVE.** The requested birth occurred 2014-01-12. The frozen child-birth model's January 2011 primary peak is therefore a decisive false positive.
+
+Development regression requirements for any replacement model:
+1. the relevant true event must outrank these hard negatives;
+2. false alarms across the rest of the reliably labeled timeline must not increase simply to repair these two cases;
+3. a pass is development-only and does not validate the new model.
+
+The original frozen guesses remain preserved as failures.
