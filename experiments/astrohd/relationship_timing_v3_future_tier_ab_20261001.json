@@ -1,0 +1,387 @@
+{
+  "model": "relationship_timing_v3_empirical",
+  "freeze_date": "2026-10-01",
+  "horizon": [
+    "2026-10",
+    "2065-12"
+  ],
+  "background_thresholds": {
+    "tier_c_p90": -0.009621,
+    "tier_b_p95": 0.758922,
+    "tier_a_p99": 3.604933
+  },
+  "tier_ab_months": [
+    {
+      "month": "2026-10",
+      "decision": 3.157823,
+      "tier": "B",
+      "state_families": 2
+    },
+    {
+      "month": "2026-11",
+      "decision": 1.039037,
+      "tier": "B",
+      "state_families": 1
+    },
+    {
+      "month": "2027-01",
+      "decision": 3.033456,
+      "tier": "B",
+      "state_families": 2
+    },
+    {
+      "month": "2027-02",
+      "decision": 2.792936,
+      "tier": "B",
+      "state_families": 2
+    },
+    {
+      "month": "2027-07",
+      "decision": 1.901339,
+      "tier": "B",
+      "state_families": 2
+    },
+    {
+      "month": "2028-06",
+      "decision": 1.465632,
+      "tier": "B",
+      "state_families": 2
+    },
+    {
+      "month": "2028-07",
+      "decision": 1.112174,
+      "tier": "B",
+      "state_families": 2
+    },
+    {
+      "month": "2028-08",
+      "decision": 1.073461,
+      "tier": "B",
+      "state_families": 2
+    },
+    {
+      "month": "2028-09",
+      "decision": 4.836504,
+      "tier": "A",
+      "state_families": 2
+    },
+    {
+      "month": "2034-07",
+      "decision": 2.648662,
+      "tier": "B",
+      "state_families": 1
+    },
+    {
+      "month": "2034-08",
+      "decision": 1.470183,
+      "tier": "B",
+      "state_families": 1
+    },
+    {
+      "month": "2034-09",
+      "decision": 1.987562,
+      "tier": "B",
+      "state_families": 1
+    },
+    {
+      "month": "2039-02",
+      "decision": 1.111237,
+      "tier": "B",
+      "state_families": 2
+    },
+    {
+      "month": "2039-03",
+      "decision": 0.82162,
+      "tier": "B",
+      "state_families": 2
+    },
+    {
+      "month": "2039-07",
+      "decision": 4.242292,
+      "tier": "A",
+      "state_families": 3
+    },
+    {
+      "month": "2039-08",
+      "decision": 1.336942,
+      "tier": "B",
+      "state_families": 3
+    },
+    {
+      "month": "2039-09",
+      "decision": 1.589906,
+      "tier": "B",
+      "state_families": 3
+    },
+    {
+      "month": "2039-10",
+      "decision": 0.99147,
+      "tier": "B",
+      "state_families": 3
+    },
+    {
+      "month": "2039-11",
+      "decision": 2.589515,
+      "tier": "B",
+      "state_families": 2
+    },
+    {
+      "month": "2039-12",
+      "decision": 1.826325,
+      "tier": "B",
+      "state_families": 2
+    },
+    {
+      "month": "2040-01",
+      "decision": 2.485085,
+      "tier": "B",
+      "state_families": 3
+    },
+    {
+      "month": "2040-02",
+      "decision": 4.547627,
+      "tier": "A",
+      "state_families": 3
+    },
+    {
+      "month": "2040-03",
+      "decision": 2.951842,
+      "tier": "B",
+      "state_families": 2
+    },
+    {
+      "month": "2040-04",
+      "decision": 2.813851,
+      "tier": "B",
+      "state_families": 2
+    },
+    {
+      "month": "2040-05",
+      "decision": 3.526213,
+      "tier": "B",
+      "state_families": 2
+    },
+    {
+      "month": "2040-06",
+      "decision": 3.48572,
+      "tier": "B",
+      "state_families": 2
+    },
+    {
+      "month": "2040-07",
+      "decision": 2.639641,
+      "tier": "B",
+      "state_families": 2
+    },
+    {
+      "month": "2040-08",
+      "decision": 3.926085,
+      "tier": "A",
+      "state_families": 2
+    },
+    {
+      "month": "2040-09",
+      "decision": 4.980501,
+      "tier": "A",
+      "state_families": 2
+    },
+    {
+      "month": "2042-11",
+      "decision": 1.272777,
+      "tier": "B",
+      "state_families": 2
+    },
+    {
+      "month": "2045-09",
+      "decision": 1.948228,
+      "tier": "B",
+      "state_families": 2
+    },
+    {
+      "month": "2045-10",
+      "decision": 1.681221,
+      "tier": "B",
+      "state_families": 2
+    },
+    {
+      "month": "2047-08",
+      "decision": 3.213982,
+      "tier": "B",
+      "state_families": 2
+    },
+    {
+      "month": "2047-09",
+      "decision": 3.60709,
+      "tier": "A",
+      "state_families": 2
+    },
+    {
+      "month": "2047-10",
+      "decision": 2.253192,
+      "tier": "B",
+      "state_families": 2
+    },
+    {
+      "month": "2047-11",
+      "decision": 4.496069,
+      "tier": "A",
+      "state_families": 2
+    },
+    {
+      "month": "2047-12",
+      "decision": 2.513354,
+      "tier": "B",
+      "state_families": 2
+    },
+    {
+      "month": "2048-01",
+      "decision": 2.581147,
+      "tier": "B",
+      "state_families": 2
+    },
+    {
+      "month": "2048-02",
+      "decision": 3.757762,
+      "tier": "A",
+      "state_families": 2
+    },
+    {
+      "month": "2049-12",
+      "decision": 1.521633,
+      "tier": "B",
+      "state_families": 3
+    },
+    {
+      "month": "2054-04",
+      "decision": 4.025591,
+      "tier": "A",
+      "state_families": 2
+    },
+    {
+      "month": "2054-05",
+      "decision": 2.587153,
+      "tier": "B",
+      "state_families": 2
+    },
+    {
+      "month": "2054-07",
+      "decision": 3.030614,
+      "tier": "B",
+      "state_families": 2
+    },
+    {
+      "month": "2054-08",
+      "decision": 2.809789,
+      "tier": "B",
+      "state_families": 2
+    },
+    {
+      "month": "2054-09",
+      "decision": 2.244665,
+      "tier": "B",
+      "state_families": 2
+    },
+    {
+      "month": "2055-04",
+      "decision": 1.868999,
+      "tier": "B",
+      "state_families": 1
+    },
+    {
+      "month": "2055-05",
+      "decision": 2.523015,
+      "tier": "B",
+      "state_families": 1
+    },
+    {
+      "month": "2055-06",
+      "decision": 2.546231,
+      "tier": "B",
+      "state_families": 1
+    },
+    {
+      "month": "2055-10",
+      "decision": 1.922674,
+      "tier": "B",
+      "state_families": 1
+    },
+    {
+      "month": "2057-03",
+      "decision": 1.289946,
+      "tier": "B",
+      "state_families": 2
+    },
+    {
+      "month": "2058-03",
+      "decision": 4.681166,
+      "tier": "A",
+      "state_families": 2
+    },
+    {
+      "month": "2058-04",
+      "decision": 3.019764,
+      "tier": "B",
+      "state_families": 2
+    },
+    {
+      "month": "2058-05",
+      "decision": 4.451475,
+      "tier": "A",
+      "state_families": 2
+    },
+    {
+      "month": "2059-11",
+      "decision": 1.056693,
+      "tier": "B",
+      "state_families": 1
+    },
+    {
+      "month": "2059-12",
+      "decision": 1.518532,
+      "tier": "B",
+      "state_families": 1
+    },
+    {
+      "month": "2060-01",
+      "decision": 2.140122,
+      "tier": "B",
+      "state_families": 1
+    },
+    {
+      "month": "2060-02",
+      "decision": 0.979556,
+      "tier": "B",
+      "state_families": 1
+    },
+    {
+      "month": "2060-10",
+      "decision": 0.911999,
+      "tier": "B",
+      "state_families": 1
+    },
+    {
+      "month": "2061-06",
+      "decision": 1.751851,
+      "tier": "B",
+      "state_families": 2
+    },
+    {
+      "month": "2061-08",
+      "decision": 1.889076,
+      "tier": "B",
+      "state_families": 2
+    },
+    {
+      "month": "2062-01",
+      "decision": 0.892975,
+      "tier": "B",
+      "state_families": 2
+    },
+    {
+      "month": "2063-01",
+      "decision": 3.925576,
+      "tier": "A",
+      "state_families": 2
+    }
+  ]
+}
