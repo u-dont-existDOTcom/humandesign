@@ -1,0 +1,1051 @@
+{
+  "version": "hybrid-alignment-audit-v0-20261001",
+  "status": "development_candidate_not_runtime_authority",
+  "source_path": "tasks/scenario-survey-v7-redesign-20260922/interviewer-bank-v7.json",
+  "source_sha256": "f7edc34b8f4cf478ddb39f4886e39b6e5c1a54e21c7f1e3a9ec95419af2780a6",
+  "route_count": 79,
+  "dispositions": {
+    "replace": 18,
+    "retain": 15,
+    "probe": 41,
+    "demote": 5
+  },
+  "empirical_discrimination_established": false,
+  "method": [
+    "Direct usual-pattern question first; a familiar example illustrates the same question, rather than covertly replacing it.",
+    "Examples are optional when the direct answer already resolves the distinction; do not ask for ritual confirmation.",
+    "Treat novelty seeking, desire for predictability, willingness to change for practical benefit, and home preference as distinct unless evidence connects them.",
+    "General self-reports remain self-reports. A detailed scenario is not independent corroboration or proof of a general trait.",
+    "A conditional answer can be informative. Ask a boundary or usual distribution only if it changes the inference; otherwise retain uncertainty and move on.",
+    "Every proposed item must face a strongest rational/constraint explanation and a counterexample from a person with an opposite putative trait.",
+    "Known older answers and corrections must be checked first. A new version number alone does not justify repeating a distinction."
+  ],
+  "routes": [
+    {
+      "source_route_id": "A0",
+      "source_question": "You have an hour free and are about to read a book you've been enjoying. A close friend messages that they're bored and asks if you want to hang out. They just feel like company; nothing urgent has happened. What would you probably reply?",
+      "source_planning_targets": [],
+      "source_interpretation_limit": "Retain the owner-preferred opening. Yes establishes an anticipated reply, not guilt, generosity, obligation or actually owning an enjoyable book.",
+      "disposition": "replace",
+      "reason": "A single invitation decision confounds recent contact, desire for company and current activity. It is not a social-orientation measure.",
+      "draft_id": "HYB0-A0",
+      "draft_question": "When your time is your own, do you usually protect uninterrupted time, look for company, or vary depending on who and what is involved? For example, a friend invites you out while you are enjoying something alone.",
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "G23",
+      "source_question": "You arrive at a casual shared meal with a few friends or acquaintances you know. People are getting things ready, and nobody has asked you to take on any particular job. What tends to catch your attention first?",
+      "source_planning_targets": [
+        "D23.noticing"
+      ],
+      "source_interpretation_limit": "Retain only what the person says catches their attention in this familiar social-meal setting. Omitted needs are not unnoticed needs. A responsibility probe still requires a particular need or helping choice.",
+      "disposition": "retain",
+      "reason": "Open description of what attracts attention can be useful; do not turn one dinner observation into a global noticing rank.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "G19",
+      "source_question": "You promised to help a friend sort things for a move, but it is taking longer than expected and using up time you had set aside for yourself. Your friend is open to changing the arrangement. What would matter most in deciding what to do?",
+      "source_planning_targets": [
+        "D18.competing_values"
+      ],
+      "source_interpretation_limit": "Replace the unspecified shared project with a friend’s move; ask what matters rather than assume two enduring values. A stipulated time conflict is not the person’s chronic dilemma.",
+      "disposition": "replace",
+      "reason": "Need, burden and negotiability explain a reasonable boundary choice. Ask the recurring way of balancing own plans and requests first.",
+      "draft_id": "HYB0-G19",
+      "draft_question": "When someone wants more of your time than you had planned to give, how do you usually balance helping them with your own plans? A non-urgent request that you could renegotiate is one example.",
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "F0",
+      "source_question": "The same noisy meeting place is suggested in two otherwise identical situations, and nothing has been booked. In one, you are deciding with three friends you have known for years; in the other, with three friends you have known for only a few weeks. You would prefer somewhere quieter in both. What, if anything, would you say differently between the two groups?",
+      "source_planning_targets": [
+        "D05.audience_adaptation"
+      ],
+      "source_interpretation_limit": "Credit only an answer-originated difference or stated lack of difference in how the same preference is framed to long-known versus newly-known friends. Do not infer persuasive success, manipulation, global social skill, or adaptation outside this familiarity comparison.",
+      "disposition": "replace",
+      "reason": "Matched audience contrast can clarify adaptation, but is burdensome as an opening and partly elicits communication skill. First ask the usual audience-dependent pattern.",
+      "draft_id": "HYB0-F0",
+      "draft_question": "Beyond what ordinary politeness calls for, how much do you usually change the way you express the same preference to different people? For example, asking for less noise with close friends versus people you have just met.",
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "G05",
+      "source_question": "You suggest leaving an hour earlier for a group trip to avoid traffic, but the others would rather have more time in the morning. When you try to persuade people about a plan like this, how does it usually go?",
+      "source_planning_targets": [
+        "D05.capacity"
+      ],
+      "source_interpretation_limit": "Add the actual disagreement: traffic versus morning time. The answer supplies self-rated outcomes, not objectively demonstrated persuasive ability.",
+      "disposition": "replace",
+      "reason": "One transport argument mixes stakes, persuasion ability, desire to persuade and the partner response. Keep capacity and preferred use separate.",
+      "draft_id": "HYB0-G05",
+      "draft_question": "When you actually try to persuade someone, how does it usually go? For example, explaining why you prefer an earlier departure. This is about your experience of doing it, not whether you enjoy persuading people.",
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "M11",
+      "source_question": "You and a friend are planning a meal for just the two of you. You offer to organise and cook it, which will take several hours, and ask your friend to buy the ingredients. They say, “I'd like to do the meal, but paying for all the ingredients feels like too much for me.” What would you say next?",
+      "source_planning_targets": [
+        "X08.offer_and_leverage"
+      ],
+      "source_interpretation_limit": "The friendship, two-person meal, proposal, cooking time, and listener objection are stimulus premises, not respondent evidence. Credit only the respondent's answer-originated response: clarifying, reframing contributions, asking about budget, renegotiating, changing the split, or withdrawing the proposal. Do not score sales ability, manipulation, fairness ideology, or likely success.",
+      "disposition": "replace",
+      "reason": "A meal bargain may elicit an ordinary fair division rather than a stable bargaining preference. Start with how negotiation normally unfolds.",
+      "draft_id": "HYB0-M11",
+      "draft_question": "When sharing work or costs with someone, how do you usually work out an arrangement you both accept? Preparing a meal together is one example; another familiar situation is fine.",
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "G06",
+      "source_question": "You have joined a group organising a shared meal. People are deciding how to divide the work, and nobody has asked you to take a role. What would you usually do?",
+      "source_planning_targets": [
+        "D06.entry_signal"
+      ],
+      "source_interpretation_limit": "Specify a shared-meal role context. No role assignment is not the same as exclusion. Initiation, observation and offering bounded help remain possible.",
+      "disposition": "replace",
+      "reason": "A shared meal can illustrate entry into group work; spontaneous initiative and awaiting role clarity should be asked as a usual pattern, not inferred from this event alone.",
+      "draft_id": "HYB0-G06",
+      "draft_question": "In group work without assigned roles, what do you usually do: step in, offer a particular contribution, wait for a clearer role, or something else? Preparing a shared meal is one example.",
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "R02",
+      "source_question": "Consider the same shared-meal scene, except someone asks you to coordinate the work. What would you usually do?",
+      "source_planning_targets": [
+        "D06.role_leadership",
+        "D06.context_difference"
+      ],
+      "source_interpretation_limit": "Use the same response task as G06 and name the one changed condition. Compare two scoped answers, never credit a contrast from this answer alone.",
+      "disposition": "probe",
+      "reason": "Use only to clarify a real difference between assigned and unassigned roles. An instruction to coordinate creates role expectations, not a leadership trait.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "G07",
+      "source_question": "You find yourself starting an activity with someone you did not know before. In your own life, how do connections like that usually begin?",
+      "source_planning_targets": [
+        "D07.usual_source"
+      ],
+      "source_interpretation_limit": "Label as habitual recollection with an activity cue, not a fictional future event. No compulsory recent example or claim that an imagined connection proves past pathways.",
+      "disposition": "retain",
+      "reason": "Already asks a recurring actual pattern in how connections begin. Preserve life-stage and opportunity differences.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "G08",
+      "source_question": "You offer to help with one clearly defined task, but people begin treating you as though you can take care of the whole situation. How familiar is that experience in your own life?",
+      "source_planning_targets": [
+        "D08.experience_of_projection"
+      ],
+      "source_interpretation_limit": "Retain familiarity as the task. An unfamiliar scene may still be imagined, but cannot supply recurrence evidence.",
+      "disposition": "retain",
+      "reason": "Can reveal recurring expectations placed on the person. Keep others expectations distinct from verified competence or the persons responsibility.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "R03",
+      "source_question": "In the scene where you offered one task and people expected you to handle the whole situation, what would you usually say when that became clear?",
+      "source_planning_targets": [
+        "D08.mismatch_response"
+      ],
+      "source_interpretation_limit": "Bind to the overextended-help scene, even after a topic switch. A hypothetical response stays hypothetical when familiarity was denied.",
+      "disposition": "probe",
+      "reason": "Useful boundary probe only after mismatched expectations were established; do not manufacture the antecedent.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "M07",
+      "source_question": "Choose a familiar activity that you do reasonably well. Looking back, what parts, if any, came fairly easily from the start, and what parts did you have to learn or practise?",
+      "source_planning_targets": [
+        "X05.ease_and_learning"
+      ],
+      "source_interpretation_limit": "Treat this as one acquisition-history contrast. Preserve easy-from-start, learned-through-practice, mixed, or cannot-separate answers. Do not infer innate talent independently of the respondent's recollection.",
+      "disposition": "retain",
+      "reason": "Explicitly separates ease at the start from improvement through practice. Self-report does not objectively establish exceptional ability.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "M08",
+      "source_question": "What, if anything, do other people tend to ask you to do because of that ability?",
+      "source_planning_targets": [
+        "X05.external_recognition"
+      ],
+      "source_interpretation_limit": "Only after an actual named ability; repeat its name if nonadjacent. No request from others is not absence of ability.",
+      "disposition": "probe",
+      "reason": "Others requests may corroborate recognition only at the named skill and source scope. Requests are not objective ability measurements.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "G01",
+      "source_question": "You are helping arrange a weekend trip. Several people have sent overlapping messages about travel, costs, and timing, and some details disagree. How would you start making sense of it?",
+      "source_planning_targets": [
+        "D01.approach"
+      ],
+      "source_interpretation_limit": "Retain conflicting travel messages as a concrete organization task. Organization and checking accuracy are distinct; a rich reply can satisfy both.",
+      "disposition": "replace",
+      "reason": "Organizing a contrived message thread is not the only competent approach. Delegation, asking another person or using a tool must be usable answers, not failures to answer.",
+      "draft_id": "HYB0-G01",
+      "draft_question": "When information is messy or conflicting, what is your usual first move? For example, sorting it yourself, asking someone to explain, or using a tool. Describe what you actually tend to do.",
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "G02",
+      "source_question": "You have worked out why two sets of plans for a trip do not agree. Someone else is trying to make sense of the same messages. What would you usually do next?",
+      "source_planning_targets": [
+        "D02.output_form",
+        "D02.audience_use"
+      ],
+      "source_interpretation_limit": "Use the trip-message puzzle as the concrete problem. Helping another is offered, not compelled. An explanation is not automatically a reusable protocol.",
+      "disposition": "replace",
+      "reason": "A trip explanation can illustrate information selection, but may test compliance with the task. Ask what the person usually does with an idea for different listeners.",
+      "draft_id": "HYB0-G02",
+      "draft_question": "When explaining something you understand, how do you usually decide what to include for the listener? A short practical explanation is enough as an example; you do not need to perform one now.",
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "G03",
+      "source_question": "There is a disagreement about how a shared plan went wrong, and you care about understanding it. You have to put the question aside to do something else. What usually happens to your attention in a situation like this?",
+      "source_planning_targets": [
+        "D03.return_pattern"
+      ],
+      "source_interpretation_limit": "Use a shared-plan puzzle as the default. If too inconsequential or unfamiliar, adapt to one question the respondent already regards as important, without demanding autobiographical proof.",
+      "disposition": "retain",
+      "reason": "Directly asks the return of a personally important unresolved issue. Importance must be the persons, not supplied as proof of persistence.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "R01",
+      "source_question": "Return to the important question you had to put aside. What would usually let you stop returning to it?",
+      "source_planning_targets": [
+        "D03.closure_condition"
+      ],
+      "source_interpretation_limit": "Requires a reported return to an unresolved question. If they never return, suppress it; if they want to drop the topic, do not reopen it to obtain closure data.",
+      "disposition": "probe",
+      "reason": "Ask what closes a returning issue only when closure remains unknown. Do not conflate injustice, curiosity and inefficiency.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "G04",
+      "source_question": "You are following instructions to set up a shared calendar on your phone. Most steps work, but the step for inviting another person keeps failing. What would you usually do next?",
+      "source_planning_targets": [
+        "D04.use_existing"
+      ],
+      "source_interpretation_limit": "Make the troublesome step concrete enough to answer. Seeking clarification, retrying and abandoning are as legitimate as inventing a method.",
+      "disposition": "retain",
+      "reason": "A failed instruction is a concrete way to observe the first troubleshooting step. Scope to troubleshooting, not global originality.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "D0",
+      "source_question": "You are practising the pronunciation of one short phrase in a language you want to learn. You can already say it well enough to be understood, but repeating the same ten-second phrase lets you notice small improvements. You have ten minutes left, with no test or deadline. What would you probably do?",
+      "source_planning_targets": [
+        "D22.repetition_value"
+      ],
+      "source_interpretation_limit": "Retain this exact pronunciation-practice context. Continuing, switching activity, or stopping do not by themselves establish discipline or novelty seeking. Any value of repetition must be tied to this activity.",
+      "disposition": "replace",
+      "reason": "Repeating while improvement is visible is instrumentally reasonable for many preferences. Ask whether refinement itself is rewarding, with activity-specific exceptions.",
+      "draft_id": "HYB0-D0",
+      "draft_question": "When practising a skill, how do you usually feel about repeating and refining a small detail? For example, repeating a pronunciation: the refining itself may feel enjoyable, neutral or tedious, whether or not you find it worthwhile, or differ across activities.",
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "G22",
+      "source_question": "You are reading something that holds your interest. Someone interrupts briefly, then leaves you free to continue. What usually happens to your concentration?",
+      "source_planning_targets": [
+        "D22.focus_depth_interruptions"
+      ],
+      "source_interpretation_limit": "Use an explicit reading context. Resumption after interruption is not the same as depth, duration or stillness; do not infer those.",
+      "disposition": "retain",
+      "reason": "A useful interruption-response question, but not by itself evidence of uninterrupted focus depth or a general attention trait.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "E0",
+      "source_question": "A nearby group is offering a free cooking class, one evening a week for a month. You like the sound of it, and the time would work for you, but you haven't tried a class with this group before. You need to sign up by tomorrow. What would you probably do next?",
+      "source_planning_targets": [],
+      "source_interpretation_limit": "Retain the cooking-class choice. It asks the next step, not every stage of decision-making. A direct no or no uncertainty is valid.",
+      "disposition": "probe",
+      "reason": "A choice context for subsequent questions, not an independently scored trait item. Prefer an already described choice rather than creating another scene.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "G09",
+      "source_question": "Return to the cooking-class offer. Before you have weighed it up, what, if anything, would you usually notice in your body?",
+      "source_planning_targets": [
+        "D09.presence_form"
+      ],
+      "source_interpretation_limit": "Bind body question to the existing cooking-class scene instead of silently introducing another commitment. Ask only if the initial bodily response is genuinely missing.",
+      "disposition": "probe",
+      "reason": "Only asks noticed bodily signals in the established choice. Do not imply everyone has one or that noticing makes it trustworthy.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "R04",
+      "source_question": "How useful is that reaction when you are deciding whether a choice suits you?",
+      "source_planning_targets": [
+        "D09.repeatability_trust"
+      ],
+      "source_interpretation_limit": "Use only a reported bodily reaction, with source context. Perceived usefulness is not objective accuracy; do not ask after explicit no signal.",
+      "disposition": "probe",
+      "reason": "Useful only if a bodily signal was reported and its repeatability or perceived usefulness is genuinely unresolved.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "M10",
+      "source_question": "While you consider that same choice, what usually happens to the bodily reaction you described?",
+      "source_planning_targets": [
+        "X07.fleeting_or_repeating"
+      ],
+      "source_interpretation_limit": "Distinguish within-choice duration/recurrence from consistency across choices. A passing feeling and later reasoning may coexist.",
+      "disposition": "probe",
+      "reason": "Within-choice change should not be mistaken for across-choice consistency. Suppress if the respondent already described the trajectory.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "M05",
+      "source_question": "On a bus or car route you know well, the driver suddenly turns onto a road that route normally never uses for your destination. What would you make of that?",
+      "source_planning_targets": [
+        "X04.cue_form"
+      ],
+      "source_interpretation_limit": "The cue is familiarity-dependent by construction: a deviation from the route the respondent knows. Retain what meaning they give it. Do not label it intuition or assume danger.",
+      "disposition": "retain",
+      "reason": "Can elicit the cues underlying a feeling that something is off in a familiar setting. It cannot validate intuition accuracy.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "M06",
+      "source_question": "Thinking about the familiar-route turn you just considered: what would you need to already know about a route before a turn away from its usual path would carry any meaning for you?",
+      "source_planning_targets": [
+        "X04.context_and_limits"
+      ],
+      "source_interpretation_limit": "Credit only the respondent's answer-originated familiarity threshold or conditions under which a route deviation would or would not carry meaning. Do not infer danger, concern, actual unfamiliar-route behavior, accuracy, or transfer from any cue other than knowledge of the route's usual pattern.",
+      "disposition": "demote",
+      "reason": "Knowing a familiar route helps detect a deviation almost by definition. Use only if a nontrivial familiarity threshold matters; never mandatory evidence.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "G10",
+      "source_question": "You join a group whose work interests you. They ask everyone to use a fixed schedule rather than choose their own working times. How would you usually respond?",
+      "source_planning_targets": [
+        "D10.stable_direction",
+        "D10.external_adaptation"
+      ],
+      "source_interpretation_limit": "Specify fixed scheduling rather than an undefined way of working. A boundary here is not global self-direction across life.",
+      "disposition": "replace",
+      "reason": "Accepting a groups fixed schedule often reflects feasibility or interest, not stable direction or a malleable identity. Ask a usual adaptation boundary directly.",
+      "draft_id": "HYB0-G10",
+      "draft_question": "When joining a group, which parts of your usual way of doing things tend to adapt, and which remain important to keep? A group with a different schedule or working style is one example.",
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "G20",
+      "source_question": "Your basic needs are covered, and you unexpectedly receive extra money equal to about one month of your ordinary living costs, with no debt, tax, or repayment obligation attached. What would you most want that money to do for you?",
+      "source_planning_targets": [
+        "D19.resources_purpose"
+      ],
+      "source_interpretation_limit": "The relative amount and absence of repayment obligations are premises. Credit the respondent's intended function for this specified amount only; do not infer actual wealth, financial security, or a complete resource motive.",
+      "disposition": "retain",
+      "reason": "The normalized resource amount helps make purposes concrete. It yields reported priorities at that amount, not a population-level materialism score.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "M03",
+      "source_question": "You agreed to slice vegetables and make one simple dressing for a shared meal. The remaining work will take about thirty minutes; you have an hour before you need to leave, you feel normally rested, and nothing else urgent needs your attention. The work is dull and nobody is checking on you. What would you usually do?",
+      "source_planning_targets": [
+        "X03.follow_through"
+      ],
+      "source_interpretation_limit": "The thirty-minute workload, available hour, ordinary energy, and absence of competing urgency are premises. Credit only the respondent's action and any answer-originated reason or condition. Do not infer unlimited willpower, capacity, or follow-through under heavier or competing demands.",
+      "disposition": "replace",
+      "reason": "A feasible, short promise with no competing demands invites a normative yes. Ask actual follow-through tendencies and meaningful exceptions.",
+      "draft_id": "HYB0-M03",
+      "draft_question": "How do small voluntary commitments usually play out for you after the initial enthusiasm fades? For example, a manageable promise to help with a task. Describe your actual pattern, including exceptions, not what someone ought to do.",
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "M04",
+      "source_question": "Return to that same thirty-minute meal preparation, with the same available hour and no competing obligation. In this version you are unusually tired and start making mistakes. What, if anything, would that tiredness change about your intention to finish what you agreed to do?",
+      "source_planning_targets": [
+        "X03.will_vs_available_energy"
+      ],
+      "source_interpretation_limit": "Use the same bounded meal-preparation task as M03 and vary available energy only. Credit only the respondent's answer-originated change or non-change in intention. Do not infer execution, capacity, or actual follow-through unless separately reported.",
+      "disposition": "probe",
+      "reason": "Fatigue or errors may change action without changing commitment. Ask only if intention versus available capacity remains unresolved.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "G21",
+      "source_question": "You have an ordinary day with no fixed appointments and can choose its shape yourself. How would you usually arrange it?",
+      "source_planning_targets": [
+        "D21.ordinary_rhythm"
+      ],
+      "source_interpretation_limit": "Retain the free-day arrangement. It measures preferred rhythm under that freedom, not actual scheduling freedom or ability to sustain a routine.",
+      "disposition": "retain",
+      "reason": "Already a direct usual-pattern question with a simple free-day example. A prior flexible-scheduling answer can fully settle it.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "M09",
+      "source_question": "Your current planning app is simple, familiar, works offline, and handles your ordinary needs, but it cannot share reminders with other people. A new app adds shared reminders and better search, but moving everything would take about an hour and the new app is more complex. What would matter in deciding whether to switch?",
+      "source_planning_targets": [
+        "X06.preserved_value",
+        "X06.change_condition"
+      ],
+      "source_interpretation_limit": "The scene supplies concrete incumbent values and new benefits. Retain which properties the respondent actually weighs. Do not equate staying with rigidity or switching with novelty seeking.",
+      "disposition": "demote",
+      "reason": "Current contract measures a concrete cost-benefit switching condition, not novelty versus stability. A useful-feature answer may be adequate but adds little about temperament.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "G11",
+      "source_question": "You will be using an unfamiliar room for work or a quiet activity for a week. What would you pay attention to before settling in?",
+      "source_planning_targets": [
+        "D11.conditions"
+      ],
+      "source_interpretation_limit": "Retain room-attention question with no assumed defect. A named preference needs its own reported effect before crediting functioning.",
+      "disposition": "retain",
+      "reason": "Names environmental preferences. Functional effects require reported experience, not inference from noticing a room feature.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "G12",
+      "source_question": "You meet someone a few times in an ordinary setting. There is no pressure to date them. What, if anything, usually starts romantic attraction for you?",
+      "source_planning_targets": [
+        "D12.attraction"
+      ],
+      "source_interpretation_limit": "Retain optional attraction task. Lack of attraction, no experience, privacy and imagined prediction remain different states.",
+      "disposition": "retain",
+      "reason": "Directly asks attraction onset when applicable. Keep affection, romance and libido separate, and allow non-disclosure.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "G13",
+      "source_question": "Think of a romantic connection you would want to continue, whether familiar or clearly imagined. What, if anything, would usually help you feel closer as you spend more time together?",
+      "source_planning_targets": [
+        "D12.deepening"
+      ],
+      "source_interpretation_limit": "Allow closeness not to deepen; retain the selected familiar/imagined and time frame rather than blending current and earlier relationships.",
+      "disposition": "retain",
+      "reason": "Directly asks what tends to deepen closeness. Do not infer that the inverse necessarily weakens a bond.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "R05",
+      "source_question": "In a romantic relationship you want, a partner begins asking for more frequent contact than before. What would make that welcome or unwelcome for you?",
+      "source_planning_targets": [
+        "D12.weakening_boundaries"
+      ],
+      "source_interpretation_limit": "Retain increased-contact boundary, but do not use it as the sole route for every way a relationship may weaken; ROMANCE-FADE handles other relevant changes.",
+      "disposition": "probe",
+      "reason": "Use only for a materially unresolved contact/availability boundary. Preferences vary across relationships and stages.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "G14",
+      "source_question": "You have some ordinary time on your own, with no recent argument or exciting news. What would your emotional background usually be like?",
+      "source_planning_targets": [
+        "D13.solo_baseline"
+      ],
+      "source_interpretation_limit": "Retain alone-time affect baseline. No strong event in the scene does not imply emotional steadiness.",
+      "disposition": "retain",
+      "reason": "A direct baseline question when alone; do not present a brief hypothetical period as measured longitudinal mood.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "B0",
+      "source_question": "You're having a quiet evening at home and feel fairly settled. Your partner has been worrying for several days about going to a gathering where they won't know many people. Tonight they bring it up again, without asking you to do anything. What, if anything, happens to your own mood?",
+      "source_planning_targets": [
+        "D13.others_effect"
+      ],
+      "source_interpretation_limit": "Retain repeated-worry scene. Irritation at repetition, concern and a mood shift are distinguishable; no emotional-contagion mechanism follows automatically.",
+      "disposition": "replace",
+      "reason": "Repeated partner worry may produce irritation, concern or emotional contagion. First elicit usual relationship-specific effects rather than treating one reaction as all emotional permeability.",
+      "draft_id": "HYB0-B0",
+      "draft_question": "How do other peoples moods usually affect your own, and does that differ by relationship? For example, a worried friend or partner may leave you concerned, similarly worried, irritated, or largely unchanged.",
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "R06",
+      "source_question": "During a disagreement, someone close to you says that you do not care about them. What, if anything, would usually happen to your mood during that conversation?",
+      "source_planning_targets": [
+        "D13.conflict_effect"
+      ],
+      "source_interpretation_limit": "Retain accusation during disagreement as a distinct context. Repair or reassurance behavior does not itself tell us the emotional response.",
+      "disposition": "probe",
+      "reason": "An accusation changes the social situation. Scope the reaction to that conflict rather than generic disagreement or stable mood.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "M01",
+      "source_question": "You are handling a manageable task when someone nearby starts urging you to hurry, although the actual deadline has not changed. What would usually happen inside you?",
+      "source_planning_targets": [
+        "X02.under_pressure"
+      ],
+      "source_interpretation_limit": "Retain urgency with unchanged deadline. Feeling hurried, speeding up and refusing the pressure remain separate reports.",
+      "disposition": "retain",
+      "reason": "Keeping the actual deadline fixed makes subjective pressure separable from genuine urgency. Preserve interpretation and stakes.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "M02",
+      "source_question": "That person leaves and the pressure to hurry stops; the task and deadline stay the same. What would usually change for you?",
+      "source_planning_targets": [
+        "X02.after_pressure_removed"
+      ],
+      "source_interpretation_limit": "Bind the same task and deadline. Suppress redundant probing when removal is already described; a missing aftermath is not automatically no aftermath.",
+      "disposition": "probe",
+      "reason": "Only clarify persistence after pressure is removed if that trajectory was not already supplied.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "G15",
+      "source_question": "Imagine an ordinary day where you do about six hours of mentally demanding computer work that you find worthwhile. You are indoors at a comfortable temperature, slept normally, eat normally, and take short ordinary breaks. What would your energy usually be like at the end of the day?",
+      "source_planning_targets": [
+        "D14.ordinary_engagement"
+      ],
+      "source_interpretation_limit": "This is the ordinary baseline for the same mentally demanding computer-work modality used by R07 and R08. Meaningfulness and the stated room/sleep/food/break conditions are premises; do not count them as discovered traits or a maximum capacity.",
+      "disposition": "replace",
+      "reason": "Computer-work energy is not all-work energy. Start with activity-specific energizing/draining patterns; mental fatigue, physical fatigue, interest and persistence are distinct.",
+      "draft_id": "HYB0-G15",
+      "draft_question": "What kinds of activity tend to leave you energized or drained? For example, mentally absorbing work, practical chores, physical activity or time with people may affect you differently. Describe the differences that matter for you.",
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "R07",
+      "source_question": "Keep that same mentally demanding computer work, room conditions, food, sleep, and short-break pattern. For two days in a row, you work about ten hours each day instead of six. At the end of the second day, before a longer rest, what would your energy usually be like?",
+      "source_planning_targets": [
+        "D14.burst"
+      ],
+      "source_interpretation_limit": "Compare with G15 using the same work modality and ordinary conditions; the changed workload is the longer ten-hour schedule repeated for two days. This is not maximum capacity and does not establish recovery after the offered longer rest.",
+      "disposition": "probe",
+      "reason": "A matched short workload increase can be useful after a chosen activity baseline. Do not ask automatically after an already adequate duration/context answer.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "R08",
+      "source_question": "Keep that same mentally demanding computer work and the same ordinary room, food, sleep, and short-break conditions. For four weeks, you work about eight and a half hours a day, six days a week. Each week includes one full day with no work obligations, which you can use normally for rest or ordinary personal activities, and there is no additional vacation or recovery period. At the end of the sixth workday of the fourth week, what would your energy usually be like?",
+      "source_planning_targets": [
+        "D14.prolonged_overload"
+      ],
+      "source_interpretation_limit": "Compare with G15 using the same work modality and ordinary conditions. The sustained schedule is eight and a half hours per workday for six days each week, with one explicit full day off and no extra recovery period. This is a moderate prolonged-load probe intended to permit materially different energy trajectories; do not infer a universal work limit or response under different conditions.",
+      "disposition": "probe",
+      "reason": "A four-week counterfactual is a self-prediction, not observed sustainable capacity. Use only if realistic and adding a missing duration distinction.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "R09",
+      "source_question": "In the workload you just described, what would tell you it was time to take a longer break rather than keep working?",
+      "source_planning_targets": [
+        "D14.stopping_recovery"
+      ],
+      "source_interpretation_limit": "Bind to the exact workload. Progress failure, fatigue, outside demands, bodily cues, or no clear cue are distinct possible reasons to stop.",
+      "disposition": "probe",
+      "reason": "Stopping cues and recovery are distinct. Keep any already supplied recovery information and avoid a second automatic question.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "G16",
+      "source_question": "A local group asks you to spend several weekends restoring a neglected shared space. The work will be slow and receive little recognition. What would determine whether it was worth the effort to you?",
+      "source_planning_targets": [
+        "D15.mobilizer"
+      ],
+      "source_interpretation_limit": "Retain slow shared-space project. The participant can find it unimportant, decline or condition the answer on who benefits; no moral preference is supplied.",
+      "disposition": "replace",
+      "reason": "Project meaning, progress, costs and social context all affect motivation. Ask recurring mobilizers first; a low-recognition scenario is an optional boundary.",
+      "draft_id": "HYB0-G16",
+      "draft_question": "What usually makes sustained effort feel worth continuing for you? For example, progress, interest, usefulness, commitment to someone, recognition, or another factor may matter differently across projects.",
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "R10",
+      "source_question": "Suppose you joined that important project. After a month, very little work is getting done because the group keeps getting stuck in internal disagreements, and attempts to sort out the disagreements have not helped much. What would you usually do at that point?",
+      "source_planning_targets": [
+        "D15.continue_disengage"
+      ],
+      "source_interpretation_limit": "This is persistent organizational blockage after attempted repair, not weather or another temporary external delay. Continuing, changing strategy, taking a break, or leaving are all admissible. Do not generalize to persistence in every domain.",
+      "disposition": "probe",
+      "reason": "Leaving a costly conflict may be reasonable rather than low persistence. Ask only for a still-unknown disengagement threshold.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "G18",
+      "source_question": "A demanding day with people has ended, and nobody needs anything further from you tonight. What would you usually want to do next?",
+      "source_planning_targets": [
+        "D17.withdrawal_need_activity"
+      ],
+      "source_interpretation_limit": "Retain the post-social evening. A chosen solitary activity is not by itself a need to withdraw; no forced retreat label.",
+      "disposition": "replace",
+      "reason": "Rest after a demanding social day is not a clean introversion indicator. Compare the persons usual recovery after different kinds of social contact.",
+      "draft_id": "HYB0-G18",
+      "draft_question": "After time with people, including company you enjoyed, what usually makes you want more company versus time on your own? For example, length, group size or how demanding it was may make a difference.",
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "R11",
+      "source_question": "After the kind of time away you described, what, if anything, usually signals that you are ready to engage with people again?",
+      "source_planning_targets": [
+        "D17.reentry"
+      ],
+      "source_interpretation_limit": "Requires an explicitly reported period away; does not assume solitude, improvement or a desire to return.",
+      "disposition": "probe",
+      "reason": "Useful re-entry cue only after a real wish for solitude has been established.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "G24",
+      "source_question": "Return to the friend-and-book scene. At an earlier stage of your life that you remember reasonably well, what would your usual reply have been?",
+      "source_planning_targets": [
+        "D20.continuity"
+      ],
+      "source_interpretation_limit": "Bind earlier-life comparison to the exact friend/book task and earlier answer; do not claim a real childhood event or a truer original personality.",
+      "disposition": "probe",
+      "reason": "Optional earlier-life comparison only with permission and a meaningful temporal question, not compulsory retesting.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "R12",
+      "source_question": "What do you think contributed to that change?",
+      "source_planning_targets": [
+        "D20.learned_management"
+      ],
+      "source_interpretation_limit": "Only after a reported change, asking its attributed contributors. Learned management is not established if the answer names a different cause.",
+      "disposition": "probe",
+      "reason": "Change attribution is the respondents explanation, not verified causality. Ask only after actual change and permission.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "G17",
+      "source_question": "While planning a shared meal, you are fairly sure of two corrections. In one case, someone tells the group the meal starts at 7:00 instead of 7:30, so several people could arrive half an hour early. In the other, they say the dessert is chocolate when you are fairly sure it is vanilla, and nobody's choice or dietary needs depend on it. What, if anything, would you do differently between the two mistakes?",
+      "source_planning_targets": [
+        "D16.challenge_threshold"
+      ],
+      "source_interpretation_limit": "Credit only the respondent's difference or stated lack of difference between the consequential timing error and the harmless detail. This supports a scoped correction/challenge threshold, not perfectionism, conflict style, or a universal rule.",
+      "disposition": "replace",
+      "reason": "Correcting consequential misinformation is compatible with many temperaments. Ask the spontaneous pull to correct minor errors, then use matched stakes only to clarify the boundary.",
+      "draft_id": "HYB0-G17",
+      "draft_question": "When you notice a minor factual error that has no practical consequence, how much do you usually feel pulled to correct it? Important misinformation can be different; describe that difference only if it helps explain your pattern.",
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "G25",
+      "source_question": "A close friend has twice agreed to help you with a practical task, then not turned up. Each time they later say they forgot and did not message beforehand. What difference, if any, would that usually make to your trust?",
+      "source_planning_targets": [
+        "X01.trust_change"
+      ],
+      "source_interpretation_limit": "The missed commitments and stated forgetting/no-message explanation are premises. Distinguish practical reliability on this kind of commitment from global distrust, affection, safety, or character judgments.",
+      "disposition": "demote",
+      "reason": "Reduced practical reliance after repeated unreliability is expected risk adjustment, not evidence of a globally suspicious disposition. Keep as a trust-change probe only.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "R13",
+      "source_question": "What, if anything, could change how much you rely on that friend afterwards?",
+      "source_planning_targets": [
+        "X01.repair_access"
+      ],
+      "source_interpretation_limit": "Bind to that friend and the reported dimension of reliance. Never assume reconciliation is desired or a refusal needs another probe.",
+      "disposition": "probe",
+      "reason": "Evidence needed for renewed reliance is useful after trust change, but does not establish a universal forgiveness style.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "WHY",
+      "source_question": "What would make you say yes?",
+      "source_planning_targets": [],
+      "source_interpretation_limit": "Keep the open reason probe, adapted to the actual action. Its targets are possibilities, not automatic responsibility/value credit.",
+      "disposition": "probe",
+      "reason": "Not automatic after every answer. Ask a reason only when different explanations would materially change the supported reading.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "AFTER-CHOICE",
+      "source_question": "Once you have made that choice, what is it usually like to live with the decision?",
+      "source_planning_targets": [
+        "D18.resolution_durability"
+      ],
+      "source_interpretation_limit": "Remove the assumption that an opposite pull persists. Relief, regret, mixed feelings and nothing further remain possible.",
+      "disposition": "probe",
+      "reason": "Separate decision resolution from objective decision quality; skip if the answer already describes its later trajectory.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "PREFER-PERSUADE",
+      "source_question": "In the persuasion discussion you just described, how much do you usually want to keep trying to persuade the other person?",
+      "source_planning_targets": [
+        "D05.preferred_use"
+      ],
+      "source_interpretation_limit": "Credit only inclination to keep persuading under the exact bound F0/G05 stakes. Do not infer persuasive ability, success, value-exchange preference, or preference under different stakes.",
+      "disposition": "probe",
+      "reason": "Preserves willingness versus capacity; only necessary if the first answer leaves preferred use unclear.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "PREFER-EXCHANGE",
+      "source_question": "In that meal-cost discussion, how much do you usually want to keep negotiating toward an arrangement you and your friend can both accept?",
+      "source_planning_targets": [
+        "X08.preferred_use"
+      ],
+      "source_interpretation_limit": "Credit only inclination to keep negotiating in the bound M11 exchange. Do not infer general persuasion preference, selling appetite, success, or preference in unrelated disagreements.",
+      "disposition": "probe",
+      "reason": "Whether a person wants to keep bargaining differs from ability. Do not ask again if a limit is already stated.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "OUTREACH",
+      "source_question": "When no new connection comes your way, what would you usually do?",
+      "source_planning_targets": [
+        "D07.deliberate_pathways"
+      ],
+      "source_interpretation_limit": "Only when someone wants an opportunity or connection; lack of new contacts does not entail an unmet wish or need for outreach.",
+      "disposition": "probe",
+      "reason": "Only applicable when connections are desired and their deliberate initiation remains unknown.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "VERIFY",
+      "source_question": "How would you decide which of the conflicting details to rely on?",
+      "source_planning_targets": [
+        "D01.checking_detail"
+      ],
+      "source_interpretation_limit": "Ask only for a missing personal checking/resolution method. Delegating the conflict back to the people or source that created it is already a resolution strategy and must not trigger this probe.",
+      "disposition": "probe",
+      "reason": "Competing sources can clarify verification behavior. Asking a trusted person or AI is a response, not evidence that the person must personally sort all messages.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "WORKING-METHOD",
+      "source_question": "The calendar instructions work overall, but the invite step takes six awkward steps every time you use it. What would you usually do about that?",
+      "source_planning_targets": [
+        "D04.change_threshold"
+      ],
+      "source_interpretation_limit": "This tests response to recurring friction in an inherited method. Keeping it, adapting it, asking for help, or switching are all admissible. Do not interpret leaving a fully adequate method alone as low novelty seeking.",
+      "disposition": "demote",
+      "reason": "Reducing recurrent friction is sensible across many personalities. It is a practical threshold probe, not evidence of novelty seeking or resistance to tradition.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "PRACTICE-REASON",
+      "source_question": "If you keep repeating that exact phrase, what, if anything, makes the repetition itself worth doing for you?",
+      "source_planning_targets": [
+        "D22.repetition_value"
+      ],
+      "source_interpretation_limit": "Retain only the value of repeating this exact practice: refinement, enjoyment, noticing improvement, rhythm, or no intrinsic value are all valid. Do not generalize from one activity to repetition as a whole.",
+      "disposition": "probe",
+      "reason": "Only clarifies intrinsic versus instrumental value when not already answered. Visible improvement alone does not establish intrinsic enjoyment.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "FOCUS-DEPTH",
+      "source_question": "When you are reading something that holds your interest and are left uninterrupted, what is your concentration usually like?",
+      "source_planning_targets": [
+        "D22.focus_depth_interruptions"
+      ],
+      "source_interpretation_limit": "Bind to uninterrupted reading; permit ordinary concentration, drift or time-limited focus without forcing an immersive state.",
+      "disposition": "probe",
+      "reason": "Can add uninterrupted depth/duration if only interruption effects are known. Interest remains a stated condition.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "CHOICE-TIME",
+      "source_question": "As you keep considering that choice, what, if anything, usually changes in how clear it feels?",
+      "source_planning_targets": [
+        "D09.clarity_over_time"
+      ],
+      "source_interpretation_limit": "Only while the choice remains considered or an unresolved clarity question matters. Distinguish procedural waiting from feeling clearer.",
+      "disposition": "probe",
+      "reason": "Useful only for an unresolved trajectory of clarity over time; time taken is not intrinsically better reasoning.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "SIGNAL-DEPENDABILITY",
+      "source_question": "Across similar choices, how consistently do you notice a reaction like the one you described?",
+      "source_planning_targets": [
+        "D09.repeatability_trust"
+      ],
+      "source_interpretation_limit": "Ask cross-choice noticing consistency rather than repeat R04’s usefulness-as-guide question. Notice rate and perceived accuracy are different.",
+      "disposition": "probe",
+      "reason": "A report of perceived consistency is not proof of reliable somatic prediction. Retain counterexamples and uncertainty.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "SIGNAL-NOT-FOLLOWED",
+      "source_question": "What, if anything, would make you set that reaction aside?",
+      "source_planning_targets": [
+        "D09.override_state"
+      ],
+      "source_interpretation_limit": "Only after a reaction is reported. Ask override conditions without recommending obedience to a bodily cue.",
+      "disposition": "probe",
+      "reason": "Useful boundary between noticing a signal and acting on it; do not equate overriding it with dysfunction.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "ADAPTATION",
+      "source_question": "In that fixed-schedule group, what, if anything, would you be willing to change about your way of working?",
+      "source_planning_targets": [
+        "D10.external_adaptation"
+      ],
+      "source_interpretation_limit": "Bind the accepted fixed-schedule premise; do not ask again if accommodation and limits were already supplied.",
+      "disposition": "probe",
+      "reason": "May clarify which preferences survive group adaptation. Do not duplicate the revised direct adaptation-boundary question.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "ROOM-EFFECT",
+      "source_question": "What difference, if any, would that condition make to how you feel or function in the room?",
+      "source_planning_targets": [
+        "D11.functional_effect"
+      ],
+      "source_interpretation_limit": "Specify the named condition and permit no effect. A room preference does not establish impaired functioning.",
+      "disposition": "probe",
+      "reason": "Ask experienced effects only if needed; mere dislike/notice does not establish impairment.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "PHYSICAL-CLOSENESS",
+      "source_question": "In that relationship, what place, if any, would physical affection have for you?",
+      "source_planning_targets": [
+        "D12.sensuality"
+      ],
+      "source_interpretation_limit": "Optional, chosen romantic context only. This route provides partial D12.sensuality coverage limited to physical affection. It must not substitute for sexual desire, libido, sensuality as a whole, or another person's behavior.",
+      "disposition": "probe",
+      "reason": "Optional affection/sensory preference is not automatically sexual desire, attachment or global sociability.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "MOOD-AFTER",
+      "source_question": "Once that conversation is over, what usually happens to the feeling you described?",
+      "source_planning_targets": [
+        "D13.recovery"
+      ],
+      "source_interpretation_limit": "Bind to the exact earlier emotional reaction, not whichever conversation happened most recently. Requires an actual reported mood change.",
+      "disposition": "probe",
+      "reason": "Recovery trajectory only for the specific interpersonal reaction already reported.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "WORK-RECOVERY",
+      "source_question": "After the kind of tiredness you described, what usually happens to your energy once you stop?",
+      "source_planning_targets": [
+        "D14.stopping_recovery"
+      ],
+      "source_interpretation_limit": "Ask what happens after stopping rather than assume an effective recovery aid or prompt return of energy.",
+      "disposition": "probe",
+      "reason": "Only after meaningful fatigue was reported; do not assume every person is exhausted or every break restores them.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "STATUS",
+      "source_question": "When people genuinely admire something you've done, is that rewarding to you in itself, apart from any opportunities or practical benefits it might create?",
+      "source_planning_targets": [
+        "D19.status_ownership"
+      ],
+      "source_interpretation_limit": "A yes/no answer supports only the self-reported intrinsic reward of genuine admiration in this context. Do not infer ambition, narcissism, insecurity, dominance, or career motivation.",
+      "disposition": "replace",
+      "reason": "A yes to genuine appreciation does not quantify recognition motivation. Ask how important recognition is, apart from practical benefit.",
+      "draft_id": "HYB0-STATUS",
+      "draft_question": "How important is recognition from other people to you, apart from its practical benefits? For example, appreciation for work you already value may add little, matter a lot, or depend on whose recognition it is.",
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "OWNERSHIP",
+      "source_question": "Suppose you regularly use a laptop owned by someone you trust. It is reliably available whenever you need it, you can install the software you need, your files stay private, and using it costs you nothing. What, if anything, would make owning an otherwise equivalent laptop yourself matter?",
+      "source_planning_targets": [
+        "D19.status_ownership"
+      ],
+      "source_interpretation_limit": "The laptop's reliable access, software permission, privacy, and zero-use-cost are premises. Credit only answer-originated ownership motives such as control, identity, security, convenience, status, permanence, or no added value. Do not treat the premise itself as a status motive.",
+      "disposition": "demote",
+      "reason": "Perfectly equivalent reliable access is artificial; answers are meanings of ownership in that hypothetical, not a global possessions trait.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "LIFE-PHASE",
+      "source_question": "When in your life did the change you described become noticeable?",
+      "source_planning_targets": [
+        "D20.phases"
+      ],
+      "source_interpretation_limit": "After a reported change, ask timing rather than repeat whether change happened. No calendar dates or exact ages required.",
+      "disposition": "probe",
+      "reason": "Useful temporal comparison with permission; approximate life periods suffice. Do not ask for birth information.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "CORRECTION-REASON",
+      "source_question": "What matters most in why you would handle those two mistakes the same way or differently?",
+      "source_planning_targets": [
+        "D16.context_cost",
+        "D16.challenge_threshold"
+      ],
+      "source_interpretation_limit": "Use only to clarify the respondent's own threshold/context-cost rule after the matched G17 comparison. Do not insert harm, politeness, confidence, or perfectionism if the respondent does not name them.",
+      "disposition": "probe",
+      "reason": "Only after a real difference in correction thresholds and only if the reason is still materially unknown.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "CARE-RESPONSIBILITY",
+      "source_question": "In that situation, what, if anything, would you feel responsible for?",
+      "source_planning_targets": [
+        "D23.responsibility"
+      ],
+      "source_interpretation_limit": "A particular need or helping choice has been named, and personal responsibility is still unclear. Enjoying company alone is not a reason to search for guilt. The answer supports only what it says; the prompt never fills a response field.",
+      "disposition": "probe",
+      "reason": "Noticing need and feeling responsible are different. Preserve the persons actual boundary without a moral ranking.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "CARE-LIMIT",
+      "source_question": "What, if anything, would make you leave that help to someone else?",
+      "source_planning_targets": [
+        "D23.withholding"
+      ],
+      "source_interpretation_limit": "A particular form of help is under discussion; the limit has not been supplied. No answer is required if the topic is closed. The answer supports only what it says; the prompt never fills a response field.",
+      "disposition": "probe",
+      "reason": "Delegation/limits matter only if not already established; care burden alone cannot diagnose a trait.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "ROUTINE-CHANGE",
+      "source_question": "You have a free afternoon. You could go somewhere familiar that you enjoy, or try a new place that also appeals to you. Both are practical today. What would usually matter in choosing?",
+      "source_planning_targets": [
+        "D21.novelty_disruption"
+      ],
+      "source_interpretation_limit": "Optional alternative to inferring novelty preference from a disappointing cancellation; record the particular comparison, not a global trait. The answer supports only what it says; the prompt never fills a response field.",
+      "disposition": "replace",
+      "reason": "The existing guide accepts a mood-dependent novelty choice. That is not evidence of the persons usual balance of novelty and familiarity across opportunities.",
+      "draft_id": "HYB0-ROUTINE-CHANGE",
+      "draft_question": "When you genuinely have a choice, do you usually seek new experiences, prefer familiar ones, or have different patterns in different areas? For example, when both outings are affordable, appealing and equally practical, do you more often explore somewhere new or return to a place you know?",
+      "automatic_old_facet_equivalence": false
+    },
+    {
+      "source_route_id": "ROMANCE-FADE",
+      "source_question": "Apart from losing the things you already said help closeness, is there anything else that would usually make you feel less close over time?",
+      "source_planning_targets": [
+        "D12.weakening_boundaries"
+      ],
+      "source_interpretation_limit": "Retain only genuinely additional weakening dimensions. Mirrored opposites of earlier positive conditions are not independent evidence.",
+      "disposition": "probe",
+      "reason": "Ask for additional weakening conditions only if genuinely missing; do not automatically mirror a question about deepening.",
+      "draft_id": null,
+      "draft_question": null,
+      "automatic_old_facet_equivalence": false
+    }
+  ]
+}

@@ -1,15 +1,15 @@
 {
   "schema": "life-patterns-voice-gpt-bundle-v1",
-  "version": "2026-10-01.4-review-pilot",
+  "version": "2026-10-01.5-feedback-recovery",
   "builder_config": {
     "path": "reference/custom_gpt/GPT-BUILDER-CONFIG.md",
-    "sha256": "b6cd8f772d787fc1825ace2b12713ae60268854edba5ef572167fadff804ea46"
+    "sha256": "6a965d5cdce0603422493c5ff8eccb48d45f35c9ff15861145129faf295f250d"
   },
   "instructions": {
     "path": "reference/custom_gpt/life_patterns_voice_interviewer_v2.md",
-    "sha256": "ff4748723329b88777cbac366993901295c666fa64a1b3009dd04f701708a6f0",
-    "characters": 7811,
-    "strict_linebreak_count": 7926
+    "sha256": "1e4dac5070646256e7dec7c186b984ebf5ed8adba21f058bb0ea9b1d54c74dca",
+    "characters": 7382,
+    "strict_linebreak_count": 7477
   },
   "knowledge_files": [
     {
@@ -31,6 +31,10 @@
     {
       "path": "reference/empirical_astrology/cf003_secondary_question_module_v0.json",
       "sha256": "ed8fdde6b1e01866a61e18e0259e3b80ad868e3bb5dd37754e987ef30cf5ddf1"
+    },
+    {
+      "path": "reference/custom_gpt/ACTION-HANDOFF-GUIDE-v1.md",
+      "sha256": "c51e2db94d6569b12297e05dbea353a0b4b441b8a9b772fc12579ebdcbd885f4"
     }
   ],
   "birth_or_chart_material_in_bundle": false,
@@ -55,7 +59,7 @@
   },
   "action_schema": {
     "path": "apps/life-patterns-participant/participant/static/action-openapi.yaml",
-    "sha256": "706ef9136e9e1ca3df335c59fa5e574e9bc599e1b5c627d5320e1d768b4b2f44",
+    "sha256": "deacb514d546206911893b05f7de7a3b9913513004df6ebceb93fa363bf2e7a9",
     "schema_url": "https://life-patterns-participant-production.up.railway.app/action-openapi.yaml",
     "authentication": "api_key_bearer",
     "privacy_policy_url": "https://life-patterns-participant-production.up.railway.app/privacy",

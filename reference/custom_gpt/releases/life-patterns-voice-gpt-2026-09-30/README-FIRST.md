@@ -1,6 +1,6 @@
 # Life Patterns Voice GPT — latest bundle
 
-Built from the current `chat/hybrid-voice-cost-optimization-20260928` parent, with the 2026-10-01.4 asynchronous Railway review loop.
+Built from the current `chat/hybrid-voice-cost-optimization-20260928` parent, with the 2026-10-01.5 progress and recoverable-handoff hotfix.
 
 ## Configure the GPT builder
 
@@ -20,12 +20,13 @@ Copy the entire contents of:
 
 ## Upload as GPT Knowledge
 
-Upload all five files in `knowledge/`:
+Upload all six files in `knowledge/`:
 1. `INTERVIEW-PROTOCOL-v6.md`
 2. `interviewer-bank-v7.json`
 3. `EVIDENCE-GUIDE-v7.json`
 4. `RECOVERY-GUIDE-v2.md`
 5. `cf003_secondary_question_module_v0.json`
+6. `ACTION-HANDOFF-GUIDE-v1.md`
 
 The recovery guide carries the detailed Hâle-derived recovery/provenance safeguards. The fifth file is the research-derived CF-003 secondary question module.
 
@@ -58,3 +59,5 @@ The three questions cover:
 - which real patterns are peripheral/situational.
 
 See `MANIFEST.json` and `SETUP.md` for exact hashes and protocol details.
+
+Delivery hotfix: exact candidate backup before review, explicit tool approval wording, field-level value-free error diagnostics, and an honest stage/count footer. Hybrid question redesign is a separate unactivated development candidate; frozen v7 source remains unchanged.
