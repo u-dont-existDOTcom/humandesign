@@ -86,7 +86,9 @@
     "gptActionDescriptionLimit": "PASS: all Action schema descriptions <=300; live submitLifePatternsRecords description=247",
     "gptResumeSourceBoundaryFocused": "27/27 PASS",
     "gptResumeSourceBoundaryHostedCI": "PR #58 verify PASS; survey-browser PASS",
-    "gptResumeBundleVersion": "2026-10-01.2; strict instructions 7973/8000; ZIP sha256 a4025d4daaceeea229ee6a0c87a9cbc9bba87c43d9fb555b89e5e1c61f2a2d44",
+    "gptResumeBundleVersion": "2026-10-01.3; strict instructions 7939/8000; ZIP sha256 36ed7bd84b7b6b17a1b4e765e614dfca913db3b31b7d08b9d9ea62bbfb4204d3",
+    "gptCanonicalLibraryResumeFallback": true,
+    "gptLibraryResumeSchemas": ["life-patterns-full-survey-participant-export-v2", "life-patterns-full-survey-participant-export-v1", "life-patterns-railway-visible-conversation-recovery-v1"],
     "gptSubmissionLiveHealth": "PASS: gpt_submission_enabled=true; participant_enabled=false; provider_configured=false",
     "gptSubmissionPublicSchemaPrivacy": "PASS: /action-openapi.yaml and /privacy HTTP 200",
     "gptSubmissionAuthBoundary": "PASS: valid-shaped wrong Bearer returns HTTP 401",
@@ -100,11 +102,11 @@
     "cf003CombinedFocused": "68/68 PASS after accuracy/fix-lane integration",
     "suggestedFixLane": "2026-09-30 interviewer accuracy item adapted/ledgered/merged via PR #48"
   },
-  "nextAction": "Owner updates the installed Custom GPT Instructions and conversation starters from bundle v2026-10-01.2. Then test safe resume: same-chat web @-mention should import only visible interview context; a fresh GPT chat with no attachment must refuse to claim it found prior answers. The submission Action is already configured per owner report.",
+  "nextAction": "Owner updates the installed Custom GPT Instructions, RECOVERY-GUIDE-v2.md, and conversation starters from bundle v2026-10-01.3. Test three resume paths: canonical Library fallback via the explicit Library starter, same-chat web @-mention, and explicit attachment. A generic continue request must not search account-level sources. The submission Action is already configured per owner report.",
   "stopAdmission": {
     "parentOutcome": "OPEN_HYBRID_COLLECTION_EXPERIMENT",
     "currentOperation": "GPT_AUTO_SUBMISSION_BACKEND_DEPLOYED_AND_VERIFIED",
-    "remainingGap": "Human-only Custom GPT builder update to v2026-10-01.2 Instructions/starters and direct owner test of the resume privacy boundary; Railway model inference remains intentionally disabled and spending-gated.",
+    "remainingGap": "Human-only Custom GPT builder update to v2026-10-01.3 Instructions/recovery guide/starters and direct owner test of the three resume paths; Railway model inference remains intentionally disabled and spending-gated.",
     "nextActor": "owner for one-time Custom GPT instruction/starter update and resume test; participant thereafter only approves the external Action if ChatGPT prompts",
     "authority": "No paid/live inference authorization is active.",
     "blockerEvidence": "Venice previously returned provider_http_402; participant service is intentionally dark with no gateway credential.",
@@ -115,6 +117,6 @@
       "no merge to main"
     ]
   },
-  "updatedAt": "2026-10-01T02:24:00+00:00",
-  "remaining": "GPT auto-submission backend is live and encrypted, and the owner reports the Action is configured. The installed GPT still needs the v2026-10-01.2 privacy-safe resume Instructions/starters before further participant testing. Railway model inference remains intentionally disabled. CF-003 remains DEVELOPMENT/SECONDARY and prospectively unfrozen pending its recorded freeze items."
+  "updatedAt": "2026-10-01T02:36:00+00:00",
+  "remaining": "GPT auto-submission backend is live and encrypted, and the owner reports the Action is configured. The installed GPT still needs the v2026-10-01.3 canonical-Library resume Instructions/recovery guide/starters before further participant testing. Railway model inference remains intentionally disabled. CF-003 remains DEVELOPMENT/SECONDARY and prospectively unfrozen pending its recorded freeze items."
 }
