@@ -1,0 +1,55 @@
+{
+  "schema": "survey-owner-feedback-verification-v1",
+  "status": "verified_candidate_pending_deploy_and_owner_gpt_update",
+  "question_audit": {
+    "routes": 79,
+    "replace": 18,
+    "retain": 15,
+    "conditional_probe": 41,
+    "demote": 5,
+    "draft_replacements": 18,
+    "live_frozen_bank_changed": false,
+    "empirical_validity_claimed": false
+  },
+  "recovery": {
+    "later_completed_source_recovered": true,
+    "answers": 79,
+    "source_freeze_manifest_verified": true,
+    "raw_participant_data_committed": false
+  },
+  "tests": {
+    "root_and_participant_combined": "1123 passed, 6 skipped",
+    "skip_reason": "production Swiss Ephemeris files unavailable",
+    "final_focused": "30 passed",
+    "hosted_equivalent_ruff": "PASS",
+    "changed_application_ruff": "PASS",
+    "mypy": "PASS across 220 source files",
+    "scope": "HTTP validation seam, exact 79-answer synthetic backup serialization, workflow regressions and instruction/package presence; not native GPT behavior or instrument validity"
+  },
+  "independent_review": {
+    "model": "Claude Opus 5.5",
+    "effort": "max",
+    "scope": "method plus seven representative rewrites and calendar/work-duration notes; not full 79-route independent audit",
+    "verdict": "FINDS_ERROR",
+    "disposition": "four concrete wording confounds repaired in unactivated draft",
+    "private_participant_data_used": false
+  },
+  "uncertainties": [
+    "Exact field rejected in the original participant request remains unknown; its payload was not supplied.",
+    "Native ChatGPT down-arrow behavior has not been repaired/tested; footer is a content-level mitigation.",
+    "Installed custom GPT not updated automatically; owner applies bundle and tests.",
+    "Hybrid question trial is development wording, not activated frozen research authority."
+  ],
+  "bundle": {
+    "version": "2026-10-01.5-feedback-recovery",
+    "instructions_strict": 7477,
+    "knowledge_files": 6,
+    "previous_five_knowledge_files_changed": false,
+    "existing_bearer_key_changes": false,
+    "update_zip_sha256": "bc597ba8a664446340bc12e95bc9c25349094f042bdff071108bc5740a765457"
+  },
+  "deployment": {
+    "performed": false,
+    "new_paid_inference_enabled": false
+  }
+}

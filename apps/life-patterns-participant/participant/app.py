@@ -26,6 +26,7 @@ from .domain import (
 )
 from .engine import PAYMENT_ERROR, Engine, ProviderError, Venice
 from .store import Conflict, Missing, Store, canonical, digest
+from .validation_diagnostics import safe_validation_diagnostic
 
 STATIC = Path(__file__).parent / "static"
 
@@ -567,6 +568,8 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
 
     @app.exception_handler(RequestValidationError)
     async def validation_error(request, exc):
+        if request.url.path.startswith("/api/gpt/"):
+            return JSONResponse(safe_validation_diagnostic(exc.errors()), status_code=422)
         return JSONResponse(
             {"detail": "Invalid fields. Your saved record has not been replaced."}, status_code=422
         )

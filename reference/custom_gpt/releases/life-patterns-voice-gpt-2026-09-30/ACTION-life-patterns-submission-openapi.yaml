@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "Life Patterns Independent Review Pilot",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "description": "Asynchronous independent review and exact-source submission for the development pilot."
   },
   "servers": [
@@ -39,7 +39,7 @@
             "description": "The request is stale or conflicts with saved state."
           },
           "422": {
-            "description": "Invalid data; saved source remains unchanged."
+            "description": "Request rejected. Read safe errors[].path/code/hint; preserve exact backup and repair serialization or envelope only."
           }
         },
         "x-openai-isConsequential": true,
@@ -280,14 +280,108 @@
           "candidate_record": {
             "type": "object",
             "additionalProperties": true,
-            "description": "Exact unfrozen primary source record with explicit consent and all source turns; no CF-003 answers."
+            "description": "Exact unfrozen primary source record with explicit consent and all source turns; no CF-003 answers.",
+            "required": [
+              "schema",
+              "consent",
+              "turns",
+              "freeze"
+            ],
+            "properties": {
+              "schema": {
+                "type": "string",
+                "const": "life-patterns-full-survey-participant-export-v2"
+              },
+              "consent": {
+                "type": "object",
+                "required": [
+                  "research_use_consented"
+                ],
+                "properties": {
+                  "research_use_consented": {
+                    "type": "boolean",
+                    "const": true
+                  }
+                },
+                "additionalProperties": true
+              },
+              "turns": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "question_text",
+                    "answer_text"
+                  ],
+                  "properties": {
+                    "turn_id": {
+                      "type": "string"
+                    },
+                    "question_text": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "answer_text": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    }
+                  },
+                  "additionalProperties": true
+                }
+              },
+              "freeze": {
+                "type": "object",
+                "properties": {
+                  "record_state": {
+                    "type": "string",
+                    "const": "candidate"
+                  },
+                  "frozen_before_birth_or_chart_reveal": {
+                    "type": "boolean",
+                    "const": false
+                  }
+                },
+                "additionalProperties": true
+              }
+            }
           }
         },
         "required": [
           "research_use_consented",
           "request_id",
           "candidate_record"
-        ]
+        ],
+        "example": {
+          "research_use_consented": true,
+          "request_id": "0123456789abcdef0123456789abcdef",
+          "candidate_record": {
+            "schema": "life-patterns-full-survey-participant-export-v2",
+            "consent": {
+              "research_use_consented": true
+            },
+            "collection_mode": "chatgpt_text",
+            "turns": [
+              {
+                "turn_id": "example-1",
+                "question_text": "What usually helps you decide?",
+                "answer_text": "I compare the practical options.",
+                "canonical_question_id": null,
+                "turn_role": "behavioral"
+              }
+            ],
+            "participant_review": {
+              "summary_shown": false
+            },
+            "freeze": {
+              "record_state": "candidate",
+              "frozen_before_birth_or_chart_reveal": false
+            }
+          }
+        }
       },
       "ClarificationAnswer": {
         "type": "object",

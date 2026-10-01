@@ -1,6 +1,6 @@
 # Life Patterns voice-first ChatGPT collector
 
-Version: 2026-10-01.4-review-pilot. Development collection surface.
+Version: 2026-10-01.5-feedback-recovery. Development collection surface.
 
 ## Purpose
 
@@ -59,3 +59,7 @@ A useful first decision is simpler: if voice-first records require few Railway c
 ## Accuracy-rule lineage
 
 The voice collector includes the core attribution/quotation/absence/correction rules proposed in PR #42, adapted to this collection surface. It does not merge PR #42 into the older AstroHD owner-pilot GPT. Reveal-specific rules are omitted because this collector does not perform the AstroHD reveal.
+
+## Delivery hotfix 2026-10-01.5
+
+Add `ACTION-HANDOFF-GUIDE-v1.md` as the sixth Knowledge file. Replace Instructions and reimport the existing Action schema (1.2.1); keep the same Bearer credential. This adds exact backup before the first review call, actionable error paths, the explicit approval sentence, honest stage/count progress, and a bottom status footer. Existing five Knowledge files and frozen v7 measurement wording are unchanged. A separate hybrid question candidate is under development; this delivery fix does not silently activate it.

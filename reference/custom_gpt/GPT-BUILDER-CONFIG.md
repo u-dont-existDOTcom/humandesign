@@ -48,3 +48,7 @@ For a participant with an existing interview, there are three safe resume paths:
 A generic continue request must not search Library, Memory, chat history, connected apps, or other account-level sources.
 
 Schema 1.2 adds review start, status, clarification, pause/stop/withdraw controls and strict reviewed submission. Import the existing schema URL again; JSON OpenAPI is valid at that YAML endpoint. The same Bearer key remains valid. Treat review IDs as private.
+
+## Delivery hotfix 2026-10-01.5
+
+Add `ACTION-HANDOFF-GUIDE-v1.md` as the sixth Knowledge file. Replace Instructions and reimport the existing Action schema (1.2.1); keep the same Bearer credential. This adds exact backup before the first review call, actionable error paths, the explicit approval sentence, honest stage/count progress, and a bottom status footer. Existing five Knowledge files and frozen v7 measurement wording are unchanged. A separate hybrid question candidate is under development; this delivery fix does not silently activate it.
