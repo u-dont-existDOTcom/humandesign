@@ -1,6 +1,6 @@
 # Life Patterns Voice GPT — latest bundle
 
-Built from the current `chat/hybrid-voice-cost-optimization-20260928` parent, with the 2026-10-01.2 privacy-safe resume revision.
+Built from the current `chat/hybrid-voice-cost-optimization-20260928` parent, with the 2026-10-01.3 explicit canonical-Library resume fallback.
 
 ## Configure the GPT builder
 
@@ -33,11 +33,13 @@ The recovery guide carries the detailed Hâle-derived recovery/provenance safegu
 
 For a new participant, tap **Start my Life Patterns interview.**
 
-For an existing interview, prefer **same-chat automatic resume** on ChatGPT web: reopen the old interview, type `@`, select **Life Patterns Interview**, then say **Continue my interview**. The conversation context stays available to the GPT.
+For an existing interview there are three safe paths:
 
-Alternatively, in a new GPT chat explicitly attach/add the prior response record and use the continue starter. The GPT must preserve usable Q&A, avoid repeating resolved questions, and ask only useful unresolved distinctions.
+1. **Library fallback:** tap **Find my Life Patterns record in my Library and continue.** This explicitly authorizes a narrow search for canonical Life Patterns export/recovery schemas only. If exactly one canonical record is found, it may be imported; multiple canonical records require participant selection. Similar generic interview/personality files must be ignored.
+2. **Same-chat automatic resume (web):** reopen the old interview, type `@`, select **Life Patterns Interview**, then say **Continue my interview**. The conversation context stays available to the GPT.
+3. **Explicit attachment:** in a new GPT chat attach/add the prior response record and use the continue starter.
 
-**Privacy boundary:** a generic “continue my interview” request must never trigger Library, Memory, prior-chat, connected-app, other-user-file, or GPT-Knowledge search for participant answers. If the current chat has neither visible interview material nor an explicit attachment, the GPT must say so and give the two safe resume paths above.
+**Privacy boundary:** a generic “continue my interview” request must never trigger Library, Memory, prior-chat, connected-app, other-user-file, or GPT-Knowledge search. Library lookup requires the explicit Library starter/request above.
 
 ## CF-003 timing
 
