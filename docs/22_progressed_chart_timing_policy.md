@@ -94,3 +94,29 @@ A dynamic layer may be tested separately only when the questionnaire contains ex
 - never allow dynamic-state evidence to repair the natal fingerprint post hoc.
 
 If the dynamic layer does not improve untouched validation, it remains excluded from personality-to-DOB matching.
+
+
+## State/window versus exact-event timing
+
+The 2013–2014 development reveal exposed a necessary distinction:
+
+- secondary progressions and solar arcs should default to **state/window indicators**;
+- they must not be treated as exact-event clocks merely because an event later occurred inside the broader activated period;
+- if the research question is an exact event date, freeze a separate timing layer before reveal.
+
+For exact-event hypotheses, use a two-stage architecture only if preregistered:
+1. slower/progressed/directed indicators define an eligible background window;
+2. a separately frozen fast-trigger layer may rank dates within that window.
+
+A broad family-state signal during pregnancy is not a birth-date hit. A relationship-pressure signal months before an acute escalation is not an exact danger-event hit.
+
+## Endpoint separation
+
+Do not collapse different longitudinal endpoints into one score. At minimum distinguish:
+- relationship formation/onset;
+- chronic relationship pressure;
+- acute escalation;
+- pregnancy/family-state activation;
+- exact birth timing.
+
+Each endpoint requires its own frozen target set, timing families, orbs, dependencies and scoring rule. Performance on one endpoint cannot rescue failure on another.
