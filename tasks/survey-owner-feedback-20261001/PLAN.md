@@ -1,6 +1,6 @@
 # Owner test feedback: measurement and handoff repair
 
-Status: OPEN. Lane: iteration; privacy and frozen-source integrity remain hard constraints.
+Status: delivery hotfix deployed; owner GPT update/test and separate hybrid wording trial remain open. Lane: iteration; privacy and frozen-source integrity remain hard constraints.
 Parent outcome: useful, understandable, nonredundant behavioral interviewing with recoverable records and a working asynchronous review handoff.
 
 ## Workstreams

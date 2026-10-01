@@ -119,7 +119,7 @@
     "gptAsyncReviewLiveSmoke": "queued -> processing -> admitted clarification; synthetic review withdrawn",
     "gptAsyncReviewClaude": "Initial FINDS_ERROR; one reconciliation AGREES for bounded pilot; residual recovery fixes tested"
   },
-  "nextAction": "Owner updates installed GPT Instructions, description/starters and reimports the five-operation Action schema with the existing Bearer key; the five Knowledge files remain unchanged. Test candidate -> queued independent review -> exact clarification -> neutral review -> primary freeze -> CF-003 -> strict final submission. Local CLI pilot worker is installed and running; host must stay online.",
+  "nextAction": "Owner installs delivery hotfix Instructions, sixth ACTION-HANDOFF-GUIDE-v1.md and schema1.2.1 with unchanged key. Recover the current failed chat record without more interview questions. Use fuller recovered79 only as source where needed. Separately trial the hybrid wording before changing frozen measurement authority.",
   "stopAdmission": {
     "parentOutcome": "OPEN_HYBRID_COLLECTION_EXPERIMENT",
     "currentOperation": "ASYNCHRONOUS_REVIEW_PILOT_DEPLOYED_AND_LIVE_TESTED",
@@ -135,5 +135,14 @@
     ]
   },
   "updatedAt": "2026-10-01",
-  "remaining": "Only the private Custom GPT builder update and direct owner product test remain for this pilot. The Railway review queue and local CLI worker passed a live synthetic cycle. No Venice/API inference was enabled. Existing scientific gates and CF-003 development-only status remain unchanged."
+  "remaining": "Delivery hotfix is deployed; native GPT update and direct test remain. Hybrid wording is a separate development draft, not a live frozen instrument. No full re-interview is requested; participant/provider inference settings remain unchanged.",
+  "ownerFeedbackHotfix": {
+    "version": "2026-10-01.5-feedback-recovery",
+    "status": "deployed_owner_gpt_update_required",
+    "artifact_root": "tasks/survey-owner-feedback-20261001",
+    "source_recovery_answers": 79,
+    "hybrid_draft_runtime_active": false,
+    "knowledge_files": 6,
+    "original_failed_field": "unknown"
+  }
 }

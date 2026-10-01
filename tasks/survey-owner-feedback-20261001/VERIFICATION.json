@@ -1,6 +1,6 @@
 {
   "schema": "survey-owner-feedback-verification-v1",
-  "status": "verified_candidate_pending_deploy_and_owner_gpt_update",
+  "status": "delivery_hotfix_deployed_owner_gpt_update_required_hybrid_draft_unactivated",
   "question_audit": {
     "routes": 79,
     "replace": 18,
@@ -24,7 +24,8 @@
     "hosted_equivalent_ruff": "PASS",
     "changed_application_ruff": "PASS",
     "mypy": "PASS across 220 source files",
-    "scope": "HTTP validation seam, exact 79-answer synthetic backup serialization, workflow regressions and instruction/package presence; not native GPT behavior or instrument validity"
+    "scope": "HTTP validation seam, exact 79-answer synthetic backup serialization, workflow regressions and instruction/package presence; not native GPT behavior or instrument validity",
+    "hosted_checks": "PR #63 verify and survey-browser success"
   },
   "independent_review": {
     "model": "Claude Opus 5.5",
@@ -49,7 +50,12 @@
     "update_zip_sha256": "bc597ba8a664446340bc12e95bc9c25349094f042bdff071108bc5740a765457"
   },
   "deployment": {
-    "performed": false,
-    "new_paid_inference_enabled": false
+    "performed": true,
+    "code_commit": "aeddbfed37ade053fcfd5a618d3020a845e9f032",
+    "deployment_id": "9485c53c-95a4-4212-9a34-7f330ce86903",
+    "live_schema_version": "1.2.1",
+    "live_validation_receipt": "LIVE-VALIDATION-SMOKE.json",
+    "new_paid_inference_enabled": false,
+    "private_gpt_tested": false
   }
 }
