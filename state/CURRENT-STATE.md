@@ -1,3 +1,11 @@
+## Current owner-test follow-up — 2026-10-01
+
+Delivery hotfix v2026-10-01.5-feedback-recovery is merged and deployed on the existing participant service. Read `tasks/survey-owner-feedback-20261001/VERIFICATION.json` and `FINDINGS.md`. Instructions require an exact candidate backup before review, explicit approval wording, safe actionable error diagnostics and honest stage/count footer. Owner must replace Instructions, add ACTION-HANDOFF-GUIDE-v1.md as the sixth Knowledge file, and reimport schema1.2.1 with the same key. Actual native GPT behavior remains untested.
+
+The later completed 79-answer source was recovered against its existing freeze manifest and delivered privately. Do not send the older September16 thread as the full survey; do not force a full repeat.
+
+All79 v7 routes have a separate design audit and 18 hybrid opening drafts. These are UNACTIVATED DEVELOPMENT CANDIDATES, not a changed frozen bank or empirical validity findings. Next instrument step is a targeted example-alignment/cognitive wording trial, not another exhaustive participant interview. Prior five Knowledge sources, mappings, active queue and local worker are unchanged. The exact field in the original failed participant request remains unknown.
+
 # Current state — voice-first collection / compact Railway clarification
 
 ## Asynchronous pre-freeze review pilot — 2026-10-01

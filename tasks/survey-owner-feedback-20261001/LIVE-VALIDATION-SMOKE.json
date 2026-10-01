@@ -1,0 +1,19 @@
+{
+  "schema": "survey-feedback-live-validation-smoke-v1",
+  "deployment_code": "aeddbfed37ade053fcfd5a618d3020a845e9f032",
+  "deployment_id": "9485c53c-95a4-4212-9a34-7f330ce86903",
+  "schema_version": "1.2.1",
+  "scope": "public pre-handler invalid-body validation; not authenticated GPT end-to-end",
+  "synthetic_empty_request_only": true,
+  "participant_answers_used": false,
+  "request_rejected_before_storage": true,
+  "live_error_field": "body.request_id",
+  "live_error_code": "missing",
+  "field_in_detail_string": true,
+  "paid_provider_configured": false,
+  "participant_inference_enabled": false,
+  "gpt_review_queue_enabled": true,
+  "new_semantic_review_job_created": false,
+  "actual_original_rejected_field": "unknown",
+  "native_gpt_itself_tested": false
+}
