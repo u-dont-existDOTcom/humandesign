@@ -1,15 +1,15 @@
 {
   "schema": "life-patterns-voice-gpt-bundle-v1",
-  "version": "2026-10-01.3",
+  "version": "2026-10-01.4-review-pilot",
   "builder_config": {
     "path": "reference/custom_gpt/GPT-BUILDER-CONFIG.md",
-    "sha256": "ce6de04b78680fe0c09f08e6f456ee89c58a696afdff011ea3177f9de25929b3"
+    "sha256": "b6cd8f772d787fc1825ace2b12713ae60268854edba5ef572167fadff804ea46"
   },
   "instructions": {
     "path": "reference/custom_gpt/life_patterns_voice_interviewer_v2.md",
-    "sha256": "abc4e9b57858c6ddd5dcc9734ab3a74865b7588ec6bafa00beccf204ee5f817c",
-    "characters": 7805,
-    "strict_linebreak_count": 7939
+    "sha256": "ff4748723329b88777cbac366993901295c666fa64a1b3009dd04f701708a6f0",
+    "characters": 7811,
+    "strict_linebreak_count": 7926
   },
   "knowledge_files": [
     {
@@ -40,7 +40,7 @@
     "chatgpt_text",
     "mixed"
   ],
-  "handoff": "Submit both frozen records through the authenticated GPT Action; JSON files remain the fallback/local backup.",
+  "handoff": "Queue candidate before freeze; retrieve independent review/clarifications; participant review; primary freeze; separate CF-003; strict reviewed submission.",
   "secondary_modules": {
     "cf003": {
       "status": "development_secondary_only",
@@ -55,10 +55,24 @@
   },
   "action_schema": {
     "path": "apps/life-patterns-participant/participant/static/action-openapi.yaml",
-    "sha256": "f9296caa34c2e0f7dcf96830f50a2f545f0343301f90d97294cdc5971fa2f3f2",
+    "sha256": "706ef9136e9e1ca3df335c59fa5e574e9bc599e1b5c627d5320e1d768b4b2f44",
     "schema_url": "https://life-patterns-participant-production.up.railway.app/action-openapi.yaml",
     "authentication": "api_key_bearer",
     "privacy_policy_url": "https://life-patterns-participant-production.up.railway.app/privacy",
-    "operation_id": "submitLifePatternsRecords"
+    "operation_id": "submitLifePatternsRecords",
+    "operation_ids": [
+      "startLifePatternsReview",
+      "getLifePatternsReview",
+      "submitLifePatternsClarification",
+      "controlLifePatternsReview",
+      "submitLifePatternsRecords"
+    ]
+  },
+  "review_loop": {
+    "mode": "asynchronous_railway_queue_local_codex_development_worker",
+    "primary_freeze_requires_ready_review": true,
+    "cf003_after_reviewed_primary_freeze": true,
+    "final_submission_binds_reviewed_behavioral_turns": true,
+    "paid_api_required_for_pilot_worker": false
   }
 }

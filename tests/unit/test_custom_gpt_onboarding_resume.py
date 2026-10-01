@@ -30,6 +30,8 @@ def test_builder_config_has_user_facing_start_paths() -> None:
     assert "Library fallback" in text
     assert "canonical Life Patterns export/recovery schemas only" in text
     assert "generic continue request must not search Library" in text
+    assert "Check my independent Life Patterns review." in text
+    assert "ChatGPT-authenticated Codex CLI" in text
 
 
 def test_instructions_orient_then_resume_without_restart() -> None:
@@ -37,14 +39,20 @@ def test_instructions_orient_then_resume_without_restart() -> None:
     normalized = " ".join(text.split())
     assert "On the first message, orient them before behavioral questions" in normalized
     assert "responses may be shared with Joel" in normalized
-    assert "consent to research use" in normalized
+    assert "consent to research use, independent review and final submission" in normalized
     assert "without another “ready” step" in normalized
     assert "Resume only from sources allowed by `RECOVERY-GUIDE-v2.md`" in normalized
     assert "generic “continue” request never authorizes account-level lookup" in normalized
     assert "Library search is allowed only when the participant explicitly asks" in normalized
     assert "Never claim a source you did not actually retrieve" in normalized
+    assert "startLifePatternsReview" in text
+    assert "getLifePatternsReview" in text
+    assert "submitLifePatternsClarification" in text
+    assert "do not show the final review, freeze the primary record, or ask CF-003 yet" in normalized
+    assert "If the participant makes a material correction" in text
+    assert "start a **new** independent review" in text
     assert "submitLifePatternsRecords" in text
-    assert "call it exactly once" in text
+    assert "ready review ID" in text
     assert "submission ID" in text
     assert "life-patterns-participant-export.json" in text
     assert "life-patterns-cf003-secondary-v0.json" in text
@@ -88,6 +96,13 @@ def test_manifest_pins_builder_config_and_instruction_budget() -> None:
     action = ROOT / manifest["action_schema"]["path"]
     assert manifest["runtime_actions_required"] is True
     assert manifest["action_schema"]["operation_id"] == "submitLifePatternsRecords"
+    assert manifest["action_schema"]["operation_ids"] == [
+        "startLifePatternsReview",
+        "getLifePatternsReview",
+        "submitLifePatternsClarification",
+        "controlLifePatternsReview",
+        "submitLifePatternsRecords",
+    ]
     assert manifest["action_schema"]["authentication"] == "api_key_bearer"
     assert manifest["action_schema"]["schema_url"].endswith("/action-openapi.yaml")
     assert manifest["action_schema"]["privacy_policy_url"].endswith("/privacy")
@@ -119,7 +134,11 @@ def test_release_zip_contains_builder_config_and_resume_instructions() -> None:
         assert "Start my Life Patterns interview." in config
         assert "Find my Life Patterns record in my Library and continue." in config
         assert "Continue my interview from this chat or a record I attach." in config
+        assert "Check my independent Life Patterns review." in config
         assert "Library search is allowed only when the participant explicitly asks" in instructions
+        assert "startLifePatternsReview" in instructions
+        assert "getLifePatternsReview" in instructions
+        assert "submitLifePatternsClarification" in instructions
         assert any(name.endswith("/knowledge/RECOVERY-GUIDE-v2.md") for name in names)
         assert any(name.endswith("/ACTION-life-patterns-submission-openapi.yaml") for name in names)
         assert "submitLifePatternsRecords" in archive.read(instructions_name).decode()

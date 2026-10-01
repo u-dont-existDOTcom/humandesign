@@ -1,0 +1,34 @@
+{
+  "schema": "gpt-review-loop-live-synthetic-smoke-v1",
+  "synthetic_only": true,
+  "participant_data_used": false,
+  "code_commit": "eb2d1d128ea700cee8503e738e9bc61aa213707a",
+  "deployment_id": "b7017195-14c1-4497-8443-1134fffee0d5",
+  "health": {
+    "status": "ok",
+    "version": "railway-participant-v2.2-cost-hybrid-20260928",
+    "provider": "venice",
+    "provider_configured": false,
+    "participant_enabled": false,
+    "gpt_submission_enabled": true,
+    "gpt_review_queue_enabled": true,
+    "review_worker_configured": true,
+    "persistence": "encrypted_sqlite",
+    "instrument_version": "a54c578c2fe3eb68bd96fe6cb07956cc0ccb02903e38a7a34c3f0a6643ba274e"
+  },
+  "action_schema_sha256": "706ef9136e9e1ca3df335c59fa5e574e9bc599e1b5c627d5320e1d768b4b2f44",
+  "enqueue_round_trip_seconds": 0.644,
+  "states_observed": [
+    "queued",
+    "processing",
+    "clarification_needed"
+  ],
+  "result": "clarification_needed",
+  "admitted_question_received": true,
+  "review_duration_seconds": 43.65,
+  "retry_returned_same_review": true,
+  "synthetic_review_withdrawn": true,
+  "private_review_id_published": false,
+  "new_paid_api_inference_enabled": false,
+  "gpt_builder_itself_tested": false
+}

@@ -1,0 +1,39 @@
+{
+  "synthetic_only": true,
+  "participant_data_used": false,
+  "status": "clarification_needed",
+  "receipt": {
+    "route": "subscription-authenticated local Codex CLI",
+    "model": "openai-gpt-56-sol",
+    "effort": "xhigh",
+    "instrument_version": "a54c578c2fe3eb68bd96fe6cb07956cc0ccb02903e38a7a34c3f0a6643ba274e",
+    "paid_api": false,
+    "production_backend": false,
+    "round": 0,
+    "semantic_calls": [
+      {
+        "stage": "Plan",
+        "provider": "codex_cli_chatgpt",
+        "duration_seconds": 30.153,
+        "reasoning_effort": "xhigh",
+        "requested_model": "openai-gpt-56-sol",
+        "returned_model": null,
+        "prompt_tokens": 22893,
+        "completion_tokens": 1298
+      },
+      {
+        "stage": "Admission",
+        "provider": "codex_cli_chatgpt",
+        "duration_seconds": 13.007,
+        "reasoning_effort": "xhigh",
+        "requested_model": "openai-gpt-56-sol",
+        "returned_model": null,
+        "prompt_tokens": 9317,
+        "completion_tokens": 295
+      }
+    ],
+    "finished_at": "2026-10-01T04:45:49.111611+00:00"
+  },
+  "worker_phase": "awaiting_answer",
+  "clarification_route": "ROUTINE-CHANGE"
+}

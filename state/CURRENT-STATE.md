@@ -1,5 +1,19 @@
 # Current state — voice-first collection / compact Railway clarification
 
+## Asynchronous pre-freeze review pilot — 2026-10-01
+
+The approved development loop is deployed and live-tested. The Custom GPT sends an unfrozen candidate before final review or CF-003. Railway stores and queues it immediately; the installed local ChatGPT-authenticated Codex worker runs the existing independent planner/admission. Status returns one admitted clarification or the neutral review summary. Primary freeze follows participant review, and CF-003 follows that freeze. The new five-operation Action uses strict reviewed submission; the older storage-only endpoint remains explicitly unreviewed and compatible.
+
+The worker is isolated from host files and outside-context model tools, forces ordinary ChatGPT authentication without API-key fallback, retains an encrypted delivery outbox and uses renewable fenced claims. Questions and answers are idempotently bound, pause/stop/withdraw are supported, and one review can back only one immutable final submission. No API-funded inference was enabled. The laptop must be awake/online and its user service running; queued records survive its absence.
+
+Deployed code: `eb2d1d128ea700cee8503e738e9bc61aa213707a`; Railway deployment: `b7017195-14c1-4497-8443-1134fffee0d5`. Live health: GPT submission/review enabled; participant/Venice inference disabled, provider unconfigured. Synthetic live queue acknowledgement was 0.644 seconds; an admitted clarification returned in 43.65 seconds for that small fixture, not a long-record timing guarantee. The synthetic review was withdrawn. Private GPT Builder behavior itself remains an owner test.
+
+Bundle `2026-10-01.4-review-pilot` uses 7926/8000 strict instruction characters. Owner must replace Instructions, reimport the Action schema and update description/starters; the existing Bearer key and five Knowledge files are unchanged. Task receipts: `tasks/gpt-railway-review-loop-20261001/VERIFICATION.json` and `LIVE-SYNTHETIC-SMOKE.json`.
+
+## Prior implementation notes
+
+The deployment, bundle and owner handoff above supersede older operational status below.
+
 Updated 2026-09-30. Branch: `chat/hybrid-voice-cost-optimization-20260928`. CF-003 development-secondary work, the suggested-fix accuracy lane, and authenticated Custom-GPT auto-submission are integrated on this branch.
 
 ## Owner outcome

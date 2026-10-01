@@ -1,6 +1,6 @@
 # Life Patterns Voice GPT — latest bundle
 
-Built from the current `chat/hybrid-voice-cost-optimization-20260928` parent, with the 2026-10-01.3 explicit canonical-Library resume fallback.
+Built from the current `chat/hybrid-voice-cost-optimization-20260928` parent, with the 2026-10-01.4 asynchronous Railway review loop.
 
 ## Configure the GPT builder
 
@@ -41,12 +41,13 @@ For an existing interview there are three safe paths:
 
 **Privacy boundary:** a generic “continue my interview” request must never trigger Library, Memory, prior-chat, connected-app, other-user-file, or GPT-Knowledge search. Library lookup requires the explicit Library starter/request above.
 
-## CF-003 timing
+## Independent review, freeze, then CF-003
 
-The main Life Patterns record is completed and frozen first.
-Then ask all three CF-003 questions before any chart/predictor reveal.
-Freeze those answers separately as `life-patterns-cf003-secondary-v0.json`.
-Do not merge them into the primary record or primary score. At the end, the GPT sends both frozen records through the authenticated `submitLifePatternsRecords` Action. On success it shows a submission receipt ID; if the Action is unavailable or fails, it falls back to both JSON files/objects for manual delivery.
+When the GPT thinks the primary interview is saturated, it must **not freeze yet**. It sends an unfrozen v2 candidate through `startLifePatternsReview`, receives a review ID immediately, and lets the participant leave while the independent review runs.
+
+Later, **Check my independent Life Patterns review** calls `getLifePatternsReview`. If one clarification is returned, the GPT asks it exactly and submits only the participant's answer with `submitLifePatternsClarification`. When Railway returns `ready`, the GPT performs the neutral participant review. Any material correction starts a new independent review; otherwise the primary record is frozen.
+
+Only after that reviewed freeze are all three CF-003 questions asked and frozen separately. Final `submitLifePatternsRecords` includes the ready review ID plus both exact frozen records. The server rejects a final primary whose behavioral turns differ from the reviewed record.
 
 ## Important status
 

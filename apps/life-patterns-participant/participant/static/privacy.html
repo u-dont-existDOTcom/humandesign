@@ -1,21 +1,21 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Life Patterns research submission privacy</title></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Life Patterns research review and submission privacy</title></head>
 <body>
 <main>
-<h1>Life Patterns research submission privacy</h1>
-<p>This endpoint receives completed Life Patterns research records only after the participant has consented to research use.</p>
+<h1>Life Patterns research review and submission privacy</h1>
+<p>This study receives Life Patterns interview records only after the participant has consented to research use and external study processing.</p>
 <h2>What is sent</h2>
-<p>The submission contains the frozen primary behavioral interview record and the separate CF-003 secondary record. The study instructions prohibit birth data, chart data, predictions, rankings, and scores from being sent through this endpoint.</p>
-<h2>Purpose</h2>
-<p>The records are delivered to Joel's private research store so the participant does not need to manually send JSON files after completing the interview.</p>
+<p>Before final freeze, the chart-blind behavioral interview may be sent for independent quality review. After review is complete, the frozen primary record and separate CF-003 record are sent for encrypted research storage. Birth data, chart data, predictions, rankings, and scores are prohibited from these requests.</p>
+<h2>Independent review</h2>
+<p>The review checks the participant's source answers for useful unresolved distinctions, redundancy, unsupported interpretation, and whether another clarification is warranted. During this development pilot, queued reviews may be processed by OpenAI models through the researcher's ChatGPT-authenticated Codex CLI rather than a paid Railway model API. The review can take longer than a normal web request, so the study stores a review ID and lets the participant check the result later.</p>
 <h2>Storage and access</h2>
-<p>Records are encrypted before storage on the study service's persistent database. Researcher downloads require separate researcher authentication. The submission endpoint does not run model inference.</p>
+<p>Candidate records, review state, clarification answers, and final records are encrypted before storage on the study service's persistent database. Researcher downloads require separate researcher authentication.</p>
 <h2>Processors</h2>
-<p>The request is transmitted from ChatGPT's GPT Action to the study service hosted on Railway. Those providers may process network and service metadata under their own terms and privacy policies.</p>
+<p>GPT Action requests are transmitted from ChatGPT to the study service hosted on Railway. Development review may also be processed through OpenAI using the researcher's ChatGPT/Codex account. These providers may process service and model-request data under their applicable terms and privacy policies.</p>
 <h2>Participant control</h2>
-<p>Participants may decline research consent or stop before submission. ChatGPT may also show an approval prompt before the external Action runs. Questions about a submitted record should be directed to Joel through the same channel that supplied the study invitation.</p>
-<p>Effective: 2026-09-30.</p>
+<p>Participants may decline research consent or stop before final submission. ChatGPT may show approval prompts before external Actions. A queued independent review does not expose birth/chart information and does not automatically finalize the participant's record.</p>
+<p>Effective: 2026-10-01.</p>
 </main>
 </body>
 </html>
