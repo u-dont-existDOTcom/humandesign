@@ -1,6 +1,6 @@
 {
   "schema": "life-patterns-voice-gpt-bundle-v1",
-  "version": "2026-09-30.4",
+  "version": "2026-10-01.1",
   "builder_config": {
     "path": "reference/custom_gpt/GPT-BUILDER-CONFIG.md",
     "sha256": "5853bd6e659f444735d671e6cf0b1692705685d7755241b30ff51f8bf3415d54"
@@ -55,7 +55,7 @@
   },
   "action_schema": {
     "path": "apps/life-patterns-participant/participant/static/action-openapi.yaml",
-    "sha256": "4e24eb514d766d6e0a0a10bb8379bcd0f41b87ad2e6d949f6cd7edb25ee1f4fd",
+    "sha256": "f9296caa34c2e0f7dcf96830f50a2f545f0343301f90d97294cdc5971fa2f3f2",
     "schema_url": "https://life-patterns-participant-production.up.railway.app/action-openapi.yaml",
     "authentication": "api_key_bearer",
     "privacy_policy_url": "https://life-patterns-participant-production.up.railway.app/privacy",

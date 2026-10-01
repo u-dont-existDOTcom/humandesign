@@ -1,6 +1,6 @@
 # Life Patterns Voice GPT — latest bundle
 
-Built from the current `chat/hybrid-voice-cost-optimization-20260928` parent, with the 2026-09-30.4 authenticated auto-submission revision.
+Built from the current `chat/hybrid-voice-cost-optimization-20260928` parent, with the 2026-10-01.1 Action-schema compatibility fix.
 
 ## Configure the GPT builder
 

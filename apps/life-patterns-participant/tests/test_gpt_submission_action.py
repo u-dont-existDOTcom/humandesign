@@ -2,12 +2,15 @@ from __future__ import annotations
 
 import json
 import secrets
+from pathlib import Path
 
 from cryptography.fernet import Fernet
 from fastapi.testclient import TestClient
 
 from participant.app import Settings, create_app
 from test_participant import Fake, authority
+
+ROOT = Path(__file__).resolve().parents[3]
 
 
 def setup_submission(tmp_path, *, configured: bool = True, live_enabled: bool = False):
@@ -203,3 +206,45 @@ def test_action_schema_and_privacy_policy_are_public(tmp_path):
     privacy = client.get("/privacy")
     assert privacy.status_code == 200
     assert "does not run model inference" in privacy.text
+
+
+def test_action_schema_descriptions_fit_chatgpt_builder_limit():
+    path = ROOT / "apps/life-patterns-participant/participant/static/action-openapi.yaml"
+    lines = path.read_text(encoding="utf-8").splitlines()
+    descriptions = []
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+        stripped = line.lstrip()
+        if not stripped.startswith("description:"):
+            i += 1
+            continue
+        indent = len(line) - len(stripped)
+        value = stripped.split(":", 1)[1].strip()
+        if value in {">-", ">", "|-", "|"}:
+            parts = []
+            i += 1
+            while i < len(lines):
+                child = lines[i]
+                child_stripped = child.lstrip()
+                child_indent = len(child) - len(child_stripped)
+                if child_stripped and child_indent <= indent:
+                    break
+                if child_stripped:
+                    parts.append(child_stripped)
+                i += 1
+            descriptions.append(" ".join(parts))
+            continue
+        descriptions.append(value.strip("'\""))
+        i += 1
+
+    assert descriptions
+    assert max(len(value) for value in descriptions) <= 300
+    operation = (
+        "Submit once after both records are frozen and before any birth/chart reveal. "
+        "Send only the frozen primary and CF-003 records; omit birth/chart data, scores, "
+        "rankings, and predictions. ChatGPT may ask the participant to approve this "
+        "external write."
+    )
+    assert operation in descriptions
+    assert len(operation) <= 300

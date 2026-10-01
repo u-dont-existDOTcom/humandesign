@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: Life Patterns Research Submission
-  version: 1.0.0
+  version: 1.0.1
   description: >-
     Submit the two frozen, chart-blind Life Patterns research records to the
     researcher's encrypted study store after the participant has consented.
@@ -13,11 +13,10 @@ paths:
       operationId: submitLifePatternsRecords
       summary: Send the completed research records to Joel
       description: >-
-        Call exactly once after the primary Life Patterns record and the separate
-        CF-003 record are both frozen and before any birth/chart reveal. Send only
-        those two frozen records. Do not add birth data, chart data, scores,
-        rankings, or predictions. This is an external write and the platform may
-        ask the participant to approve it.
+        Submit once after both records are frozen and before any birth/chart reveal.
+        Send only the frozen primary and CF-003 records; omit birth/chart data, scores,
+        rankings, and predictions. ChatGPT may ask the participant to approve this
+        external write.
       security:
         - bearerAuth: []
       requestBody:
