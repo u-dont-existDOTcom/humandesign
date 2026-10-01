@@ -10,6 +10,10 @@ Deployed code: `eb2d1d128ea700cee8503e738e9bc61aa213707a`; Railway deployment: `
 
 Bundle `2026-10-01.4-review-pilot` uses 7926/8000 strict instruction characters. Owner must replace Instructions, reimport the Action schema and update description/starters; the existing Bearer key and five Knowledge files are unchanged. Task receipts: `tasks/gpt-railway-review-loop-20261001/VERIFICATION.json` and `LIVE-SYNTHETIC-SMOKE.json`.
 
+## Prior implementation notes
+
+The deployment, bundle and owner handoff above supersede older operational status below.
+
 Updated 2026-09-30. Branch: `chat/hybrid-voice-cost-optimization-20260928`. CF-003 development-secondary work, the suggested-fix accuracy lane, and authenticated Custom-GPT auto-submission are integrated on this branch.
 
 ## Owner outcome
