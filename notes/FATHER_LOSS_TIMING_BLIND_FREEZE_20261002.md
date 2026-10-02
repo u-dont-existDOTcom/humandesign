@@ -128,3 +128,13 @@ After reveal, the guessed windows remain frozen as hits or misses. Do not add ne
 ## Scientific boundary
 
 This is an exploratory astrology test, not an evidence-based method for inferring deaths. It must not be used to predict another living person's future death.
+
+
+## Pre-scan dependency clarification
+
+Added before generating any ranked dates:
+
+- IC and MC are one parental axis; conjunction to one and opposition to the other count once.
+- A solar-arc angle pair is likewise one directed axis.
+- Construction-identity conjunctions are excluded: progressed Sun conjunct natal Sun at the progression origin and solar-arc body conjunct its identical natal body solely because the solar arc begins at zero. Later square/opposition contacts remain eligible.
+- Repeated passes of the same method/body/target/aspect inside one 3-month window count once at closest orb.
