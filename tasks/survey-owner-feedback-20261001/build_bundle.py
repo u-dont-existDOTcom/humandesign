@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[2]
 CUSTOM = ROOT / 'reference/custom_gpt'
 RELEASE = CUSTOM / 'releases/life-patterns-voice-gpt-2026-09-30'
 MANIFEST = CUSTOM / 'life_patterns_voice_gpt_manifest_v2.json'
-VERSION = '2026-10-01.5-feedback-recovery'
+VERSION = '2026-10-02.1-context-resilience'
 m = json.loads(MANIFEST.read_text())
 m['version'] = VERSION
 for field in ('instructions', 'builder_config', 'action_schema'):
@@ -20,7 +20,11 @@ m['instructions']['characters'] = len(text)
 m['instructions']['strict_linebreak_count'] = len(text) + text.count('\n')
 assert m['instructions']['strict_linebreak_count'] <= 8000
 for item in m['knowledge_files']:
-    assert hashlib.sha256((ROOT/item['path']).read_bytes()).hexdigest() == item['sha256']
+    source = ROOT/item['path']
+    if item['path'] == 'reference/custom_gpt/ACTION-HANDOFF-GUIDE-v1.md':
+        item['sha256'] = hashlib.sha256(source.read_bytes()).hexdigest()
+    else:
+        assert hashlib.sha256(source.read_bytes()).hexdigest() == item['sha256']
 m['action_schema']['operation_ids'] = ['startLifePatternsReview','getLifePatternsReview','submitLifePatternsClarification','controlLifePatternsReview','submitLifePatternsRecords']
 m['handoff'] = 'Queue candidate before freeze; retrieve independent review/clarifications; participant review; primary freeze; separate CF-003; strict reviewed submission.'
 MANIFEST.write_text(json.dumps(m, indent=2, ensure_ascii=False)+'\n')
@@ -52,12 +56,14 @@ print(json.dumps({'version':VERSION,'instructions_strict':m['instructions']['str
                   'files':len(allowed),'zip_sha256':hashlib.sha256(out.read_bytes()).hexdigest()},indent=2))
 
 # Current update adds one handoff guide; prior five knowledge files remain unchanged.
-update_readme = '''# Update the installed GPT: progress and recoverable review requests
+update_readme = '''# Update the installed GPT: context-loss resilience and recoverable review requests
 
 1. Replace Instructions with INSTRUCTIONS-life-patterns-voice-interviewer-v2.md.
 2. Add knowledge/ACTION-HANDOFF-GUIDE-v1.md as the SIXTH Knowledge file. Keep the previous five files.
 3. Reimport ACTION-life-patterns-submission-openapi.yaml into the EXISTING Action. Same URL, same Bearer credential; no second Action.
 4. Keep Code Interpreter & Data Analysis enabled; save/update the GPT.
+
+For owner testing, do not run substantive interviews in Builder Preview. Before clicking Update during an in-progress interview, first ask that interview chat to create `life-patterns-live-recovery-checkpoint.json`, wait for the actual file link, and verify its answer count. If context is already lost, preserve an empty candidate only as a diagnostic; recover from the same saved chat, explicit attachment, or explicit canonical Library fallback instead of overwriting prior source.
 
 Before submitting, the GPT must now create and link the exact unfrozen candidate backup, construct the correct three-field JSON envelope, and say: “Please click accept on this tool call to submit your results for analysis.”
 
@@ -82,7 +88,7 @@ update_files['UPDATE-MANIFEST.json'] = (json.dumps({
     'existing_bearer_key_changes': False,
     'files': {name: hashlib.sha256(data).hexdigest() for name,data in update_files.items()},
 }, indent=2)+'\n').encode()
-update_zip = RELEASE.parent/'Life-Patterns-GPT-feedback-recovery-update-2026-10-01.zip'
+update_zip = RELEASE.parent/'Life-Patterns-GPT-context-resilience-update-2026-10-02.zip'
 with zipfile.ZipFile(update_zip, 'w', zipfile.ZIP_DEFLATED) as z:
     for name,data in sorted(update_files.items()):
         info=zipfile.ZipInfo(name,(2026,10,1,0,0,0))
