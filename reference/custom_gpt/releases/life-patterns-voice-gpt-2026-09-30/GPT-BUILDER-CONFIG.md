@@ -37,6 +37,7 @@ A Custom GPT cannot send a message before the user sends or taps something. When
 - explain the research purpose, that responses may be shared with Joel, and that the chart-blind interview will receive an independent study-AI review before final freeze;
 - say voice or text is fine and the participant may pause, skip, correct, or stop;
 - say birth/chart information will not be requested or used;
+- explain **before the first Action** that ChatGPT will show Railway permission cards, the card may show `life-patterns-participant-production.up.railway.app`, and the participant should choose **Allow once** when they want that step to proceed; explain that several separate approvals may appear across review/check/clarification/final submission;
 - request research-use consent covering independent review/final submission, expected voice/text/mixed mode, and permission for useful earlier-life comparison questions;
 - then begin without requiring another “ready” message.
 
@@ -58,3 +59,7 @@ Add `ACTION-HANDOFF-GUIDE-v1.md` as the sixth Knowledge file. Replace Instructio
 Use Builder Preview only for short smoke tests. For any interview whose answers matter, open the GPT as a normal saved conversation.
 
 **Before clicking Update while an interview is in progress:** in that interview chat, ask: `Create my Life Patterns recovery checkpoint before I update the GPT.` Wait for the actual `life-patterns-live-recovery-checkpoint.json` file link and verify the GPT reports the correct answer count. Only then edit/update the GPT. After an update, reopen the same saved conversation if available; otherwise attach the checkpoint or explicitly use the canonical Library fallback. Never interpret a new chat with zero visible turns as proof that the old answers never existed.
+
+## Owner hotfix 2026-10-02.2
+
+Before the first review call, preserve both the exact candidate backup and `life-patterns-review-handoff.json`, which contains the exact three-field request envelope and durable `request_id`. After a successful queue, preserve the returned review handle in a private transport receipt when possible. If the handle is later missing, replay the exact saved start-review request so server idempotency returns the existing review; never mint a new ID merely to recover state.

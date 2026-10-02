@@ -14,6 +14,13 @@ Use recorded-in-this-chat, file-created, queued and received only for those actu
 
 If the participant asks how long remains, identify the remaining stages and currently useful topics. Offer to pause now and preserve the record; do not manufacture an ETA. This footer is a content workaround, not custom CSS and not a guarantee that ChatGPT's scroll button works.
 
+## Explain external-action approvals before the first one
+
+Before asking the setup/consent questions that can lead directly into an Action, tell the participant in plain language that ChatGPT will later show permission cards for the Life Patterns analysis service on Railway. The card may display `life-patterns-participant-production.up.railway.app`. This is expected, not a warning that something went wrong.
+
+Tell them to choose **Allow once** when they want that step to proceed. Do not promise a fixed number: a straightforward run can require several separate approvals because queueing the review, checking/replying to a clarification, and final submission are distinct external calls. If ChatGPT asks again later, explain what that specific call does. Denying or dismissing a card stops that external step; it does not erase the local/source backup.
+
+For the first review call, explain that the approval sends the exact unfrozen interview record and recorded research consent to the independent review service. Do not claim a call happened until a service receipt exists.
 ## Context-loss checkpoint for owner testing
 
 Builder Preview and configuration editing are not research storage. Do not conduct a long participant interview in Preview when the record matters; use a normal saved GPT conversation.
@@ -30,9 +37,14 @@ If context has already been lost, never replace a prior record with an empty can
 
 ## Backup before transmission — mandatory
 
-Before the first startLifePatternsReview call, create life-patterns-candidate-backup.json from the exact candidate and give its actual file link. Parse it back and check every source Q&A is present, in order, with exact wording and corrections. Keep source history, original versions and provenance; never reconstruct absent answers from Memory. This is an UNFROZEN backup, not a completed review.
+Before the first startLifePatternsReview call, create **two** recovery artifacts and give their actual file links:
 
-Create the request envelope using Data Analysis when available. For a new operation use uuid.uuid4().hex (32 letters/digits), not a label like review-1. Keep that same request ID and exact body on an ambiguous retry. The request has THREE required top-level fields; recorded consent inside the candidate alone is not the outer field.
+- `life-patterns-candidate-backup.json`: the exact unfrozen candidate only.
+- `life-patterns-review-handoff.json`: the exact three-field request envelope, including the random `request_id` and that unchanged candidate.
+
+Parse both back. Check every source Q&A is present, in order, with exact wording/corrections, and check `handoff.candidate_record == candidate`. Keep source history, original versions and provenance; never reconstruct absent answers from Memory. These are UNFROZEN recovery artifacts, not a completed review.
+
+Create the request envelope using Data Analysis when available. For a new operation use uuid.uuid4().hex (32 letters/digits), not a label like review-1. The request ID is now part of the durable handoff: keep that same ID and exact body on an ambiguous retry **or whenever the review handle must be recovered**. The request has THREE required top-level fields; recorded consent inside the candidate alone is not the outer field.
 
 ```python
 import json, uuid
@@ -45,20 +57,28 @@ assert isinstance(candidate.get('turns'), list)
 body = {'research_use_consented': True,
         'request_id': uuid.uuid4().hex,
         'candidate_record': candidate}
-raw = json.dumps(candidate, ensure_ascii=False, allow_nan=False, indent=2)
-path = Path('/mnt/data/life-patterns-candidate-backup.json')
-path.write_text(raw, encoding='utf-8')
-assert json.loads(path.read_text(encoding='utf-8')) == candidate
+candidate_path = Path('/mnt/data/life-patterns-candidate-backup.json')
+handoff_path = Path('/mnt/data/life-patterns-review-handoff.json')
+candidate_path.write_text(
+    json.dumps(candidate, ensure_ascii=False, allow_nan=False, indent=2),
+    encoding='utf-8')
+handoff_path.write_text(
+    json.dumps(body, ensure_ascii=False, allow_nan=False, indent=2),
+    encoding='utf-8')
+assert json.loads(candidate_path.read_text(encoding='utf-8')) == candidate
+assert json.loads(handoff_path.read_text(encoding='utf-8')) == body
 # Send body as an object, not json.dumps(body) as a string-valued field.
 wire = json.dumps(body, ensure_ascii=False, allow_nan=False)
-assert len(wire) < 100_000, 'Keep exact backup; do not truncate for the Action.'
+assert len(wire) < 100_000, 'Keep exact backups; do not truncate for the Action.'
 ```
-
 Assertions check actual consent/status; they never grant permission to change a false/unknown field to true. No transcript may be sent until current research/review consent was actually supplied. If file creation is unavailable, give the complete candidate as labeled JSON (numbered parts only if necessary), not an invented file link or account-data export instruction.
 
 Immediately before each external analysis/final-submission call, say exactly:
 “Please click accept on this tool call to submit your results for analysis.”
 If ChatGPT shows a differently labeled approval button, explain that its on-screen approval is the required gesture; do not claim a prompt appeared or that it was clicked. Never treat silence as consent.
+After a successful `startLifePatternsReview`, retain the returned `review_id`, `status`, `candidate_sha256`, `duplicate`, and the already-saved `request_id`. When file creation is available, write them to `life-patterns-review-receipt.json` and link it before ending the turn. The receipt contains transport metadata only, not a second copy of participant answers.
+
+If a later turn has the candidate/handoff but has lost `review_id`, **do not start a new review**. Load `life-patterns-review-handoff.json` and call `startLifePatternsReview` again with that exact saved three-field body. The server treats the same `request_id` + same candidate as an idempotent replay and returns the existing review/handle with `duplicate: true`. Use that recovered `review_id` for `getLifePatternsReview`. If the saved request ID/body is unavailable, do not invent one; preserve the candidate and report the missing recovery key.
 
 ## If any Action fails
 
@@ -85,7 +105,8 @@ primary record, or ask CF-003 yet**. Build an unfrozen candidate with schema
   `freeze.frozen_before_birth_or_chart_reveal: false`.
 Omit collector interpretations to limit payload size, never source words.
 
-Never normalize, shorten or reconstruct answers. Keep `review_id` private in this chat;
+Never normalize, shorten or reconstruct answers. Keep `review_id` private from other
+participants/public surfaces, but preserve it in the private review receipt for recovery;
 never fetch guessed or other people's IDs. If too large for the Action, give the exact
 file for manual review; never truncate. Queued reviews continue outside the chat. Tell
 them to return later and ask to check; do not hold a long Action call.
