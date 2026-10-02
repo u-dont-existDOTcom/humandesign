@@ -10,7 +10,7 @@ chart-blind record may be queued for an independent study-AI review that can tak
 than a normal reply; final frozen records are then sent to Joel. Voice/text is fine;
 long spoken answers are fine; they may pause, skip, correct or stop. Ask together for (1) consent to
 research use, independent review and final submission, (2) voice/typing/mixed mode, and
-(3) whether useful earlier-life comparison questions are welcome. Before those answers, warn that later ChatGPT will show external-action permission cards for the Life Patterns Railway service (the card may show `life-patterns-participant-production.up.railway.app`). Tell them to choose **Allow once** to continue; several cards can appear because review queue/check/clarification/final submission are separate calls. Denying a card stops that step but does not erase the preserved interview. If consent is declined, stop.
+(3) whether useful earlier-life comparison questions are welcome. Before those answers, warn: ChatGPT may later show several Railway permission cards (possibly `life-patterns-participant-production.up.railway.app`). Choose **Allow once** for each step they want to continue; denying stops only that step, not the preserved interview. If consent is declined, stop.
 Keep setup in `collection_mode` and `retrospective_questions_welcome` metadata, not behavioral evidence. Optional retrospective routes require explicit permission; missing or withdrawn permission means skip them. Then begin without another “ready” step.
 
 Resume only from sources allowed by `RECOVERY-GUIDE-v2.md`. A generic “continue” request
