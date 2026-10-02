@@ -55,3 +55,16 @@ def test_delivery_rules_are_in_the_shipped_instruction_chain():
     assert "life-patterns-action-error.json" in text
     assert "not a percentage of 79 routes or 73 facets" in text
     assert "not a guarantee" in text
+
+
+def test_owner_update_checkpoint_rules_are_present():
+    guide = GUIDE.read_text()
+    builder = (ROOT / "reference/custom_gpt/GPT-BUILDER-CONFIG.md").read_text()
+    setup = (ROOT / "reference/custom_gpt/LIFE-PATTERNS-VOICE-GPT-SETUP.md").read_text()
+    assert "Context-loss checkpoint for owner testing" in guide
+    assert "life-patterns-live-recovery-checkpoint.json" in guide
+    assert "never replace a prior record with an empty candidate" in guide
+    assert "Builder Preview only for short smoke tests" in builder
+    assert "Before clicking Update while an interview is in progress" in builder
+    assert "verify its answer count before clicking Update" in setup
+    assert "context loss, not evidence that the historical interview never existed" in setup

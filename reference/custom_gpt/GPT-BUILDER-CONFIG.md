@@ -52,3 +52,9 @@ Schema 1.2 adds review start, status, clarification, pause/stop/withdraw control
 ## Delivery hotfix 2026-10-01.5
 
 Add `ACTION-HANDOFF-GUIDE-v1.md` as the sixth Knowledge file. Replace Instructions and reimport the existing Action schema (1.2.1); keep the same Bearer credential. This adds exact backup before the first review call, actionable error paths, the explicit approval sentence, honest stage/count progress, and a bottom status footer. Existing five Knowledge files and frozen v7 measurement wording are unchanged. A separate hybrid question candidate is under development; this delivery fix does not silently activate it.
+
+## Owner testing / GPT updates
+
+Use Builder Preview only for short smoke tests. For any interview whose answers matter, open the GPT as a normal saved conversation.
+
+**Before clicking Update while an interview is in progress:** in that interview chat, ask: `Create my Life Patterns recovery checkpoint before I update the GPT.` Wait for the actual `life-patterns-live-recovery-checkpoint.json` file link and verify the GPT reports the correct answer count. Only then edit/update the GPT. After an update, reopen the same saved conversation if available; otherwise attach the checkpoint or explicitly use the canonical Library fallback. Never interpret a new chat with zero visible turns as proof that the old answers never existed.

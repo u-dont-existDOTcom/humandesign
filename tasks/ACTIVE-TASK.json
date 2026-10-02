@@ -70,7 +70,9 @@
     "gptIndependentPreFreezeReview": true,
     "gptLocalCodexPilotWorker": true,
     "gptReviewCancellationAndWithdrawal": true,
-    "gptReviewLeaseFencing": true
+    "gptReviewLeaseFencing": true,
+    "gptOwnerPreUpdateCheckpoint": true,
+    "gptEmptyCandidateCannotSupersedePriorSource": true
   },
   "costEvidence": {
     "oldPlannerRequestChars": 175183,
@@ -95,7 +97,7 @@
     "gptActionDescriptionLimit": "PASS: all Action schema descriptions <=300; live submitLifePatternsRecords description=247",
     "gptResumeSourceBoundaryFocused": "27/27 PASS",
     "gptResumeSourceBoundaryHostedCI": "PR #58 verify PASS; survey-browser PASS",
-    "gptResumeBundleVersion": "2026-10-01.4-review-pilot; strict instructions 7926/8000; ZIP sha256 dc93fb003cafe8bee4887ede806793026919623f79bbae2253f38ed1cdebf30e",
+    "gptResumeBundleVersion": "2026-10-02.1-context-resilience; strict instructions 7477/8000; full ZIP sha256 a21daccead2f32fbef9884b00ad7abf1b2236c8ea62b3257a60b4339616cec79; update ZIP sha256 69a292c8af753be733f1ec3f9863e183b4c7427897c659a1208625185fab3745",
     "gptCanonicalLibraryResumeFallback": true,
     "gptLibraryResumeSchemas": [
       "life-patterns-full-survey-participant-export-v2",
@@ -119,11 +121,11 @@
     "gptAsyncReviewLiveSmoke": "queued -> processing -> admitted clarification; synthetic review withdrawn",
     "gptAsyncReviewClaude": "Initial FINDS_ERROR; one reconciliation AGREES for bounded pilot; residual recovery fixes tested"
   },
-  "nextAction": "Owner installs delivery hotfix Instructions, sixth ACTION-HANDOFF-GUIDE-v1.md and schema1.2.1 with unchanged key. Recover the current failed chat record without more interview questions. Use fuller recovered79 only as source where needed. Separately trial the hybrid wording before changing frozen measurement authority.",
+  "nextAction": "Owner applies the v2026-10-02.1 context-resilience update (Instructions/Builder config/ACTION-HANDOFF-GUIDE; Action key/schema unchanged), then attaches the private recovered 79+current-test source in a normal saved GPT conversation and reconfirms consent. Do not ask more questions merely to replace lost context; read the source first. Separately trial the hybrid wording before changing frozen measurement authority.",
   "stopAdmission": {
     "parentOutcome": "OPEN_HYBRID_COLLECTION_EXPERIMENT",
     "currentOperation": "ASYNCHRONOUS_REVIEW_PILOT_DEPLOYED_AND_LIVE_TESTED",
-    "remainingGap": "Only the private Custom GPT builder update and direct owner product test remain for this pilot. The Railway review queue and local CLI worker passed a live synthetic cycle. No Venice/API inference was enabled. Existing scientific gates and CF-003 development-only status remain unchanged.",
+    "remainingGap": "Private Custom GPT needs the v2026-10-02.1 context-resilience update and a direct owner retest from the recovered nonempty source. The Railway review queue/local CLI worker remain live-tested; no Venice/API inference was enabled. Existing scientific gates and CF-003 development-only status remain unchanged.",
     "nextActor": "owner for installed Custom GPT update and direct interview test",
     "authority": "Owner-authorized local subscription CLI pilot; no paid API/live Venice inference authorized",
     "blockerEvidence": "No backend blocker remains in the tested pilot scope; private GPT installation is not modified by repository deployment.",
@@ -134,11 +136,11 @@
       "no merge to main"
     ]
   },
-  "updatedAt": "2026-10-01",
-  "remaining": "Delivery hotfix is deployed; native GPT update and direct test remain. Hybrid wording is a separate development draft, not a live frozen instrument. No full re-interview is requested; participant/provider inference settings remain unchanged.",
+  "updatedAt": "2026-10-02",
+  "remaining": "Backend delivery hotfix remains deployed. The new context-resilience bundle prevents owner Update workflows from relying on ephemeral chat context, but the installed GPT still requires that update and a direct retest. The historical 79-answer source is privately recovered; two exact newest visible Q&A pairs were appended to a private recovery file and other missing newest turns remain missing. Hybrid wording remains a separate unactivated draft; no full re-interview is requested.",
   "ownerFeedbackHotfix": {
-    "version": "2026-10-01.5-feedback-recovery",
-    "status": "deployed_owner_gpt_update_required",
+    "version": "2026-10-02.1-context-resilience",
+    "status": "backend_deployed_context_resilience_bundle_owner_update_required",
     "artifact_root": "tasks/survey-owner-feedback-20261001",
     "source_recovery_answers": 79,
     "hybrid_draft_runtime_active": false,

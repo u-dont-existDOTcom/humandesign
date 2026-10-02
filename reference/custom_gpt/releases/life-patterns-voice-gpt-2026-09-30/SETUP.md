@@ -1,6 +1,6 @@
 # Life Patterns voice-first ChatGPT collector
 
-Version: 2026-10-01.5-feedback-recovery. Development collection surface.
+Version: 2026-10-02.1-context-resilience. Development collection surface.
 
 ## Purpose
 
@@ -63,3 +63,7 @@ The voice collector includes the core attribution/quotation/absence/correction r
 ## Delivery hotfix 2026-10-01.5
 
 Add `ACTION-HANDOFF-GUIDE-v1.md` as the sixth Knowledge file. Replace Instructions and reimport the existing Action schema (1.2.1); keep the same Bearer credential. This adds exact backup before the first review call, actionable error paths, the explicit approval sentence, honest stage/count progress, and a bottom status footer. Existing five Knowledge files and frozen v7 measurement wording are unchanged. A separate hybrid question candidate is under development; this delivery fix does not silently activate it.
+
+## Owner iteration rule — context resilience
+
+Do not run a substantive owner interview in Builder Preview. Use a normal saved GPT conversation. Before any GPT configuration update during an in-progress test, have that chat create and link `life-patterns-live-recovery-checkpoint.json` under `ACTION-HANDOFF-GUIDE-v1.md`; verify its answer count before clicking Update. An update/new chat may leave the GPT with no prior transcript context. That is context loss, not evidence that the historical interview never existed. Recover from the same saved chat, explicit attachment, or explicit canonical Library fallback; never overwrite a nonempty historical record with an empty candidate.
