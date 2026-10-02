@@ -1,6 +1,6 @@
 # Life Patterns voice-first ChatGPT collector
 
-Version: 2026-10-02.1-context-resilience. Development collection surface.
+Version: 2026-10-02.2-action-handoff-resilience. Development collection surface.
 
 ## Purpose
 
@@ -34,12 +34,13 @@ The deployable instruction block is below 8,000 characters on the repository's c
 2. For a new interview, tap **Start my Life Patterns interview.** The GPT gives the consent/privacy/mode framing and begins after the participant answers those setup questions.
 3. For an existing interview, use one of three safe paths: (a) tap **Find my Life Patterns record in my Library and continue** to explicitly authorize a narrow Library search for canonical Life Patterns schemas only; (b) on ChatGPT web reopen the old interview, type `@`, select **Life Patterns Interview**, and say **Continue my interview**; or (c) explicitly attach/add the prior response record in a new GPT chat. A generic continue request must not search Library, Memory, prior chats, connected apps, or other account-level sources.
 4. Do not provide birth date/time/place or chart information.
-5. When the interview appears naturally saturated, **do not freeze yet**. Build the unfrozen v2 candidate and call `startLifePatternsReview`. The Action returns a review ID immediately; the participant may leave and later tap **Check my independent Life Patterns review.**
-6. `queued`/`processing`: wait and check later. `clarification_needed`: ask the returned question exactly, preserve its route ID, send the exact answer with `submitLifePatternsClarification`, then check later. `ready`: proceed to the neutral participant review. `error`: preserve the candidate and report the error without freezing.
-7. After Railway is ready, show the neutral review. A material participant correction creates a new turn and requires a **new independent review** before freeze. With no material correction, freeze `life-patterns-participant-export.json`.
-8. Then ask all three CF-003 secondary questions and freeze `life-patterns-cf003-secondary-v0.json` separately. None of it alters the primary record or score.
-9. Call `submitLifePatternsRecords` once with the ready review ID plus both exact frozen records. On success show the submission ID; on Action failure fall back to both JSON records for manual delivery.
-10. New visible-chat turns are model-exported/unverified until Railway review/admission. Imported records retain their declared source fidelity.
+5. Before the first Action, explain that ChatGPT will show permission cards for the Life Patterns Railway service and that **Allow once** authorizes that specific external step. Several cards may appear during a complete run because queue/check/clarification/final submission are separate calls.
+6. When the interview appears naturally saturated, **do not freeze yet**. Build the unfrozen v2 candidate plus the durable review handoff envelope, then call `startLifePatternsReview`. Preserve the request ID before the call and the returned review ID afterward. If a later chat turn loses the review ID, replay the exact saved request envelope so the idempotent server returns the same review instead of creating a duplicate.
+7. `queued`/`processing`: wait and check later. `clarification_needed`: ask the returned question exactly, preserve its route ID, send the exact answer with `submitLifePatternsClarification`, then check later. `ready`: proceed to the neutral participant review. `error`: preserve the candidate and report the error without freezing.
+8. After Railway is ready, show the neutral review. A material participant correction creates a new turn and requires a **new independent review** before freeze. With no material correction, freeze `life-patterns-participant-export.json`.
+9. Then ask all three CF-003 secondary questions and freeze `life-patterns-cf003-secondary-v0.json` separately. None of it alters the primary record or score.
+10. Call `submitLifePatternsRecords` once with the ready review ID plus both exact frozen records. On success show the submission ID; on Action failure fall back to both JSON records for manual delivery.
+11. New visible-chat turns are model-exported/unverified until Railway review/admission. Imported records retain their declared source fidelity.
 
 ## Measurement decision
 
@@ -67,3 +68,9 @@ Add `ACTION-HANDOFF-GUIDE-v1.md` as the sixth Knowledge file. Replace Instructio
 ## Owner iteration rule — context resilience
 
 Do not run a substantive owner interview in Builder Preview. Use a normal saved GPT conversation. Before any GPT configuration update during an in-progress test, have that chat create and link `life-patterns-live-recovery-checkpoint.json` under `ACTION-HANDOFF-GUIDE-v1.md`; verify its answer count before clicking Update. An update/new chat may leave the GPT with no prior transcript context. That is context loss, not evidence that the historical interview never existed. Recover from the same saved chat, explicit attachment, or explicit canonical Library fallback; never overwrite a nonempty historical record with an empty candidate.
+
+## Owner hotfix 2026-10-02.2 — approval explanation and durable review handle
+
+The participant must be warned before the first Railway Action that ChatGPT will show one or more external-action permission cards and that **Allow once** is the expected approval for each step they choose to continue. Do not promise an exact count.
+
+Before queueing, create both `life-patterns-candidate-backup.json` and `life-patterns-review-handoff.json`; the latter preserves the exact three-field request including `request_id`. After queue success preserve `life-patterns-review-receipt.json` when file creation is available. If `review_id` is lost later, replay the exact saved handoff body; server idempotency returns the existing review rather than starting another one.

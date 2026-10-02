@@ -1,15 +1,15 @@
 {
   "schema": "life-patterns-voice-gpt-bundle-v1",
-  "version": "2026-10-02.1-context-resilience",
+  "version": "2026-10-02.2-action-handoff-resilience",
   "builder_config": {
     "path": "reference/custom_gpt/GPT-BUILDER-CONFIG.md",
-    "sha256": "36cc3e653b7459ba77d7a437064f0d2b5ca434906dffdcd23df97f593723e6f9"
+    "sha256": "8c7839153e00311444f7f829b7b90dc1706a9a5670ec15cb07883e0b455f57a1"
   },
   "instructions": {
     "path": "reference/custom_gpt/life_patterns_voice_interviewer_v2.md",
-    "sha256": "1e4dac5070646256e7dec7c186b984ebf5ed8adba21f058bb0ea9b1d54c74dca",
-    "characters": 7382,
-    "strict_linebreak_count": 7477
+    "sha256": "220ed577d3c4a334994f3da27705404174617668eab660cf7a53a8c4f4351953",
+    "characters": 7891,
+    "strict_linebreak_count": 7986
   },
   "knowledge_files": [
     {
@@ -34,7 +34,7 @@
     },
     {
       "path": "reference/custom_gpt/ACTION-HANDOFF-GUIDE-v1.md",
-      "sha256": "a6fc7d3c094547e4fea457dcfa9cf24ae541a6a2fc11b7f10294f57e3af68e8f"
+      "sha256": "12f1bd557ff22c28001cc75c5916834dd6216fb5fe3f640964a0036fd0c51300"
     }
   ],
   "birth_or_chart_material_in_bundle": false,

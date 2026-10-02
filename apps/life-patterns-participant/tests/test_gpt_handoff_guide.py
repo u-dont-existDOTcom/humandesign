@@ -22,15 +22,20 @@ def test_documented_backup_builder_preserves_all_79_source_answers(tmp_path):
     before = copy.deepcopy(candidate)
     code = GUIDE.read_text().split("```python\n", 1)[1].split("```", 1)[0]
     destination = tmp_path / "candidate.json"
+    handoff = tmp_path / "handoff.json"
     code = code.replace(
         "Path('/mnt/data/life-patterns-candidate-backup.json')", f"Path({str(destination)!r})"
+    ).replace(
+        "Path('/mnt/data/life-patterns-review-handoff.json')", f"Path({str(handoff)!r})"
     )
     scope = {"candidate": candidate}
     exec(compile(code, str(GUIDE), "exec"), scope)
     assert json.loads(destination.read_text()) == before
-    assert scope["body"]["candidate_record"] == before
-    assert len(scope["body"]["request_id"]) == 32
-    assert set(scope["body"]) == {"request_id", "research_use_consented", "candidate_record"}
+    saved_handoff = json.loads(handoff.read_text())
+    assert saved_handoff == scope["body"]
+    assert saved_handoff["candidate_record"] == before
+    assert len(saved_handoff["request_id"]) == 32
+    assert set(saved_handoff) == {"request_id", "research_use_consented", "candidate_record"}
     assert candidate == before
 
 
@@ -52,6 +57,11 @@ def test_delivery_rules_are_in_the_shipped_instruction_chain():
     assert "ACTION-HANDOFF-GUIDE-v1.md" in instruction
     assert "backup and real file link FIRST" in instruction
     assert "Please click accept on this tool call to submit your results for analysis." in text
+    assert "life-patterns-review-handoff.json" in text
+    assert "life-patterns-review-receipt.json" in text
+    assert "idempotent replay" in text
+    assert "Allow once" in text
+    assert "life-patterns-participant-production.up.railway.app" in text
     assert "life-patterns-action-error.json" in text
     assert "not a percentage of 79 routes or 73 facets" in text
     assert "not a guarantee" in text
