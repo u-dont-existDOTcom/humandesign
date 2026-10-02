@@ -16,7 +16,7 @@ Implement an end-to-end research system that can:
 10. calculate pair/connection mechanics as a separate relationship research module;
 11. preserve relationship evidence separately from natal reverse-matching evidence;
 12. generate independently frozen future life-state timelines for two partners and test multi-domain future concordance against random-partner null distributions;
-13. test pair-specific relationship-transition hazards separately from relationship quality/mutuality outcomes.
+13. test pair-specific relationship-transition hazards separately from relationship quality/mutuality outcomes;\n14. evaluate a separately frozen Pythagorean numerology overlay for incremental natal, timing, and relationship information without silently adding it to astrology/HD scores.
 
 ## Life Patterns development transfer boundary
 
@@ -42,7 +42,7 @@ The project distinguishes **model fitting** from **model validation**.
 
 Post-hoc fitting is legitimate model development. It becomes circular only when the fitted cases are also presented as proof that the fitted model predicts unseen people.
 
-It also distinguishes **natal reverse matching** from **relationship/connection analysis**. A relationship description may be useful or testable without being evidence that a natal candidate should receive additional V4.3 NetInformation.
+It also distinguishes **natal reverse matching** from **relationship/connection analysis**. A relationship description may be useful or testable without being evidence that a natal candidate should receive additional V4.3 NetInformation.\n\nNumerology is a third, separately identified symbolic layer. Descriptive overlap with astrology or Human Design is not additional evidence unless the numerology rule was frozen independently and demonstrates incremental out-of-sample value.
 
 ## System components
 
@@ -149,6 +149,16 @@ tests/
     blind_e2e/
 ```
 
+## Numerology overlay boundary
+
+The numerology layer is governed by `docs/38_numerology_overlay_protocol.md`.
+
+V1 uses a frozen Pythagorean convention for birth-date core numbers, birth-name core numbers, long-term cycles, Personal cycles, birth-name Transit letters, and Essence cycles.
+
+Changed names and nicknames are time-stamped identity/use-name overlays. A partner-derived married surname is downstream of the relationship and cannot be counted as independent evidence of pair compatibility.
+
+Numerology-only, astrology/HD-only, and combined outputs remain separate. The current AstroHD, V4.3, AstroRRF, and relationship scores are unchanged. Promotion into a combined score requires incremental out-of-sample discrimination on new cases, with dependencies and multiple comparisons controlled.
+
 ## Relationship module boundary
 
 `src/hdmatch/relationship/` consumes independently calculated natal chart states. It does not modify those natal states and it does not feed the natal V4.3 scorer.
@@ -189,7 +199,7 @@ See:
 - `docs/18_relationship_analysis.md` — static connection mechanics;
 - `docs/19_partner_future_concordance.md` — future-life concordance;
 - `docs/20_partner_transition_vs_quality.md` — transition-vs-quality separation and hard-decoy principle;
-- `docs/21_pair_transition_semimarkov_plan.md` — empirical pair-specific semi-Markov test.
+- `docs/21_pair_transition_semimarkov_plan.md` — empirical pair-specific semi-Markov test;\n- `docs/38_numerology_overlay_protocol.md` — separate numerology profile/timing/relationship overlay and combined-model admission rules.
 
 ## CLI target
 
