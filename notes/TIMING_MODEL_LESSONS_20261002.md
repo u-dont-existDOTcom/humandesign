@@ -59,3 +59,22 @@ The correct next evidential step is not further owner-specific repair. It is cro
 2. a sudden/acute modifier;
 3. a chronic/prolonged modifier;
 with the same false-positive metrics and person-level holdout.
+
+
+## Memory-source contamination lesson
+
+A new owner correction exposed a distinct failure mode: **post-reveal interpretation can be contaminated by an inaccurate remembered date even when the original blind prediction was frozen correctly.**
+
+Case:
+- owner initially remembered first ayahuasca ego-death as late summer/fall 2011, age 26;
+- a frozen religious/revelatory timing model had independently selected May-August 2011;
+- the apparent correspondence was then interpreted as a potentially meaningful cross-endpoint match;
+- contemporaneous Gmail evidence later showed psychedelic use began around August 2010, making a 2010 ego-death much more likely and the 2011 interpretation untenable.
+
+Required controls:
+1. Every revealed life-event label gets a chronology-source field: documentary / contemporaneous record / strong anchored memory / approximate memory / uncertain.
+2. Agreement with an approximate memory is provisional, not strong evidence.
+3. Prefer contemporaneous records over later autobiographical recall when they conflict.
+4. If chronology changes, withdraw interpretations that depended on the old date; do not preserve them by widening windows.
+5. Separate **blind model contamination** from **post-reveal interpretation contamination**. A frozen prediction may remain uncontaminated even when later narrative evaluation is biased by faulty labels.
+6. When feasible, verify high-value historical dates before using them as training labels.
