@@ -41,3 +41,21 @@
 
 12. **Cross-person validation is the next evidential boundary.**
     Owner cases are development data once revealed. Transfer requires frozen testing on other people with positive dates and explicit control periods.
+
+
+## New evidence from maternal-loss blind test
+
+The maternal-loss blind test (actual date 2022-09-19) missed under both frozen variants:
+- neutral model ranked the actual date only around the 66th percentile of all daily candidates;
+- chronic-persistence model improved it only to about the 74th percentile;
+- both variants instead selected late June 2025.
+
+This strengthens two lessons:
+- morphology-specific success in the father's post-reveal V4 cannot be generalized from one case;
+- the presence of several symbolically plausible contacts near a true event is not enough if the same model produces stronger false peaks elsewhere.
+
+The correct next evidential step is not further owner-specific repair. It is cross-person testing of:
+1. a morphology-neutral parental-event model;
+2. a sudden/acute modifier;
+3. a chronic/prolonged modifier;
+with the same false-positive metrics and person-level holdout.
