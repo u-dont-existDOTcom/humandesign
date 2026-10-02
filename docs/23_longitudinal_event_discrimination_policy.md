@@ -178,3 +178,38 @@ Novel/project-specific remainder:
 
 External baseline:
 - a simple base-rate/calendar model with the same event prevalence and time resolution.
+
+
+## 11. Event occurrence versus event morphology and impact
+
+A timing model must keep these distinct:
+
+- **event occurrence** — what objectively happened and when;
+- **event morphology** — sudden vs prolonged, violent vs nonviolent, acute vs chronic, externally imposed vs gradual;
+- **subjective/life-course impact** — how shocking, consequential, disruptive, or transformative the event was for the person.
+
+Do not assume that a model component which improves one revealed case identifies the causal reason it worked.
+
+Example from owner development:
+- the father's death was sudden, accidental, shocking, and life-changing;
+- a V4 development repair added a Uranian rupture gate and strongly improved the father's exact-date ranking;
+- this does **not** establish that suddenness, tragedy, Uranus, or subjective impact caused the improvement.
+
+Required control:
+1. mark morphology-specific components as hypotheses;
+2. compare a morphology-neutral model with morphology-specific ablations on future/held-out cases;
+3. do not transfer a sudden-shock modifier to a prolonged/non-shocking event merely because the endpoint is also death;
+4. separately score event detection and morphology/impact classification when data allow;
+5. a morphology-specific repair that fits one revealed case remains development-only until cross-person evidence shows incremental discrimination.
+
+## 12. Post-reveal repair must improve contrasts, not explanations
+
+After a revealed miss, a plausible narrative mechanism is not enough.
+
+A repair is useful only if it:
+- raises the true event relative to the motivating false peak;
+- does not create an equal or larger false-positive burden elsewhere;
+- survives dependency and causal-window checks;
+- is frozen before being evaluated on new cases.
+
+When the repair depends on a revealed qualifier such as suddenness, prolonged illness, violence, travel, pregnancy, or relationship-active state, preserve that qualifier as the exact scope of the hypothesis. Do not generalize it to the broader event class until an ablation or held-out comparison earns that transfer.
