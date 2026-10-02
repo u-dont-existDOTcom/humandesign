@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[2]
 CUSTOM = ROOT / 'reference/custom_gpt'
 RELEASE = CUSTOM / 'releases/life-patterns-voice-gpt-2026-09-30'
 MANIFEST = CUSTOM / 'life_patterns_voice_gpt_manifest_v2.json'
-VERSION = '2026-10-02.1-context-resilience'
+VERSION = '2026-10-02.2-action-handoff-resilience'
 m = json.loads(MANIFEST.read_text())
 m['version'] = VERSION
 for field in ('instructions', 'builder_config', 'action_schema'):
@@ -56,25 +56,24 @@ print(json.dumps({'version':VERSION,'instructions_strict':m['instructions']['str
                   'files':len(allowed),'zip_sha256':hashlib.sha256(out.read_bytes()).hexdigest()},indent=2))
 
 # Current update adds one handoff guide; prior five knowledge files remain unchanged.
-update_readme = '''# Update the installed GPT: context-loss resilience and recoverable review requests
+update_readme = '''# Update the installed GPT: Action approvals + durable review recovery
 
 1. Replace Instructions with INSTRUCTIONS-life-patterns-voice-interviewer-v2.md.
-2. Add knowledge/ACTION-HANDOFF-GUIDE-v1.md as the SIXTH Knowledge file. Keep the previous five files.
-3. Reimport ACTION-life-patterns-submission-openapi.yaml into the EXISTING Action. Same URL, same Bearer credential; no second Action.
+2. Replace the existing Knowledge file ACTION-HANDOFF-GUIDE-v1.md with knowledge/ACTION-HANDOFF-GUIDE-v1.md. Keep the other five Knowledge files unchanged.
+3. Keep the EXISTING Action, schema URL and Bearer credential unchanged; this hotfix does not require a Railway/API change.
 4. Keep Code Interpreter & Data Analysis enabled; save/update the GPT.
 
-For owner testing, do not run substantive interviews in Builder Preview. Before clicking Update during an in-progress interview, first ask that interview chat to create `life-patterns-live-recovery-checkpoint.json`, wait for the actual file link, and verify its answer count. If context is already lost, preserve an empty candidate only as a diagnostic; recover from the same saved chat, explicit attachment, or explicit canonical Library fallback instead of overwriting prior source.
+Before setup answers, the GPT now explains that ChatGPT will later show permission cards for the Life Patterns Railway service. Participants should choose **Allow once** for each step they want to continue. Several approvals can appear because review queue/check/clarification/final submission are separate external calls; the GPT must not promise an exact count.
 
-Before submitting, the GPT must now create and link the exact unfrozen candidate backup, construct the correct three-field JSON envelope, and say: “Please click accept on this tool call to submit your results for analysis.”
+Before queueing, the GPT now creates BOTH:
+- `life-patterns-candidate-backup.json` — exact unfrozen candidate.
+- `life-patterns-review-handoff.json` — exact three-field start-review request, including durable `request_id`.
 
-A rejected request must produce both the preserved candidate backup and a safe diagnostic artifact. New server validation responses name the field/type without echoing private answers. A past generic error does not reveal which field was rejected.
+After a successful queue it also preserves transport metadata in `life-patterns-review-receipt.json` when file creation is available.
 
-Questions gain an honest stage/count footer. This also moves the question above the native down-arrow area; it does not change ChatGPT CSS or prove that the native button is fixed. No fabricated percentage, question quota, or time guarantee.
+If a later turn loses `review_id`, it must NOT create a new review. It reloads the saved review handoff and replays the exact same start request. Railway idempotency returns the existing review and handle (`duplicate: true`), after which the GPT can check the existing review normally.
 
-For an existing completed interview, read all usable prior answers first. Do not repeat a distinction merely because a prompt was reworded. The separately supplied hybrid question trial/audit is a development candidate, NOT silently substituted for frozen v7. This hotfix does not require another full interview.
-
-To recover the current failed attempt, paste:
-“Do not ask more interview questions. Preserve every existing imported answer and new answer from this chat with its original wording and corrections. Follow ACTION-HANDOFF-GUIDE-v1.md: create and link my unfrozen candidate backup, then show me the error diagnostic if one is available. Only then rebuild the valid start-review envelope and ask me to approve submission. Do not claim missing source text was recovered.”
+This hotfix does not change frozen v7 question wording, the independent-review semantics, CF-003 ordering, or the Action API schema.
 '''
 update_files = {name: (RELEASE/name).read_bytes() for name in (
     'INSTRUCTIONS-life-patterns-voice-interviewer-v2.md',
@@ -88,7 +87,7 @@ update_files['UPDATE-MANIFEST.json'] = (json.dumps({
     'existing_bearer_key_changes': False,
     'files': {name: hashlib.sha256(data).hexdigest() for name,data in update_files.items()},
 }, indent=2)+'\n').encode()
-update_zip = RELEASE.parent/'Life-Patterns-GPT-context-resilience-update-2026-10-02.zip'
+update_zip = RELEASE.parent/'Life-Patterns-GPT-action-approval-review-handoff-update-2026-10-02.zip'
 with zipfile.ZipFile(update_zip, 'w', zipfile.ZIP_DEFLATED) as z:
     for name,data in sorted(update_files.items()):
         info=zipfile.ZipInfo(name,(2026,10,1,0,0,0))
