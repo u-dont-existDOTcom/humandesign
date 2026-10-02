@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-02",
+  "status": "post_reveal_development_evaluation",
+  "actual_event_date": "2022-09-19",
+  "blind_primary": {
+    "neutral": "2025-06-25",
+    "chronic": "2025-06-24"
+  },
+  "evaluation": {
+    "neutral": "MISS",
+    "chronic": "MISS"
+  },
+  "actual_date_scores": {
+    "neutral": 6.48,
+    "chronic": 8.424,
+    "neutral_daily_rank": 5107,
+    "chronic_daily_rank": 3994,
+    "total_daily_candidates": 15221,
+    "neutral_percentile_approx": 66.45,
+    "chronic_percentile_approx": 73.77
+  },
+  "active_contacts_in_prior_180_days": [
+    {
+      "method": "slow_transit",
+      "body": "Uranus",
+      "target": "Moon",
+      "aspect": "conjunction",
+      "closest_date": "2022-03-26",
+      "orb_deg": 0.00017
+    },
+    {
+      "method": "slow_transit",
+      "body": "Neptune",
+      "target": "Venus",
+      "aspect": "conjunction",
+      "closest_date": "2022-06-28",
+      "orb_deg": 0.86833
+    },
+    {
+      "method": "secondary_progression",
+      "body": "Moon",
+      "target": "Venus",
+      "aspect": "opposition",
+      "closest_date": "2022-05-23",
+      "orb_deg": 0.00445
+    }
+  ],
+  "chronic_persistence": [
+    {
+      "body": "Neptune",
+      "target": "Venus",
+      "aspect": "conjunction",
+      "days_within_2deg_prior_240": 137
+    },
+    {
+      "body": "Neptune",
+      "target": "Mars",
+      "aspect": "conjunction",
+      "days_within_2deg_prior_240": 103
+    }
+  ],
+  "interpretation": [
+    "The blind primary prediction missed by about 2 years 9 months.",
+    "The chronic persistence modifier raised the actual event from roughly the 66th to the 74th percentile but did not make it a high-ranked event window.",
+    "Some maternal-symbolic contacts were present, but they were not discriminative enough under the frozen model.",
+    "This result does not establish that suddenness explains the father's V4 development success; it increases the need for cross-person morphology-neutral versus suddenness-specific ablation."
+  ]
+}
