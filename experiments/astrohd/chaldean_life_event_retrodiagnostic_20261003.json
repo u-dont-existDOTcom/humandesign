@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-03",
+  "status": "retrospective_development_only",
+  "cheiro_inputs": {
+    "birth_number": 2,
+    "related_numbers": [
+      1,
+      4,
+      7
+    ],
+    "birth_period_number": 8,
+    "public_name": "Joel Rosenblum",
+    "public_name_root": 8,
+    "private_first_name": "Joel",
+    "private_first_name_root": 7,
+    "public_name_part_reduction": {
+      "Joel": "16->7",
+      "Rosenblum": "37->1",
+      "combined": "7+1=8"
+    }
+  },
+  "event_years": {
+    "high_impact": [
+      2002,
+      2005,
+      2010,
+      2013,
+      2014,
+      2018,
+      2020,
+      2026
+    ],
+    "low_impact": [
+      2022
+    ]
+  },
+  "coarse_year_root_result": {
+    "rule": "calendar-year root in {1,2,4,7}",
+    "high_impact_hits": [
+      2002,
+      2005,
+      2014,
+      2018,
+      2020,
+      2026
+    ],
+    "high_impact_rate": 0.75,
+    "unlabeled_background_hits": [
+      2000,
+      2008,
+      2009,
+      2011,
+      2017,
+      2023
+    ],
+    "unlabeled_background_count": 18,
+    "unlabeled_background_rate": 0.3333333333
+  },
+  "birth_year_periodicity": [
+    1985,
+    2008,
+    2018,
+    2029
+  ],
+  "known_periodicity_hit": 2018,
+  "conclusion": "Cheiro gives useful additional structure but has not demonstrated superiority to full Decoz forecasting; best treated as a separate candidate feature layer."
+}
