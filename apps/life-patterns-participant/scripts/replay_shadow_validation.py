@@ -88,12 +88,16 @@ def main() -> int:
             )
             row = privacy_safe_case_summary(case["case_id"], state, result)
             target = expected[case["case_id"]]
+            # Participant-facing decision is based on independently admitted
+            # questions. A producer proposal rejected by admission means no
+            # clarification is shown, while the disagreement remains diagnostic.
             actual_decision = (
-                "review_ready"
-                if row["shadow_outcome"] == "review_ready"
-                else "clarification_needed"
+                "clarification_needed"
                 if row["shadow_outcome"] == "clarification_recommended"
-                else "no_admitted_candidate"
+                else "review_ready"
+            )
+            producer_admission_disagreement = (
+                row["shadow_outcome"] == "no_admitted_candidate"
             )
             route_ok = (
                 target["route_id"] is None
@@ -107,6 +111,7 @@ def main() -> int:
                     "expected_route_id": target["route_id"],
                     "actual_decision": actual_decision,
                     "admitted_route_ids": row["admitted_route_ids"],
+                    "producer_admission_disagreement": producer_admission_disagreement,
                     "passed": passed,
                     "semantic_duration_seconds": row["semantic_duration_seconds"],
                 }
