@@ -61,7 +61,7 @@
   ],
   "pre_attempt_activation": "PASS",
   "contract_freshness": "CURRENT",
-  "result": "LOCAL_COMPLETE_REMOTE_PUBLICATION_PENDING",
+  "result": "PUBLISHED_VERIFIED_QUALITY_GATE_OPEN",
   "verification": {
     "focused_shadow_tests": "14 passed",
     "affected_ruff": "PASS",
@@ -72,6 +72,8 @@
     "live_behavior_changed": false,
     "final_cli_semantic_duration_seconds": 112.023,
     "legacy_initial_semantic_duration_seconds": 488.155,
-    "owner_case_legacy_first_route_match": "M11"
+    "owner_case_legacy_first_route_match": "M11",
+    "remote_head_verified": "e40a685800396adbb3dbb85ceb323f1107f40d04",
+    "quality_noninferiority": "OPEN_REPLAY_GATE"
   }
 }

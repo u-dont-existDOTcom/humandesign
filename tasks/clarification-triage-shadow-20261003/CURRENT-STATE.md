@@ -3,7 +3,7 @@
 - Task: `experiment-gap-triage-shadow-20261003`
 - Branch: `experiment-gap-triage-shadow-20261003`
 - Parent baseline: `2053e58`
-- Status: development-only implementation, semantic benchmark, and privacy-safe owner-case comparison complete; replay-set quality validation remains open
+- Status: development-only implementation is pushed and remotely verified; semantic benchmark and privacy-safe owner-case comparison complete; replay-set quality validation remains open
 - Assurance lane: experiment only; privacy/no-live-change hard gates
 - Authority: owner request plus `tasks/survey-owner-feedback-20261001/INDEPENDENT-REVIEW-LATENCY-REDESIGN-20261003.md`
 - Completion command: `PYTHONPATH=apps/life-patterns-participant python -m pytest apps/life-patterns-participant/tests -q`
@@ -46,4 +46,4 @@ Before promotion:
 3. require zero admitted redundant questions and no material loss of useful clarifications;
 4. only then move evidence synthesis off the critical path or wire triage into live behavior.
 
-Do not merge this experiment merely from the owner-case latency result.
+Remote experiment head verified: `e40a685800396adbb3dbb85ceb323f1107f40d04`. Do not merge this experiment merely from the owner-case latency result.
