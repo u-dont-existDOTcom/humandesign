@@ -1,0 +1,73 @@
+{
+  "input_sha256": "c00416b688c70c5cc133690341ce7695006c5563e01d7b92a1239203e916cf11",
+  "code_sha256": "74bfe4aa0e30a686e76b22002728d1a17fb5fbd490457d42d77047feb90d1222",
+  "ephemeris_returned_flags": 260,
+  "results": {
+    "all": {
+      "calendar": {
+        "auc": 0.6305770374776919,
+        "balanced_accuracy": 0.5914634146341464,
+        "log_loss": 0.6790445997615855
+      },
+      "numerology": {
+        "auc": 0.5133105294467578,
+        "balanced_accuracy": 0.5487804878048781,
+        "log_loss": 0.9984934266538669
+      },
+      "astrology": {
+        "auc": 0.5623140987507436,
+        "balanced_accuracy": 0.5365853658536586,
+        "log_loss": 0.7179782977137396
+      },
+      "combined": {
+        "auc": 0.5234979179060083,
+        "balanced_accuracy": 0.5548780487804879,
+        "log_loss": 1.114220128601457
+      }
+    },
+    "5": {
+      "calendar": {
+        "auc": 0.5315058739765041,
+        "balanced_accuracy": 0.5094339622641509,
+        "log_loss": 0.7741052977808502
+      },
+      "numerology": {
+        "auc": 0.4848700605197579,
+        "balanced_accuracy": 0.5188679245283019,
+        "log_loss": 1.1030117614154022
+      },
+      "astrology": {
+        "auc": 0.5873976504093984,
+        "balanced_accuracy": 0.5566037735849056,
+        "log_loss": 0.7192645101298062
+      },
+      "combined": {
+        "auc": 0.50124599501602,
+        "balanced_accuracy": 0.5283018867924528,
+        "log_loss": 1.1555991837824013
+      }
+    },
+    "0": {
+      "calendar": {
+        "auc": 0.3379501385041551,
+        "balanced_accuracy": 0.42105263157894735,
+        "log_loss": 0.7412878055294876
+      },
+      "numerology": {
+        "auc": 0.3490304709141274,
+        "balanced_accuracy": 0.39473684210526316,
+        "log_loss": 1.0789487808368485
+      },
+      "astrology": {
+        "auc": 0.4182825484764543,
+        "balanced_accuracy": 0.47368421052631576,
+        "log_loss": 0.8973444943661416
+      },
+      "combined": {
+        "auc": 0.3601108033240997,
+        "balanced_accuracy": 0.47368421052631576,
+        "log_loss": 1.183510967356956
+      }
+    }
+  }
+}

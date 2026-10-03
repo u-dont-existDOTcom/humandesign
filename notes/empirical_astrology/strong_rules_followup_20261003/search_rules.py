@@ -293,7 +293,7 @@ def fitting_diagnostic(rows):
     for depth in [2, 4, None]:
         m = DecisionTreeClassifier(max_depth=depth, min_samples_leaf=1, random_state=SEED)
         m.fit(x, y)
-        out[str(depth)] = {**summary(y, score(m, x)), 'leaves': m.get_n_leaves()}
+        out[str(depth)] = {**summary(y, score(m, x)), 'leaves': int(m.get_n_leaves())}
         if depth == 4:
             out['depth4_rule_text'] = export_text(m, feature_names=cols, decimals=3)
     rng = np.random.default_rng(SEED)

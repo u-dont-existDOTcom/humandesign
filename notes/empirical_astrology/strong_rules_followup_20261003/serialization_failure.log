@@ -1,0 +1,32 @@
+SELF_TESTS_PASS
+AUDIT {'original_pairs': 82, 'exact_year_rematched_pairs': 51, 'distinct_matched_years': 30, 'unknown_offender_sex_in_matched': 15, 'later_year': 62, 'equal_year': 19, 'earlier_year': 1, 'younger_member_pairwise_accuracy_ties_half': 0.8719512195121951}
+ARM original people 164 groups 82
+Traceback (most recent call last):
+  File "<workspace>/search_rules.py", line 377, in <module>
+    main()
+  File "<workspace>/search_rules.py", line 359, in main
+    save()
+  File "<workspace>/search_rules.py", line 349, in save
+    (args.out/'results.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 202, in encode
+    chunks = list(chunks)
+             ^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.12/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.12/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.12/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  [Previous line repeated 1 more time]
+  File "/usr/lib/python3.12/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type int64 is not JSON serializable
